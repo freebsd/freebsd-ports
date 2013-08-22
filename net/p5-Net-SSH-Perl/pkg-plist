@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Net/SSH/Perl/Auth.pm
 %%SITE_PERL%%/Net/SSH/Perl/Auth/ChallengeResponse.pm
 %%SITE_PERL%%/Net/SSH/Perl/Auth/KeyboardInt.pm
+%%SITE_PERL%%/Net/SSH/Perl/Auth/KeyboardInteractive.pm
 %%SITE_PERL%%/Net/SSH/Perl/Auth/Password.pm
 %%SITE_PERL%%/Net/SSH/Perl/Auth/PublicKey.pm
 %%SITE_PERL%%/Net/SSH/Perl/Auth/RSA.pm

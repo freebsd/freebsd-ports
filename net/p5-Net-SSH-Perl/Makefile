@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-SSH-Perl
-PORTVERSION=	1.35
+PORTVERSION=	1.36
 CATEGORIES=		net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,7 +12,6 @@ COMMENT=	Perl5 module implements both the SSH1 and SSH2 protocols
 
 BUILD_DEPENDS=	p5-String-CRC32>=0:${PORTSDIR}/devel/p5-String-CRC32 \
 		p5-Math-GMP>=0:${PORTSDIR}/math/p5-Math-GMP \
-		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
 		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
 		p5-Crypt-DSA>=0:${PORTSDIR}/security/p5-Crypt-DSA \
 		p5-Crypt-DH>=0:${PORTSDIR}/security/p5-Crypt-DH \
@@ -71,12 +70,7 @@ OPTIONS_DEFINE=	GMP
 OPTIONS_DEFAULT=	GMP
 GMP_DESC=	Use the optimized Math::BigInt::GMP backend
 
-.include <bsd.port.pre.mk>
+GMP_BUILD_DEPEND=	p5-Math-BigInt-GMP>=0:${PORTSDIR}/math/p5-Math-BigInt-GMP
+GMP_RUN_DEPEND=		${GMP_BUILD_DEPEND}
 
-.if ${PORT_OPTIONS:MGMP}
-GMP_DEPEND=	p5-Math-BigInt-GMP>=0:${PORTSDIR}/math/p5-Math-BigInt-GMP
-BUILD_DEPENDS+=	${GMP_DEPEND}
-RUN_DEPENDS+=	${GMP_DEPEND}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
