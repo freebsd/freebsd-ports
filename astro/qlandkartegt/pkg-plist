@@ -1,8 +1,9 @@
 bin/cache2gtiff
 bin/map2gcm
+bin/map2jnx
 bin/map2rmap
+bin/map2rmp
 bin/qlandkartegt
-bin/qlandkartegt.bin
 share/applications/qlandkartegt.desktop
 share/pixmaps/qlandkartegt.png
 %%DATADIR%%/translations/qlandkartegt_cs.qm
@@ -14,5 +15,5 @@ share/pixmaps/qlandkartegt.png
 %%DATADIR%%/translations/qlandkartegt_nl.qm
 %%DATADIR%%/translations/qlandkartegt_ru.qm
 @dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
 @dirrmtry share/applications
