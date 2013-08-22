@@ -1,41 +1,47 @@
 bin/cmis-client
-include/libcmis-0.3/libcmis/allowable-actions.hxx
-include/libcmis-0.3/libcmis/document.hxx
-include/libcmis-0.3/libcmis/exception.hxx
-include/libcmis-0.3/libcmis/folder.hxx
-include/libcmis-0.3/libcmis/object-type.hxx
-include/libcmis-0.3/libcmis/object.hxx
-include/libcmis-0.3/libcmis/property-type.hxx
-include/libcmis-0.3/libcmis/property.hxx
-include/libcmis-0.3/libcmis/repository.hxx
-include/libcmis-0.3/libcmis/session-factory.hxx
-include/libcmis-0.3/libcmis/session.hxx
-include/libcmis-0.3/libcmis/xml-utils.hxx
-include/libcmis-0.3/libcmis/xmlserializable.hxx
-include/libcmis-c-0.3/libcmis-c/allowable-actions.h
-include/libcmis-c-0.3/libcmis-c/document.h
-include/libcmis-c-0.3/libcmis-c/error.h
-include/libcmis-c-0.3/libcmis-c/folder.h
-include/libcmis-c-0.3/libcmis-c/object-type.h
-include/libcmis-c-0.3/libcmis-c/object.h
-include/libcmis-c-0.3/libcmis-c/property-type.h
-include/libcmis-c-0.3/libcmis-c/property.h
-include/libcmis-c-0.3/libcmis-c/repository.h
-include/libcmis-c-0.3/libcmis-c/session-factory.h
-include/libcmis-c-0.3/libcmis-c/session.h
-include/libcmis-c-0.3/libcmis-c/types.h
-include/libcmis-c-0.3/libcmis-c/vectors.h
-lib/libcmis-0.3.a
-lib/libcmis-0.3.la
-lib/libcmis-0.3.so
-lib/libcmis-0.3.so.3
-lib/libcmis-c-0.3.a
-lib/libcmis-c-0.3.la
-lib/libcmis-c-0.3.so
-lib/libcmis-c-0.3.so.3
-libdata/pkgconfig/libcmis-0.3.pc
-libdata/pkgconfig/libcmis-c-0.3.pc
-@dirrm include/libcmis-c-0.3/libcmis-c
-@dirrm include/libcmis-c-0.3
-@dirrm include/libcmis-0.3/libcmis
-@dirrm include/libcmis-0.3
+include/libcmis-%%MAJVER%%/libcmis/allowable-actions.hxx
+include/libcmis-%%MAJVER%%/libcmis/document.hxx
+include/libcmis-%%MAJVER%%/libcmis/exception.hxx
+include/libcmis-%%MAJVER%%/libcmis/folder.hxx
+include/libcmis-%%MAJVER%%/libcmis/libcmis.hxx
+include/libcmis-%%MAJVER%%/libcmis/oauth2-data.hxx
+include/libcmis-%%MAJVER%%/libcmis/object-type.hxx
+include/libcmis-%%MAJVER%%/libcmis/object.hxx
+include/libcmis-%%MAJVER%%/libcmis/property-type.hxx
+include/libcmis-%%MAJVER%%/libcmis/property.hxx
+include/libcmis-%%MAJVER%%/libcmis/rendition.hxx
+include/libcmis-%%MAJVER%%/libcmis/repository.hxx
+include/libcmis-%%MAJVER%%/libcmis/session-factory.hxx
+include/libcmis-%%MAJVER%%/libcmis/session.hxx
+include/libcmis-%%MAJVER%%/libcmis/xml-utils.hxx
+include/libcmis-%%MAJVER%%/libcmis/xmlserializable.hxx
+include/libcmis-c-%%MAJVER%%/libcmis-c/allowable-actions.h
+include/libcmis-c-%%MAJVER%%/libcmis-c/document.h
+include/libcmis-c-%%MAJVER%%/libcmis-c/error.h
+include/libcmis-c-%%MAJVER%%/libcmis-c/folder.h
+include/libcmis-c-%%MAJVER%%/libcmis-c/libcmis-c.h
+include/libcmis-c-%%MAJVER%%/libcmis-c/oauth2-data.h
+include/libcmis-c-%%MAJVER%%/libcmis-c/object-type.h
+include/libcmis-c-%%MAJVER%%/libcmis-c/object.h
+include/libcmis-c-%%MAJVER%%/libcmis-c/property-type.h
+include/libcmis-c-%%MAJVER%%/libcmis-c/property.h
+include/libcmis-c-%%MAJVER%%/libcmis-c/rendition.h
+include/libcmis-c-%%MAJVER%%/libcmis-c/repository.h
+include/libcmis-c-%%MAJVER%%/libcmis-c/session-factory.h
+include/libcmis-c-%%MAJVER%%/libcmis-c/session.h
+include/libcmis-c-%%MAJVER%%/libcmis-c/types.h
+include/libcmis-c-%%MAJVER%%/libcmis-c/vectors.h
+lib/libcmis-%%MAJVER%%.a
+lib/libcmis-%%MAJVER%%.la
+lib/libcmis-%%MAJVER%%.so
+lib/libcmis-%%MAJVER%%.so.4
+lib/libcmis-c-%%MAJVER%%.a
+lib/libcmis-c-%%MAJVER%%.la
+lib/libcmis-c-%%MAJVER%%.so
+lib/libcmis-c-%%MAJVER%%.so.4
+libdata/pkgconfig/libcmis-%%MAJVER%%.pc
+libdata/pkgconfig/libcmis-c-%%MAJVER%%.pc
+@dirrm include/libcmis-c-%%MAJVER%%/libcmis-c
+@dirrm include/libcmis-c-%%MAJVER%%
+@dirrm include/libcmis-%%MAJVER%%/libcmis
+@dirrm include/libcmis-%%MAJVER%%
