@@ -1,0 +1,4 @@
+Redigo is a Go client for the Redis database.  It supports all Redis commands,
+pipelining, publish/subscribe and connection pooling.
+
+WWW: https://github.com/garyburd/redigo

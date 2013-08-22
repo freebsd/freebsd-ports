@@ -794,6 +794,7 @@
     SUBDIR += rdb
     SUBDIR += rdfdb
     SUBDIR += recutils
+    SUBDIR += redigo
     SUBDIR += redis
     SUBDIR += redis-devel
     SUBDIR += rrdman
