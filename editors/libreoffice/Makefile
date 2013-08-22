@@ -2,10 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	1
-MASTER_SITES+=	http://dev-www.libreoffice.org/src/:src \
-		http://dev-www.libreoffice.org/extern/:ext
-MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
+PORTREVISION=	0
 
 COMMENT=	Full integrated office productivity suite
 
@@ -36,7 +33,7 @@ LIB_DEPENDS=	icutu:${PORTSDIR}/devel/icu \
 		png15:${PORTSDIR}/graphics/png \
 		poppler:${PORTSDIR}/graphics/poppler \
 		lpsolve55:${PORTSDIR}/math/lp_solve \
-		cmis-0.3:${PORTSDIR}/net/libcmis \
+		cmis-0.4:${PORTSDIR}/net/libcmis \
 		mspub-0.0:${PORTSDIR}/print/libmspub \
 		nss3.1:${PORTSDIR}/security/nss \
 		clucene-core:${PORTSDIR}/textproc/clucene \
@@ -64,14 +61,13 @@ _MAKE_JOBS=	#
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf aclocal
 USE_GL=		gl glu
-USE_GMAKE=	yes
 USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_PYTHON=	yes
 USE_QT4=	# empty but required
 USE_XORG=	xaw xrandr
 USE_XZ=		yes
-USES=		bison pkgconfig perl5
+USES=		bison gmake perl5 pkgconfig
 WANT_GNOME=	yes
 
 DISTFILES+=	${PORTNAME}-${LOVERSION}${EXTRACT_SUFX}
@@ -339,7 +335,7 @@ CONFIGURE_ARGS+=	--disable-neon
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GCC)
-USE_GCC=	yes
+USE_GCC=	4.6+
 CONFIGURE_ENV+=	CXXCPP="${CPP}"
 .else
 .if exists(/usr/bin/clang) && ${OSVERSION} > 901502

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libreoffice
-PORTVERSION=	4.0.4
+PORTVERSION=	4.0.5
 RCVER=		2
 #PRERELEASE=	yes
 LOVERSION=	${PORTVERSION}.${RCVER}
@@ -11,6 +11,9 @@ MAINTAINER?=	office@FreeBSD.org
 LICENSE=	LGPL3 MPL
 LICENSE_COMB=	dual
 
+.if defined(PRERELEASE)
+MASTER_SITES?=	http://dev-builds.libreoffice.org/pre-releases/${MASTER_SITE_SUBDIR}
+.else
 MASTER_SITES?=	http://ftp.rediris.es/mirror/TDF/libreoffice/${MASTER_SITE_SUBDIR} \
 		http://mirrors.supportex.net/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
 		http://mirror.netcologne.de/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
@@ -31,6 +34,7 @@ MASTER_SITES?=	http://ftp.rediris.es/mirror/TDF/libreoffice/${MASTER_SITE_SUBDIR
 		http://mirror.yongbok.net/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
 		http://mirror3.mirrors.tds.net/pub/documentfoundation.org/libreoffice/${MASTER_SITE_SUBDIR} \
 		http://ftp.osuosl.org/pub/tdf/libreoffice/${MASTER_SITE_SUBDIR}
+.endif
 
 ONLY_FOR_ARCH=	i386 amd64
 
@@ -39,14 +43,12 @@ PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
 
 .if defined(LO_I18N)
-PORTREVISION=	1
-
 NO_BUILD=	yes
 
 RUN_DEPENDS=	libreoffice:${PORTSDIR}/editors/libreoffice
 
 .if defined(PRERELEASE)
-MASTER_SITE_SUBDIR=	testing/${PORTVERSION}/deb/x86/
+MASTER_SITE_SUBDIR=	deb/x86/
 LO_I18N_FILE=	LibreOffice_${LOVERSION}_Linux_x86_deb
 .else
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/deb/x86/
@@ -82,5 +84,12 @@ do-install:
 
 	${MKDIR} ${PREFIX}/lib/${PORTNAME}
 	cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} ; ${PAX} -rw . ${PREFIX}/lib/${PORTNAME}
-
+.else
+MASTER_SITES+=	http://dev-www.libreoffice.org/src/:src \
+		http://dev-www.libreoffice.org/extern/:ext
+.if defined(PRERELEASE)
+MASTER_SITE_SUBDIR=	src/
+.else
+MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
+.endif
 .endif
