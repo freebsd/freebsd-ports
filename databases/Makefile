@@ -370,6 +370,7 @@
     SUBDIR += p5-DBIx-Class-Tree
     SUBDIR += p5-DBIx-Class-Tree-NestedSet
     SUBDIR += p5-DBIx-Class-UUIDColumns
+    SUBDIR += p5-DBIx-Class-VirtualColumns
     SUBDIR += p5-DBIx-Class-WebForm
     SUBDIR += p5-DBIx-Connector
     SUBDIR += p5-DBIx-ContextualFetch

@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/DBIx/Class/VirtualColumns.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/VirtualColumns/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/VirtualColumns

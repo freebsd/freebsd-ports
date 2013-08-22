@@ -1,0 +1,11 @@
+This module allows to specify 'virtual columns' in DBIx::Class schema
+classes. Virtual columns behave almost like regular columns but are not
+stored in the database. They may be used to store temporary information
+in the DBIx::Class::Row object and without introducting an additional
+interface.
+
+Most DBIx::Class methods like "set_column", "set_columns", "get_column",
+"get_columns", "column_info", ... will work with regular as well as
+virtual columns.
+
+WWW: http://search.cpan.org/dist/DBIx-Class-VirtualColumns/
