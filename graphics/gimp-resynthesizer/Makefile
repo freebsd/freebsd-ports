@@ -24,6 +24,7 @@ USES=		gettext
 USE_AUTOTOOLS=	aclocal automake
 USE_GMAKE=	yes
 AUTOMAKE_ARGS=	--add-missing
+USE_GCC=	any # uses nested functions (gcc ext.)
 
 OPTIONS_DEFINE=	THREADS
 THREADS_DESC=	Threading support (produces nondeterministic results)
