@@ -1,0 +1,4 @@
+Net-Works provides a APIs for IP addresses and networks
+similar to NetAddr::IP, but claims to be cleaner.
+
+WWW: http://search.cpan.org/dist/Net-Works/

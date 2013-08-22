@@ -697,6 +697,7 @@
     SUBDIR += p5-Net-Whois-IP
     SUBDIR += p5-Net-Whois-RIPE
     SUBDIR += p5-Net-Whois-Raw
+    SUBDIR += p5-Net-Works
     SUBDIR += p5-Net-Write
     SUBDIR += p5-Net-XWhois
     SUBDIR += p5-Net-Yadis

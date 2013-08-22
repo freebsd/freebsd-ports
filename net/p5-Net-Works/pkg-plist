@@ -1,0 +1,14 @@
+%%SITE_PERL%%/Net/Works.pm
+%%SITE_PERL%%/Net/Works/Address.pm
+%%SITE_PERL%%/Net/Works/Network.pm
+%%SITE_PERL%%/Net/Works/Role/IP.pm
+%%SITE_PERL%%/Net/Works/Types.pm
+%%SITE_PERL%%/Net/Works/Types/Internal.pm
+%%SITE_PERL%%/Net/Works/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Works/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Works
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrm %%SITE_PERL%%/Net/Works/Types
+@dirrm %%SITE_PERL%%/Net/Works/Role
+@dirrm %%SITE_PERL%%/Net/Works
+@dirrm %%SITE_PERL%%/Net
