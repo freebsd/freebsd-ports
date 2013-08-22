@@ -24,8 +24,8 @@
 #
 # PERL_LEVEL	- Perl version as an integer of the form MNNNPP, where
 #				  M is major version, N is minor version, and P is
-#				  the patch level. E.g., PERL_VERSION=5.14.2 would give
-#				  a PERL_LEVEL of 501402. This can be used in comparisons
+#				  the patch level. E.g., PERL_VERSION=5.14.4 would give
+#				  a PERL_LEVEL of 501404. This can be used in comparisons
 #				  to determine if the version of perl is high enough,
 #				  whether a particular dependency is needed, etc.
 # PERL_ARCH		- Directory name of architecture dependent libraries
