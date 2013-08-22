@@ -15,8 +15,7 @@ LIB_DEPENDS=	leveldb:${PORTSDIR}/databases/leveldb
 
 MAKE_ARGS=	CC=${CXX}
 USE_PERL5=	configure
-USES=		perl5
-USES=		gmake
+USES=		gmake perl5
 
 MAN3=		Tie::LevelDB.3
 
