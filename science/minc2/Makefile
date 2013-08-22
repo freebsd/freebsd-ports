@@ -12,16 +12,14 @@
 
 PORTNAME=	minc
 PORTVERSION=	2.2.00
+PORTREVISION=	1
 CATEGORIES=	science biology
 MASTER_SITES=	http://packages.bic.mni.mcgill.ca/tgz/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Medical Imaging NetCDF
 
-LICENSE=	AS-IS
-LICENSE_NAME=	AS-IS
-LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	dist-mirror pkg-mirror
+LICENSE=	BSD
 
 LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf \
 		hdf5:${PORTSDIR}/science/hdf5
