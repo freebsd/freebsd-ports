@@ -70,7 +70,7 @@ OPTIONS_DEFINE=	GMP
 OPTIONS_DEFAULT=	GMP
 GMP_DESC=	Use the optimized Math::BigInt::GMP backend
 
-GMP_BUILD_DEPEND=	p5-Math-BigInt-GMP>=0:${PORTSDIR}/math/p5-Math-BigInt-GMP
-GMP_RUN_DEPEND=		${GMP_BUILD_DEPEND}
+GMP_BUILD_DEPENDS=	p5-Math-BigInt-GMP>=0:${PORTSDIR}/math/p5-Math-BigInt-GMP
+GMP_RUN_DEPENDS=	${GMP_BUILD_DEPENDS}
 
 .include <bsd.port.mk>
