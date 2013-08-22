@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Email-LocalDelivery
-PORTVERSION=	0.21.7
-DISTVERSION=	${PORTVERSION:C/\.(.)$/\1/}
+PORTVERSION=	1.200
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +18,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Email::LocalDelivery.3
+MAN3=		Email::LocalDelivery.3 \
+		Email::LocalDelivery::Maildir.3 \
+		Email::LocalDelivery::Mbox.3
 
 .include <bsd.port.mk>
