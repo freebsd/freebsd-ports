@@ -198,6 +198,8 @@
 : ${ac_cv_func_mkdtemp=yes}
 : ${ac_cv_func_memset=yes}
 : ${ac_cv_func_strftime=yes}
+: ${ac_cv_func_getgid=yes}
+: ${ac_cv_func_getuid=yes}
 : ${ac_cv_func_getegid=yes}
 : ${ac_cv_func_geteuid=yes}
 : ${ac_cv_func_stpcpy=yes}
@@ -216,6 +218,7 @@
 : ${ac_cv_func_mbrtowc=yes}
 : ${ac_cv_func_wcrtomb=yes}
 : ${ac_cv_func_readlink=yes}
+: ${ac_cv_func_readlinkat=yes}
 : ${ac_cv_func_realpath=yes}
 : ${ac_cv_func_lstat=yes}
 : ${ac_cv_func_mbsinit=yes}
@@ -279,6 +282,7 @@
 : ${ac_cv_func_wcwidth=yes}
 : ${ac_cv_func_strlcpy=yes}
 : ${ac_cv_func_strlcat=yes}
+: ${ac_cv_func_towlower=yes}
 
 # non existing functions
 : ${ac_cv_func_yield=no}
