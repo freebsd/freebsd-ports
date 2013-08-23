@@ -1,9 +1,12 @@
 bin/pushover
 share/locale/cs/LC_MESSAGES/pushover.mo
 share/locale/de/LC_MESSAGES/pushover.mo
+share/locale/eo/LC_MESSAGES/pushover.mo
 share/locale/es/LC_MESSAGES/pushover.mo
 share/locale/fr/LC_MESSAGES/pushover.mo
+share/locale/it/LC_MESSAGES/pushover.mo
 share/locale/ru/LC_MESSAGES/pushover.mo
+share/locale/sv/LC_MESSAGES/pushover.mo
 %%DATADIR%%/data/01_StandardFalling.ogg
 %%DATADIR%%/data/02_StopperHit.ogg
 %%DATADIR%%/data/03_Splitter.ogg
@@ -43,17 +46,20 @@ share/locale/ru/LC_MESSAGES/pushover.mo
 %%DATADIR%%/themes/electro.lua
 %%DATADIR%%/themes/electro.png
 %%DATADIR%%/themes/greek.lua
+%%DATADIR%%/themes/greek.ogg
 %%DATADIR%%/themes/greek.png
 %%DATADIR%%/themes/japanese.lua
 %%DATADIR%%/themes/japanese.ogg
 %%DATADIR%%/themes/japanese.png
 %%DATADIR%%/themes/mechanic.lua
+%%DATADIR%%/themes/mechanic.ogg
 %%DATADIR%%/themes/mechanic.png
 %%DATADIR%%/themes/space.lua
 %%DATADIR%%/themes/space.ogg
 %%DATADIR%%/themes/space.png
 %%DATADIR%%/themes/tools.lua
 %%DATADIR%%/themes/toxcity.lua
+%%DATADIR%%/themes/toxcity.ogg
 %%DATADIR%%/themes/toxcity.png
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/levels

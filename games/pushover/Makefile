@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pushover
-PORTVERSION=	0.0.3
-PORTREVISION=	3
+PORTVERSION=	0.0.5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Pushover/${PORTVERSION}
 
@@ -24,7 +23,7 @@ PORTDOCS=	*
 
 DESKTOP_ENTRIES="Pushover" \
 		"Push over all dominoes" \
-		"" \
+		"${DATADIR}/pushover.ico" \
 		"pushover" \
 		"Game;LogicGame;" \
 		false
@@ -32,6 +31,7 @@ DESKTOP_ENTRIES="Pushover" \
 .include <bsd.port.options.mk>
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|lua5.1|lua-5.1|' ${WRKSRC}/configure
 .if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/install-data-am/ s|install-dist_docDATA||' \
 		${WRKSRC}/Makefile.in
