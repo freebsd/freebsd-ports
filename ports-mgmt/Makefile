@@ -6,6 +6,7 @@
     SUBDIR += bpkg
     SUBDIR += bpm
     SUBDIR += bxpkg
+    SUBDIR += chucky
     SUBDIR += dialog4ports
     SUBDIR += distilator
     SUBDIR += fastest_sites

@@ -1,0 +1,14 @@
+************************************************************************
+
+NOTICE
+
+man page is installed in %%MAN7PREFIX%%/man/man7, if you do not yet
+have the configuration in /etc/man.conf, add
+
+MANPATH /usr/local/share/man
+
+to view all man pages which are installed in /usr/local/share/man/manX/
+
+
+************************************************************************
+
