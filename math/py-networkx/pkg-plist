@@ -160,6 +160,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/centrality/flow_matrix.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/centrality/flow_matrix.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/centrality/flow_matrix.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/centrality/katz.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/centrality/katz.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/centrality/katz.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/centrality/load.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/centrality/load.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/centrality/load.pyo
@@ -190,6 +193,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/centrality/tests/test_eigenvector_centrality.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/centrality/tests/test_eigenvector_centrality.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/centrality/tests/test_eigenvector_centrality.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/centrality/tests/test_katz_centrality.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/centrality/tests/test_katz_centrality.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/centrality/tests/test_katz_centrality.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/centrality/tests/test_load_centrality.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/centrality/tests/test_load_centrality.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/centrality/tests/test_load_centrality.pyo
@@ -250,6 +256,21 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/components/weakly_connected.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/components/weakly_connected.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/components/weakly_connected.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/connectivity/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/connectivity/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/connectivity/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/connectivity/connectivity.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/connectivity/connectivity.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/connectivity/connectivity.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/connectivity/cuts.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/connectivity/cuts.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/connectivity/cuts.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/connectivity/tests/test_connectivity.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/connectivity/tests/test_connectivity.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/connectivity/tests/test_connectivity.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/connectivity/tests/test_cuts.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/connectivity/tests/test_cuts.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/connectivity/tests/test_cuts.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/core.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/core.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/core.pyo
@@ -581,12 +602,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/_decorator.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/_decorator.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/_decorator.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/_decorator3.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/_decorator3.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/_decorator3.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator2/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator2/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator2/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator2/_decorator2.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator2/_decorator2.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator2/_decorator2.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/generators/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/generators/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/generators/__init__.pyo
@@ -701,9 +722,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/linalg/tests/test_graphmatrix.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/linalg/tests/test_graphmatrix.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/linalg/tests/test_graphmatrix.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/linalg/tests/test_laplaican.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/linalg/tests/test_laplaican.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/linalg/tests/test_laplaican.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/linalg/tests/test_laplacian.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/linalg/tests/test_laplacian.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/linalg/tests/test_laplacian.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/linalg/tests/test_spectrum.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/linalg/tests/test_spectrum.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/linalg/tests/test_spectrum.pyo
@@ -896,7 +917,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/properties.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/read_write.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/drawing/atlas.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/drawing/chess_masters.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/drawing/circular_tree.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/drawing/degree_histogram.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/drawing/edge_colormap.py
@@ -964,6 +984,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/linalg
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/generators/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/generators
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator2
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/drawing/tests
@@ -983,6 +1004,8 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/isomorphism
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/flow/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/flow
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/connectivity/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/connectivity
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/components/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/components
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/algorithms/community/tests
