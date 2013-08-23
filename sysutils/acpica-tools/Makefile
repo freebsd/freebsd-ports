@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	acpica
-PORTVERSION=	20130725
+PORTVERSION=	20130823
 CATEGORIES=	sysutils devel
 MASTER_SITES=	https://acpica.org/sites/acpica/files/ \
 		LOCAL
@@ -14,8 +14,8 @@ COMMENT=	Tools from the ACPI Component Architecture (ACPICA) project
 
 LICENSE=	BSD
 
-USE_GMAKE=	yes
 MAKE_ARGS=	HOST=_FreeBSD INSTALLFLAGS="${INSTALL_PROGRAM:S/^${INSTALL}//}"
+USES=		gmake
 WRKSRC_SUBDIR=	generate/unix
 LFLAGS=		-i -s
 YFLAGS=		-v -d
