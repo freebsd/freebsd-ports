@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parallel
-PORTVERSION=	20130722
+PORTVERSION=	20130822
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -20,10 +20,10 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
 
-MAN1=		parallel.1 sem.1 sql.1 niceload.1
+MAN1=		parallel.1 parallel_tutorial.1 sem.1 sql.1 niceload.1
 PLIST_FILES=	bin/parallel bin/sem bin/sql bin/niceload
-PORTDOCS=	parallel.html sem.html sql.html niceload.html \
-		parallel.texi sem.texi sql.texi niceload.texi
+PORTDOCS=	parallel.html parallel_tutorial.html sem.html sql.html niceload.html \
+		parallel.texi parallel_tutorial.texi sem.texi sql.texi niceload.texi
 
 .include <bsd.port.options.mk>
 
