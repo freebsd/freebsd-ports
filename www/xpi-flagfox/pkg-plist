@@ -6,6 +6,7 @@
 %%XPI_XPIDIR%%/install.rdf
 %%XPI_XPIDIR%%/ipdb/ip4.db
 %%XPI_XPIDIR%%/ipdb/ip6.db
+%%XPI_XPIDIR%%/ipdb/metadata.js
 @dirrm %%XPI_XPIDIR%%/chrome/flagfox/modules
 @dirrm %%XPI_XPIDIR%%/chrome/flagfox
 @dirrm %%XPI_XPIDIR%%/chrome
