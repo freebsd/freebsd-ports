@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD:$
+# $FreeBSD$
 #
 
 PATH=/bin:/usr/sbin:/usr/bin:/usr/sbin
@@ -8,23 +8,9 @@ PATH=/bin:/usr/sbin:/usr/bin:/usr/sbin
 user=%%BOINC_CLIENT_USER%%
 group=%%BOINC_CLIENT_GROUP%%
 home="%%BOINC_CLIENT_HOME%%"
-shell=/bin/sh
 
 case $2 in
-PRE-INSTALL)
-	if ! pw usershow ${user} 2>/dev/null 1>&2; then
-		if ! pw useradd ${user} -g ${group} -c "BOINC client user" \
-		    -d "${home}" -s ${shell}; then
-			echo "Failed to create user \"${user}\"." >&2
-			exit 1
-		else
-			echo "User \"${user}\" created successfully:"
-		fi
-	else
-		echo "Using existent user \"${user}\":"
-	fi
-	pw usershow ${user}
-	mkdir -m u=rwx,go= -p "${home}"
+POST-INSTALL)
 	if [ ! -e "${home}/skins" -a ! -L "${home}/skins" ]; then
 		ln -s "%%PREFIX%%/share/boinc/skins" "${home}/skins"
 	fi
