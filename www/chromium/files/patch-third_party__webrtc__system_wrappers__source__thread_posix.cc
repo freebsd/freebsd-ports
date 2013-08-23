@@ -1,20 +1,19 @@
---- third_party/webrtc/system_wrappers/source/thread_posix.cc.orig	2013-07-16 17:45:33.000000000 +0300
-+++ third_party/webrtc/system_wrappers/source/thread_posix.cc	2013-07-16 17:58:51.000000000 +0300
-@@ -54,9 +54,13 @@
- #include <sys/types.h>
- #include <sched.h>
- #include <sys/syscall.h>
-+#if defined(WEBRTC_BSD)
-+#include <sys/unistd.h>
-+#else
+--- third_party/webrtc/system_wrappers/source/thread_posix.cc.orig	2013-08-09 22:21:35.000000000 +0300
++++ third_party/webrtc/system_wrappers/source/thread_posix.cc	2013-08-16 23:34:09.000000000 +0300
+@@ -51,9 +51,11 @@
+ #include <string.h>  // strncpy
+ #include <unistd.h>
+ #ifdef WEBRTC_LINUX
++#if !defined(WEBRTC_BSD)
  #include <linux/unistd.h>
+-#include <sched.h>
  #include <sys/prctl.h>
- #endif
 +#endif
- 
- #include "webrtc/system_wrappers/interface/critical_section_wrapper.h"
- #include "webrtc/system_wrappers/interface/event_wrapper.h"
-@@ -136,12 +140,12 @@
++#include <sched.h>
+ #include <sys/syscall.h>
+ #include <sys/types.h>
+ #endif
+@@ -136,12 +138,12 @@
  }
  
  uint32_t ThreadWrapper::GetThreadId() {
@@ -29,7 +28,7 @@
  #endif
  }
  
-@@ -171,7 +175,8 @@
+@@ -171,7 +173,8 @@
    delete crit_state_;
  }
  
@@ -39,7 +38,7 @@
  
  bool ThreadPosix::Start(unsigned int& thread_id)
  {
-@@ -235,7 +240,8 @@
+@@ -235,7 +238,8 @@
  
  // CPU_ZERO and CPU_SET are not available in NDK r7, so disable
  // SetAffinity on Android for now.
@@ -49,7 +48,7 @@
  bool ThreadPosix::SetAffinity(const int* processor_numbers,
                                const unsigned int amount_of_processors) {
    if (!processor_numbers || (amount_of_processors == 0)) {
-@@ -317,7 +323,7 @@
+@@ -317,7 +321,7 @@
    event_->Set();
  
    if (set_thread_name_) {
