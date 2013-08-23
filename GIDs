@@ -259,5 +259,6 @@ kippo:*:969:
 colord:*:970:
 shibd:*:971:
 plex:*:972:
+boinc:*:973:
 nogroup:*:65533:
 nobody:*:65534:

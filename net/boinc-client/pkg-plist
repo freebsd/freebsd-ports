@@ -448,6 +448,3 @@ lib/libboinc_zip.so.7
 %%X11%%@dirrm share/boinc
 %%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sv_SE
-%%USER%%@unexec if [ -d "%%BOINC_CLIENT_HOME%%" ]; then echo "If you are deinstalling boinc-client completely, remove the \"%%BOINC_CLIENT_HOME%%\" directory."; fi
-%%USER%%@unexec if [ -d "%%BOINC_CLIENT_HOME%%" ]; then echo -n "Also, d"; else echo -n "D"; fi
-%%USER%%@unexec echo "on't forget to remove the BOINC client user \"%%BOINC_CLIENT_USER%%\"."
