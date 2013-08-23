@@ -8,4 +8,4 @@ In addition to the library and command-line demos, it has these tools:
  * rezip    - tool for recompressing Zip archives towards optimal compression
  * debzip2  - tool to decompress BZip2 compressed files (.bz2)
 
-WWW: http://unzip-ada.sourceforge.net
+WWW: http://unzip-ada.sourceforge.net/
