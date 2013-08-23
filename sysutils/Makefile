@@ -244,6 +244,7 @@
     SUBDIR += fileprune
     SUBDIR += fileschanged
     SUBDIR += filetype
+    SUBDIR += filewatcherd
     SUBDIR += finfo
     SUBDIR += flasher
     SUBDIR += flashrom

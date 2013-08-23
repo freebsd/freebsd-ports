@@ -1,0 +1,29 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: filewatcherd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable filewatcherd:
+#
+# filewatcherd_enable (bool):   Set it to "YES" to enable filewatcherd
+#                               Default is "NO".
+# filewatcherd_conf (path):     Set full path to config file.
+#                               Default is "%%PREFIX%%/etc/watchtab".
+
+. /etc/rc.subr
+
+name=filewatcherd
+rcvar=filewatcherd_enable
+
+load_rc_config $name
+
+: ${filewatcherd_enable:=NO}
+: ${filewatcherd_conf="%%PREFIX%%/etc/watchtab"}
+
+command=%%PREFIX%%/sbin/filewatcherd
+command_args="${filewatcherd_conf}"
+required_files=${filewatcherd_conf}
+
+run_rc_command "$1"

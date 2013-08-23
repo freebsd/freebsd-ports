@@ -1,0 +1,25 @@
+========================================================================
+filwatcherd configuration files were installed in the following directory:
+
+	%%ETCDIR%%
+
+Before starting the server or the client you need to perform the
+following steps:
+
+1) Copy the appropriate sample configuration file as follows:
+
+	cp %%ETCDIR%%/watchtab.sample %%ETCDIR%%/watchtab
+
+2) Edit filewatcherd's configuration file to suit your needs:
+
+	$EDITOR %%ETCDIR%%/watchtab
+
+3) Add the following line to your rc.conf:
+
+	filewatcherd_enable="YES"
+
+
+Then you can start filewatcherd by issuing the following command:
+
+	%%PREFIX%%/etc/rc.d/filewatcherd start
+========================================================================
