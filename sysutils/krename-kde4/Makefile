@@ -1,9 +1,4 @@
-# New ports collection makefile for:	krename
-# Date created:				11 May 2003
-# Whom:					Kirill Ponomarew <ponomarew@oberon.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	krename
 PORTVERSION=	4.0.9
@@ -21,8 +16,12 @@ LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
 LATEST_LINK=	${PORTNAME}-kde4
 
 USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake:outsource
 USE_KDE4=	kdeprefix kdelibs automoc4
 USE_QT4=	qmake_build moc_build rcc_build uic_build
+
+post-patch:
+	${REINPLACE_CMD} 's,FREETYPE_INCLUDE_DIR,FREETYPE_INCLUDE_DIR_freetype2,' \
+		${WRKSRC}/src/CMakeLists.txt
 
 .include <bsd.port.mk>
