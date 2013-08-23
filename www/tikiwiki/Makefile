@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	tikiwiki
-PORTVERSION=	10.2
+PORTVERSION=	11.0
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/Tiki_10.x_Sun/${PORTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/Tiki_11.x_Vega/${PORTVERSION}/
 DISTNAME=	tiki-${PORTVERSION}
 
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Powerful PHP based Wiki/CMS/Groupware
+
+LICENSE=	LGPL20
 
 USE_PHP=	gettext pcre posix session xml zlib
 WANT_PHP_WEB=	yes
