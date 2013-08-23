@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansel
-DISTVERSION=	3.0.0RC1
+DISTVERSION=	3.0.0
 CATEGORIES=	www pear graphics
 PKGNAMEPREFIX=	horde-
 

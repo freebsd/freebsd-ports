@@ -1,11 +1,7 @@
-# Ports collection makefile for:  pear-Horde_Db
-# Date created:			  7 July 2011
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	Horde_Db
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	databases www pear
 PKGNAMEPREFIX=	pear-
 
