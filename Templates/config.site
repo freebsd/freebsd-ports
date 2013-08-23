@@ -277,6 +277,8 @@
 : ${ac_cv_func_wcslen=yes}
 : ${ac_cv_func_wcsnlen=yes}
 : ${ac_cv_func_wcwidth=yes}
+: ${ac_cv_func_strlcpy=yes}
+: ${ac_cv_func_strlcat=yes}
 
 # non existing functions
 : ${ac_cv_func_yield=no}
