@@ -12,7 +12,7 @@
  #
  #
  EZFM_MAGIC=$(DEST_DIR)/lib/ezfm/ezfmMagic
-@@ -25,12 +28,13 @@
+@@ -25,12 +28,13 @@ BIN=$(DEST_DIR)/bin
  #
  #----------------------------------------------------------------------------------
  #
@@ -29,7 +29,7 @@
  
  SRC= action.c folder.c atoms.c clientMessage.c main.c icons.c items.c finfo.c \
       signal.c info.c infoBtn.c printer.c misc.c mbtnFile.c mbtnView.c mbtnHelp.c popup.c\
-@@ -45,10 +49,10 @@
+@@ -45,10 +49,10 @@ OBJECTS = $(SRC:.c=.o)
  all: ezfm  ezfmMagic
  
  ezfm: libfile.a $(OBJECTS)
@@ -42,16 +42,26 @@
  
  
  install: ezfm ezfmMagic ezfmExtension ezfmrc ezfmIcons
-@@ -62,7 +66,7 @@
+@@ -62,11 +66,11 @@ install: ezfm ezfmMagic ezfmExtension ez
  	cp ezfm $(BIN)
  
  libfile.a:
 -	(cd libfile; make libfile.a CC="gcc -O"; mv libfile.a ../ )
-+	(cd libfile; make libfile.a; mv libfile.a ../ )
++	$(MAKE) -C libfile libfile.a && mv libfile/libfile.a .
  	- ranlib libfile.a
  
  ezfmMagic:
-@@ -79,13 +83,13 @@
+-	(cd libfile/Magdir; make all)
++	$(MAKE) -C libfile/Magdir all
+ 
+ 
+ mbtnHelp.c: aboutEZFM.h
+@@ -75,17 +79,17 @@ mbtnHelp.c: aboutEZFM.h
+ 
+ clean:
+ 	$(RM)  libfile.a
+-	(cd libfile; make clean;)
++	$(MAKE) -C libfile clean
  	$(RM)  $(OBJECTS) ezfm
   
  .c.o:
