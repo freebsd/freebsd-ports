@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kissdx
-# Date created:				20. November 2007
-# Whom:					Simon I. Rigét
-#
+# Created by: Simon Riget <freebsd@paragi.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	kissdx
 PORTVERSION=	0.13.10a
@@ -12,45 +8,51 @@ CATEGORIES=	multimedia net
 MASTER_SITES=	http://paragi.dk/kiss/
 
 MAINTAINER=	freebsd@paragi.dk
-COMMENT=	A multimedia streaming server for KiSS/Linksys player
+COMMENT=	Multimedia streaming server for KiSS/Linksys player
 
-# Dependencies of other packeges
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		dvdread:${PORTSDIR}/multimedia/libdvdread
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 
 USES=		iconv
-
-# Man pages
-MAN1=		kissdx.1
-
-# RC start and stop service
-USE_RC_SUBR=	kissdx
-
-# set enviroment variables for port makefile
+USE_DOS2UNIX=	yes
 MAKE_ENV=	FreeBSD=defined
 
-# Convert CR/LF to LF in source files
-USE_DOS2UNIX=	yes
-
+MAN1=		kissdx.1
+USE_RC_SUBR=	kissdx
 SUB_FILES=	pkg-message
 
-# Remove files at uninstall (like pkg-plist)
-PLIST_FILES=	etc/kissdx.conf sbin/kissdx sbin/kissd-pretrigger sbin/kissd-posttrigger
+PLIST_FILES=	etc/kissdx.conf sbin/kissdx sbin/kissd-pretrigger \
+		sbin/kissd-posttrigger
+PORTDOCS=	README
+
+.include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|Linux|Unix|g ; s|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/kissdx.1
-	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/config.c
+	@${REINPLACE_CMD} -e 's|Linux|Unix| ; s|/etc/|${PREFIX}&|' \
+		${WRKSRC}/kissdx.1
+	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|' ${WRKSRC}/config.c
 	@${RM} ${WRKSRC}/kissdx.o
+# Fix parallel (-jX) builds: sanitize dependencies
+	@${REINPLACE_CMD} -e 's|^\.o :|kissdx: $$(OBJS)| ; \
+		/^all:/s| $$(OBJS)||' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/kissdx ${PREFIX}/sbin/kissdx
-	${INSTALL_SCRIPT} ${WRKSRC}/kissd-pretrigger ${PREFIX}/sbin/kissd-pretrigger
-	${INSTALL_SCRIPT} ${WRKSRC}/kissd-posttrigger ${PREFIX}/sbin/kissd-posttrigger
-	${INSTALL_DATA} ${WRKSRC}/kissdx.conf ${PREFIX}/etc/kissdx.conf
-	${INSTALL_MAN} ${WRKSRC}/kissdx.1 ${MANPREFIX}/man/man1/kissdx.1
+	${INSTALL_PROGRAM} ${WRKSRC}/kissdx ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/kissd-pretrigger ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/kissd-posttrigger ${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/kissdx.conf ${PREFIX}/etc
+	${INSTALL_MAN} ${WRKSRC}/kissdx.1 ${MANPREFIX}/man/man1
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 post-install:
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
