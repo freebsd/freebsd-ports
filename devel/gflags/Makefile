@@ -15,8 +15,8 @@ OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
-USES=	pathfix
 USE_LDCONFIG=	yes
+USES=		pathfix
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README README_windows.txt \
 		designstyle.css gflags.html
@@ -28,7 +28,7 @@ post-patch:
 		-e 's|^\(docdir = \).*|\1${DOCSDIR}|' \
 		-e 's|^\(pkgconfigdir = \).*|\1$$(DESTDIR)$$(prefix)/libdata/pkgconfig|' \
 			${WRKSRC}/Makefile.in
-.if empty(PORT_OPTIONS:MDOCS)
+.if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/^install-data-am: / s| install-dist_docDATA||' ${WRKSRC}/Makefile.in
 .endif
 
