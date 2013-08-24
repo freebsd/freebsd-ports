@@ -1,17 +1,15 @@
-SR is a programming language "Synchronization Resource", development
-in the University of Arizona.
+SR (Synchronizing Resources) is a language for writing concurrent programs,
+developed in the University of Arizona.  The main language constructs are
+resources and operations.  Resources encapsulate processes and variables
+they share; operations provide the primary mechanism for process interaction.
 
-It is designed for writing concurrent programs. You can run
-SR program in you local net (by installing SR daemons on startup
-on all your machines), and specify a number of SR processes in one 
-machine.
+SR provides a novel integration of the mechanisms for invoking and servicing
+operations.  Consequently, all local and remote procedure call, rendezvous,
+message passing, dynamic process creation, multicast, and semaphores are
+supported.  SR also supports shared global variables and operations.  Has a
+nice interface (X11 and xtango).
 
-SR has nice interface with X11 and xtango.
+SR is the predecessor to the MPD programming language, which provides the
+same capabilities using different syntax.
 
-Syntax of language  is pascal-like, for all references to documentation,
-web links and examples please look at its own README, which situated
-in /usr/local/share/doc/sr/notes/README.
-
-Enjoy.
-
-WWW: http://www.cs.arizona.edu/sr
+WWW: http://www.cs.arizona.edu/sr/
