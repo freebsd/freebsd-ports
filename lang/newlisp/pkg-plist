@@ -8,7 +8,7 @@ bin/newlispdoc
 %%PORTDOCS%%%%DOCSDIR%%/ExpressionEvaluation.html
 %%PORTDOCS%%%%DOCSDIR%%/MemoryManagement.html
 %%PORTDOCS%%%%DOCSDIR%%/manual_frame.html
-%%PORTDOCS%%%%DOCSDIR%%/newLISP-10.5.0-Release.html
+%%PORTDOCS%%%%DOCSDIR%%/newLISP-10.5.3-Release.html
 %%PORTDOCS%%%%DOCSDIR%%/newLISPdoc.html
 %%PORTDOCS%%%%DOCSDIR%%/newlisp_index.html
 %%PORTDOCS%%%%DOCSDIR%%/newlisp_manual.html
@@ -89,7 +89,6 @@ bin/newlispdoc
 %%DATADIR%%/modules/zlib.lsp
 %%DATADIR%%/util/httpd-conf.lsp
 %%DATADIR%%/util/link.lsp
-%%DATADIR%%/util/nanorc
 %%DATADIR%%/util/newlisp.jsf
 %%DATADIR%%/util/newlisp.vim
 %%DATADIR%%/util/syntax.cgi
