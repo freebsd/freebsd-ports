@@ -10,11 +10,12 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	X11 viewer for text files.  Useful as an add-on tool for other apps
+COMMENT=	X11-based viewer for text files
 
-MAKE_JOBS_UNSAFE=	yes
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
+MAKE_ARGS=	MAKE="${MAKE_CMD}"
+
 MAN1=		xless.1
 MANCOMPRESSED=	yes
 
