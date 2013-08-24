@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Config/Model/Tester.pm
+@dirrmtry %%SITE_PERL%%/Config/Model
+@dirrmtry %%SITE_PERL%%/Config
