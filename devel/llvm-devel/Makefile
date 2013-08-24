@@ -7,7 +7,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.4.r${SVN_REV}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -15,11 +15,6 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
-
-BUILD_DEPENDS+=	cmake:${PORTSDIR}/devel/cmake
-.if defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-.endif
 
 CONFLICTS=	llvm-2* llvm-3.[012]* llvm31-[3]*
 
@@ -37,14 +32,14 @@ LIBNAME=		libLLVM-${DISTVERSION:C/\.r[0-9]*//}svn.so
 
 CONFIGURE_ARGS+=	--enable-bindings=none
 CONFIGURE_ARGS+=	--enable-optimized
-CONFIGURE_ARGS+=	--program-suffix=${DISTVERSION:C/\.r[0-9]*//}svn
 
-OPTIONS_DEFINE=	ASSERTS DOCS LTOPLUGIN MANPAGES
+OPTIONS_DEFINE=	ASSERTS CMAKE DOCS LTOPLUGIN MANPAGES
 
 ASSERTS_DESC=	Enable assertions (thread unsafe)
+CMAKE_DESC=	Build cmake support files
 LTOPLUGIN_DESC=	Build LTO plugin (requires gold)
 
-OPTIONS_DEFAULT=	MANPAGES
+OPTIONS_DEFAULT=	CMAKE MANPAGES
 
 LLVM_RELEASE=	${PORTVERSION:C/\.r[0-9]*//}
 PLIST_SUB+=	LLVM_RELEASE=${LLVM_RELEASE}
@@ -55,6 +50,11 @@ PLIST_SUB+=	LLVM_RELEASE=${LLVM_RELEASE}
 CONFIGURE_ARGS+=	--enable-assertions
 .else
 CONFIGURE_ARGS+=	--disable-assertions
+.endif
+
+.if ${PORT_OPTIONS:MCMAKE}
+BUILD_DEPENDS+=	cmake:${PORTSDIR}/devel/cmake
+PORTDATA+=	cmake
 .endif
 
 .if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MMANPAGES}
@@ -126,12 +126,14 @@ post-patch:
 	${REINPLACE_CMD} -e 's|\(PROJ_mandir.*:=\).*$$|\1${MANPREFIX}/man|g' \
 	    ${WRKSRC}/Makefile.config.in
 
+.if ${PORT_OPTIONS:MCMAKE}
 post-configure:
 	${MKDIR} ${WRKDIR}/cmake
 	cd ${WRKDIR}/cmake && cmake -G "Unix Makefiles" ${WRKSRC}
 	${REINPLACE_CMD} -e 's|${WRKDIR}/cmake|${PREFIX}|' \
 	    -e 's|${WRKSRC}|${DATADIR}|' \
 	    ${WRKDIR}/cmake/share/llvm/cmake/LLVMConfig.cmake
+.endif
 
 post-build:
 .if ${PORT_OPTIONS:MMANPAGES}
@@ -143,16 +145,18 @@ post-build:
 
 post-install:
 	${MV} ${PREFIX}/lib/${LIBNAME} ${PREFIX}/lib/${LIBNAME}.0
-	${LN} -s ${LIBNAME}.0 ${PREFIX}/lib/${LIBNAME}
+	${LN} -sf ${LIBNAME}.0 ${PREFIX}/lib/${LIBNAME}
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/lit/lit.py ${PREFIX}/bin/lit
-	${LN} -s lit ${PREFIX}/bin/llvm-lit
+	${LN} -sf lit ${PREFIX}/bin/llvm-lit
 	${MKDIR} ${PYTHON_SITELIBDIR}/lit
 	${INSTALL_DATA} ${WRKSRC}/utils/lit/lit/*.py ${PYTHON_SITELIBDIR}/lit
 	${INSTALL_PROGRAM} ${WRKSRC}/Release/bin/FileCheck ${PREFIX}/bin/
+.if ${PORT_OPTIONS:MCMAKE}
 	${MKDIR} ${DATADIR}/cmake
 	${INSTALL_DATA} ${WRKSRC}/cmake/modules/*.cmake ${DATADIR}/cmake/
 	${INSTALL_DATA} ${WRKDIR}/cmake/share/llvm/cmake/*.cmake \
 	    ${DATADIR}/cmake/
+.endif
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/html
 	${FIND} ${WRKSRC}/docs/_build/html -type f | \
@@ -188,15 +192,13 @@ PLIST_FILE_LIST=	bin/FileCheck \
 			lib/libprofile_rt.so
 PLIST_DIR_LIST=		include/llvm-c \
 			include/llvm \
-			${PYTHON_SITELIBDIR:S;${PYTHONBASE}/;;}/lit \
-			${DATADIR_REL}
+			${PYTHON_SITELIBDIR:S;${PYTHONBASE}/;;}/lit
 build-plist:
 	${RM} -f ${PLIST}
 	cd ${PREFIX} && \
 	    (ls ${PLIST_FILE_LIST}; \
 	     ${FIND} ${PLIST_DIR_LIST} -type f -o -type l) | \
 	    ${SED} -e 's|${LLVM_RELEASE}|%%LLVM_RELEASE%%|' \
-	    -e 's|${DATADIR_REL}|%%DATADIR%%|' \
 	    -e 's|${PYTHON_SITELIBDIR:S;${PYTHONBASE}/;;}|%%PYTHON_SITELIBDIR%%|' | \
 	    ${SORT} >> ${PLIST}
 	${FIND} ${DOCSDIR} -type f | \

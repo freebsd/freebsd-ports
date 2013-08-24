@@ -1,17 +1,3 @@
-%%DATADIR%%/cmake/AddLLVM.cmake
-%%DATADIR%%/cmake/AddLLVMDefinitions.cmake
-%%DATADIR%%/cmake/CheckAtomic.cmake
-%%DATADIR%%/cmake/ChooseMSVCCRT.cmake
-%%DATADIR%%/cmake/GetHostTriple.cmake
-%%DATADIR%%/cmake/GetSVN.cmake
-%%DATADIR%%/cmake/HandleLLVMOptions.cmake
-%%DATADIR%%/cmake/LLVM-Config.cmake
-%%DATADIR%%/cmake/LLVMConfig.cmake
-%%DATADIR%%/cmake/LLVMConfigVersion.cmake
-%%DATADIR%%/cmake/LLVMParseArguments.cmake
-%%DATADIR%%/cmake/LLVMProcessSources.cmake
-%%DATADIR%%/cmake/TableGen.cmake
-%%DATADIR%%/cmake/VersionFromVCS.cmake
 %%PYTHON_SITELIBDIR%%/lit/LitConfig.py
 %%PYTHON_SITELIBDIR%%/lit/LitTestCase.py
 %%PYTHON_SITELIBDIR%%/lit/ProgressBar.py
@@ -950,8 +936,6 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/websupport.js
 %%PORTDOCS%%%%DOCSDIR%%/html/yaml2obj.html
 %%PORTDOCS%%%%DOCSDIR%%/html/yaml2obj.txt
-@dirrm share/llvm/cmake
-@dirrm share/llvm
 @dirrm include/llvm/Transforms/Utils
 @dirrm include/llvm/Transforms/IPO
 @dirrm include/llvm/Transforms
