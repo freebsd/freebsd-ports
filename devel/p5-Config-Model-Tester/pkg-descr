@@ -1,0 +1,5 @@
+Config::Model::Tester provides a way to test configuration models with tests
+files. This class was designed to tests several models and several tests cases
+per model.
+
+WWW: http://search.cpan.org/dist/Config-Model-Tester/

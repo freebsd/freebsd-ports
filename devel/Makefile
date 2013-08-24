@@ -1644,6 +1644,7 @@
     SUBDIR += p5-Config-MVP
     SUBDIR += p5-Config-MVP-Reader-INI
     SUBDIR += p5-Config-Model
+    SUBDIR += p5-Config-Model-Tester
     SUBDIR += p5-Config-MySQL
     SUBDIR += p5-Config-Objective
     SUBDIR += p5-Config-Options
