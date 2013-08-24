@@ -1,4 +1,4 @@
-# Created by:	b.f. <bf@FreeBSD.org>
+# Created by: b.f. <bf@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	fflas-ffpack
@@ -11,16 +11,12 @@ COMMENT=	A library for dense linear algebra over word-size finite fields
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS =	--with-gmp="${LOCALBASE}"
+CONFIGURE_ARGS=	--with-gmp="${LOCALBASE}"
 
-.if !defined(PACKAGE_BUILDING)
-OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
-.endif
-
-OPTIONS_DEFINE=	DOXYGEN OPTIMIZED_CFLAGS
+OPTIONS_DEFINE=		DOXYGEN OPTIMIZED_CFLAGS
 
 .include <bsd.port.options.mk>
 
@@ -31,7 +27,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	 --with-givaro="${LOCALBASE}"
-LIB_DEPENDS+=	givaro.3:${PORTSDIR}/math/givaro
+LIB_DEPENDS+=	libgivaro.so:${PORTSDIR}/math/givaro
 .else
 CONFIGURE_ARGS+=	--with-givaro=no
 .endif
@@ -41,25 +37,25 @@ WITH_BLAS?=	gsl
 
 .if ${WITH_BLAS} == "gotoblas"
 CONFIGURE_ARGS+=	--with-gotoblas2="${LOCALBASE}" --with-lapack=blas
-LIB_DEPENDS+=	goto2p:${PORTSDIR}/math/gotoblas
+LIB_DEPENDS+=	libgoto2p.so:${PORTSDIR}/math/gotoblas
 USE_FORTRAN=	yes
 .elif ${WITH_BLAS} == "atlas"
 CONFIGURE_ARGS+=	--with-cblas="${LOCALBASE}" --with-lapack=blas
-LIB_DEPENDS+=	cblas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libcblas.so:${PORTSDIR}/math/atlas
 USE_FORTRAN=	yes
 .elif ${WITH_BLAS} == "gsl"
 CONFIGURE_ARGS+=	--with-gsl="${LOCALBASE}"
-LIB_DEPENDS+=	gslcblas.0:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	libgslcblas.so:${PORTSDIR}/math/gsl
 .else
 IGNORE =	unknown value of WITH_BLAS: ${WITH_BLAS}
 .endif
 
 .if ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS +=	doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=		doxygen:${PORTSDIR}/devel/doxygen
 CONFIGURE_ARGS+=	--enable-doc --with-docdir="${DOCSDIR}"
 PLIST_SUB+=	DOXYGEN=""
 .else
-PLIST_SUB+=	DOXYGEN="@ccomment "
+PLIST_SUB+=	DOXYGEN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
@@ -102,7 +98,7 @@ post-install:
 
 .if defined(MAINTAINER_MODE)
 check regression-test test: build
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 	${MAKE_ARGS} check
 
 .endif
