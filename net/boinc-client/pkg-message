@@ -1,7 +1,8 @@
 -------------------------------------------------------------------
-The BOINC client is now installed.  You now need to register with
-and install one or more projects.
+The BOINC client is now installed.
 
-Refer to the BOINC web page at:
+For instructions, refer to the BOINC user manual at:
+	http://boinc.berkeley.edu/wiki/User_manual
+For complete information, refer to the BOINC web site at:
 	http://boinc.berkeley.edu/
 -------------------------------------------------------------------
