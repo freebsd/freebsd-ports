@@ -59,6 +59,7 @@ include/freeipmi/interpret/ipmi-interpret.h
 include/freeipmi/locate/ipmi-locate.h
 include/freeipmi/payload/ipmi-sol-payload.h
 include/freeipmi/record-format/ipmi-cipher-suite-record-format.h
+include/freeipmi/record-format/ipmi-fru-dimmspd-record-format.h
 include/freeipmi/record-format/ipmi-fru-information-record-format.h
 include/freeipmi/record-format/ipmi-fru-oem-record-format.h
 include/freeipmi/record-format/ipmi-platform-event-trap-record-format.h
@@ -86,6 +87,7 @@ include/freeipmi/spec/ipmi-fru-chassis-types-spec.h
 include/freeipmi/spec/ipmi-fru-language-codes-spec.h
 include/freeipmi/spec/ipmi-iana-enterprise-numbers-spec.h
 include/freeipmi/spec/ipmi-ipmb-lun-spec.h
+include/freeipmi/spec/ipmi-jedec-manufacturer-identification-code-spec.h
 include/freeipmi/spec/ipmi-lan-configuration-parameters-oem-spec.h
 include/freeipmi/spec/ipmi-lan-configuration-parameters-spec.h
 include/freeipmi/spec/ipmi-netfn-oem-spec.h
@@ -113,6 +115,7 @@ include/freeipmi/spec/ipmi-system-boot-option-parameters-spec.h
 include/freeipmi/spec/ipmi-system-info-parameters-oem-spec.h
 include/freeipmi/spec/ipmi-system-info-parameters-spec.h
 include/freeipmi/spec/ipmi-system-software-id-spec.h
+include/freeipmi/spec/ipmi-timestamp-spec.h
 include/freeipmi/templates/ipmi-bmc-watchdog-timer-cmds-templates.h
 include/freeipmi/templates/ipmi-chassis-cmds-templates.h
 include/freeipmi/templates/ipmi-cipher-suite-record-format-templates.h
@@ -120,6 +123,7 @@ include/freeipmi/templates/ipmi-dcmi-cmds-templates.h
 include/freeipmi/templates/ipmi-device-global-cmds-templates.h
 include/freeipmi/templates/ipmi-event-cmds-templates.h
 include/freeipmi/templates/ipmi-firmware-firewall-command-discovery-cmds-templates.h
+include/freeipmi/templates/ipmi-fru-dimmspd-record-format-templates.h
 include/freeipmi/templates/ipmi-fru-information-record-format-templates.h
 include/freeipmi/templates/ipmi-fru-inventory-device-cmds-templates.h
 include/freeipmi/templates/ipmi-ipmb-interface-templates.h
@@ -151,11 +155,13 @@ include/freeipmi/util/ipmi-error-dcmi-util.h
 include/freeipmi/util/ipmi-error-util.h
 include/freeipmi/util/ipmi-iana-enterprise-numbers-util.h
 include/freeipmi/util/ipmi-ipmb-util.h
+include/freeipmi/util/ipmi-jedec-manufacturer-identification-code-util.h
 include/freeipmi/util/ipmi-lan-util.h
 include/freeipmi/util/ipmi-outofband-util.h
 include/freeipmi/util/ipmi-rmcpplus-util.h
 include/freeipmi/util/ipmi-sensor-and-event-code-tables-util.h
 include/freeipmi/util/ipmi-sensor-util.h
+include/freeipmi/util/ipmi-timestamp-util.h
 include/freeipmi/util/ipmi-util.h
 include/freeipmi/util/rmcp-util.h
 include/ipmi_monitoring.h
@@ -166,7 +172,7 @@ include/ipmidetect.h
 lib/libfreeipmi.a
 lib/libfreeipmi.la
 lib/libfreeipmi.so
-lib/libfreeipmi.so.14
+lib/libfreeipmi.so.15
 lib/libipmiconsole.a
 lib/libipmiconsole.la
 lib/libipmiconsole.so
