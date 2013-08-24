@@ -1,5 +1,5 @@
 The following line needs to be added to /etc/rc.conf in order to start the
-deamon at boot time.
+daemon at boot time.
 
       kissdx_enable="YES" (or kissdx="YES" for NetBSD)
 	
