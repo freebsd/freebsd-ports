@@ -1,4 +1,4 @@
-# Created by: scott
+# Created by: Scott Johnston <scott@accom.com>
 # $FreeBSD$
 
 PORTNAME=	ivtools
@@ -11,17 +11,15 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Drawing editors derived from idraw
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 
-MAKE_JOBS_UNSAFE=	yes
 USES=		imake:env gmake
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS=	--with-tiff=${PREFIX}
 CONFIGURE_ENV=	IMAKECPP=${CPP}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
-MAKE_ARGS=	ARCH=FREEBSD
+MAKE_ARGS=	ARCH="${OPSYS:U}" MAKE="${MAKE_CMD}"
 USE_XORG=	x11 xaw ice xext
 
 MANCOMPRESSED=	no
