@@ -56,16 +56,6 @@ NO_NET_INFO_DESC=	Do not send host address and name to servers
 
 .include <bsd.port.options.mk>
 
-.if defined(BOINC_USER) || defined(BOINC_GROUP) || defined(BOINC_HOME)
-pre-extract:
-	@${ECHO_MSG}
-	@${ECHO_MSG} "===> The following variables were renamed:"
-	@${ECHO_MSG} "===>     BOINC_USER BOINC_GROUP BOINC_HOME"
-	@${ECHO_MSG} "===> Use new names of similar variables."
-	@${ECHO_MSG}
-	@exit 1
-.endif
-
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not install on ia64, powerpc, or sparc64
 .endif
