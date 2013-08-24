@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rabbitmq
-PORTVERSION=	3.0.4
+PORTVERSION=	3.1.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -17,9 +17,10 @@ BUILD_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
 		zip:${PORTSDIR}/archivers/zip
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
-USE_GMAKE=	yes
-USE_PYTHON=	yes
+USES=		gmake shebangfix
+USE_PYTHON_BUILD=yes
 USE_RC_SUBR=	rabbitmq
+SHEBANG_FILES=	plugins-src/rabbitmq-amqp1.0/codegen.py
 
 USERS=	rabbitmq
 GROUPS=	rabbitmq
@@ -39,6 +40,13 @@ post-patch:
 		${SCRIPTS_DIR}/rabbitmq-server ${SCRIPTS_DIR}/rabbitmqctl \
 		${SCRIPTS_DIR}/rabbitmq-env ${SCRIPTS_DIR}/rabbitmq-plugins \
 		${SCRIPTS_DIR}/rabbitmq-defaults
+	@${REINPLACE_CMD} -e 's|VERSION=0.0.0|VERSION=${PORTVERSION}|g' \
+		${WRKSRC}/plugins-src/rabbitmq-erlang-client/Makefile \
+		${WRKSRC}/plugins-src/release.mk
+	@${REINPLACE_CMD} -e 's|VERSION:=0.0.0|VERSION:=${PORTVERSION}|g' \
+		${WRKSRC}/plugins-src/Makefile
+	@${REINPLACE_CMD} -e 's|VERSION?=0.0.0|VERSION?=${PORTVERSION}|g' \
+		${WRKSRC}/Makefile
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
 pre-install:
