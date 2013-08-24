@@ -1,4 +1,6 @@
 bin/powermanga
+share/applications/powermanga.desktop
+share/pixmaps/powermanga.xpm
 %%DATADIR%%/data/curves/bezier_curve_000.bin
 %%DATADIR%%/data/curves/bezier_curve_001.bin
 %%DATADIR%%/data/curves/bezier_curve_002.bin
@@ -382,7 +384,6 @@ bin/powermanga
 %%DATADIR%%/sounds/sound_yellow_gem.wav
 %%DATADIR%%/texts/about_en.txt
 %%DATADIR%%/texts/about_fr.txt
-%%DATADIR%%/texts/config.ini
 %%DATADIR%%/texts/order_en.txt
 %%DATADIR%%/texts/order_fr.txt
 %%DATADIR%%/texts/scroll_en.txt
@@ -407,3 +408,4 @@ bin/powermanga
 @dirrm %%DATADIR%%/data/curves
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
