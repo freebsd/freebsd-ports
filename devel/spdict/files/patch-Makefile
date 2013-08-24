@@ -12,3 +12,12 @@
  SOFLAGS = -shared
  LDFLAGS = -lstdc++ -lpthread
  
+@@ -48,6 +48,8 @@ testshm: testshm.o spdictshm.o
+ testshmcache: testshmcache.o spdictshm.o spdictshmhashmap.o spdictshmcache.o
+ 	$(LINKER) $(LDFLAGS) $^ -L. -lspdict -o $@
+ 
++testdict testcache testshm testshmcache: libspdict.so
++
+ dist: clean spdict-$(version).src.tar.gz
+ 
+ spdict-$(version).src.tar.gz:
