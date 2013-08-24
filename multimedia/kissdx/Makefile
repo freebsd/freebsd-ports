@@ -18,6 +18,7 @@ LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
 
 USES=		iconv
 USE_DOS2UNIX=	yes
+USE_GCC=	any			# XXX: uses nested functions
 MAKE_ENV=	FreeBSD=defined
 
 MAN1=		kissdx.1
@@ -33,10 +34,10 @@ PORTDOCS=	README
 post-patch:
 	@${REINPLACE_CMD} -e 's|Linux|Unix| ; s|/etc/|${PREFIX}&|' \
 		${WRKSRC}/kissdx.1
-	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|' ${WRKSRC}/config.c
+	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}&|' ${WRKSRC}/config.c
 	@${RM} ${WRKSRC}/kissdx.o
 # Fix parallel (-jX) builds: sanitize dependencies
-	@${REINPLACE_CMD} -e 's|^\.o :|kissdx: $$(OBJS)| ; \
+	@${REINPLACE_CMD} -e 's|^\.o :|${PORTNAME}: $$(OBJS)| ; \
 		/^all:/s| $$(OBJS)||' ${WRKSRC}/Makefile
 
 do-install:
