@@ -10,3 +10,12 @@
  
  
             SRCS = help.c init.c popup.c util.c callbacks.c window.c main.c \
+@@ -24,7 +25,7 @@ LOCAL_LIBRARIES = -Lregexp -lregexp XawC
+ #define PassCDebugFlags
+ #endif
+ 
+-MakeSubdirs($(SUBDIRS))
++NamedMakeSubdirs(./regexp/libregexp.a,$(SUBDIRS))
+ ComplexProgramTarget(xless)
+ 
+ InstallNonExec(xless.help, $(LIBDIR))
