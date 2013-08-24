@@ -6,7 +6,7 @@ PORTVERSION=	4.6.4
 PORTEPOCH=	1
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
-MASTER_SITE_SUBDIR=	releases/gcc-${VERSIONSTRING}
+MASTER_SITE_SUBDIR=	releases/gcc-${DISTVERSION}
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.6
@@ -23,17 +23,16 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 
 CONFLICTS=	gcc-4.6.[123]*
 
-# VERSIONSTRING relates to downloads, GCC_VERSION and SUFFIX to names
+# DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.
-VERSIONSTRING=	${PORTVERSION}
+DISTVERSION=	${PORTVERSION}
 GCC_VERSION=	${PORTVERSION:C/(.+)\.[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
 ONLY_FOR_ARCHS=	amd64 i386 ia64 powerpc sparc64
+USES=		bison gmake iconv
 USE_BINUTILS=	yes
-USES=		bison iconv
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 
 PATCH_WRKSRC=	${SRCDIR}
@@ -55,7 +54,7 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran
-SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
+SRCDIR=		${WRKDIR}/gcc-${DISTVERSION}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
