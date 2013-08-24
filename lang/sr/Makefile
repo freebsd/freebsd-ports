@@ -10,7 +10,7 @@ DISTNAME=	sr${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Parallel language (Synchronization Resources)
+COMMENT=	Parallel language from the University of Arizona
 
 USES=		gmake	# required to support parallel (-jX) builds
 HAS_CONFIGURE=	yes
