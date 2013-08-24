@@ -1,0 +1,14 @@
+--- configure.ac.orig	2012-08-26 19:44:25.000000000 +0400
++++ configure.ac	2013-08-23 23:16:37.792851553 +0400
+@@ -52,9 +52,9 @@
+   dnl If defined [Ctrl] + [V], [Ctrl] + [P], [Ctrl] + [B] are available
+   AC_DEFINE(UNDER_DEVELOPMENT,  1, Define to enable development version)
+   AC_DEFINE(USE_MALLOC_WRAPPER, 1, Define to use a malloc wrapper)
+-  CFLAGS="-Wall -Werror -pedantic -Wextra -std=gnu99 -g"
++  CFLAGS="$CFLAGS -Wall -Werror -pedantic -Wextra -std=gnu99 -g"
+ else
+-  CFLAGS="-O3 -Werror -Wall -pedantic -Wextra -std=gnu99"
++  CFLAGS="$CFLAGS -O3 -Werror -Wall -pedantic -Wextra -std=gnu99"
+ fi
+ 
+ dnl  Check for SDL_mixer
