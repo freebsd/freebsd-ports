@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	newlisp
-PORTVERSION=	10.5.0
+PORTVERSION=	10.5.3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.newlisp.org/downloads/
 EXTRACT_SUFX=	.tgz
@@ -136,7 +136,6 @@ do-install:
 			${WRKSRC}/util/link.lsp \
 			${WRKSRC}/util/httpd-conf.lsp \
 			${WRKSRC}/util/newlisp.jsf \
-			${WRKSRC}/util/nanorc \
 			${DATADIR}/util
 
 	@${MKDIR} ${DATADIR}/modules
