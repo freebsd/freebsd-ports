@@ -14,7 +14,7 @@
 # Overridable defaults:
 # NCURSES_PORT=	devel/ncurses
 #
-# The makefile sets this variables:
+# The makefile sets the following variables:
 # NCURSESBASE		- "/usr" or ${LOCALBASE}
 # NCURSESLIB		- path to the libs
 # NCURSESINC		- path to the matching includes
