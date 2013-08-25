@@ -1,4 +1,4 @@
-# Created by: adam
+# Created by: Adam David <adam@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	procmail
@@ -17,10 +17,7 @@ MASTER_SITES=	ftp://ftp.ucsb.edu/pub/mirrors/procmail/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Local mail delivery agent
 
-OPTIONS_SET=	DOCS EXAMPLES
-
 INSTALL_TARGET=	install-suid install.man
-MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		formail.1 lockfile.1 procmail.1
 MAN5=		procmailex.5 procmailrc.5 procmailsc.5
@@ -29,19 +26,24 @@ PORTDOCS=	FAQ FEATURES HISTORY KNOWN_BUGS README
 PORTEXAMPLES=	1procmailrc 1rmail 2procmailrc 2rmail 3procmailrc 3rmail \
 		advanced dirname forward local_procmail_lmtp.m4 mailstat
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/config.h
+# Allow parallel builds (-jX) to work
+	@${FIND} ${WRKSRC} -name 'Makefile*' | ${XARGS} ${REINPLACE_CMD} \
+		-E 's|cd (.+); (\$$\(MAKE\))|\2 -C \1|'
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/
-	cd ${WRKSRC}/examples/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}/
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
