@@ -10,7 +10,6 @@ MAINTAINER=	yasu@utahime.org
 COMMENT=	Servers for accessing CD-ROM books via TCP/IP
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	eb:${PORTSDIR}/japanese/eb
 
