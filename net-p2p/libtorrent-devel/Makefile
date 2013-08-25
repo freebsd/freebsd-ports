@@ -3,7 +3,7 @@
 
 PORTNAME=	libtorrent-devel
 PORTVERSION=	0.13.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 DISTNAME=	${PORTNAME:S/-devel//}-${PORTVERSION}

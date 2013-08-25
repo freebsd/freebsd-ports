@@ -11,8 +11,8 @@ DISTNAME=	${PORTNAME:S/-devel//}-${PORTVERSION}
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	BitTorrent Client written in C++ (development version)
 
-BUILD_DEPENDS=	libtorrent-devel=0.13.3:${PORTSDIR}/net-p2p/libtorrent-devel
-RUN_DEPENDS=	libtorrent-devel=0.13.3:${PORTSDIR}/net-p2p/libtorrent-devel
+BUILD_DEPENDS=	libtorrent-devel=0.13.3_1:${PORTSDIR}/net-p2p/libtorrent-devel
+RUN_DEPENDS=	libtorrent-devel=0.13.3_1:${PORTSDIR}/net-p2p/libtorrent-devel
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 CONFLICTS=	rtorrent-[0-9]*
