@@ -3,7 +3,7 @@
 
 PORTNAME=	clementine
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-player
@@ -35,10 +35,11 @@ USE_GSTREAMER=	gio ogg mp3 flac soup vorbis
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS_BUILD=	qt-3.*
 
-CMAKE_ARGS+=	-DCMAKE_LIBRARY_PATH:PATH="${LOCALBASE}/lib:${PREFIX}/lib"
+CMAKE_ARGS+=	-DCMAKE_LIBRARY_PATH:PATH="${LOCALBASE}/lib:${PREFIX}/lib" \
+		-DENABLE_IMOBILEDEVICE=OFF
 
 OPTIONS_DEFINE=		AUDIOCD BREAKPAD DEVICEKIT GIO GOOGLE_DRIVE GPOD \
-			IMOBILEDEVICE LASTFM MTP SPOTIFY VISUALISATION WIIMOTEDEV
+			LASTFM MTP SPOTIFY VISUALISATION WIIMOTEDEV
 
 AUDIOCD_DESC=		Devices: Audio CD support
 BREAKPAD_DESC=		Crash reporting
@@ -46,7 +47,6 @@ DEVICEKIT_DESC=		Devices: DeviceKit backend
 GIO_DESC=		Devices: GIO device backend
 GOOGLE_DRIVE_DESC=	Google Drive support
 GPOD_DESC=		iPod support
-IMOBILEDEVICE_DESC=	Devices: iPod Touch, iPhone, iPad support
 LASTFM_DESC=		Support Last.fm service (requires ruby)
 MTP_DESC=		MTP device support
 SPOTIFY_DESC=		Support for Spotify service
@@ -96,15 +96,6 @@ CMAKE_ARGS+=	-DENABLE_LIBGPOD=ON
 LIB_DEPENDS+=	gpod:${PORTSDIR}/audio/libgpod
 .else
 CMAKE_ARGS+=	-DENABLE_LIBGPOD=OFF
-.endif
-
-.if ${PORT_OPTIONS:MIMOBILEDEVICE}
-CMAKE_ARGS+=	-DENABLE_IMOBILEDEVICE=ON
-LIB_DEPENDS+=	imobiledevice:${PORTSDIR}/comms/libimobiledevice \
-		plist:${PORTSDIR}/devel/libplist \
-		usbmuxd:${PORTSDIR}/comms/usbmuxd
-.else
-CMAKE_ARGS+=	-DENABLE_IMOBILEDEVICE=OFF
 .endif
 
 .if ${PORT_OPTIONS:MLASTFM}
