@@ -131,17 +131,17 @@ bin/asciidoc.py
 %%ETCDIR%%/wordpress.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/wordpress.conf ] ; then cp -p %D/%F %B/wordpress.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/xhtml11.conf.sample %D/%%ETCDIR%%/xhtml11.conf; then rm -f %D/%%ETCDIR%%/xhtml11.conf; fi
-%%ETCDIR%%/xhtml11.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/xhtml11.conf ] ; then cp -p %D/%F %B/xhtml11.conf; fi
+%%ETCDIR%%/xhtml11.conf.sample
 @unexec if cmp -s %D/%%ETCDIR%%/xhtml11-quirks.conf.sample %D/%%ETCDIR%%/xhtml11-quirks.conf; then rm -f %D/%%ETCDIR%%/xhtml11-quirks.conf; fi
 %%ETCDIR%%/xhtml11-quirks.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/xhtml11-quirks.conf ] ; then cp -p %D/%F %B/xhtml11-quirks.conf; fi
-share/vim/vimfiles/ftdetect/asciidoc_filetype.vim
-share/vim/vimfiles/syntax/asciidoc.vim
-@dirrmtry share/vim/vimfiles/syntax
-@dirrmtry share/vim/vimfiles/ftdetect
-@dirrmtry share/vim/vimfiles
-@dirrmtry share/vim
+%%VIM%%%%VIM_DATADIR%%share/vim/ftdetect/asciidoc_filetype.vim
+%%VIM%%%%VIM_DATADIR%%share/vim/syntax/asciidoc.vim
+%%VIM%%@dirrmtry share/vim/%%VIM_DATADIR%%/syntax
+%%VIM%%@dirrmtry share/vim/%%VIM_DATADIR%%/ftdetect
+%%VIM%%@dirrmtry share/vim/%%VIM_DATADIR%%
+%%VIM%%@dirrmtry share/vim
 @dirrm %%ETCDIR%%/themes/volnitsky
 @dirrm %%ETCDIR%%/themes/flask
 @dirrm %%ETCDIR%%/themes
