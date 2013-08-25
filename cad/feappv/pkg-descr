@@ -5,9 +5,9 @@ references:
 The Finite Element Method, 6th ed., Vols. 1 and 2, by O.C. Zienkiewicz and
 R.L. Taylor, Elsevier, Oxford, 2005.
 
-FEAPpv is designed to be compatible for compilation in UNIX/LINUX and 
+FEAPpv is designed to be compatible for compilation in Unix/Linux and
 Windows PC environments.
 
-WWW:  http://www.ce.berkeley.edu/projects/feap/feappv/
-
 No support on use of the program will be provided.
+
+WWW: http://www.ce.berkeley.edu/projects/feap/feappv/
