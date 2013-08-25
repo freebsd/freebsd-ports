@@ -3,6 +3,7 @@
 
 PORTNAME=	Mail-Box
 PORTVERSION=	2.109
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MARKOV
@@ -15,6 +16,7 @@ COMMON_DEPENDS=	\
 	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
 	p5-MIME-Types>=0:${PORTSDIR}/mail/p5-MIME-Types \
 	p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
+	p5-Devel-GlobalDestruction>=0.09:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
 	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
 	p5-File-Remove>=0.20:${PORTSDIR}/devel/p5-File-Remove \
 	p5-HTML-Format>=2.01:${PORTSDIR}/textproc/p5-HTML-Format \
