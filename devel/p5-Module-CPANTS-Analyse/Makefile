@@ -2,32 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	Module-CPANTS-Analyse
-PORTVERSION=	0.87
+PORTVERSION=	0.90.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate Kwalitee ratings for a distribution
 
-BUILD_DEPENDS=	p5-Archive-Any>=0.06:${PORTSDIR}/archivers/p5-Archive-Any \
+BUILD_DEPENDS=	p5-Archive-Any-Lite>=0.06:${PORTSDIR}/archivers/p5-Archive-Any-Lite \
 		p5-Array-Diff>=0.04:${PORTSDIR}/misc/p5-Array-Diff \
 		p5-CPAN-DistnameInfo>=0.06:${PORTSDIR}/devel/p5-CPAN-DistnameInfo \
+		p5-CPAN-Meta>=2.131490:${PORTSDIR}/devel/p5-CPAN-Meta \
+		p5-CPAN-Meta-YAML>=0.008:${PORTSDIR}/devel/p5-CPAN-Meta-YAML \
 		p5-Class-Accessor>=0.19:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-File-Find-Rule>=0:${PORTSDIR}/devel/p5-File-Find-Rule \
-		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
-		p5-File-chdir>=0:${PORTSDIR}/devel/p5-File-chdir \
+		p5-File-Find-Rule-VCS>=0:${PORTSDIR}/devel/p5-File-Find-Rule-VCS \
 		p5-IO-Capture>=0.05:${PORTSDIR}/devel/p5-IO-Capture \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Module-ExtractUse>=0.18:${PORTSDIR}/devel/p5-Module-ExtractUse \
-		p5-Module-Signature>=0:${PORTSDIR}/security/p5-Module-Signature \
-		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
+		p5-Module-ExtractUse>=0.30:${PORTSDIR}/devel/p5-Module-ExtractUse \
 		p5-Set-Scalar>=0:${PORTSDIR}/devel/p5-Set-Scalar \
 		p5-Software-License>=0.003000:${PORTSDIR}/misc/p5-Software-License \
-		p5-Test-CPAN-Meta-YAML>=0:${PORTSDIR}/devel/p5-Test-CPAN-Meta-YAML \
-		p5-Text-CSV_XS>=0.45:${PORTSDIR}/textproc/p5-Text-CSV_XS \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings \
+		p5-Test-Warn>=0.11:${PORTSDIR}/devel/p5-Test-Warn \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Warn>=0.11:${PORTSDIR}/devel/p5-Test-Warn
