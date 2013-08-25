@@ -18,12 +18,10 @@ NO_WRKSUBDIR=	yes
 MAN1=		scr2png.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/scr2png
+MAKE_ARGS=	BINDIR=${PREFIX}/bin SHAREDIR=${PREFIX}
 
-post-extract:
+pre-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|<gd/gd\.h>|<gd.h>|' ${WRKSRC}/scr2png.c
-
-do-install:
-	@cd ${WRKSRC}; ${MAKE} BINDIR=${PREFIX}/bin SHAREDIR=${PREFIX} install
 
 .include <bsd.port.mk>
