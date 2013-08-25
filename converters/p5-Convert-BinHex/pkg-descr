@@ -1,4 +1,6 @@
-Convert::BinHex - extract data from Macintosh BinHex files
+BinHex is a format used by Macintosh for transporting Mac files safely through
+electronic mail, as short-lined, 7-bit, semi-compressed data streams.
+Convert::BinHex provides a means of converting those data streams back into into
+binary data.
 
-Author:	Paul J. Schinder (NASA/GSFC) mostly, though Eryq can't seem to keep
-his grubby paws off anything...
+WWW: http://search.cpan.org/dist/Convert-BinHex/
