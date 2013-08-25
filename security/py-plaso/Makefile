@@ -3,6 +3,7 @@
 
 PORTNAME=	plaso
 DISTVERSION=	1.0.1alpha
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +24,7 @@ RUN_DEPENDS=	hachoir-core>=0:${PORTSDIR}/devel/hachoir-core \
 		libmsiecf>=a:${PORTSDIR}/devel/libmsiecf \
 		libregf>=a:${PORTSDIR}/devel/libregf \
 		libvshadow>=0:${PORTSDIR}/devel/libvshadow \
-		ipython${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/devel/ipython \
+		${PYTHON_PKGNAMEPREFIX}ipython>=0:${PORTSDIR}/devel/ipython \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=0:${PORTSDIR}/devel/py-protobuf \
 		${PYTHON_PKGNAMEPREFIX}pytsk>=0:${PORTSDIR}/sysutils/py-pytsk \
