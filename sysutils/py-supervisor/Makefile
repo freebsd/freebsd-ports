@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	supervisor
-PORTVERSION=	3.0b1
+PORTVERSION=	3.0
+PORTEPOCH=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -42,7 +43,7 @@ post-install:
 	[ -d ${PIDDIR} ] || ${MKDIR} ${PIDDIR}
 	${INSTALL_DATA} ${FILESDIR}/supervisord.conf.sample ${PREFIX}/etc
 	[ -f ${PREFIX}/etc/supervisord.conf ] || ${CP} -p ${PREFIX}/etc/supervisord.conf.sample ${PREFIX}/etc/supervisord.conf
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/

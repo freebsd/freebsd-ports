@@ -318,6 +318,7 @@ etc/supervisord.conf.sample
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/ui/images/button_refresh.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/ui/images/button_restart.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/ui/images/button_stop.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/ui/images/icon.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/ui/images/rule.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/ui/images/state0.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/ui/images/state1.gif
