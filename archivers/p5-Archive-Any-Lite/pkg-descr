@@ -1,0 +1,7 @@
+Archive::Any::Lite is a fork of Archive::Any. The main difference is this works
+properly even when you fork(), and may require less memory to extract a tarball.
+On the other hand, this isn't pluggable (this only supports file formats used in
+the CPAN toolchains), and this doesn't check mime types (at least as of this
+writing).
+
+WWW: http://search.cpan.org/dist/Archive-Any-Lite/
