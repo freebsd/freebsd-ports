@@ -3,7 +3,7 @@
 # $FreeBSD$
 
 PORTNAME=	phoronix-test-suite
-PORTVERSION=	4.6.1
+PORTVERSION=	4.8.1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.phoronix-test-suite.com/releases/
 
