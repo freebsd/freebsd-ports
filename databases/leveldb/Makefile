@@ -39,11 +39,11 @@ SNAPPY=		0
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/build_detect_platform
-.if empty(PORT_OPTIONS:MGPERFTOOLS)
+	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|' ${WRKSRC}/build_detect_platform
+.if !${PORT_OPTIONS:MGPERFTOOLS}
 	@${REINPLACE_CMD} -e 's| -ltcmalloc||' ${WRKSRC}/build_detect_platform
 .endif
-.if empty(PORT_OPTIONS:MSNAPPY)
+.if !${PORT_OPTIONS:MSNAPPY}
 	@${REINPLACE_CMD} -e 's| -DSNAPPY||; s| -lsnappy||' ${WRKSRC}/build_detect_platform
 .endif
 
