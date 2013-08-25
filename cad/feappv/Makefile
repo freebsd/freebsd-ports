@@ -1,45 +1,37 @@
-# New ports collection makefile for:	FEAPpv
-# Date created:		29 Feb 2006
-# Whom:			Pedro F. Giffuni
-#
+# Created by: Pedro F. Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	feappv
 PORTVERSION=	3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad science
 MASTER_SITES=	http://www.ce.berkeley.edu/projects/feap/feappv/
-DISTFILES=	${PORTNAME}${PORTVERSION:S/.//}${EXTRACT_SUFX} ${PDF_MANUAL}
+DISTFILES=	${PORTNAME}${PORTVERSION:S/.//}${EXTRACT_SUFX} ${PORTDOCS}
 DIST_SUBDIR=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_ONLY=	${PORTNAME}${PORTVERSION:S/.//}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Finite Element Analysis Program "personal version"
+MAINTAINER=	mexas@bris.ac.uk
+COMMENT=	Finite element analysis program (personal version)
 
-OPTIONS_DEFINE=	DOCS
-
-WRKSRC=		${WRKDIR}/ver${PORTVERSION:S/.//}
-
+USES=		gmake
 USE_ZIP=	yes
 USE_XORG=	x11
 USE_FORTRAN=	yes
-USE_GMAKE=	yes
 MAKEFILE=	makefile
 MAKE_ENV=	FEAPPVHOME3_1="${WRKSRC}"
 ALL_TARGET=	install
 
+WRKSRC=		${WRKDIR}/ver${PORTVERSION:S/.//}
+
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lm
 
-PORTDOCS=	*
-PLIST_FILES=	bin/feappv lib/Feappv_gnu.a
+PLIST_FILES=	bin/feappv lib/libfeappv.a
+PORTDOCS=	manual.pdf
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-PDF_MANUAL=	manual.pdf
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -54,10 +46,10 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/main/feappv ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/Feappv_gnu.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libfeappv.a ${PREFIX}/lib
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manual.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
