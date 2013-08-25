@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	ipython
-PORTVERSION=	0.13.2
+PORTVERSION=	1.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
-PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	An enhanced Interactive Python shell
@@ -35,16 +35,17 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-
 .endif
 
 .if ${PORT_OPTIONS:MHTML_NOTEBOOK}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tornado>=2.0:${PORTSDIR}/www/py-tornado
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tornado>=2.0:${PORTSDIR}/www/py-tornado \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:${PORTSDIR}/devel/py-Jinja2
 .endif
 
-.if ${PORT_OPTIONS:MZMQ}
+.if ${PORT_OPTIONS:MZMQ} || ${PORT_OPTIONS:MHTML_NOTEBOOK}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.4:${PORTSDIR}/devel/py-pyzmq
 .endif
 
-post-patch:
-.if ! ${PORT_OPTIONS:MEXAMPLES}
-	${REINPLACE_CMD} -e "s# + example_files##g" ${WRKSRC}/setupbase.py
+post-install:
+.if ${PORT_OPTIONS:MEXAMPLES}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -9,6 +9,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/__main__.py
+%%PYTHON_SITELIBDIR%%/IPython/__main__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/__main__.pyo
 %%PYTHON_SITELIBDIR%%/IPython/config/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/config/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/config/__init__.pyo
@@ -50,6 +53,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/config/tests/test_loader.py
 %%PYTHON_SITELIBDIR%%/IPython/config/tests/test_loader.pyc
 %%PYTHON_SITELIBDIR%%/IPython/config/tests/test_loader.pyo
+%%PYTHON_SITELIBDIR%%/IPython/consoleapp.py
+%%PYTHON_SITELIBDIR%%/IPython/consoleapp.pyc
+%%PYTHON_SITELIBDIR%%/IPython/consoleapp.pyo
 %%PYTHON_SITELIBDIR%%/IPython/core/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/core/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/__init__.pyo
@@ -107,21 +113,27 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/core/formatters.py
 %%PYTHON_SITELIBDIR%%/IPython/core/formatters.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/formatters.pyo
+%%PYTHON_SITELIBDIR%%/IPython/core/getipython.py
+%%PYTHON_SITELIBDIR%%/IPython/core/getipython.pyc
+%%PYTHON_SITELIBDIR%%/IPython/core/getipython.pyo
 %%PYTHON_SITELIBDIR%%/IPython/core/history.py
 %%PYTHON_SITELIBDIR%%/IPython/core/history.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/history.pyo
+%%PYTHON_SITELIBDIR%%/IPython/core/historyapp.py
+%%PYTHON_SITELIBDIR%%/IPython/core/historyapp.pyc
+%%PYTHON_SITELIBDIR%%/IPython/core/historyapp.pyo
 %%PYTHON_SITELIBDIR%%/IPython/core/hooks.py
 %%PYTHON_SITELIBDIR%%/IPython/core/hooks.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/hooks.pyo
 %%PYTHON_SITELIBDIR%%/IPython/core/inputsplitter.py
 %%PYTHON_SITELIBDIR%%/IPython/core/inputsplitter.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/inputsplitter.pyo
+%%PYTHON_SITELIBDIR%%/IPython/core/inputtransformer.py
+%%PYTHON_SITELIBDIR%%/IPython/core/inputtransformer.pyc
+%%PYTHON_SITELIBDIR%%/IPython/core/inputtransformer.pyo
 %%PYTHON_SITELIBDIR%%/IPython/core/interactiveshell.py
 %%PYTHON_SITELIBDIR%%/IPython/core/interactiveshell.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/interactiveshell.pyo
-%%PYTHON_SITELIBDIR%%/IPython/core/ipapi.py
-%%PYTHON_SITELIBDIR%%/IPython/core/ipapi.pyc
-%%PYTHON_SITELIBDIR%%/IPython/core/ipapi.pyo
 %%PYTHON_SITELIBDIR%%/IPython/core/logger.py
 %%PYTHON_SITELIBDIR%%/IPython/core/logger.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/logger.pyo
@@ -152,6 +164,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/core/magics/deprecated.py
 %%PYTHON_SITELIBDIR%%/IPython/core/magics/deprecated.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/magics/deprecated.pyo
+%%PYTHON_SITELIBDIR%%/IPython/core/magics/display.py
+%%PYTHON_SITELIBDIR%%/IPython/core/magics/display.pyc
+%%PYTHON_SITELIBDIR%%/IPython/core/magics/display.pyo
 %%PYTHON_SITELIBDIR%%/IPython/core/magics/execution.py
 %%PYTHON_SITELIBDIR%%/IPython/core/magics/execution.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/magics/execution.pyo
@@ -188,9 +203,6 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/core/payloadpage.py
 %%PYTHON_SITELIBDIR%%/IPython/core/payloadpage.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/payloadpage.pyo
-%%PYTHON_SITELIBDIR%%/IPython/core/plugin.py
-%%PYTHON_SITELIBDIR%%/IPython/core/plugin.pyc
-%%PYTHON_SITELIBDIR%%/IPython/core/plugin.pyo
 %%PYTHON_SITELIBDIR%%/IPython/core/prefilter.py
 %%PYTHON_SITELIBDIR%%/IPython/core/prefilter.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/prefilter.pyo
@@ -218,6 +230,8 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/core/splitinput.py
 %%PYTHON_SITELIBDIR%%/IPython/core/splitinput.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/splitinput.pyo
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/2x2.jpg
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/2x2.png
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/__init__.pyo
@@ -227,6 +241,12 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/nonascii.py
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/nonascii.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/nonascii.pyo
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/nonascii2.py
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/nonascii2.pyc
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/nonascii2.pyo
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/print_argv.py
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/print_argv.pyc
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/print_argv.pyo
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/refbug.py
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/refbug.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/refbug.pyo
@@ -254,6 +274,12 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_debugger.py
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_debugger.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_debugger.pyo
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_display.py
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_display.pyc
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_display.pyo
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_extension.py
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_extension.pyc
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_extension.pyo
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_fakemodule.py
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_fakemodule.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_fakemodule.pyo
@@ -275,6 +301,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_inputsplitter.py
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_inputsplitter.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_inputsplitter.pyo
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_inputtransformer.py
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_inputtransformer.pyc
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_inputtransformer.pyo
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_interactiveshell.py
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_interactiveshell.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_interactiveshell.pyo
@@ -299,9 +328,6 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_page.py
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_page.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_page.pyo
-%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_plugin.py
-%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_plugin.pyc
-%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_plugin.pyo
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_prefilter.py
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_prefilter.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_prefilter.pyo
@@ -317,9 +343,15 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_run.py
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_run.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_run.pyo
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_shellapp.py
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_shellapp.pyc
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_shellapp.pyo
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_splitinput.py
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_splitinput.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_splitinput.pyo
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_ultratb.py
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_ultratb.pyc
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_ultratb.pyo
 %%PYTHON_SITELIBDIR%%/IPython/core/ultratb.py
 %%PYTHON_SITELIBDIR%%/IPython/core/ultratb.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/ultratb.pyo
@@ -368,6 +400,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/extensions/tests/test_rmagic.py
 %%PYTHON_SITELIBDIR%%/IPython/extensions/tests/test_rmagic.pyc
 %%PYTHON_SITELIBDIR%%/IPython/extensions/tests/test_rmagic.pyo
+%%PYTHON_SITELIBDIR%%/IPython/extensions/tests/test_storemagic.py
+%%PYTHON_SITELIBDIR%%/IPython/extensions/tests/test_storemagic.pyc
+%%PYTHON_SITELIBDIR%%/IPython/extensions/tests/test_storemagic.pyo
 %%PYTHON_SITELIBDIR%%/IPython/external/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/external/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/external/__init__.pyo
@@ -395,6 +430,18 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/external/decorators/_numpy_testing_utils.py
 %%PYTHON_SITELIBDIR%%/IPython/external/decorators/_numpy_testing_utils.pyc
 %%PYTHON_SITELIBDIR%%/IPython/external/decorators/_numpy_testing_utils.pyo
+%%PYTHON_SITELIBDIR%%/IPython/external/jsonpointer/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/external/jsonpointer/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/external/jsonpointer/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/external/jsonpointer/_jsonpointer.py
+%%PYTHON_SITELIBDIR%%/IPython/external/jsonpointer/_jsonpointer.pyc
+%%PYTHON_SITELIBDIR%%/IPython/external/jsonpointer/_jsonpointer.pyo
+%%PYTHON_SITELIBDIR%%/IPython/external/jsonschema/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/external/jsonschema/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/external/jsonschema/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/external/jsonschema/_jsonschema.py
+%%PYTHON_SITELIBDIR%%/IPython/external/jsonschema/_jsonschema.pyc
+%%PYTHON_SITELIBDIR%%/IPython/external/jsonschema/_jsonschema.pyo
 %%PYTHON_SITELIBDIR%%/IPython/external/mathjax.py
 %%PYTHON_SITELIBDIR%%/IPython/external/mathjax.pyc
 %%PYTHON_SITELIBDIR%%/IPython/external/mathjax.pyo
@@ -416,6 +463,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/external/qt_for_kernel.py
 %%PYTHON_SITELIBDIR%%/IPython/external/qt_for_kernel.pyc
 %%PYTHON_SITELIBDIR%%/IPython/external/qt_for_kernel.pyo
+%%PYTHON_SITELIBDIR%%/IPython/external/qt_loaders.py
+%%PYTHON_SITELIBDIR%%/IPython/external/qt_loaders.pyc
+%%PYTHON_SITELIBDIR%%/IPython/external/qt_loaders.pyo
 %%PYTHON_SITELIBDIR%%/IPython/external/simplegeneric/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/external/simplegeneric/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/external/simplegeneric/__init__.pyo
@@ -431,284 +481,807 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/external/ssh/tunnel.py
 %%PYTHON_SITELIBDIR%%/IPython/external/ssh/tunnel.pyc
 %%PYTHON_SITELIBDIR%%/IPython/external/ssh/tunnel.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/__init__.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/__init__.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/__init__.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/consoleapp.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/consoleapp.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/consoleapp.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/__init__.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/__init__.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/__init__.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/__init__.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/__init__.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/__init__.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/clustermanager.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/clustermanager.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/clustermanager.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/handlers.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/handlers.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/handlers.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/kernelmanager.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/kernelmanager.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/kernelmanager.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/notebookapp.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/notebookapp.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/notebookapp.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/notebookmanager.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/notebookmanager.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/notebookmanager.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/IPy_Notebook_logo.svg
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/LICENSE
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/README-IPython.rst
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/README.md
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/lib/codemirror.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/lib/codemirror.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/lib/util/dialog.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/lib/util/dialog.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/lib/util/foldcode.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/lib/util/formatting.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/lib/util/javascript-hint.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/lib/util/overlay.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/lib/util/runmode.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/lib/util/search.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/lib/util/searchcursor.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/lib/util/simple-hint.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/lib/util/simple-hint.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/css/css.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/css/index.html
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/htmlmixed/htmlmixed.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/htmlmixed/index.html
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/javascript/index.html
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/javascript/javascript.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/markdown/index.html
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/markdown/markdown.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/python/LICENSE.txt
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/python/index.html
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/python/python.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/rst/index.html
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/rst/rst.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/xml/index.html
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/xml/xml.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/theme/cobalt.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/theme/eclipse.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/theme/elegant.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/theme/ipython.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/theme/monokai.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/theme/neat.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/theme/night.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/theme/rubyblue.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/css/alternateuploadform.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/css/boilerplate.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/css/fbm.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/css/login.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/css/logout.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/css/notebook.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/css/page.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/css/printnotebook.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/css/projectdashboard.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/css/renderedhtml.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/css/tooltip.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/dateformat/date.format.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/favicon.ico
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/ipynblogo.png
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/css/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/css/themes/base/images/ui-bg_flat_75_ffffff_40x100.png
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/css/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/css/themes/base/images/ui-bg_glass_65_ffffff_1x400.png
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/css/themes/base/images/ui-bg_glass_75_dadada_1x400.png
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/css/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/css/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/css/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/css/themes/base/images/ui-icons_222222_256x240.png
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/css/themes/base/images/ui-icons_2e83ff_256x240.png
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/css/themes/base/images/ui-icons_454545_256x240.png
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/css/themes/base/images/ui-icons_888888_256x240.png
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/css/themes/base/images/ui-icons_cd0a0a_256x240.png
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/css/themes/base/jquery-ui.min.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/js/jquery-1.7.1.min.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/js/jquery-ui.min.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/js/jquery.autogrow.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/cell.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/clusterlist.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/codecell.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/completer.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/contexthint.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/events.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/initmathjax.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/kernel.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/layoutmanager.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/loginmain.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/loginwidget.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/logoutmain.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/menubar.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/namespace.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/notebook.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/notebooklist.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/notebookmain.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/notificationwidget.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/outputarea.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/page.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/pagemain.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/pager.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/printnotebookmain.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/projectdashboardmain.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/quickhelp.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/savewidget.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/textcell.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/toolbar.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/tooltip.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js/utils.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/pagedown/LICENSE.txt
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/pagedown/Markdown.Converter.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/prettify/COPYING
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/prettify/prettify.css
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/prettify/prettify.js
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/templates/login.html
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/templates/logout.html
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/templates/notebook.html
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/templates/page.html
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/templates/printnotebook.html
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/templates/projectdashboard.html
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/tests/__init__.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/tests/__init__.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/tests/test_kernelsession.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/tests/test_kernelsession.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/tests/test_kernelsession.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/tests/test_nbmanager.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/tests/test_nbmanager.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/tests/test_nbmanager.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/zmqhttp.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/zmqhttp.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/zmqhttp.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/__init__.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/__init__.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/__init__.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/base_frontend_mixin.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/base_frontend_mixin.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/base_frontend_mixin.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/__init__.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/__init__.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/__init__.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/ansi_code_processor.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/ansi_code_processor.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/ansi_code_processor.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/bracket_matcher.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/bracket_matcher.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/bracket_matcher.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/call_tip_widget.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/call_tip_widget.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/call_tip_widget.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/completion_html.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/completion_html.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/completion_html.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/completion_lexer.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/completion_lexer.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/completion_lexer.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/completion_plain.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/completion_plain.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/completion_plain.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/completion_widget.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/completion_widget.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/completion_widget.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/console_widget.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/console_widget.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/console_widget.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/frontend_widget.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/frontend_widget.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/frontend_widget.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/history_console_widget.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/history_console_widget.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/history_console_widget.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/ipython_widget.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/ipython_widget.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/ipython_widget.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/kill_ring.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/kill_ring.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/kill_ring.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/mainwindow.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/mainwindow.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/mainwindow.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/pygments_highlighter.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/pygments_highlighter.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/pygments_highlighter.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/qtconsoleapp.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/qtconsoleapp.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/qtconsoleapp.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/resources/icon/IPythonConsole.svg
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/rich_ipython_widget.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/rich_ipython_widget.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/rich_ipython_widget.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/styles.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/styles.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/styles.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/tests/__init__.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/tests/__init__.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/tests/test_ansi_code_processor.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/tests/test_ansi_code_processor.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/tests/test_ansi_code_processor.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/tests/test_completion_lexer.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/tests/test_completion_lexer.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/tests/test_completion_lexer.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/tests/test_console_widget.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/tests/test_console_widget.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/tests/test_console_widget.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/tests/test_kill_ring.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/tests/test_kill_ring.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/tests/test_kill_ring.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/kernelmanager.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/kernelmanager.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/kernelmanager.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/rich_text.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/rich_text.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/rich_text.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/svg.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/svg.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/svg.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/util.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/util.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/qt/util.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/__init__.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/__init__.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/__init__.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console/__init__.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console/__init__.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console/__init__.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console/app.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console/app.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console/app.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console/completer.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console/completer.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console/completer.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console/interactiveshell.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console/interactiveshell.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console/interactiveshell.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console/tests/__init__.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console/tests/__init__.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console/tests/test_console.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console/tests/test_console.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console/tests/test_console.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/embed.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/embed.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/embed.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/interactiveshell.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/interactiveshell.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/interactiveshell.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/ipapp.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/ipapp.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/ipapp.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/tests/__init__.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/tests/__init__.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/tests/test_interactivshell.py
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/tests/test_interactivshell.pyc
-%%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/tests/test_interactivshell.pyo
+%%PYTHON_SITELIBDIR%%/IPython/frontend.py
+%%PYTHON_SITELIBDIR%%/IPython/frontend.pyc
+%%PYTHON_SITELIBDIR%%/IPython/frontend.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/html/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/auth/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/html/auth/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/auth/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/auth/login.py
+%%PYTHON_SITELIBDIR%%/IPython/html/auth/login.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/auth/login.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/auth/logout.py
+%%PYTHON_SITELIBDIR%%/IPython/html/auth/logout.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/auth/logout.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/base/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/html/base/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/base/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/base/handlers.py
+%%PYTHON_SITELIBDIR%%/IPython/html/base/handlers.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/base/handlers.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/base/zmqhandlers.py
+%%PYTHON_SITELIBDIR%%/IPython/html/base/zmqhandlers.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/base/zmqhandlers.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/fabfile.py
+%%PYTHON_SITELIBDIR%%/IPython/html/fabfile.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/fabfile.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/notebook/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/html/notebook/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/notebook/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/notebook/handlers.py
+%%PYTHON_SITELIBDIR%%/IPython/html/notebook/handlers.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/notebook/handlers.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/notebookapp.py
+%%PYTHON_SITELIBDIR%%/IPython/html/notebookapp.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/notebookapp.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/services/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/html/services/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/services/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/services/clusters/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/html/services/clusters/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/services/clusters/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/services/clusters/clustermanager.py
+%%PYTHON_SITELIBDIR%%/IPython/html/services/clusters/clustermanager.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/services/clusters/clustermanager.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/services/clusters/handlers.py
+%%PYTHON_SITELIBDIR%%/IPython/html/services/clusters/handlers.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/services/clusters/handlers.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/services/kernels/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/html/services/kernels/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/services/kernels/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/services/kernels/handlers.py
+%%PYTHON_SITELIBDIR%%/IPython/html/services/kernels/handlers.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/services/kernels/handlers.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/services/kernels/kernelmanager.py
+%%PYTHON_SITELIBDIR%%/IPython/html/services/kernels/kernelmanager.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/services/kernels/kernelmanager.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/azurenbmanager.py
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/azurenbmanager.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/azurenbmanager.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/filenbmanager.py
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/filenbmanager.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/filenbmanager.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/handlers.py
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/handlers.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/handlers.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/nbmanager.py
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/nbmanager.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/nbmanager.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/tests/test_nbmanager.py
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/tests/test_nbmanager.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/tests/test_nbmanager.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/static/auth/css/override.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/auth/js/loginmain.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/auth/js/loginwidget.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/auth/js/logoutmain.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/auth/less/login.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/auth/less/logout.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/auth/less/style.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/base/images/favicon.ico
+%%PYTHON_SITELIBDIR%%/IPython/html/static/base/images/ipynblogo.png
+%%PYTHON_SITELIBDIR%%/IPython/html/static/base/images/ipynblogo.svg
+%%PYTHON_SITELIBDIR%%/IPython/html/static/base/js/dialog.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/base/js/events.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/base/js/namespace.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/base/js/page.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/base/js/pagemain.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/base/js/utils.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/base/less/flexbox.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/base/less/mixins.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/base/less/page.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/base/less/style.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/base/less/variables.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/.bowerrc
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/.git
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/.gitignore
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/README.md
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/.travis.yml
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/CHANGELOG.md
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/CONTRIBUTING.md
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/LICENSE
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/Makefile
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/README.md
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/bootstrap/css/bootstrap-responsive.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/bootstrap/css/bootstrap-responsive.min.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/bootstrap/css/bootstrap.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/bootstrap/css/bootstrap.min.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/bootstrap/js/bootstrap.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/bootstrap/js/bootstrap.min.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/component.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/composer.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/img/glyphicons-halflings-white.png
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/img/glyphicons-halflings.png
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/js/.jshintrc
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/js/bootstrap-affix.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/js/bootstrap-alert.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/js/bootstrap-button.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/js/bootstrap-carousel.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/js/bootstrap-collapse.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/js/bootstrap-dropdown.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/js/bootstrap-modal.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/js/bootstrap-popover.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/js/bootstrap-scrollspy.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/js/bootstrap-tab.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/js/bootstrap-tooltip.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/js/bootstrap-transition.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/js/bootstrap-typeahead.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/accordion.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/alerts.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/bootstrap.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/breadcrumbs.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/button-groups.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/buttons.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/carousel.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/close.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/code.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/component-animations.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/dropdowns.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/forms.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/grid.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/hero-unit.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/labels-badges.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/layouts.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/media.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/mixins.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/modals.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/navbar.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/navs.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/pager.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/pagination.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/popovers.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/progress-bars.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/reset.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/responsive-1200px-min.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/responsive-767px-max.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/responsive-768px-979px.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/responsive-navbar.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/responsive-utilities.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/responsive.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/scaffolding.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/sprites.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/tables.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/thumbnails.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/tooltip.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/type.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/utilities.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/variables.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less/wells.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/package.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/bower.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/CONTRIBUTING.md
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/LICENSE
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/README.md
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/comment/comment.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/dialog/dialog.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/dialog/dialog.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/display/placeholder.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/edit/closebrackets.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/edit/closetag.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/edit/continuecomment.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/edit/continuelist.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/edit/matchbrackets.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/edit/trailingspace.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/fold/brace-fold.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/fold/foldcode.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/fold/indent-fold.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/fold/xml-fold.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/hint/html-hint.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/hint/javascript-hint.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/hint/pig-hint.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/hint/python-hint.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/hint/show-hint.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/hint/show-hint.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/hint/xml-hint.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/lint/coffeescript-lint.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/lint/javascript-lint.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/lint/json-lint.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/lint/lint.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/lint/lint.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/merge/dep/diff_match_patch.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/merge/merge.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/merge/merge.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/mode/loadmode.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/mode/multiplex.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/mode/multiplex_test.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/mode/overlay.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/runmode/colorize.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/runmode/runmode-standalone.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/runmode/runmode.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/runmode/runmode.node.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/search/match-highlighter.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/search/search.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/search/searchcursor.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/selection/active-line.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/selection/mark-selection.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/bower.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/keymap/emacs.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/keymap/extra.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/keymap/vim.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/lib/codemirror.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/lib/codemirror.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/apl/apl.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/asterisk/asterisk.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/clike/clike.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/clike/scala.html
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/clojure/clojure.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/cobol/cobol.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/coffeescript/LICENSE
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/coffeescript/coffeescript.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/commonlisp/commonlisp.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/css/css.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/css/scss.html
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/css/scss_test.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/css/test.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/d/d.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/diff/diff.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/ecl/ecl.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/erlang/erlang.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/gas/gas.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/gfm/gfm.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/gfm/test.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/go/go.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/groovy/groovy.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/haml/haml.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/haml/test.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/haskell/haskell.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/haxe/haxe.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/htmlembedded/htmlembedded.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/htmlmixed/htmlmixed.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/http/http.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/javascript/javascript.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/javascript/typescript.html
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/jinja2/jinja2.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/less/less.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/livescript/LICENSE
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/livescript/livescript.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/livescript/livescript.ls
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/lua/lua.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/markdown/markdown.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/markdown/test.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/meta.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/mirc/mirc.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/ntriples/ntriples.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/ocaml/ocaml.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/pascal/LICENSE
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/pascal/pascal.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/perl/LICENSE
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/perl/perl.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/php/php.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/pig/pig.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/properties/properties.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/python/LICENSE.txt
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/python/python.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/q/q.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/r/LICENSE
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/r/r.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/rpm/changes/changes.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/rpm/changes/index.html
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/rpm/spec/index.html
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/rpm/spec/spec.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/rpm/spec/spec.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/rst/LICENSE.txt
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/rst/rst.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/ruby/LICENSE
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/ruby/ruby.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/rust/rust.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/sass/sass.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/scheme/scheme.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/shell/shell.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/sieve/LICENSE
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/sieve/sieve.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/smalltalk/smalltalk.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/smarty/smarty.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/sparql/sparql.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/sql/sql.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/stex/stex.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/stex/test.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/tcl/tcl.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/tiddlywiki/tiddlywiki.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/tiddlywiki/tiddlywiki.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/tiki/tiki.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/tiki/tiki.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/turtle/turtle.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/vb/LICENSE.txt
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/vb/vb.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/vbscript/vbscript.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/velocity/velocity.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/verilog/verilog.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/xml/xml.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/xquery/LICENSE
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/xquery/test.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/xquery/xquery.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/yaml/yaml.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/z80/z80.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/theme/ambiance-mobile.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/theme/ambiance.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/theme/blackboard.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/theme/cobalt.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/theme/eclipse.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/theme/elegant.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/theme/erlang-dark.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/theme/lesser-dark.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/theme/midnight.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/theme/monokai.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/theme/neat.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/theme/night.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/theme/rubyblue.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/theme/solarized.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/theme/twilight.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/theme/vibrant-ink.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/theme/xq-dark.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/theme/xq-light.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/fabfile.py
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/fabfile.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/fabfile.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/README.md
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/_config.yml
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/bower.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/css/font-awesome-ie7.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/css/font-awesome-ie7.min.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/css/font-awesome.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/css/font-awesome.min.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/font/FontAwesome.otf
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/font/fontawesome-webfont.eot
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/font/fontawesome-webfont.svg
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/font/fontawesome-webfont.ttf
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/font/fontawesome-webfont.woff
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/less/bootstrap.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/less/core.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/less/extras.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/less/font-awesome-ie7.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/less/font-awesome.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/less/icons.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/less/mixins.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/less/path.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/less/variables.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/AUTHORS.en.txt
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/AUTHORS.ru.txt
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/LICENSE
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/README.md
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/README.ru.md
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/build/highlight.pack.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/classref.txt
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/export.html
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/highlight.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/1c.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/actionscript.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/apache.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/applescript.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/avrasm.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/axapta.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/bash.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/brainfuck.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/clojure.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/cmake.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/coffeescript.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/cpp.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/cs.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/css.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/d.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/delphi.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/diff.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/django.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/dos.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/erlang-repl.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/erlang.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/glsl.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/go.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/haskell.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/http.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/ini.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/java.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/javascript.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/json.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/lisp.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/lua.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/markdown.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/matlab.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/mel.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/nginx.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/objectivec.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/parser3.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/perl.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/php.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/profile.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/python.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/r.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/rib.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/rsl.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/ruby.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/rust.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/scala.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/smalltalk.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/sql.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/tex.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/vala.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/vbscript.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/vhdl.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages/xml.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/package.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/arta.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/ascetic.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/brown_paper.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/brown_papersq.png
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/dark.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/default.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/far.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/github.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/googlecode.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/idea.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/ir_black.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/magula.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/monokai.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/pojoaque.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/pojoaque.jpg
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/rainbow.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/school_book.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/school_book.png
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/solarized_dark.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/solarized_light.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/sunburst.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/tomorrow-night-blue.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/tomorrow-night-bright.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/tomorrow-night-eighties.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/tomorrow-night.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/tomorrow.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/vs.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/xcode.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles/zenburn.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/test.html
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/AUTHORS.txt
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/MANIFEST
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/MIT-LICENSE.txt
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/README.md
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/bower.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/composer.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/package.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes/smoothness/images/animated-overlay.gif
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes/smoothness/images/ui-bg_flat_75_ffffff_40x100.png
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes/smoothness/images/ui-bg_glass_65_ffffff_1x400.png
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes/smoothness/images/ui-bg_glass_75_dadada_1x400.png
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes/smoothness/images/ui-icons_222222_256x240.png
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes/smoothness/images/ui-icons_2e83ff_256x240.png
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes/smoothness/images/ui-icons_454545_256x240.png
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes/smoothness/images/ui-icons_888888_256x240.png
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes/smoothness/images/ui-icons_cd0a0a_256x240.png
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes/smoothness/jquery-ui.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes/smoothness/jquery-ui.min.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes/smoothness/jquery.ui.theme.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/ui/.jshintrc
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/ui/i18n/jquery-ui-i18n.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/ui/jquery-ui.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/ui/minified/i18n/jquery-ui-i18n.min.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/ui/minified/jquery-ui.min.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery/README.md
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery/bower.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery/component.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery/composer.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery/jquery-migrate.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery/jquery-migrate.min.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery/jquery.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery/jquery.min.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery/package.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/.npmignore
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/CHANGELOG.md
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/CONTRIBUTING.md
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/LICENSE
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/Makefile
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/README.md
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/bin/lessc
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/bower.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/dist/less-1.3.3.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/dist/less-1.3.3.min.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/browser.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/colors.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/functions.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/index.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/lessc_helper.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/parser.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/rhino.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/alpha.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/anonymous.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/assignment.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/call.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/color.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/comment.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/condition.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/dimension.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/directive.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/element.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/expression.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/import.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/javascript.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/keyword.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/media.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/mixin.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/operation.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/paren.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/quoted.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/ratio.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/rule.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/ruleset.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/selector.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/unicode-descriptor.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/url.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/value.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree/variable.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/package.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/marked/LICENSE
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/marked/Makefile
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/marked/README.md
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/marked/bin/marked
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/marked/bower.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/marked/index.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/marked/lib/marked.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/marked/package.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/nonbower.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/requirejs/LICENSE
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/requirejs/README.md
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/requirejs/bower.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/requirejs/index.html
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/requirejs/package.json
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/requirejs/require.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/requirejs/tasks.txt
+%%PYTHON_SITELIBDIR%%/IPython/html/static/components/requirejs/testBaseUrl.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/custom/custom.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/custom/custom.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/dateformat/date.format.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/css/override.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/cell.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/celltoolbar.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/celltoolbarpresets/default.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/celltoolbarpresets/example.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/celltoolbarpresets/slideshow.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/codecell.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/codemirror-ipython.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/completer.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/config.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/contexthint.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/layoutmanager.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/main.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/maintoolbar.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/mathjaxutils.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/menubar.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/notebook.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/notificationarea.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/notificationwidget.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/outputarea.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/pager.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/quickhelp.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/savewidget.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/textcell.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/toolbar.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/tooltip.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/ansicolors.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/cell.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/celltoolbar.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/codecell.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/codemirror.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/completer.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/highlight.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/menubar.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/notebook.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/notificationarea.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/notificationwidget.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/outputarea.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/pager.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/quickhelp.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/renderedhtml.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/savewidget.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/style.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/textcell.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/toolbar.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/tooltip.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less/variables.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/services/kernels/js/kernel.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/style/ipython.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/style/ipython.min.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/style/style.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/style/style.min.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/tree/css/override.css
+%%PYTHON_SITELIBDIR%%/IPython/html/static/tree/js/clusterlist.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/tree/js/main.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/tree/js/notebooklist.js
+%%PYTHON_SITELIBDIR%%/IPython/html/static/tree/less/altuploadform.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/tree/less/style.less
+%%PYTHON_SITELIBDIR%%/IPython/html/static/tree/less/tree.less
+%%PYTHON_SITELIBDIR%%/IPython/html/templates/login.html
+%%PYTHON_SITELIBDIR%%/IPython/html/templates/logout.html
+%%PYTHON_SITELIBDIR%%/IPython/html/templates/notebook.html
+%%PYTHON_SITELIBDIR%%/IPython/html/templates/page.html
+%%PYTHON_SITELIBDIR%%/IPython/html/templates/tree.html
+%%PYTHON_SITELIBDIR%%/IPython/html/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/html/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/tree/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/html/tree/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/tree/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/tree/handlers.py
+%%PYTHON_SITELIBDIR%%/IPython/html/tree/handlers.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/tree/handlers.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/utils.py
+%%PYTHON_SITELIBDIR%%/IPython/html/utils.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/utils.pyo
 %%PYTHON_SITELIBDIR%%/IPython/kernel/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/kernel/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/kernel/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/blocking/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/blocking/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/blocking/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/blocking/channels.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/blocking/channels.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/blocking/channels.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/blocking/client.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/blocking/client.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/blocking/client.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/channels.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/channels.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/channels.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/channelsabc.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/channelsabc.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/channelsabc.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/client.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/client.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/client.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/clientabc.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/clientabc.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/clientabc.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/connect.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/connect.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/connect.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/blocking.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/blocking.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/blocking.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/channels.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/channels.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/channels.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/client.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/client.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/client.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/ipkernel.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/ipkernel.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/ipkernel.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/manager.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/manager.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/manager.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/socket.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/socket.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/socket.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/tests/test_kernel.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/tests/test_kernel.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/tests/test_kernel.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/tests/test_kernelmanager.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/tests/test_kernelmanager.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/tests/test_kernelmanager.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/ioloop/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/ioloop/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/ioloop/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/ioloop/manager.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/ioloop/manager.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/ioloop/manager.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/ioloop/restarter.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/ioloop/restarter.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/ioloop/restarter.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/launcher.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/launcher.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/launcher.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/manager.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/manager.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/manager.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/managerabc.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/managerabc.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/managerabc.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/multikernelmanager.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/multikernelmanager.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/multikernelmanager.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/restarter.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/restarter.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/restarter.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_kernelmanager.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_kernelmanager.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_kernelmanager.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_launcher.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_launcher.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_launcher.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_message_spec.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_message_spec.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_message_spec.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_multikernelmanager.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_multikernelmanager.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_multikernelmanager.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_public_api.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_public_api.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_public_api.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/datapub.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/datapub.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/datapub.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/displayhook.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/displayhook.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/displayhook.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/embed.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/embed.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/embed.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/eventloops.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/eventloops.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/eventloops.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/gui/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/gui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/gui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/gui/gtkembed.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/gui/gtkembed.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/gui/gtkembed.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/heartbeat.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/heartbeat.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/heartbeat.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/iostream.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/iostream.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/iostream.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/ipkernel.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/ipkernel.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/ipkernel.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/kernelapp.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/kernelapp.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/kernelapp.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/log.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/log.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/log.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/parentpoller.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/parentpoller.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/parentpoller.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/pylab/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/pylab/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/pylab/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/pylab/backend_inline.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/pylab/backend_inline.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/pylab/backend_inline.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/serialize.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/serialize.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/serialize.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/session.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/session.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/session.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/tests/test_embed_kernel.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/tests/test_embed_kernel.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/tests/test_embed_kernel.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/tests/test_serialize.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/tests/test_serialize.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/tests/test_serialize.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/tests/test_session.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/tests/test_session.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/tests/test_session.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/zmqshell.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/zmqshell.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/zmqshell.pyo
 %%PYTHON_SITELIBDIR%%/IPython/lib/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/lib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/lib/__init__.pyo
@@ -727,6 +1300,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/lib/display.py
 %%PYTHON_SITELIBDIR%%/IPython/lib/display.pyc
 %%PYTHON_SITELIBDIR%%/IPython/lib/display.pyo
+%%PYTHON_SITELIBDIR%%/IPython/lib/editorhooks.py
+%%PYTHON_SITELIBDIR%%/IPython/lib/editorhooks.pyc
+%%PYTHON_SITELIBDIR%%/IPython/lib/editorhooks.pyo
 %%PYTHON_SITELIBDIR%%/IPython/lib/guisupport.py
 %%PYTHON_SITELIBDIR%%/IPython/lib/guisupport.pyc
 %%PYTHON_SITELIBDIR%%/IPython/lib/guisupport.pyo
@@ -775,6 +1351,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_deepreload.py
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_deepreload.pyc
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_deepreload.pyo
+%%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_display.py
+%%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_display.pyc
+%%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_display.pyo
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_imports.py
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_imports.pyc
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_imports.pyo
@@ -784,15 +1363,236 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_irunner_pylab_magic.py
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_irunner_pylab_magic.pyc
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_irunner_pylab_magic.pyo
-%%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_kernel.py
-%%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_kernel.pyc
-%%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_kernel.pyo
+%%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_latextools.py
+%%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_latextools.pyc
+%%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_latextools.pyo
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_pretty.py
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_pretty.pyc
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_pretty.pyo
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_security.py
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_security.pyc
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_security.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/export.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/export.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/export.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/exporter.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/exporter.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/exporter.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/html.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/html.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/html.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/latex.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/latex.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/latex.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/markdown.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/markdown.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/markdown.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/python.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/python.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/python.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/rst.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/rst.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/rst.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/slides.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/slides.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/slides.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/base.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/base.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/base.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/cheese.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/cheese.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/cheese.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/files/notebook2.ipynb
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_export.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_export.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_export.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_exporter.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_exporter.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_exporter.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_html.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_html.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_html.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_latex.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_latex.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_latex.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_markdown.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_markdown.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_markdown.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_python.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_python.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_python.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_rst.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_rst.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_rst.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_slides.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_slides.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/test_slides.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/ansi.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/ansi.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/ansi.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/datatypefilter.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/datatypefilter.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/datatypefilter.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/highlight.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/highlight.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/highlight.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/latex.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/latex.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/latex.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/markdown.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/markdown.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/markdown.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/strings.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/strings.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/strings.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/test_ansi.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/test_ansi.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/test_ansi.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/test_datatypefilter.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/test_datatypefilter.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/test_datatypefilter.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/test_highlight.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/test_highlight.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/test_highlight.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/test_latex.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/test_latex.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/test_latex.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/test_markdown.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/test_markdown.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/test_markdown.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/test_strings.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/test_strings.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests/test_strings.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/nbconvertapp.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/nbconvertapp.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/nbconvertapp.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/post_processors/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/post_processors/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/post_processors/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/post_processors/base.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/post_processors/base.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/post_processors/base.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/post_processors/pdf.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/post_processors/pdf.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/post_processors/pdf.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/post_processors/serve.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/post_processors/serve.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/post_processors/serve.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/html_basic.tpl
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/html_full.tpl
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/latex/latex_article.tplx
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/latex/latex_basic.tplx
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/latex/latex_book.tplx
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/latex/skeleton/display_priority.tplx
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/latex/skeleton/null.tplx
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/latex/sphinx.tplx
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/markdown.tpl
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/python.tpl
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/reveal_internals/align_reveal_cells.tpl
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/reveal_internals/reveal_cells.tpl
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/reveal_internals/slides.tpl
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/reveal_internals/subslides.tpl
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/rst.tpl
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/skeleton/Makefile
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/skeleton/README.md
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/skeleton/display_priority.tpl
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/skeleton/null.tpl
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/slides_reveal.tpl
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/tests/base.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/tests/base.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/tests/base.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/tests/files/ipython_nbconvert_config.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/tests/files/ipython_nbconvert_config.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/tests/files/ipython_nbconvert_config.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/tests/files/notebook1.ipynb
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/tests/files/notebook2.ipynb
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/tests/files/override.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/tests/files/override.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/tests/files/override.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/tests/test_nbconvertapp.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/tests/test_nbconvertapp.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/tests/test_nbconvertapp.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/base.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/base.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/base.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/coalescestreams.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/coalescestreams.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/coalescestreams.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/convertfigures.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/convertfigures.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/convertfigures.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/csshtmlheader.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/csshtmlheader.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/csshtmlheader.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/extractoutput.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/extractoutput.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/extractoutput.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/latex.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/latex.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/latex.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/revealhelp.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/revealhelp.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/revealhelp.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/sphinx.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/sphinx.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/sphinx.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/svg2pdf.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/svg2pdf.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers/svg2pdf.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/utils/base.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/utils/base.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/utils/base.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/utils/console.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/utils/console.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/utils/console.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/utils/exceptions.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/utils/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/utils/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/utils/lexers.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/utils/lexers.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/utils/lexers.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/utils/pandoc.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/utils/pandoc.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/utils/pandoc.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/writers/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/writers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/writers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/writers/base.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/writers/base.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/writers/base.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/writers/debug.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/writers/debug.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/writers/debug.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/writers/files.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/writers/files.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/writers/files.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/writers/stdout.py
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/writers/stdout.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbconvert/writers/stdout.pyo
 %%PYTHON_SITELIBDIR%%/IPython/nbformat/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/nbformat/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/nbformat/__init__.pyo
@@ -901,6 +1701,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/nbformat/v3/tests/test_nbpy.py
 %%PYTHON_SITELIBDIR%%/IPython/nbformat/v3/tests/test_nbpy.pyc
 %%PYTHON_SITELIBDIR%%/IPython/nbformat/v3/tests/test_nbpy.pyo
+%%PYTHON_SITELIBDIR%%/IPython/nbformat/v3/validator.py
+%%PYTHON_SITELIBDIR%%/IPython/nbformat/v3/validator.pyc
+%%PYTHON_SITELIBDIR%%/IPython/nbformat/v3/validator.pyo
 %%PYTHON_SITELIBDIR%%/IPython/parallel/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/parallel/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/parallel/__init__.pyo
@@ -1012,6 +1815,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/parallel/tests/test_dependency.py
 %%PYTHON_SITELIBDIR%%/IPython/parallel/tests/test_dependency.pyc
 %%PYTHON_SITELIBDIR%%/IPython/parallel/tests/test_dependency.pyo
+%%PYTHON_SITELIBDIR%%/IPython/parallel/tests/test_launcher.py
+%%PYTHON_SITELIBDIR%%/IPython/parallel/tests/test_launcher.pyc
+%%PYTHON_SITELIBDIR%%/IPython/parallel/tests/test_launcher.pyo
 %%PYTHON_SITELIBDIR%%/IPython/parallel/tests/test_lbview.py
 %%PYTHON_SITELIBDIR%%/IPython/parallel/tests/test_lbview.pyc
 %%PYTHON_SITELIBDIR%%/IPython/parallel/tests/test_lbview.pyo
@@ -1021,18 +1827,163 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/parallel/tests/test_mongodb.py
 %%PYTHON_SITELIBDIR%%/IPython/parallel/tests/test_mongodb.pyc
 %%PYTHON_SITELIBDIR%%/IPython/parallel/tests/test_mongodb.pyo
-%%PYTHON_SITELIBDIR%%/IPython/parallel/tests/test_newserialized.py
-%%PYTHON_SITELIBDIR%%/IPython/parallel/tests/test_newserialized.pyc
-%%PYTHON_SITELIBDIR%%/IPython/parallel/tests/test_newserialized.pyo
 %%PYTHON_SITELIBDIR%%/IPython/parallel/tests/test_view.py
 %%PYTHON_SITELIBDIR%%/IPython/parallel/tests/test_view.pyc
 %%PYTHON_SITELIBDIR%%/IPython/parallel/tests/test_view.pyo
 %%PYTHON_SITELIBDIR%%/IPython/parallel/util.py
 %%PYTHON_SITELIBDIR%%/IPython/parallel/util.pyc
 %%PYTHON_SITELIBDIR%%/IPython/parallel/util.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/base_frontend_mixin.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/base_frontend_mixin.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/base_frontend_mixin.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/client.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/client.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/client.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/ansi_code_processor.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/ansi_code_processor.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/ansi_code_processor.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/bracket_matcher.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/bracket_matcher.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/bracket_matcher.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/call_tip_widget.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/call_tip_widget.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/call_tip_widget.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/completion_html.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/completion_html.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/completion_html.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/completion_lexer.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/completion_lexer.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/completion_lexer.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/completion_plain.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/completion_plain.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/completion_plain.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/completion_widget.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/completion_widget.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/completion_widget.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/console_widget.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/console_widget.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/console_widget.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/frontend_widget.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/frontend_widget.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/frontend_widget.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/history_console_widget.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/history_console_widget.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/history_console_widget.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/ipython_widget.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/ipython_widget.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/ipython_widget.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/kill_ring.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/kill_ring.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/kill_ring.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/mainwindow.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/mainwindow.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/mainwindow.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/pygments_highlighter.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/pygments_highlighter.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/pygments_highlighter.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/qtconsoleapp.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/qtconsoleapp.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/qtconsoleapp.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/resources/icon/IPythonConsole.svg
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/rich_ipython_widget.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/rich_ipython_widget.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/rich_ipython_widget.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/styles.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/styles.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/styles.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_ansi_code_processor.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_ansi_code_processor.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_ansi_code_processor.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_completion_lexer.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_completion_lexer.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_completion_lexer.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_console_widget.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_console_widget.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_console_widget.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_kill_ring.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_kill_ring.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_kill_ring.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/inprocess.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/inprocess.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/inprocess.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/kernel_mixins.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/kernel_mixins.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/kernel_mixins.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/manager.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/manager.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/manager.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/rich_text.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/rich_text.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/rich_text.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/svg.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/svg.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/svg.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/util.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/util.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/util.pyo
 %%PYTHON_SITELIBDIR%%/IPython/scripts/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/scripts/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/scripts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/sphinxext/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/sphinxext/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/sphinxext/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/sphinxext/ipython_console_highlighting.py
+%%PYTHON_SITELIBDIR%%/IPython/sphinxext/ipython_console_highlighting.pyc
+%%PYTHON_SITELIBDIR%%/IPython/sphinxext/ipython_console_highlighting.pyo
+%%PYTHON_SITELIBDIR%%/IPython/sphinxext/ipython_directive.py
+%%PYTHON_SITELIBDIR%%/IPython/sphinxext/ipython_directive.pyc
+%%PYTHON_SITELIBDIR%%/IPython/sphinxext/ipython_directive.pyo
+%%PYTHON_SITELIBDIR%%/IPython/terminal/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/terminal/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/terminal/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/app.py
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/app.pyc
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/app.pyo
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/completer.py
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/completer.pyc
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/completer.pyo
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/interactiveshell.py
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/interactiveshell.pyc
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/interactiveshell.pyo
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/tests/test_console.py
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/tests/test_console.pyc
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/tests/test_console.pyo
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/tests/test_image_handler.py
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/tests/test_image_handler.pyc
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/tests/test_image_handler.pyo
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/tests/writetofile.py
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/tests/writetofile.pyc
+%%PYTHON_SITELIBDIR%%/IPython/terminal/console/tests/writetofile.pyo
+%%PYTHON_SITELIBDIR%%/IPython/terminal/embed.py
+%%PYTHON_SITELIBDIR%%/IPython/terminal/embed.pyc
+%%PYTHON_SITELIBDIR%%/IPython/terminal/embed.pyo
+%%PYTHON_SITELIBDIR%%/IPython/terminal/interactiveshell.py
+%%PYTHON_SITELIBDIR%%/IPython/terminal/interactiveshell.pyc
+%%PYTHON_SITELIBDIR%%/IPython/terminal/interactiveshell.pyo
+%%PYTHON_SITELIBDIR%%/IPython/terminal/ipapp.py
+%%PYTHON_SITELIBDIR%%/IPython/terminal/ipapp.pyc
+%%PYTHON_SITELIBDIR%%/IPython/terminal/ipapp.pyo
+%%PYTHON_SITELIBDIR%%/IPython/terminal/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/terminal/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/terminal/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/terminal/tests/test_interactivshell.py
+%%PYTHON_SITELIBDIR%%/IPython/terminal/tests/test_interactivshell.pyc
+%%PYTHON_SITELIBDIR%%/IPython/terminal/tests/test_interactivshell.pyo
 %%PYTHON_SITELIBDIR%%/IPython/testing/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/testing/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/testing/__init__.pyo
@@ -1136,21 +2087,24 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/utils/_sysinfo.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/_sysinfo.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/_sysinfo.pyo
+%%PYTHON_SITELIBDIR%%/IPython/utils/_tokenize_py2.py
+%%PYTHON_SITELIBDIR%%/IPython/utils/_tokenize_py2.pyc
+%%PYTHON_SITELIBDIR%%/IPython/utils/_tokenize_py2.pyo
+%%PYTHON_SITELIBDIR%%/IPython/utils/_tokenize_py3.py
+%%PYTHON_SITELIBDIR%%/IPython/utils/_tokenize_py3.pyc
+%%PYTHON_SITELIBDIR%%/IPython/utils/_tokenize_py3.pyo
 %%PYTHON_SITELIBDIR%%/IPython/utils/attic.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/attic.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/attic.pyo
-%%PYTHON_SITELIBDIR%%/IPython/utils/autoattr.py
-%%PYTHON_SITELIBDIR%%/IPython/utils/autoattr.pyc
-%%PYTHON_SITELIBDIR%%/IPython/utils/autoattr.pyo
 %%PYTHON_SITELIBDIR%%/IPython/utils/codeutil.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/codeutil.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/codeutil.pyo
 %%PYTHON_SITELIBDIR%%/IPython/utils/coloransi.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/coloransi.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/coloransi.pyo
-%%PYTHON_SITELIBDIR%%/IPython/utils/cursesimport.py
-%%PYTHON_SITELIBDIR%%/IPython/utils/cursesimport.pyc
-%%PYTHON_SITELIBDIR%%/IPython/utils/cursesimport.pyo
+%%PYTHON_SITELIBDIR%%/IPython/utils/contexts.py
+%%PYTHON_SITELIBDIR%%/IPython/utils/contexts.pyc
+%%PYTHON_SITELIBDIR%%/IPython/utils/contexts.pyo
 %%PYTHON_SITELIBDIR%%/IPython/utils/daemonize.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/daemonize.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/daemonize.pyo
@@ -1175,9 +2129,6 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/utils/generics.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/generics.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/generics.pyo
-%%PYTHON_SITELIBDIR%%/IPython/utils/growl.py
-%%PYTHON_SITELIBDIR%%/IPython/utils/growl.pyc
-%%PYTHON_SITELIBDIR%%/IPython/utils/growl.pyo
 %%PYTHON_SITELIBDIR%%/IPython/utils/importstring.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/importstring.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/importstring.pyo
@@ -1199,12 +2150,6 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/utils/nested_context.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/nested_context.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/nested_context.pyo
-%%PYTHON_SITELIBDIR%%/IPython/utils/newserialized.py
-%%PYTHON_SITELIBDIR%%/IPython/utils/newserialized.pyc
-%%PYTHON_SITELIBDIR%%/IPython/utils/newserialized.pyo
-%%PYTHON_SITELIBDIR%%/IPython/utils/notification.py
-%%PYTHON_SITELIBDIR%%/IPython/utils/notification.pyc
-%%PYTHON_SITELIBDIR%%/IPython/utils/notification.pyo
 %%PYTHON_SITELIBDIR%%/IPython/utils/openpy.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/openpy.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/openpy.pyo
@@ -1223,15 +2168,15 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/utils/py3compat.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/py3compat.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/py3compat.pyo
-%%PYTHON_SITELIBDIR%%/IPython/utils/pyfile.py
-%%PYTHON_SITELIBDIR%%/IPython/utils/pyfile.pyc
-%%PYTHON_SITELIBDIR%%/IPython/utils/pyfile.pyo
 %%PYTHON_SITELIBDIR%%/IPython/utils/rlineimpl.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/rlineimpl.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/rlineimpl.pyo
 %%PYTHON_SITELIBDIR%%/IPython/utils/strdispatch.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/strdispatch.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/strdispatch.pyo
+%%PYTHON_SITELIBDIR%%/IPython/utils/submodule.py
+%%PYTHON_SITELIBDIR%%/IPython/utils/submodule.pyc
+%%PYTHON_SITELIBDIR%%/IPython/utils/submodule.pyo
 %%PYTHON_SITELIBDIR%%/IPython/utils/sysinfo.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/sysinfo.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/sysinfo.pyo
@@ -1253,6 +2198,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_imports.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_imports.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_imports.pyo
+%%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_importstring.py
+%%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_importstring.pyc
+%%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_importstring.pyo
 %%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_io.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_io.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_io.pyo
@@ -1262,9 +2210,6 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_module_paths.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_module_paths.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_module_paths.pyo
-%%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_notification.py
-%%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_notification.pyc
-%%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_notification.pyo
 %%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_openpy.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_openpy.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_openpy.pyo
@@ -1277,6 +2222,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_pycolorize.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_pycolorize.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_pycolorize.pyo
+%%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_tempdir.py
+%%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_tempdir.pyc
+%%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_tempdir.pyo
 %%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_text.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_text.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/tests/test_text.pyo
@@ -1292,12 +2240,18 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/utils/timing.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/timing.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/timing.pyo
+%%PYTHON_SITELIBDIR%%/IPython/utils/tokenize2.py
+%%PYTHON_SITELIBDIR%%/IPython/utils/tokenize2.pyc
+%%PYTHON_SITELIBDIR%%/IPython/utils/tokenize2.pyo
 %%PYTHON_SITELIBDIR%%/IPython/utils/traitlets.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/traitlets.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/traitlets.pyo
-%%PYTHON_SITELIBDIR%%/IPython/utils/upgradedir.py
-%%PYTHON_SITELIBDIR%%/IPython/utils/upgradedir.pyc
-%%PYTHON_SITELIBDIR%%/IPython/utils/upgradedir.pyo
+%%PYTHON_SITELIBDIR%%/IPython/utils/tz.py
+%%PYTHON_SITELIBDIR%%/IPython/utils/tz.pyc
+%%PYTHON_SITELIBDIR%%/IPython/utils/tz.pyo
+%%PYTHON_SITELIBDIR%%/IPython/utils/ulinecache.py
+%%PYTHON_SITELIBDIR%%/IPython/utils/ulinecache.pyc
+%%PYTHON_SITELIBDIR%%/IPython/utils/ulinecache.pyo
 %%PYTHON_SITELIBDIR%%/IPython/utils/version.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/version.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/version.pyo
@@ -1307,94 +2261,22 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/utils/wildcard.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/wildcard.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/wildcard.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/__init__.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/__init__.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/__init__.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/blockingkernelmanager.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/blockingkernelmanager.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/blockingkernelmanager.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/completer.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/completer.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/completer.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/displayhook.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/displayhook.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/displayhook.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/entry_point.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/entry_point.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/entry_point.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/eventloops.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/eventloops.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/eventloops.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/frontend.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/frontend.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/frontend.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/gui/__init__.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/gui/__init__.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/gui/__init__.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/gui/gtkembed.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/gui/gtkembed.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/gui/gtkembed.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/heartbeat.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/heartbeat.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/heartbeat.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/iostream.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/iostream.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/iostream.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/ipkernel.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/ipkernel.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/ipkernel.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/kernelapp.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/kernelapp.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/kernelapp.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/kernelmanager.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/kernelmanager.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/kernelmanager.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/log.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/log.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/log.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/parentpoller.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/parentpoller.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/parentpoller.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/pylab/__init__.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/pylab/__init__.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/pylab/__init__.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/pylab/backend_inline.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/pylab/backend_inline.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/pylab/backend_inline.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/serialize.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/serialize.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/serialize.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/session.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/session.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/session.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/tests/__init__.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/tests/__init__.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/tests/test_embed_kernel.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/tests/test_embed_kernel.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/tests/test_embed_kernel.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/tests/test_message_spec.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/tests/test_message_spec.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/tests/test_message_spec.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/tests/test_session.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/tests/test_session.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/tests/test_session.pyo
-%%PYTHON_SITELIBDIR%%/IPython/zmq/zmqshell.py
-%%PYTHON_SITELIBDIR%%/IPython/zmq/zmqshell.pyc
-%%PYTHON_SITELIBDIR%%/IPython/zmq/zmqshell.pyo
+%%PYTHON_SITELIBDIR%%/IPython/utils/zmqrelated.py
+%%PYTHON_SITELIBDIR%%/IPython/utils/zmqrelated.pyc
+%%PYTHON_SITELIBDIR%%/IPython/utils/zmqrelated.pyo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/appconfig.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/display.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/example-embed-short.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/example-embed.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/example-gnuplot.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/ipython-completion.bash
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/ipython-get-history.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/ipython-qtconsole.desktop
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/ipython-sh.desktop
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/ipython.desktop
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/ipython_here_shell_extension.reg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/leo_bridge_demo.leo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/new-embed.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/core/seteditor.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inprocess/embedded_qtconsole.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inprocess/embedded_terminal.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/BackgroundJobs.ipynb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/example-demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/gui-glut.py
@@ -1407,22 +2289,35 @@ bin/pycolor
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/internal_ipkernel.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/ipkernel_qtapp.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/ipkernel_wxapp.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/00_notebook_tour.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/01_notebook_introduction.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Animations_and_Progress.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Capturing Output.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Animations Using clear_output.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Cell Magics.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Custom Display Logic.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Cython Magics.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Data Publication API.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Frontend-Kernel Model.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Importing Notebooks.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Octave Magic.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Part 1 - Running Code.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Part 2 - Basic Output.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Part 3 - Plotting with Matplotlib.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Part 4 - Markdown Cells.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Part 5 - Rich Display System.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Progress Bars.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/R Magics.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Script Magics.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/SymPy Examples.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Trapezoid Rule.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/Typesetting Math Using MathJax.ipynb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/animation.m4v
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/cython_extension.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/display_protocol.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/formatting.ipynb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/logo/logo.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/octavemagic_extension.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/nbimp/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/nbimp/mynotebook.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/nbimp/nbs/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/nbimp/nbs/other.ipynb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/python-logo.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/rmagic_extension.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/sympy.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/sympy_quantum_computing.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/trapezoid_rule.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/InteractiveMPI-publish-data.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/InteractiveMPI.ipynb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/Parallel Magics.ipynb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/customresults.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/dagdeps.py
@@ -1446,9 +2341,7 @@ bin/pycolor
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/multiengine2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/multienginemap.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/nwmerge.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/options/mckernel.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/options/mcpricer.ipynb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/options/mcpricer.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/options/Parallel MC Options.ipynb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/parallel_mpi.ipynb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/parallel_pylab.ipy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/phistogram.py
@@ -1473,28 +2366,37 @@ bin/pycolor
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/workflow/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/workflow/job_wrapper.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/workflow/wmanager.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/ANSI Test.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/CSS Reference.ipynb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/embed/embed1.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/embed/embed2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/embed/embed3.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/embed/embed_division.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/embed/embed_no_division.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/heartbeat/gilsleep.ipynb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/heartbeat/hb_gil.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pylab-switch/Pylab Switching.ipynb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pylab_figshow.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vim/README.rst
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vim/ipy.vim
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/directview/directview.ipynb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/directview/directview.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/directview/directview.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgets/directview/widget.py
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/zmq/tests
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/zmq/pylab
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/zmq/gui
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/zmq
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/utils/tests
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/utils
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/testing/tests
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/testing/plugin
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/testing
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/terminal/tests
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/terminal/console/tests
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/terminal/console
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/terminal
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/sphinxext
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/qt/console/tests
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/qt/console/resources/icon
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/qt/console/resources
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/qt/console
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/qt
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/parallel/tests
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/parallel/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/parallel/engine
@@ -1510,51 +2412,201 @@ bin/pycolor
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/nbformat/v1
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/nbformat/tests
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/nbformat
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/nbconvert/writers
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/nbconvert/utils
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/nbconvert/transformers
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/nbconvert/tests/files
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/nbconvert/tests
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/skeleton
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/reveal_internals
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/latex/skeleton
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates/latex
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/nbconvert/templates
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/nbconvert/post_processors
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters/tests
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/nbconvert/filters
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests/files
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters/tests
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/nbconvert/exporters
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/nbconvert
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/lib/tests
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/lib
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/tests
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/pylab
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/gui
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/kernel/zmq
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/kernel/tests
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/kernel/ioloop
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess/tests
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/kernel/inprocess
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/kernel/blocking
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/kernel
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/tests
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console/tests
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/terminal/console
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/terminal
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/tests
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/resources/icon
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console/resources
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/qt/console
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/qt
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/tests
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/templates
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/prettify
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/pagedown
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/js
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/css/themes/base/images
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/css/themes/base
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/css/themes
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery/css
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/jquery
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/dateformat
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/css
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/theme
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/xml
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/rst
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/python
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/markdown
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/javascript
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/htmlmixed
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode/css
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/mode
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/lib/util
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror/lib
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/codemirror
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/tree
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/tests
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/templates
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/tree/less
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/tree/js
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/tree/css
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/tree
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/style
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/services/kernels/js
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/services/kernels
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/services
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/less
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js/celltoolbarpresets
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/js
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/notebook/css
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/notebook
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/dateformat
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/custom
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/requirejs
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/marked/lib
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/marked/bin
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/marked
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less/tree
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib/less
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/lib
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/dist
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js/bin
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/less.js
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/ui/minified/i18n
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/ui/minified
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/ui/i18n
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/ui
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes/smoothness/images
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes/smoothness
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui/themes
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery-ui
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/jquery
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/styles
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src/languages
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/src
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js/build
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/highlight.js
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/less
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/font
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome/css
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets/font-awesome
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build/assets
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome/build
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/font-awesome
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/theme
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/z80
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/yaml
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/xquery
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/xml
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/verilog
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/velocity
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/vbscript
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/vb
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/turtle
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/tiki
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/tiddlywiki
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/tcl
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/stex
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/sql
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/sparql
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/smarty
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/smalltalk
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/sieve
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/shell
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/scheme
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/sass
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/rust
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/ruby
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/rst
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/rpm/spec
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/rpm/changes
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/rpm
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/r
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/q
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/python
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/properties
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/pig
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/php
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/perl
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/pascal
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/ocaml
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/ntriples
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/mirc
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/markdown
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/lua
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/livescript
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/less
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/jinja2
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/javascript
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/http
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/htmlmixed
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/htmlembedded
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/haxe
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/haskell
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/haml
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/groovy
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/go
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/gfm
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/gas
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/erlang
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/ecl
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/diff
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/d
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/css
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/commonlisp
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/coffeescript
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/cobol
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/clojure
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/clike
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/asterisk
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode/apl
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/mode
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/lib
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/keymap
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/selection
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/search
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/runmode
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/mode
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/merge/dep
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/merge
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/lint
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/hint
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/fold
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/edit
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/display
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/dialog
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon/comment
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror/addon
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/codemirror
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/less
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/js
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/img
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/bootstrap/js
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/bootstrap/css
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/bootstrap
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/components
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/base/less
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/base/js
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/base/images
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/base
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/auth/less
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/auth/js
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/auth/css
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static/auth
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/static
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks/tests
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/services/notebooks
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/services/kernels
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/services/clusters
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/services
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/notebook
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/base
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html/auth
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/html
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/external/ssh
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/external/simplegeneric
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/external/pexpect
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/external/path
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/external/jsonschema
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/external/jsonpointer
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/external/decorators
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/external/decorator
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/external/argparse
@@ -1574,7 +2626,7 @@ bin/pycolor
 @dirrm %%PYTHON_SITELIBDIR%%/IPython
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets/directview
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/widgets
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/vim
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/pylab-switch
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/heartbeat
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/embed
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests
@@ -1588,8 +2640,11 @@ bin/pycolor
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel/demo
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel/davinci
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/notebooks/nbimp/nbs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/notebooks/nbimp
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/notebooks/logo
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/notebooks
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/lib
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/inprocess
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/core
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
