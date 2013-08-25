@@ -19,7 +19,7 @@
 #
 # To override a definition for example replacing /usr/bin/perl by /usr/bin/env perl
 # add to the port Makefile:
-# perl_CMD=	${SENTENV} perl
+# perl_CMD=	${SETENV} perl
 #
 
 .if !defined(_INCLUDE_USES_SHEBANGFIX_Mk)
