@@ -4441,6 +4441,7 @@
     SUBDIR += valgrind-snapshot
     SUBDIR += valide
     SUBDIR += varconf
+    SUBDIR += vera++
     SUBDIR += viewvc
     SUBDIR += violet
     SUBDIR += vstr
