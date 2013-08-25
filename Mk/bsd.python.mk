@@ -81,6 +81,9 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					  want to build extensions with an older binary.
 #					  default: depends on the version of your python binary
 #
+# PYTHON_VER		- Version of the python binary in your ${PATH}, in the
+#					  format "2.7".
+#
 # PYTHON_DEFAULT_VERSION
 #					- Version of the default python binary in your ${PATH}, in
 #					  the format "python2.7". Set this in your /etc/make.conf
