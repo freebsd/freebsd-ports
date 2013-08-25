@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	IO-Async
-PORTVERSION=	0.58
+PORTVERSION=	0.59
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -27,7 +27,6 @@ USE_PERL5=	configure
 MAN3=		IO::Async.3 \
 		IO::Async::Channel.3 \
 		IO::Async::ChildManager.3 \
-		IO::Async::Connector.3 \
 		IO::Async::File.3 \
 		IO::Async::FileStream.3 \
 		IO::Async::Function.3 \
@@ -42,6 +41,7 @@ MAN3=		IO::Async.3 \
 		IO::Async::Notifier.3 \
 		IO::Async::OS.3 \
 		IO::Async::OS::MSWin32.3 \
+		IO::Async::OS::cygwin.3 \
 		IO::Async::PID.3 \
 		IO::Async::Protocol.3 \
 		IO::Async::Protocol::LineStream.3 \
