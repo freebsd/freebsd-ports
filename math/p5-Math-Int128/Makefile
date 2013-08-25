@@ -3,8 +3,7 @@
 #
 
 PORTNAME=	Math-Int128
-PORTVERSION=	0.07
-PORTREVISION=	1
+PORTVERSION=	0.12
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,15 +13,24 @@ COMMENT=	Manipulate 128 bits integers in Perl
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=  p5-Math-Int64>=0.28:${PORTSDIR}/math/p5-Math-Int64
-RUN_DEPENDS=    p5-Math-Int64>=0.28:${PORTSDIR}/math/p5-Math-Int64
+BUILD_DEPENDS=	p5-Math-Int64>=0.28:${PORTSDIR}/math/p5-Math-Int64
+RUN_DEPENDS=	p5-Math-Int64>=0.28:${PORTSDIR}/math/p5-Math-Int64
 
 USES=		perl5
 USE_PERL5=	configure
 
-USE_GCC=	yes
+NOT_FOR_ARCHS=	i386
 
 MAN3=		Math::Int128.3 \
 		Math::Int128::die_on_overflow.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# need clang 3.2+ or gcc 4.4+
+.if exists(/usr/bin/clang) && ${OSVERSION} > 901505
+CC=	/usr/bin/clang
+.else
+USE_GCC=	4.4+
+.endif
+
+.include <bsd.port.post.mk>
