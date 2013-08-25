@@ -1,0 +1,48 @@
+bin/vera++
+lib/vera++/profiles/boost
+lib/vera++/profiles/default
+lib/vera++/profiles/full
+lib/vera++/scripts/rules/DUMP.tcl
+lib/vera++/scripts/rules/F001.tcl
+lib/vera++/scripts/rules/F002.tcl
+lib/vera++/scripts/rules/L001.tcl
+lib/vera++/scripts/rules/L002.tcl
+lib/vera++/scripts/rules/L003.tcl
+lib/vera++/scripts/rules/L004.tcl
+lib/vera++/scripts/rules/L005.tcl
+lib/vera++/scripts/rules/L006.tcl
+lib/vera++/scripts/rules/T001.tcl
+lib/vera++/scripts/rules/T002.tcl
+lib/vera++/scripts/rules/T003.tcl
+lib/vera++/scripts/rules/T004.tcl
+lib/vera++/scripts/rules/T005.tcl
+lib/vera++/scripts/rules/T006.tcl
+lib/vera++/scripts/rules/T007.tcl
+lib/vera++/scripts/rules/T008.tcl
+lib/vera++/scripts/rules/T009.tcl
+lib/vera++/scripts/rules/T010.tcl
+lib/vera++/scripts/rules/T011.tcl
+lib/vera++/scripts/rules/T012.tcl
+lib/vera++/scripts/rules/T013.tcl
+lib/vera++/scripts/rules/T014.tcl
+lib/vera++/scripts/rules/T015.tcl
+lib/vera++/scripts/rules/T016.tcl
+lib/vera++/scripts/rules/T017.tcl
+lib/vera++/scripts/rules/T018.tcl
+lib/vera++/scripts/rules/T019.tcl
+lib/vera++/scripts/transformations/move_includes.tcl
+lib/vera++/scripts/transformations/move_macros.tcl
+lib/vera++/scripts/transformations/move_namespace.tcl
+lib/vera++/scripts/transformations/to_lower.tcl
+lib/vera++/scripts/transformations/to_xml.tcl
+lib/vera++/scripts/transformations/to_xml2.tcl
+lib/vera++/scripts/transformations/trim_right.tcl
+lib/vera++/test_wrapper.cmake.in
+lib/vera++/use_vera++.cmake
+lib/vera++/vera++-config-version.cmake
+lib/vera++/vera++-config.cmake
+@dirrm lib/vera++/scripts/transformations
+@dirrm lib/vera++/scripts/rules
+@dirrm lib/vera++/scripts
+@dirrm lib/vera++/profiles
+@dirrm lib/vera++
