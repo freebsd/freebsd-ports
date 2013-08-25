@@ -52,10 +52,10 @@ PLIST_SUB+=	TIFFICC="@comment "
 .endif
 
 post-patch:
-.if empty(PORT_OPTIONS:MJPEGICC)
+.if !${PORT_OPTIONS:MJPEGICC}
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| utils/jpgicc||' ${WRKSRC}/Makefile.in
 .endif
-.if empty(PORT_OPTIONS:MTIFFICC)
+.if !${PORT_OPTIONS:MTIFFICC}
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| utils/tificc||' ${WRKSRC}/Makefile.in
 .endif
 

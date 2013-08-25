@@ -50,7 +50,7 @@ post-patch:
 		-e '/^dist_sysconf_DATA = /d' \
 		-e '/^pkglibbindir = / s| = .*$$| = ${WWWDIR}/cgi-bin|' \
 			${WRKSRC}/Makefile.in
-.if empty(PORT_OPTIONS:MDOCS)
+.if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| docs||' ${WRKSRC}/Makefile.in
 .endif
 

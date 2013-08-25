@@ -34,7 +34,7 @@ MAN1=		ktremotemgr.1 \
 .include <bsd.port.options.mk>
 
 post-patch:
-.if empty(PORT_OPTIONS:MDOCS)
+.if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/DOCDIR/d' ${WRKSRC}/Makefile.in
 .endif
 
