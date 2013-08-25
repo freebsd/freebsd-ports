@@ -31,7 +31,7 @@ PORTDOCS=	*
 .endif
 
 post-patch:
-.if empty(PORT_OPTIONS:MDOCS) || empty(PORT_OPTIONS:MDOXYGEN)
+.if !${PORT_OPTIONS:MDOCS} || !${PORT_OPTIONS:MDOXYGEN}
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| doc||' ${WRKSRC}/Makefile.in
 .endif
 

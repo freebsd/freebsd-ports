@@ -31,7 +31,7 @@ MAN3=		XML::XML2JSON.3
 
 .include <bsd.port.options.mk>
 
-.if empty(PORT_OPTIONS:MJSON_SYCK) && empty(PORT_OPTIONS:MJSON_XS) && empty(PORT_OPTIONS:MJSON) && empty(PORT_OPTIONS:MJSON_DWIW)
+.if !${PORT_OPTIONS:MJSON_SYCK} && !${PORT_OPTIONS:MJSON_XS} && !${PORT_OPTIONS:MJSON} && !${PORT_OPTIONS:MJSON_DWIW}
 IGNORE=		you must choose at least one JSON module
 .endif
 

@@ -77,7 +77,7 @@ PLIST_SUB+=	RUBY="@comment "
 post-patch:
 # do not install rdoc
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||' ${WRKSRC}/ruby/Makefile.in
-.if empty(PORT_OPTIONS:MDOCS)
+.if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-dist_docdataDATA install-dist_exampledataDATA ||' ${WRKSRC}/lua/Makefile.in ${WRKSRC}/php/Makefile.in ${WRKSRC}/python/Makefile.in
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-dist_docdataDATA||; 799 s|install-dist_exampledataDATA ||' ${WRKSRC}/ruby/Makefile.in
 .endif

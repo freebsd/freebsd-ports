@@ -35,7 +35,7 @@ MAKE_ENV+=	PCRE_CFLAGS="" PCRE_LIBS=""
 .endif
 
 post-patch:
-.if empty(PORT_OPTIONS:MEXAMPLES)
+.if !${PORT_OPTIONS:MEXAMPLES}
 	@${REINPLACE_CMD} -e '/^install:/ s| install-examples||' ${WRKSRC}/Makefile
 .endif
 

@@ -47,10 +47,10 @@ PLIST_SUB+=	TIFFICC="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| python samples||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|^testcms_LDFLAGS = .*$$|& -static|' ${WRKSRC}/testbed/Makefile.in
-.if empty(PORT_OPTIONS:MJPEGICC)
+.if !${PORT_OPTIONS:MJPEGICC}
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| jpegicc||' ${WRKSRC}/Makefile.in
 .endif
-.if empty(PORT_OPTIONS:MTIFFICC)
+.if !${PORT_OPTIONS:MTIFFICC}
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| tifficc||' ${WRKSRC}/Makefile.in
 .endif
 
