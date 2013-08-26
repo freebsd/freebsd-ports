@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mh (Japanese)
-# Date created:		28 March 1995
-# Whom:			Akito FUJITA <fujita@zoo.ncl.omron.co.jp>
-#
+# Created by: Akito FUJITA <fujita@zoo.ncl.omron.co.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	mh
 PORTVERSION=	${VERSION}.j${JP_VERSION}
@@ -27,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-batchmode \
 		--enable-apop=${PREFIX}/etc/pop.auth --enable-rpop
 MAKE_JOBS_UNSAFE=	yes
+CFLAGS+=	-Wno-return-type
 
 MAN1=	ali.1 anno.1 bbc.1 burst.1 comp.1 dist.1 folder.1 forw.1 inc.1 mark.1 \
 	mh-chart.1 mh.1 mhl.1 mhmail.1 mhn.1 mhook.1 mhparam.1 mhpath.1 \
@@ -46,6 +43,9 @@ READMES=	00.READ.ME.1ST CHANGES.JP COMMANDS.JP FAQ.JP FEATURES.JP \
 CONFLICTS=	nmh-[0-9]*
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e "s/-O /${CFLAGS} /g" ${WRKSRC}/configure
 
 .if !defined(NOPORTDOCS)
 pre-install:
