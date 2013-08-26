@@ -1,9 +1,5 @@
-# New ports collection makefile for:	avr-gcc
-# Date created:		30 Nov 2000
-# Whom:			Joerg Wunsch <joerg@freebsd.org>
-#
+# Created by: Joerg Wunsch <joerg@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	binutils
 PORTVERSION=	2.20.1
@@ -22,7 +18,7 @@ USE_BZIP2=	yes
 USE_GCC=	any
 USE_GMAKE=	yes
 USES=		gettext
-CONFIGURE_ARGS=	--target=avr
+CONFIGURE_ARGS=	--target=avr --disable-werror
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
