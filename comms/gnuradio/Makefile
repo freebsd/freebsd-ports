@@ -2,6 +2,7 @@
 
 PORTNAME=	gnuradio
 PORTVERSION=	3.6.5
+PORTREVISION=	1
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	http://gnuradio.org/releases/gnuradio/ \
 		${MASTER_SITE_LOCAL}

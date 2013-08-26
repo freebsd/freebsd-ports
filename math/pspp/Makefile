@@ -3,7 +3,7 @@
 
 PORTNAME=	pspp
 PORTVERSION=	0.6.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -11,7 +11,7 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Program for statistical analysis of sampled data
 
 LIB_DEPENDS=	plot.4:${PORTSDIR}/graphics/plotutils \
-		gslcblas.0:${PORTSDIR}/math/gsl
+		gslcblas:${PORTSDIR}/math/gsl
 
 OPTIONS_DEFINE=	GUI PGSQL
 
