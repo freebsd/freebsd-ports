@@ -44,6 +44,7 @@ CMAKE_ARGS+=	-DGTK_VERSION=2
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
+LDFLAGS+=	-lintl
 .else
 PLIST_SUB+=	NLS="@comment "
 .endif
