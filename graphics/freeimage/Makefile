@@ -42,10 +42,10 @@ post-patch:
 		${WRKSRC}/Makefile.gnu ${WRKSRC}/Makefile.fip
 
 post-build:
-	cd ${WRKSRC} && ${GMAKE} -f Makefile.fip
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} -f Makefile.fip ${_MAKE_JOBS} ${MAKE_ARGS}
 
 post-install:
-	cd ${WRKSRC} && ${GMAKE} -f Makefile.fip ${INSTALL_TARGET}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} -f Makefile.fip ${MAKE_ARGS} ${INSTALL_TARGET}
 	${LN} -s libfreeimageplus-${PORTVERSION}.so.3 ${PREFIX}/lib/libfreeimageplus.so
 	${LN} -s libfreeimageplus-${PORTVERSION}.so ${PREFIX}/lib/libfreeimageplus.so.3
 
