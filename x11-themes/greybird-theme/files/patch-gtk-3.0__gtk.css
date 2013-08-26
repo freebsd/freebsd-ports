@@ -1,9 +1,9 @@
---- ./gtk-3.0/gtk.css.orig	2013-03-18 17:39:26.000000000 +0000
-+++ ./gtk-3.0/gtk.css	2013-03-24 09:14:17.000000000 +0000
+--- ./gtk-3.0/gtk.css.orig	2013-07-14 11:23:59.000000000 +0000
++++ ./gtk-3.0/gtk.css	2013-08-19 17:47:12.000000000 +0000
 @@ -65,6 +65,3 @@
+ @import url("gtk-widgets.css");
  @import url("gtk-widgets-assets.css");
  @import url("apps/gnome-applications.css");
- @import url("apps/granite-widgets.css");
 -@import url("apps/unity.css");
 -@import url("apps/lightdm-unity-greeter.css");
 -@import url("apps/lightdm-gtk-greeter.css");
