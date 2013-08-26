@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mk
-# Date Created:				11 May 2002
-# Whom:					William Josephson
-#
+# Created by: William Josephson
 # $FreeBSD$
-#
 
 PORTNAME=	mk
 PORTVERSION=	1.5
@@ -12,6 +8,8 @@ MASTER_SITES=	http://www.cminusminus.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Andrew Hume's mk by way of Research Unix, Plan 9, & Inferno
+
+BROKEN=		www.cminusminus reorganized recently, but link to distfile disappeared perhaps as an oversight
 
 MAN1=		mk.1
 PLIST_FILES=	bin/mk
