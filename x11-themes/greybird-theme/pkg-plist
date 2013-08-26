@@ -6,11 +6,11 @@ share/themes/Greybird/gtk-2.0/apps/thunar.rc
 share/themes/Greybird/gtk-2.0/apps/thunar/breadcrumb_active.png
 share/themes/Greybird/gtk-2.0/apps/thunar/breadcrumb_default.png
 share/themes/Greybird/gtk-2.0/apps/thunar/breadcrumb_prelight.png
+share/themes/Greybird/gtk-2.0/apps/thunar/sidebar_active.png
 share/themes/Greybird/gtk-2.0/apps/xfce-panel.rc
 share/themes/Greybird/gtk-2.0/gtkrc
 share/themes/Greybird/gtk-2.0/resize_grip.png
 share/themes/Greybird/gtk-3.0/apps/gnome-applications.css
-share/themes/Greybird/gtk-3.0/apps/granite-widgets.css
 share/themes/Greybird/gtk-3.0/assets/checkbox-checked-hover.png
 share/themes/Greybird/gtk-3.0/assets/checkbox-checked-insensitive.png
 share/themes/Greybird/gtk-3.0/assets/checkbox-checked.png
@@ -19,6 +19,8 @@ share/themes/Greybird/gtk-3.0/assets/checkbox-mixed-insensitive.png
 share/themes/Greybird/gtk-3.0/assets/checkbox-mixed.png
 share/themes/Greybird/gtk-3.0/assets/checkbox-unchecked-insensitive.png
 share/themes/Greybird/gtk-3.0/assets/checkbox-unchecked.png
+share/themes/Greybird/gtk-3.0/assets/grid-selection-checked.png
+share/themes/Greybird/gtk-3.0/assets/grid-selection-unchecked.png
 share/themes/Greybird/gtk-3.0/assets/menuitem-checkbox-checked-hover.png
 share/themes/Greybird/gtk-3.0/assets/menuitem-checkbox-checked-insensitive.png
 share/themes/Greybird/gtk-3.0/assets/menuitem-checkbox-checked.png

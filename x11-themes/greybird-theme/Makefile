@@ -3,21 +3,22 @@
 #
 
 PORTNAME=	greybird
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	x11-themes xfce
+MASTER_SITES=	GH GHC \
+	LOCAL/olivierd
 PKGNAMESUFFIX=	-theme
 
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Gtk and xfwm4 themes for the Xfce Desktop
 
 RUN_DEPENDS=	gtk-murrine-engine>=0.98.1:${PORTSDIR}/x11-themes/gtk-murrine-engine \
-	gtk3-unico-engine>=1.0.1:${PORTSDIR}/x11-themes/gtk3-unico-engine
+	gtk3-unico-engine>=1.0.2:${PORTSDIR}/x11-themes/gtk3-unico-engine
 
 GH_ACCOUNT=	shimmerproject
 GH_PROJECT=	Greybird
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	dc5c676
+GH_COMMIT=	6424d8a
 
 USE_GITHUB=	yes
 NO_BUILD=	yes
