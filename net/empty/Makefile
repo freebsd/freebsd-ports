@@ -1,7 +1,4 @@
-# New ports collection makefile for:	empty
-# Date created:		17 September 2005
-# Whom:			Mikhail Zakharov <zmey20000@yahoo.com>
-#
+# Created by: Mikhail Zakharov <zmey20000@yahoo.com>
 # $FreeBSD$
 
 PORTNAME=	empty
@@ -17,6 +14,7 @@ MAN1=		empty.1
 DOCS=		CHANGELOG COPYRIGHT README README.CYGWIN
 EXAMPLES=	README em_ssh.sh em_ssh_2.sh em_sh.sh \
 		em_telnet.sh em_telnet_2.sh emsu.sh runtests.sh
+MAKE_ARGS+=	CC=${CC}
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
