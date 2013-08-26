@@ -703,6 +703,7 @@ post-patch:
 	@cd ${WRKSRC} && ./install_spamcontrol.sh
 	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-spamcontrol-qmail-smtpd.c
 	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-spamcontrol-qmail-remote.c
+	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-spamcontrol-tls_remote.c
 . if ${PORT_OPTIONS:MSPF_PATCH} && defined(SPF_SPAMCONTROL_PATCH)
 	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${SPF_SPAMCONTROL_PATCH}
 .  if ${PORT_OPTIONS:MEXTTODO_PATCH} && defined(EXTTODO_PATCH)

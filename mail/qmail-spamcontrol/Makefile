@@ -19,8 +19,6 @@ EXTRA_PATCHES+=	${MASTERDIR}/files/patch-install.c \
 		${MASTERDIR}/files/patch-Makefile \
 		${MASTERDIR}/files/patch-auto_uids-c-dist
 
-USE_GCC=	any
-
 # Distfiles
 QMAIL_DIST=		${PORTNAME}-${QMAIL_VERSION}${EXTRACT_SUFX}
 SPAMCONTROL_DIST=	spamcontrol-${SPAMCONTROL_VERSION}_tgz.bin
