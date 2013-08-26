@@ -28,6 +28,10 @@ PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
+post-patch:
+	${REINPLACE_CMD} -e "s/gcc/${CC}/g" \
+		${WRKSRC}/j3d-core/src/native/ogl/build-freebsd.xml
+
 do-build:
 	cd ${WRKSRC}/vecmath && ${SETENV} ${MAKE_ENV} ${ANT} dist
 	cd ${WRKSRC}/j3d-core \
