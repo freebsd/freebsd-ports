@@ -1,15 +1,11 @@
-# New ports collection makefile for:	Code2001
-# Date created:		10 May 2008
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	code2001
 PORTVERSION=	0.919
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://code2000.net/ CENKES/myports/${DIST_SUBDIR}
-DISTFILES=	${PORTNAME:U}${EXTRACT_SUFX:U}
+MASTER_SITES=	CENKES/myports/${DIST_SUBDIR}
+DISTFILES=	CODE2001.ZIP
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
