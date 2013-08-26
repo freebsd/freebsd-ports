@@ -16,7 +16,7 @@ BOEHM_DESC=	Boehm garbage collector support
 WRKSRC=		${WRKDIR}/d
 
 EXTRACT_AFTER_ARGS=	--exclude "*my*"
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	CC="${CC}" D_OPTIMIZE= PREFIX=${PREFIX}
 
 MAN1=		make_dparser.1
