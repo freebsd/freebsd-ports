@@ -33,7 +33,8 @@ USE_GITHUB=	yes
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.7
-USE_GMAKE=	yes
+USES=		gmake
+MAKE_ARGS+=	Default_CXX=${CXX}
 
 PLIST_FILES=	%%JAVAJARDIR%%/snappy-java.jar
 
@@ -49,7 +50,7 @@ pre-build:
 
 do-build: pre-build
 	cd ${WRKSRC} && ${SETENV} JAVA_HOME=${JAVA_HOME} \
-	${GMAKE} && ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/repository --offline test
+	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} && ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/repository --offline test
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/target/snappy-java-${PORTVERSION}.jar ${JAVAJARDIR}/snappy-java.jar
