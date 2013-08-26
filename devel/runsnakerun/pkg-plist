@@ -12,6 +12,9 @@ bin/runsnakemem
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/_meliaejson.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/_meliaejson.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/_meliaejson.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/coldshotadapter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/coldshotadapter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/coldshotadapter.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/dumbprofile.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/dumbprofile.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/dumbprofile.pyo
