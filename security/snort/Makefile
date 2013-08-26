@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	snort
-PORTVERSION=	2.9.4.6
+PORTVERSION=	2.9.5.3
 CATEGORIES=	security
 MASTER_SITES=	SF/snort/snort \
 		http://mirrors.rit.edu/zi/
@@ -75,8 +75,8 @@ LIBNET_INCDIR=	${LIBNET_CFLAGS:M-I*:S/-I//}
 LIBNET_LIBDIR=	${LIBNET_LIBS:M-L*:S/-L//}
 
 CFLAGS+=	-fstack-protector
-CONFIGURE_ARGS=	--enable-dynamicplugin --enable-build-dynamic-examples \
-		--enable-reload --enable-reload-error-restart \
+CONFIGURE_ARGS=	--enable-dynamicplugin --enable-reload \
+		--enable-reload-error-restart \
 		--with-dnet-includes=${LIBNET_INCDIR} \
 		--with-dnet-libraries=${LIBNET_LIBDIR}
 

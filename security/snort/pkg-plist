@@ -145,10 +145,6 @@ lib/snort/dynamic_output/libsf_dynamic_output.la
 %%DYNAMIC%%lib/snort/dynamicengine/libsf_engine.so
 %%DYNAMIC%%lib/snort/dynamicengine/libsf_engine.so.0
 %%DYNAMIC%%@dirrmtry lib/snort/dynamicengine
-%%DYNAMIC%%lib/snort/dynamicrules/lib_sfdynamic_example_rule.a
-%%DYNAMIC%%lib/snort/dynamicrules/lib_sfdynamic_example_rule.la
-%%DYNAMIC%%lib/snort/dynamicrules/lib_sfdynamic_example_rule.so.0
-%%DYNAMIC%%lib/snort/dynamicrules/lib_sfdynamic_example_rule.so
 %%DYNAMIC%%@dirrmtry lib/snort/dynamicrules
 %%DYNAMIC%%lib/snort/dynamic_preproc/libsf_dynamic_preproc.la
 %%DYNAMIC%%lib/snort/dynamic_preproc/libsf_dynamic_preproc.a
@@ -209,10 +205,6 @@ lib/snort/dynamic_output/libsf_dynamic_output.la
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssl_preproc.la
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssl_preproc.so
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssl_preproc.so.0
-%%DYNAMIC%%lib/snort/dynamicpreprocessor/lib_sfdynamic_preprocessor_example.a
-%%DYNAMIC%%lib/snort/dynamicpreprocessor/lib_sfdynamic_preprocessor_example.so
-%%DYNAMIC%%lib/snort/dynamicpreprocessor/lib_sfdynamic_preprocessor_example.so.0
-%%DYNAMIC%%lib/snort/dynamicpreprocessor/lib_sfdynamic_preprocessor_example.la
 %%DYNAMIC%%@dirrmtry lib/snort/dynamicpreprocessor
 %%DYNAMIC%%@dirrmtry lib/snort
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -240,7 +232,6 @@ lib/snort/dynamic_output/libsf_dynamic_output.la
 %%PORTDOCS%%%%DOCSDIR%%/README.dnp3
 %%PORTDOCS%%%%DOCSDIR%%/README.dns
 %%PORTDOCS%%%%DOCSDIR%%/README.event_queue
-%%PORTDOCS%%%%DOCSDIR%%/README.file
 %%PORTDOCS%%%%DOCSDIR%%/README.filters
 %%PORTDOCS%%%%DOCSDIR%%/README.flowbits
 %%PORTDOCS%%%%DOCSDIR%%/README.frag3
@@ -274,7 +265,6 @@ lib/snort/dynamic_output/libsf_dynamic_output.la
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/USAGE
 %%PORTDOCS%%%%DOCSDIR%%/WISHLIST
-%%PORTDOCS%%%%DOCSDIR%%/faq.pdf
 %%PORTDOCS%%%%DOCSDIR%%/generators
 %%PORTDOCS%%%%DOCSDIR%%/snort_manual.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
