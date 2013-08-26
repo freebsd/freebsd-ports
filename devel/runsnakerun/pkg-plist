@@ -15,15 +15,9 @@ bin/runsnakemem
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/coldshotadapter.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/coldshotadapter.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/coldshotadapter.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/dumbprofile.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/dumbprofile.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/dumbprofile.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/homedirectory.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/homedirectory.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/homedirectory.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/hotshotreader.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/hotshotreader.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/hotshotreader.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/listviews.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/listviews.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/runsnakerun/listviews.pyo
