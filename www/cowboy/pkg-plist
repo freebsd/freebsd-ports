@@ -14,6 +14,7 @@
 %%LIB32DIR%%/erlang/lib/cowboy-%%VERSION%%/ebin/cowboy_req.beam
 %%LIB32DIR%%/erlang/lib/cowboy-%%VERSION%%/ebin/cowboy_rest.beam
 %%LIB32DIR%%/erlang/lib/cowboy-%%VERSION%%/ebin/cowboy_router.beam
+%%LIB32DIR%%/erlang/lib/cowboy-%%VERSION%%/ebin/cowboy_spdy.beam
 %%LIB32DIR%%/erlang/lib/cowboy-%%VERSION%%/ebin/cowboy_static.beam
 %%LIB32DIR%%/erlang/lib/cowboy-%%VERSION%%/ebin/cowboy_sub_protocol.beam
 %%LIB32DIR%%/erlang/lib/cowboy-%%VERSION%%/ebin/cowboy_sup.beam
@@ -35,9 +36,11 @@
 %%LIB32DIR%%/erlang/lib/cowboy-%%VERSION%%/src/cowboy_req.erl
 %%LIB32DIR%%/erlang/lib/cowboy-%%VERSION%%/src/cowboy_rest.erl
 %%LIB32DIR%%/erlang/lib/cowboy-%%VERSION%%/src/cowboy_router.erl
+%%LIB32DIR%%/erlang/lib/cowboy-%%VERSION%%/src/cowboy_spdy.erl
+%%LIB32DIR%%/erlang/lib/cowboy-%%VERSION%%/src/cowboy_spdy.hrl
 %%LIB32DIR%%/erlang/lib/cowboy-%%VERSION%%/src/cowboy_static.erl
-%%LIB32DIR%%/erlang/lib/cowboy-%%VERSION%%/src/cowboy_sup.erl
 %%LIB32DIR%%/erlang/lib/cowboy-%%VERSION%%/src/cowboy_sub_protocol.erl
+%%LIB32DIR%%/erlang/lib/cowboy-%%VERSION%%/src/cowboy_sup.erl
 %%LIB32DIR%%/erlang/lib/cowboy-%%VERSION%%/src/cowboy_websocket.erl
 %%LIB32DIR%%/erlang/lib/cowboy-%%VERSION%%/src/cowboy_websocket_handler.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.md
