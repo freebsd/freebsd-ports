@@ -20,7 +20,7 @@ you update your ports collection, before attempting any port upgrades.
 
   1. update lang/python2* and/or lang/python3*
   2. install lang/python2 and/or lang/python3
-  3. reinstall lang/python (if installed)
+  3. install/update lang/python
 
 20130816:
   AFFECTS: users of graphics/opendx and math/octave-forge-octcdf
