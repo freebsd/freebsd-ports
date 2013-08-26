@@ -1,0 +1,69 @@
+# Makefile for other stuffs
+# Whom:         Maho Nakata <maho@FreeBSD.org>
+# $FreeBSD$
+
+#other stuffs which are not directly related to making ports
+#package-rename: rename package for uploading
+#package-canonical: making official packages (WIP)
+#ure:  URE (Uno Runtime Environment) packages (WIP)
+#solver: solver
+#languagepack: language pack
+
+package-rename:
+	@${ECHO_MSG} "===>   Rename package for Apache OpenOffice mirror upload";
+	@${LN} ${PKGFILE} \
+		${WRKDIR}/../${PACKAGE_PREFIX}_${PACKAGE_MIDDLE}_install_${LOCALIZED_LANG}${PKG_SUFX}
+
+package-canonical:
+	@${ECHO_MSG} "===>   Canonical packaging for Apache OpenOffice";
+	@${CP} ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/archive/install/${LOCALIZED_LANG}/${PACKAGE_PREFI}* .
+
+sdk:
+	@${ECHO_MSG} "===>   Make SDK of Apache OpenOffice"
+	@${RM} -fr ${WRKDIR}/sdk_tmp
+	@${MKDIR} ${WRKDIR}/sdk_tmp
+	@cd ${WRKDIR}/sdk_tmp ; \
+		${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice_SDK/archive/install/${LOCALIZED_LANG}/Apache_OpenOffice_*SDK*.tar.gz
+	@cd ${WRKDIR}/sdk_tmp/Apache_*/openoffice* ; \
+		${MKDIR} ../${INSTALLATION_BASEDIR}_sdk ; \
+		${MV} * ../${INSTALLATION_BASEDIR}_sdk ; cd .. ; \
+		${TAR} cfj ${WRKDIR}/../${PACKAGE_PREFIX}-SDK_${PACKAGE_MIDDLE}_install_en-US.tbz ${INSTALLATION_BASEDIR}_sdk
+
+ure:
+	@${ECHO_MSG} "===>   Make Uno Runtime Environment of Apache OpenOffice"
+	@${RM} -fr ${WRKDIR}/ure_tmp
+	@${MKDIR} ${WRKDIR}/ure_tmp
+	@cd ${WRKDIR}/ure_tmp ; \
+		${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/URE/archive/install/${LOCALIZED_LANG}/Apache_OpenOffice_*URE*.tar.gz
+	@cd ${WRKDIR}/ure_tmp/Apache_OpenOffice*URE* ; \
+		${MKDIR} ../${INSTALLATION_BASEDIR} ; \
+		${MV} * ../${INSTALLATION_BASEDIR} ; cd .. ; \
+		${TAR} cfj ${WRKDIR}/../${PACKAGE_PREFIX}-URE_${PACKAGE_MIDDLE}_install_en-US.tbz ${INSTALLATION_BASEDIR}
+solver:
+	@${ECHO_MSG} "===>   Make Solver of Apache OpenOffice"
+	@cd ${WRKSRC} ; ${TAR} cfj ${WRKDIR}/../${PACKAGE_PREFIX}-solver_${PACKAGE_MIDDLE}.tar.bz2 solver
+
+languagepack:
+	@${ECHO_MSG} "===>   Make languagepack of Apache OpenOffice"
+.if defined (ALL_LOCALIZED_LANGS)
+	@cd ${WRKSRC} ; ${BASH} -c 'source ${FREEBSD_ENV_SET} ; cd instsetoo_native/util ; dmake ooolanguagepack'
+.else
+	@cd ${WRKSRC} ; ${BASH} -c 'source ${FREEBSD_ENV_SET} ; cd instsetoo_native/util ; dmake ooolanguagepack_${LOCALIZED_LANG}'
+.endif
+
+.if !defined (ALL_LOCALIZED_LANGS)
+	@${RM} -fr ${WRKDIR}/langpack_tmp
+	@${MKDIR} ${WRKDIR}/langpack_tmp
+.if defined (LOCALIZED_LANG)
+	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice_languagepack/archive/install/${LOCALIZED_LANG} ; ls Apache_OpenOffice*tar.* > ${WRKDIR}/${LOCALIZED_LANG}_LANGPACK
+	@cd ${WRKDIR}/langpack_tmp ; \
+	for i in `${CAT} ${WRKDIR}/${LOCALIZED_LANG}_LANGPACK`; do \
+                ${ECHO_CMD} "extracting $$i" ; \
+                cd ${WRKDIR}/langpack_tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice_languagepack/archive/install/${LOCALIZED_LANG}/$$i ; \
+        done
+	@cd ${WRKDIR}/langpack_tmp/Apache_OpenOffice*/ ; \
+		${MKDIR} ../${INSTALLATION_BASEDIR} ; \
+		${MV} * ../${INSTALLATION_BASEDIR} ; cd .. ; \
+		${TAR} cfj ${WRKDIR}/../${PACKAGE_PREFIX}_${PACKAGE_MIDDLE}_langpack_${LOCALIZED_LANG}.tbz ${INSTALLATION_BASEDIR}
+.endif
+.endif

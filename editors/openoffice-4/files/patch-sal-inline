@@ -1,0 +1,16 @@
+Index: sal/util/makefile.mk
+===================================================================
+--- sal/util/makefile.mk	(revision 1509387)
++++ sal/util/makefile.mk	(working copy)
+@@ -45,6 +45,11 @@
+ CFLAGS+= $(LFS_CFLAGS)
+ CXXFLAGS+= $(LFS_CFLAGS)
+ 
++# gcc can have some broken inlining optimizations
++.IF "$(OS)"=="FREEBSD" && "$(COM)" == "GCC"
++CFLAGS += -fkeep-inline-functions
++.ENDIF
++
+ .IF "$(depend)" == ""
+ 
+ # --- Files --------------------------------------------------------

@@ -1,0 +1,401 @@
+# localized makefile
+# Whom:         Maho Nakata <maho@FreeBSD.org>
+# $FreeBSD$
+
+################################################################
+#See solenv/inc/postset.mk for details	
+################################################################
+.if defined(LOCALIZED_LANG)
+.if ${LOCALIZED_LANG} == "af"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ar"
+CATEGORIES+=	arabic
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "as-IN"
+LANG_PKGNAME=	as
+LANG_SUFFIX=	IN
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "be-BY"
+LANG_PKGNAME=	be
+LANG_SUFFIX=	BY
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "bg"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "bn-BD"
+LANG_PKGNAME=	be
+LANG_SUFFIX=	BD
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "bn-IN"
+LANG_PKGNAME=	bn
+LANG_SUFFIX=	IN
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "bn"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "br"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "bs"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ca"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "cs"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "cy"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "da"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "de"
+CATEGORIES+=	german
+LANG_PKGNAME=	${LOCALIZED_LANG}
+COMMENT=	Office-Suite mit Textverarbeitung, Tabellenkalkulation, Datenbank und Praesentationsprogramm
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "dz"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "el"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "en-GB"
+LANG_PKGNAME=	en
+LANG_SUFFIX=	GB
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "en-US"
+LANG_PKGNAME=	en
+LANG_SUFFIX=	US
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "en-ZA"
+LANG_PKGNAME=	en
+LANG_SUFFIX=	ZA
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "eo"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "es"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "et"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "eu"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "fa"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "fi"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "fr"
+CATEGORIES+=	french
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ga"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "gl"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "gu-IN"
+LANG_PKGNAME=	gu
+LANG_SUFFIX=	IN
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "he"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "hi-IN"
+LANG_PKGNAME=	hi
+LANG_SUFFIX=	IN
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "hr"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "hu"
+CATEGORIES+=     hungarian
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "it"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ja"
+CATEGORIES+=	japanese
+LANG_PKGNAME=	${LOCALIZED_LANG}
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/std.ja_JP/Ryumin-Light:${PORTSDIR}/japanese/font-std
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ka"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "km"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "kn"
+LANG_PKGNAME=	kn
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ko"
+CATEGORIES+=     korean
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ku"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "lo"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "lt"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "lv"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "mk"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ml-IN"
+LANG_PKGNAME=	ml
+LANG_SUFFIX=	IN
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "mr-IN"
+LANG_PKGNAME=	mr
+LANG_SUFFIX=	IN
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ms"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "nb"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ne"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "nl"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "nn"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "nr"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ns"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "oc"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "or-IN"
+LANG_PKGNAME=	or
+LANG_SUFFIX=	IN
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "pa-IN"
+LANG_PKGNAME=	pa
+LANG_SUFFIX=	IN
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "pl"
+CATEGORIES+=	polish
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "pt"
+COMMENT=	Editor texto/grBaGico, banco de dados/planilha/navegador integrado
+CATEGORIES+=	portuguese
+LANG_PKGNAME=	${LOCALIZED_LANG}
+LANG_CONFIGURE_ARG=	PORT
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "pt-BR"
+COMMENT=        Editor texto/grBaGico, banco de dados/planilha/navegador integrado
+CATEGORIES+=	portuguese
+LANG_PKGNAME=	pt
+LANG_SUFFIX=	BR
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ru"
+CATEGORIES+=	russian
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "rw"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "sh"
+LANG_PKGNAME=	sh
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "sk"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "sl"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "sr"
+LANG_PKGNAME=	sr
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ss"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "st"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "sv"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "sw-TZ"
+LANG_PKGNAME=	sw
+LANG_SUFFIX=	TZ
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "sw"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ta-IN"
+LANG_PKGNAME=	ta
+LANG_SUFFIX=	IN
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "te-IN"
+LANG_PKGNAME=	te
+LANG_SUFFIX=	IN
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "tg"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "th"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ti-ER"
+LANG_PKGNAME=	ti
+LANG_SUFFIX=	ER
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "tn"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "tr"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ts"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "uk"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ur-IN"
+LANG_PKGNAME=	ur
+LANG_SUFFIX=	IN
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "uz"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ve"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "vi"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "xh"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "zh-CN"
+CATEGORIES+=	chinese
+LANG_PKGNAME=	zh
+LANG_SUFFIX=	CN
+BUILD_DEPENDS+=	${PREFIX}/share/fonts/TrueType/gbsn00lp.ttf:${PORTSDIR}/chinese/arphicttf
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "zh-TW"
+CATEGORIES+=	chinese
+LANG_PKGNAME=	zh
+LANG_SUFFIX=	TW
+BUILD_DEPENDS+=	${PREFIX}/share/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "zu"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.endif
