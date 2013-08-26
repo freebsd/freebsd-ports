@@ -124,6 +124,7 @@
 %%LIB32DIR%%/webmin/virtual-server/edit_admin.cgi
 %%LIB32DIR%%/webmin/virtual-server/edit_afile.cgi
 %%LIB32DIR%%/webmin/virtual-server/edit_alias.cgi
+%%LIB32DIR%%/webmin/virtual-server/edit_bucket.cgi
 %%LIB32DIR%%/webmin/virtual-server/edit_database.cgi
 %%LIB32DIR%%/webmin/virtual-server/edit_domain.cgi
 %%LIB32DIR%%/webmin/virtual-server/edit_exclude.cgi
@@ -1066,6 +1067,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/reseller_ranges.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/reseller_subdom.html
 %%LIB32DIR%%/webmin/virtual-server/help/reseller_subdom.nl.html
+%%LIB32DIR%%/webmin/virtual-server/help/restore_delete.html
 %%LIB32DIR%%/webmin/virtual-server/help/restore_fix.html
 %%LIB32DIR%%/webmin/virtual-server/help/restore_fix.nl.html
 %%LIB32DIR%%/webmin/virtual-server/help/restore_newip.html
@@ -1587,6 +1589,7 @@
 %%LIB32DIR%%/webmin/virtual-server/list-users.pl
 %%LIB32DIR%%/webmin/virtual-server/list_admins.cgi
 %%LIB32DIR%%/webmin/virtual-server/list_aliases.cgi
+%%LIB32DIR%%/webmin/virtual-server/list_buckets.cgi
 %%LIB32DIR%%/webmin/virtual-server/list_databases.cgi
 %%LIB32DIR%%/webmin/virtual-server/list_records.cgi
 %%LIB32DIR%%/webmin/virtual-server/list_redirects.cgi
@@ -1732,6 +1735,7 @@
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.98/3-webmincron
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.99/1-ssi
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.99/2-php54
+%%LIB32DIR%%/webmin/virtual-server/newfeatures-all/4.01/2-buckets
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
@@ -1756,6 +1760,7 @@
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.93/0-scripts
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.99/0-scripts
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/4.00/0-scripts
+%%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/4.01/0-scripts
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-lib.pl
 %%LIB32DIR%%/webmin/virtual-server/newip_form.cgi
 %%LIB32DIR%%/webmin/virtual-server/newkey.cgi
@@ -1791,6 +1796,7 @@
 %%LIB32DIR%%/webmin/virtual-server/save_admin.cgi
 %%LIB32DIR%%/webmin/virtual-server/save_afile.cgi
 %%LIB32DIR%%/webmin/virtual-server/save_alias.cgi
+%%LIB32DIR%%/webmin/virtual-server/save_bucket.cgi
 %%LIB32DIR%%/webmin/virtual-server/save_database.cgi
 %%LIB32DIR%%/webmin/virtual-server/save_dbhosts.cgi
 %%LIB32DIR%%/webmin/virtual-server/save_dbpass.cgi
@@ -1889,6 +1895,7 @@
 %%LIB32DIR%%/webmin/virtual-server/view_backuplog.cgi
 %%LIB32DIR%%/webmin/virtual-server/view_domain.cgi
 %%LIB32DIR%%/webmin/virtual-server/view_log.cgi
+%%LIB32DIR%%/webmin/virtual-server/view_records.cgi
 %%LIB32DIR%%/webmin/virtual-server/virtual-server-lib-funcs.pl
 %%LIB32DIR%%/webmin/virtual-server/virtual-server-lib.pl
 %%LIB32DIR%%/webmin/virtual-server/virtual_feature_api.pl
@@ -1899,6 +1906,7 @@
 %%LIB32DIR%%/webmin/virtual-server/wizard.cgi
 %%LIB32DIR%%/webmin/virtual-server/writelogs.pl
 @dirrm %%LIB32DIR%%/webmin/virtual-server/scripts
+@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/4.01
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/4.00
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.99
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.93
@@ -1922,6 +1930,7 @@
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.52
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl
+@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/4.01
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.99
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.98
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.96
