@@ -27,6 +27,7 @@ KBUILD_ENV=	ACLOCAL=${ACLOCAL} \
 		AUTOMAKE=${AUTOMAKE} \
 		AUTORECONF=${AUTORECONF} \
 		AUTOPOINT=true
+USE_GCC=	any
 
 KBUILD_BINS=	kDepIDB kDepPre kObjCache kmk kmk_append kmk_ash kmk_cat \
 		kmk_chmod kmk_cmp kmk_cp kmk_echo kmk_expr kmk_gmake \
@@ -46,6 +47,9 @@ ENV=
 post-patch:
 	${REINPLACE_CMD} -e '11269d;11274d' ${WRKSRC}/src/sed/configure
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Config.kmk
+	for f in ${WRKSRC}/kBuild/tools/*.kmk; do \
+		${REINPLACE_CMD} -e 's|gcc|${CC}|g' $$f ; \
+	done
 
 # Override autotools
 run-autotools:
