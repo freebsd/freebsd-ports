@@ -1,0 +1,19 @@
+--- configmgr/source/partial.hxx
++++ configmgr/source/partial.hxx
+@@ -26,6 +26,7 @@
+ 
+ #include "sal/config.h"
+ 
++#include <boost/functional/hash.hpp>
+ #include <boost/unordered_map.hpp> // using the boost container because it explicitly allows recursive types
+ #include <set>
+ 
+@@ -50,7 +51,7 @@ public:
+ 
+ private:
+     struct Node {
+-        typedef boost::unordered_map< rtl::OUString, Node > Children;
++        typedef boost::unordered_map< rtl::OUString, Node, rtl::OUStringHash > Children;
+ 
+         Node(): startInclude(false) {}
+         void clear() { startInclude=false; children.clear(); }

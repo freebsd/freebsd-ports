@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice-3/files/openoffice-wrapper,v 1.17 2012-05-09 03:48:16 maho Exp $
+
+oopath=%%PREFIX%%/%%INSTALLATION_BASEDIR%%/%%OOODIR%%
+program=`echo $0 | sed -e 's|.*-%%OOOVERSION%%-||'`
+
+case $program in
+$0)
+	$oopath/program/soffice "$@"
+	;;
+setofficelang)
+	$oopath/basis-link/program/$program "$@"
+	;;
+*)
+	$oopath/program/$program "$@"
+	;;
+esac
