@@ -1,5 +1,5 @@
 etc/mail/smtpd.conf.sample
-libexec/mail.local
+libexec/opensmtpd/mail.local
 libexec/opensmtpd/makemap
 libexec/opensmtpd/backend-queue-null
 libexec/opensmtpd/backend-queue-ram
