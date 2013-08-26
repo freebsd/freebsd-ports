@@ -100,7 +100,7 @@ $FreeBSD$
 +endif
 +
 +# Define the object modules to be compiled and flags.
-+CC=gcc
++CC=cc
 +MAIN_OBJS = eclipseMain.o
 +COMMON_OBJS = eclipseConfig.o eclipseCommon.o eclipseGtkCommon.o eclipseGtkInit.o
 +DLL_OBJS	= eclipse.o eclipseGtk.o eclipseUtil.o eclipseJNI.o eclipseMozilla.o eclipseShm.o eclipseNix.o
@@ -333,8 +333,8 @@ $FreeBSD$
 +OPT_FLAGS=-O2 -g -s -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
 +
 +core :
-+	gcc $(OPT_FLAGS) -fPIC -c $(JDK_INCLUDE) $(COMMON_INCLUDE) -o $(CORE.O) $(CORE.C)
-+	gcc $(OPT_FLAGS) -shared -Wl,-soname,$(LIB_NAME) -o $(LIB_NAME_FULL) $(CORE.O) -lc
++	cc $(OPT_FLAGS) -fPIC -c $(JDK_INCLUDE) $(COMMON_INCLUDE) -o $(CORE.O) $(CORE.C)
++	cc $(OPT_FLAGS) -shared -Wl,-soname,$(LIB_NAME) -o $(LIB_NAME_FULL) $(CORE.O) -lc
 +
 +clean :
 +	rm *.o
@@ -619,15 +619,15 @@ $FreeBSD$
 +
 +compile:
 +	@echo "Building file: $(GNOMEPROXY.O)"
-+	@echo "Invoking: GCC C Compiler"
-+	gcc $(INCLUDE) $(COMPILER_FLAGS) -o $(GNOMEPROXY.O) $(GNOMEPROXY.C)
++	@echo "Invoking: C Compiler"
++	cc $(INCLUDE) $(COMPILER_FLAGS) -o $(GNOMEPROXY.O) $(GNOMEPROXY.C)
 +	@echo "Finished building: $(GNOMEPROXY.O)"
 +	@echo " "
 +
 +link: compile
 +	@echo "Building target: $(LIB_NAME_FULL)"
-+	@echo "Invoking: GCC C Linker"
-+	gcc $(LINKER_FLAGS) -shared -Wl,-soname,$(LIB_NAME) -o $(LIB_NAME_FULL) $(LIBS) $(GNOMEPROXY.O) -lc
++	@echo "Invoking: C Linker"
++	cc $(LINKER_FLAGS) -shared -Wl,-soname,$(LIB_NAME) -o $(LIB_NAME_FULL) $(LIBS) $(GNOMEPROXY.O) -lc
 +	@echo "Finished building target: $(LIB_NAME_FULL)"
 +	@echo " "
 +
@@ -7004,9 +7004,9 @@ $FreeBSD$
 +    <property name="header-path" value="${jdk-path}/../include"/>
 +    <property name="header-freebsd-path" value="${header-path}/freebsd" />
 +
-+	<echo message="gcc -o  ${library-file} -shared -I${src-path} -I${header-freebsd-path} -fPIC ${library-file}"/>
++	<echo message="cc -o  ${library-file} -shared -I${src-path} -I${header-freebsd-path} -fPIC ${library-file}"/>
 +
-+    <apply executable="gcc" dest="${eclipse-home}/" parallel="false">
++    <apply executable="cc" dest="${eclipse-home}/" parallel="false">
 +      <arg value="-o"/>
 +      <arg value="${library-file}"/>
 +      <arg value="-shared"/>
