@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openjdk7
-# Date created:				2 January 2010
-# Whom:					Greg Lewis <glewis@FreeBSD.org>
-#
+# Created by: Greg Lewis <glewis@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${PORT_MINOR_VERSION}.${PORT_BUILD_NUMBER}
@@ -29,10 +25,11 @@ LICENSE=	GPLv2
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_ZIP=	yes
-USE_GMAKE=	yes
-USES=		iconv
+USES=		iconv gmake
 USE_XORG+=	x11 xext xi xrender xt xtst
+MAKE_ARGS=	CC=${CC} CXX=${CXX} HOST_CC=${CC}
 MAKE_JOBS_UNSAFE=	yes
+USE_GCC=	any
 
 OPTIONS_DEFINE=		DEBUG POLICY TZUPDATE
 OPTIONS_DEFAULT=	POLICY TZUPDATE
