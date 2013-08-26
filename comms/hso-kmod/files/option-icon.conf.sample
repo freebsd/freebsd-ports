@@ -1,7 +1,0 @@
-attach 100 {
-match "device-name" "umass[0-9]+";
-match "vendor"  "0x0af0";
-match "product" "0x6911|0x6971|0x7251|0x7401|0x7011|0x7501";
-match "devclass" "0x00";
-action "sleep 1; /sbin/camcontrol cmd `/sbin/camcontrol devlist | /usr/bin/grep ZCOPTION | /usr/bin/awk '{match($11, /pass[0-9]+/); print substr($11, RSTART, RLENGTH) }'` -c '01 00 00 00 00 00' -i 1 i1 > /dev/null";
-};
