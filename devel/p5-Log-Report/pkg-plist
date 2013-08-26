@@ -31,12 +31,16 @@ bin/xgettext-perl
 %%SITE_PERL%%/Log/Report/Extract/Template.pod
 %%SITE_PERL%%/Log/Report/Lexicon/Index.pm
 %%SITE_PERL%%/Log/Report/Lexicon/Index.pod
+%%SITE_PERL%%/Log/Report/Lexicon/MOTcompact.pm
+%%SITE_PERL%%/Log/Report/Lexicon/MOTcompact.pod
 %%SITE_PERL%%/Log/Report/Lexicon/PO.pm
 %%SITE_PERL%%/Log/Report/Lexicon/PO.pod
 %%SITE_PERL%%/Log/Report/Lexicon/POT.pm
 %%SITE_PERL%%/Log/Report/Lexicon/POT.pod
 %%SITE_PERL%%/Log/Report/Lexicon/POTcompact.pm
 %%SITE_PERL%%/Log/Report/Lexicon/POTcompact.pod
+%%SITE_PERL%%/Log/Report/Lexicon/Table.pm
+%%SITE_PERL%%/Log/Report/Lexicon/Table.pod
 %%SITE_PERL%%/Log/Report/Message.pm
 %%SITE_PERL%%/Log/Report/Message.pod
 %%SITE_PERL%%/Log/Report/Translator.pm
