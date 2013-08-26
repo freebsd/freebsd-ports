@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	sysconftool
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	devel
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Helps to install application configuration files
 
+USES=		perl5
 USE_BZIP2=	yes
-USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 
 USE_AUTOTOOLS=	automake aclocal autoconf
