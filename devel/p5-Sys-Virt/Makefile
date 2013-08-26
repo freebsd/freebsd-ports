@@ -1,15 +1,17 @@
-# Created by:	Frank Wall <fw@moov.de>
+# Created by: Frank Wall <fw@moov.de>
 # $FreeBSD$
 
 PORTNAME=	Sys-Virt
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fw@moov.de
 COMMENT=	Perl bindings for libvirt
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath
 LIB_DEPENDS=	virt.1001:${PORTSDIR}/devel/libvirt
