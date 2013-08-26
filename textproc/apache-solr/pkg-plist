@@ -26,8 +26,8 @@
 %%JAVAJARDIR%%/test-framework/README.txt
 %%JAVAJARDIR%%/test-framework/lib/ant-1.8.2.jar
 %%JAVAJARDIR%%/test-framework/lib/junit-4.10.jar
-%%JAVAJARDIR%%/test-framework/lib/junit4-ant-2.0.9.jar
-%%JAVAJARDIR%%/test-framework/lib/randomizedtesting-runner-2.0.9.jar
+%%JAVAJARDIR%%/test-framework/lib/junit4-ant-2.0.10.jar
+%%JAVAJARDIR%%/test-framework/lib/randomizedtesting-runner-2.0.10.jar
 %%JAVAJARDIR%%/test-framework/lucene-libs/lucene-test-framework-%%PORTVERSION%%.jar
 @dirrmtry %%JAVAJARDIR%%/solrj-lib
 @dirrmtry %%JAVAJARDIR%%/test-framework/lib
