@@ -3,7 +3,7 @@
 
 PORTNAME=	dosbox
 PORTVERSION=	0.74
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -14,7 +14,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl net sound
-PLIST_FILES=	bin/dosbox
+PLIST_FILES=	bin/dosbox share/pixmaps/dosbox.ico
 PORTDOCS=	NEWS README
 
 MAN1=		dosbox.1
@@ -24,7 +24,7 @@ CPPFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-core-inline
 
 DESKTOP_ENTRIES="DOSBox" "${COMMENT}" \
-		"" "dosbox" \
+		"${PREFIX}/share/pixmaps/dosbox.ico" "dosbox" \
 		"System;Emulator;" "true"
 
 OPTIONS_RADIO=	DEBUGGER
@@ -46,6 +46,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dosbox ${PREFIX}/bin/dosbox
+	${INSTALL_DATA} ${WRKSRC}/src/dosbox.ico ${PREFIX}/share/pixmaps/
 	${INSTALL_MAN} ${WRKSRC}/docs/dosbox.1 ${MAN1PREFIX}/man/man1/
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
