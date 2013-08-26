@@ -14,7 +14,7 @@ MASTER_SITES=	http://hu.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVE
 		http://cz.binaries.openttd.org/openttd/binaries/extra/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-all
 
-MAINTAINER=	micro@heavennet.ru
+MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	Free alternative sounds for OpenTTD game engine
 
 USE_ZIP=	yes
