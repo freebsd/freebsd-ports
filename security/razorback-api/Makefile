@@ -31,7 +31,6 @@ USES=	pathfix
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CFLAGS+=	-Wno-cast-align
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -60,6 +59,10 @@ BROKEN=		does not build when compiled with clang
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "s/-Werror//g" \
+			  ${WRKSRC}/configure
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/razorback/api.conf ]; then \
