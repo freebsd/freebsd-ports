@@ -583,7 +583,6 @@ MASTER_SITE_GNU+= \
 
 .if !defined(IGNORE_MASTER_SITE_GNUPG)
 MASTER_SITE_GNUPG+= \
-	http://gnupg.org.favoritelinks.net/%SUBDIR%/ \
 	http://mirror.tje.me.uk/pub/mirrors/ftp.gnupg.org/%SUBDIR%/ \
 	http://dotsrc.org/%SUBDIR%/ \
 	ftp://ftp.freenet.de/pub/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
