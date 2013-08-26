@@ -3,6 +3,7 @@
 
 PORTNAME=	npm
 PORTVERSION=	1.3.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -59,6 +60,7 @@ post-patch:
 
 post-install:
 	@${INSTALL_DATA} ${WRKDIR}/npm.conf ${PREFIX}/etc/man.d/npm.conf
+	@${CHMOD} +x ${PREFIX}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp
 
 # maintainer section:
 # require: bash, git, gmake, node
