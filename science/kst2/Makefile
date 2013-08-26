@@ -3,13 +3,14 @@
 
 PORTNAME=	kst
 DISTVERSION=	2.0.6
+PORTREVISION=	1
 CATEGORIES=	science kde
 MASTER_SITES=	SF/${PORTNAME}/Kst%20${DISTVERSION:C/-r.*//}/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Data viewing and plotting tool
 
-LIB_DEPENDS=	gsl.16:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl
 
 LATEST_LINK=	kst2
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	flowgrind
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://launchpad.net/flowgrind/trunk/${PORTNAME}-0.6.1/+download/
 

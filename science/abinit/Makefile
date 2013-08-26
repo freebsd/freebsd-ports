@@ -7,7 +7,7 @@
 
 PORTNAME=	abinit
 PORTVERSION=	5.7.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.abinit.org/pub/abinitio/ABINIT_v${PORTVERSION}/
 
@@ -16,7 +16,7 @@ COMMENT=	Abinit calculates electronic structure of systems
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray
 LIB_DEPENDS=	netcdff.4:${PORTSDIR}/science/netcdf3-ftn	\
-		gsl.16:${PORTSDIR}/math/gsl
+		gsl:${PORTSDIR}/math/gsl
 
 USE_FORTRAN=	yes
 USE_GMAKE=	yes

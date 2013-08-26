@@ -3,6 +3,7 @@
 
 PORTNAME=	Math-GSL
 PORTVERSION=	0.27
+PORTREVISION=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -81,5 +82,11 @@ MAN3=		Math::GSL.3 \
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -Ee 's/(\()(back|for)(ward\))/\1gsl_fft_\2\3/' \
+		${WRKSRC}/xs/FFT_wrap.1.15.c
+	@${REINPLACE_CMD} -Ee 's/(\()(back|for)(ward\))/\1gsl_wavelet_\2\3/' \
+		${WRKSRC}/xs/Wavelet_wrap.1.15.c
 
 .include <bsd.port.post.mk>
