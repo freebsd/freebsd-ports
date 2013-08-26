@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Verlihub
-# Date created:				2 April 2004
-# Whom:					Bill Cadwallader <hurbold@yahoo.com>
-#
+# Created by: Bill Cadwallader <hurbold@yahoo.com>
 # $FreeBSD$
-#
 
 PORTNAME=	verlihub
 DISTVERSION=	0.9.8e-r2
@@ -22,6 +18,7 @@ LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP \
 		pcre.3:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+LDFLAGS+=	-L/usr/local/lib
 USE_RC_SUBR=	verlihub
 USE_GCC=	4.2+
 USE_AUTOTOOLS=	libtool
