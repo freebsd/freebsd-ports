@@ -229,6 +229,7 @@
     SUBDIR += nxml
     SUBDIR += omegaT
     SUBDIR += openoffice-3
+    SUBDIR += openoffice-4
     SUBDIR += openoffice-devel
     SUBDIR += p5-Padre
     SUBDIR += p5-Proc-InvokeEditor
