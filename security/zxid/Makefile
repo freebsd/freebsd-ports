@@ -30,7 +30,9 @@ ZXID_BINS=	smime zxcall zxcot zxdecode zxencdectest zxid zxidhlo \
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e '/which gcc/d' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/which gcc/d' \
+		-e 's/ --export-all-symbols/ /g' \
+		${WRKSRC}/Makefile
 
 post-install:
 	${MKDIR} ${PREFIX}/include/zxid/
