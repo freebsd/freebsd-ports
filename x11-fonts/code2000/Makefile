@@ -1,15 +1,10 @@
-# New ports collection makefile for:	Code2000
-# Date created:		6 Dec 2003
-# Whom:			Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	code2000
 PORTVERSION=	1.171
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://code2000.net/	\
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	thierry/${DIST_SUBDIR}
 DISTFILES=	${PORTNAME:U}${EXTRACT_SUFX:U}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
