@@ -63,7 +63,6 @@
     SUBDIR += hamlib
     SUBDIR += hcidump
     SUBDIR += hf
-    SUBDIR += hso-kmod
     SUBDIR += hylafax
     SUBDIR += ib-kmod
     SUBDIR += ibp

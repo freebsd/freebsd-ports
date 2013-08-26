@@ -4844,3 +4844,6 @@ www/w3m-m17n|www/w3m|2013-08-22|Unified to www/w3m
 www/w3m-m17n-img|www/w3m-img|2013-08-22|Unified to www/w3m-img
 www/moodle22||2013-08-20|Has expired: Unmaintained upstream
 security/sfs||2013-08-23|Has expired: Broken on FreeBSD 8 and newer
+mail/p5-Mail-CClient||2013-08-26|Has expired: Broken for more than 6 month
+net/slbd||2013-08-26|Has expired: Broken on FreeBSD 8 and newer
+comms/hso-kmod||2013-08-26|Has expired: Broken on FreeBSD 8 and newer

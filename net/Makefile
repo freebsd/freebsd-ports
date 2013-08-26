@@ -1112,7 +1112,6 @@
     SUBDIR += skyfish
     SUBDIR += skystar2
     SUBDIR += sl2tps
-    SUBDIR += slbd
     SUBDIR += slirp
     SUBDIR += slurm
     SUBDIR += smb4k-kde4

@@ -1,8 +1,0 @@
-%%PL_DEVD%%@unexec if cmp -s %D/etc/devd/option-icon.conf.sample %D/etc/devd/option-icon.conf; then rm -f %D/etc/devd/option-icon.conf; fi
-%%PL_DEVD%%etc/devd/option-icon.conf.sample
-%%PL_DEVD%%@exec if [ ! -f %D/etc/devd/option-icon.conf ]; then mkdir -p %B; cp -p %D/%F %B/option-icon.conf; fi
-%%PL_HSOCTL%%bin/hsoctl
-@cwd /boot/modules
-hso.ko
-@exec kldxref %D
-@unexec kldxref %D

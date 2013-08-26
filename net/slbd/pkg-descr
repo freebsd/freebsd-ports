@@ -1,5 +1,0 @@
-The slbd project aims to produce stable, production-quality code to monitor 
-web and other TCP-based servers, allowing for server load balancing (SLB) 
-functionality through *BSD's PF packet filter.
-
-WWW: http://slbd.sourceforge.net/

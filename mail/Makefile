@@ -387,7 +387,6 @@
     SUBDIR += p5-Mail-Box
     SUBDIR += p5-Mail-Box-Parser-C
     SUBDIR += p5-Mail-Bulkmail
-    SUBDIR += p5-Mail-CClient
     SUBDIR += p5-Mail-Cache
     SUBDIR += p5-Mail-CheckUser
     SUBDIR += p5-Mail-ClamAV
