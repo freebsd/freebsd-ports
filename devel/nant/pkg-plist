@@ -34,20 +34,20 @@ libdata/pkgconfig/nant.pc
 %%DATADIR%%/bin/NAnt.exe.config
 %%DATADIR%%/bin/NAnt.exe.mdb
 %%DATADIR%%/bin/NAnt.xml
+%%DATADIR%%/bin/NDoc.Documenter.NAnt.dll
+%%DATADIR%%/bin/NDoc.Documenter.NAnt.dll.mdb
+%%DATADIR%%/bin/NDoc.Documenter.NAnt.xml
 %%DATADIR%%/bin/extensions/common/2.0/NAnt.MSBuild.dll
 %%DATADIR%%/bin/extensions/common/2.0/NAnt.MSBuild.dll.mdb
 %%DATADIR%%/bin/extensions/common/2.0/NAnt.MSBuild.xml
 %%DATADIR%%/bin/extensions/common/4.0/NAnt.MSBuild.dll
 %%DATADIR%%/bin/extensions/common/4.0/NAnt.MSBuild.dll.mdb
 %%DATADIR%%/bin/extensions/common/4.0/NAnt.MSBuild.xml
-%%DATADIR%%/bin/lib/common/1.1/nunit-console-runner.dll
-%%DATADIR%%/bin/lib/common/1.1/nunit-console.exe
-%%DATADIR%%/bin/lib/common/1.1/nunit.core.dll
-%%DATADIR%%/bin/lib/common/1.1/nunit.framework.dll
-%%DATADIR%%/bin/lib/common/1.1/nunit.util.dll
 %%DATADIR%%/bin/lib/common/2.0/nunit-console-runner.dll
 %%DATADIR%%/bin/lib/common/2.0/nunit-console.exe
+%%DATADIR%%/bin/lib/common/2.0/nunit-console.exe.config
 %%DATADIR%%/bin/lib/common/2.0/nunit.core.dll
+%%DATADIR%%/bin/lib/common/2.0/nunit.core.interfaces.dll
 %%DATADIR%%/bin/lib/common/2.0/nunit.framework.dll
 %%DATADIR%%/bin/lib/common/2.0/nunit.util.dll
 %%DATADIR%%/bin/lib/common/neutral/ICSharpCode.SharpCvsLib.Console.dll
@@ -57,22 +57,21 @@ libdata/pkgconfig/nant.pc
 %%DATADIR%%/bin/lib/common/neutral/NDoc.Documenter.Msdn.dll
 %%DATADIR%%/bin/lib/common/neutral/NDoc.ExtendedUI.dll
 %%DATADIR%%/bin/lib/common/neutral/NUnitCore.dll
-%%DATADIR%%/bin/lib/net/1.0/nunit-console-runner.dll
-%%DATADIR%%/bin/lib/net/1.0/nunit-console.exe
-%%DATADIR%%/bin/lib/net/1.0/nunit.core.dll
-%%DATADIR%%/bin/lib/net/1.0/nunit.framework.dll
-%%DATADIR%%/bin/lib/net/1.0/nunit.util.dll
+%%DATADIR%%/bin/lib/common/neutral/netDumbster.dll
 %%DATADIR%%/bin/log4net.dll
 %%DATADIR%%/bin/scvs.exe
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Compression.Tasks.ExpandBaseTask.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.DataTypeBase.html
+%%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.ElementContainer.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Filters.ChainableReader.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Filters.Filter.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Target.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Task.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.TaskContainer.html
+%%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Tasks.ChooseTask.When.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Tasks.ExternalProgramBase.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Tasks.InElement.html
+%%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Tasks.TryCatchTask.CatchElement.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Types.Argument.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Types.EnvironmentSet.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Types.EnvironmentVariable.html
@@ -114,6 +113,7 @@ libdata/pkgconfig/nant.pc
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.Core.Tasks.AvailableTask.ResourceType.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.Core.Tasks.LoopTask.LoopItem.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.Core.Tasks.LoopTask.LoopTrim.html
+%%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.Core.Tasks.MailTask.MailFormat.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.Core.Types.ManagedExecution.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.DotNet.Tasks.AssemblyInfoTask.CodeLanguage.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.DotNet.Tasks.RegsvcsTask.ActionType.html
@@ -149,6 +149,7 @@ libdata/pkgconfig/nant.pc
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/cygpath.get-dos-path(System.String).html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/cygpath.get-unix-path(System.String).html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/cygpath.get-windows-path(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.format-to-string(System.DateTime,System.String).html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-day(System.DateTime).html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-day-of-week(System.DateTime).html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-day-of-year(System.DateTime).html
@@ -333,6 +334,7 @@ libdata/pkgconfig/nant.pc
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/available.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/aximp.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/call.html
+%%PORTDOCS%%%%DOCSDIR%%/help/tasks/choose.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/cl.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/copy.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/csc.html
@@ -393,6 +395,7 @@ libdata/pkgconfig/nant.pc
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/tlbexp.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/tlbimp.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/touch.html
+%%PORTDOCS%%%%DOCSDIR%%/help/tasks/trycatch.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/tstamp.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/untar.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/unzip.html
@@ -513,11 +516,8 @@ libdata/pkgconfig/nant.pc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help/elements
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/bin/lib/net/1.0
-@dirrm %%DATADIR%%/bin/lib/net
 @dirrm %%DATADIR%%/bin/lib/common/neutral
 @dirrm %%DATADIR%%/bin/lib/common/2.0
-@dirrm %%DATADIR%%/bin/lib/common/1.1
 @dirrm %%DATADIR%%/bin/lib/common
 @dirrm %%DATADIR%%/bin/lib
 @dirrm %%DATADIR%%/bin/extensions/common/4.0
