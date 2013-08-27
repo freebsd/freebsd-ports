@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dejavu
-PORTVERSION=	2.33
+PORTVERSION=	2.34
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-fonts-ttf-${PORTVERSION}
@@ -11,7 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bitstream Vera Fonts clone with a wider range of characters
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS LINKS
 LINKS_DESC=	Install links of configuration files in conf.d
