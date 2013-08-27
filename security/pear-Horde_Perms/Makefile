@@ -1,11 +1,8 @@
-# Ports collection makefile for:  pear-Horde_Perms
-# Date created:			  7 July 2011
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Horde_Perms
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	security www pear
 
 MAINTAINER=	horde@FreeBSD.org
