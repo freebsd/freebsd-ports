@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Type-Tiny
-PORTVERSION=	0.022
+PORTVERSION=	0.024
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOBYINK
@@ -27,6 +27,7 @@ USE_PERL5=	configure
 USES=		perl5
 
 MAN3=		Devel::TypeTiny::Perl56Compat.3 \
+		Devel::TypeTiny::Perl58Compat.3 \
 		Eval::TypeTiny.3 \
 		Exporter::TypeTiny.3 \
 		Reply::Plugin::TypeTiny.3 \
