@@ -145,12 +145,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@BUILD_GRAPHICS_API_TRUE@|#&|' ${WRKSRC}/api/Makefile.in
 .endif
 
-pre-install:
-.if ${PORT_OPTIONS:MUSER}
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-.endif
-
 post-install:
+.if ${PORT_OPTIONS:MUSER}
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.endif
 .if ${PORT_OPTIONS:MMANAGER}
 	${MKDIR} ${PREFIX}/share/boinc
 	${MKDIR} ${LOCALBASE}/share/pixmaps
