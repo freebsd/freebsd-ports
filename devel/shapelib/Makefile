@@ -12,6 +12,8 @@ MASTER_SITES=	http://download.osgeo.org/shapelib/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C API for reading and writing ArcView Shapefiles
 
+LICENSE=	LGPL20
+
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
