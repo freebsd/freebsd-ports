@@ -1,4 +1,0 @@
-This port builds a kernel module with the 'gspca' USB webcam driver
-using the adaptation layer in devel/linux-kmod-compat
-The web site for the original gspca driver (for Linux) is
-	http://mxhaard.free.fr/index.html

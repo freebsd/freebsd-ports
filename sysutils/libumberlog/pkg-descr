@@ -1,8 +1,0 @@
-The libumberlog library serves two purposes: it's either a drop-in
-replacement for the syslog() system call, in which case it turns the default
-syslog messages into CEE-enhanced messages, with a CEE-JSON payload, and
-some automatically discovered fields. Or, it can be used as a stand-alone
-library, that provides a syslog()-like API, with the ability to add
-arbitrary key-value pairs to the resulting JSON payload.
-
-WWW: http://algernon.github.com/libumberlog/

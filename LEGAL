@@ -38,7 +38,6 @@ alephone/M1A1.zip	games/alephone-data	Bungie/Microsoft do not allow charging for
 alephone/Marathon*.zip	games/alephone-data	Bungie/Microsoft do not allow charging for Marathon data files
 annelid-*		games/annelid		Redistribution is limited
 apache2/mod_h264_streaming-*	www/mod_h264_streaming	No commercial use
-apache_mod_smooth_streaming-*	www/mod_smooth_streaming Not for commerical use
 AquaGatekeeper*		net/AquaGatekeeper	No redistribution allowed
 armyops*-linux.run	games/linux-americasarmy Redistribution is limited
 astah-community-*.zip	devel/astah-community	License restrictions
@@ -174,7 +173,6 @@ mikachan-ttfonts/ver*.*	japanese/mikachan-ttfonts Do not sell distfile
 mindfocus-*		games/mindfocus		Contains commercial character data
 mindterm-*		security/mindterm-binary Do not sell for profit
 molden*			biology/molden		Free for academic, non-profit usage; do not redistribute source and executable
-mp4split-*		multimedia/mp4split	No commercial use
 MPlayer*		multimedia/mplayer	Restricted binary distribution
 msql-*			databases/msql		Not free for commercial organizations
 mypaedia-*		japanese/mypaedia-fpw	The original dictionary is not free

@@ -50,7 +50,6 @@
     SUBDIR += automount
     SUBDIR += automounter
     SUBDIR += autopsy
-    SUBDIR += avfs
     SUBDIR += b43-fwcutter
     SUBDIR += backupme
     SUBDIR += backuppc
@@ -214,7 +213,6 @@
     SUBDIR += edid-decode
     SUBDIR += eiciel
     SUBDIR += eject
-    SUBDIR += empower
     SUBDIR += endian
     SUBDIR += entr
     SUBDIR += enteruser
@@ -458,7 +456,6 @@
     SUBDIR += libpcbsd
     SUBDIR += libretto-config
     SUBDIR += libsunacl
-    SUBDIR += libumberlog
     SUBDIR += liburcu
     SUBDIR += libutempter
     SUBDIR += libzeitgeist

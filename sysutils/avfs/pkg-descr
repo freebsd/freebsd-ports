@@ -1,5 +1,0 @@
-AVFS is a system, which enables all programs to look inside gzip, tar,
-zip, etc. files or view remote (ftp, http, dav, etc.) files, without
-recompiling the programs.
-
-WWW: http://avf.sourceforge.net/

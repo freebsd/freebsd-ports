@@ -1501,7 +1501,6 @@
     SUBDIR += words
     SUBDIR += wv
     SUBDIR += wv2
-    SUBDIR += xaira
     SUBDIR += xalan-c
     SUBDIR += xalan-j
     SUBDIR += xerces-c2

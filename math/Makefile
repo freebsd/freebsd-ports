@@ -93,7 +93,6 @@
     SUBDIR += dcdflib
     SUBDIR += diehard
     SUBDIR += dieharder
-    SUBDIR += dislin
     SUBDIR += djbfft
     SUBDIR += drgeo
     SUBDIR += dynare

@@ -1,5 +1,0 @@
-f90gl is a public domain implementation of the official Fortran90
-bindings for OpenGL. This implements the interface for OpenGL
-1.2, GLU 1.2, GLUT 3.7, and  several extensions.
-
-WWW: http://math.nist.gov/f90gl/

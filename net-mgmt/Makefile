@@ -178,7 +178,6 @@
     SUBDIR += nfsen
     SUBDIR += ng_ipacct
     SUBDIR += nitpicker
-    SUBDIR += noc
     SUBDIR += nocol
     SUBDIR += nrpe2
     SUBDIR += nsca
