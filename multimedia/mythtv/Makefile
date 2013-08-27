@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mythtv
-PORTVERSION=	0.26.0
+PORTVERSION=	0.26.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
@@ -72,7 +72,7 @@ MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 USE_PYTHON=	yes
 INSTALLS_EGGINFO=yes
 PYDISTUTILS_PKGNAME=MythTV
-PYDISTUTILS_PKGVERSION=${PORTVERSION}
+PYDISTUTILS_PKGVERSION=0.26.0
 
 BUILD_DEPENDS+=	py*-lxml>=0:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb \

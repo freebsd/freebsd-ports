@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mythmusic
-PORTVERSION=	0.26.0
-PORTREVISION=	1
+PORTVERSION=	0.26.1
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \

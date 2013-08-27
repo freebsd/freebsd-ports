@@ -303,6 +303,7 @@
 %%WWWDIR%%/modules/video/init.php
 %%WWWDIR%%/modules/video/scan.php
 %%WWWDIR%%/modules/video/set_settings.php
+%%WWWDIR%%/modules/video/stream.php
 %%WWWDIR%%/modules/video/tmpl/default/set_settings.php
 %%WWWDIR%%/modules/video/tmpl/default/video.php
 %%WWWDIR%%/modules/video/tmpl/default/welcome.php
