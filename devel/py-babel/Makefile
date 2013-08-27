@@ -1,28 +1,24 @@
-# New ports collection makefile for:	py-babel
-# Date created:		7 July 2007
-# Whom:			Dryice Liu	<dryice@dryice.name>
-#
+# Created by: Dryice Liu<dryice@dryice.name>
 # $FreeBSD$
-#
 
 PORTNAME=	Babel
-PORTVERSION=	0.9.6
+PORTVERSION=	1.3
 CATEGORIES=	devel python
-MASTER_SITES=	http://ftp.edgewall.com/pub/babel/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A collection of tools for internationalizing Python applications
+MAINTAINER=	gaod@hychen.org
+COMMENT=	Collection of tools for internationalizing Python applications
 
-USE_PYTHON=		2.5-2.7
+USE_PYTHON=		2.7+
 USE_PYDISTUTILS=	easy_install
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	doc/*
-.endif
+PORTDOCS=	docs/*
+
+.include <bsd.port.options.mk>
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for docfile in ${PORTDOCS}
 	${CP} -r ${WRKSRC}/${docfile} ${DOCSDIR}
