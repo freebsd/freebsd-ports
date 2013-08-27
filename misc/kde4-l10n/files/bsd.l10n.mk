@@ -26,6 +26,9 @@ ru_CATEGORY=	russian
 uk_CATEGORY=	ukrainian
 vi_CATEGORY=	vietnamese
 
+en_GB_aspell_PORT_PREFIX=	en-
+en_GB_hunspell_PORT_PREFIX=	en-
+
 ca@valencia_aspell_PORT_PREFIX=		ca-
 ca@valencia_aspell_DETECT_PREFIX=	ca-
 
@@ -50,15 +53,15 @@ ${KDE4_L10N}_${i}_PORT_SUFFIX?=	#
 ${KDE4_L10N}_${i}_PORT?=	${${KDE4_L10N}_CATEGORY}/${${KDE4_L10N}_${i}_PORT_PREFIX}${i}${${KDE4_L10N}_${i}_PORT_SUFFIX}
 .endfor
 
-.if exists(${PORTSDIR}/${${KDE4_L10N}_aspell_PORT}/Makefile)
+.if exists(${.CURDIR}/../../${${KDE4_L10N}_aspell_PORT}/Makefile)
 OPTIONS_DEFINE+=	ASPELL
 ASPELL_DESC=		Install aspell dictionary
 .endif
 
-.if exists(${PORTSDIR}/${${KDE4_L10N}_hunspell_PORT}/Makefile)
+.if exists(${.CURDIR}/../../${${KDE4_L10N}_hunspell_PORT}/Makefile)
 OPTIONS_DEFINE+=	HUNSPELL
 HUNSPELL_DESC=		Install hunspell dictionary
 .endif
 
-ASPELL_RUN_DEPENDS+=	${${KDE4_L10N}_aspell_DETECT}:${PORTSDIR}/${${KDE4_L10N}_aspell_PORT}
-HUNSPELL_RUN_DEPENDS+=	${${KDE4_L10N}_hunspell_DETECT}:${PORTSDIR}/${${KDE4_L10N}_hunspell_PORT}
+ASPELL_RUN_DEPENDS+=	${${KDE4_L10N}_aspell_DETECT}:${.CURDIR}/../../${${KDE4_L10N}_aspell_PORT}
+HUNSPELL_RUN_DEPENDS+=	${${KDE4_L10N}_hunspell_DETECT}:${.CURDIR}/../../${${KDE4_L10N}_hunspell_PORT}
