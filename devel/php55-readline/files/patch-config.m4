@@ -1,12 +1,12 @@
---- config.m4.orig	2011-09-06 17:07:24.000000000 +0200
-+++ config.m4	2012-03-02 14:29:51.000000000 +0100
+--- config.m4.orig	2013-08-20 06:46:43.000000000 +0200
++++ config.m4	2013-08-27 16:01:29.000000000 +0200
 @@ -5,13 +5,8 @@
  PHP_ARG_WITH(libedit,for libedit readline replacement, 
- [  --with-libedit[=DIR]    Include libedit readline replacement (CLI/CGI only)])
+ [  --with-libedit[=DIR]      Include libedit readline replacement (CLI/CGI only)])
  
 -if test "$PHP_LIBEDIT" = "no"; then
    PHP_ARG_WITH(readline,for readline support,
-   [  --with-readline[=DIR]   Include readline support (CLI/CGI only)])
+   [  --with-readline[=DIR]     Include readline support (CLI/CGI only)])
 -else
 -  dnl "register" the --with-readline option to preven invalid "unknown configure option" warning
 -  php_with_readline=no
