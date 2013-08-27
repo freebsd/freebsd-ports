@@ -1,0 +1,15 @@
+The Specio distribution provides classes for representing type constraints and
+coercion, along with syntax sugar for declaring them.
+
+Note that this is not a proper type system for Perl. Nothing in this
+distribution will magically make the Perl interpreter start checking a value's
+type on assignment to a variable. In fact, there's no built-in way to apply a
+type to a variable at all.
+
+Instead, you can explicitly check a value against a type, and optionally coerce
+values to that type.
+
+The author's long-term goal is to replace Moose's built-in types and
+MooseX::Types with this module.
+
+WWW: http://search.cpan.org/dist/Specio/

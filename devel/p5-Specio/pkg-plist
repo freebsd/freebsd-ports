@@ -1,0 +1,31 @@
+%%SITE_PERL%%/Specio.pm
+%%SITE_PERL%%/Specio/Coercion.pm
+%%SITE_PERL%%/Specio/Constraint/AnyCan.pm
+%%SITE_PERL%%/Specio/Constraint/AnyDoes.pm
+%%SITE_PERL%%/Specio/Constraint/AnyIsa.pm
+%%SITE_PERL%%/Specio/Constraint/Enum.pm
+%%SITE_PERL%%/Specio/Constraint/ObjectCan.pm
+%%SITE_PERL%%/Specio/Constraint/ObjectDoes.pm
+%%SITE_PERL%%/Specio/Constraint/ObjectIsa.pm
+%%SITE_PERL%%/Specio/Constraint/Parameterizable.pm
+%%SITE_PERL%%/Specio/Constraint/Parameterized.pm
+%%SITE_PERL%%/Specio/Constraint/Role/CanType.pm
+%%SITE_PERL%%/Specio/Constraint/Role/DoesType.pm
+%%SITE_PERL%%/Specio/Constraint/Role/Interface.pm
+%%SITE_PERL%%/Specio/Constraint/Role/IsaType.pm
+%%SITE_PERL%%/Specio/Constraint/Simple.pm
+%%SITE_PERL%%/Specio/Declare.pm
+%%SITE_PERL%%/Specio/DeclaredAt.pm
+%%SITE_PERL%%/Specio/Exception.pm
+%%SITE_PERL%%/Specio/Exporter.pm
+%%SITE_PERL%%/Specio/Helpers.pm
+%%SITE_PERL%%/Specio/Library/Builtins.pm
+%%SITE_PERL%%/Specio/Registry.pm
+%%SITE_PERL%%/Specio/Role/Inlinable.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Specio/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Specio
+@dirrm %%SITE_PERL%%/Specio/Role
+@dirrm %%SITE_PERL%%/Specio/Library
+@dirrm %%SITE_PERL%%/Specio/Constraint/Role
+@dirrm %%SITE_PERL%%/Specio/Constraint
+@dirrm %%SITE_PERL%%/Specio
