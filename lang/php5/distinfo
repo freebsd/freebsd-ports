@@ -1,4 +1,4 @@
-SHA256 (php-5.4.17.tar.bz2) = dc49935387a5d1f6ac798a3bb4902ca5020f3aa74117ea848b58d1bb61327eb4
-SIZE (php-5.4.17.tar.bz2) = 11697434
+SHA256 (php-5.4.19.tar.bz2) = 7a565360e64c5be5102ef948e7c732778a40850e709270e64be7a3a3207c029b
+SIZE (php-5.4.19.tar.bz2) = 11692563
 SHA256 (php-5.4.x-mail-header.patch) = 005ae1cd8ed17c72d7b09dee9c4466e8b16d4ecba7fe11276731ed6ff9fbb344
 SIZE (php-5.4.x-mail-header.patch) = 3379
