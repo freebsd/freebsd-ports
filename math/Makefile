@@ -290,7 +290,6 @@
     SUBDIR += octave-forge-dicom
     SUBDIR += octave-forge-econometrics
     SUBDIR += octave-forge-engine
-    SUBDIR += octave-forge-es
     SUBDIR += octave-forge-fenv
     SUBDIR += octave-forge-financial
     SUBDIR += octave-forge-fits
@@ -309,7 +308,6 @@
     SUBDIR += octave-forge-integration
     SUBDIR += octave-forge-io
     SUBDIR += octave-forge-irsa
-    SUBDIR += octave-forge-java
     SUBDIR += octave-forge-linear-algebra
     SUBDIR += octave-forge-lssa
     SUBDIR += octave-forge-mapping
