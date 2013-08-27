@@ -32,7 +32,6 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	arpack.1:${PORTSDIR}/math/arpack	\
 		spooles.1:${PORTSDIR}/math/spooles \
-		metis.1:${PORTSDIR}/math/metis4	\
 		taucs.1:${PORTSDIR}/math/taucs
 
 USE_BZIP2=	yes
@@ -58,6 +57,17 @@ CCX_VER=	ccx_${PORTVERSION}
 CGX_VER=	cgx_2.6
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
+
+OPTIONS_DEFINE= METIS METIS_EDF
+OPTIONS_DEFAULT=METIS
+
+.if ${PORT_OPTIONS:MMETIS}
+LIB_DEPENDS+= 	metis.1:${PORTSDIR}/math/metis4
+.endif
+.if ${PORT_OPTIONS:MMETIS_EDF}
+LIB_DEPENDS+= 	metis.1:${PORTSDIR}/math/metis-edf
+.endif
 
 .if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=             yes
