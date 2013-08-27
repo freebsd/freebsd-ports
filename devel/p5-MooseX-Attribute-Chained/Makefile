@@ -14,7 +14,7 @@ BUILD_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-CONFLICTS=	MooseX-ChainedAccessors-[0-9]*
+CONFLICTS_INSTALL=	p5-MooseX-ChainedAccessors-[0-9]*
 
 USE_PERL5=	modbuild
 USES=		perl5
