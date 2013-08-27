@@ -210,6 +210,7 @@ include/mongo/platform/atomic_intrinsics.h
 include/mongo/platform/atomic_intrinsics_gcc.h
 include/mongo/platform/atomic_intrinsics_win32.h
 include/mongo/platform/atomic_word.h
+include/mongo/platform/backtrace.h
 include/mongo/platform/basic.h
 include/mongo/platform/bits.h
 include/mongo/platform/compiler.h
@@ -217,7 +218,9 @@ include/mongo/platform/compiler_gcc.h
 include/mongo/platform/compiler_msvc.h
 include/mongo/platform/cstdint.h
 include/mongo/platform/float_utils.h
+include/mongo/platform/posix_fadvise.h
 include/mongo/platform/random.h
+include/mongo/platform/strcasestr.h
 include/mongo/platform/strtoll.h
 include/mongo/platform/unordered_map.h
 include/mongo/platform/unordered_set.h
@@ -232,6 +235,7 @@ include/mongo/s/client_info.h
 include/mongo/s/cluster_client_internal.h
 include/mongo/s/collection_manager.h
 include/mongo/s/config.h
+include/mongo/s/config_server_checker_service.h
 include/mongo/s/config_upgrade.h
 include/mongo/s/config_upgrade_helpers.h
 include/mongo/s/cursors.h
