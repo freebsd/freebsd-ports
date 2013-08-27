@@ -56,6 +56,8 @@ post-patch:
 		s|-lSDL$$||; s|SDL/SDL|SDL|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$(datadir)/games/kobo-deluxe|${DATADIR}|' \
 		${WRKSRC}/data/Makefile.in
+	@${REINPLACE_CMD} -e 's|pipe2|kobopipe2|g' ${WRKSRC}/enemies.h \
+		${WRKSRC}/enemy.cpp
 
 post-install:
 	${CHGRP} games ${PREFIX}/bin/kobodl
