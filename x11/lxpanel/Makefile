@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lxpanel
-PORTVERSION=	0.5.12
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/LXPanel%20%28desktop%20panel%29/LXPanel%20${PORTVERSION}/
 
@@ -33,7 +32,7 @@ USE_CSTD=	gnu89
 
 MAN1=		lxpanel.1 lxpanelctl.1
 
-PORTDOCS=	AUTHORS README TODO
+PORTDOCS=	AUTHORS README
 
 .include <bsd.port.options.mk>
 
