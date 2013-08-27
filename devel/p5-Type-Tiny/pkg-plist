@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Devel/TypeTiny/Perl56Compat.pm
+%%SITE_PERL%%/Devel/TypeTiny/Perl58Compat.pm
 %%SITE_PERL%%/Eval/TypeTiny.pm
 %%SITE_PERL%%/Exporter/TypeTiny.pm
 %%SITE_PERL%%/Reply/Plugin/TypeTiny.pm
