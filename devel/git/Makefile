@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git
-PORTVERSION=	1.8.3.4
+PORTVERSION=	1.8.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -30,6 +30,7 @@ MAN1=		git.1 \
 		git-cat-file.1 \
 		git-check-attr.1 \
 		git-check-ignore.1 \
+		git-check-mailmap.1 \
 		git-check-ref-format.1 \
 		git-checkout-index.1 \
 		git-checkout.1 \
