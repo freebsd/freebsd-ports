@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	whisper
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.12
 CATEGORIES=	databases python
 MASTER_SITES=	https://github.com/graphite-project/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
