@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seed7
-DISTVERSION=	05_20130805
+DISTVERSION=	05_20130820
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -13,7 +13,6 @@ COMMENT=	High-level, extensible programming language
 
 LICENSE=	LGPL21
 
-USE_GMAKE=	yes
 USE_XORG=	x11
 MAN1=		s7.1 s7c.1
 
@@ -35,19 +34,15 @@ PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} >= 1000024 || ${CC} == clang
-MAKEFILE=	mk_clang.mak
-.else
-MAKEFILE=	makefile
-.endif
+MAKEFILE=	mk_freebsd.mak
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g;' ${WRKSRC}/makefile ${WRKSRC}/mk_clang.mak
-	${REINPLACE_CMD} -e '/FLOATTYPE_DOUBLE/s|undef|define|' ${WRKSRC}/config.h
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g;' ${WRKSRC}/${MAKEFILE}
+#	${REINPLACE_CMD} -e '/FLOATTYPE_DOUBLE/s|undef|define|' ${WRKSRC}/config.h
 
 do-build:
-	cd ${WRKSRC} && ${GMAKE} -f ${MAKEFILE} depend
-	cd ${WRKSRC} && ${GMAKE} -f ${MAKEFILE} s7 s7c
+	cd ${WRKSRC} && ${MAKE} -f ${MAKEFILE} depend
+	cd ${WRKSRC} && ${MAKE} -f ${MAKEFILE} s7 s7c
 
 do-install:
 #	install interpreter and compiler
@@ -76,6 +71,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../doc/s7c.1 ${MANPREFIX}/man/man1
 
 regression-test: build
-	cd ${WRKSRC} && ${GMAKE} test
+	cd ${WRKSRC} && ${MAKE} -f ${MAKEFILE} test
 
 .include <bsd.port.mk>

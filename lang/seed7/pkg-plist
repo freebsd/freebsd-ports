@@ -83,6 +83,7 @@ lib/seed7/lib/pixmap_file.s7i
 lib/seed7/lib/pixmapfont.s7i
 lib/seed7/lib/poll.s7i
 lib/seed7/lib/progs.s7i
+lib/seed7/lib/propertyfile.s7i
 lib/seed7/lib/rational.s7i
 lib/seed7/lib/ref_list.s7i
 lib/seed7/lib/reference.s7i
@@ -91,7 +92,7 @@ lib/seed7/lib/scanfile.s7i
 lib/seed7/lib/scanstri.s7i
 lib/seed7/lib/seed7_05.s7i
 lib/seed7/lib/set.s7i
-lib/seed7/lib/sha1.s7i
+lib/seed7/lib/msgdigest.s7i
 lib/seed7/lib/shell.s7i
 lib/seed7/lib/sockbase.s7i
 lib/seed7/lib/socket.s7i
