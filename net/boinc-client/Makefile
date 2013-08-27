@@ -33,8 +33,6 @@ SUB_LIST=	BOINC_CLIENT_HOME="${BOINC_CLIENT_HOME}" \
 		BOINC_CLIENT_GROUP="${BOINC_CLIENT_GROUP}" \
 		PREFIX="${PREFIX}" LOCALBASE="${LOCALBASE}"
 
-USE_RC_SUBR=	boinc-client
-
 CONFIGURE_ARGS=	--disable-server
 CPPFLAGS+=	-I${LOCALBASE}/include
 
@@ -47,7 +45,7 @@ CLIENT_DESC=		Build BOINC client
 MANAGER_DESC=		Build BOINC manager GUI
 X11_DESC=		Build graphics API
 LINUX_DESC=		Accept Linux science applications
-USER_DESC=		Create/check BOINC client user
+USER_DESC=		Create/check BOINC client user and directory
 SKINS_DESC=		Install more skins for BOINC manager
 OPTIMIZE_DESC=		Enable compiler optimization flags
 SCRIPT_DESC=		Command line options in script
@@ -61,12 +59,7 @@ BROKEN=		Does not install on ia64, powerpc, or sparc64
 .endif
 
 .if ${PORT_OPTIONS:MMANAGER}
-. if empty(PORT_OPTIONS:MCLIENT)
-PORT_OPTIONS+=	CLIENT
-. endif
-. if empty(PORT_OPTIONS:MX11)
-PORT_OPTIONS+=	X11
-. endif
+PORT_OPTIONS+=	CLIENT X11
 .endif
 
 .if ${PORT_OPTIONS:MX11}
@@ -90,18 +83,22 @@ CONFIGURE_ARGS+=--with-sqlite3-prefix=${LOCALBASE}
 CPPFLAGS+=	-DNO_PER_THREAD_LOCALE
 . endif
 PLIST_SUB+=	BOINC_MANAGER=""
+SUB_LIST+=	OPTION_MANAGER="true"
 .else
 CONFIGURE_ARGS+=--disable-manager --with-wx-config=false --without-x
 PLIST_SUB+=	BOINC_MANAGER="@comment "
+SUB_LIST+=	OPTION_MANAGER=""
 .endif
 
 .if ${PORT_OPTIONS:MCLIENT}
+USE_RC_SUBR=	boinc-client
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 PLIST_SUB+=	BOINC_CLIENT=""
 SUB_LIST+=	OPTION_NO_GUI_RPC=${PORT_OPTIONS:MNO_GUI_RPC:S/^NO_GUI_RPC$/--no_gui_rpc/} \
 		OPTION_NO_NET_INFO=${PORT_OPTIONS:MNO_NET_INFO:S/^NO_NET_INFO$/--suppress_net_info/}
 .else
+PORT_OPTIONS:=	${PORT_OPTIONS:NUSER}
 CONFIGURE_ARGS+=--disable-client
 PLIST_SUB+=	BOINC_CLIENT="@comment "
 .endif
@@ -125,13 +122,17 @@ PLIST_SUB+=	SKINS="@comment "
 
 .if ${PORT_OPTIONS:MUSER}
 PLIST_SUB+=	USER=""
+SUB_LIST+=	OPTION_USER="true"
 .else
 PLIST_SUB+=	USER="@comment "
+SUB_LIST+=	OPTION_USER=""
 .endif
 
 .if ${PORT_OPTIONS:MOPTIMIZE}
 CONFIGURE_ARGS+=--enable-optimize
 .endif
+
+PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|client/scripts||' ${WRKSRC}/Makefile.in
@@ -141,19 +142,20 @@ post-patch:
 .else
 	@${REINPLACE_CMD} -e 's| locale||' ${WRKSRC}/Makefile.in
 .endif
-.if empty(PORT_OPTIONS:MX11)
+.if ! ${PORT_OPTIONS:MX11}
 	@${REINPLACE_CMD} -e 's|@BUILD_GRAPHICS_API_TRUE@|#&|' ${WRKSRC}/api/Makefile.in
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MUSER}
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.if ${PORT_OPTIONS:MMANAGER} || ${PORT_OPTIONS:MX11}
+	${MKDIR} ${PREFIX}/share/boinc
 .endif
 .if ${PORT_OPTIONS:MMANAGER}
-	${MKDIR} ${PREFIX}/share/boinc
-	${MKDIR} ${LOCALBASE}/share/pixmaps
+	${MKDIR} ${PREFIX}/share/pixmaps
 . for name in 16 32 48
-	${INSTALL_DATA} ${WRKSRC}/clientgui/res/boincmgr.${name}x${name}.png ${LOCALBASE}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/clientgui/res/boincmgr.${name}x${name}.png \
+	    ${LOCALBASE}/share/pixmaps
 . endfor
 . if ${PORT_OPTIONS:MSKINS}
 	${CP} -R ${WRKSRC}/clientgui/skins ${PREFIX}/share/boinc
@@ -170,9 +172,6 @@ post-install:
 	api/txf_util.h
 	${INSTALL_DATA} ${WRKSRC}/${name} ${PREFIX}/include/boinc
 . endfor
-. if empty(PORT_OPTIONS:MMANAGER)
-	${MKDIR} ${PREFIX}/share/boinc
-. endif
 	${CP} -R ${WRKSRC}/api/txf ${PREFIX}/share/boinc
 .endif
 
