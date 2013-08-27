@@ -17,10 +17,6 @@ USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sharedstatedir=${SCOREDIR} --enable-oss
 
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
-
 MAN6=		kobodl.6
 
 SCOREDIR=	/var/games/${PORTNAME}
