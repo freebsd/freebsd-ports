@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@freebsd.org
 COMMENT=	Abe's Amazing Adventure
 
 LICENSE=	GPLv2
