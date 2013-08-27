@@ -155,7 +155,7 @@ post-install:
 	${MKDIR} ${PREFIX}/share/pixmaps
 . for name in 16 32 48
 	${INSTALL_DATA} ${WRKSRC}/clientgui/res/boincmgr.${name}x${name}.png \
-	    ${LOCALBASE}/share/pixmaps
+	    ${PREFIX}/share/pixmaps
 . endfor
 . if ${PORT_OPTIONS:MSKINS}
 	${CP} -R ${WRKSRC}/clientgui/skins ${PREFIX}/share/boinc
