@@ -4,12 +4,11 @@
 PORTNAME=	mk
 PORTVERSION=	1.5
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cminusminus.org/download/
+MASTER_SITES=	http://www.cminusminus.org/download/ \
+		LOCAL/bdrewery
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Andrew Hume's mk by way of Research Unix, Plan 9, & Inferno
-
-BROKEN=		www.cminusminus reorganized recently, but link to distfile disappeared perhaps as an oversight
 
 MAN1=		mk.1
 PLIST_FILES=	bin/mk
