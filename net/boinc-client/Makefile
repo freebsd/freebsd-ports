@@ -60,24 +60,12 @@ BROKEN=		Does not install on ia64, powerpc, or sparc64
 
 .if ${PORT_OPTIONS:MMANAGER}
 PORT_OPTIONS+=	CLIENT X11
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-USE_GL=		glut
-USE_XORG+=	xmu xi
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
-PLIST_SUB+=	X11=""
-.else
-PLIST_SUB+=	X11="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMANAGER}
 USE_XORG+=	x11
 USE_WX=		2.8+
 USES+=		iconv
 WX_CONF_ARGS=	absolute
-LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify \
-		sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 CONFIGURE_ARGS+=--with-sqlite3-prefix=${LOCALBASE}
 . if ${OSVERSION} < 900506 || (${OSVERSION} >= 1000000 && ${OSVERSION} < 1000002)
 CPPFLAGS+=	-DNO_PER_THREAD_LOCALE
@@ -92,7 +80,7 @@ SUB_LIST+=	OPTION_MANAGER=""
 
 .if ${PORT_OPTIONS:MCLIENT}
 USE_RC_SUBR=	boinc-client
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 PLIST_SUB+=	BOINC_CLIENT=""
 SUB_LIST+=	OPTION_NO_GUI_RPC=${PORT_OPTIONS:MNO_GUI_RPC:S/^NO_GUI_RPC$/--no_gui_rpc/} \
@@ -130,6 +118,15 @@ SUB_LIST+=	OPTION_USER=""
 
 .if ${PORT_OPTIONS:MOPTIMIZE}
 CONFIGURE_ARGS+=--enable-optimize
+.endif
+
+.if ${PORT_OPTIONS:MX11}
+USE_GL=		glut
+USE_XORG+=	xmu xi
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+PLIST_SUB+=	X11=""
+.else
+PLIST_SUB+=	X11="@comment "
 .endif
 
 PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
