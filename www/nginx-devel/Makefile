@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.4
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -24,6 +24,7 @@ OPTIONS_DEFINE=	\
 	GOOGLE_PERFTOOLS \
 	HTTP \
 	HTTP_ADDITION \
+	HTTP_AUTH_REQ \
 	HTTP_CACHE \
 	HTTP_DAV \
 	HTTP_FLV \
@@ -56,7 +57,6 @@ OPTIONS_DEFINE=	\
 	HTTP_AUTH_DIGEST \
 	HTTP_AUTH_LDAP \
 	HTTP_AUTH_PAM \
-	HTTP_AUTH_REQ \
 	HTTP_DAV_EXT \
 	HTTP_EVAL \
 	HTTP_FANCYINDEX \
@@ -111,6 +111,7 @@ FILE_AIO_DESC=			Enable file aio
 GOOGLE_PERFTOOLS_DESC=		Enable google perftools module
 HTTP_DESC=			Enable HTTP module
 HTTP_ADDITION_DESC=		Enable http_addition module
+HTTP_AUTH_REQ_DESC=		Enable http_auth_request module
 HTTP_CACHE_DESC=		Enable http_cache module
 HTTP_DAV_DESC=			Enable http_webdav module
 HTTP_FLV_DESC=			Enable http_flv module
@@ -144,7 +145,6 @@ HTTP_ACCESSKEY_DESC=		3rd party http_accesskey module
 HTTP_AUTH_DIGEST_DESC=		3rd party http_authdigest module
 HTTP_AUTH_LDAP_DESC=		3rd party http_auth_ldap module
 HTTP_AUTH_PAM_DESC=		3rd party http_auth_pam module
-HTTP_AUTH_REQ_DESC=		3rd party http_auth_request module
 HTTP_DAV_EXT_DESC=		3rd party webdav_ext module
 HTTP_EVAL_DESC=			3rd party eval module
 HTTP_FANCYINDEX_DESC=		3rd party http_fancyindex module
@@ -311,10 +311,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_auth_pam_module-${NGINX_AUTH_PAM
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_REQ}
-NGINX_AUTH_REQ_VERSION=	0.2
-MASTER_SITES+=	http://mdounin.ru/files/:auth_request
-DISTFILES+=	ngx_http_auth_request_module-${NGINX_AUTH_REQ_VERSION}.tar.gz:auth_request
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_auth_request_module-${NGINX_AUTH_REQ_VERSION}
+CONFIGURE_ARGS+=--with-http_auth_request_module
 .endif
 
 .if empty(PORT_OPTIONS:MHTTP_CACHE)
