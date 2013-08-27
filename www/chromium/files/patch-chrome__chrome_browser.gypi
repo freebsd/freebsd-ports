@@ -1,7 +1,16 @@
---- chrome/chrome_browser.gypi.orig	2013-07-04 06:39:58.000000000 +0300
-+++ chrome/chrome_browser.gypi	2013-07-15 18:45:11.000000000 +0300
-@@ -2470,7 +2470,7 @@
-             '../device/device.gyp:device_media_transfer_protocol',
+--- chrome/chrome_browser.gypi.orig	2013-08-09 22:06:42.000000000 +0300
++++ chrome/chrome_browser.gypi	2013-08-17 22:05:42.000000000 +0300
+@@ -2456,7 +2456,7 @@
+             'xcode_settings': {'OTHER_LDFLAGS': ['-weak_framework CoreImage']},
+           },
+         }],
+-        ['OS=="mac" or OS=="win" or OS=="linux" or chromeos==1', {
++        ['OS=="mac" or OS=="win" or OS=="linux" or chromeos==1 or os_bsd==1', {
+           'sources': [
+             'browser/media_galleries/fileapi/device_media_async_file_util.cc',
+             'browser/media_galleries/fileapi/device_media_async_file_util.h',
+@@ -2640,7 +2640,7 @@
+             '../device/media_transfer_protocol/media_transfer_protocol.gyp:device_media_transfer_protocol',
            ],
          }],
 -        ['OS=="linux" and chromeos==0', {
@@ -9,7 +18,7 @@
            'dependencies': [
              '../build/linux/system.gyp:libspeechd',
            ],
-@@ -2803,6 +2803,25 @@
+@@ -2996,6 +2996,25 @@
              ['exclude', '^browser/usb/'],
            ],
          }],

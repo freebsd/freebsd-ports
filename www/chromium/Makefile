@@ -5,7 +5,7 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	28.0.1500.95
+DISTVERSION=	29.0.1547.57
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -17,12 +17,11 @@ COMMENT=	Mostly BSD-licensed web browser based on WebKit and Gtk+
 LICENSE=	BSD LGPL21 MPL
 LICENSE_COMB=	multi
 
-CFLAGS+=	-Wno-error -fno-stack-protector
-
 BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		bash:${PORTSDIR}/shells/bash \
 		yasm:${PORTSDIR}/devel/yasm \
 		flock:${PORTSDIR}/sysutils/flock \
+		ninja:${PORTSDIR}/devel/ninja \
 		v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
 
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
@@ -43,7 +42,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_XZ=		yes
-USES=		bison gmake desktop-file-utils pkgconfig
+USES=		bison desktop-file-utils pkgconfig
 USE_PERL5_BUILD=	yes
 USE_PYTHON_BUILD=	2.6-2.7
 USE_XORG=	scrnsaverproto x11 xproto xscrnsaver xtst
@@ -70,6 +69,7 @@ GYP_DEFINES+=	use_cups=1 \
 		enable_webrtc=1 \
 		enable_openmax=1 \
 		enable_one_click_signin=1 \
+		werror= \
 		no_gc_sections=1 \
 		os_ver=${OSVERSION} \
 		prefix_dir=${LOCALBASE} \
@@ -137,6 +137,7 @@ CC=		clang
 CXX=		clang++
 .endif
 GYP_DEFINES+=	clang=1
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 .else
 USE_GCC?=	4.6+
 GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
@@ -146,11 +147,20 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc
 .if ${PORT_OPTIONS:MDEBUG}
 MAKE_ENV+=	V=1
 BUILDTYPE=	Debug
+GYP_DEFINES+=	remove_webcore_debug_symbols=1
 .else
 BUILDTYPE=	Release
 GYP_DEFINES+=	buildtype=Official
 .endif
 
+CONFIGURE_ENV+=	CC=${CC} \
+		CXX=${CXX} \
+		CFLAGS="${CFLAGS}" \
+		CXXFLAGS="${CXXFLAGS}" \
+		CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}" \
+		GYP_GENERATORS=ninja \
+		GYP_DEFINES="${GYP_DEFINES}"
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE} \
 		GPERF=${LOCALBASE}/bin/gperf
 
@@ -173,9 +183,11 @@ post-patch:
 		${WRKSRC}/third_party/libvpx/libvpx.gyp \
 		${WRKSRC}/crypto/crypto.gyp \
 		${WRKSRC}/v8/tools/gyp/v8.gyp \
-		${WRKSRC}/v8/build/common.gypi
+		${WRKSRC}/v8/build/common.gypi 
 	@${REINPLACE_CMD} -e "s|/usr/bin/gcc|${CC}|" \
 		${WRKSRC}/third_party/WebKit/Source/core/core.gypi
+	@${REINPLACE_CMD} -e "s|'../courgette/courgette.gyp:courgette_lib',||" \
+		${WRKSRC}/chrome/chrome_tests_unit.gypi
 	@${REINPLACE_CMD} -e "s|linux|freebsd|" \
 		${WRKSRC}/tools/gyp/pylib/gyp/generator/make.py
 	@${REINPLACE_CMD} -e "s|is_linux|(is_linux or is_bsd)|" \
@@ -191,9 +203,12 @@ post-patch:
 		${WRKSRC}/ui/base/strings/app_locale_settings_th.xtb
 
 do-configure:
-	cd ${WRKSRC} && CC="${CC}" CXX="${CXX}" \
-		GYP_DEFINES="${GYP_DEFINES}" ${PYTHON_CMD} \
-			./build/gyp_chromium chrome/chrome.gyp --depth .
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
+		./build/gyp_chromium chrome/chrome.gyp --depth .
+
+do-build:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ninja \
+		${_MAKE_JOBS} -C out/${BUILDTYPE} ${ALL_TARGET}
 
 do-install:
 	@${MKDIR} ${DATADIR}

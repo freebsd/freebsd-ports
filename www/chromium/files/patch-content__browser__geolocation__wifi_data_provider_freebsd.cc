@@ -1,5 +1,5 @@
---- content/browser/geolocation/wifi_data_provider_freebsd.cc.orig	2012-12-27 23:17:38.000000000 +0100
-+++ content/browser/geolocation/wifi_data_provider_freebsd.cc	2012-12-28 12:28:16.000000000 +0100
+--- content/browser/geolocation/wifi_data_provider_freebsd.cc.orig	2013-08-17 18:48:06.000000000 +0300
++++ content/browser/geolocation/wifi_data_provider_freebsd.cc	2013-08-17 20:22:02.000000000 +0300
 @@ -0,0 +1,201 @@
 +// Copyright (c) 2010 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
@@ -23,7 +23,7 @@
 +#include <net80211/ieee80211_ioctl.h>
 +#include <net/ethernet.h>
 +
-+#include "base/utf_string_conversions.h"
++#include "base/strings/utf_string_conversions.h"
 +#include "content/browser/geolocation/wifi_data_provider_common.h"
 +
 +namespace content {

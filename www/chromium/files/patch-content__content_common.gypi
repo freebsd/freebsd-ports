@@ -1,6 +1,6 @@
---- content/content_common.gypi.orig	2012-11-27 10:01:27.000000000 +0200
-+++ content/content_common.gypi	2012-12-10 22:16:37.000000000 +0200
-@@ -436,6 +436,14 @@
+--- content/content_common.gypi.orig	2013-08-09 22:07:06.000000000 +0300
++++ content/content_common.gypi	2013-08-17 20:29:03.000000000 +0300
+@@ -391,6 +391,15 @@
          'content.gyp:common_aidl',
        ],
      }],
@@ -8,6 +8,7 @@
 +      'sources!': [
 +        'common/sandbox_linux.cc',
 +        'common/sandbox_linux.h',
++        'common/sandbox_init_linux.cc',
 +        'common/sandbox_seccomp_bpf_linux.cc',
 +        'common/sandbox_seccomp_bpf_linux.h',
 +      ],

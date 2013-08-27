@@ -1,5 +1,5 @@
---- third_party/webrtc/system_wrappers/source/cpu_info.cc.orig	2013-07-16 17:35:36.000000000 +0300
-+++ third_party/webrtc/system_wrappers/source/cpu_info.cc	2013-07-16 17:40:50.000000000 +0300
+--- third_party/webrtc/system_wrappers/source/cpu_info.cc.orig	2013-08-09 22:21:35.000000000 +0300
++++ third_party/webrtc/system_wrappers/source/cpu_info.cc	2013-08-16 23:27:36.000000000 +0300
 @@ -12,7 +12,10 @@
  
  #if defined(_WIN32)
@@ -11,14 +11,14 @@
 +#endif
  #include <sys/sysctl.h>
  #include <sys/types.h>
- #elif defined(WEBRTC_ANDROID)
-@@ -37,13 +40,17 @@
+ #else // defined(WEBRTC_LINUX) or defined(WEBRTC_ANDROID)
+@@ -34,13 +37,17 @@
      WEBRTC_TRACE(kTraceStateInfo, kTraceUtility, -1,
                   "Available number of cores:%d", number_of_cores_);
  
--#elif defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID)
-+#elif defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID) && !defined(WEBRTC_BSD)
-     number_of_cores_ = get_nprocs();
+-#elif defined(WEBRTC_LINUX) || defined(WEBRTC_ANDROID)
++#elif (defined(WEBRTC_LINUX) || defined(WEBRTC_ANDROID)) && !defined(WEBRTC_BSD)
+     number_of_cores_ = static_cast<uint32_t>(sysconf(_SC_NPROCESSORS_ONLN));
      WEBRTC_TRACE(kTraceStateInfo, kTraceUtility, -1,
                   "Available number of cores:%d", number_of_cores_);
  

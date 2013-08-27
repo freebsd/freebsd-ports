@@ -1,0 +1,35 @@
+Index: tools/gyp/pylib/gyp/generator/ninja.py
+===================================================================
+--- tools/gyp/pylib/gyp/generator/ninja.py	(revision 1690)
++++ tools/gyp/pylib/gyp/generator/ninja.py	(working copy)
+@@ -755,9 +755,16 @@
+       self.WriteVariableList(ninja_file, 'pchprefix', [self.name])
+     else:
+       cflags = config.get('cflags', [])
+-      cflags_c = config.get('cflags_c', [])
+-      cflags_cc = config.get('cflags_cc', [])
+ 
++      # Respect environment variables related to build, but target-specific
++      # flags can still override them.
++      cflags_c = (os.environ.get('CPPFLAGS', '').split() +
++                  os.environ.get('CFLAGS', '').split() +
++                  config.get('cflags_c', []))
++      cflags_cc = (os.environ.get('CPPFLAGS', '').split() +
++                   os.environ.get('CXXFLAGS', '').split() +
++                   config.get('cflags_cc', []))
++
+     defines = config.get('defines', []) + extra_defines
+     self.WriteVariableList(ninja_file, 'defines',
+                            [Define(d, self.flavor) for d in defines])
+@@ -932,7 +939,10 @@
+       if def_file:
+         implicit_deps.add(def_file)
+     else:
+-      ldflags = config.get('ldflags', [])
++      # Respect environment variables related to build, but target-specific
++      # flags can still override them.
++      ldflags = (os.environ.get('LDFLAGS', '').split() +
++                 config.get('ldflags', []))
+       if is_executable and len(solibs):
+         rpath = 'lib/'
+         if self.toolset != 'target':

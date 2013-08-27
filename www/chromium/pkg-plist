@@ -66,6 +66,7 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/breakpointsList.css
 %%DATADIR%%/resources/inspector/buildSystemOnly.js
 %%DATADIR%%/resources/inspector/flameChart.css
+%%DATADIR%%/resources/inspector/showhint.css
 %%DATADIR%%/resources/inspector/sidebarPane.css
 %%DATADIR%%/resources/inspector/auditsPanel.css
 %%DATADIR%%/resources/inspector/AuditsPanel.js
@@ -152,6 +153,8 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/segmentSelected.png
 %%DATADIR%%/resources/inspector/Images/segmentSelectedEnd.png
 %%DATADIR%%/resources/inspector/Images/sessionStorage.png
+%%DATADIR%%/resources/inspector/Images/settingsListRemove.png
+%%DATADIR%%/resources/inspector/Images/settingsListRemove_2x.png
 %%DATADIR%%/resources/inspector/Images/spinner.gif
 %%DATADIR%%/resources/inspector/Images/spinnerActive.gif
 %%DATADIR%%/resources/inspector/Images/spinnerActiveSelected.gif
