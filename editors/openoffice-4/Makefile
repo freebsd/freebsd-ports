@@ -24,39 +24,39 @@ USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 USE_GL=		gl glu
 USE_GSTREAMER=	yes
 #USE_GCC=	4.6+
-USE_GMAKE=	yes
 USE_PYTHON=	yes
-USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes
-USES+=		bison perl5
+USES+=		bison perl5 gmake
 USE_PERL5=	build
 WITHOUT_CPU_CFLAGS=	true
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	GCONF GNOMEVFS
+OPTIONS_DEFINE=	GCONF GNOMEVFS CCACHE
 OPTIONS_DEFAULT=GCONF GNOMEVFS
 GNOMEVFS_DESC=	Enable GNOME Virtual File System
+CCACHE_DESC=	Mimimize compile time of C/C++ programs
+
+.include "${.CURDIR}/files/Makefile.localized"
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
 JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.6+
 
-.if !defined(WITHOUT_GCONF)
+.if ${PORT_OPTIONS:MGCONF}
 USE_GNOME+=	gconf2
 .else
 CONFIGURE_ARGS+=--disable-gconf
 .endif
 
-.if !defined(WITHOUT_GNOMEVFS)
+.if ${PORT_OPTIONS:MGNOMEVFS}
 USE_GNOME+=	gnomevfs2
 .else
 CONFIGURE_ARGS+=--disable-gnome-vfs
 .endif
-
-.include <${FILESDIR}/Makefile.localized>
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -96,7 +96,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hico
 		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
 		${LOCALBASE}/lib/X11/fonts/ChromeOS/Arimo-Bold.ttf:${PORTSDIR}/x11-fonts/croscorefonts-fonts-ttf
 
-.if defined(WITH_CCACHE)
+.if ${PORT_OPTIONS:MCCACHE) || defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
 CCACHE_PREFIX=	ccache
 OOOCC=		${CCACHE_PREFIX} ${CC}
@@ -239,7 +239,7 @@ pre-everything::
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
 #	@${MKDIR} ${WRKSRC}/../ext_sources
-#	@${MV} ${WRKDIR}/ooo/ext_sources/* ${WRKSRC}/../ext_sources/
+#	@${MV} ${WRKDIR}/aoo/ext_sources/* ${WRKSRC}/../ext_sources/
 #	@${RM} -rf ${WRKSRC}/l10n
 	@${MKDIR} ${WRKSRC}/../ext_sources
 	@${RM} -rf ${WRKSRC}/l10n
