@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -18,7 +18,7 @@
+ .PHONY: all rebuild compile doc clean test dialyzer typer get-deps clean-deps \
+ 	shell clean-plt clean-doc distclean
+ 
+-all: get-deps compile test doc
++all: compile
+ 
+ rebuild: distclean get-deps all
+ 
