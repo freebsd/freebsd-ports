@@ -1,20 +1,21 @@
---- ./Documentation/Makefile.orig	2011-05-04 21:16:14.000000000 -0400
-+++ ./Documentation/Makefile	2011-05-06 09:51:54.565045058 -0400
-@@ -30,10 +30,10 @@
- DOC_MAN5=$(patsubst %.txt,%.5,$(MAN5_TXT))
- DOC_MAN7=$(patsubst %.txt,%.7,$(MAN7_TXT))
+--- ./Documentation/Makefile.orig	2013-08-27 12:08:25.000000000 -0400
++++ ./Documentation/Makefile	2013-08-27 12:09:18.000000000 -0400
+@@ -78,11 +78,11 @@
+ DOC_MAN5 = $(patsubst %.txt,%.5,$(MAN5_TXT))
+ DOC_MAN7 = $(patsubst %.txt,%.7,$(MAN7_TXT))
  
--prefix?=$(HOME)
-+prefix?=$(PREFIX)
- bindir?=$(prefix)/bin
--htmldir?=$(prefix)/share/doc/git-doc
--pdfdir?=$(prefix)/share/doc/git-doc
-+htmldir?=$(prefix)/share/doc/git
-+pdfdir?=$(prefix)/share/doc/git
- mandir?=$(prefix)/share/man
- man1dir=$(mandir)/man1
- man5dir=$(mandir)/man5
-@@ -155,7 +155,7 @@
+-prefix ?= $(HOME)
++prefix ?= $(PREFIX)
+ bindir ?= $(prefix)/bin
+-htmldir ?= $(prefix)/share/doc/git-doc
++htmldir ?= $(prefix)/share/doc/git
+ infodir ?= $(prefix)/share/info
+-pdfdir ?= $(prefix)/share/doc/git-doc
++pdfdir ?= $(prefix)/share/doc/git
+ mandir ?= $(prefix)/share/man
+ man1dir = $(mandir)/man1
+ man5dir = $(mandir)/man5
+@@ -196,7 +196,7 @@
  endif
  endif
  

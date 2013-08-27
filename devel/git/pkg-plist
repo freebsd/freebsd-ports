@@ -39,6 +39,7 @@ libexec/git-core/git-bundle
 libexec/git-core/git-cat-file
 libexec/git-core/git-check-attr
 libexec/git-core/git-check-ignore
+libexec/git-core/git-check-mailmap
 libexec/git-core/git-check-ref-format
 libexec/git-core/git-checkout
 libexec/git-core/git-checkout-index
@@ -140,7 +141,6 @@ libexec/git-core/git-relink
 libexec/git-core/git-remote
 libexec/git-core/git-remote-ext
 libexec/git-core/git-remote-fd
-libexec/git-core/git-remote-testpy
 libexec/git-core/git-remote-testsvn
 %%CURL%%libexec/git-core/git-remote-http
 %%CURL%%libexec/git-core/git-remote-https
@@ -230,6 +230,7 @@ lib/xemacs/site-lisp/git/git.el
 lib/xemacs/site-lisp/git/git-blame.el
 %%NLS%%share/locale/da/LC_MESSAGES/git.mo
 %%NLS%%share/locale/de/LC_MESSAGES/git.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/git.mo
 %%NLS%%share/locale/is/LC_MESSAGES/git.mo
 %%NLS%%share/locale/it/LC_MESSAGES/git.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/git.mo
@@ -492,6 +493,9 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/cmds-purehelpers.txt
 %%HTMLDOCS%%%%DOCSDIR%%/cmds-synchelpers.txt
 %%HTMLDOCS%%%%DOCSDIR%%/cmds-synchingrepositories.txt
+%%HTMLDOCS%%%%DOCSDIR%%/line-range-format.txt
+%%HTMLDOCS%%%%DOCSDIR%%/git-check-mailmap.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-check-mailmap.txt
 %%HTMLDOCS%%%%DOCSDIR%%/mailmap.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-citool.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-hash-object.txt
@@ -1005,16 +1009,17 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.8.3.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.8.3.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.8.3.4.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.8.4.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.cgi
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.js
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.css
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/git-favicon.png
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/git-logo.png
+%%CONTRIB%%share/git-core/contrib/contacts/git-contacts
+%%CONTRIB%%share/git-core/contrib/contacts/git-contacts.txt
 %%CONTRIB%%share/git-core/contrib/diffall/README
 %%CONTRIB%%share/git-core/contrib/diffall/git-diffall
 %%CONTRIB%%share/git-core/contrib/README
-%%CONTRIB%%share/git-core/contrib/blameview/README
-%%CONTRIB%%share/git-core/contrib/blameview/blameview.perl
 %%CONTRIB%%share/git-core/contrib/buildsystems/Generators.pm
 %%CONTRIB%%share/git-core/contrib/buildsystems/Generators/QMake.pm
 %%CONTRIB%%share/git-core/contrib/buildsystems/Generators/Vcproj.pm
@@ -1029,8 +1034,6 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%share/git-core/contrib/completion/git-completion.tcsh
 %%CONTRIB%%share/git-core/contrib/completion/git-completion.zsh
 %%CONTRIB%%share/git-core/contrib/completion/git-prompt.sh
-%%CONTRIB%%share/git-core/contrib/continuous/cidaemon
-%%CONTRIB%%share/git-core/contrib/continuous/post-receive-cinotify
 %%CONTRIB%%share/git-core/contrib/convert-objects/convert-objects.c
 %%CONTRIB%%share/git-core/contrib/convert-objects/git-convert-objects.txt
 %%CONTRIB%%share/git-core/contrib/credential/gnome-keyring/Makefile
@@ -1089,11 +1092,22 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%share/git-core/contrib/gitview/gitview.txt
 %%CONTRIB%%share/git-core/contrib/hg-to-git/hg-to-git.py
 %%CONTRIB%%share/git-core/contrib/hg-to-git/hg-to-git.txt
+%%CONTRIB%%share/git-core/contrib/hooks/multimail/README
+%%CONTRIB%%share/git-core/contrib/hooks/multimail/README.Git
+%%CONTRIB%%share/git-core/contrib/hooks/multimail/README.migrate-from-post-receive-email
+%%CONTRIB%%share/git-core/contrib/hooks/multimail/git_multimail.py
+%%CONTRIB%%share/git-core/contrib/hooks/multimail/migrate-mailhook-config
+%%CONTRIB%%share/git-core/contrib/hooks/multimail/post-receive
+%%CONTRIB%%share/git-core/contrib/hooks/multimail/git_multimail.py
 %%CONTRIB%%share/git-core/contrib/hooks/post-receive-email
 %%CONTRIB%%share/git-core/contrib/hooks/pre-auto-gc-battery
 %%CONTRIB%%share/git-core/contrib/hooks/setgitperms.perl
 %%CONTRIB%%share/git-core/contrib/hooks/update-paranoid
+%%CONTRIB%%share/git-core/contrib/mw-to-git/git-mw.perl
 %%CONTRIB%%share/git-core/contrib/mw-to-git/.gitignore
+%%CONTRIB%%share/git-core/contrib/mw-to-git/.perlcriticrc
+%%CONTRIB%%share/git-core/contrib/mw-to-git/Git/Mediawiki.pm
+%%CONTRIB%%share/git-core/contrib/mw-to-git/bin-wrapper/git
 %%CONTRIB%%share/git-core/contrib/mw-to-git/git-remote-mediawiki.perl
 %%CONTRIB%%share/git-core/contrib/mw-to-git/git-remote-mediawiki.txt
 %%CONTRIB%%share/git-core/contrib/mw-to-git/Makefile
@@ -1117,7 +1131,6 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%share/git-core/contrib/p4import/git-p4import.py
 %%CONTRIB%%share/git-core/contrib/p4import/git-p4import.txt
 %%CONTRIB%%share/git-core/contrib/p4import/git-p4import
-%%CONTRIB%%share/git-core/contrib/patches/docbook-xsl-manpages-charmap.patch
 %%CONTRIB%%share/git-core/contrib/remotes2config.sh
 %%CONTRIB%%share/git-core/contrib/rerere-train.sh
 %%CONTRIB%%share/git-core/contrib/persistent-https/client.go
@@ -1188,6 +1201,7 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%@dirrm share/git-core/contrib/buildsystems
 %%CONTRIB%%@dirrm share/git-core/contrib/ciabot
 %%CONTRIB%%@dirrm share/git-core/contrib/completion
+%%CONTRIB%%@dirrm share/git-core/contrib/contacts
 %%CONTRIB%%@dirrm share/git-core/contrib/continuous
 %%CONTRIB%%@dirrm share/git-core/contrib/convert-objects
 %%CONTRIB%%@dirrm share/git-core/contrib/credential/gnome-keyring
@@ -1204,7 +1218,10 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%@dirrm share/git-core/contrib/git-shell-commands
 %%CONTRIB%%@dirrm share/git-core/contrib/gitview
 %%CONTRIB%%@dirrm share/git-core/contrib/hg-to-git
+%%CONTRIB%%@dirrm share/git-core/contrib/hooks/multimail
 %%CONTRIB%%@dirrm share/git-core/contrib/hooks
+%%CONTRIB%%@dirrm share/git-core/contrib/mw-to-git/bin-wrapper
+%%CONTRIB%%@dirrm share/git-core/contrib/mw-to-git/Git
 %%CONTRIB%%@dirrm share/git-core/contrib/mw-to-git/t/install-wiki
 %%CONTRIB%%@dirrm share/git-core/contrib/mw-to-git/t/
 %%CONTRIB%%@dirrm share/git-core/contrib/mw-to-git/
