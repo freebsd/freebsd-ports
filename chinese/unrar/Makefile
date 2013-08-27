@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zh-unrar
-# Date created:			1 Auguest 2004
-# Whom:				Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-#
+# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
 # $FreeBSD$
-#
 
 CATEGORIES=	chinese
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for: droid-fonts-ttf
-# Date created:		2010-02-14
-# Whom:		Olivier Duchateau <duchateau.olivier@gmail.com>
-#
+# Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	droid-fonts-ttf
 PORTVERSION=	20110324
