@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}000
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure Perl version of Marpa
 
-LICENSE=	LGPLv3
+LICENSE=	LGPL3
 
 BUILD_DEPENDS=	p5-PPI>=1.206:${PORTSDIR}/textproc/p5-PPI \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
