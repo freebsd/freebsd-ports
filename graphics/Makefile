@@ -193,7 +193,6 @@
     SUBDIR += exiv2
     SUBDIR += exrtools
     SUBDIR += f-spot
-    SUBDIR += f90gl
     SUBDIR += fbm
     SUBDIR += feh
     SUBDIR += ffff
@@ -250,7 +249,6 @@
     SUBDIR += gdtclft
     SUBDIR += geeqie
     SUBDIR += gegl
-    SUBDIR += geglmm
     SUBDIR += geoapi
     SUBDIR += geomorph
     SUBDIR += geomview

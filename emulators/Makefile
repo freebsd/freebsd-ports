@@ -186,7 +186,6 @@
     SUBDIR += x48
     SUBDIR += xbraitenberg
     SUBDIR += xcpc
-    SUBDIR += xgngeo
     SUBDIR += xhomer
     SUBDIR += xmame
     SUBDIR += xmess

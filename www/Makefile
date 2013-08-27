@@ -529,7 +529,6 @@
     SUBDIR += mod_scgi
     SUBDIR += mod_security
     SUBDIR += mod_setenvifplus
-    SUBDIR += mod_smooth_streaming
     SUBDIR += mod_spdy
     SUBDIR += mod_tidy
     SUBDIR += mod_tsa
@@ -637,7 +636,6 @@
     SUBDIR += p5-Apache-Session-Wrapper
     SUBDIR += p5-Apache-SessionX
     SUBDIR += p5-Apache-Singleton
-    SUBDIR += p5-Apache2-Scoreboard
     SUBDIR += p5-Apache2-SiteControl
     SUBDIR += p5-ApacheBench
     SUBDIR += p5-App-Nopaste

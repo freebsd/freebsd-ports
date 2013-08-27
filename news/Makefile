@@ -40,7 +40,6 @@
     SUBDIR += inn
     SUBDIR += knews
     SUBDIR += leafnode
-    SUBDIR += lottanzb
     SUBDIR += lusernet
     SUBDIR += mail2nntp
     SUBDIR += mmail

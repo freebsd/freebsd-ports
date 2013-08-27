@@ -27,7 +27,6 @@
     SUBDIR += bricons
     SUBDIR += brightside
     SUBDIR += cl-clx
-    SUBDIR += cl-clx-sbcl
     SUBDIR += compositeproto
     SUBDIR += damageproto
     SUBDIR += decurs

@@ -63,7 +63,6 @@
     SUBDIR += museekplus
     SUBDIR += napshare
     SUBDIR += ncdc
-    SUBDIR += nicotine-plus
     SUBDIR += opendchub
     SUBDIR += opennap
     SUBDIR += p5-Net-BitTorrent

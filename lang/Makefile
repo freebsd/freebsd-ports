@@ -143,7 +143,6 @@
     SUBDIR += kroc
     SUBDIR += kturtle
     SUBDIR += lafontaine
-    SUBDIR += ldc-devel
     SUBDIR += libhx
     SUBDIR += libjit
     SUBDIR += libobjc2

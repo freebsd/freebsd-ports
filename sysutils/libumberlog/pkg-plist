@@ -1,6 +1,0 @@
-include/umberlog.h
-lib/libumberlog.a
-lib/libumberlog.la
-lib/libumberlog.so
-lib/libumberlog.so.2
-libdata/pkgconfig/libumberlog.pc
