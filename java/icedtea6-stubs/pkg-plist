@@ -1,3 +1,0 @@
-@dirrm %%JAVAJARDIR%%/jdk-7-icedtea-plugs/jre/lib
-@dirrm %%JAVAJARDIR%%/jdk-7-icedtea-plugs/jre
-@dirrm %%JAVAJARDIR%%/jdk-7-icedtea-plugs
