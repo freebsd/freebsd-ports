@@ -2655,6 +2655,7 @@
     SUBDIR += p5-Sort-Maker
     SUBDIR += p5-Sort-Tree
     SUBDIR += p5-Sort-Versions
+    SUBDIR += p5-Specio
     SUBDIR += p5-Spiffy
     SUBDIR += p5-Spoon
     SUBDIR += p5-Storable
