@@ -1,0 +1,11 @@
+--- configure.orig	2013-08-14 02:30:58.000000000 -0700
++++ configure	2013-08-14 02:30:31.000000000 -0700
+@@ -3946,7 +3946,7 @@
+ IFS=$ac_save_IFS
+ 
+ 
+-for ac_func in ftime \
++for ac_func in gettimeofday \
+                getaddrinfo \
+                getnameinfo \
+                gethostname \
