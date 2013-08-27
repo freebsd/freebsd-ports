@@ -1,10 +1,5 @@
-# New ports collection makefile for:	dejavu
-# Date created:		Dec 23 2004
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/x11-fonts/dejavu/Makefile,v 1.1 2006/10/13 23:29:09 ahze Exp $
-#
 
 PORTNAME=	dejavu
 PORTVERSION=	2.33

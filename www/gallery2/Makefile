@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gallery2
-# Date created:		29 Aug 2005
-# Whom:			Alex Varju <freebsd-ports@varju.ca>
-#
+# Created by: Alex Varju <freebsd-ports@varju.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	gallery2
 PORTVERSION=	2.3.2

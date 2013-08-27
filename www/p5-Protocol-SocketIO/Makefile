@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Protocol-SocketIO
-# Date created:		2012-01-23
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Protocol-SocketIO
 PORTVERSION=	0.04
