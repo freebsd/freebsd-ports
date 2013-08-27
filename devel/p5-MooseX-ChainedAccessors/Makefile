@@ -15,6 +15,10 @@ RUN_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
+DEPRECATED=	Marked as depreciated upstream
+EXPIRATION_DATE=2013-11-27
+CONFLICTS=	p5-MooseX-Attribute-Chained-[0-9]*
+
 USES=		perl5
 USE_PERL5=	modbuild
 
