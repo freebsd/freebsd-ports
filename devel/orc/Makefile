@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	orc
-PORTVERSION=	0.4.17
+PORTVERSION=	0.4.18
 CATEGORIES=	devel
 MASTER_SITES=	http://code.entropywave.com/download/orc/
 
