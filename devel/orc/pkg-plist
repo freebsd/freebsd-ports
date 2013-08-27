@@ -80,6 +80,7 @@ share/aclocal/orc.m4
 %%PORTDOCS%%share/gtk-doc/html/orc/orc-concepts.html
 %%PORTDOCS%%share/gtk-doc/html/orc/orc-misc.html
 %%PORTDOCS%%share/gtk-doc/html/orc/orc-opcodes.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-program.html
 %%PORTDOCS%%share/gtk-doc/html/orc/orc-runninging.html
 %%PORTDOCS%%share/gtk-doc/html/orc/orc-tutorial.html
 %%PORTDOCS%%share/gtk-doc/html/orc/orc-x86.html
