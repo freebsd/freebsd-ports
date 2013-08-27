@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pg_activity
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	databases python
 MASTER_SITES=	GH
 
@@ -14,18 +14,27 @@ LICENSE=	BSD
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=0:${PORTSDIR}/databases/py-psycopg2 \
 		${PYTHON_PKGNAMEPREFIX}psutil>=0:${PORTSDIR}/sysutils/py-psutil
 
+OPTIONS_DEFINE=	DOCS
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	julmon
-GH_TAGNAME=	v1.0.1
-GH_COMMIT=	c002fc9
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	ba36bae
 
 USE_PYTHON=	yes
 PYDISTUTILS_NOEGGINFO=	yes
 USE_PYDISTUTILS=	easy_install
 
-MAN1=	pg_activity.1
+.include <bsd.port.options.mk>
 
-post-install:
-	@${INSTALL_MAN} ${WRKSRC}/docs/man/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
+.if ${PORT_OPTIONS:MDOCS}
+MAN1=	pg_activity.1
+.else
+PYDISTUTILS_BUILDARGS=	--no-man
+.endif
+
+post-patch-script:
+	${REINPLACE_CMD} -e 's|\/usr\/share|${MAN1PREFIX}|g' \
+		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
