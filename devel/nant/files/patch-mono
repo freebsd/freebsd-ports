@@ -1,0 +1,903 @@
+Reference:	https://github.com/nant/nant/issues/91
+Obtained from:	https://github.com/nant/nant/commit/69c8ee96493c5d953212397c8ca06c2392372ca4
+		https://github.com/nant/nant/commit/4ad065d009b043996d4ce2d25ce5031d81c6ce60
+
+--- src/NAnt.Console/App.config.orig	2013-03-30 06:16:24.000000000 +0800
++++ src/NAnt.Console/App.config	2013-04-03 09:28:04.000000000 +0800
+@@ -1724,6 +1724,7 @@
+                     </task-assemblies>
+                     <tool-paths>
+                         <directory name="${toolDirectory}" />
++                        <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/4.5')}" />
+                         <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/1.0')}" />
+                         <!-- for compatibility with Mono 1.0.x -->
+                         <directory name="${frameworkAssemblyDirectory}" />
+@@ -1782,6 +1783,14 @@
+                         <if test="${version::parse(mono.version) >= version::parse('1.2.3.50')}">
+                             <property name="resgen.supportsexternalfilereferences" value="true" />
+                         </if>
++                        <if test="${version::parse(mono.version) &lt; version::parse('3.0')}">
++                            <property name="csc.tool" value="gmcs"/>
++                            <property name="mcs.sdk" value="0"/>
++                        </if>
++                        <if test="${version::parse(mono.version) >= version::parse('3.0')}">
++                            <property name="csc.tool" value="mcs"/>
++                            <property name="mcs.sdk" value="2"/>
++                        </if>
+ 
+                         <target name="configure-from-pkg-config">
+                             <property name="mono.version" value="${pkg-config::get-mod-version('mono')}" />
+@@ -1820,7 +1829,8 @@
+                             <attribute name="managed">true</attribute>
+                         </task>
+                         <task name="csc">
+-                            <attribute name="exename">gmcs</attribute>
++                            <attribute name="exename">${csc.tool}</attribute>
++                            <attribute name="mcssdk">${mcs.sdk}</attribute>
+                             <attribute name="managed">true</attribute>
+                             <attribute name="supportspackagereferences">true</attribute>
+                             <attribute name="supportsnowarnlist">true</attribute>
+@@ -1912,6 +1922,7 @@
+                     </task-assemblies>
+                     <tool-paths>
+                         <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/3.5')}" />
++                        <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/4.5')}" />
+                         <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/2.0')}" />
+                         <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/1.0')}" />
+                         <!-- unmanaged tools -->
+@@ -1934,6 +1945,14 @@
+ 
+                         <property name="toolDirectory" value="${path::combine(frameworkAssemblyDirectory, 'mono/3.5')}" />
+                         <property name="runtimeEngine" value="${path::combine(sdkInstallRoot, 'bin/mono.exe')}" />
++                        <if test="${version::parse(mono.version) &lt; version::parse('3.0')}">
++                            <property name="csc.tool" value="gmcs"/>
++                            <property name="mcs.sdk" value="0"/>
++                        </if>
++                        <if test="${version::parse(mono.version) >= version::parse('3.0')}">
++                            <property name="csc.tool" value="mcs"/>
++                            <property name="mcs.sdk" value="2"/>
++                        </if>
+ 
+                         <target name="configure-from-pkg-config">
+                             <property name="mono.version" value="${pkg-config::get-mod-version('mono')}" />
+@@ -1972,7 +1991,8 @@
+                             <attribute name="managed">true</attribute>
+                         </task>
+                         <task name="csc">
+-                            <attribute name="exename">gmcs</attribute>
++                            <attribute name="exename">${csc.tool}</attribute>
++                            <attribute name="mcssdk">${mcs.sdk}</attribute>
+                             <attribute name="managed">true</attribute>
+                             <attribute name="langversion">linq</attribute>
+                             <attribute name="supportspackagereferences">true</attribute>
+@@ -2067,6 +2087,7 @@
+                     </task-assemblies>
+                     <tool-paths>
+                         <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/4.0')}" />
++                        <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/4.5')}" />
+                         <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/3.5')}" />
+                         <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/2.0')}" />
+                         <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/1.0')}" />
+@@ -2090,6 +2111,14 @@
+ 
+                         <property name="toolDirectory" value="${path::combine(frameworkAssemblyDirectory, 'mono/4.0')}" />
+                         <property name="runtimeEngine" value="${path::combine(sdkInstallRoot, 'bin/mono.exe')}" />
++                        <if test="${version::parse(mono.version) &lt; version::parse('3.0')}">
++                            <property name="csc.tool" value="dmcs"/>
++                            <property name="mcs.sdk" value="0"/>
++                        </if>
++                        <if test="${version::parse(mono.version) >= version::parse('3.0')}">
++                            <property name="csc.tool" value="mcs"/>
++                            <property name="mcs.sdk" value="4"/>
++                        </if>
+ 
+                         <target name="configure-from-pkg-config">
+                             <property name="mono.version" value="${pkg-config::get-mod-version('mono')}" />
+@@ -2128,7 +2157,8 @@
+                             <attribute name="managed">true</attribute>
+                         </task>
+                         <task name="csc">
+-                            <attribute name="exename">dmcs</attribute>
++                            <attribute name="exename">${csc.tool}</attribute>
++                            <attribute name="mcssdk">${mcs.sdk}</attribute>
+                             <attribute name="managed">true</attribute>
+                             <attribute name="langversion">linq</attribute>
+                             <attribute name="supportspackagereferences">true</attribute>
+@@ -2212,6 +2242,7 @@
+                     </task-assemblies>
+                     <tool-paths>
+                         <directory name="${toolDirectory}" />
++                        <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/4.5')}" />
+                         <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/2.0')}" />
+                         <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/1.0')}" />
+                         <!-- unmanaged tools -->
+@@ -2234,6 +2265,14 @@
+ 
+                         <property name="toolDirectory" value="${path::combine(frameworkAssemblyDirectory, 'mono/2.1')}" />
+                         <property name="runtimeEngine" value="${path::combine(sdkInstallRoot, 'bin/mono.exe')}" />
++                        <if test="${version::parse(mono.version) &lt; version::parse('3.0')}">
++                            <property name="csc.tool" value="smcs"/>
++                            <property name="mcs.sdk" value="0"/>
++                        </if>
++                        <if test="${version::parse(mono.version) >= version::parse('3.0')}">
++                            <property name="csc.tool" value="mcs"/>
++                            <property name="mcs.sdk" value="2.1"/>
++                        </if>
+ 
+                         <target name="configure-from-pkg-config">
+                             <property name="mono.version" value="${pkg-config::get-mod-version('mono')}" />
+@@ -2267,7 +2306,8 @@
+                     </project>
+                     <tasks>
+                         <task name="csc">
+-                            <attribute name="exename">smcs</attribute>
++                            <attribute name="exename">${csc.tool}</attribute>
++                            <attribute name="mcssdk">${mcs.sdk}</attribute>
+                             <attribute name="managed">true</attribute>
+                             <attribute name="supportspackagereferences">true</attribute>
+                             <attribute name="supportsnowarnlist">true</attribute>
+@@ -2502,6 +2542,7 @@
+                     </task-assemblies>
+                     <tool-paths>
+                         <directory name="${toolDirectory}" />
++                        <directory name="${path::combine(prefix, 'lib/mono/4.5')}" />
+                         <directory name="${path::combine(prefix, 'lib/mono/1.0')}" />
+                         <!-- unmanaged tools -->
+                         <directory name="${prefix}/bin" />
+@@ -2526,13 +2567,22 @@
+                         <if test="${pkg-config::is-atleast-version('mono', '1.2.3.50')}">
+                             <property name="resgen.supportsexternalfilereferences" value="true" />
+                         </if>
++                        <if test="${not(pkg-config::is-atleast-version('mono', '3.0'))}">
++                            <property name="csc.tool" value="gmcs"/>
++                            <property name="mcs.sdk" value="0"/>
++                        </if>
++                        <if test="${pkg-config::is-atleast-version('mono', '3.0')}">
++                            <property name="csc.tool" value="mcs"/>
++                            <property name="mcs.sdk" value="2"/>
++                        </if>
+                     </project>
+                     <tasks>
+                         <task name="al">
+                             <attribute name="managed">true</attribute>
+                         </task>
+                         <task name="csc">
+-                            <attribute name="exename">gmcs</attribute>
++                            <attribute name="exename">${csc.tool}</attribute>
++                            <attribute name="mcssdk">${mcs.sdk}</attribute>
+                             <attribute name="managed">true</attribute>
+                             <attribute name="supportspackagereferences">true</attribute>
+                             <attribute name="supportsnowarnlist">true</attribute>
+@@ -2616,6 +2666,7 @@
+                     </task-assemblies>
+                     <tool-paths>
+                         <directory name="${toolDirectory}" />
++                        <directory name="${path::combine(prefix, 'lib/mono/4.5')}" />
+                         <directory name="${path::combine(prefix, 'lib/mono/2.0')}" />
+                         <directory name="${path::combine(prefix, 'lib/mono/1.0')}" />
+                         <!-- unmanaged tools -->
+@@ -2628,13 +2679,22 @@
+                         <property name="resgen.supportsexternalfilereferences" value="false" />
+                         <property name="prefix" value="${pkg-config::get-variable('mono', 'prefix')}" />
+                         <property name="toolDirectory" value="${path::combine(prefix, 'lib/mono/3.5')}" />
++                        <if test="${not(pkg-config::is-atleast-version('mono', '3.0'))}">
++                            <property name="csc.tool" value="gmcs"/>
++                            <property name="mcs.sdk" value="0"/>
++                        </if>
++                        <if test="${pkg-config::is-atleast-version('mono', '3.0')}">
++                            <property name="csc.tool" value="mcs"/>
++                            <property name="mcs.sdk" value="2"/>
++                        </if>
+                     </project>
+                     <tasks>
+                         <task name="al">
+                             <attribute name="managed">true</attribute>
+                         </task>
+                         <task name="csc">
+-                            <attribute name="exename">gmcs</attribute>
++                            <attribute name="exename">${csc.tool}</attribute>
++                            <attribute name="mcssdk">${mcs.sdk}</attribute>
+                             <attribute name="managed">true</attribute>
+                             <attribute name="langversion">linq</attribute>
+                             <attribute name="supportspackagereferences">true</attribute>
+@@ -2721,6 +2781,7 @@
+                     </task-assemblies>
+                     <tool-paths>
+                         <directory name="${toolDirectory}" />
++                        <directory name="${path::combine(prefix, 'lib/mono/4.5')}" />
+                         <directory name="${path::combine(prefix, 'lib/mono/3.5')}" />
+                         <directory name="${path::combine(prefix, 'lib/mono/2.0')}" />
+                         <directory name="${path::combine(prefix, 'lib/mono/1.0')}" />
+@@ -2734,13 +2795,22 @@
+                         <property name="resgen.supportsexternalfilereferences" value="false" />
+                         <property name="prefix" value="${pkg-config::get-variable('mono', 'prefix')}" />
+                         <property name="toolDirectory" value="${path::combine(prefix, 'lib/mono/4.0')}" />
++                        <if test="${not(pkg-config::is-atleast-version('mono', '3.0'))}">
++                            <property name="csc.tool" value="dmcs"/>
++                            <property name="mcs.sdk" value="0"/>
++                        </if>
++                        <if test="${pkg-config::is-atleast-version('mono', '3.0')}">
++                            <property name="csc.tool" value="mcs"/>
++                            <property name="mcs.sdk" value="4"/>
++                        </if>
+                     </project>
+                     <tasks>
+                         <task name="al">
+                             <attribute name="managed">true</attribute>
+                         </task>
+                         <task name="csc">
+-                            <attribute name="exename">dmcs</attribute>
++                            <attribute name="exename">${csc.tool}</attribute>
++                            <attribute name="mcssdk">${mcs.sdk}</attribute>
+                             <attribute name="managed">true</attribute>
+                             <attribute name="langversion">linq</attribute>
+                             <attribute name="supportspackagereferences">true</attribute>
+@@ -2824,6 +2894,7 @@
+                     </task-assemblies>
+                     <tool-paths>
+                         <directory name="${toolDirectory}" />
++                        <directory name="${path::combine(prefix, 'lib/mono/4.5')}" />
+                         <directory name="${path::combine(prefix, 'lib/mono/2.0')}" />
+                         <directory name="${path::combine(prefix, 'lib/mono/1.0')}" />
+                         <!-- unmanaged tools -->
+@@ -2835,10 +2906,19 @@
+                         </if>
+                         <property name="prefix" value="${pkg-config::get-variable('mono', 'prefix')}" />
+                         <property name="toolDirectory" value="${path::combine(prefix, 'lib/mono/2.1')}" />
++                        <if test="${not(pkg-config::is-atleast-version('mono', '3.0'))}">
++                            <property name="csc.tool" value="smcs"/>
++                            <property name="mcs.sdk" value="0"/>
++                        </if>
++                        <if test="${pkg-config::is-atleast-version('mono', '3.0')}">
++                            <property name="csc.tool" value="mcs"/>
++                            <property name="mcs.sdk" value="2.1"/>
++                        </if>
+                     </project>
+                     <tasks>
+                         <task name="csc">
+-                            <attribute name="exename">smcs</attribute>
++                            <attribute name="exename">${csc.tool}</attribute>
++                            <attribute name="mcssdk">${mcs.sdk}</attribute>
+                             <attribute name="managed">true</attribute>
+                             <attribute name="supportspackagereferences">true</attribute>
+                             <attribute name="supportsnowarnlist">true</attribute>
+--- src/NAnt.Core/ConsoleDriver.cs.orig	2013-03-30 06:16:24.000000000 +0800
++++ src/NAnt.Core/ConsoleDriver.cs	2013-04-03 09:28:04.000000000 +0800
+@@ -318,8 +318,9 @@
+             xsltDoc.Load(reader);
+             xsltDoc.DocumentElement.SetAttribute("xmlns:nant",buildDoc.DocumentElement.NamespaceURI);
+ 
+-            XslTransform transform = new XslTransform();
+-            transform.Load(xsltDoc);
++            XslCompiledTransform transform = new XslCompiledTransform();
++            XsltSettings settings = new XsltSettings(false, true);
++            transform.Load(xsltDoc, settings, new XmlUrlResolver());
+ 
+             StringBuilder sb = new StringBuilder();
+             StringWriter writer = new StringWriter(sb, CultureInfo.InvariantCulture);
+--- src/NAnt.Core/Resources/ProjectHelp.xslt.orig	2013-03-30 06:16:24.000000000 +0800
++++ src/NAnt.Core/Resources/ProjectHelp.xslt	2013-04-03 09:28:04.000000000 +0800
+@@ -26,7 +26,7 @@
+     <xslt:output method="text" />
+     <msxsl:script language="C#" implements-prefix="stringutils">
+     <![CDATA[
+-        string PadRight( string str, int padding) {
++        public string PadRight( string str, int padding) {
+             return str.PadRight(padding);
+         }
+     ]]>
+--- src/NAnt.DotNet/Tasks/CscTask.cs.orig	2013-03-30 06:16:24.000000000 +0800
++++ src/NAnt.DotNet/Tasks/CscTask.cs	2013-04-03 09:28:04.000000000 +0800
+@@ -90,6 +90,7 @@
+         private string _langVersion;
+ 
+         // framework configuration settings
++        private double _mcsSdk = 0;
+         private bool _supportsDocGeneration = true;
+         private bool _supportsPlatform;
+         private bool _supportsLangVersion;
+@@ -362,6 +363,21 @@
+ 
+         #endregion Public Instance Properties
+ 
++        #region Protected Instance Properties
++
++        /// <summary>
++        /// Gets or sets the mcs sdk version to apply to the new mcs compiler
++        /// for Mono 3.0+
++        /// </summary>
++        [FrameworkConfigurable("mcssdk")]
++        protected double McsSdk 
++        {
++            get { return _mcsSdk; }
++            set { _mcsSdk = value; }
++        }
++
++        #endregion Protected Instance Properties
++
+         #region Override implementation of CompilerBase
+ 
+         /// <summary>
+@@ -378,6 +394,16 @@
+                 WriteOption(writer, "baseaddress", BaseAddress);
+             }
+ 
++            // If mcs is the compiler and the specified McsSdk version is specified, append the new
++            // -sdk: option to the argument list.
++            if (PlatformHelper.IsMono) 
++            {
++                if (ExeName.Equals("mcs", StringComparison.InvariantCultureIgnoreCase) && _mcsSdk > 0) 
++                {
++                    WriteOption(writer, "sdk", _mcsSdk.ToString());
++                }
++            }
++
+             // XML documentation
+             if (DocFile != null) {
+                 if (SupportsDocGeneration) {
+--- src/NAnt.NUnit/NAnt.NUnit.build.orig	2013-03-30 06:16:24.000000000 +0800
++++ src/NAnt.NUnit/NAnt.NUnit.build	2013-04-03 09:28:04.000000000 +0800
+@@ -42,6 +42,8 @@
+         </csc>
+         <csc target="library" define="${current.build.defines}" warnaserror="${build.warnaserror}" debug="${build.debug}" output="${build.dir}/bin/NAnt.NUnit2Tasks.dll" doc="${build.dir}/bin/NAnt.NUnit2Tasks.xml">
+             <nowarn>
++                <!-- do not report obsolete warnings until XslCompiledTransform works with NUnit2 output -->
++                <warning number="0612" />
+                 <!-- do not report deprecation warnings -->
+                 <warning number="0618" />
+             </nowarn>
+--- src/NDoc.Documenter.NAnt/NDoc.Documenter.NAnt.build.orig	2013-03-30 06:16:24.000000000 +0800
++++ src/NDoc.Documenter.NAnt/NDoc.Documenter.NAnt.build	2013-04-03 09:28:04.000000000 +0800
+@@ -11,6 +11,7 @@
+         <!-- build main assembly -->
+         <csc target="library" define="${current.build.defines}" warnaserror="${build.warnaserror}" debug="${build.debug}" output="${build.dir}/bin/${project::get-name()}.dll" doc="${build.dir}/bin/${project::get-name()}.xml">
+             <nowarn>
++                <warning number="0612" />
+                 <warning number="0618" />
+                 <warning number="1591" />
+                 <warning number="1572" />
+--- tests/NAnt.Core/Framework.config.orig	2013-03-30 06:16:24.000000000 +0800
++++ tests/NAnt.Core/Framework.config	2013-04-03 09:28:04.000000000 +0800
+@@ -467,28 +467,6 @@
+                         key="SOFTWARE\Microsoft\.NETFramework\InstallRoot"
+                         hive="LocalMachine" />
+                     <locatesdk property="sdkInstallRoot" minwinsdkver="v6.0A" maxnetfxver="3.5" failonerror="false" />
+-                    <!--
+-                    <readregistry
+-                        property="sdkInstallRoot"
+-                        key="SOFTWARE\Microsoft\Microsoft SDKs\Windows\v6.0A\WinSDKNetFxTools\InstallationFolder"
+-                        hive="LocalMachine"
+-                        failonerror="false" />
+-                    <readregistry
+-                        property="sdkInstallRoot"
+-                        key="SOFTWARE\Microsoft\Microsoft SDKs\Windows\v6.1\InstallationFolder"
+-                        hive="LocalMachine"
+-                        failonerror="false" />
+-                    <readregistry
+-                        property="sdkInstallRoot"
+-                        key="SOFTWARE\Microsoft\Microsoft SDKs\Windows\v7.0\InstallationFolder"
+-                        hive="LocalMachine"
+-                        failonerror="false" />
+-                    <readregistry
+-                        property="sdkInstallRoot"
+-                        key="SOFTWARE\Microsoft\Microsoft SDKs\Windows\v7.0A\InstallationFolder"
+-                        hive="LocalMachine"
+-                        failonerror="false" />
+-                    -->
+                 </project>
+                 <tasks>
+                     <task name="csc">
+@@ -792,19 +770,6 @@
+                         key="SOFTWARE\Microsoft\.NETFramework\InstallRoot"
+                         hive="LocalMachine" />
+                     <locatesdk property="sdkInstallRoot" minwinsdkver="v7.0A" minnetfxver="4.0" maxnetfxver="4.0.99999" failonerror="false" />
+-                    <!--
+-                    <echo message="sdkInstallRoot=${sdkInstallRoot}" if="${property::exists('sdkInstallRoot')}" />
+-                    <readregistry
+-                        property="sdkInstallRoot"
+-                        key="SOFTWARE\Microsoft\Microsoft SDKs\Windows\v7.0A\WinSDK-NetFx40Tools\InstallationFolder"
+-                        hive="LocalMachine"
+-                        failonerror="false" />
+-                    <readregistry
+-                        property="sdkInstallRoot"
+-                        key="SOFTWARE\Microsoft\Microsoft SDKs\Windows\v7.0A\WinSDK-NetFx40Tools-x86\InstallationFolder"
+-                        hive="LocalMachine"
+-                        failonerror="false" />
+-                    -->
+                 </project>
+                 <tasks>
+                     <task name="csc">
+@@ -1302,9 +1267,12 @@
+                 </task-assemblies>
+                 <tool-paths>
+                     <directory name="${toolDirectory}" />
++                    <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/4.5')}" />
+                     <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/1.0')}" />
+                     <!-- for compatibility with Mono 1.0.x -->
+                     <directory name="${frameworkAssemblyDirectory}" />
++                    <!-- unmanaged tools -->
++                    <directory name="${sdkInstallRoot}/bin" />
+                 </tool-paths>
+                 <project>
+                     <!-- quick and dirty check to see if pkg-config is available (and configured) -->
+@@ -1320,26 +1288,30 @@
+                     <if test="${not pkgconfig.available}">
+                         <call target="configure-from-registry" />
+                     </if>
++
+                     <property name="resgen.supportsexternalfilereferences" value="false" />
++
+                     <!-- determine if we're dealing with a Mono 1.0.x release -->
+                     <if test="${version::parse(mono.version) &lt; version::parse('1.1')}">
+                         <!-- 
+-                                in Mono 1.0.x, the framework tools are located 
+-                                in the <install root>\lib directory, except for
+-                                mbas and mcs
+-                            -->
++                            in Mono 1.0.x, the framework tools are located 
++                            in the <install root>\lib directory, except for
++                            mbas and mcs
++                        -->
+                         <property name="toolDirectory" value="${frameworkAssemblyDirectory}" />
+                         <property name="runtimeEngine" value="${path::combine(frameworkAssemblyDirectory, 'mono.exe')}" />
+                         <property name="resgen.tool" value="monoresgen" />
+                         <property name="csc.supportsdocgeneration" value="false" />
++
+                         <!-- 
+-                                Mono 1.0.1 installer incorrectly adds '\mono' to 
+-                                "MonoConfigDir" registry value
+-                            -->
++                            Mono 1.0.1 installer incorrectly adds '\mono' to 
++                            "MonoConfigDir" registry value
++                        -->
+                         <if test="${string::ends-with(configDir, 'etc\mono')}">
+                             <property name="configDir" value="${string::replace(configDir, 'etc\mono', 'etc')}" />
+                         </if>
+                     </if>
++
+                     <!-- determine if we're dealing with a Mono 1.1.x release or higher -->
+                     <if test="${version::parse(mono.version) >= version::parse('1.1')}">
+                         <property name="toolDirectory" value="${path::combine(frameworkAssemblyDirectory, 'mono/2.0')}" />
+@@ -1354,28 +1326,54 @@
+                     <if test="${version::parse(mono.version) >= version::parse('1.2.3.50')}">
+                         <property name="resgen.supportsexternalfilereferences" value="true" />
+                     </if>
++                    <if test="${version::parse(mono.version) &lt; version::parse('3.0')}">
++                        <property name="csc.tool" value="gmcs"/>
++                        <property name="mcs.sdk" value="0"/>
++                    </if>
++                    <if test="${version::parse(mono.version) >= version::parse('3.0')}">
++                        <property name="csc.tool" value="mcs"/>
++                        <property name="mcs.sdk" value="2"/>
++                    </if>
++
+                     <target name="configure-from-pkg-config">
+                         <property name="mono.version" value="${pkg-config::get-mod-version('mono')}" />
+                         <property name="sdkInstallRoot" value="${cygpath::get-windows-path(pkg-config::get-variable('mono', 'prefix'))}" />
+                         <property name="frameworkAssemblyDirectory" value="${cygpath::get-windows-path(pkg-config::get-variable('mono', 'libdir'))}" />
+                         <property name="configDir" value="${path::combine(sdkInstallRoot, 'etc')}/" />
+                     </target>
++
+                     <target name="configure-from-registry">
+-                        <readregistry property="mono.version" key="SOFTWARE\Novell\Mono\DefaultCLR" hive="LocalMachine" />
+-                        <property name="monokey" value="SOFTWARE\Novell\Mono\${mono.version}" />
+-                        <readregistry property="sdkInstallRoot" key="${monokey}\SdkInstallRoot" hive="LocalMachine" />
+-                        <readregistry property="frameworkAssemblyDirectory" key="${monokey}\FrameworkAssemblyDirectory"
++                        <monoregistry property="mono.reg" failonerror="false" />
++                        <readregistry
++                            property="mono.version"
++                            key="${mono.reg}\DefaultCLR"
++                            hive="LocalMachine"
++                        />
++                        <property name="monokey" value="${mono.reg}\${mono.version}" />
++
++                        <readregistry
++                            property="sdkInstallRoot"
++                            key="${monokey}\SdkInstallRoot"
++                            hive="LocalMachine" />
++                        <readregistry
++                            property="frameworkAssemblyDirectory"
++                            key="${monokey}\FrameworkAssemblyDirectory"
++                            hive="LocalMachine" />
++                        <readregistry
++                            property="configDir"
++                            key="${monokey}\MonoConfigDir"
+                             hive="LocalMachine" />
+-                        <readregistry property="configDir" key="${monokey}\MonoConfigDir" hive="LocalMachine" />
+                     </target>
+                 </project>
+-                <properties></properties>
++                <properties>
++                </properties>
+                 <tasks>
+                     <task name="al">
+                         <attribute name="managed">true</attribute>
+                     </task>
+                     <task name="csc">
+-                        <attribute name="exename">gmcs</attribute>
++                        <attribute name="exename">${csc.tool}</attribute>
++                        <attribute name="mcssdk">${mcs.sdk}</attribute>
+                         <attribute name="managed">true</attribute>
+                         <attribute name="supportspackagereferences">true</attribute>
+                         <attribute name="supportsnowarnlist">true</attribute>
+@@ -1467,8 +1465,11 @@
+                 </task-assemblies>
+                 <tool-paths>
+                     <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/3.5')}" />
++                    <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/4.5')}" />
+                     <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/2.0')}" />
+                     <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/1.0')}" />
++                    <!-- unmanaged tools -->
++                    <directory name="${sdkInstallRoot}/bin" />
+                 </tool-paths>
+                 <project>
+                     <!-- quick and dirty check to see if pkg-config is available (and configured) -->
+@@ -1484,30 +1485,57 @@
+                     <if test="${not pkgconfig.available}">
+                         <call target="configure-from-registry" />
+                     </if>
++
+                     <property name="toolDirectory" value="${path::combine(frameworkAssemblyDirectory, 'mono/3.5')}" />
+                     <property name="runtimeEngine" value="${path::combine(sdkInstallRoot, 'bin/mono.exe')}" />
++                    <if test="${version::parse(mono.version) &lt; version::parse('3.0')}">
++                        <property name="csc.tool" value="gmcs"/>
++                        <property name="mcs.sdk" value="0"/>
++                    </if>
++                    <if test="${version::parse(mono.version) >= version::parse('3.0')}">
++                        <property name="csc.tool" value="mcs"/>
++                        <property name="mcs.sdk" value="2"/>
++                    </if>
++
+                     <target name="configure-from-pkg-config">
+                         <property name="mono.version" value="${pkg-config::get-mod-version('mono')}" />
+                         <property name="sdkInstallRoot" value="${cygpath::get-windows-path(pkg-config::get-variable('mono', 'prefix'))}" />
+                         <property name="frameworkAssemblyDirectory" value="${cygpath::get-windows-path(pkg-config::get-variable('mono', 'libdir'))}" />
+                         <property name="configDir" value="${path::combine(sdkInstallRoot, 'etc')}/" />
+                     </target>
++
+                     <target name="configure-from-registry">
+-                        <readregistry property="mono.version" key="SOFTWARE\Novell\Mono\DefaultCLR" hive="LocalMachine" />
+-                        <property name="monokey" value="SOFTWARE\Novell\Mono\${mono.version}" />
+-                        <readregistry property="sdkInstallRoot" key="${monokey}\SdkInstallRoot" hive="LocalMachine" />
+-                        <readregistry property="frameworkAssemblyDirectory" key="${monokey}\FrameworkAssemblyDirectory"
++                        <monoregistry property="mono.reg" failonerror="false" />
++                        <readregistry
++                            property="mono.version"
++                            key="${mono.reg}\DefaultCLR"
++                            hive="LocalMachine"
++                        />
++                        <property name="monokey" value="${mono.reg}\${mono.version}" />
++                       
++                        <readregistry
++                            property="sdkInstallRoot"
++                            key="${monokey}\SdkInstallRoot"
++                            hive="LocalMachine" />
++                        <readregistry
++                            property="frameworkAssemblyDirectory"
++                            key="${monokey}\FrameworkAssemblyDirectory"
++                            hive="LocalMachine" />
++                        <readregistry
++                            property="configDir"
++                            key="${monokey}\MonoConfigDir"
+                             hive="LocalMachine" />
+-                        <readregistry property="configDir" key="${monokey}\MonoConfigDir" hive="LocalMachine" />
+                     </target>
+                 </project>
+-                <properties></properties>
++                <properties>
++                </properties>
+                 <tasks>
+                     <task name="al">
+                         <attribute name="managed">true</attribute>
+                     </task>
+                     <task name="csc">
+-                        <attribute name="exename">gmcs</attribute>
++                        <attribute name="exename">${csc.tool}</attribute>
++                        <attribute name="mcssdk">${mcs.sdk}</attribute>
+                         <attribute name="managed">true</attribute>
+                         <attribute name="langversion">linq</attribute>
+                         <attribute name="supportspackagereferences">true</attribute>
+@@ -1602,6 +1630,7 @@
+                 </task-assemblies>
+                 <tool-paths>
+                     <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/4.0')}" />
++                    <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/4.5')}" />
+                     <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/3.5')}" />
+                     <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/2.0')}" />
+                     <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/1.0')}" />
+@@ -1625,6 +1654,14 @@
+ 
+                     <property name="toolDirectory" value="${path::combine(frameworkAssemblyDirectory, 'mono/4.0')}" />
+                     <property name="runtimeEngine" value="${path::combine(sdkInstallRoot, 'bin/mono.exe')}" />
++                    <if test="${version::parse(mono.version) &lt; version::parse('3.0')}">
++                        <property name="csc.tool" value="dmcs"/>
++                        <property name="mcs.sdk" value="0"/>
++                    </if>
++                    <if test="${version::parse(mono.version) >= version::parse('3.0')}">
++                        <property name="csc.tool" value="mcs"/>
++                        <property name="mcs.sdk" value="4"/>
++                    </if>
+ 
+                     <target name="configure-from-pkg-config">
+                         <property name="mono.version" value="${pkg-config::get-mod-version('mono')}" />
+@@ -1663,7 +1700,8 @@
+                         <attribute name="managed">true</attribute>
+                     </task>
+                     <task name="csc">
+-                        <attribute name="exename">dmcs</attribute>
++                        <attribute name="exename">${csc.tool}</attribute>
++                        <attribute name="mcssdk">${mcs.sdk}</attribute>
+                         <attribute name="managed">true</attribute>
+                         <attribute name="langversion">linq</attribute>
+                         <attribute name="supportspackagereferences">true</attribute>
+@@ -1699,7 +1737,7 @@
+                 </tasks>
+             </framework>
+             <framework
+-                name="moonlight-2.0"
++                name="moonlight-2.0" 
+                 family="moonlight"
+                 version="2.0"
+                 description="Moonlight 2.0"
+@@ -1720,14 +1758,18 @@
+                         </auto>
+                     </modes>
+                 </runtime>
+-                <reference-assemblies basedir="${path::combine(prefix, 'lib/mono/2.1')}">
+-                    <include name="agclr.dll" />
++                <reference-assemblies basedir="${path::combine(frameworkAssemblyDirectory, 'lib/mono/2.1')}">
+                     <include name="Microsoft.VisualBasic.dll" />
+                     <include name="mscorlib.dll" />
+                     <include name="System.Core.dll" />
+                     <include name="System.dll" />
+-                    <include name="System.Silverlight.dll" />
+-                    <include name="System.Xml.Core.dll" />
++                    <include name="System.Net.dll" />
++                    <include name="System.Runtime.Serialization.dll" />
++                    <include name="System.ServiceModel.dll" />
++                    <include name="System.ServiceModel.Web.dll" />
++                    <include name="System.Windows.Browser.dll" />
++                    <include name="System.Windows.dll" />
++                    <include name="System.Xml.dll" />
+                 </reference-assemblies>
+                 <task-assemblies>
+                     <!-- include MS.NET version-neutral assemblies -->
+@@ -1743,8 +1785,11 @@
+                 </task-assemblies>
+                 <tool-paths>
+                     <directory name="${toolDirectory}" />
++                    <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/4.5')}" />
+                     <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/2.0')}" />
+                     <directory name="${path::combine(frameworkAssemblyDirectory, 'mono/1.0')}" />
++                    <!-- unmanaged tools -->
++                    <directory name="${sdkInstallRoot}/bin" />
+                 </tool-paths>
+                 <project>
+                     <!-- quick and dirty check to see if pkg-config is available (and configured) -->
+@@ -1760,26 +1805,52 @@
+                     <if test="${not pkgconfig.available}">
+                         <call target="configure-from-registry" />
+                     </if>
++
+                     <property name="toolDirectory" value="${path::combine(frameworkAssemblyDirectory, 'mono/2.1')}" />
+                     <property name="runtimeEngine" value="${path::combine(sdkInstallRoot, 'bin/mono.exe')}" />
++                    <if test="${version::parse(mono.version) &lt; version::parse('3.0')}">
++                        <property name="csc.tool" value="smcs"/>
++                        <property name="mcs.sdk" value="0"/>
++                    </if>
++                    <if test="${version::parse(mono.version) >= version::parse('3.0')}">
++                        <property name="csc.tool" value="mcs"/>
++                        <property name="mcs.sdk" value="2.1"/>
++                    </if>
++
+                     <target name="configure-from-pkg-config">
+                         <property name="mono.version" value="${pkg-config::get-mod-version('mono')}" />
+                         <property name="sdkInstallRoot" value="${cygpath::get-windows-path(pkg-config::get-variable('mono', 'prefix'))}" />
+                         <property name="frameworkAssemblyDirectory" value="${cygpath::get-windows-path(pkg-config::get-variable('mono', 'libdir'))}" />
+                         <property name="configDir" value="${path::combine(sdkInstallRoot, 'etc')}/" />
+                     </target>
++
+                     <target name="configure-from-registry">
+-                        <readregistry property="mono.version" key="SOFTWARE\Novell\Mono\DefaultCLR" hive="LocalMachine" />
+-                        <property name="monokey" value="SOFTWARE\Novell\Mono\${mono.version}" />
+-                        <readregistry property="sdkInstallRoot" key="${monokey}\SdkInstallRoot" hive="LocalMachine" />
+-                        <readregistry property="frameworkAssemblyDirectory" key="${monokey}\FrameworkAssemblyDirectory"
++                        <monoregistry property="mono.reg" failonerror="false" />
++                        <readregistry
++                            property="mono.version"
++                            key="${mono.reg}\DefaultCLR"
++                            hive="LocalMachine"
++                        />
++                        <property name="monokey" value="${mono.reg}\${mono.version}" />
++
++                        <readregistry
++                            property="sdkInstallRoot"
++                            key="${monokey}\SdkInstallRoot"
++                            hive="LocalMachine" />
++                        <readregistry
++                            property="frameworkAssemblyDirectory"
++                            key="${monokey}\FrameworkAssemblyDirectory"
++                            hive="LocalMachine" />
++                        <readregistry
++                            property="configDir"
++                            key="${monokey}\MonoConfigDir"
+                             hive="LocalMachine" />
+-                        <readregistry property="configDir" key="${monokey}\MonoConfigDir" hive="LocalMachine" />
+                     </target>
+                 </project>
+                 <tasks>
+                     <task name="csc">
+-                        <attribute name="exename">smcs</attribute>
++                        <attribute name="exename">${csc.tool}</attribute>
++                        <attribute name="mcssdk">${mcs.sdk}</attribute>
+                         <attribute name="managed">true</attribute>
+                         <attribute name="supportspackagereferences">true</attribute>
+                         <attribute name="supportsnowarnlist">true</attribute>
+@@ -2037,7 +2108,10 @@
+                 </task-assemblies>
+                 <tool-paths>
+                     <directory name="${toolDirectory}" />
++                    <directory name="${path::combine(prefix, 'lib/mono/4.5')}" />
+                     <directory name="${path::combine(prefix, 'lib/mono/1.0')}" />
++                    <!-- unmanaged tools -->
++                    <directory name="${prefix}/bin" />
+                 </tool-paths>
+                 <project>
+                     <if test="${not pkg-config::exists('mono')}">
+@@ -2059,13 +2133,22 @@
+                     <if test="${pkg-config::is-atleast-version('mono', '1.2.3.50')}">
+                         <property name="resgen.supportsexternalfilereferences" value="true" />
+                     </if>
++                    <if test="${not(pkg-config::is-atleast-version('mono', '3.0'))}">
++                        <property name="csc.tool" value="gmcs"/>
++                        <property name="mcs.sdk" value="0"/>
++                    </if>
++                    <if test="${pkg-config::is-atleast-version('mono', '3.0')}">
++                        <property name="csc.tool" value="mcs"/>
++                        <property name="mcs.sdk" value="2"/>
++                    </if>
+                 </project>
+                 <tasks>
+                     <task name="al">
+                         <attribute name="managed">true</attribute>
+                     </task>
+                     <task name="csc">
+-                        <attribute name="exename">gmcs</attribute>
++                        <attribute name="exename">${csc.tool}</attribute>
++                        <attribute name="mcssdk">${mcs.sdk}</attribute>
+                         <attribute name="managed">true</attribute>
+                         <attribute name="supportspackagereferences">true</attribute>
+                         <attribute name="supportsnowarnlist">true</attribute>
+@@ -2149,8 +2232,11 @@
+                 </task-assemblies>
+                 <tool-paths>
+                     <directory name="${toolDirectory}" />
++                    <directory name="${path::combine(prefix, 'lib/mono/4.5')}" />
+                     <directory name="${path::combine(prefix, 'lib/mono/2.0')}" />
+                     <directory name="${path::combine(prefix, 'lib/mono/1.0')}" />
++                    <!-- unmanaged tools -->
++                    <directory name="${prefix}/bin" />
+                 </tool-paths>
+                 <project>
+                     <if test="${not pkg-config::exists('mono')}">
+@@ -2159,13 +2245,22 @@
+                     <property name="resgen.supportsexternalfilereferences" value="false" />
+                     <property name="prefix" value="${pkg-config::get-variable('mono', 'prefix')}" />
+                     <property name="toolDirectory" value="${path::combine(prefix, 'lib/mono/3.5')}" />
++                    <if test="${not(pkg-config::is-atleast-version('mono', '3.0'))}">
++                        <property name="csc.tool" value="gmcs"/>
++                        <property name="mcs.sdk" value="0"/>
++                    </if>
++                    <if test="${pkg-config::is-atleast-version('mono', '3.0')}">
++                        <property name="csc.tool" value="mcs"/>
++                        <property name="mcs.sdk" value="2"/>
++                    </if>
+                 </project>
+                 <tasks>
+                     <task name="al">
+                         <attribute name="managed">true</attribute>
+                     </task>
+                     <task name="csc">
+-                        <attribute name="exename">gmcs</attribute>
++                        <attribute name="exename">${csc.tool}</attribute>
++                        <attribute name="mcssdk">${mcs.sdk}</attribute>
+                         <attribute name="managed">true</attribute>
+                         <attribute name="langversion">linq</attribute>
+                         <attribute name="supportspackagereferences">true</attribute>
+@@ -2252,6 +2347,7 @@
+                 </task-assemblies>
+                 <tool-paths>
+                     <directory name="${toolDirectory}" />
++                    <directory name="${path::combine(prefix, 'lib/mono/4.5')}" />
+                     <directory name="${path::combine(prefix, 'lib/mono/3.5')}" />
+                     <directory name="${path::combine(prefix, 'lib/mono/2.0')}" />
+                     <directory name="${path::combine(prefix, 'lib/mono/1.0')}" />
+@@ -2265,13 +2361,22 @@
+                     <property name="resgen.supportsexternalfilereferences" value="false" />
+                     <property name="prefix" value="${pkg-config::get-variable('mono', 'prefix')}" />
+                     <property name="toolDirectory" value="${path::combine(prefix, 'lib/mono/4.0')}" />
++                    <if test="${not(pkg-config::is-atleast-version('mono', '3.0'))}">
++                        <property name="csc.tool" value="dmcs"/>
++                        <property name="mcs.sdk" value="0"/>
++                    </if>
++                    <if test="${pkg-config::is-atleast-version('mono', '3.0')}">
++                        <property name="csc.tool" value="mcs"/>
++                        <property name="mcs.sdk" value="4"/>
++                    </if>
+                 </project>
+                 <tasks>
+                     <task name="al">
+                         <attribute name="managed">true</attribute>
+                     </task>
+                     <task name="csc">
+-                        <attribute name="exename">dmcs</attribute>
++                        <attribute name="exename">${csc.tool}</attribute>
++                        <attribute name="mcssdk">${mcs.sdk}</attribute>
+                         <attribute name="managed">true</attribute>
+                         <attribute name="langversion">linq</attribute>
+                         <attribute name="supportspackagereferences">true</attribute>
+@@ -2307,8 +2412,8 @@
+                 </tasks>
+             </framework>
+             <framework
+-                name="moonlight-2.0"
+-                family="moonlight"
++                name="moonlight-2.0" 
++                family="moonlight" 
+                 version="2.0"
+                 description="Moonlight 2.0"
+                 sdkdirectory="${toolDirectory}"
+@@ -2329,13 +2434,17 @@
+                     </modes>
+                 </runtime>
+                 <reference-assemblies basedir="${path::combine(prefix, 'lib/mono/2.1')}">
+-                    <include name="agclr.dll" />
+                     <include name="Microsoft.VisualBasic.dll" />
+                     <include name="mscorlib.dll" />
+                     <include name="System.Core.dll" />
+                     <include name="System.dll" />
+-                    <include name="System.Silverlight.dll" />
+-                    <include name="System.Xml.Core.dll" />
++                    <include name="System.Net.dll" />
++                    <include name="System.Runtime.Serialization.dll" />
++                    <include name="System.ServiceModel.dll" />
++                    <include name="System.ServiceModel.Web.dll" />
++                    <include name="System.Windows.Browser.dll" />
++                    <include name="System.Windows.dll" />
++                    <include name="System.Xml.dll" />
+                 </reference-assemblies>
+                 <task-assemblies>
+                     <!-- include MS.NET version-neutral assemblies -->
+@@ -2351,8 +2460,11 @@
+                 </task-assemblies>
+                 <tool-paths>
+                     <directory name="${toolDirectory}" />
++                    <directory name="${path::combine(prefix, 'lib/mono/4.5')}" />
+                     <directory name="${path::combine(prefix, 'lib/mono/2.0')}" />
+                     <directory name="${path::combine(prefix, 'lib/mono/1.0')}" />
++                    <!-- unmanaged tools -->
++                    <directory name="${prefix}/bin" />
+                 </tool-paths>
+                 <project>
+                     <if test="${not pkg-config::exists('mono')}">
+@@ -2360,10 +2472,19 @@
+                     </if>
+                     <property name="prefix" value="${pkg-config::get-variable('mono', 'prefix')}" />
+                     <property name="toolDirectory" value="${path::combine(prefix, 'lib/mono/2.1')}" />
++                    <if test="${not(pkg-config::is-atleast-version('mono', '3.0'))}">
++                        <property name="csc.tool" value="smcs"/>
++                        <property name="mcs.sdk" value="0"/>
++                    </if>
++                    <if test="${pkg-config::is-atleast-version('mono', '3.0')}">
++                        <property name="csc.tool" value="mcs"/>
++                        <property name="mcs.sdk" value="2.1"/>
++                    </if>
+                 </project>
+                 <tasks>
+                     <task name="csc">
+-                        <attribute name="exename">smcs</attribute>
++                        <attribute name="exename">${csc.tool}</attribute>
++                        <attribute name="mcssdk">${mcs.sdk}</attribute>
+                         <attribute name="managed">true</attribute>
+                         <attribute name="supportspackagereferences">true</attribute>
+                         <attribute name="supportsnowarnlist">true</attribute>
