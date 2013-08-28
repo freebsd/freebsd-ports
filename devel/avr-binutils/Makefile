@@ -16,9 +16,8 @@ WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}
 
 USE_BZIP2=	yes
 USE_GCC=	any
-USE_GMAKE=	yes
-USES=		gettext
-CONFIGURE_ARGS=	--target=avr --disable-werror
+USES=		gmake
+CONFIGURE_ARGS=	--target=avr --disable-werror --disable-nls
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
