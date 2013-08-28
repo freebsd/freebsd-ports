@@ -28,7 +28,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/generate.png.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/generate.sh.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/generate.svg.sh
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/html.labels.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/html.labels.1.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/html.labels.2.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/jointed.edges.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/macro.1.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/macro.2.pl
