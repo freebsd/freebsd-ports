@@ -2,6 +2,7 @@
 
 PORTNAME=	roundcube
 DISTVERSION=	0.9.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${DISTVERSION:U}
@@ -22,7 +23,7 @@ SCRIPTS_ENV=	SHAREOWN=${SHAREOWN} SHAREGRP=${SHAREGRP} \
 		WWWDIR=${WWWDIR}
 
 WANT_PHP_WEB=	yes
-USE_PHP=	pcre mbstring session iconv dom xml json intl zip
+USE_PHP=	pcre mbstring session iconv dom xml json intl zip filter
 IGNORE_WITH_PHP=52
 
 OPTIONS_DEFINE=	SSL LDAP GD PSPELL NSC
