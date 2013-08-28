@@ -1,11 +1,8 @@
-# Ports collection makefile for:  pear-Horde_Imsp
-# Date created:			  7 July 2011
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
+# Created by:	  Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Horde_Imsp
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.5
 CATEGORIES=	databases www pear
 
 MAINTAINER=	horde@FreeBSD.org
