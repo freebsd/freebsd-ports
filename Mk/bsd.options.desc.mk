@@ -25,7 +25,6 @@ AO_DESC?=		libao audio library support
 APACHE_DESC?=		Apache server support
 APE_DESC?=		Monkey's Audio lossless format support
 ARCHIVE_DESC?=		bzip2/zip/iso9660 archive support
-ARTS_DESC?=		aRts audio system support
 ASM_DESC?=		Use optimized assembly code
 ASPELL_DESC?=		Spell checking support via GNU Aspell
 ASSERT_DESC?=		Enable debug assertions

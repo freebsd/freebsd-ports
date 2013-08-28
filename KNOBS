@@ -23,7 +23,6 @@ AALIB			Adds aalib support
 ADS			Adds Asyncronous DNS Support
 ALSA			Adds ALSA support
 APACHE			Include support for APACHE_PORT
-ARTS			aRts support via the KDE sound daemon
 ASPELL			Use Aspell (textproc/aspell) for spell checking
 ATLAS			Use ATLAS instead of BLAS/LAPACK
 AUDIOFILE		Adds audiofile support
