@@ -26,16 +26,16 @@ CONFIGURE_ARGS=	--with-icondir="${PREFIX}/share/pixmaps"
 
 PORTDOCS=	*
 
-# Unconditially disable NLS for now: the game segfaults with 8bit locales
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
+# Unconditially disable NLS for now: the game segfaults with 8bit locales
+#.if ${PORT_OPTIONS:MNLS}
+#USES+=		gettext
+#PLIST_SUB+=	NLS=""
+#.else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
-.endif
+#.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^zazdocdir =/ s|$${prefix}/doc|$${prefix}/share/doc|' \
