@@ -11,13 +11,13 @@ COMMENT=	Primer3 helps to choose primers for PCR reactions
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake
+MAKE_ARGS=	CC=${CC} CPP=${CXX}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 PLIST_FILES=	bin/primer3
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's#^CC *=#CC ?=#;' \
 		-e 's#^CFLAGS.*#CFLAGS  += \$$\(CC_OPTS\)#;' \
 		-e 's#CC_OPTS = -g#CC_OPTS =#;' \
 		-e 's#LDFLAGS = -g#LDFLAGS +=#;' \
