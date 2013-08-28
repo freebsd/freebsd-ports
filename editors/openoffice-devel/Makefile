@@ -39,8 +39,8 @@ CCACHE_DESC=	Mimimize compile time of C/C++ programs
 
 .include "${.CURDIR}/files/Makefile.localized"
 
-.include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
