@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	mod_fcgid
-PORTVERSION=	2.3.6
-PORTREVISION=	1
+PORTVERSION=	2.3.7
 CATEGORIES=	www
 MASTER_SITES=		${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
+DIST_SUBDIR=	apache2
 
-MAINTAINER=	hemi@puresimplicity.net
-COMMENT=	An alternative FastCGI module for Apache2
-
+MAINTAINER=	freebsd.ports@webstyle.ch
+COMMENT=	Alternative FastCGI module for Apache2
 
 USE_APACHE=	22+
 
