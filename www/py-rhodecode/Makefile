@@ -32,6 +32,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylons>=1.0:${PORTSDIR}/www/py-pylons \
 		${PYTHON_PKGNAMEPREFIX}bcrypt>=0.2:${PORTSDIR}/security/py-bcrypt \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.5.2:${PORTSDIR}/devel/py-simplejson \
 		${PYTHON_PKGNAMEPREFIX}PasteScript>=1.6.3:${PORTSDIR}/www/py-pastescript \
+		${PYTHON_PKGNAMEPREFIX}pytz>=0:${PORTSDIR}/devel/py-pytz \
+		${PYTHON_PKGNAMEPREFIX}repoze.lru>=0:${PORTSDIR}/devel/py-repoze.lru \
 		mercurial>=2.6:${PORTSDIR}/devel/mercurial
 
 USE_PYTHON=	-2.7
