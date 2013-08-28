@@ -26,12 +26,13 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS+=--disable-alsa --disable-alsatest
+CONFIGURE_ARGS+=--disable-arts
 CONFIGURE_ARGS+=--disable-video-directfb
 
 EXAMPLES=	test/*.c test/*.bmp test/*.dat test/*.xbm test/*.wav
 DOCS=		BUGS COPYING CREDITS README README-SDL.txt WhatsNew docs.html
 
-OPTIONS_DEFINE=		AALIB ARTS DOCS ESOUND EXAMPLES GGI NAS OPENGL OSS \
+OPTIONS_DEFINE=		AALIB DOCS ESOUND EXAMPLES GGI NAS OPENGL OSS \
 			PULSEAUDIO SVGALIB X11
 OPTIONS_DEFAULT=	AALIB OPENGL OSS X11
 
@@ -50,13 +51,6 @@ CONFIGURE_ARGS+=	--enable-video-aalib
 LIB_DEPENDS+=		aa:${PORTSDIR}/graphics/aalib
 .else
 CONFIGURE_ARGS+=	--disable-video-aalib
-.endif
-
-.if ${PORT_OPTIONS:MARTS}
-LIB_DEPENDS+=		artsc:${PORTSDIR}/audio/arts
-CONFIGURE_ARGS+=	--enable-arts
-.else
-CONFIGURE_ARGS+=	--disable-arts
 .endif
 
 .if ${PORT_OPTIONS:MESOUND}
