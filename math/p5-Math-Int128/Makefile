@@ -26,11 +26,11 @@ MAN3=		Math::Int128.3 \
 
 .include <bsd.port.pre.mk>
 
-# need clang 3.2+ or gcc 4.4+
+# need clang 3.2+ or GCC 4.4+
 .if exists(/usr/bin/clang) && ${OSVERSION} > 901505
 CC=	/usr/bin/clang
 .else
-USE_GCC=	4.4+
+USE_GCC=	yes
 .endif
 
 .include <bsd.port.post.mk>
