@@ -1,0 +1,4 @@
+This Horde package provides interfaces for connecting to a SMTP (RFC 5321)
+server to send e-mail messages.
+
+WWW: http://pear.horde.org
