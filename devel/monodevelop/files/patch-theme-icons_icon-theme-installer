@@ -3,12 +3,6 @@ $FreeBSD$
 
 --- theme-icons/icon-theme-installer.orig
 +++ theme-icons/icon-theme-installer
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/usr/bin/env bash
- 
- # icon-theme-installer
- # Copyright (C) 2006 Novell, Inc.
 @@ -101,12 +101,12 @@
  	exit 1
  fi
