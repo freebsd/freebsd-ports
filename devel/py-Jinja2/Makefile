@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Jinja2
-PORTVERSION=	2.7
+PORTVERSION=	2.7.1
 PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -14,7 +14,7 @@ COMMENT?=	Fast and easy to use stand-alone template engine
 
 LICENSE=	BSD
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.11:${PORTSDIR}/textproc/py-MarkupSafe
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.18:${PORTSDIR}/textproc/py-MarkupSafe
 
 USE_PYTHON=	yes
 .if empty(PKGNAMESUFFIX)
@@ -42,13 +42,12 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 PORT_OPTIONS:=	${PORT_OPTIONS:NEXAMPLES}
 .endif
 
-.if ${PORT_OPTIONS:MBABEL} && ${PYTHON_REL} < 300
-# Actually >= 0.9.8, devel/py-babel doesn't yet build with Py3k
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Babel>=0.9.6:${PORTSDIR}/devel/py-babel
+.if ${PORT_OPTIONS:MBABEL}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:${PORTSDIR}/devel/py-babel
 .endif
 
 .if ${PORT_OPTIONS:MSPEEDUPS}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.11:${PORTSDIR}/textproc/py-MarkupSafe
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.18:${PORTSDIR}/textproc/py-MarkupSafe
 .endif
 
 # no problem with Python > 3.2

@@ -75,6 +75,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite/api.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite/api.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite/api.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite/bytecode_cache.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite/bytecode_cache.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite/bytecode_cache.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite/core_tags.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite/core_tags.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite/core_tags.pyo
