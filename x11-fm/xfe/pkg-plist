@@ -2834,6 +2834,8 @@ share/applications/xfp.desktop
 @dirrm %%DATADIR%%/icons/blue-theme
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/es_CO/LC_MESSAGES
+@dirrmtry share/locale/es_CO
 @dirrmtry share/locale/es_AR/LC_MESSAGES
 @dirrmtry share/locale/es_AR
 @dirrmtry share/applications
