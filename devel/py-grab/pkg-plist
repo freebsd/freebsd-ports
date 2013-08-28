@@ -11,9 +11,87 @@ bin/grab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/base.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/base.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/backend/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/backend/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/backend/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/backend/antigate.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/backend/antigate.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/backend/antigate.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/backend/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/backend/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/backend/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/backend/browser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/backend/browser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/backend/browser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/backend/gui.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/backend/gui.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/backend/gui.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/const.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/const.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/const.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/error.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/error.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/error.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/service.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/service.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/service.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/todo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/todo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/todo.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/cli.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/cli.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/cli.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/admin.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/admin.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/admin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/forms.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/forms.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/forms.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0001_initial.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0001_initial.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0001_initial.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0002_auto__del_taskresult__add_task.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0002_auto__del_taskresult__add_task.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0002_auto__del_taskresult__add_task.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0003_auto__del_field_task_stop_time__add_field_task_end_time.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0003_auto__del_field_task_stop_time__add_field_task_end_time.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0003_auto__del_field_task_stop_time__add_field_task_end_time.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0004_auto__del_field_task_status__add_field_task_is_done__add_field_task_is.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0004_auto__del_field_task_status__add_field_task_is_done__add_field_task_is.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0004_auto__del_field_task_status__add_field_task_is_done__add_field_task_is.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0005_auto__del_field_task_is_failed__add_field_task_is_ok.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0005_auto__del_field_task_is_failed__add_field_task_is_ok.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0005_auto__del_field_task_is_failed__add_field_task_is_ok.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0006_auto__del_field_task_work_time__add_field_task_elapsed_time.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0006_auto__del_field_task_work_time__add_field_task_elapsed_time.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0006_auto__del_field_task_work_time__add_field_task_elapsed_time.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0007_auto__chg_field_task_elapsed_time.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0007_auto__chg_field_task_elapsed_time.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0007_auto__chg_field_task_elapsed_time.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/signals.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/signals.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/signals.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/urls.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/urls.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/urls.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/views.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/views.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/views.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/error.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/error.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/error.pyo
@@ -32,6 +110,9 @@ bin/grab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/ext/ftp.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/ext/ftp.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/ext/ftp.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/ext/kit.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/ext/kit.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/ext/kit.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/ext/leaf.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/ext/leaf.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/ext/leaf.pyo
@@ -53,9 +134,39 @@ bin/grab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/extension.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/extension.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/extension.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item/const.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item/const.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item/const.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item/decorator.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item/decorator.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item/decorator.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item/error.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item/error.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item/error.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item/field.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item/field.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item/field.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item/item.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item/item.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item/item.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/kit/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/kit/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/kit/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/kit/const.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/kit/const.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/kit/const.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/kit/error.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/kit/error.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/kit/error.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/kit/network_access_manager.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/kit/network_access_manager.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/kit/network_access_manager.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/kit/network_reply.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/kit/network_reply.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/kit/network_reply.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/proxylist.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/proxylist.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/proxylist.pyo
@@ -65,12 +176,18 @@ bin/grab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/script/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/script/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/script/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/script/crawl.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/script/crawl.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/script/crawl.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/script/fix_mongo_cache.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/script/fix_mongo_cache.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/script/fix_mongo_cache.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/script/fix_mysql_cache.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/script/fix_mysql_cache.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/script/fix_mysql_cache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/script/start_project.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/script/start_project.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/script/start_project.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/script/test_item.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/script/test_item.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/script/test_item.pyo
@@ -101,36 +218,27 @@ bin/grab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/data.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/data.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/data.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/data/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/data/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/data/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/data/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/data/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/data/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/data/shortcut.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/data/shortcut.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/data/shortcut.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/error.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/error.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/error.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/middleware.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/middleware.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/middleware.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/base.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/base.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/base.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/downloader.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/downloader.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/downloader.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/generator.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/generator.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/generator.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/manager.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/manager.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/manager.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/parser.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/parser.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/parser.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/util.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/util.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/util.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/worker.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/worker.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng/worker.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/mixin/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/mixin/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/mixin/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/mixin/captcha_solver.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/mixin/captcha_solver.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/mixin/captcha_solver.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/pattern.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/pattern.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/pattern.pyo
@@ -149,6 +257,9 @@ bin/grab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/queue_backend/redis.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/queue_backend/redis.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/queue_backend/redis.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/save_result.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/save_result.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/save_result.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/stat.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/stat.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/stat.pyo
@@ -305,6 +416,9 @@ bin/grab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/transport/ghost.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/transport/ghost.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/transport/ghost.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/transport/kit.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/transport/kit.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/transport/kit.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/transport/mock.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/transport/mock.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/transport/mock.pyo
@@ -320,18 +434,36 @@ bin/grab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/upload.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/upload.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/upload.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/default_config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/default_config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/default_config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/misc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/misc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/misc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/module.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/module.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/module.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/py2old_support.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/py2old_support.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/py2old_support.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/py2x_support.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/py2x_support.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/py2x_support.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/py3k_support.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/py3k_support.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/py3k_support.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/base_interface.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/base_interface.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/base_interface.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/charset_issue.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/charset_issue.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/charset_issue.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/cookies.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/cookies.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/cookies.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/doc_extension.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/doc_extension.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/doc_extension.pyo
@@ -341,27 +473,57 @@ bin/grab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/form_extension.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/form_extension.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/form_extension.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_api.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_api.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_api.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_cookies.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_cookies.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_cookies.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_get_request.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_get_request.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_get_request.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_js.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_js.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_js.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_pickle.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_pickle.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_pickle.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_post_request.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_post_request.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_post_request.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_proxy.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_proxy.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_proxy.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_redirect.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_redirect.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_redirect.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_response_body_processing.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_response_body_processing.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_response_body_processing.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_transport.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_transport.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_transport.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_transport_mock.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_transport_mock.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_transport_mock.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_user_agent.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_user_agent.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_user_agent.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_xml_processing.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_xml_processing.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/grab_xml_processing.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/i18n.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/i18n.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/i18n.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/item.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/item.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/item.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/kit_extension.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/kit_extension.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/kit_extension.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/kit_live_sites.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/kit_live_sites.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/kit_live_sites.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/limit_option.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/limit_option.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/limit_option.pyo
@@ -380,9 +542,6 @@ bin/grab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/mixin/spider_queue.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/mixin/spider_queue.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/mixin/spider_queue.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/post_feature.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/post_feature.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/post_feature.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/pyquery_extension.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/pyquery_extension.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/pyquery_extension.pyo
@@ -392,12 +551,18 @@ bin/grab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/selector.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/selector.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/selector.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/selector_kit.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/selector_kit.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/selector_kit.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_cache.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_cache.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_cache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_data.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_data.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_data.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_misc.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_misc.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_misc.pyo
@@ -434,6 +599,9 @@ bin/grab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/tools_account.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/tools_account.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/tools_account.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/tools_content.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/tools_content.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/tools_content.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/tools_control.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/tools_control.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/tools_control.pyo
@@ -452,8 +620,12 @@ bin/grab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/util.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/util_config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/util_config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/util_config.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/mixin
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/transport
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/tools/tinyurl
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/tools/service
@@ -464,12 +636,20 @@ bin/grab
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/tools
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/transport
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/queue_backend
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/ng
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/mixin
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/data
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/cache_backend
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/selector
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/script
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/kit
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/ext
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/backend
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
