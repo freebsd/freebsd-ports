@@ -1,2 +1,2 @@
-SHA256 (mod_fcgid-2.3.6.tar.gz) = e831795498d91cf27a519ea1332c2a92a2a9920b0844d817b2ea7f079056d12b
-SIZE (mod_fcgid-2.3.6.tar.gz) = 101883
+SHA256 (apache2/mod_fcgid-2.3.7.tar.gz) = b72810cb34942945156f29ce60946da7dc941bb4cfca8b9d224573535bd8ef6d
+SIZE (apache2/mod_fcgid-2.3.7.tar.gz) = 104818
