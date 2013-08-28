@@ -11,9 +11,10 @@ COMMENT=	Library for real-time comms with async IO support
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
+USES=		gmake
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 
+MAKE_ARGS=	CC=${CC}
 PORTDATA=	re.mk
 
 do-install:
