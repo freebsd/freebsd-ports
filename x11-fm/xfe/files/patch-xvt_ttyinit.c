@@ -1,44 +1,29 @@
---- xvt/ttyinit.c.orig	2010-09-15 16:32:26.000000000 +0200
-+++ xvt/ttyinit.c	2012-02-20 09:30:28.000000000 +0100
-@@ -37,7 +37,12 @@
+--- xvt/ttyinit.c.orig	2013-08-13 17:49:45.000000000 +0200
++++ xvt/ttyinit.c	2013-08-26 17:37:10.000000000 +0200
+@@ -37,7 +37,6 @@
  #include <unistd.h>
  #include <signal.h>
  #include <fcntl.h>
 -#include <utmp.h>
-+#include <sys/param.h>
-+#if __FreeBSD_version >= 900007
-+#    include <utmpx.h>
-+#else
-+#    include <utmp.h>
-+#endif
- #include <grp.h>
- #include <pwd.h>
- #include <errno.h>
-@@ -134,7 +139,7 @@
- #endif /* LINUX */
- 
- /* GNU KFREEBSD */
--#if defined (__FreeBSD_kernel__)
-+#if defined (__FreeBSD_kernel__) && !defined (__FreeBSD__)
- #include <sys/ioctl.h>
- #include <pty.h>
- #define BSD_PTY
-@@ -175,7 +180,9 @@
- #ifdef BSD_UTMP
- static int tslot = -1;		/* index to our slot in the utmp file */
- #endif /* BSD_UTMP */
-+#if defined(BSD_UTMP) || defined(SVR4_UTMP)
- static struct utmp utent;	/* our current utmp entry */
-+#endif
- 
- /*  Catch a SIGCHLD signal and exit if the direct child has died.
-  */
-@@ -385,7 +392,7 @@
-  */
+ #include <sys/param.h>
+ #if __FreeBSD_version >= 900007
+ #    include <utmpx.h>
+@@ -394,7 +393,6 @@
  static char* get_pseudo_tty(int* pmaster, int* pslave)
  {
--#ifdef BSD_PTY
-+#if defined(BSD_PTY) || defined(__FreeBSD__)
-     int mfd, sfd;
+     int mfd = 0, sfd = 0;
+-    char *ttynam = NULL;
+ #if defined(BSD_PTY) || defined(__FreeBSD__)
      char *s3, *s4;
      static char ptyc3[] = "pqrstuvwxyz";
+@@ -435,7 +433,9 @@
+         error("could not open slave tty %s",ttynam);
+         return(NULL);
+     }
+-#endif /* BSD_PTY */
++#else /* BSD_PTY */
++    char *ttynam = NULL;
++#endif
+ 
+ #ifdef SVR4_PTY
+ 
