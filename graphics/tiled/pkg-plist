@@ -1,3 +1,4 @@
+bin/automappingconverter
 bin/tiled
 bin/tmxrasterizer
 bin/tmxviewer
@@ -13,7 +14,9 @@ lib/tiled/plugins/libreplicaisland.so
 lib/tiled/plugins/libtengine.so
 lib/tiled/plugins/libtmw.so
 share/applications/tiled.desktop
-%%DATADIR%%/images/tiled-icon-32.png
+share/icons/hicolor/16x16/apps/tiled.png
+share/icons/hicolor/32x32/apps/tiled.png
+share/icons/hicolor/scalable/apps/tiled.svg
 %%DATADIR%%/translations/tiled_cs.qm
 %%DATADIR%%/translations/tiled_de.qm
 %%DATADIR%%/translations/tiled_en.qm
@@ -29,8 +32,15 @@ share/applications/tiled.desktop
 %%DATADIR%%/translations/tiled_ru.qm
 %%DATADIR%%/translations/tiled_zh.qm
 @dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrmtry share/applications
 @dirrm lib/tiled/plugins
 @dirrm lib/tiled
