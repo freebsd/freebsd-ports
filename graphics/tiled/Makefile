@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tiled
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	graphics editors games
 MASTER_SITES=	SF/tiled/tiled-qt/${PORTVERSION}
 DISTNAME=	tiled-qt-${PORTVERSION}
@@ -14,9 +14,13 @@ USE_QT4=	corelib gui opengl \
 		linguist_build qmake_build moc_build uic_build rcc_build
 USE_LDCONFIG=	yes
 
-MAN1=		tiled.1 tmxrasterizer.1 tmxviewer.1
+MAN1=		automappingconverter.1 tiled.1 tmxrasterizer.1 tmxviewer.1
 
 PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|lrelease|&-qt4|' \
@@ -29,8 +33,6 @@ post-patch:
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} ${QMAKEFLAGS} PREFIX="${PREFIX}" tiled.pro
-
-.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
