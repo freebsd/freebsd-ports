@@ -24,18 +24,18 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		ninja:${PORTSDIR}/devel/ninja \
 		v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
 
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-		cairo:${PORTSDIR}/graphics/cairo \
-		dbus-1:${PORTSDIR}/devel/dbus \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		asound:${PORTSDIR}/audio/alsa-lib \
-		freetype:${PORTSDIR}/print/freetype2 \
-		nss3:${PORTSDIR}/security/nss \
-		gnome-keyring:${PORTSDIR}/security/libgnome-keyring \
-		cups:${PORTSDIR}/print/cups-client \
-		event-1:${PORTSDIR}/devel/libevent \
-		gcrypt:${PORTSDIR}/security/libgcrypt \
-		pci:${PORTSDIR}/devel/libpci
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libcairo.so:${PORTSDIR}/graphics/cairo \
+		libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libasound.so:${PORTSDIR}/audio/alsa-lib \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libnss3.so:${PORTSDIR}/security/nss \
+		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
+		libcups.so:${PORTSDIR}/print/cups-client \
+		libevent-1.4.so:${PORTSDIR}/devel/libevent \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		libpci.so:${PORTSDIR}/devel/libpci
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
 		${LOCALBASE}/lib/X11/fonts/Droid/fonts.dir:${PORTSDIR}/x11-fonts/droid-fonts-ttf
@@ -117,7 +117,7 @@ GYP_DEFINES+=	use_gconf=0
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 GYP_DEFINES+=	use_pulseaudio=1
 .else
 GYP_DEFINES+=	use_pulseaudio=0
@@ -183,7 +183,7 @@ post-patch:
 		${WRKSRC}/third_party/libvpx/libvpx.gyp \
 		${WRKSRC}/crypto/crypto.gyp \
 		${WRKSRC}/v8/tools/gyp/v8.gyp \
-		${WRKSRC}/v8/build/common.gypi 
+		${WRKSRC}/v8/build/common.gypi
 	@${REINPLACE_CMD} -e "s|/usr/bin/gcc|${CC}|" \
 		${WRKSRC}/third_party/WebKit/Source/core/core.gypi
 	@${REINPLACE_CMD} -e "s|'../courgette/courgette.gyp:courgette_lib',||" \
