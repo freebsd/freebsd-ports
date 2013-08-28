@@ -2,32 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	wxsvg
-PORTVERSION=	1.1.15
-PORTREVISION=	1
+PORTVERSION=	1.1.16
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	C++ library to create, manipulate, and render SVG files
 
 LICENSE=	LGPL21 # (or later)
 
-LIB_DEPENDS=	avcodec1:${PORTSDIR}/multimedia/ffmpeg1 \
-		expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libavcodec1.so:${PORTSDIR}/multimedia/ffmpeg1 \
+		libexpat.so:${PORTSDIR}/textproc/expat2
 
 USE_BZIP2=	yes
-USES=		pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 USE_WX=		yes
 WX_CONF_ARGS=	absolute
 USE_GNOME=	cairo
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBAV_CFLAGS="${LIBAV_CFLAGS}" LIBAV_LIBS="${LIBAV_LIBS}"
 MAKE_ENV=	AM_CPPFLAGS="${LIBAV_CFLAGS}"
 USE_LDCONFIG=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 LIBAV_PC=	libavcodec1 libavformat1 libavutil1 libswscale1
 LIBAV_CFLAGS=	$$(pkg-config --cflags ${LIBAV_PC})
