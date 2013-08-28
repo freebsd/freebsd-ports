@@ -7,12 +7,12 @@
 
 PORTNAME=	pantomime
 PORTVERSION=	1.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail gnustep
 MASTER_SITES=	http://download.gna.org/gnustep-nonfsf/
 DISTNAME=	Pantomime-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	Mail/MIME handling library for GNUstep
 
 LICENSE=	LGPL21

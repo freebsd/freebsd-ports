@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	performance
-PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTVERSION=	0.4.0
+PORTREVISION=	0
 CATEGORIES=	devel gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	libs
 DISTNAME=	Performance-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	Help improve the performance of GNUstep applications
 
 LICENSE=	LGPL3

@@ -1,10 +1,11 @@
-GNUstep is a set of general-purpose Objective-C libraries based on the
-OpenStep standard developed by NeXT (now Apple) Inc. The libraries
-consist of everything from foundation classes, such as dictionaries and
-arrays, to GUI interface classes such as windows, sliders, buttons, etc.
+The GNUstep Base library implements the Foundation portion of the OpenStep
+specification, jointly developed by NeXT and Sun.  It aims to provide
+compatibility with extensions added by Apple's implementation of this standard:
+Cocoa.  The Foundation framework provides the standard library for Objective-C,
+including collections, operating system interfaces, and so on.
 
-Please contact the GNUstep maintainers at <discussion@gnustep.org> in 
-case of questions and help offers.
+Please contact the GNUstep maintainers at <discuss-gnustep@gnu.org> in
+case of questions and offers of help.
 
 LICENSE: LGPL2 or later (framework)
 LICENSE: GPL3 or later (tools, docs)

@@ -5,34 +5,6 @@
 # make your life easier when dealing with ports related to the GNUstep.
 #
 #
-# Options for user to customize in /etc/make.conf:
-# ================================================
-#
-# WITH_GNUSTEP_XLIB=yes
-#	use xlib as backend (default)
-#
-# WITH_GNUSTEP_XDPS=yes
-#	use xdps as backend while build instead of xlib.
-#
-# WITH_GNUSTEP_LIBART=yes
-#	use libart as backend while build instead of xlib.
-#
-# WITH_GNUSTEP_CAIRO=yes
-#	use cairo as backend while build instead of xlib.
-#
-# GNUSTEP_WITH_GCC34=yes
-#	use gcc 3.4.x with objective C shared libraries.
-#
-# GNUSTEP_WITH_GCC42=yes
-#	use gcc 4.2.x with objective C shared libraries (default).
-#
-# GNUSTEP_WITH_GCC46=yes
-#	use gcc 4.6.x with objective C shared libraries.
-#
-# GNUSTEP_WITH_CLANG=yes
-#	use clang with objective C shared libraries.
-#
-#
 # Options for a port before include this file:
 # ============================================
 #
@@ -61,49 +33,49 @@
 #	require GNUstep.sh for build and install
 #
 # USE_GNUSTEP_SYSTEM_LIBS+=	Renaissance:x11-toolkits/renaissance
-#	depends on a shared lib in System directrory
+#	depends on a shared lib in System directory
 #
 # USE_GNUSTEP_SYSTEM_BUNDLES+=	EtoileMenus:x11-themes/etoile-etoilemenus
-#	depends on Bundles installed in System directrory
+#	depends on Bundles installed in System directory
 #
 # USE_GNUSTEP_SYSTEM_THEMES+=	Camaelon:x11-themes/etoile-camaelon
-#	depends on Themes installed in System directrory
+#	depends on Themes installed in System directory
 #
 # USE_GNUSTEP_LOCAL_LIBS+=	pantomime:mail/pantomime
-#	depends on a shared lib in Local directrory
+#	depends on a shared lib in Local directory
 #
 # USE_GNUSTEP_LOCAL_BUNDLES+=	Cddb:audio/cddb-bundle
-#	depends on Bundles installed in Local directrory
+#	depends on Bundles installed in Local directory
 #
 # USE_GNUSTEP_LOCAL_THEMES+=	WildMenus:x11-themes/etoile-wildmenus
-#	depends on Themes installed in Local directrory
+#	depends on Themes installed in Local directory
 #
 # USE_GNUSTEP_LOCAL_MENULETS+=	PowerMenulet:sysutils/etoile-powermenulet
-#	depends on Menulets installed in Local directrory
+#	depends on Menulets installed in Local directory
 #
 # USE_GNUSTEP_LOCAL_ASTS+=	CommentToLog:lang/etoile-lkplugins
-#	depends on Ast Bundles installed in Local directrory
+#	depends on Ast Bundles installed in Local directory
 #
 # USE_GNUSTEP_LOCAL_BURNS+=	MP3ToWav:audio/mp3towav-bundle
-#	depends on Burn Bundles installed in Local directrory
+#	depends on Burn Bundles installed in Local directory
 #
 # USE_GNUSTEP_SYSTEM_APPS+=	ProjectCenter:devel/projectcenter.app
-#	depends on Application installed in System directrory
+#	depends on Application installed in System directory
 #
 # USE_GNUSTEP_LOCAL_APPS+=	Ink:misc/gnustep-examples
-#	depends on Application installed in Local directrory
+#	depends on Application installed in Local directory
 #
 # USE_GNUSTEP_SYSTEM_TOOLS+=	resizer:deskutils/gworkspace
-#	depends on Tool installed in System directrory
+#	depends on Tool installed in System directory
 #
 # USE_GNUSTEP_LOCAL_TOOLS+=	zillion:net/zillion
-#	depends on Tool installed in Local directrory
+#	depends on Tool installed in Local directory
 #
 # USE_GNUSTEP_SYSTEM_SERVICES+=	thumbnailer:deskutils/gworkspace
-#	depends on Services installed in System directrory
+#	depends on Services installed in System directory
 #
 # USE_GNUSTEP_LOCAL_SERVICES+=	LaTeX:textproc/latex-service
-#	depends on Services installed in Local directrory
+#	depends on Services installed in Local directory
 #
 # ---------------------------------------------------------------------------
 .if !defined(_POSTMKINCLUDED)
@@ -121,9 +93,7 @@ GNUSTEP_MAKE_PORT?=	devel/gnustep-make
 GNUSTEP_BASE_PORT?=	lang/gnustep-base
 GNUSTEP_GUI_PORT?=	x11-toolkits/gnustep-gui
 GNUSTEP_BACK_PORT?=	x11-toolkits/gnustep-back
-GNUSTEP_XDPS_PORT?=	x11-toolkits/gnustep-xdps
-GNUSTEP_ART_PORT?=	x11-toolkits/gnustep-art
-GNUSTEP_CAIRO_PORT?=	x11-toolkits/gnustep-cairo
+# Note: back-cairo will be deprecated in favour of Opal soon...
 
 .if ${MACHINE_ARCH} == "i386"
 GNU_ARCH=	ix86
@@ -195,63 +165,34 @@ PLIST_SUB+=	MAJORVERSION=${PORTVERSION:C/([0-9]).*/\1/1}
 PLIST_SUB+=	LIBVERSION=${DEFAULT_LIBVERSION}
 PLIST_SUB+=	MAJORLIBVERSION=${DEFAULT_LIBVERSION:C/([0-9]).*/\1/1}
 
-.if !defined(GNUSTEP_WITH_GCC34) && !defined(GNUSTEP_WITH_GCC42) && !defined(GNUSTEP_WITH_GCC46) && !defined(GNUSTEP_WITH_BASE_GCC)
-.if defined(PACKAGE_BUILDING)
-.if ${OSVERSION} > 900035
-GNUSTEP_WITH_GCC42=yes
-.endif
-.endif
-.if !exists(${DESTDIR}/usr/lib/libobjc.so)
-GNUSTEP_WITH_GCC42=yes
-.endif
+.if !exists(${DESTDIR}/usr/bin/clang)
+_CLANG!=	${DESTDIR}/usr/bin/clang --version | head -1 | \
+		${SED} -e 's/.*clang version \([0-9]\)\.\([0-9]\).*/\1\2/' 
+.else
+_CLANG=	0
 .endif
 
-.if defined(GNUSTEP_WITH_CLANG)
-.if defined(CC) && ${CC:T:Mclang}
-# all done
+.if ${_CLANG} < 33
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang33:${PORTSDIR}/lang/clang33
+CPP=	${LOCALBASE}/bin/clang-cpp33
+CC=	${LOCALBASE}/bin/clang33
+CXX=	${LOCALBASE}/bin/clang++33
 .else
-.if !exists(${DESTDIR}/usr/bin/clang)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
-CC=	clang
-CXX=	clang++
-.else
-# use clang in base
-CC=	clang
-CXX=	clang++
+CPP=	/usr/bin/clang-cpp33
+CC=	/usr/bin/clang
+CXX=	/usr/bin/clang++
 .endif
-# ignore gcc ports
-GNUSTEP_WITH_BASE_GCC=yes
-.endif
-LIB_DEPENDS+=	objc:${PORTSDIR}/lang/libobjc2
-.else
-.if defined(GNUSTEP_WITH_GCC34) || defined(GNUSTEP_WITH_GCC42) || defined(GNUSTEP_WITH_GCC46)
-.if defined(GNUSTEP_WITH_GCC34)
-GCCSUFFIX=34
-.if ${ARCH} == sparc64
-BROKEN=	gcc34 does not build the required libobjc
-.endif
-.endif
-.if defined(GNUSTEP_WITH_GCC42)
-GCCSUFFIX=42
-.endif
-.if defined(GNUSTEP_WITH_GCC46)
-GCCSUFFIX=46
-.endif
-CC=		gcc${GCCSUFFIX}
-CXX=		g++${GCCSUFFIX}
-GNUSTEP_GCC_PORT?=	lang/gcc${GCCSUFFIX}
-BUILD_DEPENDS+=	${TARGLIB}/libobjc.so:${PORTSDIR}/${GNUSTEP_GCC_PORT}
-RUN_DEPENDS+=	${TARGLIB}/libobjc.so:${PORTSDIR}/${GNUSTEP_GCC_PORT}
-.else
-GNUSTEP_WITH_BASE_GCC=yes
-.endif
-.endif
+
+MAKE_ENV+=	"CC=${CC} CXX=${CXX}"
+
+
 
 # ---------------------------------------------------------------------------
 # using base
 #
 .if defined(USE_GNUSTEP_BASE)
 BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_LIBRARIES}/libgnustep-base.so:${PORTSDIR}/${GNUSTEP_BASE_PORT}
+LIB_DEPENDS+=	objc.4:${PORTSDIR}/lang/libobjc2
 RUN_DEPENDS+=	${GNUSTEP_SYSTEM_LIBRARIES}/libgnustep-base.so:${PORTSDIR}/${GNUSTEP_BASE_PORT}
 .endif
 
@@ -267,66 +208,12 @@ RUN_DEPENDS+=	${GNUSTEP_SYSTEM_LIBRARIES}/libgnustep-gui.so:${PORTSDIR}/${GNUSTE
 # using any backend
 #
 .if defined(USE_GNUSTEP_BACK)
-.if defined(WITH_GNUSTEP_DEVEL)
-BACKSUFFIX?=	-022
-.else
-BACKSUFFIX?=	-022
-.endif
-.if defined(WITH_GNUSTEP_XDPS)
-GNUSTEP_WITH_XDPS=yes
-.elif defined(WITH_GNUSTEP_LIBART)
-USE_GNUSTEP_LIBART=yes
-.elif defined(WITH_GNUSTEP_CAIRO)
-USE_GNUSTEP_CAIRO=yes
-.elif defined(WITH_GNUSTEP_XLIB)
-USE_GNUSTEP_XLIB=yes
-.else
-# default:
-USE_GNUSTEP_XLIB=yes
-.endif
-.endif
+BACKSUFFIX?=	-023
+BACKCAIRO=     libgnustep-cairo${BACKSUFFIX}
 
-# ---------------------------------------------------------------------------
-# Backend using xlib
-#
-.if defined(USE_GNUSTEP_XLIB)
-BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${BACKXLIB}.bundle/${BACKXLIB}:${PORTSDIR}/${GNUSTEP_BACK_PORT}
-RUN_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${BACKXLIB}.bundle/${BACKXLIB}:${PORTSDIR}/${GNUSTEP_BACK_PORT}
+BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${BACKCAIRO}.bundle/${BACKCAIRO}:${PORTSDIR}/${GNUSTEP_BACK_PORT}
+RUN_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${BACKCAIRO}.bundle/${BACKCAIRO}:${PORTSDIR}/${GNUSTEP_BACK_PORT}
 
-BACKXLIB=	libgnustep-back${BACKSUFFIX}
-MAKE_FLAGS+=	GUI_BACKEND_LIB=back
-.endif
-
-# ---------------------------------------------------------------------------
-# Backend using xdps
-#
-.if defined(USE_GNUSTEP_XDPS)
-BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${BACKXDPS}.bundle/${BACKXDPS}:${PORTSDIR}/${GNUSTEP_XDPS_PORT}
-RUN_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${BACKXDPS}.bundle/${BACKXDPS}:${PORTSDIR}/${GNUSTEP_XDPS_PORT}
-
-BACKXDPS=	libgnustep-xdps${BACKSUFFIX}
-MAKE_FLAGS+=	GUI_BACKEND_LIB=xdps
-.endif
-
-# ---------------------------------------------------------------------------
-# Backend using libart
-#
-.if defined(USE_GNUSTEP_LIBART)
-BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${BACKART}.bundle/${BACKART}:${PORTSDIR}/${GNUSTEP_ART_PORT}
-RUN_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${BACKART}.bundle/${BACKART}:${PORTSDIR}/${GNUSTEP_ART_PORT}
-
-BACKART=	libgnustep-art${BACKSUFFIX}
-MAKE_FLAGS+=	GUI_BACKEND_LIB=art
-.endif
-
-# ---------------------------------------------------------------------------
-# Backend using cairo
-#
-.if defined(USE_GNUSTEP_CAIRO)
-BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${BACKCAIRO}.bundle/${BACKCAIRO}:${PORTSDIR}/${GNUSTEP_CAIRO_PORT}
-RUN_DEPENDS+=	${GNUSTEP_SYSTEM_BUNDLES}/${BACKCAIRO}.bundle/${BACKCAIRO}:${PORTSDIR}/${GNUSTEP_CAIRO_PORT}
-
-BACKCAIRO=	libgnustep-cairo${BACKSUFFIX}
 MAKE_FLAGS+=	GUI_BACKEND_LIB=cairo
 .endif
 
@@ -490,7 +377,7 @@ run-autotools::
 
 do-configure:
 	@(cd ${CONFIGURE_WRKSRC}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
-	    if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
+	    if ! ${SETENV} CC="${CC}" CXX="${CXX}" CPP="${CPP}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \

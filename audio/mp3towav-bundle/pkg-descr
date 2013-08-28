@@ -1,8 +1,0 @@
-MP3ToWav.bundle is a supporting bundle for Burn.app. It implements
-API for Burn.app's the audio file conversion bundles. MP3ToWav.bundle
-converts, as its name implies, mp3 audio files into wav audio files
-which can be burned onto a CD playable in your home stereo.
-
-LICENSE: GPL2 or later
-
-WWW: http://gsburn.sourceforge.net/

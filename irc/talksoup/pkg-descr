@@ -1,7 +1,0 @@
-TalkSoup is a GNUstep IRC client built on the extensibility of the
-Objective-C language. The entire IRC client is implemented by plugins,
-so one can pick and choose what they want to use.
-
-LICENSE: GPL2 or later
-
-WWW: http://talksoup.aeruder.net/

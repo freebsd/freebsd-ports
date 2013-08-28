@@ -8,3 +8,12 @@
  #include <AppKit/NSApplication.h>
  #include <AppKit/NSAffineTransform.h>
  #include <AppKit/NSClipView.h>
+@@ -592,7 +592,7 @@
+ {
+   SEL action = [menuItem action];
+ 
+-  if ( sel_eq(action,@selector(resize:)) )
++  if ( sel_isEqual(action,@selector(resize:)) )
+     {
+       if ( [menuItem tag] == [self _currentItem] ) 
+        return NO;

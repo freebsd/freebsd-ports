@@ -2,68 +2,63 @@
 # $FreeBSD$
 
 PORTNAME=	libobjc2
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	http://download.gna.org/gnustep/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Replacement Objective-C runtime supporting Obj-C 2 features
-
-BUILD_DEPENDS=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
-
-USE_BZIP2=	yes
-USE_LDCONFIG=	yes
-MAKE_ENV+=	LD=${LOCALBASE}/bin/ld
-MAKE_ENV+=	SHLIB_VERSION="${SHLIB_VERSION}"
-PLIST_SUB=	SHLIB=${SHLIB_VERSION}
-
-OPTIONS_DEFINE=	NSOBJECT_ROOT LIBDISPATCH
-OPTIONS_DEFAULT=	NSOBJECT_ROOT
-NSOBJECT_ROOT_DESC=	Root class is NSObject not Object
-LIBDISPATCH_DESC=	Build with libdispatch from ports
-
-SHLIB_VERSION?=	16
+MAINTAINER=	theraven@FreeBSD.org
+COMMENT=	Replacement Objective-C runtime supporting modern Objective-C features
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MLIBDISPATCH}
-LIB_DEPENDS+=	dispatch.0:${PORTSDIR}/devel/libdispatch
-MAKE_ARGS+=	-DWITHOUT_TOYDISPATCH
-PLIST_SUB+=	WITH_TOYDISPATCH="@comment "
+USES=		cmake
+
+_CLANG!=	if [ -f /usr/bin/clang ] ; then  /usr/bin/clang --version | head -1 | \
+		${SED} -e 's/.*clang version \([0-9]\)\.\([0-9]\).*/\1\2/' ; else ${ECHO} 0 ; fi
+
+.if ${_CLANG} < 33
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang33:${PORTSDIR}/lang/clang33
+CLANG=		${LOCALBASE}/bin/clang33
+CLANGXX=	${LOCALBASE}/bin/clang++33
 .else
-PLIST_SUB+=	WITH_TOYDISPATCH=""
+CLANG=		/usr/bin/clang
+CLANGXX=	/usr/bin/clang++
 .endif
 
-.if ${PORT_OPTIONS:MNSOBJECT_ROOT}
-CPPFLAGS+=	-DGNUSTEP
+SHLIB_MAJOR=	4
+SHLIB_MINOR=	6
+
+USE_BZIP2=	yes
+PLIST_SUB+=	SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR}
+
+.if ${OSVERSION} < 902000
+CMAKE_ARGS+=	-DFORCE_LIBOBJCXX=ON
+PLIST_SUB+=	WITH_SEPARATECXX=""
+.else
+PLIST_SUB+=	WITH_SEPARATECXX="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900000
-.if defined(CC) && ${CC:T:Mclang}
-# all done
-.else
-# force clang
-CC=	${LOCALBASE}/bin/clang
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
-.endif
-.endif
-
-.if (${ARCH} == i386) || (${ARCH} == i486)
-CFLAGS+=	-march=i586
-.endif
+CMAKE_ARGS+=	-DLIB_INSTALL_PATH=lib -DCMAKE_ASM_COMPILER=${CLANG}
+CMAKE_ARGS+=	-DCMAKE_C_COMPILER=${CLANG} -DCMAKE_CXX_COMPILER=${CLANGXX}
+CMAKE_ARGS+=	-DTESTS=OFF
+# This shouldn't be needed, but our llvm port installs llvm-config with a silly
+# name...
+CMAKE_ARGS+=	-DLLVM_OPTS=OFF
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not compile on powerpc: Unsupported relocation type 10
 .endif
 
-post-patch:
-	${RM} ${WRKSRC}/GNUmakefile
-
+.if ${OSVERSION} < 902000
 post-install:
-.if ${PORT_OPTIONS:MLIBDISPATCH}
-	${RM} ${PREFIX}/include/objc/toydispatch.h
+	${LN} -sf ${LOCALBASE}/lib/libobjc.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${LOCALBASE}/lib/libobjc.so.${SHLIB_MAJOR}
+	${LN} -sf ${LOCALBASE}/lib/libobjcxx.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${LOCALBASE}/lib/libobjcxx.so.${SHLIB_MAJOR}
+.else
+post-install:
+	${LN} -sf ${LOCALBASE}/lib/libobjc.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${LOCALBASE}/lib/libobjc.so.${SHLIB_MAJOR}
 .endif
+
 
 .include <bsd.port.post.mk>

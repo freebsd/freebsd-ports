@@ -1,20 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	simpleagenda
-PORTVERSION=	0.42
-PORTREVISION=	1
+PORTVERSION=	0.43
+PORTREVISION=	0
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://coyote.octets.fr/pub/gnustep/
 DISTNAME=	SimpleAgenda-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	simple calendar and agenda application
 
 LIB_DEPENDS+=	ical:${PORTSDIR}/devel/libical
 
 LICENSE=	GPLv2
-
-BROKEN=		does not build
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_CONFIGURE=	yes
@@ -24,7 +22,6 @@ USE_GNUSTEP_INSTALL=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
-ADDITIONAL_OBJCFLAGS=	'-Dsel_isEqual(x,y) (x==y)'
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|SimpleAgenda|SimpleAgenda.m|' ${WRKSRC}/configure
