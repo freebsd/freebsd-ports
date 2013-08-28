@@ -21,10 +21,12 @@
 name="rhodecode"
 rcvar=rhodecode_enable
 
+load_rc_config ${name}
+
 : ${rhodecode_enable="NO"}
-: ${rhodecode_config="%%PREFIX%%/rhodecode/production.ini"}
+: ${rhodecode_config="%%PREFIX%%/etc/rhodecode/production.ini"}
 : ${rhodecode_user="www"}
-: ${rhodecode_user="www"}
+: ${rhodecode_group="www"}
 
 pidfile="/var/run/${name}.pid"
 command=%%PREFIX%%/bin/paster
