@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfe
-PORTVERSION=	1.34
-PORTREVISION=	1
+PORTVERSION=	1.35
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF
 
@@ -14,10 +13,9 @@ LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16
 
 USE_XORG=	xft
 USE_GNOME=	gnomehack intltool
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -g -O0
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 MAN1=		xfe.1 xfi.1 xfp.1 xfv.1 xfw.1

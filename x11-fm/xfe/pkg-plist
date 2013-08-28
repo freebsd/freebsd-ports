@@ -11,6 +11,7 @@ share/locale/de/LC_MESSAGES/xfe.mo
 share/locale/el/LC_MESSAGES/xfe.mo
 share/locale/es/LC_MESSAGES/xfe.mo
 share/locale/es_AR/LC_MESSAGES/xfe.mo
+share/locale/es_CO/LC_MESSAGES/xfe.mo
 share/locale/fr/LC_MESSAGES/xfe.mo
 share/locale/hu/LC_MESSAGES/xfe.mo
 share/locale/it/LC_MESSAGES/xfe.mo
@@ -139,6 +140,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/blue-theme/gif_16x16.png
 %%DATADIR%%/icons/blue-theme/gif_32x32.png
 %%DATADIR%%/icons/blue-theme/gotobig.png
+%%DATADIR%%/icons/blue-theme/gotodir.png
 %%DATADIR%%/icons/blue-theme/gotoline.png
 %%DATADIR%%/icons/blue-theme/graybutton.png
 %%DATADIR%%/icons/blue-theme/greenbutton.png
@@ -447,6 +449,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/brown-theme/gif_16x16.png
 %%DATADIR%%/icons/brown-theme/gif_32x32.png
 %%DATADIR%%/icons/brown-theme/gotobig.png
+%%DATADIR%%/icons/brown-theme/gotodir.png
 %%DATADIR%%/icons/brown-theme/gotoline.png
 %%DATADIR%%/icons/brown-theme/graybutton.png
 %%DATADIR%%/icons/brown-theme/greenbutton.png
@@ -755,6 +758,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnome-theme/gif_16x16.png
 %%DATADIR%%/icons/gnome-theme/gif_32x32.png
 %%DATADIR%%/icons/gnome-theme/gotobig.png
+%%DATADIR%%/icons/gnome-theme/gotodir.png
 %%DATADIR%%/icons/gnome-theme/gotoline.png
 %%DATADIR%%/icons/gnome-theme/graybutton.png
 %%DATADIR%%/icons/gnome-theme/greenbutton.png
@@ -1063,6 +1067,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnomeblue-theme/gif_16x16.png
 %%DATADIR%%/icons/gnomeblue-theme/gif_32x32.png
 %%DATADIR%%/icons/gnomeblue-theme/gotobig.png
+%%DATADIR%%/icons/gnomeblue-theme/gotodir.png
 %%DATADIR%%/icons/gnomeblue-theme/gotoline.png
 %%DATADIR%%/icons/gnomeblue-theme/graybutton.png
 %%DATADIR%%/icons/gnomeblue-theme/greenbutton.png
@@ -1371,6 +1376,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/kde-theme/gif_16x16.png
 %%DATADIR%%/icons/kde-theme/gif_32x32.png
 %%DATADIR%%/icons/kde-theme/gotobig.png
+%%DATADIR%%/icons/kde-theme/gotodir.png
 %%DATADIR%%/icons/kde-theme/gotoline.png
 %%DATADIR%%/icons/kde-theme/graybutton.png
 %%DATADIR%%/icons/kde-theme/greenbutton.png
@@ -1679,6 +1685,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/tango-theme/gif_16x16.png
 %%DATADIR%%/icons/tango-theme/gif_32x32.png
 %%DATADIR%%/icons/tango-theme/gotobig.png
+%%DATADIR%%/icons/tango-theme/gotodir.png
 %%DATADIR%%/icons/tango-theme/gotoline.png
 %%DATADIR%%/icons/tango-theme/graybutton.png
 %%DATADIR%%/icons/tango-theme/greenbutton.png
@@ -1987,6 +1994,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/windows-theme/gif_16x16.png
 %%DATADIR%%/icons/windows-theme/gif_32x32.png
 %%DATADIR%%/icons/windows-theme/gotobig.png
+%%DATADIR%%/icons/windows-theme/gotodir.png
 %%DATADIR%%/icons/windows-theme/gotoline.png
 %%DATADIR%%/icons/windows-theme/graybutton.png
 %%DATADIR%%/icons/windows-theme/greenbutton.png
@@ -2295,6 +2303,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfce-theme/gif_16x16.png
 %%DATADIR%%/icons/xfce-theme/gif_32x32.png
 %%DATADIR%%/icons/xfce-theme/gotobig.png
+%%DATADIR%%/icons/xfce-theme/gotodir.png
 %%DATADIR%%/icons/xfce-theme/gotoline.png
 %%DATADIR%%/icons/xfce-theme/graybutton.png
 %%DATADIR%%/icons/xfce-theme/greenbutton.png
@@ -2603,6 +2612,7 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfe-theme/gif_16x16.png
 %%DATADIR%%/icons/xfe-theme/gif_32x32.png
 %%DATADIR%%/icons/xfe-theme/gotobig.png
+%%DATADIR%%/icons/xfe-theme/gotodir.png
 %%DATADIR%%/icons/xfe-theme/gotoline.png
 %%DATADIR%%/icons/xfe-theme/graybutton.png
 %%DATADIR%%/icons/xfe-theme/greenbutton.png
