@@ -51,6 +51,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fd2bf3b5-1001-11e3-ba94-0025905a4771">
+    <topic>asterisk -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>asterisk11</name>
+	<range><gt>11.*</gt><lt>11.5.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk10</name>
+	<range><gt>10.*</gt><lt>10.12.3</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><gt>1.8.*</gt><lt>1.8.21.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/security">
+	  <p>Remote Crash From Late Arriving SIP ACK With SDP</p>
+	  <p>Remote Crash when Invalid SDP is sent in SIP Request</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2013-004.html</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2013-005.html</url>
+      <url>https://www.asterisk.org/security</url>
+    </references>
+    <dates>
+      <discovery>2013-08-27</discovery>
+      <entry>2013-08-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ae651a4b-0a42-11e3-ba52-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
