@@ -1,14 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	biococoa
-PORTVERSION=	1.6.0
-PORTREVISION=	2
+PORTVERSION=	2.2.1
+PORTREVISION=	0
 CATEGORIES=	biology gnustep
-MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITES=	http://bioinformatics.org/biococoa/downloads/ ${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/b/biococoa.app
-DISTNAME=	biococoa.app_${PORTVERSION}.orig
+DISTNAME=	biococoa-${PORTVERSION}-src
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	Bioinformatics framework
 
 LICENSE=	LGPL21
@@ -18,6 +19,6 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
-WRKSRC=		${WRKDIR}/biococoa
+WRKSRC=		${WRKDIR}/biococoa-${PORTVERSION}
 
 .include <bsd.port.mk>

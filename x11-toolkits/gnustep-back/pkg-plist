@@ -4,6 +4,11 @@ GNUstep/System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/Swedish.lpro
 GNUstep/System/Library/Bundles/libgnustep-%%BACK%%.bundle/libgnustep-%%BACK%%
 GNUstep/System/Library/Bundles/libgnustep-%%BACK%%.bundle/stamp.make
 GNUstep/System/Library/Documentation/man/man1/gpbs.1.gz
+GNUstep/System/Tools/gpbs
+@dirrm GNUstep/System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/Swedish.lproj
+@dirrm GNUstep/System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/English.lproj
+@dirrm GNUstep/System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources
+@dirrm GNUstep/System/Library/Bundles/libgnustep-%%BACK%%.bundle
 GNUstep/System/Library/Fonts/Helvetica.nfont/FontInfo.plist
 GNUstep/System/Library/Fonts/Helvetica.nfont/n019003l.afm
 GNUstep/System/Library/Fonts/Helvetica.nfont/n019003l.pfb
@@ -29,10 +34,4 @@ GNUstep/System/Library/Fonts/Helvetica.nfont/n019063l.pfm
 GNUstep/System/Library/Fonts/Helvetica.nfont/n019064l.afm
 GNUstep/System/Library/Fonts/Helvetica.nfont/n019064l.pfb
 GNUstep/System/Library/Fonts/Helvetica.nfont/n019064l.pfm
-%%WITH_XLIB%%GNUstep/System/Tools/font_cacher
-GNUstep/System/Tools/gpbs
 @dirrm GNUstep/System/Library/Fonts/Helvetica.nfont
-@dirrm GNUstep/System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/Swedish.lproj
-@dirrm GNUstep/System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/English.lproj
-@dirrm GNUstep/System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources
-@dirrm GNUstep/System/Library/Bundles/libgnustep-%%BACK%%.bundle

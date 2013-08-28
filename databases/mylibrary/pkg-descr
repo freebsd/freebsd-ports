@@ -1,9 +1,0 @@
-MyLibrary is a data management application using wiki-style link and search.
-Files and notes can be added into the library as items. Each item can have
-text-style meta-data and attributes-style meta-data. Items can be linked as
-wiki, or searched based on meta-data. File content can even be searched
-with namazu.
-
-LICENSE: GPL2 or later
-
-Author: Yen-Ju Chen

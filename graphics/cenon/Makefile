@@ -1,12 +1,9 @@
-# New ports collection makefile for:	Cenon
-# Date created:				16 Nov 2005
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
 #
 
 PORTNAME=	cenon
-PORTVERSION=	3.95
+PORTVERSION=	4.0.2
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://www.vhf-group.com/vhf-interservice/download/source/
 DISTNAME=	Cenon-${MAINVERSION}
@@ -14,7 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	A vector graphics tool for GNUstep
 
 USE_BZIP2=	yes
@@ -24,12 +21,12 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/Cenon
-MAINVERSION=	3.9.5
-FULLVERSION=	3.9.4
+MAINVERSION=	4.0.2
+FULLVERSION=	4.0.0
 CENON_LIB_DIR=	${GNUSTEP_LOCAL_ROOT}/Library/Cenon
 
 OPTIONS_DEFINE=	FULL_LIBRARY
-FULL_LIBRARY_DESC= Install complete Cenon Library
+FULL_LIBRARY_DESC=	Install complete Cenon Library
 
 .include <bsd.port.options.mk>
 

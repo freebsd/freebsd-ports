@@ -63,6 +63,7 @@ GNUstep/System/Library/Headers/Foundation/NSHost.h
 GNUstep/System/Library/Headers/Foundation/NSIndexPath.h
 GNUstep/System/Library/Headers/Foundation/NSIndexSet.h
 GNUstep/System/Library/Headers/Foundation/NSInvocation.h
+GNUstep/System/Library/Headers/Foundation/NSInvocationOperation.h
 GNUstep/System/Library/Headers/Foundation/NSJSONSerialization.h
 GNUstep/System/Library/Headers/Foundation/NSKeyValueCoding.h
 GNUstep/System/Library/Headers/Foundation/NSKeyValueObserving.h
@@ -70,6 +71,7 @@ GNUstep/System/Library/Headers/Foundation/NSKeyedArchiver.h
 GNUstep/System/Library/Headers/Foundation/NSLocale.h
 GNUstep/System/Library/Headers/Foundation/NSLock.h
 GNUstep/System/Library/Headers/Foundation/NSMapTable.h
+GNUstep/System/Library/Headers/Foundation/NSMetadata.h
 GNUstep/System/Library/Headers/Foundation/NSMethodSignature.h
 GNUstep/System/Library/Headers/Foundation/NSNetServices.h
 GNUstep/System/Library/Headers/Foundation/NSNotification.h
@@ -95,6 +97,7 @@ GNUstep/System/Library/Headers/Foundation/NSRange.h
 GNUstep/System/Library/Headers/Foundation/NSRegularExpression.h
 GNUstep/System/Library/Headers/Foundation/NSRunLoop.h
 GNUstep/System/Library/Headers/Foundation/NSScanner.h
+GNUstep/System/Library/Headers/Foundation/NSScriptWhoseTests.h
 GNUstep/System/Library/Headers/Foundation/NSSerialization.h
 GNUstep/System/Library/Headers/Foundation/NSSet.h
 GNUstep/System/Library/Headers/Foundation/NSSortDescriptor.h
@@ -166,10 +169,6 @@ GNUstep/System/Library/Headers/GNUstepBase/NSTask+GNUstepBase.h
 GNUstep/System/Library/Headers/GNUstepBase/NSThread+GNUstepBase.h
 GNUstep/System/Library/Headers/GNUstepBase/NSURL+GNUstepBase.h
 GNUstep/System/Library/Headers/GNUstepBase/Unicode.h
-%%WITH_LIB1%%GNUstep/System/Library/Headers/ObjectiveC2/objc/Availability.h
-%%WITH_LIB1%%GNUstep/System/Library/Headers/ObjectiveC2/objc/blocks_runtime.h
-%%WITH_LIB1%%GNUstep/System/Library/Headers/ObjectiveC2/objc/capabilities.h
-%%WITH_LIB1%%GNUstep/System/Library/Headers/ObjectiveC2/objc/runtime.h
 GNUstep/System/Library/Headers/gnustep/unicode/caseconv.h
 GNUstep/System/Library/Headers/gnustep/unicode/cop.h
 GNUstep/System/Library/Headers/gnustep/unicode/cyrillic.h
@@ -207,6 +206,11 @@ GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/create-abbrevs.m
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/create-regions.m
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/nstimezone.m
+GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/GSTLS/ca-certificates.crt
+GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Creston
+GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Khandyga
+GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Ust-Nera
+GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Europe/Busingen
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/regions
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Africa/Abidjan
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Africa/Accra
@@ -840,7 +844,6 @@ GNUstep/System/Tools/plser
 GNUstep/System/Tools/sfparse
 GNUstep/System/Tools/xmlparse
 etc/gdomap_if
-etc/rc.d/GNUstep.sh
 @dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/TraditionalChinese.lproj
 @dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/Spanish.lproj
 @dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/US
@@ -865,6 +868,16 @@ etc/rc.d/GNUstep.sh
 @dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America
 @dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Africa
 @dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones
+@dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Europe
+@dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia
+@dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America
+@dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones
+@dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones
+@dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/GSTLS
+@dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources
+@dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%
+@dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions
+@dirrm GNUstep/System/Library/Libraries/gnustep-base
 @dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones
 @dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/Languages
 @dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/Korean.lproj
@@ -880,8 +893,6 @@ etc/rc.d/GNUstep.sh
 @dirrm GNUstep/System/Library/Headers/gnustep/unicode
 @dirrm GNUstep/System/Library/Headers/gnustep/base
 @dirrm GNUstep/System/Library/Headers/gnustep
-%%WITH_LIB1%%@dirrm GNUstep/System/Library/Headers/ObjectiveC2/objc
-%%WITH_LIB1%%@dirrm GNUstep/System/Library/Headers/ObjectiveC2
 @dirrm GNUstep/System/Library/Headers/GNUstepBase/unicode
 @dirrm GNUstep/System/Library/Headers/GNUstepBase
 @dirrm GNUstep/System/Library/Headers/Foundation

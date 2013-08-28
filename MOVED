@@ -4843,6 +4843,11 @@ devel/prettygo|devel/go-pretty|2013-08-17|Project was renamed
 www/w3m-m17n|www/w3m|2013-08-22|Unified to www/w3m
 www/w3m-m17n-img|www/w3m-img|2013-08-22|Unified to www/w3m-img
 www/moodle22||2013-08-20|Has expired: Unmaintained upstream
+x11-toolkits/gnustep-art||2013-08-28|Does not build with recent GNUstep
+x11-toolkits/gnustep-cairo|x11-toolkits/gnustep-back|2013-08-28|Removed deprecated back ends
+x11-toolkits/gnustep-xdps||2013-08-28|Does not build with recent GNUstep
+x11-toolkits/gtoolkit||2013-08-28|Does not build with recent GNUstep
+x11-toolkits/renaissance||2013-08-28|Does not build with recent GNUstep
 security/sfs||2013-08-23|Has expired: Broken on FreeBSD 8 and newer
 mail/p5-Mail-CClient||2013-08-26|Has expired: Broken for more than 6 month
 net/slbd||2013-08-26|Has expired: Broken on FreeBSD 8 and newer
@@ -4872,3 +4877,20 @@ java/icedtea6-stubs||2013-08-27|Has expired: Broken for more than 6 month
 math/octave-forge-es||2013-08-27|Has expired: Broken for more than 6 month
 math/octave-forge-java||2013-08-27|Has expired: Broken for more than 6 month
 net/gatekeeper||2013-08-28|Has expired: Vulnerable for than 2 month
+audio/mp3towav-bundle||2013-08-28|Does not build with recent GNUstep
+biology/adun||2013-08-28|Does not build with recent GNUstep
+databases/gdl2||2013-08-28|Does not build with recent GNUstep
+databases/mylibrary||2013-08-28|Does not build with recent GNUstep
+deskutils/mywiki||2013-08-28|Does not build with recent GNUstep
+deskutils/toolbox||2013-08-28|Does not build with recent GNUstep
+devel/objcunit||2013-08-28|Does not build with recent GNUstep
+devel/objectivelib||2013-08-28|Does not build with recent GNUstep
+devel/performance/files||2013-08-28|Does not build with recent GNUstep
+devel/projectmanager||2013-08-28|Does not build with recent GNUstep
+editors/codeeditor||2013-08-28|Does not build with recent GNUstep
+games/gridlock||2013-08-28|Does not build with recent GNUstep
+irc/talksoup||2013-08-28|Does not build with recent GNUstep
+math/matharray||2013-08-28|Does not build with recent GNUstep
+net/netclasses||2013-08-28|Does not build with recent GNUstep
+sysutils/burn||2013-08-28|Does not build with recent GNUstep
+www/webserver||2013-08-28|Does not build with recent GNUstep

@@ -1,5 +1,7 @@
 Replacement for the GNU Objective-C runtime supporting the features
-of Objective-C 2 for use with GNUstep and other Objective-C programs.
+of modern dialects of Objective-C for use with GNUstep and other Objective-C
+programs.
+
 This runtime is based on the Etoile Objective-C Runtime, an earlier
 research prototype, and includes support for non-fragile instance
 variables, type-dependent dispatch, and object planes. It is fully

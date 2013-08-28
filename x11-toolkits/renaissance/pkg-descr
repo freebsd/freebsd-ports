@@ -1,7 +1,0 @@
-Renaissance is a GNUstep develoment framework which runs on top of the
-GNUstep libraries.  It also works on top of the Apple Mac OS X Cocoa
-libraries, providing an opaque layer to write portable applications.
-
-LICENSE: LGPL2 or later
-
-WWW: http://www.gnustep.it/Renaissance/

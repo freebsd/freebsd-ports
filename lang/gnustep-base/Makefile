@@ -2,14 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	gnustep-base
-PORTVERSION=	1.24.0
+PORTVERSION=	1.24.5
 PORTREVISION=	1
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	GNUstep Foundation library
+
+LICENSE=	GPLv3 LGPL3
+LICENSE_COMB=	multi
 
 LIB_DEPENDS+=	ffi:${PORTSDIR}/devel/libffi
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
@@ -17,14 +20,16 @@ LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
 LIB_DEPENDS+=	gnutls-openssl.27:${PORTSDIR}/security/gnutls
-
-LICENSE_COMB=	multi
-LICENSE=	GPLv3 LGPL3
+LIB_DEPENDS+=	icuuc:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	objc.4:${PORTSDIR}/lang/libobjc2
+LIB_DEPENDS+=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-procfs --disable-openssl --enable-tls \
-		--with-tls-prefix=${LOCALBASE} TLS_CONFIG="pkg-config -gnutls"
+		--with-tls-prefix=${LOCALBASE} TLS_CONFIG="pkg-config -gnutls"\
+		--disable-mixedabi
+CONFIGURE_ENV+=	OBJCFLAGS='-fobjc-runtime=gnustep-1.7 -fblocks'
 USE_GNUSTEP=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes
@@ -40,57 +45,17 @@ BREAKS_IF_PEDANTIC=	yes
 PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 ETCDIR=		${LOCALBASE}/etc
 
-.if !defined(WITHOUT_GNUSTEP_FAKEMAIN)
-CONFIGURE_ARGS+=	--enable-fake-main
-.endif
-
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
-EXTRA_PATCHES+=	${FILESDIR}/NSFileManager.m.patch
 
 .include <bsd.port.pre.mk>
 
-.if !defined(GNUSTEP_WITH_CLANG)
-.if defined(GNUSTEP_WITH_BASE_GCC)
-.if ${OSVERSION} < 800000
-IGNORE=		does not build on FreeBSD 7
-.endif
-.if ${OSVERSION} >= 900036
-IGNORE=		needs an objective C compiler
-.endif
-.endif
-.endif
-
-.if defined(GNUSTEP_WITH_LIBOBJC2) || defined(GNUSTEP_WITH_CLANG)
-LIB_DEPENDS+=	objc:${PORTSDIR}/${PKGCATEGORY}/libobjc2
-CFLAGS+=	-I${LOCALBASE}/include -DOBJC2RUNTIME=1
-PLIST_SUB+=	WITH_LIB1="@comment "
-.else
-PLIST_SUB+=	WITH_LIB1=""
-.endif
-
 PATH:=	${PREFIX}/System/Tools:${PATH}
 
-post-build:
-.for i in ${MAKE_APPS}
-	(cd ${WRKSRC}/${i}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
-.endfor
-
 post-extract:
-	@${SED} -e "s=%%PREFIX%%=${LOCALBASE}=" \
-		-e "s=%%LDCONFIG_GCC%%=${LDCONFIG_GCC}=" \
-		${FILESDIR}/GNUstep.sh \
-		> ${WRKSRC}/GNUstep.sh
 	@${REINPLACE_CMD} -e "s|/usr/local/|${LOCALBASE}/|" \
 		${WRKSRC}/configure
 
 post-install:
-	-@${MKDIR} ${ETCDIR}/rc.d
-	${INSTALL_SCRIPT} ${WRKSRC}/GNUstep.sh ${ETCDIR}/rc.d/GNUstep.sh
 	${INSTALL_DATA} ${FILESDIR}/gdomap_if ${ETCDIR}
-.for i in ${INSTALL_APPS}
-	(cd ${WRKSRC}/${i}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} -d ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
-.endfor
 
 .include <bsd.port.post.mk>

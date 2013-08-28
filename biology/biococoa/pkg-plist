@@ -1,8 +1,76 @@
-GNUstep/Local/Applications/BioCocoa.app/BioCocoa
-GNUstep/Local/Applications/BioCocoa.app/Resources/BioCocoa.desktop
-GNUstep/Local/Applications/BioCocoa.app/Resources/Info-gnustep.plist
-GNUstep/Local/Applications/BioCocoa.app/Resources/biococoa.tiff
-GNUstep/Local/Applications/BioCocoa.app/stamp.make
-GNUstep/Local/Tools/BioCocoa
-@dirrm GNUstep/Local/Applications/BioCocoa.app/Resources
-@dirrm GNUstep/Local/Applications/BioCocoa.app
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/BioCocoa
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/BioCocoa
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCAminoAcid.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCAnnotation.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCAtom.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCCachedFastaFile.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCCachedSequenceFile.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCChain.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCCodon.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCCodonDNA.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCCodonRNA.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCDataMatrix.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCFoundation.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCFoundationDefines.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCGeneticCode.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCMCP.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCNucleotide.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCNucleotideDNA.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCNucleotideRNA.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCPairwiseAlignment.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCParseSOFT.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCPlatform.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCPreferences.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCProteinStructure.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCResidue.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCSample.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCScoreMatrix.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCSecondaryStructure.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCSequence.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCSequenceAlignment.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCSequenceArray.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCSequenceCodon.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCSequenceReader.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCSequenceStructure.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCSequenceTool.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCSequenceWriter.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCSeries.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCStringDefinitions.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCSuffixArray.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCSymbol.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCSymbolSet.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCToolComplement.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCToolDigest.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCToolHydropathyCalculator.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCToolMassCalculator.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCToolSequenceFinder.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCToolSymbolCounter.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCToolTranslator.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCToolTranslatorDNA.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCUtilData.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers/BCUtilStrings.h
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Resources/aminoacids.plist
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Resources/nucleotides.plist
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/libBioCocoa.so
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/libBioCocoa.so.%%MAJORVERSION%%
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/libBioCocoa.so.%%VERSION%%
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/libBioCocoa.so
+GNUstep/Local/Library/Libraries/libBioCocoa.so
+GNUstep/Local/Library/Libraries/libBioCocoa.so.%%MAJORVERSION%%
+GNUstep/Local/Library/Libraries/libBioCocoa.so.%%VERSION%%
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Headers
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Resources
+GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/Current
+GNUstep/Local/Library/Headers/BioCocoa
+@dirrm GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/BioCocoa.framework
+@dirrm GNUstep/Local/Library/Headers/BioCocoa
+@dirrm GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/Current
+@dirrm GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions/%%MAJORVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/BioCocoa.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/BioCocoa.framework/Resources
+@dirrm GNUstep/Local/Library/Frameworks/BioCocoa.framework/Headers
+@dirrm GNUstep/Local/Library/Frameworks/BioCocoa.framework

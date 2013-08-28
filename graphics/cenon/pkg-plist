@@ -92,14 +92,6 @@ GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/LayerDetails.nib/cl
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/LayerDetails.nib/info.nib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/LayerDetails.nib/keyedobjects.nib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Localizable.strings
-GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Main.nib/classes.nib
-GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Main.nib/info.nib
-GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Main.nib/keyedobjects.nib
-GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Main.nib/sortColLLUR.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Main.nib/sortColULLR.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Main.nib/sortColURLL.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Main.nib/sortRowLLUR.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Main.nib/sortRowULLR.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Operations.strings
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSFontInfo.nib/classes.nib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSFontInfo.nib/info.nib
@@ -110,9 +102,6 @@ GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSInfo.nib/keyedobj
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSSettings.nib/classes.nib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSSettings.nib/info.nib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSSettings.nib/keyedobjects.nib
-GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PreferencesPanel.nib/classes.nib
-GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PreferencesPanel.nib/info.nib
-GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PreferencesPanel.nib/keyedobjects.nib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PrintPanelAccessory.nib/classes.nib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PrintPanelAccessory.nib/info.nib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PrintPanelAccessory.nib/keyedobjects.nib
@@ -253,14 +242,6 @@ GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/LayerDetails.nib/cla
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/LayerDetails.nib/info.nib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/LayerDetails.nib/keyedobjects.nib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Localizable.strings
-GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Main.nib/classes.nib
-GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Main.nib/info.nib
-GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Main.nib/keyedobjects.nib
-GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Main.nib/sortColLLUR.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Main.nib/sortColULLR.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Main.nib/sortColURLL.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Main.nib/sortRowLLUR.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Main.nib/sortRowULLR.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Operations.strings
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PSInfo.nib/classes.nib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PSInfo.nib/info.nib
@@ -268,9 +249,6 @@ GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PSInfo.nib/keyedobje
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PSSettings.nib/classes.nib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PSSettings.nib/info.nib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PSSettings.nib/keyedobjects.nib
-GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PreferencesPanel.nib/classes.nib
-GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PreferencesPanel.nib/info.nib
-GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PreferencesPanel.nib/objects.nib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PrintPanelAccessory.nib/classes.nib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PrintPanelAccessory.nib/info.nib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PrintPanelAccessory.nib/keyedobjects.nib
@@ -332,12 +310,7 @@ GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs/Resources/Info-gnust
 GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs/Resources/prefsImport.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs/stamp.make
 GNUstep/Local/Applications/Cenon.app/Resources/Info-gnustep.plist
-GNUstep/Local/Applications/Cenon.app/Resources/Info.nib/._keyedobjects.nib
-GNUstep/Local/Applications/Cenon.app/Resources/Info.nib/classes.nib
-GNUstep/Local/Applications/Cenon.app/Resources/Info.nib/info.nib
-GNUstep/Local/Applications/Cenon.app/Resources/Info.nib/keyedobjects.nib
 GNUstep/Local/Applications/Cenon.app/Resources/Info.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/InspectorPanel.nib/._keyedobjects.nib
 GNUstep/Local/Applications/Cenon.app/Resources/InspectorPanel.nib/buttonFilling.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/InspectorPanel.nib/buttonLayers.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/InspectorPanel.nib/buttonStroke.tiff
@@ -346,21 +319,6 @@ GNUstep/Local/Applications/Cenon.app/Resources/InspectorPanel.nib/classes.nib
 GNUstep/Local/Applications/Cenon.app/Resources/InspectorPanel.nib/info.nib
 GNUstep/Local/Applications/Cenon.app/Resources/InspectorPanel.nib/keyedobjects.nib
 GNUstep/Local/Applications/Cenon.app/Resources/SinkingMetrics.plist
-GNUstep/Local/Applications/Cenon.app/Resources/ToolPanel.nib/classes.nib
-GNUstep/Local/Applications/Cenon.app/Resources/ToolPanel.nib/info.nib
-GNUstep/Local/Applications/Cenon.app/Resources/ToolPanel.nib/keyedobjects.nib
-GNUstep/Local/Applications/Cenon.app/Resources/ToolPanel.nib/toolArc.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/ToolPanel.nib/toolArrow.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/ToolPanel.nib/toolCurve.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/ToolPanel.nib/toolCutter.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/ToolPanel.nib/toolLine.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/ToolPanel.nib/toolMark.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/ToolPanel.nib/toolPolyLine.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/ToolPanel.nib/toolRectangle.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/ToolPanel.nib/toolRotate.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/ToolPanel.nib/toolSinking.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/ToolPanel.nib/toolText.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/ToolPanel.nib/toolWeb.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/alignHCenter.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/alignHLeft.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/alignHRight.tiff
@@ -469,7 +427,6 @@ GNUstep/Local/Applications/Cenon.app/Resources/typeHPGL_128x128.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/typeHPGL_48x48.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/typePS.tiff
 GNUstep/Local/Applications/Cenon.app/stamp.make
-%%LITE%%GNUstep/Local/Library/Cenon/._README
 GNUstep/Local/Library/Cenon/.dir.tiff
 GNUstep/Local/Library/Cenon/COPYRIGHT
 GNUstep/Local/Library/Cenon/Devices/.dir.tiff
@@ -638,6 +595,21 @@ GNUstep/Local/Tools/Cenon
 %%FULL%%@dirrm GNUstep/Local/Library/Cenon/Examples
 %%FULL%%@dirrm GNUstep/Local/Library/Cenon/Documentation/SinkingMetrics.cenon
 %%FULL%%@dirrm GNUstep/Local/Library/Cenon/Documentation
+GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Main.xib
+GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PreferencesPanel.xib
+GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Vectorizer.xib
+GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Main.xib
+GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PreferencesPanel.xib
+GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Vectorizer.xib
+GNUstep/Local/Applications/Cenon.app/Resources/Info.xib
+GNUstep/Local/Applications/Cenon.app/Resources/ToolPanel.xib
+GNUstep/Local/Applications/Cenon.app/Resources/psImportAI3_old.prolog
+GNUstep/Local/Applications/Cenon.app/Resources/typeICut.tiff
+GNUstep/Local/Applications/Cenon.app/Resources/typeICut_%%MAJORVERSION%%8x%%MAJORVERSION%%8.tiff
+GNUstep/Local/Applications/Cenon.app/Resources/typeICut_128x128.tiff
+GNUstep/Local/Applications/Cenon.app/Resources/typePDF.tiff
+@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj
+@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj
 @dirrm GNUstep/Local/Library/Cenon/Projects/Cenon.cenon
 @dirrm GNUstep/Local/Library/Cenon/Projects
 @dirrm GNUstep/Local/Library/Cenon/Devices/hpgl
@@ -645,9 +617,7 @@ GNUstep/Local/Tools/Cenon
 @dirrm GNUstep/Local/Library/Cenon/Devices/din
 @dirrm GNUstep/Local/Library/Cenon/Devices
 @dirrm GNUstep/Local/Library/Cenon
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/ToolPanel.nib
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/InspectorPanel.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/Info.nib
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs/Resources/German.lproj/Import.nib
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs/Resources/German.lproj
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs/Resources/English.lproj/Import.nib
@@ -664,10 +634,8 @@ GNUstep/Local/Tools/Cenon
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/TPAlign.nib
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/ProjectSettingsPanel.nib
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PrintPanelAccessory.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PreferencesPanel.nib
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PSSettings.nib
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PSInfo.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Main.nib
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/LayerDetails.nib
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IntersectionPanel.nib
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPWeb.nib
@@ -716,11 +684,9 @@ GNUstep/Local/Tools/Cenon
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/TPAlign.nib
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/ProjectSettingsPanel.nib
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PrintPanelAccessory.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PreferencesPanel.nib
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSSettings.nib
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSInfo.nib
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSFontInfo.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Main.nib
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/LayerDetails.nib
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IntersectionPanel.nib
 @dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPWeb.nib

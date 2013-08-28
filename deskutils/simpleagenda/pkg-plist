@@ -36,6 +36,8 @@ GNUstep/Local/Applications/SimpleAgenda.app/Resources/small-bell.tiff
 GNUstep/Local/Applications/SimpleAgenda.app/SimpleAgenda
 GNUstep/Local/Applications/SimpleAgenda.app/stamp.make
 GNUstep/Local/Tools/SimpleAgenda
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/Italian.lproj/Localizable.strings
+@dirrm GNUstep/Local/Applications/SimpleAgenda.app/Resources/Italian.lproj
 @dirrm GNUstep/Local/Applications/SimpleAgenda.app/Resources/iCalendar.gorm
 @dirrm GNUstep/Local/Applications/SimpleAgenda.app/Resources/Task.gorm
 @dirrm GNUstep/Local/Applications/SimpleAgenda.app/Resources/Preferences.gorm

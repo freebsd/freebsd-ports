@@ -97,7 +97,7 @@ GNUstep/Local/Library/Frameworks/Addresses.framework/Versions/%%MAJORVERSION%%/l
 GNUstep/Local/Library/Frameworks/Addresses.framework/Versions/%%MAJORVERSION%%/libAddresses.so.%%LIBVERSION%%
 GNUstep/Local/Library/Frameworks/Addresses.framework/Versions/Current
 GNUstep/Local/Library/Frameworks/Addresses.framework/libAddresses.so
-GNUstep/Local/Library/Headers/AddressBook
+@dirrm GNUstep/Local/Library/Headers/AddressBook
 GNUstep/Local/Library/Headers/AddressView
 GNUstep/Local/Library/Headers/Addresses
 GNUstep/Local/Library/Libraries/libAddressView.so
@@ -107,6 +107,18 @@ GNUstep/Local/Library/Libraries/libAddresses.so
 GNUstep/Local/Library/Libraries/libAddresses.so.%%MAJORLIBVERSION%%
 GNUstep/Local/Library/Libraries/libAddresses.so.%%LIBVERSION%%
 GNUstep/Local/Tools/AddressManager
+GNUstep/Local/Applications/AddressManager.app/Resources/Dutch.lproj/AddressManager.gorm/data.info
+GNUstep/Local/Applications/AddressManager.app/Resources/English.lproj/AddressManager.gorm/data.info
+GNUstep/Local/Applications/AddressManager.app/Resources/French.lproj/AddressManager.gorm/data.info
+GNUstep/Local/Library/Headers/AddressBook/AddressBook.h
+@dirrm GNUstep/Local/Applications/AddressManager.app/Resources/French.lproj/AddressManager.gorm
+@dirrm GNUstep/Local/Applications/AddressManager.app/Resources/French.lproj
+@dirrm GNUstep/Local/Applications/AddressManager.app/Resources/English.lproj/AddressManager.gorm
+@dirrm GNUstep/Local/Applications/AddressManager.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/AddressManager.app/Resources/Dutch.lproj/AddressManager.gorm
+@dirrm GNUstep/Local/Applications/AddressManager.app/Resources/Dutch.lproj
+@dirrm GNUstep/Local/Applications/AddressManager.app/Resources
+@dirrm GNUstep/Local/Applications/AddressManager.app
 @dirrm GNUstep/Local/Library/Frameworks/Addresses.framework/Versions/%%MAJORVERSION%%/Resources/Spanish.lproj
 @dirrm GNUstep/Local/Library/Frameworks/Addresses.framework/Versions/%%MAJORVERSION%%/Resources/German.lproj
 @dirrm GNUstep/Local/Library/Frameworks/Addresses.framework/Versions/%%MAJORVERSION%%/Resources/French.lproj
@@ -131,11 +143,3 @@ GNUstep/Local/Tools/AddressManager
 @dirrm GNUstep/Local/Applications/AddressManager.app/Resources/Spanish.lproj
 @dirrm GNUstep/Local/Applications/AddressManager.app/Resources/German.lproj/AddressManager.gorm
 @dirrm GNUstep/Local/Applications/AddressManager.app/Resources/German.lproj
-@dirrm GNUstep/Local/Applications/AddressManager.app/Resources/French.lproj/AddressManager.gorm
-@dirrm GNUstep/Local/Applications/AddressManager.app/Resources/French.lproj
-@dirrm GNUstep/Local/Applications/AddressManager.app/Resources/English.lproj/AddressManager.gorm
-@dirrm GNUstep/Local/Applications/AddressManager.app/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/AddressManager.app/Resources/Dutch.lproj/AddressManager.gorm
-@dirrm GNUstep/Local/Applications/AddressManager.app/Resources/Dutch.lproj
-@dirrm GNUstep/Local/Applications/AddressManager.app/Resources
-@dirrm GNUstep/Local/Applications/AddressManager.app
