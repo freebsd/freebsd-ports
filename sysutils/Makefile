@@ -895,6 +895,7 @@
     SUBDIR += sysrc
     SUBDIR += system-tools-backends
     SUBDIR += sysupdate
+    SUBDIR += sysvbanner
     SUBDIR += tai64nfrac
     SUBDIR += tarsnap
     SUBDIR += tbku

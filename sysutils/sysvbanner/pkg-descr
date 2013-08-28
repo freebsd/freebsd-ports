@@ -1,0 +1,4 @@
+sysvbanner prints SysV style banners.
+Prints out the first 10 characters of text in large letters.
+
+WWW: https://github.com/uffejakobsen/sysvbanner
