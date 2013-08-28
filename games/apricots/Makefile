@@ -39,13 +39,14 @@ USE_OPENAL=	al alut
 .endif
 
 post-patch:
+	@${CP} -pP ${WRKSRC}/configure.in ${WRKSRC}/configure.in.in
 .if ${PORT_OPTIONS:MOPENAL}
 	@${REINPLACE_CMD} -e '/^LIBS = / s|$$| -lopenal -lalut|' \
 		${WRKSRC}/apricots/Makefile.in
 .else
 	@${REINPLACE_CMD} -e 's|-DAP_AUDIO_OPENAL||' ${WRKSRC}/configure
 .endif
-	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure ${WRKSRC}/ac*.m4
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
