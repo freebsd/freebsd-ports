@@ -23,10 +23,10 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 NO_CDROM=	License does not permit selling
 
-USES=		perl5
+USES=		perl5 gmake
+USE_GCC=	any
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-MAKE_ARGS+=	ARCH=freebsd
+MAKE_ARGS+=	CC=${CC} ARCH=freebsd
 WANT_SDL=	yes
 WANT_GNOME=	yes
 MAKE_JOBS_UNSAFE=	yes
