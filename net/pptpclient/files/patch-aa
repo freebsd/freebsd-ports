@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Feb 17 23:42:45 2005
-+++ Makefile	Wed Sep 28 19:51:25 2005
-@@ -4,7 +4,7 @@
+--- Makefile.orig	2008-05-14 11:33:55.000000000 +0500
++++ Makefile	2013-08-28 17:26:16.106297003 +0400
+@@ -4,19 +4,19 @@ RELEASE=
  
  #################################################################
  # CHANGE THIS LINE to point to the location of your pppd binary.
@@ -9,12 +9,17 @@
  #################################################################
  
  BINDIR=$(DESTDIR)/usr/sbin
-@@ -16,7 +16,7 @@
+ MANDIR=$(DESTDIR)/usr/share/man/man8
+ PPPDIR=$(DESTDIR)/etc/ppp
+ 
+-CC	= gcc
++CC	?= gcc
+ RM	= rm -f
  OPTIMIZE= -O0
  DEBUG	= -g
  INCLUDE =
 -CFLAGS  = -Wall $(OPTIMIZE) $(DEBUG) $(INCLUDE)
 +CFLAGS  += -Wall $(DEBUG) $(INCLUDE) -DUSER_PPP
  LIBS	= -lutil
- LDFLAGS	=
- 
+ # Solaris 10
+ # LIBS	= -lnsl -lsocket -lresolv
