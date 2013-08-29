@@ -21,4 +21,4 @@ same principle.  Here's an example usage of Ruby/Gnuplot:
 	plot.draw ( ds )
 
 Author:	Gordon Miller <gmiller@bittwiddlers.com>
-WWW:	http://physci.gmu.edu/~gmiller/gnuplot/
+WWW: http://physci.gmu.edu/~gmiller/gnuplot/

@@ -6,4 +6,4 @@ Supported LDAP libraries are OpenLDAP, Michigan LDAP, and NetscapeSDK.
 Author:	Takaaki Tateishi <ttate@users.sourceforge.net>
 Author: Ian Macdonald <ian@caliban.org>
 Author: Alexey Chebotar <alexey.chebotar@gmail.com>
-WWW:	http://rubyforge.org/projects/ruby-ldap/
+WWW: http://rubyforge.org/projects/ruby-ldap/

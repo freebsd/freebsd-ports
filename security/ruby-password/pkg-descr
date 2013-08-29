@@ -3,4 +3,4 @@ verifying and manipulating passwords.  It includes an interface to
 CrackLib, a library commonly used for checking password strength.
 
 Author:	Ian Macdonald <ian@caliban.org>
-WWW:	http://www.caliban.org/ruby/ruby-password.shtml
+WWW: http://www.caliban.org/ruby/ruby-password.shtml

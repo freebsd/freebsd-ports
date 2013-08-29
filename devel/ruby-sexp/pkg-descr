@@ -3,4 +3,4 @@ of Lisp style s-expressions into native Ruby style
 s-expressions and back again.
 
 Author:	Topher Cyll <christophercyll@gmail.com>
-WWW:	http://sexp.rubyforge.org/
+WWW: http://sexp.rubyforge.org/

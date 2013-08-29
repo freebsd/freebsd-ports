@@ -3,4 +3,4 @@ audio (wav, au, aiff, but not ogg or mp3) and can divine information
 such as length, sample rate, etc.
 
 Author:	jared jennings <liver@soon.com>
-WWW:	http://ruby-audiofile.sourceforge.net/
+WWW: http://ruby-audiofile.sourceforge.net/

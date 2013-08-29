@@ -3,4 +3,4 @@ declarative API is provided instead of code generation or proprietary BNF-like
 syntax. A calculator parser can be built from scratch in 10 lines of simple
 code.
 
-WWW:	http://rubyforge.org/projects/rparsec/
+WWW: http://rubyforge.org/projects/rparsec/

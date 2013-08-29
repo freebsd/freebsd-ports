@@ -6,4 +6,4 @@ allow/disallow the ability to execute deprecated code.
 This is a legacy copy in ports of the 2.x series for compatibility with
 some other Ruby ports.
 
-WWW:	http://rubyforge.org/projects/deprecated/
+WWW: http://rubyforge.org/projects/deprecated/

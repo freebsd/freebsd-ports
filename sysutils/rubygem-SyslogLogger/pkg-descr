@@ -1,4 +1,4 @@
 SyslogLogger is a Logger replacement that logs to syslog. It is almost drop-in
 with a few caveats.
 
-WWW:	http://rubygems.org/gems/SyslogLogger
+WWW: http://rubygems.org/gems/SyslogLogger

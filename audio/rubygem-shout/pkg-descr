@@ -1,4 +1,4 @@
 Ruby-shout is a binding to the libshout library, which sends streaming
 MP3/Vorbis to an icecast server with libshout.
 
-WWW:	http://rubygems.org/gems/ruby-shout
+WWW: http://rubygems.org/gems/ruby-shout

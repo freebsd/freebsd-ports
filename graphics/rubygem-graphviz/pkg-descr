@@ -2,4 +2,4 @@ This modules provides an interface to layout and generate images
 of directed graphs in a variety of formats (PostScript, PNG, etc.)
 using GraphViz.
 
-WWW:	http://raa.ruby-lang.org/project/ruby-graphviz/
+WWW: http://raa.ruby-lang.org/project/ruby-graphviz/
