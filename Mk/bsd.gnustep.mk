@@ -165,7 +165,7 @@ PLIST_SUB+=	MAJORVERSION=${PORTVERSION:C/([0-9]).*/\1/1}
 PLIST_SUB+=	LIBVERSION=${DEFAULT_LIBVERSION}
 PLIST_SUB+=	MAJORLIBVERSION=${DEFAULT_LIBVERSION:C/([0-9]).*/\1/1}
 
-.if !exists(${DESTDIR}/usr/bin/clang)
+.if exists(${DESTDIR}/usr/bin/clang)
 _CLANG!=	${DESTDIR}/usr/bin/clang --version | head -1 | \
 		${SED} -e 's/.*clang version \([0-9]\)\.\([0-9]\).*/\1\2/' 
 .else
@@ -178,7 +178,7 @@ CPP=	${LOCALBASE}/bin/clang-cpp33
 CC=	${LOCALBASE}/bin/clang33
 CXX=	${LOCALBASE}/bin/clang++33
 .else
-CPP=	/usr/bin/clang-cpp33
+CPP=	/usr/bin/clang-cpp
 CC=	/usr/bin/clang
 CXX=	/usr/bin/clang++
 .endif
