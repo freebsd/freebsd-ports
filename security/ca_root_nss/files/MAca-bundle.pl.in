@@ -32,6 +32,7 @@
 ##  POSSIBILITY OF SUCH DAMAGE.
 
 use strict;
+use Carp;
 use MIME::Base64;
 
 my $VERSION = '$FreeBSD$';
@@ -125,7 +126,8 @@ sub grabcert()
 sub grabtrust() {
     my $cka_label;
     my $serial;
-    my $trust = 1;
+    my $maytrust = 0;
+    my $distrust = 0;
 
     while (<>) {
 	chomp;
@@ -139,21 +141,36 @@ sub grabtrust() {
 	    $serial = graboct();
 	}
 
-	if (/^CKA_TRUST_.*\s.*_(UN|NOT_)TRUSTED/) {
-	    $trust = 0;
+	if (/^CKA_TRUST_(SERVER_AUTH|EMAIL_PROTECTION|CODE_SIGNING) CK_TRUST (\S+)$/)
+	{
+	    if ($2 eq      'CKT_NSS_NOT_TRUSTED') {
+		$distrust = 1;
+	    } elsif ($2 eq 'CKT_NSS_TRUSTED_DELEGATOR') {
+		$maytrust = 1;
+	    } elsif ($2 ne 'CKT_NSS_MUST_VERIFY_TRUST') {
+		confess "Unknown trust setting on line $.:\n"
+		. "$_\n"
+		. "Script must be updated:";
+	    }
 	}
     }
+
+    if (!$maytrust && !$distrust && $debug) {
+	print STDERR "line $.: no explicit trust/distrust found for $cka_label\n";
+    }
+
+    my $trust = ($maytrust and not $distrust);
     return ($serial, $cka_label, $trust);
 }
 
 while (<>) {
-    if (/^CKA_CLASS .* CKO_CERTIFICATE/) {
+    if (/^CKA_CLASS CK_OBJECT_CLASS CKO_CERTIFICATE/) {
 	my ($serial, $label, $certdata) = grabcert();
 	if (defined $certs{$label."\0".$serial}) {
 	    warn "Certificate $label duplicated!\n";
 	}
 	$certs{$label."\0".$serial} = $certdata;
-    } elsif (/^CKA_CLASS .* CKO_(NSS|NETSCAPE)_TRUST/) {
+    } elsif (/^CKA_CLASS CK_OBJECT_CLASS CKO_NSS_TRUST/) {
 	my ($serial, $label, $trust) = grabtrust();
 	if (defined $trusts{$label."\0".$serial}) {
 	    warn "Trust for $label duplicated!\n";
@@ -184,7 +201,8 @@ foreach my $it (keys %trusts) {
     }
 }
 
-print "##  Untrusted certificates omitted from this bundle: $untrusted\n\n";
+print		"##  Untrusted certificates omitted from this bundle: $untrusted\n\n";
+print STDERR	"##  Untrusted certificates omitted from this bundle: $untrusted\n";
 
 my $certcount = 0;
 foreach my $it (sort {uc($a) cmp uc($b)} keys %certs) {
@@ -197,5 +215,10 @@ foreach my $it (sort {uc($a) cmp uc($b)} keys %certs) {
     print STDERR "Trusting $certcount: ".printlabel($it)."\n" if $debug;
 }
 
-print "##  Number of certificates: $certcount\n";
+if ($certcount < 25) {
+    die "Certificate count of $certcount is implausibly low.\nAbort";
+}
+
+print		"##  Number of certificates: $certcount\n";
+print STDERR	"##  Number of certificates: $certcount\n";
 print "##  End of file.\n";
