@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/dconf/Makefile 18634 2013-07-26 10:42:35Z kwm $
+#   $MCom: ports/trunk/devel/dconf/Makefile 18669 2013-08-29 21:14:12Z kwm $
 
 PORTNAME?=	dconf
 PORTVERSION=	0.14.1
@@ -11,12 +11,11 @@ DISTNAME=	dconf-${PORTVERSION}
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A configuration database system for GNOME
+COMMENT=	Configuration database system for GNOME
 
 BUILD_DEPENDS=	vala>=0.18.1:${PORTSDIR}/lang/vala \
 		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
-
-LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 
 USE_XZ=		yes
 USES=		gettext gmake pathfix pkgconfig
@@ -33,7 +32,7 @@ DCONF_SLAVE?=	no
 USE_GNOME+=	gtk30
 INSTALLS_ICONS=	yes
 GLIB_SCHEMAS=	ca.desrt.dconf-editor.gschema.xml
-LIB_DEPENDS+=	dconf:${PORTSDIR}/devel/dconf
+LIB_DEPENDS+=	libdconf.so:${PORTSDIR}/devel/dconf
 .else
 CONFIGURE_ARGS+=--disable-editor
 .endif
@@ -56,7 +55,7 @@ post-patch:
 		${WRKSRC}/client/Makefile.in \
 		${WRKSRC}/editor/Makefile.in
 
-pre-build:
+#pre-build:
 #	${GMAKE} -C ${WRKSRC}/client dconf-client.c libdconf.so.0
 #	${GMAKE} -C ${WRKSRC}/dbus-1 dconf-dbus-1.c libdconf-dbus-1.so.0
 
