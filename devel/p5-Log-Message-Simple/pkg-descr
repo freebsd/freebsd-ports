@@ -1,5 +1,4 @@
 This module provides standardized logging facilities using the 
 Log::Message module.
 
-Author: Jos Boumans <kane@cpan.org>
 WWW: http://search.cpan.org/dist/Log-Message-Simple/

@@ -8,5 +8,4 @@ implementation. It also includes methods to manage nodes.
 
 There are few examples in scripts directory of this distribution.
 
-Author:	Dobrica Pavlinusic, <dpavlin@rot13.org>
 WWW: http://search.cpan.org/dist/Search-Estraier/

@@ -7,5 +7,4 @@ Class::group	Pragma to implement group of properties accessors with options
 Object::props	Pragma to implement lvalue accessors with options
 Object::group	Pragma to implement group of properties accessors with options
 
-Author: Domizio Demichelis <dd@4pro.net>
 WWW: http://search.cpan.org/dist/OOTools/

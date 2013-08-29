@@ -1,4 +1,4 @@
 Text::Aligner exports a single function, align(), which is used to justify
 strings to various alignment styles.
 
-WWW:    http://search.cpan.org/dist/Text-Aligner/
+WWW: http://search.cpan.org/dist/Text-Aligner/

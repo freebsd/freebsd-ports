@@ -1,5 +1,4 @@
 This module contains rules for converting HTML into PhpWiki markup. See
 HTML::WikiConverter for additional usage details.
 
-Author:	David J. Iberri <diberri@yahoo.com>
 WWW: http://search.cpan.org/dist/HTML-WikiConverter-PhpWiki/

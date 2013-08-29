@@ -9,5 +9,4 @@ never (or not yet) used?  In interactive programs, postponed realization
 may boost start-up: the realization of objects is triggered by the use,
 so spread over time.
 
-Author: Mark Overmeer <Mark@Overmeer.net>
 WWW: http://search.cpan.org/dist/Object-Realize-Later/

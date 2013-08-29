@@ -5,5 +5,4 @@ references for you.  Type checking is achieved by parsing the Tangram
 schema for the object, which is contained within the object class in an
 exported variable $schema.
 
-Author: Sam Vilain <sam@vilain.net>
 WWW: http://search.cpan.org/dist/Class-Tangram/

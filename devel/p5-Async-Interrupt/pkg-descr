@@ -2,4 +2,4 @@ This module implements asynchronous notifications that enable you
 to signal running perl code from another thread, asynchronously,
 and sometimes even without using a single syscall.
 
-WWW:    http://search.cpan.org/dist/Async-Interrupt/
+WWW: http://search.cpan.org/dist/Async-Interrupt/

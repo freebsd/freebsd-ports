@@ -4,5 +4,4 @@ engine of the Kate text editor.
 The language xml files of kate have been rewritten to perl modules using a 
 script. These modules function as plugins to this module.
 
-Author: Hans Jeuken <haje@toneel.demon.nl>
 WWW: http://search.cpan.org/dist/Syntax-Highlight-Engine-Kate/

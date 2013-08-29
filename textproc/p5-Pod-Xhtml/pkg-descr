@@ -10,5 +10,4 @@ use the output files as-is. For those who want to use XML tools or
 transformations they can use the XHTML as a source, because it's a
 well-formed XML document.
 
-Author:	P Kent & Simon Flack <cpan _at_ bbc _dot_ co _dot_ uk>
 WWW: http://search.cpan.org/dist/Pod-Xhtml/

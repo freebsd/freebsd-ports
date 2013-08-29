@@ -6,5 +6,4 @@ analysis, including character and word n-grams.
 The module can be used from the command line through the script ngrams.pl 
 provided with the package.
 
-Author: Vlado Keselj <vlado@cpan.org>
 WWW: http://search.cpan.org/dist/Text-Ngrams/

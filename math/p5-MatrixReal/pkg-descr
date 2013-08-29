@@ -15,7 +15,6 @@ keyboard or your code, solving linear equations, etc.
 It also has an implementation of Kleene's algorithm for finding minimal
 costs for paths in a graph.
 
-Author: Steffen Beyer <sb@engelschall.com>
         Rodolphe Ortalo <ortalo@laas.fr>
         Jonathan Leto <jonathan@leto.net>
 

@@ -5,4 +5,4 @@ simple and lightweight interface to the Simple Object Access Protocol
 This version is maintained because many systems still require functionality
 in 0.60, which has become broken/deprecated in later versions.
 
-WWW:    http://search.cpan.org/dist/SOAP-Lite/
+WWW: http://search.cpan.org/dist/SOAP-Lite/
