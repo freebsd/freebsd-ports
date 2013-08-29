@@ -1,9 +1,5 @@
-# New ports collection makefile for:	digitemp
-# Date created:        25 June 2011
-# Whom:                Evaldas Auryla <ea@zaib.as>
-#
+# Created by: Evaldas Auryla <ea@zaib.as>
 # $FreeBSD$
-#
 
 PORTNAME=	digitemp
 PORTVERSION=	3.6.0
@@ -14,18 +10,25 @@ MAINTAINER=	ea@zaib.as
 COMMENT=	Dallas Semiconductor 1-wire device reading console application
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USE_GMAKE=	yes
+USES=		gmake
+MAKE_ARGS+=	CC="${CC}"
 
 MAN1=		digitemp.1
 PLIST_FILES=	bin/digitemp_DS9097 bin/digitemp_DS9097U \
 		etc/digitemp.conf.sample
 
-PORTDOCS=	ChangeLog COPYING COPYRIGHT CREDITS FAQ README TODO \
-		dthowto.txt DS9097_Schematic.gif perl python rrdb
+DOCFILES=	ChangeLog COPYRIGHT CREDITS FAQ README TODO \
+		dthowto.txt DS9097_Schematic.gif
+DOCDIRS=	perl python rrdb
+PORTDOCS=	${DOCFILES} ${DOCDIRS}
 
 ALL_TARGET=	ds9097 ds9097u
+
+OPTIONS_DEFINE=	DOCS
+
+#post-patch:
+#	@${REINPLACE_CMD} -e 's:= gcc:?= gcc:' ${WRKSRC}/Makefile
 
 pre-install:
 	${CP} ${WRKSRC}/${MAN1} ${WRKSRC}/digitemp.1.M
@@ -36,13 +39,14 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/digitemp_DS9097U ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
-	${INSTALL} -d ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/COPYING ${WRKSRC}/COPYRIGHT ${WRKSRC}/CREDITS ${WRKSRC}/FAQ \
-		${WRKSRC}/README ${WRKSRC}/TODO ${WRKSRC}/dthowto.txt ${WRKSRC}/DS9097_Schematic.gif ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${DOCFILES:S,^,${WRKSRC}/,} ${DOCSDIR}
 .for dir in perl python/gui python/mysql rrdb
-	${INSTALL} -d ${DOCSDIR}/${dir}
+	@${MKDIR} ${DOCSDIR}/${dir}
 	${FIND} ${WRKSRC}/${dir}/ -maxdepth 1 -type f -exec ${INSTALL_DATA} \{\} ${DOCSDIR}/${dir} \;
 .endfor
 .endif
