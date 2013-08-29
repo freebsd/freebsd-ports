@@ -2,7 +2,7 @@
 
 PORTNAME=	apache22
 PORTVERSION=	2.2.24
-#PORTREVISION?=	1
+PORTREVISION?=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -45,24 +45,6 @@ WITH_MPM?=		prefork # or worker, event, itk, peruser
 WITH_HTTP_PORT?=	80
 
 .include "${APACHEDIR}/Makefile.options"
-
-# stop users from using old WITH/WITHOUT parameters
-.for opt in ${OPTIONS_DEFINE}
-.  if defined(WITH_${opt}) || defined(WITHOUT_${opt})
-BROKEN=	WITH/WITHOUT parameters are obsolete. \
-	The port use the new options NG framework. Please read\
-	http://wiki.freebsd.org/Ports/Options/OptionsNG
-.  endif
-.endfor
-
-.for category in ${ALL_MODULES_CATEGORIES}
-.  if defined(WITH_${category}_MODULES)
-BROKEN=	WITH/WITHOUT_..._MODULES parameters are obsolete. \
-	The port use the new options NG framework. Please read\
-	http://wiki.freebsd.org/Ports/Options/OptionsNG
-.  endif
-.endfor
-
 .include <bsd.port.options.mk>
 .include "${APACHEDIR}/Makefile.doc"
 
@@ -75,7 +57,7 @@ APU_DBD_PGSQL?=		${LOCALBASE}/lib/apr-util-1/apr_dbd_pgsql.so
 APU_DBD_SQLITE3?=	${LOCALBASE}/lib/apr-util-1/apr_dbd_sqlite3.so
 # APU module used by AUTHNZ_LDAP LDAP
 APU_LDAP?=		${LOCALBASE}/lib/apr-util-1/apr_ldap.so
-# APU crypto
+# APU module used by SESSION_CRYPTO
 APU_CRYPTO_SSL?=	${LOCALBASE}/lib/apr-util-1/apr_crypto_openssl.so
 APU_CRYPTO_NSS?=	${LOCALBASE}/lib/apr-util-1/apr_crypto_nss.so
 
@@ -144,7 +126,7 @@ post-patch:
 post-configure:
 	@FTPUSERS=`${EGREP} -v '^#' /etc/ftpusers| ${TR} -s "\n" " "` ;\
 	${REINPLACE_CMD} -e "s,%%FTPUSERS%%,$${FTPUSERS}," ${WRKSRC}/docs/conf/extra/httpd-userdir.conf
-	@${REINPLACE_CMD} -e "s,%%WWWOWN%%,${WWWOWN}," -e  "s,%%WWWGRP%%,${WWWGRP}," ${WRKSRC}/docs/conf/httpd.conf
+	@${REINPLACE_CMD} -e "s,%%WWWOWN%%,${WWWOWN}," -e "s,%%WWWGRP%%,${WWWGRP}," ${WRKSRC}/docs/conf/httpd.conf
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/support/envvars-std
 
 post-install:
