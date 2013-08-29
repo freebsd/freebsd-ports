@@ -14,18 +14,18 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:${PORTSDIR}/multimedia/v4l_compat \
 		${LOCALBASE}/bin/analyseplugin:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib \
-		jack:${PORTSDIR}/audio/jack \
-		pulse:${PORTSDIR}/audio/pulseaudio \
-		oil:${PORTSDIR}/devel/liboil \
-		visual-0.4:${PORTSDIR}/graphics/libvisual04 \
-		opencv_calib3d:${PORTSDIR}/graphics/opencv \
-		fftw3:${PORTSDIR}/math/fftw3 \
-		fftw3f:${PORTSDIR}/math/fftw3-float \
-		avcodec:${PORTSDIR}/multimedia/ffmpeg \
-		dv:${PORTSDIR}/multimedia/libdv \
-		mjpegutils:${PORTSDIR}/multimedia/mjpegtools \
-		schroedinger:${PORTSDIR}/multimedia/schroedinger
+LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
+		libjack.so:${PORTSDIR}/audio/jack \
+		libpulse.so:${PORTSDIR}/audio/pulseaudio \
+		liboil-0.3.so:${PORTSDIR}/devel/liboil \
+		libvisual-0.4.so:${PORTSDIR}/graphics/libvisual04 \
+		libopencv_calib3d.so:${PORTSDIR}/graphics/opencv \
+		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
+		libdv.so:${PORTSDIR}/multimedia/libdv \
+		libmjpegutils.so:${PORTSDIR}/multimedia/mjpegtools \
+		libschroedinger-1.0.so:${PORTSDIR}/multimedia/schroedinger
 RUN_DEPENDS=	${LOCALBASE}/bin/analyseplugin:${PORTSDIR}/audio/ladspa \
 		mpg123:${PORTSDIR}/audio/mpg123 \
 		sox:${PORTSDIR}/audio/sox \
@@ -43,12 +43,11 @@ RUN_DEPENDS=	${LOCALBASE}/bin/analyseplugin:${PORTSDIR}/audio/ladspa \
 
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
-USES=		pkgconfig
+USES=		pkgconfig perl5
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 USE_PYTHON=	yes
-USE_PERL5=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes

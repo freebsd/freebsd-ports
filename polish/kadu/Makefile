@@ -21,19 +21,12 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		pl-libgadu>=1.11.1:${PORTSDIR}/polish/libgadu
-LIB_DEPENDS=	mpdclient:${PORTSDIR}/audio/libmpdclient \
-		sndfile:${PORTSDIR}/audio/libsndfile \
-		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		pcre:${PORTSDIR}/devel/pcre \
-		qca:${PORTSDIR}/devel/qca \
-		idn:${PORTSDIR}/dns/libidn \
-		png15:${PORTSDIR}/graphics/png \
-		gadu:${PORTSDIR}/polish/libgadu \
-		freetype:${PORTSDIR}/print/freetype2 \
-		qzeitgeist:${PORTSDIR}/sysutils/qzeitgeist \
-		enchant:${PORTSDIR}/textproc/enchant \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient \
+		libsndfile.so:${PORTSDIR}/audio/libsndfile \
+		libqca.so:${PORTSDIR}/devel/qca \
+		libidn.so:${PORTSDIR}/dns/libidn \
+		libgadu.so:${PORTSDIR}/polish/libgadu \
+		libenchant.so:${PORTSDIR}/textproc/enchant
 RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 # TODO enable devel/libexecinfo
 # TODO ntrack and ntrack-qt (needs porting) ?
@@ -43,15 +36,14 @@ GG6_EMOTS_DISTFILE=	kompatybilne_z_GG6.tar.gz
 GG7_EMOTS_DISTFILE=	dodatkowe_emoty_GG7.tar.gz
 
 USE_BZIP2=	yes
-USES=		cmake pkgconfig gettext iconv
-USE_XORG=	ice sm x11 xau xcb xdmcp xext xfixes xrender xscrnsaver
+USES=		cmake pkgconfig
+USE_XORG=	xscrnsaver
 CMAKE_ARGS=	-DKADU_VERSION:STRING="${DISTVERSION}" -DWITH_ENCHANT=ON
 # Setting KADU_VERSION disables git invocation
 
-USE_QT4=	corelib dbus declarative gui network phonon qtestlib script \
-		scripttools svg webkit xml xmlpatterns linguist_build \
-		moc_build qmake_build rcc_build uic_build imageformats_run \
-		sql-sqlite3_run
+USE_QT4=	dbus gui network phonon script scripttools webkit xml \
+		linguist_build moc_build qmake_build rcc_build uic_build \
+		imageformats_run sql-sqlite3_run
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 

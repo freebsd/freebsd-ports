@@ -6,7 +6,7 @@ PORTREVISION=	0
 
 COMMENT=	Plugin providing Google Contacts in the Tab-address completion
 
-LIB_DEPENDS=	gdata:${PORTSDIR}/devel/libgdata
+LIB_DEPENDS=	libgdata.so:${PORTSDIR}/devel/libgdata
 
 CLAWS_PLUGINS_BUILD=	gdata
 

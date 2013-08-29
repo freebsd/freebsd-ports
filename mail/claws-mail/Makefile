@@ -6,10 +6,10 @@ CATEGORIES=	mail news ipv6
 
 COMMENT=	Lightweight and very featureful GTK+ based e-mail and news client
 
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-		etpan:${PORTSDIR}/mail/libetpan \
-		gnutls:${PORTSDIR}/security/gnutls \
-		gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libetpan.so:${PORTSDIR}/mail/libetpan \
+		libgnutls.so:${PORTSDIR}/security/gnutls \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 USE_GNOME=	gtk20
@@ -32,17 +32,17 @@ THEMES_DESC=		Additional themes
 OPTIONS_DEFAULT=	COMPFACE ENCHANT MANUAL STARTUP THEMES
 
 COMPFACE_CONFIGURE_ENABLE=	compface
-COMPFACE_LIB_DEPENDS=	compface:${PORTSDIR}/mail/faces
+COMPFACE_LIB_DEPENDS=	libcompface.so:${PORTSDIR}/mail/faces
 
 DEBUG_CONFIGURE_ON=	--enable-maintainer-mode
 
 ENCHANT_CONFIGURE_ENABLE=	enchant
-ENCHANT_LIB_DEPENDS=	enchant:${PORTSDIR}/textproc/enchant
+ENCHANT_LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
 JPILOT_CONFIGURE_ENABLE=	jpilot
-JPILOT_LIB_DEPENDS=	pisock:${PORTSDIR}/palm/pilot-link
+JPILOT_LIB_DEPENDS=	libpisock.so:${PORTSDIR}/palm/pilot-link
 JPILOT_RUN_DEPENDS=	jpilot:${PORTSDIR}/palm/jpilot
 
 LDAP_CONFIGURE_ENABLE=	ldap
@@ -55,7 +55,7 @@ NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=		gettext
 
 STARTUP_CONFIGURE_ENABLE=	startup-notification
-STARTUP_LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification
+STARTUP_LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
 
 THEMES_RUN_DEPENDS=	${LOCALBASE}/share/claws-mail/themes/ZX-0_1.1/down_arrow.xpm:${PORTSDIR}/x11-themes/claws-mail-themes
 

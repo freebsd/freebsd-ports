@@ -12,19 +12,9 @@ COMMENT=	Small terminal emulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		pcre:${PORTSDIR}/devel/pcre \
-		cairo:${PORTSDIR}/graphics/cairo \
-		png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2 \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
-
 USE_BZIP2=	yes
-USES=		cmake pkgconfig iconv
+USES=		cmake pkgconfig
 USE_LUA=	yes
-USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
-		xfixes xi xinerama xrandr xrender
 USE_GNOME=	gdkpixbuf2 vte
 
 CFLAGS+=	-I${LOCALBASE}/include/vte-0.0

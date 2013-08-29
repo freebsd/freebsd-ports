@@ -15,9 +15,8 @@ RUN_DEPENDS=	claws-mail>=3.9.1:${PORTSDIR}/mail/claws-mail \
 		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext
 
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	${PORTNAME}
-USE_PERL5=	yes
 
 MAN1=		clawsker.1
 PORTDOCS=	NEWS README

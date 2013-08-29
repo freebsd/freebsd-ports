@@ -6,7 +6,7 @@ PORTREVISION=	0
 
 COMMENT=	PDF and PostScript viewer plugin for Claws Mail
 
-LIB_DEPENDS=	poppler-glib:${PORTSDIR}/graphics/poppler-glib
+LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
 
 USE_GHOSTSCRIPT=yes
 

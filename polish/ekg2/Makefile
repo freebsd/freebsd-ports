@@ -11,8 +11,8 @@ MASTER_SITES=	http://pl.ekg2.org/
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Text-mode Gadu-Gadu, Jabber, and IRC client
 
-LIB_DEPENDS=	gadu.3:${PORTSDIR}/polish/libgadu \
-		expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libgadu.so:${PORTSDIR}/polish/libgadu \
+		libexpat.so:${PORTSDIR}/textproc/expat2
 
 LICENSE=	GPLv2
 
@@ -51,18 +51,18 @@ OPTIONS_DEFAULT=ASPELL
 
 ASPELL_CONFIGURE_ON=	--with-aspell
 ASPELL_CONFIGURE_OFF=	--without-aspell
-ASPELL_LIB_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
+ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
 ASPELL_RUN_DEPENDS=	${LOCALBASE}/share/aspell/pl.rws:${PORTSDIR}/polish/aspell
 
 GPG_CONFIGURE_ON=	--with-gpg
 GPG_CONFIGURE_OFF=	--without-gpg
-GPG_LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
-			gpg-error:${PORTSDIR}/security/libgpg-error
+GPG_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
+			libgpg-error.so:${PORTSDIR}/security/libgpg-error
 GPG_RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
 GSM_CONFIGURE_ON=	--with-libgsm
 GSM_CONFIGURE_OFF=	--without-libgsm
-GSM_LIB_DEPENDS=	gsm:${PORTSDIR}/audio/gsm
+GSM_LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
 
 GTK2_CONFIGURE_ON=	--with-gtk
 GTK2_CONFIGURE_OFF=	--without-gtk
@@ -72,28 +72,25 @@ NLS_USES=		gettext
 
 PERL_CONFIGURE_ON=	--with-perl
 PERL_CONFIGURE_OFF=	--without-perl
+PERL_USES=		perl5
 
 PYTHON_CONFIGURE_ON=	--with-python
 PYTHON_CONFIGURE_OFF=	--without-python
 
 SQLITE_CONFIGURE_ON=	--with-sqlite3
 SQLITE_CONFIGURE_OFF=	--without-sqlite3
-SQLITE_LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
+SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 UNICODE_CONFIGURE_ON=	--enable-unicode
 
 XOSD_CONFIGURE_ON=	--with-libxosd
 XOSD_CONFIGURE_OFF=	--without-libxosd
-XOSD_LIB_DEPENDS=	xosd:${PORTSDIR}/misc/xosd
+XOSD_LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtk20
-.endif
-
-.if ${PORT_OPTIONS:MPERL}
-USE_PERL5=	yes
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}

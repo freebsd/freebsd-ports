@@ -15,8 +15,8 @@ LICENSE=	GPLv2 MIT
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		mng:${PORTSDIR}/graphics/libmng
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libmng.so:${PORTSDIR}/graphics/libmng
 
 ALL_TARGET=	#empty
 CFLAGS+=	-I${LOCALBASE}/include
@@ -33,7 +33,7 @@ DESKTOP_ENTRIES="NetSurf" "${COMMENT}" "" "${PORTNAME}" "" "true"
 
 OPTIONS_DEFINE=	GSTREAMER WEBP
 
-WEBP_LIB_DEPENDS=	webp:${PORTSDIR}/graphics/webp
+WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
 
 .include <bsd.port.options.mk>
 
