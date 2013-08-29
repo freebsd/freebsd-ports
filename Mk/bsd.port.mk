@@ -1153,6 +1153,7 @@ DISTDIR?=		${PORTSDIR}/distfiles
 _DISTDIR?=		${DISTDIR}/${DIST_SUBDIR}
 INDEXDIR?=		${PORTSDIR}
 SRC_BASE?=		/usr/src
+USESDIR?=		${PORTSDIR}/Mk/Uses
 
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
@@ -1543,6 +1544,15 @@ check-makefile::
 .endif
 
 _POSTMKINCLUDED=	yes
+
+# Loading features
+.for f in ${USES}
+_f=${f:C/\:.*//g}
+.if ${_f} != ${f}
+${_f}_ARGS:=	${f:C/^[^\:]*\://g}
+.endif
+.include "${USESDIR}/${_f}.mk"
+.endfor
 
 WRKDIR?=		${WRKDIRPREFIX}${.CURDIR}/work
 .if !defined(IGNORE_MASTER_SITE_GITHUB) && defined(USE_GITHUB)
