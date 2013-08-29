@@ -486,7 +486,6 @@
     SUBDIR += fujaba
     SUBDIR += funnelweb
     SUBDIR += g-wrap
-    SUBDIR += g2c
     SUBDIR += gaa
     SUBDIR += gamin
     SUBDIR += gaphor
