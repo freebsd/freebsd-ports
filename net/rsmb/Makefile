@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rsmb
-# Date created:	9 Nov 2009
-# Whom:	Andrew Stevenson <andrew@ugh.net.au>
-#
+# Created by: Andrew Stevenson <andrew@ugh.net.au>
 # $FreeBSD$
-#
 
 PORTNAME=	rsmb
 PORTVERSION=	1.1.0
@@ -29,14 +25,9 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-DISTFILE_INSTRUCTIONS=	${RESTRICTED}
-.endif
-
-pre-fetch:
-.if defined(DISTFILE_INSTRUCTIONS)
-	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
-	@${FALSE}
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+ECHO_MSG=	${PRINTF}
+IGNORE=		${RESTRICTED}
 .endif
 
 do-install:

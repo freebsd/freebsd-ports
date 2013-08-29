@@ -1,9 +1,5 @@
-# New ports collection makefile for:	NetComponents
-# Date created:				November 9, 2002
-# Whom:					Ernst de Haan <znerd@FreeBSD.org>
-#
+# Created by: Ernst de Haan <znerd@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	netcomponents
 PORTVERSION=	1.3.8
@@ -27,7 +23,7 @@ JARFILE=	NetComponents.jar
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=		must be manually fetched from ${MASTER_SITES}.  Download\
 		${DISTFILES}, place it in ${DISTDIR} and restart this build
 .endif

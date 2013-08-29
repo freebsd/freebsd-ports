@@ -1,9 +1,5 @@
-# New ports collection makefile for:   bdc
-# Date created:                        4 December 2004
-# Whom:                                Adi Pircalabu <apircalabu@bitdefender.com>
-#
+# Created by: Adi Pircalabu <apircalabu@bitdefender.com>
 # $FreeBSD$
-#
 
 PORTNAME=	bdc
 PORTVERSION=	7.0.1
@@ -29,7 +25,7 @@ BDREL=		5
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=	you have to fetch ${DISTNAME}${EXTRACT_SUFX} manually after reading\
 and agreeing to the license at:\
 http://download.bitdefender.com/SMB/Workstation_Security_and_Management/BitDefender_Antivirus_Scanner_for_Unices/Unix/Old/EN/freebsd/Ver_${BDREL}/.\

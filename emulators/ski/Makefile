@@ -1,4 +1,4 @@
-# Created by:  David O'Brien (obrien@NUXI.com)
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
 
 PORTNAME=	ski
@@ -46,7 +46,7 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=	${NOTICE}
 .endif
 

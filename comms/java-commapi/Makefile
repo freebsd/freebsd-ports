@@ -1,7 +1,5 @@
 # Created by: Ari Suutari <ari.suutari@syncrontech.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	java-commapi
 PORTVERSION=	2.0.3

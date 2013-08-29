@@ -28,7 +28,7 @@ PORTDOCS=	${DOCFILES1} ${DOCFILES2}
 PLIST_FILES=	%%JAVAJARDIR%%/activation.jar
 
 .include <bsd.port.pre.mk>
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=		you must manually fetch the distribution from ${DOWNLOAD_URL} and place it in ${DISTDIR} then run make again
 .endif
 

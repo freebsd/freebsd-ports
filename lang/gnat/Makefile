@@ -1,11 +1,5 @@
 # Created by: hsu, nils@guru.ims.uni-stuttgart.de, maurice@serc.rmit.edu.au
 # $FreeBSD$
-#
-# Note:
-# - FreeBSD tasking libraries are included in the stock source.
-# - The default names of a number of binaries have been altered to avoid
-#   conflict with other gcc based products. Standard names can be provided
-#   using symbolic links.
 
 PORTNAME=		gnat
 PORTVERSION=		2010
@@ -124,7 +118,7 @@ PLIST_SUB+=		SHAREDLIB="@comment "
 .endif
 
 # Check for GNAT sources.
-.if !exists(${DISTDIR}/${gnat_srcfile}) && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${gnat_srcfile})
 IGNORE=	you must fetch the source distribution manually. Please access http://libre.adacore.com/ with a web browser and download the source files: ${gnat_srcfile} ${gcc_srcfile} placing them in ${DISTDIR}
 .endif
 
