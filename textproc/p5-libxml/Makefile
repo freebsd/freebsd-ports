@@ -25,5 +25,4 @@ MAN3=		Data::Grove.3 Data::Grove::Parent.3 Data::Grove::Visitor.3 \
 		XML::PatAct::MatchName.3 XML::PatAct::PatternTempl.3 \
 		XML::PatAct::ToObjects.3 XML::Perl2SAX.3 XML::SAX2Perl.3
 
-
 .include <bsd.port.mk>
