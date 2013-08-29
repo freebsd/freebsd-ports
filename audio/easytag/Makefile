@@ -10,25 +10,28 @@ MASTER_SITES=	GNOME
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GTK2 Tag editor for MP3 and OGG files
 
-LIB_DEPENDS=	id3:${PORTSDIR}/audio/id3lib \
-		id3tag:${PORTSDIR}/audio/libid3tag \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		FLAC:${PORTSDIR}/audio/flac \
-		mp4v2:${PORTSDIR}/multimedia/mp4v2
+LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib \
+		libid3tag.so:${PORTSDIR}/audio/libid3tag \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libFLAC.so:${PORTSDIR}/audio/flac \
+		libmp4v2.so:${PORTSDIR}/multimedia/mp4v2
 
 MAN1=		easytag.1
 CONFLICTS=	easytag-devel-[0-9]*
 
 USE_XZ=		yes
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake
 USE_GNOME=	gnomehack gnomeprefix gtk20 desktopfileutils
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_GTK
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if defined(WITH_WAVPACK)
+OPTIONS_DEFINE=	WAVPACK
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MWAVPACK}
 LIB_DEPENDS+=		wavpack:${PORTSDIR}/audio/wavpack
 CONFIGURE_ARGS+=	--enable-wavpack
 .else
