@@ -1,4 +1,13 @@
 # $FreeBSD$
+# Do not add:
+#	- toolchain related
+#	- arch-dependent values
+#	- anything "=no" unless guaranteed to never be
+#	  implemented in FreeBSD
+#	- also avoid "working" values
+#
+#MAINTAINER=	portmgr@FreeBSD.org
+
 # Path
 : ${ac_cv_path_BZIP2=/usr/bin/bzip2}
 : ${ac_cv_path_EGREP=/usr/bin/egrep}
