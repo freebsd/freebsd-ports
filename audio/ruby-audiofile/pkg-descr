@@ -2,5 +2,4 @@ Ruby-audiofile is a binding to the audiofile library, which reads
 audio (wav, au, aiff, but not ogg or mp3) and can divine information
 such as length, sample rate, etc.
 
-Author:	jared jennings <liver@soon.com>
 WWW: http://ruby-audiofile.sourceforge.net/

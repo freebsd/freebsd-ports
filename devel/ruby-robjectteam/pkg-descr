@@ -9,5 +9,4 @@ implemented as roles and are weaved into domain classes via a
 connector at runtime (runtime weaving).  These aspects can be
 explicitly activated and deactivated.
 
-Author:	Matthias Veit <matthias_veit@yahoo.de>
 WWW: http://sourceforge.net/projects/robjectteam/

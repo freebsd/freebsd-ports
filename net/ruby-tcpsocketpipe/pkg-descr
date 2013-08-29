@@ -1,5 +1,4 @@
 This is Ruby/TCPSocketPipe, a Ruby library to create I/O pipes for TCP
 socket tunneling.
 
-Author:	NaHi (NAKAMURA, Hiroshi) <nahi@keynauts.com>
 WWW: http://raa.ruby-lang.org/project/tcpsocketpipe

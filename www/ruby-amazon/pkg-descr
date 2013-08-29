@@ -4,5 +4,4 @@ Services.  It aims to wrap the grunt work of interacting with the
 Amazon API behind a high-level layer of Ruby and, in so doing, make it
 easier to use.
 
-Author:	Ian Macdonald <ian@caliban.org>
 WWW: http://www.caliban.org/ruby/

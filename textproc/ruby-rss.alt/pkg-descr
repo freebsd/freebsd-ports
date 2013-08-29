@@ -9,5 +9,4 @@ This library contains a sample that expand [RAA:RWiki].
 * collect RSS 1.0s and display those items sorted by updating time.
 * collect RSSs and display those items on each page.
 
-Author:	kou <kou@cozmixng.org>
 WWW: http://www.cozmixng.org/~rwiki/index.rb?cmd=view;name=RSS+Parser
