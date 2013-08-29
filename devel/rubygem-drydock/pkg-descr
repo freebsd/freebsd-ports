@@ -3,3 +3,4 @@ applications. The core class is contained in a single .rb file so it's easy to
 copy directly into your project. See below for examples.
 
 WWW: https://github.com/delano/drydock
+RG:  https://rubygems.org/gems/drydock

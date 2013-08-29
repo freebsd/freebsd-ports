@@ -13,5 +13,5 @@ Some examples of public suffixes are ".com", ".co.uk" and "pvt.k12.wy.us". The
 Public Suffix List is a list of all known public suffixes.
 
 WWW: http://www.simonecarletti.com/code/public_suffix_service
-RG: https://rubygems.org/gems/public_suffix_service
+RG:  https://rubygems.org/gems/public_suffix_service
 Github: https://github.com/weppos/public_suffix_service
