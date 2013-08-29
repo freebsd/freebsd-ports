@@ -4,7 +4,7 @@
 
 PORTNAME=	dia
 DISTVERSION=	0.97.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
@@ -13,18 +13,17 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Diagram creation program, similar to Visio
 
-LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
+		libpng15.so:${PORTSDIR}/graphics/png
 
-USES=		pathfix desktop-file-utils gettext
+USES=		desktop-file-utils gettext gmake pathfix
 USE_XZ=		yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk20 gnomeprefix libxslt libartlgpl2 intlhack
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl" \
-		LOCALBASE="${LOCALBASE}"
+CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-gnome
 
 .include <bsd.port.options.mk>
@@ -47,7 +46,7 @@ MANLANG=	"" fr
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-LIB_DEPENDS+=		EMF:${PORTSDIR}/graphics/libemf
+LIB_DEPENDS+=		libEMF.so:${PORTSDIR}/graphics/libemf
 CONFIGURE_ARGS+=	--enable-libemf
 PLIST_SUB+=		WMF=""
 .else
