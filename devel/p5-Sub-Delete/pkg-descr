@@ -8,4 +8,4 @@ consequently, won't work for deleting methods). The subroutine is
 completely obliterated from the symbol table (though there may be
 references to it elsewhere, including in compiled code).
 
-WWW:	http://search.cpan.org/dist/Sub-Delete/
+WWW: http://search.cpan.org/dist/Sub-Delete/

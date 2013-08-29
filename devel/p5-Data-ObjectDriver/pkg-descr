@@ -13,4 +13,4 @@ likeliest area for changes are in the syntax for the search method,
 and would most likely not break much in the way of backwards
 compatibility.
 
-WWW:	http://search.cpan.org/dist/Data-ObjectDriver/
+WWW: http://search.cpan.org/dist/Data-ObjectDriver/

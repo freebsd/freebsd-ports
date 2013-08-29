@@ -7,4 +7,4 @@ argument against it - often implementation of security implies pain - so taking
 away pain might lessen security - sort of).
 
 Author:	Paul T. Seamons <perlspam@seamons.com>
-WWW:	http://search.cpan.org/dist/Taint-Runtime/
+WWW: http://search.cpan.org/dist/Taint-Runtime/

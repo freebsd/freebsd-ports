@@ -4,4 +4,4 @@ codes, using stylesheets to control color and blinking properties.
 It exports ansi2html() by default, which takes an array, joins it it
 into a single scalar, and returns its HTML rendering.
 
-WWW:	http://search.cpan.org/dist/HTML-FromANSI/
+WWW: http://search.cpan.org/dist/HTML-FromANSI/

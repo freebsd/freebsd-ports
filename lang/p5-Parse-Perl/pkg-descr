@@ -6,4 +6,4 @@ of eval. Parsing of Perl code is generally influenced by its lexical
 context, and this module provides some explicit control over this
 process, by reifying lexical environments as Perl objects.
 
-WWW:	http://search.cpan.org/dist/Parse-Perl/
+WWW: http://search.cpan.org/dist/Parse-Perl/

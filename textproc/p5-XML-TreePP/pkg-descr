@@ -3,4 +3,4 @@ also generate XML file from a hash tree. This is a pure Perl
 implementation. You can also download XML from remote web server like
 XMLHttpRequest object at JavaScript language.
 
-WWW:	http://search.cpan.org/dist/XML-TreePP/
+WWW: http://search.cpan.org/dist/XML-TreePP/

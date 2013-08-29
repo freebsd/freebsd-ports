@@ -3,4 +3,4 @@ ECMA CSTA is an ASN.1 based protocol for Computer Integrated Telephony
 PBX. Typical applications include receiving notifications for incoming
 calls, placing calls, redirecting calls or placing conference calls.
 
-WWW:	http://search.cpan.org/dist/Net-CSTA/
+WWW: http://search.cpan.org/dist/Net-CSTA/

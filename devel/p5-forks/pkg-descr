@@ -15,4 +15,4 @@ You should be able to run threaded applications unchanged by simply making
 sure that the "forks" and "forks::shared" modules are loaded, 
 e.g. by specifying them on the command line.
 
-WWW:	http://search.cpan.org/dist/forks/
+WWW: http://search.cpan.org/dist/forks/

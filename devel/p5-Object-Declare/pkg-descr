@@ -2,4 +2,4 @@ This module exports one function, declare, for building named objects
 with a declarative syntax, similar to how Jifty::DBI::Schema defines
 its columns.
 
-WWW:	http://search.cpan.org/dist/Object-Declare/
+WWW: http://search.cpan.org/dist/Object-Declare/

@@ -4,4 +4,4 @@ external dependencies outside core modules.
 Jobs can be submitted to and handled by multi-threaded `workers' managed
 by the pool.
 
-WWW:	http://search.cpan.org/dist/Thread-Pool-Simple/
+WWW: http://search.cpan.org/dist/Thread-Pool-Simple/

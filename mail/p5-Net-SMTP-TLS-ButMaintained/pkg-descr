@@ -5,4 +5,4 @@ offers an interface that users will find familiar from Net::SMTP.
 Net::SMTP::TLS::ButMaintained implements a subset of the methods provided
 by that module, but certainly not (yet) a complete mirror image of that API.
 
-WWW:	http://search.cpan.org/dist/Net-SMTP-TLS-ButMaintained/
+WWW: http://search.cpan.org/dist/Net-SMTP-TLS-ButMaintained/

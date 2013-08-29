@@ -5,4 +5,4 @@ Catalyst, which adds easy scaffolding:
     # for a CDBI table class MyApp::M::CDBI::SomeTable
     script/myapp_create.pl controller SomeTable Scaffold CDBI::SomeTable
 
-WWW:	http://search.cpan.org/dist/Catalyst-Helper-Controller-Scaffold/
+WWW: http://search.cpan.org/dist/Catalyst-Helper-Controller-Scaffold/

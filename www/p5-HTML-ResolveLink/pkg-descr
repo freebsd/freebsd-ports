@@ -2,4 +2,4 @@ HTML::ResolveLink is a module to rewrite relative links in XHTML or
 HTML into absolute URI.
 
 Author:	Tatsuhiko Miyagawa <miyagawa@bulknews.net>
-WWW:	http://search.cpan.org/dist/HTML-ResolveLink/
+WWW: http://search.cpan.org/dist/HTML-ResolveLink/

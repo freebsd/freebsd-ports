@@ -5,4 +5,4 @@ canonical Java and PHP implementations. By default it uses JSON::Any
 to parse the response returned by Facebook's server. There is an option 
 to return the raw response in either XML or JSON.
 
-WWW:	http://search.cpan.org/dist/WWW-Facebook-API/
+WWW: http://search.cpan.org/dist/WWW-Facebook-API/

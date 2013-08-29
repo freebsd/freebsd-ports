@@ -18,4 +18,4 @@ or might not work (aio_read fails on sockets/pipes/fifos). Use an
 event loop for that (such as the Event module): IO::AIO will naturally
 fit into such an event loop itself.
 
-WWW:	http://search.cpan.org/dist/IO-AIO/
+WWW: http://search.cpan.org/dist/IO-AIO/

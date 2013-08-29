@@ -18,4 +18,4 @@ ebug_http. ebug is a console-based interface to debugging programs,
 much like perl5db.pl. ebug_http is an innovative web-based interface
 to debugging programs.
 
-WWW:	http://search.cpan.org/dist/Devel-ebug/
+WWW: http://search.cpan.org/dist/Devel-ebug/

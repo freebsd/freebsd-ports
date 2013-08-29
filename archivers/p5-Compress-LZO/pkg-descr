@@ -3,4 +3,4 @@ compression library (see "AUTHOR" for details about where to get LZO).
 A relevant subset of the functionality provided by LZO is available in
 Compress::LZO.
 
-WWW:	http://search.cpan.org/dist/Compress-LZO/
+WWW: http://search.cpan.org/dist/Compress-LZO/

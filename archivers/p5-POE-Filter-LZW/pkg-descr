@@ -2,4 +2,4 @@ POE::Filter::LZW provides a POE filter for performing compression/
 uncompression using Compress::LZW. It is suitable for use with
 POE::Filter::Stackable.
 
-WWW:	http://search.cpan.org/dist/POE-Filter-LZW/
+WWW: http://search.cpan.org/dist/POE-Filter-LZW/

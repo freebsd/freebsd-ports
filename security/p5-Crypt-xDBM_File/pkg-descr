@@ -14,4 +14,4 @@ with crypt function to get an idea of what these sizes are. If keysize
 or blocksize returns a zero the default is set to 8 bytes (64 bits).
 
 Author:	Eric Estabrooks <eric@urbanrage.com>
-WWW:	http://search.cpan.org/dist/Crypt-xDBM_File/
+WWW: http://search.cpan.org/dist/Crypt-xDBM_File/

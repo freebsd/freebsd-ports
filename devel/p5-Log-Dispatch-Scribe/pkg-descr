@@ -1,4 +1,4 @@
 This module provides a Log::Dispatch style interface to Scribe, and is
 also fully compatible with Log::Log4perl.
 
-WWW:	http://search.cpan.org/dist/Log-Dispatch-Scribe/
+WWW: http://search.cpan.org/dist/Log-Dispatch-Scribe/

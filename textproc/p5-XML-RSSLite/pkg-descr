@@ -3,4 +3,4 @@ documents, and is less concerned with XML compliance than alternatives.
 Rather than rely on XML::Parser, it uses heuristics and good old-fashioned
 Perl regular expressions.
 
-WWW:	http://search.cpan.org/dist/XML-RSSLite/
+WWW: http://search.cpan.org/dist/XML-RSSLite/

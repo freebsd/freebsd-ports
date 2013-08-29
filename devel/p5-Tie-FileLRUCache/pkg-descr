@@ -6,4 +6,4 @@ allowed to be references and objects as well as scalars. Requires
 'Digest::SHA1' to be installed.
 
 Author: Benjamin Franz
-WWW:	http://search.cpan.org/dist/Tie-FileLRUCache/
+WWW: http://search.cpan.org/dist/Tie-FileLRUCache/

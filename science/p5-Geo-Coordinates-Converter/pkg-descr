@@ -3,4 +3,4 @@ format and datum of geo coordinates are simply converted. when it is
 insufficient in the coordinate system and the format of the standard, it
 is possible to add it easily.
 
-WWW:	http://search.cpan.org/dist/Geo-Coordinates-Converter/
+WWW: http://search.cpan.org/dist/Geo-Coordinates-Converter/

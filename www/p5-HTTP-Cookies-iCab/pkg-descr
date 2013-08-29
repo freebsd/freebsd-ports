@@ -1,4 +1,4 @@
 This package overrides the load() and save() methods of HTTP::Cookies
 so it can work with iCab cookie files.
 
-WWW:	http://search.cpan.org/dist/HTTP-Cookies-iCab/
+WWW: http://search.cpan.org/dist/HTTP-Cookies-iCab/

@@ -1,4 +1,4 @@
 PostScript allows you to write PostScript files from Perl.
 It has graphics primitives that allow lines, circles and boxes to be drawn.
 
-WWW:	http://search.cpan.org/dist/PostScript/
+WWW: http://search.cpan.org/dist/PostScript/

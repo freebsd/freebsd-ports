@@ -4,4 +4,4 @@ and at the same time keeps track of the complete XML-path.
 
 It was developped as a wrapper on top of XML::Parser.
 
-WWW:	http://search.cpan.org/dist/XML-Reader/
+WWW: http://search.cpan.org/dist/XML-Reader/

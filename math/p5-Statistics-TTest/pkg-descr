@@ -5,4 +5,4 @@ and use the T-statistic to test the null hypothesis. If the null hypothesis
 is rejected, the difference will be given as the lower_clm and upper_clm of
 the TTest object.
 
-WWW:	http://search.cpan.org/dist/Statistics-TTest/
+WWW: http://search.cpan.org/dist/Statistics-TTest/

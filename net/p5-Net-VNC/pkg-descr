@@ -12,4 +12,4 @@ http://www.realvnc.com/docs/rfbproto.pdf. That document has an error
 in the DES encryption description, which is clarified via
 http://www.vidarholen.net/contents/junk/vnc.html.
 
-WWW:	http://search.cpan.org/dist/Net-VNC/
+WWW: http://search.cpan.org/dist/Net-VNC/

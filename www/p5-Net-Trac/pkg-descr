@@ -4,4 +4,4 @@ an RPC interface around Trac's webforms and the feeds it exports.
 Because of this, it's somewhat more brittle than a true RPC client
 would be.
 
-WWW:	http://search.cpan.org/dist/Net-Trac/
+WWW: http://search.cpan.org/dist/Net-Trac/

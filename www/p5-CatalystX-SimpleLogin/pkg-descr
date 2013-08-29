@@ -4,4 +4,4 @@ CatalystX::SimpleLogin::Controller::Login into your application. This provides
 a simple login and logout page with the adition of only one line of code and
 one template to your application.
 
-WWW:	http://search.cpan.org/dist/CatalystX-SimpleLogin/
+WWW: http://search.cpan.org/dist/CatalystX-SimpleLogin/

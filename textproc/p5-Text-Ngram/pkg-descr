@@ -9,4 +9,4 @@ word prediction networks, and perform spelling correction.
 This module provides an efficient XS-based implementation of n-gram
 spectrum analysis.
 
-WWW:	http://search.cpan.org/dist/Text-Ngram/
+WWW: http://search.cpan.org/dist/Text-Ngram/

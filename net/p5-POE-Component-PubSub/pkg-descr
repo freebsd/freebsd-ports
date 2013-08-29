@@ -1,4 +1,4 @@
 A generic publish/subscribe POE::Component that enables POE::Sessions to
 publish events to which other POE::Sessions may subscribe.
 
-WWW:	http://search.cpan.org/dist/POE-Component-PubSub/
+WWW: http://search.cpan.org/dist/POE-Component-PubSub/

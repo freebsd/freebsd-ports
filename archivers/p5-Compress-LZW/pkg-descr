@@ -3,4 +3,4 @@ compression algorithm. It defaults to building a 16-bit codeword table,
 but provides the ability to choose a 12-bit table also. Depending on
 the size of your data, the 12-bit table may provide better compression.
 
-WWW:	http://search.cpan.org/dist/Compress-LZW/
+WWW: http://search.cpan.org/dist/Compress-LZW/

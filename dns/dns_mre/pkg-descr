@@ -3,4 +3,4 @@ DNS Server Cache. By sending many queries to a DNS server along with fake
 replies, an attacker can successfuly writes a fake new entry in the DNS
 cache.
 
-WWW:	http://www.securebits.org/dnsmre.html
+WWW: http://www.securebits.org/dnsmre.html

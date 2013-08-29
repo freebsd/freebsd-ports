@@ -14,4 +14,4 @@ dependency on XML::Parser, applied a couple of patches, renamed a
 whole lot of methods to make Pod::Coverage happy, and changed the docs.
 
 Author:	Michel Rodriguez, <mirod@cpan.org>
-WWW:	http://search.cpan.org/dist/XML-XPathEngine/
+WWW: http://search.cpan.org/dist/XML-XPathEngine/
