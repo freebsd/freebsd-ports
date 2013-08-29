@@ -2,4 +2,4 @@ Ogginfo gives you access to low level information on ogg files (bitrate,
 length, samplerate, encoder, etc... ), as well as tag.
 
 Author:	Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
-WWW:	http://ruby-ogginfo.rubyforge.org/
+WWW: http://ruby-ogginfo.rubyforge.org/

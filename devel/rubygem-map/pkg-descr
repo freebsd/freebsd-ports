@@ -4,4 +4,4 @@ HashWithIndifferentAccess, support for struct like (map.foo) access, and
 support for option/keyword access which avoids several nasty classes of errors
 in many ruby libraries
 
-WWW:	http://rubygems.org/gems/map
+WWW: http://rubygems.org/gems/map

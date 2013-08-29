@@ -4,4 +4,4 @@ It generates classes like Time class for timezones other than
 localtime nor UTC.
 
 Author:	Tanaka Akira <akr@m17n.org>
-WWW:	http://cvs.m17n.org/~akr/ruby-tzfile/
+WWW: http://cvs.m17n.org/~akr/ruby-tzfile/

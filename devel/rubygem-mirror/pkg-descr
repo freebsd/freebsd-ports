@@ -1,4 +1,4 @@
 A ruby gem to mirror gems from rubygems.org. It uses net/http/persistent and
 threads to grab the mirror set a little faster than the original.
 
-WWW:	http://rubygems.org/gems/rubygems-mirror
+WWW: http://rubygems.org/gems/rubygems-mirror

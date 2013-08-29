@@ -15,4 +15,4 @@ inst.rb: helps installation		version.rb: VersionNumber class
 must.rb: must/must_have/must_be methods
 
 Author:	Minero Aoki <aamine@loveruby.net>
-WWW:	http://www.loveruby.net/en/amstd.html
+WWW: http://www.loveruby.net/en/amstd.html

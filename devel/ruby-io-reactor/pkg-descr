@@ -6,4 +6,4 @@ demultiplex and dispatch events from one or more IO objects to an
 appropriate handler.
 
 Author:	Michael Granger <ged-raa@FaerieMUD.org>
-WWW:	http://www.deveiate.org/code/IO-Reactor.html
+WWW: http://www.deveiate.org/code/IO-Reactor.html
