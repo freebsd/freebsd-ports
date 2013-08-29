@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Storage
-PORTVERSION=	0.34
+PORTVERSION=	0.40
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,10 +10,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Serialization framework for Moose classes
 
-BUILD_DEPENDS=	p5-JSON-Any>=1.15:${PORTSDIR}/converters/p5-JSON-Any \
+RUN_DEPENDS=	p5-JSON-Any>=1.15:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-Moose>=0.99:${PORTSDIR}/devel/p5-Moose \
 		p5-String-RewritePrefix>=0.004:${PORTSDIR}/textproc/p5-String-RewritePrefix
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS} \
+		p5-Module-Build-Tiny>=0.026:${PORTSDIR}/devel/p5-Module-Build-Tiny
 TEST_DEPENDS=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA \
 		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
@@ -24,7 +25,7 @@ TEST_DEPENDS=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 MAN3=		MooseX::Storage.3 \
 		MooseX::Storage::Base::WithChecksum.3 \
