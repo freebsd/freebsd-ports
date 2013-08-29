@@ -13,7 +13,6 @@ MAINTAINER=	mwm@mired.org
 COMMENT=	A statistics package designed for use with the Unix shell
 
 RESTRICTED=	License does not allow mass redistribution.
-BROKEN=		Does not fetch
 
 .include <bsd.port.pre.mk>
 
@@ -27,7 +26,7 @@ MAN1=		abut.1 anova.1 calc.1 colex.1 contab.1 desc.1 dm.1 dprime.1 \
 		rankrel.1 ranksort.1 regress.1 repeat.1 reverse.1 series.1 \
 		stats.1 transpose.1 ts.1 unixstat.1 validata.1
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=	Gary Perlman requires that users agree to his license\
 before he will allow access to the distfile.\
 See his web site at http://www.acm.org/~perlman/stat/ for\
