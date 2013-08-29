@@ -7,4 +7,4 @@ Has the effect of allowing DB_File hashes to grow to the full size
 of the partition. Requires 'Digest::SHA1' and 'DB_File' to be installed.
 
 Author: Benjamin Franz
-WWW:	http://search.cpan.org/dist/Tie-DB_File-SplitHash/
+WWW: http://search.cpan.org/dist/Tie-DB_File-SplitHash/

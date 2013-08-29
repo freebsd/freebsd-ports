@@ -17,4 +17,4 @@ The number of multiple simultaneous transfers per source point is
 configurable. The total number of simultaneously forked processes is
 limited via Proc::Queue, and is currently hard coded to 32.
 
-WWW:	http://search.cpan.org/dist/Net-CascadeCopy/
+WWW: http://search.cpan.org/dist/Net-CascadeCopy/

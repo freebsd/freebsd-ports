@@ -2,4 +2,4 @@ Template::Plugin::JavaScript is a TT filter that filters text so it can
 be safely used in JavaScript quotes.
 
 Author:	Tatsuhiko Miyagawa <miyagawa@bulknews.net>
-WWW:	http://search.cpan.org/dist/Template-Plugin-JavaScript/
+WWW: http://search.cpan.org/dist/Template-Plugin-JavaScript/

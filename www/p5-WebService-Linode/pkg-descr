@@ -3,4 +3,4 @@ had dots replaced with underscores to generate the perl method name.
 All keys and parameters have been lower cased but returned data
 remains otherwise the same.
 
-WWW:	http://search.cpan.org/dist/WebService-Linode/
+WWW: http://search.cpan.org/dist/WebService-Linode/

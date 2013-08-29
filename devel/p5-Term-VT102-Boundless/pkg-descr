@@ -5,4 +5,4 @@ The behavior is more similar to the buffer of a scrolling terminal
 emulator than to a real terminal, making it useful for output displays
 in scrolling media.
 
-WWW:	http://search.cpan.org/dist/Term-VT102-Boundless/
+WWW: http://search.cpan.org/dist/Term-VT102-Boundless/

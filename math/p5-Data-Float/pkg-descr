@@ -6,4 +6,4 @@ This module supplies constants describing the native floating
 point type, classification functions, and functions to
 manipulate floating point values at a low level.
 
-WWW:	http://search.cpan.org/dist/Data-Float/
+WWW: http://search.cpan.org/dist/Data-Float/

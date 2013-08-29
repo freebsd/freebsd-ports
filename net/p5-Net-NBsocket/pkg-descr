@@ -1,4 +1,4 @@
 Net::NBsocket provides a wrapper for Socket to supply Non-Blocking
 sockets of various flavors.
 
-WWW:	http://search.cpan.org/dist/Net-NBsocket/
+WWW: http://search.cpan.org/dist/Net-NBsocket/

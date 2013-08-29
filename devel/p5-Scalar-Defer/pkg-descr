@@ -5,4 +5,4 @@ replace the value, instead of triggering a STORE method call.
 Also, thanks to the overload-based implementation, this module is
 about 2x faster than Data::Lazy.
 
-WWW:	http://search.cpan.org/dist/Scalar-Defer/
+WWW: http://search.cpan.org/dist/Scalar-Defer/

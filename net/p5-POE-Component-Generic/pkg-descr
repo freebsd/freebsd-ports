@@ -17,4 +17,4 @@ shown only if debug or verbose is set.
 STDOUT in the child, that is from your object, is redirected
 to STDERR and will be shown in the same circomstances.
 
-WWW:	http://search.cpan.org/dist/POE-Component-Generic/
+WWW: http://search.cpan.org/dist/POE-Component-Generic/

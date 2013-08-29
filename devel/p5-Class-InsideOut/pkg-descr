@@ -14,4 +14,4 @@ on CPAN, this module aims for minimalism and robustness:
 It provides the minimal support necessary for creating safe inside-out
 objects and generating flexible accessors.
 
-WWW:	http://search.cpan.org/dist/Class-InsideOut/
+WWW: http://search.cpan.org/dist/Class-InsideOut/

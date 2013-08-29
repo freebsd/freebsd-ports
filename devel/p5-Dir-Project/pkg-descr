@@ -5,4 +5,4 @@ environment variables when they switch between areas, and allows
 scripts and such inside the directory to be executed without changing
 the user's PATH.
 
-WWW:	http://search.cpan.org/dist/Dir-Project/
+WWW: http://search.cpan.org/dist/Dir-Project/

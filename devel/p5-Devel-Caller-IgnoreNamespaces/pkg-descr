@@ -1,4 +1,4 @@
 Make available a magic caller() which can ignore namespaces that you tell it
 about.
 
-WWW:	http://search.cpan.org/dist/Devel-Caller-IgnoreNamespaces/
+WWW: http://search.cpan.org/dist/Devel-Caller-IgnoreNamespaces/

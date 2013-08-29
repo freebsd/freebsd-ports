@@ -5,4 +5,4 @@ requires applications to do the right thing in using this module and not
 installing their own versions. At least it provides a consistent
 implementation that can be shared between various modules.
 
-WWW:	http://search.cpan.org/dist/reaper/
+WWW: http://search.cpan.org/dist/reaper/

@@ -1,4 +1,4 @@
 Use epoll, sendfile, from Perl. Mostly Linux-only support now, but
 more syscalls/OSes planned for future.
 
-WWW:	http://search.cpan.org/dist/Sys-Syscall/
+WWW: http://search.cpan.org/dist/Sys-Syscall/

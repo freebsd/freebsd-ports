@@ -10,4 +10,4 @@ is roundtrip safe. So, the following is always true.
   my $seconds = int rand 100000;
   is( parse_duration(duration_exact($seconds)), $seconds );
 
-WWW:	http://search.cpan.org/dist/Time-Duration-Parse/
+WWW: http://search.cpan.org/dist/Time-Duration-Parse/

@@ -5,4 +5,4 @@ really just handy helpers to get rid of:
 
 Basically, self is just equal to $_[0], and args is just $_[1..$#_].
 
-WWW:	http://search.cpan.org/dist/self/
+WWW: http://search.cpan.org/dist/self/

@@ -4,4 +4,4 @@ implementation: Lower and Upper are tied native hashes: these hashes
 have no need for hidden fields or other assisting data structured. A
 case Preserve hash will actually create three hashes.
 
-WWW:	http://search.cpan.org/dist/Hash-Case/
+WWW: http://search.cpan.org/dist/Hash-Case/

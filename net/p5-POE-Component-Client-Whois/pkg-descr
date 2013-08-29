@@ -6,4 +6,4 @@ query string passed.
 If no guess can be made it will connect to whois.internic.net for domains,
 whois.arin.net for IPv4 addresses and whois.6bone.net for IPv6 addresses.
 
-WWW:	http://search.cpan.org/dist/POE-Component-Client-Whois/
+WWW: http://search.cpan.org/dist/POE-Component-Client-Whois/

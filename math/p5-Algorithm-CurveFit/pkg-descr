@@ -3,4 +3,4 @@ algorithm. That means, it fits a curve of known form (sine-like,
 exponential, polynomial of degree n, etc.) to a given set of data
 points.
 
-WWW:	http://search.cpan.org/dist/Algorithm-CurveFit/
+WWW: http://search.cpan.org/dist/Algorithm-CurveFit/

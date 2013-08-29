@@ -3,4 +3,4 @@ jobs into the system, and your worker processes can pull jobs from the
 queue atomically to perform. Failed jobs can be left in the queue to
 retry later.
 
-WWW:	http://search.cpan.org/dist/TheSchwartz/
+WWW: http://search.cpan.org/dist/TheSchwartz/

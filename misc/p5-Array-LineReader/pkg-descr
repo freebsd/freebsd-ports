@@ -5,4 +5,4 @@ only on demand, i.e. in the case you access an element of the array. The
 offset and length of all the lines is hold in memory as long as you tie your
 array.
 
-WWW:	http://search.cpan.org/dist/Array-LineReader/
+WWW: http://search.cpan.org/dist/Array-LineReader/

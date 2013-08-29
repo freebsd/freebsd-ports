@@ -2,4 +2,4 @@ POE::Filter::LZO provides a POE filter for performing compression/
 decompression using Compress::LZO. It is suitable for use with
 POE::Filter::Stackable.
 
-WWW:	http://search.cpan.org/dist/POE-Filter-LZO/
+WWW: http://search.cpan.org/dist/POE-Filter-LZO/

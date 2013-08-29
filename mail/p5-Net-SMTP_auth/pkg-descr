@@ -4,4 +4,4 @@ authenticate against SMTP servers. This documentation assumes that you are
 familiar with the concepts of the SMTP protocol described in RFC821 and with 
 the AUTH service extension described in RFC2554.
 
-WWW:	http://search.cpan.org/dist/Net-SMTP_auth/
+WWW: http://search.cpan.org/dist/Net-SMTP_auth/
