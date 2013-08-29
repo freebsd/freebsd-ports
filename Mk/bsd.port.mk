@@ -2843,8 +2843,9 @@ CONFIGURE_FAIL_MESSAGE?=	"Please report the problem to ${MAINTAINER} [maintainer
 CONFIGURE_MAX_CMD_LEN!=	${SYSCTL} -n kern.argmax
 .endif
 GNU_CONFIGURE_PREFIX?=	${PREFIX}
+CONFIG_SITE?=		${PORTSDIR}/Templates/config.site
 CONFIGURE_ARGS+=	--prefix=${GNU_CONFIGURE_PREFIX} $${_LATE_CONFIGURE_ARGS}
-CONFIGURE_ENV+=		CONFIG_SITE=${PORTSDIR}/Templates/config.site lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
+CONFIGURE_ENV+=		CONFIG_SITE=${CONFIG_SITE} lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 HAS_CONFIGURE=		yes
 
 SET_LATE_CONFIGURE_ARGS= \
