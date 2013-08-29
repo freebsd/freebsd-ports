@@ -1,3 +1,4 @@
 rubygem-uri-redis supports parsing redis://host:port/dbindex/keyname.
 
 WWW: https://github.com/delano/uri-redis
+RG:  https://rubygems.org/gems/uri-redis
