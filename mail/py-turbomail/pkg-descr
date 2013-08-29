@@ -7,5 +7,4 @@ MIME e-mail creation, but greatly simplifies these tasks by performing
 the grunt-work for you. Additionally, TurboMail is multi-threaded,
 allowing for single or batch enqueueing and background delivery of mail.
 
-Author: Alice Dawn Bevan-McGregor
 WWW: http://www.python-turbomail.org/
