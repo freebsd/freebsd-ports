@@ -1,27 +1,29 @@
-# New ports collection makefile for:	py-flask-babel
-# Date created:							2010-09-26
-# Whom:									Olivier Duchateau <duchateau.olivier@gmail.com>
-#
+# Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
 # $FreeBSD$
 #
 
 PORTNAME=	Flask-Babel
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	duchateau.olivier@gmail.com
+MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Adds i18n/l10n support to Flask applications
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.8:${PORTSDIR}/www/py-flask \
-	${PYTHON_PKGNAMEPREFIX}Babel>=0.9:${PORTSDIR}/devel/py-babel \
-	${PYTHON_PKGNAMEPREFIX}pytz>=2011:${PORTSDIR}/devel/py-pytz \
-	${PYTHON_PKGNAMEPREFIX}speaklater>=1.2:${PORTSDIR}/devel/py-speaklater
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.10:${PORTSDIR}/www/py-flask \
+	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:${PORTSDIR}/devel/py-babel \
+	${PYTHON_PKGNAMEPREFIX}speaklater>=1.3:${PORTSDIR}/devel/py-speaklater
 
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 320
+.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
+.endif
+
+.include <bsd.port.post.mk>
