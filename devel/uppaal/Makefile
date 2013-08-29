@@ -10,8 +10,6 @@ DISTNAME=	uppaal-${PORTVERSION}-aca
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool environment for modeling and verifying timed automata
 
-BROKEN=		Does not fetch
-
 USE_ZIP=	yes
 USE_LINUX=	yes
 USE_JAVA=	yes
@@ -35,7 +33,7 @@ RESTRICTED=	Downloading requires completion of a license agreement
 LINUX_SYSCTL=	${ECHO_CMD} `${SYSCTL} -n compat.linux.osrelease 2>/dev/null`
 LINUX_OSRELEASE=	${LINUX_SYSCTL}
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=	please download ${DISTNAME}${EXTRACT_SUFX} into\
 ${DISTDIR}/${DIST_SUBDIR} from ${DOWNLOAD_URL} and re-run make
 .endif
