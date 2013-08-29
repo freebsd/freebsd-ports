@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	mailman
-DISTVERSION=	2.1.14
-PORTREVISION=	6
+DISTVERSION=	2.1.15
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_GNU} \
-		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION}
+		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
+		https://launchpad.net/mailman/${DISTVERSION:R}/${DISTVERSION}/+download/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	mailman
 
 MAINTAINER=	mandree@FreeBSD.org
-COMMENT=	Mailing list manager (MLM) with a user-friendly web front-end
+COMMENT=	Mailing list manager with user-friendly web front-end
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gnu-COPYING-GPL
@@ -61,18 +61,17 @@ PORTDOCS=	ACKNOWLEDGMENTS BUGS FAQ INSTALL NEWS README README-I18N.en \
 		mailman-member.txt \
 		FreeBSD-post-install-notes
 
-OPTIONS_RADIO=	MTA
-OPTIONS_RADIO_MTA=	SENDMAIL EXIM3 EXIM4 POSTFIX COURIER
-OPTIONS_DEFINE=	 HTDIG INTEGRATION NAMAZU2 NLS DOCS
+OPTIONS_SINGLE=	MTA
+OPTIONS_SINGLE_MTA=	SENDMAIL EXIM4 POSTFIX COURIER
+OPTIONS_DEFINE=	HTDIG NAMAZU2 NLS DOCS
+OPTIONS_DEFAULT=	SENDMAIL
 SENDMAIL_DESC=	for use with sendmail
-EXIM3_DESC=	for use with exim3
 EXIM4_DESC=	for use with exim4
 POSTFIX_DESC=	for use with postfix
-COURIER_DESC=	fr use with courier
-HTDIG_DESC=	htdig integration patches
-INTEGRATION_DESC=	integrating postfix and mailman
-NAMAZU2_DESC=	make private archives searchable with namazu2
-MTA_DESC=	integrate with an MTA
+COURIER_DESC=	for use with courier
+HTDIG_DESC=	- EXPERIMENTAL - htdig integration patches
+NAMAZU2_DESC=	Make private archives searchable with namazu2
+MTA_DESC=	Integrate with which MTA?
 
 .include <bsd.port.options.mk>
 
@@ -81,14 +80,11 @@ USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
+MAKE_ARGS+=	LANGUAGES=en
 .endif
 
 .if ${PORT_OPTIONS:MSENDMAIL}
 MAIL_GID?=	mailnull
-.endif
-
-.if ${PORT_OPTIONS:MEXIM3}
-MAIL_GID?=	nobody
 .endif
 
 .if ${PORT_OPTIONS:MEXIM4}
@@ -96,11 +92,9 @@ MAIL_GID?=	mail
 .endif
 
 .if ${PORT_OPTIONS:MPOSTFIX}
-.if ${PORT_OPTIONS:MINTEGRATION}
+RUN_DEPENDS+=	${LOCALBASE}/sbin/postconf:${PORTSDIR}/mail/postfix
+BUILD_DEPENDS+=	${LOCALBASE}/sbin/postconf:${PORTSDIR}/mail/postfix
 MAIL_GID?=	mailman
-.else
-MAIL_GID?=	nobody
-.endif
 EXTRA_PATCHES+=	${FILESDIR}/postfix-verp.diff
 .endif
 
@@ -109,11 +103,10 @@ MAIL_GID?=	courier
 .endif
 
 .if ${PORT_OPTIONS:MHTDIG}
-BROKEN=	the HTDIG option is currently broken
 PATCH_SITES+=	http://www.openinfo.co.uk/mm/patches/444879/:patch1 \
 		http://www.openinfo.co.uk/mm/patches/444884/:patch2
-PATCHFILES+=	indexing-${DISTVERSION}-0.1.patch.gz:patch1 \
-		htdig-${DISTVERSION}-0.1.patch.gz:patch2
+PATCHFILES+=	indexing-2.1.12-0.1.patch.gz:patch1 \
+		htdig-2.1.12-0.1.patch.gz:patch2
 PATCH_DIST_STRIP=	-p1
 PKGNAMESUFFIX+=	-with-htdig
 RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
@@ -127,16 +120,22 @@ RUN_DEPENDS+=	mknmz:${PORTSDIR}/databases/namazu2
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Mailman-Cgi-private.py
 .endif
 
-pre-fetch:
+pre-everything::
 	@${ECHO} ""
 	@${ECHO} "You may change the following build options:"
-	@${ECHO} "MM_USERNAME=mailman	The username of the Mailman user."
-	@${ECHO} "MM_USERID=91		The user ID of the Mailman user."
-	@${ECHO} "MM_GROUPNAME=mailman	The group to which the Mailman user will belong."
-	@${ECHO} "MM_GROUPID=MM_USERID	The group ID for the Mailman user."
-	@${ECHO} "MM_DIR=mailman		Mailman will be installed in ${PREFIX}/${MM_DIR}."
-	@${ECHO} "CGI_GID=www		The group name or id under which your web server executes CGI scripts."
-	@${ECHO} "IMGDIR=www/icons	Icon images will be installed in ${PREFIX}/${IMGDIR}."
+	@${ECHO} ""
+	@${ECHO} "Option		Default Value	Description"
+	@${ECHO} "-------------	---------------	------------------------------------------------"
+	@${ECHO} "MM_USERNAME	mailman		The username of the Mailman user."
+	@${ECHO} "MM_USERID	91		The user ID of the Mailman user."
+	@${ECHO} "MM_GROUPNAME	mailman		The group to which the Mailman user will belong."
+	@${ECHO} "MM_GROUPID	\$$MM_USERID	The group ID for the Mailman user."
+	@${ECHO} "MM_DIR		mailman		Mailman will be installed in"
+	@${ECHO} "				${PREFIX}/${MM_DIR}."
+	@${ECHO} "CGI_GID		www		The group name or id under which your web"
+	@${ECHO} "				server executes CGI scripts."
+	@${ECHO} "IMGDIR		www/icons	Icon images will be installed in""
+	@${ECHO} "				${PREFIX}/${IMGDIR}."
 	@${ECHO} ""
 
 post-patch:
@@ -145,10 +144,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/^0,5,10/#&/' ${WRKSRC}/cron/crontab.in.in
 .if empty(PORT_OPTIONS:MNLS)
 	@${REINPLACE_CMD} -e 's/messages//' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's/templates//' ${WRKSRC}/Makefile.in
 .endif
 
-.if ${PORT_OPTIONS:MPOSTFIX} && !empty(PORT_OPTIONS:MINTEGRATION)
+.if ${PORT_OPTIONS:MPOSTFIX}
 pre-configure:
 	@${ECHO} "MTA = 'Postfix'" >> ${WRKSRC}/Mailman/mm_cfg.py.dist.in
 .endif
@@ -173,6 +171,8 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif
+	@${MKDIR} ${PYTHON_SITELIBDIR}
+	@${ECHO} "This marker file ensures that Python's upgrade-site-packages works." >${PYTHON_SITELIBDIR}/mailman-info.txt
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 .if ${PORT_OPTIONS:MPOSTFIX}

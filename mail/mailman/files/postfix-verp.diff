@@ -1,5 +1,5 @@
---- Mailman/Handlers/SMTPDirect.py.orig	2010-09-20 14:18:27.000000000 -0400
-+++ Mailman/Handlers/SMTPDirect.py	2010-10-16 20:26:51.913097648 -0400
+--- Mailman/Handlers/SMTPDirect.py.orig	2012-06-13 15:35:54.000000000 +0200
++++ Mailman/Handlers/SMTPDirect.py	2013-08-22 14:26:22.000000000 +0200
 @@ -64,11 +64,11 @@
          self.__conn.connect(mm_cfg.SMTPHOST, mm_cfg.SMTPPORT)
          self.__numsessions = mm_cfg.SMTP_MAX_SESSIONS_PER_CONNECTION
@@ -23,17 +23,17 @@
          chunks = [[recip] for recip in recips]
          msgdata['personalize'] = 1
          deliveryfunc = verpdeliver
-@@ -375,6 +375,9 @@
+@@ -376,6 +376,9 @@
      if mlist.include_sender_header:
          del msg['sender']
-         msg['Sender'] = envsender
+         msg['Sender'] = '"%s" <%s>' % (mlist.real_name, envsender)
 +    mailopts=[]
 +    if msgdata.get('verp') and mm_cfg.VERP_STYLE == 'Postfix':
 +        mailopts.append('XVERP=' + mm_cfg.POSTFIX_XVERP_OPTS)
      # Get the plain, flattened text of the message, sans unixfrom
      # using our as_string() method to not mangle From_ and not fold
      # sub-part headers possibly breaking signatures.
-@@ -384,7 +387,7 @@
+@@ -385,7 +388,7 @@
      msgid = msg['message-id']
      try:
          # Send the message
