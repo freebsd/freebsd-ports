@@ -3,9 +3,9 @@ bin/qjail.vnet.be
 bin/qjail.vnet.ng
 etc/qjail.portsnap.conf
 etc/rc.d/qjail.bootime
+%%EXAMPLESDIR%%/upgrade-info.txt
 %%EXAMPLESDIR%%/vnet/jail.amd64
 %%EXAMPLESDIR%%/vnet/jail.i386
-%%EXAMPLESDIR%%/vnet/nullfs.diff
 %%EXAMPLESDIR%%/vnet/ipfw.rules.host
 %%EXAMPLESDIR%%/vnet/ipfw.rules.vnet
 %%EXAMPLESDIR%%/vnet/ipf.rules.host
