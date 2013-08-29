@@ -1,21 +1,18 @@
-# New ports collection makefile for:	cacti
-# Date created:		6 December 2003
-# Whom:			Vincent Tantardini <vinc@freebsd-fr.org>
-#
+# Created by: Vincent Tantardini <vinc@freebsd-fr.org>
 # $FreeBSD$
 #
 
 PORTNAME=	cacti
-PORTVERSION=	0.8.8a${PATCHLEVEL}
+PORTVERSION=	0.8.8b${PATCHLEVEL}
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.cacti.net/downloads/
-DISTFILES=	${PORTNAME}-${SITEDISTVERSION}${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}-${SITEDISTVERSION}
 
 # Vendor's patches
 PATCH_SITES=	http://www.cacti.net/downloads/patches/${SITEDISTVERSION}/
-PATCHFILES=	snmpv3_priv_proto_none.patch
+PATCHFILES=
 PATCH_DIST_STRIP=	-p1
-PATCHLEVEL=	1
+PATCHLEVEL=
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Web-driven graphing interface for RRDTool
