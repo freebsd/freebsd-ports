@@ -27,7 +27,7 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 # Check for JMF sources
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=	because of licensing restrictions, you must fetch the source\
 distribution manually.\
 Please access: http://java.sun.com/products/java-media/jmf/2.1.1/download.html\
