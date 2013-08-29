@@ -47,3 +47,15 @@
  	cp omega $(BINDIR)
  	chmod 4711 $(BINDIR)/omega
  	- cp lib/* $(LIBDIR)
+@@ -71,9 +74,9 @@
+ 
+ $(OBJ): clrgen.h defs.h extern.h glob.h
+ 
+-clrgen.h clrgen.c: genclr.c minit.h defs.h
+-	$(MAKE) genclr
++clrgen.c: genclr
+ 	$(CPP) -DOMEGA_CLRGEN *.[ch] | ./genclr clrgen.c clrgen.h
++clrgen.h: | clrgen.c
+ 
+ genclr: genclr.o
+ 	$(CC) $(LDFLAGS) genclr.o -o genclr
