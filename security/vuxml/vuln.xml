@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b3b8d491-0fbb-11e3-8c50-1c6f65c11ee6">
+    <topic>cacti -- allow remote attackers to execute arbitrary SQL commands</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><lt>0.8.8b</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cacti release reports:</p>
+	<blockquote cite="http://www.cacti.net/release_notes_0_8_8b.php">
+	  <p>Multiple security vulnerabilities have been fixed:</p>
+	  <ul>
+	    <li>SQL injection vulnerabilities</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+       <cvename>CVE-2013-1434</cvename>
+       <cvename>CVE-2013-1435</cvename>
+       <url>http://www.cacti.net/release_notes_0_8_8b.php</url>
+    </references>
+    <dates>
+      <discovery>2013-08-06</discovery>
+      <entry>2013-08-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fd2bf3b5-1001-11e3-ba94-0025905a4771">
     <topic>asterisk -- multiple vulnerabilities</topic>
     <affects>
