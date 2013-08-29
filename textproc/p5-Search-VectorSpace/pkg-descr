@@ -8,5 +8,4 @@ cosine measure to calculate document similarity.
 All documents above a user-configurable similarity 
 threshold are returned.
 
-Author:	Maciej Ceglowski <maciej AT ceglowski.com>
 WWW: http://search.cpan.org/dist/Search-VectorSpace/

@@ -3,5 +3,4 @@ access that server.  The result is that clients can access named locks
 on a Internet wide bases, solving critical section problems without the
 mess of NFS or other file locking techniques.
 
-Author: Wilson Snyder <wsnyder@wsnyder.org>
 WWW: http://search.cpan.org/dist/IPC-Locker/

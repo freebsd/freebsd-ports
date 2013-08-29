@@ -6,5 +6,4 @@ It is similar to Encode::Guess, but does not require the configuration
 of a set of expected encodings. Like Encode::Guess, it only supports
 decoding--it cannot encode.
 
-Author:	John Gardiner Myers <jgmyers@proofpoint.com>
 WWW: http://search.cpan.org/dist/Encode-Detect/

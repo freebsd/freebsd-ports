@@ -5,5 +5,4 @@ info.)
 If $debug is set, on-the fly diagnostics will be reported about how much
 data is being read.
 
-Author: Brian Reichert <reichert@numachi.com>
 WWW: http://search.cpan.org/dist/System2/

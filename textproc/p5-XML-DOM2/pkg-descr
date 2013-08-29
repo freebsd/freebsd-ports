@@ -12,5 +12,4 @@ XML::DOM2 is yet _another_ perl XML module.
 * Parsing with SAX (use XML::SAX::PurePerl for low dependancy installs)
 * Internal serialisation
 
-Author:	Martin Owens, doctormo@cpan.org
 WWW: http://search.cpan.org/dist/XML-DOM2/

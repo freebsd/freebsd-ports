@@ -6,5 +6,4 @@ In this module, coroutines are defined as "callchain + lexical variables
 callchain, its own set of lexicals and its own set of perl's most
 important global variables.
 
-Author: Marc Lehmann <pcg@goof.com>
 WWW: http://search.cpan.org/dist/Coro/
