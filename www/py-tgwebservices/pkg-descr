@@ -6,5 +6,4 @@ The SOAP API generates WSDL automatically for your Python and even
 generates enough type information for statically typed languages
 (Java and C#, for example) to generate good client code on their end.
 
-Author:	Kevin Dangoor
 WWW: http://code.google.com/p/tgws/
