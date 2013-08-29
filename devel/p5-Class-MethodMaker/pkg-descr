@@ -8,5 +8,3 @@ keys are the names of MethodMaker methods (methods that write methods) and
 the values are the arguments to those methods.
 
 WWW: http://search.cpan.org/dist/Class-MethodMaker/
-
-Trevor Johnson
