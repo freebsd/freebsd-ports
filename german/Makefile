@@ -12,7 +12,6 @@
     SUBDIR += bsdgroup-firefox-searchplugin
     SUBDIR += bsdpaste
     SUBDIR += bugzilla
-    SUBDIR += bugzilla3
     SUBDIR += bugzilla42
     SUBDIR += bugzilla44
     SUBDIR += calligra-l10n

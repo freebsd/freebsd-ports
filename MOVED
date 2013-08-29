@@ -4895,3 +4895,7 @@ x11-toolkits/gnustep-xdps||2013-08-28|Does not build with recent GNUstep
 x11-toolkits/gtoolkit||2013-08-28|Does not build with recent GNUstep
 x11-toolkits/renaissance||2013-08-28|Does not build with recent GNUstep
 devel/g2c||2013-08-29|Has expired: Not supported upstream anymore
+devel/bugzilla3|devel/bugzilla24|2013-08-30|EOL: Please update to a supported version
+german/bugzilla3|german/bugzilla42|2013-08-30|EOL: Please update to a supported version
+japanese/bugzilla3|japanese/bugzilla42|2013-08-30|EOL: Please update to a supported version
+russian/bugzilla3|russian/bugzilla42|2013-08-30|EOL: Please update to a supported version
