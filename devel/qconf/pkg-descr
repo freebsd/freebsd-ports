@@ -4,4 +4,4 @@ use the more complex GNU autotools. With qconf/qmake, it is easy
 to maintain a cross-platform project that uses a familiar configuration
 interface on unix.
 
-WWW:	http://delta.affinix.com/qconf/
+WWW: http://delta.affinix.com/qconf/

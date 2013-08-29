@@ -2,4 +2,4 @@ Teapop is yet another RFC1939 compliant POP3 server.  It includes
 flexible virtual domain support that distinguishes it from all other
 POP3 servers.
 
-WWW:	http://www.toontown.org/teapop/
+WWW: http://www.toontown.org/teapop/

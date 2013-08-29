@@ -19,4 +19,4 @@ file completely rearranged whenever a program changes it. iniparse also
 allows making the order of entries in a config file significant, which is
 desirable in applications like image galleries.
 
-WWW:	http://code.google.com/p/iniparse/
+WWW: http://code.google.com/p/iniparse/
