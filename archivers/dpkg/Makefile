@@ -18,10 +18,9 @@ RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
 		gpatch:${PORTSDIR}/devel/patch \
 		gmd5sum:${PORTSDIR}/sysutils/coreutils
 
-USES=		gmake iconv
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USE_PERL5=	yes
+USES=		gmake iconv perl5
 WRKSRC=		${WRKDIR}/dpkg-${PORTVERSION}
 
 DPKGDIR?=	/var/db/dpkg

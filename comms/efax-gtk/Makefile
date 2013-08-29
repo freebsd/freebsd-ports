@@ -13,8 +13,8 @@ COMMENT=	GUI frontend for efax program
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
-		cxx-gtk-utils-2-2.2:${PORTSDIR}/x11-toolkits/c++-gtk-utils
+LIB_DEPENDS=	libsigc-1.2.so:${PORTSDIR}/devel/libsigc++12 \
+		libcxx-gtk-utils-2-2.2.so:${PORTSDIR}/x11-toolkits/c++-gtk-utils
 RUN_DEPENDS=	ggv:${PORTSDIR}/print/ggv
 
 USES=		pkgconfig

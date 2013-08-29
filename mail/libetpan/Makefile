@@ -12,9 +12,9 @@ COMMENT=	Mail framework for C language
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		expat:${PORTSDIR}/textproc/expat2 \
-		sasl2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 
 USE_AUTOTOOLS=	libtool autoconf
 AUTOTOOLSFILES=	aclocal.m4
@@ -30,8 +30,8 @@ OPTIONS_SINGLE_CRYPTO=	GNUTLS OPENSSL
 OPTIONS_DEFAULT=	OPENSSL
 
 GNUTLS_CONFIGURE_ON=	--without-openssl --with-gnutls
-GNUTLS_LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
-			gcrypt:${PORTSDIR}/security/libgcrypt
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
+			libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 

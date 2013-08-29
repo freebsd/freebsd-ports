@@ -11,8 +11,8 @@ MASTER_SITES=	http://ekg.chmurka.net/
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Text-mode Gadu-Gadu client
 
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-		gadu:${PORTSDIR}/polish/libgadu
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libgadu.so:${PORTSDIR}/polish/libgadu
 
 GNU_CONFIGURE=	yes
 USES=		gmake pathfix pkgconfig
@@ -33,7 +33,7 @@ OPTIONS_DEFINE=		ASPELL OPENSSL
 OPTIONS_DEFAULT=	OPENSSL
 
 ASPELL_CONFIGURE_ON=	--enable-aspell
-ASPELL_LIB_DEPENDS=	aspell:${PORTSDIR}/polish/aspell
+ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/polish/aspell
 
 OPENSSL_CONFIGURE_OFF=	--without-openssl
 

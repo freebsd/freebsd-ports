@@ -6,7 +6,7 @@ PORTREVISION=	0
 
 COMMENT=	Perl filtering plugin for Claws Mail
 
-USE_PERL5=	yes
+USES+=		perl5
 
 PLIST_FILES+=	share/claws-mail/matcherrc2perlfilter.pl
 

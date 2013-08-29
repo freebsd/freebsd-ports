@@ -13,11 +13,11 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	dssi_osc_update:${PORTSDIR}/audio/dssi \
 		makedepend:${PORTSDIR}/devel/makedepend
-LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib \
-		lirc_client:${PORTSDIR}/comms/lirc \
-		fftw3:${PORTSDIR}/math/fftw3 \
-		fftw3f:${PORTSDIR}/math/fftw3-float \
-		lrdf:${PORTSDIR}/textproc/liblrdf
+LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
+		liblirc_client.so:${PORTSDIR}/comms/lirc \
+		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+		liblrdf.so:${PORTSDIR}/textproc/liblrdf
 RUN_DEPENDS=	dssi_osc_update:${PORTSDIR}/audio/dssi \
 		lilypond:${PORTSDIR}/print/lilypond
 

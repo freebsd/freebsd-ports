@@ -12,16 +12,8 @@ COMMENT=	Qt4 based subtitle downloader
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		pcre:${PORTSDIR}/devel/pcre \
-		png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2 \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 
-USES=		gettext iconv
-USE_XORG=	ice sm x11 xau xcb xdmcp xext xrender
 USE_QT4=	corelib gui network xml qmake_build moc_build uic_build rcc_build
 USE_KDE4=	kdehier
 QMAKE_ARGS=	PREFIX=${PREFIX} KDE4_PREFIX=${KDE4_PREFIX}

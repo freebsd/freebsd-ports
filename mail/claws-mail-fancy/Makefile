@@ -6,8 +6,8 @@ PORTREVISION=	0
 
 COMMENT=	Webkit based HTML renderer plugin for Claws Mail
 
-LIB_DEPENDS=	soup-gnome:${PORTSDIR}/devel/libsoup-gnome \
-		webkitgtk:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS=	libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
+		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 
 CLAWS_PLUGINS_BUILD=	fancy
 

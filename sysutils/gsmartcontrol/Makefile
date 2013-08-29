@@ -10,28 +10,13 @@ MASTER_SITES=	http://artificialtime.com/${PORTNAME}/
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Graphical user interface for smartmontools
 
-LIB_DEPENDS=	atkmm-1.6:${PORTSDIR}/accessibility/atkmm \
-		glibmm-2.4:${PORTSDIR}/devel/glibmm \
-		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
-		pcre:${PORTSDIR}/devel/pcre \
-		cairo:${PORTSDIR}/graphics/cairo \
-		cairomm-1.0:${PORTSDIR}/graphics/cairomm \
-		png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2 \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		pangomm-1.4:${PORTSDIR}/x11-toolkits/pangomm
+LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		smartctl:${PORTSDIR}/sysutils/smartmontools
 
-USE_AUTOTOOLS=	libtool
-USES=		pkgconfig gettext iconv
 USE_BZIP2=	yes
-USE_GNOME=	gtk20
-USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext xfixes \
-		xi xinerama xrandr xrender 
+USE_AUTOTOOLS=	libtool
+USES=		pkgconfig
 INSTALLS_ICONS=	yes
 
 MAN1=		gsmartcontrol.1
