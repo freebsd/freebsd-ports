@@ -1,19 +1,19 @@
 # $FreeBSD$
 # Path
-: ${ac_cv_path_GZIP=/usr/bin/gzip}
 : ${ac_cv_path_BZIP2=/usr/bin/bzip2}
+: ${ac_cv_path_EGREP=/usr/bin/egrep}
+: ${ac_cv_path_FGREP=/usr/bin/fgrep}
+: ${ac_cv_path_GREP=/usr/bin/grep}
+: ${ac_cv_path_GZIP=/usr/bin/gzip}
 : ${ac_cv_path_MKTEMP_COMMAND=/usr/bin/mktemp}
 : ${ac_cv_path_SED=/usr/bin/sed}
 : ${ac_cv_path_install=/usr/bin/install}
-: ${ac_cv_path_GREP=/usr/bin/grep}
-: ${ac_cv_path_EGREP=/usr/bin/egrep}
-: ${ac_cv_path_FGREP=/usr/bin/fgrep}
 : ${ac_cv_path_mkdir=/bin/mkdir}
-: ${am_cv_prog_tar_ustar=/usr/bin/tar}
 : ${ac_cv_prog_AWK=/usr/bin/awk}
 : ${ac_cv_prog_SED=/usr/bin/sed}
-: ${cl_cv_prog_cp='/bin/cp -p'}
+: ${am_cv_prog_tar_ustar=/usr/bin/tar}
 : ${cl_cv_prog_LN=/bin/ln}
+: ${cl_cv_prog_cp='/bin/cp -p'}
 : ${lt_cv_path_MAGIC_CMD=/usr/bin/file}
 
 # Headers
