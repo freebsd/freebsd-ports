@@ -8,6 +8,10 @@
 #
 # webcamd_enable="YES"
 #
+# Optional:
+# webcamd_flags="-m v4l2.vflip=1"
+# webcamd_flags="-m v4l2.hflip=1"
+#
 
 webcamd_enable=${webcamd_enable-"NO"}
 hald_enable=${hald_enable-"NO"}
@@ -32,14 +36,6 @@ webcamd_prestart()
 pidfile="/var/run/webcamd.*.$iface.pid"
 
 load_rc_config $name
-
-if [ "$2" = "vflip" ] || [ "$3" = "vflip" ]; then
-	command_args="$command_args -m v4l2.vflip=1"
-fi
-
-if [ "$2" = "hflip" ] || [ "$3" = "hflip" ]; then
-	command_args="$command_args -m v4l2.hflip=1"
-fi
 
 if [ $# -gt 1 ]; then
 	pidfile="webcamd.dummy"
