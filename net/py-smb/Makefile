@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smb
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	net python
 MASTER_SITES=	http://miketeo.net/files/Projects/py${PORTNAME}/ \
 		CHEESESHOP
@@ -14,7 +14,6 @@ COMMENT=	SMB/CIFS library written in Python
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=0:${PORTSDIR}/devel/py-asn1
 
-# Python3 ready
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	py${PORTNAME}
