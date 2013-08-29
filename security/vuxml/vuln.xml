@@ -69,7 +69,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Asterisk project reports:</p>
+	<p>The Asterisk project reports:</p>
 	<blockquote cite="https://www.asterisk.org/security">
 	  <p>Remote Crash From Late Arriving SIP ACK With SDP</p>
 	  <p>Remote Crash when Invalid SDP is sent in SIP Request</p>
@@ -77,6 +77,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2013-5641</cvename>
+      <cvename>CVE-2013-5642</cvename>
       <url>http://downloads.asterisk.org/pub/security/AST-2013-004.html</url>
       <url>http://downloads.asterisk.org/pub/security/AST-2013-005.html</url>
       <url>https://www.asterisk.org/security</url>
@@ -84,6 +86,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2013-08-27</discovery>
       <entry>2013-08-28</entry>
+      <modified>2013-08-29</modified>
     </dates>
   </vuln>
 
