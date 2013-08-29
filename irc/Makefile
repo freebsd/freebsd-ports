@@ -125,7 +125,6 @@
     SUBDIR += smartirc4net
     SUBDIR += solid-ircd
     SUBDIR += srvx
-    SUBDIR += talksoup
     SUBDIR += thales
     SUBDIR += tircd
     SUBDIR += tircproxy

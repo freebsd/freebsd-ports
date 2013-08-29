@@ -151,7 +151,6 @@
     SUBDIR += multisync-backup
     SUBDIR += multisync-syncml
     SUBDIR += myitcrm
-    SUBDIR += mywiki
     SUBDIR += nagaina
     SUBDIR += narval
     SUBDIR += nautilus-actions
@@ -243,7 +242,6 @@
     SUBDIR += tomboy-plugin-reminder
     SUBDIR += tomboy-plugin-todo
     SUBDIR += tomboy-plugin-wordcount
-    SUBDIR += toolbox
     SUBDIR += toolboxkit
     SUBDIR += tpb
     SUBDIR += treeline

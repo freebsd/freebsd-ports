@@ -416,7 +416,6 @@
     SUBDIR += netatalk
     SUBDIR += netatalk3
     SUBDIR += netcat
-    SUBDIR += netclasses
     SUBDIR += netdude
     SUBDIR += netembryo
     SUBDIR += netmap

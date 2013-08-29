@@ -35,11 +35,8 @@
     SUBDIR += gnome-desktop-sharp20
     SUBDIR += gnome-sharp20
     SUBDIR += gnomemm
-    SUBDIR += gnustep-art
     SUBDIR += gnustep-back
-    SUBDIR += gnustep-cairo
     SUBDIR += gnustep-gui
-    SUBDIR += gnustep-xdps
     SUBDIR += gstreamer-plugins-pango
     SUBDIR += gstreamer1-plugins-pango
     SUBDIR += gtk-sharp-beans
@@ -73,7 +70,6 @@
     SUBDIR += gtksourceview3-reference
     SUBDIR += gtksourceviewmm3
     SUBDIR += gtkunique
-    SUBDIR += gtoolkit
     SUBDIR += guile-gtk
     SUBDIR += hippo-canvas
     SUBDIR += hs-GLURaw
@@ -226,7 +222,6 @@
     SUBDIR += qwt5-designerplugin
     SUBDIR += qwt6
     SUBDIR += qwt6-designerplugin
-    SUBDIR += renaissance
     SUBDIR += rep-gtk2
     SUBDIR += ruby-fox16
     SUBDIR += ruby-goocanvas
