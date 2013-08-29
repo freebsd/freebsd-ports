@@ -23,7 +23,7 @@ DOWNLOAD_URL?=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDe
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=		You must manually fetch the Java 2 SDK Enterprise Edition\
 		${J2SDKEEVERSION} tarball from ${DOWNLOAD_URL}.  Accept the\
 		license and then download ${DISTNAME}${EXTRACT_SUFX} into\
