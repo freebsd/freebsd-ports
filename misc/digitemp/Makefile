@@ -27,9 +27,6 @@ ALL_TARGET=	ds9097 ds9097u
 
 OPTIONS_DEFINE=	DOCS
 
-#post-patch:
-#	@${REINPLACE_CMD} -e 's:= gcc:?= gcc:' ${WRKSRC}/Makefile
-
 pre-install:
 	${CP} ${WRKSRC}/${MAN1} ${WRKSRC}/digitemp.1.M
 	${CAT} ${WRKSRC}/digitemp.1.M | ${SED} -e "s/dev\/ttyS/dev\/cuau/g" > ${WRKSRC}/${MAN1}
