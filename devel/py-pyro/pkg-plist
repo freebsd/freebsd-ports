@@ -22,6 +22,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/futures.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/futures.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/futures.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/message.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/message.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/message.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/naming.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/naming.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Pyro4/naming.pyo
@@ -80,6 +83,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/api/flame.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/api/futures.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/api/main.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/api/message.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/api/naming.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/api/socketserver.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/api/util.rst
@@ -148,6 +152,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deadlock/bouncer.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deadlock/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deadlock/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/disconnects/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/disconnects/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/disconnects/server.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/dispatcher.py
@@ -261,6 +268,7 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/eventloop
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/echoserver
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/distributed-computing
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/disconnects
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/deadlock
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/circular
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/chatbox
