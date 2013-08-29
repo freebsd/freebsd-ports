@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -82,6 +82,7 @@ OPTIONS_DEFINE=	\
 	LET \
 	LUA \
 	MEMC \
+	MODSECURITY \
 	NAXSI \
 	PASSENGER \
 	POSTGRES \
@@ -170,6 +171,7 @@ ICONV_DESC=			3rd party iconv module
 LET_DESC=			3rd party let module
 LUA_DESC=			3rd party lua module
 MEMC_DESC=			3rd party memc (memcached) module
+MODSECURITY_DESC=		3rd party mod_security module
 NAXSI_DESC=			3rd party naxsi module
 PASSENGER_DESC=			3rd party passenger module
 POSTGRES_DESC=			3rd party postgresql module
@@ -609,8 +611,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-let-module-${GIT_LET_VERSION:S
 LIB_DEPENDS+=	luajit-5.1:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
-NGINX_LUA_VERSION=	0.8.1
-GIT_LUA_VERSION=	0-gc558c43
+NGINX_LUA_VERSION=	0.8.2
+GIT_LUA_VERSION=	0-g3915187
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/chaoslawful/lua-nginx-module/tarball/v${NGINX_LUA_VERSION}/:lua
 DISTFILES+=	chaoslawful-lua-nginx-module-v${NGINX_LUA_VERSION}-${GIT_LUA_VERSION}.tar.gz:lua
@@ -624,6 +626,18 @@ FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/memc-nginx-module/tarball/v${NGINX_MEMC_VERSION}/:memc
 DISTFILES+=	agentzh-memc-nginx-module-v${NGINX_MEMC_VERSION}-${GIT_MEMC_VERSION}.tar.gz:memc
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-memc-nginx-module-${GIT_MEMC_VERSION:S/^0-g//}
+.endif
+
+.if ${PORT_OPTIONS:MMODSECURITY}
+NGINX_MODSECURITY_VERSION=	2.7.4
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre \
+		apr-1:${PORTSDIR}/devel/apr1
+USE_APACHE=	22+
+USE_GNOME=	libxml2
+MASTER_SITES+=	http://www.modsecurity.org/tarball/${NGINX_MODSECURITY_VERSION}/:modsecurity
+DISTFILES+=	modsecurity-apache_${NGINX_MODSECURITY_VERSION}.tar.gz:modsecurity
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/modsecurity-apache_${NGINX_MODSECURITY_VERSION}/nginx/modsecurity
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nginx-modsecurity-config
 .endif
 
 .if ${PORT_OPTIONS:MNAXSI}
@@ -643,8 +657,8 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	3.0.19
-MASTER_SITES+=	RF/passenger/:passenger
+PASSENGER_VERSION=	4.0.8
+MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger-build-nginx.rb
@@ -691,8 +705,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
-NGINX_RTMP_VERSION=	0.9.18
-GIT_RTMP_VERSION=	0-gbce7ea3
+NGINX_RTMP_VERSION=	1.0.1
+GIT_RTMP_VERSION=	0-g421d9ff
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/tarball/v${NGINX_RTMP_VERSION}/:rtmp
 DISTFILES+=	arut-rtmp-nginx-module-v${NGINX_RTMP_VERSION}-${GIT_RTMP_VERSION}.tar.gz:rtmp
@@ -726,8 +740,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VER
 .endif
 
 .if ${PORT_OPTIONS:MSRCACHE}
-NGINX_SRCACHE_VERSION=	0.20
-GIT_SRCACHE_VERSION=	0-gfb4b659
+NGINX_SRCACHE_VERSION=	0.21
+GIT_SRCACHE_VERSION=	0-g996a76c
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/srcache-nginx-module/tarball/v${NGINX_SRCACHE_VERSION}/:srcache
 DISTFILES+=	agentzh-srcache-nginx-module-v${NGINX_SRCACHE_VERSION}-${GIT_SRCACHE_VERSION}.tar.gz:srcache
@@ -903,16 +917,20 @@ post-patch:
 		${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_VERSION:S/^0-g//}/config
 .endif
 .if ${PORT_OPTIONS:MPASSENGER}
-	@${REINPLACE_CMD} 's!-Wall!!g; \
-		s!#{PlatformInfo.debugging_cflags}!${CFLAGS}!g; \
-		s!-O2!!g; \
-		42s!true!false!' \
-		${WRKDIR}/passenger-${PASSENGER_VERSION}/build/config.rb
+	@${REINPLACE_CMD} \
+		'177,179s!true!false!' \
+		${WRKDIR}/passenger-${PASSENGER_VERSION}/build/basics.rb
 	@${REINPLACE_CMD} \
 		's!-I/usr/include/libev!!; \
 		s!-lev!!; \
-		s!-Iext/libev!!' \
+		s!-Iext/libev!!; \
+		s!-I/usr/include/libeio!!; \
+		s!-leio!!; \
+		s!-Iext/libeio!!' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/build/common_library.rb
+	@${REINPLACE_CMD} \
+		's!-lpthread!${PTHREAD_LIBS}!g' \
+		${WRKDIR}/passenger-${PASSENGER_VERSION}/lib/phusion_passenger/platform_info/cxx_portability.rb
 .endif
 .if ${PORT_OPTIONS:MPOSTGRES}
 	@${REINPLACE_CMD} \
@@ -951,6 +969,18 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKDIR}/calio-iconv-nginx-module-${GIT_ICONV_VERSION:S/^0-g//}/config
+.endif
+.if ${PORT_OPTIONS:MMODSECURITY}
+	@${REINPLACE_CMD} \
+		's!%%PREFIX%%!${LOCALBASE}!g' \
+		${WRKDIR}/modsecurity-apache_${NGINX_MODSECURITY_VERSION}/nginx/modsecurity/config
+.endif
+
+pre-configure:
+.if ${PORT_OPTIONS:MMODSECURITY}
+	( cd ${WRKDIR}/modsecurity-apache_${NGINX_MODSECURITY_VERSION} && \
+		CC="${CC}" ./${CONFIGURE_SCRIPT} --enable-standalone-module && \
+		${MAKE} )
 .endif
 
 do-build:
