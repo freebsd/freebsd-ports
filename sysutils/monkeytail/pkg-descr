@@ -6,4 +6,4 @@ pause in output over 3 seconds is detected.
 MonkeyTail is implemented a fairly simple wrapper script around standard tail,
 ssh, and sudo.
 
-WWW:	http://dollyfish.net.nz/projects/monkeytail
+WWW: http://dollyfish.net.nz/projects/monkeytail

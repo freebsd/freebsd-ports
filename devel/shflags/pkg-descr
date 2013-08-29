@@ -9,4 +9,4 @@ versions so the script writer can be confident that the script will work.
 
 shFlags is a port of the google-gflags C++/Python library.
 
-WWW:	http://code.google.com/p/shflags/
+WWW: http://code.google.com/p/shflags/
