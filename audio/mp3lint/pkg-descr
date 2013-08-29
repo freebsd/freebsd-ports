@@ -6,4 +6,4 @@ Formats checked are currently mp3, ogg, wav, flac, au, and m3u playlists.
 mp3lint is implemented as separate tools (perl modules), each of which
 implements a set of tests. There are a total of 32 different tests.
 
-WWW:	http://erislabs.net/ianb/projects/mp3lint/
+WWW: http://erislabs.net/ianb/projects/mp3lint/
