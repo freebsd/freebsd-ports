@@ -22,7 +22,9 @@ bin/diazorun
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/cssrules.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/cssrules.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/debug_resources/diazo-debug.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/debug_resources/diazo-iframe.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/debug_resources/diazo-debug.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/debug_resources/iframe.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/debug_resources/jquery-1.8.3.min.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/defaults.xsl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/diazo-debug.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/dummy.html
