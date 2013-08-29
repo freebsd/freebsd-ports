@@ -52,7 +52,7 @@ VMD_TARGET=		freebsd.opengl
 PLIST_SUB+=		VMD_ARCH=${VMD_ARCH}
 
 # Check for VMD sources
-.if !exists(${DISTDIR}/${VMD_DIST}) # && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${VMD_DIST})
 IGNORE= Because of licensing restrictions, you must fetch the source distribution manually.  Please access http://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD with a web browser.  You will be required to log in and register, but you can create an account on this page.  After registration and accepting the University of Illinois agreement, download the source file, ${VMD_DIST}.  Please place this file in ${DISTDIR}, and re-run make
 .endif
 

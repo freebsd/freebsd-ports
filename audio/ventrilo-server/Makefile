@@ -28,7 +28,7 @@ GROUPS=		${USERS}
 WRKSRC=	${WRKDIR}/ventsrv
 SUB_FILES=	pkg-message
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=	distfile can only be fetched if you accept the license. Go to http://www.ventrilo.com/dlprod.php?id=105 and put ${DISTFILES} into ${DISTDIR}
 .endif
 

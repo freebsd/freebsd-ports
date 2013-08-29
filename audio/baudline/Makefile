@@ -1,6 +1,5 @@
 # Created by: David Yeske <dyeske@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	baudline
 PORTVERSION=	1.08

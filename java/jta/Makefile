@@ -23,7 +23,7 @@ PORTDOCS=	${DISTNAME}.pdf javadocs
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
 .include <bsd.port.pre.mk>
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=		you must manually fetch the distribution from ${DOWNLOAD_URL} and place it in ${DISTDIR} then run make again
 .endif
 

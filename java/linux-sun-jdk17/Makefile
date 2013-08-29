@@ -1,4 +1,4 @@
-# Created by:	Greg Lewis <glewis@FreeBSD.org>
+# Created by: Greg Lewis <glewis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	jdk
@@ -41,7 +41,7 @@ BIN_DIRS=	bin jre/bin
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE?=You must manually fetch the J2SE SDK download for the Linux platform (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
@@ -56,7 +56,7 @@ DEMO_WRKSRC=	${WRKDIR}/jdk${JDK_INTERNAL_VERSION}_${DEMO_UPDATE_VERSION}
 DEMO_DISTNAME=	${DISTNAME}-demos
 DEMO_WRKSRC=	${WRKSRC}
 .endif
-.if !exists(${DISTDIR}/${DEMO_DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${DEMO_DISTNAME}${EXTRACT_SUFX})
 IGNORE?=You must manually fetch the J2SE demos and samples for the Linux platform (${DEMO_DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DEMO_DISTNAME}${EXTRACT_SUFX}

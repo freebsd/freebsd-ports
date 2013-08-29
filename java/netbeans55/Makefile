@@ -25,7 +25,7 @@ SUB_FILES=	pkg-install pkg-deinstall
 
 .include <bsd.port.pre.mk>
 
-#.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+#.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 #IGNORE=		you must manually fetch the source distribution (${DISTFILES}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 #.endif
 
