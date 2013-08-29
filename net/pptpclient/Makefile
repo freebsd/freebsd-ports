@@ -14,7 +14,7 @@ COMMENT=	PPTP client for establishing a VPN link with an NT server
 LICENSE=	GPLv2
 
 USES=		perl5
-MAKE_ARGS=	DEBUG=""
+MAKE_ARGS=	DEBUG="" CC="${CC}"
 
 MAN8=		pptp.8
 
