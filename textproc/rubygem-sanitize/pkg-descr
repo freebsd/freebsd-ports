@@ -8,5 +8,4 @@ and even certain URL protocols within attributes that contain URLs.
 Any HTML elements or attributes that you don't explicitly allow
 will be removed.
 
-Author: Ryan Grove
 WWW: http://wonko.com/post/sanitize

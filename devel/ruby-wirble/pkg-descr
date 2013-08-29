@@ -3,5 +3,4 @@ package.  Specifically, Wirble adds a saved history, a couple of useful
 shortcuts, and color to Irb.  Wirble also enables a Irb's built-in
 tab-completion and a simpler prompt.
 
-Author:	Paul Duncan <pabs@pablotron.org>
 WWW: http://pablotron.org/software/wirble/

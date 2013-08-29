@@ -4,4 +4,3 @@ This library, developed after java.util.Properties class of Java
 Language, provides simple properties scheme for application
 configurations, resources, locale data, etc.
 
-Author:	Hiroshi IGARASHI <igarashi@ueda.info.waseda.ac.jp>

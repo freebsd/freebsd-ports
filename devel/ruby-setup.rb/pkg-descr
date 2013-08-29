@@ -1,5 +1,4 @@
 Setup.rb is a common installer script for ruby packages.  It can
 handle multiple binaries, libraries, extensions etc. in one archive.
 
-Author:	Minero Aoki <aamine@loveruby.net>
 WWW: http://www.loveruby.net/en/setup.html

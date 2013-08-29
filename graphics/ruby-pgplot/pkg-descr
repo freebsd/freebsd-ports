@@ -1,5 +1,4 @@
 This is a Ruby interface to PGPLOT graphics library, which generates
 X-Y plot, contour/image/vector maps, etc. .
 
-Author: Masahiro TANAKA <masa@ir.isas.ac.jp>
 WWW: http://pgplot.rubyforge.org/

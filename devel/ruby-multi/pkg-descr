@@ -3,5 +3,4 @@ and pattern matching in Ruby method definitions, choosing different
 method bodies depending on the types and values of the parameters
 the method is invoked with.
 
-Author:	Topher Cyll <christophercyll@gmail.com>
 WWW: http://multi.rubyforge.org/

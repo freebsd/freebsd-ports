@@ -1,7 +1,3 @@
 rskkserv is an alternative implementation of skkserv written in Ruby.
 
-
-Author:	Shugo Maeda <shugo@ruby-lang.org>,
-	YAMASHITA Junji <ysjj@unixuser.org> (current maintainer)
-
 WWW: http://www.ruby-lang.org/raa/list.rhtml?name=rskkserv

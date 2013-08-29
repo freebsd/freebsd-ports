@@ -2,5 +2,4 @@ Mp3Tag is a ruby module that handles ID3v1.1 tags in MP3 files.  It
 can read ID3v1.0 and ID3v1.1 but only write ID3v1.1 tags.  It can save
 new tags and remove tags.
 
-Author:	Lars Christensen <dsl8950@vip.cybercity.dk>
 WWW: http://users.cybercity.dk/~dsl8950/ruby/mp3tag.html

@@ -2,5 +2,4 @@ Gem Finder is a simple class browser (built with Ruby/Tk) for Ruby
 modules/programs.  It allows a user to view the superclass,
 subclasses, included modules and methods of any class in the system.
 
-Author:	Jim Weirich <jweirich@one.net>
 WWW: http://onestepback.org/packages/gemfinder/

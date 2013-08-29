@@ -6,5 +6,4 @@ in network-accessable memory space, and is used behind several
 high-traffic dynamic web sites like LiveJournal, Slashdot, WikiPedia,
 and others.
 
-Author:	Michael Granger <ged-raa@FaerieMUD.org>
 WWW: http://www.deveiate.org/code/Ruby-MemCache.html

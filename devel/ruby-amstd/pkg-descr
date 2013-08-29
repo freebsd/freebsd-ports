@@ -14,5 +14,4 @@ getdep.rb: gets file dependency		to_s.rb: _name2str, _type2str
 inst.rb: helps installation		version.rb: VersionNumber class
 must.rb: must/must_have/must_be methods
 
-Author:	Minero Aoki <aamine@loveruby.net>
 WWW: http://www.loveruby.net/en/amstd.html
