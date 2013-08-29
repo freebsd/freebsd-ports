@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sms1xxx-kmod
-# Date created:				10 February 2010
-# Whom:					Ganael Laplanche <ganael.laplanche@martymac.org>
-#
+# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sms1xxx
 PORTVERSION=	20120113
@@ -110,11 +106,15 @@ DISTFILE_INSTRUCTIONS+=	\
 PLIST_SUB+=	PL_NOVA="@comment "
 .endif
 
-pre-fetch:
 .if defined(DISTFILE_INSTRUCTIONS)
+.if defined(PACKAGE_BUILDING)
+IGNORE=	requires manual fetch
+.else
+pre-fetch:
 	@${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
 	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
 	@exit 1
+.endif
 .endif
 
 post-patch:
