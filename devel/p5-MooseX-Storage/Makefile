@@ -10,13 +10,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Serialization framework for Moose classes
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	p5-JSON-Any>=1.15:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-Moose>=0.99:${PORTSDIR}/devel/p5-Moose \
 		p5-String-RewritePrefix>=0.004:${PORTSDIR}/textproc/p5-String-RewritePrefix
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		p5-Module-Build-Tiny>=0.026:${PORTSDIR}/devel/p5-Module-Build-Tiny
-TEST_DEPENDS=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA \
-		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
+TEST_DEPENDS=	p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-JSON>=0.06:${PORTSDIR}/devel/p5-Test-JSON \
