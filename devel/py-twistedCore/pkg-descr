@@ -14,4 +14,4 @@ Twisted projects.
     * twisted.spread, a network transport, serializer and object broker;
     * twisted.trial, a unit-testing framework; and
 
-WWW:	http://twistedmatrix.com/
+WWW: http://twistedmatrix.com/
