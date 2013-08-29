@@ -21,6 +21,7 @@ VERY IMPORTANT NOTE
 The Mailman port has a number of build time options.  Getting the values of
 some of these right is CRUCIAL if you want your Mailman installation to work!
 
+
 1) General post-installation instructions
 
    You should find two files named "INSTALL" and "README" in the same
@@ -37,7 +38,7 @@ some of these right is CRUCIAL if you want your Mailman installation to work!
    Mailman port works well with either Apache 1.3.x or Apache 2.x as
    installed from their respective ports (www/apache13 and www/apache2).
 
-   If you're using Apache, you need to add at least two lines to your
+   If you are using Apache, you need to add at least two lines to your
    httpd.conf.  Assuming that you installed the Mailman port in the default
    location (/usr/local/mailman), they are:
 
@@ -86,10 +87,6 @@ some of these right is CRUCIAL if you want your Mailman installation to work!
        exim_user = mailnull
        exim_group = mail
 
-     For Exim 3.x, the value of MAIL_GID has to be set to 'nobody' (or 65534)
-     when building the Mailman port, so you have to choose EXIM3 on build options
-     to set it to you.
-
      For Exim 4.x, the value of MAIL_GID has to be set to 'mail' (or 6) when
      building the Mailman port, so you have to choose EXIM4 on build options to
      set it to you.
@@ -117,8 +114,8 @@ some of these right is CRUCIAL if you want your Mailman installation to work!
        # /usr/local/etc/rc.d/mailman start
 
      Troubleshooting:  If you ever see an error message such as the following
-     in your Exim's mainlog, it's a sure sign that Exim and Mailman disagree
-     about the GID under which mail is delivered:
+     in your Exim's mainlog, that is a sure sign that Exim and Mailman
+     disagree about the GID under which mail is delivered:
 
        ** testlist@your.host.com R=mailman_router T=mailman_transport:
        Child process of mailman_transport transport returned 2 from command:
@@ -152,10 +149,11 @@ some of these right is CRUCIAL if you want your Mailman installation to work!
      Mailman port with Qmail.  Please submit any such information to the
      maintainer of the Mailman port.
 
+
 4) Apache configuration
 
-    You should add the follow lines in you httpd.conf to mailman interface
-    works correctly:
+    You should add the follow lines to your httpd.conf so
+    that the mailman interface works correctly:
 
       <Directory "/usr/local/mailman">
         Options FollowSymLinks ExecCGI
@@ -169,4 +167,4 @@ some of these right is CRUCIAL if you want your Mailman installation to work!
      # apachectl restart.
 
 -- Jean Milanez Melo <jmelo@FreeBSD.org>
-   (Mailman port maintainer)
+   (former Mailman port maintainer)
