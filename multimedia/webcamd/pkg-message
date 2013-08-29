@@ -10,7 +10,11 @@ or adding
 
 to your /boot/loader.conf.
 
-2) Please restart devd as the configuration changed
+2) add webcamd_enable="YES"
+
+to your /etc/rc.conf
+
+3) Please restart devd as the configuration changed
 
 	# service devd restart
 
