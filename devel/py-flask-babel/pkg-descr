@@ -1,6 +1,3 @@
-sk-Babel is an extension to Flask that adds i18n and l10n support to any Flask 
-application.
-It has builtin support for date formatting with timezone support as well as a 
-very simple and friendly interface to gettext translations.
+Add i18n/l10n support to Flask applications with the help of the Babel library.
 
-WWW:    http://pypi.python.org/pypi/Flask-Babel
+WWW: http://pypi.python.org/pypi/Flask-Babel
