@@ -10,6 +10,14 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130426:
+AUTHOR: mva@FreeBSD.org
+
+  * USE_ICONV has been deprecated and converted into the iconv USE
+    feature
+
+    USES= iconv
+
 20130207:
 AUTHOR: gahr@FreeBSD.org
 
