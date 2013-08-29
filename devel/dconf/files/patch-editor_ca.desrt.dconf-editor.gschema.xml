@@ -1,0 +1,31 @@
+--- editor/ca.desrt.dconf-editor.gschema.xml.orig	2013-08-29 22:55:54.000000000 +0200
++++ editor/ca.desrt.dconf-editor.gschema.xml	2013-08-29 23:08:00.000000000 +0200
+@@ -1,20 +1,25 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <schemalist gettext-domain='dconf'>
+   <schema id="ca.desrt.dconf-editor.Settings" path="/ca/desrt/dconf-editor/">
+-    <key name="width" type="i">
++    <key name="window-width" type="i">
+       <default>800</default>
+       <summary>The width of the window</summary>
+       <description>The width of the main window in pixels.</description>
+     </key>
+-    <key name="height" type="i">
++    <key name="window-height" type="i">
+       <default>600</default>
+       <summary>The height of the window</summary>
+       <description>The height of the main window in pixels.</description>
+     </key>
+-    <key name="maximized" type="b">
++    <key name="window-is-maximized" type="b">
+       <default>false</default>
+       <summary>A flag to enable maximized mode</summary>
+       <description>A flag to enable maximized mode</description>
+     </key>
++    <key name="window-is-fullscreen" type="b">
++      <default>false</default>
++      <summary>A flag to enable fullscreen mode</summary>
++      <description>A flag to enable fullscreen mode</description>
++    </key>
+   </schema>
+ </schemalist>

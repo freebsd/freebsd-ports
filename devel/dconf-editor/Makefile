@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/devel/dconf-editor/Makefile 18422 2013-05-06 11:04:38Z kwm $
 
 PORTNAME=	dconf
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-editor
 
 COMMENT=	configuration editor for dconf
