@@ -88,7 +88,6 @@
     SUBDIR += bubblemon-dockapp
     SUBDIR += bubblemon2
     SUBDIR += bulk_extractor
-    SUBDIR += burn
     SUBDIR += busybox
     SUBDIR += busybox-unstable
     SUBDIR += byobu

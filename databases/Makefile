@@ -91,7 +91,6 @@
     SUBDIR += frontbase-jdbc
     SUBDIR += gadfly
     SUBDIR += gdbm
-    SUBDIR += gdl2
     SUBDIR += geoserver-mysql-plugin
     SUBDIR += gigabase
     SUBDIR += glom
@@ -206,7 +205,6 @@
     SUBDIR += my2cego
     SUBDIR += mydbf2mysql
     SUBDIR += mydumper
-    SUBDIR += mylibrary
     SUBDIR += mysac
     SUBDIR += mysql++1
     SUBDIR += mysql++3

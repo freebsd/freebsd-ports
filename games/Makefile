@@ -356,7 +356,6 @@
     SUBDIR += greed
     SUBDIR += gretools
     SUBDIR += grhino
-    SUBDIR += gridlock
     SUBDIR += gru
     SUBDIR += grubik
     SUBDIR += gshisen

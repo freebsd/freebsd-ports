@@ -3,7 +3,6 @@
 
     COMMENT = Biology
 
-    SUBDIR += adun
     SUBDIR += ariadne
     SUBDIR += artemis
     SUBDIR += avida

@@ -1299,8 +1299,6 @@
     SUBDIR += oaf
     SUBDIR += obby
     SUBDIR += obfuscatejs
-    SUBDIR += objcunit
-    SUBDIR += objectivelib
     SUBDIR += ocaml-annexlib
     SUBDIR += ocaml-calendar
     SUBDIR += ocaml-camljava
@@ -3348,7 +3346,6 @@
     SUBDIR += prepstools
     SUBDIR += privman
     SUBDIR += projectcenter
-    SUBDIR += projectmanager
     SUBDIR += protobuf
     SUBDIR += protobuf-c
     SUBDIR += prototype
