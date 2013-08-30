@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nosefart
-# Date created:		11 October 2000
-# Whom:			sethk
-#
+# Created by: Seth Kingsley <sethk@osd.bsdi.com>
 # $FreeBSD$
-#
 
 PORTNAME=	nosefart
 PORTVERSION=	1.92f
@@ -13,15 +9,17 @@ MASTER_SITES=	SF/${PORTNAME}/OldFiles
 DISTNAME=	${PORTNAME}-${PORTVERSION}-mls
 
 MAINTAINER=	sethk@meowfishies.com
-COMMENT=	A player for NES Sound Format (NSF)
+COMMENT=	Player for NES Sound Format (NSF)
 
-USE_GMAKE=	yes
+LICENSE=	GPLv2
 
-MAKE_ENV=	INSTALL="${INSTALL}" COPY="${COPY}" STRIP="${STRIP}"\
+USES=		gmake
+MAKE_ENV=	INSTALL="${INSTALL}" COPY="${COPY}" STRIP="${STRIP}" \
 		BINGRP="${BINGRP}" BINMODE="${BINMODE}" BINOWN="${BINOWN}"
+
 PLIST_FILES=	bin/nosefart
 
 pre-build:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} clean)
+	@${RM} -rf ${BUILD_WRKSRC}/nsfobj
 
-.include    <bsd.port.mk>
+.include <bsd.port.mk>
