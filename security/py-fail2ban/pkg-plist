@@ -29,6 +29,7 @@
 %%ETCDIR%%/fail2ban.conf
 %%ETCDIR%%/filter.d/apache-auth.conf
 %%ETCDIR%%/filter.d/apache-badbots.conf
+%%ETCDIR%%/filter.d/apache-common.conf
 %%ETCDIR%%/filter.d/apache-nohome.conf
 %%ETCDIR%%/filter.d/apache-noscript.conf
 %%ETCDIR%%/filter.d/apache-overflows.conf
