@@ -17,9 +17,8 @@ DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_EFL=	edje libtool_hack modarch_hack
-USE_GNOME=	pkgconfig
 
 .include <bsd.port.options.mk>
 

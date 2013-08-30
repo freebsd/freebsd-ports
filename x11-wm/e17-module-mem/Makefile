@@ -17,9 +17,8 @@ RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_EFL=	edje libtool_hack modarch_hack
-USE_GNOME=	pkgconfig
 
 .include <bsd.port.options.mk>
 
