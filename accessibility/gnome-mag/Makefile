@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gnomemag
-# Date created:			12 April 2003
-# Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/accessibility/gnome-mag/Makefile,v 1.54 2010/10/31 11:01:52 kwm Exp $
-#
 
 PORTNAME=	gnome-mag
 PORTVERSION=	0.16.3
@@ -19,8 +15,7 @@ COMMENT=	GNOME screen magnifier
 USE_BZIP2=	yes
 USE_XORG=	xfixes xdamage ice xcomposite sm
 USE_GNOME=	gnomehack gnomeprefix atspi libbonobo intlhack ltverhack
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gmake gettext
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

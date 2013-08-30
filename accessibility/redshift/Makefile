@@ -1,9 +1,5 @@
-# New ports collection makefile for:   redshift
-# Date created:        Wed Nov 24 12:35:17 CST 2010
-# Whom:                Mark Felder <feld@FreeBSD.org>
-#
+# Created by: Mark Felder <feld@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	redshift
 PORTVERSION=	1.7
@@ -15,7 +11,7 @@ MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Adjusts the color temperature of your screen
 
 FETCH_ARGS=	"-pRr"
-USE_GMAKE=	yes
+USES=		gmake
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

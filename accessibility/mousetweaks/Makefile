@@ -1,10 +1,6 @@
-# Ports collection makefile for:	mousetweaks
-# Date created:			2008 01 10
-# Whom:				Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/accessibility/mousetweaks/Makefile,v 1.53 2010/11/15 21:25:36 kwm Exp $
-#
 
 PORTNAME=	mousetweaks
 PORTVERSION=	2.32.1
@@ -19,8 +15,7 @@ COMMENT=	Mouse accessibility enhancements for the GNOME desktop
 USE_XORG=	x11 xfixes xcursor xtst
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomepanel intlhack
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gmake gettext
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

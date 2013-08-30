@@ -12,9 +12,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME text-to-speech API
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix libbonobo
-USES=		pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static

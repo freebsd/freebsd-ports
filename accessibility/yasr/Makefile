@@ -12,8 +12,8 @@ COMMENT=	General-purpose console screen reader
 
 LICENSE=	LGPL20
 
+USES=		gmake
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 MAN1=		yasr.1
 PORTDOCS=	AUTHORS BUGS CREDITS ChangeLog NEWS README TODO \
 		README-br README-de README-es README-fr README-ru

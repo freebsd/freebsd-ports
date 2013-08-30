@@ -1,9 +1,5 @@
-# Ports collection makefile for: 	eflite
-# Date created:				Thu Jul 21 2005
-# Whom:					David K. Gerry
-#
+# Created by: David K. Gerry
 # $FreeBSD$
-#
 
 PORTNAME=	eflite
 PORTVERSION=	0.4.1
@@ -16,8 +12,8 @@ COMMENT=	Speech server for Festival Lite used by yasr and Emacspeak
 BUILD_DEPENDS=	flite:${PORTSDIR}/audio/flite
 RUN_DEPENDS=	flite:${PORTSDIR}/audio/flite
 
+USES=		gmake
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 ALL_TARGET=	eflite
 
 CONFIGURE_ARGS+=	--with-audio=freebsd
