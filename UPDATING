@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+
+20130830:
+  AFFECTS: users of mail/meta1
+  AUTHOR: dinoex@FreeBSD.org
+
+  The on disk format has changed.
+  Please make sure the queue is empty before you update.
+
 20130817:
   AFFECTS: users of lang/python*
   AUTHOR: mva@FreeBSD.org
