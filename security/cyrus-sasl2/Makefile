@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LATEST_LINK=	${PORTNAME}2
 
-
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
@@ -53,6 +52,8 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-rc4=openssl \
 		--with-saslauthd=${SASLAUTHD_RUNPATH} \
 		--disable-krb4
+
+MAKE_JOBS_UNSAFE=	yes
 
 NO_OPTIONS_SORT=	yes
 OPTIONS_DEFINE=		ALWAYSTRUE AUTHDAEMOND KEEP_DB_OPEN \
