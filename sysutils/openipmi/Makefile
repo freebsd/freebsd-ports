@@ -13,10 +13,9 @@ COMMENT=	Complex IPMI management software
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	pkgconfig
 USE_AUTOTOOLS=	autoconf autoheader automake aclocal libtool
 
 AUTOMAKE_ARGS+=	--add-missing --copy --foreign

@@ -14,9 +14,8 @@ COMMENT=	Network UPS Tools
 
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	pkgconfig
+USES=		gmake pkgconfig
 
 NUT_USER?=	uucp
 NUT_GROUP?=	uucp
