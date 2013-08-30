@@ -2,7 +2,10 @@ bin/scamper
 bin/sc_ally
 bin/sc_analysis_dump
 bin/sc_attach
+bin/sc_ipiddump
+bin/sc_speedtrap
 bin/sc_tracediff
+bin/sc_warts2json
 bin/sc_warts2pcap
 bin/sc_warts2text
 bin/sc_wartscat
