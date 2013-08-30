@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/3.99
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Fast MP3 encoder kit
 
-USES=		gamke iconv
+USES=		gmake iconv
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
