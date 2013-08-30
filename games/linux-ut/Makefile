@@ -6,7 +6,7 @@ PORTVERSION=	${UTVERSION}
 PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	games linux
-MASTER_SITES=	http://liflg.holarse.net/files/final/:p436 \
+MASTER_SITES=	http://liflg.holarse-linuxgaming.de/files/final/:p436 \
 		http://www.utpg.org/patches/:p451
 DISTFILES=	${PATCH436FILES} \
 		${PATCH451FILES}
@@ -14,8 +14,6 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Unreal Tournament for Linux
-
-BROKEN=		fails to fetch
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
