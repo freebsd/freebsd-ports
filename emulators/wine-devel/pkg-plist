@@ -120,6 +120,7 @@ include/wine/windows/bitsmsg.h
 include/wine/windows/cderr.h
 include/wine/windows/cfgmgr32.h
 include/wine/windows/cguid.h
+include/wine/windows/chprst.idl
 include/wine/windows/cierror.h
 include/wine/windows/clusapi.h
 include/wine/windows/cmdbas.idl
@@ -338,6 +339,8 @@ include/wine/windows/inaddr.h
 include/wine/windows/indexsrv.h
 include/wine/windows/indexsrv.idl
 include/wine/windows/initguid.h
+include/wine/windows/inputscope.h
+include/wine/windows/inputscope.idl
 include/wine/windows/intshcut.h
 include/wine/windows/ipexport.h
 include/wine/windows/iphlpapi.h
@@ -643,6 +646,8 @@ include/wine/windows/vsstyle.h
 include/wine/windows/vssym32.h
 include/wine/windows/wbemcli.h
 include/wine/windows/wbemcli.idl
+include/wine/windows/wbemdisp.h
+include/wine/windows/wbemdisp.idl
 include/wine/windows/wbemprov.h
 include/wine/windows/wbemprov.idl
 include/wine/windows/werapi.h
@@ -799,6 +804,7 @@ lib/wine/comm.drv16.so
 lib/wine/commdlg.dll16.so
 lib/wine/compobj.dll16.so
 lib/wine/compstui.dll.so
+lib/wine/comsvcs.dll.so
 lib/wine/conhost.exe.so
 lib/wine/control.exe.so
 lib/wine/credui.dll.so
@@ -959,6 +965,7 @@ lib/wine/fakedlls/comm.drv16
 lib/wine/fakedlls/commdlg.dll16
 lib/wine/fakedlls/compobj.dll16
 lib/wine/fakedlls/compstui.dll
+lib/wine/fakedlls/comsvcs.dll
 lib/wine/fakedlls/conhost.exe
 lib/wine/fakedlls/control.exe
 lib/wine/fakedlls/credui.dll
@@ -1323,6 +1330,7 @@ lib/wine/fakedlls/system.drv16
 lib/wine/fakedlls/t2embed.dll
 lib/wine/fakedlls/tapi32.dll
 lib/wine/fakedlls/taskkill.exe
+lib/wine/fakedlls/tasklist.exe
 lib/wine/fakedlls/taskmgr.exe
 lib/wine/fakedlls/termsv.exe
 lib/wine/fakedlls/toolhelp.dll16
@@ -1358,6 +1366,7 @@ lib/wine/fakedlls/vtdapi.vxd
 lib/wine/fakedlls/vwin32.vxd
 lib/wine/fakedlls/w32skrnl.dll
 lib/wine/fakedlls/w32sys.dll16
+lib/wine/fakedlls/wbemdisp.dll
 lib/wine/fakedlls/wbemprox.dll
 lib/wine/fakedlls/webservices.dll
 lib/wine/fakedlls/wer.dll
@@ -1500,6 +1509,7 @@ lib/wine/libclusapi.def
 lib/wine/libcomctl32.def
 lib/wine/libcomdlg32.def
 lib/wine/libcompstui.def
+lib/wine/libcomsvcs.def
 lib/wine/libcredui.def
 lib/wine/libcrtdll.def
 lib/wine/libcrypt32.def
@@ -1856,6 +1866,7 @@ lib/wine/system.drv16.so
 lib/wine/t2embed.dll.so
 lib/wine/tapi32.dll.so
 lib/wine/taskkill.exe.so
+lib/wine/tasklist.exe.so
 lib/wine/taskmgr.exe.so
 lib/wine/termsv.exe.so
 lib/wine/toolhelp.dll16.so
@@ -1891,6 +1902,7 @@ lib/wine/vtdapi.vxd.so
 lib/wine/vwin32.vxd.so
 lib/wine/w32skrnl.dll.so
 lib/wine/w32sys.dll16.so
+lib/wine/wbemdisp.dll.so
 lib/wine/wbemprox.dll.so
 lib/wine/webservices.dll.so
 lib/wine/wer.dll.so
