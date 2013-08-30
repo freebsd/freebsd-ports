@@ -23,7 +23,7 @@ ACLOCAL_ARGS=	-I config
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ARGS=	PYTHON=""
 
-PLIST_SUB=	PYVER=${_PYTHON_VERSION:S/./_/}
+PLIST_SUB=	PYVER=${PYTHON_VER:S/./_/}
 
 post-configure:
 	@${INSTALL_SCRIPT} ${AUTOMAKE_DIR}/py-compile ${WRKSRC}/config
