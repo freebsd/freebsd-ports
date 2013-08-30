@@ -12,7 +12,7 @@ COMMENT=	Helper library for Roadnav (3D GPS mapping program)
 
 USE_WX=		2.6+
 WX_COMPS=	wx contrib
-USE_GMAKE=	yes
+USES=		gmake
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-prefix=${LOCALBASE} --with-wx-config=${WX_CONFIG}

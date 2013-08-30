@@ -13,7 +13,7 @@ COMMENT=	Dockapp that displays the Solar System viewed from the top
 PLIST_FILES=	bin/wmSolar
 WRKSRC=		${WRKDIR}/wmSolar
 USE_XORG=	x11 xext xpm
-USE_GMAKE=	yes
+USES=		gmake
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|values.h|float.h|; s|MAXDOUBLE|DBL_MAX|g' \

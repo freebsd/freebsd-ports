@@ -8,7 +8,7 @@ CATEGORIES=	astro geography
 MASTER_SITES=	http://www.foxtrotgps.org/releases/
 
 MAINTAINER=	crwhipp@gmail.com
-COMMENT=	A lightweight opensource gps moving map application
+COMMENT=	Lightweight opensource gps moving map application
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		exif:${PORTSDIR}/graphics/libexif \
@@ -16,19 +16,17 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		gps:${PORTSDIR}/astro/gpsd
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig shebangfix
+SHEBANG_FILES=	contrib/convert2gpx \
+		contrib/convert2osm \
+		contrib/georss2foxtrotgps-poi
 
-USE_GNOME=	gtk20 gconf2 libxml2 intltool pkgconfig libglade2
+USE_GNOME=	gtk20 gconf2 libxml2 intltool libglade2
 USE_SQLITE=	3
 INSTALLS_ICONS=	yes
 
 GCONF_SCHEMAS=	apps_foxtrotgps.schemas
 
 MAN1=	foxtrotgps.1 convert2gpx.1 convert2osm.1
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/contrib/convert2gpx ${WRKSRC}/contrib/convert2osm
-	@${REINPLACE_CMD} -e 's|/usr/bin/python|${LOCALBASE}/bin/python|' ${WRKSRC}/contrib/georss2foxtrotgps-poi
 
 .include <bsd.port.mk>

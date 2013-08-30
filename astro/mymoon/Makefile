@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mymoon
-# Date created:				24 May 2003
-# Whom:					Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mymoon
 DISTVERSION=	1.2a
@@ -21,7 +17,7 @@ LIB_DEPENDS=	nova:${PORTSDIR}/astro/libnova
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

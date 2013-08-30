@@ -1,9 +1,5 @@
-# New ports collection makefile for:   xglobe
-# Date created:        20 January 1998
-# Whom:                Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xglobe
 PORTVERSION=	0.5
@@ -15,8 +11,8 @@ MASTER_SITE_SUBDIR=kris
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays a view of the Earth (like xearth) with a rendered photo map
 
+USES=		gmake
 USE_QT4=	corelib gui qt3support moc_build
-USE_GMAKE=	yes
 MAKE_ENV=	QT_PREFIX=${QT_PREFIX}
 
 do-install:

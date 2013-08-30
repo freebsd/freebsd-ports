@@ -1,9 +1,5 @@
-# New ports collection makefile for:    astrometry
-# Date created:                         7 July 2009
-# Whom:                                 Dereckson <dereckson@gmail.com>
-#
+# Created by: Dereckson <dereckson@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	astrometry
 PORTVERSION=	0.34
@@ -22,8 +18,8 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
 
+USES=		gmake
 USE_PYTHON=	2.5+
-USE_GMAKE=	yes
 ALL_TARGET=	all extra
 MAKE_ENV=	INSTALL_DIR=${PREFIX}/astrometry
 MAKE_JOBS_UNSAFE=	yes
