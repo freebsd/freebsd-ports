@@ -60,7 +60,6 @@
 : ${ac_cv_header_pwd_h=yes}
 : ${ac_cv_header_readpassphrase_h=yes}
 : ${ac_cv_header_resolv_h=yes}
-: ${ac_cv_header_resolv_h=yes}
 : ${ac_cv_header_rpc_types_h=yes}
 : ${ac_cv_header_sched_h=yes}
 : ${ac_cv_header_search_h=yes}
@@ -84,6 +83,7 @@
 : ${ac_cv_header_sys_ioctl_h=yes}
 : ${ac_cv_header_sys_mman_h=yes}
 : ${ac_cv_header_sys_mount_h=yes}
+: ${ac_cv_header_sys_msg_h=yes}
 : ${ac_cv_header_sys_param_h=yes}
 : ${ac_cv_header_sys_poll_h=yes}
 : ${ac_cv_header_sys_ptrace_h=yes}
@@ -185,6 +185,7 @@
 : ${ac_cv_type_u_long=yes}
 : ${ac_cv_type_u_short=yes}
 : ${ac_cv_type_uid_t=yes}
+: ${ac_cv_type_uintptr_t=yes}
 : ${ac_cv_type_unsigned_char=yes}
 : ${ac_cv_type_unsigned_int=yes}
 : ${ac_cv_type_unsigned_long=yes}
@@ -307,6 +308,7 @@
 : ${ac_cv_func_getpgid=yes}
 : ${ac_cv_func_getpgrp=yes}
 : ${ac_cv_func_getpgrp_void=yes}
+: ${ac_cv_func_getpid=yes}
 : ${ac_cv_func_getrlimit=yes}
 : ${ac_cv_func_getrusage=yes}
 : ${ac_cv_func_gettimeofday=yes}
@@ -377,6 +379,7 @@
 : ${ac_cv_func_putenv=yes}
 : ${ac_cv_func_pwrite=yes}
 : ${ac_cv_func_raise=yes}
+: ${ac_cv_func_rand=yes}
 : ${ac_cv_func_random=yes}
 : ${ac_cv_func_readdir=yes}
 : ${ac_cv_func_readlink=yes}
@@ -416,6 +419,7 @@
 : ${ac_cv_func_sleep=yes}
 : ${ac_cv_func_snprintf=yes}
 : ${ac_cv_func_socketpair=yes}
+: ${ac_cv_func_srand=yes}
 : ${ac_cv_func_srandom=yes}
 : ${ac_cv_func_stat=yes}
 : ${ac_cv_func_statfs=yes}
