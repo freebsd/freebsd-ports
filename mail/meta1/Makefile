@@ -1,16 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	meta1
-PORTVERSION=	1.0.0a.14.0
-DISTVERSION=	1.0.Alpha14.0
+PORTVERSION=	1.0.0a.15.0
+DISTVERSION=	1.0.Alpha15.0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.MeTA1.org/download/.alpha/mrain/
+MASTER_SITES=	http://www.MeTA1.org/download/.alpha/endoft/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${BERKELEYDB_SUFFIX}${PMILTER_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Secure and efficient mail gateway
 
 NOT_FOR_ARCHS=	ia64
+MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	smx-*
 
 .if !defined(SENDMAIL_WITHOUT_SHMEM) && !defined(BUILDING_INDEX)
