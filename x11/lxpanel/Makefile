@@ -4,7 +4,7 @@
 PORTNAME=	lxpanel
 PORTVERSION=	0.6.0
 CATEGORIES=	x11
-MASTER_SITES=	SF/lxde/LXPanel%20%28desktop%20panel%29/LXPanel%20${PORTVERSION}/
+MASTER_SITES=	SF/lxde/LXPanel%20%28desktop%20panel%29/LXPanel%20${PORTVERSION}%20(pre-release)/
 
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Lightweight X11 desktop panel
