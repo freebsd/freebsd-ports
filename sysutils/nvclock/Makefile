@@ -13,7 +13,7 @@ COMMENT=	NVidia graphic card status and overclocking tool
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/nvclock bin/smartdimmer
@@ -30,7 +30,7 @@ X11_DESC=	Build GUI program (requires GTK+ 2.x)
 
 .if ${PORT_OPTIONS:MNVCONTROL}
 USE_XORG=	xext
-USE_GNOME=	pkgconfig
+USES+=		pkgconfig
 .else
 CONFIGURE_ARGS+=	--disable-nvcontrol
 .endif

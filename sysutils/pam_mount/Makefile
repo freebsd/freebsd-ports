@@ -11,8 +11,8 @@ COMMENT=	A PAM that can mount volumes for a user session
 
 LIB_DEPENDS=	HX:${PORTSDIR}/lang/libhx
 
-USE_GNOME=	pkgconfig libxml2
-USE_PERL5=	yes
+USES=		pkgconfig perl5
+USE_GNOME=	libxml2
 USE_XZ=		yes
 
 GNU_CONFIGURE=	yes

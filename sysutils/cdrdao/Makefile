@@ -1,9 +1,5 @@
-# New ports collection makefile for:    cdrdao
-# Date created:         7 April 1999
-# Whom:                 futatuki
-#
+# Created by: futatuki
 # $FreeBSD$
-#
 
 PORTNAME?=	cdrdao
 PORTVERSION=	1.2.3
@@ -17,7 +13,7 @@ MAINTAINER=	marius@FreeBSD.org
 COMMENT?=	Record CD-R[W]s in disk-at-once mode
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 MP3OGG_LIB_DEPENDS=	ao.4:${PORTSDIR}/audio/libao \
@@ -25,7 +21,8 @@ MP3OGG_LIB_DEPENDS=	ao.4:${PORTSDIR}/audio/libao \
 			vorbis.4:${PORTSDIR}/audio/libvorbis
 
 .if ${PORTNAME} == "gcdmaster"
-USE_GNOME=		gnomehier pkgconfig
+USES+=			pkgconfig
+USE_GNOME=		gnomehier
 GCONF_SCHEMAS=		gcdmaster.schemas
 LIB_DEPENDS+=		${MP3OGG_LIB_DEPENDS} \
 			gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26
@@ -46,7 +43,7 @@ CONFIGURE_ARGS+=	--with-lame=no
 PLIST_SUB+=		TOC2MP3="@comment "
 .endif
 .if !defined(WITHOUT_MP3OGG)
-USE_GNOME=		pkgconfig
+USES+=			pkgconfig
 LIB_DEPENDS+=		${MP3OGG_LIB_DEPENDS}
 CONFIGURE_ENV+=		AO_CFLAGS=-I${LOCALBASE}/include \
 			AO_LIBS="-L${LOCALBASE}/lib -lao" \

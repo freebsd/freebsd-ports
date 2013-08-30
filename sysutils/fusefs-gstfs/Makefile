@@ -11,8 +11,7 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	On-demand, transcoding filesystem (using GStreamer pipeline)
 
-USES=		fuse
-USE_GNOME=	pkgconfig
+USES=		fuse pkgconfig
 USE_GSTREAMER=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
