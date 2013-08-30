@@ -1,18 +1,11 @@
 #!/bin/sh
 
-MKDIR=/bin/mkdir
-CHOWN=/usr/sbin/chown
-CHMOD=/bin/chmod
-
+INSTALL=/usr/bin/install
 AOXGROUP=aox
 AOXUSER=aox
 
 if [ "$2" = POST-INSTALL ]; then
-	for i in /var/db/aox/jail /var/db/aox/messages; do
-		${MKDIR} -m 700 -p ${i}
-	done
-	${CHOWN} root:wheel /var/db/aox/jail
-	${CHMOD} 700 /var/db/aox
-	${MKDIR} /var/run/aox
-	${CHOWN} ${AOXUSER}:${AOXGROUP} /var/db/aox /var/run/aox /var/db/aox/messages
+	${INSTALL} -d -o root -g wheel -m 700 /var/db/aox/jail
+	${INSTALL} -d -o ${AOXUSER} -g ${AOXGROUP} /var/db/aox/messages
+	${INSTALL} -d -o ${AOXUSER} -g ${AOXGROUP} /var/run/aox
 fi
