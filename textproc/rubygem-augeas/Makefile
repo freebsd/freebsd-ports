@@ -13,7 +13,8 @@ LIB_DEPENDS=	augeas:${PORTSDIR}/textproc/augeas
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-USE_GNOME=	pkgconfig libxml2
+USES=		pkgconfig
+USE_GNOME=	libxml2
 RUBYGEM_AUTOPLIST=	yes
 CONFIGURE_ARGS+=	--with-opt-include="${LOCALBASE}/include/libxml2"
 

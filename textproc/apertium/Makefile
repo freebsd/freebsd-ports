@@ -1,9 +1,5 @@
-# New ports collection makefile for:  apertium
-# Date created:                14 April 2009
-# Whom:                        Mykola Dzham <freebsd@levsha.org.ua>
-#
+# Created by: Mykola Dzham <freebsd@levsha.org.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	apertium
 PORTVERSION=	${APVER}.${APREV}
@@ -29,7 +25,7 @@ MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GNOME=	gnomehack pkgconfig
+USES=		pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 PLIST_SUB+=	APVER="${APVER}"

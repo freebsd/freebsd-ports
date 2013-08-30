@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	libxml++
-# Date created:			Feb 26, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libxml++
 PORTVERSION=	1.0.5
@@ -16,7 +11,8 @@ MAINTAINER=	bland@FreeBSD.org
 COMMENT=	XML API for C++
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack libxml2 pkgconfig
+USES=		pathfix pkgconfig
+USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

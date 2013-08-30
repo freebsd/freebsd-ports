@@ -16,10 +16,10 @@ LIB_DEPENDS=	ibus-1.0:${PORTSDIR}/textproc/ibus
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
 USE_PYTHON=	yes
-USE_GNOME=	pkgconfig pygtk2
+USE_GNOME=	pygtk2
+USES=		gmake pkgconfig
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 PROJECTHOST=	ibus
 
