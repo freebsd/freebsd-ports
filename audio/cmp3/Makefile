@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cmp3
-# Date created:		10 April 1999
-# Whom:			Chris Piazza <cpiazza@FreeBSD.org>
-#
+# Created by: Chris Piazza <cpiazza@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cmp3
 PORTVERSION=	2.0.p6
@@ -21,7 +17,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-kenrevs
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README sample.cmp3rc

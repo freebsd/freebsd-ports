@@ -18,12 +18,11 @@ LIB_DEPENDS=	plist:${PORTSDIR}/devel/libplist \
 
 USE_GNOME=	gtk20
 USE_SQLITE=	3
-USES=		gettext
+USES=		gettext gmake
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-udev --without-hal \
 		--with-html-dir="${DOCSDIR:H}"
-USE_GMAKE=	yes
 USE_CSTD=	gnu89
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -13,7 +13,7 @@ COMMENT=	Surround/Echo effect plugin for XMMS
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_GNOME=	gtk12
 
 PLIST_FILES=	lib/xmms/Effect/libfxt.la \

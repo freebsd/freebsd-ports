@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libamrnb
-# Date created:	30 May 2007
-# Whom:		Tatsuki Makino <tatsuki_makino@hotmail.com>
-#
+# Created by: Tatsuki Makino <tatsuki_makino@hotmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libamrnb
 PORTVERSION=	10.0.0.0
@@ -26,7 +22,7 @@ LICENSE_DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 RESTRICTED=	license prohibits redistribution
 RESTRICTED_FILES=	${SRC3GPP}
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	libtool
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README TODO readme.txt
 SUB_FILES=	pkg-message

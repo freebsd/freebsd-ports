@@ -15,8 +15,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	xmmsclient.6:${PORTSDIR}/audio/xmms2 \
 		curl:${PORTSDIR}/ftp/curl
 
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 LDFLAGS+=	${PTHREAD_LIBS}
 
 PLIST_FILES=	bin/xmms2-scrobbler

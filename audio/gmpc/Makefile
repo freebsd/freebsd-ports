@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gmpc
-# Date created:		May 12 2004
-# Whom:			Mark Reidel <ports@mark.reidel.info>
-#
+# Created by: Mark Reidel <ports@mark.reidel.info>
 # $FreeBSD$
-#
 
 PORTNAME=	gmpc
 PORTVERSION=	11.8.16
@@ -25,10 +21,9 @@ LIB_DEPENDS=	mpd.4:${PORTSDIR}/audio/libmpd \
 		unique-1.0:${PORTSDIR}/x11-toolkits/unique
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig glib20 gtk20 libglade2
+USE_GNOME=	glib20 gtk20 libglade2
 INSTALLS_ICONS=	yes
-USES=		gettext
+USES=		gettext gmake pathfix pkgconfig
 CONFIGURE_ARGS=	--enable-system-libsexy
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

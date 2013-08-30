@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XMMS-mp3cue
-# Date created:			12 February 2004
-# Whom:				Vaidas Zlotkus <r2@music.lt>
-#
+# Created by: Vaidas Zlotkus <r2@music.lt>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-mp3cue
 PORTVERSION=	0.94
@@ -18,7 +14,7 @@ COMMENT=	XMMS mp3cue adds cue file support to XMMS
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_SUB=	PORTDOCS=${DISTNAME}
 

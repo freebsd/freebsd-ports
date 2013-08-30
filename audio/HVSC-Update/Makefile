@@ -14,7 +14,7 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/-/_/}_Tool_${PORTVERSION:S/.//g}
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	HVSC_Update.txt SID_file_format.txt

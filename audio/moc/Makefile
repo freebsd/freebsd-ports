@@ -8,9 +8,9 @@ CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.daper.net/pub/soft/moc/stable/
 
 MAINTAINER=	rzinkov@gmail.com
-COMMENT=	A console audio player designed to be powerful and easy to use
+COMMENT=	Console audio player designed to be powerful and easy to use
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

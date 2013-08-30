@@ -16,8 +16,7 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		csound64.5:${PORTSDIR}/audio/csound
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_WX=		yes
 WX_CONF_ARGS=	absolute
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	faad
-# Date created:			8 January 2003
-# Whom:				Sean McGovern <sean@sfarc.net>
-#
+# Created by: Sean McGovern <sean@sfarc.net>
 # $FreeBSD$
-#
 
 PORTNAME=	faad2
 PORTVERSION=	2.7
@@ -15,9 +11,9 @@ MASTER_SITES=	SF/faac/${PORTNAME}-src/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG-2 and MPEG-4 AAC audio decoder
 
+USES=		gmake
 USE_BZIP2=	yes
 USE_DOS2UNIX=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing

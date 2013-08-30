@@ -1,7 +1,4 @@
-# New ports collection makefile for:	musica
-# Date created:        18 December 2007
-# Whom:                Pietro Cerutti <gahr@gahr.ch>
-#
+# Created by: Pietro Cerutti <gahr@gahr.ch>
 # $FreeBSD$
 
 PORTNAME=	musica
@@ -16,7 +13,7 @@ COMMENT=	GTK based midi player
 USE_GNOME=	gtk12
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/musica
 

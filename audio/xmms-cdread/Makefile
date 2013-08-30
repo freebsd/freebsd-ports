@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-cdread
-# Date created:				12 May 2003
-# Whom:					Sergey V. Belov <argail@csite.ru>
-#
+# Created by: Sergey V. Belov <argail@csite.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-cdread
 PORTVERSION=	0.14a
@@ -18,7 +14,7 @@ BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	gtk12
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

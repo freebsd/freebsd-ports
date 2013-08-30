@@ -18,8 +18,7 @@ COMMENT=	Audio recording and tick/scratch reduction for e.g. vinyl records
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 ALL_TARGET=	gramofile
-USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		gmake perl5
 USE_CSTD=	gnu89
 MAKE_ARGS+=	CC=${CC}
 MAKE_ARGS+=	CXX=${CXX}

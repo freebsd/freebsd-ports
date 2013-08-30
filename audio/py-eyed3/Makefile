@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-eyed3
-# Date created:		22 August 2003
-# Whom:			Hye-Shik Chang <perky@FreeBSD.org>
-#
+# Created by: Hye-Shik Chang <perky@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	eyed3
@@ -19,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_PYTHON=	2.6-2.7
 USE_PYTHON_PREFIX=	yes
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PYTHON="${PYTHON_CMD}"
 MAKE_ENV=	SETUP_ARGS_BUILD="${PYDISTUTILS_BUILDARGS}" \

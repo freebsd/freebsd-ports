@@ -14,7 +14,7 @@ COMMENT=	Speech recognition system
 DEST=		${WRKSRC}/src/libsphinx2/
 USE_LDCONFIG=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=libtool
 
 # contains i386 sound code

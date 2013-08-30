@@ -16,7 +16,7 @@ LICENSE_COMB=	multi
 
 MAKE_JOBS_UNSAFE=	yes
 
-USE_GMAKE=	yes
+UDES=		gmake
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

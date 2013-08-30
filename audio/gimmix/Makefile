@@ -1,9 +1,5 @@
-# New ports collection makefile for:   gimmix
-# Date created:                                11 April 2007
-# Whom:                                        Matthieu Guegan <matt.guegan@free.fr>
-#
+# Created by: Matthieu Guegan <matt.guegan@free.fr>
 # $FreeBSD$
-#
 
 PORTNAME=	gimmix
 PORTVERSION=	0.5.7.1
@@ -29,7 +25,7 @@ USE_GNOME=	gtk20 intltool libglade2
 USE_BZIP2=	yes
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 MAN1=		gimmix.1
 

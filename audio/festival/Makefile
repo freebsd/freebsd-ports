@@ -20,7 +20,7 @@ ESD_DESC=	${ESOUND_DESC}
 DIST_SUBDIR=	festival
 
 CONFIGURE_WRKSRC=	${WRKDIR}/festival
-USE_GMAKE=	yes
+USES=		gmake
 SPEECHTOOLS=	${WRKSRC}/speech_tools
 FESTIVAL=	${WRKSRC}/festival
 MAKE_ENV+=	GCC="${CC}" \

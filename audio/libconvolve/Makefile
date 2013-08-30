@@ -19,8 +19,7 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		sndfile.1:${PORTSDIR}/audio/libsndfile
 
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

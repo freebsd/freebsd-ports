@@ -1,5 +1,4 @@
 # Created by: Tilman Linneweh <arved@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	swhplugins
@@ -20,9 +19,8 @@ LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
 # includes assembler code
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

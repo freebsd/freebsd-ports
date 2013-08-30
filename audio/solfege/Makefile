@@ -14,11 +14,10 @@ COMMENT=	Free eartraining software
 BUILD_DEPENDS=	${STYLESHEET}:${PORTSDIR}/textproc/docbook-xsl \
 		txt2man:${PORTSDIR}/textproc/txt2man
 
-USE_GNOME=	gnomehack pygtk2
+USE_GNOME=	pygtk2
 WANT_GNOME=	yes
 USE_PYTHON=	yes
-USES=		gettext display
-USE_GMAKE=	yes
+USES=		gettext gmake display pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_XML2PO=""
 CONFIGURE_ARGS=	--disable-oss-sound \

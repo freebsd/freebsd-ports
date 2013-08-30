@@ -19,10 +19,9 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		fftw3.6:${PORTSDIR}/math/fftw3
 RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include

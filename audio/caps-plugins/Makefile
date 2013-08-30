@@ -20,7 +20,7 @@ LICENSE_COMB=	dual
 
 WRKSRC=		${WRKDIR}/caps-${PORTVERSION}
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS} -fPIC -DPIC"
 
 PLIST_FILES=	lib/ladspa/caps.so share/ladspa/rdf/caps.rdf

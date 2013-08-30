@@ -13,7 +13,7 @@ COMMENT=	Real-time pitch correction plugin for LADSPA
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_GMAKE=	yes
+USES=		gmake
 
 MAKE_ARGS=	CXX="${CXX}" CC=${CC} CPP=${CPP} \
 		CXXFLAGS="${CXXFLAGS} -fPIC -I${LOCALBASE}/include"

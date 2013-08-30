@@ -1,6 +1,7 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/audio/rhythmbox/Makefile,v 1.115 2011/05/04 18:44:36 kwm Exp $
+
 PORTNAME=	rhythmbox
 PORTVERSION=	0.12.8
 PORTREVISION=	10
@@ -24,10 +25,9 @@ LIB_DEPENDS=	musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
 CONFLICTS=	rhythmbox-2.[0-9]* rhythmbox-3.[0-9]*
 
 USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext gmake pathfix
 INSTALLS_OMF=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix gtk20 nautilus2
+USE_GNOME=	intlhack gnomeprefix gtk20 nautilus2
 WANT_GNOME=	yes
 USE_GSTREAMER=	flac mp3 gnomevfs gconf jpeg
 USE_AUTOTOOLS=	libtool

@@ -15,9 +15,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	gtk20 libglade2
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USES=		gettext
+USES=		gettext gmake
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 

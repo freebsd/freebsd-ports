@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG Layer II audio encoder with multi-channel support
 
-USE_GMAKE=	yes
+USES=		gmake
 ALL_TARGET=	#
 MAKE_ARGS=	CC="${CC}" OPTIM="${CFLAGS}"
 PLIST_SUB=	PKGNAMESUFFIX="${PKGNAMESUFFIX}"

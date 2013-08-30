@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fluidsynth-dssi
-# Date created:		2007-01-19
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	fluidsynth-dssi
 PORTVERSION=	1.0.0
@@ -21,7 +17,7 @@ LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_GNOME=	gtk20
 
 post-patch:

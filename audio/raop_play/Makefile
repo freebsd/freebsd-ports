@@ -1,9 +1,5 @@
-# New ports collection makefile for:	raop_play
-# Date created:        8 Dec 2006
-# Whom:                sumikawa
-#
+# Created by: sumikawa
 # $FreeBSD$
-#
 
 PORTNAME=	raop_play
 PORTVERSION=	0.5.1
@@ -24,7 +20,7 @@ RUN_DEPENDS=	mpg321:${PORTSDIR}/audio/mpg321 \
 
 GNU_CONFIGURE=	yes
 LDFLAGS+=	`fltk-config --ldflags`
-USE_GMAKE=	yes
+USES=		gmake
 USE_GNOME=	glib20
 
 pre-build:

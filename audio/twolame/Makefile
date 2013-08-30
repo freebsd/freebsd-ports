@@ -1,9 +1,5 @@
-# New ports collection makefile for:	twolame
-# Date created:		2005-05-02
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	twolame
 PORTVERSION=	0.3.13
@@ -16,8 +12,7 @@ COMMENT=	MPEG Audio Layer 2 encoder
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USES=		gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

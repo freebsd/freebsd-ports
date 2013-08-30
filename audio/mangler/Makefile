@@ -17,8 +17,8 @@ LIB_DEPENDS=	celt0.2:${PORTSDIR}/audio/celt \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		gsm.1:${PORTSDIR}/audio/gsm
 
+USES=		gmake
 USE_GNOME=	librsvg2
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-alsa
 USE_LDCONFIG=	yes

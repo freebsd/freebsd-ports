@@ -11,7 +11,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	High-level audio API
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 WANT_WX=	yes
 USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes

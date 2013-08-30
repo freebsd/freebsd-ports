@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/re/re.mk:${PORTSDIR}/audio/re
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 do-install:
 	${MKDIR} ${PREFIX}/include/${PORTNAME}

@@ -13,9 +13,9 @@ LIB_DEPENDS=	mad:${PORTSDIR}/audio/libmad \
 		id3tag:${PORTSDIR}/audio/libid3tag \
 		xmms:${PORTSDIR}/multimedia/xmms
 
+USES=		gmake
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	lib/xmms/Input/libxmmsmad.so

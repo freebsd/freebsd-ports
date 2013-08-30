@@ -9,10 +9,8 @@ MASTER_SITES=	SF/cmusphinx/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CMU Sphinx Speech recognition system base
 
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
-
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
+USES=		gmake bison
 USE_AUTOTOOLS=	libtool
 
 CONFIGURE_ARGS+=	--without-python --without-lapack

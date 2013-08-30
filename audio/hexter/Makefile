@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hexter
-# Date created:		2007-01-20
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	hexter
 PORTVERSION=	1.0.2
@@ -22,7 +18,7 @@ LIB_DEPENDS=	dssialsacompat:${PORTSDIR}/audio/libdssialsacompat \
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_GNOME=	gtk20
 
 PORTDOCS=	AUTHORS ChangeLog README TODO

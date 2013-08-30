@@ -15,8 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	id3tag:${PORTSDIR}/audio/libid3tag \
 		gpod:${PORTSDIR}/audio/libgpod
 
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake
 USE_GNOME=	gtk20 libglade2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

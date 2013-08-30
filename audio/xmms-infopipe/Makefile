@@ -1,9 +1,5 @@
-# New ports collection makefile for: xmms-infopipe
-# Date created:		14 July 2003
-# Whom:			mig
-#
+# Created by: mig
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-infopipe
 PORTVERSION=	1.3
@@ -19,7 +15,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	gtk12
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 LIBDIR?=	${PREFIX}/lib/xmms/General

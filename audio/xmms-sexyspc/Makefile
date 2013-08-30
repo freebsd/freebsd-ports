@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-sexyspc
-# Date created:				5 August 2007
-# Whom:					Naram Qashat <cyberbotx@cyberbotx.com>
-#
+# Created by: Naram Qashat <cyberbotx@cyberbotx.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sexyspc
 PORTVERSION=	0.5.0
@@ -26,7 +22,7 @@ PLIST_FILES=	lib/xmms/Input/libsexyspc.a \
 ONLY_FOR_ARCHS=	i386	# contains x86 assembler code
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.Inc

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	xmms-midi
-# Date created:		2002-10-14
-# Whom:			Hendrik Scholz <hendrik@scholz.net>
-#
+# Created by: Hendrik Scholz <hendrik@scholz.net>
 # $FreeBSD$
 
 PORTNAME=	xmms-midi
@@ -16,9 +13,9 @@ COMMENT=	XMMS input plugin to play midi files
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
+USES=		gmake
 USE_GNOME=	gtk12
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 
 PLIST_FILES=	lib/xmms/Input/libmid.a \
 		lib/xmms/Input/libmid.la \

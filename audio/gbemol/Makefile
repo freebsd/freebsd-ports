@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	gbemol
-# Date created:				2008-02-21
-# Whom:					Thomas M. Hermann <tmh.public@gmail.com>
-#
+# Created by: Thomas M. Hermann <tmh.public@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gbemol
 PORTVERSION=	0.3.2
@@ -19,7 +15,7 @@ LIB_DEPENDS=	mpd.4:${PORTSDIR}/audio/libmpd \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_GNOME=	gtk20
 
 post-patch:

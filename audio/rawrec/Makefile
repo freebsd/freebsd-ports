@@ -12,7 +12,7 @@ COMMENT=	Utility to record and playback raw audio data
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	CC="${CC}" \
 		CFLAGS="${CPPFLAGS} ${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -lm ${PTHREAD_LIBS}"

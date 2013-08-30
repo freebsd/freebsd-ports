@@ -23,7 +23,7 @@ USE_AUTOTOOLS=	libltdl
 USE_GSTREAMER=	yes
 USE_GNOME=	gnomedocutils gtk20
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

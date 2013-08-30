@@ -18,8 +18,7 @@ MAN1=		spek.1
 
 USE_XZ=		yes
 USE_GCC=	4.7+
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake
 USE_GNOME=	desktopfileutils intltool
 USE_WX=	2.8+
 WX_UNICODE=	yes

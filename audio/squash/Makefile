@@ -1,7 +1,4 @@
-# New ports collection makefile for: squash
-# Date created:		5 August 2003
-# Whom:			Matthias Andree <matthias.andree@gmx.de>
-#
+# Created by: Matthias Andree <matthias.andree@gmx.de>
 # $FreeBSD$
 
 PORTNAME=		squash
@@ -23,7 +20,7 @@ LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac \
 RUN_DEPENDS=	id3v2:${PORTSDIR}/audio/id3v2
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_RUBY=	yes
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*

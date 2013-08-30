@@ -19,8 +19,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 
 PLIST_FILES=	lib/ladspa/ambisonic0.so lib/ladspa/ambisonic1.so \
 		lib/ladspa/ambisonic2.so lib/ladspa/ambisonic3.so \

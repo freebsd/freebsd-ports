@@ -1,9 +1,5 @@
-# New ports collection makefile for:	flite
-# Date created:				18 December 2004
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	flite
 PORTVERSION=	1.4
@@ -14,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-release
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A small run-time speech synthesis engine
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared=yes

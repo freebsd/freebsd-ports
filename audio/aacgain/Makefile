@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aacgain
-# Date created:		2006-05-28
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	aacgain
 PORTVERSION=	1.8
@@ -15,7 +11,7 @@ COMMENT=	Normalizes the volume of mp3 and AAC (mp4/m4a/QuickTime) media files
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 PLIST_FILES=	bin/aacgain
 
 .include <bsd.port.mk>

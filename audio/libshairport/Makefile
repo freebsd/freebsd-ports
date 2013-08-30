@@ -11,7 +11,7 @@ MAINTAINER=	manuel.creach@icloud.com
 COMMENT=	An Airport Extreme Emulator
 
 FETCH_ARGS=	-pRr
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 ACLOCAL_ARGS=	-I.
 AUTOMAKE_ARGS=	--add-missing

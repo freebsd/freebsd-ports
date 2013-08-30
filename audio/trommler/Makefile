@@ -13,7 +13,7 @@ COMMENT=	GTK+2 based drum machine
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_GNOME=	gtk20
 
 WRKSRC=		${WRKDIR}/Trommler

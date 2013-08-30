@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:   Maaate
-# Date created:                Fab 12, 2001
-# Whom:                        Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Maaate
 PORTVERSION=	0.3.1
@@ -15,8 +10,8 @@ MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	saper@saper.info
 COMMENT=	MPEG audio analysis toolkit
 
+USES=		gmake
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

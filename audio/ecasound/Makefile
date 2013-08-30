@@ -22,8 +22,7 @@ AUDIOFILE_DESC=	Enable libaudiofile support
 LO_DESC=	Enable liblo support
 OIL_DESC=	Enable liboil support
 
-USES=		readline
-USE_GMAKE=	yes
+USES=		gmake readline
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-liblilv \
 		--disable-rubyecasound \

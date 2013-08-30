@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xsynth-dssi
-# Date created:		2007-01-20
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	xsynth-dssi
 PORTVERSION=	0.9.4
@@ -24,7 +20,7 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	libtool
 
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qsampler
-# Date created:		2007-03-06
-# Whom:			trasz <trasz@FreeBSD.org
-#
+# Created by: trasz <trasz@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	qsampler
 PORTVERSION=	0.2.2
@@ -24,7 +20,7 @@ RUN_DEPENDS=	linuxsampler:${PORTSDIR}/audio/linuxsampler
 
 USE_QT4=	corelib gui \
 		linguist_build moc_build qmake_build rcc_build uic_build
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_ac_qmake=${QMAKE} \
 		ac_cv_path_ac_moc=${MOC} \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ghostess
-# Date created:		2007-01-13
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	ghostess
 PORTVERSION=	20120105
@@ -29,7 +25,7 @@ LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jackmidi
 

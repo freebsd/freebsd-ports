@@ -11,8 +11,7 @@ DISTNAME=	sidplay-libs-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to play Commodore 64 SID-tunes cycle accurate
 
-USES=	pathfix pkgconfig
-USE_GMAKE=	yes
+USES=		gmake pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	builders/hardsid-builder/configure \
 		builders/resid-builder/configure \

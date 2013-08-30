@@ -12,8 +12,7 @@ COMMENT=	Curses-based front-end for various audio players
 
 LICENSE=	GPLv2
 
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake
 USE_PYTHON=	yes
 
 MAKE_ARGS=	PREFIX="${PREFIX}"
