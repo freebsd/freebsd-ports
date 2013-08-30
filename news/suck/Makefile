@@ -3,7 +3,7 @@
 
 PORTNAME=	suck
 PORTVERSION=	4.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	news
 #MASTER_SITES=	http://www.sucknews.org/
 MASTER_SITES=	http://home.comcast.net/~bobyetman/ \
@@ -25,6 +25,7 @@ EX_SCRIPTS=	get.news.generic get.news.inn perl_kill.pl perl_xover.pl \
 EX_DATA=	suckkillfile.sample sucknewsrc.sample suckothermsgs.sample
 
 OPTIONS_DEFINE=	SSL EXAMPLES
+OPTIONS_DEFAULT=	SSL
 
 .include <bsd.port.options.mk>
 
@@ -60,7 +61,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s=/usr/local/lib/suck=${PREFIX}/lib/suck=" \
 		${WRKSRC}/suck_config.h
 .if defined(NEWSBIN) && !defined(SUCK_WITH_INN)
-	@${REINPLACE_CMD} -e -e "s=/usr/local/news/lib=${NEWSCTL}=" \
+	@${REINPLACE_CMD} -e "s=/usr/local/news/lib=${NEWSCTL}=" \
 		${WRKSRC}/suck_config.h
 .else
 	@${REINPLACE_CMD} -e "s=/usr/local/news/lib=${LOCALBASE}/news/lib=" \
