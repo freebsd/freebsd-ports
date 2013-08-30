@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 
 USE_AUTOTOOLS=	aclocal autoconf
 GNU_CONFIGURE=	yes
-USES=		gmake gettext
+USES=		gmake gettext pkgconfig
 USE_XZ=		yes
 USE_WX=		2.8
 WX_UNICODE=	yes
