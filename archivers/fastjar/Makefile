@@ -12,10 +12,10 @@ COMMENT=	Version of JDK's `jar' command written entirely in C
 
 LICENSE=	GPLv2
 
+USES=		gmake perl5
+USES_PERL5=	build
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_PERL5_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PORTDOCS=	CHANGES ChangeLog NEWS README

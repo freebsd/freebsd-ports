@@ -16,7 +16,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_LATEST_LINK=	yes
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_GCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-default-config-file=${PREFIX}/etc/rvm.conf \

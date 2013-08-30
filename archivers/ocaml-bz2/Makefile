@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ocaml-bz2
-# Date created:				2009-02-24
-# Whom:					Jaap Boender <jaapb@kerguelen.org>
-#
+# Created by: Jaap Boender <jaapb@kerguelen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bz2
 PORTVERSION=	0.6.0
@@ -17,7 +13,7 @@ MAINTAINER=	jaapb@kerguelen.org
 COMMENT=	OCaml library to manipulate bz2 files
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 USE_OCAML=		yes
 USE_OCAML_LDCONFIG=	yes

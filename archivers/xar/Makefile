@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xar
-# Date created:		24 January 2005
-# Whom:			Jeffrey H. Johnson <CPE1704TKS@bellsouth.net>
-#
+# Created by: Jeffrey H. Johnson <CPE1704TKS@bellsouth.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xar
 PORTVERSION=	1.5.2
@@ -19,8 +15,8 @@ LICENSE=	BSD
 
 USE_LDCONFIG=	yes
 
+USES=		gmake
 USE_GNOME=	libxml2
-USE_GMAKE=	yes
 USE_OPENSSL=	yes
 
 GNU_CONFIGURE=	yes

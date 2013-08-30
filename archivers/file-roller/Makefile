@@ -18,10 +18,9 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar \
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext gmake
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack desktopfileutils gnomedocutils \
 		gtk20 gconf2
 GNOME_DESKTOP_VERSION=2

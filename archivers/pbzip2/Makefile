@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	pbzip2
-# Date created:			Dec 7, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	pbzip2
 PORTVERSION=	1.1.6
@@ -21,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 MAN1=		pbzip2.1
 MLINKS=		pbzip2.1 pbunzip2.1
 
-USE_GMAKE=	YES
+USES=		gmake
 
 PLIST_FILES=	bin/pbzip2 bin/pbunzip2
 

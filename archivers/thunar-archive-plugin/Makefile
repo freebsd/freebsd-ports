@@ -15,9 +15,8 @@ COMMENT=	Archive plugin for the Thunar File Manager
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_XFCE=	configenv libexo thunar
-USES=		gettext pkgconfig
+USES=		gettext gmake pkgconfig
 INSTALLS_ICONS=	yes
 USE_GNOME=	intltool
-USE_GMAKE=	yes
 
 .include <bsd.port.mk>
