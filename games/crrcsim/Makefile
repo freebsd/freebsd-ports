@@ -11,7 +11,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Model-airplane flight simulation program
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	portaudio:${PORTSDIR}/audio/portaudio2 \
+LIB_DEPENDS=	portaudio.2:${PORTSDIR}/audio/portaudio2 \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
