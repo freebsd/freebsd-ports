@@ -2,4 +2,4 @@ Scamper is a program that conducts Internet measurement techniques such
 as ping and traceroute to large numbers of IPv4 and IPv6 addresses in
 parallel to fill a specified packets-per-second rate.
 
-WWW: http://www.wand.net.nz/scamper/
+WWW: http://www.caida.org/tools/measurement/scamper/
