@@ -12,8 +12,7 @@ CMAKE_ARGS+=	-DPKGCONFIG_INSTALL_DIR:PATH="libdata/pkgconfig/"
 INSTALL_TARGET=	install
 
 USE_BZIP2=	yes
-USES=		cmake
-USE_GNOME=	pkgconfig
+USES=		cmake pkgconfig
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/cmake/SharedDesktopOntologies|lib/cmake/SharedDesktopOntologies|' \
