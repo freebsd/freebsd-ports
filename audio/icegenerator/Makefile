@@ -1,9 +1,5 @@
-# New ports collection makefile for:	icegenerator
-# Date created:				18 August 2004
-# Whom:				Nadelyaev Stanislav <funkblaster@n11.bmstu.ru>
-#
+# Created by: Nadelyaev Stanislav <funkblaster@n11.bmstu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=		icegenerator
 DISTVERSION=		0.5.5-pre2
@@ -13,14 +9,28 @@ MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/0.5.5-pre2
 MAINTAINER=		funkblaster@mail.ru
 COMMENT=		Direct streaming generator for Icecast/Shoutcast
 
-LIB_DEPENDS=		shout.5:${PORTSDIR}/audio/libshout2
+LIB_DEPENDS=		libshout.so:${PORTSDIR}/audio/libshout2
 
 GNU_CONFIGURE=		yes
-USE_GMAKE=		yes
+USES=			gmake
 CONFIGURE_ARGS=		--exec-prefix=${PREFIX}
 
+OPTIONS_DEFINE=		DOCS MYSQL PGSQL
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMYSQL}
+USE_MYSQL=	YES
+CONFIGURE_ARGS+=	--with-mysql
+.endif
+
+.if ${PORT_OPTIONS:MPGSQL}
+USE_PGSQL=	YES
+CONFIGURE_ARGS+=	--with-pgsql
+.endif
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
