@@ -1,9 +1,5 @@
-# New ports collection makefile for: bbpager
-# Date created:        17 June 2000
-# Whom:                Patrick Seal <patseal@hyperhost.net>
-#
+# Created by: Patrick Seal <patseal@hyperhost.net>
 # $FreeBSD$
-#
 
 PORTNAME=	bbpager
 DISTVERSION=	0.4.7
@@ -16,7 +12,7 @@ COMMENT=	A pager for the Blackbox window manager
 
 BUILD_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
 
-USE_GNOME=	gnomehack pkgconfig
+USES=		pathfix pkgconfig
 USE_XORG=	xext sm x11 xau xcursor xi
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	`pkg-config --cflags xft`
