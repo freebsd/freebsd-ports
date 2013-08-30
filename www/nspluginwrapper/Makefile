@@ -1,9 +1,5 @@
-# New ports collection makefile for: nspluginwrapper
-# Date created:         30 March 2007
-# Whom:                 Dave Grochowski
-#
+# Created by: Dave Grochowski
 # $FreeBSD$
-#
 
 PORTNAME=	nspluginwrapper
 PORTVERSION=	1.4.4
@@ -29,7 +25,8 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 USE_LINUX_APPS=	gtk2
 USE_XORG=	x11 xext xt
-USE_GNOME=	glib20 gtk20 pkgconfig
+USES=		pkgconfig
+USE_GNOME=	glib20 gtk20
 
 CFLAGS+=	-std=c99
 
