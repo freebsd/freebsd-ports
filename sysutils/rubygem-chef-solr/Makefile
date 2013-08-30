@@ -12,6 +12,8 @@ COMMENT=	A systems integration framework. Client part
 RUN_DEPENDS=	rubygem-chef>=${PORTVERSION}:${PORTSDIR}/sysutils/rubygem-chef \
 		apache-solr>=0:${PORTSDIR}/textproc/apache-solr
 
+BROKEN=		fails to install
+
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes
