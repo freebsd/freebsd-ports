@@ -97,7 +97,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hico
 		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
 		${LOCALBASE}/lib/X11/fonts/ChromeOS/Arimo-Bold.ttf:${PORTSDIR}/x11-fonts/croscorefonts-fonts-ttf
 
-.if ${PORT_OPTIONS:MCCACHE) || defined(WITH_CCACHE)
+.if ${PORT_OPTIONS:MCCACHE} || defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
 CCACHE_PREFIX=	ccache
 OOOCC=		${CCACHE_PREFIX} ${CC}
