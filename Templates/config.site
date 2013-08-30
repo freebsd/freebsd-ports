@@ -102,7 +102,6 @@
 : ${ac_cv_header_ucontext_h=yes}
 : ${ac_cv_header_unistd_h=yes}
 : ${ac_cv_header_utime_h=yes}
-: ${ac_cv_header_utmp_h=yes}
 : ${ac_cv_header_vis_h=yes}
 : ${ac_cv_header_wchar_h=yes}
 : ${ac_cv_header_wctype_h=yes}
