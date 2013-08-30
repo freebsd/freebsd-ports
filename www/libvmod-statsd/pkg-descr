@@ -1,0 +1,5 @@
+Varnish Module (vmod) for sending statistics to Statsd.
+
+See https://github.com/etsy/statsd for documentation on Statsd.
+
+WWW: https://github.com/jib/libvmod-statsd

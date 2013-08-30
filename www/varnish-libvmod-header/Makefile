@@ -7,6 +7,7 @@
 
 PORTNAME=	libvmod-header
 DISTVERSION=	0.3-5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://anders.fupp.net/distfiles/
 PKGNAMEPREFIX=	varnish-
@@ -38,6 +39,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-master
 .include <bsd.port.pre.mk>
 
 post-install:
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/vmod_header.vcc ${DATADIR}
 .if !defined(BATCH)
 	@${CAT} ${PKGMESSAGE}
 .endif
