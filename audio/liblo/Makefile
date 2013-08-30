@@ -13,7 +13,7 @@ LICENSE=	LGPL21
 
 BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 
-USES=		gamke pathfix
+USES=		gmake pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
