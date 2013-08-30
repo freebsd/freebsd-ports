@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	transmission
-PORTVERSION=	2.80
-PORTREVISION?=	1
+PORTVERSION=	2.82
+PORTREVISION?=	0
 CATEGORIES?=	net-p2p
 #MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
 MASTER_SITES=	http://transmission.cachefly.net/
