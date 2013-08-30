@@ -11,7 +11,6 @@ COMMENT=	Varnish Module (vmod) for sending statistics to Statsd
 LICENSE=	BSD
 
 BUILD_DEPENDS=	${LOCALBASE}/include/varnish/varnishapi.h:${PORTSDIR}/www/varnish \
-	${LOCALBASE}/share/libvmod-header/vmod_header.vcc:${PORTSDIR}/www/varnish-libvmod-header \
 	rst2man:${PORTSDIR}/textproc/py-docutils
 
 USE_GITHUB=	yes
