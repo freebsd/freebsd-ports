@@ -1,11 +1,6 @@
-# ex:ts=8
-# New ports collection makefile for:	libxml++
-# Date created:			Feb 26, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/textproc/libxml++26/Makefile,v 1.43 2011/04/18 19:58:29 kwm Exp $
-#
 
 PORTNAME=	libxml++
 PORTVERSION=	2.34.2
@@ -27,8 +22,8 @@ LATEST_LINK=	libxml++26
 LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack libxml2 pkgconfig
+USES=		gmake pathfix pkgconfig
+USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static --disable-documentation

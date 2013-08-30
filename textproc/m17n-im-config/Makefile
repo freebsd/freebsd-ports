@@ -16,8 +16,8 @@ LIB_DEPENDS=	m17n.4:${PORTSDIR}/devel/m17n-lib
 MAKE_JOBS_UNSAFE=	yes
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gtk20 intltool intlhack pkgconfig glib20
-USES=		gettext
+USE_GNOME=	gtk20 intltool intlhack glib20
+USES=		gettext pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

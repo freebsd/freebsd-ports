@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	google-ctemplate
-# Date created:			Apr 26, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	google-ctemplate
 PORTVERSION=	2.2
@@ -18,7 +13,7 @@ COMMENT=	A simple but powerful template language for C++
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	pkgconfig
+USES=		pkgconfig
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*

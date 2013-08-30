@@ -18,8 +18,8 @@ MAN1=		artha.1
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gtk20 intltool pkgconfig
+USE_GNOME=	gtk20 intltool
+USES=		gmake pkgconfig
 
 CONFIGURE_ARGS=	--enable-static=no --x-includes=${LOCALBASE}/include \
 		--x-libraries=${LOCALBASE}/lib
