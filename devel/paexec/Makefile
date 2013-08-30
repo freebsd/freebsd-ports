@@ -3,6 +3,7 @@
 
 PORTNAME=	paexec
 PORTVERSION=	0.19.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -13,7 +14,6 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	mkcmake:${PORTSDIR}/devel/mk-configure \
 		runawk:${PORTSDIR}/lang/runawk
-LIB_DEPENDS=	libmaa.so:${PORTSDIR}/devel/libmaa
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -50,5 +50,8 @@ do-build:
 do-install:
 	@${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/mkcmake -C ${WRKSRC} \
 		${INSTALL_TARGET}
+.if ${PORT_OPTIONS:MDOCS}
+	${INSTALL_DATA} ${WRKSRC}/presentation/${PORTNAME}.pdf ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
