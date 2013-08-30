@@ -1,9 +1,5 @@
-# New ports collection makefile for:	upx
-# Date created:				17 Feb 2004
-# Whom:					Max Khon <fjoe@FreeBSD.org>
-#
+# Created by: Max Khon <fjoe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	upx
 PORTVERSION=	3.09
@@ -21,8 +17,8 @@ LIB_DEPENDS=	ucl.1:${PORTSDIR}/archivers/ucl
 LZMA_VER=	4.65
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USES=		gmake perl5
+USE_PERL5=	build
 MAKE_ENV=	UPX_UCLDIR=${LOCALBASE}\
 		UPX_LZMADIR=${WRKDIR}\
 		target=freebsd

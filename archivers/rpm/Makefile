@@ -16,7 +16,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 CONFLICTS=	rpm-[45].*
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	automake14 autoconf213 libtool
 CONFIGURE_ARGS=	--with-glob
 USE_LDCONFIG=	yes

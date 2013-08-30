@@ -13,8 +13,8 @@ BUILD_DEPENDS=	lzlib>=1.1:${PORTSDIR}/archivers/lzlib
 
 PLIST_FILES=	bin/plzip
 
+USES=		gmake
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 CONFIGURE_ARGS=	CXXFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAN1=		plzip.1
