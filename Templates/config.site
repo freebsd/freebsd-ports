@@ -5,6 +5,7 @@
 #	- anything "=no" unless guaranteed to never be
 #	  implemented in FreeBSD
 #	- also avoid "working" values
+# This file must reflect the oldest supported Release.
 #
 #MAINTAINER=	portmgr@FreeBSD.org
 
