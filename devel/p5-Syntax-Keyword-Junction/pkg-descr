@@ -1,0 +1,4 @@
+This is a lightweight module which provides 'Junction' operators,
+the most commonly used being any and all.
+
+WWW: http://search.cpan.org/dist/Syntax-Keyword-Junction/

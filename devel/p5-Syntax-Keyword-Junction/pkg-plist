@@ -1,0 +1,15 @@
+%%SITE_PERL%%/Syntax/Feature/Junction.pm
+%%SITE_PERL%%/Syntax/Keyword/Junction/Any.pm
+%%SITE_PERL%%/Syntax/Keyword/Junction/One.pm
+%%SITE_PERL%%/Syntax/Keyword/Junction/Base.pm
+%%SITE_PERL%%/Syntax/Keyword/Junction/None.pm
+%%SITE_PERL%%/Syntax/Keyword/Junction/All.pm
+%%SITE_PERL%%/Syntax/Keyword/Junction.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Keyword/Junction/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Keyword/Junction
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Keyword
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax
+@dirrmtry %%SITE_PERL%%/Syntax/Keyword/Junction
+@dirrmtry %%SITE_PERL%%/Syntax/Keyword
+@dirrmtry %%SITE_PERL%%/Syntax/Feature
+@dirrmtry %%SITE_PERL%%/Syntax
