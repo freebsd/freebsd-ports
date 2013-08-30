@@ -11,7 +11,7 @@ MAINTAINER=	mathias@monnerville.com
 COMMENT=	Catalogue of objects builder from astronomical images
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 MAN1=	sex.1
 MANX=	sex.x

@@ -1,27 +1,27 @@
 # Created by: Tony Maher <tonymaher@optusnet.com.au>
 # $FreeBSD$
 
-PORTNAME=		wcslib
+PORTNAME=	wcslib
 PORTVERSION=	4.13.4
-CATEGORIES=		astro
+CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.atnf.csiro.au/pub/software/wcslib/
 
-MAINTAINER=		tonymaher@optusnet.com.au
-COMMENT=		Library for parsing/generating FITS headers
+MAINTAINER=	tonymaher@optusnet.com.au
+COMMENT=	Library for parsing/generating FITS headers
 
-USE_BZIP2=		yes
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=		yes
-MAKEFILE=		GNUmakefile
+USES=		gmake
+MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
 
-PLIST_SUB=		VERSION="${PORTVERSION}"
-MAN1=			fitshdr.1
+PLIST_SUB=	VERSION="${PORTVERSION}"
+MAN1=		fitshdr.1
 
 # See makedefs.in which describes why you want to set the extra support.
 # For most users it will not be required.
 
-OPTIONS_DEFINE=		CFITSIO PGPLOT
+OPTIONS_DEFINE=	CFITSIO PGPLOT
 CFITSIO_DESC=	Add cfitsio support (for tests only)
 PGPLOT_DESC=	Add pgplot support (for tests only)
 

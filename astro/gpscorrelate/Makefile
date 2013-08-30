@@ -22,8 +22,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	freefoote
 GH_COMMIT=	a36646b
 
+USES=		gmake
 USE_GNOME=	libxml2
-USE_GMAKE=	yes
 
 MAN1=		gpscorrelate.1
 MLINKS=		gpscorrelate.1 gpscorrelate-gui.1

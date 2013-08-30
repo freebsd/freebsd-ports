@@ -14,7 +14,7 @@ LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 
 MAN1=		rmap.1
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"

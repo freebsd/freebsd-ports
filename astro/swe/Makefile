@@ -11,7 +11,7 @@ MAINTAINER=	5u623l20@gmail.com
 COMMENT=	High Precision Ephemeris Developed By Astrodienst
 
 WRKSRC=		${WRKDIR}/src
-USE_GMAKE=	yes
+USES=		gmake
 ALL_TARGET=	#
 USE_LDCONFIG=	yes
 

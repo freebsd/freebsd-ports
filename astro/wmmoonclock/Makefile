@@ -13,7 +13,7 @@ COMMENT=	Displays the phase of the moon, plus orbital data
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
 USE_XORG=	xpm
-USE_GMAKE=	yes
+USES=		gmake
 
 MAN1=		wmmoonclock.1
 PLIST_FILES=	bin/wmmoonclock
