@@ -15,6 +15,8 @@ LIB_DEPENDS=	avahi-client.3:${PORTSDIR}/net/avahi-app
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>0:${PORTSDIR}/databases/py-gdbm \
 		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus
 
+BROKEN=		fails to install
+
 MASTERDIR=	${.CURDIR}/../avahi-app
 BUILD_WRKSRC=	${WRKSRC}/avahi-python
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
