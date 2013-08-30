@@ -26,7 +26,7 @@ REL=		8411
 EGG_VER=	0.12_p2.dev
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION:S/.a/_a/} \
-		PYTHONVERSION=${_PYTHON_VERSION}
+		PYTHONVERSION=${PYTHON_VER}
 PLIST_FILES+=	%%PYTHON_SITELIBDIR%%/AnnouncerPlugin-${EGG_VER}-py%%PYTHONVERSION%%.egg
 
 # We must fix file permissions -- ZIP file have 0000 for every file.
