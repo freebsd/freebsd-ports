@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fail2ban
-PORTVERSION=	0.8.9
+PORTVERSION=	0.8.10
 CATEGORIES=	security python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +13,9 @@ COMMENT=	Scans log files and bans IP that makes too many password failures
 
 LICENSE=	GPLv2
 
-GITVERSION=	0-g152c619
+GITVERSION=	0-g921d9a8
 FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-1a3155a
-
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-d56f01a
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
@@ -26,7 +25,7 @@ SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 PYDISTUTILS_INSTALLARGS+=	--install-purelib=${PYTHON_SITELIBDIR} \
 				--install-data=${ETCDIR}
-PYDISTUTILS_PKGVERSION=	0.8.9
+PYDISTUTILS_PKGVERSION=	0.8.10
 
 PORTDOCS=	README.md DEVELOP
 
@@ -43,6 +42,8 @@ post-patch:
 	@${ECHO_CMD} ${FILES} | ${XARGS} ${REINPLACE_CMD} -e 's,/etc/fail2ban,${ETCDIR},g'
 	@${REINPLACE_CMD} -e 's,/bin/grep,grep,g' \
 		${WRKSRC}/config/action.d/sendmail-whois-lines.conf
+	@${REINPLACE_CMD} -e 's,/var/log/sshd.log,/var/log/auth.log,g' \
+		${WRKSRC}/config/jail.conf
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
