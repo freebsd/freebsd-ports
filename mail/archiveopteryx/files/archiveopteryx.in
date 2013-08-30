@@ -15,46 +15,41 @@
 
 . /etc/rc.subr
 
-name="archiveopteryx"
+name=archiveopteryx
 rcvar=archiveopteryx_enable
+load_rc_config $name
 
 archiveopteryx_enable=${archiveopteryx_enable:-"NO"}
-pidfile=/var/run/${name}.pid
+pidfile=/var/run/aox/${name}.pid
 config_file=%%PREFIX%%/etc/archiveopteryx/archiveopteryx.conf
 required_files=$config_file
 
 command=%%PREFIX%%/bin/aox
-extra_commands="status"
-status_cmd="do_status"
-start_cmd="do_start"
-stop_cmd="do_stop"
-restart_cmd="do_restart"
+extra_commands=status
+status_cmd="${command} show status"
+start_cmd=do_start
+stop_cmd=do_stop
+restart_cmd=do_restart
 
 do_start()
 {
-    echo -n "Starting Archiveopteryx: "
-    ${command} start
-    echo "done."
+	echo -n "Starting Archiveopteryx: "
+	${command} start
+	echo "done."
 }
 
 do_stop()
 {
-    echo -n "Stopping Archiveopteryx: "
-    ${command} stop
-    echo "done."
+	echo -n "Stopping Archiveopteryx: "
+	${command} stop
+	echo "done."
 }
 
 do_restart()
 {
-    echo -n "Restarting Archiveopteryx: "
-    ${command} restart
-    echo "done."
+	echo -n "Restarting Archiveopteryx: "
+	${command} restart
+	echo "done."
 }
 
-do_status()
-{
-    ${command} show status
-}
-
-load_rc_config $name
 run_rc_command "$1"

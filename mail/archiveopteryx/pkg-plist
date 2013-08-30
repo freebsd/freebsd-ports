@@ -23,3 +23,5 @@ sbin/recorder
 @dirrmtry /var/db/aox/messages
 @dirrmtry /var/db/aox
 @dirrmtry /var/run/aox
+@exec install -d -o root -g wheel -m 700 /var/db/aox/jail
+@exec install -d -o %%USERS%% -g %%GROUPS%% /var/db/aox/messages

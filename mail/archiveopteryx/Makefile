@@ -8,15 +8,16 @@ CATEGORIES=	mail
 MASTER_SITES=	http://archiveopteryx.org/download/
 
 MAINTAINER=	feld@FreeBSD.org
-COMMENT=	An advanced PostgreSQL-based IMAP/POP server
+COMMENT=	Advanced PostgreSQL-based IMAP/POP server
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/bsd.txt
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 
+USES=	perl5
 USE_BZIP2=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 USE_PGSQL=	yes
 
 MAN5=	aoxsuper.conf.5 archiveopteryx.conf.5
@@ -47,7 +48,8 @@ do-install:
 	@cd ${WRKSRC} && ${JAM} install
 
 post-install:
-	@${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
+	${INSTALL} -d -o root -g wheel -m 700 /var/db/aox/jail
+	${INSTALL} -d -o ${USERS} -g ${GROUPS} /var/db/aox/messages
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
