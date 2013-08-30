@@ -11,25 +11,25 @@ COMMENT=	Implementation of `WHO iS ONline' protocol
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=		--with-config=${PREFIX}/etc/whoson.conf
+CONFIGURE_ARGS=	--with-config=${PREFIX}/etc/whoson.conf
 USE_LDCONFIG=	yes
-
-MAKE_JOBS_UNSAFE=yes
 
 USE_RC_SUBR=	whoson
 
-MAN3=	whoson.3 wso_login.3 wso_logout.3 wso_query.3 wso_version.3
-MAN5=	whoson.conf.5
-MAN8=	whoson.8 whosond.8
+MAN3=		whoson.3 wso_login.3 wso_logout.3 wso_query.3 wso_version.3
+MAN5=		whoson.conf.5
+MAN8=		whoson.8 whosond.8
 
 PORTDOCS=	README ChangeLog
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
