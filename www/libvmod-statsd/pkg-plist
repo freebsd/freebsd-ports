@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+lib/varnish/vmods/libvmod_statsd.so
+lib/varnish/vmods/libvmod_statsd.la
+lib/varnish/vmods/libvmod_statsd.a
+@dirrmtry lib/varnish/vmods

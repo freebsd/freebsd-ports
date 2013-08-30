@@ -1,0 +1,35 @@
+--- ./src/Makefile.am.orig	2013-07-30 04:18:03.000000000 +0900
++++ ./src/Makefile.am	2013-08-30 15:01:20.000000000 +0900
+@@ -2,13 +2,8 @@
+ # this the same as the modules that come with varnish (i.e. we're building
+ # within the varnish src dir itself, and $(top_srcdir) is the varnish source).
+ #
+-if HAVE_VARNISHSRC
+-SRC = $(VARNISHSRC)
++SRC = $(LOCALBASE)
+ DIR_PREFIX = /
+-else
+-SRC = $(top_srcdir)
+-DIR_PREFIX = lib/libvmod-statsd/
+-endif
+ 
+ INCLUDES = -I$(SRC)/include -I$(SRC)
+ 
+@@ -27,14 +22,14 @@
+ 	vcc_if.h \
+ 	vmod_statsd.c
+ 
+-vcc_if.c vcc_if.h: $(SRC)/lib/libvmod_std/vmod.py $(top_srcdir)/$(DIR_PREFIX)src/vmod_statsd.vcc
+-	@PYTHON@ $(SRC)/lib/libvmod_std/vmod.py $(top_srcdir)/$(DIR_PREFIX)src/vmod_statsd.vcc
++vcc_if.c vcc_if.h: $(LOCALBASE)/share/varnish/vmod.py $(LOCALBASE)/share/libvmod-header/vmod_header.vcc
++	@PYTHON@ $(LOCALBASE)/share/varnish/vmod.py $(LOCALBASE)/share/libvmod-header/vmod_header.vcc
+ 
+ VMOD_TESTS = tests/*.vtc
+ .PHONY: $(VMOD_TESTS)
+ 
+ tests/*.vtc:
+-	$(SRC)/bin/varnishtest/varnishtest -Dvarnishd=$(SRC)/bin/varnishd/varnishd -Dvmod_topbuild=$(abs_top_builddir) $@
++	$(SRC)/bin/varnishtest -Dvarnishd=$(SRC)/varnishd -Dvmod_topbuild=$(abs_top_builddir) $@
+ 
+ check: $(VMOD_TESTS)
+ 
