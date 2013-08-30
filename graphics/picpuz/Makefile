@@ -1,9 +1,5 @@
-# New ports collection makefile for: graphics/picpuz
-# Date created:		04 Jan 2010
-# Whom:			Stas Timokhin <devel@stasyan.com>
-#
+# Created by: Stas Timokhin <devel@stasyan.com>
 # $FreeBSD$
-#
 
 PORTNAME=	picpuz
 PORTVERSION=	2.1.1
@@ -13,6 +9,8 @@ MASTER_SITES=	http://kornelix.squarespace.com/storage/downloads/
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Jigsaw puzzle program
+
+BROKEN=		upstream has disappeared and fails to fetch
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 pkgconfig
