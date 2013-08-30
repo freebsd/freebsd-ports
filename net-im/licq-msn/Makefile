@@ -1,24 +1,21 @@
-# Created by: Jeremy Norris <ishmael27@home.com>
 # $FreeBSD$
 
-PORTNAME=	console
-PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTNAME=	msn
+PORTVERSION=	1.8.0
 CATEGORIES=	net-im
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	Ncurses-based console plugin for Licq
-
-LIB_DEPENDS=	cdk:${PORTSDIR}/devel/cdk \
-		boost_regex:${PORTSDIR}/devel/boost-libs
+COMMENT=	MSN plugin for Licq
 
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
 
 USES=		cmake
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 DOCFILES=	README
-PLIST_FILES=	lib/licq/licq_console.so \
+PLIST_FILES=	lib/licq/protocol_msn.so \
 		%%PORTDOCS%%%%DOCSDIR%%/README
 PLIST_DIRS=	%%PORTDOCS%%%%DOCSDIR%%
 
