@@ -17,11 +17,10 @@ LATEST_LINK=	varnish2
 CONFLICTS=	varnish-3.*
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}
 CONFIGURE_ENV=	RST2MAN=true
 USE_LDCONFIG=	yes
-USE_GNOME=	pkgconfig
 
 MAN1=		varnishadm.1 varnishd.1 varnishhist.1 varnishlog.1 \
 		varnishncsa.1 varnishreplay.1 varnishsizes.1 \

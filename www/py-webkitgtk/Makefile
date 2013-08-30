@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-webkitgtk
-# Date created:				07 Mar 2010
-# Whom:					Ju Pengfei <jupengfei@gmail.com>
-#
+# Created by: Ju Pengfei <jupengfei@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	webkitgtk
 PORTVERSION=	1.1.8
@@ -25,8 +21,8 @@ PROJECTHOST=	pywebkitgtk
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GNOME=	glib20 libxslt pkgconfig pygtk2
-USE_GMAKE=	yes
+USE_GNOME=	glib20 libxslt pygtk2
+USES=		gmake pkgconfig
 USE_PYTHON=	yes
 
 post-patch:

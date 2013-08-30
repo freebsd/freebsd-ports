@@ -1,9 +1,5 @@
-# New ports collection makefile for:		node
-# Date created:					2010-04-12
-# Whom:						Jin-Sih Lin <linpct@gmail.com>
-#
+# Created by: Jin-Sih Lin <linpct@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	node
 PORTVERSION=	0.4.12
@@ -22,7 +18,7 @@ MAN1=		node.1
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
-USE_GNOME=	pkgconfig
+USES=		pkgconfig
 
 CONFLICTS=	node-0.[0-35-9]* node-devel-0.[0-9]*
 
