@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A systems integration framework. Expander
 
+BROKEN=		fails to install
+
 RUN_DEPENDS=	rubygem-amqp=0.6.7:${PORTSDIR}/net/rubygem-amqp067 \
 		rubygem-bunny>=0.6.0:${PORTSDIR}/net/rubygem-bunny \
 		rubygem-em-http-request>=1.0.3:${PORTSDIR}/www/rubygem-em-http-request \
