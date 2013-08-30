@@ -2157,7 +2157,7 @@ _CCACHE_PATH=	${LOCALBASE}/libexec/ccache
 
 # Prepend the ccache dir into the PATH and setup ccache env
 PATH:=	${_CCACHE_PATH}:${PATH}
-.if !${MAKE_ENV:M*PATH=*} && !${CONFIGURE_ENV:M*PATH=*}
+.if !${MAKE_ENV:MPATH=*} && !${CONFIGURE_ENV:MPATH=*}
 MAKE_ENV+=			PATH=${PATH}
 CONFIGURE_ENV+=		PATH=${PATH}
 .endif
