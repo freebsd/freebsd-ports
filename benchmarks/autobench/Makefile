@@ -17,8 +17,7 @@ RUN_DEPENDS=	httperf:${PORTSDIR}/benchmarks/httperf \
 
 LICENSE=	GPLv2
 
-USE_PERL5=	yes
-USE_GMAKE=	yes
+USES=		gmake perl5
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" DEBUG_FLAGS= \
 		PREFIX=${PREFIX}
 

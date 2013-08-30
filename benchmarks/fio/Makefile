@@ -12,8 +12,8 @@ COMMENT=	FIO - flexible IO tester
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 
 OPTIONS_DEFINE=	GNUPLOT
 GNUPLOT_DESC=	Support for plotting graphs

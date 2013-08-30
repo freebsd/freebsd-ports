@@ -10,7 +10,7 @@ MAINTAINER=	dreibh@iem.uni-due.de
 COMMENT=	Network Performance Meter
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/netperfmeter
 MAN1=		netperfmeter.1

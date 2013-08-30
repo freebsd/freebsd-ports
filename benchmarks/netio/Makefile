@@ -1,7 +1,4 @@
-# New ports collection Makefile for:		netio
-# Date created:					2005-01-09
-# Whom:						arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	netio
@@ -16,7 +13,7 @@ COMMENT=	Network benchmark
 
 WRKSRC=		${WRKDIR}
 USE_ZIP=	yes
-USE_GMAKE=	yes
+USES=		gmake
 PLIST_FILES=	bin/netio
 
 CFLAGS+=	-DUNIX ${PTHREAD_CFLAGS}

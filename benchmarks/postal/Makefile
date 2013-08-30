@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	postal
-# Date created:			Apr 2, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	postal
 PORTVERSION=	0.72
@@ -22,7 +17,7 @@ OPTIONS_DEFAULT=	SSL
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	sbin/bhm sbin/postal bin/postal-list sbin/rabid
 

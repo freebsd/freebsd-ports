@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lmbench
-# Date created:		6 May 1995
-# Whom:			asami
-#
+# Created by: asami
 # $FreeBSD$
-#
 
 PORTNAME=	lmbench
 PORTVERSION=	3.0.a9
@@ -31,7 +27,7 @@ MAN8=		bw_file_rd.8 bw_mem.8 bw_mem_rd.8 bw_mmap_rd.8 \
 		lat_unix_connect.8 line.8 lmbench.8 lmdd.8 mhz.8 \
 		par_mem.8 par_ops.8 stream.8 tlb.8
 
-USE_GMAKE=	yes
+USES=		gmake
 
 # the bindir for the PLIST is:
 # (note that ./os needs to be run inside the work dir, running it

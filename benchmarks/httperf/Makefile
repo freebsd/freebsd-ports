@@ -1,9 +1,5 @@
-# New ports collection makefile for:	httperf
-# Date created:		28 Jul 1999
-# Whom:			Will Andrews <andrews@technologist.com>
-#
+# Created by: Will Andrews <andrews@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	httperf
 PORTVERSION=	0.9.0
@@ -17,7 +13,7 @@ LICENSE=	GPLv2
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	LIBUTIL_OBJS=ssl_writev.o \
 		exec_prefix=${PREFIX}
 
