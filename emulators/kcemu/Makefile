@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kcemu
-# Date created:	06 October 2011
-# Whom:	Hardy Schumacher <hardy.schumacher@gmx.de>
-#
+# Created by: Hardy Schumacher <hardy.schumacher@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	kcemu
 PORTVERSION=	0.5.1
@@ -29,7 +25,7 @@ LIB_DEPENDS=	audiofile:${PORTSDIR}/audio/libaudiofile \
 GNU_CONFIGURE=	yes
 USE_XORG=	xmu
 USE_GNOME=	gtk20
-USES=		gettext
+USES=		gettext pkgconfig
 
 MAN1=		kctape.1 kc2raw.1 kc2img.1 kc2tap.1 tdtodump.1 \
 		kcemu-remote.1 kcemu.1x kc2wav.1
