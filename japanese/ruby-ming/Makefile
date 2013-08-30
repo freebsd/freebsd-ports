@@ -16,6 +16,8 @@ COMMENT=	Yet another Ming module for Ruby built with Japanese support
 
 LIB_DEPENDS=	ming:${PORTSDIR}/japanese/ming
 
+BROKEN=		fails to build
+
 RUBY_MING_VERSION=	0.1.6
 
 USE_RUBY=	yes
