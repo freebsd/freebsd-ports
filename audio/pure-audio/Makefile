@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MAINTAINER=	lichray@gmail.com
 COMMENT=	A digital audio interface for the Pure language
 
-LIB_DEPENDS=	portaudio:${PORTSDIR}/audio/portaudio2 \
+LIB_DEPENDS=	portaudio.2:${PORTSDIR}/audio/portaudio2 \
 		samplerate:${PORTSDIR}/audio/libsamplerate \
 		sndfile:${PORTSDIR}/audio/libsndfile \
 		fftw3:${PORTSDIR}/math/fftw3
