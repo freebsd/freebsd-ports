@@ -18,9 +18,8 @@ LIB_DEPENDS=	mad:${PORTSDIR}/audio/libmad \
 		speex:${PORTSDIR}/audio/speex
 
 USE_BZIP2=	yes
-USES=        pathfix gettext
+USES=		pathfix gettext pkgconfig gmake
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 
 CPPFLAGS+=	-I${LOCALBASE}/include
