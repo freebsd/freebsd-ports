@@ -14,6 +14,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile \
 		pulse-simple:${PORTSDIR}/audio/pulseaudio
 
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 LDFLAGS+=	-L${LOCALBASE}/lib
