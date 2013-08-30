@@ -1,0 +1,11 @@
+--- Makefile.orig	1999-09-05 22:48:50.000000000 -0400
++++ Makefile	2013-08-30 15:19:45.000000000 -0400
+@@ -28,7 +28,7 @@
+ DESTDIR	= /usr/local/bin/
+ DATA_DESTDIR = /usr/local/share/engdic/
+ RM = rm -f *.o 
+-CC = gcc
++CC ?= cc
+ 
+ all: engdic
+ 
