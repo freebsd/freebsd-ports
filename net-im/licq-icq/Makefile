@@ -1,22 +1,21 @@
 # $FreeBSD$
 
-PORTNAME=	jabber
+PORTNAME=	icq
 PORTVERSION=	1.8.0
 CATEGORIES=	net-im
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	Jabber (XMPP) plugin for Licq
+COMMENT=	ICQ plugin for Licq
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gloox:${PORTSDIR}/net-im/gloox \
-		boost_regex:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
 
 USES=		cmake
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 DOCFILES=	README
-PLIST_FILES=	lib/licq/protocol_jabber.so \
+PLIST_FILES=	lib/licq/protocol_icq.so \
 		%%PORTDOCS%%%%DOCSDIR%%/README
 PLIST_DIRS=	%%PORTDOCS%%%%DOCSDIR%%
 

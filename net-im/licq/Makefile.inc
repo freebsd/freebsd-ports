@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMEPREFIX=		licq-
-LICQ_VER=		1.7.1
+LICQ_VER=		1.8.0
 .if ${PORTNAME} != "base"
 BUILD_DEPENDS+=		licq:${PORTSDIR}/${LICQ_PORT}
 RUN_DEPENDS+=		licq:${PORTSDIR}/${LICQ_PORT}
