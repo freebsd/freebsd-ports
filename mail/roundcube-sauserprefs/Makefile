@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sauserprefs
-PORTVERSION=	1.10
+PORTVERSION=	1.10 # PLEASE MIRROR DISTFILE WITH A VERSION
 CATEGORIES=	mail
 MASTER_SITES=	http://www.tehinterweb.co.uk/roundcube/plugins/
 PKGNAMEPREFIX=	roundcube-
