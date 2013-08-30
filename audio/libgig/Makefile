@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libgig
-# Date created:		2007-01-24
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	libgig
 PORTVERSION=	3.3.0
@@ -22,8 +18,7 @@ LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 USE_BZIP2=	yes
-USES=	pathfix
-USE_GMAKE=	yes
+USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
