@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gnopernicus
-# Date created:				11 May 2003
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/accessibility/gnopernicus/Makefile,v 1.85 2007/07/23 19:03:49 mezz Exp $
-#
 
 PORTNAME=	gnopernicus
 PORTVERSION=	1.1.2
@@ -19,11 +15,10 @@ COMMENT=	Collection of accessibility apps for GNOME 2
 LIB_DEPENDS=	gnome-mag.2:${PORTSDIR}/accessibility/gnome-mag
 
 USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext gmake
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui atspi gnomespeech
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags gtk+-2.0`
