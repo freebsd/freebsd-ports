@@ -1,9 +1,5 @@
-# New ports collection makefile for:	enscribe
-# Date created:			15 Jul 2004
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	enscribe
 PORTVERSION=	0.1.0
@@ -20,6 +16,8 @@ LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
+
+USES=		pkgconfig
 
 LICENSE=	GPLv2
 
