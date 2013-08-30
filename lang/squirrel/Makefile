@@ -1,9 +1,5 @@
-# New ports collection makefile for:	squirrel
-# Date created:		14 July 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	squirrel
 PORTVERSION=	2.2.5
