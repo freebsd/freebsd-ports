@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-ut
-# Date created:		7 Jan 2006
-# Whom:			Sean Farley <sean-freebsd@farley.org>
-#
+# Created by: Sean Farley <sean-freebsd@farley.org>
 # $FreeBSD$
-#
 
 PORTNAME=	linux-ut
 PORTVERSION=	${UTVERSION}
@@ -18,6 +14,8 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Unreal Tournament for Linux
+
+BROKEN=		fails to fetch
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
