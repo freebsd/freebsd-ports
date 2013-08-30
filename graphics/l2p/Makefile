@@ -1,40 +1,40 @@
-# New ports collection makefile for:	l2p
-# Date created:		2006-03-22
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	l2p
 PORTVERSION=	1.1.1
 PORTREVISION=	3
 CATEGORIES=	graphics print perl5
-MASTER_SITES=	http://www.redsymbol.net/software/l2p/dist/ \
-		http://nivi.interfree.it/distfiles/${PORTNAME}/
+MASTER_SITES=	http://static.redsymbol.net/software/l2p/dist/ \
+		http://nivit.altervista.org/FreeBSD/ports/distfiles/
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Create PNG images from LaTeX math expressions
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
-USE_PERL5_RUN=	yes
-USE_ZIP=	yes
-USE_TEX=	latex dvipsk
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+OPTIONS_DEFINE=	DOCS
 
 PLIST_FILES=	bin/l2p
 PORTDOCS=	l2p.txt l2p.html
 
-post-patch:
-	@${REINPLACE_CMD} -e '1s|.*|#!${PERL} -w|' ${WRKSRC}/${PORTNAME}
+SHEBANG_FILES=	${WRKSRC}/${PORTNAME}
+
+USE_PERL5=	run
+USE_TEX=	latex dvipsk
+USE_ZIP=	yes
+USES=		perl5 shebangfix
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+.include <bsd.port.options.mk>
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
