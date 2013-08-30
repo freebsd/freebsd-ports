@@ -17,9 +17,8 @@ LIB_DEPENDS=	portaudio:${PORTSDIR}/audio/portaudio \
 		celt0:${PORTSDIR}/audio/celt
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USES=		pathfix
+USES=		gmake pathfix pkgconfig
 
 CONFIGURE_ENV=	LIBS="-pthread"
 CONFIGURE_ARGS=	--enable-portaudio \
