@@ -1,11 +1,9 @@
-# New ports collection makefile for:	pure (for xemacs21-mule)
-# Date Created:		4 May 2001
-# Whom:			Yoichi NAKAYAMA <yoichi@eken.phys.nagoya-u.ac.jp>
-#
+# Created by: Yoichi NAKAYAMA <yoichi@eken.phys.nagoya-u.ac.jp>
 # $FreeBSD$
-#
 
 MASTERDIR=	${.CURDIR}/../pure-emacs21
+
+BROKEN=		fails to install
 
 USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule
