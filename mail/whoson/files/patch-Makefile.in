@@ -1,6 +1,15 @@
 --- Makefile.in.orig	2008-01-17 15:59:21.000000000 +0300
 +++ Makefile.in	2008-07-02 19:37:47.000000000 +0400
-@@ -961,12 +961,7 @@
+@@ -336,7 +336,7 @@ whosond_SOURCES = whosond.c mainloop.c l
+ nodist_whosond_SOURCES = servlist.c
+ EXTRA_whosond_SOURCES = serv_tcp.c serv_unix.c serv_unixd.c serv_udp.c
+ whosond_LDADD = $(lib_LTLIBRARIES) @LIBOBJS@ @SERV_CONN_OBJ@
+-whosond_DEPENDENCIES = @SERV_CONN_OBJ@
++whosond_DEPENDENCIES = @SERV_CONN_OBJ@ $(lib_LTLIBRARIES)
+ libwhoson_la_SOURCES = clnt_common.c rtconfig.c checkperm.c
+ nodist_libwhoson_la_SOURCES = clntlist.c
+ EXTRA_libwhoson_la_SOURCES = clnt_tcp.c clnt_unix.c clnt_unixd.c clnt_udp.c
+@@ -982,12 +982,7 @@ uninstall-man: uninstall-man3 uninstall-
  
  
  install-data-hook:
