@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	procenv
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	sysutils
 MASTER_SITES=	https://launchpad.net/procenv/trunk/${PORTVERSION}/+download/ \
 		DEBIAN \
