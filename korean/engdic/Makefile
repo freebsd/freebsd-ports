@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English dictionary utility for Korean
 
-ALL_TARGET=	clean all
+EXTRACT_AFTER_ARGS=	--exclude '*.o'
 PLIST_FILES=	bin/edic bin/engdic
 PORTDATA=	[a-z].dic.gz
 
