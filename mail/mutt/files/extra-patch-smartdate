@@ -1,0 +1,126 @@
+--- mutt.h
++++ mutt.h
+@@ -133,6 +133,16 @@
+   M_FORMAT_NOFILTER	= (1<<7)  /* do not allow filtering on this pass */
+ } format_flag;
+ 
++/* flags for SmartDate */
++typedef enum {
++    FUTURE      = 1,
++    SMARTTIME   = 2,
++    YESTERDAY   = 3,
++    WEEKDAY     = 4,
++    STANDARD    = 5,
++    ANCIENT     = 6
++} smartdate_type;
++
+ /* types for mutt_add_hook() */
+ #define M_FOLDERHOOK	1
+ #define M_MBOXHOOK	(1<<1)
+--- hdrline.c
++++ hdrline.c
+@@ -231,6 +231,89 @@
+  * %Y = `x-label:' field (if present, tree unfolded, and != parent's x-label)
+  * %Z = status flags	*/
+ 
++static void
++format_smartdate( char *buf, size_t max, struct tm *tm, smartdate_type type )
++{
++    char *strftime_fmt = NULL;
++
++    switch( type ) {
++        case FUTURE:        /* Date in the future */
++            strftime_fmt = "%d%h%y!";
++            break;
++        case SMARTTIME:     /* Today */
++            strftime_fmt = "%I:%M %p";
++            break;
++        case YESTERDAY:     /* Yesterday */
++            strncpy( buf, "Yesterday", max );
++            break;
++        case WEEKDAY:       /* Within the last 7 days */
++            strftime_fmt = "%A";
++            break;
++        case STANDARD:      /* Within the last six months */
++            strftime_fmt = "%h %d";
++            break;
++        case ANCIENT:       /* Older than 6 months */
++            strftime_fmt = "%h %Y";
++            break;
++    }
++
++    if( strftime_fmt != NULL ) {
++        strftime( buf, max, strftime_fmt, tm );
++    }
++}
++
++static void
++smartdate( char *buf, size_t max, struct tm *tm )
++{
++    smartdate_type type = 0;
++
++    struct tm now;
++
++    time_t sse = mktime( tm );   /* Seconds since epoch */
++    time_t sse_now = time(NULL); /* Seconds since epoch until now */
++
++    int dse = 0;            /* Days since epoch */
++    int dse_now = 0;        /* Days since epoch until today */
++
++    /* Calculate the number of days since epoch */
++    dse = sse / (60*60*24);
++    dse_now = sse_now / (60*60*24);
++
++    /* Default display type */
++    type = STANDARD;
++
++    /* Check if the date is in the future */
++    if( dse > dse_now ) {
++        type = FUTURE;
++    }
++    else {
++        int diff = dse_now - dse;
++        if( diff == 0 ) type = SMARTTIME;
++        else if( diff == 1 ) type = YESTERDAY;
++        else if( diff < 7 ) type = WEEKDAY;
++        else if( diff > 215 ) type = ANCIENT;  /* Surely older than six
++                                                  months */
++        else if( diff > 180 ) {
++            /*
++             * Slightly heavy calculation to check if the date is more
++             * than six months in the past.  This calculation uses
++             * calendar months and not the exact number of days.  So,
++             * January 31, 2003 would be considered more than six months
++             * old whether today's date is August 1 or August 31, 2003
++             */
++            int monthdiff;
++            localtime_r( &sse_now, &now );
++            monthdiff = ( now.tm_mon - tm->tm_mon )
++                + ( ( now.tm_year - tm->tm_year ) * 12 );
++            if( monthdiff > 6 ) {
++                type = ANCIENT;
++            }
++        }
++    }
++
++    format_smartdate( buf, max, tm, type );
++}
++
+ static const char *
+ hdr_format_str (char *dest,
+ 		size_t destlen,
+@@ -462,7 +545,13 @@
+ 	  tm = gmtime (&T);
+ 	}
+ 
+-	strftime (buf2, sizeof (buf2), dest, tm);
++	/* Identify the non-strftime smartdate pattern (%@) */
++	if( strncmp( dest, "%@", 2 ) == 0 ) {
++		smartdate( buf2, sizeof( buf2 ), tm );
++	}
++	else {
++		strftime (buf2, sizeof (buf2), dest, tm);
++	}
+ 
+ 	if (do_locales)
+ 	  setlocale (LC_TIME, "C");
