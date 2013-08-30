@@ -27,7 +27,7 @@ OPTIONS_DEFINE=	LILYPOND DOCS EXAMPLES
 LILYPOND_DESC=	Install LilyPond (Printing)
 
 USE_GNOME=	gtk20 gtksourceview2 librsvg2 libxml2
-USES=		bison gmake
+USES=		bison gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gtk2 \
 		--enable-jack \
