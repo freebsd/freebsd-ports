@@ -24,7 +24,8 @@ OUTPUT_JAR=	swt.jar
 
 USE_ZIP=	yes
 USE_GL=		yes
-USE_GNOME=	gtk20 pkgconfig
+USES=		pkgconfig
+USE_GNOME=	gtk20
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
