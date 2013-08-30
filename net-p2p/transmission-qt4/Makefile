@@ -9,8 +9,6 @@ COMMENT=	Fast and lightweight QT4 BitTorrent client
 LIB_DEPENDS=	${GEN_LIB_DEPENDS}
 RUN_DEPENDS=	${GEN_RUN_DEPENDS}
 
-BROKEN=		Requires newer version of Qt than in the ports tree
-
 DESCR=		${.CURDIR}/pkg-descr
 MASTERDIR=	${.CURDIR}/../transmission-cli
 PLIST=		${.CURDIR}/pkg-plist
