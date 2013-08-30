@@ -1,0 +1,12 @@
+$OpenBSD$
+--- qt/torrent-filter.cc.orig	Sat Jul  6 22:21:17 2013
++++ qt/torrent-filter.cc	Sat Jul  6 22:29:10 2013
+@@ -211,7 +211,7 @@ TorrentFilter :: hiddenRowCount( ) const
+ void
+ TorrentFilter :: countTorrentsPerMode (int * setmeCounts) const
+ {
+-  std::fill_n (setmeCounts, FilterMode::NUM_MODES, 0);
++  std::fill_n (setmeCounts, int(FilterMode::NUM_MODES), 0);
+ 
+   for (int row(0); ; ++row)
+     { 
