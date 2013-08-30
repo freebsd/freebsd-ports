@@ -53,6 +53,6 @@ post-patch:
 post-install:
 	@${MKDIR} ${PREFIX}/lib/gsoap
 	@${CP} ${WRKSRC}/gsoap/stdsoap2.c ${PREFIX}/lib/gsoap
-	@${LN} ${PREFIX}/lib/gsoap/stdsoap2.c ${PREFIX}/lib/gsoap/stdsoap2.cpp
+	@${LN} -f ${PREFIX}/lib/gsoap/stdsoap2.c ${PREFIX}/lib/gsoap/stdsoap2.cpp
 
 .include <bsd.port.post.mk>
