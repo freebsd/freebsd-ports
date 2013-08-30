@@ -6,6 +6,6 @@ Features include color support, message threading, MIME support (including
 RFC1522 support for encoded headers), customizable key bindings, POP3,
 Delivery Status Notification (DSN) support, and PGP/MIME.
 
-Mutt User Information:	http://www.math.fu-berlin.de/~guckes/mutt/
+Mutt FAQ:	http://dev.mutt.org/trac/wiki/MuttFaq
 
 WWW: http://www.mutt.org/
