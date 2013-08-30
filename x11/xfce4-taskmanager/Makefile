@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xfce4-taskbar-plugin
-# Date created:		5 May 2005
-# Whom:			DaJoob
-#
+# Created by: DaJoob
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-taskmanager
 PORTVERSION=	1.0.0
@@ -21,9 +17,8 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=		gettext
-USE_GMAKE=	yes
-USE_GNOME=	gtk20 desktopfileutils intltool intlhack pkgconfig
+USES=		gettext gmake pkgconfig
+USE_GNOME=	gtk20 desktopfileutils intltool intlhack
 
 .include <bsd.port.pre.mk>
 

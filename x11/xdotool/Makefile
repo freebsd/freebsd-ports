@@ -11,8 +11,7 @@ COMMENT=	Programmatically simulate keyboard input or mouse activity
 
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
+USES=		gmake pkgconfig
 USE_XORG=	x11 xtst xinerama
 
 MAN1=		xdotool.1
