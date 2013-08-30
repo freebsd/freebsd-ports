@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	IT, XM, S3M, and MOD player library
 
-USE_GMAKE=	yes
+USES=		gmake
 
 OPTIONS_DEFINE=	ALLEGRO
 ALLEGRO_DESC=	Enable allegro support

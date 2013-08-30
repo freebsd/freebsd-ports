@@ -1,7 +1,4 @@
-# New ports collection makefile for:	bmp-mac
-# Date Created:		17 January 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mac
@@ -18,7 +15,7 @@ COMMENT=	Monkey's Audio Codec non-win32 port
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
 		mac.2:${PORTSDIR}/audio/mac
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf libtool
 CPPFLAGS+=	"-I${LOCALBASE}/include"

@@ -16,8 +16,7 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		curl:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 USE_GSTREAMER=	good mad gconf
 INSTALLS_ICONS=	yes

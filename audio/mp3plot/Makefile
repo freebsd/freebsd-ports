@@ -22,10 +22,6 @@ CONFIGURE_ARGS+=--with-boost-program-options=boost_program_options \
 		--with-boost-thread=boost_thread
 CONFIGURE_ENV+=	"LIBS=-lboost_system"
 
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
-
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
 

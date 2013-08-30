@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libopenspc
-# Date created:		01 Jan 2009
-# Whom:			Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libopenspc
 PORTVERSION=	0.3.99a
@@ -17,7 +13,7 @@ COMMENT=	Library for playing SPC (SNES audio) files
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
 

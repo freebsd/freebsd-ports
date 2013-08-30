@@ -15,10 +15,9 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	xmmsclient:${PORTSDIR}/audio/xmms2 \
 		notify:${PORTSDIR}/devel/libnotify
 
-USES=		desktop-file-utils
+USES=		gmake desktop-file-utils
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}

@@ -23,8 +23,8 @@ MAN_COMPRESSED=	no
 
 PLIST_FILES=	bin/pianobar
 
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 MAKE_ARGS+=	CC="${CC}"
 
 CFLAGS+=	-I${LOCALBASE}/include -std=c99

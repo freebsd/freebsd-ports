@@ -16,9 +16,9 @@ BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkre
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
+USES=		gmake
 USE_XORG=	x11
 USE_GNOME=	esound gtk20
-USE_GMAKE=	yes
 MAKE_ENV=	LOCALEDIR="${PREFIX}/share/locale"
 
 PORTDOCS=	Changelog README Themes

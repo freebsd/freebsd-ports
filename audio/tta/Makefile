@@ -1,9 +1,5 @@
-# New ports collection makefile for:	TTA encoder
-# Date created:				10 Aug 2004
-# Whom:			Martin Dieringer <Martin.Dieringer@t-online.de>
-#
+# Created by: Martin Dieringer <Martin.Dieringer@t-online.de>
 # $FreeBSD$
-#
 
 PORTNAME=	tta
 PORTVERSION=	3.4.1
@@ -17,7 +13,7 @@ COMMENT=	The True Audio Encoder, lossless (de)compressor
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake
 ALL_TARGET=	ttaenc
 MAKE_ARGS=	CFLAGS="${CFLAGS}" INSDIR="${PREFIX}/bin"
 

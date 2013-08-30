@@ -17,7 +17,7 @@ LIB_DEPENDS+=	speex:${PORTSDIR}/audio/speex \
 		protoc:${PORTSDIR}/devel/protobuf \
 		opus:${PORTSDIR}/audio/opus
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_QT4=	gui svg iconengines_run xml sql network l10n \
 		linguist_build qmake_build moc_build rcc_build uic_build \
 		opengl sql-sqlite3_run

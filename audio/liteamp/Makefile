@@ -18,9 +18,8 @@ LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
 		mad.2:${PORTSDIR}/audio/libmad \
 		vorbisfile.6:${PORTSDIR}/audio/libvorbis
 
-USES=        pathfix gettext
+USES=		gmake pathfix gettext
 USE_GNOME=	libgnomeui
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LDFLAGS="${LDFLAGS}"
 

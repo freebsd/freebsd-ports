@@ -18,8 +18,7 @@ LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gettext iconv shebangfix
-USE_GMAKE=	yes
+USES=		gmake pkgconfig gettext iconv shebangfix
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 CONFIGURE_ARGS=	--disable-alsa --disable-nullout \

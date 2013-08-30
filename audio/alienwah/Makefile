@@ -1,9 +1,5 @@
-# New ports collection Makefile for:   alienwah
-# Date created:                        13 May 2002
-# Whom:                                Tilman Linneweh <arved@FreeBSD.org>
-#
+# CReated by: Tilman Linneweh <arved@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	alienwah
 PORTVERSION=	1.13
@@ -16,7 +12,7 @@ COMMENT=	Paul Nasca's AlienWah LADSPA Plugin
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	CPP="${CXX}" CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -fPIC"
 
 PLIST_FILES=	lib/ladspa/aw.so

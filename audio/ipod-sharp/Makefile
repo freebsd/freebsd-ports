@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ipod-sharp
-# Date created:		2008-07-09
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ipod-sharp
 PORTVERSION=	0.8.5
@@ -21,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/podsleuth.pc:${PORTSDIR}/misc/podsle
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack gtksharp20
+USES=		gmake pathfix
+USE_GNOME=	gtksharp20
 
 .include <bsd.port.mk>

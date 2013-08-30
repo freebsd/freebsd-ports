@@ -20,7 +20,7 @@ SYSTEM_TRAY_DESC=	System-tray icon
 
 USE_QT4=	gui linguist_build moc_build qmake_build rcc_build uic_build
 QT_NONSTANDARD=	yes
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_ac_moc=${MOC} \
 		ac_cv_path_ac_uic=${UIC} \

@@ -15,7 +15,7 @@ BUILD_DEPENDS=	re>=${PORTVERSION}:${PORTSDIR}/audio/re \
 		rem>=${PORTVERSION}:${PORTSDIR}/audio/rem
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_GMAKE=	yes
+USES=		gmake
 
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ilbc
 MAKE_ARGS=	MOD_AUTODETECT=""

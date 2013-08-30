@@ -11,8 +11,7 @@ COMMENT=	API library for interfacing MPD
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix
-USE_GMAKE=	yes
+USES=		gmake pathfix
 USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gmpc-discogs
-# Date created:		September 14 2007
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gmpc-discogs
 PORTVERSION=	0.20.0
@@ -20,8 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig glib20 gtk20 intltool libxml2
-USES=		gettext
+USE_GNOME=	glib20 gtk20 intltool libxml2
+USES=		gettext gmake pathfix pkgconfig
 
 .include <bsd.port.mk>

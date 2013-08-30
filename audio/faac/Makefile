@@ -1,9 +1,5 @@
-# New ports collection makefile for:	faac
-# Date created:			Wed May  5 16:38:55 EDT 2004
-# Whom:				Michael Johnson <ahze@ahze.net>
-#
+# Created by: Michael Johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	faac
 PORTVERSION=	1.28
@@ -18,9 +14,9 @@ LIB_DEPENDS=	mp4v2.10:${PORTSDIR}/multimedia/mp4v2
 
 RESTRICTED=	Distribution in binary form is prohibited
 
+USES=		gmake
 USE_BZIP2=	yes
 USE_DOS2UNIX=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing

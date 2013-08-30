@@ -1,6 +1,4 @@
-# New ports collection makefile for:	wavbreaker
-# Date created:				20 May 2003
-# Whom:					Kirill Ponomarew <ponomarew@oberon.net>
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 #
 # $FreeBSD$
 
@@ -15,8 +13,8 @@ COMMENT=	Tool to split and merge wav files
 
 OPTIONS_DEFINE=	PULSEAUDIO NLS
 
-USE_GNOME=	gnomehack gtk20 libxml2
-USE_GMAKE=	yes
+USE_GNOME=	gtk20 libxml2
+USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PKG_CONFIG="${LOCALBASE}/bin/pkg-config"
 CPPFLAGS+=	-I${LOCALBASE}/include

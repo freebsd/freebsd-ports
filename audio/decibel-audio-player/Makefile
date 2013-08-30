@@ -17,8 +17,7 @@ LICENSE=	GPLv2
 USE_PYTHON=	2.5+
 USE_GNOME=	pygnome2 pygtk2
 USE_GSTREAMER=	python good bad
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gmake gettext
 NO_BUILD=	yes
 MAN1=		decibel-audio-player.1 decibel-audio-player-remote.1
 

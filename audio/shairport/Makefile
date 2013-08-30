@@ -1,9 +1,5 @@
-# New ports collection makefile for:	shairport
-# Date created:				2011.09.30
-# Whom:					Aldis Berjoza <graudeejs@gmail.com>
-#
+# Created by: Aldis Berjoza <graudeejs@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	shairport
 PORTVERSION=	0.05
@@ -24,10 +20,9 @@ RUN_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
 		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		avahi-publish-service:${PORTSDIR}/net/avahi-app
 
-USE_GMAKE=	yes
-USE_PERL5_RUN=	yes
+USES=		gmake perl5 pkgconfig
+USE_PERL5=	run
 USE_OPENSSL=	yes
-USE_GNOME=	pkgconfig
 
 USE_RC_SUBR=	${PORTNAME}
 SUB_LIST=	PERL=${PERL}

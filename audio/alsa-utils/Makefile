@@ -1,9 +1,5 @@
-# New ports collection makefile for:   alsa-utils
-# Date created:                June 29, 2009
-# Whom:                        Aragon Gouveia <aragon@phat.za.net>
-#
+# Created by: Aragon Gouveia <aragon@phat.za.net>
 # $FreeBSD$
-#
 
 PORTNAME=	alsa-utils
 PORTVERSION=	1.0.26
@@ -18,7 +14,7 @@ LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 

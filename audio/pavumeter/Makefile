@@ -1,9 +1,5 @@
-# Ports collection Makefile for: pavumeter
-# Date created:		July 21, 2007
-# Whom:			Romain Tartière <romain@blogreen.org>
-#
+# Created by: Romain Tartière <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pavumeter
 PORTVERSION=	0.9.3
@@ -20,7 +16,7 @@ LIB_DEPENDS=	glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 		pulse.0:${PORTSDIR}/audio/pulseaudio
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 CONFIGURE_ARGS=	--disable-lynx
 

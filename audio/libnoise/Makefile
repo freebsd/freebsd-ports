@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libnoise
-# Date created:		28 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libnoise
 DISTVERSION=	1.0.0
@@ -15,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates three-dimensional coherent noise
 
 USE_ZIP=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	libtool:env
 USE_LDCONFIG=	yes
 CXXFLAGS+=	-O3 -fomit-frame-pointer

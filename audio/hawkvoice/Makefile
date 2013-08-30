@@ -12,7 +12,7 @@ COMMENT=	Portable sound and speech compression library
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
-USE_GMAKE=	yes
+USES=		gmake
 MAKEFILE=	makefile.linux
 USE_CSTD=	gnu89
 USE_LDCONFIG=	yes

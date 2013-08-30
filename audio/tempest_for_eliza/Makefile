@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.erikyyy.de/tempest/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to send AM radio signals using a PC monitor
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 

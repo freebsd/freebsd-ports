@@ -1,7 +1,4 @@
-# New ports collection Makefile for: 	ladspa
-# Date created:			11 May 2002
-# Whom:				Tilman Linneweh <arved@FreeBSD.org>
-#
+# Created by: Tilman Linneweh <arved@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ladspa
@@ -18,7 +15,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 WRKSRC=		${WRKDIR}/ladspa_sdk
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 PROGRAM_FILES=	analyseplugin applyplugin listplugins
 PLUGIN_FILES=	amp.so delay.so filter.so noise.so sine.so

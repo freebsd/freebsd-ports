@@ -23,8 +23,7 @@ CONFIGURE_ARGS+=PKG_CONFIG_LIBDIR=${PREFIX}/libdata/pkgconfig \
 			--libdir=${PREFIX}/lib/${PORTNAME}2 \
 			--includedir=${PREFIX}/include/${PORTNAME}2
 
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_DOS2UNIX=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}2
 

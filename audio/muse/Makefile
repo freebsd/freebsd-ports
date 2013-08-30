@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	muse
-# Date created:			Jun 7, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	MuSE
 PORTVERSION=	0.9.2
@@ -23,8 +18,7 @@ LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 OPTIONS_DEFINE=	X11 LAME SNDFILE DOCS
 OPTIONS_DEFAULT=X11
 
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug --disable-lubrify --disable-rpath
 

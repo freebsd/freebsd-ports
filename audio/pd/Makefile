@@ -21,14 +21,12 @@ OPTIONS_DEFAULT=FFTW
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S,${DISTVERSIONSUFFIX},,}
 
-USES=		gettext pkgconfig
+USES=		gettext gmake pkgconfig
 USE_TK_WRAPPER=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal libtoolize autoconf automake
 ACLOCAL_ARGS=	-I m4/generated -I m4
 LIBTOOLIZE_ARGS=--install --force
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing
-USE_GMAKE=	yes
 
 MAN1=		pd.1 pdreceive.1 pdsend.1
 

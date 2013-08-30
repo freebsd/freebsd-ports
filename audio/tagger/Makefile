@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tagger
-# Date created:		2007-07-07
-# Whom:			David Thiel <lx@FreeBSD.org>
-#
+# Created by: David Thiel <lx@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tagger
 PORTVERSION=	0.2.7
@@ -15,7 +11,7 @@ MAINTAINER=	lx@FreeBSD.org
 COMMENT=	CLI Ogg/Vorbis and MP3 ID3v1/ID3v1.1 tag editor
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=prefix=${PREFIX} mandir=${MANPREFIX}/man
 CFLAGS+=	-I${LOCALBASE}/include

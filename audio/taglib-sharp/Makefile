@@ -15,8 +15,7 @@ BUILD_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|}
 RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|}
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=	pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
 		VERSIONSUFX="db62eba44689b5b0"

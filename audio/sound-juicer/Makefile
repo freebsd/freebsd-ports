@@ -1,10 +1,6 @@
-# New ports collection makefile for:	soundjuicer
-# Date created:		20 Jan 2004
-# Whom:			Alexander Nedotsukov <bland@FreeBSD.org>
-#
+# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/audio/sound-juicer/Makefile,v 1.102 2010/09/29 13:19:43 kwm Exp $
-#
 
 PORTNAME=	sound-juicer
 PORTVERSION=	2.32.0
@@ -25,10 +21,9 @@ LIB_DEPENDS=	musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
 		brasero-media.3:${PORTSDIR}/sysutils/brasero
 
 USE_BZIP2=	yes
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake pathfix
 INSTALLS_OMF=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix gconf2 libglade2 gnomedocutils
+USE_GNOME=	intlhack gnomeprefix gconf2 libglade2 gnomedocutils
 USE_GSTREAMER=	cdparanoia vorbis flac gconf good gio
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ignore-missing-cd

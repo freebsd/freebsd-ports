@@ -13,9 +13,8 @@ LICENSE=	LGPL21
 
 BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 
-USES=		pathfix
+USES=		gamke pathfix
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 MAN3=		liblo.3 liblolowlevel.3 lo.h.3 lo_arg.3 lo_lowlevel.h.3 \

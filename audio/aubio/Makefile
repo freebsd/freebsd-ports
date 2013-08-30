@@ -20,8 +20,7 @@ LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate \
 GNU_CONFIGURE=	yes
 # --disable-complex: does not compile due to missing carg(3) et al.
 CONFIGURE_ARGS=	--disable-complex
-USE_GMAKE=	yes
-USES=	pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

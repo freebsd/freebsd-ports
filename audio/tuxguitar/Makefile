@@ -26,11 +26,10 @@ LIB_DEPENDS=	fluidsynth.1:${PORTSDIR}/audio/fluidsynth \
 MAKE_ENV+=	PREFIX=${PREFIX} INSTALL_DOC_DIR=${DOCSDIR} \
 		INSTALL_SHARE_DIR=${DATADIR}
 
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_JAVA=	yes
 USE_ANT=	yes
 USE_GECKO=	libxul
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 JAVA_VERSION=	1.6+
 NOCCACHE=	yes

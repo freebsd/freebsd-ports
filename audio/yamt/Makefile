@@ -1,9 +1,5 @@
-# New ports collection makefile for:	yamt
-# Date created:			9 January 2000
-# Whom:				Dmitry Sivachenko <dima@Chg.RU>
-#
+# Created by: Dmitry Sivachenko <dima@Chg.RU>
 # $FreeBSD$
-#
 
 PORTNAME=	yamt
 PORTVERSION=	0.5
@@ -16,8 +12,8 @@ MASTER_SITES=	SF \
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Yet Another Mp3 Tool which helps you to organize your mp3s
 
-USE_GMAKE=	yes
-USE_GNOME=	gnomelibs gnomehack gnomeprefix
+USES=		gmake pathfix
+USE_GNOME=	gnomelibs gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include

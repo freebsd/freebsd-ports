@@ -1,6 +1,4 @@
-# New ports collection makefile for:	xmms-mac
-# Date Created:				23 February 2005
-# Whom:					<arundel@h3c.de>
+# Created by: <arundel@h3c.de>
 #
 # $FreeBSD$
 
@@ -22,7 +20,7 @@ COMMENT=	Native Monkey Audio Codec plugin for the XMMS1 Multimedia Player
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		mac.2:${PORTSDIR}/audio/mac
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	CPPFLAGS="${CPPFLAGS}"
 USE_AUTOTOOLS=	autoconf

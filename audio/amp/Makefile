@@ -1,9 +1,5 @@
-# New ports collection makefile for:	amp
-# Date created:		Jun 23 1997
-# Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
-#
+# Created by: Vanilla I. Shu <vanilla@MinJe.com.TW>
 # $FreeBSD$
-#
 
 PORTNAME=	amp
 PORTVERSION=	0.7.6
@@ -15,7 +11,7 @@ MAINTAINER=	delphus@gmail.com
 COMMENT=	Another mp3 player
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 MAN1=		amp.1
 PLIST_FILES=	bin/amp

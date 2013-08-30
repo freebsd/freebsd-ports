@@ -1,9 +1,5 @@
-# New ports collection makefile for:    boodler
-# Date created:		2003/12/30
-# Whom:			Dan Pelleg <daniel+boodler@pelleg.org>
-#
+# Created by: Dan Pelleg <daniel+boodler@pelleg.org>
 # $FreeBSD$
-#
 
 PORTNAME=	boodler
 PORTVERSION=	1.5.3
@@ -17,7 +13,8 @@ COMMENT=	A programmable soundscape tool
 
 RESTRICTED=	no commercial use
 RESTRICTED_FILES=	boodler-snd-021902.tar.gz
-USE_GMAKE=	yes
+
+USES=		gmake
 USE_PYTHON=	yes
 DRIVER?=	oss
 WRKSRC=		${WRKDIR}/${PORTNAME}

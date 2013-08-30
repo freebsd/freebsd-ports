@@ -13,11 +13,10 @@ COMMENT=	Speech recognition system
 LIB_DEPENDS=	sphinxbase:${PORTSDIR}/audio/sphinxbase
 
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=libtool
 USE_CSTD=	gnu99
 MAKE_JOBS_UNSAFE=	yes
-USES=		pathfix
+USES=		gmake pathfix
 
 CFLAGS+=	-I${LOCALBASE}/include #-I${LOCALBASE}/include/sphinxbase
 CXXFLAGS+=	-I${LOCALBASE}/include #-I${LOCALBASE}/include/sphinxbase

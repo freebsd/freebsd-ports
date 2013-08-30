@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mpeglib_artsplug
-# Date created:				Jan 14 2008
-# Whom:					Michael Nottebrock <lofi@FreeBSD.org>
-#
+# Created by: Michael Nottebrock <lofi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	akode
 PORTVERSION=	2.0.2
@@ -28,10 +24,10 @@ CONFLICTS=	kdemultimedia-3.[1-3]*
 PLUGIN=		ffmpeg_decoder
 PORTNAMESUFX=	${PLUGIN:S/_sink//:S/_decoder//:S/src_//}
 
+USES=		gmake
 USE_AUTOTOOLS=	libltdl
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/akode-${PORTVERSION}
 USE_LDCONFIG=	yes
 

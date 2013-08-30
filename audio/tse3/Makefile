@@ -12,7 +12,7 @@ COMMENT=	MIDI library
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--without-doc-install \
 		--without-aRts

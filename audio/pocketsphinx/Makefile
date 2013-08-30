@@ -11,9 +11,8 @@ COMMENT=	Speech recognition system
 
 LIB_DEPENDS=	sphinxad:${PORTSDIR}/audio/sphinxbase
 
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 
 CONFIGURE_ARGS+=	--without-python

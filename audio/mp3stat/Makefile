@@ -19,8 +19,8 @@ OPTIONS_DEFAULT=	VORBIS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USES=		gmake
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
 
 CXX+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib \
 		-Wl,--rpath,${LOCALBASE}/lib

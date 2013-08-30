@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-fc
-# Date created:			17 September 2000
-# Whom:				Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	fcplay
 PORTVERSION=	0.0.1
@@ -20,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/sidplay/compconf.h:${PORTSDIR}/audio/libsidp
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CXXFLAGS+=	-I${LOCALBASE}/include
 PORTDOCS=	ABOUT POINTER
