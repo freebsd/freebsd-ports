@@ -1,5 +1,3 @@
 lib/varnish/vmods/libvmod_header.so
 lib/varnish/vmods/libvmod_header.la
 lib/varnish/vmods/libvmod_header.a
-share/libvmod-header/vmod_header.vcc
-@dirrmtry share/libvmod-header

@@ -21,8 +21,8 @@
  
 -vcc_if.c vcc_if.h: $(SRC)/lib/libvmod_std/vmod.py $(top_srcdir)/$(DIR_PREFIX)src/vmod_statsd.vcc
 -	@PYTHON@ $(SRC)/lib/libvmod_std/vmod.py $(top_srcdir)/$(DIR_PREFIX)src/vmod_statsd.vcc
-+vcc_if.c vcc_if.h: $(LOCALBASE)/share/varnish/vmod.py $(LOCALBASE)/share/libvmod-header/vmod_header.vcc
-+	@PYTHON@ $(LOCALBASE)/share/varnish/vmod.py $(LOCALBASE)/share/libvmod-header/vmod_header.vcc
++vcc_if.c vcc_if.h: $(LOCALBASE)/share/varnish/vmod.py $(top_srcdir)/$(DIR_PREFIX)src/vmod_statsd.vcc
++	@PYTHON@ $(LOCALBASE)/share/varnish/vmod.py $(top_srcdir)/$(DIR_PREFIX)src/vmod_statsd.vcc
  
  VMOD_TESTS = tests/*.vtc
  .PHONY: $(VMOD_TESTS)
