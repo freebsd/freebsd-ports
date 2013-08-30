@@ -223,11 +223,9 @@
 # Struct
 : ${ac_cv_member_HEADER_ad=yes}
 : ${ac_cv_member_struct___res_state_retrans=yes}
-: ${ac_cv_member_struct_lastlog_ll_line=yes}
 : ${ac_cv_member_struct_sigaction_sa_sigaction=yes}
 : ${ac_cv_member_struct_sockaddr_in6_sin6_scope_id=yes}
 : ${ac_cv_member_struct_stat_st_blksize=yes}
-: ${ac_cv_member_struct_utmp_ut_line=yes}
 
 : ${gl_cv_sys_struct_timespec_in_time_h=yes}
 : ${gl_cv_sys_struct_timeval=yes}
