@@ -1,6 +1,7 @@
 bin/dconf-editor
 share/applications/dconf-editor.desktop
 share/dconf-editor/dconf-editor.ui
+share/dconf-editor/dconf-editor-menu.ui
 share/icons/hicolor/128x128/apps/dconf-editor.png
 share/icons/hicolor/32x32/apps/dconf-editor.png
 share/icons/hicolor/48x48/apps/dconf-editor.png
