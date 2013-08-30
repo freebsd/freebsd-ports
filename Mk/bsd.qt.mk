@@ -29,6 +29,7 @@ MAKE_ENV+=	QMAKESPEC="${QMAKESPEC}"
 .if defined(QT_DIST)
 DISTINFO_FILE=	${PORTSDIR}/devel/qt4/distinfo
 MASTER_SITES=	${MASTER_SITE_QT}
+MASTER_SITE_SUBDIR=	official_releases/qt/${QT4_VERSION:R}/${QT4_VERSION}
 DISTNAME=	qt-everywhere-opensource-src-${QT4_VERSION}
 DIST_SUBDIR=	KDE
 #CONFLICTS+=	Currently there are no conflicts \o/
