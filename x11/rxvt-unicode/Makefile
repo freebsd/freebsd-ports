@@ -17,7 +17,7 @@ BUILD_DEPENDS=	tic:${PORTSDIR}/devel/ncurses	\
 RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig	\
 		${LOCALBASE}/share/misc/terminfo.db:${PORTSDIR}/devel/ncurses
 
-USE_GNOME=		pkgconfig
+USES=			pkgconfig
 USE_XORG=		xpm xft xrender
 GNU_CONFIGURE=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include
