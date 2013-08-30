@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -18,6 +17,27 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/enabled.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/enabled.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/enabled.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/fields.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/fields.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/fields.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/load_as_driver.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/load_as_driver.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/load_as_driver.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/load_as_extension.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/load_as_extension.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/load_as_extension.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/setup.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/setup.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/setup.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/simple.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/simple.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example/simple.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/extension.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/extension.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/extension.pyo
@@ -42,6 +62,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_enabled.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_enabled.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_enabled.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_example_fields.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_example_fields.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_example_fields.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_example_simple.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_example_simple.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_example_simple.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_extension.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_extension.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_extension.pyo
@@ -52,18 +78,30 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_named.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_named.pyo
 %%PORTDOCS%%%%DOCSDIR%%/.buildinfo
+%%PORTDOCS%%%%DOCSDIR%%/_images/ceilometer-design.jpg
+%%PORTDOCS%%%%DOCSDIR%%/_images/discovery.jpg
+%%PORTDOCS%%%%DOCSDIR%%/_images/enabling.jpg
 %%PORTDOCS%%%%DOCSDIR%%/_images/graphviz-08fe6220bc1dbd26a74e2669d53a297aa22af2f3.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/graphviz-08fe6220bc1dbd26a74e2669d53a297aa22af2f3.png.map
 %%PORTDOCS%%%%DOCSDIR%%/_images/graphviz-3af069098c975cf4ccc9b878bd4ecfce2f485b8b.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/graphviz-3af069098c975cf4ccc9b878bd4ecfce2f485b8b.png.map
 %%PORTDOCS%%%%DOCSDIR%%/_images/graphviz-c58c2e8e4126e434dc2251649dea48f116f08b19.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/graphviz-c58c2e8e4126e434dc2251649dea48f116f08b19.png.map
+%%PORTDOCS%%%%DOCSDIR%%/_images/importing.jpg
+%%PORTDOCS%%%%DOCSDIR%%/_images/integration.jpg
+%%PORTDOCS%%%%DOCSDIR%%/_images/invocation.jpg
+%%PORTDOCS%%%%DOCSDIR%%/_sources/essays/pycon2013.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/history.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/install.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/managers.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/patterns_enabling.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/patterns_loading.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorial/creating_plugins.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorial/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorial/loading.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorial/naming.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/tutorial/testing.txt
 %%PORTDOCS%%%%DOCSDIR%%/_static/ajax-loader.gif
 %%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/comment-bright.png
@@ -84,6 +122,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_static/up-pressed.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/up.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/websupport.js
+%%PORTDOCS%%%%DOCSDIR%%/essays/pycon2013.html
 %%PORTDOCS%%%%DOCSDIR%%/genindex.html
 %%PORTDOCS%%%%DOCSDIR%%/history.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
@@ -94,11 +133,21 @@
 %%PORTDOCS%%%%DOCSDIR%%/patterns_loading.html
 %%PORTDOCS%%%%DOCSDIR%%/search.html
 %%PORTDOCS%%%%DOCSDIR%%/searchindex.js
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/creating_plugins.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/index.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/loading.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/naming.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/testing.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/essays
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/tutorial
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/essays
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/example
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
