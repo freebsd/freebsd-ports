@@ -33,7 +33,7 @@ do-configure:
 do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
 .for tool in ${WRAPPED_TOOLS}
-	@${LN} -s ${PORTNAME} ${PREFIX}/bin/${tool}
+	@${LN} -sf ${PORTNAME} ${PREFIX}/bin/${tool}
 .endfor
 
 .include <bsd.port.post.mk>
