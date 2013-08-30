@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 PLIST_FILES=	bin/sipp
 MAN1=		sipp.1
 
-USE_GMAKE=	yes
+USES=		gmake
 CPP=		${CXX}
 MAKE_ENV+=	CCLINK="${CXX}"
 CPPFLAGS+=	${CXXFLAGS}

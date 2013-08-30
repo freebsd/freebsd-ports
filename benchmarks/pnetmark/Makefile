@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pnetmark
-# Date created:		2004-03-19
-# Whom:			michael johnson <ahze@ahze.net>
-#
+# Created by: michael johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	pnetmark
 PORTVERSION=	0.0.6
@@ -21,7 +17,7 @@ RUN_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
 		csunit:${PORTSDIR}/lang/pnetlib
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 STRIP=		# Nothing to Strip
 PORTDOCS=	pm_faq.html
 PNET_STRAP_BIN=	pnetmark \

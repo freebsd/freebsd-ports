@@ -1,9 +1,5 @@
-# New ports collection makefile for:	imb
-# Date created:		2006-11-19
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	imb
 PORTVERSION=	3.0
@@ -19,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intel MPI Benchmark
 
 WRKSRC=		${WRKDIR}/IMB_3.0/src/
-USE_GMAKE=	yes
+USES=		gmake
 USE_DOS2UNIX=	yes
 MAKEFILE=	make_mpich
 ALL_TARGET=	all

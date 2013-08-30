@@ -1,20 +1,20 @@
 # Created by: Andreas Kohn <andreas@syndrom23.de>
 # $FreeBSD$
 
-PORTNAME=		gtkperf
-PORTVERSION=		0.40
+PORTNAME=	gtkperf
+PORTVERSION=	0.40
 PORTREVISION=	9
-CATEGORIES=		benchmarks
-MASTER_SITES=		SF
-DISTNAME=		${PORTNAME}_${PORTVERSION}
+CATEGORIES=	benchmarks
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Measure your system's GTK+ performance
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Measure your system's GTK+ performance
 
-WRKSRC=			${WRKDIR}/${PORTNAME}
-USE_GMAKE=		yes
-GNU_CONFIGURE=		yes
-USE_GNOME=		gtk20 gnomeprefix
+WRKSRC=		${WRKDIR}/${PORTNAME}
+USES=		gmake
+GNU_CONFIGURE=	yes
+USE_GNOME=	gtk20 gnomeprefix
 
 .include <bsd.port.options.mk>
 
