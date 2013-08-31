@@ -969,7 +969,6 @@ x11-wm/ion-2||2010-01-18|Has expired: has been broken for 4 months
 databases/pear-Doctrine2||2010-01-20|Removed
 audio/dino||2010-01-20|Has expired: has been broken for 7 months
 devel/asis-gpl||2010-01-20|Has expired: has been broken for 3 months
-devel/florist-gpl||2010-01-20|Has expired: has been broken for 3 months
 devel/kdesvn||2010-01-20|Has expired: has been broken for 4 months
 devel/radrails||2010-01-20|Has expired: has been broken for 3 months
 devel/rubygem-rtags||2010-01-20|Has expired: has been broken for 5 months
@@ -3607,7 +3606,6 @@ x11/etoile||2012-07-28|Has expired: Update to a new release is required
 x11/etoile-idle||2012-07-28|Has expired: API no longer supported
 x11/etoile-iterm||2012-07-28|Has expired: API no longer supported
 x11/etoile-xwindowserverkit||2012-07-28|Has expired: API no longer supported
-x11/gnustep-app||2012-07-28|Has expired: API no longer supported
 lang/steptalk||2012-07-29|Has expired: API no longer supported
 editors/emacs.app||2012-07-29|Has expired: API no longer supported
 devel/ruby-gnustep||2012-07-29|Has expired: API no longer supported
@@ -3778,7 +3776,6 @@ misc/flyway||2012-10-25|Has expired: No more public distfiles
 mail/zabit||2012-10-25|Has expired: No more public distfiles
 mail/wbl||2012-10-25|Has expired: No more public distfiles
 mail/smtpd||2012-10-25|Has expired: No more public distfiles
-lang/ironpython||2012-10-25|Has expired: No more public distfiles
 lang/cu-prolog||2012-10-25|Has expired: No more public distfiles
 japanese/stardict-dict-ja||2012-10-25|Has expired: No more public distfiles
 japanese/otojiro-fpw||2012-10-25|Has expired: No more public distfiles
@@ -4472,7 +4469,6 @@ audio/xmms-kde||2013-07-26|Has expired: Depends on Qt 3.x
 audio/yammi||2013-07-26|Has expired: Depends on Qt 3.x
 biology/xdrawchem||2013-07-26|Has expired: Depends on Qt 3.x
 cad/opencascade-tutorial||2013-07-26|Has expired: Depends on Qt 3.x
-cad/qcad||2013-07-26|Has expired: Depends on Qt 3.x
 cad/qucs||2013-07-26|Has expired: Depends on Qt 3.x
 cad/vipec||2013-07-26|Has expired: Depends on Qt 3.x
 chinese/kde3-i18n-zh_CN||2013-07-26|Has expired: Depends on Qt 3.x
@@ -4483,7 +4479,6 @@ comms/kmobiletools||2013-07-26|Has expired: Depends on Qt 3.x
 comms/kpsk||2013-07-26|Has expired: Depends on Qt 3.x
 comms/ktrack||2013-07-26|Has expired: Depends on Qt 3.x
 comms/linpsk||2013-07-26|Has expired: Depends on Qt 3.x
-comms/qsstv||2013-07-26|Has expired: Depends on Qt 3.x
 comms/qtel||2013-07-26|Has expired: Depends on Qt 3.x
 converters/ktextdecode||2013-07-26|Has expired: Depends on Qt 3.x
 databases/kmysqladmin||2013-07-26|Has expired: Depends on Qt 3.x
