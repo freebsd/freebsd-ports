@@ -1,9 +1,5 @@
-# New ports collection makefile for:    fbdesk
-# Date created: 16 January 2003
-# Whom: Hendrik Scholz <hendrik@scholz.net>
-#
+# Created by: Hendrik Scholz <hendrik@scholz.net>
 # $FreeBSD$
-#
 
 PORTNAME=	fbdesk
 PORTVERSION=	1.4.1
@@ -23,6 +19,7 @@ OPTIONS_DEFINE=	IMLIB2 DOCS
 OPTIONS_DEFAULT=	IMLIB2
 
 USE_XORG=	xext xft xpm xrender
+USES=		pkgconfig
 WANT_EFL=	yes
 GNU_CONFIGURE=	yes
 

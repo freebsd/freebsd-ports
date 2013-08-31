@@ -1,9 +1,5 @@
-# New ports collection makefile for:   awesome2
-# Date created:                February 26, 2009
-# Whom:                        Nikos Ntarmos <ntarmos@cs.uoi.gr>
-#
+# Created by: Nikos Ntarmos <ntarmos@cs.uoi.gr>
 # $FreeBSD$
-#
 
 PORTNAME=	awesome2
 PORTVERSION=	2.3.6
@@ -21,7 +17,7 @@ LIB_DEPENDS=	confuse.0:${PORTSDIR}/devel/libconfuse \
 		cairo.2:${PORTSDIR}/graphics/cairo \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-USES=		iconv
+USES=		iconv pkgconfig
 GNU_CONFIGURE=	yes
 USE_EFL=	imlib2
 USE_GNOME=	pango
