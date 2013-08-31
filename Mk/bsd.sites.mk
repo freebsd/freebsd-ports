@@ -1160,7 +1160,7 @@ MASTER_SITE_SOURCEFORGE+= \
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE_JP)
-.for mirror in keihanna osdn qgpop
+.for mirror in iij jaist keihanna osdn
 MASTER_SITE_SOURCEFORGE_JP+= \
 	http://${mirror}.dl.sourceforge.jp/%SUBDIR%/
 .endfor
