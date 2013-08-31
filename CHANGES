@@ -10,6 +10,13 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130831:
+AUTHOR: bdrewery@FreeBSD.org
+
+  crees has added USE_PACKAGE_DEPENDS_ONLY which works like
+  USE_PACKAGE_DEPENDS but will not fallback on source if a
+  package is missing.
+
 20130731:
 AUTHOR: bapt@FreeBSD.org
 
