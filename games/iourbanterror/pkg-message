@@ -1,5 +1,3 @@
-==============================================================================
-
 Note, that the port was switched over to use the original ioquake project
 source code instead of code provided by the UrbanTerror project. The
 UrbanTerror project is switching to a closed source licensing model:
@@ -7,5 +5,3 @@ UrbanTerror project is switching to a closed source licensing model:
 
 Should the game have trouble meeting com_maxfps, set com_busywait 1 to restore
 the old behaviour.
-
-==============================================================================

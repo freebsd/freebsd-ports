@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ioquake3-devel-server
-# Date created:				19 May 2012
-# Whom:					Dominic Fandrey <kamikaze@bsdforen.de>
-#
+# Created by: Dominic Fandrey
 # $FreeBSD$
-#
 
 PORTNAME=	ioquake3-devel
 PKGNAMESUFFIX=	-server
@@ -13,5 +9,7 @@ COMMENT=	Ioquake3 development snapshot dedicated server
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 MASTERDIR=	${.CURDIR}/../${PORTNAME}
+
+IOQ3=		SERVER GAMELIBS
 
 .include "${MASTERDIR}/Makefile"

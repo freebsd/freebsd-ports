@@ -1,5 +1,0 @@
-%%DEDICATED%%bin/ioUrTded
-%%CLIENT%%bin/ioUrbanTerror
-%%SMP%%bin/ioUrbanTerror-smp
-%%DLRENDERER%%%%LIBDIR%%/renderer_opengl1_%%ARCH%%.so
-%%DLRENDERER%%@dirrm %%LIBDIR%%

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	iourbanterror-server
-# Date created:				19 May 2012
-# Whom:					Dominic Fandrey <kamikaze@bsdforen.de>
-#
+# Created by: Dominic Fandrey
 # $FreeBSD$
-#
 
 PORTNAME=	iourbanterror
 PKGNAMESUFFIX=	-server
@@ -13,5 +9,7 @@ COMMENT=	Urban Terror dedicated server
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 MASTERDIR=	${.CURDIR}/../${PORTNAME}
+
+IOQ3=		SERVER
 
 .include "${MASTERDIR}/Makefile"
