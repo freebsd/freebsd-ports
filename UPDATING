@@ -5,6 +5,12 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130831:
+  AFFECTS: users of graphics/gdal
+  AUTHOR: sunpoet@FreeBSD.org
+
+  Due to the changes in gdal.h, please deinstall gdal first while updating
+  from 1.9.x to 1.10.x.
 
 20130830:
   AFFECTS: users of mail/meta1
