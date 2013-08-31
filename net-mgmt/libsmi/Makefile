@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libsmi
-# Date created:			Tue Jan 27 2000
-# Whom:				Marcin Cieslak <saper@system.pl>
-#
+# Created by: Marcin Cieslak <saper@system.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	libsmi
 PORTVERSION=	0.4.8
@@ -16,8 +12,7 @@ COMMENT=	A library to access SMI MIB information
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USE_GNOME=	pkgconfig gnomehack
-USE_GMAKE=	yes
+USES=		gmake pathfix pkgconfig
 PIBDIR=		${PREFIX}/share/smi/pibs
 MIBDIR=		${PREFIX}/share/smi/mibs
 GNU_CONFIGURE=	yes
