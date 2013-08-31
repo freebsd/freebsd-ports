@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	flashrom
-PORTVERSION=	0.9.6.1
+PORTVERSION=	0.9.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.flashrom.org/releases/
 
-MAINTAINER=	nukama@gmail.com
+MAINTAINER=	nukama+maintainer@gmail.com
 COMMENT=	Utility for reading, writing, verifying, and erasing flash ROM chips
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	pci:${PORTSDIR}/devel/libpci
 
@@ -22,8 +21,9 @@ FTDI_DESC=	Enable external FT2232SPI flasher support
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-CPPFLAGS+=      -I${LOCALBASE}/include
-LDFLAGS+=       -L${LOCALBASE}/lib -lc
+MAKE_JOBS_UNSAFE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lc
 
 ONLY_FOR_ARCHS=	amd64 i386
 
