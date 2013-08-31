@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vmware-vsphere-cli
-# Date created:				2011-07-07
-# Whom:					rpsfa@rit.edu
-#
+# Created by: rpsfa@rit.edu
 # $FreeBSD$
-#
 
 PORTNAME=		vmware-vsphere-cli
 PORTVERSION=		5.1.0
@@ -49,10 +45,14 @@ After the download has completed, please place ${DISTNAME}${EXTRACT_SUFX} in\n\
 ${DISTDIR}, then restart the build.\n\n
 .endif
 
-pre-fetch:
 .if defined(DISTFILE_INSTRUCTIONS)
+.if defined(PACKAGE_BUILDING)
+IGNORE=		requires manual fetch
+.else
+pre-fetch:
 	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
 	@exit 1
+.endif
 .endif
 
 post-extract:
