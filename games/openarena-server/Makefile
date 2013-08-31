@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openarena-server
-# Date created:				19 May 2012
-# Whom:					Dominic Fandrey <kamikaze@bsdforen.de>
-#
+# Created by: Dominic Fandrey
 # $FreeBSD$
-#
 
 PORTNAME=	openarena
 PKGNAMESUFFIX=	-server
@@ -13,5 +9,7 @@ COMMENT=	OpenArena dedicated server
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 MASTERDIR=	${.CURDIR}/../${PORTNAME}
+
+IOQ3=		SERVER
 
 .include "${MASTERDIR}/Makefile"

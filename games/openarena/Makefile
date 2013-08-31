@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openarena
-# Date created:				2007-08-01
-# Whom:					Josh Tolbert <hemi@puresimplicity.net>
-#
+# Created by: Josh Tolbert
 # $FreeBSD$
-#
 
 PORTNAME=	openarena
 PORTVERSION=	${GAMEVERSION}.s${SVNREVISION}
@@ -24,19 +20,16 @@ MASTERDIR=	${.CURDIR}/../ioquake3
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 DISTINFO_FILE=	${.CURDIR}/../${PORTNAME}/distinfo
 PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
-PLIST=		${.CURDIR}/../${PORTNAME}/pkg-plist
 PKGMESSAGE=	${.CURDIR}/../${PORTNAME}/pkg-message
 
-NO_GAMELIBS=	yes
-NO_TOOLS=	yes
+IOQ3?=		CLIENT
+IOQ3ARCH?=	${ARCH}
 # OpenArena doc is too messy to bother
-NOPORTDOCS=	yes
-# Dynamically loaded renderer not yet supported
-WITHOUT_DLRENDERER=	yes
+OPTIONS_EXCLUDE=	DOCS
 
 GAMEVERSION=	0.8.8
 SVNREVISION=	1910
-Q3ENGINEVER=	1.36_SVN${SVNREVISION}+${GAMEVERSION}
+Q3ENGINEVER=	SVN${SVNREVISION}+${GAMEVERSION}
 Q3TOTALCONV=	yes
 Q3CLIENT=	openarena
 Q3SERVER=	oa_ded

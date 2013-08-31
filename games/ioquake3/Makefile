@@ -12,62 +12,56 @@ EXTRACT_SUFX?=	.zip
 MAINTAINER?=	kamikaze@bsdforen.de
 COMMENT?=	Cleaned-up and enhanced version of Quake 3
 
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		pkgconfig gmake
 
-.if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX:M*-server}
-# Server config
-WITH_DEDICATED=	yes
-WITHOUT_CLIENT=	yes
-WITHOUT_SERVER=	yes
-WITHOUT_CURL=	yes
-WITHOUT_OPENAL=	yes
-WITHOUT_MUMBLE=	yes
-WITHOUT_VORBIS=	yes
-WITHOUT_TOOLS=	yes
-WITHOUT_DLRENDERER=	yes
-.else
-# Client config
-WITH_CLIENT=	yes
-WITHOUT_DEDICATED=	yes
+# Port configuration flags:
+# 	CLIENT SERVER TOOLS DLRENDERER GAMELIBS OPUS OPENGL2
+IOQ3?=		CLIENT TOOLS GAMELIBS
+IOQ3ARCH?=	${ARCH}
+
+.if ! ${IOQ3:MCLIENT} && ! ${IOQ3:MSERVER}
+BROKEN=		Slave ports must at least specify IOQ3=CLIENT or IOQ3=SERVER
+.endif
+
+# Client options
+.if ${IOQ3:MCLIENT}
 OPTIONS_DEFINE=	SERVER CURL OPENAL MUMBLE VORBIS DEBUG
 OPTIONS_DEFAULT=	SERVER CURL OPENAL MUMBLE VORBIS
 SERVER_DESC=	Install dedicated server
 MUMBLE_DESC=	Enable Mumble support (no dependencies)
-. if defined(NO_TOOLS)
-WITHOUT_TOOLS=	yes
-. else
+.endif
+.if ${IOQ3:MTOOLS}
 OPTIONS_DEFINE+=	TOOLS
 OPTIONS_DEFAULT+=	TOOLS
 TOOLS_DESC=	Enable modding tools
-. endif
-. if defined(HAS_DLRENDERER)
+.endif
+.if ${IOQ3:MDLRENDERER}
 OPTIONS_DEFINE+=	DLRENDERER
 OPTIONS_DEFAULT+=	DLRENDERER
 DLRENDERER_DESC=	Build dynamically loaded renderer
-. endif
 .endif
-# Common config
-.if !defined(NO_GAMELIBS)
+.if ${IOQ3:MGAMELIBS}
 OPTIONS_DEFINE+=	GAMELIBS
 OPTIONS_DEFAULT+=	GAMELIBS
 GAMELIBS_DESC=	Build game libraries
 .endif
+.if ${IOQ3:MOPUS}
+OPTIONS_DEFINE+=	OPUS
+OPTIONS_DEFAULT+=	OPUS
+OPUS_DESC=	Opus audio codec support
+.endif
 
 MAKE_ARGS+=	DEFAULT_BASEDIR="${Q3DIR}" \
-		DEFAULT_LIBDIR="${LIBDIR}" \
+		DEFAULT_LIBDIR="${PREFIX}/${LIBDIR}" \
 		HOMEPATH="${HOMEPATH}" \
 		VERSION="${Q3ENGINEVER}" \
-		ARCH="${ARCH}" \
+		ARCH="${IOQ3ARCH}" \
 		USE_LOCAL_HEADERS=0
-PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}" \
-		ARCH="${ARCH}" \
-		BINSUFFIX="${BINSUFFIX}"
 ALL_TARGET=	release
 
-LIBDIR=		${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-BUILDDIR=	${WRKSRC}/build/${ALL_TARGET}-${OPSYS:L}-${ARCH}
+LIBDIR=		lib/${PORTNAME}${PKGNAMESUFFIX}
+DOCSDIR=	share/doc/${PORTNAME}${PKGNAMESUFFIX}
+BUILDDIR=	${WRKSRC}/build/${ALL_TARGET}-${OPSYS:L}-${IOQ3ARCH}
 BINSUFFIX?=
 HOMEPATH?=	/.${PORTNAME}
 Q3CLIENT?=	ioquake3
@@ -76,10 +70,21 @@ Q3TOOLS?=	q3asm \
 		q3cpp \
 		q3lcc \
 		q3rcc
+Q3DOCS?=	README \
+		id-readme.txt \
+		md4-readme.txt \
+		voip-readme.txt
 Q3BASE?=	baseq3 \
 		missionpack
+Q3GAMELIBS?=	cgame \
+		qagame \
+		ui
 Q3ICON?=	${PREFIX}/share/pixmaps/quake3.xpm
-Q3RENDERER?=	renderer_opengl1_${ARCH}
+.if ${IOQ3:MOPENGL2}
+Q3RENDERER?=	renderer_opengl1_${IOQ3ARCH} renderer_opengl2_${IOQ3ARCH}
+.else
+Q3RENDERER?=	renderer_opengl1_${IOQ3ARCH}
+.endif
 Q3INSTALL?=
 Q3ENGINEVER?=	${DISTVERSION}
 
@@ -96,7 +101,7 @@ RUN_DEPENDS+=	${Q3SERVER}${BINSUFFIX}:${PORTSDIR}/games/${PORTNAME}-server
 .endif
 
 .if !defined(DESKTOP_ENTRIES)
-. if ${PORT_OPTIONS:MCLIENT}
+. if ${IOQ3:MCLIENT}
 DESKTOP_ENTRIES+=	"${Q3CLIENT} ${Q3ENGINEVER}" "${COMMENT}"  \
 		"${Q3ICON}" \
 		"${Q3CLIENT}${BINSUFFIX}" "Game;" false
@@ -108,128 +113,128 @@ DESKTOP_ENTRIES+=	"${Q3CLIENT} ${Q3ENGINEVER} SMP" "${COMMENT}" \
 . endif
 .endif
 
-.if ! ${PORT_OPTIONS:MCLIENT} && ! ${PORT_OPTIONS:MDEDICATED} && \
-    ! ${PORT_OPTIONS:MSMP}
-IGNORE=		needs at least one of CLIENT, DEDICATED and SMP options
+.if ${IOQ3:MCLIENT}
+MAKE_ARGS+=	BUILD_CLIENT=1
+Q3BIN+=		${Q3CLIENT}
+USE_SDL=	sdl
+.else
+MAKE_ARGS+=	BUILD_CLIENT=0
 .endif
 
-.if ${PORT_OPTIONS:MCLIENT} || ${PORT_OPTIONS:MSMP}
-# cURL
+.if ${IOQ3:MSERVER}
+MAKE_ARGS+=	BUILD_SERVER=1
+Q3BIN+=		${Q3SERVER}
+.else
+MAKE_ARGS+=	BUILD_SERVER=0
+.endif
+
 .if ${PORT_OPTIONS:MCURL}
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 MAKE_ARGS+=	USE_CURL=1 USE_CURL_DLOPEN=0
 .else
 MAKE_ARGS+=	USE_CURL=0
 .endif
-# OpenAL
+
 .if ${PORT_OPTIONS:MOPENAL}
 USE_OPENAL=	al
 MAKE_ARGS+=	USE_OPENAL=1 USE_OPENAL_DLOPEN=0
 .else
 MAKE_ARGS+=	USE_OPENAL=0
 .endif
-# SDL
-USE_SDL=	sdl
-# Vorbis
+
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
 MAKE_ARGS+=	USE_CODEC_VORBIS=1
 .else
 MAKE_ARGS+=	USE_CODEC_VORBIS=0
 .endif
-# Mumble
+
+.if ${PORT_OPTIONS:MOPUS}
+MAKE_ARGS+=	USE_CODEC_OPUS=1 USE_INTERNAL_OPUS=1
+.else
+MAKE_ARGS+=	USE_CODEC_OPUS=0
+.endif
+
 .if ${PORT_OPTIONS:MMUMBLE}
 MAKE_ARGS+=	USE_MUMBLE=1
 .else
 MAKE_ARGS+=	USE_MUMBLE=0
 .endif
-.else
-# Features that aren't installed without a client
-WITHOUT_DLRENDERER=	yes
-.endif
-
-# SMP is only built with CLIENT.
-.if ${PORT_OPTIONS:MCLIENT} || ${PORT_OPTIONS:MSMP}
-MAKE_ARGS+=	BUILD_CLIENT=1
-PLIST_SUB+=	CLIENT=""
-Q3BIN+=		${Q3CLIENT}
-.else
-MAKE_ARGS+=	BUILD_CLIENT=0
-PLIST_SUB+=	CLIENT="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDEDICATED}
-MAKE_ARGS+=	BUILD_SERVER=1
-PLIST_SUB+=	DEDICATED=""
-Q3BIN+=		${Q3SERVER}
-.else
-MAKE_ARGS+=	BUILD_SERVER=0
-PLIST_SUB+=	DEDICATED="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MGAMELIBS}
 MAKE_ARGS+=	BUILD_GAME_SO=1
-PLIST_SUB+=	GAMELIBS=""
 .else
-PLIST_SUB+=	GAMELIBS="@comment "
+MAKE_ARGS+=	BUILD_GAME_SO=0
 .endif
 
 # Note that SMP is only supported on OS-X, hence the option has been removed.
 .if ${PORT_OPTIONS:MSMP}
 MAKE_ARGS+=	BUILD_CLIENT_SMP=1
-PLIST_SUB+=	SMP=""
 Q3BIN+=		${Q3CLIENT}-smp
 .else
 MAKE_ARGS+=	BUILD_CLIENT_SMP=0
-PLIST_SUB+=	SMP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDLRENDERER}
-PLIST_SUB+=	DLRENDERER=""
 MAKE_ARGS+=	USE_RENDERER_DLOPEN=1
+. if ${IOQ3:MOPENGL2}
+Q3DOCS+=	opengl2-readme.txt
+. endif
 .else
 MAKE_ARGS+=	USE_RENDERER_DLOPEN=0
-PLIST_SUB+=	DLRENDERER="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MTOOLS}
-PLIST_SUB+=	TOOLS=""
-.else
-PLIST_SUB+=	TOOLS="@comment "
-.endif
-
-do-install: ${Q3INSTALL}
+# Generate a set of install instruction tuples: <cmd>;<src>;<dst>
 .for bin in ${Q3BIN}
-	${INSTALL_PROGRAM} ${BUILDDIR}/${bin}.${ARCH} \
-		${PREFIX}/bin/${bin}${BINSUFFIX}
+IOQ3_INST+=	PROGRAM;${bin}.${IOQ3ARCH};bin/${bin}${BINSUFFIX}
 .endfor
 .if ${PORT_OPTIONS:MTOOLS}
-.for bin in ${Q3TOOLS}
-	${INSTALL_PROGRAM} ${BUILDDIR}/tools/${bin} \
-		${PREFIX}/bin/${bin}${BINSUFFIX}
-.endfor
+. for bin in ${Q3TOOLS}
+IOQ3_INST+=	PROGRAM;tools/${bin};bin/${bin}${BINSUFFIX}
+. endfor
 .endif
 .if ${PORT_OPTIONS:MDLRENDERER}
-.for renderer in ${Q3RENDERER}
-	${MKDIR} ${LIBDIR}
-	${INSTALL_LIB} ${BUILDDIR}/${renderer}.so ${LIBDIR}
-.endfor
+. for renderer in ${Q3RENDERER}
+IOQ3_INST+=	LIB;${renderer}.so;${LIBDIR}/${renderer}.so
+. endfor
 .endif
 .if ${PORT_OPTIONS:MGAMELIBS}
-.for dir in ${Q3BASE}
-	${MKDIR} ${LIBDIR}/${dir}
-	${INSTALL_LIB} ${BUILDDIR}/${dir}/*.so ${LIBDIR}/${dir}
-.endfor
+. for dir in ${Q3BASE}
+PLIST_DIRS+=	${LIBDIR}/${dir}
+.  for lib in ${Q3GAMELIBS}
+IOQ3_INST+=	LIB;${dir}/${lib}${IOQ3ARCH}.so;${LIBDIR}/${dir}/${lib}${IOQ3ARCH}.so
+.  endfor
+. endfor
+.endif
+.if ${PORT_OPTIONS:MDLRENDERER} || ${PORT_OPTIONS:MGAMELIBS}
+PLIST_DIRS+=	${LIBDIR}
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+PLIST_DIRS+=	${DOCSDIR}
+. for doc in ${Q3DOCS}
+IOQ3_INST+=	DATA;../../${doc};${DOCSDIR}/${doc}
+. endfor
 .endif
 
+# Generate PLIST_FILES
+.for inst in ${IOQ3_INST}
+PLIST_FILES+=	${inst:C/.*;//}
+.endfor
+
+# Generate install target
+do-install: ${Q3INSTALL}
+.for dir in ${PLIST_DIRS}
+	${MKDIR} ${PREFIX}/${dir}
+.endfor
+.for inst in ${IOQ3_INST}
+	${INSTALL_${inst:C/;.*//}} ${BUILDDIR}/${inst:C/[^;]*;//:C/;.*//} \
+		${PREFIX}/${inst:C/.*;//}
+.endfor
+
 post-install:
-	@${ECHO_CMD}
+	@${JOT} -s '' -b= 78
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	@${JOT} -s '' -b= 78
 
 .if !defined(Q3TOTALCONV)
 .include "${.CURDIR}/../quake3-data/Makefile.include"

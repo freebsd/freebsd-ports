@@ -1,5 +1,3 @@
-==============================================================================
-
 Should the game freeze when entering a match, try to change the value of
 com_zoneMegs (e.g. to 48).
 
@@ -7,5 +5,3 @@ The configuration files are saved to ~/.ioquake3 instead of ~/.q3a because
 they have additional variables which would be removed if other engines
 overwrite them. But you can safely copy the original directory to the new one
 for the first time.
-
-==============================================================================

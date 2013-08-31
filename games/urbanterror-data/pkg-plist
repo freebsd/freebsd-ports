@@ -1,19 +1,34 @@
-%%PORTDOCS%%%%DOCSDIR%%/readme411.txt
-%%DATADIR%%/q3ut4/QIIIA Game Source (SDK) License.doc
-%%DATADIR%%/q3ut4/Urban Terror on the Web.url
-%%DATADIR%%/q3ut4/autoexec.cfg
-%%DATADIR%%/q3ut4/demos/tutorial.dm_68
-%%DATADIR%%/q3ut4/description.txt
-%%DATADIR%%/q3ut4/mapcycle.txt
-%%DATADIR%%/q3ut4/q3ut.ico
-%%DATADIR%%/q3ut4/screenshots/shot0000.jpg
-%%DATADIR%%/q3ut4/server.cfg
+%%PORTDOCS%%%%DOCSDIR%%/readme%%VER%%.txt
+%%DATADIR%%/q3ut4/How_To_Install.txt
+%%DATADIR%%/q3ut4/QIIIA_Game_Source_License.doc
+%%DATADIR%%/q3ut4/autoexec_example.cfg
+%%DATADIR%%/q3ut4/mapcycle_example.txt
+%%DATADIR%%/q3ut4/server_example.cfg
 %%DATADIR%%/q3ut4/ut4_commune.pk3
-%%DATADIR%%/q3ut4/zpak000.pk3
-%%DATADIR%%/q3ut4/zpak000_assets.pk3
-%%DATADIR%%/q3ut4/zpak001_assets.pk3
-@dirrm %%DATADIR%%/q3ut4/screenshots
-@dirrm %%DATADIR%%/q3ut4/demos
+%%DATADIR%%/q3ut4/ut4_jumpents.pk3
+%%DATADIR%%/q3ut4/zUrT42_0001.pk3
+%%DATADIR%%/q3ut4/zUrT42_0002.pk3
+%%DATADIR%%/q3ut4/zUrT42_0003.pk3
+%%DATADIR%%/q3ut4/zUrT42_0004.pk3
+%%DATADIR%%/q3ut4/zUrT42_0005.pk3
+%%DATADIR%%/q3ut4/zUrT42_0006.pk3
+%%DATADIR%%/q3ut4/zUrT42_0007.pk3
+%%DATADIR%%/q3ut4/zUrT42_0008.pk3
+%%DATADIR%%/q3ut4/zUrT42_0009.pk3
+%%DATADIR%%/q3ut4/zUrT42_0010.pk3
+%%DATADIR%%/q3ut4/zUrT42_0011.pk3
+%%DATADIR%%/q3ut4/zUrT42_0012.pk3
+%%DATADIR%%/q3ut4/zUrT42_0013.pk3
+%%DATADIR%%/q3ut4/zUrT42_0014.pk3
+%%DATADIR%%/q3ut4/zUrT42_0015.pk3
+%%DATADIR%%/q3ut4/zUrT42_0016.pk3
+%%DATADIR%%/q3ut4/zUrT42_0017.pk3
+%%DATADIR%%/q3ut4/zUrT42_0018.pk3
+%%DATADIR%%/q3ut4/zUrT42_0019.pk3
+%%DATADIR%%/q3ut4/zUrT42_0020.pk3
+%%DATADIR%%/q3ut4/zUrT42_0021.pk3
+%%DATADIR%%/q3ut4/zUrT42_0022.pk3
+%%DATADIR%%/q3ut4/zUrT42_qvm.pk3
 @dirrm %%DATADIR%%/q3ut4
 @dirrmtry %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
