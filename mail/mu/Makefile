@@ -1,9 +1,5 @@
-# New ports collection Makefile for: mu
-# Date created:		2 March 2012
-# Whom:			rea@FreeBSD.org
-#
+# Created by: rea@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	mu
 PORTVERSION=	0.9.9
@@ -20,8 +16,8 @@ LIB_DEPENDS=	xapian:${PORTSDIR}/databases/xapian-core \
 		gmime:${PORTSDIR}/mail/gmime24
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	glib20 pkgconfig
+USES=		pkgconfig gmake
+USE_GNOME=	glib20
 
 MAN1=		mu-cfind.1 mu-easy.1 mu-extract.1 mu-find.1 mu-index.1 \
 		mu-mkdir.1 mu-view.1 mu-add.1 mu-remove.1 mu-server.1 mu.1 \
