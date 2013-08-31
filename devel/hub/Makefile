@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	hub
-PORTVERSION=	1.10.2
+PORTVERSION=	1.10.6
 CATEGORIES=	devel
 
 MAINTAINER=	simon@olofsson.de
 COMMENT=	Introduces git to GitHub
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	defunkt
+GH_ACCOUNT=	github
 GH_TAGNAME=	v${DISTVERSION}
-GH_COMMIT=	16b388a
+GH_COMMIT=	5b43748
 
 USE_RUBY=	yes
 USE_RAKE=	yes
