@@ -19,6 +19,7 @@ MAKE_JOBS_UNSAFE=	yes
 USE_XORG=	x11 xaw xext xt
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal automake autoconf
+AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-fep --enable-interval --with-pari --with-gc7
 ASIR_SRC_VERSION=	${PORTVERSION}
 ASIR_DOC_VERSION=	20110808
