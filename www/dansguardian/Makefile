@@ -115,7 +115,7 @@ CONFIGURE_ARGS+=	--with-dgdebug
 .endif
 
 # User needs to manually download the distfile
-.if !(exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})) && !defined(PACKAGE_BUILDING)
+.if !(exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}))
 IGNORE=	commercial source download is restricted.  Please visit and read ${DG_URL} and download ${DISTNAME}${EXTRACT_SUFX} into ${DISTDIR} before running make
 .endif
 
