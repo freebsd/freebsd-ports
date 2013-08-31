@@ -20,11 +20,10 @@ SLAVEDIRS=	misc/amanda-client
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig glib20
-USE_GMAKE=	yes
+USES=		gmake pkgconfig perl5
+USE_GNOME=	glib20
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USE_PERL5=	yes
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--without-amlibexecdir \
 		--with-amandahosts --with-fqdn \
