@@ -12,6 +12,8 @@ DISTNAME=	Browser282b2
 MAINTAINER=	ronald@echteman.nl
 COMMENT=	Java/Swing-based LDAP browser/editor
 
+BROKEN=		fails to fetch
+
 RESTRICTED=	No reply from author regarding redistribution licensing
 
 USE_JAVA=	yes
