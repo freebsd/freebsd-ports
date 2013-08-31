@@ -20,6 +20,7 @@ LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/tea
 
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_TCL=	84+
