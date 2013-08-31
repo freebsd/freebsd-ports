@@ -3,7 +3,7 @@
 #    $MCom: ports/multimedia/gstreamer1/Makefile,v 1.5 2013/01/15 21:43:45 kwm Exp $
 
 PORTNAME=	gstreamer1
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.10
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/
 DISTNAME=	${PORTNAME:S/1//}-${PORTVERSION}
@@ -20,7 +20,7 @@ USES=		bison gettext gmake pathfix pkgconfig
 # workaround a crash in clang 3.3, llvm bug # 15840
 USE_GCC=	any
 USE_XZ=		yes
-USE_GNOME=	glib20 introspection:build ltverhack:0 ltasneededhack
+USE_GNOME=	glib20 gnomehier introspection:build ltverhack:0 ltasneededhack
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-tests \
 		--disable-examples \
