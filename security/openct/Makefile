@@ -16,8 +16,7 @@ PCSC_DESC=	Enable PC/SC support
 
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	openct
 SUB_FILES=	etoken.conf

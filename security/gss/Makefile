@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	gss
-# Date created:			Oct 19, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gss
 PORTVERSION=	1.0.2
@@ -18,8 +13,8 @@ LIB_DEPENDS=	shishi.1:${PORTSDIR}/security/shishi
 
 CONFLICTS=	heimdal-[0-9]*
 
-USE_PERL5_BUILD=	yes
-USE_GNOME=	gnomehack pkgconfig
+USES=		pathfix pkgconfig perl5
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-kerberos5
 USE_LDCONFIG=	yes

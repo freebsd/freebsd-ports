@@ -136,7 +136,7 @@ CONFIGURE_ARGS+=--enable-react
 .if ${PORT_OPTIONS:MSNORTSAM}
 BROKEN=		current snortsam patch fails to apply
 USE_AUTOTOOLS+=	automake
-USE_GNOME=	pkgconfig
+USES+=		pkgconfig
 PATCH_SITES+=	http://www.snortsam.net/files/snort-plugin/:snortsam
 PATCHFILES+=	snortsam-2.9.2.2.diff.gz:snortsam
 .endif

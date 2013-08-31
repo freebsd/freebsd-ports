@@ -17,7 +17,8 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USE_GNOME=	gnomehack glib20 pkgconfig
+USES=		pathfix pkgconfig
+USE_GNOME=	glib20
 
 CFLAGS+=	-DHAVE_MEMMEM
 MAKE_JOBS_UNSAFE=yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pam_fprint
-# Date created:				April 12 2008
-# Whom:					barner
-#
+# Created by: barner
 # $FreeBSD$
-#
 
 PORTNAME=	pam_fprint
 PORTVERSION=	20080330
@@ -23,7 +19,7 @@ AUTOMAKE_ARGS=	-a
 CONFIGURE_ENV+=	FPRINT_CFLAGS=-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 
-USE_GNOME=	pkgconfig
+USES=		pkgconfig
 
 WRKSRC=	${WRKDIR}
 
