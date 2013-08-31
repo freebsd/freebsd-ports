@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A python library for the manipulation of network addresses
 
+BROKEN=		fails to fetch
+
 LICENSE=	BSD
 
 FETCH_ARGS=	-pRr
