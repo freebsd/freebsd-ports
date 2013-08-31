@@ -1,7 +1,4 @@
-# New ports collection makefile for:    pidgin-twitter
-# Date created:                         17 May 2008
-# Whom:                                 Junji NAKANISHI <jun-g@daemonfreaks.com>
-#
+# Created by: Junji NAKANISHI <jun-g@daemonfreaks.com>
 # $FreeBSD$
 
 PORTNAME=	pidgin-twitter
@@ -17,8 +14,8 @@ BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
-USE_GNOME=	pkgconfig glib20
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
+USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	lib/pidgin/pidgin-twitter.so \

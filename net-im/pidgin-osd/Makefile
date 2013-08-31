@@ -1,7 +1,4 @@
-# New ports collection makefile for:    pidgin-osd
-# Date created:                         17 Dec 2009
-# Whom:                                 Vyacheslav Anikin <anikinsl@gmail.com>
-#
+# Created by: Vyacheslav Anikin <anikinsl@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	pidgin-osd
@@ -18,9 +15,9 @@ BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin \
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin \
 		xosd>=2.2.12:${PORTSDIR}/misc/xosd
 
-USE_GNOME=	pkgconfig glib20
+USES=		gmake pkgconfig
+USE_GNOME=	glib20
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	lib/pidgin/pidgin-osd.so \
