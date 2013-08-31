@@ -46,8 +46,8 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_ANT=	yes
 USE_GL=		glu
-USE_GMAKE=	yes
-USE_GNOME=	desktopfileutils gconf2 gtk20 gnomevfs2 libgnome libgnomeui pkgconfig
+USES=		gmake pkgconfig desktop-file-utils
+USE_GNOME=	gconf2 gtk20 gnomevfs2 libgnome libgnomeui
 USE_JAVA=	yes
 USE_XZ=		yes
 BZIP2_SUFX=	.tar.bz2
