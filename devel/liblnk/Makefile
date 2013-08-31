@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblnk
-PORTVERSION=	20130815
+PORTVERSION=	20130829
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSQmluVC1YeDVvZWM/ \
 		LOCAL/antoine
