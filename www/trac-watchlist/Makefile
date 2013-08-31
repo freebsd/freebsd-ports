@@ -3,7 +3,7 @@
 
 PORTNAME=	watchlist
 PORTVERSION=	1.0.${SVN_REV}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	http://distfiles.cse.tw/ \
 		http://trac-hacks.org/changeset/${SVN_REV}/watchlistplugin?old_path=/&format=zip&filename=/
@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-r${SVN_REV}
 
 MAINTAINER=	gaod@hychen.org
-COMMENT=	Provide watchlist feature for wikis and tickets of Trac
+COMMENT=	Watchlist feature for wikis and tickets of Trac
 
 LICENSE=	BSD
 
