@@ -4835,9 +4835,9 @@ lang/q||2013-08-11|Has expired: Q-Lang is no longer supported. See lang/pure ins
 audio/q-audio||2013-08-11|Has expired: Q-Lang is no longer supported. See lang/pure instead
 graphics/q-graph||2013-08-11|Has expired: Q-Lang is no longer supported. See lang/pure instead
 devel/prettygo|devel/go-pretty|2013-08-17|Project was renamed
+www/moodle22||2013-08-20|Has expired: Unmaintained upstream
 www/w3m-m17n|www/w3m|2013-08-22|Unified to www/w3m
 www/w3m-m17n-img|www/w3m-img|2013-08-22|Unified to www/w3m-img
-www/moodle22||2013-08-20|Has expired: Unmaintained upstream
 security/sfs||2013-08-23|Has expired: Broken on FreeBSD 8 and newer
 mail/p5-Mail-CClient||2013-08-26|Has expired: Broken for more than 6 month
 net/slbd||2013-08-26|Has expired: Broken on FreeBSD 8 and newer
@@ -4889,7 +4889,7 @@ x11-toolkits/gnustep-xdps||2013-08-28|Does not build with recent GNUstep
 x11-toolkits/gtoolkit||2013-08-28|Does not build with recent GNUstep
 x11-toolkits/renaissance||2013-08-28|Does not build with recent GNUstep
 devel/g2c||2013-08-29|Has expired: Not supported upstream anymore
-devel/bugzilla3|devel/bugzilla24|2013-08-30|EOL: Please update to a supported version
+devel/bugzilla3|devel/bugzilla42|2013-08-30|EOL: Please update to a supported version
 german/bugzilla3|german/bugzilla42|2013-08-30|EOL: Please update to a supported version
 japanese/bugzilla3|japanese/bugzilla42|2013-08-30|EOL: Please update to a supported version
 russian/bugzilla3|russian/bugzilla42|2013-08-30|EOL: Please update to a supported version
