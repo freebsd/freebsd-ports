@@ -14,6 +14,8 @@ EXTRACT_ONLY=	${OOOSRC} ${EXTSRC}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
+BROKEN=		fails checksum
+
 LICENSE=	AL2
 
 NO_LATEST_LINK=	yes
