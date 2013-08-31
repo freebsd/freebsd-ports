@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libdts
-# Date created:				12th May 2004
-# Whom:					Pav Lucistnik <pav@FreeBSD.org>
-#
+# Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libdca
 PORTVERSION=	0.0.5
@@ -15,7 +11,7 @@ COMMENT=	Free DTS Coherent Acoustics decoder
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GNOME=	pkgconfig gnomehack
+USES=		pkgconfig pathfix
 USE_LDCONFIG=	yes
 
 MAN1=		dcadec.1 extract_dca.1

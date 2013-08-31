@@ -1,7 +1,4 @@
-# New ports collection makefile for:	PiTiVi
-# Date created:				20 Dec 2004
-# Whom:					Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/multimedia/pitivi/Makefile,v 1.8 2006/04/26 19:31:01 ahze Exp $
 
@@ -18,8 +15,8 @@ RUN_DEPENDS=	py*-zope.interface>=0:${PORTSDIR}/devel/py-zope.interface \
 		${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_GNOME=	pygtk2 pkgconfig
+USES=		gmake pkgconfig
+USE_GNOME=	pygtk2
 USE_GSTREAMER=	gnonlin python good
 USE_PYTHON=	yes
 INSTALLS_ICONS=	yes

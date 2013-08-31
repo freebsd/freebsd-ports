@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libxspf
-# Date Created:				7 March 2009
-# Whom:					Ed Schouten <ed@FreeBSD.org>
-#
+# Created by: Ed Schouten <ed@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libxspf
 PORTVERSION=	1.2.0
@@ -23,7 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-expat=${LOCALBASE} --disable-test
 
 USE_BZIP2=	yes
-USE_GNOME=	pkgconfig
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
