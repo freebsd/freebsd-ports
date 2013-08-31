@@ -11,6 +11,8 @@ DISTNAME=	skkinput-${PORTVERSION}
 MAINTAINER=	koma2@lovepeers.org
 COMMENT=	SKK-like Japanese input method for X11
 
+BROKEN=		fails to fetch/checksum
+
 USES=		imake
 USE_GCC=	any
 USE_XORG=	ice sm x11 xext xmu xt
