@@ -1,5 +1,2 @@
 %%SITE_PERL%%/Class/ErrorHandler.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/ErrorHandler/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/ErrorHandler
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 @dirrmtry %%SITE_PERL%%/Class
