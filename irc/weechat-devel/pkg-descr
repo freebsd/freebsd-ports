@@ -1,9 +1,9 @@
 WeeChat (Wee Enhanced Environment for Chat) is a fast and light IRC
 client. Everything can be done with a keyboard, and it is customizable
-and extensible with scripts. For the moment, only ncurse GUI is
+and extensible with scripts. For the moment, only ncurses GUI is
 supported by this port.
 
-Note: this is not the official release version, this is a git snapshot, which
+Note: This is not the official release version. This is a git snapshot, which
 may in some cases be unstable.
 
-WWW:	http://weechat.org
+WWW: http://weechat.org
