@@ -16,7 +16,8 @@ LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig ltverhack
+USES=		pkgconfig
+USE_GNOME=	ltverhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-libgcrypt-prefix=${LOCALBASE}

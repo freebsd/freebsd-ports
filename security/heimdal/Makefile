@@ -28,9 +28,8 @@ CRACKLIB_DESC=	Use CrackLib for password quality checking
 X11_DESC=	Build X11 utilies
 
 USE_AUTOTOOLS=	autoconf autoheader libtool
-USE_GNOME=	gnomehack pkgconfig
 USE_OPENSSL=	yes
-USES=		gettext
+USES=		gettext pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--with-libintl=${LOCALBASE} \

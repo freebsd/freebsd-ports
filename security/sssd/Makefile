@@ -48,9 +48,7 @@ AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_OPENLDAP=	yes
-USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
-USES=		gettext iconv
+USES=		gettext iconv gmake pkgconfig
 USE_PYTHON=	yes
 
 USE_RC_SUBR=	${PORTNAME}

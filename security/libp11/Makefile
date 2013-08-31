@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_AUTOTOOLS=	libltdl libtool
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig ltverhack
+USES=		pkgconfig
+USE_GNOME=	ltverhack
 USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	LTLIB_CFLAGS="-I${LOCALBASE}/include" \

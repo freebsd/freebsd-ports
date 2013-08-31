@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fprint_demo
-# Date created:				April 12 2008
-# Whom:					barner
-#
+# Created by: barner
 # $FreeBSD$
-#
 
 PORTNAME=	fprint_demo
 PORTVERSION=	20080303
@@ -21,7 +17,8 @@ LIB_DEPENDS=	fprint:${PORTSDIR}/security/libfprint
 USE_AUTOTOOLS=	autoconf automake
 AUTOMAKE_ARGS=	-a
 GNU_CONFIGURE=	yes
-USE_GNOME=	atk glib20 gtk20 pango pkgconfig
+USES=		pkgconfig
+USE_GNOME=	atk glib20 gtk20 pango
 INSTALLS_ICONS=	yes
 
 WRKSRC=	${WRKDIR}

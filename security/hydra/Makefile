@@ -21,7 +21,7 @@ CONFLICTS=	hydra-[0-9]*
 NO_LATEST_LINK=	yes
 PLIST_FILES=	bin/hydra bin/pw-inspector bin/dpl4hydra.sh
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_OPENSSL=	yes
 WANT_GNOME=	yes
 
@@ -48,7 +48,8 @@ LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-USE_GNOME=	gtk20 pkgconfig
+USES+=		pkgconfig
+USE_GNOME=	gtk20
 PLIST_FILES+=	bin/xhydra
 MAN1+=		xhydra.1
 .else

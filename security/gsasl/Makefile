@@ -16,9 +16,8 @@ LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn \
 		gnutls.26:${PORTSDIR}/security/gnutls \
 		ntlm.0:${PORTSDIR}/security/libntlm
 
-USES=		charsetfix
-USE_GNOME=	gnomehack pkgconfig
-USE_PERL5_BUILD=	yes
+USES=		charsetfix pathfix perl5 pkgconfig
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
