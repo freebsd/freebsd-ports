@@ -1329,8 +1329,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.centric/URL/Centric/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.channel9/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.channel9/URL/Channel9/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.charlierose/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.charlierose/URL/CharlieRose/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.citytv/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.citytv/URL/CityTV/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.cnettv/ServiceInfo.plist
@@ -1346,10 +1344,10 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ctvglobemedia/URL/CTV/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dailymotion/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dailymotion/URL/Dailymotion/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.disney/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.disney/URL/Disney/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.discovery/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.discovery/URL/Discovery/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.disney/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.disney/URL/Disney/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dolectures/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dolectures/URL/DoLectures/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.drnu/ServiceInfo.plist
@@ -1412,6 +1410,7 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.geenstijltv/URL/GeenStijlTV/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.giantbomb/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.giantbomb/URL/GiantBomb/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.giantbomb/URL/GiantBomb/ServicePrefs.json
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gizmodo/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gizmodo/URL/Gizmodo/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.globaltv/ServiceInfo.plist
@@ -1445,7 +1444,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.iplayer/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.iplayer/URL/BBC News/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.iplayer/URL/BBC iPlayer/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.iplayer/URL/BBC iPlayer/ServicePrefs.json
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.jamieoliver/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.jamieoliver/URL/JamieOliver/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.justintv/ServiceInfo.plist
@@ -1492,6 +1490,8 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nationalgeographic/URL/National Geographic Photography/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nationalgeographic/URL/National Geographic/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nbc/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nbc/URL/MSNBC Podcast/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nbc/URL/MSNBC/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nbc/URL/NBC/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ndtv/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ndtv/URL/NDTV/ServiceCode.pys
@@ -1504,8 +1504,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nos/URL/NOS/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nytimes.lens/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nytimes.lens/URL/Lens/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.onet/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.onet/URL/Onet/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pbs/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pbs/Shared Code/CoveAPI.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pbs/Shared Code/PBS_API.pys
@@ -1754,10 +1752,13 @@
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/DejaVuSansCondensedBold.ttf
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/DejaVuSansCondensedBold.woff
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/glyphicons-regular.eot
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/glyphicons-regular.otf
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/glyphicons-regular.svg
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/glyphicons-regular.ttf
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/glyphicons-regular.woff
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/glyphicons-social-regular.eot
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/glyphicons-social-regular.svg
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/glyphicons-social-regular.ttf
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/font/glyphicons-social-regular.woff
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/actionbar/unmatch.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/actionbar/unmatch@2x.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/actionbar/unwatch.png
@@ -1783,6 +1784,7 @@
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters/album.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters/banner.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters/folder.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters/folder_square.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters/friend.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters/photo.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/posters/poster.png
@@ -1826,6 +1828,7 @@
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/touch/startup_iphone_portrait.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/touch/startup_iphone_portrait@2x.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/index.html
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/js/analytics.js
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/js/plex.js
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/af.json
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/ar.json
@@ -3327,9 +3330,6 @@
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pbs/URL
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pbs/Shared Code
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pbs
-@dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.onet/URL/Onet
-@dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.onet/URL
-@dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.onet
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nytimes.lens/URL/Lens
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nytimes.lens/URL
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nytimes.lens
@@ -3347,6 +3347,8 @@
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ndtv/URL
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ndtv
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nbc/URL/NBC
+@dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nbc/URL/MSNBC Podcast
+@dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nbc/URL/MSNBC
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nbc/URL
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nbc
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nationalgeographic/URL/National Geographic Photography
@@ -3585,9 +3587,6 @@
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.citytv/URL/CityTV
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.citytv/URL
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.citytv
-@dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.charlierose/URL/CharlieRose
-@dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.charlierose/URL
-@dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.charlierose
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.channel9/URL/Channel9
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.channel9/URL
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.channel9
