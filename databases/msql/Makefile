@@ -77,10 +77,14 @@ and place it in ${DISTDIR}.\n\
 The distribution requires registration prior to use.\n\n
 .endif
 
-pre-fetch:
 .if defined(DISTFILE_INSTRUCTIONS)
+.if defined(PACKAGE_BUILDING)
+IGNORE=		requires manual fetch
+.else
+pre-fetch:
 	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
 	@exit 1
+.endif
 .endif
 
 .include <bsd.port.post.mk>

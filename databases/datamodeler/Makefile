@@ -1,9 +1,5 @@
-# New ports collection makefile for:	datamodeler
-# Date created:				22 October 2011
-# Whom:					jjuanino@gmail.com
-#
+# Created by: jjuanino@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	datamodeler
 PORTVERSION=	3.1.0.700
@@ -57,10 +53,14 @@ DISTFILE_INSTRUCTIONS 	+=	into ${DISTDIR}/${DIST_SUBDIR}/ \n
 DISTFILE_INSTRUCTIONS 	+=	and then restart this installation\n\n
 .endif
 
-pre-fetch:
 .if defined(DISTFILE_INSTRUCTIONS)
+.if defined(PACKAGE_BUILDING)
+IGNORE=		requires manual fetch
+.else
+pre-fetch:
 	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
 	@exit 1
+.endif
 .endif
 
 SUB_FILES=	${PORTNAME}.script.sh
