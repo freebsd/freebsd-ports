@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix2
-PORTVERSION=	2.0.6
-PORTREVISION?=	1
+PORTVERSION=	2.0.8
+PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
@@ -157,12 +157,12 @@ RUN_DEPENDS+=	nmap:${PORTSDIR}/security/nmap \
 .endif
 
 .if ${PORT_OPTIONS:MJAVAGW}
-USE_JAVA=       yes
-CONFIGURE_ARGS+=        --enable-java
+USE_JAVA=	yes
+CONFIGURE_ARGS+=	--enable-java
 PLIST_SUB+=	ZABBIX_JAVA="sbin/zabbix_java"
-PLIST_SUB+=      JAVAGW=""
+PLIST_SUB+=	JAVAGW=""
 .else
-PLIST_SUB+=      JAVAGW="@comment "
+PLIST_SUB+=	JAVAGW="@comment "
 .endif
 
 post-patch:
