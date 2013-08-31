@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	projectM-libvisual
-# Date created:	 	5 February 2010
-# Whom:			utisoft@gmail.com
-#
+# Created by: utisoft@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	projectM-libvisual
 PORTVERSION=	2.0.1
@@ -20,7 +16,7 @@ LIB_DEPENDS=	projectM:${PORTSDIR}/graphics/libprojectm \
 		visual-${LIBVISUAL_VER}:${PORTSDIR}/graphics/libvisual${LIBVISUAL_VER:S/.//} \
 		SDL:${PORTSDIR}/devel/sdl12
 
-USES=		cmake
+USES=		cmake pkgconfig
 CMAKE_ARGS+=	-DLIBVISUAL_LIBRARIES=visual-${LIBVISUAL_VER}
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
