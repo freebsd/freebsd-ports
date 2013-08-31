@@ -13,7 +13,7 @@ COMMENT=	Perl extension for reading the Hipparcos star catalog
 BUILD_DEPENDS=	p5-ExtUtils-XSpp>=0.06:${PORTSDIR}/devel/p5-ExtUtils-XSpp \
 		p5-ExtUtils-ParseXS>=2.22:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
 
-MAKE_ARGS+=	"CC=g++"
+MAKE_ARGS+=	CC="${CXX}"
 USES=		perl5
 USE_PERL5=	configure
 
