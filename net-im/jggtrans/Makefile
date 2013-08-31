@@ -1,29 +1,28 @@
 # Created by: Bartek Rutkowski <r@robakdesign.com>
 # $FreeBSD$
 
-PORTNAME=		jggtrans
-PORTVERSION=		2.2.4
-PORTREVISION=		2
-CATEGORIES=		net-im polish
-MASTER_SITES=		http://jggtrans.jajcus.net/downloads/ \
-			http://freebsd.e.pl/distfiles/
+PORTNAME=	jggtrans
+PORTVERSION=	2.2.4
+PORTREVISION=	2
+CATEGORIES=	net-im polish
+MASTER_SITES=	http://jggtrans.jajcus.net/downloads/ \
+		http://freebsd.e.pl/distfiles/
 
-MAINTAINER=		mg@fork.pl
-COMMENT=		Jabberd XMPP to GG instant messaging service gateway
+MAINTAINER=	mg@fork.pl
+COMMENT=	Jabberd XMPP to GG instant messaging service gateway
 
-LIB_DEPENDS=		idn.17:${PORTSDIR}/dns/libidn \
-			expat.6:${PORTSDIR}/textproc/expat2 \
-			gadu.3:${PORTSDIR}/polish/libgadu
+LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn \
+		expat.6:${PORTSDIR}/textproc/expat2 \
+		gadu.3:${PORTSDIR}/polish/libgadu
 
-USE_GMAKE=		yes
-GNU_CONFIGURE=		yes
-USES=		gettext
-USE_GNOME=		glib20 pkgconfig
-CPPFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
-CFLAGS+=		-I${LOCALBASE}/include
+GNU_CONFIGURE=	yes
+USES=		gettext gmake pkgconfig
+USE_GNOME=	glib20
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 
-USE_RC_SUBR=		jggtrans
+USE_RC_SUBR=	jggtrans
 
 OPTIONS_DEFINE=	DEBUG EJABBERD
 EJABBERD_DESC=	transport with ejabberd
