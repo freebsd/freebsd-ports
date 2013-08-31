@@ -2,7 +2,7 @@
 
 PORTNAME=	get_iplayer
 PORTVERSION=	2.83
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net multimedia
 MASTER_SITES=	ftp://ftp.infradead.org/pub/${PORTNAME}/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -13,11 +13,17 @@ COMMENT=	Search, index, or stream archive video from BBC iPlayer
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rtmpdump:${PORTSDIR}/multimedia/rtmpdump \
+RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTTP-Cookies>=0:${PORTSDIR}/www/p5-HTTP-Cookies \
+		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-HTTP-Cookies>=0:${PORTSDIR}/www/p5-HTTP-Cookies
+		rtmpdump:${PORTSDIR}/multimedia/rtmpdump
 
-USE_PERL5_RUN=	yes
+USES=		perl5 shebangfix
+USE_PERL5=	run
+perl_OLD_CMD=	${SETENV} perl
+SHEBANG_FILES=	${PORTNAME} ${PORTNAME}.cgi
 NO_BUILD=	yes
 
 USE_RC_SUBR=	${PORTNAME}
