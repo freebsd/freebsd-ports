@@ -17,12 +17,8 @@ LATEST_LINK=	netatalk3
 USE_AUTOTOOLS=	libtool
 USE_BDB=	46+
 USE_BZIP2=	yes
-USES=		iconv
+USES=		iconv gmake pkgconfig perl5
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_PERL5=	yes
-USE_GNOME=	pkgconfig
-WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	netatalk
 
@@ -88,7 +84,6 @@ PLIST_SUB+=		NETATALKPAM="@comment "
 CONFIGURE_ARGS+=	--enable-zeroconf=${LOCALBASE}
 CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LIB_DEPENDS+=		avahi-client:${PORTSDIR}/net/avahi-app
-USE_GNOME+=		pkgconfig
 SUB_LIST+=		ZEROCONF="avahi_daemon"
 .else
 CONFIGURE_ARGS+=	--disable-zerconf

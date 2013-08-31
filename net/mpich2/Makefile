@@ -23,9 +23,9 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
 USE_FORTRAN=	yes
-USE_GNOME=	pkgconfig
+USES=		pkgconfig perl5
 USE_LDCONFIG=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 USE_PYTHON=	yes
 
 OPTIONS_DEFINE_i386=	JAVA

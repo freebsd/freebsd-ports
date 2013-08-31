@@ -14,9 +14,7 @@ LIB_DEPENDS=	upnp.9:${PORTSDIR}/devel/upnp
 
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
-USES=		gettext
+USES=		gettext gmake pkgconfig
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 CFLAGS+=	-I${LOCALBASE}/include -I${WRKSRC}

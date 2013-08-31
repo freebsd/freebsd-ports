@@ -15,7 +15,7 @@ GNU_CONFIGURE=	yes
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 
 USE_OPENSSL=	yes
-USE_GNOME=	pkgconfig
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 
 MAN3=		oauth.3

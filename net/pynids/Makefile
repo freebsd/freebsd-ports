@@ -1,9 +1,5 @@
-# New ports collection makefile for:   pynids
-# Date created:                22 Jun 2005
-# Whom:                        Corey Smith
-#
+# Created by: Corey Smith
 # $FreeBSD$
-#
 
 PORTNAME=	pynids
 PORTVERSION=	0.6.1
@@ -19,7 +15,8 @@ COMMENT=	Python interface to libnids
 PATCH_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
 
-USE_GNOME=	pkgconfig glib20
+USES=		pkgconfig
+USE_GNOME=	glib20
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
