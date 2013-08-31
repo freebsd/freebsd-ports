@@ -21,7 +21,7 @@ FETCH_ARGS=
 OA_DATA=	${PKGNAMEPREFIX}${OA_DATA_VER}.zip
 OA_DATA_VER=	0.8.8
 
-.include "../openarena/Makefile.include"
+.include "${.CURDIR}/../openarena/Makefile.include"
 
 do-install:
 	${MKDIR} ${DATADIR}
