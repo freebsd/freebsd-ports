@@ -20,8 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mono:${PORTSDIR}/lang/mono \
 CONFIGURE_ARGS+=--with-hal-callouts-dir=${PREFIX}/libexec
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USES=		gmake pkgconfig pathfix
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^#!/bin/bash$$|#!/bin/sh|' \

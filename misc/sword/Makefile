@@ -19,8 +19,7 @@ BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
 
 
 USE_GCC=	any
-USE_GNOME=	pkgconfig
-USE_GMAKE=	yes
+USES=		pkgconfig gmake
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake autoconf
 CONFIGURE_ARGS+=	--without-conf --with-zlib
