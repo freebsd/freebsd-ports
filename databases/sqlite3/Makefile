@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.7.17
-PORTREVISION=	1
+PORTVERSION=	3.8.0.1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/2013/ http://www2.sqlite.org/2013/ http://www3.sqlite.org/2013/
-DISTNAME=	sqlite-autoconf-3071700
+DISTNAME=	sqlite-autoconf-3080001
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	SQL database engine in a C library
@@ -19,13 +18,13 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 CONFLICTS=	sqlite34-[0-9]* sqlcipher-[0-9]*
 
 USES=		pathfix
-USE_LDCONFIG=	YES
-GNU_CONFIGURE=	YES
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 
 # Compilation Options For SQLite http://www.sqlite.org/compile.html
-OPTIONS_DEFINE=	FTS3 ICU RTREE RAMTABLE UPD_DEL_LIMIT URI SOUNDEX METADATA \
+OPTIONS_DEFINE=	FTS3 ICU RTREE RAMTABLE UPD_DEL_LIMIT URI URI_AUTHORITY SOUNDEX METADATA \
 		STAT3 DIRECT_READ MEMMAN SECURE_DELETE UNLOCK_NOTIFY THREADSAFE \
 		EXTENSION
 OPTIONS_DEFAULT=	FTS3 URI METADATA SECURE_DELETE UNLOCK_NOTIFY THREADSAFE EXTENSION
@@ -35,6 +34,7 @@ RTREE_DESC=		Enable R*Tree module (${RTREE_INT})
 RAMTABLE_DESC=		Store temporary tables in RAM = ${TEMP_STORE}
 UPD_DEL_LIMIT_DESC=	ORDER BY and LIMIT on UPDATE and DELETE
 URI_DESC=		Enable use the URI filename
+URI_AUTHORITY_DESC=	Allow convert URL into a UNC
 SOUNDEX_DESC=		Enables the soundex() SQL function
 METADATA_DESC=		Enable column metadata
 STAT3_DESC=		Help SQLite to chose a better query plan
@@ -86,6 +86,10 @@ CPPFLAGS+=		-DSQLITE_ENABLE_UPDATE_DELETE_LIMIT=1
 
 .if ${PORT_OPTIONS:MURI}
 CPPFLAGS+=		-DSQLITE_USE_URI=1
+.endif
+
+.if ${PORT_OPTIONS:MURI_AUTHORITY}
+CPPFLAGS+=		-DSQLITE_ALLOW_URI_AUTHORITY=1
 .endif
 
 .if ${PORT_OPTIONS:MSOUNDEX}
