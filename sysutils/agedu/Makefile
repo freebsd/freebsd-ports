@@ -4,12 +4,14 @@
 PORTNAME=	agedu
 PORTVERSION=	9723
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/${PORTNAME}/ \
-		LOCAL/sunpoet
+MASTER_SITES=	LOCAL/sunpoet \
+		http://www.chiark.greenend.org.uk/~sgtatham/${PORTNAME}/
 DISTNAME=	${PORTNAME}-r${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Unix utility for tracking down wasted disk space
+
+LICENSE=	MIT
 
 GNU_CONFIGURE=	yes
 
