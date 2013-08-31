@@ -11,7 +11,7 @@ COMMENT=	A tool to download RTMP streams
 
 LICENSE=	GPLv2
 
-USE_GNOME=	pkgconfig
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 MAKE_ENV=	THREADLIB="${PTHREAD_LIBS}"
@@ -26,10 +26,6 @@ MAN8=		rtmpgw.8
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
-.endif
 
 .if ${OPENSSLBASE} != "/usr"
 CFLAGS+=	-I${OPENSSLINC}
