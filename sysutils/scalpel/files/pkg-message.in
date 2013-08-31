@@ -1,11 +1,11 @@
 ************************************************************
 Scalpel has been successfully installed on your system.
 
-Now it is time to configure this package. 
-Copy %%PREFIX%%/etc/scalpel.conf.sample into your working 
+Now it is time to configure this package.
+Copy %%PREFIX%%/etc/scalpel.conf.sample into your working
 directory as scalpel.conf and edit it.
 
-Scalpel will always use scalpel.conf in your current working 
+Scalpel will always use scalpel.conf in your current working
 directory, if not specified with "-c /path/to/scalpel.conf".
 
 ************************************************************

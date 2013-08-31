@@ -1,17 +1,13 @@
-# New ports collection makefile for:	Scalpel
-# Date created:				2011-12-22
-# Whom:					Hakisho Nukama <nukama@gmail.com>
-#
+# Created by: Hakisho Nukama <nukama@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	scalpel
 PORTVERSION=	2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.digitalforensicssolutions.com/Scalpel/
 
-MAINTAINER=	nukama@gmail.com
-COMMENT=	A frugal, high performance file carver
+MAINTAINER=	nukama+maintainer@gmail.com
+COMMENT=	Frugal, high performance file carver
 
 LICENSE=	GPLv2
 
