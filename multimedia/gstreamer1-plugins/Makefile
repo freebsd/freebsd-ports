@@ -27,16 +27,16 @@ RUN_DEPENDS+=	iso-codes>=0:${PORTSDIR}/misc/iso-codes
 
 PORTSCOUT=	limitw:1,even
 
-BASE_PORTVERSION=	1.0.9
+BASE_PORTVERSION=	1.0.10
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
 BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}
-BAD_PORTVERSION=	1.0.9
+BAD_PORTVERSION=	1.0.10
 BAD_DISTNAME=		gst-plugins-bad-${BAD_PORTVERSION}
 BAD_DISTFILE=		${BAD_DISTNAME}${EXTRACT_SUFX}
-GOOD_PORTVERSION=	1.0.9
+GOOD_PORTVERSION=	1.0.10
 GOOD_DISTNAME=		gst-plugins-good-${GOOD_PORTVERSION}
 GOOD_DISTFILE=		${GOOD_DISTNAME}${EXTRACT_SUFX}
-UGLY_PORTVERSION=	1.0.9
+UGLY_PORTVERSION=	1.0.10
 UGLY_DISTNAME=		gst-plugins-ugly-${UGLY_PORTVERSION}
 UGLY_DISTFILE=		${UGLY_DISTNAME}${EXTRACT_SUFX}
 DIST?=		base
@@ -47,7 +47,8 @@ VERSION=	${GST1_VERSION}
 USES=		gettext gmake pathfix pkgconfig
 WANT_GSTREAMER=	yes
 USE_XZ=		yes
-USE_GNOME+=	introspection:build libxml2 ltverhack:0 ltasneededhack
+USE_GNOME+=	glib20 gnomehier introspection:build libxml2 ltverhack:0 \
+		ltasneededhack
 USE_AUTOTOOLS=	libtool
 GST_PLUGIN?=	base
 USE_LDCONFIG=	yes
