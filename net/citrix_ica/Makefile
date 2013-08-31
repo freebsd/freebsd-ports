@@ -1,13 +1,10 @@
-# New ports collection makefile for:	Citrix(R) ICA(R) Client
-# Date created:         20 Sep 1998
-# Whom:                 msmith
-#
+# Created by: msmith
 # $FreeBSD$
-#
 
 PORTNAME=	citrix_ica
 PORTVERSION=	12.1
 CATEGORIES=	net comms linux
+MASTER_SITES=	#
 DISTNAME=	linuxx86_12.1.0.203066
 
 MAINTAINER=	ports@FreeBSD.org
@@ -36,7 +33,7 @@ SUB_LIST=	CDIR=${CDIR}
 
 .include <bsd.port.pre.mk>
 
-.if !defined(PACKAGE_BUILDING) && !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=May not be redistributed due to licensing. Please visit http://www.citrix.com/downloads/citrix-receiver/receivers-by-platform/receiver-for-linux-121.html to accept their license and download ${DISTFILES} into ${DISTDIR}
 .endif
 
