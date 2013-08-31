@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	GiNaC
-# Date created:			Mar 7, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	GiNaC
 PORTVERSION=	1.6.2
@@ -19,8 +14,7 @@ COMMENT=	A C++ library for symbolic mathematical calculations
 LIB_DEPENDS=	cln.6:${PORTSDIR}/math/cln
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack pkgconfig
-USE_GMAKE=	yes
+USES=		pkgconfig pathfix gmake
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
