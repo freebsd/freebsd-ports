@@ -675,6 +675,9 @@ bin/taskadmin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/rds/statusinfo.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/rds/statusinfo.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/rds/statusinfo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/rds/vpcsecuritygroupmembership.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/rds/vpcsecuritygroupmembership.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/rds/vpcsecuritygroupmembership.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/redshift/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/redshift/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/redshift/__init__.pyo
