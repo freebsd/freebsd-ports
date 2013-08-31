@@ -5,12 +5,11 @@ PORTNAME=	picpuz
 PORTVERSION=	2.1.1
 PORTREVISION=	5
 CATEGORIES=	graphics games
-MASTER_SITES=	http://kornelix.squarespace.com/storage/downloads/
+MASTER_SITES=	http://kornelix.squarespace.com/storage/downloads/ \
+		http://www.stasyan.com/devel/distfiles/
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Jigsaw puzzle program
-
-BROKEN=		upstream has disappeared and fails to fetch
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 pkgconfig
