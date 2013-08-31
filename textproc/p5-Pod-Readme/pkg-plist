@@ -1,0 +1,6 @@
+bin/pod2readme
+%%SITE_PERL%%/Pod/Readme.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Readme/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Readme
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
+@dirrmtry %%SITE_PERL%%/Pod
