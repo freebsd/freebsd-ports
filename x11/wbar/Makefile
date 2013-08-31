@@ -15,6 +15,8 @@ LICENSE=	GPLv3
 
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 
+USES=		pkgconfig
+
 GNU_CONFIGURE=	yes
 
 MAN1=	${PORTNAME}.1
