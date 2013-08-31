@@ -43,6 +43,9 @@ Autotools_Include_MAINTAINER=	autotools@FreeBSD.org
 # AUTOHEADER_ARGS=...
 #	- Extra arguments passed to autoheader during configure step
 #
+# LIBTOOLIZE_ARGS=...
+#	- Extra arugments passed to libtoolize during configure step
+#
 # LIBTOOLFLAGS=<value>
 #	- Arguments passed to libtool during configure step
 #
