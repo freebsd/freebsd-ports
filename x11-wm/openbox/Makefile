@@ -13,7 +13,7 @@ COMMENT=	Small, fast, standards compliant, extensible window manager
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	glib20 libxml2 gnomehack ltverhack
 USE_XORG=	xft
 USE_AUTOTOOLS=	libtool
