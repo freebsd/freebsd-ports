@@ -4769,6 +4769,7 @@ checksum: fetch check-checksum-algorithms
 						${ECHO_MSG} "=> $$alg Checksum mismatch for $$file."; \
 						refetchlist="$$refetchlist$$file "; \
 						OK="$${OK:-retry}"; \
+						[ "$${OK}" = "retry" -a ${FETCH_REGET} -gt 0 ] && ${RM} -f $${file}; \
 						ignored="false"; \
 					fi; \
 				fi; \
