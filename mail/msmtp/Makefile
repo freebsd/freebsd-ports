@@ -1,9 +1,5 @@
-# Ports collection makefile for:  msmtp
-# Date created:                   22 Aug 2003
-# Whom:                           R.I.Pienaar <rip@devco.net>
-#
+# Created by: R.I.Pienaar <rip@devco.net>
 # $FreeBSD$
-#
 
 PORTNAME=	msmtp
 PORTVERSION=	1.4.31
@@ -17,7 +13,7 @@ LICENSE=	GPLv3
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig
+USES=		pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=	msmtp.1

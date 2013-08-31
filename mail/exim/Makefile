@@ -406,7 +406,7 @@ SEDLIST+=	-e 's,^\# (LOOKUP_PASSWD=),\1,'
 
 .if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	yes
-USE_GNOME=	pkgconfig
+USES+=		pkgconfig
 SEDLIST+=	-e 's,XX_SQLITE_LIBS_XX,`pkg-config --static --libs sqlite3`,' \
 		-e 's,XX_SQLITE_FLAGS_XX,`pkg-config --cflags sqlite3`,' \
 		-e 's,^\# (LOOKUP_SQLITE=),\1,'
