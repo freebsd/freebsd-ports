@@ -1,199 +1,420 @@
-%%XPI_XPIDIR%%/chrome/content/about.xul
-%%XPI_XPIDIR%%/chrome/content/block.html
-%%XPI_XPIDIR%%/chrome/content/cbox-check-dis.gif
-%%XPI_XPIDIR%%/chrome/content/cbox-check.gif
-%%XPI_XPIDIR%%/chrome/content/customize-16x16.gif
-%%XPI_XPIDIR%%/chrome/content/display.png
-%%XPI_XPIDIR%%/chrome/content/ghostery-16x16.png
-%%XPI_XPIDIR%%/chrome/content/ghostery-about.js
-%%XPI_XPIDIR%%/chrome/content/ghostery-about.png
-%%XPI_XPIDIR%%/chrome/content/ghostery-badge.xml
-%%XPI_XPIDIR%%/chrome/content/ghostery-bugs.json
-%%XPI_XPIDIR%%/chrome/content/ghostery-clean.js
-%%XPI_XPIDIR%%/chrome/content/ghostery-click2play.json
-%%XPI_XPIDIR%%/chrome/content/ghostery-common.js
-%%XPI_XPIDIR%%/chrome/content/ghostery-compatibility.json
-%%XPI_XPIDIR%%/chrome/content/ghostery-cookiemonster.js
-%%XPI_XPIDIR%%/chrome/content/ghostery-db.js
-%%XPI_XPIDIR%%/chrome/content/ghostery-html-block.js
-%%XPI_XPIDIR%%/chrome/content/ghostery-html-options.js
-%%XPI_XPIDIR%%/chrome/content/ghostery-html-walkthrough.js
-%%XPI_XPIDIR%%/chrome/content/ghostery-lso.js
-%%XPI_XPIDIR%%/chrome/content/ghostery-lsos.json
-%%XPI_XPIDIR%%/chrome/content/ghostery-off-16x16.png
-%%XPI_XPIDIR%%/chrome/content/ghostery-pbl.js
-%%XPI_XPIDIR%%/chrome/content/ghostery-rules.js
-%%XPI_XPIDIR%%/chrome/content/ghostery-scanner.js
-%%XPI_XPIDIR%%/chrome/content/ghostery-silverlight.js
-%%XPI_XPIDIR%%/chrome/content/ghostery-sqlite.js
-%%XPI_XPIDIR%%/chrome/content/ghostery-surrogatedb.js
-%%XPI_XPIDIR%%/chrome/content/ghostery-surrogates.json
-%%XPI_XPIDIR%%/chrome/content/ghostery-translator.js
-%%XPI_XPIDIR%%/chrome/content/ghostery-ui.js
-%%XPI_XPIDIR%%/chrome/content/ghostery-uninstaller.js
-%%XPI_XPIDIR%%/chrome/content/ghostery.css
-%%XPI_XPIDIR%%/chrome/content/ghostery.js
-%%XPI_XPIDIR%%/chrome/content/ghostery.png
-%%XPI_XPIDIR%%/chrome/content/ghostery.xul
-%%XPI_XPIDIR%%/chrome/content/ghostery_eula.txt
-%%XPI_XPIDIR%%/chrome/content/help-16x16.png
-%%XPI_XPIDIR%%/chrome/content/images/arrow-hover.png
-%%XPI_XPIDIR%%/chrome/content/images/arrow.png
-%%XPI_XPIDIR%%/chrome/content/images/arrows.gif
-%%XPI_XPIDIR%%/chrome/content/images/clippy_button_over.png
-%%XPI_XPIDIR%%/chrome/content/images/clippy_button_up.png
-%%XPI_XPIDIR%%/chrome/content/images/down.gif
-%%XPI_XPIDIR%%/chrome/content/images/ghostery-about.png
-%%XPI_XPIDIR%%/chrome/content/images/gradBD.gif
-%%XPI_XPIDIR%%/chrome/content/images/panels.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Footer/bh_ghostery_footer_button_disabled.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Footer/bh_ghostery_footer_button_down.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Footer/bh_ghostery_footer_button_hover.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Footer/bh_ghostery_footer_button_off.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Footer/bh_ghostery_footer_help_down.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Footer/bh_ghostery_footer_help_hover.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Footer/bh_ghostery_footer_help_off.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Header/bh_ghostery_header_cog_down.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Header/bh_ghostery_header_cog_hover.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Header/bh_ghostery_header_cog_off.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Settings/bh_ghostery_settings_button_down.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Settings/bh_ghostery_settings_button_hover.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Settings/bh_ghostery_settings_button_off.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_alert.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_arrow_down_hover.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_arrow_down_off.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_arrow_up_hover.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_arrow_up_off.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_check_green_hover.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_check_green_off.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_check_grey_hover.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_check_grey_off.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_cross_blue_hover.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_cross_blue_off.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_cross_green_hover.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_cross_green_off.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_cross_red_hover.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_cross_red_off.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_cross_yellow_hover.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_indicator_cross_yellow_off.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_track_hover_left.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_track_hover_right.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tracker/bh_ghostery_tracker_track_off.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_arrow_left_hover.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_arrow_left_off.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_arrow_right_hover.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_arrow_right_off.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_close_hover.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_close_off.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_control_off.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_control_on.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_indicator_check_green.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_indicator_check_grey.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_indicator_cross_blue.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_indicator_cross_green.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_indicator_cross_grey.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_indicator_cross_red.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_indicator_cross_yellow.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/bh_ghostery_tutorial_track_lrg.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial/turorial_panel.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/base-short.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/base.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/bg-bottom.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/bg-top.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/chat.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/email.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/ghosty-top.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/ghosty_TM.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/panelarrow-down.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/panelarrow-up.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/pause-long.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/pause-reload.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/pause.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/play.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/questions.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/reload-long.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/reload.png
-%%XPI_XPIDIR%%/chrome/content/images/popup/settings.png
-%%XPI_XPIDIR%%/chrome/content/images/right.gif
-%%XPI_XPIDIR%%/chrome/content/images/s1.gif
-%%XPI_XPIDIR%%/chrome/content/images/sample.png
-%%XPI_XPIDIR%%/chrome/content/images/sample2.png
-%%XPI_XPIDIR%%/chrome/content/images/sample3.png
-%%XPI_XPIDIR%%/chrome/content/images/sample_c2p.png
-%%XPI_XPIDIR%%/chrome/content/images/sample_c2p_button.png
-%%XPI_XPIDIR%%/chrome/content/images/star.png
-%%XPI_XPIDIR%%/chrome/content/includes/jquery-1.7.1.min.js
-%%XPI_XPIDIR%%/chrome/content/includes/jquery.scrollintogreatness-1.0.0.js
-%%XPI_XPIDIR%%/chrome/content/includes/jquery.simplemodal.1.4.1.min.js
-%%XPI_XPIDIR%%/chrome/content/includes/tiptip/jquery.tipTip.minified.js
-%%XPI_XPIDIR%%/chrome/content/includes/tiptip/tipTip.css
-%%XPI_XPIDIR%%/chrome/content/jquery_license.txt
-%%XPI_XPIDIR%%/chrome/content/options.html
-%%XPI_XPIDIR%%/chrome/content/options.xul
-%%XPI_XPIDIR%%/chrome/content/popup.css
-%%XPI_XPIDIR%%/chrome/content/popup.html
-%%XPI_XPIDIR%%/chrome/content/share-16x16.png
-%%XPI_XPIDIR%%/chrome/content/tiptip_license.txt
-%%XPI_XPIDIR%%/chrome/content/transparent-16x16.png
-%%XPI_XPIDIR%%/chrome/content/wizard.html
-%%XPI_XPIDIR%%/chrome/locale/de-DE/ghostery.dtd
-%%XPI_XPIDIR%%/chrome/locale/de-DE/ghostery.properties
-%%XPI_XPIDIR%%/chrome/locale/en-US/ghostery.dtd
-%%XPI_XPIDIR%%/chrome/locale/en-US/ghostery.properties
-%%XPI_XPIDIR%%/chrome/locale/es-ES/ghostery.dtd
-%%XPI_XPIDIR%%/chrome/locale/es-ES/ghostery.properties
-%%XPI_XPIDIR%%/chrome/locale/fr-FR/ghostery.dtd
-%%XPI_XPIDIR%%/chrome/locale/fr-FR/ghostery.properties
-%%XPI_XPIDIR%%/chrome/locale/ja-JP/ghostery.dtd
-%%XPI_XPIDIR%%/chrome/locale/ja-JP/ghostery.properties
-%%XPI_XPIDIR%%/chrome/locale/ru-RU/ghostery.dtd
-%%XPI_XPIDIR%%/chrome/locale/ru-RU/ghostery.properties
-%%XPI_XPIDIR%%/chrome.manifest
-%%XPI_XPIDIR%%/components/ghostery-content-policy.js
-%%XPI_XPIDIR%%/defaults/preferences/defaults.js
-%%XPI_XPIDIR%%/ghostery_eula.txt
+%%XPI_XPIDIR%%/bootstrap.js
+%%XPI_XPIDIR%%/defaults/preferences/prefs.js
+%%XPI_XPIDIR%%/harness-options.json
+%%XPI_XPIDIR%%/icon.png
+%%XPI_XPIDIR%%/icon64.png
 %%XPI_XPIDIR%%/install.rdf
-%%XPI_XPIDIR%%/resource/allow_once.png
-%%XPI_XPIDIR%%/resource/allow_unblock.png
-%%XPI_XPIDIR%%/resource/blocked_redirect.html
-%%XPI_XPIDIR%%/resource/click2play.html
-%%XPI_XPIDIR%%/resource/click2play.png
-%%XPI_XPIDIR%%/resource/font/OpenSans-Bold.eot
-%%XPI_XPIDIR%%/resource/font/OpenSans-Bold.svg
-%%XPI_XPIDIR%%/resource/font/OpenSans-Bold.ttf
-%%XPI_XPIDIR%%/resource/font/OpenSans-Bold.woff
-%%XPI_XPIDIR%%/resource/ghostery-32.png
-%%XPI_XPIDIR%%/resource/ghostery.png
-%%XPI_XPIDIR%%/resource/ghostery_facebook.png
-%%XPI_XPIDIR%%/resource/ghostery_linkedin.png
-%%XPI_XPIDIR%%/resource/ghostery_pinterest.png
-%%XPI_XPIDIR%%/resource/ghostery_plus.png
-%%XPI_XPIDIR%%/resource/ghostery_stumble.png
-%%XPI_XPIDIR%%/resource/ghostery_twitter.png
-%%XPI_XPIDIR%%/resource/ghostery_vkontakte.png
-%%XPI_XPIDIR%%/resource/ghosty_blocked.png
-%%XPI_XPIDIR%%/resource/icon128.png
-%%XPI_XPIDIR%%/resource/rbc_50px.png
-@dirrm %%XPI_XPIDIR%%/chrome/content/images/popup/Footer
-@dirrm %%XPI_XPIDIR%%/chrome/content/images/popup/Header
-@dirrm %%XPI_XPIDIR%%/chrome/content/images/popup/Settings
-@dirrm %%XPI_XPIDIR%%/chrome/content/images/popup/Tracker
-@dirrm %%XPI_XPIDIR%%/chrome/content/images/popup/Tutorial
-@dirrm %%XPI_XPIDIR%%/chrome/content/images/popup
-@dirrm %%XPI_XPIDIR%%/chrome/content/images
-@dirrm %%XPI_XPIDIR%%/chrome/content/includes/tiptip
-@dirrm %%XPI_XPIDIR%%/chrome/content/includes
-@dirrm %%XPI_XPIDIR%%/chrome/content
-@dirrm %%XPI_XPIDIR%%/chrome/locale/de-DE
-@dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
-@dirrm %%XPI_XPIDIR%%/chrome/locale/es-ES
-@dirrm %%XPI_XPIDIR%%/chrome/locale/fr-FR
-@dirrm %%XPI_XPIDIR%%/chrome/locale/ja-JP
-@dirrm %%XPI_XPIDIR%%/chrome/locale/ru-RU
-@dirrm %%XPI_XPIDIR%%/chrome/locale
-@dirrm %%XPI_XPIDIR%%/chrome
-@dirrm %%XPI_XPIDIR%%/components
+%%XPI_XPIDIR%%/locales.json
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/addon/runner.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/base64.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/console/plain-text.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/console/traceback.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/content/content-proxy.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/content/content-worker.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/content/content.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/content/loader.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/content/symbiont.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/content/thumbnail.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/content/worker.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/core/heritage.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/core/namespace.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/core/promise.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/api-utils.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/cortex.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/errors.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/events.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/events/assembler.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/light-traits.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/list.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/memory.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/observer-service.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/traits.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/traits/core.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/window-utils.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/dom/events.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/event/core.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/event/target.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/frame/hidden-frame.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/frame/utils.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/io/byte-streams.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/io/data.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/io/file.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/io/text-streams.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/l10n/core.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/l10n/html.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/l10n/loader.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/l10n/locale.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/l10n/prefs.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/lang/functional.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/loader/cuddlefish.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/loader/sandbox.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/net/url.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/net/xhr.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/page-mod.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/page-mod/match-pattern.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/platform/xpcom.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/preferences/service.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/private-browsing.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/private-browsing/utils.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/private-browsing/window/utils.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/querystring.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/request.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/self.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/simple-storage.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/system.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/system/environment.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/system/events.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/system/globals.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/system/runtime.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/system/unload.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/system/xul-app.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs/common.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs/events.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs/helpers.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs/namespace.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs/observer.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs/tab-fennec.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs/tab-firefox.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs/tab.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs/tabs-firefox.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs/tabs.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs/utils.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs/worker.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/timers.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/url.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/util/array.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/util/deprecate.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/util/list.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/util/object.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/util/registry.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/util/uuid.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/window/browser.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/window/namespace.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/window/utils.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/windows.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/windows/dom.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/windows/fennec.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/windows/firefox.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/windows/loader.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/windows/observer.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/windows/tabs-fennec.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/windows/tabs-firefox.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/toolkit/loader.js
+%%XPI_XPIDIR%%/resources/ghostery/data/README.md
+%%XPI_XPIDIR%%/resources/ghostery/data/block_log.html
+%%XPI_XPIDIR%%/resources/ghostery/data/blocked_redirect.html
+%%XPI_XPIDIR%%/resources/ghostery/data/bugs.json
+%%XPI_XPIDIR%%/resources/ghostery/data/click2play.json
+%%XPI_XPIDIR%%/resources/ghostery/data/compatibility.json
+%%XPI_XPIDIR%%/resources/ghostery/data/css/block_log.css
+%%XPI_XPIDIR%%/resources/ghostery/data/css/browser.css
+%%XPI_XPIDIR%%/resources/ghostery/data/css/button.css
+%%XPI_XPIDIR%%/resources/ghostery/data/css/firefoxPanel.css
+%%XPI_XPIDIR%%/resources/ghostery/data/css/options.css
+%%XPI_XPIDIR%%/resources/ghostery/data/css/page.css
+%%XPI_XPIDIR%%/resources/ghostery/data/css/panel.css
+%%XPI_XPIDIR%%/resources/ghostery/data/css/panel_mobile.css
+%%XPI_XPIDIR%%/resources/ghostery/data/css/walkthrough.css
+%%XPI_XPIDIR%%/resources/ghostery/data/ghostery_eula.txt
+%%XPI_XPIDIR%%/resources/ghostery/data/images/Icon-128.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/Icon-16-off.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/Icon-16.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/Icon-32.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/Icon-64-off.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/Icon-64.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/arrow_down.gif
+%%XPI_XPIDIR%%/resources/ghostery/data/images/arrow_right.gif
+%%XPI_XPIDIR%%/resources/ghostery/data/images/big_arrow.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/big_arrow_hover.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/button.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/button_down.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/button_hover.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/click2play/allow_once.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/click2play/allow_through.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/click2play/allow_unblock.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/click2play/ghostery_facebook.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/click2play/ghostery_linkedin.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/click2play/ghostery_pinterest.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/click2play/ghostery_plus.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/click2play/ghostery_stumble.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/click2play/ghostery_tumblr.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/click2play/ghostery_twitter.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/click2play/ghostery_vkontakte.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/click2play/ghosty_blocked.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/ghostery_about.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/gradBD.gif
+%%XPI_XPIDIR%%/resources/ghostery/data/images/help/addon_bar.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/help/alert_bubble.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/help/badge.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/help/c2p.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/help/c2p_social_buttons.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/help/navigation_toolbar.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/help/old_vs_new_panel.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/help/panel.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/menu/customize-16x16.gif
+%%XPI_XPIDIR%%/resources/ghostery/data/images/menu/help-16x16.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/menu/share-16x16.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/numbers/0.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/numbers/1.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/numbers/2.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/numbers/3.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/numbers/4.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/numbers/5.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/numbers/6.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/numbers/7.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/numbers/8.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/numbers/9.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/clippy_button_over.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/clippy_button_up.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/close_panel_mobile.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/footer/button_down.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/footer/button_hover.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/footer/button_off.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/footer/help_down.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/footer/help_hover.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/footer/help_off.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/ghosty_TM.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/header/cog_down.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/header/cog_hover.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/header/cog_off.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/panelarrow-down.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/panelarrow-up.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/settings/button_down.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/settings/button_hover.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/settings/button_off.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/alert.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/arrow_down_hover.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/arrow_down_off.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/arrow_up_hover.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/arrow_up_off.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/indicator_check_green_hover.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/indicator_check_green_off.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/indicator_check_grey_hover.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/indicator_check_grey_off.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/indicator_cross_blue_hover.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/indicator_cross_blue_off.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/indicator_cross_green_hover.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/indicator_cross_green_off.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/indicator_cross_red_hover.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/indicator_cross_red_off.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/indicator_cross_yellow_hover.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/indicator_cross_yellow_off.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/track_hover_left.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/track_hover_right.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker/track_off.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial/arrow_left_hover.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial/arrow_left_off.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial/arrow_right_hover.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial/arrow_right_off.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial/blocking_controls.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial/close_hover.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial/close_off.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial/control_off.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial/control_on.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial/indicator_check_green.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial/indicator_check_grey.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial/indicator_cross_blue.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial/indicator_cross_green.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial/indicator_cross_grey.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial/indicator_cross_red.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial/indicator_cross_yellow.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial/panel.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial/settings.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial/track_lrg.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/spinner.gif
+%%XPI_XPIDIR%%/resources/ghostery/data/images/star.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/tab.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/tab_app_browser.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/tab_app_browser_hover.png
+%%XPI_XPIDIR%%/resources/ghostery/data/images/tab_hover.png
+%%XPI_XPIDIR%%/resources/ghostery/data/includes/ghostery.js
+%%XPI_XPIDIR%%/resources/ghostery/data/includes/ghostery_dom_scanner.js
+%%XPI_XPIDIR%%/resources/ghostery/data/includes/ghostery_dot_com.js
+%%XPI_XPIDIR%%/resources/ghostery/data/includes/ghostery_mobile.js
+%%XPI_XPIDIR%%/resources/ghostery/data/includes/page_info.js
+%%XPI_XPIDIR%%/resources/ghostery/data/js/options.js
+%%XPI_XPIDIR%%/resources/ghostery/data/js/panel.js
+%%XPI_XPIDIR%%/resources/ghostery/data/js/tracker.js
+%%XPI_XPIDIR%%/resources/ghostery/data/js/walkthrough.js
+%%XPI_XPIDIR%%/resources/ghostery/data/lib/blocking_log.js
+%%XPI_XPIDIR%%/resources/ghostery/data/lib/browser.js
+%%XPI_XPIDIR%%/resources/ghostery/data/lib/i18n.js
+%%XPI_XPIDIR%%/resources/ghostery/data/lib/panel.js
+%%XPI_XPIDIR%%/resources/ghostery/data/lib/utils.js
+%%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/apprise/apprise-1.5.full.js
+%%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/apprise/apprise.css
+%%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/backbone-0.9.2.js
+%%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/bootstrap/bootstrap.css
+%%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/bootstrap/bootstrap.js
+%%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/jquery-1.7.2.js
+%%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/jquery.scrollintogreatness-2.0.0.js
+%%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/moment/lang/all.js
+%%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/moment/moment.js
+%%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/parseuri.js
+%%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/tipTip/jquery.tipTip.js
+%%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/tipTip/tipTip.css
+%%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/underscore-1.4.3.js
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/de/messages.json
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/de/messages.yml
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/en/messages.json
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/en/messages.yml
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/en_GB/messages.json
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/en_GB/messages.yml
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/es/messages.json
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/es/messages.yml
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/fr/messages.json
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/fr/messages.yml
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/it/messages.json
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/it/messages.yml
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/ja/messages.json
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/ja/messages.yml
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/ko/messages.json
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/ko/messages.yml
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/nl/messages.json
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/nl/messages.yml
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/pl/messages.json
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/pl/messages.yml
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/ru/messages.json
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/ru/messages.yml
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/zh_CN/messages.json
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/zh_CN/messages.yml
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/zh_TW/messages.json
+%%XPI_XPIDIR%%/resources/ghostery/data/locales/zh_TW/messages.yml
+%%XPI_XPIDIR%%/resources/ghostery/data/lsos.json
+%%XPI_XPIDIR%%/resources/ghostery/data/options.html
+%%XPI_XPIDIR%%/resources/ghostery/data/panel.html
+%%XPI_XPIDIR%%/resources/ghostery/data/panel_mobile.html
+%%XPI_XPIDIR%%/resources/ghostery/data/surrogates.json
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/_app.html
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/_app_browser.html
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/_app_info.html
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/_category.html
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/_footer.html
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/_ghostrank.html
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/_header.html
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/_library_li.html
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/_panel_app.html
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/_select.html
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/click2play.html
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/options.html
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/panel.html
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/precompiled/_app.js
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/precompiled/_app_browser.js
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/precompiled/_app_info.js
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/precompiled/_category.js
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/precompiled/_footer.js
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/precompiled/_ghostrank.js
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/precompiled/_header.js
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/precompiled/_library_li.js
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/precompiled/_panel_app.js
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/precompiled/_select.js
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/precompiled/click2play.js
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/precompiled/options.js
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/precompiled/panel.js
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/precompiled/walkthrough.js
+%%XPI_XPIDIR%%/resources/ghostery/data/templates/walkthrough.html
+%%XPI_XPIDIR%%/resources/ghostery/data/tracker.html
+%%XPI_XPIDIR%%/resources/ghostery/data/walkthrough.html
+%%XPI_XPIDIR%%/resources/ghostery/lib/background.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/bugdb.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/cleaner.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/click2play.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/compatibility.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/conf.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/foundbugs.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/ghostrank.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/i18n.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/lsodb.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/matcher.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/surrogatedb.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/tabinfo.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/ui/menu.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/ui/menu_mobile.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/ui/panel.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/ui/xul_panel.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/updatable.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/utils.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/vendor/parseuri.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/vendor/underscore-1.4.3.js
+%%XPI_XPIDIR%%/resources/toolbarbutton/lib/toolbarbutton.js
+%%XPI_XPIDIR%%/resources/vold-utils/lib/listen.js
+%%XPI_XPIDIR%%/resources/vold-utils/lib/unload+.js
+@dirrm %%XPI_XPIDIR%%/resources/vold-utils/lib
+@dirrm %%XPI_XPIDIR%%/resources/vold-utils
+@dirrm %%XPI_XPIDIR%%/resources/toolbarbutton/lib
+@dirrm %%XPI_XPIDIR%%/resources/toolbarbutton
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/lib/vendor
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/lib/ui
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/lib
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/templates/precompiled
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/templates
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/zh_TW
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/zh_CN
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/ru
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/pl
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/nl
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/ko
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/ja
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/it
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/fr
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/es
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/en_GB
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/en
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/de
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/tipTip
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/moment/lang
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/moment
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/bootstrap
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/apprise
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/js
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/includes
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/panel/settings
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/panel/header
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/panel/footer
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/panel
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/numbers
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/menu
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/help
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/click2play
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/css
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data
+@dirrm %%XPI_XPIDIR%%/resources/ghostery
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/toolkit
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/windows
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/window
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/util
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/system
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/private-browsing/window
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/private-browsing
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/preferences
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/platform
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/page-mod
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/net
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/loader
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/lang
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/l10n
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/io
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/frame
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/event
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/dom
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/traits
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/events
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/core
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/content
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/console
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/addon
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk
+@dirrm %%XPI_XPIDIR%%/resources
 @dirrm %%XPI_XPIDIR%%/defaults/preferences
 @dirrm %%XPI_XPIDIR%%/defaults
-@dirrm %%XPI_XPIDIR%%/resource/font
-@dirrm %%XPI_XPIDIR%%/resource
