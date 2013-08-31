@@ -1084,8 +1084,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  a different checksum and you intend to verify if
 #				  the port still works with it.
 # USE_PACKAGE_DEPENDS
-#				- Install dependencies from existing packages instead
-#				  of building the port from scratch.
+#				- Try to install dependencies from existing packages instead
+#				  of building the port from scratch. Fallback on source
+#				  if an existing package is not present.
+# USE_PACKAGE_DEPENDS_ONLY
+#				- Like USE_PACKAGE_DEPENDS, but do not fallback on source.
 # INSTALL_AS_USER
 #				- Define this to install as the current user, intended
 #				  for systems where you have no root access.
@@ -4906,7 +4909,7 @@ _DEPEND_ALWAYS=	0
 .endif
 
 _INSTALL_DEPENDS=	\
-		if [ X${USE_PACKAGE_DEPENDS} != "X" ]; then \
+		if [ -n "${USE_PACKAGE_DEPENDS}" -o -n "${USE_PACKAGE_DEPENDS_ONLY}" ]; then \
 			subpkgfile=`(cd $$dir; ${MAKE} $$depends_args -V PKGFILE)`; \
 			subpkgname=$${subpkgfile%-*} ; \
 			subpkgname=$${subpkgname\#\#*/} ; \
@@ -4920,6 +4923,10 @@ _INSTALL_DEPENDS=	\
 				else \
 					${PKG_ADD} $${subpkgfile}; \
 				fi; \
+			elif [ -n "${USE_PACKAGE_DEPENDS_ONLY}" ]; then \
+				${ECHO_MSG} "===>   ${PKGNAME} depends on package: $${subpkgfile} - not found"; \
+				${ECHO_MSG} "===>   USE_PACKAGE_DEPENDS_ONLY set - will not build from source"; \
+				exit 1; \
 			else \
 			  (cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
 			fi; \
