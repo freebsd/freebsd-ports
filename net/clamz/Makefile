@@ -18,7 +18,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig
+USES=		pkgconfig
 
 MAN1=		${PORTNAME}.1
 

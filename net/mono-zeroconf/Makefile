@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mono-zeroconf
-# Date created:				Aug 27 2008
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
+# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mono-zeroconf
 PORTVERSION=	0.9.0
@@ -18,8 +14,7 @@ BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	pkgconfig gnomehack
+USES=		gmake pathfix pkgconfig
 CONFIGURE_ARGS+=	--program-transform-name="" \
 			--disable-mdnsresponder
 MAKE_JOBS_UNSAFE=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openvswitch
-# Date created:		2011-11-01
-# Whom:			Edward Tomasz Napierala <trasz@FreeBSD.org>
-#
+# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openvswitch
 PORTVERSION=	1.7.1
@@ -17,9 +13,8 @@ LICENSE=	AL2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	SSL_LIBS=-lssl SSL_CFLAGS=-I/usr/include/openssl
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf automake
-USE_GNOME=	pkgconfig
+USES=		gmake pkgconfig
 USE_PYTHON=	yes
 USE_RC_SUBR=	ovs-vswitchd ovsdb-server
 MAN1=		ovs-benchmark.1 ovs-pcap.1 ovs-tcpundump.1 ovsdb-client.1 \
@@ -34,10 +29,6 @@ OPTIONS_DEFINE=	THREADED
 THREADED_DESC=	Experimental high-performance threading patch
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=		does not compile
-.endif
 
 .if ${PORT_OPTIONS:MTHREADED}
 CONFIGURE_ARGS+=--enable-threaded=yes
