@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-prime
-# Date created:				6 Jun 2003
-# Whom:					Gen Otsuji<otsuji@users.sourceforge.jp>
-#
+# Created by: Gen Otsuji<otsuji@users.sourceforge.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	prime
 DISTVERSION=	1.0.0.1
@@ -23,7 +19,7 @@ USE_RUBY=		yes
 USE_RUBY_FEATURES=	iconv
 RUBY_WITH_PTHREAD=	yes
 
-USE_GNOME=		pkgconfig
+USES=			pkgconfig
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-rubydir=${RUBY_SITELIBDIR}
 USE_AUTOTOOLS=	automake autoconf

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-suikyo
-# Date created:				6 Jun 2003
-# Whom:					Gen Otsuji<otsuji@users.sourceforge.jp>
-#
+# Created by: Gen Otsuji<otsuji@users.sourceforge.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	suikyo
 PORTVERSION=	2.1.0
@@ -15,7 +11,7 @@ MAINTAINER=	otsuji@users.sourceforge.jp
 COMMENT=	Romaji-Kana conversion Library for the prime
 
 USE_RUBY=	yes
-USE_GNOME=	pkgconfig
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rubydir=${RUBY_SITELIBDIR}
 USE_AUTOTOOLS=	automake autoconf
