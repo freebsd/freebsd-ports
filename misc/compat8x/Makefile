@@ -2,6 +2,7 @@
 
 PORTNAME=	compat8x
 PORTVERSION=	8.4.804000.201309
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	garga/compat
@@ -37,8 +38,5 @@ do-install:
 	@${MKDIR} ${TARGET32_DIR}
 	(cd ${WRKSRC}/lib32 && ${INSTALL_DATA} *.so.* ${TARGET32_DIR})
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
