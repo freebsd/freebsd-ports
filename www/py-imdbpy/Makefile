@@ -8,6 +8,7 @@
 
 PORTNAME=	imdbpy
 PORTVERSION=	4.9
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	SF/${PORTNAME}/IMDbPY/${PORTVERSION:S/.2//}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,7 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Retrieve and manage the data of the IMDb movie database
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}migrate>=0:${PORTSDIR}/databases/py-migrate \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy-migrate>=0.6.1:${PORTSDIR}/databases/py-sqlalchemy-migrate \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0:${PORTSDIR}/databases/py-sqlalchemy06 \
 		${PYTHON_PKGNAMEPREFIX}sqlobject>=0:${PORTSDIR}/databases/py-sqlobject
 
