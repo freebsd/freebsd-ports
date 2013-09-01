@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-DNS-Resolver-Programmable
-# Date created:				February 9, 2007
-# Whom:	      				Koen Martens <gmc@sonologic.nl>
-#
+# Created by: Koen Martens <gmc@sonologic.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-DNS-Resolver-Programmable
 PORTVERSION=	0.003
@@ -19,8 +15,8 @@ RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-version>=0:${PORTSDIR}/devel/p5-version
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Net::DNS::Resolver::Programmable.3
 
