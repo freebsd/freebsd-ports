@@ -7,14 +7,15 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	m.tsatsenko@gmail.com
-COMMENT=	A number of tools and scripts for use with IMAP servers
+COMMENT=	Number of tools and scripts for use with IMAP servers
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_PERL5_RUN=	yes
+USES=		perl5 shebangfix
+USE_PERL5=	configure
 NO_BUILD=	yes
-PERL_CONFIGURE=	yes
+SHEBANG_FILES=	bin/*
 
 OPTIONS_DEFINE=	SSL UNICODE
 
