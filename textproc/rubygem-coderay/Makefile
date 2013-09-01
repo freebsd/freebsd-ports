@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	coderay
-PORTVERSION=	1.0.9
+PORTVERSION=	1.1.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast and easy syntax highlighting for selected languages
 
 LICENSE=	LGPL21
