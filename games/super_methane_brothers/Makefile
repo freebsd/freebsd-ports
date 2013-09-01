@@ -3,6 +3,7 @@
 
 PORTNAME=	super_methane_brothers
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/methane/Methane%20Stable/Methane%20V${PORTVERSION}
 DISTNAME=	methane-${PORTVERSION}
@@ -16,10 +17,9 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	clan23Core:${PORTSDIR}/devel/clanlib \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_GCC=	yes
 USE_GL=		glu
-USE_GMAKE=	yes
 MAKE_ENV=	METHANE_FLAGS="${CPPFLAGS}" METHANE_LIBS="${LDFLAGS}"
 MAKE_JOBS_UNSAFE=	yes
 
