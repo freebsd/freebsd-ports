@@ -3,7 +3,7 @@
 
 PORTNAME=	xscreensaver
 PORTVERSION=	5.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 CONFLICTS=	xscreensaver-gnome-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
 USES=		pkgconfig gettext gmake
-USE_XORG=	xpm
+USE_XORG=	xpm xext xxf86misc
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
