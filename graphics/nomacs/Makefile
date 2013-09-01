@@ -15,7 +15,7 @@ LIB_DEPENDS=	exiv2:${PORTSDIR}/graphics/exiv2 \
 		sysinfo:${PORTSDIR}/devel/libsysinfo
 
 USE_BZIP2=	yes
-USES=		cmake desktop-file-utils
+USES=		cmake desktop-file-utils pkgconfig
 USE_QT4=	gui network linguist_build moc_build \
 		qmake_build rcc_build uic_build
 LDFLAGS+=	-lsysinfo -lkvm
