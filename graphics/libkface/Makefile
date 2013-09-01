@@ -9,6 +9,7 @@ COMMENT=	KDE4 library for face recognition
 
 .include "${.CURDIR}/../digikam-kde4/Makefile.common"
 
+USES+=		pkgconfig
 LIB_DEPENDS=	opencv_legacy:${PORTSDIR}/graphics/opencv
 USE_LDCONFIG=	yes
 
