@@ -8,6 +8,5 @@ etc/rbldnsd/example
 %%PORTDOCS%%%%DOCSDIR%%/rbldnsd.default
 %%PORTDOCS%%%%DOCSDIR%%/rbldnsd.init
 %%PORTDOCS%%%%DOCSDIR%%/rbldnsd.spec
-%%PORTDOCS%%%%DOCSDIR%%/rbldnsd.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry etc/rbldnsd/

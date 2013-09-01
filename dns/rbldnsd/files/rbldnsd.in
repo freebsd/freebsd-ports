@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id$
+# $FreeBSD$
 #
 
 # PROVIDE: rbldnsd
@@ -19,25 +19,22 @@
 
 name=rbldnsd
 rcvar=rbldnsd_enable
+load_rc_config $name
+
+rbldnsd_enable=${rbldnsd_enable:-"NO"}
+rbldnsd_flags=${rbldnsd_flags:-"-r %%PREFIX%%/etc/rbldnsd -b 127.0.0.1 bl.example.com:ip4set:example"}
 
 command=%%PREFIX%%/sbin/rbldnsd
 pidfile=/var/run/rbldnsd.pid
 
-load_rc_config $name
-extra_commands="reload"
+extra_commands=reload
+start_precmd=prestart
+stop_postcmd="rm -f ${pidfile}"
 
-stop_postcmd=stop_postcmd
-
-stop_postcmd()
+prestart()
 {
-  rm -f $pidfile
+	# enforce pidfile as first argument
+	rc_flags="-p ${pidfile} ${rbldnsd_flags}"
 }
 
-# set defaults, enforce pidfile by making it last option before db
-
-rbldnsd_enable=${rbldnsd_enable:-"NO"}
-rbldnsd_flags=${rbldnsd_flags:-"-r /usr/local/etc/rbldnsd -b 127.0.0.1 bl.example.com:ip4set:example"}
-rbldnsd_flags="-p $pidfile ${rbldnsd_flags}"
-
 run_rc_command "$1"
-

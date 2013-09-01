@@ -1,6 +1,4 @@
 ========================================================================
-   NOTICE    NOTICE    NOTICE    NOTICE    NOTICE    NOTICE    NOTICE
-========================================================================
 
 The rbldnsd port has been installed with an example zone file, located
 in %%PREFIX%%/etc/rbldnsd/.
