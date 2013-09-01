@@ -259,7 +259,7 @@ BUILD_DEPENDS+=	p5-URI-Find>=0:${PORTSDIR}/textproc/p5-URI-Find
 .endif
 
 .if ${PORT_OPTIONS:MKINOSEARCH}
-BUILD_DEPENDS+=	p5-KinoSearch>=0:${PORTSDIR}/textproc/p5-KinoSearch
+BUILD_DEPENDS+=	p5-KinoSearch1>=0:${PORTSDIR}/textproc/p5-KinoSearch1
 .endif
 
 .if ${PORT_OPTIONS:MPUBLISHGMAIL}
