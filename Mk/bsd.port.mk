@@ -3432,7 +3432,7 @@ do-fetch:
 				esac; \
 				if ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} ${FETCH_AFTER_ARGS}; then \
 					actual_size=`stat -f %z "$${file}"`; \
-					if [ $${actual_size} -eq $${CKSIZE} ]; then \
+					if [ -n "${DISABLE_SIZE}" ] || [ $${actual_size} -eq $${CKSIZE} ]; then \
 						continue 2; \
 					else \
 						${ECHO_MSG} "=> Fetched file size mismatch (expected $${CKSIZE}, actual $${actual_size})"; \
