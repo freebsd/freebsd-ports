@@ -126,13 +126,9 @@ MASTER_SITE_CENKES+= \
 .if !defined(IGNORE_MASTER_SITE_CHEESESHOP)
 MASTER_SITE_CHEESESHOP+= \
 	http://pypi.python.org/packages/%SUBDIR%/ \
-	http://a.pypi.python.org/packages/%SUBDIR%/ \
-	http://b.pypi.python.org/packages/%SUBDIR%/ \
 	http://c.pypi.python.org/packages/%SUBDIR%/ \
-	http://d.pypi.python.org/packages/%SUBDIR%/ \
 	http://e.pypi.python.org/packages/%SUBDIR%/ \
 	http://f.pypi.python.org/packages/%SUBDIR%/ \
-	http://g.pypi.python.org/packages/%SUBDIR%/ \
 	http://pypi.crate.io/packages/%SUBDIR%/ \
 	http://pypi.python.jp/${DISTNAME:S/${DISTVERSION}//:S/-//}/
 .endif
