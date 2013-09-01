@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clamav
-PORTVERSION=	20130621
+PORTVERSION=	20130901
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		LOCAL/garga/clamav-devel
@@ -40,9 +40,9 @@ ICONV_CONFIGURE_ON=	--with-iconv
 ICONV_CONFIGURE_OFF=	--without-iconv
 ICONV_USES=		iconv
 
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 USE_GCC=	any
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 CLAM_CONF_FILES=	clamd freshclam
