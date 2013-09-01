@@ -94,6 +94,7 @@ bin/xscreensaver-hacks/greynetic
 bin/xscreensaver-hacks/halftone
 bin/xscreensaver-hacks/halo
 bin/xscreensaver-hacks/helix
+bin/xscreensaver-hacks/hexadrop
 bin/xscreensaver-hacks/hilbert
 bin/xscreensaver-hacks/hopalong
 bin/xscreensaver-hacks/hypertorus
@@ -107,6 +108,7 @@ bin/xscreensaver-hacks/jigglypuff
 bin/xscreensaver-hacks/jigsaw
 bin/xscreensaver-hacks/juggler3d
 bin/xscreensaver-hacks/julia
+bin/xscreensaver-hacks/kaleidocycle
 bin/xscreensaver-hacks/kaleidescope
 bin/xscreensaver-hacks/klein
 bin/xscreensaver-hacks/kumppa
@@ -152,6 +154,7 @@ bin/xscreensaver-hacks/providence
 bin/xscreensaver-hacks/pulsar
 bin/xscreensaver-hacks/pyro
 bin/xscreensaver-hacks/qix
+bin/xscreensaver-hacks/quasicrystal
 bin/xscreensaver-hacks/queens
 bin/xscreensaver-hacks/rd-bomb
 bin/xscreensaver-hacks/ripples
@@ -190,6 +193,7 @@ bin/xscreensaver-hacks/triangle
 bin/xscreensaver-hacks/tronbit
 bin/xscreensaver-hacks/truchet
 bin/xscreensaver-hacks/twang
+bin/xscreensaver-hacks/unknownpleasures
 bin/xscreensaver-hacks/vermiculate
 bin/xscreensaver-hacks/vidwhacker
 bin/xscreensaver-hacks/voronoi
@@ -304,6 +308,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/halftone.xml
 %%DATADIR%%/config/halo.xml
 %%DATADIR%%/config/helix.xml
+%%DATADIR%%/config/hexadrop.xml
 %%DATADIR%%/config/hilbert.xml
 %%DATADIR%%/config/hopalong.xml
 %%DATADIR%%/config/hypertorus.xml
@@ -317,6 +322,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/jigsaw.xml
 %%DATADIR%%/config/juggler3d.xml
 %%DATADIR%%/config/julia.xml
+%%DATADIR%%/config/kaleidocycle.xml
 %%DATADIR%%/config/kaleidescope.xml
 %%DATADIR%%/config/klein.xml
 %%DATADIR%%/config/kumppa.xml
@@ -361,6 +367,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/pulsar.xml
 %%DATADIR%%/config/pyro.xml
 %%DATADIR%%/config/qix.xml
+%%DATADIR%%/config/quasicrystal.xml
 %%DATADIR%%/config/queens.xml
 %%DATADIR%%/config/rd-bomb.xml
 %%DATADIR%%/config/ripples.xml
@@ -399,6 +406,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/tronbit.xml
 %%DATADIR%%/config/truchet.xml
 %%DATADIR%%/config/twang.xml
+%%DATADIR%%/config/unknownpleasures.xml
 %%DATADIR%%/config/vermiculate.xml
 %%DATADIR%%/config/vidwhacker.xml
 %%DATADIR%%/config/voronoi.xml

@@ -3,6 +3,7 @@
 
 PORTNAME=	xscreensaver
 PORTVERSION=	5.22
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -103,23 +104,23 @@ MAN6=	anemone.6 anemotaxis.6 antinspect.6 antmaze.6 antspotlight.6 \
 	fuzzyflakes.6 galaxy.6 gears.6 gflux.6 glblur.6 gleidescope.6 \
 	glhanoi.6 glknots.6 glmatrix.6 glplanet.6 glschool.6 \
 	glslideshow.6 glsnake.6 gltext.6 goop.6 grav.6 greynetic.6 halftone.6 \
-	halo.6 helix.6 hopalong.6 hypertorus.6 ifs.6 \
+	halo.6 helix.6 hexadrop.6 hopalong.6 hypertorus.6 ifs.6 \
 	imsmap.6 interaggregate.6 interference.6 intermomentary.6 jigglypuff.6 \
-	jigsaw.6 juggler3d.6 julia.6 kaleidescope.6 klein.6 kumppa.6 \
-	lament.6 lavalite.6 ljlatest.6 \
+	jigsaw.6 juggler3d.6 julia.6 kaleidocycle.6 kaleidescope.6 klein.6 \
+	kumppa.6 lament.6 lavalite.6 ljlatest.6 \
 	loop.6 maze.6 memscroller.6 menger.6 metaballs.6 mirrorblob.6 \
 	moebius.6 moire.6 moire2.6 molecule.6 morph3d.6 mountain.6 \
 	munch.6 nerverot.6 noof.6 noseguy.6 pacman.6 pedal.6 penetrate.6 \
 	penrose.6 petri.6 phosphor.6 piecewise.6 pinion.6 pipes.6 polyhedra.6 \
 	polyominoes.6 polytopes.6 pong.6 providence.6 pulsar.6 pyro.6 qix.6 \
-	queens.6 rd-bomb.6 ripples.6 rocks.6 rorschach.6 rotzoomer.6 \
-	rubik.6 sballs.6 shadebobs.6 sierpinski.6 sierpinski3d.6 slidescreen.6 \
-	slip.6 sonar.6 speedmine.6 spheremonics.6 \
+	quasicrystal.6 queens.6 rd-bomb.6 ripples.6 rocks.6 rorschach.6 \
+	rotzoomer.6 rubik.6 sballs.6 shadebobs.6 sierpinski.6 sierpinski3d.6 \
+	slidescreen.6 slip.6 sonar.6 speedmine.6 spheremonics.6 \
 	spotlight.6 sproingies.6 squiral.6 stairs.6 starfish.6 \
 	starwars.6 stonerview.6 strange.6 substrate.6 superquadrics.6 \
 	swirl.6 tangram.6 thornbird.6 timetunnel.6 topblock.6 \
-	triangle.6 truchet.6 twang.6 vermiculate.6 vidwhacker.6 \
-	wander.6 webcollage.6 whirlwindwarp.6 wormhole.6 \
+	triangle.6 truchet.6 twang.6 unknownpleasures.6 vermiculate.6 \
+	vidwhacker.6 wander.6 webcollage.6 whirlwindwarp.6 wormhole.6 \
 	xanalogtv.6 xflame.6 xjack.6 xlyap.6 xmatrix.6 xrayswarm.6 \
 	xspirograph.6 zoom.6 cwaves.6 glcells.6 voronoi.6 \
 	abstractile.6 moebiusgears.6 lockward.6 cubicgrid.6 hypnowheel.6 \
