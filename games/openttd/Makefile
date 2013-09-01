@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=	--with-midi-arg="${WITH_MIDI_PLAYER_ARGS}"
 .endif
 
 .if defined(WITH_DEDICATED_SERVER_ONLY)
-USE_GNOME=	pkgconfig			# Needed for liblzma support
+USES+=		pkgconfig			# Needed for liblzma support
 CONFIGURE_ARGS+=	--enable-dedicated
 # Aid it to find lzo2 headers; client build gets it via sdl-config
 CFLAGS+=	-I${LOCALBASE}/include
