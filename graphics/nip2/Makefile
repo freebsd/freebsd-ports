@@ -14,9 +14,8 @@ LIB_DEPENDS=	vips.3[0-9]:${PORTSDIR}/graphics/vips	\
 		gsl:${PORTSDIR}/math/gsl	\
 		xml2:${PORTSDIR}/textproc/libxml2
 
-USES=		bison
-USE_GMAKE=	yes
-USE_GNOME=	gnomemimedata glib20 pkgconfig gtk20
+USES=		bison gmake pkgconfig
+USE_GNOME=	gnomemimedata glib20 gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 # This port has no man-pages. It installs a number of HTML files,

@@ -15,7 +15,7 @@ DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	eina libtool_hack
-USE_GNOME=	gnomehack pkgconfig
+USES=		pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--disable-static

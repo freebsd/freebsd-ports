@@ -16,9 +16,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		bison pathfix
+USES=		bison pathfix pkgconfig
 USE_EFL=	eina enesim libtool_hack
-USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--disable-static

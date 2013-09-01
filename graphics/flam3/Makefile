@@ -1,9 +1,5 @@
-# New ports collection makefile for: flam3
-# Date created:  21 Mar 2010
-# Whom:          John Prather
-#
+# Created by: John Prather
 # $FreeBSD$
-#
 
 PORTNAME=	flam3
 PORTVERSION=	2.7.18
@@ -23,8 +19,7 @@ MAN1=		flam3-animate.1 flam3-genome.1 flam3-render.1 flam3-convert.1
 MANCOMPRESSED=	no
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	pkgconfig gnomehack
+USES=		gmake pathfix pkgconfig
 
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CFLAGS+=	-I${LOCALBASE}/include/libpng15

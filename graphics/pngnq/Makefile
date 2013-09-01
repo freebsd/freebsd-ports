@@ -1,9 +1,5 @@
-# New ports collection makefile for:   pngnq
-# Date created:        10 May 2009
-# Whom:                stb@lassitu.de
-#
+# Created by: stb@lassitu.de
 # $FreeBSD$
-#
 
 PORTNAME=	pngnq
 PORTVERSION=	1.1
@@ -24,7 +20,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	LIBS=-lpng
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USE_GNOME=	pkgconfig
+USES=		pkgconfig
 
 PORTDOCS=	README COPYING
 PLIST_FILES=	bin/pngcomp bin/pngnq

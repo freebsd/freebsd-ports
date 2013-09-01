@@ -16,7 +16,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack pkgconfig
+USES=		pathfix pkgconfig
 USE_EFL=	libtool_hack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -20,14 +20,14 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 CONFLICTS=	gnash-devel-[0-9]*
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes
 WANT_GNOME=	yes
 USE_GCC=	4.2+	# triggers compiler error on gcc 3.4
 WANT_GSTREAMER=	yes
-USE_GNOME=	pkgconfig libxml2
+USE_GNOME=	libxml2
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm xv
 USE_AUTOTOOLS=	libltdl
 INSTALLS_ICONS=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libvisual04-plugins
-# Date created:		8 February 2007
-# Whom:			Björn König <bkoenig@alpha-tierchen.de>
-#
+# Created by: Björn König <bkoenig@alpha-tierchen.de>
 # $FreeBSD$
-#
 
 PORTNAME=	libvisual
 PORTVERSION=	0.4.0
@@ -18,7 +14,7 @@ COMMENT=	Set of plugins for the libvisual framework
 
 LIB_DEPENDS=	visual-${MAJORMINOR}:${PORTSDIR}/graphics/libvisual04
 
-USE_GNOME=	pkgconfig
+USES=		pkgconfig
 USE_GL=		yes
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
