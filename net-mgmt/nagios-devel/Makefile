@@ -94,7 +94,7 @@ SUB_LIST=	PREFIX=${PREFIX} \
 USE_PHP=	yes
 
 .if ${PORT_OPTIONS:MEMBEDDED_PERL}
-USE_PERL5=	yes
+USE_PERL5+=	run
 CONFIGURE_ARGS+=	--enable-embedded-perl \
 		--with-perlcache
 PLIST_SUB+=	EMBEDDED_PERL=""
