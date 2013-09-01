@@ -1,9 +1,20 @@
---- gdb/Makefile.in.orig	2012-07-02 17:29:33.000000000 +0200
-+++ gdb/Makefile.in	2012-08-26 21:01:45.589052997 +0200
-@@ -573,6 +573,7 @@
+--- gdb/Makefile.in.orig	2013-04-02 19:38:43.000000000 +0200
++++ gdb/Makefile.in	2013-05-18 13:08:47.000000000 +0200
+@@ -566,8 +566,8 @@
+ 	moxie-tdep.o \
+ 	mt-tdep.o \
+ 	nto-tdep.o \
+-	ppc-linux-tdep.o ppcnbsd-tdep.o ppcobsd-tdep.o ppc-sysv-tdep.o \
+-	ppc64-tdep.o rl78-tdep.o \
++	ppc-linux-tdep.o ppcfbsd-tdep.o ppcnbsd-tdep.o ppcobsd-tdep.o \
++	ppc-sysv-tdep.o ppc64-tdep.o rl78-tdep.o \
+ 	rs6000-aix-tdep.o rs6000-tdep.o ppc-ravenscar-thread.o \
+ 	rs6000-lynx178-tdep.o \
+ 	rx-tdep.o \
+@@ -585,6 +585,7 @@
  	xtensa-config.o xtensa-tdep.o xtensa-linux-tdep.o \
  	glibc-tdep.o \
-	bsd-uthread.o \
+ 	bsd-uthread.o \
 +	fbsd-threads.o \
  	nbsd-tdep.o obsd-tdep.o \
  	sol2-tdep.o \
