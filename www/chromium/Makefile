@@ -17,6 +17,8 @@ COMMENT=	Mostly BSD-licensed web browser based on WebKit and Gtk+
 LICENSE=	BSD LGPL21 MPL
 LICENSE_COMB=	multi
 
+CFLAGS+=	-fno-stack-protector
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		bash:${PORTSDIR}/shells/bash \
 		yasm:${PORTSDIR}/devel/yasm \
