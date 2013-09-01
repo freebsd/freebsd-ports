@@ -26,7 +26,6 @@
     SUBDIR += charmap
     SUBDIR += charmtimetracker
     SUBDIR += checkrdf
-    SUBDIR += chmsee
     SUBDIR += clipit
     SUBDIR += conduit
     SUBDIR += conkyemail

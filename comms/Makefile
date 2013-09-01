@@ -64,7 +64,6 @@
     SUBDIR += hcidump
     SUBDIR += hf
     SUBDIR += hylafax
-    SUBDIR += ib-kmod
     SUBDIR += ibp
     SUBDIR += java-commapi
     SUBDIR += java-commapi-freebsd
@@ -159,7 +158,6 @@
     SUBDIR += unixcw
     SUBDIR += usbmuxd
     SUBDIR += usrp
-    SUBDIR += uticom
     SUBDIR += viewfax
     SUBDIR += vrflash
     SUBDIR += wsjt

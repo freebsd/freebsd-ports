@@ -71,7 +71,6 @@
     SUBDIR += gdesklets-tasklist
     SUBDIR += gdkxft
     SUBDIR += gdm
-    SUBDIR += ggiterm
     SUBDIR += glproto
     SUBDIR += gmessage
     SUBDIR += gmrun

@@ -1,9 +1,0 @@
-CLI-MSN is a UNIX Command Line implementation of the MSN Messenger Client,
-coded purely in C with the ability to work in almost any UNIX/Linux variation.
-The desire for the creation of CLI-MSN came when little or no command-line
-based messengers were found to be available that implemented MSN Messenger.
-
-The client itself accepts commands based on that of an IRC clients nature 
-(/cmd). Currently in the process of working out the file transfer.
-
-WWW: http://mor-pah.net/

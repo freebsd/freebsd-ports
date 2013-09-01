@@ -1,5 +1,0 @@
-------------------------------------------------------------------
-In order to use the terminal capabilities from ggiterm,
-you must set the environment variable TERMPATH to
-%%DATADIR%%/ggiterm.termcap:/etc/termcap
-------------------------------------------------------------------

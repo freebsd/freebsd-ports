@@ -505,9 +505,6 @@
     SUBDIR += libgeotiff
     SUBDIR += libgfx
     SUBDIR += libggi
-    SUBDIR += libggigcp
-    SUBDIR += libggimisc
-    SUBDIR += libggiwmh
     SUBDIR += libgltext
     SUBDIR += libgnomecanvas
     SUBDIR += libgnomecanvas-reference
@@ -770,7 +767,6 @@
     SUBDIR += php55-exif
     SUBDIR += php55-gd
     SUBDIR += phplot
-    SUBDIR += phpsview
     SUBDIR += picpuz
     SUBDIR += picturebook
     SUBDIR += picviz
@@ -876,7 +872,6 @@
     SUBDIR += pymorph
     SUBDIR += pyro
     SUBDIR += pysvg
-    SUBDIR += qcamview
     SUBDIR += qcomicbook
     SUBDIR += qcread
     SUBDIR += qgis
@@ -979,7 +974,6 @@
     SUBDIR += sketch
     SUBDIR += sng
     SUBDIR += sodipodi
-    SUBDIR += spcaview
     SUBDIR += springgraph
     SUBDIR += squish
     SUBDIR += sswf

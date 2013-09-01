@@ -13,7 +13,6 @@
     SUBDIR += chattahoochie
     SUBDIR += cicquin
     SUBDIR += cjc
-    SUBDIR += cli-msn
     SUBDIR += climm
     SUBDIR += coccinella
     SUBDIR += convey

@@ -369,7 +369,6 @@
     SUBDIR += openvpn-auth-radius
     SUBDIR += openvpn-beta
     SUBDIR += openvpn-devel
-    SUBDIR += openvpn22
     SUBDIR += ophcrack
     SUBDIR += opieprint
     SUBDIR += orthrus

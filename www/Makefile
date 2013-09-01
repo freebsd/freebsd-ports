@@ -68,7 +68,6 @@
     SUBDIR += bugmenot-firefox
     SUBDIR += c-icap
     SUBDIR += c-icap-modules
-    SUBDIR += cacheboy15-devel
     SUBDIR += cacheboy16
     SUBDIR += cadaver
     SUBDIR += cakephp11
@@ -274,7 +273,6 @@
     SUBDIR += hastymail2
     SUBDIR += hastymail2-devel
     SUBDIR += havp
-    SUBDIR += helixplugin
     SUBDIR += helma
     SUBDIR += hiawatha
     SUBDIR += hinventory-client
@@ -551,7 +549,6 @@
     SUBDIR += moodle23
     SUBDIR += moodle24
     SUBDIR += moodle25
-    SUBDIR += moonshine
     SUBDIR += mozplugger
     SUBDIR += multisort
     SUBDIR += multiwatch

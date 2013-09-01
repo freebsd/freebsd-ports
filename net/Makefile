@@ -33,7 +33,6 @@
     SUBDIR += asterisk11
     SUBDIR += asterisk14
     SUBDIR += asterisk14-addons
-    SUBDIR += atmsupport
     SUBDIR += avahi
     SUBDIR += avahi-app
     SUBDIR += avahi-autoipd
@@ -253,7 +252,6 @@
     SUBDIR += ip6_int
     SUBDIR += ipa_ip6fw
     SUBDIR += ipa_ipfw
-    SUBDIR += ipex
     SUBDIR += ipfw-graph
     SUBDIR += ipgrab
     SUBDIR += iplog
@@ -337,7 +335,6 @@
     SUBDIR += libproxy
     SUBDIR += libproxy-gnome
     SUBDIR += libproxy-kde
-    SUBDIR += libproxy-mozjs
     SUBDIR += libproxy-perl
     SUBDIR += libproxy-python
     SUBDIR += libproxy-webkit
