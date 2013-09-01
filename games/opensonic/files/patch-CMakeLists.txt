@@ -1,43 +1,13 @@
---- CMakeLists.txt.orig	2009-07-22 16:54:28.000000000 +1100
-+++ CMakeLists.txt	2010-02-02 20:05:55.037102480 +1000
-@@ -6,8 +6,15 @@
- # Initializing...
- CMAKE_MINIMUM_REQUIRED(VERSION 2.4)
- PROJECT(opensonic C)
--SET(GAME_BIN opensonic)
--SET(LAUNCHER_BIN opensonic_launcher)
-+SET(GAME_NAME opensonic)
-+if(NOT WIN32)
-+SET(GAME_BIN ${GAME_NAME}_bin)
-+SET(LAUNCHER_BIN ${GAME_NAME}_launcher_bin)
-+else(NOT WIN32)
-+SET(GAME_BIN ${GAME_NAME})
-+SET(LAUNCHER_BIN ${GAME_NAME}_launcher)
-+endif(NOT WIN32)
-+
- SET(GAME_VERSION "0.1.2")
- SET(ALLEGRO_RECOMMENDED_VERSION "4.2.2")
- SET(CMAKE_BUILD_TYPE Release)
-@@ -248,8 +255,8 @@
+--- CMakeLists.txt.orig	2010-12-15 10:31:17.000000000 +0600
++++ CMakeLists.txt	2010-12-15 10:32:02.000000000 +0600
+@@ -410,8 +410,8 @@
  
  # Installing on *nix
  IF(UNIX)
--  SET(GAME_INSTALL_DIR "/usr/share/opensonic")
+-  SET(GAME_INSTALL_DIR "/usr/share/${GAME_UNIXNAME}")
 -  SET(GAME_FINAL_DIR "/usr/bin")
-+  SET(GAME_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/share/opensonic")
-+  SET(GAME_FINAL_DIR "${CMAKE_INSTALL_PREFIX}/bin")
++  SET(GAME_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/share/${GAME_UNIXNAME}")
++  SET(GAME_FINAL_DIR "{CMAKE_INSTALL_PREFIX}/bin")
  
-   INSTALL(CODE "MESSAGE(\"Installing Open Sonic ${GAME_VERSION}... Make sure you have root privileges.\")")
-   INSTALL(TARGETS ${GAME_BIN} ${LAUNCHER_BIN} RUNTIME DESTINATION ${GAME_INSTALL_DIR})
-@@ -257,8 +264,8 @@
-   INSTALL(DIRECTORY config gui images levels licenses musics quests samples screenshots themes languages DESTINATION ${GAME_INSTALL_DIR} PATTERN ".svn" EXCLUDE)
- 
-   INSTALL(CODE "MESSAGE(\"Creating files at ${GAME_FINAL_DIR}...\")")
--  INSTALL(CODE "EXECUTE_PROCESS(COMMAND \"cmake\" \"-E\" \"copy\" \"${GAME_INSTALL_DIR}/${GAME_BIN}\" \"${GAME_FINAL_DIR}/${GAME_BIN}\")")
--  INSTALL(CODE "EXECUTE_PROCESS(COMMAND \"cmake\" \"-E\" \"copy\" \"${GAME_INSTALL_DIR}/${LAUNCHER_BIN}\" \"${GAME_FINAL_DIR}/${LAUNCHER_BIN}\")")
-+  INSTALL(CODE "EXECUTE_PROCESS(COMMAND \"cmake\" \"-E\" \"copy\" \"${CMAKE_CURRENT_BINARY_DIR}/src/misc/${GAME_NAME}\" \"${GAME_FINAL_DIR}/${GAME_NAME}\")")
-+  INSTALL(CODE "EXECUTE_PROCESS(COMMAND \"cmake\" \"-E\" \"copy\" \"${CMAKE_CURRENT_BINARY_DIR}/src/misc/${GAME_NAME}_launcher\" \"${GAME_FINAL_DIR}/${GAME_NAME}_launcher\")")
- 
--  INSTALL(CODE "MESSAGE(\"Done! Run ${LAUNCHER_BIN} to start the game.\")")
-+  INSTALL(CODE "MESSAGE(\"Done! Run ${GAME_NAME}_launcher to start the game.\")")
- ENDIF(UNIX)
+   INSTALL(CODE "MESSAGE(\"Installing ${GAME_NAME} ${GAME_VERSION}... Make sure you have root privileges.\")")
+   INSTALL(TARGETS ${GAME_UNIXNAME} RUNTIME DESTINATION ${GAME_INSTALL_DIR})
