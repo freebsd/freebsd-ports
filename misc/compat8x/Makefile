@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	compat8x
-PORTVERSION=	8.4.804000.201306.1
+PORTVERSION=	8.4.804000.201309
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	garga/compat
@@ -11,14 +11,13 @@ DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A convenience package to install the compat8x libraries
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 NO_BUILD=	yes
-ONLY_FOR_ARCHS=	i386 amd64 sparc64
+ONLY_FOR_ARCHS=	i386 amd64
 PLIST=		${PKGDIR}/pkg-plist.${ARCH}
 TARGET_DIR=	${PREFIX}/lib/compat
 TARGET32_DIR=	${PREFIX}/lib32/compat
 USE_LDCONFIG=	${TARGET_DIR}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${ARCH}-8.4.804000.201306
 
 .include <bsd.port.pre.mk>
 
