@@ -1,7 +1,13 @@
---- linux/contrib/echoprint-codegen/src/Makefile.orig	2012-05-17 08:26:52.738877942 +0200
-+++ linux/contrib/echoprint-codegen/src/Makefile	2012-05-17 08:27:18.755880033 +0200
-@@ -9,7 +9,7 @@
- CC=gcc
+--- linux/contrib/echoprint-codegen/src/Makefile.orig	2013-04-05 16:02:42.000000000 +0000
++++ linux/contrib/echoprint-codegen/src/Makefile	2013-08-17 03:52:32.669519516 +0000
+@@ -5,11 +5,11 @@
+ VERSION_MAJ := $(word 1, $(EP_VERSION))
+ VERSION_COMPAT := $(word 1, $(EP_VERSION)).$(word 2, $(EP_VERSION))
+ UNAME := $(shell uname -s)
+-CXX=g++
+-CC=gcc
++CXX=c++
++CC=cc
  #OPTFLAGS=-g -O0
  OPTFLAGS=-O3 -DBOOST_UBLAS_NDEBUG -DNDEBUG
 -BOOST_CFLAGS=-I/usr/local/include/boost-1_35
