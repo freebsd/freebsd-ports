@@ -1,28 +1,14 @@
-# New ports collection makefile for:	rbldnsd
-# Date created:				Fri Jun 13 05:30:12 EDT 2003
-# Whom:					Paul Chvostek <paul@it.ca>
-#
+# Created by: Paul Chvostek <paul@it.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	rbldnsd
-PORTVERSION=	0.996b
-PORTREVISION=	1
+PORTVERSION=	0.997a
 CATEGORIES=	dns
-MASTER_SITES=	http://www.corpit.ru/mjt/rbldnsd/:0 \
-		http://www.it.ca/~paul/src/:0
-DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}:0
+MASTER_SITES=	http://www.corpit.ru/mjt/rbldnsd/ \
+		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Small and fast DNS daemon especially for DNSBL zones
-
-.if !defined(NOPORTDOCS)
-EXTRACT_ONLY+=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
-MASTER_SITES+=	http://www.corpit.ru/mjt/:1 \
-		http://www.it.ca/~paul/src/:1
-DISTFILES+=	rbldnsd.html:1
-IGNOREFILES+=	rbldnsd.html
-.endif
 
 RBLDNSUSER=	rbldns
 RBLDNSGROUP=	${RBLDNSUSER}
@@ -37,6 +23,8 @@ GROUPS=		${USERS}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
+.include <bsd.port.pre.mk>
+
 do-install:
 		@if [ ! -d ${ROOTDIR} ]; then \
 			${MKDIR} ${ROOTDIR}; \
@@ -47,7 +35,7 @@ do-install:
 			${FILESDIR}/example ${PREFIX}/etc/rbldnsd/
 		@${INSTALL_PROGRAM} ${WRKSRC}/rbldnsd ${PREFIX}/sbin/
 		@${INSTALL_MAN} ${WRKSRC}/rbldnsd.8 ${PREFIX}/man/man8/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 		@${MKDIR} ${DOCSDIR}/
 		@${INSTALL_DATA} ${WRKSRC}/CHANGES-0.81 ${DOCSDIR}
 		@${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
@@ -57,7 +45,6 @@ do-install:
 		@${INSTALL_DATA} ${WRKSRC}/debian/rbldnsd.default ${DOCSDIR}
 		@${INSTALL_DATA} ${WRKSRC}/debian/rbldnsd.init ${DOCSDIR}
 		@${INSTALL_DATA} ${WRKSRC}/rbldnsd.spec ${DOCSDIR}
-		@${INSTALL_DATA} ${DISTDIR}/rbldnsd.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
