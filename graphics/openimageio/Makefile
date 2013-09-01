@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	openimageio
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 PORTREVISION?=	0
 CATEGORIES?=	graphics multimedia
 
@@ -11,18 +11,18 @@ COMMENT=	OpenImageIO graphics library
 
 LICENSE?=	BSD
 
-LIB_DEPENDS?=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		boost_thread:${PORTSDIR}/devel/boost-libs \
-		hdf5:${PORTSDIR}/science/hdf5-18 \
-		opencv_legacy:${PORTSDIR}/graphics/opencv \
-		openjpeg:${PORTSDIR}/graphics/openjpeg \
-		webp:${PORTSDIR}/graphics/webp
+LIB_DEPENDS?=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libhdf5.so:${PORTSDIR}/science/hdf5-18 \
+		libopencv_legacy.so:${PORTSDIR}/graphics/opencv \
+		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg \
+		libwebp.so:${PORTSDIR}/graphics/webp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenImageIO
 GH_PROJECT=	oiio
 GH_TAGNAME=	Release-${PORTVERSION}
-GH_COMMIT=	f4d79c0
+GH_COMMIT=	f7908a3
 WRKSRC=		${WRKDIR}/OpenImageIO-oiio-${GH_COMMIT}/src
 
 # fbm also installs bin/idiff
