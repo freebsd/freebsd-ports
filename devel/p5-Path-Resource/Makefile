@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Path-Resource
-# Date created:		2011-04-26
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Path-Resource
 PORTVERSION=	0.072
@@ -26,8 +22,8 @@ RUN_DEPENDS=	p5-Path-Abstract>0:${PORTSDIR}/devel/p5-Path-Abstract \
 TEST_DEPENDS=	p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most \
 		p5-Test-Lazy>=0:${PORTSDIR}/devel/p5-Test-Lazy
 
-USE_PERL5=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Path::Resource.3 Path::Resource::Base.3
 
