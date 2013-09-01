@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	buildbot
-PORTVERSION=	0.8.7p1
+PORTVERSION=	0.8.8
 CATEGORIES=	devel python
 MASTER_SITES=	GOOGLE_CODE
 
@@ -14,14 +14,14 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.1:${PORTSDIR}/devel/py-Jinja2 \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}migrate>=0.6.1:${PORTSDIR}/databases/py-migrate \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.6.1:${PORTSDIR}/databases/py-sqlalchemy \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.6:${PORTSDIR}/databases/py-sqlalchemy \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
 TEST_DEPENDS:=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock \
 		trial:${PORTSDIR}/devel/py-twistedCore \
-		${PYTHON_PKGNAMEPREFIX}twistedWeb>9.0.0:${PORTSDIR}/www/py-twistedWeb \
-		${PYTHON_PKGNAMEPREFIX}twistedWords>9.0.0:${PORTSDIR}/net-im/py-twistedWords
+		${PYTHON_PKGNAMEPREFIX}twistedWeb>=9.0.0:${PORTSDIR}/www/py-twistedWeb \
+		${PYTHON_PKGNAMEPREFIX}twistedWords>=9.0.0:${PORTSDIR}/net-im/py-twistedWords
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
@@ -30,8 +30,7 @@ USE_TWISTED_RUN=	conch mail web words
 MAKE_ENV+=		NO_INSTALL_REQS=1
 
 OPTIONS_DEFINE=		TESTS
-TESTS_DESC=		Install py-mock for unit tests
-# Ports infrastructure bug
+TESTS_DESC=		Install py-mock for test suite
 OPTIONSFILE?=		${PORT_DBDIR}/py-${PORTNAME}/options
 
 .include <bsd.port.options.mk>
@@ -45,7 +44,7 @@ post-patch:
 		's|/usr/bin/python|${PYTHON_CMD}|g'
 	@${FIND} ${WRKSRC} -name \*.bak -delete
 
-regression-test:
+regression-test: extract
 	@cd ${WRKSRC} && trial buildbot
 
 .include <bsd.port.mk>

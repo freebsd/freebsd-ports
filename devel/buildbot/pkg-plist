@@ -13,9 +13,21 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildrequest.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildrequest.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildrequest.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildslave.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildslave.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildslave.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildslave/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildslave/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildslave/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildslave/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildslave/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildslave/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildslave/ec2.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildslave/ec2.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildslave/ec2.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildslave/libvirt.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildslave/libvirt.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildslave/libvirt.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildslave/openstack.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildslave/openstack.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildslave/openstack.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/changes/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/changes/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/changes/__init__.pyo
@@ -234,6 +246,9 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/monkeypatches/bug5079.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/monkeypatches/bug5079.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/monkeypatches/bug5079.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/monkeypatches/gatherResults.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/monkeypatches/gatherResults.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/monkeypatches/gatherResults.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/monkeypatches/servicechecks.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/monkeypatches/servicechecks.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/monkeypatches/servicechecks.pyo
@@ -270,6 +285,9 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/process/buildrequest.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/process/buildrequest.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/process/buildrequest.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/process/buildrequestdistributor.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/process/buildrequestdistributor.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/process/buildrequestdistributor.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/process/buildstep.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/process/buildstep.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/process/buildstep.pyo
@@ -604,9 +622,6 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/blocker.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/blocker.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/blocker.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/master.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/master.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/master.pyo
@@ -673,6 +688,12 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/source/oldsource.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/source/oldsource.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/source/oldsource.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/source/p4.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/source/p4.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/source/p4.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/source/repo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/source/repo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/source/repo.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/source/svn.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/source/svn.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/steps/source/svn.pyo
@@ -709,12 +730,18 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/fake/libvirt.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/fake/libvirt.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/fake/libvirt.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/fake/openstack.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/fake/openstack.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/fake/openstack.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/fake/pbmanager.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/fake/pbmanager.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/fake/pbmanager.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/fake/remotecommand.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/fake/remotecommand.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/fake/remotecommand.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/fake/slave.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/fake/slave.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/fake/slave.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/fake/state.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/fake/state.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/fake/state.pyo
@@ -751,9 +778,15 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_buildslave.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_buildslave.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_buildslave.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_buildslave_base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_buildslave_base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_buildslave_base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_buildslave_libvirt.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_buildslave_libvirt.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_buildslave_libvirt.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_buildslave_openstack.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_buildslave_openstack.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_buildslave_openstack.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_changes_base.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_changes_base.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_changes_base.pyo
@@ -877,9 +910,6 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_db_users.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_db_users.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_db_users.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_libvirtbuildslave.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_libvirtbuildslave.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_libvirtbuildslave.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_master.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_master.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_master.pyo
@@ -889,9 +919,6 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_process_botmaster_BotMaster.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_process_botmaster_BotMaster.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_process_botmaster_BotMaster.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_process_botmaster_BuildRequestDistributor.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_process_botmaster_BuildRequestDistributor.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_process_botmaster_BuildRequestDistributor.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_process_botmaster_DuplicateSlaveArbitrator.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_process_botmaster_DuplicateSlaveArbitrator.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_process_botmaster_DuplicateSlaveArbitrator.pyo
@@ -904,6 +931,9 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_process_buildrequest.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_process_buildrequest.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_process_buildrequest.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_process_buildrequestdistributor_BuildRequestDistributor.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_process_buildrequestdistributor_BuildRequestDistributor.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_process_buildrequestdistributor_BuildRequestDistributor.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_process_buildstep.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_process_buildstep.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_process_buildstep.pyo
@@ -1069,9 +1099,6 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_status_words.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_status_words.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_status_words.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_steps_blocker.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_steps_blocker.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_steps_blocker.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_steps_master.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_steps_master.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_steps_master.pyo
@@ -1129,6 +1156,12 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_steps_source_oldsource_Repo.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_steps_source_oldsource_Repo.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_steps_source_oldsource_Repo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_steps_source_p4.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_steps_source_p4.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_steps_source_p4.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_steps_source_repo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_steps_source_repo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_steps_source_repo.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_steps_source_svn.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_steps_source_svn.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/unit/test_steps_source_svn.pyo
@@ -1210,6 +1243,9 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/util/interfaces.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/util/interfaces.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/util/interfaces.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/util/logging.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/util/logging.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/util/logging.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/util/migration.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/util/migration.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/test/util/migration.pyo
@@ -1293,6 +1329,7 @@ bin/buildbot
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/db
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/changes
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/clients
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot/buildslave
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildbot
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
