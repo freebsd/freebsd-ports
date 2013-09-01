@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clanlib
-PORTVERSION=	2.3.6
-PORTREVISION=	1
+PORTVERSION=	2.3.7
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.clanlib.org/download/releases-2.0/
@@ -21,12 +20,12 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		mikmod:${PORTSDIR}/audio/libmikmod \
 		vorbis:${PORTSDIR}/audio/libvorbis \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		pcre:${PORTSDIR}/devel/pcre
+		pcre:${PORTSDIR}/devel/pcre \
+		execinfo:${PORTSDIR}/devel/libexecinfo
 
-USE_GMAKE=	yes
 USE_GCC=	yes
 USE_XORG=	x11
-USES=	pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GL=		yes
 USE_SQLITE=	yes
@@ -56,5 +55,10 @@ PLIST_SUB+=	VER=${PORTVERSION:R} \
 post-patch:
 	@${REINPLACE_CMD} -e 's|LIBS="-lsqlite3 -ldl"|LIBS="-lsqlite3"|g' \
 		${WRKSRC}/configure
-
+	@${REINPLACE_CMD} -e '114 s|/proc/self/exe|/proc/curproc/file|g' \
+		${WRKSRC}/Sources/Core/System/Unix/init_linux.cpp
+	@${REINPLACE_CMD} -e 's|APPLE|FreeBSD|g' \
+		${WRKSRC}/Sources/Core/System/system.cpp
+	@${REINPLACE_CMD} -e '47 s|#ifndef __FreeBSD__|#if !defined(__FreeBSD__)|g' \
+		${WRKSRC}/Sources/Core/System/system.cpp
 .include <bsd.port.mk>
