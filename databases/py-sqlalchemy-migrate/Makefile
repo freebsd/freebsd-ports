@@ -1,16 +1,11 @@
-# New ports collection makefile for:   py-migrate
-# Date created:        9 November 2006
-# Whom:                elvstone@gmail.com
-#
+# Created by: elvstone@gmail.com
 # $FreeBSD$
-#
 
-PORTNAME=	migrate
+PORTNAME=	sqlalchemy-migrate
 PORTVERSION=	0.7.2
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	sqlalchemy-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Database schema migrations for SQLAlchemy
@@ -21,9 +16,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.7:${PORTSDIR}/databases/py-sql
 		${PYTHON_PKGNAMEPREFIX}Tempita>0:${PORTSDIR}/textproc/py-Tempita \
 		${PYTHON_PKGNAMEPREFIX}decorator>0:${PORTSDIR}/devel/py-decorator
 
-PROJECTHOST=	sqlalchemy-migrate
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	sqlalchemy_${PORTNAME}
+PYDISTUTILS_PKGNAME=	sqlalchemy_migrate
 
 .include <bsd.port.mk>
