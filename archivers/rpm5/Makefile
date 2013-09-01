@@ -55,7 +55,7 @@ CONFIGURE_ARGS+=--without-lua \
 .if ${PORT_OPTIONS:MPERL}
 CONFIGURE_ARGS+=--with-perl
 CONFIGURE_ENV+=	__PERL=${PERL}
-USE_PERL5=	yes
+USE_PERL5+=	run
 PLIST_SUB+=	PERL=""
 .else
 CONFIGURE_ARGS+=--without-perl
