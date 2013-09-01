@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Log-Log4perl-Appender-RabbitMQ
-# Date created:		2010-09-09
-# Whom:			Steve Wills <swills@freebsd.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Log-Log4perl-Appender-RabbitMQ
 PORTVERSION=	0.102220
@@ -27,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/l4p-tmpl:${PORTSDIR}/devel/p5-Log-Log4perl \
 
 MAN3=		Log::Log4perl::Appender::RabbitMQ.3
 
-USE_PERL5=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>
