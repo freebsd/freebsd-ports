@@ -1,6 +1,6 @@
---- ./lib/startup.py.orig	2011-05-25 00:30:12.000000000 +0200
-+++ ./lib/startup.py	2011-05-25 17:53:57.000000000 +0200
-@@ -407,8 +407,8 @@
+--- lib/startup.py.orig	2013-08-17 02:48:00.884785831 +0000
++++ lib/startup.py	2013-08-17 02:48:27.966783822 +0000
+@@ -501,8 +501,8 @@
      yield None
      commandline.startup()
      yield None
@@ -8,6 +8,6 @@
 -    yield None
 +    # autoupdate.check_for_updates()
 +    # yield None
+     app.local_metadata_manager.schedule_retry_net_lookup()
      # Delay running high CPU/IO operations for a bit
-     eventloop.add_timeout(5, downloader.startup_downloader,
-             "start downloader daemon")
+     eventloop.add_timeout(5, app.download_state_manager.startup_downloader,

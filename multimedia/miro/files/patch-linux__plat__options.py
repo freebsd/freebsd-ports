@@ -1,6 +1,6 @@
---- ./linux/plat/options.py.orig	2011-05-25 17:56:13.000000000 +0200
-+++ ./linux/plat/options.py	2011-05-25 17:56:57.000000000 +0200
-@@ -51,13 +51,13 @@
+--- ./linux/plat/options.py.orig	2013-08-17 02:50:01.620777937 +0000
++++ ./linux/plat/options.py	2013-08-17 02:50:48.339773948 +0000
+@@ -51,7 +51,7 @@
  
  FFMPEG_BINARY = LinuxPref(
      key="ffmpegBinary",
@@ -8,11 +8,4 @@
 +    default="%%LOCALBASE%%/bin/ffmpeg",
      alias="ffmpeg",
      helptext="Absolute path for ffmpeg binary.")
- 
- FFMPEG2THEORA_BINARY = LinuxPref(
-     key="ffmpeg2TheoraBinary",
--    default="/usr/bin/ffmpeg2theora",
-+    default="%%LOCALBASE%%/bin/ffmpeg2theora",
-     alias="ffmpeg2theora",
-     helptext="Absolute path for ffmpeg2theora binary.")
  
