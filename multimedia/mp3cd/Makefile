@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mp3cd
-# Date created:		2009-06-15
-# Whom:			Sylvio Cesar <sylvio@FreeBSD.org>
-#
+# Created by: Sylvio Cesar <sylvio@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mp3cd
 PORTVERSION=	1.027
@@ -17,8 +13,9 @@ COMMENT=	Perl script that burns MP3 to audio CDs
 BUILD_DEPENDS=	p5-Config-Simple>=0:${PORTSDIR}/devel/p5-Config-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PERL5=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5 shebangfix
+USE_PERL5=	configure
+SHEBANG_FILES=	scripts/mp3cd
 
 MAN1=	mp3cd.1
 MANCOMPRESS=	yes
