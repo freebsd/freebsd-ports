@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	unobe@cpan.org
 COMMENT=	Library useful when writing parsers (formerly a part of NetSurf)
 
-USE_GMAKE=	yes
+USES=		gmake
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -31,7 +31,8 @@ LDFLAGS+=	-liconv
 .if ${PORT_OPTIONS:MSTATIC}
 PLIST_SUB+=	NO_STATIC="@comment " STATIC=""
 .else
-USE_PERL5_BUILD=yes
+USES+=		perl5
+USE_PERL5=	build
 USE_LDCONFIG=	yes
 COMPONENT_TYPE=	lib-shared
 MAKE_ENV+=	COMPONENT_TYPE=${COMPONENT_TYPE}
@@ -39,7 +40,8 @@ PLIST_SUB+=	NO_STATIC="" STATIC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTEST}
-USE_PERL5_BUILD=yes
+USES+=		perl5
+USE_PERL5=	build
 ALL_TARGET+=	test
 .endif
 
