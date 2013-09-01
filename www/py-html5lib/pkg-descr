@@ -6,4 +6,4 @@ desktop web browsers.
 Output is to a tree structure; the current release supports output to a custom
 tree similar to DOM and to ElementTree.
 
-WWW: http://code.google.com/p/html5lib/
+WWW: https://github.com/html5lib/
