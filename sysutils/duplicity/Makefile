@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	duplicity
-PORTVERSION=	0.6.21
+PORTVERSION=	0.6.22
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/duplicity/0.6-series/${PORTVERSION}/+download/
 
@@ -20,14 +20,16 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	NLS DOCS SSH FTP FTPS S3 GDOCS CLOUDFILES
+OPTIONS_DEFINE=	NLS DOCS SSH FTP FTPS S3 GDOCS CLOUDFILES GIO U1
 OPTIONS_DEFAULT=SSH FTP FTPS S3
 CLOUDFILES_DESC=Install CloudFiles backend
 FTP_DESC=	Install FTP backend
 FTPS_DESC=	Install FTPS backend
 GDOCS_DESC=	Install Google Docs backend
+GIO_DESC=	Install GIO backend
 S3_DESC=	Install Amazon S3 backend
 SSH_DESC=	Install SSH/SCP/SFTP backend
+U1_DESC=	Install Ubuntu One backend
 
 .include "bsd.port.options.mk"
 
@@ -80,6 +82,22 @@ PLIST_SUB+=	CLOUDFILES=""
 PLIST_SUB+=	CLOUDFILES="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MGIO}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gobject>0:${PORTSDIR}/devel/py-gobject \
+		dbus>0:${PORTSDIR}/devel/dbus
+PLIST_SUB+=	GIO=""
+.else
+PLIST_SUB+=	GIO="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MU1}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}httplib2>0:${PORTSDIR}/www/py-httplib2 \
+		${PYTHON_PKGNAMEPREFIX}oauthlib>0:${PORTSDIR}/security/py-oauthlib
+PLIST_SUB+=	U1=""
+.else
+PLIST_SUB+=	U1="@comment "
+.endif
+
 post-patch:
 .if empty(PORT_OPTIONS:MNLS)
 	@${REINPLACE_CMD} -e '54,62d' \
@@ -102,6 +120,12 @@ post-patch:
 .endif
 .if empty(PORT_OPTIONS:MCLOUDFILES)
 	@${RM} -f ${WRKSRC}/${PORTNAME}/backends/cloudfilesbackend.py
+.endif
+.if empty(PORT_OPTIONS:MGIO)
+	@${RM} -f ${WRKSRC}/${PORTNAME}/backends/giobackend.py
+.endif
+.if empty(PORT_OPTIONS:MU1)
+	@${RM} -f ${WRKSRC}/${PORTNAME}/backends/u1backend.py
 .endif
 
 MAN1=		duplicity.1 rdiffdir.1
