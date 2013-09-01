@@ -1,0 +1,5 @@
+docopt helps you:
+- define interface for your command-line app, and
+- automatically generate parser for it.
+
+WWW: http://docopt.org/

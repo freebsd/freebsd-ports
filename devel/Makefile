@@ -3509,6 +3509,7 @@
     SUBDIR += py-distorm
     SUBDIR += py-distribute
     SUBDIR += py-distutils-extra
+    SUBDIR += py-docopt
     SUBDIR += py-durus
     SUBDIR += py-dynrules
     SUBDIR += py-eggtestinfo
