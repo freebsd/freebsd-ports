@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-BSD-Process
-# Date created:		2011-04-11
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	BSD-Process
 PORTVERSION=	0.06
@@ -18,8 +14,9 @@ COMMENT=	Information about running processes on BSD platforms
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 
-USE_PERL5=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5 shebangfix
+USE_PERL5=	configure
+SHEBANG_FILES=	eg/*
 
 MAN3=	BSD::Process.3
 
