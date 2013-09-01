@@ -1,9 +1,5 @@
-# New ports collection makefile for:	slapd-cyrus
-# Date created:				Wed 16 Sep 2009
-# Whom:					Alexey V. Degtyarev
-#
+# Created by: Alexey V. Degtyarev
 # $FreeBSD$
-#
 
 PORTNAME=	slapd-cyrus
 PORTVERSION=	1.00
@@ -24,9 +20,8 @@ BUILD_DEPENDS=	cyrus-imapd>=0:${PORTSDIR}/mail/cyrus-imapd24 \
 		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PERL5=	yes
-
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 PLIST_SUB=	SITE_PERL_REL=${SITE_PERL_REL} \
 		DOCS_DIR_REL=${DOCSDIR_REL}
