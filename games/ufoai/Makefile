@@ -1,4 +1,4 @@
-# Created by:	Alonso Cardenas Marquez <acm@FreeBSD.org>
+# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ufoai
@@ -25,9 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/base/default.cfg:${PORTSDIR}/games/u
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_SDL=	sdl image mixer ttf
-USES=		gettext
-USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
+USES=		gettext gmake pkgconfig
 USE_OPENAL=	soft
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-release
