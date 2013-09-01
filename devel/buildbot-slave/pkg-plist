@@ -78,6 +78,9 @@ bin/buildslave
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/monkeypatches/bug5079.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/monkeypatches/bug5079.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/monkeypatches/bug5079.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/monkeypatches/testcase_assert.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/monkeypatches/testcase_assert.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/monkeypatches/testcase_assert.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/pbutil.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/pbutil.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/pbutil.pyo
@@ -87,6 +90,9 @@ bin/buildslave
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/scripts/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/scripts/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/scripts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/scripts/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/scripts/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/scripts/base.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/scripts/logwatcher.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/scripts/logwatcher.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/scripts/logwatcher.pyo
@@ -174,6 +180,12 @@ bin/buildslave
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/test/unit/test_runprocess.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/test/unit/test_runprocess.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/test/unit/test_runprocess.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/test/unit/test_scripts_base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/test/unit/test_scripts_base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/test/unit/test_scripts_base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/test/unit/test_scripts_runner.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/test/unit/test_scripts_runner.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/test/unit/test_scripts_runner.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/test/unit/test_util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/test/unit/test_util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/buildslave/test/unit/test_util.pyo
