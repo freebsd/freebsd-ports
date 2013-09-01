@@ -3,10 +3,10 @@
 * require manual installation of their respective dependencies because  *
 * they are not yet available in the ports tree:                         *
 *                                                                       *
-*   - The GIO backend.                                                  *
-*   - The HSI backend.                                                  *
-*   - The tahoe backend for Tahoe-LAFS.                                 *
-*   - The U1 backend for Ubuntu One cloud storage                       *
+*   - The Dropbox backend                                               *
+*   - The HSI backend                                                   *
+*   - The swift backend for OpenStack Object Storage                    *
+*   - The tahoe backend for Tahoe-LAFS                                  *
 *                                                                       *
 * Please refer to upstream duplicity documentation for information on   *
 * the use of these backends.                                            *
