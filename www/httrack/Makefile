@@ -20,7 +20,7 @@ CONFIGURE_ARGS=	--docdir="${DOCSDIR}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_AUTOTOOLS=	libtool
-USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USES=		gmake iconv
 
 MAN1=		htsserver.1 httrack.1 proxytrack.1 webhttrack.1
