@@ -3,20 +3,19 @@
 #   $MCom: ports/trunk/devel/desktop-file-utils/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
 PORTNAME=	desktop-file-utils
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	devel
 MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A couple of command line utilities for working with desktop entries
+COMMENT=	Couple of command line utilities for working with desktop entries
 
-USES=		pkgconfig gettext
+USES=		gettext gmake pkgconfig
 USE_GNOME=	glib20
 USE_XZ=		yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-lispdir
-CONFIGURE_ENV=	EMACS="no" LIBS="-lintl"
+CONFIGURE_ENV=	EMACS="no"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
