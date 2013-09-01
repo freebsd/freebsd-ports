@@ -16,5 +16,6 @@ lib/compat/libncp.so.4
 lib/compat/libodialog.so.7
 lib/compat/libroken.so.10
 lib/compat/libssl.so.6
+lib/compat/libstdc++.so.6
 lib/compat/libusb.so.2
 @dirrmtry lib/compat
