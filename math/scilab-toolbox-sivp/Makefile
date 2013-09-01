@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sivp
-# Date created:		2007-09-15
-# Whom:			Max Brazhnikov <makc@issp.ac.ru>
-#
+# Created by: Max Brazhnikov <makc@issp.ac.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	sivp
 DISTVERSION=	1.0.0.r286
@@ -19,6 +15,7 @@ BUILD_DEPENDS=	${SCILAB_CMD}:${PORTSDIR}/math/scilab
 LIB_DEPENDS=	opencv_legacy.2:${PORTSDIR}/graphics/opencv
 RUN_DEPENDS=	${SCILAB_CMD}:${PORTSDIR}/math/scilab
 
+USES=		pkgconfig
 USE_XZ=	yes
 
 SCILAB_CMD=	${LOCALBASE}/bin/scilab
