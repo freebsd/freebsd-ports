@@ -739,7 +739,6 @@
     SUBDIR += py-kyotocabinet
     SUBDIR += py-leveldb
     SUBDIR += py-memcached
-    SUBDIR += py-migrate
     SUBDIR += py-mssql
     SUBDIR += py-mysql2pgsql
     SUBDIR += py-odbc
@@ -764,6 +763,7 @@
     SUBDIR += py-south
     SUBDIR += py-sqlalchemy
     SUBDIR += py-sqlalchemy-devel
+    SUBDIR += py-sqlalchemy-migrate
     SUBDIR += py-sqlalchemy06
     SUBDIR += py-sqlite3
     SUBDIR += py-sqlite3dbm
