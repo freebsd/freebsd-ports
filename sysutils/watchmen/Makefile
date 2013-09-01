@@ -1,13 +1,8 @@
-# New ports collection makefile for:	watchmen
-# Date created:		2009-07-16
-# Whom:			Oleg Alexeenkov <proler@gmail.com>
-#
+# Created by: Oleg Alexeenkov <proler@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	watchmen
-PORTVERSION=	0.07
-PORTREVISION=	1
+PORTVERSION=	0.08
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
@@ -16,16 +11,18 @@ COMMENT=	Watch and restart daemons
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS+=	p5-libwww>=6.04:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-libwww>=6.04:${PORTSDIR}/www/p5-libwww \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
-PERL_CONFIGURE=	yes
+USES=		perl5 shebangfix
+USE_PERL5=	configure
+SHEBANG_FILES=	watchmen
 
 OPTIONS_DEFINE=	MYSQL PGSQL EMAIL
 MYSQL_DESC=	Want test mysql queries
 PGSQL_DESC=	Want test postgresql queries
 EMAIL_DESC=	report problems by email
 
-USE_PERL5_RUN=	yes
 POD2MAN?=	pod2man
 
 MAN1=		${PORTNAME}.1
@@ -49,7 +46,7 @@ RUN_DEPENDS+=	p5-DBD-Pg>=2.19.2:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 .if ${PORT_OPTIONS:MEMAIL}
-RUN_DEPENDS+=	p5-Email-Send>=2.198:${PORTSDIR}/mail/p5-Email-Send
+RUN_DEPENDS+=	p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite
 .endif
 
 post-install:
