@@ -64,7 +64,7 @@ CONFIGURE_ARGS+=	--with-termcap
 .endif
 
 CONFIGURE_ARGS+=	--with-iconv=${LOCALBASE}
-LIB_DEPENDS+=		iconv:${PORTSDIR}/converters/libiconv
+USES=		iconv
 
 post-extract:
 	@${FIND} ${WRKDIR} -type d -name CVS | ${XARGS} ${RM} -rf
