@@ -1,0 +1,42 @@
+--- configure.in.orig	2013-04-02 18:52:13.000000000 +0300
++++ configure.in	2013-04-02 18:53:57.000000000 +0300
+@@ -24,7 +24,6 @@
+ AC_CHECK_HEADER([limits.h], [], [AC_MSG_ERROR([limits.h header not found.])])
+ AC_CHECK_HEADER([locale.h], [], [AC_MSG_ERROR([locale.h header not found.])])
+ AC_CHECK_HEADER([math.h], [], [AC_MSG_ERROR([math.h header not found.])])
+-AC_CHECK_HEADER([mntent.h], [], [AC_MSG_ERROR([mntent.h header not found.])])
+ AC_CHECK_HEADER([pwd.h], [], [AC_MSG_ERROR([pwd.h header not found.])])
+ AC_CHECK_HEADER([signal.h], [], [AC_MSG_ERROR([signal.h header not found.])])
+ AC_CHECK_HEADER([stdarg.h], [], [AC_MSG_ERROR([stdarg.h header not found.])])
+@@ -69,7 +68,6 @@
+ AC_CHECK_FUNC([closedir], [], [AC_MSG_ERROR([closedir() function not found.])])
+ AC_CHECK_FUNC([dup], [], [AC_MSG_ERROR([dup() function not found.])])
+ AC_CHECK_FUNC([dup2], [], [AC_MSG_ERROR([dup2() function not found.])])
+-AC_CHECK_FUNC([endmntent], [], [AC_MSG_ERROR([endmntent() function not found.])])
+ AC_CHECK_FUNC([execve], [], [AC_MSG_ERROR([execve() function not found.])])
+ AC_CHECK_FUNC([execvp], [], [AC_MSG_ERROR([execvp() function not found.])])
+ AC_CHECK_FUNC([exit], [], [AC_MSG_ERROR([exit() function not found.])])
+@@ -91,7 +89,6 @@
+ AC_CHECK_FUNC([getgrgid], [], [AC_MSG_ERROR([getgrgid() function not found.])])
+ AC_CHECK_FUNC([getgrgid_r], [], [AC_MSG_ERROR([getgrgid_r() function not found.])])
+ AC_CHECK_FUNC([getgrnam], [], [AC_MSG_ERROR([getgrnam() function not found.])])
+-AC_CHECK_FUNC([getmntent], [], [AC_MSG_ERROR([getmntent() function not found.])])
+ AC_CHECK_FUNC([getpid], [], [AC_MSG_ERROR([getpid() function not found.])])
+ AC_CHECK_FUNC([getppid], [], [AC_MSG_ERROR([getppid() function not found.])])
+ AC_CHECK_FUNC([getpwent], [], [AC_MSG_ERROR([getpwent() function not found.])])
+@@ -132,7 +129,6 @@
+ AC_CHECK_FUNC([setenv], [], [AC_MSG_ERROR([setenv() function not found.])])
+ AC_CHECK_FUNC([setgrent], [], [AC_MSG_ERROR([setgrent() function not found.])])
+ AC_CHECK_FUNC([setlocale], [], [AC_MSG_ERROR([setlocale() function not found.])])
+-AC_CHECK_FUNC([setmntent], [], [AC_MSG_ERROR([setmntent() function not found.])])
+ AC_CHECK_FUNC([setpgid], [], [AC_MSG_ERROR([setpgid() function not found.])])
+ AC_CHECK_FUNC([setpwent], [], [AC_MSG_ERROR([setpwent() function not found.])])
+ AC_CHECK_FUNC([setsid], [], [AC_MSG_ERROR([setsid() function not found.])])
+@@ -164,7 +160,6 @@
+ AC_CHECK_FUNC([strtok_r], [], [AC_MSG_ERROR([strtok_r() function not found.])])
+ AC_CHECK_FUNC([strtol], [], [AC_MSG_ERROR([strtol() function not found.])])
+ AC_CHECK_FUNC([strtoll], [], [AC_MSG_ERROR([strtoll() function not found.])])
+-AC_CHECK_FUNC([strverscmp], [], [AC_MSG_ERROR([strverscmp() function not found.])])
+ AC_CHECK_FUNC([sysconf], [], [AC_MSG_ERROR([sysconf() function not found.])])
+ AC_CHECK_FUNC([time], [], [AC_MSG_ERROR([time() function not found.])])
+ AC_CHECK_FUNC([tolower], [], [AC_MSG_ERROR([tolower() function not found.])])
