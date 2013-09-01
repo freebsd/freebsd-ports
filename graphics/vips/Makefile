@@ -31,10 +31,9 @@ PYPRESENT!=	which python > /dev/null && echo on || echo off
 .if ${PYPRESENT} == on
 OPTIONS_DEFAULT+=	PYTHON
 .endif
-USE_GMAKE=	yes
-USES=		gettext
-USE_PERL5_BUILD=yes
-USE_GNOME=	gnomehack glib20 pkgconfig pango libxml2
+USES=		gettext gmake perl5 pkgconfig
+USE_PERL5=	build
+USE_GNOME=	gnomehack glib20 pango libxml2
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"

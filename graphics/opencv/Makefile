@@ -14,11 +14,10 @@ COMMENT=	Open Source Computer Vision library from Intel
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
-USE_GNOME=	pkgconfig
 WANT_GSTREAMER=	yes
 MAKE_JOBS_UNSAFE=	yes
 USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/OpenCV-${DISTVERSION}

@@ -14,7 +14,7 @@ COMMENT=	Ruby binding for Cairo
 BUILD_DEPENDS=	rubygem-pkg-config>=1.0.7:${PORTSDIR}/devel/rubygem-pkg-config
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
-USE_GNOME=	pkgconfig
+USES=		pkgconfig
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=yes
 CONFIGURE_ARGS+=--ruby=${RUBY}

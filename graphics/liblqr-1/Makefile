@@ -13,9 +13,8 @@ COMMENT=	An easy to use C/C++ seam carving library
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_GNOME=	glib20 pkgconfig
-USES=		gettext
+USES=		gettext gmake pkgconfig
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
 # Use GNU89 inline semantics

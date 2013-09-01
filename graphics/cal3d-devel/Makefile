@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cal3d
-# Date created:				12 Jul 2004
-# Whom:					Stefan Walter <sw@gegenunendlich.de>
-#
+# Created by: Stefan Walter <sw@gegenunendlich.de>
 # $FreeBSD$
-#
 
 PORTNAME=	cal3d
 PORTVERSION=	20060720
@@ -20,7 +16,7 @@ COMMENT=	Skeletal based 3D character animation library written in C++ (devel)
 CONFLICTS=	cal3d-[0-9]*
 
 USE_BZIP2=	yes
-USE_GNOME=	pkgconfig
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	automake autoheader libtool
 AUTOMAKE_ARGS=	--add-missing

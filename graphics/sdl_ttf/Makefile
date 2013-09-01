@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sdl_ttf
-# Date created:				20 September 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sdl_ttf
 PORTVERSION=	2.0.11
@@ -18,8 +14,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_AUTOTOOLS=	libtool
 USE_SDL=	sdl
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
