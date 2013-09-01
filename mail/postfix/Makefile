@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-PORTVERSION=	2.10.0
+PORTVERSION=	2.10.1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -21,7 +21,7 @@ LICENSE_NAME=	IBM PUBLIC LICENSE VERSION 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-VDAVERSION=	2.9.5
+VDAVERSION=	2.10.0
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-9].* postfix-base-2.[0-9].* \
 		postfix-current-2.* postfix-current-base-2.* sendmail-8.* \
 		sendmail+*-8.* smail-3.* zmailer-2.* opensmtpd-[0-9]*
@@ -228,7 +228,7 @@ _REQUIRE+=		ypserv
 
 .if ${PORT_OPTIONS:MVDA}
 PATCH_SITES+=		http://vda.sourceforge.net/VDA/:vda
-PATCHFILES+=		postfix-vda-v11-${VDAVERSION}.patch:vda
+PATCHFILES+=		postfix-vda-v13-${VDAVERSION}.patch:vda
 PATCH_DIST_STRIP=	-p1
 PLIST_SUB+=		VDA=""
 .else
