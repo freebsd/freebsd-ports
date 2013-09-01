@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Term-Title
-# Date created:		2011-02-05
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Term-Title
 PORTVERSION=	0.03
@@ -15,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Portable API to set the terminal titlebar
 
-USE_PERL5=	yes
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Term::Title.3
 
