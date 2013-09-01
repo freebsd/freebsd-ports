@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oxygen
-PORTVERSION=	1.3.4
+PORTVERSION=	1.4.0
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}-gtk2/${PORTVERSION}/src/
@@ -22,12 +22,4 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USES=		cmake pkgconfig
 
-.include <bsd.port.pre.mk>
-
-# FreeBSD SVN r205606 was only MFC'ed to 8.1+, so we need to match
-# the old function signature on previous versions.
-.if ${OSVERSION} < 801000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-demo-oxygengtkdeco_main.cpp
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
