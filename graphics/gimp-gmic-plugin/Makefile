@@ -1,8 +1,7 @@
-# Created by: Mahmatkhanov Ruslan <cvs-src@yandex.ru>
 # $FreeBSD$
 
 PORTNAME=	gmic
-PORTVERSION=	1.5.5.2
+PORTVERSION=	1.5.6.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME} \
 		SF/${PORTNAME}/old
@@ -26,7 +25,7 @@ OPTIONS_EXCLUDE=NLS DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_GNOME=	gtk20
 USE_XORG=	x11 xext xrandr
 
