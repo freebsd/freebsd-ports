@@ -271,7 +271,6 @@
     SUBDIR += vte-reference
     SUBDIR += vtkfox
     SUBDIR += wmapp
-    SUBDIR += wxd
     SUBDIR += wxgtk26
     SUBDIR += wxgtk26-common
     SUBDIR += wxgtk26-contrib

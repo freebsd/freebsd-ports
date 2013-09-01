@@ -372,7 +372,6 @@
     SUBDIR += dragon
     SUBDIR += dreampie
     SUBDIR += drpython
-    SUBDIR += dsss
     SUBDIR += dulwich
     SUBDIR += duplo
     SUBDIR += dwarfdump
@@ -1007,7 +1006,6 @@
     SUBDIR += libgetline
     SUBDIR += libghthash
     SUBDIR += libgii
-    SUBDIR += libgiigic
     SUBDIR += libgit2
     SUBDIR += libglade
     SUBDIR += libglade-java

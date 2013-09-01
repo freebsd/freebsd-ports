@@ -4895,3 +4895,27 @@ japanese/bugzilla3|japanese/bugzilla42|2013-08-30|EOL: Please update to a suppor
 russian/bugzilla3|russian/bugzilla42|2013-08-30|EOL: Please update to a supported version
 net-im/licq-console||2013-08-30|No longer maintained upstream
 databases/py-migrate|databases/py-sqlalchemy-migrate|2013-09-01|Rename to reflect official project name
+lang/gdc||2013-09-01|Has expired: Broken for more than 6 month
+net-im/cli-msn||2013-09-01|Has expired: MSN Messenger service terminated 30 APR 2013
+x11-toolkits/wxd||2013-09-01|Has expired: Depends on deprecated lang/gdc
+security/openvpn22||2013-09-01|Has expired: Please migrate to a newer OpenVPN version
+devel/dsss||2013-09-01|Has expired: Depends on expired lang/gdc
+graphics/qcamview||2013-09-01|Has expired: Broken on FreeBSD 8 and newer
+www/cacheboy15-devel||2013-09-01|Has expired: Broken on FreeBSD 8 and newer
+graphics/spcaview||2013-09-01|Has expired: Broken on FreeBSD 8 and newer
+comms/uticom||2013-09-01|Has expired: Broken on FreeBSD 8 and newer
+net/ipex||2013-09-01|Has expired: Broken on FreeBSD 8 and newer
+graphics/phpsview||2013-09-01|Has expired: Broken on FreeBSD 8 and newer
+misc/usbrh||2013-09-01|Has expired: Broken on FreeBSD 8 and newer
+net/atmsupport||2013-09-01|Has expired: Broken on FreeBSD 8 and newer
+comms/ib-kmod||2013-09-01|Has expired: Broken on FreeBSD 8 and newer
+net/libproxy-mozjs||2013-09-01|Has expired: Does not work with newer libxul
+www/helixplugin||2013-09-01|Has expired: Does not work with newer libxul
+deskutils/chmsee||2013-09-01|Has expired: Does not work with newer libxul
+www/moonshine||2013-09-01|Has expired: Does not work with newer libxul
+x11/ggiterm||2013-09-01|Has expired: Unmaintained and broken
+graphics/libggigcp||2013-09-01|Has expired: Unmaintained
+graphics/libggimisc||2013-09-01|Has expired: Unmaintained
+graphics/libggiwmh||2013-09-01|Has expired: Unmaintained
+devel/libgiigic||2013-09-01|Has expired: Unmaintained
+games/koth||2013-09-01|Has expired: Unmaintained

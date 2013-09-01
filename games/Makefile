@@ -463,7 +463,6 @@
     SUBDIR += kolf
     SUBDIR += kollision
     SUBDIR += konquest
-    SUBDIR += koth
     SUBDIR += kpat
     SUBDIR += krank
     SUBDIR += kreversi
