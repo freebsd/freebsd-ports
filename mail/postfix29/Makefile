@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-PORTVERSION=	2.9.6
+PORTVERSION=	2.9.7
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -21,7 +21,7 @@ LICENSE_NAME=	IBM PUBLIC LICENSE VERSION 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-VDAVERSION=	2.9.5
+VDAVERSION=	2.9.6
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-8].* postfix-base-2.[0-8].* \
 		postfix-2.10.* postfix-base-2.10.* postfix-current-2.* \
 		postfix-current-base-2.* sendmail-8.* sendmail+*-8.* \
