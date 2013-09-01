@@ -2,6 +2,7 @@
 
 PORTNAME=	OpenLP
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +27,7 @@ RUN_DEPENDS=	py*-beautifulsoup<3.1:${PORTSDIR}/www/py-beautifulsoup30 \
 		py*-qt4-opengl>=0:${PORTSDIR}/x11/py-qt4-opengl \
 		py*-chardet>=0:${PORTSDIR}/textproc/py-chardet \
 		py*-mako>0:${PORTSDIR}/textproc/py-mako \
-		py*-migrate>=0:${PORTSDIR}/databases/py-migrate \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy-migrate>=0.6.1:${PORTSDIR}/databases/py-sqlalchemy-migrate \
 		py*-sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
 
 PYDISTUTILS_NOEGGINFO=	yes
