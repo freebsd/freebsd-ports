@@ -10,7 +10,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Creates a list based on weighted input
 
-PERL_CONFIGURE=	yes
 USES=		perl5
 USE_PERL5=	configure
 
