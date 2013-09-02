@@ -8,5 +8,7 @@ should be added to your service(s) of choice in /etc/pam.d:
 auth	required	%%PREFIX%%/lib/security/pam_duo.so
 
 Additionally, you must edit %%PREFIX%%/etc/pam_duo.conf
+
+duo headers have been installed to %%PREFIX%%/include/duo
 =================================================================
 
