@@ -18,7 +18,8 @@ COMMENT=	Font dialog widget
 BUILD_DEPENDS=	p5-Tk>=804:${PORTSDIR}/x11-toolkits/p5-Tk
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		${PORTNAME:S/-/::/g}.3
 
 .include <bsd.port.mk>

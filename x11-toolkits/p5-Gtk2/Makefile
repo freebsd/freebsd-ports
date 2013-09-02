@@ -24,7 +24,8 @@ RUN_DEPENDS=	p5-Pango>=0:${PORTSDIR}/x11-toolkits/p5-Pango \
 		p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2
 
 USE_GNOME=	gtk20 pango
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_GMAKE=	yes
 CONFIGURE_ENV+=	FORCE_GMAKE=yes
 MAKE_ENV+=	LANG=C

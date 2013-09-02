@@ -14,7 +14,8 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		marck@FreeBSD.org
 COMMENT=		Perl extension for comparing lists
 
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 
 PLIST_FILES=	\
 	${SITE_PERL_REL}/List/Compare.pm \

@@ -22,7 +22,8 @@ LATEST_LINK=	gtk-sharp10
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 USE_GNOME=	gnomehack gtkhtml3 vte librsvg2 libgnomecanvas \
 		libgnomeprintui libglade2 libgnomeui
 

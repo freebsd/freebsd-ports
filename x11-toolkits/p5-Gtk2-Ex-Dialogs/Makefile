@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-File-Type>=0:${PORTSDIR}/devel/p5-File-Type \
 		p5-Gtk2-Ex-Utils>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-Utils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		Gtk2::Ex::Dialogs::Question.3 \
 		Gtk2::Ex::Dialogs::ChooseDirectory.3 \
 		Gtk2::Ex::Dialogs::Message.3 \

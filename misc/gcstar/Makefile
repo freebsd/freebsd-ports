@@ -35,7 +35,8 @@ MAN1=		gcstar.1
 MANCOMPRESSED=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GNOME=	desktopfileutils
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 NO_BUILD=	yes
 

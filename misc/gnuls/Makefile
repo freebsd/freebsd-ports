@@ -18,7 +18,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_PERL5_BUILD=yes # Required for tests and man page generation
+USES=		perl5
+USE_PERL5=	build
 
 MAN1=		gnuls.1 dircolors.1 dir.1 vdir.1
 
