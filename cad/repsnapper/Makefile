@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	repsnapper
-PORTVERSION=	2.2.0a4
+PORTVERSION=	2.2.0b2
 CATEGORIES=	cad
 MASTER_SITES=	https://codeload.github.com/timschmidt/repsnapper/tar.gz/
 DISTNAME=	${PORTVERSION}
@@ -16,30 +16,29 @@ LICENSE=	GPLv2 BSD MIT
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
-LIB_DEPENDS=	gtkglext:${PORTSDIR}/x11-toolkits/gtkglext \
-		gtkmm-2:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		glademm-2:${PORTSDIR}/devel/libglademm24 \
-		cairomm-1:${PORTSDIR}/graphics/cairomm \
-		zip:${PORTSDIR}/archivers/libzip \
-		atkmm-1.6:${PORTSDIR}/accessibility/atkmm \
-		glibmm-2.4:${PORTSDIR}/devel/glibmm \
-		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
-		pcre:${PORTSDIR}/devel/pcre \
-		drm:${PORTSDIR}/graphics/libdrm \
-		png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2 \
-		expat:${PORTSDIR}/textproc/expat2 \
-		xml++-2.6:${PORTSDIR}/textproc/libxml++26 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		pangomm-1.4:${PORTSDIR}/x11-toolkits/pangomm
+LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
+		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
+		libcairomm-1.0.so:${PORTSDIR}/graphics/cairomm \
+		libzip.so:${PORTSDIR}/archivers/libzip \
+		libatkmm-1.6.so:${PORTSDIR}/accessibility/atkmm \
+		libglibmm-2.4.so:${PORTSDIR}/devel/glibmm \
+		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
+		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libdrm.so:${PORTSDIR}/graphics/libdrm \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libpangomm-1.4.so:${PORTSDIR}/x11-toolkits/pangomm
 
-USES=		pkgconfig iconv
+USES=		gmake pkgconfig iconv
 USE_GNOME=	gdkpixbuf2 gtk20 libxml2
-USE_GL=		glu glut
+USE_GL=		gl
 USE_AUTOTOOLS=	automake libtool
-USE_GMAKE=	yes
-USE_XORG=	ice pixman sm x11 xau xcb composite xcursor xdamage xdmcp \
+USE_XORG=	ice pixman sm x11 xau xcb xcomposite xcursor xdamage xdmcp \
 		xext xfixes xi xinerama xmu xrandr xrender xt xxf86vm
 
 .include <bsd.port.options.mk>
