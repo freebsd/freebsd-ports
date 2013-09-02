@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gbdfed
-# Date created:				2012-06-05
-# Whom:					Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gbdfed
 PORTVERSION=	1.6
@@ -16,8 +12,8 @@ COMMENT=	A GTK2 bitmap font editor
 LICENSE=	MIT
 
 USE_BZIP2=	yes
-USES=		gettext
-USE_GNOME=	gtk20 pkgconfig
+USES=		gettext pkgconfig
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 
