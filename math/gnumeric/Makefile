@@ -20,8 +20,7 @@ LIB_DEPENDS=	goffice-0.10:${PORTSDIR}/devel/goffice010 \
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 USE_XZ=		yes
-USES=		desktop-file-utils gettext pathfix shared-mime-info
-USE_GMAKE=	yes
+USES=		desktop-file-utils gettext pathfix shared-mime-info gmake pkgconfig
 USE_GNOME=	gnomehier gnomeprefix intlhack libgsf pygobject3
 USE_PYTHON=	-2.7
 INSTALLS_OMF=	yes

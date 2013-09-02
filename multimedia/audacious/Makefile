@@ -14,6 +14,7 @@ LIB_DEPENDS=	mcs:${PORTSDIR}/devel/libmcs \
 		xml2:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_GMAKE=	yes
 USE_XORG=	x11 sm
 USE_BZIP2=	yes

@@ -19,7 +19,7 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USES=		pathfix gettext
+USES=		pathfix gettext pkgconfig
 USE_GNOME=	intlhack
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

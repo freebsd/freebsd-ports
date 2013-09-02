@@ -14,6 +14,7 @@ COMMENT=	Additional loader for Evas (svg)
 
 LICENSE=	GPLv2
 
+USES=		pkgconfig
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
