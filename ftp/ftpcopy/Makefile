@@ -13,7 +13,8 @@ MASTER_SITES=	http://www.ohse.de/uwe/ftpcopy/
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Command line ftp tools for listing and mirroring
 
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	build
 
 WRKSRC=		${WRKDIR}/web/${DISTNAME}
 

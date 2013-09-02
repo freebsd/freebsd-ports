@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gary@hayers.org
 COMMENT=	Client interface to NNTP (RFC977)
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	News::NNTPClient.3
 

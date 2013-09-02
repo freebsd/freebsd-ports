@@ -16,7 +16,7 @@ COMMENT=	Spam filter for Usenet news servers
 RUN_DEPENDS=	${LOCALBASE}/news/bin/innd:${PORTSDIR}/news/inn
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 BINOWN=		news
 BINGRP=		news
 SHAREOWN=	news

@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Test directory attributes
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::Dir.3 \
 		Test::Dir::Base.3 \

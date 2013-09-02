@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-IO-Capture>=0:${PORTSDIR}/devel/p5-IO-Capture
 RUN_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 		p5-Unicode-MapUTF8>=0:${PORTSDIR}/converters/p5-Unicode-MapUTF8
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		I18N::Charset.3
 

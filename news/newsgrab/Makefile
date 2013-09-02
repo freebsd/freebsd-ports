@@ -17,7 +17,7 @@ RUN_DEPENDS=	p5-NNTPClient>=0:${PORTSDIR}/news/p5-NNTPClient \
 		p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^#!/usr/bin/perl|#!${PERL}|' ${WRKSRC}/newsgrab.pl

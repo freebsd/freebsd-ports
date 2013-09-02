@@ -14,7 +14,7 @@ BUILD_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
 
 USE_BZIP2=	yes
-USE_PERL5=	yes
+USES=		perl5
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
 do-install:

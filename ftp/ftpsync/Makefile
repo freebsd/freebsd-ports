@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
 USE_BZIP2=	yes
-USE_PERL5=	yes
+USES=		perl5
 PLIST_FILES=	bin/${PORTNAME}.pl
 PORTDOCS=	README
 

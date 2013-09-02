@@ -12,7 +12,8 @@ COMMENT=	Counts lines of code
 
 RUN_DEPENDS=	p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	./${PORTNAME}

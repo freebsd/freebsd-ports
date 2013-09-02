@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::FTP::Recursive.3
 

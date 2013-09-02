@@ -16,7 +16,7 @@ COMMENT=	Translates string using Babelfish
 
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -30,7 +30,8 @@ BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	bot-training.1
 MAN3=	Bot::Training.3
