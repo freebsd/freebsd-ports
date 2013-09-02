@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.3
 PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:main/} \
@@ -36,7 +36,7 @@ OPTIONS=		# Dirty hack: if OPTIONS is not defined, OPTIONSFILE will not be inclu
 .endif
 
 .include <bsd.port.options.mk>
-			
+
 .if ${PORT_OPTIONS:MSASL}
 LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=--with-sasl=${LOCALBASE}

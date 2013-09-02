@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.7.11
+PORTVERSION=	1.7.13
 PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:main/} \
@@ -38,7 +38,7 @@ OPTIONS=		# Dirty hack: if OPTIONS is not defined, OPTIONSFILE will not be inclu
 .endif
 
 .include <bsd.port.options.mk>
-			
+
 # Default is "on"
 .if ${PORT_OPTIONS:MNEON}
 LIB_DEPENDS+=	neon:${PORTSDIR}/www/neon29

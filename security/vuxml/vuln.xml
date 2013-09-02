@@ -51,6 +51,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f8a913cc-1322-11e3-8ffa-20cf30e32f6d">
+    <topic>svnserve is vulnerable to a local privilege escalation vulnerability via symlink attack.</topic>
+    <affects>
+      <package>
+	<name>subversion</name>
+	<range><ge>1.4.0</ge><lt>1.6.23_2</lt></range>
+	<range><ge>1.7.0</ge><lt>1.7.13</lt></range>
+	<range><ge>1.8.0</ge><lt>1.8.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion Project reports:</p>
+	<blockquote cite="http://subversion.apache.org/security/CVE-2013-4277-advisory.txt">
+	  <p>svnserve takes a --pid-file option which creates a file containing the
+	    process id it is running as.  It does not take steps to ensure that the file
+	    it has been directed at is not a symlink.  If the pid file is in a directory
+	    writeable by unprivileged users, the destination could be replaced by a
+	    symlink allowing for privilege escalation.  svnserve does not create a pid
+	    file by default.</p>
+	  <p>All versions are only vulnerable when the --pid-file=ARG option is used.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4277</cvename>
+      <url>http://subversion.apache.org/security/CVE-2013-4277-advisory.txt</url>
+    </references>
+    <dates>
+      <discovery>2013-08-30</discovery>
+      <entry>2013-09-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b3b8d491-0fbb-11e3-8c50-1c6f65c11ee6">
     <topic>cacti -- allow remote attackers to execute arbitrary SQL commands</topic>
     <affects>
