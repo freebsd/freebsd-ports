@@ -17,7 +17,7 @@ LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
 CONFLICTS_INSTALL?=	pinentry-[a-z]*
 
 USE_BZIP2=	yes
-USES=		iconv gmake
+USES=		iconv gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-pinentry-qt
 INFO=		pinentry

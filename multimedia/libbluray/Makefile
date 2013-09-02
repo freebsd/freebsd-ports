@@ -17,7 +17,7 @@ LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 # dlopen dependencies, libbdplus not yet available
 LIB_DEPENDS+=	libaacs.so:${PORTSDIR}/multimedia/libaacs
 
-USES=		iconv
+USES=		iconv pkgconfig
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf aclocal automake libtool

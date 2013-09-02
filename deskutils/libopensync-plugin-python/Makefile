@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libopensync-plugin-python
-# Date created:				18 July 2008
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libopensync-plugin-python
 PORTVERSION=	0.22
@@ -17,6 +13,7 @@ LIB_DEPENDS=	opensync.0:${PORTSDIR}/devel/libopensync022
 
 CONFLICTS=	libopensync-plugin-python-devel-[0-9]*
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes

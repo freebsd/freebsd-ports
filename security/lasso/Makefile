@@ -15,6 +15,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 CONFIGURE_ARGS+=	--disable-java --disable-php4 --with-zlib
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_GNOME=	gnomehack glib20 libxml2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
