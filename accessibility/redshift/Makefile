@@ -11,7 +11,7 @@ MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Adjusts the color temperature of your screen
 
 FETCH_ARGS=	"-pRr"
-USES=		gmake
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

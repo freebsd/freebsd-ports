@@ -13,6 +13,7 @@ LIB_DEPENDS=	gtkglext:${PORTSDIR}/x11-toolkits/gtkglext \
 		poppler-glib:${PORTSDIR}/graphics/poppler-glib \
 		boost_program_options:${PORTSDIR}/devel/boost-libs
 
+USES=		pkgconfig
 USE_GL=		glut
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${LOCALBASE}/lib --includedir=${LOCALBASE}/include

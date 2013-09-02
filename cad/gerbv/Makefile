@@ -13,7 +13,7 @@ COMMENT=	A Free Gerber Viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=        pathfix
+USES=        pathfix pkgconfig
 USE_GNOME=	desktopfileutils gtk20
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
