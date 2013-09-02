@@ -10,7 +10,7 @@ MASTER_SITES=	http://collectd.org/files/
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Systems & network statistics collection daemon
 
-USES=		gmake
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf autoheader automake libltdl
@@ -27,6 +27,7 @@ GCRYPT_DESC=		Build with libgcrypt
 JSON_DESC=		Enable JSON plugins
 MEMCACHEC_DESC=		Enable memcachec plugin
 MODBUS_DESC=		Enable modbus plugin
+NOTIFYEMAIL_DESC=	Mail notification
 MYSQL_DESC=		Enable mysql-based plugins
 NUTUPS_DESC=		Enable nut (ups) plugin
 PGSQL_DESC=		Enable postgresql-based plugins
