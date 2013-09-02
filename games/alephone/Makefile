@@ -14,6 +14,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-
 
 USE_GMAKE=	yes
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_SDL+=	image net sdl sound
 USE_GL=		yes
