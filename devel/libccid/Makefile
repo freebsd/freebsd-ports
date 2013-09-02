@@ -1,7 +1,4 @@
-# New ports collection Makefile for:		libccid
-# Date created:					2005-01-20
-# Whom:						arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	ccid
@@ -20,8 +17,9 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
+USES=		pkgconfig perl5
 GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers \
 		--enable-ccidtwindir=${PREFIX}/lib/pcsc/drivers/serial
 CONFIGURE_ENV=	LIBUSB_CFLAGS="-I${LOCALBASE}/include" \

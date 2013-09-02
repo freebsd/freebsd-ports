@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PostgreSQL Pgaccess
-# Date created:		December 1st, 2002
-# Whom:			Palle Girgensohn <girgen@pingpong.net>
-#
+# Created by: Palle Girgensohn <girgen@pingpong.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libpqxx
 PORTVERSION=	3.1
@@ -20,7 +16,7 @@ LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}3
 PORTSCOUT=	limit:^2\.
 
 USE_PGSQL=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}

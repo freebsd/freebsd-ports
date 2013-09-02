@@ -16,8 +16,8 @@ LIB_DEPENDS=	xcb-util:${PORTSDIR}/x11/xcb-util
 
 USE_XORG=	x11
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack ltasneededhack
+USES=		gmake pathfix pkgconfig
+USE_GNOME=	ltasneededhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
