@@ -15,7 +15,8 @@ RUN_DEPENDS=	\
 	p5-Plack>0:${PORTSDIR}/www/p5-Plack
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Plack::Middleware::MemoryUsage.3
 

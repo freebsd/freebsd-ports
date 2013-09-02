@@ -12,7 +12,8 @@ COMMENT=	Do interesting things with the contents of tables
 
 RUN_DEPENDS=	p5-HTML-Parser>=3.68:${PORTSDIR}/www/p5-HTML-Parser
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::TableContentParser.3
 

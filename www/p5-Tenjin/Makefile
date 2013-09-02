@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Tenjin.3 \
 	Tenjin::Context.3 \

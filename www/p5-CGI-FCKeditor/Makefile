@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	This's FCKeditor Controller for Perl OOP
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CGI::FCKeditor.3
 

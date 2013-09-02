@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-Clone>=0.23:${PORTSDIR}/devel/p5-Clone \
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI \
 		p5-Params-Util>=0.31:${PORTSDIR}/devel/p5-Params-Util
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		URI::ToDisk.3
 
