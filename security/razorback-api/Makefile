@@ -25,14 +25,14 @@ OPTIONS_DEFINE=	DEBUG ASSERT CNC_DEBUG STOMP_DEBUG
 CNC_DEBUG_DESC=		Enable Command and Control Debug
 STOMP_DEBUG_DESC=	Enable STOMP Debug
 
-.include <bsd.port.options.mk>
-
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+.include <bsd.port.options.mk>
 
 .if !empty(PORT_OPTIONS:MDEBUG)
 CONFIGURE_ARGS+=--enable-debug
