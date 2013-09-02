@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+21030902:
+AUTHOR: bapt@FreeBSD.org
+
+  USE_GNOME=pkgconfig is not supported anymore by the ports tree, please
+  uses: USES=pkgconfig
+
 20130831:
 AUTHOR: bdrewery@FreeBSD.org
 
