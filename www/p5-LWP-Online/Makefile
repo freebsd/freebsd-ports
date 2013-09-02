@@ -21,7 +21,8 @@ LICENSE_COMB=	dual
 RUN_DEPENDS+=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		LWP::Online.3
 

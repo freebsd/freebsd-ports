@@ -9,7 +9,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension of fast, primitive HTTP request parser
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	HTTP::Parser::XS.3
 

@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vivek@khera.org
 COMMENT=	SCGI server interface
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	SCGI.3 SCGI::Request.3
 

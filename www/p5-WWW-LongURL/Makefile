@@ -25,7 +25,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-LWP-Online>0:${PORTSDIR}/www/p5-LWP-Online
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WWW::LongURL.3
 
