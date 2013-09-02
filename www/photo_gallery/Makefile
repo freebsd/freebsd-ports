@@ -20,7 +20,7 @@ RUN_DEPENDS=	anytopnm:${PORTSDIR}/graphics/netpbm\
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 USE_APACHE_RUN=	22+
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 do-install:

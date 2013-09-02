@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-HTML-Tree>=3.13:${PORTSDIR}/www/p5-HTML-Tree			\
 		p5-HTML-TableExtract>=2.10:${PORTSDIR}/www/p5-HTML-TableExtract
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::ContentExtractor.3
 

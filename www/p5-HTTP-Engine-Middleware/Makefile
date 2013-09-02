@@ -23,7 +23,8 @@ RUN_DEPENDS=	\
 	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 	p5-DateTime>0:${PORTSDIR}/devel/p5-DateTime
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	HTTP::Engine::Middleware.3 \
 	HTTP::Engine::Middleware::AccessLog.3 \
