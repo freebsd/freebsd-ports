@@ -17,11 +17,11 @@ BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
 		gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	exiv2:${PORTSDIR}/graphics/exiv2
 
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_XZ=		yes
 USE_GNOME=	glib20
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+MAKE_ARGS=	REQUIRED_CFLAGS=""
 
 post-patch:
 	@${REINPLACE_CMD} -E \
