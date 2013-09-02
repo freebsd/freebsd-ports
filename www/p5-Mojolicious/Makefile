@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mojolicious
-PORTVERSION=	3.74
+PORTVERSION=	4.30
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -69,6 +69,7 @@ MAN3=		Mojo.3 \
 		Mojo::Server::Hypnotoad.3 \
 		Mojo::Server::Morbo.3 \
 		Mojo::Server::PSGI.3 \
+		Mojo::Server::Prefork.3 \
 		Mojo::Template.3 \
 		Mojo::Transaction.3 \
 		Mojo::Transaction::HTTP.3 \
@@ -92,6 +93,7 @@ MAN3=		Mojo.3 \
 		Mojolicious::Command::generate::plugin.3 \
 		Mojolicious::Command::get.3 \
 		Mojolicious::Command::inflate.3 \
+		Mojolicious::Command::prefork.3 \
 		Mojolicious::Command::psgi.3 \
 		Mojolicious::Command::routes.3 \
 		Mojolicious::Command::test.3 \
@@ -116,8 +118,6 @@ MAN3=		Mojo.3 \
 		Mojolicious::Plugin::JSONConfig.3 \
 		Mojolicious::Plugin::Mount.3 \
 		Mojolicious::Plugin::PODRenderer.3 \
-		Mojolicious::Plugin::PoweredBy.3 \
-		Mojolicious::Plugin::RequestTimer.3 \
 		Mojolicious::Plugin::TagHelpers.3 \
 		Mojolicious::Plugins.3 \
 		Mojolicious::Renderer.3 \
