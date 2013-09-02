@@ -14,6 +14,7 @@ LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
 		GLEW:${PORTSDIR}/graphics/glew
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_SDL=	sdl mixer image
 USE_GL=		gl glu
 

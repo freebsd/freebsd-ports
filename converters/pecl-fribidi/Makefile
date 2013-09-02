@@ -14,6 +14,7 @@ COMMENT=	A PECL extension for the Unicode Bidi algorithm
 
 LIB_DEPENDS=	fribidi.3:${PORTSDIR}/converters/fribidi
 
+USES=		pkgconfig
 USE_PHP=	yes
 USE_PHPEXT=	yes
 

@@ -16,7 +16,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/s3fs
-USES=		fuse
+USES=		fuse pkgconfig
 
 MAN1=		s3fs.1
 

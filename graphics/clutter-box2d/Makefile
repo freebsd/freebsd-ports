@@ -12,9 +12,8 @@ COMMENT=	Clutter Box2D integration library
 
 LIB_DEPENDS=	clutter-glx-1.0:${PORTSDIR}/graphics/clutter
 
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USES=		pathfix
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	ltverhack gnomeprefix
 USE_GL=		gl
 USE_XORG=	xp x11

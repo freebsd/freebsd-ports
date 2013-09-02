@@ -1,9 +1,5 @@
-# New ports collection makefile for:	castget
-# Date created:		16 February 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	castget
 PORTVERSION=	1.0.1
@@ -18,6 +14,7 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		curl:${PORTSDIR}/ftp/curl
 
 USE_LDCONFIG=	yes
+USES=		pkgconfig
 USE_GNOME=	glib20 libxml2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

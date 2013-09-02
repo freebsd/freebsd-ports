@@ -13,7 +13,7 @@ COMMENT=	C++ bindings for the goocanvas widget for GTK
 
 LIB_DEPENDS=	goocanvas-2.0:${PORTSDIR}/graphics/goocanvas2
 
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	ltverhack gtkmm30
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

@@ -14,7 +14,7 @@ LIB_DEPENDS=	mtp:${PORTSDIR}/audio/libmtp \
 		id3tag:${PORTSDIR}/audio/libid3tag \
 		mad:${PORTSDIR}/audio/libmad
 
-USES=		fuse
+USES=		fuse pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/mtpfs

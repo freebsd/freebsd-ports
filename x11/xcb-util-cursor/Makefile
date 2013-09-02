@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-util.pc:${PORTSDIR}/x11/xcb-util
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	xcb xorg-macros
-USES=		gmake
+USES=		gmake pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GPERF="${LOCALBASE}/bin/gperf"

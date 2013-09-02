@@ -1,9 +1,5 @@
-# New ports collection makefile for:	toilet
-# Date created:		13 August 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	toilet
 PORTVERSION=	0.3
@@ -18,6 +14,7 @@ LIB_DEPENDS=	caca.0:${PORTSDIR}/graphics/libcaca
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=""
+USES=		pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-fno-strength-reduce

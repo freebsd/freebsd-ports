@@ -1,9 +1,5 @@
-# New ports collection makefile for:	razorback-yaraNugget
-# Date created:				2011/06/8
-# Whom:					Tom Judge <tom@tomjudge.com>
-#
+# Created by: Tom Judge <tom@tomjudge.com>
 # $FreeBSD$
-#
 
 PORTNAME=	yaraNugget
 PORTVERSION=	0.5.0
@@ -27,12 +23,13 @@ RUN_DEPENDS=	razorback-masterNugget>=0.5.0:${PORTSDIR}/security/razorback-master
 OPTIONS_DEFINE=	DEBUG ASSERT
 ASSERT_DESC=	Enable Asserts
 
-.include <bsd.port.options.mk>
-
 RB_LIBDIR?=	${PREFIX}/lib/razorback
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	${RB_LIBDIR}
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug
