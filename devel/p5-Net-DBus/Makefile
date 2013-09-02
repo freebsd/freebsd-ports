@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-DBus
-# Date created:				2005-11-25
-# Whom:					Roman Bogorodskiy <novel@FreeBSD.org>
-#
+# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-DBus
 PORTVERSION=	1.0.0
@@ -19,8 +15,8 @@ RUN_DEPENDS=	p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \
 		p5-XML-Grove>=0:${PORTSDIR}/textproc/p5-XML-Grove \
 		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 
-USE_GNOME=	pkgconfig
-PERL_CONFIGURE=	yes
+USES=		pkgconfig perl5
+USES_PERL5=	configure
 
 MAN3=	Net::DBus::ASyncReply.3 Net::DBus::Annotation.3 Net::DBus::Tutorial.3 \
 	Net::DBus::RemoteObject.3 Net::DBus::Binding::Connection.3 \

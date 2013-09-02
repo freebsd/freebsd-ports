@@ -16,8 +16,7 @@ RUN_DEPENDS+=	${LIB_PC_DEPENDS}
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USES=		gmake pathfix pkgconfig
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	GTK2

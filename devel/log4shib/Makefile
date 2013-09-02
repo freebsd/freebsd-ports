@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	log4shib
-# Date created:				Feb 13 2008
-# Whom:					vanilla
-#
+# Created by: vanilla
 # $FreeBSD$
-#
 
 PORTNAME=	log4shib
 DISTVERSION=	1.0.7
@@ -15,13 +10,11 @@ MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	A library of C++ classes for flexible logging
 
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
+USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig gnomehack
 CONFIGURE_ARGS=	--disable-html-docs --disable-doxygen
 USE_LDCONFIG=	yes
 
-USES=		pathfix
 post-patch:
 	@${REINPLACE_CMD} -e 's| -pedantic||g' ${WRKSRC}/configure
 

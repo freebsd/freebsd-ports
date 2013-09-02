@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Unix-Statgrab
-# Date created:				June 20th, 2004
-# Whom:					Tim Bishop <tim@bishnet.net>
-#
+# Created by: Tim Bishop <tim@bishnet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Unix-Statgrab
 PORTVERSION=	0.04
@@ -17,9 +13,9 @@ COMMENT=	Perl extension for collecting information about the machine
 
 LIB_DEPENDS=	statgrab.8:${PORTSDIR}/devel/libstatgrab
 
-USE_GNOME=	pkgconfig
+USES=		perl5 pkgconfig
+USE_PERL5=	configure
 
-PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	INC="`pkg-config libstatgrab --cflags`" \
 			LIBS="`pkg-config libstatgrab --libs`"
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libopkele
-# Date created:				28 November 2007
-# Whom:					Sutra Zhou <zhoushuqun@gmail.com>
-#
+# Created by: Sutra Zhou <zhoushuqun@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libopkele
 PORTVERSION=	2.0.4
@@ -21,9 +17,8 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		tidy:${PORTSDIR}/www/tidy-lib \
 		xslt:${PORTSDIR}/textproc/libxslt
 
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	pkgconfig
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	"OPENSSL_CFLAGS=${CFLAGS} -l${OPENSSLINC}" \
 		OPENSSL_LIBS=-L${OPENSSLLIB}

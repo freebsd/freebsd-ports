@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-statgrab
-# Date created:		16 June 2008
-# Whom:			Tim Bishop <tdb@FreeBSD.org>
-#
+# Created by: Tim Bishop <tdb@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	statgrab
 PORTVERSION=	0.1
@@ -19,7 +15,7 @@ LIB_DEPENDS=	statgrab.8:${PORTSDIR}/devel/libstatgrab
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-USE_GNOME=	pkgconfig
+USES=		pkgconfig
 
 INSTALL_TARGET=	site-install
 

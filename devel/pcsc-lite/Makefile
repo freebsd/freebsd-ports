@@ -17,9 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
-USE_GNOME=	gnomehack pkgconfig
+USES=		gmake perl5 pathfix pkgconfig
+USE_PERL5=	build
 USE_RC_SUBR=	pcscd
 
 USE_LDCONFIG=	yes

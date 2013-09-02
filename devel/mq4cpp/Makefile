@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mp4cpp
-# Date created:         		Jan 4 2007
-# Whom:					vanilla
-#
+# Created by: vanilla
 # $FreeBSD$
-#
 
 PORTNAME=	mq4cpp
 PORTVERSION=	1.16
@@ -15,7 +11,8 @@ COMMENT=	Message Queuing for C++
 
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack pkgconfig ltverhack
+USES=		pathfix pkgconfig
+USE_GNOME=	ltverhack
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 

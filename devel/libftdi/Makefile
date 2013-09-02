@@ -17,7 +17,7 @@ USE_AUTOTOOLS=		autoconf libtool automake
 GNU_CONFIGURE=		yes
 CFLAGS+=		-I${LOCALBASE}/include
 USE_LDCONFIG=		yes
-USE_GNOME=		pkgconfig gnomehack
+USES=			pathfix pkgconfig
 
 PORTDOCS=		COPYING.LIB ChangeLog README
 

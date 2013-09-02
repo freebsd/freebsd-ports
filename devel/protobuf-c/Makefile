@@ -1,9 +1,5 @@
-# New Ports collection makefile for:	protobuf
-# Date created:				2011.05.16
-# Whom:					Aaron Hurt <ahurt@anbcs.com>
-#
+# Created by: Aaron Hurt <ahurt@anbcs.com>
 # $FreeBSD$
-#
 
 PORTNAME=	protobuf-c
 PORTVERSION=	0.15
@@ -16,10 +12,9 @@ COMMENT=	This package provides a code generator and runtime libraries to use Pro
 
 LIB_DEPENDS=	protobuf:${PORTSDIR}/devel/protobuf
 
-USE_GMAKE=	yes
+USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack pkgconfig
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

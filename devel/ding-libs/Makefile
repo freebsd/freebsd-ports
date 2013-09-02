@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ding-libs
-# Date created:         Sep 6 2011
-# Whom:                 Andrew Elble <aweits@rit.edu>
-#
+# Created by: Andrew Elble <aweits@rit.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	ding-libs
 DISTVERSION=	0.1.3
@@ -18,8 +14,7 @@ LICENSE=	GPLv3
 GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-USES=		gettext
-USE_GNOME=	pkgconfig
+USES=		gettext pkgconfig
 USE_LDCONFIG=	yes
 
 CONFIGURE_ENV+=	DOXYGEN=""

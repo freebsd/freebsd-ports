@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libukcprog
-# Date created:		30 March 2003
-# Whom:			Tim Bishop <tim@bishnet.net>
-#
+# Created by: Tim Bishop <tim@bishnet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libukcprog
 PORTVERSION=	1.0.2
@@ -26,6 +22,7 @@ MAN3=		ukcprog.3
 DIST_SUBDIR=	i-scream
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack pkgconfig lthack
+USES=		pathfix pkgconfig
+USE_GNOME=	lthack
 
 .include <bsd.port.mk>

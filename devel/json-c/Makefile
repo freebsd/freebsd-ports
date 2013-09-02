@@ -11,8 +11,7 @@ COMMENT=	JSON (JavaScript Object Notation) implementation in C
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	pkgconfig gnomehack
+USES=		gmake pathfix pkgconfig
 
 CONFLICTS=	cocaine-core-[0-9]*
 
