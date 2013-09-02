@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.rsyslog.com/librelp/
 MAINTAINER=	brd@FreeBSD.org
 COMMENT=	Reliable event logging protocol library
 
-USE_GNOME=	gnomehack pkgconfig
+USES=		pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 

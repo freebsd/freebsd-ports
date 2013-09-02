@@ -1,9 +1,5 @@
-# New ports collection makefile for:	omniORB
-# Date created:		14 May 1997
-# Whom:			ejc@bazzle.com
-#
+# Created by: ejc@bazzle.com
 # $FreeBSD$
-#
 
 PORTNAME=	omniORB
 PORTVERSION=	4.1.6
@@ -14,11 +10,10 @@ COMMENT=	A robust high performance CORBA ORB for C++ and Python
 
 PLIST_SUB+=	SONUM=${PORTVERSION:C/.*\.//}
 USE_GCC=	any
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_OPENSSL=	yes
-USE_GNOME=	pkgconfig
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 MAKEFILE=	GNUmakefile

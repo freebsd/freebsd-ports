@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libstatgrab
-# Date created:		30 March 2003
-# Whom:			Tim Bishop <tim@bishnet.net>
-#
+# Created by: Tim Bishop <tim@bishnet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libstatgrab
 PORTVERSION=	0.17
@@ -21,7 +17,7 @@ COMMENT=	Provides a useful interface to system statistics
 DIST_SUBDIR=	i-scream
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USES=		pathfix pkgconfig
 
 MAN3=		sg_get_cpu_percents.3 sg_get_cpu_stats.3 \
 		sg_get_cpu_stats_diff.3 sg_get_disk_io_stats.3 \

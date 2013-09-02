@@ -13,8 +13,7 @@ COMMENT=	Implementation of the real-time transport protocol
 LIB_DEPENDS=	commoncpp:${PORTSDIR}/devel/ucommon
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -pthread"

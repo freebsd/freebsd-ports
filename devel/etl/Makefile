@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ETL
-# Date created:				25 Jun 2006
-# Whom:					Yinghong Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	etl
 PORTVERSION=	0.04.15
@@ -14,8 +10,7 @@ DISTNAME=	ETL-${PORTVERSION}
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Voria Extended Class and Template Library
 
-USE_GNOME=	gnomehack pkgconfig
-USE_GMAKE=	yes
+USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 
 post-install:

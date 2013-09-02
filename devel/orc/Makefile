@@ -12,10 +12,9 @@ COMMENT=	Library and toolset to operate arrays of data
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GNOME=	pkgconfig
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 
 CONFIGURE_ARGS+=	--disable-gtk-doc
 

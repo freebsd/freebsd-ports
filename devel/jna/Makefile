@@ -11,11 +11,13 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Java access to native shared libraries
 
+USES=		gmake
+USE_GCC=	any
 USE_ANT=	yes
-USE_GMAKE=	yes
 USE_JAVA=	1.4+
 USE_ZIP=	yes
 USE_XORG=	x11 xt
+MAKE_ARGS=	-DCC=${CC} -DLD=${LD}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DOCSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-doc

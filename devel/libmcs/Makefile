@@ -18,8 +18,7 @@ OPTIONS_DEFAULT=	GCONF
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
+USES=		gmake pkgconfig
 
 .include <bsd.port.options.mk>
 

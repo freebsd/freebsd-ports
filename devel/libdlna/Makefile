@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/libdlna
-# Date created:				Sat Feb  9 20:20:00 UTC 2008
-# Whom:	      				Dave Grochowski <malus.x@gmail.com>
-#
+# Created by: Dave Grochowski <malus.x@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libdlna
 PORTVERSION=	0.2.3
@@ -20,8 +16,7 @@ LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
