@@ -22,7 +22,7 @@ USE_SDL=	sdl
 USE_SQLITE=	3
 USE_LUA=	5.0+
 LUA_COMPS=	toluaxx
-USES=		cmake:outsource
+USES=		cmake:outsource pkgconfig
 CMAKE_ARGS=	-DGAMEDIR:STRING="bin" \
 		-DTOLUA++_APP:STRING="${TOLUAXX_CMD}" \
 		-DTOLUA++_INCLUDE_DIR:STRING="${LUA_INCDIR}" \

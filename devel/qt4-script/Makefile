@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt script
 
+USES=		pkgconfig
 USE_QT4=	qmake_build moc_build corelib
 QT_NONSTANDARD=	yes
 QT_DIST=	yes

@@ -11,6 +11,7 @@ COMMENT=	Qt4 D-Bus viewer
 
 LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
 
+USES=		pkgconfig
 USE_QT4=	qmake_build moc_build rcc_build corelib dbus gui xml \
 		clucene
 QT_NONSTANDARD=	yes

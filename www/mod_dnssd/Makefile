@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_dnssd
-# Date created:		27 February 2009
-# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_dnssd
 PORTVERSION=	0.6
@@ -17,8 +13,7 @@ COMMENT=	An Apache module that provides DNS-SD capabilities
 
 LIB_DEPENDS=	avahi-client.3:${PORTSDIR}/net/avahi-app
 
-
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_APACHE=	22
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	APR_CFLAGS="`${LOCALBASE}/bin/apr-1-config --cflags --cppflags --includes`" \

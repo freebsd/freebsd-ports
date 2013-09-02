@@ -13,11 +13,11 @@ COMMENT=	Telepathy component to apps to abstract details of connection managers
 LIB_DEPENDS=	telepathy.2:${PORTSDIR}/net-im/libtelepathy \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
+USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix libxslt gnomehack ltverhack
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GLIB_SCHEMAS=	im.telepathy.MissionControl.FromEmpathy.gschema.xml
 CONFIGURE_ARGS=	--disable-upower
