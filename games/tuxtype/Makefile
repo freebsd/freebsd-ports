@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_w_fonts-${PORTVERSION}
 
 USE_GNOME=	libxml2
 USE_SDL=	image mixer net pango sdl
-USES=		iconv perl5
+USES=		iconv perl5 pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	T4K_COMMON_CFLAGS="-I${T4K_WRKSRC}/src" \

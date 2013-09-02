@@ -18,6 +18,7 @@ LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
 		sqlite3:${PORTSDIR}/databases/sqlite3
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_GMAKE=	yes
 USE_GNOME=	gconf2 gdkpixbuf2 glib20 gtk20
 USE_PERL5=	yes

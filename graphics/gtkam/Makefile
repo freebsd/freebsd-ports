@@ -14,7 +14,7 @@ LIB_DEPENDS=	exif-gtk:${PORTSDIR}/graphics/libexif-gtk \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 
 WANT_GNOME=	yes
-USES=        pathfix
+USES=        pathfix pkgconfig
 USE_GNOME=	gnomehier gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

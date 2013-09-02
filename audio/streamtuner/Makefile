@@ -15,7 +15,7 @@ BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
-USES=		gmake pathfix
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	gtk20 gnomeprefix
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
