@@ -2,6 +2,7 @@
 
 PORTNAME=	Text-RecordParser
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,5 +30,9 @@ MAN1=		tablify.1 tabmerge.1 tab2graph.1
 MAN3=		Text::RecordParser.3 \
 		Text::RecordParser::Tab.3 \
 		Text::RecordParser::Object.3
+
+post-extract:
+		# workaround for https://rt.cpan.org/Public/Bug/Display.html?id=87855
+		${CHMOD} +w ${WRKSRC}/README.md
 
 .include <bsd.port.mk>
