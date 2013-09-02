@@ -23,6 +23,8 @@ LIB_DEPENDS+=	ee:${PORTSDIR}/devel/libee \
 		json.0:${PORTSDIR}/devel/json-c \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 
+USES=		pkgconfig
+
 .ifdef MNAME
 RUN_DEPENDS=	rsyslog>=${PORTVERSION}:${PORTSDIR}/sysutils/rsyslog6
 PLIST=		${.CURDIR}/pkg-plist
