@@ -3,6 +3,7 @@
 
 PORTNAME=	nas
 PORTVERSION=	1.9.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}.${PORTVERSION}%20%28stable%29
 EXTRACT_SUFX=	.src.tar.gz
@@ -11,11 +12,10 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Network Audio System
 
 USES=		imake
-USE_GCC=	any
+USE_CSTD=	gnu89
 USE_XORG=	x11 xext xt xau sm ice xp xpm xmu xaw
 USE_LDCONFIG=	yes
 MAKE_ENV+=	COMPRESS_CMD="${COMPRESS_CMD:S/c//}"
-MAKE_ARGS=	CC="${CC}" CXX="${CXX}"
 MAKE_JOBS_UNSAFE=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -24,12 +24,9 @@ SUB_FILES=	pkg-message
 .include "Makefile.man"
 
 .include <bsd.port.pre.mk>
-post-patch:
-	@${FIND} ${WRKSRC} -name '*.c' | ${XARGS} ${GREP} -lF malloc.h \
-		| ${XARGS} ${REINPLACE_CMD} -n -e "s|<malloc.h>||" -e t -e p
 
 post-configure:
-# Work around shortcomings of the Image.rules et. al:
+# Work around shortcomings of the Imake.rules et. al:
 	${REINPLACE_CMD} -e 's:-fPIC:${FPIC} -DPIC:g' \
 	    -e 's,-c \$$(CCOPTIONS),-c $$(CFLAGS),' \
 	    -e 's,\(\$$(AR) \$$@ \$$\)(OBJS),\1(OBJS:S|^|unshared/|),' \
