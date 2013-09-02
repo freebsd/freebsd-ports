@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	telepathy-qt
-# Date created:				2008-02-10
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	telepathy-qt
@@ -16,7 +13,7 @@ COMMENT=	Framework for VoIP and IP applications
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
-USES=		cmake
+USES=		cmake pkgconfig
 CMAKE_SOURCE_PATH=	..
 USE_QT4=	corelib qmake_build uic_build moc_build rcc_build xml dbus
 USE_LDCONFIG=	yes
