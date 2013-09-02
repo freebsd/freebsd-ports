@@ -50,6 +50,7 @@ bin/morbo
 %%SITE_PERL%%/Mojo/Server/Hypnotoad.pm
 %%SITE_PERL%%/Mojo/Server/Morbo.pm
 %%SITE_PERL%%/Mojo/Server/PSGI.pm
+%%SITE_PERL%%/Mojo/Server/Prefork.pm
 %%SITE_PERL%%/Mojo/Template.pm
 %%SITE_PERL%%/Mojo/Transaction.pm
 %%SITE_PERL%%/Mojo/Transaction/HTTP.pm
@@ -74,6 +75,7 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/Command/generate/plugin.pm
 %%SITE_PERL%%/Mojolicious/Command/get.pm
 %%SITE_PERL%%/Mojolicious/Command/inflate.pm
+%%SITE_PERL%%/Mojolicious/Command/prefork.pm
 %%SITE_PERL%%/Mojolicious/Command/psgi.pm
 %%SITE_PERL%%/Mojolicious/Command/routes.pm
 %%SITE_PERL%%/Mojolicious/Command/test.pm
@@ -98,8 +100,6 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/Plugin/JSONConfig.pm
 %%SITE_PERL%%/Mojolicious/Plugin/Mount.pm
 %%SITE_PERL%%/Mojolicious/Plugin/PODRenderer.pm
-%%SITE_PERL%%/Mojolicious/Plugin/PoweredBy.pm
-%%SITE_PERL%%/Mojolicious/Plugin/RequestTimer.pm
 %%SITE_PERL%%/Mojolicious/Plugin/TagHelpers.pm
 %%SITE_PERL%%/Mojolicious/Plugins.pm
 %%SITE_PERL%%/Mojolicious/Renderer.pm
@@ -110,35 +110,46 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/Sessions.pm
 %%SITE_PERL%%/Mojolicious/Static.pm
 %%SITE_PERL%%/Mojolicious/Types.pm
-%%SITE_PERL%%/Mojolicious/public/css/prettify-mojo.css
-%%SITE_PERL%%/Mojolicious/public/css/prettify.css
 %%SITE_PERL%%/Mojolicious/public/favicon.ico
-%%SITE_PERL%%/Mojolicious/public/js/jquery.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-apollo.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-clj.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-css.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-go.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-hs.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-lisp.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-lua.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-ml.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-n.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-proto.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-scala.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-sql.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-tex.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-vb.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-vhdl.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-wiki.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-xq.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-yaml.js
-%%SITE_PERL%%/Mojolicious/public/js/prettify.js
-%%SITE_PERL%%/Mojolicious/public/mojolicious-black.png
-%%SITE_PERL%%/Mojolicious/public/mojolicious-failraptor.png
-%%SITE_PERL%%/Mojolicious/public/mojolicious-noraptor.png
-%%SITE_PERL%%/Mojolicious/public/mojolicious-notfound.png
-%%SITE_PERL%%/Mojolicious/public/mojolicious-pinstripe.gif
-%%SITE_PERL%%/Mojolicious/public/mojolicious-white.png
+%%SITE_PERL%%/Mojolicious/public/mojo/jquery/jquery.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/prettify.css
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-n.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-tex.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-vb.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-apollo.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-clj.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-tcl.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-basic.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-go.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/prettify-mojo.css
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/run_prettify.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-r.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-scala.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-lua.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-wiki.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/prettify.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-pascal.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-css.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-hs.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-proto.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-yaml.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-sql.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-lisp.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-rd.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-dart.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-xq.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-matlab.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-vhdl.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-ml.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-llvm.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-erlang.js
+%%SITE_PERL%%/Mojolicious/public/mojo/prettify/lang-mumps.js
+%%SITE_PERL%%/Mojolicious/public/mojo/notfound.png
+%%SITE_PERL%%/Mojolicious/public/mojo/logo-white.png
+%%SITE_PERL%%/Mojolicious/public/mojo/noraptor.png
+%%SITE_PERL%%/Mojolicious/public/mojo/failraptor.png
+%%SITE_PERL%%/Mojolicious/public/mojo/pinstripe.gif
+%%SITE_PERL%%/Mojolicious/public/mojo/logo-black.png
 %%SITE_PERL%%/Mojolicious/templates/exception.development.html.ep
 %%SITE_PERL%%/Mojolicious/templates/exception.html.ep
 %%SITE_PERL%%/Mojolicious/templates/mojobar.html.ep
@@ -150,8 +161,9 @@ bin/morbo
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious
 @dirrmtry %%SITE_PERL%%/Test
 @dirrm %%SITE_PERL%%/Mojolicious/templates
-@dirrm %%SITE_PERL%%/Mojolicious/public/js
-@dirrm %%SITE_PERL%%/Mojolicious/public/css
+@dirrm %%SITE_PERL%%/Mojolicious/public/mojo/jquery
+@dirrm %%SITE_PERL%%/Mojolicious/public/mojo/prettify
+@dirrm %%SITE_PERL%%/Mojolicious/public/mojo
 @dirrm %%SITE_PERL%%/Mojolicious/public
 @dirrm %%SITE_PERL%%/Mojolicious/Routes
 @dirrmtry %%SITE_PERL%%/Mojolicious/Plugin
