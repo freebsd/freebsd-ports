@@ -27,6 +27,7 @@ CONFIGURE_ARGS+=	--with-jpeg-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-jpeg-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-gif-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-gif-include=${LOCALBASE}/include
+USES=			pkgconfig
 USE_GNUSTEP=		yes
 USE_GNUSTEP_GUI=	yes
 USE_GNUSTEP_CONFIGURE=	yes
