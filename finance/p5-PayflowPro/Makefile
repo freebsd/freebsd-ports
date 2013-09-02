@@ -18,7 +18,8 @@ COMMENT=	Pure Perl PayflowPro payment gateway interface
 RUN_DEPENDS+=	p5-libwww>0.0:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS+=	p5-libwww>0.0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/ca-bundle.crt ${LOCALBASE}/etc

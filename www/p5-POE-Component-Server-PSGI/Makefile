@@ -17,7 +17,8 @@ COMMENT=	Perl extension to PSGI Server implementation for POE
 RUN_DEPENDS=	p5-POEx-Role-PSGIServer>0:${PORTSDIR}/www/p5-POEx-Role-PSGIServer
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	POE::Component::Server::PSGI.3 \
 	Plack::Server::POE.3

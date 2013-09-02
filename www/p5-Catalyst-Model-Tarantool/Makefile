@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.90001:${PORTSDIR}/www/p5-Catalyst-Runtime 
 		p5-MR-Tarantool>=0.0.24:${PORTSDIR}/databases/p5-MR-Tarantool
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN3=		Catalyst::Model::Tarantool.3

@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-Crypt-SSLeay>=0.56:${PORTSDIR}/security/p5-Crypt-SSLeay \
 RUN_DEPENDS=	p5-Crypt-SSLeay>=0.56:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Business::PayPal::IPN.3
 

@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	peter@vereshagin.org
 COMMENT=	Functions for managing FastCGI applications
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		FCGI::ProcManager.3 \
 		FCGI::ProcManager::Constrained.3

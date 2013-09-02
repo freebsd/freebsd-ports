@@ -17,7 +17,8 @@ RUN_DEPENDS=	p5-HTTP-Message>=0.0:${PORTSDIR}/www/p5-HTTP-Message \
 
 WRKSRC=		${WRKDIR}/aquaron-Business-Stripe-c067843
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Business::Stripe.3 Business::README.3
 
