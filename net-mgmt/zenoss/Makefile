@@ -30,7 +30,7 @@ OPTIONS_DEFAULT=	BASH
 
 USE_RC_SUBR=	zenoss
 USE_MYSQL=	client
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_OPENSSL=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
