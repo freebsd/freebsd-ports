@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Open source JavaScript HTML WYSIWYG editor for web sites
 
+LICENSE=	LGPL21
+
 NO_BUILD=	yes
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -42,5 +44,5 @@ genplist: do-clean extract
 #.endfor
 	${INSTALL} -m 600 ${MS_PLIST} ${PLIST}
 	${REINPLACE_CMD} -e "/^EMPTYDIRS=/ s|	.*$$|	`${CAT} ${MS_EMPTYDIRS}`|" ${.CURDIR}/Makefile
-	
+
 .include <bsd.port.mk>
