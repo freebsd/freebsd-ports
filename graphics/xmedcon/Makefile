@@ -25,6 +25,7 @@ INTERFILE_DESC=	With InterFile 3.3
 INW_DESC=	With INW (RUG)
 
 USE_BZIP2=	yes
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/xmedcon \
 		--enable-llcheck

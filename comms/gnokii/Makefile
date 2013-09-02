@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
 GROUPS=		${PORTNAME}
 USE_BZIP2=	yes
-USES=		gettext gmake
+USES=		gettext gmake pkgconfig
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
 WANT_GNOME=	yes

@@ -9,12 +9,11 @@ MASTER_SITES=	SF/lxde/LXInput%20%28Kbd%20and%20amp_%20mouse%20config%29/LXInput%
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Keyboard and mouse config tool from the LXDE project
 
-USES=		iconv
+USES=		iconv gmake pkgconfig
 USE_GNOME=	gtk20 intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
-USE_GMAKE=	yes
 
 MAN1=		lxinput.1
 

@@ -11,11 +11,10 @@ COMMENT=	LXDE screen manager
 
 LICENSE=	GPLv2
 
-USES=		desktop-file-utils
+USES=		desktop-file-utils gmake pkgconfig
 USE_GNOME=	gtk20
 USE_XORG=	xrandr
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 
 MAN1=		lxrandr.1

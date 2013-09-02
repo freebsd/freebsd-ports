@@ -34,7 +34,7 @@ QT_NONSTANDARD=	yes
 ALL_TARGET=	default
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GL=		gl
 NO_MOZPKGINSTALL=yes
 

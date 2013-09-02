@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USE_XORG=	x11 ice xtst sm
 WANT_GNOME=	yes

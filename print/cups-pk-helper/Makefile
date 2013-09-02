@@ -1,7 +1,4 @@
-# New ports collection makefile for:	cups-pk-helper
-# Date created:		2009-12-29
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/print/cups-pk-helper/Makefile,v 1.1 2009/12/29 16:01:07 ahze Exp $
 
@@ -19,9 +16,8 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		polkit.2:${PORTSDIR}/sysutils/policykit
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	intlhack gtk20
-USES=		gettext
+USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/libs

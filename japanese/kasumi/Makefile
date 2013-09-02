@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/41436
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	A dictionary management tool for anthy
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gnomehier gtk20
 LIB_DEPENDS=	anthy.1:${PORTSDIR}/japanese/anthy
 

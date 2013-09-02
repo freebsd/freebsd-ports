@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif
 
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	autoconf libtool
 CPPFLAGS+=	-I${LOCALBASE}/include

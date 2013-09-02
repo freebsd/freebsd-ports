@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
 
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gnomehack libgnomeprint libxslt \
 		libxml2 gtk20 glib20 pango
 USE_LDCONFIG=	yes

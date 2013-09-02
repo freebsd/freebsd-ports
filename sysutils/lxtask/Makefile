@@ -12,10 +12,9 @@ COMMENT=	Lightweight desktop-independent task manager
 
 LICENSE=	GPLv2
 
-USES=		iconv
+USES=		iconv gmake pkgconfig
 USE_GNOME=	gtk20 intlhack
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS README TODO
