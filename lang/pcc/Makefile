@@ -1,4 +1,4 @@
-# Created by: David O'Brien (obrien@NUXI.org)
+# Created by: David O'Brien <obrien@NUXI.org>
 # $FreeBSD$
 
 PORTNAME=	pcc
@@ -10,19 +10,22 @@ MASTER_SITES=	ftp://pcc.ludd.ltu.se/pub/pcc-releases/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	joel@FreeBSD.org
-COMMENT=	The Portable C Compiler
+COMMENT=	Portable C Compiler
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	YACC=${YACC}
-USES=		gmake
-
-MAKE_JOBS_UNSAFE=yes
 
 MAN1=		ccom.1 cpp.1 pcc.1
 PLIST_FILES=	bin/pcc libexec/ccom libexec/cpp
+
+# Fix -jX builds: use -C switch instead of cd'ing and add missing dependency
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E \
+	's/cd (.+)(;| &&) (\$$[{(]MAKE[})][^$$]*)( \$$\(MFLAGS\))?/\3 -C \1/'
+	@${ECHO_CMD} 'builtins.o: pass1.h' >> ${WRKSRC}/cc/ccom/Makefile.in
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/os/freebsd
