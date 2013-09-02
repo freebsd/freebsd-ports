@@ -1,0 +1,11 @@
+%%PYTHON_SITELIBDIR%%/pupynere-1.0.15-py2.7.egg/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/pupynere-1.0.15-py2.7.egg/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/pupynere-1.0.15-py2.7.egg/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/pupynere-1.0.15-py2.7.egg/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/pupynere-1.0.15-py2.7.egg/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/pupynere-1.0.15-py2.7.egg/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/pupynere-1.0.15-py2.7.egg/pupynere.py
+%%PYTHON_SITELIBDIR%%/pupynere-1.0.15-py2.7.egg/pupynere.pyc
+%%PYTHON_SITELIBDIR%%/pupynere-1.0.15-py2.7.egg/pupynere.pyo
+@dirrmtry %%PYTHON_SITELIBDIR%%/pupynere-1.0.15-py2.7.egg/EGG-INFO
+@dirrmtry %%PYTHON_SITELIBDIR%%/pupynere-1.0.15-py2.7.egg
