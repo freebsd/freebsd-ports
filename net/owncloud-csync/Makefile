@@ -12,13 +12,12 @@ COMMENT=	csync fork for Owncloud
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
-		iniparser:${PORTSDIR}/devel/iniparser \
+LIB_DEPENDS=	iniparser:${PORTSDIR}/devel/iniparser \
 		smbclient:${PORTSDIR}/net/samba-libsmbclient \
 		ssh:${PORTSDIR}/security/libssh \
 		neon:${PORTSDIR}/www/neon29
 
-USES=		cmake:outsource pkgconfig
+USES=		cmake:outsource iconv pkgconfig
 USE_BZIP2=	yes
 USE_SQLITE=	yes
 CMAKE_ARGS+=	-DWITH_LOG4C=NO \
