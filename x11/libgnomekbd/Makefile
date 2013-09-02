@@ -1,10 +1,6 @@
-# New ports collection makefile for:	libgnomekbd
-# Date created:		2006-11-07
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11/libgnomekbd/Makefile,v 1.48 2010/09/28 08:01:11 kwm Exp $
-#
 
 PORTNAME=	libgnomekbd
 PORTVERSION=	2.32.0
@@ -22,7 +18,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix gnomehack ltverhack gconf2
 USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes
-USES=		gettext
+USES=		gettext pkgconfig
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

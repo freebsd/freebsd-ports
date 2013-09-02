@@ -1,7 +1,4 @@
-# New ports collection makefile for:	gtkglarea2
-# Date created:		13 August 2002
-# Whom:			Marc Recht <marc@informatik.uni-bremen.de>
-#
+# Created by: Marc Recht <marc@informatik.uni-bremen.de>
 # $FreeBSD$
 #    $MCom: ports/x11-toolkits/gtkglarea2/Makefile,v 1.2 2006/09/10 00:51:17 mezz Exp $
 
@@ -20,6 +17,7 @@ LATEST_LINK=	gtkglarea2
 USE_GNOME=	gnomehack gtk20
 USE_BZIP2=	yes
 USE_GL=		yes
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-lib-GL
