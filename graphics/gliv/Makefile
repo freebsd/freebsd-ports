@@ -1,9 +1,5 @@
-# ports collection makefile for:	gliv
-# Date created:				16 March 2001
-# Whom:					Jeremy Norris <ishmael27@home.com>
-#
+# Created by: Jeremy Norris <ishmael27@home.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gliv
 PORTVERSION=	1.9.7
@@ -21,8 +17,7 @@ LICENSE=	GPLv2
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk20
 USE_GL=		yes
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"

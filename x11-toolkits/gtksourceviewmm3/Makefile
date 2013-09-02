@@ -13,9 +13,8 @@ COMMENT=	C++ binding of GtkSourceView3
 
 USE_LDCONFIG=	yes
 USE_XZ=	yes
-USES=		pathfix
+USES=		pathfix gmake pkgconfig
 USE_GNOME=	gtksourceview3 gnomeprefix gtkmm30
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBAS}/lib

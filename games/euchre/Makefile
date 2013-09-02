@@ -11,6 +11,7 @@ COMMENT=	Very popular card game with variable skill levels
 
 LICENSE=	GPLv2 # (or later)
 
+USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gkrellmwho2
-# Date created:        	12 Nov 2003
-# Whom:            	Alexey Zaytsev
-#
+# Created by: Alexey Zaytsev
 # $FreeBSD$
-#
 
 PORTNAME=	gkrellmwho2
 PORTVERSION=	0.2.8
@@ -21,6 +17,7 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
+USES=		pkgconfig
 
 ALL_TARGET=
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmwho2.so

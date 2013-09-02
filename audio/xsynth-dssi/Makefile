@@ -20,7 +20,7 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 USE_GNOME=	gtk20
-USES=		gmake
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	libtool
 
 CPPFLAGS+=	-I${LOCALBASE}/include

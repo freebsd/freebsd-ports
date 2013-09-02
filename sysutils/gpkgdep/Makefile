@@ -1,7 +1,4 @@
-# New ports collection makefile for: gpkgdep
-# Date created:                      2002/11/28
-# Whom:                              Heiner <h.eichmann@gmx.de>
-#
+# Created by: Heiner <h.eichmann@gmx.de>
 # $FreeBSD$
 
 PORTNAME=	gpkgdep
@@ -19,7 +16,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	automake14 autoconf
 AUTOMAKE_ARGS=	--add-missing
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 PLIST_FILES=	bin/gpkgdep
 
 .include <bsd.port.mk>

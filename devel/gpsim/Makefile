@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gpsim
-# Date created:		2006-03-13
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	gpsim
 PORTVERSION=	0.22.0
@@ -20,6 +16,7 @@ RUN_DEPENDS=	gpasm:${PORTSDIR}/devel/gputils
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

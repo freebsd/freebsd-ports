@@ -15,9 +15,8 @@ LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib \
 		curl:${PORTSDIR}/ftp/curl \
 		goocanvas:${PORTSDIR}/graphics/goocanvas
 
-USES=		gettext pathfix
+USES=		gettext pathfix gmake pkgconfig
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		gpredict.1
