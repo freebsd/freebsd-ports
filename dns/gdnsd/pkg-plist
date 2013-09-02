@@ -1,52 +1,21 @@
 bin/gdnsd_geoip_test
-@unexec if cmp -s %D/%%ETCDIR%%/config-dist %D/%%ETCDIR%%/config; then rm -f %D/%%ETCDIR%%/config; fi
-%%ETCDIR%%/config-dist
-@exec if [ ! -f %D/%%ETCDIR%%/config ] ; then cp -p %D/%F %B/config; fi
-%%ETCDIR%%/example.com
-@dirrmtry %%ETCDIR%%
-include/gdnsd-compiler.h
-include/gdnsd-dmn.h
-include/gdnsd-dname.h
-include/gdnsd-ev.h
-include/gdnsd-log.h
-include/gdnsd-misc.h
-include/gdnsd-monio.h
-include/gdnsd-net.h
-include/gdnsd-plugapi.h
-include/gdnsd-plugin.h
-include/gdnsd-satom.h
-include/gdnsd-vscf.h
-%%DOCSDIR%%/gdnsd-plugin-multifo.pod
-%%DOCSDIR%%/gdnsd-plugin-geoip.pod
-%%DOCSDIR%%/gdnsd-plugin-metafo.txt
-%%DOCSDIR%%/gdnsd_geoip_test.pod
-%%DOCSDIR%%/gdnsd-plugin-simplefo.txt
-%%DOCSDIR%%/gdnsd.zonefile.pod
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/gdnsd.config.pod
-%%DOCSDIR%%/gdnsd_manual.pod
-%%DOCSDIR%%/gdnsd.txt
-%%DOCSDIR%%/gdnsd-plugin-api.pod
-%%DOCSDIR%%/gdnsd-plugin-weighted.txt
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/gdnsd-plugin-simplefo.pod
-%%DOCSDIR%%/README.md
-%%DOCSDIR%%/gdnsd_geoip_test.txt
-%%DOCSDIR%%/gdnsd-plugin-metafo.pod
-%%DOCSDIR%%/gdnsd-plugin-geoip.txt
-%%DOCSDIR%%/gdnsd-plugin-multifo.txt
-%%DOCSDIR%%/config.example
-%%DOCSDIR%%/gdnsd.zonefile.txt
-%%DOCSDIR%%/gdnsd_manual.txt
-%%DOCSDIR%%/gdnsd.config.txt
-%%DOCSDIR%%/example.com
-%%DOCSDIR%%/gdnsd-plugin-api.txt
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/gdnsd-plugin-weighted.pod
-%%DOCSDIR%%/gdnsd.pod
-%%DOCSDIR%%/INSTALL
+include/gdnsd/compiler.h
+include/gdnsd/dmn.h
+include/gdnsd/dname.h
+include/gdnsd/log.h
+include/gdnsd/misc.h
+include/gdnsd/mon.h
+include/gdnsd/net.h
+include/gdnsd/paths.h
+include/gdnsd/plugapi.h
+include/gdnsd/plugin.h
+include/gdnsd/stats.h
+include/gdnsd/vscf.h
+@dirrm include/gdnsd
 lib/gdnsd/libgdnsd.la
 lib/gdnsd/libgdnsd.so
+lib/gdnsd/plugin_extmon.la
+lib/gdnsd/plugin_extmon.so
 lib/gdnsd/plugin_geoip.la
 lib/gdnsd/plugin_geoip.so
 lib/gdnsd/plugin_http_status.la
@@ -67,11 +36,40 @@ lib/gdnsd/plugin_tcp_connect.la
 lib/gdnsd/plugin_tcp_connect.so
 lib/gdnsd/plugin_weighted.la
 lib/gdnsd/plugin_weighted.so
-@dirrm %%DOCSDIR%%/
 @dirrm lib/gdnsd
+libexec/gdnsd/gdnsd_extmon_helper
+@dirrm libexec/gdnsd
 sbin/gdnsd
-@exec mkdir -p %D/var/gdnsd
-@dirrm var/gdnsd
-@exec mkdir -p %D/etc/gdnsd
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README.md
+%%DOCSDIR%%/gdnsd-plugin-api.pod
+%%DOCSDIR%%/gdnsd-plugin-api.txt
+%%DOCSDIR%%/gdnsd-plugin-extmon.pod
+%%DOCSDIR%%/gdnsd-plugin-extmon.txt
+%%DOCSDIR%%/gdnsd-plugin-geoip.pod
+%%DOCSDIR%%/gdnsd-plugin-geoip.txt
+%%DOCSDIR%%/gdnsd-plugin-metafo.pod
+%%DOCSDIR%%/gdnsd-plugin-metafo.txt
+%%DOCSDIR%%/gdnsd-plugin-multifo.pod
+%%DOCSDIR%%/gdnsd-plugin-multifo.txt
+%%DOCSDIR%%/gdnsd-plugin-simplefo.pod
+%%DOCSDIR%%/gdnsd-plugin-simplefo.txt
+%%DOCSDIR%%/gdnsd-plugin-weighted.pod
+%%DOCSDIR%%/gdnsd-plugin-weighted.txt
+%%DOCSDIR%%/gdnsd.config.pod
+%%DOCSDIR%%/gdnsd.config.txt
+%%DOCSDIR%%/gdnsd.pod
+%%DOCSDIR%%/gdnsd.txt
+%%DOCSDIR%%/gdnsd.zonefile.pod
+%%DOCSDIR%%/gdnsd.zonefile.txt
+%%DOCSDIR%%/gdnsd_geoip_test.pod
+%%DOCSDIR%%/gdnsd_geoip_test.txt
+%%DOCSDIR%%/gdnsd_manual.pod
+%%DOCSDIR%%/gdnsd_manual.txt
+@dirrm %%DOCSDIR%%
+@exec mkdir -p %D/%%ETCDIR%%/gdnsd
 @dirrmtry etc/gdnsd
 @stopdaemon gdnsd
