@@ -27,7 +27,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 OPTIONS_DEFINE=	MUSIC XVID
 MUSIC_DESC=	Install extra music files
 
-USES=		perl5
+USES=		perl5 pkgconfig
 USE_BZIP2=	yes
 USE_SDL=	image mixer sound sdl
 USE_WX=		2.4+

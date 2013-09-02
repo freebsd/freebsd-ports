@@ -19,6 +19,7 @@ LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs \
 
 CONFLICTS=	paragui-[0-9]*
 
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_SDL=	sdl image ttf
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
