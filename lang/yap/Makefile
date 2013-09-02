@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.dcc.fc.up.pt/~vsc/Yap/
 MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	High-performance Prolog compiler
 
+PORTSCOUT=	limit:^6\.2\.
+
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
@@ -26,6 +28,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-max-performance
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/Yap
 DATADIR=	${PREFIX}/share/Yap
