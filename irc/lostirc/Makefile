@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
-USES=        pathfix
+USES=        pathfix pkgconfig
 USE_GNOME=	gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-kde

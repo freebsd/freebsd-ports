@@ -21,6 +21,7 @@ DATADIR=	${PREFIX}/share/geda
 DOCSDIR=	${PREFIX}/share/doc/geda
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_GNOME=	gtk20 glib20
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes

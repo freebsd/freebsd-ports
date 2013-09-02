@@ -14,6 +14,7 @@ COMMENT=	Multiplayer Chinese Checkers game
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		gnet-2.0.0:${PORTSDIR}/net/gnet2
 
+USES=		pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:env
