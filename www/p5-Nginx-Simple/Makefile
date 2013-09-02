@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	simond@irrelevant.org
 COMMENT=	Perl 5 module for easy to use interface for Nginx Perl Module
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Nginx::Simple::Dispatch.3 Nginx::Simple::Cookie.3 \
 		Nginx::Simple::Ajax.3 Nginx::Simple.3 \

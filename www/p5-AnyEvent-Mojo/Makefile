@@ -23,7 +23,8 @@ RUN_DEPENDS=	\
 #	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	AnyEvent::Mojo.3 \
 	AnyEvent::Mojo::Server.3 \

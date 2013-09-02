@@ -20,6 +20,6 @@ RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/asql
-USE_PERL5=	yes
+USES=		perl5
 
 .include <bsd.port.mk>

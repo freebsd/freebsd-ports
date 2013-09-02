@@ -20,7 +20,8 @@ BUILD_DEPENDS=	\
 	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 	p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject \
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 INSTALL_TARGET=	pure_install
 
 MAN1=		wt.1

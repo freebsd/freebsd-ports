@@ -13,7 +13,8 @@ COMMENT=	Perl5 module for parsing HTML documents
 RUN_DEPENDS=	p5-HTML-Tagset>=3:${PORTSDIR}/www/p5-HTML-Tagset
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::Entities.3 \
 		HTML::Filter.3 \

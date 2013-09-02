@@ -21,7 +21,8 @@ RUN_DEPENDS+=	p5-libwww>0.0:${PORTSDIR}/www/p5-libwww \
 		p5-Crypt-SSLeay>0.0:${PORTSDIR}/security/p5-Crypt-SSLeay
 BUILD_DEPENDS+=	p5-libwww>0.0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Business::MaxMind::CreditCardFraudDetection.3 \
 	Business::MaxMind::HTTPBase.3 \
