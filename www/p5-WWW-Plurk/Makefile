@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-DateTime-Format-Mail>=0:${PORTSDIR}/devel/p5-DateTime-Format-Mai
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WWW::Plurk.3 WWW::Plurk::Friend.3 WWW::Plurk::Message.3
 

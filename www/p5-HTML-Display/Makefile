@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-HTML-TokeParser-Simple>=2:${PORTSDIR}/www/p5-HTML-TokeParser-Sim
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		p5-Test-Harness>=2.30:${PORTSDIR}/devel/p5-Test-Harness
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	HTML::Display.3 \
 	HTML::Display::Common.3 \

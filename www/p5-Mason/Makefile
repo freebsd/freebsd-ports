@@ -35,7 +35,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Class-Most>=0:${PORTSDIR}/devel/p5-Test-Class-Most \
 		p5-Test-LongString>=0:${PORTSDIR}/devel/p5-Test-LongString
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		mason.pl.1
 MAN3=		Mason.3 \
