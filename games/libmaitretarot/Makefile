@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libmaitretarot
-# Date created:		Sun 7 mar 2004
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=		libmaitretarot
 PORTVERSION=		0.1.98
@@ -15,6 +11,7 @@ MASTER_SITE_SUBDIR=	maitretarot
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Core library of MaitreTarot, a Tarot card game
 
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
