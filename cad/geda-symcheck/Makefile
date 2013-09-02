@@ -1,9 +1,5 @@
-# New ports collection makefile for:	geda
-# Date created:			4 April 2001
-# Whom:				bruno schwander <bruno@tinkerbox.org>
-#
+# Created by: bruno schwander <bruno@tinkerbox.org>
 # $FreeBSD$
-#
 
 PORTNAME=	symcheck
 PORTVERSION=	1.4.3
@@ -25,6 +21,7 @@ DOCSDIR=	${PREFIX}/share/doc/geda
 DATADIR=	${PREFIX}/share/geda
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_GNOME=	gtk20
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -10,6 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Dock any application with no native tray icon
 
+USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

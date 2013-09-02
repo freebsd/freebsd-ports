@@ -17,7 +17,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GNOME=	gtk12
-USES=		gmake
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	libtool
 
 PLIST_FILES=	lib/xmms/Output/libjackout.so

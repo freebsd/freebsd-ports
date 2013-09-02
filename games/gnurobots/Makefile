@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnurobots
-# Date created:				22 Sept 2000
-# Whom:					Aaron VonderHaar <avh4@usa.net>
-#
+# Created by: Aaron VonderHaar <avh4@usa.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gnurobots
 PORTVERSION=	1.2.0
@@ -16,6 +12,7 @@ COMMENT=	GNU diversion wherein Scheme-coded robots explore a world
 
 LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
 
+USES=		pkgconfig
 USE_GNOME=	vte
 GNU_CONFIGURE=	yes
 

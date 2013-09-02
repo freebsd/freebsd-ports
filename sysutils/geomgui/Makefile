@@ -1,9 +1,5 @@
-# New ports collection makefile for:	geomgui
-# Date created:				2005-07-18
-# Whom:	Soeren				Straarup <xride@FreeBSD.org>
-#
+# Created by: Soeren Straarup <xride@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	geomgui
 PORTVERSION=	0.13
@@ -20,7 +16,7 @@ LIB_DEPENDS=	gvc:${PORTSDIR}/graphics/graphviz
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk20 librsvg2
-USES=		iconv
+USES=		iconv pkgconfig
 GNU_CONFIGURE=	yes
 
 MAN1=	geomgui.1
