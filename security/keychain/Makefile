@@ -12,11 +12,11 @@ COMMENT=	User-friendly front-end to ssh-agent(1)
 
 LICENSE=	GPLv2
 
+USES=		gmake perl5
+USE_PERL5=	build
 OPTIONS_DEFINE=	DOCS
 FETCH_ARGS?=	-Fpr
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
 
 MAN1=		keychain.1
 

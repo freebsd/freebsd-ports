@@ -17,9 +17,8 @@ BUILD_DEPENDS=	p5-Term-ReadKey>=2.30:${PORTSDIR}/devel/p5-Term-ReadKey \
 		jade>=0:${PORTSDIR}/textproc/jade
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gettext
-USE_PERL5=	yes
-PERL_MODBUILD=	yes
+USES=		gettext perl5
+USE_PERL5=	modbuild
 WRKSRC=		${WRKDIR}/${PORTNAME}-v0.40.1
 
 MANPREFIX=	${PREFIX}
