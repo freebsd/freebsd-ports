@@ -1,9 +1,5 @@
-# New ports collection makefile for:	logjam
-# Date created:		13 Aug 01
-# Whom:			alanp@unixpower.org
-#
+# Created by: alanp@unixpower.org
 # $FreeBSD$
-#
 
 PORTNAME=	logjam
 PORTVERSION=	4.6.2
@@ -19,6 +15,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 
 MAN1=		logjam.1
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes

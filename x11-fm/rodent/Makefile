@@ -21,7 +21,7 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		gtk-x11-2:${PORTSDIR}/x11-toolkits/gtk20 \
 		magic:${PORTSDIR}/sysutils/file
 
-USES=		gmake
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--docdir=${DOCSDIR}
 USE_LDCONFIG=	yes

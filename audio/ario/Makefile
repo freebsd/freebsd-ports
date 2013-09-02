@@ -22,7 +22,7 @@ LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
 		unique-1.0:${PORTSDIR}/x11-toolkits/unique \
 		mpdclient:${PORTSDIR}/audio/libmpdclient
 
-USES=		gmake
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk20 gnomehack

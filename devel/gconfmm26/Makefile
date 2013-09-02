@@ -1,10 +1,6 @@
-# New ports collection makefile for:    gconfmm
-# Date created:         22 May 2003
-# Whom:                 Alexander Nedotsukov <bland@mail.ru>
-#
+# Created by: Alexander Nedotsukov <bland@mail.ru>
 # $FreeBSD$
 #   $MCom: ports-stable/devel/gconfmm26/Makefile,v 1.1 2010/06/24 07:51:01 kwm Exp $
-#
 
 PORTNAME=	gconfmm
 PORTVERSION=	2.28.2
@@ -22,6 +18,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 
 LATEST_LINK=	gconfmm26
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_XORG=	x11
 USE_GMAKE=	yes

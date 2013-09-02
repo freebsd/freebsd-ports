@@ -13,7 +13,7 @@ COMMENT=	Simple image viewer
 LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
-USES=		gettext
+USES=		gettext pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
 

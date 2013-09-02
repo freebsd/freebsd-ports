@@ -15,6 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
 RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 
 USE_BZIP2=	yes
+USES=		pkgconfig
 USE_GMAKE=	yes
 USE_GNOME=	gnomemimedata intltool libxslt:build
 GNU_CONFIGURE=	yes
