@@ -25,7 +25,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS?=	ja-p5-Mail-SpamAssassin-[0-9]* p5-Mail-SpamAssassin-devel-[0-9]* p5-Mail-SpamAssassin-Alt-[0-9]*
 
-PERL_CONFIGURE=	5.12+
+USES=		perl5
+USE_PERL5=	configure
 USE_LDCONFIG=	yes
 DBDIR?=		/var/db
 ETCDIR?=	${PREFIX}/etc/mail/spamassassin
