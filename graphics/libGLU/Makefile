@@ -11,7 +11,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenGL utility library
 
 USE_BZIP2=	yes
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_GL=		gl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
