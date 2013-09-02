@@ -25,7 +25,8 @@ RUN_DEPENDS=	p5-Module-Find>=0:${PORTSDIR}/devel/p5-Module-Find \
 		p5-WWW-Mechanize>=1.50:${PORTSDIR}/www/p5-WWW-Mechanize
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_DOS2UNIX=	yes
 
 MAN3=		WWW::Mixi::Scraper::Utils.3 \

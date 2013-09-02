@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Encode>=0:${PORTSDIR}/converters/p5-Encode \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	VUser::Google::ProvisioningAPI::V2_0::EmailListEntry.3 \
 	VUser::Google::ProvisioningAPI::V2_0::NicknameEntry.3 \

@@ -28,7 +28,8 @@ BUILD_DEPENDS=	\
 	p5-URI-Template-Restrict>=0.05:${PORTSDIR}/net/p5-URI-Template-Restrict
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTTP::README.3 \
 		HTTP::Router.3 \
