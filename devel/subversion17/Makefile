@@ -53,7 +53,7 @@ SVNFSTYPE?=	fsfs
 
 SUB_FILES=	pkg-install \
 		pkg-deinstall
-		
+
 BOOK_VERSION=	4515
 
 .if make(repository)
@@ -204,12 +204,13 @@ pre-configure:
 		${ECHO_MSG} "Please, reinstall 'devel/sqlite3' port with disabled ICU support."; \
 		${ECHO_MSG} "" ; \
 		${FALSE} ; \
-	fi		
+	fi
 .endif
 
 # takes a long time, and will fail but gives maintainer a good oversight
 .if ${PORT_OPTIONS:MTEST}
-test:
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
+test: build
 	-@make check -C ${WRKSRC}
 .endif
 
