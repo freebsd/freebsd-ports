@@ -3,25 +3,21 @@
 
 PORTNAME=	gpxe
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
-MASTER_SITE_SUBDIR=software/utils/boot/gpxe
+MASTER_SITES=	http://etherboot.org/rel/gpxe/ \
+		http://slackware.cs.utah.edu/pub/kernel.org/pub/software/utils/boot/gpxe/
 
 MAINTAINER=	gk.freebsd@googlemail.com
 COMMENT=	Create an open-source PXE implementation and bootloader
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	syslinux:${PORTSDIR}/sysutils/syslinux \
-		mkisofs:${PORTSDIR}/sysutils/cdrtools
+BUILD_DEPENDS=	syslinux:${PORTSDIR}/sysutils/syslinux
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_PERL5=	yes
+USE_CDRTOOLS=	yes
+USES=		gmake perl5
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-
-BROKEN=	checksum mismatch
 
 PLIST_DIRS=	%%DATADIR%%
 PLIST_FILES=	%%DATADIR%%/gpxe.dsk \
