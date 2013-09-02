@@ -15,8 +15,9 @@ LICENSE_NAME=	Lucent Public License Version 1.02
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+USES=		perl5
+USE_PERL5=	build
 USE_XORG=	x11 xt xi xaw
-USE_PERL5_BUILD=yes
 WRKSRC=		${WRKDIR}/plan9
 PLIST=		${WRKDIR}/.PLIST
 SUB_FILES=	pkg-message
@@ -103,7 +104,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/lib/font/bit|${PLAN9}/font|' \
 		${WRKSRC}/src/cmd/acme/acme.c
 	@${SED} -e 's|util\.h|lib&|' ${WRKSRC}/src/cmd/9term/OpenBSD.c \
-		> ${WRKSRC}/src/cmd/9term/FreeBSD.c
+		> ${WRKSRC}/src/cmd/9term/${OPSYS}.c
 
 do-build:
 	cd ${WRKSRC} && ./INSTALL

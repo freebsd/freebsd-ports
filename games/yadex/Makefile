@@ -13,10 +13,10 @@ COMMENT=	WAD file editor, for games like Doom and Hexen
 
 LICENSE=	GPLv2
 
+USES=		gmake perl5
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC}" CXX="${CXX}" PREFIX="${PREFIX}"
-USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 USE_XORG=	x11
 MAKEFILE=	GNUmakefile
 
