@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
 USE_OPENSSL=	yes
 USE_XZ=		yes
-USES=		pathfix
+USES=		pathfix pkgconfig
 
 MAN1=		aria2c.1
 MANLANG=	"" pt ru

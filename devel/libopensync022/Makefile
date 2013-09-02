@@ -18,7 +18,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USES=        pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
 

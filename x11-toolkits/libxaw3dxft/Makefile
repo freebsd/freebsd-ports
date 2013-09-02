@@ -11,6 +11,7 @@ COMMENT=	3D Xaw (Athena Widget Set) replacement with extended fonts
 
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
