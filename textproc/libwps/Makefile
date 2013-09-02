@@ -20,6 +20,7 @@ OPTIONS_DEFINE=	DOCS
 CONFIGURE_ARGS=	--disable-werror
 CPPFLAGS+=	-I${LOCALBASE}/include
 USE_AUTOTOOLS=	libtool
+USES=		pkgconfig
 USE_GNOME=	gnomehack gnomeprefix ltverhack
 USE_LDCONFIG=	yes
 

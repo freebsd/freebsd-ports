@@ -24,7 +24,7 @@ USE_RC_SUBR=	rrdcached
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 WANT_PERL=	yes
 USE_GNOME=	gnomehack intltool
 

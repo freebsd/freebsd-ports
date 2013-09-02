@@ -1,10 +1,6 @@
-# New ports collection makefile for:	py-cairo
-# Date created:		2004-12-05
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #	$MCom: ports/graphics/py-cairo/Makefile,v 1.28 2010/11/15 14:12:13 kwm Exp $
-#
 
 PORTNAME=	cairo
 PORTVERSION=	1.8.10
@@ -21,8 +17,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
 WRKSRC=		${WRKDIR}/py${PORTNAME}-${PORTVERSION}
 USE_PYTHON=	2.6-2.7
-USE_GMAKE=	yes
-USES=	pathfix
+USES=	pathfix gmake pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

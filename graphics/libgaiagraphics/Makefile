@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libgaiagraphics
-# Date created:		2012-06-14
-# Whom:			lbartoletti <coder@tuxfamily.org>
-#
+# Created by: lbartoletti <coder@tuxfamily.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libgaiagraphics
 PORTVERSION=	0.4b
@@ -20,8 +16,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		cairo:${PORTSDIR}/graphics/cairo
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		iconv
+USES=		iconv gmake pkgconfig
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv

@@ -22,7 +22,7 @@ SERIALPROBE_DESC=	serial auto-probe
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USES=	pathfix
+USES=	pathfix pkgconfig
 
 MAN1=		nfc-anticol.1 nfc-dep-initiator.1 nfc-dep-target.1 \
 		nfc-emulate-forum-tag4.1 nfc-emulate-tag.1 nfc-emulate-uid.1 \

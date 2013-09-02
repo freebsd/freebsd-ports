@@ -1,9 +1,5 @@
-# New ports collection makefile for:		libgdiplus
-# Date created:					20040820
-# Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-#
+# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libgdiplus
 PORTVERSION=	2.10
@@ -21,8 +17,8 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gnomehack glib20
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
