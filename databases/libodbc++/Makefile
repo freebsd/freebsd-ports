@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libodbc++
-# Date created:		26 September 2001
-# Whom:	      		Johann Visagie <wjv@FreeBSD.org>
-#
+# Creayed by: Johann Visagie <wjv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libodbc++
 PORTVERSION=	0.2.5
@@ -19,9 +15,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-isqlxx
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"

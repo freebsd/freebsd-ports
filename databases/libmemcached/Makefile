@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libmemcached
-# Date created:				January 22, 2008
-# Whom:					Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libmemcached
 PORTVERSION=	1.0.7
@@ -18,10 +14,9 @@ LIB_DEPENDS?=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		event-1.4.4:${PORTSDIR}/devel/libevent
 
 FETCH_ARGS?=	-pRr
-USE_GMAKE=	yes
+USES=		gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack pkgconfig
 CONFIGURE_ARGS=	--without-memcached
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
 
