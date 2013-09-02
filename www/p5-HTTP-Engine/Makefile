@@ -31,7 +31,8 @@ TEST_DEPENDS=	\
 	p5-IO-stringy>0:${PORTSDIR}/devel/p5-IO-stringy \
 	p5-MouseX-Types>=0.05:${PORTSDIR}/devel/p5-MouseX-Types
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTTP::Engine.3 \
 		HTTP::Engine::Cookbook.3 \

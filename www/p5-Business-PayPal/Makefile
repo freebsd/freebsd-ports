@@ -15,7 +15,8 @@ RUN_DEPENDS=	p5-Net-SSLeay>=1.35:${PORTSDIR}/security/p5-Net-SSLeay \
 		p5-Digest-MD5>=2.52:${PORTSDIR}/security/p5-Digest-MD5
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Business::PayPal.3
 

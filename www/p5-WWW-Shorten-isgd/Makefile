@@ -17,7 +17,8 @@ COMMENT=	Abstract interface to is.gd, one of URL shortening sites
 BUILD_DEPENDS=	p5-WWW-Shorten>=1.97:${PORTSDIR}/www/p5-WWW-Shorten
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WWW::Shorten::isgd.3
 

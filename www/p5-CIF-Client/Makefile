@@ -34,7 +34,8 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0.31:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Text-Table>=1.114:${PORTSDIR}/textproc/p5-Text-Table
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CIF::Client.3
 

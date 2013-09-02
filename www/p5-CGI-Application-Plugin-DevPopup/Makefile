@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-CGI-Application>=4.01:${PORTSDIR}/www/p5-CGI-Application \
 		p5-IO-stringy>0:${PORTSDIR}/devel/p5-IO-stringy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	CGI::Application::Plugin::DevPopup.3 \
 	CGI::Application::Plugin::DevPopup::HTTPHeaders.3 \

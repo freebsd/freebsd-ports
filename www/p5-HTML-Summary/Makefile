@@ -16,7 +16,8 @@ COMMENT=	Produces summaries from the textual content of web pages
 
 BUILD_DEPENDS=	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::Summary.3 Text::Sentence.3 Lingua::JA::Jtruncate.3
 

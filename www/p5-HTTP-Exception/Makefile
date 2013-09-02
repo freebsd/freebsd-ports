@@ -22,7 +22,8 @@ TEST_DEPENDS=	\
 	p5-Test-Exception>=0.29:${PORTSDIR}/devel/p5-Test-Exception \
 	p5-Test-NoWarnings>=1.04:${PORTSDIR}/devel/p5-Test-NoWarnings
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	HTTP::Exception.3 \
 	HTTP::Exception::1XX.3 \

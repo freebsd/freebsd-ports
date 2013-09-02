@@ -18,7 +18,8 @@ COMMENT=	Perl module to filter entries out of an httpd log
 BUILD_DEPENDS=	p5-IO-Zlib>=0:${PORTSDIR}/archivers/p5-IO-Zlib
 RUN_DEPENDS=	p5-IO-Zlib>=0:${PORTSDIR}/archivers/p5-IO-Zlib
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN1=		exclude_robots.1
 MAN3=		HTTPD::Log::Filter.3
 
