@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 		p5-Hook-LexWrap>=0:${PORTSDIR}/devel/p5-Hook-LexWrap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	HTTP::Server::Simple::Mason.3
 

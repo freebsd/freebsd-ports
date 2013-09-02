@@ -17,7 +17,8 @@ COMMENT=	Conduit to communicate with the Yahoo! Application Platform
 BUILD_DEPENDS=	p5-Net-OAuth-Simple>=1.0:${PORTSDIR}/net/p5-Net-OAuth-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::YAP.3
 

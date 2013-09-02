@@ -29,7 +29,8 @@ TEST_DEPENDS=	\
 	p5-String-CamelCase>0:${PORTSDIR}/textproc/p5-String-CamelCase \
 	p5-Module-Find>0:${PORTSDIR}/devel/p5-Module-Find
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Amon2::Plugin::Web::MobileAgent.3 \
 	Amon2::Plugin::Web::MobileCharset.3 \

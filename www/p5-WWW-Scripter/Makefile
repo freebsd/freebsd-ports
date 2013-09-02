@@ -16,7 +16,8 @@ RUN_DEPENDS=	p5-libwww>=5.829:${PORTSDIR}/www/p5-libwww \
 		p5-CSS-DOM>=0:${PORTSDIR}/www/p5-CSS-DOM
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WWW::Scripter::Location.3 WWW::Scripter.3 \
 		WWW::Scripter::History.3 WWW::Scripter::WindowGroup.3

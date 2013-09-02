@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-WWW-Shorten>=1.98:${PORTSDIR}/www/p5-WWW-Shorten \
 		p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WWW::Shorten::Googl.3
 

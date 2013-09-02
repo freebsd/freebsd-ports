@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-App-Options>=0:${PORTSDIR}/devel/p5-App-Options \
 		p5-App-Trace>=0:${PORTSDIR}/devel/p5-App-Trace \
 		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WWW::WebArchive.3 WWW::WebArchive::Agent.3 \
 		WWW::WebArchive::WaybackMachine.3

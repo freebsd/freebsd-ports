@@ -21,7 +21,8 @@ BUILD_DEPENDS=	p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck \
 		p5-Web-Scraper>=0:${PORTSDIR}/www/p5-Web-Scraper
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WWW::HatenaDiary.3
 

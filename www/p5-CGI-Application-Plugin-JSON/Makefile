@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-CGI-Application>4.01:${PORTSDIR}/www/p5-CGI-Application \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	CGI::Application::Plugin::JSON.3
 

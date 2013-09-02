@@ -22,7 +22,8 @@ BUILD_DEPENDS=	p5-CGI-Application>=4.50:${PORTSDIR}/www/p5-CGI-Application \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		CGI::Application::Dispatch.3 \
 		CGI::Application::Dispatch::PSGI.3 \
