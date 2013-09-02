@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libmpd
-# Date created:		Apr 4 2006
-# Whom:			Stepan Zastupov [RedChrom] <redchrom@gmail.com>
-#
+# Created by: Stepan Zastupov [RedChrom] <redchrom@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libmpd
 PORTVERSION=	11.8.17
@@ -15,7 +11,8 @@ COMMENT=	Abstraction around libmpdclient
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig glib20 gnomehack
+USES=		pathfix pkgconfig
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
 post-patch:

@@ -13,7 +13,7 @@ COMMENT=	MPD AudioScrobbler written in C++ supporting the latest protocol
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		mpd.4:${PORTSDIR}/audio/libmpd
 
-USE_GNOME=	pkgconfig
+USES=		pkgconfig
 USE_BZIP2=	yes
 
 USE_RC_SUBR=	mpdas

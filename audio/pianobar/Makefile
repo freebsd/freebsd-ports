@@ -23,7 +23,7 @@ MAN_COMPRESSED=	no
 
 PLIST_FILES=	bin/pianobar
 
-USES=		gmake
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
 MAKE_ARGS+=	CC="${CC}"
 

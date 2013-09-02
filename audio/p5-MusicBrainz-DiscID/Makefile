@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-WebService-MusicBrainz
-# Date created:         2009-12-22
-# Whom:                 Tobias Rehbein <tobias.rehbein@web.de>
-#
+# Created by: Tobias Rehbein <tobias.rehbein@web.de>
 # $FreeBSD$
-#
 
 PORTNAME=	MusicBrainz-DiscID
 PORTVERSION=	0.03
@@ -19,8 +15,8 @@ BUILD_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
 LIB_DEPENDS=	discid.0:${PORTSDIR}/audio/libdiscid
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_GNOME=	pkgconfig
-PERL_MODBUILD=	yes
+USES=		pkgconfig perl5
+USE_PERL5=	modbuild
 
 MAN3=		MusicBrainz::DiscID.3
 

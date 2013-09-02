@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnomoradio
-# Date created:			23 Oct 2004
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=		gnomoradio
 PORTVERSION=		0.15.1
@@ -22,7 +18,8 @@ LIB_DEPENDS=		sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 			vorbis:${PORTSDIR}/audio/libvorbis \
 			ao:${PORTSDIR}/audio/libao
 
-USE_GNOME=		gnomehack gnomeprefix
+USES=			pathfix pkgconfig
+USE_GNOME=		gnomeprefix
 USE_AUTOTOOLS=		libtool
 USE_LDCONFIG=		yes
 LIBTOOLFLAGS=		--tag=CXX

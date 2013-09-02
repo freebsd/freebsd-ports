@@ -12,7 +12,7 @@ COMMENT=	Free lossless audio codec
 
 LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg
 
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
