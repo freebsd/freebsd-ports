@@ -28,7 +28,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 NO_PACKAGE=	Man page creation hangs on some systems for unknown reasons
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Gtk2::WebKit.3 \
 		Gtk2::WebKit::Download.3 \

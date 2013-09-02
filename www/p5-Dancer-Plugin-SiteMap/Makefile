@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-Dancer>=1.175:${PORTSDIR}/www/p5-Dancer \
 RUN_DEPENDS=	p5-Dancer>=1.175:${PORTSDIR}/www/p5-Dancer \
 		p5-XML-Simple>0:${PORTSDIR}/textproc/p5-XML-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Dancer::Plugin::SiteMap.3
 

@@ -23,7 +23,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-DateTime-Format-SQLite>=0:${PORTSDIR}/devel/p5-DateTime-Format-SQLite \
 		p5-SQL-Translator>=0:${PORTSDIR}/databases/p5-SQL-Translator
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::FormFu::Constraint::DBIC::Unique.3 \
 		HTML::FormFu::Model::DBIC.3
