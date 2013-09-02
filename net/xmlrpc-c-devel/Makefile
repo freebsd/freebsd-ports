@@ -21,8 +21,8 @@ CPLUSPLUS_DESC=	 Build xmlrpc-c c++ libs and tools
 
 CONFLICTS=	xmlrpc-epi-0.* xmlrpc-c-[0-9]*
 
+USES=		gmake
 USE_XZ=		yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_JOBS_UNSAFE=	yes

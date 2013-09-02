@@ -15,13 +15,12 @@ LICENSE=	GPLv3
 OPTIONS_DEFINE=	NLS
 
 USE_XZ=		yes
-USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g --disable-uucode
 INSTALL_TARGET=	install install-man
 MAN1=		gshar.1 gunshar.1
 INFO=		sharutils
-USES=		charsetfix
+USES=		charsetfix perl5
 
 .include <bsd.port.pre.mk>
 

@@ -20,8 +20,7 @@ EXTRACT_AFTER_ARGS=	> ${WRKDIR}/${PORTNAME}
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USE_PERL5=	yes
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	mb2md
 
 PLIST_FILES=	bin/mb2md

@@ -18,8 +18,8 @@ OPTIONS_DEFAULT=GD PHP NLS PCRE LDAP ICONV
 
 PHP_DESC=	Install PHP for reporting generating
 
+USES=		gmake
 USE_AUTOTOOLS=	autoconf aclocal
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	CPPFLAGS=-I${LOCALBASE}/include \
