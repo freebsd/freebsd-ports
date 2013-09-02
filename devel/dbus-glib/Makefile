@@ -13,8 +13,7 @@ COMMENT=	GLib bindings for the D-BUS messaging system
 LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
 
 USE_GNOME=	gnomehack glib20 ltverhack
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-test-socket-dir=${WRKDIR} \

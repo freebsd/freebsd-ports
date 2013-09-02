@@ -1,9 +1,5 @@
-# New ports collection makefile for:   liblingoteach
-# Date created:        14 October 2003
-# Whom:                Marcus von Appen
-#
+# Created by: Marcus von Appen
 # $FreeBSD$
-#
 
 PORTNAME=	liblingoteach
 PORTVERSION=	0.2.1
@@ -15,8 +11,8 @@ MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A library for parsing lesson files based on the LingoTeach DTD
 
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack libxml2
+USES=		gmake pathfix pkgconfig
+USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

@@ -16,10 +16,9 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-
 RUN_DEPENDS=	xkbcomp:${PORTSDIR}/x11/xkbcomp \
     		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
-USES=		pathfix
+USES=		pathfix gmake pkgconfig
 USE_XORG=	x11 xi xkbfile
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	libxml2 glib20 ltverhack:12
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
