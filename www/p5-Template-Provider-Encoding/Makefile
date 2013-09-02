@@ -18,7 +18,8 @@ COMMENT=	Template plugin to specify encoding
 RUN_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Template::Provider::Encoding.3 \
 	Template::Stash::ForceUTF8.3 \

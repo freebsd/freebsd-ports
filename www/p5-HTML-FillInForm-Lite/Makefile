@@ -9,7 +9,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for lightweight FillInForm module in Pure Perl
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	HTML::FillInForm::Lite.3 \
 	HTML::FillInForm::Lite::Compat.3 \

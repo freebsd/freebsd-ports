@@ -24,7 +24,7 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 
-USE_PERL5=	yes
+USES=		perl5
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal:env automake:env autoconf:env
