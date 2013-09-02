@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl module containing common functions for loans and annuities
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Math::Financial.3
 

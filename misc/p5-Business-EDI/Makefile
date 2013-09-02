@@ -24,7 +24,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/atz-${PORTNAME}-327e01f
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Business::EDI.3 \
 		Business::EDI::CodeList.3 \

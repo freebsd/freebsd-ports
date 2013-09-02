@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	logix@foobar.franken.de
 COMMENT=	Calculates "DNS-spam"-values for hostnames
 
-USE_PERL5=	YES
+USES=		perl5
 
 do-build:
 	${REINPLACE_CMD} -e "s,sc.conf,${PREFIX}/etc/spamcalc.conf," \

@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dikshie@lapi.itb.ac.id
 COMMENT=	Handle ISO-3166 country codes
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS+=	INSTALLDIRS='site'
 
 MAN3=		Geography::Countries.3

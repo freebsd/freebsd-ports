@@ -25,7 +25,8 @@ RUN_DEPENDS=	p5-Glib2>=1.00:${PORTSDIR}/devel/p5-Glib2 \
 
 USE_GNOME=	libglade2
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=	${PORTNAME:S/-/::/g}.3
 
 .include <bsd.port.mk>

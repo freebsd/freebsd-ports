@@ -17,7 +17,7 @@ COMMENT=	Checkbook balancing tool
 USE_TK=		yes
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-perl=${PERL} \
 		--with-wish=${WISH}

@@ -18,7 +18,8 @@ COMMENT=	Creates a bar for path manipulation
 
 RUN_DEPENDS=	p5-Gtk2>=1.060:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Gtk2::PathButtonBar.3
 

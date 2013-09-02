@@ -18,7 +18,8 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 USE_GNOME=	gnomehack gnomepanel gtkhtml3 gtksharp20 gnomesharp20 librsvg2 vte \
 		libgnomeprintui gtksourceview2 gnomepanel libwnck nautiluscdburner
 

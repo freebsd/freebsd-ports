@@ -23,7 +23,8 @@ BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.300:${PORTSDIR}/devel/p5-ExtUtils-Depends 
 RUN_DEPENDS=	p5-Glib2>=1.220:${PORTSDIR}/devel/p5-Glib2
 
 USE_GNOME=	pango
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=yes
 
 post-install:

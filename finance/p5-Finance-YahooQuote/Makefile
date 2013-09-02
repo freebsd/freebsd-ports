@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-HTML-Parser>=2.2:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-libwww>=1.62:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		yahooquote.1
 MAN3=		Finance::YahooQuote.3

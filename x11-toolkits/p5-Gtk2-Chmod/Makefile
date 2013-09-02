@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-File-Stat-Bits>=0:${PORTSDIR}/sysutils/p5-File-Stat-Bits \
 		p5-Gtk2>=1.060:${PORTSDIR}/x11-toolkits/p5-Gtk2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Gtk2::Chmod.3
 
