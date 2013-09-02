@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-MyXML
-PORTVERSION=	0.09.91
+PORTVERSION=	0.10.01
 DISTVERSION=	${PORTVERSION:C/\.(..)$/\1/}
 PORTEPOCH=	1
 CATEGORIES=	textproc perl5
@@ -20,6 +20,6 @@ TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		XML::MyXML.3
+MAN3=		XML::MyXML.3 XML::MyXML::II.3
 
 .include <bsd.port.mk>
