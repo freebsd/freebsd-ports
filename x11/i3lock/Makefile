@@ -31,6 +31,6 @@ LDFLAGS+=	-liconv
 USE_XORG=	x11 xcb xt xproto xext
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USES=		iconv
+USES=		iconv pkgconfig
 
 .include <bsd.port.mk>
