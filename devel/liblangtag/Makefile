@@ -13,7 +13,6 @@ COMMENT=	An interface library to access tags for identifying languages
 LICENSE=	LGPL3 MPL
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
@@ -21,7 +20,7 @@ USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USES=		pathfix pkgconfig
+USES=		iconv:build pathfix pkgconfig
 
 CONFIGURE_ARGS=	--disable-introspection
 

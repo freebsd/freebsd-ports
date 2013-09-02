@@ -9,8 +9,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Library of commonly used Erlang functions
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
-		txt2tags:${PORTSDIR}/textproc/txt2tags \
-		iconv:${PORTSDIR}/converters/libiconv
+		txt2tags:${PORTSDIR}/textproc/txt2tags
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
@@ -24,6 +23,7 @@ GH_TAGNAME=	${PORTVERSION}
 USE_GMAKE=	yes
 USE_DOS2UNIX=	Makefile
 ALL_TARGET=	compile doc
+USES=		iconv:build
 
 MAN1=		common_lib.1
 MAN3=		cl_application.3 cl_binary.3 cl_calendar.3 cl_consumer.3 \
@@ -37,7 +37,7 @@ post-extract:
 
 do-install:
 .for manpage in ${MAN1} ${MAN3}
-	@iconv -f UTF-8 -t ISO-8859-1 ${WRKSRC}/doc/man/${manpage} > ${WRKSRC}/doc/man/${manpage}.iconv
+	@${ICONV_CMD} -f UTF-8 -t ISO-8859-1 ${WRKSRC}/doc/man/${manpage} > ${WRKSRC}/doc/man/${manpage}.iconv
 .endfor
 .for manpage in ${MAN1}
 	@${INSTALL_MAN} ${WRKSRC}/doc/man/${manpage}.iconv ${MAN1PREFIX}/man/man1/${manpage}
