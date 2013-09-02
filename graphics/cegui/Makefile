@@ -33,7 +33,7 @@ USE_GL=		yes
 USE_LUA=	5.1
 LUA_COMPS=	toluaxx
 USE_PYTHON=	2.6+
-USES=	pathfix
+USES=		pathfix pkgconfig
 PLIST_SUB+=	WITH_OGRE=""
 
 .include <bsd.port.options.mk>
