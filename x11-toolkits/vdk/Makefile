@@ -13,7 +13,7 @@ COMMENT=	C++ wrapper for GTK+ toolkit
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=        pathfix
+USES=        pathfix pkgconfig
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--enable-opt=no --enable-doc-html=no --enable-testvdk=no

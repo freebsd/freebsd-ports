@@ -14,6 +14,7 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
 USE_GGZ=	client
+USES=		pkgconfig
 
 MAN6=	ggz-gtk.6
 

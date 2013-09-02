@@ -11,7 +11,7 @@ COMMENT=	Simple and Fast Image Viewer for X
 
 LICENSE=	GPLv2
 
-USES=		desktop-file-utils gmake
+USES=		desktop-file-utils gmake pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \

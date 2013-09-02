@@ -18,7 +18,7 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png\
 		expat.6:${PORTSDIR}/textproc/expat2\
 		mspack.1:${PORTSDIR}/archivers/libmspack
 
-USES=		iconv
+USES=		iconv pkgconfig
 USE_BZIP2=	yes
 USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		glu

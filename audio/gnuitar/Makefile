@@ -10,6 +10,7 @@ MASTER_SITES=		SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The real-time guitar processor
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

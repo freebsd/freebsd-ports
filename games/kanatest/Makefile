@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kanatest
-# Date created:		2004-03-27
-# Whom:			S H A N <shanali@yahoo.com>
-#
+# Created by: S H A N <shanali@yahoo.com>
 # $FreeBSD$
-#
 
 PORTNAME=	kanatest
 PORTVERSION=	0.4.8
@@ -14,8 +10,7 @@ MASTER_SITES=	http://clayo.org/kanatest/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Japanese kana (Hiragana and Katakana) simple flashcard tool
 
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20 libxml2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

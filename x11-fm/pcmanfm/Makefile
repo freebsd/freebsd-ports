@@ -16,7 +16,7 @@ LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
 
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_FAM=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
