@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
+USES=		pkgconfig
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
