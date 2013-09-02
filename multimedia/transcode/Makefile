@@ -8,15 +8,17 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
 
 MAINTAINER=	cyberbotx@cyberbotx.com
-COMMENT=	A text-console utility for video stream processing
+COMMENT=	Text-console utility for video stream processing
 
-LIB_DEPENDS=	avcodec:${PORTSDIR}/multimedia/ffmpeg
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 
 USE_BZIP2=	yes
 FAKEDIR=	${WRKDIR}/fake
 PLIST=		${WRKDIR}/plist
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USES=		gmake
 WANT_SDL=	yes
 WANT_GNOME=	yes
 USE_AUTOTOOLS=	libtool
@@ -33,7 +35,7 @@ MAN1=	avifix.1 aviindex.1 avimerge.1 avisplit.1 avisync.1 tccat.1 tcdemux.1 \
 NO_OPTIONS_SORT=	yes
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS X11 MPEG2 BKTR POSTPROC FREETYPE LAME XVID \
 		X264 OGG VORBIS THEORA DVDREAD DV QUICKTIME LZO LIBA52 \
-		FAAC XML MJPEGTOOLS SDL IMAGEMAGICK JPEG ICONV
+		FAAC XML MJPEGTOOLS SDL IMAGEMAGICK JPEG ICONV V4L
 OPTIONS_DEFAULT=	LAME DVDREAD JPEG ICONV
 BKTR_DESC=	Bktr capture card support
 POSTPROC_DESC=	Libpostproc support
@@ -43,10 +45,6 @@ LIBA52_DESC=	a52 support (as default decoder)
 XML_DESC=	Libxml2 XML support
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-CONFIGURE_ENV+=	LIBAVCODEC_EXTRA_LIBS="-pthread"
-.endif
 
 .if ${PORT_OPTIONS:MX11}
 USE_XORG=	xv xaw xpm
@@ -205,6 +203,16 @@ CONFIGURE_ARGS+=	--with-iconv-prefix=${LOCALBASE} --enable-iconv
 .else
 CONFIGURE_ARGS+=	--disable-iconv
 .endif
+
+.if ${PORT_OPTIONS:MV4L}
+BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+CONFIGURE_ARGS+=	--enable-v4l
+.else
+CONFIGURE_ARGS+=	--disable-v4l
+.endif
+
+post-extract:
+	@${RM} ${WRKSRC}/import/v4l/videodev*
 
 post-patch:
 .if ${PORT_OPTIONS:MLZO}
