@@ -17,7 +17,8 @@ COMMENT=	HTML Converter for mobile agent
 RUN_DEPENDS=	p5-HTML-Parser>=3.45:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-URI>=1.33:${PORTSDIR}/net/p5-URI
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::MobileConverter.3
 

@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-Attribute-Handlers>=0.93:${PORTSDIR}/devel/p5-Attribute-Handle
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1.46:${PORTSDIR}/devel/p5-Test-Pod
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		RPC::ExtDirect.3 \
 		RPC::ExtDirect::API.3 \

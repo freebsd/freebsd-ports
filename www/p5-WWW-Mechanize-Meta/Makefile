@@ -17,7 +17,8 @@ COMMENT=	Adds HEAD tag parsing to WWW::Mechanize
 RUN_DEPENDS=	p5-WWW-Mechanize>=1.20:${PORTSDIR}/www/p5-WWW-Mechanize
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WWW::Mechanize::Meta.3
 
