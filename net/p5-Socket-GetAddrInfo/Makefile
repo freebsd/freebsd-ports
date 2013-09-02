@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Socket::GetAddrInfo
-# Date created:				29 November 2009
-# Whom:					Sahil Tandon <sahil@tandon.net>
-#
+# Created by: Sahil Tandon <sahil@tandon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Socket-GetAddrInfo
 PORTVERSION=	0.22
@@ -23,7 +19,8 @@ MAN3=		Socket::GetAddrInfo.3 \
 		Socket::GetAddrInfo::Emul.3 \
 		Socket::GetAddrInfo::Socket6api.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.pre.mk>
 
