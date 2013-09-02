@@ -18,8 +18,7 @@ USE_BZIP2=	yes
 
 RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 
-USE_GMAKE=	yes
-USES=		pathfix gettext
+USES=		pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix intlhack gnomemimedata gconf2 \
 		ltverhack referencehack
 USE_AUTOTOOLS=	libtool
