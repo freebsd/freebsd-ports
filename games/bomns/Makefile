@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bomns
-# Date created:				22 Jul 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	bomns
 PORTVERSION=	0.99.2
@@ -14,6 +10,7 @@ MASTER_SITES=	SF/greenridge/Bomns%20for%20Linux/Bomns%20for%20Linux%20${PORTVERS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The best old-school Deathmatch game ever (only for two players)
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_SDL=	mixer sdl
 WANT_GNOME=	yes

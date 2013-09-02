@@ -13,11 +13,10 @@ COMMENT=	Robot programming game for UNIX
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
-USES=		perl5
+USES=		perl5 gmake pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_PYTHON=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rtb-dir=${PREFIX}/lib/${PORTNAME}
 
