@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	AnyEvent-Twitter-Stream
-PORTVERSION=	0.22
+PORTVERSION=	0.26
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sahil@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl module to receive Twitter streaming API in an event loop
 
 RUN_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
