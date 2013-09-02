@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	check_resque
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	tomoyukis@reallyenglish.com
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${SITE_PERL}/Nagios/Plugin.pm:${PORTSDIR}/net-mgmt/p5-Nagios-Plugin
 USE_GITHUB=	Yes
 GH_ACCOUNT=	trombik
 GH_PROJECT=	check_resque
-GH_TAGNAME=	master
+GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	a0b6c3b
 USE_PERL5=	Yes
 
