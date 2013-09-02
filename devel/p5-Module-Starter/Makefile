@@ -13,6 +13,8 @@ COMMENT=	Simple starter kit for any Perl module
 BUILD_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
 RUN_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
 
+PORTSCOUT=	skipv:1.470
+
 USES=		perl5
 USE_PERL5=	configure
 
