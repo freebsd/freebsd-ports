@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pam_krb5
-DISTVERSION=	2.4.5
+DISTVERSION=	2.4.6
 CATEGORIES=	security
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -22,6 +22,7 @@ CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE} --without-afs \
 		--with-libintl-prefix=${LOCALBASE} --with-krb4=no \
 		--without-keyutils
 LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_JOBS_UNSAFE=	yes
 
 MAN5=		pam_krb5.5
 MAN8=		pam_krb5.8 pam_krb5_cchelper.8
