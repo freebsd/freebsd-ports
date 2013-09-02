@@ -17,6 +17,7 @@ LIB_DEPENDS=	v4l1.0:${PORTSDIR}/multimedia/libv4l \
 
 LICENSE=	GPLv2
 
+USES=		pkgconfig
 USE_RC_SUBR=	webcamd
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
