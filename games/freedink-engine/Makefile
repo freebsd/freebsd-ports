@@ -13,7 +13,7 @@ COMMENT=	Dink Smallwood RPG and RPG Construction Set
 
 LIB_DEPENDS=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=		gettext gmake
+USES=		gettext gmake pkgconfig
 USE_SDL=	sdl gfx ttf image mixer
 GNU_CONFIGURE=	yes
 PORTVER=	20121209

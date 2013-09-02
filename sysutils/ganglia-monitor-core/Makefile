@@ -25,6 +25,7 @@ OPTIONS_DEFINE=	GMETAD
 OPTIONS_DEFAULT=	GMETAD
 GMETAD_DESC=	include gmetad
 
+USES=		pkgconfig
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure libmetrics/configure
