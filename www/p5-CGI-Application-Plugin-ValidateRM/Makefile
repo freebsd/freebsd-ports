@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-HTML-FillInForm>=0:${PORTSDIR}/www/p5-HTML-FillInForm \
 		p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

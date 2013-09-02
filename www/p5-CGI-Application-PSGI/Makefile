@@ -19,7 +19,8 @@ RUN_DEPENDS=	\
 	p5-CGI-PSGI>0:${PORTSDIR}/www/p5-CGI-PSGI
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	CGI::Application::PSGI.3
 

@@ -17,7 +17,8 @@ BUILD_DEPENDS=	p5-Email-Find>=0.09:${PORTSDIR}/mail/p5-Email-Find \
 		p5-HTML-Parser>=1.26:${PORTSDIR}/www/p5-HTML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=			text2html.1
 MAN3=			HTML::FromText.3

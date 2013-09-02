@@ -10,7 +10,7 @@ COMMENT=	Command line interface to popular WWW search engines
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 MAN1=	elvi.1sr \
 	opensearch-discover.1 \
