@@ -13,8 +13,7 @@ COMMENT=	Server browser for many popular 3D action games
 RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 
 USE_GNOME=	intlhack
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 
 MAN6=		xqf.6

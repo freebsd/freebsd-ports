@@ -19,7 +19,7 @@ RUN_DEPENDS=	m4>=1.4.11:${PORTSDIR}/devel/m4 \
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USE_AUTOTOOLS=	autoconf
-USES=		gmake
+USES=		gmake pkgconfig
 USE_TK_RUN=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 
-USES=		gettext gmake
+USES=		gettext gmake pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_GL=		gl
 USE_LUA=	5.0+	# should be optional, but the build fails without it

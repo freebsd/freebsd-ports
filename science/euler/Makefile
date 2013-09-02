@@ -13,12 +13,9 @@ COMMENT=	Program computes with real and complex numbers and matrices
 
 LICENSE=	GPLv2
 
+USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
 
 .include <bsd.port.pre.mk>
 

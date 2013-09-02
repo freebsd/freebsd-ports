@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mdh
-# Date created:				12 November 2003
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mdh
 PORTVERSION=	1.9.60
@@ -16,7 +12,7 @@ COMMENT=	GTK2-based toolbar, like a smaller GNOME panel
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

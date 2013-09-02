@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtk-flat-theme2
-# Date Created:				14 March 2003
-# Whom:				 	Philip Paeps <philip@paeps.cx>
-#
+# Created by: Philip Paeps <philip@paeps.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	gtk-flat-theme2
 PORTVERSION=	0.1
@@ -19,7 +15,7 @@ COMMENT=	A port of the Flat GTK+ engine to GTK+ 2.0
 WRKSRC=		${WRKDIR}/gtk-flat-theme-2.0
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gnomehack gtk20
 
 .include <bsd.port.pre.mk>

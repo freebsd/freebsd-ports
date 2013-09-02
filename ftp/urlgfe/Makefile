@@ -1,9 +1,5 @@
-# New ports collection makefile for:	urlgfe
-# Date created:				8 January 2004
-# Whom:					Nosov Artem <chip-set@mail.ru>
-#
+# Created by: Nosov Artem <chip-set@mail.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	urlgfe
 PORTVERSION=	0.7.1
@@ -17,6 +13,7 @@ COMMENT=	A download manager
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_GNOME=	gtk20 lthack
+USES=		pkgconfig
 WANT_GNOME=	yes
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	libtool

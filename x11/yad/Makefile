@@ -8,13 +8,12 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	Display GNOME dialogs from the command line
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ENV+=	DATADIRNAME=share
-
 
 MAN1=	yad.1
 

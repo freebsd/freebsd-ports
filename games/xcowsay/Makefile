@@ -14,8 +14,7 @@ COMMENT=	A graphical configurable talking cow
 OPTIONS_DEFINE=	DBUS
 
 USE_GNOME=	gtk20
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 
 MAN6=		xcowsay.6

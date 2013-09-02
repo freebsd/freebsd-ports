@@ -13,8 +13,7 @@ COMMENT=	Library components for Zed's Virtual Terminal
 
 USE_BZIP2=	yes
 USE_XORG=	x11
-USE_GMAKE=	yes
-USES=		bison pathfix
+USES=		bison pathfix gmake pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomeprefix gtk20 libartlgpl2
