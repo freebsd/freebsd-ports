@@ -854,7 +854,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/calio-form-input-nginx-module-${GIT_FORMI
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
-LIB_DEPENDS+=	iconv:${PORTSDIR}/converters/libiconv
+USES+=		iconv
 NGINX_ICONV_VERSION=	0.10
 GIT_ICONV_VERSION=	0-gb37efb5
 FETCH_ARGS=	-pRr
