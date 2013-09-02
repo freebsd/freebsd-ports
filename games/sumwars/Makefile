@@ -1,9 +1,5 @@
-# New ports collection makefile for: games/sumwars
-# Date created:		13 Nov 2011
-# Whom:			Stas Timokhin <devel@stasyan.com>
-#
+# Created by: Stas Timokhin <devel@stasyan.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sumwars
 PORTVERSION=	0.5.6
@@ -26,8 +22,7 @@ LIB_DEPENDS=	CEGUIBase-0.7.9.0:${PORTSDIR}/graphics/cegui \
 		PocoNet.12:${PORTSDIR}/devel/poco \
 		physfs.1:${PORTSDIR}/devel/physfs
 
-USE_GMAKE=	yes
-USES=		cmake gettext
+USES=		cmake gettext gmake pkgconfig
 USE_GL=		gl glu
 USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
