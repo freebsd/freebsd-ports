@@ -3,7 +3,7 @@
 
 PORTNAME=	xscreensaver
 PORTVERSION=	5.22
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -26,6 +26,8 @@ USES=		pkgconfig gettext gmake
 USE_XORG=	xpm xext xxf86misc
 USE_GL=		yes
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf
+CONFIGURE_ENV+=	"CPPFLAGS= -I ${LOCALBASE}/include" "LDFLAGS= -L ${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
 		--with-jpeg=${LOCALBASE} --with-xshm-ext --with-xdbe-ext \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks/ \
@@ -132,12 +134,9 @@ SUB_FILES=	xscreensaver-blank.desktop xscreensaver-lock.desktop \
 		xscreensaver-start.desktop xscreensaver-stop.desktop
 
 post-patch:
-	@ ${CP} ${WRKSRC}/configure ${WRKSRC}/configure.Patched
-	@ ${SED} -e 's#-lpthread#${PTHREAD_LIBS}#g' \
-		-e 's#malloc.h#stdlib.h#g' \
-		-e 's#/usr/X11R6#${LOCALBASE}#g' \
-		-e 's#pkg_config --list-all#pkg_config --help#' \
-		${WRKSRC}/configure.Patched > ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
+			-e 's|pkg_config --list-all|pkg_config --help|' \
+			${WRKSRC}/configure.in
 .if ${PORT_OPTIONS:MPAM}
 .for f in driver/passwd-pam.c driver/xscreensaver.man
 	@ ${CP} ${WRKSRC}/${f} ${WRKSRC}/${f}.presed

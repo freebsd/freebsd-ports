@@ -1,5 +1,5 @@
---- driver/Makefile.in.orig	2008-07-16 14:40:49.000000000 -0700
-+++ driver/Makefile.in	2008-07-18 16:23:37.000000000 -0700
+--- driver/Makefile.in.orig	2013-07-16 11:23:32.000000000 +0200
++++ driver/Makefile.in	2013-09-02 11:56:16.862939343 +0200
 @@ -81,8 +81,8 @@
  
  
@@ -11,3 +11,12 @@
  
  UTILS_SRC	= $(srcdir)/../utils
  UTILS_BIN	= ../utils
+@@ -207,7 +207,7 @@
+ SAVER_LIBS	= $(LIBS) $(X_LIBS) $(XMU_LIBS) @SAVER_LIBS@ \
+ 		  $(XDPMS_LIBS) $(XINERAMA_LIBS) $(GL_LIBS) $(X_PRE_LIBS) \
+ 		  -lXt -lX11 -lXext $(X_EXTRA_LIBS) \
+-		  $(PASSWD_LIBS)
++		  $(PASSWD_LIBS) $(INTL_LIBS)
+ 
+ CMD_LIBS	= $(LIBS) $(X_LIBS) \
+ 		  $(X_PRE_LIBS) -lX11 -lXext $(X_EXTRA_LIBS)

@@ -1,0 +1,12 @@
+--- config.h.in.orig	2013-09-02 12:44:35.341733572 +0200
++++ config.h.in	2013-09-02 12:45:05.396737361 +0200
+@@ -340,6 +340,9 @@
+ /* Define to 1 if you have the <util.h> header file. */
+ #undef HAVE_UTIL_H
+ 
++/* Define to 1 if you have the <libutil.h> header file. */
++#undef HAVE_LIBUTIL_H
++
+ /* Define this if you have the XF86MiscSetGrabKeysState function (which allows
+    the Ctrl-Alt-KP_star and Ctrl-Alt-KP_slash key sequences to be temporarily
+    disabled. Sadly, it doesn't affect Ctrl-Alt-BS or Ctrl-Alt-F1.) */
