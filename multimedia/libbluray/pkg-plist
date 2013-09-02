@@ -1,3 +1,4 @@
+bin/bd_info
 include/libbluray/bluray-version.h
 include/libbluray/bluray.h
 include/libbluray/clpi_data.h
@@ -9,6 +10,6 @@ include/libbluray/overlay.h
 lib/libbluray.a
 lib/libbluray.la
 lib/libbluray.so
-lib/libbluray.so.2
+lib/libbluray.so.4
 libdata/pkgconfig/libbluray.pc
 @dirrm include/libbluray
