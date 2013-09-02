@@ -105,8 +105,7 @@ LIB_DEPENDS+=		avcodec:${PORTSDIR}/multimedia/ffmpeg
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PATCH_DEPENDS+=		${LOCALBASE}/bin/iconv:${PORTSDIR}/converters/libiconv
+USES+=		gettext iconv:patch
 CONFIGURE_ARGS+=	--enable-nls --localedir=${LOCALBASE}/share/locale
 # causes vice to crash:
 #LDFLAGS+=		-lgettextlib
@@ -139,7 +138,7 @@ post-patch:
 		${WRKSRC}/configure
 .for i in da.po de.po fr.po hu.po it.po nl.po pl.po sv.po tr.po
 	${MV} "${WRKSRC}/po/${i}" "${WRKSRC}/po/${i}.latin"
-	${LOCALBASE}/bin/iconv -f latin1 -t utf-8 < "${WRKSRC}/po/${i}.latin" > "${WRKSRC}/po/${i}"
+	${ICONV_CMD} -f latin1 -t utf-8 < "${WRKSRC}/po/${i}.latin" > "${WRKSRC}/po/${i}"
 .endfor
 .if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's| doc||' ${WRKSRC}/Makefile.in

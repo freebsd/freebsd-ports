@@ -16,9 +16,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Hebrew hunspell dictionaries
 
-BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
-
-USES=		perl5
+USES=		iconv:build perl5
 ALL_TARGET=	hunspell
 CONFIGURE_ARGS=	--enable-fatverb
 GNU_CONFIGURE=	yes

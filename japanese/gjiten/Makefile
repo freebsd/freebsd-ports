@@ -46,7 +46,7 @@ RUN_DEPENDS+=	${EDICT_FILE}:${PORTSDIR}/japanese/edict-utf-8
 EDICT_DIR=	${LOCALBASE}/share/dict/edict
 EDICT_FILE=	${EDICT_DIR}/edict
 RUN_DEPENDS+=	${EDICT_FILE}:${PORTSDIR}/japanese/edict
-BUILD_DEPENDS+=	${LOCALBASE}/bin/iconv:${PORTSDIR}/converters/libiconv
+USES+=		iconv:build
 .endif
 
 DICTIONARIES=	kanjidic edict compdic
@@ -72,7 +72,7 @@ post-install:
 .endfor
 .else
 .for f in ${DICTIONARIES}
-	${LOCALBASE}/bin/iconv -c -f EUC-JP -t UTF-8 ${EDICT_DIR}/${f} > ${GJITEN_DICS}/${f}
+	${ICONV_CMD} -c -f EUC-JP -t UTF-8 ${EDICT_DIR}/${f} > ${GJITEN_DICS}/${f}
 .endfor
 .endif
 	-@update-desktop-database
