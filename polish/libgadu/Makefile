@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 
 CONFLICTS=	pl-ekg-1.[0-6]*
 
-USE_GNOME=	gnomehack pkgconfig
+USES=		pathfix pkgconfig
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--enable-shared --disable-static --with-pthread \
