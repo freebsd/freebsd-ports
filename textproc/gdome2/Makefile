@@ -13,7 +13,7 @@ COMMENT=	Gnome DOM Engine
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_AUTOTOOLS=	libtool
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GLIB_CONFIG="${LOCALBASE}/bin/pkg-config glib-2.0"

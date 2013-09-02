@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-cutter --disable-doxygen_doc
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libltdl
 
