@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnetlist
-# Date created:			4 April 2001
-# Whom:				bruno schwander <bruno@tinkerbox.org>
-#
+# Created by: bruno schwander <bruno@tinkerbox.org>
 # $FreeBSD$
-#
 
 PORTNAME=	netlist
 PORTVERSION=	1.4.3
@@ -26,6 +22,7 @@ DOCSDIR=	${PREFIX}/share/doc/geda
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
+USES=		pkgconfig
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
