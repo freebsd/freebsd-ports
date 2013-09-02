@@ -16,8 +16,7 @@ LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_GMAKE=	yes
-USES=		pathfix
+USES=		pathfix gmake pkgconfig
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-update-mime-database \

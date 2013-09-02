@@ -43,6 +43,7 @@ MANCOMPRESSED=	no
 SUB_FILES=	pkg-message
 
 CONFFILES=	example.conf input.conf menu.conf dvb-menu.conf
+USES=		pkgconfig
 
 .include <bsd.port.pre.mk>
 

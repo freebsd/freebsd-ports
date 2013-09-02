@@ -14,9 +14,8 @@ COMMENT=	GTK+ Integration library for Clutter
 LIB_DEPENDS=	clutter-glx-1.0:${PORTSDIR}/graphics/clutter
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GL=		gl
-USES=		gettext pathfix
+USES=		gettext pathfix gmake pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk20 ltverhack gnomeprefix
 USE_XORG=	xp x11

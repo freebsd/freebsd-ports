@@ -20,8 +20,7 @@ BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 RUN_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 
 USE_XORG=	xres
-USE_GMAKE=	yes
-USES=		bison pathfix gettext
+USES=		bison pathfix gettext gmake pkgconfig
 USE_GNOME=	gtk20 ltverhack referencehack intlhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
