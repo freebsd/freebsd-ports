@@ -18,7 +18,7 @@
  
  MOTIFDEPS = $(DEPXMLIB) $(DEPXMULIB) $(DEPXTOOLLIB) $(DEPXLIB)
 -MOTIFLIBS = $(MOTIF) $(XMULIB) $(XTOOLLIB) $(XLIB)
-+# MOTIFLIBS = $(MOTIF) $(XMULIB) $(XTOOLLIB) $(XLIB)
++MOTIFLIBS = $(MOTIFLIB) $(XTOOLONLYLIB) $(XONLYLIB)
  SYS_LIBRARIES = -lm
  CDEBUGFLAGS = 
  
@@ -32,20 +32,15 @@
  SRCS = SciPlot.c SciPlotUtil.c xyplot.c realtime.c
  HDRS = SciPlot.h SciPlotP.h SciPlotUtil.h
  OBJS = $(SRCS:.c=.o)
-@@ -54,10 +58,10 @@
+@@ -54,7 +58,7 @@
  	$(HDOC) $*.hdoc > $*.html
  
  
 -AllTarget(sciplot realtime)
 +AllTarget(sciplot realtime libs)
  
--NormalProgramTarget(sciplot,$(PLOTOBJS),$(MOTIFDEPS),$(MOTIFLIBS),$(SYS_LIBRARIES))
--NormalProgramTarget(realtime,$(RTOBJS),$(MOTIFDEPS),$(MOTIFLIBS),$(SYS_LIBRARIES))
-+NormalProgramTarget(sciplot,$(PLOTOBJS),$(MOTIFDEPS),$(MOTIFLIB),$(SYS_LIBRARIES))
-+NormalProgramTarget(realtime,$(RTOBJS),$(MOTIFDEPS),$(MOTIFLIB),$(SYS_LIBRARIES))
- 
- doc:	$(HOBJS) $(HDOC)
- 	@echo "Updated html."
+ NormalProgramTarget(sciplot,$(PLOTOBJS),$(MOTIFDEPS),$(MOTIFLIBS),$(SYS_LIBRARIES))
+ NormalProgramTarget(realtime,$(RTOBJS),$(MOTIFDEPS),$(MOTIFLIBS),$(SYS_LIBRARIES))
 @@ -79,9 +83,16 @@
  	tar cfv $(TARFILE).tar $(TARFILES)
  	compress $(TARFILE).tar
@@ -54,7 +49,7 @@
 +	$(AR) $(LIBNAME).a $(WIDGET).o $(WIDGET)Util.o
 +	$(RANLIB) $(LIBNAME).a
 +	$(CC) $(SHLIBLDFLAGS) -o $(SONAME).$(SONUM) $(WIDGET).o $(WIDGET)Util.o	\
-+		$(LDFLAGS) $(MOTIFLIB) $(LDLIBS)
++		$(LDFLAGS) $(MOTIFLIBS) $(LDLIBS)
 +
  # Dependencies:
  
