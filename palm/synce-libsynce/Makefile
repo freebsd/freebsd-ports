@@ -18,7 +18,7 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
-USES=		pathfix iconv
+USES=		pathfix iconv pkgconfig
 CONFIGURE_ARGS+=	--with-libiconv-prefix="${LOCALBASE}" \
 			--enable-dccm-file-support=no \
 			--enable-hal-support=yes \
