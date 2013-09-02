@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	WWW-OpenSearch
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sahil@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Search A9 OpenSearch compatible engines
 
 RUN_DEPENDS=	p5-URI-Template>=0:${PORTSDIR}/net/p5-URI-Template \
