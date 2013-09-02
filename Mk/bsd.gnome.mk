@@ -70,7 +70,7 @@ Gnome_Pre_Include=			bsd.gnome.mk
 # non-version specific components
 _USE_GNOME_ALL= esound intlhack intltool introspection ltasneededhack lthack \
 		ltverhack gnomehack referencehack gnomehier gnomemimedata \
-		gnomeprefix pkgconfig
+		gnomeprefix
 
 # GNOME 1 components
 _USE_GNOME_ALL+= bonobo gconf gdkpixbuf glib12 \
@@ -515,10 +515,6 @@ gtksourceview2_USE_GNOME_IMPL=gtk20 libxml2
 gtksourceview3_LIB_DEPENDS=	gtksourceview-3.0.0:${PORTSDIR}/x11-toolkits/gtksourceview3
 gtksourceview3_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtksoureview-3.0.pc
 gtksourceview3_USE_GNOME_IMPL=	gtk30 libxml2
-
-pkgconfig_DETECT=		${LOCALBASE}/bin/pkgconf
-pkgconfig_BUILD_DEPENDS=	pkgconf:${PORTSDIR}/devel/pkgconf
-pkgconfig_RUN_DEPENDS=		pkgconf:${PORTSDIR}/devel/pkgconf
 
 libgsf_LIB_DEPENDS=		gsf-1.114:${PORTSDIR}/devel/libgsf
 libgsf_DETECT=			${LOCALBASE}/libdata/pkgconfig/libgsf-1.pc
