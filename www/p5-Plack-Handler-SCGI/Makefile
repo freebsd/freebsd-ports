@@ -20,7 +20,8 @@ RUN_DEPENDS=	\
 	p5-Try-Tiny>=0.04:${PORTSDIR}/lang/p5-Try-Tiny
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Plack::Handler::SCGI.3
 

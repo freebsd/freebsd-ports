@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Mojolicious>=1.80:${PORTSDIR}/www/p5-Mojolicious \
 		p5-YAML-Tiny>=1.51:${PORTSDIR}/textproc/p5-YAML-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Mojolicious::Plugin::YamlConfig.3
 

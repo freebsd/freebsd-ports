@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-HTML-Template>0:${PORTSDIR}/www/p5-HTML-Template
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Catalyst::Helper::View::HTML::Template.3 \
 		Catalyst::View::HTML::Template.3
