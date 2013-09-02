@@ -21,8 +21,7 @@ USE_BZIP2=	yes
 LIB_DEPENDS=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		popt:${PORTSDIR}/devel/popt
 
-USES=		bison pathfix gettext
-USE_GMAKE=	yes
+USES=		bison pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix intlhack gnomehier glib20 pango libxml2 \
 		libartlgpl2 ltverhack
 USE_LDCONFIG=	yes

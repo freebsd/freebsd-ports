@@ -26,7 +26,7 @@ USERS?=		${PORTNAME}
 GROUPS?=	${USERS}
 
 USE_GNOME+=	ltverhack glib20 intltool
-USES=		gettext gmake pathfix
+USES=		gettext gmake pathfix pkgconfig
 USE_GNOME_SUBR=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

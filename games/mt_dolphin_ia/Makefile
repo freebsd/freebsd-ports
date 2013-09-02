@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mt_dolphin_ia
-# Date created:		Sun 7 mar 2004
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=		mt_dolphin_ia
 PORTVERSION=		0.1.98
@@ -17,6 +13,7 @@ COMMENT=		A basic AI for MaitreTarot, a Tarot card game
 
 LIB_DEPENDS=		mt_client.0:${PORTSDIR}/games/libmt_client
 
+USES=			pkgconfig
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
 USE_GNOME=		glib20 libxml2

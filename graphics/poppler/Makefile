@@ -18,7 +18,7 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		lcms2:${PORTSDIR}/graphics/lcms2
 RUN_DEPENDS=	poppler-data>0:${PORTSDIR}/graphics/poppler-data
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gnomehack libxml2 ltverhack
 USE_AUTOTOOLS=	libtool
 MAKE_JOBS_UNSAFE=	yes

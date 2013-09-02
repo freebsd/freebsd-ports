@@ -18,9 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/girepository-1.0/GObject-2.0.typelib:${PORTSDIR}/d
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack ltverhack glib20
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
