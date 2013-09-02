@@ -17,9 +17,8 @@ BUILD_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hic
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix
+USES=		pathfix gmake pkgconfig
 USE_GNOME=	intlhack
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
