@@ -12,7 +12,7 @@ COMMENT=	A puzzle game where the goal is to push over all dominoes
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_SDL=	sdl mixer ttf
 USE_LUA=	5.1
 CPPFLAGS+=	-I${LOCALBASE}/include
