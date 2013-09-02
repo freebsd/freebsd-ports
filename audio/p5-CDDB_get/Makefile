@@ -12,6 +12,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	High-level interface to the Compact Disc Database
 
+LICENSE=	GPLv2
+
+PORTSCOUT=	skipv:2.28.1
+
 USES=		perl5
 USE_PERL5=	configure
 
