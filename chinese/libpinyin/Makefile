@@ -13,11 +13,10 @@ MAN1=		libpinyin.1 gen_binary_files.1 gen_unigram.1 \
 		import_interpolation.1
 
 USE_BDB=	yes
-USE_GNOME=	glib20 gnomehack pkgconfig
-USES=		gettext
+USE_GNOME=	glib20
+USES=		gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=CPPFLAGS="-I${LOCALBASE}/include \
