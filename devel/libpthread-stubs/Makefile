@@ -10,7 +10,8 @@ MASTER_SITES=	http://xcb.freedesktop.org/dist/
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	This library provides weak aliases for pthread functions
 
-USES=		gmake pathfix pkgconfig
+USES=		gmake pkgconfig
+USE_GNOME=	gnomehack
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 
