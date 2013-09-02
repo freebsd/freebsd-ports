@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Data::UUID
-# Date created:		28 Jan 2002
-# Whom:			Sergey Skvortsov <skv@FreeBSD.org>
-#
+# Created by: Sergey Skvortsov <skv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-UUID
 PORTVERSION=	1.219
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate Globally/Universally Unique Identifiers (GUIDs/UUIDs)
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	</dev/null
 
 MAN3=		Data::UUID.3
