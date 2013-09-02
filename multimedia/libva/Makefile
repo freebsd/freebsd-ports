@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_XORG=	glproto pciaccess xext xfixes 
 USE_GL=		gl
