@@ -17,13 +17,12 @@ LIB_DEPENDS+=	ming:${PORTSDIR}/graphics/ming \
 		png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		iconv:${PORTSDIR}/converters/libiconv \
 		expat:${PORTSDIR}/textproc/expat2 \
 		pcre:${PORTSDIR}/devel/pcre \
 		drm:${PORTSDIR}/graphics/libdrm
 
 USE_ZIP=	yes
-USES=		gettext
+USES=		gettext iconv
 USE_GNOME=	glib20
 USE_QT4=	gui moc_build qmake_build rcc_build xml_build opengl_build
 USE_XORG=	xi xrender xrandr xfixes xcursor xinerama xext x11 xau xdmcp \
