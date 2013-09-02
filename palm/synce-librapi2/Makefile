@@ -19,7 +19,7 @@ CONFLICTS=	popular-[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
-USES=		pathfix iconv
+USES=		pathfix iconv pkgconfig
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-libiconv="${LOCALBASE}" \
 			--with-libsynce="${LOCALBASE}"
