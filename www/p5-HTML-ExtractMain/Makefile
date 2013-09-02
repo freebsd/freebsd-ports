@@ -24,7 +24,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-File-Slurp>=9999.12:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-HTML-Format>=2.04:${PORTSDIR}/textproc/p5-HTML-Format
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	HTML::ExtractMain.3
 

@@ -11,7 +11,8 @@ COMMENT=	Perl module for URL-encoding strings and hashes
 
 RUN_DEPENDS=	p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CGI::Enurl.3
 

@@ -25,7 +25,8 @@ TEST_DEPENDS=	p5-AnyEvent>=5.26.1:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-Test-LeakTrace>=0.13:${PORTSDIR}/devel/p5-Test-LeakTrace \
 		p5-Test-TCP>=1.12:${PORTSDIR}/devel/p5-Test-TCP
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		feersum.1
 MAN3=		Feersum.3 \

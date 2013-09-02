@@ -17,7 +17,7 @@ MAINTAINER=	kerndtr@kerndt.com
 COMMENT=	WWW front end for mail archives
 
 USE_BZIP2=	Yes
-USE_PERL5=	Yes
+USES=		perl5
 NO_BUILD=	Yes
 
 MAN1=	mhonarc.1 mha-dbedit.1 mha-dbrecover.1 mha-decode.1

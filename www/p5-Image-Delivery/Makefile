@@ -23,7 +23,8 @@ BUILD_DEPENDS=	p5-Test-ClassAPI>=1.04:${PORTSDIR}/devel/p5-Test-ClassAPI \
 		p5-Params-Coerce>=0.13:${PORTSDIR}/devel/p5-Params-Coerce
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Image::Delivery.3 Image::Delivery::Provider.3
 
