@@ -16,12 +16,11 @@ COMMENT=	DVI previewer for the X Window System
 
 CONFLICTS=	teTeX-*
 
-USES=		gmake imake
+USES=		gmake imake:notall
 USE_XORG=	ice sm x11 xaw xext xmu xt xpm
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PLIST_SUB=	LOCALBASE=${LOCALBASE}
-XMKMF=		xmkmf
 .if defined(PACKAGE_BUILDING)
 SCRIPTS_ENV=	PACKAGE_BUILDING=${PACKAGE_BUILDING}
 .else

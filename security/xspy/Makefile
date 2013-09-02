@@ -11,9 +11,8 @@ MAINTAINER=	onatan@gmail.com
 COMMENT=	A utility for monitoring keystrokes on remote X servers
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USES=		imake
+USES=		imake:notall
 USE_XORG=	x11
-XMKMF=		xmkmf
 
 ALL_TARGET=	xspy
 

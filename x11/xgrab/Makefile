@@ -15,13 +15,11 @@ COMMENT=	X11 image grabber
 
 BUILD_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
 
-USES=		display:build imake
+USES=		display:build imake:notall
 USE_XORG=	x11
 
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
 		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  -f
-# "make depend" blows up
-XMKMF=		xmkmf
 CFLAGS+=	-Wno-error=return-type
 
 MAN1=		xgrab.1 xgrabsc.1

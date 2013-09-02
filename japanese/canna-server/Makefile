@@ -19,7 +19,6 @@ USES=		imake
 USE_GCC=	any
 USE_RC_SUBR=	canna
 USE_BZIP2=	yes
-ALL_TARGET=	canna
 INSTALL_TARGET=	instserver instclient
 PLIST_SUB=	METAFILE="${METAFILE}" \
 		MTREE_CMD="${MTREE_CMD}"
@@ -45,9 +44,6 @@ MLINKS= uilib.3 XKanjiControl.3 uilib.3 XLookupKanjiString.3 uilib.3	\
 	jrKanjiControl.3 uilib.3 jrKanjiString.3
 
 METAFILE=	${DATADIR_REL}/canna-server-dic.meta
-
-post-configure:
-	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF}
 
 post-install:
 	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install.man

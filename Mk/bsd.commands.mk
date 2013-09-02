@@ -97,7 +97,7 @@ UNMAKESELF_CMD?=	${LOCALBASE}/bin/unmakeself
 UNZIP_CMD?=	${LOCALBASE}/bin/unzip
 WHICH?=		/usr/bin/which
 XARGS?=		/usr/bin/xargs
-XMKMF?=		${LOCALBASE}/bin/xmkmf -a
+XMKMF?=		${LOCALBASE}/bin/xmkmf
 YACC?=		/usr/bin/yacc
 
 XZ?=	-Mmax
