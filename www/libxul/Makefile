@@ -29,7 +29,7 @@ WANT_PERL=	yes
 ALL_TARGET=	default
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		pkgconfig gmake
 USE_GL=		gl
 MAKE_ENV=	SKIP_GRE_REGISTRATION=1 mozappdir=${PREFIX}/lib/${MOZILLA}
 LDFLAGS+=	-Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}

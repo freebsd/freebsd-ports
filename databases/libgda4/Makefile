@@ -24,8 +24,7 @@ LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
 		json-glib-1.0:${PORTSDIR}/devel/json-glib
 
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
-USES=		pathfix gettext
+USES=		pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix glib20 libxslt intlhack referencehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

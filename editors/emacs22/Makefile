@@ -28,7 +28,7 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-23.* emacs-24.* \
 
 EMACS_VER=	22.3
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 
 .if !defined(WITHOUT_X11)
 .if !defined(WITHOUT_GTK)

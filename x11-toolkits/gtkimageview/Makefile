@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtkimageview
-# Date created:		1 August 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gtkimageview
 PORTVERSION=	1.6.4
@@ -17,6 +13,7 @@ COMMENT=	Simple image viewer widget
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
+USES=		pkgconfig
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 

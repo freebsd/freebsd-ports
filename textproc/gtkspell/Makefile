@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gtkspell2
-# Date created:				19 Aug 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/textproc/gtkspell/Makefile,v 1.2 2006/09/10 00:51:13 mezz Exp $
-#
 
 PORTNAME=	gtkspell
 PORTVERSION=	2.0.16
@@ -20,9 +16,8 @@ COMMENT=	A GTK+ 2 spell checking component
 
 LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant
 
-USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20 intlhack
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include

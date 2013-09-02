@@ -16,10 +16,9 @@ COMMENT=	Theme engine for the GTK+-2.0 toolkit
 
 CONFLICTS=	gtk-smooth-engine-[0-9]* clearlooks-[0-9]*
 
-USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gtk20 intlhack ltasneededhack
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
