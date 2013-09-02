@@ -10,15 +10,16 @@ DISTNAME=	wspace-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	llwang@infor.org
-COMMENT=	An interpreter for the Whitespace programming language
+COMMENT=	Interpreter for the Whitespace programming language
 
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		ffi.6:${PORTSDIR}/devel/libffi
-USE_PERL5_BUILD=	5.8+
 
+USES=		perl5
+USE_PERL5=	build
 WRKSRC=	${WRKDIR}/WSpace
 USE_GMAKE=	yes
 ALL_TARGET=	${TARGET}
