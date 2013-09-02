@@ -3,6 +3,7 @@
 
 PORTNAME=	hashtypes
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	databases security
 MASTER_SITES=	http://api.pgxn.org/dist/hashtypes/${PORTVERSION}/ \
 		http://oss-files.dreamindustries.co/mirror/
@@ -14,6 +15,11 @@ USE_PGSQL=	yes
 USE_GMAKE=	yes
 USE_ZIP=	yes
 
-MAKE_ARGS=	USE_PGXS=1
+MAKE_ARGS=	USE_PGXS=1 MODULEDIR=extension
+MODULEDIR=	${PREFIX}/share/postgresql/extension
+
+post-install:
+	@[ -f ${MODULEDIR}/${PORTNAME}.control ] || \
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.control ${MODULEDIR}
 
 .include <bsd.port.mk>
