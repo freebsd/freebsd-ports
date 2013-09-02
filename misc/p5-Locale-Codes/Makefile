@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl5 module providing access to ISO3166 and ISO639 Country Codes
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Locale::Codes.3 Locale::Codes::API.3 Locale::Codes::Changes.3 \
 	Locale::Codes::Constants.3 Locale::Codes::Country.3 \

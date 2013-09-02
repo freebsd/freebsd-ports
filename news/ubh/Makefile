@@ -22,7 +22,7 @@ RUN_DEPENDS=	\
 	p5-String-CRC32>=0:${PORTSDIR}/devel/p5-String-CRC32
 
 NO_BUILD=	YES
-USE_PERL5=	YES
+USES=		perl5
 
 pre-patch:
 	@${MV} ${WRKSRC}/ubh ${WRKSRC}/ubh.old

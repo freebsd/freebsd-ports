@@ -21,7 +21,7 @@ BUILD_DEPENDS=		${LOCALBASE}/news/bin/innconfval:${PORTSDIR}/news/inn
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
-USE_PERL5=		yes
+USES=		perl5
 MAKE_JOBS_UNSAFE=	yes
 
 SPOOLDIR?=/var/spool/fido/gate

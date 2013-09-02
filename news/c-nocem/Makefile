@@ -22,7 +22,7 @@ CNEWS_PORT?=	news/cnews
 CNEWSWRK?=	${WRKDIRPREFIX}${.CURDIR}/../../${CNEWS_PORT}/work
 NEWSBIN?=	${PREFIX}/libexec/cnews
 USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-cnews=${CNEWSWRK}
 PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=${PREFIX}/==}

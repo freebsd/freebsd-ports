@@ -15,7 +15,7 @@ CONFLICTS=	husky-hpt-[0-9]*
 
 .if !defined(WITHOUT_PERL)
 MAKE_ARGS+=	PERL=1
-USE_PERL5=	yes
+USES=		perl5
 .else
 MAKE_ARGS+=	PERL=0
 .endif

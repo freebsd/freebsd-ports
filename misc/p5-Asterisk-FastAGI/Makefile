@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Module-Install>=0:${PORTSDIR}/devel/p5-Module-Install \
 RUN_DEPENDS=	p5-Asterisk>=0:${PORTSDIR}/misc/p5-Asterisk \
 		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Asterisk::FastAGI.3
 

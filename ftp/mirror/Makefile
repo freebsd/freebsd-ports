@@ -31,7 +31,7 @@ PLIST_FILES=	bin/mirror \
 
 PLIST_DIRS=	lib/mirror
 
-USE_PERL5=	yes
+USES=		perl5
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 MAN1=		mirror.1 mirror-master.1

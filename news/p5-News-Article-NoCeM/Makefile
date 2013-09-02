@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-News-Article>=0:${PORTSDIR}/news/p5-News-Article \
 		p5-PGP-Sign>=0:${PORTSDIR}/security/p5-PGP-Sign
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		News::Article::NoCeM.3
 

@@ -26,7 +26,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 .endif
 
-USE_PERL5=	yes
+USES=		perl5
 
 NO_BUILD=	yes
 HAS_CONFIGURE=	yes
