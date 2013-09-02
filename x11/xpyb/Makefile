@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-proto.pc:${PORTSDIR}/x11/xcb-p
 USE_BZIP2=	yes
 USE_PYTHON=	2.5+
 USE_XORG=	xcb
-USES=	pathfix
+USES=	pathfix pkgconfig
 PORTDOCS=	README COPYING INSTALL NEWS XcbPythonBinding.txt
 
 GNU_CONFIGURE=	yes
