@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Rawstudio
-# Date created:				2008-04-23
-# Whom:					Alex Samorukov <samm@os2.kiev.ua>
-#
+# Created by: Alex Samorukov <samm@os2.kiev.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	rawstudio
 PORTVERSION=	2.0
@@ -31,7 +27,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext pkgconfig
 USE_GNOME=	gtk20 libxml2 gconf2 desktopfileutils gnomehack
 USE_SQLITE=	3
 USE_LDCONFIG=	yes

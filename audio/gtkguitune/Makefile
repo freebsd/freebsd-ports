@@ -15,6 +15,7 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 

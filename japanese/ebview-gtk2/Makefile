@@ -14,6 +14,7 @@ LIB_DEPENDS=	eb:${PORTSDIR}/japanese/eb
 
 CONFLICTS=	ja-ebview-0*
 
+USES=		pkgconfig
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
