@@ -20,7 +20,8 @@ RUN_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-HTTP-Cookies>=6:${PORTSDIR}/www/p5-HTTP-Cookies \
 		p5-libwww>=5.829:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Reddit.3
 

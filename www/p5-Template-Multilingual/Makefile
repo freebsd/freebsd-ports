@@ -16,7 +16,8 @@ COMMENT=	Multilingual templates for Template Toolkit
 
 RUN_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Template::Multilingual.3 \
 		Template::Multilingual::Parser.3

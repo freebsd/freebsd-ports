@@ -17,7 +17,8 @@ BUILD_DEPENDS=	\
 	${RUN_DEPENDS} \
 	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	FurlX::Coro.3 \
 	FurlX::Coro::HTTP.3

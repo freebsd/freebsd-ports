@@ -17,7 +17,8 @@ RUN_DEPENDS=	p5-Net-CIDR-Lite>=0:${PORTSDIR}/net/p5-Net-CIDR-Lite \
 		p5-URI-Find>=0:${PORTSDIR}/textproc/p5-URI-Find \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		blogspam.1
 MAN3=		Blog::Spam::API.3 \
