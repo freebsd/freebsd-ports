@@ -3,6 +3,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	${BINUTILVERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
@@ -15,14 +16,12 @@ COMMENT=	GNU Binutils for Windows cross-development
 BINUTILVERSION=	2.23.1
 
 USE_BZIP2=	yes
-USE_GCC=	any
-USE_GMAKE=	yes
-USES=		iconv
+USES=		gmake iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--with-gcc --with-gnu-ld --with-gnu-as \
 		--disable-nls --disable-win32-registry \
-		--disable-shared
+		--disable-shared --disable-werror
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 
 MAN1=	${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}ar.1    \
