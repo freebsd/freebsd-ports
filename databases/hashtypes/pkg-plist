@@ -1,5 +1,6 @@
 lib/postgresql/hashtypes.so
-share/doc/postgresql/contrib/README.hashtypes
-share/postgresql/contrib/hashtypes--0.1.1.sql
-@dirrmtry share/postgresql/contrib
-@dirrmtry share/doc/postgresql/contrib
+share/doc/postgresql/extension/README.hashtypes
+share/postgresql/extension/hashtypes--0.1.1.sql
+share/postgresql/extension/hashtypes.control
+@dirrmtry share/postgresql/extension
+@dirrmtry share/doc/postgresql/extension
