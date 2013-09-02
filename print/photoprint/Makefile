@@ -23,7 +23,7 @@ LIB_DEPENDS=	cups:${PORTSDIR}/print/cups-client \
 		tiff:${PORTSDIR}/graphics/tiff
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext
+USES=		desktop-file-utils gettext pkgconfig
 USE_GNOME=	pango
 USE_XORG=	x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender
