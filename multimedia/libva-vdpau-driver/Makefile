@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libva.pc:${PORTSDIR}/multimedia/li
 
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake pkgconfig
 USE_GL=		gl
 
 GNU_CONFIGURE=	yes

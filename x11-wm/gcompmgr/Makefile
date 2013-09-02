@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gcompmgr
-# Date created:				6 Feb 2006
-# Whom:					UMENO Takashi
-#
+# Created by: UMENO Takashi
 # $FreeBSD$
-#
 
 PORTNAME=	gcompmgr
 PORTVERSION=	0.21
@@ -18,6 +14,7 @@ RUN_DEPENDS=	xcompmgr:${PORTSDIR}/x11-wm/xcompmgr
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_AUTOTOOLS=	automake:env
 
 DESKTOP_ENTRIES="gcompmgr" \

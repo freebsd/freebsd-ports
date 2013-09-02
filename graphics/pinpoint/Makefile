@@ -20,7 +20,7 @@ USE_GL=		gl
 USE_GMAKE=	yes
 USE_GNOME=	librsvg2
 GNU_CONFIGURE=	yes
-USES=	pathfix
+USES=	pathfix pkgconfig
 
 OPTIONS_DEFINE=	GST
 GST_DESC=	Live videos as slide backgrounds
