@@ -1,28 +1,7 @@
-bin/lightningize
-include/lightning/asm-common.h
-include/lightning/asm.h
-include/lightning/core-common.h
-include/lightning/core.h
-include/lightning/fp-common.h
-include/lightning/fp.h
-include/lightning/funcs-common.h
-include/lightning/funcs.h
-include/lightning/i386/asm.h
-include/lightning/i386/core.h
-include/lightning/i386/fp.h
-include/lightning/i386/funcs.h
-include/lightning/ppc/asm.h
-include/lightning/ppc/core.h
-include/lightning/ppc/fp.h
-include/lightning/ppc/funcs.h
-include/lightning/sparc/asm.h
-include/lightning/sparc/core.h
-include/lightning/sparc/fp.h
-include/lightning/sparc/funcs.h
-share/aclocal/lightning.m4
-%%DATADIR%%/Makefile.am
-@dirrm %%DATADIR%%
-@dirrm include/lightning/sparc
-@dirrm include/lightning/ppc
-@dirrm include/lightning/i386
+include/lightning.h
+include/lightning/jit_%%JIT_ARCH%%.h
+lib/liblightning.a
+lib/liblightning.la
+lib/liblightning.so
+lib/liblightning.so.0
 @dirrm include/lightning
