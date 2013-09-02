@@ -23,7 +23,7 @@ RECURR_DESC=	Enable experimential recurrence support
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USES=		pathfix iconv
+USES=		pathfix pkgconfig iconv
 CONFIGURE_ARGS+=	--with-libsynce="${LOCALBASE}" \
 			--with-libmimedir="${LOCALBASE}"
 
