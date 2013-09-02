@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gcb
-# Date Created:				30 January 2006
-# Whom:					Nosov Artem <chip-set@mail.ru>
-#
+# Created by: Nosov Artem <chip-set@mail.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	gcb
 PORTVERSION=	0.2.8
@@ -16,6 +12,7 @@ MAINTAINER=	chip-set@mail.ru
 COMMENT=	A GTK+ tool for managing x11 cut-buffers
 
 HAS_CONFIGURE=	yes
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 

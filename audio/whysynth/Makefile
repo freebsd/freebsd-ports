@@ -21,7 +21,7 @@ LIB_DEPENDS=	dssialsacompat:${PORTSDIR}/audio/libdssialsacompat \
 		fftw3:${PORTSDIR}/math/fftw3 \
 		fftw3f:${PORTSDIR}/math/fftw3-float
 
-USES=		gmake
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	libtool

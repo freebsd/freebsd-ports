@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xwota
-# Date created:				September 13 2006
-# Whom:					Diane Bruce <db@db.net>
-#
+# Created by: Diane Bruce <db@db.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xwota
 PORTVERSION=	0.4
@@ -16,8 +12,8 @@ MASTER_SITE_SUBDIR=	db
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	X version of who is on the air
 
+USES=		gmake pkgconfig
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 

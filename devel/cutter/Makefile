@@ -16,8 +16,7 @@ LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-gtk-doc-html --with-html-dir=${PREFIX}/share/doc
 GNU_CONFIGURE=	yes
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake pkgconfig
 USE_GNOME=	intltool gnomehack glib20 gtk20
 USE_LDCONFIG=	yes
 WANT_GSTREAMER=	yes

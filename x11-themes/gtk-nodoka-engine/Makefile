@@ -15,7 +15,7 @@ ANIMATION_DESC=		Animation support
 ANIMATIONTOLEFT_DESC=	Animation from right to left
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 

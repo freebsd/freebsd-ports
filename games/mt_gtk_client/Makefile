@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mt_gtk_client
-# Date created:		Sun 7 mar 2004
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=		mt_gtk_client
 PORTVERSION=		0.1.98
@@ -20,7 +16,7 @@ RUN_DEPENDS=		${LOCALBASE}/share/cardpics/images/78.png:${PORTSDIR}/games/cardpi
 
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
-USES=		gettext
+USES=		gettext pkgconfig
 USE_GNOME=		glib20 gtk20 libxml2
 
 .if !defined(WITHOUT_SERVER)

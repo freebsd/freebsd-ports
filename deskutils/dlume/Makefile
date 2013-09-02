@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_TUCOWS}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 address book
 
-USES=        pathfix
+USES=        pathfix pkgconfig
 USE_GNOME=	gnomeprefix gtk20 libxml2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

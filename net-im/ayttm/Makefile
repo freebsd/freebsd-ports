@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 USE_XORG=	xpm xscrnsaver
 USE_GNOME=	gtk20
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	libltdl libtool
 CONFIGURE_ARGS=	--enable-oscar --disable-workwizu --enable-smtp --enable-lj \
 		--disable-arts
