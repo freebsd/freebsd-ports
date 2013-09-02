@@ -15,7 +15,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS+=	mpdclient.2:${PORTSDIR}/audio/libmpdclient
 
 USE_BZIP2=	yes
-USE_GNOME=	glib20 pkgconfig
+USES=		pkgconfig
+USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	mpdscribble
 

@@ -19,17 +19,17 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	NLS
 
-.include <bsd.port.options.mk>
-
 USE_GNOME=	gtk20 intltool libglade2
 USE_BZIP2=	yes
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake pkgconfig
 
 MAN1=		gimmix.1
 
 CONFIGURE_ENV=	DATADIRNAME=share
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 CPPFLAGS+=	-I${LOCALBASE}/include

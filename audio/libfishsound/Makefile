@@ -20,7 +20,7 @@ LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 OPTIONS_DEFINE=	DOCS DOXYGEN
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USES=		pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>

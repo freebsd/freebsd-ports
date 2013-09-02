@@ -1,9 +1,5 @@
-# New ports collection makefile for:	liboggz
-# Date created:		08 October 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created  by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	liboggz
 DISTVERSION=	1.1.1
@@ -18,7 +14,7 @@ COMMENT=	Simple Ogg API
 LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	pkgconfig
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE} --program-transform-name=""

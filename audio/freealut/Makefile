@@ -14,8 +14,7 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		gmake
-USE_GNOME=	pkgconfig gnomehack
+USES=		gmake pathfix pkgconfig
 USE_OPENAL=	al
 USE_LDCONFIG=	yes
 

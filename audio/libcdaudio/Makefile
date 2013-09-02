@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libcdaudio
-# Date created:		01 June 1999
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libcdaudio
 PORTVERSION=	0.99.12p2
@@ -15,7 +11,7 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A library for playing audio CDs
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack pkgconfig
+USES=		pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

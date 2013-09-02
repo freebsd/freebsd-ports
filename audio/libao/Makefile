@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libao
-# Date created:				18 October 2000
-# Whom:					t.vanklaveren@student.utwente.nl
-#
+# Created by: t.vanklaveren@student.utwente.nl
 # $FreeBSD$
-#
 
 PORTNAME=	libao
 PORTVERSION=	1.1.0
@@ -16,7 +12,7 @@ COMMENT=	Portable audio output library
 
 USE_AUTOTOOLS=	libtool
 WANT_GNOME=	yes
-USE_GNOME=	gnomehack pkgconfig
+USES=		pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-arts

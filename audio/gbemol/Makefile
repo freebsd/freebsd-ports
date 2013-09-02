@@ -15,7 +15,7 @@ LIB_DEPENDS=	mpd.4:${PORTSDIR}/audio/libmpd \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 
 post-patch:
