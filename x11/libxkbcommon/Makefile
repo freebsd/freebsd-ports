@@ -5,7 +5,7 @@ PORTVERSION=	0.3.1
 CATEGORIES=	x11
 MASTER_SITES=	http://xkbcommon.org/download/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Keymap handling library for toolkits and window systems
 
 LICENSE=	MIT
