@@ -1,9 +1,5 @@
-# New ports collection makefile for:    yersinia
-# Date created:         Sun Jul 24 10:43:13 CEST 2005
-# Whom:                 se
-#
+# Created by: se
 # $FreeBSD$
-#
 
 PORTNAME=	yersinia
 PORTVERSION=	0.7.1
@@ -22,7 +18,8 @@ WITH_GTK=	true
 .endif
 .endif
 .if defined(WITH_GTK)
-USE_GNOME+=	pkgconfig gtk20
+USES=		pkgconfig
+USE_GNOME+=	gtk20
 PKGNAMESUFFIX=	-gtk
 CONFLICTS=	yersinia-[0-9]*
 .else
