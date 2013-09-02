@@ -14,8 +14,7 @@ COMMENT=	Sybase/Microsoft TDS protocol library
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 TDS_VER?=	5.0
-USES=		iconv
-USE_GMAKE=	yes
+USES=		gmake iconv pkgconfig
 GNU_GONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:env libtool
 CPPFLAGS+=	"-I${LOCALBASE}/include"

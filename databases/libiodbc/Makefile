@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libiodbc
-# Date created:				24 Mar 2000
-# Whom:					erikhb@bgnett.no
-#
+# Created by: erikhb@bgnett.no
 # $FreeBSD$
-#
 
 PORTNAME=	libiodbc
 PORTVERSION=	3.52.8
@@ -20,7 +16,7 @@ LICENSE_FILE_LGPL20=	${WRKSRC}/LICENSE.LGPL
 
 CONFLICTS=	unixODBC-[0-9]*
 
-USE_GNOME=	gnomehack pkgconfig
+USES=		pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-iodbc-inidir=${ETCDIR}
 USE_LDCONFIG=	yes
