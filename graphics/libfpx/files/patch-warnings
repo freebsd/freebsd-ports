@@ -1,0 +1,479 @@
+--- basics/filename.cpp	2013-09-01 20:54:18.000000000 -0400
++++ basics/filename.cpp	2013-09-01 21:00:22.000000000 -0400
+@@ -430,12 +430,13 @@
+ #else
+   struct statfs buf;
+-  int errNum=0, fstyp;
++  int errNum;
+   /* Get file system stats */
+-  fstyp=0;
+ #ifdef __SVR4 // FIXME: statfs is not a portable API
+-  errNum = statfs ( ".", &buf, sizeof( struct statfs ), fstyp);
++  errNum = statfs ( ".", &buf, sizeof( struct statfs ), 0);
+ #else
+   errNum = statfs ( ".", &buf);
+ #endif
++  if (errNum)
++	perror("statfs on current directory");
+ 
+   return (buf.f_bsize*buf.f_bfree)/kOneKilobyte;
+--- basics/a_file.cpp	2005-02-25 21:23:03.000000000 -0500
++++ basics/a_file.cpp	2013-09-01 21:05:29.000000000 -0400
+@@ -259,8 +259,7 @@
+   // remove access path from name
+   long index = 0;
+-  while (cname[i] != '\0') {
++  for (i = 0; cname[i] != '\0'; i++) {
+     if (cname[i] == ':')
+       index = i;
+-    i++;
+   }
+   if (index != 0) {
+--- ole/olecore.cpp	2007-11-02 03:10:05.000000000 -0400
++++ ole/olecore.cpp	2013-09-01 21:07:54.000000000 -0400
+@@ -154,11 +154,6 @@
+ {
+   FPXStatus terr;
+-  unsigned short errCode, errFac, errSev;
+   SCODE sCode = GetScode(err);
+ 
+-  errSev = SCODE_SEVERITY(sCode);
+-  errCode = SCODE_CODE(sCode);
+-  errFac = SCODE_FACILITY(sCode);
+-
+   switch (sCode) {
+     case S_OK:  terr = FPX_OK;
+@@ -385,13 +380,6 @@
+ {
+   OSErr terr;
+-  // DAG
+-  unsigned short errCode, errFac, errSev;
+   SCODE sCode = GetScode(err);
+ 
+-  errSev = SCODE_SEVERITY(sCode);
+-  errCode = SCODE_CODE(sCode);
+-  errFac = SCODE_FACILITY(sCode);
+-  // end DAG
+-
+   switch (sCode) {
+     case S_OK:  terr = noErr;
+--- ri_image/ptile.cpp	2007-11-02 03:10:05.000000000 -0400
++++ ri_image/ptile.cpp	2013-09-01 21:09:31.000000000 -0400
+@@ -776,5 +776,5 @@
+   PTile *currTile = first;
+   PTile *nextTile = currTile->next;
+-  time_t  ancientTime, timeNow;
++  time_t  ancientTime;
+   
+   // Calculate the minimum time for the last access to the tile. If a tile
+@@ -782,8 +782,6 @@
+   //  it to be "ancient"
+ #ifdef _WINDOWS
+-  timeNow = GetCurrentTime();
+   ancientTime = GetCurrentTime() - (numMinutesOld * 60L * CLOCKS_PER_SEC);
+ #else
+-  timeNow = clock();
+   ancientTime = clock() - (numMinutesOld * 60L * CLOCKS_PER_SEC);
+ #endif
+--- fpx/f_fpxvw.cpp	2012-10-05 07:30:48.000000000 -0400
++++ fpx/f_fpxvw.cpp	2013-09-01 21:11:33.000000000 -0400
+@@ -437,5 +437,4 @@
+ PFileFlashPixView::~PFileFlashPixView ()
+ {
+-  Boolean status;
+   // CAUTION: Elements have to be deleted in the reverse order of their creation...
+ 
+@@ -443,6 +442,5 @@
+   // all ole buffers for the elements)
+   if (mode != OLE_READ_ONLY_MODE)
+-    status = Commit();
+-
++    Commit();
+ 
+   // Delete an element releases the OLE object.
+--- fpx/fpxformt.cpp	2007-11-02 03:10:05.000000000 -0400
++++ fpx/fpxformt.cpp	2013-09-01 21:15:16.000000000 -0400
+@@ -547,5 +547,4 @@
+ FPXStatus PFlashPixFile::Erreur() const
+ {
+-  long    error = 0;
+   FPXStatus   status = FPX_OK;
+ 
+@@ -563,5 +562,5 @@
+     // It's not an error not to have an Image Info property set (optionnal)
+     if (imageInfoPropertySet)
+-      error = imageInfoPropertySet->getFPXStatus();
++      status = imageInfoPropertySet->getFPXStatus();
+   }
+ 
+--- fpx/fpxlibio.cpp	2007-11-02 03:10:05.000000000 -0400
++++ fpx/fpxlibio.cpp	2013-09-01 21:21:36.000000000 -0400
+@@ -1752,6 +1752,5 @@
+   {
+     // Open the sub-storage
+-    Boolean bRes;
+-    bRes = theowningStorage->OpenStorage(
++    theowningStorage->OpenStorage(
+       (const char*) storagePathInFile,
+       &theSubStorage,
+--- oless/ascii.cxx	2005-02-25 21:23:09.000000000 -0500
++++ oless/ascii.cxx	2013-09-01 21:46:40.000000000 -0400
+@@ -112,5 +112,5 @@
+     SCODE sc;
+     olDebugOut((DEB_ITRACE, "In  CheckAName(%s)\n", pwcsName));
+-    if (FAILED(sc = ValidateNameA(pwcsName, CBMAXPATHCOMPLEN)))
++    if (FAILED(ValidateNameA(pwcsName, CBMAXPATHCOMPLEN)))
+         return sc;
+     // >= is used because the max len includes the null terminator
+@@ -142,5 +142,5 @@
+     olAssert(sizeof(STATSTG) == sizeof(STATSTGW));
+     
+-    olChk(sc = Next(celt, (STATSTGW *)rgelt, &cnt));
++    olChk(Next(celt, (STATSTGW *)rgelt, &cnt));
+     for (i = 0; i<cnt; i++)
+         if (rgelt[i].pwcsName)
+@@ -168,5 +168,5 @@
+     olAssert(sizeof(STATSTG) == sizeof(STATSTGW));
+     
+-    olChk(sc = Stat((STATSTGW *)pstatstg, grfStatFlag));
++    olChk(Stat((STATSTGW *)pstatstg, grfStatFlag));
+     if (pstatstg->pwcsName)
+         _wcstotbs(pstatstg->pwcsName, (WCHAR *)pstatstg->pwcsName,
+@@ -190,5 +190,5 @@
+     
+     // call the virtual (wide char) function
+-    olChk(sc = this->Stat((STATSTGW *)pstatstg, grfStatFlag));
++    olChk(this->Stat((STATSTGW *)pstatstg, grfStatFlag));
+ 
+     if (pstatstg->pwcsName)
+--- oless/docfile.cxx	2007-11-02 03:10:05.000000000 -0400
++++ oless/docfile.cxx	2013-09-01 21:57:30.000000000 -0400
+@@ -94,5 +94,4 @@
+     SCODE sc;
+     CFileILB *pilb = NULL;
+-    int i;
+ 
+     olDebugOut((DEB_ITRACE, "In  StgCreateDocfile(%p, %lX, %lu, %p)\n",
+@@ -124,6 +123,8 @@
+     if (pilb)
+     {
+-        if (FAILED(sc)) i=pilb->ReleaseOnError();
+-        else i=pilb->Release();
++#if DBG == 1
++        int i =
++#endif
++        FAILED(sc) ? pilb->ReleaseOnError() : pilb->Release();
+         olAssert(SUCCEEDED(sc) ? i==1 : i==0);
+     }
+@@ -182,5 +183,5 @@
+         df |= DF_INDEPENDENT;
+     olChkTo(EH_Truncate,
+-            sc = DfFromLB(plkbyt, df,
++            DfFromLB(plkbyt, df,
+                         RSF_CREATE |
+                         ((grfMode & STGM_CREATE) ? RSF_TRUNCATE : 0) |
+--- oless/expdf.cxx	2007-11-02 03:10:05.000000000 -0400
++++ oless/expdf.cxx	2013-09-01 21:59:56.000000000 -0400
+@@ -170,6 +170,8 @@
+         if (IsRoot() && P_WRITE(_df))
+         {
+-            SCODE sc;
+-            sc = _pmsBase->Flush(0);
++#if DBG == 1
++            SCODE sc =
++#endif
++            _pmsBase->Flush(0);
+ #if DBG == 1
+             if (FAILED(sc))
+--- oless/fat.cxx	2007-11-02 03:10:05.000000000 -0400
++++ oless/fat.cxx	2013-09-01 22:02:10.000000000 -0400
+@@ -405,7 +405,4 @@
+     _cfsTable = cFatSect;
+ 
+-    USHORT cbSectorSize;
+-    cbSectorSize = _pmsParent->GetSectorSize();
+-
+     _ulFreeSects = MAX_ULONG;
+ 
+--- oless/refilb.cxx	2007-11-02 03:10:05.000000000 -0400
++++ oless/refilb.cxx	2013-09-01 22:04:44.000000000 -0400
+@@ -298,7 +298,7 @@
+     if (!result)  // fill in zeros
+     {
+-        pstatstg->atime.dwLowDateTime = pstatstg->atime.dwLowDateTime = 0;
+-        pstatstg->mtime.dwLowDateTime = pstatstg->mtime.dwLowDateTime = 0;
+-        pstatstg->ctime.dwLowDateTime = pstatstg->ctime.dwLowDateTime = 0;
++        pstatstg->atime.dwLowDateTime = 0;
++        pstatstg->mtime.dwLowDateTime = 0;
++        pstatstg->ctime.dwLowDateTime = 0;
+     }
+     else
+--- oless/storage.cxx	2007-11-02 03:10:05.000000000 -0400
++++ oless/storage.cxx	2013-09-01 22:08:18.000000000 -0400
+@@ -54,5 +54,4 @@
+ {
+     SCODE sc;
+-    int i;
+ 
+     if (!pwcsName)
+@@ -73,6 +72,8 @@
+ 
+ EH_Err:
+-    if (FAILED(sc)) i=pilb->ReleaseOnError();
+-    else i=pilb->Release();
++#if DBG == 1
++    int i =
++#endif
++    FAILED(sc) ? pilb->ReleaseOnError() : pilb->Release();
+     olAssert(SUCCEEDED(sc) ? i==1 : i==0);
+     olDebugOut((DEB_TRACE,"Out StgOpenStorage: ppstgOpen=%p ret=> %lX\n",
+@@ -140,5 +141,4 @@
+ {
+     SCODE sc;
+-    int i=0;
+     CFileILB* pilb;
+ 
+@@ -149,7 +149,11 @@
+ 
+ EH_Err:
+-    if (pilb)
+-        i=pilb->Release();
+-    olAssert(i==0);  // should not have any more reference to it
++    if (pilb) {
++#if DBG == 1
++        int i =
++#endif
++        pilb->Release();
++        olAssert(i==0);  // should not have any more reference to it
++    }
+     olDebugOut((DEB_TRACE, "Out StgIsStorageFile: ret=> %lx\n", sc));
+     return ResultFromScode(sc);
+--- oless/vect.cxx	2005-02-25 21:23:11.000000000 -0500
++++ oless/vect.cxx	2013-09-01 22:14:07.000000000 -0400
+@@ -62,5 +62,5 @@
+ 
+     msfDebugOut((DEB_ITRACE,"Out CPagedVector::CPagedVector()\n"));
+-    return S_OK;
++    return sc;
+ 
+ Err:
+--- jpeg/mcu2rast.c	2005-02-25 21:23:06.000000000 -0500
++++ jpeg/mcu2rast.c	2013-09-01 22:17:29.000000000 -0400
+@@ -214,5 +214,5 @@
+   unsigned char *buf_ptr, *c2_ptr, *c3_ptr;
+   int *p1, *p2, *p3, *p4, i, j, k, t;
+-  int skip, skip2, skip_row_data, skip_row_data2;
++  int skip, skip2, skip_row_data;
+   int *mcupos;
+   int nvMCU, nhMCU;  /* number of FULL MCU vert. and hor. */
+@@ -265,5 +265,4 @@
+     skip2 = (width/2) - 8;
+     skip_row_data = 8*width; /* One row of MCUs */
+-    skip_row_data2 = 8*width/2;  /* one row of chroma blocks */
+ 
+     for (i = 0; i < nvMCU; i++) {
+@@ -326,5 +325,5 @@
+   unsigned char *buf_ptr, *c1_ptr, *c2_ptr, *c3_ptr, *c4_ptr;
+   int *p1, *p2, *p3, *p4, *p5, *p6, i, j, k, t;
+-  int skip, skip2, skip_row_data, skip_row_data2;
++  int skip, skip2, skip_row_data;
+   int *mcupos;
+   int nvMCU, nhMCU;  /* number of FULL MCU vert. and hor. */
+@@ -382,5 +381,4 @@
+     skip2 = (width/2) - 8;
+     skip_row_data = 8*width; /* One row of MCUs */
+-    skip_row_data2 = 8*width/2;  /* one row of chroma blocks */
+ 
+     for (i = 0; i < nvMCU; i++) {
+--- jpeg/encoder.h	2005-02-25 21:23:06.000000000 -0500
++++ jpeg/encoder.h	2013-09-01 22:25:58.000000000 -0400
+@@ -161,15 +161,10 @@
+ );
+ 
+-
+ /* see above */
+ JPEGEXPORT
+  int eJPEG_ConcatenateHeader( 
+-void *encoder,
+-unsigned char *hdrBuffer,/* the buffer itself */
+-long *hdrBufferUsed      /* upon return shows the amount of 
+-        hdrbuffer that was used. */
++void *encoder
+ );
+ 
+-
+ JPEGEXPORT
+  long eJPEG_EncodeTile(
+--- jpeg/public.c	2005-02-25 21:23:06.000000000 -0500
++++ jpeg/public.c	2013-09-01 22:36:15.000000000 -0400
+@@ -19,7 +19,10 @@
+ #define IMP_ENCODER
+ #include <stdlib.h>
++#include <stdio.h>
+ #include <string.h>
+ #include "jpegconf.h"
+ 
++#include "ejpeg.h"
++
+ #include "enctile.h"
+ #include "encoder.h"
+@@ -449,8 +452,5 @@
+ #define HDR_BUFF_SIZE 1440
+ int eJPEG_ConcatenateHeader(
+-void *encoder,   /* same value returned by eJPEG_Init */
+-unsigned char *hdrBuffer, /* the buffer itself */
+-long *hdrBufferUsed      /* upon return shows the amount of
+-          <hdrBuffer> that was used */
++void *encoder   /* same value returned by eJPEG_Init */
+ )
+ {
+@@ -462,5 +462,4 @@
+   ret = eJPEG_CreateHeader(encoder, HDR_BUFF_SIZE, tempBuf, &size);
+   size_minus_eoi = size-2;
+-  *hdrBufferUsed = size;
+ 
+   if(ret)
+@@ -477,6 +476,4 @@
+   }
+ 
+-  hdrBuffer = jpg->header;
+-
+   return(ret);
+ }
+@@ -584,4 +581,21 @@
+         jpg->xPixels * jpg->yPixels * jpg->bytes,
+         &finalSize);
++    switch(check) {
++    case 0:
++      break;
++    /* Actual two error-returns from JPEGEncodeTile() */
++    case EJPEG_ERROR_MEM:
++      fprintf(stderr, "libfpx: JPEGEncodeTile %s\n",
++        "complained of lack of memory");
++      return -1;
++    case EJPEG_ERROR_EOF:
++      fprintf(stderr, "libfpx: JPEGEncodeTile %s\n",
++        "complained of corrupt file");
++      return -1;
++    default:
++      fprintf(stderr, "libfpx: JPEGEncodeTile %s\n",
++        "failed unexpectedly");
++      return -1;
++    }
+ 
+     /* Are supposed to include the header in the tile */
+--- ri_image/cp_jpeg.cpp	2007-11-02 03:10:05.000000000 -0400
++++ ri_image/cp_jpeg.cpp	2013-09-01 22:43:43.000000000 -0400
+@@ -251,5 +251,5 @@
+         status = eJPEG_CreateHeader(pEncoder, DEFAULTJPEGHEADERSIZE, jpegHeader, (long *)&headerSize);  
+       else
+-        status = eJPEG_ConcatenateHeader(pEncoder, jpegHeader, (long *)&headerSize);  
++        status = eJPEG_ConcatenateHeader(pEncoder);  
+       
+       if (status) 
+--- jpeg/process.c	2007-11-02 03:10:05.000000000 -0400
++++ jpeg/process.c	2013-09-01 22:45:24.000000000 -0400
+@@ -86,10 +86,9 @@
+ SubSample422(const unsigned char *src, unsigned char *dst, int tileSize, int bpp)
+ {
+-  int x, y, blocks, acc, lineOffset;
++  int x, y, blocks, acc;
+   unsigned char *dstPtr = dst;
+   const unsigned char *p1, *p2;
+ 
+   blocks = tileSize / 2;
+-  lineOffset = tileSize * bpp;
+   for(x = 0; x < tileSize; x++)
+   {
+--- jpeg/enctile.c	2007-11-02 03:10:05.000000000 -0400
++++ jpeg/enctile.c	2013-09-01 22:46:30.000000000 -0400
+@@ -195,5 +195,5 @@
+        Some error checking should be done at the higher level.
+     */
+-  int j, i, k, nvblocks, nhblocks;
++  int j, i, k, nhblocks;
+   int t, skip;
+   /*  HANDLE lBlock; */
+@@ -204,5 +204,4 @@
+   Clear_Last_DC(jpeg_struct);
+ 
+-  nvblocks = height/8;
+   nhblocks = width/8;
+   skip = width -8;
+--- jpeg/dectile.c	2011-12-16 10:49:44.000000000 -0500
++++ jpeg/dectile.c	2013-09-01 22:55:16.000000000 -0400
+@@ -433,5 +433,8 @@
+ {
+   int marker, i = 0, ii;
+-  static int error_code, dct_method, image_found, eoi_found, is_gray_scale;
++#ifdef WARNING
++  static int eoi_found;
++#endif
++  static int error_code, dct_method, image_found, is_gray_scale;
+   static int interleave_flag;
+   static unsigned int restart_interv; /* restart interval, 0 if disabled */
+@@ -457,5 +460,7 @@
+     restart_interv = 0;
+     image_found = 0;
++#ifdef WARNING
+     eoi_found = 0;
++#endif
+     dct_method = method;
+     error_code = 0;
+@@ -480,5 +485,7 @@
+     restart_interv = 0;
+     image_found = 0;
++#ifdef WARNING
+     eoi_found = 0;
++#endif
+     dct_method = method;
+     error_code = 0;
+@@ -675,5 +682,7 @@
+         }
+ #endif /* NOCODE GSY 8/2/96 */
++#ifdef WARNING
+         eoi_found = 1;
++#endif
+         if (image_found) {
+           goto Finished;
+@@ -688,5 +697,7 @@
+         } else if ((frame == NULL) &&
+             ((marker = DP_Get_Next_Marker(db_state)) == MARKER_SOI)) {
++#ifdef WARNING
+           eoi_found = 0;
++#endif
+           goto Switch0;
+         } else {
+--- jpeg/djpeg.c	2007-11-02 03:10:05.000000000 -0400
++++ jpeg/djpeg.c	2013-09-01 22:56:51.000000000 -0400
+@@ -130,5 +130,4 @@
+   int grayscale;
+   int error_type;
+-  size_t byte_count;
+   DB_STATE *db_state;
+   DECODER_STRUCT *decodePtr = (DECODER_STRUCT *)decoder;
+@@ -165,5 +164,4 @@
+     return(error_type);
+   }
+-  byte_count = (size_t)DB_Processed_Bytes(db_state);
+ 
+   if (db_state->db_MCUbuf != NULL) {
+@@ -190,5 +188,4 @@
+   int grayscale;
+   int error_type;
+-  size_t byte_count;
+   DB_STATE *db_state;
+   DECODER_STRUCT *decodePtr = (DECODER_STRUCT *)decoder;
+@@ -232,5 +229,4 @@
+       return(error_type);
+     }
+-    byte_count = (size_t)DB_Processed_Bytes(db_state);
+ 
+     if (db_state->db_MCUbuf != NULL) {
+@@ -273,6 +269,4 @@
+     }
+ 
+-    byte_count = (size_t) DB_Processed_Bytes(db_state);
+-
+     if (db_state->db_MCUbuf != NULL) {
+       FPX_free(db_state->db_MCUbuf);

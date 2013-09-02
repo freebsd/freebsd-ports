@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libfpx
-DISTVERSION=	1.3.1-1
+DISTVERSION=	1.3.1-2
 CATEGORIES=	graphics
 MASTER_SITES=	http://imagemagick.mirrorcatalogs.com/delegates/	\
 		http://www.imagemagick.org/download/delegates/	\

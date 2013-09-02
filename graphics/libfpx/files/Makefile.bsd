@@ -4,8 +4,8 @@ SHLIB_MAJOR=	2
 SHLIB_MINOR=	7
 WARNS=	3
 
-LIBDIR	=	${LOCALBASE}/lib
-INCSDIR	=	${LOCALBASE}/include
+LIBDIR	=	${PREFIX}/lib
+INCSDIR	=	${PREFIX}/include
 INCDIR	=	${INCSDIR}		# for pre-bsd.incs.mk API
 
 NO_PROFILE=	Don't want it
