@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libopensync-plugin-python-devel
-# Date created:				16 June 2008
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libopensync-plugin-python
 PORTVERSION=	0.36
@@ -22,9 +18,8 @@ CONFLICTS=	libopensync-plugin-python-0.2*
 BROKEN=		fails to build with recent libopensync
 
 USE_BZIP2=	yes
-USES=		cmake:outsource
+USES=		cmake:outsource pkgconfig
 USE_PYTHON=	yes
-USE_GNOME=	pkgconfig
 CMAKE_ARGS+=	-Wno-dev  \
 		-DPYTHON_INCLUDE_PATH:PATH=${PYTHON_INCLUDEDIR} \
 		-DPYTHON_LIBRARY:PATH=${PYTHON_LIBDIR}/config/lib${PYTHON_VERSION}.so
