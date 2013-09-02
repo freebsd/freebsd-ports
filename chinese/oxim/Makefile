@@ -19,7 +19,7 @@ GTK2_DESC=	 GTK2 input method module
 CHEWING_DESC=	 Chewing input module
 UNICODE_DESC=	 Unicode input module
 
-USES=		iconv
+USES=		iconv pkgconfig
 USE_XORG=	x11 xft xpm xtst
 WANT_GNOME=	yes
 

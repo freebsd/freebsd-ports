@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mtpaint
-# Date created:		3 April 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mtpaint
 PORTVERSION=	3.40
@@ -29,7 +25,7 @@ OPENJPEG_DESC=	Enable OpenJPEG support
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MAN1PREFIX}/man/man1 \
 		--localedir=${PREFIX}/share/locale \

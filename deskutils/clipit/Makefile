@@ -10,7 +10,7 @@ COMMENT=	Lightweight GTK+ clipboard manager forked from parcellite
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 
 OPTIONS_DEFINE=	NLS XDOTOOL

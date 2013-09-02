@@ -23,7 +23,7 @@ WINDOWS_CHARS_DESC=	Allow Windows special chars in filenames
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		gettext gmake
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO

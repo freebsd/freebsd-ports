@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.ggobi.org/downloads/
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	Data visualization system
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	gtk20 libxml2 gnomehack
 USE_LDCONFIG=	yes

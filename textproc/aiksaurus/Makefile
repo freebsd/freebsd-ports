@@ -11,9 +11,8 @@ MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A set of libraries and applications which provide a thesaurus
 
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 USE_CSTD=	gnu89
-USES=		pathfix
+USES=		pathfix gmake pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--without-gtk

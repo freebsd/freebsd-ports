@@ -19,7 +19,7 @@ COMMENT=	GTK+ chess board interface (mainly for FICS and chessd)
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 EXTRAS=		1pl2 2
-USES=		shebangfix
+USES=		shebangfix pkgconfig
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_PERL5_BUILD=yes

@@ -1,4 +1,4 @@
-# Created by:			nemysis@gmx.ch
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
 
 PORTNAME=	glightoff
@@ -13,7 +13,7 @@ COMMENT=	Simple (but not so easy to solve!) puzzle game
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	glib20 gtk20
 USE_XORG=	x11
 

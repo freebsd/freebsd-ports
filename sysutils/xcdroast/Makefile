@@ -20,10 +20,9 @@ NONROOT_DESC=	Use xcdroast w/o being root
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 BUILD_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 
-USES=		gettext
+USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
-USE_GMAKE=	yes
 
 CONFIGURE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}"

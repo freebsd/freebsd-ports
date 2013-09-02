@@ -11,7 +11,7 @@ COMMENT=	Sound card oscilloscope
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}
-USES=		gmake
+USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 USE_XORG=	x11
 

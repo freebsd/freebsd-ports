@@ -15,6 +15,7 @@ LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USES=		pkgconfig
 USE_GNOME=	gtk20
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	automake:env
