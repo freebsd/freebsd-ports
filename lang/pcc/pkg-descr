@@ -1,6 +1,6 @@
 This compiler is based on the original Portable C Compiler by S. C. Johnson,
 written in the late 70's.  Even though much of the compiler has been
-rewritten, some of the basics still remain.  
+rewritten, some of the basics still remain.
 
 The intention is to write a C99 compiler while still keeping it small, simple,
 fast and understandable.  I think of it as if it shall be able to compile and
