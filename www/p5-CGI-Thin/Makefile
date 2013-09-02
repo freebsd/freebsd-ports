@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pphillips@experts-exchange.com
 COMMENT=	A very lightweight Parser for CGI Forms
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CGI::Thin.3 \
 		CGI::Thin::Cookies.3

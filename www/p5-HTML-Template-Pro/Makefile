@@ -13,7 +13,8 @@ RUN_DEPENDS=	\
 	p5-JSON>=2:${PORTSDIR}/converters/p5-JSON
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	HTML::Template::PerlInterface.3 \
 	HTML::Template::Pro.3 \

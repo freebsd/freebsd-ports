@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-Dancer>0:${PORTSDIR}/www/p5-Dancer \
 		p5-Text-Xslate>0:${PORTSDIR}/textproc/p5-Text-Xslate
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Dancer::Template::Xslate.3
 

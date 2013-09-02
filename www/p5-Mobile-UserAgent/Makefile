@@ -16,7 +16,8 @@ COMMENT=	Parses a mobile user agent string into its basic constituent parts
 
 RUN_DEPENDS=	p5-Class-Singleton>=0:${PORTSDIR}/devel/p5-Class-Singleton
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Mobile::UserAgent.3 \
 		Mobile::UserAgentFactory.3

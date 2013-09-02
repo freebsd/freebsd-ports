@@ -15,7 +15,8 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Class-Singleton>=0:${PORTSDIR}/devel/p5-Class-Singleton
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Apache::Singleton.3 \
 	Apache::Singleton::Process.3 \

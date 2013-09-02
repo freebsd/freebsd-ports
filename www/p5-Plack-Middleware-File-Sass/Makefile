@@ -20,7 +20,8 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 # Now, sass gem can be used instead of p5-Text-Sass.
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Plack::Middleware::File::Sass.3
 
