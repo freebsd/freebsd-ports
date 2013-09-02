@@ -1,10 +1,6 @@
-# New ports collection makefile for:	libsvg
-# Date created:		2004-10-06
-# Whom:			Michael Johnson <ahze@ahze.net>
-#
+# Created by: Michael Johnson <ahze@ahze.net>
 # $FreeBSD$
 #   $MCom: ports/graphics/libsvg/Makefile,v 1.3 2005/07/04 00:11:29 marcus Exp $
-#
 
 PORTNAME=	libsvg
 PORTVERSION=	0.1.4
@@ -22,7 +18,7 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
-USES=		pathfix iconv
+USES=		pathfix iconv pkgconfig
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/svg.h \

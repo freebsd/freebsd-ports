@@ -13,7 +13,7 @@ COMMENT=	Vformat plugin for the OpenSync framework
 LIB_DEPENDS=	opensync:${PORTSDIR}/devel/libopensync
 
 USE_BZIP2=	yes
-USES=		cmake iconv
+USES=		cmake iconv pkgconfig
 CMAKE_ARGS+=	-Wno-dev
 CFLAGS+=	"-I${LOCALBASE}/include"
 
