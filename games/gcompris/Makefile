@@ -24,7 +24,7 @@ RUN_DEPENDS=	gnuchess:${PORTSDIR}/games/gnuchess \
 		gnucap:${PORTSDIR}/cad/gnucap
 
 USE_BZIP2=	yes
-USES=		gettext gmake display:configure
+USES=		gettext gmake display:configure pkgconfig
 GNU_CONFIGURE=	yes
 USE_GSTREAMER=	yes
 USE_PYTHON=	-2.7
