@@ -134,7 +134,7 @@ pre-everything::
 	@${ECHO} "				${PREFIX}/${MM_DIR}."
 	@${ECHO} "CGI_GID		www		The group name or id under which your web"
 	@${ECHO} "				server executes CGI scripts."
-	@${ECHO} "IMGDIR		www/icons	Icon images will be installed in""
+	@${ECHO} "IMGDIR		www/icons	Icon images will be installed in"
 	@${ECHO} "				${PREFIX}/${IMGDIR}."
 	@${ECHO} ""
 
