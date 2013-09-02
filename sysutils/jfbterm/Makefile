@@ -54,20 +54,10 @@ MAN1=		${PORTNAME}.1
 MAN5=		${PORTNAME}.conf.5
 .endif
 
-.if !${PORT_OPTIONS:MICONV}
-MAKE_ENV+=	WITHOUT_ICONV=
-.endif
-
-.if !exists(/usr/include/iconv.h)
-. if ${PORT_OPTIONS:MICONV}
-.  if !defined(NO_SHARED)
+.if ${PORT_OPTIONS:MICONV}
 USES+=		iconv
-.  else
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libiconv.a:${PORTSDIR}/converters/libiconv
-.  endif
-. else
-BUILD_DEPENDS+=	${LOCALBASE}/include/iconv.h:${PORTSDIR}/converters/libiconv
-. endif
+.else
+MAKE_ENV+=	WITHOUT_ICONV=
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
