@@ -110,4 +110,7 @@ do-install:
 	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/samples/,} ${EXAMPLESDIR}
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e "s/-lstdc++//g" ${WRKSRC}/configure
+
 .include <bsd.port.mk>
