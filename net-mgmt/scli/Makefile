@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scli
-# Date created:		10 September 2001
-# Whom:			Michael Lyngbøl <lyngbol@wheel.dk>
-#
+# Created by: Michael Lyngbøl <lyngbol@wheel.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	scli
 PORTVERSION=	0.3.1
@@ -18,7 +14,7 @@ COMMENT=	A collection of SNMP command line management tools
 LIB_DEPENDS=	gsnmp:${PORTSDIR}/net-mgmt/gsnmp
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	libxml2
 
 MAN1=		scli.1

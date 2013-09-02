@@ -1,17 +1,13 @@
-# New ports collection makefile for:	libxml++26-reference
-# Date created:				03 April 2010
-# Whom:					Alexander Logvinov <avl@FreeBSD.org>
-#
+# Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/textproc/libxml++26-reference/Makefile,v 1.1 2010/04/03 16:21:50 avl Exp $
-#
 
 PORTREVISION=	0
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libxml++-2.6.pc:${PORTSDIR}/textproc/libxml++26 \
 		glibmm-reference>=0:${PORTSDIR}/devel/glibmm-reference
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/libxml++-2.6

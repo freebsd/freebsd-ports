@@ -17,6 +17,7 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_SDL=	sdl image
 USE_GL=		gl glu
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	msynctool
-# Date created:				11 July 2008
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	msynctool
 PORTVERSION=	0.22
@@ -17,6 +13,7 @@ LIB_DEPENDS=	opensync.0:${PORTSDIR}/devel/libopensync022
 
 CONFLICTS=	osynctool-[0-9]*
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 

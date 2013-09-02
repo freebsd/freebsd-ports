@@ -16,11 +16,10 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
-USE_PERL5_RUN=	yes
 USE_PYTHON_RUN=	yes
-USES=		iconv
+USES=		iconv gmake perl5 pkgconfig
+USE_PERL5=	run
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl --with-openssl
 CONFLICTS=	centericq-[0-9]* centerim-[0-9]*

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	varnish-libvmod-header
-# Date created:				2011-08-23
-# Whom:					anders
-#
+# Created by: anders
 # $FreeBSD$
-#
 
 PORTNAME=	libvmod-header
 DISTVERSION=	0.3-5
@@ -24,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/varnish/varnishapi.h:${PORTSDIR}/www/varnish
 FETCH_ARGS=	-Fpr
 
 USE_AUTOTOOLS=	aclocal libtool libtoolize autoheader automake autoconf
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 ACLOCAL_ARGS=	-I m4
 LIBTOOLFLAGS=	--copy --force
 AUTOMAKE_ARGS=	--add-missing --copy --foreign

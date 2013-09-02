@@ -18,7 +18,7 @@ CONFLICTS_INSTALL=	wormux-*
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_SDL=	sdl image mixer ttf gfx net
 USE_DOS2UNIX=	fixed_class.h
 

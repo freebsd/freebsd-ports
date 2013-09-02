@@ -1,9 +1,5 @@
-# New ports collection makefile for:	razorback-fileInject
-# Date created:				2011/06/8
-# Whom:					Tom Judge <tom@tomjudge.com>
-#
+# Created by: Tom Judge <tom@tomjudge.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fileInject
 PORTVERSION=	0.5.0
@@ -22,12 +18,13 @@ LIB_DEPENDS=	razorback_api.2:${PORTSDIR}/security/razorback-api
 
 OPTIONS_DEFINE=	DEBUG ASSERT
 
-.include <bsd.port.options.mk>
-
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+.include <bsd.port.options.mk>
 
 .if !empty(PORT_OPTIONS:MDEBUG)
 CONFIGURE_ARGS+=--enable-debug

@@ -11,6 +11,7 @@ COMMENT=	Cuddlesome teddy for the X desktop
 
 LICENSE=	GPLv2
 
+USES=		pkgconfig
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 
