@@ -14,6 +14,7 @@ LIB_DEPENDS=	glpng:${PORTSDIR}/graphics/glpng \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_GL=		gl glu
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
