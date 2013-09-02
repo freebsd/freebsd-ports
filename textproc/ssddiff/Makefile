@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SSDDiff
-# Date created:				11 Apr 2006
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ssddiff
 PORTVERSION=	0.2
@@ -16,6 +12,7 @@ COMMENT=	A diff application for semistructured data such as XML files
 
 USE_AUTOTOOLS=	automake14
 USE_BZIP2=	yes
+USES=		pkgconfig
 USE_GNOME=	libxml2
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include \

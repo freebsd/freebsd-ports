@@ -26,13 +26,11 @@ OPTIONS_DEFINE=	LDAP SIEVE THREADS
 OPTIONS_DEFAULT=	THREADS
 SIEVE_DESC=	Build with support for Sieve mail sorting language
 
-.include <bsd.port.options.mk>
-
 USE_AUTOTOOLS=	libtool autoheader autoconf
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
 USE_OPENSSL=	yes
-USES=		gmake shebangfix
+USES=		gmake shebangfix pkgconfig
 SHEBANG_FILES=	man/fixsp.pl
 
 CFLAGS+=	-fPIC ${PTHREAD_CFLAGS}
@@ -42,6 +40,9 @@ CONFIGURE_ARGS+=	--with-zdb=${LOCALBASE} --sysconfdir=${LOCALBASE}/etc
 MAKE_ARGS+=	mandir=${MANPREFIX}/man
 
 PORTDOCS=	AUTHORS BUGS INSTALL THANKS UPGRADING
+
+.include <bsd.port.options.mk>
+
 .if ${PORT_OPTIONS:MDOCS}
 MAN1=		dbmail-deliver.1 dbmail.1
 MAN5=		dbmail.conf.5

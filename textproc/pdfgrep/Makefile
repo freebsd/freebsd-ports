@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	poppler:${PORTSDIR}/graphics/poppler
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 CONFIGURE_ARGS=	poppler_CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/poppler"
 
 PLIST_FILES=	bin/pdfgrep
