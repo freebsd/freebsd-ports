@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Text-Trim
-# Date created:		2007-29-12
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Trim
 PORTVERSION=	1.02
@@ -18,8 +14,8 @@ COMMENT=	Extract the structure of a quoted mail message
 BUILD_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
-USE_PERL5=	yes
-PERL_MODBUILD=	Module::Build
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Text::Trim.3
 
