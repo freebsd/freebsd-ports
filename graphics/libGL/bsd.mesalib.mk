@@ -41,7 +41,7 @@ BUILD_DEPENDS+=	makedepend:${PORTSDIR}/devel/makedepend \
 		python:${PORTSDIR}/lang/python \
 		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
 
-USES=	bison
+USES+=	bison
 USE_PYTHON_BUILD=yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
