@@ -23,7 +23,8 @@ RUN_DEPENDS=	p5-Class-Accessor>=0.25:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Readonly>=1.01:${PORTSDIR}/devel/p5-Readonly \
 		p5-UNIVERSAL-require>=0.10:${PORTSDIR}/devel/p5-UNIVERSAL-require
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WebService::BuzzurlAPI.3 \
 		WebService::BuzzurlAPI::Util.3 \

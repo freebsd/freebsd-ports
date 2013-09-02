@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Config-IniFiles>=2.39:${PORTSDIR}/devel/p5-Config-IniFiles \
 		p5-RRD-Simple>=1.44:${PORTSDIR}/databases/p5-RRD-Simple \
 		p5-SNMP_Session>=1.11:${PORTSDIR}/net-mgmt/p5-SNMP_Session
 
-USE_PERL5=	yes
+USES=		perl5
 
 SQUID_UID?=	squid
 SQUID_GID?=	squid
