@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	XML-RSS-JavaScript
-PORTVERSION=	0.63
+PORTVERSION=	0.64
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sahil@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to serialize your RSS as JavaScript
 
 RUN_DEPENDS=	p5-XML-RSS>=1.31:${PORTSDIR}/textproc/p5-XML-RSS
