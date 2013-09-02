@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-Log-Dispatch>=2.13:${PORTSDIR}/devel/p5-Log-Dispatch		\
 		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Catalyst::Plugin::Log::Dispatch.3
 

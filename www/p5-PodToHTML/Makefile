@@ -21,7 +21,8 @@ BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-HTML-Format>=0:${PORTSDIR}/textproc/p5-HTML-Format
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		podtohtml.1
 MAN3=		Pod::HTML_Elements.3 \
