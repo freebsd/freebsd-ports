@@ -18,7 +18,7 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 USERS=		polkit
 GROUPS=		polkit
 
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_GNOME=	glib20 intlhack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

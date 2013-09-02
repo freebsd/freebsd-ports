@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML::GDOME
-# Date created:		2003-10-02
-# Whom:			Stefan Esser <se@FreeBSD.org>
-#
+# Created by: Stefan Esser <se@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-GDOME
 PORTVERSION=	0.86
@@ -20,7 +16,7 @@ RUN_DEPENDS=	p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
 		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USES=		perl5
+USES=		perl5 pkgconfig
 USE_PERL5=	configure
 
 MAN3=		XML::GDOME.3 \
