@@ -23,7 +23,8 @@ TEST_DEPENDS=	\
 	p5-Tiffany>0:${PORTSDIR}/textproc/p5-Tiffany \
 	p5-Plack-Middleware-ReverseProxy>0:${PORTSDIR}/www/p5-Plack-Middleware-ReverseProxy
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Amon2::Lite.3 \
 	Amon2::Setup::Flavor::Lite.3

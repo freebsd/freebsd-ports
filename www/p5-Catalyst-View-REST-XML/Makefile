@@ -19,7 +19,8 @@ RUN_DEPENDS=	\
 	p5-XML-Simple>0:${PORTSDIR}/textproc/p5-XML-Simple
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Catalyst::View::REST::XML.3
 

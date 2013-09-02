@@ -21,7 +21,8 @@ RUN_DEPENDS=	\
 	p5-Exporter-Lite>0:${PORTSDIR}/devel/p5-Exporter-Lite
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Path::Class::URI.3 \
 		Path::Class::Unicode.3
