@@ -1,9 +1,5 @@
-# New ports collection makefile for:	HP48-xgcc
-# Date created:				20 Feb 2006
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hp48xgcc
 PORTVERSION=	1.0.2
@@ -22,10 +18,11 @@ COMMENT=	GNU C cross-compiler for HP48 calculators
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=		i386
-USE_GMAKE=		yes
-USE_PERL5_BUILD=	yes
-USE_ZIP=		yes
+ONLY_FOR_ARCHS=	i386
+
+USES=		gmake perl5
+USE_PERL5=	build
+USE_ZIP=	yes
 
 GCC_VER=	2.7.2
 GCC_DIR=	${WRKDIR}/gcc-${GCC_VER}
