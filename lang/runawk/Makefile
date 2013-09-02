@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	runawk
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.4
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -20,6 +20,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -Wl,-rpath -Wl,${LOCALBASE}/lib
 
 MAN1=		${PORTNAME}.1 alt_getopt.1
+MAN3=		${PORTNAME}_modules.3
 
 PLIST_FILES=	bin/${PORTNAME} bin/alt_getopt bin/alt_getopt.sh
 
