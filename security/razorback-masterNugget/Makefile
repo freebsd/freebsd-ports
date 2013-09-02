@@ -1,9 +1,5 @@
-# New ports collection makefile for:	razorback-masterNugget
-# Date created:				2011/06/8
-# Whom:					Tom Judge <tom@tomjudge.com>
-#
+# Created by: Tom Judge <tom@tomjudge.com>
 # $FreeBSD$
-#
 
 PORTNAME=	masterNugget
 PORTVERSION=	0.5.0
@@ -22,6 +18,8 @@ LIB_DEPENDS=	razorback_api:${PORTSDIR}/security/razorback-api
 
 OPTIONS_DEFINE=	DEBUG ASSERT
 ASSERT_DESC=	Enable Asserts
+
+USES=		pkgconfig
 
 .include <bsd.port.options.mk>
 

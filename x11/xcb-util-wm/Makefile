@@ -11,8 +11,8 @@ COMMENT=	Framework for window manager implementation
 LIB_DEPENDS=	xcb-util:${PORTSDIR}/x11/xcb-util
 #BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
 
-USES=		gmake
 USE_BZIP2=	yes
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 USE_XORG=	xcb xorg-macros
 #USE_XORG=	xau xdmcp

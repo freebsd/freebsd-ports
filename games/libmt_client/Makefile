@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libmt_client
-# Date created:		Sun 7 mar 2004
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=		libmt_client
 PORTVERSION=		0.1.98
@@ -17,6 +13,7 @@ COMMENT=		Client-side library of MaitreTarot, a Tarot card game
 
 LIB_DEPENDS=		maitretarot.0:${PORTSDIR}/games/libmaitretarot
 
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
