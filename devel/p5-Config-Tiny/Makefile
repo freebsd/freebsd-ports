@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Tiny
-PORTVERSION=	2.14
+PORTVERSION=	2.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read/Write .ini style files with as little code as possible
