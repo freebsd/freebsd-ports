@@ -3,7 +3,7 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	1.24r
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-1/
 
@@ -11,17 +11,16 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The fvwm window manager
 
 NO_LATEST_LINK=	yes
-MAKE_JOBS_UNSAFE=	yes
 
 USES=		imake
 USE_XORG=	xbitmaps xpm xext x11 xmu
-ALL_TARGET=	Makefiles all
 MAN1=		FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmClean.1 \
 		FvwmDebug.1 FvwmIconBox.1 FvwmIdent.1 FvwmPager.1 FvwmSave.1 \
 		FvwmSaveDesk.1 FvwmScroll.1 FvwmWinList.1 GoodStuff.1 fvwm.1 \
 		xpmroot.1
 
 pre-configure:
+	@${REINPLACE_CMD} -e '/DependSubdirs/y,/*#,   ,' ${WRKSRC}/Imakefile
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/configure.h \
 		${WRKSRC}/sample.fvwmrc/system.fvwmrc

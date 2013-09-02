@@ -13,7 +13,7 @@ DISTNAME=	Canna${PORTVERSION:S/.//g}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A Kana-to-Kanji conversion system, library part
 
-USES=		imake
+USES=		imake:notall
 USE_BZIP2=	yes
 USE_GCC=	any
 USE_LDCONFIG=	yes
@@ -24,7 +24,6 @@ PLIST_SUB=	METAFILE="${METAFILE}" \
 
 ALL_TARGET=	canna
 INSTALL_TARGET=	instsgs
-XMKMF=		xmkmf
 
 METAFILE=	${DATADIR_REL}/canna-lib-dic.meta
 

@@ -16,7 +16,6 @@ USES=		imake:env
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xext
-XMKMF=		xmkmf
 MANLANG=	. ja
 MAN1=		xmagv.1
 

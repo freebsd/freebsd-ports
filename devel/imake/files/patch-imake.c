@@ -1,6 +1,21 @@
---- imake.c.orig	Tue Jan 30 14:57:37 2007
-+++ imake.c	Tue Jan 30 14:55:59 2007
-@@ -1153,29 +1153,17 @@
+--- imake.c.orig	2013-07-23 06:53:04.000000000 +0200
++++ imake.c	2013-08-31 14:57:48.000000000 +0200
+@@ -531,6 +531,14 @@
+ 				AddCppArg(p);
+ 			}
+ 	}
++	if ((p = getenv("IMAKECPPFLAGS"))) {
++		AddCppArg(p);
++		for (; *p; p++)
++			if (*p == ' ') {
++				*p++ = '\0';
++				AddCppArg(p);
++			}
++	}
+ 	if ((p = getenv("IMAKECPP")))
+ 		cpp = p;
+ 	if ((p = getenv("IMAKEMAKE")))
+@@ -1142,29 +1150,17 @@
    int mib[2];
    size_t len;
    int osrel = 0;
