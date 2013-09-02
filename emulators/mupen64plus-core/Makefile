@@ -16,9 +16,9 @@ MAINTAINER?=	acm@FreeBSD.org
 COMMENT?=	A fork of Mupen64 Nintendo 64 emulator
 
 PROJECTHOST=	bsdistfiles
+USES=		gmake pkgconfig
 USE_GL?=	yes
 USE_SDL?=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG?=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 
