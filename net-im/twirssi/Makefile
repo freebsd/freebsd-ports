@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	twirssi
-PORTVERSION=	2.5.1
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://twirssi.com/
 EXTRACT_SUFX=	.pl
