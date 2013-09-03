@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pinta
-# Date created:				2011-02-14
-# Whom:					Alexander Kojevnikov <alexander@kojevnikov.com>
-#
+# Created by: Alexander Kojevnikov <alexander@kojevnikov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pinta
 PORTVERSION=	1.4
@@ -18,11 +14,10 @@ LICENSE=	MIT
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mono-addins.pc:${PORTSDIR}/devel/mono-addins
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gtksharp20 desktopfileutils
 INSTALLS_ICONS=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 
 MAN1=		pinta.1
 MANCOMPRESSED=	yes

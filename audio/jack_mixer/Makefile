@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection Makefile for:	jack_mixer
-# Date created:				13 August 2010
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	jack_mixer
 PORTVERSION=	9
@@ -20,6 +15,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/fpconst.py:${PORTSDIR}/math/py-fpconst \
    		${LOCALBASE}/include/pygtk-2.0/pygtk/pygtk.h:${PORTSDIR}/x11-toolkits/py-gtk2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+USES=		pkgconfig
 USE_PYTHON=	yes
 USE_GNOME=	gconf2
 GCONF_SCHEMAS=	jack_mixer.schemas

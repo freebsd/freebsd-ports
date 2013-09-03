@@ -1,10 +1,6 @@
-# New ports collection makefile for:	libbonoboui
-# Date created:				04 April 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11-toolkits/libbonoboui/Makefile,v 1.75 2010/09/28 16:03:49 kwm Exp $
-#
 
 PORTNAME=	libbonoboui
 PORTVERSION=	2.24.4
@@ -20,8 +16,7 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack \
 		libgnomecanvas libgnome referencehack

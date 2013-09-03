@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libfreefare
-# Date created:		2009-12-22
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libfreefare
 PORTVERSION=	0.3.1
@@ -18,9 +14,8 @@ COMMENT=	MIFARE contactless tag access library
 LIB_DEPENDS=	nfc.1:${PORTSDIR}/devel/libnfc
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USES=	pathfix
+USES=	pathfix gmake pkgconfig
 
 MAN3=		freefare.3 freefare_error.3 mad.3 mifare_application.3 \
 		mifare_classic.3 mifare_desfire.3 mifare_desfire_aid.3 \

@@ -12,6 +12,8 @@ COMMENT=	Another gtk-based MP3 frontend
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
+USES=		pkgconfig
+
 .if defined(WITH_MPG321)
 RUN_DEPENDS+=	mpg321:${PORTSDIR}/audio/mpg321
 .else

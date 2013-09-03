@@ -15,9 +15,8 @@ LIB_DEPENDS=	xosd.4:${PORTSDIR}/misc/xosd
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USES=		bison iconv
+USES=		bison iconv gmake pkgconfig
 
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
 

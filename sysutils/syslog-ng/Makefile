@@ -32,6 +32,8 @@ SMTP_DESC=		Build with SMTP support
 JSON_DESC=		Build with JSON-C support
 GEOIP_DESC=		Build with GeoIP support
 
+USES=		pkgconfig
+
 .include <bsd.port.options.mk>
 
 LIB_DEPENDS=	evtlog.0:${PORTSDIR}/sysutils/eventlog

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	desmume
-# Date created:				Wed  7 Feb 2007 21:46:15 CET
-# Whom:					Stefan Sperling <stsp@stsp.in-berlin.de>
-#
+# Created by: Stefan Sperling <stsp@stsp.in-berlin.de>
 # $FreeBSD$
-#
 
 PORTNAME=	desmume
 PORTVERSION=	0.9.8
@@ -20,9 +16,8 @@ LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_GL=		gl
 USE_SDL=	sdl
-USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
-USES=		gettext
+USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GMSGFMT=msgfmt DATADIRNAME=share
 

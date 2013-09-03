@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/podsleuth.pc:${PORTSDIR}/misc/podsle
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=		gmake pathfix
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	gtksharp20
 
 .include <bsd.port.mk>

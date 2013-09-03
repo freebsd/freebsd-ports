@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tilda
-# Date created:				4 Jan 2005
-# Whom:					Vlad V. Teterya <vlad@vlad.uz.ua>
-#
+# Create by: Vlad V. Teterya <vlad@vlad.uz.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	tilda
 PORTVERSION=	0.9.6
@@ -18,7 +14,7 @@ LIB_DEPENDS=	confuse.0:${PORTSDIR}/devel/libconfuse
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 libglade2 vte
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 
 DOCS=		AUTHORS ChangeLog README TODO
 
