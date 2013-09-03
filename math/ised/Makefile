@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ised
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -10,6 +10,7 @@ MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Tool for generating number sequences and arithmetic evaluation
 
 LICENSE=	GPLv3
+
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
