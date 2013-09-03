@@ -21,8 +21,7 @@ LIB_DEPENDS=	rcd.1:${PORTSDIR}/devel/librcd \
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	lthack libxml2
-USE_GMAKE=	yes
-USES=		pathfix iconv
+USES=		gmake iconv pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoheader
 
