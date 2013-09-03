@@ -1,0 +1,4 @@
+This libarary is a collection of rake tasks and other scripts that will
+make Redmine plugin development easier.
+
+WWW: https://rubygems.org/gems/redmine_plugin_support
