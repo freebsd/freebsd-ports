@@ -25,9 +25,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goo
 		xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_PYTHON=	2.5+
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
