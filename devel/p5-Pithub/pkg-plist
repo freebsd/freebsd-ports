@@ -1,0 +1,49 @@
+%%SITE_PERL%%/Pithub.pm
+%%SITE_PERL%%/Pithub/Base.pm
+%%SITE_PERL%%/Pithub/Events.pm
+%%SITE_PERL%%/Pithub/Gists.pm
+%%SITE_PERL%%/Pithub/Gists/Comments.pm
+%%SITE_PERL%%/Pithub/GitData.pm
+%%SITE_PERL%%/Pithub/GitData/Blobs.pm
+%%SITE_PERL%%/Pithub/GitData/Commits.pm
+%%SITE_PERL%%/Pithub/GitData/References.pm
+%%SITE_PERL%%/Pithub/GitData/Tags.pm
+%%SITE_PERL%%/Pithub/GitData/Trees.pm
+%%SITE_PERL%%/Pithub/Issues.pm
+%%SITE_PERL%%/Pithub/Issues/Assignees.pm
+%%SITE_PERL%%/Pithub/Issues/Comments.pm
+%%SITE_PERL%%/Pithub/Issues/Events.pm
+%%SITE_PERL%%/Pithub/Issues/Labels.pm
+%%SITE_PERL%%/Pithub/Issues/Milestones.pm
+%%SITE_PERL%%/Pithub/Orgs.pm
+%%SITE_PERL%%/Pithub/Orgs/Members.pm
+%%SITE_PERL%%/Pithub/Orgs/Teams.pm
+%%SITE_PERL%%/Pithub/PullRequests.pm
+%%SITE_PERL%%/Pithub/PullRequests/Comments.pm
+%%SITE_PERL%%/Pithub/Repos.pm
+%%SITE_PERL%%/Pithub/Repos/Collaborators.pm
+%%SITE_PERL%%/Pithub/Repos/Commits.pm
+%%SITE_PERL%%/Pithub/Repos/Contents.pm
+%%SITE_PERL%%/Pithub/Repos/Downloads.pm
+%%SITE_PERL%%/Pithub/Repos/Forks.pm
+%%SITE_PERL%%/Pithub/Repos/Hooks.pm
+%%SITE_PERL%%/Pithub/Repos/Keys.pm
+%%SITE_PERL%%/Pithub/Repos/Starring.pm
+%%SITE_PERL%%/Pithub/Repos/Stats.pm
+%%SITE_PERL%%/Pithub/Repos/Watching.pm
+%%SITE_PERL%%/Pithub/Result.pm
+%%SITE_PERL%%/Pithub/Search.pm
+%%SITE_PERL%%/Pithub/Users.pm
+%%SITE_PERL%%/Pithub/Users/Emails.pm
+%%SITE_PERL%%/Pithub/Users/Followers.pm
+%%SITE_PERL%%/Pithub/Users/Keys.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pithub/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pithub
+@dirrmtry %%SITE_PERL%%/Pithub/Users
+@dirrmtry %%SITE_PERL%%/Pithub/Repos
+@dirrmtry %%SITE_PERL%%/Pithub/PullRequests
+@dirrmtry %%SITE_PERL%%/Pithub/Orgs
+@dirrmtry %%SITE_PERL%%/Pithub/Issues
+@dirrmtry %%SITE_PERL%%/Pithub/GitData
+@dirrmtry %%SITE_PERL%%/Pithub/Gists
+@dirrmtry %%SITE_PERL%%/Pithub
