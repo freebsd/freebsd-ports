@@ -1,0 +1,6 @@
+Descartes is a Sinatra-based dashboard that allows users to correlate multiple
+metrics in a single chart, review long-term trends across one or more charts,
+and to collaborate with other users through a combination of shared dashboards
+and rich layouts.
+
+WWW: https://github.com/obfuscurity/descartes
