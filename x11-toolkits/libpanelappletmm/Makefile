@@ -1,9 +1,5 @@
-# New ports collection makefile for:    libpanelappletmm
-# Date created:         3 Dec 2003
-# Whom:                 Alexander Nedotsukov <bland@FreeBSD.org>
-#
+# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libpanelappletmm
 PORTVERSION=	2.26.0
@@ -20,7 +16,7 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gnomehack lthack gnomepanel
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
