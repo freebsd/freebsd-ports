@@ -1,0 +1,4 @@
+A sinatra extension that provides oauth authentication to github. Find out more
+about enabling your application at github's oauth quickstart.
+
+WWW: https://github.com/atmos/sinatra_auth_github
