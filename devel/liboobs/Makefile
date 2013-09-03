@@ -1,10 +1,6 @@
-# New ports collection makefile for:	liboobs
-# Date created:		2006-06-06
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/devel/liboobs/Makefile,v 1.50 2010/09/27 17:46:12 kwm Exp $
-#
 
 PORTNAME=	liboobs
 PORTVERSION=	2.32.0
@@ -21,7 +17,7 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 RUN_DEPENDS=	${LOCALBASE}/etc/dbus-1/system.d/org.freedesktop.SystemToolsBackends.conf:${PORTSDIR}/sysutils/system-tools-backends
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack glib20
 USE_LDCONFIG=	yes

@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gnome-power-manager
-# Date created:				03 May 2006
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/sysutils/gnome-power-manager/Makefile,v 1.73 2011/04/30 20:43:26 mezz Exp $
-#
 
 PORTNAME=	gnome-power-manager
 PORTVERSION=	2.32.0
@@ -25,9 +21,8 @@ RUN_DEPENDS=	pkexec:${PORTSDIR}/sysutils/polkit
 
 CONFLICTS=	gnome-power-manager-3.[0-9]*
 
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtool
