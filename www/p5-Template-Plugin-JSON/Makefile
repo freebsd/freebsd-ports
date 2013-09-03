@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-JSON>=2.12:${PORTSDIR}/converters/p5-JSON \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Template::Plugin::JSON.3
 

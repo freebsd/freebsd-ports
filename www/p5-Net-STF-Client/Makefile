@@ -26,7 +26,8 @@ TEST_DEPENDS=	\
 	p5-Test-Simple>0:${PORTSDIR}/devel/p5-Test-Simple \
 	p5-Plack>0:${PORTSDIR}/www/p5-Plack
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Net::STF::Bucket.3 \
 	Net::STF::Client.3 \
