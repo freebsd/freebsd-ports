@@ -1,0 +1,6 @@
+With URITemplate you can generate URIs based on simple templates and extract
+variables from URIs using the same templates. There are currently two syntaxes
+defined. Namely the one defined in RFC 6570 and a colon based syntax, similiar
+to the one used by sinatra.
+
+WWW: https://github.com/hannesg/uri_template
