@@ -15,7 +15,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		osp.5:${PORTSDIR}/textproc/opensp
 
 USE_GCC=	any
-USES=		iconv
+USES=		iconv pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
 ACLOCAL_ARGS=	-I m4
