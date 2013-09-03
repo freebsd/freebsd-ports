@@ -13,21 +13,22 @@ COMMENT=	Programing interface to decode/encode audio data
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
-		speex:${PORTSDIR}/audio/speex \
-		vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
+		libspeex.so:${PORTSDIR}/audio/speex \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 OPTIONS_DEFINE=	DOCS DOXYGEN
 
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig
 USE_LDCONFIG=	yes
+USES=		pathfix pkgconfig
+
+PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
-PORTDOCS=	*
 .endif
 
 post-patch:
