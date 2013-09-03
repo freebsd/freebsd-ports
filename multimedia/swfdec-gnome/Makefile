@@ -1,10 +1,6 @@
-# Ports collection makefile for:	swfdec-gnome
-# Date created:				2008 01 10
-# Whom:					Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/multimedia/swfdec-gnome/Makefile,v 1.29 2010/09/29 14:04:43 kwm Exp $
-#
 
 PORTNAME=	swfdec-gnome
 PORTVERSION=	2.30.1
@@ -21,8 +17,7 @@ LIB_DEPENDS=	swfdec-0.8:${PORTSDIR}/graphics/swfdec
 USE_GNOME=	gnomehack gnomeprefix gtk20 intlhack gconf2
 USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
