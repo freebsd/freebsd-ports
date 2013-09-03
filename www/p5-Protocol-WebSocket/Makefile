@@ -19,7 +19,8 @@ COMMENT=	Client/server WebSocket message and frame parser/constructor
 BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Protocol::WebSocket.3 \
 		Protocol::WebSocket::Cookie.3 \

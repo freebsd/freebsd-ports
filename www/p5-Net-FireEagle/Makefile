@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-Net-OAuth-Simple>=1.0:${PORTSDIR}/net/p5-Net-OAuth-Simple \
 		p5-Net-SSLeay>=1.30:${PORTSDIR}/security/p5-Net-SSLeay
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		fireeagle.1
 MAN3=		Net::FireEagle.3

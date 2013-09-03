@@ -23,7 +23,8 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime	\
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1		\
 		p5-XML-Atom>=0:${PORTSDIR}/textproc/p5-XML-Atom
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Catalyst::Plugin::AtomServer.3					\
 		Catalyst::Plugin::Authentication::Credential::Atom.3		\
