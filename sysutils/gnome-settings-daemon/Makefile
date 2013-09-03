@@ -22,7 +22,7 @@ CONFLICTS=	gnome-settings-daemon-3.[0-9]*
 
 USE_XORG=	xxf86misc
 USE_BZIP2=	yes
-USES=		pathfix gettext pkgconfig
+USES=		gmake pathfix gettext pkgconfig
 USE_GNOME=	gnomeprefix intlhack gnomedesktop libgnomekbd
 USE_GSTREAMER=	good
 USE_LDCONFIG=	yes
