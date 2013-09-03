@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Sphinx-Search
-PORTVERSION=	0.27.2
+PORTVERSION=	0.28
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JJSCHUTZ
@@ -16,11 +16,7 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-File-SearchPath>=0:${PORTSDIR}/devel/p5-File-SearchPath \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
-RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-File-SearchPath>=0:${PORTSDIR}/devel/p5-File-SearchPath \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
