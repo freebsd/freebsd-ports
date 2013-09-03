@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rhodecode
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,6 +34,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylons>=1.0:${PORTSDIR}/www/py-pylons \
 		${PYTHON_PKGNAMEPREFIX}PasteScript>=1.6.3:${PORTSDIR}/www/py-pastescript \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:${PORTSDIR}/devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}repoze.lru>=0:${PORTSDIR}/devel/py-repoze.lru \
+		${PYTHON_PKGNAMEPREFIX}celery>=0:${PORTSDIR}/devel/py-celery \
 		mercurial>=2.6:${PORTSDIR}/devel/mercurial
 
 USE_PYTHON=	-2.7
@@ -48,7 +49,6 @@ OPTIONS_DEFINE=		LDAP GIT
 OPTIONS_DEFAULT=	GIT
 
 GIT_DESC=	GIT support
-CELERY_DESC=	Use Celery for better performance
 
 .include <bsd.port.options.mk>
 
