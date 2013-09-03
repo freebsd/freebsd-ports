@@ -1,0 +1,4 @@
+Add-on library to JanRain's ruby-openid to support using Google Apps hosted
+domains as an IDP.
+
+WWW: http://code.google.com/p/ruby-openid-apps-discovery/
