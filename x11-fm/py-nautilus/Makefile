@@ -1,10 +1,6 @@
-# New ports collection makefile for:	py-nautilus
-# Date created:				31 May, 2005
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11-fm/py-nautilus/Makefile,v 1.11 2009/04/07 17:54:12 marcus Exp $
-#
 
 PORTNAME=	nautilus
 PORTVERSION=	0.7.2
@@ -21,10 +17,10 @@ COMMENT=	Python nautilus bindings
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack pygnome2 nautilus2
 CONFIGURE_ENV=	PYTHON_VERSION="${PYTHON_VER}"
 
