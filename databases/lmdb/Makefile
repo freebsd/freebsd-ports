@@ -4,12 +4,11 @@
 PORTNAME=	lmdb
 PORTVERSION=	0.9.7
 CATEGORIES=	databases
-MASTER_SITES=	https://gitorious.org/${GO_ACCOUNT}/${GO_PROJECT}/archive-tarball/${GO_TAGNAME}?dummy=
+MASTER_SITES=	LOCAL/delphij \
+		https://gitorious.org/${GO_ACCOUNT}/${GO_PROJECT}/archive-tarball/${GO_TAGNAME}?dummy=
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	OpenLDAP Lightning Memory-Mapped Database
-
-BROKEN=		fails to fetch
 
 # XXX FreeBSD does not implement O_DSYNC and fdatasync at this time.
 CFLAGS+=	-DMDB_DSYNC=O_SYNC -Dfdatasync=fsync
