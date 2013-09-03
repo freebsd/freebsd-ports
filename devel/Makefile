@@ -2542,6 +2542,7 @@
     SUBDIR += p5-PerlIO-via-symlink
     SUBDIR += p5-Pid-File-Flock
     SUBDIR += p5-Pipeline
+    SUBDIR += p5-Pithub
     SUBDIR += p5-Pod-Coverage
     SUBDIR += p5-Pod-Coverage-Moose
     SUBDIR += p5-Pod-Coverage-TrustPod
