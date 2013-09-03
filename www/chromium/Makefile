@@ -11,7 +11,7 @@ MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 		http://download.goodking.org/downloads/:browser \
 		ftp://rene-ladan.nl/pub/distfiles/:browser \
 		http://files.etoilebsd.net/goodking/:browser
-DISTFILES=	${PORTNAME}${EXTRACT_SUFX}:browser
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:browser
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Mostly BSD-licensed web browser based on WebKit and Gtk+
