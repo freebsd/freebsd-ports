@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ZendFramework
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.4
 CATEGORIES=	www
 MASTER_SITES=	https://packages.zendframework.com/releases/${DISTNAME}/
 EXTRACT_SUFX=	.tgz
