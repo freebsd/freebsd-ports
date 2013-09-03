@@ -21,7 +21,7 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
 
 EMACS_VER=	24.3
 GNU_CONFIGURE=	yes
-USES=		ncurses gmake
+USES=		ncurses gmake pkgconfig
 USE_XZ=		yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

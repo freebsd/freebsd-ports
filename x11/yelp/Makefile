@@ -20,10 +20,9 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 
 CONFLICTS=	yelp-3.[0-9]*
 
-USES=		desktop-file-utils gettext
+USES=		desktop-file-utils gettext gmake pkgconfig
 USE_BZIP2=	yes
 USE_XORG=	ice
-USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 gnomedocutils
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

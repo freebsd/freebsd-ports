@@ -15,7 +15,7 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		gstfarsight-0.10:${PORTSDIR}/net-im/farsight2
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	libtool

@@ -1,8 +1,4 @@
-# ex:ts=8
-# Ports collection makefile for:	swfdec
-# Date created:			Apr 5, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
 #   $MCom: ports/graphics/swfdec/Makefile,v 1.28 2009/01/01 13:38:17 kwm Exp $
 
@@ -18,6 +14,7 @@ COMMENT=	Flash Rendering Library
 LIB_DEPENDS=	oil-0.3.0:${PORTSDIR}/devel/liboil \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup
 
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack gtk20 ltverhack
 USE_GSTREAMER=	core good mp3 ffmpeg

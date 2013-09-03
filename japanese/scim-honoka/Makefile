@@ -15,9 +15,8 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_LDCONFIG=	yes
-USES=		gettext iconv pathfix
+USES=		gettext iconv pathfix gmake pkgconfig
 USE_GNOME=	lthack
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \

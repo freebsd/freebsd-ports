@@ -18,7 +18,7 @@ LIB_DEPENDS=	plist:${PORTSDIR}/devel/libplist \
 
 USE_GNOME=	gtk20
 USE_SQLITE=	3
-USES=		gettext gmake
+USES=		gettext gmake pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-udev --without-hal \
