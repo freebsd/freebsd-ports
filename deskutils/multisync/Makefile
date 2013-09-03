@@ -1,7 +1,4 @@
-# New ports collection makefile for:	multisync
-# Date created:			25 Nov 2003
-# Whom:				Pav Lucistnik <pav@FreeBSD.org>
-#
+# Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME?=	multisync
@@ -18,7 +15,7 @@ WRKSRC?=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRCMASTER=	${WRKDIR}/multisync-${PORTVERSION}
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	automake:env libtool
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include

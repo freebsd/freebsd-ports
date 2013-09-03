@@ -18,8 +18,7 @@ LIB_DEPENDS=	sexy:${PORTSDIR}/x11-toolkits/libsexy \
 		notify:${PORTSDIR}/devel/libnotify
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		pathfix desktop-file-utils gettext
+USES=		pathfix desktop-file-utils gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix libgnomeui gnomedocutils
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

@@ -11,7 +11,7 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A graphical network traffic visualization tool for gnome
 
 USE_GNOME=	libglade2 libgnomeui gnomehack gnomeprefix
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

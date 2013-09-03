@@ -1,7 +1,4 @@
-# New ports collection makefile for: conglomerate
-# Date created:			Jun 26, 2003
-# Whom:				Pav Lucistnik <pav@oook.cz>
-#
+# Created by: Pav Lucistnik <pav@oook.cz>
 # $FreeBSD$
 
 PORTNAME=	conglomerate
@@ -14,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME2 visual XML editor with emphasis on DocBook editing
 
 INSTALLS_OMF=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	libgnomeui gtksourceview gnomeprefix gnomehack intlhack
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

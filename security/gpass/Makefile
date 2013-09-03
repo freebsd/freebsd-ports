@@ -15,11 +15,10 @@ LIB_DEPENDS=	mcrypt:${PORTSDIR}/security/mcrypt \
 
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -export-dynamic
-USE_GMAKE=	yes
 
 MAN1=		gpass.1 gpass.ja.1 gpass-convert.1 gpass-convert.ja.1
 
-USES=        pathfix
+USES=        pathfix gmake pkgconfig
 USE_GNOME=	gnomeprefix gtk20 libgnomeui intltool libglade2
 GCONF_SCHEMAS=	gpass.schemas
 

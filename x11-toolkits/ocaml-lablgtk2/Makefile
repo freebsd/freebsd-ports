@@ -14,7 +14,7 @@ COMMENT=	An Objective Caml interface to GTK+ 2.x
 
 LICENSE=	LGPL21
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes

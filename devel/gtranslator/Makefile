@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gtranslator
-# Date created:				16 September 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/devel/gtranslator/Makefile,v 1.12 2007/07/04 15:52:37 mezz Exp $
-#
 
 PORTNAME=	gtranslator
 PORTVERSION=	1.1.7
@@ -19,8 +15,7 @@ LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gnomevfs2 libgnomeui
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

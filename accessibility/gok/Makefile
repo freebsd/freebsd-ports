@@ -17,7 +17,7 @@ LIB_DEPENDS=	canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
     		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 USE_BZIP2=	yes
-USES=		gmake gettext
+USES=		gmake gettext pkgconfig
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui atspi libwnck \
 		gnomespeech libxml2

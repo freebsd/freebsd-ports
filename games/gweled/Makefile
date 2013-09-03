@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gweled
-# Date created:		November 28, 2003
-# Whom:			James Earl
-#
+# Created by: James Earl
 # $FreeBSD$
-#
 
 PORTNAME=	gweled
 PORTVERSION=	0.7
@@ -16,7 +12,7 @@ COMMENT=	GNOME version of the game called "Bejeweled" or "Diamond Mine"
 
 LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
 
-USE_GMAKE=	yes
+USE=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeui librsvg2
 GNU_CONFIGURE=	yes
 

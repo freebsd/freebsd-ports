@@ -1,10 +1,6 @@
-# New ports collection makefile for:	py-gnome
-# Date created:				09 February 2003
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11-toolkits/py-gnome2/Makefile,v 1.60 2010/04/02 20:22:15 kwm Exp $
-#
 
 PORTNAME=	gnome
 PORTVERSION=	2.28.1
@@ -24,10 +20,9 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ORBit.so:${PORTSDIR}/devel/py-orbit
 
 LATEST_LINK=	py-gnome2
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gnomehack libgnomeui pygtk2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \

@@ -30,9 +30,7 @@ LOCALE_TAX_DESC=	Enable localized tax categories
 WEBKIT_DESC=	Use webkit instead of gtkhtml for the HTML engine
 
 USE_BZIP2=	yes
-USES=		gettext
-USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		gettext gmake pkgconfig perl5
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix libglade2 libgnomeui
 GNU_CONFIGURE=	yes

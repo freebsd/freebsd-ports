@@ -1,9 +1,5 @@
-# New ports collection makefile for:	battfink
-# Date created:			12 April 2003
-# Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	battfink
 PORTVERSION=	0.6.2
@@ -19,8 +15,7 @@ USE_BZIP2=	yes
 USE_XORG=	x11
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -18,7 +18,7 @@ LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 USE_BZIP2=	yes
-USES=		gettext gmake
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier libgnomeui atspi \
 		libwnck gnomedocutils
 WANT_GNOME=	yes

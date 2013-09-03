@@ -13,6 +13,7 @@ COMMENT=	Graphical regular expression explorer
 
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
 
+USES=		pkgconfig
 USE_GNOME=	gnomeprefix libgnomeui
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

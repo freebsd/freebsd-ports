@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-i
 		update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomehack intlhack librsvg2 desktopfileutils \
 		gconf2 gnomedesktop
 WANT_GNOME=	yes

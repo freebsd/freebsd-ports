@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gnome-themes-extras
-# Date Created:				12 June 2003
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11-themes/gnome-themes-extras/Makefile,v 1.18 2007/10/04 02:36:16 mezz Exp $
-#
 
 PORTNAME=	gnome-themes-extras
 PORTVERSION=	2.22.0
@@ -21,9 +17,8 @@ BUILD_DEPENDS=	gtk-engines2>=2.11.0:${PORTSDIR}/x11-themes/gtk-engines2 \
 RUN_DEPENDS=	gtk-engines2>=2.11.0:${PORTSDIR}/x11-themes/gtk-engines2
 
 USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 USE_GNOME=	gnomehack libgnomeui intlhack
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

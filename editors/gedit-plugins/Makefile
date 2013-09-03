@@ -21,9 +21,8 @@ CONFLICTS=	gedit-plugins-3.[0-9]*
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USES=		pathfix gettext
+USES=		pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix intlhack gnomevfs2
 WANT_GNOME=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

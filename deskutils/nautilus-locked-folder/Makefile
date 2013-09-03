@@ -1,10 +1,6 @@
-# New ports collection makefile for:	nautilus-locked-folder
-# Date created:		2005-09-17
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/deskutils/nautilus-locked-folder/Makefile,v 1.12 2009/11/28 05:58:59 mezz Exp $
-#
 
 PORTNAME=	nautilus-locked-folder
 PORTVERSION=	1.0.0
@@ -16,6 +12,7 @@ MASTER_SITE_SUBDIR=	pav
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Nautilus plugin that allows you to encrypt the contents of a folder
 
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	nautilus2 eel2 libgnomeui
