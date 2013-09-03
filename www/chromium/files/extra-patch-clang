@@ -5,14 +5,14 @@
      thunks::GetAllocatorWasteSizeFunction get_allocator_waste_size_function) {
    DCHECK_EQ(thunks::GetGetAllocatorWasteSizeFunction(),
 -            reinterpret_cast<thunks::GetAllocatorWasteSizeFunction>(NULL));
-+            static_cast<thunks::GetAllocatorWasteSizeFunction>(0));
++            static_cast<thunks::GetAllocatorWasteSizeFunction>(NULL));
    thunks::SetGetAllocatorWasteSizeFunction(get_allocator_waste_size_function);
  }
  
  void SetGetStatsFunction(thunks::GetStatsFunction get_stats_function) {
    DCHECK_EQ(thunks::GetGetStatsFunction(),
 -            reinterpret_cast<thunks::GetStatsFunction>(NULL));
-+            static_cast<thunks::GetStatsFunction>(0));
++            static_cast<thunks::GetStatsFunction>(NULL));
    thunks::SetGetStatsFunction(get_stats_function);
  }
  
@@ -20,7 +20,7 @@
      thunks::ReleaseFreeMemoryFunction release_free_memory_function) {
    DCHECK_EQ(thunks::GetReleaseFreeMemoryFunction(),
 -            reinterpret_cast<thunks::ReleaseFreeMemoryFunction>(NULL));
-+            static_cast<thunks::ReleaseFreeMemoryFunction>(0));
++            static_cast<thunks::ReleaseFreeMemoryFunction>(NULL));
    thunks::SetReleaseFreeMemoryFunction(release_free_memory_function);
  }
  
@@ -31,10 +31,21 @@
  // profiling.
  void SetAlternateTimeSource(NowFunction* now_function, TimeSourceType type) {
 -  DCHECK_EQ(reinterpret_cast<NowFunction*>(NULL), g_time_function);
-+  DCHECK_EQ(static_cast<NowFunction*>(0), g_time_function);
++  DCHECK_EQ(static_cast<NowFunction*>(NULL), g_time_function);
    g_time_function = now_function;
    g_time_source_type = type;
  }
+--- base/threading/thread_local_storage_unittest.cc.orig	2013-08-30 23:06:21.000000000 +0300
++++ base/threading/thread_local_storage_unittest.cc	2013-08-30 23:06:50.000000000 +0300
+@@ -60,7 +60,7 @@
+ void ThreadLocalStorageCleanup(void *value) {
+   int *ptr = reinterpret_cast<int*>(value);
+   // Destructors should never be called with a NULL.
+-  ASSERT_NE(reinterpret_cast<int*>(NULL), ptr);
++  ASSERT_NE(static_cast<int*>(NULL), ptr);
+   if (*ptr == kFinalTlsValue)
+     return;  // We've been called enough times.
+   ASSERT_LT(kFinalTlsValue, *ptr);
 --- base/tracked_objects.cc	2013-07-03 23:39:54.000000000 -0400
 +++ base/tracked_objects.cc	2013-07-19 00:42:10.000000000 -0400
 @@ -346,7 +346,7 @@
@@ -42,10 +53,42 @@
    // We must NOT do any allocations during this callback.
    // Using the simple linked lists avoids all allocations.
 -  DCHECK_EQ(this->next_retired_worker_, reinterpret_cast<ThreadData*>(NULL));
-+  DCHECK_EQ(this->next_retired_worker_, static_cast<ThreadData*>(0));
++  DCHECK_EQ(this->next_retired_worker_, static_cast<ThreadData*>(NULL));
    this->next_retired_worker_ = first_retired_worker_;
    first_retired_worker_ = this;
  }
+--- base/tracked_objects_unittest.cc.orig	2013-08-30 23:09:01.000000000 +0300
++++ base/tracked_objects_unittest.cc	2013-08-30 23:10:14.000000000 +0300
+@@ -50,9 +50,9 @@
+     Births* birth = ThreadData::TallyABirthIfActive(location);
+
+     if (ThreadData::status() == ThreadData::DEACTIVATED)
+-      EXPECT_EQ(reinterpret_cast<Births*>(NULL), birth);
++      EXPECT_EQ(static_cast<Births*>(NULL), birth);
+     else
+-      EXPECT_NE(reinterpret_cast<Births*>(NULL), birth);
++      EXPECT_NE(static_cast<Births*>(NULL), birth);
+   }
+
+   // Helper function to verify the most common test expectations.
+@@ -231,7 +231,7 @@
+     return;
+
+   scoped_ptr<DeathData> data(new DeathData());
+-  ASSERT_NE(data, reinterpret_cast<DeathData*>(NULL));
++  ASSERT_NE(data, static_cast<DeathData*>(NULL));
+   EXPECT_EQ(data->run_duration_sum(), 0);
+   EXPECT_EQ(data->run_duration_sample(), 0);
+   EXPECT_EQ(data->queue_duration_sum(), 0);
+@@ -432,7 +432,7 @@
+   Location location(kFunction, kFile, kLineNumber, NULL);
+   // Do not delete |birth|.  We don't own it.
+   Births* birth = ThreadData::TallyABirthIfActive(location);
+-  EXPECT_NE(reinterpret_cast<Births*>(NULL), birth);
++  EXPECT_NE(static_cast<Births*>(NULL), birth);
+
+   const TrackedTime kTimePosted = TrackedTime() + Duration::FromMilliseconds(1);
+   const TrackedTime kStartOfRun = TrackedTime() +
 --- chrome/browser/metrics/thread_watcher.cc	2013-07-03 23:45:55.000000000 -0400
 +++ chrome/browser/metrics/thread_watcher.cc	2013-07-19 01:38:45.000000000 -0400
 @@ -40,7 +40,7 @@
@@ -53,7 +96,7 @@
  
  int* NullPointer() {
 -  return reinterpret_cast<int*>(NULL);
-+  return static_cast<int*>(0);
++  return static_cast<int*>(NULL);
  }
  
  void NullPointerCrash(int line_number) {
@@ -64,9 +107,42 @@
    DCHECK(window_ptr);
    DCHECK_EQ(window_ptr->window_id.id(), window_id);
 -  DCHECK_EQ(reinterpret_cast<SessionWindow*>(NULL),
-+  DCHECK_EQ(static_cast<SessionWindow*>(0),
++  DCHECK_EQ(static_cast<SessionWindow*>(NULL),
              GetSession(session_tag)->windows[window_id]);
    GetSession(session_tag)->windows[window_id] = window_ptr;
+ }
+--- media/audio/audio_output_proxy_unittest.cc.orig	2013-08-30 23:23:03.000000000 +0300
++++ media/audio/audio_output_proxy_unittest.cc	2013-08-30 23:23:54.000000000 +0300
+@@ -427,7 +427,7 @@
+     // |stream| is closed at this point. Start() should reopen it again.
+     EXPECT_CALL(manager(), MakeAudioOutputStream(_, _))
+         .Times(2)
+-        .WillRepeatedly(Return(reinterpret_cast<AudioOutputStream*>(NULL)));
++        .WillRepeatedly(Return(static_cast<AudioOutputStream*>(NULL)));
+
+     EXPECT_CALL(callback_, OnError(_))
+         .Times(2);
+--- media/filters/decrypting_video_decoder_unittest.cc.orig	2013-08-30 23:27:39.000000000 +0300
++++ media/filters/decrypting_video_decoder_unittest.cc	2013-08-30 23:28:27.000000000 +0300
+@@ -482,7 +482,7 @@
+   // callback to cancel the |decryptor_ready_cb|.
+   EXPECT_CALL(*this, RequestDecryptorNotification(IsNullCallback()))
+       .WillOnce(ResetAndRunCallback(&decryptor_ready_cb,
+-                                    reinterpret_cast<Decryptor*>(NULL)));
++                                    static_cast<Decryptor*>(NULL)));
+   Stop();
+ }
+
+--- net/url_request/view_cache_helper_unittest.cc.orig	2013-09-01 00:33:32.000000000 +0300
++++ net/url_request/view_cache_helper_unittest.cc	2013-09-01 00:34:02.000000000 +0300
+@@ -29,7 +29,7 @@
+ };
+
+ TestURLRequestContext::TestURLRequestContext()
+-    : cache_(reinterpret_cast<HttpTransactionFactory*>(NULL), NULL,
++    : cache_(static_cast<HttpTransactionFactory*>(NULL), NULL,
+              HttpCache::DefaultBackend::InMemory(0)) {
+   set_http_transaction_factory(&cache_);
  }
 --- third_party/WebKit/Source/wtf/TypeTraits.h	2013-07-04 00:14:12.000000000 -0400
 +++ third_party/WebKit/Source/wtf/TypeTraits.h	2013-07-19 01:29:01.000000000 -0400
@@ -106,7 +182,7 @@
    it = std::remove(tasks_.begin(),
                     tasks_.end(),
 -                   reinterpret_cast<Task *>(NULL));
-+                   static_cast<Task *>(0));
++                   static_cast<Task *>(NULL));
  
    tasks_.erase(it, tasks_.end());
  
@@ -117,7 +193,7 @@
  
  CMapTable::CMapFormat0::Builder::Builder(const CMapId& cmap_id)
 -    : CMap::Builder(reinterpret_cast<ReadableFontData*>(NULL),
-+    : CMap::Builder(static_cast<ReadableFontData*>(0),
++    : CMap::Builder(static_cast<ReadableFontData*>(NULL),
                      CMapFormat::kFormat0,
                      cmap_id) {
  }
@@ -126,7 +202,7 @@
                                     data->Slice(offset, data->ReadUShort(
                                         offset + Offset::kFormat0Length)))
 -                               : reinterpret_cast<WritableFontData*>(NULL),
-+                               : static_cast<WritableFontData*>(0),
++                               : static_cast<WritableFontData*>(NULL),
                                 CMapFormat::kFormat2, cmap_id) {
    // TODO(arthurhsu): FIXIT: heavy lifting and leak, need fix.
  }
@@ -135,7 +211,7 @@
                                     data->Slice(offset, data->ReadUShort(
                                         offset + Offset::kFormat0Length)))
 -                               : reinterpret_cast<ReadableFontData*>(NULL),
-+                               : static_cast<ReadableFontData*>(0),
++                               : static_cast<ReadableFontData*>(NULL),
                                 CMapFormat::kFormat2, cmap_id) {
    // TODO(arthurhsu): FIXIT: heavy lifting and leak, need fix.
  }
@@ -144,7 +220,7 @@
                                           IntegerList* glyph_id_array,
                                           const CMapId& cmap_id)
 -    : CMap::Builder(reinterpret_cast<ReadableFontData*>(NULL),
-+    : CMap::Builder(static_cast<ReadableFontData*>(0),
++    : CMap::Builder(static_cast<ReadableFontData*>(NULL),
                      CMapFormat::kFormat4, cmap_id),
        segments_(segments->begin(), segments->end()),
        glyph_id_array_(glyph_id_array->begin(), glyph_id_array->end()) {
@@ -153,10 +229,21 @@
  
  CMapTable::CMapFormat4::Builder::Builder(const CMapId& cmap_id)
 -    : CMap::Builder(reinterpret_cast<ReadableFontData*>(NULL),
-+    : CMap::Builder(static_cast<ReadableFontData*>(0),
++    : CMap::Builder(static_cast<ReadableFontData*>(NULL),
                      CMapFormat::kFormat4, cmap_id) {
  }
  
+--- v8/src/heap.cc.orig	2013-08-30 22:09:43.000000000 +0300
++++ v8/src/heap.cc	2013-08-30 22:10:26.000000000 +0300
+@@ -7285,7 +7285,7 @@
+
+ #ifdef DEBUG
+
+-Object* const PathTracer::kAnyGlobalObject = reinterpret_cast<Object*>(NULL);
++Object* const PathTracer::kAnyGlobalObject = static_cast<Object*>(NULL);
+
+ class PathTracer::MarkVisitor: public ObjectVisitor {
+  public:
 --- v8/src/stub-cache.cc	2013-07-03 23:56:49.000000000 -0400
 +++ v8/src/stub-cache.cc	2013-07-19 00:35:10.000000000 -0400
 @@ -1476,7 +1476,7 @@
@@ -164,7 +251,6 @@
    return (FLAG_print_code_stubs && !name.is_null() && name->IsString())
        ? GetCodeWithFlags(flags, *Handle<String>::cast(name)->ToCString())
 -      : GetCodeWithFlags(flags, reinterpret_cast<char*>(NULL));
-+      : GetCodeWithFlags(flags, static_cast<char*>(0));
++      : GetCodeWithFlags(flags, static_cast<char*>(NULL));
  }
- 
- 
+
