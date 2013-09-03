@@ -16,8 +16,7 @@ LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
 		expat:${PORTSDIR}/textproc/expat2 \
 		gd:${PORTSDIR}/${GD_PORT}
 
-USES=		bison
-USE_GMAKE=	yes
+USES=		bison gmake pkgconfig
 USE_AUTOTOOLS=	libltdl libtool
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
