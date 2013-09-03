@@ -13,8 +13,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Project management application for GNOME 2
 
 USE_XZ=		yes
-USE_GMAKE=	yes
-USES=		pathfix gettext
+USES=		pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix intlhack libgnomeui libgnomeprintui \
 		libgsf desktopfileutils
 WANT_GNOME=	yes

@@ -11,7 +11,7 @@ COMMENT=	Smith charting program
 
 LICENSE=	GPLv2 # (or later)
 
-USES=		gettext
+USES=		gettext pkgconfig
 USE_GNOME=	libgnomeui libxml2
 GNU_CONFIGURE=	yes
 

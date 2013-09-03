@@ -18,9 +18,7 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-USE_PERL5=	yes
-USE_GMAKE=	yes
-USES=		pathfix gettext
+USES=		pathfix gettext perl5 gmake pkgconfig
 USE_GNOME=	gnomeprefix intlhack libgnomeui libgnomeprintui ltverhack
 USE_XORG=	x11
 USE_LDCONFIG=	yes

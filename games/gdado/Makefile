@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gdado
-# Date created:				06 May 2007
-# Whom:					Anish Mistry <amistry@am-productions.biz>
-#
+# Created by: Anish Mistry <amistry@am-productions.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	gdado
 PORTVERSION=	2.2
@@ -15,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 dice roller
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USE=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gtk20 libgnomeui
 
 post-patch:

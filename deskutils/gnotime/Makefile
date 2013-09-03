@@ -16,7 +16,7 @@ LICENSE=	GPLv2 # (or later)
 
 LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile
 
-USES=		gettext gmake pathfix
+USES=		gettext gmake pathfix pkgconfig
 USE_XORG=	xscrnsaver
 USE_GNOME=	gnomeprefix gtkhtml3 intlhack libgnomeui
 USE_AUTOTOOLS=	libtool libltdl

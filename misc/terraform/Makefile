@@ -19,9 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libtrio.a:${PORTSDIR}/devel/trio
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=        pathfix gettext
+USES=        pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomehier libgnomeprintui libgnomeui
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:env
 GNU_CONFIGURE=	yes
 

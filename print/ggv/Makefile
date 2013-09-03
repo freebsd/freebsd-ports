@@ -1,10 +1,6 @@
-# New ports collection makefile for:	ggv2
-# Date created:				07 July 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/print/ggv/Makefile,v 1.8 2007/09/24 19:40:45 mezz Exp $
-#
 
 PORTNAME=	ggv
 PORTVERSION=	2.12.0
@@ -18,9 +14,8 @@ COMMENT=	GNOME 2 ghostscript viewer
 
 USE_BZIP2=	yes
 INSTALLS_OMF=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui desktopfileutils
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

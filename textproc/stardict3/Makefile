@@ -20,10 +20,9 @@ CONFIGURE_ARGS=	--disable-festival \
 		--disable-gucharmap \
 		--disable-espeak \
 		--disable-updateinfo
-USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack
-USES=		gettext
+USES=		gettext gmake pkgconfig
 CONFIGURE_WRKSRC=	${WRKSRC}/dict
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}

@@ -1,10 +1,6 @@
-# New ports collection makefile for:	nautilus-open-terminal
-# Date created:		2005-07-07
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/deskutils/nautilus-open-terminal/Makefile,v 1.17 2009/08/09 15:30:27 ahze Exp $
-#
 
 PORTNAME=	nautilus-open-terminal
 PORTVERSION=	0.18
@@ -16,10 +12,9 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Nautilus extension which allows you to open a terminal
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	nautilus2 gnomeprefix intlhack gnomehack
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags gnome-vfs-2.0`
 LDFLAGS+=	-L${LOCALBASE}/lib

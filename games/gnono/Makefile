@@ -12,8 +12,7 @@ COMMENT=	Uno card game
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20 libgnomeui
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -19,8 +19,7 @@ RUN_DEPENDS=	gnome-mount:${PORTSDIR}/sysutils/gnome-mount \
 
 CONFIGURE_ARGS=	--enable-gnome-mount
 USE_BZIP2=	yes
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake pkgconfig
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack intlhack nautilus2 ltverhack \
 		desktopfileutils ltasneededhack eel2 libgnomeui

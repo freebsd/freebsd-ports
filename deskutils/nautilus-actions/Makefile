@@ -1,10 +1,6 @@
-# New ports collection makefile for:	nautilus-actions
-# Date created:		2005-08-31
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/deskutils/nautilus-actions/Makefile,v 1.21 2010/04/16 23:41:09 kwm Exp $
-#
 
 PORTNAME=	nautilus-actions
 PORTVERSION=	2.30.3
@@ -21,9 +17,8 @@ LIB_DEPENDS=	uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid \
 
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_GNOME=	nautilus2 intlhack
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

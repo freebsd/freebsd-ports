@@ -1,9 +1,5 @@
-# New ports collection makefile for:	COnfigurator for Gnome
-# Date created:				01 May 2004
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cog
 PORTVERSION=	0.8.0
@@ -15,9 +11,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A program for editing advanced GNOME settings in an easy way
 
 USE_XORG=	x11
-USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
-USES=		gettext
+USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

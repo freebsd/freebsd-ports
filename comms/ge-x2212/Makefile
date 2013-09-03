@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}-2-15sept2010
 MAINTAINER=	shurd@sasktel.net
 COMMENT=	EEPROM programmer for GE Phoenix SX Radios
 
+USES=		pkgconfig
 USE_GNOME=	libgnomeui
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-2

@@ -13,9 +13,8 @@ COMMENT=	GNOME version of the classic 3D-ified T*tris
 
 EXTRACT_DEPENDS=intltoolize:${PORTSDIR}/textproc/intltool
 
-USES=        pathfix
+USES=        pathfix gmake pkgconfig
 USE_GNOME=	gnomeprefix intlhack libgnomeui librsvg2
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoheader automake aclocal autoconf
 ACLOCAL_ARGS=	-I m4 -I ${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	-a -c -f

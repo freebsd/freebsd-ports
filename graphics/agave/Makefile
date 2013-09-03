@@ -17,8 +17,7 @@ LIB_DEPENDS=	glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 #OPTIONS=	GNOME	"Adds GNOME support"	on
 
 USE_BZIP2=	yes
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomehack gnomedocutils intlhack
 GCONF_SCHEMAS=	agave.schemas
 INSTALLS_ICONS=	yes

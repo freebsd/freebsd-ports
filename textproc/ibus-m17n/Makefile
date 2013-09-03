@@ -17,7 +17,7 @@ RUN_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus
 
 PROJECTHOST=	ibus
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.options.mk>

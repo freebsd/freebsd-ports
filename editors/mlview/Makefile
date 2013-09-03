@@ -13,9 +13,8 @@ COMMENT=	A tree oriented XML editor for Gnome
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf libtool
-USES=        pathfix
+USES=        pathfix gmake pkgconfig
 USE_GNOME=	eel2 gnomeprefix gtksourceview libgnomeui
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib `pkg-config --libs gnome-vfs-2.0 libgnomeui-2.0`"
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags gnome-vfs-2.0 libgnomeui-2.0`
