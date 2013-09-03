@@ -13,6 +13,7 @@ COMMENT=	Berkeley Open Infrastructure for Network Computing client
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_LDCONFIG=	yes
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(cpp|h)
