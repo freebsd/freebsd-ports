@@ -23,7 +23,8 @@ BUILD_DEPENDS=	p5-Catalyst-Model-DBIC-Schema>=0.18:${PORTSDIR}/www/p5-Catalyst-M
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Catalyst::Authentication::Realm::SimpleDB.3 \
 		Catalyst::Authentication::Store::DBIx::Class.3 \

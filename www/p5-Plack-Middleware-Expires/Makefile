@@ -14,7 +14,8 @@ RUN_DEPENDS=	p5-Plack>=0.9937:${PORTSDIR}/www/p5-Plack \
 		p5-Try-Tiny>=0.06:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Plack::Middleware::Expires.3
 
