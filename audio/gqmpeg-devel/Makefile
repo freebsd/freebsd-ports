@@ -12,8 +12,6 @@ COMMENT=	Another gtk-based MP3 frontend
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-USES=		pkgconfig
-
 .if defined(WITH_MPG321)
 RUN_DEPENDS+=	mpg321:${PORTSDIR}/audio/mpg321
 .else
@@ -28,7 +26,7 @@ RUN_DEPENDS+=	xmp:${PORTSDIR}/audio/xmp
 RUN_DEPENDS+=	ogg123:${PORTSDIR}/audio/vorbis-tools
 .endif
 
-USES=		gmake
+USES=		gmake pkgconfig
 LATEST_LINK=	gqmpeg-devel
 USE_XORG=	xext xrender xinerama xi xrandr xcursor xcomposite xdamage x11 \
 		xfixes xproto

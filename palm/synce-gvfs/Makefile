@@ -15,8 +15,7 @@ LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2
 
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=        pathfix gettext
+USES=		pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix gvfs
 INSTALLS_ICONS=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}

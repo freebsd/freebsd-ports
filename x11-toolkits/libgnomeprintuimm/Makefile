@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libgnomeprintuimm
-# Date created:				17 December 2003
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libgnomeprintuimm
 PORTVERSION=	2.5.2
@@ -21,7 +17,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomehack libgnomeprintui
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

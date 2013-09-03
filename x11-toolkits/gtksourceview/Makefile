@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gtksourceview
-# Date created:				07 May 2003
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11-toolkits/gtksourceview/Makefile,v 1.46 2007/05/19 21:36:33 marcus Exp $
-#
 
 PORTNAME=	gtksourceview
 PORTVERSION=	1.8.5
@@ -20,8 +16,7 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnome libgnomeprintui intlhack \

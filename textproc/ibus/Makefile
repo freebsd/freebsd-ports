@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ibus
-# Date created:				21 October 2008
-# Whom:					Henry Hu <henry.hu.sh@gmail.com>
-#
+# Created by: Henry Hu <henry.hu.sh@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ibus
 PORTVERSION=	1.4.1
@@ -28,7 +24,7 @@ USE_PYTHON=	yes
 USE_GNOME=	pygtk2 gconf2
 
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	ibus.schemas

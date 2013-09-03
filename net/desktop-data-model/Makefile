@@ -1,9 +1,5 @@
-# New ports collection makefile for:	desktop-data-model
-# Date created:		2008-05-28
-# Whom:			Ashish Shukla <wahjava@gmail.com>
-#
+# Created by: Ashish Shukla <wahjava@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	desktop-data-model
 PORTVERSION=	1.2.4
@@ -25,9 +21,8 @@ LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		loudmouth-1.0:${PORTSDIR}/net-im/loudmouth
 
-USE_GMAKE=	yes
 USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gnomehack gtk20 glib20 gnomedesktop gnomevfs2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-maemo=no
