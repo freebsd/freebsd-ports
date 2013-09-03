@@ -16,8 +16,7 @@ LICENSE=	GPLv2
 CONFLICTS=	gimp-print-[0-9]*
 
 USE_BZIP2=	yes
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gnomehack gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=--with-gimp=no --with-gimp2=no
