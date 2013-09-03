@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-LibXSLT
-PORTVERSION=	1.80
+PORTVERSION=	1.81
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,14 +14,16 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-XML-LibXML>=1.70:${PORTSDIR}/textproc/p5-XML-LibXML
+LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
+		libxslt.so:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		xslt.2:${PORTSDIR}/textproc/libxslt
 
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
+LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		perl5
 USE_PERL5=	configure
-CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2" \
-		LIBS="-L${LOCALBASE}/lib"
+#CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2" \
+#		LIBS="-L${LOCALBASE}/lib"
 
 MAN3=		XML::LibXSLT.3
 
