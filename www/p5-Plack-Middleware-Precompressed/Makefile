@@ -15,7 +15,8 @@ RUN_DEPENDS=	\
 	p5-Array-RefElem>0:${PORTSDIR}/misc/p5-Array-RefElem
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Plack::Middleware::Precompressed.3
 

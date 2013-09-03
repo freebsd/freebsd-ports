@@ -24,7 +24,8 @@ BUILD_DEPENDS=	p5-Config-Simple>=0:${PORTSDIR}/devel/p5-Config-Simple \
 		p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Net::Flickr::API.3
 

@@ -18,7 +18,8 @@ RUN_DEPENDS=	\
 	p5-AnyEvent>=5.2:${PORTSDIR}/devel/p5-AnyEvent
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	AnyEvent::SCGI.3
 

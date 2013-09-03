@@ -23,7 +23,8 @@ BUILD_DEPENDS=	p5-DateTime>=0.37:${PORTSDIR}/devel/p5-DateTime \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Class>=0:${PORTSDIR}/devel/p5-Test-Class
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		wd_fcgi.fpl.1 \
 		wd_shell.pl.1
