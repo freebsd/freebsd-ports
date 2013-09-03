@@ -1,0 +1,3 @@
+Provides strategies for authenticating to providers using the OpenID standard.
+
+WWW: https://github.com/intridea/omniauth-openid
