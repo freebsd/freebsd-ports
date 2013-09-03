@@ -13,7 +13,8 @@ COMMENT=	Perl extension for creating Ext.Direct remoting in CGI applications
 BUILD_DEPENDS=	p5-RPC-ExtDirect>=2.10:${PORTSDIR}/www/p5-RPC-ExtDirect
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CGI::ExtDirect.3
 

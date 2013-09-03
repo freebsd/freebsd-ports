@@ -18,7 +18,7 @@ RUN_DEPENDS+=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
 		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long
 
-USE_PERL5=	yes
+USES=		perl5
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	${NAGIOS_PLUGIN_DIR}/check_certexp.pl

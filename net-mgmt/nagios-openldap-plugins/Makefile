@@ -24,7 +24,8 @@ RUN_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
 PORTSCOUT=	ignore:1
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 PLIST_FILES=	libexec/nagios/check_ldap_dn.pl \
 		libexec/nagios/check_ldap_query.pl \

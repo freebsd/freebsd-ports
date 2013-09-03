@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	joris.dedieu@gmail.com
 COMMENT=	Process an SNMP trap with perl
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		SNMP::Trapinfo.3
 

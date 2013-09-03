@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/www/routers2/routers2.cgi:${PORTSDIR}/net-mgmt/routers
 
 WRKSRC=		${WRKDIR}/routers2-v${PORTVERSION}/extensions
 
-USE_PERL5=	YES
+USES=		perl5
 
 NO_BUILD=	YES
 

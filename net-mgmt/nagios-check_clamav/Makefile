@@ -16,7 +16,8 @@ MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Nagios plugin that verifies ClamAV local signature database revision
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 RUN_DEPENDS+=	${LOCALBASE}/libexec/nagios/utils.pm:${PORTSDIR}/net-mgmt/nagios-plugins \
 		clamav>=0:${PORTSDIR}/security/clamav \
