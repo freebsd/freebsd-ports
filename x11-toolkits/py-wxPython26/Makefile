@@ -1,9 +1,5 @@
-# New ports collection makefile for:    wxPython
-# Date created:         		September 18, 1999
-# Whom:					nectar@FreeBSD.ORG
-#
+# Created by: nectar@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	wxPython
 PORTVERSION=	2.6.3.3
@@ -21,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-ope
 WRKSRC=		${WRKDIR}/${DISTNAME}/wxPython
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_BUILDARGS=	\
