@@ -20,8 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORT
 CONFLICTS=	evolution-3.[0-9]*
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		bison desktop-file-utils gettext pathfix
+USES=		bison desktop-file-utils gettext pathfix gmake pkgconfig
 USE_GNOME=	gnomeprefix intlhack evolutiondataserver gtkhtml3 \
 		gnomedocutils ltasneededhack gnomedesktop
 USE_AUTOTOOLS=	libtool
