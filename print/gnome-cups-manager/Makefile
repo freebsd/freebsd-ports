@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gnome-cups-manager
-# Date created:				14 Jul 2003
-# Whom:					Glenn Johnson <glennpj@charter.net>
-#
+# Created by: Glenn Johnson <glennpj@charter.net>
 # $FreeBSD$
 #   $MCom: ports/print/gnome-cups-manager/Makefile,v 1.8 2007/07/20 01:11:31 mezz Exp $
-#
 
 PORTNAME=	gnome-cups-manager
 PORTVERSION=	0.31
@@ -22,10 +18,9 @@ RUN_DEPENDS=	gnomesu:${PORTSDIR}/security/libgnomesu
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeprintui libgnomeui \
 		desktopfileutils
-USES=		gettext
+USES=		gettext gmake pkgconfig
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

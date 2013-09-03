@@ -1,10 +1,6 @@
-# New ports collection makefile for:	evolution-exchange
-# Date created:				28 April, 2005
-# Whom:					Adam Weinberger, based off kiesel's ximian-exchange port
-#
+# Created by: Adam Weinberger, based off kiesel's ximian-exchange port
 # $FreeBSD$
 #   $MCom: ports/mail/evolution-exchange/Makefile,v 1.172 2012/09/20 23:06:27 kwm Exp $
-#
 
 PORTNAME=	evolution-exchange
 PORTVERSION=	2.32.1
@@ -23,9 +19,8 @@ RUN_DEPENDS=	${EVO_PC_FILE}:${PORTSDIR}/mail/evolution
 CONFLICTS=	evolution-exchange-3.[0-9]*
 
 USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 USE_BDB=	41
 USE_OPENLDAP=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack ltasneededhack

@@ -13,7 +13,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Webcal(endar) handler for gnome
 
 USE_BZIP2=	yes
-USES=		gettext gmake pathfix perl5
+USES=		gettext gmake pathfix perl5 pkgconfig
 USE_PERL5=	build
 USE_GNOME=	gnomeprefix intlhack evolutiondataserver libgnomeui
 GNU_CONFIGURE=	yes

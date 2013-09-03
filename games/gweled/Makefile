@@ -12,7 +12,7 @@ COMMENT=	GNOME version of the game called "Bejeweled" or "Diamond Mine"
 
 LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
 
-USE=		gmake pkgconfig
+USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeui librsvg2
 GNU_CONFIGURE=	yes
 
