@@ -5,11 +5,11 @@ include/ctlgeom.h
 lib/libctl.a
 lib/libctl.la
 lib/libctl.so
-lib/libctl.so.4
+lib/libctl.so.5
 lib/libctlgeom.a
 lib/libctlgeom.la
 lib/libctlgeom.so
-lib/libctlgeom.so.4
+lib/libctlgeom.so.5
 %%PORTDOCS%%%%DOCSDIR%%/advanced-user.html
 %%PORTDOCS%%%%DOCSDIR%%/basic-user.html
 %%PORTDOCS%%%%DOCSDIR%%/developer.html
