@@ -19,10 +19,9 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		upower-glib:${PORTSDIR}/sysutils/upower \
 		canberra-gtk:${PORTSDIR}/audio/libcanberra
 
-USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix intlhack gconf2 gnomemenus gnomedocutils
-USES=		desktop-file-utils gettext iconv pathfix
+USES=		desktop-file-utils gettext iconv pathfix gmake pkgconfig
 USE_PYTHON_BUILD=-2.7
 GCONF_SCHEMAS=	gnome-packagekit.schemas
 INSTALLS_ICONS=	yes
