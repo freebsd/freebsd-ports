@@ -1,9 +1,5 @@
-# New ports collection makefile for:    scim
-# Date created:		20 May 2004
-# Whom:			Jie Gao	<gaoj@cpsc.ucalgary.ca>
-#
+# Created by: Jie Gao	<gaoj@cpsc.ucalgary.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	scim
 PORTVERSION=	1.4.9
@@ -18,10 +14,9 @@ USE_GNOME=	gnomehack gnomehier gtk20 intlhack
 
 USE_AUTOTOOLS=	libtool
 USE_GCC=	any
-USE_GMAKE=	yes
 USE_XORG=	x11 xpm
 USE_LDCONFIG=	yes
-USES=		gettext iconv
+USES=		gettext gmake iconv pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
