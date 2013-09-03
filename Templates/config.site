@@ -326,10 +326,7 @@
 : ${ac_cv_func_iswctype=yes}
 : ${ac_cv_func_link=yes}
 : ${ac_cv_func_localtime=yes}
-: ${ac_cv_func_login=yes}
 : ${ac_cv_func_login_getcapbool=yes}
-: ${ac_cv_func_logout=yes}
-: ${ac_cv_func_logwtmp=yes}
 : ${ac_cv_func_lstat=yes}
 : ${ac_cv_func_lstat_dereferences_slashed_symlink=yes}
 : ${ac_cv_func_malloc_0_nonnull=yes}
