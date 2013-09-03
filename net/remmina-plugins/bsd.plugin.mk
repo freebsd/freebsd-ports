@@ -8,8 +8,7 @@ LICENSE_FILE=	${WRKSRC}/${PORTNAME}s/COPYING
 BUILD_DEPENDS+=	remmina>=${PORTVERSION}:${PORTSDIR}/net/remmina
 RUN_DEPENDS+=	remmina>=${PORTVERSION}:${PORTSDIR}/net/remmina
 
-USES=		cmake
-USE_GMAKE=	yes
+USES=		cmake gmake pkgconfig
 USE_GNOME=	atk desktopfileutils gdkpixbuf2 glib20 gtk20 pango
 INSTALLS_ICONS=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
