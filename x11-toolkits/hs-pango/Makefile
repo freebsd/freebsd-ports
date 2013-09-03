@@ -10,6 +10,7 @@ COMMENT=	Binding to the Pango text rendering engine
 
 LICENSE=	LGPL21
 
+USES=		pkgconfig
 USE_CABAL=	cairo>=0.12.0 glib>=0.12.0 mtl
 USE_GNOME=	pango
 
