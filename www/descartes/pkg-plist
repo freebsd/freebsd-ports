@@ -1,0 +1,102 @@
+@comment $FreeBSD$
+%%WWWDIR%%/spec/web_spec.rb
+%%WWWDIR%%/spec/spec_helper.rb
+%%WWWDIR%%/lib/descartes/web.rb
+%%WWWDIR%%/lib/descartes/views/metrics/index.haml
+%%WWWDIR%%/lib/descartes/views/layout.haml
+%%WWWDIR%%/lib/descartes/views/index.haml
+%%WWWDIR%%/lib/descartes/views/graphs/show.haml
+%%WWWDIR%%/lib/descartes/views/graphs/index.haml
+%%WWWDIR%%/lib/descartes/views/dashboards/show.haml
+%%WWWDIR%%/lib/descartes/views/dashboards/index.haml
+%%WWWDIR%%/lib/descartes/views/common/_sort.haml
+%%WWWDIR%%/lib/descartes/views/common/_interval.haml
+%%WWWDIR%%/lib/descartes/views/common/_columns.haml
+%%WWWDIR%%/lib/descartes/views/chartroulette.haml
+%%WWWDIR%%/lib/descartes/routes/setup.rb
+%%WWWDIR%%/lib/descartes/routes/metrics.rb
+%%WWWDIR%%/lib/descartes/routes/helpers.rb
+%%WWWDIR%%/lib/descartes/routes/graphs.rb
+%%WWWDIR%%/lib/descartes/routes/gists.rb
+%%WWWDIR%%/lib/descartes/routes/favorites.rb
+%%WWWDIR%%/lib/descartes/routes/dashboards.rb
+%%WWWDIR%%/lib/descartes/routes/chartroulette.rb
+%%WWWDIR%%/lib/descartes/routes/cats.rb
+%%WWWDIR%%/lib/descartes/routes/auth.rb
+%%WWWDIR%%/lib/descartes/public/js/vendor/rickshaw.min.js
+%%WWWDIR%%/lib/descartes/public/js/vendor/jwerty.js
+%%WWWDIR%%/lib/descartes/public/js/vendor/jsonlint.js
+%%WWWDIR%%/lib/descartes/public/js/vendor/json2.js
+%%WWWDIR%%/lib/descartes/public/js/vendor/jquery.url.js
+%%WWWDIR%%/lib/descartes/public/js/vendor/d3.v2.min.js
+%%WWWDIR%%/lib/descartes/public/js/vendor/crypto-min.js
+%%WWWDIR%%/lib/descartes/public/js/vendor/bootstrap.min.js
+%%WWWDIR%%/lib/descartes/public/js/vendor/URI.js
+%%WWWDIR%%/lib/descartes/public/js/render-graph.js
+%%WWWDIR%%/lib/descartes/public/js/render-dashboard.js
+%%WWWDIR%%/lib/descartes/public/js/render-common.js
+%%WWWDIR%%/lib/descartes/public/js/profile-graph.js
+%%WWWDIR%%/lib/descartes/public/js/list-metrics.js
+%%WWWDIR%%/lib/descartes/public/js/list-dashboards.js
+%%WWWDIR%%/lib/descartes/public/js/graphs.js
+%%WWWDIR%%/lib/descartes/public/js/chartroulette.js
+%%WWWDIR%%/lib/descartes/public/img/vendor/glyphicons-halflings.png
+%%WWWDIR%%/lib/descartes/public/img/vendor/glyphicons-halflings-white.png
+%%WWWDIR%%/lib/descartes/public/img/spin.gif
+%%WWWDIR%%/lib/descartes/public/img/descartes.png
+%%WWWDIR%%/lib/descartes/public/img/descartes-logo.png
+%%WWWDIR%%/lib/descartes/public/css/vendor/bootstrap.min.css
+%%WWWDIR%%/lib/descartes/public/css/style.css
+%%WWWDIR%%/lib/descartes/models/users.rb
+%%WWWDIR%%/lib/descartes/models/tags.rb
+%%WWWDIR%%/lib/descartes/models/metrics.rb
+%%WWWDIR%%/lib/descartes/models/init.rb
+%%WWWDIR%%/lib/descartes/models/graphs.rb
+%%WWWDIR%%/lib/descartes/models/graph_dashboard_relations.rb
+%%WWWDIR%%/lib/descartes/models/gists.rb
+%%WWWDIR%%/lib/descartes/models/dashboards.rb
+%%WWWDIR%%/lib/descartes/models/comments.rb
+%%WWWDIR%%/lib/descartes/migrations/010_AlterUserEmailAllowNull.rb
+%%WWWDIR%%/lib/descartes/migrations/009_AddUserUids.rb
+%%WWWDIR%%/lib/descartes/migrations/008_AddUserTokens.rb
+%%WWWDIR%%/lib/descartes/migrations/007_AddUsers.rb
+%%WWWDIR%%/lib/descartes/migrations/006_AddGraphDashboardRelationConstraints.rb
+%%WWWDIR%%/lib/descartes/migrations/005_AddComments.rb
+%%WWWDIR%%/lib/descartes/migrations/004_AddGists.rb
+%%WWWDIR%%/lib/descartes/migrations/003_MetricCacheStatus.rb
+%%WWWDIR%%/lib/descartes/migrations/002_AddGraphViews.rb
+%%WWWDIR%%/lib/descartes/migrations/001_BaseSchema.rb
+%%WWWDIR%%/lib/descartes/github_auth.rb
+%%WWWDIR%%/lib/descartes/config.rb
+%%WWWDIR%%/docs/filtering_metrics.md
+%%WWWDIR%%/config.ru
+%%WWWDIR%%/Rakefile
+%%WWWDIR%%/README.md
+%%WWWDIR%%/Procfile
+%%WWWDIR%%/LICENSE
+%%WWWDIR%%/Gemfile.lock
+%%WWWDIR%%/Gemfile
+%%WWWDIR%%/.travis.yml
+%%WWWDIR%%/.rspec
+%%WWWDIR%%/.gitignore
+%%WWWDIR%%/.env.example
+@dirrmtry %%WWWDIR%%/spec
+@dirrmtry %%WWWDIR%%/lib/descartes/views/metrics
+@dirrmtry %%WWWDIR%%/lib/descartes/views/graphs
+@dirrmtry %%WWWDIR%%/lib/descartes/views/dashboards
+@dirrmtry %%WWWDIR%%/lib/descartes/views/common
+@dirrmtry %%WWWDIR%%/lib/descartes/views
+@dirrmtry %%WWWDIR%%/lib/descartes/routes
+@dirrmtry %%WWWDIR%%/lib/descartes/public/js/vendor
+@dirrmtry %%WWWDIR%%/lib/descartes/public/js
+@dirrmtry %%WWWDIR%%/lib/descartes/public/img/vendor
+@dirrmtry %%WWWDIR%%/lib/descartes/public/img
+@dirrmtry %%WWWDIR%%/lib/descartes/public/css/vendor
+@dirrmtry %%WWWDIR%%/lib/descartes/public/css
+@dirrmtry %%WWWDIR%%/lib/descartes/public
+@dirrmtry %%WWWDIR%%/lib/descartes/models
+@dirrmtry %%WWWDIR%%/lib/descartes/migrations
+@dirrmtry %%WWWDIR%%/lib/descartes
+@dirrmtry %%WWWDIR%%/lib
+@dirrmtry %%WWWDIR%%/docs
+@dirrmtry %%WWWDIR%%

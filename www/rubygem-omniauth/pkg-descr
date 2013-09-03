@@ -1,0 +1,7 @@
+OmniAuth is a library that standardizes multi-provider authentication for
+web applications. It was created to be powerful, flexible, and do as
+little as possible. Any developer can create **strategies** for OmniAuth
+that can authenticate users via disparate systems. OmniAuth strategies
+have been created for everything from Facebook to LDAP.
+
+WWW: https://github.com/intridea/omniauth

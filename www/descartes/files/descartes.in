@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+# $FreeBSD:$
+#
+# PROVIDE: descartes
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# descartes_enable="YES"
+#
+# XXX WIP
+
+. /etc/rc.subr
+
+name=descartes
+rcvar=descartes_enable
+
+load_rc_config $name
+
+: ${descartes_enable:="NO"}
+: ${descartes_pid_file:="/var/run/$name/$name.pid"}
+: ${descartes_user:="www"}
+: ${descartes_group:="www"}
+: ${descartes_dir:="/usr/local/www/descartes"}
+
+command="/usr/sbin/daemon"
+command_args="-f -p ${descartes_pid_file} foreman"
+
+start_precmd="start_precmd"
+descartes_chdir="${descartes_dir}"
+pidfile="${descartes_pid_file}"
+
+start_precmd()
+{
+    install -d -o ${descartes_user} -g ${descartes_group} -m 755 `dirname ${descartes_pid_file}`
+}
+
+run_rc_command "$1"
