@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-libtomoe-gtk
-# Date created:				18 Dec 2005
-# Whom:					Hajimu UMEMOTO <ume@FreeBSD.org>
-#
+# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libtomoe-gtk
 PORTVERSION=	0.6.0
@@ -19,7 +15,7 @@ LIB_DEPENDS=	tomoe.1:${PORTSDIR}/japanese/tomoe
 
 USE_GNOME=	lthack gnomehack gtk20
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 
 #OPTIONS=	GUCHARMAP	"Compile with gucharmap"		on
