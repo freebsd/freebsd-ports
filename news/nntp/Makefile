@@ -43,8 +43,8 @@ OPTIONS_DEFINE=	DOCS
 post-extract:
 	@${CP} ${WRKSRC}/conf.h.dist ${WRKSRC}/conf.h
 
-post-patch:
-	@${REINPLACE_CMD} \
+pre-configure:
+	${REINPLACE_CMD} \
 		-e "s=/usr/local/news/lib/bin/config=${NEWSBIN}/config=" \
 		-e "s=/usr/local/news/cnewsbin=${NEWSBIN}=" \
 		-e "s=/usr/local/news/lib=${NEWSCTL}=" \
@@ -53,17 +53,13 @@ post-patch:
 		-e "s=/usr/local/bin=${PREFIX}/bin=" \
 		-e "s=/usr/local/sbin=${PREFIX}/sbin=" \
 		-e "s=/usr/local/man=${PREFIX}/man=" \
-			${WRKSRC}/Makefile ${WRKSRC}/conf.h
-# Try to fix parallel builds (-jX)
-	@${REINPLACE_CMD} \
-		-E 's=cd (.+); (\$$\(MAKE\))=\2 -C \1=' \
-			${WRKSRC}/Makefile
+		${WRKSRC}/conf.h
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/overview.fmt ${NEWSCTL}/overview.fmt
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCSFILES1:S=^=${WRKSRC}/=} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${DOCSFILES1:S=^=${WRKSRC}/=} ${DOCSDIR}/
 .for i in ${DOCSFILES2}
 	${INSTALL_DATA} ${WRKSRC}/${i}/README ${DOCSDIR}/${i}-README
 .endfor

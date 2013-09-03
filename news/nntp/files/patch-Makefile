@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Jan  9 08:30:24 1996
-+++ Makefile	Thu Dec  5 09:59:23 2002
+--- Makefile.orig	1996-01-09 08:30:24.000000000 +0100
++++ Makefile	2013-09-03 20:32:47.000000000 +0200
 @@ -4,7 +4,7 @@
  # The program that knows how to deal with makefiles. [Uncomment if needed.]
  # MAKE=make
@@ -17,10 +17,62 @@
 +#ETCDIR = /usr/local/sbin
  # Where nntpxmit and nntpxfer is going to live
 -BINDIR = /usr/local/bin
-+#BINDIR = /usr/local/news/cnewsbin
++#BINDIR = /usr/local/libexec/cnews
  # Where manual pages live
 -MANDIR = /usr/local/man
 +#MANDIR = /usr/local/man
  #
  LIBS = $(DBLIBS) $(RESLIB) $(NETLIBS) $(KVMLIB)
  SUBMAKEFLAGS="LIBS=${LIBS}" "CFLAGS=${CFLAGS}" "ETCDIR=${ETCDIR}" "BINDIR=${BINDIR}" "MANDIR=${MANDIR}"
+@@ -42,11 +42,11 @@
+ all: make_$(TYPE)
+ 
+ make_server: /nowhere
+-	cd server; $(MAKE) $(MFLAGS) $(SUBMAKEFLAGS)
+-	cd support; $(MAKE) $(MFLAGS) $(SUBMAKEFLAGS)
+-	cd doc; $(MAKE) $(MFLAGS) $(SUBMAKEFLAGS)
+-	cd xmit; $(MAKE) $(MFLAGS) $(SUBMAKEFLAGS)
+-	cd xfer; $(MAKE) $(MFLAGS) $(SUBMAKEFLAGS)
++	$(MAKE) -C server $(MFLAGS) $(SUBMAKEFLAGS)
++	$(MAKE) -C support $(MFLAGS) $(SUBMAKEFLAGS)
++	$(MAKE) -C doc $(MFLAGS) $(SUBMAKEFLAGS)
++	$(MAKE) -C xmit $(MFLAGS) $(SUBMAKEFLAGS)
++	$(MAKE) -C xfer $(MFLAGS) $(SUBMAKEFLAGS)
+ 
+ server: make_server
+ 
+@@ -59,25 +59,25 @@
+ install: install_$(TYPE)
+ 
+ install_server:
+-	cd server; $(MAKE) $(MFLAGS) $(SUBMAKEFLAGS) install
+-	cd support; $(MAKE) $(MFLAGS) $(SUBMAKEFLAGS) install
+-	cd doc; $(MAKE) $(MFLAGS) $(SUBMAKEFLAGS) install
+-	cd xmit; $(MAKE) $(MFLAGS) $(SUBMAKEFLAGS) install
+-	cd xfer; $(MAKE) $(MFLAGS) $(SUBMAKEFLAGS) install
++	$(MAKE) -C server $(MFLAGS) $(SUBMAKEFLAGS) install
++	$(MAKE) -C support $(MFLAGS) $(SUBMAKEFLAGS) install
++	$(MAKE) -C doc $(MFLAGS) $(SUBMAKEFLAGS) install
++	$(MAKE) -C xmit $(MFLAGS) $(SUBMAKEFLAGS) install
++	$(MAKE) -C xfer $(MFLAGS) $(SUBMAKEFLAGS) install
+ 
+ install_msgidd:
+-	cd server; $(MAKE) $(MFLAGS) $(SUBMAKEFLAGS) install_msgidd
++	$(MAKE) -C server $(MFLAGS) $(SUBMAKEFLAGS) install_msgidd
+ 
+ clean:
+-	rm  -f .[a-z]* *.CKP *.BAK *~ ; for i in $(DISTDIRS); do cd $$i; $(MAKE) $(MFLAGS) clean; cd ..; done
++	rm  -f .[a-z]* *.CKP *.BAK *~ ; for i in $(DISTDIRS); do $(MAKE) -C $$i $(MFLAGS) clean; done
+ 
+ check:
+-	for i in $(DISTDIRS); do cd $$i; $(MAKE) $(MFLAGS) check; cd ..; done
++	for i in $(DISTDIRS); do $(MAKE) -C $$i $(MFLAGS) check; done
+ 
+ distrib: check
+ 	mkdir ../nntp.dist
+ 	cp -rp $(DIST) ../nntp.dist
+-	cd ../nntp.dist; for i in $(DISTDIRS); do cd $$i; $(MAKE) $(MFLAGS) distrib; cd ..; done
++	cd ../nntp.dist; for i in $(DISTDIRS); do $(MAKE) -C $$i $(MFLAGS) distrib; done
+ 
+ 
+ server: /nowhere
