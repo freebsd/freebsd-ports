@@ -21,7 +21,8 @@ BUILD_DEPENDS=	p5-Cisco-Reconfig>=0.05:${PORTSDIR}/net-mgmt/p5-Cisco-Reconfig \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Signature>=1.04:${PORTSDIR}/devel/p5-Test-Signature
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::ACL.3 Net::ACL::Bootstrap.3 Net::ACL::File.3 \
 		Net::ACL::File::ASPath.3 Net::ACL::File::Community.3 \

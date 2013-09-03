@@ -14,7 +14,8 @@ RUN_DEPENDS=	p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
 		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		BigIP::iControl.3
 

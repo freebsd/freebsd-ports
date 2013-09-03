@@ -19,7 +19,8 @@ TEST_DEPENDS=	\
 	p5-CGI-Emulate-PSGI>0:${PORTSDIR}/www/p5-CGI-Emulate-PSGI
 # Depending on Plack::Test causes cyclic dependencies.
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	CGI::Compile.3
 

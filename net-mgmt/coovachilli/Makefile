@@ -25,7 +25,8 @@ MAN8=		chilli.8
 
 CONFIGURE_ARGS=-localstatedir=/var
 GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=yes		# for manual page building
+USES=		perl5
+USE_PERL5=	build
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	coovachilli
 
