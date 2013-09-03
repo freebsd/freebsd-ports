@@ -16,9 +16,8 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
 USE_GNOME+=	glib20 intltool
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USES=		gettext iconv
+USES=		gettext gmake iconv pkgconfig
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 
