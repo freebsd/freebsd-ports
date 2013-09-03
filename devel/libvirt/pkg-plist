@@ -8,6 +8,7 @@ bin/virt-xml-validate
 @unexec if cmp -s %D/%%ETCDIR%%/libvirt.conf.sample %D/%%ETCDIR%%/libvirt.conf; then rm -f %D/%%ETCDIR%%/libvirt.conf; fi
 %%ETCDIR%%/libvirt.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/libvirt.conf ] ; then cp -p %D/%%ETCDIR%%/libvirt.conf.sample %D/%%ETCDIR%%/libvirt.conf; fi
+%%ETCDIR%%/virtlockd.conf
 %%QEMU%%@unexec if cmp -s %D/%%ETCDIR%%/qemu.conf.sample %D/%%ETCDIR%%/qemu.conf; then rm -f %D/%%ETCDIR%%/qemu.conf; fi
 %%QEMU%%%%ETCDIR%%/qemu.conf.sample
 %%QEMU%%@exec if [ ! -f %D/%%ETCDIR%%/qemu.conf ] ; then cp -p %D/%%ETCDIR%%/qemu.conf.sample %D/%%ETCDIR%%/qemu.conf; fi
@@ -64,12 +65,16 @@ sbin/libvirtd
 sbin/virtlockd
 share/augeas/lenses/libvirt_lockd.aug
 share/augeas/lenses/libvirtd.aug
+share/augeas/lenses/virtlockd.aug
 %%QEMU%%share/augeas/lenses/libvirtd_qemu.aug
 share/augeas/lenses/tests/test_libvirt_lockd.aug
 share/augeas/lenses/tests/test_libvirtd.aug
+share/augeas/lenses/tests/test_virtlockd.aug
 %%QEMU%%share/augeas/lenses/tests/test_libvirtd_qemu.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/32favicon.png
 %%DOCSDIR%%%%PORTVERSION%%/html/404.html
+%%DOCSDIR%%%%PORTVERSION%%/html/acl.html
+%%DOCSDIR%%%%PORTVERSION%%/html/aclpolkit.html
 %%DOCSDIR%%%%PORTVERSION%%/html/api.html
 %%DOCSDIR%%%%PORTVERSION%%/html/api_extension.html
 %%DOCSDIR%%%%PORTVERSION%%/html/apps.html
@@ -174,11 +179,6 @@ share/augeas/lenses/tests/test_libvirtd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/uri.html
 %%DOCSDIR%%%%PORTVERSION%%/html/virshcmdref.html
 %%DOCSDIR%%%%PORTVERSION%%/html/windows.html
-%%DOCSDIR%%-python%%PORTVERSION%%/examples/basic.py
-%%DOCSDIR%%-python%%PORTVERSION%%/examples/create.py
-%%DOCSDIR%%-python%%PORTVERSION%%/examples/error.py
-%%DOCSDIR%%-python%%PORTVERSION%%/examples/node.py
-%%DOCSDIR%%-python%%PORTVERSION%%/examples/uuid.py
 share/gtk-doc/html/libvirt/general.html
 share/gtk-doc/html/libvirt/home.png
 share/gtk-doc/html/libvirt/index.html
@@ -303,8 +303,6 @@ lib/libvirt/connection-driver/libvirt_driver_vbox.la
 @dirrm %%DOCSDIR%%%%PORTVERSION%%/html/internals
 @dirrm %%DOCSDIR%%%%PORTVERSION%%/html
 @dirrm %%DOCSDIR%%%%PORTVERSION%%
-@dirrm %%DOCSDIR%%-python%%PORTVERSION%%/examples
-@dirrm %%DOCSDIR%%-python%%PORTVERSION%%
 @dirrm share/augeas/lenses/tests
 @dirrm share/augeas/lenses
 @dirrm share/augeas
