@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	finance python
 MASTER_SITES=	http://www.openerp.com/download/stable/source/
 
-MAINTAINER=	laurent@ospowa.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source application ERP & CRM in Python using Postgresql
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
