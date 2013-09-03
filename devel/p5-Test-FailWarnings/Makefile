@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-FailWarnings
-PORTVERSION=	0.005
+PORTVERSION=	0.007
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Test
@@ -19,6 +19,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Test::FailWarnings.3
+MAN3=		Test::FailWarnings.3
 
 .include <bsd.port.mk>
