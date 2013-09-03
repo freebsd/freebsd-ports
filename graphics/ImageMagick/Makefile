@@ -32,7 +32,7 @@ COMMENT=	Image processing tools
 
 LICENSE=	AL2
 
-USES=		pkgconfig pathfix perl5
+USES=		pkgconfig:both pathfix perl5
 USE_XZ=		yes
 USE_PERL5=	run build patch
 WANT_GNOME=	yes
