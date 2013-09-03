@@ -13,7 +13,8 @@ COMMENT=	Perl module to populate HTML forms with default values
 
 RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		HTML::Defaultify.3
 
 .include <bsd.port.mk>

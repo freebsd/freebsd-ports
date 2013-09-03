@@ -15,7 +15,8 @@ RUN_DEPENDS=	p5-Template-Extract>=0:${PORTSDIR}/textproc/p5-Template-Extract \
 		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
 		p5-WWW-Scraper-ISBN-Driver>=0.18:${PORTSDIR}/www/p5-WWW-Scraper-ISBN-Driver
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WWW::Scraper::ISBN::ORA_Driver.3
 
