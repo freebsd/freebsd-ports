@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English dictionary utility for Korean
 
 EXTRACT_AFTER_ARGS=	--exclude '*.o'
+MAKE_ARGS=	CC="${CC}"
 PLIST_FILES=	bin/edic bin/engdic
 PORTDATA=	[a-z].dic.gz
 
