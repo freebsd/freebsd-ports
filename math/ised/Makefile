@@ -11,7 +11,6 @@ COMMENT=	Tool for generating number sequences and arithmetic evaluation
 
 LICENSE=	GPLv3
 
-
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	yes
