@@ -1,8 +1,8 @@
 diff --git setup.py setup.py
-index 0413579..ca536cd 100755
+index d15702f..2cf1772 100755
 --- setup.py
 +++ setup.py
-@@ -33,24 +33,23 @@ __platform__ = platform.system()
+@@ -34,24 +34,24 @@ __platform__ = platform.system()
  is_windows = __platform__ in ['Windows']
  
  requirements = [
@@ -27,6 +27,7 @@ index 0413579..ca536cd 100755
      "pygments>=1.5",
      "whoosh>=2.4.0,<2.5",
 -    "celery>=2.2.5,<2.3",
++    "celery>=2.2.5",
      "babel",
 -    "python-dateutil>=1.5.0,<2.0.0",
 -    "dulwich>=0.8.7,<0.9.0",
@@ -41,12 +42,16 @@ index 0413579..ca536cd 100755
      "mock",
  ]
  
-@@ -65,7 +64,7 @@ if is_windows:
-     requirements.append("mercurial==2.6.2")
+@@ -63,10 +63,10 @@ if sys.version_info < (2, 7):
+     requirements.append("argparse")
+ 
+ if is_windows:
+-    requirements.append("mercurial==2.6.3")
++    requirements.append("mercurial>=2.6.3")
  else:
      requirements.append("py-bcrypt")
--    requirements.append("mercurial==2.6.2")
-+    requirements.append("mercurial>=2.6.2")
+-    requirements.append("mercurial==2.6.3")
++    requirements.append("mercurial>=2.6.3")
  
  
  dependency_links = [

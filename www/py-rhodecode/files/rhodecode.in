@@ -28,8 +28,10 @@ load_rc_config ${name}
 : ${rhodecode_user="www"}
 : ${rhodecode_group="www"}
 
-pidfile="/var/run/${name}.pid"
+pidfile="/var/run/${name}/${name}.pid"
+logfile="/var/run/${name}.log"
 command=%%PREFIX%%/bin/paster
+start_precmd="install -d -o ${rhodecode_user} ${pidfile%/*} && install -o ${rhodecode_user} /dev/null ${logfile}"
 start_cmd="rhodecode_start"
 status_cmd="rhodecode_status"
 stop_cmd="rhodecode_stop"
@@ -38,7 +40,8 @@ rhodecode_start() {
 	${command} serve \
 		--user=${rhodecode_user} \
 		--group=${rhodecode_group} \
-		--pid-file=${pidfile}\
+		--pid-file=${pidfile} \
+		--log-file=${logfile} \
 		--daemon \
 		${rhodecode_config}
 }
