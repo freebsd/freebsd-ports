@@ -21,8 +21,7 @@ CONFLICTS=	nautilus-3.[0-9]*
 
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		gettext desktop-file-utils shared-mime-info
+USES=		gettext desktop-file-utils shared-mime-info gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop \
 		librsvg2 ltverhack gvfs ltasneededhack
 USE_LDCONFIG=	yes

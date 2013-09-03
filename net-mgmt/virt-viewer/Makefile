@@ -21,7 +21,7 @@ FETCH_ARGS=	-Fpr
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	DATADIRNAME=share
-USES=		gmake
+USES=		gmake pkgconfig
 
 MAN1=		remote-viewer.1 virt-viewer.1
 

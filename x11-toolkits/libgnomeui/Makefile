@@ -21,8 +21,7 @@ LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring \
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
 USE_XORG=	sm
-USE_GMAKE=	yes
-USES=		bison pathfix gettext
+USES=		bison pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomehier libbonoboui ltverhack \
 		referencehack gvfs
 USE_LDCONFIG=	yes

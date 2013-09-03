@@ -1,10 +1,6 @@
-# New ports collection makefile for:    eel2
-# Date created:         		8th May 2001
-# Whom:                 		Ade Lovett <ade@FreeBSD.org>
-#
+# Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11-toolkits/eel/Makefile,v 1.90 2010/09/28 09:15:49 kwm Exp $
-#
 
 PORTNAME=	eel
 PORTVERSION=	2.26.0
@@ -16,9 +12,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Generally useful classes and extensions to GNOME
 
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_XORG=	xrender
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack gnomedesktop ltverhack intlhack

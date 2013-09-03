@@ -18,7 +18,7 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		gtkhtml:${PORTSDIR}/www/libgtkhtml
 
 USE_GNOME=	gtk20
-USES=		gettext gmake
+USES=		gettext gmake pkgconfig
 INSTALLS_ICONS=	yes
 
 GNU_CONFIGURE=	yes
