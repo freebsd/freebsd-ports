@@ -16,13 +16,12 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		glibjni-${GLIB_API_VERSION}.1:${PORTSDIR}/devel/glib-java
 
 USE_BZIP2=	yes
-USES=		gmake pkgconfig
+USES=		gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
-USES=	pathfix
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}
 CPPFLAGS+=	-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd
 CAIRO_API_VERSION=	1.0
