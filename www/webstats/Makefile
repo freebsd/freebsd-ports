@@ -16,7 +16,7 @@ RUN_DEPENDS=	analog:${PORTSDIR}/www/analog \
 		${LOCALBASE}/reportmagic/rmagic.pl:${PORTSDIR}/www/reportmagic
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|%%PREFIX%%|${PREFIX}|' \

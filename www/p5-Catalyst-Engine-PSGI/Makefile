@@ -20,7 +20,8 @@ RUN_DEPENDS=	\
 	p5-Catalyst-Action-RenderView>0:${PORTSDIR}/www/p5-Catalyst-Action-RenderView
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Catalyst::Controller::Metal.3 \
 	Catalyst::Engine::PSGI.3 \

@@ -19,7 +19,7 @@ COMMENT=	A IP addresse to hostname program for httpd log files
 BUILD_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 MANCOMPRESSED=	no
