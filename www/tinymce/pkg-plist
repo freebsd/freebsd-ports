@@ -1,590 +1,141 @@
-%%WWWDIR%%/changelog
-%%WWWDIR%%/examples/example_advanced.css
-%%WWWDIR%%/examples/example_advanced.htm
-%%WWWDIR%%/examples/example_flash_list.js
-%%WWWDIR%%/examples/example_full.css
-%%WWWDIR%%/examples/example_full.htm
-%%WWWDIR%%/examples/example_image_list.js
-%%WWWDIR%%/examples/example_link_list.js
-%%WWWDIR%%/examples/example_media_list.js
-%%WWWDIR%%/examples/example_simple.htm
-%%WWWDIR%%/examples/example_template.htm
-%%WWWDIR%%/examples/example_template_list.js
-%%WWWDIR%%/examples/example_word.css
-%%WWWDIR%%/examples/example_word.htm
-%%WWWDIR%%/examples/logo.jpg
-%%WWWDIR%%/examples/logo_over.jpg
-%%WWWDIR%%/examples/templates/count.htm
-%%WWWDIR%%/examples/templates/editing_details.htm
-%%WWWDIR%%/examples/templates/editors_comment.htm
-%%WWWDIR%%/examples/templates/invoice.htm
-%%WWWDIR%%/examples/templates/layout1.htm
-%%WWWDIR%%/examples/templates/snippet1.htm
-%%WWWDIR%%/jscripts/tiny_mce/blank.htm
-%%WWWDIR%%/jscripts/tiny_mce/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/langs/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/license.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/_template/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/_template/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/_template/images/template.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/_template/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/_template/popup.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/_template/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/css/advhr.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/images/advhr.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/jscripts/rule.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/rule.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/css/advimage.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/image.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/images/sample.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/jscripts/functions.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/css/advlink.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/jscripts/functions.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/link.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/bbcode/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/bbcode/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/cleanup/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/cleanup/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/cleanup/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu/css/contextmenu.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu/images/spacer.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/devkit/css/devkit.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/devkit/css/devkit_ui.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/devkit/devkit.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/devkit/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/devkit/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/devkit/images/flip_down.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/devkit/images/flip_up.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/devkit/jscripts/devkit.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/devkit/jscripts/diff.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/devkit/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/directionality/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/directionality/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/directionality/images/ltr.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/directionality/images/rtl.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/directionality/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/directionality/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/emotions.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/images/emotions.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/images/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/images/smiley-cool.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/images/smiley-cry.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/images/smiley-embarassed.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/images/smiley-foot-in-mouth.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/images/smiley-frown.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/images/smiley-innocent.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/images/smiley-kiss.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/images/smiley-laughing.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/images/smiley-money-mouth.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/images/smiley-sealed.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/images/smiley-smile.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/images/smiley-surprised.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/images/smiley-tongue-out.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/images/smiley-undecided.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/images/smiley-wink.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/images/smiley-yell.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/jscripts/functions.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/flash/css/content.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/flash/css/flash.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/flash/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/flash/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/flash/flash.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/flash/images/flash.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/flash/jscripts/flash.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/flash/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/flash/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/blank.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/css/fullpage.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/fullpage.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/images/add.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/images/fullpage.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/images/move_down.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/images/move_up.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/images/remove.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/jscripts/fullpage.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/fullscreen/css/page.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/fullscreen/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/fullscreen/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/fullscreen/fullscreen.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/fullscreen/images/fullscreen.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/fullscreen/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/fullscreen/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/iespell/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/iespell/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/iespell/images/iespell.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/iespell/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/iespell/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/css/inlinepopup.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/images/spacer.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/images/window_close.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/images/window_maximize.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/images/window_minimize.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/images/window_resize.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/jscripts/mcwindows.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/insertdatetime/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/insertdatetime/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/insertdatetime/images/insertdate.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/insertdatetime/images/inserttime.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/insertdatetime/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/insertdatetime/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/layer/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/layer/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/layer/images/absolute.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/layer/images/backward.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/layer/images/forward.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/layer/images/insert_layer.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/layer/images/insertlayer.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/layer/images/movebackward.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/layer/images/moveforward.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/layer/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/layer/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/css/content.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/css/media.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/images/flash.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/images/media.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/images/quicktime.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/images/realmedia.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/images/shockwave.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/images/windowsmedia.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/jscripts/embed.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/jscripts/media.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/media/media.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/nonbreaking/images/nonbreaking.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/nonbreaking/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/noneditable/css/noneditable.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/noneditable/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/noneditable/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/noneditable/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/blank.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/css/blank.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/css/pasteword.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/images/pastetext.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/images/pasteword.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/images/selectall.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/jscripts/pastetext.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/jscripts/pasteword.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/pastetext.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/pasteword.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/preview/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/preview/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/preview/example.html
-%%WWWDIR%%/jscripts/tiny_mce/plugins/preview/images/preview.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/preview/jscripts/embed.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/preview/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/preview/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/print/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/print/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/print/images/print.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/print/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/print/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/save/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/save/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/save/images/cancel.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/save/images/save.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/save/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/save/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/css/searchreplace.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/images/replace.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/images/replace_all_button_bg.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/images/replace_button_bg.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/images/search.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/jscripts/searchreplace.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/searchreplace.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/style/css/props.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/style/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/style/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/style/images/apply_button_bg.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/style/images/style_info.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/style/images/styleprops.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/style/jscripts/props.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/style/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/style/props.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/style/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/cell.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/css/cell.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/css/row.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/css/table.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/images/buttons.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/images/table.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/images/table_cell_props.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/images/table_delete.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/images/table_delete_col.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/images/table_delete_row.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/images/table_insert_col_after.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/images/table_insert_col_before.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/images/table_insert_row_after.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/images/table_insert_row_before.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/images/table_merge_cells.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/images/table_row_props.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/images/table_split_cells.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/jscripts/cell.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/jscripts/merge_cells.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/jscripts/row.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/jscripts/table.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/merge_cells.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/row.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/table/table.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/template/blank.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/template/css/template.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/template/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/template/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/template/images/template.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/template/jscripts/template.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/template/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/template/template.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/visualchars/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/visualchars/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/visualchars/images/visualchars.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/visualchars/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/abbr.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/acronym.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/attributes.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/cite.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/css/attributes.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/css/popup.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/css/xhtmlxtras.css
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/del.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/images/abbr.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/images/acronym.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/images/attribs.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/images/cite.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/images/date_time.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/images/del.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/images/ins.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/images/remove_button_bg.gif
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/ins.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/jscripts/abbr.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/jscripts/acronym.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/jscripts/attributes.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/jscripts/cite.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/jscripts/del.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/jscripts/element_common.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/jscripts/ins.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/zoom/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/zoom/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/zoom/readme.txt
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/about.htm
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/anchor.htm
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/charmap.htm
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/color_picker.htm
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/css/colorpicker.css
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/css/editor_content.css
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/css/editor_popup.css
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/css/editor_ui.css
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/docs/en/about.htm
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/docs/en/common_buttons.htm
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/docs/en/create_accessible_content.htm
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/docs/en/images/insert_anchor_window.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/docs/en/images/insert_image_window.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/docs/en/images/insert_link_window.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/docs/en/images/insert_table_window.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/docs/en/index.htm
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/docs/en/insert_anchor_button.htm
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/docs/en/insert_image_button.htm
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/docs/en/insert_link_button.htm
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/docs/en/insert_table_button.htm
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/docs/en/style.css
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/editor_template.js
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/editor_template_src.js
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/image.htm
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/anchor.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/anchor_symbol.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/backcolor.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/bold.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/bold_de_se.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/bold_es.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/bold_fr.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/bold_ru.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/bold_tw.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/browse.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/bullist.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/button_menu.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/buttons.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/cancel_button_bg.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/charmap.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/cleanup.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/close.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/code.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/color.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/colors.jpg
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/copy.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/custom_1.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/cut.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/forecolor.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/help.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/hr.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/image.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/indent.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/insert_button_bg.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/italic.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/italic_de_se.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/italic_es.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/italic_ru.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/italic_tw.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/justifycenter.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/justifyfull.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/justifyleft.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/justifyright.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/link.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/menu_check.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/newdocument.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/numlist.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/opacity.png
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/outdent.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/paste.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/redo.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/removeformat.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/separator.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/spacer.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/statusbar_resize.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/strikethrough.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/sub.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/sup.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/underline.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/underline_es.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/underline_fr.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/underline_ru.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/underline_tw.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/undo.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/unlink.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/visualaid.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/xp/tab_bg.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/xp/tab_end.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/xp/tab_sel_bg.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/xp/tab_sel_end.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/xp/tabs_bg.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/jscripts/about.js
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/jscripts/anchor.js
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/jscripts/charmap.js
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/jscripts/color_picker.js
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/jscripts/image.js
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/jscripts/link.js
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/jscripts/source_editor.js
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/langs/en.js
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/link.htm
-%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/source_editor.htm
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/css/editor_content.css
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/css/editor_popup.css
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/css/editor_ui.css
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/editor_template.js
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/editor_template_src.js
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/bold.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/bold_de_se.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/bold_fr.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/bold_ru.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/bold_tw.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/bullist.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/buttons.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/cleanup.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/italic.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/italic_de_se.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/italic_ru.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/italic_tw.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/numlist.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/redo.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/separator.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/spacer.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/strikethrough.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/underline.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/underline_fr.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/underline_ru.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/underline_tw.gif
-%%WWWDIR%%/jscripts/tiny_mce/themes/simple/images/undo.gif
-%%WWWDIR%%/jscripts/tiny_mce/tiny_mce.js
-%%WWWDIR%%/jscripts/tiny_mce/tiny_mce_dev.js
-%%WWWDIR%%/jscripts/tiny_mce/tiny_mce_popup.js
-%%WWWDIR%%/jscripts/tiny_mce/tiny_mce_src.js
-%%WWWDIR%%/jscripts/tiny_mce/utils/editable_selects.js
-%%WWWDIR%%/jscripts/tiny_mce/utils/form_utils.js
-%%WWWDIR%%/jscripts/tiny_mce/utils/mclayer.js
-%%WWWDIR%%/jscripts/tiny_mce/utils/mctabs.js
-%%WWWDIR%%/jscripts/tiny_mce/utils/validate.js
-%%WWWDIR%%/readme
-@dirrm %%WWWDIR%%/examples/templates
-@dirrm %%WWWDIR%%/examples
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/_template/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/_template/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/_template
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/jscripts
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advhr
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/jscripts
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advimage
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/jscripts
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/bbcode
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/cleanup
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/devkit/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/devkit/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/devkit/jscripts
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/devkit/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/devkit
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/directionality/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/directionality/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/directionality
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/jscripts
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/emotions
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/flash/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/flash/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/flash/jscripts
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/flash/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/flash
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/jscripts
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullscreen/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullscreen/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullscreen/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullscreen
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/iespell/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/iespell/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/iespell
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/jscripts
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/insertdatetime/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/insertdatetime/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/insertdatetime
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/layer/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/layer/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/layer
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/media/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/media/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/media/jscripts
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/media/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/media
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/nonbreaking/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/nonbreaking/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/nonbreaking
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/noneditable/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/noneditable
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/paste/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/paste/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/paste/jscripts
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/paste/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/paste
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/preview/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/preview/jscripts
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/preview/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/preview
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/print/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/print/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/print
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/save/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/save/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/save
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/jscripts
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/style/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/style/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/style/jscripts
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/style/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/style
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/table/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/table/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/table/jscripts
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/table/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/table
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/template/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/template/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/template/jscripts
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/template/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/template
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/visualchars/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/visualchars/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/visualchars
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/jscripts
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/zoom
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/docs/en/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/docs/en
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/docs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images/xp
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/jscripts
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/langs
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/simple/css
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/simple/images
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/simple
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/utils
-@dirrm %%WWWDIR%%/jscripts/tiny_mce
-@dirrm %%WWWDIR%%/jscripts
-@dirrm %%WWWDIR%%
+%%WWWDIR%%/LICENSE.TXT
+%%WWWDIR%%/changelog.txt
+%%WWWDIR%%/js/tinymce/langs/readme.md
+%%WWWDIR%%/js/tinymce/license.txt
+%%WWWDIR%%/js/tinymce/plugins/advlist/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/anchor/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/autolink/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/autoresize/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/autosave/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/bbcode/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/charmap/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/code/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/compat3x/editable_selects.js
+%%WWWDIR%%/js/tinymce/plugins/compat3x/form_utils.js
+%%WWWDIR%%/js/tinymce/plugins/compat3x/mctabs.js
+%%WWWDIR%%/js/tinymce/plugins/compat3x/tiny_mce_popup.js
+%%WWWDIR%%/js/tinymce/plugins/compat3x/validate.js
+%%WWWDIR%%/js/tinymce/plugins/contextmenu/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/directionality/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-cool.gif
+%%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-cry.gif
+%%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-embarassed.gif
+%%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-foot-in-mouth.gif
+%%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-frown.gif
+%%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-innocent.gif
+%%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-kiss.gif
+%%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-laughing.gif
+%%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-money-mouth.gif
+%%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-sealed.gif
+%%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-smile.gif
+%%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-surprised.gif
+%%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-tongue-out.gif
+%%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-undecided.gif
+%%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-wink.gif
+%%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-yell.gif
+%%WWWDIR%%/js/tinymce/plugins/emoticons/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/example/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/example_dependency/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/fullpage/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/fullscreen/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/hr/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/image/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/importcss/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/insertdatetime/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/layer/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/legacyoutput/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/link/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/lists/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/media/moxieplayer.swf
+%%WWWDIR%%/js/tinymce/plugins/media/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/nonbreaking/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/noneditable/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/pagebreak/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/paste/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/preview/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/print/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/save/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/searchreplace/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/spellchecker/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/tabfocus/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/table/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/template/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/textcolor/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/visualblocks/css/visualblocks.css
+%%WWWDIR%%/js/tinymce/plugins/visualblocks/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/visualchars/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/wordcount/plugin.min.js
+%%WWWDIR%%/js/tinymce/skins/lightgray/content.inline.min.css
+%%WWWDIR%%/js/tinymce/skins/lightgray/content.min.css
+%%WWWDIR%%/js/tinymce/skins/lightgray/fonts/icomoon-small.eot
+%%WWWDIR%%/js/tinymce/skins/lightgray/fonts/icomoon-small.svg
+%%WWWDIR%%/js/tinymce/skins/lightgray/fonts/icomoon-small.ttf
+%%WWWDIR%%/js/tinymce/skins/lightgray/fonts/icomoon-small.woff
+%%WWWDIR%%/js/tinymce/skins/lightgray/fonts/icomoon.eot
+%%WWWDIR%%/js/tinymce/skins/lightgray/fonts/icomoon.svg
+%%WWWDIR%%/js/tinymce/skins/lightgray/fonts/icomoon.ttf
+%%WWWDIR%%/js/tinymce/skins/lightgray/fonts/icomoon.woff
+%%WWWDIR%%/js/tinymce/skins/lightgray/fonts/readme.md
+%%WWWDIR%%/js/tinymce/skins/lightgray/img/anchor.gif
+%%WWWDIR%%/js/tinymce/skins/lightgray/img/loader.gif
+%%WWWDIR%%/js/tinymce/skins/lightgray/img/object.gif
+%%WWWDIR%%/js/tinymce/skins/lightgray/img/trans.gif
+%%WWWDIR%%/js/tinymce/skins/lightgray/img/wline.gif
+%%WWWDIR%%/js/tinymce/skins/lightgray/skin.ie7.min.css
+%%WWWDIR%%/js/tinymce/skins/lightgray/skin.min.css
+%%WWWDIR%%/js/tinymce/themes/modern/theme.min.js
+%%WWWDIR%%/js/tinymce/tinymce.min.js
+@dirrm %%WWWDIR%%/js/tinymce/themes/modern
+@dirrm %%WWWDIR%%/js/tinymce/themes
+@dirrm %%WWWDIR%%/js/tinymce/skins/lightgray/img
+@dirrm %%WWWDIR%%/js/tinymce/skins/lightgray/fonts
+@dirrm %%WWWDIR%%/js/tinymce/skins/lightgray
+@dirrm %%WWWDIR%%/js/tinymce/skins
+@dirrm %%WWWDIR%%/js/tinymce/plugins/wordcount
+@dirrm %%WWWDIR%%/js/tinymce/plugins/visualchars
+@dirrm %%WWWDIR%%/js/tinymce/plugins/visualblocks/css
+@dirrm %%WWWDIR%%/js/tinymce/plugins/visualblocks
+@dirrm %%WWWDIR%%/js/tinymce/plugins/textcolor
+@dirrm %%WWWDIR%%/js/tinymce/plugins/template
+@dirrm %%WWWDIR%%/js/tinymce/plugins/table
+@dirrm %%WWWDIR%%/js/tinymce/plugins/tabfocus
+@dirrm %%WWWDIR%%/js/tinymce/plugins/spellchecker
+@dirrm %%WWWDIR%%/js/tinymce/plugins/searchreplace
+@dirrm %%WWWDIR%%/js/tinymce/plugins/save
+@dirrm %%WWWDIR%%/js/tinymce/plugins/print
+@dirrm %%WWWDIR%%/js/tinymce/plugins/preview
+@dirrm %%WWWDIR%%/js/tinymce/plugins/paste
+@dirrm %%WWWDIR%%/js/tinymce/plugins/pagebreak
+@dirrm %%WWWDIR%%/js/tinymce/plugins/noneditable
+@dirrm %%WWWDIR%%/js/tinymce/plugins/nonbreaking
+@dirrm %%WWWDIR%%/js/tinymce/plugins/media
+@dirrm %%WWWDIR%%/js/tinymce/plugins/lists
+@dirrm %%WWWDIR%%/js/tinymce/plugins/link
+@dirrm %%WWWDIR%%/js/tinymce/plugins/legacyoutput
+@dirrm %%WWWDIR%%/js/tinymce/plugins/layer
+@dirrm %%WWWDIR%%/js/tinymce/plugins/insertdatetime
+@dirrm %%WWWDIR%%/js/tinymce/plugins/importcss
+@dirrm %%WWWDIR%%/js/tinymce/plugins/image
+@dirrm %%WWWDIR%%/js/tinymce/plugins/hr
+@dirrm %%WWWDIR%%/js/tinymce/plugins/fullscreen
+@dirrm %%WWWDIR%%/js/tinymce/plugins/fullpage
+@dirrm %%WWWDIR%%/js/tinymce/plugins/example_dependency
+@dirrm %%WWWDIR%%/js/tinymce/plugins/example
+@dirrm %%WWWDIR%%/js/tinymce/plugins/emoticons/img
+@dirrm %%WWWDIR%%/js/tinymce/plugins/emoticons
+@dirrm %%WWWDIR%%/js/tinymce/plugins/directionality
+@dirrm %%WWWDIR%%/js/tinymce/plugins/contextmenu
+@dirrm %%WWWDIR%%/js/tinymce/plugins/compat3x
+@dirrm %%WWWDIR%%/js/tinymce/plugins/code
+@dirrm %%WWWDIR%%/js/tinymce/plugins/charmap
+@dirrm %%WWWDIR%%/js/tinymce/plugins/bbcode
+@dirrm %%WWWDIR%%/js/tinymce/plugins/autosave
+@dirrm %%WWWDIR%%/js/tinymce/plugins/autoresize
+@dirrm %%WWWDIR%%/js/tinymce/plugins/autolink
+@dirrm %%WWWDIR%%/js/tinymce/plugins/anchor
+@dirrm %%WWWDIR%%/js/tinymce/plugins/advlist
+@dirrm %%WWWDIR%%/js/tinymce/plugins
+@dirrm %%WWWDIR%%/js/tinymce/langs
+@dirrm %%WWWDIR%%/js/tinymce
+@dirrm %%WWWDIR%%/js
+@dirrmtry %%WWWDIR%%
