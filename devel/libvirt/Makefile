@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -12,11 +12,11 @@ COMMENT=	Toolkit to interact with virtualization capabilities
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		gcrypt:${PORTSDIR}/security/libgcrypt \
-		xml2:${PORTSDIR}/textproc/libxml2 \
-		gnutls:${PORTSDIR}/security/gnutls \
-		ssh2:${PORTSDIR}/security/libssh2
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		libxml2.so:${PORTSDIR}/textproc/libxml2 \
+		libgnutls.so:${PORTSDIR}/security/gnutls \
+		libssh2.so:${PORTSDIR}/security/libssh2
 
 OPTIONS_DEFINE=	QEMU DOCS NLS
 QEMU_DESC=	QEMU bindings
@@ -30,7 +30,6 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
 
 GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=	yes
 CONFIGURE_ARGS=	--without-sasl \
 		--without-yajl \
 		--without-avahi \
@@ -51,7 +50,8 @@ PORTSCOUT=	limit:\d+\.\d+\.\d+$$
 
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 
-USES=		charsetfix pathfix gmake pkgconfig
+USES=		charsetfix pathfix gmake pkgconfig perl5
+USE_PERL5=	build
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
 SHLIB_VER=	1001
@@ -62,7 +62,7 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 MAN1=		virsh.1 virt-pki-validate.1 virt-xml-validate.1 virt-host-validate.1
-MAN8=		libvirtd.8
+MAN8=		libvirtd.8 virtlockd.8
 
 post-patch:
 	@${MV} ${WRKSRC}/daemon/libvirtd.conf ${WRKSRC}/daemon/libvirtd.conf.sample
