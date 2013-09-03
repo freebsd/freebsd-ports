@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 dice roller
 
 GNU_CONFIGURE=	yes
-USE=		gmake pkgconfig
+USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gtk20 libgnomeui
 
 post-patch:
