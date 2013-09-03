@@ -15,8 +15,7 @@ LIB_DEPENDS=		gconfmm-2.6:${PORTSDIR}/devel/gconfmm26 \
 			pcre.3:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=		yes
-USE_GMAKE=		yes
-USES=        pathfix gettext
+USES=			pathfix gettext gmake pkgconfig
 USE_GNOME=		gnomeprefix intltool intlhack
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib

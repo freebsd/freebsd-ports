@@ -13,7 +13,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_GNOME=	gtk20 desktopfileutils
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}" \
 		--htmldir="${DOCSDIR}/html" \
 		--with-htmldir="${DOCSDIR}/html" \

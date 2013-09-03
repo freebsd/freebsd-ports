@@ -16,7 +16,7 @@ LIB_DEPENDS=	glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 		pulse.0:${PORTSDIR}/audio/pulseaudio
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake pkgconfig
 
 CONFIGURE_ARGS=	--disable-lynx
 

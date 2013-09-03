@@ -1,10 +1,6 @@
-# New ports collection makefile for:    libgnomemm
-# Date created:         22 May 2003
-# Whom:                 Alexander Nedotsukov <bland@mail.ru>
-#
+# Created by: Alexander Nedotsukov <bland@mail.ru>
 # $FreeBSD$
 #   $MCom: ports/x11/libgnomemm26/Makefile,v 1.24 2010/03/30 13:34:10 avl Exp $
-#
 
 PORTNAME=	libgnomemm
 PORTVERSION=	2.30.0
@@ -21,9 +17,9 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 LATEST_LINK=	libgnomemm26
 
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
 USE_XORG=	xext
-USE_GMAKE=	yes
 USE_GNOME=	gnomehack libgnome
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -15,7 +15,7 @@ LIB_DEPENDS=	glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 		canberra:${PORTSDIR}/audio/libcanberra
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake pkgconfig
 USE_GNOME=	intltool
 
 CONFIGURE_ARGS=	--disable-lynx

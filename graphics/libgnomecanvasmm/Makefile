@@ -1,9 +1,5 @@
-# New ports collection makefile for:    libgnomecanvasmm
-# Date created:         22 May 2003
-# Whom:                 Alexander Nedotsukov <bland@mail.ru>
-#
+# Created by: Alexander Nedotsukov <bland@mail.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	libgnomecanvasmm
 PORTVERSION=	2.0.1
@@ -18,7 +14,7 @@ COMMENT=	C++ wrapper for libgnomecanvas library
 LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtkmm20
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gnomehack libgnomecanvas
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

@@ -14,7 +14,7 @@ COMMENT=	A python bindings for libnotify
 LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gnomehack pygtk2
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes

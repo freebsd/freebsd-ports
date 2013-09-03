@@ -12,7 +12,7 @@ COMMENT=	GIO bindings not available in gtk-sharp
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake pkgconfig
 USE_GNOME=	gnomehack gtksharp20
 
 MAKE_JOBS_UNSAFE=yes

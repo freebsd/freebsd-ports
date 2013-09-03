@@ -14,7 +14,7 @@ LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
     		glademm-2.4:${PORTSDIR}/devel/libglademm24 \
 		gconfmm-2.6:${PORTSDIR}/devel/gconfmm26
 
-USES=		gettext
+USES=		gettext pkgconfig
 USE_GNOME=	gconf2
 GCONF_SCHEMAS=	aeskulap.schemas
 USE_LDCONFIG=	${PREFIX}/lib/aeskulap

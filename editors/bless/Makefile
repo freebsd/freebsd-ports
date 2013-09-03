@@ -10,8 +10,8 @@ MASTER_SITES=	http://download.gna.org/bless/
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	A high quality, full featured hex editor
 
+USES=		gmake pkgconfig
 USE_GNOME=	gnomehack gnomeprefix gnomedocutils gtksharp20
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 .if !defined(NOPORTDOCS)

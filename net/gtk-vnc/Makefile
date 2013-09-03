@@ -18,8 +18,7 @@ LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
 CONFLICTS=	gtk-vnc-0.4.[0-9]*
 
 USE_GNOME=	pygtk2 gnomehack
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes

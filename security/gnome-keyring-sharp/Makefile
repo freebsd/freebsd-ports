@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnome-keyring-sharp
-# Date created:		2008-10-08
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnome-keyring-sharp
 PORTVERSION=	1.0.2
@@ -19,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:${PORTSDIR}/deve
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gnomehack gtksharp20
 USE_LDCONFIG=	yes
 

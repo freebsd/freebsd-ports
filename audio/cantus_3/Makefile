@@ -21,7 +21,7 @@ CONFLICTS=	cantus-1*
 
 LATEST_LINK=	${PORTNAME}3
 
-USES=		gmake pathfix gettext
+USES=		gmake pathfix gettext pkgconfig
 USE_GNOME=	gnomeprefix libglade2 glib20
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

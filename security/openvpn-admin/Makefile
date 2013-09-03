@@ -1,9 +1,5 @@
-# New ports collection makefile for:   openvpn-admin
-# Date Created:                                06 Dec 2005
-# Whom:                                        Remington Lang <MrL0Lz@gmail.com>
-#
+# Created by: Remington Lang <MrL0Lz@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	openvpn-admin
 PORTVERSION=	1.9.4
@@ -18,7 +14,7 @@ RUN_DEPENDS=	openvpn:${PORTSDIR}/security/openvpn
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/b//}
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gtksharp20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

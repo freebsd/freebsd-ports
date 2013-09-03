@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtk-recordmydesktop
-# Date created:				2010-07-16
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
+# Created by: Ruslan Mahmatkhanov <cvs-src@yandex.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	gtk-recordmydesktop
 PORTVERSION=	0.3.8
@@ -19,8 +15,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${LOCALBASE}/bin/recordmydesktop:${PORTSDIR}/multimedia/recordmydesktop
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_PYTHON=	-2.7
