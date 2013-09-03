@@ -20,7 +20,8 @@ TEST_DEPENDS=	\
 	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP \
 	p5-Router-Simple>0:${PORTSDIR}/www/p5-Router-Simple
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Plack::Handler::CLI.3
 

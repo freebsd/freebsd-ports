@@ -13,7 +13,8 @@ TEST_DEPENDS=	\
 	p5-HTTP-Message>0:${PORTSDIR}/www/p5-HTTP-Message \
 	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Apache::LogFormat::Compiler.3
 

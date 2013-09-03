@@ -26,7 +26,8 @@ BUILD_DEPENDS=	\
 	p5-Catalyst-Runtime>0:${PORTSDIR}/www/p5-Catalyst-Runtime \
 	p5-XML-Simple>0:${PORTSDIR}/textproc/p5-XML-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Catalyst::View::XML::Simple.3
 

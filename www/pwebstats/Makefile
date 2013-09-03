@@ -16,7 +16,7 @@ COMMENT=	Analyse a web server log
 
 RUN_DEPENDS=	fly:${PORTSDIR}/graphics/fly
 
-USE_PERL5=	yes
+USES=		perl5
 
 NO_BUILD=	yes
 
