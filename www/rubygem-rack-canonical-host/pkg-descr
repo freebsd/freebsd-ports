@@ -1,0 +1,5 @@
+Rack middleware that lets you define a single host name as the canonical host
+for your application. Requests for other host names will then be redirected to
+the canonical host.
+
+WWW: https://github.com/tylerhunt/rack-canonical-host
