@@ -10,7 +10,6 @@ MASTER_SITES=		SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The real-time guitar processor
 
-USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
@@ -21,7 +20,7 @@ CONFIGURE_ARGS+=--with-gtk2 \
 TXT_DOCS=	AUTHORS COPYING FAQ INSTALL NEWS README TODO ChangeLog
 HTML_DOCS=	faq.html index.html install.html readme.html
 PORTDOCS=	${TXT_DOCS} ${HTML_DOCS}
-USES=		gmake
+USES=		gmake pkgconfig
 
 OPTIONS_DEFINE=	SUID DOCS
 OPTIONS_DEFAULT=	SUID

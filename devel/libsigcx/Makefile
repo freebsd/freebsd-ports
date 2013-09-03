@@ -13,9 +13,8 @@ COMMENT=	An extension of libSigC++
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
-USES=        pathfix
+USES=		pathfix gmake pkgconfig
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	ac_cv_path_DOXYGEN=""
 USE_LDCONFIG=	yes

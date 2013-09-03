@@ -1,9 +1,5 @@
-# New ports collection makefile for:   extreme tux racer
-# Date created:        22 February 2008
-# Whom:                Peter Dunning
-#
+# Created by: Peter Dunning
 # $FreeBSD$
-#
 
 PORTNAME=		etracer
 PORTVERSION=		0.4
@@ -21,7 +17,7 @@ LIB_DEPENDS=		png15:${PORTSDIR}/graphics/png \
 USE_SDL=		mixer sdl
 USE_XORG=		x11 xi xext xmu xt
 USE_GL=			gl glu glut
-USE_GMAKE=		yes
+USES=			gmake pkgconfig
 GNU_CONFIGURE=		yes
 
 USE_TCL=		84+

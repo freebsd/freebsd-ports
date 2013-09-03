@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	kludge3d
-# Date created:			May 7, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	kludge3d
 PORTVERSION=	20040822
@@ -19,9 +14,9 @@ LIB_DEPENDS=	3ds-1.3:${PORTSDIR}/graphics/lib3ds \
 		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_PYTHON=	yes
+USES=		gmake pkgconfig
 USE_GL=		gl
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lib-GL
 

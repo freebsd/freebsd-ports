@@ -13,6 +13,7 @@ LIB_DEPENDS=	poppler-glib:${PORTSDIR}/graphics/poppler-glib \
 		cairo:${PORTSDIR}/graphics/cairo \
 		gtk:${PORTSDIR}/x11-toolkits/gtk20
 
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/pdf2svg

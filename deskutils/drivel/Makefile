@@ -18,7 +18,7 @@ OPTIONS_DEFAULT=	GTKSPELL
 GTKSPELL_DESC=	Enable GtkSpell support
 
 USE_BZIP2=	yes
-USES=		desktop-file-utils gettext gmake shared-mime-info
+USES=		desktop-file-utils gettext gmake shared-mime-info pkgconfig
 USE_GNOME=	gconf2 gnomedocutils gnomevfs2 gtksourceview2
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-error-on-warning

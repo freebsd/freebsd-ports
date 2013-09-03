@@ -22,7 +22,7 @@ GIO_DESC=	Use GIO for file I/O
 GPOD_DESC=	Add support for libgpod
 NAUPLUG_DESC=	Enable Nautilus plugin
 
-USES=		gmake
+USES=		gmake pkgconfig pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 USE_XORG=	x11 xscrnsaver

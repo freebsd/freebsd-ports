@@ -17,6 +17,7 @@ LIB_DEPENDS=	portaudio:${PORTSDIR}/audio/portaudio2 \
 		sndfile:${PORTSDIR}/audio/libsndfile
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_CSTD=	gnu89
 USE_GNOME=	libglade2 desktopfileutils
 

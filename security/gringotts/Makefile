@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gringotts
-# Date created:				02 July 2002
-# Whom:					Anders Nordby <anders@FreeBSD.org>
-#
+# Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gringotts
 PORTVERSION=	1.2.10
@@ -17,6 +13,7 @@ COMMENT=	GTK application to securely store sensitive data
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		gringotts.2:${PORTSDIR}/security/libgringotts
 
+USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 

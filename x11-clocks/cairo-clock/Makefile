@@ -11,8 +11,7 @@ MAINTAINER=	daichi@FreeBSD.org
 COMMENT=	MacSlow's Cairo-Clock
 
 USE_GNOME=	gtk20 intlhack libglade2 librsvg2
-USE_GMAKE=	yes
-USES=		pathfix iconv
+USES=		pathfix iconv gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAN1=		cairo-clock.1

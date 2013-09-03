@@ -11,6 +11,7 @@ COMMENT=	XML diff and merge package
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
+USES=		pkgconfig
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-libxml2-incldir=${LOCALBASE}/include/libxml2

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	superswitcher
-# Date Created:				02 Jan 2006
-# Whom:					Remington Lang <MrL0Lz@gmail.com>
-#
+# Created by: Remington Lang <MrL0Lz@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	superswitcher
 PORTVERSION=	0.6
@@ -18,8 +14,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
+USES=		gmake pkgconfig
 USE_GNOME=	gconf2 libwnck
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

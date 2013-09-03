@@ -13,6 +13,7 @@ COMMENT=	Preferences manager for the Openbox window manager
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
 		obrender.27:${PORTSDIR}/x11-wm/openbox
 
+USES=		pkgconfig
 USE_GNOME=	gnomehier libglade2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPENBOX_CFLAGS="`pkg-config --cflags obrender-3.5 obt-3.5`" \

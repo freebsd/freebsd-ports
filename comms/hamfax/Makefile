@@ -15,7 +15,7 @@ USE_QT4=	gui moc_build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	CPPFLAGS="-I${LOCALBASE}/include" \
 					LDFLAGS="-L${LOCALBASE}/lib"
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
 
 

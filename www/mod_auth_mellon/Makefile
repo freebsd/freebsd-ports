@@ -14,6 +14,7 @@ COMMENT=		Apache auth module for identifying SSO users
 LIB_DEPENDS=		lasso.8:${PORTSDIR}/security/lasso \
 			curl:${PORTSDIR}/ftp/curl
 
+USES=			pkgconfig
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-apxs2=${APXS}
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-Wall" OPENSSL_LIBS="-lssl"

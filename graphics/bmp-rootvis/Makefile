@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bmp-rootvis
-# Date created:		2004-10-15
-# Whom:			Roman Bogorodskiy <bogorodskiy@inbox.ru>
-#
+# Created by: Roman Bogorodskiy <bogorodskiy@inbox.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	bmp-rootvis
 PORTVERSION=	0.0.1
@@ -21,6 +17,7 @@ PLIST_FILES=	lib/bmp/Visualization/librootvis.so \
 		lib/bmp/Visualization/librootvis.la \
 		lib/bmp/Visualization/librootvis.a
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool

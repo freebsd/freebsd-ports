@@ -20,8 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cair
 
 LATEST_LINK=	py-gtk2
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		pathfix gettext
+USES=		pathfix gettext gmake pkgconfig
 USE_GNOME=	libglade2 pygobject
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes

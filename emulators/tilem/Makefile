@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	ticalcs2:${PORTSDIR}/comms/libticalcs2
 
 INSTALLS_ICONS=	yes
-USES=		desktop-file-utils shared-mime-info
+USES=		desktop-file-utils shared-mime-info pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes	# parallel builds (-jX) are broken with BSD make(1)

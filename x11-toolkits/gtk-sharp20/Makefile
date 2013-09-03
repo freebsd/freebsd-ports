@@ -1,10 +1,6 @@
-# New ports collection makefile for:    gtk-sharp
-# Date created:         2003-01-01
-# Whom:                 Juli Mallett
-#
+# Created by: Juli Mallett
 # $FreeBSD$
 #   $Id: Makefile,v 1.27 2007/10/03 00:48:49 killfill Exp $
-#
 
 PORTNAME=	gtk-sharp
 PORTVERSION=	2.12.10
@@ -23,8 +19,7 @@ LATEST_LINK=	gtk-sharp20
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
-USES=		perl5
+USES=		perl5 gmake pkgconfig
 USE_PERL5=	run
 USE_GNOME=	gnomehack gtk20 libglade2
 

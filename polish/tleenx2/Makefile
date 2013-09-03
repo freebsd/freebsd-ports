@@ -13,6 +13,7 @@ COMMENT=	Client for polish IM service called Tlen.pl
 
 LIB_DEPENDS=	tlen.1:${PORTSDIR}/polish/libtlen
 
+USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_XORG=	xscrnsaver

@@ -12,7 +12,7 @@ COMMENT=		Direct streaming generator for Icecast/Shoutcast
 LIB_DEPENDS=		libshout.so:${PORTSDIR}/audio/libshout2
 
 GNU_CONFIGURE=		yes
-USES=			gmake
+USES=			gmake pkgconfig
 CONFIGURE_ARGS=		--exec-prefix=${PREFIX}
 
 OPTIONS_DEFINE=		DOCS MYSQL PGSQL

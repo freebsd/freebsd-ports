@@ -1,7 +1,4 @@
-# New ports collection makefile for:   sodipodi
-# Date created:        28 January 2000
-# Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
-#
+# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/graphics/sodipodi/Makefile,v 1.3 2007/05/30 03:21:43 mezz Exp $
 
@@ -17,9 +14,8 @@ COMMENT=	A small vector based drawing program with GNOME libraries
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		png15:${PORTSDIR}/graphics/png
 
-USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade2 libartlgpl2 desktopfileutils
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--without-gnome-print \
 		--with-popt

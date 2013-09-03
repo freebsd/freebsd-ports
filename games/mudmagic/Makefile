@@ -16,10 +16,9 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		expat:${PORTSDIR}/textproc/expat2 \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
 
-USES=		pathfix
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	gtk20 libglade2 libxml2
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

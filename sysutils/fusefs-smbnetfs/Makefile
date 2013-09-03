@@ -19,7 +19,7 @@ LIB_DEPENDS=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
 DOCSDIR+=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
 USE_BZIP2=	yes
-USES=		fuse
+USES=		fuse pkgconfig
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include

@@ -16,7 +16,7 @@ LIB_DEPENDS=	shout:${PORTSDIR}/audio/libshout2 \
 OPTIONS_DEFINE=	FLAC FAAD VORBIS PYTHON
 OPTIONS_DEFAULT=	PYTHON
 
-USES=		gmake perl5
+USES=		gmake perl5 pkgconfig
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	ices0
 

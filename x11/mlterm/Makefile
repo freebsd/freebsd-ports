@@ -16,7 +16,7 @@ USE_GNOME=	gtk20 lthack vte
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure kiklib/configure mkf/configure
 USE_PERL5_BUILD=yes
-USES=		gettext
+USES=		gettext pkgconfig
 CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf2 --enable-utmp \
 		--enable-optimize-redrawing \
 		--with-tools="mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig,mlimgloader" \

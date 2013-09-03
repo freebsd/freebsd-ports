@@ -21,7 +21,7 @@ DOCSDIR=	${PREFIX}/share/doc/geda
 DATADIR=	${PREFIX}/share/geda
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-gdgeda --with-docdir=${DOCSDIR} \

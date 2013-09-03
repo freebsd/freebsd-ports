@@ -12,6 +12,7 @@ COMMENT=	Amateur Radio logging application
 
 LICENSE=	GPLv3
 
+USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-mime-update

@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libvorbisfile.so:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/ndata-${PORTVERSION}:${PORTSDIR}/games/naev-data
 
-USES=		gmake
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	automake:env aclocal:env autoconf:env
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

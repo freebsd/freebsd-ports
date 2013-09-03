@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	HAL
 HAL_DESC=	Enable HAL support
 
 USE_XORG=	xcomposite xft xinerama xpm xrandr
-USES=	pathfix gettext
+USES=	pathfix gettext pkgconfig
 USE_PYTHON=	yes
 USE_FAM=	yes
 GNU_CONFIGURE=	yes

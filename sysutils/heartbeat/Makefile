@@ -25,8 +25,7 @@ AUTOMAKE_ARGS+=	--add-missing --include-deps --copy
 ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
 
 USE_BZIP2=	yes
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtk-aurora-engine
-# Date created:		2009-12-03
-# Whom:			okeeblow <root@cooltrainer.org>
-#
+# Created by: okeeblow <root@cooltrainer.org>
 # $FreeBSD$
-#
 
 PORTNAME=	aurora
 PORTVERSION=	1.5.1
@@ -20,8 +16,8 @@ COMMENT=	Aurora GTK+ 2.x engine and "Aurora" theme
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
 
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

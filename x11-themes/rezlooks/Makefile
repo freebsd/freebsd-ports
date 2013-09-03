@@ -14,6 +14,7 @@ COMMENT=	GTK+ 2.x engine based on Clearlooks
 WRKSRC=		${WRKDIR}/rezlooks-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_GNOME=	gtk20
 
 OPTIONS_DEFINE=	ANIMATION

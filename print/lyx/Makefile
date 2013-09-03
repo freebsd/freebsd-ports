@@ -23,8 +23,8 @@ CONFLICTS=	lyx-1.[0-9]*
 MAJOR_VERSION=	2.0
 MINOR_VERSION=	6
 
+USES=		gmake pkgconfig
 USE_XZ=		yes
-USE_GMAKE=	yes
 USE_QT4=	corelib gui moc_build uic_build rcc_build
 USE_GNOME=	desktopfileutils
 USE_PYTHON=	-2.7

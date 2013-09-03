@@ -17,9 +17,8 @@ COMMENT=	Education software to help people to study English
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20 esound
-USE_GMAKE=	yes
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README TODO readme.txt

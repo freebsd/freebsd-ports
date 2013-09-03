@@ -12,7 +12,7 @@ MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	GTK+ based simple text editor
 
 USE_GNOME=	gtk20 intlhack
-USES=		desktop-file-utils gmake
+USES=		desktop-file-utils gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-chooser
 INSTALLS_ICONS=	yes
