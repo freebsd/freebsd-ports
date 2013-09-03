@@ -16,9 +16,8 @@ CONFLICTS=	gmime-1.0.* gmime-2.4.*
 
 SLAVEDIRS=	mail/gmime2-sharp
 
-USE_GMAKE=	yes
 USE_GNOME?=	glib20
-USES=		pathfix pkgconfig iconv
+USES=		gmake pathfix pkgconfig iconv
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 # www.freebsd.org/cgi/query-pr.cgi?pr=118092
@@ -32,7 +31,11 @@ CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
 LATEST_LINK?=	${PORTNAME}2
 
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	*
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|stdint.h|inttypes.h|" ${WRKSRC}/zentimer.h
@@ -40,7 +43,7 @@ post-patch:
 		${WRKSRC}/gmime/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if  ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in docs/reference/html/*
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
