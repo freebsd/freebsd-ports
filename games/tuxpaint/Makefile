@@ -36,7 +36,7 @@ MAN1=		tp-magic-config.1 tuxpaint.1 tuxpaint-import.1
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
+.if ! ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET=	install-bin install-data install-man install-magic-plugins \
 		install-magic-plugin-dev install-icon install-gettext \
 		install-im install-importscript install-default-config \
