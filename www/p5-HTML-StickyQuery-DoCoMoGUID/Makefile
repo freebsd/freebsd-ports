@@ -19,7 +19,8 @@ RUN_DEPENDS=	\
 	p5-HTML-StickyQuery>0:${PORTSDIR}/www/p5-HTML-StickyQuery
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	HTML::StickyQuery::DoCoMoGUID.3
 

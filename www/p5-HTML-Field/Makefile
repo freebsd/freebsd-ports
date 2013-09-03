@@ -17,6 +17,7 @@ COMMENT=	A perl module to generate HTML form elements
 MAN3=		HTML::Field.3 \
 		HTML::FieldForm.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

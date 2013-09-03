@@ -27,7 +27,8 @@ BUILD_DEPENDS=	p5-JSON-XS>=2:${PORTSDIR}/converters/p5-JSON-XS \
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WebService::Google::Reader.3 \
 		WebService::Google::Reader::Constants.3 \
