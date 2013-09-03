@@ -17,6 +17,7 @@ USES=		iconv gettext:build perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+CONFIGURE_ENV+=	ac_cv_lib_stdcpp_main=no
 
 CPPFLAGS+=	${PTHREAD_CFLAGS} -I ${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
