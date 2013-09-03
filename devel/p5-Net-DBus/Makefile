@@ -16,7 +16,7 @@ RUN_DEPENDS=	p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \
 		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 
 USES=		pkgconfig perl5
-USES_PERL5=	configure
+USE_PERL5=	configure
 
 MAN3=	Net::DBus::ASyncReply.3 Net::DBus::Annotation.3 Net::DBus::Tutorial.3 \
 	Net::DBus::RemoteObject.3 Net::DBus::Binding::Connection.3 \
