@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-Build
-PORTVERSION=	0.4005
+PORTVERSION=	0.4007
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,12 +10,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Build and install Perl modules
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 TEST_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-PAR-Dist>=0.17:${PORTSDIR}/devel/p5-PAR-Dist
 
 OPTIONS_DEFINE=	DOCS
 
-PORTSCOUT=	skipv:0.31012
+PORTSCOUT=	skipv:0.31011,0.31012
 
 USES=		perl5
 USE_PERL5=	modbuild
@@ -32,12 +35,8 @@ MAN3=		inc::latest.3 \
 		Module::Build::ModuleInfo.3 \
 		Module::Build::Notes.3 \
 		Module::Build::PPMMaker.3 \
-		Module::Build::Platform::Amiga.3 \
 		Module::Build::Platform::Default.3 \
-		Module::Build::Platform::EBCDIC.3 \
-		Module::Build::Platform::MPEiX.3 \
 		Module::Build::Platform::MacOS.3 \
-		Module::Build::Platform::RiscOS.3 \
 		Module::Build::Platform::Unix.3 \
 		Module::Build::Platform::VMS.3 \
 		Module::Build::Platform::VOS.3 \
