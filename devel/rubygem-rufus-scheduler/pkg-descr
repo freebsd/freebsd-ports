@@ -1,0 +1,5 @@
+rufus-scheduler is a Ruby gem for scheduling pieces of code (jobs). It
+understands running a job AT a certain time, IN a certain time, EVERY x time or
+simply via a CRON statement.
+
+WWW: https://github.com/jmettraux/rufus-scheduler
