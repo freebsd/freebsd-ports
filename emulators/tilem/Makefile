@@ -8,17 +8,21 @@ CATEGORIES=	emulators
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An emulator for the Z80 series of Texas Instruments calculators
+COMMENT=	Emulator for the Z80 series of Texas Instruments calculators
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	ticalcs2:${PORTSDIR}/comms/libticalcs2
+LIB_DEPENDS=	libticalcs2.so:${PORTSDIR}/comms/libticalcs2
 
-INSTALLS_ICONS=	yes
 USES=		desktop-file-utils shared-mime-info pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes	# parallel builds (-jX) are broken with BSD make(1)
 USE_GNOME=	gtk20
+INSTALLS_ICONS=	yes
+
+# Unbreak parallel builds (-jX)
+post-patch:
+	@${REINPLACE_CMD} -E 's,cd (.+) && (\$$\(MAKE\)),\2 -C \1,' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
