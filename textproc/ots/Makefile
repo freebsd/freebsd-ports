@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ots
-# Date created:		9 June 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ots
 PORTVERSION=	0.5.0
@@ -18,7 +14,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
-USES=		gettext
+USES=		gettext pkgconfig
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

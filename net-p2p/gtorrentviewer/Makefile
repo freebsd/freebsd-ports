@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gtorrentviewer
-# Date created:		2004-10-16
-# Whom:			Michael Johnson <ahze@ahze.net>
-#
+# Created by: Michael Johnson <ahze@ahze.net>
 # $FreeBSD$
 #   $MCom: ports/net-p2p/gtorrentviewer/Makefile,v 1.4 2007/08/06 17:16:29 mezz Exp $
-#
 
 PORTNAME=	gtorrentviewer
 PORTVERSION=	0.2b
@@ -21,7 +17,7 @@ PORTSCOUT=	skipv:0.2	# older than current version
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_GNOME=	gtk20 gnomehier intlhack
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

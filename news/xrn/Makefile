@@ -13,8 +13,7 @@ COMMENT=	Usenet News reader for the X Window System
 MAN1=		xrn.1
 MANCOMPRESSED=	no
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		bison
+USES=		bison gmake pkgconfig
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
 DOCS=		COMMON-PROBLMS COPYRIGHT CREDITS ChangeLog

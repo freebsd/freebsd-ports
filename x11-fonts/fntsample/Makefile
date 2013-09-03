@@ -16,7 +16,7 @@ COMMENT?=	Show Unicode coverage of a font
 LICENSE=	GPLv3
 
 USE_PERL5=	run
-USES=		perl5
+USES=		perl5 pkgconfig
 
 MAN1=		${PORTNAME}.1
 

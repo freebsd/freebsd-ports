@@ -16,8 +16,8 @@ BUILD_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 GNU_CONFIGURE=	yes
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	autoconf
-USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk20
 INSTALLS_ICONS=	yes
 

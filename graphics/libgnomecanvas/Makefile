@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gnomecanvas
-# Date created:				18 May 2001
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/graphics/libgnomecanvas/Makefile,v 1.79 2010/09/28 07:31:27 kwm Exp $
-#
 
 PORTNAME=	libgnomecanvas
 PORTVERSION=	2.30.3
@@ -20,8 +16,7 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack libglade2 libartlgpl2 ltverhack referencehack

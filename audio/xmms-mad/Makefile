@@ -13,7 +13,7 @@ LIB_DEPENDS=	mad:${PORTSDIR}/audio/libmad \
 		id3tag:${PORTSDIR}/audio/libid3tag \
 		xmms:${PORTSDIR}/multimedia/xmms
 
-USES=		gmake
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

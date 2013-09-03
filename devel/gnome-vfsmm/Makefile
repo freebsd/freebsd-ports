@@ -1,10 +1,6 @@
-# New ports collection makefile for:    gnome-vfsmm
-# Date created:         22 May 2003
-# Whom:                 Alexander Nedotsukov <bland@mail.ru>
-#
+# Created by: Alexander Nedotsukov <bland@mail.ru>
 # $FreeBSD$
 #   $MCom: ports/devel/gnome-vfsmm/Makefile,v 1.31 2009/03/17 15:22:21 kwm Exp $
-#
 
 PORTNAME=	gnome-vfsmm
 PORTVERSION=	2.26.0
@@ -20,7 +16,7 @@ LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gnomehack gnomevfs2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

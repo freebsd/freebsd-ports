@@ -17,8 +17,7 @@ LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/polkit-gnome.pc:${PORTSDIR}/sysutils/policykit-gnome
 
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 gtk20
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nautilus-extension
 CPPFLAGS+=	-I${LOCALBASE}/include

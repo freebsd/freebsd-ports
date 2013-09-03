@@ -16,7 +16,7 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 PLIST_FILES=	lib/xmms/Visualization/libfishmatic.so
 USE_GNOME=      gtk12
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 GNU_CONFIGURE=  yes
 USE_GL=		glut
 USE_XORG=	xext

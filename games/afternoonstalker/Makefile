@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	flatzebra:${PORTSDIR}/devel/flatzebra
 
+USES=		pkgconfig
 USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

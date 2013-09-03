@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	fluxconf
-# Date created:				29/04/2002
-# Whom:					hendrik@scholz.net
-#
+# Created by: hendrik@scholz.net
 # $FreeBSD$
-#
 
 PORTNAME=	fluxconf
 PORTVERSION=	0.9.9
@@ -14,6 +10,7 @@ MASTER_SITES=	http://devaux.fabien.free.fr/flux/
 MAINTAINER=	alfredoj69@gmail.com
 COMMENT=	A configuration program for the fluxbox window manager
 
+USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 

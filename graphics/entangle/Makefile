@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2 \
 		libraw_r.so:${PORTSDIR}/graphics/libraw \
 		libpeas-1.0.so:${PORTSDIR}/devel/libpeas
 
-USES=		gmake
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk30
 

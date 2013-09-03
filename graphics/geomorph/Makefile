@@ -14,8 +14,8 @@ COMMENT=	Height field generator and editor
 LIB_DEPENDS=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext \
 		png15:${PORTSDIR}/graphics/png
 
+USES=		gmake pkgconfig
 USE_GL=		yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libintl-prefix="${LOCALBASE}"
 

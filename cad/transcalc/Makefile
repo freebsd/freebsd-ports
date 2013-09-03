@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	transcalc
-# Date created:			Sep 6, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	transcalc
 PORTVERSION=	0.14
@@ -15,6 +10,7 @@ MASTER_SITES=	http://transcalc.sourceforge.net/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A analysis and synthesis tool for RF and microwave transmission lines
 
+USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 

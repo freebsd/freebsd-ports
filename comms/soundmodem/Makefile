@@ -13,7 +13,7 @@ LIB_DEPENDS=	audiofile:${PORTSDIR}/audio/libaudiofile
 
 CONFIGURE_ARGS=	--disable-alsatest
 WRKSRC=		${WRKDIR}/${DISTNAME}
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 HAS_CONFIGURE=	yes
 USE_GNOME=	gtk20 libxml2
 MAN8=		soundmodem.8 soundmodemconfig.8

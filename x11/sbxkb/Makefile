@@ -14,6 +14,7 @@ LICENSE=	GPLv3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules
 USE_GNOME=	gtk20
+USES=		pkgconfig
 
 post-patch:
 # Remove debug flag (-g) from CFLAGS

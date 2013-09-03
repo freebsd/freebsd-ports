@@ -14,6 +14,7 @@ COMMENT=	GUPnP wrapper extension
 
 LIB_DEPENDS=	gupnp-1.0:${PORTSDIR}/net/gupnp
 
+USES=		pkgconfig
 USE_PHP=	yes
 USE_PHPEXT=	yes
 

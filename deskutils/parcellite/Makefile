@@ -12,7 +12,7 @@ MAINTAINER=	jrm@ftfl.ca
 COMMENT=	A lightweight GTK+ clipboard manager
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 
 .include <bsd.port.options.mk>

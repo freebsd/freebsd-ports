@@ -20,7 +20,7 @@ MAN1=		easytag.1
 CONFLICTS=	easytag-devel-[0-9]*
 
 USE_XZ=		yes
-USES=		gettext gmake
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gnomehack gnomeprefix gtk20 desktopfileutils
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

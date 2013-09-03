@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnubiff
-# Date created:		3 May 2004
-# Whom:			Tim Bishop <tim@bishnet.net>
-#
+# Created by: Tim Bishop <tim@bishnet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gnubiff
 PORTVERSION=	2.2.13
@@ -17,7 +13,7 @@ COMMENT=	A mail notification program for Gnome
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_GNOME=	intlhack libglade2 esound
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_FAM=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

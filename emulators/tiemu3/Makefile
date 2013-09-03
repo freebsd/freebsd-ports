@@ -16,8 +16,8 @@ LIB_DEPENDS=	ticalcs2:${PORTSDIR}/comms/libticalcs2 \
 		ticables2:${PORTSDIR}/comms/libticables2 \
 		tifiles2:${PORTSDIR}/devel/libtifiles2
 
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
 USE_SDL=	sdl
 

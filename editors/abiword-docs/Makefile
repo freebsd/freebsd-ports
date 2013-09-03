@@ -16,7 +16,7 @@ BUILD_DEPENDS=	abiword:${PORTSDIR}/editors/abiword
 RUN_DEPENDS=	abiword:${PORTSDIR}/editors/abiword
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 # Don't give X warnings if DISPLAY is set
 CONFIGURE_ENV=	DISPLAY=""
 MAKE_ENV=	DISPLAY=""

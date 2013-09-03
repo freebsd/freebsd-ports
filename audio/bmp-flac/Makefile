@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bmp-flac
-# Date created:				2005-05-22
-# Whom:					nork@FreeBSD.org
-#
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	flac
 PORTVERSION=	20040316
@@ -21,6 +17,7 @@ LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
 
 PLIST_FILES=	lib/bmp/Input/libbmp-flac.so
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}" \

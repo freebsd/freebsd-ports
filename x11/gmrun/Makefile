@@ -14,7 +14,7 @@ LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gmake
+USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

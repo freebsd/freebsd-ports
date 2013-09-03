@@ -16,8 +16,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_XORG=	xscrnsaver
 USE_GNOME=	gtk20
-USES=		gettext perl5
-USE_GMAKE=	yes
+USES=		gettext perl5 gmake pkgconfig
 GNU_CONFIGURE=	yes
 
 MAN1=		${PORTNAME}.1

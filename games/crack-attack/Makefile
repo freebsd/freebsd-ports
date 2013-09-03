@@ -1,7 +1,4 @@
-# New ports collection makefile for:	crack-attack
-# Date created:				21 December 2003
-# Whom:					Pav Lucistnik <pav@FreeBSD.org>
-#
+# Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	crack-attack
@@ -14,6 +11,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL game based on Super Nintendo classic Tetris Attack
 
+USES=		pkgconfig
 USE_XORG=	x11 xi xmu sm ice
 USE_GL=		glut
 USE_GNOME=	gtk20

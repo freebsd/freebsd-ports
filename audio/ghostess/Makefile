@@ -25,7 +25,7 @@ LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USES=		gmake
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jackmidi
 

@@ -13,7 +13,7 @@ COMMENT=	Desktop-independent theme switcher for GTK+
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake pkgconfig
 USE_GNOME=	gnomehack gtk20 intlhack
 
 MAN1=		lxappearance.1

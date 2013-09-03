@@ -17,9 +17,8 @@ RUN_DEPENDS=	git>=1.7.0.2:${PORTSDIR}/devel/git
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gconf2 gtk20 gtksourceview2 gnomehack
-USES=		gettext
+USES=		gettext gmake pkgconfig
 
 INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	gitg.schemas

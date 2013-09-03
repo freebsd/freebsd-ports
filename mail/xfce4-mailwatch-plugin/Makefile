@@ -16,9 +16,8 @@ LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
-USES=		gettext pathfix
+USES=		gettext pathfix gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libgui libutil panel

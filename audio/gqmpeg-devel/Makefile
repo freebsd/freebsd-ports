@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gqmpeg
-# Date Created:		28 Oct 1998
-# Whom:			Vanilla Pooh Shu <vanilla@FreeBSD.org>
-#
+# Created by: Vanilla Pooh Shu <vanilla@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gqmpeg
 PORTVERSION=	0.91.1
@@ -30,6 +26,7 @@ RUN_DEPENDS+=	xmp:${PORTSDIR}/audio/xmp
 RUN_DEPENDS+=	ogg123:${PORTSDIR}/audio/vorbis-tools
 .endif
 
+USES=		gmake
 LATEST_LINK=	gqmpeg-devel
 USE_XORG=	xext xrender xinerama xi xrandr xcursor xcomposite xdamage x11 \
 		xfixes xproto
