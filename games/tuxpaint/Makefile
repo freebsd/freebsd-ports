@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	DOCS
 
 USE_GNOME=	librsvg2
 USE_SDL=	image mixer sdl ttf pango
-USES=		gettext gmake
+USES=		gettext gmake pkgconfig
 MAKE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PREFIX="${PREFIX}" \
