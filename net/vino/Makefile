@@ -1,10 +1,6 @@
-# New ports collection makefile for:	vino
-# Date created:				16 July 2004
-# Whom:					Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-#
+# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
 #   $MCom: ports/net/vino/Makefile,v 1.81 2010/09/27 13:51:24 kwm Exp $
-#
 
 PORTNAME=	vino
 PORTVERSION=	2.32.2
@@ -21,10 +17,9 @@ LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
 
 USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomepanel
 USE_XORG=	xtst
-USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
