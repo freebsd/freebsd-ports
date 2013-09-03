@@ -21,7 +21,7 @@ RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof \
 		${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection \
 		${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 
-USES=		gettext gmake iconv
+USES=		gettext gmake iconv pkgconfig
 USE_GNOME=	glib20 intltool gnomehier
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
