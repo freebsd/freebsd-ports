@@ -1346,6 +1346,7 @@
     SUBDIR += rubygem-unf_ext
     SUBDIR += rubygem-xml-simple
     SUBDIR += rubygem-xslt
+    SUBDIR += rubygem-ya2yaml
     SUBDIR += rubygem-yard
     SUBDIR += rubygem-zmq
     SUBDIR += rw-aspell
