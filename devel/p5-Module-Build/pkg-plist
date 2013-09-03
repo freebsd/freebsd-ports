@@ -11,12 +11,8 @@
 %%SITE_PERL%%/Module/Build/ModuleInfo.pm
 %%SITE_PERL%%/Module/Build/Notes.pm
 %%SITE_PERL%%/Module/Build/PPMMaker.pm
-%%SITE_PERL%%/Module/Build/Platform/Amiga.pm
 %%SITE_PERL%%/Module/Build/Platform/Default.pm
-%%SITE_PERL%%/Module/Build/Platform/EBCDIC.pm
-%%SITE_PERL%%/Module/Build/Platform/MPEiX.pm
 %%SITE_PERL%%/Module/Build/Platform/MacOS.pm
-%%SITE_PERL%%/Module/Build/Platform/RiscOS.pm
 %%SITE_PERL%%/Module/Build/Platform/Unix.pm
 %%SITE_PERL%%/Module/Build/Platform/VMS.pm
 %%SITE_PERL%%/Module/Build/Platform/VOS.pm
