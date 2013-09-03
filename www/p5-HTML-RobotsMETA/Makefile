@@ -18,7 +18,8 @@ COMMENT=	Parse HTML For Robots Exclusion META Markup
 BUILD_DEPENDS=	p5-HTML-Parser>=3:${PORTSDIR}/www/p5-HTML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::RobotsMETA.3 \
 		HTML::RobotsMETA::Rules.3

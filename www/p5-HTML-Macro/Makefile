@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	groovis@groovis.net
 COMMENT=	Process HTML templates with loops, conditionals, macros and more
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::Macro.3 HTML::Macro::Loop.3
 

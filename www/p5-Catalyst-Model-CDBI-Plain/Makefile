@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-Class-DBI>0:${PORTSDIR}/databases/p5-Class-DBI \
 RUN_DEPENDS=	p5-Catalyst-Runtime>0:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Devel>0:${PORTSDIR}/www/p5-Catalyst-Devel
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Catalyst::Model::CDBI::Plain.3 Catalyst::Helper::Model::CDBI::Plain.3
 

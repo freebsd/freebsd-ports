@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-Filter>=0:${PORTSDIR}/devel/p5-Filter \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Web-Query>=0:${PORTSDIR}/www/p5-Web-Query
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		HTML::TreeBuilder::LibXML::Node.3 \
 		HTML::TreeBuilder::LibXML.3
