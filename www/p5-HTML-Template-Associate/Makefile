@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
 		p5-Data-FormValidator>=0:${PORTSDIR}/textproc/p5-Data-FormValidator
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::Template::Associate.3 \
 		HTML::Template::Associate::DBI.3 \

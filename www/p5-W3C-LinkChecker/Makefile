@@ -28,6 +28,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 MAN1=		checklink.1
 MANCOMPRESSED=	no
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

@@ -25,7 +25,8 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Class-Null>0:${PORTSDIR}/devel/p5-Class-Null
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	GunghoX::FollowLinks.3 \
 	GunghoX::FollowLinks::Filter.3 \

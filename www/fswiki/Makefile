@@ -15,7 +15,7 @@ RUN_DEPENDS=	ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode \
 	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template
 
 USE_ZIP=	yes
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 post-extract:
