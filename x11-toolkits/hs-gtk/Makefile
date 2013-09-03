@@ -10,6 +10,7 @@ COMMENT=	Binding to the Gtk+ graphical user interface library
 
 LICENSE=	LGPL21
 
+USES=		pkgconfig
 USE_CABAL=	cairo>=0.12.0 gio>=0.12.0 glib>=0.12.0 mtl pango>=0.12.0
 USE_GNOME=	gtk20
 
