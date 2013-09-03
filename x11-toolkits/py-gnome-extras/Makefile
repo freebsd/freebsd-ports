@@ -1,10 +1,6 @@
-# New ports collection makefile for:	py-gnome-extras
-# Date created:				22 November 2005
-# Whom:					Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11-toolkits/py-gnome-extras/Makefile,v 1.55 2009/11/28 05:59:04 mezz Exp $
-#
 
 PORTNAME=	gnome-extras
 PORTVERSION=	2.25.3
@@ -24,7 +20,7 @@ LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell \
 #		gdl-1.2:${PORTSDIR}/x11-toolkits/gdl
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack libgtkhtml pygnome2 libgda4
 GNU_CONFIGURE=	yes

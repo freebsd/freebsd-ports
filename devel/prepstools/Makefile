@@ -1,9 +1,5 @@
-# New ports collection makefile for:	prepstools
-# Date created:		2005-08-02
-# Whom:			jmelo@FreeBSD.org
-#
+# Created by: jmelo@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	prepstools
 PORTVERSION=	2.2.0
@@ -20,6 +16,7 @@ LICENSE=	GPLv2
 
 USE_AUTOTOOLS=	libtool
 USE_PGSQL=	yes
+USES=		gmake pkgconfig
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 gconf2 glib20 libgnomeui
 
