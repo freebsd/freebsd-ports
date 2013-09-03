@@ -1,9 +1,5 @@
-# New ports collection makefile for:	webkit-sharp
-# Date created:		2008-09-01
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	webkit-sharp
 PORTVERSION=	0.3
@@ -21,7 +17,7 @@ PLIST_SUB+=	ASSEMBLY_VERSION=1.1.15
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gnomehack gtksharp20
 
 .include <bsd.port.mk>

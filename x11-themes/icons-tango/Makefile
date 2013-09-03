@@ -16,9 +16,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/icon-name-mapping:${PORTSDIR}/x11-themes/ico
 		Magick-config:${PORTSDIR}/graphics/ImageMagick
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_GNOME=	intlhack
-USES+=		pathfix
+USES+=		pathfix gmake pkgconfig
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

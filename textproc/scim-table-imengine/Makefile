@@ -1,9 +1,5 @@
-# New ports collection makefile for:    scim-table-imengine
-# Date created:		01 March 2005
-# Whom:			Jie Gao	<gaoj@cpsc.ucalgary.ca>
-#
+# Created by: Jie Gao <gaoj@cpsc.ucalgary.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	scim-table-imengine
 PORTVERSION=	0.5.10
@@ -19,10 +15,9 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	intlhack
-USES=		gettext
+USES=		gettext gmake pkgconfig
 
 MAN1=		scim-make-table.1
 

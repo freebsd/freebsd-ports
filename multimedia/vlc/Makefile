@@ -62,8 +62,7 @@ UNSAFE_PLUGINS_DESC=	Install unsafe, unsupported plugins
 NO_DVD_DESC=	disable DVD specific features
 
 USE_XZ=		yes
-USE_GMAKE=	yes
-USES=		iconv perl5
+USES=		iconv perl5 gmake pkgconfig
 USE_PERL5=	build
 USE_GL=yes
 USE_CSTD=	gnu99

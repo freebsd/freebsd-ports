@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gnomepanel
-# Date created:				27 April 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11/gnome-panel/Makefile,v 1.237 2012/10/25 09:21:00 kwm Exp $
-#
 
 PORTNAME=	gnome-panel
 PORTVERSION=	2.32.1
@@ -31,10 +27,9 @@ USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USES=		pathfix gettext
+USES=		pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix intlhack gnomedesktop libwnck gnomemenus \
 		gnomedocutils ltverhack referencehack librsvg2
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-network-manager
 LDFLAGS+=	-L${LOCALBASE}/lib

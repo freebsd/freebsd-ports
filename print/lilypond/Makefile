@@ -39,8 +39,7 @@ INFO=		lilypond-notation \
 		music-glossary \
 		internals
 
-USES=		bison:build gettext
-USE_GMAKE=	yes
+USES=		bison:build gettext gmake pkgconfig
 USE_GHOSTSCRIPT=9
 USE_TEX=	latex
 USE_PYTHON=	yes
