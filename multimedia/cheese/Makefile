@@ -1,10 +1,6 @@
-# New ports collection makefile for:	cheese
-# Date created:				13 January 2008
-# Whom:					FreeBSD GNOME Team <gnome@FreeBSD.org>
-#
+# Created by: FreeBSD GNOME Team <gnome@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/multimedia/cheese/Makefile,v 1.63 2010/09/28 08:21:02 kwm Exp $
-#
 
 PORTNAME=	cheese
 PORTVERSION=	2.32.0
@@ -22,10 +18,9 @@ LIB_DEPENDS=	canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
 
 USE_XORG=	xxf86vm
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack evolutiondataserver librsvg2 \
 		gnomedocutils gnomedesktop
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_GSTREAMER=	gconf good ogg theora v4l2 vorbis
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes

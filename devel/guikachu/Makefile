@@ -1,9 +1,5 @@
-# New ports collection makefile for:	guikachu
-# Date created:		7 Nov 2004
-# Whom:			Alexander Nedotsukov <bland@FreeBSD.org>
-#
+# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	guikachu
 PORTVERSION=	1.5.10
@@ -18,7 +14,7 @@ COMMENT=	Resource editor for PalmOS(tm) systems
 LIB_DEPENDS=	gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26 \
 		gnomevfsmm-2.6.1:${PORTSDIR}/devel/gnome-vfsmm
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

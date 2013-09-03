@@ -26,7 +26,7 @@ LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
 RUN_DEPENDS=	bug-buddy:${PORTSDIR}/devel/bug-buddy
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack libgnomeprintui gnomepanel gnomedesktop \
 		gtksourceview libwnck nautilus2 pygnome2 metacity \

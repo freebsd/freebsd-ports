@@ -11,10 +11,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	On-Screen-Display infrastructure using Pango text rendering
 
-USES=        pathfix
+USES=        pathfix gmake pkgconfig
 USE_GNOME=	gnomeprefix intlhack pygnome2
 USE_PYTHON=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 GCONF_SCHEMAS=	gnome-osd.schemas

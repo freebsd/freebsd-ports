@@ -27,6 +27,8 @@ INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	MANPAGES NLS
 OPTIONS_DEFAULT=	MANPAGES NLS
+
+USES=		pkgconfig
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES}

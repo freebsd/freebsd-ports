@@ -1,10 +1,6 @@
-# New ports collection makefile for:	hamster-applet
-# Date created:				06 August 2008
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/deskutils/hamster-applet/Makefile,v 1.42 2010/06/06 11:27:47 kwm Exp $
-#
 
 PORTNAME=	hamster-applet
 PORTVERSION=	2.32.1
@@ -22,8 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py-dbus
 
 USE_BZIP2=	yes
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake pkgconfig
 USE_PYTHON=	yes
 USE_XORG=	xscrnsaver
 USE_GNOME=	gnomeprefix intlhack gnomehack pygnomedesktop \
