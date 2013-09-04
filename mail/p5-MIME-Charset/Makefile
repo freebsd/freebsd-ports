@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	Olivier.Girard@univ-angers.fr
 COMMENT=	Charset Informations for MIME
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MIME::Charset.3 MIME::Charset::JA_JP.3
 

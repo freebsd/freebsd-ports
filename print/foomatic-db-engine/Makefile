@@ -24,7 +24,7 @@ RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 PROJECTHOST=	bsdistfiles
 USE_GNOME=	libxml2
-USE_PERL5=	yes
+USES=		perl5
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=${PERL} LIBDIR=${PREFIX}/share/foomatic/

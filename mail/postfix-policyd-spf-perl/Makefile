@@ -17,7 +17,8 @@ RUN_DEPENDS=	p5-Mail-SPF>=0:${PORTSDIR}/mail/p5-Mail-SPF \
 		p5-NetAddr-IP>=4:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 		p5-version>=0:${PORTSDIR}/devel/p5-version
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 
 PLIST_FILES=	sbin/postfix-policyd-spf-perl

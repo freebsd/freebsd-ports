@@ -19,7 +19,7 @@ COMMENT=	Translator TXT + BDF to PS
 PROJECTHOST=	ak-various-projects
 
 PLIST_FILES=	bin/txtbdf2ps
-USE_PERL5=	yes
+USES=		perl5
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKDIR}

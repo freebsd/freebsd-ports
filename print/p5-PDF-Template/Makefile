@@ -18,7 +18,8 @@ BUILD_DEPENDS+=	pdflib-perl>=0:${PORTSDIR}/print/pdflib-perl \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		PDF::Template::Element::Weblink.3 \
 		PDF::Template::Container::Scope.3 \

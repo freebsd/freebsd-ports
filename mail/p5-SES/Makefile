@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
 		p5-libwww>=6:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/bin
 

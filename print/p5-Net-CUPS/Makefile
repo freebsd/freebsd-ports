@@ -18,7 +18,8 @@ COMMENT=	Interface to the CUPS API
 BUILD_DEPENDS=	cups-config:${PORTSDIR}/print/cups-client
 LIB_DEPENDS=	cupsimage.2:${PORTSDIR}/print/cups-image
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::CUPS.3 \
 		Net::CUPS::Destination.3 \
