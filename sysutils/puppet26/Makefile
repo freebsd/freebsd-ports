@@ -10,6 +10,9 @@ MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A configuration management framework written in Ruby
 
+DEPRECATED=	End of Life from april 2013. Upgrade to 2.7 or 3.x.
+EXPIRATION_DATE=	2013-10-01
+
 RUN_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
 		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-augeas \
 		${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/converters/ruby-iconv
