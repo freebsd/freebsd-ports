@@ -1,19 +1,20 @@
-# New ports collection makefile for:	dhcprelya
-# Date created:				17 December 2007
-# Whom:					Sergey Matveychuk <sem@FreeBSD.org>
-#
+# Created by: Sergey Matveychuk <sem@FreeBSD.org>
 # $FreeBSD$
 #
 
 PORTNAME=	dhcprelya
-PORTVERSION=	4.5
+PORTVERSION=	4.7
 CATEGORIES=	net
-MASTER_SITES=	http://sem.semmy.ru/
+MASTER_SITES=	GH
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Lightweight DHCP relay agent. Yandex edition
 
 LICENSE=	BSD
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	sem-hub
+GH_COMMIT=	6df4e97
 
 USE_RC_SUBR=	dhcprelya
 
@@ -30,7 +31,6 @@ RADIUS_PLUGIN_PLUGIN_DESC=	build radius plugin
 
 .if ${PORT_OPTIONS:MRADIUS_PLUGIN}
 PLIST_FILES+=	lib/${PORTNAME}_radius_plugin.so
-LIB_DEPENDS=	freeradius-client.2:${PORTSDIR}/net/freeradius-client
 MAKE_ARGS=	-DWITH_RADIUS_PLUGIN
 .endif
 
