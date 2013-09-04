@@ -12,7 +12,7 @@ COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
 
 LICENSE=	GPLv2
 
-NO_PACKAGE=	Package stable version instead
+IGNORE=		has no distfile available. Use dns/dnsmasq instead.
 
 CONFLICTS_INSTALL=dnsmasq-2*
 
