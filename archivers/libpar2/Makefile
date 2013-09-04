@@ -24,6 +24,11 @@ USES=		pkgconfig
 
 .include <bsd.port.options.mk>
 
+post-patch:
+	@${REINPLACE_CMD} -e "s/-lstdc++//g" \
+		${WRKSRC}/Makefile.in \
+		${WRKSRC}/configure
+
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
