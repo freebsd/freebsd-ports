@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	repsnapper
-PORTVERSION=	2.2.0b2
+PORTVERSION=	2.2.0b3
 CATEGORIES=	cad
 MASTER_SITES=	https://codeload.github.com/timschmidt/repsnapper/tar.gz/
 DISTNAME=	${PORTVERSION}
@@ -16,7 +16,7 @@ LICENSE=	GPLv2 BSD MIT
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
-LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
+LIB_DEPENDS=	libgtkglextmm-x11-1.2.so:${PORTSDIR}/x11-toolkits/gtkglextmm \
 		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
 		libcairomm-1.0.so:${PORTSDIR}/graphics/cairomm \
