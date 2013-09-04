@@ -4,13 +4,12 @@
 %%PYTHON_SITELIBDIR%%/lit/ShCommands.py
 %%PYTHON_SITELIBDIR%%/lit/ShUtil.py
 %%PYTHON_SITELIBDIR%%/lit/Test.py
-%%PYTHON_SITELIBDIR%%/lit/TestFormats.py
 %%PYTHON_SITELIBDIR%%/lit/TestRunner.py
 %%PYTHON_SITELIBDIR%%/lit/TestingConfig.py
-%%PYTHON_SITELIBDIR%%/lit/Util.py
 %%PYTHON_SITELIBDIR%%/lit/__init__.py
 %%PYTHON_SITELIBDIR%%/lit/discovery.py
 %%PYTHON_SITELIBDIR%%/lit/main.py
+%%PYTHON_SITELIBDIR%%/lit/util.py
 bin/FileCheck
 bin/bugpoint
 bin/lit
@@ -32,7 +31,6 @@ bin/llvm-mcmarkup
 bin/llvm-nm
 bin/llvm-objdump
 bin/llvm-prof
-bin/llvm-ranlib
 bin/llvm-readobj
 bin/llvm-rtdyld
 bin/llvm-size
@@ -83,7 +81,6 @@ include/llvm/ADT/IntervalMap.h
 include/llvm/ADT/IntrusiveRefCntPtr.h
 include/llvm/ADT/MapVector.h
 include/llvm/ADT/None.h
-include/llvm/ADT/NullablePtr.h
 include/llvm/ADT/Optional.h
 include/llvm/ADT/OwningPtr.h
 include/llvm/ADT/PackedVector.h
@@ -124,6 +121,7 @@ include/llvm/Analysis/AliasSetTracker.h
 include/llvm/Analysis/BlockFrequencyImpl.h
 include/llvm/Analysis/BlockFrequencyInfo.h
 include/llvm/Analysis/BranchProbabilityInfo.h
+include/llvm/Analysis/CFG.h
 include/llvm/Analysis/CFGPrinter.h
 include/llvm/Analysis/CallGraph.h
 include/llvm/Analysis/CallGraphSCCPass.h
@@ -185,7 +183,6 @@ include/llvm/Assembly/Parser.h
 include/llvm/Assembly/PrintModulePass.h
 include/llvm/Assembly/Writer.h
 include/llvm/AutoUpgrade.h
-include/llvm/Bitcode/Archive.h
 include/llvm/Bitcode/BitCodes.h
 include/llvm/Bitcode/BitstreamReader.h
 include/llvm/Bitcode/BitstreamWriter.h
@@ -324,6 +321,7 @@ include/llvm/IR/IntrinsicInst.h
 include/llvm/IR/Intrinsics.gen
 include/llvm/IR/Intrinsics.h
 include/llvm/IR/Intrinsics.td
+include/llvm/IR/IntrinsicsAArch64.td
 include/llvm/IR/IntrinsicsARM.td
 include/llvm/IR/IntrinsicsHexagon.td
 include/llvm/IR/IntrinsicsMips.td
@@ -386,6 +384,7 @@ include/llvm/MC/MCLabel.h
 include/llvm/MC/MCMachOSymbolFlags.h
 include/llvm/MC/MCMachObjectWriter.h
 include/llvm/MC/MCModule.h
+include/llvm/MC/MCModuleYAML.h
 include/llvm/MC/MCObjectDisassembler.h
 include/llvm/MC/MCObjectFileInfo.h
 include/llvm/MC/MCObjectStreamer.h
@@ -418,13 +417,18 @@ include/llvm/MC/SubtargetFeature.h
 include/llvm/Object/Archive.h
 include/llvm/Object/Binary.h
 include/llvm/Object/COFF.h
-include/llvm/Object/COFFYaml.h
+include/llvm/Object/COFFYAML.h
 include/llvm/Object/ELF.h
+include/llvm/Object/ELFObjectFile.h
+include/llvm/Object/ELFTypes.h
+include/llvm/Object/ELFYAML.h
 include/llvm/Object/Error.h
 include/llvm/Object/MachO.h
 include/llvm/Object/MachOFormat.h
+include/llvm/Object/MachOUniversal.h
 include/llvm/Object/ObjectFile.h
 include/llvm/Object/RelocVisitor.h
+include/llvm/Object/YAML.h
 include/llvm/Option/Arg.h
 include/llvm/Option/ArgList.h
 include/llvm/Option/OptParser.td
@@ -505,8 +509,6 @@ include/llvm/Support/NoFolder.h
 include/llvm/Support/OutputBuffer.h
 include/llvm/Support/PassNameParser.h
 include/llvm/Support/Path.h
-include/llvm/Support/PathV1.h
-include/llvm/Support/PathV2.h
 include/llvm/Support/PatternMatch.h
 include/llvm/Support/PluginLoader.h
 include/llvm/Support/PointerLikeTypeTraits.h
@@ -538,6 +540,7 @@ include/llvm/Support/Threading.h
 include/llvm/Support/TimeValue.h
 include/llvm/Support/Timer.h
 include/llvm/Support/ToolOutputFile.h
+include/llvm/Support/UnicodeCharRanges.h
 include/llvm/Support/Valgrind.h
 include/llvm/Support/ValueHandle.h
 include/llvm/Support/Watchdog.h
@@ -582,7 +585,6 @@ include/llvm/Transforms/Instrumentation.h
 include/llvm/Transforms/ObjCARC.h
 include/llvm/Transforms/Scalar.h
 include/llvm/Transforms/Utils/BasicBlockUtils.h
-include/llvm/Transforms/Utils/BlackList.h
 include/llvm/Transforms/Utils/BuildLibCalls.h
 include/llvm/Transforms/Utils/BypassSlowDivision.h
 include/llvm/Transforms/Utils/Cloning.h
@@ -597,6 +599,7 @@ include/llvm/Transforms/Utils/SSAUpdater.h
 include/llvm/Transforms/Utils/SSAUpdaterImpl.h
 include/llvm/Transforms/Utils/SimplifyIndVar.h
 include/llvm/Transforms/Utils/SimplifyLibCalls.h
+include/llvm/Transforms/Utils/SpecialCaseList.h
 include/llvm/Transforms/Utils/UnifyFunctionExitNodes.h
 include/llvm/Transforms/Utils/UnrollLoop.h
 include/llvm/Transforms/Utils/ValueMapper.h
@@ -619,7 +622,6 @@ lib/libLLVMARMDesc.a
 lib/libLLVMARMDisassembler.a
 lib/libLLVMARMInfo.a
 lib/libLLVMAnalysis.a
-lib/libLLVMArchive.a
 lib/libLLVMAsmParser.a
 lib/libLLVMAsmPrinter.a
 lib/libLLVMBitReader.a
@@ -640,12 +642,6 @@ lib/libLLVMInstrumentation.a
 lib/libLLVMInterpreter.a
 lib/libLLVMJIT.a
 lib/libLLVMLinker.a
-lib/libLLVMMBlazeAsmParser.a
-lib/libLLVMMBlazeAsmPrinter.a
-lib/libLLVMMBlazeCodeGen.a
-lib/libLLVMMBlazeDesc.a
-lib/libLLVMMBlazeDisassembler.a
-lib/libLLVMMBlazeInfo.a
 lib/libLLVMMC.a
 lib/libLLVMMCDisassembler.a
 lib/libLLVMMCJIT.a
@@ -797,6 +793,14 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/Lexicon.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/LinkTimeOptimization.html
 %%PORTDOCS%%%%DOCSDIR%%/html/LinkTimeOptimization.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/MCJIT-creation.png
+%%PORTDOCS%%%%DOCSDIR%%/html/MCJIT-dyld-load.png
+%%PORTDOCS%%%%DOCSDIR%%/html/MCJIT-engine-builder.png
+%%PORTDOCS%%%%DOCSDIR%%/html/MCJIT-load-object.png
+%%PORTDOCS%%%%DOCSDIR%%/html/MCJIT-load.png
+%%PORTDOCS%%%%DOCSDIR%%/html/MCJIT-resolve-relocations.png
+%%PORTDOCS%%%%DOCSDIR%%/html/MCJITDesignAndImplementation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/MCJITDesignAndImplementation.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/MakefileGuide.html
 %%PORTDOCS%%%%DOCSDIR%%/html/MakefileGuide.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/MarkedUpDisassembly.html
@@ -831,8 +835,6 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/Projects.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/ReleaseNotes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ReleaseNotes.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/ReleaseNotes_34.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ReleaseNotes_34.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/ReleaseProcess.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ReleaseProcess.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/SegmentedStacks.html
@@ -907,8 +909,6 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm-nm.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm-prof.html
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm-prof.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/llvm-ranlib.html
-%%PORTDOCS%%%%DOCSDIR%%/html/llvm-ranlib.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm-readobj.html
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm-readobj.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm-stress.html

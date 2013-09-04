@@ -7,7 +7,6 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.4.r${SVN_REV}
-PORTREVISION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -78,7 +77,7 @@ PLIST_FILES+=		lib/LLVMgold.so
 MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-bcanalyzer.1 llvm-config.1 llvm-cov.1 llvm-diff.1 \
 		llvm-dis.1 llvm-extract.1 llvm-link.1 llvm-nm.1 \
-		llvm-prof.1 llvm-ranlib.1 llvm-stress.1 opt.1 tblgen.1
+		llvm-prof.1 llvm-stress.1 opt.1 tblgen.1
 MLINKS=		lit.1 llvm-lit.1
 .endif
 
@@ -181,7 +180,28 @@ PLIST_FILE_LIST=	bin/FileCheck \
 			bin/lit \
 			bin/llc \
 			bin/lli \
-			bin/llvm* \
+			bin/llvm-ar \
+			bin/llvm-as \
+			bin/llvm-bcanalyzer \
+			bin/llvm-config \
+			bin/llvm-cov \
+			bin/llvm-diff \
+			bin/llvm-dis \
+			bin/llvm-dwarfdump \
+			bin/llvm-extract \
+			bin/llvm-link \
+			bin/llvm-lit \
+			bin/llvm-mc \
+			bin/llvm-mcmarkup \
+			bin/llvm-nm \
+			bin/llvm-objdump \
+			bin/llvm-prof \
+			bin/llvm-readobj \
+			bin/llvm-rtdyld \
+			bin/llvm-size \
+			bin/llvm-stress \
+			bin/llvm-symbolizer \
+			bin/llvm-tblgen \
 			bin/macho-dump \
 			bin/opt \
 			lib/BugpointPasses.so \

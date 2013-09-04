@@ -21,6 +21,7 @@ include/clang/AST/AST.h
 include/clang/AST/ASTConsumer.h
 include/clang/AST/ASTContext.h
 include/clang/AST/ASTDiagnostic.h
+include/clang/AST/ASTFwd.h
 include/clang/AST/ASTImporter.h
 include/clang/AST/ASTMutationListener.h
 include/clang/AST/ASTTypeTraits.h
@@ -71,8 +72,8 @@ include/clang/AST/ExprCXX.h
 include/clang/AST/ExprObjC.h
 include/clang/AST/ExternalASTSource.h
 include/clang/AST/GlobalDecl.h
-include/clang/AST/LambdaMangleContext.h
 include/clang/AST/Mangle.h
+include/clang/AST/MangleNumberingContext.h
 include/clang/AST/NSAPI.h
 include/clang/AST/NestedNameSpecifier.h
 include/clang/AST/OperationKinds.h
@@ -89,6 +90,7 @@ include/clang/AST/StmtGraphTraits.h
 include/clang/AST/StmtIterator.h
 include/clang/AST/StmtNodes.inc
 include/clang/AST/StmtObjC.h
+include/clang/AST/StmtOpenMP.h
 include/clang/AST/StmtVisitor.h
 include/clang/AST/TemplateBase.h
 include/clang/AST/TemplateName.h
@@ -111,6 +113,7 @@ include/clang/ASTMatchers/Dynamic/Parser.h
 include/clang/ASTMatchers/Dynamic/Registry.h
 include/clang/ASTMatchers/Dynamic/VariantValue.h
 include/clang/Analysis/Analyses/CFGReachabilityAnalysis.h
+include/clang/Analysis/Analyses/Consumed.h
 include/clang/Analysis/Analyses/Dominators.h
 include/clang/Analysis/Analyses/FormatString.h
 include/clang/Analysis/Analyses/LiveVariables.h
@@ -144,6 +147,7 @@ include/clang/Basic/BuiltinsMips.def
 include/clang/Basic/BuiltinsNVPTX.def
 include/clang/Basic/BuiltinsPPC.def
 include/clang/Basic/BuiltinsX86.def
+include/clang/Basic/BuiltinsXCore.def
 include/clang/Basic/CapturedStmt.h
 include/clang/Basic/CharInfo.h
 include/clang/Basic/CommentOptions.h
@@ -211,8 +215,6 @@ include/clang/CodeGen/CodeGenAction.h
 include/clang/CodeGen/ModuleBuilder.h
 include/clang/Config/config.h
 include/clang/Driver/Action.h
-include/clang/Driver/Arg.h
-include/clang/Driver/ArgList.h
 include/clang/Driver/CC1AsOptions.h
 include/clang/Driver/CC1AsOptions.inc
 include/clang/Driver/CC1Options.h
@@ -220,12 +222,10 @@ include/clang/Driver/Compilation.h
 include/clang/Driver/Driver.h
 include/clang/Driver/DriverDiagnostic.h
 include/clang/Driver/Job.h
-include/clang/Driver/OptSpecifier.h
-include/clang/Driver/OptTable.h
-include/clang/Driver/Option.h
 include/clang/Driver/Options.h
 include/clang/Driver/Options.inc
 include/clang/Driver/Phases.h
+include/clang/Driver/SanitizerArgs.h
 include/clang/Driver/Tool.h
 include/clang/Driver/ToolChain.h
 include/clang/Driver/Types.def
@@ -267,6 +267,7 @@ include/clang/Frontend/TextDiagnosticPrinter.h
 include/clang/Frontend/Utils.h
 include/clang/Frontend/VerifyDiagnosticConsumer.h
 include/clang/FrontendTool/Utils.h
+include/clang/Index/USRGeneration.h
 include/clang/Lex/AttrSpellings.inc
 include/clang/Lex/CodeCompletionHandler.h
 include/clang/Lex/DirectoryLookup.h
@@ -357,6 +358,7 @@ include/clang/Serialization/SerializationDiagnostic.h
 include/clang/StaticAnalyzer/Checkers/ClangCheckers.h
 include/clang/StaticAnalyzer/Checkers/CommonBugCategories.h
 include/clang/StaticAnalyzer/Checkers/LocalCheckers.h
+include/clang/StaticAnalyzer/Checkers/ObjCRetainCount.h
 include/clang/StaticAnalyzer/Core/Analyses.def
 include/clang/StaticAnalyzer/Core/AnalyzerOptions.h
 include/clang/StaticAnalyzer/Core/BugReporter/BugReporter.h
@@ -406,6 +408,7 @@ include/clang/Tooling/FileMatchTrie.h
 include/clang/Tooling/JSONCompilationDatabase.h
 include/clang/Tooling/Refactoring.h
 include/clang/Tooling/RefactoringCallbacks.h
+include/clang/Tooling/ReplacementsYaml.h
 include/clang/Tooling/Tooling.h
 lib/clang/%%CLANG_RELEASE%%/include/__wmmintrin_aes.h
 lib/clang/%%CLANG_RELEASE%%/include/__wmmintrin_pclmul.h
@@ -451,6 +454,7 @@ lib/libclangEdit.a
 lib/libclangFormat.a
 lib/libclangFrontend.a
 lib/libclangFrontendTool.a
+lib/libclangIndex.a
 lib/libclangLex.a
 lib/libclangParse.a
 lib/libclangRewriteCore.a
@@ -492,6 +496,7 @@ lib/libclangTooling.a
 @dirrm include/clang/Rewrite
 @dirrm include/clang/Parse
 @dirrm include/clang/Lex
+@dirrm include/clang/Index
 @dirrm include/clang/FrontendTool
 @dirrm include/clang/Frontend
 @dirrm include/clang/Format
