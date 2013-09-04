@@ -18,7 +18,8 @@ COMMENT=	Manage Cisco IOS Devices
 RUN_DEPENDS=	p5-Net-Telnet-Cisco>=0:${PORTSDIR}/net-mgmt/p5-Telnet-Cisco
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Telnet::Cisco::IOS.3
 

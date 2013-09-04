@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--with-etc-dir="${ETCDIR}" \
 		--with-var-dir="${NAGIOSDIR}" \
 		--with-status-file="${NAGIOSDIR}/status.dat" \
 		--with-nagios-data=3
-USE_PERL5=	YES
+USES=		perl5
 ALL_TARGET=	cnagios
 
 MAN1=		cnagios.1

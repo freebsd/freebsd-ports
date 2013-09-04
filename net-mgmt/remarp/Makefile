@@ -17,7 +17,7 @@ COMMENT=	An SNMP-based ARP watcher
 RUN_DEPENDS=	p5-AppConfig>=0:${PORTSDIR}/devel/p5-AppConfig \
 		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 
-USE_PERL5=	YES
+USES=		perl5
 NO_BUILD=	YES
 
 REMARP_SPOOL=	/var/spool/remarp

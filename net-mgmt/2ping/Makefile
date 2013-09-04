@@ -16,7 +16,7 @@ RUN_DEPENDS=	p5-Digest-CRC>=0:${PORTSDIR}/security/p5-Digest-CRC \
 		p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 
 USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 MAN8=		2ping.8 2ping6.8
 

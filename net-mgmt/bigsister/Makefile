@@ -23,7 +23,7 @@ RUN_DEPENDS=	net-snmp>=0:${PORTSDIR}/net-mgmt/net-snmp \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		perl5
 USE_RC_SUBR=	${PORTNAME}
 NO_BUILD=	yes
 HAS_CONFIGURE=	yes

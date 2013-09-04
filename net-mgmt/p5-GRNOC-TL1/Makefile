@@ -15,6 +15,7 @@ BUILD_DEPENDS=	p5-Date-Calc>0:${PORTSDIR}/devel/p5-Date-Calc \
 		p5-Net-Telnet>0:${PORTSDIR}/net/p5-Net-Telnet
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

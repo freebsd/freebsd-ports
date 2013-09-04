@@ -16,7 +16,7 @@ DISTNAME=	check_geom-${PORTVERSION}
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Nagios plug-in to get geom(8) components status
 
-USE_PERL5=	yes
+USES=		perl5
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PATCH_STRIP=	-p1
