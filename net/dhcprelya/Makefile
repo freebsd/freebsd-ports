@@ -38,7 +38,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/local#${PREFIX}#' ${WRKSRC}/Makefile
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
