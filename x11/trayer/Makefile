@@ -13,7 +13,7 @@ COMMENT=	Lightweight GTK2-based systray for UNIX desktop
 GITVERSION=	0-g5353f80
 FETCH_ARGS=	-pRr
 USE_GNOME=	gtk20 glib20 pango atk
-USES=		iconv gmake
+USES=		iconv gmake pkgconfig
 USE_XORG=	xmu
 MAKE_ARGS=	"PREFIX=${PREFIX}"
 WRKSRC=		${WRKDIR}/sargon-${PORTNAME}-srg-${GITVERSION:S/^0-g//}
