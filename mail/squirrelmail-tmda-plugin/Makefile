@@ -19,7 +19,7 @@ COMMENT=	Adds TMDA support to SquirrelMail
 RUN_DEPENDS=	tmda-filter:${PORTSDIR}/mail/tmda \
 		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 SQUIRREL_PLUGIN_NAME=	tmdatools

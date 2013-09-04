@@ -18,7 +18,7 @@ RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool	\
 		p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 CGIDIR?=	${PREFIX}/www/cgi-bin
 DATADIR?=	/var/db/ovs

@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Implementation of SMTP, ESMTP, and LMTP protocols
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Server::Mail.3 \
 		Net::Server::Mail::ESMTP.3 \
