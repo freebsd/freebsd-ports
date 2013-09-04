@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An IRB alternative and runtime developer console
 
+BROKEN=		fails to resolve dependencies
+
 BUILD_DEPENDS=	rubygem-rdoc>=3.12:${PORTSDIR}/devel/rubygem-rdoc
 RUN_DEPENDS=	rubygem-coderay>=1.0.5:${PORTSDIR}/textproc/rubygem-coderay \
 		rubygem-method_source>=0.8:${PORTSDIR}/devel/rubygem-method_source \
