@@ -14,7 +14,7 @@ COMMENT=	Perl bindings for the PC/SC Lite Framework
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
 USE_BZIP2=	yes
-USES=		perl5
+USES=		perl5 pkgconfig
 USE_PERL5=	configure
 MAKE_ENV=	"LOCALBASE=${LOCALBASE}"
 
