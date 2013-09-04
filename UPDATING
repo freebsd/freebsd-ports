@@ -6,7 +6,7 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20130904:
-  AFFECTS: 10-CURRENT users with any port depending on converters/iconv
+  AFFECTS: 10-CURRENT users with any port depending on converters/libiconv
   AUTHOR: madpilot@FreeBSD.org
 
   10-CURRENT after r254273 (committed on August 13, 2013) has an
