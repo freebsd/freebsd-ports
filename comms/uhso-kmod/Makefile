@@ -1,9 +1,5 @@
-# New ports collection makefile for:	uhso-kmod
-# Date created:				28 December 2009
-# Whom:					Ganael Laplanche <ganael.laplanche@martymac.org>
-#
+# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
 # $FreeBSD$
-#
 
 PORTNAME=	uhso
 PORTVERSION=	20100416
@@ -19,6 +15,9 @@ COMMENT=	Driver for Option HSDPA modem (USB2 version)
 LICENSE=	BSD
 
 CONFLICTS=	hso-kmod-[0-9]*
+
+DEPRECATED=	included in base system on all supported releases
+EXPIRATION_DATE=2013-12-01
 
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 
