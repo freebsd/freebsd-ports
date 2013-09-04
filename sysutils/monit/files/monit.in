@@ -17,20 +17,21 @@
 #
 . /etc/rc.subr
 
-name="monit"
+name=monit
 rcvar=monit_enable
+load_rc_config ${name}
 
-restart_precmd="monit_checkconfig"
-reload_precmd="monit_checkconfig"
-[ -z "$monit_enable" ] && monit_enable="NO"
+: ${monit_enable:=NO}
 
-load_rc_config $name
+extra_commands=reload
+restart_precmd=monit_checkconfig
+reload_precmd=monit_checkconfig
 
 default_config=%%PREFIX%%/etc/monitrc
 required_files=${default_config}
 command="%%PREFIX%%/bin/monit"
 command_args="-c ${default_config}"
-pidfile="/var/run/monit.pid"
+pidfile=/var/run/monit.pid
 
 monit_checkconfig()
 {
@@ -38,5 +39,4 @@ monit_checkconfig()
 	${command} ${command_args} -t
 }
 
-extra_commands="reload"
 run_rc_command "$1"
