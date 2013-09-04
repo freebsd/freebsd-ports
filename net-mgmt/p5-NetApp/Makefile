@@ -26,7 +26,8 @@ RUN_DEPENDS=	p5-IPC-Cmd>=0:${PORTSDIR}/devel/p5-IPC-Cmd \
 		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		NetApp::Aggregate.3 \
 		NetApp::Aggregate::Plex.3 \

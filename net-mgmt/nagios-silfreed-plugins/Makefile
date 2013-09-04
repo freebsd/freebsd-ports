@@ -33,7 +33,7 @@ RUN_DEPENDS+=	\
 	${LOCALBASE}/bin/expect:${PORTSDIR}/lang/expect
 .endif
 
-USE_PERL5=	yes
+USES=		perl5
 NO_WRKSUBDIR=	yes
 
 NAGIOS_PLUGIN_DIR=	${PREFIX}/libexec/nagios

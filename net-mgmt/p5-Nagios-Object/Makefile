@@ -23,7 +23,8 @@ BUILD_DEPENDS=	p5-Test-Exception>=0.31:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-NoWarnings>=1.01:${PORTSDIR}/devel/p5-Test-NoWarnings
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=		parse.pl.1 \
 		config_status_demo.pl.1 \

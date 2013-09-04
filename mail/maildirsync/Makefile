@@ -13,7 +13,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Online synchronizer for Maildir-format mailboxes
 
-USE_PERL5=	yes
+USES=		perl5
 
 MAN1=		maildirsync.1
 

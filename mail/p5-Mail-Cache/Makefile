@@ -18,7 +18,8 @@ COMMENT=	Caches mail information
 BUILD_DEPENDS=	p5-File-BaseDir>=0:${PORTSDIR}/devel/p5-File-BaseDir \
 		p5-Email-Simple>=0:${PORTSDIR}/mail/p5-Email-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Mail::Cache.3
 
