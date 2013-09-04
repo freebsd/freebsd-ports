@@ -1,5 +1,5 @@
 bin/munger
-lib/libmunger.so.78
+lib/libmunger.so.79
 %%DATADIR%%/httpd.munger
 %%DATADIR%%/echo.munger
 %%DATADIR%%/xml2alist.munger

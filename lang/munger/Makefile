@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	munger
-PORTVERSION=	4.194
+PORTVERSION=	4.195
 CATEGORIES=	lang
 MASTER_SITES=	http://www.mammothcheese.ca/
 
