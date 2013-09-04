@@ -26,8 +26,8 @@ MAKE_JOBS_UNSAFE=yes
 USES=		gmake
 USE_LDCONFIG=	yes
 USE_QT4=	qmake clucene codecs-cn codecs-jp codecs-kr codecs-tw corelib	\
-		dbus designer gui help imageformats moc network opengl script	\
-		scripttools sql svg xml xmlpatterns webkit
+		dbus designer gui help imageformats moc network opengl rcc script	\
+		scripttools sql svg uic xml xmlpatterns webkit
 
 DESKTOP_ENTRIES="${PORTNAME:U}"	\
 		"A free application for computer aided drafting in two dimensions"\
