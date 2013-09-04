@@ -12,7 +12,8 @@ COMMENT=	This plugin will automatically turn on SSL security during login
 
 LICENSE=	GPLv2
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 .include <bsd.port.mk>

@@ -15,7 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/-/}
 MAINTAINER=	gmarco@gufi.org
 COMMENT=	A minimalistic mailing list manager
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 EXTRA_SUB_FILES=docs/README minimalist.conf-sample minimalist.pl \
 		contrib/minimalist_request.pl

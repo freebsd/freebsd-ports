@@ -28,6 +28,7 @@ MAN3=	Mail::SRS.3 \
 MAN1=	srs.1 \
 	srsd.1
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

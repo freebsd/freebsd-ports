@@ -16,7 +16,8 @@ COMMENT=	Deal with RFC 2047 encoded words (improved)
 
 RUN_DEPENDS=	p5-MIME-Charset>=1.006.2:${PORTSDIR}/mail/p5-MIME-Charset
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MIME::EncWords.3 MIME::EncWords::JA_JP.3
 

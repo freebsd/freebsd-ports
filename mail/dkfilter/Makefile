@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-Crypt-OpenSSL-RSA>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
-USE_PERL5=	yes
+USES=		perl5
 USE_RC_SUBR=	dkfilter_in dkfilter_out
 
 USERS=		${DKFILTER_USERNAME}
