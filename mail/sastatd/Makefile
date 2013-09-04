@@ -22,7 +22,8 @@ BUILD_DEPENDS=		p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any \
 
 RUN_DEPENDS:=		${BUILD_DEPENDS}
 
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 
 SASTATD_DBDIR?=		/var/db/sastatd
 SASTATD_RUNDIR?=	/var/run/sastatd

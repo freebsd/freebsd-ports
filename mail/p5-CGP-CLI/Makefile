@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	avk@vl.ru
 COMMENT=	CommunigatePro Command Line Interface perl module
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	CGP::CLI.3
 

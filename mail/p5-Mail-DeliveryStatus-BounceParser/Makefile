@@ -15,7 +15,8 @@ RUN_DEPENDS=	p5-MIME-Tools>=5.418:${PORTSDIR}/mail/p5-MIME-Tools \
 		p5-Mail-Tools>=2.04:${PORTSDIR}/mail/p5-Mail-Tools
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Mail::DeliveryStatus::BounceParser.3
 

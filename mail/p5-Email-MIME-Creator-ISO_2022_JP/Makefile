@@ -21,7 +21,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Classy>=0:${PORTSDIR}/devel/p5-Test-Classy \
 		p5-Test-UseAllModules>=0:${PORTSDIR}/devel/p5-Test-UseAllModules
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Email::MIME::Creator::ISO_2022_JP.3
 

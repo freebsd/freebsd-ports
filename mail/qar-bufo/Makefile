@@ -16,7 +16,7 @@ EXTRACT_ONLY=
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Generates the Qmail assign and recipients file based on unix groups
 
-USE_PERL5=	yes
+USES=		perl5
 NO_WRKSUBDIR=	yes
 
 MAN1=		qar-bufo.1

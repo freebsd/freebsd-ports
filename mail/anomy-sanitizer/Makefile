@@ -10,7 +10,7 @@ MASTER_SITES=	http://mailtools.anomy.net/dist/
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Sanitize and clean incoming/outgoing mail
 
-USE_PERL5=	yes
+USES=		perl5
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/anomy

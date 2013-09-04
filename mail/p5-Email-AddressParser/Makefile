@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dliakh@ukr.net
 COMMENT=	RFC 2822 Address Parsing and Creation
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Email::AddressParser.3
 
