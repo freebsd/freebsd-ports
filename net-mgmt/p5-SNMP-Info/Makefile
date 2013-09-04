@@ -14,7 +14,8 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	SNMP::Info.3 SNMP::Info::AdslLine.3 SNMP::Info::Airespace.3 \
 	SNMP::Info::IPv6.3 SNMP::Info::Layer2::CiscoSB.3 \

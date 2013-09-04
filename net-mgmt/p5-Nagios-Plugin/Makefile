@@ -21,7 +21,8 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Nagios::Plugin.3 \
 		Nagios::Plugin::Config.3 \

@@ -17,7 +17,8 @@ COMMENT=	IPv6 prefix generator
 MAN1=	${PORTNAME}.1
 
 NO_BUILD=
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 PLIST_FILES=	bin/${PORTNAME} bin/check-overlap
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

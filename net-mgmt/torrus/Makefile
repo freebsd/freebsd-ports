@@ -25,7 +25,8 @@ BUILD_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GNOME=	libxml2
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 GNU_CONFIGURE=	YES
 
 USERS=		torrus

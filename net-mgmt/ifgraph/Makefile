@@ -19,7 +19,7 @@ RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message

@@ -23,7 +23,8 @@ RUN_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-Moose>=1.0:${PORTSDIR}/devel/p5-Moose \
 		p5-libwww>=5.0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Zenoss.3 \
 		Zenoss::Connector.3 \

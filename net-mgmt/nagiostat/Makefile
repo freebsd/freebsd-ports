@@ -14,7 +14,7 @@ COMMENT=	Nagiostat parses performance-data from Nagios and generates graphs
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		nagios:${PORTSDIR}/net-mgmt/nagios
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 NAGIOSDIR?=	/var/spool/nagios

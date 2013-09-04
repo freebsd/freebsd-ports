@@ -17,7 +17,7 @@ MAINTAINER=	ler@lerctr.org
 COMMENT=	Graphs Byte Counts for switches/routers/etc
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 PLIST_SUB+=	VERSION=${PORTVERSION}
 IOG_USER=	iog
 IOG_GROUP=	www

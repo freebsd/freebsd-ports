@@ -45,7 +45,7 @@ RUN_DEPENDS+=	rancid-run:${PORTSDIR}/net-mgmt/rancid \
 .endif
 
 .if ${PKGNAMESUFFIX} == -metro
-USE_PERL5=	yes
+USES=		perl5
 
 RUN_DEPENDS+=	p5-DBD-Pg>0:${PORTSDIR}/databases/p5-DBD-Pg \
 		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
