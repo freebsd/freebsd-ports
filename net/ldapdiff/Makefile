@@ -20,8 +20,7 @@ USES=		iconv
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${LOCALBASE} \
-		--with-ldap-dir=${LOCALBASE} \
-		--with-iconv-dir=${LOCALBASE}
+		--with-ldap-dir=${LOCALBASE}
 SAMPLES=	addentry.sh webtomware_without_jpeg.user.ldif \
 		webtomware.init.ldif webtomware.user.ldif
 MAN1=		ldapdiff.1
@@ -29,6 +28,12 @@ MAN1=		ldapdiff.1
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	CHANGES ChangeLog README TODO
+
+.include <bsd.port.pre.mk>
+
+.if ! empty(ICONV_LIB)
+CONFIGURE_ARGS+=--with-iconv-dir=${LOCALBASE}
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ldapdiff ${PREFIX}/bin
@@ -46,4 +51,4 @@ do-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

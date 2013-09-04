@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=--disable-iconv
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lintl|-liconv|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lintl|-l${ICONV_LIB}|g' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin

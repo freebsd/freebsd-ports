@@ -241,7 +241,7 @@ pre-configure:
 		 s|THREAD_CFLAGS=".*"|THREAD_CFLAGS="\$$THREAD_CFLAGS"|g ; \
 		 s|-L/usr/local/lib||g ; \
 		 s|-I/usr/local/include||g ; \
-		 s|-lgiconv|-liconv|g ; \
+		 s|-lgiconv|${ICONV_LIB}|g ; \
 		 s|-funroll-loops||g ; \
 		 s|LIBFFMPEG_CFLAGS|LIBFFMPEG_CPPFLAGS|g ; \
 		 s|echo aout|echo elf|g' ${WRKSRC}/configure

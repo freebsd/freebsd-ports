@@ -37,7 +37,7 @@ OPTIONS_DEFAULT=ICONV X11
 .if ${PORT_OPTIONS:MICONV}
 USES+=		iconv
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 .else
 CONFIGURE_ENV+=	ac_cv_header_iconv_h=no
 .endif

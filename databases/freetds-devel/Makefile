@@ -93,7 +93,8 @@ post-patch:
 		 s|/freetds.conf|/freetds.conf.dist|g ; \
 		 s|/locales.conf|/locales.conf.dist|g ; \
 		 s|/pool.conf|/pool.conf.dist|g ; \
-		 s| common.h||g'
+		 s| common.h||g ; \
+		 s|%%ICONV_LIB%%|${ICONV_LIB}|'
 
 post-install:
 .if !defined(NOPORTDOCS)

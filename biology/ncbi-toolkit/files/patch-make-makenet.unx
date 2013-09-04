@@ -4,7 +4,7 @@
  VIB =
  VIBLIBS= -lXm -lXmu -lXt -lX11
  VIBLIBS=
-+USERLIBS = -lXft -lpng -ljpeg -liconv
++USERLIBS = -lXft -lpng -ljpeg %%ICONV_LIB%%
  SEQUIN_OPTS =
  LIBCOPY = cp -p
  SRCCOPY = ./ln-if-absent

@@ -17,7 +17,7 @@ LIB_DEPENDS=	gsf-1:${PORTSDIR}/devel/libgsf
 GNU_CONFIGURE=	yes
 USES=		iconv pathfix gmake pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ARGS+=	--disable-python --enable-libpst-shared
 USE_LDCONFIG=	yes
 

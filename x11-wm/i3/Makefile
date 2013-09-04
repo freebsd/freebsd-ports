@@ -70,6 +70,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/|${PREFIX}/|g' ${WRKSRC}/man/i3-input.1
 	@${REINPLACE_CMD} -e 's|.SILENT||g' ${WRKSRC}/common.mk
 	@${REINPLACE_CMD} -e 's|-Iinclude|-Iinclude -Isrc|g' \
+			  -e 's|-liconv|${ICONV_LIB}|' \
 			  -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/common.mk
 
 do-install:

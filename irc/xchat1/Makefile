@@ -22,7 +22,7 @@ USE_GNOME=		gtk12
 WANT_GNOME=		yes
 GNU_CONFIGURE=		yes
 # Assign with `+=' for slave ports
-CONFIGURE_ENV+=		LIBS="-L${LOCALBASE}/lib -lintl -liconv"
+CONFIGURE_ENV+=		LIBS="-L${LOCALBASE}/lib -lintl ${ICONV_LIB}"
 CPPFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--without-included-gettext \
 			--enable-nls \

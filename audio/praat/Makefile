@@ -13,7 +13,7 @@ COMMENT=	Phonetics by Computer
 
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*Makefile
-USES=		motif
+USES=		iconv motif
 WRKSRC=		${WRKDIR}/sources_4639
 MAKEFILE=	makefile
 PLIST_FILES=	bin/praat
@@ -25,6 +25,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/ log2/ NUMlog2/' ${WRKSRC}/dwtools/Sound_extensions.c
 	@${FIND} ${WRKSRC} -name Makefile -exec \
 		${REINPLACE_CMD} -e 's|^CFLAGS =|CFLAGS +=|' "{}" \;
+	@${REINPLACE_CMD} -e 's/%%ICONV_LIB%%/${ICONV_LIB}/' \
+		${WRKSRC}/makefiles/makefile.defs.freebsd.dynamic
 	@${CP} ${WRKSRC}/makefiles/makefile.defs.freebsd.dynamic \
 		${WRKSRC}/makefile.defs
 

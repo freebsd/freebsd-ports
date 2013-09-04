@@ -32,7 +32,7 @@ SLIM_LAYOUT_BOX_DESC=	Build with slim layout boxes
 
 .if ${PORT_OPTIONS:MUTF8}
 USES+=		iconv
-MAKE_ARGS+=	LIBICONV="-liconv"
+MAKE_ARGS+=	LIBICONV="${ICONV_LIB}"
 .else
 MAKE_ARGS+=	-DNO_UTF8
 .endif

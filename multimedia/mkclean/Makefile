@@ -16,7 +16,7 @@ HAS_CONFIGURE=	yes
 USES=		iconv gmake
 
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 MAKE_ENV+=	"LFLAGS=${LDFLAGS}"
 MAKEFILE=	GNUmakefile

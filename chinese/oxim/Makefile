@@ -26,7 +26,7 @@ WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ARGS+=--disable-bimsphone-module \
 		--disable-static \
 		--with-conf-dir=${PREFIX}/etc/${PORTNAME} \

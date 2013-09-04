@@ -14,7 +14,7 @@ USES=		iconv
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ENV=	MAPDIR=${PREFIX}/etc/${PORTNAME}
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 ETCDAT=		*.map default.sample
 MAN8=		mapchan.8
 PORTDOCS=	README

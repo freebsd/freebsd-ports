@@ -72,7 +72,7 @@ CONFIGURE_ARGS+=--without-ldap
 .if ${PORT_OPTIONS:MICONV}
 CONFIGURE_ARGS+=--with-iconv
 USES+=	iconv
-EXTRA_LDFLAGS+=	-liconv
+EXTRA_LDFLAGS+=	${ICONV_LIB}
 .else
 CONFIGURE_ARGS+=--without-iconv
 .endif

@@ -24,7 +24,7 @@ CONFIGURE_ARGS+=	--enable-dfl-baud=57600 \
 			--sysconfdir=${PREFIX}/etc/minicom \
 			--enable-lock-dir=/var/spool/lock \
 			--enable-dfl-port=/dev/cuau0
-MAKE_ARGS+=	LIBS+="-liconv -lcurses"
+MAKE_ARGS+=	LIBS+="${ICONV_LIB} -lcurses"
 
 MAN1=		minicom.1 runscript.1 ascii-xfr.1 xminicom.1
 

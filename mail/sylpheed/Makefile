@@ -101,7 +101,7 @@ MAKEFILES=	Makefile.in ac/Makefile.in faq/Makefile.in faq/de/Makefile.in \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
-		s|-lresolv||g; s|-lpisock\"|-liconv &|g;' \
+		s|-lresolv||g; s|-lpisock\"|${ICONV_LIB} &|g;' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}&|g' \
 		${WRKSRC}/libsylph/procmime.c

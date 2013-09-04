@@ -26,6 +26,9 @@ CONFIGURE_ARGS+=	--enable-mysql
 USE_MYSQL=		yes
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/configure
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scanhill ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/scanhill.conf ${PREFIX}/etc/scanhill.conf-dist

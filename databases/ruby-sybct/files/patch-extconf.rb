@@ -11,7 +11,7 @@
 + sybase = "%%LOCALBASE%%"
 + $CFLAGS = "-g -Wall -DFREETDS -I#{sybase}/include"
 + $LDFLAGS = " -L#{sybase}/lib " 
-+ $LOCAL_LIBS = "-lct  -lsybdb -ltds -rdynamic -lm -liconv"
++ $LOCAL_LIBS = "-lct  -lsybdb -ltds -rdynamic -lm %%ICONV_LIB%%"
  
  ### mac-osx-tiger + Free TDS (freetds-0.64 ) ################
  # sybase = "/usr/local/freetds"

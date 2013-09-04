@@ -41,7 +41,8 @@ post-patch:
 		s|./locale|${PREFIX}/share/locale|g; \
 		s|sdl-config|${SDL_CONFIG}|g; \
 		s| -O2| ${CFLAGS}|g; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g' \
+		s|%%LOCALBASE%%|${LOCALBASE}|g; \
+		s|%%ICONV_LIB%%|${ICONV_LIB}|' \
 			${WRKSRC}/Makefile
 
 do-install:

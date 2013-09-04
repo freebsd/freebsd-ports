@@ -12,11 +12,15 @@
 .if !defined(_INCLUDE_USES_ICONV_MK)
 _INCLUDE_USES_ICONV_MK=	yes
 
-ICONV_CMD=	${LOCALBASE}/bin/iconv
-
 .if !defined(iconv_ARGS)
 iconv_ARGS=     lib
 .endif
+
+.if !exists(/usr/include/iconv.h) && ${OSVERSION} < 1000043
+
+ICONV_CMD=	${LOCALBASE}/bin/iconv
+ICONV_LIB=	-liconv
+ICONV_CONFIGURE_ARG=	--with-libiconv-prefix=${LOCALBASE}
 
 .if ${iconv_ARGS} == "lib"
 LIB_DEPENDS+=	libiconv.so.3:${PORTSDIR}/converters/libiconv
@@ -24,6 +28,14 @@ LIB_DEPENDS+=	libiconv.so.3:${PORTSDIR}/converters/libiconv
 BUILD_DEPENDS+=	${ICONV_CMD}:${PORTSDIR}/converters/libiconv
 .elif ${iconv_ARGS} == "patch"
 PATCH_DEPENDS+=	${ICONV_CMD}:${PORTSDIR}/converters/libiconv
+.endif
+
+.else
+
+ICONV_CMD=	/usr/bin/iconv
+ICONV_LIB=
+ICONV_CONFIGURE_ARG=
+
 .endif
 
 .endif

@@ -126,7 +126,7 @@ CONFIGURE_ARGS+=--enable-hash \
 .endif
 
 .if ${PHP_MODNAME} == "iconv"
-CONFIGURE_ARGS+=--with-iconv=${LOCALBASE}
+CONFIGURE_ARGS+=--with-iconv
 
 USES+=	iconv
 .endif
@@ -424,8 +424,7 @@ USE_PHP_BUILD=	yes
 
 .if ${PHP_MODNAME} == "xmlrpc"
 CONFIGURE_ARGS+=--with-xmlrpc \
-		--with-libxml-dir=${LOCALBASE} \
-		--with-iconv-dir=${LOCALBASE}
+		--with-libxml-dir=${LOCALBASE}
 
 USES+=		iconv
 USE_GNOME=	libxml2

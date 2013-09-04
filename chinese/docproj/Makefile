@@ -34,4 +34,8 @@ do-fetch:
 pre-patch:
 	@${CP} -R ${SRC} ${WRKDIR}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/-liconv/${ICONV_LIB}/' \
+		${WRKSRC}/cjktexsty/Makefile
+
 .include <bsd.port.mk>

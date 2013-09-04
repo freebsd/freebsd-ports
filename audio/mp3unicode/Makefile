@@ -15,7 +15,7 @@ USE_BZIP2=	yes
 USES=		iconv pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ICONV_CFLAGS="-I${LOCALBASE}/include" \
-		ICONV_LIBS="-L${LOCALBASE}/lib -liconv"
+		ICONV_LIBS="-L${LOCALBASE}/lib ${ICONV_LIB}"
 
 MAN1=		mp3unicode.1
 PLIST_FILES=	bin/mp3unicode

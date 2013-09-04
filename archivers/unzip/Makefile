@@ -48,7 +48,7 @@ PATCHFILES+=		unzip60-alt-iconv-utf8.patch
 PATCH_DIST_STRIP+=	-p1
 USES=			iconv
 CFLAGS+=		-I${LOCALBASE}/include -DNATIVE
-MAKE_ARGS+=		LFLAGS1="-L${LOCALBASE}/lib -liconv"
+MAKE_ARGS+=		LFLAGS1="-L${LOCALBASE}/lib ${ICONV_LIB}"
 .endif
 
 MAKE_ENV=	LOCAL_UNZIP="${LOCAL_UNZIP}" \

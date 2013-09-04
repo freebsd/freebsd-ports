@@ -55,6 +55,10 @@ PLIST_SUB+=	TDDL=""
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/-liconv$$/${ICONV_LIB}/' \
+		${WRKSRC}/src/tspi/Makefile.am
+
 run-autotools:	run-autotools-autoreconf
 
 run-autotools-autoreconf:

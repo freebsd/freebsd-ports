@@ -19,7 +19,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	ltverhack
 CONFIGURE_ARGS=	--enable-unittest=no
-CONFIGURE_ENV=	LIBS="-liconv"
+CONFIGURE_ENV=	LIBS="${ICONV_LIB}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		pathfix iconv

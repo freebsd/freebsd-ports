@@ -67,7 +67,7 @@ USE_OPENLDAP=		yes
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lresolv||g; s|-lpisock\"|-liconv &|g' \
+	@${REINPLACE_CMD} -e 's|-lresolv||g; s|-lpisock\"|${ICONV_LIB} &|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}&|g ; s|/usr/share|${LOCALBASE}/share|g' \
 		${WRKSRC}/src/procmime.c

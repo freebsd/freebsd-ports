@@ -8,7 +8,7 @@
 -CFLAGS = `pkg-config $(LUAPKG) --cflags` -fPIC -O3 -Wall
 +LUAPKG = lua-5.1
 +CFLAGS += `pkg-config $(LUAPKG) --cflags` -fPIC %%INCDIR%%
-+LIBS = `pkg-config $(LUAPKG) --libs` -liconv %%LIBDIR%%
++LIBS = `pkg-config $(LUAPKG) --libs` %%ICONV_LIB%% %%LIBDIR%%
  LFLAGS = -shared $(OMIT_FRAME_POINTER)
  INSTALL_PATH = `pkg-config $(LUAPKG) --variable=INSTALL_CMOD`
  

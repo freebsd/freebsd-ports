@@ -49,4 +49,11 @@ post-patch:
 		${WRKSRC}/libcharset/configure \
 		${WRKSRC}/preload/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 1000043
+IGNORE=		converters/libiconv should not be used with OSVERSION > 1000050. \
+Please fix the port which tries to use it
+.endif
+
+.include <bsd.port.post.mk>

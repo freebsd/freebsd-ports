@@ -14,7 +14,7 @@ LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron
 
 USES=		iconv perl5
 USE_PERL5=	configure
-CONFIGURE_ARGS=	LIBS='-L${LOCALBASE}/lib -lexpat -lsablot -liconv' \
+CONFIGURE_ARGS=	LIBS='-L${LOCALBASE}/lib -lexpat -lsablot ${ICONV_LIB}' \
 		INC='-I${LOCALBASE}/include' \
 		EXPATLIBPATH='${LOCALBASE}/lib' \
 		EXPATINCPATH='${LOCALBASE}/include' \

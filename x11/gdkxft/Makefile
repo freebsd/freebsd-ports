@@ -16,7 +16,7 @@ USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk12
 USES=		iconv
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib -lgnuregex -liconv
+LDFLAGS+=	-L${LOCALBASE}/lib -lgnuregex ${ICONV_LIB}
 CFLAGS+=	`pkg-config xft --cflags`
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/bin \
 		--without-gnome

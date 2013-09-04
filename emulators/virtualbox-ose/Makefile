@@ -245,6 +245,9 @@ post-patch:
 		${WRKSRC}/kBuild/sdks/LIBSDL.kmk \
 		${WRKSRC}/src/libs/xpcom18a4/python/gen_python_deps.py
 	@${REINPLACE_CMD} -e 's|\$$KBUILDDIR_BIN/kmk_sed|${LOCALBASE}/bin/kmk_sed|g' ${WRKSRC}/configure
+.if empty(ICONV_LIB)
+	@${REINPLACE_CMD} -e 's|iconv||' ${WRKSRC}/Config.kmk ${WRKSRC}/src/VBox/Runtime/Makefile.kmk
+.endif
 
 pre-build:
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' \

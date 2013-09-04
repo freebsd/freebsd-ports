@@ -19,7 +19,7 @@
 +    BASE_LIBS += -L%%LOCALBASE%%/lib
 +
 +    ifneq ($(ENABLE_NLS),0)
-+        INTL_LIBS := -lintl -liconv
++        INTL_LIBS := -lintl %%ICONV_LIB%%
 +    endif
 +endif
 +

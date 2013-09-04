@@ -58,7 +58,7 @@ MAKE_ARGS+=	NOPORTDOCS=yes
 .endif
 
 post-extract:
-	@${REINPLACE_CMD} -e 's#@ICONV_LDFLAGS@#-liconv -L${LOCALBASE}/lib#g' \
+	@${REINPLACE_CMD} -e 's#@ICONV_LDFLAGS@#${ICONV_LIB} -L${LOCALBASE}/lib#g' \
 		${WRKSRC}/loader/Makefile.in
 
 post-patch:

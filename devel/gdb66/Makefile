@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
 CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
 		--enable-target=all \
-		--enable-tui --with-libiconv-prefix=${LOCALBASE}
+		--enable-tui
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT
 EXCLUDE=	dejagnu expect readline sim texinfo intl
@@ -37,6 +37,10 @@ PLIST_SUB=	VER=${VER}
 MAN1=	gdb${VER}.1
 
 .include <bsd.port.options.mk>
+
+.if empty(ICONV_LIB)
+CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
+.endif
 
 .if ${PORT_OPTIONS:MINSIGHT}
 PKGNAMESUFFIX=	-insight
@@ -87,7 +91,7 @@ post-patch:
 		${WRKSRC}/gdb/version.in
 	@${REINPLACE_CMD} -e 's/^READLINE/#READLINE/' \
 		-e 's/^readline/#readline/' \
-		-e 's,^LIBICONV =.*,LIBICONV=-L${LOCALBASE}/lib -liconv,' \
+		-e 's,^LIBICONV =.*,LIBICONV=-L${LOCALBASE}/lib ${ICONV_LIB},' \
 		${WRKSRC}/gdb/Makefile.in
 	${ECHO} 'READLINE = -lreadline' >> ${WRKSRC}/gdb/Makefile.in
 

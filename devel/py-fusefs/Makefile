@@ -24,7 +24,7 @@ DOCSDIR?=	${PREFIX}/share/doc/py-fusefs
 EXAMPLESDIR?=	${PREFIX}/share/examples/py-fusefs
 
 post-patch:
-	@${REINPLACE_CMD} -e '/libs =/s|$$| + " -liconv"|'\
+	@${REINPLACE_CMD} -e '/libs =/s|$$| + " ${ICONV_LIB}"|'\
 		${WRKSRC}/setup.py
 
 post-install:

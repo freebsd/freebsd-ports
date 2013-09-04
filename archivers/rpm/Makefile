@@ -28,7 +28,7 @@ MAKE_ENV=	OLD_PO_FILE_INPUT=1
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl -liconv"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl ${ICONV_LIB}"
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
