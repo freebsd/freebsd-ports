@@ -1,11 +1,8 @@
-# New ports collection makefile for:	font-motoya-al
-# Date created:		7 January 2011
-# Whom:			hrs
 # $FreeBSD$
-#
 
 PORTNAME=	font-motoya-al
 PORTVERSION=	0.0.20100921
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	LOCAL
 MASTER_SITE_SUBDIR=	hrs
@@ -29,6 +26,10 @@ PORTDOCS=	newsrelease20100921.pdf
 LOCAL_FONTSDIR=	share/fonts
 X_FONTSDIR=	lib/X11/fonts
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${DATADIR}
@@ -47,7 +48,7 @@ do-install:
 		${PREFIX}/etc/fonts/conf.d/20-unhint-motoya-al.conf
 	${LN} -s -f ../conf.avail/62-fonts-motoya-al.conf \
 		${PREFIX}/etc/fonts/conf.d/62-fonts-motoya-al.conf
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif

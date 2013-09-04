@@ -2,7 +2,7 @@
 
 PORTNAME=	ipaex
 PORTVERSION=	00201
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://info.openlab.ipa.go.jp/ipafont/fontdata/7bf84182a04a9632268dbcb03f100d05/
 PKGNAMEPREFIX=	ja-font-

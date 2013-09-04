@@ -2,6 +2,7 @@
 
 PORTNAME=	takao
 PORTVERSION=	003.02.01
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://launchpadlibrarian.net/40218948/
 PKGNAMEPREFIX=	ja-font-
