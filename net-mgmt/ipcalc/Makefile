@@ -16,7 +16,7 @@ COMMENT=	IP Calculator
 
 PLIST_FILES=	bin/ipcalc
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}

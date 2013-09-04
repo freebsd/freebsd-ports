@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-AnyEvent>=5.23:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-common-sense>=3.4:${PORTSDIR}/devel/p5-common-sense
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	AnyEvent::SNMP.3
 

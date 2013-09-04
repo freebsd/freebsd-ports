@@ -30,7 +30,7 @@ CONFLICTS=	nsca-client-2.9.*
 .endif
 
 GNU_CONFIGURE=	yes
-USE_PERL5=	yes
+USES=		perl5
 CONFIGURE_ARGS=	--prefix=${PREFIX} --localstatedir=/var/spool/nagios
 DOCSDIR?=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 

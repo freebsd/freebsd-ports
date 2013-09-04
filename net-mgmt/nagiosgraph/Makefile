@@ -17,7 +17,8 @@ COMMENT=	Generate rrdtool\'s graphs by performance data from nagios plugins
 RUN_DEPENDS=	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios \
 		rrdtool>=0:${PORTSDIR}/databases/rrdtool
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 
 PORTDOCS=	AUTHORS CHANGELOG INSTALL README TODO

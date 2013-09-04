@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ale@biancalanas.net
 COMMENT=	Perl functions used to manipulate IP addresses, masks and FQDN's
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::IPAddress.3
 

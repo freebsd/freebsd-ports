@@ -18,7 +18,8 @@ COMMENT=	Utility functions for Net::SNMP
 RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 	        p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::SNMP::Util.3 Net::SNMP::Util::OID.3 Net::SNMP::Util::TC.3
 
