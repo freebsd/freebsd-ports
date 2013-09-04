@@ -108,7 +108,6 @@ share/xine-lib/fonts/serif-64.xinefont.gz
 %%PLUGINSDIR%%/xineplug_decode_mad.so
 %%PLUGINSDIR%%/xineplug_decode_mpeg2.so
 %%WITH_VIDIX%%%%PLUGINSDIR%%/xineplug_decode_qt.so
-%%PLUGINSDIR%%/xineplug_decode_real.so
 %%PLUGINSDIR%%/xineplug_decode_rgb.so
 %%PLUGINSDIR%%/xineplug_decode_spu.so
 %%PLUGINSDIR%%/xineplug_decode_spucc.so
