@@ -28,7 +28,7 @@ RUN_DEPENDS=	p5-Convert-ASN1>=0:${PORTSDIR}/converters/p5-Convert-ASN1 \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
 
-USE_PERL5=	YES
+USES=		perl5
 
 NO_BUILD=	YES
 

@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--with-statefiles-dir=${NAGIOSDIR} \
 		--libexecdir=${PREFIX}/libexec/nagios \
 		--with-perl=${PERL}
 
-USE_PERL5=	yes
+USES=		perl5
 
 NAGIOSUSER?=	nagios
 NAGIOSGROUP?=	nagios

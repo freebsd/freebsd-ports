@@ -18,7 +18,7 @@ WRKSRC=			${WRKDIR}/ASpath-tree-v${PORTVERSION}/
 RESTRICTED=		not redistributable, license agreement required
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 SCRIPTS_ENV+=	PERL5=${PERL5}
 SUB_FILES=	pkg-message
 CONFIG_FILES=	ASpath-tree.config
