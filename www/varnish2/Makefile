@@ -9,6 +9,9 @@ MASTER_SITES=	http://repo.varnish-cache.org/source/
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	The Varnish high-performance HTTP accelerator
 
+DEPRECATED=	No update since january 2011. Upgrade to Varnish 3.
+EXPIRATION_DATE=	2013-10-01
+
 LICENSE=	BSD
 
 LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
