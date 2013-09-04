@@ -647,7 +647,6 @@
     SUBDIR += php55-sybase_ct
     SUBDIR += phpminiadmin
     SUBDIR += phpmyadmin
-    SUBDIR += phpmyadmin35
     SUBDIR += phppgadmin
     SUBDIR += postgis
     SUBDIR += postgis20

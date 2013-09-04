@@ -1,4 +1,0 @@
-On request, decodes all params from encoding into a sequence of logical
-characters. On response, encodes body into encoding.
-
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-Unicode-Encoding/
