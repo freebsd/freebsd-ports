@@ -22,7 +22,8 @@ PORTEXAMPLES=	${PORTNAME}.conf
 
 MAN1=		${PORTNAME}.1
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 
 post-patch:

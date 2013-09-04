@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-Mail-DKIM>=0:${PORTSDIR}/mail/p5-Mail-DKIM \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
-USE_PERL5=	yes
+USES=		perl5
 USE_RC_SUBR=	dkimproxy_in dkimproxy_out
 
 DKIMPROXYUSER=	dkimproxy

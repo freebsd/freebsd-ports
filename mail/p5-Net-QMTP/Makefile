@@ -17,7 +17,8 @@ COMMENT=	Perl module to provide a Quick Mail Transfer Protocol (QMTP) client
 BUILD_DEPENDS=	p5-Text-Netstring>=0:${PORTSDIR}/textproc/p5-Text-Netstring
 RUN_DEPENDS=	p5-Text-Netstring>=0:${PORTSDIR}/textproc/p5-Text-Netstring
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::QMTP.3
 

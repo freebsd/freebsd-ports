@@ -17,7 +17,8 @@ COMMENT=	Display messages from Exim queue based on a variety of criteria
 
 PLIST_FILES=	bin/${PORTNAME}
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 do-extract:
 	@${RM} -rf ${WRKDIR}

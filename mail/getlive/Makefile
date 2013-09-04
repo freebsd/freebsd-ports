@@ -21,7 +21,8 @@ RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 PLIST_FILES=	bin/getlive etc/getlive.conf.sample
 PORTDOCS=	ChangeLog License Manual
