@@ -31,12 +31,18 @@
 %%PYTHON_SITELIBDIR%%/registration/backends/default/urls.py
 %%PYTHON_SITELIBDIR%%/registration/backends/default/urls.pyc
 %%PYTHON_SITELIBDIR%%/registration/backends/default/urls.pyo
+%%PYTHON_SITELIBDIR%%/registration/backends/default/views.py
+%%PYTHON_SITELIBDIR%%/registration/backends/default/views.pyc
+%%PYTHON_SITELIBDIR%%/registration/backends/default/views.pyo
 %%PYTHON_SITELIBDIR%%/registration/backends/simple/__init__.py
 %%PYTHON_SITELIBDIR%%/registration/backends/simple/__init__.pyc
 %%PYTHON_SITELIBDIR%%/registration/backends/simple/__init__.pyo
 %%PYTHON_SITELIBDIR%%/registration/backends/simple/urls.py
 %%PYTHON_SITELIBDIR%%/registration/backends/simple/urls.pyc
 %%PYTHON_SITELIBDIR%%/registration/backends/simple/urls.pyo
+%%PYTHON_SITELIBDIR%%/registration/backends/simple/views.py
+%%PYTHON_SITELIBDIR%%/registration/backends/simple/views.pyc
+%%PYTHON_SITELIBDIR%%/registration/backends/simple/views.pyo
 %%PYTHON_SITELIBDIR%%/registration/locale/ar/LC_MESSAGES/django.mo
 %%PYTHON_SITELIBDIR%%/registration/locale/ar/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/registration/locale/bg/LC_MESSAGES/django.mo
@@ -109,9 +115,12 @@
 %%PYTHON_SITELIBDIR%%/registration/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/registration/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/registration/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/registration/tests/backends.py
-%%PYTHON_SITELIBDIR%%/registration/tests/backends.pyc
-%%PYTHON_SITELIBDIR%%/registration/tests/backends.pyo
+%%PYTHON_SITELIBDIR%%/registration/tests/default_backend.py
+%%PYTHON_SITELIBDIR%%/registration/tests/default_backend.pyc
+%%PYTHON_SITELIBDIR%%/registration/tests/default_backend.pyo
+%%PYTHON_SITELIBDIR%%/registration/tests/simple_backend.py
+%%PYTHON_SITELIBDIR%%/registration/tests/simple_backend.pyc
+%%PYTHON_SITELIBDIR%%/registration/tests/simple_backend.pyo
 %%PYTHON_SITELIBDIR%%/registration/tests/forms.py
 %%PYTHON_SITELIBDIR%%/registration/tests/forms.pyc
 %%PYTHON_SITELIBDIR%%/registration/tests/forms.pyo
@@ -121,71 +130,68 @@
 %%PYTHON_SITELIBDIR%%/registration/tests/urls.py
 %%PYTHON_SITELIBDIR%%/registration/tests/urls.pyc
 %%PYTHON_SITELIBDIR%%/registration/tests/urls.pyo
-%%PYTHON_SITELIBDIR%%/registration/tests/views.py
-%%PYTHON_SITELIBDIR%%/registration/tests/views.pyc
-%%PYTHON_SITELIBDIR%%/registration/tests/views.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/registration/tests
 @dirrm %%PYTHON_SITELIBDIR%%/registration/management/commands
 @dirrm %%PYTHON_SITELIBDIR%%/registration/management
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/zh_TW/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/zh_CN/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/tr_TR/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/sv/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/sr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/sl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/ru/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/pt_BR/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/pt/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/pl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/nl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/nb/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/ko/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/ja/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/it/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/is/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/hr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/he/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/fr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/fa/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/es_AR/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/es/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/en/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/el/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/de/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/da/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/cs/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/ca/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/bg/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/ar/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/zh_TW
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/zh_CN/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/zh_CN
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/tr_TR/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/tr_TR
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/sv/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/sv
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/sr/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/sr
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/sl/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/sl
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/ru/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/ru
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/pt_BR/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/pt/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/pt
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/pl/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/pl
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/nl/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/nl
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/nb/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/nb
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/ko/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/ko
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/ja/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/ja
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/it/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/it
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/is/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/is
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/hr/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/hr
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/he/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/he
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/fr/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/fr
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/fa/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/fa
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/es_AR/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/es_AR
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/es/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/es
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/en/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/en
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/el/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/el
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/de/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/de
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/da/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/da
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/cs/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/cs
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/ca/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/ca
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/bg/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/bg
+@dirrm %%PYTHON_SITELIBDIR%%/registration/locale/ar/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale/ar
 @dirrm %%PYTHON_SITELIBDIR%%/registration/locale
 @dirrm %%PYTHON_SITELIBDIR%%/registration/backends/simple
