@@ -40,5 +40,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^\(pkgconfigdir\ =\).*|\1 $$(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in \
 		${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e 's/-lstdc++//g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
