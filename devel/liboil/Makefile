@@ -13,7 +13,6 @@ COMMENT=	Library of optimized inner loops
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GCC=	any
 USES=		pathfix pkgconfig
 USE_GNOME=	ltverhack
 USE_AUTOTOOLS=	libtool
@@ -22,7 +21,8 @@ CONFIGURE_ARGS=	--disable-gtk-doc \
 		--disable-glib
 CFLAGS:=	${CFLAGS:N-O*} -O2
 
-.if ${CC:T:M*clang*}
+_COMPILER_VERSION!=	${CC} --version
+.if ${_COMPILER_VERSION:Mclang}
 CFLAGS+=	-fheinous-gnu-extensions
 .endif
 
