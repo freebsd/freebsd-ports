@@ -30,7 +30,7 @@ DOCSDIR=	${PREFIX}/${PORTNAME}/doc
 
 pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	${DIALOG} --yesno "WARNING: Majordomo is a really old mail list manager. The last version was released in january 2000, and there does not seem to be any updates coming. You might want to consider using mailman instead. Are you sure you want to install majordomo?" 8 70 no || ${FALSE}
+	${DIALOG} --yesno "WARNING: Majordomo is a really old mail list manager. The last version was released in january 2000, and there does not seem to be any updates coming. You might want to consider using mailman instead. Are you sure you want to install majordomo?" 8 70 || ${FALSE}
 .endif
 
 post-patch:
