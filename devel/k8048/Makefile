@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	k8048
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	devel
 MASTER_SITES=	http://dev.kewl.org/k8048/
 
