@@ -38,7 +38,7 @@ CONFLICTS_INSTALL= \
 		ghostscript9-agpl-nox11-[0-9]*
 
 USE_XZ=		yes
-USES=		gmake
+USES=		gmake pkgconfig
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf
