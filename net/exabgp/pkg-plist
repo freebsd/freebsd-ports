@@ -19,6 +19,8 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/nop.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/notification.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/notification.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/operational.py
+%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/operational.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/__init__.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/asn.py
@@ -37,6 +39,8 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/ms.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/negotiated.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/negotiated.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/operational.py
+%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/operational.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/refresh.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/capability/refresh.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/open/holdtime.py
