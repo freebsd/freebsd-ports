@@ -9,7 +9,16 @@
          arch_x86=64
  
  $as_echo "#define ARCH_X86_64 /**/" >>confdefs.h
-@@ -26197,7 +26197,7 @@ fi
+@@ -20685,7 +20685,7 @@ fi
+ 
+                 if test "$sarchopt" != "no"; then
+                     case "$host_or_hostalias" in
+-                        i386-*)         archopt_val="i386" ;;
++                        i386-*)         ;;
+                         i486-*)         archopt_val="i486" ;;
+                         i586-*)         archopt_val="pentium" ;;
+                         pentium-mmx-*)  archopt_val="pentium-mmx" ;;
+@@ -26280,7 +26280,7 @@ fi
  
      if test x"$enable_dvb" != x"no"; then
          case "$host_os" in

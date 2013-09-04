@@ -3,7 +3,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
 PKGNAMEPREFIX=	lib
@@ -37,14 +37,13 @@ BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS+=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
 .endif
 
-USES=		pathfix pkgconfig iconv
+USES=		gmake iconv pathfix perl5 pkgconfig
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
-USE_GMAKE=	yes
 USE_XORG=	sm x11 xv xinerama
 USE_GL=		gl glu
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
@@ -60,6 +59,7 @@ CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 \
 		--with-libflac \
 		--with-external-ffmpeg \
 		--with-external-libfaad \
+		--disable-real-codecs \
 		--disable-v4l \
 		--without-alsa \
 		--disable-musepack \
@@ -82,29 +82,8 @@ PATCH_DIST_ARGS=	-d ${WRKSRC} -p1 --forward --quiet
 
 .include <bsd.port.options.mk>
 
-# clang/i386 doesn't like
-#	src/post/deinterlace/plugins/greedy2frame_template_sse2.c :
-# [...]
-# ./greedy2frame_template_sse2.c:175:38: error: register %rax is only available in 64-bit mode
-#            "movdqa  (%3), %%xmm0               \n\t" /* xmm0 = T0 */
-#                                                  ^
-#<inline asm>:3:11: note: instantiated into assembly here
-#        movdqa  (%rax,%esi), %xmm3
-#                 ^~~~
-# [...]
 .if ${ARCH} == "i386"
-USE_GCC=	any
-.endif
-
-# Fix build WITH_DEBUG
-.if defined(WITH_DEBUG)
-DEBUG_FLAGS=	-g -O1
-.endif
-
-# Check for forced -O0 (or no -O)
-.if ${CFLAGS:M-O0} == "-O0" || (${CFLAGS:M-O} == "" && \
-	${CFLAGS:M-O[1-9a-z]*} == "")
-IGNORE=		only builds with -O1 or higher, check CFLAGS
+CFLAGS+=	-fomit-frame-pointer
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
