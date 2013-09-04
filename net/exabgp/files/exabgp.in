@@ -43,7 +43,7 @@ exabgp_start()
 	install -d -o _bgpd -g _bgpd -m 755 /var/log/${name}
 	rm -f ${pidfile}
 
-	${procname} ${command} -c %%ETCDIR%% ${exabgp_conf}
+	${procname} ${command} --folder %%ETCDIR%% ${exabgp_conf}
 }
 
 run_rc_command "$1"
