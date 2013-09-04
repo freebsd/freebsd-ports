@@ -1,42 +1,28 @@
---- configure.ac.orig	2012-08-20 11:20:40.000000000 +0200
-+++ configure.ac	2012-09-03 23:05:28.000000000 +0200
-@@ -147,17 +147,30 @@
+--- configure.ac.orig	2013-06-14 10:39:32.000000000 +0200
++++ configure.ac	2013-09-04 22:58:56.000000000 +0200
+@@ -147,9 +147,22 @@
  AC_SUBST(PCRE_CFLAGS)
  AC_SUBST(PCRE_LIBS)
  
 -PKG_CHECK_MODULES([LIBEDIT], [libedit], 
 -	[AC_DEFINE([HAVE_LIBEDIT], [1], [Define we have libedit])],
--	[AC_CHECK_HEADERS([readline/readline.h])
--	 AC_CHECK_HEADERS([edit/readline/readline.h])
--	 AC_CHECK_LIB(edit, el_init,
--	        [ AC_DEFINE([HAVE_LIBEDIT], [1], [Define we have libedit])
+-	[AX_LIB_READLINE])
 +case $target in
 +*-*-freebsd*)
 +	AC_CHECK_LIB(edit, el_init,
 +		[ AC_DEFINE([HAVE_LIBEDIT], [1], [Define we have libedit])
 +		  AC_DEFINE([HAVE_READLINE_READLINE_H], [1], [Define if we have readline.h])
- 		  LIBEDIT_CFLAGS=""
--		  LIBEDIT_LIBS="-ledit ${CURSES_LIBS}"
++		  LIBEDIT_CFLAGS=""
 +		  LIBEDIT_LIBS="-lreadline ${CURSES_LIBS}"
- 		],
--               [AC_MSG_WARN([libedit not found, disabling libedit support])],
--               [${CURSES_LIBS}])])
++		],
 +		[AC_MSG_WARN([libedit not found, disabling libedit support])])
 +	;;
 +*)
 +	PKG_CHECK_MODULES([LIBEDIT], [libedit], 
 +		[AC_DEFINE([HAVE_LIBEDIT], [1], [Define we have libedit])],
-+		[AC_CHECK_HEADERS([readline/readline.h])
-+		 AC_CHECK_HEADERS([edit/readline/readline.h])
-+		 AC_CHECK_LIB(edit, el_init,
-+		        [ AC_DEFINE([HAVE_LIBEDIT], [1], [Define we have libedit])
-+			  LIBEDIT_CFLAGS=""
-+			  LIBEDIT_LIBS="-ledit ${CURSES_LIBS}"
-+			],
-+       	        [AC_MSG_WARN([libedit not found, disabling libedit support])],
-+       	        [${CURSES_LIBS}])])
++		[AX_LIB_READLINE])
 +	;;
 +esac
- 
- # Checks for header files.
- AC_HEADER_STDC
+ if test "$ac_cv_have_readline" = no; then
+   AC_MSG_ERROR([libedit or readline not found])
+ fi

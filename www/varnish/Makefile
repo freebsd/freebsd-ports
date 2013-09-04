@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	varnish
-PORTVERSION=	3.0.3
-PORTREVISION=	2
+PORTVERSION=	3.0.4
 CATEGORIES=	www
 MASTER_SITES=	http://repo.varnish-cache.org/source/
 
