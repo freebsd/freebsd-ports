@@ -153,11 +153,15 @@ _MANPAGES+=	${P5MAN${sect}:S%^%${PREFIX}/lib/perl5/${PERL_VER}/man/man${sect}/%}
 .if ${_USE_PERL5:Mmodbuild} || ${_USE_PERL5:Mmodbuildtiny}
 _USE_PERL5+=		configure
 CONFIGURE_SCRIPT?=	Build.PL
+.if ${_USE_PERL5:Mmodbuild}
 .if ${PORTNAME} != Module-Build
 BUILD_DEPENDS+=		${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build
 .endif
+.endif
 .if ${_USE_PERL5:Mmodbuildtiny}
+.if ${PORTNAME} != Module-Build-Tiny
 BUILD_DEPENDS+=		${SITE_PERL}/Module/Build/Tiny.pm:${PORTSDIR}/devel/p5-Module-Build-Tiny
+.endif
 .endif
 ALL_TARGET?=
 PL_BUILD?=		Build
@@ -216,14 +220,14 @@ do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} \
 		${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
-.if !${_USE_PERL5:Mmodbuild}
+.if !${_USE_PERL5:Mmodbuild*}
 	@cd ${CONFIGURE_WRKSRC} && \
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 .endif # ! modbuild
 .endif # !target(do-configure)
 .endif # configure
 
-.if ${_USE_PERL5:Mmodbuild}
+.if ${_USE_PERL5:Mmodbuild*}
 .if !target(do-build)
 do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} ${PL_BUILD} ${MAKE_ARGS} ${ALL_TARGET})
