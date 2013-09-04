@@ -3,7 +3,7 @@
 
 PORTNAME=	descartes
 PORTVERSION=	0.0.1
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www ruby
 MASTER_SITES=	GH
 
@@ -28,7 +28,8 @@ RUN_DEPENDS=	rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake \
 	rubygem-rufus-scheduler>=0:${PORTSDIR}/devel/rubygem-rufus-scheduler \
 	rubygem-nokogiri>=0:${PORTSDIR}/textproc/rubygem-nokogiri \
 	rubygem-bundler>=0:${PORTSDIR}/sysutils/rubygem-bundler \
-	rubygem-foreman>=0:${PORTSDIR}/www/rubygem-foreman
+	rubygem-foreman>=0:${PORTSDIR}/www/rubygem-foreman \
+	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss
 
 USE_RUBY=	yes
 USE_GITHUB=	yes
