@@ -20,7 +20,8 @@ RUN_DEPENDS=	p5-Dancer>=1.2:${PORTSDIR}/www/p5-Dancer \
 		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Dancer::Plugin::Email.3
 

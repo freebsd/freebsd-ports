@@ -19,7 +19,7 @@ RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		p5-Net>=0:${PORTSDIR}/net/p5-Net
 
 MAN1=		${PORTNAME}.1
-USE_PERL5=	yes
+USES=		perl5
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man \

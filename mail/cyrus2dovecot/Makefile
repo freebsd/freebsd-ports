@@ -14,7 +14,7 @@ COMMENT=	Convert Cyrus folders to Dovecot
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
 
-USE_PERL5=	yes
+USES=		perl5
 NO_WRKSUBDIR=	yes
 
 post-extract:

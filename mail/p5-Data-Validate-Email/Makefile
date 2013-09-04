@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-Data-Validate-Domain>=0:${PORTSDIR}/dns/p5-Data-Validate-Domain 
 		p5-Email-Address>=0:${PORTSDIR}/mail/p5-Email-Address \
 		p5-Net-Domain-TLD>=0:${PORTSDIR}/dns/p5-Net-Domain-TLD
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Data::Validate::Email.3
 

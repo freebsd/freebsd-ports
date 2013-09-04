@@ -18,7 +18,7 @@ COMMENT=	Tool to manipulate contents of a qmail queue
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/qmqtool ${PREFIX}/bin
