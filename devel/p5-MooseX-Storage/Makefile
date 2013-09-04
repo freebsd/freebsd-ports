@@ -16,8 +16,7 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	p5-JSON-Any>=1.15:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-Moose>=0.99:${PORTSDIR}/devel/p5-Moose \
 		p5-String-RewritePrefix>=0.004:${PORTSDIR}/textproc/p5-String-RewritePrefix
-BUILD_DEPENDS:=	${RUN_DEPENDS} \
-		p5-Module-Build-Tiny>=0.026:${PORTSDIR}/devel/p5-Module-Build-Tiny
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
@@ -27,7 +26,7 @@ TEST_DEPENDS=	p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	modbuildtiny
 
 MAN3=		MooseX::Storage.3 \
 		MooseX::Storage::Base::WithChecksum.3 \
