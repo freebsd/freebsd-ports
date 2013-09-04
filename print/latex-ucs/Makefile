@@ -17,7 +17,8 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package for using UTF-8 as input encoding
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 USE_TEX=	latex
 PLIST_SUB=	MKTEXLSR="${MKTEXLSR}" CLASSDIR=${CLASSDIR}
 

@@ -17,7 +17,7 @@ COMMENT=	Generate postscript for frontcards and traycards for CDs
 MAN1=		cdlabelgen.1
 MANCOMPRESSED=	no
 
-USE_PERL5=	yes
+USES=		perl5
 MAKE_ARGS=	BASE_DIR="${PREFIX}" \
 		LIB_DIR="${DATADIR}" \
 		INSTALL="${INSTALL_SCRIPT}" \

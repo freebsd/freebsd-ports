@@ -18,7 +18,8 @@ COMMENT=	Generate Encapsulated Postscript file from Postscript document
 WRKSRC=		${WRKDIR}/ps2eps
 
 USE_GHOSTSCRIPT_RUN=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 MAN1=		ps2eps.1 bbox.1
 
 do-build:

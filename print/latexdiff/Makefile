@@ -18,7 +18,8 @@ COMMENT=	Determine and mark up significant differences between latex files
 
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 USE_ZIP=	yes
 NO_BUILD=	yes
 

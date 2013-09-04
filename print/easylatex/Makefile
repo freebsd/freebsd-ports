@@ -18,7 +18,7 @@ COMMENT=	Perl script which transforms "pseudo-LaTeX" into proper LaTeX
 RUN_DEPENDS=	p5-Getopt-Declare>=0:${PORTSDIR}/devel/p5-Getopt-Declare
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/lib/easylatex,${DATADIR},' \

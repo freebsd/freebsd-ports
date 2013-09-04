@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-Java>=0:${PORTSDIR}/devel/p5-Java \
 		${LOCALBASE}/share/java/fop/build/fop.jar:${PORTSDIR}/textproc/fop
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::ApacheFOP.3
 

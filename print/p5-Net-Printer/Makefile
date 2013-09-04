@@ -12,7 +12,8 @@ COMMENT=	Perl extension for direct-to-lpd printing
 
 LICENSE=	BSD
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Printer.3
 
