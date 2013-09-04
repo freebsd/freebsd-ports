@@ -18,7 +18,7 @@ CONFLICTS=	libiodbc-[0-9]*
 USES=		iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static --enable-shared \
-		--with-libiconv-prefix=${LOCALBASE}
+		${ICONV_CONFIGURE_ARG}
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*

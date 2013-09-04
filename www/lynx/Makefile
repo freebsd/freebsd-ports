@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS='@comment '
 .else
 USES+=		gettext iconv
-CONFIGURE_ARGS+=--enable-nls --with-libiconv-prefix="${LOCALBASE}"
+CONFIGURE_ARGS+=--enable-nls ${ICONV_CONFIGURE_ARG}
 PLIST_SUB+=	NLS=''
 .endif
 

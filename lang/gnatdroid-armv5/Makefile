@@ -109,7 +109,7 @@ CONFIGURE_ARGS+=	--with-system-zlib
 CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-mpfr=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-mpc=${LOCALBASE}
-CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG}
 CONFIGURE_ARGS+=	--with-sysroot=${SRPREFIX}
 CONFIGURE_ARGS+=	--with-float=soft
 CONFIGURE_ARGS+=	--with-fpu=${FPU}

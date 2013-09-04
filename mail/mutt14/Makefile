@@ -123,7 +123,7 @@ PLIST_SUB+=	NLS="@comment "
 .if ! ${PORT_OPTIONS:MMUTT_ICONV} && ! ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--disable-iconv
 .else
-CONFIGURE_ARGS+=	--with-libiconv-prefix=${PREFIX}
+CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG}
 .endif
 .if ${PORT_OPTIONS:MSLANG}
 CONFIGURE_ARGS+=	--with-slang=${PREFIX}

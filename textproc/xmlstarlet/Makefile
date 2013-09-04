@@ -17,7 +17,7 @@ USES=		iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libxml-prefix=${LOCALBASE} \
 		--with-libxslt-prefix=${LOCALBASE} \
-		--with-libiconv-prefix=${LOCALBASE} \
+		${ICONV_CONFIGURE_ARG} \
 		--disable-static-libs
 
 MAN1=		xmlstarlet.1

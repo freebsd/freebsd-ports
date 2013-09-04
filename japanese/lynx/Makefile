@@ -41,7 +41,7 @@ COLOR_STYLE_DESC=	Enable color style (ncurses/curses)
 DEFAULT_COLORS_DESC=	Enable default colors (ncurses/slang)
 
 JAPANESE_UTF8_USES=		iconv
-JAPANESE_UTF8_CONFIGURE_ON=	--with-libiconv-prefix=${LOCALBASE}
+JAPANESE_UTF8_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
 JAPANESE_UTF8_CONFIGURE_ENABLE=	japanese-utf8
 COLOR_STYLE_CONFIGURE_ENABLE=	color-style
 DEFAULT_COLORS_CONFIGURE_ENABLE=default-colors

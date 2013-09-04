@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=	--with-ipv6
 
 .if defined(WITH_ICONV)
 USES+=		iconv
-CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG}
 .endif
 
 .if defined(WITH_RDESKTOP_DEBUG)

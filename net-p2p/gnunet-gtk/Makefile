@@ -28,7 +28,7 @@ USE_LDCONFIG=		yes
 
 CONFIGURE_ARGS =	--with-extractor=${LOCALBASE} \
 			--with-gnunet=${LOCALBASE} \
-			--with-libiconv-prefix=${LOCALBASE}
+			${ICONV_CONFIGURE_ARG}
 
 MAN1=	gnunet-fs-gtk.1
 

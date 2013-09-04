@@ -14,7 +14,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USES=		iconv
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
 
 .include <bsd.port.options.mk>
 

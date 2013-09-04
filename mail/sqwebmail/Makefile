@@ -53,7 +53,7 @@ CACHEOWNER?=	bin
 
 USE_PERL5=	YES
 USE_BZIP2=	YES
-USES=		gettext
+USES=		gettext iconv
 USE_GMAKE=	YES
 USE_RC_SUBR=	sqwebmail-sqwebmaild
 GNU_CONFIGURE=	yes
@@ -65,7 +65,7 @@ CONFIGURE_ARGS=	--enable-cgibindir=${PREFIX}/${CGIBINDIR}/${CGIBINSUBDIR} \
 		--enable-imageurl=/${IMAGEURL} \
 		--with-locking-method=fcntl \
 		--with-libintl-prefix=${LOCALBASE} \
-		--with-libiconv-prefix=${LOCALBASE} \
+		${ICONV_CONFIGURE_ARG} \
 		--cache-file=${WRKDIR}/sqwebmail.cache
 
 PLIST_SUB+=	CGIBINDIR=${CGIBINDIR} \

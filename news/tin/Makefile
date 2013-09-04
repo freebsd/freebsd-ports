@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=--with-nntp-default-server=news \
 		--with-pcre=yes \
 		--with-screen=${TIN_SCREEN} \
 		--enable-break-long-lines \
-		--with-libiconv-prefix=${LOCALBASE} \
+		${ICONV_CONFIGURE_ARG} \
 		--with-mime-default-charset=US-ASCII \
 		--enable-ipv6
 MAKE_ARGS+=	MAKE=${GMAKE}

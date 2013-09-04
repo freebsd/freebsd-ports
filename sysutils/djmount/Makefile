@@ -15,7 +15,7 @@ LIB_DEPENDS=	upnp.9:${PORTSDIR}/devel/upnp
 PLIST_FILES=	bin/${PORTNAME}
 GNU_CONFIGURE=	yes
 USES=		fuse iconv:build pkgconfig
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 		--with-fuse-prefix=${LOCALBASE} \
 		--with-external-libupnp --with-libupnp-prefix=${LOCALBASE}
 

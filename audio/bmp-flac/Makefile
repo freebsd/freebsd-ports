@@ -17,10 +17,10 @@ LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
 
 PLIST_FILES=	lib/bmp/Input/libbmp-flac.so
 
-USES=		pkgconfig
+USES=		iconv pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}" \
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 		--with-ogg="${LOCALBASE}" \
 		--with-xmms-prefix="${LOCALBASE}"
 

@@ -45,7 +45,7 @@ NONE_DESC=	No GUI support
 .if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+= \
 	--enable-nls \
-	--with-libiconv-prefix=${LOCALBASE} \
+	${ICONV_CONFIGURE_ARG} \
 	--with-libintl-prefix=${LOCALBASE}
 USES+=		gettext iconv
 .for L in fr nl ru

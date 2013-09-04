@@ -29,7 +29,7 @@ RUN_DEPENDS?=	${OURTARGET}-as:${PORTSDIR}/devel/cross-binutils
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USES=		bison
+USES=		bison iconv
 STRIP=		#empty
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all info
@@ -61,7 +61,7 @@ CONFIGURE_ARGS=	--target=${OURTARGET} \
 		--datadir="${TGT_DATADIR}" \
 		--with-system-zlib \
 		--disable-nls \
-		--with-libiconv-prefix=${LOCALBASE} \
+		${ICONV_CONFIGURE_ARG} \
 		--without-included_gettext \
 		--with-newlib \
 		--with-dwarf2 \

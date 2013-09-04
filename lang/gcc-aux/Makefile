@@ -197,7 +197,7 @@ ADA_CONFIG_ARGS+=	--with-system-zlib
 ADA_CONFIG_ARGS+=	--with-gmp=${PREFIX}
 ADA_CONFIG_ARGS+=	--with-mpfr=${PREFIX}
 ADA_CONFIG_ARGS+=	--with-mpc=${PREFIX}
-ADA_CONFIG_ARGS+=	--with-libiconv-prefix=${PREFIX}
+ADA_CONFIG_ARGS+=	${ICONV_CONFIGURE_ARG}
 ADA_CONFIG_ARGS+=	--enable-shared
 ADA_CONFIG_ARGS+=	--enable-threads=posix
 ADA_CONFIG_ARGS+=	--disable-bootstrap

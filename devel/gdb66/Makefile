@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
 CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
 		--enable-target=all \
-		--enable-tui
+		--enable-tui ${ICONV_CONFIGURE_ARG}
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT
 EXCLUDE=	dejagnu expect readline sim texinfo intl
@@ -37,10 +37,6 @@ PLIST_SUB=	VER=${VER}
 MAN1=	gdb${VER}.1
 
 .include <bsd.port.options.mk>
-
-.if empty(ICONV_LIB)
-CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
-.endif
 
 .if ${PORT_OPTIONS:MINSIGHT}
 PKGNAMESUFFIX=	-insight

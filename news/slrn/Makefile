@@ -19,7 +19,7 @@ USES=		iconv
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-ipv6 --disable-inews --with-slrnpull \
-			--with-libiconv-prefix=${LOCALBASE}
+			${ICONV_CONFIGURE_ARG}
 
 ALL_TARGET=	all
 

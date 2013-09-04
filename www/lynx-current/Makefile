@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--with-zlib --libdir="${L_LIB}" \
 		--enable-idna \
 		--enable-ipv6 \
 		--with-mime-libdir=${PREFIX}/etc \
-		--with-libiconv-prefix=${LOCALBASE} \
+		${ICONV_CONFIGURE_ARG} \
 		--with-screen=ncursesw \
 		--with-ssl=${OPENSSLBASE}
 

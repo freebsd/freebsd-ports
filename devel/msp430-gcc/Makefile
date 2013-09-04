@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=--target=${PKGNAMEPREFIX:S/-$//} \
 		--enable-languages=c,c++ \
 		--enable-lto \
 		--with-gmp=${LOCALBASE} --with-mpfr=${LOCALBASE} \
-		--with-mpc=${LOCALBASE} --with-libiconv-prefix=${LOCALBASE} \
+		--with-mpc=${LOCALBASE} ${ICONV_CONFIGURE_ARG} \
 		--with-system-zlib --disable-nls \
 		--with-pkgversion="MSPGCC_${LTSVERSION}"
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info

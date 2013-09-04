@@ -18,7 +18,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 GNU_CONFIGURE=	yes
 USES=		bison iconv gmake pkgconfig
 
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
 
 MAN1=		tpb.1
 

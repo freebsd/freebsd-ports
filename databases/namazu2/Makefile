@@ -17,7 +17,7 @@ USES=		gettext iconv perl5
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-perl5="${PERL}" \
 		--with-libintl-prefix=${LOCALBASE} \
-		--with-libiconv-prefix=${LOCALBASE}
+		${ICONV_CONFIGURE_ARG}
 USE_LDCONFIG=	yes
 
 .include "${.CURDIR}/Makefile.common"

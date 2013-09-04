@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=	--without-ssl
 USES+=		gettext iconv
 CONFIGURE_ARGS+=	--enable-nls \
 			--with-libintl-prefix=${LOCALBASE} \
-			--with-libiconv-prefix=${LOCALBASE}
+			${ICONV_CONFIGURE_ARG}
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls --without-libiconv-prefix

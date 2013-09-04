@@ -23,7 +23,7 @@ CONFLICTS=	lyx-1.[0-9]*
 MAJOR_VERSION=	2.0
 MINOR_VERSION=	6
 
-USES=		gmake pkgconfig
+USES=		gmake iconv pkgconfig
 USE_XZ=		yes
 USE_QT4=	corelib gui moc_build uic_build rcc_build
 USE_GNOME=	desktopfileutils
@@ -34,7 +34,7 @@ CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--without-included-boost \
 		--without-included-mythes \
-		--with-libiconv-prefix=${LOCALBASE} \
+		${ICONV_CONFIGURE_ARG} \
 		--with-extra-prefix=${LOCALBASE}
 
 MAN1=		lyx.1 lyxclient.1 tex2lyx.1
