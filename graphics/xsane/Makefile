@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		pkgconfig
 
 MAN1=		xsane.1
 

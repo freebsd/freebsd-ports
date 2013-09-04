@@ -20,7 +20,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	gphoto2:${PORTSDIR}/graphics/libgphoto2
 
 USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake pkgconfig
 USE_QT4=	qmake_build moc_build rcc_build uic_build gui
 
 PLIST_FILES=	bin/eos_movrec \
