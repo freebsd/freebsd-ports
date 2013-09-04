@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Authen/Negotiate/.packlist
+%%SITE_PERL%%/auto/LWP/Authen/Negotiate/autosplit.ix
+%%SITE_PERL%%/LWP/Authen/Negotiate.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Authen/Negotiate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Authen
+@dirrm %%SITE_PERL%%/auto/LWP/Authen/Negotiate
+@dirrmtry %%SITE_PERL%%/auto/LWP/Authen
+@dirrmtry %%SITE_PERL%%/auto/LWP
