@@ -1,17 +1,17 @@
 @comment $FreeBSD$
-bin/address6
-bin/flow6
-bin/frag6
-bin/icmp6
-bin/jumbo6
-bin/na6
-bin/ni6
-bin/ns6
-bin/ra6
-bin/rd6
-bin/rs6
-bin/scan6
-bin/tcp6
+bin/addr6
+sbin/flow6
+sbin/frag6
+sbin/icmp6
+sbin/jumbo6
+sbin/na6
+sbin/ni6
+sbin/ns6
+sbin/ra6
+sbin/rd6
+sbin/rs6
+sbin/scan6
+sbin/tcp6
 etc/ipv6toolkit.conf
 %%DATADIR%%/oui.txt
 @dirrm %%DATADIR%%
