@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	9-agpl
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gs_srcs ${EPAG_SRCS}:epag
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_AFTER_ARGS=	| ${TAR} -xpf - ${EXCLUDE_DIRS:S/^/--exclude /}
+EXTRACT_AFTER_ARGS=	${EXCLUDE_DIRS:S/^/--exclude /}
 
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Ghostscript 9.x PostScript interpreter
@@ -35,8 +35,8 @@ CONFLICTS_INSTALL= \
 		ghostscript[789]-[0-9]* \
 		ghostscript[789]-nox11-[0-9]*
 
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf

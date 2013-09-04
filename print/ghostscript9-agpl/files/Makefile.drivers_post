@@ -110,7 +110,7 @@ PORT_OPTIONS:=	${PORT_OPTIONS:NGS_${D}}
 .endfor
 
 .if defined(_ICONV_DEVS)
-USE_ICONV=	yes
+USES+=		iconv
 CONFIGURE_ARGS+=--with-libiconv=gnu
 EXTRALIBS+=	-liconv
 .else
