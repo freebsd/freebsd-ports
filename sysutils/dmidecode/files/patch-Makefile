@@ -1,15 +1,13 @@
---- Makefile.orig	2010-10-11 10:08:16.000000000 -0400
-+++ Makefile	2011-03-18 12:55:54.000000000 -0400
-@@ -12,30 +12,30 @@
+--- Makefile.orig	2013-09-04 23:07:45.000000000 +0200
++++ Makefile	2013-09-04 23:09:52.000000000 +0200
+@@ -12,30 +12,29 @@
  #   (at your option) any later version.
  #
  
 -CC      = gcc
 -CFLAGS  = -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual \
--          -Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline -Wundef
-+CFLAGS+=	-W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual \
-+		-Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline -Wundef
-+CFLAGS+=	${CPPFLAGS}
++CFLAGS+= -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual \
+           -Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline -Wundef
  #CFLAGS += -DBIGENDIAN
  #CFLAGS += -DALIGNMENT_WORKAROUND
  
