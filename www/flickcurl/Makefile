@@ -2,22 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	flickcurl
-PORTVERSION=	1.24
-PORTREVISION=	1
+PORTVERSION=	1.25
 CATEGORIES=	www
 MASTER_SITES=	http://download.dajobe.org/flickcurl/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	C library for the Flickr API
 
 LICENSE=	AL2 GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 OPTIONS_DEFINE=	RAPTOR DOCS
+OPTIONS_RADIO=	WEBSERVICE
+OPTIONS_RADIO_WEBSERVICE=	OFFLINE CAPTURE
 OPTIONS_DEFAULT=RAPTOR
 RAPTOR_DESC=	Use Raptor to serialize to triples
+OFFLINE_DESC=	Offline use of captured XML web service responses
+CAPTURE_DESC=	Capturing web service responses
 
 USES=		pathfix pkgconfig
 USE_GNOME=	ltverhack libxml2
@@ -27,14 +30,15 @@ USE_LDCONFIG=	yes
 
 MAN1=		flickcurl.1 flickcurl-config.1 flickrdf.1
 
-.include <bsd.port.options.mk>
+OFFLINE_CONFIGURE_ON=		--enable-offline
+OFFLINE_CONFIGURE_OFF=		offline=no
+CAPTURE_CONFIGURE_ON=		--enable-capture
+CAPTURE_CONFIGURE_OFF=		capture=no
+RAPTOR_LIB_DEPENDS=		libraptor2.so:${PORTSDIR}/textproc/raptor2
+RAPTOR_CONFIGURE_ON=		--with-raptor=2
+RAPTOR_CONFIGURE_OFF=		--with-raptor=no
 
-.if ${PORT_OPTIONS:MRAPTOR}
-LIB_DEPENDS+=	raptor2:${PORTSDIR}/textproc/raptor2
-CONFIGURE_ARGS+=--with-raptor=2
-.else
-CONFIGURE_ARGS+=--with-raptor=no
-.endif
+.include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
