@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dkns
-PORTVERSION=	1.90
+PORTVERSION=	1.91
 CATEGORIES=	editors
 MASTER_SITES=	http://www.mammothcheese.ca/
 
