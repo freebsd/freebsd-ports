@@ -198,6 +198,7 @@ PLIST_SUB+=		LIBR="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPANGOCAIRO}
+USES+=			pkgconfig
 USE_GNOME+=		pango
 PLIST_SUB+=		PANGOCAIRO=""
 .else
