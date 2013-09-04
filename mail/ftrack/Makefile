@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 ALL_TARGET=	ftrack
 MAKEFILE=	${WRKSRC}/MakeFiles/FreeBSD/Makefile
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
-USE_PERL5=	yes
+USES=		perl5
 
 PORTDOCS=	ftrack.faq readme report.err
 

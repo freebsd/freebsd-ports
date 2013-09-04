@@ -13,7 +13,8 @@ DIST_SUBDIR=	squirrelmail
 MAINTAINER=	neil@darlow.co.uk
 COMMENT=	Adds multi-site-hosting capabilities to SquirrelMail
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 USE_SM_COMPAT=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}

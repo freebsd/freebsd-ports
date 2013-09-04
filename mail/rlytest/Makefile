@@ -16,7 +16,7 @@ EXTRACT_AFTER_ARGS=	> ${WRKDIR}/${PORTNAME}
 
 NO_WRKSUBDIR=	yes
 
-USE_PERL5=	yes
+USES=		perl5
 
 MAN1=		rlytest.1
 PLIST_FILES=	bin/rlytest

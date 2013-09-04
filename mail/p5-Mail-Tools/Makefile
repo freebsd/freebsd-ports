@@ -14,7 +14,8 @@ COMMENT=	Perl5 modules for dealing with Internet e-mail messages
 RUN_DEPENDS=	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Mail::Address.3 \
 		Mail::Cap.3 \

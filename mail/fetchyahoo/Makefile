@@ -24,7 +24,7 @@ PLIST_DIRS=	share/examples/fetchyahoo
 PLIST_FILES=	bin/fetchyahoo share/examples/fetchyahoo/fetchyahoorc
 PORTDOCS=	COPYING ChangeLog Credits INSTALL TODO index.html
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/fetchyahoo ${PREFIX}/bin

@@ -13,7 +13,8 @@ COMMENT=	Perl extension for simple POP3S wrapper for Net::POP3
 BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.34:${PORTSDIR}/security/p5-IO-Socket-SSL
 RUN_DEPENDS=	p5-IO-Socket-SSL>=1.34:${PORTSDIR}/security/p5-IO-Socket-SSL
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::POP3::SSLWrapper.3
 

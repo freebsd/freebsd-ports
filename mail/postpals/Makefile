@@ -22,7 +22,8 @@ RUN_DEPENDS=	p5-IO-Multiplex>=0:${PORTSDIR}/devel/p5-IO-Multiplex \
 SUB_FILES=	pkg-message
 
 USE_RC_SUBR=	${PORTNAME} ${PORTNAME}-taillog
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 
 USERS=		postpals
