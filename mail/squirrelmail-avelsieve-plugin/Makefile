@@ -9,7 +9,8 @@ DIST_SUBDIR=	squirrelmail
 MAINTAINER=	neil@darlow.co.uk
 COMMENT=	SquirrelMail plugin for Server-Side Mail Filtering management
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 

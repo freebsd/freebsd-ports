@@ -19,7 +19,7 @@ COMMENT=	Generates top spam/ham rules fired for SpamAssassin installations
 
 RUN_DEPENDS=	p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long
 
-USE_PERL5=	yes
+USES=		perl5
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Perl module for basic IMAP server administration
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		IMAP::Admin.3
 EXAMPLESDIR=	${PREFIX}/share/examples/${UNIQUENAME}
