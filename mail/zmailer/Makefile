@@ -17,6 +17,7 @@ OPTIONS_DEFAULT=SSL
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
+MAKE_JOBS_UNSAFE=
 
 .include <bsd.port.options.mk>
 
