@@ -38,6 +38,7 @@ SVNVERSION=		2614
 IMAGEVERSION=		4.3
 SQUEAK_SRC=		SqueakV41.sources
 SQUEAK_LIB_DIR=		${PORTVERSION}-${SVNVERSION}
+USES=			pkgconfig
 
 .include <bsd.port.pre.mk>
 
@@ -46,7 +47,6 @@ DIST_SUBDIR=		squeak
 ONLY_FOR_ARCHS=		i386 amd64
 MAN1=			squeak.1
 USE_GCC=		4.2+
-USE_GMAKE=		yes
 USE_GL=			gl
 HAS_CONFIGURE=		yes
 
