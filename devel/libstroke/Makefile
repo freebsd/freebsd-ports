@@ -10,12 +10,12 @@ MASTER_SITES=	http://etla.net/libstroke/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A stroke translation library
 
+USES=		gmake
+USE_CSTD=	gnu89
 USE_XORG=	x11
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
-USE_GCC=	any
 
 OPTIONS_DEFINE=	GTK1
 GTK1_DESC=	Build with legacy Gtk+/GNOME stroke support
