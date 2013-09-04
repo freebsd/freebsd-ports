@@ -22,7 +22,7 @@ ALL_TARGET=	#empty
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ARGS=	HOST_CC="${CC}" CC="${CC}" CCOPT="" HOST="${OPSYS}" \
 		WARNFLAGS="" Q="" OPTCFLAGS="${CFLAGS}"
-USES=		bison gmake
+USES=		bison gmake pkgconfig
 USE_GNOME=	librsvg2
 MAKE_JOBS_UNSAFE=	yes
 
