@@ -3972,6 +3972,7 @@
     SUBDIR += rubygem-devise
     SUBDIR += rubygem-directory_watcher
     SUBDIR += rubygem-ditz
+    SUBDIR += rubygem-dotenv
     SUBDIR += rubygem-drydock
     SUBDIR += rubygem-echoe
     SUBDIR += rubygem-edavis10-object_daddy
@@ -4105,6 +4106,7 @@
     SUBDIR += rubygem-rubygame
     SUBDIR += rubygem-rubyinlineaccel
     SUBDIR += rubygem-rubytree
+    SUBDIR += rubygem-rufus-scheduler
     SUBDIR += rubygem-runt
     SUBDIR += rubygem-ruport
     SUBDIR += rubygem-sdl
