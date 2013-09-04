@@ -11,12 +11,12 @@ COMMENT=	Free turn-based multiplayer strategy
 
 RUN_DEPENDS=	hicolor-icon-theme>=0:${PORTSDIR}/misc/hicolor-icon-theme
 
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake iconv pkgconfig
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-libiconv-prefix=${PREFIX} --program-transform-name=
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} --program-transform-name=
 
 MAN6=		freeciv-server.6 freeciv-client.6 \
 		freeciv-xaw.6 freeciv-sdl.6 freeciv-gtk2.6 \

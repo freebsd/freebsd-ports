@@ -9,7 +9,7 @@ MASTER_SITES=	http://rpm5.org/files/popt/
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	A getopt(3) like library with a number of enhancements, from Redhat
 
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 		--program-prefix=""
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

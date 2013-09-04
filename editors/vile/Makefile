@@ -39,7 +39,7 @@ PLIST_SUB+=	SO_EXT=""
 
 .if ${PORT_OPTIONS:MICONV}
 USES+=		iconv
-CONFIGURE_ARGS+=	--with-iconv --with-libiconv-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-iconv ${ICONV_CONFIGURE_ARG}
 PLIST_SUB+=	ICONV=""
 .else
 CONFIGURE_ARGS+=	--without-iconv --without-locale

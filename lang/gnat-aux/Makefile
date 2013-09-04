@@ -170,7 +170,7 @@ CONFIGURE_ARGS+=	--with-system-zlib
 CONFIGURE_ARGS+=	--with-gmp=${PKG_PREFIX}
 CONFIGURE_ARGS+=	--with-mpfr=${PKG_PREFIX}
 CONFIGURE_ARGS+=	--with-mpc=${PKG_PREFIX}
-CONFIGURE_ARGS+=	--with-libiconv-prefix=${PKG_PREFIX}
+CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG}
 CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ARGS+=	--enable-threads=posix
 CONFIGURE_ARGS+=	--disable-bootstrap

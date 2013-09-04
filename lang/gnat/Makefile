@@ -54,7 +54,7 @@ CONFIGURE_ARGS=		--enable-languages="c,ada" \
 			--program-prefix=gnat \
 			--disable-nls \
 			--with-system-zlib \
-			--with-libiconv-prefix=${LOCALBASE} \
+			${ICONV_CONFIGURE_ARG} \
 			--libdir=${targlib} \
 			--libexecdir=${targlibexec} \
 			--disable-libada

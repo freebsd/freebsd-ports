@@ -19,8 +19,8 @@ MAN1=		ssed.1
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
+USES+=		gettext iconv
+CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG}
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls

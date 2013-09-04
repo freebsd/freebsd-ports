@@ -61,7 +61,7 @@ CONFIGURE_ARGS=	--disable-nls --target=${GCC_TARG} \
 		--enable-libstdcxx-debug \
 		--disable-build-poststage1-with-cxx \
 		--enable-version-specific-runtime-libs \
-		--with-libiconv-prefix=${LOCALBASE} \
+		${ICONV_CONFIGURE_ARG} \
 		--includedir=${PREFIX}/${GCC_TARG}/include \
 		--datadir=${PREFIX}/${GCC_TARG}/share \
 		--with-system-zlib

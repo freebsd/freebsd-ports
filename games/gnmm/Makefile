@@ -16,6 +16,6 @@ USES=		pathfix gettext iconv
 USE_GNOME=	gnomeprefix gnomelibs gdkpixbuf
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	"--with-libiconv-prefix=${LOCALBASE}"
+CONFIGURE_ARGS=	"${ICONV_CONFIGURE_ARG}"
 
 .include <bsd.port.mk>

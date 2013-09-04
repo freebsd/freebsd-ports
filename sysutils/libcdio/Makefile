@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 USES=		pathfix pkgconfig iconv ncurses
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=${ICONV_CONFIGURE_ARG}
 USE_PERL5_BUILD=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}

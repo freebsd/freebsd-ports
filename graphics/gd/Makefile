@@ -44,7 +44,7 @@ GNU_CONFIGURE_ARGS+=	--with-fontconfig=no
 
 .if ${PORT_OPTIONS:MICONV}
 USES+=		iconv
-GNU_CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
+GNU_CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG}
 .else
 GNU_CONFIGURE_ARGS+=	--without-libiconv
 GNU_CONFIGURE_ARGS+=	--with-libiconv-prefix=no

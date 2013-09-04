@@ -18,17 +18,12 @@ ACLOCAL_ARGS=	-Im4
 USE_LDCONFIG=	yes
 USES=		pkgconfig pathfix iconv
 
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib \
 		${ICONV_LIB}
-
-.include <bsd.port.pre.mk>
-
-.if empty(ICONV_LIB)
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
-.endif
 
 pre-configure:
 	@${REINPLACE_CMD} -Ee 's,^(pkgconfigdir = ).*,\1$$(exec_prefix)/libdata/pkgconfig,' ${WRKSRC}/Makefile.am
 	@cd ${WRKSRC} && ${SH} ./autogen.sh
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

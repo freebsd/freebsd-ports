@@ -18,7 +18,7 @@ CONFLICTS=	pam_krb5-4.*
 
 USES=		iconv
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE} --without-afs \
+CONFIGURE_ARGS+=${ICONV_CONFIGURE_ARG} --without-afs \
 		--with-libintl-prefix=${LOCALBASE} --with-krb4=no \
 		--without-keyutils
 LDFLAGS+=	-L${LOCALBASE}/lib

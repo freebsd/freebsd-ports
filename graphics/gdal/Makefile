@@ -90,7 +90,7 @@ CONFIGURE_ARGS+=--with-hdf5=no
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
-CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=${ICONV_CONFIGURE_ARG}
 USES+=		iconv
 .else
 CONFIGURE_ARGS+=--with-libiconv-prefix=no

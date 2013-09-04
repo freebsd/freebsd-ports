@@ -18,7 +18,8 @@ INFO=		gawk gawkinet
 
 USE_XZ=		true
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
+USES=		iconv
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 		--with-libintl-prefix=${LOCALBASE} \
 		AWK=${AWK}
 

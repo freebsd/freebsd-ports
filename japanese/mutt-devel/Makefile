@@ -65,7 +65,7 @@ WRKSRC=		${WRKDIR}/mutt-${VERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CC="${CC} -D_DONT_USE_CTYPE_INLINE_ ${DB_CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/slang"
 CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
-		--with-libiconv-prefix=${LOCALBASE} \
+		${ICONV_CONFIGURE_ARG} \
 		--without-wc-funcs \
 		--enable-flock --disable-fcntl \
 		--with-ssl \
