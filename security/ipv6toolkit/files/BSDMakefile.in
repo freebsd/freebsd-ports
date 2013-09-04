@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-SUBDIR=	address6 flow6 frag6 icmp6 jumbo6 na6 ni6 ns6 ra6 rd6 rs6 scan6 tcp6
+SUBDIR=	addr6 flow6 frag6 icmp6 jumbo6 na6 ni6 ns6 ra6 rd6 rs6 scan6 tcp6
 
 all: ${SUBDIR}
 
@@ -8,17 +8,22 @@ all: ${SUBDIR}
 
 FILESGROUPS=	CONF DB
 CONF=		data/ipv6toolkit.conf
-CONFDIR?=	${PREFIX}/etc
+CONFDIR?=	/etc
 DB=		data/oui.txt
-DBDIR?=		${PREFIX}/share/ipv6toolkit
+DBDIR?=		/share/ipv6toolkit
 
 PREFIX?=	/usr/local
-MANDIR?=	${PREFIX}/man/man
+DESTDIR=	${PREFIX}
+MANDIR?=	/man/man
 MAN=		ipv6toolkit.conf.5
 NO_MANCOMPRESS=
 
+data/ipv6toolkit.conf:
+	echo "# SI6 Networks' IPv6 Toolkit Configuration File" > ${.TARGET}
+	echo OUI-Database=${DESTDIR}${DBDIR}/oui.txt >> ${.TARGET}
+
 beforeinstall:
-	install -d -m 0555 ${DBDIR}
+	install -d -m 0555 ${DESTDIR}${DBDIR}
 afterinstall: installfiles maninstall
 
 .include <bsd.prog.mk>
