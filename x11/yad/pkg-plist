@@ -13,3 +13,5 @@ share/icons/hicolor/96x96/apps/yad.png
 %%NLS%%share/locale/sk/LC_MESSAGES/yad.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/yad.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/yad.mo
+%%ICONBROWSER%%bin/yad-icon-browser
+%%ICONBROWSER%%share/applications/yad-icon-browser.desktop
