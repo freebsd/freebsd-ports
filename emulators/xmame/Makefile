@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xmame
-# Date created:         4 Sep 1999
-# Whom:                 Donald Burr <dburr@FreeBSD.org>
-#
+# Created by: Donald Burr <dburr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME?=	xmame
 PORTVERSION?=	0.106
@@ -24,9 +20,8 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 NO_CDROM=	License does not permit selling
 
 USES=		perl5 gmake
-USE_GCC=	any
 USE_BZIP2=	yes
-MAKE_ARGS+=	CC=${CC} ARCH=freebsd
+MAKE_ARGS+=	CC="${CC}" ARCH=freebsd
 WANT_SDL=	yes
 WANT_GNOME=	yes
 MAKE_JOBS_UNSAFE=	yes
