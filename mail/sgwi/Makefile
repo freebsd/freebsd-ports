@@ -1,12 +1,8 @@
-# New ports collection makefile for:  sgwi
-# Date created:                       11 March 2008
-# Whom:                               Lukasz Wasikowski <lukasz@wasikowski.net>
-#
+# Created by: Lukasz Wasikowski <lukasz@wasikowski.net>
 # $FreeBSD$
-#
 
 PORTNAME=	sgwi
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.vanheusden.com/sgwi/
 DISTNAME=	sqlgreywebinterface-${PORTVERSION}
@@ -25,7 +21,7 @@ OPTIONS_SINGLE=	BACKEND
 OPTIONS_SINGLE_BACKEND=	MYSQL PGSQL
 
 MYSQL_DESC=	MySQL back-end (use mysql PHP extension)
-PGSQL_DESC= 	PostgreSQL back-end (use pgsql PHP extension)
+PGSQL_DESC=	PostgreSQL back-end (use pgsql PHP extension)
 
 OPTIONS_DEFAULT=MYSQL
 
@@ -50,12 +46,12 @@ do-install:
 		@[ ! -f ${WRKSRC}/includes/config.inc.php ] || ${MV} ${WRKSRC}/includes/config.inc.php ${WRKSRC}/includes/config.inc.php.sample
 		@${MKDIR} ${WWWDIR}
 		@${MKDIR} ${WWWDIR}/includes
-		@${INSTALL_DATA} ${WRKSRC}/*.php ${WWWDIR}
-		@${INSTALL_DATA} ${WRKSRC}/*.txt ${WWWDIR}
-		@${INSTALL_DATA} ${WRKSRC}/*.css ${WWWDIR}
-		@${INSTALL_DATA} ${WRKSRC}/.ht* ${WWWDIR}
-		@${INSTALL_DATA} ${WRKSRC}/includes/*.sample ${WWWDIR}/includes/
-		@${INSTALL_DATA} ${WRKSRC}/includes/*.php ${WWWDIR}/includes/
+		${INSTALL_DATA} ${WRKSRC}/*.php ${WWWDIR}
+		${INSTALL_DATA} ${WRKSRC}/*.txt ${WWWDIR}
+		${INSTALL_DATA} ${WRKSRC}/*.css ${WWWDIR}
+		${INSTALL_DATA} ${WRKSRC}/.ht* ${WWWDIR}
+		${INSTALL_DATA} ${WRKSRC}/includes/*.sample ${WWWDIR}/includes/
+		${INSTALL_DATA} ${WRKSRC}/includes/*.php ${WWWDIR}/includes/
 		@if [ -f ${WWWDIR}/config.inc.php ]; then \
 			${MV} ${WWWDIR}/config.inc.php ${WWWDIR}/includes/config.inc.php; \
 		fi
