@@ -22,6 +22,17 @@ OPTIONS_DEFAULT=DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 
+do-configure:
+	${PRINTF} "%s\n" "#include <stdio.h>" "int main(void) {" \
+	    "char *p = fmemopen; char *q = open_memstream; return 0; }" \
+	    > ${WRKDIR}/configure.c
+	${TOUCH} ${WRKSRC}/ports_config.h
+	cd ${WRKDIR} && \
+	    if ${CC} -o /dev/null configure.c > /dev/null 2>&1; then \
+		${PRINTF} "%s\n" "#define HAVE_FMEMOPEN 1" \
+		"#define HAVE_OPEN_MEMSTREAM 1" > ${WRKSRC}/ports_config.h; \
+	    fi
+
 pre-build:
 	${INSTALL_DATA} ${FILESDIR}/Makefile ${FILESDIR}/Makefile.inc ${WRKSRC}
 .for F in libpd packetdrill checksum_test packet_parser_test packet_to_string_test
