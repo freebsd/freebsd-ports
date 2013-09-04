@@ -10,6 +10,7 @@ COMMENT=	Binding to the Cairo library
 
 LICENSE=	BSD
 
+USES=		pkgconfig
 USE_CABAL=	gtk2hs-buildtools mtl
 
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/cairo-pdf.pc:${PORTSDIR}/graphics/cairo
