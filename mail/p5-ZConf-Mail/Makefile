@@ -32,7 +32,8 @@ BUILD_DEPENDS=	p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-ZConf>=0:${PORTSDIR}/net/p5-ZConf
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		ZConf::Mail.3
 

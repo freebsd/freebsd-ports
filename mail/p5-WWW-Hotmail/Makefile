@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
 		p5-Mail-Audit>=0:${PORTSDIR}/mail/p5-Mail-Audit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WWW::Hotmail.3
 

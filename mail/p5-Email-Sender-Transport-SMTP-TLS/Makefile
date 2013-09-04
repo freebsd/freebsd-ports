@@ -14,7 +14,8 @@ RUN_DEPENDS=	p5-Email-Sender>=0.091660:${PORTSDIR}/mail/p5-Email-Sender \
 		p5-Net-SMTP-TLS-ButMaintained>=0.2:${PORTSDIR}/mail/p5-Net-SMTP-TLS-ButMaintained
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Email::Sender::Transport::SMTP::TLS.3
 

@@ -11,7 +11,8 @@ MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Provides one-click link to mark read/unread all mails in a folder
 
 USE_SM_COMPAT=	YES
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME:S/-/_/}
 

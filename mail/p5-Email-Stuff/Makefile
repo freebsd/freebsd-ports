@@ -22,7 +22,8 @@ BUILD_DEPENDS=	p5-prefork>=1.01:${PORTSDIR}/devel/p5-prefork \
 		p5-Email-Send>=2.185:${PORTSDIR}/mail/p5-Email-Send
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Email::Stuff.3
 

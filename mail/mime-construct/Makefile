@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
 		p5-Proc-WaitStat>=0:${PORTSDIR}/devel/p5-Proc-WaitStat
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		mime-construct.1
 
