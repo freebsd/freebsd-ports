@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A perl module to receive Twitter streaming API in an event loop
+COMMENT=	Perl module to receive Twitter streaming API in an event loop
 
 RUN_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-AnyEvent-HTTP>=2.0:${PORTSDIR}/www/p5-AnyEvent-HTTP \
