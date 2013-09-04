@@ -16,7 +16,8 @@ COMMENT=	A Perl MIB compiler supporting both SMIv1 and SMIv2
 
 BUILD_DEPENDS=	p5-Data-Compare>=0:${PORTSDIR}/devel/p5-Data-Compare
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		SNMP::MIB::Compiler.3 \
 		Bundle::SNMP::MIB::Compiler.3

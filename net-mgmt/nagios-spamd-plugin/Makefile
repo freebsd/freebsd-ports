@@ -17,7 +17,7 @@ COMMENT=	Nagios plugin for checking SpamAssassins spamd
 
 RUN_DEPENDS+=	${LOCALBASE}/${NAGIOS_PLUGIN_DIR}/utils.pm:${PORTSDIR}/net-mgmt/nagios-plugins
 
-USE_PERL5=	yes
+USES=		perl5
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	${NAGIOS_PLUGIN_DIR}/check_spamd.pl

@@ -11,7 +11,8 @@ MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Lets define folders to be displayed at the top of the folders list
 
 USE_SM_COMPAT=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME:S/-/_/}
 

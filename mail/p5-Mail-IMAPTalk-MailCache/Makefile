@@ -18,7 +18,8 @@ COMMENT=	Caches mail information for Mail::IMAPTalk using Mail::Cache
 BUILD_DEPENDS=	p5-Mail-Cache>=0:${PORTSDIR}/mail/p5-Mail-Cache \
 		p5-Mail-IMAPTalk>=0:${PORTSDIR}/mail/p5-Mail-IMAPTalk
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Mail::IMAPTalk::MailCache.3
 

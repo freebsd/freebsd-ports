@@ -15,7 +15,8 @@ MAINTAINER=	alexey@renatasystems.org
 COMMENT=	A set of Nagios plugins written in Perl to check devices with SNMP
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 RUN_DEPENDS+=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 		${LOCALBASE}/libexec/nagios/utils.pm:${PORTSDIR}/net-mgmt/nagios-plugins

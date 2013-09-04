@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mrtg:${PORTSDIR}/net-mgmt/mrtg
 
 FETCH_BEFORE_ARGS=	-p      # MASTER_SITE needs PASSIVE FTP.
 
-USE_PERL5=	YES
+USES=		perl5
 
 MAN1=		${PORTNAME}.1
 

@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
 		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::SMTP::TLS.3
 

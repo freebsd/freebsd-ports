@@ -31,7 +31,7 @@ BUILD_DEPENDS+=	p5-Mysql>=0:${PORTSDIR}/databases/p5-Mysql
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PERL5=	yes
+USES=		perl5
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
