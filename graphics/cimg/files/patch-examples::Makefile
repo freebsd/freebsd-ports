@@ -1,5 +1,5 @@
 --- examples/Makefile.orig	2013-07-04 17:26:45.000000000 +0200
-+++ examples/Makefile	2013-07-04 23:45:47.000000000 +0200
++++ examples/Makefile	2013-09-04 21:02:00.000000000 +0200
 @@ -84,8 +84,8 @@
  # Set correct variables and paths
  #---------------------------------
@@ -11,6 +11,17 @@
  EXEPFX       =
  CCVER       = $(CC)
  ifeq ($(CC),g++)
+@@ -99,8 +99,8 @@
+ CFLAGS       = -I..
+ LDFLAGS      =
+ else
+-CFLAGS       = -I.. -Wall -W
+-LDFLAGS      = -lm
++CFLAGS       = -I.. -Wall -W $(CPPFLAGS)
++LDFLAGS     += -lm
+ endif
+ 
+ #--------------------------------------------------
 @@ -125,7 +125,7 @@
  ifeq ($(CC),icc)
  CIMG_OPT_CFLAGS = -O3 -ipo -no-prec-div
