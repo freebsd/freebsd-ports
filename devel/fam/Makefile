@@ -1,9 +1,5 @@
-# ports collection makefile for:	fam
-# Date created:				20 February 2001
-# Whom:					Jeremy Norris <ishmael27@home.com>
-#
+# Created by: Jeremy Norris <ishmael27@home.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fam
 PORTVERSION=	2.6.10
@@ -28,6 +24,9 @@ MAN1=		fam.1m
 MAN3=		fam.3x
 
 CONFLICTS=	gamin-[0-9]*
+
+post-patch:
+	@${REINPLACE_CMD} -e "s/-lstdc++//g" ${WRKSRC}/Makefile.am
 
 pre-configure:
 	@${RM} -fr ${WRKSRC}/util
