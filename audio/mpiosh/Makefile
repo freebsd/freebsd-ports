@@ -23,7 +23,7 @@ USE_AUTOTOOLS=	aclocal automake autoconf libtool
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 .include <bsd.port.pre.mk>
 
@@ -31,5 +31,6 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure.in
 
 post-patch:
 	${RM} -f ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's/%%ICONV_LIB%%/${ICONV_LIB}/' ${WRKSRC}/mpiosh/Makefile.am
 
 .include <bsd.port.post.mk>

@@ -21,11 +21,18 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||g}
 
+.include <bsd.port.pre.mk>
+
+.if empty(ICONV_LIB)
+SETUPINFO=	,library_dirs=["${LOCALBASE}/lib"],\
+		include_dirs=["${LOCALBASE}/include"]
+.else
 SETUPINFO=	,libraries=["iconv"],library_dirs=["${LOCALBASE}/lib"],\
 		include_dirs=["${LOCALBASE}/include"]
+.endif
 
 post-patch:
 	cd ${WRKSRC} && ${SED} 's!^\(.*ext_mod.*\)\()]\)$$!\1${SETUPINFO}\2!g'\
 		setup.py > setup.py.tmp && ${CAT} setup.py.tmp > setup.py
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

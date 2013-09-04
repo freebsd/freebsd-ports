@@ -17,7 +17,7 @@ USES=		iconv gmake
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 MAN1=		ysm.1
 PLIST_FILES=	bin/ysm

@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 LICQ_PORT?=	net-im/licq
 
 # workaround for installed autoconf/automake
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -liconv -Wl,--export-dynamic
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib ${ICONV_LIB} -Wl,--export-dynamic
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-Wl,--export-dynamic

@@ -24,7 +24,7 @@ USES=		gettext gmake iconv
 USE_LDCONFIG=	YES
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	YES
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl -liconv
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl ${ICONV_LIB}
 
 MAN1=		tpm_sealdata.1 tpm_version.1				\
 		tpmtoken_import.1 tpmtoken_init.1 tpmtoken_objects.1	\

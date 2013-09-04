@@ -5,7 +5,7 @@
  AM_CFLAGS=-DSYSCONFDIR=\"@sysconfdir@\"
  
 -mpiosh_LDADD=../libmpio/libmpio.la -lreadline -lncurses
-+mpiosh_LDADD=../libmpio/libmpio.la -lreadline -lncurses -liconv
++mpiosh_LDADD=../libmpio/libmpio.la -lreadline -lncurses %%ICONV_LIB%%
  
  noinst_HEADERS = mpiosh.h \
  		callback.h \

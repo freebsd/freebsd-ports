@@ -26,7 +26,7 @@ USES=		iconv gmake motif perl5
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	JPEG_VER=80 verbose=yes
 
-LDFLAGS+=	-liconv
+LDFLAGS+=	${ICONV_LIB}
 
 MAN1=		exiftran.1 ida.1
 PORTDOCS=	README TODO INSTALL

@@ -39,7 +39,7 @@ MAN1=		pokerth.1
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|/usr([a-z|/]*)|${LOCALBASE}/\1|g' \
-		-e 's|(-lcurl)|\1 -liconv|g' \
+		-e 's|(-lcurl)|\1 ${ICONV_LIB}|g' \
 		-e 's:boost_([a-z]+)-[-|a-z|0-9|_]*:boost_\1:g' \
 		-e 's|LIB_DIRS =.*|LIB_DIRS = ${LOCALBASE}/lib|g' \
 		-e '/.*QMAKE_CXXFLAGS.*/d' \

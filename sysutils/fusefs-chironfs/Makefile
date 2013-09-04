@@ -24,5 +24,6 @@ post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's, doc , ,' ${WRKSRC}/Makefile.in
 .endif
+	@${REINPLACE_CMD} -e 's,-liconv,${ICONV_LIB},' ${WRKSRC}/src/Makefile.*
 
 .include <bsd.port.mk>

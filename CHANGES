@@ -10,6 +10,24 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130904:
+AUTHOR: madpilot@FreeBSD.org
+
+  To allow ports to work with the iconv implementation in 10-CURRENT after commit r254273 the USES=iconv options now conditionally adds a dependency depending on the FreeBSD version. It also defines a few utility variables which can be used in the ports:
+
+  ICONV_CMD:	location of the iconv binary.
+		after r254273: /usr/bin/iconv
+		before: ${LOCALBASE}/bin/iconv
+
+  ICONV_LIB:	ld(1) flags to get the iconv DSO.
+		after r254273: empty
+		before: -liconv
+
+  ICONV_CONFIGURE_ARG:  String that can be passed to configure
+  			scripts to hint the location of the libiconv library.
+			after r254273: empty
+			before: --with-libiconv-prefix=${LOCALBASE}
+
 20130902:
 AUTHOR: bapt@FreeBSD.org
 

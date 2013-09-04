@@ -45,7 +45,7 @@ post-patch:
 
 post-build:
 	cd ${WRKSRC}/lab; \
-	${MAKE} CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv" fmtcnv031127
+	${MAKE} CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${ICONV_LIB}" fmtcnv031127
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lab/fmtcnv031127 ${PREFIX}/bin

@@ -33,7 +33,7 @@ INFO=		adesklets \
 
 SUB_FILES=	pkg-message
 INSTALLS_EGGINFO=	yes
-LDFLAGS+=	-liconv
+LDFLAGS+=	${ICONV_LIB}
 
 .if !defined(WITHOUT_PERL)
 USE_PERL5=	yes

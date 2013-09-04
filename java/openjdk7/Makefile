@@ -159,6 +159,13 @@ post-patch:
 	@${REINPLACE_CMD} 's|build-policy install-limited|build-policy install-unlimited|' \
 		${WRKSRC}/jdk/make/javax/crypto/Makefile
 .endif
+.if empty(ICONV_LIB)
+	@${REINPLACE_CMD} 's| -liconv||' \
+		${WRKSRC}/Makefile \
+		${WRKSRC}/jdk/make/sun/splashscreen/Makefile \
+		${WRKSRC}/jdk/make/java/npt/Makefile \
+		${WRKSRC}/jdk/make/java/instrument/Makefile
+.endif
 
 .if ${PORT_OPTIONS:MTZUPDATE}
 pre-install:

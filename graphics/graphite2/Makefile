@@ -11,7 +11,7 @@ COMMENT=	Rendering capabilities for complex non-Roman writing systems
 
 USES=		cmake iconv
 USE_LDCONFIG=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/pkgconfig,data/pkgconfig,g' ${WRKSRC}/CMakeLists.txt

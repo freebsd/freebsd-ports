@@ -20,7 +20,7 @@ USES=		iconv
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME}
 USE_LDCONFIG=	yes
 

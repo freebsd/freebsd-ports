@@ -42,7 +42,7 @@
  	$(CXX) msnprotocolplugin.o libimspector.so $(PLUGIN_FLAGS)
  icqprotocolplugin.so: icqprotocolplugin.o libimspector.so
 -	$(CXX) icqprotocolplugin.o libimspector.so $(PLUGIN_FLAGS)
-+	$(CXX) icqprotocolplugin.o libimspector.so $(PLUGIN_FLAGS) -liconv -L${LOCALBASE}/lib
++	$(CXX) icqprotocolplugin.o libimspector.so $(PLUGIN_FLAGS) %%ICONV_LIB%% -L${LOCALBASE}/lib
  yahooprotocolplugin.so: yahooprotocolplugin.o libimspector.so
  	$(CXX) yahooprotocolplugin.o libimspector.so $(PLUGIN_FLAGS)
  ircprotocolplugin.so: ircprotocolplugin.o libimspector.so

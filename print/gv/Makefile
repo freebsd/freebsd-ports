@@ -20,7 +20,7 @@ USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS}" LIBS="-liconv"
+CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS}" LIBS="${ICONV_LIB}"
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/X11 \
 			--enable-setenv-code \
 			--enable-SIGCHLD-fallback

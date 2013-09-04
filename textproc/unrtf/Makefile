@@ -27,7 +27,7 @@ PLIST_FILES=	bin/unrtf \
 PLIST_DIRS=	%%DATADIR%%
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 post-patch:
 	@${FIND} -X ${WRKSRC} -type f -and -name "*.[1h]" | ${XARGS} \

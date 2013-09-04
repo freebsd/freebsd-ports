@@ -78,7 +78,8 @@ ALL_TARGET=	vdr plugins
 
 post-patch:
 # clang doesn't know -MG:
-	@${REINPLACE_CMD} '/^MAKEDEP.*-MM/s/-MG[[:space:]]*$$/# -MG/' \
+	@${REINPLACE_CMD} -e '/^MAKEDEP.*-MM/s/-MG[[:space:]]*$$/# -MG/' \
+			-e '/^LIBS/s/-liconv/${ICONVLIB}/' \
 		${WRKSRC}/Makefile ${WRKSRC}/libsi/Makefile \
 		${WRKSRC}/PLUGINS/src/*/Makefile
 	@[ ! -f ${WRKSRC}/s2apiwrapper.c ] || \

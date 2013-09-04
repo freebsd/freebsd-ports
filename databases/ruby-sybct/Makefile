@@ -24,6 +24,7 @@ USES=		iconv
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		-e 's|%%ICONV_LIB%%|${ICONV_LIB}|' \
 		${WRKSRC}/extconf.rb
 
 post-install:

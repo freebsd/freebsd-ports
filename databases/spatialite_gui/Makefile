@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USES=		pkgconfig iconv
 CPPFLAGS+=	-I${LOCALBASE}/include `${WX_CONFIG} --cppflags`
-LDFLAGS+=	-L${LOCALBASE}/lib -liconv `${WX_CONFIG} --libs`
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB} `${WX_CONFIG} --libs`
 CONFIGURE_ARGS+=CFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 

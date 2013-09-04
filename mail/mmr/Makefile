@@ -29,7 +29,7 @@ CXXFLAGS+=	-DTHREADMAIL \
 		-DMAILPATH=\"/var/mail\" \
 		-DMAILER=\"/usr/sbin/sendmail\ -t\" \
 		-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -liconv -lcurses -lmd
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB} -lcurses -lmd
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|md5/libmd5.a||g' ${WRKSRC}/Makefile

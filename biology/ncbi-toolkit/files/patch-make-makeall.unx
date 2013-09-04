@@ -6,7 +6,7 @@
  AR=ar
 -OTHERLIBS = -lm
 -VIBLIBS = 
-+OTHERLIBS = -lm -liconv
++OTHERLIBS = -lm %%ICONV_LIB%%
 +VIBLIBS = -lXft -lpng -ljpeg
  VIBFLAG =
  LIBCOPY = cp -p

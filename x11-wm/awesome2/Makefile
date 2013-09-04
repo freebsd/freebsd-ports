@@ -49,7 +49,7 @@ post-patch:
 .	endfor
 
 post-configure:
-	@${REINPLACE_CMD} -E '/^awesome2_(message_)?LDADD/s/$$/ -liconv/g; \
+	@${REINPLACE_CMD} -E '/^awesome2_(message_)?LDADD/s/$$/ ${ICONV_LIB}/g; \
 			      /^doc_DATA/s/=.*$$/=/g' \
 		${WRKSRC}/Makefile
 

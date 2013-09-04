@@ -546,7 +546,7 @@ intltool_BUILD_DEPENDS=	${intltool_DETECT}:${PORTSDIR}/textproc/intltool
 intlhack_PRE_PATCH=		${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} -e \
 				's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
 				 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";| ; \
-				 s|/usr/bin/iconv|${LOCALBASE}/bin/iconv|g ; \
+				 s|/usr/bin/iconv|${ICONV_CMD}|g ; \
 				 s|unpack *[(]'"'"'U\*'"'"'|unpack ('"'"'C*'"'"'|'
 intlhack_USE_GNOME_IMPL=intltool
 

@@ -1,5 +1,5 @@
---- configure.orig	2013-03-28 02:59:16.000000000 +0000
-+++ configure	2013-03-28 03:00:20.000000000 +0000
+--- configure.orig	2013-08-29 23:29:13.255661322 +0200
++++ configure	2013-08-29 23:48:08.845647995 +0200
 @@ -603,6 +603,9 @@
  #ifdef HAVE_SYS_TYPES_H
  # include <sys/types.h>
@@ -10,7 +10,7 @@
  #ifdef HAVE_SYS_STAT_H
  # include <sys/stat.h>
  #endif
-@@ -5699,7 +5702,7 @@
+@@ -5778,7 +5781,7 @@
  fi
  
  GLIB_RUNTIME_LIBDIR="$with_runtime_libdir"
@@ -19,7 +19,31 @@
  
  
   if test "x$with_runtime_libdir" != "x"; then
-@@ -23089,7 +23092,7 @@
+@@ -7444,13 +7447,12 @@
+ 
+       ;;
+     native)
+-      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for iconv_open in -liconv" >&5
+-$as_echo_n "checking for iconv_open in -liconv... " >&6; }
++      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for iconv_open" >&5
++$as_echo_n "checking for iconv_open... " >&6; }
+ if ${ac_cv_lib_iconv_iconv_open+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-liconv  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -8648,6 +8650,7 @@
+     ;;
+   native)
+ 
++ICONV_LIBS=""
+ $as_echo "#define USE_LIBICONV_NATIVE 1" >>confdefs.h
+ 
+     ;;
+@@ -23201,7 +23204,7 @@
  fi
  done
  
@@ -28,7 +52,7 @@
  do :
    as_ac_var=`$as_echo "ac_cv_func_$ac_func" | $as_tr_sh`
  ac_fn_c_check_func "$LINENO" "$ac_func" "$as_ac_var"
-@@ -26629,10 +26632,10 @@
+@@ -26741,10 +26744,10 @@
  #  b) FreeBSD doesn't do this either.
  #
  case $host in

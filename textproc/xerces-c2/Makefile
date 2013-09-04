@@ -115,6 +115,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#CP = -cp -p#CP = -cp#'	\
 		${WRKSRC}/src/xercesc/Makefile.incl
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		-e 's|-liconv|${ICONV_LIB}|' \
 		${WRKSRC}/src/xercesc/Makefile.incl \
 		${WRKSRC}/src/xercesc/runConfigure
 	@${SED} -i '' 's| /\* argV\[\] \*/|* argV|' \

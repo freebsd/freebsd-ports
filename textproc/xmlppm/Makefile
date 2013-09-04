@@ -22,7 +22,7 @@ USES=		iconv
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lexpat -liconv"
+		LDFLAGS="-L${LOCALBASE}/lib -lexpat ${ICONV_LIB}"
 GNU_CONFIGURE=	yes
 
 .if !defined(NOPORTDOCS)

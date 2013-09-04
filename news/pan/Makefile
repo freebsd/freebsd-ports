@@ -23,7 +23,7 @@ USES=		pathfix gettext pkgconfig
 USE_GNOME=	intlhack
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lgnuregex -liconv
+LDFLAGS+=	-L${LOCALBASE}/lib -lgnuregex ${ICONV_LIB}
 
 OPTIONS_DEFINE=	GTKSPELL GTK3
 OPTIONS_DEFAULT=GTKSPELL

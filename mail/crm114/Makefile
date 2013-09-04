@@ -30,7 +30,7 @@ MAKE_ARGS=	CC="${CC}" prefix="${PREFIX}" \
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-LIBS+=		-L${LOCALBASE}/lib -liconv -lintl
+LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB} -lintl
 
 CFLAGS+=	-DVERSION='\"${PORTVERSION}-${CRM114RELEASENAME}\"'
 CFLAGS+=	-DNO_LOGL

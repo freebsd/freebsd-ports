@@ -29,7 +29,7 @@ USES=		gettext gmake iconv pathfix pkgconfig shebangfix
 USE_GNOME=	ltverhack
 USE_PYTHON=	2.5+
 USE_PERL5=	yes
-CONFIGURE_ARGS=	--enable-static --with-libiconv=gnu \
+CONFIGURE_ARGS=	--enable-static \
 		--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
 		--disable-man --without-xml-catalog \
 		--with-pcre=system \
@@ -53,6 +53,12 @@ CONFIGURE_ARGS+=--disable-dtrace
 #.else
 #CONFIGURE_ARGS+=--enable-dtrace
 #.endif
+
+.if exists(/usr/include/iconv.h) && ${OSVERSION} >= 1000043 
+CONFIGURE_ARGS+=	--with-libiconv=native
+.else
+CONFIGURE_ARGS+=	--with-libiconv=gnu
+.endif
 
 .if ${ARCH} == powerpc64
 EXTRA_PATCHES=	${FILESDIR}/extra-arch-powerpc64

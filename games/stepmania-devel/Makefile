@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=--without-vorbis
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/^LIBS/s|-lpthread|-liconv|' ${WRKSRC}/src/Makefile.in
+		'/^LIBS/s|-lpthread|${ICONV_LIB}|' ${WRKSRC}/src/Makefile.in
 
 pre-build:
 	@${ECHO_CMD} -n > ${WRKDIR}/stepmania.sh

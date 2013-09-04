@@ -13,7 +13,7 @@ COMMENT=	NCBI development toolkit, including BLAST 2 and GenBank/Entrez support
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		motif
+USES=		iconv motif
 MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	pkg-message
@@ -66,6 +66,8 @@ post-patch:
 		 s|/usr/local|${LOCALBASE}|g ; \
 		 s|-Wl,-Bstatic|| ; \
 		 s|-Wl,-Bdynamic||' ${WRKSRC}/platform/freebsd.ncbi.mk
+	@${REINPLACE_CMD} -e 's/%%ICONV_LIB%%/${ICONV_LIB}/' \
+		${WRKSRC}/make/makeall.unx ${WRKSRC}/make/makenet.unx
 
 # the ncbi-toolkit provides a shell script to drive the build
 # and we use it

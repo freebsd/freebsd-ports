@@ -17,7 +17,7 @@ USES=		iconv
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -liconv"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${ICONV_LIB}"
 
 post-patch:
 	@${FIND} ${WRKSRC}/src/ -type f -print0 | \

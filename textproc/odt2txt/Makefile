@@ -27,7 +27,8 @@ PLIST_FILES=	bin/odt2txt
 MAN1=		odt2txt.1
 
 post-patch:
-	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
+		-e 's#-liconv#${ICONV_LIB}#' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/odt2txt ${PREFIX}/bin/odt2txt

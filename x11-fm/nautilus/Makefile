@@ -26,7 +26,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop \
 		librsvg2 ltverhack gvfs ltasneededhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -liconv" \
+CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib ${ICONV_LIB}" \
 		LIBPNG="-L${LOCALBASE}/lib -lpng -lz"
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--enable-static --disable-packagekit

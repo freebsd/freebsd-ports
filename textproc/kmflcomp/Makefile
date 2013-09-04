@@ -26,7 +26,7 @@ USE_LDCONFIG=	yes
 USES=		iconv
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 DOCSDIR=	${PREFIX}/share/doc/kmfl/${PORTNAME}
 DOCS=		${DISTDIR}/${DIST_SUBDIR}/KMFL-Compiler.sxw \

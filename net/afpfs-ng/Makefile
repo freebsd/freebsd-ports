@@ -53,7 +53,7 @@ post-patch:	.SILENT
 		${WRKSRC}/Makefile.am
 
 post-configure: .SILENT
-	${REINPLACE_CMD} 's|LIBS = |LIBS = -liconv |' \
+	${REINPLACE_CMD} 's|LIBS = |LIBS = ${ICONV_LIB} |' \
 		${WRKSRC}/cmdline/Makefile
 
 .include <bsd.port.post.mk>

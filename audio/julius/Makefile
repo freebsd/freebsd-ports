@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 USES=		iconv
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 MANLANG=	"" ja
 MAN1=	accept_check.1 \
 	adinrec.1 \

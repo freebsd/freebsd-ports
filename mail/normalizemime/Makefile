@@ -22,7 +22,7 @@ USES=		iconv
 NO_WRKSUBDIR=	yes
 
 CXXFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 PLIST_FILES=	bin/${DISTNAME:R}
 

@@ -13,7 +13,7 @@ COMMENT=	Perl interface to iconv() codeset conversion function
 USES=		perl5 iconv
 USE_PERL5=	configure
 CONFIGURE_ARGS+=	INC="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -liconv"
+		LIBS="-L${LOCALBASE}/lib ${ICONV_LIB}"
 
 MAN3=		Text::Iconv.3
 
