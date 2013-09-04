@@ -18,7 +18,7 @@ EXTRACT_ONLY=	${LLVM_SOURCE}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	C, Objective-C, and C++ compiler
 
-CONFLICTS=	clang-[23]* clang31-*
+CONFLICTS=	clang-3.[012]* clang31-*
 
 CLANG_NAME=	clang-${PORTVERSION}
 CLANG_RELEASE=	${PORTVERSION:C/\.r[0-9]*//}
