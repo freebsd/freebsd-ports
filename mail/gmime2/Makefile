@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 # www.freebsd.org/cgi/query-pr.cgi?pr=118092
 # Rename uudecode and uuencode to gmime-* to not conflict with userland
-CONFIGURE_ARGS?=	--with-libiconv=${LOCALBASE} \
+CONFIGURE_ARGS?=	${ICONV_CONFIGURE_BASE} \
 			--with-html-dir=${PREFIX}/share/doc \
 			--enable-mono=no \
 			--program-transform-name="s/uuencode/gmime-uuencode/;s/uudecode/gmime-uudecode/;"

@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
 
 CONFIGURE_ARGS+=	--disable-reg-gconf --disable-socket-wrapper \
 			--with-readline=/usr --with-included-popt \
-			--with-libiconv=${LOCALBASE} --without-sqlite3 \
+			${ICONV_CONFIGURE_BASE} --without-sqlite3 \
 			--without-pthreads --without-python
 
 USE_RC_SUBR=		smbd4wins

@@ -95,7 +95,7 @@ BUILD_DEPENDS+=		tevent>=0.9.11:${PORTSDIR}/devel/tevent
 RUN_DEPENDS+=		tevent>=0.9.11:${PORTSDIR}/devel/tevent
 CONFIGURE_ARGS+=	--without-libtevent --enable-external-libtevent
 # These options are common for all (sub)ports
-CONFIGURE_ARGS+=	--with-libiconv="${LOCALBASE}" \
+CONFIGURE_ARGS+=	${ICONV_CONFIGURE_BASE} \
 			--disable-as-needed
 
 .if !defined(SAMBA_SUBPORT)

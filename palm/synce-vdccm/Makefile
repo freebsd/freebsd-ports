@@ -20,7 +20,7 @@ DESKTOP_DESC=	Desktop integration
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 USES=		iconv pkgconfig
-CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE} \
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE} \
 		--with-libsynce=${LOCALBASE}
 
 MAN1=		triggerconnection.1 ${PORTNAME}.1

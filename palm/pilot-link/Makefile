@@ -17,7 +17,7 @@ USES=		pathfix pkgconfig iconv
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${WRKSRC}/popt -I${LOCALBASE}/include
-CONFIGURE_ARGS+=--with-libiconv=${LOCALBASE}  --with-included-popt --enable-conduits --enable-xsltproc
+CONFIGURE_ARGS+=${ICONV_CONFIGURE_BASE}  --with-included-popt --enable-conduits --enable-xsltproc
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	PNG THREADS USB

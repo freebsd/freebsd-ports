@@ -27,6 +27,7 @@ CONFIGURE_ARGS+=	--enable-tcp-wrappers \
 			--with-libgcrypt-dir=${LOCALBASE} \
 			--with-uams-path=${PREFIX}/libexec/netatalk-uams \
 			--with-bdb=${LOCALBASE} \
+			${ICONV_CONFIGURE_BASE} \
 			--localstatedir=/var \
 			--disable-bundled-libevent \
 			--with-libevent-header=${LOCALBASE}/include \
@@ -116,12 +117,6 @@ PLIST_SUB+=	ATFUNCS="@comment "
 PLIST_SUB+=	ATFUNCS=""
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if !empty(ICONV_LIB)
-CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DB_NAME%%|${BDB_INCLUDE_DIR:T}| ; \
 	    	s|%%DB_LIB%%|-l${BDB_LIB_NAME}|g ; \
@@ -137,4 +132,4 @@ post-install:
 		${INSTALL_DATA} -c ${PREFIX}/etc/extmap.conf.dist ${PREFIX}/etc/extmap.conf
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
