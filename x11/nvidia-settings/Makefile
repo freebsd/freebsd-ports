@@ -18,7 +18,7 @@ LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GL=		gl
 USE_XORG=	xv xext
 
