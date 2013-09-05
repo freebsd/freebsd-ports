@@ -15,7 +15,8 @@ NO_MANCOMPRESS=
 
 PROG=	${.CURDIR:T}
 MAN=	${PROG}.1
-LDADD=	-lpcap -lm
-CFLAGS+=	-DIPV6TOOLKITCONF=\"${PREFIX}/etc/ipv6toolkit.conf\"
+LDADD=	-lpcap -lm ${WRKSRC}/libipv6/libipv6.a
+CFLAGS+=-I${.CURDIR}/../tools \
+	-DIPV6TOOLKITCONF=\"${PREFIX}/etc/ipv6toolkit.conf\"
 
 .include <bsd.prog.mk>
