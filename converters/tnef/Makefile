@@ -11,7 +11,6 @@ COMMENT=	Unpack data in MS Outlook TNEF format
 
 OPTIONS_DEFINE=	DOCS
 
-USE_GCC=	any
 GNU_CONFIGURE=	yes
 
 MAN1=		tnef.1
