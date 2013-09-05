@@ -1,12 +1,20 @@
---- gnome-swallow.c.orig	Fri Sep 12 00:21:55 2003
-+++ gnome-swallow.c	Sun Apr 24 00:28:34 2005
-@@ -1,3 +1,5 @@
+--- gnome-swallow.c.orig	2003-09-12 00:21:55.000000000 -0400
++++ gnome-swallow.c	2013-09-05 17:51:55.000000000 -0400
+@@ -1,5 +1,8 @@
 +#include <sys/types.h>
 +#include <sys/time.h>
  #include <string.h>
  #include <stdio.h>
++#include <stdlib.h>
  #include <signal.h>
-@@ -55,7 +57,7 @@ gboolean swallow(char* wantedWindow, Dis
+ #include <sys/wait.h>
+ 
+@@ -51,11 +54,11 @@ gboolean swallow(char* wantedWindow, Dis
+     struct timeval tv;
+     char ret;
+ 
+-    if(! display) return; /* WTF? */
++    if(! display) return FALSE; /* WTF? */
  
      XSync (display, FALSE);
  
@@ -15,7 +23,7 @@
      now = start = (double)tv.tv_sec + ((double)tv.tv_usec / 1000000.0);
  
      while (ready == FALSE && now < (start + 10.0))
-@@ -131,7 +133,7 @@ gboolean swallow(char* wantedWindow, Dis
+@@ -131,7 +134,7 @@ gboolean swallow(char* wantedWindow, Dis
          fprintf(stderr,"Loop");
          gtk_main_iteration_do(FALSE);
  
@@ -24,7 +32,7 @@
          now = (double)tv.tv_sec + ((double)tv.tv_usec / 1000000.0);
      }
  
-@@ -249,13 +251,13 @@ void exitProgram(GtkWidget* w, gpointer 
+@@ -249,13 +252,13 @@ void exitProgram(GtkWidget* w, gpointer 
  void forkApplet(struct AppletConfigure* ap)
  {
      if(ap->pid > -1) {
