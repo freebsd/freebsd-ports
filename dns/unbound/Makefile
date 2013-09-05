@@ -1,13 +1,9 @@
-# New ports collection makefile for:	unbound
-# Date created:				25 Apr 2008
-# Whom:					Sergey Matveychuk <sem@FreeBSD.org>
-#
+# Created by: Sergey Matveychuk <sem@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	unbound
 PORTVERSION=	1.4.20
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -49,13 +45,13 @@ OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN
 OPTIONS_DEFAULT=THREADS ECDSA
 
 OPTIONS_RADIO=	LIBEVENT
-OPTIONS_RADIO_LIBEVENT= LIBEVENT14 LIBEVENT20
+OPTIONS_RADIO_LIBEVENT=	LIBEVENT14 LIBEVENT20
 
 LIBEVENT_DESC=	Enable whenever using many (10000) outgoing ports
 LIBEVENT14_DESC=Build against libevent-1.4 (devel/libevent)
 LIBEVENT20_DESC=Build against libevent-2.0 (devel/libevent2)
-GOST_DESC=	Enable GOST support (requires OpenSSL from ports)
-ECDSA_DESC=	Enable ECDSA (elliptic curve) support
+GOST_DESC=	Enable GOST support (requires OpenSSL >= 1.0)
+ECDSA_DESC=	Enable ECDSA (elliptic curve) support (OpenSSL >= 1.0)
 MUNIN_DESC=	Install Munin plugin
 
 .include <bsd.port.options.mk>
@@ -73,14 +69,15 @@ PYTHON=		"@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGOST}
+. if ${OSVERSION} < 1000015
 WITH_OPENSSL_PORT=	yes
+. endif
 DEPENDS_ARGS+=	WITH_GOST=yes
 .else
 CONFIGURE_ARGS+=--disable-gost
 .endif
 
 .if ${PORT_OPTIONS:MECDSA}
-WITH_OPENSSL_PORT=yes
 DEPENDS_ARGS+=	WITH_ECDSA=yes
 .else
 CONFIGURE_ARGS+=--disable-ecdsa
@@ -133,7 +130,7 @@ post-install:
 	@${CAT} ${WRKDIR}/pkg-message
 	@${ECHO_MSG} "============================================================="
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}; \
 	for f in ${PORTDOCS}; do \
 		cd ${WRKSRC}/doc && ${INSTALL_DATA} $${f} ${DOCSDIR}/; \

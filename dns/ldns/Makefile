@@ -3,7 +3,7 @@
 
 PORTNAME=	ldns
 PORTVERSION=	1.6.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/ \
 		CRITICAL
@@ -268,7 +268,9 @@ PLIST_SUB+=	EXAMPLES="@comment "
 .endif # BUILD_PYLDNS
 
 .if ${PORT_OPTIONS:MGOST}
+. if ${OSVERSION} < 1000015
 BUILD_DEPENDS+=	openssl>=1.0:${PORTSDIR}/security/openssl
+. endif
 .else
 NO_GOST=	--disable-gost
 CONFIGURE_ARGS+=${NO_GOST}
