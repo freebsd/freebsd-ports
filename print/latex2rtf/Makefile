@@ -18,7 +18,8 @@ COMMENT=	Translator from LaTeX to RTF
 MAN1=		latex2rtf.1 latex2png.1
 INFO=		latex2rtf
 
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 
 INSTALL_TARGET=	install install-info
 

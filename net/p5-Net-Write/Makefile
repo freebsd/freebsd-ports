@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-Class-Gomor>=1.00:${PORTSDIR}/devel/p5-Class-Gomor \
 		p5-Net-Pcap>=0.14:${PORTSDIR}/net/p5-Net-Pcap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Net::Write.3 \
 	Net::Write::Layer.3 \

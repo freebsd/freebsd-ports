@@ -21,7 +21,8 @@ DIST_SUBDIR=	teTeX
 WRKSRC=		${WRKDIR}/tetex-src-${PORTVERSION}/texk/web2c
 CONFIGURE_WRKSRC=	${WRKDIR}/tetex-src-${PORTVERSION}
 USE_GMAKE=	yes
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	build
 
 TETEX_SRC=	tetex-src-${PORTVERSION}.tar.gz
 TETEX_TEXMF=	tetex-texmf-${PORTVERSION}.tar.gz

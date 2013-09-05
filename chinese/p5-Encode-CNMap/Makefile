@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Enhanced Chinese encodings with Simplified-Traditional auto-mapping
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		cnmap.1 cnmapdir.1 cnmapwx.1
 
