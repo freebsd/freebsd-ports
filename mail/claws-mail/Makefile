@@ -13,7 +13,7 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 USE_GNOME=	gtk20
-USES=		iconv pathfix pkgconfig
+USES=		iconv pathfix
 INSTALLS_ICONS=	yes
 
 MAN1=		claws-mail.1
