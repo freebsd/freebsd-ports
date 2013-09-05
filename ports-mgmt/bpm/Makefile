@@ -15,7 +15,8 @@ RUN_DEPENDS=	portupgrade:${PORTSDIR}/ports-mgmt/portupgrade \
   		gnomesu:${PORTSDIR}/security/libgnomesu \
 		gdialog:${PORTSDIR}/x11/zenity
 
-USE_GNOME=	gtk20 desktopfileutils
+USES=		desktop-file-utils pkgconfig
+USE_GNOME=	gtk20
 
 MAKE_ENV+=	OSTYPE="${OPSYS}"
 
@@ -32,6 +33,5 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/bpm.desktop ${PREFIX}/share/applications/bpm.desktop
-	@-update-desktop-database
 
 .include <bsd.port.mk>

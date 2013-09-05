@@ -31,10 +31,9 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 CONFLICTS=	anjuta-3.[0-9]*
 
 USE_BZIP2=	yes
-USES=		gmake gettext pathfix shebangfix shared-mime-info
+USES=		gmake gettext pathfix perl5 pkgconfig shebangfix shared-mime-info
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomeprefix vte gtksourceview2 libgda4
 USE_CSTD=	gnu89

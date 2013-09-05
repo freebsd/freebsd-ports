@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bigboard
-# Date created:		2008-05-28
-# Whom:			Ashish Shukla <wahjava@gmail.com>
-#
+# Created by: Ashish Shukla <wahjava@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	bigboard
 PORTVERSION=	0.5.38
@@ -29,7 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/desktop-data-engine:${PORTSDIR}/net/desktop-da
 		${LOCALBASE}/libdata/pkgconfig/gnome-python-2.0.pc:${PORTSDIR}/x11-toolkits/py-gnome2 \
 		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	2.5+
