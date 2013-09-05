@@ -11,7 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ecu@200ok.org
 COMMENT=	A module to deal with divert(4) sockets
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Divert.3
 

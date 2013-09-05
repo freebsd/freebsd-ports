@@ -16,7 +16,8 @@ COMMENT=	Decode sFlow datagrams
 
 LICENSE=	ART10
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::sFlow.3
 

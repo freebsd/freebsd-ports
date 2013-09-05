@@ -17,7 +17,8 @@ COMMENT=	A non-blocking traceroute client
 RUN_DEPENDS=	p5-POE>=0.11:${PORTSDIR}/devel/p5-POE
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	POE::Component::Client::Traceroute.3
 

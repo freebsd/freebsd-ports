@@ -16,7 +16,7 @@ COMMENT=	Program to generate OpenLDAP statistics reports
 RUN_DEPENDS=	p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 PLIST_FILES=	bin/ldap-stats
 

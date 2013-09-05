@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-POE>=0.31:${PORTSDIR}/devel/p5-POE \
 		p5-Devel-Symdump>=0:${PORTSDIR}/devel/p5-Devel-Symdump
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	POE::Component::Client::Telnet.3
 

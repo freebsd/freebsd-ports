@@ -18,7 +18,8 @@ RUN_DEPENDS=	\
 	p5-URI>0:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	URI::Match.3
 
