@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	0ad
-PORTVERSION=	0.0.13
-PORTREVISION=	1
+PORTVERSION=	0.0.14
 CATEGORIES=	games
 MASTER_SITES=	SF/zero-ad/releases
 DISTFILES=	${PORTNAME}-${PORTVERSION}-alpha-unix-build.tar.xz \
@@ -25,7 +24,7 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
 BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc
 MAKE_ARGS=	config=release
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_XZ=		yes
 USE_SDL=	sdl
 USE_GNOME=	libxml2 gtk20
@@ -44,6 +43,26 @@ MANUAL_PACKAGE_BUILD=	yes # huge
 PORTDATA=	*
 
 .include <bsd.port.pre.mk>
+
+# Taken from Mk/bsd.gnustep.mk
+.if exists(${DESTDIR}/usr/bin/clang)
+__CLANG!=		${DESTDIR}/usr/bin/clang --version | head -1 | \
+		${SED} -e 's/.*clang version \([0-9]\)\.\([0-9]\).*/\1\2/'
+.else
+__CLANG=		0
+
+.if ${__CLANG} < 33 && ${OSVERSION} > 900014
+BUILD_DEPENDS+= ${LOCALBASE}/bin/clang33:${PORTSDIR}/lang/clang33
+CPP=		${LOCALBASE}/bin/clang-cpp33
+CC=		${LOCALBASE}/bin/clang33
+CXX=		${LOCALBASE}/bin/clang++33
+.elif ${OSVERSION} < 900014
+USE_GCC=	yes
+.else
+CPP=		/usr/bin/clang-cpp
+CC=		/usr/bin/clang
+CXX=		/usr/bin/clang++
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' \
