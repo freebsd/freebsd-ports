@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/mono/gmime-sharp-2.4/gmime-sharp.dll:${PORTSDIR}/m
 		mautil:${PORTSDIR}/devel/mono-addins
 
 USE_XZ=		yes
-USES=		gettext gmake
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gnomehack intlhack gnomeprefix gnomedesktopsharp20
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
