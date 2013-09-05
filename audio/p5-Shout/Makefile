@@ -12,7 +12,7 @@ COMMENT=	Perl glue for libshout MP3 streaming source library
 
 LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2
 
-USES=		perl5
+USES=		perl5 pkgconfig
 USE_PERL5=	configure
 
 MAN3=		Shout.3
