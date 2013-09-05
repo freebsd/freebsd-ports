@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	clex
-PORTVERSION=	4.6.4
+PORTVERSION=	4.6.6
 CATEGORIES=	misc
 MASTER_SITES=	http://www.clex.sk/download/
+DISTNAME=	clex-4.6.patch6
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A command line file manager
