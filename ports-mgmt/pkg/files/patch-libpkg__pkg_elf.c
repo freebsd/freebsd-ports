@@ -1,8 +1,17 @@
-diff --git libpkg/pkg_elf.c libpkg/pkg_elf.c
-index 8ac65ba..2abfc0e 100644
---- libpkg/pkg_elf.c
-+++ libpkg/pkg_elf.c
-@@ -484,7 +484,7 @@ pkg_get_myarch(char *dest, size_t sz)
+--- ./libpkg/pkg_elf.c.orig	2013-07-06 05:48:19.000000000 -0500
++++ ./libpkg/pkg_elf.c	2013-09-05 06:33:00.416129335 -0500
+@@ -271,6 +271,10 @@
+ 			ret = EPKG_END; /* Some error occurred, ignore this file */
+ 			goto cleanup;
+ 		}
++		if (data->d_buf == NULL) {
++			ret = EPKG_END; /* No osname available */
++			goto cleanup;
++		}
+ 		osname = (const char *) data->d_buf + sizeof(Elf_Note);
+ 		if (strncasecmp(osname, "freebsd", sizeof("freebsd")) != 0 &&
+ 		    strncasecmp(osname, "dragonfly", sizeof("dragonfly")) != 0) {
+@@ -484,7 +488,7 @@
  	uint32_t version = 0;
  	int ret = EPKG_OK;
  	int i;
@@ -11,7 +20,7 @@ index 8ac65ba..2abfc0e 100644
  
  	if (elf_version(EV_CURRENT) == EV_NONE) {
  		pkg_emit_error("ELF library initialization failed: %s",
-@@ -569,10 +569,28 @@ pkg_get_myarch(char *dest, size_t sz)
+@@ -569,10 +573,28 @@
  		endian_corres_str = elf_corres_to_string(endian_corres,
  		    (int)elfhdr.e_ident[EI_DATA]);
  
