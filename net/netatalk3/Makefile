@@ -24,7 +24,6 @@ USE_RC_SUBR=	netatalk
 
 CONFIGURE_ARGS+=	--enable-tcp-wrappers \
 			--with-pkgconfdir=${PREFIX}/etc \
-			--with-libiconv=${LOCALBASE} \
 			--with-libgcrypt-dir=${LOCALBASE} \
 			--with-uams-path=${PREFIX}/libexec/netatalk-uams \
 			--with-bdb=${LOCALBASE} \
@@ -50,8 +49,6 @@ MAN5=		afp.conf.5 afp_signature.conf.5 afp_voluuid.conf.5 \
 MAN8=		afpd.8 cnid_dbd.8 cnid_metad.8 netatalk.8
 
 CONFLICTS=	bigloo-2.* cap-6.0.* tct-1.* netatalk-[12]* yudit-[0-9]*
-
-.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MKRB5}
 CONFIGURE_ARGS+=	--enable-krbV-uam
@@ -117,6 +114,12 @@ PLIST_SUB+=		DBUS="@comment "
 PLIST_SUB+=	ATFUNCS="@comment "
 .else
 PLIST_SUB+=	ATFUNCS=""
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if !empty(ICONV_LIB)
+CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE}
 .endif
 
 post-patch:

@@ -21,7 +21,6 @@ USE_RC_SUBR=	netatalk
 
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-pkgconfdir=${PREFIX}/etc \
-			--with-libiconv=${LOCALBASE} \
 			--with-libgcrypt-dir=${LOCALBASE} \
 			--with-uams-path=${PREFIX}/libexec/netatalk-uams \
 			--with-bdb=${LOCALBASE}
@@ -120,6 +119,12 @@ CONFIGURE_ARGS+=	--enable-sendfile
 CONFIGURE_ARGS+=	--disable-sendfile
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if !empty(ICONV_LIB)
+CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE}
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DB_NAME%%|${BDB_INCLUDE_DIR:T}| ; \
 	    	s|%%DB_LIB%%|-l${BDB_LIB_NAME}|g ; \
@@ -141,4 +146,4 @@ post-install:
 .endfor
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
