@@ -19,7 +19,7 @@ USE_GNOME=	gnomehack gtksharp20 gnomesharp20
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 MAN1=		mdtool.1 monodevelop.1
-USES=		desktop-file-utils gettext gmake
+USES=		desktop-file-utils gettext gmake pkgconfig
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	MONOEXT GIT SVN
