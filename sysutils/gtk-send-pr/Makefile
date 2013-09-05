@@ -13,6 +13,7 @@ COMMENT=	GTK2 send-pr tool
 
 LIB_DEPENDS=	esmtp.7:${PORTSDIR}/mail/libesmtp
 
+USES=		pkgconfig
 USE_GNOME=	gtk20
 
 MAN1=		gtk-send-pr.1

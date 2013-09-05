@@ -13,6 +13,7 @@ MASTER_SITES=	http://qstardict.ylsoftware.com/files/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Dictionary program written in Qt4
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_QT4=	gui network xml qmake_build uic_build moc_build rcc_build
 QMAKE_ARGS+=	-recursive
