@@ -19,8 +19,8 @@ LICENSE=	GPLv2
 
 EXTRACT_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
 
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_XORG=	xxf86dga
 ALL_TARGET=	release
 WRKSRC=		${WRKDIR}/${DISTNAME:S/quake2max/Quake2maX/}
@@ -112,6 +112,9 @@ post-patch:
 # Resolve name collision with jpeg-8
 	@${REINPLACE_CMD} -e 's|jpeg_mem_src|local_&|' \
 		${WRKSRC}/ref_gl/gl_image.c
+# Pacify Clang (non-void function should return a value)
+	@${REINPLACE_CMD} -e '900s|return|& false|' \
+		${WRKSRC}/client/qmenu.c
 
 do-install:
 	@${MKDIR} ${LIBDIR}/baseq2
