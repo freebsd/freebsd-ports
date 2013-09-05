@@ -16,7 +16,8 @@ MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Tool for sending messages through a RFC1861 compliant SNPP server
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 PLIST_FILES=	bin/sendSNPP.pl
 

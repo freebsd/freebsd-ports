@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
 		p5-Sys-User-UIDhelper>=0:${PORTSDIR}/sysutils/p5-Sys-User-UIDhelper \
 		p5-Sys-Group-GIDhelper>=0:${PORTSDIR}/sysutils/p5-Sys-Group-GIDhelper
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::LDAP::posixAccount.3
 

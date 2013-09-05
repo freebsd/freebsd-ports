@@ -15,7 +15,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 MAN3=		IO::Socket::Multicast.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 post-install:
 .ifndef(NOPORTEXAMPLES)
