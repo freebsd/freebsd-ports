@@ -15,7 +15,7 @@ LICENSE=	LGPL21
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix
+USES=		pathfix pkgconfig
 USE_EFL=	ecore eio edbus efreet embryo edje emotion ethumb \
 		libtool_hack librt_hack modarch_hack
 USE_LUA=	5.1+
