@@ -1,7 +1,4 @@
-# New ports collection makefile for:	CGI::Application::Plugin::ValidateRM
-# Date created:				08 Nov 2005
-# Whom:					Espen Tagestad <espen@tagestad.no>
-#
+# Created by: Espen Tagestad <espen@tagestad.no>
 # $FreeBSD$
 
 PORTNAME=	CGI-Application-Plugin-ValidateRM
@@ -15,7 +12,6 @@ COMMENT=	Help validate forms with the CGI::Application framework
 
 BUILD_DEPENDS=	p5-HTML-FillInForm>=0:${PORTSDIR}/www/p5-HTML-FillInForm \
 		p5-Data-FormValidator>=0:${PORTSDIR}/textproc/p5-Data-FormValidator \
-		p5-CGI-modules>=0:${PORTSDIR}/www/p5-CGI-modules \
 		p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
