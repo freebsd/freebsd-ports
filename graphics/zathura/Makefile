@@ -13,7 +13,7 @@ LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 		girara-gtk2:${PORTSDIR}/x11-toolkits/girara
 
 USE_GNOME=	glib20 gtk20
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 MAKE_ENV=	SFLAGS="${STRIP}"
 
 OPTIONS_DEFINE=	DOCS NLS SQLITE
