@@ -3,6 +3,7 @@
 
 PORTNAME=	Socket-GetAddrInfo
 PORTVERSION=	0.22
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,17 +18,11 @@ MAN1=		getaddrinfo.1 \
 
 MAN3=		Socket::GetAddrInfo.3 \
 		Socket::GetAddrInfo::Emul.3 \
-		Socket::GetAddrInfo::Socket6api.3
+		Socket::GetAddrInfo::Socket6api.3 \
+		Socket::GetAddrInfo::Strict.3
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
+SHEBANG_FILES=	bin/getaddrinfo bin/getnameinfo
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501400
-PLIST_SUB+=	OLD_PERL="" NEW_PERL="@comment "
-.else
-PLIST_SUB+=	OLD_PERL="@comment " NEW_PERL=""
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
