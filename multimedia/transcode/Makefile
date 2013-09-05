@@ -199,7 +199,7 @@ CONFIGURE_ARGS+=	--disable-libjpeg
 
 .if ${PORT_OPTIONS:MICONV}
 USES+=		iconv
-CONFIGURE_ARGS+=	--with-iconv-prefix=${LOCALBASE} --enable-iconv
+CONFIGURE_ARGS+=	--enable-iconv ${ICONV_CONFIGURE_ARG}
 .else
 CONFIGURE_ARGS+=	--disable-iconv
 .endif
