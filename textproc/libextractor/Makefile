@@ -12,7 +12,7 @@ MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Library for keyword extraction
 
 USE_GNOME=	glib20 gtk20
-USES=	pathfix
+USES=		pathfix pkgconfig
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
