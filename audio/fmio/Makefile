@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fmio
-# Date created:				10 Feb 2001
-# Whom:					Den Ivanov <d.s.div@bigfoot.com>
-#
+# Created by: Den Ivanov <d.s.div@bigfoot.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fmio
 PORTVERSION=	2.0.8
@@ -11,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.aliasnet.ru/~pva/src/fmio/ \
 		http://www.jumbo.narod.ru/src/fmio/
 
-MAINTAINER=	kunia@istc.kiev.ua
+MAINTAINER=	ports@FreeBSSD.org
 COMMENT=	FM radio card manipulation utility
 
 MAN1=		fmio.1
