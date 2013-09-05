@@ -12,6 +12,8 @@ COMMENT=	A data backend for Hiera that queries the Puppet scope for data
 RUN_DEPENDS=	puppet>=0:${PORTSDIR}/sysutils/puppet \
 		rubygem-hiera>=1.0:${PORTSDIR}/sysutils/rubygem-hiera
 
+CONFLICTS=	puppet-3.*
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
