@@ -4921,3 +4921,4 @@ devel/libgiigic||2013-09-01|Has expired: Unmaintained
 games/koth||2013-09-01|Has expired: Unmaintained
 www/p5-Catalyst-Plugin-Unicode-Encoding||2013-09-04|Has expired: This module now part of core Catalyst distribution
 databases/phpmyadmin35|databases/phpmyadmin|2013-09-04|Has expired: Has unresolved security problems: http://www.phpmyadmin.net/home_page/security/PMASA-2013-10.php
+devel/avr-gcc-3||2013-09-04|Maintaining a GCC 3.x for AVR is no longer useful
