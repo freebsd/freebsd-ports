@@ -15,9 +15,8 @@ COMMENT=	GXmame is a GTK frontend for xmame
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 
-USES=		pathfix
+USES=		pathfix gmake pkgconfig
 USE_GNOME=	gtk20 intlhack gnomeprefix
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib

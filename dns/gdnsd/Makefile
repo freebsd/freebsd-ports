@@ -19,6 +19,7 @@ OPTIONS_DEFINE=	GEOIP
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_XZ=		yes
+USES=		pkgcofnig
 
 MAN1=		gdnsd_geoip_test.1
 MAN3=		gdnsd-plugin-api.3

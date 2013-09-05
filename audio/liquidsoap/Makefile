@@ -71,7 +71,7 @@ NO_OCAML_RUNDEPENDS=	yes
 USE_AUTOTOOLS=	autoconf:env automake:env
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
-USES=		gmake
+USES=		gmake pkgconfig
 
 CONFIGURE_ARGS=	--disable-gui --localstatedir=/var
 CFLAGS+=	-I${LOCALBASE}/${OCAML_LIBDIR}

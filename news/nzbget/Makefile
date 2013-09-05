@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		sigc-2:${PORTSDIR}/devel/libsigc++20
 
+USES=		gmake pkgconfig
 USE_RC_SUBR=	nzbget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
@@ -21,7 +22,6 @@ MAKE_JOBS_UNSAFE=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	${PTHREAD_LIBS}
 CFLAGS+=	${PTHREAD_CFLAGS}
-USE_GMAKE=	yes
 
 PAR_DESC=	Support verifying/repairing with par2 files
 OPTIONS_DEFINE=	PAR
