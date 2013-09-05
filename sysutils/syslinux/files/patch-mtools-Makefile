@@ -1,11 +1,12 @@
---- mtools/Makefile.orig	2011-12-09 19:28:17.000000000 +0100
-+++ mtools/Makefile	2012-08-16 10:09:08.429505540 +0200
-@@ -1,8 +1,8 @@
+--- mtools/Makefile.orig	2013-07-25 18:28:59.000000000 +0900
++++ mtools/Makefile	2013-09-05 16:42:35.000000000 +0900
+@@ -2,9 +2,9 @@
+ MAKEDIR = $(topdir)/mk
  include $(MAKEDIR)/syslinux.mk
  
 -OPTFLAGS = -g -Os
 +#OPTFLAGS = -g -Os
- INCLUDES = -I$(SRC) -I$(objdir) -I$(SRC)/../libfat -I$(SRC)/../libinstaller
+ INCLUDES = -I. -I.. -I../libfat -I../libinstaller
 -CFLAGS	 = $(GCCWARN) -D_FILE_OFFSET_BITS=64 $(OPTFLAGS) $(INCLUDES)
 +CFLAGS	 += $(GCCWARN) -D_FILE_OFFSET_BITS=64 $(OPTFLAGS) $(INCLUDES)
  LDFLAGS	 = 

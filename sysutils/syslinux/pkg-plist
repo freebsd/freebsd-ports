@@ -3,7 +3,6 @@ bin/syslinux
 %%DATADIR%%/chain.c32
 %%DATADIR%%/cmd.c32
 %%DATADIR%%/config.c32
-%%DATADIR%%/cptime.c32
 %%DATADIR%%/cpuid.c32
 %%DATADIR%%/cpuidtest.c32
 %%DATADIR%%/disk.c32
@@ -15,7 +14,6 @@ bin/syslinux
 %%DATADIR%%/gpxecmd.c32
 %%DATADIR%%/gpxelinux.0
 %%DATADIR%%/hdt.c32
-%%DATADIR%%/hexdump.c32
 %%DATADIR%%/host.c32
 %%DATADIR%%/ifcpu.c32
 %%DATADIR%%/ifcpu64.c32
@@ -24,10 +22,6 @@ bin/syslinux
 %%DATADIR%%/isolinux.bin
 %%DATADIR%%/kbdmap.c32
 %%DATADIR%%/kontron_wdt.c32
-%%DATADIR%%/ldlinux.c32
-%%DATADIR%%/libcom32.c32
-%%DATADIR%%/liblua.c32
-%%DATADIR%%/libmenu.c32
 %%DATADIR%%/linux.c32
 %%DATADIR%%/ls.c32
 %%DATADIR%%/lua.c32
@@ -38,7 +32,6 @@ bin/syslinux
 %%DATADIR%%/menu.c32
 %%DATADIR%%/pcitest.c32
 %%DATADIR%%/pmload.c32
-%%DATADIR%%/poweroff.c32
 %%DATADIR%%/prdhcp.c32
 %%DATADIR%%/pwd.c32
 %%DATADIR%%/pxechn.c32
