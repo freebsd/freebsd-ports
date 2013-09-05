@@ -10,8 +10,6 @@ libexec/bpm/fetch-wrapper
 %%DATADIR%%/pixmaps/lock_48.png
 share/locale/en_CA/LC_MESSAGES/bpm.mo
 share/applications/bpm.desktop
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrm libexec/bpm
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
