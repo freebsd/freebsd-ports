@@ -14,13 +14,13 @@ COMMENT=	A poker game written in C++/QT4
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
-		mikmod:${PORTSDIR}/audio/libmikmod \
-		gnutls:${PORTSDIR}/security/gnutls \
-		curl:${PORTSDIR}/ftp/curl \
-		gsasl:${PORTSDIR}/security/gsasl \
-		tinyxml:${PORTSDIR}/textproc/tinyxml \
-		protobuf:${PORTSDIR}/devel/protobuf
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libmikmod.so:${PORTSDIR}/audio/libmikmod \
+		libgnutls.so:${PORTSDIR}/security/gnutls \
+		libcurl.so:${PORTSDIR}/ftp/curl \
+		libgsasl.so:${PORTSDIR}/security/gsasl \
+		libtinyxml.so:${PORTSDIR}/textproc/tinyxml \
+		libprotobuf.so:${PORTSDIR}/devel/protobuf
 BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:${PORTSDIR}/irc/libircclient
 
 USES=		iconv gmake
@@ -40,6 +40,7 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|/usr([a-z|/]*)|${LOCALBASE}/\1|g' \
 		-e 's|(-lcurl)|\1 ${ICONV_LIB}|g' \
+		-e 's|(-lcrypto) -liconv|\1 ${ICONV_LIB}|' \
 		-e 's:boost_([a-z]+)-[-|a-z|0-9|_]*:boost_\1:g' \
 		-e 's|LIB_DIRS =.*|LIB_DIRS = ${LOCALBASE}/lib|g' \
 		-e '/.*QMAKE_CXXFLAGS.*/d' \
