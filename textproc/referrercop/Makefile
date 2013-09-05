@@ -1,17 +1,16 @@
-# New ports collection makefile for:    referrercop
-# Date created:        21 June 2005
-# Whom:                Ryan Grove <ryan@wonko.com>
-#
+# Created by: Ryan Grove <ryan@wonko.com>
 # $FreeBSD$
-#
 
 PORTNAME=	referrercop
 PORTVERSION=	1.1.0
 CATEGORIES=	textproc www ruby
 MASTER_SITES=	http://wonko.com/files/
 
-MAINTAINER=	ryan@wonko.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filters referrer spam from Apache logs and AWStats data files
+
+DEPRECATED=	distfile unfetchable
+EXPIRATION_DATE=2014-01-01
 
 NO_BUILD=		yes
 USE_RUBY=		yes
