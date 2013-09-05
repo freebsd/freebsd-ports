@@ -512,6 +512,7 @@
     SUBDIR += p5-Data-Password
     SUBDIR += p5-Digest
     SUBDIR += p5-Digest-Adler32
+    SUBDIR += p5-Digest-Bcrypt
     SUBDIR += p5-Digest-BubbleBabble
     SUBDIR += p5-Digest-CRC
     SUBDIR += p5-Digest-Crc32

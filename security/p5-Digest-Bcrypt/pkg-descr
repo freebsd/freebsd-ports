@@ -1,0 +1,8 @@
+Provides an interface to the bcrypt digest algorithm.
+
+This module subclasses Digest::base and can be used either directly or
+through the Digest meta-module. Using the latter is recommended.
+
+It is mostly a wrapper around Crypt::Eksblowfish::Bcrypt.
+
+WWW: https://metacpan.org/module/Digest::Bcrypt
