@@ -13,9 +13,11 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Enhanced OpenGL-only Quake II engine
 
+LICENSE=	GPLv2
+
+USES=		gmake
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
-USE_GMAKE=	yes
 MAKEFILE=	makefile
 NO_WRKSUBDIR=	yes
 
@@ -33,11 +35,10 @@ GAME_DESC=	Build main game (default mod)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png
 USE_GL=		gl
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
-MAKE_ENV*=	CFLAGS="${CFLAGS}"
 PLIST_SUB+=	CLIENT=""
 EGL_BIN+=	egl
 .else
@@ -65,10 +66,13 @@ PLIST_SUB+=	GAME="@comment "
 MAKE_ENV+=	WITH_OPT_CFLAGS=NO
 .endif
 
+# Fix the build against Clang
+post-patch:
+	@${REINPLACE_CMD} -e '145s/return qFalse/return/' \
+		${WRKSRC}/unix/unix_snd_main.c
+
 do-install:
-.for f in ${EGL_BIN}
-	${INSTALL_PROGRAM} ${WRKSRC}/release/${f} ${PREFIX}/bin
-.endfor
+	${INSTALL_PROGRAM} ${EGL_BIN:S,^,${WRKSRC}/release/,} ${PREFIX}/bin
 	@${MKDIR} ${LIBDIR}/baseq2
 	${INSTALL_PROGRAM} ${WRKSRC}/release/baseq2/*.so ${LIBDIR}/baseq2
 	${INSTALL_DATA} ${DISTDIR}/egl.pkz ${LIBDIR}/baseq2
