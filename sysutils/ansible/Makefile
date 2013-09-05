@@ -10,10 +10,17 @@ COMMENT=	Simple ssh-based configuration management and orchestration system
 
 LICENSE=	GPLv3
 
+OPTIONS_DEFINE=	EXAMPLES FIREBALL
+
+FIREBALL_DESC=	Enable fireball mode
+FIREBALL_RUN_DEPENDS= ${PYTHON_PKGNAMEPREFIX}asn1>=0:${PORTSDIR}/devel/py-asn1 \
+	${PYTHON_PKGNAMEPREFIX}pyzmq>=0:${PORTSDIR}/devel/py-pyzmq \
+	${PYTHON_PKGNAMEPREFIX}pypycrypto>=0:${PORTSDIR}/security/py-pycrypto \
+	${PYTHON_PKGNAMEPREFIX}keyczar>=0:${PORTSDIR}/security/py-keyczar
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}paramiko>=0:${PORTSDIR}/security/py-paramiko \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:${PORTSDIR}/devel/py-Jinja2
-
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	-2.7
