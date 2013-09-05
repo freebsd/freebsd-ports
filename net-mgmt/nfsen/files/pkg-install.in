@@ -8,7 +8,7 @@ if [ "$2" = "POST-INSTALL" ]; then
 /usr/bin/printf "<?php
 /* This file was automatically created by the NfSen %%PORTVERSION%% install.pl script */
 
-\$COMMSOCKET = "%%PREFIX%%/var/nfsen/run/nfsen.comm";
+\$COMMSOCKET = \"%%PREFIX%%/var/nfsen/run/nfsen.comm\";
 
 \$DEBUG=0;
 
