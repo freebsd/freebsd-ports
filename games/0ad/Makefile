@@ -50,6 +50,7 @@ __CLANG!=		${DESTDIR}/usr/bin/clang --version | head -1 | \
 		${SED} -e 's/.*clang version \([0-9]\)\.\([0-9]\).*/\1\2/'
 .else
 __CLANG=		0
+.endif
 
 .if ${__CLANG} < 33 && ${OSVERSION} > 900014
 BUILD_DEPENDS+= ${LOCALBASE}/bin/clang33:${PORTSDIR}/lang/clang33
