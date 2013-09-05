@@ -14,7 +14,8 @@ COMMENT=	Perl module with object interface to AF_INET6 domain sockets
 BUILD_DEPENDS=	p5-Socket6>=0.12:${PORTSDIR}/net/p5-Socket6
 RUN_DEPENDS=	p5-Socket6>=0.12:${PORTSDIR}/net/p5-Socket6
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		IO::Socket::INET6.3
 

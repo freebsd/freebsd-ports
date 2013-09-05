@@ -17,7 +17,8 @@ COMMENT=	Scriptable telnet-based virtual users
 BUILD_DEPENDS=	p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		OurNet::BBSAgent.3
 

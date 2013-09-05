@@ -18,7 +18,8 @@ COMMENT=	Make a hash out of the return from a search using Net::LDAP::Search
 BUILD_DEPENDS=	p5-perl-ldap>=0.39:${PORTSDIR}/net/p5-perl-ldap
 RUN_DEPENDS=	p5-perl-ldap>=0.39:${PORTSDIR}/net/p5-perl-ldap
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::LDAP::LDAPhash.3
 

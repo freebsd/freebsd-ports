@@ -18,7 +18,8 @@ LIB_DEPENDS=	yaz.4:${PORTSDIR}/net/yaz
 BUILD_DEPENDS=	p5-MARC-Record>=1.38:${PORTSDIR}/textproc/p5-MARC-Record
 RUN_DEPENDS=	p5-MARC-Record>=1.38:${PORTSDIR}/textproc/p5-MARC-Record
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Z3950::ZOOM.3 ZOOM.3
 

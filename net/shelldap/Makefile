@@ -17,7 +17,7 @@ RUN_DEPENDS=	p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
 		p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu \
 		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
 
-USE_PERL5=	yes
+USES=		perl5
 
 MAN1=		shelldap.1
 
