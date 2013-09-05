@@ -608,6 +608,9 @@
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_stmusic.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_stmusic.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_stmusic.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_torrent411.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_torrent411.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_torrent411.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_torrentleech.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_torrentleech.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_torrentleech.pyo
