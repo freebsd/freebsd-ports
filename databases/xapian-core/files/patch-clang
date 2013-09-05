@@ -1,0 +1,10 @@
+--- common/safeuuid.h.orig	2013-04-17 02:03:07.000000000 +0200
++++ common/safeuuid.h	2013-09-05 11:38:33.778061038 +0200
+@@ -54,6 +54,7 @@
+ #else
+ 
+ // FreeBSD/NetBSD UUID API.
++# include <stdlib.h>
+ # include <uuid.h>
+ # include <cstring>
+ # include <exception>
