@@ -17,6 +17,7 @@ LICENSE=	GPLv2
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_EFL=	eina
 USE_GSTREAMER=	good ffmpeg
 USE_LDCONFIG=	yes
