@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netdisco
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF
 
@@ -31,7 +31,7 @@ RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
 USERS=		netdisco
 GROUPS=		netdisco
 
-USE_PERL5=	yes
+USES=		perl5
 USE_PGSQL=	yes
 USE_APACHE_RUN=	22+
 
