@@ -150,9 +150,6 @@ bin/beet
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
-%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/test.pyo
-%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/test.pyc
-%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/test.py
 %%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/smartplaylist.pyo
 %%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/smartplaylist.pyc
 %%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%/beetsplug/smartplaylist.py
