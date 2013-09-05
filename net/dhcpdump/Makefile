@@ -16,7 +16,8 @@ COMMENT=	Decode and diagnose sniffed DHCP packets
 MAN8=		dhcpdump.8
 PLIST_FILES=	bin/dhcpdump
 
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	build
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dhcpdump ${PREFIX}/bin

@@ -17,7 +17,7 @@ COMMENT=	A Web-based graphical ping log
 RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 
-USE_PERL5=	yes
+USES=		perl5
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
