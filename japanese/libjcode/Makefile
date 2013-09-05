@@ -7,7 +7,7 @@ CATEGORIES=	japanese net
 MASTER_SITES=	http://keemun.soraneko.com/gtkicq/archives/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	stanaka@bb.mbn.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese charset conversion library
 
 MAKE_ARGS=	CC=${CC}
