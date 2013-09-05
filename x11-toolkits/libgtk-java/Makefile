@@ -14,7 +14,7 @@ COMMENT=	Java wrapper for Gtk+, Pango, Atk, and Glib
 LIB_DEPENDS=	cairojni-${CAIRO_API_VERSION}.1:${PORTSDIR}/graphics/cairo-java
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes

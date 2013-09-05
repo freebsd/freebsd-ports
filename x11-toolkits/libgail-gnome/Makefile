@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An implementation of the ATK interfaces for GNOME widgets
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 GNOME_DESKTOP_VERSION=2
