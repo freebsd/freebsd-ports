@@ -1,0 +1,10 @@
+# $FreeBSD$
+
+LIB=	ipv6
+SRCS=	libipv6.c
+
+.PATH: ${.CURDIR}/../tools
+
+install:
+
+.include <bsd.lib.mk>
