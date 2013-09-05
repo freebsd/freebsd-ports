@@ -7,7 +7,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpadlibrarian.net/137290048/ \
 		http://pazzle.otdux.com.ua/
 
-MAINTAINER=	fidaj@ukr.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cairo-Dock is a light and eye-candy dock
 
 LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \

@@ -7,7 +7,7 @@ MASTER_SITES=	https://launchpadlibrarian.net/137290159/ \
 		http://pazzle.otdux.com.ua/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ICONS_PACKAGE}${EXTRACT_SUFX}
 
-MAINTAINER=	fidaj@ukr.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cairo-Dock-Plugins for Cairo-Dock
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
