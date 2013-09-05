@@ -22,8 +22,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		perl5
 USE_PERL5=	configure
-#CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2" \
-#		LIBS="-L${LOCALBASE}/lib"
 
 MAN3=		XML::LibXSLT.3
 
