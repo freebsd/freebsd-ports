@@ -18,7 +18,7 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 		exif:${PORTSDIR}/graphics/libexif
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GL=		glu
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

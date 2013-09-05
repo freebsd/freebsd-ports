@@ -21,10 +21,9 @@ USE_BZIP2=	yes
 .if !defined(REFERENCE_PORT)
 
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libgda3 gtksourceview \
 		intlhack referencehack
-USES=		gettext
+USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes

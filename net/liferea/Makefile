@@ -16,7 +16,7 @@ LIB_DEPENDS=	webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2 \
 		json-glib-1.0:${PORTSDIR}/devel/json-glib
 
 USE_BZIP2=	yes
-USES=		gmake pathfix
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	gnomeprefix gconf2
 USE_AUTOTOOLS=	libtool
 USE_SQLITE=	3
