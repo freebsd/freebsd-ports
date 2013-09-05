@@ -7,14 +7,12 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Collection of DOM Implementations
+COMMENT=	Collection of DOM Implementations
 
-LIB_DEPENDS=	gdome:${PORTSDIR}/textproc/gdome2
+LIB_DEPENDS=	libgdome.so:${PORTSDIR}/textproc/gdome2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gmake
 USE_GNOME=	glib20 libxml2
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -34,6 +32,9 @@ PLIST_SUB+=	OCAML=""
 CONFIGURE_ARGS+=	HAVE_OCAMLDEP=no HAVE_OCAMLFIND=no HAVE_OCAMLOPT=no
 PLIST_SUB+=	OCAML="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/-lstdc++//g' ${WRKSRC}/src/gdome_cpp_smart/Makefile.in
 
 # Shim to clean-up a previous bad install - this can be removed
 # PORTVERSION > 0.2.6 along with the associated pkg-plist @exec
