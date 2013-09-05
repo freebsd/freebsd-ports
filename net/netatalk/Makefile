@@ -122,7 +122,7 @@ CONFIGURE_ARGS+=	--disable-sendfile
 .include <bsd.port.pre.mk>
 
 .if !empty(ICONV_LIB)
-CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
 .endif
 
 post-patch:

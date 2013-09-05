@@ -119,7 +119,7 @@ PLIST_SUB+=	ATFUNCS=""
 .include <bsd.port.pre.mk>
 
 .if !empty(ICONV_LIB)
-CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
 .endif
 
 post-patch:
