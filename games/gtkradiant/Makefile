@@ -16,13 +16,13 @@ COMMENT=	Level design program developed by id Software and Loki Software
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libsvn/__init__.py:${PORTSDIR}/devel/py-subversion
-LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
-		mhash.2:${PORTSDIR}/security/mhash \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
+		libmhash.so:${PORTSDIR}/security/mhash \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/GPL/GtkRadiant
 
+USES=		pkgconfig
 USE_ZIP=	yes
 USE_GNOME=	gtk20 libxml2
 USE_PYTHON_BUILD=	yes
@@ -49,14 +49,19 @@ post-patch:
 		${WRKSRC}/radiant/patch.cpp \
 		${WRKSRC}/radiant/watchbsp.cpp \
 		${WRKSRC}/tools/quake3/common/inout.c
+	@${REINPLACE_CMD} -e '/#include "generic\/reference.h"/x ; 318G' \
+		${WRKSRC}/libs/scenelib.h
+	@${REINPLACE_CMD} -e '/#include "generic\/referencecounted.h/ { \
+		x ; s/^/#include "scenelib.h"/ ; G ; }' \
+			${WRKSRC}/plugins/mapq3/parse.h
 
 post-build:
 	cd ${WRKSRC} && ${PYTHON_CMD} install.py
-	${CP} -R ${WRKDIR}/${PORTNAME}_gamepacks/* ${WRKSRC}/install
+	${CP} -a ${WRKDIR}/${PORTNAME}_gamepacks/* ${WRKSRC}/install
 
 do-install:
 	@${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/install/* ${DATADIR}
+	${CP} -a ${WRKSRC}/install/* ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.mk>
