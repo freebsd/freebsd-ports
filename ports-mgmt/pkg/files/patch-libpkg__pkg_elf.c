@@ -43,16 +43,3 @@ index 8ac65ba..2abfc0e 100644
  		break;
  	case EM_MIPS:
  		/*
-diff --git newvers.sh newvers.sh
-index 8eefca3..30241fa 100755
---- newvers.sh
-+++ newvers.sh
-@@ -41,7 +41,7 @@
- : ${PKG_MINOR_VERSION="1"}
- : ${PKG_PATCH_LEVEL="4"}
- 
--: ${PORTREVISION:=}
-+: ${PORTREVISION:=1}
- : ${PORTEPOCH:=}
- 
- # ------------------------------------------------------------------
