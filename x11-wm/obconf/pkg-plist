@@ -5,20 +5,43 @@ share/mimelnk/application/x-openbox-theme.desktop
 share/mime/packages/obconf.xml
 %%DATADIR%%/obconf.glade
 %%DATADIR%%/video-display.png
+%%NLS%%share/locale/ar/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/be/LC_MESSAGES/obconf.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/da/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/de/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/el/LC_MESSAGES/obconf.mo
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/obconf.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/obconf.mo
 %%NLS%%share/locale/es/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/et/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/obconf.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/he/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/obconf.mo
 %%NLS%%share/locale/it/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/obconf.mo
 %%NLS%%share/locale/no/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/sr@latin/LC_MESSAGES/obconf.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/obconf.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/obconf.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/obconf.mo
 %%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en@boldquot
 %%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en@quot
+%%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sr@latin
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrmtry share/mimelnk/application

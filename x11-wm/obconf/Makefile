@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	obconf
-PORTVERSION=	2.0.3
-PORTREVISION=	8
+PORTVERSION=	2.0.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://openbox.org/dist/obconf/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Preferences manager for the Openbox window manager
 
-LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		obrender.27:${PORTSDIR}/x11-wm/openbox
+LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
+		obrender:${PORTSDIR}/x11-wm/openbox
 
 USES=		pkgconfig
 USE_GNOME=	gnomehier libglade2
