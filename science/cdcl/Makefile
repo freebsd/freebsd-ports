@@ -12,6 +12,7 @@ DISTNAME=	dcl-${PORTVERSION}-C
 MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	Scientific graphic library for geoscience
 
+USES=		pkgconfig
 USE_GCC=	any
 USE_XORG=	x11 xext
 USE_GNOME=	gtk20 gdkpixbuf2
