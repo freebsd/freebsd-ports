@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	Mojolicious
-PORTVERSION=	4.30
+PORTVERSION=	4.31
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mopsfelder@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A high level MVC web framework written in Perl
 
 LICENSE=	ART20
