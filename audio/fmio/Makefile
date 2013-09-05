@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.aliasnet.ru/~pva/src/fmio/ \
 		http://www.jumbo.narod.ru/src/fmio/
 
-MAINTAINER=	ports@FreeBSSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FM radio card manipulation utility
 
 MAN1=		fmio.1
