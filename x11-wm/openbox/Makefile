@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openbox
-PORTVERSION=	3.5.0
-PORTREVISION=	3
+PORTVERSION=	3.5.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://openbox.org/dist/openbox/
 
@@ -48,7 +47,7 @@ CONFIGURE_ARGS+=	--disable-pango
 .endif
 
 .if !defined(WITHOUT_STARTUP_NOTIFICATION)
-LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS+=	startup-notification-1:${PORTSDIR}/x11/startup-notification
 .else
 CONFIGURE_ARGS+=	--disable-startup-notification
 .endif
