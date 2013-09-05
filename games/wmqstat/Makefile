@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmQStat
-# Date created:				25 Apr 2003
-# Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
-#
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	wmqstat
 PORTVERSION=	0.0.4
@@ -12,7 +8,9 @@ CATEGORIES=	games windowmaker
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/wmQStat%20${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	A dockapp for monitoring of various Internet game servers
+COMMENT=	Dockapp for monitoring of various Internet game servers
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 
@@ -21,9 +19,17 @@ USE_XORG=	xpm x11 xext
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+# Unbreak the build against Clang
+post-patch:
+	@${REINPLACE_CMD} -e 's, inline,,' ${WRKSRC}/wmgeneral/list.h
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
