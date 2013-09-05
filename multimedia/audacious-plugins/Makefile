@@ -12,7 +12,7 @@ COMMENT=	Plugins needed for audacious
 BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
