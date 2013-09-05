@@ -32,17 +32,19 @@ etc/xdg/openbox/rc.xml
 lib/libobrender.a
 lib/libobrender.la
 lib/libobrender.so
-lib/libobrender.so.27
+lib/libobrender.so.29
 lib/libobt.a
 lib/libobt.la
 lib/libobt.so
-lib/libobt.so.0
+lib/libobt.so.2
 libdata/pkgconfig/obrender-%%VERSION%%.pc
 libdata/pkgconfig/obt-%%VERSION%%.pc
 libexec/openbox-autostart
 libexec/openbox-xdg-autostart
 share/applications/openbox.desktop
 share/gnome/wm-properties/openbox.desktop
+share/gnome-session/sessions/openbox-gnome.session
+share/gnome-session/sessions/openbox-gnome-fallback.session
 share/pixmaps/openbox.png
 share/themes/Artwiz-boxed/openbox-3/themerc
 share/themes/Clearlooks-3.4/openbox-3/themerc
@@ -107,21 +109,25 @@ share/xsessions/openbox-kde.desktop
 %%DOCSDIR%%/xbm/max.xbm
 %%DOCSDIR%%/xbm/shade_toggled.xbm
 %%DOCSDIR%%/xbm/shade.xbm
+%%NLS%%share/locale/af/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/be/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/bn_IN/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/da/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/de/LC_MESSAGES/openbox.mo
-%%NLS%%share/locale/en@quot/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/es/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/et/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/he/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/ia/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/it/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/openbox.mo
@@ -131,6 +137,7 @@ share/xsessions/openbox-kde.desktop
 %%NLS%%share/locale/pl/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/openbox.mo
@@ -138,15 +145,17 @@ share/xsessions/openbox-kde.desktop
 %%NLS%%share/locale/sv/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/openbox.mo
-%%NLS%%share/locale/vi/LC_MESSAGES/openbox.mo
 %%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/bn_IN
-%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@quot
 %%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en@boldquot
+%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en@quot
+%%NLS%%@dirrmtry share/locale/ia/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ia
 @dirrm %%DOCSDIR%%/xbm
 @dirrm %%DOCSDIR%%
 @dirrm share/themes/Artwiz-boxed/openbox-3
@@ -180,5 +189,7 @@ share/xsessions/openbox-kde.desktop
 @dirrm include/openbox
 @dirrm etc/xdg/openbox
 @dirrmtry etc/xdg
+@dirrmtry share/gnome-session/sessions
+@dirrmtry share/gnome-session
 @dirrmtry share/xsessions
 @dirrmtry share/applications
