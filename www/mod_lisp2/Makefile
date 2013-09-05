@@ -10,6 +10,8 @@ MASTER_SITES=	http://freebsd.minira.nl/
 MAINTAINER=	viktor.leis@googlemail.com
 COMMENT=	Apache2 module for use with Common Lisp
 
+DEPRECATED=	distfile unfetchable
+EXPIRATION_DATE=2014-01-01
 
 USE_APACHE=	22
 AP_FAST_BUILD=	yes
