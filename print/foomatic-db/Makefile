@@ -23,7 +23,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 
 PROJECTHOST=	bsdistfiles
 USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		perl5
 USE_AUTOTOOLS=	automake:env autoconf
 
 GNU_CONFIGURE=	yes

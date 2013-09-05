@@ -17,7 +17,8 @@ COMMENT=	Perl extension for creating ARP packets
 
 BUILD_DEPENDS=	p5-Net-Pcap>=0:${PORTSDIR}/net/p5-Net-Pcap
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

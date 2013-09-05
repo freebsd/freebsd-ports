@@ -16,7 +16,8 @@ COMMENT=	Utilities for manipulating PostScript documents
 
 LIB_DEPENDS=	paper:${PORTSDIR}/print/libpaper
 
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	Makefile.unix
 MAKE_ENV+=	DATADIR="${DATADIR}" PERL="${PERL5}" CHMOD="${CHMOD}"

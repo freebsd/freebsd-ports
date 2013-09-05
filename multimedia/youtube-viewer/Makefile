@@ -25,7 +25,8 @@ RUN_DEPENDS=	p5-XML-Fast>=0:${PORTSDIR}/net/p5-XML-Fast \
 		mplayer:${PORTSDIR}/multimedia/mplayer
 
 PROJECTHOST=	trizen
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 PLIST_FILES=	bin/youtube-viewer
 

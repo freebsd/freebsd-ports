@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Extra sets of Chinese encodings
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Encode::HanExtra.3 Encode::TW::Unisys::SOSI1.3 Encode::TW::Unisys::SOSI2.3
 

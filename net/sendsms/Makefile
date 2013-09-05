@@ -22,7 +22,7 @@ CONFLICTS=	gnokii-[0-9]* smstools-[0-9]*
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL},g" ${WRKSRC}/${PORTNAME}

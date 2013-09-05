@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-Proc-Simple>=0:${PORTSDIR}/devel/p5-Proc-Simple \
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-USE_PERL5=	yes
+USES=		perl5
 PLIST_FILES=	bin/x2goclient-cli
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S,-1.2,,}
 NO_BUILD=	yes

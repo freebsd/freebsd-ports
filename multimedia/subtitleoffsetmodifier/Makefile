@@ -15,7 +15,8 @@ DISTFILES=	subtitle-offset-modificator.pl
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Subtitle offset modificator
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 PLIST_FILES=	bin/subtitle-offset-modificator
 
