@@ -221,7 +221,6 @@
     SUBDIR += libflame
     SUBDIR += libjbigi
     SUBDIR += liblbfgs
-    SUBDIR += libmath++
     SUBDIR += libmissing
     SUBDIR += libneural
     SUBDIR += libocas
