@@ -27,8 +27,6 @@ USE_XORG=	x11
 CYR_RFX_ENCODING?=	koi8-o
 
 WRKSRC=		${WRKDIR}/${CYR_RFX_ENCODING}
-NCPUS!=		/sbin/sysctl -n hw.ncpu 2> /dev/null || echo 1
-MAKE_ARGS+=	-j ${NCPUS}
 MAKEFILE=	${FILESDIR}/Makefile.bdf2pcf
 INST_DIR=	"lib/X11/fonts/${PORTNAME}"
 MAKE_ENV+=	INST_DIR="${LOCALBASE}/${INST_DIR}" MKDIR="${MKDIR}"
