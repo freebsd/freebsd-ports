@@ -9,7 +9,7 @@ MASTER_SITES=	http://shisha.spb.ru/ \
 		http://users.podolsk.ru/c104598/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	mangoost@inetcomm.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays logged in users
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
