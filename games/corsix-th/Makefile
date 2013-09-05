@@ -14,9 +14,9 @@ COMMENT=	Open source clone of Theme Hospital
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=		cmake
+USES=		cmake pkgconfig
 USE_LUA=	yes
 USE_SDL=	mixer
 USE_DOS2UNIX=	CMake/FindFFmpeg.cmake \
