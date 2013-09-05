@@ -1,0 +1,53 @@
+--- src/sv_user.c.orig	2007-12-28 07:25:47.000000000 +0800
++++ src/sv_user.c	2013-09-05 14:53:30.000000000 +0800
+@@ -363,7 +363,7 @@ void SV_Info_f(void){
+ 			continue;  //only print serverinfo cvars
+ 			
+ 		snprintf(line, MAX_STRING_CHARS, "%s %s\n", cvar->name, cvar->string);
+-		SV_ClientPrintf(sv_client, PRINT_MEDIUM, line);
++		SV_ClientPrintf(sv_client, PRINT_MEDIUM, "%s", line);
+ 	}
+ }
+ 
+--- src/cl_main.c.orig	2007-12-28 07:25:47.000000000 +0800
++++ src/cl_main.c	2013-09-05 14:53:30.000000000 +0800
+@@ -691,7 +691,7 @@ void CL_Ping_f(void){
+ 		}
+ 		
+ 		if(!adr.port) adr.port = BigShort(PORT_SERVER);
+-		Netchan_OutOfBandPrint(NS_CLIENT, adr, va("info %i", PROTOCOL_34));
++		Netchan_OutOfBandPrint(NS_CLIENT, adr, "info %i", PROTOCOL_34);
+ 		return;
+ 	}
+ 	
+@@ -700,7 +700,7 @@ void CL_Ping_f(void){
+ 	
+ 	adr.type = NA_IP_BROADCAST;
+ 	adr.port = BigShort(PORT_SERVER);
+-	Netchan_OutOfBandPrint(NS_CLIENT, adr, va("info %i", PROTOCOL_34));
++	Netchan_OutOfBandPrint(NS_CLIENT, adr, "info %i", PROTOCOL_34);
+ }
+ 
+ 
+--- src/cl_keys.c.orig	2007-12-28 07:25:47.000000000 +0800
++++ src/cl_keys.c	2013-09-05 14:53:30.000000000 +0800
+@@ -143,7 +143,7 @@ void CompleteCommand(void){
+ 	cvar = Cvar_CompleteVariable(partial, &cvars);  //partial cvar lookup
+ 	if(cvar && !strcmp(cvar, partial)) goto append;  //exact match
+ 	
+-	if(cmds == 1 && cvars == 0) cmd = cmd;
++	if(cmds == 1 && cvars == 0);
+ 	else if(cmds == 0 && cvars == 1) cmd = cvar;
+ 	else cmd = NULL;
+ 	
+--- src/qmass/g_cmds.c.orig	2007-12-28 07:25:44.000000000 +0800
++++ src/qmass/g_cmds.c	2013-09-05 14:53:30.000000000 +0800
+@@ -724,7 +724,7 @@ void Cmd_Say_f(edict_t *ent, qboolean te
+ 	
+ 	if(chatlog != NULL){  //write chatlog
+ 		
+-		fprintf(chatlog, text);
++		fprintf(chatlog, "%s", text);
+ 		
+ 		fflush(chatlog);
+ 	}
