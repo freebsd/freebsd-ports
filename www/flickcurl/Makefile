@@ -31,9 +31,9 @@ USE_LDCONFIG=	yes
 MAN1=		flickcurl.1 flickcurl-config.1 flickrdf.1
 
 OFFLINE_CONFIGURE_ON=		--enable-offline
-OFFLINE_CONFIGURE_OFF=		offline=no
+OFFLINE_CONFIGURE_OFF=		--offline=no
 CAPTURE_CONFIGURE_ON=		--enable-capture
-CAPTURE_CONFIGURE_OFF=		capture=no
+CAPTURE_CONFIGURE_OFF=		--capture=no
 RAPTOR_LIB_DEPENDS=		libraptor2.so:${PORTSDIR}/textproc/raptor2
 RAPTOR_CONFIGURE_ON=		--with-raptor=2
 RAPTOR_CONFIGURE_OFF=		--with-raptor=no
