@@ -1,6 +1,6 @@
---- pokerth_game.pro.orig	2012-06-21 22:54:48.000000000 +0200
-+++ pokerth_game.pro	2012-06-22 11:47:32.047160533 +0200
-@@ -392,8 +392,7 @@
+--- pokerth_game.pro.orig	2013-04-07 14:04:26.923209000 +0200
++++ pokerth_game.pro	2013-09-05 12:07:44.416793690 +0200
+@@ -407,8 +407,7 @@
  	LIBPATH += lib
  	!android{
  		LIBPATH += $${PREFIX}/lib /opt/gsasl/lib
@@ -10,7 +10,7 @@
  	}
  	android{
  		LIBPATH += $${PREFIX}/lib/armv5
-@@ -412,7 +411,7 @@
+@@ -427,7 +426,7 @@
  	BOOST_RANDOM = boost_random \
  		boost_random-mt
  
@@ -19,3 +19,12 @@
  	# to override the default '/usr' pass PREFIX
  	# variable to qmake.
  	for(dir, LIB_DIRS):exists($$dir) {
+@@ -501,7 +500,7 @@
+ 		LIBS += -lSDL \
+ 				-lSDL_mixer \
+ 			-lgsasl
+-		!isEmpty( BSD ):isEmpty( kFreeBSD ):LIBS += -lcrypto
++		!isEmpty( BSD ):isEmpty( kFreeBSD ):LIBS += -lcrypto -lssl
+ 		else:LIBS += -lgcrypt
+ 	}
+ 	android{
