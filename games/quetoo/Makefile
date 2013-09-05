@@ -11,6 +11,8 @@ MASTER_SITES=	http://tastyspleen.net/~jdolan/ \
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast, stable, compatible, and secure Quake II client
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 USE_SDL=	sdl
 USE_GL=		glut
@@ -30,10 +32,10 @@ OPTIONS_DEFINE=	GAME CTF VANCTF QMASS MYSQL DOCS
 # they're available via `quake2-data' and `quake2-ctf' ports.
 OPTIONS_DEFAULT=	VANCTF QMASS
 
-GAME_DESC=	Build main game shared object file
-CTF_DESC=	Build Capture The Flag modification
-VANCTF_DESC=	Build Vanilla CTF modification
-QMASS_DESC=	Build QMass deathmatch modification
+GAME_DESC=	Build main game (default mod)
+CTF_DESC=	Build Capture The Flag mod
+VANCTF_DESC=	Build Vanilla CTF mod
+QMASS_DESC=	Build QMass deathmatch mod
 MYSQL_DESC=	Enable frag logging with MySQL
 
 .include <bsd.port.options.mk>
@@ -85,9 +87,6 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's,^(eval PKGDATADIR=).*$$,\1"${Q2DIR}", ; \
 		19752s,sdl-config,${SDL_CONFIG}, ; \
 		s,^(GAME_MODULES=")baseq2",\1",' ${WRKSRC}/configure
-.if ${OSVERSION} < 800501
-	${REINPLACE_CMD} -e 's,const struct,struct,' ${WRKSRC}/src/files.c
-.endif
 	${REINPLACE_CMD} -e 's,-ldl,,' ${WRKSRC}/src/Makefile.in
 
 do-install:
