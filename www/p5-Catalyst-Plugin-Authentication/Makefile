@@ -1,4 +1,3 @@
-# Ports collection makefile for:	p5-Catalyst-Plugin-Authentication
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
 
@@ -27,7 +26,7 @@ TEST_DEPENDS=	p5-Catalyst-Plugin-Session>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-S
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-WWW-Mechanize-Catalyst>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-Catalyst
 
-PORTSCOUT=	skipv:0.100092
+PORTSCOUT=	skipv:0.100091,0.100092
 
 USES=		perl5
 USE_PERL5=	configure
