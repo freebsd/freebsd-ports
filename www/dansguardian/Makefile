@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-logdir=/var/log \
 		--with-piddir=/var/run \
-		--with-libiconv=${LOCALBASE} \
+		${ICONV_CONFIGURE_BASE} \
 		--enable-fancydm
 
 MAN8=		dansguardian.8
@@ -96,7 +96,7 @@ PLIST_SUB+=		SCANNERS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNTLM}
-CONFIGURE_ARGS+=	--enable-ntlm --with-libiconv=${LOCALBASE}
+CONFIGURE_ARGS+=	--enable-ntlm ${ICONV_CONFIGURE_BASE}
 USES+=			iconv
 PLIST_SUB+=		NTLMCONF=""
 .else

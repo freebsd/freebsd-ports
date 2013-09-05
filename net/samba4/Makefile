@@ -159,7 +159,7 @@ CONFIGURE_ARGS+=	\
 			--with-iconv \
 			--with-sendfile-support \
 			--builtin-libraries=smbclient \
-			--with-libiconv="${LOCALBASE}" \
+			${ICONV_CONFIGURE_BASE} \
 			--with-gettext="${LOCALBASE}"
 
 # for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)

@@ -20,6 +20,7 @@ USE_AUTOTOOLS=	libtool
 USES=		iconv
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS= ${ICONV_CONFIGURE_BASE}
 
 USE_LDCONFIG=	yes
 
@@ -32,16 +33,8 @@ MAN3=	idn_checkname.3 idn_comparenames.3 idn_comparenames2.3 \
 MAN5=	idn2.conf.5 idn2rc.5 idnalias.conf.5 idnlang.conf.5
 MANCOMPRESSED=	no
 
-.include <bsd.port.pre.mk>
-
-.if empty(ICONV_LIB)
-CONFIGURE_ARGS=	--with-libiconv=/usr
-.else
-CONFIGURE_ARGS= --with-libiconv=${LOCALBASE}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB}|' \
 		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

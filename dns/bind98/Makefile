@@ -72,7 +72,8 @@ CONFIGURE_ARGS+=	--without-libxml2
 .endif
 
 .if ${PORT_OPTIONS:MIDN}
-CONFIGURE_ARGS+=	--with-idn=${LOCALBASE} --with-libiconv=${LOCALBASE}
+USES+=			iconv
+CONFIGURE_ARGS+=	--with-idn=${LOCALBASE} ${ICONV_CONFIGURE_BASE}
 LIB_DEPENDS+=		idnkit.1:${PORTSDIR}/dns/idnkit
 .else
 CONFIGURE_ARGS+=	--without-idn

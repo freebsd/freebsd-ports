@@ -18,7 +18,7 @@ COMMENT=	A library to handle internationalized domain names
 USE_AUTOTOOLS=	libtool
 USES=		iconv
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE} \
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE} \
 		--enable-runidn \
 		--enable-extra-ace
 

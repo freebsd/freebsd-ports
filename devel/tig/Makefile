@@ -18,7 +18,7 @@ MAN5=		tigrc.5
 MAN7=		tigmanual.7
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE}
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE}
 
 USE_GMAKE=	yes
 USES=		iconv
