@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slf4j
-PORTVERSION=	1.6.6
+PORTVERSION=	1.7.5
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.slf4j.org/dist/
 
