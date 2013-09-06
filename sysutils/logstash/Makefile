@@ -7,6 +7,8 @@
 
 # TODO
 # - DOCs
+# - i do not like the way logstash.in starts/stops the daemon
+# - TMP must NOT be world-writable
 # 
 PORTNAME=	logstash
 PORTVERSION=	1.1.12
