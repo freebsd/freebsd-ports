@@ -16,9 +16,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin
 LIB_DEPENDS=	purple.10:${PORTSDIR}/net-im/libpurple \
 		nss3:${PORTSDIR}/security/nss
 
-USE_GMAKE=	yes
 USE_GNOME=	gtk20
-USES=		gettext
+USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include

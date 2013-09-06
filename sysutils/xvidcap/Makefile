@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xvidcap
-# Date created:		Sat 24 April 2004
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=		xvidcap
 DISTVERSION=		1.1.4p1
@@ -32,7 +28,7 @@ CONFIGURE_ARGS=		--with-forced-embedded-ffmpeg	# To be removed after ffmpeg-deve
 
 USE_GMAKE=		yes	# To be removed after ffmpeg-devel's upgrade
 USE_GNOME=		glib20 libglade2
-USES=		gettext
+USES=		gettext pkgconfig
 USE_XORG=		x11 xmu
 INSTALLS_OMF=		yes
 
