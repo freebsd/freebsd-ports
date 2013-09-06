@@ -3,6 +3,7 @@
 
 PORTNAME=	hiera-puppet
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
