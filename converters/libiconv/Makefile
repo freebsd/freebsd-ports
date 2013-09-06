@@ -52,7 +52,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 1000043
-IGNORE=		converters/libiconv should not be used with OSVERSION > 1000050. \
+IGNORE=		converters/libiconv should not be used with OSVERSION > 1000043. \
 Please fix the port which tries to use it
 .endif
 
