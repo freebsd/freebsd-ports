@@ -13,8 +13,7 @@ BUILD_DEPENDS=	scim>=1.2.0:${PORTSDIR}/textproc/scim
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GNOME=	lthack
-USES=		pathfix iconv
-USE_GMAKE=	yes
+USES=		pathfix iconv gmake pkgconfig
 USE_AUTOTOOLS=	libtool
 
 CONFIGURE_ARGS+=	--disable-skim-support

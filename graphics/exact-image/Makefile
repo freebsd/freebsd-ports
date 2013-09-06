@@ -28,8 +28,7 @@ CFLAGS+=	-fPIC
 #broken headers on c++ in base system:
 CPPFLAGS+=	-fpermissive -I${LOCALBASE}/include/libpng15
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		gmake perl5 pkgconfig
 USE_PYTHON=	2.5+
 USE_XORG=	x11
 USE_EFL=	evas

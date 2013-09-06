@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-1.7alpha15/
 USE_GNOME=	gtk20
 #USE_AUTOTOOLS=	autoconf213
 GNU_CONFIGURE=	yes
-USES=		gettext gmake
+USES=		gettext gmake pkgconfig
 CONFIGURE_ARGS=	--enable-emf=yes
 PKGNAMESUFFIX=	-devel
 MAN1=	chemtool.1 cht.1

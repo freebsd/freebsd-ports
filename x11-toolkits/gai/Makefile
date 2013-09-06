@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	gai
-# Date created:			Feb 16, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gai
 PORTVERSION=	0.5.10
@@ -18,6 +13,7 @@ COMMENT=	General Applet Interface Library
 LIB_DEPENDS=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_BZIP2=	yes
+USES=		pkgconfig
 USE_GL=		gl
 USE_SDL=	sdl
 USE_GNOME=	gnomepanel libgnomeui
