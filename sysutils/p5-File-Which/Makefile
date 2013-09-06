@@ -16,7 +16,8 @@ COMMENT=	Portable implementation of `which' in Perl
 
 TEST_DEPENDS=	p5-Test-Script>=1.05:${PORTSDIR}/devel/p5-Test-Script
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		pwhich.1
 MAN3=		File::Which.3

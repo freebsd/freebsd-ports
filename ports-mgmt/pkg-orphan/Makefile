@@ -14,7 +14,7 @@ MAINTAINER=	vsemionov@gmail.com
 COMMENT=	A console utility for managing unreferenced FreeBSD packages
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 MAN1=		pkg-orphan.1
 

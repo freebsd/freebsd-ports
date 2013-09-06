@@ -16,7 +16,8 @@ MAINTAINER=	alex@stangl.us
 COMMENT=	Display pertinent parts of {PORTSDIR}/UPDATING
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 PLIST_FILES=	sbin/portupdate-scan
 SRC=		${.CURDIR}/src

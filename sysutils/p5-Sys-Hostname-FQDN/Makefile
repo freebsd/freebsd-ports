@@ -16,7 +16,8 @@ COMMENT=	Get the short or long hostname
 
 LICENSE=	ART20
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Sys::Hostname::FQDN.3
 

@@ -16,7 +16,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	IO:: style interface to Compress::Zlib
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		IO::Zlib.3
 
 .include <bsd.port.mk>
