@@ -1,0 +1,63 @@
+--- Makefile.orig	2013-06-30 22:04:34.000000000 +0800
++++ Makefile	2013-09-06 16:56:05.000000000 +0800
+@@ -153,7 +153,7 @@
+ else
+ 
+ ifeq ($(BUILD),release)
+-ifeq ($(findstring $(CFLAGS),-O),)
++ifeq ($(findstring -O,$(CFLAGS)),)
+ 	CFLAGS_COMMON += -O3
+ 	# only add -O3 if no -O flag is in $(CFLAGS)
+ 	# to allow overriding the optimizations
+@@ -170,10 +170,10 @@
+ 
+ INSTALLDIR_BASE := $(INSTALLDIR)
+ 
+-ifeq ($(OS),Linux)
++ifneq ($(filter $(OS),Linux FreeBSD),)
+ 	CPPFLAGS_COMMON += -DPOSIX -DXWINDOWS
+ 	CFLAGS_COMMON += -fPIC
+-	LDFLAGS_DLL = -fPIC -ldl
++	LDFLAGS_DLL = -fPIC
+ 	LIBS_COMMON = -lpthread
+ 	EXE ?= $(shell uname -m)
+ 	A = a
+@@ -291,15 +291,15 @@
+ 	checkbinary sed "$(SED)"; \
+ 	checkbinary findutils "$(FIND)"; \
+ 	checkbinary diff "$(DIFF)"; \
+-	checkbinary gcc "$(CC)"; \
+-	checkbinary g++ "$(CXX)"; \
++	checkbinary c\ compiler "$(CC)"; \
++	checkbinary c++\ compiler "$(CXX)"; \
+ 	checkbinary binutils "$(RANLIB)"; \
+ 	checkbinary binutils "$(AR)"; \
+ 	checkbinary pkg-config "$(PKGCONFIG)"; \
+ 	checkbinary unzip "$(UNZIPPER)"; \
+-	checkbinary git-core "$(GIT)"; \
+-	checkbinary subversion "$(SVN)"; \
+-	checkbinary wget "$(WGET)"; \
++#	checkbinary git-core "$(GIT)"; \
++#	checkbinary subversion "$(SVN)"; \
++#	checkbinary wget "$(WGET)"; \
+ 	[ "$(OS)" = "Win32" ] && checkbinary mingw32 "$(WINDRES)"; \
+ 	[ -n "$(LDD)" ] && checkbinary libc6 "$(LDD)"; \
+ 	[ -n "$(OTOOL)" ] && checkbinary xcode "$(OTOOL)"; \
+@@ -437,7 +437,7 @@
+ %.$(EXE):
+ 	file=$@; $(MKDIR) $${file%/*}
+ 	$(CXX) $^ $(LDFLAGS) $(LDFLAGS_COMMON) $(LDFLAGS_EXTRA) $(LIBS_EXTRA) $(LIBS_COMMON) $(LIBS) -o $@
+-	[ -z "$(LDD)" ] || [ -z "`$(LDD) -r $@ $(STDERR_TO_STDOUT) $(STDOUT_TO_DEVNULL) $(TEE_STDERR)`" ] || { $(RM) $@; exit 1; }
++	[ -z "$(LDD)" ] || [ -z "`$(LDD) $@ $(STDERR_TO_STDOUT) $(STDOUT_TO_DEVNULL) $(TEE_STDERR)`" ] || { $(RM) $@; exit 1; }
+ 
+ %.$(A):
+ 	$(AR) rc $@ $^
+@@ -446,7 +446,7 @@
+ %.$(DLL):
+ 	file=$@; $(MKDIR) $${file%/*}
+ 	$(CXX) $^ $(LDFLAGS) $(LDFLAGS_COMMON) $(LDFLAGS_EXTRA) $(LDFLAGS_DLL) $(LIBS_EXTRA) $(LIBS_COMMON) $(LIBS) -shared -o $@
+-	[ -z "$(LDD)" ] || [ -z "`$(LDD) -r $@ $(STDERR_TO_STDOUT) $(STDOUT_TO_DEVNULL) $(TEE_STDERR)`" ] || { $(RM) $@; exit 1; }
++	[ -z "$(LDD)" ] || [ -z "`$(LDD) $@ $(STDERR_TO_STDOUT) $(STDOUT_TO_DEVNULL) $(TEE_STDERR)`" ] || { $(RM) $@; exit 1; }
+ 
+ %.rc: %.ico
+ 	$(ECHO) '1 ICON "$<"' > $@
