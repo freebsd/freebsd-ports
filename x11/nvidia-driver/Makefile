@@ -154,6 +154,12 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e '/kmem_/s/kernel_map/kernel_arena/' \
 		${WRKSRC}/src/nvidia_subr.c
 .endif
+# Adopt to cap_rights_t type change in FreeBSD src SVN r255219
+.if ${OSVERSION} > 1000051
+	${REINPLACE_CMD} -e 's/u_long cmd;/& cap_rights_t rights;/ ; \
+		s/CAP_IOCTL/cap_rights_init(\&rights, &)/' \
+			${WRKSRC}/src/nvidia_linux.c
+.endif
 # Fix stack buffer overflow in nvidia_sysctl_bus_type()
 .if ${NVVERSION} < 3192300
 	${REINPLACE_CMD} -E '/bus_type\[4\]/d ; \
