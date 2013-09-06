@@ -63,6 +63,7 @@ MAN3=	Net::EPP.3 \
 	Net::EPP::Frame::Command::Transfer::Contact.3 \
 	Net::EPP::Frame::Command::Poll::Ack.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

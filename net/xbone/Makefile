@@ -42,7 +42,7 @@ BUILD_DEPENDS=	p5-AppConfig>=0:${PORTSDIR}/devel/p5-AppConfig \
 USE_GMAKE=	yes
 #IS_INTERACTIVE=	yes
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 USE_OPENLDAP=	yes
 
 INSTALL_TARGET=	node
