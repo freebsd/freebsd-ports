@@ -4,7 +4,7 @@
 PORTNAME=	gtkradiant
 PORTVERSION=	1.5.0
 PORTREVISION=	9
-CATEGORIES=	games
+CATEGORIES=	games cad
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|source/:id|} \
 		http://www.bsd-geek.de/FreeBSD/distfiles/:fb
 DISTNAME=	GtkRadiant-GPL
@@ -12,15 +12,13 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:id \
 		${PORTNAME}_gamepacks${EXTRACT_SUFX}:fb
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Level design program developed by id Software and Loki Software
+COMMENT=	Map editor for FPS games, by id Software and Loki Software
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
 		libmhash.so:${PORTSDIR}/security/mhash \
 		libpng15.so:${PORTSDIR}/graphics/png
-
-WRKSRC=		${WRKDIR}/GPL/GtkRadiant
 
 USES=		pkgconfig
 USE_ZIP=	yes
@@ -29,8 +27,10 @@ USE_PYTHON_BUILD=	yes
 USE_SCONS=	yes
 SCONS_ARGS=	${MAKE_ENV} BUILD=release
 
-SUB_FILES=	${PORTNAME}
 DATADIR=	${PREFIX}/lib/${PORTNAME}
+WRKSRC=		${WRKDIR}/GPL/GtkRadiant
+
+SUB_FILES=	${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-ldl//' ${WRKSRC}/SConscript
@@ -49,11 +49,16 @@ post-patch:
 		${WRKSRC}/radiant/patch.cpp \
 		${WRKSRC}/radiant/watchbsp.cpp \
 		${WRKSRC}/tools/quake3/common/inout.c
-	@${REINPLACE_CMD} -e '/#include "generic\/reference.h"/x ; 318G' \
+# Fix the build against Clang
+	@${REINPLACE_CMD} -e '/#include "generic\/reference\.h"/x ; 318G' \
 		${WRKSRC}/libs/scenelib.h
-	@${REINPLACE_CMD} -e '/#include "generic\/referencecounted.h/ { \
+	@${REINPLACE_CMD} -e '/#include "generic\/referencecounted\.h/ { \
 		x ; s/^/#include "scenelib.h"/ ; G ; }' \
 			${WRKSRC}/plugins/mapq3/parse.h
+# Fix warnings of "GtkSpinButton: setting an adjustment with non-zero
+# page size is deprecated" (very annoying)
+	@${FIND} ${WRKSRC} -name '*.cpp' | ${XARGS} ${REINPLACE_CMD} \
+		-E 's|(gtk_adjustment_new[^)]*,)[^)]*|\1 0|'
 
 post-build:
 	cd ${WRKSRC} && ${PYTHON_CMD} install.py

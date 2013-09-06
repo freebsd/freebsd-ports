@@ -14,4 +14,6 @@ originally under id Software's proprietary license. The license for both the
 editor and toolset (notably Q3Map2, the BSP compiler) was changed in February
 2006, and publicly released under the GPL on February 17.
 
+More up-to-date fork, NetRadiant, is available as `games/netradiant' port.
+
 WWW: http://www.qeradiant.com/
