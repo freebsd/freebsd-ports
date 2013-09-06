@@ -26,7 +26,7 @@ CONFIGURE_ARGS+=	--disable-vidix --disable-fb --disable-dfb --disable-cle266 --d
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin
-	${REINPLACE_CMD} 's|/usr/X11R6|${LOCALBASE}|' ${WRKSRC}/Makefile ${WRKSRC}/configure
+	${REINPLACE_CMD} 's|/usr/X11R6|${LOCALBASE}|;s|g\+\+|${CXX}|' ${WRKSRC}/Makefile ${WRKSRC}/configure
 
 do-configure:
 	(cd ${WRKSRC} && ./configure ${CONFIGURE_ARGS})
