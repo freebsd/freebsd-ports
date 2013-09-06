@@ -1,7 +1,5 @@
-$FreeBSD$
-
---- Imakefile.orig	2009-03-30 08:53:05.000000000 -0700
-+++ Imakefile	2011-06-18 21:04:40.000000000 -0700
+--- Imakefile.orig	2012-08-09 10:14:15.000000000 -0700
++++ Imakefile	2013-09-02 16:51:37.000000000 -0700
 @@ -30,9 +30,9 @@
  XCOMM Also, you may have to uncomment and redefine MKDIRHIER because "make" looks
  XCOMM for it relative to the BINDIR variable.
@@ -23,39 +21,28 @@ $FreeBSD$
  
  XCOMM Comment out the following definition for XAW3D if you don't to want to use
  XCOMM the 3d Athena Widget Set
-@@ -60,7 +60,7 @@
- XCOMM some new features, including "Tips", which replace xfig's "help balloons"
- XCOMM NOTE: This is the default for many X systems now.
- 
--XCOMM #define XAW3D1_5E
-+#define XAW3D1_5E
- 
- #ifdef XAW3D1_5E
-     DUSEXAW3D = -DXAW3D -DXAW3D1_5E
-@@ -75,9 +75,9 @@
+@@ -75,8 +75,8 @@
  XCOMM Redefine the following if your PNG library, zlib library and/or include file
  XCOMM are in different places
  
 -PNGLIBDIR = $(USRLIBDIR)
--PNGINC = -I/usr/local/include
--ZLIBDIR = $(USRLIBDIR)
+-PNGINC = -I/usr/include
 +PNGLIBDIR = ${LOCALBASE}/lib
 +PNGINC = -I${LOCALBASE}/include/libpng
-+XCOMM ZLIBDIR = $(USRLIBDIR)
+ ZLIBDIR = $(USRLIBDIR)
  
  XCOMM If don't want JPEG support, comment out the #define USEJPEG line
- XCOMM Uncomment the #define for USEJPEG if you want to be able to import
 @@ -95,13 +95,13 @@
  #define USEINSTALLEDJPEG
  
  #ifdef USEJPEG
--    #ifdef USEINSTALLEDJPEG
+-#    ifdef USEINSTALLEDJPEG
 -	JPEGLIBDIR = /usr/local/lib
 -	JPEGINC = -I/usr/include/X11
--    #else
+-#    else
 -	JPEGLIBDIR = ../jpeg
 -	JPEGINC = -I$(JPEGLIBDIR)
--    #endif /* USEINSTALLEDJPEG */
+-#    endif /* USEINSTALLEDJPEG */
 +#ifdef USEINSTALLEDJPEG
 +JPEGLIBDIR = ${LOCALBASE}/lib
 +JPEGINC = -I${LOCALBASE}/include
@@ -71,13 +58,13 @@ $FreeBSD$
  
  #ifdef USEXPM
 -XPMLIBDIR = /usr/local/lib
--XPMINC = -I/usr/local/include/X11
+-XPMINC = -I/usr/include/X11
 +XPMLIBDIR = ${LOCALBASE}/lib
-+XPMINC = -I${LOCALBASE}/include/X11
++XPMINC = -I${LOCALBASE}/X11
  #endif
  
  XCOMM Uncomment the following definiton if you want to use the small icons
-@@ -161,7 +161,7 @@
+@@ -162,7 +162,7 @@
  XCOMM inline functions. With the "INLINE" keyword, you should notice that
  XCOMM the display will be a bit faster in complex figures
  
@@ -86,7 +73,7 @@ $FreeBSD$
  
  XCOMM use (and change) the following if you want the multi-key data base file
  XCOMM somewhere other than the standard X11 library directory
-@@ -173,11 +173,11 @@
+@@ -174,11 +174,11 @@
  
  XCOMM XFIGDOCDIR tells where the html and pdf documentation should go
  XCOMM XFIGDOCDIR = $(DOCDIR)/xfig
@@ -100,16 +87,7 @@ $FreeBSD$
  XCOMM MANDIR = /usr/local/xfig/man
  
  XCOMM If your system doesn't have strstr undefine the following definition
-@@ -251,7 +251,7 @@
- #endif /* USEJPEG */
- 
- #ifdef I18N
--I18N_DEFS = -DI18N -DSETLOCALE
-+I18N_DEFS = -DI18N
- I18N_SRC = w_i18n.c
- I18N_OBJ = w_i18n.o
- #endif
-@@ -390,8 +390,8 @@
+@@ -391,8 +391,8 @@
  install::
  	@if [ -d $(DESTDIR)$(XFIGLIBDIR) ]; then set +x; \
  		else (set -x; $(MKDIRHIER) $(DESTDIR)$(XFIGLIBDIR) ; set +x; ); fi
@@ -120,7 +98,7 @@ $FreeBSD$
  
  XCOMM Install program, libraries and documentation with "make install.all"
  install.all::
-@@ -406,11 +406,14 @@
+@@ -407,11 +407,14 @@
  XCOMM Install the documentation here with "make install.doc"
  install.doc::
  	@echo Installing man pages to $(MANDIR)
@@ -137,7 +115,7 @@ $FreeBSD$
  XCOMM Install the HTML documentation here with "make install.html"
  
  #ifdef I18N
-@@ -423,24 +426,26 @@
+@@ -424,24 +427,25 @@
  #endif
  
  install.rhtml::
@@ -149,7 +127,6 @@ $FreeBSD$
 -	$(INSTALL) -m 644 -c xfig_man.html $(DESTDIR)$(XFIGDOCDIR) ; \
 -	$(INSTALL) -m 644 -c xfig_ref_en.pdf $(DESTDIR)$(XFIGDOCDIR) ; \
 -	$(INSTALL) -m 644 -c xfig-howto.pdf $(DESTDIR)$(XFIGDOCDIR) ; \
-+	$(INSTALL) $(INSTALLFLAGS) $(INSTDATFLAGS) xfig_man.html $(DESTDIR)$(XFIGDOCDIR) ; \
 +	$(INSTALL) $(INSTALLFLAGS) $(INSTDATFLAGS) xfig_ref_en.pdf $(DESTDIR)$(XFIGDOCDIR) ; \
 +	$(INSTALL) $(INSTALLFLAGS) $(INSTDATFLAGS) xfig-howto.pdf $(DESTDIR)$(XFIGDOCDIR) ; \
  	if [ -d html ]; then \
@@ -169,7 +146,7 @@ $FreeBSD$
  	) ;
  #endif
  
-@@ -450,7 +455,7 @@
+@@ -451,7 +455,7 @@
  	@if [ -d $(DESTDIR)$(OBJLIBDIR) ]; then set +x; \
  		else (set -x; $(MKDIRHIER) $(DESTDIR)$(OBJLIBDIR) ; set +x; ); fi
  	@if [ -d Libraries ]; then \

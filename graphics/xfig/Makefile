@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfig
-PORTVERSION=	3.2.5b
-PORTREVISION=	1
+PORTVERSION=	3.2.5c
 CATEGORIES=	graphics
 MASTER_SITES=	SF/mcj/mcj-source/
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
@@ -11,9 +10,9 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}.full
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	A drawing program for X11
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		Xaw3d.8:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
 CONFLICTS=	xfig-[12].* xfig-3.1* xfig-3.2.[1234]*
@@ -53,6 +52,10 @@ USES+=	gettext
 .endif
 
 post-extract:
+	@cd ${WRKSRC}/Doc && ${FIND} . -type f -name "*.orig" -delete
+	@${RM} -f ${WRKSRC}/Doc/html/images/pspbrwse.jbf
+	@${RM} -f ${WRKSRC}/Libraries/Examples/xfig.exe.stackdump
+	@${RM} -f ${WRKSRC}/Libraries/Fasteners/Fasteners.tar
 	@cd ${WRKSRC}/Doc && ${FIND} -s . -type d -print0 | ${XARGS} -0 ${CHMOD} a+rx
 	@cd ${WRKSRC}/Doc && ${FIND} . -type f -print0 | ${XARGS} -0 ${CHMOD} a-x+r
 	@${CHMOD} a+rx ${WRKSRC}/Libraries
