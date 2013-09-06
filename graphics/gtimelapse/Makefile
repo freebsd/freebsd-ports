@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gTimelapse
-# Date created:				29 Aug 2011
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gtimelapse
 DISTVERSION=	0.1
@@ -20,6 +16,7 @@ LIB_DEPENDS=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}
+USES=		pkgconfig
 USE_WX=		2.8+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

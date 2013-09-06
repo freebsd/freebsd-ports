@@ -33,9 +33,8 @@ MP4BOX_DESC=	Enable Mpeg-4 container support
 THEORA_DESC=	Enable Ogg Theora video codec support
 SRT_DESC=	Enable SRT text subtitles support
 
-USES=        pathfix gettext
+USES=        pathfix gettext gmake pkgconfig
 USE_GNOME=	glib20 intlhack libxml2
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 

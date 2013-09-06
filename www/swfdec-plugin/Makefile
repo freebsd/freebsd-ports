@@ -1,9 +1,5 @@
-# Ports collection makefile for:	swfdec-plugin
-# Date created:				Jun 14, 2005
-# Whom:					anholt
-#
+# Created by: anholt
 # $FreeBSD$
-#
 
 PORTNAME=	swfdec-plugin
 PORTVERSION=	0.8.2
@@ -17,6 +13,7 @@ COMMENT=	Flash rendering plugin
 
 LIB_DEPENDS=	swfdec-0.8:${PORTSDIR}/graphics/swfdec
 
+USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes
 USE_GNOME=	gtk20

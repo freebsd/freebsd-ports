@@ -17,7 +17,7 @@ LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float \
 
 CFLAGS:=	${CFLAGS} -O2
 USE_GSTREAMER=	yes good
-USES=		gmake
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 

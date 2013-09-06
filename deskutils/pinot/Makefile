@@ -47,7 +47,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 USE_DOS2UNIX=	textcat32_conf.txt
 USE_XORG=	pixman
-USES=		gettext
+USES=		gettext pkgconfig
 USE_SQLITE=	3
 USE_PYTHON=	yes
 USE_OPENSSL=	yes

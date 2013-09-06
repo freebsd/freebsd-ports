@@ -1,9 +1,5 @@
-# New ports collection makefile for: 	gjiten
-# Date created: 			2012-09-03
-# Whom: 				Stephane Lapie <stephane.lapie@darkbsd.org>
-#
+# Created by: Stephane Lapie <stephane.lapie@darkbsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gjiten
 PORTVERSION=	2.6
@@ -18,7 +14,7 @@ UTF8_DESC=	Use UTF-8 edict dictionaries
 KANJIPAD_DESC=	Use Kanjipad
 
 USE_GNOME=	gtk20 gconf2 libglade libgnomeui
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

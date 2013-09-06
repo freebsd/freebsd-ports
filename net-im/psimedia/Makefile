@@ -1,9 +1,5 @@
-# New ports collection makefile for:	psimedia
-# Date created:		2009-08-10
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
+# Created by: Max Brazhnikov <makc@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	psimedia
 PORTVERSION=	1.0.3
@@ -16,6 +12,7 @@ COMMENT=	Voice and video API for Psi-like IM clients
 
 LIB_DEPENDS=	oil-0.3:${PORTSDIR}/devel/liboil
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_QT4=	gui qmake_build moc_build uic_build

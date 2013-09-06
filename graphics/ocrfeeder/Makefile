@@ -25,10 +25,9 @@ MAN1=		ocrfeeder-cli.1 ocrfeeder.1
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2 pygnomeextras
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_GHOSTSCRIPT=yes
 
 .include <bsd.port.options.mk>

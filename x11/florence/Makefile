@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/at-spi2-registryd:${PORTSDIR}/accessibility/
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
-USES=		desktop-file-utils iconv pathfix
+USES=		desktop-file-utils iconv pathfix pkgconfig
 USE_XORG=	xtst xext
 USE_GNOME=	gtk30 cairo intlhack gnomedocutils librsvg2
 USE_GSTREAMER=	yes

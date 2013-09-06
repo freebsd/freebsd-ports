@@ -14,7 +14,7 @@ LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
 		gnet-2.0.0:${PORTSDIR}/net/gnet2
 
 USE_BZIP2=	yes
-USES=		pathfix gettext gmake
+USES=		pathfix gettext gmake pkgconfig
 USE_GNOME=	gconf2 gnomeprefix intlhack libglade2 vte
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes

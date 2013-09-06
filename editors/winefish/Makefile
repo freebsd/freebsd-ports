@@ -24,7 +24,7 @@ MANCOMPRESSED=	no
 
 CONFIGURE_ARGS+=	--with-freedesktop_org-menu=${GNOME_LOCALSTATEDIR}/applications --with-icon-path=${GNOME_LOCALSTATEDIR}/pixmaps
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	libgnomeui desktopfileutils gnomehier
 USE_TEX=	latex
 

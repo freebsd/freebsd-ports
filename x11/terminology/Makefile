@@ -12,6 +12,7 @@ COMMENT=	EFL Terminal Emulator
 
 LICENSE=	BSD
 
+USES=		pkgconfig
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

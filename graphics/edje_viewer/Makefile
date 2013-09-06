@@ -9,6 +9,7 @@ MASTER_SITES=	LOCAL/gblach/e17/extra/
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	A simple viewer for .edj files
 
+USES=		pkgconfig
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

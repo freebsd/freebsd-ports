@@ -1,9 +1,5 @@
-# New ports collection makefile for:   gmfsk
-# Date created:                29th May 2003
-# Whom:                        Carl Makin <carl@stagecraft.cx>
-#
+# Created by: Carl Makin <carl@stagecraft.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	gmfsk
 PORTVERSION=	0.6
@@ -23,7 +19,7 @@ GNU_CONFIGURE=	yes
 # preprocessor include tests.  The following line is a work around.
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	libgnomeui gnomehack gnomeprefix
 INSTALLS_OMF=	yes
 
