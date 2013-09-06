@@ -1,0 +1,49 @@
+--- speech_tools/config/modules/freebsd16_audio.mak	2001-04-04 09:11:27.000000000 -0400
++++ speech_tools/config/modules/freebsd16_audio.mak	2013-05-27 13:29:03.000000000 -0400
+@@ -43,5 +43,5 @@
+ MOD_DESC_FREEBSD16_AUDIO=Native audio module for FreeBSD systems
+ 
+-AUDIO_DEFINES += -DSUPPORT_FREEBSD16
++AUDIO_DEFINES += -DSUPPORT_FREEBSD16 -DSUPPORT_VOXWARE
+ 
+ #ifdef INCLUDE_JAVA_CPP
+--- speech_tools/audio/linux_sound.cc	2009-04-29 13:06:36.000000000 -0400
++++ speech_tools/audio/linux_sound.cc	2013-05-27 13:31:00.000000000 -0400
+@@ -66,7 +66,13 @@
+ int freebsd16_supported = TRUE;
+ int linux16_supported = FALSE;
+-static char *aud_sys_name = "FreeBSD";
++static const char *aud_sys_name = "FreeBSD";
+ #endif /*SUPPORT_FREEBSD16 */
+ 
++#ifdef SUPPORT_LINUX16
++int linux16_supported = TRUE;
++int freebsd16_supported = FALSE;
++static const char *aud_sys_name = "Linux";
++#endif
++
+ #ifdef SUPPORT_VOXWARE
+ 
+@@ -76,7 +82,5 @@
+ #include <sys/stat.h>
+ #include <fcntl.h>
+-int linux16_supported = TRUE;
+-int freebsd16_supported = FALSE;
+-static char *aud_sys_name = "Linux";
++
+ static int stereo_only = 0;
+ 
+@@ -152,5 +156,5 @@
+     int audio,actual_fmt;
+     int i,r,n;
+-    char *audiodevice;
++    const char *audiodevice;
+ 
+     if (al.present("-audiodevice"))
+@@ -279,5 +283,5 @@
+     int audio=-1,actual_fmt;
+     int i,r,n;
+-    char *audiodevice;
++    const char *audiodevice;
+ 
+     if (al.present("-audiodevice"))

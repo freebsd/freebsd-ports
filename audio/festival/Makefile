@@ -2,23 +2,36 @@
 # $FreeBSD$
 
 PORTNAME=	festival
-PORTVERSION=	1.96
-PORTREVISION=	3
+PORTVERSION=	2.1
 CATEGORIES=	audio accessibility
 MASTER_SITES=	${MASTER_SITE_FESTIVAL}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
-DISTFILES=	${DISTNAME}-beta.tar.gz 	\
-		speech_tools-1.2.${PORTVERSION:E}-beta.tar.gz
+DISTFILES=	${DISTNAME}-release.tar.gz 	\
+		speech_tools-${PORTVERSION}-release.tar.gz
+
+PATCHFILES=	src_modules_diphone_diphone.h.diff:debian	\
+		src_modules_diphone_di_io.cc.diff:debian	\
+		src_modules_diphone_diphone.cc.diff:debian	\
+		src_modules_donovan_t2s.h.diff:debian		\
+		src_modules_UniSyn_diphone_UniSyn_diphone.cc.diff:debian \
+		festival_el_utf8.diff:debian	\
+		lintianspellpatch.diff:debian	\
+		hts21compat.diff:debian	\
+		languagespatch.diff:debian \
+		${SPT_PATCHES:C/.*/patch-speech__tools_\0:netbsd/}
+PATCH_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/current/pkgsrc/audio/festival/patches/:netbsd	\
+		http://patch-tracker.debian.org/patch/series/dl/festival/1:2.1~release-5.1/:debian
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multi-lingual speech synthesis system
 
 OPTIONS_DEFINE=	NAS ESD
-OPTIONS_DEFAULT=	NAS ESD
+OPTIONS_DEFAULT=NAS ESD
 ESD_DESC=	${ESOUND_DESC}
 
 DIST_SUBDIR=	festival
-
+ 
+CXXFLAGS+=	-DFTLIBDIR=${LOCALBASE}/share/festival/lib
 CONFIGURE_WRKSRC=	${WRKDIR}/festival
 USES=		gmake
 SPEECHTOOLS=	${WRKSRC}/speech_tools
@@ -31,6 +44,20 @@ MAKE_ENV+=	GCC="${CC}" \
 MAN1=		festival.1 festival_client.1
 WRKSRC=		${WRKDIR}
 
+SPT_PATCHES=	base__class_EST__TVector.cc	\
+		base__class_inst__tmpl_vector__dmatrix__t.cc	\
+		base__class_inst__tmpl_vector__dvector__t.cc	\
+		base__class_inst__tmpl_vector__fmatrix__t.cc	\
+		config_compilers_gcc__defaults.mak	\
+		include_EST__Ngrammar.h	\
+		include_EST__SCFG.h	\
+		include_EST__String.h	\
+		include_EST__error.h	\
+		include_ling__class_EST__FeatureFunctionPackage.h	\
+		include_unix_EST__socket__unix.h	\
+		stats_dynamic__program.cc	\
+		utils_EST__ServiceTable.cc
+
 do-build:
 .for d in speech_tools festival
 	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKDIR}/$d ${MAKE_FLAGS} Makefile \
@@ -38,9 +65,15 @@ do-build:
 .endfor
 
 # Can not make test in `festival', because the voices may not be installed
-# XXX: this should fail, if the verdict is not "Test OK"...
+# XXX: this should fail, if the verdict is not "CORRECT"...
 post-build test:
 	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKDIR}/speech_tools test
+
+# The below is needed, because Debian's patches expect a different
+# directory-name
+pre-patch:
+	${LN} -s festival ${WRKSRC}/festival-2.1~release
+	${LN} -s festival ${WRKSRC}/b
 
 post-patch::
 	${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g'	\
@@ -71,11 +104,11 @@ do-configure:
 	fi
 	# This step helps non-i386 systems and is harmless on i386
 	-${LN} -s ix86_FreeBSD.mak ${WRKDIR}/$d/config/systems/${ARCH}_unknown.mak
+.endfor
 	${REINPLACE_CMD} -E -e 's,^(CC|CXX) *=,\1 ?=,' \
-	    -e 's,^(CFLAGS|CXXFLAGS) *=,\1 +=,'	\
+	    -e 's,^(CFLAGS|CXXFLAGS) *=,\1 +=,' \
 	    -e 's,^OPTIMI,#OPTIMI,' \
 	    ${WRKSRC}/speech_tools/config/compilers/gcc*.mak
-.endfor
 	# This step helps to use a compiler, the vendor has not seen before:
 	${TEST} -e ${WRKDIR}/speech_tools/config/compilers/${CC}.mak ||	\
 		${LN} -s gcc_defaults.mak ${WRKDIR}/speech_tools/config/compilers/${CC}.mak
