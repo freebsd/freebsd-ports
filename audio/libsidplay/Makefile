@@ -12,6 +12,7 @@ COMMENT=	Commodore SID-chip emulator library to play SID music files
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
+CONFIGURE_ENV=	sid_cv_have_ios_binary=yes
 
 .include <bsd.port.pre.mk>
 
