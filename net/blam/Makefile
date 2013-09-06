@@ -1,10 +1,6 @@
-# New ports collection makefile for:	blam
-# Date created:				20040812
-# Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-#
+# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
 #   $Id: Makefile,v 1.22 2006/10/26 05:32:53 tmclau02 Exp $
-#
 
 PORTNAME=	blam
 PORTVERSION=	1.8.7
@@ -20,10 +16,9 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/webkit-sharp-1.0.pc:${PORTSDIR}/ww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 CONFIGURE_ENV=	GMSGFMT="${LOCALBASE}/bin/msgfmt" DATADIRNAME="share"
 USE_GNOME=	gnomesharp20
-USES=		gettext
+USES=		gettext gmake pkgconfig
 INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	blam.schemas
 

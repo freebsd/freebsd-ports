@@ -17,7 +17,7 @@ LIB_DEPENDS=	opkele:${PORTSDIR}/devel/libopkele \
 PLIST_FILES=	${APACHEMODDIR}/mod_auth_openid.so
 
 USE_APACHE=	22
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pcre=${LOCALBASE}
 

@@ -15,9 +15,9 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 USE_GNOME=	gtk20
-USES=		ada gmake
+USES=		ada gmake perl5 pkgconfig
 
 DESTINY=	${WRKDIR}/destino
 MAKE_ENV+=	DESTDIR=${DESTINY} \

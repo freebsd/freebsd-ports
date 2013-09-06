@@ -1,9 +1,5 @@
-# New ports collection makefile for:  	bbmail
-# Date created:		May 3 1999
-# Whom:			Chris Piazza <cpiazza@FreeBSD.org>
-#
+# Created by: Chris Piazza <cpiazza@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bbmail
 PORTVERSION=	0.9.3
@@ -15,6 +11,7 @@ COMMENT=	A tool intended for Blackbox that checks for new mail
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libbt.pc:${PORTSDIR}/x11-wm/blackbox
 
+USES=		pkgconfig
 USE_XORG=	xext
 GNU_CONFIGURE=	yes
 

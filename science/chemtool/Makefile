@@ -1,7 +1,4 @@
-# New ports collection makefile for:	chemtool
-# Date created:			Mar 31, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	chemtool
@@ -16,7 +13,7 @@ COMMENT=	Draw organic molecules easily and store them
 RUN_DEPENDS=	transfig:${PORTSDIR}/print/transfig
 
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

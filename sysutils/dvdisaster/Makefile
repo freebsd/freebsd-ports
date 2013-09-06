@@ -18,7 +18,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 MAKEFILE=	GNUmakefile
 
 USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext pkgconfig
 USE_GNOME=	gtk20
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--docsubdir="/" \

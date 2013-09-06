@@ -14,8 +14,7 @@ RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="`pkg-config --libs libgnomeui-2.0`"
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`

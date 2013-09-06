@@ -16,9 +16,8 @@ CONFIGURE_ARGS=	--datarootdir="${PREFIX}/share" \
 		--includedir="${LOCALBASE}/include"
 
 INSTALLS_ICONS=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gtksharp20 gnomesharp20
-USE_GMAKE=	yes
 
 USE_LDCONFIG=	yes
 

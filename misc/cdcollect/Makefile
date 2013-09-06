@@ -15,8 +15,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=        pathfix gettext
+USES=        pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix intlhack libgnome gnomesharp20
 GCONF_SCHEMAS=	cdcollect.schemas
 CPPFLAGS+=	-I${LOCALBASE}/include

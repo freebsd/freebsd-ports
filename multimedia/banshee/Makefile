@@ -34,8 +34,8 @@ YOUTUBE_DESC=	Build and/or install the Youtube extension
 OPTIONS_DEFAULT=BPMDETECT GIO MTP WEBKIT YOUTUBE
 
 USE_XZ=		yes
-USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USES=		gmake perl5 pkgconfig
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gtksharp20 gnomesharp20
 USE_GSTREAMER=	cdparanoia
