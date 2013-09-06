@@ -1,9 +1,5 @@
-# New ports collection makefile for:	free-sa-devel
-# Date created:				27 Jul 2009
-# Whom:					Alexander Moisseev <moiseev@mezonplus.ru>
-#
+# Created by: Alexander Moisseev <moiseev@mezonplus.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	free-sa
 PORTVERSION=	2.0.0b5.10
@@ -24,6 +20,7 @@ LATEST_LINK=	free-sa-devel
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
 
+USE_CSTD=	gnu89
 PORTDOCS=	COPYING ChangeLog FAQ INSTALL README README.DEV THANKS
 MAN1=		free-sa.1
 MAN5=		free-sa.conf.5
