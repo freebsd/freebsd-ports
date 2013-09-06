@@ -1175,6 +1175,7 @@
     SUBDIR += py-mako
     SUBDIR += py-markdown
     SUBDIR += py-markdown2
+    SUBDIR += py-openpyxl
     SUBDIR += py-paragrep
     SUBDIR += py-pss
     SUBDIR += py-pyctpp2
