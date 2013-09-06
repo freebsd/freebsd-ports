@@ -24,7 +24,7 @@ LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
 
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_SQLITE=	3
 USE_WX=		2.8
 WX_CONF_ARGS=	relative

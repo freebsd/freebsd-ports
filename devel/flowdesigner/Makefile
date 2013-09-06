@@ -14,9 +14,8 @@ COMMENT=	A free (GPL) "data flow oriented" development environment
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		fftw.2:${PORTSDIR}/math/fftw
 
-USES=        pathfix
+USES=        pathfix gmake pkgconfig
 USE_GNOME=	libgnomeui libxml2
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	${CONFIGURE_SCRIPT} FuzzyEngine/configure \
 		HMM/configure NNet/configure \

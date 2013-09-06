@@ -26,11 +26,10 @@ GHEX_DESC=	Enable memory view
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	ac_cv_path_GDB_PROG=${LOCALBASE}/bin/gdb
-USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intltool gnomedocutils gconf2 vte
 USE_GCC=	yes
 USE_LDCONFIG=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 MAN1=		nemiver.1

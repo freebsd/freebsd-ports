@@ -12,7 +12,7 @@ COMMENT=	A command-line tool to play audio and video files
 LICENSE=	LGPL20
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 CONFIGURE_ENV=	NCURSES5_CONFIG=/usr/bin/true

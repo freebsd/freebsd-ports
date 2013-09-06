@@ -1,10 +1,6 @@
-# New ports collection makefile for:	passepartout
-# Date created:				11st Sep 2003
-# Whom:					Alexander Nedotsukov <bland@FreeBSD.org>
-#
+# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/graphics/passepartout/Makefile,v 1.4 2006/09/30 15:31:05 ahze Exp $
-#
 
 PORTNAME=	passepartout
 PORTVERSION=	0.7.1
@@ -24,8 +20,7 @@ LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26 \
 RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=	pathfix
+USES=	pathfix gmake pkgconfig
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

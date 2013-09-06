@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gstreamer-plugins-gl
-# Date created:		6 Sep 2010
-# Whom:			Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gstreamer-plugins-gl
 PORTVERSION=	0.10.3
@@ -19,9 +15,8 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USES=	pathfix gettext
+USES=	pathfix gettext gmake pkgconfig
 USE_GSTREAMER=	yes
 USE_XORG=	ice x11
 USE_GL=		gl glu glew

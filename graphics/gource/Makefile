@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm
 
 GNU_CONFIGURE=	yes
 USE_GCC=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 MANCOMPRESSED=	yes
 
 CONFIGURE_ARGS+=--with-boost-system=boost_system \

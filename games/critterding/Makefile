@@ -13,6 +13,7 @@ COMMENT=	Evolving Artificial Life
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtool
 USE_SDL=	sdl

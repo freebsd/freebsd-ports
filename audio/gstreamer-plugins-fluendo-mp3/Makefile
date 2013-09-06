@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gstreamer-plugins-fluendo-mp3
-# Date created:		2007-02-25
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gstreamer-plugins-fluendo-mp3
 PORTVERSION=	0.10.20
@@ -17,6 +13,7 @@ COMMENT=	Mp3 gstreamer plugin from fluendo
 LICENSE=	MIT
 
 CFLAGS:=	${CFLAGS} -O2
+USES=		pkgconfig
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 PLIST_FILES=	lib/gstreamer-0.10/libgstflump3dec.la \

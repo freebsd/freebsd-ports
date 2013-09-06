@@ -17,10 +17,9 @@ CANNA_DESC=		Use Canna
 WNN_DESC=		Use FreeWnn
 GNOMEPANEL_DESC=	Build GNOME Panel Applet
 
-USES=        pathfix perl5
+USES=        pathfix perl5 gmake pkgconfig
 USE_GNOME=	gconf2 gnomeprefix intlhack libglade2
 USE_PERL5=	build
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		im-ja-conf.1 im-ja-xim-server.1

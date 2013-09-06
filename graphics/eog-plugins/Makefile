@@ -17,11 +17,10 @@ LIB_DEPENDS=	gdata.7:${PORTSDIR}/devel/libgdata
 RUN_DEPENDS=	eog:${PORTSDIR}/graphics/eog
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GL=		gl
 USE_GNOME=	gnomeprefix intlhack gtk20
 WANT_GNOME=	yes
-USES=		gettext pathfix
+USES=		gettext pathfix gmake pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

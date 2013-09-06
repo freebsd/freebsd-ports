@@ -15,8 +15,7 @@ LIB_DEPENDS=	unique-1:${PORTSDIR}/x11-toolkits/unique \
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=		gettext pathfix
-USE_GMAKE=	yes
+USES=		gettext pathfix gmake pkgconfig
 USE_GSTREAMER=	yes
 USE_GNOME=	gtk20
 
