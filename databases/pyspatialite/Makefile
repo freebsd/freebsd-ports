@@ -15,15 +15,25 @@ COMMENT=	DB-API 2.0 interface for SQLite 3.x with Spatialite 3.x
 
 LIB_DEPENDS=	spatialite:${PORTSDIR}/databases/spatialite
 
+USES=		iconv
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	pyspatialite
 
 AMALGAMATION_NAME=	libspatialite-amalgamation-${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if empty(ICONV_LIB)
+ICONV_APPEND=
+.else
+ICONV_APPEND=	,'iconv'
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|pyspatialite-doc|${DOCSDIR}|g" \
-		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/setup.py
+		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+		-e "s|%%ICONV%%|${ICONV_APPEND}|" ${WRKSRC}/setup.py
 	@${MV} ${WRKDIR}/${AMALGAMATION_NAME} ${WRKSRC}/amalgamation
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

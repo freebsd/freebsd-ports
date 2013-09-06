@@ -5,7 +5,7 @@
  include_dirs = []
  library_dirs = []
 -libraries = ['geos','geos_c','proj']
-+libraries = ['geos','geos_c','proj','iconv']
++libraries = ['geos','geos_c','proj'%%ICONV%%]
  runtime_library_dirs = []
  extra_objects = []
  define_macros = []
