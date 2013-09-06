@@ -11,7 +11,7 @@ COMMENT=	A tool for fetching and building ports
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 SRC=		${.CURDIR}/src
 

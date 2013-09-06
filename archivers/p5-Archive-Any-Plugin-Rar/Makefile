@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-Archive-Any>=0:${PORTSDIR}/archivers/p5-Archive-Any \
 		p5-lib-abs>=0.90:${PORTSDIR}/devel/p5-lib-abs
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		Archive::Any::Plugin::Rar.3
 
 .include <bsd.port.mk>

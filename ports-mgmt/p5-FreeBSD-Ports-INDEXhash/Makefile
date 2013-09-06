@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Make a hash out of the index file for the ports tree
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		FreeBSD::Ports::INDEXhash.3
 

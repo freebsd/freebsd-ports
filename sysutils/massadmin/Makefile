@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-Expect>=1.21:${PORTSDIR}/lang/p5-Expect \
 		p5-IO-Tty>=1.08:${PORTSDIR}/devel/p5-IO-Tty
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 LICENSE=	GPLv3
 

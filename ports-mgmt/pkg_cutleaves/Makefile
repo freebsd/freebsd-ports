@@ -15,7 +15,7 @@ MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	Interactive script for deinstalling 'leaf' packages
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 WRKSRC=		${WRKDIR}
 

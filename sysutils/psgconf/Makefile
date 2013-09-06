@@ -24,7 +24,8 @@ BUILD_DEPENDS=	p5-Config-Objective>=0:${PORTSDIR}/devel/p5-Config-Objective \
 	p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		psgconf.1
 MAN3=		PSGConf.3 \
