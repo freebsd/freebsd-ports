@@ -19,6 +19,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-memcached
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
+CXXFLAGS+=	-D__STDC_CONSTANT_MACROS
 
 .include <bsd.port.pre.mk>
 
