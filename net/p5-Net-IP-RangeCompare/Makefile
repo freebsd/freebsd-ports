@@ -17,7 +17,8 @@ COMMENT=	Perl extension for IP Range Comparisons
 RUN_DEPENDS=	p5-Data-IPV4-Range-Parse>=0.05:${PORTSDIR}/net/p5-Data-IPV4-Range-Parse \
 		p5-Data-Range-Compare>=1.030:${PORTSDIR}/devel/p5-Data-Range-Compare
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::IP::RangeCompare.3
 

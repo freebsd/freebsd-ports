@@ -23,7 +23,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Whois::Object.3 \
 		Net::Whois::Object::AsBlock.3 \

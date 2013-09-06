@@ -14,7 +14,7 @@ RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop \
 		p5-Gtk>=0:${PORTSDIR}/x11-toolkits/p5-Gtk
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 PLIST_FILES=	bin/xrdesktop
 

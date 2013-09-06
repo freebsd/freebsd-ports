@@ -19,7 +19,8 @@ BUILD_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
 		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_APACHE=	22+
 
 MAN3=		Apache2::SOAP.3
