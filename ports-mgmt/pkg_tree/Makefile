@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.mavetju.org/download/
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Get a 'graphical' tree-overview of installed packages
 
-USE_PERL5=	yes
+USES=		perl5
 
 MAN7=		pkg_tree.7
 PLIST_FILES=	bin/pkg_tree

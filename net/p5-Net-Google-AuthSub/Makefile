@@ -18,7 +18,8 @@ COMMENT=	Interact with sites that implement Google style AuthSub
 RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Google::AuthSub::Response.3 \
 		Net::Google::AuthSub.3
