@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	poudriere
-PORTVERSION=	3.0.99.20130721
+PORTVERSION=	3.0.99.20130906
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/ \
 		LOCAL/bdrewery/${PORTNAME}/
@@ -14,7 +14,7 @@ COMMENT=	Port build and test system
 
 LICENSE=	BSD
 
-FSL_CHKIN=	6abae2a52c
+FSL_CHKIN=	63ec9efc9a
 
 MANCOMPRESSED=	yes
 MAN8=	poudriere.8
@@ -37,6 +37,24 @@ PLIST_FILES=	etc/poudriere.conf.sample \
 		share/poudriere/awk/json.awk \
 		share/poudriere/awk/siginfo_buildtime.awk \
 		share/poudriere/html/index.html \
+		share/poudriere/html/assets/bootstrap/css/bootstrap-responsive.min.css \
+		share/poudriere/html/assets/bootstrap/css/bootstrap.min.css \
+		share/poudriere/html/assets/bootstrap/img/glyphicons-halflings-white.png \
+		share/poudriere/html/assets/bootstrap/img/glyphicons-halflings.png \
+		share/poudriere/html/assets/bootstrap/js/bootstrap.min.js \
+		share/poudriere/html/assets/dataTables/css/jquery.dataTables.css \
+		share/poudriere/html/assets/dataTables/images/back_disabled.png \
+		share/poudriere/html/assets/dataTables/images/back_enabled.png \
+		share/poudriere/html/assets/dataTables/images/back_enabled_hover.png \
+		share/poudriere/html/assets/dataTables/images/forward_disabled.png \
+		share/poudriere/html/assets/dataTables/images/forward_enabled.png \
+		share/poudriere/html/assets/dataTables/images/forward_enabled_hover.png \
+		share/poudriere/html/assets/dataTables/images/sort_asc.png \
+		share/poudriere/html/assets/dataTables/images/sort_asc_disabled.png \
+		share/poudriere/html/assets/dataTables/images/sort_both.png \
+		share/poudriere/html/assets/dataTables/images/sort_desc.png \
+		share/poudriere/html/assets/dataTables/images/sort_desc_disabled.png \
+		share/poudriere/html/assets/dataTables/js/jquery.dataTables.min.js \
 		share/poudriere/html/assets/jquery-1.9.1.min.js \
 		share/poudriere/html/assets/logo.jpg \
 		share/poudriere/html/assets/poudriere.css \
@@ -48,6 +66,7 @@ PLIST_FILES=	etc/poudriere.conf.sample \
 		share/poudriere/distclean.sh \
 		share/poudriere/jail.sh \
 		share/poudriere/options.sh \
+		share/poudriere/pkgclean.sh \
 		share/poudriere/ports.sh \
 		share/poudriere/processonelog.sh \
 		share/poudriere/queue.sh \
@@ -58,6 +77,14 @@ PLIST_DIRS=	libexec/poudriere \
 		etc/poudriere.d/hooks \
 		etc/poudriere.d \
 		share/poudriere/awk \
+		share/poudriere/html/assets/bootstrap/css \
+		share/poudriere/html/assets/bootstrap/img \
+		share/poudriere/html/assets/bootstrap/js \
+		share/poudriere/html/assets/bootstrap \
+		share/poudriere/html/assets/dataTables/css \
+		share/poudriere/html/assets/dataTables/images \
+		share/poudriere/html/assets/dataTables/js \
+		share/poudriere/html/assets/dataTables \
 		share/poudriere/html/assets \
 		share/poudriere/html \
 		share/poudriere
