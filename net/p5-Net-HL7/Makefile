@@ -16,7 +16,8 @@ COMMENT=	Net::HL7 - A simple yet flexible API for non-XML HL7 applications
 
 PORTDOCS=	README
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::HL7.3 \
 		Net::HL7::Request.3 \

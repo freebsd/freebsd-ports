@@ -25,7 +25,8 @@ BUILD_DEPENDS=	\
 	p5-Unicode-Normalize>0:${PORTSDIR}/textproc/p5-Unicode-Normalize \
 	p5-URI>0:${PORTSDIR}/net/p5-URI
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		URI::Template::Restrict.3 \
 		URI::Template::Restrict::Expansion.3

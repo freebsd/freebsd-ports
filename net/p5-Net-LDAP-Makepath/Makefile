@@ -18,7 +18,8 @@ COMMENT=	Provides a method for creating paths in LDAP simply
 
 RUN_DEPENDS=	 p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::LDAP::Makepath.3
 

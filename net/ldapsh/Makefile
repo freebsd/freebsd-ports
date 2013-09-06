@@ -29,7 +29,8 @@ MAN1=		ldapsh.1
 MAN3=		Net::LDAP::Shell.3 Net::LDAP::Config.3 \
 		Net::LDAP::Shell::Parse.3 Net::LDAP::Shell::Util.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/local/bin/perl,${PERL}," ${WRKSRC}/ldapsh
