@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsyslog
-PORTVERSION=	7.4.3
+PORTVERSION=	7.4.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -12,8 +12,7 @@ BUILD_DEPENDS=	libgcrypt-config:${PORTSDIR}/security/libgcrypt
 
 LIB_DEPENDS=	ee:${PORTSDIR}/devel/libee \
 		estr:${PORTSDIR}/devel/libestr \
-		json.0:${PORTSDIR}/devel/json-c \
-		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
+		json.0:${PORTSDIR}/devel/json-c
 
 USE_LDCONFIG=	yes
 
@@ -21,7 +20,7 @@ PORTSCOUT=	limit:^7\.4
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	DBI DOCS GNUTLS GSSAPI MYSQL PGSQL RELP RFC3195 SNMP
+OPTIONS_DEFINE=	DBI DOCS GNUTLS GSSAPI MYSQL PGSQL RELP RFC3195 SNMP UUID
 
 DBI_DESC=	LibDBI output module for rsyslog
 GNUTLS_DESC=	GNUTLS module for rsyslog
@@ -31,6 +30,7 @@ PGSQL_DESC=	PostgreSQL output module for rsyslog
 RELP_DESC=	RELP input/output module for rsyslog
 RFC3195_DESC=	RFC3195 input support for rsyslog
 SNMP_DESC=	SNMP trap sender for rsyslog
+UUID_DESC=	Support for generating a UUID per log message
 
 USES=		pkgconfig
 
@@ -113,6 +113,12 @@ PLIST_FILES+=	lib/rsyslog/omsnmp.la \
 CONFIGURE_ARGS+=--disable-snmp
 .endif
 
+.if ${PORT_OPTIONS:MUUID}
+LIB_DEPENDS+=	uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
+.else
+CONFIGURE_ARGS+=--disable-uuid
+.endif
+
 .ifdef WITH_MYSQL_MICROSECONDS
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mysql-microseconds
 .endif
@@ -137,7 +143,7 @@ CONFIGURE_ARGS+=--enable-rtinst --enable-debug
 CPPFLAGS+=-march=i686
 .endif
 
-CONFIGURE_ENV+=	LIBESTR_CFLAGS="${CFLAGS}" LIBESTR_LIBS="${LDFLAGS} -lestr" LIBEE_CFLAGS="${CFLAGS}" LIBEE_LIBS="${LDFLAGS} -lee -lsysinfo -lkvm"
+CONFIGURE_ENV+=	LIBESTR_CFLAGS="${CFLAGS}" LIBESTR_LIBS="${LDFLAGS} -lestr" LIBEE_CFLAGS="${CFLAGS}" LIBEE_LIBS="${LDFLAGS} -lee -lkvm"
 CFLAGS+=	${CPPFLAGS}
 
 MAN8=	rsyslogd.8
