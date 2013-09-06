@@ -13,7 +13,7 @@
  # there is a default hardcoded value, you can override on command line, those are saved between runs
  # we only handle strings
 -serialized=['CC', 'CXX', 'JOBS', 'BUILD', 'SETUP']
-+serialized=['CC', 'CXX', 'CCFLAGS', 'CXXFLAGS', 'LINKFLAGS', 'PTHREAD_LIBS', 'LOCALBASE', 'LOCALBASE', 'JOBS', 'BUILD', 'SETUP']
++serialized=['CC', 'CXX', 'CCFLAGS', 'CXXFLAGS', 'LINKFLAGS', 'LOCALBASE', 'JOBS', 'BUILD', 'SETUP']
  
  # help -------------------------------------------
  
@@ -52,7 +52,7 @@
  if ( OS == 'Linux' ):
  
    # static
-@@ -218,6 +209,12 @@
+@@ -218,6 +209,11 @@
    CPPPATH.append('/sw/include')
    CPPPATH.append('/usr/X11R6/include')
    LINKFLAGS += '-L/sw/lib -L/usr/lib -L/usr/X11R6/lib '
@@ -60,21 +60,29 @@
 +  CCFLAGS += '-fPIC '
 +  CXXFLAGS += '-fPIC '
 +  CPPPATH.append(LOCALBASE + '/include')
-+  CPPPATH.append(LOCALBASE + '/include')
-+  LINKFLAGS += '-L' + LOCALBASE + '/lib ' + '-L' + LOCALBASE + '/lib '
++  LINKFLAGS += '-L' + LOCALBASE + '/lib '
  
  CPPPATH.append('libs')
  
-@@ -269,6 +266,8 @@
+@@ -248,7 +244,7 @@
+   def useGtk2(self):
+     self['CXXFLAGS'] += '`pkg-config gtk+-2.0 --cflags` '
+     self['CCFLAGS'] += '`pkg-config gtk+-2.0 --cflags` '
+-    self['LINKFLAGS'] += '-lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lpango-1.0 -lgdk_pixbuf-2.0 '
++    self['LINKFLAGS'] += '-lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lpango-1.0 -lgdk_pixbuf-2.0 -lgobject-2.0 '
+    
+   def useGtkGLExt(self):
+     self['CXXFLAGS'] += '`pkg-config gtkglext-1.0 --cflags` '
+@@ -269,6 +265,8 @@
    def usePThread(self):
      if ( OS == 'Darwin' ):
        self['LINKFLAGS'] += '-lpthread -Wl,-stack_size,0x400000 '
 +    elif ( OS == 'FreeBSD' ):
-+      self['LINKFLAGS'] += PTHREAD_LIBS
++      self['LINKFLAGS'] += '-pthread '
      else:
        self['LINKFLAGS'] += '-lpthread '
  
-@@ -278,7 +277,7 @@
+@@ -278,7 +276,7 @@
          print('ERROR: CheckLDD: target %s not found\n' % target[0])
          Exit(1)
      # not using os.popen3 as I want to check the return code
