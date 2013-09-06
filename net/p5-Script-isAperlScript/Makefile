@@ -13,7 +13,8 @@ COMMENT=	Checks if something is a Perl script
 
 RUN_DEPENDS=	p5-Error-Helper>=1.0.0:${PORTSDIR}/devel/p5-Error-Helper
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Script::isAperlScript.3
 

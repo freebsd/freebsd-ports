@@ -26,6 +26,7 @@ MAN3=		Net::Trackback.3 \
 		Net::Trackback::Ping.3 \
 		Net::Trackback::Server.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

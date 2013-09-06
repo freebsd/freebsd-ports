@@ -20,7 +20,8 @@ RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
 		curl:${PORTSDIR}/ftp/curl
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/pattern
 PLIST_DIRS=	%%DATADIR%%

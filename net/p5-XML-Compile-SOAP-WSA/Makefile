@@ -22,7 +22,8 @@ BUILD_DEPENDS=	p5-Net-Server>=0.97:${PORTSDIR}/net/p5-Net-Server \
 		p5-XML-Compile-Cache>=0.91:${PORTSDIR}/textproc/p5-XML-Compile-Cache
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	XML::Compile::SOAP::WSA.3 \
 	XML::Compile::SOAP::WSA::Util.3

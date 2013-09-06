@@ -23,7 +23,8 @@ BUILD_DEPENDS=	p5-Chooser>=0:${PORTSDIR}/devel/p5-Chooser \
 		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		ZConf.3 \
 		ZConf::backends::file.3 \

@@ -21,7 +21,8 @@ BUILD_DEPENDS=	p5-Crypt-SSLeay>=0.57:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-Test-Simple>=0.86:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=	Net::OAuth::Simple.3
 
 .include <bsd.port.mk>

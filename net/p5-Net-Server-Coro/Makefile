@@ -15,7 +15,8 @@ RUN_DEPENDS=	\
 	p5-Net-Server>=2:${PORTSDIR}/net/p5-Net-Server
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Net::Server::Coro.3
 

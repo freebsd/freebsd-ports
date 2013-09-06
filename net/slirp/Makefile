@@ -19,7 +19,8 @@ ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 
 MAN1=		slirp.1
