@@ -4,9 +4,9 @@
 PORTNAME=	data
 PORTVERSION=	4.2.014
 CATEGORIES=	games
-MASTER_SITES=	http://www.ftwgl.com/files/mirror/ \
+MASTER_SITES=	http://cdn.urbanterror.info/urt/42/zips/ \
 		http://www.f1m.fr/uploads/urt/ \
-		http://maps.goreclan.net/
+		http://mirror.urtstats.net/urbanterror/
 PKGNAMEPREFIX=	urbanterror-
 DISTNAME=	UrbanTerror${URT_VER}_full${URT_REV}
 EXTRACT_SUFX=	.zip
