@@ -10,9 +10,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Simple GNOME panel applet for controlling XMMS
 
-USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomepanel gnomeprefix intlhack libgnomeui
-USES=		gettext
+USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="`pkg-config --libs libgnomeui-2.0`"
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`

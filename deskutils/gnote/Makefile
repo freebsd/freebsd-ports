@@ -19,11 +19,10 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		boost_filesystem:${PORTSDIR}/devel/boost-libs \
 		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
 
-USE_GMAKE=	yes
 USE_XZ=		yes
 USE_GNOME=	gnomehack gnomeprefix gconf2 gtk20 intltool libxml2 libxslt \
 		ltverhack gnomepanel
-USES=		gettext
+USES=		gettext gmake pkgconfig
 INSTALLS_OMF=	yes
 GCONF_SCHEMAS=	gnote.schemas
 USE_AUTOTOOLS=	libtool
