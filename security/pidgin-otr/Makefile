@@ -13,15 +13,13 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Allows deniable private conversations using Pidgin
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin \
-		pkgconf>0:${PORTSDIR}/devel/pkgconf
-LIB_DEPENDS=	otr:${PORTSDIR}/security/libotr \
-		gcrypt:${PORTSDIR}/security/libgcrypt \
-		purple:${PORTSDIR}/net-im/libpurple
-
+BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
+LIB_DEPENDS=	libotr.so:${PORTSDIR}/security/libotr \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		libpurple.so:${PORTSDIR}/net-im/libpurple
 
 USE_GNOME=	intltool
-USES=		gettext gmake
+USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
