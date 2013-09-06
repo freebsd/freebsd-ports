@@ -25,6 +25,8 @@ libexec/festival_client.naked
 %%DATADIR%%/examples/intro.text
 %%DATADIR%%/examples/latest
 %%DATADIR%%/examples/latest.sh
+%%DATADIR%%/examples/run-festival-script
+%%DATADIR%%/examples/run-festival-script.sh
 %%DATADIR%%/examples/make_utts
 %%DATADIR%%/examples/make_utts.sh
 %%DATADIR%%/examples/powmeanstd
