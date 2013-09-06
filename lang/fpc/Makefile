@@ -3,7 +3,7 @@
 
 PORTNAME=	fpc
 PORTVERSION=	2.6.2
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
 		ftp://planetmirror.com/pub/fpc/dist/${PORTVERSION}/source/:source \
@@ -23,7 +23,7 @@ MAINTAINER?=	acm@FreeBSD.org
 COMMENT?=	Free Pascal compiler with Turbo and Delphi
 
 PROJECTHOST=	bsdistfiles
-USE_GMAKE=	yes
+USES=		gmake iconv
 ONLY_FOR_ARCHS=	i386 amd64
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
@@ -121,6 +121,12 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|700055|${OSVERSION}|g' ${WRKDIR}/${FPCSRCDIR}/rtl/freebsd/${FPC_ARCH}/cprt0.as
 	@${REINPLACE_CMD} -i "" -e 's|502110|${OSVERSION}|g' ${WRKDIR}/${FPCSRCDIR}/rtl/freebsd/${FPC_ARCH}/gprt0.as
 	@${REINPLACE_CMD} -i "" -e 's|700055|${OSVERSION}|g' ${WRKDIR}/${FPCSRCDIR}/rtl/freebsd/${FPC_ARCH}/prt0.as
+.endif
+.if empty(ICONV_LIB)
+	@${REINPLACE_CMD} -e "s|if (s<>'c') or reorder then|if ((s<>'c') and (s<>'iconv')) or reorder then|" \
+		${WRKDIR}/${FPCSRCDIR}/compiler/systems/t_bsd.pas
+	@${REINPLACE_CMD} -e 's|defined(bsd) and not ||' \
+		${WRKDIR}/${FPCSRCDIR}/rtl/unix/cwstring.pp
 .endif
 
 do-build:
