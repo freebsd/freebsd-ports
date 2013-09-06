@@ -1,9 +1,5 @@
-# New ports collection makefile for:	monodevelop-database
-# Date created:		2008-03-02
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	monodevelop-database
 PORTVERSION=	3.0.2
@@ -19,8 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/monodevelop.pc:${PORTSDIR}/devel/mon
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gnomehack gtksharp20
 
 post-patch:

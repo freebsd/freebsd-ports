@@ -13,7 +13,7 @@ COMMENT=	Free 3D city simulator
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_SDL=	sdl mixer image net
 USE_GL=		gl glu
 USE_GCC=	any

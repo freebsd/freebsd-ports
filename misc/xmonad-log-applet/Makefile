@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmonad-log-applet
-# Date created:				01 September 2011
-# Whom:					Alexander Kojevnikov <alexander@kojevnikov.com>
-#
+# Created by: Alexander Kojevnikov <alexander@kojevnikov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xmonad-log-applet
 PORTVERSION=	2.0.0
@@ -15,7 +11,7 @@ MAINTAINER=	alexander@kojevnikov.com
 COMMENT=	An applet that will display Xmonad log information
 
 INSTALLS_ICONS=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomehack gnomepanel
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-panel=gnome2

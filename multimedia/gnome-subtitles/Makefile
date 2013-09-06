@@ -17,7 +17,7 @@ LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gtksharp20 gnomesharp20 gnomedocutils
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes

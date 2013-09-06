@@ -18,9 +18,8 @@ LIB_DEPENDS=	rarian.0:${PORTSDIR}/textproc/rarian
 USE_BZIP2=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix gettext
+USES=		pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix intlhack gtk20 desktopfileutils
-USE_GMAKE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
