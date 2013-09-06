@@ -139,7 +139,8 @@ USE_FIREBIRD=	yes
 .endif
 
 .if ${PKGNAMESUFFIX} == "-iconvenc"
-USES+=	iconv
+# added to main port to make it compile on 10 with iconv in libc
+# USES+=iconv
 .endif
 
 .if ${PKGNAMESUFFIX} == "-ide"
