@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	rotix
-# Date created:			Dec 8, 2001
-# Whom:				lintux@debian.org
-#
+# Created by: lintux@debian.org
 # $FreeBSD$
-#
 
 PORTNAME=	rotix
 PORTVERSION=	0.82
@@ -14,6 +9,9 @@ MASTER_SITES=	http://elektron.its.tudelft.nl/~hemmin98/rotix_releases/${DISTNAME
 
 MAINTAINER=	lintux@debian.org
 COMMENT=	A program to generate rotational obfuscations
+
+DEPRECATED=	no longer maintained upstream
+EXPIRATION_DATE=2013-09-20
 
 USES=		gettext
 USE_GMAKE=	yes
