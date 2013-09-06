@@ -17,7 +17,8 @@ COMMENT=	Parses the contents of FreeBSD package DB under /var/db/pkg
 BUILD_DEPENDS=	p5-Error-Helper>=0:${PORTSDIR}/devel/p5-Error-Helper
 RUN_DEPENDS=	p5-Error-Helper>=0:${PORTSDIR}/devel/p5-Error-Helper
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		FreeBSD::Pkgs.3
 

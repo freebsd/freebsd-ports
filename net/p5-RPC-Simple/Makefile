@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Perl classes to handle simple asynchronous RPC calls with call-back
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		RPC::Simple.3 RPC::Simple::Agent.3 RPC::Simple::AnyLocal.3 \
 		RPC::Simple::AnyRemote.3 RPC::Simple::AnyWhere.3 \

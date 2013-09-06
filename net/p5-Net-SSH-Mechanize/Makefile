@@ -17,7 +17,8 @@ RUN_DEPENDS=	\
 	p5-MooseX-Params-Validate>0:${PORTSDIR}/devel/p5-MooseX-Params-Validate
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Net::SSH::Mechanize.3 \
 	Net::SSH::Mechanize::ConnectParams.3 \

@@ -27,7 +27,8 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-MockModule>=0:${PORTSDIR}/devel/p5-Test-MockModule \
 		p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Google::Spreadsheets.3 \
 		Net::Google::Spreadsheets::Cell.3 \

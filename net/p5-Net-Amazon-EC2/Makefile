@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Amazon::EC2.3 \
 		Net::Amazon::EC2::Attachment.3 \
