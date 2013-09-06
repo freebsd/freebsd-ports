@@ -1,0 +1,8 @@
+bin/gda-list-jdbc-providers-%%VERSION%%
+lib/libgda-%%VERSION%%/providers/gdaprovider-%%VERSION%%.jar
+lib/libgda-%%VERSION%%/providers/libgda-jdbc.a
+lib/libgda-%%VERSION%%/providers/libgda-jdbc.la
+lib/libgda-%%VERSION%%/providers/libgda-jdbc.so
+libdata/pkgconfig/libgda-jdbc-%%VERSION%%.pc
+share/libgda-%%VERSION%%/jdbc_specs_create_table.xml
+share/libgda-%%VERSION%%/jdbc_specs_dsn.xml
