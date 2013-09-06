@@ -17,7 +17,7 @@ RUN_DEPENDS=	remmina:${PORTSDIR}/net/remmina
 OPTIONS_DEFINE=	AVAHI
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gnomehack glib20 gtk20 gnomepanel
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

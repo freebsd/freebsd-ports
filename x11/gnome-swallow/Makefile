@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnome-swallow
-# Date created:				16 April 2003
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnome-swallow
 PORTVERSION=	1.2
@@ -15,7 +11,7 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Applet that swallows any X11 application into the GNOME 2 panel
 
 USE_XORG=	x11
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomehack gnomepanel libgnomeui
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="`pkg-config --libs libgnomeui-2.0`"

@@ -17,7 +17,7 @@ LIB_DEPENDS=	purple:${PORTSDIR}/net-im/libpurple \
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 
 MAN8=		telepathy-haze.8
 

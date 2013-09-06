@@ -17,8 +17,7 @@ BUILD_DEPENDS=	mautil:${PORTSDIR}/devel/mono-addins \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GNOME=	desktopfileutils gnomehack gtksharp20 gnomesharp20
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

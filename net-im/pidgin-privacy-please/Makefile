@@ -17,7 +17,7 @@ BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20
 USE_LDCONFIG=	${PREFIX}/lib/pidgin
 

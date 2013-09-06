@@ -15,8 +15,7 @@ COMMENT=	Additional conduits for gnome-pilot
 LIB_DEPENDS=	gpilotd.2:${PORTSDIR}/palm/gnome-pilot
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		bison pathfix gettext
+USES=		bison pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix libgnome
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}

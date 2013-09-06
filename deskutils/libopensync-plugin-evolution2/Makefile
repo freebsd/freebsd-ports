@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libopensync-plugin-evolution2
-# Date created:				18 July 2008
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libopensync-plugin-evolution2
 PORTVERSION=	0.22
@@ -20,6 +16,7 @@ CONFLICTS=	libopensync-plugin-evolution2-devel-[0-9]*
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_GNOME=	evolutiondataserver gconf2
 
 .include <bsd.port.mk>

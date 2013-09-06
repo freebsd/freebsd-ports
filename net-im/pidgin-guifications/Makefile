@@ -14,8 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=        pathfix gettext
+USES=        pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"

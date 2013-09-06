@@ -18,7 +18,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/gtk${GTK_API_VERSION}.jar:${PORTSDIR}/x11-toolkits/li
 		${JAVALIBDIR}/gnome${GNOME_API_VERSION}.jar:${PORTSDIR}/x11/libgnome-java
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes

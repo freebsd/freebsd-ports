@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tomboy-plugin-latex
-# Date created:		2008-12-21
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tomboy-plugin-latex
 PORTVERSION=	0.6
@@ -19,7 +15,7 @@ BUILD_DEPENDS=	tomboy:${PORTSDIR}/deskutils/tomboy
 RUN_DEPENDS=	tomboy:${PORTSDIR}/deskutils/tomboy
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_TEX=	latex
 
 .include <bsd.port.mk>

@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/gtk-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
 RUN_DEPENDS=	${LOCALBASE}/bin/ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 INSTALLS_ICONS=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
