@@ -13,7 +13,8 @@ COMMENT=	Fast lookup of country codes from IP addresses
 BUILD_DEPENDS=	p5-Geography-Countries>=0:${PORTSDIR}/misc/p5-Geography-Countries
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		ip2cc.1
 MAN3=		IP::Authority.3 \

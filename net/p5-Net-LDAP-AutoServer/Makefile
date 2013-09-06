@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
 		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-Net-DNS-RR-SRV-Helper>=0:${PORTSDIR}/dns/p5-Net-DNS-RR-SRV-Helper
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::LDAP::AutoServer.3
 
