@@ -15,7 +15,7 @@ OPTIONS_DEFINE=	EXAMPLES FIREBALL
 FIREBALL_DESC=	Enable fireball mode
 FIREBALL_RUN_DEPENDS= ${PYTHON_PKGNAMEPREFIX}asn1>=0:${PORTSDIR}/devel/py-asn1 \
 	${PYTHON_PKGNAMEPREFIX}pyzmq>=0:${PORTSDIR}/devel/py-pyzmq \
-	${PYTHON_PKGNAMEPREFIX}pypycrypto>=0:${PORTSDIR}/security/py-pycrypto \
+	${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto \
 	${PYTHON_PKGNAMEPREFIX}keyczar>=0:${PORTSDIR}/security/py-keyczar
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
