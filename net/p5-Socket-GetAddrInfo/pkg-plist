@@ -1,15 +1,22 @@
 bin/getaddrinfo
 bin/getnameinfo
-%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/Core.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/Emul.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/Socket6api.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/Strict.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/XS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/GetAddrInfo/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/GetAddrInfo/GetAddrInfo.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/GetAddrInfo/GetAddrInfo.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/GetAddrInfo
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Socket
+%%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo.pm
+%%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/Core.pm
+%%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/Emul.pm
+%%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/Socket6api.pm
+%%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/Strict.pm
+%%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/XS.pm
+%%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/GetAddrInfo/GetAddrInfo.bs
+%%OLD_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/GetAddrInfo/GetAddrInfo.so
+%%OLD_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/GetAddrInfo
+%%OLD_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket
+%%OLD_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo
+%%OLD_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Socket
+%%NEW_PERL%%%%SITE_PERL%%/Socket/GetAddrInfo.pm
+%%NEW_PERL%%%%SITE_PERL%%/Socket/GetAddrInfo/Core.pm
+%%NEW_PERL%%%%SITE_PERL%%/Socket/GetAddrInfo/Emul.pm
+%%NEW_PERL%%%%SITE_PERL%%/Socket/GetAddrInfo/Socket6api.pm
+%%NEW_PERL%%%%SITE_PERL%%/Socket/GetAddrInfo/Strict.pm
+%%NEW_PERL%%%%SITE_PERL%%/Socket/GetAddrInfo/XS.pm
+%%NEW_PERL%%@dirrmtry %%SITE_PERL%%/Socket/GetAddrInfo
+%%NEW_PERL%%@dirrmtry %%SITE_PERL%%/Socket
