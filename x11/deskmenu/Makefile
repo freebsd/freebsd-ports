@@ -1,9 +1,5 @@
-# New ports collection makefile for:   deskmenu
-# Date created:                        17 February 2002
-# Whom:                                Matt Peterson <matt@peterson.org>
-#
+# Created by: Matt Peterson <matt@peterson.org>
 # $FreeBSD$
-#
 
 PORTNAME=	deskmenu
 PORTVERSION=	1.3.0
@@ -16,8 +12,9 @@ MAINTAINER=	matt@peterson.org
 COMMENT=	X11 application launcher
 
 PLIST_FILES=	bin/deskmenu
+USES=		gmake
 USE_GNOME=	gtk12
-USE_GMAKE=	yes
+USE_CSTD=	gnu89
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/deskmenu

@@ -4,7 +4,7 @@
 -CC        = gcc
 -CFLAGS    = -g -O2 -Wall `gtk-config --cflags`
 -XROOT     = /usr/X11
-+CFLAGS    = -g -O2 -Wall `gtk12-config --cflags`
++CFLAGS    += -g -O2 -Wall `gtk12-config --cflags`
 +XROOT     = ${LOCALBASE}
  INCLUDES  = -I$(XROOT)/include
 -LIBS      = -lX11 `gtk-config --libs`
