@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.jochen-baier.de/istream/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet radio player applet for GNOME Panel
 
-USES=		gmake
+USES=		gmake pkgconfig
 USE_GNOME=	gnomepanel libgnomeui
 USE_GSTREAMER=	yes
 USE_XORG=	xtst

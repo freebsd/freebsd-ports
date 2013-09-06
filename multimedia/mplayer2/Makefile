@@ -19,7 +19,7 @@ BUILD_DEPENDS=	ffmpeg1:${PORTSDIR}/multimedia/ffmpeg1 \
 RUN_DEPENDS=	ffmpeg1:${PORTSDIR}/multimedia/ffmpeg1
 
 USE_XZ=		yes
-USES=		gmake iconv ncurses
+USES=		gmake iconv ncurses pkgconfig
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
