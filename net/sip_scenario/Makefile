@@ -13,7 +13,8 @@ COMMENT=	SIP call flow creator (HTML format)
 LICENSE=	AL2
 
 USE_ZIP=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 WRKSRC=		${WRKDIR}
 

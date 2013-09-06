@@ -30,7 +30,8 @@ RUN_DEPENDS=	p5-JSON>=2.02:${PORTSDIR}/converters/p5-JSON \
 		p5-Net-OAuth>=0.25:${PORTSDIR}/net/p5-Net-OAuth \
 		p5-Crypt-SSLeay>=0.5:${PORTSDIR}/security/p5-Crypt-SSLeay
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		Net::Twitter::Lite.3 Net::Twitter::Lite::API::V1.3 \
 		Net::Twitter::Lite::API::V1_1.3 Net::Twitter::Lite::Error.3 \
 		Net::Twitter::Lite::WithAPIv1_1.3

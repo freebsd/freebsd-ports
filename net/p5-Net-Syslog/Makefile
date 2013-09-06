@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	Perl extension for sending syslog messages to a remote syslogd
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Syslog.3
 

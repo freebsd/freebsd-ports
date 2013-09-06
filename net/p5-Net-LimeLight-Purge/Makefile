@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-DateTime-Format-ISO8601>=0.06:${PORTSDIR}/devel/p5-DateTime-Form
 		p5-MooseX-AttributeHelpers>=0.14:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
 		p5-SOAP-Lite>=0.710.08:${PORTSDIR}/net/p5-SOAP-Lite
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::LimeLight::Purge.3 \
 		Net::LimeLight::Purge::Request.3 \

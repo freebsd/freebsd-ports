@@ -14,7 +14,7 @@ RUN_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	--with-debug-lvl=3
-USE_PERL5=	yes
+USES=		perl5
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN8=		rude.8 crude.8

@@ -17,7 +17,8 @@ COMMENT=	Creates new Net::LDAP::Entry objects for a posixGroup entry
 
 RUN_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::LDAP::posixGroup.3
 
