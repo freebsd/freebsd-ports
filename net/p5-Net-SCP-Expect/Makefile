@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-Expect>=1.14:${PORTSDIR}/lang/p5-Expect \
 		p5-Term-ReadPassword>=0.01:${PORTSDIR}/devel/p5-Term-ReadPassword
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::SCP::Expect.3
 

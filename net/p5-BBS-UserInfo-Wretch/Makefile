@@ -17,7 +17,8 @@ COMMENT=	Get user information of Wretch-style BBS
 
 RUN_DEPENDS=	p5-Expect>=0:${PORTSDIR}/lang/p5-Expect
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		BBS::UserInfo::Wretch.3
 

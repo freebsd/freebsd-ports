@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/kojoney
 USE_PYTHON=	2.5+
 USE_TWISTED=	conch
 USE_OPENSSL=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 .include <bsd.port.mk>

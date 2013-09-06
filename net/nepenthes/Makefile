@@ -24,7 +24,7 @@ CONFIGURE_ARGS+=	--enable-prelude
 CONFIGURE_ARGS+=	--enable-debug-logging
 .endif
 
-USE_PERL5=	yes
+USES=		perl5
 GNU_CONFIGURE=	yes
 
 DOCS=	README README.VFS logo-shaded.svg

@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Flickr-Upload>=0:${PORTSDIR}/www/p5-Flickr-Upload
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=		flickrfs.1
 MAN3=		Net::FS::Flickr.3 \
