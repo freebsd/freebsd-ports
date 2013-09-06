@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tomboy-plugin-todo
-# Date created:		2009-06-09
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tomboy-plugin-todo
 PORTVERSION=	1.0.0
@@ -19,6 +15,6 @@ BUILD_DEPENDS=	tomboy:${PORTSDIR}/deskutils/tomboy
 RUN_DEPENDS=	tomboy:${PORTSDIR}/deskutils/tomboy
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 
 .include <bsd.port.mk>
