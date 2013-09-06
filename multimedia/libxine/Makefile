@@ -135,9 +135,9 @@ CONFIGURE_ARGS+=	--without-pulseaudio
 .endif
 
 .if ${PORT_OPTIONS:MXVMC}
-.if defined(WITH_NVIDIA_GL) || exists(${LOCALBASE}/lib/libXvMCNVIDIA.so.1)
+.if defined(WITH_NVIDIA304_GL) || exists(${LOCALBASE}/lib/libXvMCNVIDIA.so.1)
 CONFIGURE_ARGS+=	--with-xvmc-lib=XvMCNVIDIA
-LIB_DEPENDS+=	XvMCNVIDIA:${PORTSDIR}/x11/nvidia-driver
+LIB_DEPENDS+=	XvMCNVIDIA:${PORTSDIR}/x11/nvidia-driver-304
 .else
 CONFIGURE_ARGS+=	--with-xvmc-lib=XvMCW
 LIB_DEPENDS+=	XvMC:${PORTSDIR}/x11/libXvMC
