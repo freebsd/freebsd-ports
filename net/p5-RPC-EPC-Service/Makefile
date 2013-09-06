@@ -20,7 +20,8 @@ RUN_DEPENDS=	\
 	p5-Data-SExpression>=0.41:${PORTSDIR}/devel/p5-Data-SExpression
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	RPC::EPC::Service.3
 

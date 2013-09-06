@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Read tcpdump/libpcap network packet logs
 
-PERL_CONFIGURE= yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Net::TcpDumpLog.3
 

@@ -16,7 +16,8 @@ COMMENT=	Modules to assemble/disassemble network packets at the protocol level
 
 LICENSE=	ART20
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		NetPacket.3 NetPacket::ARP.3 NetPacket::Ethernet.3 \
 		NetPacket::ICMP.3 NetPacket::IGMP.3 NetPacket::UDP.3\

@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_PERL5=	yes
+USES=		perl5
 PLIST_FILES=	bin/lla
 
 EXTRACT_CMD=		${CP}
