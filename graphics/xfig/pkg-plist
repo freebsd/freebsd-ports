@@ -69,6 +69,7 @@ lib/X11/xfig/CompKeyDB
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/cd_disk.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/dat-drive.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/dat-drive2.fig
+%%PORTDOCS%%lib/X11/xfig/Libraries/Computers/datacard.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/desktop1.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/desktop2.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/desktop3.fig
@@ -91,6 +92,7 @@ lib/X11/xfig/CompKeyDB
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/qic-drive.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/r320.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/scanner.fig
+%%PORTDOCS%%lib/X11/xfig/Libraries/Computers/screen.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/server.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/sparc5.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/sun_d1000.fig
@@ -105,6 +107,7 @@ lib/X11/xfig/CompKeyDB
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/tower3.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/ultra2.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/ultra30.fig
+%%PORTDOCS%%lib/X11/xfig/Libraries/Computers/usbpen.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/va-jbot.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/va-server-11xx.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/va-server-1hd.fig
@@ -116,6 +119,7 @@ lib/X11/xfig/CompKeyDB
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/va-server-4hd.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/va-server-5df.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/va-server-nhs.fig
+%%PORTDOCS%%lib/X11/xfig/Libraries/Computers/xbox.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Computers/xterminal.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/DSP/1toN.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/DSP/1toNtime.fig
@@ -177,6 +181,7 @@ lib/X11/xfig/CompKeyDB
 %%PORTDOCS%%lib/X11/xfig/Libraries/Electrical/telephone_outlet.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Electronic/Physical/README
 %%PORTDOCS%%lib/X11/xfig/Libraries/Electronic/Physical/bal_mike.fig
+%%PORTDOCS%%lib/X11/xfig/Libraries/Electronic/Physical/bnc.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Electronic/Physical/conn_db15.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Electronic/Physical/conn_db25.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Electronic/Physical/conn_db37.fig
@@ -1204,7 +1209,6 @@ lib/X11/xfig/CompKeyDB
 %%PORTDOCS%%lib/X11/xfig/Libraries/Electronic/Schematic/pnp.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Electronic/Schematic/pushbutton_nc.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Electronic/Schematic/pushbutton_no.fig
-%%PORTDOCS%%lib/X11/xfig/Libraries/Electronic/Schematic/relay.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Electronic/Schematic/relay_dpdt.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Electronic/Schematic/relay_spdt.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Electronic/Schematic/resistor.fig
@@ -1300,7 +1304,6 @@ lib/X11/xfig/CompKeyDB
 %%PORTDOCS%%lib/X11/xfig/Libraries/Fasteners/Bolts/Roundhead_Shld_bolt.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Fasteners/Bolts/Roundhead_Slotted_bolt.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Fasteners/Bolts/Roundhead_bolt.fig
-%%PORTDOCS%%lib/X11/xfig/Libraries/Fasteners/Fasteners.tar.gz
 %%PORTDOCS%%lib/X11/xfig/Libraries/Fasteners/Machinescrews/Hexhead_Shld_screw.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Fasteners/Machinescrews/Hexhead_screw.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Fasteners/Machinescrews/Panhead_Slotted_screw.fig
@@ -2154,6 +2157,9 @@ lib/X11/xfig/CompKeyDB
 %%PORTDOCS%%lib/X11/xfig/Libraries/Music/modern/treble_staff.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Music/modern/whole-dotted.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Music/modern/whole.fig
+%%PORTDOCS%%lib/X11/xfig/Libraries/Networks/cloud.fig
+%%PORTDOCS%%lib/X11/xfig/Libraries/Networks/router.fig
+%%PORTDOCS%%lib/X11/xfig/Libraries/Networks/wlan.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/ATM/asx1000.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/ATM/asx200.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/ATM/asx4000.fig
@@ -2168,8 +2174,10 @@ lib/X11/xfig/CompKeyDB
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Devices/bridge.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Devices/dsu-csu.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Devices/firewall.fig
+%%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Devices/firewall-pair.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Devices/generic_hw.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Devices/imux.fig
+%%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Devices/internet.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Devices/microwave1.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Devices/microwave2.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Devices/netcloud.fig
@@ -2195,12 +2203,15 @@ lib/X11/xfig/CompKeyDB
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Hubs/hub3.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Hubs/hub4.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Hubs/netgearhub.fig
+%%PORTDOCS%%lib/X11/xfig/Libraries/Networks/NodeB.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/README
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Routers/cisco_7010.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Routers/cisco_7513.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Routers/router.fig
+%%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Routers/router-pair.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Routers/router2.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Routers/router3.fig
+%%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Routers/router4.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Switches/ExtremeSummit.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Switches/cisco_catalyst.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Switches/cisco_catalyst4006.fig
@@ -2210,6 +2221,8 @@ lib/X11/xfig/CompKeyDB
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Switches/extreme_blk_dmnd.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Switches/extreme_summit.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Switches/switch.fig
+%%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Switches/switch2.fig
+%%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Switches/switch-pair.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/Switches/switching_hub.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/TestEquip/smartbit.fig
 %%PORTDOCS%%lib/X11/xfig/Libraries/Networks/TestEquip/smartbit2K.fig
@@ -2781,7 +2794,6 @@ lib/X11/xfig/CompKeyDB
 %%PORTDOCS%%%%DOCSDIR%%/html/images/snap-accel.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/spell-check-panel.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/spinner.png
-%%PORTDOCS%%%%DOCSDIR%%/html/images/splash-screen.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/spline-curves.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/spline-examples.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/spline-line-button.png
@@ -2835,7 +2847,6 @@ lib/X11/xfig/CompKeyDB
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/introduction.html
-%%PORTDOCS%%%%DOCSDIR%%/html/introduction.html.save
 %%JPORTDOCS%%%%DOCSDIR%%/html/japanese/accelerators.html
 %%JPORTDOCS%%%%DOCSDIR%%/html/japanese/attributes.html
 %%JPORTDOCS%%%%DOCSDIR%%/html/japanese/authors.html
@@ -2910,7 +2921,6 @@ lib/X11/xfig/CompKeyDB
 %%PORTDOCS%%%%DOCSDIR%%/html/printing.html
 %%PORTDOCS%%%%DOCSDIR%%/html/screen_image_map.html
 %%PORTDOCS%%%%DOCSDIR%%/xfig-howto.pdf
-%%PORTDOCS%%%%DOCSDIR%%/xfig_man.html
 %%PORTDOCS%%%%DOCSDIR%%/xfig_ref_en.pdf
 %%JPORTDOCS%%@dirrm %%DOCSDIR%%/html/japanese
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
