@@ -19,7 +19,8 @@ TEST_DEPENDS=	p5-Spiffy>=0:${PORTSDIR}/devel/p5-Spiffy \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Amazon::Signature.3
 

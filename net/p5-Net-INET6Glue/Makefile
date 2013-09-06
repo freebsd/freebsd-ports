@@ -18,7 +18,8 @@ COMMENT=	Make common modules IPv6 ready by hotpatching
 BUILD_DEPENDS=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::INET6Glue.3 \
 		Net::INET6Glue::FTP.3 \

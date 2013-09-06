@@ -18,7 +18,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 USE_ZIP=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Ping::External.3
 

@@ -17,7 +17,8 @@ COMMENT=	Provides a nicer CLI interface to Net::WhitePages
 
 RUN_DEPENDS=	p5-Net-WhitePages>=0:${PORTSDIR}/net/p5-Net-WhitePages
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Phone::Info.3
 

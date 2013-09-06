@@ -16,7 +16,8 @@ COMMENT=	Perl extension to provide anonymous IP addresses
 
 RUN_DEPENDS=	p5-Crypt-Rijndael>=0:${PORTSDIR}/security/p5-Crypt-Rijndael
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		IP::Anonymous.3
 

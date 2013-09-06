@@ -23,7 +23,8 @@ BUILD_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
 		p5-JSON-Any>0:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-Params-Validate>0:${PORTSDIR}/devel/p5-Params-Validate
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Net::Jaiku.3
 
