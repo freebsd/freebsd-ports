@@ -7,7 +7,7 @@ CATEGORIES=	cad
 MASTER_SITES=	http://freehdl.seul.org/~enaroska/
 
 MAINTAINER=	kamikaze@bsdforen.de
-COMMENT=	A free VHDL simulator
+COMMENT=	Free VHDL simulator
 
 USE_LDCONFIG=	yes
 USES=		gmake perl5 pkgconfig
