@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	texinfo
-PORTVERSION=	5.1.20130809
+PORTVERSION=	5.1.20130828
 CATEGORIES=	print
 MASTER_SITES=	GNU \
 		ftp://ftp.stack.nl/pub/users/johans/texinfo/${PORTVERSION:E}/
@@ -23,8 +23,6 @@ PKGDEINSTALL=	${PKGINSTALL}
 USES+=		charsetfix gmake perl5
 
 MAKE_ARGS=	TEXMF=${PREFIX}/${TEXMF}
-CPPFLAGS+=	-I${LOCALBASE}/lib
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 INFO=		${PORTNAME} info-stnd info
 MAN1=		info.1 infokey.1 install-info.1 makeinfo.1 texi2dvi.1 \
@@ -39,6 +37,8 @@ PLIST_SUB=	TEXMF=${TEXMF}
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
+CPPFLAGS+=	-I${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
