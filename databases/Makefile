@@ -159,7 +159,16 @@
     SUBDIR += libgda4-mysql
     SUBDIR += libgda4-postgresql
     SUBDIR += libgda4-reference
+    SUBDIR += libgda5
+    SUBDIR += libgda5-bdb
+    SUBDIR += libgda5-jdbc
+    SUBDIR += libgda5-ldap
+    SUBDIR += libgda5-mdb
+    SUBDIR += libgda5-mysql
+    SUBDIR += libgda5-postgresql
+    SUBDIR += libgda5-ui
     SUBDIR += libgdamm
+    SUBDIR += libgdamm5
     SUBDIR += libgnomedb
     SUBDIR += libgnomedb-reference
     SUBDIR += libhsclient

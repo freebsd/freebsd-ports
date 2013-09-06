@@ -1,0 +1,47 @@
+--- configure.orig	2010-11-28 20:28:23.000000000 -0500
++++ configure	2010-11-28 20:28:54.000000000 -0500
+@@ -19487,9 +19487,9 @@ $as_echo_n "checking if gobject-introspe
+             INTROSPECTION_COMPILER=`$PKG_CONFIG --variable=g_ir_compiler gobject-introspection-1.0`
+             INTROSPECTION_GENERATE=`$PKG_CONFIG --variable=g_ir_generate gobject-introspection-1.0`
+             INTROSPECTION_GIRDIR=`$PKG_CONFIG --variable=girdir gobject-introspection-1.0`
+-            INTROSPECTION_GIRDIR=${INTROSPECTION_GIRDIR/$datadir/\$(datadir)}
++            INTROSPECTION_GIRDIR=`echo ${INTROSPECTION_GIRDIR} | sed -e "s|${datadir}|\\\$(datadir)|"`
+             INTROSPECTION_TYPELIBDIR="$($PKG_CONFIG --variable=typelibdir gobject-introspection-1.0)"
+-            INTROSPECTION_TYPELIBDIR=${INTROSPECTION_TYPELIBDIR/$libdir/\$(libdir)}
++            INTROSPECTION_TYPELIBDIR=`echo ${INTROSPECTION_TYPELIBDIR} | sed -e "s|${libdir}|\\\$(libdir)|"`
+             INTROSPECTION_CFLAGS=`$PKG_CONFIG --cflags gobject-introspection-1.0`
+             INTROSPECTION_LIBS=`$PKG_CONFIG --libs gobject-introspection-1.0`
+             INTROSPECTION_MAKEFILE=$introspection_makefile
+@@ -19589,14 +19589,14 @@ fi
+ 
+ 	if test "$enable_crypto" = "yes"
+ 	        then
+-			as_fn_error $? "libcrypto support requested but not found" "$LINENO" 5
++#			as_fn_error $? "libcrypto support requested but not found" "$LINENO" 5
+ 	        fi
+ elif test $pkg_failed = untried; then
+      	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
+ 	if test "$enable_crypto" = "yes"
+ 	        then
+-			as_fn_error $? "libcrypto support requested but not found" "$LINENO" 5
++#			as_fn_error $? "libcrypto support requested but not found" "$LINENO" 5
+ 	        fi
+ else
+ 	LIBCRYPTO_CFLAGS=$pkg_cv_LIBCRYPTO_CFLAGS
+@@ -21776,6 +21776,15 @@ $as_echo "#define MDB_BIND_COLUMN_FOUR_A
+ 	    fi
+ 	    CFLAGS="$save_CFLAGS"
+ 	fi
++    else
++         if false; then
++  MDB_TRUE=
++  MDB_FALSE='#'
++else
++  MDB_TRUE='#'
++  MDB_FALSE=
++fi
++
+     fi
+ 
+      if test "$mdbtools_found" = "yes"; then
