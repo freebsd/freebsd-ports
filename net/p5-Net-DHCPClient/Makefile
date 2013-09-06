@@ -15,7 +15,8 @@ MAINTAINER=	sem@FreeBSD.org
 COMMENT=	A Perl implementation of a DHCP client API
 
 RUN_DEPENDS+=	p5-Net-RawIP>=0:${PORTSDIR}/net/p5-Net-RawIP
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sarumaru@jp.FreeBSD.org
 COMMENT=	Send Wake On Lan (WOL) packets to power on computers
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::Wake.3
 
