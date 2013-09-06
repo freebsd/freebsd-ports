@@ -22,8 +22,7 @@ GNUTLS_DESC=Library for HTTPS check
 OPTIONS_DEFAULT=	CLAMAV GNUTLS
 
 USE_GNOME=	gnomeprefix intlhack libgnomeui
-USES=	pathfix
-USE_GMAKE=	yes
+USES=	pathfix gmake pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
