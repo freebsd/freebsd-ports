@@ -116,7 +116,7 @@
  endif
  
  #
-@@ -278,7 +255,9 @@
+@@ -278,24 +255,22 @@
  override HAVE_FILIOH             = false
  override HAVE_GETHRTIME          = false
  override HAVE_GETHRVTIME         = false
@@ -126,7 +126,11 @@
  override LEX_LIBRARY             = -lfl
  ifeq ($(STATIC_CXX),true)
  override LIBCXX                  = -Wl,-Bstatic -lstdc++ -lgcc -Wl,-Bdynamic
-@@ -289,13 +268,9 @@
+ else
+-override LIBCXX                  = -lstdc++
++override LIBCXX                  =
+ endif
+ override LIBPOSIX4               =
  override LIBSOCKET               =
  override LIBTHREAD               =
  override MOOT_PRIORITIES         = true
@@ -4112,7 +4116,7 @@
  # include <signal.h>
  # include <errno.h>
  # include <dlfcn.h>
-@@ -102,21 +101,57 @@
+@@ -102,21 +101,56 @@
  # include <sys/utsname.h>
  # include <sys/socket.h>
  # include <sys/wait.h>
@@ -4139,7 +4143,6 @@
  
 +#ifdef __FreeBSD__
 +#if __FreeBSD_version > 700109
-+#include <bitset>
 +#include <sys/cpuset.h>
 +#endif
 +#include <vm/swap_pager.h>
@@ -4171,7 +4174,7 @@
  #define MAX_PATH    (2 * K)
  
  // for timer info max values which include all bits
-@@ -127,19 +162,25 @@
+@@ -127,19 +161,25 @@
  // global variables
  julong os::Bsd::_physical_memory = 0;
  
@@ -4197,7 +4200,7 @@
  
  static jlong initial_time_count=0;
  
-@@ -157,8 +198,6 @@
+@@ -157,8 +197,6 @@
  static int SR_signum = SIGUSR2;
  sigset_t SR_sigset;
  
@@ -4206,7 +4209,7 @@
  
  ////////////////////////////////////////////////////////////////////////////////
  // utility functions
-@@ -171,11 +210,38 @@
+@@ -171,11 +209,38 @@
  }
  
  julong os::Bsd::available_memory() {
@@ -4245,7 +4248,7 @@
  }
  
  julong os::physical_memory() {
-@@ -223,6 +289,7 @@
+@@ -223,6 +288,7 @@
  }
  
  
@@ -4253,7 +4256,7 @@
  #ifndef SYS_gettid
  // i386: 224, ia64: 1105, amd64: 186, sparc 143
  #ifdef __ia64__
-@@ -237,6 +304,7 @@
+@@ -237,6 +303,7 @@
  #error define gettid for the arch
  #endif
  #endif
@@ -4261,7 +4264,7 @@
  
  // Cpu architecture string
  #if   defined(ZERO)
-@@ -267,28 +335,86 @@
+@@ -267,28 +334,86 @@
  // Returns the kernel thread id of the currently running thread. Kernel
  // thread id is used to access /proc.
  //
@@ -4366,7 +4369,7 @@
  void os::Bsd::initialize_system_info() {
    set_processor_count(sysconf(_SC_NPROCESSORS_CONF));
    if (processor_count() == 1) {
-@@ -305,6 +431,7 @@
+@@ -305,6 +430,7 @@
    _physical_memory = (julong)sysconf(_SC_PHYS_PAGES) * (julong)sysconf(_SC_PAGESIZE);
    assert(processor_count() > 0, "bsd error");
  }
@@ -4374,7 +4377,7 @@
  
  void os::init_system_properties_values() {
  //  char arch[12];
-@@ -348,9 +475,7 @@
+@@ -348,9 +474,7 @@
   *        ...
   *        7: The default directories, normally /lib and /usr/lib.
   */
@@ -4385,7 +4388,7 @@
  #define DEFAULT_LIBPATH "/lib:/usr/lib"
  #endif
  
-@@ -429,7 +554,11 @@
+@@ -429,7 +553,11 @@
           * should always exist (until the legacy problem cited above is
           * addressed).
           */
@@ -4397,7 +4400,7 @@
          if (v != NULL) {
              char *t = ld_library_path;
              /* That's +1 for the colon and +1 for the trailing '\0' */
-@@ -588,6 +717,7 @@
+@@ -588,6 +716,7 @@
    }
  }
  
@@ -4405,7 +4408,7 @@
  //////////////////////////////////////////////////////////////////////////////
  // detecting pthread library
  
-@@ -751,6 +881,7 @@
+@@ -751,6 +880,7 @@
    }
    return false;
  }
@@ -4413,7 +4416,7 @@
  
  //////////////////////////////////////////////////////////////////////////////
  // create new thread
-@@ -759,6 +890,9 @@
+@@ -759,6 +889,9 @@
  
  // check if it's safe to start a new thread
  static bool _thread_safety_check(Thread* thread) {
@@ -4423,7 +4426,7 @@
    if (os::Bsd::is_BsdThreads() && !os::Bsd::is_floating_stack()) {
      // Fixed stack BsdThreads (SuSE Bsd/x86, and some versions of Redhat)
      //   Heap is mmap'ed at lower end of memory space. Thread stacks are
-@@ -792,6 +926,7 @@
+@@ -792,6 +925,7 @@
      //   here, that means enough space has been reserved for stack.
      return true;
    }
@@ -4431,7 +4434,7 @@
  }
  
  // Thread start routine for all newly created threads
-@@ -819,15 +954,22 @@
+@@ -819,15 +953,22 @@
      return NULL;
    }
  
@@ -4454,7 +4457,7 @@
    // initialize signal mask for this thread
    os::Bsd::hotspot_sigmask(thread);
  
-@@ -910,17 +1052,22 @@
+@@ -910,17 +1051,22 @@
      // let pthread_create() pick the default value.
    }
  
@@ -4477,7 +4480,7 @@
  
      pthread_t tid;
      int ret = pthread_create(&tid, &attr, (void* (*)(void*)) java_start, thread);
-@@ -934,7 +1081,9 @@
+@@ -934,7 +1080,9 @@
        // Need to clean up stuff we've allocated so far
        thread->set_osthread(NULL);
        delete osthread;
@@ -4487,7 +4490,7 @@
        return false;
      }
  
-@@ -950,9 +1099,11 @@
+@@ -950,9 +1098,11 @@
        }
      }
  
@@ -4499,7 +4502,7 @@
    }
  
    // Aborted due to thread limit being reached
-@@ -990,7 +1141,11 @@
+@@ -990,7 +1140,11 @@
    }
  
    // Store pthread info into the OSThread
@@ -4511,7 +4514,7 @@
    osthread->set_pthread_id(::pthread_self());
  
    // initialize floating point control register
-@@ -1001,6 +1156,7 @@
+@@ -1001,6 +1155,7 @@
  
    thread->set_osthread(osthread);
  
@@ -4519,7 +4522,7 @@
    if (UseNUMA) {
      int lgrp_id = os::numa_get_group_id();
      if (lgrp_id != -1) {
-@@ -1027,6 +1183,7 @@
+@@ -1027,6 +1182,7 @@
      os::Bsd::manually_expand_stack(jt, addr);
      osthread->clear_expanding_stack();
    }
@@ -4527,7 +4530,7 @@
  
    // initialize signal mask for this thread
    // and save the caller's signal mask
-@@ -1085,6 +1242,7 @@
+@@ -1085,6 +1241,7 @@
  //////////////////////////////////////////////////////////////////////////////
  // initial thread
  
@@ -4535,7 +4538,7 @@
  // Check if current thread is the initial thread, similar to Solaris thr_main.
  bool os::Bsd::is_initial_thread(void) {
    char dummy;
-@@ -1321,6 +1479,7 @@
+@@ -1321,6 +1478,7 @@
    _initial_thread_stack_size = align_size_down(_initial_thread_stack_size, page_size());
    _initial_thread_stack_bottom = (address)stack_top - _initial_thread_stack_size;
  }
@@ -4543,7 +4546,7 @@
  
  ////////////////////////////////////////////////////////////////////////////////
  // time support
-@@ -1342,9 +1501,7 @@
+@@ -1342,9 +1500,7 @@
    return (1000 * 1000);
  }
  
@@ -4554,7 +4557,7 @@
  bool os::supports_vtime() { return false; }
  bool os::enable_vtime()   { return false; }
  bool os::vtime_enabled()  { return false; }
-@@ -1364,6 +1521,21 @@
+@@ -1364,6 +1520,21 @@
  #define CLOCK_MONOTONIC (1)
  #endif
  
@@ -4576,7 +4579,7 @@
  void os::Bsd::clock_init() {
    // we do dlopen's in this particular order due to bug in bsd
    // dynamical loader (see 6348968) leading to crash on exit
-@@ -1399,7 +1571,9 @@
+@@ -1399,7 +1570,9 @@
      }
    }
  }
@@ -4586,7 +4589,7 @@
  #ifndef SYS_clock_getres
  
  #if defined(IA32) || defined(AMD64)
-@@ -1440,6 +1614,7 @@
+@@ -1440,6 +1613,7 @@
      _pthread_getcpuclockid = pthread_getcpuclockid_func;
    }
  }
@@ -4594,7 +4597,7 @@
  
  jlong os::javaTimeNanos() {
    if (Bsd::supports_monotonic_clock()) {
-@@ -1608,7 +1783,14 @@
+@@ -1608,7 +1782,14 @@
  
  // DLL functions
  
@@ -4610,7 +4613,7 @@
  
  // This must be hard coded because it's the system's temporary
  // directory not the java application's temp directory, ala java.io.tmpdir.
-@@ -1628,13 +1810,13 @@
+@@ -1628,13 +1809,13 @@
    const size_t pnamelen = pname ? strlen(pname) : 0;
  
    // Quietly truncate on buffer overflow.  Should be an error.
@@ -4626,7 +4629,7 @@
    } else if (strchr(pname, *os::path_separator()) != NULL) {
      int n;
      char** pelements = split_path(pname, &n);
-@@ -1643,7 +1825,8 @@
+@@ -1643,7 +1824,8 @@
        if (pelements[i] == NULL || strlen(pelements[i]) == 0) {
          continue; // skip the empty path values
        }
@@ -4636,7 +4639,7 @@
        if (file_exists(buffer)) {
          break;
        }
-@@ -1658,7 +1841,7 @@
+@@ -1658,7 +1840,7 @@
        FREE_C_HEAP_ARRAY(char*, pelements);
      }
    } else {
@@ -4645,7 +4648,7 @@
    }
  }
  
-@@ -1708,6 +1891,23 @@
+@@ -1708,6 +1890,23 @@
    return false;
  }
  
@@ -4669,7 +4672,7 @@
  struct _address_to_library_name {
    address addr;          // input : memory address
    size_t  buflen;        //         size of fname
-@@ -1782,11 +1982,27 @@
+@@ -1782,11 +1981,27 @@
       return false;
    }
  }
@@ -4697,7 +4700,7 @@
  void * os::dll_load(const char *filename, char *ebuf, int ebuflen)
  {
    void * result= ::dlopen(filename, RTLD_LAZY);
-@@ -1839,6 +2055,26 @@
+@@ -1839,6 +2054,26 @@
    #define EM_486          6               /* Intel 80486 */
    #endif
  
@@ -4724,7 +4727,7 @@
    static const arch_t arch_array[]={
      {EM_386,         EM_386,     ELFCLASS32, ELFDATA2LSB, (char*)"IA 32"},
      {EM_486,         EM_386,     ELFCLASS32, ELFDATA2LSB, (char*)"IA 32"},
-@@ -1942,17 +2178,11 @@
+@@ -1942,17 +2177,11 @@
  
    return NULL;
  }
@@ -4745,7 +4748,7 @@
  }
  
  
-@@ -1975,7 +2205,51 @@
+@@ -1975,7 +2204,51 @@
  
  void os::print_dll_info(outputStream *st) {
     st->print_cr("Dynamic libraries:");
@@ -4798,7 +4801,7 @@
     char fname[32];
     pid_t pid = os::Bsd::gettid();
  
-@@ -1984,6 +2258,7 @@
+@@ -1984,6 +2257,7 @@
     if (!_print_ascii_file(fname, st)) {
       st->print("Can not get library information for pid = %d\n", pid);
     }
@@ -4806,7 +4809,7 @@
  }
  
  
-@@ -2018,6 +2293,7 @@
+@@ -2018,6 +2292,7 @@
    st->print(name.machine);
    st->cr();
  
@@ -4814,7 +4817,7 @@
    // Print warning if unsafe chroot environment detected
    if (unsafe_chroot_detected) {
      st->print("WARNING!! ");
-@@ -2032,6 +2308,7 @@
+@@ -2032,6 +2307,7 @@
       st->print("(%s stack)", os::Bsd::is_floating_stack() ? "floating" : "fixed");
    }
    st->cr();
@@ -4822,7 +4825,7 @@
  
    // rlimit
    st->print("rlimit:");
-@@ -2057,6 +2334,7 @@
+@@ -2057,6 +2333,7 @@
    if (rlim.rlim_cur == RLIM_INFINITY) st->print("infinity");
    else st->print("%d", rlim.rlim_cur);
  
@@ -4830,7 +4833,7 @@
    st->print(", AS ");
    getrlimit(RLIMIT_AS, &rlim);
    if (rlim.rlim_cur == RLIM_INFINITY) st->print("infinity");
-@@ -2069,11 +2347,7 @@
+@@ -2069,11 +2346,7 @@
    os::loadavg(loadavg, 3);
    st->print("%0.02f %0.02f %0.02f", loadavg[0], loadavg[1], loadavg[2]);
    st->cr();
@@ -4843,7 +4846,7 @@
  }
  
  void os::print_memory_info(outputStream* st) {
-@@ -2081,19 +2355,55 @@
+@@ -2081,19 +2354,55 @@
    st->print("Memory:");
    st->print(" %dk page", os::vm_page_size()>>10);
  
@@ -4899,7 +4902,7 @@
  }
  
  // Taken from /usr/include/bits/siginfo.h  Supposed to be architecture specific
-@@ -2333,19 +2643,29 @@
+@@ -2333,19 +2642,29 @@
  static volatile jint pending_signals[NSIG+1] = { 0 };
  
  // Bsd(POSIX) specific hand shaking semaphore.
@@ -4931,7 +4934,7 @@
  }
  
  static int check_pending_signals(bool wait) {
-@@ -2367,7 +2687,7 @@
+@@ -2367,7 +2686,7 @@
      do {
        thread->set_suspend_equivalent();
        // cleared by handle_special_suspend_equivalent_condition() or java_suspend_self()
@@ -4940,7 +4943,7 @@
  
        // were we externally suspended while we were waiting?
        threadIsSuspended = thread->handle_special_suspend_equivalent_condition();
-@@ -2378,7 +2698,7 @@
+@@ -2378,7 +2697,7 @@
          // while suspended because that would surprise the thread that
          // suspended us.
          //
@@ -4949,7 +4952,7 @@
  
          thread->java_suspend_self();
        }
-@@ -2422,10 +2742,10 @@
+@@ -2422,10 +2741,10 @@
      return;
    }
  
@@ -4962,7 +4965,7 @@
             os::get_temp_directory(), os::current_process_id(), num);
    unlink(buf);
  
-@@ -2451,9 +2771,14 @@
+@@ -2451,9 +2770,14 @@
  //       problem.
  bool os::commit_memory(char* addr, size_t size, bool exec) {
    int prot = exec ? PROT_READ|PROT_WRITE|PROT_EXEC : PROT_READ|PROT_WRITE;
@@ -4977,7 +4980,7 @@
  }
  
  bool os::commit_memory(char* addr, size_t size, size_t alignment_hint,
-@@ -2469,36 +2794,27 @@
+@@ -2469,36 +2793,27 @@
  }
  
  void os::numa_make_global(char *addr, size_t bytes) {
@@ -5019,7 +5022,7 @@
  }
  
  bool os::get_page_info(char *start, page_info* info) {
-@@ -2509,6 +2825,7 @@
+@@ -2509,6 +2824,7 @@
    return end;
  }
  
@@ -5027,7 +5030,7 @@
  extern "C" void numa_warn(int number, char *where, ...) { }
  extern "C" void numa_error(char *where) { }
  
-@@ -2610,104 +2927,26 @@
+@@ -2610,104 +2926,26 @@
  os::Bsd::numa_tonode_memory_func_t os::Bsd::_numa_tonode_memory;
  os::Bsd::numa_interleave_memory_func_t os::Bsd::_numa_interleave_memory;
  unsigned long* os::Bsd::_numa_all_nodes;
@@ -5139,7 +5142,7 @@
    return os::uncommit_memory(addr, size);
  }
  
-@@ -2812,6 +3051,9 @@
+@@ -2812,6 +3050,9 @@
  static size_t _large_page_size = 0;
  
  bool os::large_page_init() {
@@ -5149,7 +5152,7 @@
    if (!UseLargePages) return false;
  
    if (LargePageSizeInBytes) {
-@@ -2869,6 +3111,7 @@
+@@ -2869,6 +3110,7 @@
    // We optimistically assume the support is available. If later it turns out
    // not true, VM will automatically switch to use regular page size.
    return true;
@@ -5157,7 +5160,7 @@
  }
  
  #ifndef SHM_HUGETLB
-@@ -3045,7 +3288,7 @@
+@@ -3045,7 +3287,7 @@
  }
  
  size_t os::read(int fd, void *buf, unsigned int nBytes) {
@@ -5166,7 +5169,7 @@
  }
  
  // TODO-FIXME: reconcile Solaris' os::sleep with the bsd variation.
-@@ -3181,6 +3424,44 @@
+@@ -3181,6 +3423,44 @@
  // this reason, the code should not be used as default (ThreadPriorityPolicy=0).
  // It is only used when ThreadPriorityPolicy=1 and requires root privilege.
  
@@ -5211,7 +5214,7 @@
  int os::java_to_os_priority[MaxPriority + 1] = {
    19,              // 0 Entry should never be used
  
-@@ -3198,6 +3479,7 @@
+@@ -3198,6 +3478,7 @@
  
    -5               // 10 MaxPriority
  };
@@ -5219,7 +5222,7 @@
  
  static int prio_init() {
    if (ThreadPriorityPolicy == 1) {
-@@ -3217,8 +3499,28 @@
+@@ -3217,8 +3498,28 @@
  OSReturn os::set_native_priority(Thread* thread, int newpri) {
    if ( !UseThreadPriorities || ThreadPriorityPolicy == 0 ) return OS_OK;
  
@@ -5248,7 +5251,7 @@
  }
  
  OSReturn os::get_native_priority(const Thread* const thread, int *priority_ptr) {
-@@ -3228,7 +3530,17 @@
+@@ -3228,7 +3529,17 @@
    }
  
    errno = 0;
@@ -5266,7 +5269,7 @@
    return (*priority_ptr != -1 || errno == 0 ? OS_OK : OS_ERR);
  }
  
-@@ -3338,7 +3650,7 @@
+@@ -3338,7 +3649,7 @@
    /* Get signal number to use for suspend/resume */
    if ((s = ::getenv("_JAVA_SR_SIGNUM")) != 0) {
      int sig = ::strtol(s, 0, 10);
@@ -5275,7 +5278,7 @@
          SR_signum = sig;
      }
    }
-@@ -3682,6 +3994,28 @@
+@@ -3682,6 +3993,28 @@
      set_signal_handler(SIGFPE, true);
      set_signal_handler(SIGXFSZ, true);
  
@@ -5304,7 +5307,7 @@
      if (libjsig_is_loaded) {
        // Tell libjsig jvm finishes setting signal handlers
        (*end_signal_setting)();
-@@ -3702,6 +4036,7 @@
+@@ -3702,6 +4035,7 @@
    }
  }
  
@@ -5312,7 +5315,7 @@
  // This is the fastest way to get thread cpu time on Bsd.
  // Returns cpu time (user+sys) for any thread, not only for current.
  // POSIX compliant clocks are implemented in the kernels 2.6.16+.
-@@ -3716,6 +4051,7 @@
+@@ -3716,6 +4050,7 @@
  
    return (tp.tv_sec * SEC_IN_NANOSECS) + tp.tv_nsec;
  }
@@ -5320,7 +5323,7 @@
  
  /////
  // glibc on Bsd platform uses non-documented flag
-@@ -3937,13 +4273,13 @@
+@@ -3937,13 +4272,13 @@
  
    _initial_pid = (java_launcher_pid > 0) ? java_launcher_pid : getpid();
  
@@ -5336,7 +5339,7 @@
    if (Bsd::page_size() == -1) {
      fatal(err_msg("os_bsd.cpp: os::init: sysconf failed (%s)",
                    strerror(errno)));
-@@ -3957,7 +4293,16 @@
+@@ -3957,7 +4292,16 @@
  
    Bsd::clock_init();
    initial_time_count = os::elapsed_counter();
@@ -5354,7 +5357,7 @@
  }
  
  // To install functions for atexit system call
-@@ -3970,7 +4315,9 @@
+@@ -3970,7 +4314,9 @@
  // this is called _after_ the global arguments have been parsed
  jint os::init_2(void)
  {
@@ -5364,7 +5367,7 @@
  
    // Allocate a single page and mark it as readable for safepoint polling
    address polling_page = (address) ::mmap(NULL, Bsd::page_size(), PROT_READ, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0);
-@@ -4028,6 +4375,7 @@
+@@ -4028,6 +4374,7 @@
    JavaThread::set_stack_size_at_create(round_to(threadStackSizeInBytes,
          vm_page_size()));
  
@@ -5372,7 +5375,7 @@
    Bsd::capture_initial_stack(JavaThread::stack_size_at_create());
  
    Bsd::libpthread_init();
-@@ -4050,6 +4398,7 @@
+@@ -4050,6 +4397,7 @@
        UseNUMA = true;
      }
    }
@@ -5380,7 +5383,7 @@
  
    if (MaxFDLimit) {
      // set the number of file descriptors to max. print out error
-@@ -4061,6 +4410,14 @@
+@@ -4061,6 +4409,14 @@
          perror("os::init_2 getrlimit failed");
      } else {
        nbr_files.rlim_cur = nbr_files.rlim_max;
@@ -5395,7 +5398,7 @@
        status = setrlimit(RLIMIT_NOFILE, &nbr_files);
        if (status != 0) {
          if (PrintMiscellaneous && (Verbose || WizardMode))
-@@ -4069,8 +4426,10 @@
+@@ -4069,8 +4425,10 @@
      }
    }
  
@@ -5406,7 +5409,7 @@
  
    // at-exit methods are called in the reverse order of their registration.
    // atexit functions are called on return from main or as a result of a
-@@ -4114,11 +4473,29 @@
+@@ -4114,11 +4472,29 @@
  };
  
  int os::active_processor_count() {
@@ -5414,11 +5417,11 @@
 +#ifdef __FreeBSD__
 +  int online_cpus = 0;
 +#if __FreeBSD_version > 700109
-+  std::bitset<CPU_SETSIZE> mask;
-+  assert(sizeof(mask) == sizeof(cpuset_t), "Invalid bitset for cpuset_t");
++  cpuset_t mask;
 +  if (cpuset_getaffinity(CPU_LEVEL_WHICH, CPU_WHICH_PID, -1, sizeof(mask),
-+      reinterpret_cast<cpuset_t*>(&mask)) == 0)
-+    online_cpus = mask.count();
++      &mask) == 0)
++    for (int i = 0; i < sizeof(mask) / sizeof(long); i++)
++      online_cpus += __builtin_popcountl(((long *)&mask)[i]);
 +#else
 +  online_cpus = ::sysconf(_SC_NPROCESSORS_ONLN);
 +#endif
@@ -5436,7 +5439,7 @@
  }
  
  bool os::distribute_processes(uint length, uint* distribution) {
-@@ -4160,6 +4537,9 @@
+@@ -4160,6 +4536,9 @@
  
  int os::Bsd::safe_cond_timedwait(pthread_cond_t *_cond, pthread_mutex_t *_mutex, const struct timespec *_abstime)
  {
@@ -5446,7 +5449,7 @@
     if (is_NPTL()) {
        return pthread_cond_timedwait(_cond, _mutex, _abstime);
     } else {
-@@ -4175,6 +4555,7 @@
+@@ -4175,6 +4554,7 @@
  #endif // IA64
        return status;
     }
@@ -5454,7 +5457,7 @@
  }
  
  ////////////////////////////////////////////////////////////////////////////////
-@@ -4322,14 +4703,14 @@
+@@ -4322,14 +4702,14 @@
    int o_delete = (oflag & O_DELETE);
    oflag = oflag & ~O_DELETE;
  
@@ -5473,7 +5476,7 @@
  
      if (ret != -1) {
        if ((st_mode & S_IFMT) == S_IFDIR) {
-@@ -4386,17 +4767,17 @@
+@@ -4386,17 +4766,17 @@
    if (!rewrite_existing) {
      oflags |= O_EXCL;
    }
@@ -5494,7 +5497,7 @@
  }
  
  // This code originates from JDK's sysAvailable
-@@ -4405,10 +4786,10 @@
+@@ -4405,10 +4785,10 @@
  int os::available(int fd, jlong *bytes) {
    jlong cur, end;
    int mode;
@@ -5508,7 +5511,7 @@
      if (S_ISCHR(mode) || S_ISFIFO(mode) || S_ISSOCK(mode)) {
        /*
        * XXX: is the following call interruptible? If so, this might
-@@ -4422,11 +4803,11 @@
+@@ -4422,11 +4802,11 @@
        }
      }
    }
@@ -5523,7 +5526,7 @@
      return 0;
    }
    *bytes = end - cur;
-@@ -4489,6 +4870,7 @@
+@@ -4489,6 +4869,7 @@
    return munmap(addr, bytes) == 0;
  }
  
@@ -5531,7 +5534,7 @@
  static jlong slow_thread_cpu_time(Thread *thread, bool user_sys_cpu_time);
  
  static clockid_t thread_cpu_clockid(Thread* thread) {
-@@ -4500,6 +4882,7 @@
+@@ -4500,6 +4881,7 @@
    assert(rc == 0, "pthread_getcpuclockid is expected to return 0 code");
    return clockid;
  }
@@ -5539,7 +5542,7 @@
  
  // current_thread_cpu_time(bool) and thread_cpu_time(Thread*, bool)
  // are used by JVM M&M and JVMTI to get user+sys or user CPU time
-@@ -4509,39 +4892,71 @@
+@@ -4509,39 +4891,71 @@
  // the fast estimate available on the platform.
  
  jlong os::current_thread_cpu_time() {
@@ -5611,7 +5614,7 @@
  //
  //  -1 on error.
  //
-@@ -4631,6 +5046,7 @@
+@@ -4631,6 +5045,7 @@
      return (jlong)user_time * (1000000000 / clock_tics_per_sec);
    }
  }
@@ -5619,7 +5622,7 @@
  
  void os::current_thread_cpu_time_info(jvmtiTimerInfo *info_ptr) {
    info_ptr->max_value = ALL_64_BITS;       // will not wrap in less than 64 bits
-@@ -4647,7 +5063,13 @@
+@@ -4647,7 +5062,13 @@
  }
  
  bool os::is_thread_cpu_time_supported() {
@@ -5633,7 +5636,7 @@
  }
  
  // System loadavg support.  Returns -1 if load average cannot be obtained.
-@@ -4780,7 +5202,7 @@
+@@ -4780,7 +5201,7 @@
  // abstime will be the absolute timeout time
  // TODO: replace compute_abstime() with unpackTime()
  
@@ -5642,7 +5645,7 @@
    if (millis < 0)  millis = 0;
    struct timeval now;
    int status = gettimeofday(&now, NULL);
-@@ -4832,7 +5254,7 @@
+@@ -4832,7 +5253,7 @@
          status = pthread_cond_wait(_cond, _mutex);
          // for some reason, under 2.7 lwp_cond_wait() may return ETIME ...
          // Treat this the same as if the wait was interrupted
@@ -5651,7 +5654,7 @@
          assert_status(status == 0 || status == EINTR, status, "cond_wait");
       }
       -- _nParked ;
-@@ -4890,10 +5312,10 @@
+@@ -4890,10 +5311,10 @@
        pthread_cond_init (_cond, NULL) ;
      }
      assert_status(status == 0 || status == EINTR ||
@@ -5664,7 +5667,7 @@
      // We consume and ignore EINTR and spurious wakeups.
    }
    --_nParked ;
-@@ -4985,7 +5407,7 @@
+@@ -4985,7 +5406,7 @@
   * years from "now".
   */
  
@@ -5673,7 +5676,7 @@
    assert (time > 0, "convertTime");
  
    struct timeval now;
-@@ -5045,7 +5467,7 @@
+@@ -5045,7 +5466,7 @@
    }
  
    // Next, demultiplex/decode time arguments
@@ -5682,7 +5685,7 @@
    if (time < 0 || (isAbsolute && time == 0) ) { // don't wait at all
      return;
    }
-@@ -5099,7 +5521,7 @@
+@@ -5099,7 +5520,7 @@
      }
    }
    assert_status(status == 0 || status == EINTR ||
@@ -5691,7 +5694,7 @@
                  status, "cond_timedwait");
  
  #ifdef ASSERT
-@@ -5142,14 +5564,12 @@
+@@ -5142,14 +5563,12 @@
  }
  
  
@@ -5711,7 +5714,7 @@
  #endif
  
  // Run the specified command in a separate process. Return its exit value,
-@@ -5164,8 +5584,7 @@
+@@ -5164,8 +5583,7 @@
    // separate process to execve. Make a direct syscall to fork process.
    // On IA64 there's no fork syscall, we have to use fork() and hope for
    // the best...
@@ -5721,7 +5724,7 @@
  
    if (pid < 0) {
      // fork failed
-@@ -5181,8 +5600,7 @@
+@@ -5181,8 +5599,7 @@
      // in the new process, so make a system call directly.
      // IA64 should use normal execve() from glibc to match the glibc fork()
      // above.
@@ -9058,7 +9061,7 @@
  endif
  
  #
-@@ -306,7 +282,9 @@
+@@ -306,24 +282,22 @@
  override HAVE_FILIOH             = false
  override HAVE_GETHRTIME          = false
  override HAVE_GETHRVTIME         = false
@@ -9068,7 +9071,11 @@
  override LEX_LIBRARY             = -lfl
  ifeq ($(STATIC_CXX),true)
  override LIBCXX                  = -Wl,-Bstatic -lstdc++ -lgcc -Wl,-Bdynamic
-@@ -317,13 +295,9 @@
+ else
+-override LIBCXX                  = -lstdc++
++override LIBCXX                  =
+ endif
+ override LIBPOSIX4               =
  override LIBSOCKET               =
  override LIBTHREAD               =
  override MOOT_PRIORITIES         = true
