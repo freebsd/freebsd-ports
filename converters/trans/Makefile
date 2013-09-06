@@ -1,41 +1,46 @@
-# Created by: ache
+# Created by: Andrey A. Chernov <ache@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	trans
 PORTVERSION=	1.20
-CATEGORIES=	converters russian
+CATEGORIES=	converters
 MASTER_SITES=	http://www.kostis.net/freeware/
-DISTNAME=	trans120
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Character Encoding Converter Generator Package
-
-MAKE_JOBS_UNSAFE=	yes
+COMMENT=	Character encoding converter generator
 
 LIBDIR=		${PREFIX}/lib/trans
-ALL=		transhtm transiso transce8 transtab checkiso checkuni
+MAN1=		transhtm.1 transiso.1 transce8.1 transtab.1 checkiso.1 \
+		checkuni.1
+
+post-patch:
+# Fix the build against arbitrary make(1) implementation
+	@${REINPLACE_CMD} -e 's/cd src ; make/$$(MAKE) -C src/' \
+		${WRKSRC}/Makefile
+# Unbreak parallel builds (-jX): fix targets' dependencies
+	@${REINPLACE_CMD} -e 's/loadtab\$$(OBJ)$$/$$(OBJLIB)/' \
+		${WRKSRC}/src/Makefile
 
 do-install:
-	cd ${WRKSRC}/src && $(INSTALL_PROGRAM) $(ALL) ${PREFIX}/bin
-	cd ${WRKSRC}/src && \
-	for i in $(ALL); do \
-		$(INSTALL_MAN) $$i.man ${PREFIX}/man/cat1/$$i.1; \
-	done
-	install -d -o ${BINOWN} -g ${BINGRP} -m 755 \
-		${LIBDIR}/cedf ${LIBDIR}/xlt ${LIBDIR}/doc ${LIBDIR}/bin \
+	cd ${WRKSRC}/src && ${INSTALL_PROGRAM} ${MAN1:R} ${PREFIX}/bin
+.for m in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/src/${m:R}.man ${MANPREFIX}/man/man1/${m}
+.endfor
+	@${MKDIR} ${LIBDIR}/cedf ${LIBDIR}/xlt ${LIBDIR}/doc ${LIBDIR}/bin \
 		${LIBDIR}/src
 	cd ${WRKSRC}/src && \
-		$(INSTALL_SCRIPT) checkall chkuni mkhtml mklist mkxlt \
+		${INSTALL_SCRIPT} checkall chkuni mkhtml mklist mkxlt \
 		${LIBDIR}/src
 	cd ${WRKSRC} && \
-		$(INSTALL_DATA) README encoding.lis ${LIBDIR}
+		${INSTALL_DATA} README encoding.lis ${LIBDIR}
 	cd ${WRKSRC}/src && \
-		$(INSTALL_DATA) datatype.h ${LIBDIR}/src
+		${INSTALL_DATA} datatype.h ${LIBDIR}/src
 	cd ${WRKSRC}/bin && \
-		$(INSTALL_DATA) one trans.[ch] trans.man utimbuf.h utf.[ch] \
+		${INSTALL_DATA} one trans.[ch] trans.man utimbuf.h utf.[ch] \
 		${LIBDIR}/bin
-	cd ${WRKSRC}/cedf && $(INSTALL_DATA) * ${LIBDIR}/cedf
-	cd ${WRKSRC}/doc && $(INSTALL_DATA) * ${LIBDIR}/doc
-	cd ${WRKSRC}/xlt && $(INSTALL_DATA) * ${LIBDIR}/xlt
+	${INSTALL_DATA} ${WRKSRC}/cedf/* ${LIBDIR}/cedf
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${LIBDIR}/doc
+	${INSTALL_DATA} ${WRKSRC}/xlt/* ${LIBDIR}/xlt
 
 .include <bsd.port.mk>
