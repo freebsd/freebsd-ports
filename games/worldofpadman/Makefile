@@ -16,11 +16,12 @@ EXTRACT_ONLY=	worldofpadman.run \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source FPS game inspired by the Padman comic strip
 
+NO_PACKAGE=	package will be ~600MB; set FORCE_PACKAGE if you really want it
+
+USES=		gmake
 USE_MAKESELF=	yes
-USE_GMAKE=	yes
 MAKE_ENV=	DEFAULT_BASEDIR="${DATADIR}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 ALL_TARGET=	release
-NO_PACKAGE=	package will be ~600MB; set FORCE_PACKAGE if you really want it
 
 SRC_FILE=	${PORTNAME}-${PORTVERSION}
 VM_ARCHS=	amd64 i386 powerpc
@@ -55,7 +56,7 @@ MAKE_ENV+=	HAVE_VM_COMPILED=true
 .if ${PORT_OPTIONS:MCLIENT} || ${PORT_OPTIONS:MSMP_CLIENT}
 # cURL
 .  if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 MAKE_ENV+=	USE_CURL=1
 .    if ${PORT_OPTIONS:MCURL_DLOPEN}
 MAKE_ENV+=	USE_CURL_DLOPEN=1
@@ -74,7 +75,7 @@ USE_GL=		glu
 USE_SDL=	sdl
 # Vorbis
 .  if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 MAKE_ENV+=	USE_CODEC_VORBIS=1
 .  endif
 .endif
@@ -103,7 +104,7 @@ PLIST_SUB+=	GAMELIBS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMP3}
-LIB_DEPENDS+=	mad:${PORTSDIR}/audio/libmad
+LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad
 MAKE_ENV+=	USE_CODEC_MP3=1
 .endif
 
