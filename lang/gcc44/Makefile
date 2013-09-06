@@ -22,11 +22,9 @@ SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
 USE_BINUTILS=	yes
-USES=		bison iconv
+USES=		bison gmake iconv perl5
 USE_BZIP2=	yes
-USE_GCC=	any
-USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
@@ -44,7 +42,7 @@ WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -fgnu89-inline
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--disable-bootstrap \
 		--disable-nls \
