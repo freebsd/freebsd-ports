@@ -3459,6 +3459,7 @@
     SUBDIR += py-async
     SUBDIR += py-avro
     SUBDIR += py-babel
+    SUBDIR += py-bcdoc
     SUBDIR += py-billiard
     SUBDIR += py-binplist
     SUBDIR += py-biplist
