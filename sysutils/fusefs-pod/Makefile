@@ -16,7 +16,7 @@ LIB_DEPENDS=	gpod.7:${PORTSDIR}/audio/libgpod\
 		tag.1:${PORTSDIR}/audio/taglib
 
 USE_BZIP2=	yes
-USES=		fuse
+USES=		fuse pkgconfig
 GNU_CONFIGURE=	yes
 MAN1=		fusepod.1
 PLIST_FILES=	bin/fusepod
