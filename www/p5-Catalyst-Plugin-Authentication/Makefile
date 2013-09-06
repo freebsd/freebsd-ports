@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-Authentication
-PORTVERSION=	0.10019
+PORTVERSION=	0.10023
 PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -31,7 +31,8 @@ PORTSCOUT=	skipv:0.100091,0.100092
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Catalyst::Authentication::Credential::Password.3 \
+MAN3=	Catalyst::Authentication::Credential::NoPassword.3 \
+	Catalyst::Authentication::Credential::Password.3 \
 	Catalyst::Authentication::Credential::Remote.3 \
 	Catalyst::Authentication::Realm.3 \
 	Catalyst::Authentication::Realm::Compatibility.3 \
@@ -42,7 +43,6 @@ MAN3=	Catalyst::Authentication::Credential::Password.3 \
 	Catalyst::Authentication::User.3 \
 	Catalyst::Authentication::User::Hash.3 \
 	Catalyst::Plugin::Authentication.3 \
-	Catalyst::Plugin::Authentication::Credential::NoPassword.3  \
 	Catalyst::Plugin::Authentication::Credential::Password.3 \
 	Catalyst::Plugin::Authentication::Internals.3 \
 	Catalyst::Plugin::Authentication::Store::Minimal.3 \
