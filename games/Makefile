@@ -619,6 +619,7 @@
     SUBDIR += netpanzer
     SUBDIR += netrek-BRMH-bin
     SUBDIR += netrek-client-cow
+    SUBDIR += netradiant
     SUBDIR += netris
     SUBDIR += netspades
     SUBDIR += nettoe
