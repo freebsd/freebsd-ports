@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	munger
-PORTVERSION=	4.195
+PORTVERSION=	5.0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.mammothcheese.ca/
 
@@ -19,17 +19,11 @@ MANCOMPRESSED=	yes
 OPTIONS_DEFINE=	SQLITE
 OPTIONS_DEFAULT=	SQLITE
 
-USE_LDCONFIG=	yes
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	3
 MAKE_ARGS+=	-DWITH_SQL
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not link on sparc64
 .endif
 
 .include <bsd.port.mk>
