@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pimdd
-# Date created:		18 March 2004
-# Whom:			Bruce M Simpson <bms@FreeBSD.org>
-#
+# Created by: Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pimdd
 PORTVERSION=	0.2.1.0
@@ -13,6 +9,9 @@ DISTNAME=	pimd-dense
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UO Dense Protocol-Independent Multicast (PIM-DM) daemon for IPv4
+
+MAKE_ARGS+=	CC="${CC}"
+USE_GCC=	any
 
 NO_MAN=	yes
 
