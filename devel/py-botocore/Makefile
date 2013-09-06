@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	botocore
-PORTVERSION=	0.5.3
+PORTVERSION=	0.16.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +13,9 @@ COMMENT=	Low-level, core functionality of boto 3
 LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}requests>=0.14.1:${PORTSDIR}/www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}six>=1.1.0:${PORTSDIR}/devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}sphinx>=1.1.3:${PORTSDIR}/textproc/py-sphinx \
-		${PYTHON_PKGNAMEPREFIX}tox>=1.4:${PORTSDIR}/devel/py-tox
+		${PYTHON_PKGNAMEPREFIX}jmespath>=0.0.2:${PORTSDIR}/devel/py-jmespath \
+		${PYTHON_PKGNAMEPREFIX}requests>=1.2.0:${PORTSDIR}/www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}six>=1.1.0:${PORTSDIR}/devel/py-six
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
