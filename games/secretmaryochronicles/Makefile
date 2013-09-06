@@ -19,10 +19,9 @@ LIB_DEPENDS=	CEGUIBase-0.7.9:${PORTSDIR}/graphics/cegui \
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	aclocal:env autoheader:env autoconf:env automake:env
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_SDL=	sdl image mixer ttf
 USE_GL=		gl glu
-USES=		gettext
+USES=		gettext gmake pkgconfig
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-DBOOST_FILESYSTEM_VERSION=3
