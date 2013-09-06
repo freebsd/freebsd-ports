@@ -23,11 +23,10 @@ VERSIONSTRING=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.([0-9]+)/\1-\2/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
 NOT_FOR_ARCHS=	arm powerpc
-USES=		bison iconv
+USES=		bison gmake iconv perl5
 USE_BZIP2=	yes
-USE_GCC=	any
-USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USE_CSTD=	gnu89
+USE_PERL5=	build
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
