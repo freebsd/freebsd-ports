@@ -14,12 +14,14 @@ COMMENT=	Passphrases and Passwords as objects for Dancer
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Crypt-Eksblowfish>0:${PORTSDIR}/security/p5-Crypt-Eksblowfish \
-		p5-Dancer>0:${PORTSDIR}/www/p5-Dancer \
-		p5-Data-Entropy>0:${PORTSDIR}/security/p5-Data-Entropy
-RUN_DEPENDS=	p5-Crypt-Eksblowfish>0:${PORTSDIR}/security/p5-Crypt-Eksblowfish \
-		p5-Dancer>0:${PORTSDIR}/www/p5-Dancer \
-		p5-Data-Entropy>0:${PORTSDIR}/security/p5-Data-Entropy
+BUILD_DEPENDS=	p5-Dancer>0:${PORTSDIR}/www/p5-Dancer \
+		p5-Data-Entropy>=0.005:${PORTSDIR}/security/p5-Data-Entropy \
+		p5-Digest-Bcrypt>0:${PORTSDIR}/security/p5-Digest-Bcrypt \
+		p5-Digest-SHA>=5.008:${PORTSDIR}/security/p5-Digest-SHA
+RUN_DEPENDS=	p5-Dancer>0:${PORTSDIR}/www/p5-Dancer \
+		p5-Data-Entropy>=0.005:${PORTSDIR}/security/p5-Data-Entropy \
+		p5-Digest-Bcrypt>0:${PORTSDIR}/security/p5-Digest-Bcrypt \
+		p5-Digest-SHA>=5.008:${PORTSDIR}/security/p5-Digest-SHA
 
 PERL_CONFIGURE=	yes
 
