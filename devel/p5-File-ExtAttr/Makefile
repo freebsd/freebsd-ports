@@ -10,7 +10,8 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		5u623l20@gmail.com
 COMMENT=		Access to extended attributes of the files
 
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=			File::ExtAttr.3 File::ExtAttr::Tie.3
 

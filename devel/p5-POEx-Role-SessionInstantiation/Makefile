@@ -1,9 +1,4 @@
-# New ports collection makefile for:	POEx::Role::SessionInstantiation
-# Date created:		10 Oct 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	POEx-Role-SessionInstantiation
 PORTVERSION=	1.102610
@@ -25,7 +20,8 @@ RUN_DEPENDS=	\
 	p5-aliased>0:${PORTSDIR}/devel/p5-aliased
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	POEx::Role::Event.3 \
 	POEx::Role::SessionInstantiation.3 \

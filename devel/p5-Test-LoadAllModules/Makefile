@@ -13,7 +13,8 @@ RUN_DEPENDS=	\
 	p5-List-MoreUtils>0:${PORTSDIR}/lang/p5-List-MoreUtils
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Test::LoadAllModules.3
 

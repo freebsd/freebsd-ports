@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Log-Accounting-SVK
-# Date created:				21 Oct 2004
-# Whom:					Yuan-Chung Hsiao <ychsiao@ychsiao.idv.tw>
-#
+# Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.idv.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Log-Accounting-SVK
 PORTVERSION=	0.05
@@ -22,7 +18,8 @@ BUILD_DEPENDS=	svk>=0:${PORTSDIR}/devel/svk \
 		p5-Algorithm-Accounting>=0:${PORTSDIR}/devel/p5-Algorithm-Accounting
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	svk-accounting.pl.1 svk-developer-graph.pl.1
 MAN3=	Log::Accounting::SVK.3

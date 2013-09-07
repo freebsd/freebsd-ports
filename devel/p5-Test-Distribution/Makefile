@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Test-Distribution
-# Date created:		2008-02-11
-# Whom:			Felippe de Meirelles Motta <lippemail@gmail.com>
-#
+# Created by: Felippe de Meirelles Motta <lippemail@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Distribution
 PORTVERSION=	2.00
@@ -21,7 +17,8 @@ BUILD_DEPENDS+=	p5-File-Find-Rule>=0:${PORTSDIR}/devel/p5-File-Find-Rule \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Test::Distribution.3
 

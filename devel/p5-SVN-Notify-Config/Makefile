@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SVN-Notify-Config
-# Date created:		2008-02-12
-# Whom:			Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	SVN-Notify-Config
 PORTVERSION=	0.0911
@@ -22,7 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/svnlook:${PORTSDIR}/devel/subversion \
 BUILD_DEPENDS=	p5-Test-Deep>=0.1:${PORTSDIR}/devel/p5-Test-Deep \
 		${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		SVN::Notify::Config.3
 

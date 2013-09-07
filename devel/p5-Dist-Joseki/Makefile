@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Dist-Joseki
-# Date created:		2010-11-28
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Dist-Joseki
 PORTVERSION=	0.20
@@ -22,7 +18,8 @@ RUN_DEPENDS=	p5-App-Cmd>=0:${PORTSDIR}/devel/p5-App-Cmd \
 		p5-Getopt-Attribute>=0:${PORTSDIR}/devel/p5-Getopt-Attribute \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		distfind.1
 MAN3=		Dist::Joseki.3 \
