@@ -13,7 +13,7 @@ LICENSE=	LGPL20
 
 BUILD_DEPENDS=	gobject-introspection>=0.9.5:${PORTSDIR}/devel/gobject-introspection \
 		gupnp>=0.19.0:${PORTSDIR}/net/gupnp
-LIB_DEPENDS=	gupnp-1.0:${PORTSDIR}/net/gupnp
+LIB_DEPENDS=	libgupnp-1.0.so:${PORTSDIR}/net/gupnp
 RUN_DEPENDS=	gupnp>=0.19.0:${PORTSDIR}/net/gupnp
 
 CONFIGURE_ARGS=	--enable-introspection=yes
