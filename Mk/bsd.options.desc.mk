@@ -296,6 +296,7 @@ MMS_DESC?=		MMS streaming support
 MMX_DESC?=		Use MMX optimized routines
 MODPERL_DESC?=		mod_perl support
 MODPLUG_DESC?=		ModPlug decoder support
+MONGO_DESC?=		MongoDB support
 MONO_DESC?=		Mono bindings or support
 MOTIF_DESC?=		Motif widget library support
 MOUSE_DESC?=		Mouse support
