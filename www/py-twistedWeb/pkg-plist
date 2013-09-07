@@ -25,6 +25,9 @@
 %%PYTHON_SITELIBDIR%%/twisted/web/_newclient.py
 %%PYTHON_SITELIBDIR%%/twisted/web/_newclient.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/_newclient.pyo
+%%PYTHON_SITELIBDIR%%/twisted/web/_responses.py
+%%PYTHON_SITELIBDIR%%/twisted/web/_responses.pyc
+%%PYTHON_SITELIBDIR%%/twisted/web/_responses.pyo
 %%PYTHON_SITELIBDIR%%/twisted/web/_stan.py
 %%PYTHON_SITELIBDIR%%/twisted/web/_stan.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/_stan.pyo
@@ -47,9 +50,6 @@
 %%PYTHON_SITELIBDIR%%/twisted/web/error.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/error.pyo
 %%PYTHON_SITELIBDIR%%/twisted/web/failure.xhtml
-%%PYTHON_SITELIBDIR%%/twisted/web/google.py
-%%PYTHON_SITELIBDIR%%/twisted/web/google.pyc
-%%PYTHON_SITELIBDIR%%/twisted/web/google.pyo
 %%PYTHON_SITELIBDIR%%/twisted/web/guard.py
 %%PYTHON_SITELIBDIR%%/twisted/web/guard.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/guard.pyo
@@ -104,6 +104,12 @@
 %%PYTHON_SITELIBDIR%%/twisted/web/test/_util.py
 %%PYTHON_SITELIBDIR%%/twisted/web/test/_util.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/test/_util.pyo
+%%PYTHON_SITELIBDIR%%/twisted/web/test/requesthelper.py
+%%PYTHON_SITELIBDIR%%/twisted/web/test/requesthelper.pyc
+%%PYTHON_SITELIBDIR%%/twisted/web/test/requesthelper.pyo
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_agent.py
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_agent.pyc
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_agent.pyo
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_cgi.py
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_cgi.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_cgi.pyo
