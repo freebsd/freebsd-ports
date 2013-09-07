@@ -1,5 +1,5 @@
-RDoc produces HTML and command-line documentation for Ruby projects. RDoc
-includes the +rdoc+ and +ri+ tools for generating and displaying online
-documentation. See RDoc for a description of RDoc's markup and basic use.
+pry is an IRB alternative and runtime developer console.
 
-WWW: http://docs.seattlerb.org/rdoc
+Git repository: https://github.com/pry/pry
+
+WWW: http://pryrepl.org/
