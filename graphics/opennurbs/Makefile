@@ -13,14 +13,14 @@ COMMENT=	Tools to accurately transfer 3-D geometry between applications
 
 USE_DOS2UNIX=	yes
 USE_ZIP=	yes
-USES=		iconv gmake
+USES=		iconv:build gmake
 MAKE_ARGS=	CC=${CC} CCC=${CXX}
 
 MAKEFILE=	makefile
 EXAMPLESDIR=	${PREFIX}/libexec/openNURBS
 
 pre-build:
-	iconv -c -f utf-8 -t ascii ${WRKSRC}/opennurbs_version.h > ${WRKSRC}/opennurbs_version.h.tmp || ${TRUE}
+	${ICONV_CMD} -c -f utf-8 -t ascii ${WRKSRC}/opennurbs_version.h > ${WRKSRC}/opennurbs_version.h.tmp || ${TRUE}
 	@${MV} ${WRKSRC}/opennurbs_version.h.tmp ${WRKSRC}/opennurbs_version.h
 
 do-install:
