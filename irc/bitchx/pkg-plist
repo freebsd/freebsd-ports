@@ -1,9 +1,7 @@
 @unexec if [ -f %D/%%DATADIR%%/script/bxglobal.old ]; then rm -f %D/share/bx/script/bxglobal.old; fi
-%%NOGNOME%%bin/BitchX
-%%NOGNOME%%bin/BitchX-%%DISTVERSION%%
-%%GNOME%%bin/gtkBitchX
-%%GNOME%%bin/gtkBitchX-%%DISTVERSION%%
-%%NOGNOME%%bin/scr-bx
+bin/BitchX
+bin/BitchX-%%DISTVERSION%%
+bin/scr-bx
 %%DATADIR%%/BitchX.help
 %%DATADIR%%/BitchX.ircnames
 %%DATADIR%%/BitchX.quit
@@ -27,7 +25,6 @@
 %%PLUGINS%%%%DATADIR%%/plugins/autocycle.so
 %%PLUGINS%%%%DATADIR%%/plugins/cdrom.so
 %%PLUGINS%%%%DATADIR%%/plugins/nicklist.so
-%%XMMS%%%%DATADIR%%/plugins/xmms.so
 %%DATADIR%%/script/SCRIPTS
 %%DATADIR%%/script/actplug.gmz
 %%DATADIR%%/script/bxglobal
@@ -77,7 +74,7 @@
 %%DATADIR%%/translation/SWISS
 %%DATADIR%%/translation/UNITED_KINGDOM
 %%DATADIR%%/translation/UNITED_KINGDOM_COM
-%%NOGNOME%%%%DATADIR%%/wserv
+%%DATADIR%%/wserv
 @dirrm %%DATADIR%%/translation
 @dirrm %%DATADIR%%/script
 @dirrm %%DATADIR%%/plugins

@@ -28,14 +28,12 @@ PORTDOCS=	*
 DATADIR=	${PREFIX}/share/bx
 MAN1=		BitchX.1
 
-OPTIONS_DEFINE=	ESOUND GNOME IPV6 LATIN PLUGINS SSL XMMS
+OPTIONS_DEFINE=	IPV6 LATIN PLUGINS SSL DOCS
 
-GNOME_DESC=	Legacy GTK/GNOME frontend
 LATIN_DESC=	Recommended for ISO-8859-1 display
 PLUGINS_DESC=	Build a handful of BitchX plugins
-XMMS_DESC=	Build XMMS plugin
 
-OPTIONS_DEFAULT=	IPV6 PLUGINS SSL
+OPTIONS_DEFAULT=PLUGINS SSL
 
 .include <bsd.port.options.mk>
 
@@ -47,34 +45,12 @@ CONFIGURE_ARGS+=	--enable-ipv6
 CONFIGURE_ARGS+=	--with-ssl
 .endif
 
-.if ${PORT_OPTIONS:MGNOME} || ${PORT_OPTIONS:MESOUND}
-USE_GNOME=	gnomelibs
-CONFIGURE_ARGS+=	--with-gtk
-. if ${PORT_OPTIONS:MESOUND}
-USE_GNOME+=	esound
-CONFIGURE_ARGS+=	--enable-sound
-. endif
-CFLAGS+=	-I${LOCALBASE}/include/gnome-1.0
-PLIST_SUB+=	NOGNOME="@comment " GNOME=""
-.else
-CONFIGURE_ARGS+=	--without-gtk
-PLIST_SUB+=	GNOME="@comment " NOGNOME=""
-.endif
-
 .if ${PORT_OPTIONS:MPLUGINS}
 PLUGINS=	abot acro aim arcfour autocycle blowfish cavlink cdrom encrypt \
 		europa fserv hint nap nicklist pkga possum qbx qmail wavplay
 PLIST_SUB+=	PLUGINS=""
 .else
 PLIST_SUB+=	PLUGINS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MXMMS}
-LIB_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-PLUGINS+=	xmms
-PLIST_SUB+=	XMMS=""
-.else
-PLIST_SUB+=	XMMS="@comment "
 .endif
 
 .if !empty(PLUGINS)
@@ -91,12 +67,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|bzip2|true|g' ${WRKSRC}/Makefile.in
 
 post-install:
-.if ${PORT_OPTIONS:MGNOME}
-	${STRIP_CMD} ${PREFIX}/bin/gtkBitchX
-.else
 	${STRIP_CMD} ${PREFIX}/bin/BitchX
 	${STRIP_CMD} ${PREFIX}/bin/scr-bx
-.endif
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/bitchx-docs && ${COPYTREE_SHARE} . ${DOCSDIR}
