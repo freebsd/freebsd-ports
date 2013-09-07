@@ -13,6 +13,8 @@ DISTFILES=	${PYTHON_DISTFILE}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Standard Python bindings to the Berkeley DB library
 
+PORTSCOUT=	ignore:1
+
 USE_BDB=	43+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
