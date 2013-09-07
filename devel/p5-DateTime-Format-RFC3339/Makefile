@@ -1,9 +1,5 @@
-# Ports collection makefile for:	p5-DateTime-Format-RFC3339
-# Date created:	   Fri Aug 21, 2009
-# Whom:		   Dan Rench <citric@cubicone.tmetic.com>
-#
+# Created by: Dan Rench <citric@cubicone.tmetic.com>
 # $FreeBSD$
-#
 
 PORTNAME=	DateTime-Format-RFC3339
 PORTVERSION=	1.0.5
@@ -18,7 +14,8 @@ COMMENT=	Parse and format RFC3339 times
 BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
 RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DateTime::Format::RFC3339.3
 

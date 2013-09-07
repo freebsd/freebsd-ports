@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/000$//}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to locate and use lib directories
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		FindBin::libs.3
 

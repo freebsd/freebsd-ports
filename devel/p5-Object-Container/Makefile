@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Object-Container
-# Date created:		2012-04-15
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Object-Container
 PORTVERSION=	0.14
@@ -16,7 +12,8 @@ COMMENT=	Simple object container
 
 RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Object::Container.3 \
 		Object::Container::ja.3

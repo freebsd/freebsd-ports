@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Test-HTML-Tidy
-# Date created:				Sep 13 2006
-# Whom:	      				rafan@FreeBSD.org
-#
+# Created by: rafan@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	Test-HTML-Tidy
 PORTVERSION=	1.00
@@ -17,7 +13,8 @@ COMMENT=	Test::More-style wrapper around HTML::Tidy
 BUILD_DEPENDS=	p5-HTML-Tidy>=0:${PORTSDIR}/textproc/p5-HTML-Tidy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::HTML::Tidy.3
 
