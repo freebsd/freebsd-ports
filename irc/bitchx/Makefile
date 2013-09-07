@@ -8,6 +8,7 @@ CATEGORIES+=	irc
 MASTER_SITES=	http://bitchx.ca/
 
 MAINTAINER?=	dan.mashal@gmail.com
+# Co-maintainer: Chris Petrik <c.petrik.sosa@gmail.com> (PR/181627)
 COMMENT?=	Feature-rich scriptable IRC client
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C,-final$,,}
