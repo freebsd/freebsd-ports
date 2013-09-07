@@ -38,8 +38,8 @@ bin/moose-outdated
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Extending/Debugging_BaseClassRole.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Extending/ExtensionOverview.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Extending/Mooseish_MooseSugar.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Legacy/Debugging_BaseClassReplacement.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Legacy/Labeled_AttributeMetaclass.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Legacy/Debugging_BaseClassReplacement.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Legacy/Labeled_AttributeMetaclass.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Legacy/Table_ClassMetaclass.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Meta/GlobRef_InstanceMetaclass.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Meta/Labeled_AttributeTrait.pod
