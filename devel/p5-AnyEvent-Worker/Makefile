@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-AnyEvent>=5:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-lib-abs>=0.90:${PORTSDIR}/devel/p5-lib-abs
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		AnyEvent::Worker.3 AnyEvent::Worker::Pool.3
 
 .include <bsd.port.mk>

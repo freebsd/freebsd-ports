@@ -28,7 +28,8 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80011:${PORTSDIR}/www/p5-Catalyst-Runtime 
 		bugzilla>=3.6:${PORTSDIR}/devel/bugzilla
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
 do-install:

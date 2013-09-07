@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ExtUtils-Depends
-# Date created:	   18 October 2003
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	ExtUtils-Depends
 PORTVERSION=	0.304
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Easily build XS extensions that depend on XS extensions
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		ExtUtils::Depends.3
 

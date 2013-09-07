@@ -23,7 +23,8 @@ AUTOMAKE_ARGS=	-a
 CONFIGURE_ARGS=	PY_PREFIX="${PREFIX}"
 USE_AUTOTOOLS=	aclocal automake autoconf
 USE_GMAKE=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/contrib/fb303
 

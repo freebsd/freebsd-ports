@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-SVN-Mirror
-# Date created:				Mar 15 2004
-# Whom:					Autrijus Tang <autrijus@autrijus.org>
-#
+# Created by: Autrijus Tang <autrijus@autrijus.org>
 # $FreeBSD$
-#
 
 PORTNAME=	SVN-Mirror
 PORTVERSION=	0.75
@@ -26,7 +22,8 @@ BUILD_DEPENDS=	p5-Data-UUID>=0:${PORTSDIR}/devel/p5-Data-UUID \
 		p5-VCP-autrijus>=0:${PORTSDIR}/devel/p5-VCP-autrijus
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		svm.1
 MAN3=		SVN::Mirror.3
