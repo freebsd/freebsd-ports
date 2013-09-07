@@ -58,6 +58,9 @@
 %%PYTHON_SITELIBDIR%%/twisted/names/test/test_dns.py
 %%PYTHON_SITELIBDIR%%/twisted/names/test/test_dns.pyc
 %%PYTHON_SITELIBDIR%%/twisted/names/test/test_dns.pyo
+%%PYTHON_SITELIBDIR%%/twisted/names/test/test_examples.py
+%%PYTHON_SITELIBDIR%%/twisted/names/test/test_examples.pyc
+%%PYTHON_SITELIBDIR%%/twisted/names/test/test_examples.pyo
 %%PYTHON_SITELIBDIR%%/twisted/names/test/test_hosts.py
 %%PYTHON_SITELIBDIR%%/twisted/names/test/test_hosts.pyc
 %%PYTHON_SITELIBDIR%%/twisted/names/test/test_hosts.pyo
