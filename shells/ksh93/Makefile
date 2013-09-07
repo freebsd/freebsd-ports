@@ -43,7 +43,7 @@ MAKE_ENV+=	LDFLAGS+=-static
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
+	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|' \
 		${WRKSRC}/bin/package ${WRKSRC}/src/cmd/INIT/package.sh
 
 do-build:
