@@ -5,7 +5,7 @@ PORTVERSION=	1.52
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.berlios.de/pub/sdd/
 
-MAINTAINER=	naddy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Faster and improved version of dd
 
 USES=		gmake
