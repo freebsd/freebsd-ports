@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ExtUtils::Install
-# Date created:		07 Aug 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ExtUtils-Install
 PORTVERSION=	1.54
@@ -15,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to install files from here to there
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	ExtUtils::Install.3 \
 	ExtUtils::Installed.3 \

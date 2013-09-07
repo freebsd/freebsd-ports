@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Hash-WithDefaults
-# Date created:		2006-08-15
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Hash-WithDefaults
 PORTVERSION=	0.04
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Class for hashes with key-casing requirements supporting defaults
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Hash::WithDefaults.3
 

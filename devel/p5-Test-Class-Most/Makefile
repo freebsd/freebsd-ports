@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Test-Class>=0.38:${PORTSDIR}/devel/p5-Test-Class \
 		p5-Test-Most>=0.31:${PORTSDIR}/devel/p5-Test-Most
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 PLIST_FILES=	%%SITE_PERL%%/Test/Class/Most.pm
 PLIST_DIRSTRY=	%%SITE_PERL%%/Test/Class %%SITE_PERL%%/Test

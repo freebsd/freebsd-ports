@@ -1,7 +1,4 @@
-# New ports collection makefile for:	File-Tail
-# Date created:			19 December 2000
-# Whom:				Jeremy Shaffner <jeremy@external.org>
-#
+# Created by: Jeremy Shaffner <jeremy@external.org>
 # $FreeBSD$
 
 PORTNAME=	File-Tail
@@ -13,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl Module to read the end of a file as it\'s appended to
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Tail.3
 
