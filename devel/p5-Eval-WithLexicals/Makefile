@@ -14,7 +14,8 @@ RUN_DEPENDS=	\
 	p5-Moo>=0.009006:${PORTSDIR}/devel/p5-Moo
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Eval::WithLexicals.3 \
 	Eval::WithLexicals::WithHintPersistence.3

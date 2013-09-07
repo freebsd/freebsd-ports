@@ -1,9 +1,4 @@
-# New ports collection makefile for:	p5-Class-MethodMapper
-# Date created:		30 Oct 2003
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=		Class-MethodMapper
 PORTVERSION=		1.0
@@ -14,7 +9,8 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		kuriyama@FreeBSD.org
 COMMENT=		Perl module for abstract Class wrapper for AutoLoader
 
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=			Class::MethodMapper.3
 

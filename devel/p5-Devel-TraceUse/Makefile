@@ -13,7 +13,8 @@ COMMENT=	This module shows the modules your program loads, recursively
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Devel::TraceUse.3
 
