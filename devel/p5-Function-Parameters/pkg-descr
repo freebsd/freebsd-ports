@@ -1,0 +1,5 @@
+Function::Parameters extends Perl with keywords that let you define functions
+with parameter lists. It uses Perl's keyword plugin API, so it works reliably
+and doesn't require a source filter.
+
+WWW: http://search.cpan.org/dist/Function-Parameters/
