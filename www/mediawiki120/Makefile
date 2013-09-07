@@ -11,7 +11,7 @@ COMMENT=	The wiki engine used by Wikipedia
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki-1.1[0-9].*
+CONFLICTS=	mediawiki-1.1[0-9].* mediawiki-1.21.*
 
 FETCH_ARGS=	-pr
 USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom
