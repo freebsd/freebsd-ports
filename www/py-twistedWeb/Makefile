@@ -1,29 +1,25 @@
-# New ports collection makefile for:	py-twistedWeb
-# Date created:		14 April 2005
-# Whom:	      		Neal Nelson <neal@nelson.name>
-#
+# Created by: Neal Nelson <neal@nelson.name>
 # $FreeBSD$
-#
 
 PORTNAME=	twistedWeb
-PORTVERSION=	12.1.0
+PORTVERSION=	13.1.0
 CATEGORIES=	www devel python
-MASTER_SITES=	http://twistedmatrix.com/Releases/Web/${PORTVERSION:R}/
+MASTER_SITES=	http://twistedmatrix.com/Releases/Web/${PORTVERSION:R}/ \
+		LOCAL/sunpoet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedWeb-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	An HTTP protocol implementation together with clients and servers
+COMMENT=	HTTP protocol implementation together with clients and servers
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedCore>=${PORTVERSION}:${PORTSDIR}/devel/py-twistedCore
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	${PORTNAME:S/twisted/Twisted_/}
 
 .include <bsd.port.mk>
