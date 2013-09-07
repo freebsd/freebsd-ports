@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 MAN1=		${PORTNAME}.1

@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Try every conceivable way to get full hostname
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Sys::Hostname::Long.3
 

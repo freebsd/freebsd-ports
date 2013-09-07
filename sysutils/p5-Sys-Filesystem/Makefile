@@ -18,7 +18,8 @@ COMMENT=	Perl module to Retrieve list of filesystems and their properties
 RUN_DEPENDS=	p5-Params-Util>=1.0:${PORTSDIR}/devel/p5-Params-Util
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Sys::Filesystem::Mswin32.3 \
 		Sys::Filesystem.3 \
