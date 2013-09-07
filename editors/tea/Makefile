@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tea
-PORTVERSION=	36.0.2
+PORTVERSION=	36.0.3
 CATEGORIES=	editors
 MASTER_SITES=	http://semiletov.org/tea/dloads/
 
@@ -11,6 +11,7 @@ COMMENT=	Simple and powerful Qt4-based text editor
 
 LICENSE=	GPLv3
 
+OPTIONS_DEFINE=		DOCS
 OPTIONS_RADIO=		SPELL
 OPTIONS_RADIO_SPELL=	ASPELL HUNSPELL
 OPTIONS_DEFAULT=	ASPELL
@@ -19,6 +20,7 @@ USE_BZIP2=	yes
 USE_QT4=	gui moc_build qmake_build rcc_build
 
 PLIST_FILES=	bin/tea share/pixmaps/tea_icon_v2.png
+PORTDOCS=	*
 
 DESKTOP_ENTRIES="TEA" "" "${PREFIX}/share/pixmaps/tea_icon_v2.png" \
 		"${PORTNAME}" "" ""
@@ -26,14 +28,14 @@ DESKTOP_ENTRIES="TEA" "" "${PREFIX}/share/pixmaps/tea_icon_v2.png" \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASPELL}
-LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=	libaspell.so:${PORTSDIR}/textproc/aspell
 QMAKEFLAGS+=	USE_ASPELL=true
 .else
 QMAKEFLAGS+=	USE_ASPELL=false
 .endif
 
 .if ${PORT_OPTIONS:MHUNSPELL}
-LIB_DEPENDS+=	hunspell:${PORTSDIR}/textproc/hunspell
+LIB_DEPENDS+=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
 QMAKEFLAGS+=	USE_HUNSPELL=true
 .else
 QMAKEFLAGS+=	USE_HUNSPELL=false
@@ -53,5 +55,9 @@ do-install:
 		&& ${INSTALL_PROGRAM} tea ${PREFIX}/bin)
 	(cd ${WRKSRC}/icons \
 		&& ${INSTALL_DATA} tea_icon_v2.png ${PREFIX}/share/pixmaps)
+.if ${PORT_OPTIONS:MDOCS}
+	(cd ${WRKSRC}/manuals \
+		&& ${COPYTREE_SHARE} . ${DOCSDIR})
+.endif
 
 .include <bsd.port.mk>
