@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Class-Date
-# Date Created:				28 June 2001
-# Whom:					Pete Fritchman <petef@databits.net>
-#
+# Created by: Pete Fritchman <petef@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Date
 PORTVERSION=	1.1.10
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	A Perl class for easy date and time manipulation
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Class::Date.3
 

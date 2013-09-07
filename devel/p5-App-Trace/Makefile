@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-App-Trace
-# Date created:		2006-08-20
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	App-Trace
 PORTVERSION=	0.50
@@ -16,7 +12,8 @@ COMMENT=	Embedded debug statements, including call/return tracing
 
 RUN_DEPENDS=	p5-App-Options>=0:${PORTSDIR}/devel/p5-App-Options
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		App::Trace.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MouseX-ConfigFromFile
-# Date created:		2009-04-22
-# Whom:			TERAMOTO Masahiro <markun@onohara.to>
-#
+# Created by: TERAMOTO Masahiro <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	MouseX-ConfigFromFile
 PORTVERSION=	0.05
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Filter>=0:${PORTSDIR}/devel/p5-Filter \
 		p5-MouseX-Types-Path-Class>=0.05:${PORTSDIR}/devel/p5-MouseX-Types-Path-Class
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MouseX::ConfigFromFile.3
 

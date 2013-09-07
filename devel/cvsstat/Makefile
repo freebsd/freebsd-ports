@@ -13,7 +13,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Transforms the output of 'cvs status' to a sorted ASCII table
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 PLIST_FILES=	bin/cvsstat
 

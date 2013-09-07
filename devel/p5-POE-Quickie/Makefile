@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-POE-Quickie
-# Date created:		2011-05-04
-# Whom:			Takefu
-#
+# Created by: Takefu
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Quickie
 PORTVERSION=	0.18
@@ -24,7 +20,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Capture-Tiny>=0.07:${PORTSDIR}/devel/p5-Capture-Tiny \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Quickie.3
 

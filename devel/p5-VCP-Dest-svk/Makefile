@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-VCP-Dest-svk
-# Date created:				Jul 19 2004
-# Whom:					Rong-En Fan <rafan@infor.org>
-#
+# Created by: Rong-En Fan <rafan@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	VCP-Dest-svk
 PORTVERSION=	0.29
@@ -22,7 +18,8 @@ BUILD_DEPENDS=	p5-VCP-autrijus>=0:${PORTSDIR}/devel/p5-VCP-autrijus \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		VCP::Dest::svk.3
 

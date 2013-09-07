@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Data-Uniqid
-# Date created:		2008-11-28
-# Whom:			Sergey V. Dyatko <sergey.dyatko@gmail.com>
-#
+# Created by: Sergey V. Dyatko <sergey.dyatko@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Uniqid
 PORTVERSION=	0.12
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sergey.dyatko@gmail.com
 COMMENT=	Perl extension for simple genrating of unique id's
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Data::Uniqid.3
 

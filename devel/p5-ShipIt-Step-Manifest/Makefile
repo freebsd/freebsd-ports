@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-ShipIt-Step-Manifest
-# Date created:		2010-11-28
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ShipIt-Step-Manifest
 PORTVERSION=	0.01
@@ -18,7 +14,8 @@ COMMENT=	ShipIt step for recreating the MANIFEST
 RUN_DEPENDS=	p5-Dist-Joseki>=0:${PORTSDIR}/devel/p5-Dist-Joseki \
 		p5-ShipIt>=0:${PORTSDIR}/devel/p5-ShipIt
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		ShipIt::Step::Manifest.3
 
