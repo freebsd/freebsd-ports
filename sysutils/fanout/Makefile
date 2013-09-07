@@ -11,7 +11,8 @@ MASTER_SITES=	http://www.stearns.org/fanout/ \
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Tool to run commands on multiple machines
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 PLIST_FILES=	bin/fanout bin/fanterm bin/fanmux
 .if !defined(NOPORTDOCS)

@@ -13,7 +13,8 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		tj@FreeBSD.org
 COMMENT=		A simple Object Orientated Logger
 
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=			File::Log.3
 

@@ -14,7 +14,8 @@ COMMENT=	A multi-file tail on both local and remote hosts
 RUN_DEPENDS=	p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
 		p5-Getopt-Declare>=0:${PORTSDIR}/devel/p5-Getopt-Declare
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 NO_BUILD=	yes
 

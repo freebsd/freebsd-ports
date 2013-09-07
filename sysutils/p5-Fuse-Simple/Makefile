@@ -17,7 +17,8 @@ COMMENT=	Simple way to write filesystems in Perl using FUSE
 
 RUN_DEPENDS=	p5-Fuse>=0:${PORTSDIR}/sysutils/p5-Fuse
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Fuse::Simple.3
 

@@ -21,7 +21,8 @@ COMMENT=	A periodic command scheduler
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --localstatedir=/var \
 		--with-cflags="${CFLAGS}" \
 		--with-rootname=root --with-rootgroup=wheel \

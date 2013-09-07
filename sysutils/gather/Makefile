@@ -17,7 +17,7 @@ LICENSE=	BSD
 
 PROJECTHOST=	gatherit
 
-USE_PERL5=	yes
+USES=		perl5
 
 CONFLICTS_INSTALL=	harvest-[0-9]*
 

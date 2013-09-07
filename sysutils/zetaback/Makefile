@@ -14,7 +14,8 @@ MASTER_SITES=	https://labs.omniti.com/zetaback/tags/1.0/
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Zetaback ZFS backup and recovery management system
 
-USE_PERL5_RUN=	YES
+USES=		perl5
+USE_PERL5=	run
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
 
