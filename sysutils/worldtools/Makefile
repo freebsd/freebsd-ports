@@ -14,7 +14,8 @@ MASTER_SITES=	http://anarcat.ath.cx/software/distfiles/
 MAINTAINER=	anarcat@anarcat.ath.cx
 COMMENT=	Handy tools for living with make world
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 MAN8=		buildit.8 upgrade.8 whereintheworld.8
 

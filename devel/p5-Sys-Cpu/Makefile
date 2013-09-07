@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	terry@sucked-in.com
 COMMENT=	Sys::CPU - Perl extension for getting CPU information
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Sys::CPU.3
 

@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
 		p5-Authen-PAM>=0:${PORTSDIR}/security/p5-Authen-PAM
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 USE_RC_SUBR=	usermin
 SUB_LIST=	PERL5=${PERL}
 SUB_FILES=	pkg-message

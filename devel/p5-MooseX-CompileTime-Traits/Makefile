@@ -19,7 +19,8 @@ RUN_DEPENDS=	\
 	p5-MooseX-Declare>0:${PORTSDIR}/devel/p5-MooseX-Declare
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	MooseX::CompileTime::Traits.3
 

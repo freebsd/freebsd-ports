@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-Net-Jabber>=0:${PORTSDIR}/net-im/p5-Net-Jabber \
 		p5-Net-SSH>=0:${PORTSDIR}/net/p5-Net-SSH
 
-USE_PERL5=	yes
+USES=		perl5
 
 NO_BUILD=	yes
 NO_INSTALL_MANPAGES=	yes

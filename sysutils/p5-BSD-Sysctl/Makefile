@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	david@landgren.net
 COMMENT=	Fetch sysctl values from BSD-like systems
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		BSD::Sysctl.3
 

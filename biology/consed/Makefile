@@ -19,7 +19,7 @@ RUN_DEPENDS=	phred:${PORTSDIR}/biology/phred \
 		phrap:${PORTSDIR}/biology/phrap \
 		phd2fasta:${PORTSDIR}/biology/phd2fasta
 
-USE_PERL5=	yes
+USES=		perl5
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
