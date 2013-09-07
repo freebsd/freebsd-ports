@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	liveMedia
-PORTVERSION=	2013.08.16
+PORTVERSION=	2013.08.31
 PORTEPOCH=	2
 CATEGORIES=	net devel
-MASTER_SITES=	http://www.live555.com/liveMedia/public/ \
-		LOCAL/bdrewery/${PORTNAME}/
+MASTER_SITES=	SF/fbsdports/distfiles/ \
+		http://www.live555.com/liveMedia/public/
 DISTNAME=	live.${PORTVERSION}
 
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	LIVE.COM Streaming Media
 
-LICENSE=	GPLv2
+LICENSE=	LGPL21
 
 NO_CDROM=	'dated material'
 
