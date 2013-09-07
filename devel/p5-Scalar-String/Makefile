@@ -16,7 +16,8 @@ COMMENT=	Perl module for string aspects of scalars
 
 LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Scalar::String.3
 

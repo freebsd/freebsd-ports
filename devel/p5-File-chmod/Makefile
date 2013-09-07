@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	smatsui@karashi.org
 COMMENT=	File::chmod - Implements symbolic and ls chmod modes
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::chmod.3
 

@@ -19,7 +19,8 @@ LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Test-Base>0:${PORTSDIR}/devel/p5-Test-Base
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Carp::Always.3
 

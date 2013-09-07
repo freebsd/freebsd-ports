@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	spry@anarchy.in.the.ph
 COMMENT=	Class and object builder
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Class::Gomor.3 \
 	Class::Gomor::Hash.3 \
