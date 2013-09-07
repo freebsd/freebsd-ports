@@ -12,4 +12,4 @@ A set of regression tests is available in the subdirectory
 $(WRKDIR)/src/lib/sfio/Sfio_t.  These tests can be exercised by running
 the shell script runtest after building the library.
 
-WWW:  http://www.research.att.com/sw/tools/sfio/
+WWW: http://www.research.att.com/sw/tools/sfio/
