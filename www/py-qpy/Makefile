@@ -15,7 +15,7 @@ OPTIONS_DEFINE=	DOCS
 
 MAKE_ENV=	USE_DISTUTILS=yes
 USE_PYTHON=	2.5+
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 
 .include <bsd.port.options.mk>
 
