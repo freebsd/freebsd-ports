@@ -74,7 +74,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--with-port=${WITH_HTTP_PORT} \
 		--with-sslport=${WITH_SSL_PORT} \
 		--with-expat=${LOCALBASE} \
-		--with-iconv=${LOCALBASE} \
+		--with-iconv=${ICONV_PREFIX} \
 		--enable-http \
 		--with-pcre=${LOCALBASE} \
 		--with-apr=${APR_CONFIG} \

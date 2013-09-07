@@ -42,7 +42,7 @@ CONFIGURE_ENV=	CC="${CC}"
 
 CONFIGURE_ARGS=	--with-installbuilddir=${DATADIR}/build-2 \
 	--with-expat=${LOCALBASE} \
-	--with-iconv=${LOCALBASE}
+	--with-iconv=${ICONV_PREFIX}
 
 WRKSRC=	${WRKDIR}/apr
 

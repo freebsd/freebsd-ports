@@ -20,7 +20,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}/bin \
 		--with-tclconfig=${TCL_LIBDIR} \
-		--with-iconv=${LOCALBASE} --with-expat=${LOCALBASE}
+		--with-iconv=${ICONV_PREFIX} --with-expat=${LOCALBASE}
 
 USES=		iconv
 USE_LDCONFIG=	yes
