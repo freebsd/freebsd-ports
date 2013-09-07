@@ -32,6 +32,18 @@ bin/tox-quickstart
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox/_verlib.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox/_verlib.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox/_verlib.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox/interpreters.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox/interpreters.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox/interpreters.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox/result.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox/result.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox/result.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox/vendor/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox/vendor/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox/vendor/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox/vendor/virtualenv.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox/vendor/virtualenv.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox/vendor/virtualenv.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
