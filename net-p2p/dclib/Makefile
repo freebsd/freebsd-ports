@@ -1,11 +1,6 @@
-# ex: ts=8
-# New ports collection makefile for:    dclib
-# Date created:                         Wed 10 Jul 2002
-# Whom: Sverrir Valgeirsson <e96sv@yahoo.se> and
-#	Amar Takhar <verm@drunkmonk.net> et al
-#
+# Created by: Sverrir Valgeirsson <e96sv@yahoo.se> and 
+#             Amar Takhar <verm@drunkmonk.net> et al
 # $FreeBSD$
-#
 
 PORTNAME=	dclib
 PORTVERSION=	0.3.23
@@ -16,7 +11,7 @@ MASTER_SITES=	SF/wxdcgui/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Direct connect interface library for valknut
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 WRKSRC=	${WRKDIR}/${DISTNAME}
 
@@ -26,6 +21,12 @@ USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1000015
+EXTRA_PATCHES=	${FILESDIR}/extra-dclib-core_cssl.cpp
+.endif
 
 post-extract:
 	${CHMOD} 0755 ${WRKSRC}/admin/install-sh
@@ -41,4 +42,4 @@ post-patch:
 	${REINPLACE_CMD} -e 's|-D_XOPEN_SOURCE=500||g; \
 	    s|-D_BSD_SOURCE||g' ${WRKSRC}/configure ${WRKSRC}/configure.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
