@@ -78,12 +78,12 @@ APPENDIXDIR=	${DATADIR}/appendix
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
+USES+=		gettext iconv
 CONFIGURE_ARGS+=	--enable-nls \
 		--with-gettext-includes=${LOCALBASE}/include \
 		--with-gettext-libraries=${LOCALBASE}/lib \
-		--with-iconv-includes=${LOCALBASE}/include \
-		--with-iconv-libraries=${LOCALBASE}/lib
+		--with-iconv-includes=${ICONV_PREFIX}/include \
+		--with-iconv-libraries=${ICONV_PREFIX}/lib
 PLIST_SUB=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
