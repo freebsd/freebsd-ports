@@ -18,7 +18,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 
-OPTIONS_DEFINE=	MYSQL PGSQL SQLITE THREADS MMAP LAYER2 IPV6 SHARED DEBUG
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE THREADS MMAP LAYER2 IPV6 SHARED DEBUG \
+		MONGO GEOIP
 OPTIONS_DEFAULT=MMAP LAYER2 IPV6 SHARED
 
 SQLITE_DESC=	Enable SQLite support
@@ -90,6 +91,20 @@ CONFIGURE_ARGS+=--disable-so
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug
+.endif
+
+.if ${PORT_OPTIONS:MMONGO}
+LIB_DEPENDS+=	libmongoc.so:${PORTSDIR}/devel/mongo-c-driver
+CONFIGURE_ARGS+=--enable-mongodb \
+		--with-mongodb-libs=${LOCALBASE}/lib \
+		--with-mongodb-includes=${LOCALBASE}/include
+.endif
+
+.if ${PORT_OPTIONS:MGEOIP}
+LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
+CONFIGURE_ARGS+=--enable-geoip \
+		--with-geoip-libs=${LOCALBASE}/lib \
+		--with-geoip-includes=${LOCALBASE}/include
 .endif
 
 post-patch:
