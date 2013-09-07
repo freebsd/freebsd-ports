@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Log::Any::Adapter::Dispatch
-# Date created:		30 Aug 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Log-Any-Adapter-Dispatch
 PORTVERSION=	0.06
@@ -19,7 +14,8 @@ RUN_DEPENDS=	\
 	p5-Log-Dispatch>=2.26:${PORTSDIR}/devel/p5-Log-Dispatch
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Log::Any::Adapter::Dispatch.3
 

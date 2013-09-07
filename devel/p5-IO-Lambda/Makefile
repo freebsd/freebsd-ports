@@ -1,7 +1,4 @@
-# New ports collection makefile for:	devel/p5-IO-Lambda
-# Date created:				06 Nov 2008
-# Whom:					Vany Serezhkin <ivan@serezhkin.com>
-#
+# Created by: Vany Serezhkin <ivan@serezhkin.com>
 # $FreeBSD$
 
 PORTNAME=	IO-Lambda
@@ -23,7 +20,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		p5-AnyEvent>=4.33:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-DBI>=1.60.4:${PORTSDIR}/databases/p5-DBI
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS+=	--no-online-tests
 
 MAN3=	IO::Lambda.3 \

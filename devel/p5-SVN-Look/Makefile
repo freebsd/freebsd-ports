@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SVN::Look
-# Date created:		2009-01-27
-# Whom:			Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	SVN-Look
 PORTVERSION=	0.38
@@ -21,7 +17,8 @@ RUN_DEPENDS=	subversion>=1.7.0:${PORTSDIR}/devel/subversion \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		SVN::Look.3
 
