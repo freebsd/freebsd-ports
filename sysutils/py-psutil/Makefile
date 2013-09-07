@@ -13,7 +13,7 @@ COMMENT=	Process utilities module for Python
 LICENSE=	BSD
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	${PORTNAME}
 
 post-patch:

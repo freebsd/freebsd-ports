@@ -12,6 +12,6 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure Python TFTP Implementation
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 
 .include <bsd.port.mk>

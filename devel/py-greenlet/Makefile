@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 USE_ZIP=	yes
 
 .include <bsd.port.mk>
