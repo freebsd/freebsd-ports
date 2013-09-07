@@ -432,6 +432,7 @@
     SUBDIR += mawstats
     SUBDIR += mediawiki119
     SUBDIR += mediawiki120
+    SUBDIR += mediawiki121
     SUBDIR += mergelog
     SUBDIR += metacafe_dl
     SUBDIR += mgstat

@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 CONFLICTS=	mediawiki-1.1[0-9].* mediawiki-1.21.*
 
 FETCH_ARGS=	-pr
+NO_LATEST_LINK=	yes
 USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
