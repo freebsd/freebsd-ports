@@ -20,7 +20,8 @@ RUN_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Object-Container>=0:${PORTSDIR}/devel/p5-Object-Container \
 		p5-Object-Event>=0:${PORTSDIR}/devel/p5-Object-Event
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		AnyEvent::Gearman.3 \
 		AnyEvent::Gearman::Client.3 \

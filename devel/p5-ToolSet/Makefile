@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-ToolSet
-# Date created:		2009-05-04
-# Whom:			Vladimir Perepelitsa <mons@cpan.org>
-#
+# Created by: Vladimir Perepelitsa <mons@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ToolSet
 PORTVERSION=	1.00
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mons@cpan.org
 COMMENT=	Load your commonly-used modules in a single import
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=	ToolSet.3 \
 	ToolSet::SWC.3
 

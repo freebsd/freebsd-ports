@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Data-Hexify
-# Date created:	24 December 2010
-# Whom:		Nobutaka Mantani <nobutaka@FreeBSD.org>
-#
+# Created by: Nobutaka Mantani <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Hexify
 PORTVERSION=	1.00
@@ -17,7 +13,8 @@ COMMENT=	A Perl extension for hexdumping arbitrary data
 LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Data::Hexify.3
 

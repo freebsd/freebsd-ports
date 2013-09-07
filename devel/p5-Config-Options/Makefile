@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-Config-Options
-# Date created:				September 15 2008
-# Whom:					Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Config-Options
@@ -13,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Provide a configuration hash with options
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Config::Options.3 \
 	Config::Options::Threaded.3
