@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gssdp
-PORTVERSION=	0.14.4
+PORTVERSION=	0.14.5
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -12,7 +12,7 @@ COMMENT=	Framework for UPnP devices
 LICENSE=	LGPL20
 
 BUILD_DEPENDS=	gobject-introspection>=0.6.7:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	soup-2.4:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
 OPTIONS_DEFINE=	GTK3
 OPTIONS_DEFAULT=GTK3
