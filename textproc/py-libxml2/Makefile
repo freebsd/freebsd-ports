@@ -16,9 +16,10 @@ PLIST=		${.CURDIR}/pkg-plist
 
 USE_GNOME+=	libxml2
 USE_PYTHON=	-2.7
+USES=		iconv
 CPPFLAGS+=	`${PYTHON_VERSION}-config --cflags`
 LDFLAGS+=	-L${LOCALBASE}/lib `${PYTHON_VERSION}-config --libs`
-CONFIGURE_ARGS=	--with-iconv=${LOCALBASE} \
+CONFIGURE_ARGS=	--with-iconv=${ICONV_PREFIX} \
 		--with-html-dir=${PREFIX}/share/doc \
 		--with-html-subdir=${PORTNAME} \
 		--with-python=${PYTHON_CMD}

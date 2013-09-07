@@ -34,7 +34,7 @@ DATADIR?=	${PREFIX}/share/${PORTNAME}-0.9
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-tls=none \
-		--with-iconv=${LOCALBASE}
+		--with-iconv=${ICONV_PREFIX}
 PLIST_SUB=	VERSION="${PORTVERSION}" \
 		TARGET="${CONFIGURE_TARGET}"
 USES=		iconv

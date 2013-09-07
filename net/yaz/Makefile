@@ -18,7 +18,7 @@ USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=--enable-shared --with-openssl=${OPENSSLBASE} \
-		--with-iconv=${LOCALBASE} --with-xml2=${LOCALBASE} \
+		--with-iconv=${ICONV_PREFIX} --with-xml2=${LOCALBASE} \
 		--with-xslt=${LOCALBASE} --with-icu=${LOCALBASE} \
 		--enable-tcpd
 

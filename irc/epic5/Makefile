@@ -29,6 +29,9 @@ OPTIONS_DEFINE=	IPV6 TCL PERL SSL TERMCAP DOCS RUBY
 OPTIONS_DEFAULT=	TCL PERL SSL RUBY
 TERMCAP_DESC=	Refuse to use terminfo/ncurses
 
+CONFIGURE_ARGS+=--with-iconv=${ICONV_PREFIX}
+USES=		iconv
+
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MIPV6}
@@ -62,9 +65,6 @@ CONFIGURE_ARGS+=	--without-ruby
 .if ${PORT_OPTIONS:MTERMCAP}
 CONFIGURE_ARGS+=	--with-termcap
 .endif
-
-CONFIGURE_ARGS+=	--with-iconv=${LOCALBASE}
-USES=		iconv
 
 post-extract:
 	@${FIND} ${WRKDIR} -type d -name CVS | ${XARGS} ${RM} -rf

@@ -17,7 +17,7 @@ COMMENT=	PPP over SSL virtual private networking (client part)
 
 LICENSE=	BSD
 
-CONFIGURE_ARGS=	--disable-server --with-iconv=${LOCALBASE}
+CONFIGURE_ARGS=	--disable-server --with-iconv=${ICONV_PREFIX}
 GNU_CONFIGURE=	yes
 USES=		iconv
 

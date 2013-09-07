@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=--disable-gtk
 .endif
 
 .if ${PORT_OPTIONS:MUTF8}
-CONFIGURE_ARGS+=--with-iconv=${LOCALBASE}
+CONFIGURE_ARGS+=--with-iconv=${ICONV_PREFIX}
 USES+=		iconv
 .endif
 
@@ -91,6 +91,7 @@ post-patch:
 		-e 's|test -f /usr/include/libnet\.h|${TRUE}|' \
 		-e 's|(LNETINC=).*|\1"`${LIBNET_CONFIG} --cflags`"|' \
 		-e 's|(LNETLIB=).*|\1"`${LIBNET_CONFIG} --libs`"|' \
+		-e '/ICONVLIB/s|-liconv|${ICONV_LIB}|' \
 			${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -E \
 		-e 's|(^pkgdatadir.+=).+|\1 ${DATADIR}|' \

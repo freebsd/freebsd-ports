@@ -20,6 +20,7 @@ iconv_ARGS=     lib
 
 ICONV_CMD=	${LOCALBASE}/bin/iconv
 ICONV_LIB=	-liconv
+ICONV_PREFIX=	${LOCALBASE}
 ICONV_CONFIGURE_ARG=	--with-libiconv-prefix=${LOCALBASE}
 ICONV_CONFIGURE_BASE=	--with-libiconv=${LOCALBASE}
 
@@ -35,6 +36,7 @@ PATCH_DEPENDS+=	${ICONV_CMD}:${PORTSDIR}/converters/libiconv
 
 ICONV_CMD=	/usr/bin/iconv
 ICONV_LIB=
+ICONV_PREFIX=	/usr
 ICONV_CONFIGURE_ARG=
 ICONV_CONFIGURE_BASE=
 
