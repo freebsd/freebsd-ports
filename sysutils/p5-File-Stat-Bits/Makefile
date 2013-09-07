@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	Perl5 module interface to the major()/minor() C routines
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Stat::Bits.3
 

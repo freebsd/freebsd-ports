@@ -16,7 +16,8 @@ MAINTAINER=	onatan@gmail.com
 COMMENT=	Utility to dump process memory
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 CFLAGS+=	${CPPFLAGS}
 

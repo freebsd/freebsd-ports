@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-DateTime-Event-Cron>=0:${PORTSDIR}/devel/p5-DateTime-Event-Cron 
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime
 
-USE_PERL5=	yes
+USES=		perl5
 
 NO_WRKSUBDIR=	yes
 

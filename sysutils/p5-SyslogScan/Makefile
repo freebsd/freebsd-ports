@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl5 routines to parse system logs
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		SyslogScan::ByGroup.3 SyslogScan::Delivery.3 \
 		SyslogScan::DeliveryIterator.3 \

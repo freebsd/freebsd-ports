@@ -16,7 +16,8 @@ MAINTAINER=	fehlner@gmx.de
 COMMENT=	Scripts to automate the maintenance of accounts
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 MAN1=	digestion.pl.1
 MAN8=	hunter-seeker.pl.8 newusers.pl.8 reaper.pl.8

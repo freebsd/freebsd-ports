@@ -25,7 +25,8 @@ RUN_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
 		p5-File-BaseDir>=0:${PORTSDIR}/devel/p5-File-BaseDir \
 		p5-Config-IniHash>=0:${PORTSDIR}/devel/p5-Config-IniHash
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Plugtools.3 \
 		Plugtools::Plugins::Dump.3
