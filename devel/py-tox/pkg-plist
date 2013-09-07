@@ -44,6 +44,7 @@ bin/tox-quickstart
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox/vendor/virtualenv.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox/vendor/virtualenv.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox/vendor/virtualenv.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox/vendor
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tox
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
