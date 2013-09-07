@@ -11,7 +11,8 @@ COMMENT=	KoreLogic Expression Language library
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=--with-pcre=${LOCALBASE}
