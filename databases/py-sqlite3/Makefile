@@ -15,6 +15,8 @@ COMMENT=	Standard Python binding to the SQLite3 library
 
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
 
+PORTSCOUT=	ignore:1
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_XZ=		yes
