@@ -14,7 +14,8 @@ PKGNAMEPREFIX=
 MAINTAINER=	pavel@ext.by
 COMMENT=	Shutdowns a running jail and all its processes
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 MAN1=		jkill.1
 MANCOMPRESSED=	yes

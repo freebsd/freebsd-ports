@@ -13,7 +13,8 @@ COMMENT=	A free Gnome client for the Network UPS Tools
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomelibs gnomehier
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include

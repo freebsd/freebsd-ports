@@ -12,7 +12,7 @@ COMMENT=	Helper programs for debian/rules
 
 MAKE_ENV+=	SITE_PERL_REL=${SITE_PERL_REL}
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>

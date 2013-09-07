@@ -18,7 +18,7 @@ COMMENT=	PERL-based Event viewer
 
 LICENSE=	GPLv2
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/evtViewer

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.superscript.com/ucspi-ipc/
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	UCSPI tools for building local-domain client-server applications
 
-USE_PERL5=	yes
+USES=		perl5
 
 DISABLE_SIZE=	yes
 
