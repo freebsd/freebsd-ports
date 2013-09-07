@@ -439,7 +439,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_notice_module.c
 .if ${PORT_OPTIONS:MHTTP_PERL}
 CATEGORIES+=	perl5
 CONFIGURE_ARGS+=--with-http_perl_module
-USE_PERL5=	yes
+USES+=		perl5
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_PUSH}
@@ -656,7 +656,7 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	4.0.14
+PASSENGER_VERSION=	4.0.16
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
