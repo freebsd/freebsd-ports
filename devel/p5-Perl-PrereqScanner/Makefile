@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Perl-PrereqScanner
-# Date created:				2011-09-19
-# Whom:					Geraud CONTINSOUZAS <geraud@gcu.info>
-#
+# Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
 # $FreeBSD$
-#
 
 PORTNAME=	Perl-PrereqScanner
 PORTVERSION=	1.014
@@ -27,7 +23,8 @@ BUILD_DEPENDS=	p5-CPAN-Meta>=2.120630:${PORTSDIR}/devel/p5-CPAN-Meta \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	scan_prereqs.1
 MAN3=	Perl::PrereqScanner.3 \

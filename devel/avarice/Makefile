@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/libbfd \
 		${LOCALBASE}/lib/libiberty.a:${PORTSDIR}/devel/gnulibiberty
 
 USE_BZIP2=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 GNU_CONFIGURE=	yes
 #CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include

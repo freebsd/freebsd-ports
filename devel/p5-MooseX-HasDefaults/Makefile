@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Mason
-# Date created:				03 April, 2012
-# Whom:					Muhammad Moinur Rahman <5u623l20@gmail.com>
-#
+# Created by: Muhammad Moinur Rahman <5u623l20@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-HasDefaults
 PORTVERSION=	0.03
@@ -17,7 +13,8 @@ COMMENT=	Default "is" to "ro" or "rw" for all attributes
 BUILD_DEPENDS=	p5-Moose>2:${PORTSDIR}/devel/p5-Moose \
 		p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MooseX::HasDefaults.3
 
