@@ -1,12 +1,11 @@
 bpython is a fancy interface to the Python interpreter for Unix-like operating
 systems. It has the following features:
-    * In-line syntax highlighting.
-    * Readline-like autocomplete with suggestions displayed as you type.
-    * Expected parameter list for any Python function.
-    * "Rewind" function to pop the last line of code from memory and
-      re-evaluate.
-    * Send the code you've entered off to a pastebin.
-    * Save the code you've entered to a file.
-    * Auto-indentation.
+- In-line syntax highlighting.
+- Readline-like autocomplete with suggestions displayed as you type.
+- Expected parameter list for any Python function.
+- "Rewind" function to pop the last line of code from memory and re-evaluate.
+- Send the code you've entered off to a pastebin.
+- Save the code you've entered to a file.
+- Auto-indentation.
 
 WWW: http://bpython-interpreter.org/
