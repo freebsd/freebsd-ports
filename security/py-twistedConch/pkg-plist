@@ -35,6 +35,9 @@ bin/tkconch
 %%PYTHON_SITELIBDIR%%/twisted/conch/client/options.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/client/options.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/client/options.pyo
+%%PYTHON_SITELIBDIR%%/twisted/conch/endpoints.py
+%%PYTHON_SITELIBDIR%%/twisted/conch/endpoints.pyc
+%%PYTHON_SITELIBDIR%%/twisted/conch/endpoints.pyo
 %%PYTHON_SITELIBDIR%%/twisted/conch/error.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/error.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/error.pyo
@@ -107,6 +110,9 @@ bin/tkconch
 %%PYTHON_SITELIBDIR%%/twisted/conch/ssh/__init__.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/ssh/__init__.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/ssh/__init__.pyo
+%%PYTHON_SITELIBDIR%%/twisted/conch/ssh/address.py
+%%PYTHON_SITELIBDIR%%/twisted/conch/ssh/address.pyc
+%%PYTHON_SITELIBDIR%%/twisted/conch/ssh/address.pyo
 %%PYTHON_SITELIBDIR%%/twisted/conch/ssh/agent.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/ssh/agent.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/ssh/agent.pyo
@@ -161,6 +167,9 @@ bin/tkconch
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/keydata.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/keydata.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/keydata.pyo
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_address.py
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_address.pyc
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_address.pyo
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_agent.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_agent.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_agent.pyo
@@ -185,6 +194,9 @@ bin/tkconch
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_default.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_default.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_default.pyo
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_endpoints.py
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_endpoints.pyc
+%%PYTHON_SITELIBDIR%%/twisted/conch/test/test_endpoints.pyo
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_filetransfer.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_filetransfer.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/test/test_filetransfer.pyo
