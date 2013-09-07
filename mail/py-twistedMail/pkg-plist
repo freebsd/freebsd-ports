@@ -57,6 +57,7 @@ bin/mailmail
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/pop3testserver.pyc
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/pop3testserver.pyo
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/rfc822.message
+%%PYTHON_SITELIBDIR%%/twisted/mail/test/server.pem
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/test_bounce.py
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/test_bounce.pyc
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/test_bounce.pyo
