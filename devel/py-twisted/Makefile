@@ -1,26 +1,23 @@
-# New ports collection makefile for:	py-twisted
-# Date created:		16 August 2001
-# Whom:	      		Johann Visagie <wjv@FreeBSD.org>
-#
+# Created by: Johann Visagie <wjv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	twisted
-PORTVERSION=	12.1.0
+PORTVERSION=	13.1.0
 CATEGORIES=	devel net python
 MASTER_SITES=	# empty
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	# none
+DISTFILES=	# empty
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Metaport of Twisted, an event-driven networking engine
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedCore>=${PORTVERSION}:${PORTSDIR}/devel/py-twistedCore
 
 NO_BUILD=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 PYDISTUTILS_NOEGGINFO=	yes
-WRKSRC=		${WRKDIR}/Twisted-${PORTVERSION}
 
 OPTIONS_DEFINE=	CONCH LORE MAIL NAMES NEWS PAIR RUNNER WEB WORDS
 OPTIONS_DEFAULT=CONCH LORE MAIL NAMES NEWS PAIR RUNNER WEB WORDS
@@ -34,7 +31,7 @@ RUNNER_DESC=	Process management
 WEB_DESC=	HTTP protocol
 WORDS_DESC=	Chat and Instant Messaging
 
-# bypass infrastructure bug
+# Bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 do-install:
