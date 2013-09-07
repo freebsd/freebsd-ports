@@ -15,7 +15,7 @@ COMMENT=	Ruby binding for GDAL
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig2.0:${PORTSDIR}/devel/swig20
-LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
 
 LIBTOOLFILES=	# empty
 MAKE_ARGS=	USER_DEFS=-fPIC
