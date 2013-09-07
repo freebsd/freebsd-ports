@@ -21,7 +21,7 @@ TEST_DEPENDS=	p5-Dir-Self>=0:${PORTSDIR}/devel/p5-Dir-Self \
 		p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
-USE_PERL5=	5.14.0+ configure
+USE_PERL5=	5.14+ configure
 USES=		perl5
 
 MAN3=		Function::Parameters.3 \
