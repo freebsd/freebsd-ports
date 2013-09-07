@@ -15,7 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	mopsfelder@gmail.com
 COMMENT=	A Perl module to get IP address related info
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Sys::HostIP.3
 

@@ -15,7 +15,7 @@ COMMENT=	Display human-readable ZFS statistics
 
 LICENSE=	BSD
 
-USE_PERL5=	yes
+USES=		perl5
 
 NO_BUILD=	yes
 

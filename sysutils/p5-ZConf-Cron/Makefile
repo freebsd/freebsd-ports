@@ -26,7 +26,8 @@ RUN_DEPENDS:=	p5-DateTime-Event-Cron>=0:${PORTSDIR}/devel/p5-DateTime-Event-Cron
 		p5-ZConf-GUI>=0:${PORTSDIR}/devel/p5-ZConf-GUI \
 		p5-ZConf>=0:${PORTSDIR}/net/p5-ZConf
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		ZConf::Cron.3 \
 		ZConf::Cron::GUI.3

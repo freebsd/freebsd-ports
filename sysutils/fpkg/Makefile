@@ -17,7 +17,7 @@ EXTRACT_ONLY=
 MAINTAINER=	y.shimazu@nifty.com
 COMMENT=	Package Tool Wrapper for FreeBSD
 
-USE_PERL5=	YES
+USES=		perl5
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
 PLIST_FILES=	bin/fpkg

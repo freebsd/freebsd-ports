@@ -17,7 +17,8 @@ COMMENT=	Automatically handles the home OU for when adding/removing users
 
 RUN_DEPENDS=	p5-Plugtools>=0:${PORTSDIR}/sysutils/p5-Plugtools
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Plugtools::Plugins::HomeOU.3 \
 		Plugtools::Plugins::HomeOUremove.3

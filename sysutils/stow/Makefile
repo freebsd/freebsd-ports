@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 TEST_DEPENDS=	p5-Test-Output>0:${PORTSDIR}/devel/p5-Test-Output
 
 USE_BZIP2=	yes
-USE_PERL5=	yes
+USES=		perl5
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_PERL=${PERL}
