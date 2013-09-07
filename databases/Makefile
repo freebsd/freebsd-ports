@@ -669,6 +669,7 @@
     SUBDIR += postgresql-pllua
     SUBDIR += postgresql-plproxy
     SUBDIR += postgresql-plruby
+    SUBDIR += postgresql-plv8js
     SUBDIR += postgresql-relay
     SUBDIR += postgresql-repmgr
     SUBDIR += postgresql84-client
