@@ -21,7 +21,6 @@ bin/serviio-console
 %%JAVAJARDIR%%/serviio/lucene-core.jar
 %%JAVAJARDIR%%/serviio/log4j.jar
 %%JAVAJARDIR%%/serviio/org.restlet.ext.gson.jar
-%%JAVAJARDIR%%/serviio/org.restlet.ext.net.jar
 %%JAVAJARDIR%%/serviio/org.restlet.ext.xstream.jar
 %%JAVAJARDIR%%/serviio/org.restlet.jar
 %%JAVAJARDIR%%/serviio/padlock.jar
