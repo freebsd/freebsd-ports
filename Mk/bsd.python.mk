@@ -27,7 +27,7 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					  default: ${PYTHONBASE}/bin/${PYTHON_VERSION}
 #
 # PYTHON_DISTFILE	- The ${DISTFILE} for your python version. Needed for
-#					  extensions like Tkinter, py-gdbm and py-expat, which
+#					  extensions like bsddb, gdbm, sqlite3 and tkinter, which
 #					  are built from sources contained in the Python
 #					  distribution.
 #
