@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Term-Encoding
-# Date created:		2006-07-13
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Term-Encoding
 PORTVERSION=	0.02
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Detect encoding of the current terminal
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Term::Encoding.3
 
