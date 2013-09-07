@@ -7,6 +7,8 @@ etc/icecast.xml.sample
 %%DATADIR%%/admin/response.xsl
 %%DATADIR%%/admin/stats.xsl
 %%DATADIR%%/admin/updatemetadata.xsl
+%%DATADIR%%/admin/vclt.xsl
+%%DATADIR%%/admin/xspf.xsl
 %%DATADIR%%/doc/icecast.xml.dist
 %%DATADIR%%/doc/icecast_minimal.xml.dist
 %%DATADIR%%/doc/icecast_shoutcast_compat.xml.dist
