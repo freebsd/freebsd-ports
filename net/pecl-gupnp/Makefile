@@ -12,11 +12,11 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GUPnP wrapper extension
 
-LIB_DEPENDS=	gupnp-1.0:${PORTSDIR}/net/gupnp
+LIB_DEPENDS=	libgupnp-1.0.so:${PORTSDIR}/net/gupnp
 
-USES=		pkgconfig
 USE_PHP=	yes
 USE_PHPEXT=	yes
+USES=		pkgconfig
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -ldl||g' ${WRKSRC}/config.m4
