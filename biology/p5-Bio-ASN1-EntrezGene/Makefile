@@ -17,7 +17,8 @@ COMMENT=	Regular expression-based Perl Parser for NCBI Entrez Gene
 
 WRKSRC=		${WRKDIR}/Bio-ASN1-EntrezGene-1.09
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Bio::ASN1::EntrezGene.3 \
 		Bio::ASN1::EntrezGene::Indexer.3 \

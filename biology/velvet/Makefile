@@ -22,7 +22,8 @@ MAXKMERLENGTH?=	31
 VELVET_CATEGORIES?=	2
 MAKE_ENV+=	MAXKMERLENGTH=${MAXKMERLENGTH} CATEGORIES=${VELVET_CATEGORIES}
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 BINARIES=	velvetg velveth
 SCRIPTS=	shuffleSequences_fasta.pl shuffleSequences_fastq.pl \

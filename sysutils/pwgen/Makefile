@@ -15,7 +15,8 @@ MAINTAINER=	andrey@hm.perm.ru
 COMMENT=	A small, powerful, GPL'ed password generator
 
 GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 
 MAN1=		pwgen.1
 PLIST_FILES=	bin/pwgen

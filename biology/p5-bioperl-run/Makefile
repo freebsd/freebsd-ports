@@ -24,7 +24,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-bioperl-run-1.[13579]*
 
-PERL_MODBUILD=	YES
+USES=		perl5
+USE_PERL5=	modbuild
 WRKSRC=		${WRKDIR}/BioPerl-run-1.6.0
 
 MAN1=	bp_bioperl_application_installer.pl.1 \

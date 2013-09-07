@@ -16,7 +16,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jeffrey@goldmark.org
 COMMENT=	A perl5 module providing access to lchown(2)
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Lchown.3
 
