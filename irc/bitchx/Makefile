@@ -14,7 +14,6 @@ COMMENT?=	Feature-rich scriptable IRC client
 WRKSRC=		${WRKDIR}/${DISTNAME:C,-final$,,}
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-WANT_GNOME=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS+=--exec-prefix="${PREFIX}/share" \
 		--bindir="${PREFIX}/bin" \
