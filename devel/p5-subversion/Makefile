@@ -15,7 +15,7 @@ MASTERDIR=	${.CURDIR}/../../devel/subversion
 .endif
 PKGDIR=		${.CURDIR}
 
-USE_PERL5=	yes
+USES=		perl5
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
 MAN3=		SVN::Base.3 \

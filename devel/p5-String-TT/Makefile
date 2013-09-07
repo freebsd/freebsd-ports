@@ -17,7 +17,8 @@ RUN_DEPENDS=	p5-PadWalker>=1:${PORTSDIR}/devel/p5-PadWalker \
 		p5-Test-TableDriven>=0:${PORTSDIR}/devel/p5-Test-TableDriven
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		String::TT.3
 

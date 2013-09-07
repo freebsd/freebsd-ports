@@ -23,7 +23,8 @@ TEST_DEPENDS=	\
 	p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep \
 	p5-Test-Filename>0:${PORTSDIR}/devel/p5-Test-Filename
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	PIR.3 \
 	Path::Iterator::Rule.3

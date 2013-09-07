@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	CPAN:DWHEELER/activitymail
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	A program for sending email messages for CVS repository commits
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 PLIST_FILES=	bin/activitymail
 MAN1=		activitymail.1
