@@ -1,0 +1,11 @@
+--- Makefile.orig	2013-09-07 11:00:59.000000000 +0800
++++ Makefile	2013-09-07 11:01:29.000000000 +0800
+@@ -21,7 +21,7 @@ PG_VERSION_NUM := $(shell cat `$(PG_CONF
+ 		   | perl -ne 'print $$1 and exit if /PG_VERSION_NUM\s+(\d+)/')
+ 
+ # set your custom C++ compler
+-CUSTOM_CC = g++
++CUSTOM_CC := $(CXX)
+ JSS  = coffee-script.js livescript.js
+ # .cc created from .js
+ JSCS = $(JSS:.js=.cc)
