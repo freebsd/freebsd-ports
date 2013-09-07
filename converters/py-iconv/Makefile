@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-iconv
-# Date created:		11 September 2001
-# Whom:			Hye-Shik Chang <perky@python.or.kr>
-#
+# Created by: Hye-Shik Chang <perky@python.or.kr>
 # $FreeBSD$
 
 PORTNAME=	iconv
@@ -14,14 +11,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An iconv wrapper with Unicode codec for Python
+COMMENT=	Iconv wrapper with Unicode codec for Python
 
 USES=		iconv
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||g}
-
-.include <bsd.port.pre.mk>
 
 .if empty(ICONV_LIB)
 SETUPINFO=	,library_dirs=["${LOCALBASE}/lib"],\
@@ -35,4 +30,4 @@ post-patch:
 	cd ${WRKSRC} && ${SED} 's!^\(.*ext_mod.*\)\()]\)$$!\1${SETUPINFO}\2!g'\
 		setup.py > setup.py.tmp && ${CAT} setup.py.tmp > setup.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
