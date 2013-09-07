@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	six
-PORTVERSION=	1.2.0
+PORTVERSION=	1.4.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,6 @@ COMMENT=	Python 2 and 3 compatibility utilities
 
 LICENSE=	MIT
 
-# Python3 ready
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
