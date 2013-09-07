@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME:S/_/-/}
 MAINTAINER=	freebsd@hm2k.org
 COMMENT=	Finds fastest CVSup server
 
-USE_PERL5=	yes
+USES=		perl5
 
 MAN7=		fastest_cvsup.7
 PLIST_FILES=	bin/fastest_cvsup

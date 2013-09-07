@@ -15,7 +15,8 @@ MAINTAINER=	wchunhao@cs.nctu.edu.tw
 COMMENT=	Tools for periodic and manual management of UFS2 snapshots
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 MAN8=		snap.8
 

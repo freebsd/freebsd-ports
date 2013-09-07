@@ -15,7 +15,8 @@ COMMENT=	A heterogeneous set of I2C tools
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 PLIST_FILES=	sbin/decode-dimms
 

@@ -19,7 +19,7 @@ RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp \
 
 CONFLICTS?=	ucspi-ssl-tls-[0-9]*
 
-USE_PERL5=	yes
+USES=		perl5
 
 RESTRICTED=	Non-explicit licensing terms
 

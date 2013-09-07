@@ -19,7 +19,8 @@ COMMENT=	Unix::Lsof -- a wrapper to the Unix lsof utility
 BUILD_DEPENDS=	p5-IPC-Run3>=0:${PORTSDIR}/devel/p5-IPC-Run3
 RUN_DEPENDS=	p5-IPC-Run3>=0:${PORTSDIR}/devel/p5-IPC-Run3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Unix::Lsof.3 Unix::Lsof::Result.3
 .include <bsd.port.mk>
