@@ -15,7 +15,8 @@ RUN_DEPENDS=	\
 	p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	TAP::Harness::JUnit.3
 

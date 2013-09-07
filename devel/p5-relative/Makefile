@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-relative
-# Date created:							Tue Dec  9 11:32:16 EST 2008
-# Whom:									skreuzer@exit2shell.com
-#
+# Created by: skreuzer@exit2shell.com
 # $FreeBSD$
-#
 
 PORTNAME=	relative
 PORTVERSION=	0.04
@@ -20,7 +16,8 @@ RUN_DEPENDS=	p5-UNIVERSAL-require>=0.11:${PORTSDIR}/devel/p5-UNIVERSAL-require
 BUILD_DEPEND=	${RUN_DEPENDS} \
 				p5-Test-Simple>=0.74:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		relative.3
 

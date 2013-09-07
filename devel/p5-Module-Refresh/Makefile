@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Module-Refresh
-# Date created:		13 February 2005
-# Whom:	      		aturetta@commit.it
-#
+# Created by: aturetta@commit.it
 # $FreeBSD$
-#
 
 PORTNAME=	Module-Refresh
 PORTVERSION=	0.17
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-ExtUtils-MakeMaker>=6.42:${PORTSDIR}/devel/p5-ExtUtils-MakeMak
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Module::Refresh.3
 

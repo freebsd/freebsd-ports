@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Test-Reporter-Transport-Metabase
-# Date created:		2011-02-05
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Reporter-Transport-Metabase
 PORTVERSION=	1.999008
@@ -23,7 +19,8 @@ BUILD_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-Test-Reporter>>1.54:${PORTSDIR}/devel/p5-Test-Reporter
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Test::Reporter::Transport::Metabase.3
 

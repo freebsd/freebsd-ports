@@ -14,7 +14,8 @@ COMMENT=	A class that provides an event callback interface
 RUN_DEPENDS=	p5-AnyEvent>=3.5:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Object::Event.3
 
