@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/bpython
 bin/bpython-gtk
 bin/bpython-urwid
@@ -21,9 +20,15 @@ bin/bpython-urwid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/_internal.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/_internal.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/_internal.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/_py3compat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/_py3compat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/_py3compat.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/args.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/args.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/args.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/autocomplete.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/autocomplete.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/autocomplete.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/cli.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/cli.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/cli.pyo
@@ -52,16 +57,64 @@ bin/bpython-urwid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/repl.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/repl.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/repl.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test.theme
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_args.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_args.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_args.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_bpython.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_bpython.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_bpython.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_crashers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_crashers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_crashers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_formatter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_formatter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_formatter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_gtk_.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_gtk_.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_gtk_.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_importcompletion.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_importcompletion.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_importcompletion.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_inspection.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_inspection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_inspection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_keys.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_keys.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_keys.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_pager.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_pager.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_pager.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_repl.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_repl.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_repl.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_wizard.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_wizard.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test/test_wizard.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/translations/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/translations/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/translations/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/urwid.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/urwid.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/urwid.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/applications/bpython.desktop
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/applications
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share
+share/applications/bpython.desktop
+%%NLS%%share/locale/de/LC_MESSAGES/bpython.mo
+%%NLS%%share/locale/es_ES/LC_MESSAGES/bpython.mo
+%%NLS%%share/locale/it_IT/LC_MESSAGES/bpython.mo
+%%NLS%%share/locale/nl_NL/LC_MESSAGES/bpython.mo
+%%NLS%%@dirrmtry share/locale/nl_NL/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl_NL
+%%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it_IT
+@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/translations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpdb
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
