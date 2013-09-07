@@ -21,4 +21,4 @@ escape the filenames with quotes.  The regular expression "pattern matching"
 routines follow Unix-style rules:  '*' matches all files.  Archive, hidden,
 read-only and system attributes are ignored in pattern matching.  SJIS Short
 File Name and Unicode Long File Name files, and 1232 kB floppies, are supported.
-WWW:  http://mtools.linux.lu/
+WWW: http://mtools.linux.lu/

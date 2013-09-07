@@ -6,6 +6,6 @@ cvsgraph -r /home/ncvs -m ports/devel/cvsgraph -o test.png pkg-descr,v
 It can also be used with cvsweb.  A patch to cvsweb is available
 through the cvsgraph home page.
 
-WWW:  http://www.akhphd.au.dk/~bertho/cvsgraph/
+WWW: http://www.akhphd.au.dk/~bertho/cvsgraph/
 
 Trevor Johnson

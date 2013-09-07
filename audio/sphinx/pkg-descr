@@ -9,6 +9,6 @@ Once the system is built, try running the Perl script sphinx2-demo.
 The sphinx2-test script should run sphinx2-batch over an example
 utterance of "go forward ten meters."
 
-WWW:  http://www.speech.cs.cmu.edu/sphinx/
+WWW: http://www.speech.cs.cmu.edu/sphinx/
 
 Trevor Johnson
