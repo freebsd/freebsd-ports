@@ -14,6 +14,7 @@ LIB_DEPENDS=	wfmath-1.0.1:${PORTSDIR}/math/wfmath
 USES=	pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_GCC=	yes
 
 CXXFLAGS+=	-include wchar.h
 CONFIGURE_ARGS+="CXXFLAGS=${CXXFLAGS}"

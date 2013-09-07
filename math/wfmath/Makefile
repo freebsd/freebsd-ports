@@ -12,6 +12,7 @@ COMMENT=	Worldforge math library
 USE_GMAKE=	yes
 USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
