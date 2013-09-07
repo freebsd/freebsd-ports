@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-PAR-Packer
-# Date created:				Dec 06 2006
-# Whom:					Rong-En Fan <rafan@FreeBSD.org>
-#
+# Created by: Rong-En Fan <rafan@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	PAR-Packer
 PORTVERSION=	1.01.4
@@ -27,7 +23,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 CONFLICTS=	sketchy-*
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		par.pl.1 parl.1 pp.1 tkpp.1

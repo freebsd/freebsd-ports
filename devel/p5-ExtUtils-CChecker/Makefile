@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ExtUtils::CChecker
-# Date created:				21 Feb 2010
-# Whom:                			Sahil Tandon <sahil@tandon.net>
-#
+# Created by: Sahil Tandon <sahil@tandon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ExtUtils-CChecker
 PORTVERSION=	0.08
@@ -16,7 +12,8 @@ COMMENT=	Configure-time utilities for using C headers, libraries, OS features
 
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		ExtUtils::CChecker.3
 

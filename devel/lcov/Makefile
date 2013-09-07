@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lcov
-# Date created:		2010-02-11
-# Whom:			Romain Tartiere <romain@FreeBSD.org>
-#
+# Created by: Romain Tartiere <romain@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lcov
 PORTVERSION=	1.10
@@ -19,7 +15,8 @@ LICENSE=	GPLv1
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 PLIST_FILES=	bin/lcov bin/gendesc bin/genhtml bin/genpng bin/geninfo
 MAN1=		gendesc.1 genhtml.1 geninfo.1 genpng.1 lcov.1

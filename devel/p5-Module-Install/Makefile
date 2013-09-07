@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Module-Install
-# Date created:				Sep 15 2004
-# Whom:                			clsung
-#
+# Created by: clsung
 # $FreeBSD$
-#
 
 PORTNAME=	Module-Install
 PORTVERSION=	1.06
@@ -22,7 +18,8 @@ BUILD_DEPENDS=	p5-File-Remove>=1.42:${PORTSDIR}/devel/p5-File-Remove \
 		p5-libwww>=5.812:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	--skip
 
 MAN3=		inc::Module::Install.3 \
