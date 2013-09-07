@@ -1,7 +1,6 @@
 Dancer::Plugin::Passphrase manages the hashing of passwords for Dancer apps,
-allowing developers to follow best cryptography practice without having to
+allowing developers to follow cryptography best practices without having to
 become a cryptography expert. It uses the bcrypt algorithm as the default,
-wrapping Crypt::Eksblowfish::Bcrypt, and also supports any hashing function
-provided by Digest.
+while also supporting any hashing function provided by Digest.
 
 WWW: http://search.cpan.org/dist/Dancer-Plugin-Passphrase/
