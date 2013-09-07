@@ -1,6 +1,5 @@
 %%SITE_PERL%%/Catalyst/Action/Deserialize.pm
 %%SITE_PERL%%/Catalyst/Action/Deserialize/Callback.pm
-%%SITE_PERL%%/Catalyst/Action/Deserialize/Data/Serializer.pm
 %%SITE_PERL%%/Catalyst/Action/Deserialize/JSON.pm
 %%SITE_PERL%%/Catalyst/Action/Deserialize/JSON/XS.pm
 %%SITE_PERL%%/Catalyst/Action/Deserialize/View.pm
@@ -11,10 +10,9 @@
 %%SITE_PERL%%/Catalyst/Action/REST/ForBrowsers.pm
 %%SITE_PERL%%/Catalyst/Action/Serialize.pm
 %%SITE_PERL%%/Catalyst/Action/Serialize/Callback.pm
-%%SITE_PERL%%/Catalyst/Action/Serialize/Data/Serializer.pm
 %%SITE_PERL%%/Catalyst/Action/Serialize/JSON.pm
-%%SITE_PERL%%/Catalyst/Action/Serialize/JSONP.pm
 %%SITE_PERL%%/Catalyst/Action/Serialize/JSON/XS.pm
+%%SITE_PERL%%/Catalyst/Action/Serialize/JSONP.pm
 %%SITE_PERL%%/Catalyst/Action/Serialize/View.pm
 %%SITE_PERL%%/Catalyst/Action/Serialize/XML/Simple.pm
 %%SITE_PERL%%/Catalyst/Action/Serialize/YAML.pm
