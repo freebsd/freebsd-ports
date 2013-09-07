@@ -13,7 +13,8 @@ COMMENT=	Rapid (and easy!) creation of command line applications
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		App::Rad.3 \
 		App::Rad::Exclude.3 \
