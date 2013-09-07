@@ -1,13 +1,9 @@
-# Ports collection makefile for:	uzbl
-# Date created:				2009/12/14
-# Whom:					aehlig@linta.de
-#
+# Created by: Klaus Aehlig <aehlig@linta.de>
 # $FreeBSD$
-#
 
 PORTNAME=	uzbl
 DISTVERSION=	0.0.0.${GITDATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.linta.de/distfiles/
 
@@ -17,23 +13,25 @@ COMMENT=	Web interface tools which adhere to the unix philosophy
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 RUN_DEPENDS=	socat:${PORTSDIR}/net/socat \
-		dmenu:${PORTSDIR}/x11/dmenu \
-		${PYTHON_PKGNAMEPREFIX}gtk>=2:${PORTSDIR}/x11-toolkits/py-gtk2
+		dmenu:${PORTSDIR}/x11/dmenu
 
-USE_GNOME=	gtk20
+USES=		gmake pkgconfig
+USE_GNOME=	gtk20 pygtk2
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
-USE_PYTHON=	2.5-2.7
+USE_PYTHON=	-2.7
 
 GITDATE=	2012.05.14
 GITVERSION=	228bc38
 
 WRKSRC=		${WRKDIR}/Dieterbe-uzbl-${GITVERSION}
 
+OPTIONS_DEFINE=	DOCS
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	AUTHORS README COMMUNITY CONTRIBUTING FAQ INSTALL TODO config-syntax \
 		multiple-instances-management performance url-editing config.h vim
 .endif
@@ -64,8 +62,8 @@ do-install:
 .for f in uzbl-event-manager uzbl-browser uzbl-tabbed
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${PREFIX}/bin
 .endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/config.h ${DOCSDIR}
 .for f in COMMUNITY CONTRIBUTING FAQ INSTALL TODO config-syntax \
 		multiple-instances-management performance url-editing
