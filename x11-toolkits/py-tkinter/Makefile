@@ -13,6 +13,8 @@ DISTFILES=	${PYTHON_DISTFILE}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python bindings to the Tk widget set
 
+PORTSCOUT=	ignore:1
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_TK=		yes
