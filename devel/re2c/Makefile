@@ -1,29 +1,32 @@
-# New ports collection makefile for:	re2c
-# Date created:		14 May 1998
-# Whom:			Eivind Eklund <eivind@FreeBSD.org>
-#
+# Created by: Eivind Eklund <eivind@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	re2c
-PORTVERSION=	0.13.5
+PORTVERSION=	0.13.6
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Compile regular expression to C (much faster final code than flex)
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 GNU_CONFIGURE=	yes
 
 MAN1=		re2c.1
+PLIST_FILES=	bin/re2c
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+.include <bsd.port.options.mk>
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} . ${DOCSDIR}/
 .endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${EXAMPLESDIR}/
+	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/
 .endif
 .include <bsd.port.mk>
