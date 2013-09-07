@@ -13,7 +13,7 @@ COMMENT=	Simplified pure Perl parser for XML
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-USE_PERL5=	5.14.0+ configure
+USE_PERL5=	5.14+ configure
 USES=		perl5
 
 MAN3=		XML::Parsepp.3
