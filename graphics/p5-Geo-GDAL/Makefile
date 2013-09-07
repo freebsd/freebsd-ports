@@ -15,7 +15,7 @@ COMMENT=	Perl binding for GDAL
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
 
 USES=		perl5
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig/perl
