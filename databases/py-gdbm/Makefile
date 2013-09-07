@@ -15,6 +15,8 @@ COMMENT=	Python bindings to the GNU dbm library
 
 LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 
+PORTSCOUT=	ignore:1
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_XZ=		yes
