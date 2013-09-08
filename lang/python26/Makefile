@@ -3,7 +3,7 @@
 
 PORTNAME=	python26
 PORTVERSION=	2.6.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -63,9 +63,12 @@ NLS_DESC=	Enable Gettext support for the locale module
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
-# XXX do not set any LDFLAGS or CFLAGS - this causes pyexpat to fail building
-#LDFLAGS+=	"-L${LOCALBASE}/lib"
-#CFLAGS+=	"-I${LOCALBASE}/include"
+LDFLAGS+=	-L${LOCALBASE}/lib
+# We use CPPFLAGS over CFLAGS here due to -I ordering causing things like
+# elementtree and pyexpat to break with python27, or to silence preprocessor
+# complaints with python33
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV+=	LIBS="-lintl"
 .else
 CONFIGURE_ENV+=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
 .endif
@@ -144,7 +147,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 CONFIGURE_ARGS+=	--with-fpectl
 .endif
 
-CONFIGURE_ENV+=	OPT="${CFLAGS} ${_PTH_CPPFLAGS}"
+CONFIGURE_ENV+=	OPT="${_PTH_CPPFLAGS}"
 
 pre-patch:
 	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
