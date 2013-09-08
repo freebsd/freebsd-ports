@@ -1,7 +1,4 @@
-# New ports collection Makefile for:		tapioca-qt
-# Date created:					2008-02-10
-# Whom:						arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	tapioca-qt
@@ -20,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/build
 
-USES=		cmake
+USES=		cmake pkgconfig
 CMAKE_SOURCE_PATH=	..
 USE_QT4=	corelib qmake_build uic_build moc_build rcc_build
 USE_LDCONFIG=	yes

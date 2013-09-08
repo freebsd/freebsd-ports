@@ -1,15 +1,12 @@
-# New ports collection makefile for:	py-jswebkit
-# Date created:				07 Mar 2010
-# Whom:					Ju Pengfei <jupengfei@gmail.com>
-#
+# Created by: Ju Pengfei <jupengfei@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=		jswebkit
 PORTVERSION=		0.0.3
 PORTREVISION=	2
 CATEGORIES=		www python
 MASTER_SITES=		GOOGLE_CODE
+PROJECTHOST=		gwrite
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 DISTNAME=		python-${PORTNAME}-${PORTVERSION}
 
@@ -22,9 +19,7 @@ RUN_DEPENDS:=		${BUILD_DEPENDS}
 
 PLIST_FILES=		%%PYTHON_SITELIBDIR%%/jswebkit.so
 
-PROJECTHOST=		gwrite
-
-WRKSRC=			${WRKDIR}/${DISTNAME}
+USES=			pkgconfig
 USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	python_jswebkit
