@@ -55,6 +55,9 @@ do-build:
 do-install:
 	${MKDIR} ${PREFIX}/${DISTNAME} && cd ${JBOSSOUTPUT} && ${FIND} . | ${CPIO} -pdmu -R ${USER}:${GROUP} ${PREFIX}/${DISTNAME}
 
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000
