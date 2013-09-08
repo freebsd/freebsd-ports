@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Hash-Union
-# Date created:				2009-02-10
-# Whom:					Oleg A. Mamontov <oleg@mamontov.net>
-#
+# Created by: Oleg A. Mamontov <oleg@mamontov.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Hash-Union
 PORTVERSION=	0.03
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	oleg@mamontov.net
 COMMENT=	Smart hashes merging
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Hash::Union.3
 

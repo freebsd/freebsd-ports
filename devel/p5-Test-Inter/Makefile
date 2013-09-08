@@ -13,7 +13,8 @@ COMMENT=	Framework for more readable interactive test scripts
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Test::Inter.3
 

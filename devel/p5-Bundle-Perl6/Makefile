@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Bundle-Perl6
-# Date created:				21 Oct 2004
-# Whom:					Yuan-Chung Hsiao <ychsiao@ychsiao.org>
-#
+# Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Bundle-Perl6
 PORTVERSION=	0.12
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	A bundle to install Perl6-related modules
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Bundle::Perl6.3
 

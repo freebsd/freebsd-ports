@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Test::Declare
-# Date created:		17 Mar 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Declare
 PORTVERSION=	0.06
@@ -28,7 +23,8 @@ BUILD_DEPENDS=	\
 TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn \
 		p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Test::Declare.3
 

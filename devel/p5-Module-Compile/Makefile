@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Module-Compile
-# Date created:				2006-05-30
-# Whom:					Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-#
+# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Module-Compile
 PORTVERSION=	0.23
@@ -17,7 +13,8 @@ COMMENT=	Provide a system for writing modules that compile other Perl modules
 BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Module::Compile.3 \
 		Module::Compile::Opt.3 \

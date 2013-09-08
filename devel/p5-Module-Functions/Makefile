@@ -13,7 +13,8 @@ RUN_DEPENDS=	\
 	p5-Sub-Identify>=0.04:${PORTSDIR}/devel/p5-Sub-Identify
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Module::Functions.3
 
