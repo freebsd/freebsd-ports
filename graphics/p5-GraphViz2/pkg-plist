@@ -60,6 +60,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/report.nodes.and.edges.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/report.valid.attributes.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sqlite.foreign.keys.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sub.graph.frames.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sub.graph.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sub.sub.graph.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/trivial.pl
