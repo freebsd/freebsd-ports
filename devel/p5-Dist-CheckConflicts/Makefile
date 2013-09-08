@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Dist-CheckConflicts
-# Date created:		9 February 2011
-# Whom:		milki <milki@rescomp.berkeley.edu>
-#
+# Created by: milki <milki@rescomp.berkeley.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	Dist-CheckConflicts
 PORTVERSION=	0.02
@@ -23,7 +19,8 @@ RUN_DEPENDS=	p5-List-MoreUtils>=0.12:${PORTSDIR}/lang/p5-List-MoreUtils \
 
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Dist::CheckConflicts.3
 

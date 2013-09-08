@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Devel::Cover::Report::Clover
-# Date created:		31 Dec 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-Cover-Report-Clover
 PORTVERSION=	0.35
@@ -26,7 +21,8 @@ TEST_DEPENDS= \
 	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception \
 	p5-Test-MockObject>0:${PORTSDIR}/devel/p5-Test-MockObject
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Devel::Cover::Report::Clover.3
 

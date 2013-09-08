@@ -1,9 +1,5 @@
-# New ports collection makefile for:   Config-Properties
-# Date created:           28 December 2006
-# Whom:                   Craig Manley
-#
+# Created by: Craig Manley
 # $FreeBSD$
-#
 
 PORTNAME=	Config-Properties
 PORTVERSION=	1.75
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	cmanley@xs4all.nl
 COMMENT=	Read and write property files
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Config::Properties.3
 

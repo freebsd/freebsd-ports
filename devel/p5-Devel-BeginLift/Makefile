@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Devel::BeginLift
-# Date created:		22 Nov 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-BeginLift
 PORTVERSION=	0.001003
@@ -19,7 +14,8 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
 	p5-ExtUtils-Depends>0:${PORTSDIR}/devel/p5-ExtUtils-Depends
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Devel::BeginLift.3
 

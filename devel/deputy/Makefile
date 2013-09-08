@@ -1,9 +1,5 @@
-# New ports collection makefile for:	deputy
-# Date created:		19 March 2007
-# Whom:			Kevin Lo <kevlo@FreeBSD.org>
-#
+# Created by: Kevin Lo <kevlo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	deputy
 PORTVERSION=	1.1
@@ -19,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/ocamlopt:${PORTSDIR}/lang/ocaml
 CONFLICTS=	cil-*
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_PERL5=	yes
+USES=		perl5
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

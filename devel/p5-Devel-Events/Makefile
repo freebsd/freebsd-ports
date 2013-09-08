@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Devel-Events
-# Date created:	   			23 Oct 2008
-# Whom:		   			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-Events
 PORTVERSION=	0.08
@@ -23,7 +19,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok \
 		p5-Sub-Uplevel>=0.18:${PORTSDIR}/devel/p5-Sub-Uplevel
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Devel::Events.3 \
 		Devel::Events::Filter.3 \
