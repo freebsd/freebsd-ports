@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-File-BaseDir
-# Date created:				Aug 21 2004
-# Whom:					Rong-En Fan <rafan@infor.org>
-#
+# Created by: Rong-En Fan <rafan@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	File-BaseDir
 PORTVERSION=	0.03
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Use the freedesktop basedir spec
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		File::BaseDir.3
 

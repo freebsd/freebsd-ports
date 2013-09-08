@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Log-Dispatch-Array
-# Date created:				2011-09-19
-# Whom:					Geraud CONTINSOUZAS <geraud@gcu.info>
-#
+# Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
 # $FreeBSD$
-#
 
 PORTNAME=	Log-Dispatch-Array
 PORTVERSION=	1.001
@@ -22,7 +18,8 @@ RUN_DEPENDS=	p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Log::Dispatch::Array.3
 
