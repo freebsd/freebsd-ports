@@ -1,8 +1,8 @@
---- configure.orig	2013-02-14 14:30:22.000000000 +0100
-+++ configure	2013-06-28 08:33:36.000000000 +0200
-@@ -17696,6 +17696,9 @@
- 	    *-apple-darwin* )
+--- configure.orig	2013-09-07 03:11:08.000000000 +0200
++++ configure	2013-09-08 14:44:48.000000000 +0200
+@@ -17820,6 +17820,9 @@
  	        CFLAGS="${CFLAGS} -fno-common -Wall"
+ 	        LDFLAGS="${LDFLAGS} -Wl,-headerpad_max_install_names"
  	        ;;
 +	    *alpha*-freebsd* )
 +	        CFLAGS="${CFLAGS} -Wstrict-prototypes -Wpointer-arith -Wall"
@@ -10,7 +10,7 @@
  	    *-freebsd* )
  	        CFLAGS="${CFLAGS} -Wstrict-prototypes -Wpointer-arith -Wall -ffast-math"
  		    ;;
-@@ -21518,7 +21521,9 @@
+@@ -21662,7 +21665,9 @@
  
          LUA_INCLUDES=""
          LUA_LIBS=""
@@ -21,9 +21,9 @@
  
          if test -n "$lua_inc"; then
             CFLAGS="$CFLAGS -I$lua_inc"
-@@ -21580,13 +21585,13 @@
+@@ -21724,13 +21729,13 @@
  	            pkgconfig_lua_found=`$PKGCONFIG --exists lua$l 2>/dev/null`
- 	            if test "x$?" == "x0" ; then
+ 	            if test "x$?" = "x0" ; then
  		        LUA_VERSION=`$PKGCONFIG --modversion lua$l`
 -                        LUA_INCLUDES="$LUA_CFLAGS "`$PKGCONFIG --cflags lua$l`
 +                        LUA_INCLUDES="$LUA_CFLAGS "`$PKGCONFIG --cflags-only-I lua$l`
@@ -31,7 +31,7 @@
  		        LUA_INSTALL_DIR="/usr/lib$LIBPOSTFIX/lua/`$PKGCONFIG --variable=V lua`"
  
  		        pkgconfig_lualib_found=`$PKGCONFIG --exists lualib$l 2>/dev/null`
- 		        if test  "x$?" == "x0"; then
+ 		        if test  "x$?" = "x0"; then
 -		           LUA_INCLUDES="$LUA_CFLAGS "`$PKGCONFIG --cflags lualib$l`
 +		           LUA_INCLUDES="$LUA_CFLAGS "`$PKGCONFIG --cflags-only-I lualib$l`
  		           LUA_LIBS="$LUA_LFLAGS "`$PKGCONFIG --libs lualib$l`

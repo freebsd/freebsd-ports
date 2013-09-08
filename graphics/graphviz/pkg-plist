@@ -26,6 +26,7 @@ bin/gxl2gv
 bin/gxl2dot
 %%WITH_XPM%%bin/lefty
 %%WITH_XPM%%bin/lneato
+%%WITH_ANN%%bin/mingle
 bin/mm2gv
 bin/neato
 bin/nop
@@ -388,6 +389,7 @@ libdata/pkgconfig/libxdot.pc
 %%PORTDOCS%%%%DOCSDIR%%/pdf/leftyguide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/libguide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/lneato.1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/pdf/mingle.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/mm2gv.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/neato.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/neatoguide.pdf
