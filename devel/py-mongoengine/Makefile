@@ -7,7 +7,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mail@derzinn.de
+MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Object-Document-Mapper for working with MongoDB
 
 LICENSE=	MIT
