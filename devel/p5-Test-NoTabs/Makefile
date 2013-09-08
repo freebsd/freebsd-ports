@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Test-NoTabs
-# Date created:				2011-02-16
-# Whom:	      				milki <milki@rescomp.berkeley.edu>
-#
+# Created by: milki <milki@rescomp.berkeley.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-NoTabs
 PORTVERSION=	1.3
@@ -18,7 +14,8 @@ COMMENT=	Check the presence of tabs in your project
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::NoTabs.3
 

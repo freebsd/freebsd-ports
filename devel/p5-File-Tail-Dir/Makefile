@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-File-ChangeNotify>0:${PORTSDIR}/devel/p5-File-ChangeNotify \
 		p5-Moose>0:${PORTSDIR}/devel/p5-Moose \
 		p5-YAML>0:${PORTSDIR}/textproc/p5-YAML
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Tail::Dir.3
 

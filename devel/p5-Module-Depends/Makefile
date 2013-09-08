@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Module-Depends
-# Date created:				2008-10-17
-# Whom:					Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Module-Depends
 PORTVERSION=	0.16
@@ -18,7 +14,8 @@ RUN_DEPENDS=	p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-Ch
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Module::Depends::Intrusive.3 Module::Depends.3
 

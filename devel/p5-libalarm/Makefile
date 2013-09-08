@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	delgod@portaone.com
 COMMENT=	Allow multiple, queued alarms
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Alarm::_TieSIG.3 \
 		Alarm::Concurrent.3 \
