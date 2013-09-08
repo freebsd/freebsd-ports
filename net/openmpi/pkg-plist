@@ -1,13 +1,3 @@
-%%MPIDIR%%/bin/%%CONFIGURE_TARGET%%-otfaux
-%%MPIDIR%%/bin/%%CONFIGURE_TARGET%%-otfcompress
-%%MPIDIR%%/bin/%%CONFIGURE_TARGET%%-otfconfig
-%%MPIDIR%%/bin/%%CONFIGURE_TARGET%%-otfdump
-%%MPIDIR%%/bin/%%CONFIGURE_TARGET%%-otfinfo
-%%MPIDIR%%/bin/%%CONFIGURE_TARGET%%-otfmerge
-%%MPIDIR%%/bin/%%CONFIGURE_TARGET%%-otfmerge-mpi
-%%MPIDIR%%/bin/%%CONFIGURE_TARGET%%-otfprofile
-%%MPIDIR%%/bin/%%CONFIGURE_TARGET%%-otfprofile-mpi
-%%MPIDIR%%/bin/%%CONFIGURE_TARGET%%-otfshrink
 %%MPIDIR%%/bin/ompi-probe
 %%MPIDIR%%/bin/ompi-profiler
 %%MPIDIR%%/bin/ompi-server
@@ -22,6 +12,16 @@
 %%MPIDIR%%/bin/orte_wrapper_script
 %%MPIDIR%%/bin/orted
 %%MPIDIR%%/bin/orterun
+%%MPIDIR%%/bin/otfaux
+%%MPIDIR%%/bin/otfconfig
+%%MPIDIR%%/bin/otfprint
+%%MPIDIR%%/bin/otfinfo
+%%MPIDIR%%/bin/otfmerge
+%%MPIDIR%%/bin/otfmerge-mpi
+%%MPIDIR%%/bin/otfprofile
+%%MPIDIR%%/bin/otfprofile-mpi
+%%MPIDIR%%/bin/otfshrink
+%%MPIDIR%%/bin/otfcompress
 %%MPIDIR%%/bin/vtfilter
 %%MPIDIR%%/bin/vtfilter-mpi
 %%MPIDIR%%/bin/vtrun
@@ -69,32 +69,32 @@
 %%MPIDIR%%/include/openmpi/ompi/mpi/cxx/topology_inln.h
 %%MPIDIR%%/include/openmpi/ompi/mpi/cxx/win.h
 %%MPIDIR%%/include/openmpi/ompi/mpi/cxx/win_inln.h
-%%MPIDIR%%/include/vampirtrace/OTFAUX_MsgMatching.h
-%%MPIDIR%%/include/vampirtrace/OTFAUX_State.h
-%%MPIDIR%%/include/vampirtrace/OTFAUX_Thumbnail.h
-%%MPIDIR%%/include/vampirtrace/OTF_CopyHandler.h
-%%MPIDIR%%/include/vampirtrace/OTF_CopyHandler_stream.h
-%%MPIDIR%%/include/vampirtrace/OTF_Definitions.h
-%%MPIDIR%%/include/vampirtrace/OTF_Errno.h
-%%MPIDIR%%/include/vampirtrace/OTF_File.h
-%%MPIDIR%%/include/vampirtrace/OTF_FileManager.h
-%%MPIDIR%%/include/vampirtrace/OTF_File_iofsl.h
-%%MPIDIR%%/include/vampirtrace/OTF_Filenames.h
-%%MPIDIR%%/include/vampirtrace/OTF_HandlerArray.h
-%%MPIDIR%%/include/vampirtrace/OTF_KeyValue.h
-%%MPIDIR%%/include/vampirtrace/OTF_MasterControl.h
-%%MPIDIR%%/include/vampirtrace/OTF_RBuffer.h
-%%MPIDIR%%/include/vampirtrace/OTF_RStream.h
-%%MPIDIR%%/include/vampirtrace/OTF_Reader.h
-%%MPIDIR%%/include/vampirtrace/OTF_Version.h
-%%MPIDIR%%/include/vampirtrace/OTF_WBuffer.h
-%%MPIDIR%%/include/vampirtrace/OTF_WStream.h
-%%MPIDIR%%/include/vampirtrace/OTF_Writer.h
-%%MPIDIR%%/include/vampirtrace/OTF_inttypes.h
-%%MPIDIR%%/include/vampirtrace/OTF_inttypes_unix.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/otf.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_CopyHandler.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_CopyHandler_stream.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_Definitions.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_Errno.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_File.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_File_iofsl.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_FileManager.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_Filenames.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_HandlerArray.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_inttypes.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_KeyValue.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_MasterControl.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_RBuffer.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_RStream.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_Reader.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_Version.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_WBuffer.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_WStream.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_Writer.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTF_inttypes_unix.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/otfaux.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTFAUX_State.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTFAUX_MsgMatching.h
+%%MPIDIR%%/include/vampirtrace/open-trace-format/OTFAUX_Thumbnail.h
 %%MPIDIR%%/include/vampirtrace/opari_omp.h
-%%MPIDIR%%/include/vampirtrace/otf.h
-%%MPIDIR%%/include/vampirtrace/otfaux.h
 %%MPIDIR%%/include/vampirtrace/pomp_lib.h
 %%MPIDIR%%/include/vampirtrace/vt_inttypes.h
 %%MPIDIR%%/include/vampirtrace/vt_user.h
@@ -121,19 +121,20 @@
 %%MPIDIR%%/lib/libmpi_f77.la
 %%MPIDIR%%/lib/libmpi_f77.so.1
 %%MPIDIR%%/lib/libmpi_f90.la
-%%MPIDIR%%/lib/libmpi_f90.so.2
+%%MPIDIR%%/lib/libmpi_f90.so.4
 %%MPIDIR%%/lib/libompitrace.la
 %%MPIDIR%%/lib/libompitrace.so.0
 %%MPIDIR%%/lib/libopen-pal.la
 %%MPIDIR%%/lib/libopen-pal.so.4
 %%MPIDIR%%/lib/libopen-rte.la
 %%MPIDIR%%/lib/libopen-rte.so.4
-%%MPIDIR%%/lib/libotf.a
-%%MPIDIR%%/lib/libotf.la
-%%MPIDIR%%/lib/libotf.so.6
+%%MPIDIR%%/lib/libopen-trace-format.so
 %%MPIDIR%%/lib/libotfaux.a
 %%MPIDIR%%/lib/libotfaux.la
 %%MPIDIR%%/lib/libotfaux.so.0
+%%MPIDIR%%/lib/libopen-trace-format.so.1
+%%MPIDIR%%/lib/libopen-trace-format.la
+%%MPIDIR%%/lib/libopen-trace-format.a
 %%MPIDIR%%/lib/libvt-hyb.a
 %%MPIDIR%%/lib/libvt-hyb.la
 %%MPIDIR%%/lib/libvt-hyb.so.0
@@ -160,8 +161,6 @@
 %%MPIDIR%%/lib/openmpi/mca_allocator_bucket.so
 %%MPIDIR%%/lib/openmpi/mca_bml_r2.la
 %%MPIDIR%%/lib/openmpi/mca_bml_r2.so
-%%MPIDIR%%/lib/openmpi/mca_btl_sctp.la
-%%MPIDIR%%/lib/openmpi/mca_btl_sctp.so
 %%MPIDIR%%/lib/openmpi/mca_btl_self.la
 %%MPIDIR%%/lib/openmpi/mca_btl_self.so
 %%MPIDIR%%/lib/openmpi/mca_btl_sm.la
@@ -441,7 +440,6 @@
 %%MPIDIR%%/lib/libompitrace.so
 %%MPIDIR%%/lib/libopen-pal.so
 %%MPIDIR%%/lib/libopen-rte.so
-%%MPIDIR%%/lib/libotf.so
 %%MPIDIR%%/lib/libotfaux.so
 %%MPIDIR%%/lib/libvt-hyb.so
 %%MPIDIR%%/lib/libvt-mpi-unify.so
@@ -471,6 +469,7 @@
 @dirrm %%MPIDIR%%/lib/openmpi
 @dirrm %%MPIDIR%%/lib/pkgconfig
 @dirrm %%MPIDIR%%/lib
+@dirrm %%MPIDIR%%/include/vampirtrace/open-trace-format
 @dirrm %%MPIDIR%%/include/vampirtrace
 @dirrm %%MPIDIR%%/include/openmpi/ompi/mpi/cxx
 @dirrm %%MPIDIR%%/include/openmpi/ompi/mpi
