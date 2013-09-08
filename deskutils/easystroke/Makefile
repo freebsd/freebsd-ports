@@ -21,8 +21,7 @@ MAN1=		easystroke.1
 
 USE_GCC=	any
 USE_XORG=	x11 xtst
-USE_GMAKE=	yes
-USES+=		gettext
+USES=		gettext gmake pkgconfig
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS
