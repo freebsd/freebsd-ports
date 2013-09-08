@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-IPC-Shareable
-# Date created:				May 25th 2000
-# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IPC-Shareable
 PORTVERSION=	0.61
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Share Perl variables between processes
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		IPC::Shareable.3 IPC::Shareable::SharedMem.3
 

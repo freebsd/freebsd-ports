@@ -1,4 +1,4 @@
-# Created by: chuckr@freebsd.org
+# Created by: chuckr@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	global
@@ -10,7 +10,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A source code tag system
 
 GNU_CONFIGURE=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 MAN1=		global.1 globash.1 gozilla.1 gtags.1 gtags-cscope.1 htags.1
 INFO=		global
