@@ -1,6 +1,10 @@
---- openssl/Makefile.orig	Wed Aug 22 22:03:27 2007
-+++ openssl/Makefile	Fri Aug 24 15:46:20 2007
-@@ -5,7 +5,7 @@
+--- openssl/Makefile.orig	2009-12-13 10:02:34.000000000 +0800
++++ openssl/Makefile	2013-09-08 11:16:13.000000000 +0800
+@@ -1,11 +1,10 @@
+ 
+ #--------------------------------------------------------------------
+ 
+-CC = gcc
  AR = ar cru
  CFLAGS = -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC
  SOFLAGS = -shared
@@ -9,7 +13,7 @@
  
  LINKER = $(CC)
  LINT = lint -c
-@@ -14,7 +14,7 @@
+@@ -14,7 +13,7 @@ RM = /bin/rm -f
  OPENSSL_INCL = -I/usr/include/openssl/
  OPENSSL_LIB  = -L/usr/lib -lssl -lcrypto
  

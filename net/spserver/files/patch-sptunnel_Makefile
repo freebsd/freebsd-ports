@@ -1,0 +1,10 @@
+--- sptunnel/Makefile.orig	2013-09-08 11:17:23.000000000 +0800
++++ sptunnel/Makefile	2013-09-08 11:17:35.000000000 +0800
+@@ -1,7 +1,6 @@
+ 
+ #--------------------------------------------------------------------
+ 
+-CC = gcc
+ AR = ar cru
+ CFLAGS = -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC
+ SOFLAGS = -shared
