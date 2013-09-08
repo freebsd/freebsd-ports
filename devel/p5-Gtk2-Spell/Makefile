@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Gtk2-Spell
-# Date created:		2006-03-21
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	Gtk2-Spell
 PORTVERSION=	1.03
@@ -22,7 +18,8 @@ BUILD_DEPENDS=	p5-Cairo>=0:${PORTSDIR}/graphics/p5-Cairo \
 		p5-Gtk2>=1.001:${PORTSDIR}/x11-toolkits/p5-Gtk2
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Gtk2::Spell.3
 

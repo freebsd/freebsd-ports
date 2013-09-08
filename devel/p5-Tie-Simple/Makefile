@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Tie-Simple
-# Date created:		2006-08-01
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Tie-Simple
 PORTVERSION=	1.03
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Variable ties made easier: much, much, much easier
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Tie::Simple.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Event-Join
-# Date created:	   24 Mar 2010
-# Whom:		   Denis Pokataev <catone@cpan.org>
-#
+# Created by: Denis Pokataev <catone@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Event-Join
 PORTVERSION=	0.06
@@ -23,7 +19,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-use-ok>0:${PORTSDIR}/devel/p5-Test-use-ok
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Event::Join.3
 

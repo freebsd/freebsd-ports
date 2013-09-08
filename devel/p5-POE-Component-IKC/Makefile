@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-POE>=1.311:${PORTSDIR}/devel/p5-POE \
 		p5-Proc-ProcessTable>=0:${PORTSDIR}/devel/p5-Proc-ProcessTable
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Component::IKC.3 POE::Component::IKC::Channel.3 \
 		POE::Component::IKC::Client.3 POE::Component::IKC::ClientLite.3 \

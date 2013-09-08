@@ -9,7 +9,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for hierarchy-wide accumulation of list/hash results
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Data::Inherited.3
 

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Perl::Metrics::Lite
-# Date created:		31 Dec 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Perl-Metrics-Lite
 PORTVERSION=	0.080
@@ -21,7 +16,8 @@ RUN_DEPENDS=	\
 	p5-Text-ASCIITable>0:${PORTSDIR}/textproc/p5-Text-ASCIITable
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	measureperl-checkstyle.1 \
 	measureperl.1

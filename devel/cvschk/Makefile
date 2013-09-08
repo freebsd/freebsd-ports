@@ -1,9 +1,5 @@
-# New ports collection makefile for: 	cvschk
-# Date created:				2005-04-23
-# Whom:					Matthias Andree <matthias.andree@gmx.de>
-#
+# Created by: Matthias Andree <matthias.andree@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	cvschk
 PORTVERSION=	1.12
@@ -16,7 +12,8 @@ EXTRACT_ONLY=
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Quick offline checker for CVS modifications
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		cvschk.1
