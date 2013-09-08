@@ -3,7 +3,7 @@
 
 PORTNAME=	python27
 PORTVERSION=	2.7.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -52,7 +52,7 @@ BINLINKS_SUB_PYTHON_VER=	${BINLINKS_SUB_TMPL:S/%%VERSION%%/${PYTHON_VER}/g}
 OPTIONS_DEFINE=		THREADS SEM PTH PYMALLOC IPV6 FPECTL EXAMPLES NLS
 OPTIONS_DEFAULT=	THREADS UCS4 PYMALLOC IPV6
 
-OPTIONS_SINGLE=	UCS
+OPTIONS_SINGLE=		UCS
 OPTIONS_SINGLE_UCS=	UCS2 UCS4
 
 NLS_DESC=	Enable Gettext support for the locale module
@@ -61,9 +61,12 @@ NLS_DESC=	Enable Gettext support for the locale module
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
-# XXX do not set any LDFLAGS or CFLAGS - this causes pyexpat to fail building
-#LDFLAGS+=	"-L${LOCALBASE}/lib"
-#CFLAGS+=	"-I${LOCALBASE}/include"
+LDFLAGS+=	-L${LOCALBASE}/lib
+# We use CPPFLAGS over CFLAGS here due to -I ordering causing things like
+# elementtree and pyexpat to break with python27, or to silence preprocessor
+# complaints with python33
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV+=	LIBS="-lintl"
 .else
 CONFIGURE_ENV+=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
 .endif
@@ -147,7 +150,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 CONFIGURE_ARGS+=	--with-fpectl
 .endif
 
-CONFIGURE_ENV+=	OPT="${CFLAGS} ${_PTH_CPPFLAGS}"
+CONFIGURE_ENV+=	OPT="${_PTH_CPPFLAGS}"
 
 post-extract:
 # The distribution tarball for python 2.7 has permission bits for 'others'

@@ -2,7 +2,7 @@
 
 PORTNAME=	python31
 PORTVERSION=	3.1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -19,7 +19,7 @@ WRKSRC=		${PYTHON_WRKSRC}/portbld.static
 PATCH_WRKSRC=	${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure # must be relative
-CONFIGURE_ENV=	OPT="${CFLAGS}" SVNVERSION="echo freebsd"
+CONFIGURE_ENV=	OPT="" SVNVERSION="echo freebsd"
 MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	altinstall
@@ -58,9 +58,11 @@ NLS_DESC=	Enable Gettext support for the locale module
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
-# XXX do not set any LDFLAGS or CFLAGS - this causes pyexpat to fail building
-#LDFLAGS+=	"-L${LOCALBASE}/lib"
-#CFLAGS+=	"-I${LOCALBASE}/include"
+LDFLAGS+=	-L${LOCALBASE}/lib
+# We use CPPFLAGS over CFLAGS here due to -I ordering causing things like
+# elementtree and pyexpat to break with python27, or to silence preprocessor
+# complaints with python33
+CPPFLAGS+=	-I${LOCALBASE}/include
 .else
 CONFIGURE_ENV+=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
 .endif

@@ -1,5 +1,5 @@
---- setup.py.orig	2011-02-26 04:56:47.906445474 +0800
-+++ setup.py	2011-02-26 04:56:49.969976034 +0800
+--- setup.py.orig	2013-05-16 02:33:58.000000000 +1000
++++ setup.py	2013-09-08 02:31:44.216199627 +1000
 @@ -21,7 +21,7 @@
  COMPILED_WITH_PYDEBUG = hasattr(sys, 'gettotalrefcount')
  
@@ -9,7 +9,18 @@
  
  # File which contains the directory for shared mods (for sys.path fixup
  # when running from the build dir, see Modules/getpath.c)
-@@ -585,7 +585,7 @@
+@@ -235,8 +235,8 @@
+         # unfortunately, distutils doesn't let us provide separate C and C++
+         # compilers
+         if compiler is not None:
+-            (ccshared,cflags) = sysconfig.get_config_vars('CCSHARED','CFLAGS')
+-            args['compiler_so'] = compiler + ' ' + ccshared + ' ' + cflags
++            (ccshared,opt,cflags) = sysconfig.get_config_vars('CCSHARED','OPT','CFLAGS')
++            args['compiler_so'] = compiler + ' ' + ccshared + ' ' + opt + ' ' + cflags
+         self.compiler.set_executables(**args)
+ 
+         # Not only do we write the builddir cookie, but we manually install
+@@ -629,7 +629,7 @@
          # use the same library for the readline and curses modules.
          if 'curses' in readline_termcap_library:
              curses_library = readline_termcap_library
@@ -18,7 +29,7 @@
              curses_library = 'ncursesw'
          elif self.compiler.find_library_file(lib_dirs, 'ncurses'):
              curses_library = 'ncurses'
-@@ -624,7 +624,7 @@
+@@ -668,7 +668,7 @@
                                                       'termcap'):
                  readline_libs.append('termcap')
              exts.append( Extension('readline', ['readline.c'],
@@ -27,7 +38,7 @@
                                     extra_link_args=readline_extra_link_args,
                                     libraries=readline_libs) )
          else:
-@@ -1139,12 +1139,13 @@
+@@ -1187,12 +1187,13 @@
          # provided by the ncurses library.
          panel_library = 'panel'
          if curses_library.startswith('ncurses'):
@@ -42,7 +53,7 @@
                                     libraries = curses_libs) )
          elif curses_library == 'curses' and platform != 'darwin':
                  # OSX has an old Berkeley curses, not good enough for
-@@ -1157,6 +1158,7 @@
+@@ -1205,6 +1206,7 @@
                  curses_libs = ['curses']
  
              exts.append( Extension('_curses', ['_cursesmodule.c'],
@@ -50,7 +61,7 @@
                                     libraries = curses_libs) )
          else:
              missing.append('_curses')
-@@ -1309,7 +1311,7 @@
+@@ -1373,7 +1375,7 @@
              macros = dict()
              libraries = []
  
@@ -59,7 +70,7 @@
              # FreeBSD's P1003.1b semaphore support is very experimental
              # and has many known problems. (as of June 2008)
              macros = dict()
-@@ -1352,8 +1354,7 @@
+@@ -1416,8 +1418,7 @@
          # End multiprocessing
  
          # Platform-specific libraries
@@ -69,7 +80,7 @@
              or platform.startswith("gnukfreebsd")):
              exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
          else:
-@@ -1868,8 +1869,7 @@
+@@ -1935,8 +1936,7 @@
            # If you change the scripts installed here, you also need to
            # check the PyBuildScripts command above, and change the links
            # created by the bininstall target in Makefile.pre.in
