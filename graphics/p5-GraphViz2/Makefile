@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GraphViz2
-PORTVERSION=	2.20
+PORTVERSION=	2.22
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RSAVAGE
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
 		p5-Capture-Tiny>=0.10:${PORTSDIR}/devel/p5-Capture-Tiny \
 		p5-Class-ISA>=0.36:${PORTSDIR}/devel/p5-Class-ISA \
 		p5-Class-Load>=0.17:${PORTSDIR}/devel/p5-Class-Load \
-		p5-Config-Tiny>=2.14:${PORTSDIR}/devel/p5-Config-Tiny \
+		p5-Config-Tiny>=2.16:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-DBI>=1.616:${PORTSDIR}/databases/p5-DBI \
 		p5-Data-Section-Simple>=0.02:${PORTSDIR}/devel/p5-Data-Section-Simple \
 		p5-Date-Simple>=3.03:${PORTSDIR}/devel/p5-Date-Simple \
@@ -33,10 +33,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
 		p5-Log-Handler>=0.71:${PORTSDIR}/devel/p5-Log-Handler \
 		p5-Moo>=1.002000:${PORTSDIR}/devel/p5-Moo \
 		p5-Parse-RecDescent>=1.965.001:${PORTSDIR}/devel/p5-Parse-RecDescent \
-		p5-Path-Tiny>=0.025:${PORTSDIR}/devel/p5-Path-Tiny \
-		p5-PathTools>=3.3300:${PORTSDIR}/devel/p5-PathTools \
 		p5-Perl6-Slurp>=0.05.1003:${PORTSDIR}/devel/p5-Perl6-Slurp \
-		p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Set-Array>=0.23:${PORTSDIR}/devel/p5-Set-Array \
 		p5-Text-Xslate>=1.2000:${PORTSDIR}/textproc/p5-Text-Xslate \
 		p5-Tree-DAG_Node>=1.06:${PORTSDIR}/devel/p5-Tree-DAG_Node \
@@ -74,4 +71,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/scripts/* ${EXAMPLESDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501800
+BUILD_DEPENDS+=	p5-PathTools>=3.4000:${PORTSDIR}/devel/p5-PathTools
+RUN_DEPENDS+=	p5-PathTools>=3.4000:${PORTSDIR}/devel/p5-PathTools
+.endif
+
+.include <bsd.port.post.mk>
