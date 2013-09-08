@@ -2,6 +2,7 @@ bin/langident
 bin/make-lingua-identify-language
 %%SITE_PERL%%/Lingua/Identify.pm
 %%SITE_PERL%%/Lingua/Identify/BG.pm
+%%SITE_PERL%%/Lingua/Identify/CS.pm
 %%SITE_PERL%%/Lingua/Identify/CY.pm
 %%SITE_PERL%%/Lingua/Identify/DA.pm
 %%SITE_PERL%%/Lingua/Identify/DE.pm

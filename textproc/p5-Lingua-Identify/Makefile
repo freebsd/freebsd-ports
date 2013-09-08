@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Lingua-Identify
-PORTVERSION=	0.54
+PORTVERSION=	0.56
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,6 +22,7 @@ USE_PERL5=	configure
 MAN1=	langident.1 make-lingua-identify-language.1
 MAN3=	Lingua::Identify.3 \
 	Lingua::Identify::BG.3 \
+	Lingua::Identify::CS.3 \
 	Lingua::Identify::CY.3 \
 	Lingua::Identify::DA.3 \
 	Lingua::Identify::DE.3 \
