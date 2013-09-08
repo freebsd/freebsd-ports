@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fusenshi
-# Date created:				30 March 2004
-# Whom:					Masanori OZAWA (ozawa@ongs.co.jp)
-#
+# Created by: Masanori OZAWA (ozawa@ongs.co.jp)
 # $FreeBSD$
-#
 
 PORTNAME=	fusenshi
 PORTVERSION=	0.9.0
@@ -18,6 +14,7 @@ COMMENT=	A Post-it(R) like application with network support
 LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		gtksourceview-1.0:${PORTSDIR}/x11-toolkits/gtksourceview
 
+USES=		pkgconfig
 USE_GNOME=	libxml2
 MAKE_JOBS_UNSAFE=	yes
 

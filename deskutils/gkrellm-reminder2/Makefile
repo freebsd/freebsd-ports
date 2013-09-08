@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gkrellm-reminder2
-# Date Created:				Tue Apr 27 11:55:02 CEST 2004
-# Whom:					Tobias Roth <ports@fsck.ch>
-#
+# Created by: Tobias Roth <ports@fsck.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	reminder
 PORTVERSION=	2.0.0
@@ -20,6 +16,7 @@ COMMENT=	GKrellM2 plugin that reminds you of important events
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
+USES=		pkgconfig
 USE_GNOME=	gtk20
 
 PLIST_FILES=	libexec/gkrellm2/plugins/reminder.so
