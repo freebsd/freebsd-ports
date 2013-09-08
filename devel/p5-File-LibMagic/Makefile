@@ -10,7 +10,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Nice wrapper for libmagic
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::LibMagic.3
 
