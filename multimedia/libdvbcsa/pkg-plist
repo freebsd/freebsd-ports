@@ -1,0 +1,6 @@
+include/dvbcsa/dvbcsa.h
+lib/libdvbcsa.a
+lib/libdvbcsa.la
+lib/libdvbcsa.so
+lib/libdvbcsa.so.1
+@dirrm include/dvbcsa
