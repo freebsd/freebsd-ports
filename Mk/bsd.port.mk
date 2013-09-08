@@ -5049,7 +5049,8 @@ lib-depends:
 		for libdir in $$dirs; do \
 			test -f $${libdir}/$${lib} || continue; \
 			if [ -x /usr/bin/file ]; then \
-				[ `file -b -L --mime-type $${libdir}/$${lib}` = "application/x-sharedlib" ] || continue ; \
+				_LIB_FILE=`realpath $${libdir}/$${lib}`; \
+				[ `file -b -L --mime-type $${_LIB_FILE}` = "application/x-sharedlib" ] || continue ; \
 			fi ; \
 			found=1 ; \
 			${ECHO_MSG} " - found"; \
