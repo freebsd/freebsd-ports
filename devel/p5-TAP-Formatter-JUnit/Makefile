@@ -1,9 +1,4 @@
-# New ports collection makefile for:	TAP::Formatter::JUnit
-# Date created:		10 Apr 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	TAP-Formatter-JUnit
 PORTVERSION=	0.09
@@ -24,7 +19,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Differences>=0.61:${PORTSDIR}/devel/p5-Test-Differences \
 		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=	tap2junit.1
 MAN3=	TAP::Formatter::JUnit.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Luka
-# Date created:		2006-07-15
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Luka
 PORTVERSION=	1.08
@@ -26,7 +22,8 @@ RUN_DEPENDS=	p5-Class-Std>=0:${PORTSDIR}/devel/p5-Class-Std \
 		p5-What>=0:${PORTSDIR}/net/p5-What
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Luka.3 Luka::Conf.3 Luka::Exceptions.3 Luka::Mailer.3
 
