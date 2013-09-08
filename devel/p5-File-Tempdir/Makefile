@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-File-Tempdir
-# Date created:		2007-01-02
-# Whom:	      		loader <loader@freebsdmall.com>
-#
+# Created by: loader <loader@freebsdmall.com>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Tempdir
 PORTVERSION=	0.02
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	loader@freebsdmall.com
 COMMENT=	Perl5 module to provide an object interface for File::Temp
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Tempdir.3
 

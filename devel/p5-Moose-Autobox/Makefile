@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Moose-Autobox
-# Date created:				25 July 2009
-# Whom:					Bill Brinzer <bill.brinzer@gmail.com>
-#
+# Created by: Bill Brinzer <bill.brinzer@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Moose-Autobox
 PORTVERSION=	0.12
@@ -23,7 +19,8 @@ RUN_DEPENDS=	p5-autobox>=2.23:${PORTSDIR}/devel/p5-autobox \
 		p5-Perl6-Junction>=1.40000:${PORTSDIR}/devel/p5-Perl6-Junction
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Moose::Autobox.3 \
 	Moose::Autobox::Array.3 \

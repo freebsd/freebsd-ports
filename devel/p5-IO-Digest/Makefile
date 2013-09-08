@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-IO-Digest
-# Date created:				Sep 20 2004
-# Whom:					Rong-En Fan <rafan@infor.org>
-#
+# Created by: Rong-En Fan <rafan@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IO-Digest
 PORTVERSION=	0.10
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-PerlIO-via-dynamic>=0:${PORTSDIR}/devel/p5-PerlIO-via-dynamic 
 		p5-Digest>=0:${PORTSDIR}/security/p5-Digest
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		IO::Digest.3
 

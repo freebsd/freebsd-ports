@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Gtk2-Notify
-# Date created:				2011-10-13
-# Whom:					Roman Bogorodskiy <novel@FreeBSD.org>
-#
+# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Gtk2-Notify
 PORTVERSION=	0.05
@@ -23,7 +19,8 @@ RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Gtk2::Notify.3 Gtk2::Notify::index.3
 

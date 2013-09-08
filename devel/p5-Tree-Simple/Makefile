@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Tree::Simple
-# Date created:				7 July 2004
-# Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Tree-Simple
 PORTVERSION=	1.18
@@ -16,7 +12,8 @@ COMMENT=	A simple tree object
 
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Tree::Simple.3 Tree::Simple::Visitor.3
 

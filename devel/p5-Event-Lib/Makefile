@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Event-Lib
-# Date created:				07 Jun 2006
-# Whom:					Fabian Keil <fk@fabiankeil.de>
-#
+# Created by: Fabian Keil <fk@fabiankeil.de>
 # $FreeBSD$
-#
 
 PORTNAME=	Event-Lib
 PORTVERSION=	1.03
@@ -17,7 +13,8 @@ COMMENT=	Makes libevent(3) accessible with Perl
 
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Event::Lib.3
 
