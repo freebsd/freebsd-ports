@@ -164,6 +164,7 @@
     SUBDIR += libdc1394
     SUBDIR += libdca
     SUBDIR += libdv
+    SUBDIR += libdvbcsa
     SUBDIR += libdvbpsi
     SUBDIR += libdvdcss
     SUBDIR += libdvdnav
