@@ -3,7 +3,7 @@
 
 PORTNAME=	tvheadend
 PORTVERSION=	3.4.0.20130726.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freebsd.org/~decke/distfiles/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} dvb-scan-tables-20130714.tar.gz
@@ -16,8 +16,8 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libcurl.so:${PORTSDIR}/ftp/curl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	decke
@@ -38,13 +38,14 @@ GROUPS=		${TVHGROUP}
 SUB_LIST+=	TVHUSER="${TVHUSER}" \
 		TVHGROUP="${TVHGROUP}"
 
-OPTIONS_DEFINE=	AVAHI
+OPTIONS_DEFINE=	AVAHI DVBCSA FFMPEG
+OPTIONS_DEFAULT=DVBCSA FFMPEG
+DVBCSA_DESC=	Replace internal ffdecsa with dvbcsa
 
-CONFIGURE_ENV+=	PLATFORM=freebsd \
-		CFLAGS+="-I${LOCALBASE}/include" \
-		LDFLAGS+="-L${LOCALBASE}/lib -lexecinfo -lssl -lz"
-CONFIGURE_ARGS+=	--disable-dvbscan --disable-zlib
-CFLAGS+=	-Wno-conversion -Wno-int-to-pointer-cast
+CONFIGURE_ENV+=	PLATFORM=freebsd
+CONFIGURE_ARGS+=--disable-dvbscan --disable-zlib
+CFLAGS+=	-I${LOCALBASE}/include -Wno-conversion -Wno-int-to-pointer-cast
+LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo -lssl -lz
 
 .include <bsd.port.pre.mk>
 
@@ -63,7 +64,21 @@ CFLAGS+=	-Wno-microsoft \
 .endif
 
 .if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+.endif
+
+.if ${PORT_OPTIONS:MDVBCSA}
+LIB_DEPENDS+=	libdvbcsa.so:${PORTSDIR}/multimedia/libdvbcsa
+CONFIGURE_ARGS+=	--enable-dvbcsa
+.else
+CONFIGURE_ARGS+=	--disable-dvbcsa
+.endif
+
+.if ${PORT_OPTIONS:MFFMPEG}
+LIB_DEPENDS+=	libavcodec1.so:${PORTSDIR}/multimedia/ffmpeg1
+CONFIGURE_ARGS+=	--enable-libav
+.else
+CONFIGURE_ARGS+=	--disable-libav
 .endif
 
 post-patch:
