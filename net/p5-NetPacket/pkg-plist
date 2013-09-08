@@ -6,4 +6,5 @@
 %%SITE_PERL%%/NetPacket/IP.pm
 %%SITE_PERL%%/NetPacket/TCP.pm
 %%SITE_PERL%%/NetPacket/UDP.pm
+%%SITE_PERL%%/NetPacket/USBMon.pm
 @dirrm %%SITE_PERL%%/NetPacket
