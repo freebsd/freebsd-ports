@@ -28,7 +28,8 @@ BPKGNAME=	base-uucp-1.06.1
 
 # fix errros for -std=iso9899:1999 in FreeBSD 5.1
 MAKE_ENV+=	CSTD=gnu99
-BUILD_DEPENDS=	cvs:${PORTSDIR}/devel/cvs
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_PAM)
 PAM_SUFFIX=	-pam
@@ -40,6 +41,10 @@ CONFLICTS?=	freebsd-uucp-pam-1.*
 
 .if defined(WITH_UUCP_ENCRYPTED_PASSWORDS)
 MAKE_ENV+=	WITH_ENCRYPTED_PASSWORDS=1
+.endif
+
+.if ${OSVERSION} > 1000000
+BUILD_DEPENDS=	cvs:${PORTSDIR}/devel/cvs
 .endif
 
 post-extract:
@@ -123,4 +128,4 @@ base-package:
 			${PKG_DBDIR}/${BPKGNAME}/+COMMENT; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
