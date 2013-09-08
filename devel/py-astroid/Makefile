@@ -1,12 +1,11 @@
-# Created by: Hye-Shik Chang
 # $FreeBSD$
 
-PORTNAME=	astng
-PORTVERSION=	0.24.3
+PORTNAME=	astroid
+PORTVERSION=	1.0.0
 CATEGORIES=	devel python
-MASTER_SITES=	LOGILAB
+MASTER_SITES=	https://bitbucket.org/logilab/astroid/get/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	logilab-${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-version-${PORTVERSION}
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Extension for Python compiler.ast module
@@ -15,10 +14,11 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	pytest:${PORTSDIR}/devel/py-logilab-common
 
+WRKSRC=			${WRKDIR}/logilab-astroid-1d6914a1a1a0
 MAKE_ENV=		NO_SETUPTOOLS=1
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	logilab-astng
+PYDISTUTILS_PKGNAME=	astroid
 
 .include <bsd.port.pre.mk>
 
