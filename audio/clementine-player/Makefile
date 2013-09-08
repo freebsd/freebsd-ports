@@ -25,7 +25,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 PROJECTHOST=	${PORTNAME}${PKGNAMESUFFIX}
 
-USES=		cmake
+USES=		cmake pkgconfig
 USE_GL=		glew
 USE_QT4=	dbus gui xml qmake_build uic_build moc_build rcc_build \
 		linguist_build network sql opengl qtestlib corelib webkit

@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/gMTP
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		gettext gmake
+USES=		gettext gmake pkgconfig
 USE_GNOME=	glib20
 
 PORTDOCS=	*

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gmidimonitor
-# Date created:		2007-03-20
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	gmidimonitor
 PORTVERSION=	3.6
@@ -17,6 +13,7 @@ COMMENT=	GTK+ application that shows MIDI events
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		lash.2:${PORTSDIR}/audio/lash
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	gtk20 libglade2
 

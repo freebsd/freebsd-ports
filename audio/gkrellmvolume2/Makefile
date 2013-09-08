@@ -25,7 +25,7 @@ PLIST_FILES=	libexec/gkrellm2/plugins/volume.so \
 		share/locale/pl/LC_MESSAGES/gkrellm-volume.mo \
 		share/locale/ru/LC_MESSAGES/gkrellm-volume.mo
 
-USES=		gmake
+USES=		gmake pkgconfig
 
 MAKE_ENV+=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins \
 		LOCALEDIR=${PREFIX}/share/locale \
