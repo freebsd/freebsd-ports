@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	freefoote
 GH_COMMIT=	a36646b
 
-USES=		gmake
+USES=		gmake pkgconfig
 USE_GNOME=	libxml2
 
 MAN1=		gpscorrelate.1
