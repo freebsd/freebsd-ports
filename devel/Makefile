@@ -3457,7 +3457,7 @@
     SUBDIR += py-asn1-modules
     SUBDIR += py-aspects
     SUBDIR += py-aspyct
-    SUBDIR += py-astng
+    SUBDIR += py-astroid
     SUBDIR += py-async
     SUBDIR += py-avro
     SUBDIR += py-babel
