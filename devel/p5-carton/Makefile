@@ -24,7 +24,8 @@ RUN_DEPENDS=	\
 	p5-local-lib>=1.008:${PORTSDIR}/devel/p5-local-lib
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Carton.3 \
 	Carton::Doc::Check.3 \

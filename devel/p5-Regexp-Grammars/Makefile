@@ -1,9 +1,5 @@
-# Ports collection makefile for:	p5-Regexp-Grammars
-# Date created:	   Mon Sep 27, 2010
-# Whom:		   Dan Rench <citric@cubicone.tmetic.com>
-#
+# Created by: Dan Rench <citric@cubicone.tmetic.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Regexp-Grammars
 PORTVERSION=	1.026
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	citric@cubicone.tmetic.com
 COMMENT=	Add grammatical parsing features to Perl 5.10 regexes
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Regexp::Grammars.3
 

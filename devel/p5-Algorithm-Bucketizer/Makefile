@@ -17,7 +17,8 @@ BUILD_DEPENDS=	p5-Algorithm-Permute>=0:${PORTSDIR}/devel/p5-Algorithm-Permute \
 		p5-Sysadm-Install>=0.23:${PORTSDIR}/sysutils/p5-Sysadm-Install
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		bucketize.1
 MAN3=		Algorithm::Bucketizer.3
