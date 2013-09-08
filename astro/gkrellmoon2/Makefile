@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gkrellmoon2
-# Date Created:				Wed Aug 25 13:18:39 CEST 2004
-# Whom:					Jan Srzednicki <w@wrzask.pl>
-#
+# Created by: Jan Srzednicki <w@wrzask.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	gkrellmoon2
 PORTVERSION=	0.6
@@ -18,6 +14,7 @@ COMMENT=	A moon clock plugin for Gkrellm2
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
+USES=		pkgconfig
 USE_GNOME=	gtk20
 
 ALL_TARGET=	gkrellmoon.so
