@@ -75,8 +75,7 @@ CFLAGS=${MILTERINC}
 .endif
 .endif
 
-
-.if defined(SENDMAIL_WITHOUT_MILTER)
+.if defined(WITHOUT_MILTER)
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} You must unset variable SENDMAIL_WITHOUT_MILTER,
