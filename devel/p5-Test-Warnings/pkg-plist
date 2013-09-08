@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Test/Warnings.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Warnings/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Warnings
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test
