@@ -2,22 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	libidn
-PORTVERSION=	1.27
+PORTVERSION=	1.28
 CATEGORIES=	dns
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GNU
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Internationalized Domain Names command line tool
 
-USES=		iconv pathfix pkgconfig
+OPTIONS_DEFINE=	DOCS NLS
+
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+USE_PERL5=	build
+USES=		iconv pathfix perl5 pkgconfig
 
-INFO=	libidn
+INFO=		libidn
 
 .include <bsd.port.options.mk>
 
@@ -32,11 +33,10 @@ PLIST_SUB+=	NLS="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|@image{components}||g' \
 		${WRKSRC}/doc/libidn.texi
-	@${REINPLACE_CMD} -e 's|$$(AUTOMAKE)|${TRUE}|' \
-			-e 's|imagesdir = $$(infodir)|imagesdir = $$(docdir)|' \
+	@${REINPLACE_CMD} -e 's|$$(AUTOMAKE)|${TRUE}|; /imagesdir = / s|infodir|docdir|' \
 		${WRKSRC}/doc/Makefile.in
 .if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e 's|install-data-am: install-imagesDATA install-info-am install-man|install-data-am: install-info-am install-man|' \
+	@${REINPLACE_CMD} -e '/^install-data-am: / s| install-imagesDATA||' \
 		${WRKSRC}/doc/Makefile.in
 .endif
 
