@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Data-Inspect
-# Date created:		2011-01-13
-# Whom:			Kurt Lidl <kurt.lidl@cello.com>
-#
+# Created by: Kurt Lidl <kurt.lidl@cello.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Inspect
 PORTVERSION=	0.04
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kurt.lidl@cello.com
 COMMENT=	Another pretty-printer for perl objects
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Data::Inspect.3
 

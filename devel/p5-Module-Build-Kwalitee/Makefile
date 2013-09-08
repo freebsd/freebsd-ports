@@ -1,9 +1,5 @@
-# New ports collection makefile for:    Module::Build::Kwalitee
-# Date created:         2006-04-27
-# Whom:                 Yuan-Chung Hsiao & <ychsiao@ychsiao.org>
-#
+# Created by: Yuan-Chung Hsiao & <ychsiao@ychsiao.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Module-Build-Kwalitee
 PORTVERSION=	0.24
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 RUN_DEPENDS=	p5-File-Find-Rule>=0:${PORTSDIR}/devel/p5-File-Find-Rule
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Module::Build::Kwalitee.3
 

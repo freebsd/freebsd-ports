@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Module-ScanDeps
-# Date created:				Aug 27 2003
-# Whom:					Autrijus Tang <autrijus@autrijus.org>
-#
+# Created by: Autrijus Tang <autrijus@autrijus.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Module-ScanDeps
 PORTVERSION=	1.10
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Recursively scan Perl code for dependencies
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		scandeps.pl.1
 MAN3=		Module::ScanDeps.3

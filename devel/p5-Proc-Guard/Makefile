@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Proc::Guard
-# Date created:		01 Jan 2012
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Proc-Guard
 PORTVERSION=	0.06
@@ -19,7 +14,8 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Proc::Guard.3
 
