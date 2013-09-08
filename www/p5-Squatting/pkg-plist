@@ -16,7 +16,6 @@ bin/squatting
 %%SITE_PERL%%/Squatting/With/Log.pm
 %%SITE_PERL%%/Squatting/With/MockRequest.pm
 %%SITE_PERL%%/Squatting/With/Mount.pm
-%%SITE_PERL%%/Squatting/With/PerHostConfig.pm
 %%SITE_PERL%%/squatting.pl
 @dirrmtry %%SITE_PERL%%/Squatting/With/Coro
 @dirrmtry %%SITE_PERL%%/Squatting/With
