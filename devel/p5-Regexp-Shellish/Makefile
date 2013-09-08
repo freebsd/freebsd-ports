@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Regexp::Shellish
-# Date created:		8 Jan 2004
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Regexp-Shellish
 PORTVERSION=	0.93
@@ -14,7 +9,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module for shell-like regular expressions
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Regexp::Shellish.3
 

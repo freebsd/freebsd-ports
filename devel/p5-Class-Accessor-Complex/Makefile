@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Class-Accessor-Complex
-# Date created:		2010-11-28
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Accessor-Complex
 PORTVERSION=	1.100880
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Accessor-Installer>=0:${PORTSDIR}/devel/p5-Class-Accessor-Installer
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::Accessor::Complex.3
 

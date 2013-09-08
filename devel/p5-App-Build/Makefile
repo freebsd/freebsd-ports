@@ -1,9 +1,5 @@
-# New ports collection makefile for:	App::Build
-# Date created:				03 Mar 2010
-# Whom:                			Alex Bakhtin <Alex.Bakhtin@gmail.com>
-#
+# Created by: Alex Bakhtin <Alex.Bakhtin@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	App-Build
 PORTVERSION=	0.74
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Test-Differences>=0.47:${PORTSDIR}/devel/p5-Test-Differences \
 		p5-App-Options>=0:${PORTSDIR}/devel/p5-App-Options \
 		p5-Module-Build>=0.28:${PORTSDIR}/devel/p5-Module-Build
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 .if !defined(NOPORTDOCS)
 

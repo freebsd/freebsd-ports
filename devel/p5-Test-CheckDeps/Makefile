@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-CPAN-Meta>=2.120920:${PORTSDIR}/devel/p5-CPAN-Meta \
 		p5-Module-Build-Tiny>=0.021:${PORTSDIR}/devel/p5-Module-Build-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Test::CheckDeps.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Pod-Coverage-TrustPod
-# Date created:				2011-02-16
-# Whom:					milki <milki@rescomp.berkeley.edu>
-#
+# Created by: milki <milki@rescomp.berkeley.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	Pod-Coverage-TrustPod
 PORTVERSION=	0.100002
@@ -25,7 +21,8 @@ RUN_DEPENDS=	p5-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Pod-Coverage \
 
 TEST_DEPENDS=	p5-Test-Pod>=1.41:${PORTSDIR}/devel/p5-Test-Pod
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Pod::Coverage::TrustPod.3
 

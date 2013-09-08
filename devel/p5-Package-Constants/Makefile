@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Package-Constants
-# Date created:				25 Jun 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Package-Constants
 PORTVERSION=	0.02
@@ -16,6 +12,7 @@ COMMENT=	List all constants declared in a package
 
 MAN3=	Package::Constants.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>
