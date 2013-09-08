@@ -4,17 +4,16 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-DISTVERSION=	1.6.1
-PORTREVISION=	5
+DISTVERSION=	1.6.5
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.6/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A High Performance Message Passing Library
+MAINTAINER=	danilogondolfo@gmail.com
+COMMENT=	High Performance Message Passing Library
 
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-		hwloc:${PORTSDIR}/devel/hwloc \
-		ltdl:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libhwloc.so:${PORTSDIR}/devel/hwloc \
+		libltdl.so:${PORTSDIR}/devel/libltdl
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
@@ -23,7 +22,6 @@ USES=		gmake pkgconfig
 MPIBASE?=	mpi
 MPIDIR?=	${MPIBASE}/${UNIQUENAME}
 
-PLIST_SUB+=	CONFIGURE_TARGET=${CONFIGURE_TARGET}
 PLIST_SUB+=	MPIBASE=${MPIBASE}
 PLIST_SUB+=	MPIDIR=${MPIDIR}
 
@@ -31,8 +29,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
 			--mandir=${PREFIX}/${MPIDIR}/man \
 			--program-prefix= \
 			--with-hwloc=${LOCALBASE} \
-			--with-libltdl=${LOCALBASE} \
-		 	${CONFIGURE_TARGET}
+			--with-libltdl=${LOCALBASE}
 
 USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
 		${PREFIX}/${MPIDIR}/lib/openmpi
@@ -41,35 +38,26 @@ MANPREFIX=	${PREFIX}/${MPIDIR}
 .include "${.CURDIR}/Makefile.man"
 
 OPTIONS_DEFINE=	IPV6 TORQUE
-
 TORQUE_DESC=	Enable Torque support
-
 OPTIONS_DEFAULT=	IPV6
+
+IPV6_CONFIGURE_ENABLE=	ipv6
+TORQUE_CONFIGURE_ON=	--with-tm=${LOCALBASE}
+TORQUE_CONFIGURE_OFF=	--without-tm
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.else
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
-CONFIGURE_ARGS+=	--without-sge
-
 .if ${PORT_OPTIONS:MTORQUE}
-LIB_DEPENDS+=	torque:${PORTSDIR}/sysutils/torque
-CONFIGURE_ARGS+=	--with-tm=${LOCALBASE}
+LIB_DEPENDS+=	libtorque.so:${PORTSDIR}/sysutils/torque
 PLIST_FILES+=	${MPIDIR}/lib/openmpi/mca_plm_tm.so \
 		${MPIDIR}/lib/openmpi/mca_plm_tm.la \
 		${MPIDIR}/lib/openmpi/mca_ras_tm.la \
 		${MPIDIR}/lib/openmpi/mca_ras_tm.so \
+		${MPIDIR}/lib/openmpi/mca_ess_tm.so \
+		${MPIDIR}/lib/openmpi/mca_ess_tm.la \
 		${MPIDIR}/share/openmpi/help-plm-tm.txt \
 		${MPIDIR}/share/openmpi/help-ras-tm.txt
-.else
-CONFIGURE_ARGS+=	--without-tm
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
@@ -111,4 +99,4 @@ build-plist:
 	    ${SED} -e 's|.*man\([0-9LN]\)/\(.*\)|MAN\1+=\2|' -e 's/\.gz$$//' | \
 	    ${SORT} >> ${.CURDIR}/Makefile.man
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
