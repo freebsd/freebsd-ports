@@ -2,7 +2,6 @@
 %%SITE_PERL%%/MooseX/Aliases.pm
 %%SITE_PERL%%/MooseX/Aliases/Meta/Trait/Attribute.pm
 %%SITE_PERL%%/MooseX/Aliases/Meta/Trait/Class.pm
-%%SITE_PERL%%/MooseX/Aliases/Meta/Trait/Constructor.pm
 %%SITE_PERL%%/MooseX/Aliases/Meta/Trait/Method.pm
 %%SITE_PERL%%/MooseX/Aliases/Meta/Trait/Role.pm
 %%SITE_PERL%%/MooseX/Aliases/Meta/Trait/Role/ApplicationToClass.pm
