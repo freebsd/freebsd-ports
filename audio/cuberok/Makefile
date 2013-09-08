@@ -20,7 +20,7 @@ LIB_DEPENDS=	avcodec:${PORTSDIR}/multimedia/ffmpeg \
 USE_LDCONFIG=	yes
 USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \
 		network phonon-gst sql
-USES=		gettext iconv
+USES=		gettext iconv pkgconfig
 USE_SDL=	sdl
 QMAKEFLAGS+=	"CONFIG+=player_phonon"
 MAKE_ENV+=	INSTALL_ROOT=${PREFIX}

@@ -20,7 +20,7 @@ LIB_DEPENDS=	lo:${PORTSDIR}/audio/liblo \
 		gnomecanvasmm-2.6:${PORTSDIR}/graphics/libgnomecanvasmm26
 
 USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext pkgconfig
 USE_SCONS=	yes
 SCONS_ENV+=	SYSLIBS=yes PREFIX=${PREFIX} NLS=yes
 CFLAGS+=	-I${LOCALBASE}/include

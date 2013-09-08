@@ -16,7 +16,7 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
-USES=	pathfix pkgconfig
+USES=		pathfix pkgconfig:both
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=  yes
 CONFIGURE_ENV=	JW=false
