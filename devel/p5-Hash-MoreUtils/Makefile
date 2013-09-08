@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Hash::MoreUtils
-# Date created:		02 Mar 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Hash-MoreUtils
 PORTVERSION=	0.02
@@ -14,7 +9,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to provide the stuff missing in Hash::Util
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Hash::MoreUtils.3
 

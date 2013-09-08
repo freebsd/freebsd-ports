@@ -16,7 +16,8 @@ RUN_DEPENDS=	\
 	p5-Text-Diff>0:${PORTSDIR}/textproc/p5-Text-Diff
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Test::PerlTidy.3
 

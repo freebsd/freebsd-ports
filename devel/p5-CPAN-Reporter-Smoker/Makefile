@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-CPAN-Reporter-Smoker
-# Date created:		2011-02-04
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CPAN-Reporter-Smoker
 PORTVERSION=	0.24
@@ -21,6 +17,7 @@ BUILD_DEPENDS=	p5-CPAN-Checksums>0:${PORTSDIR}/devel/p5-CPAN-Checksums \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=		CPAN::Reporter::Smoker.3
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

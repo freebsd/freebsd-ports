@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-libxml-enno
-# Date created:		2010-03-03
-# Whom:			Steve Wills <steve@mouf.net>
-#
+# Created by: Steve Wills <steve@mouf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libxml-enno
 PORTVERSION=	1.02
@@ -30,7 +26,8 @@ CONFLICTS=	p5-XML-DOM-[0-9]* p5-XML-Filter-DetectWS-[0-9]* \
 		p5-XML-Filter-Reindent-[0-9]* p5-XML-Filter-SAXT-[0-9]* \
 		p5-XML-RegExp-[0-9]* p5-XML-XQL-[0-9]*
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	XML::Checker.3 XML::Checker::Parser.3 XML::DOM.3 XML::DOM::AttDef.3 \
 	XML::DOM::AttlistDecl.3 XML::DOM::Attr.3 XML::DOM::CDATASection.3 \
