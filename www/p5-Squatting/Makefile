@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Squatting
-PORTVERSION=	0.81
+PORTVERSION=	0.82
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BEPPU
@@ -43,7 +43,6 @@ MAN3=	\
 	Squatting::With::Coro::Debug.3 \
 	Squatting::With::Log.3 \
 	Squatting::With::MockRequest.3 \
-	Squatting::With::Mount.3 \
-	Squatting::With::PerHostConfig.3
+	Squatting::With::Mount.3
 
 .include <bsd.port.mk>
