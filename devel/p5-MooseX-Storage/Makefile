@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Storage
-PORTVERSION=	0.41
+PORTVERSION=	0.42
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +23,8 @@ TEST_DEPENDS=	p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-Test-JSON>=0.06:${PORTSDIR}/devel/p5-Test-JSON \
 		p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-Without-Module>=0:${PORTSDIR}/devel/p5-Test-Without-Module \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
+		p5-Test-CheckDeps>=0:${PORTSDIR}/devel/p5-Test-CheckDeps
 
 USES=		perl5
 USE_PERL5=	modbuildtiny
