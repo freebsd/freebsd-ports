@@ -26,6 +26,9 @@ USE_PYDISTUTILS=easy_install
 
 .if ${PYTHON_REL} < 270
 RUN_DEPENDS+=   ${PYTHON_PKGNAMEPREFIX}argparse>0:${PORTSDIR}/devel/py-argparse
+.else
+post-patch:
+	@${REINPLACE_CMD} '/.*argparse.*/d' ${WRKSRC}/setup.py
 .endif
 
 .include <bsd.port.post.mk>
