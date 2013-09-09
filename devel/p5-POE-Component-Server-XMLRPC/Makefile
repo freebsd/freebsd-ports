@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Component-Server-XMLRPC
-# Date created:		14 Jun 2004
-# Whom:			Jesper Dalberg <jesper@jdn.dk>
-#
+# Created by: Jesper Dalberg <jesper@jdn.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Server-XMLRPC
 PORTVERSION=	0.05
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Component::Server::XMLRPC.3
 

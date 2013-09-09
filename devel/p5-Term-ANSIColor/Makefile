@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ANSIColor
-# Date created:				1 December 1999
-# Whom:	      				Denis Shaposhnikov <dsh@vlink.ru>
-#
+# Created by: Denis Shaposhnikov <dsh@vlink.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Term-ANSIColor
 PORTVERSION=	3.02
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	Color screen output using ANSI escape sequences
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Term::ANSIColor.3
 

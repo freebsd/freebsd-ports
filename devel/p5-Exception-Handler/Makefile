@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	p5-Exception-Handler
-# Date created:				25th April 2007
-# Whom: 				jeffhung
-#
+# Created by: jeffhung
 # $FreeBSD$
-#
 
 PORTNAME=	Exception-Handler
 PORTVERSION=	1.004
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jeffhung@mail2000.com.tw
 COMMENT=	Perl module that report exceptions with formatted text call-stack
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Exception::Handler.3
 
