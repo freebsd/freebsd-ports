@@ -16,7 +16,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-IO-CaptureOutput>=1.08:${PORTSDIR}/devel/p5-IO-CaptureOutput
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		use-devel-checklib.1
 MAN3=		Devel::CheckLib.3

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-List-Uniq
-# Date created:		2009-01-09
-# Whom:			Murilo Opsfelder <mopsfelder@gmail.com>
-#
+# Created by: Murilo Opsfelder <mopsfelder@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	List-Uniq
 PORTVERSION=	0.20
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mopsfelder@gmail.com
 COMMENT=	Extract the unique elements of a list
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		List::Uniq.3
 

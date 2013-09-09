@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MooseX-Types-JSON
-# Date created:	   2011-02-17
-# Whom:		   milki <milki@rescomp.berkeley.edu>
-#
+# Created by: milki <milki@rescomp.berkeley.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-Types-JSON
 PORTVERSION=	0.02
@@ -24,7 +20,8 @@ RUN_DEPENDS=	p5-Moose>=0.82:${PORTSDIR}/devel/p5-Moose \
 
 TEST_DEPENDS=	p5-Test-Pod>=1.00:${PORTSDIR}/devel/p5-Test-Pod
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MooseX::Types::JSON.3
 

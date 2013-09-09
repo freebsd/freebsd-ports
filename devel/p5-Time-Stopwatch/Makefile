@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Time::Stopwatch
-# Date created:				2006-11-18
-# Whom:					Sulev-Madis Silber <madis555@hot.ee>
-#
+# Created by: Sulev-Madis Silber <madis555@hot.ee>
 # $FreeBSD$
-#
 
 PORTNAME=	Time-Stopwatch
 PORTVERSION=	1.00
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	madis555@hot.ee
 COMMENT=	Use tied scalars as timers
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Time::Stopwatch.3
 

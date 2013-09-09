@@ -28,7 +28,8 @@ BUILD_DEPENDS=	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Eval::Context.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SVN-Notify-Filter-AuthZMail
-# Date created:		2008-07-21
-# Whom:			glarkin@
-#
+# Created by: glarkin@
 # $FreeBSD$
-#
 
 PORTNAME=	SVN-Notify-Filter-AuthZMail
 PORTVERSION=	1.01
@@ -20,7 +16,8 @@ RUN_DEPENDS=	p5-SVN-Notify>=2.72:${PORTSDIR}/devel/p5-SVN-Notify \
 BUILD_DEPENDS=	p5-SVN-Notify>=2.72:${PORTSDIR}/devel/p5-SVN-Notify \
 		p5-SVN-Access>=0:${PORTSDIR}/devel/p5-SVN-Access
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		SVN::Notify::Filter::AuthZMail.3
 
