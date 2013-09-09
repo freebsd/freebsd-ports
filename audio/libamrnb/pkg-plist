@@ -19,4 +19,4 @@ lib/libamrnb.a
 lib/libamrnb.la
 lib/libamrnb.so
 lib/libamrnb.so.3
-@dirrm include/amrnb
+@dirrmtry include/amrnb
