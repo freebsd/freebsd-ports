@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class::Container
-# Date created:				5 July 2002
-# Whom:					Denis Shaposhnikov <dsh@vlink.ru>
-#
+# Created by: Denis Shaposhnikov <dsh@vlink.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Container
 PORTVERSION=	0.12
@@ -17,7 +13,8 @@ COMMENT=	Glues object frameworks together transparently
 BUILD_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::Container.3
 

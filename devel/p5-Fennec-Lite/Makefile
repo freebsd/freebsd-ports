@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Fennec::Lite
-# Date created:		23 Nov 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Fennec-Lite
 PORTVERSION=	0.004
@@ -14,7 +9,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for minimalist Fennec, the commonly used bits
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Fennec::Lite.3
 

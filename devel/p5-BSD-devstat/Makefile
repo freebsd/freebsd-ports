@@ -1,9 +1,4 @@
-# New ports collection makefile for:	BSD::devstat
-# Date created:		25 Mar 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	BSD-devstat
 PORTVERSION=	0.02
@@ -15,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension of devstat(3) API
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	BSD::devstat.3
 

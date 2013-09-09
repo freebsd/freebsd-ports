@@ -29,7 +29,8 @@ RUN_DEPENDS=	p5-Module-Runtime>=0.012:${PORTSDIR}/devel/p5-Module-Runtime \
 		p5-Getopt-Long-Descriptive>=0.093:${PORTSDIR}/devel/p5-Getopt-Long-Descriptive \
 		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		MooX::Options.3 \
 		MooX::Options::Role.3

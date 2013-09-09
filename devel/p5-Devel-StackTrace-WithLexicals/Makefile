@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Devel::StackTrace::WithLexicals
-# Date created:		13 Oct 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-StackTrace-WithLexicals
 PORTVERSION=	0.10
@@ -19,7 +14,8 @@ RUN_DEPENDS=	\
 	p5-PadWalker>=1.92:${PORTSDIR}/devel/p5-PadWalker
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Devel::StackTrace::WithLexicals.3
 

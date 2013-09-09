@@ -1,9 +1,4 @@
-# New ports collection makefile for:	p5-Term-ReadPassword
-# Date created:		Aug 29 2005
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Term-ReadPassword
 PORTVERSION=	0.11
@@ -14,7 +9,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module for asking the user for a password
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		Term::ReadPassword.3
 
 .include <bsd.port.mk>
