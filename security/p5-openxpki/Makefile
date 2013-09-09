@@ -13,6 +13,8 @@ DIST_SUBDIR=	openxpki
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Perl based trustcenter software for PKI: core for server
 
+LICENSE=	ART20
+
 BUILD_DEPENDS=	\
 	p5-Workflow>=0.31:${PORTSDIR}/devel/p5-Workflow \
 	p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session \
@@ -279,14 +281,13 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::XML::Cache.3 \
 	OpenXPKI::XML::Config.3 \
 	OpenXPKI::i18n.3
-USE_GMAKE=	yes
 USE_OPENSSL=	yes
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		gmake perl5
+WITH_OPENSSL_BASE=	yes
 
 USERS=	openxpki
 GROUPS=	openxpki
-
-LICENSE=	ART20
 
 OPTIONS_DEFINE=	DEVELOPER GRAPHVIZ
 DEVELOPER_DESC=	Install development tools for OpenXPKI?
@@ -300,20 +301,6 @@ GRAPHVIZ_DESC=	With graphical visualization of workflows?
 
 .include <bsd.port.options.mk>
 
-# this port needs openssl-0.9.8+, but does not yet compile with openssl-1.0.0+
-# freebsd-6 or less has base openssl-0.9.7 which is bad
-# freebsd-7 or more has base openssl-0.9.8 which is good
-# openssl from port now has version 1.0.0 only
-.if ${OSVERSION} < 700000
-IGNORE=	needs openssl-0.9.8+, but does not yet compile with openssl-1.0.0+
-.endif
-.if ${OSVERSION} >= 700000
-WITH_OPENSSL_BASE=	yes
-
-.endif
-
-.include <bsd.port.pre.mk>
-
 .if ${PORT_OPTIONS:MDEVELOPER}
 RUN_DEPENDS+=	${LOCALBASE}/bin/fop:${PORTSDIR}/textproc/fop \
 		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt \
@@ -323,6 +310,16 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/fop:${PORTSDIR}/textproc/fop \
 .if ${PORT_OPTIONS:MGRAPHVIZ}
 RUN_DEPENDS+=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
 		${LOCALBASE}/bin/imgsize:${PORTSDIR}/graphics/p5-Image-Size
+.endif
+
+.include <bsd.port.pre.mk>
+
+# this port needs OpenSSL 0.9.8+, but does not yet compile with OpenSSL 1.0.0+
+# FreeBSD 7,8,9 have base OpenSSL 0.9.8 which is good
+# FreeBSD 10 has base OpenSSL 1.0+ which is bad
+# OpenSSL from port now has version 1.0+ only
+.if ${OSVERSION} >= 1000000
+IGNORE=	needs OpenSSL 0.9.8+, but does not yet compile with OpenSSL 1.0.0+
 .endif
 
 .include <bsd.port.post.mk>
