@@ -1,0 +1,11 @@
+--- modules/gui/qt4/Makefile.in.orig
++++ modules/gui/qt4/Makefile.in
+@@ -3499,7 +3499,7 @@ uninstall-am: uninstall-libvlcLTLIBRARIE
+ 
+ 
+ resources.cpp: vlc.qrc $(DEPS_res)
+-	$(AM_V_GEN)$(RCC) -name vlc -o $@ $<
++	$(AM_V_GEN)$(RCC) -name vlc -o $@ vlc.qrc
+ 
+ .hpp.moc.cpp:
+ @HAVE_DARWIN_TRUE@	$(moc_verbose)$(MOC) -DQ_WS_MAC $(DEFS) -I$(top_srcdir)/include -I$(top_builddir)/include -I$(top_builddir) $(CPPFLAGS_qt4) -o $@ $<
