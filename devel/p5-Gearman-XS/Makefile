@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Gearman-XS
-# Date created:				July 3rd 2009
-# Whom:	      				Alex Kapranoff <ka@nadoby.ru>
-#
+# Created by: Alex Kapranoff <ka@nadoby.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Gearman-XS
 PORTVERSION=	0.12
@@ -20,7 +16,8 @@ LIB_DEPENDS=	gearman:${PORTSDIR}/devel/gearmand
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 INSTALL_TARGET=	pure_install
 

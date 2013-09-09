@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Data-ClearSilver-HDF
-# Date created:	   14 Aug 2008
-# Whom:		   Denis Pokataev <catone@cpan.org>
-#
+# Created by: Denis Pokataev <catone@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-ClearSilver-HDF
 PORTVERSION=	0.04
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-ClearSilver>=0:${PORTSDIR}/www/p5-ClearSilver \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	cspage.1
 

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	File-Grep
-# Date created:			08 May 2004
-# Whom:				Xavier Beaudouin <kiwi@oav.net>
-#
+# Created by: Xavier Beaudouin <kiwi@oav.net>
 # $FreeBSD$
 
 PORTNAME=	File-Grep
@@ -13,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Perl Module that Find matches to a pattern in files or function
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Grep.3
 

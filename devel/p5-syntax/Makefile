@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Data-OptList>=0.104:${PORTSDIR}/devel/p5-Data-OptList \
 		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	syntax.3
 
