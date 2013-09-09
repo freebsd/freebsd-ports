@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Thread-Queue-Duplex
-# Date created:		2006-08-29
-# Whom:			Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-#
+# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Thread-Queue-Duplex
 PORTVERSION=	0.92
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tjs@cdpa.nsysu.edu.tw
 COMMENT=	Thread-safe request/response queue with identifiable elements
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Thread::Queue::Duplex.3 Thread::Queue::Queueable.3
 

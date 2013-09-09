@@ -13,7 +13,8 @@ COMMENT=	Perl extension for MessagePack
 TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-LeakTrace>0:${PORTSDIR}/devel/p5-Test-LeakTrace
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	--xs
 
 MAKE_JOBS_UNSAFE=	yes

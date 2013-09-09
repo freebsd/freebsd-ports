@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Thread-Apartment
-# Date created:		2006-08-29
-# Whom:			Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-#
+# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Thread-Apartment
 PORTVERSION=	0.51
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-Thread-Queue-Duplex>=0.92:${PORTSDIR}/devel/p5-Thread-Queue-Dupl
 		p5-Class-Inspector>=1.08:${PORTSDIR}/devel/p5-Class-Inspector
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Thread::Apartment.3
 

@@ -12,7 +12,8 @@ RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake \
 		bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 PLIST_FILES=	bin/colormake bin/colormake.pl bin/colormake-short bin/clmake \
 		bin/clmake-short
 

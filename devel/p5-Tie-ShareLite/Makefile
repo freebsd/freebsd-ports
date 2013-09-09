@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Tie-ShareLite
-# Date created:				21 Dec 2005
-# Whom:	      				jnlin@csie.nctu.edu.tw
-#
+# Created by: jnlin@csie.nctu.edu.tw
 # $FreeBSD$
-#
 
 PORTNAME=	Tie-ShareLite
 PORTVERSION=	0.03
@@ -17,7 +13,8 @@ COMMENT=	Tied hash interface to IPC::ShareLite
 
 RUN_DEPENDS=	p5-IPC-ShareLite>=0:${PORTSDIR}/devel/p5-IPC-ShareLite
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Tie::ShareLite.3
 

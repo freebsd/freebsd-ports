@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Devel::Declare::Parser
-# Date created:		21 Nov 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-Declare-Parser
 PORTVERSION=	0.017
@@ -22,7 +17,8 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception-LessClever>=0:${PORTSDIR}/devel/p5-Test-Exception-LessClever
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Devel::Declare::Interface.3 \
 	Devel::Declare::Parser.3 \
