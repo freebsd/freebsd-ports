@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A high level MVC web framework written in Perl
+COMMENT=	High level MVC web framework written in Perl
 
 LICENSE=	ART20
 
@@ -16,9 +16,10 @@ BUILD_DEPENDS=	p5-EV>=4:${PORTSDIR}/devel/p5-EV
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	IPV6 TLS
-OPTIONS_DEFAULT=IPV6 TLS
+OPTIONS_DEFAULT=TLS
 
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
+USES=		perl5
 
 MAN1=		hypnotoad.1 \
 		mojo.1 \
