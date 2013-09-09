@@ -24,4 +24,4 @@ lib/libamrwb.a
 lib/libamrwb.la
 lib/libamrwb.so
 lib/libamrwb.so.3
-@dirrm include/amrwb
+@dirrmtry include/amrwb
