@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-DISTVERSION?=	9.3beta2
+DISTVERSION?=	9.3.0
 PORTREVISION?=	0
 PKGNAMESUFFIX?=	-server
 
