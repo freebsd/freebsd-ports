@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wiggle
-PORTVERSION=	0.9.1
+PORTVERSION=	1.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://neil.brown.name/wiggle/
 
