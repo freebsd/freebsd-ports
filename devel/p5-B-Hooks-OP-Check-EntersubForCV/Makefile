@@ -1,9 +1,4 @@
-# New ports collection makefile for:	B::Hooks::OP::Check::EntersubForCV
-# Date created:		22 Nov 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	B-Hooks-OP-Check-EntersubForCV
 PORTVERSION=	0.09
@@ -22,7 +17,8 @@ BUILD_DEPENDS=	\
 	p5-B-Utils>0:${PORTSDIR}/devel/p5-B-Utils \
 	p5-ExtUtils-Depends>0:${PORTSDIR}/devel/p5-ExtUtils-Depends
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	B::Hooks::OP::Check::EntersubForCV.3
 

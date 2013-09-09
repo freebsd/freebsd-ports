@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Metabase-Fact
-# Date created:		2011-02-05
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Metabase-Fact
 PORTVERSION=	0.021
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-JSON>=2.0:${PORTSDIR}/converters/p5-JSON \
 		p5-CPAN-DistnameInfo>0:${PORTSDIR}/devel/p5-CPAN-DistnameInfo
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	metabase-profile.1
 MAN3=	Metabase::Fact.3 Metabase::Resource::metabase.3 \

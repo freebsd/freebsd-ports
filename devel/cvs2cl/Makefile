@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cvs2cl
-# Date created:		6 June 2000
-# Whom:			knu@FreeBSD.org
-#
+# Created by: knu@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	cvs2cl
 PORTVERSION=	2.73
@@ -18,7 +14,7 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	CVS-log-message-to-ChangeLog conversion script
 
-USE_PERL5=	yes
+USES=		perl5
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

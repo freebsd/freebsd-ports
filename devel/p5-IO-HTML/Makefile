@@ -13,7 +13,8 @@ COMMENT=	Open an HTML file with automatic charset detection
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		IO::HTML.3
 
