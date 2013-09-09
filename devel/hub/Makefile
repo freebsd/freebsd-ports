@@ -5,7 +5,7 @@ PORTNAME=	hub
 PORTVERSION=	1.10.6
 CATEGORIES=	devel
 
-MAINTAINER=	simon@olofsson.de
+MAINTAINER=	koukopoulos@gmail.com
 COMMENT=	Introduces git to GitHub
 
 USE_GITHUB=	yes
