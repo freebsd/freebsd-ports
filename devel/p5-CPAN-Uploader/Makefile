@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	cpan-upload.1
 MAN3=	CPAN::Uploader.3

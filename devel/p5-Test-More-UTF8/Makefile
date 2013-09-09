@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Test-More-UTF8
-# Date created:				11 Feb 2010
-# Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-More-UTF8
 PORTVERSION=	0.04
@@ -17,7 +13,8 @@ COMMENT=	Enhancing Test::More for UTF-8-based projects
 BUILD_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::More::UTF8.3
 

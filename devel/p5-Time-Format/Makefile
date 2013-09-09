@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	Sergey.Dyatko@gmail.com
 COMMENT=	Easy-to-use date/time formatting
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Time::Format.3
 

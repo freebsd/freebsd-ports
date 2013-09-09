@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-lib-abs
-# Date created:		2009-07-21
-# Whom:			Mons Anderson <mons@cpan.org>
-#
+# Created by: Mons Anderson <mons@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lib-abs
 PORTVERSION=	0.92
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mons@cpan.org
 COMMENT=	Relative use lib in absolute way
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		lib::abs.3
 

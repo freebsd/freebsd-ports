@@ -1,9 +1,4 @@
-# New ports collection makefile for:	IO::Callback
-# Date created:		02 Jun 2012
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	IO-Callback
 PORTVERSION=	1.10
@@ -24,7 +19,8 @@ TEST_DEPENDS=	\
 	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception \
 	p5-Test-NoWarnings>0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	IO::Callback.3
 
