@@ -11,8 +11,7 @@ MASTER_SITES=	SF/vavoom/Resources/vmodels-doom/1.4.3:vmd \
 		SF/vavoom/Resources/vmodels-strife/1.4.3:vms \
 		SF/vavoom/Resources/vmusic/1.0:vmu \
 		SF/vavoom/Resources/vtextures/1.0:vt10 \
-		SF/vavoom/Resources/vtextures/1.1:vt11 \
-		http://doomtextures.freelanzer.com/:dt
+		SF/vavoom/Resources/vtextures/1.1:vt11
 
 MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Doom, Doom II, Heretic, Hexen, and Strife source port (extras)
@@ -24,15 +23,15 @@ DATADIR=	${PREFIX}/share/vavoom
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-NO_PACKAGE=	package could be up to 661MB; set FORCE_PACKAGE if you really want it
+NO_PACKAGE=	package could be up to 655MB; set FORCE_PACKAGE if you really want it
 
-OPTIONS_GROUP=	EXTRA
-OPTIONS_GROUP_EXTRA=	MODELS SOUNDTRACKS TEXTURES DHTP
+OPTIONS_MULTI=	EXTRA
+OPTIONS_MULTI_EXTRA=	MODELS SOUNDTRACKS TEXTURES
+OPTIONS_DEFAULT=	MODELS
 
 MODELS_DESC=	Install 3D models (17MB)
 SOUNDTRACKS_DESC=	Install enhanced soundtracks (482MB)
 TEXTURES_DESC=	Install high resolution textures (157MB)
-DHTP_DESC=	Prefer Doom Hires Texture Pack (87MB)
 
 .include <bsd.port.options.mk>
 
@@ -46,15 +45,11 @@ PLIST_SUB+=	MODELS=""
 PLIST_SUB+=	MODELS="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MDHTP}
-DISTFILES+=	vv-dhtp-20080808.pk3:dt
-PLIST_SUB+=	DHTP=""
-.else
-PLIST_SUB+=	DHTP="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MTEXTURES}
-. for f in heretic hexen strife
+. for f in doom doom1 doom2
+DISTFILES+=	vtextures-${f}-1.1${EXTRACT_SUFX}:vt11
+. endfor
+. for f in heretic hexen plutonia strife tnt
 DISTFILES+=	vtextures-${f}-1.0${EXTRACT_SUFX}:vt10
 . endfor
 PLIST_SUB+=	TEXTURES=""
@@ -62,20 +57,8 @@ PLIST_SUB+=	TEXTURES=""
 PLIST_SUB+=	TEXTURES="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MTEXTURES} && empty(PORT_OPTIONS:MDHTP)
-. for f in plutonia tnt
-DISTFILES+=	vtextures-${f}-1.0${EXTRACT_SUFX}:vt10
-. endfor
-. for f in doom doom1 doom2
-DISTFILES+=	vtextures-${f}-1.1${EXTRACT_SUFX}:vt11
-. endfor
-PLIST_SUB+=	NODHTP=""
-.else
-PLIST_SUB+=	NODHTP="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MSOUNDTRACKS}
-. for f in doom1 doom2 tnt plutonia heretic hexen
+. for f in doom1 doom2 heretic hexen tnt plutonia
 DISTFILES+=	vmusic-${f}-1.0${EXTRACT_SUFX}:vmu
 . endfor
 PLIST_SUB+=	SOUNDTRACKS=""
