@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-API-Peek
-# Date created:	   11 November 2003
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-API-Peek
 DISTVERSION=	2.20
@@ -23,7 +19,8 @@ BUILD_DEPENDS=	p5-POE>=1.311:${PORTSDIR}/devel/p5-POE \
 		p5-Devel-Size>0:${PORTSDIR}/devel/p5-Devel-Size
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 INSTALL_TARGET=	pure_install
 
 MAN3=		POE::API::Peek.3

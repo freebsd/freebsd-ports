@@ -22,7 +22,8 @@ TEST_DEPENDS=	p5-Test-Script-Run>=1.02:${PORTSDIR}/devel/p5-Test-Script-Run \
 		p5-Compress-Bzip2>=0:${PORTSDIR}/archivers/p5-Compress-Bzip2 \
 		p5-Test-Script>=1.02:${PORTSDIR}/devel/p5-Test-Script
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		cpaninject.1
 MAN3=		CPAN::Inject.3

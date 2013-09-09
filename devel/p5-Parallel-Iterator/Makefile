@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Parallel-Iterator
-# Date created:				2010-09-30
-# Whom:					Frederic Culot <frederic@culot.org>
-#
+# Created by: Frederic Culot <frederic@culot.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Parallel-Iterator
 PORTVERSION=	1.00
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Simple parallel execution
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Parallel::Iterator.3
 

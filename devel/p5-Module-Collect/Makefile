@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Module::Collect
-# Date created:		22 Jan 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Module-Collect
 PORTVERSION=	0.06
@@ -18,7 +13,8 @@ RUN_DEPENDS=	\
 	p5-File-Find-Rule>0:${PORTSDIR}/devel/p5-File-Find-Rule
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Module::Collect.3 \
 		Module::README.3 \

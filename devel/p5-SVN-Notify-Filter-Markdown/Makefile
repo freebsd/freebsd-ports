@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SVN-Notify-Filter-Markdown
-# Date created:		2008-04-21
-# Whom:			Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	SVN-Notify-Filter-Markdown
 PORTVERSION=	0.05
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-SVN-Notify>=2.70:${PORTSDIR}/devel/p5-SVN-Notify \
 		p5-Text-Markdown>=1.04:${PORTSDIR}/textproc/p5-Text-Markdown \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		SVN::Notify::Filter::Markdown.3
 

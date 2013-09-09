@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-boolean>=0:${PORTSDIR}/devel/p5-boolean \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-MockTime>=0:${PORTSDIR}/devel/p5-Test-MockTime
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=		dateparse.1
 

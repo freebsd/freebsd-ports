@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-PerlIO-eol
-# Date created:				Oct 19 2004
-# Whom:					Rong-En Fan <rafan@infor.org>
-#
+# Created by: Rong-En Fan <rafan@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	PerlIO-eol
 PORTVERSION=	0.14
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	PerlIO layer for normalizing line endings
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		PerlIO::eol.3
 
