@@ -22,7 +22,7 @@ LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2 \
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	uses SSE extensions
 
-USES=		cmake:outsource
+USES=		cmake:outsource pkgconfig
 USE_XZ=		yes
 USE_GNOME=	librsvg2
 USE_SQLITE=	yes

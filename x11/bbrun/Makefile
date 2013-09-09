@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bbrun
-# Date created:				3 August 2001
-# Whom:					Adam Weinberger <adam@vectors.cx>
-#
+# Created by: Adam Weinberger <adam@vectors.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	bbrun
 PORTVERSION=	1.6
@@ -18,7 +14,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/bbrun
 
 USE_XORG=	xpm
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_CSTD=	gnu89
 
 PORTDOCS=	README

@@ -1,9 +1,5 @@
-# New ports collection makefile for: apvlv
-# Date created:                03 May 2010
-# Whom:                        Ju Pengfei <jupengfei@gmail.com>
-#
+# Created by: Ju Pengfei <jupengfei@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	apvlv
 PORTVERSION=	0.1.4
@@ -19,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	poppler-glib.8:${PORTSDIR}/graphics/poppler-glib
 
 USE_GNOME=	gtk20
-USES=		cmake
+USES=		cmake pkgconfig
 CMAKE_ARGS+=	-DSYSCONFDIR=${PREFIX}/etc \
 		-DMANDIR=${MANPREFIX}/man \
 		-DDOCDIR=${DOCSDIR} \

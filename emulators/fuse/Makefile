@@ -16,6 +16,7 @@ LIB_DEPENDS=	spectrum:${PORTSDIR}/emulators/libspectrum \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_GNOME=	libxml2 glib20 gtk20
 
 CONFIGURE_ARGS+=--without-alsa --without-joystick

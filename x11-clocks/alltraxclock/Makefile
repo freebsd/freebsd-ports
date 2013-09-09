@@ -1,9 +1,5 @@
-# New ports collection makefile for:	alltraxclock
-# Date created:				11 Feb 2004
-# Whom:					Roman Bogorodskiy <bogorodskiy@inbox.ru>
-#
+# Created by: Roman Bogorodskiy <bogorodskiy@inbox.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	alltraxclock
 PORTVERSION=	2.0.2
@@ -20,6 +16,7 @@ COMMENT=	An analog clock plugin for gkrellm2
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
+USES=		pkgconfig
 ALL_TARGET=	alltraxclock.so
 PLIST_FILES=	libexec/gkrellm2/plugins/alltraxclock.so
 WRKSRC=		${WRKDIR}/${PORTNAME}2_0.2/

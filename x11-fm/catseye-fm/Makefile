@@ -1,9 +1,5 @@
-# New ports collection makefile for:   oneko
-# Date created:        9 May 2009
-# Whom:                Geyer Klaus
-#
+# Created by: Geyer Klaus
 # $FreeBSD$
-#
 
 PORTNAME=	catseye-fm
 PORTVERSION=	4.2.0.0
@@ -15,6 +11,7 @@ MASTER_SITES=	http://catseye-fm.sourceforge.net/downloads/ \
 MAINTAINER=	klausgeyer@gmx.de
 COMMENT=	Clear, fast, powerful file browser using gtk+2.0
 
+USES=		pkgconfig
 USE_GNOME=	gtk20
 
 PLIST_FILES=	bin/catseye-fm \

@@ -22,7 +22,7 @@ LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus \
 RUN_DEPENDS=	xli:${PORTSDIR}/graphics/xli
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 librsvg2 pango
 USE_XORG+=	ice sm x11 xcomposite xcursor xdamage xext xfixes xi xinerama \
 		xrandr xrender

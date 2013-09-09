@@ -1,9 +1,5 @@
-# New ports collection makefile for:	docker
-# Date created:				March 15, 2003
-# Whom:					Samy Al Bahra <samy@kerneled.org>
-#
+# Created by: Samy Al Bahra <samy@kerneled.org>
 # $FreeBSD$
-#
 
 PORTNAME=	docker
 PORTVERSION=	1.5
@@ -20,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_XORG=	x11
 USE_GNOME=	glib20
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 
 PLIST_FILES=	bin/docker
 

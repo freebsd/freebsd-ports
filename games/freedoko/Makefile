@@ -1,9 +1,5 @@
-# New ports collection makefile for:	FreeDoko
-# Date created:		02 Jun 2004
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	freedoko
 PORTVERSION=	0.7.11
@@ -24,7 +20,7 @@ LIB_DEPENDS=	gnet-2.0.0:${PORTSDIR}/net/gnet2 \
 WRKSRC=		${WRKDIR}/${DISTNAME:C/\.src$//}/src
 
 USE_ZIP=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 MAKE_ENV=	OS="${OPSYS}" DATADIR="${DATADIR}" DOCSDIR="${DOCSDIR}"
 
 post-patch:

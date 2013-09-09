@@ -15,9 +15,9 @@ BUILD_DEPENDS=	p5-SDL>=0:${PORTSDIR}/devel/p5-SDL
 RUN_DEPENDS=	p5-SDL>=0:${PORTSDIR}/devel/p5-SDL
 
 USE_SDL=	mixer sdl pango
-USE_GMAKE=	yes
+USES=		gmake perl5 pkgconfig
 USE_BZIP2=	yes
-PERL_CONFIGURE=	yes
+USE_PERL5=	configure
 
 CONFIGURE_WRKSRC=	${WRKSRC}/c_stuff
 REINPLACE_ARGS=	-i ""

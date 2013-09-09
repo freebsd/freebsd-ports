@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bfe
-# Date created:		02 February 2000
-# Whom:			jhb
-#
+# Created by: jhb
 # $FreeBSD$
-#
 
 PORTNAME=	bfe2
 PORTVERSION=	20030723
@@ -19,6 +15,7 @@ RUN_DEPENDS=	bochs:${PORTSDIR}/emulators/bochs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		pkgconfig
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.sh
 

@@ -12,6 +12,7 @@ MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	Scientific graphic library for geoscience
 
 MAKE_JOBS_UNSAFE=	yes
+USES=		pkgconfig
 USE_XORG=	x11 xext
 USE_FORTRAN=	yes
 USE_GNOME=	gtk20 gdkpixbuf2

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bxpkg
-# Date Created:				7 February 2011
-# Whom:				 	Kostas Petrikas <kpetrikas@gmail.com>
-#
+# Created by: Kostas Petrikas <kpetrikas@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	bxpkg
 DISTVERSION=	0.0.4_0
@@ -15,6 +11,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}
 MAINTAINER=	kpetrikas@gmail.com
 COMMENT=	bxPKG is a GTK+ based tool to manage binary packages on BSD systems.
 
+USES=		pkgconfig
 USE_XORG=	x11
 USE_GNOME=	gtk20
 
