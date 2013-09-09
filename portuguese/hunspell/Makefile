@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	20130331
+PORTVERSION=	20130902
 CATEGORIES=	portuguese textproc
 MASTER_SITES=	http://natura.di.uminho.pt/download/sources/Dictionaries/hunspell/ \
 		http://www.broffice.org/files/:BR \
