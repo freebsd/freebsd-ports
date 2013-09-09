@@ -14,7 +14,7 @@ DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Google WebP image format conversion tool
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 
 USE_LDCONFIG=	yes
