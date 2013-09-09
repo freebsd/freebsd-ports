@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Config::Fast
-# Date created:				10 Feb 2004
-# Whom:					Xavier Beaudouin <kiwi@oav.net>
-#
+# Created by: Xavier Beaudouin <kiwi@oav.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Config-Fast
 PORTVERSION=	1.07
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Extremely fast configuration file parser
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Config::Fast.3
 
