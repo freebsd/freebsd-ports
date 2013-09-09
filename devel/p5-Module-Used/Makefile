@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Module-Used
-# Date created:		2010-01-12
-# Whom:			Takuya Tsuchida <tsucchi@cpan.org>
-#
+# Created by: Takuya Tsuchida <tsucchi@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Module-Used
 PORTVERSION=	v1.2.0
@@ -22,7 +18,8 @@ RUN_DEPENDS=	p5-File-Next>=1.02:${PORTSDIR}/sysutils/p5-File-Next \
 		p5-Readonly>=1.03:${PORTSDIR}/devel/p5-Readonly
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Module::Used.3
 MAN1=	modules-used.1

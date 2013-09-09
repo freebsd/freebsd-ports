@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-Text-LevenshteinXS
-# Date created:        18 June 2005
-# Whom:                christian
-#
+# Created by: christian
 # $FreeBSD$
-#
 
 PORTNAME=      Text-LevenshteinXS
 PORTVERSION=   0.03
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=  p5-
 MAINTAINER=    christian@karg.org
 COMMENT=       Text::LevenshteinXS - CPAN Levenshtein edit distance
 
-PERL_CONFIGURE= yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=           Text::LevenshteinXS.3
 

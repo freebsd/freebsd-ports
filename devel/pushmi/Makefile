@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pushmi
-# Date created:				Dec 29 2006
-# Whom:					Rong-En Fan <rafan@FreeBSD.org>
-#
+# Created by: Rong-En Fan <rafan@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pushmi
 PORTVERSION=	1.0.0
@@ -29,7 +25,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 		${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_APACHE=	22+
 
 MAN3=		Pushmi.3 \

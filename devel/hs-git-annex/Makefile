@@ -16,7 +16,8 @@ USE_CABAL=	bloomfilter dataenc dlist edit-distance extensible-exceptions \
 		SafeSemaphore SHA text unix-compat utf8-string uuid
 
 USE_GMAKE=		yes
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	build
 
 BUILD_DEPENDS+=	rsync:${PORTSDIR}/net/rsync \
 		git:${PORTSDIR}/devel/git \

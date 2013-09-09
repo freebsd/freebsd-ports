@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-ZooKeeper
-# Date created:		2012-08-20
-# Whom:			Steven Kreuzer <skreuzer@FreeBSD.org>
-#
+# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-ZooKeeper
 PORTVERSION=	0.35
@@ -17,7 +13,8 @@ COMMENT=	Perl extension for Apache ZooKeeper
 BUILD_DEPENDS=	zookeeper>=3.3.5:${PORTSDIR}/devel/zookeeper
 RUN_DEPENDS:=	${BUILD_DEPEND}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS+=	--zookeeper-include ${PREFIX}/include/c-client-src \
 			--zookeeper-include ${PREFIX}/include/zookeeper \
 			--zookeeper-lib ${PREFIX}/libs
