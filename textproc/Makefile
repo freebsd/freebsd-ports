@@ -61,6 +61,7 @@
     SUBDIR += cbedic
     SUBDIR += cdif
     SUBDIR += cdiff
+    SUBDIR += checkbashisms
     SUBDIR += chm2pdf
     SUBDIR += chpp
     SUBDIR += cl-meta
