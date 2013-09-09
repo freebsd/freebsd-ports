@@ -65,6 +65,10 @@ bin/stellarium
 %%DATADIR%%/landscapes/hurricane/hurricane8.png
 %%DATADIR%%/landscapes/hurricane/hurricaneb.png
 %%DATADIR%%/landscapes/hurricane/landscape.ini
+%%DATADIR%%/landscapes/jupiter/description.en.utf8
+%%DATADIR%%/landscapes/jupiter/description.ru.utf8
+%%DATADIR%%/landscapes/jupiter/jupiter-256.png
+%%DATADIR%%/landscapes/jupiter/landscape.ini
 %%DATADIR%%/landscapes/mars/description.ar.utf8
 %%DATADIR%%/landscapes/mars/description.be.utf8
 %%DATADIR%%/landscapes/mars/description.bg.utf8
@@ -89,6 +93,10 @@ bin/stellarium
 %%DATADIR%%/landscapes/moon/description.ru.utf8
 %%DATADIR%%/landscapes/moon/description.uk.utf8
 %%DATADIR%%/landscapes/moon/landscape.ini
+%%DATADIR%%/landscapes/neptune/description.en.utf8
+%%DATADIR%%/landscapes/neptune/description.ru.utf8
+%%DATADIR%%/landscapes/neptune/landscape.ini
+%%DATADIR%%/landscapes/neptune/neptune-256.png
 %%DATADIR%%/landscapes/ocean/description.ar.utf8
 %%DATADIR%%/landscapes/ocean/description.be.utf8
 %%DATADIR%%/landscapes/ocean/description.bg.utf8
@@ -133,6 +141,10 @@ bin/stellarium
 %%DATADIR%%/landscapes/trees/description.uk.utf8
 %%DATADIR%%/landscapes/trees/landscape.ini
 %%DATADIR%%/landscapes/trees/trees_512.png
+%%DATADIR%%/landscapes/uranus/description.en.utf8
+%%DATADIR%%/landscapes/uranus/description.ru.utf8
+%%DATADIR%%/landscapes/uranus/landscape.ini
+%%DATADIR%%/landscapes/uranus/uranus-256.png
 %%DATADIR%%/nebulae/default/etaCarinae_gzotti.png
 %%DATADIR%%/nebulae/default/ic1805.png
 %%DATADIR%%/nebulae/default/ic1848.png
@@ -828,11 +840,14 @@ bin/stellarium
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/nebulae/default
 @dirrm %%DATADIR%%/nebulae
+@dirrm %%DATADIR%%/landscapes/uranus
 @dirrm %%DATADIR%%/landscapes/trees
 @dirrm %%DATADIR%%/landscapes/saturn
 @dirrm %%DATADIR%%/landscapes/ocean
+@dirrm %%DATADIR%%/landscapes/neptune
 @dirrm %%DATADIR%%/landscapes/moon
 @dirrm %%DATADIR%%/landscapes/mars
+@dirrm %%DATADIR%%/landscapes/jupiter
 @dirrm %%DATADIR%%/landscapes/hurricane
 @dirrm %%DATADIR%%/landscapes/guereins
 @dirrm %%DATADIR%%/landscapes/garching
