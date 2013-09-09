@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ejabberd
-PORTVERSION=	2.1.11
+PORTVERSION=	2.1.13
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/ejabberd/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
