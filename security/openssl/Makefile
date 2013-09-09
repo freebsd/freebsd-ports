@@ -15,8 +15,6 @@ DIST_SUBDIR=	${DISTNAME}2
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SSL and crypto library
 
-BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
-
 .ifdef USE_OPENSSL
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
