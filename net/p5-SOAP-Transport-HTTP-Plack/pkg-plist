@@ -1,0 +1,13 @@
+%%SITE_PERL%%/SOAP/Transport/HTTP/Plack.pm
+%%SITE_PERL%%/XMLRPC/Transport/HTTP/Plack.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Transport/HTTP/Plack/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Transport/HTTP/Plack
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Transport/HTTP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Transport
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP
+@dirrmtry %%SITE_PERL%%/XMLRPC/Transport/HTTP
+@dirrmtry %%SITE_PERL%%/XMLRPC/Transport
+@dirrmtry %%SITE_PERL%%/XMLRPC
+@dirrmtry %%SITE_PERL%%/SOAP/Transport/HTTP
+@dirrmtry %%SITE_PERL%%/SOAP/Transport
+@dirrmtry %%SITE_PERL%%/SOAP
