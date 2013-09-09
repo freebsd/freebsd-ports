@@ -42,6 +42,8 @@ INFO=		make
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '/no-print-dir/s/@itemx/@item/' \
+		${WRKSRC}/doc/make.texi
 	@${RM} ${WRKSRC}/doc/make.info*
 
 # joerg@freebsd.org says our getloadavg() no longer requires setgid kmem
