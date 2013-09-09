@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	audacity
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.0.4
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE \
 		SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
@@ -14,7 +13,7 @@ COMMENT=	GUI editor for digital audio waveforms
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 
@@ -31,14 +30,15 @@ MANCOMPRESSED=	yes
 PORTDOCS=	README.txt
 
 OPTIONS_DEFINE=	DOCS FFMPEG FLAC ID3TAG JACK LADSPA MAD NYQUIST PORTMIXER \
-		SAMPLERATE SBSMS SSE TAGLIB TWOLAME VAMP VORBIS
+		SAMPLERATE SBSMS SOXR SSE TAGLIB TWOLAME VAMP VORBIS
 OPTIONS_DEFAULT=	FFMPEG FLAC ID3TAG JACK LADSPA MAD NYQUIST \
-			PORTMIXER SAMPLERATE SBSMS SSE TAGLIB \
+			PORTMIXER SAMPLERATE SBSMS SOXR SSE TAGLIB \
 			TWOLAME VAMP VORBIS
 
 NYQUIST_DESC=	Nyquist plug-in support
 PORTMIXER_DESC=	Compile with PortMixer support
 SBSMS_DESC=	Use libsbsms for pitch and tempo changing
+SOXR_DESC=	Use libsoxr for sample rate conversion
 SSE=		Enable SSE optimizations
 TAGLIB_DESC=	Use TagLib for metadata support
 TWOLAME_DESC=	Use libtwolame for MP2 export support
@@ -73,21 +73,21 @@ CONFIGURE_ARGS+=	--without-ffmpeg
 .endif
 
 .if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=		FLAC:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=		libFLAC.so:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=	--with-libflac
 .else
 CONFIGURE_ARGS+=	--without-libflac
 .endif
 
 .if ${PORT_OPTIONS:MID3TAG}
-LIB_DEPENDS+=		id3tag:${PORTSDIR}/audio/libid3tag
+LIB_DEPENDS+=		libid3tag.so:${PORTSDIR}/audio/libid3tag
 CONFIGURE_ARGS+=	--with-libid3tag
 .else
 CONFIGURE_ARGS+=	--without-libid3tag
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=		jack:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=		libjack.so:${PORTSDIR}/audio/jack
 CONFIGURE_ARGS+=	--with-jack
 .else
 CONFIGURE_ARGS+=	--without-jack
@@ -101,7 +101,7 @@ CONFIGURE_ARGS+=	--disable-ladspa
 .endif
 
 .if ${PORT_OPTIONS:MMAD}
-LIB_DEPENDS+=		mad:${PORTSDIR}/audio/libmad
+LIB_DEPENDS+=		libmad.so:${PORTSDIR}/audio/libmad
 CONFIGURE_ARGS+=	--with-libmad
 .else
 CONFIGURE_ARGS+=	--without-libmad
@@ -120,10 +120,10 @@ CONFIGURE_ARGS+=	--without-portmixer
 .endif
 
 .if ${PORT_OPTIONS:MSAMPLERATE}
-LIB_DEPENDS+=		samplerate:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS+=		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=	--with-libsamplerate
 .else
-BUILD_DEPENDS+=		cmake:${PORTSDIR}/devel/cmake
+USES+=			cmake
 CONFIGURE_ARGS+=	--without-libsamplerate
 .endif
 
@@ -137,15 +137,19 @@ CONFIGURE_ARGS+=	--without-sbsms
 CONFIGURE_ARGS+=	--with-sse
 .endif
 
+.if ${PORT_OPTIONS:MSOXR}
+CONFIGURE_ARGS+=	--with-libsoxr
+.endif
+
 .if ${PORT_OPTIONS:MTWOLAME}
-LIB_DEPENDS+=		twolame:${PORTSDIR}/audio/twolame
+LIB_DEPENDS+=		libtwolame.so:${PORTSDIR}/audio/twolame
 CONFIGURE_ARGS+=	--with-libtwolame
 .else
 CONFIGURE_ARGS+=	--without-libtwolame
 .endif
 
 .if ${PORT_OPTIONS:MTAGLIB}
-LIB_DEPENDS+=		tag:${PORTSDIR}/audio/taglib
+LIB_DEPENDS+=		libtag.so:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS+=	--with-taglib
 .else
 CONFIGURE_ARGS+=	--without-taglib
@@ -158,7 +162,7 @@ CONFIGURE_ARGS+=	--without-libvamp
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=		vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=		libvorbis.so:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--with-libvorbis
 .else
 CONFIGURE_ARGS+=	--without-libvorbis
