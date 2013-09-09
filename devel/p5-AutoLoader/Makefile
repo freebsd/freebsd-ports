@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-AutoLoader
-# Date created:				Jan 18 2007
-# Whom:					Rong-En Fan <rafan@FreeBSD.org>
-#
+# Created by: Rong-En Fan <rafan@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	AutoLoader
 PORTVERSION=	5.73
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Load subroutines only on demand
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		AutoLoader.3 AutoSplit.3
 

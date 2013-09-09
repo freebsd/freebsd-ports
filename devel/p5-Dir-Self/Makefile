@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Dir-Self
-# Date created:		2011-05-19
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Dir-Self
 PORTVERSION=	0.10
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A __DIR__ constant for the directory your source file is in
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Dir::Self.3
 

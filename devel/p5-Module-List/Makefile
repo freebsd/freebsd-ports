@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Module-List
-# Date created:				2008-06-09
-# Whom:					Oleg A. Mamontov <oleg@mamontov.net>
-#
+# Created by: Oleg A. Mamontov <oleg@mamontov.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Module-List
 PORTVERSION=	0.003
@@ -16,7 +12,8 @@ COMMENT=	Module 'directory' listing
 
 RUN_DEPENDS=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Module::List.3
 
