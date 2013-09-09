@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seed7
-DISTVERSION=	05_20130820
+DISTVERSION=	05_20130908
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -34,7 +34,7 @@ PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
-MAKEFILE=	mk_freebsd.mak
+MAKEFILE=	mk_freebsd.mk
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g;' ${WRKSRC}/${MAKEFILE}
