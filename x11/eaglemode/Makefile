@@ -14,8 +14,9 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		tiff:${PORTSDIR}/graphics/tiff \
 		freetype:${PORTSDIR}/print/freetype2
 
+USES=		perl5 pkgconfig
 USE_BZIP2=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 USE_XORG=	x11 xext xxf86vm
 SUB_FILES=	eaglemode.sh
 

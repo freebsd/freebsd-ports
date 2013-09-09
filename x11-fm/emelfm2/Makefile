@@ -10,7 +10,7 @@ COMMENT=	The gtk2 port of emelfm, a fast graphical filemanager
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install
 

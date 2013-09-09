@@ -4,7 +4,3 @@ share/mime/packages/downtime.xml
 @dirrmtry share/applications
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
