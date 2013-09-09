@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libamrnb
-PORTVERSION=	10.0.0.0
+PORTVERSION=	11.0.0.0
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.penguin.cz/pub/users/utx/amr/ \
@@ -30,18 +30,19 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LANG=C
 MAKE_ENV=	LANG=C
 USE_LDCONFIG=	yes
+OPTIONS_DEFINE=	DOCS
 
-SRC3GPP=	26104-a00.zip
+SRC3GPP=	26104-b00.zip
+
+.include <bsd.port.options.mk>
 
 post-extract:
 	@${CP} ${DISTDIR}/${SRC3GPP} ${WRKSRC}/
 
 post-install:
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-. for FILE in ${PORTDOCS}
-		${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-. endfor
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
 	@${CAT} ${PKGMESSAGE}
 
