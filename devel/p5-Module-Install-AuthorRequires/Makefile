@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Module::Install::AuthorRequires
-# Date created:		09 Sep 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Module-Install-AuthorRequires
 PORTVERSION=	0.02
@@ -18,7 +13,8 @@ RUN_DEPENDS=	\
 	p5-Module-Install>0:${PORTSDIR}/devel/p5-Module-Install
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Module::Install::AuthorRequires.3
 

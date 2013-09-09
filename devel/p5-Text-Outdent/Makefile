@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Text-Outdent
-# Date created:		2011-01-13
-# Whom:			Kurt Lidl <kurt.lidl@cello.com>
-#
+# Created by: Kurt Lidl <kurt.lidl@cello.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Outdent
 PORTVERSION=	0.01
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kurt.lidl@cello.com
 COMMENT=	Strip leading whitespace from here-docs
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Text::Outdent.3
 

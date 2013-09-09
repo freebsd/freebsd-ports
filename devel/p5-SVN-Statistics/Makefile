@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-SVN-Statistics
-# Date created:		2006-07-12
-# Whom:			Yuan-Chung Hsiao <ychsiao@ychsiao.org>
-#
+# Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.org>
 # $FreeBSD$
-#
 
 PORTNAME=	SVN-Statistics
 PORTVERSION=	0.041
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \
 		p5-IO-Toolkit>=0:${PORTSDIR}/devel/p5-IO-Toolkit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	SVN::Statistics.3
 
