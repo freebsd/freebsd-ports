@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-common-sense
-# Date created:		2009-08-12
-# Whom:			Mons Anderson <mons@cpan.org>
-#
+# Created by: Mons Anderson <mons@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	common-sense
 PORTVERSION=	3.6
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mons@cpan.org
 COMMENT=	Perl common defaults with lower memory usage
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		common::sense.3
 

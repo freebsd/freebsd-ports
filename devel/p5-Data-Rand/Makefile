@@ -1,5 +1,4 @@
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Rand
 PORTVERSION=	0.0.4
@@ -13,7 +12,8 @@ COMMENT=	Perl module for generating random strings or arrays
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Data::Rand.3
 

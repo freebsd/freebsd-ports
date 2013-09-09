@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Algorithm::ChooseSubsets
-# Date created:				04 Mar 2005
-# Whom:					lars.eggert@gmx.net
-#
+# Created by: lars.eggert@gmx.net
 # $FreeBSD$
-#
 
 PORTNAME=	Algorithm-ChooseSubsets
 PORTVERSION=	0.02
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	Perl algorithm to iterate through subsets of a list
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Algorithm::ChooseSubsets.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-PerlIO-via-symlink
-# Date created:				Aug 05 2004
-# Whom:					Rong-En Fan <rafan@infor.org>
-#
+# Created by: Rong-En Fan <rafan@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	PerlIO-via-symlink
 PORTVERSION=	0.05
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Symbolic link PerlIO layers
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		PerlIO::via::symlink.3
 

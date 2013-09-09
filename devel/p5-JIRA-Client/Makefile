@@ -1,9 +1,5 @@
-# New ports collection makefile for:	JIRA::Client
-# Date created:		2009-04-28
-# Whom:			Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	JIRA-Client
 PORTVERSION=	0.25
@@ -18,7 +14,8 @@ COMMENT=	An extended interface to JIRA's SOAP API
 RUN_DEPENDS=	p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 PROJECTHOST=	jira-client
 
 MAN3=		JIRA::Client.3
