@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Log-Accounting-SVN
-# Date created:		2006-06-26
-# Whom:			Yuan-Chung Hsiao & <ychsiao@ychsiao.org>
-#
+# Created by: Yuan-Chung Hsiao & <ychsiao@ychsiao.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Log-Accounting-SVN
 PORTVERSION=	0.01
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \
 		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Log::Accounting::SVN.3
 

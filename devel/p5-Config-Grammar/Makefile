@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Config-Grammar
-# Date created:				12 Nov 2011
-# Whom:					Dikshie <dikshie@sfc.wide.ad.jp>
-#
+# Created by: Dikshie <dikshie@sfc.wide.ad.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	Config-Grammar
 PORTVERSION=	1.10
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dikshie@sfc.wide.ad.jp
 COMMENT=	A grammar-based, user-friendly config parser
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Config::Grammar.3 Config::Grammar::Dynamic.3
 

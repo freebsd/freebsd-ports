@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Filesys::Notify::KQueue
-# Date created:		05 Mar 2012
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Filesys-Notify-KQueue
 PORTVERSION=	0.08
@@ -19,7 +14,8 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-SharedFork>=0.19:${PORTSDIR}/devel/p5-Test-SharedFork
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Filesys::Notify::KQueue.3 \
 	Filesys::Notify::README.3

@@ -28,6 +28,7 @@ MAN3=		File::ChangeNotify.3 \
 		File::ChangeNotify::Watcher::Inotify.3 \
 		File::ChangeNotify::Watcher::KQueue.3
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

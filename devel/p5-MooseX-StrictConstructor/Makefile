@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MooseX-StrictConstructor
-# Date created:		2008-10-23
-# Whom:			glarkin
-#
+# Created by: glarkin
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-StrictConstructor
 PORTVERSION=	0.19
@@ -21,7 +17,8 @@ RUN_DEPENDS=	p5-Moose>=0.94:${PORTSDIR}/devel/p5-Moose \
 
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MooseX::StrictConstructor.3 \
 		MooseX::StrictConstructor::Trait::Class.3 \

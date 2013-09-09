@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Parallel::Scoreboard
-# Date created:		31 Dec 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Parallel-Scoreboard
 PORTVERSION=	0.03
@@ -20,7 +15,8 @@ RUN_DEPENDS=	\
 	p5-JSON>0:${PORTSDIR}/converters/p5-JSON
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Parallel::Scoreboard.3 \
 	Parallel::Scoreboard::PSGI::App.3 \

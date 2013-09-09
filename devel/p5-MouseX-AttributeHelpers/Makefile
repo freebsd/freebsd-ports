@@ -1,9 +1,4 @@
-# New ports collection makefile for:	MouseX::AttributeHelpers
-# Date created:		14 Mar 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	MouseX-AttributeHelpers
 PORTVERSION=	0.07
@@ -23,7 +18,8 @@ TEST_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Test-UseAllModules>=0:${PORTSDIR}/devel/p5-Test-UseAllModules \
 		p5-Test-Data>=0:${PORTSDIR}/devel/p5-Test-Data
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	MouseX::AttributeHelpers.3 \
 	MouseX::AttributeHelpers::Base.3 \

@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-Data-TreeDumper>=0:${PORTSDIR}/devel/p5-Data-TreeDumper \
 		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Data::TreeDumper::Renderer::GTK.3
 

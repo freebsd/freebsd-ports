@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-App-Control
-# Date created:				Dec 29 2006
-# Whom:	      				Rong-En Fan <rafan@FreeBSD.org>
-#
+# Created by: Rong-En Fan <rafan@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	App-Control
 PORTVERSION=	1.02
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	An apachectl style control of another script or executable
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		App::Control.3
 
