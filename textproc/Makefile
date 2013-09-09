@@ -1194,6 +1194,7 @@
     SUBDIR += py-sphinx
     SUBDIR += py-sphinxcontrib-adadomain
     SUBDIR += py-sphinxcontrib-bitbucket
+    SUBDIR += py-sphinxcontrib-httpdomain
     SUBDIR += py-stripogram
     SUBDIR += py-syck
     SUBDIR += py-texttable
