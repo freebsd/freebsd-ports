@@ -3,7 +3,7 @@
 
 PORTNAME=	libaacplus
 PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://media.wnet.ua/~tipok/aacplus/:site1\
 		ftp://ftp.3gpp.org/Specs/archive/26_series/26.410/:site2\
@@ -23,18 +23,17 @@ USES=		pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool libtoolize aclocal autoheader automake
 GNOME_MAKEFILEIN=	Makefile.am
+PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 AUTOMAKE_ARGS=	--add-missing
-ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} \
-		-I ${LOCALBASE}/share/aclocal -I ${WRKSRC}/m4
 LIBTOOLIZE_ARGS=--automake
 
 MAN1=		aacplusenc.1
 
 OPTIONS_DEFINE=	FFTW3
-OPTIONS_DEFAULT=	FFTW3
+OPTIONS_DEFAULT=FFTW3
 FFTW3_DESC=	Use FFTW3
 
 .include <bsd.port.options.mk>
@@ -42,8 +41,7 @@ FFTW3_DESC=	Use FFTW3
 .if ${PORT_OPTIONS:MFFTW3}
 LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3\
 		fftw3f:${PORTSDIR}/math/fftw3-float
-CONFIGURE_ARGS+=--with-fftw3=yes \
-		--with-fftw3-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=--with-fftw3=yes --with-fftw3-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-fftw3=no
 .endif
