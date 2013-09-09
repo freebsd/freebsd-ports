@@ -27,7 +27,8 @@ TEST_DEPENDS=	p5-LWP-Online>=0:${PORTSDIR}/www/p5-LWP-Online \
 		p5-Test-Script>=0:${PORTSDIR}/devel/p5-Test-Script \
 		p5-Compress-Bzip2>=0:${PORTSDIR}/archivers/p5-Compress-Bzip2
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Module::Plan::Base.3 \
 		Module::Plan::Lite.3 \

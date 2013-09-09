@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Test::Most
-# Date created:		20 Feb 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Most
 PORTVERSION=	0.31
@@ -22,7 +17,8 @@ RUN_DEPENDS=	\
 	p5-Test-Warn>=0.23:${PORTSDIR}/devel/p5-Test-Warn
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Test::Most.3 \
 	Test::Most::Exception.3

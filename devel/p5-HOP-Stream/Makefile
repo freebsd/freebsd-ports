@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HOP-Stream
-# Date created:		2010-03-04
-# Whom:			Steve Wills <steve@mouf.net>
-#
+# Created by: Steve Wills <steve@mouf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	HOP-Stream
 PORTVERSION=	0.03
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Higher Order Perl Streams
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	HOP::Stream.3
 
