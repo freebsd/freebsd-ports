@@ -20,7 +20,8 @@ RUN_DEPENDS=	p5-AnyEvent>=5:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-Object-Event>=1.21:${PORTSDIR}/devel/p5-Object-Event \
 		p5-common-sense>=2:${PORTSDIR}/devel/p5-common-sense
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		AnyEvent::Connection.3
 
 .include <bsd.port.mk>

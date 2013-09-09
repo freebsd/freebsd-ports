@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	cvsd
-# Date Created:			Dec 31, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	cvsd
 PORTVERSION=	1.0.18
@@ -17,7 +12,7 @@ COMMENT=	CVS pserver daemon
 
 EXTRA_PATCHES=	${FILESDIR}/extra-cvsd-buildroot.in
 
-USE_PERL5=	yes
+USES=		perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libwrap
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \

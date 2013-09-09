@@ -15,7 +15,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Test-Tester>0:${PORTSDIR}/devel/p5-Test-Tester
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Test::Filename.3
 
