@@ -1,9 +1,8 @@
-# Created by:	Baptiste Daroussin <bapt@FreeBSD.org>
+# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mdds
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}_${PORTVERSION}
