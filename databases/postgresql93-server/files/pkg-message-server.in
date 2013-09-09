@@ -13,19 +13,6 @@ databases nightly. Per default, it perfoms `vacuum analyze'. See the
 script for instructions. For autovacuum settings, please review
 ~pgsql/data/postgresql.conf.
 
-To allow many simultaneous connections to your PostgreSQL server, you
-should raise the SystemV shared memory limits in your kernel. Here are
-example values for allowing up to 180 clients (configurations in
-postgresql.conf also needed, of course):
-  options         SYSVSHM
-  options         SYSVSEM
-  options         SYSVMSG
-  options         SHMMAXPGS=65536
-  options         SEMMNI=40
-  options         SEMMNS=240
-  options         SEMUME=40
-  options         SEMMNU=120
-
 If you plan to access your PostgreSQL server using ODBC, please
 consider running the SQL script %%PREFIX%%/share/postgresql/odbc.sql
 to get the functions required for ODBC compliance.
