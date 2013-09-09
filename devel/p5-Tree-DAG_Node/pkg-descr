@@ -7,5 +7,3 @@ which are not allowed in a tree (such as having a node be its own
 mother or ancestor, or having a node have two mothers).
 
 WWW: http://search.cpan.org/dist/Tree-DAG_Node/
-
-Seamus Venasse <svenasse@polaris.ca>
