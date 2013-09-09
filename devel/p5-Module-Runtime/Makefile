@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Module-Runtime
-# Date created:				01 Jun 2008
-# Whom:					brix@FreeBSD.org
-#
+# Created by: brix@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	Module-Runtime
 PORTVERSION=	0.013
@@ -17,7 +13,8 @@ COMMENT=	Perl module for runtime module handling
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Module::Runtime.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Tie-Array-Pack
-# Date created:		2006-12-22
-# Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
-#
+# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Tie-Array-Pack
 PORTVERSION=	0.02
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	Array implemented as a packed string
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Tie::Array::Pack.3
 

@@ -12,7 +12,8 @@ MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Perl extension for accessing a JVM remotely or locally
 
 USE_RC_SUBR=	javaserver
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 

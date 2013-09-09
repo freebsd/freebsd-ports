@@ -22,7 +22,8 @@ BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-lib-abs>=0.90:${PORTSDIR}/devel/p5-lib-abs
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		AnyEvent::RPC.3 AnyEvent::RPC::Enc::YAML.3 \
 		AnyEvent::RPC::Enc::REST.3
 

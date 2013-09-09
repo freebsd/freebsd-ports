@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Log-Dispatch-Configurator-YAML
-# Date created:				28 May 2008
-# Whom:					Oleg Mamontov <oleg@mamontov.net>
-#
+# Created by: Oleg Mamontov <oleg@mamontov.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Log-Dispatch-Configurator-YAML
 PORTVERSION=	0.03
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-Log-Dispatch-Config>=0:${PORTSDIR}/devel/p5-Log-Dispatch-Config 
 BUILD_DEPENDS=	p5-Log-Dispatch-Config>=0:${PORTSDIR}/devel/p5-Log-Dispatch-Config \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Log::Dispatch::Configurator::YAML.3
 
