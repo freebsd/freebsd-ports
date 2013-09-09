@@ -2,23 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	crtmpserver
-PORTVERSION=	0.545
+PORTVERSION=	0.806
 CATEGORIES=	net
 MASTER_SITES=	http://rtmpd.com/assets/sources/
 
 MAINTAINER=	support@rtmpd.com
 COMMENT=	C++ RTSP/RTMP/MPEG-TS Server
 
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
+LICENSE=	GPLv3
 
-WRKSRC=	${WRKDIR}/crtmpserver-545
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
-BROKEN=		fails to build
+USE_LUA=	5.1
+WANT_LUA_VER=	5.1
 
+USE_LDCONFIG=	yes
 USES=		cmake:outsource
-CMAKE_ENV=	"COMPILE_STATIC=1"
 CMAKE_SOURCE_PATH=	${WRKSRC}/builders/cmake
-CMAKE_ARGS=	-DCRTMPSERVER_INSTALL_PREFIX:STRING=${PREFIX} -DTEMP_FRAMEWORK_VER=0.545
+CMAKE_ARGS=	-DCRTMPSERVER_INSTALL_PREFIX:STRING=${PREFIX} -DTEMP_FRAMEWORK_VER=${PORTVERSION}
 
 USERS=	crtmpserver
 GROUPS=	crtmpserver
@@ -27,15 +28,17 @@ USE_RC_SUBR=	crtmpserver
 
 MAN1=	crtmpserver.1
 
+pre-install:
+	@${SH} $(WRKSRC)/fixConfFile.sh "${WRKSRC}/builders/cmake/crtmpserver/crtmpserver.lua" "${PREFIX}" "${WRKSRC}"
+	@${SH} $(WRKSRC)/fixConfFile.sh "${WRKSRC}/builders/cmake/crtmpserver/all.debug.lua" "${PREFIX}" "${WRKSRC}"
+
 post-install:
-   @if [ ! -f ${PREFIX}/etc/crtmpserver.lua ]; then \
-       ${CP} -p ${PREFIX}/etc/crtmpserver.lua.sample ${PREFIX}/etc/crtmpserver.lua ; \
-   fi
+	@if [ ! -f ${PREFIX}/etc/crtmpserver.lua ]; then \
+		${CP} -p ${PREFIX}/etc/crtmpserver.lua.sample ${PREFIX}/etc/crtmpserver.lua ; \
+	fi
+	@if [ ! -f ${PREFIX}/etc/crtmpserver.all.lua ]; then \
+		${CP} -p ${PREFIX}/etc/crtmpserver.all.lua.sample ${PREFIX}/etc/crtmpserver.all.lua ; \
+	fi
+	@${MKDIR} ${PREFIX}/var/log/crtmpserver
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

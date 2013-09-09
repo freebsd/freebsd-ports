@@ -15,25 +15,31 @@
 #               by default.
 # crtmpserver_username (username): Set to crtmpserver
 #               by default.
+#
 
 . /etc/rc.subr
 
 name="crtmpserver"
-rcvar=crtmpserver_enable
+rcvar=${name}_enable
 
 command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+
+start_postcmd="${name}_poststart"
+
+crtmpserver_poststart()
+{
+	pgrep crtmpserver > /var/run/crtmpserver.pid
+}
 
 load_rc_config $name
 
 : ${crtmpserver_enable="NO"}
 : ${crtmpserver_config="%%PREFIX%%/etc/crtmpserver.lua"}
 : ${crtmpserver_username="crtmpserver"}
-: ${crtmpserver_groupname="crtmpserver"}
-: ${crtmpserver_pidfile="/var/run/${name}.pid"}
 
 required_files="$crtmpserver_config"
 
-command_args="--daemon --uid=`id -u ${crtmpserver_username}` --gid=`pw groupshow ${crtmpserver_groupname} | awk -F ":" '{print $3}'` --pid=${crtmpserver_pidfile} $required_files"
+command_args="--daemon --gid=`id -g ${crtmpserver_username}` --uid=`id -u ${crtmpserver_username}` ${required_files}"
 
 run_rc_command "$1"
-
