@@ -319,6 +319,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_GCC		- If set, this port requires this version of gcc, either in
 #				  the system or installed from a port.
 # USE_CSTD		- Override the default C language standard (gnu89, gnu99)
+# USE_CXXSTD	  Override the default C++ language standard
 # USE_BINUTILS	- Use binutils suite from port instead of the version in base.
 ##
 # USE_GHOSTSCRIPT
@@ -2126,6 +2127,10 @@ CFLAGS+=       -fno-strict-aliasing
 
 .if defined(USE_CSTD)
 CFLAGS:=	${CFLAGS:N-std=*} -std=${USE_CSTD}
+.endif
+
+.if defined(USE_CXXSTD)
+CXXFLAGS:=	${CXXFLAGS:N-std=*} -std=${USE_CXXSTD}
 .endif
 
 # Multiple make jobs support
