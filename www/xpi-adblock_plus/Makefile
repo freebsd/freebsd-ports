@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	adblock_plus
-PORTVERSION=	2.2.4
-DISTVERSIONSUFFIX=	-tb+fx+sm+an
+PORTVERSION=	2.3.2
+DISTVERSIONSUFFIX=	-fx+tb+sm+an
 CATEGORIES=	www
 
-MAINTAINER=	ale@FreeBSD.org
+MAINTAINER=	bar@FreeBSD.org
 COMMENT=	A content filtering extension
 
 XPI_NUM=	1865
