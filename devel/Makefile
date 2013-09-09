@@ -2124,6 +2124,7 @@
     SUBDIR += p5-IO-Prompt
     SUBDIR += p5-IO-Prompt-Tiny
     SUBDIR += p5-IO-Pty-Easy
+    SUBDIR += p5-IO-SessionData
     SUBDIR += p5-IO-String
     SUBDIR += p5-IO-Stty
     SUBDIR += p5-IO-Tee
