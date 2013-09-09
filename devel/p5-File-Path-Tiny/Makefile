@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-File-Path-Tiny
-# Date created:		2010-10-20
-# Whom:			ports@c0decafe.net <ports@c0decafe.net>
-#
+# Created by: ports@c0decafe.net <ports@c0decafe.net>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Path-Tiny
 PORTVERSION=	0.5
@@ -17,7 +13,8 @@ COMMENT=	Lightweight File::Path alternative
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	File::Path::Tiny.3
 

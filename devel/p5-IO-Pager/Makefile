@@ -1,9 +1,5 @@
-# New ports collection makefile for:	IO-Pager
-# Date created:				Apr 1 2005
-# Whom:					Rong-En Fan <rafan@infor.org>
-#
+# Created by: Rong-En Fan <rafan@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IO-Pager
 PORTVERSION=	0.24
@@ -15,7 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Select a pager, optionally pipe it output if destination is a TTY
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		IO::Pager::Buffered.3 \
 		IO::Pager::Page.3 \

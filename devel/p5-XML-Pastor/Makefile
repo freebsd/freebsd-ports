@@ -58,6 +58,7 @@ MAN3=	XML::Pastor.3 \
 	XML::Pastor::Stack.3 \
 	XML::Pastor::Type.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

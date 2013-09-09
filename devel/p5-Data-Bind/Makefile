@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	Data-Bind
-# Date created:			Jul. 12, 2006
-# Whom:				Ying-Chieh Chen
-#
+# Created by: Ying-Chieh Chen
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Bind
 PORTVERSION=	0.30
@@ -23,7 +18,8 @@ BUILD_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor	\
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Data::Bind.3
 
