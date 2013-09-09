@@ -13,14 +13,14 @@ COMMENT=	SOAP::Lite - Client and server side SOAP implementation
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
-		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+BUILD_DEPENDS=	p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		p5-XML-Parser>=2.23:${PORTSDIR}/textproc/p5-XML-Parser \
+		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
+		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
-		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+		p5-XML-Parser>=2.23:${PORTSDIR}/textproc/p5-XML-Parser \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Devel-Cycle>=0:${PORTSDIR}/devel/p5-Devel-Cycle \
 		p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject
 
@@ -28,10 +28,12 @@ CONFLICTS=	p5-SOAP-Lite-0.60* p5-SOAP-[0-9]*
 
 CONFIGURE_ARGS=	--noprompt
 INSTALL_TARGET=	pure_install
-USES=		perl5
 USE_PERL5=	configure
+USES=		perl5 shebangfix
 
-MAN1=		SOAPsh.pl.1 XMLRPCsh.pl.1 stubmaker.pl.1
+MAN1=		SOAPsh.pl.1 \
+		XMLRPCsh.pl.1 \
+		stubmaker.pl.1
 MAN3=		Apache::SOAP.3 \
 		Apache::XMLRPC::Lite.3 \
 		SOAP::Client.3 \
@@ -61,8 +63,7 @@ MAN3=		Apache::SOAP.3 \
 		XMLRPC::Transport::POP3.3 \
 		XMLRPC::Transport::TCP.3
 
-post-patch:
-	@${REINPLACE_CMD} -i '' -e 's|^#!.*perl|#!${PERL}|' \
-		${WRKSRC}/bin/* ${WRKSRC}/t/*.pl ${WRKSRC}/t/*.t
+SHEBANG_FILES=	bin/* t/*.pl t/*.t
+perl_OLD_CMD=	.*perl
 
 .include <bsd.port.mk>
