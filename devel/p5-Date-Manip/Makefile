@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Date-Manip
-# Date created:				April 28th 1996
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Date-Manip
 PORTVERSION=	6.34
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-YAML-Syck>=1.15:${PORTSDIR}/textproc/p5-YAML-Syck
 RUN_DEPENDS=	p5-YAML-Syck>=1.15:${PORTSDIR}/textproc/p5-YAML-Syck
 TEST_DEPENDS=	p5-Test-Inter>=0:${PORTSDIR}/devel/p5-Test-Inter
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	dm_date.1 dm_zdump.1
 MAN3=	Date::Manip.3 Date::Manip::Base.3 Date::Manip::Calc.3 \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Glib2
-# Date created:				26 Oct 2003
-# Whom:					clsung@dragon2.net
-#
+# Created by: clsung@dragon2.net
 # $FreeBSD$
-#
 
 PORTNAME=	Glib2
 PORTVERSION=	1.280
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.300:${PORTSDIR}/devel/p5-ExtUtils-Depends 
 		p5-ExtUtils-PkgConfig>=1:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig
 
 USE_GNOME=	glib20
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME:S/2//}-${PORTVERSION}
 

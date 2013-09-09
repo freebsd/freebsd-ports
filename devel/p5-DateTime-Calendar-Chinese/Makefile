@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DateTime-Calendar-Chinese
-# Date created:		2007-11-06
-# Whom:			Masahiro Teramoto <markun@onohara.to>
-#
+# Created by: Masahiro Teramoto <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	DateTime-Calendar-Chinese
 PORTVERSION=	1.00
@@ -21,7 +17,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-DateTime-Event-Chinese>=1.00:${PORTSDIR}/devel/p5-DateTime-Event-Chinese
 RUN_DEPENDS=	p5-DateTime-Event-Chinese>=1.00:${PORTSDIR}/devel/p5-DateTime-Event-Chinese
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DateTime::Calendar::Chinese.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-Devel-SimpleTrace
-# Date created:        4 January 2006
-# Whom:                estith
-#
+# Created by: estith
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-SimpleTrace
 PORTVERSION=	0.08
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Perl module for better stack traces on interpreter-generated warn/die
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 BUILD_DEPENDS=	p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper
 RUN_DEPENDS:=	${BUILD_DEPENDS}

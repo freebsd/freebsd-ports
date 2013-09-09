@@ -13,7 +13,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	R-cran-gtools>0:${PORTSDIR}/devel/R-cran-gtools
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 
