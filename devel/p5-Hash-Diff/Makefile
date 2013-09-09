@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Hash-Diff
-# Date created:		2012-03-16
-# Whom:			Steven Kreuzer <skreuzer@FreeBSD.org>
-#
+# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Hash-Diff
 PORTVERSION=	0.005
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Hash-Merge>=0.12:${PORTSDIR}/textproc/p5-Hash-Merge
 TEST_DEPENDS=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Test-use-ok>=0.02:${PORTSDIR}/devel/p5-Test-use-ok
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Hash::Diff.3
 

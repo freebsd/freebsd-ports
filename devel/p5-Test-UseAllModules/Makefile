@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Test-UseAllModules
-# Date created:		2007-10-30
-# Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
-#
+# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-UseAllModules
 PORTVERSION=	0.14
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	Perl extension to do use_ok() for all modules MANIFESTed
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::UseAllModules.3
 

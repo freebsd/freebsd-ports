@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-SVN-Agent
-# Date created:		2006-07-12
-# Whom:			Yuan-Chung Hsiao <ychsiao@ychsiao.org>
-#
+# Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.org>
 # $FreeBSD$
-#
 
 PORTNAME=	SVN-Agent
 PORTVERSION=	0.04
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	SVN::Agent.3
 

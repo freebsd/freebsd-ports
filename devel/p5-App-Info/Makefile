@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-App-Info
-# Date created:				19 May 2003
-# Whom:	      				Dmitry Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	App-Info
 PORTVERSION=	0.57
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Interface for providing metadata about installed software packages
 
-PERL_MODBUILD=	YES
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		App::Info::HTTPD.3 App::Info::Lib::Iconv.3 \
 		App::Info::HTTPD::Apache.3 App::Info::Lib.3 App::Info::RDBMS.3 \
