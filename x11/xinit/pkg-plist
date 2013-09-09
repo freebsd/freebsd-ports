@@ -1,0 +1,5 @@
+bin/startx
+bin/xinit
+etc/X11/xinit/xinitrc
+@dirrm etc/X11/xinit
+@dirrmtry etc/X11
