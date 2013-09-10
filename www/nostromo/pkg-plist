@@ -1,15 +1,17 @@
 sbin/crypt
 sbin/nhttpd
-nostromo/conf/mimes
-nostromo/conf/nhttpd.conf-dist
-nostromo/htdocs/index.html
-nostromo/htdocs/nostromo.gif
-nostromo/htdocs/cgi-bin/printenv
-nostromo/icons/dir.gif
-nostromo/icons/file.gif
-@dirrmtry nostromo/conf
-@dirrmtry nostromo/htdocs/cgi-bin
-@dirrmtry nostromo/htdocs
-@dirrmtry nostromo/icons
-@dirrmtry nostromo/logs
-@dirrmtry nostromo
+%%NOSTROMODIR%%/conf/mimes
+@unexec if cmp -s %D/%%NOSTROMODIR%%/conf/nhttpd.conf-dist %D/%%NOSTROMODIR%%/conf/nhttpd.conf; then rm -f %D/%%NOSTROMODIR%%/conf/nhttpd.conf; fi
+%%NOSTROMODIR%%/conf/nhttpd.conf-dist
+@exec if [ ! -f %D/%%NOSTROMODIR%%/conf/nhttpd.conf ] ; then cp -p %D/%F %B/nhttpd.conf; fi
+%%NOSTROMODIR%%/htdocs/index.html
+%%NOSTROMODIR%%/htdocs/nostromo.gif
+%%NOSTROMODIR%%/htdocs/cgi-bin/printenv
+%%NOSTROMODIR%%/icons/dir.gif
+%%NOSTROMODIR%%/icons/file.gif
+@dirrmtry %%NOSTROMODIR%%/conf
+@dirrmtry %%NOSTROMODIR%%/htdocs/cgi-bin
+@dirrmtry %%NOSTROMODIR%%/htdocs
+@dirrmtry %%NOSTROMODIR%%/icons
+@dirrmtry %%NOSTROMODIR%%/logs
+@dirrmtry %%NOSTROMODIR%%
