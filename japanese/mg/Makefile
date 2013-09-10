@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ja-mg
-# Date created:		7 May 2006
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mg
 PORTVERSION=	5.0.1.3
@@ -16,7 +11,8 @@ EXTRACT_ONLY=	# None
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Multi-line grep suitable for Japanese text
 
-USE_PERL5_RUN=	YES
+USES=		perl5
+USE_PERL5=	run
 CONFLICTS=	mg-200*
 
 do-build:
