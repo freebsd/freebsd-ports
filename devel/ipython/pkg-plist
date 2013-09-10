@@ -581,7 +581,6 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/html/static/base/less/style.less
 %%PYTHON_SITELIBDIR%%/IPython/html/static/base/less/variables.less
 %%PYTHON_SITELIBDIR%%/IPython/html/static/components/.bowerrc
-%%PYTHON_SITELIBDIR%%/IPython/html/static/components/.git
 %%PYTHON_SITELIBDIR%%/IPython/html/static/components/.gitignore
 %%PYTHON_SITELIBDIR%%/IPython/html/static/components/README.md
 %%PYTHON_SITELIBDIR%%/IPython/html/static/components/bootstrap/.travis.yml
@@ -1108,6 +1107,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/html/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/html/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/html/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/html/tests/test_notebookapp.py
+%%PYTHON_SITELIBDIR%%/IPython/html/tests/test_notebookapp.pyc
+%%PYTHON_SITELIBDIR%%/IPython/html/tests/test_notebookapp.pyo
 %%PYTHON_SITELIBDIR%%/IPython/html/tree/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/html/tree/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/html/tree/__init__.pyo
@@ -1201,6 +1203,12 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/kernel/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/kernel/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/kernel/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_connect.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_connect.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_connect.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_kernel.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_kernel.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_kernel.pyo
 %%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_kernelmanager.py
 %%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_kernelmanager.pyc
 %%PYTHON_SITELIBDIR%%/IPython/kernel/tests/test_kernelmanager.pyo
@@ -1279,6 +1287,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/tests/test_session.py
 %%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/tests/test_session.pyc
 %%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/tests/test_session.pyo
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/tests/test_start_kernel.py
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/tests/test_start_kernel.pyc
+%%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/tests/test_start_kernel.pyo
 %%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/zmqshell.py
 %%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/zmqshell.pyc
 %%PYTHON_SITELIBDIR%%/IPython/kernel/zmq/zmqshell.pyo
@@ -1903,6 +1914,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_ansi_code_processor.py
 %%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_ansi_code_processor.pyc
 %%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_ansi_code_processor.pyo
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_app.py
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_app.pyc
+%%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_app.pyo
 %%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_completion_lexer.py
 %%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_completion_lexer.pyc
 %%PYTHON_SITELIBDIR%%/IPython/qt/console/tests/test_completion_lexer.pyo
@@ -1981,6 +1995,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/terminal/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/terminal/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/terminal/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/terminal/tests/test_help.py
+%%PYTHON_SITELIBDIR%%/IPython/terminal/tests/test_help.pyc
+%%PYTHON_SITELIBDIR%%/IPython/terminal/tests/test_help.pyo
 %%PYTHON_SITELIBDIR%%/IPython/terminal/tests/test_interactivshell.py
 %%PYTHON_SITELIBDIR%%/IPython/terminal/tests/test_interactivshell.pyc
 %%PYTHON_SITELIBDIR%%/IPython/terminal/tests/test_interactivshell.pyo
