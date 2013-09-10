@@ -14,7 +14,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
-USE_GMAKE=	yes
+BROKEN=		Unfetchable due to checksum mismatch
+USES=		gmake
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 
