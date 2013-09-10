@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Role-Parameterized
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SARTAK
@@ -14,9 +14,9 @@ COMMENT=	Roles with composition parameters
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Moose>=2.0300:${PORTSDIR}/devel/p5-Moose
-RUN_DEPENDS=	p5-Moose>=2.0300:${PORTSDIR}/devel/p5-Moose
-
+BUILD_DEPENDS=	p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
+		p5-Moose>=2.0300:${PORTSDIR}/devel/p5-Moose
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 USES=		perl5
