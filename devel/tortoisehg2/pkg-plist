@@ -57,9 +57,6 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/decorators.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/decorators.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/decorators.pyo
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/dnd.py
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/dnd.pyc
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/dnd.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/docklog.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/docklog.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/docklog.pyo
@@ -198,6 +195,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/qscilib.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/qscilib.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/qscilib.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/qtapp.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/qtapp.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/qtapp.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/qtlib.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/qtlib.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/qtlib.pyo
@@ -273,6 +273,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/shelve.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/shelve.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/shelve.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/sign.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/sign.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/sign.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/status.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/status.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/status.pyo
@@ -336,6 +339,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/editor.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/editor.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/editor.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/gpg.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/gpg.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/gpg.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/hglib.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/hglib.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/hglib.pyo
@@ -348,6 +354,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/menuthg.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/menuthg.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/menuthg.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/obsoleteutil.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/obsoleteutil.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/obsoleteutil.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/patchctx.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/patchctx.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/patchctx.pyo
@@ -407,6 +416,7 @@ share/applications/tortoisehg.desktop
 %%NLS%%share/locale/uk/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/tortoisehg.mo
+share/pixmaps/tortoisehg/icons/16x16/apps/gnupg.png
 share/pixmaps/tortoisehg/icons/16x16/apps/reviewboard.png
 share/pixmaps/tortoisehg/icons/16x16/apps/kiln.png
 share/pixmaps/tortoisehg/icons/22x22/actions/window-close.png
@@ -415,6 +425,7 @@ share/pixmaps/tortoisehg/icons/24x24/actions/hg-outgoing.png
 share/pixmaps/tortoisehg/icons/24x24/actions/hg-pull.png
 share/pixmaps/tortoisehg/icons/24x24/actions/hg-push.png
 share/pixmaps/tortoisehg/icons/32x32/actions/hg-bookmarks.png
+share/pixmaps/tortoisehg/icons/32x32/actions/hg-sign.png
 share/pixmaps/tortoisehg/icons/README.txt
 share/pixmaps/tortoisehg/icons/TortoiseMerge.ico
 share/pixmaps/tortoisehg/icons/branch.ico
