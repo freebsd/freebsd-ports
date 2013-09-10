@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fte
-# Date created:				8 May 2000
-# Whom:					gelf
-#
+# Created by: gelf
 # $FreeBSD$
-#
 
 PORTNAME=		fte
 PORTVERSION=		20051115
@@ -21,7 +17,8 @@ WRKSRC=			${WRKDIR}/fte
 
 USE_XORG=	x11 xpm
 USE_ZIP=		yes
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	build
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^PREFIX=,PREFIX?=,' \

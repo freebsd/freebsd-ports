@@ -14,7 +14,7 @@ BUILD_DEPENDS=	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
 		p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 
 USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		perl5
 CONFIGURE_ARGS+=--datadir=${DATADIR}
 
 MAN1=		postgresql_autodoc.1

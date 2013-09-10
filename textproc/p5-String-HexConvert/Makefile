@@ -13,7 +13,8 @@ COMMENT=	String::HexConver - Converts ascii strings to hex and reverse
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	String::HexConvert.3
 
