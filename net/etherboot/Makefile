@@ -1,35 +1,27 @@
-# New ports collection makefile for:   etherboot
-# Date created:        16 April 1999
-# Whom:                Doug Ambrisko <ambrisko@whistle.com>
-#
+# Created by: Doug Ambrisko <ambrisko@whistle.com>
 # $FreeBSD$
-#
 
 PORTNAME=	etherboot
 PORTVERSION=	5.2.6
-PORTREVISION=	0
 CATEGORIES=	net
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-#MASTER_SITE_SUBDIR=	${PORTNAME}
-#use development sources for now instead of standard ftp site.
-MASTER_SITES=	http://etherboot.sourceforge.net/ \
-		http://etherboot.berlios.de/dist/
+MASTER_SITES=	SF http://etherboot.berlios.de/dist/
 
 MAINTAINER=	ambrisko@FreeBSD.org
 COMMENT=	Network boot of FreeBSD a.out/ELF kernels (improved netboot)
 
-NO_PACKAGE=	lots of configuration necessary
-USE_BZIP2=	1
-USE_GMAKE=	1
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
-USE_PERL5_BUILD=yes
 ONLY_FOR_ARCHS=	i386
+NO_PACKAGE=	lots of configuration necessary
 
-.include <bsd.port.pre.mk>
+USES=		gmake perl5
+USE_BZIP2=	yes
+USE_PERL5=	build
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 do-install:
-	@${ECHO} Refer ${DESCR} and ${WRKDIR}/${PKGNAME}/doc for how to
-	@${ECHO} build and install the rom/floppy image.
+	@${ECHO_MSG}
+	@${ECHO_MSG} Refer to ${DESCR} and ${WRKDIR}/${PKGNAME}/doc for \
+		how to build and install the ROM/floppy image. | ${FMT} -w 76
 	@${FALSE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
