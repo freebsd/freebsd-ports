@@ -1,9 +1,5 @@
-# ports collection makefile for:	Mird 1.0.7
-# Date created:				07 November 2001
-# Whom:					Xavier Beaudouin <kiwi@oav.net>
-#
+# Created by: Xavier Beaudouin <kiwi@oav.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mird
 PORTVERSION=	1.0.7
@@ -17,11 +13,13 @@ DISTNAME=	Mird-${PORTVERSION}
 MAINTAINER=	kiwi@oav.net
 COMMENT=	A free database library with transaction support
 
+BROKEN=		Unfetchable due to checksum mismatch
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_AUTOTOOLS=	autoconf:env
 USE_GCC=	any
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-debug
 USE_LDCONFIG=	yes
