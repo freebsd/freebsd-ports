@@ -63,7 +63,6 @@ include/dpkg/trigdeferred.h
 include/dpkg/triglib.h
 include/dpkg/varbuf.h
 include/dpkg/version.h
-%%SITE_PERL%%/Debian/Dselect/Ftp.pm
 %%SITE_PERL%%/Dpkg.pm
 %%SITE_PERL%%/Dpkg/Arch.pm
 %%SITE_PERL%%/Dpkg/BuildEnv.pm
@@ -82,7 +81,9 @@ include/dpkg/version.h
 %%SITE_PERL%%/Dpkg/Control.pm
 %%SITE_PERL%%/Dpkg/Control/Changelog.pm
 %%SITE_PERL%%/Dpkg/Control/Fields.pm
+%%SITE_PERL%%/Dpkg/Control/FieldsCore.pm
 %%SITE_PERL%%/Dpkg/Control/Hash.pm
+%%SITE_PERL%%/Dpkg/Control/HashCore.pm
 %%SITE_PERL%%/Dpkg/Control/Info.pm
 %%SITE_PERL%%/Dpkg/Control/Types.pm
 %%SITE_PERL%%/Dpkg/Deps.pm
@@ -105,20 +106,22 @@ include/dpkg/version.h
 %%SITE_PERL%%/Dpkg/Source/Package.pm
 %%SITE_PERL%%/Dpkg/Source/Package/V1.pm
 %%SITE_PERL%%/Dpkg/Source/Package/V2.pm
-%%SITE_PERL%%/Dpkg/Source/Package/V3/bzr.pm
-%%SITE_PERL%%/Dpkg/Source/Package/V3/custom.pm
-%%SITE_PERL%%/Dpkg/Source/Package/V3/git.pm
-%%SITE_PERL%%/Dpkg/Source/Package/V3/native.pm
-%%SITE_PERL%%/Dpkg/Source/Package/V3/quilt.pm
+%%SITE_PERL%%/Dpkg/Source/Package/V3/Bzr.pm
+%%SITE_PERL%%/Dpkg/Source/Package/V3/Custom.pm
+%%SITE_PERL%%/Dpkg/Source/Package/V3/Git.pm
+%%SITE_PERL%%/Dpkg/Source/Package/V3/Native.pm
+%%SITE_PERL%%/Dpkg/Source/Package/V3/Quilt.pm
 %%SITE_PERL%%/Dpkg/Source/Patch.pm
 %%SITE_PERL%%/Dpkg/Source/Quilt.pm
 %%SITE_PERL%%/Dpkg/Substvars.pm
+%%SITE_PERL%%/Dpkg/Util.pm
 %%SITE_PERL%%/Dpkg/Vars.pm
 %%SITE_PERL%%/Dpkg/Vendor.pm
 %%SITE_PERL%%/Dpkg/Vendor/Debian.pm
 %%SITE_PERL%%/Dpkg/Vendor/Default.pm
 %%SITE_PERL%%/Dpkg/Vendor/Ubuntu.pm
 %%SITE_PERL%%/Dpkg/Version.pm
+%%SITE_PERL%%/Dselect/Ftp.pm
 libexec/dpkg/methods/disk/desc.cdrom
 libexec/dpkg/methods/disk/desc.harddisk
 libexec/dpkg/methods/disk/desc.mounted
@@ -148,7 +151,6 @@ libexec/dpkg/methods/multicd/update
 libexec/dpkg/parsechangelog/debian
 libexec/libdpkg.a
 libexec/pkgconfig/libdpkg.pc
-sbin/dpkg-install-info
 sbin/start-stop-daemon
 %%DATADIR%%/abitable
 %%DATADIR%%/architecture.mk
@@ -283,6 +285,7 @@ sbin/start-stop-daemon
 @dirrm libexec/dpkg/methods/disk
 @dirrm libexec/dpkg/methods
 @dirrm libexec/dpkg
+@dirrm %%SITE_PERL%%/Dselect
 @dirrm %%SITE_PERL%%/Dpkg/Vendor
 @dirrm %%SITE_PERL%%/Dpkg/Source/Package/V3
 @dirrm %%SITE_PERL%%/Dpkg/Source/Package
@@ -294,8 +297,6 @@ sbin/start-stop-daemon
 @dirrm %%SITE_PERL%%/Dpkg/Changelog/Entry
 @dirrm %%SITE_PERL%%/Dpkg/Changelog
 @dirrm %%SITE_PERL%%/Dpkg
-@dirrm %%SITE_PERL%%/Debian/Dselect
-@dirrm %%SITE_PERL%%/Debian
 @dirrm include/dpkg
 @dirrmtry etc/dpkg/dselect.cfg.d
 @dirrmtry etc/dpkg/dpkg.cfg.d
