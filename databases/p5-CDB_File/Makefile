@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	p5-CDB_Fiile
-# Date created:			24 June 2001
-# Whom:				Jon Nistor <nistor@snickers.org>
-#
+# Created by: Jon Nistor <nistor@snickers.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CDB_File
 PORTVERSION=	0.97
@@ -15,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	nistor@snickers.org
 COMMENT=	Perl5 interface to the CDB package
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CDB_File.3
 

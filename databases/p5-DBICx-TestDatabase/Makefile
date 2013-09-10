@@ -1,9 +1,5 @@
-# New ports collection makefile for:	DBICx-TestDatabase
-# Date created:	   			23 Oct 2008
-# Whom:		   			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DBICx-TestDatabase
 PORTVERSION=	0.04
@@ -24,7 +20,8 @@ RUN_DEPENDS=	p5-DBD-SQLite>=1.12:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-File-Temp>0:${PORTSDIR}/devel/p5-File-Temp
 TEST_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DBICx::TestDatabase.3 \
 		DBICx::TestDatabase::Subclass.3

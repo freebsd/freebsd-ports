@@ -1,9 +1,5 @@
-# New ports collection makefile for:    MySQL-scripts
-# Date created:         28 Jan 2006
-# Whom:                 Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mysql
 PKGNAMESUFFIX=	-scripts
@@ -17,6 +13,6 @@ PKGMESSAGE=	mustnotexist
 PLIST=		${PKGDIR}/pkg-plist.scripts
 
 SCRIPTS_ONLY=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 .include "${MASTERDIR}/Makefile"

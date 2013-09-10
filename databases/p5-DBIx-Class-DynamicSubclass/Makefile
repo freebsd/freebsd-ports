@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DBIx-Class-DynamicSubclass
-# Date created:		2008-07-15
-# Whom:			Vladimir Timofeev <vovkasm@gmail.com>
-#
+# Created by: Vladimir Timofeev <vovkasm@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Class-DynamicSubclass
 PORTVERSION=	0.03
@@ -17,7 +13,8 @@ COMMENT=	Use dynamic subclassing with DBIx::Class
 RUN_DEPENDS=	p5-DBIx-Class>=0.07003:${PORTSDIR}/databases/p5-DBIx-Class
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	DBIx::Class::DynamicSubclass.3
 

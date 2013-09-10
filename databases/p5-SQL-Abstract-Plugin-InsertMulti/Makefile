@@ -1,9 +1,4 @@
-# New ports collection makefile for:	SQL::Abstract::Plugin::InsertMulti
-# Date created:		26 Dec 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	SQL-Abstract-Plugin-InsertMulti
 PORTVERSION=	0.03
@@ -19,7 +14,8 @@ RUN_DEPENDS=	\
 	p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	SQL::Abstract::Plugin::InsertMulti.3
 
