@@ -13,6 +13,7 @@ COMMENT=	LDraw parts library
 
 LICENSE=	CDDL
 
+BROKEN=		Unfetchable due to checksum mismatch
 USE_ZIP=	yes
 NO_BUILD=	yes
 
