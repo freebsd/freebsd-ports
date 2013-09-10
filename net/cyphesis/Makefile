@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28server%29/${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
-COMMENT=	A server for WorldForge games
+COMMENT=	Server for WorldForge games
 
 LIB_DEPENDS=	Atlas-0.6.1:${PORTSDIR}/devel/atlas-devel \
 		varconf-1.0.8:${PORTSDIR}/devel/varconf \
@@ -22,11 +22,10 @@ CONFIGURE_ARGS=	--with-python=${LOCALBASE}
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=	pathfix
-USE_GMAKE=	yes
+USES=		gmake pathfix
 USE_LDCONFIG=	yes
 USE_PGSQL=	yes
-USE_PYTHON=	2.5-2.6
+USE_PYTHON=	-2.7
 USE_GCC=	4.7+
 
 CFLAGS+=	-I${LOCALBASE}/include
