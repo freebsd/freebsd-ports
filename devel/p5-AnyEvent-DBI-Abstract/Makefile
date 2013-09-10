@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-AnyEvent-DBI-Abstract
-# Date created:	   19 Mar 2010
-# Whom:		   Denis Pokataev <catone@cpan.org>
-#
+# Created by: Denis Pokataev <catone@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	AnyEvent-DBI-Abstract
 PORTVERSION=	0.01
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-AnyEvent-DBI>=0:${PORTSDIR}/devel/p5-AnyEvent-DBI \
 		p5-parent>=0:${PORTSDIR}/devel/p5-parent
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		AnyEvent::DBI::Abstract.3
 

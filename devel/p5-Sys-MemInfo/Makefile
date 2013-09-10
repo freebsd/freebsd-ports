@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Sys-MemInfo
-# Date created:	   25 July 2008
-# Whom:		   Terry Sposato <terry@sucked-in.com>
-#
+# Created by: Terry Sposato <terry@sucked-in.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Sys-MemInfo
 PORTVERSION=	0.91
@@ -16,7 +12,8 @@ COMMENT=	Sys::MemInfo - Perl extension for getting Memory information
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Sys::MemInfo.3
 

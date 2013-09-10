@@ -1,9 +1,5 @@
-# New ports collection makefile for:	automake
-# Date created:		15 March 1997
-# Whom:			FUJIMOTO Kensaku <fujimoto@oscar.elec.waseda.ac.jp>
-#
+# Created by: FUJIMOTO Kensaku <fujimoto@oscar.elec.waseda.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	automake
 PORTVERSION=	1.4.6
@@ -26,7 +22,7 @@ USE_AUTOTOOLS=	autoconf:env
 BUILD_VERSION=	1.4
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 LATEST_LINK=	automake14
-USE_PERL5=	yes
+USES=		perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--program-suffix=-${BUILD_VERSION}
