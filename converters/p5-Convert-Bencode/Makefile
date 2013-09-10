@@ -12,7 +12,8 @@ MAINTAINER=	mor@WhiteLuna.com
 COMMENT=	Module to encode and decode bencoded strings
 BUILD_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Convert::Bencode.3
 

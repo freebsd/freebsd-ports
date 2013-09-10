@@ -14,7 +14,8 @@ COMMENT=	Front end to the GNU recode program
 BUILD_DEPENDS=	recode:${PORTSDIR}/converters/recode
 RUN_DEPENDS=	recode:${PORTSDIR}/converters/recode
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Convert::Recode.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ytnef
-# Date created:		21 Feb 2005
-# Whom:			Rodrigo Graeff <delphus@gmail.com>
-#
+# Created by: Rodrigo Graeff <delphus@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ytnef
 PORTVERSION=	2.6
@@ -17,7 +13,8 @@ COMMENT=	Unpack data in MS Outlook TNEF format
 LIB_DEPENDS=	ytnef.0:${PORTSDIR}/devel/libytnef
 RUN_DEPENDS=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 GNU_CONFIGURE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
