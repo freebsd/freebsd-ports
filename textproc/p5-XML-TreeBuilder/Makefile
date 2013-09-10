@@ -22,7 +22,8 @@ TEST_DEPENDS=	p5-Devel-Cover>0:${PORTSDIR}/devel/p5-Devel-Cover \
 		p5-Test-Perl-Critic>0:${PORTSDIR}/textproc/p5-Test-Perl-Critic \
 		p5-Test-Pod-Coverage>0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		XML::TreeBuilder.3 XML::Element.3
 

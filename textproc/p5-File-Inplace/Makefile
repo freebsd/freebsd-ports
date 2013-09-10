@@ -1,9 +1,5 @@
-# New ports collection makefile for:	File-Inplace
-# Date created:		2010-12-08
-# Whom:			Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Inplace
 PORTVERSION=	0.20
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Perl module for in-place editing of files
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Inplace.3
 

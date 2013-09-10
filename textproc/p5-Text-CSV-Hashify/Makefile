@@ -14,7 +14,8 @@ COMMENT=	Composition and decomposition of comma-separated values into hashes
 BUILD_DEPENDS=	p5-Text-CSV>=0:${PORTSDIR}/textproc/p5-Text-CSV
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Text::CSV::Hashify.3
 

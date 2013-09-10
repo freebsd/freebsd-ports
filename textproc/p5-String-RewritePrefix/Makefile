@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-String-RewritePrefix
-# Date created:				25 July 2009
-# Whom:					Bill Brinzer <bill.brinzer@gmail.com>
-#
+# Created by: Bill Brinzer <bill.brinzer@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	String-RewritePrefix
 PORTVERSION=	0.006
@@ -17,7 +13,8 @@ COMMENT=	Rewrite strings based on a set of known prefixes
 
 TEST_DEPENDS=	p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	String::RewritePrefix.3
 
