@@ -1,9 +1,4 @@
-# New ports collection makefile for:	DBIx::Class::Tree::NestedSet
-# Date created:		17 Mar 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Class-Tree-NestedSet
 PORTVERSION=	0.10
@@ -20,7 +15,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-DBICx-TestDatabase>=0:${PORTSDIR}/databases/p5-DBICx-TestDatabase \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	DBIx::Class::Tree::NestedSet.3
 

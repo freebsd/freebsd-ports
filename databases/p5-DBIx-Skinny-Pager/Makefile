@@ -1,9 +1,4 @@
-# New ports collection makefile for:	DBIx::Skinny::Pager
-# Date created:		20 Nov 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Skinny-Pager
 PORTVERSION=	0.11
@@ -24,7 +19,8 @@ TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	DBIx::Skinny::Mixin::Pager.3 \
 	DBIx::Skinny::Mixin::SearchWithPager.3 \

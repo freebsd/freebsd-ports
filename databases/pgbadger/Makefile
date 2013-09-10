@@ -11,7 +11,8 @@ PKGNAMEPREFIX=  p5-
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Very competent log analyzer for PostgreSQL
 
-PERL_CONFIGURE= yes
+USES=		perl5
+USE_PERL5=	configure
 MAN1=		pgbadger.1
 
 .include <bsd.port.mk>
