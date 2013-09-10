@@ -1,9 +1,5 @@
-# New ports collection makefile for:	csvdiff
-# Date created:				2006/07/12
-# Whom:					chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	csvdiff
 PORTVERSION=	1.7
@@ -17,7 +13,7 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Compare/diff two (comma) separated files with each other
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 PLIST_FILES=	bin/csvdiff
 WRKSRC=		${WRKDIR}
 .if !defined(NOPORTDOCS)

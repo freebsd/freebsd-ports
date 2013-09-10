@@ -30,7 +30,8 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 RUN_DEPENDS+=	${LOCALBASE}/bin/tidy4:${PORTSDIR}/www/tidy
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=	ebook.1
 MAN3=		EBook::Tools.3 \

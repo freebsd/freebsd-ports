@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-IO-CSVHeaderFile
-# Date created:				Nov 23 03:11:08 MSK 2004
-# Whom:					Vasek Balcar <vasek@ti.cz>
-#
+# Created by: Vasek Balcar <vasek@ti.cz>
 # $FreeBSD$
-#
 
 PORTNAME=	IO-CSVHeaderFile
 PORTVERSION=	0.04
@@ -17,7 +13,8 @@ COMMENT=	Perl module to automate reads from CSV formatted text files
 BUILD_DEPENDS=	p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		IO::CSVHeaderFile.3
 

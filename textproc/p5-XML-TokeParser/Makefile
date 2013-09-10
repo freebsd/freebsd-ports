@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML-TokeParser
-# Date created:		10 April 2010
-# Whom:			Mike Bristow <mike@urgle.com>
-#
+# Created by: Mike Bristow <mike@urgle.com>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-TokeParser
 PORTVERSION=	0.05
@@ -17,7 +13,8 @@ COMMENT=	Simplified interface to XML::Parser
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::TokeParser.3
 

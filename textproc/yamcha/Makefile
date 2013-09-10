@@ -1,9 +1,5 @@
-# New ports collection makefile for:	yamcha
-# Date created:		                Aug 3, 2006
-# Whom:			                Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	yamcha
 PORTVERSION=	0.33
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	svm_learn:${PORTSDIR}/science/svmlight
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 DOC_FILES=	feature.png feature2.png feature3.png \
 		feature4.png feature5.png index.html \
 		yamcha.html yamcha.css

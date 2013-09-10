@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-XML-Validate
-# Date created:				10 November 2009
-# Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Validate
 PORTVERSION=	1.025
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Assertions>0:${PORTSDIR}/devel/p5-Test-Assertions
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		validxml.pl.1
 MAN3=		XML::Validate.3 XML::Validate::Base.3 \

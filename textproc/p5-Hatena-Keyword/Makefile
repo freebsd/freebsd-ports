@@ -27,7 +27,8 @@ RUN_DEPENDS=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache \
 		p5-RPC-XML>=0:${PORTSDIR}/net/p5-RPC-XML \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Hatena::Keyword.3
 
