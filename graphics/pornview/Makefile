@@ -16,6 +16,7 @@ LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif \
 		xcb-render-util:${PORTSDIR}/x11/xcb-util-renderutil
 
 USE_XORG=	x11 xi xext xinerama
+USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk2
