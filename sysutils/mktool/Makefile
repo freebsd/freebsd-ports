@@ -1,9 +1,5 @@
-# ports collection makefile for:        mktool
-# Date created:                         2002/05/28
-# Whom:                                 Jos Backus <jos@catnook.com>
-#
+# Created by: Jos Backus <jos@catnook.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mktool
 PORTVERSION=	0.0.25
@@ -14,7 +10,8 @@ MASTER_SITES=	http://www.io.com/~manoj/file/
 MAINTAINER=	jos@catnook.com
 COMMENT=	Portable tools to manage processes and networked services
 
-USE_GMAKE=	yes
+BROKEN=		Unfetchable due to MASTER_SITES reorganization
+USES=		gmake
 USE_BZIP2=	yes
 
 pre-patch:
