@@ -1,0 +1,7 @@
+MooseX::Types::URI provides Moose types for fun with URIs.
+
+It has slightly DWIMier types than the URI classes have due to implementation
+details, so the types should be more forgiving when ducktyping will work anyway
+(e.g. URI::WithBase does not inherit URI).
+
+WWW: http://search.cpan.org/dist/MooseX-Types-URI/
