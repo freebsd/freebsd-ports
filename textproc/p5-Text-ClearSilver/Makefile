@@ -13,7 +13,8 @@ TEST_DEPENDS=	\
 	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
 	p5-Mouse>0:${PORTSDIR}/devel/p5-Mouse
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 USE_GMAKE=	yes
 CONFIGURE_ENV=	MAKE=${LOCALBASE}/bin/gmake
 

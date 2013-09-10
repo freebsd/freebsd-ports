@@ -15,7 +15,8 @@ BUILD_DEPENDS=	\
 	p5-Math-Round>=0:${PORTSDIR}/math/p5-Math-Round
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Data::SpreadPagination.3
 

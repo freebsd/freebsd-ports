@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-String-Escape
-# Date Created:                         15 May 2009
-# Whom:                                 Denis Pokataev <catone@cpan.org>
-#
+# Created by: Denis Pokataev <catone@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	String-Escape
 PORTVERSION=	2010.002
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	catone@cpan.org
 COMMENT=	Registry of string functions, including backslash escapes
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	String::Escape.3
 

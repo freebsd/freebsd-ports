@@ -11,7 +11,8 @@ MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Single source publishing tool based on DocBook XML.
 
 USE_JAVA=	yes
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAKE_JOBS_UNSAFE=	yes
 

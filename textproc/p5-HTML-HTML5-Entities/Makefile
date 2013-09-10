@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-HTML5-Entities
-# Date created:				2011-10-11
-# Whom:					Frederic Culot <culot@FreeBSD.org>
-#
+# Created by: Frederic Culot <culot@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-HTML5-Entities
 PORTVERSION=	0.003
@@ -18,7 +14,8 @@ COMMENT=	Pure Perl drop-in replacement for HTML::Entities
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::HTML5::Entities.3
 

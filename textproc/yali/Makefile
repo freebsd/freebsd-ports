@@ -1,6 +1,4 @@
-# New ports collection makefile for:	yali
-# Date created:				12/04/2009
-# Whom:					Tom Sparks <tsparks@appliedops.net>
+# Created by: Tom Sparks <tsparks@appliedops.net>
 # $FreeBSD$
 
 PORTNAME=	yali
@@ -19,7 +17,8 @@ COMMENT=	YALI: Yet Another LOLCODE Interpreter
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 USE_DOS2UNIX=	yes
 
