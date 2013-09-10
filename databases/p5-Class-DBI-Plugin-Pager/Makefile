@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Class-DBI-Plugin-Pager
-# Date created:		25 Oct 2005
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Class-DBI-Plugin-Pager
 PORTVERSION=	0.566
@@ -22,7 +17,8 @@ BUILD_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Text-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		Class::DBI::Plugin::Pager.3
 
 .include <bsd.port.mk>

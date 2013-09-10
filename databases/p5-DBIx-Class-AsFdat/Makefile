@@ -1,9 +1,4 @@
-# New ports collection makefile for:	DBIx::Class::AsFdat
-# Date created:		18 Mar 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Class-AsFdat
 PORTVERSION=	0.03
@@ -27,7 +22,8 @@ TEST_DEPENDS=	p5-Test-Declare>=0:${PORTSDIR}/devel/p5-Test-Declare \
 		p5-Test-Perl-Critic>=0:${PORTSDIR}/textproc/p5-Test-Perl-Critic \
 		p5-DateTime-Format-SQLite>=0:${PORTSDIR}/devel/p5-DateTime-Format-SQLite
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	DBIx::Class::AsFdat.3
 
