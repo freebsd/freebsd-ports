@@ -116,6 +116,7 @@
     SUBDIR += dosdetector
     SUBDIR += drawterm
     SUBDIR += dropbox-api-command
+    SUBDIR += dropbox-uploader
     SUBDIR += dtcp
     SUBDIR += dtcpclient
     SUBDIR += e169-stats
