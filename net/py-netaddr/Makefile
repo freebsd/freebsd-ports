@@ -4,13 +4,11 @@
 PORTNAME=	netaddr
 PORTVERSION=	0.7.10
 CATEGORIES=	net python
-MASTER_SITES=	https://github.com/drkjam/${PORTNAME}/downloads/
+MASTER_SITES=	https://github.com/downloads/drkjam/netaddr/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A python library for the manipulation of network addresses
-
-BROKEN=		fails to fetch
 
 LICENSE=	BSD
 
