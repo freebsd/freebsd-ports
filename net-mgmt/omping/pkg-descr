@@ -1,0 +1,10 @@
+Omping (Open Multicast Ping) is tool to test IP multicast functionality
+primarily in local network.
+
+Features
+* Similar user experience as classic ping tool
+* Ping multiple hosts at once
+* Implementation of RFC Draft draft-ietf-mboned-ssmping-08
+* Any-source and Source-specific Multicast
+
+WWW: https://fedorahosted.org/omping/

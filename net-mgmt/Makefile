@@ -188,6 +188,7 @@
     SUBDIR += observium
     SUBDIR += ocsinventory-agent
     SUBDIR += ocsinventory-ng
+    SUBDIR += omping
     SUBDIR += openlldp
     SUBDIR += openvmps
     SUBDIR += ourmon
