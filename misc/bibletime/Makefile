@@ -15,6 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.6.2.so:${PORTSDIR}/misc/sword
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 LIB_DEPENDS=	clucene-core:${PORTSDIR}/textproc/clucene
 
+USE_GCC=	any
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
 USES=		cmake
