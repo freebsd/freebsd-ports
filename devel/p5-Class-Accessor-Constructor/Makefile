@@ -16,7 +16,8 @@ RUN_DEPENDS=	\
 	p5-Data-Inherited>0:${PORTSDIR}/devel/p5-Data-Inherited
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Class::Accessor::Constructor.3 \
 	Class::Accessor::Constructor::Base.3

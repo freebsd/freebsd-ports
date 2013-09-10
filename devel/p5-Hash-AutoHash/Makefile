@@ -19,7 +19,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		p5-Tie-ToObject>0:${PORTSDIR}/devel/p5-Tie-ToObject
 TEST_DEPENDS=	p5-Test-Deep>0.11:${PORTSDIR}/devel/p5-Test-Deep
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Hash::AutoHash.3
 

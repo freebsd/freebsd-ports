@@ -1,9 +1,5 @@
-# Ports collection makefile for:	p5-Child
-# Date created:	   Sat Jul 31, 2010
-# Whom:		   Dan Rench <citric@cubicone.tmetic.com>
-#
+# Created by: Dan Rench <citric@cubicone.tmetic.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Child
 PORTVERSION=	0.009
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	citric@cubicone.tmetic.com
 COMMENT=	Object oriented simple interface to fork()
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Child.3 \
 		Child::IPC::Pipe.3 \

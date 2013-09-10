@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Pipeline
-# Date Created:				11 June 2006
-# Whom:					Rouslan Iskhakov <rouslan@rshell.net>
-#
+# Created by: Rouslan Iskhakov <rouslan@rshell.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Pipeline
 PORTVERSION=	3.12
@@ -24,7 +20,8 @@ BUILD_DEPENDS=	p5-Class-ISA>=0:${PORTSDIR}/devel/p5-Class-ISA \
 		p5-Data-Structure-Util>=0:${PORTSDIR}/devel/p5-Data-Structure-Util
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Pipeline::Segment.3 Pipeline::Store::ISA.3 Pipeline.3 \
 		Pipeline::Segment::Async::Handler.3 Pipeline::Analyser.3 \

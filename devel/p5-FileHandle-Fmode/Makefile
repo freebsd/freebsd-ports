@@ -12,6 +12,7 @@ COMMENT=	Module to determine if a filehandle is opened for reading, writing
 
 MAN3=		FileHandle::Fmode.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>
