@@ -19,7 +19,7 @@ RUN_DEPENDS=	PDL>=0:${PORTSDIR}/math/PDL \
 		p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 
 STRIP=
-USE_PERL5=	yes
+USES=		perl5
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 NO_MTREE=	yes
