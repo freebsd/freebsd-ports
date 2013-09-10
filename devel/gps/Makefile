@@ -20,11 +20,10 @@ LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 LATEST_LINK=		gps-ide
 
 GNU_CONFIGURE=		yes
-USE_GMAKE=		yes
 USE_BZIP2=		yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=		build
 ALL_TARGET=		default
-USES=			ada
+USES=			ada gmake perl5 pkgconfig
 WRKSRC=			${WRKDIR}/gps-release-ide-${PORTVERSION}-src
 
 CONFIGURE_ENV+=		AWK=/usr/bin/awk

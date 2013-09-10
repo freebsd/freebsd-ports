@@ -13,7 +13,7 @@ COMMENT=	Plugin for gkrellm 2.x shows top three processes, requires procfs
 RUN_DEPENDS=	gkrellmd:${PORTSDIR}/sysutils/gkrellm2
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USES=		gmake
+USES=		gmake pkgconfig
 MAKE_ARGS=	INSTALLDIR=${LOCALBASE}/libexec/gkrellm2/plugins \
 		INSTALLDIRD=${PREFIX}/libexec/gkrellm2/plugins-gkrellmd
 

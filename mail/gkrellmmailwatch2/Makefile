@@ -18,7 +18,7 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 WRKSRC=		${WRKDIR}/gkrellm-mailwatch
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 
 MAKE_ENV+=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins

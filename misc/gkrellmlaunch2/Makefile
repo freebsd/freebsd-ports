@@ -14,6 +14,7 @@ COMMENT=	Application launcher plugin for GKrellM2
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
+USES=		pkgconfig
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmlaunch.so
 ALL_TARGET=	${PORTNAME}.so
 

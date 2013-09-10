@@ -14,7 +14,7 @@ COMMENT=	Pixelart-oriented bitmap painting program
 LIB_DEPENDS=	X11:${PORTSDIR}/x11/libX11 \
 		png15:${PORTSDIR}/graphics/png
 
-USES=		gmake
+USES=		gmake pkgconfig
 USE_GCC=	any
 USE_SDL=	sdl image
 
