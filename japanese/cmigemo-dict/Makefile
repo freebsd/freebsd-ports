@@ -19,6 +19,7 @@ MASTERDIR=	${.CURDIR}/../../japanese/cmigemo
 PKGDIR=		${.CURDIR}
 
 USES=		perl5
+USE_PERL5=	patch build run
 
 ALL_TARGET=	gcc-dict
 INSTALL_TARGET=	gcc-install-dict
