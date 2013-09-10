@@ -1,16 +1,6 @@
---- dselect/Makefile.in.orig	2011-11-10 07:23:41.000000000 +0100
-+++ dselect/Makefile.in	2012-03-16 22:18:30.000000000 +0100
-@@ -67,8 +67,7 @@
- 	pkgsublist.$(OBJEXT) pkgtop.$(OBJEXT)
- dselect_OBJECTS = $(am_dselect_OBJECTS)
- am__DEPENDENCIES_1 =
--dselect_DEPENDENCIES = $(am__DEPENDENCIES_1) ../lib/dpkg/libdpkg.a \
--	../lib/compat/libcompat.a $(am__DEPENDENCIES_1)
-+dselect_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) ../lib/dpkg/libdpkg.a ../lib/compat/libcompat.a
- DEFAULT_INCLUDES = 
- depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
- am__depfiles_maybe = depfiles
-@@ -320,11 +319,7 @@
+--- dselect/Makefile.in.orig	2013-07-28 14:55:57.000000000 +0200
++++ dselect/Makefile.in	2013-09-07 13:26:28.000000000 +0200
+@@ -403,11 +403,7 @@
  	pkgsublist.cc \
  	pkgtop.cc
  

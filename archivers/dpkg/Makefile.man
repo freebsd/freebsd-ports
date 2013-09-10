@@ -40,7 +40,9 @@ MAN3_EN=	Dpkg::BuildEnv.3 \
 		Dpkg::Control.3 \
 		Dpkg::Control::Changelog.3 \
 		Dpkg::Control::Fields.3 \
+		Dpkg::Control::FieldsCore.3 \
 		Dpkg::Control::Hash.3 \
+		Dpkg::Control::HashCore.3 \
 		Dpkg::Control::Info.3 \
 		Dpkg::Control::Types.3 \
 		Dpkg::Deps.3 \
@@ -78,8 +80,7 @@ MAN8_EN=	dpkg-divert.8 \
 		update-alternatives.8
 
 .if ${PORT_OPTIONS:MNLS}
-MAN1_DE=	dpkg-architecture.1 \
-		dpkg-buildpackage.1 \
+MAN1_DE=	dpkg-buildpackage.1 \
 		dpkg-checkbuilddeps.1 \
 		dpkg-deb.1 \
 		dpkg-distaddfile.1 \
@@ -110,12 +111,10 @@ MAN5_DE=	deb-control.5 \
 		dselect.cfg.5
 
 MAN8_DE=	dpkg-divert.8 \
-		dpkg-statoverride.8 \
 		start-stop-daemon.8 \
 		update-alternatives.8
 
-MAN1_FR=	dpkg-architecture.1 \
-		dpkg-buildpackage.1 \
+MAN1_FR=	dpkg-buildpackage.1 \
 		dpkg-checkbuilddeps.1 \
 		dpkg-deb.1 \
 		dpkg-distaddfile.1 \
@@ -146,23 +145,26 @@ MAN5_FR=	deb-control.5 \
 		dselect.cfg.5
 
 MAN8_FR=	dpkg-divert.8 \
-		dpkg-statoverride.8 \
 		start-stop-daemon.8 \
 		update-alternatives.8
 
 MAN5_HU=	dpkg.cfg.5 \
 		dselect.cfg.5
 
-MAN1_JA=	dpkg-architecture.1 \
-		dpkg-buildflags.1 \
-		dpkg-buildpackage.1 \
+MAN1_JA=	dpkg-buildpackage.1 \
+		dpkg-checkbuilddeps.1 \
 		dpkg-deb.1 \
 		dpkg-distaddfile.1 \
+		dpkg-genchanges.1 \
+		dpkg-gencontrol.1 \
 		dpkg-gensymbols.1 \
 		dpkg-mergechangelogs.1 \
 		dpkg-name.1 \
+		dpkg-parsechangelog.1 \
+		dpkg-query.1 \
 		dpkg-scanpackages.1 \
 		dpkg-scansources.1 \
+		dpkg-shlibdeps.1 \
 		dpkg-source.1 \
 		dpkg-split.1 \
 		dpkg-trigger.1 \
@@ -187,12 +189,10 @@ MAN5_JA=	deb-control.5 \
 		dselect.cfg.5
 
 MAN8_JA=	dpkg-divert.8 \
-		dpkg-statoverride.8 \
 		start-stop-daemon.8 \
 		update-alternatives.8
 
-MAN1_PL=	dpkg-architecture.1 \
-		dpkg-buildpackage.1 \
+MAN1_PL=	dpkg-buildpackage.1 \
 		dpkg-checkbuilddeps.1 \
 		dpkg-deb.1 \
 		dpkg-distaddfile.1 \
@@ -222,12 +222,10 @@ MAN5_PL=	deb-control.5 \
 		dselect.cfg.5
 
 MAN8_PL=	dpkg-divert.8 \
-		dpkg-statoverride.8 \
 		start-stop-daemon.8 \
 		update-alternatives.8
 
-MAN1_SV=	dpkg-architecture.1 \
-		dpkg-buildpackage.1 \
+MAN1_SV=	dpkg-buildpackage.1 \
 		dpkg-checkbuilddeps.1 \
 		dpkg-deb.1 \
 		dpkg-distaddfile.1 \
@@ -258,7 +256,6 @@ MAN5_SV=	deb-control.5 \
 		dselect.cfg.5
 
 MAN8_SV=	dpkg-divert.8 \
-		dpkg-statoverride.8 \
 		start-stop-daemon.8 \
 		update-alternatives.8
 .endif
