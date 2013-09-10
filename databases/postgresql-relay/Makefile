@@ -1,9 +1,5 @@
-# New ports collection makefile for:   postgresql-relay
-# Date created:        14 February 2003
-# Whom:                Edwin Groothuis (edwin@mavetju.org)
-#
+# Created by: Edwin Groothuis (edwin@mavetju.org)
 # $FreeBSD$
-#
 
 PORTNAME=	postgresql-relay
 PORTVERSION=	1.3.2
@@ -19,7 +15,8 @@ PLIST_FILES=	bin/postgresql-relay \
 		etc/postgresql-relay.conf-sample
 
 USE_RC_SUBR=	postgresql-relay
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/postgresql-relay ${PREFIX}/bin

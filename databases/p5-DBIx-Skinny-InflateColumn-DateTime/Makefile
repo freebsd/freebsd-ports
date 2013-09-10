@@ -1,9 +1,4 @@
-# New ports collection makefile for:	DBIx::Skinny::InflateColumn::DateTime
-# Date created:		20 Nov 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Skinny-InflateColumn-DateTime
 PORTVERSION=	0.06
@@ -24,7 +19,8 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-DBD-Mock>=0:${PORTSDIR}/databases/p5-DBD-Mock
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	DBIx::Skinny::InflateColumn::DateTime.3 \
 	DBIx::Skinny::InflateColumn::DateTime::Auto.3

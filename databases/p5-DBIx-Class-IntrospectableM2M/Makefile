@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DBIx-Class-IntrospectableM2M
-# Date created:		23 Oct 2008
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Class-IntrospectableM2M
 PORTVERSION=	0.001001
@@ -17,7 +13,8 @@ COMMENT=	Introspect many-to-many shortcuts
 
 RUN_DEPENDS=	p5-DBIx-Class>=0.06002:${PORTSDIR}/databases/p5-DBIx-Class
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	DBIx::Class::IntrospectableM2M.3
 

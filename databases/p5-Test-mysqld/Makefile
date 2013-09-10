@@ -16,7 +16,8 @@ RUN_DEPENDS=	\
 	p5-Test-SharedFork>=0.06:${PORTSDIR}/devel/p5-Test-SharedFork
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Test::mysqld.3
 

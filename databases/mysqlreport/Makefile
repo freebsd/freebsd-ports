@@ -1,7 +1,4 @@
-# New ports collection makefile for:	mysqlreport
-# Date created:			2006-11-23
-# Whom:				Alexander Zhuravlev <zaa@zaa.pp.ru>
-#
+# Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
 # $FreeBSD$
 
 PORTNAME=	mysqlreport
@@ -18,7 +15,7 @@ RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/mysqlreport
