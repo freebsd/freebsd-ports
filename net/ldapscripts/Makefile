@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldapscripts
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/ldapscripts/
