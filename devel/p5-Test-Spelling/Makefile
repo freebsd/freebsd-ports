@@ -17,7 +17,8 @@ RUN_DEPENDS=	p5-Pod-Spell>=0:${PORTSDIR}/textproc/p5-Pod-Spell \
 		p5-IPC-Run3>=0:${PORTSDIR}/devel/p5-IPC-Run3
 TEST_DEPENDS=	p5-Test-Tester>=0:${PORTSDIR}/devel/p5-Test-Tester
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::Spelling.3
 

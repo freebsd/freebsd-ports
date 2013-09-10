@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cscout
-# Date created:			07. Jul 2003
-# Whom:				netchild@FreeBSD.org
-#
+# Created by: netchild@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	cscout
 PORTVERSION=	2.7
@@ -20,7 +16,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 ONLY_FOR_ARCHS_REASON=	The port fetches and installs precompiled binaries
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 MAN1=	cscout.1 cswc.1
 

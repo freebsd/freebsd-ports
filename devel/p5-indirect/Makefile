@@ -14,7 +14,8 @@ COMMENT=	Lexically warn about using the indirect object syntax
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		indirect.3
 

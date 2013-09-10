@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-CPAN-Reporter
-# Date created:		2011-02-04
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CPAN-Reporter
 PORTVERSION=	1.2006
@@ -29,7 +25,8 @@ BUILD_DEPENDS=	p5-Archive-Tar>0:${PORTSDIR}/archivers/p5-Archive-Tar \
 		p5-Tee>0:${PORTSDIR}/devel/p5-Tee
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	CPAN::Reporter::API.3 CPAN::Reporter::Config.3 \
 	CPAN::Reporter::History.3 CPAN::Reporter::PrereqCheck.3 \

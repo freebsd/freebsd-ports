@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Data-Miscellany
-# Date created:		2010-11-28
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Miscellany
 PORTVERSION=	1.100850
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Collection of miscellaneous subroutines
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Data::Miscellany.3
 

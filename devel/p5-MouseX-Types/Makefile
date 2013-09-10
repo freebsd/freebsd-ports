@@ -1,9 +1,4 @@
-# New ports collection makefile for:	MouseX::Types
-# Date created:		20 Jan 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	MouseX-Types
 PORTVERSION=	0.06
@@ -21,7 +16,8 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MouseX::Types.3 \
 		MouseX::Types::Moose.3 \
