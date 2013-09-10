@@ -1,0 +1,245 @@
+commit f184967a01381ca43a02d44edf3158e6cc0be376
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Tue Sep 3 12:55:39 2013 +0300
+
+    Properly detect the location of STL's shared_ptr.
+
+    std::shared_ptr is a C++11 feature, whose location (and existence) in STL
+    implementations of previous C++ standards varied -- one widespread example
+    is GCC's libstdc++, which has a shared_ptr implementation in <tr1/memory>
+    that was shipped long before C++11.
+
+    However, including it unconditionally breaks the build if any other STL
+    implementation (such as libc++) is used instead.
+
+    We now check if std::shared_ptr is present in the <memory> header and then
+    try std::tr1::shared_ptr as a fallback.
+
+    REVIEW:             112434
+
+commit 111de2e86a3a79d43744e7d76a5a0be1d6e8fe0d
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Tue Sep 3 12:54:48 2013 +0300
+
+    Use operator bool() instead of != and == for shared_ptr.
+
+    (This is part 1 of 2 of the shared_ptr changes)
+
+    In preparation for supporting C++11's version of shared_ptr, convert
+    some
+    comparisons to operator bool(), that is
+
+      if (foo != 0) becomes if (foo)
+      if (foo == 0) becomes if (!foo)
+
+    as otherwise the build (with clang and libc++) would fail because there is
+    no overload for operator==(shared_ptr, int) and operator!=(shared_ptr, int).
+
+    REVIEW:             112433
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index a442972..1f75530 100644
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -26,6 +26,17 @@ if(MSVC)
+ endif(MSVC)
+ 
+ 
++include(CheckCXXSourceCompiles)
++check_cxx_source_compiles("
++    #include <memory>
++    int main() { std::shared_ptr<int> p; return 0; }
++" HAVE_STD_SHARED_PTR)
++check_cxx_source_compiles("
++    #include <tr1/memory>
++    int main() { std::tr1::shared_ptr<int> p; return 0; }
++" HAVE_STD_TR1_SHARED_PTR)
++
++
+ configure_file (config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
+ 
+ 
+diff --git a/apps/kmixd.cpp b/apps/kmixd.cpp
+index 442abaf..9385a6a 100644
+--- apps/kmixd.cpp
++++ apps/kmixd.cpp
+@@ -156,7 +156,7 @@ void KMixD::saveBaseConfig()
+       config.writeEntry( "MasterMixer", mixerMasterCard->id() );
+    }
+    shared_ptr<MixDevice> mdMaster = Mixer::getGlobalMasterMD();
+-   if ( mdMaster != 0 ) {
++   if ( mdMaster ) {
+       config.writeEntry( "MasterMixerDevice", mdMaster->id() );
+    }
+    QString mixerIgnoreExpression = MixerToolBox::instance()->mixerIgnoreExpression();
+diff --git a/backends/mixer_backend.cpp b/backends/mixer_backend.cpp
+index 2e2e901..2105d2a 100644
+--- backends/mixer_backend.cpp
++++ backends/mixer_backend.cpp
+@@ -241,7 +241,7 @@ void Mixer_Backend::readSetFromHW()
+  */
+ shared_ptr<MixDevice> Mixer_Backend::recommendedMaster()
+ {
+-	if ( m_recommendedMaster != 0 )
++	if ( m_recommendedMaster )
+ 	{
+ 		// Backend has set a recommended master. Thats fine. Using it.
+ 		return m_recommendedMaster;
+diff --git a/backends/mixer_mpris2.cpp b/backends/mixer_mpris2.cpp
+index 6ebcd8f..75ef129 100644
+--- backends/mixer_mpris2.cpp
++++ backends/mixer_mpris2.cpp
+@@ -535,7 +535,7 @@ void Mixer_MPRIS2::newMediaPlayer(QString name, QString oldOwner, QString newOwn
+ 			}
+ 
+ 			shared_ptr<MixDevice> md = m_mixDevices.get(id);
+-			if (md != 0)
++			if (md)
+ 			{
+ 				// We know about the player that is unregistering => remove internally
+ 				md->close();
+diff --git a/config.h.cmake b/config.h.cmake
+index 032f8c1..acd9a9c 100644
+--- config.h.cmake
++++ config.h.cmake
+@@ -15,3 +15,9 @@
+ 
+ /* Define to 1 if you have the <unistd.h> header file. */
+ #cmakedefine HAVE_UNISTD_H 1
++
++/* Define to 1 if <tr1/memory> exists and defines std::tr1::shared_ptr. */
++#cmakedefine HAVE_STD_TR1_SHARED_PTR 1
++
++/* Define to 1 if <memory> exists and defines std::shared_ptr. */
++#cmakedefine HAVE_STD_SHARED_PTR 1
+diff --git a/core/ControlPool.h b/core/ControlPool.h
+index 4cb2222..b045ce0 100644
+--- core/ControlPool.h
++++ core/ControlPool.h
+@@ -22,12 +22,15 @@
+ #ifndef CONTROL_POOL_H
+ #define CONTROL_POOL_H
+ 
++#include "config.h"
+ 
+-// std::shared_ptr
++#if defined(HAVE_STD_SHARED_PTR)
+ #include <memory>
++using std::shared_ptr;
++#elif defined(HAVE_STD_TR1_SHARED_PTR)
+ #include <tr1/memory>
+-
+-using namespace ::std::tr1;
++using std::tr1::shared_ptr;
++#endif
+ 
+ #include "core/mixdevice.h"
+ 
+diff --git a/core/MasterControl.h b/core/MasterControl.h
+index dff9e95..16472ff 100644
+--- core/MasterControl.h
++++ core/MasterControl.h
+@@ -8,12 +8,17 @@
+ #ifndef MASTERCONTROL_H_
+ #define MASTERCONTROL_H_
+ 
+-#include <QString>
++#include "config.h"
+ 
+-// std::shared_ptr
++#if defined(HAVE_STD_SHARED_PTR)
+ #include <memory>
++using std::shared_ptr;
++#elif defined(HAVE_STD_TR1_SHARED_PTR)
+ #include <tr1/memory>
+-using namespace ::std::tr1;
++using std::tr1::shared_ptr;
++#endif
++
++#include <QString>
+ 
+ class MasterControl
+ {
+diff --git a/core/mixdevice.h b/core/mixdevice.h
+index f5ca782..fb554a2 100644
+--- core/mixdevice.h
++++ core/mixdevice.h
+@@ -21,10 +21,15 @@
+ #ifndef MixDevice_h
+ #define MixDevice_h
+ 
+-// std::shared_ptr
++#include "config.h"
++
++#if defined(HAVE_STD_SHARED_PTR)
+ #include <memory>
++using std::shared_ptr;
++#elif defined(HAVE_STD_TR1_SHARED_PTR)
+ #include <tr1/memory>
+-using namespace ::std::tr1;
++using std::tr1::shared_ptr;
++#endif
+ 
+ //KMix
+ class Mixer;
+diff --git a/core/mixertoolbox.cpp b/core/mixertoolbox.cpp
+index 60c9fc8..41386d4 100644
+--- core/mixertoolbox.cpp
++++ core/mixertoolbox.cpp
+@@ -248,13 +248,13 @@ void MixerToolBox::initMixerInternal(MultiDriverMode multiDriverMode, QList<QStr
+ 
+    
+     // Add a master device (if we haven't defined one yet)
+-   if ( Mixer::getGlobalMasterMD(false) == 0 ) {
++   if ( !Mixer::getGlobalMasterMD(false) ) {
+       // We have no master card yet. This actually only happens when there was
+       // not one defined in the kmixrc.
+       // So lets just set the first card as master card.
+       if ( Mixer::mixers().count() > 0 ) {
+     	  shared_ptr<MixDevice> master = Mixer::mixers().first()->getLocalMasterMD();
+-         if ( master != 0 ) {
++         if ( master ) {
+              QString controlId = master->id();
+              Mixer::setGlobalMaster( Mixer::mixers().first()->id(), controlId, true);
+          }
+diff --git a/gui/kmixdockwidget.cpp b/gui/kmixdockwidget.cpp
+index 47e8073..e84338e 100644
+--- gui/kmixdockwidget.cpp
++++ gui/kmixdockwidget.cpp
+@@ -215,7 +215,7 @@ void KMixDockWidget::updatePixmap()
+ 	shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
+ 
+     char newPixmapType;
+-    if ( md == 0 )
++    if ( !md )
+     {
+         newPixmapType = 'e';
+     }
+@@ -405,7 +405,7 @@ void KMixDockWidget::contextMenuAboutToShow()
+ void KMixDockWidget::updateDockMuteAction ( KToggleAction* dockMuteAction )
+ {  
+     shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
+-    if ( md != 0 && dockMuteAction != 0 )
++    if ( md && dockMuteAction != 0 )
+     {
+     	Volume& vol = md->playbackVolume().hasVolume() ? md->playbackVolume() : md->captureVolume();
+     	bool isInactive =  vol.isCapture() ? !md->isRecSource() : md->isMuted();
+diff --git a/gui/viewdockareapopup.cpp b/gui/viewdockareapopup.cpp
+index 48411bd..45edc32 100644
+--- gui/viewdockareapopup.cpp
++++ gui/viewdockareapopup.cpp
+@@ -248,12 +248,12 @@ Application: KMix (kmix), signal: Segmentation fault
+ 	{
+ //		kDebug() << "ADD? mixerId=" << mixer->id();
+ 		shared_ptr<MixDevice>dockMD = mixer->getLocalMasterMD();
+-		if ( dockMD == 0 && mixer->size() > 0 )
++		if ( !dockMD && mixer->size() > 0 )
+ 		{
+ 			// If we have no dock device yet, we will take the first available mixer device.
+ 			dockMD = (*mixer)[0];
+ 		}
+-		if ( dockMD != 0 )
++		if ( dockMD )
+ 		{
+ //			kDebug() << "ADD? mixerId=" << mixer->id() << ", md=" << dockMD->id();
+ 			if ( !dockMD->isApplicationStream() && dockMD->playbackVolume().hasVolume())
