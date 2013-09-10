@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-uni-perl
-# Date created:		2009-10-20
-# Whom:			Mons Anderson <mons@cpan.org>
-#
+# Created by: Mons Anderson <mons@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	uni-perl
 PORTVERSION=	0.91
@@ -20,6 +16,7 @@ RUN_DEPENDS=	p5-Encode>=2.37:${PORTSDIR}/converters/p5-Encode \
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

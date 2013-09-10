@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Data::Swap
-# Date created:				10 December 2005
-# Whom:					Parv <parv@pair.org>
-#
+# Created by: Parv <parv@pair.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Swap
 PORTVERSION=	0.08
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	parv@pair.com
 COMMENT=	XS module to swap the contents and types of referenced variables
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Data::Swap.3
 

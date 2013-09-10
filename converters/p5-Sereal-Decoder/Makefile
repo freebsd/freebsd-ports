@@ -13,7 +13,8 @@ COMMENT=	Perl extension for fast, compact, powerful binary deserialization
 TEST_DEPENDS=	\
 	p5-Test-LongString>0:${PORTSDIR}/devel/p5-Test-LongString
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Sereal::Decoder.3
 

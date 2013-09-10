@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Template-Provider-Encode
-# Date created:		2009-01-08
-# Whom:			Murilo Opsfelder <mopsfelder@gmail.com>
-#
+# Created by: Murilo Opsfelder <mopsfelder@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Template-Provider-Encode
 PORTVERSION=	0.02
@@ -16,7 +12,8 @@ COMMENT=	Encode templates for Template Toolkit
 
 RUN_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Template::Provider::Encode.3 \
 		Template::Provider::Encode::Guess.3

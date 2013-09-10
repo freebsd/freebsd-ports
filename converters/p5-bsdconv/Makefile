@@ -19,7 +19,8 @@ GH_ACCOUNT=	buganini
 GH_COMMIT=	092d398
 GH_PROJECT=	perl-${PORTNAME}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		bsdconv.3
 
