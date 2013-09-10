@@ -13,7 +13,8 @@ COMMENT=	Capture STDOUT and STDERR from Perl, XS, or external programs
 
 LICENSE=	AL2
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Capture::Tiny.3
 

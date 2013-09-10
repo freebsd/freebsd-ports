@@ -21,7 +21,8 @@ TEST_DEPENDS=	p5-Test-Identity>0:${PORTSDIR}/devel/p5-Test-Identity \
 		p5-Test-Refcount>0:${PORTSDIR}/devel/p5-Test-Refcount \
 		p5-Test-Fatal>0:${PORTSDIR}/devel/p5-Test-Fatal
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		CPS.3 \
 		CPS::Functional.3 \

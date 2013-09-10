@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-POSIX-strptime
-# Date created:        3 January 2007
-# Whom:                Douglas Thrift <douglas@douglasthrift.net>
-#
+# Created by: Douglas Thrift <douglas@douglasthrift.net>
 # $FreeBSD$
-#
 
 PORTNAME=	POSIX-strptime
 PORTVERSION=	0.10
@@ -17,7 +13,8 @@ COMMENT=	Perl interface to strptime(3)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	POSIX::strptime.3
 

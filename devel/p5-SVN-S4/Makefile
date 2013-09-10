@@ -18,7 +18,8 @@ RUN_DEPENDS=	p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-IO-AIO>=0:${PORTSDIR}/devel/p5-IO-AIO \
 		p5-subversion>=0:${PORTSDIR}/devel/p5-subversion
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 INSTALL_TARGET=	pure_install
 
 MAN1=		s4.1

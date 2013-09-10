@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-Data-Util>=0:${PORTSDIR}/devel/p5-Data-Util \
 		subversion>=1.4.0:${PORTSDIR}/devel/subversion
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		SVN::Hooks.3 \
 		SVN::Hooks::AllowLogChange.3 \

@@ -17,7 +17,8 @@ BUILD_DEPENDS=	p5-Data-Compare>=1.2100:${PORTSDIR}/devel/p5-Data-Compare \
 		p5-File-Find-Rule>=0.28:${PORTSDIR}/devel/p5-File-Find-Rule
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		use-devel-assertos.1
 MAN3=		Devel::AssertOS.3 \

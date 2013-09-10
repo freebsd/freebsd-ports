@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Test-Module-Used
-# Date created:		2010-01-14
-# Whom:			Takuya Tsuchida <tsucchi@cpan.org>
-#
+# Created by: Takuya Tsuchida <tsucchi@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Module-Used
 PORTVERSION=	0.2.3
@@ -23,7 +19,8 @@ RUN_DEPENDS=	p5-CPAN-Meta>=2.102400:${PORTSDIR}/devel/p5-CPAN-Meta \
 		p5-version>=0.77:${PORTSDIR}/devel/p5-version
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		Test::Module::Used.3
 
 .include <bsd.port.mk>

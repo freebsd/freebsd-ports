@@ -1,9 +1,4 @@
-# New ports collection makefile for:	File::Spec::Native
-# Date created:		27 May 2012
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	File-Spec-Native
 PORTVERSION=	1.003
@@ -14,7 +9,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for native OS implementation of File::Spec
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	File::Spec::Native.3
 

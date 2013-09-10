@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-Log-Log4perl>=1:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-YAML>=0.62:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Data::Throttler.3
 
