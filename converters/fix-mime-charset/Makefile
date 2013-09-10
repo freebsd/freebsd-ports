@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fix-mime-charset
-# Date created:				26 November 2003
-# Whom:					Nosov Artem <chip-set@mail.ru>
-#
+# Created by: Nosov Artem <chip-set@mail.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	fix-mime-charset
 PORTVERSION=	0.5.3
@@ -19,7 +15,8 @@ LIB_DEPENDS=	enca.5:${PORTSDIR}/converters/enca
 PORTDOCS=	README.koi8r README
 
 GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	build
 
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include

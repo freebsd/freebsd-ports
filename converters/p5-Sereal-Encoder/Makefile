@@ -15,7 +15,8 @@ TEST_DEPENDS=	\
 	p5-Test-Warn>0:${PORTSDIR}/devel/p5-Test-Warn \
 	p5-Sereal-Decoder>0:${PORTSDIR}/converters/p5-Sereal-Decoder
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Sereal::Encoder.3
 

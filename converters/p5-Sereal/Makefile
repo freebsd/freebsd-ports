@@ -15,7 +15,8 @@ RUN_DEPENDS=	\
 	p5-Sereal-Encoder>=0.36:${PORTSDIR}/converters/p5-Sereal-Encoder
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Sereal.3
 
