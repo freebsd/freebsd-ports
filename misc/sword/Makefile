@@ -5,27 +5,22 @@ PORTNAME=	sword
 PORTVERSION=	1.6.2
 PORTREVISION=	4
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.6/ \
-		http://crosswire.org/ftpmirror/pub/sword/source/v1.6/ \
-		LOCAL
-MASTER_SITE_SUBDIR=	tabthorpe
+MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v${PORTVERSION:R}/ \
+		http://crosswire.org/ftpmirror/pub/sword/source/v${PORTVERSION:R}/ \
+		LOCAL/tabthorpe
 
 MAINTAINER=	tabthorpe@FreeBSD.org
-COMMENT=	A project framework for manipulating Bible texts
+COMMENT=	Framework for manipulating Bible texts
 
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
 
-
-USE_GCC=	any
-USES=		pkgconfig gmake
-GNU_CONFIGURE=	yes
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	automake autoconf
-CONFIGURE_ARGS+=	--without-conf --with-zlib
+CONFIGURE_ARGS=	--without-conf --with-zlib
 USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
@@ -36,15 +31,15 @@ OPTIONS_DEFAULT=CURL CLUCENE
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-curl
 .else
 CONFIGURE_ARGS+=	--without-curl
 .endif
 
 .if ${PORT_OPTIONS:MCLUCENE}
-LIB_DEPENDS+=	clucene-core:${PORTSDIR}/textproc/clucene \
-		icudata:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	libclucene-core.so:${PORTSDIR}/textproc/clucene \
+		libicudata.so:${PORTSDIR}/devel/icu
 CONFIGURE_ARGS+=	--with-clucene=${LOCALBASE} --with-icu
 PLIST_SUB+=		ICU="" ICUVER="`${LOCALBASE}/bin/icu-config --version`"
 .else
@@ -62,6 +57,8 @@ post-patch:
 		${WRKSRC}/lib/Makefile.in
 	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' \
 		${WRKSRC}/src/mgr/curlhttpt.cpp ${WRKSRC}/src/mgr/curlftpt.cpp
+	@${REINPLACE_CMD} -e 's/find(k)/this->&/ ; s/insert(/this->&/ ; \
+		s/[a-z]*_bound(k)/this->&/' ${WRKSRC}/include/multimapwdef.h
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/sword/mods.d
@@ -71,10 +68,11 @@ post-install:
 	@${ECHO_CMD} "Config file not installed since ${PREFIX}/etc/sword.conf already exists."
 	@${ECHO_CMD} "Please check that DataPath points to your modules (default ${DATADIR}).";
 .endif
-	@${ECHO_CMD} ""
+	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
 register:
-	@(cd ${WRKSRC} && ${GMAKE} register)
+	${MAKE_CMD} register -C ${WRKSRC}
 
 .include <bsd.port.mk>
