@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Chemistry-Mok
-# Date created:		2010-03-10
-# Whom:			Steve Wills <steve@mouf.net>
-#
+# Created by: Steve Wills <steve@mouf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Chemistry-Mok
 PORTVERSION=	0.25
@@ -27,6 +23,7 @@ RUN_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
 MAN1=	mok.1
 MAN3=	Chemistry::Mok.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

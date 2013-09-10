@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Chemistry-3DBuilder
-# Date created:		2010-03-10
-# Whom:			Steve Wills <steve@mouf.net
-#
+# Created by: Steve Wills <steve@mouf.net
 # $FreeBSD$
-#
 
 PORTNAME=	Chemistry-3DBuilder
 PORTVERSION=	0.10
@@ -28,7 +24,8 @@ RUN_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
 		p5-Chemistry-InternalCoords>=0:${PORTSDIR}/science/p5-Chemistry-InternalCoords \
 		p5-Math-VectorReal>=0:${PORTSDIR}/math/p5-Math-VectorReal
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Chemistry::3DBuilder.3
 

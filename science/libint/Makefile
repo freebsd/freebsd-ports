@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libint
-# Date created:				29 Dec 2006
-# Whom:					NAKATA, Maho <maho@FreeBSD.org>
-#
+# Created by: NAKATA, Maho <maho@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libint
 PORTVERSION=	1.1.4
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.files.chem.vt.edu/chem-dept/valeev/software/libint/src/
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Evaluate the integrals in modern atomic and molecular theory
 
-USE_PERL5=	yes
+USES=		perl5
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 ALL_TARGET=	# empty
