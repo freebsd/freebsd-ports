@@ -10,6 +10,8 @@ DISTNAME=	MamboV${PORTVERSION}
 MAINTAINER=	tabmow@freenode.net
 COMMENT=	A dynamic web content management system (CMS)
 
+BROKEN=		Unfetchable due to expired DNS on MASTER_SITES
+
 NO_BUILD=	yes
 SUB_FILES+=	pkg-message
 
