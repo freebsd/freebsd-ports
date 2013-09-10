@@ -108,6 +108,16 @@ bin/mitmproxy
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/platform/linux.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/platform/osx.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/platform/pf.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/static/bootstrap.min.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/static/bootstrap.min.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/static/jquery-1.10.1.min.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/static/jquery.localscroll-min.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/static/jquery.scrollTo-min.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/static/mitmproxy.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/templates/certs.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/templates/frame.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/templates/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/templates/layout.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -120,6 +130,8 @@ bin/mitmproxy
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/contrib/jsbeautifier
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/contrib
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/platform
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/static
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/libmproxy
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
