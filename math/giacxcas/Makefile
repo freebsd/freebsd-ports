@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	giacxcas
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/giac/freebsd/ \
-		http://people.math.jussieu.fr/~han/xcas/sources/
+		http://www.math.jussieu.fr/~han/xcas/sources/
 DISTFILES=	fltk-giac.tar.gz CoCoALib-0.9950.tgz giac-${PORTVERSION}.tar.gz
 DIST_SUBDIR=	${PORTNAME}
 
@@ -17,21 +16,20 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
-		pari:${PORTSDIR}/math/pari \
-		mpfr:${PORTSDIR}/math/mpfr \
-		gsl:${PORTSDIR}/math/gsl \
-		lapack:${PORTSDIR}/math/lapack
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+		libpari.so:${PORTSDIR}/math/pari \
+		libmpfr.so:${PORTSDIR}/math/mpfr \
+		libgsl.so:${PORTSDIR}/math/gsl \
+		liblapack.so:${PORTSDIR}/math/lapack
 
 NO_CDROM=	French documentation is for non-commercial use only
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_GL=		gl
 USE_XORG=	xcursor xft xi
 USE_TEX=	latex:build dvipsk:build
 USE_LDCONFIG=	yes
-USES=		gettext
+USES=		gettext gmake
 
 DOCSDIR=	${PREFIX}/share/doc/giac
 PORTDOCS=	*

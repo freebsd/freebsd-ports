@@ -41,6 +41,7 @@ include/giac/modfactor.h
 include/giac/modpoly.h
 include/giac/monomial.h
 include/giac/moyal.h
+include/giac/myostream.h
 include/giac/pari.h
 include/giac/permu.h
 include/giac/plot.h
@@ -75,6 +76,16 @@ lib/libgiac.so
 lib/libgiac.so.0
 share/application-registry/xcas.applications
 share/applications/xcas.desktop
+share/icons/hicolor/256x256/apps/xcas.png
+share/icons/hicolor/256x256/mimetypes/application-x-xcas.png
+share/icons/hicolor/128x128/apps/xcas.png
+share/icons/hicolor/128x128/mimetypes/application-x-xcas.png
+share/icons/hicolor/64x64/apps/xcas.png
+share/icons/hicolor/64x64/mimetypes/application-x-xcas.png
+share/icons/hicolor/32x32/apps/xcas.png
+share/icons/hicolor/32x32/mimetypes/application-x-xcas.png
+share/icons/hicolor/16x16/apps/xcas.png
+share/icons/hicolor/16x16/mimetypes/application-x-xcas.png
 share/locale/de/LC_MESSAGES/giac.mo
 share/locale/el/LC_MESSAGES/giac.mo
 share/locale/en/LC_MESSAGES/giac.mo
@@ -84,6 +95,23 @@ share/locale/it/LC_MESSAGES/giac.mo
 share/locale/pt/LC_MESSAGES/giac.mo
 share/locale/zh/LC_MESSAGES/giac.mo
 share/pixmaps/xcas.xpm
+@dirrmtry share/icons/hicolor/256x256/mimetypes
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons/hicolor/128x128/mimetypes
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor/64x64/mimetypes
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/32x32/mimetypes
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/mimetypes
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrmtry share/applications
 @dirrmtry share/application-registry
 @dirrm include/giac
