@@ -12,7 +12,7 @@ COMMENT=	IRC web gateway written in Perl
 
 LICENSE=	GPLv2
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 pre-install:

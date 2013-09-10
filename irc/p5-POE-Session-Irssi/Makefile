@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-POE-Session-Irssi
-# Date created:	   Jul 29 2010
-# Whom:		   Jase Thew <freebsd@beardz.net>
-#
+# Created by: Jase Thew <freebsd@beardz.net>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Session-Irssi
 PORTVERSION=	0.50
@@ -26,7 +22,8 @@ RUN_DEPENDS=	p5-POE>=1.003:${PORTSDIR}/devel/p5-POE \
 		irssi:${PORTSDIR}/irc/irssi
 
 PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Session::Irssi.3
 

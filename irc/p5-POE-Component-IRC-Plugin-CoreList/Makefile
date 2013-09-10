@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Component-IRC-Plugin-Corelist
-# Date created:	   31 may 2008
-# Whom:		   Martin Wilke <miwi@FreeBSD.org
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-IRC-Plugin-CoreList
 PORTVERSION=	1.02
@@ -20,7 +16,8 @@ RUN_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		p5-POE-Component-IRC>=0:${PORTSDIR}/irc/p5-POE-Component-IRC
 
 PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Component::IRC::Plugin::CoreList.3
 

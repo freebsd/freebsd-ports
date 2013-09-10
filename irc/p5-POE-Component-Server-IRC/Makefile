@@ -27,7 +27,8 @@ RUN_DEPENDS=	p5-Crypt-PasswdMD5>=1.3:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
 		p5-POE-Filter-Zlib>0:${PORTSDIR}/archivers/p5-POE-Filter-Zlib
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		pmkpasswd.1
 MAN3=		POE::Component::Server::IRC.3 \
