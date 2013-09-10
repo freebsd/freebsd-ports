@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flexget
-PORTVERSION=	1.1.105
+PORTVERSION=	1.1.115
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://download.flexget.com/archive/ \
