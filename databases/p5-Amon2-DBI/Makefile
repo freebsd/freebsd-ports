@@ -21,7 +21,8 @@ TEST_DEPENDS=	\
 	p5-Amon2>0:${PORTSDIR}/www/p5-Amon2 \
 	p5-Test-Memory-Cycle>0:${PORTSDIR}/devel/p5-Test-Memory-Cycle
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Amon2::DBI.3
 

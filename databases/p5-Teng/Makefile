@@ -28,7 +28,8 @@ TEST_DEPENDS=	\
 	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple \
 	p5-Class-Method-Modifiers>0:${PORTSDIR}/devel/p5-Class-Method-Modifiers
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Teng.3 \
 	Teng::Iterator.3 \
