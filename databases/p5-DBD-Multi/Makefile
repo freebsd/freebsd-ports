@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DBD-Multi
-# Date created:		2007-07-07
-# Whom:			Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-#
+# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	DBD-Multi
 PORTVERSION=	0.16
@@ -28,7 +24,8 @@ TEST_DEPENDS=	p5-DBD-SQLite>=1.09:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.04:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DBD::Multi.3
 

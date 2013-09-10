@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-KyotoCabinet
-# Date created:				2011-09-19
-# Whom:					Geraud CONTINSOUZAS <geraud@gcu.info>
-#
+# Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
 # $FreeBSD$
-#
 
 PORTNAME=	KyotoCabinet
 PORTVERSION=	1.18
@@ -20,7 +16,8 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	kyotocabinet:${PORTSDIR}/databases/kyotocabinet
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	KyotoCabinet.3
 
