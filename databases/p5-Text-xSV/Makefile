@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Text-xSV
-# Date created:		Jun 08 2011
-# Whom:			Dmitry Liakh <dliakh@ukr.net>
-#
+# Created by: Dmitry Liakh <dliakh@ukr.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-xSV
 PORTVERSION=	0.21
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dliakh@ukr.net
 COMMENT=	Read character separated files
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Text::xSV.3
 

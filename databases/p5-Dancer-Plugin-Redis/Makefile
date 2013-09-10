@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-Dancer>=1.1750:${PORTSDIR}/www/p5-Dancer \
 RUN_DEPENDS=	p5-Dancer>=1.1750:${PORTSDIR}/www/p5-Dancer \
 		p5-Redis>=1.902:${PORTSDIR}/databases/p5-Redis
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Dancer::Plugin::Redis.3
 

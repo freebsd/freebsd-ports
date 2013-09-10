@@ -1,9 +1,5 @@
-# New ports collection makefile for:	DBD::Mock
-# Date created:				02 December 2005
-# Whom:					Espen Tagestad <espen@tagestad.no>
-#
+# Created by: Espen Tagestad <espen@tagestad.no>
 # $FreeBSD$
-#
 
 PORTNAME=	DBD-Mock
 PORTVERSION=	1.45
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-DBI>=1.3:${PORTSDIR}/databases/p5-DBI \
 		p5-Test-Simple>=0.47:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DBD::Mock.3
 

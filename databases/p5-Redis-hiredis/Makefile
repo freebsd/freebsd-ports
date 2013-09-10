@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	A Simple wrapper around hiredis C client
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Redis::hiredis.3
 
