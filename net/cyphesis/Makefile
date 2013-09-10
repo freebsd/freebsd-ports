@@ -22,7 +22,7 @@ CONFIGURE_ARGS=	--with-python=${LOCALBASE}
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=		gmake pathfix
+USES=		gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_PGSQL=	yes
 USE_PYTHON=	-2.7

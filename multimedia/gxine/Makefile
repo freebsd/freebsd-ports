@@ -19,10 +19,9 @@ OPTIONS_DEFINE=	MOZILLA_PLUGIN GNOME LIRC
 MOZILLA_PLUGIN_DESC=	Mozilla plugin
 
 USE_XZ=		yes
-USES=        pathfix
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	gtk20
 USE_GECKO=	libxul
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 CONFIGURE_ARGS=	--enable-mozjs --disable-ffjs --disable-seajs \
