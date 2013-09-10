@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Reaction
-PORTVERSION=	0.001001
-PORTREVISION=	5
+PORTVERSION=	0.002005
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,46 +10,65 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extended MVC framework built upon Catalyst
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7002:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Catalyst-Plugin-ConfigLoader>=0.19:${PORTSDIR}/www/p5-Catalyst-Plugin-ConfigLoader \
-		p5-Catalyst-Plugin-Static-Simple>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Static-Simple \
-		p5-Catalyst-Plugin-I18N>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-I18N \
-		p5-Catalyst-Model-DBIC-Schema>=0:${PORTSDIR}/www/p5-Catalyst-Model-DBIC-Schema \
-		p5-Catalyst-View-TT>=0.23:${PORTSDIR}/www/p5-Catalyst-View-TT \
-		p5-Catalyst-Component-ACCEPT_CONTEXT>=0:${PORTSDIR}/www/p5-Catalyst-Component-ACCEPT_CONTEXT \
-		p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
-		p5-Test-Class>=0:${PORTSDIR}/devel/p5-Test-Class \
-		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
-		p5-DBIx-Class>=0.07001:${PORTSDIR}/databases/p5-DBIx-Class \
-		p5-SQL-Translator>=0.08:${PORTSDIR}/databases/p5-SQL-Translator \
-		p5-Moose>=0.54:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Types>=0.04:${PORTSDIR}/devel/p5-MooseX-Types \
-		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased \
-		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+BUILD_DEPENDS=	p5-Catalyst-Component-ACCEPT_CONTEXT>=0.05:${PORTSDIR}/www/p5-Catalyst-Component-ACCEPT_CONTEXT \
+		p5-Catalyst-Component-InstancePerContext>=0.001001:${PORTSDIR}/www/p5-Catalyst-Component-InstancePerContext \
+		p5-Catalyst-Model-DBIC-Schema>=0.23:${PORTSDIR}/www/p5-Catalyst-Model-DBIC-Schema \
+		p5-Catalyst-Plugin-ConfigLoader>=0.23:${PORTSDIR}/www/p5-Catalyst-Plugin-ConfigLoader \
+		p5-Catalyst-Plugin-I18N>=0.09:${PORTSDIR}/www/p5-Catalyst-Plugin-I18N \
+		p5-Catalyst-Plugin-Static-Simple>=0.21:${PORTSDIR}/www/p5-Catalyst-Plugin-Static-Simple \
+		p5-Catalyst-Runtime>=5.80002:${PORTSDIR}/www/p5-Catalyst-Runtime \
+		p5-Catalyst-View-TT>=0.29:${PORTSDIR}/www/p5-Catalyst-View-TT \
+		p5-Config-General>=2.42:${PORTSDIR}/devel/p5-Config-General \
+		p5-Crypt-Eksblowfish>=0.005:${PORTSDIR}/security/p5-Crypt-Eksblowfish \
+		p5-DBIx-Class-IntrospectableM2M>=0.001001:${PORTSDIR}/databases/p5-DBIx-Class-IntrospectableM2M \
+		p5-DBIx-Class>=0.08100:${PORTSDIR}/databases/p5-DBIx-Class \
+		p5-DateTime-Event-Recurrence>=0.16:${PORTSDIR}/devel/p5-DateTime-Event-Recurrence \
 		p5-DateTime-Set>=0:${PORTSDIR}/devel/p5-DateTime-Set \
-		p5-DateTime-Event-Recurrence>=0:${PORTSDIR}/devel/p5-DateTime-Event-Recurrence \
-		p5-DateTime-Format-MySQL>=0:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
-		p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules \
-		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
-		p5-Email-Send>=0:${PORTSDIR}/mail/p5-Email-Send \
-		p5-Email-MIME>=0:${PORTSDIR}/mail/p5-Email-MIME \
-		p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS \
-		p5-File-ShareDir>=1.00:${PORTSDIR}/devel/p5-File-ShareDir \
-		p5-Devel-Declare>=0:${PORTSDIR}/devel/p5-Devel-Declare
+		p5-DateTime>=0.47:${PORTSDIR}/devel/p5-DateTime \
+		p5-Devel-Declare>=0.005000:${PORTSDIR}/devel/p5-Devel-Declare \
+		p5-Email-Valid>=0.181:${PORTSDIR}/mail/p5-Email-Valid \
+		p5-File-ShareDir>=1:${PORTSDIR}/devel/p5-File-ShareDir \
+		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+		p5-Method-Signatures-Simple>=0.03:${PORTSDIR}/devel/p5-Method-Signatures-Simple \
+		p5-Moose>=0.74:${PORTSDIR}/devel/p5-Moose \
+		p5-MooseX-MethodAttributes>=0.18:${PORTSDIR}/devel/p5-MooseX-MethodAttributes \
+		p5-MooseX-Role-Parameterized>=0.24:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized \
+		p5-MooseX-Types-Common>=0.001000:${PORTSDIR}/devel/p5-MooseX-Types-Common \
+		p5-MooseX-Types-DateTime>=0.03:${PORTSDIR}/devel/p5-MooseX-Types-DateTime \
+		p5-MooseX-Types-URI>=0.02:${PORTSDIR}/devel/p5-MooseX-Types-URI \
+		p5-MooseX-Types>=0.10:${PORTSDIR}/devel/p5-MooseX-Types \
+		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
+		p5-Sub-Exporter>=0.982:${PORTSDIR}/devel/p5-Sub-Exporter \
+		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
+		p5-Template-Toolkit>=2.20:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-Time-modules>=2006.0814:${PORTSDIR}/devel/p5-Time-modules \
+		p5-URI>=1.37:${PORTSDIR}/net/p5-URI \
+		p5-aliased>=0.22:${PORTSDIR}/devel/p5-aliased \
+		p5-namespace-clean>=0.11:${PORTSDIR}/devel/p5-namespace-clean \
+		p5-signatures>=0.05:${PORTSDIR}/lang/p5-signatures
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-SQL-Translator>=0.11002:${PORTSDIR}/databases/p5-SQL-Translator \
+		p5-Test-Class>=0.31:${PORTSDIR}/devel/p5-Test-Class \
+		p5-Test-Memory-Cycle>=1.04:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
+		p5-Test-WWW-Mechanize-Catalyst>=0.51:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-Catalyst
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		componentui_cgi.pl.1 componentui_create.pl.1 \
-		componentui_fastcgi.pl.1 componentui_server.pl.1 \
+MAN1=		componentui_cgi.pl.1 \
+		componentui_create.pl.1 \
+		componentui_fastcgi.pl.1 \
+		componentui_server.pl.1 \
 		componentui_test.pl.1
-
 MAN3=		Catalyst::Model::Reaction::InterfaceModel::DBIC.3 \
-		ComponentUI.3 Reaction::Class.3 Reaction::ClassExporter.3 \
+		ComponentUI.3 \
+		Reaction::Class.3 \
+		Reaction::ClassExporter.3 \
 		Reaction::InterfaceModel::Action.3 \
+		Reaction::InterfaceModel::Action::DBIC::Result.3 \
 		Reaction::InterfaceModel::Action::DBIC::Result::Delete.3 \
 		Reaction::InterfaceModel::Action::DBIC::Result::Update.3 \
+		Reaction::InterfaceModel::Action::DBIC::ResultSet.3 \
 		Reaction::InterfaceModel::Action::DBIC::ResultSet::Create.3 \
 		Reaction::InterfaceModel::Action::DBIC::ResultSet::DeleteAll.3 \
 		Reaction::InterfaceModel::Action::DBIC::Role::CheckUniques.3 \
@@ -58,10 +76,11 @@ MAN3=		Catalyst::Model::Reaction::InterfaceModel::DBIC.3 \
 		Reaction::InterfaceModel::Action::DBIC::User::ResetPassword.3 \
 		Reaction::InterfaceModel::Action::DBIC::User::Role::SetPassword.3 \
 		Reaction::InterfaceModel::Action::DBIC::User::SetPassword.3 \
+		Reaction::InterfaceModel::Action::Role::SimpleMethodCall.3 \
+		Reaction::InterfaceModel::Action::Search::UpdateSpec.3 \
 		Reaction::InterfaceModel::Action::User::ChangePassword.3 \
 		Reaction::InterfaceModel::Action::User::Login.3 \
 		Reaction::InterfaceModel::Action::User::ResetPassword.3 \
-		Reaction::InterfaceModel::Action::User::Role::ConfirmationCodeSupport.3 \
 		Reaction::InterfaceModel::Action::User::SetPassword.3 \
 		Reaction::InterfaceModel::Collection.3 \
 		Reaction::InterfaceModel::Collection::DBIC::Role::Base.3 \
@@ -71,24 +90,63 @@ MAN3=		Catalyst::Model::Reaction::InterfaceModel::DBIC.3 \
 		Reaction::InterfaceModel::Collection::Virtual.3 \
 		Reaction::InterfaceModel::Collection::Virtual::ResultSet.3 \
 		Reaction::InterfaceModel::Object.3 \
-		Reaction::InterfaceModel::Reflector::DBIC.3 Reaction::Manual.3 \
-		Reaction::Manual::Intro.3 Reaction::Meta::Attribute.3 \
+		Reaction::InterfaceModel::ObjectClass.3 \
+		Reaction::InterfaceModel::Reflector::DBIC.3 \
+		Reaction::Manual.3 \
+		Reaction::Manual::ActionPrototypes.3 \
+		Reaction::Manual::Clipboard.3 \
+		Reaction::Manual::Glossary.3 \
+		Reaction::Manual::Intro.3 \
+		Reaction::Manual::Overview.3 \
+		Reaction::Manual::RenderPage.3 \
+		Reaction::Manual::Templates.3 \
+		Reaction::Manual::Troubleshooting.3 \
+		Reaction::Manual::Tutorial.3 \
+		Reaction::Manual::Unicode.3 \
+		Reaction::Manual::Widgets.3 \
+		Reaction::Meta::Attribute.3 \
+		Reaction::Meta::Class.3 \
 		Reaction::Meta::InterfaceModel::Action::Class.3 \
 		Reaction::Meta::InterfaceModel::Action::ParameterAttribute.3 \
 		Reaction::Meta::InterfaceModel::Object::Class.3 \
 		Reaction::Meta::InterfaceModel::Object::DomainModelAttribute.3 \
 		Reaction::Meta::InterfaceModel::Object::ParameterAttribute.3 \
-		Reaction::Object.3 Reaction::Role.3 Reaction::Test.3 \
-		Reaction::Test::WithDB.3 Reaction::Types::Core.3 \
-		Reaction::Types::DBIC.3 Reaction::Types::DateTime.3 \
-		Reaction::Types::Email.3 Reaction::Types::File.3 \
+		Reaction::Object.3 \
+		Reaction::Role.3 \
+		Reaction::Role::Meta::Attribute.3 \
+		Reaction::Role::Parameterized.3 \
+		Reaction::Test.3 \
+		Reaction::Test::WithDB.3 \
+		Reaction::Types::Core.3 \
+		Reaction::Types::DBIC.3 \
+		Reaction::Types::DateTime.3 \
+		Reaction::Types::Email.3 \
+		Reaction::Types::File.3 \
 		Reaction::UI::Controller.3 \
 		Reaction::UI::Controller::Collection.3 \
 		Reaction::UI::Controller::Collection::CRUD.3 \
-		Reaction::UI::Controller::Root.3 Reaction::UI::FocusStack.3 \
-		Reaction::UI::ViewPort.3 Reaction::UI::ViewPort::Action.3 \
+		Reaction::UI::Controller::Collection::CRUD::Search.3 \
+		Reaction::UI::Controller::Role::Action::Create.3 \
+		Reaction::UI::Controller::Role::Action::Delete.3 \
+		Reaction::UI::Controller::Role::Action::DeleteAll.3 \
+		Reaction::UI::Controller::Role::Action::List.3 \
+		Reaction::UI::Controller::Role::Action::Object.3 \
+		Reaction::UI::Controller::Role::Action::Simple.3 \
+		Reaction::UI::Controller::Role::Action::Update.3 \
+		Reaction::UI::Controller::Role::Action::View.3 \
+		Reaction::UI::Controller::Role::GetCollection.3 \
+		Reaction::UI::Controller::Role::RedirectTo.3 \
+		Reaction::UI::Controller::Root.3 \
+		Reaction::UI::FocusStack.3 \
+		Reaction::UI::View.3 \
+		Reaction::UI::ViewPort.3 \
+		Reaction::UI::ViewPort::Action.3 \
+		Reaction::UI::ViewPort::Action::Role::Apply.3 \
+		Reaction::UI::ViewPort::Action::Role::Close.3 \
+		Reaction::UI::ViewPort::Action::Role::OK.3 \
 		Reaction::UI::ViewPort::Collection.3 \
 		Reaction::UI::ViewPort::Collection::Grid.3 \
+		Reaction::UI::ViewPort::Collection::Role::Order.3 \
 		Reaction::UI::ViewPort::Field.3 \
 		Reaction::UI::ViewPort::Field::.ToDo::File.3 \
 		Reaction::UI::ViewPort::Field::.ToDo::TimeRange.3 \
@@ -97,19 +155,31 @@ MAN3=		Catalyst::Model::Reaction::InterfaceModel::DBIC.3 \
 		Reaction::UI::ViewPort::Field::Mutable::HiddenArray.3 \
 		Reaction::UI::ViewPort::Field::Password.3 \
 		Reaction::UI::ViewPort::Field::Role::Mutable.3 \
+		Reaction::UI::ViewPort::Field::String::Fragment.3 \
 		Reaction::UI::ViewPort::Field::TimeRange.3 \
+		Reaction::UI::ViewPort::Image.3 \
 		Reaction::UI::ViewPort::Object.3 \
-		Reaction::UI::ViewPort::Role::Actions.3 Reaction::UI::Widget.3 \
+		Reaction::UI::ViewPort::Object::Mutable.3 \
+		Reaction::UI::ViewPort::Role::Actions.3 \
+		Reaction::UI::ViewPort::Role::FieldArgs.3 \
+		Reaction::UI::ViewPort::URI.3 \
+		Reaction::UI::Widget.3 \
 		Reaction::UI::Widget::Action.3 \
+		Reaction::UI::Widget::Action::Link.3 \
 		Reaction::UI::Widget::Collection.3 \
 		Reaction::UI::Widget::Collection::Grid.3 \
 		Reaction::UI::Widget::Collection::Grid::Member.3 \
+		Reaction::UI::Widget::Container.3 \
+		Reaction::UI::Widget::Data.3 \
 		Reaction::UI::Widget::Field.3 \
 		Reaction::UI::Widget::Field::Array.3 \
 		Reaction::UI::Widget::Field::Boolean.3 \
 		Reaction::UI::Widget::Field::Collection.3 \
+		Reaction::UI::Widget::Field::Container.3 \
 		Reaction::UI::Widget::Field::DateTime.3 \
+		Reaction::UI::Widget::Field::Image.3 \
 		Reaction::UI::Widget::Field::Integer.3 \
+		Reaction::UI::Widget::Field::Mutable.3 \
 		Reaction::UI::Widget::Field::Mutable::Boolean.3 \
 		Reaction::UI::Widget::Field::Mutable::ChooseMany.3 \
 		Reaction::UI::Widget::Field::Mutable::ChooseOne.3 \
@@ -117,6 +187,7 @@ MAN3=		Catalyst::Model::Reaction::InterfaceModel::DBIC.3 \
 		Reaction::UI::Widget::Field::Mutable::File.3 \
 		Reaction::UI::Widget::Field::Mutable::HiddenArray.3 \
 		Reaction::UI::Widget::Field::Mutable::Integer.3 \
+		Reaction::UI::Widget::Field::Mutable::MatchingPasswords.3 \
 		Reaction::UI::Widget::Field::Mutable::Number.3 \
 		Reaction::UI::Widget::Field::Mutable::Password.3 \
 		Reaction::UI::Widget::Field::Mutable::String.3 \
@@ -126,15 +197,22 @@ MAN3=		Catalyst::Model::Reaction::InterfaceModel::DBIC.3 \
 		Reaction::UI::Widget::Field::RelatedObject.3 \
 		Reaction::UI::Widget::Field::String.3 \
 		Reaction::UI::Widget::Field::Text.3 \
-		Reaction::UI::Widget::ListView.3 Reaction::UI::Widget::Object.3 \
+		Reaction::UI::Widget::Image.3 \
+		Reaction::UI::Widget::ListView.3 \
+		Reaction::UI::Widget::Object.3 \
+		Reaction::UI::Widget::Object::Mutable.3 \
+		Reaction::UI::Widget::SiteLayout.3 \
+		Reaction::UI::Widget::URI.3 \
 		Reaction::UI::Widget::Value.3 \
 		Reaction::UI::Widget::Value::Boolean.3 \
 		Reaction::UI::Widget::Value::Collection.3 \
 		Reaction::UI::Widget::Value::DateTime.3 \
+		Reaction::UI::Widget::Value::Image.3 \
 		Reaction::UI::Widget::Value::Number.3 \
 		Reaction::UI::Widget::Value::RelatedObject.3 \
 		Reaction::UI::Widget::Value::String.3 \
-		Reaction::UI::Widget::Value::Text.3 Reaction::UI::WidgetClass.3 \
+		Reaction::UI::Widget::Value::Text.3 \
+		Reaction::UI::WidgetClass.3 \
 		Reaction::UI::Window.3
 
 .include <bsd.port.mk>
