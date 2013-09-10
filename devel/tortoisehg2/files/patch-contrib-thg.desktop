@@ -1,0 +1,11 @@
+--- /dev/null	2013-09-09 09:16:06.000000000 +0400
++++ contrib/tortoisehg.desktop	2013-09-09 09:15:52.767575878 +0400
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Type=Application
++Name=TortoiseHg
++GenericName=Version Control GUI
++Comment=GUI application for using Mercurial
++Icon=%%PREFIX%%/share/pixmaps/tortoisehg/icons/thg_logo.ico
++Exec=thg --nofork
++Categories=Development;RevisionControl;

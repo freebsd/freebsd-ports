@@ -1,6 +1,6 @@
---- setup_.py	2012-09-05 19:36:36.000000000 +0400
-+++ setup.py	2012-09-07 10:16:47.929179472 +0400
-@@ -280,7 +280,7 @@
+--- setup_.py	2013-09-06 04:45:26.000000000 +0400
++++ setup.py	2013-09-09 09:31:13.148575638 +0400
+@@ -362,7 +362,7 @@
  class build(_build_orig):
      sub_commands = [
          ('build_qt', None),
@@ -9,16 +9,16 @@
          ] + _build_orig.sub_commands
  
  class clean(_clean_orig):
-@@ -299,7 +299,7 @@
+@@ -381,7 +381,7 @@
          'build_mo': build_mo ,
          'clean': clean,
          'clean_local': clean_local,
 -        'update_pot': update_pot ,
 +%%NLS%%        'update_pot': update_pot ,
+         'import_po': import_po
      }
  
- def setup_windows(version):
-@@ -418,11 +418,11 @@
+@@ -501,11 +501,11 @@
      _data_files = [(os.path.join('share/pixmaps/tortoisehg', root),
          [os.path.join(root, file_) for file_ in files])
          for root, dirs, files in os.walk('icons')]
