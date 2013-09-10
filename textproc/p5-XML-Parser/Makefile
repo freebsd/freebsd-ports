@@ -12,7 +12,8 @@ COMMENT=	Perl extension interface to James Clark's XML parser, expat
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	EXPATLIBPATH=${LOCALBASE}/lib EXPATINCPATH=${LOCALBASE}/include
 
 MAN3=		XML::Parser.3 XML::Parser::Expat.3 \

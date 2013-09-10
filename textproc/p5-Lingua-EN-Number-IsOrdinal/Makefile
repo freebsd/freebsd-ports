@@ -16,7 +16,8 @@ TEST_DEPENDS=	\
 	p5-Test-Fatal>0:${PORTSDIR}/devel/p5-Test-Fatal \
 	p5-Try-Tiny:${PORTSDIR}/lang/p5-Try-Tiny
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Lingua::EN::Number::IsOrdinal.3
 

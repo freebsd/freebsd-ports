@@ -1,9 +1,5 @@
-# New ports collection makefile for:    txt2html
-# Date created:         29 Jun 1998
-# Whom:                 Don Croyle <croyle@gelemna.org>
-#
+# Created by: Don Croyle <croyle@gelemna.org>
 # $FreeBSD$
-#
 
 PORTNAME=	txt2html
 PORTVERSION=	2.51
@@ -17,7 +13,8 @@ BUILD_DEPENDS=	p5-Getopt-ArgvFile>=0:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
 		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=	txt2html.1
 MAN3=	HTML::TextToHTML.3

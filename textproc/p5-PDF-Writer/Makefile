@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-PDF-Writer
-# Date created:		2006-07-11
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	PDF-Writer
 PORTVERSION=	0.06
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	PDF writer abstraction layer
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		PDF::Writer.3 PDF::Writer::pdfapi2.3 PDF::Writer::pdflib.3
 

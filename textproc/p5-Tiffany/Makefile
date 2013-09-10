@@ -23,7 +23,8 @@ TEST_DEPENDS=	\
 	p5-Text-ClearSilver>0:${PORTSDIR}/textproc/p5-Text-ClearSilver \
 	p5-HTML-Template-Pro>0:${PORTSDIR}/www/p5-HTML-Template-Pro
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Tiffany.3 \
 	Tiffany::HTML::Template.3 \
