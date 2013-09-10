@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	upporting module for SOAP::Lite
+COMMENT=	Supporting module for SOAP::Lite
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
