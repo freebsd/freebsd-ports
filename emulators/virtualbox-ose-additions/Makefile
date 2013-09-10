@@ -23,6 +23,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxguest vboxservice
+USES=		iconv
 ONLY_FOR_ARCHS=	i386 amd64
 FETCH_ARGS=	-pRr
 USE_BZIP2=	yes
@@ -117,6 +118,10 @@ post-patch:
 		${WRKSRC}/src/VBox/Additions/x11/Installer/98vboxadd-xclient \
 		${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop
 	@${REINPLACE_CMD} -e 's|\$$KBUILDDIR_BIN/kmk_sed|${LOCALBASE}/bin/kmk_sed|g' ${WRKSRC}/configure
+.if empty(ICONV_LIB)
+	@${REINPLACE_CMD} -e 's|iconv||' ${WRKSRC}/Config.kmk ${WRKSRC}/src/VBox/Runtime/Makefile.kmk \
+		${WRKSRC}/src/VBox/Additions/x11/VBoxClient/Makefile.kmk
+.endif
 
 pre-build:
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' \
