@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-POE-Component-IRC-Plugin-RSS-Headlines
-# Date created:	   20.06.2008
-# Whom:		   Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-IRC-Plugin-RSS-Headlines
 PORTVERSION=	1.08
@@ -27,7 +23,8 @@ RUN_DEPENDS:=	p5-POE>=1.004:${PORTSDIR}/devel/p5-POE \
 		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message
 
 PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Component::IRC::Plugin::RSS::Headlines.3
 

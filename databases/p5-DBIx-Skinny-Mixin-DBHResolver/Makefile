@@ -1,9 +1,4 @@
-# New ports collection makefile for:	DBIx::Skinny::Mixin::DBHResolver
-# Date created:		28 Nov 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Skinny-Mixin-DBHResolver
 PORTVERSION=	0.04
@@ -19,7 +14,8 @@ RUN_DEPENDS=	\
 	p5-DBIx-Skinny>0:${PORTSDIR}/databases/p5-DBIx-Skinny
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	DBIx::Skinny::Mixin::DBHResolver.3
 

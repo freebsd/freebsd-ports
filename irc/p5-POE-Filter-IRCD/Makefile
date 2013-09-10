@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-POE-Filter-IRCD
-# Date created:		6 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Filter-IRCD
 PORTVERSION=	2.42
@@ -17,7 +13,8 @@ COMMENT=	A POE-based parser for the IRC protocol
 BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		POE::Filter::IRCD.3
 
 .include <bsd.port.mk>

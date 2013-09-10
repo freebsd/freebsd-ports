@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Component-IRC-Plugin-Blowfish
-# Date created:	   June 05 2010
-# Whom:		   Jase Thew <freebsd@beardz.net>
-#
+# Created by: Jase Thew <freebsd@beardz.net>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-IRC-Plugin-Blowfish
 PORTVERSION=	0.01
@@ -24,7 +20,8 @@ BUILD_DEPENDS=	p5-POE>=0.37:${PORTSDIR}/devel/p5-POE \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Component::IRC::Plugin::Blowfish.3
 

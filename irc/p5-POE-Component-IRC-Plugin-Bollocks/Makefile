@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Component-IRC-Plugin-Bollocks
-# Date created:	   31 may 2008
-# Whom:		   Martin Wilke <miwi@FreeBSD.org
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-IRC-Plugin-Bollocks
 PORTVERSION=	1.00
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-Dev-Bollocks>=0.06:${PORTSDIR}/textproc/p5-Dev-Bollocks \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Component::IRC::Plugin::Bollocks.3
 

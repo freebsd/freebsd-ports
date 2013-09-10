@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-IRC-Utils
-# Date created:		2011-04-12
-# Whom:			TERAMOTO Masahiro <markun@onohara.to>
-#
+# Created by: TERAMOTO Masahiro <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	IRC-Utils
 PORTVERSION=	0.12
@@ -18,7 +14,8 @@ COMMENT=	Common utilities for IRC-related tasks
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		IRC::Utils.3
 
