@@ -21,6 +21,7 @@ RUN_DEPENDS=	p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-POE-Filter-IRCD>=0:${PORTSDIR}/irc/p5-POE-Filter-IRCD
 
 USES=		perl5
+USE_PERL5=	patch build run
 NO_BUILD=	yes
 
 MAN1=		tircd.1
@@ -33,6 +34,7 @@ post-patch:
 	${REINPLACE_CMD} -e '1s,^#!/usr/bin/perl,#!${PREFIX}/bin/perl,' \
 			 -e 's,/etc/tircd.cfg,${PREFIX}/etc/tircd.cfg,g' \
 			 ${WRKSRC}/tircd.pl ${WRKSRC}/tircd.pod
+	# pod2man needs perl
 	pod2man ${WRKSRC}/tircd.pod > ${WRKSRC}/tircd.1
 
 do-install:
