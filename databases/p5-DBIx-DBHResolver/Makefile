@@ -1,9 +1,4 @@
-# New ports collection makefile for:	DBIx::DBHResolver
-# Date created:		16 Oct 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-DBHResolver
 PORTVERSION=	0.17
@@ -29,7 +24,8 @@ TEST_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Sub-Uplevel>=0:${PORTSDIR}/devel/p5-Sub-Uplevel
 # TODO: fix test.
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	DBIx::DBHResolver.3 \
 	DBIx::DBHResolver::Strategy.3 \

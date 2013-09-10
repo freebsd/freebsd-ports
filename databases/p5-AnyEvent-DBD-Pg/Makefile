@@ -1,9 +1,4 @@
-# New ports collection makefile for:	AnyEvent::DBD::Pg
-# Date created:		02 Dec 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	AnyEvent-DBD-Pg
 PORTVERSION=	0.03
@@ -24,7 +19,8 @@ RUN_DEPENDS=	p5-AnyEvent>=5:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-common-sense>=3:${PORTSDIR}/devel/p5-common-sense
 TEST_DEPENDS=	p5-lib-abs>=0.90:${PORTSDIR}/devel/p5-lib-abs
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	AnyEvent::DBD::Pg.3
 

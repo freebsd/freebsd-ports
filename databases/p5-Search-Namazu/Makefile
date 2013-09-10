@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Search::Namazu
-# Date created:		18 Jun 2002
-# Whom:			kuriyama
-#
+# Created by: kuriyama
 # $FreeBSD$
-#
 
 PORTNAME=	Search-Namazu
 PORTVERSION=	0.96
@@ -17,7 +13,8 @@ COMMENT=	Namazu library module for perl
 
 LIB_DEPENDS=	nmz.8:${PORTSDIR}/databases/namazu2
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Search::Namazu.3
 

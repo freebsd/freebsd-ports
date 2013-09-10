@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Test::Fixture::DBI
-# Date created:		26 Dec 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Fixture-DBI
 PORTVERSION=	0.07
@@ -24,7 +19,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Sub-Uplevel>=0:${PORTSDIR}/devel/p5-Sub-Uplevel
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	make_database_yaml.pl.1 \
 	make_fixture_yaml.pl.1

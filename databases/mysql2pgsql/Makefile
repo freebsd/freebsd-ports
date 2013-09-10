@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mysql2pgsql
-# Date Created:				27 May 2001
-# Whom:					Pete Fritchman <petef@databits.net>
-#
+# Created by: Pete Fritchman <petef@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mysql2pgsql
 PORTVERSION=	1.2
@@ -17,7 +13,7 @@ MAINTAINER=	klossalex@gmail.com
 COMMENT=	Convert a MySQL dump to a PostgreSQL dump
 
 PLIST_FILES=	bin/mysql2pgsql
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 do-extract:

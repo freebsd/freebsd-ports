@@ -13,7 +13,8 @@ COMMENT=	Object for building queries with DBI/DBD::mysql
 BUILD_DEPENDS=	p5-Relations>=0:${PORTSDIR}/databases/p5-Relations
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Relations::Query.3
 

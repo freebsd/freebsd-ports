@@ -14,7 +14,7 @@ BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	YES
-USE_PERL5=	YES
+USES=		perl5
 PLIST_FILES=	bin/rrd_hwreapply
 MAN1=		rrd_hwreapply.1
 
