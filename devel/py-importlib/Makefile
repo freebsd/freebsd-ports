@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	akosiaris+ports@gmail.com
 COMMENT=	Backport of importlib.import_module() from Python 2.7
 
+DEPRECATED=	Python 2.6 port will reach it's EoL upstream soon
+EXPIRATION_DATE=2013-10-01
+
 USE_PYTHON=	2.6
 USE_PYDISTUTILS=	yes
 
