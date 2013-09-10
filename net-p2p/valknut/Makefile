@@ -1,11 +1,5 @@
-# ex: ts=8
-# New ports collection makefile for:    dcgui
-# Date created:                         Wed 10 Jul 2002
-# Whom:	Sverrir Valgeirsson <e96sv@yahoo.se> and
-#	Amar Takhar <verm@drunkmonk.net> et al
-#
+# Created by: Sverrir Valgeirsson <e96sv@yahoo.se>
 # $FreeBSD$
-#
 
 PORTNAME=	valknut
 PORTVERSION=	0.4.9
@@ -26,8 +20,8 @@ MAN1=	valknut.1
 USE_QT4=	corelib gui network qt3support \
 		moc_build uic_build rcc_build linguist_build
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USES=		gmake perl5 pkgconfig
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CFLAGS+=	-I${QT_INCDIR}

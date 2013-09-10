@@ -1,9 +1,5 @@
-# New ports collection makefile for:	razorback-dispatcher
-# Date created:				2011/06/8
-# Whom:					Tom Judge <tom@tomjudge.com>
-#
+# Created by: Tom Judge <tom@tomjudge.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dispatcher
 PORTVERSION=	0.5.0
@@ -27,9 +23,7 @@ OPTIONS_DEFINE=	DEBUG ASSERT ACTIVEMQ
 ASSERT_DESC=	Enable Asserts
 ACTIVEMQ_DESC=	ActiveMQ runs locally
 
-.include <bsd.port.options.mk>
-
-USES=	pathfix
+USES=	pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_MYSQL=	yes
@@ -40,6 +34,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 USERS?=		razorback
 GROUPS?=	razorback
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug
