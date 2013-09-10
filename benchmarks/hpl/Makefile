@@ -3,22 +3,22 @@
 
 PORTNAME=	hpl
 PORTVERSION=	2.1
-#PORTREVISION=	8
 CATEGORIES=	benchmarks
 MASTER_SITES=	${MASTER_SITE_NETLIB}
-MASTER_SITE_SUBDIR=benchmark/hpl
+MASTER_SITE_SUBDIR=	benchmark/hpl
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	High Performance Computing Linpack Benchmark
 
-LIB_DEPENDS=	blas:${PORTSDIR}/math/blas \
-		mpich:${PORTSDIR}/net/mpich2
+LIB_DEPENDS=	libblas.so:${PORTSDIR}/math/blas \
+		libmpich.so:${PORTSDIR}/net/mpich2
 
-MAKE_JOBS_UNSAFE=	yes
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 HPL_ARCH?=	FreeBSD_PIV_CBLAS
-ALL_TARGET=	arch=${HPL_ARCH}
+MAKE_ARGS=	arch=${HPL_ARCH}
+ALL_TARGET=	build
+
 MAN3=		HPL_abort.3 HPL_all_reduce.3 HPL_barrier.3 HPL_bcast.3 \
 		HPL_binit.3 HPL_broadcast.3 HPL_bwait.3 HPL_copyL.3 \
 		HPL_daxpy.3 HPL_dcopy.3 HPL_dgemm.3 HPL_dgemv.3 HPL_dger.3 \
@@ -51,6 +51,8 @@ MAN3=		HPL_abort.3 HPL_all_reduce.3 HPL_barrier.3 HPL_bcast.3 \
 		HPL_sum.3 HPL_timer.3 HPL_timer_cputime.3 HPL_timer_walltime.3 \
 		HPL_warn.3 HPL_xjumpm.3
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -66,11 +68,10 @@ post-patch:
 		s|^LAlib[ ]*=.*$$|LAlib = $$\(LAdir\)/lib/libblas.a| ; \
 		s|libpmpich.a|libmpl.a ${PTHREAD_LIBS}|' \
 		${WRKSRC}/setup/Make.${HPL_ARCH}
-
 	@${REINPLACE_CMD} -e 's|HPL\.dat|${PREFIX}/etc/${PORTNAME}/&|' \
 		${WRKSRC}/testing/ptest/HPL_pdinfo.c
-
 	@${CP} ${WRKSRC}/setup/Make.${HPL_ARCH} ${WRKSRC}/
+	@${REINPLACE_CMD} -e '/^build/s|$$| startup|' ${WRKSRC}/Makefile
 
 do-install:
 	${MKDIR} ${PREFIX}/etc/${PORTNAME}
