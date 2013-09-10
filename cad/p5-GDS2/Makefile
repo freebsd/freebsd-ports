@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-GDS2
-# Date created:				Sun, Apr 29 2007
-# Whom:					Hiroki Sato <hrs@FreeBSD.org>
-#
+# Created by: Hiroki Sato <hrs@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	GDS2
 PORTVERSION=	3.00
@@ -15,7 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S,.a$,a,}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	GDS2 - GDS2 stream module
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S,.a$,,}
 PLIST_FILES=	${SITE_PERL_REL}/GDS2.pm \
 		${PROGRAMS:S,^,bin/,}

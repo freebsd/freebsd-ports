@@ -1,9 +1,5 @@
-# New ports collection makefile for:	String::SetUTF8
-# Date created:				25 May 2009
-# Whom:					Andrei V. Shetuhin <reki@reki.ru>
-#
+# Created by: Andrei V. Shetuhin <reki@reki.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	String-SetUTF8
 PORTVERSION=	1.00
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	reki@reki.ru
 COMMENT=	Perl module to manipulate internal UTF-8 flag on strings
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		String::SetUTF8.3
 

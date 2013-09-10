@@ -1,4 +1,4 @@
-# Created by: nork@freebsd.org
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	MIME-Base32
@@ -14,7 +14,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.02
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MIME::Base32.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	convmv
-# Date created:		27 October 2004
-# Whom:			Kuang-che Wu <kcwu@csie.org>
-#
+# Created by: Kuang-che Wu <kcwu@csie.org>
 # $FreeBSD$
-#
 
 PORTNAME=	convmv
 PORTVERSION=	1.15
@@ -17,7 +13,7 @@ COMMENT=	Convert filenames from one encoding to another
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USE_PERL5=	yes
+USES=		perl5
 PLIST_FILES=	bin/convmv
 
 MAN1=		convmv.1

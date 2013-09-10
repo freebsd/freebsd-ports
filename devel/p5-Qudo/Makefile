@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Qudo
-# Date created:		27 Jun 2012
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Qudo
 PORTVERSION=	0.0213
@@ -23,7 +18,8 @@ RUN_DEPENDS=	\
 	p5-YAML>0:${PORTSDIR}/textproc/p5-YAML
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Qudo.3 \
 	Qudo::Manager.3 \

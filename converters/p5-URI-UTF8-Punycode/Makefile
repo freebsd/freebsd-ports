@@ -12,7 +12,8 @@ COMMENT=	Punycode conversion of UTF-8 string
 
 LICENSE=	GPLv3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		URI::UTF8::Punycode.3
 
