@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Mac-PropertyList
-# Date created:	24 December 2010
-# Whom:		Nobutaka Mantani <nobutaka@FreeBSD.org>
-#
+# Created by: Nobutaka Mantani <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Mac-PropertyList
 PORTVERSION=	1.38
@@ -20,7 +16,8 @@ LICENSE=	ART10 GPLv1
 BUILD_DEPENDS=	p5-XML-Entities>=0:${PORTSDIR}/textproc/p5-XML-Entities
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Mac::PropertyList.3 \
 	Mac::PropertyList::ReadBinary.3 \

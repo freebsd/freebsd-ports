@@ -13,7 +13,8 @@ COMMENT=	Convenient utility for executing external commands in various ways
 LICENSE=	BSD GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Proc::SafeExec.3 \
 		Proc::SafeExec::Queue.3

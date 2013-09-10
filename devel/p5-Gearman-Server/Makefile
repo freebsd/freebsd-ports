@@ -17,7 +17,8 @@ RUN_DEPENDS=	p5-Gearman>=1.10:${PORTSDIR}/devel/p5-Gearman \
 
 CONFLICTS=	gearmand-0.* gearmand-1.0.* gearmand-1.1.*
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	gearmand.1
 MAN3=	Gearman::Server.3 Gearman::Server::Client.3

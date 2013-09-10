@@ -19,7 +19,8 @@ RUN_DEPENDS=	\
 	p5-YAML>0:${PORTSDIR}/textproc/p5-YAML
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=	cpan-listchanges.1
 MAN3=	App::cpanlistchanges.3

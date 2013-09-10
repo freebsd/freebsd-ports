@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Date-Calc-XS
-# Date Created:                         11 Dec 2009
-# Whom:                                 Denis Pokataev <catone@cpan.org>
-#
+# Created by: Denis Pokataev <catone@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Date-Calc-XS
 PORTVERSION=	6.3
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Date-Calc>=6.2:${PORTSDIR}/devel/p5-Date-Calc \
 		p5-Carp-Clan>=5.3:${PORTSDIR}/devel/p5-Carp-Clan
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Date::Calc::XS.3
 
