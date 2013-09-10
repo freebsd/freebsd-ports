@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lua-rds-parser
-# Date created:		12 Jan 2012
-# Whom:			osa
-#
+# Created by: osa
 # $FreeBSD$
-#
 
 PORTNAME=	rds-parser
 PORTVERSION=	0.0.4
@@ -15,6 +11,7 @@ DISTNAME=	lua-${PORTNAME}-${PORTVERSION}-${GITVERSION}
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Resty-DBD-Stream (RDS) parser for Lua written in C
 
+BROKEN=		Unfetchable due to checksum mismatch
 FETCH_ARGS=	-pRr
 USE_LUA?=	5.1
 GITVERSION=	0-gb46bbd8
