@@ -12,6 +12,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/swift-account-server
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/swift-bench
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/swift-bench-client
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/swift-config
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/swift-container-auditor
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/swift-container-replicator
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/swift-container-server
@@ -55,6 +56,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/account/server.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/account/server.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/account/server.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/account/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/account/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/account/utils.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/common/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/common/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/common/__init__.pyo
@@ -115,6 +119,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/common/middleware/container_quotas.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/common/middleware/container_quotas.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/common/middleware/container_quotas.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/common/middleware/crossdomain.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/common/middleware/crossdomain.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/common/middleware/crossdomain.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/common/middleware/domain_remap.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/common/middleware/domain_remap.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/common/middleware/domain_remap.pyo
@@ -202,6 +209,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/obj/auditor.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/obj/auditor.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/obj/auditor.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/obj/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/obj/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/obj/base.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/obj/expirer.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/obj/expirer.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/swift/obj/expirer.pyo
@@ -265,6 +275,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/probe/common.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/probe/common.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/probe/common.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/probe/test_account_get_fake_responses_match.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/probe/test_account_get_fake_responses_match.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/probe/test_account_get_fake_responses_match.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/probe/test_replication_servers_working.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/probe/test_replication_servers_working.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/probe/test_replication_servers_working.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/probe/test_account_failures.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/probe/test_account_failures.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/probe/test_account_failures.pyo
@@ -319,6 +335,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/common/middleware/test_cname_lookup.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/common/middleware/test_cname_lookup.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/common/middleware/test_cname_lookup.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/common/middleware/test_crossdomain.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/common/middleware/test_crossdomain.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/common/middleware/test_crossdomain.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/common/middleware/test_domain_remap.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/common/middleware/test_domain_remap.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/common/middleware/test_domain_remap.pyo
@@ -448,6 +467,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/obj/test_auditor.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/obj/test_auditor.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/obj/test_auditor.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/obj/test_base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/obj/test_base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/obj/test_base.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/obj/test_expirer.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/obj/test_expirer.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/obj/test_expirer.pyo
@@ -466,9 +488,18 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy/controllers/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy/controllers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy/controllers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy/controllers/test_account.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy/controllers/test_account.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy/controllers/test_account.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy/controllers/test_base.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy/controllers/test_base.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy/controllers/test_base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy/controllers/test_container.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy/controllers/test_container.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy/controllers/test_container.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy/controllers/test_obj.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy/controllers/test_obj.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy/controllers/test_obj.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy/test_server.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy/test_server.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy/test_server.pyo
@@ -479,6 +510,7 @@ bin/swift-account-replicator
 bin/swift-account-server
 bin/swift-bench
 bin/swift-bench-client
+bin/swift-config
 bin/swift-container-auditor
 bin/swift-container-replicator
 bin/swift-container-server
@@ -513,8 +545,9 @@ etc/swift/object-expirer.conf-sample
 etc/swift/object-server.conf-sample
 etc/swift/proxy-server.conf-sample
 etc/swift/rsyncd.conf-sample
-etc/swift/swift.conf-sample
 etc/swift/swift-bench.conf-sample
+etc/swift/swift-rsyslog.conf-sample
+etc/swift/swift.conf-sample
 @dirrmtry etc/swift
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy/controllers
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/unit/proxy
