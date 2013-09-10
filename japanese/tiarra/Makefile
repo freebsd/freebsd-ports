@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tiarra
-# Date Created:		Jul 27 2006
-# Whom:			Hajimu UMEMOTO <ume@FreeBSD.org>
-#
+# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tiarra
 PORTVERSION=	20100212
@@ -16,7 +12,8 @@ COMMENT=	IRC Proxy software
 
 RUN_DEPENDS=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 USE_BZIP2=	yes
 USE_RC_SUBR=	tiarra
 NO_BUILD=	yes

@@ -12,7 +12,8 @@ COMMENT=	Perl extension to convert Japanese chars
 TEST_DEPENDS=	\
 	p5-Text-TestBase>0:${PORTSDIR}/textproc/p5-Text-TestBase
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Lingua::JA::Regular::Unicode.3
 

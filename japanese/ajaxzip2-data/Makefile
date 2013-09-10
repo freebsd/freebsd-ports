@@ -16,7 +16,8 @@ BUILD_DEPENDS=	ja-ajaxzip2-core>0:${PORTSDIR}/japanese/ajaxzip2-core \
 
 NO_WRKSUBDIR=	yes
 USE_LHA=	yes
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 PORTVERSION_K?=	${PORTVERSION}
 PORTVERSION_J?=	${PORTVERSION}
 

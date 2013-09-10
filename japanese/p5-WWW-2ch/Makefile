@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-2ch
-# Date created:		2006-02-28
-# Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
-#
+# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-2ch
 PORTVERSION=	0.07
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 TEST_DEPENDS=	p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		WWW::2ch.3	\
 	WWW::2ch::Plugin::Base.3	\

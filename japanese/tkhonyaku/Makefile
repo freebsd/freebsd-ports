@@ -12,7 +12,8 @@ COMMENT=	Yet another Honyaku-Damashii client with rich functionality
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wish8.0jp:${PORTSDIR}/japanese/tk80
 
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

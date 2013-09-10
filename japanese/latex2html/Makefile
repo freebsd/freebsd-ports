@@ -1,9 +1,5 @@
-# New ports collection makefile for:	 ja-latex2html
-# Date created:		3 Apr 1999
-# Whom:			Sugimoto Sadahiro <ixtl@utmc.or.jp>
-#
+# Created by: Sugimoto Sadahiro <ixtl@utmc.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	latex2html
 PORTVERSION=	${VERSION}j${JP_VERSION}
@@ -29,7 +25,7 @@ CONFLICTS=	latex2html-[0-9]*
 VERSION=	2002.2.1
 JP_VERSION=	2.0
 
-USE_PERL5=	yes
+USES=		perl5
 USE_GHOSTSCRIPT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--shlibdir=${DATADIR} \
