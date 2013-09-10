@@ -31,8 +31,7 @@ PORTDOCS=	README_j.txt
 .endif
 
 USE_ZIP=	yes
-USE_GMAKE=	yes
-USES=		iconv
+USES+=		iconv gmake
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
