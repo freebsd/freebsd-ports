@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Module-Reload-Selective
-# Date created:		25 April 2005
-# Whom:	      		simond@irrelevant.org
-#
+# Created by: simond@irrelevant.org
 # $FreeBSD$
-#
 
 PORTNAME=	Module-Reload-Sel
 PORTVERSION=	1.02
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	simond@irrelevant.org
 COMMENT=	Reload perl library files when updated on disk
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Module::Reload::Selective.3
 

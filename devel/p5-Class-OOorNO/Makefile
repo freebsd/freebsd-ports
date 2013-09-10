@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	p5-Class-OOorNO
-# Date created:				25th April 2007
-# Whom: 				jeffhung
-#
+# Created by: jeffhung
 # $FreeBSD$
-#
 
 PORTNAME=	Class-OOorNO
 PORTVERSION=	0.011
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jeffhung@mail2000.com.tw
 COMMENT=	Perl module that give your module classic AND OO interfaces
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Class::OOorNO.3
 

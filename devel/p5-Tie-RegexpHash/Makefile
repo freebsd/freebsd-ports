@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Tie-RegexpHash
-# Date created:		30 April 2010
-# Whom:			Kevin Lo <kevlo@FreeBSD.org>
-#
+# Created by: Kevin Lo <kevlo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Tie-RegexpHash
 PORTVERSION=	0.15
@@ -16,6 +12,7 @@ COMMENT=	Use regular expressions as hash keys
 
 MAN3=	Tie::RegexpHash.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

@@ -15,6 +15,7 @@ COMMENT=	Perl5 module for Term::ReadLine allowing rich editing
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

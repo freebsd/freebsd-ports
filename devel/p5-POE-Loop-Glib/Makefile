@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Loop-Glib
-# Date created:	   Jul 30 2010
-# Whom:		   Jase Thew <freebsd@beardz.net>
-#
+# Created by: Jase Thew <freebsd@beardz.net>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Loop-Glib
 PORTVERSION=	0.038
@@ -22,7 +18,8 @@ BUILD_DEPENDS=	p5-POE>=1.288:${PORTSDIR}/devel/p5-POE \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Loop::Glib.3
 
