@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gmail-notify
-# Date created:				07 June 2005
-# Whom:					David
-#
+# Created by: David
 # $FreeBSD$
-#
 
 PORTNAME=	gmail-notify
 PORTVERSION=	1.6.1.1
@@ -18,7 +14,7 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/py-gnome-extras:extract
 
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 
 .include <bsd.port.pre.mk>
 

@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opengl>0:${PORTSDIR}/graphics/py-opengl \
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S,-src,,}
 
+USES=		pkgconfig
 USE_GNOME=	pygtk2
 USE_GL=		glu
 USE_XORG=	x11

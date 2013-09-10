@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gkrellm-helium
-# Date Created:		19 Apr 2003
-# Whom:			Pav Lucistnik <pav@oook.cz>
-#
+# Created by: Pav Lucistnik <pav@oook.cz>
 # $FreeBSD$
-#
 
 PORTNAME=	gkrellm-helium
 PORTVERSION=	2.3.1
@@ -19,6 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkre
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
+USES=		pkgconfig
 PLIST_FILES=	libexec/gkrellm2/plugins/helium.so
 
 CFLAGS+=	-fPIC -I${LOCALBASE}/include

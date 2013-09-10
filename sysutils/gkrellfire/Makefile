@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gkrellfire
-# Date created:		2004-07-16
-# Whom:			Roman Bogorodskiy <bogorodskiy@inbox.ru>
-#
+# Created by: Roman Bogorodskiy <bogorodskiy@inbox.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	gkrellfire
 PORTVERSION=	0.4.2
@@ -21,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkre
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 PLIST_FILES=	libexec/gkrellm2/plugins/${PORTNAME}.so
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 MAKE_ARGS=	CC="${CC}"
 
 do-install:

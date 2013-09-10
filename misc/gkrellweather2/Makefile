@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gkrellweather2
-# Date Created:		24 Nov 2002
-# Whom:			Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	gkrellweather
 PORTVERSION=	2.0.7
@@ -18,7 +14,7 @@ COMMENT=	GKrellWeather is a weather plugin for GKrellM
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 ALL_TARGET=	gkrellweather.so
 
 MAKE_ENV=	enable_nls=1 PTHREAD_LIBS=${PTHREAD_LIBS}

@@ -1,9 +1,5 @@
-# ports collection makefile for:	gsmc
-# Date created:		11 February 2006
-# Whom:			db
-#
+# Created by: db
 # $FreeBSD$
-#
 
 PORTNAME=	gsmc
 PORTVERSION=	1.1
@@ -18,7 +14,7 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	aclocal automake autoconf
 AUTOMAKE_ARGS=	-i --add-missing --foreign --copy
 

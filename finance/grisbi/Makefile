@@ -15,8 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	ofx.5:${PORTSDIR}/finance/libofx
 
 USE_BZIP2=	yes
-USES=		iconv
-USE_GMAKE=	yes
+USES=		gmake iconv pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 glib20 libxml2
 USE_OPENSSL=	yes
