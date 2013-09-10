@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Vimana
-# Date created:		2009-08-25
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Vimana
 PORTVERSION=	2010.09303
@@ -34,7 +30,8 @@ RUN_DEPENDS=	vim>=0:${PORTSDIR}/editors/vim \
 		p5-Mouse>=0:${PORTSDIR}/devel/p5-Mouse \
 		p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		vimana.1 vim_record.1
 MAN3=		Vimana.3 \

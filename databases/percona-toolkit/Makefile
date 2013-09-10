@@ -13,7 +13,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		p5-DBI>=1.46:${PORTSDIR}/databases/p5-DBI \
 		p5-Term-ReadKey>=2.10:${PORTSDIR}/devel/p5-Term-ReadKey
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	percona-toolkit.1 \
 	pt-agent.1 \

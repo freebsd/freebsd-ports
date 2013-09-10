@@ -14,7 +14,8 @@ RUN_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
 		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 		p5-Net>=0:${PORTSDIR}/net/p5-Net
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	mkill.1 mtop.1
 

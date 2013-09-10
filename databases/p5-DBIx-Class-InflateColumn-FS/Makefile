@@ -1,9 +1,4 @@
-# New ports collection makefile for:	DBIx::Class::InflateColumn::FS
-# Date created:		18 Mar 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-Class-InflateColumn-FS
 PORTVERSION=	0.01007
@@ -21,7 +16,8 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-DBICx-TestDatabase>=0:${PORTSDIR}/databases/p5-DBICx-TestDatabase
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	DBIx::Class::InflateColumn::FS.3 \
 	DBIx::Class::InflateColumn::FS::ResultSet.3

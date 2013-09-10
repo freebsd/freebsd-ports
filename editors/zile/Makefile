@@ -13,7 +13,8 @@ LIB_DEPENDS=	gc:${PORTSDIR}/devel/boehm-gc
 BUILD_DEPENDS=	${LOCALBASE}/bin/help2man:${PORTSDIR}/misc/help2man
 
 USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-regex
 

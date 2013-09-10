@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-MRO-Compat>0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-SQL-Abstract>=1.73:${PORTSDIR}/databases/p5-SQL-Abstract
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		SQL::Abstract::More.3
 

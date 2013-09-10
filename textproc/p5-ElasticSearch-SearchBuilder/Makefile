@@ -16,7 +16,8 @@ TEST_DEPENDS=	p5-Test-Deep>=:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		ElasticSearch::SearchBuilder.3
 

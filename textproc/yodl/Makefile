@@ -1,9 +1,5 @@
-# New ports collection makefile for:    yodl
-# Date created:         22 Oct 1997
-# Whom:                 Donald Burr <dburr@FreeBSD.org>
-#
+# Created by: Donald Burr <dburr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	yodl
 PORTVERSION=	3.00.0
@@ -22,7 +18,8 @@ BUILD_DEPENDS=	icmake:${PORTSDIR}/devel/icmake \
 		bash:${PORTSDIR}/shells/bash \
 		gsed:${PORTSDIR}/textproc/gsed
 
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	build
 
 .if !defined(NO_INSTALL_MANPAGES)
 MANCOMPRESSED=	no
