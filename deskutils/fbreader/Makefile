@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fbreader
-# Date created:		29 March 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fbreader
 PORTVERSION=	0.12.10
@@ -37,7 +33,7 @@ STATUS=		debug
 STATUS=		release
 .endif
 
-USE_GMAKE=	yes
+USES=		iconv gmake
 USE_SQLITE=	yes
 USE_LDCONFIG=	yes
 
