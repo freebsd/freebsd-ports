@@ -19,6 +19,12 @@ MAKE_ARGS=	CC=${CC} CCC=${CXX}
 MAKEFILE=	makefile
 EXAMPLESDIR=	${PREFIX}/libexec/openNURBS
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != i386
+MAKE_ARGS+=	ON_GNU_OPTIMIZER_FLAGS="-g -fPIC"
+.endif
+
 pre-build:
 	${ICONV_CMD} -c -f utf-8 -t ascii ${WRKSRC}/opennurbs_version.h > ${WRKSRC}/opennurbs_version.h.tmp || ${TRUE}
 	@${MV} ${WRKSRC}/opennurbs_version.h.tmp ${WRKSRC}/opennurbs_version.h
@@ -33,4 +39,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/openNURBS/
 	@${INSTALL_DATA} ${WRKSRC}/zlib/*.h ${PREFIX}/include/openNURBS/zlib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
