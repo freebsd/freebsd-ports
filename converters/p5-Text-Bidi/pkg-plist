@@ -1,6 +1,9 @@
+bin/fribidi.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Bidi.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/Bidi/CapRTL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/Bidi/mirrored.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Bidi/Array.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Bidi/Array/Byte.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Bidi/Array/Long.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Bidi/Paragraph.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Bidi/private.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Bidi/private/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Bidi/private/private.bs
@@ -8,5 +11,6 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Bidi/private
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Bidi
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Text/Bidi/Array
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Text/Bidi
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text
