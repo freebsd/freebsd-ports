@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		rmilter
-PORTVERSION=		1.5.42
+PORTVERSION=		1.5.43
 CATEGORIES=		mail
 MASTER_SITES=		http://cdn.bitbucket.org/vstakhov/rmilter/downloads/
 
