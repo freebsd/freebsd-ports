@@ -3610,6 +3610,7 @@
     SUBDIR += py-manuel
     SUBDIR += py-mccabe
     SUBDIR += py-meliae
+    SUBDIR += py-memoryprofiler
     SUBDIR += py-mercurialserver
     SUBDIR += py-mez_xml
     SUBDIR += py-mimeparse
