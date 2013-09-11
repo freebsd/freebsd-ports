@@ -8,7 +8,7 @@
 PORTNAME=	fwbuilder
 DISTVERSION=	5.1.0
 PORTVERSION=	${DISTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 BUILD=		3599
 # XXX in developement version of this port: PKGNAMESUFFIX=	-devel
