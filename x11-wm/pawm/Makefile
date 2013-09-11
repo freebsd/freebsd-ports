@@ -11,7 +11,7 @@ COMMENT=	The Puto Amo Window Manager
 
 USE_BZIP2=	yes
 USE_XORG=	x11 xft xrandr xrender xpm
-USES=		cmake
+USES=		cmake pkgconfig
 CMAKE_ARGS=	-DCMAKE_CONFIG_PREFIX:STRING="${PREFIX}/etc" \
 		-DX11_LIBRARY_DIRS:STRING="${LOCALBASE}/lib"
 
