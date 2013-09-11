@@ -22,7 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-LibMagic>=0:${PORTSDIR}/devel/p5-File-LibMagic \
 		p5-Media-Type-Simple>=0:${PORTSDIR}/devel/p5-Media-Type-Simple
 
-USE_PERL5=	modbuild
+USE_PERL5=	configure
 USES=		perl5
 
 MAN3=		Log::Dispatch::Dir.3
