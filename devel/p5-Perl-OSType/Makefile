@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Perl-OSType
-PORTVERSION=	1.004
+PORTVERSION=	1.005
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,8 +12,6 @@ COMMENT=	Map Perl operating system names to generic types
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-
-TEST_DEPENDS=	p5-Capture-Tiny>0:${PORTSDIR}/devel/p5-Capture-Tiny
 
 USES=		perl5
 USE_PERL5=	configure
