@@ -1,0 +1,9 @@
+Resolve specially formated statements to Python objects.
+
+Turn strings like "packagename.modulename:Eval().the_rest()" into
+whatever you would get back by performing a similar sequence of
+imports and calls. This is useful for config files and situations
+where you would like to import things in a lazy way. Later this
+package will probably provide a way to restrict resolution for safety.
+
+WWW: http://lukearno.com/projects/resolver/
