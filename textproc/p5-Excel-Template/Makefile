@@ -17,7 +17,8 @@ BUILD_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Excel::Template.3 \
 		Excel::Template::Base.3 \

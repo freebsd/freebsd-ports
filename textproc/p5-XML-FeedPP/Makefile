@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML-FeedPP
-# Date created:				29 May 2008
-# Whom:					Oleg Mamontov <oleg@mamontov.net>
-#
+# Created by: Oleg Mamontov <oleg@mamontov.net>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-FeedPP
 PORTVERSION=	0.43
@@ -20,7 +16,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-XML-TreePP>=0.39:${PORTSDIR}/textproc/p5-XML-TreePP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::FeedPP.3
 
