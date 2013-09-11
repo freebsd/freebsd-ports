@@ -8,32 +8,32 @@ bin/newlispdoc
 %%PORTDOCS%%%%DOCSDIR%%/ExpressionEvaluation.html
 %%PORTDOCS%%%%DOCSDIR%%/MemoryManagement.html
 %%PORTDOCS%%%%DOCSDIR%%/manual_frame.html
-%%PORTDOCS%%%%DOCSDIR%%/newLISP-10.5.0-Release.html
+%%PORTDOCS%%%%DOCSDIR%%/newLISP-10.5.3-Release.html
 %%PORTDOCS%%%%DOCSDIR%%/newLISPdoc.html
 %%PORTDOCS%%%%DOCSDIR%%/newlisp_index.html
 %%PORTDOCS%%%%DOCSDIR%%/newlisp_manual.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/async
-%%PORTDOCS%%%%EXAMPLESDIR%%/client
-%%PORTDOCS%%%%EXAMPLESDIR%%/env.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/finger
-%%PORTDOCS%%%%EXAMPLESDIR%%/form.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/form.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/newLISP-Excel-Import.xls
-%%PORTDOCS%%%%EXAMPLESDIR%%/observer
-%%PORTDOCS%%%%EXAMPLESDIR%%/opengl-demo-ffi.lsp
-%%PORTDOCS%%%%EXAMPLESDIR%%/opengl-demo.lsp
-%%PORTDOCS%%%%EXAMPLESDIR%%/prodcons.lsp
-%%PORTDOCS%%%%EXAMPLESDIR%%/query
-%%PORTDOCS%%%%EXAMPLESDIR%%/scan
-%%PORTDOCS%%%%EXAMPLESDIR%%/server
-%%PORTDOCS%%%%EXAMPLESDIR%%/sniff
-%%PORTDOCS%%%%EXAMPLESDIR%%/tcltk.lsp
-%%PORTDOCS%%%%EXAMPLESDIR%%/udp-client.lsp
-%%PORTDOCS%%%%EXAMPLESDIR%%/udp-server.lsp
-%%PORTDOCS%%%%EXAMPLESDIR%%/upload.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/upload.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/win32demo.lsp
-%%PORTDOCS%%%%EXAMPLESDIR%%/xmlrpc.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/async
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/client
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/env.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/finger
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/form.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/form.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newLISP-Excel-Import.xls
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/observer
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/opengl-demo-ffi.lsp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/opengl-demo.lsp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prodcons.lsp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/query
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/server
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sniff
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcltk.lsp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/udp-client.lsp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/udp-server.lsp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/upload.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/upload.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32demo.lsp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlrpc.cgi
 %%GUISERV%%%%DATADIR%%/guiserver.jar
 %%GUISERV%%%%DATADIR%%/guiserver.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/allfonts-demo.lsp
@@ -77,7 +77,6 @@ bin/newlispdoc
 %%DATADIR%%/modules/macro.lsp
 %%MYSQL%%%%DATADIR%%/modules/mysql.lsp
 %%DATADIR%%/modules/odbc.lsp
-%%DATADIR%%/modules/plot.lsp
 %%DATADIR%%/modules/pop3.lsp
 %%PGSQL%%%%DATADIR%%/modules/postgres.lsp
 %%DATADIR%%/modules/postscript.lsp
@@ -90,7 +89,6 @@ bin/newlispdoc
 %%DATADIR%%/modules/zlib.lsp
 %%DATADIR%%/util/httpd-conf.lsp
 %%DATADIR%%/util/link.lsp
-%%DATADIR%%/util/nanorc
 %%DATADIR%%/util/newlisp.jsf
 %%DATADIR%%/util/newlisp.vim
 %%DATADIR%%/util/syntax.cgi
@@ -98,6 +96,6 @@ bin/newlispdoc
 @dirrm %%DATADIR%%/modules
 %%GUISERV%%@dirrm %%DATADIR%%/guiserver
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%GUISERV%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/guiserver
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
