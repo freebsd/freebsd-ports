@@ -28,6 +28,7 @@ USE_LDCONFIG=	yes
 USE_QT4=	qmake clucene codecs-cn codecs-jp codecs-kr codecs-tw corelib	\
 		dbus designer gui help imageformats moc network opengl rcc script	\
 		scripttools sql svg uic xml xmlpatterns webkit
+USE_GL=		glu
 
 DESKTOP_ENTRIES="${PORTNAME:U}"	\
 		"A free application for computer aided drafting in two dimensions"\
