@@ -20,7 +20,8 @@ LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
 TEST_DEPENDS=	p5-Font-FreeType>=0:${PORTSDIR}/print/p5-Font-FreeType \
 		p5-Test-Number-Delta>=1:${PORTSDIR}/devel/p5-Test-Number-Delta
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Cairo.3
 

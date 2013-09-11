@@ -1,9 +1,5 @@
-# New ports collection makefile for:	imageindex
-# Date created:				Sat Sep  7 15:53:33 MST 2002
-# Whom:					John Reynolds <johnjen@reynoldsnet.org>
-#
+# Created by: John Reynolds <johnjen@reynoldsnet.org>
 # $FreeBSD$
-#
 
 PORTNAME=	imageindex
 PORTVERSION=	1.1
@@ -21,7 +17,8 @@ RUN_DEPENDS=	\
 	${LOCALBASE}/bin/mplayer:${PORTSDIR}/multimedia/mplayer \
 	p5-Image-Info>=0:${PORTSDIR}/graphics/p5-Image-Info
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 MAKE_ARGS+=	PERLPATH=${PERL}
 
 PLIST_FILES=	bin/imageindex bin/autocaption

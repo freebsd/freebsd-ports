@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zphoto
-# Date created:				19 Jul 2002
-# Whom:					UMENO Takashi <umeno@rr.iij4u.or.jp>
-#
+# Created by: UMENO Takashi <umeno@rr.iij4u.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	zphoto
 PORTVERSION=	1.2
@@ -38,7 +34,8 @@ CONFIGURE_ARGS+=	--disable-wx
 CONFIGURE_ARGS+=	--disable-zip
 .endif
 USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<ming.h>|<ming/ming.h>|g' ${WRKSRC}/*.c ${WRKSRC}/configure
