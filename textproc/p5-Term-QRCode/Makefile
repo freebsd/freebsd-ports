@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Term-QRCode
-# Date created:				2012/03/22
-# Whom:					Stephon Chen <stephon@gmail.com>
-#
+# Created by: Stephon Chen <stephon@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Term-QRCode
 PORTVERSION=	0.01
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	libqrencode>=2.0.0:${PORTSDIR}/graphics/libqrencode \
 		p5-Text-QRCode>0:${PORTSDIR}/textproc/p5-Text-QRCode
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Term::QRCode.3
 

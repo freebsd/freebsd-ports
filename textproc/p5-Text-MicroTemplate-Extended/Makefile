@@ -13,7 +13,8 @@ RUN_DEPENDS=	\
 	p5-Text-MicroTemplate>=0.18:${PORTSDIR}/textproc/p5-Text-MicroTemplate
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Text::MicroTemplate::Extended.3 \
 	Text::MicroTemplate::Extended.ja.3

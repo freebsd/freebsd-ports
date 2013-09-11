@@ -13,7 +13,8 @@ RUN_DEPENDS=	\
 	p5-Text-Xslate>=1.3000:${PORTSDIR}/textproc/p5-Text-Xslate
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Text::Xslate::Bridge::TT2Like.3
 

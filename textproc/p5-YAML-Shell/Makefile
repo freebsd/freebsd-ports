@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-YAML-Shell
-# Date created:		2011-05-24
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	YAML-Shell
 PORTVERSION=	0.60
@@ -18,7 +14,8 @@ COMMENT=	The YAML Test Shell
 BUILD_DEPENDS=	p5-YAML>=0.67:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	p5-YAML>=0.67:${PORTSDIR}/textproc/p5-YAML
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		ysh.1
 MAN3=		YAML::Shell.3

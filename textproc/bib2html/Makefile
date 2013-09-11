@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	bib2html
-# Date created:			Jan 5, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	bib2html
 DISTVERSION=	5.1-1
@@ -18,7 +13,8 @@ COMMENT=	The BibTeX to HTML Translator
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-[0-9]$//}/src
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 
 post-patch:

@@ -20,7 +20,8 @@ TEST_DEPENDS=	\
 	p5-Lingua-EN-Number-IsOrdinal>0:${PORTSDIR}/textproc/p5-Lingua-EN-Number-IsOrdinal \
 	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Lingua::EN::Inflect::Phrase.3
 

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-XML-Entities
-# Date created:				2010-10-1
-# Whom:					Tom Judge <tom@tomjudge.com>
-#
+# Created by: Tom Judge <tom@tomjudge.com>
 # $FreeBSD$
 
 PORTNAME=	XML-Entities
@@ -17,7 +14,8 @@ BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN3=		XML::Entities.3pm XML::Entities::Data.3pm download-entities.pl.3pm
