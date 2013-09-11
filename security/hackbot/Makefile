@@ -1,6 +1,5 @@
 # Created by: mich@freebsdcluster.org
 # $FreeBSD$
-#
 
 PORTNAME=	hackbot
 PORTVERSION=	2.21
@@ -12,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Host exploration tool and bannergrabber
 
-USE_PERL5=	YES
+USES=		perl5
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

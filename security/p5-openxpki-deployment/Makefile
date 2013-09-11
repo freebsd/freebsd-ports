@@ -23,7 +23,7 @@ MAN1=	openxpki-configure.1 \
 	openxpki-metaconf.1 \
 	openxpkiadm.1 \
 	openxpkictl.1
-USE_PERL5=	yes
+USES=		perl5
 USE_GMAKE=	yes
 USE_RC_SUBR=	openxpki
 HAS_CONFIGURE=	yes

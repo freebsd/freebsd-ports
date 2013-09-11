@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Apache-Htpasswd
-# Date created:				30 Apr 2009
-# Whom:					Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Apache-Htpasswd
 PORTVERSION=	1.8
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Crypt-PasswdMD5>=0:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
 		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Apache::Htpasswd.3
 

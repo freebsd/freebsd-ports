@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sshit
-# Date created:				18 December 2005
-# Whom:					Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
-#
+# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	sshit
 PORTVERSION=	0.6
@@ -20,7 +16,8 @@ RUN_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		p5-Proc-PID-File>=0:${PORTSDIR}/devel/p5-Proc-PID-File
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message

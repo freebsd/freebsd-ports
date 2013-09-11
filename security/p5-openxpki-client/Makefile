@@ -19,6 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 MAN3=	OpenXPKI::Client.3 \
 	OpenXPKI::Client::API.3
 USE_GMAKE=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

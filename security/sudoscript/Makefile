@@ -15,7 +15,7 @@ MAN8=		sudoscriptd.8 sudoscript.8
 MANCOMPRESSED=	no
 
 USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^PREFIX=|^PREFIX?=|g' \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fcrackzip
-# Date created:				16 Jul 2004
-# Whom:					Stefan Walter <sw@gegenunendlich.de>
-#
+# Created by: Stefan Walter <sw@gegenunendlich.de>
 # $FreeBSD$
-#
 
 PORTNAME=	fcrackzip
 PORTVERSION=	1.0
@@ -16,7 +12,8 @@ MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	Portable, fast, and featureful ZIP password cracker
 
 GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 
 PLIST_FILES=	bin/fcrackzip bin/fcrackzipinfo
 .if !defined(NOPORTDOCS)

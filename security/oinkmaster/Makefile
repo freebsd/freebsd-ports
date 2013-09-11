@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	oinkmaster
-# Date created:			Jan 28, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	oinkmaster
 PORTVERSION=	2.0
@@ -18,7 +13,8 @@ COMMENT=	Help you update your snort rules after each update
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 PLIST_FILES=	bin/oinkmaster etc/oinkmaster.conf.sample
 

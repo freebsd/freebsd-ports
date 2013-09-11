@@ -1,6 +1,4 @@
-# New ports collection Makefile for:	p5-Crypt-Lite
-# Date created:				18 Dec 2006
-# Whom:	      				Gabor Kovesdan
+# Created by: Gabor Kovesdan
 # $FreeBSD$
 
 PORTNAME=	Crypt-Lite
@@ -15,7 +13,8 @@ COMMENT=	Perl extension for a symmetric data encryption and decryption
 BUILD_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Crypt::Lite.3
 

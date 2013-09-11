@@ -1,9 +1,5 @@
-# New ports collection makefile for:  p5-Crypt-Twofish_PP
-# Date created:                19 January 2010
-# Whom:                        Konstantin Menshikov <kostjnspb@yandex.ru>
-#
+# Created by: Konstantin Menshikov <kostjnspb@yandex.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-Twofish_PP
 PORTVERSION=	0.17
@@ -19,7 +15,8 @@ COMMENT=	The Twofish Algorithm in Pure Perl
 BUILD_DEPENDS=	p5-Locale-libintl>=0:${PORTSDIR}/devel/p5-Locale-libintl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Crypt::Twofish_PP.3 \
 	Crypt::Twofish_PP::Key16.3 \
