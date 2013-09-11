@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-CSP
-# Date created:			2005-04-13
-# Whom:				David Thiel <lx@redundancy.redundancy.org>
-#
+# Created by: David Thiel <lx@redundancy.redundancy.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CSP
 PORTVERSION=	0.34
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
 		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		CSP.3
 

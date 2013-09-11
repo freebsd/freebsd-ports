@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Crypt-Eksblowfish
-# Date created:				01 Jun 2008
-# Whom:					brix@FreeBSD.org
-#
+# Created by: brix@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-Eksblowfish
 PORTVERSION=	0.009
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-Class-Mix>=0:${PORTSDIR}/devel/p5-Class-Mix \
 
 LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Crypt::Eksblowfish.3 \
 	Crypt::Eksblowfish::Bcrypt.3 \

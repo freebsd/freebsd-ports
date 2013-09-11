@@ -1,9 +1,5 @@
-# New ports collection makefile for:		swatch
-# Date created:					May 2 97
-# Whom:						jfitz
-#
+# Created by: jfitz
 # $FreeBSD$
-#
 
 PORTNAME=	swatch
 PORTVERSION=	3.2.3
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	\
 	p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	INSTALLMAN1DIR=${PREFIX}/man/man1
 USE_RC_SUBR=	${PORTNAME}
 

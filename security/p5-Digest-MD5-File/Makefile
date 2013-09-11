@@ -1,6 +1,4 @@
-# Ports collection Makefile for:	p5-Digest-MD5-File
-# Date created:				17 Dec 2005
-# Whom:					Gabor Kovesdan
+# Created by: Gabor Kovesdan
 # $FreeBSD$
 
 PORTNAME=	Digest-MD5-File
@@ -14,7 +12,8 @@ COMMENT=	Perl extension for getting MD5 sums for files and urls
 
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Digest::MD5::File.3
 

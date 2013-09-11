@@ -1,6 +1,4 @@
-# Ports collection Makefile for:	p5-Digest-Adler32
-# Date created:				17 Dec 2005
-# Whom:					Gabor Kovesdan
+# Created by: Gabor Kovesdan
 # $FreeBSD$
 
 PORTNAME=	Digest-Adler32
@@ -16,7 +14,8 @@ COMMENT=	Perl extension for Adler32 hash algorithm
 BUILD_DEPENDS=	p5-Digest>=0:${PORTSDIR}/security/p5-Digest
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Digest::Adler32.3
 
