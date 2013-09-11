@@ -40,7 +40,8 @@ SCRIPTS_ENV=	CONFIG_PATH="${CONFIG_PATH}" CFLAGS="${CFLAGS}" \
 		LIB_DIR="${LIB_DIR}" SHLIB_DIR="${SHLIB_DIR}" \
 		STAGE_DIR="${STAGE_DIR}" ELM_SHLIBS="${ELM_SHLIBS}" \
 		OPENSSLLIB="${OPENSSLLIB}" OPENSSLINC="${OPENSSLINC}" \
-		OPENSSLBASE="${OPENSSLBASE}" CC="${CC}"
+		OPENSSLBASE="${OPENSSLBASE}" CC="${CC}" \
+		ICONV_PREFIX="${ICONV_PREFIX}" ICONV_LINK="${ICONV_LINK}"
 CONFIGURE_ARGS=	-b -S -P ${PREFIX} -c ../${CONFIG_PATH:T}
 
 MAKE_ENV=	MJ="FORMATTER=groff FORMATTER_OPTS=-Tlatin1"
@@ -122,6 +123,14 @@ DOC_FILES=	MIME.txt README.ME+
 .for shlib in ${ELM_SHLIBS}
 DOC_FILES+=	shared_libs/${shlib:L}/README.${shlib:U}
 .endfor
+
+.include <bsd.port.pre.mk>
+
+.if empty(ICONV_LIB)
+ICONV_LINK=
+.else
+ICONV_LINK=	iconv
+.endif
 
 # Post-patch
 #
@@ -286,4 +295,4 @@ HOSTIPADDR=	${IFCONFIG} | ${AWK} '/inet /{print $$2; exit}'
 FTP_PASSWORD?=	${USER}@`${HOSTIPADDR}`
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
