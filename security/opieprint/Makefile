@@ -14,7 +14,8 @@ COMMENT=	Output postscript with 100 OPIE passwords credit card sized
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 PLIST_FILES=	bin/opieprint
 

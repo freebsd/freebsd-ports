@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-Crypt-Rijndael>=1.08:${PORTSDIR}/security/p5-Crypt-Rijndael \
 
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USE_PERL5=	yes
+USES=		perl5
 MAN1=	${PORTNAME}.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/kpcli
