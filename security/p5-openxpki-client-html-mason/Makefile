@@ -24,7 +24,8 @@ MAN3=	OpenXPKI::Client::HTML::Mason.3 \
 	OpenXPKI::Client::HTML::Mason::Javascript.3 \
 	OpenXPKI::Client::HTML::Mason::Menu.3
 USE_GMAKE=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 post-install:
 .if !defined(NOPORTDOCS)

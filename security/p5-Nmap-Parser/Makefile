@@ -15,7 +15,8 @@ BUILD_DEPENDS=	p5-XML-Twig>=3.16:${PORTSDIR}/textproc/p5-XML-Twig \
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		nmap:${PORTSDIR}/security/nmap
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Nmap::Parser.3
 
