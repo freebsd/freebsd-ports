@@ -1,6 +1,4 @@
-# New ports collection Makefile for:	p5-Crypt-DES_PP
-# Date created:				20 Dec 2006
-# Whom:	      				Gabor Kovesdan
+# Created by: Gabor Kovesdan
 # $FreeBSD$
 
 PORTNAME=	Crypt-DES_PP
@@ -12,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Perl extension for DES encryption in pure Perl
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Crypt::DES_PP.3
 

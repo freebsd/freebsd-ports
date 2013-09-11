@@ -12,7 +12,7 @@ COMMENT=	Authentication service for creating and validating credentials
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_PERL5=	yes
+USES=		perl5
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	munged
 
