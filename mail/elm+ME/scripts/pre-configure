@@ -359,10 +359,10 @@ CONFIG=true
 EOF
 
 tee -a ${CONFIG_PATH} >> ${WRKSRC}/shared_libs/iconv/config.res << EOF
-iconv_dir='${LOCALBASE}'
-iconv_include_dir='${LOCALBASE}/include'
-iconv_lib_dir='${LOCALBASE}/lib'
-iconv_link='iconv'
+iconv_dir='${ICONV_PREFIX}'
+iconv_include_dir='${ICONV_PREFIX}/include'
+iconv_lib_dir='${ICONV_PREFIX}/lib'
+iconv_link='${ICONV_LINK}'
 EOF
 
 tee -a ${CONFIG_PATH} >> ${WRKSRC}/shared_libs/tls/config.res << EOF
