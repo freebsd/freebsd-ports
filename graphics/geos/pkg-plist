@@ -325,6 +325,7 @@ include/geos/planargraph/NodeMap.h
 include/geos/planargraph/PlanarGraph.h
 include/geos/planargraph/Subgraph.h
 include/geos/planargraph/algorithm/ConnectedSubgraphFinder.h
+include/geos/platform.h
 include/geos/precision.h
 include/geos/precision/CommonBits.h
 include/geos/precision/CommonBitsOp.h
@@ -371,7 +372,7 @@ include/geos/util/UnsupportedOperationException.h
 include/geos/util/math.h
 include/geos/version.h
 include/geos_c.h
-lib/libgeos-3.4.1.so
+lib/libgeos-3.4.2.so
 lib/libgeos.a
 lib/libgeos.la
 lib/libgeos.so
