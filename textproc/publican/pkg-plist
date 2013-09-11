@@ -465,6 +465,7 @@ bin/publican
 %%DATADIR%%/header.html
 %%DATADIR%%/footer.html
 %%DATADIR%%/default.db
+@dirrmtry etc/bash_completion.d
 @dirrm %%SITE_PERL%%/Publican
 @dirrm %%DATADIR%%/Common_Content/common/ar-SA/css
 @dirrm %%DATADIR%%/Common_Content/common/ar-SA
