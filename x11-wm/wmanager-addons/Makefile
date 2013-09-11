@@ -9,7 +9,8 @@ MASTER_SITES=	http://devel.ringlet.net/x11/wmanager-addons/
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Helper scripts and documentation for the X11 window manager selector
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 MAN1=		wmanager.1 wmanager-loop.1 wmanagerrc-update.1
 MANCOMPRESSED=	yes
