@@ -7,7 +7,7 @@
 
 PORTNAME=	spatialite
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Spatial Extensions for SQLite
 
-LIB_DEPENDS=	geos_c.8:${PORTSDIR}/graphics/geos \
+LIB_DEPENDS=	geos_c.9:${PORTSDIR}/graphics/geos \
 		proj.7:${PORTSDIR}/graphics/proj \
 		freexl.1:${PORTSDIR}/textproc/freexl
 
