@@ -20,7 +20,7 @@ GH_PROJECT=	OpenXcom
 GH_TAGNAME=	v0.9
 GH_COMMIT=	5c8b540
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_SDL=	sdl mixer image gfx
 USE_GL=		gl
 USE_GCC=	yes

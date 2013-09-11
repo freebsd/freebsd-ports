@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Pidgin-LaTeX
-# Date created:				2005-06-22
-# Whom:					Geoffrey Mainland <mainland@apeiron.net>
-#
+# Created by: Geoffrey Mainland <mainland@apeiron.net>
 # $FreeBSD$
-#
 
 PORTNAME=	latex
 PORTVERSION=	1.0
@@ -23,8 +19,8 @@ RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin \
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 
 CFLAGS+=	"-fPIC"
+USES=		gmake pkgconfig
 USE_TEX=	latex
-USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_BZIP2=	yes
 
