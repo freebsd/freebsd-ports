@@ -12,7 +12,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	File splitter, GTK and CLI versions
 
 USE_GNOME=	#
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 
 PORTDOCS=	README
 

@@ -40,7 +40,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
 RUN_DEPENDS=	${LOCALBASE}/lib/libdvdcss.so:${PORTSDIR}/multimedia/libdvdcss
 
-USES=		gmake
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	libtool aclocal
 LIBTOOLFILES=	configure
 USE_PYTHON_BUILD=	yes

@@ -16,8 +16,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_BZIP2=	yes
 USE_GNOME=	intlhack gnomehier gtk20
-USES=		desktop-file-utils gettext
-USE_GMAKE=	yes
+USES=		desktop-file-utils gettext gmake pkgconfig
 MAKE_ENV=	DEFAULT_VIEWER="xdg-open" USE_SYSTEM_INIPARSER=1
 
 CPPFLAGS+=	-I${LOCALBASE}/include -Diniparser_setstr=iniparser_set

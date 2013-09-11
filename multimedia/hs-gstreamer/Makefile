@@ -12,6 +12,7 @@ LIB_DEPENDS=	gstreamer:${PORTSDIR}/multimedia/gstreamer
 
 LICENSE=	LGPL21
 
+USES=		pkgconfig
 USE_CABAL=	glib>=0.12 mtl
 
 BUILD_DEPENDS+=	gstreamer-plugins>=0.10:${PORTSDIR}/multimedia/gstreamer-plugins

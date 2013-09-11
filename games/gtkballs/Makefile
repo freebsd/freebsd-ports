@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtkballs
-# Date created:				11 November 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	gtkballs
 PORTVERSION=	3.1.5
@@ -14,9 +10,8 @@ MASTER_SITES=	http://gtkballs.antex.ru/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lines-like simple logic game for X Window System
 
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
