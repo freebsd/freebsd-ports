@@ -13,6 +13,9 @@ COMMENT=	V8 JavaScript for client and server
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
+DEPRECATED=	Unsupported upstream, not compatible with current
+EXPIRATION_DATE=	2013-10-11
+
 MAN1=		node.1
 
 HAS_CONFIGURE=	yes
