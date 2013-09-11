@@ -13,7 +13,8 @@ COMMENT=	A utility class for building table layouts in a PDF::API2 object
 BUILD_DEPENDS=	p5-PDF-API2>=0:${PORTSDIR}/textproc/p5-PDF-API2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.h3//}
 

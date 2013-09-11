@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Spreadsheet-XLSX
-# Date created:		2011-08-12
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Spreadsheet-XLSX
 PORTVERSION=	0.13
@@ -22,7 +18,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Spreadsheet::XLSX.3 Spreadsheet::XLSX::Fmt2007.3 Spreadsheet::XLSX::Utility2007.3
 

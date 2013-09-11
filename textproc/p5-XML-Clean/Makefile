@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-XML-Clean
-# Date created:				Sep 17 2004
-# Whom:					Rong-En Fan <rafan@infor.org>
-#
+# Created by: Rong-En Fan <rafan@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Clean
 PORTVERSION=	1.06
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Ensure, that *(HTML)* text pass throught an XML parser
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::Clean.3
 

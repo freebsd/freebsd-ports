@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-XML-Atom-Ext-OpenSearch
-# Date created:	   27 Oct 2008
-# Whom:		   Denis Pokataev <catone@cpan.org>
-#
+# Created by: Denis Pokataev <catone@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Atom-Ext-OpenSearch
 PORTVERSION=	0.03
@@ -17,7 +13,8 @@ COMMENT=	XML::Atom extension for OpenSearch data
 BUILD_DEPENDS=	p5-XML-Atom>=0:${PORTSDIR}/textproc/p5-XML-Atom
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	XML::Atom::Ext::OpenSearch.3 \
 	XML::Atom::Ext::OpenSearch::Query.3
