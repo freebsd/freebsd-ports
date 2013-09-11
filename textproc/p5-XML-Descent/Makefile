@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML-TokeParser
-# Date created:		10 April 2010
-# Whom:			Mike Bristow <mike@urgle.com>
-#
+# Created by: Mike Bristow <mike@urgle.com>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Descent
 PORTVERSION=	1.04
@@ -18,7 +14,8 @@ BUILD_DEPENDS=	p5-XML-TokeParser>=0:${PORTSDIR}/textproc/p5-XML-TokeParser \
 		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 RUN_DEPENDS=	p5-XML-TokeParser>=0:${PORTSDIR}/textproc/p5-XML-TokeParser
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::Descent.3
 
