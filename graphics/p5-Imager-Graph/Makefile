@@ -1,9 +1,5 @@
-# New ports collection makefile for:	graphics/p5-Imager-Graph
-# Date created:				11 Feb 2005
-# Whom:					Yuan-Chung Hsiao <ychsiao@ychsiao.org>
-#
+# Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Imager-Graph
 PORTVERSION=	0.10
@@ -17,7 +13,8 @@ COMMENT=	Perl extension for producing Graphs using the Imager library
 BUILD_DEPENDS=	p5-Imager>=0.75:${PORTSDIR}/graphics/p5-Imager
 RUN_DEPENDS=	p5-Imager>=0.75:${PORTSDIR}/graphics/p5-Imager
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Imager::Graph.3 \
 		Imager::Graph::Area.3 \

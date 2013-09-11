@@ -25,7 +25,8 @@ LICENSE_COMB=	dual
 
 CONFLICTS=	p5-Image-ExifTool-devel-[0-9]*
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MANTAGS=	AES AFCP AIFF APE APP12 ASF BMP BigTIFF BuildTagLookup	\
 		BZZ Canon CanonCustom CanonRaw CanonVRD Casio Charset	\

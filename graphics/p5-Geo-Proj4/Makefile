@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Geo-Proj4
-# Date created:      			27 January 2006
-# Whom:					Eric Stith
-#
+# Created by: Eric Stith
 # $FreeBSD$
-#
 
 PORTNAME=	Geo-Proj4
 PORTVERSION=	1.04
@@ -19,6 +15,7 @@ LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj
 MAN3=		Geo::Proj4.3
 CONFIGURE_ENV=	GEOPROJ_FWTOOLS_DIR=${LOCALBASE}
 MAKE_ENV=	INC=-I${LOCALBASE}/include
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>
