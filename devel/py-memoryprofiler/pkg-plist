@@ -1,0 +1,4 @@
+bin/mprofile
+%%PYTHON_SITELIBDIR%%/memory_profiler.py
+%%PYTHON_SITELIBDIR%%/memory_profiler.pyo
+%%PYTHON_SITELIBDIR%%/memory_profiler.pyc
