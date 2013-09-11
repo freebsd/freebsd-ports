@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ipfwcount
-# Date created:				22 February 2006
-# Whom:					Robert Archer <freebsd@deathbeforedecaf.net>
-#
+# Created by: Robert Archer <freebsd@deathbeforedecaf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ipfwcount
 PORTVERSION=	0.2.1
@@ -18,7 +14,7 @@ COMMENT=	Summarise ipfw logs by counting and sorting the fields
 PLIST_FILES=	bin/ipfwcount
 MAN1=		ipfwcount.1
 
-USE_PERL5=	yes
+USES=		perl5
 
 .if !defined(NOPORTDOCS)
 PLIST_DIRS=	%%EXAMPLESDIR%%

@@ -1,8 +1,4 @@
-# New ports collection makefile for:   p5-Authen-NTLM
-# Date created:                        June 07 2006
-# Whom:                                James Thomason <james@divide.org>
-#
-#
+# Created by: James Thomason <james@divide.org>
 # $FreeBSD$
 
 PORTNAME=	Authen-NTLM
@@ -18,7 +14,8 @@ COMMENT=	An NTLM authentication module
 BUILD_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC
 RUN_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Authen::NTLM.3
 
