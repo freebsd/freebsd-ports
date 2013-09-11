@@ -12,6 +12,7 @@ LIB_DEPENDS=	gtkglext:${PORTSDIR}/x11-toolkits/gtkglext
 
 LICENSE=	LGPL21
 
+USES=		pkgconfig
 USE_CABAL=	glib>=0.12 gtk>=0.12 mtl pango>=0.12
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

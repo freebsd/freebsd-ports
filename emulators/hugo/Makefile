@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Hu-Go!
-# Date created:        18 May 2006
-# Whom:                Li-Lun Wang <llwang@infor.org>
-#
+# Created by: Li-Lun Wang <llwang@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hugo
 PORTVERSION=	2.12
@@ -17,7 +13,7 @@ COMMENT=	A PC Engine (TurboGrafx 16) emulator
 BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_SDL=	sdl
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	SDL_CONFIG="${SDL_CONFIG}"

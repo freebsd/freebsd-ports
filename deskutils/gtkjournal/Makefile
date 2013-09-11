@@ -21,9 +21,8 @@ PLIST_FILES=	bin/gtkjournal lib/libsqlitemm.a lib/libsqlitemm.la \
 
 USE_AUTOTOOLS=	libtool
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USES=        pathfix
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	lthack
 CONFIGURE_ARGS=	--enable-gtkspell
 USE_LDCONFIG=	yes

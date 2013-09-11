@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hot-babe
-# Date created:		2004-11-06
-# Whom:			Roman Bogorodskiy <bogorodskiy@inbox.ru>
-#
+# Created by: Roman Bogorodskiy <bogorodskiy@inbox.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	hot-babe
 PORTVERSION=	0.2.2
@@ -16,6 +12,7 @@ MASTER_SITE_SUBDIR=	novel
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Small utility which displays the system activity in a very special way
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 MAKE_ARGS+=	PREFIX="${PREFIX}" CC="${CC}"
 USE_GNOME=	gtk20

@@ -10,6 +10,7 @@ COMMENT=	Binding to the glade library
 
 LICENSE=	LGPL21
 
+USES=		pkgconfig
 USE_CABAL=	glib>=0.12 gtk>=0.12
 USE_GNOME=	libglade2
 

@@ -33,7 +33,7 @@ OPTIONS_DEFAULT=	PANOMATIC AUTOPANOSIFTC
 PANOMATIC_DESC=	Install graphics/panomatic
 AUTOPANOSIFTC_DESC=	Install graphics/autopano-sift-c
 
-USES=		cmake gettext
+USES=		cmake gettext pkgconfig
 
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}
 

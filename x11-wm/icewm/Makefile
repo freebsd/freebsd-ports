@@ -18,7 +18,7 @@ USE_GNOME=	gtk20 # gdkpixbuf really :-)
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		gmake
+USES=		gmake pkgconfig
 CONFIGURE_ARGS=	--enable-shaped-decorations \
 		--enable-guievents \
 		--with-cfgdir=${DATADIR} \
