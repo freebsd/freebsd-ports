@@ -1,9 +1,5 @@
-# Ports collection makefile for:	XML::Parser::Lite::Tree
-# Date created:			Apr 27, 2005
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Parser-Lite-Tree
 PORTVERSION=	0.14
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Lightweight XML tree builder
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::Parser::Lite::Tree.3 XML::Parser::LiteCopy.3
 

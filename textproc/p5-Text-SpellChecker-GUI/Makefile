@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Text-SpellChecker-GUI
-# Date created:		2009-09-27
-# Whom:			Zane C, Bowers <vvelox@vvelox.net>
-#
+# Created by: Zane C, Bowers <vvelox@vvelox.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-SpellChecker-GUI
 PORTVERSION=	0.0.2
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Curses-UI>=0:${PORTSDIR}/devel/p5-Curses-UI \
 		p5-ZConf-GUI>=0:${PORTSDIR}/devel/p5-ZConf-GUI \
 		p5-Text-SpellChecker>=0:${PORTSDIR}/textproc/p5-Text-SpellChecker
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Text::SpellChecker::GUI.3 \
 		Text::SpellChecker::GUI::Curses.3

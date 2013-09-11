@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Wiki::Creole
-# Date created:			28 Sep 2008
-# Whom:				Matthew Fuller <fullermd@over-yonder.net>
-#
+# Created by: Matthew Fuller <fullermd@over-yonder.net>
 # $FreeBSD$
-#
 
 PORTNAME=		Text-WikiCreole
 PORTVERSION=		0.07
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		fullermd@over-yonder.net
 COMMENT=	Implementation of the Wiki Creole markup language
 
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=			Text::WikiCreole.3
 

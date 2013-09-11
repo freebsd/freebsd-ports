@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-XML-Filter-DOMFilter-LibXML
-# Date created:        24 October 2005
-# Whom:                Andrew Humphrey <ahumphrey@realestate.com.au>
-#
+# Created by: Andrew Humphrey <ahumphrey@realestate.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Filter-DOMFilter-LibXML
 PORTVERSION=	0.02
@@ -17,7 +13,8 @@ COMMENT=	Perl SAX Filter allowing DOM processing of selected subtrees
 BUILD_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::Filter::DOMFilter::LibXML.3
 
