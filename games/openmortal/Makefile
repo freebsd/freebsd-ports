@@ -13,7 +13,7 @@ COMMENT=	A parody of the once popular coin-up fighting game, Mortal Kombat
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
-USE_PERL5=	yes
+USES=		perl5
 USE_SDL=	mixer image sdl net
 USE_DOS2UNIX=	src/gfx.cpp
 

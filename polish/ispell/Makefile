@@ -1,9 +1,5 @@
-# New ports collection makefile for:    pl-ispell
-# Date created:                         11 December 2003
-# Whom:                                 jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	ispell
 CATEGORIES=	polish
@@ -12,7 +8,7 @@ PKGNAMESUFFIX=	-20021127
 MAINTAINER=	wtp@bsdguru.org
 
 ISPELL_PL=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 MASTERDIR=	${.CURDIR}/../../textproc/ispell
 

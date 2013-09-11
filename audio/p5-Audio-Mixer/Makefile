@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Audio-Mixer
-# Date created:			05 Oct 2008
-# Whom:				Dennis Herrmann <adox@mcx2.org>
-#
+# Created by: Dennis Herrmann <adox@mcx2.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Audio-Mixer
 PORTVERSION=	0.7
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Perl extension for Sound Mixer control
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Audio::Mixer.3
 

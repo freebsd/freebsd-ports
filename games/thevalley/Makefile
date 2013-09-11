@@ -1,7 +1,4 @@
-# New ports collection makefile for:	thevalley
-# Date created:				28 March 2004
-# Whom:					Edwin Groothuis
-#
+# Created by: Edwin Groothuis
 # $FreeBSD$
 
 PORTNAME=	thevalley
@@ -18,7 +15,8 @@ USE_AUTOTOOLS=	libtool
 HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_SDL=	sdl
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CXXFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 

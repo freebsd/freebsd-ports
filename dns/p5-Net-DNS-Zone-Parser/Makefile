@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-DNS-Zone-Parser
-# Date created:	   Mon May  7 16:26:08 CEST 2012
-# Whom:		   Jimmy Bergman jimmy@sigint.se
-#
+# Created by: Jimmy Bergman jimmy@sigint.se
 # $FreeBSD$
-#
 
 PORTNAME=	Net-DNS-Zone-Parser
 PORTVERSION=	0.02
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Net-DNS>=0.64:${PORTSDIR}/dns/p5-Net-DNS \
 RUN_DEPENDS=	p5-Net-DNS>=0.64:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-Net-DNS-SEC>=0.15:${PORTSDIR}/dns/p5-Net-DNS-SEC
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::DNS::Zone::Parser.3
 
