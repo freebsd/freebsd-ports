@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aft
-# Date created:		2002/03/28
-# Whom:			Alan Eldridge <alane@FreeBSD.org>
-#
+# Created by: Alan Eldridge <alane@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	aft
 PORTVERSION=	5.098
@@ -14,7 +10,7 @@ MASTER_SITES=	http://www.maplefish.com/todd/
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	A document preparation system using an Almost Free Text input format
 
-USE_PERL5=	yes
+USES=		perl5
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Parse-BooleanLogic
-# Date created:		2009-11-23
-# Whom:			Steven Kreuzer <skreuzer@FreeBSD.org>
-#
+# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Parse-BooleanLogic
 PORTVERSION=	0.09
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Regexp-Common>=2.122:${PORTSDIR}/textproc/p5-Regexp-Common \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Parse::BooleanLogic.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML::XUpdate::LibXML
-# Date created:		15 July 2002
-# Whom:			Lev Serebryakov <lev@serebryakov.spb.ru>
-#
+# Created by: Lev Serebryakov <lev@serebryakov.spb.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-XUpdate-LibXML
 PORTVERSION=	0.6.0
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-XML-LibXML-Iterator>=0:${PORTSDIR}/textproc/p5-XML-LibXML-Iterator
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		xupdate.1
 MAN3=		XML::Normalize::LibXML.3 XML::XUpdate::LibXML.3

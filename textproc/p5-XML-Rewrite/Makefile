@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-XML-Rewrite
-# Date created:		2010-11-23
-# Whom:			Patrick Powell <papowell@astart.com>
-#
+# Created by: Patrick Powell <papowell@astart.com>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Rewrite
 PORTVERSION=	0.10
@@ -20,7 +16,8 @@ RUN_DEPENDS=	p5-Log-Report>=0.21:${PORTSDIR}/devel/p5-Log-Report \
 		p5-XML-LibXML>=1.70:${PORTSDIR}/textproc/p5-XML-LibXML
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	xmlrewrite.1
 MAN3=	XML::Rewrite.3 \

@@ -13,7 +13,8 @@ COMMENT=	Parse phone numbers
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Parse::PhoneNumber.3
 
