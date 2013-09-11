@@ -143,7 +143,7 @@ share/xsl/slides/xsl/xhtml/tables.xsl
 share/xsl/slides/xsl/xhtml/vslides.xsl
 share/xsl/slides/xsl/xhtml/w3c.xsl
 share/xsl/slides/VERSION
-@unexec rm -f %D/share/xsl/slides/catalog 2>&1 >/dev/null || true
+share/xsl/slides/catalog
 @dirrm share/xsl/slides/browser
 @dirrm share/xsl/slides/graphics/active
 @dirrm share/xsl/slides/graphics/inactive
@@ -160,6 +160,6 @@ share/xsl/slides/VERSION
 @dirrm share/xsl/slides/xsl/xhtml
 @dirrm share/xsl/slides/xsl
 @dirrm share/xsl/slides
-@unexec test -d %D/share/xsl && rmdir %D/share/xsl 2>/dev/null || true
+@dirrmtry share/xsl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
