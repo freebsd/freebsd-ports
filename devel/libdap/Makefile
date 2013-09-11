@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdap
-PORTVERSION=	3.11.7
-PORTREVISION=	1
+PORTVERSION=	3.12.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opendap.org/pub/source/ \
 		LOCAL/sunpoet
@@ -11,9 +10,9 @@ MASTER_SITES=	http://www.opendap.org/pub/source/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SDK which contains an implementation of DAP 2.0 and 3.1
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		xml2:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 
 CONFIGURE_ARGS=	--with-zlib=/usr
 CPPFLAGS+=	-I${LOCALBASE}/include
