@@ -1,9 +1,5 @@
-# New ports collection makefile for:		jarl
-# Date created:					10 November 2002
-# Whom:						dd
-#
+# Created by: dd
 # $FreeBSD$
-#
 
 PORTNAME=	jarl
 PORTVERSION=	0.5001
@@ -20,7 +16,7 @@ RUN_DEPENDS=	ptksh:${PORTSDIR}/x11-toolkits/p5-Tk \
 
 NO_BUILD=	yes
 
-USE_PERL5=	yes
+USES=		perl5
 
 makeplist:
 	${ECHO_CMD} bin/jarl > ${PLIST}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-ePerl
-# Date created:		03-Sep-1997
-# Whom:	      		Ralf S. Engelschall <rse@engelschall.com>
-#
+# Created by: Ralf S. Engelschall <rse@engelschall.com>
 # $FreeBSD$
-#
 
 PORTNAME=	eperl
 PORTVERSION=	2.2.14
@@ -17,7 +13,8 @@ COMMENT=	Perl Modules of ePerl package: Parse::ePerl, Apache::ePerl
 
 MAKE_JOBS_UNSAFE=	yes
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Parse::ePerl.3 Apache::ePerl.3
 
