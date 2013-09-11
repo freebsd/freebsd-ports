@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	walker
-# Date created:			May 30, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	walker
 PORTVERSION=	3.8
@@ -17,7 +12,7 @@ COMMENT=	Recover zone file information from servers that use DNSSEC
 RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-Net-DNS-SEC>=0:${PORTSDIR}/dns/p5-Net-DNS-SEC
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 MAN1=		walker.1

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-DNS-RR-SRV-Helper
-# Date created:		2010-05-14
-# Whom:			Zane C, Bowers <vvelox@vvelox.net>
-#
+# Created by: Zane C, Bowers <vvelox@vvelox.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-DNS-RR-SRV-Helper
 PORTVERSION=	0.0.0
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Net-DNS>=0.68:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-Sort-Naturally>=1.03:${PORTSDIR}/textproc/p5-Sort-Naturally
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::DNS::RR::SRV::Helper.3
 

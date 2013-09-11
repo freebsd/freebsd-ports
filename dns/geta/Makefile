@@ -1,9 +1,5 @@
-# New ports collection makefile for:	geta
-# Date created:				5 Nov 2001
-# Whom:					sumikawa
-#
+# Created by: sumikawa
 # $FreeBSD$
-#
 
 PORTNAME=	geta
 PORTVERSION=	19990419
@@ -17,7 +13,8 @@ COMMENT=	Geta(GET Address) - Simple IPv4/IPv6 address resolving tool
 
 WRKSRC=		${WRKDIR}/pping
 GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 
 NO_INSTALL_MANPAGES=	yes
 PLIST_FILES=		bin/geta

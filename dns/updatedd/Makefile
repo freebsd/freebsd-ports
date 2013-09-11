@@ -1,9 +1,5 @@
-# New ports collection makefile for:	updatedd
-# Date created:		2003-12-02
-# Whom:			geniusj@ods.org
-#
+# Created by: geniusj@ods.org
 # $FreeBSD$
-#
 
 PORTNAME=	updatedd
 PORTVERSION=	2.6
@@ -15,7 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	geniusj@ods.org
 COMMENT=	Dynamic DNS Update Client supporting multiple services
 
-USE_PERL5=	yes
+USES=		perl5
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

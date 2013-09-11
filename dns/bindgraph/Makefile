@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bindgraph
-# Date created:				Nov 29 2007
-# Whom:					Rong-En Fan <rafan@FreeBSD.org>
-#
+# Created by: Rong-En Fan <rafan@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bindgraph
 PORTVERSION=	0.2
@@ -19,7 +15,7 @@ RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool	\
 		p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 CGIDIR?=	${PREFIX}/www/cgi-bin
 DATADIR?=	/var/db/bindgraph
