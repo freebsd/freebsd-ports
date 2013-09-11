@@ -9,6 +9,7 @@ CATEGORIES=	math
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 
 LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg

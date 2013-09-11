@@ -13,9 +13,9 @@ COMMENT=	Quickly select a portion of the screen using minimal keystrokes
 LIB_DEPENDS=	xdo.2:${PORTSDIR}/x11/xdotool \
 		cairo.2:${PORTSDIR}/graphics/cairo
 
+USES=		gmake pkgconfig
 USE_GNOME=	glib20
 USE_XORG=	xtst x11 xinerama
-USE_GMAKE=	yes
 
 PLIST_FILES=	bin/keynav
 PORTEXAMPLES=	keynavrc

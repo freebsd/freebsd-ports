@@ -1,9 +1,5 @@
-# New Ports collection makefile for:	Syobon Action
-# Date created:		2012-05-06
-# Whom:			nemysis@gmx.ch
-#
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
-#
 
 PORTNAME=	syobon
 PORTVERSION=	1.0.1
@@ -18,7 +14,7 @@ COMMENT=	Syobon Action is a platform game as Super Mario Bros
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_DOS2UNIX=	*.txt
 ALL_TARGET=	${PORTNAME}
 USE_SDL=	sdl gfx image mixer ttf

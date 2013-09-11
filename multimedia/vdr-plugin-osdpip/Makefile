@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vdr-plugin-osdpip
-# Date created:		Wed Apr 14 18:11:42 CEST 2010
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugin-osdpip
 PORTVERSION=	0.1.1
@@ -21,6 +17,7 @@ COMMENT=	Video Disk Recorder - picture-in-picture plugin
 
 LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 
+USES=		pkgconfig
 DIST_SUBDIR=	vdr
 PATCH_STRIP=	-p1
 PATCH_DIST_STRIP=	-p1

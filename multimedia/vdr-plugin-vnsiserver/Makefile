@@ -10,10 +10,10 @@ DISTNAME=	xbmc-pvr-addons-${PORTVERSION}-Frodo
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - VNSI server plugin (Frodo)
 
+USES=		pkgconfig
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
-MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/xbmc-pvr-addons-${PORTVERSION}-Frodo/addons/pvr.vdr.vnsi/${PORTNAME}
 
 MAKE_ARGS+=	LIBDIR=${WRKDIR}/lib \
