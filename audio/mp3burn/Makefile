@@ -20,7 +20,7 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/mp3burn

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Music-Audioscrobbler-Submit
-# Date created:		2008-09-15
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Music-Audioscrobbler-Submit
 PORTVERSION=	0.05
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 RUN_DEPENDS:=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Config-Options>=0.8:${PORTSDIR}/devel/p5-Config-Options
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Music::Audioscrobbler::Submit.3
 

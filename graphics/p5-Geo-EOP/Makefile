@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Geo-EOP
-# Date created:      			23 January 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Geo-EOP
 PORTVERSION=	0.13
@@ -22,6 +18,7 @@ RUN_DEPENDS=	p5-Geo-GML>=0.12:${PORTSDIR}/graphics/p5-Geo-GML \
 
 MAN3=		Geo::EOP::Util.3 Geo::EOP.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

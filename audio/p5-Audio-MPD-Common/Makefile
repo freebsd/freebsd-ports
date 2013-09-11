@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-Moose>=0.92:${PORTSDIR}/devel/p5-Moose \
 		p5-String-Formatter>=0:${PORTSDIR}/devel/p5-String-Formatter
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Audio::MPD::Common.3 \
 		Audio::MPD::Common::Item.3 \

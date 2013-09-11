@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MP3-Info
-# Date created:		14-Aug-2000
-# Whom:			Leo Kim <leo@florida.sarang.net>
-#
+# Created by: Leo Kim <leo@florida.sarang.net>
 # $FreeBSD$
-#
 
 PORTNAME=	MP3-Info
 PORTVERSION=	1.24
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Manipulate / fetch info from MP3 audio files
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		MP3::Info.3
 

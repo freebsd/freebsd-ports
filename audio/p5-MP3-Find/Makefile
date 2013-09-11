@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MP3-Find
-# Date created:				2006-07-12
-# Whom:					Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-#
+# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	MP3-Find
 PORTVERSION=	0.07
@@ -17,7 +13,8 @@ COMMENT=	Search and sort MP3 files based on their ID3 tags
 BUILD_DEPENDS=	p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		mp3db.1 mp3find.1
 MAN3=		MP3::Find.3 \

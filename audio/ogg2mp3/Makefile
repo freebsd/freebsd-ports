@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ogg2mp3
-# Date created:			26 Jun 2005
-# Whom:				Aleksander Fafula <alex@bsdguru.org>
-#
+# Created by: Aleksander Fafula <alex@bsdguru.org>
 # $FreeBSD$
 
 PORTNAME=	ogg2mp3
@@ -19,7 +16,7 @@ RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 
 NO_BUILD=	yes
 USE_BZIP2=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 PLIST_FILES=	bin/ogg2mp3
 
