@@ -9,7 +9,8 @@ MASTER_SITE_SUBDIR=	CPAN:JV
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl scripts to assist in the generation and application of patches
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		makepatch.1 applypatch.1
 

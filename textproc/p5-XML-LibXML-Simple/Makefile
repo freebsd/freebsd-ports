@@ -17,7 +17,8 @@ RUN_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-XML-LibXML>=1.64:${PORTSDIR}/textproc/p5-XML-LibXML
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::LibXML::Simple.3
 

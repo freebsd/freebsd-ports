@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Spreadsheet-ReadSXC
-# Date created:		2010-03-08
-# Whom:			Steve Wills <steve@mouf.net>
-#
+# Created by: Steve Wills <steve@mouf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Spreadsheet-ReadSXC
 PORTVERSION=	0.20
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 RUN_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Spreadsheet::ReadSXC.3
 

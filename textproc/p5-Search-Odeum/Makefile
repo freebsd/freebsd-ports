@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Search-Odeum
-# Date created:		2007-07-26
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Search-Odeum
 PORTVERSION=	0.02
@@ -20,7 +16,8 @@ LIB_DEPENDS=	qdbm:${PORTSDIR}/databases/qdbm
 
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Search::Odeum.3 \
 		Search::Odeum::Document.3 \
