@@ -1,9 +1,5 @@
-# New ports collection makefile for:	signing-party
-# Date created:				13 September 2005
-# Whom:					johans
-#
+# Created by: johans
 # $FreeBSD$
-#
 
 PORTNAME=	signing-party
 PORTVERSION=	1.1.4
@@ -32,7 +28,7 @@ CONFLICTS_INSTALL=sig2dot-[0-9]* springgraph-[0-9]*
 
 REINPLACE_ARGS=	-i ''
 USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 SCRIPTS=	caff/caff caff/pgp-clean caff/pgp-fixkey gpglist/gpglist \
 		gpgsigs/gpgsigs gpg-key2ps/gpg-key2ps \

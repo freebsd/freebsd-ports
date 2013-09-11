@@ -1,6 +1,4 @@
-# New ports collection Makefile for:	p5-Crypt-Rabbit
-# Date created:				18 Dec 2006
-# Whom:	      				Gabor Kovesdan
+# Created by: Gabor Kovesdan
 # $FreeBSD$
 
 PORTNAME=	Crypt-Rabbit
@@ -12,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl extension for Rabbit stream cipher
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Crypt::Rabbit.3
 

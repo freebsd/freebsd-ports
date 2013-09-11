@@ -1,10 +1,5 @@
-# New ports collection makefile for:   p5-Authen-Smb
-# Date created:                        Fri 03 January 2002
-# Whom:                                Mustafa Arif <ma499@doc.ic.ac.uk>
-#                                      http://www.doc.ic.ac.uk/~ma499/
-#
+# Created by: Mustafa Arif <ma499@doc.ic.ac.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	Authen-Smb
 PORTVERSION=	0.91
@@ -15,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ma499@doc.ic.ac.uk
 COMMENT=	Perl extension to authenticate against an SMB server
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Authen::Smb.3
 

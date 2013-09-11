@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Acme-6502
-# Date created:		2012-07-03
-# Whom:			Steven Kreuzer <skreuzer@FreeBSD.org>
-#
+# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Acme-6502
 PORTVERSION=	0.77
@@ -18,7 +14,8 @@ RUN_DEPENDS=	p5-Term-ReadKey>=2.30:${PORTSDIR}/devel/p5-Term-ReadKey \
 		p5-version>=0.98:${PORTSDIR}/devel/p5-version
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		Acme::6502.3 \
 		Acme::6502::Tube.3

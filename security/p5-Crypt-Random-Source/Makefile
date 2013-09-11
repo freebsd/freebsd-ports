@@ -1,9 +1,5 @@
-# New ports collection makefile for:    Crypt::Random::Source
-# Date created:                         15 March 2011
-# Whom:                                 Dereckson <dereckson@gmail.com>
-#
+# Created by: Dereckson <dereckson@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-Random-Source
 PORTVERSION=	0.07
@@ -39,6 +35,7 @@ MAN3=		Crypt::Random::Source.3 \
 		Crypt::Random::Source::Weak::devurandom.3 \
 		Crypt::Random::Source::Weak::rand.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

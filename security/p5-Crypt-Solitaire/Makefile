@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Crypt::Solitaire
-# Date created:				30 Dec 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=		Crypt-Solitaire
 PORTVERSION=		2.0
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		skreuzer@FreeBSD.org
 COMMENT=	Solitaire encryption
 
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=			Crypt::Solitaire.3
 
