@@ -1,9 +1,5 @@
-# New ports collection makefile for:	x11-fm/p5-PerlFM
-# Date created:		2009-10-19
-# Whom:			Zane C, Bowers <vvelox@vvelox.net>
-#
+# Created by: Zane C, Bowers <vvelox@vvelox.net>
 # $FreeBSD$
-#
 
 PORTNAME=	PerlFM
 PORTVERSION=	0.2.0
@@ -26,7 +22,8 @@ BUILD_DEPENDS=	p5-Gtk2>=1.060:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Dir-Watch>=0.0.0:${PORTSDIR}/devel/p5-Dir-Watch
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		PerlFM.3
 

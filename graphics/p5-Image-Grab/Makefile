@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Image-Grab
-# Date created:				8 April 2001
-# Whom:					Anatoliy Dmytriyev <tolid@plab.ku.dk>
-#
+# Created by: Anatoliy Dmytriyev <tolid@plab.ku.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	Image-Grab
 PORTVERSION=	1.4.2
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ENV=	${ECHO_CMD} "N" |
 
 MAN3=		Image::Grab.3

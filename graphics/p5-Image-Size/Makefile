@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tolid@tolid.eu.org
 COMMENT=	Perl5 module to determine the size of images in several common formats
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		imgsize.1
 MAN3=		Image::Size.3

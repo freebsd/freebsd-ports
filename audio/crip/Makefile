@@ -1,9 +1,5 @@
-# New ports collection makefile for:	crip
-# Date created:				30 June 2003
-# Whom:	      				Philip Paeps <philip@paeps.cx>
-#
+# Created by: Philip Paeps <philip@paeps.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	crip
 PORTVERSION=	3.9
@@ -28,7 +24,7 @@ PORTDOCS=	Changelog README criprc_example
 .endif
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 pre-fetch:
 .if !defined (WITH_SOX)

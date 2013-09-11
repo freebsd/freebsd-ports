@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Geo-GML
-# Date created:      			11 January 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Geo-GML
 PORTVERSION=	0.15
@@ -22,6 +18,7 @@ RUN_DEPENDS=	p5-Log-Report>=0.18:${PORTSDIR}/devel/p5-Log-Report \
 
 MAN3=		Geo::GML.3 Geo::GML::Util.3 Geo::GML::GeoPoint.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

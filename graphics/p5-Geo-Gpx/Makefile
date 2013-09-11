@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Geo-Gpx
-# Date created:      			10 March 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Geo-Gpx
 PORTVERSION=	0.26
@@ -26,6 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=		Geo::Gpx.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>
