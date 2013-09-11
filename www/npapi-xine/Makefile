@@ -1,9 +1,5 @@
-# New ports collection makefile for:	npapi-xine
-# Date created:		03 February 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xine
 PORTVERSION=	1.0.2
@@ -18,6 +14,7 @@ COMMENT=	Embed Xine player into browser
 
 LIB_DEPENDS=	xine.2:${PORTSDIR}/multimedia/libxine
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_NPAPI=	native

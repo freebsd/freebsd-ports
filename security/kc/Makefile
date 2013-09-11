@@ -11,6 +11,7 @@ COMMENT=	Console based password storing application
 
 LICENSE=	BSD
 
+USES=		pkgconfig
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		pcre:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser

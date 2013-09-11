@@ -1,9 +1,5 @@
-# New ports collection makefile for: shell-fm
-# Date created:	15 December 2006
-# Whom:		Nikos Ntarmos <ntarmos@ceid.upatras.gr>
-#
+# Created by: Nikos Ntarmos <ntarmos@ceid.upatras.gr>
 # $FreeBSD$
-#
 
 PORTNAME=	shell-fm
 PORTVERSION=	0.7
@@ -17,8 +13,8 @@ COMMENT=	A command-line client for Last.FM
 LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao \
 		mad:${PORTSDIR}/audio/libmad
 
+USES=		gmake pkgconfig
 USE_BZIP2=	true
-USE_GMAKE=	true
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 

@@ -16,7 +16,7 @@ BUILD_DEPENDS=	p5-XML-GDOME>=0:${PORTSDIR}/textproc/p5-XML-GDOME
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	gdome:${PORTSDIR}/textproc/gdome2
 
-USES=		perl5
+USES=		perl5 pkgconfig
 USE_PERL5=	configure
 
 MAN3=		XML::Canonical.3

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xbomb
-# Date created:         20 Feb 1998
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xbomb
 PORTVERSION=	2.2a
@@ -14,6 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minesweeper with a couple of grid types
 
+USES=		pkgconfig
 USE_XORG=	xaw7
 
 MAN6=		xbomb.6

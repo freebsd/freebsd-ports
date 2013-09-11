@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmmaiload
-# Date created:				Sat Sep 21 01:48:10 EDT 2002
-# Whom:					pat
-#
+# Created by: pat
 # $FreeBSD$
-#
 
 PORTNAME=	wmmaiload
 PORTVERSION=	2.2.1
@@ -14,9 +10,9 @@ MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Incoming mail monitor dockapp with a similar look to wmcpuload
 
+USES=		gmake pkgconfig
 USE_XORG=	xpm
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 MAKE_ARGS=	CC="${CC}" \

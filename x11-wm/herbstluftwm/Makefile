@@ -12,7 +12,7 @@ LICENSE=	BSD
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_XORG=	x11 xinerama
 USE_GNOME=	glib20
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	glademm
-# Date created:		4th November 2003
-# Whom:			Alexander Nedotsukov <bland@FreeBSD.org>
-#
+# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	glademm
 PORTVERSION=	2.6.0
@@ -15,7 +11,7 @@ DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	A C++ code generator backend for glade and glade2
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomehack
 GNU_CONFIGURE=	yes
 
