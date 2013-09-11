@@ -2,8 +2,6 @@ USE_BZIP2=	yes
 NO_BUILD=	yes
 PKGMESSAGE?=	${.CURDIR}/../../x11-themes/cursor-chameleon-white/pkg-message
 
-LICENSE=	GPLv2
-
 do-install:
 .for i in Large Regular Small
 	${MKDIR} ${PREFIX}/lib/X11/icons/${PORTNAME}${PKGNAMESUFFIX}-${i:L}
