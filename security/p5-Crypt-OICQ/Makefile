@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Crypt-OICQ
-# Date created:				Aug 01, 2006
-# Whom:	      				Rong-En Fan <rafan@FreeBSD.org>
-#
+# Created by: Rong-En Fan <rafan@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-OICQ
 PORTVERSION=	1.1
@@ -15,7 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Cryptographic algorithm used by OICQ protocol
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Crypt::OICQ.3
 

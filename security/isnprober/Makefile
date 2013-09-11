@@ -1,9 +1,5 @@
-# Ports collection makefile for:  isnprober
-# Date created:			  28/7/2006
-# Whom:				  Yonatan <onatan@gmail.com>
-#
+# Created by: Yonatan <onatan@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	isnprober
 PORTVERSION=	1.02
@@ -21,7 +17,8 @@ RUN_DEPENDS=	p5-Net-RawIP>=0:${PORTSDIR}/net/p5-Net-RawIP
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 
 do-install:

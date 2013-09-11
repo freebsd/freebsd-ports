@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-File-Scan
-# Date created:				May 24 2002
-# Whom:	      				Martin Matuska <martin@tradex.sk>
-#
+# Created by: Martin Matuska <martin@tradex.sk>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Scan
 PORTVERSION=	1.43
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jims@bluenotch.com
 COMMENT=	Perl5 anti-virus file scanning package
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		File::Scan.3
 

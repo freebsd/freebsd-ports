@@ -13,7 +13,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_func_strnvis=no
 CONFIGURE_ARGS=	--libexecdir=${LOCALBASE}/lib
-USE_PERL5=	yes
+USES=		perl5
 
 MAN8=		pam_ssh_agent_auth.8
 PLIST_FILES=	lib/pam_ssh_agent_auth.so
