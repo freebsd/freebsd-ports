@@ -4,25 +4,17 @@ include/geos/algorithm/Angle.h
 include/geos/algorithm/BoundaryNodeRule.h
 include/geos/algorithm/CGAlgorithms.h
 include/geos/algorithm/CentralEndpointIntersector.h
+include/geos/algorithm/Centroid.h
 include/geos/algorithm/CentroidArea.h
 include/geos/algorithm/CentroidLine.h
 include/geos/algorithm/CentroidPoint.h
 include/geos/algorithm/ConvexHull.h
 include/geos/algorithm/ConvexHull.inl
-include/geos/algorithm/ExtractLineByLocation.h
 include/geos/algorithm/HCoordinate.h
 include/geos/algorithm/InteriorPointArea.h
 include/geos/algorithm/InteriorPointLine.h
 include/geos/algorithm/InteriorPointPoint.h
-include/geos/algorithm/LengthIndexOfPoint.h
-include/geos/algorithm/LengthIndexedLine.h
-include/geos/algorithm/LengthLocationMap.h
 include/geos/algorithm/LineIntersector.h
-include/geos/algorithm/LinearGeometryBuilder.h
-include/geos/algorithm/LinearIterator.h
-include/geos/algorithm/LinearLocation.h
-include/geos/algorithm/LocationIndexOfLine.h
-include/geos/algorithm/LocationIndexOfPoint.h
 include/geos/algorithm/MCPointInRing.h
 include/geos/algorithm/MinimumDiameter.h
 include/geos/algorithm/NotRepresentableException.h
@@ -198,10 +190,21 @@ include/geos/io/WKTReader.h
 include/geos/io/WKTReader.inl
 include/geos/io/WKTWriter.h
 include/geos/io/Writer.h
+include/geos/linearref/ExtractLineByLocation.h
+include/geos/linearref/LengthIndexOfPoint.h
+include/geos/linearref/LengthIndexedLine.h
+include/geos/linearref/LengthLocationMap.h
+include/geos/linearref/LinearGeometryBuilder.h
+include/geos/linearref/LinearIterator.h
+include/geos/linearref/LinearLocation.h
+include/geos/linearref/LocationIndexOfLine.h
+include/geos/linearref/LocationIndexOfPoint.h
+include/geos/linearref/LocationIndexedLine.h
 include/geos/noding.h
 include/geos/noding/BasicSegmentString.h
 include/geos/noding/FastNodingValidator.h
 include/geos/noding/FastSegmentSetIntersectionFinder.h
+include/geos/noding/GeometryNoder.h
 include/geos/noding/IntersectionAdder.h
 include/geos/noding/IntersectionFinderAdder.h
 include/geos/noding/IteratedNoder.h
@@ -222,7 +225,6 @@ include/geos/noding/SegmentNodeList.h
 include/geos/noding/SegmentPointComparator.h
 include/geos/noding/SegmentSetMutualIntersector.h
 include/geos/noding/SegmentString.h
-include/geos/noding/SegmentString.inl
 include/geos/noding/SegmentStringUtil.h
 include/geos/noding/SimpleNoder.h
 include/geos/noding/SingleInteriorIntersectionFinder.h
@@ -245,6 +247,7 @@ include/geos/operation.h
 include/geos/operation/GeometryGraphOperation.h
 include/geos/operation/IsSimpleOp.h
 include/geos/operation/buffer/BufferBuilder.h
+include/geos/operation/buffer/BufferInputLineSimplifier.h
 include/geos/operation/buffer/BufferOp.h
 include/geos/operation/buffer/BufferParameters.h
 include/geos/operation/buffer/BufferSubgraph.h
@@ -322,12 +325,13 @@ include/geos/planargraph/NodeMap.h
 include/geos/planargraph/PlanarGraph.h
 include/geos/planargraph/Subgraph.h
 include/geos/planargraph/algorithm/ConnectedSubgraphFinder.h
-include/geos/platform.h
 include/geos/precision.h
 include/geos/precision/CommonBits.h
 include/geos/precision/CommonBitsOp.h
 include/geos/precision/CommonBitsRemover.h
 include/geos/precision/EnhancedPrecisionOp.h
+include/geos/precision/GeometryPrecisionReducer.h
+include/geos/precision/PrecisionReducerCoordinateOperation.h
 include/geos/precision/SimpleGeometryPrecisionReducer.h
 include/geos/profiler.h
 include/geos/simplify/DouglasPeuckerLineSimplifier.h
@@ -340,6 +344,16 @@ include/geos/simplify/TaggedLinesSimplifier.h
 include/geos/simplify/TopologyPreservingSimplifier.h
 include/geos/spatialIndex.h
 include/geos/timeval.h
+include/geos/triangulate/DelaunayTriangulationBuilder.h
+include/geos/triangulate/IncrementalDelaunayTriangulator.h
+include/geos/triangulate/quadedge/LastFoundQuadEdgeLocator.h
+include/geos/triangulate/quadedge/LocateFailureException.h
+include/geos/triangulate/quadedge/QuadEdge.h
+include/geos/triangulate/quadedge/QuadEdgeLocator.h
+include/geos/triangulate/quadedge/QuadEdgeSubdivision.h
+include/geos/triangulate/quadedge/TrianglePredicate.h
+include/geos/triangulate/quadedge/TriangleVisitor.h
+include/geos/triangulate/quadedge/Vertex.h
 include/geos/unload.h
 include/geos/util.h
 include/geos/util/Assert.h
@@ -349,6 +363,7 @@ include/geos/util/GEOSException.h
 include/geos/util/GeometricShapeFactory.h
 include/geos/util/IllegalArgumentException.h
 include/geos/util/IllegalStateException.h
+include/geos/util/Interrupt.h
 include/geos/util/Machine.h
 include/geos/util/TopologyException.h
 include/geos/util/UniqueCoordinateArrayFilter.h
@@ -356,7 +371,7 @@ include/geos/util/UnsupportedOperationException.h
 include/geos/util/math.h
 include/geos/version.h
 include/geos_c.h
-lib/libgeos-3.3.8.so
+lib/libgeos-3.4.1.so
 lib/libgeos.a
 lib/libgeos.la
 lib/libgeos.so
@@ -364,9 +379,11 @@ lib/libgeos.so.0
 lib/libgeos_c.a
 lib/libgeos_c.la
 lib/libgeos_c.so
-lib/libgeos_c.so.8
+lib/libgeos_c.so.9
 @dirrmtry lib/geos
 @dirrm include/geos/util
+@dirrm include/geos/triangulate/quadedge
+@dirrm include/geos/triangulate
 @dirrm include/geos/simplify
 @dirrm include/geos/precision
 @dirrm include/geos/planargraph/algorithm
@@ -385,6 +402,7 @@ lib/libgeos_c.so.8
 @dirrm include/geos/operation
 @dirrm include/geos/noding/snapround
 @dirrm include/geos/noding
+@dirrm include/geos/linearref
 @dirrm include/geos/io
 @dirrm include/geos/index/sweepline
 @dirrm include/geos/index/strtree
@@ -402,18 +420,18 @@ lib/libgeos_c.so.8
 @dirrm include/geos/algorithm/distance
 @dirrm include/geos/algorithm
 @dirrm include/geos
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/geos.pth
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.a
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.la
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/geos/geos.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/geos/geos.pyc
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/geos/geos.pyo
-%%WITH_PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/geos
-%%WITH_PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.a
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.la
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.so
-%%WITH_RUBY%%@dirrmtry %%RUBY_SITEARCHLIBDIR%%/
-%%WITH_PHP%%lib/php/20100525/geos.so
-%%WITH_PHP%%@dirrmtry lib/php/20100525
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/geos.pth
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/geos.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/geos.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/geos.pyo
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/geos
+%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
+%%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.a
+%%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.la
+%%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.so
+%%RUBY%%@dirrmtry %%RUBY_SITEARCHLIBDIR%%/
+%%PHP%%lib/php/20100525/geos.so
+%%PHP%%@dirrmtry lib/php/20100525
