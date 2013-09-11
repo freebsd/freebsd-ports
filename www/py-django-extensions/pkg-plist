@@ -1,6 +1,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/future_1_5.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/future_1_5.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/future_1_5.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/models.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/models.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/models.pyo
@@ -300,9 +303,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils/text.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils/text.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils/text.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils/uuid.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils/uuid.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils/uuid.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils/validatingtemplatetags.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils/validatingtemplatetags.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_extensions/utils/validatingtemplatetags.pyo
