@@ -20,7 +20,8 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" GCC_FLAGS="" CFLAGS_RELEASE=""
 USE_LDCONFIG=	yes
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 
 MAN1=	mapsid.1 num2dot.1 rwaddrcount.1 rwappend.1 \
 	rwbag.1 rwbagbuild.1 rwbagcat.1 rwbagtool.1 \

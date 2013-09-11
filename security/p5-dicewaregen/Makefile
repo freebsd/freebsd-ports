@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-dicewaregen
-# Date created:				2011.05.22
-# Whom:					Aldis Berjoza <aldis@bsdroot.lv>
-#
+# Created by: Aldis Berjoza <aldis@bsdroot.lv>
 # $FreeBSD$
-#
 
 PORTNAME=	dicewaregen
 PORTVERSION=	1.3
@@ -16,7 +12,8 @@ COMMENT=	A simple perl script to generate Diceware dictionaries for passwords
 
 LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 PLIST_FILES=	bin/${PORTNAME}
 

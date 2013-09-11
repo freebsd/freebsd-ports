@@ -1,6 +1,4 @@
-# Ports collection Makefile for:	p5-Digest-Hashcash
-# Date created:				17 Dec 2005
-# Whom:					Gabor Kovesdan
+# Created by: Gabor Kovesdan
 # $FreeBSD$
 
 PORTNAME=	Digest-Hashcash
@@ -14,7 +12,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl extension for Hashcash hash algorithm
 
-PERL_CONFIGURE= yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Digest::Hashcash.3
 

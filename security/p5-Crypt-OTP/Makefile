@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Crypt::OTP
-# Date created:				30 Dec 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=		Crypt-OTP
 PORTVERSION=		2.00
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		skreuzer@FreeBSD.org
 COMMENT=	Perl implementation of the One Time Pad (hence, OTP) encryption method
 
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=			Crypt::OTP.3
 

@@ -16,7 +16,8 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS+=	GCRYPTLIBPATH=${LOCALBASE}/lib \
 		GCRYPTINCPATH=${LOCALBASE}/include
 

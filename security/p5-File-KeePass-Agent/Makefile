@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-File-KeePass>=2.03:${PORTSDIR}/security/p5-File-KeePass \
 		p5-MIME-Base64>=1.0:${PORTSDIR}/converters/p5-MIME-Base64
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		fkp-agent.1
 MAN3=		File::KeePass::Agent.3 \
