@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-Bidi
-PORTVERSION=	0.03
-PORTREVISION=	1
+PORTVERSION=	2.01
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,11 +10,20 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the libfribidi
 
-LIB_DEPENDS=	fribidi.3:${PORTSDIR}/converters/fribidi
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-USES=		perl5
+BUILD_DEPENDS=	p5-ExtUtils-PkgConfig>=0:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig
+LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
+
 USE_PERL5=	configure
-CFLAGS+=	-I${LOCALBASE}/include
-MAN3=	Text::Bidi.3 Text::Bidi::CapRTL.3
+USES=		perl5
+
+MAN1=		fribidi.pl.1
+MAN3=		Text::Bidi.3 \
+		Text::Bidi::Array.3 \
+		Text::Bidi::Array::Byte.3 \
+		Text::Bidi::Array::Long.3 \
+		Text::Bidi::Paragraph.3
 
 .include <bsd.port.mk>
