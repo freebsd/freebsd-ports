@@ -1,11 +1,13 @@
 # Created by: Cristiano Rolim Pereira <cristianorolim@hotmail.com>
 # $FreeBSD$
 
+PORTREVISION=	1
+
 COMMENT=	RELP input/output module for rsyslog
 MASTERDIR=	${.CURDIR}/../rsyslog6
 
 MNAME=	relp
-LIB_DEPENDS=	relp.0:${PORTSDIR}/devel/librelp
+LIB_DEPENDS=	librelp.so:${PORTSDIR}/devel/librelp
 
 USES=		pkgconfig
 
