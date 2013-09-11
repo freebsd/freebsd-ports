@@ -18,7 +18,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	skipv:0.221
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Geo::Parse::OSM.3 \
 	Geo::Parse::OSM::Multipass.3 \

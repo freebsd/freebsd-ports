@@ -16,7 +16,8 @@ RUN_DEPENDS=	\
 	p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 # Hack to avoid invoking CPAN.pm downloading...
 CONFIGURE_ENV=	PERL5_CPANPLUS_IS_RUNNING=1
 

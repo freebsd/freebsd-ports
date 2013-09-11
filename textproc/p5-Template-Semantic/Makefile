@@ -16,7 +16,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Text-Pipe>0:${PORTSDIR}/textproc/p5-Text-Pipe
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Template::Semantic.3 \
 	Template::Semantic::Cookbook.3 \

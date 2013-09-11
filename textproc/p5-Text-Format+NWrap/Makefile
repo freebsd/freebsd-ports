@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Text-Format+NWrap
-# Date created:				12-JUL-2006
-# Whom:					Vivek Khera <vivek@khera.org>
-#
+# Created by: Vivek Khera <vivek@khera.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Format+NWrap
 PORTVERSION=	0.52
@@ -17,7 +13,8 @@ COMMENT=	Various subroutines to format and wrap text
 
 CONFLICTS=	p5-Text-Format-[0-9]*
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Text::Format.3 Text::NWrap.3
 

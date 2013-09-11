@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Solr
-# Date created:		2009-03-16
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Solr
 PORTVERSION=	0.03
@@ -20,7 +16,8 @@ RUN_DEPENDS=	p5-File-Slurp>0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-XML-Simple>0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN3=		Solr.3 Solr::HTTPUpdateHandler.3 Solr::Schema.3
