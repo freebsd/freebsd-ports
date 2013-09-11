@@ -39,7 +39,7 @@ PROGSREISERFS_DESC=	Use reiserfs extensions
 #.endif
 
 .if ${PORT_OPTIONS:MICONV}
-LIB_DEPENDS+=   iconv:${PORTSDIR}/converters/libiconv
+USES=		iconv
 .else
 CONFIGURE_ARGS+=--without-iconv
 .endif
