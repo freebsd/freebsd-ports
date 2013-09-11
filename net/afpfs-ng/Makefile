@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	FUSE GCRYPT
 
 USE_BZIP2=	yes
 USE_GCC=	any
-USE_GMAKE=	yes
+USES=		iconv gmake
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 ACLOCAL_ARGS=	-I.
 AUTOMAKE_ARGS=	--add-missing
