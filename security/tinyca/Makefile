@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
 
 USE_BZIP2=	yes
-USE_PERL5=	yes
+USES=		perl5
 USE_OPENSSL=	yes
 NO_BUILD=	yes
 DOC_FILES=	INSTALL

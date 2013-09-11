@@ -1,9 +1,5 @@
-# New ports collection makefile for:	shimmer
-# Date created:		2008-01-09
-# Whom:			Felippe de Meirelles Motta <lippemail@gmail.com>
-#
+# Created by: Felippe de Meirelles Motta <lippemail@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	shimmer
 PORTVERSION=	0.1.0
@@ -17,7 +13,8 @@ COMMENT=	Perl implementation that hides a valuable port on your server
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 PLIST_FILES=	bin/shimmer \
 		bin/shimmerd \
