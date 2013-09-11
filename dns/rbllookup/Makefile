@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rbllookup
-# Date created:		2004-07-14
-# Whom:			Marcin Gondek <drixter@e-utp.net>
-#
+# Created by: Marcin Gondek <drixter@e-utp.net>
 # $FreeBSD$
-#
 
 PORTNAME=	rbllookup
 PORTVERSION=	0.0.1.1
@@ -17,7 +13,7 @@ BUILD_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-Term-ANSIColor>=0:${PORTSDIR}/devel/p5-Term-ANSIColor
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 PLIST_FILES=	bin/rbllookup
 PORTDOCS=	CHANGELOG INSTALL NOTES README TODO gpg.asc

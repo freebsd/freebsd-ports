@@ -1,7 +1,4 @@
-# New ports collection makefile for:	scavenge
-# Date created:		13 April 2005
-# Whom:			mark@foster.cc
-#
+# Created by: mark@foster.cc
 # $FreeBSD$
 
 PORTNAME=	scavenge
@@ -19,7 +16,7 @@ RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
 PLIST_FILES=	bin/scavenge
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/scavenge ${PREFIX}/bin

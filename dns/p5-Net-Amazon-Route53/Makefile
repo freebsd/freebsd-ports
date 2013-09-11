@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Amazon-Route53
-# Date created:		2011-04-24
-# Whom:			Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
-#
+# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Amazon-Route53
 PORTVERSION=	0.122310
@@ -23,7 +19,8 @@ RUN_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-XML-Bare>=0:${PORTSDIR}/textproc/p5-XML-Bare \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		route53.1
 MAN3=		Net::Amazon::Route53.3 \
