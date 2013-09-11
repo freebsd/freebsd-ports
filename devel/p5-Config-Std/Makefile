@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Std
-DISTVERSION=	0.900
+PORTVERSION=	0.901
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BRICKER
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Load and save configuration files in a standard format
 
 LICENSE=	ART10 GPLv1
