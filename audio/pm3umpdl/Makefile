@@ -1,9 +1,5 @@
-# New ports collection makefile for: comiccron
-# Date created:        5 February 2008
-# Whom:                Zane C. Bowers
-#
+# Created by: Zane C. Bowers
 # $FreeBSD$
-#
 
 PORTNAME=	pm3umpdl
 PORTVERSION=	1.0.0
@@ -18,7 +14,7 @@ COMMENT=	Loading a M3U file into musicpd
 
 RUN_DEPENDS=	${LOCALBASE}/bin/mpc:${PORTSDIR}/audio/mpc
 
-USE_PERL5=	yes
+USES=		perl5
 NO_WRKSUBDIR=	yes
 
 MAN1=		${PORTNAME}.1

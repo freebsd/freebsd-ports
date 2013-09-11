@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Audio-FLAC-Header
-# Date created:		21 July 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Audio-FLAC-Header
 PORTVERSION=	2.4
@@ -17,7 +13,8 @@ COMMENT=	Interface to FLAC header metadata
 
 LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CFLAGS+=	-I${LOCALBASE}/include
 
 MAN3=		Audio::FLAC::Header.3

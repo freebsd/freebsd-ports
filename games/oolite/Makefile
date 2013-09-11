@@ -1,9 +1,5 @@
-# New ports collection makefile for:    oolite
-# Date created:         04 Oct 2005
-# Whom:                 Andriy Gapon <avg@icyb.net.ua>
-#
+# Created by: Andriy Gapon <avg@icyb.net.ua>
 # $FreeBSD$
-#
 
 PORTNAME=		oolite
 PORTVERSION=		1.76
@@ -37,7 +33,8 @@ USE_GNUSTEP_BUILD=	yes
 USE_MAKEFILE=		yes
 USE_GMAKE=		yes
 ALL_TARGET=		release-deployment
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	build
 USE_PYTHON_BUILD=	yes
 
 SUB_FILES=		pkg-message

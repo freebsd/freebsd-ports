@@ -15,7 +15,7 @@ BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline \
 RUN_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk \
 		${BUILD_DEPENDS}
 
-USE_PERL5=	YES
+USES=		perl5
 POD2MAN=	pod2man
 
 MAN1=		bbbike.1
