@@ -14,7 +14,8 @@ LICENSE=	BSD
 
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USE_PERL5_RUN=	YES
+USES=		perl5
+USE_PERL5=	run
 MAN1=		ssl-admin.1
 MAN5=		ssl-admin.conf.5
 SUB_FILES=	pkg-message

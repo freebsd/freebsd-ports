@@ -13,7 +13,7 @@ COMMENT=	Perl module to create HTTP test scripts
 WRKSRC=		${WRKDIR}/${PORTNAME}2-${PORTVERSION}
 
 NO_BUILD=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 PLIST_FILES=	${SITE_PERL_REL}/LW2.pm
 

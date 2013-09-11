@@ -1,6 +1,4 @@
-# Ports collection Makefile for:	p5-Digest-Pearson
-# Date created:				17 Dec 2005
-# Whom:					Gabor Kovesdan
+# Created by: Gabor Kovesdan
 # $FreeBSD$
 
 PORTNAME=	Digest-Pearson
@@ -12,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Perl extension for Peter K. Pearson's hash algorithm
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Digest::Pearson.3
 

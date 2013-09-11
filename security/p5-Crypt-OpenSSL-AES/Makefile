@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jdferrell3@yahoo.com
 COMMENT=	A Perl wrapper around OpenSSL's AES library
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Crypt::OpenSSL::AES.3
 

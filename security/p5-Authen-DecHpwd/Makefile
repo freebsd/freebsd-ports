@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Authen-DecHpwd
-# Date created:				01 Jun 2008
-# Whom:					brix@FreeBSD.org
-#
+# Created by: brix@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	Authen-DecHpwd
 PORTVERSION=	2.006
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Scalar-String>=0:${PORTSDIR}/devel/p5-Scalar-String \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	GPLv2
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Authen::DecHpwd.3
 

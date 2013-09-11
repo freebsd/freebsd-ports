@@ -1,9 +1,5 @@
-# New ports collection makefile for:    pam_ldap
-# Date created:				26 May 2001
-# Whom:	      				Joe Clarke <marcus@marcuscom.com>
-#
+# Created by: Joe Clarke <marcus@marcuscom.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pam_ldap
 PORTVERSION=	1.8.6
@@ -19,7 +15,8 @@ COMMENT=	A pam module for authenticating with LDAP
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_OPENLDAP=	yes
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
 PAM_LDAP_CONF?=	ldap.conf
 CONFIGURE_ARGS=	--with-ldap-lib=openldap \
