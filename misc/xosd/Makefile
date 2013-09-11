@@ -12,9 +12,9 @@ COMMENT=	X11 on-screen-display program and library
 
 LICENSE=	GPLv2
 
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_CSTD=	gnu89
-USE_GMAKE=	yes
 USE_XORG=	x11 xext xt sm ice
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LIBS=${PTHREAD_LIBS}' -L${LOCALBASE}/lib' \

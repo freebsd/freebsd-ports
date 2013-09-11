@@ -17,8 +17,7 @@ LIB_DEPENDS=	stfl.1:${PORTSDIR}/devel/stfl \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_GMAKE=	yes
-USES=		gettext ncurses
+USES=		gettext ncurses gmake pkgconfig
 USE_PERL5_BUILD=yes
 USE_SQLITE=	yes
 USE_GNOME=	libxml2

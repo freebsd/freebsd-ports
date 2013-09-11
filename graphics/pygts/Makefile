@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pygts
-# Date created:		17 May, 2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pygts
 PORTVERSION=	0.3.1
@@ -19,5 +15,6 @@ LIB_DEPENDS=	gts.5:${PORTSDIR}/graphics/gts
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+USES=			pkgconfig
 
 .include <bsd.port.mk>

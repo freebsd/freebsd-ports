@@ -1,9 +1,5 @@
-# New ports collection makefile for:	exult
-# Date created:		18 February 2002
-# Whom:			Igor Pokrovsky <tiamat@telegraph.spb.ru>
-#
+# Created by: Igor Pokrovsky <tiamat@telegraph.spb.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	exult
 PORTVERSION=	1.2
@@ -19,7 +15,7 @@ RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 USE_SDL=	sdl mixer
 USE_XORG=	x11
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -30,12 +26,14 @@ MAN6=	exult.6
 
 SUB_FILES=	pkg-message
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|desktop||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in FAQ NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}

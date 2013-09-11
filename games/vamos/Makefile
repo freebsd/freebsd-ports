@@ -17,6 +17,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
+USES=		pkgconfig
 USE_OPENAL=	al alut
 USE_XORG=	sm ice x11 xi xext xmu
 USE_GL=		glut

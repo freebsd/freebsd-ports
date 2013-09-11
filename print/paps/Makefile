@@ -1,9 +1,5 @@
-# New ports collection makefile for:	paps
-# Date created:				8 January 2008
-# Whom:					johans
-#
+# Created by: johans
 # $FreeBSD$
-#
 
 PORTNAME=	paps
 PORTVERSION=	0.6.8
@@ -20,5 +16,6 @@ MAN1=		paps.1
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	pango
+USES=		pkgconfig
 
 .include <bsd.port.mk>
