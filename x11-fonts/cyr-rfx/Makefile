@@ -1,7 +1,4 @@
-# New ports collection makefile for:    cyr-rfx
-# Date created:				Jan 20, 2003
-# Whom:					mi@aldan.algebra.com
-#
+# Created by: mi@aldan.algebra.com
 # $NetBSD: Makefile.common,v 1.2 2002/07/13 15:43:36 wiz Exp $
 # $FreeBSD$
 
@@ -21,6 +18,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
+USES=		fmake
 USE_XORG=	x11
 
 # See WWW for other available encodings
