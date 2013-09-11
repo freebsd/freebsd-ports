@@ -1649,6 +1649,7 @@
     SUBDIR += py-scgi
     SUBDIR += py-scrapy
     SUBDIR += py-scriptaculous
+    SUBDIR += py-selector
     SUBDIR += py-selenium
     SUBDIR += py-slimmer
     SUBDIR += py-slumber
