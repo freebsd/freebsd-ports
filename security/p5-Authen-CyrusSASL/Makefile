@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Authen-CyrusSASL
-# Date created:				October 05 2005
-# Whom:					Attila Nagy <bra@fsn.hu>
-#
+# Created by: Attila Nagy <bra@fsn.hu>
 # $FreeBSD$
-#
 
 PORTNAME=	Authen-CyrusSASL
 PORTVERSION=	0.01
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bra@fsn.hu
 COMMENT=	Perl5 module for accessing the SASL authentication daemon
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Authen::CyrusSASL.3
 

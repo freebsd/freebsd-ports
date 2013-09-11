@@ -15,7 +15,7 @@ CONFLICTS=		pam_krb5-rh-2.*
 
 MAN5=			pam_krb5.5
 
-USE_PERL5=		yes
+USES=		perl5
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 

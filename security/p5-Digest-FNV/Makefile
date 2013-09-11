@@ -1,6 +1,4 @@
-# Ports collection Makefile for:	p5-Digest-FNV
-# Date created:				17 Dec 2005
-# Whom:					Gabor Kovesdan
+# Created by: Gabor Kovesdan
 # $FreeBSD$
 
 PORTNAME=	Digest-FNV
@@ -15,7 +13,8 @@ COMMENT=	Perl extension for Fowler/Noll/Vo hash algorithm
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Digest::FNV.3
 

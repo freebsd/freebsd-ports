@@ -1,6 +1,4 @@
-# New ports collection Makefile for:	p5-Crypt-X509
-# Date created:				18 Dec 2006
-# Whom:	      				Gabor Kovesdan
+# Created by: Gabor Kovesdan
 # $FreeBSD$
 
 PORTNAME=	Crypt-X509
@@ -14,7 +12,8 @@ COMMENT=	Perl extension to parse X.509 certificates
 
 BUILD_DEPENDS=	p5-Convert-ASN1>=0:${PORTSDIR}/converters/p5-Convert-ASN1
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Crypt::X509.3
 

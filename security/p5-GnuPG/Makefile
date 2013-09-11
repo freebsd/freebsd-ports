@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-GnuPG
-# Date created:                                2012-07-17
-# Whom:                                        Marcello Coutinho
-#
+# Created by: Marcello Coutinho
 # $FreeBSD$
-#
 
 PORTNAME=	GnuPG
 PORTVERSION=	0.19
@@ -16,7 +12,8 @@ COMMENT=	Perl module for interfacing with GnuPG
 
 LICENSE=	GPLv2
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	GnuPG.3 \
 	GnuPG::Tie.3

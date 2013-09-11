@@ -24,7 +24,8 @@ RUN_DEPENDS=	p5-Dancer>0:${PORTSDIR}/www/p5-Dancer \
 		p5-Digest-Bcrypt>0:${PORTSDIR}/security/p5-Digest-Bcrypt \
 		p5-Digest-SHA>=5.008:${PORTSDIR}/security/p5-Digest-SHA
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Dancer::Plugin::Passphrase.3
 

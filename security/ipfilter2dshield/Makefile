@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ipfilter2dshield
-# Date created:		2004-06-18
-# Whom:			Joe Barbish <fbsd_user@a1poweruser.com>
-#
+# Created by: Joe Barbish <fbsd_user@a1poweruser.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ipfilter2dshield
 PORTVERSION=	1.0
@@ -17,7 +13,7 @@ COMMENT=	Official DShield client for ipfilter firewall logs
 
 RUN_DEPENDS=	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask
 
-USE_PERL5=	yes
+USES=		perl5
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
