@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so:${PORTSDIR}/graphics/ogre3d \
 		${LOCALBASE}/lib/libOIS.so:${PORTSDIR}/devel/ois
 
 USE_ZIP=	yes
-USES=		cmake
+USES=		cmake pkgconfig
 CMAKE_ARGS=	-DMYGUI_BUILD_DEMOS=OFF -DMYGUI_BUILD_DOCS=OFF
 USE_LDCONFIG=	yes
 USE_GCC=	yes

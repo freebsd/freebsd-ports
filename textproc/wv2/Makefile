@@ -12,7 +12,7 @@ COMMENT=	A library providing routines to access Microsoft Word files
 
 USE_GNOME=	libgsf
 USE_BZIP2=	yes
-USES=		cmake iconv
+USES=		cmake iconv pkgconfig
 USE_LDCONFIG=	yes
 
 post-patch:

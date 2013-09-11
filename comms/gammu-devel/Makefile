@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gammu-devel
-# Date created:		2009-10-15
-# Whom:			Sylvio Cesar Teixeira <sylvio@FreeBSD.org>
-#
+# Created by: Sylvio Cesar Teixeira <sylvio@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gammu
 PORTVERSION=	1.31.90
@@ -23,7 +19,7 @@ CONFLICTS=	gammu-[1-9]* gammu-python-[1-9]*
 
 CMAKE_ARGS+=	-DINSTALL_LIBDATA_DIR=${LOCALBASE}/libdata
 
-USES=		cmake gettext
+USES=		cmake gettext pkgconfig
 USE_PYTHON=	yes
 USE_GNOME=	glib20
 USE_BZIP2=	yes
