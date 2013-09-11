@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Number::Format
-# Date created:				27 Oct 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=		Number-Format
 PORTVERSION=		1.73
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		clsung@FreeBSD.org
 COMMENT=		Perl extension for formatting numbers
 
-PERL_CONFIGURE=		yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=			Number::Format.3
 

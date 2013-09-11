@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MARC-XML
-# Date created:				6 August 2009
-# Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MARC-XML
 PORTVERSION=	1.0.1
@@ -22,6 +18,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 MAN1=		marc2xml.1 xml2marc.1
 MAN3=		MARC::File::XML.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

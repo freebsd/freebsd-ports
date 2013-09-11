@@ -21,7 +21,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
 		p5-Test-Most>=0.88:${PORTSDIR}/devel/p5-Test-Most
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	PPIx::EditorTools.3 \
 	PPIx::EditorTools::FindUnmatchedBrace.3 \

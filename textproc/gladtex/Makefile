@@ -27,7 +27,7 @@ MAKE_ENV+=	BINPATH=${BINPATH} INCPATH="${INCPATH}" LIBPATH="${LIBPATH}"
 MAN1=	${PORTNAME}.1
 .endif
 
-USE_PERL5=	yes
+USES=		perl5
 
 do-install:
 	@cd ${WRKSRC}; \
