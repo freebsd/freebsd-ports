@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-BitTorrent-File
-# Date created:				February 06th 2006
-# Whom:	      				Oleg R. Muhutdinov <mor@WhiteLuna.com>
-#
+# Created by: Oleg R. Muhutdinov <mor@WhiteLuna.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-BitTorrent-File
 PORTVERSION=	1.02
@@ -22,7 +18,8 @@ BUILD_DEPENDS+=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-fix//}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::BitTorrent::File.3
 

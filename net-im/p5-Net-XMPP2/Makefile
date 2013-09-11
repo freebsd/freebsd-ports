@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-XMPP2
-# Date created:		2008-04-10
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-XMPP2
 PORTVERSION=	0.14
@@ -37,7 +33,8 @@ RUN_DEPENDS:=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Net::XMPP2.3 \
 		Net::XMPP2::Client.3 \

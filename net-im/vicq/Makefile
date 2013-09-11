@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vicq
-# Date created:				06 December 2001
-# Whom:					Kevin Lo<kevlo@FreeBSD.org>
-#
+# Created by: Kevin Lo<kevlo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vicq
 PORTVERSION=	0.4.2
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 SIGNAL_PATCH=p5.8-patch-sigalrm
 

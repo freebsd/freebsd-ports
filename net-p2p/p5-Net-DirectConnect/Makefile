@@ -24,7 +24,8 @@ BUILD_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Sys-Sendfile-FreeBSD>=0:${PORTSDIR}/devel/p5-Sys-Sendfile-FreeBSD
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		dcget.1 dcshare.1
 MAN3=		Net::DirectConnect.3 Net::DirectConnect::filelist.3

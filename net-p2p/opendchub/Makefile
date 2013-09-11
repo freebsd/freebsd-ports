@@ -1,9 +1,5 @@
-# New ports collection makefile for:	opendchub
-# Date created:			May 29, 2002
-# Whom:				Munish Chopra <mchopra@engmail.uwaterloo.ca>
-#
+# Created by: Munish Chopra <mchopra@engmail.uwaterloo.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	opendchub
 PORTVERSION=	0.8.2
@@ -13,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/Open%20DC%20Hub/${PORTVERSION}
 MAINTAINER=	yashin.dm@gmail.com
 COMMENT=	Unofficial Unix version of the Direct Connect Hub software
 
-USE_PERL5=	yes
+USES=		perl5
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

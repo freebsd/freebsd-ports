@@ -1,9 +1,5 @@
-# New ports collection makefile for: net-p2p/eiskaltdcpp-cli
-# Date created:		06 Oct @011
-# Whom:			Maxim Ignatenko <gelraen.ua@gmail.com>
-#
+# Created by: Maxim Ignatenko <gelraen.ua@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	eiskaltdcpp-cli
 PORTVERSION=	2.2.4
@@ -23,7 +19,8 @@ PROJECTHOST=	eiskaltdc
 
 USE_XZ=		yes
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 MAN1=	${PORTNAME}.1
 MANCOMPRESSED=	no
