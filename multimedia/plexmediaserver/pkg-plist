@@ -1647,8 +1647,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videostrip/URL/Videostrip/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videovideo/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videovideo/URL/videovideo/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.viki/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.viki/URL/ViKi/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimcasts/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimcasts/URL/Vimcasts/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimeo/ServiceInfo.plist
@@ -2055,6 +2053,7 @@
 %%DATADIR%%/Resources/Profiles/Android.xml
 %%DATADIR%%/Resources/Profiles/Asus Transformer Prime TF201.xml
 %%DATADIR%%/Resources/Profiles/Chrome.xml
+%%DATADIR%%/Resources/Profiles/Chromecast.xml
 %%DATADIR%%/Resources/Profiles/Firefox.xml
 %%DATADIR%%/Resources/Profiles/Generic.xml
 %%DATADIR%%/Resources/Profiles/Internet Explorer.xml
@@ -2078,6 +2077,7 @@
 %%DATADIR%%/Resources/Profiles/Western Digital TV Live.xml
 %%DATADIR%%/Resources/Profiles/Wii U.xml
 %%DATADIR%%/Resources/Profiles/Windows.xml
+%%DATADIR%%/Resources/Profiles/Windows Phone.xml
 %%DATADIR%%/Resources/Profiles/Xbox 360.xml
 %%DATADIR%%/Resources/Profiles/cloudsync.xml
 %%DATADIR%%/Resources/Profiles/iOS-AppleTV.xml
@@ -3117,9 +3117,6 @@
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimcasts/URL/Vimcasts
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimcasts/URL
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vimcasts
-@dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.viki/URL/ViKi
-@dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.viki/URL
-@dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.viki
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videovideo/URL/videovideo
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videovideo/URL
 @dirrm %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.videovideo
