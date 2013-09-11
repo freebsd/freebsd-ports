@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Acme-Steganography-Image-Png
-# Date created:		2006-07-23
-# Whom:			Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-#
+# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Acme-Steganography-Image-Png
 PORTVERSION=	0.06
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Imager>=0:${PORTSDIR}/graphics/p5-Imager \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Acme::Steganography::Image::Png.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    commons-utilities
-# Date created:                         18 September 2010
-# Whom:                                 Dereckson <dereckson@gmail.com>
-#
+# Created by: Dereckson <dereckson@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	commons-utilities
 PORTVERSION=	1.0
@@ -23,7 +19,8 @@ RUN_DEPENDS=	p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \
 		exiv2:${PORTSDIR}/graphics/exiv2
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 USE_PYTHON=	2.5+
 
 LICENSE=	GPLv3

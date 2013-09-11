@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Authen-Passphrase
-# Date created:				01 Jun 2008
-# Whom:					brix@FreeBSD.org
-#
+# Created by: brix@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	Authen-Passphrase
 PORTVERSION=	0.008
@@ -30,7 +26,8 @@ BUILD_DEPENDS=	p5-Authen-DecHpwd>=0:${PORTSDIR}/security/p5-Authen-DecHpwd \
 		p5-Params-Classify>=0:${PORTSDIR}/devel/p5-Params-Classify
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=	Authen::Passphrase.3 \
 	Authen::Passphrase::AcceptAll.3 \

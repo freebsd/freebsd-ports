@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Convert-Cyrillic
-# Date created:				07 May 2009
-# Whom:					Sergey Kandaurov <pluknet@gmail.com>
-#
+# Created by: Sergey Kandaurov <pluknet@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Convert-Cyrillic
 PORTVERSION=	1.05
@@ -18,7 +14,8 @@ COMMENT=	Routines for converting from one Cyrillic charset to another
 BUILD_DEPENDS=	p5-Unicode-Map8>=0:${PORTSDIR}/converters/p5-Unicode-Map8
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Convert::Cyrillic.3 \
 		Lingua::DetectCharset.3

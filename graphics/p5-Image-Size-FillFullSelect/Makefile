@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-LDAP-Makepath
-# Date created:		2008-06-24
-# Whom:			Zane C, Bowers <vvelox@vvelox.net>
-#
+# Created by: Zane C, Bowers <vvelox@vvelox.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Image-Size-FillFullSelect
 PORTVERSION=	0.1.0
@@ -18,7 +14,8 @@ COMMENT=	Pick whether an image fill setting for a image should be fill or full
 BUILD_DEPENDS=	p5-Image-Size>=3.230:${PORTSDIR}/graphics/p5-Image-Size
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Image::Size::FillFullSelect.3
 

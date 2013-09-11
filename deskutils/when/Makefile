@@ -1,9 +1,5 @@
-# New ports collection makefile for:	when
-# Date created:		1 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	when
 PORTVERSION=	1.1.22
@@ -13,7 +9,8 @@ MASTER_SITES=	LOCAL/culot
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	A very simple personal calendar
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1

@@ -1,9 +1,5 @@
-# New ports collection makefile for: hunch
-# Date created:		26 October 2002
-# Whom:			Dan Pelleg <daniel+hunch@pelleg.org>
-#
+# Created by: Dan Pelleg <daniel+hunch@pelleg.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hunch
 PORTVERSION=	1.1.8
@@ -16,7 +12,7 @@ COMMENT=	Scan httpd log files for vulnerability probes, mail admins
 
 RUN_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
 
-USE_PERL5=	yes
+USES=		perl5
 
 IS_INTERACTIVE=	yes
 NO_BUILD=	true
