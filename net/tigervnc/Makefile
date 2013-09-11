@@ -2,22 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	tigervnc
-PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTVERSION=	1.3.0
 CATEGORIES=	net x11-servers
 MASTER_SITES=	SF:tigervnc
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}/:tigervnc
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:tigervnc
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2:tigervnc
 
 MAINTAINER=	meta+ports@vmeta.jp
-COMMENT=	TigerVNC is an advanced VNC implementation
+COMMENT=	High-performance, platform-neutral implementation of VNC
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENCE.TXT
 
 PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-servers/xorg-server:patch
 BUILD_DEPENDS=	${LOCALBASE}/include/GL/internal/dri_interface.h:${PORTSDIR}/graphics/dri \
-		${LOCALBASE}/libdata/pkgconfig/fontutil.pc:${PORTSDIR}/x11-fonts/font-util
+		${LOCALBASE}/libdata/pkgconfig/fontutil.pc:${PORTSDIR}/x11-fonts/font-util \
+		bash:${PORTSDIR}/shells/bash
 # almost equivalent to x11-servers/xorg-server's
 RUN_DEPENDS=	${LOCALBASE}/share/X11/xkb/rules/base:${PORTSDIR}/x11/xkeyboard-config \
 		xkbcomp:${PORTSDIR}/x11/xkbcomp
@@ -26,10 +25,7 @@ CONFLICTS=	tridiavnc-[0-9]* \
 		tightvnc-[0-9]* \
 		vnc-[0-9]*
 
-MAKE_JOBS_UNSAFE=	yes
-
-USES=		cmake pkgconfig
-USE_GMAKE=	yes
+USES=		cmake gmake pkgconfig
 USE_GL=		gl
 USE_AUTOTOOLS+=	autoconf:env automake:env libtool:env
 USE_PYTHON=	yes
@@ -58,10 +54,10 @@ HPJPG_DESC=		Build with High-Performance JPEG support
 CMAKE_ARGS=	-G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=${PREFIX}
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	tasn1:${PORTSDIR}/security/libtasn1 \
-		gcrypt:${PORTSDIR}/security/libgcrypt \
-		gpg-error:${PORTSDIR}/security/libgpg-error \
-		gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libtasn1.so:${PORTSDIR}/security/libtasn1 \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		libgpg-error.so:${PORTSDIR}/security/libgpg-error \
+		libgnutls.so:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--enable-glx-tls
 CMAKE_ARGS+=	-DENABLE_GNUTLS=1
 .else
@@ -85,8 +81,8 @@ CMAKE_ARGS+=	-DENABLE_PAM=0
 
 .if ${PORT_OPTIONS:MVIEWER}
 CMAKE_ARGS+=	-DENABLE_VIEWER=1
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
-		fltk:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png \
+		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 USE_XORG+=	xcursor xfixes xft xinerama
 MAN1+=		vncviewer.1
 PLIST_SUB+=	VIEWER=""
@@ -99,9 +95,9 @@ PLIST_SUB+=	VIEWER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MHPJPG}
-LIB_DEPENDS+=	turbojpeg:${PORTSDIR}/graphics/libjpeg-turbo
+LIB_DEPENDS+=	libturbojpeg.so:${PORTSDIR}/graphics/libjpeg-turbo
 .else
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 .endif
 
 MAKE_ARGS+=	TIGERVNC_SRCDIR=${WRKSRC}
@@ -114,20 +110,21 @@ CONFIGURE_ARGS+=	\
 		--disable-config-dbus --disable-config-hal \
 		--disable-dri2 --enable-install-libxf86config --enable-glx \
 		--with-default-font-path="catalogue:${PREFIX}/share/fonts,built-ins" \
-		--with-fontdir=${PREFIX}/share/fonts \
 		--with-xkb-path=${PREFIX}/share/X11/xkb \
 		--with-xkb-output=/var/lib/xkb \
 		--with-xkb-bin-directory=${PREFIX}/bin \
 		--with-serverconfig-path=${PREFIX}/lib/X11 \
 		--disable-selective-werror
+.ifdef WITH_NEW_XORG
+CONFIGURE_ARGS+=	--with-fontrootdir=${PREFIX}/share/fonts
+.else
+CONFIGURE_ARGS+=	--with-fontdir=${PREFIX}/share/fonts
+.endif
 
 .include <bsd.port.pre.mk>
 
 .ifdef WITH_NEW_XORG
 TIGERVNC_XORG_PATCH_VER=	112
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-unix_hw_vnc.patch \
-		${FILESDIR}/extra-patch-common_rdr.patch \
-		${FILESDIR}/extra-patch-common_rfb.patch
 .else
 TIGERVNC_XORG_PATCH_VER=	17
 .endif
@@ -146,7 +143,6 @@ pre-patch:
 	@${CP} -R `${XORG_WRKDIR}`/ ${WRKSRC}/unix/xserver/
 
 post-patch:
-	@${CP} ${FILESDIR}/xserver*.patch ${WRKSRC}/unix/
 	@cd ${WRKSRC}/unix/xserver/ && ${PATCH} -p1 < ${WRKSRC}/unix/xserver${TIGERVNC_XORG_PATCH_VER}.patch
 
 post-configure:
@@ -154,7 +150,7 @@ post-configure:
 	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS}
 
 post-build:
-	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS}
+	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} SHELL=${LOCALBASE}/bin/bash
 
 post-install:
 	@cd ${WRKSRC}/unix/xserver/hw/vnc/ && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install
