@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Algorithm-CheckDigits
-# Date created:		2011-04-03
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Algorithm-CheckDigits
 PORTVERSION=	1.2.0
@@ -19,7 +15,8 @@ TEST_DEPENDS=	p5-Probe-Perl>=0:${PORTSDIR}/sysutils/p5-Probe-Perl
 
 PKGNAMEPREFIX=	p5-
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=	checkdigits.pl.1
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Text-Language-Guess
-# Date created:		2006-09-25
-# Whom:			Masahiro Teramoto <markun@onohara.to>
-#
+# Created by: Masahiro Teramoto <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Language-Guess
 PORTVERSION=	0.02
@@ -20,7 +16,8 @@ BUILD_DEPENDS=	p5-Log-Log4perl>=1.0:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-Lingua-StopWords>=0:${PORTSDIR}/textproc/p5-Lingua-StopWords
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		language-guess.1
 MAN3=		Text::Language::Guess.3
