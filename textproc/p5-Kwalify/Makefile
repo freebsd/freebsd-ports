@@ -14,6 +14,7 @@ COMMENT=	Implementation of Kwalify parser, validator and data binding tool
 MAN1=		pkwalify.1
 MAN3=		Kwalify.3 Schema::Kwalify.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

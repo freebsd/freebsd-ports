@@ -17,7 +17,8 @@ BUILD_DEPENDS=	p5-Exception-Class>=1.23:${PORTSDIR}/devel/p5-Exception-Class \
 RUN_DEPENDS=	p5-Exception-Class>=1.23:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-Storable>=2.16:${PORTSDIR}/devel/p5-Storable
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Getopt::Lucid.3 Getopt::Lucid::Exception.3
 

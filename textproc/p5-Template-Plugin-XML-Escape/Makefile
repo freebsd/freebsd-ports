@@ -1,9 +1,5 @@
-# New ports collection makefile for:  Template-Plugin-XML-Escape
-# Date created:		12 January 2009
-# Whom:			kevit
-#
+# Created by: kevit
 # $FreeBSD$
-#
 
 PORTNAME=	Template-Plugin-XML-Escape
 PORTVERSION=	0.02
@@ -17,7 +13,8 @@ COMMENT=	Escape variables to suit being placed into XML
 BUILD_DEPENDS=	p5-Template-Toolkit>=2.20:${PORTSDIR}/www/p5-Template-Toolkit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAN3=		Template::Plugin::XML::Escape.3
 
 .include <bsd.port.mk>

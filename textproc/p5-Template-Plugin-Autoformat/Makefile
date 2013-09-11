@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Template-Plugin-Autoformat
-# Date created:				Tue Aug 18 16:00:03 EDT 2009
-# Whom:					Vivek Khera <vivek@khera.org>
-#
+# Created by: Vivek Khera <vivek@khera.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Template-Plugin-Autoformat
 PORTVERSION=	2.71
@@ -19,7 +15,8 @@ RUN_DEPENDS=	p5-Template-Toolkit>=2.22:${PORTSDIR}/www/p5-Template-Toolkit \
 BUILD_DEPENDS=	p5-Template-Toolkit>=2.22:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-Text-Autoformat>0:${PORTSDIR}/textproc/p5-Text-Autoformat
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Template::Plugin::Autoformat.3
 

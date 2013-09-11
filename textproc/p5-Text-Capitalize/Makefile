@@ -12,7 +12,8 @@ COMMENT=	Capitalize strings ("to WORK AS titles" becomes "To Work as Titles")
 
 TEST_DEPENDS=	p5-PerlIO-locale>=0:${PORTSDIR}/devel/p5-PerlIO-locale
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Text::Capitalize.3
 

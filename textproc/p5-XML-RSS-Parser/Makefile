@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-XML-RSS-Parser
-# Date created:				21 Apr 2006
-# Whom:					Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-RSS-Parser
 PORTVERSION=	4.0
@@ -20,7 +16,8 @@ RUN_DEPENDS=	p5-XML-Elemental>=0:${PORTSDIR}/textproc/p5-XML-Elemental \
 		p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.0//}
 
 MAN3=		XML::RSS::Parser.3 \

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	XML::DOM
-# Date created:		7 Nov 1999
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	XML-DOM
 PORTVERSION=	1.44
@@ -20,7 +15,8 @@ RUN_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-XML-RegExp>=0:${PORTSDIR}/textproc/p5-XML-RegExp
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		XML::DOM.3 XML::DOM::AttDef.3 XML::DOM::AttlistDecl.3 \
 		XML::DOM::Attr.3 XML::DOM::CDATASection.3 \

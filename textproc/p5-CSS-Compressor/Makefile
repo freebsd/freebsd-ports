@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Perl extension for CSS minification
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/csscompressor ${PREFIX}/bin
