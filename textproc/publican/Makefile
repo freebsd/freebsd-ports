@@ -3,6 +3,7 @@
 
 PORTNAME=	publican
 PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/publican/Publican-${PORTVERSION}.tar.gz/1ddcf8e93e96d0e49868f21df41b53a4/
 DISTNAME=	Publican-${PORTVERSION}
