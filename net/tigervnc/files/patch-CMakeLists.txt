@@ -1,68 +1,11 @@
---- CMakeLists.txt.orig	2012-03-10 05:34:29.000000000 +0900
-+++ CMakeLists.txt	2012-10-25 19:02:36.642061425 +0900
-@@ -237,6 +237,7 @@
- endif()
- 
- # Check for FLTK
-+if(ENABLE_VIEWER)
- set(FLTK_SKIP_FLUID TRUE)
- set(FLTK_SKIP_OPENGL TRUE)
- set(FLTK_SKIP_IMAGES TRUE)
-@@ -282,44 +283,7 @@
-   set(CMAKE_REQUIRED_LIBRARIES)
- endif()
- 
--option(USE_INCLUDED_FLTK
--  "Force the use of the FLTK library bundled with the TigerVNC source")
--if(NOT FLTK_FOUND OR NOT HAVE_FLTK_DEAD_KEYS OR NOT HAVE_FLTK_CLIPBOARD
--  OR NOT HAVE_FLTK_MEDIAKEYS OR NOT HAVE_FLTK_FULLSCREEN
--  OR NOT HAVE_FLTK_CURSOR)
--  set(USE_INCLUDED_FLTK 1)
--endif()
--if(USE_INCLUDED_FLTK)
--  # Check that we have the proper dependencies
--  if(UNIX AND NOT APPLE)
--    if(NOT X11_Xft_FOUND)
--      message(FATAL_ERROR "Xft headers/libraries not found (needed by FLTK.)")
--    endif()
--    if(NOT X11_Xinerama_FOUND)
--      message(FATAL_ERROR "Xinerama headers/libraries not found (needed by FLTK.)")
--    endif()
--    if(NOT X11_Xfixes_FOUND)
--      message(FATAL_ERROR "Xfixes headers/libraries not found (needed by FLTK.)")
--    endif()
--    if(NOT X11_Xcursor_FOUND)
--      message(FATAL_ERROR "Xcursor headers/libraries not found (needed by FLTK.)")
--    endif()
--  endif()
--
--  set(HAVE_FLTK_DEAD_KEYS 1)
--  set(HAVE_FLTK_CLIPBOARD 1)
--  set(HAVE_FLTK_MEDIAKEYS 1)
--  set(HAVE_FLTK_FULLSCREEN 1)
--  set(HAVE_FLTK_CURSOR 1)
--  set(FLTK_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/common/fltk)
--  set(FLTK_LIBRARIES)
--  if(APPLE)
--    set(FLTK_LIBRARIES "-framework Carbon -framework Cocoa -framework ApplicationServices")
--  elseif(NOT WIN32)
--    set(FLTK_LIBRARIES "-ldl")
--  endif()
--  message(STATUS "Using included FLTK library")
--endif()
-+endif() # ENABLE_VIEWER
- 
- # Check for GNUTLS library
- option(ENABLE_GNUTLS "Enable protocol encryption and advanced authentication" ON)
-@@ -409,7 +373,10 @@
- if(ENABLE_NLS)
-   add_subdirectory(po)
- endif()
--add_subdirectory(vncviewer)
-+
-+if(ENABLE_VIEWER)
-+  add_subdirectory(vncviewer)
-+endif()
- 
- include(cmake/BuildPackages.cmake)
+--- CMakeLists.txt.orig	2013-07-21 16:21:37.028241067 +0000
++++ CMakeLists.txt	2013-07-21 16:21:59.310260222 +0000
+@@ -26,7 +26,7 @@
+ # Installation paths
+ set(BIN_DIR "${CMAKE_INSTALL_PREFIX}/bin")
+ set(DATA_DIR "${CMAKE_INSTALL_PREFIX}/share")
+-set(MAN_DIR "${DATA_DIR}/man")
++set(MAN_DIR "${CMAKE_INSTALL_PREFIX}/man")
+ set(LOCALE_DIR "${DATA_DIR}/locale")
+ set(DOC_DIR "${CMAKE_INSTALL_PREFIX}/share/doc/${CMAKE_PROJECT_NAME}-${VERSION}")
  
