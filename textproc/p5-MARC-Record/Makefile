@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MARC-Record
-# Date created:				31 December 2004
-# Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MARC-Record
 PORTVERSION=	2.0.5
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	The core class for representing a single MARC record
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		marcdump.1
 MAN3=		MARC::Batch.3 MARC::Doc::Tutorial.3 MARC::Field.3 \

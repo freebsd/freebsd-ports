@@ -12,7 +12,8 @@ COMMENT=	Perl module for sprintf-like string formatting capability
 
 LICENSE=	GPLv2
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		String::Format.3
 

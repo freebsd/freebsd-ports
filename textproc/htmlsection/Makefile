@@ -1,9 +1,5 @@
-# New ports collection makefile for:	htmlsection
-# Date created:		2 October 2001
-# Whom:			SAKAI Hiroaki <sakai@seki.ee.kagu.sut.ac.jp>
-#
+# Created by: SAKAI Hiroaki <sakai@seki.ee.kagu.sut.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	htmlsection
 PORTVERSION=	1.1
@@ -13,7 +9,8 @@ MASTER_SITES=	http://web.ffn.ne.jp/~hsakai/myfreesoft/
 MAINTAINER=	hsakai@m8.ffn.ne.jp
 COMMENT=	Insert section numbers in HTML and make a table of contents
 
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	build
 
 MAN1=		htmlsection.1
 MANCOMPRESSED=	yes
