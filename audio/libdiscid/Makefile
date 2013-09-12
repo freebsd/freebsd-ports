@@ -1,26 +1,21 @@
-# New ports collection makefile for:	libdiscid
-# Date created:				2008-03-19
-# Whom:					Jason E. Hale <bsdkaffee@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libdiscid
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.5.2
 CATEGORIES=	audio
-MASTER_SITES=	http://users.musicbrainz.org/~matt/ \
-		${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	distfiles
+MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/${PORTNAME}/ \
+		http://ftp.osuosl.org/pub/musicbrainz/${PORTNAME}/
 
 MAINTAINER=	jhale@FreeBSD.org
-COMMENT=	A library for creating MusicBrainz DiscIDs
+COMMENT=	Library for creating MusicBrainz DiscIDs
 
 LICENSE=	LGPL21
 
-GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	ltverhack gnomehack
+USES=		cmake
 USE_LDCONFIG=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e '/pkgconfig/s|$${LIB_INSTALL_DIR}|libdata|' \
+		 ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	kaudiocreator
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 DISTNAME=	107645-${PORTNAME}-${PORTVERSION}
