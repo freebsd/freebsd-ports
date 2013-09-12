@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xye
-PORTVERSION=	0.12.1
-PORTREVISION=	1
+PORTVERSION=	0.12.2
 CATEGORIES=	games
 MASTER_SITES=	SF:game \
 		http://xye.sourceforge.net/levels/ \
@@ -24,20 +23,22 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		xye_extra_levels.20121109.zip \
 		${SKINS:S/$/.zip/}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Puzzle games like sokoban or boulderdash
 
 LICENSE=	ZLIB
 
-EXTRACT_DEPENDS=${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 
+USES=		gmake
 USE_SDL=	sdl image ttf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docdir=${PREFIX}/share/doc
-USE_GMAKE=	yes
 
-LEVELS=		Xye%20level%20-%20Open%20Ended Xye%20level%20-%20Sorting \
-		Xye%20level%20-%20The%20insider Xye%20level%20-%20The%20slow%20speedrun \
+LEVELS=		Xye%20level%20-%20The%20plan Xye%20level%20-%20Controller \
+		Xye%20level%20-%20At%20once Xye%20level%20-%20Open%20Ended \
+		Xye%20level%20-%20Sorting Xye%20level%20-%20The%20insider \
+		Xye%20level%20-%20The%20slow%20speedrun Xye%20levels%20-%20SuperJustin \
 		Xye%20level%20-%20disturbingarrows Xye%20level%20-%20Duels%20of%20fate \
 		nuffmagnets Xye%20levels%20-%20Pyramid%20treasure afirflood \
 		Xye%20level%20-%20Blob%20prison Xye%20levels%20-%20ActionReplay \
@@ -46,6 +47,8 @@ LEVELS=		Xye%20level%20-%20Open%20Ended Xye%20level%20-%20Sorting \
 LEVELS_XYE=	dungeon turnaround chekhov
 
 SKINS=		XMASKYESKIN Xye%20skin%20-%20classic%20kye
+
+PORTDOCS=	*
 
 DESKTOP_ENTRIES="Xye" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;LogicGame;" false
@@ -56,22 +59,18 @@ OPTIONS_DEFINE=	DOCS SKINS
 OPTIONS_DEFAULT=	SKINS
 SKINS_DESC=	Install additional skins
 
-.include <bsd.port.options.mk>
+OPTIONS_SUB=	yes
 
-.if defined(WITH_SKINS)
-PLIST_SUB+=	SKINS=""
-.else
-PLIST_SUB+=	SKINS="@comment "
-.endif
+.include <bsd.port.options.mk>
 
 post-extract-script:
 .for l in ${LEVELS:S/$/.zip/} xmas-xye-2009.zip xye_extra_levels.20121109.zip
-	@${UNZIP_CMD} -qoj -d ${WRKDIR} ${DISTDIR}/${DIST_SUBDIR}/${l}
+	@${UNZIP_CMD} -qoj -d ${WRKDIR} ${_DISTDIR}/${l}
 .endfor
 
 .if ${PORT_OPTIONS:MSKINS}
 .  for s in ${SKINS:S/$/.zip/}
-	@${UNZIP_CMD} -qoj -d ${WRKDIR}/skins ${DISTDIR}/${DIST_SUBDIR}/${s}
+	@${UNZIP_CMD} -qoj -d ${WRKDIR}/skins ${_DISTDIR}/${s}
 .  endfor
 .endif
 
@@ -79,16 +78,16 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|docedir = $$(datadir)|docedir = ${PREFIX}/share/doc|' \
 		${WRKSRC}/Makefile.in
 
-.if !${PORT_OPTIONS:MDOCS}
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} '/install-data-am:/s/install-doceDATA//' \
 		${WRKSRC}/Makefile.in
 .endif
 
 post-install:
-	@cd ${WRKDIR} && ${COPYTREE_SHARE} "*.xye *.txt" ${DATADIR}/levels
+	@(cd ${WRKDIR} && ${COPYTREE_SHARE} "*.xye *.txt" ${DATADIR}/levels)
 
 .if ${PORT_OPTIONS:MSKINS}
-	@cd ${WRKDIR}/skins && ${COPYTREE_SHARE} \* ${DATADIR}/res
+	@(cd ${WRKDIR}/skins && ${COPYTREE_SHARE} . ${DATADIR}/res)
 .endif
 
 	${LN} -sf ${DATADIR}/res/detailed_icon.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
