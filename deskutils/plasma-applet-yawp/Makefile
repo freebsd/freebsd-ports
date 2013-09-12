@@ -1,19 +1,13 @@
-# New ports collection makefile for:	plasma-applet-yawp
-# Date Created:				2009-01-15
-# Whom:					Jason E. Hale <bsdkaffee@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	yawp
-PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTVERSION=	0.4.5
 CATEGORIES=	deskutils kde
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	plasma-applet-
 
 MAINTAINER=	jhale@FreeBSD.org
-COMMENT=	Weather plasma applet for KDE4
+COMMENT=	KDE4 weather plasma applet
 
 LICENSE=	GPLv2
 
