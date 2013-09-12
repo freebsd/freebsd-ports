@@ -1,0 +1,11 @@
+--- makefile.orig	2013-06-12 17:39:26.000000000 +0200
++++ makefile	2013-09-12 15:09:05.000000000 +0200
+@@ -27,7 +27,7 @@
+ 	./makemined clean
+ 
+ manual:
+-	cd man; make
++	cd man; $(GMAKE)
+ 
+ VER=$(shell sed -e 's,^[^0-9]*,,' -e 's,[^0-9][^0-9]*,.,g' -e q VERSION )
+ UNIVER=$(shell sed -e '/^\# Blocks-/ b ver' -e d -e ': ver' -e 's,^[^0-9]*\([0-9].*[0-9]\).*,\1,g' -e 's,\.0$$,,' src/Blocks.txt )
