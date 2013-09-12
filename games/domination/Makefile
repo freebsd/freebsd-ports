@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	domination
-PORTVERSION=	1.1.1.4
+PORTVERSION=	1.1.1.5
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/d/D/}/${PORTVERSION}/:game  \
 		http://domination.sourceforge.net/maps/
 DISTFILES=	${PORTNAME:S/d/D/}_${DISTVERSION}${EXTRACT_SUFX}:game \
 		${MAPS:S/$/.zip/}
 DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${PORTNAME:S/d/D/}_${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Board game that is a bit like the well known game Risk
 
 LICENSE=	GPLv3
@@ -27,16 +28,17 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/d/D/}
 MAPS=		solar bigeurope google europass europe artic sudamerica \
 		MiddleEast-Qatar kosova Falkland-Islands england sw_baltic \
 		spain swiss france austria austria-hungary eire haiti brasil \
-		benelux canada germany northeurope germany1871 eesti estonia \
-		mexico serbia fletzmap greece North_of_Italy bayern berlin \
-		navarra Illes_Balears calw wuppertal kerzell ennepe-ruhr-kreis \
-		cologne saarland andorra catalunya astadt dortmund rio_de_janeiro \
-		caribbean Nuremberg_Public_Transit discworld aztec GTA_SAN_AN \
-		middleearth LOTR2 wow randland Riskopoly SuperRiskopoly trivia \
-		chutes sudoku conquest chrono_trigger startrek usa8 civilwar \
-		usa hawaii ohio nyc zertina fortress estlandr periodictable \
-		sylsia troisdorf wolken castle naerr cow westfalenhalle \
-		union rub gymnasium simpsons_world simpsons germany2
+		benelux canada germany northeurope germany1871 Deutsches_Reich_1871 \
+		eesti estonia mexico serbia fletzmap greece North_of_Italy \
+		bayern berlin navarra Illes_Balears calw wuppertal kerzell \
+		ennepe-ruhr-kreis cologne saarland andorra catalunya astadt \
+		dortmund rio_de_janeiro caribbean Nuremberg_Public_Transit \
+		discworld aztec GTA_SAN_AN middleearth LOTR2 wow randland \
+		Riskopoly SuperRiskopoly trivia chutes sudoku conquest \
+		chrono_trigger startrek usa8 civilwar usa hawaii ohio nyc \
+		zertina fortress estlandr periodictable sylsia troisdorf \
+		wolken castle naerr cow westfalenhalle union rub gymnasium \
+		simpsons_world simpsons germany2
 
 PORTDOCS=	ChangeLog.txt ReadMe.txt commands.txt todo.txt
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
@@ -49,25 +51,24 @@ SUB_FILES=	${PORTNAME}-FlashGUI \
 DESKTOP_ENTRIES="Domination" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}-SwingGUI" "Game;StrategyGame;" false
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-extract-script:
 .for f in ${MAPS:S/$/.zip/}
-	@${UNZIP_CMD} -qo -d ${WRKSRC}/maps ${DISTDIR}/${DIST_SUBDIR}/${f}
+	@${UNZIP_CMD} -qo -d ${WRKSRC}/maps ${_DISTDIR}/${f}
 .endfor
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-* ${PREFIX}/bin
-
-	@${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "help lib maps resources saves *.jar *.cmd *.htm *.txt *.ini" ${DATADIR})
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-* ${PREFIX}/bin
 	@(cd ${WRKSRC} && ${INSTALL_SCRIPT} *.sh ${DATADIR})
 	@(cd ${DATADIR} && ${CHMOD} 774 saves)
-
 	${LN} -sf ${DATADIR}/resources/icon.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
