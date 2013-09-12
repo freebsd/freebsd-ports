@@ -18,7 +18,7 @@ RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave \
 		p5-IO-Zlib>=0:${PORTSDIR}/archivers/p5-IO-Zlib \
 		p5-File-Remove>=0:${PORTSDIR}/devel/p5-File-Remove
 
-USE_PERL5=	yes
+USES=		perl5
 SUB_FILES=	load-octave-pkg
 SUB_LIST+=	PERL=${PERL}
 

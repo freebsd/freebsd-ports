@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Math-RPN
-# Date created:		1 June 2010
-# Whom:			Kevin Lo <kevlo@FreeBSD.org>
-#
+# Created by: Kevin Lo <kevlo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-RPN
 PORTVERSION=	1.11
@@ -16,7 +12,8 @@ COMMENT=	Reverse polish math expression evaluation
 
 TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Math::RPN.3
 

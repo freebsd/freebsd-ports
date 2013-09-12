@@ -14,7 +14,8 @@ COMMENT=	OO wrapper to gpc library
 BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
 RUN_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=	yes
 
 MAN3=		Math::Geometry::Planar::GPC::Polygon.3

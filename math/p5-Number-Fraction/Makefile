@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Number-Fraction
-# Date created:		2010-03-04
-# Whom:			Steve Wills <steve@mouf.net>
-#
+# Created by: Steve Wills <steve@mouf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Number-Fraction
 PORTVERSION=	1.14
@@ -15,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl extension to model fractions
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Number::Fraction.3
 

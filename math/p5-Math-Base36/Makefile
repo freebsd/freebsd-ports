@@ -1,9 +1,5 @@
-# New ports collection makefile for:	math/p5-Math-Base36
-# Date created:				2008-08-04
-# Whom:					Yi-Hsuan Hsin <mhsin@mhsin.org>
-#
+# Created by: Yi-Hsuan Hsin <mhsin@mhsin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-Base36
 PORTVERSION=	0.10
@@ -17,7 +13,8 @@ COMMENT=	Encoding and decoding of base36 strings
 
 BUILD_DEPENDS=	p5-ExtUtils-MakeMaker>=6.59:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Math::Base36.3
 

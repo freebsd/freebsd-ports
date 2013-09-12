@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Statistics-Frequency
-# Date created:		2010-03-08
-# Whom:			Steve Wills <steve@mouf.net>
-#
+# Created by: Steve Wills <steve@mouf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Statistics-Frequency
 PORTVERSION=	0.03
@@ -15,6 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Simple counting of elements
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

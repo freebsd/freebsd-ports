@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Math-CDF
-# Date created:		2010-11-13
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-CDF
 PORTVERSION=	0.1
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Generate probabilities and quantiles from several statistical probability functions
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Math::CDF.3
 

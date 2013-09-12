@@ -1,9 +1,5 @@
-# New ports collection makefile for:	math/p5-Statistics-Regression
-# Date created:				Apr 7,  2007
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Statistics-Regression
 PORTVERSION=	0.53
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl module to perform weighted linear regression
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Statistics::Regression.3
 
