@@ -13,8 +13,7 @@ COMMENT=	A program to handle your X background to prevent boredom
 
 RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv
 
-USES=		shebangfix
-USE_PERL5=	yes
+USES=		shebangfix perl5
 SHEBANG_FILES=	*.pl
 
 MAN1=		bgrot.1

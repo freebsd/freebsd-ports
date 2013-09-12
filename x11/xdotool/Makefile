@@ -9,10 +9,10 @@ MASTER_SITES=	http://semicomplete.googlecode.com/files/
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Programmatically simulate keyboard input or mouse activity
 
-USE_PERL5_BUILD=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig perl5
 USE_XORG=	x11 xtst xinerama
+USE_PERL5=	build
 
 MAN1=		xdotool.1
 PLIST_FILES=	bin/xdotool lib/libxdo.so lib/libxdo.so.2 include/xdo.h

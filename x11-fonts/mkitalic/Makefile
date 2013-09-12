@@ -14,13 +14,12 @@ COMMENT=	Perl script to make BDF font italic
 CONFLICTS=	mkbold-mkitalic-[0-9]*
 
 PLIST_FILES=	bin/mkitalic
-USE_PERL5=	yes
 EXTRACT_CMD=	${BZCAT}
 EXTRACT_BEFORE_ARGS=	#
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/mkitalic
 NO_WRKSUBDIR=	yes
 USE_BZIP2=	yes
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	mkitalic
 
 do-build:

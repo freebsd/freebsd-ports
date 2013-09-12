@@ -16,11 +16,9 @@ BUILD_DEPENDS=	\
 	p5-openxpki>=0:${PORTSDIR}/security/p5-openxpki
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PERL5=	yes
-USES=		gettext
+USES=		gettext gmake perl5
 ### We can not go WITHOUT_NLS. Internationalization is needed
 ### even to use English language.
-USE_GMAKE=	yes
 ALL_TARGET=	default
 
 .include <bsd.port.mk>

@@ -14,11 +14,10 @@ MASTER_SITES=	SF/gswitchit/OldFiles
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A little set of XML files useful for dealing with XKB rules
 
-USES=		gettext iconv
+USES=		gettext gmake iconv perl5
 USE_XORG=	x11
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 CONFIGURE_ARGS=	--with-xkb-base=${LOCALBASE}/lib/X11/xkb
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
