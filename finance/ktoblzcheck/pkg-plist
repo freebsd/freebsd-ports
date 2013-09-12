@@ -9,8 +9,8 @@ lib/libktoblzcheck.so.6
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ktoblzcheck.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ktoblzcheck.pyo
 libdata/pkgconfig/ktoblzcheck.pc
-share/ktoblzcheck/bankdata_20120604.txt
-share/ktoblzcheck/bankdata_20120903.txt
+share/ktoblzcheck/bankdata_20130603.txt
+share/ktoblzcheck/bankdata_20130909.txt
 share/ktoblzcheck/bundesbank.pl
 share/ktoblzcheck/ibandata.txt
 share/ktoblzcheck/online_update.pl
