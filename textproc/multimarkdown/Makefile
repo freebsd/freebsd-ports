@@ -29,7 +29,8 @@ PORTDOCS=	LICENSE README.markdown
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -E "/CFLAGS/s/-arch [[:alnum:]]+//; /CFLAGS/s/\?=/\+=/" \
+	@${REINPLACE_CMD} -E "/CFLAGS/s/-arch [[:alnum:]]+//; /CFLAGS/s/\?=/\+=/; \
+		s/CC=gcc//" \
 		${WRKSRC}/Makefile
 
 do-install:
