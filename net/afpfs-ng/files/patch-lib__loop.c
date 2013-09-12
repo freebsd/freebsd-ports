@@ -21,4 +21,12 @@
  
  static int loop_started=0;
  static pthread_cond_t loop_started_condition;
-diff -Naur afpfs-ng-0.8.1.orig/lib/lowlevel.c afpfs-ng-0.8.1/lib/lowlevel.c
+@@ -87,7 +87,7 @@ void signal_main_thread(void)
+ static int ending=0;
+ void * just_end_it_now(void * ignore)
+ {
+-	if (ending) return;
++	if (ending) return NULL;
+ 	ending=1;
+ 	if (libafpclient->forced_ending_hook) 
+ 		libafpclient->forced_ending_hook();
