@@ -1,0 +1,7 @@
+--- dbus/org.fedoraproject.Config.Printing.service.orig	2013-08-29 15:35:25.000000000 +0200
++++ dbus/org.fedoraproject.Config.Printing.service	2013-08-29 15:36:25.000000000 +0200
+@@ -1,3 +1,3 @@
+ [D-BUS Service]
+ Name=org.fedoraproject.Config.Printing
+-Exec=/usr/bin/scp-dbus-service
++Exec=%%PREFIX%%/bin/scp-dbus-service
