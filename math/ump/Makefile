@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ump
-# Date created:		2006-04-20
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale <nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	ump
 PORTVERSION=	0.8.6
@@ -17,8 +13,8 @@ COMMENT=	A graphical, easy to use math program
 CONFLICTS=	ump-1.[0-9]*
 LATEST_LINK=	math-ump
 
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_GL=		glu
 

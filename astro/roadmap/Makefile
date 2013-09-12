@@ -19,7 +19,7 @@ INSTALL_WRKSRC=	${WRKSRC}/src
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		gmake
+USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 MAKE_ARGS=	INSTALLDIR="${PREFIX}" CC="${CC}" CXX="${CXX}"
 

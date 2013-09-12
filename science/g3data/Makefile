@@ -1,9 +1,5 @@
-# New ports collection makefile for:	g3data
-# Date created:		2006-09-15
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	g3data
 PORTVERSION=	1.5.3
@@ -18,6 +14,7 @@ BUILD_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade \
 		${LOCALBASE}/share/sgml/docbook/utils-0.6.14/helpers/docbook2man-spec.pl:${PORTSDIR}/textproc/docbook-utils \
 		${LOCALBASE}/share/sgml/docbook/4.1/dtd/docbook.dtd:${PORTSDIR}/textproc/docbook-410
 
+USES=		pkgconfig
 USE_GNOME=	gtk20
 ALL_TARGET=
 MAN1=		g3data.1

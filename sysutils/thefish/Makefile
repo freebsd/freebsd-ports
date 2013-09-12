@@ -11,6 +11,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+/ncurses rc.conf editor/management tool
 
+USES=		pkgconfig
 WANT_GNOME=	yes
 
 #OPTIONS_SINGLE=		X11

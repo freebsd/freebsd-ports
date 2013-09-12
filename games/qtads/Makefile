@@ -11,8 +11,8 @@ COMMENT=	Cross-platform multimedia interpreter for TADS games
 
 LICENSE=	GPLv2
 
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_QT4=	gui moc_build network qmake_build rcc_build uic_build
 USE_SDL=	sdl mixer sound
 

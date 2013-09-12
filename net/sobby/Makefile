@@ -1,9 +1,5 @@
-# Ports collection makefile for:	sobby
-# Date created:				2005-10-14
-# Whom:					Andreas Kohn <andreas@syndrom23.de>
-#
+# Created by: Andreas Kohn <andreas@syndrom23.de>
 # $FreeBSD$
-#
 
 PORTNAME=	sobby
 PORTVERSION=	0.4.8
@@ -22,6 +18,7 @@ LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		xml++-2.6.2:${PORTSDIR}/textproc/libxml++26 \
 		glibmm-2.4.1:${PORTSDIR}/devel/glibmm
 
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-zeroconf
 

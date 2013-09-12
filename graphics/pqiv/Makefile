@@ -27,6 +27,7 @@ GH_ACCOUNT=	phillipberndt
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_CSTD=	gnu89

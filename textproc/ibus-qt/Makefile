@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ibus-1.0.pc:${PORTSDIR}/textproc/ibu
 	${LOCALBASE}/bin/icu-config:${PORTSDIR}/devel/icu
 
 USE_QT4=	gui dbus moc_build qmake_build moc_build uic_build rcc_build
-USES=		cmake
+USES=		cmake pkgconfig
 CMAKE_ARGS=	-DDOCDIR=${PREFIX}/share/doc/ibus-qt
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include

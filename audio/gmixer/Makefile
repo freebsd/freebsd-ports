@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gmixer
-# Date created:        25 February 1999
-# Whom:                Chris Piazza <cpiazza@FreeBSD.org>
-#
+# Created by: Chris Piazza <cpiazza@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gmixer
 PORTVERSION=	0.98c
@@ -17,6 +13,7 @@ COMMENT=	X11/gtk+ mixer control
 
 ALL_TARGET=	gmixer
 
+USES=		pkgconfig
 USE_GNOME=	gtk12
 PLIST_FILES=	bin/gmixer share/pixmaps/gmixer.xpm
 
