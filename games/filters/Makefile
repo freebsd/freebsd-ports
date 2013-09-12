@@ -14,8 +14,7 @@ COMMENT=	Collection of filters, including B1FF, and the Swedish Chef
 CONFLICTS=	talkfilters-[0-9]* jive-[0-9]* chef-[0-9]* kenny-[0-9]* \
 		lolcat-[0-9]*
 
-USES=		shebangfix gmake
-USE_PERL5=	yes
+USES=		shebangfix gmake perl5
 USE_GCC=	any
 MAKE_JOBS_UNSAFE=	yes
 

@@ -14,9 +14,7 @@ COMMENT=	Tools to internationalize various kinds of data files
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
-USE_GMAKE=	yes
-USES=		iconv
-USE_PERL5=	yes
+USES=		iconv gmake perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir="${PREFIX}/libdata"
 

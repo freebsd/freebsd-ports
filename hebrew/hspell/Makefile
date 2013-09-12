@@ -11,9 +11,8 @@ MASTER_SITE_SUBDIR=	makc
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Hebrew spellchecker and morphology engine
 
-USES=		shebangfix
-USE_PERL5_BUILD=	yes
-USE_GMAKE=	yes
+USES=		shebangfix gmake perl5
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CFLAGS+=	-fPIC
 SHEBANG_FILES=	pmerge

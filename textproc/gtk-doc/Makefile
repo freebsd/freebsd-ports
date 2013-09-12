@@ -26,9 +26,8 @@ XMLCATMGR=		${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 
 USE_XZ=		yes
-USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix pkgconfig shebangfix
+USES=		gmake pathfix pkgconfig shebangfix perl5
 USE_GNOME=	gnomeprefix libxslt gnomedocutils
 INSTALLS_OMF=	yes
 CONFIGURE_ARGS=	--with-xml-catalog=${LOCALBASE}/share/xml/catalog.ports
