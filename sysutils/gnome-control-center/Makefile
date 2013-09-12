@@ -59,6 +59,8 @@ post-patch:
 	    	${WRKSRC}/capplets/common/gnome-theme-info.c
 	@${REINPLACE_CMD} -e 's|/usr/sbin|${PREFIX}/sbin|g' \
 		${WRKSRC}/capplets/display/org.gnome.randr.policy.in
+	@${REINPLACE_CMD} -e 's|"libslab"|"libnoslab"|g' \
+		${WRKSRC}/configure
 
 post-install:
 	@-update-desktop-database
