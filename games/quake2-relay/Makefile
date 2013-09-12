@@ -4,8 +4,7 @@
 PORTNAME=	relay
 PORTVERSION=	0.4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_LOCAL} http://freebsd.nsu.ru/distfiles/
-MASTER_SITE_SUBDIR=	danfe
+MASTER_SITES=	LOCAL/danfe http://freebsd.nsu.ru/distfiles/
 PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
 DISTNAME=	relay-${PORTVERSION}.src
 
@@ -14,10 +13,10 @@ COMMENT=	Quake II multi-view demo recording facility
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	MODE=release OBJ_DIR=. OUT_DIR=. Q2MODULE=game.so \
 		QUAKE2_DIR="${Q2DIR}" BIN_DIR="${PREFIX}/bin" \
-		CC="${CC}" CFLAGS="${CFLAGS}"
+		CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS}"
 
 WRKSRC=		${WRKDIR}/relay-${PORTVERSION}
 PORTDOCS=	FAQ README
