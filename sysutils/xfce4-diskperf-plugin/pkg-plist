@@ -1,0 +1,53 @@
+lib/xfce4/panel/plugins/libdiskperf.so
+lib/xfce4/panel/plugins/libdiskperf.la
+%%NLS%%share/locale/ar/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/ast/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/da/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/de/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/el/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/es/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/id/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/it/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/ur/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/ur_PK/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-diskperf-plugin.mo
+share/xfce4/panel/plugins/diskperf.desktop
+%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur_PK
+%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur
+%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ug
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
+@dirrmtry share/xfce4/panel/plugins
+@dirrmtry share/xfce4/panel
+@dirrmtry share/xfce4
+@dirrmtry lib/xfce4/panel/plugins
+@dirrmtry lib/xfce4/panel
+@dirrmtry lib/xfce4
