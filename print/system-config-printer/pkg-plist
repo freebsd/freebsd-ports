@@ -1,28 +1,41 @@
-bin/my-default-printer
+bin/install-printerdriver
+bin/scp-dbus-service
 bin/system-config-printer
 bin/system-config-printer-applet
-etc/dbus-1/system.d/newprinternotification.conf
+etc/cupshelpers/preferreddrivers.xml
+etc/dbus-1/system.d/com.redhat.NewPrinterNotification.conf
+etc/dbus-1/system.d/com.redhat.PrinterDriversInstaller.conf
 etc/xdg/autostart/print-applet.desktop
 %%PYTHON_SITELIBDIR%%/cupshelpers/__init__.py
 %%PYTHON_SITELIBDIR%%/cupshelpers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/cupshelpers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/cupshelpers/config.py
+%%PYTHON_SITELIBDIR%%/cupshelpers/config.pyc
+%%PYTHON_SITELIBDIR%%/cupshelpers/config.pyo
 %%PYTHON_SITELIBDIR%%/cupshelpers/cupshelpers.py
 %%PYTHON_SITELIBDIR%%/cupshelpers/cupshelpers.pyc
 %%PYTHON_SITELIBDIR%%/cupshelpers/cupshelpers.pyo
+%%PYTHON_SITELIBDIR%%/cupshelpers/installdriver.py
+%%PYTHON_SITELIBDIR%%/cupshelpers/installdriver.pyc
+%%PYTHON_SITELIBDIR%%/cupshelpers/installdriver.pyo
 %%PYTHON_SITELIBDIR%%/cupshelpers/openprinting.py
 %%PYTHON_SITELIBDIR%%/cupshelpers/openprinting.pyc
 %%PYTHON_SITELIBDIR%%/cupshelpers/openprinting.pyo
 %%PYTHON_SITELIBDIR%%/cupshelpers/ppds.py
 %%PYTHON_SITELIBDIR%%/cupshelpers/ppds.pyc
 %%PYTHON_SITELIBDIR%%/cupshelpers/ppds.pyo
-share/applications/manage-print-jobs.desktop
-share/applications/my-default-printer.desktop
+%%PYTHON_SITELIBDIR%%/cupshelpers/xmldriverprefs.py
+%%PYTHON_SITELIBDIR%%/cupshelpers/xmldriverprefs.pyc
+%%PYTHON_SITELIBDIR%%/cupshelpers/xmldriverprefs.pyo
 share/applications/system-config-printer.desktop
+share/dbus-1/interfaces/org.fedoraproject.Config.Printing.xml
+share/dbus-1/services/org.fedoraproject.Config.Printing.service
 share/locale/ar/LC_MESSAGES/system-config-printer.mo
 share/locale/as/LC_MESSAGES/system-config-printer.mo
 share/locale/bg/LC_MESSAGES/system-config-printer.mo
 share/locale/bn/LC_MESSAGES/system-config-printer.mo
 share/locale/bn_IN/LC_MESSAGES/system-config-printer.mo
+share/locale/br/LC_MESSAGES/system-config-printer.mo
 share/locale/bs/LC_MESSAGES/system-config-printer.mo
 share/locale/ca/LC_MESSAGES/system-config-printer.mo
 share/locale/cs/LC_MESSAGES/system-config-printer.mo
@@ -58,6 +71,7 @@ share/locale/mr/LC_MESSAGES/system-config-printer.mo
 share/locale/ms/LC_MESSAGES/system-config-printer.mo
 share/locale/my/LC_MESSAGES/system-config-printer.mo
 share/locale/nb/LC_MESSAGES/system-config-printer.mo
+share/locale/nds/LC_MESSAGES/system-config-printer.mo
 share/locale/nl/LC_MESSAGES/system-config-printer.mo
 share/locale/nn/LC_MESSAGES/system-config-printer.mo
 share/locale/or/LC_MESSAGES/system-config-printer.mo
@@ -81,88 +95,92 @@ share/locale/uk/LC_MESSAGES/system-config-printer.mo
 share/locale/vi/LC_MESSAGES/system-config-printer.mo
 share/locale/zh_CN/LC_MESSAGES/system-config-printer.mo
 share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
-%%DATADIR%%/AdvancedServerSettings.py
-%%DATADIR%%/GroupsPane.py
-%%DATADIR%%/GroupsPaneModel.py
-%%DATADIR%%/HIG.py
-%%DATADIR%%/PhysicalDevice.py
-%%DATADIR%%/SearchCriterion.py
-%%DATADIR%%/ToolbarSearchEntry.py
-%%DATADIR%%/XmlHelper.py
-%%DATADIR%%/applet.py
-%%DATADIR%%/asyncconn.py
-%%DATADIR%%/asyncipp.py
-%%DATADIR%%/asyncpk0.py
-%%DATADIR%%/asyncpk1.py
-%%DATADIR%%/authconn.py
-%%DATADIR%%/config.py
-%%DATADIR%%/cupspk.py
-%%DATADIR%%/debug.py
-%%DATADIR%%/errordialogs.py
-%%DATADIR%%/firewall.py
-%%DATADIR%%/glade.py
-%%DATADIR%%/glade/AboutDialog.glade
-%%DATADIR%%/glade/ConnectDialog.glade
-%%DATADIR%%/glade/ConnectingDialog.glade
-%%DATADIR%%/glade/InstallDialog.glade
-%%DATADIR%%/glade/JobsWindow.glade
-%%DATADIR%%/glade/NewPrinterName.glade
-%%DATADIR%%/glade/NewPrinterWindow.glade
-%%DATADIR%%/glade/PrinterPropertiesDialog.glade
-%%DATADIR%%/glade/PrintersWindow.glade
-%%DATADIR%%/glade/SMBBrowseDialog.glade
-%%DATADIR%%/glade/ServerSettingsDialog.glade
-%%DATADIR%%/glade/WaitWindow.glade
-%%DATADIR%%/glade/statusicon_popupmenu.glade
-%%DATADIR%%/gtk_label_autowrap.py
-%%DATADIR%%/gtkinklevel.py
-%%DATADIR%%/gtkspinner.py
-%%DATADIR%%/icons/i-network-printer.png
-%%DATADIR%%/installpackage.py
-%%DATADIR%%/jobviewer.py
-%%DATADIR%%/monitor.py
-%%DATADIR%%/my-default-printer.py
-%%DATADIR%%/options.py
-%%DATADIR%%/optionwidgets.py
-%%DATADIR%%/ppdippstr.py
-%%DATADIR%%/probe_printer.py
-%%DATADIR%%/pysmb.py
-%%DATADIR%%/smburi.py
-%%DATADIR%%/statereason.py
-%%DATADIR%%/system-config-printer.py
-%%DATADIR%%/timedops.py
-%%DATADIR%%/troubleshoot/CheckLocalServerPublishing.py
-%%DATADIR%%/troubleshoot/CheckNetworkServerSanity.py
-%%DATADIR%%/troubleshoot/CheckPPDSanity.py
-%%DATADIR%%/troubleshoot/CheckPrinterSanity.py
-%%DATADIR%%/troubleshoot/CheckUSBPermissions.py
-%%DATADIR%%/troubleshoot/ChooseNetworkPrinter.py
-%%DATADIR%%/troubleshoot/ChoosePrinter.py
-%%DATADIR%%/troubleshoot/DeviceListed.py
-%%DATADIR%%/troubleshoot/ErrorLogCheckpoint.py
-%%DATADIR%%/troubleshoot/ErrorLogFetch.py
-%%DATADIR%%/troubleshoot/ErrorLogParse.py
-%%DATADIR%%/troubleshoot/LocalOrRemote.py
-%%DATADIR%%/troubleshoot/Locale.py
-%%DATADIR%%/troubleshoot/NetworkCUPSPrinterShared.py
-%%DATADIR%%/troubleshoot/PrintTestPage.py
-%%DATADIR%%/troubleshoot/PrinterStateReasons.py
-%%DATADIR%%/troubleshoot/QueueNotEnabled.py
-%%DATADIR%%/troubleshoot/QueueRejectingJobs.py
-%%DATADIR%%/troubleshoot/RemoteAddress.py
-%%DATADIR%%/troubleshoot/SchedulerNotRunning.py
-%%DATADIR%%/troubleshoot/ServerFirewalled.py
-%%DATADIR%%/troubleshoot/Shrug.py
-%%DATADIR%%/troubleshoot/Welcome.py
-%%DATADIR%%/troubleshoot/__init__.py
-%%DATADIR%%/troubleshoot/base.py
-%%DATADIR%%/userdefault.py
-@dirrm %%DATADIR%%/troubleshoot
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%
-@dirrmtry share/applications
-@dirrm %%PYTHON_SITELIBDIR%%/cupshelpers
+share/system-config-printer/HIG.py
+share/system-config-printer/PhysicalDevice.py
+share/system-config-printer/SearchCriterion.py
+share/system-config-printer/ToolbarSearchEntry.py
+share/system-config-printer/applet.py
+share/system-config-printer/asyncconn.py
+share/system-config-printer/asyncipp.py
+share/system-config-printer/asyncpk1.py
+share/system-config-printer/authconn.py
+share/system-config-printer/check-device-ids.py
+share/system-config-printer/config.py
+share/system-config-printer/cupspk.py
+share/system-config-printer/debug.py
+share/system-config-printer/dnssdresolve.py
+share/system-config-printer/errordialogs.py
+share/system-config-printer/firewallsettings.py
+share/system-config-printer/gtkinklevel.py
+share/system-config-printer/gui.py
+share/system-config-printer/icons/i-network-printer.png
+share/system-config-printer/install-printerdriver.py
+share/system-config-printer/installpackage.py
+share/system-config-printer/jobviewer.py
+share/system-config-printer/monitor.py
+share/system-config-printer/newprinter.py
+share/system-config-printer/options.py
+share/system-config-printer/optionwidgets.py
+share/system-config-printer/ppdcache.py
+share/system-config-printer/ppdippstr.py
+share/system-config-printer/ppdsloader.py
+share/system-config-printer/printerproperties.py
+share/system-config-printer/probe_printer.py
+share/system-config-printer/pysmb.py
+share/system-config-printer/scp-dbus-service.py
+share/system-config-printer/serversettings.py
+share/system-config-printer/smburi.py
+share/system-config-printer/statereason.py
+share/system-config-printer/system-config-printer.py
+share/system-config-printer/timedops.py
+share/system-config-printer/troubleshoot/CheckLocalServerPublishing.py
+share/system-config-printer/troubleshoot/CheckNetworkServerSanity.py
+share/system-config-printer/troubleshoot/CheckPPDSanity.py
+share/system-config-printer/troubleshoot/CheckPrinterSanity.py
+share/system-config-printer/troubleshoot/CheckSELinux.py
+share/system-config-printer/troubleshoot/CheckUSBPermissions.py
+share/system-config-printer/troubleshoot/ChooseNetworkPrinter.py
+share/system-config-printer/troubleshoot/ChoosePrinter.py
+share/system-config-printer/troubleshoot/DeviceListed.py
+share/system-config-printer/troubleshoot/ErrorLogCheckpoint.py
+share/system-config-printer/troubleshoot/ErrorLogFetch.py
+share/system-config-printer/troubleshoot/ErrorLogParse.py
+share/system-config-printer/troubleshoot/LocalOrRemote.py
+share/system-config-printer/troubleshoot/Locale.py
+share/system-config-printer/troubleshoot/NetworkCUPSPrinterShared.py
+share/system-config-printer/troubleshoot/PrintTestPage.py
+share/system-config-printer/troubleshoot/PrinterStateReasons.py
+share/system-config-printer/troubleshoot/QueueNotEnabled.py
+share/system-config-printer/troubleshoot/QueueRejectingJobs.py
+share/system-config-printer/troubleshoot/RemoteAddress.py
+share/system-config-printer/troubleshoot/SchedulerNotRunning.py
+share/system-config-printer/troubleshoot/ServerFirewalled.py
+share/system-config-printer/troubleshoot/Shrug.py
+share/system-config-printer/troubleshoot/VerifyPackages.py
+share/system-config-printer/troubleshoot/Welcome.py
+share/system-config-printer/troubleshoot/__init__.py
+share/system-config-printer/troubleshoot/base.py
+share/system-config-printer/ui/AboutDialog.ui
+share/system-config-printer/ui/ConnectDialog.ui
+share/system-config-printer/ui/ConnectingDialog.ui
+share/system-config-printer/ui/InstallDialog.ui
+share/system-config-printer/ui/JobsWindow.ui
+share/system-config-printer/ui/NewPrinterName.ui
+share/system-config-printer/ui/NewPrinterWindow.ui
+share/system-config-printer/ui/PrinterPropertiesDialog.ui
+share/system-config-printer/ui/PrintersWindow.ui
+share/system-config-printer/ui/SMBBrowseDialog.ui
+share/system-config-printer/ui/ServerSettingsDialog.ui
+share/system-config-printer/ui/WaitWindow.ui
+share/system-config-printer/ui/statusicon_popupmenu.ui
+share/system-config-printer/userdefault.py
+share/system-config-printer/xml/preferreddrivers.rng
+share/system-config-printer/xml/validate.py
+@dirrm share/system-config-printer/xml
+@dirrm share/system-config-printer/ui
+@dirrm share/system-config-printer/troubleshoot
+@dirrm share/system-config-printer/icons
+@dirrm share/system-config-printer
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -183,3 +201,5 @@ share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrm %%PYTHON_SITELIBDIR%%/cupshelpers
+@dirrm etc/cupshelpers

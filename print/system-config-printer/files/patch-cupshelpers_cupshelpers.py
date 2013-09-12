@@ -1,6 +1,6 @@
---- cupshelpers/cupshelpers.py.orig	2009-12-22 09:44:19.000000000 -0500
-+++ cupshelpers/cupshelpers.py	2009-12-29 00:08:26.000000000 -0500
-@@ -663,7 +663,7 @@
+--- cupshelpers/cupshelpers.py.orig	2013-07-22 15:58:32.000000000 +0200
++++ cupshelpers/cupshelpers.py	2013-08-29 11:18:44.000000000 +0200
+@@ -739,7 +739,7 @@
  
      # First, a local function.  How to check that something exists
      # in a path:
@@ -9,12 +9,3 @@
          if name == "-":
              # A filter of "-" means that no filter is required,
              # i.e. the device accepts the given format as-is.
-@@ -765,7 +765,7 @@
-                     continue
- 
-                 exepath = pathcheck (exe,
--                                     "/usr/lib/cups/filter:"
-+                                     "%%LOCALBASE%%/libexec/cups/filter:"
-                                      "/usr/lib64/cups/filter")
- 
-     if exe and not exepath:
