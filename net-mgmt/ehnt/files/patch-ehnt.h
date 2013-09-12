@@ -1,9 +1,17 @@
 
 $FreeBSD$
 
---- ehnt.h.orig	Thu Oct  4 22:18:29 2001
-+++ ehnt.h	Wed Jun 23 14:35:08 2004
-@@ -59,6 +59,7 @@
+--- ehnt.h.orig
++++ ehnt.h
+@@ -23,6 +23,7 @@
+ #include <errno.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <time.h>
+ #include <sys/socket.h>
+ #include <sys/socketvar.h>
+@@ -59,6 +60,7 @@
  
  struct ehnt_stats {
    double InBoundTotal, OutBoundTotal;
@@ -11,7 +19,7 @@ $FreeBSD$
    double *InBoundSrcAS, *InBoundDstAS, *OutBoundSrcAS, *OutBoundDstAS;
    double *InBoundProto, *OutBoundProto;
    double *InBoundSrcTcpPort, *InBoundDstTcpPort, 
-@@ -93,7 +94,7 @@
+@@ -93,7 +95,7 @@
  int ProcessFlow(struct flow_ver5_rec *, struct in_addr *, struct ehnt_struct *);
  int Init_ASN_Lookups(void);
  char * ASN_Lookup(int);
