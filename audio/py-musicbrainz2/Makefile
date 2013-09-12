@@ -1,11 +1,9 @@
-# New ports collection makefile for:	py-musicbrainz2
-# Date created:				Fri Mar 31 21:57:56 UTC 2006
-# Whom:					Alexander Botero-Lowry <alex@foxybanana.com>
-#
+# Created by: Alexander Botero-Lowry <alex@foxybanana.com>
 # $FreeBSD$
 
 PORTNAME=	musicbrainz2
 PORTVERSION=	0.7.4
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/python-musicbrainz2/ \
 		http://ftp.osuosl.org/pub/musicbrainz/python-musicbrainz2/
