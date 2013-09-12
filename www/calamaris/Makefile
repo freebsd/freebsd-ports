@@ -10,9 +10,8 @@ MASTER_SITES=	http://cord.de/tools/squid/calamaris/
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A perl script to produce statistics out of Squid log files
 
-USE_PERL5=	yes
+USES=		shebangfix perl5
 NO_BUILD=	yes
-USES=		shebangfix
 SHEBANG_FILES=	calamaris
 
 MAN1=		calamaris.1

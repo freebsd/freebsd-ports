@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	squid:${PORTSDIR}/www/squid
 
-USES=		shebangfix
-USE_PERL5=	yes
+USES=		shebangfix perl5
 NO_BUILD=	yes
 
 WWW_ROOT?=	www

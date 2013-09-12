@@ -19,9 +19,8 @@ RUN_DEPENDS=	p5-OLE-Storage_Lite>=0:${PORTSDIR}/devel/p5-OLE-Storage_Lite \
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-USES=		shebangfix
+USES=		shebangfix perl5
 USE_BZIP2=	yes
-USE_PERL5=	yes
 EXTRACT_CMD=	${BZCAT}
 EXTRACT_BEFORE_ARGS=	
 EXTRACT_AFTER_ARGS=	> ${PORTNAME}.pl

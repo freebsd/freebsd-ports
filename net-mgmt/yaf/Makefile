@@ -17,10 +17,9 @@ LIB_DEPENDS=	fixbuf:${PORTSDIR}/net/libfixbuf \
 		pcre.3:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		pkgconfig perl5
 USE_GNOME=	glib20 gnomehack
 USE_LDCONFIG=	yes
-USE_PERL5=	yes
 CONFIOGURE_ARGS+=	--disable-doxygen
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
