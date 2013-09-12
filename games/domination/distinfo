@@ -1,5 +1,5 @@
-SHA256 (domination/Domination_1.1.1.4.zip) = 22427a038a462184ee0f6533627a903423a5c1e3f3ce5da02cb77753f7ae441f
-SIZE (domination/Domination_1.1.1.4.zip) = 6333966
+SHA256 (domination/Domination_1.1.1.5.zip) = 6e0dd1c869679cc80c7904d6512cf9f6fc858a985b60c5a33f3f3291d716f740
+SIZE (domination/Domination_1.1.1.5.zip) = 6390032
 SHA256 (domination/solar.zip) = 38345a0921e485ccaf15e15a5ba2bc1281613d139481d0918fc055af653020e9
 SIZE (domination/solar.zip) = 160107
 SHA256 (domination/bigeurope.zip) = 55b574adb11d11ebd084d8b36e93f5b891fc6e69f26e842aa47ab7c9c75ce4d6
@@ -50,6 +50,8 @@ SHA256 (domination/northeurope.zip) = 1a835e3bd3ec0b0cfd37d608e1b7d90b35099f5ec9
 SIZE (domination/northeurope.zip) = 32588
 SHA256 (domination/germany1871.zip) = 02b9ed234ec4117968f1ea6f922ff85ab5b1abfa9198cc6b7da44a3434b6e5f4
 SIZE (domination/germany1871.zip) = 37069
+SHA256 (domination/Deutsches_Reich_1871.zip) = f20c7c7a0ad80acf4051ba1f62893759a172b31238ddf0d16b0adb97088f7d64
+SIZE (domination/Deutsches_Reich_1871.zip) = 65936
 SHA256 (domination/eesti.zip) = 012cd1019d706975f18087e1b97f22962e2963d517b1296129b80e64ca669274
 SIZE (domination/eesti.zip) = 77844
 SHA256 (domination/estonia.zip) = 9a59d1b966771f4f27ec2f011f244202e390591bacd43bd7477be9e849b82790

@@ -55,6 +55,8 @@ bin/domination-SwingGUI
 %%DATADIR%%/help/maingame.gif
 %%DATADIR%%/help/mainmenu.gif
 %%DATADIR%%/help/newgame.gif
+%%DATADIR%%/help/pspbrwse.jbf
+%%DATADIR%%/help/rules.htm
 %%DATADIR%%/help/server.gif
 %%DATADIR%%/help/server2.gif
 %%DATADIR%%/help/splash.jpg
@@ -100,6 +102,10 @@ bin/domination-SwingGUI
 %%DATADIR%%/maps/Conquest_crd.cards
 %%DATADIR%%/maps/Conquest_map.gif
 %%DATADIR%%/maps/Conquest_pic.png
+%%DATADIR%%/maps/Deutsches_Reich_1871.cards
+%%DATADIR%%/maps/Deutsches_Reich_1871.map
+%%DATADIR%%/maps/Deutsches_Reich_1871_map.gif
+%%DATADIR%%/maps/Deutsches_Reich_1871_pic.png
 %%DATADIR%%/maps/DiscWorld.cards
 %%DATADIR%%/maps/DiscWorld.map
 %%DATADIR%%/maps/DiscWorld_map.gif
