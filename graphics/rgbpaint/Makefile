@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rgbpaint
-# Date created:		4 April 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rgbpaint
 PORTVERSION=	0.8.7
@@ -14,7 +10,7 @@ MASTER_SITES=	SF/mtpaint/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very basic painting program
 
-USES=		gettext
+USES=		gettext pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 HAS_CONFIGURE=	yes

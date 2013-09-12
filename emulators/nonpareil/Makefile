@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-USES=		bison
+USES=		bison pkgconfig
 USE_GNOME=	gtk20 libxml2
 USE_SDL=	sdl
 USE_SCONS=	yes

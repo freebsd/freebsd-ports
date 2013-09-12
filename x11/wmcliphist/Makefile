@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmcliphist
-# Date created:				Thu Jul  5 14:43:55 EDT 2001
-# Whom:					Patrick Li <pat@databits.net>
-#
+# Created by: Patrick Li <pat@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	wmcliphist
 PORTVERSION=	1.0
@@ -17,6 +13,7 @@ MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Clipboard history management dockapp for Window Maker
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+USES=		pkgconfig
 USE_XORG=	xpm
 USE_GNOME=	gtk20
 

@@ -17,7 +17,7 @@ RUN_DEPENDS=	stratagus:${PORTSDIR}/games/stratagus
 
 LICENSE=	GPLv2
 NOT_FOR_ARCHS=	sparc64
-USES=		pathfix gmake
+USES=		pathfix gmake pkgconfig
 USE_CSTD=	gnu89
 USE_GNOME=	gtk20
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
