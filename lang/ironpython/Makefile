@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ironpython
-PORTVERSION=	2.7.3
+PORTVERSION=	2.7.4
 CATEGORIES=	lang python
 DISTNAME=	ipy-${PORTVERSION}
 
@@ -16,8 +16,8 @@ RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 USE_GITHUB=	yes
 GH_ACCOUNT=	IronLanguages
 GH_PROJECT=	main
-GH_TAGNAME=	ipy-2.7.3
-GH_COMMIT=	2ae9aee
+GH_TAGNAME=	ipy-2.7.4
+GH_COMMIT=	568c234
 
 SUB_FILES=	ipy ipy64
 
