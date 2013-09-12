@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	biggles
-# Date created:			Nov 25, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	biggles
 PORTVERSION=	1.6.6
@@ -19,14 +14,17 @@ COMMENT=	Create publication-quality 2D scientific plots
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYNUMPY}
-LIB_DEPENDS=	plot:${PORTSDIR}/graphics/plotutils
+LIB_DEPENDS=	libplot.so:${PORTSDIR}/graphics/plotutils
 
+USES=		gmake
 USE_PYTHON=	yes
-USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS} -fPIC" \
 		LIBPLOT_CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBPLOT_LDFLAGS="-L${LOCALBASE}/lib -lplot"
+
+post-patch:
+	@${REINPLACE_CMD} -e '/CC/s,gcc,$$\{CC\},' ${WRKSRC}/make.inc
 
 pre-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
