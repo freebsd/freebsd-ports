@@ -10,6 +10,11 @@ MASTER_SITES=	http://mplus.dk/${PORTNAME}/
 MAINTAINER=	ontherenth@gmail.com
 COMMENT=	Matrix calculator (with both GUI & console-interface)
 
+EXPIRATION_DATE=	2013-10-12
+DEPRECATED=	Unmaintained upstream
+
+IGNORE=		Does build with libc++
+
 USES=		pkgconfig
 USE_GNOME=	glib20 gtk20
 GNU_CONFIGURE=	yes
