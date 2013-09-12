@@ -12,10 +12,8 @@ COMMENT=	A ftp search engine supporting filename and description search
 RUN_DEPENDS=	glimpse:${PORTSDIR}/textproc/glimpse \
 		unzip:${PORTSDIR}/archivers/unzip
 
-USE_PERL5=	yes
+USES=		shebangfix perl5
 NO_BUILD=	yes
-
-USES=		shebangfix
 SHEBANG_FILES=	bin/*.pl template/ftplocate
 
 post-extract:

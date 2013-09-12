@@ -17,13 +17,12 @@ RUN_DEPENDS=	p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
 		p5-Net>=0:${PORTSDIR}/net/p5-Net
 
 NO_BUILD=	yes
-USE_PERL5=	yes
 
 DOCS=	FAQ INSTALL README README.loglevels README.mungelist TIPS TODO \
 	complete.tlb mj.tlb simple.tlb
 FIXPREFIX=	tlb mungelist complete.tlb mj.tlb simple.tlb
 
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	${FIXPREFIX}
 perl_OLD_CMD=	/usr/local/bin/perl5
 

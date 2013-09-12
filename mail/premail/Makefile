@@ -14,9 +14,8 @@ COMMENT=	E-mail privacy package, support anon remailers, PGP, nyms
 BUILD_DEPENDS+=	pgp:${PORTSDIR}/security/pgp
 
 WRKSRC=		${WRKDIR}/premail
-USE_PERL5=	yes
 NO_BUILD=	yes
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	premail
 
 do-install:

@@ -12,8 +12,8 @@ COMMENT=	Perl extension to read font files and render glyphs using FreeType2
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
-PERL_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		pkgconfig perl5
+USE_PERL5=	configure
 
 MAN3=	Font::FreeType.3 \
 	Font::FreeType::Face.3 \

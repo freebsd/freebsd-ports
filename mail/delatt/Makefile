@@ -14,8 +14,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
 
-USES=		shebangfix
-USE_PERL5_RUN=	yes
+USES=		shebangfix perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 
 SHEBANG_FILES=	delatt

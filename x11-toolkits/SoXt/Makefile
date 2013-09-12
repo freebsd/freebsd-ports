@@ -12,9 +12,9 @@ COMMENT=	GUI binding for using Open Inventor with Xt/Motif
 
 LIB_DEPENDS=	Coin.61:${PORTSDIR}/graphics/Coin
 
-USES=		motif pathfix
+USES=		motif pathfix perl5
 USE_GL=		yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 USE_XORG=	xi
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"

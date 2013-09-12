@@ -23,11 +23,10 @@ SUB_LIST=	SPOOLDIR=${SPOOLDIR}
 NO_LATEST_LINK=	yes
 CONFLICTS=	qmail-scanner-2.*
 
-USES=		qmail
+USES=		qmail perl5
 
 QMAIL_QUEUE=	${QMAIL_PREFIX}/bin/qmail-queue
 
-USE_PERL5=	yes
 NO_BUILD=	yes
 
 # Barely optionnal

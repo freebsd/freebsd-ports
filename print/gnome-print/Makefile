@@ -26,10 +26,8 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_PERL5=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier gnomelibs gnomecanvas
-USES=		gettext
+USES=		gettext gmake perl5
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

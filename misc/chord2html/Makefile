@@ -12,9 +12,8 @@ COMMENT=	Convert CHORD input files to HTML
 
 RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 
-USE_PERL5=	yes
+USES=		shebangfix perl5
 NO_BUILD=	yes
-USES=		shebangfix
 SHEBANG_FILES=	chord2html
 
 MAN1=	chord2html.1

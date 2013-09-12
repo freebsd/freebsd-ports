@@ -17,9 +17,9 @@ CONFLICTS=	imaputils-[0-9]*
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	*.pl
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/*.pl ${PREFIX}/bin
