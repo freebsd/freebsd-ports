@@ -10,7 +10,7 @@
 -
 -env.Append(CXXFLAGS = conf_env['CXXFLAGS'])
 +env = conf_env.Copy()
-+env.Append(LIBS    = ['GL', 'GLU', 'squirrel', 'physfs', 'SDL_image', 'openal', 'glew', 'ogg', 'vorbis', 'vorbisfile', 'png'])
++env.Append(LIBS    = ['GL', 'GLU', 'squirrel', 'physfs', 'SDL_image', 'openal', 'glew', 'ogg', 'vorbis', 'vorbisfile', 'png', 'iconv'])
 +env.Append(LIBPATH = ['../lib/'] )
 +env.Append(CPPPATH = ['.', '..', '../lib/SQUIRREL2/include/', '../lib/glew'])
  
