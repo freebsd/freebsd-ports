@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-type1inst
-# Date created:		7 Jan 1998
-# Whom:			giffunip@asme.org
-#
+# Created by: giffunip@asme.org
 # $FreeBSD$
-#
 
 PORTNAME=	type1inst
 PORTVERSION=	0.6.1
@@ -21,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 .endif
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 PORTDOCS=	README
 PLIST_FILES=	bin/t1embed bin/type1inst
