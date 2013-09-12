@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Weather-Underground
-# Date created:		2006-05-16
-# Whom:			Simon Olofsson <simon@olofsson.de>
-#
+# Created by: Simon Olofsson <simon@olofsson.de>
 # $FreeBSD$
-#
 
 PORTNAME=	Weather-Underground
 PORTVERSION=	3.03
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Weather::Underground.3
 

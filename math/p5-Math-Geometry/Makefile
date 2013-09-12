@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Math-Geometry
-# Date created:		2006-08-19
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-Geometry
 PORTVERSION=	0.04
@@ -16,7 +12,8 @@ COMMENT=	Geometry related functions
 
 RUN_DEPENDS=	p5-Math-Matrix>=0:${PORTSDIR}/math/p5-Math-Matrix
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Math::Geometry.3
 
