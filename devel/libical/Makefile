@@ -9,11 +9,11 @@ MASTER_SITES=	SF/freeassociation/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An implementation of the IETF Calendaring and Scheduling protocols
 
+USES=		gmake perl5
+USE_PERL5=	build
 USE_GNOME=	gnomehack ltverhack
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 

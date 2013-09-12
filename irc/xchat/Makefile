@@ -18,14 +18,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 CONFLICTS=	xchat-1* xchat-systray-plugin-[0-9]*
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		gettext pkgconfig
+USES=		gettext pkgconfig gmake
 USE_GNOME=	gnomehack gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--enable-ipv6
-WANT_PERL=	yes
 
 OPTIONS_DEFINE=	DBUS NOTIFY PERL PYTHON SOCKS TCL
 OPTIONS_DEFAULT=DBUS GTKSPELL PERL
@@ -66,7 +64,7 @@ RUN_DEPENDS+=	notify-send:${PORTSDIR}/devel/libnotify \
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=	yes
+USES+=		perl5
 CONFIGURE_ARGS+=--enable-perl
 PLIST_SUB+=	PERL=""
 .else

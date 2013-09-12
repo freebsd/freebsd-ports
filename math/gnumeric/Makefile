@@ -45,7 +45,7 @@ PERL_DESC=	Support Perl as extension language
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=		yes
+USES+=			perl5
 PLIST_SUB+=		PERL=""
 .else
 CONFIGURE_ARGS+=	--without-perl

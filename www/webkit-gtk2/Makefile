@@ -25,12 +25,10 @@ USE_XZ=		yes
 USE_PYTHON_BUILD=	yes
 USE_GSTREAMER=	yes
 USE_XORG=	xt
-USES=		bison pkgconfig gettext
-USE_GMAKE=	yes
+USES=		bison gmake pkgconfig gettext perl5
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk20 libxslt ltverhack
 USE_SQLITE=	yes
-USE_PERL5=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_FLEX="${LOCALBASE}/bin/flex" \
