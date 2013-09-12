@@ -1,11 +1,11 @@
---- makefile.orig	2013-02-18 02:20:43.000000000 -0500
-+++ makefile	2013-02-26 18:16:54.000000000 -0500
+--- makefile.orig	2013-08-31 05:20:24.000000000 +0200
++++ makefile	2013-09-11 13:10:02.007909736 +0200
 @@ -7,14 +7,7 @@
  # Also works with ming32-make on Windows.
  
  .SUFFIXES: .cxx .c .o .h .a
 -ifdef CLANG
--CC = clang --std=c++0x
+-CC = clang
 -CCOMP = clang
 -else
 -CC = g++
@@ -26,8 +26,8 @@
  endif
  
  vpath %.h ../src ../include ../lexlib
-@@ -63,16 +57,17 @@
- CFLAGS:=$(CXXTFLAGS)
+@@ -68,16 +62,17 @@
+ CXXTFLAGS:=--std=c++0x $(CTFLAGS)
  
  CONFIGFLAGS:=$(shell pkg-config --cflags $(GTKVERSION))
 +CONFIGLIBS:=$(shell pkg-config --libs $(GTKVERSION))
@@ -46,9 +46,9 @@
  
  clean:
  	$(DEL) *.o $(COMPLIB) *.plist
-@@ -88,9 +83,11 @@
+@@ -93,9 +88,11 @@
  	ScintillaBase.o ContractionState.o Editor.o ExternalLexer.o PropSetSimple.o PlatGTK.o \
- 	KeyMap.o LineMarker.o PositionCache.o ScintillaGTK.o CellBuffer.o ViewStyle.o \
+ 	KeyMap.o LineMarker.o PositionCache.o ScintillaGTK.o CellBuffer.o CharacterCategory.o ViewStyle.o \
  	RESearch.o RunStyles.o Selection.o Style.o Indicator.o AutoComplete.o UniConversion.o XPM.o \
 -	$(MARSHALLER) $(LEXOBJS)
 -	$(AR) rc $@ $^
