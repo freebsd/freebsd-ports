@@ -1,9 +1,5 @@
-# ports collection makefile for:	yflklog
-# Date created:		17 October 2007
-# Whom:			db
-#
+# Created by: db
 # $FreeBSD$
-#
 
 PORTNAME=	yfklog
 PORTVERSION=	0.3.5
@@ -25,7 +21,7 @@ RUN_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
 		hamlib>=0:${PORTSDIR}/comms/hamlib \
 		p5-Net-FTP-File>=0:${PORTSDIR}/net/p5-Net-FTP-File
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 MAN1=		yfklog.1
 

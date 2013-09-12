@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Shell-Perl
-# Date created:				2008-02-27
-# Whom:	      				Shinsuke Matsui <smatsui@karashi.org>
-#
+# Created by: Shinsuke Matsui <smatsui@karashi.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Shell-Perl
 PORTVERSION=	0.0022
@@ -25,7 +21,8 @@ BUILD_DEPENDS=	p5-Test-Script>=0:${PORTSDIR}/devel/p5-Test-Script \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
 		p5-Test-Expect>=0:${PORTSDIR}/devel/p5-Test-Expect
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		pirl.1
 MAN3=		Shell::Perl.3 Shell::Perl::Dumper.3

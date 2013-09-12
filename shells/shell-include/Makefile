@@ -1,9 +1,5 @@
-# New ports collection makefile for: qar-bufo
-# Date created:        18 April 2007
-# Whom:                Zane C. Bowers
-#
+# Created by: Zane C. Bowers
 # $FreeBSD$
-#
 
 PORTNAME=	shell-include
 PORTVERSION=	0.1.2
@@ -14,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	A include system for shell scripts
 
-USE_PERL5=	yes
+USES=		perl5
 
 MAN3=		random::shortIntRandom.3 \
 		random.3 \

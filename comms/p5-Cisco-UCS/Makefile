@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Cisco::UCS.3 Cisco::UCS::Blade.3 Cisco::UCS::Chassis.3 \
 		Cisco::UCS::Common::EthernetPort.3 Cisco::UCS::Common::Fan.3 \

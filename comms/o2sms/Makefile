@@ -1,9 +1,5 @@
-# New ports collection makefile for:    o2sms
-# Date created:				June 13th, 2006
-# Whom:	      				Conor McDermottroe <ports@mcdermottroe.com>
-#
+# Created by: Conor McDermottroe <ports@mcdermottroe.com>
 # $FreeBSD$
-#
 
 PORTNAME=	o2sms
 PORTVERSION=	3.36
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-TestGen4Web-Runner>=0:${PORTSDIR}/www/p5-TestGen4Web-Runner
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		aftsms.1 \
 		o2sms.1 \
