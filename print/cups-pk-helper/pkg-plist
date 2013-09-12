@@ -1,4 +1,34 @@
 etc/dbus-1/system.d/org.opensuse.CupsPkHelper.Mechanism.conf
 libexec/cups-pk-helper-mechanism
-share/PolicyKit/policy/org.opensuse.cupspkhelper.mechanism.policy
 share/dbus-1/system-services/org.opensuse.CupsPkHelper.Mechanism.service
+share/locale/cs/LC_MESSAGES/cups-pk-helper.mo
+share/locale/de/LC_MESSAGES/cups-pk-helper.mo
+share/locale/eo/LC_MESSAGES/cups-pk-helper.mo
+share/locale/es/LC_MESSAGES/cups-pk-helper.mo
+share/locale/eu/LC_MESSAGES/cups-pk-helper.mo
+share/locale/fi/LC_MESSAGES/cups-pk-helper.mo
+share/locale/fr/LC_MESSAGES/cups-pk-helper.mo
+share/locale/gl/LC_MESSAGES/cups-pk-helper.mo
+share/locale/hr/LC_MESSAGES/cups-pk-helper.mo
+share/locale/hu/LC_MESSAGES/cups-pk-helper.mo
+share/locale/ia/LC_MESSAGES/cups-pk-helper.mo
+share/locale/id/LC_MESSAGES/cups-pk-helper.mo
+share/locale/it/LC_MESSAGES/cups-pk-helper.mo
+share/locale/ja/LC_MESSAGES/cups-pk-helper.mo
+share/locale/ka/LC_MESSAGES/cups-pk-helper.mo
+share/locale/ko/LC_MESSAGES/cups-pk-helper.mo
+share/locale/lv/LC_MESSAGES/cups-pk-helper.mo
+share/locale/nl/LC_MESSAGES/cups-pk-helper.mo
+share/locale/pl/LC_MESSAGES/cups-pk-helper.mo
+share/locale/pt_BR/LC_MESSAGES/cups-pk-helper.mo
+share/locale/sk/LC_MESSAGES/cups-pk-helper.mo
+share/locale/sl/LC_MESSAGES/cups-pk-helper.mo
+share/locale/sr/LC_MESSAGES/cups-pk-helper.mo
+share/locale/sv/LC_MESSAGES/cups-pk-helper.mo
+share/locale/tr/LC_MESSAGES/cups-pk-helper.mo
+share/locale/uk/LC_MESSAGES/cups-pk-helper.mo
+share/locale/zh_CN/LC_MESSAGES/cups-pk-helper.mo
+share/locale/zh_TW/LC_MESSAGES/cups-pk-helper.mo
+share/polkit-1/actions/org.opensuse.cupspkhelper.mechanism.policy
+@dirrmtry share/locale/ia/LC_MESSAGES
+@dirrmtry share/locale/ia
