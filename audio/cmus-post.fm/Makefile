@@ -13,9 +13,9 @@ COMMENT=	Last.fm submitter
 RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
 		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable
 
-USES=	shebangfix
+USES=	shebangfix perl5
 USE_BZIP2=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 SUB_FILES=	pkg-message
 NO_BUILD=	yes
 PLIST_FILES=	libexec/${PORTNAME} %%EXAMPLESDIR%%/${PORTNAME}.conf

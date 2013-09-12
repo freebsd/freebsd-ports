@@ -14,9 +14,8 @@ COMMENT=	Perl script to make BDF font bold
 CONFLICTS=	mkbold-mkitalic-[0-9]*
 
 PLIST_FILES=	bin/mkbold
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	mkbold
-USE_PERL5=	yes
 EXTRACT_CMD=	${BZCAT}
 EXTRACT_BEFORE_ARGS=	#
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/mkbold

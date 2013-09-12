@@ -14,8 +14,8 @@ LIB_DEPENDS=	gimp-2.0:${PORTSDIR}/graphics/gimp-app
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
 USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
-USE_PERL5_BUILD=yes
+USES=		gettext gmake pkgconfig perl5
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack intltool
 

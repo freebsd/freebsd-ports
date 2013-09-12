@@ -13,12 +13,10 @@ COMMENT=	Photometric calibration of cameras and recovery HDR images from the set
 PFS_CPPFLAGS=	-I${LOCALBASE}/include
 PFS_LDFLAGS=	-L${LOCALBASE}/lib
 
-USES=		pkgconfig shebangfix
+USES=		gmake pkgconfig shebangfix perl5
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${PFS_CPPFLAGS}
 LDFLAGS+=	${PFS_LDFLAGS}
-USE_GMAKE=	yes
-USE_PERL5=	yes
 
 LIB_DEPENDS=	pfs-1.2:${PORTSDIR}/graphics/pfstools
 

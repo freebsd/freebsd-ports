@@ -10,9 +10,8 @@ MASTER_SITES=	http://www.math.missouri.edu/~stephen/naturalmath/
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Script to turn intuitively written math into latex
 
-USE_PERL5=	yes
 USE_TEX=	latex:build dvipsk:build
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	naturalmath
 
 do-build:

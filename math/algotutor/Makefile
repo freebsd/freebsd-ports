@@ -13,7 +13,7 @@ COMMENT=	Interactive tutorial for algorithms and data structures
 BUILD_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 NO_BUILD=	yes
 
 MAN1=		algotutor.1 gen_at_graph.1
@@ -23,7 +23,7 @@ LIBFILES=	BST.pm Board.pm Collection.pm Configurable.pm DCEdge.pm \
 		RecCanvas.pm RecDialog.pm TreeNode.pm Vector.pm Vector2.pm \
 		Vector3.pm Vertex.pm basic.pl utilalgo
 
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	algotutor
 
 post-patch:
