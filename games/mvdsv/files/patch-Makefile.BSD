@@ -18,3 +18,16 @@
  QWDTOOLS_ASM_OBJS = \
  		${SV_DIR}/bothtoolsa.o
  .endif
+@@ -129,10 +129,10 @@
+ #############################################################################
+ 
+ .c.o:
+-		${CC} ${DO_CFLAGS} -c $< -o $*.o
++		${CC} ${DO_CFLAGS} -c $< -o $@
+ 
+ .s.o:
+-		${CC} ${DO_CFLAGS} -DELF -x assembler-with-cpp -c $< -o $*.o
++		${CC} ${DO_CFLAGS} -DELF -x assembler-with-cpp -c $< -o $@
+ 		
+ all:	mvdsv qwdtools
+ 		${STRIP} ${STRIP_FLAGS} mvdsv qwdtools
