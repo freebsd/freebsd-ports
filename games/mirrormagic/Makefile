@@ -39,6 +39,7 @@ post-patch:
 		${WRKSRC}/src/libgame/sound.h
 	@${REINPLACE_CMD} -e 's|machine/joystick.h|sys/joystick.h|' \
 		${WRKSRC}/src/tools.c
+	@${REINPLACE_CMD} -e 's|inline||' ${WRKSRC}/src/libgame/*.[ch]
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mirrormagic ${PREFIX}/bin
