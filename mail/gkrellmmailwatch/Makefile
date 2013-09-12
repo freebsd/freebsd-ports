@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gkrellm-mailwatch
-# Date Created:		22.08.2000
-# Whom:			Tobias Reifenberger <treif@mayn.de>
-#
+# Created by: Tobias Reifenberger <treif@mayn.de>
 # $FreeBSD$
-#
 
 PORTNAME=	gkrellmmailwatch
 PORTVERSION=	0.7.2
@@ -19,6 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrel
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
 PLIST_FILES=	libexec/gkrellm/plugins/mailwatch.so
+USES=		pkgconfig
 USE_GNOME=	imlib
 
 do-install:

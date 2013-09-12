@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pidgin-manualsize
-# Date created:		8 May 2008
-# Whom:			Joseph S. Atkinson <jsatkinson@embarqmail.com>
-#
+# Created by: Joseph S. Atkinson <jsatkinson@embarqmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	manualsize
 PORTVERSION=	0.7
@@ -24,6 +20,7 @@ MAKEFILE=	makefile
 
 PLIST_FILES=	lib/pidgin/manualsize.so
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 ALL_TARGET=	manualsize.so
 

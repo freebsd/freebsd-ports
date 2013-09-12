@@ -14,8 +14,7 @@ BUILD_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura
 RUN_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura
 
 USE_GNOME=	glib20 gtk20
-USE_GMAKE=	yes
-USES=		desktop-file-utils
+USES=		desktop-file-utils gmake pkgconfig
 
 PLIST_FILES=	lib/zathura/pdf.so \
 		share/applications/zathura-pdf-poppler.desktop

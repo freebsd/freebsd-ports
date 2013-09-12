@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fcitx-sunpinyin
-# Date created:				10 Nov 2011
-# Whom:			Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fcitx-sunpinyin
 PORTVERSION=	0.3.9
@@ -19,7 +15,7 @@ BUILD_DEPENDS=	zh-sunpinyin>=2.0.4.r2:${PORTSDIR}/chinese/sunpinyin
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_XZ=		yes
-USES=		cmake gettext
+USES=		cmake gettext pkgconfig
 USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 

@@ -22,6 +22,7 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		glademm-2.4:${PORTSDIR}/devel/libglademm24 \
 		flowcanvas.5:${PORTSDIR}/x11-toolkits/flowcanvas
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=yes
 INSTALLS_ICONS=	yes
