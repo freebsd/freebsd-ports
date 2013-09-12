@@ -33,6 +33,7 @@ lib/calibre/calibre/db/backend.py
 lib/calibre/calibre/db/backup.py
 lib/calibre/calibre/db/cache.py
 lib/calibre/calibre/db/categories.py
+lib/calibre/calibre/db/delete_service.py
 lib/calibre/calibre/db/errors.py
 lib/calibre/calibre/db/fields.py
 lib/calibre/calibre/db/lazy.py
@@ -47,10 +48,13 @@ lib/calibre/calibre/db/tests/add_remove.py
 lib/calibre/calibre/db/tests/base.py
 lib/calibre/calibre/db/tests/filesystem.py
 lib/calibre/calibre/db/tests/legacy.py
+lib/calibre/calibre/db/tests/locking.py
 lib/calibre/calibre/db/tests/main.py
 lib/calibre/calibre/db/tests/profiling.py
 lib/calibre/calibre/db/tests/reading.py
+lib/calibre/calibre/db/tests/utils.py
 lib/calibre/calibre/db/tests/writing.py
+lib/calibre/calibre/db/utils.py
 lib/calibre/calibre/db/view.py
 lib/calibre/calibre/db/write.py
 lib/calibre/calibre/debug.py
@@ -231,6 +235,8 @@ lib/calibre/calibre/ebooks/docx/to_html.py
 lib/calibre/calibre/ebooks/docx/toc.py
 lib/calibre/calibre/ebooks/docx/block_styles.py
 lib/calibre/calibre/ebooks/docx/lcid.py
+lib/calibre/calibre/ebooks/docx/writer/__init__.py
+lib/calibre/calibre/ebooks/docx/writer/container.py
 lib/calibre/calibre/ebooks/epub/__init__.py
 lib/calibre/calibre/ebooks/epub/pages.py
 lib/calibre/calibre/ebooks/epub/periodical.py
@@ -596,6 +602,7 @@ lib/calibre/calibre/gui2/actions/save_to_disk.py
 lib/calibre/calibre/gui2/actions/show_book_details.py
 lib/calibre/calibre/gui2/actions/show_quickview.py
 lib/calibre/calibre/gui2/actions/similar_books.py
+lib/calibre/calibre/gui2/actions/sort.py
 lib/calibre/calibre/gui2/actions/store.py
 lib/calibre/calibre/gui2/actions/toc_edit.py
 lib/calibre/calibre/gui2/actions/tweak_epub.py
@@ -665,6 +672,8 @@ lib/calibre/calibre/gui2/convert/rb_output.py
 lib/calibre/calibre/gui2/convert/rb_output_ui.py
 lib/calibre/calibre/gui2/convert/regex_builder.py
 lib/calibre/calibre/gui2/convert/regex_builder_ui.py
+lib/calibre/calibre/gui2/convert/rtf_input.py
+lib/calibre/calibre/gui2/convert/rtf_input_ui.py
 lib/calibre/calibre/gui2/convert/search_and_replace.py
 lib/calibre/calibre/gui2/convert/search_and_replace_ui.py
 lib/calibre/calibre/gui2/convert/single.py
@@ -696,7 +705,6 @@ lib/calibre/calibre/gui2/dialogs/add_empty_book.py
 lib/calibre/calibre/gui2/dialogs/add_from_isbn.py
 lib/calibre/calibre/gui2/dialogs/add_from_isbn_ui.py
 lib/calibre/calibre/gui2/dialogs/book_info.py
-lib/calibre/calibre/gui2/dialogs/book_info_ui.py
 lib/calibre/calibre/gui2/dialogs/catalog.py
 lib/calibre/calibre/gui2/dialogs/catalog_ui.py
 lib/calibre/calibre/gui2/dialogs/check_library.py
@@ -776,6 +784,8 @@ lib/calibre/calibre/gui2/keyboard.py
 lib/calibre/calibre/gui2/languages.py
 lib/calibre/calibre/gui2/layout.py
 lib/calibre/calibre/gui2/library/__init__.py
+lib/calibre/calibre/gui2/library/alternate_views.py
+lib/calibre/calibre/gui2/library/caches.py
 lib/calibre/calibre/gui2/library/delegates.py
 lib/calibre/calibre/gui2/library/models.py
 lib/calibre/calibre/gui2/library/views.py
@@ -1042,6 +1052,7 @@ lib/calibre/calibre/translations/dynamic.py
 lib/calibre/calibre/translations/msgfmt.py
 lib/calibre/calibre/utils/Zeroconf.py
 lib/calibre/calibre/utils/__init__.py
+lib/calibre/calibre/utils/apsw_shell.py
 lib/calibre/calibre/utils/bibtex.py
 lib/calibre/calibre/utils/browser.py
 lib/calibre/calibre/utils/chm/__init__.py
@@ -1139,7 +1150,6 @@ lib/calibre/calibre/utils/threadpool.py
 lib/calibre/calibre/utils/titlecase.py
 lib/calibre/calibre/utils/unsmarten.py
 lib/calibre/calibre/utils/unrar.py
-lib/calibre/calibre/utils/winshell.py
 lib/calibre/calibre/utils/wmf/__init__.py
 lib/calibre/calibre/utils/wmf/parse.py
 lib/calibre/calibre/utils/wordcount.py
@@ -1480,6 +1490,7 @@ share/applications/calibre-lrfviewer.desktop
 %%DATADIR%%/images/format-text-underline.png
 %%DATADIR%%/images/forward.png
 %%DATADIR%%/images/gmail_logo.png
+%%DATADIR%%/images/grid.png
 %%DATADIR%%/images/help.png
 %%DATADIR%%/images/heuristics.png
 %%DATADIR%%/images/highlight_only_off.png
@@ -2037,6 +2048,7 @@ share/zsh/site-functions/_calibre
 @dirrm lib/calibre/calibre/ebooks/html
 @dirrm lib/calibre/calibre/ebooks/fb2
 @dirrm lib/calibre/calibre/ebooks/epub
+@dirrm lib/calibre/calibre/ebooks/docx/writer
 @dirrm lib/calibre/calibre/ebooks/docx
 @dirrm lib/calibre/calibre/ebooks/djvu
 @dirrm lib/calibre/calibre/ebooks/conversion/plugins
