@@ -26,10 +26,9 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		rest:${PORTSDIR}/devel/librest
 
 USE_XZ=		yes
-USES=		shebangfix gettext desktop-file-utils
+USES=		shebangfix gettext desktop-file-utils gmake pkgconfig
 USE_GNOME=	gnomehier gconf2 gtk20 librsvg2
 USE_SQLITE=	3
-USE_GMAKE=	yes
 USE_GSTREAMER1=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-icon-update

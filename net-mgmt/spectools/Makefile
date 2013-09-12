@@ -18,7 +18,7 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 
 PORTDOCS=	README
 

@@ -14,7 +14,7 @@ BUILD_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura
 RUN_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura
 
 USE_GNOME=	glib20 gtk20
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 
 PLIST_FILES=	lib/zathura/djvu.so
 PLIST_DIRSTRY=	lib/zathura

@@ -20,9 +20,8 @@ GH_COMMIT=	28cade5
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl"
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_AUTOTOOLS=	aclocal automake
-USE_GMAKE=	yes
 AUTOMAKE_ARGS=	--add-missing
 USE_GCC=	any # uses nested functions (gcc ext.)
 
