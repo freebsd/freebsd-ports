@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vuze
-PORTVERSION=	5.0.0.0
+PORTVERSION=	5.1.0.0
 CATEGORIES=	net-p2p java
 MASTER_SITES=	SF/azureus/vuze/Vuze_${PORTVERSION:S/.//g}
 DISTNAME=	Vuze_${PORTVERSION:S/.//g}_source
@@ -12,7 +12,9 @@ COMMENT=	BitTorrent client written in Java
 
 BUILD_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
 		${JAVALIBDIR}/commons-cli.jar:${PORTSDIR}/java/jakarta-commons-cli \
-		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
+		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
+		${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
+RUN_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -23,10 +25,6 @@ NO_WRKSUBDIR=	yes
 INSTALLS_ICONS=	yes
 
 JARFILE=	${PORTNAME}.jar
-
-OPTIONS_DEFINE=	SWTDEVEL
-OPTIONS_DEFAULT=	SWTDEVEL
-SWTDEVEL_DESC=	Use SWT Development port
 
 # build classpath from BUILD_DEPENDS
 MAKE_ENV=	LANG=C
@@ -40,7 +38,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} \
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	LIBDIR="${LOCALBASE}/lib" JARFILE="${JARFILE}" \
-		SWTJAR="${JAVALIBDIR}/${SWT}.jar" JAVA="${LOCALBASE}/bin/java"
+		SWTJAR="${JAVALIBDIR}/swt-devel.jar" JAVA="${LOCALBASE}/bin/java"
 
 DESKTOP_ENTRIES=	"Vuze" \
 			"BitTorrent client" \
@@ -48,18 +46,6 @@ DESKTOP_ENTRIES=	"Vuze" \
 			"${PORTNAME}" \
 			"Network;P2P;Java;" \
 			true
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSWTDEVEL}
-SWT=		swt-devel
-BUILD_DEPENDS+=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
-RUN_DEPENDS+=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
-.else
-SWT=		swt
-BUILD_DEPENDS+=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt
-RUN_DEPENDS+=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt
-.endif
 
 CLASSPATH=.
 .for jar in ${CLASSPATH_JARS}
