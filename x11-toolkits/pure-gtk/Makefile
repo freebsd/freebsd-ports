@@ -10,6 +10,7 @@ COMMENT=	A set of Pure language bindings for GTK+
 
 LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
 
+USES=		pkgconfig
 USE_PURE=	ffi
 USE_GNOME=	glib20 gtk20 atk pango
 

@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure shell and telnet client
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 MAKEFILE=	Makefile.gtk
 

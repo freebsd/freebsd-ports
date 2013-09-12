@@ -16,7 +16,7 @@ LIB_DEPENDS=	Imlib2.5:${PORTSDIR}/graphics/imlib2
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 
 

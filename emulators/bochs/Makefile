@@ -74,7 +74,7 @@ VMX_DESC=	Enable Virtialization extensions
 VOODOO_DESC=	Enable 3dfx Voodoo Graphics emulation
 X86_64_DESC=	Enable x86-64 instructions support
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	ac_cv_header_alsa_asoundlib_h=no
 CONFIGURE_ARGS=	--disable-docbook --disable-instrumentation

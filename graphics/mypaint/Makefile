@@ -24,7 +24,7 @@ USE_GNOME=	glib20 pygtk2
 USE_PYTHON=	yes
 USE_SCONS=	yes
 SCONS_ARGS=	prefix="${PREFIX}"
-USES=		gettext
+USES=		gettext pkgconfig
 INSTALLS_ICONS=	yes
 
 SUB_FILES=	pkg-install

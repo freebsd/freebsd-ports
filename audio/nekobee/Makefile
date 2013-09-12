@@ -21,6 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gordonjcp
 GH_COMMIT=	3f4737f
 
+USES=		pkgconfig
 USE_GNOME=	gtk20
 
 CPPFLAGS+=	-I${LOCALBASE}/include/dssi -I${LOCALBASE}/include

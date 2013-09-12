@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 CONFLICTS=	e-uae-[0-9]*
 
 USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS=	--enable-sound
 USE_GNOME=	gtk20

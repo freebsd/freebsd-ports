@@ -11,7 +11,7 @@ COMMENT=	Lightweight image viewer
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 MAKE_ARGS=	INSTALLPREFIX="${PREFIX}"
 ALL_TARGET=	${PORTNAME}

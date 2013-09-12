@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmctrl
-# Date created:				Feb 10 2004
-# Whom:					Florent Thoumie <flz@xbsd.org>
-#
+# Created by: Florent Thoumie <flz@xbsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wmctrl
 PORTVERSION=	1.07
@@ -14,6 +10,7 @@ MASTER_SITES=	http://sweb.cz/tripie/utils/wmctrl/dist/
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Command line tool to interact with an EWMH/NetWM compatible X managers
 
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xmu xext xt
 USE_GNOME=	glib20

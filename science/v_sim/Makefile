@@ -17,11 +17,11 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
 
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
 USE_FORTRAN=	yes
 USE_GNOME=	gtk20
 USE_GL=		yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc
 CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include

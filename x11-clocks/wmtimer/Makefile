@@ -15,7 +15,7 @@ COMMENT=	Multi-Function timer dockapp for WindowMaker
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmtimer
 PORTDOCS=	README
 PLIST_FILES=	bin/wmtimer
-USES=		gmake
+USES=		gmake pkgconfig
 USE_CSTD=	gnu89
 USE_XORG=	x11 xau xcomposite xcursor xdamage xdmcp xext xfixes xi \
 		xinerama xpm xrandr xrender
