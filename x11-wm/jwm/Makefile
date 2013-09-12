@@ -7,12 +7,12 @@ PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF http://joewing.net/programs/jwm/releases/
 
-MAINTAINER=	admin@mjbrune.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Joe's Window Manager
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 USES=		pkgconfig
 USE_XORG=	xpm
@@ -28,11 +28,11 @@ OPTIONS_DEFINE=	FRIBIDI XFT XINERAMA JPEG DEBUG
 OPTIONS_DEFAULT=	FRIBIDI XFT XINERAMA JPEG
 DEBUG_DESC=	Enable debugging
 
-.include <bsd.port.options.mk>
+FRIBIDI_BUILD_DEPENDS=	fribidi:${PORTSDIR}/converters/fribidi
+JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+DEBUG_CONFIGURE_ON=	--enable-debug
 
-.if ${PORT_OPTIONS:MFRIBIDI}
-BUILD_DEPENDS+=	fribidi:${PORTSDIR}/converters/fribidi
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXFT}
 USE_XORG+=	xft
@@ -40,14 +40,6 @@ USE_XORG+=	xft
 
 .if ${PORT_OPTIONS:MXINERAMA}
 USE_XORG+=	xinerama
-.endif
-
-.if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 post-patch:
