@@ -2,9 +2,6 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/__init__.py
 %%PYTHON_SITELIBDIR%%/django/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/__init__.pyo
-%%PYTHON_SITELIBDIR%%/django/bin/__init__.py
-%%PYTHON_SITELIBDIR%%/django/bin/__init__.pyc
-%%PYTHON_SITELIBDIR%%/django/bin/__init__.pyo
 %%PYTHON_SITELIBDIR%%/django/bin/daily_cleanup.py
 %%PYTHON_SITELIBDIR%%/django/bin/daily_cleanup.pyc
 %%PYTHON_SITELIBDIR%%/django/bin/daily_cleanup.pyo
@@ -583,6 +580,8 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/conf/locale/zh_TW/formats.pyc
 %%PYTHON_SITELIBDIR%%/django/conf/locale/zh_TW/formats.pyo
 %%PYTHON_SITELIBDIR%%/django/conf/project_template/manage.py
+%%PYTHON_SITELIBDIR%%/django/conf/project_template/manage.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/project_template/manage.pyo
 %%PYTHON_SITELIBDIR%%/django/conf/project_template/project_name/__init__.py
 %%PYTHON_SITELIBDIR%%/django/conf/project_template/project_name/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/conf/project_template/project_name/__init__.pyo
@@ -620,6 +619,8 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/actions.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/actions.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/bin/compress.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/bin/compress.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/bin/compress.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/filters.py
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/filters.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/filters.pyo
@@ -4427,6 +4428,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/sessions/models.py
 %%PYTHON_SITELIBDIR%%/django/contrib/sessions/models.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/sessions/models.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/sessions/serializers.py
+%%PYTHON_SITELIBDIR%%/django/contrib/sessions/serializers.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/sessions/serializers.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/sessions/tests.py
 %%PYTHON_SITELIBDIR%%/django/contrib/sessions/tests.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/sessions/tests.pyo
