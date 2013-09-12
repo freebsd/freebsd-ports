@@ -25,12 +25,10 @@ RUN_DEPENDS=	p5-XML-XQL>=0:${PORTSDIR}/textproc/p5-XML-XQL
 
 USE_BZIP2=	yes
 USE_GCC=	any
-USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack desktopfileutils intlhack libxslt
-USES=		gettext
+USES=		gettext gmake perl5
 GNU_CONFIGURE=	yes
-USE_PERL5=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
