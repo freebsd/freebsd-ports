@@ -1,9 +1,4 @@
-# New ports collection makefile for:	synergy
-# Date created:		26 March 2003
-# Whom:			Kevin Lo <kevlo@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	synergy
 PORTVERSION=	1.3.8
@@ -14,8 +9,13 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Mouse and keyboard sharing utility
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		cmake
 USE_XORG=	ice xtst x11 sm
+
+MAKE_JOBS_UNSAFE=yes
 
 CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include
 
