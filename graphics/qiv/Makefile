@@ -12,13 +12,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, fast GDK/Imlib2 image viewer
 
-LIB_DEPENDS=	Imlib2.5:${PORTSDIR}/graphics/imlib2
-
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
 
 USES=		gmake pkgconfig
 USE_GNOME=	gtk20
-
 
 OPTIONS_DEFINE=	XINERAMA
 
@@ -28,7 +27,7 @@ USE_XORG+=	x11
 
 .include <bsd.port.options.mk>
 
-pre-configure:
+post-patch-script:
 .if ${PORT_OPTIONS:MXINERAMA}
 USE_XORG+=	xinerama
 .else
