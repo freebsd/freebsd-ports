@@ -1,20 +1,11 @@
---- applet.py.orig	2009-12-22 09:44:19.000000000 -0500
-+++ applet.py	2009-12-29 00:06:27.000000000 -0500
+--- applet.py.orig	2013-07-22 15:58:32.000000000 +0200
++++ applet.py	2013-08-29 11:06:43.000000000 +0200
 @@ -43,7 +43,7 @@
-     os.environ['LC_ALL'] = 'C'
-     locale.setlocale (locale.LC_ALL, "")
+ 
+ from gi.repository import Notify
  
 -APPDIR="/usr/share/system-config-printer"
 +APPDIR="%%PREFIX%%/share/system-config-printer"
- DOMAIN="system-config-printer"
  ICON="printer"
- SEARCHING_ICON="document-print-preview"
-@@ -234,7 +234,7 @@
-         pid = os.fork ()
-         if pid == 0:
-             # Child.
--            cmd = "/usr/bin/system-config-printer"
-+            cmd = "%%PREFIX%%/bin/system-config-printer"
-             argv.insert (0, cmd)
-             os.execvp (cmd, argv)
-             sys.exit (1)
+ 
+ # We need to call Notify.init before we can check the server for caps
