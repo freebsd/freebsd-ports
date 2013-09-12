@@ -1510,6 +1510,7 @@
     SUBDIR += py-django-piston
     SUBDIR += py-django-profiles
     SUBDIR += py-django-registration
+    SUBDIR += py-django-registration-defaults
     SUBDIR += py-django-reversion
     SUBDIR += py-django-sekizai
     SUBDIR += py-django-signals-ahoy
