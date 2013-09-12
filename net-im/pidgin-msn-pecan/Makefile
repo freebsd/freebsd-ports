@@ -1,9 +1,5 @@
-# New ports collection makefile for:   pidgin-msn-pecan
-# Date created:		30 July 2008
-# Whom:			hrkfrd@gmail.com
-#
+# Created by: hrkfrd@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	msn-pecan
 PORTVERSION=	0.1.0.r1
@@ -23,9 +19,8 @@ LIB_DEPENDS=	purple.10:${PORTSDIR}/net-im/libpurple
 
 PROJECTHOST=	msn-pecan
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 
 post-install:
 	${GMAKE} -C ${WRKSRC} install_locales

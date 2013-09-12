@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gimp-data-extras
-# Date created:		2008-02-23
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gimp-data-extras
 PORTVERSION=	2.0.2
@@ -23,6 +19,7 @@ COMMENT=	Collection of additional brushes and patterns files for GIMP
 
 LIB_DEPENDS=	gimp-2.0.0:${PORTSDIR}/graphics/gimp-app
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 

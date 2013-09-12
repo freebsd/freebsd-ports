@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fcitx-ui-light
-# Date created:				09 Nov 2011
-# Whom:			Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fcitx-ui-light
 PORTVERSION=	0.1.3
@@ -20,7 +16,7 @@ LIB_DEPENDS=	fcitx-config.4:${PORTSDIR}/chinese/fcitx \
 
 USE_BZIP2=	yes
 USE_XORG=	x11 xft xpm
-USES=		cmake gettext
+USES=		cmake gettext pkgconfig
 USE_GNOME=	intltool
 
 PROJECTHOST=	fcitx

@@ -14,7 +14,7 @@ LIB_DEPENDS=	fcitx-config:${PORTSDIR}/chinese/fcitx \
 		googlepinyin:${PORTSDIR}/chinese/libgooglepinyin
 
 USE_XZ=		yes
-USES=		cmake gettext
+USES=		cmake gettext pkgconfig
 USE_GNOME=	intltool
 
 PROJECTHOST=	fcitx

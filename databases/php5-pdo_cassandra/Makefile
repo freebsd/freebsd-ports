@@ -21,6 +21,7 @@ GITHUB_USER=	mkoppanen
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/${GITHUB_USER}-php-${PORTNAME}-${GITREVISION}
 
+USES=		pkgconfig
 USE_PHP_BUILD=	yes
 USE_PHP=	pdo
 USE_PHPEXT=	yes
