@@ -1,9 +1,5 @@
-# New ports collection makefile for:    Math::Random::Secure
-# Date created:                         15 March 2011
-# Whom:                                 Dereckson <dereckson@gmail.com>
-#
+# Created by: Dereckson <dereckson@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-Random-Secure
 PORTVERSION=	0.06
@@ -20,7 +16,8 @@ RUN_DEPENDS=	p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Math-Random-ISAAC>=1.0.1:${PORTSDIR}/math/p5-Math-Random-ISAAC \
 		p5-Crypt-Random-Source>=0.07:${PORTSDIR}/security/p5-Crypt-Random-Source
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Math::Random::Secure.3 Math::Random::Secure::RNG.3
 

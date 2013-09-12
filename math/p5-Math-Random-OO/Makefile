@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Math-Random-OO
-# Date created:		2006-07-23
-# Whom:			Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-#
+# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-Random-OO
 PORTVERSION=	0.21
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Test-MockRandom>=0.95:${PORTSDIR}/devel/p5-Test-MockRandom \
 RUN_DEPENDS=	p5-Class-Accessor>=0.18:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Params-Validate>=0.76:${PORTSDIR}/devel/p5-Params-Validate
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Math::Random::OO.3 \
 	Math::Random::OO::Bootstrap.3 \

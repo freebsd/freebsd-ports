@@ -16,7 +16,8 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 CONFIGURE_ARGS=	NTL_GMP_LIP=on
 .endif
 
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	AR="${AR}" \
 		CC="${CC}" CFLAGS="${CFLAGS}" \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Roman
-# Date created:				16 January 2003
-# Whom:	      				Philip Paeps <philip@paeps.cx>
-#
+# Created by: Philip Paeps <philip@paeps.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	Roman
 PORTVERSION=	1.22
@@ -14,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Perl module to convert between Arabic and Roman numerals
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Roman.3
 

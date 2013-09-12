@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Jacal
-# Date created:				Sat Mar 16 2002
-# Whom:					Mark R V Murray <markm@FreeBSD.org>
-#
+# Created by: Mark R V Murray <markm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jacal
 PORTVERSION=	1c2
@@ -20,7 +16,7 @@ WRKSRC=		${WRKDIR}/jacal
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 MAN1=		jacal.1
