@@ -18,7 +18,6 @@ USE_SDL=	sdl mixer image
 USE_GL=		gl glu
 USES=		cmake
 SUB_FILES=	intensity_client
-USE_GCC=	4.2+
 
 ONLY_FOR_ARCHS=	i386 amd64
 
