@@ -155,10 +155,15 @@ post-patch: .SILENT
 		${WRKSRC}/src/nvidia_subr.c
 .endif
 # Adopt to cap_rights_t type change in FreeBSD src SVN r255219
-.if ${OSVERSION} > 1000051
+.if ${OSVERSION} > 1000052
 	${REINPLACE_CMD} -e 's/u_long cmd;/& cap_rights_t rights;/ ; \
 		s/CAP_IOCTL/cap_rights_init(\&rights, &)/' \
 			${WRKSRC}/src/nvidia_linux.c
+.endif
+# Argument count of vm_map_find() changed in FreeBSD src SVN r255426
+.if ${OSVERSION} > 1000054
+	${REINPLACE_CMD} -e 's/virtual_address, size,/& 0,/' \
+		${WRKSRC}/src/nvidia_subr.c
 .endif
 # Fix stack buffer overflow in nvidia_sysctl_bus_type()
 .if ${NVVERSION} < 3192300
