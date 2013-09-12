@@ -5,7 +5,7 @@
  
  manual:
 -	cd man; make
-+	cd man; $(GMAKE)
++	cd man  && $(MAKE)
  
  VER=$(shell sed -e 's,^[^0-9]*,,' -e 's,[^0-9][^0-9]*,.,g' -e q VERSION )
  UNIVER=$(shell sed -e '/^\# Blocks-/ b ver' -e d -e ': ver' -e 's,^[^0-9]*\([0-9].*[0-9]\).*,\1,g' -e 's,\.0$$,,' src/Blocks.txt )
