@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpvirtualbox
-DISTVERSION=	4.2-6
+DISTVERSION=	4.2-7
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME} \
 		LOCAL/decke
