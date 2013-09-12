@@ -18,7 +18,7 @@
 -  CXXFLAGS := $(CFLAGS) --no-exceptions --no-rtti
 +  CPPFLAGS += -I "../../include/"
 +  CFLAGS += $(CPPFLAGS)
-+  CXXFLAGS += $(CPPFLAGS) --no-exceptions --no-rtti
++  CXXFLAGS += $(CPPFLAGS) -fno-exceptions -fno-rtti
    LDFLAGS += -L$(BINDIR) -L$(LIBDIR) -s
    LDDEPS :=
    RESFLAGS := -D "WIN32" -D "_LIB" -D "_CRT_SECURE_NO_DEPRECATE" -D "NDEBUG" -I "../../include/"
