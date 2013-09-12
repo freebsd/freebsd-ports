@@ -23,6 +23,9 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+DEPRECATED=	Unplayable, main server down, development ceased
+EXPIRATION_DATE=2013-11-12
+
 PORTDOCS=	*
 PORTDATA=	*
 
