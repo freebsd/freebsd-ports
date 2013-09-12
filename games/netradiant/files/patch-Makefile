@@ -33,10 +33,11 @@
  	checkbinary binutils "$(RANLIB)"; \
  	checkbinary binutils "$(AR)"; \
  	checkbinary pkg-config "$(PKGCONFIG)"; \
- 	checkbinary unzip "$(UNZIPPER)"; \
+-	checkbinary unzip "$(UNZIPPER)"; \
 -	checkbinary git-core "$(GIT)"; \
 -	checkbinary subversion "$(SVN)"; \
 -	checkbinary wget "$(WGET)"; \
++#	checkbinary unzip "$(UNZIPPER)"; \
 +#	checkbinary git-core "$(GIT)"; \
 +#	checkbinary subversion "$(SVN)"; \
 +#	checkbinary wget "$(WGET)"; \
