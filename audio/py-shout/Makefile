@@ -1,9 +1,5 @@
-# New ports collection makefile for: py-shout
-# Date created:		2009-08-07
-# Whom:				Olivier Duchateau <duchateau.olivier@gmail.com>
-#
+# Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	shout
 PORTVERSION=	0.2.1
@@ -19,6 +15,7 @@ LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
+USES=			pkgconfig
 USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	${PORTNAME}-python

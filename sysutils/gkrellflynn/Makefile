@@ -15,6 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkre
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellflynn.so
+USES=		pkgconfig
 USE_GNOME=	gtk20
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -c -fPIC"
 ALL_TARGET=	${PORTNAME}.so

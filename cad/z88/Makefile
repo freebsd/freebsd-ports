@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Z88
-# Date created:		Dec. 2004
-# Whom:			Pedro F. Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro F. Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	z88
 PORTVERSION=	13.0
@@ -20,6 +16,7 @@ COMMENT=	A compact Finite Element Analysis System
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 NO_WRKSUBDIR=	yes
+USES=		pkgconfig
 USE_GL=		glu
 USE_GNOME=	gtk20
 
