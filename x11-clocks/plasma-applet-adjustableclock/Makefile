@@ -1,20 +1,14 @@
-# New ports collection makefile for:	plasma-applet-adjustableclock
-# Date Created:				2011-02-23
-# Whom:					Jason E. Hale <bsdkaffee@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	adjustableclock
-PORTVERSION=	3.1
-PORTREVISION=	1
+PORTVERSION=	4.1.2
 CATEGORIES=	x11-clocks deskutils kde
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-
 DISTNAME=	92825-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jhale@FreeBSD.org
-COMMENT=	Highly configurable clock plasmoid for KDE4
+COMMENT=	KDE4 highly configurable clock plasma applet
 
 LICENSE=	GPLv2
 
