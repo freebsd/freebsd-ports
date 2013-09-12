@@ -727,6 +727,7 @@
     SUBDIR += py-MySQLdb51
     SUBDIR += py-MySQLdb55
     SUBDIR += py-PyGreSQL
+    SUBDIR += py-apsw
     SUBDIR += py-bsddb
     SUBDIR += py-bsddb3
     SUBDIR += py-carbon
