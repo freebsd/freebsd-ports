@@ -21,9 +21,8 @@ PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig perl5
 USE_GNOME=	glib20 ltverhack libsigc++20
-USE_PERL5=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static --disable-documentation

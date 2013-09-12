@@ -13,8 +13,7 @@ COMMENT=	File system backup and synchronization utility
 
 RUN_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
 
-USES=		shebangfix
-USE_PERL5=	yes
+USES=		shebangfix perl5
 SHEBANG_FILES=	contrib/*.pl \
 		*.pl
 

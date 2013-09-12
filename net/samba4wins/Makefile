@@ -14,8 +14,7 @@ COMMENT=		Full featured replicating WINS server for UNIX
 CONFLICTS=		ja-samba-2.* ja-samba-4.* samba-2.* samba-4.* sharity-light-1.*
 
 MAKE_JOBS_UNSAFE=	yes
-USES=			iconv
-USE_PERL5=		yes
+USES=			iconv perl5
 GNU_CONFIGURE=		yes
 USE_AUTOTOOLS=		autoconf autoheader
 

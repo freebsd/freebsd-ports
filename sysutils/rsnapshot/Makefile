@@ -14,8 +14,7 @@ BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
 		p5-Lchown>=0:${PORTSDIR}/sysutils/p5-Lchown
 
-USES=		shebangfix
-USE_PERL5=	yes
+USES=		shebangfix perl5
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	rsnapshot-program.pl
 

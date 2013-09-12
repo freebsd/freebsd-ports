@@ -17,9 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 RUN_DEPENDS=	p5-Expect>=0:${PORTSDIR}/lang/p5-Expect \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
-USE_PERL5=	yes
 USE_OPENSSL=	yes
-USES=	shebangfix
+USES=	shebangfix perl5
 SHEBANG_FILES=	\
 	bin/autorun/autorun.pl \
 	bin/indexgen/indexgen.pl \

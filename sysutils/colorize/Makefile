@@ -16,9 +16,8 @@ RUN_DEPENDS=	p5-Term-ANSIColor>=0:${PORTSDIR}/devel/p5-Term-ANSIColor
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
 NO_BUILD=	yes
-USE_PERL5=	yes
 SUB_FILES=	pkg-message
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	colorize
 
 MAN1=		colorize.1

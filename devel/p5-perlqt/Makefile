@@ -15,11 +15,10 @@ LIB_DEPENDS=	qscintilla2:${PORTSDIR}/devel/qscintilla2 \
 		qwt.5:${PORTSDIR}/x11-toolkits/qwt5
 
 USE_XZ=		yes
-USE_PERL5=	yes
 USE_KDE4=	kdehier kdeprefix smokeqt qimageblitz
 USE_QT4=	corelib dbus gui network xml \
 		qmake_build moc_build uic_build rcc_build
-USES=		cmake:outsource
+USES=		cmake:outsource perl5
 
 
 # Respect PREFIX

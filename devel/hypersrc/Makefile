@@ -16,12 +16,10 @@ RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_PERL5=	yes
 USE_GNOME=	gnomelibs
-USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	CC="${CC}" C_OPTIMIZE="${CFLAGS}"
-USES=		shebangfix
+USES=		shebangfix gmake perl5
 SHEBANG_FILES=	Hypersrc.pl
 
 MAN1=		hypersrc.1

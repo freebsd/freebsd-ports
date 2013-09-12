@@ -21,10 +21,8 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk12 orbit libxml
-USES=		gettext
-USE_PERL5=	yes
+USES=		gettext gmake perl5
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS= --enable-static --enable-shared \

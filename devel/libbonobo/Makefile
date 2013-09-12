@@ -18,11 +18,9 @@ USE_BZIP2=	yes
 
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
 
-USES=		bison gettext pathfix pkgconfig
-USE_GMAKE=	yes
+USES=		bison gettext pathfix pkgconfig gmake perl5
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_PERL5=	yes
 USE_GNOME=	intlhack libxml2 orbit2 referencehack
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
