@@ -8,9 +8,13 @@ CATEGORIES=	games cad
 MASTER_SITES=	http://ingar.satgnu.net/gtkradiant/files/ \
 		http://freebsd.nsu.ru/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} q3map2.6
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fork of the well-known GtkRadiant 1.5 FPS games map editor
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
@@ -29,6 +33,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	ARCH=${ARCH}
 
+MAN6=		q3map2.6
+
 post-patch:
 # Add missing checks for __FreeBSD__
 	@${FIND} ${WRKSRC}/tools -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} \
@@ -44,10 +50,11 @@ do-install:
 # Fix permissions of some files (drop bogus execute bit)
 	@${FIND} ${WRKSRC}/install/osirion.game -type f | ${XARGS} ${CHMOD} a-x
 	@${CHMOD} a-x ${WRKSRC}/install/games/osirion.game
-# Remove extra copy of GNU GPL
+# Remove extra copy of GNU GPL from what we install
 	@${RM} ${WRKSRC}/install/GPL.txt
 	@${MKDIR} ${DATADIR}
 	${CP} -a ${WRKSRC}/install/* ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${DISTDIR}/${MAN6} ${MANPREFIX}/man/man6
 
 .include <bsd.port.mk>

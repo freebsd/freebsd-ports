@@ -4,17 +4,17 @@ map compiler, q3map2, so it can become a reliable tool for map authors.
 
 Fixes include:
 
-   - Better decompiling by q3map2 (texcoords no longer get lost)
-   - Fixed 3D display in the Windows XP software renderer
-   - Fixed deluxemapping when a surface is lit from both sides
-   - Fixed some buffer overruns
-   - Fixed the "expand selection to whole entities" feature
-   - Fixed the origin of mirrored eclassmodel entities
-   - Key bindings no longer disappear when using an international
-     keyboard layout
-   - Plane snapping fixed (no more fall-through holes in imported
-     model terrain)
-   - Various other map compiler fixes
+  - Better decompiling by q3map2 (texcoords no longer get lost)
+  - Fixed 3D display in the Windows XP software renderer
+  - Fixed deluxemapping when a surface is lit from both sides
+  - Fixed some buffer overruns
+  - Fixed the "expand selection to whole entities" feature
+  - Fixed the origin of mirrored eclassmodel entities
+  - Key bindings no longer disappear when using an international
+    keyboard layout
+  - Plane snapping fixed (no more fall-through holes in imported
+    model terrain)
+  - Various other map compiler fixes
 
 Original, classic GtkRadiant 1.5 is available as `games/gtkradiant' port.
 
