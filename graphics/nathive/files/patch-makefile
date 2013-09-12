@@ -1,0 +1,23 @@
+--- makefile.orig	2010-10-12 23:16:42.000000000 +0400
++++ makefile	2013-08-30 20:24:54.366229703 +0400
+@@ -84,10 +84,7 @@
+ 	@rm -rf doc/build/html/_sources
+ 
+ root:
+-ifneq ($(shell whoami), root)
+-	@echo "\n**** ERROR: You must be root\n"
+-	@exit 1
+-endif
++	true
+ 
+ 
+ dirs:
+@@ -113,7 +110,7 @@
+ 	# Exclude source files.
+ 	find $(BASE)$(APP) -name "*.c" -delete
+ 	# Binary and launcher.
+-	install -m 755 -T nathive.sh      $(BASE)$(BIN)/nathive
++	install -m 755    nathive.sh      $(BASE)$(BIN)/nathive
+ 	install -m 644    nathive.desktop $(BASE)$(LAUNCH)
+ 	# Documentation.
+ 	install -m 644 AUTHORS $(BASE)$(DOC)

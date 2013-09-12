@@ -1,31 +1,150 @@
 bin/nathive
-%%DATADIR%%/cfg/cfg.xml
+share/applications/nathive.desktop
+%%DATADIR%%/AUTHORS
+%%DATADIR%%/COPYING
+%%DATADIR%%/COPYING-BRIEF
+%%DATADIR%%/META
+%%DATADIR%%/cfg/default.cfg
+%%DATADIR%%/cfg/presets/new/Cover (CD).cfg
+%%DATADIR%%/cfg/presets/new/Cover (DVD slim).cfg
+%%DATADIR%%/cfg/presets/new/Cover (DVD).cfg
+%%DATADIR%%/cfg/presets/new/DIN A3.cfg
+%%DATADIR%%/cfg/presets/new/DIN A4.cfg
+%%DATADIR%%/cfg/presets/new/DIN A5.cfg
 %%DATADIR%%/img/about.png
-%%DATADIR%%/img/brush.png
 %%DATADIR%%/img/circle.png
+%%DATADIR%%/img/hud-ok.png
+%%DATADIR%%/img/hud-rotate.png
+%%DATADIR%%/img/hud-scale.png
 %%DATADIR%%/img/icon.png
 %%DATADIR%%/img/mask.png
-%%DATADIR%%/img/picker.png
-%%DATADIR%%/img/select.png
+%%DATADIR%%/img/pattern.png
 %%DATADIR%%/img/square.png
-%%DATADIR%%/img/visual.png
-%%DATADIR%%/img/visual_rotate.png
-%%DATADIR%%/img/visual_scale.png
-%%DATADIR%%/lang/chinese.xml
-%%DATADIR%%/lang/english.xml
-%%DATADIR%%/lang/french.xml
-%%DATADIR%%/lang/german.xml
-%%DATADIR%%/lang/hungarian.xml
-%%DATADIR%%/lang/polish.xml
-%%DATADIR%%/lang/spanish.xml
-%%DATADIR%%/lang/swedish.xml
-%%DATADIR%%/palettes/01.xml
-%%DATADIR%%/palettes/02.xml
-%%DATADIR%%/text/credits
-%%DATADIR%%/text/license
-@dirrm %%DATADIR%%/text
+%%DATADIR%%/img/tool-brush.png
+%%DATADIR%%/img/tool-crop.png
+%%DATADIR%%/img/tool-eraser.png
+%%DATADIR%%/img/tool-picker.png
+%%DATADIR%%/img/tool-select.png
+%%DATADIR%%/nathive.py
+%%DATADIR%%/nathive/__init__.py
+%%DATADIR%%/nathive/gui/__init__.py
+%%DATADIR%%/nathive/gui/canvas.py
+%%DATADIR%%/nathive/gui/colorbar.py
+%%DATADIR%%/nathive/gui/cursor.py
+%%DATADIR%%/nathive/gui/headbar.py
+%%DATADIR%%/nathive/gui/hud.py
+%%DATADIR%%/nathive/gui/main.py
+%%DATADIR%%/nathive/gui/menubar.py
+%%DATADIR%%/nathive/gui/multiwidget/__init__.py
+%%DATADIR%%/nathive/gui/multiwidget/buttons.py
+%%DATADIR%%/nathive/gui/multiwidget/clear.py
+%%DATADIR%%/nathive/gui/multiwidget/combo.py
+%%DATADIR%%/nathive/gui/multiwidget/entry.py
+%%DATADIR%%/nathive/gui/multiwidget/group.py
+%%DATADIR%%/nathive/gui/multiwidget/message.py
+%%DATADIR%%/nathive/gui/multiwidget/presets.py
+%%DATADIR%%/nathive/gui/multiwidget/spin.py
+%%DATADIR%%/nathive/gui/multiwidget/toggle.py
+%%DATADIR%%/nathive/gui/sandbox.py
+%%DATADIR%%/nathive/gui/sidebar.py
+%%DATADIR%%/nathive/gui/sidebar_color.py
+%%DATADIR%%/nathive/gui/sidebar_layers.py
+%%DATADIR%%/nathive/gui/statusbar.py
+%%DATADIR%%/nathive/gui/tabs.py
+%%DATADIR%%/nathive/gui/toolbar.py
+%%DATADIR%%/nathive/gui/utils.py
+%%DATADIR%%/nathive/lib/__init__.py
+%%DATADIR%%/nathive/lib/action/__init__.py
+%%DATADIR%%/nathive/lib/action/docresize.py
+%%DATADIR%%/nathive/lib/action/layercontent.py
+%%DATADIR%%/nathive/lib/action/layercreate.py
+%%DATADIR%%/nathive/lib/action/layermodify.py
+%%DATADIR%%/nathive/lib/action/layermove.py
+%%DATADIR%%/nathive/lib/action/layerremove.py
+%%DATADIR%%/nathive/lib/actions.py
+%%DATADIR%%/nathive/lib/buftools.cy
+%%DATADIR%%/nathive/lib/clipboard.py
+%%DATADIR%%/nathive/lib/color.py
+%%DATADIR%%/nathive/lib/config.py
+%%DATADIR%%/nathive/lib/convert.py
+%%DATADIR%%/nathive/lib/core.cy
+%%DATADIR%%/nathive/lib/document.py
+%%DATADIR%%/nathive/lib/documents.py
+%%DATADIR%%/nathive/lib/language.py
+%%DATADIR%%/nathive/lib/layer.py
+%%DATADIR%%/nathive/lib/layers.py
+%%DATADIR%%/nathive/lib/log.py
+%%DATADIR%%/nathive/lib/openraster.py
+%%DATADIR%%/nathive/lib/plugin.py
+%%DATADIR%%/nathive/lib/plugins.py
+%%DATADIR%%/nathive/lib/presets.py
+%%DATADIR%%/nathive/lib/rgbhsv.cy
+%%DATADIR%%/nathive/lib/shortcuts.py
+%%DATADIR%%/nathive/libc/__init__.py
+%%DATADIR%%/nathive/libc/brush.so
+%%DATADIR%%/nathive/libc/core.so
+%%DATADIR%%/nathive/libc/picker.so
+%%DATADIR%%/nathive/libc/select.so
+%%DATADIR%%/nathive/plugins/__init__.py
+%%DATADIR%%/nathive/plugins/about.py
+%%DATADIR%%/nathive/plugins/brush.cy
+%%DATADIR%%/nathive/plugins/brush.py
+%%DATADIR%%/nathive/plugins/clip-copy.py
+%%DATADIR%%/nathive/plugins/clip-cut.py
+%%DATADIR%%/nathive/plugins/clip-paste.py
+%%DATADIR%%/nathive/plugins/close.py
+%%DATADIR%%/nathive/plugins/console.py
+%%DATADIR%%/nathive/plugins/crop.py
+%%DATADIR%%/nathive/plugins/eraser.py
+%%DATADIR%%/nathive/plugins/home.py
+%%DATADIR%%/nathive/plugins/new.py
+%%DATADIR%%/nathive/plugins/open.py
+%%DATADIR%%/nathive/plugins/paste-file.py
+%%DATADIR%%/nathive/plugins/picker.cy
+%%DATADIR%%/nathive/plugins/picker.py
+%%DATADIR%%/nathive/plugins/preferences.py
+%%DATADIR%%/nathive/plugins/preset-manager.py
+%%DATADIR%%/nathive/plugins/quit.py
+%%DATADIR%%/nathive/plugins/redo.py
+%%DATADIR%%/nathive/plugins/save.py
+%%DATADIR%%/nathive/plugins/saveas.py
+%%DATADIR%%/nathive/plugins/select.cy
+%%DATADIR%%/nathive/plugins/select.py
+%%DATADIR%%/nathive/plugins/undo.py
+%%DATADIR%%/nathive/plugins/view-colorbar.py
+%%DATADIR%%/nathive/plugins/view-fullscreen.py
+%%DATADIR%%/nathive/plugins/view-headbar.py
+%%DATADIR%%/nathive/plugins/view-sidebar.py
+%%DATADIR%%/palettes/default.pal
+%%DATADIR%%/po/de.po
+%%DATADIR%%/po/es.po
+%%DATADIR%%/po/fr.po
+%%DATADIR%%/po/hu.po
+%%DATADIR%%/po/it.po
+%%DATADIR%%/po/pl.po
+%%DATADIR%%/po/pt.po
+%%DATADIR%%/po/pt_BR.po
+%%DATADIR%%/po/ru.po
+%%DATADIR%%/po/se.po
+%%DATADIR%%/po/zh_CN.po
+@dirrm %%DATADIR%%/po
 @dirrm %%DATADIR%%/palettes
-@dirrm %%DATADIR%%/lang
+@dirrm %%DATADIR%%/nathive/plugins
+@dirrm %%DATADIR%%/nathive/libc
+@dirrm %%DATADIR%%/nathive/lib/action
+@dirrm %%DATADIR%%/nathive/lib
+@dirrm %%DATADIR%%/nathive/gui/multiwidget
+@dirrm %%DATADIR%%/nathive/gui
+@dirrm %%DATADIR%%/nathive
 @dirrm %%DATADIR%%/img
+@dirrm %%DATADIR%%/cfg/presets/select
+@dirrm %%DATADIR%%/cfg/presets/picker
+@dirrm %%DATADIR%%/cfg/presets/new
+@dirrm %%DATADIR%%/cfg/presets/eraser
+@dirrm %%DATADIR%%/cfg/presets/crop
+@dirrm %%DATADIR%%/cfg/presets/brush
+@dirrm %%DATADIR%%/cfg/presets
+@dirrm %%DATADIR%%/cfg/console
 @dirrm %%DATADIR%%/cfg
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
