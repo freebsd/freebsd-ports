@@ -15,8 +15,7 @@ COMMENT=	Compiler for the functional language Haskell
 ONLY_FOR_ARCHS=	i386 amd64
 
 GHC_VERSION=		${PORTVERSION}
-BOOT_GHC_VERSION=	7.4.1
-HSCOLOUR_VERSION=	1.20.2
+HSCOLOUR_VERSION=	1.20.3
 
 DATADIR=	${PREFIX}/share/ghc-${GHC_VERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/ghc-${GHC_VERSION}
@@ -72,28 +71,34 @@ LIB_DEPENDS+=	ffi.6:${PORTSDIR}/devel/libffi
 
 .if empty(PORT_OPTIONS:MBOOT)
 
+.if ${OSVERSION} >= 1000043
+BOOT_GHC_VERSION=	7.6.3
+.else
+BOOT_GHC_VERSION=	7.4.1
+.endif
+
 EXTRA_PATCHES=		${PATCHDIR}/nopatch-.._ghc-${BOOT_GHC_VERSION}-boot_rts_package.conf.in
 
 .if ${ARCH} == "i386"
 
-.if ${OSVERSION} >= 900000
+.if ${OSVERSION} >= 1000043
+DISTFILES+=	ghc-${BOOT_GHC_VERSION}-i386-freebsd10-boot${EXTRACT_SUFX}:boot
+.elif ${OSVERSION} >= 900000
 DISTFILES+=	ghc-${BOOT_GHC_VERSION}-i386-freebsd9-boot${EXTRACT_SUFX}:boot
 .elif ${OSVERSION} >= 800000
 DISTFILES+=	ghc-${BOOT_GHC_VERSION}-i386-freebsd8-boot${EXTRACT_SUFX}:boot
-.elif ${OSVERSION} >= 700000
-DISTFILES+=	ghc-${BOOT_GHC_VERSION}-i386-freebsd7-boot${EXTRACT_SUFX}:boot
 .else
 IGNORE=		unsupported
 .endif
 
 .elif ${ARCH} == "amd64"
 
-.if ${OSVERSION} >= 900000
+.if ${OSVERSION} >= 1000043
+DISTFILES+=	ghc-${BOOT_GHC_VERSION}-amd64-freebsd10-boot${EXTRACT_SUFX}:boot
+.elif ${OSVERSION} >= 900000
 DISTFILES+=	ghc-${BOOT_GHC_VERSION}-amd64-freebsd9-boot${EXTRACT_SUFX}:boot
 .elif ${OSVERSION} >= 800000
 DISTFILES+=	ghc-${BOOT_GHC_VERSION}-amd64-freebsd8-boot${EXTRACT_SUFX}:boot
-.elif ${OSVERSION} >= 700000
-DISTFILES+=	ghc-${BOOT_GHC_VERSION}-amd64-freebsd7-boot${EXTRACT_SUFX}:boot
 .else
 IGNORE=		unsupported
 .endif
@@ -114,9 +119,12 @@ HACKAGE_ARCH?=		packages/archive/
 CONFIGURE_ARGS=		--with-gcc=${CC} \
 			--with-ld=${LD} \
 			--with-gmp-includes=${LOCALBASE}/include \
-			--with-gmp-libraries=${LOCALBASE}/lib \
-			--with-iconv-includes=${LOCALBASE}/include \
+			--with-gmp-libraries=${LOCALBASE}/lib
+
+.if ${OSVERSION} < 1000043
+CONFIGURE_ARGS+=	--with-iconv-includes=${LOCALBASE}/include \
 			--with-iconv-libraries=${LOCALBASE}/lib
+.endif
 
 .if ${PORT_OPTIONS:MDYNAMIC}
 CONFIGURE_ARGS+=	--with-system-libffi \

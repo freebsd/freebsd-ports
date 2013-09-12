@@ -1,0 +1,11 @@
+--- ../ghc-7.6.3-boot/rts/package.conf.in.orig	2013-04-18 22:22:47.000000000 +0100
++++ ../ghc-7.6.3-boot/rts/package.conf.in	2013-09-06 23:01:22.000000000 +0100
+@@ -141,6 +141,8 @@
+ 	 , "-u", "base_GHCziConcziSignal_runHandlers_closure"
+ #endif
+ 
++	 , "-L%%LOCALBASE%%/lib"
++
+ /*  Pick up static libraries in preference over dynamic if in earlier search
+  *  path.  This is important to use the static gmp in preference on Mac OS.
+  *  The used option is specific to the Darwin linker.
