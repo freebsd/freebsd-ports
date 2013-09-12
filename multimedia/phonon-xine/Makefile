@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	phonon
-# Date created:				2008-01-30
-# Whom:					Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	phonon
@@ -23,7 +20,7 @@ CONFLICTS=	phonon-4.3.0*
 
 PHONON_BRANCH=	stable
 USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake pkgconfig
 USE_KDE4=	kdehier automoc4 kdeprefix
 USE_QT4=	gui dbus xml phonon \
 		qmake_build moc_build rcc_build uic_build

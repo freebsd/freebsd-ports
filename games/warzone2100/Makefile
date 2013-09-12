@@ -26,11 +26,10 @@ LIB_DEPENDS=	physfs:${PORTSDIR}/devel/physfs \
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
 
 USE_XZ=		yes
-USES=		bison
+USES=		bison gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_OPENAL=	al
 USE_GL=		yes
-USE_GMAKE=	yes
 USE_SDL=	sdl
 USE_QT4=	corelib network script gui moc_build
 QT_NONSTANDARD=	yes

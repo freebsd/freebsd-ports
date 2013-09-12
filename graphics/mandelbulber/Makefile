@@ -13,7 +13,7 @@ COMMENT=	3D Mandelbrot fractal renderer
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	glib20 gtk20
 BUILD_WRKSRC=	${WRKSRC}/makefiles
 MAKEFILE=	makefile

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	simple-ccsm
-# Date created:		2008-09-21
-# Whom:			Robert Noland <rnoland@FreeBSD.org>
-#
+# Created by: Robert Noland <rnoland@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	simple-ccsm
 PORTVERSION=	0.8.4
@@ -17,8 +13,7 @@ COMMENT=	A Python/GTK based settings manager for CompizConfig
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compizconfig-python.pc:${PORTSDIR}/x11-wm/compizconfig-python
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 USE_GNOME=	pygtk2
 USE_PYTHON=	-2.7
 

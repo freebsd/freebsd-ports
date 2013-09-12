@@ -24,6 +24,7 @@ LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 MANCOMPRESSED=	no
 MAN1=		xpra.1 xpra_launcher.1 parti.1
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_XORG=	x11 xext xtst xfixes xcomposite xdamage

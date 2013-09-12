@@ -18,7 +18,7 @@ LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 		gimp-2.0:${PORTSDIR}/graphics/gimp-app
 
 USE_ZIP=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 
 BIN_TARGETS=	separate separate_import icc_colorspace
 L10N_TARGETS=	cs es fr ja ko pl ru

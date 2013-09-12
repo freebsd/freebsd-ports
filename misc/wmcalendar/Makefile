@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmcalendar
-# Date created:				24 Apr 2003
-# Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
-#
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	wmcalendar
 PORTVERSION=	0.5.2
@@ -18,6 +14,7 @@ LIB_DEPENDS=	ical:${PORTSDIR}/devel/libical
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
+USES=		pkgconfig
 USE_XORG=	xpm
 USE_GNOME=	gtk20
 MAKE_ARGS=	CC="${CC}" \
