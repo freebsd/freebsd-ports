@@ -12,7 +12,8 @@ COMMENT=	An X utility for binding commands to a hot key
 
 WRKSRC=		${WRKDIR}/keylaunch
 USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 USE_XORG=	x11
 
 PKGMESSAGE=	${WRKSRC}/pkg-message

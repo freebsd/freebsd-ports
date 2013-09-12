@@ -1,9 +1,5 @@
-# New ports collection makefile for:    x11/p5-X11-Resolution
-# Date created:                         2009-10-24 11:30
-# Whom:                                 Zane C. Bowers
-#
+# Created by: Zane C. Bowers
 # $FreeBSD$
-#
 
 PORTNAME=	X11-Resolution
 PORTVERSION=	0.0.0
@@ -16,7 +12,8 @@ COMMENT=	Provides a method to get the resolution for a X11 screen
 
 RUN_DEPENDS=	p5-X11-Protocol>=0:${PORTSDIR}/x11/p5-X11-Protocol
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		X11::Resolution.3
 
