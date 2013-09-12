@@ -7,14 +7,14 @@ PORTREVISION=	4
 CATEGORIES=	editors
 MASTER_SITES=	SF
 
-MAINTAINER=	admin@mjbrune.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full screen text editor
 
-LIB_DEPENDS=	hunspell-1.3:${PORTSDIR}/textproc/hunspell \
-		xml++-2.6.2:${PORTSDIR}/textproc/libxml++26 \
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
+		libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26 \
+		libcurl.so:${PORTSDIR}/ftp/curl
 
-USES=	shared-mime-info
+USES=		shared-mime-info
 USE_SDL=	mixer
 USE_QT4=	moc_build qmake_build rcc_build uic_build corelib gui xml \
 		svg opengl qt3support

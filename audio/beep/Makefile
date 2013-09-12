@@ -1,7 +1,4 @@
-# New ports collection makefile for:	beep
-# Date Created:				June 9, 2002
-# Whom:					Tyler Spivey
-#
+# Created by: Tyler Spivey
 # $FreeBSD$
 
 PORTNAME=	beep
@@ -9,7 +6,7 @@ PORTVERSION=	1.0
 CATEGORIES=	audio
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	admin@mjbrune.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Beeps a certain duration and pitch out of the PC Speaker
 
 MAN1=		beep.1

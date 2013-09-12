@@ -7,9 +7,8 @@ PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webta.org/apachetop/
 
-MAINTAINER=	admin@mjbrune.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache RealTime log stats
-
 
 GNU_CONFIGURE=	yes
 
@@ -19,22 +18,14 @@ PLIST_FILES=	bin/apachetop
 OPTIONS_DEFINE=	ADNS FAM PCRE
 ADNS_DESC=	Asynchronous-capable DNS support
 
-.include <bsd.port.options.mk>
+ADNS_LIB_DEPENDS=	libadns.so:${PORTSDIR}/dns/adns
+ADNS_CONFIGURE_ON=	--with-adns=${LOCALBASE}
 
-.if ${PORT_OPTIONS:MADNS}
-LIB_DEPENDS+=	adns.1:${PORTSDIR}/dns/adns
-CONFIGURE_ARGS+=--with-adns=${LOCALBASE}
-.endif
+FAM_LIB_DEPENDS=	libfam.so:${PORTSDIR}/devel/fam
+FAM_CONFIGURE_ON=	--with-fam=${LOCALBASE}
 
-.if ${PORT_OPTIONS:MFAM}
-LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
-CONFIGURE_ARGS+=--with-fam=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
-CONFIGURE_ARGS+=--with-pcre=${LOCALBASE}
-.endif
+PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_COFNIGURE_ON=	--with-pcre=${LOCALBASE}
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's,struct (circle_struct),\1,g' \
