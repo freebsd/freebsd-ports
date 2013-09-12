@@ -1,9 +1,5 @@
-# New ports collection makefile for:   gscmxx
-# Date created:        13 May 2003
-# Whom:                svmohr
-#
+# Created by: svmohr
 # $FreeBSD$
-#
 
 PORTNAME=	gscmxx
 PORTVERSION=	0.4.1
@@ -21,7 +17,8 @@ BUILD_DEPENDS=	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
 		scmxx:${PORTSDIR}/comms/scmxx \
 		convert:${PORTSDIR}/graphics/ImageMagick
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 USE_GNOME=	gtk12
 MAN1=		gscmxx.1

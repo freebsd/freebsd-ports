@@ -16,7 +16,8 @@ RUN_DEPENDS=	p5-SMS-Send>=0:${PORTSDIR}/comms/p5-SMS-Send \
 		p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		SMS::Send::TW::Socket2Air.3
 

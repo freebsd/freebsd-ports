@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-SMS-Send-TW-PChome
-# Date created:		2007-04-06
-# Whom:			Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-#
+# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	SMS-Send-TW-PChome
 PORTVERSION=	0.03
@@ -20,7 +16,8 @@ RUN_DEPENDS=	p5-SMS-Send>=0:${PORTSDIR}/comms/p5-SMS-Send \
 		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		SMS::Send::TW::PChome.3
 

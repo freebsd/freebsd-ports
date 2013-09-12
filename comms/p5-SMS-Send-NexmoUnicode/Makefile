@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-SMS-Send-NexmoUnicode
-# Date created:		2011-12-01
-# Whom:			Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
-#
+# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	SMS-Send-NexmoUnicode
 PORTVERSION=	0.01
@@ -19,7 +15,8 @@ BUILD_DEPENDS=	p5-Nexmo-SMS>=0.04:${PORTSDIR}/comms/p5-Nexmo-SMS \
 		p5-SMS-Send>=0:${PORTSDIR}/comms/p5-SMS-Send
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		SMS::Send::NexmoUnicode.3
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	uird
-# Date created:		2005-11-21
-# Whom:			David Thiel <lx@redundancy.redundancy.org>
-#
+# Created by: David Thiel <lx@redundancy.redundancy.org>
 # $FreeBSD$
-#
 
 PORTNAME=	uird
 PORTVERSION=	1.1
@@ -16,7 +12,7 @@ MAINTAINER=	lx@FreeBSD.org
 COMMENT=	The Universal IR Receiver Daemon
 
 USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		perl5
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	${PORTNAME}

@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	vshnu
-# Date created:			Feb 26, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vshnu
 PORTVERSION=	1.0305
@@ -18,6 +13,7 @@ COMMENT=	New Visual Shell
 BUILD_DEPENDS=	p5-Term-Screen>=0:${PORTSDIR}/devel/p5-Term-Screen
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.mk>
