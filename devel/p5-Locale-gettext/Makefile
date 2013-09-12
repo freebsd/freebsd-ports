@@ -16,9 +16,9 @@ DISTNAME=	${PORTNAME:C/.*-//}-${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Message handling functions
 
-PERL_CONFIGURE=	yes
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
-USES=		gettext
+USES=		gettext perl5
+USE_PERL5=	configure
 
 MAN3=		Locale::gettext.3
 

@@ -15,9 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 RUN_DEPENDS=	${LOCALBASE}/v6eval/bin/pktbuf:${PORTSDIR}/net/v6eval
 
-USE_PERL5=      yes
 NO_BUILD=	yes
-USES=	shebangfix
+USES=	shebangfix perl5
 SHEBANG_FILES=	\
 	dd/BEGIN.seq \
 	dd/DDDHCPv6.seq \

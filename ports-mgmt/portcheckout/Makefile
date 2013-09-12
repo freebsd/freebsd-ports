@@ -10,8 +10,7 @@ MASTER_SITES=	http://wolfram.schneider.org/src/
 MAINTAINER=	wosch@FreeBSD.org
 COMMENT=	Checkout and build ports and all depending ports
 
-USE_PERL5=	yes
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	portcheckout.pl
 MAN1=		portcheckout.1
 MANCOMPRESSED=	maybe

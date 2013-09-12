@@ -10,10 +10,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	Coccinelle is a program matching and transformation engine
 
-USES=		shebangfix
+USES=		shebangfix gmake perl5
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 USE_PYTHON=	2.5+
 USE_OCAML=	3.0+
 SHEBANG_FILES=	configure

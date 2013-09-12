@@ -21,8 +21,6 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	rink@FreeBSD.org
 COMMENT=	Linux (and FreeBSD :-) BIOS images for the Microsoft Xbox
 
-USE_PERL5_BUILD=	yes
-
 SUB_FILES=	pkg-message
 
 PLIST_DIRS=		%%DATADIR%%
@@ -36,7 +34,8 @@ ONLY_FOR_ARCHS=		i386
 
 WRKSRC=			${WRKDIR}/cromwell
 USE_BZIP2=		yes
-USES=			gmake
+USE_PERL5=		build
+USES=			gmake perl5
 MAKE_JOBS_UNSAFE=	yes
 
 post-patch:

@@ -17,9 +17,8 @@ COMMENT=	Marco d'Itri whois client
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GMAKE=		yes
-USES=			iconv
-USE_PERL5_BUILD=	yes
+USES=		iconv gmake perl5
+USE_PERL5=	build
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

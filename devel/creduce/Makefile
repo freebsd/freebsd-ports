@@ -26,8 +26,7 @@ GH_TAGNAME=	a2422d5
 GH_COMMIT=	a2422d5
 
 GNU_CONFIGURE=	yes
-USE_PERL5=	yes
 
-USES=	gmake
+USES=	gmake perl5
 
 .include <bsd.port.mk>
