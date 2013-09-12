@@ -28,6 +28,12 @@ NOT_FOR_ARCHS_REASON_sparc64=	does not compile on sparc64
 DATADIR=	${PREFIX}/share/OpenCV
 PLIST_SUB+=	VERSION=${DISTVERSION}
 
+_COMPVERSION!= ${CC} --version
+.if ${_COMPVERSION:Mclang}
+USE_CXXSTD=	gnu++11
+CXXFLAGS+=	-Wno-error -Wno-c++11-narrowing
+.endif
+
 .if !defined(_BUILDING_OPENCV_CORE) && !defined(_BUILDING_OPENCV_PYTHON)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-opencv
 LIB_DEPENDS+=	opencv_core.2:${PORTSDIR}/graphics/opencv-core
