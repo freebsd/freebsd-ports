@@ -1,0 +1,82 @@
+--- contrib/bobtoolz/DTreePlanter.h.orig	2013-06-30 22:04:35.000000000 +0800
++++ contrib/bobtoolz/DTreePlanter.h	2013-09-12 22:07:28.000000000 +0800
+@@ -20,6 +20,8 @@
+ #ifndef __DTREE_H__
+ #define __DTREE_H__
+ 
++#include <stdlib.h>
++
+ #include "qerplugin.h"
+ #include "signal/isignal.h"
+ #include "string/string.h"
+--- contrib/bobtoolz/dialogs/dialogs-gtk.cpp.orig	2013-06-30 22:04:35.000000000 +0800
++++ contrib/bobtoolz/dialogs/dialogs-gtk.cpp	2013-09-12 22:09:01.000000000 +0800
+@@ -22,6 +22,7 @@
+ 
+ #include "str.h"
+ #include <list>
++#include <stdlib.h>
+ #include <gtk/gtk.h>
+ #include "gtkutil/pointer.h"
+ 
+--- contrib/bobtoolz/misc.cpp.orig	2013-06-30 22:04:35.000000000 +0800
++++ contrib/bobtoolz/misc.cpp	2013-09-12 22:10:25.000000000 +0800
+@@ -31,7 +31,7 @@
+ 
+ #include "funchandlers.h"
+ 
+-#ifdef __linux__
++#if defined (__linux__) || defined(__FreeBSD__)
+ #include <sys/types.h>
+ #include <unistd.h>
+ #endif
+--- contrib/bobtoolz/shapes.cpp.orig	2013-06-30 22:04:35.000000000 +0800
++++ contrib/bobtoolz/shapes.cpp	2013-09-12 22:20:34.000000000 +0800
+@@ -40,6 +40,7 @@
+ #include <list>
+ #include <map>
+ #include <algorithm>
++#include <stdlib.h>
+ #include <time.h>
+ 
+ #include "scenelib.h"
+--- contrib/bobtoolz/visfind.cpp.orig	2013-06-30 22:04:35.000000000 +0800
++++ contrib/bobtoolz/visfind.cpp	2013-09-12 22:21:08.000000000 +0800
+@@ -8,6 +8,7 @@
+ #include "bsploader.h"
+ 
+ #include <list>
++#include <stdlib.h>
+ 
+ typedef struct {
+ 	int portalclusters;
+--- contrib/sunplug/sunplug.cpp.orig	2013-06-30 22:04:35.000000000 +0800
++++ contrib/sunplug/sunplug.cpp	2013-09-12 22:24:14.000000000 +0800
+@@ -35,6 +35,7 @@
+ #include "qerplugin.h"   // declaration to use other interfaces as a plugin
+ 
+ #include <gtk/gtk.h>     // to display something with gtk (windows, buttons etc.), the whole package might not be necessary
++#include <stdlib.h>
+ 
+ void about_plugin_window();
+ void MapCoordinator();
+--- contrib/ufoaiplug/ufoai_level.cpp.orig	2013-06-30 22:04:35.000000000 +0800
++++ contrib/ufoaiplug/ufoai_level.cpp	2013-09-12 22:24:53.000000000 +0800
+@@ -25,6 +25,7 @@
+ 
+ #include "string/string.h"
+ #include <list>
++#include <stdlib.h>
+ 
+ class Level;
+ 
+--- libs/cmdlib/cmdlib.cpp.orig	2013-06-30 22:04:34.000000000 +0800
++++ libs/cmdlib/cmdlib.cpp	2013-09-12 22:22:08.000000000 +0800
+@@ -27,6 +27,7 @@
+ 
+ #include <string.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ #include "string/string.h"
+ #include "os/path.h"
