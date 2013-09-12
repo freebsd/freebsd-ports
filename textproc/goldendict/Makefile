@@ -13,14 +13,15 @@ COMMENT=	Feature-rich Qt4 based dictionary lookup program
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	hunspell-1.3:${PORTSDIR}/textproc/hunspell \
-		execinfo:${PORTSDIR}/devel/libexecinfo \
-		vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
 HAS_CONFIGURE=	yes
 USES=		desktop-file-utils pkgconfig
+USE_DOS2UNIX=	processwrapper.cc  # is needed only to apply a patch to this file
 USE_XORG=	xtst
 USE_QT4=	corelib gui webkit phonon \
 		qmake_build linguist_build moc_build rcc_build script_build uic_build
