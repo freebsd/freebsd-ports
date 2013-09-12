@@ -14,8 +14,6 @@ EXTRACT_ONLY=	${OOOSRC} ${EXTSRC}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
-BROKEN=		fails checksum
-
 LICENSE=	AL2
 
 NO_LATEST_LINK=	yes
@@ -69,7 +67,7 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 .endif
 
 OOOSRC=			apache-openoffice-${PORTVERSION}-r${SVNREVISION}-src${EXTRACT_SUFX}
-EXTSRC=			ApacheOpenOffice.ext_sources.${PORTVERSION}.r${SVNREVISION}${EXTRACT_SUFX}
+EXTSRC=			ApacheOpenOffice.ext_sources.${PORTVERSION}.r${SVNREVISION}_2${EXTRACT_SUFX}
 OOODIR=			openoffice4
 SVNREVISION=		1503704
 INSTALLATION_BASEDIR?=	openoffice-${PORTVERSION}
