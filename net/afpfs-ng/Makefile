@@ -8,16 +8,12 @@ CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	manuel.creach@icloud.com
-COMMENT=	The afpfs-ng is an Apple Filing Protocol client library
+COMMENT=	Apple Filing Protocol client library
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	FUSE GCRYPT
-
-USE_BZIP2=	yes
-USE_GCC=	any
 USES=		iconv gmake
+USE_BZIP2=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 ACLOCAL_ARGS=	-I.
 AUTOMAKE_ARGS=	--add-missing
@@ -26,34 +22,25 @@ USE_LDCONFIG=	yes
 CFLAGS+=	-D_FILE_OFFSET_BITS=64 -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.options.mk>
-
-CONFIGURE_ARGS+=--prefix="${PREFIX}"
-
 MAN1=		afpcmd.1 afpgetstatus.1
 
+OPTIONS_DEFINE=	FUSE GCRYPT
+
+FUSE_LIB_DEPENDS=	libfuse.so:${PORTSDIR}/sysutils/fusefs-libs
+FUSE_CONFIGURE_ENABLE=	fuse
+
+GCRYPT_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
+GCRYPT_CONFIGURE_ENABLE=gcrypt
+
+.include <bsd.port.options.mk>
+
 .if ${PORT_OPTIONS:MFUSE}
-LIB_DEPENDS+=	 fuse:${PORTSDIR}/sysutils/fusefs-libs
-CONFIGURE_ARGS+=--enable-fuse
-.else
-CONFIGURE_ARGS+=--disable-fuse
+MAN1+=		afp_client.1 afpfsd.1 mount_afp.1
+PLIST_FILES+=	bin/afp_client bin/afpfs bin/afpfsd bin/mount_afp
 .endif
 
-.if ${PORT_OPTIONS:MGCRYPT}
-LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
-CONFIGURE_ARGS+=--enable-gcrypt
-.else
-CONFIGURE_ARGS+=--disable-gcrypt
-.endif
-
-.include <bsd.port.pre.mk>
-
-post-patch:	.SILENT
-	${REINPLACE_CMD} 's|$$(libdir)/\(pkgconfig\)|$$(prefix)/libdata/\1|' \
-		${WRKSRC}/Makefile.am
-
-post-configure: .SILENT
-	${REINPLACE_CMD} 's|LIBS = |LIBS = ${ICONV_LIB} |' \
+post-configure:
+	@${REINPLACE_CMD} 's|LIBS = |LIBS = ${ICONV_LIB} |' \
 		${WRKSRC}/cmdline/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
