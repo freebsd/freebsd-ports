@@ -2,6 +2,7 @@
 
 PORTNAME=	mod_wsgi
 PORTVERSION=	3.4
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -10,7 +11,6 @@ MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Python WSGI adapter module for Apache
 
 LICENSE=	AL2
-
 
 #LATEST_LINK=	mod_wsgi
 CONFLICTS=	${PKGNAMEPREFIX}mod_wsgi-2.* mod_wsgi-2.*
