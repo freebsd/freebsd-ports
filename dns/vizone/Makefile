@@ -9,8 +9,8 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Updates the serial number in one or more zonefiles
 
-USES=		shebangfix
-USE_PERL5_RUN=	yes
+USES=		shebangfix perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 
 SHEBANG_FILES=	updserial

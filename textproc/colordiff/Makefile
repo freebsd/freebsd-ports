@@ -11,8 +11,7 @@ COMMENT=	Tool to colorize diff output
 
 LICENSE=	GPLv2
 
-USES=		shebangfix
-USE_PERL5=	yes
+USES=		shebangfix perl5
 NO_BUILD=	yes
 
 SHEBANG_FILES=	colordiff.pl

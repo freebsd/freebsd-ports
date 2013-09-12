@@ -12,9 +12,8 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	A text-to-HTML conversion tool for web writers
 
 USE_ZIP=	yes
-USE_PERL5=	yes
 NO_BUILD=	yes
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	Markdown.pl
 
 .if !defined(NOPORTDOCS)

@@ -27,9 +27,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 CONFLICTS=	docbook-utils-*
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_PERL5=	yes
-USES=		iconv
+USES=		iconv gmake perl5
 
 .if defined(NOPORTDOCS)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-doc__Makefile.in

@@ -13,8 +13,7 @@ COMMENT=	Generates mazes on a text terminal and lets you traverse them
 
 RUN_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses
 
-USES=		shebangfix
-USE_PERL5=	yes
+USES=		shebangfix perl5
 NO_BUILD=	yes
 
 SHEBANG_FILES=	textmaze

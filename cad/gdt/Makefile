@@ -11,8 +11,8 @@ COMMENT=	GDS2/GDT format translator
 
 LICENSE=	GPLv2
 
-USE_PERL5_RUN=	yes
-USES=	shebangfix
+USES=	shebangfix perl5
+USE_PERL5=	run
 SHEBANG_FILES=	Examples/gdsinfo Examples/scalegds
 WRKSRC=		${WRKDIR}/${PORTNAME:U}-${PORTVERSION}
 PLIST_FILES=	bin/gdsinfo bin/gds2gdt bin/gdt2gds bin/scalegds

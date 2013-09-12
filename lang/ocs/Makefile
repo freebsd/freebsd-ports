@@ -24,10 +24,9 @@ PLIST=		${WRKDIR}/pkg-plist
 ALL_TARGET=	install
 
 USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake perl5
 USE_TCL=	yes
 USE_TK=		yes
-USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 USE_XORG=	xt
 MAKE_JOBS_UNSAFE=	yes

@@ -15,10 +15,8 @@ COMMENT=	A GNOME/Bonobo component for spell checking
 LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell
 
 USE_BZIP2=	yes
-USE_PERL5=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig perl5
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

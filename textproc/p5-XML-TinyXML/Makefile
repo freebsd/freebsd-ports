@@ -10,10 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	info@rickvanderzwet.nl
 COMMENT=	Little and efficient Perl module to manage xml data
 
-USES=		iconv
+USES=		iconv perl5
+USE_PERL5=	configure
 
 MAKE_ARGS+=	LIBS='-L${LOCALBASE}/lib' INC='-I. -I${LOCALBASE}/include'
-PERL_CONFIGURE=	yes
 
 MAN3=		XML::TinyXML.3 \
 		XML::TinyXML::Node.3 \

@@ -12,9 +12,8 @@ COMMENT=	Commandline tool for getting status of torrent
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 
-USE_PERL5=	yes
 NO_BUILD=	yes
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	torrentsniff
 
 do-install:
