@@ -35,12 +35,12 @@ GEN_LIB_DEPENDS=curl:${PORTSDIR}/ftp/curl \
 		event-2.0.6:${PORTSDIR}/devel/libevent2
 GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/transmission-web
 
-USE_GMAKE=	yes
-USES=		pkgconfig
+# This is master port of transmission-*, so don't override USES definition 
+USES+=		gmake pkgconfig iconv
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ARGS=--with-zlib=/usr \
 		${EXTRA_CONF_ARGS}
 EXTRA_CONF_ARGS?=--enable-cli \
