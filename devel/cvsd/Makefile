@@ -13,6 +13,8 @@ COMMENT=	CVS pserver daemon
 EXTRA_PATCHES=	${FILESDIR}/extra-cvsd-buildroot.in
 
 USES=		perl5
+BUILD_DEPENDS=	cvs:${PORTSDIR}/devel/cvs
+RUN_DEPENDS=	cvs:${PORTSDIR}/devel/cvs
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libwrap
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
