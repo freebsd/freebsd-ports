@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ja-scim-anthy
-# Date created:		2 Mar 2005
-# Whom:			Hajimu UMEMOTO <ume@FreeBSD.org>
-#
+# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	scim-anthy
 PORTVERSION=	1.2.7
@@ -21,8 +17,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		kasumi:${PORTSDIR}/japanese/kasumi
 
 USE_GNOME=	lthack
-USES=		iconv
-USE_GMAKE=	yes
+USES=		gmake iconv pkgconfig
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
