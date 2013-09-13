@@ -1,16 +1,6 @@
---- ./configure.in.orig	2013-05-21 21:43:30.000000000 +0000
-+++ ./configure.in	2013-05-21 21:43:14.000000000 +0000
-@@ -74,6 +74,9 @@
- 	*openbsd*)
- 	ac_system="OpenBSD"
- 	;;
-+	*freebsd*)
-+	ac_system="FreeBSD"
-+	;;
- 	*aix*)
- 	AC_DEFINE([KERNEL_AIX], 1, [True if program is to be compiled for a AIX kernel])
- 	ac_system="AIX"
-@@ -106,7 +109,7 @@
+--- configure.in.orig	2013-08-18 04:24:25.049973000 -0600
++++ configure.in	2013-08-19 10:46:53.000000000 -0600
+@@ -110,7 +110,7 @@
  fi
  
  # Where to install .pc files.
@@ -19,7 +9,7 @@
  AC_SUBST(pkgconfigdir)
  
  # Check for standards compliance mode
-@@ -1413,6 +1416,7 @@
+@@ -1419,6 +1419,7 @@
  then
  	AC_CHECK_LIB(kstat, kstat_open, [with_kstat="yes"], [with_kstat="no (libkstat not found)"], [])
  fi
@@ -27,7 +17,7 @@
  if test "x$with_kstat" = "xyes"
  then
  	AC_CHECK_LIB(devinfo, di_init, [with_devinfo="yes"], [with_devinfo="no (not found)"], [])
-@@ -1422,6 +1426,8 @@
+@@ -1428,6 +1429,8 @@
  then
  	AC_DEFINE(HAVE_LIBKSTAT, 1,
  		  [Define to 1 if you have the 'kstat' library (-lkstat)])
@@ -36,7 +26,7 @@
  fi
  AM_CONDITIONAL(BUILD_WITH_LIBKSTAT, test "x$with_kstat" = "xyes")
  AM_CONDITIONAL(BUILD_WITH_LIBDEVINFO, test "x$with_devinfo" = "xyes")
-@@ -1841,12 +1847,6 @@
+@@ -1904,12 +1907,6 @@
  	AC_CHECK_LIB(gcrypt, gcry_md_hash_buffer,
  		[with_libgcrypt="yes"],
  		[with_libgcrypt="no (symbol gcry_md_hash_buffer not found)"])
@@ -49,7 +39,7 @@
  fi
  
  CPPFLAGS="$SAVE_CPPFLAGS"
-@@ -3408,7 +3408,7 @@
+@@ -3454,7 +3451,7 @@
  if test "x$with_python" = "xyes"
  then
  	AC_MSG_CHECKING([for Python LIBS])
@@ -58,7 +48,7 @@
  	python_config_status=$?
  
  	if test "$python_config_status" -ne 0 || test "x$python_library_flags" = "x"
-@@ -3423,7 +3423,7 @@
+@@ -3469,7 +3466,7 @@
  if test "x$with_python" = "xyes"
  then
  	LDFLAGS="-L$python_library_path $LDFLAGS"
@@ -67,7 +57,7 @@
  
  	AC_CHECK_FUNC(PyObject_CallFunction,
  		      [with_python="yes"],
-@@ -4168,7 +4168,7 @@
+@@ -4339,7 +4336,7 @@
  	then
  		AC_MSG_NOTICE([Not checking for libvarnish: Manually configured])
  		with_libvarnish_cflags="-I$withval/include"
@@ -76,28 +66,3 @@
  		with_libvarnish="yes"
  	fi; fi; fi
  ],
-@@ -4693,6 +4693,12 @@
- 	plugin_zfs_arc="yes"
- fi
- 
-+# FreeBSD
-+if test "x$have_struct_kinfo_proc_freebsd" = "xyes"
-+then
-+	plugin_zfs_arc="yes"
-+fi
-+
- if test "x$with_devinfo$with_kstat" = "xyesyes"
- then
- 	plugin_cpu="yes"
-@@ -4866,6 +4872,12 @@
- 	plugin_users="yes"
- fi
- 
-+# FreeBSD
-+if test "x$have_struct_kinfo_proc_freebsd" = "xyes"
-+then
-+	plugin_zfs_arc="yes"
-+fi
-+
- m4_divert_once([HELP_ENABLE], [
- collectd plugins:])
