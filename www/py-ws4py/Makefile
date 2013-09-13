@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ws4py
-PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTVERSION=	0.3.2
 CATEGORIES=	www python
 MASTER_SITES=	http://www.defuze.org/oss/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,23 +23,15 @@ CHERRYPY_DESC=	CherryPy server support
 GEVENT_DESC=	gevent-based client/server support
 TORNADO_DESC=	Tornado client support
 
-.include <bsd.port.options.mk>
-
 CHERRYPY_FILES=	test/test_cherrypy.py ws4py/server/cherrypyserver.py
 GEVENT_FILES=	ws4py/client/geventclient.py ws4py/server/geventserver.py
 TORNADO_FILES=	ws4py/client/tornadoclient.py
 
-.if ${PORT_OPTIONS:MCHERRYPY}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cherrypy>=3.2.2:${PORTSDIR}/www/py-cherrypy
-.endif
+CHERRYPY_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cherrypy>=3.2.2:${PORTSDIR}/www/py-cherrypy
+GEVENT_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gevent>=0.13.8:${PORTSDIR}/devel/py-gevent
+TORNADO_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tornado>=3.1:${PORTSDIR}/www/py-tornado
 
-.if ${PORT_OPTIONS:MGEVENT}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gevent>=0.13.6:${PORTSDIR}/devel/py-gevent
-.endif
-
-.if ${PORT_OPTIONS:MTORNADO}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tornado>=2.0:${PORTSDIR}/www/py-tornado
-.endif
+.include <bsd.port.options.mk>
 
 # Do not install files which will not work
 post-patch:
