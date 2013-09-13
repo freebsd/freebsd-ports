@@ -717,6 +717,7 @@
     SUBDIR += pwgen
     SUBDIR += pwsafe
     SUBDIR += py-XenAPI
+    SUBDIR += py-analyzemft
     SUBDIR += py-bcfg2
     SUBDIR += py-danzfs
     SUBDIR += py-drmaa
