@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-scim-prime
-# Date created:				2005-10-10
-# Whom:					Norikatsu Shigemura <nork@FreeBSD.org>
-#
+# Created by: Norikatsu Shigemura <nork@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	scim-prime
 PORTVERSION=	0.3.0
@@ -20,8 +16,7 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GNOME=	lthack
-USES=		iconv
-USE_GMAKE=	yes
+USES=		gmake iconv pkgconfig
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__

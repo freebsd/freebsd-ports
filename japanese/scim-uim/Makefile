@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ja-scim-uim
-# Date created:		15 Nov 2004
-# Whom:			Seiya Yanagita <s_yanagita@ybb.ne.jp>
-#
+# Created by: Seiya Yanagita <s_yanagita@ybb.ne.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	scim-uim
 PORTVERSION=	0.2.0
@@ -21,8 +17,7 @@ LIB_DEPENDS=	uim:${PORTSDIR}/textproc/uim
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GNOME=	lthack
-USES=		iconv
-USE_GMAKE=	yes
+USES=		gmake iconv pkgconfig
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \

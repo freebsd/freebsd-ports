@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ja-scim-canna
-# Date created:				2005-04-03
-# Whom:					Norikatsu Shigemura <nork@FreeBSD.org>
-#
+# Created by: Norikatsu Shigemura <nork@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	scim-canna
 PORTVERSION=	1.0.0
@@ -21,8 +17,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	lthack
-USES=		iconv
-USE_GMAKE=	yes
+USES=		gmake iconv pkgconfig
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
