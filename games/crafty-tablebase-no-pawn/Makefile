@@ -4,7 +4,7 @@
 PORTNAME=	crafty-tablebases-no-pawn
 PORTVERSION=	20070910
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/TB/3-4-5/
+MASTER_SITES=	http://www.cis.uab.edu/hyatt/crafty/TB/3-4-5/
 DISTFILES=	kbbbk.nbb.emd kbbbk.nbw.emd kbbk.nbb.emd kbbk.nbw.emd	\
 kbbkb.nbb.emd kbbkb.nbw.emd kbbkn.nbb.emd kbbkn.nbw.emd kbbkq.nbb.emd	\
 kbbkq.nbw.emd kbbkr.nbb.emd kbbkr.nbw.emd kbbnk.nbb.emd kbbnk.nbw.emd	\
@@ -44,8 +44,6 @@ EXTRACT_ONLY=
 
 MAINTAINER=	conrads@cox.net
 COMMENT=	These are the tablebases for crafty, minus the pawn tbs
-
-BROKEN=		Does not fetch
 
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
