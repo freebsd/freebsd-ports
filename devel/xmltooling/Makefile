@@ -20,7 +20,6 @@ BUILD_DEPENDS=	boost-libs>=0:${PORTSDIR}/devel/boost-libs
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-log4shib=${LOCALBASE} --with-openssl=${OPENSSLBASE} --with-curl=${LOCALBASE} --disable-doxygen-doc
 USES=		gmake pkgconfig
-USE_GCC=	any
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 
