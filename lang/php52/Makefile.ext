@@ -402,6 +402,7 @@ USE_PHP_BUILD=	yes
 CONFIGURE_ARGS+=--enable-spl \
 		--with-libxml-dir=${LOCALBASE}
 
+CFLAGS+=	-I${LOCALBASE}/include
 USE_GNOME=	libxml2
 
 USE_PHP=	pcre simplexml

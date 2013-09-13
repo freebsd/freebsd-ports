@@ -334,6 +334,7 @@ CONFIGURE_ARGS+=--enable-shmop
 CONFIGURE_ARGS+=--enable-simplexml \
 		--with-libxml-dir=${LOCALBASE}
 
+CFLAGS+=	-I${LOCALBASE}/include
 USES+=		pkgconfig
 USE_GNOME=	libxml2
 .endif
