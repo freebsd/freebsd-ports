@@ -48,8 +48,8 @@ DISTFILES+=	${FVWM_ICONS}.tar.bz2
 CONFIGURE_ARGS+=	--disable-iconv
 .else
 USES+=			iconv
-CONFIGURE_ARGS+=	--with-iconv-library=${LOCALBASE}/lib \
-			--with-iconv-includes=${LOCALBASE}/include
+CONFIGURE_ARGS+=	--with-iconv-library=${ICONV_PREFIX}/lib \
+			--with-iconv-includes=${ICONV_PREFIX}/include
 .endif
 
 .if ${PORT_OPTIONS:MSTROKE}
