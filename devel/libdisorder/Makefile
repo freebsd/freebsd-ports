@@ -1,9 +1,4 @@
-# New ports collection makefile for:	libdisorder
-# Date created:			17 August 2010
-# Whom:				kevlo
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libdisorder
 PORTVERSION=	0.0.2
@@ -12,7 +7,9 @@ CATEGORIES=	devel
 MASTER_SITES=	http://libdisorder.freshdefense.net/releases/
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	A simple C library for entropy measurement
+COMMENT=	Simple C library for entropy measurement
+
+LICENSE=	GPLv2
 
 USE_LDCONFIG=	yes
 
@@ -21,6 +18,9 @@ USE_LDCONFIG=	yes
 .if ${OSVERSION} < 900027
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-disorder.c
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/src/Makefile
 
 do-build:
 	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE}
