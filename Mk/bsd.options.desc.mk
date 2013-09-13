@@ -46,6 +46,7 @@ CDPARANOIA_DESC?=	CD ripping support (cdparanoia)
 CELT_DESC?=		CELT audio codec support
 CFITSIO_DESC?=		FITS support via CFITSIO
 COMPOSITE_DESC?=	X11 Composite extension support
+COOKIE_DESC?=		Cookie support
 CUE_DESC?=		Embedded CUE sheets support
 CUPS_DESC?=		CUPS printing system support
 CURL_DESC?=		Data transfer support via cURL
