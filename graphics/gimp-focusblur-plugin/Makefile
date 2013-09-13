@@ -18,9 +18,9 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk20
 
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins
