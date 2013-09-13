@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Method-Signatures
-PORTVERSION=	0.44
+PORTVERSION=	0.45
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,9 +13,6 @@ COMMENT=	Method declarations with type constraints and no source filter
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-# Do not add Test::CheckDeps to TEST_DEPENDS.
-# Test::CheckDeps depends on Module::Metadata to detect version.
-# Unfortunately, our BSDPAN::ExtUtils::MakeMaker does not work with it.
 BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0.10:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
 		p5-Devel-Declare>=0.005011:${PORTSDIR}/devel/p5-Devel-Declare \
 		p5-Context-Preserve>=0:${PORTSDIR}/devel/p5-Context-Preserve \
@@ -33,11 +30,12 @@ BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0.10:${PORTSDIR}/devel/p5-B-Hooks-EndOfSco
 		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Eval-Closure>=0:${PORTSDIR}/devel/p5-Eval-Closure \
+		p5-Test-CheckDeps>=0.006:${PORTSDIR}/devel/p5-Test-CheckDeps \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuildtiny
 
 MAN3=		MooseX::Method::Signatures.3 \
 		MooseX::Method::Signatures::Types.3 \
