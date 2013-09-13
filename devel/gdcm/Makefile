@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	gdcm
-PORTVERSION=	${GDCM_MAJ}.${GDCM_MIN}
+PORTVERSION=	${GDCM_MAJOR}.${GDCM_MINOR}.${GDCM_PATCH}
 CATEGORIES=	devel
 MASTER_SITES=	SF/gdcm/gdcm%202.x/GDCM%20${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Grassroots DICOM library
 
-LIB_DEPENDS=	openjpeg:${PORTSDIR}/graphics/openjpeg \
-   		expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg \
+   		libexpat.so:${PORTSDIR}/textproc/expat2
 
 OPTIONS_DEFINE=	VTK DOCS
 OPTIONS_UNSET=	DOCS
@@ -19,8 +19,7 @@ VTK_DESC=	Build with VTK bindings
 USE_BZIP2=	yes
 USES=		cmake:outsource
 USE_OPENSSL=	yes
-USE_LDCONFIG=	${PREFIX}/lib \
-		${PREFIX}/lib/gdcm-${GDCM_MAJ}
+USE_LDCONFIG=	${PREFIX}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 CMAKE_ARGS+=	-DGDCM_PDF_DOCUMENTATION:BOOL=NO \
    		-DGDCM_USE_SYSTEM_OPENSSL:BOOL=YES \
@@ -42,20 +41,20 @@ PLIST_SUB+=	VTK=""
 PLIST_SUB+=	VTK="@comment "
 .endif
 
-GDCM_SO=	2
-GDCM_MAJ=	2.2
-GDCM_MIN=	3
+GDCM_MAJOR=	2
+GDCM_MINOR=	2
+GDCM_PATCH=	5
 
-PLIST_SUB+=	GDCM_MAJ="${GDCM_MAJ}" \
-		GDCM_MIN="${GDCM_MIN}" \
-		GDCM_SO="${GDCM_SO}"
+PLIST_SUB+=	GDCM_MAJOR="${GDCM_MAJOR}" \
+		GDCM_MINOR="${GDCM_MINOR}" \
+		GDCM_PATCH="${GDCM_PATCH}"
 
 .if ${PORT_OPTIONS:MDOCS}
 USE_TEX=	latex:build
-USE_GHOSTSCRIPT=	yes
+USE_GHOSTSCRIPT=yes
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 CMAKE_ARGS+=	-DGDCM_DOCUMENTATION:BOOL=YES \
-		-DGDCM_INSTALL_MAN_DIR:STRING=${MAN1PREFIX}/man \
+		-DGDCM_INSTALL_MAN_DIR:STRING=man \
 		-DGDCM_INSTALL_DOC_DIR:STRING=${DOCSDIR}
 MAN1=		gdcm2vtk.1 gdcmconv.1 gdcmanon.1 gdcmgendir.1 \
 		gdcmdump.1 gdcmimg.1 gdcminfo.1 gdcmpdf.1 \
@@ -66,9 +65,7 @@ PORTDOCS=	*
 CMAKE_ARGS+=	-DGDCM_DOCUMENTATION:BOOL=NO
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -e 's| NAMELINK_SKIP||; s| NAMELINK_ONLY||' ${WRKSRC}/CMakeLists.txt
-	${REINPLACE_CMD} -e 's|share/man|man|g;' ${WRKSRC}/CMakeLists.txt
+post-build:
 .if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC}/Utilities/doxygen && ${LOCALBASE}/bin/doxygen -u doxyfile.in
 .endif
