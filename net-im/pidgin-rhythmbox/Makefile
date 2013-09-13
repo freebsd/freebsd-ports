@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pidgin-rhythmbox
-# Date created:		2007-06-28
-# Whom:			Yuri Pankov <yuri@darklight.org.ru>
-#
+# Created by: Yuri Pankov <yuri@darklight.org.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	pidgin-rhythmbox
 PORTVERSION=	2.0
@@ -19,7 +15,7 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin \
 		rhythmbox:${PORTSDIR}/audio/rhythmbox
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 

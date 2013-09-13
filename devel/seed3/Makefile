@@ -25,12 +25,11 @@ CONFLICTS=	seed-2.[0-9]*
 LATEST_LINK=	seed3
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USES=		pathfix gettext
+USES=		pathfix gettext gmake pkgconfig
 USE_GNOME=	gtk30 intltool libxml2
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_SQLITE=	yes
-USE_GMAKE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--enable-gtk-doc=no --with-webkit=3.0
