@@ -2,29 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	exif
-PORTVERSION=	0.6.20
-PORTREVISION=	1
+PORTVERSION=	0.6.21
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command line utility to read and manipulate EXIF data
 
-LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
-		popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
+		libpopt.so:${PORTSDIR}/devel/popt
 
-USES=		pkgconfig
-USE_GMAKE=	yes
+OPTIONS_DEFINE=	NLS
+
+CONFIGURE_ENV=	POPT_CFLAGS=-I${LOCALBASE}/include POPT_LIBS="-L${LOCALBASE}/lib -lpopt"
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=		POPT_CFLAGS=-I${LOCALBASE}/include POPT_LIBS="-L${LOCALBASE}/lib -lpopt"
+USES=		gmake pkgconfig
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
+CONFIGURE_ARGS+=--enable-nls ${ICONV_CONFIGURE_ARG}
 USES+=		gettext iconv
 PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS+=	--disable-nls --without-libiconv-prefix
+CONFIGURE_ARGS+=--disable-nls --without-libiconv-prefix
 PLIST_SUB+=	NLS="@comment "
 .endif
 

@@ -1,10 +1,12 @@
 bin/exif
+%%NLS%%share/locale/cs/LC_MESSAGES/exif.mo
 %%NLS%%share/locale/da/LC_MESSAGES/exif.mo
 %%NLS%%share/locale/de/LC_MESSAGES/exif.mo
 %%NLS%%share/locale/es/LC_MESSAGES/exif.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/exif.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/exif.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/exif.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/exif.mo
 %%NLS%%share/locale/id/LC_MESSAGES/exif.mo
 %%NLS%%share/locale/is/LC_MESSAGES/exif.mo
 %%NLS%%share/locale/it/LC_MESSAGES/exif.mo
@@ -13,6 +15,7 @@ bin/exif
 %%NLS%%share/locale/pl/LC_MESSAGES/exif.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/exif.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/exif.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/exif.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/exif.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/exif.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/exif.mo
