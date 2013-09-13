@@ -5,18 +5,16 @@ PORTNAME=	crafty-open-enormous
 PORTVERSION=	20070924
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/pgn/ \
+MASTER_SITES=	http://www.cis.uab.edu/hyatt/crafty/pgn/ \
 		${MASTER_SITE_LOCAL}
 DISTFILES=	enormous.zip
 EXTRACT_ONLY=	${DISTFILES}
 
 MAINTAINER=	flo@FreeBSD.org
-COMMENT=	The enormous opening book (about 85-90 MByte) for crafty
+COMMENT=	Enormous opening book (about 270 MByte) for crafty
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
-
-BROKEN=		Does not fetch
 
 DIST_SUBDIR=		crafty
 USE_ZIP=		yes
