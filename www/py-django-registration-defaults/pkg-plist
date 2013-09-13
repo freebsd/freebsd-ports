@@ -6,6 +6,7 @@
 %%PYTHON_SITELIBDIR%%/registration_defaults/settings.pyo
 %%PYTHON_SITELIBDIR%%/registration_defaults/templates/registration/activate.html
 %%PYTHON_SITELIBDIR%%/registration_defaults/templates/registration/activation_complete.html
+%%PYTHON_SITELIBDIR%%/registration_defaults/templates/registration/activation_email.html
 %%PYTHON_SITELIBDIR%%/registration_defaults/templates/registration/activation_email.txt
 %%PYTHON_SITELIBDIR%%/registration_defaults/templates/registration/activation_email_subject.txt
 %%PYTHON_SITELIBDIR%%/registration_defaults/templates/registration/login.html
