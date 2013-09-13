@@ -341,7 +341,6 @@
     SUBDIR += deforaos-libsystem
     SUBDIR += deheader
     SUBDIR += delta
-    SUBDIR += deputy
     SUBDIR += desktop-file-utils
     SUBDIR += dev86
     SUBDIR += devhelp
