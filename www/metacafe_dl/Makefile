@@ -5,8 +5,10 @@ PORTNAME=	metacafe_dl
 PORTVERSION=	2007.09.13
 PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	http://www.arrakis.es/~rggi3/metacafe-dl/
+#MASTER_SITES=	http://www.arrakis.es/~rggi3/metacafe-dl/
 DISTNAME=	metacafe-dl-${PORTVERSION}
+EXTRACT_SUFX=
+EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for downloading videos from metacafe.com
