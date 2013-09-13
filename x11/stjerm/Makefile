@@ -15,7 +15,7 @@ ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} \
 		-I${LOCALBASE}/share/aclocal
 USE_GNOME=	vte gtk20
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 
 MAN8=		stjerm.8
 LICENSE_FILE=	${WRKSRC}/COPYING
