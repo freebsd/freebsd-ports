@@ -3,17 +3,18 @@
 
 PORTNAME=	ng_ipacct
 PORTVERSION=	20061223
+PORTREVISION=	1
 CATEGORIES=	net-mgmt kld
 MASTER_SITES=	${MASTER_SITE_LOCAL:S!$!skv/!} \
-		ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/kernel/ng_ipacct/
+		http://highsecure.ru/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Netgraph IP accounting
 
 .ifndef PACKAGE_BUILDING
-NO_PACKAGE=	Depends on kernel
+NO_PACKAGE=	depends on kernel
 .else
-IGNORE=		Depends on kernel
+IGNORE=		depends on kernel
 .endif
 
 KMODDIR=	/boot/modules
