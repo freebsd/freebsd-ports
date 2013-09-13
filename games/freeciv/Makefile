@@ -16,6 +16,7 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} --program-transform-name=
 
 MAN6=		freeciv-server.6 freeciv-client.6 \
