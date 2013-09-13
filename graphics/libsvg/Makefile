@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
 USES=		pathfix iconv pkgconfig
 USE_LDCONFIG=	yes
+CFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_FILES=	include/svg.h \
 		lib/libsvg.a \
