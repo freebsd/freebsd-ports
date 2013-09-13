@@ -2,43 +2,63 @@
 # $FreeBSD$
 
 PORTNAME=	UI-Dialog
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KCK
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl wrapper for the various dialog applications
 
-RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
+LICENSE=	LGPL21 LGPL3
+LICENSE_COMB=	dual
 
-.if defined(WITH_X11)
-RUN_DEPENDS+=	xdialog:${PORTSDIR}/x11/xdialog
-.endif
+RUN_DEPENDS=	${LOCALBASE}/bin/cdialog:${PORTSDIR}/devel/cdialog
 
-.if defined(WITH_NEWT)
-RUN_DEPENDS+=	whiptail:${PORTSDIR}/devel/newt
-.endif
-
-.if defined(WITH_KDE)
-RUN_DEPENDS+=	kdialog:${PORTSDIR}/x11/kdebase3
-.endif
-
-.if defined(WITH_ZENITY)
-RUN_DEPENDS+=	zenity:${PORTSDIR}/x11/zenity
-.endif
+OPTIONS_DEFINE=	KDE NEWT X11 ZENITY
 
 USES=		perl5
 USE_PERL5=	configure
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN3=		UI::Dialog.3 UI::Dialog::Backend::XDialog.3 \
-		UI::Dialog::Backend::KDialog.3 UI::Dialog::Backend::ASCII.3 \
-		UI::Dialog::Backend::Zenity.3 UI::Dialog::KDE.3 \
-		UI::Dialog::Backend.3 UI::Dialog::Gauged.3 \
-		UI::Dialog::Console.3 UI::Dialog::Backend::Whiptail.3 \
-		UI::Dialog::GNOME.3 UI::Dialog::Backend::CDialog.3 \
-		UI::Dialog::Backend::Nautilus.3 UI::Dialog::Backend::GDialog.3 \
-		UI::Dialog::Backend::XOSD.3
+MAN3=		UI::Dialog.3 \
+		UI::Dialog::Backend.3 \
+		UI::Dialog::Backend::ASCII.3 \
+		UI::Dialog::Backend::CDialog.3 \
+		UI::Dialog::Backend::GDialog.3 \
+		UI::Dialog::Backend::KDialog.3 \
+		UI::Dialog::Backend::Nautilus.3 \
+		UI::Dialog::Backend::Whiptail.3 \
+		UI::Dialog::Backend::XDialog.3 \
+		UI::Dialog::Backend::XOSD.3 \
+		UI::Dialog::Backend::Zenity.3 \
+		UI::Dialog::Console.3 \
+		UI::Dialog::GNOME.3 \
+		UI::Dialog::Gauged.3 \
+		UI::Dialog::KDE.3 \
+		UI::Dialog::Screen::Menu.3
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MKDE}
+RUN_DEPENDS+=	${LOCALBASE}/bin/kdialog:${PORTSDIR}/x11/kde4-baseapps
+.endif
+
+.if ${PORT_OPTIONS:MNEWT}
+RUN_DEPENDS+=	${LOCALBASE}/bin/whiptail:${PORTSDIR}/devel/newt
+.endif
+
+.if ${PORT_OPTIONS:MX11}
+RUN_DEPENDS+=	${LOCALBASE}/bin/Xdialog:${PORTSDIR}/x11/xdialog
+.endif
+
+.if ${PORT_OPTIONS:MZENITY}
+RUN_DEPENDS+=	${LOCALBASE}/bin/zenity:${PORTSDIR}/x11/zenity
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "/self->{'_opts'}->{'bin'}/ s|dialog|c&|" ${WRKSRC}/lib/UI/Dialog/Backend/CDialog.pm
 
 .include <bsd.port.mk>
