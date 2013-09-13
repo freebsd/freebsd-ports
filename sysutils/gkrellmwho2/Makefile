@@ -23,6 +23,7 @@ ALL_TARGET=
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmwho2.so
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/configure ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/Makefile
 
 do-install:
