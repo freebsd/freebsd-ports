@@ -12,17 +12,21 @@ MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Learning console-based MP3/OGG player
 
 LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac \
-		fftw.2:${PORTSDIR}/math/fftw \
-		id3-3.8.3:${PORTSDIR}/audio/id3lib \
-		mad.2:${PORTSDIR}/audio/mad \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		ao.4:${PORTSDIR}/audio/libao
+		fftw:${PORTSDIR}/math/fftw \
+		id3:${PORTSDIR}/audio/id3lib \
+		mad:${PORTSDIR}/audio/mad \
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		ao:${PORTSDIR}/audio/libao
 RUN_DEPENDS=	id3v2:${PORTSDIR}/audio/id3v2
 
 USE_BZIP2=	yes
 USES=		gmake
 USE_RUBY=	yes
-.if !defined(NOPORTDOCS)
+MAKE_ARGS=	CC=${CC}
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
 
@@ -41,9 +45,10 @@ do-install:
 .for FILE in collect_info edit_tag export_music import_music joystick uncollect_info
 	${INSTALL_SCRIPT} ${WRKSRC}/extra/${FILE}.rb ${PREFIX}/bin
 .endfor
+	${MKDIR} ${RUBY_SITELIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/extra/musicdb_lib.rb ${RUBY_SITELIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/extra/squash.conf ${PREFIX}/etc/squash.conf.dist
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in README doc/FEATURES doc/LOCKS doc/INSTALL doc/USERS_GUIDE
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
