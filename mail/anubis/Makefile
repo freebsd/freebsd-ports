@@ -1,9 +1,5 @@
-# Ports collection makefile for:	anubis
-# Date created:			Jul 31, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	anubis
 PORTVERSION=	4.1.1
@@ -27,6 +23,7 @@ GSASL_DESC=	GSASL support (required for databases)
 GDBM_DESC=	GDBM backend
 SOCKS_DESC=	SOCKS proxy support
 
+USES=		pkgconfig
 USE_RC_SUBR=	anubis
 USE_AUTOTOOLS=	aclocal autoheader autoconf automake
 ACLOCAL_ARGS=	-I m4 -I am

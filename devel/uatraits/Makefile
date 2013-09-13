@@ -16,6 +16,7 @@ LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
 		pcre:${PORTSDIR}/devel/pcre \
 		xml2:${PORTSDIR}/textproc/libxml2
 
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_OPENSSL=	yes

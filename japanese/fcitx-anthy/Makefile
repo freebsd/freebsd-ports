@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fcitx-anthy
-# Date created:				18 Jul 2012
-# Whom:			Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fcitx-anthy
 PORTVERSION=	0.1.1
@@ -18,7 +14,7 @@ LIB_DEPENDS=	fcitx-config:${PORTSDIR}/chinese/fcitx \
 		anthy:${PORTSDIR}/japanese/anthy
 
 USE_XZ=		yes
-USES=		cmake gettext
+USES=		cmake gettext pkgconfig
 USE_GNOME=	intltool
 
 PROJECTHOST=	fcitx
