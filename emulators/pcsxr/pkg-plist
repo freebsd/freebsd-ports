@@ -19,6 +19,7 @@ share/pcsxr/gpu.png
 share/pcsxr/dfsound.ui
 share/pcsxr/spu.png
 share/pcsxr/sio1.png
+share/pcsxr/sio1.ui
 share/pcsxr/cd.png
 share/pcsxr/iso-reopen.png
 share/pcsxr/cdr.png
@@ -32,12 +33,16 @@ share/pcsxr/pcsxr.png
 share/pixmaps/pcsxr-icon.png
 share/applications/pcsxr.desktop
 @dirrmtry share/applications
+lib/pcsxr/cfgBladeSio1
 lib/pcsxr/cfgDFXVideo
 lib/pcsxr/cfgpeopsxgl
 lib/pcsxr/cfgDFInput
 lib/pcsxr/cfgDFCdrom
 lib/pcsxr/cfgDFSound
 lib/pcsxr/cfgDFNet
+lib/pcsxr/libBladeSio1.a
+lib/pcsxr/libBladeSio1.la
+lib/pcsxr/libBladeSio1.so
 lib/pcsxr/libDFXVideo.a
 lib/pcsxr/libDFXVideo.la
 lib/pcsxr/libDFXVideo.so
@@ -57,5 +62,3 @@ lib/pcsxr/libDFNet.a
 lib/pcsxr/libDFNet.la
 lib/pcsxr/libDFNet.so
 @dirrm lib/pcsxr
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

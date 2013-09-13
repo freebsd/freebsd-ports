@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcsxr
-PORTVERSION=	1.9.92.r84102
+PORTVERSION=	1.9.94.r87113
 CATEGORIES=	emulators
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -30,8 +30,8 @@ USE_LDCONFIG=	yes
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(c|h|cpp|hpp|am)
 
-USE_GNOME=	gtk30 desktopfileutils glib20
-USES=		iconv gmake pkgconfig
+USE_GNOME=	gtk30 glib20
+USES=		iconv gmake pkgconfig desktop-file-utils
 USE_XORG=	x11 xv xext xxf86vm xtst
 USE_SDL=	sdl
 USE_GL=	gl
@@ -75,6 +75,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
-	@-update-desktop-database
 
 .include <bsd.port.mk>
