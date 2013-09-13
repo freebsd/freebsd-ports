@@ -14,6 +14,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	opencv_legacy:${PORTSDIR}/graphics/opencv
 
+USES=		pkgconfig
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

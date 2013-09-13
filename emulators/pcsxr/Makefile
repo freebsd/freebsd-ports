@@ -20,7 +20,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtool
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -32,7 +31,7 @@ USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(c|h|cpp|hpp|am)
 
 USE_GNOME=	gtk30 desktopfileutils glib20
-USES=		iconv
+USES=		iconv gmake pkgconfig
 USE_XORG=	x11 xv xext xxf86vm xtst
 USE_SDL=	sdl
 USE_GL=	gl
