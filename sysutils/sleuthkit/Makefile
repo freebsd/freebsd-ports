@@ -9,6 +9,15 @@ MASTER_SITES=	SF
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Tools and library for filesystem forensic analysis
 
+LICENSE=	CPL IBM GPLv2
+LICENSE_COMB=	multi
+LICENSE_NAME_CPL=Common Public License
+LICENSE_NAME_IBM=IBM Public License
+LICENSE_FILE_CPL=${WRKSRC}/licenses/cpl1.0.txt
+LICENSE_FILE_IBM=${WRKSRC}/licenses/IBM-LICENSE
+LICENSE_PERMS_CPL=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_IBM=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 RUN_DEPENDS=	p5-DateTime-TimeZone>=0:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 		exif:${PORTSDIR}/graphics/exif
 
