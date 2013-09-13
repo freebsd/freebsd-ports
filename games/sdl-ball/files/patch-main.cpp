@@ -1,6 +1,14 @@
---- main.cpp.orig	2009-01-11 19:09:56.000000000 +0300
-+++ main.cpp	2013-05-30 21:59:20.884120034 +0400
-@@ -1420,7 +1420,7 @@
+--- main.cpp.orig	2013-09-13 20:14:07.890226440 +0400
++++ main.cpp	2013-09-13 20:14:24.001226100 +0400
+@@ -31,6 +31,7 @@
+ #include <vector>
+ #include <sys/time.h>
+ #include <sys/stat.h>
++#include <unistd.h> // for usleep()
+ 
+ #include <dirent.h>
+ 
+@@ -1420,7 +1421,7 @@
  //Leaves an trail of the ball
  class tracer {
    private:
