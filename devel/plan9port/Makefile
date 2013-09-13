@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	plan9port
-PORTVERSION=	20130320
+PORTVERSION=	20130907
 CATEGORIES=	devel plan9
-MASTER_SITES=	http://swtch.com/plan9port/
+MASTER_SITES=	http://swtch.com/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -105,9 +105,11 @@ post-patch:
 		${WRKSRC}/src/cmd/acme/acme.c
 	@${SED} -e 's|util\.h|lib&|' ${WRKSRC}/src/cmd/9term/OpenBSD.c \
 		> ${WRKSRC}/src/cmd/9term/${OPSYS}.c
+	@${REINPLACE_CMD} -e 's|, swizz(void)|&, swizz8(void)|' \
+		${WRKSRC}/src/cmd/xd.c
 
 do-build:
-	cd ${WRKSRC} && ./INSTALL
+	cd ${WRKSRC} && CC9="${CC}" ./INSTALL
 
 post-build:
 	${RM} -rf `${FIND} ${WRKSRC}/dist -type f ! -regex ".*\.png"`
