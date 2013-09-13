@@ -1,15 +1,20 @@
-@comment $FreeBSD$
 bin/box
 bin/box%%PLIST_VER%%
 include/box%%PLIST_VER%%/box/array.h
+include/box%%PLIST_VER%%/box/bltinarray.h
+include/box%%PLIST_VER%%/box/callable.h
+include/box%%PLIST_VER%%/box/core.h
 include/box%%PLIST_VER%%/box/defaults.h
 include/box%%PLIST_VER%%/box/error.h
+include/box%%PLIST_VER%%/box/exception.h
 include/box%%PLIST_VER%%/box/hashfunc.h
 include/box%%PLIST_VER%%/box/hashtable.h
+include/box%%PLIST_VER%%/box/integers.h
 include/box%%PLIST_VER%%/box/list.h
 include/box%%PLIST_VER%%/box/mem.h
 include/box%%PLIST_VER%%/box/messages.h
 include/box%%PLIST_VER%%/box/msgbase.h
+include/box%%PLIST_VER%%/box/obj.h
 include/box%%PLIST_VER%%/box/occupation.h
 include/box%%PLIST_VER%%/box/print.h
 include/box%%PLIST_VER%%/box/srcpos.h
@@ -17,9 +22,9 @@ include/box%%PLIST_VER%%/box/stream.h
 include/box%%PLIST_VER%%/box/strutils.h
 include/box%%PLIST_VER%%/box/types.h
 include/box%%PLIST_VER%%/box/version.h
+include/box%%PLIST_VER%%/box/vm2c.h
 include/box%%PLIST_VER%%/box/vm2txt.h
-include/box%%PLIST_VER%%/box/vm_private.h
-include/box%%PLIST_VER%%/box/vmalloc.h
+include/box%%PLIST_VER%%/box/vm_priv.h
 include/box%%PLIST_VER%%/box/vmdasm.h
 include/box%%PLIST_VER%%/box/vmproc.h
 include/box%%PLIST_VER%%/box/vmserial.h
@@ -53,6 +58,7 @@ lib/box%%PLIST_VER%%/pkg/g/cmdstream.box
 lib/box%%PLIST_VER%%/pkg/g/color.box
 lib/box%%PLIST_VER%%/pkg/g/const.box
 lib/box%%PLIST_VER%%/pkg/g/constraints.box
+lib/box%%PLIST_VER%%/pkg/g/curve.box
 lib/box%%PLIST_VER%%/pkg/g/fill.box
 lib/box%%PLIST_VER%%/pkg/g/g2.box
 lib/box%%PLIST_VER%%/pkg/g/gcore.box
@@ -90,36 +96,6 @@ lib/libboxcore%%PLIST_VER%%.a
 lib/libboxcore%%PLIST_VER%%.la
 lib/libboxcore%%PLIST_VER%%.so
 lib/libboxcore%%PLIST_VER%%.so.0
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.am
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.in
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/box-logo.box
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cairo.box
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/curved_arrow.box
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cycloid.box
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fractree.box
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gradient.box
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/multivibrator.box
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mysin.box
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pythagoras.box
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/Makefile.am
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/Makefile.in
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/bouncing.bash
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/bouncing.box
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/losing_eyes.bash
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/losing_eyes.box
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/shy.bash
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/shy.box
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/washing_machine.bash
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/washing_machine.box
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/snake.box
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/text.box
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/translucency.box
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wheatstone.box
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yin-yang.box
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/smileys
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm lib/box%%PLIST_VER%%/pkg/g
 @dirrm lib/box%%PLIST_VER%%/pkg
 @dirrm lib/box%%PLIST_VER%%/lib
