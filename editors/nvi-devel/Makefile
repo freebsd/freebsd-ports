@@ -21,7 +21,7 @@ USE_BZIP2=		yes
 WRKSRC=			${WRKDIR}/${DISTNAME}/build.unix
 USE_AUTOTOOLS=		libtool
 USE_LDCONFIG=		yes
-USES=			iconv
+USES=			iconv pkgconfig
 USE_BDB=		42+
 CONFIGURE_ARGS+=	--with-db-prefix=${LOCALBASE} \
 			--program-prefix=n
