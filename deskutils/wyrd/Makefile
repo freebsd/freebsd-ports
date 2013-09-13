@@ -27,6 +27,9 @@ UTF8_CONFIGURE_ENABLE=	utf8
 
 .include <bsd.port.options.mk>
 
+post-patch:
+	@${REINPLACE_CMD} 's|gcc|${CC}|' ${WRKSRC}/curses/curses.ml
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wyrd.opt ${PREFIX}/bin/wyrd
 	${INSTALL_DATA} ${WRKSRC}/wyrdrc ${PREFIX}/etc/wyrdrc
