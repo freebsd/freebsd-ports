@@ -1,2 +1,4 @@
-SHA256 (icecast-2.3.3.tar.gz) = 1b1d06f5f83c9a983cd28cc78aa90e4038f933511b3d20d7fd2cfc116645c36d
-SIZE (icecast-2.3.3.tar.gz) = 1161774
+SHA256 (icecast/icecast-2.3.3.tar.gz) = 1b1d06f5f83c9a983cd28cc78aa90e4038f933511b3d20d7fd2cfc116645c36d
+SIZE (icecast/icecast-2.3.3.tar.gz) = 1161774
+SHA256 (icecast/favicon.ico) = 6e22f7e26d2f97e9c1b7840458bcd29a81a6ad3433248506f56cdc305ec7487e
+SIZE (icecast/favicon.ico) = 1406

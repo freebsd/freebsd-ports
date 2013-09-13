@@ -3,12 +3,17 @@
 
 PORTNAME=	icecast2
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio net ipv6
-MASTER_SITES=	http://downloads.xiph.org/releases/icecast/ \
-		http://svn.xiph.org/releases/icecast/ \
-		LOCAL/sunpoet
-DISTNAME=	icecast-${PORTVERSION}
+MASTER_SITES=	http://downloads.xiph.org/releases/icecast/:source \
+		http://svn.xiph.org/releases/icecast/:source \
+		LOCAL/sunpoet:source \
+		http://www.icecast.org/:icon
+DISTFILES=	icecast-${PORTVERSION}${EXTRACT_SUFX}:source \
+		favicon.ico:icon
+DIST_SUBDIR=	icecast
+EXTRACT_ONLY=	icecast-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Streaming mp3/ogg-vorbis audio server
@@ -44,6 +49,7 @@ post-patch:
 .endif
 
 post-install:
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/favicon.ico ${DATADIR}/web/
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

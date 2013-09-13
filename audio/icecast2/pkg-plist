@@ -18,6 +18,7 @@ etc/icecast.xml.sample
 %%DATADIR%%/web/corner_bottomright.jpg
 %%DATADIR%%/web/corner_topleft.jpg
 %%DATADIR%%/web/corner_topright.jpg
+%%DATADIR%%/web/favicon.ico
 %%DATADIR%%/web/icecast.png
 %%DATADIR%%/web/key.gif
 %%DATADIR%%/web/key.png
