@@ -25,6 +25,7 @@ post-patch:
 		-e '/OBJECT/ s|".*\(LevelDB\.o\).*"|"\1"|' \
 		-e '/INC/ s|-I|-I${LOCALBASE}/include &|' \
 		-e '/LIBS/ s|\[\(.*\)\]|["-L${LOCALBASE}/lib -lleveldb " . (\1)]|' \
+		-e 's|g++|${CXX}|' \
 			${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
