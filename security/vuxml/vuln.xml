@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5bd6811f-1c75-11e3-ba72-98fc11cdc4f5">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>11.2r202.310</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb13-21.html">
+	  <p>These updates address vulnerabilities that could cause a crash
+	    and potentially allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-3361</cvename>
+      <cvename>CVE-2013-3362</cvename>
+      <cvename>CVE-2013-3363</cvename>
+      <cvename>CVE-2013-5324</cvename>
+      <url>http://www.adobe.com/support/security/bulletins/apsb13-21.html</url>
+    </references>
+    <dates>
+      <discovery>2013-09-10</discovery>
+      <entry>2013-09-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a851b305-1bc3-11e3-95b7-00e0814cab4e">
     <topic>django -- multiple vulnerabilities</topic>
     <affects>
