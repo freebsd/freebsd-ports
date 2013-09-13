@@ -2,40 +2,47 @@
 # $FreeBSD$
 
 PORTNAME=	boxer
-PORTVERSION=	0.3.8
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/boxc/${PORTNAME:C/^b/B/}%20-%20the%20Box%20GUI/${DISTNAME}/ \
-		http://boxc.sourceforge.net/_images/:icons
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+		SF/nemysisfreebsdp/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		cycloid.png:icons
+		${PORTNAME}.png:icons
 DIST_SUBDIR=	box
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	GUI for Box the figure description language
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3
 
 RUN_DEPENDS=	box:${PORTSDIR}/graphics/box
-EXTRACT_DEPENDS=pngtopnm:${PORTSDIR}/graphics/netpbm
 
 USE_GNOME=	pygtk2
-
-USE_PYTHON=	-2.7
+USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+USE_LDCONFIG=	yes
 
-DESKTOP_ENTRIES="Boxer" "${COMMENT}" \
-		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
-		"${PORTNAME}" "Graphics;VectorGraphics;" false
+PORTDOCS=	ChangeLog
+PORTEXAMPLES=	*
 
-post-extract:
-	@(cd ${WRKSRC} && \
-		${LOCALBASE}/bin/pngtopnm ${DISTDIR}/${DIST_SUBDIR}/cycloid.png | \
-		${LOCALBASE}/bin/pamscale .218 | ${LOCALBASE}/bin/pnmtopng > ${PORTNAME}.png)
+DESKTOP_ENTRIES="Boxer" "${COMMENT}" "${PORTNAME}" \
+		"${PORTNAME}" "Application;Graphics;" false
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${PREFIX}/share/pixmaps
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps/
+
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/src/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
+.endif
 
 .include <bsd.port.mk>
