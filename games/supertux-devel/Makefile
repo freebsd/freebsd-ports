@@ -18,7 +18,8 @@ USE_BZIP2=	yes
 USE_SDL=	image
 USE_OPENAL=	al
 USE_GL=		glew
-USES=		cmake:outsource
+USES=		cmake:outsource iconv
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 post-patch:
 	${REINPLACE_CMD} -e '/^Icon=/s,supertux.png,supertux2.png,' \

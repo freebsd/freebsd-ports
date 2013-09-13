@@ -24,7 +24,7 @@ LIB_DEPENDS=	raw:${PORTSDIR}/graphics/libraw \
 		lcms2:${PORTSDIR}/graphics/lcms2 \
 		Xcm:${PORTSDIR}/x11/libXcm
 
-USES=		cmake gettext pkgconfig
+USES=		cmake gettext iconv pkgconfig
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_LDCONFIG=	yes

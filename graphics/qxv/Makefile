@@ -17,7 +17,6 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		glib-2.0.0:${PORTSDIR}/devel/glib20 \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		iconv.3:${PORTSDIR}/converters/iconv \
 		icui18n:${PORTSDIR}/devel/icu \
 		intl.9:${PORTSDIR}/devel/gettext \
 		pcre.3:${PORTSDIR}/devel/pcre \
@@ -25,6 +24,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		xcb.2:${PORTSDIR}/x11/xcb
 
+USES=		iconv
 USE_BZIP2=	yes
 USE_XORG=	sm xrender xext x11 xau xdmcp ice
 USE_QT4=	corelib gui qmake_build moc_build uic_build rcc_build
