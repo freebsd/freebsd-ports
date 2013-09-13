@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux_dvbwrapper-kmod
-# Date created:				Thu Apr 21 17:34:08 CEST 2011
-# Whom:					nox@FreeBSD.org
-#
+# Created by: nox@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	linux_dvbwrapper-kmod
 PORTVERSION=	1.0

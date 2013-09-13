@@ -25,7 +25,7 @@
  */
 
 #include <sys/cdefs.h>
-__FBSDID("$FreeBSD: /tmp/pcvs/ports/multimedia/linux_dvbwrapper-kmod/files/linux_dvbwrapper.c,v 1.3 2012-06-28 17:49:51 nox Exp $");
+__FBSDID("$FreeBSD$");
 
 #include <sys/param.h>
 #include <sys/systm.h>
@@ -192,6 +192,9 @@ linux_ioctl_dvb(struct thread *td, struct linux_ioctl_args *args)
 	struct dtv_property *vp, *p;
 	size_t l_propsiz, propsiz;
 	vm_offset_t uvp;
+#if __FreeBSD_version > 1000051
+	cap_rights_t rights;
+#endif
 
 	l_vp = NULL;
 	vp = NULL;
@@ -299,7 +302,11 @@ linux_ioctl_dvb(struct thread *td, struct linux_ioctl_args *args)
 			goto out2;
 		copyout(vp, (void *)uvp, propsiz);
 
-#if __FreeBSD_version > 900040
+#if __FreeBSD_version > 1000051
+		error = fget(td, args->fd,
+				cap_rights_init(&rights, CAP_IOCTL), &fp);
+		if (error != 0)
+#elif __FreeBSD_version > 900040
 		if ((error = fget(td, args->fd, CAP_IOCTL, &fp)) != 0)
 #else
 		if ((error = fget(td, args->fd, &fp)) != 0)
