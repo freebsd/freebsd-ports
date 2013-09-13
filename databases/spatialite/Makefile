@@ -1,9 +1,5 @@
-# New ports collection makefile for:	spatialite
-# Date created:				11 July 2008
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	spatialite
 PORTVERSION=	3.0.1
@@ -22,12 +18,11 @@ LIB_DEPENDS=	geos_c.9:${PORTSDIR}/graphics/geos \
 EXTRACT_SUFX =	.tar.gz
 WRKSRC=		${WRKDIR}/lib${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_SQLITE=	yes
-USES=		iconv
+USES=		gmake iconv
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ARGS+=CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
@@ -39,10 +34,6 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=		does not build
-.endif
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not compile on powerpc: invokes i386 assembler

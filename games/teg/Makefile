@@ -10,11 +10,11 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A turn-based strategy game for GNOME
 
-USES=        pathfix gmake pkgconfig
+USES=		pathfix gmake iconv pkgconfig
 USE_GNOME=	gnomeprefix intlhack libgnomeui
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ARGS=	--disable-ggz
 
 GCONF_SCHEMAS=	teg.schemas

@@ -20,10 +20,9 @@ OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-USES=		pkgconfig
+USES=		gmake iconv pkgconfig
 USE_QT4=	gui moc_build qmake_build rcc_build uic_build
 USE_TEX=	latex
-USE_GMAKE=	yes
 MAKE_ENV=	DLL_CFLAGS="-fPIC" \
 		ICONV_CFLAGS="-I${LOCALBASE}/include" \
 		ICONV_LIBS="-L${LOCALBASE}/lib ${ICONV_LIB}" \

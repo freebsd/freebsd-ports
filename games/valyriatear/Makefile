@@ -22,7 +22,7 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 		png15:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
-USES=		cmake gettext
+USES=		cmake gettext iconv
 USE_SDL=	sdl image ttf
 USE_GL=		gl
 USE_OPENAL=	yes
