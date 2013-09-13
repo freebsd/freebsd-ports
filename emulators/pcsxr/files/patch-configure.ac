@@ -1,5 +1,5 @@
---- configure.ac.orig	2011-01-25 06:54:07.000000000 +0100
-+++ configure.ac	2011-01-26 14:35:39.236296066 +0100
+--- configure.ac.orig	2013-09-10 11:55:59.000000000 +0200
++++ configure.ac	2013-09-13 09:42:28.018735076 +0200
 @@ -8,6 +8,7 @@
  AC_CONFIG_HEADERS([include/config.h:include/config.h.in])
  
@@ -8,3 +8,12 @@
  AM_PROG_CC_C_O
  AC_PROG_INSTALL
  AC_STDC_HEADERS
+@@ -54,7 +55,7 @@
+ AC_CHECK_LIB(dl, dlsym, [LIBS="$LIBS -ldl"], [])
+ AC_CHECK_LIB(socket, socket, [LIBS="$LIBS -lsocket"], [])
+ AC_CHECK_LIB(nsl, gethostbyname, [LIBS="$LIBS -lnsl"], [])
+-AC_CHECK_LIB(umem, umem_alloc, [LIBS="$LIBS -lumem"], [])
++dnl AC_CHECK_LIB(umem, umem_alloc, [LIBS="$LIBS -lumem"], [])
+ 
+ AM_CONDITIONAL(SOUND_OSS, false)
+ AM_CONDITIONAL(SOUND_SDL, false)
