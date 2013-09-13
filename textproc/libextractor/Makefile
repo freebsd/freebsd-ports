@@ -37,6 +37,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/src/plugins/Makefile.*
 	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g' \
+		-e 's|-lstdc++||g' \
 		${WRKSRC}/configure
 
 check: build install
