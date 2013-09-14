@@ -18,7 +18,6 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 
 USES=		imake
 USE_XORG=	xi
-USE_GCC=	any
 WRKSRC=		${WRKDIR}/xli-${XLI_SNAPVER}
 
 MAN1=		xli.1 xlito.1
