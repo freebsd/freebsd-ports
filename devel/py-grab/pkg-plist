@@ -44,54 +44,54 @@ bin/grab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/cli.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/cli.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/cli.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/admin.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/admin.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/admin.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/forms.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/forms.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/forms.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0001_initial.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0001_initial.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0001_initial.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0002_auto__del_taskresult__add_task.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0002_auto__del_taskresult__add_task.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0002_auto__del_taskresult__add_task.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0003_auto__del_field_task_stop_time__add_field_task_end_time.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0003_auto__del_field_task_stop_time__add_field_task_end_time.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0003_auto__del_field_task_stop_time__add_field_task_end_time.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0004_auto__del_field_task_status__add_field_task_is_done__add_field_task_is.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0004_auto__del_field_task_status__add_field_task_is_done__add_field_task_is.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0004_auto__del_field_task_status__add_field_task_is_done__add_field_task_is.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0005_auto__del_field_task_is_failed__add_field_task_is_ok.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0005_auto__del_field_task_is_failed__add_field_task_is_ok.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0005_auto__del_field_task_is_failed__add_field_task_is_ok.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0006_auto__del_field_task_work_time__add_field_task_elapsed_time.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0006_auto__del_field_task_work_time__add_field_task_elapsed_time.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0006_auto__del_field_task_work_time__add_field_task_elapsed_time.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0007_auto__chg_field_task_elapsed_time.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0007_auto__chg_field_task_elapsed_time.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/0007_auto__chg_field_task_elapsed_time.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/models.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/models.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/models.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/signals.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/signals.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/signals.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/urls.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/urls.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/urls.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/views.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/views.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/views.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/admin.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/admin.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/admin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/forms.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/forms.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/forms.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0001_initial.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0001_initial.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0001_initial.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0002_auto__del_taskresult__add_task.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0002_auto__del_taskresult__add_task.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0002_auto__del_taskresult__add_task.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0003_auto__del_field_task_stop_time__add_field_task_end_time.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0003_auto__del_field_task_stop_time__add_field_task_end_time.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0003_auto__del_field_task_stop_time__add_field_task_end_time.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0004_auto__del_field_task_status__add_field_task_is_done__add_field_task_is.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0004_auto__del_field_task_status__add_field_task_is_done__add_field_task_is.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0004_auto__del_field_task_status__add_field_task_is_done__add_field_task_is.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0005_auto__del_field_task_is_failed__add_field_task_is_ok.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0005_auto__del_field_task_is_failed__add_field_task_is_ok.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0005_auto__del_field_task_is_failed__add_field_task_is_ok.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0006_auto__del_field_task_work_time__add_field_task_elapsed_time.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0006_auto__del_field_task_work_time__add_field_task_elapsed_time.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0006_auto__del_field_task_work_time__add_field_task_elapsed_time.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0007_auto__chg_field_task_elapsed_time.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0007_auto__chg_field_task_elapsed_time.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/0007_auto__chg_field_task_elapsed_time.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/signals.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/signals.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/signals.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/urls.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/urls.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/urls.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/views.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/views.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/views.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/error.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/error.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/error.pyo
@@ -215,6 +215,9 @@ bin/grab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/cache_backend/tokyo_cabinet.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/cache_backend/tokyo_cabinet.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/cache_backend/tokyo_cabinet.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/command_controller.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/command_controller.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/command_controller.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/data.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/data.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/spider/data.pyo
@@ -380,6 +383,9 @@ bin/grab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/tools/service/formyip.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/tools/service/formyip.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/tools/service/formyip.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/tools/structured.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/tools/structured.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/tools/structured.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/tools/text.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/tools/text.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/tools/text.pyo
@@ -458,6 +464,9 @@ bin/grab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/py3k_support.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/py3k_support.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/py3k_support.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/slots.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/slots.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/util/slots.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/__init__.pyo
@@ -560,9 +569,15 @@ bin/grab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_cache.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_cache.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_cache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_command_controller.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_command_controller.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_command_controller.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_data.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_data.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_data.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_meta.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_meta.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_meta.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_misc.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_misc.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_misc.pyo
@@ -587,6 +602,9 @@ bin/grab
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_task.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_task.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/spider_task.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/structured_extension.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/structured_extension.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/structured_extension.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/test_tornado.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/test_tornado.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/test_tornado.pyo
@@ -645,9 +663,9 @@ bin/grab
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/kit
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/item
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/ext
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat/migrations
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django/grabstat
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/django
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat/migrations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui/grabstat
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/djangoui
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha/backend
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab/captcha
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grab
