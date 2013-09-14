@@ -1,5 +1,5 @@
 --- src/Makefile.orig	2009-11-25 14:52:58.000000000 +0300
-+++ src/Makefile	2009-12-17 00:09:47.000000000 +0300
++++ src/Makefile	2013-09-14 03:43:17.632226100 +0400
 @@ -1,5 +1,4 @@
  #CXXFLAGS= -ggdb3
 -CXXFLAGS= -O3 -fomit-frame-pointer
@@ -13,7 +13,7 @@
 -CLIENT_INCLUDES= -DINTERFACE -DIRC $(INCLUDES) -I/usr/X11R6/include `sdl-config --cflags`
 -CLIENT_LIBS= -Lenet -lenet -L/usr/X11R6/lib `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL
 +CLIENT_INCLUDES= -DINTERFACE -DIRC $(INCLUDES) -I${LOCALBASE}/include `${SDL_CONFIG} --cflags`
-+CLIENT_LIBS= -Lenet -lenet -L${LOCALBASE}/lib `${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer -lz -lGL
++CLIENT_LIBS= -Lenet -lenet -L${LOCALBASE}/lib `${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer -lz -lGL -lX11
  endif
  ifeq ($(PLATFORM),Linux)
  CLIENT_LIBS+= -lrt
