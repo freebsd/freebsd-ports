@@ -14,6 +14,7 @@ USE_AUTOTOOLS=	libtool
 USES=		pathfix pkgconfig
 USE_GNOME=	ltverhack
 USE_BZIP2=	yes
+USE_DOS2UNIX=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
