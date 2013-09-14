@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Getopt
-PORTVERSION=	0.57
+PORTVERSION=	0.58
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	p5-Getopt-Long-Descriptive>=0.081:${PORTSDIR}/devel/p5-Getopt-Lon
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-MooseX-SimpleConfig>=0.07:${PORTSDIR}/devel/p5-MooseX-SimpleConfig \
 		p5-CPAN-Meta-Check>=0.007:${PORTSDIR}/devel/p5-CPAN-Meta-Check \
-		p5-Config-Any>=0:${PORTSDIR}/devel/p5-Config-Any \
 		p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
 		p5-Path-Tiny>=0.009:${PORTSDIR}/devel/p5-Path-Tiny \
 		p5-Test-CheckDeps>=0.06:${PORTSDIR}/devel/p5-Test-CheckDeps \
@@ -30,7 +29,6 @@ TEST_DEPENDS=	p5-MooseX-SimpleConfig>=0.07:${PORTSDIR}/devel/p5-MooseX-SimpleCon
 		p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-Trap>=0:${PORTSDIR}/devel/p5-Test-Trap \
-		p5-Test-Warn>=0.21:${PORTSDIR}/devel/p5-Test-Warn \
 		p5-Test-Warnings>=0:${PORTSDIR}/devel/p5-Test-Warnings
 
 USES=		perl5
