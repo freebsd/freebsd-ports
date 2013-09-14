@@ -12,7 +12,6 @@ MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Swiss railway clock emulation, and a fancy default appearance
 
 USES=		imake
-USE_GCC=	any
 USE_XORG=	ice sm x11 xext xmu xt
 MAN1=		swisswatch.1
 
