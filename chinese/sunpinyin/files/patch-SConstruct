@@ -1,6 +1,6 @@
---- SConstruct.orig	2012-07-17 23:25:59.000000000 -0500
-+++ SConstruct	2012-07-17 23:40:11.633113871 -0500
-@@ -176,10 +176,12 @@ def CreateEnvironment():
+--- SConstruct.orig	2012-07-18 12:25:59.000000000 +0800
++++ SConstruct	2013-09-14 14:44:54.603035259 +0800
+@@ -176,10 +176,12 @@
  
      libln_builder = Builder(action='ln -s ${SOURCE.name} ${TARGET.name}',
                              chdir=True)
@@ -17,7 +17,15 @@
      env.Append(BUILDERS={'InstallAsSymlink': libln_builder})
      return env
  
-@@ -420,7 +422,7 @@ def DoInstall():
+@@ -324,7 +326,6 @@
+     conf.CheckFunc('getopt_long')
+     conf.CheckFunc('getpagesize')
+     conf.CheckFunc('get_opt')
+-    conf.CheckCHeader('iconv.h')
+     conf.CheckCHeader('inttypes.h')
+     conf.CheckCHeader('locale.h')
+     conf.CheckCHeader('libintl.h')
+@@ -420,7 +421,7 @@
                                   lib_target_bin),
              ]
  
