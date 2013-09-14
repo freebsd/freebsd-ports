@@ -23,7 +23,6 @@ GH_COMMIT=	5c8b540
 USES=		gmake pkgconfig
 USE_SDL=	sdl mixer image gfx
 USE_GL=		gl
-USE_GCC=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/src
 MAKEFILE=	Makefile.simple
@@ -38,6 +37,10 @@ PORTDOCS=	*
 PORTDATA=	*
 
 .include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1000000
+USE_GCC=	yes
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/src/pch.h \
