@@ -24,6 +24,8 @@ MAKE_ENV+=	ENABLE_WII=0
 PORTDOCS=	CHANGES COPYING README
 MAN6=		neverball.6 neverputt.6
 
+LDFLAGS+=	-lX11 # calls X functions directly, but doesn't link libX11
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
