@@ -1,11 +1,7 @@
-Class::AutoClass => similar to Class::MakeMethods, provides support for:
-  - automatically generating mutator methods for simple values,
-  - allows for automatic attribute initialization and default value
-	initialization, 
-  - object initialization is handled correctly (in top-down order), even
-	in the presence of multiple inheritance
+This is yet another module that generates standard 'get' and 'set' methods for
+Perl classes. It also handles initialization of object and class data from
+parameter lists or defaults, and arranges for object creation and initialization
+to occur in top-down, textbook order even in the presence of multiple
+inheritance.
 
-Author: Christopher Cavnor <ccavnor@systemsbiology.net>
-        Nat Goodman <natg@shore.net>
-
-WWW: http://search.cpan.org/dist/autoclass
+WWW: http://search.cpan.org/dist/Class-AutoClass/
