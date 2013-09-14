@@ -18,7 +18,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 CONFLICTS_INSTALL=	xsel-[0-9]*
-USE_GCC=	any
 USE_XORG=	x11 xext xt xproto ice sm
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lXext -lX11
