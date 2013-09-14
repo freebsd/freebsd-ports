@@ -26,4 +26,9 @@ USE_PYTHON=		2.6+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	memory_profiler
 
+PLIST_FILES+=	bin/mprofile \
+		%%PYTHON_SITELIBDIR%%/memory_profiler.py \
+		%%PYTHON_SITELIBDIR%%/memory_profiler.pyo \
+		%%PYTHON_SITELIBDIR%%/memory_profiler.pyc
+
 .include <bsd.port.mk>
