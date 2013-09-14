@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	mDNSResponder
-PORTVERSION=	333.10
+PORTVERSION=	379.38.1
 CATEGORIES=	net dns
-MASTER_SITES=	http://opensource.apple.com/tarballs/mDNSResponder/
+MASTER_SITES=	http://opensource.apple.com/tarballs/${PORTNAME}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Apple's mDNSResponder
+COMMENT=	Bonjour (zero-configuration networking) by Apple
 
 LICENSE=	AL2 BSD
 LICENSE_COMB=	dual
@@ -17,8 +17,7 @@ CONFLICTS=	avahi-libdns-[0-9]*
 BUILD_WRKSRC=	${WRKSRC}/mDNSPosix
 INSTALL_WRKSRC=	${WRKSRC}/mDNSPosix
 MAKE_ARGS=	os=freebsd LOCALBASE=${PREFIX} MANPATH=${MANPREFIX}/man
-USES=		bison
-USE_GMAKE=	yes
+USES=		bison gmake
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	mdnsd
 
@@ -32,27 +31,19 @@ PLIST_FILES=	bin/dns-sd ${EXTRA_BIN} \
 		lib/libdns_sd.so lib/libdns_sd.so.1 \
 		sbin/mdnsd ${EXTRA_SBIN}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha"
-BROKEN=		Does not compile on alpha
-.endif
+NOT_FOR_ARCHS=	alpha
+NOT_FOR_ARCHS_REASON=	does not compile
 
 post-patch:
 	@${REINPLACE_CMD} -e '/	cc / s|cc|$${CC}|' ${WRKSRC}/Clients/Makefile
-	@${MV} ${WRKSRC}/mDNSShared/mDNSResponder.8 \
-		${WRKSRC}/mDNSShared/mDNSResponderPosix.8
-
-pre-build:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		-e 's|mDNSResponder.8|mDNSResponderPosix.8|g' \
-		${WRKSRC}/mDNSPosix/Makefile
+	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g; s|mDNSResponder.8|mDNSResponderPosix.8|g' ${WRKSRC}/mDNSPosix/Makefile
+	@${MV} ${WRKSRC}/mDNSShared/mDNSResponder.8 ${WRKSRC}/mDNSShared/mDNSResponderPosix.8
 
 post-install:
-	@cd ${INSTALL_WRKSRC}/build/prod && \
+	cd ${WRKSRC}/mDNSPosix/build/prod/ && \
 		${INSTALL_PROGRAM} ${EXTRA_BIN:T} ${PREFIX}/bin/ && \
 		${INSTALL_PROGRAM} ${EXTRA_SBIN:T} ${PREFIX}/sbin/
-	@cd ${WRKSRC}/mDNSShared/ && \
+	cd ${WRKSRC}/mDNSShared/ && \
 		${INSTALL_MAN} ${EXTRA_MAN8} ${MAN8PREFIX}/man/man8/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
