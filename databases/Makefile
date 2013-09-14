@@ -659,6 +659,7 @@
     SUBDIR += phppgadmin
     SUBDIR += postgis
     SUBDIR += postgis20
+    SUBDIR += postgis21
     SUBDIR += postgis-jdbc
     SUBDIR += postgresql-jdbc
     SUBDIR += postgresql-libpgeasy
