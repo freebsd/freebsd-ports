@@ -371,7 +371,6 @@
     SUBDIR += libguess
     SUBDIR += libkmfl
     SUBDIR += libkolabxml
-    SUBDIR += liblinebreak
     SUBDIR += liblingoteach
     SUBDIR += liblrdf
     SUBDIR += libmrss
@@ -387,6 +386,7 @@
     SUBDIR += libtextcat
     SUBDIR += libtranslate
     SUBDIR += libtre
+    SUBDIR += libunibreak
     SUBDIR += libuninameslist
     SUBDIR += libvisio
     SUBDIR += libwpd
