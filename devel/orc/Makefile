@@ -4,7 +4,7 @@
 PORTNAME=	orc
 PORTVERSION=	0.4.18
 CATEGORIES=	devel
-MASTER_SITES=	http://code.entropywave.com/download/orc/
+MASTER_SITES= 	http://gstreamer.freedesktop.org/data/src/orc/
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Library and toolset to operate arrays of data
