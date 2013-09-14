@@ -20,9 +20,9 @@ RUN_DEPENDS=	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
 		p5-XML-Entities>=0:${PORTSDIR}/textproc/p5-XML-Entities
 
+USES=		perl5
 USE_APACHE_RUN=	22+
 USE_MYSQL=	41+
-USE_PERL5=	yes
 WANT_PHP_WEB=	yes
 DEFAULT_PHP_VER=	5
 USE_PHP=	mysql pcre zlib session xml gd zip openssl mbstring

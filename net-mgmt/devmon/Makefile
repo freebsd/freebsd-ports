@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-SNMP_Session>0:${PORTSDIR}/net-mgmt/p5-SNMP_Session
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 USE_RC_SUBR=	devmon
 

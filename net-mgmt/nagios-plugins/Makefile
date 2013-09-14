@@ -11,11 +11,9 @@ MASTER_SITES=	SF/nagiosplug/nagiosplug/${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Plugins for Nagios
 
-USES=		charsetfix
+USES=		charsetfix gmake perl5
 CHARSETFIX_MAKEFILEIN=Makefile.am
 USE_SUBMAKE=	yes
-USE_GMAKE=	yes
-USE_PERL5=	yes
 USE_AUTOTOOLS=	libtool aclocal autoconf automake
 ACLOCAL_ARGS=	-I m4 -I gl/m4
 AUTOMAKE_ARGS=	--add-missing

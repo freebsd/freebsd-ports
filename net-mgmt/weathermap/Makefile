@@ -14,8 +14,8 @@ LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		mrtg:${PORTSDIR}/net-mgmt/mrtg
 
+USES=		perl5
 NO_BUILD=	yes
-USE_PERL5=	yes
 
 OPTIONS_DEFINE=	WGET
 WGET_DESC=	WGET support

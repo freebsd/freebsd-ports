@@ -16,10 +16,9 @@ COMMENT=	Additional SNMP plugins for Nagios
 
 LIB_DEPENDS=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 
+USES=			gmake perl5
 GNU_CONFIGURE=		yes
 USE_AUTOTOOLS=	automake14 autoheader autoconf
-USE_GMAKE=		yes
-USE_PERL5=		yes
 
 NAGIOS_PLUGIN_DIR=	${PREFIX}/libexec/nagios
 

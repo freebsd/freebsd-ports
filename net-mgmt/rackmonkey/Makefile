@@ -27,11 +27,13 @@ SAMPLE_DESC= 	Install sample data (SQLite Only)
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-1
 NO_BUILD=	YES
 
-USE_PERL5_RUN=	YES
+USES=		perl5
+USE_PERL5=	run
 
 SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
+
 .if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	yes
 RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite

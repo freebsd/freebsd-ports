@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-Parallel-ForkManager>=0:${PORTSDIR}/devel/p5-Parallel-ForkManager
 
-USE_PERL5=	yes
+USES=		perl5
 WRKSRC=		${WRKDIR}/agent_tracker
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message

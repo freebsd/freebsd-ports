@@ -30,8 +30,9 @@ PLIST_SUB+=	PY=""
 PLIST_SUB+=	PY="@comment "
 .endif
 
+USES=		perl5
+USE_PERL5=	run
 USE_GNOME=	libxml2
-USE_PERL5_RUN=	yes
 USE_RC_SUBR=	ndpmonitor
 
 GNU_CONFIGURE=	yes
