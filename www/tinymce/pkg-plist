@@ -10,11 +10,6 @@
 %%WWWDIR%%/js/tinymce/plugins/bbcode/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/charmap/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/code/plugin.min.js
-%%WWWDIR%%/js/tinymce/plugins/compat3x/editable_selects.js
-%%WWWDIR%%/js/tinymce/plugins/compat3x/form_utils.js
-%%WWWDIR%%/js/tinymce/plugins/compat3x/mctabs.js
-%%WWWDIR%%/js/tinymce/plugins/compat3x/tiny_mce_popup.js
-%%WWWDIR%%/js/tinymce/plugins/compat3x/validate.js
 %%WWWDIR%%/js/tinymce/plugins/contextmenu/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/directionality/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-cool.gif
@@ -125,7 +120,6 @@
 @dirrm %%WWWDIR%%/js/tinymce/plugins/emoticons
 @dirrm %%WWWDIR%%/js/tinymce/plugins/directionality
 @dirrm %%WWWDIR%%/js/tinymce/plugins/contextmenu
-@dirrm %%WWWDIR%%/js/tinymce/plugins/compat3x
 @dirrm %%WWWDIR%%/js/tinymce/plugins/code
 @dirrm %%WWWDIR%%/js/tinymce/plugins/charmap
 @dirrm %%WWWDIR%%/js/tinymce/plugins/bbcode
