@@ -25,7 +25,7 @@ USES=		gmake
 
 MAN1=		a2x.1 asciidoc.1
 
-CONFFILES=	asciidoc.conf docbook45.conf \
+CONF_FILES=	asciidoc.conf docbook45.conf \
 		filters/code/code-filter.conf \
 		filters/graphviz/graphviz-filter.conf \
 		filters/latex/latex-filter.conf \
@@ -49,8 +49,8 @@ PLIST_SUB+=	VIM="@comment " VIM_DATADIR=""
 .endif
 
 post-patch:
-.for f in ${CONFFILES}
-	@cd ${WRKSRC} && ${MV} ${f} ${f}.sample
+.for conf_file in ${CONF_FILES}
+	@cd ${WRKSRC} && ${MV} ${conf_file} ${conf_file}.sample
 .endfor
 .if ${PORT_OPTIONS:MVIM}
 	@${REINPLACE_CMD} -e '/^vimdir = /d' ${WRKSRC}/Makefile.in
@@ -62,9 +62,9 @@ pre-install:
 .endif
 
 post-install:
-.for f in ${CONFFILES}
-	@if [ ! -f ${ETCDIR}/${f} ]; then \
-		${CP} -p ${ETCDIR}/${f}.sample ${ETCDIR}/${f} ; \
+.for conf_file in ${CONF_FILES}
+	@if [ ! -f ${ETCDIR}/${conf_file} ]; then \
+		${CP} -p ${ETCDIR}/${conf_file}.sample ${ETCDIR}/${conf_file} ; \
 	fi
 .endfor
 

@@ -131,8 +131,8 @@ bin/asciidoc.py
 %%ETCDIR%%/wordpress.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/wordpress.conf ] ; then cp -p %D/%F %B/wordpress.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/xhtml11.conf.sample %D/%%ETCDIR%%/xhtml11.conf; then rm -f %D/%%ETCDIR%%/xhtml11.conf; fi
-@exec if [ ! -f %D/%%ETCDIR%%/xhtml11.conf ] ; then cp -p %D/%F %B/xhtml11.conf; fi
 %%ETCDIR%%/xhtml11.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/xhtml11.conf ] ; then cp -p %D/%F %B/xhtml11.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/xhtml11-quirks.conf.sample %D/%%ETCDIR%%/xhtml11-quirks.conf; then rm -f %D/%%ETCDIR%%/xhtml11-quirks.conf; fi
 %%ETCDIR%%/xhtml11-quirks.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/xhtml11-quirks.conf ] ; then cp -p %D/%F %B/xhtml11-quirks.conf; fi
