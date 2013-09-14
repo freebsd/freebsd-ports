@@ -35,6 +35,10 @@ LIBEVENT_STATIC_DESC=	Build with static libevent
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 1000017
+BROKEN=		needs fixing with recent pf changes
+.endif
+
 .if ${PORT_OPTIONS:MLIBEVENT_STATIC}
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 MAKE_ARGS+=	LIBEVENT=${LOCALBASE}/lib/libevent.a
