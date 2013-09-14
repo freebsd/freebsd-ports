@@ -19,8 +19,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
 MAN8=		check_hp_bladechassis.8
 PLIST_FILES=	libexec/nagios/check_hp_bladechassis
 PLIST_DIRSTRY=	libexec/nagios/

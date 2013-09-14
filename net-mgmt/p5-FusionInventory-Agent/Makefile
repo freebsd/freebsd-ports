@@ -38,8 +38,8 @@ ZLIB_DESC=	Zlib compression
 DMIDECODE_DESC=	Dmidecode hardware information
 PCIUTILS_DESC=	Pciutils hardware information
 
-PERL_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake perl5
+USE_PERL5=	configure
 
 MAN1=		fusioninventory-agent.1 \
 		fusioninventory-injector.1

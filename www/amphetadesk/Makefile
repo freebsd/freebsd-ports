@@ -25,7 +25,7 @@ LICENSE_NAME=	The Clarified Artistic License
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE
 
-USE_PERL5=	yes
+USE=		perl5
 USE_RC_SUBR=	${PORTNAME}
 NO_BUILD=	yes
 

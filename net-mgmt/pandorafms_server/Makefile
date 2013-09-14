@@ -42,7 +42,8 @@ PGSQL_DESC=	Use PostgreSQL backend (experimental)
 ORACLE_DESC=	Use Oracle backend (experimental)
 EXTRAS_DESC=	Extra dependencies for util scripts
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 SUB_LIST+=	PERL="${PERL}"
 
 MAN1=		pandora_server.1
