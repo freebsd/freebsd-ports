@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	zenmap
-PORTVERSION=	6.25
-PORTREVISION=	1
+PORTVERSION=	6.40
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/
 DISTNAME=	nmap-${PORTVERSION}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	GUI frontend for the Nmap scanning utility
 
 LICENSE=	GPLv2
@@ -19,23 +18,21 @@ RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap \
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 USE_BZIP2=	yes
+USES=		desktop-file-utils
 USE_GNOME=	pygtk2
-USE_PYTHON=	-2.7
-USE_PYDISTUTILS=yes
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 
 MLINKS=	zenmap.1 xnmap.1
 MAN1=	zenmap.1 ndiff.1
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
 
 post-extract:
 	@${RM} -f ${WRKSRC}/install_scripts/unix/su-to-zenmap.sh
