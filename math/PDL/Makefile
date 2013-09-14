@@ -18,9 +18,8 @@ BUILD_DEPENDS=	p5-Astro-FITS-Header>=0:${PORTSDIR}/astro/p5-Astro-FITS-Header \
 		p5-Inline>=0.43:${PORTSDIR}/devel/p5-Inline
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		gmake perl5
 USE_PERL5=	configure
-USE_GMAKE=	yes
 MAKE_ENV=	PERL5LIB=${WRKSRC}/blib/lib
 PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/Inline
 PLIST_FILES=	bin/pdl bin/pdldoc bin/perldl bin/pptemplate \
