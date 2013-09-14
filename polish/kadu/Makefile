@@ -56,6 +56,10 @@ GG_EMOTS_DISTFILES=	${GG6_EMOTS_DISTFILE}:additions \
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} > 1000051
+LDFLAGS+=	-lexecinfo
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/plugins/single_window/CMakeLists.txt \
