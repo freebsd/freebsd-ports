@@ -174,8 +174,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.if ${OSVERSION} < 700042
-USE_GCC=	4.2+
-.endif
-
 .include <bsd.port.post.mk>
