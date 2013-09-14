@@ -15,11 +15,10 @@ COMMENT=	A tool to generate statistics for spamd of Mail::SpamAssassin
 RUN_DEPENDS=	p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-Compress-Bzip2>=2.08:${PORTSDIR}/archivers/p5-Compress-Bzip2
 
-USE_PERL5=	yes
 NO_BUILD=	yes
 PORTDOCS=	QUICK README copyright
 PLIST_FILES=	bin/spamstats.pl
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	${PORTNAME}${PORTVERSION}.pl
 
 post-patch:

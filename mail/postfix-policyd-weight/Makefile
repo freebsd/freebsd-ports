@@ -22,7 +22,7 @@ USERS=		polw
 GROUPS=		polw
 
 USE_RC_SUBR+=	policyd-weight
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 MAN8+=	policyd-weight.8

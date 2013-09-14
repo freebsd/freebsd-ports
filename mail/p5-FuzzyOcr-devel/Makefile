@@ -27,7 +27,7 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm			\
 		p5-MLDBM-Sync>=0:${PORTSDIR}/databases/p5-MLDBM-Sync \
 		p5-String-Approx>=0:${PORTSDIR}/devel/p5-String-Approx
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

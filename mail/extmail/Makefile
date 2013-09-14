@@ -13,7 +13,7 @@ COMMENT=	A high performance webmail system
 
 RUN_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	MYSQL LDAP

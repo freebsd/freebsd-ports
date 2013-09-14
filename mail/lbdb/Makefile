@@ -22,8 +22,7 @@ WRKSRC=		${WRKDIR}/lbdb-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --sysconfdir=${PREFIX}/etc \
 			--libdir=${PREFIX}/libexec --enable-lbdb-dotlock
-USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		gmake perl5
 
 .include <bsd.port.options.mk>
 
