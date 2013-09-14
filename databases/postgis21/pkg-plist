@@ -1,0 +1,152 @@
+bin/pgsql2shp
+%%RASTER%%bin/raster2pgsql
+bin/shp2pgsql
+%%LOADERGUI%%bin/shp2pgsql-gui
+include/liblwgeom.h
+lib/postgresql/postgis-2.1.so
+%%RASTER%%lib/postgresql/rtpostgis-2.1.so
+lib/liblwgeom-%%PORTVERSION%%.so
+lib/liblwgeom.a
+lib/liblwgeom.la
+lib/liblwgeom.so
+%%DATADIR%%/tiger_2011/README
+%%DATADIR%%/tiger_2011/census_loader.sql
+%%DATADIR%%/tiger_2011/create_geocode.bat
+%%DATADIR%%/tiger_2011/create_geocode.sh
+%%DATADIR%%/tiger_2011/create_geocode.sql
+%%DATADIR%%/tiger_2011/geocode/census_tracts_functions.sql
+%%DATADIR%%/tiger_2011/geocode/geocode.sql
+%%DATADIR%%/tiger_2011/geocode/geocode_address.sql
+%%DATADIR%%/tiger_2011/geocode/geocode_intersection.sql
+%%DATADIR%%/tiger_2011/geocode/geocode_location.sql
+%%DATADIR%%/tiger_2011/geocode/includes_address.sql
+%%DATADIR%%/tiger_2011/geocode/interpolate_from_address.sql
+%%DATADIR%%/tiger_2011/geocode/other_helper_functions.sql
+%%DATADIR%%/tiger_2011/geocode/rate_attributes.sql
+%%DATADIR%%/tiger_2011/geocode/reverse_geocode.sql
+%%DATADIR%%/tiger_2011/geocode_settings.sql
+%%DATADIR%%/tiger_2011/legacy_import/tiger2008/import_tiger_shps.sh
+%%DATADIR%%/tiger_2011/normalize/count_words.sql
+%%DATADIR%%/tiger_2011/normalize/end_soundex.sql
+%%DATADIR%%/tiger_2011/normalize/get_last_words.sql
+%%DATADIR%%/tiger_2011/normalize/location_extract.sql
+%%DATADIR%%/tiger_2011/normalize/location_extract_countysub_exact.sql
+%%DATADIR%%/tiger_2011/normalize/location_extract_countysub_fuzzy.sql
+%%DATADIR%%/tiger_2011/normalize/location_extract_place_exact.sql
+%%DATADIR%%/tiger_2011/normalize/location_extract_place_fuzzy.sql
+%%DATADIR%%/tiger_2011/normalize/normalize_address.sql
+%%DATADIR%%/tiger_2011/normalize/pprint_addy.sql
+%%DATADIR%%/tiger_2011/normalize/state_extract.sql
+%%DATADIR%%/tiger_2011/pagc_normalize/pagc_normalize_address.sql
+%%DATADIR%%/tiger_2011/pagc_normalize/pagc_tables.sql
+%%DATADIR%%/tiger_2011/regress/geocode_regress
+%%DATADIR%%/tiger_2011/regress/geocode_regress.sql
+%%DATADIR%%/tiger_2011/regress/normalize_address_regress
+%%DATADIR%%/tiger_2011/regress/normalize_address_regress.sql
+%%DATADIR%%/tiger_2011/regress/pagc_normalize_address_regress.sql
+%%DATADIR%%/tiger_2011/regress/regress.sql
+%%DATADIR%%/tiger_2011/regress/reverse_geocode_regress
+%%DATADIR%%/tiger_2011/regress/reverse_geocode_regress.sql
+%%DATADIR%%/tiger_2011/tables/lookup_tables_2011.sql
+%%DATADIR%%/tiger_2011/tiger_loader_2011.sql
+%%DATADIR%%/tiger_2011/tiger_loader_2012.sql
+%%DATADIR%%/tiger_2011/topology/README
+%%DATADIR%%/tiger_2011/topology/tiger_topology_loader.sql
+%%DATADIR%%/tiger_2011/upgrade_geocode.sql
+%%DATADIR%%/tiger_2011/upgrade_geocoder.bat
+%%DATADIR%%/tiger_2011/upgrade_geocoder.sh
+%%DATADIR%%/tiger_2011/utility/cull_null.sql
+%%DATADIR%%/tiger_2011/utility/levenshtein_ignore_case.sql
+%%DATADIR%%/tiger_2011/utility/nullable_levenshtein.sql
+%%DATADIR%%/tiger_2011/utility/set_search_path.sql
+%%DATADIR%%/tiger_2011/utility/utmzone.sql
+%%DATADIR%%/utils/Makefile
+%%DATADIR%%/utils/Makefile.in
+%%DATADIR%%/utils/README
+%%DATADIR%%/utils/create_undef.pl
+%%DATADIR%%/utils/postgis_proc_upgrade.pl
+%%DATADIR%%/utils/postgis_restore.pl
+%%DATADIR%%/utils/postgis_restore.pl.in
+%%DATADIR%%/utils/profile_intersects.pl
+%%DATADIR%%/utils/read_scripts_version.pl
+%%DATADIR%%/utils/svn_repo_revision.pl
+%%DATADIR%%/utils/test_estimation.pl
+%%DATADIR%%/utils/test_geography_estimation.pl
+%%DATADIR%%/utils/test_geography_joinestimation.pl
+%%DATADIR%%/utils/test_joinestimation.pl
+%%DATADIR%%/utils/uninstall_script
+share/postgresql/contrib/postgis-2.1/legacy.sql
+share/postgresql/contrib/postgis-2.1/legacy_gist.sql
+share/postgresql/contrib/postgis-2.1/legacy_minimal.sql
+share/postgresql/contrib/postgis-2.1/postgis.sql
+share/postgresql/contrib/postgis-2.1/postgis_comments.sql
+share/postgresql/contrib/postgis-2.1/postgis_restore.pl
+share/postgresql/contrib/postgis-2.1/postgis_upgrade_20_21.sql
+share/postgresql/contrib/postgis-2.1/postgis_upgrade_21_minor.sql
+share/postgresql/contrib/postgis-2.1/raster_comments.sql
+share/postgresql/contrib/postgis-2.1/spatial_ref_sys.sql
+share/postgresql/contrib/postgis-2.1/uninstall_legacy.sql
+share/postgresql/contrib/postgis-2.1/uninstall_postgis.sql
+share/postgresql/contrib/postgis-2.1/uninstall_sfcgal.sql
+%%RASTER%%share/postgresql/contrib/postgis-2.1/rtpostgis.sql
+%%RASTER%%share/postgresql/contrib/postgis-2.1/rtpostgis_legacy.sql
+%%RASTER%%share/postgresql/contrib/postgis-2.1/rtpostgis_upgrade_20_21.sql
+%%RASTER%%share/postgresql/contrib/postgis-2.1/rtpostgis_upgrade_21_minor.sql
+%%RASTER%%share/postgresql/contrib/postgis-2.1/uninstall_rtpostgis.sql
+%%TOPOLOGY%%share/postgresql/contrib/postgis-2.1/topology.sql
+%%TOPOLOGY%%share/postgresql/contrib/postgis-2.1/topology_comments.sql
+%%TOPOLOGY%%share/postgresql/contrib/postgis-2.1/topology_upgrade_21_minor.sql
+%%TOPOLOGY%%share/postgresql/contrib/postgis-2.1/uninstall_topology.sql
+%%RASTER%%share/postgresql/extension/postgis--2.0.0--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis--2.0.1--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis--2.0.2--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis--2.0.3--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis--2.0.4--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis--%%PORTVERSION%%--%%PORTVERSION%%next.sql
+%%RASTER%%share/postgresql/extension/postgis--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis--%%PORTVERSION%%next--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis--2.1.0rc1--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis--2.1.0rc2--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis--2.1.0rc3--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis--unpackaged--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis.control
+%%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.0.0--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.0.1--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.0.2--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.0.3--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.0.4--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--%%PORTVERSION%%--%%PORTVERSION%%next.sql
+%%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--%%PORTVERSION%%next--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.1.0rc1--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.1.0rc2--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.1.0rc3--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--unpackaged--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_tiger_geocoder.control
+%%RASTER%%share/postgresql/extension/postgis_topology--2.0.0--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_topology--2.0.1--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_topology--2.0.2--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_topology--2.0.3--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_topology--2.0.4--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_topology--%%PORTVERSION%%--%%PORTVERSION%%next.sql
+%%RASTER%%share/postgresql/extension/postgis_topology--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_topology--%%PORTVERSION%%next--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_topology--2.1.0rc1--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_topology--2.1.0rc2--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_topology--2.1.0rc3--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_topology--unpackaged--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_topology.control
+@dirrm %%DATADIR%%/utils
+@dirrm %%DATADIR%%/tiger_2011/utility
+@dirrm %%DATADIR%%/tiger_2011/topology
+@dirrm %%DATADIR%%/tiger_2011/tables
+@dirrm %%DATADIR%%/tiger_2011/regress
+@dirrm %%DATADIR%%/tiger_2011/pagc_normalize
+@dirrm %%DATADIR%%/tiger_2011/normalize
+@dirrm %%DATADIR%%/tiger_2011/legacy_import/tiger2008
+@dirrm %%DATADIR%%/tiger_2011/legacy_import
+@dirrm %%DATADIR%%/tiger_2011/geocode
+@dirrm %%DATADIR%%/tiger_2011
+@dirrm %%DATADIR%%
+@dirrm share/postgresql/contrib/postgis-2.1
+@dirrmtry share/postgresql/contrib
