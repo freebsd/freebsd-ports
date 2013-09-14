@@ -22,9 +22,10 @@ OPTIONS_DEFINE=	UNICODE
 OPTIONS_DEFAULT=	UNICODE
 UNICODE_DESC=	Build with Unicode support
 
+USES=		perl5
+USE_PERL5=	configure
 USE_WX=		2.6+
 WX_COMPS=	wx contrib
-PERL_CONFIGURE=	yes
 CC=		${CXX}
 CFLAGS+=	-pthread -Wno-write-strings
 MAKE_JOBS_UNSAFE=	yes

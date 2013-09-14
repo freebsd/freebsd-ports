@@ -16,10 +16,9 @@ WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
 SLAVEDIRS=	misc/amanda26-client
 
 NO_LATEST_LINK=	yes
-USES=		pkgconfig
+USES=		gmake perl5 pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-USE_GMAKE=	yes
 USE_OPENSSL=	yes
 PATCH_STRIP=
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
@@ -33,7 +32,6 @@ CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-ssh-security
 
 USE_LDCONFIG=	yes
-USE_PERL5=	yes
 
 OPTIONS_DEFINE=	GNUTAR
 GNUTAR_DESC=	use GNU tar

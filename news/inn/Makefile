@@ -28,8 +28,7 @@ SUB_FILES=	pkg-install
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
-USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		gmake perl5
 
 CONFLICTS?=	inn-stable-[0-9]* inn-current-[0-9]*
 

@@ -22,7 +22,8 @@ BUILD_DEPENDS=	p5-JSON-RPC>=0.96:${PORTSDIR}/devel/p5-JSON-RPC \
 		p5-Object-AUTHORITY>=0:${PORTSDIR}/devel/p5-Object-Authority
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Finance::Bitcoin::API.3 \
 	Finance::Bitcoin::Address.3 \

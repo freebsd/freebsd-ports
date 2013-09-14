@@ -15,9 +15,8 @@ LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto \
 		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 
-USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-USES=		iconv
+USES=		iconv perl5
 
 OPTIONS_DEFINE=		SSL
 OPTIONS_DEFAULT=	SSL

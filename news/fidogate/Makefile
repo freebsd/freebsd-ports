@@ -15,8 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/ifmail/ifcico:${PORTSDIR}/news/ifmail
 
 MAKE_JOBS_UNSAFE=	yes
 
-USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		gmake perl5
 
 DOCLIST=	fidogate.texi fidogate.txt gatebau94.txt kludge-rfc.doc \
 		msgid.doc qmail.txt texinfo.tex dirs.html index.html \

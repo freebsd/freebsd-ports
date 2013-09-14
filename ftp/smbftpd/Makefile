@@ -24,7 +24,7 @@ HAS_CONFIGURE=	yes
 MAKE_ENV=	OSTYPE=FreeBSD
 CONFIGURE_ARGS=	"--prefix=${PREFIX}"
 
-USE_PERL5=	yes
+USES=		perl5
 USE_RC_SUBR=	${PORTNAME}
 
 .include <bsd.port.pre.mk>

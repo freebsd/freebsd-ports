@@ -22,9 +22,9 @@ RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-HTTP-Lite>=0:${PORTSDIR}/www/p5-HTTP-Lite \
 		${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2
 
+USES=		perl5
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
-
+USE_PERL5=	run
 USE_APACHE_RUN=	22+
 
 .include <bsd.port.pre.mk>
