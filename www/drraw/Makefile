@@ -16,7 +16,8 @@ RUN_DEPENDS+=	rrdtool>=0:${PORTSDIR}/databases/rrdtool
 OPTIONS_DEFINE=	ZOOM_PATCH
 ZOOM_PATCH_DESC=	Zoom support using jQuery via external patch
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 
 PORTDOCS=	CHANGES INSTALL LICENSE README.EVENTS

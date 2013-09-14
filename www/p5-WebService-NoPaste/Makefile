@@ -15,8 +15,8 @@ BUILD_DEPENDS=	p5-IO-All>=0:${PORTSDIR}/devel/p5-IO-All \
 		p5-Spiffy>=0:${PORTSDIR}/devel/p5-Spiffy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
-USES=		shebangfix
+USES=		shebangfix perl5
+USE_PERL5=	configure
 SHEBANG_FILES=	nopaste
 
 MAN3=		WebService::NoPaste.3

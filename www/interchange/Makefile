@@ -17,8 +17,9 @@ RUN_DEPENDS=	p5-Safe-Hole>=0.10:${PORTSDIR}/security/p5-Safe-Hole \
 		p5-Digest-SHA1>=2.11:${PORTSDIR}/security/p5-Digest-SHA1
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
+USES=		perl5
+USE_PERL5=	configure
 USE_BZIP2=	yes
-PERL_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	MYSQL PGSQL
 OPTIONS_DEFAULT=	MYSQL

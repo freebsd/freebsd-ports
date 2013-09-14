@@ -79,9 +79,9 @@ LATEST_LINK=	squid32
 SQUID_STABLE_VER=	13
 
 CONFLICTS_INSTALL=	squid-2.[0-9].* squid-3.[!2].* cacheboy-[0-9]* lusca-head-[0-9]*
+USES=		perl5
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_PERL5=	yes
 USE_RC_SUBR=	squid
 
 USERS=		squid
