@@ -15,8 +15,8 @@ LICENSE=	ISCL
 LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
 		soup-2.4:${PORTSDIR}/devel/libsoup
 
-USES=		pkgconfig
-USE_PERL5_BUILD=yes
+USES=		pkgconfig perl5
+USE_PERL5=	build
 INSTALLS_ICONS=	yes
 
 MAN1=		xombrero.1

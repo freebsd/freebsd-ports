@@ -30,8 +30,9 @@ RUN_DEPENDS=	\
 	p5-XML-Handler-YAWriter>=0:${PORTSDIR}/textproc/p5-XML-Handler-YAWriter \
 	p5-libxml>=0:${PORTSDIR}/textproc/p5-libxml
 
+USES=		perl5
+USE_PERL5=	run
 USE_BZIP2=	yes
-USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
 # additional scripts

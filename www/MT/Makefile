@@ -45,7 +45,8 @@ SUB_LIST+=	DATADIR=${DATADIR}\
 		WWWOWN=${WWWOWN}\
 		WWWGRP=${WWWGRP}
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 MT_DOCS_URL?=	http://www.movabletype.org/documentation/
 MT_UPGRADE_URL?=http://www.movabletype.org/documentation/installation/upgrade-movable-type.html

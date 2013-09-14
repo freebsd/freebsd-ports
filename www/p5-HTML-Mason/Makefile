@@ -23,7 +23,8 @@ TEST_DEPENDS=	p5-CHI>=0.210:${PORTSDIR}/devel/p5-CHI \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		HTML::Mason.3 \
 		HTML::Mason::Admin.3 \

@@ -14,8 +14,9 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-Net-XWhois>=0:${PORTSDIR}/net/p5-Net-XWhois
 
+USES=		perl5
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 USE_DOS2UNIX=	tools/*.pl \
 		wwwroot/cgi-bin/awstats.model.conf \
 		wwwroot/cgi-bin/*.pl \
