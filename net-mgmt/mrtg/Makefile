@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 USERS=		mrtg
 GROUPS=		mrtg
 
-USE_PERL5=	YES
+USES=		perl5
 MAKE_ENV+=	PERL=${PERL}
 MRTG_RUNDIR?=	/var/run/mrtg
 

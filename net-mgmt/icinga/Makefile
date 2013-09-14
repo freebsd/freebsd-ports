@@ -90,7 +90,8 @@ APACHE_DESC=		Depend on Apache and install webconfig
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEMBEDDED_PERL}
-USE_PERL5_BUILD=	yes
+USES+=			perl5
+USE_PERL5=		build
 CONFIGURE_ARGS+=	--enable-embedded-perl \
 		--with-perlcache
 PLIST_SUB+=	EMBEDDED_PERL=""

@@ -17,9 +17,9 @@ OPTIONS_DEFAULT=PERL
 PERL_DESC=	Install flowd perl module
 PYTHON_DESC=	Install flowd Python support
 
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
-USE_GMAKE=	yes
 USE_RC_SUBR=	flowd
 MAN8=		flowd.8 flowd-reader.8
 MAN5=		flowd.conf.5
@@ -31,7 +31,7 @@ GROUPS=		${FLOWD_USER}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=	yes
+USES+=		perl5
 PLIST_SUB+=	PERL=""
 MAN3=		Flowd.3
 .else

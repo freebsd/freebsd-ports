@@ -17,8 +17,8 @@ RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+USES=		perl5
 NO_BUILD=	yes
-USE_PERL5=	yes
 
 OPTIONS_DEFINE=	GD
 GD_DESC=	Use GD

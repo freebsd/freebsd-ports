@@ -14,7 +14,7 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 WRKSRC=		${WRKDIR}/privoxy-${PORTVERSION}-stable
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	autoconf
 
 USE_RC_SUBR=	privoxy
@@ -79,7 +79,8 @@ CONFIGURE_ARGS+=	--disable-toggle
 .endif
 
 .if ${PORT_OPTIONS:MPRIVOXY_TOOLS}
-USE_PERL5_RUN=	yes
+USES+=		perl5
+USE_PERL5=	run
 RUN_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	PRIVOXY_TOOLS=""
 .else
