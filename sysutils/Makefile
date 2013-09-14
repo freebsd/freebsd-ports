@@ -342,6 +342,7 @@
     SUBDIR += gnomebaker
     SUBDIR += goaccess
     SUBDIR += gosa
+    SUBDIR += gpart
     SUBDIR += gpkgdep
     SUBDIR += gpte
     SUBDIR += graid5

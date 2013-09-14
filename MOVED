@@ -2607,7 +2607,6 @@ editors/openoffice.org-2|editors/openoffice.org-3|2011-09-20|Unsupported upstrea
 devel/monodevelop-boo||2011-09-21|Removed
 www/ruby-http-access||2011-09-22|Has expired: Deprecated upstream, please use www/rubygem-httpclient
 sysutils/wots||2011-09-22|Has expired: No more public distfiles
-sysutils/gpart||2011-09-22|Has expired: Upstream disappeared
 sysutils/plod||2011-09-22|Has expired: No more public distfiles
 sysutils/checkservice||2011-09-22|Has expired: BROKEN for more than 6 months
 security/nsm-console||2011-09-22|Has expired: BROKEN for more than 6 months
