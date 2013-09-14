@@ -13,16 +13,15 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	TCP wrappers library for Ruby
 
-DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2013-05-02
+LIB_DEPENDS=	libident.so:${PORTSDIR}/security/libident
 
-LIB_DEPENDS=	ident.0:${PORTSDIR}/security/libident
+OPTIONS_DEFINE=	DOCS
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
 WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
-CONFIGURE_ARGS=	--with-libwrap-dir="/usr" \
+CONFIGURE_ARGS=	--with-libwrap-dir=/usr \
 		--with-ident-dir="${LOCALBASE}"
 
 INSTALL_TARGET=	site-install
@@ -30,21 +29,15 @@ INSTALL_TARGET=	site-install
 DOCS_EN=	README.en	doc/tcpwrap.html.en
 DOCS_JA=	README.ja	doc/tcpwrap.html.ja
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/echod.rb ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
-.for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
-.endfor
-.for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
-.endfor
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS_EN} ${RUBY_MODDOCDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS_JA} ${RUBY_MODDOCDIR}/ja/
 .endif
 
-.include <bsd.port.pre.mk>
-.if ${RUBY_VER} == 1.9
-BROKEN=	does not build with ruby 1.9
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
