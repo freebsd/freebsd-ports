@@ -1,9 +1,5 @@
-# New ports collection makefile for:	grzip
-# Date created:		02 February 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	grzip
 PORTVERSION=	0.3.0
