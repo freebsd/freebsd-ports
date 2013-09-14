@@ -13,7 +13,6 @@ COMMENT=	Yet another Motif file manager
 LICENSE=	GPLv2
 
 USES=		imake motif
-USE_GCC=	any
 USE_XORG=	xpm
 MAKE_JOBS_UNSAFE=yes
 CFLAGS+=	-Wno-return-type
