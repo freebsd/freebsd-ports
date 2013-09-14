@@ -49,6 +49,13 @@ share/help/fr/hitori/index.page
 share/help/fr/hitori/license.page
 share/help/fr/hitori/playing.page
 share/help/fr/hitori/strategy.page
+share/help/hu/hitori/customization.page
+share/help/hu/hitori/figures/hitori_main_window.png
+share/help/hu/hitori/game.page
+share/help/hu/hitori/index.page
+share/help/hu/hitori/license.page
+share/help/hu/hitori/playing.page
+share/help/hu/hitori/strategy.page
 share/help/ro/hitori/customization.page
 share/help/ro/hitori/figures/hitori_main_window.png
 share/help/ro/hitori/game.page
@@ -90,6 +97,7 @@ share/icons/hicolor/48x48/apps/hitori.png
 %%NLS%%share/locale/es/LC_MESSAGES/hitori.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/hitori.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/hitori.mo
+%%NLS%%share/locale/he/LC_MESSAGES/hitori.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/hitori.mo
 %%NLS%%share/locale/id/LC_MESSAGES/hitori.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/hitori.mo
@@ -108,49 +116,42 @@ share/icons/hicolor/48x48/apps/hitori.png
 share/pixmaps/hitori.png
 %%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sr@latin
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/help/zh_CN/hitori/figures
-@dirrmtry share/help/zh_CN/hitori
+@dirrm share/help/zh_CN/hitori/figures
+@dirrm share/help/zh_CN/hitori
 @dirrmtry share/help/zh_CN
-@dirrmtry share/help/sv/hitori/figures
-@dirrmtry share/help/sv/hitori
+@dirrm share/help/sv/hitori/figures
+@dirrm share/help/sv/hitori
 @dirrmtry share/help/sv
-@dirrmtry share/help/sl/hitori/figures
-@dirrmtry share/help/sl/hitori
+@dirrm share/help/sl/hitori/figures
+@dirrm share/help/sl/hitori
 @dirrmtry share/help/sl
-@dirrmtry share/help/ro/hitori/figures
-@dirrmtry share/help/ro/hitori
+@dirrm share/help/ro/hitori/figures
+@dirrm share/help/ro/hitori
 @dirrmtry share/help/ro
-@dirrmtry share/help/fr/hitori/figures
-@dirrmtry share/help/fr/hitori
+@dirrm share/help/hu/hitori/figures
+@dirrm share/help/hu/hitori
+@dirrmtry share/help/hu
+@dirrm share/help/fr/hitori/figures
+@dirrm share/help/fr/hitori
 @dirrmtry share/help/fr
-@dirrmtry share/help/es/hitori/figures
-@dirrmtry share/help/es/hitori
+@dirrm share/help/es/hitori/figures
+@dirrm share/help/es/hitori
 @dirrmtry share/help/es
-@dirrmtry share/help/en_GB/hitori/figures
-@dirrmtry share/help/en_GB/hitori
+@dirrm share/help/en_GB/hitori/figures
+@dirrm share/help/en_GB/hitori
 @dirrmtry share/help/en_GB
-@dirrmtry share/help/de/hitori/figures
-@dirrmtry share/help/de/hitori
+@dirrm share/help/de/hitori/figures
+@dirrm share/help/de/hitori
 @dirrmtry share/help/de
-@dirrmtry share/help/da/hitori/figures
-@dirrmtry share/help/da/hitori
+@dirrm share/help/da/hitori/figures
+@dirrm share/help/da/hitori
 @dirrmtry share/help/da
-@dirrmtry share/help/cs/hitori/figures
-@dirrmtry share/help/cs/hitori
+@dirrm share/help/cs/hitori/figures
+@dirrm share/help/cs/hitori
 @dirrmtry share/help/cs
-@dirrmtry share/help/C/hitori/figures
-@dirrmtry share/help/C/hitori
+@dirrm share/help/C/hitori/figures
+@dirrm share/help/C/hitori
 @dirrmtry share/help/C
 @dirrmtry share/help
 @dirrmtry share/applications
