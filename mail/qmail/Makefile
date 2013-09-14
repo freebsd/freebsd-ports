@@ -694,6 +694,7 @@ post-patch:
 	@cd ${UCSPISRC}/src && ${PATCH} -p0 < ${DISTDIR}/${DIST_SUBDIR}/ucspi-ssl-0.70_ucspitls-0.6.patch_
 	@${ECHO_CMD} "${UCSPISRC}/compile" > ${WRKSRC}/conf-ucspissl
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${UCSPISRC}/src/conf-cc
+	${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${UCSPISRC}/src/conf-ld
 	${ECHO_CMD} "${PREFIX}" > ${UCSPISRC}/src/conf-home
 	${ECHO_CMD} "${PREFIX}/bin" > ${UCSPISRC}/src/conf-tcpbin
 	${ECHO_CMD} "/etc/ssl" > ${UCSPISRC}/src/conf-cadir
