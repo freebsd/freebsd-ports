@@ -15,7 +15,6 @@ BUILD_DEPENDS=	man2html:${PORTSDIR}/textproc/man2html
 LIB_DEPENDS=	ast:${PORTSDIR}/devel/libast
 
 USE_AUTOTOOLS=	libtool
-USE_GCC=	any
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--enable-trans --enable-utmp \
 		--enable-xim --with-theme-update \
@@ -23,6 +22,7 @@ CONFIGURE_ARGS?=--enable-trans --enable-utmp \
 		--enable-multi-charset
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+USE_CSTD=	gnu89
 
 OPTIONS_DEFINE=	MMX
 
