@@ -5,10 +5,10 @@
 if [ `id -r -u` != "0" ] ; then
         VARS="`echo $@`"
 
-        # Try qsu first, should always be the default
-        which qsu >/dev/null 2>/dev/null
+        # Try qsudo first, should always be the default
+        which qsudo >/dev/null 2>/dev/null
         if [ $? -eq 0 ] ; then
-           qsu $VARS
+           qsudo $VARS
            exit $?
         fi
 

@@ -315,8 +315,8 @@ bin/zenmap
 %%PYTHON_SITELIBDIR%%/zenmapGUI/higwidgets/utils.py
 %%PYTHON_SITELIBDIR%%/zenmapGUI/higwidgets/utils.pyc
 %%PYTHON_SITELIBDIR%%/zenmapGUI/higwidgets/utils.pyo
-share/applications/zenmap.desktop
 share/applications/zenmap-root.desktop
+share/applications/zenmap.desktop
 %%DATADIR%%/config/scan_profile.usp
 %%DATADIR%%/config/zenmap.conf
 %%DATADIR%%/config/zenmap_version
@@ -326,6 +326,7 @@ share/applications/zenmap-root.desktop
 %%NLS%%%%DATADIR%%/locale/hr/LC_MESSAGES/zenmap.mo
 %%NLS%%%%DATADIR%%/locale/it/LC_MESSAGES/zenmap.mo
 %%NLS%%%%DATADIR%%/locale/ja/LC_MESSAGES/zenmap.mo
+%%NLS%%%%DATADIR%%/locale/pl/LC_MESSAGES/zenmap.mo
 %%NLS%%%%DATADIR%%/locale/pt_BR/LC_MESSAGES/zenmap.mo
 %%NLS%%%%DATADIR%%/locale/ru/LC_MESSAGES/zenmap.mo
 %%DATADIR%%/misc/profile_editor.xml
@@ -379,6 +380,8 @@ share/applications/zenmap-root.desktop
 %%NLS%%@dirrm %%DATADIR%%/locale/ru
 %%NLS%%@dirrm %%DATADIR%%/locale/pt_BR/LC_MESSAGES
 %%NLS%%@dirrm %%DATADIR%%/locale/pt_BR
+%%NLS%%@dirrm %%DATADIR%%/locale/pl/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/locale/pl
 %%NLS%%@dirrm %%DATADIR%%/locale/ja/LC_MESSAGES
 %%NLS%%@dirrm %%DATADIR%%/locale/ja
 %%NLS%%@dirrm %%DATADIR%%/locale/it/LC_MESSAGES
