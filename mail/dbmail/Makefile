@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dbmail
-PORTVERSION=	3.1.3
+PORTVERSION=	3.1.6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/3.1/
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgmime-2.6.so:${PORTSDIR}/mail/gmime26 \
 
 BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto \
-		${LOCALBASE}/share/sgml/docbook/4.5:${PORTSDIR}/textproc/docbook-450
+		${LOCALBASE}/share/sgml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-450
 
 CONFLICTS=	dbmail-2.*
 
