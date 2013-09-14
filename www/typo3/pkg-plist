@@ -2882,6 +2882,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/Collection/FolderBasedFileCollection.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/Collection/StaticFileCollection.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/Driver/AbstractDriver.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/Driver/AbstractHierarchicalFilesystemDriver.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/Driver/DriverRegistry.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/Driver/LocalDriver.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/Exception.php
@@ -2935,6 +2936,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/ResourceFactory.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/ResourceInterface.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/ResourceStorage.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/Security/StoragePermissionsAspect.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/Service/FileProcessingService.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/Service/FrontendContentAdapterService.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/Service/IndexerService.php
@@ -2973,6 +2975,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Utility/MonitorUtility.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Utility/PathUtility.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Utility/PhpOptionsUtility.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Utility/ResourceUtility.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Utility/RootlineUtility.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Utility/StringUtility.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Utility/VersionNumberUtility.php
@@ -3097,16 +3100,15 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/Driver/Fixtures/Dummy.html
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/Driver/Fixtures/LocalDriverFilenameFilter.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/Driver/LocalDriverTest.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/FactoryTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/FileReferenceTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/FileTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/FolderTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/ProcessedFileRepositoryTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/Repository/AbstractRepositoryTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/ResourceFactoryTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/ResourceStorageTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/Service/FrontendContentAdapterServiceTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/Service/IndexerServiceTest.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/StorageRepositoryTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Resource/Utility/FileExtensionFilterTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Tree/TableConfiguration/TreeDataProviderFactoryTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/TypoScript/Fixtures/ext_typoscript_setup.txt
@@ -3126,6 +3128,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/MailUtilityTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/MathUtilityTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/PathUtilityTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/ResourceUtilityTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/RootlineUtilityTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/StringUtilityTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Tests/Unit/Utility/VersionNumberUtilityTest.php
@@ -3133,6 +3136,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/ext_autoload.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/ext_emconf.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/ext_icon.png
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/ext_localconf.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/ext_tables.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/ext_tables.sql
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/cshmanual/Classes/Controller/HelpModuleController.php
@@ -4161,6 +4165,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Tests/Unit/ViewHelpers/IfViewHelperTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Tests/Unit/ViewHelpers/Link/EmailViewHelperTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Tests/Unit/ViewHelpers/Link/ExternalViewHelperTest.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Tests/Unit/ViewHelpers/Link/PageViewHelperTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Tests/Unit/ViewHelpers/RenderChildrenViewHelperTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Tests/Unit/ViewHelpers/RenderViewHelperTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Tests/Unit/ViewHelpers/Security/IfAuthenticatedViewHelperTest.php
@@ -10221,6 +10226,7 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Service
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/Utility
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/Service
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/Security
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/Processing
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/Hook
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/core/Classes/Resource/Filter
