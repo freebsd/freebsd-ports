@@ -11,9 +11,8 @@ MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Elinks - links text WWW browser with enhancements
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_BZIP2=	yes
-USES=		bison
+USES=		bison gmake
 USE_OPENSSL=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -76,7 +75,7 @@ CONFIGURE_ARGS+=	--without-lua
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=	yes
+USES+=		perl5
 CONFIGURE_ARGS+=	--with-perl
 .else
 CONFIGURE_ARGS+=	--without-perl

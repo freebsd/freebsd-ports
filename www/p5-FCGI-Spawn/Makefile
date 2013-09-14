@@ -17,7 +17,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Most>0:${PORTSDIR}/devel/p5-Test-Most \
 		p5-Test-Strict>0:${PORTSDIR}/devel/p5-Test-Strict
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 USE_RC_SUBR+=	fcgi_spawn
 

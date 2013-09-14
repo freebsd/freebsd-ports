@@ -14,9 +14,9 @@ COMMENT=	HTTP Antivirus Proxy
 
 LIB_DEPENDS=	clamav.7:${PORTSDIR}/security/clamav
 
+USES=		gmake perl5
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 USE_RC_SUBR=	havp
 CONFIGURE_ARGS=	--disable-locking
 

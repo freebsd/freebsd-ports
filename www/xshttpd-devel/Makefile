@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=--without-preprocessor
 .endif
 
 .if ${PORT_OPTIONS:MPERSISTENT_PERL}
-USE_PERL5=	yes
+USES+=		perl5
 CONFIGURE_ARGS+=--with-perl
 PLIST_SUB+=	PERL=""
 .else

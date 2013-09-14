@@ -63,7 +63,7 @@ USE_OPENLDAP=	YES
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=	yes
+USES+=		perl5
 .endif
 
 .include <bsd.port.pre.mk>
