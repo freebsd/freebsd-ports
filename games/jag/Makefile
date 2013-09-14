@@ -17,6 +17,7 @@ COMMENT=	2D arcade-puzzle game like KDiamonds
 USE_ZIP=	yes
 USE_SDL=	sdl mixer
 USE_DOS2UNIX=	Game.pro
+USE_XORG=	x11
 
 USE_QT4=	qmake_build uic_build moc_build rcc_build \
 		corelib svg xml opengl network
