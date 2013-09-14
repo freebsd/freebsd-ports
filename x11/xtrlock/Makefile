@@ -4,13 +4,15 @@
 PORTNAME=	xtrlock
 PORTVERSION=	2.3
 CATEGORIES=	x11
-MASTER_SITES=	DEBIAN
+MASTER_SITES=	DEBIAN \
+		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	X Transparent Lock
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2 GPLv3	# GPLv2 or later
+LICENSE_COMB=	dual
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
