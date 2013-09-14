@@ -100,8 +100,4 @@ DESCR?=		${.CURDIR}/../rsyslog6/pkg-descr
 DISTINFO_FILE?=	${.CURDIR}/../rsyslog6/distinfo
 .endif
 
-.if ${OSVERSION} < 700042
-USE_GCC=	4.2+
-.endif
-
 .include <bsd.port.post.mk>
