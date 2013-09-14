@@ -14,8 +14,9 @@ COMMENT=	A light and fast web based squid proxy traffic analyser
 OPTIONS_DEFINE=		GD DOCS
 OPTIONS_DEFAULT=	GD
 
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
 
 .include <bsd.port.options.mk>
 

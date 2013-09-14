@@ -29,7 +29,8 @@ RUN_DEPENDS=	p5-Apache-AuthCookie>=3.08:${PORTSDIR}/www/p5-Apache-AuthCookie \
 OPTIONS_DEFINE=		RADIUS
 OPTIONS_DEFAULT=	RADIUS
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Apache2::SiteControl.3 \
 		Apache2::SiteControl::GrantAllRule.3 \

@@ -26,7 +26,8 @@ TEST_DEPENDS=	p5-CGI-Application>0:${PORTSDIR}/www/p5-CGI-Application \
 		p5-Test-HTTP-Server-Simple>0:${PORTSDIR}/www/p5-Test-HTTP-Server-Simple \
 		p5-Test-WWW-Mechanize>0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	CGI::Application::Server.3
 

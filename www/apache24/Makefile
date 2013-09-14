@@ -21,9 +21,8 @@ CONFLICTS_INSTALL=	caudium14-1.* \
 		apache-*-2.2.* apache22-*
 
 USE_APACHE=	common24
-USES=		iconv
+USES=		iconv perl5
 USE_AUTOTOOLS=	autoconf libtool
-USE_PERL5=	yes
 USE_RC_SUBR=	apache24 htcacheclean
 LIBTOOLFILES=	configure.in
 

@@ -12,10 +12,10 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An Apache module that embeds Ruby interpreter within
 
-
+USES=		perl5
 USE_APACHE=	22
 USE_RUBY=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 
 CONFIGURE_ARGS=	--with-apxs="${APXS}"
 CFLAGS+=	-DONIG_ESCAPE_REGEX_T_COLLISION

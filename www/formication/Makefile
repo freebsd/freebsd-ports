@@ -15,8 +15,9 @@ MASTER_SITES=	http://www.ranner.eu/stuff/ \
 MAINTAINER=	michael@ranner.eu
 COMMENT=	Formular processing tool written in perl
 
+USES=		perl5
 USE_APACHE_RUN=	22+
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

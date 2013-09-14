@@ -31,7 +31,6 @@ DBL_DESC=	With DBL scripts
 WWW_DESC=	With error pages
 
 .include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
 
 # Redifine this if you need
 SQUID_USER?=	squid
@@ -55,7 +54,8 @@ PLIST_SUB+=	WWW="@comment "
 
 .if ${PORT_OPTIONS:MDBL}
 DISTFILES+=	dbl-2.0.tgz
-USE_PERL5_RUN=	yes
+USES+=		perl5
+USE_PERL5=	run
 RUN_DEPENDS+=	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		wget:${PORTSDIR}/ftp/wget
@@ -63,6 +63,8 @@ PLIST_SUB+=	DBL=""
 .else
 PLIST_SUB+=	DBL="@comment "
 .endif
+
+.include <bsd.port.pre.mk>
 
 post-extract:
 	@${ECHO_MSG} "===>  ----------------------------------------------"
