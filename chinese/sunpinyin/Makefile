@@ -12,22 +12,18 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:1 \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	A statistical language model based input method engine
+COMMENT=	Statistical language model based input method engine
 
 LICENSE=	LGPL21 CDDL
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
-LICENSE_FILE_LGPL21=	${WRKSRC}/LGPL.LICENSE
-LICENSE_FILE_CDDL=	${WRKSRC}/OPENSOLARIS.LICENSE
-
-USES=		pkgconfig
 USE_XZ=		yes
 USE_SCONS=	yes
 SCONS_ARGS+=	--prefix=${PREFIX} --libdatadir=${PREFIX}/share
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 
 post-patch:
 	@${CP} ${_DISTDIR}/lm_sc.t3g.arpa.tar.bz2 \
