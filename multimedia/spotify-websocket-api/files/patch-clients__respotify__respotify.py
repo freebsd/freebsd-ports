@@ -1,5 +1,5 @@
 --- ./clients/respotify/respotify.py.orig	2013-08-08 08:45:21.000000000 +0200
-+++ ./clients/respotify/respotify.py	2013-09-10 23:04:36.000000000 +0200
++++ ./clients/respotify/respotify.py	2013-09-14 22:32:17.000000000 +0200
 @@ -88,8 +88,10 @@
          print "Playlists\n"
          index = 1
@@ -13,7 +13,7 @@
      else:
          try:
              if len(rootlist) >= int(args[0][0]):
-@@ -115,7 +117,10 @@
+@@ -115,10 +117,14 @@
  
  
  def command_album(*args):
@@ -21,11 +21,16 @@
 +    if len(*args) == 0 or args[0][0] == "" or current_playlist is None:
 +        return
 +
-+    if type(args[0][0]) != int:
++    try:
++        index = int(args[0][0])-1
++    except:
          return
  
-     index = int(args[0][0])-1
-@@ -127,7 +132,10 @@
+-    index = int(args[0][0])-1
+     if current_playlist.getNumTracks() < index:
+         return
+ 
+@@ -127,10 +133,14 @@
  
  
  def command_artist(*args):
@@ -33,11 +38,16 @@
 +    if len(*args) == 0 or args[0][0] == "" or current_playlist is None:
 +        return
 +
-+    if type(args[0][0]) != int:
++    try:
++        index = int(args[0][0])-1
++    except:
          return
  
-     index = int(args[0][0])-1
-@@ -278,7 +286,7 @@
+-    index = int(args[0][0])-1
+     if current_playlist.getNumTracks() < index:
+         return
+ 
+@@ -278,7 +288,7 @@
      if spotify.logged_in():
          os.system("kill `pgrep -f respotify-helper` &> /dev/null")
          uri_resolver = subprocess.Popen([sys.executable, "respotify-helper.py",
