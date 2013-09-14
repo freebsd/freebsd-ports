@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	rakudo
-PORTVERSION=	2012.11
+PORTVERSION=	2013.05
 PORTEPOCH=	4
 CATEGORIES=	lang
-MASTER_SITES=	http://cloud.github.com/downloads/rakudo/star/
+MASTER_SITES=	http://rakudo.org/downloads/star/
 DISTNAME=	${PORTNAME}-star-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
@@ -13,54 +13,59 @@ COMMENT=	The Rakudo Perl 6 Compiler targets the Parrot Virtual Machine
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
+		${LOCALBASE}/bin/gm4:${PORTSDIR}/devel/m4 \
 		${LOCALBASE}/bin/pcre-config:${PORTSDIR}/devel/pcre
-LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
-		gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+		libicudata.so:${PORTSDIR}/devel/icu
+
+OPTIONS_DEFINE=	DOCS
 
 CONFLICTS=	parrot-[0-9]*
 
-PARROT_VERSION=4.6.0
-INSTALL_TARGET=	install
 CONFIGURE_SCRIPT=	Configure.pl
-CONFIGURE_PARROT_ARGS=	--cc=${CC} --cxx=${CXX} --ld=${CC} --ccflags="${CFLAGS}" \
-		--ldflags="${LDFLAGS} -L/usr/lib -L${LOCALBASE}/lib" \
+CONFIGURE_PARROT_ARGS=	--cc=${CC} --ccflags="${CFLAGS}" --cxx=${CXX} --link=${CXX} \
+		--ld=${CC} --ldflags="${LDFLAGS} -L${LIBDIR} -L${LOCALBASE}/lib" \
+		--gc=gms --inline --optimize --parrot_is_shared --verbose \
+		--prefix=${PREFIX} \
 		--icu-config=${LOCALBASE}/bin/icu-config \
-		--optimize --parrot_is_shared --inline \
 		--lex=${LOCALBASE}/bin/flex \
-		--yacc=${LOCALBASE}/bin/bison \
-		--verbose \
-		--prefix=${PREFIX}
+		--yacc=${LOCALBASE}/bin/bison
 CONFIGURE_ARGS=	--with-parrot=${PREFIX}/bin/parrot \
 		--with-nqp=${PREFIX}/bin/nqp
-
-USES=		bison perl5
+NO_BUILD=	yes
+USES=		bison gmake perl5
+USE_LDCONFIG=	yes
 USE_PERL5=	build
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
-
-USE_GMAKE=	yes
-
-MAN1=		perl6.1 rakudo.1
-MANCOMPRESSED=	no
-
-PLIST_SUB+=	PARROT_VERSION=${PARROT_VERSION}
-
 EXTRA_DOCS=	UsingPerl6-draft.pdf cheatsheet.txt
+MAN1=		ops2c.1 \
+		parrot.1 \
+		parrot-nqp.1 \
+		parrot-prove.1 \
+		parrot_config.1 \
+		parrot_nci_thunk_gen.1 \
+		parrotbug.1 \
+		pbc_to_exe.1 \
+		perl6.1 \
+		plumage.1 \
+		rakudo.1 \
+		winxed.1
+MANCOMPRESSED=	no
+PLIST_SUB=	PARROT_VERSION=${PARROT_VERSION}
+PORTDOCS=	*
 
-PORTDOCS=	${EXTRA_DOCS}
+PARROT_VERSION=	5.3.0
+
+NOT_FOR_ARCHS=	ia64 powerpc sparc64
+NOT_FOR_ARCHS_REASON=	does not compile
+
+.include <bsd.port.options.mk>
 
 do-configure:
 	cd ${WRKSRC}/parrot \
 	&& ${PERL} ${CONFIGURE_SCRIPT} ${CONFIGURE_PARROT_ARGS} \
 	&& ${MAKE} installable PREFIX=${PREFIX}
-
-do-build:
 
 do-install:
 	cd ${WRKSRC}/parrot \
@@ -68,21 +73,19 @@ do-install:
 	&& cd ${WRKSRC}/nqp \
 	&& ${PERL} ${CONFIGURE_SCRIPT} --with-parrot=${PREFIX}/bin/parrot \
 					--prefix=${PREFIX} \
-	&& ${MAKE} install PREFIX=${PREFIX} \
+	&& ${MAKE} ${INSTALL_TARGET} PREFIX=${PREFIX} \
 	&& cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}\
 	&& ${MAKE} PREFIX=${PREFIX} && ${MAKE} ${INSTALL_TARGET} PREFIX=${PREFIX}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/perl6.1 ${MAN1PREFIX}/man/man1/perl6.1
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${EXTRA_DOCS:S!^!${WRKSRC}/docs/!} ${DOCSDIR}/
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/docs/ && ${INSTALL_DATA} ${EXTRA_DOCS} ${DOCSDIR}/
 .endif
 
-test: build
+regression-test test: build
 	${MAKE} -C ${WRKSRC} test
-
-regression-test: test
 
 x-generate-plist:
 	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
@@ -91,4 +94,4 @@ x-generate-plist:
 	;s,${PARROT_VERSION}(/.+)?$$,%%PARROT_VERSION%%\1,g \
 	' | ${TR} -s '\n') > temp-pkg-plist
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
