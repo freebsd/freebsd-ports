@@ -7,7 +7,7 @@
 
 PORTNAME=	zfs
 PORTVERSION=	1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils python
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -39,6 +39,10 @@ PYFILES=	__init__.py \
 .if !exists(${SRCDIR}/cddl/contrib/opensolaris/lib/pyzfs) || \
  !exists(${SRCDIR}/cddl/contrib/opensolaris/cmd/pyzfs)
 IGNORE=	requires ZFS v15 or higher sources with pyzfs (in ${SRCDIR})
+.endif
+
+.if !exists(${SRCDIR}/cddl/contrib/opensolaris/lib/libzfs_core/common/libzfs_core.h)
+MAKEFILE=	${FILESDIR}/Makefile.lib.v28
 .endif
 
 .if exists(${SRCDIR}/cddl/contrib/opensolaris/lib/pyzfs/common/holds.py) && \

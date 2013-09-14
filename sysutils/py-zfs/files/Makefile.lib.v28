@@ -8,8 +8,8 @@ SRCS=	ioctl.c
 
 SHLIB_NAME=	ioctl.so
 LIB=	ioctl
-DPADD=	${LIBGEOM} ${LIBZFS} ${LIBZFS_CORE} ${LIBNVPAIR} ${LIBUUTIL}
-LDADD=	-lgeom -lzfs -lzfs_core -lnvpair -luutil ${PYTHON_LDFLAGS}
+DPADD=	${LIBGEOM} ${LIBZFS} ${LIBNVPAIR} ${LIBUUTIL}
+LDADD=	-lgeom -lzfs -lnvpair -luutil ${PYTHON_LDFLAGS}
 
 CFLAGS+= -DNEED_SOLARIS_BOOLEAN
 CFLAGS+= -I${SRCDIR}/sys/cddl/compat/opensolaris
@@ -24,7 +24,6 @@ CFLAGS+= -I${SRCDIR}/cddl/contrib/opensolaris/head
 CFLAGS+= -I${SRCDIR}/cddl/contrib/opensolaris/uts/common
 CFLAGS+= -I${SRCDIR}/cddl/contrib/opensolaris/lib/libnvpair
 CFLAGS+= -I${SRCDIR}/cddl/contrib/opensolaris/lib/libuutil/common
-CFLAGS+= -I${SRCDIR}/cddl/contrib/opensolaris/lib/libzfs_core/common
 CFLAGS+= -I${SRCDIR}/cddl/contrib/opensolaris/lib/libzfs/common
 CFLAGS+= -I${PYTHON_INCLUDEDIR}
 
