@@ -19,7 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 SUB_FILES=	pkg-message
 SUB_LIST=	APACHEMODDIR=${APACHEMODDIR}
 USE_APACHE=	22+
-USES=		gmake perl
+USES=		gmake perl5
 USE_PERL5=	configure
 USE_CSTD=	gnu89
 
