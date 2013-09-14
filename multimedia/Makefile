@@ -159,6 +159,7 @@
     SUBDIR += kplayer-kde4
     SUBDIR += libaacs
     SUBDIR += libass
+    SUBDIR += libav
     SUBDIR += libbluray
     SUBDIR += libcec
     SUBDIR += libdc1394
