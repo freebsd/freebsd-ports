@@ -1,9 +1,5 @@
-# New ports collection makefile for:	shellinabox
-# Date created:		25 june 2010
-# Whom:			Olivier Cochard-Labbe <olivier@cochard.me>
-#
+# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
 # $FreeBSD$
-#
 
 PORTNAME=	shellinabox
 PORTVERSION=	2.14
@@ -15,9 +11,8 @@ MAINTAINER=	olivier@cochard.me
 COMMENT=	Publish command line shell through AJAX interface
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=		CORES MANPAGES
+OPTIONS_DEFINE=	CORES DOCS
 CORES_DESC=	Patch shellinaboxd to enable core dumps
 
 HAS_CONFIGURE=	yes
@@ -38,6 +33,12 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 SUB_FILES=	pkg-deinstall
 SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS}
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNOLOGIN}
+CONFIGURE_ARGS+=--disable-login
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -60,7 +61,6 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-
 .endif
 	${MKDIR} ${ETCDIR}/
 	${CHMOD} 700 ${ETCDIR}/
