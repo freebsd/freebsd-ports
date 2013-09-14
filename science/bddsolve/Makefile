@@ -14,7 +14,6 @@ LIB_DEPENDS+=	bdd:${PORTSDIR}/science/buddy \
 		boost_program_options:${PORTSDIR}/devel/boost-libs
 
 USE_ZIP=	yes
-USE_GCC=	4.2+
 NO_WRKSUBDIR=	yes
 
 .include <bsd.port.pre.mk>
