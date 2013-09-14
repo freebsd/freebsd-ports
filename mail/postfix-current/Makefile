@@ -27,8 +27,9 @@ CONFLICTS=	courier-0.* postfix-1.* postfix-2.* postfix-base-2.* \
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
+USES=		perl5
+USE_PERL5=	build
 USE_SUBMAKE=	yes
-USE_PERL5_BUILD=yes
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
 OPTIONS_DEFINE=	PCRE SASL2 TLS BDB MYSQL PGSQL SQLITE OPENLDAP LDAP_SASL \

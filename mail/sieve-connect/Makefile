@@ -23,8 +23,8 @@ RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
 		p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu \
 		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 
+USES=		perl5
 USE_BZIP2=	yes
-USE_PERL5=	yes
 PLIST_FILES=	bin/sieve-connect
 
 MAN1=		sieve-connect.1

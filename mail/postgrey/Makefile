@@ -17,7 +17,7 @@ RUN_DEPENDS=	p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
 		p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB \
 		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 USE_RC_SUBR=	${PORTNAME}
 NO_BUILD=	yes
 POD2MAN?=	pod2man
@@ -36,7 +36,7 @@ USERS=		${PGY_USERNAME}
 GROUPS=		${PGY_GROUPNAME}
 MAN1=		${PORTNAME}.1 policy-test.1 postgreyreport.1
 
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	${WRKSRC}/postgrey
 
 .include <bsd.port.options.mk>
