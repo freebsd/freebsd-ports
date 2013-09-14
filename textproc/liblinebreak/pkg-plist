@@ -1,6 +1,0 @@
-include/linebreak.h
-include/linebreakdef.h
-lib/liblinebreak.so.2
-lib/liblinebreak.so
-lib/liblinebreak.la
-lib/liblinebreak.a

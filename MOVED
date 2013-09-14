@@ -4937,3 +4937,4 @@ misc/kde4-l10n-mai||2013-09-10|No longer part of KDE4
 misc/kde4-l10n-mk||2013-09-10|No longer part of KDE4
 misc/kde4-l10n-ml||2013-09-10|No longer part of KDE4
 devel/deputy||2013-09-13|Obsolete
+textproc/liblinebreak|textproc/libunibreak|2013-09-14|Project was superceded by libunibreak
