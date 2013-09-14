@@ -15,9 +15,10 @@ OPTIONS_DEFAULT=	UNICODE
 UNICODE_DESC=	Build with Unicode support
 
 USE_GCC=	any
+USES=		perl5
+USE_PERL5=	modbuild
 USE_WX=		2.6+
 WX_COMPS=	wx contrib
-PERL_MODBUILD=	yes
 
 .include <bsd.port.pre.mk>
 

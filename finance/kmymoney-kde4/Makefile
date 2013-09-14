@@ -71,7 +71,8 @@ PLIST_SUB+=	OFX="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MQUOTES}
-USE_PERL5_RUN=	yes
+USES+=		perl5
+USE_PERL5=	run
 RUN_DEPENDS+=	p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-Finance-Quote>=0:${PORTSDIR}/finance/p5-Finance-Quote \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \

@@ -11,10 +11,9 @@ MASTER_SITE_SUBDIR=	wget
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Retrieve files from the Net via HTTP(S) and FTP
 
-USES=		charsetfix
+USES=		charsetfix gmake perl5
 USE_XZ=		yes
-USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 
 OPTIONS_RADIO=	SSL
