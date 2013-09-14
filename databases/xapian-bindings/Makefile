@@ -12,7 +12,7 @@ COMMENT=	Bindings allowing Xapian to be used from various programming languages
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	xapian:${PORTSDIR}/databases/xapian-core
+LIB_DEPENDS=	libxapian.so:${PORTSDIR}/databases/xapian-core
 
 OPTIONS_DEFINE=	DOCS LUA PERL PHP PYTHON RUBY
 OPTIONS_DEFAULT=PHP PYTHON RUBY
@@ -37,7 +37,7 @@ PLIST_SUB+=	LUA="@comment "
 .if ${PORT_OPTIONS:MPERL}
 CONFIGURE_ARGS+=--with-perl
 CONFIGURE_ENV+=	PERL_LIB="${SITE_PERL}"
-USES=		perl5
+USES+=		perl5
 PLIST_SUB+=	PERL=""
 .else
 PLIST_SUB+=	PERL="@comment "
@@ -75,6 +75,7 @@ PLIST_SUB+=	RUBY="@comment "
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|-lstdc++||g' ${WRKSRC}/configure
 # do not install rdoc
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||' ${WRKSRC}/ruby/Makefile.in
 .if !${PORT_OPTIONS:MDOCS}
