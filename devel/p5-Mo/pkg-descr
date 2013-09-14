@@ -1,0 +1,11 @@
+Mo is the bare minimum needed for Perl OO. Many times you'll want just a couple
+more features. Don't worry. Mo's got you covered.
+
+Mo simply loads the feature classes Mo::build, Mo::default, Mo::builder,
+Mo::coerce, Mo::is and Mo::required. The first one supports BUILD constructing
+and the other three add their magics to has. A Mo::Feature module can enhance
+new, extends and has, and also add new export subs, or remove existing ones.
+Features can also be combined for a single accessor. See Mo::Features for a list
+of all the features and for an explanation of the Feature API.
+
+WWW: http://search.cpan.org/dist/Mo/
