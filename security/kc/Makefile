@@ -11,10 +11,11 @@ COMMENT=	Console based password storing application
 
 LICENSE=	BSD
 
-USES=		pkgconfig
-LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
-		pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
+		libpcre.so:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
+
+USES=		pkgconfig
 
 MAN1=		kc.1
 MANCOMPRESSED=	yes
@@ -24,6 +25,9 @@ PLIST_FILES=	bin/kc \
 		share/kc/pwsafe_to_kc.pl
 
 MAKE_ENV+=	HAVE_PCRE=yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|pkg-config|${LOCALBASE}/bin/pkgconf|' ${WRKSRC}/Makefile
 
 post-install:
 	${INSTALL} -d ${PREFIX}/share/kc
