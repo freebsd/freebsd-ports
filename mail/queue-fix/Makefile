@@ -41,6 +41,10 @@ PATCHFILES+=		queue-fix-todo.patch
 PATCH_DIST_STRIP+=	-p1
 .endif
 
+post-patch:
+	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
+	${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${WRKSRC}/conf-ld
+
 do-install:
 	@${MKDIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/queue-fix ${PREFIX}/bin
