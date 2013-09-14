@@ -1,6 +1,6 @@
---- include/Trace.h.orig	Sat Mar 17 01:42:59 2007
-+++ include/Trace.h	Thu Aug  9 17:17:25 2007
-@@ -92,7 +92,7 @@
+--- include/Trace.h.orig	2013-09-14 18:46:21.000000000 +0800
++++ include/Trace.h	2013-09-14 18:46:41.000000000 +0800
+@@ -92,7 +92,7 @@ class DebugStream : public ostream
  	}
  #else
  #define TRACE(a) \
