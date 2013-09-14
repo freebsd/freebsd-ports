@@ -16,7 +16,7 @@ OPTIONS_DEFINE=	TENTACLE_SERVER
 OPTIONS_DEFAULT=	TENTACLE_SERVER
 TENTACLE_SERVER_DESC=	Install tentalce_server
 
-USE_PERL5=	yes
+USES=		perl5
 SUB_LIST+=	PERL="${PERL}"
 
 MAN1=		pandora_agent.1	tentacle_client.1

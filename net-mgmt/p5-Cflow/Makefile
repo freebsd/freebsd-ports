@@ -15,6 +15,9 @@ COMMENT=	Analyze raw flow files written by cflowd (Cisco NetFlow data)
 OPTIONS_DEFINE=	FLOW_TOOLS
 FLOW_TOOLS_DESC=	Enable flow-tools support
 
+USES=		perl5
+USE_PERL5=	configure
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFLOW_TOOLS}
@@ -26,7 +29,6 @@ CONFIGURE_ARGS+=	\
 	"LDDLFLAGS= -shared -L${LOCALBASE}/lib -lft -lz" \
 	"INC= -I${LOCALBASE}/include" "LDLOADLIBS= -L${LOCALBASE}/lib -lft -lz"
 .endif
-PERL_CONFIGURE=	YES
 
 MAN1=		flowdumper.1
 MAN3=		Cflow.3

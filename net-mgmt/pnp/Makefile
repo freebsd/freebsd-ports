@@ -18,6 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool \
 		nagios:${PORTSDIR}/net-mgmt/nagios
 
 MAKE_JOBS_UNSAFE=	yes
+USES=		perl5
 
 OPTIONS_DEFINE=	PDF
 OPTIONS_DEFAULT=	PDF
@@ -25,7 +26,6 @@ PDF_DESC=	Use built-in fpdf library to produce PDF views
 
 .include <bsd.port.options.mk>
 
-USE_PERL5=	yes
 USE_PHP=	gd iconv json pcre simplexml sockets xml zlib
 
 WANT_PHP_WEB=	yes

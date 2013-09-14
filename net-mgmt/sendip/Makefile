@@ -14,8 +14,7 @@ MASTER_SITES=	http://www.earth.li/projectpurple/files/
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	SendIP is a commandline tool to allow sending arbitrary IP packets
 
-USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		gmake perl5
 USE_LDCONFIG=	yes
 
 MAN1=		sendip.1

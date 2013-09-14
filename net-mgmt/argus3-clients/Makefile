@@ -17,14 +17,12 @@ CONFLICTS=	argus-clients-2* argus-clients-sasl-2*
 OPTIONS_DEFINE=	GEOIP MANPAGES MYSQL SASL
 OPTIONS_DEFAULT=MANPAGES MYSQL SASL
 
-USES=		bison ncurses
-
+USES=		bison ncurses perl5
 USE_CSTD=	gnu89
 
 .include <bsd.port.options.mk>
 
 GNU_CONFIGURE=	true
-USE_PERL5=	yes
 
 .if ${PORT_OPTIONS:MSASL}
 PKGNAMESUFFIX+=	-sasl

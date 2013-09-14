@@ -16,7 +16,7 @@ RUN_DEPENDS=	net-snmp>=0:${PORTSDIR}/net-mgmt/net-snmp \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
-USE_PERL5=	yes
+USES=		perl5
 
 USE_RC_SUBR=	snmptt
 
