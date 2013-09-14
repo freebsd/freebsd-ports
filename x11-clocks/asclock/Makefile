@@ -18,7 +18,6 @@ CONFLICTS=	asclock-gtk-[0-9]* asclock-xlib-[0-9]*
 # clang's cpp destroys whitespace, particularly hard tabs in makefiles,
 # which is fatal for imake.
 USES=		imake
-USE_GCC=	any
 USE_XORG=	xpm xext x11
 MAN1=		asclock.1
 PLIST_FILES=	bin/asclock
