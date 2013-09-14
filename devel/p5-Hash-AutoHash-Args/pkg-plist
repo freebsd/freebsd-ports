@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Hash/AutoHash/Args.pm
+%%SITE_PERL%%/Hash/AutoHash/Args/V0.pm
+@dirrm %%SITE_PERL%%/Hash/AutoHash/Args
+@dirrmtry %%SITE_PERL%%/Hash/AutoHash
+@dirrmtry %%SITE_PERL%%/Hash
