@@ -31,6 +31,11 @@ DESKTOP_ENTRIES="Fish Supper" \
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} > 1000000
+post-patch:
+	@${REINPLACE_CMD} -e 's|std::tr1::shared_ptr|std::shared_ptr|g' ${WRKSRC}/src/*.h ${WRKSRC}/src/*.cpp
+.endif
+
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
