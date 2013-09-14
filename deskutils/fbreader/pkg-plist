@@ -1,9 +1,13 @@
 bin/FBReader
-lib/libzlcore.so.0.13
-lib/libzlcore.so.0.12.10
-lib/libzltext.so.0.13
-lib/libzltext.so.0.12.10
-lib/zlibrary/ui/zlui-%%UI%%.so
+lib/libzlcore.so
+lib/libzlcore.so.0.99
+lib/libzlcore.so.0.99.4
+lib/libzltext.so
+lib/libzltext.so.0.99
+lib/libzltext.so.0.99.4
+lib/libzlui.so
+lib/libzlui.so.0.99
+lib/libzlui.so.0.99.4
 share/FBReader/default/config.xml
 share/FBReader/default/external.xml
 share/FBReader/default/fullscreen_toolbar.xml
@@ -16,12 +20,14 @@ share/FBReader/formats/html/html.ent
 share/FBReader/formats/xhtml/xhtml-lat1.ent
 share/FBReader/formats/xhtml/xhtml-special.ent
 share/FBReader/formats/xhtml/xhtml-symbol.ent
+share/FBReader/help/MiniHelp.bg.fb2
 share/FBReader/help/MiniHelp.cs.fb2
 share/FBReader/help/MiniHelp.de.fb2
 share/FBReader/help/MiniHelp.en.fb2
 share/FBReader/help/MiniHelp.es.fb2
 share/FBReader/help/MiniHelp.fi.fb2
 share/FBReader/help/MiniHelp.fr.fb2
+share/FBReader/help/MiniHelp.he.fb2
 share/FBReader/help/MiniHelp.hu.fb2
 share/FBReader/help/MiniHelp.id.fb2
 share/FBReader/help/MiniHelp.it.fb2
@@ -32,25 +38,22 @@ share/FBReader/help/MiniHelp.sv.fb2
 share/FBReader/help/MiniHelp.uk.fb2
 share/FBReader/help/MiniHelp.vi.fb2
 share/FBReader/help/MiniHelp.zh.fb2
-share/FBReader/network/booksonboard.com.xml
-share/FBReader/network/certificates/litres.ru.crt
-share/FBReader/network/feedbooks.com.xml
-share/FBReader/network/litres.ru.xml
-share/FBReader/network/manybooks.net.xml
-share/FBReader/network/shucang.com.xml
-share/FBReader/network/smashwords.com.xml
 share/FBReader/resources/ar.xml
+share/FBReader/resources/bg.xml
 share/FBReader/resources/cs.xml
 share/FBReader/resources/de.xml
 share/FBReader/resources/en.xml
+share/FBReader/resources/eo.xml
 share/FBReader/resources/es.xml
 share/FBReader/resources/fi.xml
 share/FBReader/resources/fr.xml
+share/FBReader/resources/he.xml
 share/FBReader/resources/hu.xml
 share/FBReader/resources/id.xml
 share/FBReader/resources/it.xml
 share/FBReader/resources/lt.xml
 share/FBReader/resources/nl.xml
+share/FBReader/resources/pl.xml
 share/FBReader/resources/ru.xml
 share/FBReader/resources/sv.xml
 share/FBReader/resources/uk.xml
@@ -60,17 +63,21 @@ share/applications/FBReader.desktop
 share/pixmaps/FBReader.png
 share/pixmaps/FBReader/addBook.png
 share/pixmaps/FBReader/advancedSearchOnNetwork.png
+share/pixmaps/FBReader/back_button.png
+share/pixmaps/FBReader/back_button_disabled.png
 share/pixmaps/FBReader/bookInfo.png
 share/pixmaps/FBReader/booktree-author.png
 share/pixmaps/FBReader/booktree-book.png
+share/pixmaps/FBReader/booktree-catalog.png
 share/pixmaps/FBReader/booktree-tag.png
 share/pixmaps/FBReader/byAuthor.png
 share/pixmaps/FBReader/byTag.png
 share/pixmaps/FBReader/fb2.png
-share/pixmaps/FBReader/feed-litres.png
 share/pixmaps/FBReader/findNext.png
 share/pixmaps/FBReader/findPrevious.png
 share/pixmaps/FBReader/folder.png
+share/pixmaps/FBReader/forward_button.png
+share/pixmaps/FBReader/forward_button_disabled.png
 share/pixmaps/FBReader/gotoHome.png
 share/pixmaps/FBReader/html.png
 share/pixmaps/FBReader/mobipocket.png
@@ -80,15 +87,21 @@ share/pixmaps/FBReader/palm.png
 share/pixmaps/FBReader/plucker.png
 share/pixmaps/FBReader/preferences.png
 share/pixmaps/FBReader/redo.png
+share/pixmaps/FBReader/refresh-icon-1.png
+share/pixmaps/FBReader/refresh-icon-2.png
+share/pixmaps/FBReader/refresh-icon.svg
 share/pixmaps/FBReader/rotate.png
 share/pixmaps/FBReader/rtf.png
 share/pixmaps/FBReader/search.png
+share/pixmaps/FBReader/search_icon.png
 share/pixmaps/FBReader/searchresult.png
 share/pixmaps/FBReader/showHelp.png
 share/pixmaps/FBReader/showLibrary.png
 share/pixmaps/FBReader/showNetLibrary.png
+share/pixmaps/FBReader/showNetworkLibrary.png
 share/pixmaps/FBReader/showReading.png
 share/pixmaps/FBReader/showRecent.png
+share/pixmaps/FBReader/spinner.gif
 share/pixmaps/FBReader/tcr.png
 share/pixmaps/FBReader/toc.png
 share/pixmaps/FBReader/undo.png
@@ -123,33 +136,34 @@ share/zlibrary/hyphenationPatterns.zip
 share/zlibrary/keynames-%%UI%%.xml
 share/zlibrary/languagePatterns.zip
 share/zlibrary/resources/ar.xml
+share/zlibrary/resources/bg.xml
 share/zlibrary/resources/cs.xml
 share/zlibrary/resources/de.xml
 share/zlibrary/resources/en.xml
+share/zlibrary/resources/eo.xml
 share/zlibrary/resources/es.xml
 share/zlibrary/resources/fi.xml
 share/zlibrary/resources/fr.xml
+share/zlibrary/resources/he.xml
 share/zlibrary/resources/hu.xml
 share/zlibrary/resources/id.xml
 share/zlibrary/resources/it.xml
 share/zlibrary/resources/lt.xml
 share/zlibrary/resources/nl.xml
+share/zlibrary/resources/pl.xml
 share/zlibrary/resources/ru.xml
 share/zlibrary/resources/sv.xml
 share/zlibrary/resources/uk.xml
 share/zlibrary/resources/vi.xml
 share/zlibrary/resources/zh.xml
+share/zlibrary/style.qss
 share/zlibrary/unicode.xml.gz
-@dirrm lib/zlibrary/ui
-@dirrm lib/zlibrary
 @dirrm share/FBReader/default
 @dirrm share/FBReader/formats/fb2
 @dirrm share/FBReader/formats/html
 @dirrm share/FBReader/formats/xhtml
 @dirrm share/FBReader/formats
 @dirrm share/FBReader/help
-@dirrm share/FBReader/network/certificates
-@dirrm share/FBReader/network
 @dirrm share/FBReader/resources
 @dirrm share/FBReader
 @dirrm share/pixmaps/FBReader
