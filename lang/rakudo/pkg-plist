@@ -223,7 +223,6 @@ lib/parrot/%%PARROT_VERSION%%/dynext/nqp_group.so
 lib/parrot/%%PARROT_VERSION%%/dynext/nqp_ops.so
 lib/parrot/%%PARROT_VERSION%%/dynext/obscure_ops.so
 lib/parrot/%%PARROT_VERSION%%/dynext/os.so
-lib/parrot/%%PARROT_VERSION%%/dynext/perl6_group.so
 lib/parrot/%%PARROT_VERSION%%/dynext/perl6_ops.so
 lib/parrot/%%PARROT_VERSION%%/dynext/rational.so
 lib/parrot/%%PARROT_VERSION%%/dynext/select.so
@@ -280,7 +279,6 @@ lib/parrot/%%PARROT_VERSION%%/languages/nqp/lib/NQPP6QRegex.pbc
 lib/parrot/%%PARROT_VERSION%%/languages/nqp/lib/Perl6/Actions.pbc
 lib/parrot/%%PARROT_VERSION%%/languages/nqp/lib/Perl6/BOOTSTRAP.pbc
 lib/parrot/%%PARROT_VERSION%%/languages/nqp/lib/Perl6/Compiler.pbc
-lib/parrot/%%PARROT_VERSION%%/languages/nqp/lib/Perl6/ConstantFolder.pbc
 lib/parrot/%%PARROT_VERSION%%/languages/nqp/lib/Perl6/Grammar.pbc
 lib/parrot/%%PARROT_VERSION%%/languages/nqp/lib/Perl6/Metamodel.pbc
 lib/parrot/%%PARROT_VERSION%%/languages/nqp/lib/Perl6/ModuleLoader.pbc
@@ -313,6 +311,7 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Associative.pod
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Attribute.pod
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Backtrace.pod
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Backtrace/Frame.pod
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador/App.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador/App.pm
@@ -326,6 +325,7 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador/Template.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador/Template.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador/Template/Mojo.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador/Template/Mojo.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador/Test.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador/Test.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Block.pod
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bool.pod
@@ -371,6 +371,7 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Grammar/Tracer.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Grammar/Tracer.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP/Easy.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP/Easy.pm6
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP/Easy/PSGI.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP/Easy/PSGI.pm6
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP/Status.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP/Status.pm6
@@ -388,6 +389,7 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Iterable.pod
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Iterator.pod
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/RPC/Client.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/RPC/Client.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/RPC/Server.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/RPC/Server.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/Tiny.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/Tiny.pm
