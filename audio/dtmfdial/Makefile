@@ -15,6 +15,8 @@ WRKSRC=		${WRKDIR}/dial
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 PORTDOCS=	README TODO
 
+PLIST_FILES=	bin/dtmfdial
+
 .include <bsd.port.options.mk>
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dial ${PREFIX}/bin/dtmfdial
