@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scim-bridge-qt4
-# Date created:		2008-08-17
-# Whom:			Henry Hu <henry.hu.sh@gmail.com>
-#
+# Created by: Henry Hu <henry.hu.sh@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	scim-bridge
 PORTVERSION=	0.4.16
@@ -19,8 +15,7 @@ RUN_DEPENDS=	scim-bridge:${PORTSDIR}/textproc/scim-bridge
 
 USE_QT4=	corelib gui moc_build
 QT_NONSTANDARD=	yes
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 
 LICENSE=	GPLv2 LGPL21

@@ -1,9 +1,5 @@
-# New ports collection makefile for:  zh-gcin
-# Date created:                   Feb 18 2004
-# Whom:                           Shen Chuan-Hsing
-#
+# Created by: Shen Chuan-Hsing
 # $FreeBSD$
-#
 
 PORTNAME=	gcin
 PORTVERSION=	2.8.0
@@ -22,7 +18,7 @@ USE_XZ=		YES
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--use_gtk3=N --use_qt3=N
 USE_GNOME=	gtk20
-USE_GMAKE=	YES
+USES=		gmake pkgconfig
 USE_XORG=	x11 xtst xext
 INSTALLS_ICONS=	YES
 USE_LDCONFIG=	YES

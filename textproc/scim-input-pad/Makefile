@@ -14,7 +14,7 @@ COMMENT=	SCIM add-on to input various symbols with customisable on-screen pad
 LIB_DEPENDS=	scim-1.0.10:${PORTSDIR}/textproc/scim
 
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
 LDFLAGS+=	-L${LOCALBASE}/lib
