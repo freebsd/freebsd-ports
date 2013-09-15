@@ -141,6 +141,9 @@ CXX=		clang++
 .endif
 GYP_DEFINES+=	clang=1
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
+.if ${OSVERSION} >= 1000054
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libc++
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MTEST}
