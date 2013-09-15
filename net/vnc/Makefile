@@ -20,6 +20,7 @@ RUN_DEPENDS=	xorg-fonts>=7.2:${PORTSDIR}/x11-fonts/xorg-fonts \
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+USES=		perl5
 USE_XORG=	x11 xext xpm xext xtst sm ice inputproto
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
@@ -56,7 +57,6 @@ RUN_DEPENDS+=	xauth:${PORTSDIR}/x11/xauth \
 		${PREFIX}/lib/X11/fonts/misc/6x13-ISO8859-1.pcf.gz:${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps \
 		${LOCALBASE}/lib/X11/fonts/misc/fonts.alias:${PORTSDIR}/x11-fonts/font-alias
 
-USES=		perl5
 
 EXTRA_PATCHES+=	${WRKSRC}/xc.patch \
 		${PATCHDIR}/vnc.def-patch \
