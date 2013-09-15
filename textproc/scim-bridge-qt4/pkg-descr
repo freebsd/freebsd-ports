@@ -4,4 +4,4 @@ the IME server which communicates with SCIM. The clients are IMModules
 which communicate only with the agent so that there is no binary
 dependency between the clients and SCIM.
 
-WWW:	http://www.scim-im.org/projects/scim_bridge/
+WWW: http://www.scim-im.org/projects/scim_bridge/
