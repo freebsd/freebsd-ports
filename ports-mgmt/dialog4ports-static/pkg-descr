@@ -1,0 +1,4 @@
+dialog4ports -- a dialog for FreeBSD ports.  This is a static version that
+can be used in chroots, for example in Tinderbox.
+
+WWW: https://bitbucket.org/m1cro/d4p/
