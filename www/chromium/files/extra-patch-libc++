@@ -1,0 +1,314 @@
+--- AUTHORS.orig	2013-09-03 03:10:29.000000000 -0400
++++ AUTHORS	2013-09-13 13:21:24.000000000 -0400
+@@ -268,3 +268,4 @@
+ Jingwei Liu <kingweiliu@gmail.com>
+ Zheng Chuang <zhengchuangscu@gmail.com>
+ Kevin M. McCormick <mckev@amazon.com>
++Zeno Albisser <zeno.albisser@digia.com>
+--- content/browser/renderer_host/pepper/browser_ppapi_host_impl.h.orig	2013-09-03 03:09:02.000000000 -0400
++++ content/browser/renderer_host/pepper/browser_ppapi_host_impl.h	2013-09-12 18:01:57.000000000 -0400
+@@ -13,6 +13,7 @@
+ #include "base/files/file_path.h"
+ #include "content/browser/renderer_host/pepper/content_browser_pepper_host_factory.h"
+ #include "content/common/content_export.h"
++#include "content/common/pepper_renderer_instance_data.h"
+ #include "content/public/browser/browser_ppapi_host.h"
+ #include "content/public/common/process_type.h"
+ #include "ipc/ipc_channel_proxy.h"
+@@ -20,8 +21,6 @@
+ 
+ namespace content {
+ 
+-struct PepperRendererInstanceData;
+-
+ class CONTENT_EXPORT BrowserPpapiHostImpl : public BrowserPpapiHost {
+  public:
+   // The creator is responsible for calling set_plugin_process_handle as soon
+--- content/browser/in_process_webkit/indexed_db_dispatcher_host.h.orig	2013-09-03 03:09:01.000000000 -0400
++++ content/browser/in_process_webkit/indexed_db_dispatcher_host.h	2013-09-12 18:03:26.000000000 -0400
+@@ -11,8 +11,8 @@
+ #include "base/basictypes.h"
+ #include "base/id_map.h"
+ #include "content/public/browser/browser_message_filter.h"
++#include "url/gurl.h"
+ 
+-class GURL;
+ struct IndexedDBDatabaseMetadata;
+ struct IndexedDBHostMsg_DatabaseCount_Params;
+ struct IndexedDBHostMsg_DatabaseCreateIndex_Params;
+--- content/public/test/test_file_error_injector.h.orig	2013-09-03 03:08:59.000000000 -0400
++++ content/public/test/test_file_error_injector.h	2013-09-12 18:02:11.000000000 -0400
+@@ -13,8 +13,7 @@
+ #include "base/memory/scoped_ptr.h"
+ #include "base/memory/ref_counted.h"
+ #include "content/public/browser/download_interrupt_reasons.h"
+-
+-class GURL;
++#include "url/gurl.h"
+ 
+ namespace content {
+ 
+--- content/renderer/media/media_stream_center.h.orig	2013-09-03 03:08:58.000000000 -0400
++++ content/renderer/media/media_stream_center.h	2013-09-12 18:02:11.000000000 -0400
+@@ -11,6 +11,7 @@
+ #include "third_party/WebKit/public/platform/WebMediaStream.h"
+ #include "third_party/WebKit/public/platform/WebMediaStreamCenter.h"
+ #include "third_party/WebKit/public/platform/WebMediaStreamTrack.h"
++#include "third_party/WebKit/public/platform/WebMediaStreamTrackSourcesRequest.h"
+ 
+ namespace WebKit {
+ class WebMediaStreamCenterClient;
+--- net/http/http_auth_cache.h.orig	2013-09-03 03:10:07.000000000 -0400
++++ net/http/http_auth_cache.h	2013-09-12 18:02:08.000000000 -0400
+@@ -26,7 +26,77 @@
+ // Entries can be looked up by either (origin, realm, scheme) or (origin, path).
+ class NET_EXPORT_PRIVATE HttpAuthCache {
+  public:
+-  class Entry;
++  class NET_EXPORT_PRIVATE Entry {
++   public:
++    ~Entry();
++
++    const GURL& origin() const {
++      return origin_;
++    }
++
++    // The case-sensitive realm string of the challenge.
++    const std::string realm() const {
++      return realm_;
++    }
++
++    // The authentication scheme of the challenge.
++    HttpAuth::Scheme scheme() const {
++      return scheme_;
++    }
++
++    // The authentication challenge.
++    const std::string auth_challenge() const {
++      return auth_challenge_;
++    }
++
++    // The login credentials.
++    const AuthCredentials& credentials() const {
++      return credentials_;
++    }
++
++    int IncrementNonceCount() {
++      return ++nonce_count_;
++    }
++
++    void UpdateStaleChallenge(const std::string& auth_challenge);
++
++   private:
++    friend class HttpAuthCache;
++    FRIEND_TEST_ALL_PREFIXES(HttpAuthCacheTest, AddPath);
++    FRIEND_TEST_ALL_PREFIXES(HttpAuthCacheTest, AddToExistingEntry);
++
++    typedef std::list<std::string> PathList;
++
++    Entry();
++
++    // Adds a path defining the realm's protection space. If the path is
++    // already contained in the protection space, is a no-op.
++    void AddPath(const std::string& path);
++
++    // Returns true if |dir| is contained within the realm's protection
++    // space.  |*path_len| is set to the length of the enclosing path if
++    // such a path exists and |path_len| is non-NULL.  If no enclosing
++    // path is found, |*path_len| is left unmodified.
++    //
++    // Note that proxy auth cache entries are associated with empty
++    // paths.  Therefore it is possible for HasEnclosingPath() to return
++    // true and set |*path_len| to 0.
++    bool HasEnclosingPath(const std::string& dir, size_t* path_len);
++
++    // |origin_| contains the {protocol, host, port} of the server.
++    GURL origin_;
++    std::string realm_;
++    HttpAuth::Scheme scheme_;
++
++    // Identity.
++    std::string auth_challenge_;
++    AuthCredentials credentials_;
++
++    int nonce_count_;
++
++    // List of paths that define the realm's protection space.
++    PathList paths_;
++  };
+ 
+   // Prevent unbounded memory growth. These are safeguards for abuse; it is
+   // not expected that the limits will be reached in ordinary usage.
+@@ -106,78 +176,6 @@
+ };
+ 
+ // An authentication realm entry.
+-class NET_EXPORT_PRIVATE HttpAuthCache::Entry {
+- public:
+-  ~Entry();
+-
+-  const GURL& origin() const {
+-    return origin_;
+-  }
+-
+-  // The case-sensitive realm string of the challenge.
+-  const std::string realm() const {
+-    return realm_;
+-  }
+-
+-  // The authentication scheme of the challenge.
+-  HttpAuth::Scheme scheme() const {
+-    return scheme_;
+-  }
+-
+-  // The authentication challenge.
+-  const std::string auth_challenge() const {
+-    return auth_challenge_;
+-  }
+-
+-  // The login credentials.
+-  const AuthCredentials& credentials() const {
+-    return credentials_;
+-  }
+-
+-  int IncrementNonceCount() {
+-    return ++nonce_count_;
+-  }
+-
+-  void UpdateStaleChallenge(const std::string& auth_challenge);
+-
+- private:
+-  friend class HttpAuthCache;
+-  FRIEND_TEST_ALL_PREFIXES(HttpAuthCacheTest, AddPath);
+-  FRIEND_TEST_ALL_PREFIXES(HttpAuthCacheTest, AddToExistingEntry);
+-
+-  typedef std::list<std::string> PathList;
+-
+-  Entry();
+-
+-  // Adds a path defining the realm's protection space. If the path is
+-  // already contained in the protection space, is a no-op.
+-  void AddPath(const std::string& path);
+-
+-  // Returns true if |dir| is contained within the realm's protection
+-  // space.  |*path_len| is set to the length of the enclosing path if
+-  // such a path exists and |path_len| is non-NULL.  If no enclosing
+-  // path is found, |*path_len| is left unmodified.
+-  //
+-  // Note that proxy auth cache entries are associated with empty
+-  // paths.  Therefore it is possible for HasEnclosingPath() to return
+-  // true and set |*path_len| to 0.
+-  bool HasEnclosingPath(const std::string& dir, size_t* path_len);
+-
+-  // |origin_| contains the {protocol, host, port} of the server.
+-  GURL origin_;
+-  std::string realm_;
+-  HttpAuth::Scheme scheme_;
+-
+-  // Identity.
+-  std::string auth_challenge_;
+-  AuthCredentials credentials_;
+-
+-  int nonce_count_;
+-
+-  // List of paths that define the realm's protection space.
+-  PathList paths_;
+-};
+-
+ }  // namespace net
+ 
+ #endif  // NET_HTTP_HTTP_AUTH_CACHE_H_
+--- ui/gfx/image/image_family.h.orig	2013-09-03 03:09:09.000000000 -0400
++++ ui/gfx/image/image_family.h	2013-09-12 18:02:08.000000000 -0400
+@@ -27,8 +27,16 @@
+ // include high-DPI representations).
+ class UI_EXPORT ImageFamily {
+  private:
+-  // Forward declaration.
+-  struct MapKey;
++  // An <aspect ratio, DIP width> pair.
++  // A 0x0 image has aspect ratio 1.0. 0xN and Nx0 images are treated as 0x0.
++  struct MapKey : std::pair<float, int> {
++    MapKey(float aspect, int width)
++        : std::pair<float, int>(aspect, width) {}
++
++    float aspect() const { return first; }
++
++    int width() const { return second; }
++  };
+ 
+  public:
+   // Type for iterating over all images in the family, in order.
+@@ -127,17 +135,6 @@
+   const gfx::Image* GetBest(const gfx::Size& size) const;
+ 
+  private:
+-  // An <aspect ratio, DIP width> pair.
+-  // A 0x0 image has aspect ratio 1.0. 0xN and Nx0 images are treated as 0x0.
+-  struct MapKey : std::pair<float, int> {
+-    MapKey(float aspect, int width)
+-        : std::pair<float, int>(aspect, width) {}
+-
+-    float aspect() const { return first; }
+-
+-    int width() const { return second; }
+-  };
+-
+   // Find the closest aspect ratio in the map to |desired_aspect|.
+   // Ties are broken by the thinner aspect.
+   // |map_| must not be empty. |desired_aspect| must be > 0.0.
+--- webkit/browser/dom_storage/dom_storage_namespace.h.orig	2013-09-03 03:10:02.000000000 -0400
++++ webkit/browser/dom_storage/dom_storage_namespace.h	2013-09-12 18:05:35.000000000 -0400
+@@ -11,8 +11,7 @@
+ #include "base/files/file_path.h"
+ #include "base/memory/ref_counted.h"
+ #include "webkit/browser/webkit_storage_browser_export.h"
+-
+-class GURL;
++#include "url/gurl.h"
+ 
+ namespace dom_storage {
+ 
+--- webkit/support/weburl_loader_mock_factory.cc.orig	2013-09-03 03:10:02.000000000 -0400
++++ webkit/support/weburl_loader_mock_factory.cc	2013-09-12 18:02:11.000000000 -0400
+@@ -23,11 +23,6 @@
+ using WebKit::WebURLRequest;
+ using WebKit::WebURLResponse;
+ 
+-struct WebURLLoaderMockFactory::ResponseInfo {
+-  WebKit::WebURLResponse response;
+-  base::FilePath file_path;
+-};
+-
+ WebURLLoaderMockFactory::WebURLLoaderMockFactory() {}
+ 
+ WebURLLoaderMockFactory::~WebURLLoaderMockFactory() {}
+--- webkit/support/weburl_loader_mock_factory.h.orig	2013-09-03 03:10:02.000000000 -0400
++++ webkit/support/weburl_loader_mock_factory.h	2013-09-12 18:02:11.000000000 -0400
+@@ -9,12 +9,12 @@
+ 
+ #include "base/files/file_path.h"
+ #include "third_party/WebKit/public/platform/WebURL.h"
++#include "third_party/WebKit/public/platform/WebURLError.h"
+ #include "third_party/WebKit/public/platform/WebURLRequest.h"
+ #include "third_party/WebKit/public/platform/WebURLResponse.h"
+ 
+ namespace WebKit {
+ class WebData;
+-struct WebURLError;
+ class WebURLLoader;
+ }
+ 
+@@ -75,7 +75,11 @@
+   void CancelLoad(WebURLLoaderMock* loader);
+ 
+  private:
+-  struct ResponseInfo;
++  struct ResponseInfo {
++    WebKit::WebURLResponse response;
++    base::FilePath file_path;
++  };
++
+ 
+   // Loads the specified request and populates the response, error and data
+   // accordingly.
