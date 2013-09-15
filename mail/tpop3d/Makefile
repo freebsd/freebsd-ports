@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=	--enable-auth-ldap --with-openldap-root=${LOCALBASE}
 
 # Perl authentication
 .if ${PORT_OPTIONS:MPERLAUTH}
-USE_PERL5=		yes
+USES+=			perl5
 CONFIGURE_ARGS+=	--enable-auth-perl
 .endif
 

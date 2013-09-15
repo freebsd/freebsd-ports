@@ -21,9 +21,7 @@ BUILD_DEPENDS+=	reformime:${PORTSDIR}/mail/maildrop \
 
 CONFLICTS=	qmail-scanner-1.*
 
-USES=		qmail
-
-USE_PERL5=	yes
+USES=		qmail perl5
 
 SPOOLDIR?=	/var/spool/qscand
 PLIST_SUB=	SPOOLDIR=${SPOOLDIR}

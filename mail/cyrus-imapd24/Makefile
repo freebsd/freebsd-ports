@@ -23,8 +23,9 @@ LATEST_LINK=	${PORTNAME}24
 PERLMAN=	${SITE_PERL_REL:S/site_perl\///}
 
 USE_RC_SUBR=	imapd
+
+USES=		perl5
 USE_OPENSSL=	yes
-USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-cyrus-prefix=${PREFIX}/cyrus \
