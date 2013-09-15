@@ -1,8 +1,8 @@
-# Created by: Ed Schouten <ed@fxq.nl>
+# Created by: Ed Schouten <ed@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	uriparser
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.9
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Sources/${PORTVERSION}
 
