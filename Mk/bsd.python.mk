@@ -11,11 +11,11 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 
 # This file contains some variable definitions that are supposed to
 # make your life easier when dealing with ports related to the Python
-# language. It's automatically included when USE_PYTHON or PYTHON_VERSION
-# is defined in the ports' makefile. Define PYTHON_VERSION to override the
-# defaults that USE_PYTHON would give you. If your port requires only some
-# set of Python versions, you can define USE_PYTHON as [min]-[max] or
-# min+. (eg. 3.1-3.2, 2.7+ or -3.2)
+# language. It's automatically included when USE_PYTHON is defined in
+# the ports' makefile. If your port requires only some set of Python
+# versions, you can define USE_PYTHON as [min]-[max] or min+ or -max
+# or as an explicit version (eg. 3.1-3.2 for [min]-[max],
+# 2.7+ or -3.2 for min+ and -max or 2.6 for an explicit version).
 #
 # The variables:
 #
@@ -87,13 +87,23 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 # PYTHON_DEFAULT_VERSION
 #					- Version of the default python binary in your ${PATH}, in
 #					  the format "python2.7". Set this in your /etc/make.conf
-#					  in case you want to use an older version as a default.
+#					  in case you want to use a specific version as a default.
+#					  default: python2.7
+#
+# PYTHON2_DEFAULT_VERSION
+#					- Version of the default python2 binary in your ${PATH}, in
+#					  the format "python2.7". Set this in your /etc/make.conf
+#					  in case you want to use a specific version as a default.
+#					  Note that PYTHON_DEFAULT_VERSION always will have precedence
+#					  before this value, if it matches "python2*"
 #					  default: python2.7
 #
 # PYTHON3_DEFAULT_VERSION
-#					- Version of the default python binary in your ${PATH}, in
+#					- Version of the default python3 binary in your ${PATH}, in
 #					  the format "python3.2". Set this in your /etc/make.conf
-#					  in case you want to use an older version as a default.
+#					  in case you want to use a specific version as a default.
+#					  Note that PYTHON_DEFAULT_VERSION always will have precedence
+#					  before this value, if it matches "python3*"
 #					  default: python3.3
 #
 # PYTHON_MAJOR_VER	- Python version major number. 2 for python-2.x,
@@ -283,10 +293,16 @@ _PYTHON_DEFAULT_VERSION=	${_PYTHON_PORTBRANCH}
 PYTHON_DEFAULT_VERSION=		python${_PYTHON_DEFAULT_VERSION}
 .endif
 
+.if ${PYTHON_DEFAULT_VERSION:R} == "python2"
+PYTHON2_DEFAULT_VERSION=	${PYTHON_DEFAULT_VERSION}
+.else
+PYTHON2_DEFAULT_VERSION?=	python2.7
+.endif
+
 .if ${PYTHON_DEFAULT_VERSION:R} == "python3"
 PYTHON3_DEFAULT_VERSION=	${PYTHON_DEFAULT_VERSION}
 .else
-PYTHON3_DEFAULT_VERSION=	python3.3
+PYTHON3_DEFAULT_VERSION?=	python3.3
 .endif
 
 .if defined(PYTHON_VERSION)
