@@ -1,0 +1,11 @@
+--- www/htg/src/Makefile.orig	2013-09-15 14:12:23.902026199 +0100
++++ www/htg/src/Makefile	2013-09-15 14:12:30.908039058 +0100
+@@ -3,7 +3,7 @@
+ TCLCFLAGS	= -I/usr/local/include/tcl8.5
+ TCLLFLAGS	= -L/usr/local/lib -ltcl85 -lm
+ 
+-CC		= gcc -Wall
++CC		= cc -Wall
+ #DEBUG		= -g
+ OPT		= -O
+ CFLAGS		= $(DEBUG) $(OPT) $(TCLCFLAGS)
