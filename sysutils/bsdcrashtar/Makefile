@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	bsdcrashtar
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	to.my.trociny@gmail.com
+MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Archive FreeBSD kernel crash files
 
 PLIST_FILES=	sbin/bsdcrashtar
