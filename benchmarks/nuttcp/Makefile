@@ -14,7 +14,6 @@ MAINTAINER=	andrewclarkii@gmail.com
 COMMENT=	TCP/UDP network testing tool
 
 USE_BZIP2=	yes
-WANT_PERL=	yes
 MAKEFILE=	/dev/null
 ALL_TARGET=	${PORTNAME}
 MAN8=		${PORTNAME}.8
@@ -27,14 +26,16 @@ OPTIONS_DEFAULT=	NUTTSCP
 
 NUTTSCP_DESC=	Install script for copying files over nuttcp
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNUTTSCP}
-USE_PERL5=	yes
+USES+=		perl5
 PLIST_SUB+=	NUTTSCP=""
 .else
 PLIST_SUB+=	NUTTSCP="@comment "
 .endif
+
+.include <bsd.port.pre.mk>
 
 post-extract:	.SILENT
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${NUTTSCPDISTFILE} ${WRKDIR}/nuttscp
