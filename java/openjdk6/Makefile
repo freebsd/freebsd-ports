@@ -53,7 +53,7 @@ FASTDEBUG_DESC=	Include fastdebug build
 TEST_DESC=	Add support for running regression test
 .endif
 
-USES=		gmake motif
+USES=		gmake iconv motif
 
 .include <bsd.port.options.mk>
 .include "${.CURDIR}/../openjdk6/Makefile.icedtea"
