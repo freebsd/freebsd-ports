@@ -30,9 +30,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php5-extensions \
 		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
 		${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 
+USES=		perl5
 GNU_CONFIGURE=	yes
 USE_PHP=	json mysql session
-USE_PERL5=	yes
 USE_MYSQL=	yes
 USE_RC_SUBR=	zoneminder
 

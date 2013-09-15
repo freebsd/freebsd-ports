@@ -23,12 +23,10 @@ CONFLICTS=	silc-toolkit-1.1.* silc-irssi-plugin-1.1.*
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		pkgconfig gmake
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--without-libtoolfix
-WANT_PERL=	yes
 
 OPTIONS_DEFINE=	PTHREADS IPV6 ICONV PERL
 OPTIONS_DEFINE_i386=	ASM
@@ -94,7 +92,7 @@ CONFIGURE_ARGS+=	--without-iconv
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=		yes
+USES+=			perl5
 PERL_ARCHNAME!=		perl -V:archname 2>/dev/null || ${ECHO_CMD}
 PLIST_SUB+=		WITH_PERL="" PERL_ARCHNAME="${PERL_ARCHNAME:S/archname='//:S/';//}"
 CONFIGURE_ARGS+=	--with-perl-lib=${PREFIX}/lib/${PORTNAME}/perl

@@ -31,7 +31,8 @@ Postgres_DESC=	uses Postgres as the storage backend
 
 OPTIONS_DEFAULT=SQLite
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Net::Google::SafeBrowsing2::Storage.3 \
 	Net::Google::SafeBrowsing2::Lookup.3 \

@@ -13,11 +13,11 @@ COMMENT=	VP8 Codec SDK
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		yasm:${PORTSDIR}/devel/yasm
 
+USES=		gmake perl5
 USE_BZIP2=	yes
 PROJECTHOST=	webm
 HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 USE_LDCONFIG=	yes
 
 LICENSE=	BSD

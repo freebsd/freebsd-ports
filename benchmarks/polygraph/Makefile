@@ -48,7 +48,8 @@ CONFIGURE_ARGS+=	--without-ssl
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5_RUN=	yes
+USES+=		perl5
+USE_PERL5=	run
 .endif
 
 .if ${PORT_OPTIONS:MZLIB}

@@ -16,8 +16,9 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Lightweight, completely command line based, SMTP email agent
 
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
 
 PLIST_FILES=	bin/sendEmail
 PORTDOCS=	CHANGELOG README TODO

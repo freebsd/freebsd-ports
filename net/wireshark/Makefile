@@ -19,11 +19,10 @@ COMMENT?=	Powerful network analyzer/capture tool
 
 DATADIR_NAME=	wireshark
 
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 USE_PYTHON_BUILD=yes
-USES=		iconv gettext pkgconfig
+USES=		iconv gettext pkgconfig gmake perl5
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ENV=	LIBS="${WIRESHARK_LIBS}"

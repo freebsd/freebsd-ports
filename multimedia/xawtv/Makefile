@@ -19,10 +19,9 @@ OPTIONS_DEFINE_i386=	MMX
 OPTIONS_DEFAULT=	AALIB
 ZVBI_DESC=	Enable libzvbi support
 
-USES=		gmake iconv motif
+USES=		gmake iconv motif perl5
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_PERL5=	yes
 USE_XORG=	x11 xaw
 CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib"
 CFLAGS+=	-I${WRKSRC}/common
