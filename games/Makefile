@@ -119,6 +119,7 @@
     SUBDIR += bzflag
     SUBDIR += cake
     SUBDIR += caph
+    SUBDIR += capicity
     SUBDIR += capitalism
     SUBDIR += cardpics
     SUBDIR += castlevox
