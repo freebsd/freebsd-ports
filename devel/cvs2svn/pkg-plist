@@ -244,10 +244,5 @@ bin/cvs2svn
 %%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/texttools.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/texttools.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/texttools.pyo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cvs2bzr-example.options
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cvs2git-example.options
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cvs2hg-example.options
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cvs2svn-example.options
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse
 @dirrm %%PYTHON_SITELIBDIR%%/cvs2svn_lib

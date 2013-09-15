@@ -3,16 +3,14 @@
 
 PORTNAME=	cvs2svn
 PORTVERSION=	2.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/49237/ \
 		LOCAL/ohauer
 
-# 2.4.0 -> svn r5392
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-r${PATCHREV}.diff.bz2
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	ohauer
-PATCHREV=	5406
-PATCHFILES=	${PORTNAME}-${PORTVERSION}-r${PATCHREV}.diff.bz2
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	CVS to Subversion Repository Converter
@@ -20,8 +18,10 @@ COMMENT=	CVS to Subversion Repository Converter
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>0:${PORTSDIR}/databases/py-gdbm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+# 2.4.0 -> svn r5392
+PATCHREV=	5433
 
-USE_PYTHON=	2.5+
+USE_PYTHON=		2.6+
 USE_PYDISTUTILS=	yes
 
 OPTIONS_MULTI=		SCM
@@ -29,10 +29,14 @@ OPTIONS_MULTI_SCM=	SUBVERSION GIT BAZAAR
 OPTIONS_DEFAULT=	SUBVERSION
 
 SUBVERSION_DESC=	Build with subversion support
-GIT_DESC= 		Build with git support
-BAZAAR_DESC= 		Build with Bazaar support
+GIT_DESC=		Build with git support
+BAZAAR_DESC=		Build with Bazaar support
 
 .include <bsd.port.options.mk>
+
+.if ${OSVERSION} > 1000000
+RUN_DEPENDS+=	cvs:${PORTSDIR}/devel/cvs
+.endif
 
 .if ${PORT_OPTIONS:MSUBVERSION}
 RUN_DEPENDS+=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/py-subversion
@@ -50,10 +54,25 @@ MAN1=		cvs2svn.1 \
 		cvs2git.1 \
 		cvs2bzr.1
 
-PORTDOCS=	design-notes.txt making-releases.txt revision-reader.txt \
-		  symbol-notes.txt cvs2bzr.html cvs2git.html cvs2svn.html \
-		  faq.html features.html index.html issue_tracker.html \
-		  project_license.html project_tools.html
+# documents from ${WRKSRC}/doc
+DOCS1=		design-notes.txt making-releases.txt \
+		revision-reader.txt symbol-notes.txt
+
+# documents from ${WRKSRC}/www
+DOCS2=		cvs2bzr.html cvs2git.html cvs2svn.html \
+		faq.html features.html index.html issue_tracker.html \
+		project_license.html project_tools.html
+
+PORTDOCS:=	${DOCS1} ${DOCS2}
+
+PORTEXAMPLES=	cvs2bzr-example.options cvs2git-example.options \
+		cvs2hg-example.options cvs2svn-example.options
+
+post-patch:
+# be consistent with PORTVERSION
+	@${REINPLACE_CMD} -e 's|2.5.0-dev|2.4.0|' \
+		${WRKSRC}/PKG-INFO \
+		${WRKSRC}/cvs2svn_lib/version.py
 
 # The only thing different in this target vs. the one found in bsd.port.mk
 # is that the extract command exit code is ignored.  tar exits with status
@@ -69,32 +88,20 @@ do-extract:
 	done
 
 post-build:
-		cd ${WRKSRC} && make man
+	${MAKE} man -C ${WRKSRC}
 
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/cvs2svn.1 ${PREFIX}/man/man1/
-	@${INSTALL_MAN} ${WRKSRC}/cvs2git.1 ${PREFIX}/man/man1/
-	@${INSTALL_MAN} ${WRKSRC}/cvs2bzr.1 ${PREFIX}/man/man1/
+	@${INSTALL_MAN} ${MAN1:S|^|${WRKSRC}/|} ${PREFIX}/man/man1/
+
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/design-notes.txt ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/making-releases.txt ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/revision-reader.txt ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/symbol-notes.txt ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/www/cvs2bzr.html ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/www/cvs2git.html ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/www/cvs2svn.html ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/www/faq.html ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/www/features.html ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/www/index.html ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/www/issue_tracker.html ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/www/project_license.html ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/www/project_tools.html ${DOCSDIR}/
+	@${INSTALL_DATA} ${DOCS1:S|^|${WRKSRC}/doc/|} ${DOCSDIR}/
+	@${INSTALL_DATA} ${DOCS2:S|^|${WRKSRC}/www/|} ${DOCSDIR}/
+.endif
+
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/cvs2bzr-example.options ${EXAMPLESDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/cvs2git-example.options ${EXAMPLESDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/cvs2hg-example.options ${EXAMPLESDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/cvs2svn-example.options ${EXAMPLESDIR}/
+	@${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>
