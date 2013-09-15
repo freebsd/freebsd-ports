@@ -2,11 +2,14 @@
 
 PORTNAME=	libav
 PORTVERSION=	9.9
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://libav.org/releases/
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Realtime audio/video conversion library
+
+CONFLICTS=	ffmpeg-[0-9]*
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		texi2html:${PORTSDIR}/textproc/texi2html

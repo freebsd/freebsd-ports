@@ -4,11 +4,14 @@
 PORTNAME=	ffmpeg
 PORTVERSION=	0.7.15
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
+
+CONFLICTS=	libav-[0-9]*
 
 LICENSE=		GPLv2 LGPL21
 LICENSE_COMB=		multi
