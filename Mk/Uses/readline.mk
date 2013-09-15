@@ -12,9 +12,12 @@
 .if !defined(_INCLUDE_USES_READLINE_MK)
 _INCLUDE_USES_READLINE_MK=	yes
 
-#.if ${OSVERSION} > 1000000
+#.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
 #readline_ARGS=	port
 #.endif
+.if ${OPSYS} == DragonFly
+readline_ARGS=	port
+.endif
 
 .if defined(readline_ARGS) && ${readline_ARGS} == port
 LIB_DEPENDS+=		libreadline.so.6:${PORTSDIR}/devel/readline
