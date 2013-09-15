@@ -19,11 +19,12 @@ LIBBIND_DESC=	Link against dns/libbind instead of dns/ldns
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --mandir=${PREFIX}/man \
 			--with-ssl-incdir=${OPENSSLINC} --with-ssl-libdir=${OPENSSLLIB}
+
+USES=		gmake perl5
 USE_RC_SUBR=	milter-enma
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 MANLANG=	"" ja_JP.UTF-8
 MAN1=		enma.1
 MANCOMPRESSED=	no

@@ -51,10 +51,8 @@ CACHEOWNER?=	bin
 #
 # End of user variables
 
-USE_PERL5=	YES
 USE_BZIP2=	YES
-USES=		gettext iconv
-USE_GMAKE=	YES
+USES=		gettext gmake iconv perl5
 USE_RC_SUBR=	sqwebmail-sqwebmaild
 GNU_CONFIGURE=	yes
 

@@ -18,7 +18,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 # Default sql backend

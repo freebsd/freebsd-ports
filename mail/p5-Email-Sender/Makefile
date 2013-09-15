@@ -28,7 +28,8 @@ TEST_DEPENDS=	p5-Capture-Tiny>=0.08:${PORTSDIR}/devel/p5-Capture-Tiny \
 		p5-Sub-Override>=0:${PORTSDIR}/devel/p5-Sub-Override \
 		p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Email::Sender.3 \
 	Email::Sender::Failure.3 \

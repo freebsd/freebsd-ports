@@ -16,8 +16,7 @@ COMMENT=	A cryptographically secure anonymous remailer
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
-USES=		ncurses
-USE_PERL5=	yes
+USES=		ncurses perl5
 USE_OPENSSL=	yes
 .if !exists(/usr/include/openssl/idea.h)
 WITH_OPENSSL_PORT=	yes

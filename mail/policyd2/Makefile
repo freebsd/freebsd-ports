@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
 		p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles \
 		p5-Cache-FastMmap>=0:${PORTSDIR}/devel/p5-Cache-FastMmap
 
-USE_PERL5=	yes
+USES=		perl5
 USE_PHP=	yes
 NO_BUILD=	yes
 USE_RC_SUBR=	policyd2

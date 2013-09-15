@@ -19,7 +19,6 @@ LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 WANT_GNOME=	yes
-WANT_PERL=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 # One can tune the following "hidden" knobs:
@@ -222,7 +221,7 @@ SEDLIST+=	-e 's,^\# (TLS_LIBS=.*-lgnutls[[:space:]]),\1,'
 .endif
 
 .if ${PORT_OPTIONS:MEMBEDDED_PERL}
-USE_PERL5=	yes
+USES+=		perl5
 SEDLIST+=	-e 's,^\# (EXIM_PERL=),\1,'
 .endif
 
@@ -234,7 +233,7 @@ SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,,'
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
-USES=		iconv
+USE+S=		iconv
 SEDLIST+=	-e 's,XX_ICONV_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib ${ICONV_LIB},' \
 		-e 's,^\# (HAVE_ICONV=),\1,'
 .else
