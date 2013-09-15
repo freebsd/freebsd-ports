@@ -210,6 +210,7 @@ include/wine/windows/ddrawgdi.h
 include/wine/windows/ddrawi.h
 include/wine/windows/ddstream.h
 include/wine/windows/ddstream.idl
+include/wine/windows/delayloadhandler.h
 include/wine/windows/devenum.idl
 include/wine/windows/devguid.h
 include/wine/windows/devicetopology.h
@@ -286,6 +287,7 @@ include/wine/windows/exdisp.idl
 include/wine/windows/exdispid.h
 include/wine/windows/fci.h
 include/wine/windows/fdi.h
+include/wine/windows/fileapi.h
 include/wine/windows/fltdefs.h
 include/wine/windows/fusion.h
 include/wine/windows/fusion.idl
@@ -779,6 +781,7 @@ lib/wine/appwiz.cpl.so
 lib/wine/aspnet_regiis.exe.so
 lib/wine/atl.dll.so
 lib/wine/atl100.dll.so
+lib/wine/atl110.dll.so
 lib/wine/atl80.dll.so
 lib/wine/attrib.exe.so
 lib/wine/authz.dll.so
@@ -848,6 +851,8 @@ lib/wine/d3dx10_40.dll.so
 lib/wine/d3dx10_41.dll.so
 lib/wine/d3dx10_42.dll.so
 lib/wine/d3dx10_43.dll.so
+lib/wine/d3dx11_42.dll.so
+lib/wine/d3dx11_43.dll.so
 lib/wine/d3dx9_24.dll.so
 lib/wine/d3dx9_25.dll.so
 lib/wine/d3dx9_26.dll.so
@@ -940,6 +945,7 @@ lib/wine/fakedlls/appwiz.cpl
 lib/wine/fakedlls/aspnet_regiis.exe
 lib/wine/fakedlls/atl.dll
 lib/wine/fakedlls/atl100.dll
+lib/wine/fakedlls/atl110.dll
 lib/wine/fakedlls/atl80.dll
 lib/wine/fakedlls/attrib.exe
 lib/wine/fakedlls/authz.dll
@@ -1009,6 +1015,8 @@ lib/wine/fakedlls/d3dx10_40.dll
 lib/wine/fakedlls/d3dx10_41.dll
 lib/wine/fakedlls/d3dx10_42.dll
 lib/wine/fakedlls/d3dx10_43.dll
+lib/wine/fakedlls/d3dx11_42.dll
+lib/wine/fakedlls/d3dx11_43.dll
 lib/wine/fakedlls/d3dx9_24.dll
 lib/wine/fakedlls/d3dx9_25.dll
 lib/wine/fakedlls/d3dx9_26.dll
@@ -1211,6 +1219,7 @@ lib/wine/fakedlls/msxml6.dll
 lib/wine/fakedlls/nddeapi.dll
 lib/wine/fakedlls/net.exe
 lib/wine/fakedlls/netapi32.dll
+lib/wine/fakedlls/netcfgx.dll
 lib/wine/fakedlls/netsh.exe
 lib/wine/fakedlls/netstat.exe
 lib/wine/fakedlls/newdev.dll
@@ -1438,6 +1447,7 @@ lib/wine/fakedlls/xcopy.exe
 lib/wine/fakedlls/xinput1_1.dll
 lib/wine/fakedlls/xinput1_2.dll
 lib/wine/fakedlls/xinput1_3.dll
+lib/wine/fakedlls/xinput1_4.dll
 lib/wine/fakedlls/xinput9_1_0.dll
 lib/wine/fakedlls/xmllite.dll
 lib/wine/fakedlls/xolehlp.dll
@@ -1747,6 +1757,7 @@ lib/wine/msxml6.dll.so
 lib/wine/nddeapi.dll.so
 lib/wine/net.exe.so
 lib/wine/netapi32.dll.so
+lib/wine/netcfgx.dll.so
 lib/wine/netsh.exe.so
 lib/wine/netstat.exe.so
 lib/wine/newdev.dll.so
@@ -1974,6 +1985,7 @@ lib/wine/xcopy.exe.so
 lib/wine/xinput1_1.dll.so
 lib/wine/xinput1_2.dll.so
 lib/wine/xinput1_3.dll.so
+lib/wine/xinput1_4.dll.so
 lib/wine/xinput9_1_0.dll.so
 lib/wine/xmllite.dll.so
 lib/wine/xolehlp.dll.so
