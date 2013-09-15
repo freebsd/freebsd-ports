@@ -21,7 +21,6 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xext xpm xext xtst sm ice inputproto
-WANT_PERL=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 PLIST=		${WRKDIR}/pkg-plist
@@ -57,7 +56,7 @@ RUN_DEPENDS+=	xauth:${PORTSDIR}/x11/xauth \
 		${PREFIX}/lib/X11/fonts/misc/6x13-ISO8859-1.pcf.gz:${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps \
 		${LOCALBASE}/lib/X11/fonts/misc/fonts.alias:${PORTSDIR}/x11-fonts/font-alias
 
-USE_PERL5=	yes
+USES=		perl5
 
 EXTRA_PATCHES+=	${WRKSRC}/xc.patch \
 		${PATCHDIR}/vnc.def-patch \

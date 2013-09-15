@@ -33,8 +33,9 @@ CONFLICTS=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].* \
 		freeradius-mysql-[0-9].* freeradius-[013-9].*
 
 USE_RC_SUBR=	radiusd
+
+USES=		gmake
 USE_AUTOTOOLS=	libltdl libtool autoconf
-USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -176,7 +177,7 @@ EXPM=		yes
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=	yes
+USES+=		perl5
 CONFIGURE_ARGS+=--with-rlm_perl
 PLIST_SUB+=	RLMPERL=""
 .else

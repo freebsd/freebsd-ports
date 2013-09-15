@@ -15,9 +15,8 @@ LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=	pathfix
+USES=		pathfix perl5
 USE_LDCONFIG=	yes
-USE_PERL5=	yes
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/openpgm/pgm
 

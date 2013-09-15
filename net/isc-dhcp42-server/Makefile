@@ -16,7 +16,7 @@ COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 
 LICENSE=	ISCL
 
-USE_GMAKE=	yes
+USES=		gmake
 
 PATCHLEVEL=	P1
 PORTREVISION_SERVER=	0
@@ -138,7 +138,7 @@ PLIST_SUB+=	IPV6="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MBIND_SYMBOLS}
-USE_PERL5=	yes
+USES+=		perl5
 .else
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-bind__Makefile
 .endif

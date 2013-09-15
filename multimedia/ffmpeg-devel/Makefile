@@ -30,10 +30,9 @@ FETCH_URL=	"http://git.videolan.org/?p=ffmpeg.git;a=snapshot;h=${GIT_SNAPSHOT};s
 
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		gmake perl5 pkgconfig
 WANT_SDL=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 
 OPTIONS_DEFINE=	AACPLUS ALSA AMR_NB AMR_WB ASS CDIO CELT DEBUG FAAC \
 		FDK_AAC FFSERVER FONTCONFIG FREETYPE FREI0R GNUTLS GSM LAME \
