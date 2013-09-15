@@ -1,4 +1,2 @@
-SHA256 (pulledpork-0.6.1.tar.gz) = 28052849ce60f034f5ba348659e611562c8fe9d572b3c177a0c23e3f92638ad1
-SIZE (pulledpork-0.6.1.tar.gz) = 35444
-SHA256 (pulledpork-0.6.1-r230-262.diff.bz2) = 4e331311e71d1068851397fb880f03a5947a8b7f5dd5a860d0ff9ef5cc8f59b3
-SIZE (pulledpork-0.6.1-r230-262.diff.bz2) = 14931
+SHA256 (pulledpork-0.7.0.tar.gz) = f60c005043850bb65a72582b9d6d68a7e7d51107f30f2b3fc67e607c995aa1a8
+SIZE (pulledpork-0.7.0.tar.gz) = 39294

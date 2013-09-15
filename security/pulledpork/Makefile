@@ -2,14 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pulledpork
-PORTVERSION=	0.6.1
-PORTREVISION=	4
+PORTVERSION=	0.7.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	ohauer
-PATCHFILES=	${PORTNAME}-${PORTVERSION}-r${PATCHREV}.diff.bz2
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Script to update snort-2.8+ rules
@@ -20,10 +15,9 @@ RUN_DEPENDS=	p5-Crypt-SSLeay>=0.57:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-LWP-Protocol-https>=6.00:${PORTSDIR}/www/p5-LWP-Protocol-https \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-# 0.6.1 -> svn rev. 230
-PATCHREV=	230-262
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 PLIST_DIRSTRY=	%%ETCDIR%%
 PLIST_DIRS=	%%DATADIR%%
