@@ -8,6 +8,7 @@
     SUBDIR += bxpkg
     SUBDIR += chucky
     SUBDIR += dialog4ports
+    SUBDIR += dialog4ports-static
     SUBDIR += distilator
     SUBDIR += fastest_sites
     SUBDIR += fbsdmon
