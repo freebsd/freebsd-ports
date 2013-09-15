@@ -13,6 +13,8 @@ COMMENT=	C++ wrapper for libgda5 library
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
+LATEST_LINK=	libgdamm5
+
 USE_AUTOTOOLS=	libtool
 USE_XZ=		yes
 USES=		gmake pathfix pkgconfig
