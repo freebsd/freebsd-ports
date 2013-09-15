@@ -23,12 +23,11 @@ CONFLICTS=	lyx-1.[0-9]*
 MAJOR_VERSION=	2.0
 MINOR_VERSION=	6
 
-USES=		gmake iconv pkgconfig
+USES=		gmake iconv pkgconfig perl5
 USE_XZ=		yes
 USE_QT4=	corelib gui moc_build uic_build rcc_build
 USE_GNOME=	desktopfileutils
 USE_PYTHON=	-2.7
-USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}

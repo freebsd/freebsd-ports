@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	The low bandwidth, yet greedy and poisonous HTTP client
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \

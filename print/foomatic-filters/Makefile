@@ -13,8 +13,8 @@ COMMENT=	Foomatic wrapper scripts
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		perl5
 USE_AUTOTOOLS=	autoheader
-USE_PERL5=	yes
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_A2PS=${LOCALBASE}/bin/a2ps \

@@ -14,9 +14,9 @@ COMMENT=	Receive, filter, read, compose, and send mail at the text console
 CONFLICTS=	elmo-[0-9]*
 
 GNU_CONFIGURE=	yes
-USES=		iconv
+USES=		iconv perl5
 USE_OPENSSL=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

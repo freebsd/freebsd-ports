@@ -11,9 +11,10 @@ DISTNAME=	${PORTNAME:U}_${PORTVERSION}_Install
 MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	Anti-Spam SMTP Proxy
 
+USES=		perl5
 USE_ZIP=	yes
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 
 MAN8=		assp.8 assplog.8
 

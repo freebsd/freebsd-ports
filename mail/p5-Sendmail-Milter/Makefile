@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	marc@pilgerer.org
 COMMENT=	Module to write mail filters in Perl using sendmail's mail filter API
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Sendmail::Milter.3
 

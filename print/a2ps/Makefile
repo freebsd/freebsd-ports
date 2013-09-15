@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	paper:${PORTSDIR}/print/libpaper
 
-USE_PERL5=	yes
+USES=		perl5
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -21,9 +21,9 @@ USE_JAVA=	yes
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.6+
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 USE_XORG=	x11
-USES=		gmake pkgconfig shebangfix
+USES=		gmake pkgconfig shebangfix perl5
 SHEBANG_FILES=	javac.in jrunscript.in
 
 WANT_GNOME=	yes

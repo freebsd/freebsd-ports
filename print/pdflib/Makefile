@@ -21,8 +21,8 @@ OPTIONS_DEFINE=	PERL JAVA
 PERL_DESC=	Build perl bindings
 JAVA_DESC=	Build Java bindings
 
+USES=		gmake
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-py=no --with-ruby=no --with-tcl=no
 
@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=--enable-64bit
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=	yes
+USES+=		perl5
 PLIST_SUB=	PERL=""
 CONFIGURE_ARGS+=--with-perl=${PERL}
 .else
