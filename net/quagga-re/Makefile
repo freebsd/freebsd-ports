@@ -19,10 +19,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	openbgpd-[0-9]* openospfd-[0-9]* zebra-0* quagga-[0-9]*
 
+USES=			gmake perl5
 USE_AUTOTOOLS=		libtool autoheader
-USE_GMAKE=		yes
 USE_LDCONFIG=		yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=		build
 BUILD_DEPENDS+=		gawk:${PORTSDIR}/lang/gawk
 LIB_DEPENDS+=		gcrypt:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=	--with-libgcrypt

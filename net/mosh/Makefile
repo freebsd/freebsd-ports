@@ -14,13 +14,13 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	protobuf:${PORTSDIR}/devel/protobuf
 
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-utempter
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 INSTALL_TARGET=	install-strip
 USE_OPENSSL=	yes
-USES=		pkgconfig
+USES=		pkgconfig perl5
 
 LATEST_LINK=	mosh-term
 

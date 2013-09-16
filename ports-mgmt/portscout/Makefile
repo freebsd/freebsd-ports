@@ -14,8 +14,8 @@ COMMENT=	A tool to scan for new versions of FreeBSD ports
 OPTIONS_DEFINE=	SQLITE3 DOCS
 SQLITE3_DESC=	Use SQLite backend instead of PostgreSQL
 
+USES=		perl5
 NO_BUILD=	yes
-USE_PERL5=	yes
 
 PORTDOCS=	UPDATING portscout-portconfig.txt xml-datasrc-example.xml
 

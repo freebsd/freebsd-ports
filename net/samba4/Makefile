@@ -67,11 +67,11 @@ CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LDFLAGS="${PTHREAD_LIBS}"
 
 USE_PYTHON_BUILD=	-2.7
-USE_PERL5_BUILD=	yes
+USE_PERL5=		build
 
 USE_GCC=		4.2+
 USE_PYTHON=		yes
-USES=			pkgconfig gettext iconv
+USES=			pkgconfig gettext iconv perl5
 USE_LDCONFIG=		${SAMBA4_LIBDIR}
 
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
