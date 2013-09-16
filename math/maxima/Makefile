@@ -20,7 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/${LISPPORT} \
 
 USE_TK =		84+
 USES=			gmake perl5
-USE_GMAKE=		yes
 USE_PERL5=		build
 USE_PYTHON_BUILD=	yes
 GNU_CONFIGURE=		yes
