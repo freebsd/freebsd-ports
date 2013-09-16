@@ -23,7 +23,8 @@ RUN_DEPENDS=	p5-ParallelUA>=0:${PORTSDIR}/www/p5-ParallelUA \
 		p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 		p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 MAN5=		monitorix.conf.5
 MAN8=		monitorix.8
 MANCOMPRESSED=	no

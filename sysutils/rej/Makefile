@@ -9,8 +9,7 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Merges patch-rejects and runs a merge program to verify the changes
 
-USES=		shebangfix
-USE_PERL5=	yes
+USES=		shebangfix perl5
 NO_BUILD=	yes
 
 SHEBANG_FILES=	qp mp

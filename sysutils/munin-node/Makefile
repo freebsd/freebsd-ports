@@ -24,9 +24,7 @@ RUN_DEPENDS=	p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
 
 DISTINFO_FILE=	${MUNIN_DISTINFO}
 EXTRA_PATCHES+=	${MUNIN_PATCHES}
-USES=		shebangfix
-USE_PERL5=	yes
-USE_GMAKE=	yes
+USES=		gmake shebangfix perl5
 PKGMESSAGE=	${WRKDIR}/pkg-message
 REINPLACE_ARGS=	-i ""
 SHEBANG_FILES=	node/sbin/munin-node
