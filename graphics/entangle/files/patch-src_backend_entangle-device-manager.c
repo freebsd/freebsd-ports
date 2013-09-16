@@ -149,16 +149,15 @@
  
  
  EntangleDeviceManager *entangle_device_manager_new(void)
-@@ -138,6 +239,8 @@ static void entangle_device_manager_init
+@@ -136,6 +237,7 @@ EntangleDeviceManager *entangle_device_m
+ 
+ static void entangle_device_manager_init_devices(EntangleDeviceManager *manager)
  {
++#if defined(__linux__)
      EntangleDeviceManagerPrivate *priv = manager->priv;
      GList *devs, *tmp;
-+
-+#if defined(__linux__)
      const gchar *const subsys[] = {
-         "usb/usb_device", NULL,
-     };
-@@ -161,6 +264,12 @@ static void entangle_device_manager_init
+@@ -161,6 +263,12 @@ static void entangle_device_manager_init
      }
  
      g_list_free(devs);
