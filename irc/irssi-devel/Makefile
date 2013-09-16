@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	irssi
-PORTVERSION=	20120624
-PORTREVISION=	1
+PORTVERSION=	20130915
 CATEGORIES=	irc
-MASTER_SITES=	http://bsdcrew.de/distfiles/
+MASTER_SITES=	http://mirror.irssi.org/snapshots/ \
+		http://bsdcrew.de/distfiles/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -25,7 +25,7 @@ SOCKS_DESC=	Socks proxy support
 BOT_DESC=	Bot support
 OPTIONS_DEFAULT=	PERL IPV6 SSL
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.15-svn
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.16-rc1
 
 .include <bsd.port.options.mk>
 
