@@ -12,10 +12,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Ukrainian hunspell dictionaries
 
-USES=		iconv:build shebangfix perl5
 ALL_TARGET=	myspell
-USE_GMAKE=	yes
 USE_PERL5=	build
+USES=		gmake iconv:build shebangfix perl5
 SHEBANG_FILES=	bin/*.pl
 
 PLIST_FILES=	%%DATADIR%%/uk_UA.aff \
