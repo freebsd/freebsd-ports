@@ -4941,3 +4941,4 @@ sysutils/daemontools53|sysutils/daemontool|2013-09-16|sysutils/daemontools is mo
 audio/ices0|audio/ices|2013-09-16|Unsupported version, consider using audio/ices
 irc/xchat1|irc/xchat|2013-09-16|Unsupported upstream, consider using irc/xchat
 japanese/xchat|irc/xchat|2013-09-16|Unsupported upstream, consider using irc/xchat
+www/autoindex|www/autoindex2|2013-09-16|Does not work with any of the supported PHP versions

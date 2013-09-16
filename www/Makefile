@@ -41,7 +41,6 @@
     SUBDIR += aswiki
     SUBDIR += atutor
     SUBDIR += august
-    SUBDIR += autoindex
     SUBDIR += autoindex2
     SUBDIR += awffull
     SUBDIR += aws
