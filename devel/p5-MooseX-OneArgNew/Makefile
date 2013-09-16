@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-MooseX-OneArgNew
-# Date created:				2011-09-19
-# Whom:					Geraud CONTINSOUZAS <geraud@gcu.info>
-#
+# Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-OneArgNew
 PORTVERSION=	0.002
@@ -23,7 +19,7 @@ RUN_DEPENDS=	p5-MooseX-Role-Parameterized>=0:${PORTSDIR}/devel/p5-MooseX-Role-Pa
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
-USE_PERl5=	configure
+USE_PERL5=	configure
 
 MAN3=	MooseX::OneArgNew.3
 
