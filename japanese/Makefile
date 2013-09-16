@@ -338,7 +338,6 @@
     SUBDIR += wordnet-fpw
     SUBDIR += wordpress
     SUBDIR += wwasw-fpw
-    SUBDIR += xchat
     SUBDIR += xdtp
     SUBDIR += xdvik
     SUBDIR += xemacs21-canna

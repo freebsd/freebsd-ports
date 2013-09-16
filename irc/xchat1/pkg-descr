@@ -1,6 +1,0 @@
-XChat is a graphical IRC client.  It requires a computer running a
-UNIX-like OS and the X Window System (X11), and the GTK library.  It can
-also (optionally) take advantage of GNOME and use Perl and Python
-scripts.
-
-WWW: http://xchat.org/

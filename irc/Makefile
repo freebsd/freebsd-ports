@@ -139,7 +139,6 @@
     SUBDIR += xchat-gnome
     SUBDIR += xchat-mircryption
     SUBDIR += xchat-ruby
-    SUBDIR += xchat1
     SUBDIR += znc
 
 .include <bsd.port.subdir.mk>
