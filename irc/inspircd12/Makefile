@@ -15,7 +15,7 @@ CONFLICTS=	inspircd-2.*
 
 LATEST_LINK=	inspircd12
 
-USES=		shebangfix
+USES=		shebangfix perl5
 USE_BZIP2=	yes
 USE_LDCONFIG=	${PREFIX}/lib/inspircd
 USE_RC_SUBR=	inspircd
@@ -40,7 +40,7 @@ SUB_LIST+=	\
 PLIST_SUB+=	INSPIRCD_GRP=${INSPIRCD_GRP}
 
 # Configure script is written in perl
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cc=${CXX} --config-dir=${ETCDIR}                   \

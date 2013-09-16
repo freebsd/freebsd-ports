@@ -16,9 +16,7 @@ LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20
 CONFLICTS=	irssi-0.8*
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_GMAKE=	yes
-WANT_PERL=	yes
+USES=		pkgconfig gmake
 
 MAN1=		irssi.1
 
@@ -40,7 +38,7 @@ CONFIGURE_ARGS+=	--disable-ssl
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=	yes
+USES+=		perl5
 CONFIGURE_ARGS+=	--with-perl-lib=site
 PLIST_SUB+=	WITH_PERL=""
 .else
