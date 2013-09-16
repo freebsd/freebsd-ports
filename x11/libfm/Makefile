@@ -2,24 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	libfm
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2.2
 CATEGORIES=	x11
 MASTER_SITES=	SF/pcmanfm/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/libfm%20%28required%20by%20PCManFM%29/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	The libFM backend library to PCManFM
 
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	menu-cache:${PORTSDIR}/x11/menu-cache \
-		exif:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	libmenu-cache.so:${PORTSDIR}/x11/menu-cache \
+		libexif.so:${PORTSDIR}/graphics/libexif
 
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_GNOME=	gnomehack gtk20
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS+=--sysconfdir=${LOCALBASE}/etc
-USE_GMAKE=	yes
 USE_FAM=	yes
 USE_LDCONFIG=	yes
 
