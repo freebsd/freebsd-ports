@@ -16,9 +16,8 @@ LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 
-CONFLICTS=	hydra-[0-9]*
+CONFLICTS_INSTALL=	hydra-web-[0-9]*
 
-NO_LATEST_LINK=	yes
 PLIST_FILES=	bin/hydra bin/pw-inspector bin/dpl4hydra.sh
 GNU_CONFIGURE=	yes
 USES=		gmake
