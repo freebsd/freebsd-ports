@@ -5,6 +5,374 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130520:
+  AFFECTS: users of textproc/elasticsearch
+  AUTHOR: tj@FreeBSD.org
+
+  This is the first stable release based on Lucene 4. We recommend testing
+  the upgrade before doing it in production.  
+
+  Upgrading from 0.20 requires a full cluster restart.
+
+  In order to be able to downgrade, stop indexing new data, issue a flush 
+  request, do the upgrade and only enable indexing of new data once you 
+  are certain that you no longer need to downgrade.  Once new data has 
+  been indexed, downgrading is no longer possible. To be extra safe, back 
+  up your data before upgrading.
+
+20130519:
+  AFFECTS: users of net/activemq
+  AUTHOR: tj@FreeBSD.org
+
+  The JVM used by activemq has changed to OpenJDK 7. You will need to
+  make sure javavmwrapper is configured to use the installed 
+  java/openjdk7 JVM.
+
+20130512:
+  AFFECTS: users of devel/hs-git-annex
+  AUTHOR: haskell@FreeBSD.org
+
+  On FreeBSD, git-annex incorrectly calculated SHA256 hashes for files
+  added to the annex repository due to the BSD-style output of
+  /sbin/sha256.  The result of this is silent data corruption.
+
+  This problem has been fixed, but every file stored in an annex
+  repository will fail a `git-annex fsck` after the upgrade.  Thus,
+  before updating, it is wise to issue the command below and restore the
+  files.
+
+  $ git-annex uninit
+
+  Corruptions can then be found by finding all files with the same hash.
+  Note that only files that were mishashed to the same location are a
+  problem.
+
+20130511:
+  AFFECTS: users of TeX
+  AUTHOR: hrs@FreeBSD.org
+
+  One can now choose TeXLive or teTeX by using TEX_DEFAULT.
+  Specifying TEX_DEFAULT=texlive, almost all of ports which use TeX
+  will install and depend on TeXLive-based ones.  Note that the
+  default value is still "tetex" and the two cannot coexist.  You need
+  to remove all of the TeX-related packages based on teTeX to try
+  TeXLive.
+
+20130507:
+  AFFECTS: users of comms/usbmuxd or comms/libimobiledevice
+  AUTHOR: avilla@FreeBSD.org
+
+  libusbmuxd and libimobiledevice versions have changed. Please, rebuild
+  all the ports that depend on them:
+
+  # portmaster -r usbmuxd
+    or
+  # portupgrade -fr comms/usbmuxd
+    or
+  # pkg install -fR comms/usbmuxd
+
+20130507:
+  AFFECTS: users of devel/libplist
+  AUTHOR: avilla@FreeBSD.org
+
+  libplist Python bindings were split from the main port. To get them you
+  need to install devel/py-libplist.
+
+20130506:
+  AFFECTS: users of TeX
+  AUTHOR: hrs@FreeBSD.org
+
+  TeXLive ports have been imported.  Although most of ports still depend
+  on teTeX at this moment, they will be converted to use TeXLive.
+
+  The directory layout of them is as follows.  Please use print/texlive-full
+  if you are not familiar with how each component works.  Finer-grained
+  ports will be added (specifically, meta ports for smaller installation
+  and so on).  Note that the full installation needs around 3GB of disk space.
+
+  teTeX-based ports and TeXLive are mutually exclusive.  This means TeXLive
+  ports cannot be installed when teTeX is already installed.  You need
+  to remove all of the TeX-related packages based on teTeX to try TeXLive.
+  Migration procedure will be announced when conversion of the port
+  dependency is completed.
+
+  * Meta port
+   - print/texlive-full: meta port to install all of the TeXLive components
+
+  * Libraries
+   - devel/tex-kpathsea: kpathsea library
+   - devel/tex-web2c: WEB2C toolchain and TeX engines
+   - print/tex-ptexenc: character code conversion library for pTeX
+
+  * Base part of the TeXLive
+   - print/texlive-base: binary programs in TeXLive
+   - print/texlive-texmf: macro and font data in TeXLive
+   - print/texlive-infra: tlmgr dependency (Perl modules)
+   - print/tex-formats:
+
+  * TeX Formats
+   - print/tex-formats: TeX, LaTeX, PDFTeX, AMSTeX, ConTeXT, CSLaTeX,
+       EplainTeX, METAFONT, MLTeX, PDFTeX, TeXsis
+   - print/tex-aleph: Aleph/Lambda
+   - print/tex-xetex: XeTeX
+   - print/tex-luatex: LuaTeX
+   - print/tex-jadetex: JadeTeX
+   - print/tex-xmltex: XMLTeX
+   - japanese/tex-ptex: pTeX
+
+  * DVI ware
+   - print/tex-xdvik: XDvi
+
+20130503:
+  AFFECTS: users of security/libgcrypt and any port that depends on it
+  AUTHOR: ehaupt@FreeBSD.org
+
+  The libgcrypt port has been updated to 1.5.2 and all shared libraries
+  versions have been bumped. So you need to rebuild all applications that
+  depend on libgcrypt. Do something like:
+
+  # portmaster -r libgcrypt
+
+  or
+
+  # portupgrade -rf libgcrypt
+
+  Alternatively, you may install sysutils/bsdadminscripts, run pkg_libchk and
+  rebuild all detected ports:
+
+  # pkg_libchk | tee /tmp/rebuild
+  # awk -F':' '/libgcrypt.so/ {print $1}' /tmp/rebuild | sort | uniq \
+	| xargs portmaster -D
+
+20130502:
+  AFFECTS: users of ports-mgmt/pkg, ports-mgmt/poudriere, ports-mgmt/tinderbox
+  AUTHOR: bdrewery@FreeBSD.org
+
+  This only affects people who are _building_ binary packages for pkgng. If you
+  are building from ports please ignore this. This step is optional.
+
+  It is recommended to rebuild all packages and then have your users run 'pkg
+  check -Ba' and 'pkg upgrade' on their servers once. This will allow the new
+  shlib tracking to reinstall packages that have changed shlib requirements.
+
+20130427:
+  AFFECTS: users of print/a2ps-{a4,letter}, print/c2ps-{a4,letter}, print/lprps-{a4,letter}, or graphics/jpeg2ps-{a4,letter}
+  AUTHOR: hrs@FreeBSD.org
+
+  The affected ports have been converted to use libpaper for the default paper
+  size as print/psutils did.  For more detail, see 20130424 below.
+
+20130424:
+  AFFECTS: users of print/psutils-a4 or print/psutils-letter
+  AUTHOR: hrs@FreeBSD.org
+
+  print/psutils-a4 and print/psutils-letter have been merged into a single port
+  print/psutils.  The default paper size in psnup(1), psresize(1), and
+  pstops(1) is now selected via an environment variable and/or a configuration
+  file of libpaper(3).  For more detail, see papersize(5) and paperconfig(8)
+  manual page.    If you prefer A4 or letter size by default as the old
+  version did, please install print/papersize-default-a4 or
+  print/papersize-default-letter, which installs a papersize configuration
+  file without manual configuration.
+
+20130423:
+  AFFECTS: users of mail/postfix
+  AUTHOR: sahil@FreeBSD.org
+
+  This is a significant update; so, please carefully review the
+  RELEASE_NOTES to identify which incompatible changes impact your
+  environment.
+
+20130408:
+  AFFECTS: users of astro/libkgeomap, graphics/digikam-kde4, graphics/kipi-plugins-kde4
+  AUTHOR: makc@FreeBSD.org
+
+  Digikam ports have been updated and split. Previous versions have
+  to be deinstalled before upgrade:
+
+  # pkg_delete -f digikam-2\* kipi-plugins-2\* libkgeomap-2\*
+    or
+  # pkg delete -fg digikam-2\* kipi-plugins-2\* libkgeomap-2\*
+
+20130403:
+  AFFECTS: users of mail/thunderbird-esr*
+  AUTHOR: flo@FreeBSD.org
+
+  Mozilla stopped providing 2 versions of thunderbird. The only one lives
+  in mail/thunderbird if you are using thunderbird-esr please switch to
+  thunderbird by running on of the following commands.
+
+  # portupgrade -o mail/thunderbird mail/thunderbird-esr
+  # portupgrade -o mail/thunderbird-i18n \
+    mail/thunderbird-esr-i18n (if installed)
+  or
+  # portmaster -o mail/thunderbird mail/thunderbird-esr
+  # portmaster -o mail/thunderbird-i18n \
+    mail/thunderbird-esr-i18n (if installed)
+
+20130331:
+  AFFECTS: users of */hs-*
+  AUTHOR: haskell@FreeBSD.org
+
+  Due to some unexpected dynamic linking problems, Haskell Cabal ports with
+  binaries that link to their own libraries may not work.  With default
+  configuration, the following ports are known to have this problem:
+  Agda, BNFC, pandoc, and uuagc.  (Their port revision are now bumped.)
+
+  In general, it is recommended to rebuild the port if you are
+  experiencing that the corresponding binary will not start, e.g.:
+
+  % agda
+  Shared object "libHSAgda-2.3.2-ghc7.4.2.so" not found, required by "agda"
+
+20130329:
+  AFFECTS: users of ports-mgmt/portmaster
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Portmaster 3.15 should be skipped if you are not using pkgng and are on
+  9.1, 8-STABLE, 9-STABLE, or CURRENT. It may require manual upgrading to
+  3.16:
+
+  # make -C /usr/ports/ports-mgmt/portmaster build deinstall install clean
+
+20130329:
+  AFFECTS: users of net/kio-upnp-ms
+  AUTHOR: avilla@FreeBSD.org
+
+  A wrong setting in x11/kdelibs4 was causing some unlisted files to
+  be installed. Remember to delete them after updating x11/kdelibs4 to
+  4.10.1_1:
+
+  # rm /usr/local/kde4/bin/upnpmstest
+  # rm /usr/local/kde4/bin/stattest
+  # rm /usr/local/kde4/bin/recursive_upnp
+
+20130327:
+  AFFECTS: users of mail/opensmtpd
+  AUTHOR: ashish@FreeBSD.org
+
+  Privilege separation is enabled in OpenSMTPD port from 5.3,1. Users
+  upgrading from version 201303011853 or earlier are required to follow
+  the instructions in pkg-message to fix the filesystem permissions on
+  OpenSMTPD spool directories.
+
+20130327:
+  AFFECTS: users of KDE SC 4
+  AUTHOR: kde@FreeBSD.org
+
+  KDE SC ports have been updated to 4.10.1. kdelibs4 does no longer
+  directly use aspell or hspell, to regain their functionality enable
+  corresponding option in textproc/enchant.
+  A number of ports have been split and must be deinstalled before
+  upgrading:
+
+  # pkg_delete -f kdegames-4\* kde-workspace-4\* kde-wallpapers-4\*
+    or
+  # pkg delete -fg kdegames-4\* kde-workspace-4\* kde-wallpapers-4\*
+
+20130326:
+  AFFECTS: users of deskutils/strigi
+  AUTHOR: makc@FreeBSD.org
+
+  Strigi port has been split on libraries, client, daemon, and utilities.
+  Manual update is required:
+
+  # cd /usr/ports/deskutils/strigi && make deinstall && \
+    make clean && make install clean
+    or
+  # pkg delete -f strigi && pkg upgrade && pkg install deskutils/strigi
+
+20130323:
+  AFFECTS: users of archivers/libarchive
+  AUTHOR: glewis@FreeBSD.org
+
+  The archivers/libarchive port has been updated to 3.1.2.  The shared library
+  version has changed from 12 to 14.  Please rebuild all ports that depend on
+  it:
+
+  # portmaster -r libarchive
+    or
+  # portupgrade -fr archivers/libarchive
+    or
+  # pkg install -fR archivers/libarchive
+
+20130319:
+  AFFECTS: users of ports
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Ports now use ports-mgmt/dialog4ports to render and interact with the
+  options dialog in 'make config'. This will be automatically built and
+  installed on the first use.
+
+  dialog4ports provides a new UI able to represent all the features provided
+  by the new options framework.
+
+20130319:
+  AFFECTS: users of net/freerdp
+  AUTHOR: fluffy@FreeBSD.org
+
+  The net/freerdp package was changed API and require to deinstall previous
+  version first to avoid build conflicts.
+
+20130317:
+  AFFECTS: users of graphics/poppler
+  AUTHOR: gnome@FreeBSD.org
+
+  The graphics/poppler has been updated to 0.22.2. The shared library version
+  has changed from 18 to 34. Please rebuild all ports that depends on it:
+
+  # portmaster -r poppler-0
+    or
+  # portupgrade -fr graphics/poppler
+    or
+  # pkg install -fR graphics/poppler
+
+20130317:
+  AFFECTS: users of devel/protobuf
+  AUTHOR: vanilla@FreeBSD.org
+
+  The devel/protobuf has been updated to 2.5.0. The shared library version
+  has changed from 7 to 8. Please rebuild all ports that depends on it:
+
+  # portmaster -r protobuf
+    or
+  # portupgrade -fr devel/protobuf
+    or
+  # pkg install -fR devel/protobuf
+
+20130316:
+  AFFECTS: users of converters/libiconv and devel/gettext
+  AUTHOR: bapt@FreeBSD.org
+
+  libiconv now handles the lib/charset.alias file instead of devel/gettext.
+  If you are using pkgng 'and' upgrading from source with portupgrade or
+  portmaster, first delete gettext, upgrade libiconv, then reinstall gettext.
+
+  This will break sudo, so you *must* do this in a root shell (sudo -i)
+  if you use sudo.
+
+  # pkg delete -f devel/gettext
+  # portmaster converters/libiconv devel/gettext
+    or
+  # pkg delete -f devel/gettext
+  # portupgrade converters/libiconv devel/gettext
+
+20130308:
+  AFFECTS: users of net-im/folks and devel/libgee
+  AUTHOR: kwm@FreeBSD.org
+
+  folks and libgee have been repocopied net-im/folks04 and devel/libgee06
+  respectively. Please do the following according to package manager used.
+
+  # portmaster -o devel/libgee06 devel/libgee
+  # portmaster -o net-im/folks04 net-im/folks
+    or
+  # portupgrade -fo devel/libgee06 devel/libgee
+  # portupgrade -fo net-im/folks04 net-im/folks
+    or
+  # pkg set -o devel/libgee:devel/libgee06
+  # pkg set -o net-im/folks:net-im/folks04
+
 20130307:
   AFFECTS: users of textproc/elasticsearch
   AUTHOR: tj@FreeBSD.org
