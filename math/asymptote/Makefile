@@ -27,8 +27,8 @@ CONFIGURE_ARGS=	--disable-gc
 USE_GHOSTSCRIPT=yes
 USE_TEX=	latex
 USE_GL=	glut
-USE_GMAKE=	yes
-USE_PERL5_BUILD=	yes
+USES=		gmake perl5
+USE_PERL5=	build
 USE_PYTHON=	yes
 MAKE_JOBS_UNSAFE=	yes
 

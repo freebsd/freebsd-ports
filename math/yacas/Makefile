@@ -16,8 +16,8 @@ OPTIONS_DEFINE=	TESTS DOCS
 OPTIONS_DEFAULT=	TESTS
 TESTS_DESC=	Run bundled self-tests after build
 
-USE_PERL5_BUILD=yes
-USE_GMAKE=	yes
+USES=		gmake perl5
+USE_PERL5=	build
 #USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 

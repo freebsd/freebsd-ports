@@ -19,8 +19,8 @@ FFTW3_FLAVOR?=	default
 FFTW3_SUFX=
 
 GNU_CONFIGURE=	yes
-USES=	pathfix pkgconfig
-USE_PERL5_BUILD=yes
+USES=		pathfix perl5 pkgconfig
+USE_PERL5=	build
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS =	--enable-shared --enable-threads --disable-fortran

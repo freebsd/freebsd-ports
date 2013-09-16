@@ -14,7 +14,7 @@ LICENSE=		BSD AL2 MIT
 LICENSE_COMB=		multi
 
 GNU_CONFIGURE=		yes
-USE_PERL5=		yes
+USES=			perl5
 
 MAN1=			ftimes.1
 MAN3=			FTimes::EadRoutines.3 FTimes::Properties.3

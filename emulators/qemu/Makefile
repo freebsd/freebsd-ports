@@ -15,8 +15,8 @@ COMMENT=	QEMU CPU Emulator
 
 HAS_CONFIGURE=	yes
 USE_GCC=	any
-USE_GMAKE=	yes
-USE_PERL5_BUILD=	yes
+USES=		gmake perl5
+USE_PERL5=	build
 PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}"
 MAN1=		qemu.1 qemu-img.1
