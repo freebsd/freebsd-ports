@@ -2,34 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	ucommon
-PORTVERSION=	6.0.3
+PORTVERSION=	6.0.7
 CATEGORIES=	devel
-MASTER_SITES=	http://www.gnutelephony.org/dist/tarballs/ \
-    		http://www.da3m0n8t3r.com/gnutelephony/www.gnutelephony.org/dist/tarballs/
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	commoncpp
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Very lightweight C++ design pattern library
 
 LICENSE=	LGPL3
 
-USES=	pathfix pkgconfig
+USES=	pathfix pkgconfig cmake:outsource
+CMAKE_ARGS+=	-DBUILD_TESTING:BOOL=ON \
+    		-DINSTALL_BINDIR:STRING=bin/${PORTNAME}
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--bindir=${PREFIX}/bin/${PORTNAME}
 
 MAN1=	args.1 car.1 commoncpp-config.1 mdsum.1 pdetach.1 \
 	scrub-files.1 sockaddr.1 ucommon-config.1 zerofill.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000000
-post-patch:
-	${REINPLACE_CMD} -e '/HAVE_OPENSSL_FIPS_H/s/define/undef/' \
-	    ${WRKSRC}/${CONFIGURE_SCRIPT}
-
-.endif
-
 regression-test: build
-	cd ${WRKSRC}/test && ${MAKE} check
+	cd ${BUILD_WRKSRC}/test && ${MAKE} test
 
 .include <bsd.port.post.mk>
