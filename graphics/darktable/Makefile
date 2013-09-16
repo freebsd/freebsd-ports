@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	darktable
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
@@ -38,7 +37,7 @@ GEO_DESC=	Geotagging support
 FACEBOOK_DESC=	Support images export to Facebook
 RAWSPEED_DESC=	Compile with rawspeed backend
 SLIDESHOW_DESC=	Build OpenGL/SDL slideshow viewer
-GCC_DESC=	Build with a current version of GCC (better OpenMP support)
+GCC_DESC=	Build with modern GCC (better OpenMP support)
 
 OPTIONS_DEFAULT=	GPHOTO RAWSPEED GCC
 
@@ -56,7 +55,8 @@ CMAKE_ARGS+=	-DUSE_CAMERA_SUPPORT:BOOL=OFF
 
 .if ${PORT_OPTIONS:MGEO}
 LIB_DEPENDS+=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
-PLIST_FILES+=	lib/darktable/plugins/lighttable/liblocation.so \
+PLIST_FILES+=	lib/darktable/plugins/lighttable/libgeotagging.so \
+		lib/darktable/plugins/lighttable/liblocation.so \
 		lib/darktable/plugins/lighttable/libmap_settings.so \
 		lib/darktable/views/libmap.so
 .else
@@ -127,8 +127,8 @@ LDFLAGS+=	-lstdc++
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/stats_/s,uint64_t,unsigned long,' \
-		${WRKSRC}/src/common/mipmap_cache.h
+	@${REINPLACE_CMD} -e 's,__APPLE__,__${OPSYS}__,' \
+		${WRKSRC}/src/common/utility.c
 # Do not install useless (to end-user) documentation; adjust manpages path
 	@${REINPLACE_CMD} -e '/DOC_FILES/d ; s,share/man/man1,man/man1,' \
 		${WRKSRC}/doc/CMakeLists.txt
