@@ -10,9 +10,10 @@ COMMENT=	Simple event (logs) correlator
 
 LICENSE=	GPLv2
 
-USE_PERL5_RUN=	yes
 USE_RC_SUBR=	sec
 
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 
 MAN8=		sec.8

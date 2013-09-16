@@ -25,7 +25,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 REINPLACE_ARGS=	-i ''
 USE_RC_SUBR=	mogilefsd mogstored
 

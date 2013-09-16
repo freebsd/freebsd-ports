@@ -13,10 +13,10 @@ COMMENT=	System for backing PCs and laptops to a server
 
 RUN_DEPENDS=	p5-File-Listing>=0:${PORTSDIR}/sysutils/p5-File-Listing
 
-NO_BUILD=	yes
-
-USE_PERL5=	yes
 USE_RC_SUBR=	backuppc
+
+USES=		perl5
+NO_BUILD=	yes
 
 USERS=		backuppc
 GROUPS=		backuppc

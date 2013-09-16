@@ -18,11 +18,10 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig iconv ncurses
-USE_GMAKE=	yes
+USES=		pathfix pkgconfig iconv ncurses gmake perl5
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=${ICONV_CONFIGURE_ARG}
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 MAN1=	cd-drive.1 cd-info.1 iso-read.1 iso-info.1 cd-read.1

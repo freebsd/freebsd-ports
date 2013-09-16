@@ -18,7 +18,7 @@ TAR_CMD=	${PREFIX}/bin/gtar
 
 MAKE_ARGS=	PERLPATH=${PERL} CONFFILE=${PREFIX}/etc/flexbackup.conf
 
-USE_PERL5=	yes
+USES=		perl5
 
 SUB_FILES+=	pkg-message
 

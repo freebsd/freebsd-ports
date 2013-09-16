@@ -26,10 +26,10 @@ CONFIGURE_ARGS=	--program-prefix=g	\
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" FORCE_UNSAFE_CONFIGURE=1
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 
+USES=		gmake perl5
+USE_PERL5=	build	# build - required for tests and man page generation
 USE_XZ=		yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_PERL5_BUILD=	yes # Required for tests and man page generation
 #USE_BISON=	yes
 
 INFO=		coreutils

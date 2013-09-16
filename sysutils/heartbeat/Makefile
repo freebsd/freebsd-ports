@@ -80,7 +80,8 @@ PLIST_SUB+=		MGMT="@comment "
 .if ${PORT_OPTIONS:MLDIRECTORD}
 RUN_DEPENDS+=		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 			p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
-USE_PERL5_RUN=		yes
+USES+=			perl5
+USE_PERL5=		run
 PLIST_SUB+=		LDIRECTORD=""
 MAN8+=			ldirectord.8
 .else
