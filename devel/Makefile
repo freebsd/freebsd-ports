@@ -3723,6 +3723,7 @@
     SUBDIR += py-rtree
     SUBDIR += py-ruledispatch
     SUBDIR += py-sanetime
+    SUBDIR += py-sdl2
     SUBDIR += py-serpent
     SUBDIR += py-setproctitle
     SUBDIR += py-setuptools-git
