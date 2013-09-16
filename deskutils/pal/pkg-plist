@@ -1,5 +1,6 @@
 bin/pal
 %%DATADIR%%/australia.pal
+%%DATADIR%%/austria.pal
 %%DATADIR%%/birth-death.pal
 %%DATADIR%%/christian.pal
 %%DATADIR%%/computer.pal
