@@ -13,7 +13,8 @@ COMMENT=	Perl module for creation and manipulation of tar files
 
 RUN_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Archive::Tar.3 Archive::Tar::File.3
 

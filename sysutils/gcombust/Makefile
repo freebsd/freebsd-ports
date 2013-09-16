@@ -16,8 +16,8 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	cdlabelgen:${PORTSDIR}/print/cdlabelgen \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
-USES=		gettext
-USE_PERL5_BUILD=yes
+USES=		gettext perl5
+USE_PERL5=	build
 USE_GNOME=	gtk12 gnomehier
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--without-included-gettext --datadir=${PREFIX}/share

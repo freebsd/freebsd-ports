@@ -11,14 +11,13 @@ MASTER_SITES=	http://www.adaptivecomputing.com/index.php?wpfb_dl=77/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Open source distributed computing resource manager based on PBS
 
+USES=		gmake perl5
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-syslog \
 		--disable-spool
-USE_GMAKE=	yes
 USE_RC_SUBR=	pbs_server pbs_sched pbs_mom
 SUB_FILES=	pkg-message torque-config
-USE_PERL5=	yes
 USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	qstat-[0-9]* zh-qterm-[0-9]*

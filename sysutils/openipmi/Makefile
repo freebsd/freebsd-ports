@@ -78,7 +78,7 @@ PLIST_SUB+=		TKINTER="@comment "
 
 .if ${PORT_OPTIONS:MPERL}
 WITH_SWIG=		yes
-USE_PERL5=		yes
+USES+=			perl5
 CONFIGURE_ARGS+=	--with-perl
 PLIST_SUB+=		PERL=""
 .else

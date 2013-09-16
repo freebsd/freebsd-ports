@@ -15,7 +15,7 @@ DISTNAME=	jailadmin-${PORTVERSION}
 MAINTAINER=	kirk@strauser.com
 COMMENT=	A system for managing a set of named jails
 
-USE_PERL5=	yes
+USES=		perl5
 
 PORTDOCS=	INSTALL README
 

@@ -14,8 +14,7 @@ RUN_DEPENDS=	p5-Quota>=0:${PORTSDIR}/sysutils/p5-Quota \
 		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 
 NO_BUILD=	yes
-USES=		gettext
-USE_PERL5=	yes
+USES=		gettext perl5
 USE_PHP=	gettext hash iconv ldap mcrypt pcre session simplexml spl xml json zip
 WANT_PHP_WEB=	yes
 DEFAULT_PHP_VER=	5
