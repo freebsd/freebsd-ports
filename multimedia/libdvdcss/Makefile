@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Portable abstraction library for DVD decryption
 
-NO_CDROM=	CSS code may violate the DMCA
+RESTRICTED=	CSS code may violate the DMCA
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
