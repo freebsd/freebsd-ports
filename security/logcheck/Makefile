@@ -33,7 +33,7 @@ OPTIONS_DEFAULT=CRON
 .endif
 
 # Enable Perl dependency for logtail script
-USE_PERL5=	yes
+USES=		perl5
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S!_!-!}
 BINMODE=	755

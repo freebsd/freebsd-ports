@@ -1,9 +1,5 @@
-# New ports collection makefile for:	makepasswd
-# Date created:				7 March 2003
-# Whom:					Toni Viemerö <toni.viemero@iki.fi>
-#
+# Created by: Toni Viemerö <toni.viemero@iki.fi>
 # $FreeBSD$
-#
 
 PORTNAME=	makepasswd
 PORTVERSION=	1.10
@@ -23,7 +19,8 @@ COMMENT=	Random password generator
 LICENSE=	GPLv1
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 RUN_DEPENDS+=	p5-Crypt-PasswdMD5>=0:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
 		p5-Crypt-OpenSSL-Random>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-Random
