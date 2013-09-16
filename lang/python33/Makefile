@@ -22,9 +22,9 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
 
-USE_GMAKE=	yes
 USE_XZ=		yes
 USE_PYTHON=	yes
+USES=		gmake
 PYTHON_VERSION=	python3.3
 PYTHON_NO_DEPENDS=	yes
 
