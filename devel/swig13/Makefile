@@ -58,7 +58,7 @@ post-configure:
 
 post-install:
 	${LN} -f ${PREFIX}/bin/swig ${PREFIX}/bin/swig${VER}
-.if ${PORT_OPTIONS:MDEXAMPLES}
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/${PORTVERSION}
 	cd ${WRKSRC}/Examples && ${FIND} . -type d \
 		-exec ${INSTALL} -d ${EXAMPLESDIR}/${PORTVERSION}/{} \;
