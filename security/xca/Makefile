@@ -1,9 +1,5 @@
-# New ports collection makefile for: xca
-# Date created:		2002-12-23
-# Whom:			Valentin Zahariev <curly@e-card.bg>
-#
+# Created by: Valentin Zahariev <curly@e-card.bg>
 # $FreeBSD$
-#
 
 PORTNAME=	xca
 PORTVERSION=	0.9.3
@@ -16,14 +12,10 @@ COMMENT=	Graphical certification authority
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
-
-USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_QT4=	gui moc_build uic_build qmake_build rcc_build linguist_build
 USE_AUTOTOOLS=	libltdl
-CC?=		gcc
-CXX?=		g++
+USES=		gmake shared-mime-info
 
 MAN1=		xca.1
 MANCOMPRESSED=	yes
@@ -52,7 +44,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "/VPATH/{G;s/$$/TOPDIR_/;}" -e "s:\(TOPDIR\)_:\1=${WRKSRC}:" ${WRKSRC}/misc/Makefile
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/lib/import.cpp
 
-post-install:
-	@-update-mime-database ${PREFIX}/share/mime
+post-configure:
+	${REINPLACE_CMD} -e 's/-lQtGui/-lQtCore -lQtGui/' ${WRKSRC}/Local.mak
 
 .include <bsd.port.mk>
