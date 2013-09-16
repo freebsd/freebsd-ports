@@ -20,7 +20,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/svnnotify:${PORTSDIR}/devel/p5-SVN-Notify
 OPTIONS_DEFINE=	CONFIG
 CONFIG_DESC=	Enable YAML syntax for post-commit hook
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 .include <bsd.port.options.mk>
 

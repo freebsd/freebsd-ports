@@ -18,7 +18,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rv@gnu.org
 COMMENT=	A Perl-based Make Replacement
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 PLIST_SUB=	CONS_VER=${PORTVERSION}
 

@@ -22,10 +22,9 @@ GCCVERSION=	4.7.2
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
 USE_LDCONFIG=	yes
-USES=		bison iconv
+USES=		bison iconv gmake perl5
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 
 GCC_TARG=	${PKGNAMEPREFIX:S/-$//}
 

@@ -24,11 +24,10 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 
 CONFLICTS=	llvm-[3]* llvm-devel-[23]* llvm29-*
 
+USES=		gmake perl5
 GNU_CONFIGURE=	yes
 USE_GCC=	4.2+
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_PERL5=	yes
 USE_PYTHON_BUILD=	yes
 
 # Suggested tweaks from http://llvm.org/docs/Packaging.html

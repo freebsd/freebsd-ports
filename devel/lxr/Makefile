@@ -16,7 +16,7 @@ BUILD_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
 
 PATCH_STRIP=	-p1
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS

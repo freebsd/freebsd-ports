@@ -17,11 +17,10 @@ COMMENT=	Low Level Virtual Machine
 
 CONFLICTS=	llvm-2* llvm-3.[012]* llvm31-[3]*
 
+USES=		gmake perl5
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_PERL5=	yes
 USE_PYTHON=	yes
 
 # Suggested tweaks from http://llvm.org/docs/Packaging.html

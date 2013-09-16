@@ -75,7 +75,7 @@ CONFIGURE_ARGS+=	--without-documentation
 
 .if ${PORT_OPTIONS:MINTERNAL}
 CONFIGURE_ARGS+=	--with-pgm
-USE_PERL5=		yes
+USES+=			perl5
 CFLAGS+=		-fPIC
 .endif
 
