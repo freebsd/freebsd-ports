@@ -1,0 +1,20 @@
+--- Sources/GL/canvas_opengl.cpp.orig	2007-10-21 02:14:01.000000000 +0200
++++ Sources/GL/canvas_opengl.cpp	2013-09-16 13:21:42.874065134 +0200
+@@ -27,6 +27,7 @@
+ **    (if your name is missing here, please add it)
+ */
+ 
++#include <stdlib.h>
+ #include "Display/display_precomp.h"
+ #include "canvas_opengl.h"
+ #include "API/Core/System/error.h"
+--- Sources/Network/Socket/ip_address_getaddr.cpp.orig	2007-10-21 02:14:01.000000000 +0200
++++ Sources/Network/Socket/ip_address_getaddr.cpp	2013-09-16 13:22:11.882067224 +0200
+@@ -29,6 +29,7 @@
+ 
+ #ifdef USE_GETADDR
+ 
++#include <stdlib.h>
+ #include "ip_address_getaddr.h"
+ #include "API/Core/System/error.h"
+ #include "API/Core/System/mutex.h"

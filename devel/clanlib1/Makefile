@@ -6,6 +6,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.clanlib.org/download/releases-1.0/
 DISTNAME=	ClanLib-${PORTVERSION}
+PKGNAMESUFFIX=	1
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	c.petrik.sosa@gmail.com
@@ -14,17 +15,14 @@ COMMENT=	Cross-platform game SDK
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		mikmod:${PORTSDIR}/audio/libmikmod \
-		vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libmikmod.so:${PORTSDIR}/audio/libmikmod \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-LATEST_LINK=	${PORTNAME}1
-
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_XORG=	x11 xi
-USES=	pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_SDL=	gfx
 USE_GL=		yes
