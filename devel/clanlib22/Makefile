@@ -7,6 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.clanlib.org/download/releases-2.0/
 DISTNAME=	ClanLib-${PORTVERSION}
+PKGNAMESUFFIX=	22
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	c.petrik.sosa@gmail.com
@@ -15,18 +16,15 @@ COMMENT=	Cross-platform game SDK
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		mikmod:${PORTSDIR}/audio/libmikmod \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libmikmod.so:${PORTSDIR}/audio/libmikmod \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libpcre.so:${PORTSDIR}/devel/pcre
 
-LATEST_LINK=	${PORTNAME}22
-
-USE_GMAKE=	yes
 USE_XORG=	x11
-USES=	pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GL=		yes
 USE_SQLITE=	yes
