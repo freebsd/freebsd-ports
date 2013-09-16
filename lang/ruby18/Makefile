@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby18
-# Date created:		6 May 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ruby
 PORTVERSION=	${RUBY_PORTVERSION}
@@ -59,25 +55,14 @@ _SUF2=	,${PORTEPOCH}
 _SUF1=	_${PORTREVISION}
 .endif
 
-PKGNAMESUFFIX=	#empty
-
-#
-# pthreads in earlier versions has problems with malloc after fork
-#
-.if ${OSVERSION} < 702000
-WITHOUT_PTHREADS=	yes
-.endif
-
 .if defined(WITHOUT_PTHREADS)
 CONFIGURE_ARGS+=--disable-pthread
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}+nopthreads
 .else
 LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ARGS+=--enable-pthread
 .endif
 
 .if ${PORT_OPTIONS:MONIGURUMA}
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}+oniguruma
 BUILD_DEPENDS+=	${NONEXISTENT}:${ONIGURUMA_PORTDIR}:patch
 ONIGURUMA_PORTDIR=${PORTSDIR}/devel/oniguruma
 ONIGURUMA_WRKSRC=`cd ${ONIGURUMA_PORTDIR}; ${MAKE} -V WRKSRC`
@@ -99,6 +84,7 @@ CONFIGURE_ARGS+=	--disable-install-doc
 MLINKS=		${RUBY_NAME}.1 ruby.1
 PLIST_SUB+=	IF_DEFAULT=""
 .else
+PKGNAMESUFFIX=	${RUBY_VER:C/\.//}
 PLIST_SUB+=	IF_DEFAULT="@comment "
 .endif
 
