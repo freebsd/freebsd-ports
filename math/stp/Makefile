@@ -12,10 +12,9 @@ COMMENT=	A Decision Procedure for Bitvectors and Arrays
 
 LICENSE=	MIT
 
-USES=		bison
+USES=		bison gmake perl5
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 
 CONFIGURE_SCRIPT=	scripts/configure
 CONFIGURE_ARGS=		--with-prefix=${PREFIX} \

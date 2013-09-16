@@ -17,13 +17,12 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_LDCONFIG=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 USE_XFCE=	configenv libutil
 USE_XORG=	x11
-USES=		pathfix pkgconfig
+USES=		gmake pathfix pkgconfig perl5
 
 OPTIONS_DEFINE=		DOCS PERL NLS
 

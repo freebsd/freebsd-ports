@@ -32,14 +32,13 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_SITELIBDIR}/ephem/__init__.py:${PORTSDIR}/astro/pyephem\
 		${PYTHON_SITELIBDIR}/PyQt4/Qt.py:${PORTSDIR}/devel/py-qt4
 
-USES=		cmake:outsource
+USES=		cmake:outsource perl5
 CMAKE_VERBOSE=	yes
 DOCSDIR=	share/doc/${PORTNAME}-${PORTVERSION}
 USE_PYTHON=	2.7+
 USE_WX=		2.6+
 USE_QT4=	gui xml qmake moc rcc uic
 WX_COMPS=	wx wx:build wx:run python:build python:run
-USE_PERL5=	yes
 USE_LDCONFIG=	yes
 PLIST_SUB+=	MAJOR_VERSION="3"
 

@@ -32,10 +32,9 @@ LIB_DEPENDS=	GraphicsMagick:${PORTSDIR}/graphics/GraphicsMagick \
 		umfpack.1:${PORTSDIR}/math/suitesparse \
 		glpk:${PORTSDIR}/math/glpk
 
-USES=		charsetfix pkgconfig
+USES=		charsetfix gmake perl5 pkgconfig
 USE_BZIP2=	yes
-USE_PERL5_BUILD=yes
-USE_GMAKE=	yes
+USE_PERL5=	build
 USE_TEX=	dvipsk:build
 GNU_CONFIGURE=	yes
 #USE_AUTOTOOLS=	autoconf

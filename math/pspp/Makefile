@@ -16,8 +16,8 @@ LIB_DEPENDS=	plot.4:${PORTSDIR}/graphics/plotutils \
 OPTIONS_DEFINE=	GUI PGSQL
 
 USE_GNOME=	libxml2
-USE_PERL5_BUILD=yes
-USES=		iconv
+USE_PERL5=	build
+USES=		iconv gmake perl5
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

@@ -20,10 +20,9 @@ BUILD_DEPENDS=	p5-Module-Build>=0.4:${PORTSDIR}/devel/p5-Module-Build \
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Parse::Range.3
 
-.include <bsd.port.pre.mk>
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
