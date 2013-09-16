@@ -14,8 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	The massively parallel quantum computing library and program
 
-USE_PERL5=	yes
-USE_GMAKE=	yes
+USES=		perl5 gmake
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 

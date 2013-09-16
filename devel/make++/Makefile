@@ -19,8 +19,8 @@ COMMENT=	A drop-in replacement for GNU make
 LICENSE=	ART10 GPLv1 GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+USES=		perl5
 USE_XZ=		yes
-USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
 

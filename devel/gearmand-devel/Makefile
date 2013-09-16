@@ -32,10 +32,9 @@ USERS=		gearmand
 GROUPS=		gearmand
 
 FETCH_ARGS=	-pRr
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=	pathfix
+USES=		pathfix perl5 gmake
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=yes
 USE_RC_SUBR=	gearmand

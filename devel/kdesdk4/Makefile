@@ -26,12 +26,10 @@ USE_XZ=		yes
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdehier kdelibs kdeprefix libkonq pimlibs sharedmime \
 		akonadi automoc4 qimageblitz_build strigi
-USES=		cmake:outsource
-USE_PERL5=	yes
+USES=		cmake:outsource perl5 gmake
 USE_QT4=	corelib dbus declarative designer gui qt3support \
 		script scripttools sql xml \
 		qmake_build moc_build rcc_build uic_build uic3_build
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
 

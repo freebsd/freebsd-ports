@@ -18,10 +18,10 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-num
 LIB_DEPENDS=	netcdff.4:${PORTSDIR}/science/netcdf3-ftn	\
 		gsl:${PORTSDIR}/math/gsl
 
+USES=		gmake perl5
 USE_FORTRAN=	yes
-USE_GMAKE=	yes
 USE_PYTHON=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 USE_AUTOTOOLS=	autoconf automake
 CONFIGURE_ENV=	WGET=${TRUE}
 CONFIGURE_ARGS=	--disable-wannier90 --disable-bigdft --disable-etsf-io	\
