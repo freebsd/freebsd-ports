@@ -54,7 +54,7 @@ MAKE_ARGS+=	V=1
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB=	NLS=""
-. if ${OSVERSION} >= 1000043
+. if empty(ICONV_LIB)
 libintl=	"${LOCALBASE}/lib/libintl.a"
 . else
 libintl=	"${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"

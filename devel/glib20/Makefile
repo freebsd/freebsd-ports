@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=--disable-dtrace
 #CONFIGURE_ARGS+=--enable-dtrace
 #.endif
 
-.if exists(/usr/include/iconv.h) && ${OSVERSION} >= 1000043 
+.if empty(ICONV_LIB)
 CONFIGURE_ARGS+=	--with-libiconv=native
 .else
 CONFIGURE_ARGS+=	--with-libiconv=gnu
