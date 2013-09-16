@@ -16,12 +16,12 @@ LICENSE=	GPLv2
 
 CONFLICTS=	openbgpd-[0-9]* openospfd-[0-9]* zebra-0* quagga-re-[0-9]*
 
-USES=		gmake
+USES=		gmake perl5
 USE_AUTOTOOLS=	libtool autoheader aclocal
 ACLOCAL_ARGS=	-I${LOCALBASE}/share/aclocal
 BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 USE_LDCONFIG=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 FETCH_ARGS=	-Fpr
 
 MAN1=		vtysh.1

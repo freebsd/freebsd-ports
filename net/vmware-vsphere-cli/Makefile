@@ -23,7 +23,8 @@ RUN_DEPENDS=		p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
 			p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 			p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
 
-PERL_CONFIGURE=		yes
+USES=			perl5
+USE_PERL5=		configure
 RESTRICTED=		Downloading requires acceptance of license agreement
 NO_CDROM=		Distribution requires acceptance of license agreement
 NO_PACKAGE=		Distribution requires acceptance of license agreement

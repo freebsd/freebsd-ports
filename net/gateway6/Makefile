@@ -34,8 +34,8 @@ GW6C_DATA=	\
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
-USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USES=		gmake perl5
+USE_PERL5=	build
 MAKE_JOBS_UNSAFE=yes
 MAKE_ARGS=	target=freebsd installdir=${PREFIX}
 

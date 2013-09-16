@@ -9,9 +9,10 @@ MASTER_SITES=	http://rink.nu/downloads/projects/
 MAINTAINER=	rink@FreeBSD.org
 COMMENT=	A lightweight daemon for answering FreeDB queries
 
+USES=		perl5
+USE_PERL5=	run
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
-USE_PERL5_RUN=	yes
 
 PLIST_FILES=	bin/freedbd bin/freedbd-txt2xml %%EXAMPLESDIR%%/sample_db.txt
 PLIST_DIRS=	%%EXAMPLESDIR%%
