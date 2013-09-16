@@ -26,7 +26,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-LWP-Online>=1.07:${PORTSDIR}/www/p5-LWP-Online \
 		p5-Test-Base>0:${PORTSDIR}/devel/p5-Test-Base
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		www-mobilecarrierjp-dump_all.pl.1
 MAN3=		WWW::MobileCarrierJP::EZWeb::PictogramInfo.3 \

@@ -14,13 +14,11 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	proxy:${PORTSDIR}/net/libproxy
 
 USE_XZ=		yes
-USES=		desktop-file-utils pathfix pkgconfig
+USES=		desktop-file-utils pathfix pkgconfig gmake
 USE_GNOME=	gtk20 libxml2
-WANT_PERL=	yes
 USE_AUTOTOOLS=	automake autoconf libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-gtkfe --disable-sysinfo
-USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 
 LDFLAGS+=	-pthread
@@ -111,7 +109,7 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=	yes
+USES+=		perl5
 CONFIGURE_ARGS+=--enable-perl
 PLIST_SUB+=	PERL=""
 .else

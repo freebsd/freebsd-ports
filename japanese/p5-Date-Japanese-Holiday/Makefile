@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-Date-Calc>5.3:${PORTSDIR}/devel/p5-Date-Calc \
 		p5-Time-modules>0.01:${PORTSDIR}/devel/p5-Time-modules
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	YES
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Date::Japanese::Holiday.3
 

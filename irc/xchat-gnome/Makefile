@@ -72,7 +72,7 @@ PLIST_SUB+=	TCL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=	yes
+USES+=		perl5
 CONFIGURE_ARGS+=--enable-perl
 PLIST_SUB+=	PERL=""
 .else

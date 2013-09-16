@@ -13,7 +13,9 @@ MASTER_SITES=	CPAN
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Perl5 module to handle Japanese character encodings
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
+
 MAN1=		ujconv.1 ujguess.1
 MAN3=		Unicode::Japanese.3 Unicode::Japanese::JA.3
 

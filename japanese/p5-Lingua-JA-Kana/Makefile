@@ -13,7 +13,8 @@ MASTER_SITES=	CPAN
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Converts between Kanas and Romaji
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	${PORTNAME:S/-/::/g}.3
 
