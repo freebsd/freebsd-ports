@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-Class-Load>0:${PORTSDIR}/devel/p5-Class-Load \
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Output>0:${PORTSDIR}/devel/p5-Test-Output
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DateTime::TimeZone.3 DateTime::TimeZone::Floating.3 \
 		DateTime::TimeZone::Local.3 DateTime::TimeZone::Local::Unix.3 \

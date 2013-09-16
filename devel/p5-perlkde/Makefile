@@ -12,13 +12,12 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Perl bindings for KDE
 
 USE_XZ=		yes
-USE_PERL5=	yes
 # Build fails with system gcc
 USE_GCC=	yes
 USE_KDE4=	kdehier kdeprefix perlqt smokekde automoc4
 USE_QT4=	network opengl sql svg xml \
 		qmake_build moc_build uic_build rcc_build
-USES=		cmake:outsource
+USES=		cmake:outsource perl5
 
 
 # Respect PREFIX
