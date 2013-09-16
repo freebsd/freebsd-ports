@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}srcs${EXTRACT_SUFFIX}
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	A program that applies ReplayGain to wave files
 
-LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 USES=		gmake
 USE_ZIP=	yes
@@ -25,6 +25,9 @@ WRKSRC=	${WRKDIR}/WaveGain-${PORTVERSION}
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/Makefile.linux
 
 do-configure:
 	@cd ${WRKSRC} && ${CP} Makefile.linux Makefile
