@@ -21,8 +21,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		formail:${PORTSDIR}/mail/procmail
 
-USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		gmake perl5
 
 OPTIONS_DEFINE=	RPMBUILD DOCS NLS
 RPMBUILD_DESC=	rpmbuild support

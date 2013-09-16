@@ -16,7 +16,7 @@ RUN_DEPENDS=	git>=0:${PORTSDIR}/devel/git
 LATEST_LINK=	gitolite2
 CONFLICTS=	gitolite-[^2]*
 
-USE_PERL5=	yes
+USES=		perl5
 
 SUB_FILES=	pkg-message
 

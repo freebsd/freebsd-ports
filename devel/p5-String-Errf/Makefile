@@ -22,7 +22,8 @@ BUILD_DEPENDS:=	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 		p5-autodie>=0:${PORTSDIR}/devel/p5-autodie \
 		${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	String::Errf.3
 

@@ -17,7 +17,8 @@ COMMENT=	Input filter for Doxygen enabling support for Perl code documentation
 
 RUN_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		DoxyGen::Filter.3
 

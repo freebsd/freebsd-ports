@@ -13,7 +13,8 @@ COMMENT=	Hide and store warnings while running test scripts
 
 TEST_DEPENDS=	p5-Test-Tester>=0.10.7:${PORTSDIR}/devel/p5-Test-Tester
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Test::NoWarnings.3
 
