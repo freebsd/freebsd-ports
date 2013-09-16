@@ -6,16 +6,16 @@ PORTVERSION=	1.0.9
 PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	http://labs.gree.jp/data/source/
+PKGNAMESUFFIX=	-db
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flare - distributed and persistent key-value storage
 
-LIB_DEPENDS=	boost_program_options:${PORTSDIR}/devel/boost-libs \
-		tokyocabinet:${PORTSDIR}/databases/tokyocabinet
+LIB_DEPENDS=	libboost_program_options.so:${PORTSDIR}/devel/boost-libs \
+		libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_KQUEUE
