@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hunspell
-# Date created:		2011-07-20
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
+# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hunspell
 PORTVERSION=	1.2
@@ -16,12 +12,11 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Hebrew hunspell dictionaries
 
-USES=		iconv:build perl5
 ALL_TARGET=	hunspell
 CONFIGURE_ARGS=	--enable-fatverb
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_PERL5=	build
+USES=		gmake iconv:build perl5
 
 PLIST_FILES=	%%DATADIR%%/he.aff \
 		%%DATADIR%%/he.dic
