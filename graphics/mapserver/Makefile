@@ -149,10 +149,10 @@ PLIST_SUB+=		PHP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=yes
-PLIST_SUB+=		PERL=""
+USES+=		perl5
+PLIST_SUB+=	PERL=""
 .else
-PLIST_SUB+=		PERL="@comment "
+PLIST_SUB+=	PERL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCURL}

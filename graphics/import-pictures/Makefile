@@ -16,8 +16,7 @@ RUN_DEPENDS=	p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \
 		p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_PERL5=	yes
+USES=		gmake perl5
 
 PLIST_FILES=	bin/${PORTNAME}
 

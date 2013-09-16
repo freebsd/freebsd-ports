@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.suwald.com/ripit/
 
 MAINTAINER=	tobias.rehbein@web.de
-COMMENT=	A command line audio CD ripper
+COMMENT=	Command line audio CD ripper
 
 # See pkg-message about other dependencies.
 RUN_DEPENDS=	p5-CDDB_get>=0:${PORTSDIR}/audio/p5-CDDB_get \
@@ -18,12 +18,12 @@ RUN_DEPENDS=	p5-CDDB_get>=0:${PORTSDIR}/audio/p5-CDDB_get \
 	lame:${PORTSDIR}/audio/lame \
 	cdparanoia:${PORTSDIR}/audio/cdparanoia \
 
-USES=	shebangfix
+USES=		perl5 shebangfix
 NO_BUILD=	yes
 PLIST_FILES=	bin/ripit
 MAN1=		ripit.1
 PORTEXAMPLES=	config
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 USE_BZIP2=	yes
 SHEBANG_FILES=	ripit.pl
 perl_OLD_CMD=	/usr/bin/env perl

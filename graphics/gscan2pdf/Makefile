@@ -62,9 +62,9 @@ RUN_DEPENDS=	p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
 		p5-Gtk2-ImageView>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2-ImageView \
 		bash:${PORTSDIR}/shells/bash
 
-USE_GMAKE=	yes
+USES=		gmake perl5
 USE_GNOME=	gtk20 librsvg2
-PERL_CONFIGURE=	yes
+PERL5=		configure
 MAN1=		${PORTNAME}.1 scanadf-perl.1 scanimage-perl.1
 PORT_VERBS=	${PORTNAME} Gscan2pdf
 

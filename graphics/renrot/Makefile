@@ -14,7 +14,8 @@ LICENSE=	ART20
 BUILD_DEPENDS=	p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool
 RUN_DEPENDS:=	${BUILD_DEPENDS} jpegtran:${PORTSDIR}/graphics/jpeg
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 OPTIONS_DEFINE=	IMAGEMAGICK DOCS
 IMAGEMAGICK_DESC=	Image::Magick Perl module support

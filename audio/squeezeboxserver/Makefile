@@ -44,7 +44,7 @@ RUN_DEPENDS+=	p5-Package-DeprecationManager>=0.10:${PORTSDIR}/devel/p5-Package-D
 
 USERS=		${SLIMUSER}
 GROUPS=		${SLIMGROUP}
-USE_PERL5=	yes
+USES=		perl5
 
 .include <bsd.port.pre.mk>
 

@@ -15,7 +15,7 @@ AVCODEC_DESC=	LAVC codec support
 
 GNU_CONFIGURE=	yes
 USE_GL=		gl
-USE_PERL5=	yes
+USES=		perl5
 USE_AUTOTOOLS=	libltdl
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}
 
