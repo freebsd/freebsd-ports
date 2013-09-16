@@ -61,18 +61,15 @@ include/ucommon/ucommon.h
 include/ucommon/unicode.h
 include/ucommon/vector.h
 include/ucommon/xml.h
-lib/libcommoncpp.a
-lib/libcommoncpp.la
 lib/libcommoncpp.so
 lib/libcommoncpp.so.6
-lib/libucommon.a
-lib/libucommon.la
+lib/libcommoncpp.so.6.0.7
 lib/libucommon.so
 lib/libucommon.so.6
-lib/libusecure.a
-lib/libusecure.la
+lib/libucommon.so.6.0.7
 lib/libusecure.so
 lib/libusecure.so.6
+lib/libusecure.so.6.0.7
 libdata/pkgconfig/commoncpp.pc
 libdata/pkgconfig/ucommon.pc
 @dirrm include/ucommon

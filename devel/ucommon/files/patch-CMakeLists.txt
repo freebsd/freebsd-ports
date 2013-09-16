@@ -1,0 +1,36 @@
+--- CMakeLists.txt.orig	2013-07-28 12:32:06.000000000 +0200
++++ CMakeLists.txt	2013-09-16 18:29:12.000000000 +0200
+@@ -30,7 +30,9 @@
+ # when we override default install prefix, assume full path is used...
+ 
+ set(INSTALL_INCLUDEDIR include)
+-set(INSTALL_BINDIR bin)
++if (NOT INSTALL_BINDIR)
++  set(INSTALL_BINDIR bin)
++endif ()
+ 
+ if(WIN32)
+     set(INSTALL_MANDIR man)
+@@ -50,7 +52,7 @@
+         endif()
+     endif()
+     set(INSTALL_SBINDIR sbin)
+-    set(INSTALL_MANDIR share/man)
++    set(INSTALL_MANDIR man)
+     set(INSTALL_LOCALE share/locale)
+     set(INSTALL_DOCDIR share/doc/${PROJECT_NAME})
+     set(INSTALL_INFODIR share/info)
+@@ -566,11 +568,11 @@
+ endif()
+ 
+ if(NOT WIN32)
+-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc DESTINATION ${INSTALL_LIBDIR}/pkgconfig)
++    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc DESTINATION libdata/pkgconfig)
+     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/ucommon-config DESTINATION ${INSTALL_BINDIR})
+     if(BUILD_STDLIB)
+         install(FILES ${CMAKE_CURRENT_BINARY_DIR}/commoncpp-config DESTINATION ${INSTALL_BINDIR})
+-        install(FILES ${CMAKE_CURRENT_BINARY_DIR}/commoncpp.pc DESTINATION ${INSTALL_LIBDIR}/pkgconfig)
++        install(FILES ${CMAKE_CURRENT_BINARY_DIR}/commoncpp.pc DESTINATION libdata/pkgconfig)
+     endif()
+ endif(NOT WIN32)
+ 
