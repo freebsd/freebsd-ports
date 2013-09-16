@@ -16,7 +16,7 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Converts Perl XS code into C code
 
 USES=		perl5
-USE_PERl5=	configure
+USE_PERL5=	configure
 
 MAN3=		ExtUtils::ParseXS.3 \
 		ExtUtils::ParseXS::Constants.3 \
