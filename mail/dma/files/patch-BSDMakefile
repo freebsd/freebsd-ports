@@ -1,6 +1,6 @@
---- BSDmakefile.orig	2012-01-03 13:54:05.000000000 +0000
-+++ BSDmakefile	2012-01-28 20:47:09.000000000 +0000
-@@ -1,20 +1,12 @@
+--- BSDmakefile.orig	2013-06-03 14:03:15.000000000 +0000
++++ BSDmakefile	2013-08-22 10:35:28.000000000 +0000
+@@ -1,21 +1,13 @@
  # $DragonFly: src/libexec/dma/Makefile,v 1.5 2008/09/19 00:36:57 corecode Exp $
  #
  
@@ -11,6 +11,7 @@
 +CFLAGS+= -I${.CURDIR} -I${.CURDIR}/..
  CFLAGS+= -DHAVE_REALLOCF -DHAVE_STRLCPY -DHAVE_GETPROGNAME
  CFLAGS+= -DLIBEXEC_PATH='"${LIBEXEC}"' -DDMA_VERSION='"${version}"'
+ CFLAGS+= -DCONF_PATH='"${CONFDIR}"'
  
 -DPADD=  ${LIBSSL} ${LIBCRYPTO}
 -LDADD=  -lssl -lcrypto
@@ -22,8 +23,8 @@
 -
  PREFIX?=	/usr/local
  LIBEXEC?=	${PREFIX}/libexec
- 
-@@ -23,4 +15,3 @@ BINGRP= mail
+ CONFDIR?=	${PREFIX}/etc/dma
+@@ -25,4 +17,3 @@ BINGRP= mail
  BINMODE=2555
  WARNS?=	6
  
