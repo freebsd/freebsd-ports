@@ -53,7 +53,8 @@ BUILD_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-version>=0.68:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		svk.1
 MAN3=		SVK.3 \

@@ -46,9 +46,8 @@ WRKSRC=		${WRKDIR}/build
 PATCH_WRKSRC=	${SRCDIR}
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		bison iconv
-USE_PERL5_BUILD=yes
+USES=		bison iconv gmake perl5
+USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../${SRCDIR:S/${WRKDIR}\///}/configure

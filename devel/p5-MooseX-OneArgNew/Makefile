@@ -22,7 +22,8 @@ RUN_DEPENDS=	p5-MooseX-Role-Parameterized>=0:${PORTSDIR}/devel/p5-MooseX-Role-Pa
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERl5=	configure
 
 MAN3=	MooseX::OneArgNew.3
 

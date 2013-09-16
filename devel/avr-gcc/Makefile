@@ -32,10 +32,10 @@ CONFIGURE_WRKSRC=	${BUILD_WRKSRC}
 INSTALL_WRKSRC=		${BUILD_WRKSRC}
 CONFIGURE_SCRIPT=	../gcc-${PORTVERSION}/configure
 
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 USE_BZIP2=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-USES=		bison gettext gmake
+USES=		bison gettext gmake perl5
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>

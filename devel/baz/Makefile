@@ -24,9 +24,8 @@ LIB_DEPENDS=	neon.27:${PORTSDIR}/www/neon29 \
 
 CONFLICTS=	gd-2.*
 
-USE_GMAKE=	yes
-USES=		gettext
-USE_PERL5_BUILD=yes
+USES=		gettext gmake perl5
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 

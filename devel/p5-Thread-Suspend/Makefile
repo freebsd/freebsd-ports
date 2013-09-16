@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	Suspend and resume operations for threads
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Thread::Suspend.3
 
