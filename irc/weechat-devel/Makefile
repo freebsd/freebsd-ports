@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	weechat
-PORTVERSION=	20130831
+PORTVERSION=	20130916
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -24,10 +24,9 @@ CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
-GITDESC=	v0.4.1-191-g410caef
+GITDESC=	v0.4.2-rc1-4-g556d324
 GITREV!=	echo "${GITDESC}" | sed -E 's/^.*-g(.{7})$$/\1/'
-#GITREV=	01a1316
-WRKSRC=	${WRKDIR}/${PORTNAME}-${GITREV}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${GITREV}
 
 # Please note: the DEBUG option is *NOT* empty, it is utilised by
 # bsd.cmake.mk to set the cmake build type to Debug instead of
