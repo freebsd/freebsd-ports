@@ -10,7 +10,8 @@ MASTER_SITE_SUBDIR=	CPAN:SCOTTW
 MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	Save log files in a nice way
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		rotation.1 savelogs.1
 

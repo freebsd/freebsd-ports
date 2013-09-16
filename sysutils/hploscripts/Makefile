@@ -13,10 +13,8 @@ COMMENT=	HP Lights-Out management perl scripts
 BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.19:${PORTSDIR}/security/p5-IO-Socket-SSL
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		shebangfix
-USE_PERL5=	yes
+USES=		shebangfix perl5
 NO_BUILD=	yes
-
 SHEBANG_FILES=	locfg.pl
 
 PORTDOCS=	iLO_perl_xml.pdf linux-LOsamplescripts.txt

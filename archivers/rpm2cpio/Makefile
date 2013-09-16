@@ -17,7 +17,7 @@ COMMENT=	Convert .rpm files for extraction with /usr/bin/cpio, needs just perl
 
 NO_WRKSUBDIR=	yes
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 REINPLACE_ARGS=
 

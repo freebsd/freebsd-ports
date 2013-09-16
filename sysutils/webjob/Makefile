@@ -10,8 +10,9 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=		klm@uidzero.org
 COMMENT=		Download and execute a program over HTTP/HTTPS
 
+USES=			perl5
 GNU_CONFIGURE=		yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=		build
 MAN1=			webjob.1 xshar.1
 
 OPTIONS_DEFINE=	PAD_TOOLS DSV_TOOLS SSL
