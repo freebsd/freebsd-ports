@@ -13,7 +13,6 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
-LATEST_LINK?=	swig2
 USE_AUTOTOOLS=	autoconf:env libtool
 
 MAN1=		ccache-swig${VER}.1

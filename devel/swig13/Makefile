@@ -1,14 +1,11 @@
-# New ports collection makefile for:	SWIG
-# Date created:			19 April 1996
-# Whom:				jkh
-#
+# Created by: jkh
 # $FreeBSD$
-#
 
 PORTNAME=	swig
 PORTVERSION=	1.3.40
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+PKGNAMESUFFIX=	13
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simplified Wrapper and Interface Generator
@@ -28,7 +25,7 @@ CFLAGS+=	-fPIC -DPIC
 ALL_TARGET=	swig
 PLIST_SUB+=	VER="${VER}"
 
-OPTIONS_DEFINE=	LUA
+OPTIONS_DEFINE=	LUA DOCS EXAMPLES
 LUA_DESC=	Enable Lua support
 
 .include <bsd.port.pre.mk>
@@ -61,14 +58,14 @@ post-configure:
 
 post-install:
 	${LN} -f ${PREFIX}/bin/swig ${PREFIX}/bin/swig${VER}
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MDEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/${PORTVERSION}
 	cd ${WRKSRC}/Examples && ${FIND} . -type d \
 		-exec ${INSTALL} -d ${EXAMPLESDIR}/${PORTVERSION}/{} \;
 	cd ${WRKSRC}/Examples && ${FIND} . -type f \
 		-exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/${PORTVERSION}/{} \;
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/${PORTVERSION}
 	cd ${WRKSRC}/Doc && ${FIND} . -type d \
 		-exec ${INSTALL} -d ${DOCSDIR}/${PORTVERSION}/{} \;
