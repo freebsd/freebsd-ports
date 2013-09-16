@@ -4939,3 +4939,5 @@ devel/deputy||2013-09-13|Obsolete
 textproc/liblinebreak|textproc/libunibreak|2013-09-14|Project was superceded by libunibreak
 sysutils/daemontools53|sysutils/daemontool|2013-09-16|sysutils/daemontools is more recent
 audio/ices0|audio/ices|2013-09-16|Unsupported version, consider using audio/ices
+irc/xchat1|irc/xchat|2013-09-16|Unsupported upstream, consider using irc/xchat
+japanese/xchat|irc/xchat|2013-09-16|Unsupported upstream, consider using irc/xchat
