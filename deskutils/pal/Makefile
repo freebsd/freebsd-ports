@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	pal
-PORTVERSION=	0.3.4
-PORTREVISION=	6
+PORTVERSION=	0.4.3
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}cal/${PORTNAME}/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	h.skuhra@gmail.com
-COMMENT=	A calendar application
+COMMENT=	Calendar application
 
-USES=		pkgconfig gettext
+USES=		pkgconfig gettext gmake
 USE_GNOME=	glib20
 USE_GMAKE=	yes
 ALL_TARGET=
@@ -21,12 +20,8 @@ MAN1=		pal.1
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libreadline.so.6)
-LIB_DEPENDS=	readline.6:${PORTSDIR}/devel/readline
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e "s,prefix = /usr,prefix = ${PREFIX},g" ${WRKSRC}/Makefile.defs
+	@${REINPLACE_CMD} -e "s,prefix = /usr,prefix = ${PREFIX},g;s,^CC,#CC,g" ${WRKSRC}/Makefile.defs
 
 post-build:
 	${REINPLACE_CMD} -e "s,VERSION,${PORTVERSION},g" ${WRKDIR}/${PORTNAME}-${PORTVERSION}/pal.1.template
