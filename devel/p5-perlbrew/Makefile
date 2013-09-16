@@ -26,7 +26,8 @@ TEST_DEPENDS=	p5-IO-All>=0:${PORTSDIR}/devel/p5-IO-All \
 		p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 		p5-Test-Spec>=0:${PORTSDIR}/devel/p5-Test-Spec
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		perlbrew.1
 MAN3=		App::perlbrew.3

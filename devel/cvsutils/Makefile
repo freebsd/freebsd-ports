@@ -12,7 +12,7 @@ COMMENT=	CVS utilities which facilitate working with local working directories
 
 LICENSE=	GPLv2
 
-USE_PERL5=	yes
+USES=		perl5
 GNU_CONFIGURE=	yes
 
 MAN1=		cvsutils.1

@@ -17,9 +17,8 @@ COMMENT=	Transaction-based software configuration management system
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	tkdiff:${PORTSDIR}/textproc/tkdiff
 
-USES=		gettext
+USES=		gettext perl5
 USE_GNOME=	libxml2
-USE_PERL5=	yes
 USE_TK=		yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	"-I${LOCALBASE}/include"

@@ -13,7 +13,8 @@ COMMENT=	Event based transparent Client/Server RPC framework
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Event::RPC.3 \
 	Event::RPC::Client.3 \

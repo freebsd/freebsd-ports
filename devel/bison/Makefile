@@ -13,9 +13,9 @@ COMMENT=	A parser generator from FSF, (mostly) compatible with Yacc
 BUILD_DEPENDS=	m4>=1.4.16,1:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	m4>=1.4.16,1:${PORTSDIR}/devel/m4
 
-USES=		charsetfix
+USES=		charsetfix perl5
 USE_XZ=		yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

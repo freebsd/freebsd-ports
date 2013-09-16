@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-SVN-Notify>=2.83:${PORTSDIR}/devel/p5-SVN-Notify \
 		p5-YAML>=0.81:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		SVN::Notify::Mirror.3 SVN::Notify::Mirror::ConfigData.3 \
 		SVN::Notify::Mirror::Rsync.3 SVN::Notify::Mirror::SSH.3

@@ -35,9 +35,9 @@ PATCHVERSION=	20050317
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GCCVERSION}
 
+USES=		gmake perl5
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--with-gcc --with-gnu-ld --with-gnu-as \

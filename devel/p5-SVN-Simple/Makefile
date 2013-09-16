@@ -18,7 +18,8 @@ COMMENT=	Simple interface to SVN::Delta::Editor
 BUILD_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		SVN::Simple::Edit.3 SVN::Simple::Editor.3
 

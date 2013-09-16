@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Collection of high performance c-string transformations
 
-USE_PERL5=	yes
+USES=		perl5
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
