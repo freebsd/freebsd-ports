@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rskkserv
-# Date created:		18 Aug 2000
-# Whom:                 Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rskkserv
 PORTVERSION=	2.95.4
@@ -14,7 +10,7 @@ MASTER_SITE_SUBDIR=	rskkserv/15241
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	An alternative implementation of skkserv written in Ruby
+COMMENT=	Alternative implementation of skkserv written in Ruby
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/tcpwrap.so:${PORTSDIR}/security/ruby-tcpwrap \
 		${SKKJISYO_BASE}/${SKKJISYO}:${SKK_MASTERDIR}
@@ -29,8 +25,8 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/eb.so:${PORTSDIR}/japanese/ruby-eb
 
 USE_RUBY=	yes
 USE_AUTOTOOLS=	autoconf213
-USE_GMAKE=	yes
 USE_RC_SUBR=	rskkserv
+USES=		gmake
 
 CONFIGURE_ARGS=	--with-ruby="${RUBY}" \
 		--with-dicfile="${SKKJISYO_BASE}/${SKKJISYO}" \
