@@ -1,9 +1,5 @@
-# New ports collection makefile for:   terminus-font
-# Date Created:                         04 Nov 2002
-# Whom:                                 Michael Hsin <mhsin@mhsin.org>
-#
+# Created by: Michael Hsin <mhsin@mhsin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	terminus-font
 PORTVERSION=	4.38
@@ -18,8 +14,8 @@ BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
-USE_PERL5_BUILD=yes
-USE_GMAKE=	yes
+USES=		gmake perl5
+USE_PERL5=	build
 
 OPTIONS_DEFINE=	AO2 DV1 GE2 GQ2 IJ1 KA2 HI2 LL2 TD1
 AO2_DESC=	Variant of letter 'a'

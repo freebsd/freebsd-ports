@@ -18,12 +18,8 @@ CONFIGURE_ARGS=	--enable-dynamic \
 		--with-extra-libs=${LOCALBASE}/lib
 CXXFLAGS+=	-fPIC
 GNU_CONFIGURE=	yes
-USES=		bison
-USE_GMAKE=	yes
+USES=		bison gmake perl5
 USE_LDCONFIG=	yes
-USE_PERL5=	yes
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/bin/bash,/bin/sh,' ${WRKSRC}/Makefile.std
@@ -33,4 +29,4 @@ post-patch:
 post-install:
 	${INSTALL_PROGRAM} `readlink ${WRKSRC}/bin/cvc3` ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
