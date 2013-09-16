@@ -17,7 +17,7 @@ OPTIONS_DEFAULT=LSOF
 RUN_DEPENDS+=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
-USE_PERL5=	yes
+USES=		perl5
 NO_BUILD=	yes
 SUB_FILES=	415.${PORTNAME}
 

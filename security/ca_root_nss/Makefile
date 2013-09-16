@@ -14,7 +14,8 @@ COMMENT=	The root certificate bundle from the Mozilla Project
 OPTIONS_DEFINE=	ETCSYMLINK
 ETCSYMLINK_DESC=	Add symlink to /etc/ssl/cert.pem
 
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	build
 NO_WRKSUBDIR=	yes
 
 CERTDIR?=	share/certs

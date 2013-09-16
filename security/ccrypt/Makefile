@@ -10,6 +10,7 @@ MASTER_SITES=	SF \
 MAINTAINER=	dev2@heesakkers.info
 COMMENT=	Command-line utility for encrypting and decrypting files and streams
 
+USES=		gmake
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -17,12 +18,12 @@ PLIST_SUB+=	NLS=""
 USES+=		gettext
 .else
 PLIST_SUB+=	NLS="@comment "
-USE_PERL5_BUILD=	yes
+USES+=		perl5
+USE_PERL5=	build
 CONFIGURE_ARGS+=	--disable-nls
 .endif
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 MAN1=	ccrypt.1 ccguess.1
 MLINKS=	ccrypt.1 ccencrypt.1 \

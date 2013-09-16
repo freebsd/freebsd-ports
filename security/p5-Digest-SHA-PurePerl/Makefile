@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Perl extension for SHA-1/224/256/384/512 in pure Perl
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 PORTEXAMPLES=	dups
 MAN3=	Digest::SHA::PurePerl.3

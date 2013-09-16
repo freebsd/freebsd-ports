@@ -38,7 +38,7 @@ HIGH_DESC=		Use the strongest cipher(s) at the cost of speed
 CONFIG_SUB=	PREFIX=\"${PREFIX}\" WWWDIR=\"${WWWDIR}\" \
 		HTTP_PORT=${WITH_HTTP_PORT} SSL_PORT=${WITH_SSL_PORT}
 NO_OPTIONS_SORT=yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 STAGE=		${WRKSRC}/_stage
@@ -122,7 +122,7 @@ CONFIG_SUB+=	X509="\# "
 BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13
 CONFIG_SUB+=	PERL=""
 PLIST_SUB+=	PERL=""
-USE_PERL5=	yes
+USES+=		perl5
 .else
 CONFIG_SUB+=	PERL="\# "
 PLIST_SUB+=	PERL="@comment "

@@ -21,10 +21,9 @@ LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
 		wraster:${PORTSDIR}/x11-wm/libwraster
 RUN_DEPENDS=	${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:${PORTSDIR}/graphics/wmicons
 
-USES=		pathfix pkgconfig
+USES=		pathfix perl5 pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USE_PERL5=	yes
 USE_XORG=	xft xinerama xmu xpm
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-nlsdir=${PREFIX}/share/locale \

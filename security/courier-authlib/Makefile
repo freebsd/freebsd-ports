@@ -1,9 +1,5 @@
-# New ports collection makefile for:	courier-authlib
-# Date created:				19 Dec 2004
-# Whom:					Oliver Lehmann
-#
+# Created by: Oliver Lehmann
 # $FreeBSD$
-#
 
 PORTNAME=	courier-authlib
 PORTVERSION=	0.65.0
@@ -34,12 +30,10 @@ OPTIONS_DEFINE+=	GDBM
 
 .else	# !defined(PKGNAMESUFFIX)
 
-USES=		iconv
+USES=		iconv gmake perl5
 USE_AUTOTOOLS=	libltdl
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_PERL5=	yes
 USE_SUBMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 #slave ports should have different UNIQUENAME, it is utilized by USE_LDCONFIG

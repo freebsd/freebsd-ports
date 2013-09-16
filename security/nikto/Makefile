@@ -20,7 +20,8 @@ SSLEAY_DESC=	Use NET::SSLeay for ssl scanning
 NO_BUILD=	yes
 
 USE_BZIP2=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 MAN1=		nikto.1
 
