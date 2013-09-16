@@ -19,13 +19,11 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
-USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv libutil libexo
 USE_XORG=	x11
-USES=		pkgconfig pathfix
+USES=		gmake pathfix perl5 pkgconfig
 
 CONFIGURE_ARGS=	--disable-debug
 

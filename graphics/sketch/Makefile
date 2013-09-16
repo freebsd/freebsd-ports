@@ -14,8 +14,8 @@ LICENSE=	GPLv3
 
 MAKEFILE=	makefile
 ALL_TARGET=
-USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USES=		gmake perl5
+USE_PERL5=	build
 USE_DOS2UNIX=	yes
 
 PLIST_FILES=	bin/sketch

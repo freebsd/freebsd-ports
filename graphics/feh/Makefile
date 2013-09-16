@@ -18,8 +18,8 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		giblib.1:${PORTSDIR}/graphics/giblib
 
 USE_XORG=	x11 xt xinerama
-USE_PERL5_RUN=	yes
-USE_GMAKE=	yes
+USES=		gmake perl5
+USE_PERL5=	run
 USE_BZIP2=	yes
 
 MAN1=		feh.1 feh-cam.1 gen-cam-menu.1

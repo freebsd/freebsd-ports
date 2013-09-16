@@ -334,7 +334,7 @@ CONFIGURE_ENV+=		SWIG="/nonexistent"
 .if ${PORT_OPTIONS:MPERL}
 CONFIGURE_ARGS+=	--enable-perl
 PLIST_SUB+=		WITH_PERL=""
-USE_PERL5=	yes
+USES+=			perl5
 MAN3+=			gv.3perl
 .else
 CONFIGURE_ARGS+=	--disable-perl

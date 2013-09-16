@@ -15,9 +15,8 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	${LOCALBASE}/lib/libLLVM-3.2.so:${PORTSDIR}/devel/llvm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PERL5=	yes
 USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake perl5
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	SHIVA

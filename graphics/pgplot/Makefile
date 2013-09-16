@@ -40,7 +40,8 @@ DOCS=	cpg/cpgplot.doc pgplot-routines.tex pgplot.doc pgplot.html \
 	readme.pgdisp rgb.txt
 SUFFIXES+=	doc
 PORTDOCS=	${DOCS:C|.*/||}
-USE_PERL5_BUILD=	yes
+USES+=		perl5
+USE_PERL5=	build
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
