@@ -28,6 +28,7 @@ USE_GL=		gl
 USE_OPENAL=	yes
 USE_LUA=	5.1
 USE_GCC=	any # problems in luabind; recheck with next update
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB} -lintl
 
 PORTDOCS=	*
 
