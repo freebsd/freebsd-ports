@@ -7,10 +7,12 @@
 
 # TODO
 # - DOCs
+# - i do not like the way logstash.in starts/stops the daemon
+# - TMP must NOT be world-writable
 # 
 PORTNAME=	logstash
-PORTVERSION=	1.1.12
-PORTREVISION=	9
+PORTVERSION=	1.2.1
+#PORTREVISION=	9
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://logstash.objects.dreamhost.com/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-flatjar
@@ -50,16 +52,16 @@ PLIST_SUB+=	LOGSTASH_HOME=${LOGSTASH_HOME_REL} LOGSTASH_JAR=${LOGSTASH_JAR} \
 RUN_DEPENDS+=	rubygem-ffi-rzmq>=0:${PORTSDIR}/devel/rubygem-ffi-rzmq
 .endif
 
-do-patch:
-	/usr/bin/bspatch ${DISTDIR}/${DIST_SUBDIR}/${LOGSTASH_JAR} \
-		${WRKDIR}/${LOGSTASH_JAR}.patched \
-		${FILESDIR}/view_fix.patch
+do-extract:
+	${INSTALL} -d ${WRKDIR}
+	${CP} ${DISTDIR}/${LOGSTASH_JAR} ${WRKDIR}/
+
 do-install:
 	${MKDIR} ${LOGSTASH_RUN}
 	${MKDIR} ${ETCDIR}
 	${MKDIR} ${LOGSTASH_HOME}
 	${MKDIR} ${LOGSTASH_DATA_DIR}
-	${INSTALL_DATA} ${WRKDIR}/${LOGSTASH_JAR}.patched ${LOGSTASH_HOME}/${LOGSTASH_JAR}
+	${INSTALL_DATA} ${WRKDIR}/${LOGSTASH_JAR} ${LOGSTASH_HOME}/${LOGSTASH_JAR}
 	${INSTALL_DATA} ${FILESDIR}/logstash.conf.sample ${ETCDIR}
 	@if [ ! -f ${ETCDIR}/logstash.conf ]; then \
 		${CP} -p ${ETCDIR}/logstash.conf.sample ${ETCDIR}/logstash.conf ; \
