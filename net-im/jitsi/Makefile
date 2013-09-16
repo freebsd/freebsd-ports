@@ -2,20 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	jitsi
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	net-im java
-MASTER_SITES=	http://www.c-s.li/ports/ \
-		https://download.jitsi.org/jitsi/src/
-DISTNAME=	jitsi-src-2.2.4603.9615
+MASTER_SITES=	http://aetos.it.teithe.gr/~tzabal/ports/jitsi/ \
+		http://www.c-s.li/ports/
+DISTNAME=	jitsi-master-084e2b42b5
 
 MAINTAINER=	tzabal@it.teithe.gr
 COMMENT=	Open source IM and VoIP application
 
 MAN1=		jitsi.1
+
 USE_ZIP=	yes
 USE_JAVA=	yes
 USE_ANT=	yes
 MAKE_ARGS=	rebuild
+USE_LDCONFIG=	${PREFIX}/lib/jitsi/lib/native
+
+ONLY_FOR_ARCHS=	i386 amd64
 
 DESKTOP_ENTRIES="Jitsi" \
 		"VoIP and Instant Messenger" \
@@ -43,8 +47,6 @@ do-install:
 	@${ECHO_CMD} ">> Installing library jars..."
 	@cd ${WRKSRC}/lib/bundle && ${COPYTREE_SHARE} \* \
 		${PREFIX}/lib/jitsi/lib/bundle "! -name junit.jar"
-	@${INSTALL_DATA} ${WRKSRC}/lib/os-specific/freebsd/jdic_stub.jar \
-		${PREFIX}/lib/jitsi/lib
 	@cd ${WRKSRC}/lib && ${COPYTREE_SHARE} "felix.jar jdic-all.jar \
 		felix.client.run.properties logging.properties" \
 			${PREFIX}/lib/jitsi/lib
@@ -71,5 +73,8 @@ do-install:
 	@${ECHO_CMD} ">> Installing Jitsi's logo..."
 	@${INSTALL_DATA} ${WRKSRC}/resources/images/logo/sc_logo_128x128.png \
 		${PREFIX}/share/pixmaps/jitsi.png
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
