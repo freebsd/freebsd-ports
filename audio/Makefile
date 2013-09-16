@@ -325,7 +325,6 @@
     SUBDIR += icecast2
     SUBDIR += icegenerator
     SUBDIR += ices
-    SUBDIR += ices0
     SUBDIR += id3ed
     SUBDIR += id3el
     SUBDIR += id3lib
