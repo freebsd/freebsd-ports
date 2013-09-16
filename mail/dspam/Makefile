@@ -73,7 +73,7 @@ OPTIONS_DEFAULT=	SYSLOG DEBUG DAEMON CLAMAV CLAMAV_LOCAL \
 		PGSQL SQLITE3 HASH
 
 MAKE_JOBS_UNSAFE=	yes
-USE_PERL5=	yes
+USES=		perl5
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -381,7 +381,6 @@ RUN_DEPENDS+=	p5-GD-Graph3d>=0:${PORTSDIR}/graphics/p5-GD-Graph3d
 RUN_DEPENDS+=	p5-GD-TextUtil>=0:${PORTSDIR}/graphics/p5-GD-TextUtil
 CONFIGURE_ARGS+=--enable-logging
 CONFIGURE_ARGS+=--enable-user-logging
-USE_PERL5=	yes
 PLIST_SUB+=	WebUI=""
 _SED_SCRIPT+=	-e 's/%%WebUI%%//g'
 _SED_SCRIPT+=	-e 's,%%WWWDIR%%,${WWWDIR},g'
