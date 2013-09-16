@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opendnssec
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	dns
 MASTER_SITES=	http://dist.opendnssec.org/source/
 
