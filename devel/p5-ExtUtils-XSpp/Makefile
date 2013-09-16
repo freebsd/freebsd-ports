@@ -14,7 +14,8 @@ COMMENT=	XS for C++ in Perl
 BUILD_DEPENDS=	p5-Test-Base>=0:${PORTSDIR}/devel/p5-Test-Base \
 		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN1=		xspp.1
 MAN3=		ExtUtils::XSpp.3 \

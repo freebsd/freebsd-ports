@@ -16,7 +16,8 @@ RUN_DEPENDS=	p5-Archive-Zip>=1.00:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-PAR-Dist>=0.32:${PORTSDIR}/devel/p5-PAR-Dist
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		PAR.3 \
 		PAR::Environment.3 \

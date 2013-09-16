@@ -17,8 +17,8 @@ COMMENT=	A Perl script to load directories into a Subversion repository
 RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion16
 
+USES=		perl5
 USE_BZIP2=	yes
-USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/subversion-${SVN_PORTVERSION}/contrib/client-side/svn_load_dirs
 

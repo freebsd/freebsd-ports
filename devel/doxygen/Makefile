@@ -18,11 +18,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-USES=		bison iconv
+USES=		bison iconv perl5 gmake
 ALL_TARGET=	all
-USE_PERL5=	yes
 HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
 QT_NONSTANDARD=	yes	# non-standard configure arguments
 CONFIGURE_ARGS=	--prefix ${PREFIX} --perl ${PERL} --make ${GMAKE} \
 		--install "${INSTALL}"
