@@ -19,7 +19,7 @@ LICENSE=	GPLv3
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-USE_GMAKE=	yes
+USES=		gmake
 MYARCH=		${ARCH}
 BOOKDIR=	.
 PORTDOCS=	Readme.txt polyglot.ini
@@ -68,6 +68,13 @@ ALL_TARGET=	${TGTBLD} ARCH=${MYARCH} COMP=${MYCC}
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
+
+.if exists(/usr/bin/clang) && ${OSVERSION} > 1000024
+MYCC=	clang
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "s/^PREFIX =/PREFIX ?=/" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stockfish ${PREFIX}/bin/stockfish
