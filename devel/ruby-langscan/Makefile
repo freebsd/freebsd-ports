@@ -17,9 +17,10 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	p5-PPI>=0:${PORTSDIR}/textproc/p5-PPI
 BUILD_DEPENDS=	flex>=2.5.31:${PORTSDIR}/textproc/flex
 
+USES=		perl5
 USE_AUTOTOOLS=	aclocal:env automake:env autoconf:env
 USE_RUBY=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
 HAS_CONFIGURE=	yes

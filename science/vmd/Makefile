@@ -22,8 +22,8 @@ LIB_DEPENDS=		tcl85:${PORTSDIR}/lang/tcl85 \
 			netcdf:${PORTSDIR}/science/netcdf
 RUN_DEPENDS=		${PYNUMERIC}
 
-USE_PERL5_BUILD=	yes
-USE_GMAKE=		yes
+USES=			gmake perl5
+USE_PERL5=		build
 USE_GL=			glu
 USE_PYTHON=		yes
 

@@ -16,8 +16,8 @@ COMMENT=	Object-oriented toolkit for particle physics applications by CERN
 
 WRKSRC=		${WRKDIR}/${PORTVERSION}/${PORTNAME:U}
 
-USE_PERL5_BUILD=	yes
-USE_GMAKE=	yes
+USES=		gmake perl5
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gmake
 USE_LDCONFIG=	yes

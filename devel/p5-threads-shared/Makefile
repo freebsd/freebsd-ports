@@ -14,7 +14,8 @@ COMMENT=	Perl extension for sharing data structures between threads
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	threads::shared.3
 

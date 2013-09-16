@@ -13,7 +13,8 @@ MASTER_SITES=	CPAN
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for Emoji encodings and cross-mapping tables
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=	Encode::JP::Emoji.3 \
 	Encode::JP::Emoji::Encoding.3 \
