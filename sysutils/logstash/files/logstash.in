@@ -20,7 +20,7 @@
 #     "web": Starts logstash as a web ui
 #     "agent": Justs works as a log shipper 
 #
-# logstash_logging (bool):
+# logstash_log (bool):
 #   Set to "NO" by default.
 #   Set it to "YES" to enable logstash logging to file
 #   Default output to /var/log/logstash.log
