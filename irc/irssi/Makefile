@@ -13,11 +13,9 @@ LIB_DEPENDS=	glib-2:${PORTSDIR}/devel/glib20
 
 CONFLICTS=	irssi-devel-[0-9]* zh-irssi-[0-9]*
 
-USES=		pkgconfig ncurses
+USES=		pkgconfig ncurses gmake
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-WANT_PERL=	yes
 
 MAN1=		irssi.1
 
@@ -40,7 +38,7 @@ USE_OPENSSL=	yes
 # Process options.
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=	yes
+USES+=		perl5
 CONFIGURE_ARGS+=	--with-perl-lib=site
 PLIST_SUB+=	WITH_PERL=""
 .else

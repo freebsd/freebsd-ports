@@ -23,7 +23,6 @@ USE_OPENSSL=	yes
 SUB_FILES=	pkg-message
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 USE_BZIP2=	yes
-WANT_PERL=	yes
 CFLAGS:=	${CFLAGS:C/-O2/-g -O/g}
 
 OPTIONS_DEFINE=	IPV6 TCL PERL SSL TERMCAP DOCS
@@ -51,7 +50,7 @@ CONFIGURE_ARGS+=	--without-tcl
 # SITE_PERL and PERL_VERSION to create the path.
 #
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=	yes
+USES+=		perl5
 CONFIGURE_ARGS+=	--with-perl=${SITE_PERL}/../../${PERL_VERSION}/mach/CORE
 .else
 CONFIGURE_ARGS+=	--without-perl

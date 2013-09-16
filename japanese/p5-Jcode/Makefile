@@ -13,7 +13,9 @@ MASTER_SITES=	CPAN
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension interface to convert Japanese text
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
+
 MAN3=		Jcode.3 Jcode::Nihongo.3
 
 .include <bsd.port.pre.mk>

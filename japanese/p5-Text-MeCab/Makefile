@@ -28,7 +28,8 @@ MAN3=			Text::MeCab.3 \
 			Text::MeCab::Dict.3 \
 			Text::MeCab::Node.3
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 CONFIGURE_ARGS=	</dev/null
 
 # dictionary encoding (euc-jp, shift_jis, utf-8)
