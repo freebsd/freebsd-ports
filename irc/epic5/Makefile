@@ -22,7 +22,6 @@ MAN1=		epic5.1
 USE_OPENSSL=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 USE_BZIP2=	yes
-WANT_PERL=	yes
 CFLAGS:=	${CFLAGS:C/-O2/-g -O/g}
 
 OPTIONS_DEFINE=	IPV6 TCL PERL SSL TERMCAP DOCS RUBY
@@ -48,7 +47,7 @@ CONFIGURE_ARGS+=	--without-tcl
 #  enable perl5 support (requires perl 5.6.1 or newer)
 #
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=	yes
+USES+=		perl5
 CONFIGURE_ARGS+=	--with-perl
 .else
 CONFIGURE_ARGS+=	--without-perl

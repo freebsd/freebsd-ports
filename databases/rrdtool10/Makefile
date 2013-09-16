@@ -10,13 +10,12 @@ MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/rrdtool-1.0.x/
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Round Robin Database Tools
 
-USE_PERL5=	yes
 MAKE_ENV=	PERL=${PERL}
 
 CONFLICTS=	rrdtool-1.2*
 LATEST_LINK=	rrdtool10
 
-USES=		pkgconfig
+USES=		pkgconfig perl5
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-local-zlib \

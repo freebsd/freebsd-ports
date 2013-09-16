@@ -15,9 +15,9 @@ MASTER_SITES=	http://www.ircservices.za.net/download/ \
 MAINTAINER=	bu7cher@yandex.ru
 COMMENT=	A system of IRC services for IRC networks
 
-USE_PERL5_BUILD=yes
+USES=		gmake perl5
+USE_PERL5=	build
 HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_RC_SUBR=	ircservices
 
 DIST_SUBDIR=	${PORTNAME}

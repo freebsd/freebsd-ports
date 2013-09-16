@@ -17,7 +17,8 @@ COMMENT=	A Script Assist You with MySQL Configuration
 LICENSE=	GPLv3
 
 FETCH_ARGS=	-pRr
-USE_PERL5=	yes
+
+USES=		perl5
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME}.pl

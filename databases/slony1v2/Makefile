@@ -16,9 +16,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
 GNU_CONFIGURE=	yes
-USES=		bison
+USES=		bison gmake
 USE_PGSQL=	yes
-USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_RC_SUBR=	slon
 
@@ -35,7 +34,7 @@ CONFIGURE_ENV+=	FLEX=${LOCALBASE}/bin/flex
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPERLTOOLS}
-USE_PERL5=	yes
+USES+=		perl5
 CONFIGURE_ARGS+=--with-perltools=${LOCALBASE}/sbin
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 BUILD_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
