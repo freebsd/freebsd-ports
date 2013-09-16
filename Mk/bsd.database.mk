@@ -506,9 +506,6 @@ _SQLITE_VER=	 ${USE_SQLITE}
 .if ${_SQLITE_VER} == "3"
 LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
 SQLITE_VER=	${_SQLITE_VER}
-.elif ${_SQLITE_VER} == "34"
-LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
-SQLITE_VER=	${_SQLITE_VER}
 .elif ${_SQLITE_VER} == "2"
 LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
 SQLITE_VER=	${_SQLITE_VER}
