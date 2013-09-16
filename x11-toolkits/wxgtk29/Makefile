@@ -21,7 +21,6 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png\
 
 USES+=		iconv gmake pkgconfig
 USE_BZIP2=	yes
-USE_GCC=	any
 USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		glu
 USE_GNOME=	gtk20
