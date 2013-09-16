@@ -1,6 +1,7 @@
 bin/darktable
 bin/darktable-cli
 bin/darktable-cltest
+share/appdata/darktable.appdata.xml
 %%DATADIR%%/darktable.gtkrc
 %%DATADIR%%/darktablerc
 %%DATADIR%%/gdb_commands
@@ -171,7 +172,6 @@ lib/darktable/plugins/lighttable/libdarktable_label.so
 lib/darktable/plugins/lighttable/libexport.so
 lib/darktable/plugins/lighttable/libfilmstrip.so
 lib/darktable/plugins/lighttable/libfilter.so
-lib/darktable/plugins/lighttable/libgeotagging.so
 lib/darktable/plugins/lighttable/libglobal_toolbox.so
 lib/darktable/plugins/lighttable/libhinter.so
 lib/darktable/plugins/lighttable/libhistogram.so
@@ -215,6 +215,7 @@ share/locale/nl/LC_MESSAGES/darktable.mo
 share/locale/pl/LC_MESSAGES/darktable.mo
 share/locale/pt_BR/LC_MESSAGES/darktable.mo
 share/locale/pt_PT/LC_MESSAGES/darktable.mo
+share/locale/ru/LC_MESSAGES/darktable.mo
 share/locale/sq/LC_MESSAGES/darktable.mo
 share/locale/sv/LC_MESSAGES/darktable.mo
 share/locale/uk/LC_MESSAGES/darktable.mo
@@ -236,3 +237,4 @@ share/locale/uk/LC_MESSAGES/darktable.mo
 @dirrm %%DATADIR%%/kernels
 @dirrm %%DATADIR%%/js
 @dirrm %%DATADIR%%
+@dirrmtry share/appdata
