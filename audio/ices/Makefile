@@ -13,11 +13,11 @@ COMMENT=	Vorbis streaming source client for icecast 2
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
-		shout:${PORTSDIR}/audio/libshout2 \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		speex:${PORTSDIR}/audio/speex \
-		theora:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
+		libshout.so:${PORTSDIR}/audio/libshout2 \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libspeex.so:${PORTSDIR}/audio/speex \
+		libtheora.so:${PORTSDIR}/multimedia/libtheora
 
 OPTIONS_DEFINE=	ALSA
 
@@ -30,12 +30,7 @@ CONFIGURE_ARGS=	--disable-roaraudio --disable-sun-audio
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
-.else
-CONFIGURE_ARGS+=--disable-alsa
-.endif
+ALSA_LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_CONFIGURE_ENABLE+=	alsa
 
 .include <bsd.port.mk>
