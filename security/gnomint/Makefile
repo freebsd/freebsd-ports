@@ -11,17 +11,14 @@ MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	X.509 Certification Authority management tool
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
 		gnutls:${PORTSDIR}/security/gnutls \
 		sqlite3:${PORTSDIR}/databases/sqlite3
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		gmake perl5 pkgconfig
 USE_GNOME=	gconf2 gdkpixbuf2 glib20 gtk20
-USE_PERL5=	yes
 CFLAGS:=	${CFLAGS:C/-Werror//}
 
 

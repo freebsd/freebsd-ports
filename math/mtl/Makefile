@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	mtl
-# Date created:			Mar 15, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	mtl
 DISTVERSION=	2.1.2-23.tentative
@@ -23,7 +18,8 @@ CONFIGURE_ENV=	CXXCPP="${CXXCPP}"
 CXXCPP?=	${CXX} -E
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes
-USE_PERL5_BUILD=	yes
+USES=		perl5
+USE_PERL5=	build
 WRKSRC =	${WRKDIR}/${DISTNAME:R}
 
 post-patch:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fcheck
-# Date created:		2008-01-31
-# Whom:			Lars Engels <lme@FreeBSD.org>
-#
+# Created by: Lars Engels <lme@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fcheck
 PORTVERSION=	2.07.59
@@ -20,7 +16,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}
 PORTDOCS=	*
 PLIST_FILES=	sbin/${PORTNAME} etc/${PORTNAME}.cfg.sample
 NO_BUILD=	YES
-USE_PERL5=	YES
+USES=		perl5
 
 .include <bsd.port.pre.mk>
 

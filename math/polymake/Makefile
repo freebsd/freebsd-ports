@@ -1,9 +1,5 @@
-# New ports collection makefile for:	polymake
-# Date created:				21 December 2004
-# Whom:					Ewgenij Gawrilow <gawrilow@math.tu-berlin.de>
-#
+# Created by: Ewgenij Gawrilow <gawrilow@math.tu-berlin.de>
 # $FreeBSD$
-#
 
 PORTNAME=	polymake
 PORTVERSION=	2.9.9
@@ -25,9 +21,8 @@ RUN_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		readline.[56]:${PORTSDIR}/devel/readline
 
-USE_GMAKE=	yes
+USES=		gmake perl5
 USE_BZIP2=	yes
-USE_PERL5=	yes
 USE_GCC=	4.2+
 USE_JAVA=	yes
 JAVA_BUILD=	yes
