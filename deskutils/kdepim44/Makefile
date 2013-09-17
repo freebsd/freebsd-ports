@@ -8,6 +8,7 @@ CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/kdepim-${PORTVERSION}/src
 DIST_SUBDIR=	KDE
+PKGNAMESUFFIX=	44
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries for KDE-PIM applications
@@ -18,8 +19,7 @@ LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
 		qca:${PORTSDIR}/devel/qca
 RUN_DEPENDS=	${KDE4_PREFIX}/bin/akonadi_mbox_resource:${PORTSDIR}/deskutils/kdepim44-runtime
 
-LATEST_LINK=	${PORTNAME}44
-CONFLICTS_INSTALL=	kdepim-4.[89].*
+CONFLICTS_INSTALL=	kdepim-4.*
 
 USE_KDE4=	kdelibs pimlibs \
 		akonadi kdeprefix kdehier automoc4 oxygen

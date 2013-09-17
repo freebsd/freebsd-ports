@@ -8,14 +8,14 @@ CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/kdepim-${PORTVERSION}/src
 DIST_SUBDIR=	KDE
+PKGNAMESUFFIX=	44
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries for KDE-PIM applications
 
 LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 
-CONFLICTS_INSTALL=	kdepim-runtime-4.[89].*
-LATEST_LINK=	${PORTNAME}44
+CONFLICTS_INSTALL=	kdepim-runtime-4.*
 
 USE_KDE4=	pimlibs kdeprefix kdehier sharedmime automoc4
 USES=		cmake:outsource

@@ -17,7 +17,7 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 CONFLICTS=		akonadi-google-0.*
-CONFLICTS_INSTALL=	kdepim-runtime-4.4.*
+CONFLICTS_INSTALL=	kdepim-runtime44-4.*
 
 USE_XZ=		yes
 USE_GNOME=	libxml2
