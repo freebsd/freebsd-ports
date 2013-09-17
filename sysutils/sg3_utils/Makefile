@@ -3,6 +3,7 @@
 
 PORTNAME=	sg3_utils
 PORTVERSION=	1.36
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
 EXTRACT_SUFX=	.tgz
