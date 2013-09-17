@@ -39,12 +39,14 @@ CONFIGURE_ENV+=	FOX_CFLAGS="${FOX_CFLAGS}" \
 
 .if ${PORT_OPTIONS:MFOX16}
 LIB_DEPENDS+=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16
+CONFIGURE_ENV+=	RESWRAP=${LOCALBASE}/bin/reswrap
 FOX_CFLAGS+=	`fox-config --cflags`
 FOX_LIBS+=	`fox-config --libs`
 .endif
 
 .if ${PORT_OPTIONS:MFOX17}
 LIB_DEPENDS+=	FOX-1.7:${PORTSDIR}/x11-toolkits/fox17
+CONFIGURE_ENV+=	RESWRAP=${LOCALBASE}/bin/fox-1.7/reswrap
 FOX_CFLAGS+=	`pkgconf fox17 --cflags`
 FOX_LIBS+=	`pkgconf fox17 --libs`
 .endif
