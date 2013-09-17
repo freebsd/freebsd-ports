@@ -1,5 +1,5 @@
 --- CMakeLists.txt.orig	2013-07-28 12:32:06.000000000 +0200
-+++ CMakeLists.txt	2013-09-16 18:29:12.000000000 +0200
++++ CMakeLists.txt	2013-09-17 09:22:29.000000000 +0200
 @@ -30,7 +30,9 @@
  # when we override default install prefix, assume full path is used...
  
@@ -20,7 +20,45 @@
      set(INSTALL_LOCALE share/locale)
      set(INSTALL_DOCDIR share/doc/${PROJECT_NAME})
      set(INSTALL_INFODIR share/info)
-@@ -566,11 +568,11 @@
+@@ -207,15 +209,17 @@
+ 
+ 
+ if(UNIX OR MSYS OR MINGW OR CYGWIN)
+-    check_library_exists(dl dlopen "" HAVE_DL_LIB)
+-    if (HAVE_DL_LIB)
+-        set (UCOMMON_LIBS ${UCOMMON_LIBS} dl)
+-    else()
+-        check_library_exists(compat dlopen "" HAVE_COMPAT_LIB)
+-        if(HAVE_COMPAT_LIB)
+-            set (UCOMMON_LIBS ${UCOMMON_LIBS} compat)
++    if (NOT ${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
++        check_library_exists(dl dlopen "" HAVE_DL_LIB)
++        if (HAVE_DL_LIB)
++            set (UCOMMON_LIBS ${UCOMMON_LIBS} dl)
++        else()
++            check_library_exists(compat dlopen "" HAVE_COMPAT_LIB)
++            if(HAVE_COMPAT_LIB)
++                set (UCOMMON_LIBS ${UCOMMON_LIBS} compat)
++            endif()
+         endif()
+-    endif()
++    endif ()
+ 
+     check_library_exists(dld shl_load "" HAVE DLD_LIB)
+     if (HAVE_DLD_LIB)
+@@ -309,7 +313,11 @@
+ check_include_files(sys/event.h HAVE_SYS_EVENT_H)
+ check_include_files(syslog.h HAVE_SYSLOG_H)
+ check_include_files(openssl/ssl.h HAVE_OPENSSL)
++if (${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
++    set (HAVE_OPENSSL_FIPS_H "")
++else ()
+ check_include_files(openssl/fips.h HAVE_OPENSSL_FIPS_H)
++endif ()
+ check_include_files(libintl.h HAVE_LIBINTL_H)
+ check_include_files(netinet/in.h HAVE_NETINET_IN_H)
+ check_include_files(net/if.h HAVE_NET_IF_H)
+@@ -566,11 +574,11 @@
  endif()
  
  if(NOT WIN32)
