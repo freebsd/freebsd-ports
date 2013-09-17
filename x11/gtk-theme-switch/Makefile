@@ -6,12 +6,13 @@ PORTVERSION=	1.0.1
 PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	http://www.muhri.net/
+PKGNAMESUFFIX=	1
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A command line tool for switching GTK+ themes
+COMMENT=	Command line tool for switching GTK+ themes
 
 USE_GNOME=	gtk12
-USE_GMAKE=	yes
+USES=		gmake
 
 MAN1=		gtk-theme-switch.1
 
