@@ -3,8 +3,14 @@
  The port has a generic default config, please adjust your
  settings in file: %%PREFIX%%/etc/monitorix.conf
 
- The configuration file changed between 2.6.x and 3.0.0.
- It is suggested that you back up your old config file and
- use the information there to write the new one.
+ The configuration file is subject to change with each release,
+ and has definitely changed with the latest update.
+
+ It is suggested that you run;
+
+ # diff -u %%PREFIX%%/etc/monitorix.conf.sample \
+     %%PREFIX%%/etc/monitorix.conf
+
+ and have a look at the new configuration file options.
 
 ================================================================
