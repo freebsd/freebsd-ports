@@ -8,3 +8,6 @@ You can also find a sample configuration file in
 
   %%EXAMPLESDIR%%/ansible.cfg
 
+Ansible 1.3.0, includes "accelerate" mode, which is
+faster and has fewer dependencies than "fireball" mode.
+To use it, install security/py-keyczar.
