@@ -19,9 +19,9 @@ SEE_DEBUG_DESC=	Internal SEE library debugging
 
 CONFLICTS=	see-[0-9]*
 
-USES=	pathfix
+USES=		pathfix perl5
 USE_LDCONFIG=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}

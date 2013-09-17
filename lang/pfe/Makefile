@@ -1,9 +1,5 @@
-# New ports collection makefile for:    pfe-devel
-# Date created:         29 October 2000
-# Whom:                 patrick
-#
+# Created by: patrick
 # $FreeBSD$
-#
 
 PORTNAME=	pfe
 PORTVERSION=	0.33.71
@@ -14,9 +10,9 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Implementation of ANSI Forth
 
 USE_BZIP2=	yes
-USE_PERL5_BUILD=yes
+USES=		gmake perl5
+USE_PERL5=	build
 USE_GCC=	4.2+
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	pfe/configure
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"

@@ -18,10 +18,9 @@ COMMENT=	GNU Compiler Collection 3.4
 
 SUFFIX=		34
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
-USES=		bison iconv
+USES=		bison gmake iconv perl5
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USE_PERL=	build
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure

@@ -74,12 +74,10 @@ CONFIGURE_ARGS+=	--without-debug \
 MAKE_ARGS=	"CONFIGUREARGS=${CONFIGURE_ARGS}"
 MAKE_ENV=	"ac_cv_lib_nettle_nettle_md5_init=no"
 
-USES=		bison gettext
-USE_GMAKE=	yes
+USES=		bison gettext gmake perl5
 
 # Allow building Embedded Perl
 CONFIGURE_ARGS+=	--with-perl
-USE_PERL5=	YES
 
 PLIST_FILES=	bin/pike bin/pike78 bin/hilfe
 

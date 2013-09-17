@@ -19,9 +19,8 @@ LICENSE=	GPLv3 LGPL3
 
 ONLY_FOR_ARCHS=		i386
 
-USE_GMAKE=		yes
-USES=			bison iconv
-USE_PERL5_BUILD=	yes
+USES=			bison gmake iconv perl5
+USE_PERL5=		build
 
 WRKSRC=			${WRKDIR}/build
 

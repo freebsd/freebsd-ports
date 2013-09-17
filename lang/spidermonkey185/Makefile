@@ -17,13 +17,11 @@ LIB_DEPENDS=		nspr4:${PORTSDIR}/devel/nspr
 
 CONFLICTS=		njs-[0-9]*
 
-#USES=			pkgconfig:build
+USES=			gmake pathfix pkgconfig
 USE_AUTOTOOLS=		autoconf213:env
 GNU_CONFIGURE=		yes
-USE_GMAKE=		yes
-USE_GNOME=		gnomehack
 USE_LDCONFIG=		yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=		build
 USE_PYTHON_BUILD=	2.5-2.7
 
 WRKSRC=			${WRKDIR}/js-${PORTVERSION}/js/src
