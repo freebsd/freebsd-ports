@@ -6,6 +6,7 @@ PORTVERSION=	1.2.10
 PORTREVISION=	13
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
+PKGNAMESUFFIX=	12
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Some useful routines of C programming (previous stable version)

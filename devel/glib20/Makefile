@@ -14,7 +14,6 @@ COMMENT=	Some useful routines of C programming (current stable version)
 
 LICENSE=	LGPL20
 
-LATEST_LINK=	glib20
 USE_XZ=		yes
 PORTSCOUT=	limitw:1,even
 
