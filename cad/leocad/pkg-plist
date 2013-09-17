@@ -6,12 +6,13 @@ share/icons/hicolor/24x24/apps/leocad.png
 share/icons/hicolor/256x256/apps/leocad.png
 share/icons/hicolor/32x32/apps/leocad.png
 share/icons/hicolor/48x48/apps/leocad.png
+share/icons/hicolor/scalable/apps/leocad.svg
 share/icons/hicolor/scalable/mimetypes/application-vnd.leocad.svg
-%%DATADIR%%/icon.png
 %%DATADIR%%/library.bin
 share/mime/application/vnd.leocad.xml
-share/mime/packages/leocad-mime.xml
+share/mime/packages/leocad.xml
 share/pixmaps/leocad.png
-share/pixmaps/leocad.svg
+@dirrmtry share/mime/application
+@dirrmtry share/mime
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
