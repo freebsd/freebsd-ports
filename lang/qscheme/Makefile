@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qscheme
-# Date created:			6 Dec 2001
-# Whom:				erik@smluc.org
-#
+# Created by: erik@smluc.org
 # $FreeBSD$
-#
 
 PORTNAME=	qscheme
 PORTVERSION=	0.5.1
@@ -19,9 +15,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall\
 		${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/gmp
 LIB_DEPENDS=	getline:${PORTSDIR}/devel/libgetline
 
-USE_PERL5_BUILD=	yes
+USES=		gmake perl5
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 CONFIGURE_ARGS=	--with-pcre-dir=${LOCALBASE}/lib \

@@ -28,9 +28,9 @@ CYRUS_DESC=	Use Cyrus SASL backend (not supported)
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 USE_OPENSSL=	yes
-USES=		iconv
+USES=		iconv perl5
 USE_RC_SUBR=	jabberd
 USE_LDCONFIG=	${PREFIX}/lib/jabberd
 CONFIGURE_ARGS+=	--localstatedir=/var \

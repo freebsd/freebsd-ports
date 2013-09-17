@@ -24,7 +24,8 @@ TEST_DEPENDS=	p5-Text-TestBase>0:${PORTSDIR}/textproc/p5-Text-TestBase \
 		p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		FormValidator::Lite.3 \
 		FormValidator::Lite::Constraint.3 \

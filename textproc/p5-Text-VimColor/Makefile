@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		${LOCALBASE}/bin/vim:${PORTSDIR}/editors/vim
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		text-vimcolor.1
 MAN3=		Text::VimColor.3

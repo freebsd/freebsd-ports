@@ -1,9 +1,5 @@
-# New ports collection makefile for:	uhub
-# Date created:		16 Oct 2009
-# Whom:			Yashin Dmitry <yashin.dm@gmail.com>
-#
+# Created by: Yashin Dmitry <yashin.dm@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	uhub
 PORTVERSION=	0.4.0
@@ -16,8 +12,8 @@ COMMENT=	High performance peer-to-peer hub for the ADC network
 
 LICENSE=	GPLv3
 
-USE_PERL5_BUILD=yes
-USE_GMAKE=	yes
+USES=		gmake perl5
+USE_PERL5=	build
 USE_SQLITE=	yes
 
 USE_RC_SUBR=	uhub

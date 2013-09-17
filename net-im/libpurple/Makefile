@@ -194,7 +194,7 @@ PLIST_SUB+=		DBUS="@comment not installed: "
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=		yes
+USES+=			perl5
 CONFIGURE_ARGS+=	--with-perl-lib=site
 PLIST_SUB+=		PERL:=""
 .if !defined(PIDGIN_SLAVE)
