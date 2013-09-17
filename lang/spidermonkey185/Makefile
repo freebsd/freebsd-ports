@@ -17,7 +17,7 @@ LIB_DEPENDS=		nspr4:${PORTSDIR}/devel/nspr
 
 CONFLICTS=		njs-[0-9]*
 
-USES=			gmake pathfix pkgconfig
+USES=			gmake pathfix perl5 pkgconfig
 USE_AUTOTOOLS=		autoconf213:env
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
