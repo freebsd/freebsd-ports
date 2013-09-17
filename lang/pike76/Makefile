@@ -83,7 +83,7 @@ CONFIGURE_ARGS+=	--without-debug \
 
 MAKE_ARGS=	CONFIGUREARGS="${CONFIGURE_ARGS}"
 
-USES=		bison gettext gmake perl
+USES=		bison gettext gmake perl5
 
 # Allow building Embedded Perl
 CONFIGURE_ARGS+=	--with-perl
