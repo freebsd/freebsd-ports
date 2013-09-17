@@ -1,7 +1,5 @@
 # Created by: Cristiano Rolim Pereira <cristianorolim@hotmail.com>
-#
 # $FreeBSD$
-#
 
 COMMENT=	RFC3195 input support for rsyslog
 MASTERDIR=	${.CURDIR}/../rsyslog6
