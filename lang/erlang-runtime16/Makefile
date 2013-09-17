@@ -52,6 +52,10 @@ OPTIONS_DEFAULT=SMP OPENSSL THREADS SCTP KQUEUE
 
 ERL_RELEASE=	R${PORTVERSION:S/.//g:U}
 
+USES=		gmake perl5
+USE_CSTD=	gnu89
+GNU_CONFIGURE=	yes
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -117,11 +121,6 @@ WX_COMPS=	wx contrib
 WX_UNICODE=	yes
 CONFIGURE_ARGS+=--with-wx-config=${WX_CONFIG}
 .endif
-
-USE_GMAKE=	yes
-USE_CSTD=	gnu89
-USE_PERL5=	yes
-GNU_CONFIGURE=	yes
 
 .if ${PORT_OPTIONS:MODBC}
 CONFIGURE_ARGS+=--with-odbc
