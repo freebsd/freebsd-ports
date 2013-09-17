@@ -67,7 +67,7 @@ PLIST_SUB+=	WITH_RUBY="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPERL_MODULE}
-USES=		perl5
+USES+=		perl5
 CONFIGURE_ARGS+=	--enable-perl --enable-perl-site-install
 PLIST_SUB+=	WITH_PERL=""
 .else
