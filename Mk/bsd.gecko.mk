@@ -502,8 +502,8 @@ MOZILLA_BIN?=	${PORTNAME}-bin
 MOZILLA_EXEC_NAME?=${MOZILLA}
 MOZ_RPATH?=	${MOZILLA}
 USE_GNOME+=	libidl desktopfileutils
-USES+=	iconv
-USE_PERL5_BUILD=yes
+USES+=	iconv perl5
+USE_PERL5=	build
 USE_XORG=	printproto sm xt xi xext x11 xinerama \
 		ice xproto
 
