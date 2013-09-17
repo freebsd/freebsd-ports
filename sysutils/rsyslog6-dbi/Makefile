@@ -1,7 +1,4 @@
-# New ports collection makefile for: rsyslog4-dbi
-# Date created:     29 December 2008
-# Whom:             Cristiano Rolim Pereira <cristianorolim@hotmail.com>
-#
+# Created by: Cristiano Rolim Pereira <cristianorolim@hotmail.com>
 # $FreeBSD$
 
 COMMENT=	LibDBI output module for rsyslog

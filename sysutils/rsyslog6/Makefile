@@ -5,9 +5,7 @@ PORTVERSION=	6.6.0
 PORTREVISION?=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
-.ifdef MNAME
-PKGNAMESUFFIX?=	-${MNAME}
-.endif
+PKGNAMESUFFIX=	6${EXTRASUFFIX}
 
 MAINTAINER=	brd@FreeBSD.org
 COMMENT?=	Syslogd supporting SQL, TCP, and TLS
@@ -26,11 +24,9 @@ LIB_DEPENDS+=	ee:${PORTSDIR}/devel/libee \
 USES=		pkgconfig
 
 .ifdef MNAME
+EXTRASUFFIX=	-${MNAME}
 RUN_DEPENDS=	rsyslog>=${PORTVERSION}:${PORTSDIR}/sysutils/rsyslog6
 PLIST=		${.CURDIR}/pkg-plist
-LATEST_LINK=	rsyslog6-${MNAME}
-.else
-LATEST_LINK=	rsyslog6
 .endif
 
 PORTSCOUT=	limit:^6
@@ -43,7 +39,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mysql-microseconds
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sane-hostname
 .endif
 
-CONFLICTS=	rsyslog-[57].[0-9]*
+CONFLICTS=	rsyslog-[0-9].* ryslog-devel-[0-9]*
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

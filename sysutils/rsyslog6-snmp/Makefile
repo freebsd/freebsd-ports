@@ -1,9 +1,5 @@
-# New ports collection makefile for: rsyslog4-snmp
-# Date created:     29 December 2008
-# Whom:             Cristiano Rolim Pereira <cristianorolim@hotmail.com>
-#
+# Created by: Cristiano Rolim Pereira <cristianorolim@hotmail.com>
 # $FreeBSD$
-#
 
 COMMENT=	SNMP trap sender for rsyslog
 MASTERDIR=	${.CURDIR}/../rsyslog6
