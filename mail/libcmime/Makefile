@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	libcmime
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 CATEGORIES=	mail
 MASTER_SITES=	http://www.libcmime.org/files/
 
 MAINTAINER=	ast@treibsand.com
 COMMENT=	Lightweight C mime library
 
-LICENSE=	LGPL3
+LICENSE=	MIT
 
 BUILD_DEPENDS=	bison>=1.8:${PORTSDIR}/devel/bison \
 		flex>=2.5.33:${PORTSDIR}/textproc/flex
