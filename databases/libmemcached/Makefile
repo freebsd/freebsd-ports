@@ -28,7 +28,7 @@ LIB_DEPENDS+=	sasl2.3:${PORTSDIR}/security/cyrus-sasl2
 .endif
 
 .if !defined(NO_INSTALL_MANPAGES)
-USES=	perl5
+USES+=	perl5
 USE_PERL5=	build
 MAN1=		memaslap.1 \
 		memcapable.1 \
