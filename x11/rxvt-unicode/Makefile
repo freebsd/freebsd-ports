@@ -25,7 +25,6 @@ CONFIGURE_ENV=		LIBS="-lstdc++ -lutil" TIC=${LOCALBASE}/bin/tic
 CONFIGURE_ARGS=		--enable-everything --with-term=rxvt	\
 			--with-terminfo=${LOCALBASE}/share/misc/terminfo.db
 USE_BZIP2=		yes
-WANT_PERL=		yes
 
 OPTIONS_DEFINE=	PERL XIM UNICODE3 ISO14755 COMBINING RXVT_SCROLLBAR	\
 		NEXT_SCROLLBAR XTERM_SCROLLBAR BACKSPACE_KEY DELETE_KEY	\
@@ -69,10 +68,11 @@ PATCH_DEPENDS+=	p5-Encode-HanExtra>=0:${PORTSDIR}/chinese/p5-Encode-HanExtra \
 # disable the embedded perl interpreter
 .if !${PORT_OPTIONS:MPERL}
 CONFIGURE_ARGS+=	--disable-perl
-USE_PERL5_BUILD=	yes
+USES+=			perl5
+USE_PERL5=		build
 PLIST_SUB=		PERL="@comment "
 .else
-USE_PERL5=		yes
+USES+=			perl5
 MAN1+=			urxvt-background.1 urxvt-bell-command.1 urxvt-block-graphics-to-ascii.1 \
 			urxvt-clipboard-osc.1 urxvt-confirm-paste.1 urxvt-digital-clock.1	\
 			urxvt-example-refresh-hooks.1 urxvt-extensions.1 urxvt-keysym-list.1	\

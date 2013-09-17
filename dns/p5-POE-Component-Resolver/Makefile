@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-POE-Component-Resolver
-# Date created:				21 February 2011
-# Whom:					Jase Thew <freebsd@beardz.net>
-#
+# Created by: Jase Thew <freebsd@beardz.net>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Resolver
 PORTVERSION=	0.921
@@ -22,7 +18,8 @@ BUILD_DEPENDS=	p5-POE>=1.311:${PORTSDIR}/devel/p5-POE \
 		p5-Socket>=2.001:${PORTSDIR}/net/p5-Socket
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		POE::Component::Resolver.3 \
 		POE::Component::Resolver::Sidecar.3

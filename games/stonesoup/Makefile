@@ -15,10 +15,9 @@ LICENSE_FILE=	${WRKDIR}/stone_soup-${PORTVERSION}/licence.txt
 
 USE_SQLITE=	yes
 USE_XZ=		yes
-USES=		bison pkgconfig
-USE_GMAKE=	yes
+USES=		bison gmake perl5 pkgconfig
 USE_LUA=	5.1
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 
 
 SAVEDIR=	\~/.stonesoup

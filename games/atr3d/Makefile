@@ -19,10 +19,10 @@ SDL_CONFIG?=	${LOCALBASE}/bin/sdl-config
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GMAKE=	yes
+USES=		gmake perl5
 USE_GL=		glut glu
 USE_XORG=	xmu xi x11
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 USE_AUTOTOOLS=	automake autoconf

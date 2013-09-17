@@ -11,12 +11,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Streaming server for MP3, Ogg Vorbis, and other streamable audio files
 
-RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
-		sox:${PORTSDIR}/audio/sox \
-		oggenc:${PORTSDIR}/audio/vorbis-tools
+RUN_DEPENDS=	liblame.so:${PORTSDIR}/audio/lame \
+		libsox.so:${PORTSDIR}/audio/sox \
+		liboggenc.so:${PORTSDIR}/audio/vorbis-tools
 
 USE_BZIP2=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 USE_RC_SUBR=	gnump3d
 SUB_LIST+=	PERL=${PERL}
