@@ -1,5 +1,5 @@
---- src/Makefile.orig	2013-01-31 10:52:21.000000000 +0100
-+++ src/Makefile	2013-02-01 14:35:59.000000000 +0100
+--- src/Makefile.orig	2013-08-31 12:36:08.000000000 +0200
++++ src/Makefile	2013-09-17 10:00:25.000000000 +0200
 @@ -16,13 +16,12 @@
  TCL_VERSION := $(shell echo 'puts $$tcl_version' | tclsh)
  
@@ -18,3 +18,12 @@
  
  GTK_OBJ := \
  	aboutDialog.o \
+@@ -72,8 +71,6 @@
+ 	labelEntry.o \
+ 	language.o \
+ 	layout.o \
+-	./level/gtklevel.o \
+-	level.o \
+ 	linkButton.o \
+ 	keyfile.o \
+ 	menu.o \

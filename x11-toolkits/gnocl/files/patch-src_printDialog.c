@@ -1,14 +1,14 @@
---- src/printDialog.c.orig	2013-01-31 10:52:21.000000000 +0100
-+++ src/printDialog.c	2013-02-01 14:25:27.000000000 +0100
-@@ -20,6 +20,7 @@
- #include "string.h"
- #include <assert.h>
- #include <gtk-unix-print-2.0/gtk/gtkprinter.h>
+--- src/printDialog.c.orig	2013-09-17 10:02:23.000000000 +0200
++++ src/printDialog.c	2013-09-17 10:14:13.000000000 +0200
+@@ -17,6 +17,7 @@
+ **/
+ 
+ #include "gnocl.h"
 +#include <gtk-unix-print-2.0/gtk/gtkprintunixdialog.h>
  
  /* static declarations */
  static int gnoclOptPageSetup ( Tcl_Interp *interp, GnoclOption *opt, GObject *obj, Tcl_Obj **ret );
-@@ -63,67 +64,28 @@
+@@ -64,67 +65,28 @@
  
  	GtkPrintCapabilities capability;
  
@@ -73,28 +73,28 @@
 -
 -	}
 -
-+	if ( ! strcmp ( opt->propName, "page-set" ) )
-+		capability = GTK_PRINT_CAPABILITY_PAGE_SET;
-+	else if ( ! strcmp ( opt->propName, "copies" ) )
-+		capability = GTK_PRINT_CAPABILITY_COPIES;
-+	else if ( ! strcmp ( opt->propName, "collate" ) )
-+		capability =  GTK_PRINT_CAPABILITY_COLLATE;
-+	else if ( ! strcmp ( opt->propName, "reverse" ) )
-+		capability =  GTK_PRINT_CAPABILITY_REVERSE ;
-+	else if ( ! strcmp ( opt->propName, "scale" ) )
-+		capability =  GTK_PRINT_CAPABILITY_SCALE ;
-+	else if ( ! strcmp ( opt->propName, "generate-pdf" ) )
-+		capability =  GTK_PRINT_CAPABILITY_GENERATE_PDF ;
-+	else if ( ! strcmp ( opt->propName, "generate-ps" ) )
-+		capability =  GTK_PRINT_CAPABILITY_GENERATE_PS ;
-+	else if ( ! strcmp ( opt->propName, "preview" ) )
-+		capability = GTK_PRINT_CAPABILITY_PREVIEW ;
-+	else if ( ! strcmp ( opt->propName, "number-up" ) )
-+		capability =  GTK_PRINT_CAPABILITY_NUMBER_UP ;
-+	else if ( ! strcmp ( opt->propName, "number-up-layout" ) )
-+		capability =  GTK_PRINT_CAPABILITY_NUMBER_UP_LAYOUT ;
-+	else 
-+		return TCL_ERROR;
++    if ( ! strcmp ( opt->propName, "page-set" ) )
++        capability = GTK_PRINT_CAPABILITY_PAGE_SET;
++    else if ( ! strcmp ( opt->propName, "copies" ) )
++        capability = GTK_PRINT_CAPABILITY_COPIES;
++    else if ( ! strcmp ( opt->propName, "collate" ) )
++        capability =  GTK_PRINT_CAPABILITY_COLLATE;
++    else if ( ! strcmp ( opt->propName, "reverse" ) )
++        capability =  GTK_PRINT_CAPABILITY_REVERSE ;
++    else if ( ! strcmp ( opt->propName, "scale" ) )
++        capability =  GTK_PRINT_CAPABILITY_SCALE ;
++    else if ( ! strcmp ( opt->propName, "generate-pdf" ) )
++        capability =  GTK_PRINT_CAPABILITY_GENERATE_PDF ;
++    else if ( ! strcmp ( opt->propName, "generate-ps" ) )
++        capability =  GTK_PRINT_CAPABILITY_GENERATE_PS ;
++    else if ( ! strcmp ( opt->propName, "preview" ) )
++        capability = GTK_PRINT_CAPABILITY_PREVIEW ;
++    else if ( ! strcmp ( opt->propName, "number-up" ) )
++        capability =  GTK_PRINT_CAPABILITY_NUMBER_UP ;
++    else if ( ! strcmp ( opt->propName, "number-up-layout" ) )
++        capability =  GTK_PRINT_CAPABILITY_NUMBER_UP_LAYOUT ;
++    else
++        return TCL_ERROR;
  
  	GtkPrintCapabilities tmp = gtk_print_unix_dialog_get_manual_capabilities ( GTK_PRINT_UNIX_DIALOG ( obj ) );
  
