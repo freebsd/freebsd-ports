@@ -1,9 +1,5 @@
-# New ports collection makefile for:	texi2html
-# Date created:				5 Nov 1997
-# Whom:					Ian Vaudrey <i.vaudrey@bigfoot.com>
-#
+# Created by: Ian Vaudrey <i.vaudrey@bigfoot.com>
 # $FreeBSD$
-#
 
 PORTNAME=	texi2html
 PORTVERSION=	5.0
@@ -18,9 +14,8 @@ COMMENT=	Texinfo to HTML converter
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=${PERL}
 CONFIGURE_ARGS=	--disable-multiplatform
+USES=		gmake perl5
 USE_BZIP2=	yes
-USE_PERL5=	yes
-USE_GMAKE=	yes
 
 OPTIONS_DEFINE=	NLS DOCS
 

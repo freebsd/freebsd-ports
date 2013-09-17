@@ -1,9 +1,5 @@
-# New ports collection makefile for:	OpenFTS
-# Date Created:				15 Aug, 2003
-# Whom:					Jun Kuriyama <kuriyama@FreeBSD.org>
-#
+# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openfts
 PORTVERSION=	0.40
@@ -19,7 +15,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/postgresql/tsearch2.so:${PORTSDIR}/databases/postg
 		p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 
 USE_PGSQL=	yes
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 .include <bsd.port.pre.mk>
 

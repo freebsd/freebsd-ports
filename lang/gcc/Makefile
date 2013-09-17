@@ -28,10 +28,10 @@ DISTVERSION=	${PORTVERSION}
 GCC_VERSION=	${PORTVERSION:C/(.+)\.[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 ONLY_FOR_ARCHS=	amd64 i386 ia64 powerpc sparc64
-USES=		bison gmake iconv
+USES=		bison gmake iconv perl5
 USE_BINUTILS=	yes
 USE_BZIP2=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
