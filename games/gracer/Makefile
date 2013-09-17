@@ -17,7 +17,8 @@ LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
 		tcl84.1:${PORTSDIR}/lang/tcl84
 
 USE_GL=		glut
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 USE_AUTOTOOLS=	autoconf213
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="${CPPFLAGS}"

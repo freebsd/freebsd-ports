@@ -29,7 +29,8 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAN6=		xboard.6
 INFO=		xboard
-USE_PERL5_BUILD=yes
+USES=		perl5
+USE_PERL5=	build
 INSTALLS_ICONS=	yes
 DATADIR=	${PREFIX}/share/games/${PORTNAME}
 

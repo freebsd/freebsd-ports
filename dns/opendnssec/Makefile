@@ -15,7 +15,7 @@ LIB_DEPENDS=	ldns:${PORTSDIR}/dns/ldns
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	opendnssec
 USE_GNOME=	libxml2
-USE_PERL5=	yes
+USES=		perl5
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 

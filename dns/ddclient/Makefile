@@ -13,7 +13,8 @@ COMMENT=	Update dynamic DNS entries
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 NO_BUILD=	yes
 USE_RC_SUBR=	${PORTNAME}
 
