@@ -20,7 +20,7 @@ USE_XORG=	x11 xext ice
 USE_LUA=	5.1
 LUA_COMPS=	lua
 USE_QT4=	qtestlib qmake_build rcc_build uic_build moc_build gui xml
-USE_PERL5=	yes
+USES=		perl5
 
 USES=		cmake gettext
 CMAKE_ARGS+=	-DLOCALBASE:STRING="${LOCALBASE}" \

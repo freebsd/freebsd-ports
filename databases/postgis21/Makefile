@@ -18,10 +18,10 @@ LATEST_LINK=	postgis21
 
 USE_GNOME=	libxml2
 USE_PGSQL=	yes
-USES=		gmake iconv pkgconfig
+USES=		gmake iconv perl5 pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5=	build
 
 OPTIONS_DEFINE=		LOADERGUI RASTER TOPOLOGY
 OPTIONS_DEFAULT=	TOPOLOGY

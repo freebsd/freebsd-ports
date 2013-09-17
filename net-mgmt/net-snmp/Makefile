@@ -28,15 +28,13 @@ AX_SOCKONLY_DESC=	Disable UDP/TCP transports for agentx
 UNPRIVILEGED_DESC=	Allow unprivileged users to execute net-snmp
 SMUX_DESC=		Build with SNMP multiplexing (SMUX) support
 
-.include <bsd.port.options.mk>
-
 MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	snmpd snmptrapd
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-WANT_PERL=	yes
+USES=		perl5
 
 CONFIGURE_ENV+=	PERLPROG="${PERL}" PSPROG="${PS_CMD}" SED="${SED}"
 CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
@@ -51,6 +49,8 @@ SUB_FILES=	pkg-message
 .if defined(BATCH)
 CONFIGURE_ARGS+=--with-defaults
 .endif
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
 # borrowed from bsd.python.mk and adapted for our needs
@@ -79,14 +79,13 @@ PLIST_SUB+=	PYUNINSTALL="@unexec ${PYEASYINSTALL_CMD} ${PYEASYUNINSTALL_UNINSTAL
 PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
 CONFIGURE_ARGS+=	--with-openssl="${OPENSSLBASE}"
 
 .if ${PORT_OPTIONS:MDUMMY}
 CONFIGURE_ARGS+=--with-dummy-values
 .endif
 
-.if empty(PORT_OPTIONS:MTKMIB)
+.if ! ${PORT_OPTIONS:MTKMIB}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-local:Makefile.in
 PLIST_SUB+=	WITH_TKMIB="@comment "
 .else
@@ -95,9 +94,8 @@ PLIST_SUB+=	WITH_TKMIB=""
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-USE_PERL5=	yes
 CONFIGURE_ARGS+=--with-perl-modules
-.if empty(PORT_OPTIONS:MPERL_EMBEDDED)
+.if ! ${PORT_OPTIONS:MPERL_EMBEDDED}
 CONFIGURE_ARGS+=--disable-embedded-perl
 PLIST_SUB+=	WITH_PERL_EMBEDDED="@comment "
 .else
@@ -106,7 +104,7 @@ PLIST_SUB+=	WITH_PERL_EMBEDDED=""
 .endif
 PLIST_SUB+=	WITH_PERL=""
 .else
-USE_PERL5_BUILD=yes
+USE_PERL5=	build
 CONFIGURE_ARGS+=--disable-embedded-perl --without-perl-modules
 PLIST_SUB+=	WITH_PERL_EMBEDDED="@comment "
 PLIST_SUB+=	WITH_PERL="@comment "
@@ -345,4 +343,4 @@ display-message:
 #   Don't forget to bump library version in these ports.
 #   french/plgrenouille,graphics/hpoj,lang/php4,lang/php5,mail/cyrus-imapd22,mail/cyrus-imapd23,misc/kdeutils3,net-mgmt/braa,net-mgmt/docsis,net-mgmt/mbrowse,net-mgmt/nagios-snmp-plugins,net-mgmt/p5-SNMP-Info,net-mgmt/py-yapsnmp,net-mgmt/sdig,net-mgmt/zabbix,net/cactid,net/wireshark,net/ifstat,net/quagga,net/rtg,print/hplip,security/libfwbuilder,sysutils/apcupsd,sysutils/jailadmin,sysutils/nut
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

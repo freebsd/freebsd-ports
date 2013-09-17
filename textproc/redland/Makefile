@@ -13,14 +13,13 @@ LIB_DEPENDS=	raptor2:${PORTSDIR}/textproc/raptor2 \
 		rasqal:${PORTSDIR}/textproc/rasqal
 
 USE_AUTOTOOLS=	libltdl
-USE_GNOME=	gnomehack libxml2 lthack
+USE_GNOME=	libxml2 lthack
 USE_OPENSSL=	yes
-USE_PERL5_BUILD=	yes
-USES=		pkgconfig:both
+USE_PERL5=	build
+USES=		gmake pathfix perl5 pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-raptor=system \
 		--with-threestore=no
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 MAN1=		rdfproc.1 redland-config.1 \

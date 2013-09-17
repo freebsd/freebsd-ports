@@ -15,9 +15,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		btparse.0:${PORTSDIR}/textproc/btparse \
 		dbi.1:${PORTSDIR}/databases/libdbi
 
-USE_GMAKE=	yes
-USES=		iconv
-USE_PERL5=	yes
+USES=		gmake iconv perl5
 HAS_CONFIGURE=	yes
 ALL_TARGET=
 
