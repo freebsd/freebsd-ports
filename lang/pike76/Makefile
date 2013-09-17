@@ -83,12 +83,10 @@ CONFIGURE_ARGS+=	--without-debug \
 
 MAKE_ARGS=	CONFIGUREARGS="${CONFIGURE_ARGS}"
 
-USES=		bison gettext
-USE_GMAKE=	yes
+USES=		bison gettext gmake perl
 
 # Allow building Embedded Perl
 CONFIGURE_ARGS+=	--with-perl
-USE_PERL5=	YES
 
 PLIST_FILES=	bin/pike bin/pike76 bin/hilfe
 

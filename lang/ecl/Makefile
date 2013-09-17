@@ -13,8 +13,8 @@ COMMENT=	ANSI Common Lisp implementation
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		gmake
-USE_PERL5_BUILD=yes
+USES=		gmake perl5
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-system-gmp --with-gmp-prefix=${LOCALBASE} --enable-boehm=system
 CFLAGS+=	-I${LOCALBASE}/include

@@ -26,9 +26,8 @@ USE_BZIP2=	yes
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 
 USE_AUTOTOOLS=		autoconf autoheader
-USE_PERL5_BUILD=	yes
-USE_GMAKE=		yes
-USES=			iconv ncurses
+USE_PERL5=		build
+USES=			gmake iconv perl5 ncurses
 USE_BINUTILS=		yes
 USE_GCC=		yes
 
