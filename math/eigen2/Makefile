@@ -1,7 +1,4 @@
-# New ports collection makefile for:	eigen
-# Date created:				2008-01-18
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	eigen
@@ -11,14 +8,13 @@ CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/eigen/eigen/get/
 DISTNAME=	${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Lightweight library for vector and matrix math
 
 USE_BZIP2=	yes
 USES=		cmake
-
-LATEST_LINK=	${PORTNAME}2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-b23437e61a07
 

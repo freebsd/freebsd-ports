@@ -20,8 +20,7 @@ LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS=	${KDE4_PREFIX}/bin/accountwizard:${PORTSDIR}/deskutils/kdepim4-runtime
 
-LATEST_LINK=	${PORTNAME}4
-CONFLICTS_INSTALL=	kdepim-4.4.*
+CONFLICTS_INSTALL=	kdepim44-4.*
 
 USE_XZ=		yes
 USE_GNOME=	libxml2
