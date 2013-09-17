@@ -6,6 +6,7 @@ bin/gerbview
 bin/kicad
 bin/pcb_calculator
 bin/pcbnew
+bin/pl_editor
 lib/kicad/plugins/bom2csv.xsl
 lib/kicad/plugins/bom_cvs.xsl
 lib/kicad/plugins/netlist_form_OrcadPcb2.xsl

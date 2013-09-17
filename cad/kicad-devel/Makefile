@@ -44,7 +44,6 @@ CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 		-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}"
 
-#		-DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include -I/usr/local/include/wx-2.8"
 .include <bsd.port.pre.mk>
 
 BUILD_DEPENDS=	wxgtk2-2.8-config:${PORTSDIR}/x11-toolkits/wxgtk28 \
@@ -141,8 +140,8 @@ PLIST_FILE_LIST=	bin/freeroute.jnlp \
 			bin/eeschema \
 			bin/gerbview \
 			bin/kicad \
-			bin/minizip \
 			bin/pcbnew \
+			bin/pl_editor \
 			bin/bitmap2component \
 			bin/pcb_calculator \
 			share/mimelnk/application/x-kicad-schematic.desktop \
