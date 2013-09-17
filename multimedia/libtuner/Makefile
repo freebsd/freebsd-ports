@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libtuner
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://corona.homeunix.net/ports/libtuner/
 
