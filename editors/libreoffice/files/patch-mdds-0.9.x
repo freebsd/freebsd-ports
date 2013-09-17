@@ -20,6 +20,17 @@
          return false;
  
      rData.mnPos1 = nPos1;
+--- sc/source/core/tool/scmatrix.cxx.orig	2013-08-13 16:11:48.000000000 -0400
++++ sc/source/core/tool/scmatrix.cxx	2013-09-16 12:27:09.000000000 -0400
+@@ -89,7 +89,7 @@
+             }
+         }
+ 
+-        static void delete_block(mdds::mtv::base_element_block* p)
++        static void delete_block(const mdds::mtv::base_element_block* p)
+         {
+             if (!p)
+                 return;
 --- sc/source/filter/excel/colrowst.cxx.orig	2013-08-13 16:11:48.000000000 -0400
 +++ sc/source/filter/excel/colrowst.cxx	2013-08-16 18:29:17.000000000 -0400
 @@ -208,7 +208,7 @@
