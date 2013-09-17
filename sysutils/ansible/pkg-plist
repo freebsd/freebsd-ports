@@ -113,6 +113,9 @@ bin/ansible-pull
 %%PYTHON_SITELIBDIR%%/ansible/runner/connection_plugins/__init__.py
 %%PYTHON_SITELIBDIR%%/ansible/runner/connection_plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ansible/runner/connection_plugins/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ansible/runner/connection_plugins/accelerate.py
+%%PYTHON_SITELIBDIR%%/ansible/runner/connection_plugins/accelerate.pyc
+%%PYTHON_SITELIBDIR%%/ansible/runner/connection_plugins/accelerate.pyo
 %%PYTHON_SITELIBDIR%%/ansible/runner/connection_plugins/chroot.py
 %%PYTHON_SITELIBDIR%%/ansible/runner/connection_plugins/chroot.pyc
 %%PYTHON_SITELIBDIR%%/ansible/runner/connection_plugins/chroot.pyo
@@ -152,6 +155,15 @@ bin/ansible-pull
 %%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/first_found.py
 %%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/first_found.pyc
 %%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/first_found.pyo
+%%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/flattened.py
+%%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/flattened.pyc
+%%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/flattened.pyo
+%%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/indexed_items.py
+%%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/indexed_items.pyc
+%%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/indexed_items.pyo
+%%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/inventory_hostnames.py
+%%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/inventory_hostnames.pyc
+%%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/inventory_hostnames.pyo
 %%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/items.py
 %%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/items.pyc
 %%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/items.pyo
@@ -179,6 +191,9 @@ bin/ansible-pull
 %%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/template.py
 %%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/template.pyc
 %%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/template.pyo
+%%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/together.py
+%%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/together.pyc
+%%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins/together.pyo
 %%PYTHON_SITELIBDIR%%/ansible/runner/poller.py
 %%PYTHON_SITELIBDIR%%/ansible/runner/poller.pyc
 %%PYTHON_SITELIBDIR%%/ansible/runner/poller.pyo
@@ -198,12 +213,17 @@ bin/ansible-pull
 %%PYTHON_SITELIBDIR%%/ansible/utils/template.pyc
 %%PYTHON_SITELIBDIR%%/ansible/utils/template.pyo
 %%DATADIR%%/cloud/cloudformation
+%%DATADIR%%/cloud/digital_ocean
 %%DATADIR%%/cloud/ec2
+%%DATADIR%%/cloud/ec2_ami
 %%DATADIR%%/cloud/ec2_elb
 %%DATADIR%%/cloud/ec2_facts
+%%DATADIR%%/cloud/ec2_group
+%%DATADIR%%/cloud/ec2_tag
 %%DATADIR%%/cloud/ec2_vol
 %%DATADIR%%/cloud/glance_image
 %%DATADIR%%/cloud/keystone_user
+%%DATADIR%%/cloud/linode
 %%DATADIR%%/cloud/nova_compute
 %%DATADIR%%/cloud/nova_keypair
 %%DATADIR%%/cloud/quantum_floating_ip
@@ -214,6 +234,8 @@ bin/ansible-pull
 %%DATADIR%%/cloud/quantum_router_interface
 %%DATADIR%%/cloud/quantum_subnet
 %%DATADIR%%/cloud/rax
+%%DATADIR%%/cloud/rds
+%%DATADIR%%/cloud/route53
 %%DATADIR%%/cloud/s3
 %%DATADIR%%/cloud/virt
 %%DATADIR%%/commands/command
@@ -222,10 +244,13 @@ bin/ansible-pull
 %%DATADIR%%/commands/shell
 %%DATADIR%%/database/mongodb_user
 %%DATADIR%%/database/mysql_db
+%%DATADIR%%/database/mysql_replication
 %%DATADIR%%/database/mysql_user
+%%DATADIR%%/database/mysql_variables
 %%DATADIR%%/database/postgresql_db
 %%DATADIR%%/database/postgresql_privs
 %%DATADIR%%/database/postgresql_user
+%%DATADIR%%/database/redis
 %%DATADIR%%/database/riak
 %%DATADIR%%/files/assemble
 %%DATADIR%%/files/copy
@@ -233,7 +258,9 @@ bin/ansible-pull
 %%DATADIR%%/files/file
 %%DATADIR%%/files/ini_file
 %%DATADIR%%/files/lineinfile
+%%DATADIR%%/files/stat
 %%DATADIR%%/files/template
+%%DATADIR%%/files/xattr
 %%DATADIR%%/internal/async_status
 %%DATADIR%%/internal/async_wrapper
 %%DATADIR%%/inventory/add_host
@@ -243,12 +270,19 @@ bin/ansible-pull
 %%DATADIR%%/messaging/rabbitmq_user
 %%DATADIR%%/messaging/rabbitmq_vhost
 %%DATADIR%%/monitoring/airbrake_deployment
+%%DATADIR%%/monitoring/boundary_meter
+%%DATADIR%%/monitoring/datadog_event
 %%DATADIR%%/monitoring/monit
 %%DATADIR%%/monitoring/nagios
 %%DATADIR%%/monitoring/newrelic_deployment
 %%DATADIR%%/monitoring/pagerduty
 %%DATADIR%%/monitoring/pingdom
+%%DATADIR%%/net_infrastructure/arista_interface
+%%DATADIR%%/net_infrastructure/arista_l2interface
+%%DATADIR%%/net_infrastructure/arista_lag
+%%DATADIR%%/net_infrastructure/arista_vlan
 %%DATADIR%%/net_infrastructure/bigip_pool
+%%DATADIR%%/net_infrastructure/dnsmadeeasy
 %%DATADIR%%/net_infrastructure/netscaler
 %%DATADIR%%/network/get_url
 %%DATADIR%%/network/slurp
@@ -275,9 +309,11 @@ bin/ansible-pull
 %%DATADIR%%/packaging/pip
 %%DATADIR%%/packaging/pkgin
 %%DATADIR%%/packaging/pkgng
+%%DATADIR%%/packaging/pkgutil
 %%DATADIR%%/packaging/redhat_subscription
 %%DATADIR%%/packaging/rhn_channel
 %%DATADIR%%/packaging/rhn_register
+%%DATADIR%%/packaging/rpm_key
 %%DATADIR%%/packaging/svr4pkg
 %%DATADIR%%/packaging/yum
 %%DATADIR%%/packaging/zypper
@@ -302,6 +338,7 @@ bin/ansible-pull
 %%DATADIR%%/system/sysctl
 %%DATADIR%%/system/user
 %%DATADIR%%/system/zfs
+%%DATADIR%%/utilities/accelerate
 %%DATADIR%%/utilities/debug
 %%DATADIR%%/utilities/fail
 %%DATADIR%%/utilities/fireball
@@ -309,6 +346,7 @@ bin/ansible-pull
 %%DATADIR%%/utilities/set_fact
 %%DATADIR%%/utilities/wait_for
 %%DATADIR%%/web_infrastructure/django_manage
+%%DATADIR%%/web_infrastructure/htpasswd
 %%DATADIR%%/web_infrastructure/supervisorctl
 @dirrm %%DATADIR%%/cloud
 @dirrm %%DATADIR%%/commands
