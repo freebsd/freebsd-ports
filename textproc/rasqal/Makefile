@@ -13,12 +13,11 @@ COMMENT=	High-level interface for RDF
 LIB_DEPENDS=	raptor2:${PORTSDIR}/textproc/raptor2 \
 		pcre:${PORTSDIR}/devel/pcre
 
-USE_GNOME=	gnomehack lthack
+USE_GNOME=	lthack
 USE_OPENSSL=	yes
-USE_PERL5_BUILD=yes
-USES=		pkgconfig
+USE_PERL5=	build
+USES=		gmake pathfix pkgconfig perl5
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 MAN1=		rasqal-config.1 roqet.1

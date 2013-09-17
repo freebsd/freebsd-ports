@@ -16,8 +16,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
-USE_PERL5_BUILD=yes
-USE_GMAKE=	yes
+USES=		gmake perl5
+USE_PERL5=	build
 
 CFLAGS+=	-Wno-write-strings -I${LOCALBASE}/include
 

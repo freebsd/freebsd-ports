@@ -25,7 +25,6 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
-WANT_PERL=	yes
 USE_GNOME=	gnomehack intltool
 
 CONFIGURE_ARGS=	--disable-tcl
@@ -68,7 +67,7 @@ PLIST_SUB+=	WITH_RUBY="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPERL_MODULE}
-USE_PERL5=	yes
+USES=		perl5
 CONFIGURE_ARGS+=	--enable-perl --enable-perl-site-install
 PLIST_SUB+=	WITH_PERL=""
 .else

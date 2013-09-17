@@ -40,13 +40,12 @@ USE_GL=		glew
 USE_GNOME=	glib20 libxml2 libxslt
 USE_KDE4=	kactivities kdehier kdelibs kdeprefix libkdcraw nepomuk-core \
 		okular pimlibs attica automoc4 sharedmime soprano
-USE_PERL5=	yes
 USE_QT4=	dbus designer_build gui opengl phonon porting_build qt3support \
 		qtestlib_build script sql svg webkit xml xmlpatterns \
 		moc_build qmake_build rcc_build uic_build uic3_build
 USE_SQLITE=	3
 USE_BZIP2=	yes
-USES=		cmake:outsource pkgconfig iconv
+USES=		cmake:outsource pkgconfig iconv perl5
 CMAKE_ARGS=	-DCMAKE_INCLUDE_PATH:STRING="${QT_INCDIR} ${LOCALBASE}/include" \
 		-DIHAVEPATCHEDQT:BOOL=TRUE # To be removed with Qt 4.8.2.
 USE_LDCONFIG=	yes

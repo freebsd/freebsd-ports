@@ -17,8 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/gs:${PORTSDIR}/print/ghostscript8 \
 		${LOCALBASE}/bin/psselect:${PORTSDIR}/print/psutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PERL5=	yes
-USE_GMAKE=	yes
+USES=		gmake perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-awk=/usr/bin/awk
 

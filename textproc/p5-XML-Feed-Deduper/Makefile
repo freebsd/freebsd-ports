@@ -1,6 +1,5 @@
 # Created by: TERAMOTO Masahiro <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Feed-Deduper
 PORTVERSION=	0.06
@@ -19,7 +18,8 @@ BUILD_DEPENDS=	p5-Mouse>=1.08:${PORTSDIR}/devel/p5-Any-Moose \
 RUN_DEPENDS=	p5-Mouse>=1.08:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-XML-Feed>=0.41:${PORTSDIR}/textproc/p5-XML-Feed
 
-PERL_MODBUILD=	yes
+USES=		perl5
+USE_PERL5=	modbuild
 
 MAN3=		XML::Feed::Deduper.3
 

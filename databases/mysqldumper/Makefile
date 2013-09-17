@@ -17,7 +17,7 @@ RUN_DEPENDS=	p5-DBI>=1.48:${PORTSDIR}/databases/p5-DBI
 
 USE_ZIP=	yes
 USE_MYSQL=	yes
-USE_PERL5=	yes
+USES=		perl5
 USE_PHP=	session mysql zlib ftp
 
 NO_BUILD=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	OpenJade
-# Date created:		May 19, 2000
-# Whom:			kuriyama
-#
+# Created by: kuriyama
 # $FreeBSD$
-#
 
 PORTNAME=	openjade
 PORTVERSION=	1.3.3p1
@@ -19,10 +15,8 @@ LIB_DEPENDS=	osp.5:${PORTSDIR}/textproc/opensp
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
 USE_GCC=	any
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_PERL5=	yes
-USES=		gettext
+USES=		gettext gmake perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
 		--datadir=${DATADIR}

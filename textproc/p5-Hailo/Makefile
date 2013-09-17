@@ -43,7 +43,8 @@ TEST_DEPENDS=	p5-DBD-SQLite>=1.29:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Test-Script-Run>=0.04:${PORTSDIR}/devel/p5-Test-Script-Run \
 		p5-Test-Synopsis>=0.06:${PORTSDIR}/devel/p5-Test-Synopsis
 
-PERL_CONFIGURE=	yes
+USES=		perl5
+USE_PERL5=	configure
 
 MAN1=		hailo.1
 

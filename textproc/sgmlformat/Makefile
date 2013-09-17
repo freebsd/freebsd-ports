@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sgmlformat
-# Date created:		July 16, 1997
-# Whom:			jfieber
-#
+# Created by: jfieber
 # $FreeBSD$
-#
 
 PORTNAME=	sgmlformat
 PORTVERSION=	1.7
@@ -15,7 +11,8 @@ MASTER_SITE_SUBDIR=	kuriyama
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Generates groff and HTML from linuxdoc and docbook SGML documents
 
-USE_PERL5_RUN=	yes
+USES=		perl5
+USE_PERL5=	run
 
 MAN1=		instant.1 sgmlfmt.1
 MAN5=		transpec.5
