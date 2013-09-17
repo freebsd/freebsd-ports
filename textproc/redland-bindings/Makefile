@@ -16,7 +16,7 @@ GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	PERL PHP PYTHON RUBY
 OPTIONS_DEFAULT=PYTHON
 
-USES=		pkgconf
+USES=		pkgconfig
 
 .include <bsd.port.options.mk>
 
