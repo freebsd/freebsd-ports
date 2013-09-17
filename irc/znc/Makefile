@@ -15,9 +15,7 @@ LICENSE=	GPLv2
 FETCH_ARGS=	-Fpr
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	znc
-USES=		pkgconfig iconv
-USE_GMAKE=	yes
-WANT_PERL=	yes
+USES=		pkgconfig iconv gmake
 
 NO_OPTIONS_SORT=	yes
 
@@ -50,8 +48,9 @@ PLIST_SUB+=		OPENSSL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
+USES+=			perl5
+USE_PERL5+=		run build
 CONFIGURE_ARGS+=	--enable-perl
-USE_PERL5=		yes
 PLIST_SUB+=		PERL=""
 BUILD_DEPENDS+=		swig>=2.0.4:${PORTSDIR}/devel/swig20
 .else
@@ -70,7 +69,8 @@ PLIST_SUB+=		TCL="@comment "
 
 .if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	3.1-3.2
-USE_PERL5_BUILD=	yes
+USES+=		perl5
+USE_PERL5+=	build
 PLIST_SUB+=	PYTHON=""
 CONFIGURE_ARGS+=	--enable-python=python-${PYTHON_VER}
 BUILD_DEPENDS+=		swig>=2.0.4:${PORTSDIR}/devel/swig20

@@ -12,8 +12,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	Pluggable RSS/Atom feed aggregator written in Perl
 
-USE_PERL5=	yes
-
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-TimeZone>=0:${PORTSDIR}/devel/p5-DateTime-TimeZone \
@@ -375,7 +373,9 @@ BUILD_DEPENDS+=	p5-Text-Original>=0:${PORTSDIR}/textproc/p5-Text-Original
 .endif
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-PERL_CONFIGURE=	yes
+
+USES=		perl5
+USE_PERL5=	configure
 
 MAN3=		Plagger.3 \
 		Plagger::Cookies.3 \

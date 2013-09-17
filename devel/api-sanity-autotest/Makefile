@@ -17,11 +17,12 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	${LOCALBASE}/bin/abi-compliance-checker.pl:${PORTSDIR}/devel/abi-compliance-checker
 
+USES=		perl5
+
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
 BUILD_DEPENDS=	${LOCALBASE}/bin/abi-compliance-checker.pl:${PORTSDIR}/devel/abi-compliance-checker
-USE_PERL5=	yes
 .else
-USE_PERL5_RUN=	yes
+USE_PERL5=	run
 .endif
 USE_GCC=	any
 
