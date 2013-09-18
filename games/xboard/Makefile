@@ -20,7 +20,7 @@ GNUCHESS_DESC=	Install GnuChess engine
 KNIGHTCAP_DESC=	Install KnightCap engine
 PHALANX_DESC=	Install phalanx engine
 
-USES=		desktop-file-utils pkgconfig shared-mime-info
+USES=		desktop-file-utils perl5 pkgconfig shared-mime-info
 USE_XORG=	xt xpm xaw
 USE_GNOME=	librsvg2
 GNU_CONFIGURE=	yes
@@ -29,7 +29,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAN6=		xboard.6
 INFO=		xboard
-USES=		perl5
 USE_PERL5=	build
 INSTALLS_ICONS=	yes
 DATADIR=	${PREFIX}/share/games/${PORTNAME}
