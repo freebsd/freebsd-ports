@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-LibXML
-PORTVERSION=	2.0105
+PORTVERSION=	2.0106
 PORTEPOCH=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
@@ -18,6 +18,8 @@ BUILD_DEPENDS=	p5-XML-NamespaceSupport>=1.07:${PORTSDIR}/textproc/p5-XML-Namespa
 		p5-XML-SAX>=0.11:${PORTSDIR}/textproc/p5-XML-SAX
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-LeakTrace>=0:${PORTSDIR}/devel/p5-Test-LeakTrace \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 USES=		perl5
 USE_PERL5=	configure
