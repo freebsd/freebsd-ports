@@ -10,6 +10,17 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130918:
+AUTHOR: bapt@FreeBSD.org
+
+  The perl framework is not included inconditionnaly and the old framework
+  is not recognized anymore, the following MACROS has been removed:
+
+  * PERL_CONFIGURE
+  * USE_PERL5_RUN
+  * USE_PERL5_BUILD
+  * PERL_MODBUILD
+
 20130904:
 AUTHOR: madpilot@FreeBSD.org
 
