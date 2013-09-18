@@ -20,6 +20,7 @@ LIB_DEPENDS=	IL:${PORTSDIR}/graphics/devil \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libaudiere.so:${PORTSDIR}/audio/audiere
 RUN_DEPENDS=	${LOCALBASE}/lib/libaudiere.so:${PORTSDIR}/audio/audiere
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_SCONS=	yes
 USE_GL=		gl glu

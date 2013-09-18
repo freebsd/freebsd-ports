@@ -33,7 +33,7 @@ LIB_DEPENDS+=	FOX-1.7:${PORTSDIR}/x11-toolkits/fox17
 CMAKE_ARGS+=	-DFOX17:BOOL=TRUE
 .endif
 
-USES=		cmake:outsource
+USES=		cmake:outsource pkgconfig
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/vtkfox/FXVTKCanvas.h \

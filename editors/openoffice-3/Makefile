@@ -25,11 +25,10 @@ USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 USE_GL=		gl glu
 USE_GSTREAMER=	yes
 #USE_GCC=	yes
-USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_PERL5=	build
 USE_BZIP2=	yes
-USES+=		bison perl5
+USES+=		bison perl5 pkgconfig gmake
 WITHOUT_CPU_CFLAGS=	true
 
 OPTIONS_DEFINE=	GCONF GNOMEVFS

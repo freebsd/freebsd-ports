@@ -24,7 +24,7 @@ PLUGINS_DESC=	Compile additional libpurple-plugins
 USE_RC_SUBR=	minbif
 USE_GNOME=	glib20
 USE_EFL=	imlib2
-USES=		cmake
+USES=		cmake pkgconfig
 CMAKE_ARGS=	-DENABLE_IMLIB:BOOL=ON
 
 CFLAGS+=	${PTHREAD_CFLAGS} -DX_DISPLAY_MISSING

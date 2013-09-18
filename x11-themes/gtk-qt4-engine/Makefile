@@ -13,7 +13,7 @@ COMMENT=	GTK+ 2.x theme engine allowing to use Qt/KDE styles
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_QT4=	corelib gui moc_build rcc_build uic_build qmake_build
-USES=		cmake gettext
+USES=		cmake gettext pkgconfig
 USE_KDE4=	kdelibs kdeprefix automoc4
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
