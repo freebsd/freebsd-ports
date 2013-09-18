@@ -10,6 +10,8 @@ MASTER_SITES=	http://matt.sixxgate.com/files/
 MAINTAINER=	sixxgate@hotmail.com
 COMMENT=	Provides graphical X Window startup to FreeBSD during 'rc'
 
+BROKEN=		fails checksum
+
 BUILD_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 		xrdb:${PORTSDIR}/x11/xrdb \
 		xsetroot:${PORTSDIR}/x11/xsetroot
