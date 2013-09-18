@@ -1,7 +1,4 @@
-# New ports collection makefile for:	pcsc-tools
-# Date created:				2012-01-20
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	pcsc-tools
@@ -17,7 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 RUN_DEPENDS=	p5-PCSC-Card>=0:${PORTSDIR}/devel/p5-PCSC-Card
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 
 MAN1=		pcsc_scan.1 gscriptor.1p scriptor.1p ATR_analysis.1p
 
