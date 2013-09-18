@@ -2,21 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	boinc-client
-PORTVERSION=	7.0.28
-PORTREVISION=	3
+PORTVERSION=	7.0.65
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	pav
+MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Berkeley Open Infrastructure for Network Computing client
 
+USES=		gmake pkgconfig
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USE_AUTOTOOLS=	autoconf:env automake:env libtoolize:env
 USE_LDCONFIG=	yes
 USE_DOS2UNIX=	yes
-DOS2UNIX_REGEX=	.*\.(cpp|h)
+DOS2UNIX_REGEX=	.*\.xpm
 
 USERS=		boinc
 GROUPS=		boinc
@@ -55,9 +54,9 @@ NO_NET_INFO_DESC=	Do not send host address and name to servers
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not install on ia64, powerpc, or sparc64
-.endif
+#.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+#BROKEN=		Does not install on ia64, powerpc, or sparc64
+#.endif
 
 .if ${PORT_OPTIONS:MMANAGER}
 PORT_OPTIONS+=	CLIENT X11
@@ -132,16 +131,34 @@ PLIST_SUB+=	X11="@comment "
 
 PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 
-post-patch:
+# avoid build conflict with archivers/libzip
+post-extract:
+	${MV} ${WRKSRC}/zip/unzip/zip.h ${WRKSRC}/zip/unzip/boinczip.h
+	${MV} ${WRKSRC}/zip/zip/zip.h ${WRKSRC}/zip/zip/boinczip.h
+	${REINPLACE_CMD} -e 's|zip/zip.h|zip/boinczip.h|' \
+	    ${WRKSRC}/zip/boinc_zip.cpp
+	${REINPLACE_CMD} -e 's|"zip.h"|"boinczip.h"|' \
+	    ${WRKSRC}/zip/unzip/crc32.c ${WRKSRC}/zip/unzip/ttyio.c \
+	    ${WRKSRC}/zip/zip/deflate.c ${WRKSRC}/zip/zip/trees.c \
+	    ${WRKSRC}/zip/zip/unix/z_unix.c ${WRKSRC}/zip/zip/util.c \
+	    ${WRKSRC}/zip/zip/z_fileio.c ${WRKSRC}/zip/zip/z_globals.c \
+	    ${WRKSRC}/zip/zip/zip.c ${WRKSRC}/zip/zip/zipfile.c \
+	    ${WRKSRC}/zip/zip/zipup.c
+
+pre-configure:
+	(cd ${WRKSRC} ; ./_autosetup)
+
+post-configure:
 	@${REINPLACE_CMD} -e 's|client/scripts||' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|-lcrypto -ldl|-lcrypto|' ${WRKSRC}/configure
 .if ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e 's|$$$$mydir/$$$$ldir|&/LC_MESSAGES|' ${WRKSRC}/locale/Makefile.in
+	@${REINPLACE_CMD} -e 's|$$$$mydir/$$$$ldir|&/LC_MESSAGES|' \
+	    ${WRKSRC}/locale/Makefile.in
 .else
 	@${REINPLACE_CMD} -e 's| locale||' ${WRKSRC}/Makefile.in
 .endif
 .if ! ${PORT_OPTIONS:MX11}
-	@${REINPLACE_CMD} -e 's|@BUILD_GRAPHICS_API_TRUE@|#&|' ${WRKSRC}/api/Makefile.in
+	@${REINPLACE_CMD} -e 's|@BUILD_GRAPHICS_API_TRUE@|#&|' \
+	    ${WRKSRC}/api/Makefile.in
 .endif
 
 post-install:
@@ -156,21 +173,26 @@ post-install:
 	    ${PREFIX}/share/pixmaps
 . endfor
 . if ${PORT_OPTIONS:MSKINS}
-	${CP} -R ${WRKSRC}/clientgui/skins ${PREFIX}/share/boinc
+	(cd ${WRKSRC}/clientgui && \
+	${COPYTREE_SHARE} skins ${PREFIX}/share/boinc/ )
 . else
 	${MKDIR} ${PREFIX}/share/boinc/skins
-	${CP} -R ${WRKSRC}/clientgui/skins/Default ${PREFIX}/share/boinc/skins
+	(cd ${WRKSRC}/clientgui/skins && \
+	${COPYTREE_SHARE} Default ${PREFIX}/share/boinc/skins/ )
 . endif
 .endif
-. for name in config.h api/reduce.h lib/shmem.h lib/std_fixes.h
+. for name in config.h project_specific_defines.h api/reduce.h lib/shmem.h \
+	lib/std_fixes.h
 	${INSTALL_DATA} ${WRKSRC}/${name} ${PREFIX}/include/boinc
 . endfor
 .if ${PORT_OPTIONS:MX11}
 . for name in api/boinc_gl.h api/graphics_api.h api/graphics_data.h \
-	api/txf_util.h
+	api/ttfont.h
 	${INSTALL_DATA} ${WRKSRC}/${name} ${PREFIX}/include/boinc
 . endfor
-	${CP} -R ${WRKSRC}/api/txf ${PREFIX}/share/boinc
+	${MKDIR} ${PREFIX}/share/boinc/ttf
+	(cd ${WRKSRC}/api/ttf/liberation-fonts-ttf-2.00.0 && \
+	    ${COPYTREE_SHARE} \*.ttf ${PREFIX}/share/boinc/ttf/ )
 .endif
 
 .include <bsd.port.mk>

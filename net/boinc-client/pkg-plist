@@ -3,6 +3,7 @@
 %%BOINC_CLIENT%%bin/boinccmd
 %%BOINC_CLIENT%%bin/switcher
 %%BOINC_MANAGER%%bin/boincmgr
+%%BOINC_MANAGER%%bin/boincscr
 include/boinc/app_ipc.h
 include/boinc/average.h
 include/boinc/base64.h
@@ -38,6 +39,7 @@ include/boinc/notice.h
 include/boinc/parse.h
 include/boinc/prefs.h
 include/boinc/procinfo.h
+include/boinc/project_specific_defines.h
 include/boinc/proxy_info.h
 include/boinc/reduce.h
 include/boinc/shmem.h
@@ -53,7 +55,7 @@ include/boinc/win_util.h
 %%X11%%include/boinc/boinc_gl.h
 %%X11%%include/boinc/graphics_api.h
 %%X11%%include/boinc/graphics_data.h
-%%X11%%include/boinc/txf_util.h
+%%X11%%include/boinc/ttfont.h
 lib/libboinc.a
 lib/libboinc.la
 lib/libboinc_api.a
@@ -278,84 +280,76 @@ lib/libboinc_zip.so.7
 %%SKINS%%share/boinc/skins/Progress Thru Processors/graphic/tabArea_bg.png
 %%SKINS%%share/boinc/skins/Progress Thru Processors/graphic/wu_bg.png
 %%SKINS%%share/boinc/skins/Progress Thru Processors/skin.xml
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/arwLeft.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/arwLeftClick.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/arwRight.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/arwRightClick.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnAddProject.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnAddProjectClick.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnAdvancedView.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnCancel.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnCancelClick.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnChange.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnChangeClick.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnClear.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnClearClick.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnClose.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnCloseClick.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnCopy.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnCopyAll.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnCopyAllClicked.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnCopyClicked.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnHelp.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnHelpClicked.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnMessages.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnMessagesRed.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnPreferences.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnResume.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnSave.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnSaveClick.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/btnSnooze.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/conn_ind.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/default_stat_icon.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/dlgBackground.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/error_image.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/gauge_bg.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/gauge_progress_indicator.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/ico_workWU.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/proj_bg.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/project_image.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/simplegui_bg.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/spacer.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/state_ind_bg.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/tabArea_bg.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/wcg_about.ico
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/wcg_black_background.gif
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/wcg_pause.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/wcg_play.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/wcg_stop.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/wcg_wizard_bar.png
-%%SKINS%%share/boinc/skins/World Community Grid/graphic/wu_bg.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/arwLeft.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/arwLeftClick.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/arwRight.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/arwRightClick.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnAddProject.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnAddProjectClick.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnAdvancedView.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnCancel.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnCancelClick.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnChange.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnChangeClick.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnClear.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnClearClick.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnClose.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnCloseClick.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnCopy.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnCopyAll.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnCopyAllClicked.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnCopyClicked.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnHelp.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnHelpClicked.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnMessages.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnMessagesRed.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnPreferences.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnResume.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnSave.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnSaveClick.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/btnSnooze.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/conn_ind.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/default_stat_icon.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/dlgBackground.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/error_image.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/gauge_bg.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/gauge_progress_indicator.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/ico_workWU.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/proj_bg.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/project_image.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/simplegui_bg.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/spacer.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/state_ind_bg.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/tabArea_bg.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/wcg_about.ico
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/wcg_black_background.gif
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/wcg_pause.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/wcg_play.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/wcg_stop.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/wcg_wizard_bar.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/graphic/wu_bg.png
+%%SKINS%%share/boinc/skins/World Community Grid/Old/skin.xml
+%%SKINS%%share/boinc/skins/World Community Grid/Green_dot.png
+%%SKINS%%share/boinc/skins/World Community Grid/Red_dot.png
+%%SKINS%%share/boinc/skins/World Community Grid/Yellow_dot.png
+%%SKINS%%share/boinc/skins/World Community Grid/background_image.png
+%%SKINS%%share/boinc/skins/World Community Grid/wcg_about.ico
+%%SKINS%%share/boinc/skins/World Community Grid/wcg_pause.png
+%%SKINS%%share/boinc/skins/World Community Grid/wcg_play.png
+%%SKINS%%share/boinc/skins/World Community Grid/wcg_stop.png
 %%SKINS%%share/boinc/skins/World Community Grid/skin.xml
-%%X11%%share/boinc/txf/AvantGarde-Book.txf
-%%X11%%share/boinc/txf/AvantGarde-BookOblique.txf
-%%X11%%share/boinc/txf/AvantGarde-Demi.txf
-%%X11%%share/boinc/txf/AvantGarde-DemiOblique.txf
-%%X11%%share/boinc/txf/Bookman-Demi.txf
-%%X11%%share/boinc/txf/Bookman-DemiItalic.txf
-%%X11%%share/boinc/txf/Bookman-Light.txf
-%%X11%%share/boinc/txf/Bookman-LightItalic.txf
-%%X11%%share/boinc/txf/Courier-Bold.txf
-%%X11%%share/boinc/txf/Courier-BoldOblique.txf
-%%X11%%share/boinc/txf/Courier-Oblique.txf
-%%X11%%share/boinc/txf/Courier.txf
-%%X11%%share/boinc/txf/Helvetica-Bold.txf
-%%X11%%share/boinc/txf/Helvetica-BoldOblique.txf
-%%X11%%share/boinc/txf/Helvetica-Oblique.txf
-%%X11%%share/boinc/txf/Helvetica.txf
-%%X11%%share/boinc/txf/NewCenturySchlbk-Bold.txf
-%%X11%%share/boinc/txf/NewCenturySchlbk-BoldItalic.txf
-%%X11%%share/boinc/txf/NewCenturySchlbk-Italic.txf
-%%X11%%share/boinc/txf/NewCenturySchlbk-Roman.txf
-%%X11%%share/boinc/txf/Palatino-Bold.txf
-%%X11%%share/boinc/txf/Palatino-BoldItalic.txf
-%%X11%%share/boinc/txf/Palatino-Italic.txf
-%%X11%%share/boinc/txf/Palatino-Roman.txf
-%%X11%%share/boinc/txf/Times-Bold.txf
-%%X11%%share/boinc/txf/Times-BoldItalic.txf
-%%X11%%share/boinc/txf/Times-Italic.txf
-%%X11%%share/boinc/txf/Times-Roman.txf
-%%X11%%share/boinc/txf/ZapfChancery-MediumItalic.txf
+%%X11%%share/boinc/ttf/LiberationMono-Bold.ttf
+%%X11%%share/boinc/ttf/LiberationMono-BoldItalic.ttf
+%%X11%%share/boinc/ttf/LiberationMono-Italic.ttf
+%%X11%%share/boinc/ttf/LiberationMono-Regular.ttf
+%%X11%%share/boinc/ttf/LiberationSans-Bold.ttf
+%%X11%%share/boinc/ttf/LiberationSans-BoldItalic.ttf
+%%X11%%share/boinc/ttf/LiberationSans-Italic.ttf
+%%X11%%share/boinc/ttf/LiberationSans-Regular.ttf
+%%X11%%share/boinc/ttf/LiberationSerif-Bold.ttf
+%%X11%%share/boinc/ttf/LiberationSerif-BoldItalic.ttf
+%%X11%%share/boinc/ttf/LiberationSerif-Italic.ttf
+%%X11%%share/boinc/ttf/LiberationSerif-Regular.ttf
 %%NLS%%share/locale/ar/LC_MESSAGES/BOINC-Client.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/BOINC-Manager.mo
 %%NLS%%share/locale/be/LC_MESSAGES/BOINC-Client.mo
@@ -441,10 +435,11 @@ lib/libboinc_zip.so.7
 %%SKINS%%@dirrm share/boinc/skins/People for a Smarter Planet
 %%SKINS%%@dirrm share/boinc/skins/Progress Thru Processors/graphic
 %%SKINS%%@dirrm share/boinc/skins/Progress Thru Processors
-%%SKINS%%@dirrm share/boinc/skins/World Community Grid/graphic
+%%SKINS%%@dirrm share/boinc/skins/World Community Grid/Old/graphic
+%%SKINS%%@dirrm share/boinc/skins/World Community Grid/Old
 %%SKINS%%@dirrm share/boinc/skins/World Community Grid
 %%BOINC_MANAGER%%@dirrm share/boinc/skins
-%%X11%%@dirrm share/boinc/txf
+%%X11%%@dirrm share/boinc/ttf
 %%X11%%@dirrm share/boinc
 %%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sv_SE

@@ -1,5 +1,5 @@
---- client/client_msgs.h.old	2013-05-17 14:13:10.000000000 +0300
-+++ client/client_msgs.h	2013-05-17 14:13:20.000000000 +0300
+--- ./client/client_msgs.h.orig	2013-07-24 15:13:28.000000000 +0000
++++ ./client/client_msgs.h	2013-09-17 21:16:00.000000000 +0000
 @@ -73,6 +73,6 @@
      __attribute__ ((format (printf, 4, 5)))
  ;

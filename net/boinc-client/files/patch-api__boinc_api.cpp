@@ -1,6 +1,6 @@
---- api/boinc_api.cpp.old	2013-05-17 14:10:37.000000000 +0300
-+++ api/boinc_api.cpp	2013-05-17 14:10:49.000000000 +0300
-@@ -111,7 +111,7 @@
+--- ./api/boinc_api.cpp.orig	2013-07-24 15:13:28.000000000 +0000
++++ ./api/boinc_api.cpp	2013-09-17 21:16:00.000000000 +0000
+@@ -120,7 +120,7 @@
      // CPPFLAGS=-DGETRUSAGE_IN_TIMER_THREAD
  #endif
  
