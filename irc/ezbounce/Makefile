@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ezbounce
-# Date created:	 	19 February 1999
-# Whom:			Chris Piazza <cpiazza@FreeBSD.org>
-#
+# Created by: Chris Piazza <cpiazza@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ezbounce
 PORTVERSION=	1.99.15
@@ -16,7 +12,8 @@ COMMENT=	A highly configurable IRC Proxy
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
+USE_GCC=	any
 
 SUB_FILES=	pkg-message
 
@@ -54,13 +51,12 @@ do-install:
 		${WRKSRC}/ezb.conf.default ${PREFIX}/etc/ezb.conf; \
 	fi
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/worklog ${DOCSDIR}
-
 .endif
 	@${CAT} ${PKGMESSAGE}
 
