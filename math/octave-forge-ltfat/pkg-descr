@@ -1,0 +1,15 @@
+The octave-forge package is the result of The GNU Octave Repositry project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is ltfat.
+
+ The Large Time/Frequency Analysis Toolbox (LTFAT) is a Matlab/Octave toolbox
+ for working with time-frequency analysis, wavelets and signal processing. It
+ is intended both as an educational and a computational tool. The toolbox
+ provides a large number of linear transforms including Gabor and wavelet
+ transforms along with routines for constructing windows (filter prototypes)
+ and routines for manipulating coefficients.
+
+WWW: http://octave.sourceforge.net/
