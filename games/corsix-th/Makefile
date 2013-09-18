@@ -20,7 +20,8 @@ USES=		cmake pkgconfig
 USE_LUA=	yes
 USE_SDL=	mixer
 USE_DOS2UNIX=	CMake/FindFFmpeg.cmake \
-		CorsixTH/CMakeLists.txt
+		CorsixTH/CMakeLists.txt \
+		CorsixTH/Src/iso_fs.cpp
 
 OPTIONS_DEFINE=	MOVIES
 OPTIONS_DEFAULT=	MOVIES
