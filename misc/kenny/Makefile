@@ -17,6 +17,7 @@ PROJECTHOST=	ak-various-projects
 CONFLICTS=	filters-*
 
 USES=		perl5
+USE_PERL5=	extract build run
 EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	> ${WRKDIR}/${PORTNAME}
