@@ -1,5 +1,5 @@
---- clients/textedit/textedit.c.orig	2012-02-07 19:59:37.568483244 -0800
-+++ clients/textedit/textedit.c	2012-02-07 20:27:31.078772400 -0800
+--- clients/textedit/textedit.c.orig	2005-03-28 06:39:35.000000000 -0800
++++ clients/textedit/textedit.c	2013-09-17 23:16:22.050879918 -0700
 @@ -12,7 +12,7 @@
   */
  
@@ -18,6 +18,15 @@
  char *sprintf();
  #endif
  void	frame_cmdline_help();
+@@ -257,7 +257,7 @@
+ 	char		*attr_string;
+ 
+ 	if (handling_signal)
+-	    return;
++	    return 0;
+ 	icon_text[0] = '\0';
+ 	ptr = icon_text;
+ 	for (attrs = attributes; *attrs; attrs = attr_next(attrs)) {
 @@ -824,10 +824,10 @@
  	 * Setup signal handlers.
  	 */

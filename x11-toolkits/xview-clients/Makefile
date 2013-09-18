@@ -17,6 +17,7 @@ COMMENT=	OpenLook applications and man pages
 
 CONFLICTS=	props-1.0
 
+MAKE_JOBS_UNSAFE=	yes
 PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/xview:patch
 CONFIGURE_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/xview:configure
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
