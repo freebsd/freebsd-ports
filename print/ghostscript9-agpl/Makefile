@@ -35,7 +35,7 @@ CONFLICTS_INSTALL= \
 		ghostscript[789]-[0-9]* \
 		ghostscript[789]-nox11-[0-9]*
 
-USES=		gmake
+USES=		gmake pkgconfig:build
 USE_BZIP2=	yes
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
