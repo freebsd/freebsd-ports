@@ -9,16 +9,19 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.gz
 EXTRACT_ONLY=	${DISTFILES}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A handy utility to show codepoint information of given characters
+COMMENT=	Handy utility to show codepoint information of given characters
 
-USES=		perl5
-
+USES=		shebangfix perl5
+USE_PERL5=	extract run
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+SHEBANG_FILES=	kcode
+perl_OLD_CMD=	/usr/bin/env perl
 
 MANLANG=	ja
 MAN1=		kcode.1
 MANCOMPRESSED=	no
+PLIST_FILES=	bin/kcode
 
 RUN_DEPENDS=	ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
 
