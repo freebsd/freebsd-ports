@@ -13,6 +13,7 @@ COMMENT=	3D triangular meshes processing and editing tool
 EXTRACT_DEPENDS=7z:${PORTSDIR}/archivers/p7zip
 LIB_DEPENDS=	QtSolutions_SOAP-head:${PORTSDIR}/devel/qt4-qtsolutions-soap
 
+USE_GCC=	yes
 USE_GL=		glew glu
 USE_QT4=	qmake_build moc_build rcc_build uic_build corelib gui xml \
 		xmlpatterns opengl network script
