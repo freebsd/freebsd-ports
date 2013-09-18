@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird
-PORTVERSION=	17.0.8
+DISTVERSION=	24.0
 CATEGORIES=	mail
-DISTNAME=	${PORTNAME}-${DISTVERSION}esr
-MASTER_SITES=   MOZILLA/${PORTNAME}/releases/${PORTVERSION}esr/linux-i686/en-US
+DISTNAME=	${PORTNAME}-${DISTVERSION}
+MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/linux-i686/en-US
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
 USE_BZIP2=	yes
+REPLACE_GRE=	yes
 
 USE_LINUX_APPS=	dbusglib dbuslibs alsalib alsa-plugins-oss
 

@@ -77,7 +77,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 
 _GECKO_ALL=	libxul
 
-libxul_PLIST=		libxul>=17
+libxul_PLIST=		libxul>=24
 
 .for gecko in ${_GECKO_ALL}
 ${gecko}_PORTSDIR?=	www
@@ -176,7 +176,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         is given by the maintainer via the port or by the
 #                         user via defined variable try to find the highest
 #                         stable installed version.
-#                         Available values: yes 17+ 23+ 17 23+
+#                         Available values: yes 17+ 24+ 17 24+
 #                         NOTE:
 #                         default value 17 is used in case of USE_FIREFOX=yes
 #
@@ -187,9 +187,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port
 #                         or by the user via defined variable try to find
 #                         the highest stable installed version.
-#                         Available values: yes 20+ 20
+#                         Available values: yes 21+ 21
 #                         NOTE:
-#                         default value 20 is used in case of USE_SEAMONKEY=yes
+#                         default value 21 is used in case of USE_SEAMONKEY=yes
 #
 # USE_SEAMONKEY_BUILD     Add buildtime dependency on SeaMonkey.
 #                         Available values: see USE_SEAMONKEY
@@ -198,9 +198,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port
 #                         or by the user via defined variable try to find
 #                         the highest stable installed version.
-#                         Available values: yes 17+ 17
+#                         Available values: yes 24+ 24
 #                         NOTE:
-#                         default value 17 is used in case of USE_THUNDERBIRD=yes
+#                         default value 24 is used in case of USE_THUNDERBIRD=yes
 #
 # USE_THUNDERBIRD_BUILD   Add buildtime dependency on Thunderbird.
 #                         Available values: see USE_THUNDERBIRD
@@ -218,11 +218,11 @@ _FIREFOX_BUILD_DEPENDS=		yes
 .endif
 
 _FIREFOX_DEFAULT_VERSION=	17
-_FIREFOX_VERSIONS=			17 23
-_FIREFOX_RANGE_VERSIONS=	17+ 23+
+_FIREFOX_VERSIONS=			17 24
+_FIREFOX_RANGE_VERSIONS=	17+ 24+
 
 # For specifying [17, ..]+
-_FIREFOX_23P=	23 ${_FIREFOX_17P}
+_FIREFOX_24P=	24 ${_FIREFOX_17P}
 _FIREFOX_17P=	17
 
 # Set the default Firefox version and check if USE_FIREFOX=yes was given
@@ -269,7 +269,7 @@ IGNORE=			cannot install: unknown Firefox version: firefox-${USE_FIREFOX:C/([0-9
 
 # Dependence lines for different Firefox versions
 17_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox-esr
-23_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+24_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
 
 # Add dependencies
 .if defined(USE_FIREFOX)
@@ -291,12 +291,12 @@ USE_SEAMONKEY:=				${USE_SEAMONKEY_BUILD}
 _SEAMONKEY_BUILD_DEPENDS=	yes
 .endif
 
-_SEAMONKEY_DEFAULT_VERSION=	20
-_SEAMONKEY_VERSIONS=		20
-_SEAMONKEY_RANGE_VERSIONS=	20+
+_SEAMONKEY_DEFAULT_VERSION=	21
+_SEAMONKEY_VERSIONS=		21
+_SEAMONKEY_RANGE_VERSIONS=	21+
 
-# For specifying [20, ..]+
-_SEAMONKEY_20P=	20
+# For specifying [21, ..]+
+_SEAMONKEY_21P=	21
 
 # Set the default SeaMonkey version and check if USE_SEAMONKEY=yes was given
 .if ${USE_SEAMONKEY} == "yes"
@@ -338,7 +338,7 @@ IGNORE=			cannot install: unknown SeaMonkey version: seamonkey-2.${USE_SEAMONKEY
 .endif
 
 # Dependence lines for different SeaMonkey versions
-20_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
+21_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
 
 # Add dependencies
 .if defined(USE_SEAMONKEY)
@@ -360,12 +360,12 @@ USE_THUNDERBIRD:=			${USE_THUNDERBIRD_BUILD}
 _THUNDERBIRD_BUILD_DEPENDS=		yes
 .endif
 
-_THUNDERBIRD_DEFAULT_VERSION=	17
-_THUNDERBIRD_VERSIONS=			17
-_THUNDERBIRD_RANGE_VERSIONS=	17+
+_THUNDERBIRD_DEFAULT_VERSION=	24
+_THUNDERBIRD_VERSIONS=			24
+_THUNDERBIRD_RANGE_VERSIONS=	24+
 
-# For specifying [17, ..]+
-_THUNDERBIRD_17P=	17
+# For specifying [24, ..]+
+_THUNDERBIRD_24P=	24
 
 # Set the default Thunderbird version and check if USE_THUNDERBIRD=yes was given
 .if ${USE_THUNDERBIRD} == "yes"
@@ -409,7 +409,7 @@ IGNORE=			cannot install: unknown Thunderbird version: thunderbird-${USE_THUNDER
 .endif
 
 # Dependence lines for different Thunderbird versions
-17_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
+24_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
 
 # Add dependencies
 .if defined(USE_THUNDERBIRD)
@@ -502,7 +502,7 @@ MOZILLA_BIN?=	${PORTNAME}-bin
 MOZILLA_EXEC_NAME?=${MOZILLA}
 MOZ_RPATH?=	${MOZILLA}
 USE_GNOME+=	libidl desktopfileutils
-USES+=	iconv perl5
+USES+=		gmake iconv perl5 pkgconfig
 USE_PERL5=	build
 USE_XORG=	printproto sm xt xi xext x11 xinerama \
 		ice xproto
@@ -598,7 +598,7 @@ _ALL_DEPENDS+=	icu
 .endif
 
 icu_LIB_DEPENDS=		icui18n:${PORTSDIR}/devel/icu
-icu_MOZ_OPTIONS=		--enable-intl-api --with-system-icu
+icu_MOZ_OPTIONS=		--with-system-icu --with-intl-api --enable-intl-api
 
 # XXX: depends on pkgng package flavor support
 #jpeg_LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/libjpeg-turbo
@@ -649,7 +649,7 @@ EXTRACT_AFTER_ARGS+=	${${dep}_EXTRACT_AFTER_ARGS}
 # Standard options
 MOZ_CHROME?=	omni
 MOZ_TOOLKIT?=	cairo-gtk2
-MOZ_OPTIONS+=	--disable-tests 	\
+MOZ_OPTIONS+=	\
 		--enable-chrome-format=${MOZ_CHROME} \
 		--enable-default-toolkit=${MOZ_TOOLKIT} \
 		--with-pthreads
@@ -677,6 +677,9 @@ MOZ_OPTIONS+=	--with-system-zlib		\
 
 .if ${MOZILLA_VER:R:R} < 25 && !exists(${FILESDIR}/patch-bug803480)
 MOZ_OPTIONS+=	--disable-necko-wifi
+.else
+# XXX stolen from www/chromium
+MOZ_EXPORT+=	MOZ_GOOGLE_API_KEY=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8
 .endif
 
 .if ${PORT_OPTIONS:MGTK3}
@@ -763,18 +766,10 @@ USE_DISPLAY=yes
 .undef GNU_CONFIGURE
 MAKEFILE=	${WRKSRC}/client.mk
 ALL_TARGET=	profiledbuild
+. if ${MOZILLA_VER:R:R} < 22 && ! ${MOZILLA:Mseamonkey*}
 MOZ_MK_OPTIONS+=PROFILE_GEN_SCRIPT="${PYTHON_CMD} \
 		@MOZ_OBJDIR@/_profile/pgo/profileserver.py"
-.endif
-
-.if ${PORT_OPTIONS:MWEBRTC}
-BUILD_DEPENDS+=	v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS+=	v4l2:${PORTSDIR}/multimedia/libv4l
-. if ${PORT_OPTIONS:MOSS}
-IGNORE=		WEBRTC works only with ALSA and PULSEAUDIO audio backends
 . endif
-.else
-MOZ_OPTIONS+=	--disable-webrtc
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
@@ -791,22 +786,35 @@ LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 MOZ_OPTIONS+=	--enable-pulseaudio
 .endif
 
-.if !defined(STRIP) || ${STRIP} == ""
-MOZ_OPTIONS+=	--disable-strip --disable-install-strip
-.else
-MOZ_OPTIONS+=	--enable-strip --enable-install-strip
-.endif
-
 .if ${PORT_OPTIONS:MDEBUG}
-MOZ_OPTIONS+=	--enable-debug
+MOZ_OPTIONS+=	--enable-debug --disable-release
 .else
-MOZ_OPTIONS+=	--disable-debug
+MOZ_OPTIONS+=	--disable-debug --enable-release
 .endif
 
 .if ${PORT_OPTIONS:MLOGGING} || ${PORT_OPTIONS:MDEBUG}
 MOZ_OPTIONS+=	--enable-logging
 .else
 MOZ_OPTIONS+=	--disable-logging
+.endif
+
+.if ${PORT_OPTIONS:MPROFILE}
+MOZ_OPTIONS+=	--enable-profiling
+STRIP=
+.else
+MOZ_OPTIONS+=	--disable-profiling
+.endif
+
+.if ${PORT_OPTIONS:MTEST}
+MOZ_OPTIONS+=	--enable-tests
+.else
+MOZ_OPTIONS+=	--disable-tests
+.endif
+
+.if !defined(STRIP) || ${STRIP} == ""
+MOZ_OPTIONS+=	--disable-strip --disable-install-strip
+.else
+MOZ_OPTIONS+=	--enable-strip --enable-install-strip
 .endif
 
 MOZ_SED_ARGS+=	-e's|@CPPFLAGS@|${CPPFLAGS}|g'		\

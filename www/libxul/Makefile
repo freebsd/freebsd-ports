@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxul
-DISTVERSION=	17.0.8
+DISTVERSION=	24.0
 CATEGORIES?=	www devel
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source
 DISTNAME=	firefox-${DISTVERSION}esr.source
@@ -10,14 +10,16 @@ DISTNAME=	firefox-${DISTVERSION}esr.source
 MAINTAINER?=	gecko@FreeBSD.org
 COMMENT?=	Mozilla runtime package that can be used to bootstrap XUL+XPCOM apps
 
-BUILD_DEPENDS=	nspr>=4.9.2:${PORTSDIR}/devel/nspr \
-		nss>=3.13.6_1:${PORTSDIR}/security/nss \
-		sqlite3>=3.7.13:${PORTSDIR}/databases/sqlite3 \
+BUILD_DEPENDS=	nspr>=4.10:${PORTSDIR}/devel/nspr \
+		nss>=3.15:${PORTSDIR}/security/nss \
+		sqlite3>=3.7.16.1:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
+		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
 		unzip:${PORTSDIR}/archivers/unzip
+LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
-WRKSRC=		${WRKDIR}/mozilla-esr17
+WRKSRC=		${WRKDIR}/mozilla-esr24
 CONFLICTS=	libxul-1.9.*
 
 USE_AUTOTOOLS=	autoconf213:env
@@ -29,8 +31,8 @@ WANT_PERL=	yes
 ALL_TARGET=	default
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=		pkgconfig gmake
 USE_GL=		gl
+USE_DOS2UNIX=	media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
 MAKE_ENV=	SKIP_GRE_REGISTRATION=1 mozappdir=${PREFIX}/lib/${MOZILLA}
 LDFLAGS+=	-Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
 USE_LDCONFIG=	${PREFIX}/lib/${MOZILLA}
@@ -38,6 +40,7 @@ USE_LDCONFIG=	${PREFIX}/lib/${MOZILLA}
 MOZ_OPTIONS?=	--enable-application=xulrunner
 MOZ_EXTENSIONS=	default,cookie,permissions
 USE_GECKO=	gecko
+OBJDIR_BUILD=	# in-tree build broken after bug 789837
 MOZILLA_EXEC_NAME=xulrunner
 USE_MOZILLA=	# empty
 MOZILLA_PLIST_DIRS=	bin include lib share/idl
@@ -45,7 +48,13 @@ PLIST_DIRSTRY=	share/idl
 MOZ_PKGCONFIG_FILES=	libxul-embedding libxul mozilla-js \
 			mozilla-plugin
 
+OPTIONS_DEFAULT=GSTREAMER
+
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
+
+# OSS is gone after bug 852401
+OPTIONS_SINGLE_AUDIO:=${OPTIONS_SINGLE_AUDIO:S/OSS//}
+
 .include <bsd.port.pre.mk>
 
 .if ${USE_MOZILLA:M-nss}
@@ -53,6 +62,8 @@ MOZ_PKGCONFIG_FILES+=	mozilla-nss
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '/MOZPNG/s/=[0-9]*/=10511/' \
+		${WRKSRC}/configure.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/xulrunner/stub/nsXULStub.cpp
 

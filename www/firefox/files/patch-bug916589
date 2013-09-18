@@ -1,0 +1,40 @@
+diff --git media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h
+index 5b50785..7cf47d5 100644
+--- media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h
++++ media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h
+@@ -31,11 +31,14 @@
+  */
+ 
+-#ifndef _SYS_QUEUE_H_
++#if (defined(BSD) && !defined(__OpenBSD__)) || defined(DARWIN)
++#include_next <sys/queue.h>
++#elif !defined(_SYS_QUEUE_H_)
+ #define	_SYS_QUEUE_H_
+ 
+-#if !defined(__FreeBSD__) && !defined(DARWIN)
+ #include <stddef.h>
+-#define __offsetof offsetof
++
++#ifndef offsetof
++#define offsetof(type, field) ((size_t)(&((type *)0)->field))
+ #endif
+ 
+ #define STAILQ_FOREACH_SAFE(var, head, field, tvar)                     \
+@@ -43,8 +46,6 @@
+              (var) && ((tvar) = STAILQ_NEXT((var), field), 1);           \
+              (var) = (tvar))
+ 
+-// #define __offsetof(type, field) ((size_t)(&((type *)0)->field))
+-
+ /*
+  * This file defines four types of data structures: singly-linked lists,
+  * singly-linked tail queues, lists and tail queues.
+@@ -285,7 +286,7 @@ struct {								\
+ 	(STAILQ_EMPTY((head)) ?						\
+ 		NULL :							\
+ 	        ((struct type *)					\
+-		((char *)((head)->stqh_last) - __offsetof(struct type, field))))
++		((char *)((head)->stqh_last) - offsetof(struct type, field))))
+ 
+ #define	STAILQ_NEXT(elm, field)	((elm)->field.stqe_next)
+ 

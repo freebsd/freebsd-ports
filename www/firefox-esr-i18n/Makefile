@@ -1,11 +1,12 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	firefox-i18n
-PORTVERSION=	17.0.8
+PORTNAME=	firefox
+PORTVERSION=	17.0.9
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}esr/linux-i686/xpi
 PKGNAMEPREFIX=
+PKGNAMESUFFIX=	-esr-i18n
 DISTFILES=	${FIREFOX_I18N_:S/$/.xpi/}
 DIST_SUBDIR=	xpi/${DISTNAME}
 
@@ -16,7 +17,6 @@ EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 USE_FIREFOX=	17
 USE_XPI=	firefox linux-firefox
-LATEST_LINK=	firefox-esr-i18n
 
 USE_SUBMAKE=	yes
 

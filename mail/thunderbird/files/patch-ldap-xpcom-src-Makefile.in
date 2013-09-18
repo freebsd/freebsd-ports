@@ -1,0 +1,13 @@
+--- ldap/xpcom/src/Makefile.in.orig	2012-03-12 10:25:35.000000000 +0100
++++ ldap/xpcom/src/Makefile.in	2012-03-12 10:26:09.000000000 +0100
+@@ -89,6 +89,10 @@
+ 		$(NULL)
+ endif
+ 
++ifeq ($(OS_ARCH), FreeBSD)
++EXTRA_LIBS = -L$(dist_libdir) -l$(LBER_LIBNAME) -lpthread
++endif
++
+ EXTRA_DSO_LDOPTS += $(LDAP_LIBS)
+ ifndef MOZ_INCOMPLETE_EXTERNAL_LINKAGE
+ EXTRA_DSO_LDOPTS += $(MOZ_COMPONENT_LIBS)

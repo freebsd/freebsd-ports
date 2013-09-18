@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	23.0.1
+DISTVERSION=	24.0
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
-MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source
-DISTNAME=	${PORTNAME}-${DISTVERSION}.source
+MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source
+DISTNAME=	${PORTNAME}-${DISTVERSION}esr.source
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
@@ -16,13 +16,15 @@ BUILD_DEPENDS=	nspr>=4.10:${PORTSDIR}/devel/nspr \
 		sqlite3>=3.7.16.1:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
+		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
 		unzip:${PORTSDIR}/archivers/unzip
+LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
 USE_AUTOTOOLS=	autoconf213:env
 USE_PYTHON_BUILD=-2.7
 OBJDIR_BUILD=	# in-tree build broken after bug 789837
 USE_GECKO=	gecko
-CONFLICTS=	firefox-24.* firefox-1[07].*
+CONFLICTS=	firefox-esr-24.* firefox-esr-17.* firefox-1[07].*
 MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	# empty
 MOZILLA_NAME=	Firefox
@@ -33,7 +35,6 @@ QT_NONSTANDARD=	yes
 ALL_TARGET=	default
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=		gmake pkgconfig
 USE_GL=		gl
 USE_DOS2UNIX=	media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
 NO_MOZPKGINSTALL=yes
@@ -44,8 +45,7 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--enable-application=browser \
 		--enable-official-branding
 
-OPTIONS_DEFINE=	WEBRTC
-OPTIONS_DEFAULT=WEBRTC
+OPTIONS_DEFAULT=GSTREAMER
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
@@ -54,7 +54,7 @@ OPTIONS_SINGLE_AUDIO:=${OPTIONS_SINGLE_AUDIO:S/OSS//}
 
 .include <bsd.port.pre.mk>
 
-WRKSRC:=	${WRKDIR}/mozilla-release
+WRKSRC:=	${WRKDIR}/mozilla-esr24
 
 post-extract:
 	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \

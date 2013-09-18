@@ -1,12 +1,13 @@
---- ldap/sdks/c-sdk/ldap/libraries/libssldap/Makefile.in~
-+++ ldap/sdks/c-sdk/ldap/libraries/libssldap/Makefile.in
-@@ -188,6 +188,9 @@ endif
+--- ldap/sdks/c-sdk/ldap/libraries/libssldap/Makefile.in.orig	2009-09-10 17:36:39.000000000 +0200
++++ ldap/sdks/c-sdk/ldap/libraries/libssldap/Makefile.in	2009-09-10 17:37:28.000000000 +0200
+@@ -180,6 +180,10 @@
+ CUSTOM_LIBS=1
+ endif
  
- OBJDEST = $(OBJDIR_NAME)
- 
-+# accept -pthread with MOZ_NATIVE_NSS
-+LINK_DLL	= $(CC_FOR_LINK) -shared -o $@ $(OBJS) $(EXTRA_DLL_LIBS)
++ifeq ($(OS_ARCH), FreeBSD)
++CUSTOM_LIBS=1
++endif
 +
- ###########################################################################
- 
- ifeq ($(USE_DLL_EXPORTS_FILE), 1)
+ ifndef CUSTOM_LIBS
+ EXTRA_LIBS = -L$(dist_libdir) -l$(LDAP_LIBNAME) -l$(PRLDAP_LIBNAME)
+ EXTRA_LIBS += $(NSSLINK) 

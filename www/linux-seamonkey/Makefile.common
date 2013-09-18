@@ -1,13 +1,13 @@
-# New ports collection makefile for:   mozilla linux binary ports
-# Date created:		1 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 CATEGORIES+=	linux
 MASTER_SITES?=	MOZILLA/${PORTNAME}/releases/${PORTVERSION}esr/linux-i686/en-US
 PKGNAMEPREFIX?=		linux-
+
+.if defined(REPLACE_GRE)
+EXTRACT_DEPENDS+=${NONEXISTENT}:${.CURDIR}/../../www/linux-seamonkey:extract
+.endif
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -38,17 +38,33 @@ post-extract:
 	@${MKDIR} ${WRKSRC}/${APP_SUBDIR}extensions
 .endif
 
-.if ${CATEGORIES:Mwww}
+.if defined(REPLACE_GRE)
+# XXX remove after linux_base-c6 and linux-c6-gtk2 become default
+# using seamonkey gre for linux_base-f10 compat
+post-extract:	replace-gre
+replace-gre:	version-compat-check
+	@${ECHO_MSG} "===>   GRE versions are compatible, replacing with" \
+		"$$(${MAKE} -V PKGNAME -C ${.CURDIR}/../../www/linux-seamonkey)"
+	cd $$(${MAKE} -V WRKSRC -C ${.CURDIR}/../../www/linux-seamonkey); \
+		${CP} lib* dependentlibs.list ${WRKSRC}
+
+version-compat-check:
+	@${ECHO_MSG} "===>  Checking GRE version is compatible with" \
+		"$$(${MAKE} -V PKGNAME -C ${.CURDIR}/../../www/linux-seamonkey)"
+	@ff_gre_version=$$(${AWK} -F= '/Milestone/ { print $$2 }' ${WRKSRC}/platform.ini); \
+	sm_gre_version=$$(${AWK} -F= '/Milestone/ { print $$2 }' $$(${MAKE} -V WRKSRC -C ${.CURDIR}/../../www/linux-seamonkey)/platform.ini); \
+	if [ $$ff_gre_version != $$sm_gre_version ]; then \
+	    ${ECHO_MSG} "===>   GRE versions aren't compatible, aborting"; \
+	    exit 1; \
+	fi
+.endif
+
 .if !target(post-patch)
 post-patch:
 	@${MKDIR} ${PREFS_FILE:H}
 
-	# no AFMT_FLOAT support in kernel (bug 780531)
-	${ECHO} 'pref("media.use_cubeb", false);' >> ${PREFS_FILE}
-
 	# out-of-process plugins don't work with linuxulator (ports/170402)
 	${ECHO} 'pref("dom.ipc.plugins.enabled", false);' >> ${PREFS_FILE}
-.endif
 .endif
 
 .if !target(do-install)
