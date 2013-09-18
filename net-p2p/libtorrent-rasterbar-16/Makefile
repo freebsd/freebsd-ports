@@ -12,8 +12,8 @@ COMMENT?=	C++ library implementing a BitTorrent client
 
 LICENSE=	BSD
 
-LIB_DEPENDS+=	boost_date_time:${PORTSDIR}/devel/boost-libs \
-		GeoIP:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
+		libGeoIP.so:${PORTSDIR}/net/GeoIP
 
 USES=		pathfix pkgconfig iconv
 USE_OPENSSL=	yes
