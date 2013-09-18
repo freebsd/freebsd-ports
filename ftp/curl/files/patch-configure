@@ -6,19 +6,32 @@ Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
 Last-Update: 2010-12-19
 
---- configure.orig	2013-02-06 17:47:26.000000000 +0800
-+++ configure	2013-02-18 18:25:16.000000000 +0800
-@@ -16651,6 +16651,9 @@
+--- configure.orig	2013-06-22 06:29:35.000000000 +0800
++++ configure	2013-09-18 01:39:42.256041308 +0800
+@@ -3626,9 +3626,10 @@
+   xc_bad_var_cflags=no
+   for xc_word in $CFLAGS; do
+     case "$xc_word" in
+-      -D*)
+-        xc_bad_var_cflags=yes
+-        ;;
++# Temporarily disable -D* flag check (PR/177401, PR/180944)
++#      -D*)
++#        xc_bad_var_cflags=yes
++#        ;;
+       -U*)
+         xc_bad_var_cflags=yes
+         ;;
+@@ -16912,6 +16913,8 @@
      tmp_CFLAGS="$CFLAGS"
      tmp_CPPFLAGS="$CPPFLAGS"
  
-+# Do not remove the user-supplied debug flags in CFLAGS
-+# PR: 150854
++# Do not remove the user-supplied debug flags in CFLAGS (PR/150854)
 +if false; then
      ac_var_stripped=""
    for word1 in $tmp_CFLAGS; do
      ac_var_strip_word="no"
-@@ -16681,6 +16684,7 @@
+@@ -16942,6 +16945,7 @@
    done
      tmp_CPPFLAGS="$ac_var_stripped"
    squeeze tmp_CPPFLAGS
@@ -26,17 +39,16 @@ Last-Update: 2010-12-19
  
      #
      if test "$want_debug" = "yes"; then
-@@ -16898,6 +16902,9 @@
+@@ -17159,6 +17163,8 @@
      #
      if test "$honor_optimize_option" = "yes"; then
  
-+# Do not remove the user-supplied optimization flags in CFLAGS
-+# PR: 150854
++# Do not remove the user-supplied optimization flags in CFLAGS (PR/150854)
 +if false; then
      ac_var_stripped=""
    for word1 in $tmp_CFLAGS; do
      ac_var_strip_word="no"
-@@ -16928,6 +16935,7 @@
+@@ -17189,6 +17195,7 @@
    done
      tmp_CPPFLAGS="$ac_var_stripped"
    squeeze tmp_CPPFLAGS
@@ -44,7 +56,7 @@ Last-Update: 2010-12-19
  
        if test "$want_optimize" = "yes"; then
          { $as_echo "$as_me:${as_lineno-$LINENO}: checking if compiler accepts optimizer enabling options" >&5
-@@ -21379,7 +21387,8 @@
+@@ -21614,7 +21621,8 @@
          PKGTEST="no"
      PREFIX_OPENSSL=$OPT_SSL
  
@@ -54,7 +66,7 @@ Last-Update: 2010-12-19
      { $as_echo "$as_me:${as_lineno-$LINENO}: PKG_CONFIG_LIBDIR will be set to \"$OPENSSL_PCDIR\"" >&5
  $as_echo "$as_me: PKG_CONFIG_LIBDIR will be set to \"$OPENSSL_PCDIR\"" >&6;}
      if test -f "$OPENSSL_PCDIR/openssl.pc"; then
-@@ -24725,29 +24734,30 @@
+@@ -24962,29 +24970,30 @@
      ;;
    off)
          LIB_RTMP="-lrtmp"
@@ -94,3 +106,17 @@ Last-Update: 2010-12-19
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
+@@ -39256,9 +39265,10 @@
+   xc_bad_var_cflags=no
+   for xc_word in $CFLAGS; do
+     case "$xc_word" in
+-      -D*)
+-        xc_bad_var_cflags=yes
+-        ;;
++# Temporarily disable -D* flag check (PR/177401, PR/180944)
++#      -D*)
++#        xc_bad_var_cflags=yes
++#        ;;
+       -U*)
+         xc_bad_var_cflags=yes
+         ;;
