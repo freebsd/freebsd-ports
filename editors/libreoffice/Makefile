@@ -20,34 +20,34 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bash:${PORTSDIR}/shells/bash \
 		gsed:${PORTSDIR}/textproc/gsed
 
-LIB_DEPENDS=	icutu:${PORTSDIR}/devel/icu \
-		langtag:${PORTSDIR}/devel/liblangtag \
-		orcus-0.6:${PORTSDIR}/devel/liborcus \
-		curl:${PORTSDIR}/ftp/curl \
-		cairo.2:${PORTSDIR}/graphics/cairo \
-		graphite2:${PORTSDIR}/graphics/graphite2 \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		cdr:${PORTSDIR}/graphics/libcdr \
-		lcms2:${PORTSDIR}/graphics/lcms2 \
-		wpg-0.2.2:${PORTSDIR}/graphics/libwpg \
-		png15:${PORTSDIR}/graphics/png \
-		poppler:${PORTSDIR}/graphics/poppler \
-		lpsolve55:${PORTSDIR}/math/lp_solve \
-		cmis-0.4:${PORTSDIR}/net/libcmis \
-		mspub-0.0:${PORTSDIR}/print/libmspub \
-		nss3.1:${PORTSDIR}/security/nss \
-		clucene-core:${PORTSDIR}/textproc/clucene \
-		expat.6:${PORTSDIR}/textproc/expat2 \
-		hunspell-1.3.0:${PORTSDIR}/textproc/hunspell \
-		hyphen.2:${PORTSDIR}/textproc/hyphen \
-		exttextcat-2.0.0:${PORTSDIR}/textproc/libexttextcat \
-		visio-0.0.0:${PORTSDIR}/textproc/libvisio \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		xslt.2:${PORTSDIR}/textproc/libxslt \
-		wpd-0.9.9:${PORTSDIR}/textproc/libwpd \
-		wps-0.2.2:${PORTSDIR}/textproc/libwps \
-		mythes-1.2.0:${PORTSDIR}/textproc/mythes \
-		rdf.0:${PORTSDIR}/textproc/redland
+LIB_DEPENDS=	libicutu.so:${PORTSDIR}/devel/icu \
+		liblangtag.so:${PORTSDIR}/devel/liblangtag \
+		liborcus-0.6.so:${PORTSDIR}/devel/liborcus \
+		libcurl.so:${PORTSDIR}/ftp/curl \
+		libcairo.so:${PORTSDIR}/graphics/cairo \
+		libgraphite2.so:${PORTSDIR}/graphics/graphite2 \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libcdr-0.0.so:${PORTSDIR}/graphics/libcdr \
+		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
+		libwpg-0.2.so:${PORTSDIR}/graphics/libwpg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libpoppler.so:${PORTSDIR}/graphics/poppler \
+		liblpsolve55.so:${PORTSDIR}/math/lp_solve \
+		libcmis-0.4.so:${PORTSDIR}/net/libcmis \
+		libmspub-0.0.so:${PORTSDIR}/print/libmspub \
+		libnss3.so:${PORTSDIR}/security/nss \
+		libclucene-core.so:${PORTSDIR}/textproc/clucene \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
+		libhyphen.so:${PORTSDIR}/textproc/hyphen \
+		libexttextcat-2.0.so:${PORTSDIR}/textproc/libexttextcat \
+		libvisio-0.0.so:${PORTSDIR}/textproc/libvisio \
+		libxml2.so:${PORTSDIR}/textproc/libxml2 \
+		libxslt.so:${PORTSDIR}/textproc/libxslt \
+		libwpd-0.9.so:${PORTSDIR}/textproc/libwpd \
+		libwps-0.2.so:${PORTSDIR}/textproc/libwps \
+		libmythes-1.2.so:${PORTSDIR}/textproc/mythes \
+		librdf.so:${PORTSDIR}/textproc/redland
 
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu \
 		${LOCALBASE}/lib/X11/fonts/GentiumBasic/GenBasI.ttf:${PORTSDIR}/x11-fonts/gentium-basic \
@@ -187,7 +187,7 @@ WEBDAV_DESC=	Enable webdav protocol
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=		cups:${PORTSDIR}/print/cups-client
+LIB_DEPENDS+=		libcups.so:${PORTSDIR}/print/cups-client
 CONFIGURE_ARGS+=	--enable-cups --without-ppds
 .else
 CONFIGURE_ARGS+=	--disable-cups
@@ -204,7 +204,7 @@ CONFIGURE_ARGS+=	--enable-release-build
 .endif
 
 .if ${PORT_OPTIONS:MGNOME}
-LIB_DEPENDS+=		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 USE_GNOME+=		gconf2
 CONFIGURE_ARGS+=	--enable-dbus --enable-gconf --enable-gio \
 			--enable-lockdown
@@ -327,7 +327,7 @@ CONFIGURE_ARGS+=	--disable-cve-tests
 
 .if ${PORT_OPTIONS:MWEBDAV}
 CONFIGURE_ARGS+=	--enable-neon --with-system-neon
-LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
+LIB_DEPENDS+=	libneon.so:${PORTSDIR}/www/neon29
 .else
 CONFIGURE_ARGS+=	--disable-neon
 .endif
@@ -343,6 +343,9 @@ CC=		/usr/bin/clang
 CPP=		/usr/bin/clang-cpp
 CXX=		/usr/bin/clang++
 CONFIGURE_ENV+=	CXXCPP="${CPP}"
+.if ${OSVERSION} > 100054
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libc++
+.endif
 .else
 # XXX Clang PR13308 (http://llvm.org/bugs/show_bug.cgi?id=13308)
 BUILD_DEPENDS+=	clang>=3.2_4:${PORTSDIR}/lang/clang

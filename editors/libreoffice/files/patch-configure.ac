@@ -1,5 +1,5 @@
 --- configure.ac.orig	2013-08-13 16:11:48.000000000 -0400
-+++ configure.ac	2013-08-16 18:17:08.000000000 -0400
++++ configure.ac	2013-09-13 17:50:41.000000000 -0400
 @@ -3637,7 +3637,7 @@
          PLATFORMID=freebsd_x86
          OUTPATH=unxfbsdi
@@ -43,22 +43,7 @@
  else
      AC_MSG_RESULT([internal])
      SYSTEM_LIBCMIS=NO
-@@ -7929,9 +7921,13 @@
-     AC_MSG_CHECKING([which hash container mdds shall use])
-     if test "x$HAVE_CXX0X" = "xTRUE"; then
-         MDDS_CPPFLAGS="-std=gnu++0x"
-+    else
-+        MDDS_CPPFLAGS="-std=gnu++98"
-+    fi
-+    if test "x`basename $GXX_INCLUDE_PATH 2>/dev/null`" != "x4.2"; then
-         AC_MSG_RESULT([std::unordered_map])
-     else
--        MDDS_CPPFLAGS="-DMDDS_HASH_CONTAINER_BOOST"
-+        MDDS_CPPFLAGS="$MDDS_CPPFLAGS -DMDDS_HASH_CONTAINER_BOOST"
-         AC_MSG_RESULT([boost::unordered_map])
-     fi
- 
-@@ -8298,7 +8294,7 @@
+@@ -8298,7 +8290,7 @@
  dnl ===================================================================
  
  AC_MSG_CHECKING([whether to enable graphite support])
@@ -67,7 +52,7 @@
      AC_MSG_RESULT([yes])
      ENABLE_GRAPHITE="TRUE"
      AC_MSG_CHECKING([which graphite to use])
-@@ -8550,8 +8546,8 @@
+@@ -8550,8 +8542,8 @@
      AC_MSG_RESULT([external])
      # Mac OS builds should get out without extra stuff is the Mac porters'
      # wish. And pkg-config is although Xcode ships a .pc for openssl
@@ -78,7 +63,7 @@
          OPENSSL_CFLAGS=
          OPENSSL_LIBS="-lssl -lcrypto"
      else
-@@ -8605,7 +8601,7 @@
+@@ -8605,7 +8597,7 @@
  if test "$with_system_orcus" = "yes"; then
      AC_MSG_RESULT([external])
      SYSTEM_LIBORCUS=YES
@@ -87,7 +72,7 @@
  else
      AC_MSG_RESULT([internal])
      BUILD_TYPE="$BUILD_TYPE ORCUS"
-@@ -10419,10 +10415,10 @@
+@@ -10419,10 +10411,10 @@
  
      dnl Check for Meta Object Compiler
  
