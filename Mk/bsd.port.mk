@@ -1290,11 +1290,7 @@ STRIP=	#none
 # Start of pre-makefile section.
 .if !defined(AFTERPORTMK) && !defined(INOPTIONSMK)
 
-.if defined(_PREMKINCLUDED)
-check-makefile::
-	@${ECHO_MSG} "${PKGNAME}: Makefile error: you cannot include bsd.port[.pre].mk twice"
-	@${FALSE}
-.endif
+.include "${PORTSDIR}/Mk/bsd.sanity.mk"
 
 _PREMKINCLUDED=	yes
 
@@ -6495,6 +6491,9 @@ install-license:
 	@${DO_NADA}
 .endif
 
+#.if defined(DEVELOPER_MODE)
+#.include "${PORTSDIR}/Mk/bsd.developer.mk"
+#.endif
 .endif
 # End of post-makefile section.
 
