@@ -1391,8 +1391,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.gnustep.mk"
 .endif
 
-.include "${PORTSDIR}/Mk/bsd.perl.mk"
-
 .if defined(USE_PHP)
 .include "${PORTSDIR}/Mk/bsd.php.mk"
 .endif
@@ -1955,8 +1953,6 @@ RUN_DEPENDS+=	${_GL_${_component}_RUN_DEPENDS}
 .if defined(USE_SDL) || defined(WANT_SDL)
 .include "${PORTSDIR}/Mk/bsd.sdl.mk"
 .endif
-
-.include "${PORTSDIR}/Mk/bsd.perl.mk"
 
 .if defined(USE_PHP)
 .include "${PORTSDIR}/Mk/bsd.php.mk"
