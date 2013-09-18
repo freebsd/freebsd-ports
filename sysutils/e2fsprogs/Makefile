@@ -13,6 +13,7 @@ COMMENT?=	Utilities & library to manipulate ext2/3/4 filesystems
 LICENSE=	GPLv2
 
 PATCH_STRIP=	-p1
+USES=		gmake pkgconfig
 USE_GMAKE=	yes
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
@@ -52,7 +53,7 @@ MAKE_ARGS+=	V=1
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
+USES+=		gettext iconv:build
 PLIST_SUB=	NLS=""
 . if empty(ICONV_LIB)
 libintl=	"${LOCALBASE}/lib/libintl.a"
