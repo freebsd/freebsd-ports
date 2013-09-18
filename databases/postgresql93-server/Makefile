@@ -6,7 +6,7 @@
 #
 
 DISTVERSION?=	9.3.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER?=	pgsql@FreeBSD.org
@@ -24,5 +24,12 @@ MAN7=		ALTER_COLLATION.7 ALTER_EVENT_TRIGGER.7 ALTER_EXTENSION.7 \
 		DROP_MATERIALIZED_VIEW.7 REFRESH_MATERIALIZED_VIEW.7 SECURITY_LABEL.7
 
 .endif
+
+INSTALL_DIRS?=	src/common src/timezone src/backend \
+		src/backend/utils/mb/conversion_procs \
+		src/backend/snowball src/backend/replication/libpqwalreceiver \
+		src/bin/initdb src/bin/pg_ctl \
+		src/bin/pg_controldata src/bin/pg_resetxlog src/pl \
+		src/bin/pg_basebackup
 
 .include "${.CURDIR}/../postgresql92-server/Makefile"

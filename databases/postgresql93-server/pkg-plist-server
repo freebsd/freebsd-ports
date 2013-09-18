@@ -37,6 +37,7 @@ lib/postgresql/utf8_and_sjis.so
 lib/postgresql/utf8_and_sjis2004.so
 lib/postgresql/utf8_and_uhc.so
 lib/postgresql/utf8_and_win.so
+lib/libpgcommon.a
 %%DOCSDIR%%/README-server
 @dirrmtry %%DOCSDIR%%
 share/postgresql/conversion_create.sql
