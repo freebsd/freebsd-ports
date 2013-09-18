@@ -18,6 +18,9 @@ DISTNAME=	py${PORTNAME}-gtk-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python modules for Clutter-gtk toolkit
 
+DEPRECATED=	depends on expired graphics/py-clutter
+EXPIRATION_DATE=2013-12-01
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pyclutter-1.0.pc:${PORTSDIR}/graphics/py-clutter
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pyclutter-1.0.pc:${PORTSDIR}/graphics/py-clutter
 LIB_DEPENDS=	clutter-gtk-0.10:${PORTSDIR}/graphics/clutter-gtk
