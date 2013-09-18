@@ -37,7 +37,7 @@ CONFLICTS_INSTALL= \
 		ghostscript9-agpl-[0-9]* \
 		ghostscript9-agpl-nox11-[0-9]*
 
-USES=		gmake
+USES=		gmake pkgconfig:build
 USE_BZIP2=	yes
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
