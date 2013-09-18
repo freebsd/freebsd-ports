@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	LOGILAB
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast Mercurial log navigator written in pyqt4
 
 RUN_DEPENDS=	hg:${PORTSDIR}/devel/mercurial \
