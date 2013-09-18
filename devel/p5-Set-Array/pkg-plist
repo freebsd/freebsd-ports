@@ -1,2 +1,5 @@
 %%SITE_PERL%%/Set/Array.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Array/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Array
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set
 @dirrmtry %%SITE_PERL%%/Set
