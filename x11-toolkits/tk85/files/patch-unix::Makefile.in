@@ -1,6 +1,6 @@
---- Makefile.in.orig	2012-11-09 16:15:03.000000000 +0100
-+++ Makefile.in	2013-01-28 09:24:31.000000000 +0100
-@@ -64,6 +64,8 @@
+--- Makefile.in.orig	2013-08-30 18:28:24.000000000 +0200
++++ Makefile.in	2013-09-02 16:01:49.000000000 +0200
+@@ -63,6 +63,8 @@
  
  # Directory in which to install the include file tk.h:
  INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
@@ -9,7 +9,7 @@
  
  # Path to the private tk header dir:
  PRIVATE_INCLUDE_DIR	= @PRIVATE_INCLUDE_DIR@
-@@ -100,11 +102,11 @@
+@@ -99,11 +101,11 @@
  # The directory containing the Tcl sources and headers appropriate
  # for this version of Tk ("srcdir" will be replaced or has already
  # been replaced by the configure script):
@@ -23,16 +23,16 @@
  
  # The directory containing the Tcl library archive file appropriate
  # for this version of Tk:
-@@ -114,7 +116,7 @@
+@@ -113,7 +115,7 @@
  TCL_LIB_FLAG		= @TCL_LIB_FLAG@
  
  # Flag, 1: we're building a shared lib, 0 we're not
 -TK_SHARED_BUILD		= @TK_SHARED_BUILD@
-+TK_SHARED_BUILD		= ####@TK_SHARED_BUILD@
++TK_SHARED_BUILD		= #####@TK_SHARED_BUILD@
  
  # Subdirectory of $(libdir) containing the pkgIndex.tcl file for loadable Tk
  TK_PKG_DIR		= @TK_PKG_DIR@
-@@ -274,7 +276,7 @@
+@@ -273,7 +275,7 @@
  STLIB_LD		= @STLIB_LD@
  SHLIB_LD		= @SHLIB_LD@
  SHLIB_LD_LIBS		= @SHLIB_LD_LIBS@
@@ -41,7 +41,7 @@
  
  # Additional search flags needed to find the various shared libraries
  # at run-time.  The first symbol is for use when creating a binary
-@@ -546,6 +548,8 @@
+@@ -545,6 +547,8 @@
  
  DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
  
@@ -50,7 +50,7 @@
  SHELL_ENV = \
  	@LD_LIBRARY_PATH_VAR@="`pwd`:${TCL_BIN_DIR}:$${@LD_LIBRARY_PATH_VAR@}"; \
  	export @LD_LIBRARY_PATH_VAR@; \
-@@ -568,6 +572,12 @@
+@@ -567,6 +571,12 @@
  ${LIB_FILE}: ${OBJS} ${STUB_LIB_FILE} @LIB_RSRC_FILE@
  	rm -f $@
  	@MAKE_LIB@
@@ -63,7 +63,7 @@
  
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
-@@ -672,8 +682,7 @@
+@@ -671,8 +681,7 @@
  INSTALL_DEV_TARGETS = install-headers
  INSTALL_DEMO_TARGETS = install-demos
  INSTALL_EXTRA_TARGETS = @EXTRA_INSTALL@
@@ -73,7 +73,7 @@
  
  install: $(INSTALL_TARGETS)
  
-@@ -686,7 +695,7 @@
+@@ -685,7 +694,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -82,7 +82,7 @@
  	@for i in "$(LIB_INSTALL_DIR)" "$(BIN_INSTALL_DIR)" \
  	    "$(PKG_INSTALL_DIR)" "$(CONFIG_INSTALL_DIR)" ; \
  	    do \
-@@ -717,14 +726,19 @@
+@@ -716,6 +725,10 @@
  	@echo "Installing $(LIB_FILE) to $(DLL_INSTALL_DIR)/"
  	@@INSTALL_LIB@
  	@chmod 555 "$(DLL_INSTALL_DIR)/$(LIB_FILE)"
@@ -93,6 +93,7 @@
  	@if test -f "tk${MAJOR_VERSION}${MINOR_VERSION}.dll"; then \
  	    $(INSTALL_LIBRARY) "tk${MAJOR_VERSION}${MINOR_VERSION}.dll" "$(DLL_INSTALL_DIR)";\
  	    chmod 555 "$(DLL_INSTALL_DIR)/tk${MAJOR_VERSION}${MINOR_VERSION}.dll";\
+@@ -724,8 +737,9 @@
  	fi
  	@echo "Installing ${WISH_EXE} as $(BIN_INSTALL_DIR)/wish$(VERSION)${EXE_SUFFIX}"
  	@$(INSTALL_PROGRAM) ${WISH_EXE} "$(BIN_INSTALL_DIR)/wish$(VERSION)${EXE_SUFFIX}"
@@ -100,11 +101,11 @@
 -	@$(INSTALL_DATA) tkConfig.sh "$(CONFIG_INSTALL_DIR)/tkConfig.sh"
 +	@echo "Installing tkConfig.sh to $(CONFIG_INSTALL_DIR)/tk$(VERSION)"
 +	@mkdir -p "${CONFIG_INSTALL_DIR}"/tk$(VERSION)
-+	@$(INSTALL_DATA) tkConfig.sh "$(CONFIG_INSTALL_DIR)/tk$(VERSION)/tkConfig.sh"
++	@$(INSTALL_DATA) tkConfig.sh "$(CONFIG_INSTALL_DIR)"/tk$(VERSION)/tkConfig.sh
  	@if test "$(STUB_LIB_FILE)" != "" ; then \
  	    echo "Installing $(STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    @INSTALL_STUB_LIB@ ; \
-@@ -827,7 +841,7 @@
+@@ -828,7 +842,7 @@
  install-headers:
  	@if test "$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)" != ""; then \
  	    XLIB_INCLUDE_INSTALL_DIR="$(INCLUDE_INSTALL_DIR)"/X11; fi; \
@@ -113,7 +114,7 @@
  	    do \
  	    if [ -n "$$i" -a ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
-@@ -836,9 +851,12 @@
+@@ -837,9 +851,12 @@
  		fi; \
  	    done;
  	@echo "Installing header files to $(INCLUDE_INSTALL_DIR)/";
