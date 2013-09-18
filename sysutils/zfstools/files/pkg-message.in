@@ -1,5 +1,6 @@
 To enable automatic snapshots, place lines such as these into /etc/crontab:
 
+    PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin
     15,30,45 * * * * root %%PREFIX%%/sbin/zfs-auto-snapshot frequent  4
     0        * * * * root %%PREFIX%%/sbin/zfs-auto-snapshot hourly   24
     7        0 * * * root %%PREFIX%%/sbin/zfs-auto-snapshot daily     7
