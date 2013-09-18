@@ -18,6 +18,7 @@ LIB_DEPENDS=	Atlas-0.6.1:${PORTSDIR}/devel/atlas-devel \
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=	pathfix pkgconfig
+USE_GCC=	yes
 
 CXXFLAGS+=	-include wchar.h
 CONFIGURE_ARGS+="CXXFLAGS=${CXXFLAGS}"
