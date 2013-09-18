@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
 
 USE_BZIP2=	yes
-USES=		fuse
+USES=		fuse pkgconfig
 USE_GNOME=	gtk20 gvfs
 USE_XORG=	x11
 USE_PYTHON=	yes

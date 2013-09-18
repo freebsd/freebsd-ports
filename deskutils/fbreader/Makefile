@@ -32,7 +32,7 @@ STATUS=		debug
 STATUS=		release
 .endif
 
-USES=		iconv gmake
+USES=		iconv gmake pkgconfig
 USE_SQLITE=	yes
 USE_LDCONFIG=	yes
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	razorback-fsMonitor
-# Date created:				2011/06/8
-# Whom:					Tom Judge <tom@tomjudge.com>
-#
+# Created by: Tom Judge <tom@tomjudge.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fsMonitor
 PORTVERSION=	0.5.0
@@ -20,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	razorback_api.2:${PORTSDIR}/security/razorback-api \
 		fam.0:${PORTSDIR}/devel/fam
+
+USES=		pkgconfig
 
 OPTIONS_DEFINE=	DEBUG ASSERT
 

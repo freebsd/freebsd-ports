@@ -12,6 +12,7 @@ COMMENT=	Library and tools for reading FileVault (FVDE) encrypted volumes
 
 LICENSE=	LGPL3
 
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2 gnomehack
 USE_LDCONFIG=	yes

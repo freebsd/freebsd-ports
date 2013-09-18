@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	gnunet-gtk
-# Date created:				Dec. 19, 2011
-# Whom:					bf
-#
+# Created by: bf
 # $FreeBSD$
-#
 
 PORTNAME=		gnunet-gtk
 DISTVERSION=		0.9.3
@@ -22,8 +17,7 @@ LIB_DEPENDS=	gladeui-1:${PORTSDIR}/devel/glade3 \
 
 INSTALLS_ICONS =	yes
 USE_AUTOTOOLS=		libltdl libtool
-USE_GMAKE=		yes
-USES=			pathfix iconv
+USES=			pathfix iconv gmake pkgconfig
 USE_LDCONFIG=		yes
 
 CONFIGURE_ARGS =	--with-extractor=${LOCALBASE} \

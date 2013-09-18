@@ -14,6 +14,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	clanCore:${PORTSDIR}/devel/clanlib1
 
+USES=		pkgconfig
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}

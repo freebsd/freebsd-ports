@@ -18,6 +18,7 @@ LIB_DEPENDS=	lastfm:${PORTSDIR}/audio/liblastfm \
 		avcodec1:${PORTSDIR}/multimedia/ffmpeg1 \
 		gpod:${PORTSDIR}/audio/libgpod
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_QT4=	gui linguist_build moc_build network phonon qmake_build \
 		rcc_build uic_build webkit xml
