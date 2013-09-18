@@ -15,9 +15,9 @@ WARNING+=	"WITHOUT_NLS is deprecated use NLS option instead"
 WARNING+=	"WITHOUT_X11 is deprecated use X11 option instead"
 .endif
 
-.if !defined(LICENSE)
-DEV_WARNING+=	"No license is defined consider adding one"
-.endif
+#.if !defined(LICENSE)
+#DEV_WARNING+=	"No license is defined consider adding one"
+#.endif
 
 .if defined(USE_PERL5) && ${USE_PERL5} == yes
 DEV_ERROR+=	"USE_PERL5=yes is unsupported please use USES=perl5 instead"
