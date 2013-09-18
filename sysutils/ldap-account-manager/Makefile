@@ -1,9 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	ldap-account-manager
-PORTVERSION=	4.2.1
+PORTVERSION=	4.3
 CATEGORIES=	sysutils www
 MASTER_SITES=	SF/${SHORTNAME}/LAM/${PORTVERSION}
+
+USE_BZIP2=	yes
 
 MAINTAINER=	basil@vpm.net.ua
 COMMENT=	Webfrontend for managing accounts stored in an OpenLDAP server

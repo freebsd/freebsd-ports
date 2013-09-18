@@ -723,6 +723,8 @@
 %%WWWDIR%%/lib/profiles.inc
 %%WWWDIR%%/lib/pdfstruct.inc
 %%WWWDIR%%/lib/pdf.inc
+%%WWWDIR%%/lib/modules/kolabGroup.inc
+%%WWWDIR%%/lib/modules/windowsPosixGroup.inc
 %%WWWDIR%%/lib/modules/windowsGroup.inc
 %%WWWDIR%%/lib/modules/windowsHost.inc
 %%WWWDIR%%/lib/modules/windowsUser.inc
@@ -838,6 +840,8 @@
 %%WWWDIR%%/graphics/pdf.png
 %%WWWDIR%%/graphics/pass.png
 %%WWWDIR%%/graphics/partiallyLocked.png
+%%WWWDIR%%/graphics/printer.png
+%%WWWDIR%%/graphics/printerBig.png
 %%WWWDIR%%/graphics/ou.png
 %%WWWDIR%%/graphics/object.png
 %%WWWDIR%%/graphics/o.png
