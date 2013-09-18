@@ -2,7 +2,8 @@
 #
 
 # S50cleanhome
-# a script to polite ${HOME}/${MOZ_PIS_USER_DIR}
+# a script to clean up users' Mozilla home directories to make upgrading
+# less painful.
 
 # We run in our own subshell
 
@@ -13,22 +14,18 @@
 [ -z "${HOME}" -o ! -d "${HOME}" ] && exit 1
 [ -z "${MOZ_PIS_USER_DIR}" -o ! -d "${HOME}/${MOZ_PIS_USER_DIR}" ] && exit 1
 
-# Try to polite ${HOME}/${MOZ_PIS_USER_DIR}
+# Try to cleanup ${HOME}/${MOZ_PIS_USER_DIR}
 
-# This must be really needed?
-# rm -f "${$HOME}/${MOZ_PIS_USER_DIR}/pluginreg.dat"
-
-# Try to polite profile dirs
 if [ -f "${HOME}/${MOZ_PIS_USER_DIR}/profiles.ini" ]; then
     sed -e '/Path=/! d' -e "s,Path=,${HOME}/${MOZ_PIS_USER_DIR}/," \
-	"${HOME}/${MOZ_PIS_USER_DIR}/profiles.ini" \
+    	"${HOME}/${MOZ_PIS_USER_DIR}/profiles.ini" \
 	| while read dir
     do
 	[ ! -d "${dir}" ] && continue
-	# at last, debian do this, we do for new builds
+	# Debian does this for new builds
 	# rm -f "${dir}/XUL.mfasl"
-	# make reclaculate compreg.dat, xpti.dat for new builds
+	# force a rebuild of compreg.dat and xpti.dat for new installations
 	[ "${dir}/compreg.dat" -ot "${MOZ_PIS_MOZBINDIR}/components.ini" ] &&
-	    rm -f "${dir}/compatibility.ini" "${dir}/XUL.mfasl"
+		rm -f "${dir}/compatibility.ini" "${dir}/XUL.mfasl"
     done
 fi

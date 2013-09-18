@@ -1,0 +1,32 @@
+diff --git genxpi genxpi
+index a50e7ab..6083c55 100755
+--- mailnews/extensions/enigmail/genxpi~
++++ mailnews/extensions/enigmail/genxpi
+@@ -74,16 +74,17 @@ if [ ${platform} = OS2_x86-gcc3 ]; then
+ else
+   enigDllFile=platform/${platform}/components/${libPrefix}enigmime-${xpcomAbi}${dllSuffix}
+ fi
+ 
+ subprocessDll=${libPrefix}subprocess${dllSuffix}
+ spDllFile=platform/${platform}/lib/${libPrefix}subprocess-${xpcomAbi}${dllSuffix}
+ 
+ # Prepare chrome.manifest
++cp  ${targetDir}/chrome.manifest ${targetDir}/chrome.manifest.save
+ cat  ${srcDir}/package/chrome.manifest | \
+ sed  's/##ENIGMIMEDLL-PLACEHOLDER##/binary-component platform\/'${platform}'\/components\/'`basename ${enigDllFile}`' ABI='${platform}'/' \
+ > ${targetDir}/chrome.manifest
+ 
+ # Prepare languages other than en-US
+ 
+ if [ -s ${srcDir}/lang/current-languages.txt ]; then
+   localeJar=chrome/${xpiModule}.jar
+@@ -147,8 +148,9 @@ zip ${xpiFile} \
+     ${localeJar} \
+     components/enigmime.xpt \
+     ${enigDllFile} \
+     ${spDllFile} \
+     chrome.manifest \
+     install.rdf
+ 
+ rm install.rdf chrome.manifest
++mv chrome.manifest.save chrome.manifest
