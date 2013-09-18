@@ -6491,9 +6491,6 @@ install-license:
 	@${DO_NADA}
 .endif
 
-#.if defined(DEVELOPER_MODE)
-#.include "${PORTSDIR}/Mk/bsd.developer.mk"
-#.endif
 .endif
 # End of post-makefile section.
 
