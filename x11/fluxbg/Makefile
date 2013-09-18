@@ -25,7 +25,7 @@ post-patch:
 
 post-install:
 	@${ECHO_CMD}
-	@${ECHO_MSG} "Execution of ${PREFIX}/bin/${PORTNAME}_conf is a prerequiste of running ${PORTNAME}!"
+	@${ECHO_MSG} "Execution of ${PREFIX}/bin/${PORTNAME}_conf is a prerequisite of running ${PORTNAME}!"
 	@${ECHO_CMD}
 
 .include <bsd.port.mk>
