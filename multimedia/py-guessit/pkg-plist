@@ -102,6 +102,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/transfo/guess_filetype.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/transfo/guess_filetype.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/transfo/guess_filetype.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/transfo/guess_idnumber.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/transfo/guess_idnumber.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/transfo/guess_idnumber.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/transfo/guess_language.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/transfo/guess_language.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/guessit/transfo/guess_language.pyo
