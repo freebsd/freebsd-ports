@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+# PROVIDE: mfid
+# REQUIRE: root ldconfig devfs syslogd mail
+# KEYWORD: nojail noyroot shutdown
+
+. /etc/rc.subr
+
+name=mfid
+rcvar=mfid_enable
+load_rc_config $name
+
+raid_alert_mailto=${mfid_alert_mailto:-"root@localhost"}
+start_cmd=mfid_start
+stop_cmd="killall -9 mfid > /dev/null 2>&1"
+
+mfid_start()
+{
+	if [ -x "%%PREFIX%%/sbin/mfid" -a -e "/dev/mfi0" ]; then
+	        echo "Starting mfid."
+		%%PREFIX%%/sbin/mfid ${raid_alert_mailto}
+	fi
+}
+
+run_rc_command "$1"
