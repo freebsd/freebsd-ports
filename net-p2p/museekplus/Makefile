@@ -14,6 +14,7 @@ COMMENT=	SoulSeek client with separate terminal and Qt based interface
 LIB_DEPENDS=	xml\\+\\+:${PORTSDIR}/textproc/libxml++26
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
+USES=		pkgconfig
 USE_BZIP2=	yes
 USE_SCONS=	yes
 USE_FAM=	yes

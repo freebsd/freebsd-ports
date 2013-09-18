@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kuickshow
-# Date created:				July 09 2004
-# Whom:					Michael Nottebrock <lofi@FreeBSD.org>
-#
+# Created by: Michael Nottebrock <lofi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kuickshow
 PORTVERSION=	${APP_VER}.${EXTRA_VER}
@@ -21,7 +17,7 @@ USE_BZIP2=	yes
 USE_GNOME=	imlib
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT4=	corelib opengl qmake_build moc_build rcc_build uic_build
-USES=		cmake gettext
+USES=		cmake gettext pkgconfig
 
 LATEST_LINK=	${PORTNAME}-kde4
 
