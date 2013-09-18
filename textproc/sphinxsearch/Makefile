@@ -65,6 +65,7 @@ CONFIGURE_ARGS+=	--without-pgsql
 .if ${PORT_OPTIONS:MICONV}
 CONFIGURE_ARGS+=	--with-iconv
 USES+=			iconv
+LDFLAGS+=		${ICONV_LIB}
 .else
 CONFIGURE_ARGS+=	--without-iconv
 .endif
