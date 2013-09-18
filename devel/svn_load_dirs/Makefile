@@ -1,41 +1,43 @@
-# New ports collection makefile for:	svn_load_dirs
-# Date created:		9 April 2007
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
 
 PORTNAME=	svn_load_dirs
 PORTVERSION=	${SVN_PORTVERSION}
-PORTREVISION=	0	# You would hardly need to update this!
 CATEGORIES=	devel
-MASTER_SITES=	# none
-DISTFILES=	# none
+MASTER_SITES=	http://svn.apache.org/repos/asf/subversion/tags/${PORTVERSION}/contrib/client-side/svn_load_dirs/
+DISTFILES=	LICENSE_AFL3.txt \
+		svn_load_dirs.README \
+		svn_load_dirs.pl.in \
+		svn_load_dirs_property_table.example
+DIST_SUBDIR=	subversion/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Perl script to load directories into a Subversion repository
 
 RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion16
+		${LOCALBASE}/bin/svn:${SVN_PORTDIR}
 
 USES=		perl5
-USE_BZIP2=	yes
-
-WRKSRC=		${WRKDIR}/subversion-${SVN_PORTVERSION}/contrib/client-side/svn_load_dirs
 
 PLIST_FILES=	bin/svn_load_dirs
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-PORTEXAMPLES=	*
-.endif
 
 .include <bsd.port.pre.mk>
 
-SVN_PORTDIR=		${PORTSDIR}/devel/subversion16
+.if ${PORT_OPTIONS:MEXAMPLES}
+PORTEXAMPLES=	*
+.endif
+.if ${PORT_OPTIONS:MDOCS}
+PORTDOCS=	*
+.endif
+
+SVN_PORTDIR=		${PORTSDIR}/devel/subversion
 SVN_PORTVERSION!=	cd ${SVN_PORTDIR} && ${MAKE} -V PORTVERSION
 
 do-extract:
-	${MKDIR} ${WRKDIR}
-	cd ${SVN_PORTDIR} && ${MAKE} DISABLE_CONFLICTS=yes WRKDIR=${WRKDIR} extract
+	${MKDIR} ${WRKSRC}
+	for f in ${DISTDIR}/${DIST_SUBDIR}/*; do \
+		${CP} "$$f" ${WRKSRC}/; \
+	done
 
 do-build:
 	${SED} -E \
@@ -45,11 +47,15 @@ do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/svn_load_dirs.pl ${PREFIX}/bin/svn_load_dirs
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/svn_load_dirs_property_table.example ${EXAMPLESDIR}/
+.endif
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/svn_load_dirs.README ${DOCSDIR}/
+	for f in LICENSE_AFL3.txt svn_load_dirs.README; do \
+		${INSTALL_DATA} ${WRKSRC}/"$$f" ${DOCSDIR}/; \
+	done
 .endif
 
 .include <bsd.port.post.mk>
