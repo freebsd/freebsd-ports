@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zfstools
-PORTVERSION=	0.2.2
+PORTVERSION=	0.3.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	GH \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bdrewery
-GH_COMMIT=	924b60c
+GH_COMMIT=	05b95b5
 GH_TAGNAME=	v${DISTVERSION}
 
 USE_RUBY=	yes
