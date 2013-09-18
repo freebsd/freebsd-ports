@@ -19,7 +19,7 @@
  Trf_InitStubs(interp, version, exact)
      Tcl_Interp *interp;
 --- generic/registry.c	2009-06-18 00:54:44.000000000 -0400
-+++ generic/registry.c	2009-07-12 21:05:24.000000000 -0400
++++ generic/registry.c	2013-09-18 15:16:57.000000000 -0400
 @@ -1405,5 +1405,5 @@
     * [Bug 2788106].
     */
@@ -27,3 +27,25 @@
 +  ckfree((void *)trans);
  
    DONE (TrfClose);
+@@ -1835,5 +1835,4 @@
+   TrfTransformationInstance* trans = (TrfTransformationInstance*) instanceData;
+   int         result;
+-  Tcl_Channel parent;
+   int         newLoc;
+ 
+@@ -1841,6 +1840,4 @@
+   PRINT ("(Mode = %d, Offset = %ld)\n", mode, offset); FL;
+ 
+-  parent = DOWNC (trans);
+-
+   /*
+    * Several things to look at before deciding what to do.
+@@ -3398,5 +3395,7 @@
+      * blowing the stack.
+      */
+-
++#if TCL_MAJOR_VERSION > 8 || TCL_MINOR_VERSION > 4
++    const
++#endif
+     Tcl_ChannelType*    parentType     = Tcl_GetChannelType  (parent);
+     Tcl_DriverSeekProc* parentSeekProc = Tcl_ChannelSeekProc (parentType);
