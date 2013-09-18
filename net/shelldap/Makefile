@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
 		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
 
 USES=		perl5
-
+USE_PERL5=	extract build run
 MAN1=		shelldap.1
 
 PLIST_FILES=	bin/shelldap
