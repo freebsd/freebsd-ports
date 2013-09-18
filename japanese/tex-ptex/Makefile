@@ -71,7 +71,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OBSDCOMPAT_INCLUDES=-I${WRKSRC}/../../libs/obsdcompat
 EXCLUDE_ENGINES= aleph etex luatex pdftex mf mf-nowin xetex
-#		--disable-web-progs \
 CONFIGURE_ARGS=	${EXCLUDE_ENGINES:S/^/--disable-/} \
 		--enable-ptex \
 		--enable-eptex \
