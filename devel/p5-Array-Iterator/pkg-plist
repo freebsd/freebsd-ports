@@ -2,5 +2,8 @@
 %%SITE_PERL%%/Array/Iterator/BiDirectional.pm
 %%SITE_PERL%%/Array/Iterator/Circular.pm
 %%SITE_PERL%%/Array/Iterator/Reusable.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/Iterator/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/Iterator
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array
 @dirrm %%SITE_PERL%%/Array/Iterator
 @dirrmtry %%SITE_PERL%%/Array
