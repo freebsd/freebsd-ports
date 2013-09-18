@@ -26,10 +26,9 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-JSON>=2.00:${PORTSDIR}/converters/p5-JSON
 
-USES=		pkgconfig
+USES=		pkgconfig perl5
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		perl5
 USE_PERL5=	configure
 
 MAN3=	\
