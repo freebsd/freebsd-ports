@@ -35,6 +35,10 @@ BUILD_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 PKG_ARGS=		-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} \
 			-p ${TET_ROOT} -o ${CATEGORIES}/${PORTNAME}
 
+.if !defined(TET_ROOT)
+IGNORE=		Requires TET_ROOT be set for build
+.endif
+
 do-extract:
 .if !defined(TET_ROOT)
 	@${ECHO_MSG}
