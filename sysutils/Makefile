@@ -509,6 +509,7 @@
     SUBDIR += memtest86
     SUBDIR += memtest86+
     SUBDIR += metalog
+    SUBDIR += mfid
     SUBDIR += mgeupsd
     SUBDIR += minirsyslogd
     SUBDIR += mixer
