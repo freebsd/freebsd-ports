@@ -861,10 +861,10 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/America
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Africa
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata
-%%MODULES%%lib/tcl%%TCL_VER%%/http-2.7.11.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/http-2.7.12.tm
 %%MODULES%%lib/tcl%%TCL_VER%%/platform/shell-1.1.4.tm
-%%MODULES%%lib/tcl%%TCL_VER%%/platform-1.0.11.tm
-%%MODULES%%lib/tcl%%TCL_VER%%/msgcat-1.5.1.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/platform-1.0.12.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/msgcat-1.5.2.tm
 %%MODULES%%lib/tcl%%TCL_VER%%/tcltest-2.3.5.tm
 @dirrm lib/tcl%%TCL_VER%%/platform
 @dirrm lib/tcl%%TCL_VER%%/opt0.4

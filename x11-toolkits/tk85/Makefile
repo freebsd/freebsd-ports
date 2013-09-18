@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	tk
-PORTVERSION=	8.5.14
-PORTREVISION=	1
+DISTVERSION=	8.5.15
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION}
-DISTNAME=	${PORTNAME}${PORTVERSION}-src
+MASTER_SITES=	${MASTER_SITE_TCLTK} \
+		SF/tcl/Tcl/${PORTVERSION}
+MASTER_SITE_SUBDIR=tcl8_5
+DISTNAME=	${PORTNAME}${DISTVERSION}-src
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Graphical toolkit for Tcl
@@ -16,15 +17,19 @@ LICENSE=	BSD
 LICENSE_TERMS=	${WRKSRC}/../license.terms
 
 LATEST_LINK=	tk85
-USE_XORG=	x11
+USE_XORG=	x11 xft xscrnsaver
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}/unix
 GNU_CONFIGURE=	yes
 TK_VER=		8.5
 SHORT_TK_VER=	85
-CONFIGURE_ARGS=	--enable-shared --with-tcl=${TCL_LIBDIR} \
-		--includedir=${PREFIX}/include/tk${TK_VER} \
-		--enable-man-suffix=.${MAN_SUFFIX}
+CONFIGURE_ARGS=	--enable-shared \
+		--enable-xss \
+		--enable-xft \
+		--enable-man-suffix=.${MAN_SUFFIX} \
+		--with-tcl=${TCL_LIBDIR} \
+		--includedir=${PREFIX}/include/tk${TK_VER}
+
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk${SHORT_TK_VER}.so.1 \
 		ac_cv_path_tclsh="${LOCALBASE}/bin/tclsh${TK_VER}"
 LATEST_LINK=	${PORTNAME}${SHORT_TK_VER}
@@ -39,13 +44,11 @@ MANCOMPRESSED=	no
 DATADIR=	${PREFIX}/share/${PORTNAME}${TK_VER}
 SUB_FILES=	pkgIndex.tcl
 
-
 USE_TCL=	${SHORT_TK_VER}
 
-OPTIONS_DEFINE=	TK85_MAN XFT DEMOS THREADS
-OPTIONS_DEFAULT=	XFT THREADS
+OPTIONS_DEFINE=	TK85_MAN DEMOS THREADS
+OPTIONS_DEFAULT=THREADS
 TK85_MAN_DESC=	Install tk 8.5 function manpages
-XFT_DESC=	Use Xft fonts
 DEMOS_DESC=	Install demos
 
 SUB_LIST+=	TCLPATCHLEVEL="${PORTVERSION}"
@@ -53,13 +56,6 @@ SUB_LIST+=	TCLPATCHLEVEL="${PORTVERSION}"
 .include <bsd.port.pre.mk>
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}
-
-.if ${PORT_OPTIONS:MXFT}
-CONFIGURE_ARGS+=	--enable-xft
-LIB_DEPENDS+=	Xft:${PORTSDIR}/x11-fonts/libXft
-.else
-CONFIGURE_ARGS+=	--disable-xft
-.endif
 
 .if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=	--enable-threads
