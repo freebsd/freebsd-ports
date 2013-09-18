@@ -15,7 +15,7 @@ CONFLICTS=	courier-0.* postfix-1.* postfix-2.* sendmail-8.* sendmail-*-8.* smail
 OPTIONS_DEFINE=	SSL
 OPTIONS_DEFAULT=SSL
 
-USES=		perl5
+USES=		perl5 pkgconfig
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=
 

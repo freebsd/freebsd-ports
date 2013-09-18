@@ -20,7 +20,7 @@ USE_KDE4=	kdehier kdelibs kdeprefix automoc4 sharedmime
 USE_QT4=	dbus gui opengl script svg xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11
-USES=		cmake
+USES=		cmake pkgconfig
 USE_BZIP2=	yes
 CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"
 
