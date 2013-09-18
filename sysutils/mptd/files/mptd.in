@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mptd
+# REQUIRE: dumpon root ldconfig devfs syslogd mail
+# KEYWORD: nojail noyroot shutdown
+
+. /etc/rc.subr
+
+name=mptd
+rcvar=mptd_enable
+load_rc_config $name
+
+raid_alert_mailto=${mptd_raid_alert_mailto:-"root@localhost"}
+start_cmd=mptd_start
+stop_cmd="killall -9 mptd > /dev/null 2>&1"
+
+mptd_start()
+{
+	if [ -x "%%PREFIX%%/bin/mptd" -a -e "/dev/mpt0" ]; then
+	        echo "Starting mptd."
+		%%PREFIX%%/bin/mptd ${raid_alert_mailto}
+	fi
+}
+
+run_rc_command "$1"
