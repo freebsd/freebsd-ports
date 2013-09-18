@@ -179,8 +179,8 @@ include/fox-%%MAJORVER%%/FXJPGIcon.h
 include/fox-%%MAJORVER%%/FXJPGImage.h
 include/fox-%%MAJORVER%%/FXKOI8RCodec.h
 include/fox-%%MAJORVER%%/FXKnob.h
-include/fox-%%MAJORVER%%/FXLabel.h
 include/fox-%%MAJORVER%%/FXLFQueue.h
+include/fox-%%MAJORVER%%/FXLabel.h
 include/fox-%%MAJORVER%%/FXList.h
 include/fox-%%MAJORVER%%/FXListBox.h
 include/fox-%%MAJORVER%%/FXLocale.h
@@ -214,7 +214,6 @@ include/fox-%%MAJORVER%%/FXMutex.h
 include/fox-%%MAJORVER%%/FXObject.h
 include/fox-%%MAJORVER%%/FXObjectList.h
 include/fox-%%MAJORVER%%/FXOptionMenu.h
-include/fox-%%MAJORVER%%/FXParallel.h
 include/fox-%%MAJORVER%%/FXPCXIcon.h
 include/fox-%%MAJORVER%%/FXPCXImage.h
 include/fox-%%MAJORVER%%/FXPNGIcon.h
@@ -222,6 +221,7 @@ include/fox-%%MAJORVER%%/FXPNGImage.h
 include/fox-%%MAJORVER%%/FXPPMIcon.h
 include/fox-%%MAJORVER%%/FXPPMImage.h
 include/fox-%%MAJORVER%%/FXPacker.h
+include/fox-%%MAJORVER%%/FXParallel.h
 include/fox-%%MAJORVER%%/FXPath.h
 include/fox-%%MAJORVER%%/FXPicker.h
 include/fox-%%MAJORVER%%/FXPipe.h
@@ -318,6 +318,9 @@ include/fox-%%MAJORVER%%/FXUTF16Codec.h
 include/fox-%%MAJORVER%%/FXUTF32Codec.h
 include/fox-%%MAJORVER%%/FXUTF8Codec.h
 include/fox-%%MAJORVER%%/FXUndoList.h
+include/fox-%%MAJORVER%%/FXVariant.h
+include/fox-%%MAJORVER%%/FXVariantArray.h
+include/fox-%%MAJORVER%%/FXVariantMap.h
 include/fox-%%MAJORVER%%/FXVec2d.h
 include/fox-%%MAJORVER%%/FXVec2f.h
 include/fox-%%MAJORVER%%/FXVec3d.h
