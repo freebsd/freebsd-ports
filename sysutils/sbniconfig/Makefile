@@ -8,10 +8,7 @@
 PORTNAME=	sbniconfig
 PORTVERSION=	1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.granch.ru/pub/drivers/sbni12/FREEBSD/sbniconfig/
-DISTNAME=	sbniconfig.c
-EXTRACT_SUFX=	.gz
-EXTRACT_ONLY=
+DISTFILES=	# none
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Configurator for Granch SBNI12-xx adapters
@@ -22,7 +19,6 @@ ONLY_FOR_ARCHS=	i386
 PLIST_FILES=	bin/sbniconfig
 
 post-extract:
-	@${GZCAT} ${DISTDIR}/${DISTFILES} > ${WRKDIR}/sbniconfig.c
-	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
+	@${CP} ${FILESDIR}/Makefile ${FILESDIR}/sbniconfig.c ${WRKDIR}
 
 .include <bsd.port.mk>
