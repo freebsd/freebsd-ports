@@ -213,6 +213,7 @@ cops/src/crack-fcrypt.c
 cops/src/crack-lib.c
 cops/src/crack.h
 cops/src/crc.c
+cops/src/crc.c.orig
 cops/src/crc_check.c
 cops/src/filewriters.c
 cops/src/home.chk.c
