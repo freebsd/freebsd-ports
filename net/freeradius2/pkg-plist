@@ -173,11 +173,11 @@ bin/smbencrypt
 %%LIBDIR%%/libfreeradius-eap.a
 %%LIBDIR%%/libfreeradius-eap.la
 %%LIBDIR%%/libfreeradius-eap.so
-%%LIBDIR%%/libfreeradius-radius-%%PORTVERSION%%.la
-%%LIBDIR%%/libfreeradius-radius-%%PORTVERSION%%.so
 %%LIBDIR%%/libfreeradius-radius.a
 %%LIBDIR%%/libfreeradius-radius.la
 %%LIBDIR%%/libfreeradius-radius.so
+%%LIBDIR%%/libfreeradius-radius-%%LIBVER%%.la
+%%LIBDIR%%/libfreeradius-radius-%%LIBVER%%.so
 %%LIBDIR%%/rlm_acct_unique-%%PORTVERSION%%.la
 %%LIBDIR%%/rlm_acct_unique-%%PORTVERSION%%.so
 %%LIBDIR%%/rlm_acct_unique.a
@@ -520,6 +520,7 @@ sbin/radiusd
 sbin/radmin
 sbin/radwatch
 include/freeradius/autoconf.h
+include/freeradius/base64.h
 include/freeradius/conf.h
 include/freeradius/conffile.h
 include/freeradius/detail.h
@@ -626,6 +627,12 @@ include/freeradius/vqp.h
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5904.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5997.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc6158.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc6519.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc6572.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc6677.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc6911.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc6929.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc6930.txt
 %%PORTDOCS%%%%DOCSDIR%%/rlm_dbm
 %%PORTDOCS%%%%DOCSDIR%%/rlm_eap
 %%PORTDOCS%%%%DOCSDIR%%/rlm_expiration
@@ -671,6 +678,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.3gpp2
 %%DATADIR%%/dictionary.acc
 %%DATADIR%%/dictionary.acme
+%%DATADIR%%/dictionary.aerohive
 %%DATADIR%%/dictionary.airespace
 %%DATADIR%%/dictionary.alcatel
 %%DATADIR%%/dictionary.alcatel.esam
@@ -690,6 +698,9 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.bay
 %%DATADIR%%/dictionary.bintec
 %%DATADIR%%/dictionary.bristol
+%%DATADIR%%/dictionary.broadsoft
+%%DATADIR%%/dictionary.brocade
+%%DATADIR%%/dictionary.bskyb
 %%DATADIR%%/dictionary.bt
 %%DATADIR%%/dictionary.cablelabs
 %%DATADIR%%/dictionary.cabletron
@@ -704,14 +715,17 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.columbia_university
 %%DATADIR%%/dictionary.compat
 %%DATADIR%%/dictionary.cosine
+%%DATADIR%%/dictionary.dante
 %%DATADIR%%/dictionary.dhcp
 %%DATADIR%%/dictionary.digium
+%%DATADIR%%/dictionary.dlink
 %%DATADIR%%/dictionary.epygi
 %%DATADIR%%/dictionary.eltex
 %%DATADIR%%/dictionary.ericsson
 %%DATADIR%%/dictionary.erx
 %%DATADIR%%/dictionary.extreme
 %%DATADIR%%/dictionary.f5
+%%DATADIR%%/dictionary.fdxtended
 %%DATADIR%%/dictionary.fortinet
 %%DATADIR%%/dictionary.foundry
 %%DATADIR%%/dictionary.freeradius
@@ -731,12 +745,14 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.jradius
 %%DATADIR%%/dictionary.juniper
 %%DATADIR%%/dictionary.karlnet
+%%DATADIR%%/dictionary.kineto
 %%DATADIR%%/dictionary.lancom
 %%DATADIR%%/dictionary.livingston
 %%DATADIR%%/dictionary.localweb
 %%DATADIR%%/dictionary.lucent
 %%DATADIR%%/dictionary.manzara
 %%DATADIR%%/dictionary.merit
+%%DATADIR%%/dictionary.meru
 %%DATADIR%%/dictionary.microsoft
 %%DATADIR%%/dictionary.mikrotik
 %%DATADIR%%/dictionary.motorola
@@ -757,6 +773,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.patton
 %%DATADIR%%/dictionary.propel
 %%DATADIR%%/dictionary.prosoft
+%%DATADIR%%/dictionary.proxim
 %%DATADIR%%/dictionary.purewave
 %%DATADIR%%/dictionary.quiconnect
 %%DATADIR%%/dictionary.quintum
@@ -783,8 +800,14 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.rfc5580
 %%DATADIR%%/dictionary.rfc5607
 %%DATADIR%%/dictionary.rfc5904
+%%DATADIR%%/dictionary.rfc6519
+%%DATADIR%%/dictionary.rfc6572
+%%DATADIR%%/dictionary.rfc6677
+%%DATADIR%%/dictionary.rfc6911
+%%DATADIR%%/dictionary.rfc6930
 %%DATADIR%%/dictionary.riverstone
 %%DATADIR%%/dictionary.roaringpenguin
+%%DATADIR%%/dictionary.sg
 %%DATADIR%%/dictionary.shasta
 %%DATADIR%%/dictionary.shiva
 %%DATADIR%%/dictionary.siemens
@@ -817,6 +840,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.wispr
 %%DATADIR%%/dictionary.xedia
 %%DATADIR%%/dictionary.xylan
+%%DATADIR%%/dictionary.zeus
 %%DATADIR%%/dictionary.zyxel
 @dirrm %%DATADIR%%
 @dirrmtry share/freeradius
