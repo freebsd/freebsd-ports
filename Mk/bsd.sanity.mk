@@ -83,9 +83,9 @@ DEV_ERROR+=	"USE_GNOME=pkgconfig is unsupported, please use USES=pkgconfig"
 DEV_WARNING+=	"USE_GNOME=gnomehack is deprecated, please use USES=pathfix"
 .endif
 
-.if defined(USE_GNOME) && ${USE_GNOME:Mltverhack*}
-DEV_WARNING+=	"USE_GNOME=ltverhack is now useless LIB_DEPENDS can properly handle all kind of library version"
-.endif
+#.if defined(USE_GNOME) && ${USE_GNOME:Mltverhack*}
+#DEV_WARNING+=	"USE_GNOME=ltverhack is now useless LIB_DEPENDS can properly handle all kind of library version"
+#.endif
 
 .if defined(LIB_DEPENDS) && ${LIB_DEPENDS:Nlib*}
 DEV_WARNING+=	"Please use the new format for LIB_DEPENDS, see handbook for details"
