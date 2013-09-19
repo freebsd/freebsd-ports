@@ -1,12 +1,7 @@
-# New ports collection makefile for:	www/p5-HTML-Mason-PSGIHandler
-# Date created:				02 September 2011
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Mason-PSGIHandler
-PORTVERSION=	0.52
+PORTVERSION=	0.53
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
