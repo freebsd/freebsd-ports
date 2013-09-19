@@ -14,7 +14,7 @@ DISTNAME=	signal_ext${PORTVERSION:R:R}
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Dynamically loadable signal handling for Tcl/Tk scripts
 
-USE_TCL=	yes
+USES+=		tcl
 GNU_CONFIGURE=	yes
 ALL_TARGET=	signal.so
 CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR}

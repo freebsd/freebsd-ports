@@ -14,11 +14,12 @@ COMMENT=	Scripting level thread extension for Tcl
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/license.terms
 
-USE_TCL=	84+
+USES+=		tcl
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--exec-prefix=${PREFIX}
+CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
+		--exec-prefix=${PREFIX}
 USE_LDCONFIG=	${PREFIX}/lib/thread${PORTVERSION}
 
 PLIST_SUB+=	VERSION="${PORTVERSION}"
@@ -26,7 +27,7 @@ PLIST_SUB+=	VERSION="${PORTVERSION}"
 INSTALL_TARGET=		install-binaries install-libraries
 .if !defined(NO_INSTALL_MANPAGES)
 MANN=		thread.n tpool.n tsv.n ttrace.n
-INSTALL_TARGET+=	install-doc
+INSTALL_TARGET+=install-doc
 .endif
 
 OPTIONS_DEFINE=	GDBM DOCS
@@ -35,13 +36,11 @@ GDBM_DESC=	Persistent shared variables using GDBM
 
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
-
-CONFIGURE_ARGS+=	--with-tcl="${TCL_LIBDIR}"
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGDBM}
-LIB_DEPENDS+=		gdbm:${PORTSDIR}/databases/gdbm
-CONFIGURE_ARGS+=	--with-gdbm
+LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
+CONFIGURE_ARGS+=--with-gdbm
 .endif
 
 post-patch:
@@ -59,4 +58,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

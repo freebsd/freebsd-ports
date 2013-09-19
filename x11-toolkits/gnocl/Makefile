@@ -17,9 +17,8 @@ LIB_DEPENDS=	canberra:${PORTSDIR}/audio/libcanberra \
 		gtkimageview:${PORTSDIR}/x11-toolkits/gtkimageview
 
 USE_BZIP2=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tcl
 USE_GNOME=	gtk20 libglade2
-USE_TCL=	84+
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${TCL_INCLUDEDIR} -L${TCL_LIBDIR}
 

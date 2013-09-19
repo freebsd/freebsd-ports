@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_TCL=	85+
+USES+=		tcl:85+
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR}
 
