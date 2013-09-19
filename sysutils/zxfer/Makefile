@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	ivannashdreckman@fastmail.fm
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easily and reliably transfer ZFS filesystems
 
 LICENSE=	BSD
