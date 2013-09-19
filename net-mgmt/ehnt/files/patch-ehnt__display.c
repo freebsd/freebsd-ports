@@ -1,8 +1,23 @@
 
 $FreeBSD$
 
---- ehnt_display.c.orig	Thu Oct  4 22:18:29 2001
-+++ ehnt_display.c	Wed Jun 23 14:35:08 2004
+--- ehnt_display.c.orig
++++ ehnt_display.c
+@@ -22,10 +22,10 @@
+ #include "config.h"
+ #include "ehnt.h"
+ 
+-double ShowTopAS (double a[],char t[], int ,double);
+-double ShowTopProto (double a[], char t[], int ,double);
+-double ShowTopUdpPort (double a[],char t[], int, double);
+-double ShowTopTcpPort (double a[],char t[], int, double);
++void ShowTopAS (double a[],char t[], int ,double);
++void ShowTopProto (double a[], char t[], int ,double);
++void ShowTopUdpPort (double a[],char t[], int, double);
++void ShowTopTcpPort (double a[],char t[], int, double);
+ double GetTop (double a[], char t[]);
+ int ShowValue(char *, int, double, int, double);
+ int ShowReport(struct ehnt_stats *, struct ehnt_struct *);
 @@ -110,7 +110,9 @@
    ShowReportTimeHeader(stats);
  
@@ -47,3 +62,39 @@ $FreeBSD$
    
    if (bytes < 1024) sprintf(str,"%4d", bytes);
    else if (bytes < (1024*1024)) sprintf(str,"%4dK",(bytes/1024));
+@@ -258,7 +262,7 @@
+  return str;
+ }
+ 
+-double ShowTopAS (double a[],char t[], int interval, double total) {
++void ShowTopAS (double a[],char t[], int interval, double total) {
+   int i=-1,maxi=0;
+   struct protoent *p;
+ 
+@@ -269,7 +273,7 @@
+   ShowValue(ASN_Lookup(maxi),maxi,a[maxi],interval,total);
+ }
+ 
+-double ShowTopProto (double a[],char t[], int interval, double total) {
++void ShowTopProto (double a[],char t[], int interval, double total) {
+   int i=-1,maxi=0;
+   struct protoent *p;
+ 
+@@ -285,7 +289,7 @@
+   }
+ }
+ 
+-double ShowTopTcpPort (double a[],char t[], int interval, double total) {
++void ShowTopTcpPort (double a[],char t[], int interval, double total) {
+   int i=-1,maxi=0;
+   struct servent *s;
+ 
+@@ -301,7 +305,7 @@
+   }
+ }
+ 
+-double ShowTopUdpPort (double a[],char t[], int interval, double total) {
++void ShowTopUdpPort (double a[],char t[], int interval, double total) {
+   int i=-1,maxi=0;
+   struct servent *s;
+ 
