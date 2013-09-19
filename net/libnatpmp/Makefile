@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libnatpmp
-# Date created:		11 Aug 2009
-# Whom:			Hung-Yi Chen <gaod@hychen.org>
-#
+# Created by: Hung-Yi Chen <gaod@hychen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libnatpmp
 PORTVERSION=	20120821
@@ -11,9 +7,11 @@ CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/
 
 MAINTAINER=	gaod@hychen.org
-COMMENT=	An NAT-PMP lightweight library
+COMMENT=	NAT-PMP lightweight library
 
-USE_GMAKE=	yes
+LICENSE=	BSD
+
+USES=		gmake
 MAKE_ENV+=	INSTALLPREFIX=${PREFIX}
 CFLAGS+=	-fPIC
 USE_LDCONFIG=	yes
