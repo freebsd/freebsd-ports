@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	GNU readline for TCL
 
-USE_TCL=	84+
+USES+=		tcl
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 MANN=		tclreadline.n

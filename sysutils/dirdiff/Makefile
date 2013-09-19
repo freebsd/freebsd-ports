@@ -13,9 +13,8 @@ COMMENT=	Graphical diff tool
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_TCL_BUILD=	yes
+USES+=		tk
 USE_LDCONFIG=	yes
-USE_TK=		yes
 
 PLIST_FILES=	bin/dirdiff lib/libfilecmp.so.0
 

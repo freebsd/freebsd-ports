@@ -11,7 +11,7 @@ COMMENT=	New TCL channel type using mmap-ed files
 
 LICENSE=	GPLv3
 
-USE_TCL=	84+
+USES+=		tcl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 		--prefix=${PREFIX} \
