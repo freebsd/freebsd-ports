@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	OpenLP
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.0.3
 CATEGORIES=	multimedia python
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,16 +18,21 @@ BUILD_DEPENDS=	py*-sip>=0:${PORTSDIR}/devel/py-sip \
 		py*-sqlalchemy>=0.5:${PORTSDIR}/databases/py-sqlalchemy
 RUN_DEPENDS=	py*-beautifulsoup<3.1:${PORTSDIR}/www/py-beautifulsoup30 \
 		py*-lxml>=0:${PORTSDIR}/devel/py-lxml \
+		py*-qt4-core>=0:${PORTSDIR}/devel/py-qt4-core \
 		py*-phonon>=${PYQT4_VERSION}:${PORTSDIR}/multimedia/py-qt4-phonon \
 		py*-sqlalchemy>=0.5:${PORTSDIR}/databases/py-sqlalchemy \
 		py*-qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		py*-qt4-webkit>=0:${PORTSDIR}/www/py-qt4-webkit \
 		py*-qt4-network>=0:${PORTSDIR}/net/py-qt4-network \
 		py*-qt4-opengl>=0:${PORTSDIR}/x11/py-qt4-opengl \
+		py*-qt4-svg>=0:${PORTSDIR}/graphics/py-qt4-svg \
+		py*-qt4-test>=0:${PORTSDIR}/devel/py-qt4-test \
 		py*-chardet>=0:${PORTSDIR}/textproc/py-chardet \
 		py*-mako>0:${PORTSDIR}/textproc/py-mako \
+		py*-enchant>0:${PORTSDIR}/textproc/py-enchant \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy-migrate>=0.6.1:${PORTSDIR}/databases/py-sqlalchemy-migrate \
-		py*-sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
+		py*-sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
+		unoconv:${PORTSDIR}/textproc/unoconv
 
 PYDISTUTILS_NOEGGINFO=	yes
 USE_PYTHON=	2.6+
