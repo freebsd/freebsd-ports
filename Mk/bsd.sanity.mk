@@ -91,41 +91,6 @@ DEV_WARNING+=	"USE_GNOME=ltverhack is now useless LIB_DEPENDS can properly handl
 DEV_WARNING+=	"Please use the new format for LIB_DEPENDS, see handbook for details"
 .endif
 
-.if defined(WARNING)
-show-warnings:
-.for m in ${WARNING}
-	@${ECHO_MSG} "${m}"
-.endfor
-	@sleep 5
-
-check-makefile:: show-warnings
-.endif
-
 .if defined(_PREMKINCLUDED)
 DEV_ERROR+=	"you cannot include bsd.port[.pre].mk twice"
-.endif
-
-.if defined(DEVELOPER)
-.if defined(DEV_WARNING)
-show-dev-warnings:
-	@${ECHO_MSG} "/!\\ ${PKGNAME}: Makefile warnings, please consider fixing /!\\"
-	@${ECHO_MSG}
-.for m in ${DEV_WARNING}
-	@${ECHO_MSG} "${m}"
-.endfor
-	@${ECHO_MSG}
-	@sleep 5
-check-makefile:: show-dev-warnings
-.endif
-
-.if defined(DEV_ERROR)
-show-dev-errors:
-	@${ECHO_MSG} "/!\\ ${PKGNAME}: Makefile errors /!\\"
-	@${ECHO_MSG}
-.for m in ${DEV_WARNING}
-	@${ECHO_MSG} "${m}"
-.endfor
-	@${FALSE}
-check-makefile:: show-dev-errors
-.endif
 .endif
