@@ -1,4 +1,4 @@
-@unexec	%%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 %%T%%/.systemPrefs/.system.lock
 %%T%%/.systemPrefs/.systemRootModFile
 %%T%%/COPYRIGHT
@@ -22,7 +22,7 @@
 %%T%%/bin/tnameserv
 %%T%%/bin/unpack200
 %%T%%/lib/alt-rt.jar
-@exec	mkdir -p %D/%%T%%/lib/applet
+@exec mkdir -p %D/%%T%%/lib/applet
 %%T%%/lib/calendars.properties
 %%T%%/lib/charsets.jar
 %%T%%/lib/classlist
@@ -184,7 +184,6 @@
 %%T%%/lib/i386/libnpjp2.so
 %%T%%/lib/i386/libnpt.so
 %%T%%/lib/i386/libprism-es2.so
-%%T%%/lib/i386/librmi.so
 %%T%%/lib/i386/libsctp.so
 %%T%%/lib/i386/libsplashscreen.so
 %%T%%/lib/i386/libsunec.so
@@ -213,6 +212,8 @@
 %%T%%/lib/jce.jar
 %%T%%/lib/jexec
 %%T%%/lib/jfr.jar
+%%T%%/lib/jfr/default.jfc
+%%T%%/lib/jfr/profile.jfc
 %%T%%/lib/jfxrt.jar
 %%T%%/lib/jsse.jar
 %%T%%/lib/jvm.hprof.txt
@@ -257,7 +258,6 @@
 %%T%%/lib/security/javaws.policy
 %%T%%/lib/security/local_policy.jar
 %%T%%/lib/security/trusted.libraries
-%%T%%/lib/servicetag/jdk_header.png
 %%T%%/lib/sound.properties
 %%T%%/lib/zi/Africa/Abidjan
 %%T%%/lib/zi/Africa/Accra
@@ -742,7 +742,7 @@
 %%T%%/plugin/desktop/sun_java.png
 %%T%%/plugin/i386/ns7/libjavaplugin_oji.so
 %%T%%/release
-@exec	%%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Sun-JRE%%PORTVERSION%%"
+@exec %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Sun-JRE%%PORTVERSION%%"
 @dirrm %%T%%/plugin/i386/ns7
 @dirrm %%T%%/plugin/i386
 @dirrm %%T%%/plugin/desktop
@@ -767,7 +767,6 @@
 @dirrm %%T%%/lib/zi/America
 @dirrm %%T%%/lib/zi/Africa
 @dirrm %%T%%/lib/zi
-@dirrm %%T%%/lib/servicetag
 @dirrm %%T%%/lib/security
 @dirrm %%T%%/lib/oblique-fonts
 @dirrm %%T%%/lib/management
@@ -800,6 +799,7 @@
 @dirrm %%T%%/lib/locale/de/LC_MESSAGES
 @dirrm %%T%%/lib/locale/de
 @dirrm %%T%%/lib/locale
+@dirrm %%T%%/lib/jfr
 @dirrm %%T%%/lib/images/icons
 @dirrm %%T%%/lib/images/cursors
 @dirrm %%T%%/lib/images
