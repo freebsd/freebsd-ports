@@ -7,7 +7,7 @@ PORTREVISION=	1
 DISTNAME=	${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}
 DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for Websearch
 
 LICENSE=	GPLv2

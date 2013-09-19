@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-plugin
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.0
 DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Required by many plugins for compatibility with SquirrelMail
 
 USES=		perl5
