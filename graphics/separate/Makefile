@@ -14,8 +14,8 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A CMYK plugin for The GIMP
 
 BUILD_DEPENDS=	gccmakedep:${PORTSDIR}/devel/gccmakedep
-LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
-		gimp-2.0:${PORTSDIR}/graphics/gimp-app
+LIB_DEPENDS=	liblcms.so.1:${PORTSDIR}/graphics/lcms \
+		libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
 
 USE_ZIP=	yes
 USES=		gmake pkgconfig
@@ -35,12 +35,14 @@ PORTEXAMPLES=	qproof.scm qexport.scm
 
 MAKE_ENV+=	TARGETS="${BIN_TARGETS}"
 
+.include <bsd.port.options.mk>
+
 post-patch:
-	@${REINPLACE_CMD} -e 's| make| ${GMAKE}|; s|lib/gimp/2.0|libexec/gimp/2.2|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|$$(PREFIX)|${PREFIX}|g' ${WRKSRC}/Makefile ${WRKSRC}/po/Makefile
+	@${REINPLACE_CMD} -e '/^CC/s|=|?=|; /^PREFIX/s|=|?=|; s| make| ${GMAKE}|; \
+	    s|lib/gimp/2.0|libexec/gimp/2.2|' ${WRKSRC}/Makefile ${WRKSRC}/po/Makefile
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
