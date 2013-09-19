@@ -58,6 +58,9 @@ share/openlp/i18n/zh_CN.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%//openlp/core/lib/eventreceiver.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%//openlp/core/lib/eventreceiver.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%//openlp/core/lib/eventreceiver.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%//openlp/core/lib/filedialog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%//openlp/core/lib/filedialog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%//openlp/core/lib/filedialog.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%//openlp/core/lib/formattingtags.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%//openlp/core/lib/formattingtags.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%//openlp/core/lib/formattingtags.pyo
@@ -940,25 +943,23 @@ share/openlp/i18n/zh_CN.qm
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%//resources/pyinstaller/hook-openlp.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%//resources/pyinstaller/hook-openlp.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%//resources/pyinstaller/hook-openlp.pyo
-@dirrm share/openlp/i18n
-@dirrm share/openlp
-@dirrm share/icons/hicolor/scalable/apps
-@dirrm share/icons/hicolor/scalable
-@dirrm share/icons/hicolor/64x64/apps
-@dirrm share/icons/hicolor/64x64
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/256x256/apps
-@dirrm share/icons/hicolor/256x256
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor/128x128/apps
-@dirrm share/icons/hicolor/128x128
-@dirrm share/icons/hicolor
-@dirrm share/icons
-@dirrm share/applications
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%//resources/pyinstaller
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%//resources/images
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%//resources/i18n/qm
