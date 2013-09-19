@@ -16,7 +16,7 @@ you update your ports collection, before attempting any port upgrades.
   been necessary to move the ports to using that implementation.
 
   People using pkgng binary packages should have little problems,
-  "pkg upgrade" will update all sofware to not depend on libivconv
+  "pkg upgrade" will update all sofware to not depend on libiconv
   anymore, once updated packages are available. Please make sure to
   perform a "pkg autoremove" after that and check that libiconv is
   correctly removed by it.
