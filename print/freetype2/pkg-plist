@@ -39,6 +39,7 @@ include/freetype2/freetype/ftsnames.h
 include/freetype2/freetype/ftstroke.h
 include/freetype2/freetype/ftsynth.h
 include/freetype2/freetype/ftsystem.h
+include/freetype2/freetype/ftttdrv.h
 include/freetype2/freetype/fttrigon.h
 include/freetype2/freetype/fttypes.h
 include/freetype2/freetype/ftwinfnt.h
