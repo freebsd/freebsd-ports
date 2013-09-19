@@ -26,7 +26,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--with-rc-dir=/var/spool/newsstar/lib \
 		--with-incoming-dir=/var/spool/newsstar/incoming
 
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${ICONV_LIB}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.options.mk>
