@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.jssac.org/pub/distfiles/asir/ \
 DISTFILES=	${ASIR_SRC} ${ASIR_DOC} ${GC_SRC}
 EXTRACT_ONLY=	${ASIR_SRC}
 
-MAINTAINER=	saito@asir.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The system Risa/Asir is a general computer algebra system
 
 LIB_DEPENDS=	pari-gmp.2:${PORTSDIR}/math/pari
