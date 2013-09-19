@@ -31,7 +31,7 @@ OPTIONS_DEFAULT=HDF5 TESTS TOOLS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHDF5}
-LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18
+LIB_DEPENDS+=	libhdf5.so.7:${PORTSDIR}/science/hdf5-18
 CMAKE_ARGS+=	-DENABLE_HDF5:BOOL=TRUE -DHDF5_NEED_ZLIB:BOOL=TRUE	\
 		-DHDF5_INCLUDE_PATH:PATH="${LOCALBASE}/include"
 PLIST_SUB=	HDF5=""
@@ -50,7 +50,7 @@ TESTSBIN=	cgwrite cgread test_partial
 .endif
 
 .if ${PORT_OPTIONS:MTOOLS}
-USE_TK=		yes
+USES+=		tk
 USE_GL=		gl glu
 USE_XORG=	xmu
 CMAKE_ARGS+=	-DBUILD_CGNSTOOLS:BOOL=TRUE			\
