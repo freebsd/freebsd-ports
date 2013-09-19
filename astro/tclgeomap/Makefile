@@ -1,19 +1,15 @@
-# New ports collection makefile for:	tclgeomap
-# Date created:		25 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tclgeomap
 PORTVERSION=	2.11.6
 CATEGORIES=	astro tcl
 MASTER_SITES=	SF/tkgeomap/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Read, manipulate, and display geo data
 
-USE_TCL=	84+
+USES+=		tcl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tclinclude=${TCL_INCLUDEDIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix

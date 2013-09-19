@@ -1,36 +1,31 @@
-# New ports collection makefile for:	tkgeomap
-# Date created:		25 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tkgeomap
 PORTVERSION=	2.11.6
 CATEGORIES=	astro tk
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Read, manipulate, and display geo data
 
-LIB_DEPENDS=	tclgeomap.0:${PORTSDIR}/astro/tclgeomap
+LIB_DEPENDS=	libtclgeomap.so:${PORTSDIR}/astro/tclgeomap
 
 CONFIGURE_ARGS=	--with-tclgeomap-include=${LOCALBASE}/include/tclgeomap --with-x \
 		--with-tcl=${TCL_LIBDIR} --with-tclinclude=${TCL_INCLUDEDIR} \
 		--with-tk=${TK_LIBDIR} --with-tkinclude=${TK_INCLUDEDIR} \
 		--x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include
-CONFIGURE_ENV=	TCLGEOMAP_LIB=${LOCALBASE}/lib/tclgeomap
-USE_TK=		84+
+MAKE_ENV+=	TCLGEOMAP_LIB="-L ${LOCALBASE}/lib -ltclgeomap"
+USES+=		tk
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
-TKPKG=		${PORTNAME}
-PLIST_SUB=	INC=include/${TKPKG} LIB=lib/${TKPKG}
+PLIST_SUB=	INC=include/${PORTNAME} LIB=lib/${PORTNAME}
 USE_LDCONFIG=	yes
 
 MANN=	igeomap.n tkgeomap.n tkgeomap_procs.n wdgeomap.n
 
 post-install:
-	@${LN} -sf ${PREFIX}/lib/lib${TKPKG}.so ${PREFIX}/lib/lib${PORTNAME}.so.0
+	@${LN} -sf ${PREFIX}/lib/lib${PORTNAME}.so ${PREFIX}/lib/lib${PORTNAME}.so.0
 
 post-patch:
 	@${REINPLACE_CMD} -e '/=.*PACKAGE_VERSION/s|$${PACKAGE_VERSION}||g' ${WRKSRC}/configure
