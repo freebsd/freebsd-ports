@@ -35,7 +35,7 @@
 # where PORT is one of:
 #
 # - tcl			- Depend on Tcl
-# - tk			- Depend on both Tk and Tk (Tk itself depends on Tcl)
+# - tk			- Depend on both Tk and Tcl (Tk itself depends on Tcl)
 #
 # and VERSION is in one of the following formats:
 #
