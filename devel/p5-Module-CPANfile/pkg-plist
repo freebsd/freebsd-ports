@@ -1,4 +1,5 @@
 bin/mymeta-cpanfile
+bin/cpanfile-dump
 %%SITE_PERL%%/Module/CPANfile.pm
 %%SITE_PERL%%/Module/CPANfile/Result.pm
 %%SITE_PERL%%/Module/CPANfile/Environment.pm
