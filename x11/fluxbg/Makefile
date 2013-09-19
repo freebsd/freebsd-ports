@@ -18,6 +18,8 @@ USES=		pathfix pkgconfig
 PLIST_FILES=	bin/fluxbg \
 		bin/fluxbgd \
 		bin/fluxbg_conf
+SUB_FILES=	pkg-message
+SUB_LIST=	PORTNAME=${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
@@ -25,7 +27,7 @@ post-patch:
 
 post-install:
 	@${ECHO_CMD}
-	@${ECHO_MSG} "Execution of ${PREFIX}/bin/${PORTNAME}_conf is a prerequisite of running ${PORTNAME}!"
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
 .include <bsd.port.mk>
