@@ -6491,6 +6491,43 @@ install-license:
 	@${DO_NADA}
 .endif
 
+.if defined(WARNING)
+show-warnings:
+	@${ECHO_MSG} "/!\\ WARNING /!\\"
+.for m in ${WARNING}
+	@${ECHO_MSG} "${m}"
+.endfor
+	@${ECHO_MSG}
+	@sleep 10
+
+check-makefile:: show-warnings
+.endif
+
+.if defined(DEVELOPER)
+.if defined(DEV_WARNING)
+show-dev-warnings:
+	@${ECHO_MSG} "/!\\ ${PKGNAME}: Makefile warnings, please consider fixing /!\\"
+	@${ECHO_MSG}
+.for m in ${DEV_WARNING}
+	@${ECHO_MSG} "${m}"
+.endfor
+	@${ECHO_MSG}
+	@sleep 10
+check-makefile:: show-dev-warnings
+.endif
+
+.if defined(DEV_ERROR)
+show-dev-errors:
+	@${ECHO_MSG} "/!\\ ${PKGNAME}: Makefile errors /!\\"
+	@${ECHO_MSG}
+.for m in ${DEV_WARNING}
+	@${ECHO_MSG} "${m}"
+.endfor
+	@${ECHO_MSG}
+	@${FALSE}
+check-makefile:: show-dev-errors
+.endif
+.endif #DVELOPER
 .endif
 # End of post-makefile section.
 
