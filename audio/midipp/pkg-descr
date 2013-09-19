@@ -6,8 +6,10 @@ with your fingertips. List of supported features:
 - Import from lyrics sites (chorded lyrics)
 - Import from GuitarPro v3 and v4 format.
 - Loading and saving from and to standard v1.0 MIDI files.
-- Live performancing.
+- Realtime MIDI processing.
 - Simple sequence looping.
+- 30000 BPM MIDI recording and playback.
+- Undo/Redo support.
 - Printing music like PDF.
 
 WWW: http://www.selasky.org/hans_petter/midistudio/
