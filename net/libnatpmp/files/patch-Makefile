@@ -1,0 +1,11 @@
+--- Makefile.orig	2013-09-20 03:13:32.533531973 +0800
++++ Makefile	2013-09-20 03:13:40.954532152 +0800
+@@ -5,7 +5,7 @@
+ # http://miniupnp.free.fr/libnatpmp.html
+ 
+ OS = $(shell uname -s)
+-CC = gcc
++CC ?= gcc
+ INSTALL = install
+ 
+ # APIVERSION is used in soname
