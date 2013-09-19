@@ -241,7 +241,7 @@ _WX_WANT_UNICODE=		yes
 
 # These variables are reprocessed later so they won't affect other parts.
 
-.	if defined(WX_UNICODE) || defined(_WX_WANT_UNICODE)
+.	if defined(WX_UNICODE) || defined(_WX_WANT_UNICODE) || ${_WANT_WX} == "2.9"
 _WX_VER_FINAL=			${_WX_VERS_UC_ALL}
 _WX_UC=					u
 _WX_UCL=				-unicode

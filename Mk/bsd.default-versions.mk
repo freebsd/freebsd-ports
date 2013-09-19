@@ -19,5 +19,6 @@ ${_l:U}_DEFAULT=	${lang:C/.*=//g}
 
 PERL5_DEFAULT?=		5.14
 RUBY_DEFAULT?=		1.9
+TCLTK_DEFAULT?=		8.6
 
 .endif

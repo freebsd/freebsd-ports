@@ -91,6 +91,11 @@ DEV_WARNING+=	"USE_GNOME=gnomehack is deprecated, please use USES=pathfix"
 DEV_WARNING+=	"Please use the new format for LIB_DEPENDS, see handbook for details"
 .endif
 
+.if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TCL_RUN) || defined(USE_TCL_WRAPPER) || \
+   defined(USE_TK)  || defined(USE_TK_BUILD)  || defined(USE_TK_RUN)  || defined(USE_TK_WRAPPER)
+DEV_WARNING+=	"USE_TCL and USE_TK are deprecated, please use USES=tcl or USES=tk"
+.endif
+
 .if defined(_PREMKINCLUDED)
 DEV_ERROR+=	"you cannot include bsd.port[.pre].mk twice"
 .endif
