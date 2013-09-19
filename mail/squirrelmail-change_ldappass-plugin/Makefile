@@ -7,7 +7,7 @@ PORTREVISION=	4
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.4.0
 DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows users to change their passwords stored in LDAP Tree
 
 LICENSE=	GPLv2
