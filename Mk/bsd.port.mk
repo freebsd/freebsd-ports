@@ -6520,7 +6520,7 @@ check-makefile:: show-dev-warnings
 show-dev-errors:
 	@${ECHO_MSG} "/!\\ ${PKGNAME}: Makefile errors /!\\"
 	@${ECHO_MSG}
-.for m in ${DEV_WARNING}
+.for m in ${DEV_ERROR}
 	@${ECHO_MSG} "${m}"
 .endfor
 	@${ECHO_MSG}
