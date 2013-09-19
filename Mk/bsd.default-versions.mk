@@ -1,0 +1,23 @@
+# $FreeBSD$
+#
+# MAINTAINER:	ports@FreeBSD.org
+#
+# Handle the default versions for users chosable multi versions.
+#
+# It expects users to define DEFAULT_VERSIONS in there make.conf
+# Syntax is the following:
+#
+# DEFAULT_VERSION=	perl5=5.18 ruby=2.0
+
+.if !defined(_INCLUDE_BSD_DEFAULT_VERSIONS_MK)
+_INCLUDE_BSD_DEFAULT_VERSIONS_MK=	yes
+
+.for lang in ${DEFAULT_VERSIONS}
+_l=		${lang:C/=.*//g}
+${_l:U}_DEFAULT=	${lang:C/.*=//g}
+.endfor
+
+PERL5_DEFAULT?=		5.14
+RUBY_DEFAULT?=		1.9
+
+.endif

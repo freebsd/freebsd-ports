@@ -46,7 +46,18 @@ USE_PERL5?=	run build
 PERL_VERSION!=	perl -e 'printf "%vd\n", $$^V;'
 .endif
 .else
-PERL_VERSION?=	5.14.4
+.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
+.if ${PERL5_DEFAULT} == 5.12
+PERL_VERSION=	5.12.5
+.elif ${PERL5_DEFAULT} == 5.14
+PERL_VERSION=	5.14.4
+.elif ${PERL5_DEFAULT} == 5.16
+PERL_VERSION=	5.16.3
+.elif ${PERL5_DEFAULT} == 5.18
+PERL_VERSION=	5.18.1
+.else
+IGNORE=	Invalid perl5 version ${PERL5_DEFAULT}
+.endif
 .endif
 
 PERL_VER?=	${PERL_VERSION:C/\.[0-9]+$//}
