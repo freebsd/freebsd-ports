@@ -218,7 +218,7 @@ CONFIGURE_ARGS+=--with-xerces=no
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
 
 post-install:
 	${TOUCH} ${PREFIX}/lib/gdalplugins/.keepme
