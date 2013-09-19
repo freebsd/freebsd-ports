@@ -1,18 +1,15 @@
-# ex:ts=8
-# Ports collection makefile for:	libxdiff
-# Date created:			Jan 5, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libxdiff
 PORTVERSION=	0.23
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.xmailserver.org/
 
-MAINTAINER=	ler@lerctr.org
+MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Create file differences/patches to both binary and text files
+
+LICENSE=	LGPL3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
