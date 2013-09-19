@@ -3,7 +3,7 @@
 
 PORTNAME=	gnudatalanguage
 DISTVERSION=	0.9.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science lang
 MASTER_SITES=	SF/${PORTNAME}/gdl/${DISTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
@@ -19,7 +19,7 @@ LICENSE=	GPLv2
 #---------------------------------------------------------------------------
 # You may define these options:
 #
-# - WITHOUT_IMAGEMAGICK:	remove ImageMagick support
+# - WITHOUT_GRAPHICSMAGICK:	remove GraphicsMagick support
 # - WITHOUT_HDF5:		remove HDF5 support
 # - WITHOUT_NETCDF:		remove netCDF support
 # - WITHOUT_HDF:		remove HDF 4 suppport (conflict with netCDF)
@@ -28,19 +28,22 @@ LICENSE=	GPLv2
 #
 #---------------------------------------------------------------------------
 
-LIB_DEPENDS+=	plplotd.11:${PORTSDIR}/math/plplot	\
-		ps.4:${PORTSDIR}/print/pslib		\
-		gsl:${PORTSDIR}/math/gsl		\
-		dps.0:${PORTSDIR}/x11/dgs
+LIB_DEPENDS+=	libplplotd.so:${PORTSDIR}/math/plplot	\
+		libps.so:${PORTSDIR}/print/pslib		\
+		libgsl.so:${PORTSDIR}/math/gsl		\
+		libdps.so:${PORTSDIR}/x11/dgs
 
 USE_GCC=	yes
 USE_WX=		2.8
+USE_XORG=	x11
 USES=		pkgconfig
 GNU_CONFIGURE=	yes
 # Disable ncurses and readline from ports
-CONFIGURE_FLAGS=--with_ncursesdir=/usr --with_readlinedir=/usr
+# Disable ImageMagick (does'nt work with plplot because dynamic drivers
+#	are enabled by default)
+CONFIGURE_ARGS=	--with-ncursesdir=/usr --with-readlinedir=/usr --without-Magick
 CONFIGURE_ENV=	wxConfig=${WX_CONFIG}
-CPPFLAGS+=	${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/ImageMagick
+CPPFLAGS+=	${CFLAGS} -fno-inline ${PTHREAD_CFLAGS} -I${LOCALBASE}/include ${GM_INC}
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 
 SLAVEDIRS=	science/py-gnudatalanguage
@@ -55,27 +58,28 @@ MAN1=		gdl.1
 PLIST_SUB+=	MASTER=""
 .endif
 
-.if !defined(WITHOUT_IMAGEMAGICK)
-LIB_DEPENDS+=	MagickWand:${PORTSDIR}/graphics/ImageMagick
-CONFIGURE_ARGS+=--with-Magick=${LOCALBASE}
+.if !defined(WITHOUT_GRAPHICSMAGICK)
+LIB_DEPENDS+=	libGraphicsMagick.so.12:${PORTSDIR}/graphics/GraphicsMagick13
+CONFIGURE_ARGS+=--with-GraphicsMagick=${LOCALBASE}
+GM_INC=		-I${LOCALBASE}/include/GraphicsMagick
 .else
 CONFIGURE_ARGS+=--with-Magick=no
 .endif
 
 .if !defined(WITHOUT_HDF5)
-LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18
+LIB_DEPENDS+=	libhdf5.so.7:${PORTSDIR}/science/hdf5-18
 CONFIGURE_ARGS+=--with-hdf5=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-hdf5=no
 .endif
 
 .if !defined(WITHOUT_NETCDF)
-LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
+LIB_DEPENDS+=	libnetcdf.so:${PORTSDIR}/science/netcdf
 CONFIGURE_ARGS+=--with-netcdf=${LOCALBASE} --with-hdf=no
 .else
 CONFIGURE_ARGS+=--with-netcdf=no
 . if !defined(WITHOUT_HDF)
-LIB_DEPENDS+=	df.1:${PORTSDIR}/science/hdf
+LIB_DEPENDS+=	libdf.so.2:${PORTSDIR}/science/hdf
 CONFIGURE_ARGS+=--with-hdf=${LOCALBASE}
 . else
 CONFIGURE_ARGS+=--with-hdf=no
@@ -103,8 +107,8 @@ BROKEN=	Does not build with ancient binutils
 WITH_FFTW3=	yes
 .endif
 .if defined(WITH_FFTW3)
-LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3		\
-		fftw3f:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS+=	libfftw3.so:${PORTSDIR}/math/fftw3		\
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float
 CONFIGURE_ARGS+=--with-fftw=${LOCALBASE}
 .endif
 
