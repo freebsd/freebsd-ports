@@ -10,6 +10,20 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130919:
+AUTHOR: gahr@FreeBSD.org
+
+  * New USES: tcl, tk
+
+  This uses replaces all the previous USE_TCL, USE_TCL_BUILD, USE_TCL_RUN,
+  USE_TCL_WRAPPER, USE_TK, USE_TK_BUILD, USE_TK_RUN and USE_TK_WRAPPER macros.
+
+  See the Mk/Uses/tcl.mk and the commit message of r327607 for details.
+
+  Moreover, the default Tcl/Tk version is now specified in terms of
+  bsd.default-versions.mk. It is now possible to specify one's preferred Tcl/Tk
+  version using DEFAULT_VERSIONS+= tcltk=x.y in make.conf.
+
 20130918:
 AUTHOR: bapt@FreeBSD.org
 
