@@ -8,29 +8,24 @@ CATEGORIES=	archivers tcl
 MASTER_SITES=	http://mkextensions.sourceforge.net/
 DISTNAME=	mkZiplib${PORTVERSION:S/.//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	GZIP and ZIP support for TCL; dynamically loadable
 
 LICENSE=	BSD
 
-USE_TCL=	84+
-
-WRKSRC=		${WRKDIR}/mkZiplib${PORTVERSION}
+USES+=		tcl
 USE_ZIP=	yes
 
-.include <bsd.port.options.mk>
+WRKSRC=		${WRKDIR}/mkZiplib${PORTVERSION}
 
-TCLCONFIG?=	${LOCALBASE}/lib/tcl${TCL_VER}/tclConfig.sh
+.include <bsd.port.options.mk>
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ENV=	VERSION=${PORTVERSION:S/.//} \
 		TCL_VER=${TCL_VER} \
-		TCLCONFIG=${TCLCONFIG}
+		TCLCONFIG=${TCL_LIBDIR}/tclConfig.sh
 
 PLIST_SUB+=	VERSION=${PORTVERSION:S/.//}
-
-pre-build:
-		@${TEST} -f ${TCLCONFIG} || ( echo "tclConfig.sh is required to build mkZiplib"; exit 1 )
 
 do-install:
 		@${MKDIR} ${PREFIX}/lib/mkZiplib

@@ -1,15 +1,9 @@
 PACKAGE		= mkZiplib
-VERSION		?= 10
 SHLIB_NAME	= ${PACKAGE}${VERSION}.so
 
 SRCS		= unzip.c zip.c mkZiplib${VERSION}.c
 
-LOCALBASE	?=/usr/local
-TCL_VER		?=8.4
-
 SOBJS=		${SRCS:N*.h:R:S/$/.o/}
-
-TCLCONFIG	?=${LOCALBASE}/lib/tcl${TCL_VER}/tclConfig.sh
 
 TCL_SHLIB_CFLAGS!=	. ${TCLCONFIG}; \
 		echo $$TCL_SHLIB_CFLAGS
@@ -24,7 +18,7 @@ LDFLAGS		+= ${TCL_STUB_LIB_SPEC} -lz
 all: ${SHLIB_NAME}
 
 ${SHLIB_NAME}: ${SOBJS}
-	${CC} ${LDFLAGS} -shared -o ${.TARGET} `lorder ${SOBJS} | tsort -q` ${LDADD}
+	${CC} ${LDFLAGS} -shared -o ${.TARGET} ${SOBJS}
 
 clean:
 	@rm -f ${SHLIB_NAME} ${SOBJS}
