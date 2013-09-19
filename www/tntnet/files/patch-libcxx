@@ -1,0 +1,14 @@
+--- a/framework/common/tnt/multipart.h
++++ b/framework/common/tnt/multipart.h
+@@ -75,7 +75,11 @@ namespace tnt
+         : bodyBegin(), bodyEnd()
+         { bodyBegin._C_iter = bodyEnd._C_iter = 0;}
+ #else
++#ifdef _LIBCPP_VERSION
++        : bodyBegin(), bodyEnd()
++#else
+         : bodyBegin(0), bodyEnd(0)
++#endif
+         { }
+ #endif
+ 
