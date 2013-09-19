@@ -1,0 +1,30 @@
+--- ./BSDmakefile.orig 2013-09-19 11:31:40.022802767 +0200
++++ ./BSDmakefile	2013-09-19 11:32:24.482713883 +0200
+@@ -16,9 +16,9 @@
+ 
+ DEPDIR=depends
+ ALLDEPS=$(DEPDIR)/all
+-CFLAGS=-c -g -O3 -Wall -Wextra -Werror -fno-builtin -std=c99 -pedantic -DHAVE_CONFIG_H
+-LDFLAGS=-g -O3 -Wall -Wextra -Werror -fno-builtin -std=c99 -pedantic -DHAVE_CONFIG_H
+-CC=gcc
++CFLAGS?=-g -O3 -Wall -Wextra -Werror -fno-builtin -std=c99 -pedantic -DHAVE_CONFIG_H
++LDFLAGS?=-g -O3 -Wall -Wextra -Werror -fno-builtin -std=c99 -pedantic -DHAVE_CONFIG_H
++CC?=gcc
+ 
+ default:	ddns-client ddns-server
+ 
+@@ -83,7 +83,7 @@
+ 	@$(CC) -MM $(.IMPSRC) > $(DEPDIR)/$(.PREFIX).d
+ 	@grep -q "$(.PREFIX).d" $(ALLDEPS) \
+ 			|| echo ".include \"$(.PREFIX).d\"" >> $(ALLDEPS)
+-	$(CC) $(CFLAGS) -o $(.TARGET) $(.IMPSRC)
++	$(CC) $(CFLAGS) -c -o $(.TARGET) $(.IMPSRC)
+ 
+ .m.o:
+ 	@mkdir -p $(DEPDIR)
+@@ -91,4 +91,4 @@
+ 	@$(CC) -MM $(.IMPSRC) > depends/$(.PREFIX).d
+ 	@grep -q "$(.PREFIX).d" $(ALLDEPS) \
+ 			|| echo ".include \"$(.PREFIX).d\"" >> $(ALLDEPS)
+-	$(CC) $(CFLAGS) -o $(.TARGET) $(.IMPSRC)
++	$(CC) $(CFLAGS) -c -o $(.TARGET) $(.IMPSRC)
