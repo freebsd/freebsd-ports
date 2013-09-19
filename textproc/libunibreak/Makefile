@@ -1,6 +1,5 @@
-# Created by:			Yuri Pankov <yuri.pankov@gmail.com>
+# Created by: Yuri Pankov <yuri.pankov@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libunibreak
 PORTVERSION=	1.0
@@ -14,4 +13,5 @@ COMMENT=	Implementation of the line and word breaking algorithm for Unicode
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		pathfix
+
 .include <bsd.port.mk>
