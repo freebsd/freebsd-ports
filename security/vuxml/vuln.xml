@@ -165,7 +165,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>thunderbird</name>
-	<range><lt>24.0,1</lt></range>
+	<range><lt>24.0</lt></range>
       </package>
     </affects>
     <description>
