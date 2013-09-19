@@ -1,14 +1,8 @@
-# New ports collection makefile for:    freeradius
-# Date created:         May 9 2002
-# Whom:                 Brian Somers <brian@FreeBSD.org>
-#
+# Created by: Brian Somers <brian@FreeBSD.org>
 # $FreeBSD$
-#
-# $Id$
-#
 
 PORTNAME=	freeradius
-DISTVERSION=	2.2.0
+DISTVERSION=	2.2.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -42,9 +36,9 @@ MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
-PLIST_SUB=	PORTVERSION=${DISTVERSION}
+PLIST_SUB=	PORTVERSION=${DISTVERSION} LIBVER=0${PORTVERSION:C/\./0/g}
 
-OPTIONS_DEFINE=	USER KERBEROS HEIMDAL HEIMDAL_PORT HEIMDAL_PATCH LDAP MYSQL \
+OPTIONS_DEFINE=	USER KERBEROS HEIMDAL HEIMDAL_PORT LDAP MYSQL \
 		PGSQL UNIXODBC FIREBIRD PERL PYTHON OCI8 RUBY DHCP \
 		EXPERIMENTAL UDPFROMTO DEVELOPER EDIR
 OPTIONS_DEFAULT=USER PERL PYTHON
@@ -53,7 +47,6 @@ DHCP_DESC=		With DHCP support (EXPERIMENTAL)
 USER_DESC=		Run as user freeradius, group freeradius
 HEIMDAL_DESC=		With Heimdal Kerberos support
 HEIMDAL_PORT_DESC=	With Heimdal Kerberos from ports
-HEIMDAL_PATCH_DESC=	Enhanced Heimdal support (specify SPN/keytab)
 UNIXODBC_DESC=		With unixODBC database support
 FIREBIRD_DESC=		With Firebird database support (EXPERIMENTAL)
 OCI8_DESC=		With Oracle support (currently experimental)
@@ -83,7 +76,7 @@ GROUPS=		${RADIUS_GROUP}
 CONFIGURE_ARGS+=--with-system-libtool --with-system-libltdl \
 		--disable-ltdl-install
 
-.if ${PORT_OPTIONS:MHEIMDAL} && empty(${PORT_OPTIONS:MKERBEROS})
+.if ${PORT_OPTIONS:MHEIMDAL} && empty(PORT_OPTIONS:MKERBEROS)
 ${UNIQUENAME}_SET+=	KERBEROS
 .endif
 
@@ -97,7 +90,7 @@ CONFIGURE_ARGS+=--enable-heimdal-krb5
 LIB_DEPENDS+=	krb5:${PORTSDIR}/security/krb5
 .endif
 CONFIGURE_ARGS+=--with-rlm_krb5
-.if ${PORT_OPTIONS:MHEIMDAL} && empty(${PORT_OPTIONS:MHEIMDAL_PORT})
+.if ${PORT_OPTIONS:MHEIMDAL} && empty(PORT_OPTIONS:MHEIMDAL_PORT)
 CONFIGURE_ARGS+=--with-rlm-krb5-lib-dir=/usr/lib
 CONFIGURE_ARGS+=--with-rlm-krb5-include-dir=/usr/include
 CONFIGURE_ENV+=	KRB5LIBS="$$(${KRB5_CONFIG})"
@@ -111,15 +104,10 @@ CONFIGURE_ARGS+=--without-rlm_krb5
 PLIST_SUB+=	KRB5="@comment "
 .endif
 
-# Patch rlm_krb5.c to add Heimdal support for specifying keytab+SPN
-.if ${PORT_OPTIONS:MHEIMDAL_PATCH}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src__modules__rlm_krb5__rlm_krb5.c
-.endif
-
 .if ${PORT_OPTIONS:MEDIR}
 CONFIGURE_ARGS+=--with-edir
-.if empty(${PORT_OPTIONS:MLDAP})
-PORT_OPTIONS+= LDAP
+.if empty(PORT_OPTIONS:MLDAP)
+PORT_OPTIONS+=	LDAP
 .endif
 .endif
 
@@ -206,7 +194,7 @@ PLIST_SUB+=	RLMRUBY="@comment "
 .endif
 
 # rlm_ruby module is still experimental
-.if ${PORT_OPTIONS:MRUBY} && empty(${PORT_OPTIONS:MEXPERIMENTAL})
+.if ${PORT_OPTIONS:MRUBY} && empty(PORT_OPTIONS:MEXPERIMENTAL)
 EXPM=		yes
 .endif
 
@@ -217,7 +205,7 @@ CONFIGURE_ARGS+=--without-dhcp
 .endif
 
 # DHCP is still experimental
-.if ${PORT_OPTIONS:MDHCP} && empty(${PORT_OPTIONS:MEXPERIMENTAL})
+.if ${PORT_OPTIONS:MDHCP} && empty(PORT_OPTIONS:MEXPERIMENTAL)
 EXPM=		yes
 .endif
 
@@ -234,7 +222,7 @@ PLIST_SUB+=	SMB="@comment "
 .endif
 
 # SMB module is still experimental
-.if ${PORT_OPTIONS:MSMB} && empty(${PORT_OPTIONS:MSMB})
+.if ${PORT_OPTIONS:MSMB} && empty(PORT_OPTIONS:MSMB)
 EXPM=		yes
 .endif
 
@@ -284,7 +272,8 @@ CONFIGURE_ARGS+=--quiet \
 		--libdir=${PREFIX}/${FREERADIUS_LIBDIR} \
 		--localstatedir=/var \
 		--with-system-libtool
-.ifdef(NOPORTDOCS)
+
+.if empty(PORT_OPTIONS:MDOCS)
 CONFIGURE_ARGS+=--without-docdir
 PLIST_SUB+=	PORTDOCS="@comment "
 SUB_LIST+=	PORTDOCS="@comment "
@@ -357,7 +346,7 @@ post-patch:
 		-regex '.*/(bootstrap|Makefile)\.(orig|bak)$$' \
 		-delete
 # If we're using Heimdal from base, alter the LIBS variable
-.if ${PORT_OPTIONS:MHEIMDAL} && empty(${PORT_OPTIONS:MHEIMDAL_PORT})
+.if ${PORT_OPTIONS:MHEIMDAL} && empty(PORT_OPTIONS:MHEIMDAL_PORT)
 	@${REINPLACE_CMD} -e 's|LIBS|KRB5LIBS|g' ${WRKSRC}/src/modules/rlm_krb5/configure
 	@${REINPLACE_CMD} -e 's|-lkrb5|$$(${KRB5_CONFIG})|g' \
 		${WRKSRC}/src/modules/rlm_krb5/configure
