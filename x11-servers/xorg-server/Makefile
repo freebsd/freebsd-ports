@@ -86,6 +86,7 @@ OPTIONS_DEFAULT=	AIGLX SUID HAL
 
 OPTIONS_EXCLUDE_sparc64=	HAL
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OPENSSL_BASE)

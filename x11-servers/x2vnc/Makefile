@@ -1,9 +1,5 @@
-# New ports collection makefile for:	x2vnc
-# Date created:				12th September 2000
-# Whom:					Ade Lovett <ade@FreeBSD.org>
-#
+# Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	x2vnc
 PORTVERSION=	1.72
@@ -23,4 +19,5 @@ USE_XORG=	x11 xext xrandr xxf86dga ice xinerama xrandr xrender xscrnsaver sm
 MAN1=		x2vnc.1
 PLIST_FILES=	bin/x2vnc
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -15,4 +15,5 @@ USE_XORG=	x11 xext xtst
 MAN1=		x2x.1
 PLIST_FILES=	bin/x2x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
