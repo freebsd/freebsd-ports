@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpn
-# Date created:		2007-01-14
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xpn
 PORTVERSION=	1.2.6
@@ -31,6 +27,7 @@ USES=		gettext
 
 XPN=	${PORTNAME}.py
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/${XPN} ${DATADIR}/${XPN}

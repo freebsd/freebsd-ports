@@ -71,6 +71,7 @@ NEWSARTS?=	${VARBASE}/news
 NEWSOV?=	${VARBASE}/news
 PGPVERIFY?=	pgpverify-1.12
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if make(makesum) || defined(FETCH_ALL)

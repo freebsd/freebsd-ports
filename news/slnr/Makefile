@@ -18,6 +18,7 @@ MAKEFILE=	src/Makefile
 DOCFILES=	${FILESDIR}/porting.notes other/soup12.doc other/slnr.doc \
 		LICENSE other/default.dot.slnrrc
 
+NO_STAGE=	yes
 do-install:
 .if !defined{NOPORTDOCS}
 	@${ECHO_MSG} "===>  Copying documents to ${PREFIX}/share/doc/slnr"

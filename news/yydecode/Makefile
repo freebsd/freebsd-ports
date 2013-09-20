@@ -1,9 +1,5 @@
-# New ports collection makefile for: yydecode
-# Date created:		14 Dec 2004
-# Whom:			Mikolaj Rydzewski <miki@ceti.pl>
-#
+# Created by: Mikolaj Rydzewski <miki@ceti.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	yydecode
 PORTVERSION=	0.2.10
@@ -19,4 +15,5 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/yydecode
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

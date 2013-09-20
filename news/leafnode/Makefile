@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 
 CONFLICTS=	newsx-1* s-news-0*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(/var/spool/news/leaf.node) && !defined(PACKAGE_BUILDING)

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	mmail
-# Date created:			18 September 2002
-# Whom:				Frederic Cambus
-#
+# Created by: Frederic Cambus
 # $FreeBSD$
-#
 
 PORTNAME=	mmail
 PORTVERSION=	0.49
@@ -23,6 +18,7 @@ MAKE_ARGS=	OPTS=""
 MAN1=		mmail.1
 PLIST_FILES=	bin/mmail
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mm ${PREFIX}/bin/mmail
 	${INSTALL_MAN} ${WRKSRC}/mm.1 ${MANPREFIX}/man/man1/mmail.1

@@ -17,6 +17,7 @@ PLIST_SUB+=	IFMAIL_RUNAS="${IFMAIL_RUNAS}"
 # USERS does not work here
 #USERS=		ifmail
 
+NO_STAGE=	yes
 pre-configure:
 	@${MV} ${WRKSRC}/CONFIG ${WRKSRC}/CONFIG.sed
 	${SED} -e "s/OWNER = ifmail/OWNER = ${IFMAIL_RUNAS}/" \

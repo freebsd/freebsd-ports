@@ -1,9 +1,5 @@
-# New ports collection makefile for:	newsfish
-# Date created:		17 January 1999
-# Whom:			asaddi@philosophysw.com
-#
+# Created by: asaddi@philosophysw.com
 # $FreeBSD$
-#
 
 PORTNAME=	newsfish
 PORTVERSION=	1.2.6
@@ -19,4 +15,5 @@ GNU_CONFIGURE=	yes
 MAN1=		newsfish.1
 PLIST_FILES=	bin/newsfish
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

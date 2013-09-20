@@ -92,6 +92,7 @@ UNRAR_DESC=	Often required for unpacking many downloads
 FEEDPARSER_DESC=	rss-feed support
 YENC_DESC=	yenc support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPAR2CMDLINE}

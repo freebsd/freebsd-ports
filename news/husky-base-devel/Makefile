@@ -17,6 +17,7 @@ CONFLICTS=	husky-base-[0-9]*
 WRKSRC=		${WRKDIR}/huskybse
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 pre-install:
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGDIR}/pkg-install ${PORTNAME} PRE-INSTALL

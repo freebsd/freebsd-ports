@@ -1,9 +1,5 @@
-# New ports collection makefile for:   slrnface
-# Date created:        10 April 2002
-# Whom:                Oliver Braun <obraun@informatik.unibw-muenchen.de>
-#
+# Created by: Oliver Braun <obraun@informatik.unibw-muenchen.de>
 # $FreeBSD$
-#
 
 PORTNAME=	slrnface
 PORTVERSION=	2.1.1
@@ -29,6 +25,7 @@ MAN1=		slrnface.1
 PLIST_FILES=	bin/slrnface share/examples/slrnface/slrnface.sl
 PLIST_DIRS=	share/examples/slrnface
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/slrnface ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/slrnface.1 ${MAN1PREFIX}/man/man1/slrnface.1

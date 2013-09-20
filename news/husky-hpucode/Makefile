@@ -17,5 +17,6 @@ MAN1=		hpucode.1
 MANCOMPRESSED=	yes
 INFO=		hpucode
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../husky-base/Makefile.inc"
 .include <bsd.port.mk>

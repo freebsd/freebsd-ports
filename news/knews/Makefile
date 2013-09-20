@@ -27,4 +27,5 @@ MAKE_ARGS+=	-j${MAKE_JOBS}
 .endif
 MAN1=		knews.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

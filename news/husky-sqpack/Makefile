@@ -17,6 +17,7 @@ MAN1=		sqpack.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/sqpack
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's^/etc/fido/config^${PREFIX}/etc/fido/config^' \
 		${WRKSRC}/sqpack.1

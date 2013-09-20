@@ -19,6 +19,7 @@ USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 DOCS=		COMMON-PROBLMS COPYRIGHT CREDITS ChangeLog
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/share
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E -e "s|^#error.+||g" \
 		-e "s|/usr/lib/sendmail|/usr/sbin/sendmail|g" \

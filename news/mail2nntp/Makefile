@@ -20,6 +20,7 @@ NO_BUILD=	yes
 PORTDOCS=	*
 PLIST_FILES=	bin/mail2nntp.pl
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

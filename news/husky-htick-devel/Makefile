@@ -21,6 +21,7 @@ INFO=		htick
 PLIST_FILES=	bin/htick \
 		share/doc/husky/htick.html
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's^/fido/etc/config^${PREFIX}/etc/fido/config^' \
 		${WRKSRC}/man/htick.1

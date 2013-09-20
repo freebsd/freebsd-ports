@@ -13,5 +13,6 @@ CONFLICTS=	husky-smapi-[0-9]*
 
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../husky-base-devel/Makefile.inc"
 .include <bsd.port.mk>

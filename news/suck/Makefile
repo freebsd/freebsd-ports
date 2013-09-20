@@ -27,6 +27,7 @@ EX_DATA=	suckkillfile.sample sucknewsrc.sample suckothermsgs.sample
 OPTIONS_DEFINE=	SSL EXAMPLES
 OPTIONS_DEFAULT=	SSL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(NEWSBIN) && !defined(SUCK_WITH_INN)

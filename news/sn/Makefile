@@ -28,6 +28,7 @@ MAN8=		sn.8 sncancel.8 sncat.8 sndelgroup.8 sndumpdb.8 \
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Try to fix parallel builds (-jX); respect CFLAGS

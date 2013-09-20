@@ -28,6 +28,7 @@ MAN1=		slrn.1 slrnpull.1
 OPTIONS_DEFINE=	SSL DEVIEW
 OPTIONS_DEFAULT=SSL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

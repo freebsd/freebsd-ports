@@ -11,6 +11,7 @@ NEWSBIN?=	${PREFIX}/libexec/cnews
 NEWSCTL?=	${VARBASE}/lib/news
 
 .if exists(${.CURDIR}/Makefile.local)
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.local"
 .endif
 

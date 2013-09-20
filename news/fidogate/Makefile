@@ -22,6 +22,7 @@ DOCLIST=	fidogate.texi fidogate.txt gatebau94.txt kludge-rfc.doc \
 		template.html fido howto misc rfc gatebau/msgid.sgml \
 		gatebau/msgid.tex gatebau/msgid.txt
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-configure:

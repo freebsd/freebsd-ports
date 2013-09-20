@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-News-Article-NoCeM
-# Date created:				10 December 2004
-# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	News-Article-NoCeM
 PORTVERSION=	0.08
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		News::Article::NoCeM.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

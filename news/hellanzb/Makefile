@@ -23,6 +23,7 @@ USE_PYDISTUTILS=yes
 USE_TWISTED_RUN=	web
 PORTDOCS=	CHANGELOG CREDITS README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # more fully-featured rar needs i386

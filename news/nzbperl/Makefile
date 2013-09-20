@@ -27,6 +27,7 @@ USE_PERL5=	run
 RUN_DEPENDS+=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
 .endif
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} ${DISTDIR}/${DISTNAME} ${WRKDIR}

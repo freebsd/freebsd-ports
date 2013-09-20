@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Diablo
-# Date created:				June 2nd 1997
-# Whom:					James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	diablo
 PORTVERSION=	5.1
@@ -25,6 +21,7 @@ MAN8=		dicmd.8 didump.8 dexpireover.8 dfeedinfo.8 dgrpctl.8 \
 		doverctl.8 drequeue.8 dhisexpire.8
 PORTDOCS=	COPYRIGHT INSTALL README.READER README.SERVER RELEASE_NOTES
 
+NO_STAGE=	yes
 post-patch:
 	@${CP} ${SCRIPTDIR}/diablo.sh-sample ${WRKDIR}
 	@${REINPLACE_CMD} -E 's|%%PREFIX%%|${PREFIX}|g ;\

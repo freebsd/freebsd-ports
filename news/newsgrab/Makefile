@@ -19,6 +19,7 @@ RUN_DEPENDS=	p5-NNTPClient>=0:${PORTSDIR}/news/p5-NNTPClient \
 NO_BUILD=	yes
 USES=		perl5
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^#!/usr/bin/perl|#!${PERL}|' ${WRKSRC}/newsgrab.pl
 

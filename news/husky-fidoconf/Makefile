@@ -29,6 +29,7 @@ MLINKS=		fconf2.1 fconf2aquaed.1 \
 		fconf2.1 fconf2squish.1
 INFO=		fidoconfig
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's^/fido/etc/config^${PREFIX}/etc/fido/config^' \
 		${WRKSRC}/man/dumpfcfg.1

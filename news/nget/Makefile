@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nget
-# Date created:				20 June 2002
-# Whom:					George Sorsby <george@crackpipe.net>
-#
+# Created by: George Sorsby <george@crackpipe.net>
 # $FreeBSD$
-#
 
 PORTNAME=	nget
 PORTVERSION=	0.27.1
@@ -20,6 +16,7 @@ MANCOMPRESSED=	no
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 post-extract:
 	${LN} -s nget-${PORTVERSION} ${WRKDIR}/${DISTNAME}
 

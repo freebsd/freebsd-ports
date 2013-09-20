@@ -26,6 +26,7 @@ MAN1=		hpt.1 hptlink.1 hpttree.1 txt2pkt.1
 MANCOMPRESSED=	yes
 INFO=		hpt
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's^/path/to/config^${PREFIX}/etc/fido/config^' \
 		${WRKSRC}/man/hptlink.1

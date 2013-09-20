@@ -17,6 +17,7 @@ USE_BZIP2=	yes
 USES=		perl5
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}/help
 	@${INSTALL_DATA} ${WRKSRC}/help/* ${DATADIR}/help

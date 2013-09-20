@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ubh
-# Date created:			1 January 2002
-# Whom:				John Holland <john@zoner.org>
-#
+# Created by: John Holland <john@zoner.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ubh
 PORTVERSION=	2.5
@@ -24,6 +20,7 @@ RUN_DEPENDS=	\
 NO_BUILD=	YES
 USES=		perl5
 
+NO_STAGE=	yes
 pre-patch:
 	@${MV} ${WRKSRC}/ubh ${WRKSRC}/ubh.old
 	@${SED} -e '1,1s:/usr/bin/perl:${PERL5}:' \

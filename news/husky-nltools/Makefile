@@ -13,5 +13,6 @@ COMMENT=	Nodelist tools
 
 LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../husky-base/Makefile.inc"
 .include <bsd.port.mk>
