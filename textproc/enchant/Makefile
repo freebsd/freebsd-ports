@@ -12,10 +12,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Dictionary/spellchecking framework
 
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USES=		pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	glib20 ltverhack
 CONFIGURE_ARGS=	--disable-uspell \
 		--disable-voikko
@@ -34,7 +33,7 @@ ZEMBEREK_DESC=	Spell checking via Zemberek
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASPELL}
-LIB_DEPENDS+=	pspell:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=	libaspell.so:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=--enable-aspell \
 		--with-aspell-prefix=${LOCALBASE}
 PLIST_SUB+=	ASPELL=""
@@ -45,7 +44,8 @@ PLIST_SUB+=	ASPELL="@comment "
 
 .if ${PORT_OPTIONS:MHSPELL}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libhspell.a:${PORTSDIR}/hebrew/hspell
-CONFIGURE_ARGS+=--enable-hspell
+CONFIGURE_ARGS+=--enable-hspell \
+		--with-hspell-prefix=${LOCALBASE}
 PLIST_SUB+=	HSPELL=""
 .else
 CONFIGURE_ARGS+=--disable-hspell
@@ -53,8 +53,9 @@ PLIST_SUB+=	HSPELL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MHUNSPELL}
-LIB_DEPENDS+=	hunspell-1.3:${PORTSDIR}/textproc/hunspell
-CONFIGURE_ARGS+=--enable-myspell
+LIB_DEPENDS+=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
+CONFIGURE_ARGS+=--enable-myspell --with-system-myspell=yes \
+		--with-myspell-dir=${LOCALBASE}
 PLIST_SUB+=	HUNSPELL=""
 .else
 CONFIGURE_ARGS+=--disable-myspell
@@ -63,7 +64,8 @@ PLIST_SUB+=	HUNSPELL="@comment "
 
 .if ${PORT_OPTIONS:MISPELL}
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
-CONFIGURE_ARGS+=--enable-ispell
+CONFIGURE_ARGS+=--enable-ispell \
+		--with-ispell-dir=${LOCALBASE}
 PLIST_SUB+=	ISPELL=""
 .else
 CONFIGURE_ARGS+=--disable-ispell
@@ -71,7 +73,7 @@ PLIST_SUB+=	ISPELL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MZEMBEREK}
-LIB_DEPENDS+=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 CONFIGURE_ARGS+=--enable-zemberek
 PLIST_SUB+=	ZEMBEREK=""
 .else

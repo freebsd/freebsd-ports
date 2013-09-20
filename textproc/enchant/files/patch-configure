@@ -1,0 +1,11 @@
+--- configure.orig	2013-08-16 18:30:56.000000000 +0200
++++ configure	2013-08-16 18:31:33.000000000 +0200
+@@ -18213,7 +18213,7 @@
+ fi
+ 
+ 
+-       ASPELL_CFLAGS+=" -DHAVE_PSPELL_H"
++       ASPELL_CFLAGS="${ASPELL_CFLAGS} -DHAVE_PSPELL_H"
+    elif test -f "$aspell_prefix/include/aspell.h"; then
+        { $as_echo "$as_me:$LINENO: result: yes (aspell)" >&5
+ $as_echo "yes (aspell)" >&6; }
