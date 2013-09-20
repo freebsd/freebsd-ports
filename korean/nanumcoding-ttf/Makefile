@@ -33,6 +33,7 @@ PLIST_FILES+=	${FONTSDIR}/${f}.ttf
 PLIST_FILES+=	${FONTSDIR}/fonts.dir \
 		${FONTSDIR}/fonts.scale
 
+NO_STAGE=	yes
 post-extract:
 	@# XXX File names are encoded in EUC-KR.
 	${MV} ${WRKSRC}/*-Bold.ttf ${WRKSRC}/NanumGothicCoding-Bold.tmp

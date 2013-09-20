@@ -28,6 +28,7 @@ ADOBECMAPDIR=	${LOCALBASE}/share/fonts/adobe-cmaps
 INSTALL_FILES=	Adobe-Korea1.cidToUnicode ISO-2022-KR.unicodeMap \
 		README ../dot.xpdfrc
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/korean
 	cd ${WRKSRC} && \

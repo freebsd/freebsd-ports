@@ -21,6 +21,7 @@ USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes
 MAKE_ENV=	DISTDIR=${DISTDIR} DISTFILES="${DISTFILES}"
 
+NO_STAGE=	yes
 do-extract:
 	@${RM} -fr ${WRKDIR} && \
 	${MKDIR} ${WRKDIR} && \

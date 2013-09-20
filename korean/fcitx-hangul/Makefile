@@ -24,4 +24,5 @@ INSTALLS_ICONS=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

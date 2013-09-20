@@ -15,6 +15,7 @@ MAKE_ARGS=	CC="${CC}"
 PLIST_FILES=	bin/edic bin/engdic
 PORTDATA=	[a-z].dic.gz
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/engdic.h
 

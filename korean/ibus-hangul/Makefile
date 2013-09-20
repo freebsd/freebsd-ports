@@ -23,6 +23,7 @@ USE_GNOME=	intltool pygobject3
 USE_PYTHON=	yes
 USES=		pathfix pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

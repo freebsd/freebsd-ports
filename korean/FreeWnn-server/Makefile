@@ -11,4 +11,5 @@ PKGDIR=		${.CURDIR}
 
 WNNTYPE=	KWNN
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
