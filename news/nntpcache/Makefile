@@ -27,6 +27,7 @@ USE_RC_SUBR=	nntpcached
 OPTIONS_DEFINE=	LDAP RADIUS SPAMPHOBIA
 SPAMPHOBIA_DESC=	Spamphobia NoCeM support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRADIUS}

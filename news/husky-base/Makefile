@@ -19,6 +19,7 @@ NO_BUILD=	yes
 USERS=		fido
 GROUPS=		fido
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/etc/fido ${PREFIX}/share/doc/husky
 	@${CHOWN} fido:fido ${PREFIX}/etc/fido

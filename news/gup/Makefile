@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gup
-# Date created:		22 November 1998
-# Whom:			Denis Shaposhnikov <dsh@vlink.ru>
-#
+# Created by: Denis Shaposhnikov <dsh@vlink.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	gup
 PORTVERSION=	0.4
@@ -18,6 +14,7 @@ WRKSRC=		${WRKDIR}/gup
 MAN1=		gup.1
 PLIST_FILES=	libexec/gup
 
+NO_STAGE=	yes
 do-configure:
 	@${CP} ${FILESDIR}/freebsd ${WRKSRC}/config
 

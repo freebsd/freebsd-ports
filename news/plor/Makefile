@@ -22,6 +22,7 @@ MAN1=		plor.1
 DOCFILES=	../AUTHORS ../NEWS TODO plor-1.html plor-2.html \
 		plor.html plor.txt
 
+NO_STAGE=	yes
 post-install:
 .if !defined{NOPORTDOCS}
 	@${MKDIR} ${PREFIX}/share/doc/plor

@@ -18,6 +18,7 @@ MAKE_ARGS=	MSGEDCFG="\\\"~/.msged\\\""
 
 INFO=		msged
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,html info,info,' \
 		-e 's,install-html install-info,install-info,' \

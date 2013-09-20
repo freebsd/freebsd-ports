@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	yencode
-# Date created:			Mar 24, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	yencode
 PORTVERSION=	0.46
@@ -24,4 +19,5 @@ MAN5=	ypostrc.5
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

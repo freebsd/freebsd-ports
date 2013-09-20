@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	multisuck
-# Date created:			Aug 11, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	multisuck
 PORTVERSION=	1.0.4
@@ -16,6 +11,7 @@ COMMENT=	Multi-server/conn news suck
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/msuck ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

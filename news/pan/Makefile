@@ -30,6 +30,7 @@ OPTIONS_DEFAULT=GTKSPELL
 GTKSPELL_DESC=	Spell checking support (gtk+2 only)
 GTK3_DESC=	Use gtk+3 based UI instead of gtk+2
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK3}

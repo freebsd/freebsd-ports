@@ -24,6 +24,7 @@ OPTIONS_DEFINE=	PGP_SIGN
 OPTIONS_DEFAULT=	PGP_SIGN
 PGP_SIGN_DESC=	PGP::Sign support for header signing
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPGP_SIGN}

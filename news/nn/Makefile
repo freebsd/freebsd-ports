@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nn
-# Date created:		24 September 1994
-# Whom:			adam
-#
+# Created by: adam
 # $FreeBSD$
-#
 
 PORTNAME=	nn
 PORTVERSION=	6.7.3
@@ -22,6 +18,7 @@ MAN1=		nn.1 nncheck.1 nngoback.1 nngrab.1  nngrep.1 nnpost.1 \
 		nntidy.1 nnview.1 nnacct.1m nnadmin.1m nnstats.1m nnusage.1m
 MAN8=		nnmaster.8 nnspew.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-patch:

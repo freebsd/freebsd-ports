@@ -1,9 +1,5 @@
-# New ports collection Makefile for:   newscache
-# Date created:                23 February 2002
-# Whom:                        Tilman Linneweh <arved@FreeBSD.org>
-#
+# Created by: Tilman Linneweh <arved@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	newscache
 PORTVERSION=	1.2.r.6
@@ -28,6 +24,7 @@ MAN5=	newscache.conf.5
 MAN8=	newscache.8 newscacheclean.8 updatenews.8
 INFO=	NewsCache
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,-pedantic,," ${WRKSRC}/configure.in
 

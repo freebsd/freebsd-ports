@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-NNML
-# Date created:		2006-07-14
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	NNML
 PORTVERSION=	1.14
@@ -28,4 +24,5 @@ CONFIGURE_ARGS+=	< /dev/null
 IS_INTERACTIVE=	yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

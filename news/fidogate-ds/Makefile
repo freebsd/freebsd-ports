@@ -85,6 +85,7 @@ DOCS=		doc/README.ru doc/README doc/FAQ.ru doc/FIDOGATE+tracker.ru \
 		doc/old/fidogate.txt doc/old/fidogate.texi doc/old/msgid.doc
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for a in ${DOCS}

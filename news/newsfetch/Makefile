@@ -1,9 +1,5 @@
-# New ports collection makefile for:	newsfetch
-# Date created:		12 September 1997
-# Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
-#
+# Created by: Jun-ichiro itojun Itoh <itojun@itojun.org>
 # $FreeBSD$
-#
 
 PORTNAME=	newsfetch
 PORTVERSION=	1.21
@@ -21,6 +17,7 @@ MAN1=		newsfetch.1
 MANCOMPRESSED=	maybe
 PLIST_FILES=	bin/newsfetch
 
+NO_STAGE=	yes
 do-configure:
 	cd ${WRKSRC} && ( \
 	${ECHO_CMD} "PROG= newsfetch"; \

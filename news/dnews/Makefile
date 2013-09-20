@@ -18,6 +18,7 @@ IS_INTERACTIVE=	yes
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -e "s|df -k|/bin/df -k|" ${WRKSRC}/dnews.conf
 	@${REINPLACE_CMD} -e "s|lib/sendmail|sbin/sendmail|" ${WRKSRC}/dnews.conf

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	papercut
-# Date created:				2003-07-01
-# Whom:					Clement Laforet <sheepkiller@cultdeadsheep.org>
-#
+# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
 # $FreeBSD$
-#
 
 PORTNAME=	papercut
 PORTVERSION=	0.9.13
@@ -18,6 +14,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQ
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-configure:
 	@${CP} ${FILESDIR}/papercut-wrapper ${WRKDIR}/papercut-wrapper
 	@${REINPLACE_CMD} -e "s,__DATADIR__,${DATADIR}," ${WRKDIR}/papercut-wrapper

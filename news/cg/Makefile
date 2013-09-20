@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cg
-# Date created:				17 August 2004
-# Whom:					bkhl@elektrubadur.se
-#
+# Created by: bkhl@elektrubadur.se
 # $FreeBSD$
-#
 
 PORTNAME=	cg
 PORTVERSION=	0.4
@@ -18,4 +14,5 @@ GNU_CONFIGURE=	yes
 MAN1=		cg.1
 PLIST_FILES=	bin/cg
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -16,5 +16,6 @@ CONFLICTS=	husky-smapi-devel-[0-9]*
 MAKE_ARGS=	ADDCDEFS=-fPIC
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../husky-base/Makefile.inc"
 .include <bsd.port.mk>

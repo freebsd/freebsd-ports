@@ -1,9 +1,5 @@
-# New ports collection makefile for:    golded+
-# Date created:                         20 October 2003
-# Whom:                                 Max Khon
-#
+# Created by: Max Khon
 # $FreeBSD$
-#
 
 PORTNAME=	golded+
 PORTVERSION=	1.1.5.a${SNAPDATE}
@@ -31,6 +27,7 @@ SUB_LIST=	NOTEWORK="Please read the ${DOCSDIR}/notework.txt before using ${PORTN
 SUB_LIST=	NOTEWORK=""
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${SED}\
 		-e 's,^\(#define __GVER_VENDOR_NAME__\).*,\1 "",'\

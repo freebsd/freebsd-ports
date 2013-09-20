@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cleanfeed
-# Date created:				09 October 2000
-# Whom:	      				Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
-#
+# Created by: Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	cleanfeed
 PORTVERSION=	20110224
@@ -25,6 +21,7 @@ INSTALL+=	-b
 PKGDEINSTALL=	${PKGINSTALL}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "/debug_batch_directory/s:'.*':'/var/log/cleanfeed':" ${WRKSRC}/etc/cleanfeed.local
 

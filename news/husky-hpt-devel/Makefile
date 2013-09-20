@@ -27,6 +27,7 @@ INFO=		hpt
 DOCSDIR=	${PREFIX}/share/doc/husky
 PORTDOCS=	hpt.html
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's^/path/to/config^${PREFIX}/etc/fido/config^' \
 		${WRKSRC}/man/hptlink.1

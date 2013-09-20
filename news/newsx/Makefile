@@ -1,9 +1,5 @@
-# New ports collection makefile for:	newsx
-# Date created: 10th February, 2001
-# Whom:		Thierry Thomas <tthomas@mail.dotcom.fr>
-#
+# Created by: Thierry Thomas <tthomas@mail.dotcom.fr>
 # $FreeBSD$
-#
 
 PORTNAME=	newsx
 PORTVERSION=	1.6
@@ -42,6 +38,7 @@ CONFIGURE_ARGS+=	--without-history
 
 DOCS=		AUTHORS COPYING ChangeLog FAQ INSTALL NEWS README TODO
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:g" ${WRKSRC}/configure
 

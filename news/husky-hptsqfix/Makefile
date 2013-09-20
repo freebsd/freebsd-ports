@@ -17,5 +17,6 @@ MAN1=		hptsqfix.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/hptsqfix
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../husky-base/Makefile.inc"
 .include <bsd.port.mk>

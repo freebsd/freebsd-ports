@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  aub
-# Date created:			  Sun Oct 12, 1997
-# Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
-#
+# Created by: David O'Brien (obrien@cs.ucdavis.edu)
 # $FreeBSD$
-#
 
 PORTNAME=	aub
 PORTVERSION=	2.2
@@ -22,6 +17,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 DOC_FILES=	COPYING README aubconf.example
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/aub ${PREFIX}/bin
 .for manpage in ${MAN1}

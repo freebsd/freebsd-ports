@@ -21,6 +21,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Change "cd foo; $(MAKE)" into "$(MAKE) -C foo" to unbreak parallel builds

@@ -15,6 +15,7 @@ CONFLICTS_INSTALL=trn-3.[0-9]* cnews-* s-news-[0-9]*
 NO_LATEST_LINK=	yes
 MAN1=		trn.1 Pnews.1 Rnmail.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

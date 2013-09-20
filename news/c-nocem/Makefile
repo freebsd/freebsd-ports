@@ -27,4 +27,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-cnews=${CNEWSWRK}
 PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=${PREFIX}/==}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

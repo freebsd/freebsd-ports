@@ -1,9 +1,5 @@
-# New ports collection makefile for:    nntpbtr
-# Date created:         1 July 1996
-# Whom:                 dk
-#
+# Created by: dk
 # $FreeBSD$
-#
 
 PORTNAME=	nntpbtr
 PORTVERSION=	1.7
@@ -18,6 +14,7 @@ MAN1=		nntpbtr.1
 PLIST_FILES=	sbin/nntpbtr
 
 # "patch" complains otherwise
+NO_STAGE=	yes
 post-extract:
 	@${RM} -rf ${WRKSRC}/RCS
 

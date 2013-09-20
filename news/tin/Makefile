@@ -37,6 +37,7 @@ OPTIONS_DEFAULT=GNUPG ISPELL METAMAIL
 CANLOCK_DESC=	Enable Cancel-Lock key support via libcanlock
 NNTP_ONLY=	Only read news via NNTP (no spool dir support)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # --with-mime-default-charset=US-ASCII needed to build tin in the non-ascii

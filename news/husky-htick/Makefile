@@ -18,6 +18,7 @@ CONFLICTS=	husky-htick-devel-[0-9]*
 MAN1=		htick.1
 INFO=		htick
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's^/fido/etc/config^${PREFIX}/etc/fido/config^' \
 		${WRKSRC}/man/htick.1

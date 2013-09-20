@@ -17,5 +17,6 @@ MAN1=		bsopack.1
 MANCOMPRESSED=	yes
 INFO=		bsopack
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../husky-base/Makefile.inc"
 .include <bsd.port.mk>

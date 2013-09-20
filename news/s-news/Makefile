@@ -31,6 +31,7 @@ PORTDOCS=	README README.conf README.suck TODO
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
