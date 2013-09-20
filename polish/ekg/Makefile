@@ -37,6 +37,7 @@ ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/polish/aspell
 
 OPENSSL_CONFIGURE_OFF=	--without-openssl
 
+NO_STAGE=	yes
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/ekg
 

@@ -9,6 +9,7 @@ MASTER_SITES=	http://korzen.org/soft/trf/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Billing software for traffic counting working with most Polish ISPs
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

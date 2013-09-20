@@ -24,6 +24,7 @@ WRKSRC=		${WRKDIR}/TleenX2-${PORTVERSION}
 MAN1=		tleenx2.1
 PORTDOCS=	README gg.txt sms.txt
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' ${WRKSRC}/src/Makefile.in
 

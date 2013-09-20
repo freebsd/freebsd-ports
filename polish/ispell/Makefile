@@ -13,6 +13,7 @@ USES=		perl5
 MASTERDIR=	${.CURDIR}/../../textproc/ispell
 
 .if exists(${.CURDIR}/Makefile.local)
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.local"
 .endif
 

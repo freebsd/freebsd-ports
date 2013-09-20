@@ -57,6 +57,7 @@ XOSD_DESC=	Enable On-Screen-Display messages
 
 #.if ${${HAVE_GNOME:Mesound}!="" && empty(PORT_OPTIONS:MESOUND)
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk> # can't change this untile HAVE_GNOME has been fixed
 
 .if ${PORT_OPTIONS:MAUTODETECT}
