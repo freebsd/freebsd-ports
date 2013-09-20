@@ -10,10 +10,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to manipulate geographical addresses
 
-RUN_DEPENDS=	p5-Lingua-EN-NameParse>=0:${PORTSDIR}/textproc/p5-Lingua-EN-NameParse \
-		p5-Locale-SubCountry>=0:${PORTSDIR}/misc/p5-Locale-SubCountry \
-		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Lingua-EN-NameParse>=1.24:${PORTSDIR}/textproc/p5-Lingua-EN-NameParse \
+		p5-Locale-SubCountry>=1.41:${PORTSDIR}/misc/p5-Locale-SubCountry \
+		p5-Parse-RecDescent>=1:${PORTSDIR}/devel/p5-Parse-RecDescent
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
