@@ -1,6 +1,5 @@
 # Created by: Yen-Ming Lee <leeym@leeym.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mussh
 PORTVERSION=	1.0
@@ -18,6 +17,7 @@ PORTDOCS=	BUGS CHANGES EXAMPLES README
 PLIST_FILES=	bin/mussh
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,^#!/bin/bash,#!/usr/bin/env bash,g" \
 			  -e "s,seq 1 ,jot 1 ,g" \

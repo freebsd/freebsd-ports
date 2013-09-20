@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-zope.app.principalannotation
-# Date created:				22 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	zope.app.principalannotation
 PORTVERSION=	3.7.0
@@ -25,4 +20,5 @@ DIST_SUBDIR=	zope
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

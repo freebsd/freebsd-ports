@@ -13,4 +13,5 @@ COMMENT=	Utility to remove entries from the pf(4) table based on their age
 USE_RC_SUBR=	expiretable
 MAN1=		expiretable.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -21,6 +21,7 @@ USE_GNOME=	libxml2
 USE_CSTD=	gnu89
 MAKE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

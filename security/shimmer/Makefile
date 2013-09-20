@@ -20,6 +20,7 @@ PLIST_FILES=	bin/shimmer \
 		bin/shimmerd \
 		etc/shimmer.conf
 
+NO_STAGE=	yes
 do-install:
 .if !defined(WITHOUT_CLIENT)
 	${INSTALL_SCRIPT} ${WRKSRC}/shimmer ${PREFIX}/bin/shimmer

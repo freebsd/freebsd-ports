@@ -21,6 +21,7 @@ USE_PERL5=	configure
 
 MAN3=		Filter::CBC.3
 
+NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"

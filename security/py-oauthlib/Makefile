@@ -22,6 +22,7 @@ USE_PYDISTUTILS=	easy_install
 GH_ACCOUNT=	idan
 GH_COMMIT=	1ea510c
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 300

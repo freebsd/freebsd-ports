@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hamachi
-# Date created:				2006-11-17
-# Whom:					Lapo Luchini <lapo@lapo.it>
-#
+# Created by: Lapo Luchini <lapo@lapo.it>
 # $FreeBSD$
-#
 
 PORTNAME=	hamachi
 DISTVERSION=	0.9.9.9-20
@@ -25,6 +21,7 @@ PLIST_FILES=	bin/hamachi bin/hamachi-init sbin/hamachi-tuncfg
 PORTDOCS=	README CHANGES
 MAKE_ENV=	HAMACHI_DST=${PREFIX}/bin TUNCFG_DST=${PREFIX}/sbin
 
+NO_STAGE=	yes
 post-patch:
 	${RM} -f ${WRKSRC}/tuncfg/tuncfg
 	${LOCALBASE}/bin/upx -d ${WRKSRC}/hamachi

@@ -19,6 +19,7 @@ MAN1=		pad.1
 PLIST=		${WRKDIR}/pkg-plist
 USE_OPENSSL=	yes
 
+NO_STAGE=	yes
 pre-install:
 	${ECHO_CMD} bin/pad > ${PLIST}
 .if !defined(NOPORTDOCS)

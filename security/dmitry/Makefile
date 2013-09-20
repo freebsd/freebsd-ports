@@ -19,6 +19,7 @@ MAN1=		dmitry.1
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

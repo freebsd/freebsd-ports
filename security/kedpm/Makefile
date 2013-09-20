@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kedpm
-# Date created:				25 April 2006
-# Whom:					Tim Welch <ports@thepentagon.org>
-#
+# Created by: Tim Welch <ports@thepentagon.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kedpm
 PORTVERSION=	0.4.0
@@ -27,4 +23,5 @@ DESKTOP_ENTRIES="Ked Password Manager" \
 		"" \
 		true
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

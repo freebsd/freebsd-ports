@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-htpasswd
-# Date created:				2011-08-26
-# Whom:					Aldis Berjoza <aldis@bsdroot.lv>
-#
+# Created by: Aldis Berjoza <aldis@bsdroot.lv>
 # $FreeBSD$
-#
 
 PORTNAME=	htpasswd
 PORTVERSION=	2008.03.05
@@ -23,6 +19,7 @@ PLIST_FILES=	bin/${PORTNAME}.py
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${SED} -I.orig -e 's|^#!/usr/bin/python|#!/usr/bin/env python|' ${WRKDIR}/${PORTNAME}.py
 

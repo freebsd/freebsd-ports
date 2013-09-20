@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=		spybye.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MCLAMAV}

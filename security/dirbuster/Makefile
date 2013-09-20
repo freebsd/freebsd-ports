@@ -17,6 +17,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

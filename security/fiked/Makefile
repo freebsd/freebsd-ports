@@ -1,6 +1,5 @@
 # Created by: Daniel Roethlisberger <daniel@roe.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	fiked
 PORTVERSION=	0.0.5
@@ -27,6 +26,7 @@ PORTDOCS=	README NEWS
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|=-g|=|' ${WRKSRC}/${MAKEFILE}
 

@@ -33,6 +33,7 @@ PLIST_FILES=	bin/authforce \
 
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCURL}

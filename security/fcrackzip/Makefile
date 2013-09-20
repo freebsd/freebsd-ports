@@ -20,6 +20,7 @@ PLIST_FILES=	bin/fcrackzip bin/fcrackzipinfo
 MAN1=		fcrackzip.1
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/zipinfo/fcrackzipinfo/g' ${WRKSRC}/zipinfo.c
 

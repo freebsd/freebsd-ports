@@ -1,6 +1,5 @@
 # Created by: Lee Hinman <lee@writequit.org>
 # $FreeBSD$
-#
 
 PORTNAME=	flowtag
 PORTVERSION=	2.0.5
@@ -19,6 +18,7 @@ USE_RUBY_SETUP=	yes
 MAN1=	flowtag.1 listflows.1 pcap2flowdb.1 printflow.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 RUN_DEPENDS+=	${RUBY_LIBDIR}/tk/canvas.rb:${PORTSDIR}/x11-toolkits/ruby-tk

@@ -25,6 +25,7 @@ EXTRACT_AFTER_ARGS=	${WRKDIR}
 SUB_FILES+=	pkg-message
 #SUB_FILES=	sshblock.sh
 
+NO_STAGE=	yes
 do-patch:
 	@${REINPLACE_CMD} -e "s@/usr/bin/perl@${PERL}@" \
 		${WRKSRC}/sshblock-${PORTVERSION}.pl

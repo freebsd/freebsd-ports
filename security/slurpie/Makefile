@@ -15,6 +15,7 @@ COMMENT=	A passwd file cracker (supports distributed nodes)
 PLIST_FILES=	sbin/slurp sbin/slurpie
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

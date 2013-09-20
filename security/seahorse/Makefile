@@ -41,6 +41,7 @@ OPTIONS_DEFINE=	LDAP NOTIFY MDNS
 OPTIONS_DEFAULT=LDAP NOTIFY MDNS
 MDNS_DESC=	mDNS key sharing
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAP}

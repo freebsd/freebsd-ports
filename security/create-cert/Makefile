@@ -22,4 +22,5 @@ GNU_CONFIGURE=	yes
 verify: checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

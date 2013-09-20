@@ -10,6 +10,7 @@ COMMENT=	SubWeb is a (reverse) proxy to inspect HTTP flows on the fly
 
 NO_BUILD=	YES
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/subweb ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

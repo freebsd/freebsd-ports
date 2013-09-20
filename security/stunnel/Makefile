@@ -44,6 +44,7 @@ FORK_DESC=	Use the fork(3) threading model
 PTHREAD_DESC=	Use the pthread(3) threading model
 UCONTEXT_DESC=	Use the ucontext(3) threading model
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 STUNNEL_USER?=	stunnel

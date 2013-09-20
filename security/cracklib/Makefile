@@ -57,6 +57,7 @@ PLIST_FILES=	include/crack.h \
 .endif
 
 .if defined(PYTHON_SLAVEPORT)
+NO_STAGE=	yes
 pre-build:
 	cd ${WRKSRC}/lib && ${MAKE} libcrack.la
 

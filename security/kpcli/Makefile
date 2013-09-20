@@ -28,6 +28,7 @@ MAN1=	${PORTNAME}.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/kpcli
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${PORTNAME}-${PORTVERSION}.pl ${WRKSRC}/${PORTNAME}

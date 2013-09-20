@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--with-libgcrypt-prefix=${LOCALBASE}
 
 DOCS=		AUTHORS NEWS README THANKS doc/opencdk-api.html
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,(libdir)/pkgconfig,(prefix)/libdata/pkgconfig,' \
 		${WRKSRC}/src/Makefile.in

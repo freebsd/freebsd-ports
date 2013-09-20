@@ -23,6 +23,7 @@ SUB_FILES=	pkg-message
 
 MAN1=		unicornscan.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lnet|`${LIBNET_CONFIG} --libs`|' \
 		${WRKSRC}/src/scan_progs/Makefile ${WRKSRC}/src/tools/Makefile

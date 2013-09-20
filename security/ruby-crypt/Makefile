@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-crypt
-# Date created:		2006-08-10
-# Whom:			Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	crypt
 PORTVERSION=	1.1.4
@@ -20,6 +16,7 @@ USE_RUBY=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 
+NO_STAGE=	yes
 do-install:
 	@cd ${WRKSRC}; ${RUBY} install.rb
 

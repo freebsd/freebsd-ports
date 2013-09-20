@@ -1,7 +1,4 @@
-# New ports collection makefile for:	truecrack
-# Date created:			 	23 May 2012
-# Whom:					Ryan Steinmetz <zi@FreeBSD.org>
-#
+# Created by: Ryan Steinmetz <zi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	truecrack
@@ -26,6 +23,7 @@ DICTIONARIES=	dictionary_100k.txt dictionary_10k.txt dictionary.txt
 PORTDATA=	${DICTIONARIES}
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/CFLAGS =/CFLAGS +=/g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's/return ;/return 0;/g' ${WRKSRC}/Main/Utils.c

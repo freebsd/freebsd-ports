@@ -26,6 +26,7 @@ LBL_CF_DESC=	Unix time to formated time/date filter support
 BROCCOLI_DESC=	Build support for libbroccoli communications
 OPTIONS_EXCLUDE=NLS DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBROCCOLI}

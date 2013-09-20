@@ -24,6 +24,7 @@ GMP_DESC=	Use GMP for faster DSA/RSA operations
 
 OPTIONSFILE?=		${PORT_DBDIR}/py-${PORTNAME}/options
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGMP}

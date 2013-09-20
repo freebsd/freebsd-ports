@@ -1,4 +1,4 @@
-# Created by: Michael Nottebrock <lofi@freebsd.org>
+# Created by: Michael Nottebrock <lofi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pinentry
@@ -14,4 +14,5 @@ PORT_OPTIONS+=	NCURSES
 
 MASTERDIR=	${.CURDIR}/../pinentry
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

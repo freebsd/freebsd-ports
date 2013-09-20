@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pam_per_user
-# Date created:				11 May 2006
-# Whom:					Jim Pirzyk <pirzyk@freebsd.org>
-#
+# Created by: Jim Pirzyk <pirzyk@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pam_per_user
 PORTVERSION=	0.4
@@ -18,4 +14,5 @@ USE_AUTOTOOLS=	libtool
 
 MAN5=		pam_per_user.5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

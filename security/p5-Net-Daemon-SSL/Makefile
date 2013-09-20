@@ -20,4 +20,5 @@ RUN_DEPENDS+=	p5-Net-Daemon>=0:${PORTSDIR}/net/p5-Net-Daemon \
 
 MAN3=		Net::Daemon::SSL.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

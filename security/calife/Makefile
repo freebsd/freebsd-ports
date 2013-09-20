@@ -1,6 +1,5 @@
 # Created by: Thomas Quinot <thomas@cuivre.fr.eu.org>
 # $FreeBSD$
-#
 
 PORTNAME=	calife
 PORTVERSION=	2.8.6.5
@@ -21,4 +20,5 @@ CONFLICTS?=	calife-3.*
 MAN1=		calife.1
 MAN5=		calife.auth.5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

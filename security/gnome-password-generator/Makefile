@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnome-password-generator
-# Date created:				2004-07-13
-# Whom:					Sergey Akifyev <asa@gascom.ru>
-#
+# Created by: Sergey Akifyev <asa@gascom.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	gnome-password-generator
 PORTVERSION=	1.6
@@ -17,6 +13,7 @@ COMMENT=	GNOME 2 password generator
 USE_GNOME=	pygnome2
 USE_PYTHON=	yes
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && ${SED} -e 's|/usr/bin/python|${PYTHON_CMD}|g ; \
 		 s|/usr/share|${PREFIX}/share|g' ${PORTNAME}.py > ${PORTNAME}

@@ -23,6 +23,7 @@ RESTRICTED=	License prohibits redistribution
 
 BDREL=		5
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

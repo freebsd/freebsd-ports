@@ -1,8 +1,5 @@
-# New ports collection makefile for:	security/linux-f10-libgpg-error
-# Date created:				10 Nov 2010
-# Whom:					Stas Timoklhin <devel@stasyan.com>
+# Created by: Stas Timoklhin <devel@stasyan.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libgpg-error
 PORTVERSION=	1.6
@@ -22,4 +19,5 @@ BRANDELF_FILES=	usr/bin/gpg-error
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 DESCR=		${.CURDIR}/../libgpg-error/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

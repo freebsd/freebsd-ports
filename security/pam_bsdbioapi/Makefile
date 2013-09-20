@@ -22,6 +22,7 @@ OPTIONS_DEFAULT=	FILEDB PLAIN
 FILEDB_DESC=	Filebacked database backend
 PLAIN_DESC=	Plain ASCII backend
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PLIST_FILES=	etc/birdb.conf.sample

@@ -22,4 +22,5 @@ PLIST_DIRS=	%%SITE_PERL%%/mach/auto/Snort/Rule \
 
 MAN3=		Snort::Rule.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

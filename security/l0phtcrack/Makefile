@@ -21,6 +21,7 @@ USE_PERL5=	build
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 
+NO_STAGE=	yes
 post-extract:
 	${RM} ${WRKDIR}/*exe
 	${REINPLACE_CMD} -i '' -e 's|ommited|omitted|' ${WRKDIR}/util.c

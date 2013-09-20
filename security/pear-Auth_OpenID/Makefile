@@ -31,6 +31,7 @@ USE_PHP=	curl dom
 USE_PYTHON_BUILD=	yes
 PEAR_AUTOINSTALL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 EXTRACT_SUFX=	.tar.bz2

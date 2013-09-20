@@ -1,9 +1,5 @@
-# New ports collection makefile for:	f-prot
-# Date created:			4 June 2003
-# Whom:				Tim Bishop <tim@bishnet.net>
-#
+# Created by: Tim Bishop <tim@bishnet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	f-prot
 PORTVERSION=	6.5.1.5927
@@ -27,6 +23,7 @@ MAN8=		fpupdate.8
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/fpscan ${PREFIX}/libexec/${PORTNAME}

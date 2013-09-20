@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ccsrch
-# Date created:		2010-07-21
-# Whom:			Pavel I Volkov <pavelivolkov@googlemail.com>
-#
+# Created by: Pavel I Volkov <pavelivolkov@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ccsrch
 PORTVERSION=	1.0.3
@@ -23,6 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 PORTDOCS=	README readme.html
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

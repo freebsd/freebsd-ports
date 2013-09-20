@@ -29,6 +29,7 @@ USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	${RB_LIBDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

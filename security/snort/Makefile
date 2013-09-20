@@ -43,6 +43,7 @@ DBGSNORT_DESC=		Enable debugging symbols+core dumps
 BARNYARD_DESC=		Depend on Barnyard2
 PULLEDPORK_DESC=	Depend on pulledpork
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_RC_SUBR=	snort

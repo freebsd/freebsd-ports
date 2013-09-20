@@ -1,9 +1,5 @@
-# New ports collection makefile for:	massh
-# Date created:        			2011-08-09
-# Whom:					Sascha Klauder <sklauder@trimind.de>
-#
+# Created by: Sascha Klauder <sklauder@trimind.de>
 # $FreeBSD$
-#
 
 PORTNAME=	massh
 PORTVERSION=	2.0.57
@@ -29,6 +25,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_SUB=	MASSHDIR=${MASSHDIR}
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e "s!/bin/bash!${LOCALBASE}/bin/bash!" \
 		${WRKSRC}/usr/bin/massh

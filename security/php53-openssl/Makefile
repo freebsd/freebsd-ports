@@ -1,9 +1,4 @@
-# New ports collection makefile for:	php53-openssl
-# Date created:			12 Apr 2012
-# Whom:				Florian Smeets <flo@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTREVISION=	1
 
@@ -13,4 +8,5 @@ MASTERDIR=	${.CURDIR}/../../lang/php53
 
 PKGNAMESUFFIX=	-openssl
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

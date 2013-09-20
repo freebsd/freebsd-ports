@@ -16,6 +16,7 @@ MAN8=		cmd5checkpw.8
 PORTDOCS=	CHANGES CREDITS INSTALL README rfc1321.txt rfc2104.txt
 PLIST_FILES=	bin/cmd5checkpw etc/poppasswd.dist
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

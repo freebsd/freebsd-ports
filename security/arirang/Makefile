@@ -1,9 +1,5 @@
-# Ports collection makefile for:  arirang
-# Date created:			  Jun 4 2001
-# Whom:				  Roman Shterenzon <roman@xpert.com>
-#
+# Created by: Roman Shterenzon <roman@xpert.com>
 # $FreeBSD$
-#
 
 PORTNAME=	arirang
 PORTVERSION=	2.03
@@ -25,6 +21,7 @@ USE_OPENSSL=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include/ruby-${RUBY_VER} -I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arirang ${PREFIX}/sbin
 	${MKDIR} ${PREFIX}/share/arirang

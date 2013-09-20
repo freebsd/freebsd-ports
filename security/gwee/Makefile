@@ -20,6 +20,7 @@ CFLAGS+=	-DWITH_SSL
 MAN1=		gwee.1
 PLIST_FILES=	bin/gwee
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/${PORTNAME}.c \
 		-o ${WRKSRC}/${PORTNAME}

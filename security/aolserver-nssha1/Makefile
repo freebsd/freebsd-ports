@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aolserver-nssha1
-# Date created:		12 Oct 2006
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	aolserver-nssha1
 PORTVERSION=	0.1
@@ -34,6 +30,7 @@ MAKE_ARGS=	AOLSERVER=${LOCALBASE}/${AOLSERVERBASE} OPENSSL=${OPENSSLBASE}
 PORTDOCS=	ChangeLog
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@ ${REINPLACE_CMD} -e 's|OBJS|MODOBJS|' ${WRKSRC}/Makefile
 

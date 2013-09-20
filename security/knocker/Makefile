@@ -1,6 +1,5 @@
 # Created by: Patrick Li <pat@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	knocker
 PORTVERSION=	0.7.1
@@ -15,4 +14,5 @@ GNU_CONFIGURE=	yes
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/knocker
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

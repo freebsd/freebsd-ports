@@ -17,6 +17,7 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README THANKS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

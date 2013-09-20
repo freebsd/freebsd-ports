@@ -1,7 +1,4 @@
-# New ports collection makefile for:    skipfish
-# Date created:         2010-03-25
-# Whom:                 rpsfa@rit.edu
-#
+# Created by: rpsfa@rit.edu
 # $FreeBSD$
 
 PORTNAME=	skipfish
@@ -28,6 +25,7 @@ MAN1=		skipfish.1
 PORTDOCS=	README COPYING ChangeLog
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

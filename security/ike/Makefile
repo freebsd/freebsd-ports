@@ -31,6 +31,7 @@ QTGUI_DESC=	Enable QT client front end applications
 NATT_DESC=	Enable NAT-Traversal
 LDAP_DESC=	Enable LDAP XAuth daemon support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 MAN1=		ikec.1

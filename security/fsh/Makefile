@@ -1,7 +1,4 @@
-# New ports collection makefile for:	fsh
-# Date created:				Thu Jan 24 03:37:54 JST 2002
-# Whom:					sumikawa
-#
+# Created by: sumikawa
 # $FreeBSD$
 
 PORTNAME=	fsh
@@ -20,6 +17,7 @@ GNU_CONFIGURE=	yes
 
 INFO=	fsh
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/^[^#]/s/FCNTL/fcntl/g' ${WRKSRC}/fshcompat.py
 

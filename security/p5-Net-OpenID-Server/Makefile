@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-OpenID-Server
-# Date created:				July 25th 2005
-# Whom:					Alex Kapranoff <kappa@rambler-co.ru>
-#
+# Created by: Alex Kapranoff <kappa@rambler-co.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-OpenID-Server
 PORTVERSION=	1.09
@@ -25,4 +21,5 @@ INSTALL_TARGET=	pure_install
 
 MAN3=		Net::OpenID::Server.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

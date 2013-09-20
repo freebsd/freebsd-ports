@@ -14,6 +14,7 @@ COMMENT=	PAM module based on whether a user is already logged in
 
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900007

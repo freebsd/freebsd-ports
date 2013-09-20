@@ -18,6 +18,7 @@ USES=		perl5
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
+NO_STAGE=	yes
 do-extract:
 	[ -d ${WRKDIR} ] || ${MKDIR} ${WRKDIR}
 	${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}/${DISTNAME}

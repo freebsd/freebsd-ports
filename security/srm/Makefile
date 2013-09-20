@@ -1,9 +1,5 @@
-# New ports collection makefile for:	srm
-# Date created:				25 Oct 2000
-# Whom:					Keith J. Jones <kjones@antihackertoolkit.com>
-#
+# Created by: Keith J. Jones <kjones@antihackertoolkit.com>
 # $FreeBSD$
-#
 
 PORTNAME=	srm
 PORTVERSION=	1.2.11
@@ -22,4 +18,5 @@ GNU_CONFIGURE=		yes
 MAN1=		srm.1
 PLIST_FILES=	bin/srm
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

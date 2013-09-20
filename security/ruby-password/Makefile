@@ -29,6 +29,7 @@ MANCOMPRESSED=	no
 
 DOCS_EN=	CHANGES README
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E -e 's,([^[:alpha:]]+)crack.h,\1packer.h,g' \
 		${WRKSRC}/rbcrack.c ${WRKSRC}/extconf.rb

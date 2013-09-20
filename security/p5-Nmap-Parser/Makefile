@@ -20,6 +20,7 @@ USE_PERL5=	configure
 
 MAN3=		Nmap::Parser.3
 
+NO_STAGE=	yes
 post-configure:
 	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
 

@@ -41,6 +41,7 @@ MAKE_JOBS_UNSAFE=yes
 
 LDFLAGS+=	-L/usr/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^pkgconfigdir = .*|pkgconfigdir = /usr/local/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in

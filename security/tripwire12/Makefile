@@ -20,6 +20,7 @@ USE_PERL5=	build
 
 TWCONFIG?=	${FILESDIR}/tw.conf.freebsd8
 
+NO_STAGE=	yes
 post-extract:
 	@ (cd ${WRKDIR}; tar xpf T1.2.tar)
 

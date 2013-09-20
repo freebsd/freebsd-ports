@@ -1,9 +1,5 @@
-# Ports collection makefile for:  ike-scan
-# Date created:			  04 May 2003
-# Whom:				  Yonatan <onatan@gmail.com>
-#
+# Created by: Yonatan <onatan@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ike-scan
 PORTVERSION=	1.9
@@ -17,6 +13,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share --with-openssl=${LOCALBASE}
 MAN1=		ike-scan.1 psk-crack.1
 
+NO_STAGE=	yes
 post-install:
 .	if !defined(NOPORTDOCS)
 		${MKDIR} ${DOCSDIR}

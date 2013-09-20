@@ -31,6 +31,7 @@ PLIST_FILES=	bin/botan-config lib/libbotan.a lib/libbotan.so lib/libbotan.so.0 l
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}

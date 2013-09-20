@@ -1,9 +1,5 @@
-# New ports collection makefile for:	security/linux-f10-libssh2
-# Date created:				2009-05-04
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	libssh2
 PORTVERSION=	0.18
@@ -28,4 +24,5 @@ DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

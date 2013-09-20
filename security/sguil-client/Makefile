@@ -42,6 +42,7 @@ PORTDOCS2=	CHANGES FAQ INSTALL INSTALL.openbsd OPENSSL.README TODO UPGRADE USAGE
 LIBFILES=	SguilUtil.tcl dkffont.tcl email17.tcl extdata.tcl sellib.tcl sancp.tcl \
 		 sound.tcl guilib.tcl qrybuild.tcl qrylib.tcl report.tcl stdquery.tcl whois.tcl
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if $(PORT_OPTIONS:MAUDIO)

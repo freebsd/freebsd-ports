@@ -26,6 +26,7 @@ DOCS=		docs/CHANGELOG docs/CREDITS docs/README docs/README.mssql \
 
 OPTIONS_DEFINE=	MYSQL PGSQL PDF DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

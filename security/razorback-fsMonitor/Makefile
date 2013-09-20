@@ -21,6 +21,7 @@ USES=		pkgconfig
 
 OPTIONS_DEFINE=	DEBUG ASSERT
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 GNU_CONFIGURE=	yes

@@ -42,4 +42,5 @@ MAN3=	Crypt::RSA.3 \
 	Crypt::RSA::SS::PKCS1v15.3 \
 	Crypt::RSA::SS::PSS.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

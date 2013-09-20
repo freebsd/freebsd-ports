@@ -31,4 +31,5 @@ MAN3=		Crypt::OpenSSL::CA.3 \
 		Crypt::OpenSSL::CA::Inline::C.3 \
 		Crypt::OpenSSL::CA::Resources.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

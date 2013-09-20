@@ -26,6 +26,7 @@ MAN8=		courierpassd.8
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-everything::

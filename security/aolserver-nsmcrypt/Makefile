@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aolserver-nsmcrypt
-# Date created:		12 Oct 2006
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nsmcrypt
 PORTVERSION=	1.1
@@ -38,6 +34,7 @@ PLIST_FILES=	${AOLSERVERBASE}/bin/nsmcrypt.so \
 		${AOLSERVERBASE}/lib/libnsmcrypt.a \
 		${AOLSERVERBASE}/lib/libnsmcrypt.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CFLAGS+=	"-I${LOCALBASE}/include"

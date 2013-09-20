@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pks
-# Date created:		15 Jan 2001
-# Whom:			kris@FreeBSD.org
-#
+# Created by: kris@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=		pks
 PORTVERSION=		0.9.6.20040312
@@ -18,6 +14,7 @@ COMMENT=	PGP Public Key Server
 USE_BDB=		41 # 42 would be ok
 WRKSRC=			${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 GNU_CONFIGURE=	yes

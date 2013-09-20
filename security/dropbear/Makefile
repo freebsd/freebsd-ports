@@ -27,6 +27,7 @@ MAN8=	dropbear.8 dropbearkey.8
 
 OPTIONS_DEFINE=	STATIC
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSTATIC}

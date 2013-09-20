@@ -29,4 +29,5 @@ USE_LDCONFIG=	YES
 
 MAN1=		nasl.1 nasl-config.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

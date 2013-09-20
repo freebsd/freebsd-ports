@@ -35,6 +35,7 @@ LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 MAN8=		yersinia.8
 PLIST_FILES=	sbin/yersinia
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lnet|`${LIBNET_CONFIG} --libs`|' \
 		${WRKSRC}/src/Makefile.in

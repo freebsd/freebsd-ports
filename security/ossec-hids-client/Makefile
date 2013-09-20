@@ -9,4 +9,5 @@ MASTERDIR=	${.CURDIR}/../ossec-hids-server
 
 PLIST=	pkg-plist.client
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

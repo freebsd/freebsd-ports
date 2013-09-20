@@ -17,4 +17,5 @@ USE_PERL5=	configure
 MAN1=		mkpasswd.pl.1
 MAN3=		String::MkPasswd.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

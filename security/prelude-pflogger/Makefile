@@ -16,4 +16,5 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	prelude-pflogger
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

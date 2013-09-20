@@ -35,6 +35,7 @@ MLINKS=		otr_toolkit.1 otr_parse.1 \
 verify: checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's#^pkgconfigdir .*#pkgconfigdir = ${PREFIX}/libdata/pkgconfig#' \
 	    ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.am

@@ -26,6 +26,7 @@ PORTEXAMPLES=	openssl.cnf.sample
 OPTIONS_DEFINE=	EXAMPLES
 OPTIONS_DEFAULT=EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

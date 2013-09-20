@@ -19,6 +19,7 @@ CONFIGURE_ARGS=	--without-idea --with-cunit=${LOCALBASE}
 
 PLIST_FILES=	bin/openpgp lib/libops.a
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/openpgp ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/lib/libops.a ${PREFIX}/lib/

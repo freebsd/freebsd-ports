@@ -1,9 +1,4 @@
-# New ports collection makefile for:	samba-virusfilter
-# Date created:		06 Dec 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	samba-virusfilter
 PORTVERSION=	0.1.3
@@ -26,4 +21,5 @@ SAMBA_PORT?=	samba36
 USE_AUTOTOOLS=	autoconf autoheader # for net/${SAMBA_PORT} configure
 MAKE_ARGS=	SAMBA_DATADIR=${PREFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

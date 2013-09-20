@@ -20,6 +20,7 @@ NO_BUILD=	yes
 
 RUBY_RD_FILES=	doc/acl.rd doc/ja/acl.rd.ja
 
+NO_STAGE=	yes
 post-extract:
 	${MKDIR} ${WRKSRC}/doc/ja
 	${MV} ${WRKSRC}/README ${WRKSRC}/doc/

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Filter-SSL
-# Date created:	   December 22, 2010
-# Whom:		   mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Filter-SSL
 PORTVERSION=	0.24
@@ -33,4 +29,5 @@ USE_PERL5=	configure
 
 MAN3=		POE::Filter::SSL.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -14,6 +14,7 @@ USE_GMAKE=	yes
 
 PORTDOCS=	ChangeLog TODO vm-implementation.tex vm-implementation.pdf
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" && ${OSVERSION} >= 700000

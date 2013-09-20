@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pkcs11-gateway
-# Date created:			1 Apr 2011
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pkcs11-gateway
 PORTVERSION=	1.2
@@ -25,6 +21,7 @@ PLIST_FILES=	bin/pkcs11-gateway lib/libpkcs11-gateway.so \
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pkcs11-gateway ${PREFIX}/bin/
 	${INSTALL_LIB} ${WRKSRC}/libpkcs11-gateway.so.1 ${PREFIX}/lib/

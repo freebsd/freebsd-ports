@@ -1,9 +1,5 @@
-# Ports collection makefile for:  ADMsnmp
-# Date created:                   16 Apr 2003
-# Whom:                           onatan@gmail.com
-#
+# Created by: onatan@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	ADMsnmp
 PORTVERSION=	0.1
@@ -19,6 +15,7 @@ COMMENT=	SNMP audit scanner
 
 WRKSRC=		${WRKDIR}/ADMsnmp
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} -DPORTSHAREDIR="${PREFIX}/share/ADMsnmp" \
 		-o ${WRKSRC}/ADMsnmp ${WRKSRC}/snmp.c

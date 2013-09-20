@@ -25,4 +25,5 @@ MAN3=	Crypt::Eksblowfish.3 \
 	Crypt::Eksblowfish::Subkeyed.3 \
 	Crypt::Eksblowfish::Uklblowfish.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

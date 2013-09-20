@@ -29,6 +29,7 @@ USE_RC_SUBR=	openxpki
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|>/dev/null 2>&1 | |' ${WRKSRC}/configure
 

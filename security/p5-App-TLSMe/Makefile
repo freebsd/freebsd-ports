@@ -24,4 +24,5 @@ MAN3=	App::TLSMe.3 \
 	App::TLSMe::Connection.3 \
 	App::TLSMe::Pool.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 # Created by: oly
 # $FreeBSD$
-#
 
 PORTNAME=	cops
 PORTVERSION=	1.04
@@ -25,6 +24,7 @@ C_SRC=		home.chk.c user.chk.c is_able.c is_something.c \
 		addto.c clearfiles.c filewriters.c members.c tilde.c \
 		crc.c crc_check.c
 
+NO_STAGE=	yes
 pre-build:
 	${SED} \
 	    -e 's,^SECURE=/usr/foo/bar,SECURE=${PREFIX}/cops,g' \

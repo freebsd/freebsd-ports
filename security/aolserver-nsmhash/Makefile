@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aolserver-nsmhash
-# Date created:		12 Oct 2006
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nsmhash
 PORTVERSION=	1.1
@@ -38,6 +34,7 @@ PLIST_FILES=	${AOLSERVERBASE}/bin/nsmhash.so \
 		${AOLSERVERBASE}/lib/libnsmhash.a \
 		${AOLSERVERBASE}/lib/libnsmhash.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CFLAGS+=	"-I${LOCALBASE}/include"

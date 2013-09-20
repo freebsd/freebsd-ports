@@ -27,4 +27,5 @@ MAN5=	tinc.conf.5
 MAN8=	tincd.8
 INFO=	tinc
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

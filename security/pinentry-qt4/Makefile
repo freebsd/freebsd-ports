@@ -13,4 +13,5 @@ PORT_OPTIONS+=	QT4
 
 MASTERDIR=	${.CURDIR}/../pinentry
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

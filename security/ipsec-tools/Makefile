@@ -56,6 +56,7 @@ MAN8=		racoon.8 racoonctl.8 setkey.8 plainrsa-gen.8
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900007

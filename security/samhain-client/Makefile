@@ -1,12 +1,5 @@
 # Created by: David Thiel
 # $FreeBSD$
-#
-# This port recognizes the following non-boolean tunables:
-#
-# WITH_LOG_SERVER, WITH_ALT_LOG_SERVER. When "WITH_CLIENT" is defined,
-#       these specify what server the client will fetch configuration
-#       and database files from. This can also be defined at runtime.
-#
 
 PKGNAMESUFFIX=	-client
 
@@ -19,4 +12,5 @@ MASTERDIR=	${.CURDIR}/../../security/samhain
 
 CONFLICTS=	samhain-2*
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

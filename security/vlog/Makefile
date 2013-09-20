@@ -22,6 +22,7 @@ MAN1=		vlog.1
 MANCOMPRESSED=	no
 PLIST_FILES=	bin/vlog
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s@/usr/local@${PREFIX}@g" ${WRKSRC}/Makefile
 

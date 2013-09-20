@@ -20,4 +20,5 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/libdata/servers
 
 USE_GNOME=	gnomehier intlhack gnomeprefix gnomepanel glib20 libgnomeui
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

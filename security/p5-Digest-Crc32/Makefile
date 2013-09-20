@@ -17,4 +17,5 @@ MAN3=	Digest::Crc32.3
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.//}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

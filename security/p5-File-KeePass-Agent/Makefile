@@ -26,4 +26,5 @@ MAN3=		File::KeePass::Agent.3 \
 		File::KeePass::Agent::linux.3 \
 		File::KeePass::Agent::unix.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

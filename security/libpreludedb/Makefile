@@ -36,6 +36,7 @@ MYSQL_DESC=	MySQL plugin
 PQSQL_DESC=	PostgreSQL plugin
 SQLITE_DESC=	SQLite3 plugin
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPERL}

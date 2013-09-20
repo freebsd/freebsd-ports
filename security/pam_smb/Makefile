@@ -20,6 +20,7 @@ STARTUP_SCRIPT=	pam_smbd.sh.sample
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e s,%%PREFIX%%,${PREFIX}, ${WRKSRC}/pamsmbd/pam_read_conf.c
 	@${REINPLACE_CMD} -e "s,-fPIC,-fPIC -DPIC," \

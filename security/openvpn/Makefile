@@ -16,6 +16,7 @@ CONFLICTS_INSTALL=	openvpn-2.[!3].* openvpn-[!2].* openvpn-beta-[0-9]* openvpn-d
 
 GNU_CONFIGURE=	yes
 USE_XZ=		yes
+NO_STAGE=	yes
 # let OpenVPN's configure script pick up the requisite libraries:
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

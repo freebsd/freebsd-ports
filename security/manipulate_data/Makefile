@@ -17,6 +17,7 @@ PLIST_FILES=	${SBIN_PROGRAMS:S,^,sbin/,}
 
 SBIN_PROGRAMS=	read_data replace_data search_data write_data
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

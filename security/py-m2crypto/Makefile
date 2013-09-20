@@ -21,6 +21,7 @@ USE_PYDISTUTILS=yes
 PYDISTUTILS_BUILDARGS=	build_ext --openssl="${OPENSSLBASE}"
 PYDISTUTILS_PKGNAME=	M2Crypto
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|setuptools|do_not_use_&|; /test_suite/d' ${WRKSRC}/${PYSETUP}
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|; s|$$(PYVER)|${PYTHON_VER}|' ${WRKSRC}/SWIG/Makefile

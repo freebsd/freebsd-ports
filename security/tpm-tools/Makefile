@@ -38,4 +38,5 @@ MAN8=		tpm_changeownerauth.8 tpm_clear.8 tpm_createek.8	\
 		tpm_setclearable.8 tpm_setenable.8 tpm_setoperatorauth.8 \
 		tpm_setownable.8 tpm_setpresence.8 tpm_takeownership.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

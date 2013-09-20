@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fwbuilder
-# Date Created:				3 Feb 2001
-# Whom:					Roman Shterenzon <roman@xpert.com>
-#
+# Created by: Roman Shterenzon <roman@xpert.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fwbuilder
 DISTVERSION=	5.1.0
@@ -76,6 +72,7 @@ MAN1=		fwbuilder.1 \
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800107

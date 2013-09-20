@@ -35,6 +35,7 @@ PLIST_DIRS=	%%EXAMPLESDIR%%
 
 PLIST=		${WRKDIR}/pkg-plist
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/malloc\.h/d' ${WRKSRC}/src/rfc2440.c
 

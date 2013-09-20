@@ -24,6 +24,7 @@ GNU_CONFIGURE=	yes
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 CPPFLAGS+=	"`${LIBNET_CONFIG} --cflags`"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../openvas-libraries/Makefile.common"
 

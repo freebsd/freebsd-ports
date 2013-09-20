@@ -30,6 +30,7 @@ USE_BZIP2=	yes
 B64DECODE?=	/usr/bin/b64decode
 BSPATCH?=	/usr/bin/bspatch
 
+NO_STAGE=	yes
 post-extract:
 	${GREP} -Rl '^#!/usr/bin/python$$' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} -e 's|^#!/usr/bin/python$$|#!/usr/bin/env python|g'
 	${MV} ${WRKSRC}/waf ${WRKSRC}/waf.beforepatch

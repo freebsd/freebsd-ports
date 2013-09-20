@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vnccrack
-# Date created:		2006-08-19
-# Whom:			Pankov Pavel <pankov_p@mail.ru>
-#
+# Created by: Pankov Pavel <pankov_p@mail.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	vnccrack
 PORTVERSION=	1.0.0
@@ -20,6 +16,7 @@ USE_OPENSSL=	yes
 
 SUB_FILES+=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/vnccrack ${PREFIX}/bin/vnccrack
 

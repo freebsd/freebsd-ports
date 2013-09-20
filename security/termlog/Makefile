@@ -1,9 +1,5 @@
-# New ports collection makefile for:    termlog
-# Date created:         20 August 2002
-# Whom:                 C.S. Peron <bugs@sqrt.ca>
-#
+# Created by: C.S. Peron <bugs@sqrt.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	termlog
 PORTVERSION=	2.5
@@ -21,6 +17,7 @@ USE_RC_SUBR=	${PORTNAME}
 MAN1=		termlog.1
 PLIST_FILES=	bin/termlog
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900007

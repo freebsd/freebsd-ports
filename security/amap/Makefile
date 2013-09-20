@@ -1,9 +1,5 @@
-# Ports collection makefile for:  amap
-# Date created:			  23 Mar  2003
-# Whom:				  Yonatan <onatan@gmail.com>
-#
+# Created by: Yonatan <onatan@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	amap
 PORTVERSION=	5.2
@@ -31,6 +27,7 @@ LOCAL_CONF_FILES=	appdefs.resp appdefs.rpc appdefs.trig
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	LOCAL_CONF_FILES="${LOCAL_CONF_FILES}" CONF_DIR="${CONF_DIR}"
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local|${LOCALBASE}|g; \

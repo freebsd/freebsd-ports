@@ -41,6 +41,7 @@ PORTDOCS2=	README.daemonlogger
 PORTDOCS3=	CHANGES FAQ INSTALL INSTALL.openbsd OPENSSL.README \
 		TODO UPGRADE USAGE sguildb.dia
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSANCP}

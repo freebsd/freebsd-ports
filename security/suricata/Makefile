@@ -35,6 +35,7 @@ PRELUDE_DESC=	Enable Prelude NIDS integration
 PORTS_PCAP_DESC=Use libpcap from ports
 DAG_DESC=	Enable Endace DAG Support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 SUB_FILES=	pkg-message

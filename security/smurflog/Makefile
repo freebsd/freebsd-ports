@@ -16,6 +16,7 @@ GNU_CONFIGURE=	yes
 PORTDOCS=	README
 PLIST_FILES=	sbin/smurflog
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CFLAGS=|#CFLAGS=|' ${WRKSRC}/configure

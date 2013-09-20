@@ -30,6 +30,7 @@ OPTIONS_DEFAULT=	LOCAL_CLAMAV
 LOCAL_CLAMAV_DESC=		RUN_DEPEND on security/clamav
 LOCAL_CLAMAV_DEVEL_DESC=	RUN_DEPEND on security/clamav-devel
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLOCAL_CLAMAV}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	razorback-officeCat
-# Date created:				2011/06/8
-# Whom:					Tom Judge <tom@tomjudge.com>
-#
+# Created by: Tom Judge <tom@tomjudge.com>
 # $FreeBSD$
-#
 
 PORTNAME=	officeCat
 PORTVERSION=	0.5.0
@@ -30,6 +26,7 @@ ONLY_FOR_ARCHS_REASON=	only supported under i386 due to wine requirements
 OPTIONS_DEFINE=	DEBUG ASSERT
 ASSERT_DESC=	Enable Asserts
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 RB_LIBDIR?=	${PREFIX}/lib/razorback

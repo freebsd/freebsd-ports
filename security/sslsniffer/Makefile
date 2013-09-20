@@ -18,6 +18,7 @@ USE_OPENSSL=	yes
 PORTDOCS=	README
 PLIST_FILES=	bin/sslsniffer
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

@@ -47,6 +47,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 
 USE_OPENSSL=		yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDNS_FOR_REALM}

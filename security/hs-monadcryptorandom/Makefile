@@ -12,5 +12,6 @@ LICENSE=	BSD
 
 USE_CABAL=	crypto-api>=0.2 mtl>=2.0 tagged>=0.2 transformers>=0.2
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

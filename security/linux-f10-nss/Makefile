@@ -1,9 +1,5 @@
-# New ports collection makefile for:	security/linux-f10-nss
-# Date created:				2009-05-04
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	nss
 PORTVERSION=	3.12.3.99.3
@@ -27,4 +23,5 @@ USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

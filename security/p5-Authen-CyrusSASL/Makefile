@@ -15,6 +15,7 @@ USE_PERL5=	configure
 
 MAN3=	Authen::CyrusSASL.3
 
+NO_STAGE=	yes
 post-patch:
 	@${MKDIR} ${WRKSRC}/lib
 	@${RM} ${WRKSRC}/Authen/*.orig

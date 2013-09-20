@@ -128,6 +128,7 @@ PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 
 PORTSCOUT=	ignore:1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLLVM} && ( ${ARCH} == "i386" || ${ARCH} == "amd64" )

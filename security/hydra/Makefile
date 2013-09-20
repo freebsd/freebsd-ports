@@ -29,6 +29,7 @@ MAN1=		hydra.1 pw-inspector.1
 OPTIONS_DEFINE=	FIREBIRD SSH SVN X11
 OPTIONS_EXCLUDE=NLS DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFIREBIRD}

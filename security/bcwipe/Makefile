@@ -1,9 +1,5 @@
-# New ports collection makefile for:   bcwipe
-# Date created:                                Mar 4, 2001
-# Whom:                                        crow
-#
+# Created by: crow
 # $FreeBSD$
-#
 
 PORTNAME=	bcwipe
 PORTVERSION=	1.9.8
@@ -24,6 +20,7 @@ MAKE_ARGS+=	CFLAGS="${CFLAGS}"
 MAN1=		bcwipe.1
 PLIST_FILES=	bin/bcwipe
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,fprintf(stderr\,string),fprintf(stderr\,\"%s\"\,string),g" ${WRKSRC}/wipe.c
 	@${REINPLACE_CMD} -e "s,if (NULL == mktemp(result)),if (mkstemp(result) == -1),g" ${WRKSRC}/wipe.c

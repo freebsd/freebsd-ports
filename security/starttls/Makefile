@@ -1,9 +1,4 @@
-# New ports collection makefile for:	starttls
-# Date created:		Dec 20, 2003
-# Whom:			kuriyama@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	starttls
 PORTVERSION=	0.10
@@ -18,4 +13,5 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_EMACS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

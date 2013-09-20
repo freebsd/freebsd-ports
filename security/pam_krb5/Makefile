@@ -37,6 +37,7 @@ MANDIR=			${PREFIX}/share/man
 KRB5_DIR?=		${LOCALBASE}
 CONFIGURE_ARGS=		--with-krb5="${KRB5_DIR}"
 
+NO_STAGE=	yes
 post-install:
 	cd ${WRKSRC} && ${GMAKE} install-man
 

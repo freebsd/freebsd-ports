@@ -1,4 +1,3 @@
-# Created by: Brooks Davis <brooks@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ca_root_nss
@@ -33,6 +32,7 @@ BUNDLE_PROCESSOR=	MAca-bundle.pl
 SUB_FILES=	MAca-bundle.pl
 SUB_LIST=	VERSION_NSS=${VERSION_NSS}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:METCSYMLINK}

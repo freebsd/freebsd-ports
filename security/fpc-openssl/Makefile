@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	OPENSSL
 OPENSSL_DESC=	Install SSL and crypto library
 OPTIONS_DEFAULT=	OPENSSL
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -21,6 +21,7 @@ PORTDOCS=	NEWS README
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Setting ALL_TARGET to "all check" is racy and breaks parallel builds

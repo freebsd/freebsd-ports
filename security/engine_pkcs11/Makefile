@@ -25,6 +25,7 @@ PORTDOCS=	*
 .ifndef(NOPORTDOCS)
 CONFIGURE_ARGS+=--enable-doc
 .else
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA|install-data-am:|' \
 		${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in

@@ -1,4 +1,4 @@
-# Created by: nectar@FreeBSD.ORG
+# Created by: nectar@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	heimdal
@@ -42,6 +42,7 @@ MAKE_ENV+=	INSTALL_CATPAGES=no
 INFO=		heimdal hx509
 PLIST=		${WRKDIR}/PLIST
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"

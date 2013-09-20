@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 MAN1=		ranpwd.1
 PLIST_FILES=	bin/ranpwd
 
+NO_STAGE=	yes
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ranpwd ${PREFIX}/bin)
 	(cd ${WRKSRC} && ${INSTALL_MAN} ranpwd.1 ${MANPREFIX}/man/man1)

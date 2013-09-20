@@ -1,9 +1,5 @@
-# Ports collection makefile for:  httprint
-# Date created:			  05 July 2006
-# Whom:				  Yonatan <onatan@gmail.com>
-#
+# Created by: Yonatan <onatan@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	httprint
 PORTVERSION=	301
@@ -20,6 +16,7 @@ USE_ZIP=	yes
 RESTRICTED=	No cost for personal, education and non-commercial use.
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	${CP} -Rp ${WRKSRC} ${DATADIR}

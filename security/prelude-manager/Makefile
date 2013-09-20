@@ -45,6 +45,7 @@ OPTIONS_DEFAULT=XML
 
 XML_DESC=	XML plugin
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MXML}

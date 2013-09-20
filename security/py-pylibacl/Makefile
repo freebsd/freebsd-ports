@@ -1,9 +1,5 @@
-# New ports collection makefile for:  py-pylibacl
-# Date created:        18 april 2009
-# Whom:                joris
-#
+# Created by: joris
 # $FreeBSD$
-#
 
 PORTNAME=	pylibacl
 PORTVERSION=	0.5.0
@@ -20,4 +16,5 @@ USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

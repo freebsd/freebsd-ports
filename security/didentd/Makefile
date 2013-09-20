@@ -1,9 +1,5 @@
-# New ports collection makefile for: publicfile
-# Date created:		15 Oct 2001
-# Whom:			Doobee R. Tzeck
-#
+# Created by: Doobee R. Tzeck
 # $FreeBSD$
-#
 
 PORTNAME=	didentd
 PORTVERSION=	0.2
@@ -19,6 +15,7 @@ RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 ALL_TARGET=	all
 INSTALL_TARGET=	install
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC}/Makefile
 

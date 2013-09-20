@@ -36,6 +36,7 @@ OPTIONS_DEFINE=	DB
 OPTIONS_DEFAULT=DB
 DB_DESC=	Database support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDB}

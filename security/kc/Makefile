@@ -26,6 +26,7 @@ PLIST_FILES=	bin/kc \
 
 MAKE_ENV+=	HAVE_PCRE=yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|pkg-config|${LOCALBASE}/bin/pkgconf|' ${WRKSRC}/Makefile
 

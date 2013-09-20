@@ -15,6 +15,7 @@ COMMENT=	Automated tool for detecting steganographic content in JPEGs
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=	X11
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

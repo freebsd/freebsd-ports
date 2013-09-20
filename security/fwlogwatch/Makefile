@@ -1,6 +1,5 @@
 # Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	fwlogwatch
 PORTVERSION=	1.1
@@ -18,6 +17,7 @@ INSTALL_TARGET=	install install-config install-i18n
 
 MAN8=	fwlogwatch.8
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,/etc,${PREFIX}/etc,g" ${WRKSRC}/${MAN8}
 

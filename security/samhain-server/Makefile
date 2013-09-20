@@ -1,7 +1,7 @@
 # Created by: David Thiel
 # $FreeBSD$
-#
 
+NO_STAGE=	yes
 # This port recognizes the following non-boolean tunables:
 #
 # WITH_RUNAS_USER:

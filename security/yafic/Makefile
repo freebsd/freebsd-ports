@@ -1,9 +1,5 @@
-# New ports collection makefile for:	yafic
-# Date created:		20 August 2001
-# Whom:			allan@saddi.com
-#
+# Created by: allan@saddi.com
 # $FreeBSD$
-#
 
 PORTNAME=	yafic
 PORTVERSION=	1.2.2
@@ -31,6 +27,7 @@ MLINKS=		yafic-sign.1 yafic-check.1
 .endif
 MAN5=		yafic.conf.5
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/yafic ${PREFIX}/bin
 .if !defined(WITHOUT_OPENSSL)

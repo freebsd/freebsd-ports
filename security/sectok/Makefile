@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sectok
-# Date created:		28 September 2003
-# Whom:			Bruce M. Simpson <bms@FreeBSD.org>
-#
+# Created by: Bruce M. Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sectok
 PORTVERSION=	20030825
@@ -25,4 +21,5 @@ WRKSRC=         ${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAN1=		sectok.1
 PLIST_FILES=	bin/sectok
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -31,6 +31,7 @@ SUB_FILES=	pkg-message
 PLIST_SUB=	PORTNAME=${PORTNAME}
 PORTDOCS=	BUGS CONFIG CONTRIBUTORS INSTALL LICENSE README
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 800067
 # Add string function that didn't exist until 8.x

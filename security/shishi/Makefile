@@ -29,6 +29,7 @@ SUB_FILES=	pkg-message
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include "Makefile.man"
 .include <bsd.port.options.mk>
 

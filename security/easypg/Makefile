@@ -1,9 +1,5 @@
-# New ports collection makefile for:   EasyPG
-# Date created: 	25 December 2007
-# Whom: 		Shota Iwazaki <iwazaki8@yahoo.co.jp>
-#
+# Created by: Shota Iwazaki <iwazaki8@yahoo.co.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	easypg
 PORTVERSION=	0.0.16
@@ -21,6 +17,7 @@ RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1
 GNU_CONFIGURE=	yes
 USE_EMACS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${EMACS_PORT_NAME} == "emacs23") || (${EMACS_PORT_NAME} == "emacs24") || (${EMACS_PORT_NAME} == "emacs-devel")

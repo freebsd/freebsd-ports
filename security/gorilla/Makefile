@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	gorilla
-# Date created:				2006-02-11
-# Whom:					Kay Lehmann <kay_lehmann@web.de>
-#
+# Created by: Kay Lehmann <kay_lehmann@web.de>
 # $FreeBSD$
-#
 
 PORTNAME=	gorilla
 PORTVERSION=	1.5.3.6
@@ -21,6 +17,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	itcl>=3.4:${PORTSDIR}/lang/itcl \
 		wish:${PORTSDIR}/x11-toolkits/tk-wrapper
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == i386

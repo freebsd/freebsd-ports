@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sslstrip
-# Date created:		2009-04-17
-# Whom:			User & <dragon@njord.localdomain>
-#
+# Created by: User & <dragon@njord.localdomain>
 # $FreeBSD$
-#
 
 PORTNAME=	sslstrip
 PORTVERSION=	0.9
@@ -18,4 +14,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	sslstrip
 RUN_DEPENDS =	${LOCALBASE}/lib/python2.7/site-packages/twisted/web:${PORTSDIR}/www/py-twistedWeb
+NO_STAGE=	yes
 .include <bsd.port.mk>

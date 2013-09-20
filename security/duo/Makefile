@@ -25,6 +25,7 @@ MAN8=		login_duo.8 pam_duo.8
 
 OPTIONS=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 1000000

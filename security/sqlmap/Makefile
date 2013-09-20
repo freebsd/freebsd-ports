@@ -23,6 +23,7 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
 OPTIONS_DEFINE=	MSF
 MSF_DESC=	Enable Metasploit Framework integration
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if  ${PORT_OPTIONS:MMSF}

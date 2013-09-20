@@ -22,6 +22,7 @@ PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 DOCSDIR=	${PREFIX}/${DISTNAME}/doc
 
+NO_STAGE=	yes
 post-configure:
 	(cd ${WRKSRC}; ${MAKE} bsd);
 	${REINPLACE_CMD} -e 's:^INSTALL_PATH = "/usr/local/bugs-.*":INSTALL_PATH = "${PREFIX}/${DISTNAME}":' ${WRKSRC}/Makefile;

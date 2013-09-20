@@ -20,6 +20,7 @@ PYDISTUTILS_EGGINFO=	yara_python-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg-i
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/yara.so
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py
 

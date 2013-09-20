@@ -28,6 +28,7 @@ PORTDOCS=	README
 MANLANG=	"" fr
 MAN8=		yara-editor.8
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/config_dir/d' \
 		-e '/en\/man8/d' \

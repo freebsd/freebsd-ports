@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tinysu
-# Date created:		5 May 2005
-# Whom:			zakj@nox.cx
-#
+# Created by: zakj@nox.cx
 # $FreeBSD$
-#
 
 PORTNAME=	tinysu
 PORTVERSION=	0.9
@@ -18,6 +14,7 @@ PLIST_FILES=	bin/tinysu
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 
+NO_STAGE=	yes
 post-extract:
 	@${ECHO_CMD} ${PREFIX} >${WRKSRC}/conf-home
 

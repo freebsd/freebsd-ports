@@ -1,9 +1,5 @@
-# New ports collection makefile for:  Lynis
-# Date created:        15 November 2008
-# Whom:                Cory McIntire (loon@noncensored.com)
-#
+# Created by: Cory McIntire (loon@noncensored.com)
 # $FreeBSD$
-#
 
 PORTNAME=	lynis
 PORTVERSION=	1.2.9
@@ -19,6 +15,7 @@ NO_BUILD=	yes
 PORTDOCS=	*
 MAN8=		lynis.8
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/tINCLUDE_TARGETS/ s|".*"|"${DATADIR}/include"|; \
 		/tPLUGIN_TARGETS/ s|".*"|"${DATADIR}/plugins"|; \

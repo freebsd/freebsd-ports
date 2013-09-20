@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Crypt-SmbHash
-# Date created:				Jul 27 2004
-# Whom:					Florent Thoumie <flz@xbsd.org>
-#
+# Created by: Florent Thoumie <flz@xbsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt-SmbHash
 PORTVERSION=	0.12
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Crypt::SmbHash.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -14,6 +14,7 @@ COMMENT=	Automated password generator
 OPTIONS_DEFINE=	CRACKLIB
 CRACKLIB_DESCR=	CrackLib support for password quality
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCRACKLIB}

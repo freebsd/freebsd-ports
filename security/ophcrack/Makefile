@@ -31,6 +31,7 @@ OPTIONS_DEFAULT=	X11 GRAPH
 X11_DESC=	Build Qt 4 GUI frontend
 GRAPH_DESC=	Enable graph rendering via Qwt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11} || ${PORT_OPTIONS:MGRAPH}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   slb_rf60
-# Date created:                20 Feb 2003
-# Whom:                        Toni Andjelkovic <toni@soth.at>
-#
+# Created by: Toni Andjelkovic <toni@soth.at>
 # $FreeBSD$
-#
 
 PORTNAME=	ifd-slb_rf60
 PORTVERSION=	2.2.0
@@ -26,6 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/^ifd-//}
 PORTDOCS=	README
 PLIST_FILES=	lib/pcsc/drivers/libslb_rf60.so
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/lib/pcsc/drivers/
 	${INSTALL_DATA} ${WRKSRC}/libslb_rf60.so \

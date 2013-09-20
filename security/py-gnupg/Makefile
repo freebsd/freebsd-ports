@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	py-gnupg
-# Date created:			Jul 11, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gnupg
 PORTVERSION=	0.3.2
@@ -20,4 +15,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	GnuPGInterface
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

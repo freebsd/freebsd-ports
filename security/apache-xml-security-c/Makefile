@@ -20,6 +20,7 @@ XERCES_3_DESC=		With Xerces vesion 3.x (shibboleth2 requires)
 
 USE_OPENSSL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXERCES_3}

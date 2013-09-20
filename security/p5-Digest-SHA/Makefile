@@ -21,6 +21,7 @@ USE_PERL5=	configure
 
 MAN3=		Digest::SHA.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL
 

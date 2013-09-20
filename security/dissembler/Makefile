@@ -17,6 +17,7 @@ PORTDOCS=	${PORTNAME}.txt
 
 BROKEN=	checksum mismatch
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
 

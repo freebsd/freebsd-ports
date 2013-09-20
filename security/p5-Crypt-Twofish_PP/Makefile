@@ -23,4 +23,5 @@ MAN3=	Crypt::Twofish_PP.3 \
 	Crypt::Twofish_PP::Key24.3 \
 	Crypt::Twofish_PP::Key32.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-Auth-YubikeyDecrypter
-# Date created:				Jul  2, 2010
-# Whom:					Kurt Jaeger <fbsd-ports@opsec.eu>
-#
+# Created by: Kurt Jaeger <fbsd-ports@opsec.eu>
 # $FreeBSD$
 
 PORTNAME=	Auth-YubikeyDecrypter
@@ -23,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=		Auth::Yubikey_Decrypter.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -30,4 +30,5 @@ MAN3=		Net::OpenID::JanRain::Consumer.3 \
 		Net::OpenID::JanRain::Stores::SQLiteStore.3 \
 		Net::OpenID::JanRain::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

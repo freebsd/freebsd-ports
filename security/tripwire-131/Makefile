@@ -21,6 +21,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 TWCONFIG?=	${FILESDIR}/tw.conf.freebsd2
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-configure:

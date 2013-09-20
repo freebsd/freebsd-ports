@@ -19,4 +19,5 @@ USE_PERL5=	configure
 MAN1=		largeprimes.1
 MAN3=		Crypt::Primes.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

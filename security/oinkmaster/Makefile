@@ -25,6 +25,7 @@ PORTDOCS=	README
 MAN1=		oinkmaster.1
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},g' \
 		-e 's,"tPf","tf",' \

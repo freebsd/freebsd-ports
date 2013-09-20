@@ -1,6 +1,5 @@
 # Created by: Thomas Quinot <thomas@cuivre.fr.eu.org>
 # $FreeBSD$
-#
 
 PORTNAME=	calife
 PORTVERSION=	3.0.1
@@ -25,6 +24,7 @@ CONFLICTS?=	calife-2.*
 MAN1=		calife.1
 MAN5=		calife.auth.5
 
+NO_STAGE=	yes
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/pam/freebsd5 ${PREFIX}/etc/pam.d/calife.sample
 	@${CAT} ${PKGMESSAGE}

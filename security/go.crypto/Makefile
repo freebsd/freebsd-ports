@@ -31,6 +31,7 @@ GO_TARGET=	${GO_PKGNAME}/bcrypt		\
 		${GO_PKGNAME}/xtea		\
 		${GO_PKGNAME}/xts
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${GO_LOCAL_LIBDIR}/${GO_PKGNAME}
 	(cd ${GO_WRKDIR_PKG}/ && ${COPYTREE_SHARE} \* \

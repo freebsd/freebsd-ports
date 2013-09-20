@@ -38,6 +38,7 @@ LZO_DESC=	LZO compression
 
 OPTIONS_DEFAULT=	LIBTASN1 CXX
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLIBTASN1}

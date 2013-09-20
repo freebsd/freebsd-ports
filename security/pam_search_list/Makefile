@@ -20,4 +20,5 @@ PLIST_FILES=	lib/libpam_search_list.a \
 		lib/pam_search_list.so \
 		lib/pam_search_list.so.0
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

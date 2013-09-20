@@ -1,9 +1,5 @@
-# New ports collection makefile for:    pam_abl
-# Date created:				Nov 6 2005
-# Whom:					Petr Rehor <prehor@gmail.com>
-#
+# Created by: Petr Rehor <prehor@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pam_abl
 PORTVERSION=	0.2.3
@@ -32,6 +28,7 @@ MAN8=		pam_abl.8
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PREFIX} == / || ${PREFIX} == /usr

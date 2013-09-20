@@ -42,6 +42,7 @@ SUB_LIST+=	OSVERSION=${OSVERSION}
 WITHOUT_CHECK=	yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .ifdef (LOG_OPENVPN)

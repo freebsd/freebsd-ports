@@ -28,4 +28,5 @@ MAN3=		Jifty::Plugin::OpenID::View.3 \
 		Jifty::Plugin::OpenID::Action::CreateOpenIDUser.3 \
 		Jifty::Plugin::OpenID::Dispatcher.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

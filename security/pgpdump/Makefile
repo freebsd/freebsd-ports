@@ -1,6 +1,5 @@
 # Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pgpdump
 PORTVERSION=	0.28
@@ -16,6 +15,7 @@ MAKE_ARGS=	CFLAGS="${CFLAGS}"
 MAN1=		pgpdump.1
 PLIST_FILES=	bin/pgpdump
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pgpdump ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/pgpdump.1 ${MANPREFIX}/man/man1

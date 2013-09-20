@@ -1,7 +1,5 @@
 # Created by: Roderick van Domburg <r.s.a.vandomburg@student.utwente.nl>
 # $FreeBSD$
-#
-# Remeber to check sysutils/rubygem-chef
 
 PORTNAME=	net-ssh
 PORTVERSION=	2.6.5
@@ -23,6 +21,7 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPROMPT_PASSPHRASES}

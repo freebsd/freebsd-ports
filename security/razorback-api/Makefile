@@ -1,4 +1,3 @@
-# Created: Tom Judge <tom@tomjudge.com>
 # $FreeBSD$
 
 PORTNAME=	api
@@ -32,6 +31,7 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !empty(PORT_OPTIONS:MDEBUG)

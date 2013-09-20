@@ -63,6 +63,7 @@ MAN8_NL=	sss_groupmod.8
 MAN8_UK=	sss_groupadd.8 sss_groupdel.8 sss_groupmod.8 sss_groupshow.8 \
 		sss_userdel.8 sss_usermod.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800107

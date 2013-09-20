@@ -1,9 +1,5 @@
-# Ports collection makefile for:  hmap
-# Date created:			  29 Apr 2003
-# Whom:				  Yonatan <onatan@gmail.com>
-#
+# Created by: Yonatan <onatan@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	hmap
 PORTVERSION=	0.1
@@ -24,6 +20,7 @@ USE_PYTHON=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|DATADIR|${DATADIR}|' ${WRKSRC}/hmap.py
 

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	nessus-plugins
-# Date created:				16 October 1999
-# Whom:					Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	nessus-plugins
 PORTVERSION=	2.2.9
@@ -32,6 +28,7 @@ CONFIGURE_ARGS=	--with-fetchcmd=wget
 MAN1=		nessus-build.1
 MAN8=		nessus-update-plugins.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

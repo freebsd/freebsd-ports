@@ -1,6 +1,5 @@
 # Created by: David Thiel <lx@redundancy.redundancy.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fwipe
 PORTVERSION=	0.36
@@ -18,6 +17,7 @@ INSTALL_TARGET=	setup
 PLIST_FILES=	bin/fwipe bin/fwipe0 bin/echo0
 MAN1=		fwipe0.1 echo0.1 fwipe.1
 
+NO_STAGE=	yes
 post-extract:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} "${CC} -s" > ${WRKSRC}/conf-ld

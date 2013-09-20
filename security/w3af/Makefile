@@ -39,6 +39,7 @@ USE_PYTHON=	yes
 
 OPTIONS_DEFINE=	GUI
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUI}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openscep
-# Date created:		May 19 2005
-# Whom:			Vsevolod Stakhov
-#
+# Created by: Vsevolod Stakhov
 # $FreeBSD$
-#
 
 PORTNAME=	openscep
 PORTVERSION=	0.4.2
@@ -23,6 +19,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PLIST_DIRSTRY=	www/cgi-bin

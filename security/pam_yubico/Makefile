@@ -32,6 +32,7 @@ OPTIONS_DEFINE=	CR LDAP DOCS
 CR_DESC=	Include Challenge/response support
 OPTIONS_DEFAULT=	CR LDAP
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCR}

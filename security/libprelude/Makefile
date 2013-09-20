@@ -33,6 +33,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		prelude-admin.1
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPERL}

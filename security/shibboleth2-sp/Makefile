@@ -27,6 +27,7 @@ GROUPS=		shibd
 USE_APACHE=	22-24
 USE_OPENSSL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${APACHE_VERSION} == 22

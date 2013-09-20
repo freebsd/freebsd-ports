@@ -1,6 +1,5 @@
 # Created by: Aaron Dalton <aaron@daltons.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	doorman
 PORTVERSION=	0.81
@@ -28,6 +27,7 @@ GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message doormand.cf.EXAMPLE
 USE_RC_SUBR=	doorman
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' \
 		${WRKSRC}/doormand.c

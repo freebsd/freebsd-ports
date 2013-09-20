@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pwman3
-# Date created:				29 March 2008
-# Whom:					Yarodin <yarodin@gmail.com>
-#
+# Created by: Yarodin <yarodin@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pwman3
 PORTVERSION=	0.0.6
@@ -23,4 +19,5 @@ USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Pwman3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

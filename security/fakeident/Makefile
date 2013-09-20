@@ -1,9 +1,5 @@
-# New ports collection makefile for:	security/fakeident
-# Date created:		Sun 08 Dec 12:30:00 WST 2002
-# Whom:			Dean Hollister <dean@odyssey.apana.org.au>
-#
+# Created by: Dean Hollister <dean@odyssey.apana.org.au>
 # $FreeBSD$
-#
 
 PORTNAME=	fakeident
 PORTVERSION=	1.7
@@ -15,6 +11,7 @@ MASTER_SITES=	http://www.wa.apana.org.au/~dean/sources/ \
 MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	Tool that replies with a standard answer to incoming identd requests
 
+NO_STAGE=	yes
 do-build:
 	@cd $(WRKSRC); \
 	$(CC) $(CFLAGS) -o identd identd.c

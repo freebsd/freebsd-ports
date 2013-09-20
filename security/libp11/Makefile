@@ -1,6 +1,5 @@
 # Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libp11
 PORTVERSION=	0.2.8
@@ -31,6 +30,7 @@ PORTDOCS=	*
 CONFIGURE_ARGS+=--enable-doc
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/configure

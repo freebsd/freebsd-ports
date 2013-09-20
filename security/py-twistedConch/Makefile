@@ -23,4 +23,5 @@ USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	${PORTNAME:S/twisted/Twisted_/}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

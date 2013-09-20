@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	Python OpenSSL Wrappers
-# Date created:			Feb 10, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	pow
 PORTVERSION=	0.7
@@ -23,6 +18,7 @@ USE_OPENSSL=	yes
 
 PORTDOCS=	POW.pdf
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|licence|license|' ${WRKSRC}/setup.py
 

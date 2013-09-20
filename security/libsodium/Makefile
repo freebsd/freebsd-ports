@@ -15,6 +15,7 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS NEWS THANKS
 
+NO_STAGE=	yes
 post-build:
 	cd ${WRKSRC} && ${MAKE} check
 

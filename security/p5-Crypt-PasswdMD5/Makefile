@@ -16,6 +16,7 @@ USE_PERL5=	configure
 
 MAN3=		Crypt::PasswdMD5.3
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|[[:cntrl:]]$$||g' ${WRKSRC}/PasswdMD5.pm
 

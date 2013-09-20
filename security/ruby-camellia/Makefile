@@ -1,9 +1,5 @@
-# New ports collection makefile for:	camellia-rb
-# Date created:		9 August 2008
-# Whom:			Yoshisato YANAGISAWA <osho@pcc-software.org>
-#
+# Created by: Yoshisato YANAGISAWA <osho@pcc-software.org>
 # $FreeBSD$
-#
 
 PORTNAME=	camellia
 PORTVERSION=	1.2
@@ -24,6 +20,7 @@ INSTALL_TARGET=	site-install
 DOCS=		README.txt History.txt License.txt
 EXAMPLES=	ext/camellia-example.rb
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}

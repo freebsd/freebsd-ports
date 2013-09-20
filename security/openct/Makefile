@@ -30,6 +30,7 @@ MAN1=		openct-tool.1
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800069

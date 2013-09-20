@@ -20,4 +20,5 @@ GH_COMMIT=	71c64bc
 PLIST_FILES=	bin/please
 MAN1=		please.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

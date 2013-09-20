@@ -49,4 +49,5 @@ MAN3=	Authen::Passphrase.3 \
 	Authen::Passphrase::SaltedDigest.3 \
 	Authen::Passphrase::VMSPurdy.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

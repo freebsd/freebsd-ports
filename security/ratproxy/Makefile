@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ratproxy
-# Date created:				3 July 2008
-# Whom:					Steven Kreuzer <skreuzer@exit2shell.com>
-#
+# Created by: Steven Kreuzer <skreuzer@exit2shell.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ratproxy
 PORTVERSION=	1.58
@@ -18,6 +14,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/ratproxy \
 		bin/ratproxy-report.sh
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's#-Wno-pointer-sign##g' ${WRKSRC}/Makefile
 

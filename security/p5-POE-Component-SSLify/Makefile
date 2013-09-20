@@ -25,4 +25,5 @@ MAN3=		POE::Component::SSLify.3 \
 		POE::Component::SSLify::ClientHandle.3 \
 		POE::Component::SSLify::ServerHandle.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

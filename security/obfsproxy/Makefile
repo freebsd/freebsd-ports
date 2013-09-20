@@ -1,6 +1,5 @@
 # Created by: Carlo Strub
 # $FreeBSD$
-#
 
 PORTNAME=	obfsproxy
 PORTVERSION=	0.2.2
@@ -26,6 +25,7 @@ USE_PYDISTUTILS=easy_install
 SUB_FILES=	pkg-message
 PYDISTUTILS_PKGNAME=obfsproxy
 
+NO_STAGE=	yes
 post-extract:
 	${MV} ${WRKDIR}/${DISTNAME} ${WRKDIR}/obfsproxy-${PORTVERSION}
 

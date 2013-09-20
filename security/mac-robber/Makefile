@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 PLIST_FILES=	bin/mac-robber
 PORTDOCS=	CHANGES README
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; ${CC} ${CFLAGS} -o mac-robber mac-robber.c
 

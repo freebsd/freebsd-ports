@@ -1,6 +1,5 @@
 # Created by: David E. Thiel <lx@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ncrack
 PORTVERSION=	0.4
@@ -17,4 +16,5 @@ USE_GMAKE=	yes
 
 MAN1=	ncrack.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

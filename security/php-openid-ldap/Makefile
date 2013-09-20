@@ -44,6 +44,7 @@ PLIST_DIRS=	%%WWWDIR%%/images/seatbelt \
 		%%WWWDIR%%/images \
 		%%WWWDIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

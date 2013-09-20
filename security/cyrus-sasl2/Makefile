@@ -77,6 +77,7 @@ OTP_DESC=		OTP authentication
 PLAIN_DESC=		PLAIN authentication
 SCRAM_DESC=		SCRAM authentication
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBDB}

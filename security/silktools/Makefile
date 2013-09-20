@@ -47,6 +47,7 @@ MAN8=	flowcap.8 rwflowappend.8 rwflowpack.8 rwguess.8 \
 		rwpackchecker.8 rwpollexec.8 rwreceiver.8 \
 		rwsender.8
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 

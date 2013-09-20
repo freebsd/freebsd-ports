@@ -43,6 +43,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PORTEXAMPLES=	README.tools image_export.py
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

@@ -43,4 +43,5 @@ MAN3=		Net::Radius::Server.3 \
 		Net::Radius::Server::Set::Replace.3 \
 		Net::Radius::Server::Set::Simple.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

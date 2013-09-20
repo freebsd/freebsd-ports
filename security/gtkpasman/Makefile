@@ -23,6 +23,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 DOCS=		README data/gpasman4.sample
 PLIST_FILES=	bin/gtkpasman share/applications/gtkpasman.desktop
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

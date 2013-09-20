@@ -18,6 +18,7 @@ PORTDOCS=	README
 USES=		gmake
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

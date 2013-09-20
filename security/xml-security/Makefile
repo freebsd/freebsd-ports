@@ -33,6 +33,7 @@ PORTEXAMPLES=	*
 
 PLIST_FILES=	%%JAVAJARDIR%%/xmlsec.jar
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO} -n ">> Installing JAR as ${JAVAJARDIR}/xmlsec.jar..."
 	@${INSTALL_DATA} ${WRKSRC}/build/xmlsec-${PORTVERSION}.jar ${JAVAJARDIR}/xmlsec.jar

@@ -1,6 +1,5 @@
 # Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
 # $FreeBSD$
-#
 
 PORTNAME=	fwanalog
 PORTVERSION=	0.6.9
@@ -22,6 +21,7 @@ CONFFILES=	fwanalog-dom.tab \
 		fwanalog.opts \
 		services.conf
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} \
 		-e "s,the script's directory.*$$,${ETCDIR},;" \

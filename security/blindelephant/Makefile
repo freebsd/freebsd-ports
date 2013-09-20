@@ -1,9 +1,5 @@
-# New ports collection makefile for:    blindelephant
-# Date created:				2010-08-19
-# Whom:					Niels Heinen
-#
+# Created by: Niels Heinen
 # $FreeBSD$
-#
 
 PORTNAME=	blindelephant
 PORTVERSION=	1.0
@@ -28,6 +24,7 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
 
 PORTDOCS=	README Blind_Elephant_BlackHat_2010.pdf
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

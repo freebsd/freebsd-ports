@@ -1,9 +1,5 @@
-# New ports collection makefile for:	clamtk
-# Date created:		24 February 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	clamtk
 PORTVERSION=	4.44
@@ -34,6 +30,7 @@ MAN1=		${PORTNAME}.1
 
 LINGUAS=	`${LS} ${WRKSRC}/po/*.mo | ${XARGS} ${BASENAME} -s .mo`
 
+NO_STAGE=	yes
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/${PORTNAME}.1.gz
 

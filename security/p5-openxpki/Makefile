@@ -299,6 +299,7 @@ GRAPHVIZ_DESC=	With graphical visualization of workflows?
 # If you want to read OpenXPKI documentation, these tools are not needed.
 # Just visit http://www.openxpki.org/docs/
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEVELOPER}

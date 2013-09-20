@@ -45,6 +45,7 @@ PORTDOCS2=	INSTALL README.aruba README.database README.sguil README.snortsam
 PORTDOCS=	${PORTDOCS1} ${PORTDOCS2}
 PORTEXAMPLES=	SCHEMA_ACCESS create_db2 create_mssql create_mysql create_oracle.sql create_postgresql
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:M64BIT}

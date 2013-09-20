@@ -22,6 +22,7 @@ PLIST_FILES+=	%%EXAMPLESDIR%%/100.ipfwcount
 SUB_FILES=	pkg-message
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '1s,^#![^ ]*,#!${PERL},' ${WRKSRC}/ipfwcount
 

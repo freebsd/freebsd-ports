@@ -1,11 +1,5 @@
 # Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
-# If you want to only have the command-line client even if gtk is already
-# installed define one of these:
-#  WITHOUT_GNOME
-#  WITHOUT_GTK
-#  WITHOUT_NESSUS_GTK
 
 PORTNAME=	nessus
 PORTVERSION=	2.2.9
@@ -35,6 +29,7 @@ WANT_GNOME=	yes
 WITHOUT_GNOME=	yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgtk20}!=""

@@ -18,4 +18,5 @@ CONFIGURE_ARGS=	-DPAM_STRERROR_NEEDS_PAMH
 MAN3=		Authen::PAM.3 \
 		Authen::PAM::FAQ.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -26,6 +26,7 @@ MLINKS=		x11-ssh-askpass.1 ssh-askpass.1
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

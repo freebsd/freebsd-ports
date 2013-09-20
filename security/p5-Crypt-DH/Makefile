@@ -23,4 +23,5 @@ PLIST_DIRSTRY=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DH \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt \
 		%%SITE_PERL%%/Crypt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

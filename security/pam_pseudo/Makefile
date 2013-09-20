@@ -16,4 +16,5 @@ INSTALL_TARGET=	install-real
 
 MAN5=		pam_pseudo.5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

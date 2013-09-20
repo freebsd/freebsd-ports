@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sancp
-# Date created:				10 Feb 2005
-# Whom:					Paul Schmehl <pauls@utdallas.edu>
-#
+# Created by: Paul Schmehl <pauls@utdallas.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	sancp
 PORTVERSION=	1.6.1
@@ -25,6 +21,7 @@ GROUPS=		sancp
 PORTDOCS=	CHANGES INSTALL ISSUES README \
 		SETUP fields.LIST LICENSE
 
+NO_STAGE=	yes
 post-extract:
 	@cd ${WRKSRC} && ${MV} LICENSE docs/
 

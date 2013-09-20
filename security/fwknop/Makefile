@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 USE_RC_SUBR=	fwknopd
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGPGME}

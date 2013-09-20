@@ -36,6 +36,7 @@ OPTIONS_DEFINE=	PROXY GNUTLS
 PROXY_DESC=	Enable automatic proxy configuratio via libproxy
 GNUTLS_DESC=	Use GnuTLS instead of OpenSSL(EXPERIMENTAL)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}

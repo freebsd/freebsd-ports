@@ -21,6 +21,7 @@ ASSERT_DESC=	Enable Asserts
 
 USES=		pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 GNU_CONFIGURE=	yes

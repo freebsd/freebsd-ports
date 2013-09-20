@@ -35,6 +35,7 @@ MAN5=		secsh.5 SPKI.5 SHA.5 DSA.5
 MAN8=		sftp-server.8 lshd.8
 INFO=		lsh nettle
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s|M4)|M4) -g|g" ${WRKSRC}/src/nettle/Makefile.in
 

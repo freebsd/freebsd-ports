@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fl0p
-# Date created:		2006-12-04
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	fl0p
 PORTVERSION=	0.0.2.b
@@ -17,6 +13,7 @@ COMMENT=	Passive L7 flow fingerprinting tool
 
 WRKSRC=		${WRKDIR}/fl0p/
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/config.h
 

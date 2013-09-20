@@ -46,6 +46,7 @@ MAN8=		pkcsslotd.8
 
 run-autotools:	run-autotools-autoreconf
 
+NO_STAGE=	yes
 run-autotools-autoreconf:
 	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -i
 

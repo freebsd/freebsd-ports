@@ -1,6 +1,5 @@
 # Created by: David Thiel <lx@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nacl
 PORTVERSION=	20110221
@@ -16,6 +15,7 @@ USE_BZIP2=	yes
 USE_BINUTILS=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

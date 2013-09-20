@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vlock
-# Date created:		08 Oct 2000
-# Whom:			George Reid <services@nevernet.net>
-#
+# Created by: George Reid <services@nevernet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	vlock
 PORTVERSION=	2.2.3
@@ -43,6 +39,7 @@ MAN8=		vlock-main.8
 VLOCKSCRIPTS=
 VLOCKMODULES=	all.so new.so
 
+NO_STAGE=	yes
 # Vlock group = vlock:*:129:
 VLOCKGRP=	vlock
 VLOCKGID=	129

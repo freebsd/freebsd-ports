@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Crypt_DiffieHellman
-# Date created:			  27 Jan 2008
-# Whom:				  Ditesh Shashikant Gathani <ditesh@gathani.org>
-#
+# Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Crypt_DiffieHellman
 PORTVERSION=	0.2.6
@@ -19,6 +15,7 @@ USE_PHP=	bcmath mbstring gmp
 
 PEAR_AUTOINSTALL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

@@ -18,6 +18,7 @@ MAKE_ARGS=	CC=${CC}
 
 MAN3=		sectok.3
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/sectok.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libsectok.a ${PREFIX}/lib

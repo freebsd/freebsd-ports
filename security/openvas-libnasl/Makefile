@@ -24,6 +24,7 @@ USES=		bison iconv pkgconfig
 
 MAN1=		openvas-libnasl-config.1 openvas-nasl.1
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../security/openvas-libraries/Makefile.common"
 
 LDFLAGS+=	-lgcrypt

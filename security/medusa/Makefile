@@ -21,6 +21,7 @@ CONFIGURE_ARGS+=	--enable-module-ncp=no --enable-module-afp=no
 
 MAN1=		medusa.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"

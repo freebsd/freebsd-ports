@@ -18,6 +18,7 @@ USES=		gmake pkgconfig
 
 MAN1=		pcsc_scan.1 gscriptor.1p scriptor.1p ATR_analysis.1p
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,DESTDIR,PREFIX,g" ${WRKSRC}/Makefile
 

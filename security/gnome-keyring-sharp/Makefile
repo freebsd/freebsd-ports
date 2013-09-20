@@ -19,4 +19,5 @@ USES=		gmake pkgconfig
 USE_GNOME=	gnomehack gtksharp20
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

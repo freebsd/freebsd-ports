@@ -15,6 +15,7 @@ USE_PERL5=	configure
 
 MAN3=		Crypt::RC6.3
 
+NO_STAGE=	yes
 do-patch:
 	${REINPLACE_CMD} -e 's///' ${WRKSRC}/RC6.pm
 

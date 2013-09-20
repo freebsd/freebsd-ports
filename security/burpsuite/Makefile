@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 PLIST_FILES=	bin/${PORTNAME} \
 		%%JAVAJARDIR%%/${DISTNAME}.jar
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Get BSFEL agreement

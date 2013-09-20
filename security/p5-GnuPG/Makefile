@@ -20,4 +20,5 @@ MAN3=	GnuPG.3 \
 
 MAN1=	gpgmailtunl.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

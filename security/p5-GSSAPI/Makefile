@@ -19,6 +19,7 @@ MAN3=		GSSAPI.3 \
 		GSSAPI::OID::Set.3 \
 		GSSAPI::Status.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

@@ -25,6 +25,7 @@ USE_OPENSSL=	yes
 MAN3=		Net::SSLeay.3 Net::SSLeay::Handle.3
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

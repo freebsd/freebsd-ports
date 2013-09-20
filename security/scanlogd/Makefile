@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scanlogd
-# Date created:				10 May 2004
-# Whom:					Roman Bogorodskiy
-#
+# Created by: Roman Bogorodskiy
 # $FreeBSD$
-#
 
 PORTNAME=	scanlogd
 PORTVERSION=	2.2.6
@@ -29,6 +25,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -c" LD="${CC}"
 MAN8=		scanlogd.8
 PLIST_FILES=	bin/scanlogd
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scanlogd ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/scanlogd.8 ${MANPREFIX}/man/man8

@@ -21,6 +21,7 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	CHANGELOG.txt LICENSE.txt README.txt
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
 		${WRKSRC}/daemon-control-dist \

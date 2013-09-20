@@ -24,6 +24,7 @@ MAN1=		outguess.1
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/outguess
 
+NO_STAGE=	yes
 pre-install:
 	${ECHO_CMD} bin/extract > ${PLIST}
 	${ECHO_CMD} bin/outguess >> ${PLIST}

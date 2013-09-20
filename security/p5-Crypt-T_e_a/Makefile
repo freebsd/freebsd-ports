@@ -18,4 +18,5 @@ USE_PERL5=	configure
 MAN3=	Crypt::Tea.3
 MAN1=	tea.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -33,6 +33,7 @@ MAKE_ARGS+=	-EABS_BUILDDIR
 .endif
 USE_AUTOTOOLS=	libltdl
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

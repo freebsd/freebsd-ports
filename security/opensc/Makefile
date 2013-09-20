@@ -47,6 +47,7 @@ MAN1=		cardos-tool.1 cryptoflex-tool.1 eidenv.1 iasecc-tool.1 \
 		sc-hsm-tool.1 westcos-tool.1
 MAN5=		pkcs15-profile.5
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENCT}

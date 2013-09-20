@@ -45,6 +45,7 @@ PLIST_DIRS=	%%EXAMPLESDIR%%
 PORTDOCS=	*
 MAN1=		${MANUALS1:T}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/doc/signing-party/caff/caffrc\.sample|${EXAMPLESDIR}/caffrc.sample|' \
 		${WRKSRC}/caff/caff

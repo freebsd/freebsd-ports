@@ -15,4 +15,5 @@ LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
 
 MAN1=		seccure.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

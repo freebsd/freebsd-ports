@@ -24,6 +24,7 @@ USE_GNOME=	ltverhack gnomehack
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e \
 	's|exampledir = $$(p11_system_config)|exampledir = ${EXAMPLESDIR}|' \

@@ -27,6 +27,7 @@ PLIST_FILES=	bin/smtpscan \
 		%%DATADIR%%/tests
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^#!.*|#!${PERL}| ; \

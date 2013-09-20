@@ -18,6 +18,7 @@ USE_PERL5=	configure
 
 MAN3=		Crypt::OpenSSL::DSA.3 Crypt::OpenSSL::DSA::Signature.3
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/lib/Crypt/OpenSSL/DSA.pm.orig
 

@@ -24,4 +24,5 @@ CONFIGURE_ENV=	set_more_warnings="no"
 PLIST_FILES=	bin/gnome-gpg
 MAN1=		gnome-gpg.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

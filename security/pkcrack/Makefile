@@ -18,6 +18,7 @@ PORTDOCS=	README pkzip.ps.gz
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

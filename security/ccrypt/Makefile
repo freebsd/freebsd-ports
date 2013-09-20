@@ -11,6 +11,7 @@ MAINTAINER=	dev2@heesakkers.info
 COMMENT=	Command-line utility for encrypting and decrypting files and streams
 
 USES=		gmake
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

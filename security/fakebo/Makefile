@@ -1,6 +1,5 @@
 # Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fakebo
 PORTVERSION=	0.4.2.1
@@ -22,6 +21,7 @@ MAN1=		fakebo.1
 PORTDOCS=	README custom.replies
 PLIST_FILES=	bin/fakebo etc/fakebo.conf.sample
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -type l -delete
 

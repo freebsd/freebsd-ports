@@ -1,9 +1,5 @@
-# New ports collection makefile for:	distcache
-# Date created:				2005-04-13
-# Whom:					Marcel Prisi <marcel.prisi@virtua.ch>
-#
+# Created by: Marcel Prisi <marcel.prisi@virtua.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	distcache
 PORTVERSION=	1.4.5
@@ -36,6 +32,7 @@ MAN2=	DC_CTX_new.2 DC_PLUG_new.2 DC_PLUG_read.2 DC_SERVER_new.2 \
 	NAL_LISTENER_new.2 NAL_SELECTOR_new.2 NAL_decode_uint32.2
 MAN8=	distcache.8
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

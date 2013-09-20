@@ -1,9 +1,5 @@
-# New ports collection makefile for:    jbrofuzz
-# Date created:				2010-03-08
-# Whom:					Niels Heinen
-#
+# Created by: Niels Heinen
 # $FreeBSD$
-#
 
 PORTNAME=	jbrofuzz
 PORTVERSION=	2.1
@@ -23,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	JAVA_CMD=${JAVA} JBROFUZZ=${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

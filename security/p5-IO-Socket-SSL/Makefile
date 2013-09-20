@@ -25,6 +25,7 @@ MAN3=		IO::Socket::SSL.3 IO::Socket::SSL::Intercept.3 \
 		IO::Socket::SSL::Utils.3
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIDN}

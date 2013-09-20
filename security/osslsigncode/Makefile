@@ -1,9 +1,5 @@
-# New ports collection makefile for:	osslsigncode
-# Date created:		9 November 2006
-# Whom:			snb@threerings.net
-#
+# Created by: snb@threerings.net
 # $FreeBSD$
-#
 
 PORTNAME=	osslsigncode
 PORTVERSION=	1.3
@@ -26,4 +22,5 @@ USE_OPENSSL=	yes
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

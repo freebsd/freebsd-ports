@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	libecc
-# Date created:			Oct 29, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libecc
 PORTVERSION=	0.14.0
@@ -22,6 +17,7 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${PREFIX}/include -I${LOCALBASE}/include
 LDFLAGS+=	-L${PREFIX}/lib -L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's@endian\.h@sys/&@' ${WRKSRC}/include/libecc/bitset.h
 

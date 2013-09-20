@@ -1,6 +1,5 @@
 # Created by: Carlo Strub
 # $FreeBSD$
-#
 
 PORTNAME=	stem
 PORTVERSION=	1.0.1
@@ -21,4 +20,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

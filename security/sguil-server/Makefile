@@ -39,6 +39,7 @@ CONFS=	autocat.conf sguild.access sguild.email	sguild.reports sguild.conf sguild
 PORTDOCS1=	README
 PORTDOCS2=	CHANGES FAQ INSTALL INSTALL.openbsd OPENSSL.README TODO UPGRADE USAGE sguildb.dia
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

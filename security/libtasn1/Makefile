@@ -57,6 +57,7 @@ MAN3=		asn1_array2tree.3 \
 		libtasn1_strerror.3
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}

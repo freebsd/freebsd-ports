@@ -28,6 +28,7 @@ HASHDIG_TOOLS_DESC=	Install hashdig tools
 MAP_TOOLS_DESC=		Install map tools
 XMAGIC_DESC=		XMagic support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 LIB_DEPENDS+=		pcre:${PORTSDIR}/devel/pcre

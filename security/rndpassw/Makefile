@@ -16,4 +16,5 @@ FETCH_ARGS=	-Fpr
 MAN1=		rndpassw.1
 PLIST_FILES=	bin/rndpassw
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

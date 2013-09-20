@@ -28,6 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

@@ -1,6 +1,5 @@
 # Created by: roam@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	aescrypt
 PORTVERSION=	0.7
@@ -22,6 +21,7 @@ MAN1=		aescrypt.1 aesget.1
 MANCOMPRESSED=	yes
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}

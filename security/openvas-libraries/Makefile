@@ -21,6 +21,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		libopenvas-config.1
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.common"
 
 .include <bsd.port.mk>

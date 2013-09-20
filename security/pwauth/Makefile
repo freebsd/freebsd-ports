@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pwauth
-# Date created:				Oct 14 2004
-# Whom:					clement
-#
+# Created by: clement
 # $FreeBSD$
-#
 
 PORTNAME=	pwauth
 PORTVERSION=	2.3.10
@@ -19,6 +15,7 @@ PLIST_FILES=	bin/pwauth bin/checkfaillog
 ALL_TARGET=	pwauth checkfaillog
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIB="-lcrypt -lpam"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900007

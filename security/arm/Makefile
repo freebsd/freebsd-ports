@@ -1,6 +1,5 @@
 # Created by: Carlo Strub
 # $FreeBSD$
-#
 
 PORTNAME=	arm
 DISTVERSION=	1.4.5.0
@@ -32,6 +31,7 @@ OPTIONS_DEFAULT=TOR DOCS
 
 TOR_DESC=	Enable local tor support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTOR}

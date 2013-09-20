@@ -10,5 +10,6 @@ COMMENT=	(Incomplete) OpenSSL binding for Haskell
 
 USE_CABAL=	network>=2.1.0.0
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

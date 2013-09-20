@@ -23,6 +23,7 @@ USES=		perl5
 MAN1=		gpgdir.1
 PLIST_FILES=	bin/gpgdir
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gpgdir ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/gpgdir.1 ${MANPREFIX}/man/man1/

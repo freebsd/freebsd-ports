@@ -18,6 +18,7 @@ ALL_TARGET=	freebsd-${ARCH} OS_CFLAGS="${CFLAGS}"
 PGPLIB=		${PREFIX}/lib/pgpin
 MAN1=		pgpin.1
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}; ${INSTALL_PROGRAM} -c -o bin -g bin -m 555 \
 		pgp ${PREFIX}/bin/pgpin

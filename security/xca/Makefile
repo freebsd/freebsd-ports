@@ -20,6 +20,7 @@ USES=		gmake shared-mime-info
 MAN1=		xca.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@echo "CPPFLAGS=-I. -I.. -I${WRKSRC}/ui -I${QT_INCDIR} -I${QT_INCDIR}/Qt -I${LOCALBASE}/include" > ${WRKSRC}/Local.mak
 	@echo "CFLAGS= ${CFLAGS} -Wall -ggdb" >> ${WRKSRC}/Local.mak

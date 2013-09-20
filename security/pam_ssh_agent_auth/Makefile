@@ -18,4 +18,5 @@ USES=		perl5
 MAN8=		pam_ssh_agent_auth.8
 PLIST_FILES=	lib/pam_ssh_agent_auth.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -38,6 +38,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 DICTPATH=	${LOCALBASE}/libdata/cracklib/pw_dict
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPPLET}

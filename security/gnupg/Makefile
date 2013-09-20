@@ -40,6 +40,7 @@ STD_SOCKET_DESC=	Use standard socket for agent
 OPTIONS_DEFAULT=	CURL
 NO_OPTIONS_SORT=	YES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDOCS}

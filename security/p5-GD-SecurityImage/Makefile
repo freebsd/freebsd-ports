@@ -27,6 +27,7 @@ MAN3=		GD::SecurityImage.3 \
 		GD::SecurityImage::Magick.3 \
 		GD::SecurityImage::Styles.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}

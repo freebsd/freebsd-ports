@@ -18,4 +18,5 @@ MAN3=	Digest::Perl::Digest-MD4.3 \
 
 WRKSRC=	${WRKDIR}/MD4
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

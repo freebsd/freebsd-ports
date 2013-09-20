@@ -16,6 +16,7 @@ USE_GMAKE=	yes
 
 PLIST_FILES=	bin/google-authenticator lib/pam_google_authenticator.so
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/google-authenticator ${PREFIX}/bin/google-authenticator
 	${INSTALL_LIB} ${WRKSRC}/pam_google_authenticator.so ${PREFIX}/lib/pam_google_authenticator.so

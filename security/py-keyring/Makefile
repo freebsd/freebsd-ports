@@ -29,6 +29,7 @@ KEYCZAR_DESC=		Install keyczar to support keyring encryption
 PYFS_DESC=		Install pyfilesystem to support the pyfs backend
 SECRET_SERVICE_DESC=	Install SecretStorage to support the SecretService backend
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCRYPT_FILE}

@@ -21,6 +21,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS}
 
 CONFIGURE_ARGS=	--with-ssh2
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

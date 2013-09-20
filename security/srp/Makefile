@@ -1,9 +1,5 @@
-# New ports collection makefile for:	srp
-# Date created:							07/25/2001
-# Whom:									nectar@FreeBSD.org
-#
+# Created by: nectar@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	srp
 PORTVERSION=	2.1.2
@@ -21,6 +17,7 @@ CONFIGURE_ARGS=	--with-openssl=/usr				\
 		--with-zlib					\
 		--enable-loginf
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900007

@@ -17,6 +17,7 @@ MANCOMPRESSED=	no
 USE_GMAKE=	yes
 USES=		perl5
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^PREFIX=|^PREFIX?=|g' \
 	${WRKSRC}/Makefile

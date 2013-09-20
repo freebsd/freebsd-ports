@@ -1,9 +1,5 @@
-# Ports collection makefile for:  slush
-# Date created:			  Sun May 3, 1999
-# Whom:                 	shipley@dis.org
-#
+# Created by: shipley@dis.org
 # $FreeBSD$
-#
 
 PORTNAME=	slush
 PORTVERSION=	0.1.1
@@ -18,6 +14,7 @@ COMMENT=	A telnet-like application which uses a secure SSL channel
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
+NO_STAGE=	yes
 do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

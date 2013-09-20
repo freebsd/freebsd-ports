@@ -33,6 +33,7 @@ GROUPS=		_tss
 OPTIONS_DEFINE=	EMULATOR DEBUG
 EMULATOR_DESC=	Build for use with the tpm-emulator
 
+NO_STAGE=	yes
 .include "Makefile.man"
 .include <bsd.port.options.mk>
 

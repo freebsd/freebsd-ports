@@ -24,6 +24,7 @@ MANPREFIX=	${LOCALBASE}/lib/perl5/${PERL_VER}/perl/
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.pl lib
 

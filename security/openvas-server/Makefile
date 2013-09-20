@@ -20,6 +20,7 @@ USE_RC_SUBR=	openvasd
 MAN1=		openvas-mkrand.1 openvas-mkcert-client.1 openvasd-config.1
 MAN8=		openvasd.8 openvas-adduser.8 openvas-rmuser.8 openvas-mkcert.8
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../security/openvas-libraries/Makefile.common"
 
 .include <bsd.port.mk>

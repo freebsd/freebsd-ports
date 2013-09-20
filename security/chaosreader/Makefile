@@ -19,6 +19,7 @@ USE_PERL5=	run
 
 PLIST_FILES=	bin/${PORTNAME} bin/sshkeydata
 
+NO_STAGE=	yes
 post-extract:
 	${CP} ${DISTDIR}/${PORTNAME}${PORTVERSION} ${WRKDIR}/${PORTNAME}
 	${CP} ${DISTDIR}/sshkeydata0.20 ${WRKDIR}/sshkeydata
