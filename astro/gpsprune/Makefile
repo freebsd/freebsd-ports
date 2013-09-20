@@ -16,6 +16,7 @@ COMMENT=	Application for viewing, editing, and converting GPS coordinate data
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 

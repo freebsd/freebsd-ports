@@ -20,6 +20,7 @@ LIB_DEPENDS=	f2c:${PORTSDIR}/lang/f2c
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 ALL_TARGET=	shared
 CONFIGURE_ARGS=	ac_cv_prog_FC="f2c"
 GNU_CONFIGURE=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	luna
-# Date created:		03 July 1996
-# Whom:			ABURAYER Rewsirow <rewsirow@ff.iij4u.or.jp>
-#
+# Created by: ABURAYER Rewsirow <rewsirow@ff.iij4u.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	luna
 PORTVERSION=	1.9
@@ -14,6 +10,7 @@ DISTNAME=	luna19s
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display the moon's phase
 
+NO_STAGE=	yes
 USE_DOS2UNIX=	yes
 USE_LHA=	yes
 NO_WRKSUBDIR=	yes

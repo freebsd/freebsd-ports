@@ -18,6 +18,7 @@ RUN_DEPENDS=	p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmSpaceWeather
 
+NO_STAGE=	yes
 USE_XORG=	x11 xext xpm
 ALL_TARGET=	clean all
 MAKE_JOBS_UNSAFE=	yes

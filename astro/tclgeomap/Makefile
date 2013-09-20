@@ -9,6 +9,7 @@ MASTER_SITES=	SF/tkgeomap/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Read, manipulate, and display geo data
 
+NO_STAGE=	yes
 USES+=		tcl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tclinclude=${TCL_INCLUDEDIR}

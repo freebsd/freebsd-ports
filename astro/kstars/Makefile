@@ -20,6 +20,7 @@ RUN_DEPENDS=	xplanet:${PORTSDIR}/astro/xplanet
 
 CONFLICTS=	kdeedu-4.[0-6].*
 
+NO_STAGE=	yes
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USES=		cmake:outsource
 USE_QT4=	opengl qmake_build moc_build rcc_build uic_build

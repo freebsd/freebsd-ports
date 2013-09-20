@@ -14,6 +14,7 @@ LICENSE=	GPLv3
 
 USES=		perl5
 USE_PERL5=	modbuild
+NO_STAGE=	yes
 
 MAN3=	Astro::FITS::Header.3 \
 	Astro::FITS::Header::AST.3 \

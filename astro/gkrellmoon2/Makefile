@@ -14,6 +14,7 @@ COMMENT=	A moon clock plugin for Gkrellm2
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
+NO_STAGE=	yes
 USES=		pkgconfig
 USE_GNOME=	gtk20
 

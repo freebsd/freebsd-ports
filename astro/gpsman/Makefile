@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gpsman
-# Date created:		26 November 2001
-# Whom:			David Wolfskill
-#
+# Created by: David Wolfskill
 # $FreeBSD$
-#
 
 PORTNAME=	gpsman
 PORTVERSION=	6.4.4
@@ -18,6 +14,7 @@ USE_TK_RUN=	84+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SUB_FILES=	pkg-message
+NO_STAGE=	yes
 NO_BUILD=	yes
 PORTDOCS=	*
 PORTDATA=	*

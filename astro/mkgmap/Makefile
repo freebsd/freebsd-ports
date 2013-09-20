@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.mkgmap.org.uk/download/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Convert OpenStreetMap data into a Garmin format
 
+NO_STAGE=	yes
 NO_BUILD=	yes
 
 USE_JAVA=	yes

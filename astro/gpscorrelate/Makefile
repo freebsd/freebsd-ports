@@ -22,6 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	freefoote
 GH_COMMIT=	a36646b
 
+NO_STAGE=	yes
 USES=		gmake pkgconfig
 USE_GNOME=	libxml2
 

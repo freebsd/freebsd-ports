@@ -16,6 +16,7 @@ RUN_DEPENDS=	p5-Test-Number-Delta>=0:${PORTSDIR}/devel/p5-Test-Number-Delta
 
 USES=		perl5
 USE_PERL5=	modbuild
+NO_STAGE=	yes
 
 MAN3=		Starlink::AST.3 \
 		Starlink::AST::PGPLOT.3 \

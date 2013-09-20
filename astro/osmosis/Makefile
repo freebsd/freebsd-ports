@@ -11,6 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Command line Java app for processing OpenStreetMap data
 
+NO_STAGE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 

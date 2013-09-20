@@ -10,6 +10,7 @@ MASTER_SITES=	http://starplot.org/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3-dimensional viewer for star charts
 
+NO_STAGE=	yes
 USES=		gmake pathfix gettext pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

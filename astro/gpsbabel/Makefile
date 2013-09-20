@@ -12,6 +12,7 @@ COMMENT=	GPS file translating tool
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
+NO_STAGE=	yes
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-expathdr=${LOCALBASE}/include \

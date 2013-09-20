@@ -20,6 +20,7 @@ RESTRICTED=	Not sure about redistribution rights
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\..*//g}/
 
+NO_STAGE=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 USE_GNOME=	desktopfileutils

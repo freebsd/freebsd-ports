@@ -1,6 +1,5 @@
 # Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	match
 PORTVERSION=	0.16
@@ -15,6 +14,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	avenger-[0-9]*
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 
 MAN1=		match.1
 

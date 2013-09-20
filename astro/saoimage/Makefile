@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SAOimage
-# Date created:				21 Feb 1998
-# Whom:					Pedro Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	saoimage
 PORTVERSION=	1.35.1
@@ -14,6 +10,7 @@ MASTER_SITES=	http://tdc-www.harvard.edu/software/saoimage/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Smithsonian Astrophysical Observatory image utility for X
 
+NO_STAGE=	yes
 MAKEFILE=	makefile
 MAKE_ENV=	OFLAGS="${CFLAGS}"
 ALL_TARGET=	${OPSYS}

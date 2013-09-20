@@ -14,6 +14,7 @@ COMMENT=	OO Perl interface to the ADS abstract service
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
+NO_STAGE=	yes
 USES=		perl5
 USE_PERL5=	configure
 

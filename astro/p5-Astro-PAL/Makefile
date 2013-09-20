@@ -14,6 +14,7 @@ LICENSE=	GPLv3
 
 USE_PERL5=	modbuild
 USES=		perl5
+NO_STAGE=	yes
 
 MAN1=		stime.1
 MAN3=		Astro::PAL.3

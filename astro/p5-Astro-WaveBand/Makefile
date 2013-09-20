@@ -15,6 +15,7 @@ LICENSE_COMB=	dual
 
 USE_PERL5=	modbuild
 USES=		perl5
+NO_STAGE=	yes
 
 MAN3=		Astro::WaveBand.3
 

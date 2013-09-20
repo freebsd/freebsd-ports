@@ -12,6 +12,7 @@ COMMENT=	Package for GPS PRN - Object ID conversions
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN3=		GPS::OID.3
 

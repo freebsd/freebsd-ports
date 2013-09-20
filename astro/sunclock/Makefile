@@ -16,6 +16,7 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 
 USE_BZIP2=	yes
 USE_XORG=	xpm
+NO_STAGE=	yes
 
 CPPFLAGS+=	$$(libpng-config --I_opts) \
 		-I${LOCALBASE}/include \

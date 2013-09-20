@@ -1,9 +1,5 @@
-# ports collection makefile for:	linrad
-# Date created:		7 July 2004
-# Whom:			db
-#
+# Created by: db
 # $FreeBSD$
-#
 
 PORTNAME=	libgal
 PORTVERSION=	0.5.0
@@ -15,6 +11,7 @@ MASTER_SITE_SUBDIR=	db
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	General Astrodynamics Library
 
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX} --enable-shared=yes
 USE_LDCONFIG=	yes

@@ -8,6 +8,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Astronomical Julian date calculator
 
+NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 USES=	pathfix
 USE_LDCONFIG=	yes

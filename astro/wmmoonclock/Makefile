@@ -14,6 +14,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
 USE_XORG=	xpm
 USES=		gmake
+NO_STAGE=	yes
 
 MAN1=		wmmoonclock.1
 PLIST_FILES=	bin/wmmoonclock

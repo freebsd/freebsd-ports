@@ -20,6 +20,7 @@ ALL_TARGET=	clean all
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		INCDIR="-I${LOCALBASE}/include" LIBDIR="-L${LOCALBASE}/lib"
 MAKE_JOBS_UNSAFE=	yes
+NO_STAGE=	yes
 
 MAN1=		wmSun.1
 PLIST_FILES=	bin/wmSun

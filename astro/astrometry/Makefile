@@ -18,6 +18,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
 
+NO_STAGE=	yes
 USES=		gmake pkgconfig
 USE_PYTHON=	2.5+
 ALL_TARGET=	all extra

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   merkaartor
-# Date created:        9 January 2009
-# Whom:                slaven@rezic.de
-#
+# Created by: slaven@rezic.de
 # $FreeBSD$
-#
 
 PORTNAME=	merkaartor
 PORTVERSION=	0.18.1
@@ -20,6 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal \
 		proj:${PORTSDIR}/graphics/proj
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 

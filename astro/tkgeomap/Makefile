@@ -10,6 +10,7 @@ MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Read, manipulate, and display geo data
 
 LIB_DEPENDS=	libtclgeomap.so:${PORTSDIR}/astro/tclgeomap
+NO_STAGE=	yes
 
 CONFIGURE_ARGS=	--with-tclgeomap-include=${LOCALBASE}/include/tclgeomap --with-x \
 		--with-tcl=${TCL_LIBDIR} --with-tclinclude=${TCL_INCLUDEDIR} \

@@ -12,6 +12,7 @@ COMMENT=	Perl interface to calculate information about the phase of the moon
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN3=		Astro::MoonPhase.3
 

@@ -22,6 +22,7 @@ TEST_DEPENDS=	p5-Test-Number-Delta>=0:${PORTSDIR}/devel/p5-Test-Number-Delta \
 
 USE_PERL5=	modbuild
 USES=		perl5
+NO_STAGE=	yes
 
 MAN3=		Astro::Coords.3 \
 		Astro::Coords::Angle.3 \

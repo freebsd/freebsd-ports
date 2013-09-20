@@ -1,9 +1,5 @@
-# New ports collection makefile for:    dgpsip
-# Date created:         		05 Jun 1999
-# Whom:                 		Daniel Baker <dbaker@FreeBSD.org>
-#
+# Created by: Daniel Baker <dbaker@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dgpsip
 PORTVERSION=	1.35
@@ -14,6 +10,7 @@ MAINTAINER=	jharris@widomaker.com
 COMMENT=	Differential GPS over IP communication device
 
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 
 MAN1=	dgpsip.1
 PLIST_FILES=	bin/dgpsip

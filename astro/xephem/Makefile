@@ -13,6 +13,7 @@ COMMENT=	An interactive astronomical ephemeris program
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
+NO_STAGE=	yes
 USES=		gmake motif
 USE_XORG=	xp xt xext xmu x11 xft
 MAKE_JOBS_UNSAFE=	yes

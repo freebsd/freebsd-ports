@@ -12,6 +12,7 @@ COMMENT=	Self-contained ephemeris calculator
 
 EXTRACT_BEFORE_ARGS=	-aqo
 
+NO_STAGE=	yes
 USE_ZIP=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	aa

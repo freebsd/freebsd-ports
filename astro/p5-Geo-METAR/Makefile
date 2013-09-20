@@ -13,6 +13,7 @@ COMMENT=	Perl module that processes METAR information from NOAA sources
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN3=		Geo::METAR.3
 

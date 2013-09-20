@@ -14,6 +14,7 @@ LIB_DEPENDS=	libtkgeomap.so:${PORTSDIR}/astro/tkgeomap
 
 USES+=		tk:run
 NO_BUILD=	yes
+NO_STAGE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's,\[pwd\],${DATADIR}/src,;s,(lines/|places/|src/),${DATADIR}/\1,g;s,wish,${WISH},' ${WRKSRC}/src/PTiger.tcl

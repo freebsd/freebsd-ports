@@ -12,6 +12,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Class for handling quality flags for astronomical objects
 
 USE_PERL5=	configure
+NO_STAGE=	yes
 USES=		perl5
 
 MAN3=		Misc::Quality.3

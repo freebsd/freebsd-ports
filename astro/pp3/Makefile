@@ -10,6 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/PP3/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates celestial charts
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_TEX=	latex
 
