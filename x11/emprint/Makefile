@@ -16,4 +16,5 @@ USES=		pkgconfig
 USE_EFL=	eina evas ecore
 USE_EFL_ECORE=	evas file input x11
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

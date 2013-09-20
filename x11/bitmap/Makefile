@@ -11,4 +11,5 @@ XORG_CAT=	app
 USE_XORG=	x11 xaw xbitmaps xmu xproto
 MAN1=		atobm.1 bitmap.1 bmtoa.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

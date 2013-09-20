@@ -1,9 +1,5 @@
-# New ports collection makefile for:   XStarRoll
-# Date created:        14 January 1999
-# Whom:                Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
-#
+# Created by: Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	xstarroll
 PORTVERSION=	1.1b
@@ -23,6 +19,7 @@ ALL_TARGET=	xstarroll
 MAN1=		xstarroll.1
 PLIST_FILES=	bin/xstarroll
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|$${LOCALBASE}|g ; \
 		 s|gcc |$${CC} |g ; \

@@ -20,6 +20,7 @@ USE_CSTD=	gnu89
 PORTDOCS=	README
 PLIST_FILES=	bin/bbrun
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bbrun ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

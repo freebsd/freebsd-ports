@@ -16,6 +16,7 @@ MAN1=		xco.1
 MANCOMPRESSED=	yes
 DOCDIR=		${PREFIX}/share/doc/xco
 
+NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} -e 's/extern char \*malloc();//g' \
 			${WRKSRC}/xco.c ${WRKSRC}/xargs.c

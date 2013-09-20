@@ -1,9 +1,5 @@
-# New ports collection makefile for:  sselp
-# Date created:                July 19, 2008
-# Whom:                        Julien Laffaye <kimelto@gmail.com>
-#
+# Created by: Julien Laffaye <kimelto@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sselp
 PORTVERSION=	0.2
@@ -18,4 +14,5 @@ USE_XORG=	x11
 
 PLIST_FILES=	bin/sselp
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

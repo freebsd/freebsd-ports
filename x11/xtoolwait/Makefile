@@ -16,4 +16,5 @@ USE_XORG=	x11 xext
 MAN1=		xtoolwait.1
 PLIST_FILES=	bin/xtoolwait
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

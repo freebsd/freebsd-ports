@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmMatrix
-# Date created:		13 October 1999
-# Whom:			Brian Handy <handy@physics.montana.edu>
-#
+# Created by: Brian Handy <handy@physics.montana.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	wmmatrix
 PORTVERSION=	0.2
@@ -21,6 +17,7 @@ USE_GMAKE=	yes
 USE_XORG=	xpm
 ALL_TARGET=	clean all
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmMatrix ${PREFIX}/bin/wmmatrix
 

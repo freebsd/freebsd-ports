@@ -46,6 +46,7 @@ GNOME_DESC=	Legacy GNOME 1.4 support
 OPTIONS_DEFAULT=	MMX GLX
 OPTIONS_DEFAULT_i386=	GLX_X86
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${MACHINE_CPU:Mmmx} && ${PORT_OPTIONS:MMMX}

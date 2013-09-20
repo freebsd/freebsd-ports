@@ -28,6 +28,7 @@ USES=		pkgconfig gettext pathfix
 
 INSTALLS_ICONS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUNIQUE}

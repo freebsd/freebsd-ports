@@ -35,6 +35,7 @@ MAN1=	panel-embed.1 \
 	panel.1 \
 	panelctl.1
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/lib/|/libdata/|g' \
 		${WRKSRC}/data/pkgconfig.sh

@@ -28,6 +28,7 @@ INOTIFY_DESC=		inotify support
 DATEZONE_DESC=		Localized date support
 THREADED_DESC=		Use threaded runtime
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 # Disable unsupported options

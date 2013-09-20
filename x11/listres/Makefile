@@ -14,4 +14,5 @@ PLIST_FILES=	bin/listres
 
 MAN1=		listres.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

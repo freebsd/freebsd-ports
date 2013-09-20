@@ -20,6 +20,7 @@ USES=		gmake pkgconfig
 
 PLIST_FILES=	bin/docker
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^PREFIX=|PREFIX?=| ; \

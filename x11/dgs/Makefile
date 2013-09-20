@@ -31,6 +31,7 @@ INSTALLDIRS=	gs DPS/clients/makepsres DPS/clients/pswrap \
 		DPS/demos/dpsexec DPS/demos/texteroids DPS/demos/xepsf \
 		DPS/lib/dpstk DPS/lib/psres DPS/lib/dps DPS/include/DPS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-patch:

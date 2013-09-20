@@ -14,4 +14,5 @@ PLIST_FILES=	sbin/mkcomposecache
 
 MAN8=		mkcomposecache.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

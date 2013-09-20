@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xwinwrap
-# Date created:		2009-11-16
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xwinwrap
 PORTVERSION=	0.3
@@ -23,6 +19,7 @@ USE_BZIP2=	yes
 USE_XORG=	x11 xproto xrender xext
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

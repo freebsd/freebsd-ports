@@ -21,6 +21,7 @@ PLIST_FILES=	bin/xmotd
 OPTIONS_DEFINE=	HTML MOTIF XPM
 HTML_DESC=	Use HTML widget instead of ASCII text
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHTML}

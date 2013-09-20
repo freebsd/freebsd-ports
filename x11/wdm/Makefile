@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wdm
-# Date created:		August 31, 1998
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wdm
 PORTVERSION=	1.28
@@ -52,6 +48,7 @@ XRDB_PATH?=	${LOCALBASE}/bin/xrdb
 
 WDMDIR=		${PREFIX}/lib/X11/wdm
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_PAM)

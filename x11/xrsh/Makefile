@@ -21,4 +21,5 @@ MAN1=		xrsh.1 xrlogin.1
 
 PLIST_FILES=	bin/xrsh bin/xrlogin
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

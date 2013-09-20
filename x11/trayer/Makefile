@@ -23,6 +23,7 @@ MAN1=		trayer.1
 
 PLIST_FILES=	bin/trayer
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

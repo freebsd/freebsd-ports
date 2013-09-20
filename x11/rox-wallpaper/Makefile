@@ -17,6 +17,7 @@ USE_PYTHON=	yes
 
 WRKSRC=		${WRKDIR}/Wallpaper
 
+NO_STAGE=	yes
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}

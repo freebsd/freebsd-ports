@@ -14,6 +14,7 @@ USE_XORG=	x11
 PLIST_FILES=	bin/xrsi
 PORTDOCS=	Readme Licence
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

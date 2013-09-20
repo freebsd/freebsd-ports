@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xrootconsole
-# Date created:			12 July 2002
-# Whom:				incabulos@mac.com
-#
+# Created by: incabulos@mac.com
 # $FreeBSD$
-#
 
 PORTNAME=	xrootconsole
 PORTVERSION=	0.6
@@ -20,6 +16,7 @@ USE_GMAKE=	yes
 MAN1=		xrootconsole.1
 PLIST_FILES=	bin/xrootconsole
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC =|CC ?=|g ; \
 		 s|^CFLAGS = -O2|CFLAGS +=|g ; \

@@ -20,6 +20,7 @@ MAN1=		xmove.1 xmovectrl.1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	${CP} ${FILESDIR}/Imakefile ${WRKSRC}
 	(cd ${WRKSRC}; \

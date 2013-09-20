@@ -19,6 +19,7 @@ SHEBANG_FILES=	*.pl
 MAN1=		bgrot.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} pkg-message
 

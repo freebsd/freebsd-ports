@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xtermcontrol
-# Date created:				23.12.2004
-# Whom:					krion
-#
+# Created by: krion
 # $FreeBSD$
-#
 
 PORTNAME=	xtermcontrol
 PORTVERSION=	2.10
@@ -24,4 +20,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 PLIST_FILES=	bin/xtermcontrol
 MAN1=		${PORTNAME}.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

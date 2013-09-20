@@ -26,6 +26,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	desktop_gnome_peripherals_keyboard_xkb.schemas
 
+NO_STAGE=	yes
 #post-patch:
 #	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 #	    	's|-Werror||g'

@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/trunk
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL LICENSE NEWS README TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -16,4 +16,5 @@ PLIST_FILES=	bin/showrgb lib/X11/rgb.txt
 
 MAN1=		showrgb.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

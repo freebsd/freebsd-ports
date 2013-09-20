@@ -14,5 +14,6 @@ USES=		pkgconfig
 USE_CABAL=	utf8-string>=0.1 X11>=1.2.1
 USE_XORG=	xft xrender
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

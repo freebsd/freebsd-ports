@@ -19,4 +19,5 @@ MAN3=		Xevie.3 \
 		XevieSendEvent.3 \
 		XevieStart.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

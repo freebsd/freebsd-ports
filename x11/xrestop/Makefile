@@ -22,4 +22,5 @@ CFLAGS+=	-I${LOCALBASE}/include
 MAN1=		xrestop.1
 PLIST_FILES=	bin/xrestop
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

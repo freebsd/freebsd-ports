@@ -14,4 +14,5 @@ USE_XORG=	xaw xmu xt xbitmaps
 
 MAN1=		xmh.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -12,4 +12,5 @@ USE_XORG=	xmuu x11 xbitmaps xcursor
 MAN1=		xsetroot.1
 PLIST_FILES=	bin/xsetroot
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

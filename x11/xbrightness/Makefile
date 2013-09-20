@@ -16,4 +16,5 @@ PLIST_FILES=	bin/xbrightness
 
 MAN1=		xbrightness.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

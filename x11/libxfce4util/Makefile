@@ -20,6 +20,7 @@ USES=		gmake pathfix perl5 pkgconfig
 
 OPTIONS_DEFINE=		NLS DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

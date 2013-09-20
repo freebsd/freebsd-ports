@@ -34,6 +34,7 @@ PLIST_DIRS=	lib/xorg-edit/options/devices \
 
 DESKTOP_ENTRIES="Xorg Edit" "" "" "${PORTNAME}" "Settings;" true
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CXX =|CXX ?=| ; \

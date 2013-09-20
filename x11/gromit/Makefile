@@ -15,6 +15,7 @@ USES=		pkgconfig
 
 DOCS=		AUTHORS ChangeLog README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

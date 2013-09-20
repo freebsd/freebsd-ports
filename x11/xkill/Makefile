@@ -14,4 +14,5 @@ PLIST_FILES=	bin/xkill
 
 MAN1=		xkill.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gpc
-# Date created:		22 October 2005
-# Whom:			Mikhail Teterin
-#
+# Created by: Mikhail Teterin
 # $FreeBSD$
-#
 
 PORTNAME=	gpctool
 PORTVERSION=	1.0.1
@@ -29,6 +25,7 @@ MAKEFILE=	${FILESDIR}/BSDmakefile
 EXTRACT_BEFORE_ARGS=-qoa
 EXTRACT_AFTER_ARGS=-d ${WRKDIR} -x ${DISTNAME}/gpc.? ${DISTNAME}/gl.c
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|FALSE|false|g' \
 	   ${WRKSRC}/callbacks.c ${WRKSRC}/graphics.c

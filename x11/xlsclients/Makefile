@@ -16,4 +16,5 @@ PLIST_FILES=	bin/xlsclients
 
 MAN1=		xlsclients.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XCurs
-# Date created:				27 Dec 2004
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xcurs
 PORTVERSION=	0.5.1
@@ -21,6 +17,7 @@ USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,#!/usr/bin/python,#!/usr/bin/env python,g' \
 		${WRKSRC}/parsexcursor.py ${WRKSRC}/xcurs.py

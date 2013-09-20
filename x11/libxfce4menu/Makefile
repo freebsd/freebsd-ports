@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--with-vendor-info=FreeBSD
 OPTIONS_DEFINE=		DOCS NLS NOTIFY GLADE
 OPTIONS_DEFAULT=	NOTIFY
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

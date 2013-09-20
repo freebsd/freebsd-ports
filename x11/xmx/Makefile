@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmx 1.1
-# Date created:		February 23, 1999
-# Whom:			Oliver Breuninger <ob@seicom.NET>
-#
+# Created by: Oliver Breuninger <ob@seicom.NET>
 # $FreeBSD$
-#
 
 PORTNAME=	xmx
 PORTVERSION=	1.1
@@ -20,6 +16,7 @@ USE_XORG=	x11
 MAN1=		xmx.1
 PLIST_FILES=	bin/xmx
 
+NO_STAGE=	yes
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/xmx
 

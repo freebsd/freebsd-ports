@@ -21,6 +21,7 @@ OPTIONS_DEFINE=	DOCS
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USES+=		gettext desktop-file-utils

@@ -19,6 +19,7 @@ USES=		imake
 USE_XORG=	x11 xaw xext xmu xt xpm sm ice
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/dynamag ${PREFIX}/bin
 

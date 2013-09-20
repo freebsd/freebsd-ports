@@ -24,6 +24,7 @@ USE_LDCONFIG=	yes
 
 MAN8=		gdkxft_sysinstall.8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

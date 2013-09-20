@@ -11,4 +11,5 @@ XORG_CAT=	lib
 USE_XORG=	printproto x11 xau xp xprintutil xproto:both
 USE_AUTOTOOLS=	libtool
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -24,6 +24,7 @@ SHAPE_DESC=	Support of XShape extension
 SN_DESC=	Startup notification support
 OPTIONS_DEFAULT=	SHAPE
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CXXFLAGS+=	`imlib2-config --cflags` `freetype-config --cflags`

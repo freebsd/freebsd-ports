@@ -28,6 +28,7 @@ OPTIONS_DEFINE=		DOCS PERL NLS
 
 MAN3PREFIX?=	${PREFIX}/lib/perl5/${PERL_VER}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

@@ -13,6 +13,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e \
 		's|$$(libdir)/pkgconfig|$${prefix}/libdata/pkgconfig|' \

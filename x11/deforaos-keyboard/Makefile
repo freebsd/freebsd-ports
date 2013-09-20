@@ -21,4 +21,5 @@ USES=		pkgconfig gettext
 USE_XORG=	xtst
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

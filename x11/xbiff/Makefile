@@ -12,4 +12,5 @@ USE_XORG=	xbitmaps xext xaw
 MAN1=		xbiff.1
 PLIST_FILES=	bin/xbiff
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

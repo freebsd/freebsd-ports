@@ -29,6 +29,7 @@ OPTIONS_DEFINE=	DOCS
 DESKTOP_ENTRIES="${PORTNAME}" "${PORTNAME} NETWM compliant X11 desktop panel" \
 		"${PORTNAME}" "${PORTNAME}" "System;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

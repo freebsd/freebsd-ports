@@ -38,6 +38,7 @@ MAN1=		x3270.1 x3270if.1 x3270-script.1
 MAN5=		ibm_hosts.5
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|\$$(INSTALL) -c|$$(INSTALL) $$(INSTALLFLAGS)|g' \
 		${WRKSRC}/Imakefile.in

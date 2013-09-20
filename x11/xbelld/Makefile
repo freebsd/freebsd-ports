@@ -23,6 +23,7 @@ PLIST_FILES=	bin/xbelld \
 MAN1=		xbelld.1
 XFREE86_HTML_MAN=no
 
+NO_STAGE=	yes
 post-install:
 	@${CAT}	${PKGMESSAGE}
 

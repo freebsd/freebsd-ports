@@ -14,6 +14,7 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pygnome2 pygnomeextras gnomeprefix
 
+NO_STAGE=	yes
 do-build:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
 		${WRKSRC}/*.py ${WRKSRC}/*.server

@@ -20,4 +20,5 @@ USES=		cmake:outsource
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/plasma/generic/scriptengines/ruby
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

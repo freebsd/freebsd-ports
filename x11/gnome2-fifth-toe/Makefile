@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gnome2-fifth-toe
-# Date created:				20 September 2002
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11/gnome2-fifth-toe/Makefile,v 1.92 2007/10/18 23:45:20 marcus Exp $
-#
 
 PORTREVISION=	3
 CATEGORIES=	x11 gnome
@@ -34,4 +30,5 @@ GNOME_SLAVE=	yes
 
 DESCR=		${.CURDIR}/pkg-descr
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

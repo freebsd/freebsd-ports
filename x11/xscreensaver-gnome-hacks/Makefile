@@ -26,6 +26,7 @@ MAN1=		xscreensaver-getimage-desktop.1 xscreensaver-getimage-file.1 \
 		xscreensaver-getimage-video.1 xscreensaver-getimage.1 \
 		xscreensaver-text.1
 
+NO_STAGE=	yes
 post-build:
 	@cd ${WRKSRC}/driver && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} xscreensaver-getimage

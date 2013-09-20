@@ -16,4 +16,5 @@ PLIST_FILES=	bin/xkbevd
 
 MAN1=		xkbevd.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

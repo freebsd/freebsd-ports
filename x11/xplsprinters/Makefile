@@ -14,4 +14,5 @@ PLIST_FILES=	bin/xplsprinters
 
 MAN1=		xplsprinters.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

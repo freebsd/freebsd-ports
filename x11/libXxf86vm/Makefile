@@ -36,4 +36,5 @@ MAN3=		XF86VM.3 \
 		XF86VidModeGetViewPort.3 \
 		XF86VidModeValidateModeLine.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

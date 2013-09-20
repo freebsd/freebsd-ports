@@ -14,4 +14,5 @@ PLIST_FILES=	bin/xprehashprinterlist
 
 MAN1=		xprehashprinterlist.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

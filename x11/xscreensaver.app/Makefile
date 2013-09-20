@@ -19,4 +19,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKE_ARGS=	"LDFLAGS+=-L${LOCALBASE}/lib"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

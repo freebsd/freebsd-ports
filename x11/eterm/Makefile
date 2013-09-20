@@ -1,4 +1,4 @@
-# Created by: Murray Stokely <murray@freebsd.org>
+# Created by: Murray Stokely <murray@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	eterm
@@ -32,6 +32,7 @@ USE_EFL=	imlib2
 
 MAN1=		Eterm.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMMX} && (${ARCH} == "i386")

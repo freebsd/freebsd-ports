@@ -28,6 +28,7 @@ DESCR=		${.CURDIR}/pkg-descr
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
 
+NO_STAGE=	yes
 do-install:
 
 .include <bsd.port.mk>

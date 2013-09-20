@@ -1,9 +1,5 @@
-# New ports collection makefile for:    gnustep-app
-# Date created:         28 Oct 2006
-# Whom:                 dirk.meyer@dinoex.sub.org
-#
+# Created by: dirk.meyer@dinoex.sub.org
 # $FreeBSD$
-#
 
 PORTNAME=	gnustep-app
 PORTVERSION=	2.0.0
@@ -114,4 +110,5 @@ USE_GNUSTEP_LOCAL_TOOLS+=	\
 USE_GNUSTEP_LOCAL_SERVICES+=	\
 	LaTeX:textproc/latex-service \
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

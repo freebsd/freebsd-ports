@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mgapdesk
-# Date created:		2001/06/02
-# Whom:			Nick Sayer
-#
+# Created by: Nick Sayer
 # $FreeBSD$
-#
 
 PORTNAME=	mgapdesk
 PORTVERSION=	1.0.7
@@ -24,6 +20,7 @@ USE_AUTOTOOLS=	autoconf213
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "alpha")

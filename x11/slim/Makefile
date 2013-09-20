@@ -32,6 +32,7 @@ MAN1=		slim.1
 
 OPTIONS_DEFINE=	PAM
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPAM}

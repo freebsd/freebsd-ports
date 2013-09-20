@@ -10,4 +10,5 @@ COMMENT=	RenderProto protocol headers
 
 XORG_CAT=	proto
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -15,6 +15,7 @@ USE_XORG=	x11
 
 MAN1=		startx.1 xinit.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|hexdump|/usr/bin/hexdump|' ${WRKSRC}/startx.cpp

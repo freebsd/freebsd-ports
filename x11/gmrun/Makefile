@@ -25,6 +25,7 @@ PORTDOCS=	README
 PLIST_FILES=	bin/gmrun %%DATADIR%%/gmrunrc
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

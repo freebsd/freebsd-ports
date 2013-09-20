@@ -1,9 +1,5 @@
-# Updated ports collection makefile for:   deskpaint
-# Date modified:       14 Febuary 2012
-# Whom:                Kirn Gill <segin2005@gmail.com>
-#
+# Created by: Kirn Gill <segin2005@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	deskpaint
 PORTVERSION=	3.1
@@ -19,4 +15,5 @@ PLIST_FILES=	bin/deskpaint
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

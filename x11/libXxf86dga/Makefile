@@ -35,4 +35,5 @@ MAN3=		XDGA.3 \
 		XF86DGA.3 \
 		XFree86-DGA.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

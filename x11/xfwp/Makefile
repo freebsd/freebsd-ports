@@ -16,4 +16,5 @@ PLIST_FILES=	bin/xfwp
 
 MAN1=		xfwp.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

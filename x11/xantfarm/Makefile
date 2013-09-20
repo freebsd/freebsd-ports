@@ -17,4 +17,5 @@ USE_XORG=	x11 xext xt
 MAN1=		xantfarm.1
 PLIST_FILES=	bin/xantfarm
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

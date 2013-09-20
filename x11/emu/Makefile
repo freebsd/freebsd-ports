@@ -19,6 +19,7 @@ USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
 WRKSRC=		${WRKDIR}/emu
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900007

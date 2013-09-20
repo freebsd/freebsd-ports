@@ -20,6 +20,7 @@ USES=		cmake:outsource
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/plasma/generic/scriptengines/python
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's,$${PYTHON_SITE_PACKAGES_DIR},${PYTHONPREFIX_SITELIBDIR},g' \
 		${CMAKE_SOURCE_PATH}/CMakeLists.txt

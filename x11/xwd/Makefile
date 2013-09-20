@@ -16,4 +16,5 @@ PLIST_FILES=	bin/xwd
 
 MAN1=		xwd.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

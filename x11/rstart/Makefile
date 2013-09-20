@@ -12,4 +12,5 @@ USE_XORG=	x11
 
 MAN1=		rstart.1 rstartd.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

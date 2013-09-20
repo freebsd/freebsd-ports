@@ -16,4 +16,5 @@ PLIST_FILES=	bin/xrefresh
 
 MAN1=		xrefresh.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -46,6 +46,7 @@ XMOUN_DESC=	Add extra port graphics/xmountains
 XPLAN_DESC=	Add extra port astro/xplanet
 XSNOW_DESC=	Add extra port x11/xsnow
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKERBEROS}

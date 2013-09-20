@@ -25,6 +25,7 @@ MAN1=		xtrlock.1
 PLIST_FILES=	bin/xtrlock
 BINMODE=	4555
 
+NO_STAGE=	yes
 post-extract:
 	@${LN} -sf xtrlock.man ${WRKSRC}/xtrlock.1
 

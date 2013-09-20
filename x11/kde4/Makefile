@@ -39,6 +39,7 @@ KDETOYS_DESC=		Miscellaneous small applications
 KDEUTILS_DESC=		Set of generic utilities
 KDEWEBDEV_DESC=		Web development environment
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKDEACCESSIBILITY}

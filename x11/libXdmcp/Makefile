@@ -15,6 +15,7 @@ USE_XORG=	xproto:both
 
 CONFIGURE_ARGS+=--disable-docs --without-xmlto
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} '/^SUBDIRS/,/^$$/ \
 		s/doc//' ${WRKSRC}/Makefile.in

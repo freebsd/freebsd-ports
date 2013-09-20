@@ -18,4 +18,5 @@ PLIST_FILES=	bin/xkbcomp \
 
 MAN1=		xkbcomp.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

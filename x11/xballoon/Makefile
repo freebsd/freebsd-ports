@@ -1,9 +1,5 @@
-# New ports collection makefile for:   XBalloon
-# Date created:        3 March 1999
-# Whom:                Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
-#
+# Created by: Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	xballoon
 PORTVERSION=	1.0
@@ -20,6 +16,7 @@ ALL_TARGET=	xballoon
 MAN1=		xballoon.1
 PLIST_FILES=	bin/xballoon
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|$${LOCALBASE}|g ; \
 		 s|gcc |$${CC} |g ; \

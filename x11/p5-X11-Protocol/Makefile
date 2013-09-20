@@ -30,4 +30,5 @@ MAN3=		X11::Auth.3 \
 		X11::Protocol::Ext::XC_MISC.3 \
 		X11::Protocol::Ext::XFree86_Misc.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

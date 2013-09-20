@@ -33,6 +33,7 @@ GTK2_CONFIGURE_ON=	--with-gtk=gtk2
 GTK3_CONFIGURE_ON=	--with-gtk=gtk3
 ICONBROWSER_CONFIGURE_ENABLE=	icon-browser
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}

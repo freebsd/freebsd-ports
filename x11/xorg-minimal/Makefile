@@ -28,6 +28,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/intel_drv.so:${PORTSDIR}/x11
 RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/${VIDEO_DRIVER}_drv.so:${PORTSDIR}/x11-drivers/xf86-video-${VIDEO_DRIVER}
 .endif
 
+NO_STAGE=	yes
 do-install:
 
 pre-everything::

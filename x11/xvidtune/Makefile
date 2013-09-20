@@ -12,4 +12,5 @@ USE_XORG=	xxf86vm xt xaw
 
 MAN1=		xvidtune.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

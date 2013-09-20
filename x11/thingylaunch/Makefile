@@ -21,4 +21,5 @@ GH_COMMIT=	8acab93
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

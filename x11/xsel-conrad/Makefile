@@ -26,6 +26,7 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	ChangeLog README
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|jmp_buf|sigjmp_buf|g' ${WRKSRC}/xsel.c
 	@${REINPLACE_CMD} -e 's|@X_CFLAGS@|${CFLAGS}|;\

@@ -16,4 +16,5 @@ PLIST_FILES=	bin/xcmsdb
 
 MAN1=		xcmsdb.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

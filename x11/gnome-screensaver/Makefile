@@ -45,6 +45,7 @@ OPTIONS_DEFAULT=PAM KEYRING
 PAM_DESC=	Pluggable Authentication Module support
 KEYRING_DESC=	GnomeKeyring integration (needs PAM)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPAM}

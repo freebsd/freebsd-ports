@@ -14,4 +14,5 @@ CONFIGURE_ARGS+=	--without-xmlto --without-fop --disable-specs
 
 XORG_CAT=	doc
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

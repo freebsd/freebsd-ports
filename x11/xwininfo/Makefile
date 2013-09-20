@@ -15,4 +15,5 @@ PLIST_FILES=	bin/xwininfo
 
 MAN1=		xwininfo.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,14 +1,5 @@
 # Created by: Stijn Hoop <stijn@win.tue.nl>
 # $FreeBSD$
-#
-# For those wondering why this port is not under `x11-drivers' category,
-# please see PR ports/121930.
-#
-# Starting with version 1.0-7667, NVidia has dropped support for numerous
-# "legacy" GPUs.  Consult NVidia README (the Appendix) to find out whether
-# you need to use legacy driver version and install one of corresponding
-# `x11/nvidia-driver-71', `x11/nvidia-driver-96', `x11/nvidia-driver-173',
-# or `x11/nvidia-driver-304' slave ports.
 
 PORTNAME=	nvidia-driver
 DISTVERSION?=	319.32
@@ -88,6 +79,7 @@ OPTIONS_DEFINE+=	WBINVD
 WBINVD_DESC=		Flush CPU caches directly with WBINVD
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PLIST_SUB+=	LINUXBASE=${LINUXBASE} SHLIB_VERSION=${PORTVERSION} \

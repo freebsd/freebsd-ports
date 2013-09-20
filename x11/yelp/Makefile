@@ -31,6 +31,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	yelp.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Around the time GCC stack protection (aka Propolice) for userland

@@ -12,4 +12,5 @@ USE_XORG=	x11 xt xmu xaw
 
 MAN1=		editres.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

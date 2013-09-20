@@ -1,5 +1,4 @@
 # $FreeBSD$
-#
 
 PORTNAME=	keybinder
 PORTVERSION=	0.3.0
@@ -27,6 +26,7 @@ OPTIONS_DEFAULT=	PYTHON
 # Override LUA description
 LUA_DESC=	Lua bindings
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    terminal.app
-# Date created:         28 Aug 2006
-# Whom:                 gurkan@phys.ethz.ch
-#
+# Created by: gurkan@phys.ethz.ch
 # $FreeBSD$
-#
 
 PORTNAME=	terminal.app
 PORTVERSION=	0.9.8
@@ -23,4 +19,5 @@ USE_GNUSTEP_INSTALL=	yes
 
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

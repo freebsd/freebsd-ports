@@ -20,6 +20,7 @@ USE_GNOME=	vte
 
 MAN1=		evilvte.1 showvte.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000

@@ -20,6 +20,7 @@ PORTDOCS=	README
 PORTEXAMPLES=	dot.wmbutton
 PLIST_FILES=	bin/wmbutton
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:		xtermset
-# Date created:			21 August 1999
-# Whom:                 Dominik Rothert <dr@domix.de>
-#
+# Created by: Dominik Rothert <dr@domix.de>
 # $FreeBSD$
-#
 
 PORTNAME=	xtermset
 PORTVERSION=	0.5.2
@@ -22,6 +18,7 @@ MAN5=		terms.5
 
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/xtermset
 

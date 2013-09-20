@@ -14,4 +14,5 @@ NO_WRKSUBDIR=	YES
 PLIST_FILES=	bin/xtset
 MAN1=		xtset.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

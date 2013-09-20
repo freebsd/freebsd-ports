@@ -59,6 +59,7 @@ OPTIONS_DEFINE=	IPV6 KEYRING
 OPTIONS_DEFAULT=KEYRING
 KEYRING_DESC=	GnomeKeyring/PAM integration
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKEYRING}

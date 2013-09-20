@@ -22,6 +22,7 @@ CFFILES=	GiveConsole TakeConsole Xaccess Xreset Xresources \
 OPTIONS_DEFINE=	XDMSHELL
 XDMSHELL_DESC=	Install xdmshell
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXDMSHELL}

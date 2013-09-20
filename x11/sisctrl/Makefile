@@ -21,4 +21,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/sisctrl
 MAN1=		sisctrl.1x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

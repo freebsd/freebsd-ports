@@ -14,4 +14,5 @@ PLIST_FILES=	bin/xgamma
 
 MAN1=		xgamma.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

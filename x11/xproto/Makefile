@@ -12,4 +12,5 @@ XORG_CAT=	proto
 
 CONFIGURE_ARGS+=--disable-specs --without-fop --without-xmlto --without-xsltproc
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

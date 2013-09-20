@@ -23,6 +23,7 @@ USE_XORG=	xpm
 MAN1=		xcolorsel.1
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${ECHO_CMD} "*.file: ${LOCALBASE}/lib/X11/rgb.txt" >> ${WRKSRC}/Xcolorsel.ad
 	@${REINPLACE_CMD} -e 's|#include <malloc.h>||g' \

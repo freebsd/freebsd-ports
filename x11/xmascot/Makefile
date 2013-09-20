@@ -18,6 +18,7 @@ MAKE_ARGS=	MAKE="${MAKE_CMD}"
 MAN1=		xmascot.1
 
 # Unbreak parallel (-jX) builds: do not use unsafe MakeSubdirs() macro
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/MakeSubdirs(/Named&$$(IMAGELIB),/' \
 		${WRKSRC}/Imakefile

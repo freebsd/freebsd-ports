@@ -1,9 +1,5 @@
-# New ports collection makefile for:	RubyX11
-# Date created:		31 May 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	X11
 PORTVERSION=	0.5
@@ -23,6 +19,7 @@ NO_BUILD=	yes
 DOCS=		ChangeLog Documentation Overview TODO
 EXAMPLES=	tests/*
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${RUBY_SITELIBDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/* ${RUBY_SITELIBDIR}/${PORTNAME}/

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xidle
-# Date created:				2005-10-24
-# Whom:					Roman Bogorodskiy <novel@FreeBSD.org>
-#
+# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xidle
 PORTVERSION=	24102005
@@ -24,6 +20,7 @@ USE_XORG=	x11 xscrnsaver
 PLIST_FILES=	bin/xidle
 MAN1=		xidle.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

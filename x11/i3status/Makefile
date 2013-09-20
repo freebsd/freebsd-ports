@@ -22,6 +22,7 @@ PLIST_FILES=	bin/i3status \
 		etc/i3status.conf.sample
 MAN1=	i3status.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/i3status.c
 

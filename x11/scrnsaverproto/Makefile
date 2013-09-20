@@ -11,6 +11,7 @@ XORG_CAT=	proto
 
 CONFIGURE_ARGS+=--disable-specs --without-xmlto
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} '/^SUBDIRS/,/^$$/ \
 		s/specs//' ${WRKSRC}/Makefile.in

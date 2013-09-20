@@ -22,4 +22,5 @@ USE_XORG=	x11
 NO_INSTALL_MANPAGES=	yes
 PLIST_FILES=	bin/xskyroot
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

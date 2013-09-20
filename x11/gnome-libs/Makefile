@@ -36,6 +36,7 @@ MAN5=		gnome-mime.5
 
 DOCSDIR=	${PREFIX}/share/doc/gnomelibs
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/gnome-config.in ${WRKSRC}/libgnome/gnome-util.c

@@ -29,6 +29,7 @@ MAN3=	XTestCompareCurrentCursorWithWindow.3 \
 	XTestSetGContextOfGC.3 \
 	XTestSetVisualIDOfVisual.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} '/^SUBDIRS/,/^$$/ \
 		s/specs//' ${WRKSRC}/Makefile.in

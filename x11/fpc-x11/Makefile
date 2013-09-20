@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	X11
 X11_DESC=	Install X libraries
 OPTIONS_DEFAULT=	X11
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

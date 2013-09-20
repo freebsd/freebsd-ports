@@ -34,6 +34,7 @@ MAN1=		lxpanel.1 lxpanelctl.1
 
 PORTDOCS=	AUTHORS README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALSA}

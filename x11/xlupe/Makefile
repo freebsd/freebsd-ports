@@ -15,4 +15,5 @@ USE_XORG=	xaw
 
 PLIST_FILES=	bin/xlupe
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

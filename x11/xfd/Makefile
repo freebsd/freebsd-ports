@@ -18,4 +18,5 @@ USE_XORG=	xft xt xaw
 
 MAN1=		xfd.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -37,6 +37,7 @@ WCHAR_DESC=	Enable wide-character support
 
 OPTIONS_DEFAULT=WCHAR LUIT 256COLOR
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:M256COLOR}

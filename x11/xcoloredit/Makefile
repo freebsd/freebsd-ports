@@ -19,4 +19,5 @@ MANCOMPRESSED=	yes
 MAN1=		xcoloredit.1
 PLIST_FILES=	bin/xcoloredit
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

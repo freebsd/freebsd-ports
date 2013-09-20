@@ -18,6 +18,7 @@ USES=		imake
 USE_XORG=	x11 xkbfile
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 do-extract:
 		@${RM} -rf ${WRKDIR}
 		@${MKDIR} ${WRKDIR}

@@ -32,6 +32,7 @@ CONFIGURE_ENV=	LIBS="`pkg-config --libs libgnomeui-2.0`"
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-gconf --disable-pulse
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 LIB_DEPENDS+=	gdome.8:${PORTSDIR}/textproc/gdome2
 

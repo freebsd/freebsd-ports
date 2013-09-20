@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
 PLIST_FILES=	bin/apwal bin/apwal-editor
 
+NO_STAGE=	yes
 post-patch:
 	@${CP} ${FILESDIR}/group_member.c ${WRKSRC}
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \

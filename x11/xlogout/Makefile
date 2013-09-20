@@ -18,4 +18,5 @@ MAN1=		xlogout.1
 PLIST_FILES=	bin/xlogout \
 		lib/X11/app-defaults/XLogout
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

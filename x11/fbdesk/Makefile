@@ -26,6 +26,7 @@ GNU_CONFIGURE=	yes
 PORTDOCS=	ChangeLog INSTALL README
 PLIST_FILES=	bin/fbdesk
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMLIB2}

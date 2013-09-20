@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gnome2-lite
-# Date created:		30 November 2003
-# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11/gnome2-lite/Makefile,v 1.62 2009/11/26 20:39:06 marcus Exp $
-#
 
 PORTREVISION=	0
 CATEGORIES=	x11 gnome
@@ -37,4 +33,5 @@ CONFLICTS=	gnome2-[0-9]*
 DESCR=		${.CURDIR}/pkg-descr
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

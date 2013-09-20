@@ -1,9 +1,5 @@
-# New ports collection makefile for:	9menu
-# Date created:				Sun Aug 13 12:36:14 CDT 1995
-# Whom:					Eric L. Hernes <erich@rrnet.com>
-#
+# Created by: Eric L. Hernes <erich@rrnet.com>
 # $FreeBSD$
-#
 
 PORTNAME=	9menu
 PORTVERSION=	1.8
@@ -29,6 +25,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 PLIST_FILES=	bin/9menu
 MAN1=		9menu.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1

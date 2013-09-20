@@ -25,6 +25,7 @@ USE_XORG=	x11
 MAN1=		dmenu.1 stest.1
 PLIST_FILES=	bin/dmenu bin/dmenu_run bin/stest
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXINERAMA}

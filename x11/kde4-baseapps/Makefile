@@ -36,6 +36,7 @@ OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 KONSOLE_DESC=	Install Konsole terminal emulator
 KWRITE_DESC=	Install KWrite text editor
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKONSOLE}

@@ -27,6 +27,7 @@ INSTALL_TARGET=	site-install
 
 DOCS=		COPYING.LIB ChangeLog NEWS README
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${RUBY_MODEXAMPLESDIR}

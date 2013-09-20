@@ -12,4 +12,5 @@ XORG_CAT=	proto
 
 USE_XORG=	xt:both
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
