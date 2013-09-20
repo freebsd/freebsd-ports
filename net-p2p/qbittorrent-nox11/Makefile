@@ -15,4 +15,5 @@ MAN1=		qbittorrent-nox.1
 
 QB_NOX_SLAVE=	true
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

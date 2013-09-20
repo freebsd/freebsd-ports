@@ -1,9 +1,5 @@
-# New ports collection makefile for:	liberator
-# Date created:				Fri May 2 04:23:24 UTC 2003
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	liberator
 PORTVERSION=	2.0.2
@@ -28,6 +24,7 @@ LIB_FILES=      fcp.cma hlfi.cma asfi.cma fcp.cmxa hlfi.cmxa asfi.cmxa \
 		fcp.cmi hlfreenet.cmi asfreenet.cmi fieldset.cmi \
 		fstream.cmi
 
+NO_STAGE=	yes
 post-patch:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|; \
 		s|%%DATADIR%%|${DATADIR:S,^${PREFIX}/,,}|' \

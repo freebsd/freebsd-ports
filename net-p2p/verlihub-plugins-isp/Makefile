@@ -1,9 +1,5 @@
-# New ports collection makefile for:	verlihub-plugins-isp
-# Date created:				3 May 2007
-# Whom:					Skylord
-#
+# Created by: Skylord
 # $FreeBSD$
-#
 
 PORTNAME=	isp
 PORTVERSION=	1.1
@@ -16,6 +12,7 @@ PLUGIN_DESC=	ISP
 
 PLIST_FILES=	share/verlihub/default_pi_isp.sql
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/net-p2p/verlihub-plugins/Makefile.plugins"
 .include <bsd.port.post.mk>

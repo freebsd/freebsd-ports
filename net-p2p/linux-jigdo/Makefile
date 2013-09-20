@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  linux-jigdo
-# Date created:			  21 July 2002
-# Whom:				  Udo Schweigert
-#
+# Created by: Udo Schweigert
 # $FreeBSD$
-#
 
 PORTNAME=	jigdo
 PORTVERSION=	0.7.3
@@ -30,6 +25,7 @@ SCRIPTS=	jigdo-lite jigdo-mirror
 
 MAN1=		jigdo-file.1 jigdo-lite.1 jigdo-mirror.1
 
+NO_STAGE=	yes
 pre-install:
 	@${BRANDELF} -t Linux ${WRKSRC}/jigdo-file
 

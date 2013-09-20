@@ -48,6 +48,7 @@ OPTIONS_DEFAULT=	PLUGINS
 NOGUI_DESC=		Install retroshare-nogui (CLI binary)
 PLUGINS_DESC=	Install plugins (LinksCloud, VoIP)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPLUGINS}

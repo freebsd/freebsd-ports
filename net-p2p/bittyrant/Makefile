@@ -44,6 +44,7 @@ SUB_LIST=	JARFILE="${PORTNAME}.jar" \
 		LIBDIR="${LOCALBASE}/lib" \
 		SWTJAR="${JAVAJARDIR}/${SWT}.jar"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"

@@ -37,4 +37,5 @@ post-patch: general-patch
 post-install: general-install
 	@-update-desktop-database
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

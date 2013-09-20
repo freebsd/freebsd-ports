@@ -38,6 +38,7 @@ LDFLAGS+=	-L${BDB_LIB_DIR} -L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/${BINARY}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWXGTK}

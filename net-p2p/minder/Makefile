@@ -1,9 +1,5 @@
-# New ports collection makefile for:	minder
-# Date created:		Sun Jan 16 01:16:28 UTC 2005
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	minder
 PORTVERSION=	2.0.2
@@ -28,6 +24,7 @@ PLIST_FILES=	\
 		%%EXAMPLESDIR%%/minder.cfg \
 		bin/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 # CXX safeness
 # CXXFLAGS safeness

@@ -24,6 +24,7 @@ THREADS_DESC=	Enable support for pthreads
 OPENSSL_DESC=	Use OpenSSL for hashing
 HASHCHECK_DESC=	Verify file hashes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTHREADS}

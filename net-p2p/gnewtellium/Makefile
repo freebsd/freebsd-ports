@@ -1,7 +1,4 @@
-# New ports collection makefile for:	gnewtellium
-# Date created:				9 April 2002
-# Whom:					haikal
-#
+# Created by: haikal
 # $FreeBSD$
 
 PORTNAME=	gnewtellium
@@ -24,4 +21,5 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 PLIST_FILES=	bin/gnewtellium %%DATADIR%%/pixmaps/gnewtellium.xpm
 PLIST_DIRS=	%%DATADIR%%/pixmaps %%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

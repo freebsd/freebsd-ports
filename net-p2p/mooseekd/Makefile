@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mooseekd
-# Date created:				2006-07-24
-# Whom:					Roman Bogorodskiy <novel@FreeBSD.org>
-#
+# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mooseekd
 PORTVERSION=	0.05
@@ -25,4 +21,5 @@ CXXFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 USE_FAM=	yes
 USES=		iconv
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

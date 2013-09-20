@@ -1,9 +1,4 @@
-# New ports collection makefile for:	squall
-# Date created:		5 Apr 2004
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	squall
 PORTVERSION=	0.1.20040808
@@ -18,6 +13,7 @@ HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 STRIP=		# Keep empty for debugging.
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/squall/squall ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/squallhub/squallhub ${PREFIX}/sbin

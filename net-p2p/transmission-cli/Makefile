@@ -25,6 +25,7 @@ CONFLICTS_INSTALL=	${PORTNAME}${PKGNAMESUFFIX}-2.5*
 
 OPTIONS_DEFINE=	LITE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${SLAVEPORT} != web

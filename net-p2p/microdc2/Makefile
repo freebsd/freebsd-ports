@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 USES=		iconv
 USE_GNOME=	libxml2
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

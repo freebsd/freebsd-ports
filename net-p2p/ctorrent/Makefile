@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ctorrent
-# Date created:				Jan 17 2004
-# Whom:					Florent Thoumie <flz@xbsd.org>
-#
+# Created by: Florent Thoumie <flz@xbsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ctorrent
 PORTVERSION=	3.3.2
@@ -22,6 +18,7 @@ PLIST_FILES=	bin/ctorrent
 
 PORTDOCS=	README-DNH.TXT UserGuide
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

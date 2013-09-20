@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--with-berkeley-db="${BDB_INCLUDE_DIR}:${BDB_LIB_DIR}"
 
 PLIST_FILES=	bin/cDonkey
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-ldb|-l${BDB_LIB_NAME}|' ${WRKSRC}/configure

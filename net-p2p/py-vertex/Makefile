@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-vertex
-# Date created:				19 May 2006
-# Whom:					Alexander Botero-Lowry <alex@foxybanana.com>
-#
+# Created by: Alexander Botero-Lowry <alex@foxybanana.com>
 # $FreeBSD$
-#
 
 PORTNAME=	vertex
 PORTVERSION=	0.3.0
@@ -27,4 +23,5 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Vertex
 USE_TWISTED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

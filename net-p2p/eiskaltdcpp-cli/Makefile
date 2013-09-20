@@ -25,6 +25,7 @@ USE_PERL5=	run
 MAN1=	${PORTNAME}.1
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_SCRIPT} "${WRKSRC}/${PORTNAME}/cli.pl" "${PREFIX}/bin/eiskaltdcpp-cli"
 	@${INSTALL_MAN} "${WRKSRC}/${PORTNAME}/eiskaltdcpp-cli.1" "${PREFIX}/man/man1/"

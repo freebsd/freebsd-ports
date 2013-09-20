@@ -32,6 +32,7 @@ MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWARNINGS}

@@ -20,6 +20,7 @@ SHEBANG_FILES=	${BINARY_NAME}
 
 BINARY_NAME=	mlurlslave
 
+NO_STAGE=	yes
 post-extract:
 	@${GREP} '^#' ${WRKSRC}/${BINARY_NAME} | ${GREP} -v '/usr/bin/perl' > ${WRKDIR}/README
 

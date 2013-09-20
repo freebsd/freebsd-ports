@@ -1,9 +1,5 @@
-# New ports collection makefile for:	opennap
-# Date created:			26 July 2000
-# Whom:				Donald Burr <dburr@FreeBSD.ORG>
-#
+# Created by: Donald Burr <dburr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	opennap
 PORTVERSION=	0.44
@@ -19,6 +15,7 @@ GNU_CONFIGURE=	YES
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-install:
 	(${ECHO_CMD} "" ; ${ECHO_CMD} "admin" ; ${ECHO_CMD} "opennap" ; ${ECHO_CMD} "") | ${WRKSRC}/setup
 .if defined(NOPORTDOCS)

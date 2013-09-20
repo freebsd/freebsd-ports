@@ -10,4 +10,5 @@ COMMENT=	A OCAML/GTK GUI for the MLdonkey peer-to-peer network client
 
 MASTERDIR=	${.CURDIR}/../mldonkey
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

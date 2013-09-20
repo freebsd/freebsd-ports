@@ -26,6 +26,7 @@ CONFIGURE_ARGS =	--with-extractor=${LOCALBASE} \
 
 MAN1=	gnunet-fs-gtk.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

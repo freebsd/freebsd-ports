@@ -1,5 +1,4 @@
 # Created by: Sverrir Valgeirsson <e96sv@yahoo.se> and 
-#             Amar Takhar <verm@drunkmonk.net> et al
 # $FreeBSD$
 
 PORTNAME=	dclib
@@ -22,6 +21,7 @@ USE_GNOME=	libxml2
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1000015

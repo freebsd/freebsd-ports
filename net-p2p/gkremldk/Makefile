@@ -24,6 +24,7 @@ USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|^(LFLAGS).*|\1 = ${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib|' \

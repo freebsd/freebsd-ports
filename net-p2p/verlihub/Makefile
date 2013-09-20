@@ -28,6 +28,7 @@ USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 SUB_FILES+=	pkg-message
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|for libpath in /|for libpath in ${PREFIX} /|g' ${WRKSRC}/config_geoip
 

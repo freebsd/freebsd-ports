@@ -28,6 +28,7 @@ OPTIONS_DEFAULT=	BDB NLS
 GUI_DESC=		Build the gtk2 gui
 BDB_DESC=		Build with Berkeley DB support (for jigdo-file cache)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUI}

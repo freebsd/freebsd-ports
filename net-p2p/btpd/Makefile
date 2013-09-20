@@ -24,6 +24,7 @@ MAN1=		btcli.1 \
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

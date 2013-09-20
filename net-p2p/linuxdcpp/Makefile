@@ -26,4 +26,5 @@ SCONS_BUILDENV=	${SCONS_ENV}
 SCONS_ARGS=	debug=1
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

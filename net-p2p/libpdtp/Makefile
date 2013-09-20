@@ -1,9 +1,4 @@
-# New ports collection makefile for:	libpdtp
-# Date created:		5 Apr 2004
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libpdtp
 PORTVERSION=	0.1.20040808
@@ -19,6 +14,7 @@ HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CFLAGS+=	-fpic
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pdtp ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/libpdtp.* ${PREFIX}/lib

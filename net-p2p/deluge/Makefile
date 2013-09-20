@@ -38,6 +38,7 @@ MAN1=		deluge.1 deluge-console.1 deluge-gtk.1 deluge-web.1 deluged.1
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # things that happen when PREFIX differs from LOCALBASE

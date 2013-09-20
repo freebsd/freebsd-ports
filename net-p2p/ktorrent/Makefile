@@ -30,6 +30,7 @@ PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} \
 
 CMAKE_ARGS+=	-DENABLE_KIO_MAGNET=1
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,ktorrent,$${LIBKTORRENT_LIBRARIES},' \
 		${WRKSRC}/plugins/ipfilter/tests/CMakeLists.txt

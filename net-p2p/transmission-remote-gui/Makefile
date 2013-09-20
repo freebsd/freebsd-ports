@@ -1,4 +1,4 @@
-# Created by:	Alonso Cardenas Marquez <acm@FreeBSD.org>
+# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	transmission-remote-gui
@@ -40,6 +40,7 @@ QT4_DESC=		Use qt4 interface
 
 OPTIONS_DEFAULT=	GTK2
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGTK2}

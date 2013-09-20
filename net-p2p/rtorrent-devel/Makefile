@@ -1,4 +1,3 @@
-# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	rtorrent-devel
@@ -30,6 +29,7 @@ OPTIONS_DEFINE=	XMLRPC IPV6 DOCS
 OPTIONS_DEFAULT=	XMLRPC IPV6
 XMLRPC_DESC=	Compile with xmlrpc-c support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"

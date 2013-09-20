@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libbt
-# Date created:				Feb 26 2004
-# Whom:					Florent Thoumie <flz@xbsd.org>
-#
+# Created by: Florent Thoumie <flz@xbsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libbt
 PORTVERSION=	1.05
@@ -23,6 +19,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	protocol-ext.txt protocol.txt
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

@@ -24,4 +24,5 @@ SHLIB_VER=	5.0.1
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} \
 		SHLIB_SHVER=${SHLIB_VER:R:R}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

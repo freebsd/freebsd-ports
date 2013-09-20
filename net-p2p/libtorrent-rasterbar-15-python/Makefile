@@ -20,6 +20,7 @@ PYDISTUTILS_PKGNAME=	python_libtorrent
 
 NOPORTDOCS=	yes
 
+NO_STAGE=	yes
 slave-post-patch:
 	@${REINPLACE_CMD} -E -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/bindings/python/setup.py.in

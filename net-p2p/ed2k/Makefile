@@ -31,6 +31,7 @@ LDLIBS+=	-lmd
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
 MAKE_ENV+=	LDLIBS="${LDLIBS}"
 
+NO_STAGE=	yes
 post-extract:
 	${CP} -p ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} ${WRKSRC}/
 
