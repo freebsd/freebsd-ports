@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-mailparse
-# Date created:			  09 January 2003
-# Whom:				  Thierry Thomas (<thierry@pompo.net>)
-#
+# Created by: Thierry Thomas (<thierry@pompo.net>)
 # $FreeBSD$
-#
 
 PORTNAME=	mailparse
 PORTVERSION=	2.1.6
@@ -22,4 +18,5 @@ USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	mailparse
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

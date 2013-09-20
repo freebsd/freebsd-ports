@@ -27,6 +27,7 @@ OPTIONS_DEFAULT=	MSMTPQ OPENSSL
 GSASL_DESC=	GSASL support
 MSMTPQ_DESC=	Install offline messaging scripts
 
+NO_STAGE=	yes
 .include       <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}

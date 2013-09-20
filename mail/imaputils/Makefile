@@ -19,6 +19,7 @@ SHEBANG_FILES=	bin/*
 
 OPTIONS_DEFINE=	SSL UNICODE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}

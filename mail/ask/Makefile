@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ask
-# Date created:				2 November 2005
-# Whom:					Marcelo Araujo <araujobsd@gmail.com>
-#
+# Created by: Marcelo Araujo <araujobsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ask
 PORTVERSION=	2.5.3
@@ -22,6 +18,7 @@ MAN1=		askfilter.1 asksenders.1 asksetup.1
 SUB_FILES=	pkg-message
 PORTDOCS=	*
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -E \
 		-e "s,/usr/share/ask/templates,${EXAMPLESDIR},g" \

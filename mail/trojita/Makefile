@@ -22,6 +22,7 @@ HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 NO_INSTALL_MANPAGES=	yes
 
+NO_STAGE=	yes
 do-configure:
 	cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX} \
 		CONFIG+="release disable_tests" ${PORTNAME}.pro

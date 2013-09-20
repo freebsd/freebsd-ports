@@ -14,6 +14,7 @@ PLIST_FILES=	bin/ppf_mime bin/ppf_mime_decrypt \
 		libexec/ppf_decrypt libexec/ppf_encrypt libexec/ppf_mime \
 		libexec/ppf_mime_decrypt libexec/ppf_sign libexec/ppf_verify
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 RUN_DEPENDS=	alpine:${PORTSDIR}/mail/alpine

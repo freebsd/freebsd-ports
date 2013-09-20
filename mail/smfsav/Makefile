@@ -27,6 +27,7 @@ PORTDOCS=	CHANGES README
 PLIST_FILES=	sbin/smfsav \
 		etc/smfsav.conf-dist
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

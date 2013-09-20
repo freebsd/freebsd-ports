@@ -37,6 +37,7 @@ USE_OPENSSL=	yes
 MAN8=	rspamd.8
 MAN1=	rspamc.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGPERF}

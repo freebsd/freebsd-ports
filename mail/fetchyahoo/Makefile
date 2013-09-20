@@ -26,6 +26,7 @@ PORTDOCS=	COPYING ChangeLog Credits INSTALL TODO index.html
 NO_BUILD=	yes
 USES=		perl5
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/fetchyahoo ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1

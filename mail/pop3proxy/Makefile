@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pop3proxy
-# Date created:		11.05.04
-# Whom:			Martin Blapp
-#
+# Created by: Martin Blapp
 # $FreeBSD$
-#
 
 PORTNAME=	pop3proxy
 PORTVERSION=	1.2
@@ -21,6 +17,7 @@ USE_RC_SUBR=	pop3proxyd
 
 SAMPLE_EXT=	sample
 
+NO_STAGE=	yes
 post-install:
 	if [ ! -f ${PREFIX}/etc/pop3proxyd.conf ]; then \
 		${INSTALL} -c ${WRKSRC}/pop3proxyd.conf ${PREFIX}/etc/pop3proxyd.conf ; \

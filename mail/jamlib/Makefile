@@ -1,9 +1,5 @@
-# Ports collection makefile for:	jamlib
-# Date created:		14 November 2002
-# Whom:			CyrilM <cyrilm@tower.pp.ru>
-#
+# Created by: CyrilM <cyrilm@tower.pp.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	jamlib
 PORTVERSION=	1.4.7
@@ -47,4 +43,5 @@ MAN3=	JAM_AddEmptyMessage.3 \
 	JAM_WriteMBHeader.3 \
 	jamlib.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

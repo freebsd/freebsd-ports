@@ -1,7 +1,4 @@
-# New ports collection makefile for:		squirrelmail-plugins
-# Date created:		02 Jan 2008
-# Whom:		Gerrit Beine <gerrit.beine@gmx.de>
-#
+# Created by: Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD$
 
 PORTNAME=		squirrelmail-plugins
@@ -58,6 +55,7 @@ VLOGIN_DESC=	Multi-site-hosting capabilities plugin
 WEBSRCH_DESC=	Web search engines plugin
 WETTER_DESC=	Weather in Germany plugin
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSIEVE}

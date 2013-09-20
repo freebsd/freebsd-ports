@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	mbox2imap
-# Date created:				25 September 2008
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	mbox2imap
 PORTVERSION=	1.0
@@ -22,6 +18,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 post-extract:
 	${CP} ${DISTDIR}/${PORTNAME} ${WRKDIR}
 

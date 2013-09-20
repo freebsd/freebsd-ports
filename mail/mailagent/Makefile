@@ -30,6 +30,7 @@ MAN1=		edusers.1 mailagent.1 package.1 mailhelp.1
 MLINKS=		mailhelp.1 maildist.1  mailhelp.1 mailpatch.1 \
 		mailhelp.1 maillist.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} > 900006
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-utmpx-agent_pl_utmp_utmp.pl \

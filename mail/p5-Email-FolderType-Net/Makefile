@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mail/p5-Email-FolderType-Net
-# Date created:				30 December 2004
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Email-FolderType-Net
 PORTVERSION=	1.04.1
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=	Email::FolderType::Net.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

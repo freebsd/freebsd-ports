@@ -29,6 +29,7 @@ MAN5=		opendmarc.conf.5
 MAN8=		opendmarc-check.8 opendmarc-expire.8 opendmarc-import.8 \
 		opendmarc-params.8 opendmarc-reports.8 opendmarc.8
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${PREFIX}/etc/mail
 	${INSTALL_DATA} \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Data-Validate-Email
-# Date created:		2009-01-07
-# Whom:			Murilo Opsfelder <mopsfelder@gmail.com>
-#
+# Created by: Murilo Opsfelder <mopsfelder@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Validate-Email
 PORTVERSION=	0.04
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		Data::Validate::Email.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

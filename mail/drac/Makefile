@@ -1,9 +1,5 @@
-# New ports collection makefile for:	drac
-# Date created:			07 January 2001
-# Whom:				Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	drac
 PORTVERSION=	1.12
@@ -33,6 +29,7 @@ MAN3=		dracauth.3
 MAN1=		rpc.dracd.1
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 MAKE_ARGS+=	-DWITH_TI_RPC

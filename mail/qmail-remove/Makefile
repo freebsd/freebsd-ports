@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qmail-remove
-# Date created:				Wed Sep 24 16:01:34 CEST 2003
-# Whom:					Clement Laforet <sheepkiller@cultdeadsheep.org>
-#
+# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qmail-remove
 PORTVERSION=	0.95
@@ -16,6 +12,7 @@ COMMENT=	Removes messages from your qmail queue based on a particular string
 PLIST_FILES=	sbin/qmail-remove bin/populate.pl
 PORTDOCS=	INSTALL LICENSE README
 
+NO_STAGE=	yes
 do-build:
 	@(cd ${WRKSRC} ;\
 	${ECHO_MSG} "Compiling ${PORTNAME}:" ; \

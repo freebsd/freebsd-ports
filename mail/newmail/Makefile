@@ -15,4 +15,5 @@ MAN1=		newmail.1
 MANCOMPRESSED=	maybe
 PLIST_FILES=	bin/newmail
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

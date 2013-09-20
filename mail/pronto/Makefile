@@ -1,7 +1,4 @@
-# New ports collection makefile for:	pronto
-# Date created:		15 March 2001
-# Whom:			killer	<killer@prosalg.no>
-#
+# Created by: killer	<killer@prosalg.no>
 # $FreeBSD$
 
 PORTNAME=	pronto
@@ -33,6 +30,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
 	's,/usr/local,${PREFIX},g' ${WRKSRC}/Makefile

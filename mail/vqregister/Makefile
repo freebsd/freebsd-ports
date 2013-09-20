@@ -1,9 +1,5 @@
-# New ports collection makefile for:  vqregister
-# Date created:        2003-11-15
-# Whom:                Dan Caescu <daniel@freebsd.ro>
-#
+# Created by: Dan Caescu <daniel@freebsd.ro>
 # $FreeBSD$
-#
 
 PORTNAME=	vqregister
 PORTVERSION=	2.6
@@ -26,6 +22,7 @@ MAKE_ENV=	VDIR=${VPOPMAIL_DIR} WWWDIR=${WWWDIR}
 DOCS=		CONFIG CONTRIBUTORS FORM HISTORY TEMPLATE
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}

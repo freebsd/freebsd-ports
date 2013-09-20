@@ -1,9 +1,5 @@
-# New ports collection makefile for:	synonym
-# Date created:				2005/11/16
-# Whom:					Norikatsu Shigemura <n-shigemura@ensure.jp>
-#
+# Created by: Norikatsu Shigemura <n-shigemura@ensure.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	synonym
 PORTVERSION=	0.4.3
@@ -36,6 +32,7 @@ SYNONYMGRP?=	daemon
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 post-extract:
 		@${RM} ${WRKSRC}/*.o
 

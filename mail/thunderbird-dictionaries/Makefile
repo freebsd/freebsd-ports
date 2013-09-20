@@ -19,6 +19,7 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/dictionaries
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.options"
 
 .include <bsd.port.options.mk>

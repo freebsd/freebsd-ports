@@ -1,4 +1,3 @@
-# Created by: pgollucci@p6m7g8.com
 # $FreeBSD$
 
 PORTNAME=	Clamd
@@ -25,6 +24,7 @@ PLIST_FILES=	%%SITE_PERL%%/Clamd.pm \
 
 PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Clamd
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/Makefile.PL
 

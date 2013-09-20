@@ -1,9 +1,5 @@
-# New ports collection makefile for:   pop3lite
-# Date created:        1 January 2001
-# Whom:                George Reid <greid@ukug.uk.freebsd.org>
-#
+# Created by: George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pop3lite
 PORTVERSION=	0.2.4a
@@ -26,6 +22,7 @@ MAN5=		pop3lite.conf.5
 MAN8=		pop3lite.8
 INFO=		pop3lite-admin
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/configure

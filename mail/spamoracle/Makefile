@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SpamOracle
-# Date created:				Mon Sep 9 18:31:45 UTC 2002
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	spamoracle
 PORTVERSION=	1.4
@@ -24,6 +20,7 @@ PLIST_FILES=	bin/spamoracle
 PORTDOCS=	Changes README
 .endif
 
+NO_STAGE=	yes
 do-configure:
 	@${REINPLACE_CMD} -E -e 's|^(CPP=)gcc[[:space:]]+-E|\1${CPP}|' \
 		-e 's|^(MANDIR=).*$$|\1${MANPREFIX}/man|' \

@@ -1,16 +1,5 @@
-# New ports collection makefile for:    spamprobe
-# Whom:                                 Matthew N. Dodd <mdodd@FreeBSD.org>
-# Date created:                         05 September 2002
-#
+# Created by: Matthew N. Dodd <mdodd@FreeBSD.org>
 # $FreeBSD$
-#
-# Available options for this port:
-# WITHOUT_PBL   - disable support for PBL database storage
-# WITHOUT_BDB   - disable support for BDB database storage
-# WITHOUT_GIF   - disable analysis of image attachments using giflib
-# WITHOUT_PNG   - disable analysis of image attachments using libpng
-# WITHOUT_JPEG  - disable analysis of image attachments using libjpeg
-#
 
 PORTNAME=	spamprobe
 PORTVERSION=	1.4d
@@ -70,4 +59,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

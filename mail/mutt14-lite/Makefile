@@ -1,9 +1,5 @@
-# Ports collection makefile for:	mutt-lite
-# Date created:				Thu May 19, 2005
-# Whom:				Jose M Rodriguez <josemi@freebsd.jazztel.es>
-#
+# Created by: Jose M Rodriguez <josemi@freebsd.jazztel.es>
 # $FreeBSD$
-#
 
 # Just to get a mutt-lite pkg on pkg cluster
 
@@ -15,4 +11,5 @@ CONFLICTS=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-[0-9]* mutt-devel-[0-9]* mut
 
 MUTT_LITE=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

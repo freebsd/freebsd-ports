@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dovecot-sieve
-# Date created:		2006-12-29
-# Whom:			Nils Vogels <nivo+kw+ports.bfa274@is-root.com>
-#
+# Created by: Nils Vogels <nivo+kw+ports.bfa274@is-root.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dovecot-sieve
 PORTVERSION=	${DOVECOTVERSION}+${DISTVERSION}
@@ -38,6 +34,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/-/\//}
 PORTDOCS=	AUTHORS COPYING COPYING.LGPL INSTALL NEWS README TODO spamtest-virustest.txt
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '\
 		s!/doc/$${PACKAGE_TARNAME}!/doc/${PORTNAME:S/-/\//}!g;\

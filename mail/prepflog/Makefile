@@ -1,9 +1,5 @@
-# New ports collection makefile for:   prepflog
-# Date created:        14 January 2008
-# Whom:                Terry Sposato
-#
+# Created by: Terry Sposato
 # $FreeBSD$
-#
 
 PORTNAME=	prepflog
 PORTVERSION=	0.4
@@ -19,6 +15,7 @@ PLIST_FILES=	bin/prepflog
 NO_BUILD=	yes
 USES=		perl5
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
 

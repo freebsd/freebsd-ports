@@ -15,6 +15,7 @@ USE_PERL5=	configure
 
 MAN3=		Mail::Sender.3
 
+NO_STAGE=	yes
 post-patch:
 .if defined(BATCH)
 	@${REINPLACE_CMD}  -e 's/res = <STDIN>;/res = "N";/' ${WRKSRC}/Config.PL

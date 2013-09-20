@@ -28,6 +28,7 @@ SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
 		JAMES_HOME=${APP_HOME} \
 		JAMES_VERSION=${PORTVERSION:S/.//g}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-patch:

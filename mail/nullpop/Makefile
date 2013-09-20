@@ -17,4 +17,5 @@ CONFIGURE_ARGS+=--libexecdir="${PREFIX}/bin"
 PLIST_FILES=	bin/nullpop
 MAN8=		nullpop.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

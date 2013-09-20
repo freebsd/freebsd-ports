@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Althea
-# Date created:		Feb 26, 2001
-# Whom:			Mikhail Teterin <mi@aldan.algebra.com>
-#
+# Created by: Mikhail Teterin <mi@aldan.algebra.com>
 # $FreeBSD$
-#
 
 PORTNAME=	althea
 PORTVERSION=	0.5.7
@@ -21,6 +17,7 @@ MAKE_ENV=	MKDIR="${MKDIR}"
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 USE_GNOME=	gtk12
 
+NO_STAGE=	yes
 post-patch:
 .for file in Documentation/help.html load_config.h save_config.h
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/${file}

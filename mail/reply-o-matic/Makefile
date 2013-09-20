@@ -1,9 +1,5 @@
-# New ports collection makefile for:   qdvdauthor
-# Date created:        05/13/04
-# Whom:                oz@nixil.net
-#
+# Created by: oz@nixil.net
 # $FreeBSD$
-#
 
 PORTNAME=	reply-o-matic
 PORTVERSION=	1.5.0
@@ -15,6 +11,7 @@ COMMENT=	Highly configurable, secure, auto reply software
 
 MAN1=		rom.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|/etc/rom|${PREFIX}/etc/rom|g'       \

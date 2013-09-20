@@ -30,4 +30,5 @@ MAN1=			answer.1 checkalias.1 elm.1 elmalias.1 fastmail.1 \
 			printmail.1 readmsg.1 mmencode.1
 MLINKS=			frm.1 nfrm.1 newmail.1 wnewmail.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

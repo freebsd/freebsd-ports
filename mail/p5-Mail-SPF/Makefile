@@ -40,6 +40,7 @@ MAN3=		Mail::SPF.3 Mail::SPF::Mech::PTR.3 Mail::SPF::Mech.3 \
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 DOCSDIR=	${PREFIX}/share/doc/p5-Mail-SPF

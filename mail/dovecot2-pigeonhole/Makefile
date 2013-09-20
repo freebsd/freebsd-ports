@@ -31,6 +31,7 @@ MAN1=		sieve-dump.1 sieve-filter.1 sieve-test.1 sievec.1 sieved.1
 MAN7=		pigeonhole.7
 PORTDOCS=	doc/extensions/* doc/plugins/* doc/rfc/*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

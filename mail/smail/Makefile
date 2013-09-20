@@ -45,6 +45,7 @@ CYRUS22_DESC=	Use mail/cyrus-imapd22 as local transport
 CYRUS23_DESC=	Use mail/cyrus-imapd23 as local transport
 REPLACE_CONF_DESC=	Replace /etc/mail/mailer.conf
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MCYRUS22}

@@ -15,6 +15,7 @@ MAN8=		pathalias.8
 BIN8=		pathalias
 PLIST_FILES=	bin/pathalias
 
+NO_STAGE=	yes
 do-install:
 .for i in ${BIN8}
 	@${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin

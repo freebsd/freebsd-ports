@@ -22,4 +22,5 @@ MAN3=		Mail::RBL.3
 
 FILES=		Makefile.PL RBL.pm
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

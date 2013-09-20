@@ -44,6 +44,7 @@ GTKSPELL_DESC=	Spell checking support
 GTKSV_DESC=	GtkSourceview support
 GPG_DESC=	GnuPG support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGPG}

@@ -35,6 +35,7 @@ GROUPS=		aox
 
 JAM?=		${LOCALBASE}/bin/jam
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

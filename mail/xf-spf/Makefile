@@ -23,6 +23,7 @@ PLIST_SUB=	QMAIL_PREFIX=${QMAIL_PREFIX}
 
 PORTDOCS=	README TODO CHANGELOG COPYRIGHT
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

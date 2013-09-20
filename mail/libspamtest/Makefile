@@ -1,7 +1,4 @@
-# New ports collection makefile for:    libspamtest
-# Date created:				Fri 24 Jul 2009
-# Whom:					Alexey V. Degtyarev
-#
+# Created by: Alexey V. Degtyarev
 # $FreeBSD$
 
 PORTNAME=	libspamtest
@@ -20,6 +17,7 @@ LIBS=		libspamtest.a \
 INCLUDES=	spamtest.h \
 		msgstore.h
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/ap-mailfilter3/lib ${PREFIX}/ap-mailfilter3/include
 	${INSTALL_DATA} ${LIBS:S,^,${WRKSRC}/,} ${PREFIX}/ap-mailfilter3/lib

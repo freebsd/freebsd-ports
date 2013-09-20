@@ -21,6 +21,7 @@ USE_PHP=	yes
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}
 .for f in class.phpmailer.php class.pop3.php class.smtp.php composer.json

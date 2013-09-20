@@ -18,6 +18,7 @@ ALL_TARGET=	bulk_mailer
 
 MAN1=		bulk_mailer.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

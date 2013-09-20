@@ -20,6 +20,7 @@ SAMPLEFILES=	README noattach.patterns noattach.patterns.johncon
 CONFIGURE_ARGS+=	--enable-ldap
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"

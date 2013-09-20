@@ -44,6 +44,7 @@ DAEMON_MAP_DESC=	Daemon Map support
 GDBM_DESC=		GDBM database
 POSIX_REGEX_DESC=	Native regex support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}

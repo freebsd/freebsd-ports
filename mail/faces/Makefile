@@ -25,6 +25,7 @@ MLINKS=		compface.1 uncompface.1 \
 		compface.3 uncompface.3
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MX11}

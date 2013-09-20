@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ftrack
-# Date created:         Thu Dec 21 14:20:49 MSK 2000
-# Whom:                 Sergey Samoyloff <gonza@techline.ru>
-#
+# Created by: Sergey Samoyloff <gonza@techline.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	ftrack
 PORTVERSION=	3.1
@@ -28,6 +24,7 @@ USES=		perl5
 
 PORTDOCS=	ftrack.faq readme report.err
 
+NO_STAGE=	yes
 pre-patch:
 	${REINPLACE_CMD} -e "s@-I../../hpp -I../../.. -O3@-Ihpp -I${LOCALBASE}/include ${CFLAGS}@g; \
 			s@../../src/@src/@g; \

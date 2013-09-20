@@ -21,4 +21,5 @@ MAN8=		nbsmtp.8
 
 PLIST_FILES=	bin/nbsmtp
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

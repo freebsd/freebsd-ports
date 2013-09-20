@@ -33,6 +33,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	Changes FAQ README
 PORTEXAMPLES=	popread proc2ma
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/var/spool/mail|/var/mail|g' \
 		${WRKSRC}/lib/Mail/Audit.pm

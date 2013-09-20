@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mobilecube
-# Date created:				Wed 24 Mar 2010
-# Whom:					Alexey V. Degtyarev <alexey@renatasystems.org>
-#
+# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mobilecube
 PORTVERSION=	${THEME_VERSION}.${THEME_BUILD}
@@ -34,6 +30,7 @@ x-generate-plist: build
 	${FIND} . -type d | ${SORT} -r | ${SED} \
 		-e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
 		-e "s,^\.,@dirrm %%WWWDIR%%," >>${.CURDIR}/pkg-plist.tmp
+NO_STAGE=	yes
 post-patch:
 	${FIND} ${WRKSRC} -type f -name '*.orig' -or -name '.DS_Store' -delete
 

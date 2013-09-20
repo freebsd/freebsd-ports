@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mail/p5-Email-Folder-IMAP
-# Date created:				30 December 2004
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Email-Folder-IMAP
 PORTVERSION=	1.10.2
@@ -26,4 +22,5 @@ USE_PERL5=	configure
 
 MAN3=	Email::Folder::IMAP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

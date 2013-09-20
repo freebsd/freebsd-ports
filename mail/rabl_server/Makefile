@@ -22,6 +22,7 @@ USE_RC_SUBR=	${PORTNAME}
 
 RABL_GROUP?=	bind
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

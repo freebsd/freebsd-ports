@@ -93,6 +93,7 @@ CONFIGURE_ARGS+=	\
 		--log-details syslog --debug no \
 		--batch
 
+NO_STAGE=	yes
 pre-configure:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "----------------------------------------"

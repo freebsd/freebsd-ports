@@ -70,6 +70,7 @@ PLIST_SUB+=	DCCUSER="${DCCUSER}"
 #
 CONFIGURE_ARGS=	--with-uid=${DCCUSER} --bindir=${PREFIX}/bin --mandir=${MANPREFIX}/man --with-configsuffix=.sample
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 SUB_FILES=		pkg-install pkg-message

@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}
 
 PLIST_FILES=	bin/smtp-cli
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

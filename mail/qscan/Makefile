@@ -18,6 +18,7 @@ USES=		qmail:run
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 QMAIL_QUEUE=	${QMAIL_PREFIX}/bin/qmail-queue

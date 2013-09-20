@@ -17,6 +17,7 @@ MAKE_JOBS_UNSAFE=	yes
 MAN1=		biffopt.1
 MAN8=		biffer.8 biffer_comsat.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900007

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mail/p5-URI-imaps
-# Date created:				30 December 2004
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	URI-imaps
 PORTVERSION=	1.02
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=	URI::imaps.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

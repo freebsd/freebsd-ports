@@ -31,6 +31,7 @@ MBOXINDICES_DESC=	Save Mbox indices
 DRAC_DESC=		DRAC RFC for POP-before-SMTP relaying
 FIX_PERLAUTH_DESC=	Only try it if perl-auth coredumps
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # MySQL authentication

@@ -27,6 +27,7 @@ USE_PERL5=	run
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUNICODE}

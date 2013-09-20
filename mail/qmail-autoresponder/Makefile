@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qmail-autoresponder
-# Date created:		25 Mar 2003
-# Whom:			Sergei Kolobov <sergei@kolobov.com>
-#
+# Created by: Sergei Kolobov <sergei@kolobov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qmail-autoresponder
 PORTVERSION=	0.97
@@ -27,6 +23,7 @@ DOCS=		NEWS README TODO procedure.txt schema.mysql
 
 ALL_TARGET=	${PROGS}
 
+NO_STAGE=	yes
 do-configure:
 	${ECHO_CMD} "${PREFIX}/bin"		> ${WRKSRC}/conf-bin
 	${ECHO_CMD} "${MANPREFIX}/man"		> ${WRKSRC}/conf-man

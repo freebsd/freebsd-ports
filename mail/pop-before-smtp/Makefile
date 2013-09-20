@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pop-before-smtp
-# Date created:				March 7, 2003
-# Whom:					Eric W. Bates
-#
+# Created by: Eric W. Bates
 # $FreeBSD$
-#
 
 PORTNAME=	pop-before-smtp
 PORTVERSION=	1.42
@@ -26,6 +22,7 @@ SUB_LIST=	PERL=${PERL}
 
 MAN8=		${PORTNAME}.8
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|^#!/usr/bin/perl|#!${PERL}|; \
 		s|/etc/postfix/pop-before-smtp|${PREFIX}/etc/postfix/pop-before-smtp|g;' \

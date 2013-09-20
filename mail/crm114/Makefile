@@ -45,6 +45,7 @@ CRM_FILES=	mailfilter.crm mailfilter.cf mailreaver.crm mailtrainer.crm \
 
 OPTIONS_DEFINE=	PGO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPGO}

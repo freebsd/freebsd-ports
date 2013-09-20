@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pop3vscan
-# Date created:				01 June 2003
-# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pop3vscan
 PORTVERSION=	0.4
@@ -27,6 +23,7 @@ PLIST_FILES=	etc/pop3vscan.conf.sample \
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/ripmime/ripmime.a
 

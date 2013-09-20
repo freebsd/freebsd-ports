@@ -21,6 +21,7 @@ PLIST_FILES=	bin/spamstats.pl
 USES=		shebangfix perl5
 SHEBANG_FILES=	${PORTNAME}${PORTVERSION}.pl
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|mail.log|maillog|g' \
 		${WRKSRC}/${PORTNAME}${PORTVERSION}.pl

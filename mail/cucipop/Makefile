@@ -27,6 +27,7 @@ COMMENT=	Cubic Circle's POP3 daemon (fully RFC1939 compliant)
 MAN8=		cucipop.8 #makevpopdb.8
 PLIST_FILES=	libexec/cucipop
 
+NO_STAGE=	yes
 post-install:
 	@${ECHO_CMD} "@exec mkdir -p /var/spool/cucipop/bulletins" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir /var/spool/cucipop/bulletins 2>/dev/null || true" >> ${TMPPLIST}

@@ -62,6 +62,7 @@ BDC_DESC=		Install BitDefender
 
 OPTIONS_DEFAULT=	SPAMASSASSIN CLAMAV
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSPAMASSASSIN}

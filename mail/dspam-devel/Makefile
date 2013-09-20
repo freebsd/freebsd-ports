@@ -125,6 +125,7 @@ DSPAM_HOME_OWNER?=	${DSPAM_OWNER}
 DSPAM_HOME_GROUP?=	${DSPAM_GROUP}
 DSPAM_HOME_MODE?=	0770
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--sysconfdir=${DSPAM_ETC}

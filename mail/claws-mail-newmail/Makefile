@@ -8,5 +8,6 @@ COMMENT=	Message header summary logging plugin for Claws Mail
 
 CLAWS_PLUGINS_BUILD=	newmail
 
+NO_STAGE=	yes
 .include "../claws-mail/Makefile.claws"
 .include <bsd.port.mk>

@@ -21,6 +21,7 @@ USES=		gmake perl5 shebangfix
 USE_PERL5=	configure
 SHEBANG_FILES=	ezmlm-web.cgi
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|local/share|share|' \
 		-e 's|$$SHAREDIR/www-data|${WWWDIR}|' \

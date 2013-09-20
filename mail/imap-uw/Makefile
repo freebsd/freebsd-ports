@@ -40,6 +40,7 @@ SSL_AND_PLAINTEXT_DESC=	Allow plain text passwords and SSL
 DRAC_DESC=		Dynamically open MTA for relaying
 NETSCAPE_BRAIN_DAMAGE_DESC=	See Makefile for documentation
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDRAC}

@@ -24,4 +24,5 @@ MAN3=		Email::Simple.3 \
 		Email::Simple::Creator.3 \
 		Email::Simple::Header.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

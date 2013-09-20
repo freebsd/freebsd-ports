@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-Mail-Alias
-# Date created:        07 July 2004
-# Whom:                snowchyld
-#
+# Created by: snowchyld
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-Alias
 PORTVERSION=	1.12
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Mail::Alias.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

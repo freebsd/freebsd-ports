@@ -25,4 +25,5 @@ USE_PYTHON=	2.6-2.9
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	${PYPORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

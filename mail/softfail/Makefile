@@ -34,6 +34,7 @@ QMAIL_SLAVEPORT=	spamcontrol
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 crontab-entry: extract

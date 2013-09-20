@@ -18,6 +18,7 @@ PLIST_FILES=	sbin/spampd
 USES=		perl5
 USE_RC_SUBR=	spampd
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/spampd ${PREFIX}/sbin
 

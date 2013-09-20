@@ -36,6 +36,7 @@ MAN1=	sqlgrey.1
 OPTIONS_DEFINE=	PGSQL MYSQL SQLITE STATS DOCS
 STATS_DESC=	Depend on Date::Calc for logstats.pl script
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-CGP-CLI
-# Date created:	   01 Jun 2010
-# Whom:		   Alexander Kriventsov <avk@vl.ru>
-#
+# Created by: Alexander Kriventsov <avk@vl.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	CGP-CLI
 PORTVERSION=	2.7.5
@@ -20,4 +16,5 @@ USE_PERL5=	configure
 
 MAN3=	CGP::CLI.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

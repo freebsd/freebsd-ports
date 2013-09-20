@@ -1,9 +1,5 @@
-# Ports collection makefile for:	smtptrapd
-# Date created:				19 March 2005
-# Whom:					Anders Nordby <anders@FreeBSD.org>
-#
+# Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	smtptrapd
 PORTVERSION=	1.6
@@ -19,6 +15,7 @@ USE_RC_SUBR=	smtptrapd
 
 PLIST_FILES=	bin/smtptrapd
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -o smtptrapd smtptrapd.c
 

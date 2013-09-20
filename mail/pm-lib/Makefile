@@ -20,6 +20,7 @@ NO_BUILD=	yes
 PORTDOCS=	*
 PORTDATA=	*
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/pm-*.rc ${DATADIR}

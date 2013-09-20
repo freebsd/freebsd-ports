@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-zope.sendmail
-# Date created:				Nov 15, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	zope.sendmail
 PORTVERSION=	3.7.5
@@ -28,4 +23,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}transaction>=0:${PORTSDIR}/devel/py-transact
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

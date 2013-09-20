@@ -25,6 +25,7 @@ PORTDOCS=	FEATURES FEATURES.j FYI FYI.j INSTALL INSTALL.j \
 		RELEASE.NOTE SIGNAL SIGNAL.j TODO smtpfeed.html
 PLIST_FILES=	libexec/smtpfeed
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

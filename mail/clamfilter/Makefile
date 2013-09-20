@@ -1,9 +1,5 @@
-# New ports collection makefile for:    clamfilter
-# Date created:        11 Feb 2005
-# Whom:                SeaD
-#
+# Created by: SeaD
 # $FreeBSD$
-#
 
 # Anyone upgrading this port is advised to check all changes since the
 # previous tarball; I have updated MASTER_SITES to an alternative
@@ -29,6 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/clamdscan:${PORTSDIR}/security/clamav
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/clamfilter
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

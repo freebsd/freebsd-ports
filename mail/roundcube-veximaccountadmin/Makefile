@@ -30,6 +30,7 @@ x-generate-plist: build
 		-e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
 		-e "s,^\.,@dirrm %%WWWDIR%%," >>${.CURDIR}/pkg-plist.tmp
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO} "Installing in ${WWWDIR}"
 	${MKDIR} ${WWWDIR}

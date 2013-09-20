@@ -37,6 +37,7 @@ OPTIONS_DEFINE=	BOOST DOXYGEN
 OPTIONS_DEFAULT=	BOOST
 BOOST_DESC=	Enable libmapi++ (needs boost)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--disable-swig-perl

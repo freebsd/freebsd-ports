@@ -14,6 +14,7 @@ RUN_DEPENDS=	mrtg:${PORTSDIR}/net-mgmt/mrtg
 
 USES=		qmail
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

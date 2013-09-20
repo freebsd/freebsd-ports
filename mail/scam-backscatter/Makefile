@@ -24,6 +24,7 @@ ALLDOMAINS_DESC=	Verify any domain with the backend
 EHLO_DESC=		Use EHLO instead of HELO in SMTP session
 USEMAILERTABLE_DESC=	Use mailertable to map domains to backends
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 

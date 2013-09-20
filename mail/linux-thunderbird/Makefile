@@ -15,5 +15,6 @@ REPLACE_GRE=	yes
 
 USE_LINUX_APPS=	dbusglib dbuslibs alsalib alsa-plugins-oss
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../www/linux-seamonkey/Makefile.common"
 .include <bsd.port.mk>

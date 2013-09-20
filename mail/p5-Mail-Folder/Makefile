@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Mail-Folder
-# Date created:				October 24th 1996
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-Folder
 PORTVERSION=	0.07
@@ -27,6 +23,7 @@ USE_PERL5=	configure
 MAN3=		Mail::Folder.3 Mail::Folder::Emaul.3 Mail::Folder::Mbox.3 \
 		Mail::Folder::NNTP.3 Mail::Folder::Maildir.3
 
+NO_STAGE=	yes
 post-configure:
 	@${PERL} -pi -e 's/^FULLEXT.*/FULLEXT=Mail\/Folder/' \
 		${WRKSRC}/Makefile

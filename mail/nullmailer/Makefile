@@ -45,6 +45,7 @@ MAN8=	nullmailer-queue.8 nullmailer-send.8
 
 OPTIONS_DEFINE=	GNUTLS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}

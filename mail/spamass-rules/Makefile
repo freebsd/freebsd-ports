@@ -64,6 +64,7 @@ SPAMASS_FILES=
 USE_BZIP2=	yes
 INSTALL_DIR=	${PREFIX}/${SPAMASS_CONF}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAHBL}

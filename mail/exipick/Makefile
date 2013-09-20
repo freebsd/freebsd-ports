@@ -1,9 +1,5 @@
-# New ports collection makefile for:	exipick
-# Date created:				29 Sep 2004
-# Whom:					Vsevolod Stakhov <vsevolod@highsecure.ru>
-#
+# Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	exipick
 PORTVERSION=	20100323.0
@@ -20,6 +16,7 @@ PLIST_FILES=	bin/${PORTNAME}
 USES=		perl5
 USE_PERL5=	run
 
+NO_STAGE=	yes
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKSRC}

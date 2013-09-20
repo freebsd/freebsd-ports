@@ -1,9 +1,5 @@
-# New ports collection makefile for: autorespond
-# Date created:		24 Jan 2000
-# Whom:			Neil Blakey-Milner <nbm@FreeBSD.org>
-#
+# Created by: Neil Blakey-Milner <nbm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	autorespond
 PORTVERSION=	2.0.5
@@ -25,6 +21,7 @@ AR_MANPAGE=	${WRKSRC}/autorespond.1
 AR_MANPAGE=	${FILESDIR}/autorespond.1
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	${ECHO_CMD} "${CC} ${STRIP}" > ${WRKSRC}/conf-ld

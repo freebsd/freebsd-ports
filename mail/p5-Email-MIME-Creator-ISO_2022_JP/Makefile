@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Email::MIME::Creator::ISO_2022_JP
-# Date created:		19 Nov 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Email-MIME-Creator-ISO_2022_JP
 PORTVERSION=	0.02
@@ -26,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=	Email::MIME::Creator::ISO_2022_JP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

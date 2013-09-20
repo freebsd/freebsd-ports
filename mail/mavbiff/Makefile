@@ -1,9 +1,5 @@
-# New ports collection makefile for:   mavbiff
-# Date created:        25 December 2001
-# Whom:                Edwin Groothuis (edwin@mavetju.org)
-#
+# Created by: Edwin Groothuis (edwin@mavetju.org)
 # $FreeBSD$
-#
 
 PORTNAME=	mavbiff
 PORTVERSION=	1.2
@@ -19,6 +15,7 @@ USES=		perl5
 
 MAN1=		mavbiff.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|__GTK_CONFIG__|${GTK_CONFIG}|; \
 		s|__INSTALL_DATA__|${INSTALL_DATA}|; \

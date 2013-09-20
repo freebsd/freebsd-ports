@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dovecot-managesieve
-# Date created:		2008-07-05
-# Whom:			Geoffroy Desvernay <dgeo@ec-marseille.fr>
-#
+# Created by: Geoffroy Desvernay <dgeo@ec-marseille.fr>
 # $FreeBSD$
-#
 
 PORTNAME=	dovecot-managesieve
 PORTVERSION=	0.11.13
@@ -26,4 +22,5 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-dovecot=`${MAKE} -C ${PORTSDIR}/mail/dovecot -V WRKSRC` \
 		--with-dovecot-sieve=`${MAKE} -C ${PORTSDIR}/mail/dovecot-sieve -V WRKSRC`
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

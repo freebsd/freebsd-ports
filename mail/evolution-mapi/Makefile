@@ -1,10 +1,6 @@
-# New ports collection makefile for:	evolution-mapi
-# Date created:				24 Mar, 2009
-# Whom:					Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/mail/evolution-mapi/Makefile,v 1.23 2010/11/16 09:58:56 kwm Exp $
-#
 
 PORTNAME=	evolution-mapi
 PORTVERSION=	0.32.2
@@ -35,6 +31,7 @@ EVO_VERSION=	2.32
 EDS_VERSION=	1.2
 PLIST_SUB=	EVO_VERSION=${EVO_VERSION} EDS_VERSION=${EDS_VERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

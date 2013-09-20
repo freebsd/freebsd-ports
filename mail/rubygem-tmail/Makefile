@@ -1,7 +1,4 @@
-# New ports collection makefile for:	Ruby-TMail
-# Date created:		22 Aug 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
 
 PORTNAME=	tmail
@@ -17,4 +14,5 @@ USE_RUBYGEMS=	yes
 USE_RUBY_FEATURES=	racc-runtime
 RUBYGEM_AUTOPLIST=  yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

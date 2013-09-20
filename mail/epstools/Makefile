@@ -1,7 +1,4 @@
-# New ports collection makefile for:   epstools
-# Date created:                 21 Jul 2005
-# Whom:				ismail@enderunix.org
-#
+# Created by: ismail@enderunix.org
 # $FreeBSD$
 
 PORTNAME=	epstools
@@ -23,6 +20,7 @@ SUB_FILES=	pkg-message
 EXAMPLE_FILES=	addr.1 addr.2 addr.3 addr.4 email.1 email.2 virus.email
 INSTALL_FILES=	address b64decode b64encode body fold full headers qpdecode rewrite
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC =|CC \?=|' \
 			  -e 's|^DEFS =|DEFS \?=|' \

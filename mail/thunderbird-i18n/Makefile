@@ -23,6 +23,7 @@ USE_THUNDERBIRD=	yes
 USE_XPI=	thunderbird linux-thunderbird
 USE_SUBMAKE=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.option"
 .include <bsd.port.pre.mk>
 

@@ -17,6 +17,7 @@ RUN_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
 USES=		perl5
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/generateproc.pl ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/mail2procmail.pl ${PREFIX}/bin/mail2procmail

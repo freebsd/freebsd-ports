@@ -19,6 +19,7 @@ MAKE_ARGS=	prefix=${PREFIX} imlibdir=${ETCDIR}
 CONFIGURE_ARGS+=	--enable-rpop
 .endif
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

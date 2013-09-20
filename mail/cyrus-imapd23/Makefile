@@ -58,6 +58,7 @@ REPLICATION_DESC=	Enable replication
 SNMP_5_DESC=		Enable SNMP support
 SQLITE_DESC=		Enable SQLite backend (experimental)
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Autocreate Inbox and Autosieve patches from UoA

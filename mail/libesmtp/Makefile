@@ -1,7 +1,4 @@
-# New ports collection makefile for:    libesmtp
-# Date created:         Sun Feb 21 2001
-# Whom:                 tobez@tobez.org
-#
+# Created by: tobez@tobez.org
 # $FreeBSD$
 
 PORTNAME=	libesmtp
@@ -32,6 +29,7 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	libgmail
-# Date created:				Sep 27, 2005
-# Whom:					Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
-#
+# Created by: Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	libgmail
 DISTVERSION=	0.1.11
@@ -20,4 +16,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

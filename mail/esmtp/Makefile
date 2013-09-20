@@ -29,6 +29,7 @@ SUB_FILES=	pkg-message
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 post-patch:
 .for file in ${PORTNAME}.1
 	@${REINPLACE_CMD} -e \

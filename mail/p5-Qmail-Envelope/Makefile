@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Qmail-Envelope
-# Date created:				1 November 2004
-# Whom:	      				Peter Pentchev <roam@FreeBSD.org>
-#
+# Created by: Peter Pentchev <roam@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Qmail-Envelope
 PORTVERSION=	0.53
@@ -20,4 +16,5 @@ USE_PERL5=	configure
 
 MAN3=		Qmail::Envelope.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

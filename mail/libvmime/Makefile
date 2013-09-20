@@ -31,6 +31,7 @@ CONFIGURE_ENV+=	EXTRA_CFLAGS="${CFLAGS}" EXTRA_CXXFLAGS="${CXXFLAGS}" \
 
 DOCSDIR=	${PREFIX}/share/doc/vmime
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

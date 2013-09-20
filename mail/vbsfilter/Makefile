@@ -21,6 +21,7 @@ LIBS+=		${PTHREAD_LIBS}
 LIBS+=		-lmilter
 CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"

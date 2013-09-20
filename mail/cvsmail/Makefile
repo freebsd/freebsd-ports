@@ -16,6 +16,7 @@ MANCOMPRESSED=	no
 MAN1=		cvsmail.1
 PLIST_FILES=	bin/cvsmail
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cvsmail ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/cvsmail.1 ${PREFIX}/man/man1

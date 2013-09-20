@@ -22,4 +22,5 @@ MAN3=		Email::LocalDelivery.3 \
 		Email::LocalDelivery::Maildir.3 \
 		Email::LocalDelivery::Mbox.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

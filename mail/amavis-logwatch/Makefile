@@ -1,9 +1,5 @@
-# New ports collection makefile for:	amavis-logwatch
-# Date created:				2011-11-01
-# Whom:					Masaki TAGAWA <masaki@club.kyutech.ac.jp>
-#
+# Created by: Masaki TAGAWA <masaki@club.kyutech.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	amavis-logwatch
 PORTVERSION=	1.51.02
@@ -26,6 +22,7 @@ USES=		perl5
 USE_PERL5=	run
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@cd ${WRKSRC} && ${REINPLACE_CMD} -e '\
 		s!/usr/local/etc!${ETCDIR}! \

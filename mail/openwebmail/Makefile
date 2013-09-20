@@ -44,6 +44,7 @@ VIRUSCHECK_ALL_DESC=	Virus check for all (default: pop3)
 WGET_DESC=	wget
 ZLIB_DESC=	ZLib
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # WITH_SPEEDYCGI needs suidperl enabled under perl 5.8.4 or above,

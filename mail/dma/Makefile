@@ -1,8 +1,5 @@
 # Created by: Daniel Roethlisberger <daniel@roe.ch>
 # $FreeBSD$
-#
-# Based on a tarball from https://github.com/corecode/dma/tarball/<version>
-# rather than from Dragonfly.
 
 PORTNAME=		dma
 PORTVERSION=		v0.9
@@ -36,6 +33,7 @@ SUB_FILES=	pkg-message
 # Allow subports to extend.
 CONFFILES+=	dma.conf auth.conf
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900000

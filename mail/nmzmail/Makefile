@@ -18,6 +18,7 @@ USE_GMAKE=	yes
 PLIST_FILES=	bin/nmzmail
 PORTDOCS=	README	NEWS
 
+NO_STAGE=	yes
 pre-extract:
 .if !defined(MAX_MAIL_DIRS)
 	@ ${ECHO_MSG} "You can define MAX_MAIL_DIRS=n."

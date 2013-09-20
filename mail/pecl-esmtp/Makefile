@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	RE2C
 OPTIONS_DEFAULT=	RE2C
 RE2C_DESC=	Use re2c to regenerate PHP parsers
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRE2C}

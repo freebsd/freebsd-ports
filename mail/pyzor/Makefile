@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	pyzor
-# Date created:			Aug 1, 2002
-# Whom:                 	ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	pyzor
 PORTVERSION=	0.5.0
@@ -21,6 +16,7 @@ USE_PYDISTUTILS=	yes
 
 MAN1=		pyzor.1 pyzord.1
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '1s,^#!/usr/bin/python,#!/usr/bin/env -S python -Wignore::DeprecationWarning,' \
 	${WRKSRC}/scripts/pyzor ${WRKSRC}/scripts/pyzord

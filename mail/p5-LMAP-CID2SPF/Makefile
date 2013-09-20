@@ -1,9 +1,5 @@
-# New ports collection makefile for:	LMAP-CID2SPF
-# Date Created:				2006-11-03
-# Whom:					Shaun Amott <shaun@FreeBSD.org>
-#
+# Created by: Shaun Amott <shaun@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	LMAP-CID2SPF
 DISTVERSION=	0.9
@@ -23,6 +19,7 @@ CONFIGURE_SCRIPT=Makefile.PL
 PLIST_FILES+=	bin/cid2spf %%SITE_PERL%%/LMAP/CID2SPF.pm
 PLIST_FILES+=	"@unexec rmdir %D/%%SITE_PERL%%/LMAP 2>/dev/null || true"
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${SITE_PERL}/LMAP
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} cid2spf ${PREFIX}/bin

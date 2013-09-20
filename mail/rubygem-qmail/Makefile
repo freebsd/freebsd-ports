@@ -1,9 +1,5 @@
-# Ports collection makefile for:	rubygem-qmail
-# Date created:				01 Feb 2011
-# Whom:					Glen Barber <gjb@FreeBSD.org>
-#
+# Created by: Glen Barber <gjb@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ruby-qmail
 PORTVERSION=	0.1.1
@@ -19,4 +15,5 @@ USE_RUBY=		yes
 USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

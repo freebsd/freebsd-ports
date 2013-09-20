@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gensig
-# Date created:		6 August 1999
-# Whom:			arensb@ooblick.com
-#
+# Created by: arensb@ooblick.com
 # $FreeBSD$
-#
 
 PORTNAME=	gensig
 PORTVERSION=	2.3
@@ -19,4 +15,5 @@ GNU_CONFIGURE=	yes
 
 MAN1=		gensig.1 cattag.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

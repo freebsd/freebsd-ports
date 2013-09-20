@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ilohamail-devel
-# Date created:		3 April 2007
-# Whom:			craig001@lerwick.hopto.org
-#
+# Created by: craig001@lerwick.hopto.org
 # $FreeBSD$
-#
 
 PORTNAME=	ilohamail-devel
 PORTVERSION=	0.9.20050415
@@ -35,6 +31,7 @@ PLIST_SUB+=	ILOHADIR="${ILOHADIR:S,^${PREFIX}/,,}"
 SUB_FILES+=	pkg-message
 SUB_LIST+=	ILOHADIR=${ILOHADIR}
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "  define WITHOUT_MYSQL: not to use MySQL back-end"

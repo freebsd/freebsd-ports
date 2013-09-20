@@ -15,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=	MIME::Explode.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

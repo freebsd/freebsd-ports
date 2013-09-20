@@ -45,6 +45,7 @@ MILTER_DESC=		Build libmilter
 MILTER_SHARED_DESC=	Build shared libmilter
 MILTER_POOL_DESC=	Enable milter thread pools
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSHMEM} && !defined(BUILDING_INDEX)

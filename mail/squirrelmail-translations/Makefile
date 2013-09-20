@@ -1,7 +1,5 @@
-# Whom: 				Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=		squirrelmail-translations
 PORTVERSION=	1.4.18	# Translations updated less often than SM
@@ -26,6 +24,7 @@ NO_BUILD=		yes
 SQUIRRELDIR?=	${PREFIX}/www/squirrelmail
 PLIST_SUB=		SQUIRRELDIR="${SQUIRRELDIR:S,^${PREFIX}/,,}"
 
+NO_STAGE=	yes
 post-patch:
 # The en_US help files are included with the main tarball
 	@${RM} -r ${WRKSRC}/help/en_US

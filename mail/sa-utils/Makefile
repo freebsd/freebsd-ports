@@ -24,6 +24,7 @@ PERIODIC_DAILY=	etc/periodic/daily
 PLIST_FILES=	${PERIODIC_DAILY}/sa-utils
 PLIST_DIRS=	${PERIODIC_DAILY} ${PERIODIC_DAILY:H}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSACOMPILE}

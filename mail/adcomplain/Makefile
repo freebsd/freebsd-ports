@@ -20,6 +20,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/adcomplain
 
+NO_STAGE=	yes
 post-patch:
 	cd ${WRKSRC}; \
 	${CP} adcomplain.pl adcomplain.pl.old; \

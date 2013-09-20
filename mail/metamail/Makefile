@@ -29,6 +29,7 @@ MAN1=		audiocompose.1 audiosend.1 extcompose.1 \
 		showpicture.1 splitmail.1
 MAN4=		mailcap.4
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

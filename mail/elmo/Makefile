@@ -36,6 +36,7 @@ OPTIONS_SUB=	yes
 .if exists(${LOCALBASE}/lib/libgpgme.so) || defined(WITH_GPGME)
 LIB_DEPENDS+=	gpgme.19:${PORTSDIR}/security/gpgme
 .else
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_CMD}
 	@${ECHO_CMD} "Define WITH_GPGME=yes to build with gpgme support."

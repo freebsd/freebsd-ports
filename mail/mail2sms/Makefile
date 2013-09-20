@@ -20,6 +20,7 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	README REGEX example.conf
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -27,4 +27,5 @@ MAN3=	Email::Send.3 \
 	Email::Send::Sendmail.3 \
 	Email::Send::Test.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

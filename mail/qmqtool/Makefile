@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qmqtool
-# Date created:				Sat Apr 9 09:45:30 EDT 2005
-# Whom:					Matthew Will <mwill@spingen.com>
-#
+# Created by: Matthew Will <mwill@spingen.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qmqtool
 PORTVERSION=	1.12
@@ -20,6 +16,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 USES=		perl5
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/qmqtool ${PREFIX}/bin
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-IMAP-Sieve
-# Date created:				25 Apr 2003
-# Whom:				Oliver Eikemeier <eikemeier@fillmore-labs.com>
-#
+# Created by: Oliver Eikemeier <eikemeier@fillmore-labs.com>
 # $FreeBSD$
-#
 
 PORTNAME=	IMAP-Sieve
 PORTVERSION=	0.4.9
@@ -26,6 +22,7 @@ USE_PERL5=	configure
 PERLSIEVENAME=	perlsieve-${PORTVERSION}
 PERLSIEVESUFX=	b
 
+NO_STAGE=	yes
 post-extract:
 	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${WRKDIR}/${DISTNAME}/${PERLSIEVENAME}${PERLSIEVESUFX}${EXTRACT_SUFX} \

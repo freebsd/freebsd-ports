@@ -1,7 +1,4 @@
-## New ports collection makefile for:	kshowmail
-# Date created:			Sat Oct 18 14:01:21 CEST 2003
-# Whom:				Markus Brueffer <brueffer@phoenix-systems.de>
-#
+# Created by: Markus Brueffer <brueffer@phoenix-systems.de>
 # $FreeBSD$
 
 PORTNAME=	kshowmail
@@ -21,4 +18,5 @@ USE_QT4=	corelib dbus gui network svg xml \
 USE_PERL5=	build
 USES=		cmake gettext perl5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

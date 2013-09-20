@@ -19,6 +19,7 @@ CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}
 PLIST_FILES=	sbin/rbl-milter
 
 .if defined(NO_WERROR)
+NO_STAGE=	yes
 pre-configure:
 	@${CP} ${WRKSRC}/configure ${WRKSRC}/configure.sed
 	@${SED} 's!-Werror!!' ${WRKSRC}/configure.sed >${WRKSRC}/configure

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gld
-# Date created:				15 Jul 2004
-# Whom:					Blaz Zupan <blaz@si.FreeBSD.org>
-#
+# Created by: Blaz Zupan <blaz@si.FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gld
 PORTVERSION=	1.8
@@ -26,6 +22,7 @@ OPTIONS_DEFINE=	LOCAL_DB_SERVER
 OPTIONS_DEFAULT=	MYSQL
 LOCAL_DB_SERVER_DESC=	RUN_DEPEND also on selected DB server
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

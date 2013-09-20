@@ -27,6 +27,7 @@ YOUBINBINDIR=	${PREFIX}
 YOUBINBINDIR=	${LOCALBASE}
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-extract:

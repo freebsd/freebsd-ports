@@ -55,6 +55,7 @@ OPTIONS_DEFAULT=LDAP CANBERRA
 CANBERRA_DESC=	Canberra theme audio plugin
 SPAMASSASSIN_DESC=	SpamAssassin spam filtering
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAP}

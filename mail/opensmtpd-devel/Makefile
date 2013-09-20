@@ -39,6 +39,7 @@ MAN5=		smtpd.conf.5 aliases.5 forward.5
 USERS=		_smtpd _smtpq
 GROUPS=		_smtpd
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_OPENSSL=	yes

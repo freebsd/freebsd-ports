@@ -18,6 +18,7 @@ LATEST_LINK=	pear-${PORTNAME}
 OPTIONS_DEFINE=	PEAR_NET_SMTP
 PEAR_NET_SMTP_DESC=	PEAR::Net_SMTP support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPEAR_NET_SMTP}

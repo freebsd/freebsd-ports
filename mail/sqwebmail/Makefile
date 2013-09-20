@@ -28,6 +28,7 @@ MIMETYPES_DESC=	search for a mime.types file
 SENTRENAME_DESC=	Periodic rename the Sent folder
 CHARSET_DESC=	charsets
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.opt"
 
 CGIBINDIR?=	www/cgi-bin-dist

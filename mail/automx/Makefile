@@ -26,6 +26,7 @@ MAN5=		${PORTNAME}.conf.5 ${PORTNAME}_ldap.5 ${PORTNAME}_sql.5
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

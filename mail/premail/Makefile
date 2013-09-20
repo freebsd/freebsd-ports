@@ -18,6 +18,7 @@ NO_BUILD=	yes
 USES=		shebangfix perl5
 SHEBANG_FILES=	premail
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} premail ${PREFIX}/bin
 	${MKDIR} -m 555 ${PREFIX}/share/doc/premail

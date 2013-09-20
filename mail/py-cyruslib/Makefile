@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-cyruslib
-# Date created:		2006-10-31
-# Whom:			Dmitriy Kirhlarov <dimma@higis.ru>
-#
+# Created by: Dmitriy Kirhlarov <dimma@higis.ru>
 # $FreeBSD$
-#
 
 PORTNAME=		cyruslib
 PORTVERSION=		0.5
@@ -23,6 +19,7 @@ BINMODE=		644
 
 PLIST_FILES=		%%PYTHON_SITELIBDIR%%/${DISTNAME}
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${CP} ${DISTDIR}/${DISTNAME} ${WRKDIR}/${DISTNAME}

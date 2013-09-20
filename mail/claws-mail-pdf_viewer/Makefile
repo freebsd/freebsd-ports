@@ -12,5 +12,6 @@ USE_GHOSTSCRIPT=yes
 
 CLAWS_PLUGINS_BUILD=	pdf_viewer
 
+NO_STAGE=	yes
 .include "../claws-mail/Makefile.claws"
 .include <bsd.port.mk>

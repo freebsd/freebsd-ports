@@ -50,6 +50,7 @@ STATS_DESC=		Setup statistics tools
 
 MAKE_ARGS+=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.options"
 .include <bsd.port.options.mk>
 

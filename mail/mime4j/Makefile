@@ -27,6 +27,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/apache-${PORTNAME}-core.jar \
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/apache-${PORTNAME}-core-${PORTVERSION}.jar \
 		${JAVAJARDIR}/apache-${PORTNAME}-core.jar

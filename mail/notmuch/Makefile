@@ -32,4 +32,5 @@ MAN5=		notmuch-hooks.5
 MAN7=		notmuch-search-terms.7
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

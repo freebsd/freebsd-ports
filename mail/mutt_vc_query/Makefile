@@ -21,6 +21,7 @@ MAN1=		mutt_vc_query.1
 PORTDOCS=	*
 PLIST_FILES=	bin/mutt_vc_query
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

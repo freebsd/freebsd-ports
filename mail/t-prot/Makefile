@@ -1,9 +1,5 @@
-# New ports collection makefile for:	t-prot
-# Date created:		2004-10-03
-# Whom:			Sergei Kolobov <sergei@FreeBSD.org>
-#
+# Created by: Sergei Kolobov <sergei@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	t-prot
 PORTVERSION=	2.101
@@ -23,6 +19,7 @@ NO_BUILD=	yes
 MAN1=		t-prot.1
 DOCS=		ChangeLog README TODO
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/t-prot ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/t-prot.1 ${MAN1PREFIX}/man/man1

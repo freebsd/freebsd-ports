@@ -17,4 +17,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 FETCH_ARGS=	-Fpr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

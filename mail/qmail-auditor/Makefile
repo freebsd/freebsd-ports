@@ -24,6 +24,7 @@ PORTDOCS=	README
 
 INSTALL_TARGET=	perm
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

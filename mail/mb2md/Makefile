@@ -25,6 +25,7 @@ SHEBANG_FILES=	mb2md
 
 PLIST_FILES=	bin/mb2md
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 

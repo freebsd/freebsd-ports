@@ -13,6 +13,7 @@ OPTIONS_DEFINE=	AWL FREEMAIL
 AWL_DESC=	Auto WhiteList support
 FREEMAIL_DESC=	Disable FreeMail support
 
+NO_STAGE=	yes
 post-patch-script:
 	if [ -n "${PORT_OPTIONS:MAWL}" ]; then ${REINPLACE_CMD} -e '/AWL/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v310.pre ; fi
 	if [ -n "${PORT_OPTIONS:MFREEMAIL}" ]; then ${REINPLACE_CMD} -e '/FreeMail/s/^loadplugin/#loadplugin/' ${WRKSRC}/rules/v330.pre ; fi

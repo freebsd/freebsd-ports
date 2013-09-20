@@ -27,6 +27,7 @@ BZIP2_DESC=	bzip2 compressed mbox support
 GZIP_CONFIGURE_ENABLE=	gzip-mbox
 BZIP2_CONFIGURE_ENABLE=	bzip-mbox
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Do not hardcode make(1) binary name and fix atomicity to allow -jX builds

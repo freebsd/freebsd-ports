@@ -41,6 +41,7 @@ MAKE_ARGS+=	mandir=${MANPREFIX}/man
 
 PORTDOCS=	AUTHORS BUGS INSTALL THANKS UPGRADING
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

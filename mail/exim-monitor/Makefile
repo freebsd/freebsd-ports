@@ -1,9 +1,5 @@
-# New ports collection makefile for:	exim-monitor
-# Date created:		27 August 2001
-# Whom:			sheldonh@FreeBSD.org
-#
+# Created by: sheldonh@FreeBSD.org
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-monitor
 
@@ -19,4 +15,5 @@ EXIMON_ONLY=	yes
 #
 #RUN_DEPENDS=	${LOCALBASE}/sbin/exim:${PORTSDIR}/mail/exim
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -37,6 +37,7 @@ USE_PERL5=	configure
 CONFIGURE_ARGS=	</dev/null
 CONFIGURE_ENV+=	MAILBOX_INSTALL_OPTIONALS=n
 
+NO_STAGE=	yes
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
 

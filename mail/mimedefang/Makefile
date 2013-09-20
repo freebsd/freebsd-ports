@@ -49,6 +49,7 @@ SUB_FILES=	pkg-message
 
 CONFIG_FILES=	mimedefang-filter sa-mimedefang.cf mimedefang-ip-key
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !exists( /usr/include/libmilter/mfapi.h )

@@ -28,6 +28,7 @@ OPTIONS_DEFAULT=	RESOLVER AUTH
 RESOLVER_DESC=	Resolver
 AUTH_DESC=	SMTP AUTH (RFC2554) support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MRESOLVER}

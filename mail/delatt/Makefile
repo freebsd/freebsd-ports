@@ -21,6 +21,7 @@ NO_BUILD=	yes
 SHEBANG_FILES=	delatt
 PLIST_FILES=	bin/delatt
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 

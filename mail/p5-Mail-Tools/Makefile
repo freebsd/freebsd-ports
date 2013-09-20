@@ -30,4 +30,5 @@ MAN3=		Mail::Address.3 \
 		Mail::Send.3 \
 		Mail::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

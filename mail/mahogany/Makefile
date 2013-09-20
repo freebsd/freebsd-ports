@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	NLS
 
 MAN1=		M.1 mahogany.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "sparc64"

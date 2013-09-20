@@ -17,5 +17,6 @@ PEARDIR=		${PREFIX}/share/pear
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 .include <bsd.port.mk>

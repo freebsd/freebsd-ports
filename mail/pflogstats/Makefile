@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pflogstats
-# Date created:			30 April 2003
-# Whom:				Andrew J. Caines <A.J.Caines@halplant.com>
-#
+# Created by: Andrew J. Caines <A.J.Caines@halplant.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pflogstats
 PORTVERSION=	1.1.1
@@ -25,6 +21,7 @@ NO_BUILD=	yes
 USES=		perl5
 SITE_PERL_INST=	${SITE_PERL:S/${LOCALBASE}/${PREFIX}/}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|/usr/bin/perl.*|${PERL}|' \

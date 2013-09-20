@@ -23,4 +23,5 @@ CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
 MAN8=		damnit.8 gnarwl.8
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

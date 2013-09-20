@@ -15,6 +15,7 @@ NO_BUILD=	yes
 MAN1=		lookout.1
 PLIST_FILES=	bin/lookout
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/lookout ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/lookout.1 ${PREFIX}/man/man1/lookout.1

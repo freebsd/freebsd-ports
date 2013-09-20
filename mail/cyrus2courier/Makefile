@@ -15,6 +15,7 @@ ALL_TARGET=	build
 
 PLIST_FILES=	bin/cyrus2courier
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} '/^CFLAGS*/d; /^LDFLAGS*/d; /^CC*/d' \
 		${WRKSRC}/src/Makefile.FreeBSD

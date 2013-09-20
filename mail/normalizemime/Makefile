@@ -1,9 +1,5 @@
-# New ports collection makefile for:	normalize mime
-# Date created:		Wed Aug 31 00:24:53 UTC 2005
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	normalizemime
 PORTVERSION=	1.19
@@ -26,6 +22,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 PLIST_FILES=	bin/${DISTNAME:R}
 
+NO_STAGE=	yes
 post-extract:
 	@${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${WRKSRC}
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xcite
-# Date created:		8 Novemver 2008
-# Whom:			Hajimu UMEMOTO <ume@FreeBSD.org>
-#
+# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xcite
 PORTVERSION=	1.60
@@ -29,6 +25,7 @@ EXTRACT_AFTER_ARGS=	.
 PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/${DISTNAME} \
 		${EMACS_VERSION_SITE_LISPDIR}/${DISTNAME}c
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKDIR} && ${EMACS_CMD} -batch -q -no-site-file -no-init-file \
 		-f batch-byte-compile ${DISTNAME}

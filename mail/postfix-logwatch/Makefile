@@ -1,9 +1,5 @@
-# New ports collection makefile for:	postfix-logwatch
-# Date created:				2011-08-19
-# Whom:					Alexander Moisseev <moiseev@mezonplus.ru>
-#
+# Created by: Alexander Moisseev <moiseev@mezonplus.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	postfix-logwatch
 PORTVERSION=	1.40.00
@@ -26,6 +22,7 @@ USES=		perl5
 USE_PERL5=	run
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@cd ${WRKSRC} && ${REINPLACE_CMD} -e '\
 		s!/usr/local/etc!${ETCDIR}! \

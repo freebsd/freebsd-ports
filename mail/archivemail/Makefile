@@ -17,6 +17,7 @@ MAN1=		archivemail.1
 DOCS=		CHANGELOG FAQ NEWS README TODO
 EXAMPLES=	test_archivemail examples/archivemail_all
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

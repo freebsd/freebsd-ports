@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	gubby
-# Date created:			Feb 4, 2003
-# Whom:				mich@freebsdcluster.org
-#
+# Created by: mich@freebsdcluster.org
 # $FreeBSD$
-#
 
 PORTNAME=	gubby
 PORTVERSION=	0.5.5
@@ -19,6 +14,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 LDFLAGS+=	-lncurses
 CFLAGS+=	-fno-exceptions -fno-rtti
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && \
 	${CXX} -c ${CFLAGS} -Iinclude/ -o src/curswin.o src/curswin.cpp && \

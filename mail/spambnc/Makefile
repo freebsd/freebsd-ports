@@ -1,9 +1,5 @@
-# New ports collection makefile for:   spambnc
-# Date created:        25 December 2000
-# Whom:                George Reid <greid@ukug.uk.freebsd.org>
-#
+# Created by: George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	spambnc
 PORTVERSION=	20060416
@@ -33,6 +29,7 @@ IGNOREFILES+=	upgrading.shtml
 PORTDOCS=	documentation.html upgrading.html loglevels.txt
 .endif
 
+NO_STAGE=	yes
 pre-install:
 	@(cd ${WRKSRC} && ${FIND} -s . -type f | ${GREP} -v "^\.\/\." |	\
 		${GREP} -v docs | ${SED} -e 's,.,%%DATADIR%%,1' > ${PLIST})

@@ -24,6 +24,7 @@ MYSQLI_DESC=	MySQL 4.1+ back-end (use mysqli PHP extension)
 
 OPTIONS_DEFAULT=	MYSQL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_PHP=	pcre session mbstring spl xmlrpc

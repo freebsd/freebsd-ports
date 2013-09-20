@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Wanderlust (for xemacs21-mule)
-# Date created:		7 Apr 1999
-# Whom: 		MANTANI Nobutaka <nobutaka@nobutaka.com>
-#
+# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
 # $FreeBSD$
-#
 
 MASTERDIR=	${.CURDIR}/../../mail/wanderlust
 
@@ -24,4 +20,5 @@ INSTALL_TARGET=	install-package
 UTILSDIR=	${EMACS_PACKAGESDIR}/lisp/wl
 STARTUPDIR=	${EMACS_PACKAGESDIR}/lisp/wl
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

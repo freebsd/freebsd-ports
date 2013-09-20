@@ -15,6 +15,7 @@ DOCSFILES=	BUGS COPYRIGHT HISTORY README TODO
 SAMPLEFILES=	sma.conf
 ALL_TARGET=	sma
 
+NO_STAGE=	yes
 do-configure:
 	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.sed
 	${SED} -e "s,CC	=,CC?=	," \

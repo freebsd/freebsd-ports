@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libsrs2
-# Date created:        02 July 2004
-# Whom:                snowchyld
-#
+# Created by: snowchyld
 # $FreeBSD$
-#
 
 PORTNAME=		libsrs2
 PORTVERSION=		1.0.18
@@ -19,4 +15,5 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=		yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

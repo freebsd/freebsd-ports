@@ -25,6 +25,7 @@ MAN1=		${PORTNAME}.1
 
 POD2MAN?=	pod2man
 
+NO_STAGE=	yes
 do-patch:
 	${REINPLACE_CMD} \
 		-e 's|/usr/bin/perl|${PERL}|g' \

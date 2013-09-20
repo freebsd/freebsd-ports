@@ -25,4 +25,5 @@ MAN3=		Mail::Mbox::MessageParser.3 \
 		Mail::Mbox::MessageParser::Perl.3 \
 		Mail::Mbox::MessageParser::MetaInfo.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

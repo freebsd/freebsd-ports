@@ -32,6 +32,7 @@ PLIST_FILES+=	include/libar.h lib/libar.a
 .endif
 USE_RC_SUBR=	milter-sid
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"

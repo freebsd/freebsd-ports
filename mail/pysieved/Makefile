@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pysieved
-# Date created:		Thu Jan 10 18:51:17 MSK 2008
-# Whom:			Denis Shaposhnikov <dsh@wizard.volgograd.ru>
-#
+# Created by: Denis Shaposhnikov <dsh@wizard.volgograd.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	pysieved
 PORTVERSION=	1.0
@@ -26,6 +22,7 @@ SUB_LIST=	PORTNAME=${PORTNAME} PYTHON_CMD=${PYTHON_CMD}
 PORTDOCS=	COPYING README README.Dovecot THANKS
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} \
 		's!/usr/bin/env python!${PYTHON_CMD}!' \

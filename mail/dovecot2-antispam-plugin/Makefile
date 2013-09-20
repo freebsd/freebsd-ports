@@ -31,6 +31,7 @@ MAN7=		dovecot-antispam.7
 PLIST_FILES=	lib/dovecot/lib90_antispam_plugin.so
 PLIST_DIRSTRY=	lib/dovecot
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

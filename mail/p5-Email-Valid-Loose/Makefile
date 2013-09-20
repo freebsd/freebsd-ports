@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mail/p5-Email-Valid-Loose
-# Date created:		19 August 2003
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Email-Valid-Loose
 PORTVERSION=	0.05
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		Email::Valid::Loose.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

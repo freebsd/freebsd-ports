@@ -1,9 +1,5 @@
-# New ports collection makefile for:	poppassd
-# Date Created:	21 August 1996
-# Whom:	Andrew Stevenson <andrew@ugh.net.au> based heavily on the changes by Stephen Melvin <melvin@zytek.com>
-#
+# Created by: Andrew Stevenson <andrew@ugh.net.au> based heavily on the changes by Stephen Melvin <melvin@zytek.com>
 # $FreeBSD$
-#
 
 PORTNAME=	poppassd
 PORTVERSION=	4.0
@@ -24,6 +20,7 @@ ALL_TARGET=	poppassd
 MAN8=		poppassd.8
 PLIST_FILES=	libexec/poppassd
 
+NO_STAGE=	yes
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/poppassd ${PREFIX}/libexec
 	@ ${INSTALL_MAN} ${FILESDIR}/poppassd.8 ${PREFIX}/man/man8/

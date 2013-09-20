@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mailfmt
-# Date Created:		09 October 2002
-# Whom:			tundra
-#
+# Created by: tundra
 # $FreeBSD$
-#
 
 PORTNAME=	mailfmt
 PORTVERSION=	1.3
@@ -19,6 +15,7 @@ USE_PYTHON=	yes
 MANCOMPRESSED=	yes
 MAN1=		mailfmt.1
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

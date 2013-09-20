@@ -1,9 +1,5 @@
-# Ports collection makefile for:  Ingo
-# Date created:			  Dec 3, 2004
-# Whom:				  Thierry Thomas (<thierry@pompo.net>)
-#
+# Created by: Thierry Thomas (<thierry@pompo.net>)
 # $FreeBSD$
-#
 
 PORTNAME=	ingo
 PORTVERSION=	1.2.6
@@ -16,6 +12,7 @@ MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Email-filter management application
 
 #-----------------------------------------------------------------------
+NO_STAGE=	yes
 # You may define this option:
 #
 # - WITH_SIEVE	: if you run timsieved (with Cyrus).

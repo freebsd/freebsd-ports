@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mailsync
-# Date created:		03 Feb 2003
-# Whom:			Maxim Tulyuk <mt@primats.org.ua>
-#
+# Created by: Maxim Tulyuk <mt@primats.org.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	mailsync
 PORTVERSION=	5.2.1
@@ -25,6 +21,7 @@ CONFIGURE_ARGS=	--with-c-client=${LOCALBASE}
 
 MAN1=		mailsync.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/mailsync ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/mailsync.1 ${PREFIX}/man/man1

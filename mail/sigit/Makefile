@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sigit
-# Date created:				18 August 2001
-# Whom:					petef
-#
+# Created by: petef
 # $FreeBSD$
-#
 
 PORTNAME=	sigit
 PORTVERSION=	0.3.0
@@ -30,6 +26,7 @@ CONFIGURE_ARGS=	--prefix=${DATADIR} \
 MAN1=	sigit.1 sigitdb.1
 MAN5=	sigit.rc.5
 
+NO_STAGE=	yes
 post-patch:
 	@${MV} ${WRKSRC}/data/sigit.rc ${WRKSRC}/data/sigit.rc.dist
 

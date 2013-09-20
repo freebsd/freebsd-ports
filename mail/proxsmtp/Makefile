@@ -22,6 +22,7 @@ MAN8=		proxsmtpd.8
 
 PORTDOCS=	ChangeLog NEWS README
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^acx_pthread_flags/s|=.*|="${PTHREAD_LIBS}"|' \

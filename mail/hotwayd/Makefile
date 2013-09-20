@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hotwayd
-# Date created:				29 October 2002
-# Whom:					John Nielsen <john@jnielsen.net>
-#
+# Created by: John Nielsen <john@jnielsen.net>
 # $FreeBSD$
-#
 
 PORTNAME=	hotwayd
 PORTVERSION=	0.8.4
@@ -31,6 +27,7 @@ PLIST_FILES=	sbin/hotwayd sbin/hotsmtpd
 
 post-install:	install-doc-files display-message
 
+NO_STAGE=	yes
 install-doc-files:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

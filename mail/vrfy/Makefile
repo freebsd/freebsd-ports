@@ -1,9 +1,5 @@
-# ports collection makefile for:	vrfy
-# Date created:				2000/09/09
-# Whom:					kaz
-#
+# Created by: kaz
 # $FreeBSD$
-#
 
 PORTNAME=	vrfy
 PORTVERSION=	1.0
@@ -21,6 +17,7 @@ MAN1=		vrfy.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/vrfy
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/vrfy ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/${MAN1} ${PREFIX}/man/man1/

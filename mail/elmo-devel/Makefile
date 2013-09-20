@@ -26,6 +26,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		elmo.1 elmoconf.pl.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

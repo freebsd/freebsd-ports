@@ -1,9 +1,5 @@
-# New ports collection makefile for: vm
-# Date created: 	20 February 2002
-# Whom:			olive
-#
+# Created by: olive
 # $FreeBSD$
-#
 
 PORTNAME=	vm
 PORTVERSION=	8.1.2
@@ -27,4 +23,5 @@ MAKE_ARGS=	prefix=${PREFIX} \
 
 INFO=		vm vm-pcrisis
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

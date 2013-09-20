@@ -1,7 +1,4 @@
-# New ports collection makefile for:	phplist
-# Date created:			August 24 2007
-# Whom:				Nick Hilliard <nick@foobar.org>
-#
+# Created by: Nick Hilliard <nick@foobar.org>
 # $FreeBSD$
 
 PORTNAME=	phplist
@@ -23,6 +20,7 @@ PORTDOCS=	BUGS INSTALL NEWS PEOPLE README README.batches \
 
 SUB_FILES=	phplist pkg-message
 
+NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKSRC}/public_html/lists/config/config.php ${WRKSRC}/public_html/lists/config/config.php-dist
 

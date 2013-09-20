@@ -1,9 +1,5 @@
-# New ports collection makefile for:	postfwd
-# Date created:				8 May 2008
-# Whom:					Sahil Tandon <sahil@tandon.net>
-#
+# Created by: Sahil Tandon <sahil@tandon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	postfwd
 PORTVERSION=	1.35
@@ -37,6 +33,7 @@ MAN8=		${PORTNAME}.8 ${PORTNAME}2.8
 OPTIONS_DEFINE=	EXAMPLES DOCS POSTFWD2
 POSTFWD2_DESC=	Install postfwd v2 rather than v1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

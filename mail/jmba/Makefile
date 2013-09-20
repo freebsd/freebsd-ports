@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jmba
-# Date created:		2008-04-21
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jmba
 PORTVERSION=	0.5.5
@@ -21,4 +17,5 @@ MAN1=	jmba.1
 PLIST_FILES=	bin/jmba
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

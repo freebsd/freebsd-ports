@@ -16,6 +16,7 @@ PLIST_FILES=	bin/xmailwatcher
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
+NO_STAGE=	yes
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/xmailwatcher
 
