@@ -18,6 +18,7 @@ PATCH_SITES=	${MASTER_SITE_QMAIL}
 PATCHFILES=	qmail-1.03-dk-0.54.patch
 
 USES=		qmail
+NO_STAGE=	yes
 
 PREFIX?=	${QMAIL_PREFIX}
 

@@ -12,6 +12,7 @@ COMMENT=	Qmail queue diagnostic and repair tool
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 USE_PYTHON=	yes
 
 OPTIONS_DEFINE=		DOCS QMAIL_PORT

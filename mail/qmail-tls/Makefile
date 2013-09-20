@@ -15,6 +15,7 @@ SLAVE_TLS=	yes
 
 TLS_PATCH_DATE=	20021228
 
+NO_STAGE=	yes
 USE_OPENSSL=	yes
 
 # Local overrides

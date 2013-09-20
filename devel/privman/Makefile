@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 
 MLINKS=		priv_pam.3 priv_pam_acct_mgmt.3 \
 		priv_pam.3 priv_pam_authenticate.3 \

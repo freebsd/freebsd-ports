@@ -14,6 +14,7 @@ COMMENT=	Tool to minimize the compile time of C/C++ programs
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 
 HOWTO=		ccache-howto-freebsd.txt
 CCLINKDIR=	libexec/ccache

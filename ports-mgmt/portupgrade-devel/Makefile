@@ -17,6 +17,7 @@ LICENSE=	BSD
 
 CONFLICTS_INSTALL=	portupgrade-[0-9]*
 
+NO_STAGE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	portupgrade

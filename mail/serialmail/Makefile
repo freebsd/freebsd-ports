@@ -17,6 +17,7 @@ RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 UCSPI_SSL_RUN_DEPENDS=	sslclient:${PORTSDIR}/sysutils/ucspi-ssl
 
 USES=		qmail:run
+NO_STAGE=	yes
 OPTIONS_SUB=	yes
 
 RESTRICTED=	Unsure of DJB license

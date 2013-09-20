@@ -15,6 +15,8 @@ COMMENT=	Qmail MTA with SpamControl patches
 
 CONFLICTS=	qmail-[0-9]* qmail-ldap-[0-9]* qmail-mysql-[0-9]* qmail-tls-[0-9]*
 
+NO_STAGE=	yes
+
 EXTRA_PATCHES+=	${MASTERDIR}/files/patch-install.c \
 		${MASTERDIR}/files/patch-Makefile \
 		${MASTERDIR}/files/patch-auto_uids-c-dist

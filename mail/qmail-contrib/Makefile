@@ -18,6 +18,7 @@ OPTIONS_DEFINE=	DOCS
 
 USES=		qmail:run
 
+NO_STAGE=	yes
 ALL_TARGET=	it
 INSTALL_TARGET=	setup
 

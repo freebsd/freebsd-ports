@@ -12,7 +12,7 @@ MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Repairs or generates a qmail queue structure
 
 USES=		qmail:run
-
+NO_STAGE=	yes
 
 PREFIX?=	${QMAIL_PREFIX}
 

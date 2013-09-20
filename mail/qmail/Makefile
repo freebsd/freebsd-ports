@@ -19,6 +19,7 @@ CONFLICTS?=	qmail-ldap-[0-9]* qmail-mysql-[0-9]* qmail-spamcontrol-[0-9]* qmail-
 CONFLICTS+=	qmail-vida-[0-9]*
 
 USES=		qmail:vars
+NO_STAGE=	yes
 PREFIX?=	${QMAIL_PREFIX}
 
 MAKE_JOBS_UNSAFE=	yes

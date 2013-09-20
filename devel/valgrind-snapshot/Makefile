@@ -44,6 +44,7 @@ USES=		pathfix pkgconfig gmake perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 
 PORTDOCS=	html
 
