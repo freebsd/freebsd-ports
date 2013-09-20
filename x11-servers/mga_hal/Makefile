@@ -16,6 +16,7 @@ RESTRICTED=	Matrox drivers may not be distributed.
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"

@@ -25,6 +25,7 @@ MAN1=		Xdmx.1 dmxtodmx.1 vdltodmx.1 xdmxconfig.1
 
 SLAVE_PORT=	yes
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}/hw/dmx; ${MAKE} install
 
