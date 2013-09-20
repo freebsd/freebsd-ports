@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cup
-# Date created:		10 May 1998
-# Whom:			nordwick@xcf.berkeley.edu
-#
+# Created by: nordwick@xcf.berkeley.edu
 # $FreeBSD$
-#
 
 PORTNAME=	cup
 PORTVERSION=	11.a
@@ -27,6 +23,7 @@ DISTJARNAME=	${PKGNAMEPREFIX}${PORTNAME}-10k-TUM
 PLIST_FILES=	%%JAVAJARDIR%%/${DISTJARNAME}.jar \
 		%%JAVAJARDIR%%/${DISTJARNAME}-runtime.jar
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/dist/${DISTJARNAME}.jar ${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/dist/${DISTJARNAME}-runtime.jar ${JAVAJARDIR}

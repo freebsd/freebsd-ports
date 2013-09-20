@@ -29,6 +29,7 @@ NO_BUILD=	yes
 USE_ZIP=	yes
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

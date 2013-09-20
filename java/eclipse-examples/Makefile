@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-examples
-# Date created:				July 3, 2003
-# Whom:					olgeni@FreeBSD.org
-#
+# Created by: olgeni@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	examples
 PORTVERSION=	3.0
@@ -24,6 +20,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 do-install:
 		@${MKDIR} ${PREFIX}/lib/eclipse
 		@${CP} -r ${WRKSRC}/eclipse/plugins ${PREFIX}/lib/eclipse

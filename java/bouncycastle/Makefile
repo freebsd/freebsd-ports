@@ -35,6 +35,7 @@ PORTDOCS=	*
 
 PORTSCOUT=	skipv:146
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} s/BERConstructedOctetString/DEROctetString/ \
 		${WRKSRC}/src/org/bouncycastle/cms/CMS*DataGenerator.java

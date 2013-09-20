@@ -21,6 +21,7 @@ PORTDOCS=	javadocs AUTHORS ChangeLog LICENSE.txt README-license.txt README.txt
 JARFILE=	trove.jar
 PLIST_FILES+=	%%JAVAJARDIR%%/${JARFILE}
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
 	@${INSTALL_DATA} ${WRKSRC}/lib/${JARFILE} ${JAVAJARDIR}/

@@ -21,6 +21,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/bcel.jar
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar \
 	    ${JAVAJARDIR}/${PORTNAME}.jar

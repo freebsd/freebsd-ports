@@ -20,6 +20,7 @@ ANT_TARGETS=	dist
 JAVA_BUILD=	yes
 FETCH_ARGS=	-pRr
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && ${ANT} ${ANT_TARGETS}
 

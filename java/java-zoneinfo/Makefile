@@ -1,7 +1,4 @@
-# New ports collection makefile for:	java-zoneinfo
-# Date created:				14 January 2012
-# Whom:					Greg Lewis <glewis@FreeBSD.org>
-#
+# Created by: Greg Lewis <glewis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	zoneinfo
@@ -19,6 +16,7 @@ NO_BUILD=	yes
 
 JAVASHAREDIR=	${PREFIX}/share/java
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${JAVASHAREDIR}/zi
 	(cd ${WRKSRC}/zi && ${COPYTREE_SHARE} \* ${JAVASHAREDIR}/zi/)

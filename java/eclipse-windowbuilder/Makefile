@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-windowbuilder
-# Date created:			14 Jun 2012
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	windowsbuilder
 PORTVERSION=	1.1.0
@@ -26,6 +22,7 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
 WRKSRC=		${WRKDIR}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../eclipse/Makefile.plugins"
 
 post-extract:

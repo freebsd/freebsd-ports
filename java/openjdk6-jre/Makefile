@@ -10,4 +10,5 @@ BUILD_JRE=	yes
 MASTERDIR=	${.CURDIR}/../openjdk6
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

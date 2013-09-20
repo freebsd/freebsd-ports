@@ -28,6 +28,7 @@ DESKTOP_ENTRIES="NetBeans" \
 		"Development;" \
 		${FALSE}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i "" -e '57s|#||;57s|/path/to/jdk|${JAVA_HOME}|' \
 	    ${WRKSRC}/etc/netbeans.conf

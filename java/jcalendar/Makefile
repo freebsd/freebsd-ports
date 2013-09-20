@@ -25,6 +25,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 post-build:
 	cd ${WRKDIR}/build && \
 		${JAR} cmf ${WRKSRC}/${PORTNAME}.manifest \

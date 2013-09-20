@@ -29,6 +29,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
 
+NO_STAGE=	yes
 post-extract:
 # avoid empty dirs since they break the automated PLIST generation
 	@${FIND} ${WRKSRC} -type d -empty \

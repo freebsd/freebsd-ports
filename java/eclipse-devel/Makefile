@@ -161,6 +161,7 @@ DISTFILES+=	${f}:2
 DISTFILES+=	${f}:10
 .endfor
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTESTS}

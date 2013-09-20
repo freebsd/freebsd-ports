@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/netbeans
 
 SUB_FILES=	pkg-install pkg-deinstall
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

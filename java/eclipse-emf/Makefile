@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-emf
-# Date created:				January 13, 2004
-# Whom:					alex@FreeBSD.org
-#
+# Created by: alex@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	emf
 PORTVERSION=	2.7.2
@@ -22,6 +18,7 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 WRKSRC=		${WRKDIR}/eclipse
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../eclipse/Makefile.plugins"
 
 .include <bsd.port.mk>

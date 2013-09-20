@@ -22,6 +22,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/jrosetta-api.jar \
 OPTIONS_DEFINE=	COMPILE
 COMPILE_DESC=	Download and compile source instead of binaries
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOMPILE}

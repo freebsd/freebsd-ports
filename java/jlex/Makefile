@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jlex
-# Date created:		1 June 1999
-# Whom:			jake@checker.org
-#
+# Created by: jake@checker.org
 # $FreeBSD$
-#
 
 PORTNAME=	jlex
 PORTVERSION=	1.2.6
@@ -24,6 +20,7 @@ NO_WRKSUBDIR=	yes
 SUB_FILES=	jlex.sh pkg-message
 SUB_LIST=	JAVAJARDIR=${JAVAJARDIR}
 
+NO_STAGE=	yes
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}

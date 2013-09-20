@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-pmd
-# Date created:				October 3, 2003
-# Whom:					Bruno Van Den Bossche <brvdboss@spymac.com>
-#
+# Created by: Bruno Van Den Bossche <brvdboss@spymac.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pmd
 PORTVERSION=	2.0.5.v3
@@ -35,6 +31,7 @@ PLUGIN_PMD_DIR=	"net.sourceforge.pmd.eclipse_${PORTVERSION}"
 PLIST_SUB+=	PLUGIN_PMD_DIR="${PLUGIN_PMD_DIR}" \
 		PLUGIN_CORE_DIR="${PLUGIN_CORE_DIR}"
 
+NO_STAGE=	yes
 post-extract:
 		cd ${WRKDIR}/features && ${MKDIR} ${PLUGIN_PMD_DIR} \
 		&& ${CP} ${PLUGIN_PMD_DIR}.jar ${PLUGIN_PMD_DIR} \

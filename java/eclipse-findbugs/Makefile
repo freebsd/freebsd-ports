@@ -72,6 +72,7 @@ PLIST_SUB=	\
 	ECLIPSE_PLUGINS="lib/eclipse/plugins" \
 	DISTNAME="${DISTNAME}"
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} -Rf ${WRKSRC}/src
 

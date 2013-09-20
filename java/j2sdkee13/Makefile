@@ -21,6 +21,7 @@ NO_CDROM=	Redistribution is not permitted
 J2SDKEEVERSION=	${PORTVERSION}_02
 DOWNLOAD_URL?=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=7917-j2ee_sdk-1.3.1-oth-JPR&SiteId=JSC&TransactionId=noreg
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

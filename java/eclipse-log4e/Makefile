@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-log4e
-# Date created:				August 30, 2004
-# Whom:					sugimura@jp.FreeBSD.org
-#
+# Created by: sugimura@jp.FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	log4e
 PORTVERSION=	1.1.6
@@ -24,6 +20,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 do-install:
 		@${MKDIR} -p ${PREFIX}/lib/eclipse
 		@${CP} -r ${WRKSRC}/plugins ${PREFIX}/lib/eclipse

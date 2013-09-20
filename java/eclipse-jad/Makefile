@@ -25,6 +25,7 @@ JAVA_VERSION=	1.6+
 
 PLIST_FILES=	share/eclipse/dropins/${DISTNAME}${EXTRACT_SUFX}
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} ${WRKSRC}
 

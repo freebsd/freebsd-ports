@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-sysdeo-tomcat
-# Date created:				July 29, 2004
-# Whom:					sugimura@jp.FreeBSD.org
-#
+# Created by: sugimura@jp.FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	sysdeo
 PORTVERSION=	3.1.0
@@ -24,6 +20,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 do-install:
 		@${MKDIR} -p ${PREFIX}/lib/eclipse
 		@${CP} -r ${WRKSRC}/com.sysdeo.eclipse.tomcat_${PORTVERSION} ${PREFIX}/lib/eclipse/plugins

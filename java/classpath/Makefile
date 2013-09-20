@@ -58,6 +58,7 @@ GMP_DESC=	Enable native java.math.BigInteger
 GTK2_DESC=	Enable Gtk+ AWT peer
 QT4_DESC=	Enable Qt AWT peer
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MECJ}

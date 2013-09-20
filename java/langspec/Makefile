@@ -1,9 +1,5 @@
-# New ports collection makefile for:	langspec
-# Date created:			18 October 2004
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	langspec
 PORTVERSION=	3.0
@@ -22,6 +18,7 @@ PORTDOCS=	*
 IGNORE=		installs *only* documentation, unset NOPORTDOCS
 .endif
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}

@@ -21,6 +21,7 @@ NO_BUILD=	yes
 
 JARFILE=	NetComponents.jar
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

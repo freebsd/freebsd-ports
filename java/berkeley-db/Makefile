@@ -28,6 +28,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/je.jar
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 test:
 	#
 	# Running the vendor-provided self-tests. This may take a while

@@ -24,6 +24,7 @@ JAVA_VERSION=	1.6+
 USE_ZIP=	yes
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/plugins/com.quantum.Quantum_${PORTVERSION}/icons/Thumbs.db
 	@${RM} ${WRKSRC}/plugins/com.quantum.Quantum_${PORTVERSION}/icons/unused/Thumbs.db

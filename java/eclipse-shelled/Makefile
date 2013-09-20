@@ -22,6 +22,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${WRKSRC}/eclipse
 	@${MV} ${WRKSRC}/plugins ${WRKSRC}/eclipse/plugins

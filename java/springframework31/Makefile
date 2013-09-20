@@ -49,6 +49,7 @@ JAR_FILES=	org.springframework.aop.jar \
 PLIST_FILES +=	%%JAVAJARDIR%%/${f}
 .endfor
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRESRCS}

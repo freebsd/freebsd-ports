@@ -24,6 +24,7 @@ RESTRICTED=	Redistribution of pre-compiled binaries is not permitted
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Check for JMF sources

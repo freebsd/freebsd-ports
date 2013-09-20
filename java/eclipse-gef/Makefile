@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-gef
-# Date created:				July 8, 2003
-# Whom:					olgeni@FreeBSD.org
-#
+# Created by: olgeni@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	gef
 PORTVERSION=	3.7.2
@@ -22,6 +18,7 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 WRKSRC=		${WRKDIR}/eclipse
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../eclipse/Makefile.plugins"
 
 .include <bsd.port.mk>

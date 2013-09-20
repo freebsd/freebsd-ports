@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-sqlexplorer
-# Date created:				August 14, 2004
-# Whom:					sugimura@jp.FreeBSD.org
-#
+# Created by: sugimura@jp.FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	sqlexplorer
 PORTVERSION=	2.2.4
@@ -25,6 +21,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 do-install:
 		@${MKDIR} -p ${PREFIX}/lib/eclipse
 		@${CP} -r ${WRKSRC}/plugins ${PREFIX}/lib/eclipse

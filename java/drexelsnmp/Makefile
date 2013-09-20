@@ -1,9 +1,5 @@
-# New ports collection makefile for:	drexelsnmp
-# Date created:				2005-02-15
-# Whom:					Anders Nordby <anders@FreeBSD.org>
-#
+# Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	drexelsnmp
 PORTVERSION=	1.4.2
@@ -23,6 +19,7 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	share/java/classes/snmp.jar
 
+NO_STAGE=	yes
 do-build:
 	${MKDIR} ${WRKSRC}/build_library
 	(cd ${WRKSRC} && ${JAVAC} -sourcepath source -d build_library source/snmp/*.java && ${JAR} cvf snmp.jar -C build_library/ .)

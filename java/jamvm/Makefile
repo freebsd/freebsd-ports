@@ -1,4 +1,4 @@
-# Created by:	Bjoern Koenig <bkoenig@alpha-tierchen.de>
+# Created by: Bjoern Koenig <bkoenig@alpha-tierchen.de>
 # $FreeBSD$
 
 PORTNAME=	jamvm
@@ -23,6 +23,7 @@ OPTIONS_DEFAULT=FFI ZIP
 FFI_DESC=	use libffi to call native methods
 ZIP_DESC=	turn-on zip support in the bootstrap loader
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFFI}

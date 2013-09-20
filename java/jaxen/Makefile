@@ -23,6 +23,7 @@ DOCS=		default.css download.html faq.html index.html javadoc status.html style
 PORTDOCS=	LICENSE ${DOCS}
 .endif
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR files in ${JAVAJARDIR}..."
 	@${MKDIR} ${JAVAJARDIR}

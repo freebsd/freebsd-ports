@@ -49,6 +49,7 @@ REPLACE_FILES=	${FILESDIR}/daemonctl.c \
 		${FILESDIR}/startup.sh
 JAR_FILE=	bin/run.jar
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

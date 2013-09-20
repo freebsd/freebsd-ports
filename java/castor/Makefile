@@ -27,6 +27,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}-anttasks.jar \
 PORTDOCS=	*.html *.txt *.css *.dtd *.xsd *.pdf \
 		ora-mar-2k images rss
 
+NO_STAGE=	yes
 do-install:
 .for f in ${PLIST_FILES:T:R}
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${f}.jar..."

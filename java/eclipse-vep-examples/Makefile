@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-vep-examples
-# Date created:				July 15, 2004
-# Whom:					sugimura@jp.FreeBSD.org
-#
+# Created by: sugimura@jp.FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	vep
 PORTVERSION=	1.1.0.1
@@ -25,6 +21,7 @@ NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 PLIST_SUB=	RELEASEVERSION=1.1.0.1
 
+NO_STAGE=	yes
 do-install:
 		@${MKDIR} ${PREFIX}/lib/eclipse
 		@${CP} -r ${WRKSRC}/eclipse/plugins ${PREFIX}/lib/eclipse

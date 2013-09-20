@@ -21,4 +21,5 @@ NO_BUILD=	yes
 MAN1=		mmake.1
 PLIST_FILES=	bin/mmake
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

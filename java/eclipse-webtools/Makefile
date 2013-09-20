@@ -21,6 +21,7 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 WRKSRC=		${WRKDIR}/eclipse
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../eclipse/Makefile.plugins"
 
 .include <bsd.port.mk>

@@ -23,6 +23,7 @@ SUB_FILES=	pkg-install pkg-deinstall
 
 #DOWNLOAD_URL?=	http://www.netbeans.info/downloads/index.php
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 #.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

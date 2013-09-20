@@ -22,6 +22,7 @@ JAVA_VERSION=	1.6+
 JAVA_OS=	native
 PLIST_SUB=	DISTNAME=${DISTNAME}
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/eclipse
 	@${CP} -r ${WRKSRC}/plugins ${PREFIX}/eclipse

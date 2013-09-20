@@ -1,9 +1,5 @@
-# New ports collection makefile for:	EPIC
-# Date created:				28 Nov 2004
-# Whom:					tux@pinguru.net
-#
+# Created by: tux@pinguru.net
 # $FreeBSD$
-#
 
 PORTNAME=	EPIC
 PORTVERSION=	0.6.35
@@ -32,6 +28,7 @@ EPICFILES=	features/org.epic.feature.main_${PORTVERSION} \
 		plugins/org.epic.regexp_0.6.1 \
 		plugins/org.epic.source_${PORTVERSION}
 
+NO_STAGE=	yes
 post-extract:
 .for file in ${EPICFILES}
 	cd ${WRKSRC} \

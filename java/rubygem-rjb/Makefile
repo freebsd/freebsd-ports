@@ -1,7 +1,4 @@
-# New ports collection makefile for:	rjb
-# Date created:				2011-09-11
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	rjb
@@ -21,4 +18,5 @@ GEM_ENV=	JAVA_HOME=${JAVA_HOME}
 #On amd64, rjb hangs in umtxn
 ONLY_FOR_ARCHS=	i386
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
