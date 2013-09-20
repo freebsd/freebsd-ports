@@ -55,6 +55,7 @@ PLIST_FILES+=	${FONTSDIR}/${f}.${FONTTYPE}
 PLIST_FILES+=	${FONTSDIR}/fonts.dir \
 		${FONTSDIR}/fonts.scale
 
+NO_STAGE=	yes
 do-build:
 	${LOCALBASE}/bin/mkfontscale ${WRKSRC}
 	${LOCALBASE}/bin/mkfontdir ${WRKSRC}

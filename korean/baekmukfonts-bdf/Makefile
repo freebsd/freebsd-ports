@@ -41,6 +41,7 @@ USES=		perl5
 USE_PERL5=	build
 
 # manually install hinted fonts
+NO_STAGE=	yes
 do-configure:
 .for FONTNAME in ${FONTLIST_MANUAL}
 	${GZIP_CMD} -cd ${_DISTDIR}/${FONTNAME}.bdf.gz \

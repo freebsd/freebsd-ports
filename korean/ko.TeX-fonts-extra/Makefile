@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ko.TeX-fonts-extra
-# Date created: 			7 January 2008
-# Whom:					Hyogeol Lee <hyogeollee@gmail.com>
-#
+# Created by: Hyogeol Lee <hyogeollee@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ko.TeX-fonts-extra
 PORTVERSION=	0.1.0
@@ -31,6 +27,7 @@ UPDMAP_SYS=	${PREFIX}/bin/updmap-sys
 PLIST_SUB+=	MKTEXLSR=${MKTEXLSR} \
 		UPDMAP_SYS=${UPDMAP_SYS}
 
+NO_STAGE=	yes
 do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

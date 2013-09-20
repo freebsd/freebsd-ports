@@ -26,6 +26,7 @@ PROJECTHOST=	spellcheck-ko
 
 MAKE_ENV+=	PYTHON=${PYTHON_CMD}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/ko.aff ${DATADIR}/ko_KR.aff

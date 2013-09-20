@@ -33,6 +33,7 @@ SUB_FILES=	hpscat.sh pkg-message
 SUB_LIST=	FONTDIR=${FONTDIR}
 USES=		perl5
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/hpscat ${PREFIX}/bin/hpscat.bin
 	@${INSTALL_SCRIPT} ${WRKDIR}/hpscat.sh ${PREFIX}/bin/hpscat

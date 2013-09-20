@@ -17,6 +17,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

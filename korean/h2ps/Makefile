@@ -11,6 +11,7 @@ COMMENT=	Formats an ASCII file for printing on a postscript printer with Korean 
 
 PLIST_FILES=	bin/h2ps
 
+NO_STAGE=	yes
 pre-build:
 	@(cd ${WRKSRC}; make clean)
 

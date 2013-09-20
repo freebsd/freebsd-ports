@@ -22,6 +22,7 @@ USE_GNOME=	gtk12 gdkpixbuf
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

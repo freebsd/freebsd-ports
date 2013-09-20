@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ko-man-doc
-# Date created:			19 November 2002
-# Whom:				Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
 
 PORTNAME=	man
@@ -19,6 +16,7 @@ COMMENT=	Korean online manual pages
 
 RUN_DEPENDS=	${LOCALBASE}/bin/groff:${PORTSDIR}/japanese/groff
 
+NO_STAGE=	yes
 post-patch:
 	${SED} -e 's,%%PREFIX%%,${PREFIX},g' -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 		-e 's,gnroff,groff,g' ${WRKSRC}/scripts/kman.in > ${WRKDIR}/kman

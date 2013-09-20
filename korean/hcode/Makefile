@@ -15,6 +15,7 @@ COMMENT=	Hangul code conversion utility
 
 PLIST_FILES=	bin/hcode
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hcode ${PREFIX}/bin
 

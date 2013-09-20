@@ -24,6 +24,7 @@ NO_WRKSUBDIR=   yes
 FONTS=		hgm10 hgm12 hgm14 hgm16 hgm18 hgm20 \
 		hmm10 hmm12 hmm14 hmm16 hmm18 hmm20
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC}; \
 	for fn in ${FONTS}; do \

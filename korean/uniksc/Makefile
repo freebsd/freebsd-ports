@@ -16,4 +16,5 @@ PLIST_FILES=	bin/uniksc include/uniksc.h lib/libuniksc.so.0
 CFLAGS+=	"-fPIC"
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
