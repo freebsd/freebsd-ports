@@ -24,4 +24,5 @@ USE_PERL5=	configure
 MAN3=	AnyEvent::Redis.3 \
 	AnyEvent::Redis::Protocol.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

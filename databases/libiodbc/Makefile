@@ -32,6 +32,7 @@ CONFIGURE_ARGS+=	--disable-gui
 PLIST_SUB+=	GUI="@comment "
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS/s|samples||' ${WRKSRC}/Makefile.in

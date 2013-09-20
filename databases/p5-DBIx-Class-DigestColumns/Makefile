@@ -19,6 +19,7 @@ USE_PERL5=	modbuild extract
 
 MAN3=	DBIx::Class::DigestColumns.3
 
+NO_STAGE=	yes
 post-extract:
 	@${PERL} -i.bak -ne 'print unless /^\s*build_requires/ .. /},$$/ or /^\s*recommends/ .. /},$$/ ' ${WRKSRC}/Build.PL
 

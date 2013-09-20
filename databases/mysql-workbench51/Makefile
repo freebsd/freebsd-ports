@@ -39,6 +39,7 @@ USE_GNOME=	libglade2 intltool libgnome gtk20 pango orbit2
 USE_LUA=	5.1
 LUA_COMPS=	lua
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PKGNAMESUFFIX} == 51

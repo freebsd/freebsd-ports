@@ -24,6 +24,7 @@ USE_PERL5=	modbuild
 
 MAN3=		Class::DBI::Sweet.3 Class::DBI::Sweet::Topping.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/DBD::SQLite/d' ${WRKSRC}/Build.PL
 

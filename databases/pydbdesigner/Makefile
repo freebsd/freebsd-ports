@@ -22,6 +22,7 @@ NO_BUILD=	yes
 
 MY_SITELIBDIR=		${PYTHON_SITELIBDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin/env *python,${PYTHON_CMD},' \
 		${WRKSRC}/main.py

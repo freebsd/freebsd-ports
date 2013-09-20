@@ -70,6 +70,7 @@ INSTDEMODIR=		${PREFIX}/usr/share/oracle/${ORACLEVERSION}/client
 
 PLIST_SUB=		PORTVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if		${ARCH} == "i386"

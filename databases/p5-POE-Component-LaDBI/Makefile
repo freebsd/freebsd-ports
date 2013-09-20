@@ -22,6 +22,7 @@ MAN3=		POE::Component::LaDBI.3 POE::Component::LaDBI::Commands.3 \
 		POE::Component::LaDBI::Request.3 \
 		POE::Component::LaDBI::Response.3
 
+NO_STAGE=	yes
 post-extract:
 	${RM} ${WRKSRC}/*.pl
 

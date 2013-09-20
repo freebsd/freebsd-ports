@@ -1,9 +1,5 @@
-# New ports collection makefile for:	autobackupmysql
-# Date created:		2009-12-21
-# Whom:			Frank Wall <fw@moov.de>
-#
+# Created by: Frank Wall <fw@moov.de>
 # $FreeBSD$
-#
 
 PORTNAME=	autobackupmysql
 PORTVERSION=	1.4
@@ -20,6 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 NO_BUILD=	yes
 PLIST_FILES=	sbin/autobackupmysql.sh
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}

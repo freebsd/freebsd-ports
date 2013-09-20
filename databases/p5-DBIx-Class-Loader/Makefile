@@ -29,4 +29,5 @@ MAN3=	DBIx::Class::Loader.3 \
 	DBIx::Class::Loader::Writing.3 \
 	DBIx::Class::Loader::mysql.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

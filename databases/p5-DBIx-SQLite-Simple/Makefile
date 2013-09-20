@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-DBIx-SQLite-Simple
-# Date created:		26 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-SQLite-Simple
 PORTVERSION=	0.34
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 MAN3=	DBIx::SQLite::Simple.3 \
 	DBIx::SQLite::Simple::Table.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

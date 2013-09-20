@@ -21,6 +21,7 @@ GNU_CONFIGURE=	YES
 DOCSDIR=	${PREFIX}/share/doc/postgresql/${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/postgresql/${PORTNAME}
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@- ${MKDIR} -m 755 ${EXAMPLESDIR} ;\

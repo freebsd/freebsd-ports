@@ -20,4 +20,5 @@ USE_PYDISTUTILS=yes
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PORTNAME}.so
 PYDISTUTILS_EGGINFO=	Kyoto_Cabinet-1.5-py${PYTHON_VER}.egg-info
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

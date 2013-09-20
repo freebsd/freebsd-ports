@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-dm-types
-# Date created:		2010-01-20
-# Whom:			Jyun-Yan You <jyyou@cs.nctu.edu.tw>
-#
+# Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	dm-types
 PORTVERSION=	1.2.2
@@ -25,4 +21,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

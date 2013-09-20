@@ -29,4 +29,5 @@ MAN3=		Amazon::SimpleDB.3 \
 		Amazon::SimpleDB::QueryResponse.3 \
 		Amazon::SimpleDB::Response.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

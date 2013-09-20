@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PostgreSQL
-# Date created:		November 13, 1998
-# Whom:			Marc G. Fournier <scrappy@FreeBSD.org>
-#
+# Created by: Marc G. Fournier <scrappy@FreeBSD.org>
 # $FreeBSD$
-#
 
 DISTVERSION?=	9.0.13
 PORTREVISION=	0
@@ -27,4 +23,5 @@ MAN3=		# no MAN3 for 9.0 only
 MAN7=		CREATE_CONSTRAINT_TRIGGER.7
 .endif
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../postgresql91-server/Makefile"

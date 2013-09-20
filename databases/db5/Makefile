@@ -6,6 +6,7 @@ PORTVERSION=	5.3.21.0
 CATEGORIES=	databases java
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
+NO_STAGE=	yes
 # the distfiles aren't named db5-* but db-*:
 DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pyhs
-# Date created:		2011-09-22
-# Whom:			Li-Wen Hsu <lwhsu@FreeBSD.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pyhs
 PORTVERSION=	0.2.4
@@ -22,4 +18,5 @@ PYEASYINSTALL_ARCHDEP=	yes
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

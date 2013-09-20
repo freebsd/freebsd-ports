@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-psycopg
-# Date created:		22 March 2002
-# Whom:			Alex Rodioukov <simuran@shaw.ca>
-#
+# Created by: Alex Rodioukov <simuran@shaw.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	psycopg
 PORTVERSION=	1.1.21
@@ -53,6 +49,7 @@ EXAMPLES=	binary.py bool.py bounded.py commit.py copy_from.py \
 DOCS=		AUTHORS COPYING CREDITS ChangeLog FAQ INSTALL NEWS \
 		README RELEASE-1.0 SUCCESS TODO
 
+NO_STAGE=	yes
 pre-everything::
 .if !defined(WITH_ZOPE)
 	@${ECHO} ""

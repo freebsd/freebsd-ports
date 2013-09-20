@@ -1,4 +1,4 @@
-# Created by:	Palle Girgensohn <girgen@pingpong.net>
+# Created by: Palle Girgensohn <girgen@pingpong.net>
 # $FreeBSD$
 
 PORTNAME=	postgresql
@@ -23,6 +23,7 @@ INSTALL_DIRS=	contrib
 SLAVE_ONLY=	yes
 CONFIGURE_ARGS+=--with-libxslt --with-libxml --with-openssl
 
+NO_STAGE=	yes
 post-install:
 	@- ${INSTALL_DATA} ${WRKSRC}/contrib/README ${DOCSDIR}/contrib/README
 

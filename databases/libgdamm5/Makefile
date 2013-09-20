@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--enable-static --disable-documentation
 
 OPTIONS_DEFINE=	BDB
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBDB} || exists(${LOCALBASE}/libdata/pkgconfig/libgda-bdb-5.0.pc)

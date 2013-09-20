@@ -1,9 +1,5 @@
-# New ports collection makefile for:	DBIx::AnyDBD
-# Date created:				31 Dec 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	DBIx-AnyDBD
 PORTVERSION=	2.01
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=	DBIx::AnyDBD.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

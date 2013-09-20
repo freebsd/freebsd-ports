@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pytc
-# Date created:		2009-02-18
-# Whom:			Li-Wen Hsu <lwhsu@FreeBSD.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pytc
 PORTVERSION=	0.8
@@ -22,6 +18,7 @@ USE_PYDISTUTILS=	yes
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pytc.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

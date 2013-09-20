@@ -27,6 +27,7 @@ USE_PERL5=	build
 OPTIONS_DEFINE=	LOADERGUI
 LOADERGUI_DESC=	Enable shp2pgsql-gui
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 INSTALL_TARGET=	install

@@ -17,4 +17,5 @@ USE_PYTHON=	yes
 PYDISTUTILS_PKGNAME=	South
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

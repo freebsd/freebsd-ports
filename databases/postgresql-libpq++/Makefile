@@ -17,6 +17,7 @@ USE_PGSQL=	YES
 USES=		gmake
 USE_LDCONFIG=	YES
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} "s,/usr/local/pgsql,${PREFIX},; \
 			  s,^CFLAGS.*,CFLAGS=${CFLAGS},; \

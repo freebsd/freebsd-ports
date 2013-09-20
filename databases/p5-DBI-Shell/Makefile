@@ -22,4 +22,5 @@ USE_PERL5=	configure
 MAN1=		dbish.1
 MAN3=		DBI::Format.3 DBI::Format::CSV.3 DBI::Format::SQLMinus.3 DBI::Shell.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

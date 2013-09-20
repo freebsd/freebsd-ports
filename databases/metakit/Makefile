@@ -1,9 +1,5 @@
-# New ports collection makefile for:	metakit
-# Date created:		25 December 1999
-# Whom:			Russell L. Carter <rcarter@pinyon.org>
-#
+# Created by: Russell L. Carter <rcarter@pinyon.org>
 # $FreeBSD$
-#
 
 PORTNAME=	metakit
 PORTVERSION=	2.4.9.7
@@ -26,6 +22,7 @@ ONLY_FOR_ARCHS=	i386 alpha amd64
 OPTIONS_DEFINE=	PYTHON TCL DOCS
 OPTIONS_DEFAULT=	PYTHON
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}

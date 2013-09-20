@@ -1,9 +1,5 @@
-# Ports collection makefile for:	py-forgetsql
-# Date created:				20 November 2004
-# Whom:					Anders Nordby <anders@FreeBSD.org>
-#
+# Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	forgetsql
 PORTVERSION=	0.5.1
@@ -28,6 +24,7 @@ PYDISTUTILS_PKGNAME=	forgetSQL
 
 DOCS=	BUGS README TODO
 
+NO_STAGE=	yes
 post-build:
 	@cd ${WRKSRC}/lib && ${PYTHON_CMD} -c 'import forgetSQL'
 	@cd ${WRKSRC}/lib && ${PYTHON_CMD} -O -c 'import forgetSQL'

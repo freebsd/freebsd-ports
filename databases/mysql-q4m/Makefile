@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Q4M
-# Date created:		1 September 2008
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	q4m
 PORTVERSION=	0.9.5
@@ -37,6 +33,7 @@ COPYTREE_AUTO=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 					${FIND} $$1 -type f -perm +100 -exec ${CHOWN} ${BINOWN}:${BINGRP} {} \; && \
 					${FIND} $$1 -type f -perm +100 -exec chmod ${BINMODE} {} \;' --
 
+NO_STAGE=	yes
 post-extract:
 	${CP} -p ${WRKSRC}/support-files/install.sql ${WRKSRC}/examples/
 

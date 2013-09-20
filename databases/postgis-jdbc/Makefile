@@ -18,6 +18,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/postgis_1.4.0.jar
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${_DISTDIR}postgis_${PORTVERSION}.jar ${JAVAJARDIR}
 

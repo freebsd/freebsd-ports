@@ -16,4 +16,5 @@ PLIST=		${.CURDIR}/pkg-plist
 
 LIBGDA5_SLAVE=	postgresql
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -91,6 +91,7 @@ FB_DOCS_DIRS=	sql.extensions license upgrade
 
 MAKE_ENV+=	FIREBIRD_TMP="${WRKDIR}" FIREBIRD_LOCK="${WRKDIR}"
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} -rf ${WRKSRC}/extern/icu
 

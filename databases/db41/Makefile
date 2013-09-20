@@ -1,9 +1,5 @@
-# ports collection makefile for:	Berkeley DB v4
-# Date created:				2003-01-04
-# Whom:					Matthias Andree <matthias.andree@gmx.de>
-#
+# Created by: Matthias Andree <matthias.andree@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	db41
 PORTVERSION=	4.1.25
@@ -35,6 +31,7 @@ INSTALL_TARGET=	install install_docs
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64

@@ -26,6 +26,7 @@ PLIST_FILES=	bin/mysqlbackup \
 PLIST_DIRS=	${PERIODICS:C,^(.*)\.(.*)$,etc/periodic/\2,:u} \
 		etc/periodic
 
+NO_STAGE=	yes
 pre-install:
 	${REINPLACE_CMD} ${SUB_LIST:S,$,!g,:S,^, -e s!%%,:S,=,%%!,} \
 		${PERIODICS:S,^,${WRKSRC}/,}

@@ -16,5 +16,6 @@ USE_PURE=	yes
 PLIST_FILES=	lib/pure/sql3.pure \
 		lib/pure/sql3util.so
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/pure/bsd.pure.mk"
 .include <bsd.port.mk>

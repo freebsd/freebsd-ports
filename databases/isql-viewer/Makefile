@@ -46,6 +46,7 @@ JAR_DEPENDS=	mysql-connector-java.jar \
 
 CLASSPATH=	"${JARFILES:S,^,${JAVAJARDIR}/,}:${JYTHON_PREFIX}/${JYTHON_JAR}:${JAR_DEPENDS:S,^,${JAVALIBDIR}/,:S| |:|g}"
 
+NO_STAGE=	yes
 do-configure:
 	@${SED} -e 's|%%CLASSPATH%%|${CLASSPATH:C,[[:space:]],:,g}|g'	\
 		-e 's|%%JAVA_VERSION%%|${JAVA_VERSION}|g'	\

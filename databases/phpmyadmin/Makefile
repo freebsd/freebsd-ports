@@ -42,6 +42,7 @@ XML_DESC=	PHP XML support (Export to OpenDoc)
 ZIP_DESC=	PHP Zip compression support
 ZLIB_DESC=	PHP ZLIB support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSUPHP}

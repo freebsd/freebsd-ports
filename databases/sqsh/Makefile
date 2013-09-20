@@ -25,6 +25,7 @@ ALL_TARGET=	build
 MAN1=		sqsh.1
 PLIST_FILES=	bin/sqsh etc/sqshrc.default
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

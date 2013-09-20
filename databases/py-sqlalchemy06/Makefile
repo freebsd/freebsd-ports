@@ -35,6 +35,7 @@ MSSQL_DESC=	MS SQL Server backend
 NOSE_DESC=	Use Nose for unit tests
 SYBASE_DESC=	Sybase backend
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCEXTENSIONS}

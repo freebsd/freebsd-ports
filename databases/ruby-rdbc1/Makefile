@@ -1,9 +1,5 @@
-# New ports collection makefile for:	RDBC1
-# Date created:		19 March 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rdbc1
 PORTVERSION=	001103
@@ -26,6 +22,7 @@ USE_RUBY=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${RUBY_SITELIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.rb ${RUBY_SITELIBDIR}/

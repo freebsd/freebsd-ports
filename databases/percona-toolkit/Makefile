@@ -51,4 +51,5 @@ MAN1=	percona-toolkit.1 \
 	pt-variable-advisor.1 \
 	pt-visual-explain.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

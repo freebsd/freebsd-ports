@@ -61,6 +61,7 @@ PLIST_SUB=	VERSION="${PORTVERSION}" PYTHON_VER="${PYTHON_VER}"
 
 CONFLICTS=	mysql-workbench-oss*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON_UTILS}

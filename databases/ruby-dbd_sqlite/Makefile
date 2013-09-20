@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dbd_sqlite for DBD-for-Ruby
-# Date created:		15 November 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dbd_sqlite
 PORTVERSION=	0.1.2
@@ -23,4 +19,5 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${PORTSDIR}/databases/ruby-dbi
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

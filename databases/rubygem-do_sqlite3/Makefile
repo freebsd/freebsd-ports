@@ -18,4 +18,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 CONFIGURE_ARGS=	--with-sqlite3-dir=${LOCALBASE}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

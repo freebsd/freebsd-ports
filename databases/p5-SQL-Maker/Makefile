@@ -29,4 +29,5 @@ MAN3=	SQL::Maker.3 \
 	SQL::Maker::Select.3 \
 	SQL::Maker::SelectSet.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

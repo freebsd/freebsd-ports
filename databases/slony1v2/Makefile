@@ -31,6 +31,7 @@ CONFLICTS?=	slony1-1*
 
 CONFIGURE_ENV+=	FLEX=${LOCALBASE}/bin/flex
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPERLTOOLS}

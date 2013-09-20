@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-cdb
-# Date created:				03 December 2001
-# Whom:					Jason R. Mastaler <jason@mastaler.com>
-#
+# Created by: Jason R. Mastaler <jason@mastaler.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cdb
 PORTVERSION=	0.34
@@ -25,6 +21,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 DOCS=		ChangeLog README
 EXAMPLES=	Example
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}

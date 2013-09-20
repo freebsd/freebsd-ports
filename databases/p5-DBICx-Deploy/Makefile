@@ -24,4 +24,5 @@ USE_PERL5=	configure
 MAN1=	dbicdeploy.1
 MAN3=	DBICx::Deploy.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

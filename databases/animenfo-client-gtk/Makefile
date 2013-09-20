@@ -23,4 +23,5 @@ CFLAGS+=	${CPPFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/animenfo-client-gtk
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

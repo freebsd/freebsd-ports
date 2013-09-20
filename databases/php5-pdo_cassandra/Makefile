@@ -29,6 +29,7 @@ DEFAULT_PHP_VER=5
 IGNORE_WITH_PHP=52
 THRIFT_CMD=	${LOCALBASE}/bin/thrift
 
+NO_STAGE=	yes
 post-configure:
 	thrift_version=`${THRIFT_CMD} -version | ${AWK} '{print $$3}'`; \
 	if [ "$$thrift_version" = "0.8.0" ]; then \

@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	vfront
-# Date created:	 			11th April 2012
-# Whom:					crees
-#
+# Created by: crees
 # $FreeBSD$
-#
 
 PORTNAME=	vfront
 DISTVERSION=	0.96c
@@ -24,6 +20,7 @@ OPTIONS_MULTI=	database
 OPTIONS_MULTI_database=	MYSQL PGSQL
 OPTIONS_DEFAULT=	MYSQL PGSQL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

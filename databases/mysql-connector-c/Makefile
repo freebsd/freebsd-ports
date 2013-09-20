@@ -18,4 +18,5 @@ USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

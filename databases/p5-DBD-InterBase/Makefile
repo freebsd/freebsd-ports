@@ -18,6 +18,7 @@ USES=		perl5
 USE_PERL5=	configure
 USE_FIREBIRD=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|%%IB_BASE%%|${LOCALBASE}|' \
 		${WRKSRC}/Makefile.PL

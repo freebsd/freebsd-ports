@@ -27,6 +27,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 PORTDOCS=	LICENSE.txt api
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|' ${WRKSRC}/build.xml
 

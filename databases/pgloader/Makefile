@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pgloader
-# Date created:		2008-06-02
-# Whom:			Pierre-Emmanuel Andre
-#
+# Created by: Pierre-Emmanuel Andre
 # $FreeBSD$
-#
 
 PORTNAME=	pgloader
 PORTVERSION=	2.3.1
@@ -21,6 +17,7 @@ USE_PYTHON=	2.5+
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:${PORTSDIR}/databases/py-psycopg2
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's,/usr/share/python-support,${PYTHON_SITELIBDIR},' ${WRKSRC}/pgloader/options.py
 

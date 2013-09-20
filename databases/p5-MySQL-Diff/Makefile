@@ -24,6 +24,7 @@ MAN3=		MySQL::Diff.3 \
 		MySQL::Diff::Table.3 \
 		MySQL::Diff::Utils.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '1 s|/usr/bin/perl|${PERL}|' ${WRKSRC}/bin/mysqldiff
 

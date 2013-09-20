@@ -13,4 +13,5 @@ USE_GMAKE=	yes
 
 MAKE_ARGS=	USE_PGXS=1 LDFLAGS=-lkvm
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

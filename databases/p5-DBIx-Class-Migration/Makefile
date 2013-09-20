@@ -106,4 +106,5 @@ MAN3=	Catalyst::TraitFor::Model::DBIC::Schema::FromMigration.3 \
 	DBIx::Class::Migration::Types.3 \
 	Test::DBIx::Class::FixtureCommand::Population.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

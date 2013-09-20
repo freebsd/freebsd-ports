@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kinterbasdb
-# Date created:				19 November 2003
-# Whom:					Dmytro Rud <rud@cs.uni-magdeburg.de>
-#
+# Created by: Dmytro Rud <rud@cs.uni-magdeburg.de>
 # $FreeBSD$
-#
 
 PORTNAME=		kinterbasdb
 PORTVERSION=		3.2
@@ -26,6 +22,7 @@ USE_PYTHON_PREFIX=	yes
 
 PLIST_SUB=		INSTALLDIR=lib/${PYTHON_VERSION}/site-packages/${PORTNAME}
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e "s@DEFAULT_FREEBSD_HOME_DIR = '.*'@DEFAULT_FREEBSD_HOME_DIR = '${LOCALBASE}'@" \
 		${WRKSRC}/setup.py

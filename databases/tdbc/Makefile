@@ -32,6 +32,7 @@ MANN=	tdbc.n \
 	tdbc_statement.n \
 	tdbc_tokenize.n
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 #

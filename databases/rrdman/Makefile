@@ -18,4 +18,5 @@ USES=		perl5
 PLIST_FILES=	bin/rrd_hwreapply
 MAN1=		rrd_hwreapply.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

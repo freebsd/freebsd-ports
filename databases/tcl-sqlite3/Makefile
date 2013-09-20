@@ -1,4 +1,3 @@
-# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	sqlite3
@@ -39,6 +38,7 @@ SUB_LIST=	"TCLSH=${TCLSH}"
 
 MANN=	sqlite3.n
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

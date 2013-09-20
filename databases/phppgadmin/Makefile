@@ -22,6 +22,7 @@ PLIST_SUB+=	PGADMDIR=${PGADMDIR}
 PGADMOLDDIR?=	www/data-dist/phpPgAdmin
 PLIST_SUB+=	PGADMOLDDIR=${PGADMOLDDIR}
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_CMD} "# you can customize the installation directory"
 	@${ECHO_CMD} "# by setting PGADMDIR in /etc/make.conf"

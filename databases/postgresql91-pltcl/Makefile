@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PostgreSQL PL/Tcl
-# Date created:		January 14, 2002
-# Whom:			Palle Girgensohn <girgen@partitur.se>
-#
+# Created by: Palle Girgensohn <girgen@partitur.se>
 # $FreeBSD$
-#
 
 PORTNAME=	postgresql
 PORTREVISION=	3
@@ -34,4 +30,5 @@ BUILD_DIRS=	src/backend src/pl/tcl
 INSTALL_DIRS=	src/pl/tcl
 SLAVE_ONLY=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -21,6 +21,7 @@ USE_MYSQL=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	@${CP} ${DISTDIR}/${PORTNAME}.sh \
 		${PREFIX}/bin/${PORTNAME}

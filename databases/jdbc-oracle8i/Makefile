@@ -1,4 +1,4 @@
-# Created by: Patrick Gardella <patrick@freebsd.org>
+# Created by: Patrick Gardella <patrick@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	oracle8i
@@ -34,6 +34,7 @@ NLS_CHARSET=	nls_charset${JDKVER}
 PLIST_FILES=	%%JAVAJARDIR%%/${CLASSES}${EXTRACT_SUFX}	\
 		%%JAVAJARDIR%%/${NLS_CHARSET}${EXTRACT_SUFX}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${CLASSES:S|^|${_DISTDIR}/|}${EXTRACT_SUFX})	\

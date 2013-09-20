@@ -1,4 +1,4 @@
-# Created by: Nick Sayer <nsayer@FreeBSD.ORG>
+# Created by: Nick Sayer <nsayer@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	GDBM
@@ -25,4 +25,5 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/ext/GDBM_File
 
 MAN3=		GDBM_File.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

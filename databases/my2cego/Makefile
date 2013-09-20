@@ -22,4 +22,5 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf:env
 PLIST_FILES=	bin/my2cego
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

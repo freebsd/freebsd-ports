@@ -19,6 +19,7 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rrdmerge ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/rrdmergetree ${PREFIX}/bin

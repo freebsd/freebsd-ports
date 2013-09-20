@@ -28,6 +28,7 @@ SUB_LIST=	JAVA="${JAVA}" \
 		EXIST_USER=${EXIST_USER} \
 		EXIST_GROUP=${EXIST_GROUP}
 
+NO_STAGE=	yes
 do-install:
 	@${JAVA} -Djava.awt.headless=true -jar ${DISTDIR}/${DISTFILES} \
 		-p ${DATADIR}

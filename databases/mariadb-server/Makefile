@@ -83,6 +83,7 @@ MAXKEY_DESC=		Change max key length from 1000 to 4000
 OPTIONS_DEFAULT+=	ARIADB ARCHIVE BLACKHOLE SPHINX FEDX XTRADB HANDLERSOCKET
 .endif	# .if !defined(MARIADB_CLIENT_SLAVE)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} > 900000 && ${PORT_OPTIONS:MSTATIC}

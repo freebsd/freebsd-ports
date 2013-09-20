@@ -27,4 +27,5 @@ MAN3=		SQLite::Work.3 \
 		SQLite::Work::CGI.3 \
 		SQLite::Work::Mail.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

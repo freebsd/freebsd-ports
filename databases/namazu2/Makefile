@@ -20,6 +20,7 @@ CONFIGURE_ARGS=	--with-perl5="${PERL}" \
 		${ICONV_CONFIGURE_ARG}
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.common"
 
 MAN1=		namazu.1 mknmz.1

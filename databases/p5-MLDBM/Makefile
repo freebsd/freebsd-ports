@@ -1,4 +1,4 @@
-# Created by: ache@freebsd.org
+# Created by: ache@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	MLDBM
@@ -18,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		MLDBM.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

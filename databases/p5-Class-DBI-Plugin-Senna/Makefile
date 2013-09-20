@@ -1,4 +1,3 @@
-# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Class-DBI-Plugin-Senna
@@ -17,6 +16,7 @@ USES=		perl5
 USE_PERL5=	configure
 MAN3=		Class::DBI::Plugin::Senna.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == ia64

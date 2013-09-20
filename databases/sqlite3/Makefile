@@ -45,6 +45,7 @@ UNLOCK_NOTIFY_DESC=	Enable notification on unlocking
 THREADSAFE_DESC=	Build thread-safe library
 EXTENSION_DESC=		Allow loadable extensions
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PLIST_FILES=	bin/sqlite3 include/sqlite3.h include/sqlite3ext.h \

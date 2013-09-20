@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/mSQL
-# Date created:		9 June 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	msql
 PORTVERSION=	0.2.4a
@@ -30,6 +26,7 @@ EXAMPLES_EN=	demo/* sample/*
 DOCS_EN=	readme.en.txt doc/en/*
 DOCS_JA=	readme.ja.txt
 
+NO_STAGE=	yes
 post-configure:
 	${ECHO_CMD} '#define INST_DIR "${LOCALBASE}"' >> ${WRKSRC}/site.h
 

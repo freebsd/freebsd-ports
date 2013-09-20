@@ -1,9 +1,5 @@
-# New ports collection makefile for:	oracle8-client
-# Date created:				8 Aug 2005
-# Whom:					Max Khon <fjoe@FreeBSD.org>
-#
+# Created by: Max Khon <fjoe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	oracle8-client
 PORTVERSION=	0.2.0
@@ -20,6 +16,7 @@ ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ORACLE_HOME=	${PREFIX}/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:

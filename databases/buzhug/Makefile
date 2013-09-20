@@ -1,9 +1,5 @@
-# New ports collection makefile for:	buzhug
-# Date created:		03 March 2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	buzhug
 PORTVERSION=	1.8
@@ -17,4 +13,5 @@ USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

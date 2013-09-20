@@ -23,6 +23,7 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKSRC}/pkg-message
 
+NO_STAGE=	yes
 post-install:
 	@${ECHO_MSG} ''
 	@${CAT} ${PKGMESSAGE}

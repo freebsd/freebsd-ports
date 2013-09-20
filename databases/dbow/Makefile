@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dbow
-# Date created:				24 March 2004
-# Whom:					Dermot Tynan <dtynan@kalopa.com>
-#
+# Created by: Dermot Tynan <dtynan@kalopa.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dbow
 PORTVERSION=	0.7
@@ -21,6 +17,7 @@ USE_MYSQL=	yes
 
 MAN1=		dbow.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|CFLAGS=|CFLAGS+=|g" \
 			-e "s|^MYSQL_INC=|MYSQL_INC?=|" \

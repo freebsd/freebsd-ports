@@ -30,6 +30,7 @@ MSQLDATA=	directory.mm dll_os2.mm install.mm lex.mm libinstall.mm \
 DOCS=		README RELEASE_NOTES BUGS doc/License doc/Manual \
 		doc/Perl doc/acl.txt
 
+NO_STAGE=	yes
 post-patch:
 		cd ${FILESDIR}; \
 		${REINPLACE_CMD} -e "s|'bison -y' byacc|byacc 'bison -y'|g" \

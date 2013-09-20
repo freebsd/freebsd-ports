@@ -26,6 +26,7 @@ MAN3=	DBIx::Simple.3 \
 	DBIx::Simple::Comparison.3 \
 	DBIx::Simple::Result::RowObject.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQL_INTERP}

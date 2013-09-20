@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PL/Ruby
-# Date created:		28 June 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	plruby
 PORTVERSION=	0.5.4
@@ -43,6 +39,7 @@ DOCS=		Changes plruby.html plruby.rd
 
 PKGMESSAGE=	${WRKDIR}/createlang.sql
 
+NO_STAGE=	yes
 pre-patch:
 	cd ${PGSQL_PORTDIR} && ${MAKE} -DBATCH patch
 

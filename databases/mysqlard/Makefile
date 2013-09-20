@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mysqlard
-# Date created:				31 July 2006
-# Whom:					Greg Albrecht <gregoryba@gmail.com>
-#
+# Created by: Greg Albrecht <gregoryba@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mysqlard
 PORTVERSION=	1.0.0
@@ -33,6 +29,7 @@ CONFIGURE_ARGS=	--with-rrd="${LOCALBASE}" --datadir="${PREFIX}/www" \
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-install:
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 

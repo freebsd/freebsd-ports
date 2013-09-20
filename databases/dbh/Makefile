@@ -31,6 +31,7 @@ MAN3=		dbh_close.3 dbh_create.3 dbh_destroy.3 dbh_erase.3 \
 OPTIONS_DEFINE=	GTKDOC EXAMPLES
 GTKDOC_DESC=	Enable GTK html documentation
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTKDOC}

@@ -40,6 +40,7 @@ INSTLIBSDIR=		${PREFIX}/usr/lib/oracle/${ORACLEVERSION}/client/lib
 
 PLIST_SUB=		ORACLEVERSION=${ORACLEVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if		${ARCH} == "i386"

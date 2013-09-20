@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-chdb
-# Date created:			26 January 2012
-# Whom:				Evan Sarmiento <esarmiento@wayfair.com>
-#
+# Created by: Evan Sarmiento <esarmiento@wayfair.com>
 # $FreeBSD$
-#
 
 PORTNAME=	chdb
 PORTVERSION=	1.0.2
@@ -33,4 +29,5 @@ GH_COMMIT=	169f45d
 
 CONFIGURE_ARGS=	--with-libcmph-dir=${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

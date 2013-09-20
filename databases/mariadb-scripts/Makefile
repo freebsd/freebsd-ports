@@ -27,6 +27,7 @@ MAN1=		msql2mysql.1 mysql_convert_table_format.1 mysql_find_rows.1 \
 EXTRA_PATCHES=	${MASTERDIR}/files/patch-Makefile.in ${MASTERDIR}/files/patch-man__Makefile.in
 MDB_SCRIPTS_SUBDIRS=	scripts @man_dirs@
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%SUBDIRS%%|${MDB_SCRIPTS_SUBDIRS}|" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|%%MANS%%|${MAN1}|" ${WRKSRC}/man/Makefile.in

@@ -1,4 +1,4 @@
-# Created by:	alp@sfedu.ru
+# Created by: alp@sfedu.ru
 # $FreeBSD$
 
 PORTNAME=	postgresql-repmgr
@@ -19,6 +19,7 @@ MAKE_ENV=	USE_PGXS=1
 
 PORTDOCS=	README.*
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/repmgr ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/repmgrd ${PREFIX}/sbin

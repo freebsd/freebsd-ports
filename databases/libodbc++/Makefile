@@ -1,4 +1,3 @@
-# Creayed by: Johann Visagie <wjv@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libodbc++
@@ -27,6 +26,7 @@ OPTIONS_SINGLE=	ODBC
 OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
 OPTIONS_DEFAULT=	ODBC IODBC
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIODBC}

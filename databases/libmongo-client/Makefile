@@ -22,6 +22,7 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	PKG_CONFIG_DIR=${LOCALBASE}/libdata/pkgconfig
 
+NO_STAGE=	yes
 run-autotools:
 	@${REINPLACE_CMD} 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/src/Makefile.am

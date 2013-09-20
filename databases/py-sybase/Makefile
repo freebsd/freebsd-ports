@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-sybase
-# Date created:				21 November 2002
-# Whom:					Gregory Bond <gnb@itga.com.au>
-#
+# Created by: Gregory Bond <gnb@itga.com.au>
 # $FreeBSD$
 
 PORTNAME=	sybase
@@ -23,6 +20,7 @@ USE_PYDISTUTILS=	yes
 .if defined(TDS_VERSION)
 TDS_SUF="=${TDS_VERSION}"
 .else
+NO_STAGE=	yes
 pre-fetch:
 	@V=`${PKG_INFO} | sed -ne 's/^freetds-0.\(..\).*/\1/p'` ; \
 	if [ $$V -le 60 ]; then \

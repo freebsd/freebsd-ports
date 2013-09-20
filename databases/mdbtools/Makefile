@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 DOCS=		AUTHORS ChangeLog HACKING NEWS README TODO
 MAN1=		mdb-ver.1 mdb-tables.1 mdb-schema.1 mdb-sql.1 mdb-export.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""

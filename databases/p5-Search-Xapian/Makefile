@@ -66,6 +66,7 @@ MAN3=		Search::Xapian.3 \
 		Search::Xapian::Weight.3 \
 		Search::Xapian::WritableDatabase.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^if (defined $$builddir) {|if (0) {|' ${WRKSRC}/Makefile.PL
 

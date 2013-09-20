@@ -110,6 +110,7 @@ SSL_DESC=	Build with OpenSSL support
 OPTIONS_DEFAULT=	NLS XML TZDATA INTDATE SSL
 .endif # !SLAVE_ONLY
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}

@@ -24,6 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-debug
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,CFLAGS=,CFLAGS+=,' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's,-O,,g' ${WRKSRC}/src/configure

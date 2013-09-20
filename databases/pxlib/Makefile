@@ -24,6 +24,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	MAN
 MAN_DESC=	Build and install manpages
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMAN}

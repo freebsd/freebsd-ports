@@ -27,6 +27,7 @@ PORTDOCS=	CUSTOMIZE CUSTOMIZE.cb CUSTOMIZE.vars \
 
 PORTEXAMPLESS=	gnatsweb-site-example.pl
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${ETCDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/gnatsweb-site.pl  ${ETCDIR}/gnatsweb-site.pl.default

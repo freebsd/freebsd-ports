@@ -28,4 +28,5 @@ MAN3=	\
 	DR::Tarantool::SyncClient.3 \
 	DR::Tarantool::Tuple.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -28,4 +28,5 @@ MAN3=		Search::InvertedIndex.3 \
 		Search::InvertedIndex::Query::Leaf.3 \
 		Search::InvertedIndex::Result.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

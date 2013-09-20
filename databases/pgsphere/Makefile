@@ -26,6 +26,7 @@ PLIST_FILES=	lib/postgresql/pg_sphere.so \
 		%%DATADIR%%/contrib/pg_sphere.sql
 PLIST_DIRSTRY=	%%DATADIR%%/contrib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

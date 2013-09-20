@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zodb3
-# Date created:		8 Dezember 2002
-# Whom:			Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
-#
+# Created by: Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
 # $FreeBSD$
-#
 
 PORTNAME=	zodb
 PORTVERSION=	3.10.5
@@ -29,4 +25,5 @@ USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 PYDISTUTILS_PKGNAME=	ZODB3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

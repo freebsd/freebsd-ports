@@ -27,4 +27,5 @@ MAN3=		DWH_File.3 DWH_File::Registry::URI.3 DWH_File::Value::Factory.3 \
 		DWH_File::Cache.3 DWH_File::Tie::Array.3 DWH_File::Slot.3 \
 		DWH_File::Tie::Foreign.3 DWH_File::Tie::Subscripted.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

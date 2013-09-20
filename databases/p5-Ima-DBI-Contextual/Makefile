@@ -1,4 +1,3 @@
-# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
 
 PORTNAME=	Ima-DBI-Contextual
@@ -26,4 +25,5 @@ USE_PERL5=	configure
 
 MAN3=		Ima::DBI::Contextual.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

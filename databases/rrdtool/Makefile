@@ -42,6 +42,7 @@ PERL_MODULE_DESC=	Build PERL module
 PYTHON_MODULE_DESC=	Build PYTHON bindings
 RUBY_MODULE_DESC=	Build RUBY bindings
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON_MODULE}

@@ -25,6 +25,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 CONFIGURE_ARGS=	--enable-shared \
 		--disable-dependency-tracking
 
+NO_STAGE=	yes
 post-install:
 #	This is needed for ldconfig
 	${LN} -s ${PREFIX}/lib/libpqxx-${PORTVERSION}.so \

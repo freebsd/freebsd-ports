@@ -43,4 +43,5 @@ INSTALLS_ICONS=	yes
 BUILD_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 RUN_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

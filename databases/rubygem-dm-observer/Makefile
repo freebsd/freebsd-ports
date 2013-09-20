@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-dm-observer
-# Date created:		2011-06-16
-# Whom:			Ryan Steinmetz <rpsfa@rit.edu>
-#
+# Created by: Ryan Steinmetz <rpsfa@rit.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	dm-observer
 PORTVERSION=	1.2.0
@@ -19,4 +15,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

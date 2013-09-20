@@ -28,6 +28,7 @@ GROUPS=	cego
 
 PLIST_SUB+=	USER=${USERS}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,-O3,,g' \
 		${WRKSRC}/src/Makefile.in \

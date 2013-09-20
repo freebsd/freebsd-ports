@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ipa_sdb
-# Date created:				27 December 2005
-# Whom:					Andrey Simonenko
-#
+# Created by: Andrey Simonenko
 # $FreeBSD$
-#
 
 PORTNAME=	ipa_sdb
 PORTVERSION=	1.1.1
@@ -27,6 +23,7 @@ RULES_DESC=		Enable static rules support
 LIMITS_DESC=		Enable limits support
 THRESHOLDS_DESC=	Enable thresholds support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MAUTORULES)

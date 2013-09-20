@@ -24,6 +24,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/jrrd.jar \
 		lib/libjrrd.la \
 		lib/libjrrd.so
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	"Installation settings:"

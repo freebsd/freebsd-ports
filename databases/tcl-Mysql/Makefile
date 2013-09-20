@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Mysql-modules
-# Date created:				24 August 1999
-# Whom:	      				Mikhail Teterin <mi@aldan.algebra.com>
-#
+# Created by: Mikhail Teterin <mi@aldan.algebra.com>
 # $FreeBSD$
-#
 
 PORTNAME=	${TCL_NODOT}-sql
 PORTVERSION=	20000114
@@ -28,6 +24,7 @@ MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 DOCSDIR?=	${PREFIX}/share/doc/tcl-MySQL
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^int ,static int ,' ${WRKSRC}/sql.cc
 

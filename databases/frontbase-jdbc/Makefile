@@ -22,6 +22,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${JAVAJARDIR}/${JARFILE}
 

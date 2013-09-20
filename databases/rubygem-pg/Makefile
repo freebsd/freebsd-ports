@@ -20,4 +20,5 @@ PG_CONFIG=		${LOCALBASE}/bin/pg_config
 CONFIGURE_ARGS=		--with-pgsql-include-dir=`${PG_CONFIG} --includedir` \
 			--with-pgsql-lib-dir=`${PG_CONFIG} --libdir`
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

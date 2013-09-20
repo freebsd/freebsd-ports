@@ -31,6 +31,7 @@ MAN1=		ktremotemgr.1 \
 		ktutilserv.1 \
 		ktutiltest.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

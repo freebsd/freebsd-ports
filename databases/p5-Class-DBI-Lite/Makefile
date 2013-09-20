@@ -39,4 +39,5 @@ MAN3=		Class::DBI::Lite.3 \
 		Class::DBI::Lite::TableInfo.3 \
 		Class::DBI::Lite::Tutorial.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

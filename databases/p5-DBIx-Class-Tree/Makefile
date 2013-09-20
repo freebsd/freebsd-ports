@@ -22,4 +22,5 @@ MAN3=	DBIx::Class::Tree.3 \
 	DBIx::Class::Tree::AdjacencyList.3 \
 	DBIx::Class::Tree::AdjacencyList::Ordered.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

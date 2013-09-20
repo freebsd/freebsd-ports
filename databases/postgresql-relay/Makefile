@@ -18,6 +18,7 @@ USE_RC_SUBR=	postgresql-relay
 USES=		perl5
 USE_PERL5=	build
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/postgresql-relay ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/postgresql-relay.conf-sample ${PREFIX}/etc/postgresql-relay.conf-sample

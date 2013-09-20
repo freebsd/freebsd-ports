@@ -1,9 +1,5 @@
-# New ports collection makefile for:	emma
-# Date created:				2 December 2006
-# Whom:					Junji NAKANISHI <jun-g@daemonfreaks.com>
-#
+# Created by: Junji NAKANISHI <jun-g@daemonfreaks.com>
 # $FreeBSD$
-#
 
 PORTNAME=	emma
 PORTVERSION=	0.6
@@ -20,6 +16,7 @@ USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|python2.4|env python|' ${WRKSRC}/emma
 

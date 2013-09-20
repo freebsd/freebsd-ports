@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gnomedb
-# Date created:				19th June 2001
-# Whom:					Ade Lovett <ade@FreeBSD.org>
-#
+# Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/databases/gnome-db/Makefile,v 1.5 2007/05/19 21:36:00 marcus Exp $
-#
 
 PORTNAME=	gnome-db
 PORTVERSION=	0.2.96
@@ -31,4 +27,5 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 
 DOCSDIR=	${PREFIX}/share/doc/gnomedb
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

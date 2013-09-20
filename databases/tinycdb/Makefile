@@ -20,4 +20,5 @@ MAN5=		cdb.5
 
 PLIST_FILES=	bin/cdb include/cdb.h lib/libcdb.a
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

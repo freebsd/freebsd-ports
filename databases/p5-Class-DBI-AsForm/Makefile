@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-Class-DBI-AsForm
-# Date created:				Apr 3 2004
-# Whom:					Lars Thegler <lars@thegler.dk>
-#
+# Created by: Lars Thegler <lars@thegler.dk>
 # $FreeBSD$
 
 PORTNAME=	Class-DBI-AsForm
@@ -23,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=		Class::DBI::AsForm.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -46,6 +46,7 @@ SOUP_DESC=	Web provider
 KEYRING_DESC=	Support gnome-keyring
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 VERSION=	4.0

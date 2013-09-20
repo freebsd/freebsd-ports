@@ -45,6 +45,7 @@ PGBOUNCER_LOGDIR?=	/var/log/pgbouncer
 
 BUILD_DEPENDS+=		${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SUB_LIST+=	PGBOUNCER_USER="${USERS}" \

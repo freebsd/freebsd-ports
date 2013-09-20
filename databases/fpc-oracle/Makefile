@@ -17,4 +17,5 @@ EXTRACTUNITDIR+=	${WRKUNITDIR}
 OPTIONS_DEFINE=	ORACLE
 ORACLE_DESC=	Install oracle client
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

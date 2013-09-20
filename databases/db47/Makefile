@@ -1,9 +1,5 @@
-# New ports collection makefile for:	db47
-# Date created:		2008-06-23
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	db47
 PORTVERSION=	4.7.25.4
@@ -52,6 +48,7 @@ INSTALL_TARGET+=	install_docs docdir=${DOCSDIR}
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 post-install:
 .for i in libdb libdb_cxx
 	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${PREFIX}/lib

@@ -19,6 +19,7 @@ USES=		gmake perl5
 
 MAN3=		Tie::LevelDB.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/build_detect_platform/d' \
 		-e 's|build_config.mk|${LOCALBASE}/share/leveldb/&|' \

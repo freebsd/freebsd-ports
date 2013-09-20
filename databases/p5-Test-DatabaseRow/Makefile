@@ -21,4 +21,5 @@ MAN3=		Test::DatabaseRow.3 \
 		Test::DatabaseRow::Result.3 \
 		Test::DatabaseRow::Object.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

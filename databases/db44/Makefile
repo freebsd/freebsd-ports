@@ -1,9 +1,5 @@
-# ports collection makefile for:	Berkeley DB v4.4
-# Date created:				2005-11-21
-# Whom:					Matthias Andree <matthias.andree@gmx.de>
-#
+# Created by: Matthias Andree <matthias.andree@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	db44
 PORTVERSION=	4.4.20.4
@@ -36,6 +32,7 @@ INSTALL_TARGET+=	install_docs docdir=${DOCSDIR}
 PORTDOCS=		*
 .endif
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -Ee 's|-l?pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 

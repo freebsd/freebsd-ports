@@ -30,6 +30,7 @@ IODBC_DESC=	use iODBC driver
 UODBC_DESC=	use unixODBC driver
 OPTIONS_DEFAULT=MYSQL PGSQL SQLITE ODBC IODBC BOOST
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

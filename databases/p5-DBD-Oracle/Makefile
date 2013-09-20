@@ -24,6 +24,7 @@ CONFIGURE_ENV=	ORACLE_HOME="${ORACLE_HOME}"
 MAN1=		ora_explain.1
 MAN3=		DBD::Oracle.3 DBD::Oraperl.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOCI8}

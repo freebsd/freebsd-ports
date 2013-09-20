@@ -79,4 +79,5 @@ MAN3=	Jifty::DBI.3 \
 	Jifty::DBI::Schema.3 \
 	Jifty::DBI::SchemaGenerator.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

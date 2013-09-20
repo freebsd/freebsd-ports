@@ -1,9 +1,5 @@
-# New ports collection makefile for:   py-dbutils
-# Date created:                2005-11-02
-# Whom:                        Choe, Cheng-Dae
-#
+# Created by: Choe, Cheng-Dae
 # $FreeBSD$
-#
 
 PORTNAME=	dbutils
 PORTVERSION=	1.1
@@ -21,4 +17,5 @@ USE_PYTHON=	-2.7
 USE_PYDISTUTILS=easy_install
 PYDISTUTILS_PKGNAME=	DBUtils
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

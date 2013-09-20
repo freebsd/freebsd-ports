@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-frontbase
-# Date created:		27 May 2008
-# Whom:			Mitchell Smith <mjs@bur.st>
-#
+# Created by: Mitchell Smith <mjs@bur.st>
 # $FreeBSD$
-#
 
 PORTNAME=	frontbase
 PORTVERSION=	0.0.1
@@ -29,4 +25,5 @@ BUILD_WRKSRC=		${WRKSRC}
 INSTALL_WRKSRC=		${WRKSRC}
 INSTALL_TARGET=	site-install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

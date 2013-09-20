@@ -1,9 +1,5 @@
-# ports collection makefile for:	MySQL++
-# Date created:				20th July 2000
-# Whom:					Miklos Niedermayer <mico@bsd.hu>
-#
+# Created by: Miklos Niedermayer <mico@bsd.hu>
 # $FreeBSD$
-#
 
 PORTNAME=	mysql++
 PORTVERSION=	1.7.40
@@ -25,6 +21,7 @@ USE_LDCONFIG=	yes
 CONFLICTS=	${PORTNAME}*-2.*
 NO_LATEST_LINK=	yes
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/userman/html ${DOCSDIR}/refman/html

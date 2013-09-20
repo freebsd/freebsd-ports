@@ -63,4 +63,5 @@ MAN3=	DBIx::Class::DeploymentHandler.3 \
 	DBIx::Class::DeploymentHandler::WithApplicatorDumple.3 \
 	DBIx::Class::DeploymentHandler::WithReasonableDefaults.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -30,6 +30,7 @@ PYDISTUTILS_NOEGGINFO=	yes
 
 PLIST_FILES=	%%PYTHON_LIBDIR%%/lib-dynload/_sqlite3.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"

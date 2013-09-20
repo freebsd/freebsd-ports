@@ -20,6 +20,7 @@ MAN3=		DBIx::Compat.3 DBIx::Database.3 DBIx::Intrors.3 \
 		DBIx::Recordset.3 DBIx::Recordset::DBSeq.3 \
 		DBIx::Recordset::FileSeq.3
 
+NO_STAGE=	yes
 post-configure:
 # bad DBIx::Intrors.3
 		@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 -lax/;' \

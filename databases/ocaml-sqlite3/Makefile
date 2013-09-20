@@ -1,9 +1,5 @@
-# Ports collection makefile for: ocaml-sqlite3
-# Date created: 27th February 2006
-# Whom: "Meikel Brandmeyer" <ocaml-sqlite3-port@kotka.de>
-#
+# Created by: "Meikel Brandmeyer" <ocaml-sqlite3-port@kotka.de>
 # $FreeBSD$
-#
 
 PORTNAME=	sqlite3
 PORTVERSION=	1.6.1
@@ -40,6 +36,7 @@ PORTDOCS=	style.css *.html
 
 PLIST_FILES=	bin/sqlite3top
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-memchache-client
-# Date created:				26 January 2006
-# Whom:					Jonathan Weiss (<jw@innerewut.de>)
-#
+# Created by: Jonathan Weiss (<jw@innerewut.de>)
 # $FreeBSD$
 
 PORTNAME=	memcache-client
@@ -17,4 +14,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/memcached_top
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

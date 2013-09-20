@@ -26,4 +26,5 @@ USE_PERL5=	configure
 MAN3=		DBICx::TestDatabase.3 \
 		DBICx::TestDatabase::Subclass.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

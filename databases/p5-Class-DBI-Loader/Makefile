@@ -28,6 +28,7 @@ MAN3=		Class::DBI::Loader.3 \
 
 OPTIONS_DEFINE=	PGSQL MYSQL SQLITE DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

@@ -50,6 +50,7 @@ CHECK_PORT=	/usr/bin/nc -z localhost $$\1 2>\&1
 OPTIONS_DEFINE=		IMAGEMAGICK KERBEROS LDAP IODBC
 #OPTIONS_DEFINE+=		MONO PERL PHP4 PHP5 PYTHON RUBY
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD}\
 		-e 's,-lpthreads,${PTHREAD_LIBS},g'\

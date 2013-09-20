@@ -30,4 +30,5 @@ MAN3=	SQL::ReservedWords.3 \
 	SQL::ReservedWords::SQLite.3 \
 	SQL::ReservedWords::Sybase.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

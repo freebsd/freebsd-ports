@@ -23,6 +23,7 @@ USE_PERL5=	configure
 
 MAN3=	DBIx::MySQLSequence.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' '/Test::More/d' ${WRKSRC}/Makefile.PL
 

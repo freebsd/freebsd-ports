@@ -51,4 +51,5 @@ MAN3=		Genezzo.3 Genezzo::Block::RDBArray.3 \
 		Genezzo::Util.3 Genezzo::XEval.3 Genezzo::XEval::Prepare.3 \
 		Genezzo::XEval::SQLAlter.3 Genezzo::gendba.3 Genezzo::genexp.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -54,6 +54,7 @@ MAN8=	drizzled.8
 
 USE_RC_SUBR=	drizzle-server
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"

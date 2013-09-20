@@ -1,9 +1,5 @@
-# New ports collection makefile for:	puredb
-# Date created:		01 Nov 2002
-# Whom:			Sergei Kolobov <sergei@kolobov.com>
-#
+# Created by: Sergei Kolobov <sergei@kolobov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	puredb
 PORTVERSION=	2.1
@@ -21,6 +17,7 @@ USE_LDCONFIG=	yes
 DOCS=		AUTHORS FORMAT_DESCR NEWS README
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}

@@ -19,6 +19,7 @@ IGNORE_WITH_PHP=5
 MANUAL_PACKAGE_BUILD=  it needs an old PHP version
 PEAR_AUTOINSTALL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

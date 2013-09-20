@@ -28,4 +28,5 @@ MAN3=	DBIx::Inspector.3 \
 	DBIx::Inspector::Iterator.3 \
 	DBIx::Inspector::Table.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -18,6 +18,7 @@ USE_PERL5=	configure
 
 MAN3=		DBD::SQLite2.3
 
+NO_STAGE=	yes
 post-extract:
 	${RM} -f ${WRKSRC}/getsqlite.pl
 

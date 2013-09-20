@@ -1,9 +1,4 @@
-# New ports collection makefile for:	php5-propel
-# Date Created:				9 Nov, 2005
-# Whom:					Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	propel
 PORTVERSION=	1.1.1
@@ -19,6 +14,7 @@ USE_PHP=	yes
 DEFAULT_PHP_VER=5
 WRKSRC=		${WRKDIR}
 
+NO_STAGE=	yes
 do-build:
 	${SED} -e "s|@DATA-DIR@/propel_generator|${PREFIX}/share/propel/generator/pear|" ${WRKSRC}/generator/pear/pear-propel-gen > ${WRKSRC}/propel-gen
 

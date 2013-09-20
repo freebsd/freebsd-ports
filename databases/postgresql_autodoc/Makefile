@@ -21,6 +21,7 @@ MAN1=		postgresql_autodoc.1
 
 WRKSRC=		${WRKDIR}/postgresql_autodoc
 
+NO_STAGE=	yes
 do-install:
 		@${INSTALL_SCRIPT} ${WRKSRC}/postgresql_autodoc ${PREFIX}/bin
 		@${INSTALL_MAN} ${WRKSRC}/postgresql_autodoc.1 ${MANPREFIX}/man/man1

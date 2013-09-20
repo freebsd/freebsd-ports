@@ -20,6 +20,7 @@ USE_XZ=		yes
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/leveldb.so
 PYDISTUTILS_EGGINFO=	${PORTNAME}-${PORTVERSION:R}-py${PYTHON_VER}.egg-info
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|setuptools|do_not_use_&|' \

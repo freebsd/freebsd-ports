@@ -22,4 +22,5 @@ MAN3=		DBIx::Class::QueryLog.3 \
 		DBIx::Class::QueryLog::Query.3 \
 		DBIx::Class::QueryLog::Transaction.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

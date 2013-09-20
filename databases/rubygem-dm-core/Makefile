@@ -1,4 +1,4 @@
-# Whom: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
+# Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
 # $FreeBSD$
 
 PORTNAME=	dm-core
@@ -16,4 +16,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

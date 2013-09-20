@@ -21,6 +21,7 @@ USE_GNOME=	glib20
 USE_MYSQL=	yes
 USES=		cmake pkgconfig
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/CMakeLists.txt
 

@@ -32,6 +32,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--mandir=${MANPREFIX}/man \
 			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 BUILD_DEPENDS+=		talloc>=2.0.8:${PORTSDIR}/devel/talloc \

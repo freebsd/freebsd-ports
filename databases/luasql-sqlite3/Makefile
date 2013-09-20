@@ -1,9 +1,5 @@
-# New ports collection makefile for:   luasql-postgres
-# Date created:        25 May 2009
-# Whom:                Martin Matuska <martin@matuska.org>
-#
+# Created by: Martin Matuska <martin@matuska.org>
 # $FreeBSD$
-#
 
 PORTNAME=	luasql
 
@@ -11,4 +7,5 @@ LUASQL_DRIVER=	sqlite3
 
 MASTERDIR=      ${.CURDIR}/../luasql-mysql
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

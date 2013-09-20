@@ -28,4 +28,5 @@ MAN3=		DBIx::Class::Storage::Debug::PrettyPrint.3 \
 		SQL::Abstract::Test.3 \
 		SQL::Abstract::Tree.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

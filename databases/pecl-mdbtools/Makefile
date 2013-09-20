@@ -26,4 +26,5 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libmdb.a:${PORTSDIR}/databases/mdbtools
 
 CONFIGURE_ARGS=	--with-mdbtools=${LOCALBASE}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

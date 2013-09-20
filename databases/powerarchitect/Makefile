@@ -25,6 +25,7 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/architect-${PORTVERSION}
 SUB_FILES=	${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MORACLE_JDBC}

@@ -34,4 +34,5 @@ MAN3=		DBIx::Custom.3 \
 		DBIx::Custom::Util.3 \
 		DBIx::Custom::Where.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

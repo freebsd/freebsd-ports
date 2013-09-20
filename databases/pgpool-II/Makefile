@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pgpool
-# Date created:				2005-10-19
-# Whom:					Choe, Cheng-Dae <whitekid@gmail.com>
-#
+# Created by: Choe, Cheng-Dae <whitekid@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pgpool-II
 PORTVERSION=	3.1.6
@@ -36,6 +32,7 @@ MAN8=		pgpool.8
 OPTIONS_DEFINE+=SSL
 SSL_DESC=	Build with OpenSSL support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}

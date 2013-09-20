@@ -1,9 +1,4 @@
-# New ports collection makefile for:	pg_rman
-# Date created:				4 March 2010
-# Whom:					Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pg_rman
 PORTVERSION=	1.2.3
@@ -19,4 +14,5 @@ WANT_PGSQL_VER=	83+
 MAKE_ARGS=	USE_PGXS=1
 PLIST_FILES=	bin/pg_rman
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

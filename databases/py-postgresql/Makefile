@@ -20,6 +20,7 @@ USE_PYTHON=	3.1+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	py_${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 320

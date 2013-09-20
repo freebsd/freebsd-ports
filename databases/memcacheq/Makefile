@@ -1,9 +1,5 @@
-# New ports collection makefile for:	databases/memcacheq
-# Date created:		2010-12-23
-# Whom:			Mikhail T. <m.tsatsenko@gmail.com>
-#
+# Created by: Mikhail T. <m.tsatsenko@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	memcacheq
 PORTVERSION=	0.2.0
@@ -34,6 +30,7 @@ PORTDOCS=	README
 MCQDIR?=	/var/db/memcacheq
 PLIST_SUB=	MCQDIR=${MCQDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

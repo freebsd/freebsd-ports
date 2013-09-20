@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-oci8
-# Date created:		10 April 2007
-# Whom:			Simun Mikecin <numisemis at yahoo dot com>
-#
+# Created by: Simun Mikecin <numisemis at yahoo dot com>
 # $FreeBSD$
-#
 
 PORTNAME=	oci8
 DISTVERSION=	1.0.0rc1
@@ -31,6 +27,7 @@ INSTALL_TARGET=	site-install
 
 DOCS_EN=	ChangeLog README
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}

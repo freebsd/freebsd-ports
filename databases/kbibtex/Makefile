@@ -21,6 +21,7 @@ USE_QT4=	qmake_build moc_build uic_build rcc_build \
 
 MAN1=		kbibtex.1
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,share/man,man,' ${WRKSRC}/CMakeLists.txt
 

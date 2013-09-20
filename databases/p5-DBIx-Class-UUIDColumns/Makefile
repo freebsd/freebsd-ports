@@ -30,4 +30,5 @@ MAN3=	DBIx::Class::UUIDColumns.3 \
 	DBIx::Class::UUIDColumns::UUIDMaker::Win32::Guidgen.3 \
 	DBIx::Class::UUIDColumns::UUIDMaker::Win32API::GUID.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for: 	mysac
-# Date created:				1 January 2012
-# Whom:					Jake Smith <jake@xz.cx>
-#
+# Created by: Jake Smith <jake@xz.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	mysac
 PORTVERSION=	1.1.1
@@ -25,6 +21,7 @@ PLIST_FILES=	lib/libmysac.so \
 		lib/libmysac-static.a \
 		include/mysac.h
 
+NO_STAGE=	yes
 pre-build:
 	${TOUCH} ${WRKSRC}/make.deps
 

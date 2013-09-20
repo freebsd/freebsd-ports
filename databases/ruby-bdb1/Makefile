@@ -30,6 +30,7 @@ DOCS=		Changes \
 		docs/*.rd \
 		docs/doc
 
+NO_STAGE=	yes
 test regression-test check:
 	${MAKE} -C ${WRKSRC} test
 

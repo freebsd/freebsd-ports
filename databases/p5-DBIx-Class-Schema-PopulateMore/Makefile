@@ -49,6 +49,7 @@ MAN3=	DBIx::Class::Schema::PopulateMore.3 \
 	DBIx::Class::Schema::PopulateMore::Test::Schema::ResultSet::Person.3 \
 	DBIx::Class::Schema::PopulateMore::Visitor.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

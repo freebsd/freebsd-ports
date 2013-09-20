@@ -62,6 +62,7 @@ CONFIGURE_ARGS+=--with-plugins=max-no-ndb
 CONFIGURE_ARGS+=--with-collation=${WITH_COLLATION}
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"

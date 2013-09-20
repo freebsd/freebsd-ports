@@ -15,4 +15,5 @@ PLIST=		${.CURDIR}/pkg-plist
 
 LIBGDA4_SLAVE=	jdbc
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

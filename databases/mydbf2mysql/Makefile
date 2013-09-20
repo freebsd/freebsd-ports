@@ -1,9 +1,5 @@
-# New ports collection makefile for:   mydbf2mysql
-# Date created:        10 Jan 2010
-# Whom:                Andrey Polyakov <andrey.polyakov@unix.net>
-#
+# Created by: Andrey Polyakov <andrey.polyakov@unix.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mydbf2mysql
 PORTVERSION=	0.8.4.5
@@ -29,4 +25,5 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}/dist/${DISTNAME}/
 
 MAN1=	mydbf2mysql.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

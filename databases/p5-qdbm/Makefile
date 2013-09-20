@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-qdbm
-# Date created:		2005-09-01
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PKGNAMEPREFIX=	p5-
 
@@ -20,4 +16,5 @@ PATCHDIR=	${.CURDIR}/files
 
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

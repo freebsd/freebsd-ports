@@ -44,4 +44,5 @@ MAN3=	Oryx.3 Oryx::Association.3 Oryx::Association::Array.3 Oryx::Attribute.3 \
 	Oryx::DBM::Association.3 Oryx::DBM::Class.3 Oryx::DBI::Parent.3 \
 	Oryx::Association::Reference.3 Oryx::DBM::Util.3 Oryx::Value::Text.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

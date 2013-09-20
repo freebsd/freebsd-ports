@@ -22,6 +22,7 @@ MAN3=		Text::Query::BuildSQLMifluz.3 Text::Query::BuildSQLMySQL.3 \
 		Text::Query::BuildSQLPg.3 Text::Query::SolveSQL.3 \
 		Bundle::Text::Query::BuildSQL.3
 
+NO_STAGE=	yes
 pre-patch:
 	@${PERL} -pi -e '/DBI/ and $$_=""' ${WRKSRC}/Makefile.PL
 

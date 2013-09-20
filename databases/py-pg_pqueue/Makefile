@@ -1,9 +1,5 @@
-# Ports collection makefile for:	py-pg_pqueue
-# Date created:				07 Jan 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pg_pqueue
 PORTVERSION=	1.0.2
@@ -20,6 +16,7 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 post-install:
 .if !defined(NOPORTDOCS)

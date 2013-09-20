@@ -16,6 +16,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 NO_BUILD=	YES
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/wfb2sql ${PREFIX}/bin/wfb2sql
 	@${ECHO} "bin/wfb2sql" >> ${TMPPLIST}

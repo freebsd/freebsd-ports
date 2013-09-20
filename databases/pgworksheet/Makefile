@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pgworksheet
-# Date created:				03 Mar. 2005
-# Whom:					Henri Michelon
-#
+# Created by: Henri Michelon
 # $FreeBSD$
-#
 
 PORTNAME=	pgworksheet
 PORTVERSION=	1.9
@@ -23,6 +19,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGVERSION=	1.9
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e \
 		's|@PIXMAP_PATH@|${PREFIX}/share/pixmaps/pgworksheet|' \

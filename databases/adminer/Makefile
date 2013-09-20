@@ -16,6 +16,7 @@ NO_BUILD=	yes
 USE_PHP=	mssql mysql odbc pgsql session pdo_sqlite
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	php-mdcached
-# Date created:			8 February 2012
-# Whom:				Ivan Voras <ivoras@FreeBSD.org>
-#
+# Created by: Ivan Voras <ivoras@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mdcached
 PORTVERSION=	1.0.6
@@ -24,4 +20,5 @@ USE_PHPEXT=	yes
 CONFIGURE_ARGS=	--enable-mdcached
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}/client_php/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -90,6 +90,7 @@ MAN3=	DBIx::Class::Schema::Loader.3 \
 	DBIx::Class::Schema::Loader::Table::Informix.3 \
 	DBIx::Class::Schema::Loader::Table::Sybase.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

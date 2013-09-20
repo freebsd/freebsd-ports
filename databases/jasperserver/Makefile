@@ -68,6 +68,7 @@ PLIST_SUB=	DATABASE=${DATABASE} \
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHEADLESS}

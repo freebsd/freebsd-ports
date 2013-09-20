@@ -16,4 +16,5 @@ PLIST=		${.CURDIR}/pkg-plist
 
 LIBGDA4_SLAVE=	ldap
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

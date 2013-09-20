@@ -1,9 +1,5 @@
-# Ports collection makefile for:	db41-nocrypto
-# Date created:				2003-02-13
-# Whom:					Matthias Andree <matthias.andree@gmx.de>
-#
+# Created by: Matthias Andree <matthias.andree@gmx.de>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-nocrypto
 DISTNAME=	db-${PORTVERSION}.NC
@@ -11,4 +7,5 @@ DISTNAME=	db-${PORTVERSION}.NC
 MASTERDIR=	${.CURDIR}/../db41
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -24,4 +24,5 @@ MAN3=		CouchDB::View.3 \
 		CouchDB::View::Document.3 \
 		CouchDB::View::Server.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

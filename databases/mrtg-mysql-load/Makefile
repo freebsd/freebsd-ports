@@ -23,6 +23,7 @@ MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/mrtg-mysql-load etc/mrtg/mrtg.cfg-mysql-load.example \
 		etc/mrtg/mysql-load-cfg.example
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PERL%%|${PERL}|' ${WRKSRC}/${PORTNAME}
 

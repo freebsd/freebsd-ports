@@ -25,6 +25,7 @@ USE_PYTHON=	yes
 PYDISTUTILS_NOEGGINFO=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

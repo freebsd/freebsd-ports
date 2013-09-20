@@ -1,6 +1,5 @@
 # Created by: vanilla@
 # $FreeBSD$
-#
 
 PORTNAME=	libzdb
 PORTVERSION=	2.11.3
@@ -19,6 +18,7 @@ OPTIONS_DEFINE=	MYSQL \
 
 OPTIONS_DEFAULT=MYSQL SQLITE PGSQL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USES=	pathfix

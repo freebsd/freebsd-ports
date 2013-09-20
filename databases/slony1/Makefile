@@ -28,6 +28,7 @@ PERLTOOLS_DESC=	Install perl configuration tools
 
 CONFLICTS?=	slony1v2-2*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPERLTOOLS}

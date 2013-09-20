@@ -1,9 +1,5 @@
-# New ports collection makefile for:	memcachedb
-# Date created:		2007-09-22
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	memcachedb
 PORTVERSION=	1.2.0
@@ -25,6 +21,7 @@ MCDBDIR?=	/var/db/memcachedb
 USE_BDB=	47+
 USE_RC_SUBR=	${PORTNAME}
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${MCDBDIR} || ${TRUE}
 	${CHOWN} nobody:nobody ${MCDBDIR}

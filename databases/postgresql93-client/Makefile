@@ -1,8 +1,5 @@
 # Created by: Palle Girgensohn <girgen@FreeBSD.org>
 # $FreeBSD$
-#
-# To depend on postgresql-client, set USE_PGSQL=yes.
-# See Mk/bsd.databases.mk for more info
 
 PORTNAME=	postgresql
 PORTREVISION=	0
@@ -21,4 +18,5 @@ CLIENT_ONLY=	yes
 USE_LDCONFIG=	yes
 USES=		pkgconfig
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

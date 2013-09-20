@@ -32,6 +32,7 @@ PLIST_SUB+=	PORTDOCS="@comment "
 PLIST_SUB+=	PORTDOCS=""
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb

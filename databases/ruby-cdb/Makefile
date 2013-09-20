@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby-cdb
-# Date created:		8 March 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cdb
 PORTVERSION=	0.5a
@@ -26,6 +22,7 @@ CDB_PORTDIR=	${PORTSDIR}/databases/cdb
 
 INSTALL_TARGET=	site-install
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

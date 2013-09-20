@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Metadata
-# Date created:				31 Dec 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Metadata
 PORTVERSION=	0.24
@@ -25,4 +21,5 @@ MAN3=	Metadata::Base.3 \
 	Metadata::IAFA.3 \
 	Metadata::SOIF.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

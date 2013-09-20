@@ -29,4 +29,5 @@ MAN3=	Test::Fixture::DBI.3 \
 	Test::Fixture::DBI::Util::SQLite.3 \
 	Test::Fixture::DBI::Util::mysql.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

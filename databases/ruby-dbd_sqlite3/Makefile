@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dbd_sqlite3 for DBD-for-Ruby
-# Date created:		29 October 2009
-# Whom:			Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dbd_sqlite3
 PORTVERSION=	1.2.5
@@ -23,4 +19,5 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${PORTSDIR}/databases/ruby-dbi
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

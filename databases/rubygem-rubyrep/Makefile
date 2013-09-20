@@ -26,6 +26,7 @@ OPTIONS_DEFAULT=	PGSQL
 
 PLIST_FILES=	bin/rubyrep
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPGSQL}

@@ -28,6 +28,7 @@ STATIC_DESC=	Enable static (got core dump)
 
 OPTIONS_DEFAULT=CLIENT DEBUG
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}

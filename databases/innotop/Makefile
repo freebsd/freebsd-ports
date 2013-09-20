@@ -25,6 +25,7 @@ USE_MYSQL=	yes
 
 MAN1=		innotop.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/innotop|${PREFIX}/etc|g' ${WRKSRC}/innotop
 

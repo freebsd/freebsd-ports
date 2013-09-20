@@ -46,4 +46,5 @@ MAN3=		Rose::DB.3 \
 		Rose::DB::SQLite.3 \
 		Rose::DB::Tutorial.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

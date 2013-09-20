@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby-MySQL
-# Date created:		7 Aug 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mysql
 PORTVERSION=	2.8.2
@@ -27,6 +23,7 @@ INSTALL_TARGET=	site-install
 
 PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/mysql.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)

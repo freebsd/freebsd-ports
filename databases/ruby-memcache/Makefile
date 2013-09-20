@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/memcache
-# Date created:		26 December 2004
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	memcache
 PORTVERSION=	0.0.4
@@ -25,6 +21,7 @@ NO_BUILD=	yes
 
 DOCS=		README
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}; ${RUBY} install.rb
 .if !defined(NOPORTDOCS)

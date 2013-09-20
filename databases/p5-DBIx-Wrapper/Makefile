@@ -18,4 +18,5 @@ USE_PERL5=	configure
 MAN3=		DBIx::Wrapper.3 \
 		DBIx::Wrapper::Request.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

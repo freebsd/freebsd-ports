@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-drizzle
-# Date created:			30 Apr 2010
-# Whom:				Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	drizzle
 PORTVERSION=	0.4.2
@@ -28,6 +24,7 @@ IGNORE_WITH_PHP=5
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README EXPERIMENTAL ChangeLog CREDITS
 
+NO_STAGE=	yes
 post-install::
 		@${MKDIR} ${DOCSDIR}
 		@cd ${WRKSRC} && ${INSTALL} ${PORTDOCS} ${DOCSDIR}

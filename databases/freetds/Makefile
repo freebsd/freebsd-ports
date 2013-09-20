@@ -32,6 +32,7 @@ OPTIONS_RADIO=	ODBC
 OPTIONS_RADIO_ODBC=	IODBC UNIXODBC
 MSDBLIB_DESC=	MS SQL Server support (breaks databases/sybtcl)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}

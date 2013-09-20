@@ -18,4 +18,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/amalgalite-pack
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

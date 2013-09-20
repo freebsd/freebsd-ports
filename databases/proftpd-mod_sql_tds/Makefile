@@ -1,7 +1,4 @@
-# New ports collection makefile for:	proftpd-mod_sql_tds
-# Date created:		17 July 2012
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mod_sql_tds
@@ -27,6 +24,7 @@ LIBDIRS=	${LOCALBASE}/lib
 
 _BUILDING_PROFTPD_MODULE=	${PORTNAME}
 
+NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKDIR}/mod_sql_tds.c ${WRKSRC}/contrib
 

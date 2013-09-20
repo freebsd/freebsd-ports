@@ -35,4 +35,5 @@ MAN3=		BSON.3 \
 		BSON::Time.3 \
 		BSON::Timestamp.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

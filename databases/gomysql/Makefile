@@ -16,6 +16,7 @@ BROKEN=		Does not compile with go1
 WRKSRC=		${WRKDIR}/Philio-GoMySQL-f1112aa
 PLIST_FILES=	${GO_LIBDIR}/mysql.a
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/lang/go/files/bsd.go.mk"
 .include <bsd.port.post.mk>

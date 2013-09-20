@@ -75,6 +75,7 @@ OPTIONS_DEFAULT=	PGSQL
 
 BASH_SCRIPTS=	i.spectral r.tileset
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

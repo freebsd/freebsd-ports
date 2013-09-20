@@ -26,6 +26,7 @@ CC:=		${CXX}
 
 MAN3=		DBD::Cego.3
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -e 's|fno-strict-aliasing|fno-strict-aliasing -fpermissive|g' ${WRKSRC}/Makefile
 

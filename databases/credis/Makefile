@@ -1,9 +1,5 @@
-# New ports collection makefile for:	credis
-# Date created:		2011-02-02
-# Whom:			Steven Kreuzer <skreuzer@FreeBSD.org>
-#
+# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	credis
 PORTVERSION=	0.2.3
@@ -18,4 +14,5 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

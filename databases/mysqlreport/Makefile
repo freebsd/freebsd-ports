@@ -21,6 +21,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/mysqlreport
 PORTDOCS=	COPYING mysqlreportguide.html mysqlreportdoc.html
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/mysqlreport ${PREFIX}/bin
 

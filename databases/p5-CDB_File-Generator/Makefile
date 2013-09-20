@@ -1,9 +1,5 @@
-# New ports collection makefile for:	CDB_File::Generator
-# Date created:				31 Dec 2001
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	CDB_File-Generator
 PORTVERSION=	0.030
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=	CDB_File::Generator.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

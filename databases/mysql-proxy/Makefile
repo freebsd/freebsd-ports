@@ -24,4 +24,5 @@ USE_LUA=	5.1+
 USE_MYSQL=	yes
 USE_RC_SUBR=	mysql-proxy
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

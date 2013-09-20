@@ -1,7 +1,4 @@
-# New ports collection makefile for:	QDBM
-# Date created:				18 October 2003
-# Whom:					Kimura Fuyuki <fuyuki@nigredo.org>
-#
+# Created by: Kimura Fuyuki <fuyuki@nigredo.org>
 # $FreeBSD$
 #    $MCom: ports-stable/databases/qdbm/Makefile,v 1.6 2008/03/29 20:07:25 ahze Exp $
 
@@ -38,6 +35,7 @@ MAN3=	cabin.3 curia.3 depot.3 hovel.3 odeum.3 qdbm.3 relic.3 villa.3
 MLINKS=	curia.3 cropen.3 depot.3 dpopen.3 \
 		odeum.3 odopen.3 villa.3 vlopen.3 villa.3 vista.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|${PREFIX}/libdata/pkgconfig|' \

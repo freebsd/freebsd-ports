@@ -33,4 +33,5 @@ PLIST_SUB+=	MAJORLIBVERSION2=${DEFAULT_LIBVERSION2:C/([0-9]).*/\1/1}
 
 PERFORMANCE_PORT?=	devel/performance
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
