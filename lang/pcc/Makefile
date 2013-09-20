@@ -22,6 +22,7 @@ MAN1=		ccom.1 cpp.1 pcc.1
 PLIST_FILES=	bin/pcc libexec/ccom libexec/cpp
 
 # Fix -jX builds: use -C switch instead of cd'ing and add missing dependency
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E \
 	's/cd (.+)(;| &&) (\$$[{(]MAKE[})][^$$]*)( \$$\(MFLAGS\))?/\3 -C \1/'

@@ -34,6 +34,7 @@ OPTIONS_DEFINE=	GMP GSL MYSQL PGSQL SQLITE GUISERV
 GSL_DESC=	GSL (GNU Scientific Library)
 GUISERV_DESC=	Install GUI server (in Java)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CFLAGS+=	-I${LOCALBASE}/include

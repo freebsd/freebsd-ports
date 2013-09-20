@@ -62,6 +62,7 @@ OPTIONS_DEFINE+=	BOOT
 OPTIONS_DEFINE+=	BOOTH
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDYNAMIC}

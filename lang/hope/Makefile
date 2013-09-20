@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hope
-# Date created:				24 September 2001
-# Whom:					Lev Serebryakov <lev@serebryakov.spb.ru>
-#
+# Created by: Lev Serebryakov <lev@serebryakov.spb.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	hope
 PORTVERSION=	1.1
@@ -27,6 +23,7 @@ USE_GMAKE=	yes
 
 MAN1=		hope.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-fetch:

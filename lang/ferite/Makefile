@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	ferite
-# Date created:				21 August 2001
-# Whom:					Jeremy Norris <ishmael27@home.com>
-#
+# Created by: Jeremy Norris <ishmael27@home.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ferite
 PORTVERSION=	1.0.2
@@ -28,6 +24,7 @@ PLIST_SUB=	MACHINE_ARCH=${MACHINE_ARCH}
 MAN1=		builder.1 ferite.1
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

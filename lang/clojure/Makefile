@@ -23,6 +23,7 @@ JLINE_DESC=	jline support for the REPL
 PLIST_FILES=	bin/clojure \
 		%%JAVAJARDIR%%/clojure.jar
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJLINE}

@@ -1,9 +1,5 @@
-# Ports collection makefile for:  treecc
-# Date created:			  Wed Jul 11 00:45:15 EDT 2001
-# Whom:				  Michael Johnson <ahze@ahze.net>
-#
+# Created by: Michael Johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ml-pnet
 PORTVERSION=	${PNET_VERSION}
@@ -23,5 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/cscc/lib/libXsharpSupport.so.0:${PORTSDIR}/lang/pn
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../pnet/Makefile.pnet"
 .include <bsd.port.mk>

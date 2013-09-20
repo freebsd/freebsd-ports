@@ -56,6 +56,7 @@ USE_CSTD=	gnu89
 USE_RC_SUBR=	epmd
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

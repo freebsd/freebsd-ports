@@ -31,6 +31,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		qore.1
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"

@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	LUA
 LUA_DESC=	Install lua library
 OPTIONS_DEFAULT=	LUA
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

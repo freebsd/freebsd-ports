@@ -25,6 +25,7 @@ PLIST_FILES=	bin/2to3 \
 		bin/python-shared \
 		bin/python-shared-config
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_MAJOR_VER} == 2

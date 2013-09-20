@@ -30,6 +30,7 @@ OPTIONS_DEFINE=	SMLNJ MINGW32
 SMLNJ_DESC=	Bootstrap with SML/NJ (can take >15 hours)
 MINGW32_DESC=	Add the mingw32 target (requires wine)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

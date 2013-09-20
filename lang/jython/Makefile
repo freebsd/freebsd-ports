@@ -26,6 +26,7 @@ PLIST_SUB+=	JYTHON_DIR=${INST_TARGET}
 
 CACHEDIR_SPEC=	-Dpython.cachedir=${WRKDIR}/jython-cachedir
 
+NO_STAGE=	yes
 do-install:
 	@# Do tons of backflips so that the cachedir is put into the user's home
 	@# directory (it's irritating to not be able to cache stuff if you're

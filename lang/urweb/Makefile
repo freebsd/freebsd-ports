@@ -28,6 +28,7 @@ OPTIONS_DEFAULT=ELISP PGSQL
 OPTIONS_EXCLUDE=NLS DOCS
 ELISP_DESC=	Install contributed Emacs Lisp
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MELISP}

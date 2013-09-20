@@ -1,4 +1,4 @@
-# Created by:	John Merryweather Cooper et al
+# Created by: John Merryweather Cooper et al
 # $FreeBSD$
 
 PORTNAME=	fpc
@@ -32,6 +32,7 @@ OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
 OPT?=-CX
 FPCSRCDIR=	${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"

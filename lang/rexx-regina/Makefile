@@ -22,6 +22,7 @@ USE_RC_SUBR=	rxstack
 
 MAN1=	regina.1 regina-config.1 rxqueue.1 rxstack.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 

@@ -38,6 +38,7 @@ CONFIGURE_ARGS+=	--with-expat=${LOCALBASE}/include,${LOCALBASE}/lib
 AOLSERVERBASE?=	aolserver
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(AOLSERVER_XOTCL)

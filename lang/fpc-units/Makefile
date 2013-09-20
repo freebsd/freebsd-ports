@@ -105,6 +105,7 @@ ZLIB_DESC=	Interface to the zlib compression library
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 OPTIONS_DEFAULT=A52 ASPELL BFD BZIP2 CAIRO CHM DBUS DBLIB DTS FASTCGI FCL-ASYNC FCL-BASE \

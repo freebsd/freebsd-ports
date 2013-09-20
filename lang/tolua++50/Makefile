@@ -22,6 +22,7 @@ LDFLAGS+=	-L${LUA_LIBDIR}
 
 PORTSCOUT=	limit:1\.0\.92
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/tolua++ ${LUA_BINDIR}
 	${LN} -sf ${LUA_SUBDIR}/tolua++ ${PREFIX}/bin/tolua++-${LUA_VER}

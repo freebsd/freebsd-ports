@@ -26,6 +26,7 @@ HAS_CONFIGURE=	yes
 
 MAKE_JOBS_UNSAFE=yes
 
+NO_STAGE=	yes
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 	${QMAKE} "PREFIX=${PREFIX}" BASIC256.pro

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	petite-chez
-# Date created:		27 Mar 2009
-# Whom:			Vitaly Magerya <vmagerya@gmail.com>
-#
+# Created by: Vitaly Magerya <vmagerya@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	petite-chez
 PORTVERSION=	8.4
@@ -44,6 +40,7 @@ MAN1=		petite.1
 PLIST_SUB=	CHEZ_VERSION="${PORTVERSION}" \
 		CHEZ_MACHTYPE="${CHEZ_MACHTYPE}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"

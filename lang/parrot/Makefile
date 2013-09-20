@@ -52,6 +52,7 @@ PARROT_DOCS=		${PARROT_SHARE_DIR}
 PLIST_SUB+=	PARROT_VER="${PORTVERSION}" \
 		PARROT_DOCS="${PARROT_DOCS}"
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.common"
 .include <bsd.port.pre.mk>
 

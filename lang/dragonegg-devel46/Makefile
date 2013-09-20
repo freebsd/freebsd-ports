@@ -1,5 +1,4 @@
 # $FreeBSD$
-#
 
 PORTNAME=	dragonegg46
 PORTVERSION=	3.4.r${SVN_REV}
@@ -34,6 +33,7 @@ GCC_LIBDIR=		lib/${CC}
 ALL_TARGET=
 MAKE_ARGS=	GCC=${LOCALBASE}/bin/${CC} VERBOSE=1
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../devel/llvm-devel/Makefile.svn_rev"
 
 PLIST_FILES=		${GCC_LIBDIR}/${DRAGONEGG_SO}

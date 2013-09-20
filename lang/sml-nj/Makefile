@@ -1,9 +1,5 @@
-# New ports collection makefile for: sml/nj
-# Date created:        7 July 1998
-# Whom:                jkoshy
-#
+# Created by: jkoshy
 # $FreeBSD$
-#
 
 PORTNAME=	smlnj
 PORTVERSION=	110.0.7
@@ -44,6 +40,7 @@ SML_SRCDIR=	${SML_BASE}/src
 SML_EXES=	ml-burg ml-lex ml-yacc sml sml-cm
 
 # make symlinks to the dist files
+NO_STAGE=	yes
 post-extract:
 	cd ${WRKDIR} && ${LN} -sf ${_DISTDIR}/*  .
 

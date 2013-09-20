@@ -18,6 +18,7 @@ USE_LDCONFIG=	yes
 ALL_TARGET=	native
 MAKE_ARGS=	library=shared
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${CC:T:Mclang} == "clang" || ${CXX:T:Mclang++} == "clang++" || ${OSVERSION} >= 1000024

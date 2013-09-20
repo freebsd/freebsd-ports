@@ -100,6 +100,7 @@ DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}:main \
 PLIST_FILES=	bin/hhvm
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

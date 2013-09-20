@@ -43,6 +43,7 @@ RDOC_DESC=	Build and install Rdoc indexes
 DEBUG_DESC=	Compile-in debug info
 OPTIONS_DEFAULT=	RDOC
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # PORTEPOCH/PORTREVISION hack

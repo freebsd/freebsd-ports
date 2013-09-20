@@ -1,7 +1,4 @@
-# New ports collection makefile for:	cmucl-extra
-# Date created:				13 June 2002
-# Whom:					Scott Flatman <sf@dsinw.com>
-#
+# Created by: Scott Flatman <sf@dsinw.com>
 # $FreeBSD$
 
 PORTNAME=	cmucl-extra
@@ -24,6 +21,7 @@ USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKDIR} && ${FIND} lib | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}

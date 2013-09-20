@@ -44,6 +44,7 @@ PLIST_SUB+=		USEX11=""
 CONFLICTS?=		gnustep-guile-nox11-1.*
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 GUILE_VER!=	${MAKE} -C ${PORTSDIR}/lang/guile -V GUILE_VER

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   	pharo
-# Date created:		26 April 2012
-# Whom:			mutoh@openedu.org
-#
+# Created by: mutoh@openedu.org
 # $FreeBSD$
-#
 
 PORTNAME=	pharo
 DISTVERSION=	1.4
@@ -37,6 +33,7 @@ PLIST_FILES=	lib/squeak/Pharo-${DISTVERSION}.image \
 		lib/squeak/Pharo-${DISTVERSION}.changes \
 		lib/squeak/PharoV10.sources
 
+NO_STAGE=	yes
 do-install:
 .for f in ${FILES_TO_INSTALL}
 	(cd ${FILES_DIR} && ${INSTALL_DATA} ${f} ${PREFIX}/lib/squeak/)

@@ -1,5 +1,4 @@
 # $FreeBSD$
-#
 
 PORTNAME=	dragonegg46
 PORTVERSION=	3.2
@@ -32,6 +31,7 @@ MAKE_ARGS=	GCC=${LOCALBASE}/bin/${CC}
 
 PLIST_FILES=		${GCC_LIBDIR}/${DRAGONEGG_SO}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

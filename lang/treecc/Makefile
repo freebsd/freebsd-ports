@@ -1,9 +1,5 @@
-# Ports collection makefile for:  treecc
-# Date created:			  Wed Jul 11 00:45:15 EDT 2001
-# Whom:				  Michael Johnson <ahze@ahze.net>
-#
+# Created by: Michael Johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	treecc
 PORTVERSION=	0.3.10
@@ -19,4 +15,5 @@ MAN1=		treecc.1
 INFO=		treecc
 PLIST_FILES=	bin/treecc lib/libtreecc.a
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

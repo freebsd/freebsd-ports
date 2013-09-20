@@ -1,9 +1,5 @@
-# New ports collection makefile for: clay
-# Date created: 2012-01-24
-# Whom: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
-#
+# Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	clay
 PORTVERSION=	0.1.2
@@ -34,6 +30,7 @@ CMAKE_ARGS+=	-G "Unix Makefiles" -DBUILD_FIX=false
 CC=		clang
 CXX=		clang++
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBINDGEN}

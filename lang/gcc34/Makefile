@@ -26,6 +26,7 @@ SSP_UNSAFE=	yes
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 DEPRECATED=	Superseded by GCC 4.6 and later, kept for the sake of two obsolete ports

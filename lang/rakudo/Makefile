@@ -60,6 +60,7 @@ PARROT_VERSION=	5.5.0
 NOT_FOR_ARCHS=	ia64 powerpc sparc64
 NOT_FOR_ARCHS_REASON=	does not compile
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-configure:

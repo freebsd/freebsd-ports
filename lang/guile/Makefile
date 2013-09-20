@@ -32,6 +32,7 @@ REINPLACE_FILES=	libguile/smob.c libguile/filesys.c libguile/gc.c \
 
 INFO=		goops guile-tut guile r5rs
 
+NO_STAGE=	yes
 post-extract:
 	cd ${WRKSRC}; ${CHMOD} u+w ${REINPLACE_FILES}
 	@${FIND} ${WRKSRC}/doc -name "*.info*" -delete

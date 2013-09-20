@@ -28,4 +28,5 @@ MAN3=	v6.3 \
 	Pugs::Compiler::Perl6.3 \
 	Pugs::Runtime::Perl6.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

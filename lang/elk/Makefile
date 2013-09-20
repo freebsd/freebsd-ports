@@ -23,6 +23,7 @@ MAN1=		elk.1
 CPPFLAGS+=	-I${LOCALBASE}/include/libelf -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

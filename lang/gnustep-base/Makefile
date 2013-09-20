@@ -47,6 +47,7 @@ ETCDIR=		${LOCALBASE}/etc
 
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PATH:=	${PREFIX}/System/Tools:${PATH}

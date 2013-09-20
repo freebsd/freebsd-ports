@@ -40,6 +40,7 @@ CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-mpfr=${LOCALBASE}
 CONFIGURE_ARGS+=	--disable-nls
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${BR2_PREFIX}
 	(cd ${BR1_PREFIX} && ${COPYTREE_BIN} \* ${BR2_PREFIX})

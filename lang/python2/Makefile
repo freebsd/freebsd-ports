@@ -25,6 +25,7 @@ PLIST_FILES=	bin/2to3-${PYTHON_MAJOR_VER} \
 		bin/python-shared${PYTHON_MAJOR_VER}-config \
 		bin/smtpd${PYTHON_MAJOR_VER}.py
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 RUN_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}

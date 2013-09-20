@@ -29,6 +29,7 @@ MAN3=		filefuncs.3am fnmatch.3am fork.3am ordchr.3am readdir.3am \
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -57,6 +57,7 @@ OCS=		${PREFIX}/${PORTNAME}
 PLIST_FILES+=	bin/$f
 .endfor
 
+NO_STAGE=	yes
 post-patch:
 .for f in src/om/scripts/oasys src/om/scripts/ocs
 		@${REINPLACE_CMD} "s,OCS=.*$$,OCS=\"${OCS}\"," ${WRKSRC}/$f

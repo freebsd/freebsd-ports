@@ -43,6 +43,7 @@ EXTRACT_AFTER_ARGS= --exclude js/jsd
 
 OPTIONS_DEFINE=	UTF8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUTF8}

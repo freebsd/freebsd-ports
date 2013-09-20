@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--with-pcre-dir=${LOCALBASE}/lib \
 		--with-gmp-dir=${LOCALBASE}/lib \
 		--with-gmp-inc=${LOCALBASE}/include
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} \
 		-e "s,^LIBS = @LIBS@,& ${PTHREAD_LIBS} -L${LOCALBASE}/lib -lgetline," \

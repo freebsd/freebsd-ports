@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 ALL_TARGET=	all opt opt.opt
 INSTALL_TARGET=	install installopt
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

@@ -36,6 +36,7 @@ PORTDOCS=	AUTHORS BUGS Benchres COPYING COPYING.DOC \
 MAN1=		gforth.1
 INFO=		gforth vmgen
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386 || ${ARCH} == powerpc

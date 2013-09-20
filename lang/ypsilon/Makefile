@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ypsilon
-# Date created:		27 July 2008
-# Whom:			Vitaly Magerya <vmagerya@gmail.com>
-#
+# Created by: Vitaly Magerya <vmagerya@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ypsilon
 PORTVERSION=	0.9.6.3
@@ -23,6 +19,7 @@ MAN1=		ypsilon.1
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

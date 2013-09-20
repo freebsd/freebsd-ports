@@ -13,6 +13,7 @@ COMMENT=	Interpreter for Haskell with object-oriented features
 
 OPTIONS_DEFINE=		X11
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 LIB_DEPENDS=	readline.6:${PORTSDIR}/devel/readline

@@ -24,6 +24,7 @@ PLIST=		${WRKDIR}/pkg-plist.${DOCFORMAT}
 
 DOCFORMAT?=	html
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .  if ${DOCFORMAT} == "html" || ${DOCFORMAT} == "text"

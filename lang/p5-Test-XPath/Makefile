@@ -25,6 +25,7 @@ OPTIONS_DEFINE=	CSS PODT
 CSS_DESC=	Include CSS selectors
 PODT_DESC=	Include Pod package test dependencies
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCSS}

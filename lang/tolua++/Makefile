@@ -18,6 +18,7 @@ SCONS_ARGS=	prefix=${PREFIX} SONAME="libtolua++-${LUA_VER}.so"
 CFLAGS+=	-I${LUA_INCDIR}
 LDFLAGS+=	-L${LUA_LIBDIR}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|'lualib',||" ${WRKSRC}/config_posix.py
 

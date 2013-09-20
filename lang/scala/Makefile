@@ -37,6 +37,7 @@ PORTDATA=	*
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 pre-patch:
 	@${ECHO_MSG} "Installation settings:"
 	@${ECHO_MSG} "   SCALA_HOME:    ${SCALA_HOME}"

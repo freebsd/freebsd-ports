@@ -26,6 +26,7 @@ INSTALL_CMD=	${INSTALL_PROGRAM}
 
 OPTIONS_DEFINE=	DEBUG
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

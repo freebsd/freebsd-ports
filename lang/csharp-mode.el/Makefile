@@ -1,9 +1,5 @@
-# New ports collection makefile for:	csharp-mode.el
-# Date created:				19 Jun 2006
-# Whom:					Jean-Yves Lefort <jylefort@FreeBSD.org>
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	csharp-mode.el
 PORTVERSION=	0.8.5
@@ -27,6 +23,7 @@ USE_EMACS=	yes
 
 PLIST_FILES=	${EMACS_SITE_LISPDIR}/csharp-mode.el
 
+NO_STAGE=	yes
 post-patch:
 	@${MV} ${WRKSRC}/csharp-mode-${PORTVERSION}.el ${WRKSRC}/csharp-mode.el
 

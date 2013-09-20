@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ici
-# Date created:        18 December 1997
-# Whom:                andy
-#
+# Created by: andy
 # $FreeBSD$
-#
 
 PORTNAME=	ici
 PORTVERSION=	4.1.2
@@ -27,6 +23,7 @@ ICIHDRS=	ici.h icistr-setup.h
 
 ICIDOCS=	doc/ici.pdf
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

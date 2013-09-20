@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--without-bfd
 
 MAN1=		lush.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

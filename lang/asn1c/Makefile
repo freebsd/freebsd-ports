@@ -19,6 +19,7 @@ USE_GMAKE=	yes
 
 MAN1=	asn1c.1 enber.1 unber.1
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lang/linux-f10-libg2c
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	libg2c
 PORTVERSION=	3.4.6
@@ -27,4 +23,5 @@ SRC_DISTFILES=	compat-gcc-34-${PORTVERSION}-${RPMVERSION}.src.rpm
 
 PLIST_FILES=	usr/lib/libg2c.so.0 usr/lib/libg2c.so.0.0.0
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -49,6 +49,7 @@ post-patch: .SILENT
 	${FIND} ${WRKSRC} -type f -name Makefile -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -E 's|cd (.+); make|$$(MAKE) -C \1|'
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/mosml/copyrght/copyrght.att ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/mosml/copyrght/copyrght.cl ${DOCSDIR}

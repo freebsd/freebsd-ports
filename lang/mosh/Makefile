@@ -1,9 +1,5 @@
-# New ports collection makefile for:   mosh
-# Date created:                2008-07-06
-# Whom:                        Katsuji ISHIKAWA <katsuji.ishikawa@gmail.com>
-#
+# Created by: Katsuji ISHIKAWA <katsuji.ishikawa@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mosh
 PORTVERSION=	0.2.7
@@ -29,6 +25,7 @@ CONFLICTS_INSTALL=	mosh-1.[0-9].*
 PROJECTHOST=	mosh-scheme
 MAN1=	mosh.1 mosh_config.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

@@ -69,6 +69,7 @@ LOCALE_CLEANUP=	LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
 CONFIGURE_ENV+=	${LOCALE_CLEANUP} UNAME_v="$$(uname -v | sed 'y/=/ /')"
 MAKE_ENV+=	${LOCALE_CLEANUP}
 
+NO_STAGE=	yes
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
 

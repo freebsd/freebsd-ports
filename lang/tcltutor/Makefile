@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcltutor
-# Date created:		11 November 2000
-# Whom:			Edwin Groothuis (edwin@mavetju.org)
-#
+# Created by: Edwin Groothuis (edwin@mavetju.org)
 # $FreeBSD$
-#
 
 PORTNAME=	tcltutor
 PORTVERSION=	2.b.4
@@ -23,6 +19,7 @@ WRKSRC=		${WRKDIR}/TclTutor
 NO_BUILD=	yes
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/tcltutor/TclTutor/}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|wish|wish8.4|" \
 		-e "s|scaler.tcl|${PREFIX}/bin/scaler.tcl|" \

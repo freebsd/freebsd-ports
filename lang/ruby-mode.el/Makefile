@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-mode.el
-# Date created:		6 May 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ruby-mode.el
 PORTVERSION=	${RUBY_PORTVERSION}
@@ -30,6 +26,7 @@ ELISP_FILES=	inf-ruby.el ruby-mode.el rubydb3x.el
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${LN} -sf `cd ${PORTSDIR}/${RUBY_PORT}; ${MAKE} -V WRKSRC`/misc ${WRKSRC}

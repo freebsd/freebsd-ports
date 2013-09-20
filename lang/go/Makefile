@@ -31,6 +31,7 @@ SUB_LIST+=	GOOBJ=${GOOBJ} \
 		ARCH=${GOARCH} \
 		GOOS=${OPSYS:L}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	execline
-# Date created:		2003-06-25
-# Whom:			Sergei Kolobov <sergei@kolobov.com>
-#
+# Created by: Sergei Kolobov <sergei@kolobov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	execline
 PORTVERSION=	1.08
@@ -20,6 +16,7 @@ WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 DOCS=		package/CHANGES package/README package/THANKS package/TODO \
 		doc/*.html
 
+NO_STAGE=	yes
 do-configure:
 	${ECHO_CMD} "FreeBSD"	> ${WRKSRC}/src/sys/systype
 	${ECHO_CMD} "${LOCALBASE}/include/skalibs" \

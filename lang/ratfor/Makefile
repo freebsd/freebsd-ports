@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  ratfor
-# Date created:			  Sat Aug 26, 2000
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	ratfor
 PORTVERSION=	1985.06
@@ -28,6 +23,7 @@ MAN1=		ratfor.1
 
 USE_FORTRAN=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@cd ${WRKSRC} ; ${PATCH} --quiet < testw.patch
 	@${REINPLACE_CMD} -e 's|%%F77%%|${F77}|' ${WRKSRC}/Makefile

@@ -27,6 +27,7 @@ LEAD_0_DESC=	Print with leading zeros
 # Set FCNAME to the name of the Fortran 77 / F2C wrapper.
 FCNAME?=	fc
 PLIST_SUB=	FCNAME=${FCNAME}
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFC}

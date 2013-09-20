@@ -34,6 +34,7 @@ PLIST_DIRS=	share/emacs/site-lisp/${PORTNAME}/
 PLIST_FILES=	${ELISPFILES:C/^| [^ ]/${PLIST_DIRS}/g}
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 do-install:
 	@${MKDIR} ${ELISPDIR}

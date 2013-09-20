@@ -42,4 +42,5 @@ MAN3=		Marpa::XS.3 \
 		Marpa::XS::Tracing.3 \
 		Marpa::XS::Vocabulary.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

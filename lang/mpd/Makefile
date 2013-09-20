@@ -29,6 +29,7 @@ MAN1=		mpd.1 mpdl.1 mpdm.1 mpdprof.1
 MAN3=		mpdanimator.3 mpdgetopt.3 mpdwin.3
 MAN5=		mpdmap.5 mpdtrace.5
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MX11}

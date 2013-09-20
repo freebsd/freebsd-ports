@@ -20,6 +20,7 @@ OPTIONS_DEFINE=	GDBM MCRYPT MHASH OPENSSL PGSQL X11
 MCRYPT_DESC=	mcrypt library support
 MHASH_DESC=	mhash library support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # TODO implement db4 support

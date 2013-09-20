@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cint
-# Date created:				21 Aug 2007
-# Whom:					Max Khon <fjoe@FreeBSD.org>
-#
+# Created by: Max Khon <fjoe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cint
 PORTVERSION=	5.16.19
@@ -32,6 +28,7 @@ INSTALL_ARGS=	--bindir=${PREFIX}/bin  \
 INSTALL_ARGS+=	--docdir=${DOCSDIR}
 .endif
 
+NO_STAGE=	yes
 do-configure:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/bash configure __have_the_proper_shell@
 

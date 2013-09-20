@@ -37,6 +37,7 @@ MAKE_ARGS=	GCC=${LOCALBASE}/bin/${CC} LLVM_CONFIG=llvm-config33
 
 PLIST_FILES=		${GCC_LIBDIR}/${DRAGONEGG_SO}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

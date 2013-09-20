@@ -1,9 +1,5 @@
-# New ports collection makefile for:	visualworks
-# Date created:				17 September 2001
-# Whom:					js@jeannot.org
-#
+# Created by: js@jeannot.org
 # $FreeBSD$
-#
 
 PORTNAME=		visualworks
 PORTVERSION=		7.6
@@ -62,6 +58,7 @@ VMAIX_DESC=	Virtual Machine for AIX
 VMHPUX_DESC=	Virtual Machine for HPUX
 VMSGI_DESC=	Virtual Machine for SGI
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MATOOLS}

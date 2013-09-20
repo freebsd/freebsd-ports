@@ -19,6 +19,7 @@ NO_MTREE=	YES
 WRKSRC=		${WRKDIR}/android-${PORTVERSION}-arm
 PREFIX=		${LOCALBASE}/android9
 
+NO_STAGE=	yes
 do-install:
 	(cd ${WRKSRC} && ${FIND} usr/ -type d -exec ${MKDIR} ${PREFIX}/{} \;)
 	(cd ${WRKSRC} && ${FIND} usr/ -type f -exec \

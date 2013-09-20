@@ -29,6 +29,7 @@ OPTIONS_DEFINE=	FULL_MAUDE
 OPTIONS_DEFAULT=	FULL_MAUDE
 FULL_MAUDE_DESC=	Install full-maude${FULL_MAUDE_VER}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFULL_MAUDE}

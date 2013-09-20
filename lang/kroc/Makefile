@@ -35,6 +35,7 @@ MAN3=		libconvert-inmos.3 libcourse-cycles.3 libcourse-nets.3 \
 		libproc.3 libsock.3 libstreamio-inmos.3 libstring-inmos.3
 
 # Fix pkgconfig location
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.am" -type f | \
 		${XARGS} ${REINPLACE_CMD} -e \

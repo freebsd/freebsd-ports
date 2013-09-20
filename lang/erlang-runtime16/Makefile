@@ -56,6 +56,7 @@ USES=		gmake perl5
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

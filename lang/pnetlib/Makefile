@@ -1,9 +1,5 @@
-# Ports collection makefile for:  treecc
-# Date created:			  Wed Jul 11 00:45:15 EDT 2001
-# Whom:				  Michael Johnson <ahze@ahze.net>
-#
+# Created by: Michael Johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	pnetlib
 PORTVERSION=	${PNET_VERSION}
@@ -31,6 +27,7 @@ PORTDOCS=	ChangeLog-1 ChangeLog-2 ChangeLog-3 ChangeLog-4 \
 	JScript-embed.txt JScript-internals.txt csunit_howto.html \
 	pcf-font-format.txt translating-pnetlib.txt
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../pnet/Makefile.pnet"
 .include <bsd.port.pre.mk>
 

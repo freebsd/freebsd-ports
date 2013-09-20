@@ -20,6 +20,7 @@ DESTINY=	${WRKDIR}/destino
 MAKE_ENV=	DESTDIR=${DESTINY} \
 		PROCESSORS=${MAKE_JOBS_NUMBER}
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e 's|OPSYS|ASISOPSYS|g' \
 		${WRKSRC}/Makefile \

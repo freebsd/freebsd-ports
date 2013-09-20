@@ -39,6 +39,7 @@ MANPREFIX=	${PREFIX}/${COMPILERDIR}
 
 ICC_SITE=	http://www.intel.com/software/products/compilers/
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 EXTRACT_AFTER_ARGS=	--exclude cdt-\*.zip \

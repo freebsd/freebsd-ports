@@ -27,6 +27,7 @@ INFO=		kawa
 PLIST_FILES=	bin/kawa bin/qexo share/java/kawa.jar \
 		share/java/kawa-${PORTVERSION}.jar
 
+NO_STAGE=	yes
 pre-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
 		-e '/^JAR =/s|[a-zA-Z]*$$|${JAR}|g;'

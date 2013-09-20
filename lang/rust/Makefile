@@ -33,6 +33,7 @@ OPTIONS_DEFINE=		RUSTPKG
 RUSTPKG_DESC=		Build with package manager
 OPTIONS_DEFAULT=	RUSTPKG
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900044

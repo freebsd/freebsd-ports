@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	REXX_REGINA
 REXX_REGINA_DESC=	Install rexx-regina library
 OPTIONS_DEFAULT=	REXX_REGINA
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

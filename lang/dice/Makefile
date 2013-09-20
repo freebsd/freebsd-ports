@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dice
-# Date created:		Wed Jan 30 13:26:52 CET 2002
-# Whom:			Miguel Mendez <flynn@energyhq.homeip.net>
-#
+# Created by: Miguel Mendez <flynn@energyhq.homeip.net>
 # $FreeBSD$
-#
 
 PORTNAME=	dice
 PORTVERSION=	3.15
@@ -16,6 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DICE - The Amiga/embedded/generic 68000 C compiler
 
+NO_STAGE=	yes
 post-patch:
 		@for i in ${WRKSRC}/lib/version.h ${WRKSRC}/include/lib/version.h \
 			${WRKSRC}/src/dcpp/main.c ${WRKSRC}/src/dcc/defs.h \

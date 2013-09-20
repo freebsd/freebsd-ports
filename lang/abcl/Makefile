@@ -20,6 +20,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_DATA} -v ${WRKSRC}/dist/abcl.jar ${JAVAJARDIR}
 	@${INSTALL_SCRIPT} ${WRKDIR}/abcl ${PREFIX}/bin/abcl

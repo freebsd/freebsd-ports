@@ -1,7 +1,4 @@
-# New ports collection makefile for:   cduce
-# Date created:        Jun 9, 2005
-# Whom:                Marwan Burelle <marwan.burelle@lri.fr>
-#
+# Created by: Marwan Burelle <marwan.burelle@lri.fr>
 # $FreeBSD$
 
 PORTNAME=	cduce
@@ -40,6 +37,7 @@ MAN1=		cduce.1 cduce_mktop.1 dtd2cduce.1
 
 PLIST_FILES=	bin/cduce
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Support for url via ftp/ocaml-ocurl

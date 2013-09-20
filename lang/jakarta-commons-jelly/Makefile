@@ -29,6 +29,7 @@ PORTDOCS=	*
 SUB_FILES=	jelly.sh
 PLIST_FILES=	bin/jelly
 
+NO_STAGE=	yes
 post-extract:
 	${RM} -f ${WRKSRC}/bin/jelly.bat ${WRKSRC}/bin/jelly
 

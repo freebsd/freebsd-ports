@@ -1,4 +1,4 @@
-# Created by: chuckr@freebsd.org
+# Created by: chuckr@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	objc
@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PATH=${WRKDIR}/bin:${PATH}
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-configure:

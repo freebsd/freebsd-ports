@@ -35,6 +35,7 @@ MAN1=		vala-gen-introspect.1 vapigen.1
 CONFIGURE_ARGS+=--disable-vapigen
 .endif
 
+NO_STAGE=	yes
 post-patch:
 # We cheat here, because vala records vapigen related stuff in its .pc file
 # This makes vapigen work again, although it might get weird when

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	huc
-# Date created:			1 December 2003
-# Whom:				Frederic Cambus
-#
+# Created by: Frederic Cambus
 # $FreeBSD$
-#
 
 PORTNAME=	huc
 PORTVERSION=	3.21
@@ -22,6 +18,7 @@ USE_ZIP=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

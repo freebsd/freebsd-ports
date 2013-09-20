@@ -1,9 +1,5 @@
-# New ports collection makefile for:	caml-mode.el
-# Date created:		23 October 2001
-# Whom:			J Koshy <jkoshy@freebsd.org>
-#
+# Created by: J Koshy <jkoshy@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	caml-mode
 PORTVERSION=	3.01
@@ -34,6 +30,7 @@ CAMLMODE_DIR_ENTRY=* Caml-mode: (caml-mode).         A mode for editing CAML pro
 INSTALL_TARGET=	install install-ocamltags
 MAKE_ENV+=	EMACSDIR=${CAMLMODE_ELISPDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"

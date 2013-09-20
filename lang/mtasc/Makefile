@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mtasc
-# Date created:		2008-09-06
-# Whom:			Marcin Cieslak <saper@SYSTEM.PL>
-#
+# Created by: Marcin Cieslak <saper@SYSTEM.PL>
 # $FreeBSD$
-#
 
 PORTNAME=	mtasc
 PORTVERSION=	1.14
@@ -37,6 +33,7 @@ WRKSRC=		${WRKDIR}/ocaml
 PORTDATA=	std std8
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:

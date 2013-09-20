@@ -1,10 +1,5 @@
-# New ports collection makefile for:    phc
-# Date created:				July 4th, 2006
-# Whom:	      				Conor McDermottroe <ports@mcdermottroe.com>
-# ex:ts=8
-#
+# Created by: Conor McDermottroe <ports@mcdermottroe.com>
 # $FreeBSD$
-#
 
 PORTNAME=	phc
 PORTVERSION=	0.1.7
@@ -24,4 +19,5 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} 's/insert/this->&/' \
 		${WRKSRC}/include/phc/lib/List.h
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

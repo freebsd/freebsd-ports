@@ -28,6 +28,7 @@ SUB_FILES=	pkg-install
 SUB_LIST=	EXEBINDIR=${MLBINRELATIVE} EXENAMES="${MLEXE}"
 PKGDEINSTALL=	${PKGINSTALL}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "i386")

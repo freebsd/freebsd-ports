@@ -1,7 +1,4 @@
-# New ports collection makefile for:	nhc98
-# Date created:				04 October 2001
-# Whom:					Oliver Braun <obraun@informatik.unibw-muenchen.de>
-#
+# Created by: Oliver Braun <obraun@informatik.unibw-muenchen.de>
 # $FreeBSD$
 
 PORTNAME=	nhc98
@@ -28,6 +25,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} --buildwith=gcc
 OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

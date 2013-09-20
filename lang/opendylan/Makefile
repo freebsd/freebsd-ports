@@ -17,6 +17,7 @@ DATADIR=	${PREFIX}/lib/${PORTNAME}
 
 WRAPPERS=	dylan-compiler make-dylan-app dswank parser-compiler
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

@@ -82,6 +82,7 @@ PORT_DBDIR?=	/var/db/ports
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for opt in ${OPTIONS_DEFINE}

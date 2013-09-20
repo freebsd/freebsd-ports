@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rscheme
-# Date created:				31 July 2001
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rscheme
 PORTVERSION=	0.7.3.3
@@ -24,6 +20,7 @@ MAKE_ENV=	REAL_PREFIX=${PREFIX}
 BOOTSTRAP_DIR=	${WRKDIR}/${DISTNAME}
 BOOTSTRAP_TARGET=	stage1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"

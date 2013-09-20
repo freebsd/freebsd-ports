@@ -1,12 +1,5 @@
-# New ports collection makefile for:	libstdc++_stldoc
-# Date created:		18th January 2008
-# Whom:			Bruce M. Simpson
-#
+# Created by: Bruce M. Simpson
 # $FreeBSD$
-#
-# Note: Specific versions of this documentation exist for each version
-# of the libstdc++ library, note versioning convention below.
-#
 
 PORTNAME=	libstdc++_stldoc_4.2.2
 PORTVERSION=	20071101
@@ -31,6 +24,7 @@ NO_WRKSUBDIR=	yes
 
 PORTDOCS=	stldoc
 
+NO_STAGE=	yes
 do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/stldoc

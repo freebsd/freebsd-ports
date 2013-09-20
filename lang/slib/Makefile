@@ -1,9 +1,5 @@
-# New ports collection makefile for:   slib
-# Date created:        01 April 1998
-# Whom:                Yukihiro Nakai <Nakai@technologist.com>
-#
+# Created by: Yukihiro Nakai <Nakai@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	slib
 PORTVERSION=	3b3
@@ -19,6 +15,7 @@ USE_GMAKE=	yes
 ALL_TARGET=	slib.info
 INFO=		slib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/lib/slib|${PREFIX}/share/slib|' ${WRKSRC}/guile.init
 

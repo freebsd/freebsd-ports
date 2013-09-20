@@ -16,6 +16,7 @@ USE_GMAKE=	yes
 ALL_EXAMPLES=	Makefile fibonacci.spl fibonacci2.spl guess.spl hello.spl \
 		primes.spl reverse.spl shakesbeer.spl
 
+NO_STAGE=	yes
 post-patch:
 .for f in . examples
 	${REINPLACE_CMD} -e 's,= gcc,?= gcc,' -e 's,^CCFLAGS.*,CFLAGS += -Wall,' \

@@ -1,9 +1,5 @@
-# Ports collection makefile for:  g95
-# Date created: 		  2007/01/29
-# Whom:				  SATO Hiroki, <hrs@FreeBSD.org>
-#
+# Created by: SATO Hiroki, <hrs@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	g95
 PORTVERSION=	${G95VERSION}.${SNAPDATE}
@@ -33,6 +29,7 @@ CONFIGURE_ARGS+=--with-gcc-dir=${GCCBUILDDIR}
 PLIST_FILES=	bin/g95 bin/f95 bin/f951 lib/libf95.a
 PORTDOCS=	G95Manual.pdf
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

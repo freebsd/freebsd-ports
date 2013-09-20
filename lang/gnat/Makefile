@@ -28,6 +28,7 @@ MAN1=			gnatgcc.1 gnatcpp.1 gnatgcov.1
 MAN7=			fsf-funding.7 gfdl.7 gpl.7
 MAN7=			${fsf_mans:S/$/${fsf_suffix}.7/}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 gcc_version=		4.3.6

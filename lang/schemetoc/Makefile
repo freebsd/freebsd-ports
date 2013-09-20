@@ -21,6 +21,7 @@ USE_LDCONFIG=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		scc.1 sci.1
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	@${CP} ${FILESDIR}/README.FreeBSD ${WRKSRC}

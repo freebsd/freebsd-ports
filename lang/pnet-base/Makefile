@@ -1,9 +1,5 @@
-# Ports collection makefile for:  treecc
-# Date created:			  Wed Jul 11 00:45:15 EDT 2001
-# Whom:				  Michael Johnson <ahze@ahze.net>
-#
+# Created by: Michael Johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	pnet
 PORTVERSION=	${PNET_VERSION}
@@ -49,6 +45,7 @@ MLINKS=	ilasm.1 al.1 \
 	ilsize.1 cli-unknown-size.1 \
 	ilstrip.1 cli-unknown-strip.1
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../pnet/Makefile.pnet"
 .include <bsd.port.pre.mk>
 

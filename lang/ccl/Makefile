@@ -20,6 +20,7 @@ EXCLUDE=	cocoa-ide lisp-kernel scripts
 
 USE_ASDF=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 
 .include <bsd.port.pre.mk>

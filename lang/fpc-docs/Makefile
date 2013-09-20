@@ -1,4 +1,4 @@
-# Created by:	John Merryweather Cooper
+# Created by: John Merryweather Cooper
 # $FreeBSD$
 
 PORTNAME=	docs
@@ -24,6 +24,7 @@ DOCSDIR=	${PREFIX}/share/doc/fpdocs-${PORTVERSION}
 PORTDOCS=	chart.pdf fcl.pdf fpdoc.pdf prog.pdf ref.pdf rtl.pdf user.pdf
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKDIR}/doc && \

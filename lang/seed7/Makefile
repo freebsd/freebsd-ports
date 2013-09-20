@@ -32,6 +32,7 @@ S7_LIBS=	s7_comp.a s7_con.a s7_draw.a s7_data.a seed7_05.a
 PORTEXAMPLES=	*
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 MAKEFILE=	mk_freebsd.mk

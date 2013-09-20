@@ -26,6 +26,7 @@ PORTDOCS=	${DISTNAME:R}-refman.ps \
 IGNORE=		installs only documentation and you have NOPORTDOCS defined
 .endif
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DOCSDIR}/html/libref
 	cd ${WRKDIR}/htmlman/libref && ${INSTALL_DATA} * ${DOCSDIR}/html/libref

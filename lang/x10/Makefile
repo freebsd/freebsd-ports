@@ -35,6 +35,7 @@ BUILD_DEPENDS+=	gmake:${PORTSDIR}/devel/gmake \
 
 WRKSRC=		${WRKDIR}/x10.dist
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's/value="make"/value="gmake"/g' \
 		${WRKDIR}/x10.runtime/build.xml

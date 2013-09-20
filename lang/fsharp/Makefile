@@ -29,5 +29,6 @@ PLIST_SUB+=	LB="${LOCALBASE}/"
 PLIST_SUB+=	LB=""
 .endif
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>

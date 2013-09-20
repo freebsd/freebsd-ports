@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ocaml-examples
-# Date created:		2006-07-27
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	ocaml
 PORTVERSION=	3.12
@@ -17,6 +13,7 @@ COMMENT=	Example programs for the Objective Caml
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 .ifndef		NOPORTEXAMPLES
 	@${MKDIR} ${EXAMPLESDIR}

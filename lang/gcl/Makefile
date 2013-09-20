@@ -44,6 +44,7 @@ PLIST_SUB=	GCL_VER="${PORTVERSION}"
 
 INFO=		gcl-si gcl-tk
 
+NO_STAGE=	yes
 post-patch::
 	@${REINPLACE_CMD} -e \
 		's|@@CFLAGS@@|${CFLAGS} -I${LOCALBASE}/include| ; \

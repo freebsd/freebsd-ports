@@ -52,6 +52,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/camlidl:${PORTSDIR}/lang/ocaml-camlidl
 CONFIGURE_ARGS+=-camlidl
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man/|/man/|g' \
 		${WRKSRC}/Makefile

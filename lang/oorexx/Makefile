@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ooRexx
-# Date created:				04 Jun 2005
-# Whom:					Micho
-#
+# Created by: Micho
 # $FreeBSD$
-#
 
 PORTNAME=	oorexx
 PORTVERSION=	3.0.0
@@ -19,6 +15,7 @@ USE_LDCONFIG=	yes
 MAKE_ENV=	EXAMPLESDIR="${EXAMPLESDIR}"
 MAN1=		rexx.1 rexxc.1 rxmigrate.1 rxsubcom.1 rxqueue.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"

@@ -1,10 +1,5 @@
-#
-# New ports collection makefile for:	tolua
-# Date created:				21 November 2004
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tolua
 PORTVERSION=	5.0.1
@@ -22,6 +17,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-5.0
 
 NO_LATEST_LINK=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|make|$${MAKE}|' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -Ee \

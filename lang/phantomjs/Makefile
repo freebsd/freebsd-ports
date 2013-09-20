@@ -20,6 +20,7 @@ USE_DOS2UNIX=	YES
 USE_QT4=	moc qmake gui webkit rcc
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${SETENV} OSTYPE=freebsd MAKEFLAGS= bash -x build.sh --jobs 2 --confirm
 

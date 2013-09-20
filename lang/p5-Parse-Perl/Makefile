@@ -24,4 +24,5 @@ MAN3=		Parse::Perl.3 \
 		Parse::Perl::CopHintsHash.3 \
 		Parse::Perl::Environment.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

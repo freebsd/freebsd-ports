@@ -30,6 +30,7 @@ PLIST_DIRS=	${DOC_DIR}
 # Operations
 #
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} &&\
 	${EMACS_CMD} -batch -q -f batch-byte-compile ${ELISP_FILES}

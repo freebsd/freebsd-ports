@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gambc
-# Date created:        			28 December 2006
-# Whom:					Rob Zinkov
-#
+# Created by: Rob Zinkov
 # $FreeBSD$
-#
 
 PORTNAME=	gambit-c
 DISTVERSION=	v4_6_6
@@ -40,6 +36,7 @@ PLIST_SUB+=	GSI_LIB=lib/gambit-c
 # build take more than 20Gb of virtual memory.
 CFLAGS+=	-fno-move-loop-invariants
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(FLAGS_OBJ = \).*|\1 ${CFLAGS}|' ${WRKSRC}/makefile.in
 	@${REINPLACE_CMD} -e 's|^\(FLAGS_DYN = \).*|\1 ${CFLAGS}|' ${WRKSRC}/makefile.in

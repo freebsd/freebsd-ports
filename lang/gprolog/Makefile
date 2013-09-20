@@ -26,6 +26,7 @@ OPTIONS_DEFINE=	FD
 OPTIONS_DEFAULT=FD
 FD_DESC=	Enable finite domain constraint solver
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
