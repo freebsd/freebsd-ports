@@ -1,9 +1,5 @@
-# New ports collection makefile for:	festvox-us1-mbrola
-# Date created:				31 Mar 2006
-# Whom:					Jean-Yves Lefort <jylefort@FreeBSD.org>
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	festvox-${VOICE}-mbrola
 PORTVERSION?=	20041012
@@ -21,6 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/festival/lib/dicts/cmu/cmulex.scm:${PORTSDIR}/au
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+NO_STAGE=	yes
 
 VOICE?=		us1
 VOICEDESC?=	American English, female

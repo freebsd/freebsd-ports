@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS+=	mpdclient.2:${PORTSDIR}/audio/libmpdclient
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USES=		pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes

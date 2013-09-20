@@ -16,6 +16,7 @@ LIB_DEPENDS=	id3tag:${PORTSDIR}/audio/libid3tag \
 		gpod:${PORTSDIR}/audio/libgpod
 
 USES=		gettext gmake pkgconfig
+NO_STAGE=	yes
 USE_GNOME=	gtk20 libglade2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

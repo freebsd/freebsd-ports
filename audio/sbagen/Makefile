@@ -16,6 +16,7 @@ PORTDOCS=	ChangeLog.txt README.txt SBAGEN.txt TODO.txt focus.txt \
 		focus2.txt holosync.txt theory.txt theory2.txt wave.txt
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+NO_STAGE=	yes
 
 .include <bsd.port.options.mk>
 

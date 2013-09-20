@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lpac
-# Date created:		22 July 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lpac
 PORTVERSION=	1.40
@@ -18,6 +14,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 NO_CDROM=	No commercial use
 NO_BUILD=	yes
 USE_LINUX=	yes
+NO_STAGE=	yes
 PLIST_FILES=	bin/lpac
 
 do-install:

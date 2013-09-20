@@ -1,9 +1,5 @@
-# New ports collection makefile for:   julius
-# Date created:        28 May 2009
-# Whom:                numisemis at yahoo dot com
-#
+# Created by: numisemis at yahoo dot com
 # $FreeBSD$
-#
 
 PORTNAME=	julius
 PORTVERSION=	4.1.2
@@ -20,6 +16,7 @@ RUN_DEPENDS=	ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
 MANCOMPRESSED=	no
 GNU_CONFIGURE=	yes
 USES=		iconv
+NO_STAGE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}

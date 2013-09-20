@@ -15,6 +15,7 @@ COMMENT=	Application which saves your current BMP playlist to html or xml file
 BUILD_DEPENDS=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
 RUN_DEPENDS=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
 
+NO_STAGE=	yes
 MAKE_ARGS=	CC="${CC}" LD="${CC}"
 USES=	pkgconfig
 WRKSRC=		${WRKDIR}/${PORTNAME}

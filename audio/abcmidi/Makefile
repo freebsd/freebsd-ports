@@ -16,6 +16,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 EXTRACT_BEFORE_ARGS=	-aqo
 
+NO_STAGE=	yes
 USE_ZIP=	yes
 USES=		gmake
 MAKEFILE=	makefiles/unix.mak

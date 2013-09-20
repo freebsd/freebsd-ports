@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MP3-ID3v1Tag
-# Date created:		13-Aug-2000
-# Whom:			Leo Kim <leo@florida.sarang.net>
-#
+# Created by: Leo Kim <leo@florida.sarang.net>
 # $FreeBSD$
-#
 
 PORTNAME=	MP3-ID3v1Tag
 PORTVERSION=	1.11
@@ -15,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Edit ID3v1 Tags from an Audio MPEG Layer 3
 
 USES=		perl5
+NO_STAGE=	yes
 USE_PERL5=	configure
 
 MAN3=		MP3::ID3v1Tag.3

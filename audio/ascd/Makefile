@@ -16,6 +16,7 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	workman:${PORTSDIR}/audio/libworkman
 
+NO_STAGE=	yes
 USES=		imake
 
 USE_XORG=	xpm

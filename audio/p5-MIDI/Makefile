@@ -14,6 +14,7 @@ COMMENT=	Perl5 module for handling MIDI files
 OPTIONS_DEFINE=	GD
 
 USES=		perl5
+NO_STAGE=	yes
 USE_PERL5=	configure
 
 MAN3=		MIDI.3 MIDI::Event.3 MIDI::Filespec.3 MIDI::Opus.3 MIDI::Score.3 \

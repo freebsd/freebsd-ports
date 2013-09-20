@@ -16,6 +16,7 @@ LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
 LICENSE=	GPLv2
 
 USE_STAGE=	yes
+NO_STAGE=	yes
 USES=		gmake pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

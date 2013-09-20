@@ -14,6 +14,7 @@ COMMENT=	A programmable soundscape tool
 RESTRICTED=	no commercial use
 RESTRICTED_FILES=	boodler-snd-021902.tar.gz
 
+NO_STAGE=	yes
 USES=		gmake
 USE_PYTHON=	yes
 DRIVER?=	oss

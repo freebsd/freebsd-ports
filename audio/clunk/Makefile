@@ -12,6 +12,7 @@ COMMENT=	Real-time 3D sound generation library
 
 USE_BZIP2=	yes
 USES=		cmake
+NO_STAGE=	yes
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
 

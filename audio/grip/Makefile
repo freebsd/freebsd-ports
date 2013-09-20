@@ -15,6 +15,7 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		curl:${PORTSDIR}/ftp/curl
 
 USE_XORG=	x11
+NO_STAGE=	yes
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	gnomeprefix libgnomeui vte
 USE_AUTOTOOLS=	libtool

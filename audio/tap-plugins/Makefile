@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	tap-plugins
-# Date created:				2004-05-19
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	tap-plugins
@@ -14,6 +11,7 @@ COMMENT=	LADSPA Plugins by Tom Szilagy
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I. -c -fPIC -DPIC" \
 		LDFLAGS="-nostartfiles -shared -Wl,-Bsymbolic -lm"
 

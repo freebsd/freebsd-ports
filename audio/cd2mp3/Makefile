@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cd2mp3
-# Date created:				4 January 2000
-# Whom:					Jamie Heckford <jamie@blackhole.net>
-#
+# Created by: Jamie Heckford <jamie@blackhole.net>
 # $FreeBSD$
-#
 
 PORTNAME=	cd2mp3
 PORTVERSION=	0.82
@@ -19,6 +15,7 @@ COMMENT=	Easy to use CD Ripping and MP3 Encoding tool
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		dagrab:${PORTSDIR}/audio/dagrab
 
+NO_STAGE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/cd2mp3
 

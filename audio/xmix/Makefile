@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mixer for X Window System
 
 USES=		imake
+NO_STAGE=	yes
 WRKSRC=		${WRKDIR}/xmix
 USE_XORG=	x11 xext xmu xaw xt sm ice
 

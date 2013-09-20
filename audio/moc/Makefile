@@ -11,6 +11,7 @@ MAINTAINER=	rzinkov@gmail.com
 COMMENT=	Console audio player designed to be powerful and easy to use
 
 USES=		gmake
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

@@ -29,6 +29,7 @@ TCMALLOC_DESC=	Use Google's TCMalloc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 USE_QT4=	corelib gui network opengl script sql svg xml \
 		linguist_build moc_build qmake_build rcc_build uic_build
 USE_GL=		glu

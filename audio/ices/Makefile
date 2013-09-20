@@ -22,6 +22,7 @@ LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
 OPTIONS_DEFINE=	ALSA
 
 USES=		pkgconfig iconv gmake
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes

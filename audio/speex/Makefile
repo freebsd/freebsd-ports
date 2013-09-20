@@ -1,9 +1,5 @@
-# Ports collection makefile for:	Speex
-# Date created:			Jul 30, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	speex
 DISTVERSION=	1.2rc1
@@ -20,6 +16,7 @@ LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg
 CONFLICTS=	speex-devel-[0-9]*
 
 USE_GNOME=	gnomehack ltverhack
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

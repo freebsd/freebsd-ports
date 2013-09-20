@@ -16,6 +16,7 @@ LIB_DEPENDS=	mpdclient:${PORTSDIR}/audio/libmpdclient
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
+NO_STAGE=	yes
 USE_QT4=	corelib gui network \
 		moc_build qmake_build rcc_build uic_build
 

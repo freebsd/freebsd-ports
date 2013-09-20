@@ -15,6 +15,7 @@ COMMENT=	Motif based FM tuner (for use with bt848 driver)
 #RUN_DEPENDS=   sox:${PORTSDIR}/audio/sox
 
 USES=		imake motif
+NO_STAGE=	yes
 USE_XORG=	xpm
 ONLY_FOR_ARCHS=	i386 ia64
 

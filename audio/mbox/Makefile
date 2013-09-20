@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mbox
-# Date created:				01 Sep 2004
-# Whom:					Vladimir Osintsev <oc@nm.ru>
-#
+# Created by: Vladimir Osintsev <oc@nm.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	mbox
 PORTVERSION=	0.7.2
@@ -22,6 +18,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/__init__.py:${PORTSDIR}/audio/py-ogg \
 
 WRKSRC=		${WRKDIR}/mBox-${PORTVERSION}
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	mBox

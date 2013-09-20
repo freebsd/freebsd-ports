@@ -17,6 +17,7 @@ LIB_DEPENDS=	Desktop:${PORTSDIR}/x11/deforaos-libdesktop
 
 MAKE_ARGS=	PREFIX=${PREFIX}
 USES=		pkgconfig gettext
+NO_STAGE=	yes
 USE_GNOME=	gtk20 desktopfileutils
 PLIST_FILES=	bin/mixer \
 		share/applications/mixer.desktop \

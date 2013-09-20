@@ -29,6 +29,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/ladspa/rdf/caps.rdf:${PORTSDIR}/audio/caps-plugi
 OPTIONS_DEFINE=	JACK PULSEAUDIO SDL
 
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_XORG=	xft
 USE_QT4=	corelib gui xml moc_build uic_build rcc_build \

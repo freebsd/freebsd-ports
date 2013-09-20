@@ -1,7 +1,3 @@
-# New ports collection makefile for:	waheela
-# Date created:				2009-08-10
-# Whom:					Jason E. Hale <bsdkaffee@gmail.com>
-#
 # $FreeBSD$
 
 PORTNAME=	waheela
@@ -17,6 +13,7 @@ COMMENT=	Fullscreen mode for Amarok 2.x
 RUN_DEPENDS=	amarok>=2:${PORTSDIR}/audio/amarok-kde4
 
 USES=		cmake
+NO_STAGE=	yes
 USE_KDE4=	automoc4 kdeprefix kdehier kdelibs
 USE_QT4=	gui dbus network svg xml \
 		qmake_build moc_build rcc_build uic_build

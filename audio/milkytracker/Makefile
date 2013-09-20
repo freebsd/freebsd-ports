@@ -19,6 +19,7 @@ LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack \
 		zzip:${PORTSDIR}/devel/zziplib
 
 USES=		pkgconfig
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 

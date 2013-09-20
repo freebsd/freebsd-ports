@@ -17,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=1.11:${PORTSDIR}/audio/py-mutagen
 FETCH_ARGS=	-pRr
 MAKE_ENV+=	PYTHON2_CMD=${PYTHON_CMD} XDGCONFDIR=${PREFIX}/etc/xdg
 USE_GNOME=	pygtk2 librsvg2
+NO_STAGE=	yes
 USE_GSTREAMER=	python good faad
 USE_PYTHON=	-2.7
 

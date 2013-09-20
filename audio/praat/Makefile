@@ -12,6 +12,7 @@ MAINTAINER=	jwbacon@tds.net
 COMMENT=	Phonetics by Computer
 
 USE_DOS2UNIX=	yes
+NO_STAGE=	yes
 DOS2UNIX_REGEX=	.*Makefile
 USES=		iconv motif
 WRKSRC=		${WRKDIR}/sources_4639

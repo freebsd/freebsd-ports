@@ -15,6 +15,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedi
 LICENSE=	GPLv3
 
 USES=		gettext gmake
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2 pygnome2

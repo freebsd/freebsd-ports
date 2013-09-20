@@ -14,6 +14,7 @@ COMMENT=	OSSSuround adds Surround Sound capabilities to XMMS
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USE_CSTD=	gnu89
 CFLAGS+=	-fPIC `xmms-config --cflags`
 

@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	binio:${PORTSDIR}/devel/libbinio
 
 USES=		pkgconfig
+NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

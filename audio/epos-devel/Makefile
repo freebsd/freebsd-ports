@@ -13,6 +13,7 @@ LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 
 USES=		bison gmake
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_lib_stdcpp_main=no
 

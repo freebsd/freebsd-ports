@@ -1,9 +1,5 @@
-# New ports collection makefile for:	audio/linux-f10-esound
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	esound
 PORTVERSION=	0.2.41
@@ -18,6 +14,7 @@ COMMENT=	RPM of esound (Linux Fedora 10)
 CONFLICTS=	linux-esound-[0-9]* linux-f8-esound-[0-9]*
 
 USE_LINUX_RPM=	yes
+NO_STAGE=	yes
 USE_LINUX_APPS=	libaudiofile
 LINUX_NAME=	${PORTNAME}-libs
 LINUX_DIST_VER=	10

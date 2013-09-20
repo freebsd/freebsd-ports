@@ -19,6 +19,7 @@ LIB_DEPENDS=	ao.4:${PORTSDIR}/audio/libao \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USES=		pkgconfig
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"

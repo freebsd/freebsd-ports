@@ -10,6 +10,7 @@ MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	IETF audio codec
 
 USES=		pathfix
+NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 

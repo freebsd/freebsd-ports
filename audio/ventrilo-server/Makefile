@@ -15,6 +15,7 @@ LIB_DEPENDS=	stdc\\+\\+.3:${PORTSDIR}/misc/compat4x \
 		m.2:${PORTSDIR}/misc/compat4x \
 		c.4:${PORTSDIR}/misc/compat4x
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 IA32_BINARY_PORT=	yes

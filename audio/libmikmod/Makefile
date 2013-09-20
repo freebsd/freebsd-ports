@@ -10,6 +10,7 @@ MAINTAINER=	neuroworker@gmail.com
 COMMENT=	MikMod Sound Library
 
 USE_AUTOTOOLS=	libtool
+NO_STAGE=	yes
 WANT_GNOME=	yes
 USE_GNOME=	lthack
 USES=		gmake

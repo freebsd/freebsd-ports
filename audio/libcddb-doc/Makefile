@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libcddb-doc
-# Date created:				2005-04-24
-# Whom:					Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libcddb-doc
 PORTVERSION=	1.3.0
@@ -14,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libcddb documentation
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/output
 

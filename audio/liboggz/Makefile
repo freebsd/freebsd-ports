@@ -1,4 +1,3 @@
-# Created  by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	liboggz
@@ -14,6 +13,7 @@ COMMENT=	Simple Ogg API
 LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg
 
 USE_AUTOTOOLS=	libtool
+NO_STAGE=	yes
 USES=		pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

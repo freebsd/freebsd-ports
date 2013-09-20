@@ -16,6 +16,7 @@ RUN_DEPENDS=	liblame.so:${PORTSDIR}/audio/lame \
 		liboggenc.so:${PORTSDIR}/audio/vorbis-tools
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USES=		perl5
 USE_PERL5=	run
 NO_BUILD=	yes

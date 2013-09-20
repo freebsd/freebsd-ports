@@ -16,6 +16,7 @@ LIB_DEPENDS=	confuse.0:${PORTSDIR}/devel/libconfuse \
 		curl:${PORTSDIR}/ftp/curl
 
 USES=		gmake pkgconfig
+NO_STAGE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20

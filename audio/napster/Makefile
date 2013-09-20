@@ -1,9 +1,5 @@
-# New ports collection makefile for:    napster
-# Date created:         Thu Nov 18 01:07:00 PST 1999
-# Whom:                 dburr@FreeBSD.org
-#
+# Created by: dburr@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	nap
 PORTVERSION=	1.5.4
@@ -16,6 +12,7 @@ COMMENT?=	An MP3 sharing, search, and chat client for the OpenNAP network
 CONFLICTS?=	ru-nap-*
 
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 
 MAN1=	nap.1
 

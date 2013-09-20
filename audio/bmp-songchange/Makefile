@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
 
+NO_STAGE=	yes
 USES=		pkgconfig
 
 GNU_CONFIGURE=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   alsa-lib
-# Date created:                June 29, 2009
-# Whom:                        Aragon Gouveia <aragon@phat.za.net>
-#
+# Created by: Aragon Gouveia <aragon@phat.za.net>
 # $FreeBSD$
-#
 
 PORTNAME=	alsa-lib
 PORTVERSION=	1.0.26
@@ -14,6 +10,7 @@ MASTER_SITES=	ALSA/lib \
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	ALSA compatibility library
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

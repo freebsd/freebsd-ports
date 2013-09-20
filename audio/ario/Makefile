@@ -22,6 +22,7 @@ LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
 		unique-1.0:${PORTSDIR}/x11-toolkits/unique \
 		mpdclient:${PORTSDIR}/audio/libmpdclient
 
+NO_STAGE=	yes
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

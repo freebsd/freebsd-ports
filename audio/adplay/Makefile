@@ -17,6 +17,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	adplug:${PORTSDIR}/audio/libadplug
 
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes
 

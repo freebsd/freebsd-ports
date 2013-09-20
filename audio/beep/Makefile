@@ -9,6 +9,7 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Beeps a certain duration and pitch out of the PC Speaker
 
+NO_STAGE=	yes
 MAN1=		beep.1
 MANCOMPRESSED=	maybe
 WRKSRC=		${WRKDIR}/${PORTNAME}

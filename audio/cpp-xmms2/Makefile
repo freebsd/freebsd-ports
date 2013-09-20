@@ -12,6 +12,7 @@ LIB_DEPENDS+=	boost_signals:${PORTSDIR}/devel/boost-libs \
 		xmmsclient.6:${PORTSDIR}/audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 

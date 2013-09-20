@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	linux-nerodigitalaudio
-# Date created:				2007-10-27
-# Whom:					Yuichiro AIZAWA <yaizawa@2004.jukuin.keio.ac.jp>
-#
+# Created by: Yuichiro AIZAWA <yaizawa@2004.jukuin.keio.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	neroaaccodec
 PORTVERSION=	1.5.1
@@ -16,6 +12,7 @@ MAINTAINER=	yaizawa@2004.jukuin.keio.ac.jp
 COMMENT=	Nero AAC reference quality MPEG-4 and 3GPP audio codec
 
 USE_ZIP=	yes
+NO_STAGE=	yes
 USE_LINUX=	yes
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.txt

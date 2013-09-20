@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PyOpenAL
-# Date created:		2005-10-05
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	openal
 PORTVERSION=	0.1.6
@@ -18,6 +14,7 @@ COMMENT=	PyOpenAL is a binding of OpenAL for Python
 
 DIST_SUBDIR=	python
 USE_OPENAL=	al alut
+NO_STAGE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PyOpenAL

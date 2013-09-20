@@ -12,9 +12,10 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
 USES=		gmake
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 
-MAKE_ARGS=	CC=${CC}
+MAKE_ARGS=	CC="${CC}"
 PORTDATA=	re.mk
 
 do-install:

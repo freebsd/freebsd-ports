@@ -23,6 +23,7 @@ XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 FETCH_ARGS=	-AR
 FETCH_BEFORE_ARGS=	-o mpg123el.cgi?${PORTVERSION}
+NO_STAGE=	yes
 
 do-install:
 	${MKDIR} ${ELISPDIR}

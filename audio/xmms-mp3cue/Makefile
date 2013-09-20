@@ -15,6 +15,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 GNU_CONFIGURE=	yes
 USES=		gmake
+NO_STAGE=	yes
 
 PLIST_SUB=	PORTDOCS=${DISTNAME}
 

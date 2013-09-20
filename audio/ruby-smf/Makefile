@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby-smf
-# Date created:		31 March 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	smf
 PORTVERSION=	0.15.12
@@ -16,6 +12,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby module to handle Standard MIDI Files
 
 USE_RUBY=	yes
+NO_STAGE=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 RUBY_SHEBANG_FILES=	sample/*.rb

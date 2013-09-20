@@ -15,6 +15,7 @@ RUN_DEPENDS=	wavplay:${PORTSDIR}/audio/wavplay
 
 GNU_CONFIGURE=	yes
 USE_WX=		2.8+
+NO_STAGE=	yes
 WX_UNICODE=	yes
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}
 CPPFLAGS+=	-I${LOCALBASE}/include

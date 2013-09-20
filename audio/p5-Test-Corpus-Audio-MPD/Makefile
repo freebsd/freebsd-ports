@@ -1,4 +1,4 @@
-# Created by: Wen Heping <wen@freebsd.org>
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Test-Corpus-Audio-MPD
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	p5-File-ShareDir-PathClass>0:${PORTSDIR}/devel/p5-File-ShareDir-P
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
+NO_STAGE=	yes
 USE_PERL5=	modbuild
 
 MAN3=		Test::Corpus::Audio::MPD.3

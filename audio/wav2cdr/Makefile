@@ -15,6 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 SRC=		wav2cdr cmdarg data fileio process
 
 PLIST_FILES=	bin/wav2cdr
+NO_STAGE=	yes
 MAN1=		wav2cdr.1
 
 do-build:

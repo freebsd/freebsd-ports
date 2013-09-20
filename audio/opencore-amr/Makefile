@@ -13,6 +13,7 @@ LICENSE=	AL2
 
 GNU_CONFIGURE=	yes
 USES=		gmake pathfix
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

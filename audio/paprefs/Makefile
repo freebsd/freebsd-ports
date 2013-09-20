@@ -16,6 +16,7 @@ LIB_DEPENDS=	glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 
 GNU_CONFIGURE=	yes
 USES=		gmake pathfix pkgconfig
+NO_STAGE=	yes
 USE_GNOME=	gnomeprefix intltool
 
 CONFIGURE_ARGS=	--disable-lynx

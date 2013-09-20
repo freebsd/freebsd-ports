@@ -1,15 +1,12 @@
-# New ports collection makefile for:	bmp-faad
-# Date created:			2 Sep, 2004
-# Whom:				Michael Johnson <ahze@ahze.net>
-#
+# Created by: Michael Johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PKGNAMEPREFIX=	bmp-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Beep Media Player (BMP) plugin for faad
 
+NO_STAGE=	yes
 MASTERDIR=	${.CURDIR}/../xmms-faad
 
 .include "${MASTERDIR}/Makefile.inc"

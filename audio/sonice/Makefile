@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	sonice
-# Date created:			Jan 30, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	sonice
 PORTVERSION=	2.0
@@ -21,6 +16,7 @@ RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools \
 		${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml
 
 USE_PYTHON=	yes
+NO_STAGE=	yes
 USE_PYDISTUTILS=	yes
 WRKSRC=		${WRKDIR}/sonice
 

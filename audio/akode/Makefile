@@ -26,6 +26,7 @@ MPC_DESC=	Monkey's Audio decoder plugin
 RESAMPLER_DESC=	Resampler processing plugin
 XIPH_DESC=	FLAC/Speex/Vorbis decoder plugin
 
+NO_STAGE=	yes
 USES=		gmake
 USE_AUTOTOOLS=	libltdl libtool
 USE_BZIP2=	yes

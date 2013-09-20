@@ -11,6 +11,7 @@ MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	A GTK2 audio mixer
 
 USES=		pkgconfig
+NO_STAGE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

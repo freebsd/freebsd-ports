@@ -20,6 +20,7 @@ LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
 ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		gmake pkgconfig
+NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

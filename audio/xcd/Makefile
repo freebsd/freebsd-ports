@@ -13,6 +13,7 @@ COMMENT=	Tcl/Tk CD player
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_TK_WRAPPER=	yes
+NO_STAGE=	yes
 
 MAN1=		xcd.1
 

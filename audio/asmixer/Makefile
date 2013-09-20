@@ -13,6 +13,7 @@ COMMENT=	Mixer control for AfterStep window manager
 MAN1=		${PORTNAME}.1x
 PLIST_FILES=	bin/asmixer
 
+NO_STAGE=	yes
 USE_XORG=	xpm x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm \

@@ -16,6 +16,7 @@ COMMENT=	A curses MOD/FNK music tracker
 LICENSE=	GPLv2
 
 USE_GCC=	any
+NO_STAGE=	yes
 
 WRKSRC=		${WRKDIR}/funkgold
 MAKE_ARGS=	EXTRA_CFLAGS="${PTHREAD_CFLAGS}" \

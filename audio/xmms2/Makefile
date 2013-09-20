@@ -12,6 +12,7 @@ MAINTAINER?=	madpilot@FreeBSD.org
 COMMENT?=	Rewrite of xmms as a client/server system (developer release)
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USE_PYTHON_BUILD=	yes
 USES+=		pkgconfig
 

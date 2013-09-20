@@ -14,6 +14,7 @@ COMMENT=	A 3D positional spatialized sound library
 CONFLICTS=	openal-soft-[0-9]*
 
 USE_AUTOTOOLS=	libtool
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-Wno-return-type

@@ -21,6 +21,7 @@ RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 LICENSE=	GPLv2
 
 USES=		perl5
+NO_STAGE=	yes
 NO_BUILD=	yes
 
 MAN1=	soundgrab.1

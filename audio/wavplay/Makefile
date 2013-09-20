@@ -12,6 +12,7 @@ COMMENT=	A wav player and recorder
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=Doesn't work on !i386 and amd64
+NO_STAGE=	yes
 
 MAN1=		wavplay.1
 

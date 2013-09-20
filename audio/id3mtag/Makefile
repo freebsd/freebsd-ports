@@ -1,9 +1,5 @@
-# New ports collection makefile for:	id3mtag
-# Date created:				9 February 2005
-# Whom:					squell@alumina.nl
-#
+# Created by: squell@alumina.nl
 # $FreeBSD$
-#
 
 PORTNAME=	id3mtag
 PORTVERSION=	0.78
@@ -18,9 +14,10 @@ MAN1=		id3.1
 PLIST_FILES=	bin/id3
 
 MAKEFILE=	makefile
+NO_STAGE=	yes
 ALL_TARGET=	build
-MAKE_ARGS=	CC=${CC} CFLAGS="${CFLAGS}" \
-		CXX=${CXX} CXXFLAGS="${CXXFLAGS}"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
+		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
 PORTDOCS=	*
 

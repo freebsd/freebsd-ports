@@ -12,6 +12,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MOD/S3M player
 
+NO_STAGE=	yes
 ALL_TARGET=	freebsd
 PLIST_FILES=	bin/s3mod
 

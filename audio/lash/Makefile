@@ -21,6 +21,7 @@ OPTIONS_DEFINE=	READLINE DOCS
 OPTIONS_DEFAULT=READLINE
 
 USES=		gmake pathfix pkgconfig
+NO_STAGE=	yes
 USE_GNOME=	gtk20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa-midi

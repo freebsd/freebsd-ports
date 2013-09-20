@@ -1,5 +1,4 @@
 # Created by: Kirill Ponomarew <ponomarew@oberon.net>
-#
 # $FreeBSD$
 
 PORTNAME=	wavbreaker
@@ -14,6 +13,7 @@ COMMENT=	Tool to split and merge wav files
 OPTIONS_DEFINE=	PULSEAUDIO NLS
 
 USE_GNOME=	gtk20 libxml2
+NO_STAGE=	yes
 USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PKG_CONFIG="${LOCALBASE}/bin/pkg-config"

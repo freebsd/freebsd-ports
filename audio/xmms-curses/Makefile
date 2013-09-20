@@ -15,6 +15,7 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	pthread-stubs.0:${PORTSDIR}/devel/libpthread-stubs
 
 USES=		gettext iconv
+NO_STAGE=	yes
 USE_GNOME=	gtk12
 USE_XORG=	x11 xau xcb xdmcp xext xi
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gkrellmms
-# Date Created:		Jun 22 2000
-# Whom:			Hajimu UMEMOTO <ume@FreeBSD.org>
-#
+# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gkrellmms
 PORTVERSION=	0.5.8
@@ -22,5 +18,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	libexec/gkrellm/plugins/gkrellmms.so
 USE_GNOME=	imlib
+NO_STAGE=	yes
 
 .include <bsd.port.mk>

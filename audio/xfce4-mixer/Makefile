@@ -18,6 +18,7 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
 USES=		gmake pkgconfig gettext pathfix
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel xfconf

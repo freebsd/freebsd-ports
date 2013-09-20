@@ -16,6 +16,7 @@ LIB_DEPENDS?=	xmms:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS+=	modplug:${PORTSDIR}/audio/libmodplug
 
 USES=		pkgconfig
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 PLUGDIR?=	lib/xmms/Input

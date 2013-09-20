@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates three-dimensional coherent noise
 
 USE_ZIP=	yes
+NO_STAGE=	yes
 USES=		gmake
 USE_AUTOTOOLS=	libtool:env
 USE_LDCONFIG=	yes

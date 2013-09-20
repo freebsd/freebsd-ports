@@ -1,6 +1,5 @@
 # Created by: Mark Foster <mark@foster.cc>
 # $FreeBSD$
-#
 
 PORTNAME=	firefly
 PORTVERSION=	1696
@@ -24,6 +23,7 @@ LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
 		id3tag:${PORTSDIR}/audio/libid3tag
 
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CFLAGS+=	${PTHREAD_CFLAGS}
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -17,6 +17,7 @@ RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezeboxserver
 PROJECTHOST=	grebrown-projects
 
 USE_ZIP=	yes
+NO_STAGE=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 

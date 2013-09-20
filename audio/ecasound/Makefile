@@ -23,6 +23,7 @@ LO_DESC=	Enable liblo support
 OIL_DESC=	Enable liboil support
 
 USES=		gmake readline
+NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-liblilv \
 		--disable-rubyecasound \

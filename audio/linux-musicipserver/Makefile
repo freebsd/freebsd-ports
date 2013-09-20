@@ -33,6 +33,7 @@ OPTIONS_DESC=		Install Spicefly skin
 WRKSRC=			${WRKDIR}/MusicIP/MusicMagicMixer/
 
 USE_RC_SUBR=		musicipserver
+NO_STAGE=	yes
 USE_LINUX=		yes
 NO_BUILD=		yes
 IA32_BINARY_PORT=	yes

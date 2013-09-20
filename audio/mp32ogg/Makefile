@@ -19,6 +19,7 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		p5-String-ShellQuote>=0:${PORTSDIR}/textproc/p5-String-ShellQuote
 
 USES=		shebangfix perl5
+NO_STAGE=	yes
 SHEBANG_FILES=	mp32ogg
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}

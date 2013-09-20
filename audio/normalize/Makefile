@@ -13,6 +13,7 @@ COMMENT=	A tool for adjusting the volume of wave/MP3 files to a standard level
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad
 
 USE_BZIP2=		yes
+NO_STAGE=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-helper-search
 CPPFLAGS+=		-I${LOCALBASE}/include

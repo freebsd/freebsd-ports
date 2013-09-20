@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-xmms2
-# Date created:				18 Mar 2006
-# Whom:					Alexander Botero-Lowry <alex@foxybanana.com>
-#
+# Created by: Alexander Botero-Lowry <alex@foxybanana.com>
 # $FreeBSD$
-#
 
 PORTREVISION=	4
 CATEGORIES=	audio ruby
@@ -17,6 +13,7 @@ LIB_DEPENDS+=	xmmsclient.6:${PORTSDIR}/audio/xmms2
 MASTERDIR=	${.CURDIR}/../xmms2
 
 USE_RUBY=	yes
+NO_STAGE=	yes
 USE_GNOME=	glib20
 
 PLIST=		${.CURDIR}/pkg-plist

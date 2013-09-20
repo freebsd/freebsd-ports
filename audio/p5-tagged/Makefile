@@ -12,6 +12,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read, change, and write different tags of MP3 audio files
 
 USES=		perl5
+NO_STAGE=	yes
 USE_PERL5=	configure
 
 MAN3=	MP3::Tag::ID3v2.3 MP3::Tag.3 MP3::Tag::File.3 \

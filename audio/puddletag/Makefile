@@ -21,6 +21,7 @@ RUN_DEPENDS=	chromaprint>=0.4:${PORTSDIR}/audio/chromaprint \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.5.0:${PORTSDIR}/x11-toolkits/py-qt4-gui
 
 USE_PYTHON=	2.6-2.7
+NO_STAGE=	yes
 USE_PYDISTUTILS=yes
 INSTALLS_ICONS=	yes
 NO_BUILD=	yes

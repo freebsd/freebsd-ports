@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pysol-sound-server
-# Date created:				7 January 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pysol-sound-server
 PORTVERSION=	3.01
@@ -21,6 +17,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pysolsoundserver.so
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_SDL=	mixer sdl
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 HAS_CONFIGURE=	yes

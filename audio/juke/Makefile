@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple (n)curses based juke box program
 
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 
 MAN1=		juke.1
 PLIST_FILES=	bin/juke etc/juke.conf.sample

@@ -12,6 +12,7 @@ COMMENT=	Bandlimited oscillator plugins for LADSPA-aware audio applications
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
+NO_STAGE=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ladspa-prefix="${LOCALBASE}"

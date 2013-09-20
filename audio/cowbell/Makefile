@@ -13,6 +13,7 @@ COMMENT=	Elegant music organizer
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
 
 USES=		gmake pathfix gettext iconv pkgconfig
+NO_STAGE=	yes
 USE_GNOME=	gnomeprefix intltool gtksharp20
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

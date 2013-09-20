@@ -1,4 +1,4 @@
-# Created by: Marc van Woerkom <3d@freebsd.org>
+# Created by: Marc van Woerkom <3d@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	audacity
@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 
 USE_AUTOTOOLS=	aclocal autoconf
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 USES=		gmake gettext pkgconfig
 USE_XZ=		yes
 USE_WX=		2.8

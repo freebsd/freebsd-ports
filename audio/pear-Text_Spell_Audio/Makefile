@@ -11,6 +11,7 @@ COMMENT=	Generates a sound clip saying the contents of a string of characters
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
+NO_STAGE=	yes
 PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>

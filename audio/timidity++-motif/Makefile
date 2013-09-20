@@ -1,9 +1,5 @@
-# New ports collection makefile for:	TiMidity++
-# Date created:		27 Feb 1999
-# Whom:			Yoichi Asai <yatt@msc.biglobe.ne.jp>
-#
+# Created by: Yoichi Asai <yatt@msc.biglobe.ne.jp>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-motif
 
@@ -13,6 +9,7 @@ COMMENT=	Motif interface for TiMidity++
 MASTERDIR=	${.CURDIR}/../../audio/timidity++
 
 PLIST_FILES=	bin/xmmidi ${TIMID_LIBDIR}/interface_m.so
+NO_STAGE=	yes
 
 post-configure:
 	@${MV} ${WRKSRC}/interface/Makefile ${WRKSRC}/interface/Makefile.orig

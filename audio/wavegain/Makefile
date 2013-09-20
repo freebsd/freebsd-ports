@@ -13,6 +13,7 @@ COMMENT=	A program that applies ReplayGain to wave files
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 USES=		gmake
+NO_STAGE=	yes
 USE_ZIP=	yes
 USE_DOS2UNIX=	audio.c wavegain.c
 

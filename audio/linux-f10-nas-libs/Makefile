@@ -1,9 +1,5 @@
-# New ports collection makefile for:	audio/linux-f10-nas-libs
-# Date created:				2009-09-01
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	nas-libs
 PORTVERSION=	1.9.1
@@ -16,6 +12,7 @@ MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Runtime libraries for NAS (Linux Fedora 10)
 
 USE_LINUX_RPM=	yes
+NO_STAGE=	yes
 USE_LINUX_APPS=	xorglibs
 LINUX_DIST_VER=	10
 RPMVERSION=	4.fc9

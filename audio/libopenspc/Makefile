@@ -14,6 +14,7 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 GNU_CONFIGURE=	yes
 USES=		gmake
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
 

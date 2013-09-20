@@ -1,10 +1,5 @@
-# New ports collection makefile for: py-fastaudio
-# Date created:		3 March 2007
-# Whom:			Pontus Stenetorp <ninjin@kth.se>
-#			Carl Johan Gustavsson <cjg@bsdmail.org>
-#
+# Created by: Pontus Stenetorp <ninjin@kth.se>
 # $FreeBSD$
-#
 
 PORTNAME=	fastaudio
 PORTVERSION=	0.1
@@ -29,6 +24,7 @@ PLIST_DIRS=
 EXAMPLESDIR=	${LOCALBASE}/share/examples/py-${PORTNAME}
 
 USE_ZIP=	yes
+NO_STAGE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 

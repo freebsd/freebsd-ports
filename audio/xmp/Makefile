@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	xmp:${PORTSDIR}/audio/libxmp
 
 USES=		pkgconfig gmake
+NO_STAGE=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 

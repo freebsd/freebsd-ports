@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/Mp3Tag
-# Date created:		30 July 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mp3tag
 PORTVERSION=	1.0
@@ -16,6 +12,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby module to manipulate ID3v1.1 tags in MP3 files
 
 USE_RUBY=	yes
+NO_STAGE=	yes
 USE_RUBY_RDOC=	yes
 
 RUBY_RD_FILES=	mp3tag.rb

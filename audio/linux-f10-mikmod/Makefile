@@ -1,9 +1,5 @@
-# New ports collection makefile for:	audio/linux-f10-mikmod
-# Date created:				2009-06-07
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	mikmod
 PORTVERSION=	3.2.0
@@ -19,6 +15,7 @@ CONFLICTS=	linux-mikmod-[0-9]* linux-f8-mikmod-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
+NO_STAGE=	yes
 LINUX_DIST_VER=	10
 RPMVERSION=	3.beta2.fc9
 LINUX_NAME=	lib${PORTNAME}

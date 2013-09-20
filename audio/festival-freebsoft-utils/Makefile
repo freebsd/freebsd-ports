@@ -1,7 +1,3 @@
-# New ports collection makefile for:	festival-freebsoft-utils
-# Date created:				6 January 2010
-# Whom:					Alberto Villa <villa.alberto@gmail.com>
-#
 # $FreeBSD$
 
 PORTNAME=	festival-freebsoft-utils
@@ -18,6 +14,7 @@ RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival \
 
 NO_BUILD=	yes
 USES=		iconv
+NO_STAGE=	yes
 
 PORTDOCS=	ANNOUNCE NEWS README
 

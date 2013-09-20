@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-mpd
-# Date created:		2008-04-05
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mpd
 PORTVERSION=	0.3.0
@@ -18,6 +14,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python MPD client library
 
 USE_PYTHON=	yes
+NO_STAGE=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	python_mpd
 

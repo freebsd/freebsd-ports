@@ -13,6 +13,7 @@ LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -E -e \

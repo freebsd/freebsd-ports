@@ -1,4 +1,4 @@
-# Created by: Nick Sayer <nsayer@freebsd.org>
+# Created by: Nick Sayer <nsayer@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	jxm
@@ -15,6 +15,7 @@ COMMENT=	XMPCR (USB XM radio) control software
 RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/CommDriver.jar:${PORTSDIR}/comms/java-commapi-freebsd
 
 USE_JAVA=	yes
+NO_STAGE=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
 

@@ -13,6 +13,7 @@ LIB_DEPENDS=		libshout.so:${PORTSDIR}/audio/libshout2
 
 GNU_CONFIGURE=		yes
 USES=			gmake pkgconfig
+NO_STAGE=	yes
 CONFIGURE_ARGS=		--exec-prefix=${PREFIX}
 
 OPTIONS_DEFINE=		DOCS MYSQL PGSQL

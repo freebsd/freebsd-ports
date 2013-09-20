@@ -15,6 +15,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 RUN_DEPENDS=	${LOCALBASE}/lib/xmms/Output/libOSSSurround.so:${PORTSDIR}/audio/xmms-osssurround
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USE_GNOME=	gtk12
 CFLAGS+=	`xmms-config --cflags` -L${LOCALBASE}/lib
 

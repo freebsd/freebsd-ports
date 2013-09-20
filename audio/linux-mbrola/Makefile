@@ -19,6 +19,7 @@ CONFLICTS=	mbrola-*
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
+NO_STAGE=	yes
 USE_ZIP=	yes
 RESTRICTED=	for non-commercial, non-military applications only
 WRKSRC=		${WRKDIR}/mbr301h

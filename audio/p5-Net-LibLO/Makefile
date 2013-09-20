@@ -1,4 +1,3 @@
-# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Net-LibLO
@@ -14,6 +13,7 @@ COMMENT=	Perl extension for liblo Lightweight OSC library
 LIB_DEPENDS=	lo:${PORTSDIR}/audio/liblo
 
 USES=		pkgconfig perl5
+NO_STAGE=	yes
 USE_PERL5=	configure
 
 MAN3=	\

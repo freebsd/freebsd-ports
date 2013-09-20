@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-id3
-# Date created:			2006/09/07
-# Whom:				chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	id3
 PORTVERSION=	0.2
@@ -17,6 +13,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Extension to read and write ID3 tags in MP3 files
 
 USE_PHP=	yes
+NO_STAGE=	yes
 USE_PHPEXT=	yes
 DEFAULT_PHP_VER=53
 IGNORE_WITH_PHP=5

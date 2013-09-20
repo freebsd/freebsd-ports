@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language designed for creating and editing standard MIDI files
 
 USE_TCL=	84+
+NO_STAGE=	yes
 MAKE_ENV=	TCL_INCLUDEDIR="${TCL_INCLUDEDIR}" TCL_LIBDIR="${TCL_LIBDIR}"
 MAKE_ENV+=	TCLSH=${TCLSH} FILESDIR="${FILESDIR}" MAN="${MAN1} ${MANN}"
 PKGMESSAGE=	${WRKDIR}/pkg-message

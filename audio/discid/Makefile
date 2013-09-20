@@ -1,7 +1,4 @@
-# New ports collection makefile for:	discid 1.3
-# Date created:		May 27, 2002
-# Whom:			Oliver Breuninger <ob@breuninger.org>
-#
+# Created by: Oliver Breuninger <ob@breuninger.org>
 # $FreeBSD$
 
 PORTNAME=	discid
@@ -16,6 +13,7 @@ COMMENT=	Identify audio cd in your drive
 
 WRKSRC=		${WRKDIR}/freebsd
 
+NO_STAGE=	yes
 PLIST_FILES=	bin/discid
 
 post-patch:

@@ -13,6 +13,7 @@ COMMENT=	Extract parts, movements, etc from abc music files
 USES=		shebangfix perl5
 USE_PERL5=	run
 NO_BUILD=	yes
+NO_STAGE=	yes
 
 SHEBANG_FILES=	abcselect
 

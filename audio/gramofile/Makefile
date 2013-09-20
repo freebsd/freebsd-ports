@@ -19,6 +19,7 @@ LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 ALL_TARGET=	gramofile
 USES=		gmake perl5
+NO_STAGE=	yes
 USE_CSTD=	gnu89
 MAKE_ARGS+=	CC=${CC}
 MAKE_ARGS+=	CXX=${CXX}

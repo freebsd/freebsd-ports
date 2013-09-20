@@ -18,6 +18,7 @@ RUN_DEPENDES=	dbus-daemon:${PORTSDIR}/devel/dbus
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
+NO_STAGE=	yes
 
 CONFIGURE_ARGS=	--disable-lynx
 

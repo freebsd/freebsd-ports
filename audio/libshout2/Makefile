@@ -23,6 +23,7 @@ CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 USES=		gmake pathfix pkgconfig
 
 DOCSDIR=	${PREFIX}/share/doc/libshout

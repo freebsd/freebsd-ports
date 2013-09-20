@@ -15,6 +15,7 @@ COMMENT=	MPC plugin for Xfce
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd
 
 USES=		gmake pkgconfig gettext
+NO_STAGE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool intlhack

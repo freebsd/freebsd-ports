@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	mp3splt:${PORTSDIR}/audio/libmp3splt
 
 USES=	pkgconfig:build
+NO_STAGE=	yes
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-oggsplt_symlink

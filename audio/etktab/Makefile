@@ -1,9 +1,5 @@
-# New ports collection makefile for:	etktab
-# Date created:		29 January 2003
-# Whom:			Juha Erkkilä <erkkila@cc.jyu.fi>
-#
+# Created by: Juha Erkkilä <erkkila@cc.jyu.fi>
 # $FreeBSD$
-#
 
 PORTNAME=	etktab
 PORTVERSION=	3.2
@@ -28,6 +24,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/eTktab-${PORTVERSION}
 
 USE_TK_WRAPPER=	yes
+NO_STAGE=	yes
 
 post-extract:
 .for FILE in canada_multi-3.2.etk dvorak-3.2.etk uk-3.2.etk us-3.2.etk

@@ -15,6 +15,7 @@ LICENSE=	BSD
 RUN_DEPENDS=    ${PYTHON_PKGNAMEPREFIX}requests>=1.0.0:${PORTSDIR}/www/py-requests
 
 USE_PYTHON=	yes
+NO_STAGE=	yes
 USE_PYDISTUTILS=	easy_install
 
 .include <bsd.port.mk>

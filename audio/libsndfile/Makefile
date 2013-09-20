@@ -14,6 +14,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake pathfix pkgconfig
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gcc-pipe \
 		--disable-sqlite \

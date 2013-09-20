@@ -16,6 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	mikmod:${PORTSDIR}/audio/libmikmod
 
 USES=		gmake
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		mikmod.1

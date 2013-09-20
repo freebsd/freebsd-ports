@@ -12,6 +12,7 @@ COMMENT=	Translator that converts MP4-SA files into efficient C programs
 LICENSE=	BSD
 
 USES=		bison
+NO_STAGE=	yes
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	${PORTNAME}

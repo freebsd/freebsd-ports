@@ -12,6 +12,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Network Audio System
 
 USES=		imake
+NO_STAGE=	yes
 USE_CSTD=	gnu89
 USE_XORG=	x11 xext xt xau sm ice xp xpm xmu xaw
 USE_LDCONFIG=	yes

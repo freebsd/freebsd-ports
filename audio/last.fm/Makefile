@@ -1,4 +1,4 @@
-# Created by: Michael Nottebrock <lofi@freebsd.org>
+# Created by: Michael Nottebrock <lofi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	last.fm
@@ -24,6 +24,7 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-install pkg-deinstall
 USES=		shebangfix
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_QT4=	gui imageformats_run moc_build network qmake_build rcc_build \
 		sql uic_build xml

@@ -16,6 +16,7 @@ LIB_DEPENDS=	xmmsclient:${PORTSDIR}/audio/xmms2 \
 		notify:${PORTSDIR}/devel/libnotify
 
 USES=		gmake desktop-file-utils pkgconfig
+NO_STAGE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

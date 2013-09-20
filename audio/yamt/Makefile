@@ -13,6 +13,7 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Yet Another Mp3 Tool which helps you to organize your mp3s
 
 USES=		gmake pathfix
+NO_STAGE=	yes
 USE_GNOME=	gnomelibs gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"

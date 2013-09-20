@@ -26,6 +26,7 @@ SOX_DESC=	sox (.au) support
 MPG123_DESC=	mpg123 support
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USE_XORG=	x11 xext xi xxf86dga ice sm
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	gnomehier gtk20 libxml2

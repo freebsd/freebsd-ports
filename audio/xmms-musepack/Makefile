@@ -14,6 +14,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 PLIST_FILES=	lib/xmms/Input/xmms-mpegplus-1.8.0.so
 USES=		gmake
+NO_STAGE=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

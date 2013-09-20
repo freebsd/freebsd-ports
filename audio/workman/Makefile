@@ -16,6 +16,7 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/workman
 USES=		imake
+NO_STAGE=	yes
 USE_XORG=	x11 xext
 MAN1=		workman.1
 MAN5=		workmandb.5

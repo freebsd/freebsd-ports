@@ -16,6 +16,7 @@ LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib \
 
 USE_QT4=	corelib dbus gui xml \
 		linguist_build moc_build qmake_build rcc_build uic_build
+NO_STAGE=	yes
 QT_NONSTANDARD=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes

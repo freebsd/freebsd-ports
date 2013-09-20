@@ -1,7 +1,4 @@
-# New ports collection makefile for:	taglib-extras
-# Date created:			Thu Aug 14 12:50:02 EDT 2008
-# Whom:				Matt Tosto <datahead4@gmail.com>
-#
+# Created by: Matt Tosto <datahead4@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	taglib-extras
@@ -15,6 +12,7 @@ COMMENT=	Extra taglib features for Amarok 2.2
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib
 
 USES=		cmake
+NO_STAGE=	yes
 
 .include <bsd.port.pre.mk>
 

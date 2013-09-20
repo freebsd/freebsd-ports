@@ -18,6 +18,7 @@ LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib
 CONFLICTS_INSTALL=	kdemultimedia-4.[1-8].*
 
 USES=		cmake:outsource
+NO_STAGE=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes

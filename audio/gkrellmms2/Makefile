@@ -24,6 +24,7 @@ PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmms.so \
 		share/locale/ru/LC_MESSAGES/gkrellmms.mo
 
 USES=		gmake pkgconfig
+NO_STAGE=	yes
 
 MAKE_ENV+=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins \
 		LOCALEDIR=${PREFIX}/share/locale \

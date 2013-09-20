@@ -18,6 +18,7 @@ LIB_DEPENDS=	portaudio:${PORTSDIR}/audio/portaudio \
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 USES=		gmake pathfix pkgconfig
 
 CONFIGURE_ENV=	LIBS="-pthread"

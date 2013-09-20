@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rplay - Network audio player
-# Date created:		16 March 1995
-# Whom:			rmallory@csusb.edu
-#
+# Created by: rmallory@csusb.edu
 # $FreeBSD$
-#
 
 PORTNAME=	rplay
 PORTVERSION=	3.3.2
@@ -17,6 +13,7 @@ COMMENT=	Network audio player
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm
 
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include

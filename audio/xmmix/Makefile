@@ -13,6 +13,7 @@ COMMENT=	Motif-based audio mixer
 WRKSRC=		${WRKDIR}/xmmix-1.2
 
 USES=		imake motif
+NO_STAGE=	yes
 USE_XORG=	x11 xext sm ice xt xp
 
 MAN1=		xmmix.1

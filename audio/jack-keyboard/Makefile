@@ -18,6 +18,7 @@ LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack
 MAN1=		jack-keyboard.1
 
 USE_GNOME=	gtk20
+NO_STAGE=	yes
 USES=		cmake
 INSTALLS_ICONS=	yes
 

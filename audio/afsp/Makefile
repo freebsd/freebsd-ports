@@ -10,6 +10,7 @@ DISTNAME=	AFsp-v8r2
 MAINTAINER=	ginga-freebsd@ginganet.org
 COMMENT=	Audio file conversion utilities and library
 
+NO_STAGE=	yes
 USES=		gmake
 MAKE_JOBS_UNSAFE=	yes
 

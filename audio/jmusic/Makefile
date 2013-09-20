@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Composition in Java
 
 USE_JAVA=	yes
+NO_STAGE=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

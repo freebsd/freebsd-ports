@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vitunes
-# Date created:		2009-09-02
-# Whom:			Dennis Herrmann <dhn@FreeBSD.org>
-#
+# Created by: Dennis Herrmann <dhn@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vitunes
 PORTVERSION=	2.3
@@ -20,6 +16,7 @@ COMMENT=	A curses-based media player with vim-like keybinds
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
 
+NO_STAGE=	yes
 ALL_TARGET=	vitunes
 PLIST_FILES=	bin/vitunes
 MAN1=	vitunes.1

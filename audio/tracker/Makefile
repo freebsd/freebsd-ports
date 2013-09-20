@@ -12,6 +12,7 @@ COMMENT=	MOD player
 
 RESTRICTED=	Non-redistributable beta
 
+NO_STAGE=	yes
 LATEST_LINK=	tracker-player
 WRKSRC=		${WRKDIR}/tracker
 INSTALL_TARGET=	install install.info

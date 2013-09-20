@@ -19,6 +19,7 @@ RUN_DEPENDS=	cd-discid:${PORTSDIR}/audio/cd-discid \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		bash:${PORTSDIR}/shells/bash
 
+NO_STAGE=	yes
 NO_BUILD=	yes
 MAN1=		abcde.1 cddb-tool.1
 

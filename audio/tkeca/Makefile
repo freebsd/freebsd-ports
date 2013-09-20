@@ -14,6 +14,7 @@ RUN_DEPENDS=	normalize:${PORTSDIR}/audio/normalize \
 		ecasound:${PORTSDIR}/audio/ecasound
 
 USE_GNOME=	desktopfileutils
+NO_STAGE=	yes
 USE_TCL=	yes
 USE_TK=		yes
 

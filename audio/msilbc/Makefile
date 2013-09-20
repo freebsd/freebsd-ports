@@ -12,6 +12,7 @@ LIB_DEPENDS=	ortp.8:${PORTSDIR}/net/linphone-base \
 		mediastreamer.0:${PORTSDIR}/net/linphone-base \
 		ilbc.0:${PORTSDIR}/net/ilbc
 
+NO_STAGE=	yes
 USES=		pkgconfig
 
 GNU_CONFIGURE=	yes

@@ -17,6 +17,7 @@ BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USES=		gmake
+NO_STAGE=	yes
 USE_GNOME=	glib12
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes

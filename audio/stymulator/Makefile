@@ -14,6 +14,7 @@ COMMENT=	Command-line Yamaha YM2149 (.ym) chiptune player
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 USE_DOS2UNIX=	yes
 MAKE_JOBS_UNSAFE=	yes
 

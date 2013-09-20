@@ -11,6 +11,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable sound and speech compression library
 
 USE_ZIP=	yes
+NO_STAGE=	yes
 USE_DOS2UNIX=	yes
 USES=		gmake
 MAKEFILE=	makefile.linux

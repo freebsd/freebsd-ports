@@ -13,6 +13,7 @@ COMMENT=	Basic decoder for Apple Lossless Audio Codec files (ALAC)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_decoder
 ALL_TARGET=	alac
+NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS DEBUG
 

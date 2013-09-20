@@ -18,6 +18,7 @@ LICENSE=	GPLv2
 WRKSRC=		${WRKDIR}/${PORTNAME}-kenrevs
 
 USES=		gmake
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README sample.cmp3rc

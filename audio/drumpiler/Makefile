@@ -10,6 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drum machine compiler
 
+NO_STAGE=	yes
 USE_SDL=	sdl
 CFLAGS+=	`${SDL_CONFIG} --cflags` -Wno-return-type
 LIBS+=		`${SDL_CONFIG} --libs`

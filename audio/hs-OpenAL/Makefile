@@ -12,6 +12,7 @@ COMMENT=	A binding to the OpenAL cross-platform 3D audio API
 LICENSE=	BSD
 
 USE_CABAL=	ObjectName StateVar Tensor
+NO_STAGE=	yes
 USE_OPENAL=	al
 
 INSTALL_PORTEXAMPLES=	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})

@@ -1,4 +1,4 @@
-# created by: Jason R. Mastaler <jason@mastaler.com>
+# Created by: Jason R. Mastaler <jason@mastaler.com>
 # $FreeBSD$
 
 PORTNAME=	mad
@@ -15,6 +15,7 @@ COMMENT=	The "meta-port" for the MAD sound playback system
 RUN_DEPENDS=	madplay:${PORTSDIR}/audio/madplay
 
 NO_BUILD=	yes
+NO_STAGE=	yes
 
 do-install:	# empty
 

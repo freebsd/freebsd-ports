@@ -19,6 +19,7 @@ RUN_DEPENDS=	p5-CDDB_get>=0:${PORTSDIR}/audio/p5-CDDB_get \
 	cdparanoia:${PORTSDIR}/audio/cdparanoia \
 
 USES=		perl5 shebangfix
+NO_STAGE=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/ripit
 MAN1=		ripit.1

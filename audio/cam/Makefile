@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cam
-# Date created:		Tue Nov 12 15:54:21 CST 1996
-# Whom:			erich@FreeBSD.org
-#
+# Created by: erich@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	cam
 PORTVERSION=	1.02
@@ -20,6 +16,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		MANDIR="${MAN1PREFIX}/man/man1" \
 		XEFILE=""
 
+NO_STAGE=	yes
 MAN1=		cam.1
 PLIST_FILES=	bin/cam
 

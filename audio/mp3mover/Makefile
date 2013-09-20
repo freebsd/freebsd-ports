@@ -11,6 +11,7 @@ COMMENT=	Rename mp3s and manipulate them
 
 RUN_DEPENDS=	p5-tagged>=0:${PORTSDIR}/audio/p5-tagged
 
+NO_STAGE=	yes
 USES=		perl5
 NO_BUILD=	yes
 

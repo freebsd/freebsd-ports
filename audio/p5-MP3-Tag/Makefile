@@ -11,6 +11,7 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Module for reading tags of MP3 audio files
 
 USES=		perl5
+NO_STAGE=	yes
 USE_PERL5=	configure
 
 MAN1=		audio_rename.1 typeset_audio_dir.1 mp3info2.1

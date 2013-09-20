@@ -17,6 +17,7 @@ RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 intltool
+NO_STAGE=	yes
 USES=		gettext gmake pkgconfig
 
 PLIST_FILES=	lib/gmpc/plugins/libnotifyplugin.la \

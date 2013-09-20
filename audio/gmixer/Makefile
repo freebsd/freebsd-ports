@@ -14,6 +14,7 @@ COMMENT=	X11/gtk+ mixer control
 ALL_TARGET=	gmixer
 
 USES=		pkgconfig
+NO_STAGE=	yes
 USE_GNOME=	gtk12
 PLIST_FILES=	bin/gmixer share/pixmaps/gmixer.xpm
 

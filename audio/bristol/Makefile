@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack \
 		fluidsynth:${PORTSDIR}/audio/fluidsynth
 
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_QT_VER=	4

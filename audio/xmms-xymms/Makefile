@@ -16,6 +16,7 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	${PTHREAD_CFLAGS}

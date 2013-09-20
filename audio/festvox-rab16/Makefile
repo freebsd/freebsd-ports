@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/festival
 CONFLICTS=	festvox-rab8
 
 NO_BUILD=	yes
+NO_STAGE=	yes
 
 FHOME=		${PREFIX}/share/festival
 

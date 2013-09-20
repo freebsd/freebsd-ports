@@ -11,6 +11,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A small run-time speech synthesis engine
 
 USES=		gmake
+NO_STAGE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared=yes

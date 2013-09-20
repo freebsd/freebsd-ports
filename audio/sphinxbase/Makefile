@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CMU Sphinx Speech recognition system base
 
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 USES=		gmake bison
 USE_AUTOTOOLS=	libtool
 

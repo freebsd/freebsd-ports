@@ -1,9 +1,5 @@
-# New ports collection makefile for:   dekagen
-# Date created:        12 August 2003
-# Whom:                Martin Kraft <martin.kraft@fal.de>
-#
+# Created by: Martin Kraft <martin.kraft@fal.de>
 # $FreeBSD$
-#
 
 PORTNAME=	dekagen
 PORTVERSION=	1.0.2
@@ -14,6 +10,7 @@ MASTER_SITES=	ftp://ftp.ibiblio.org/pub/linux/apps/sound/convert/
 MAINTAINER=	martin.kraft@fal.de
 COMMENT=	A frontend to rip, convert, and name MP3/Ogg
 
+NO_STAGE=	yes
 # The only reason for installing xmcd is, that dekagen uses cda
 # for CDDB inquiries. You can safely 'make -DWITHOUT_XMCD', if you
 # can do without inquiring the CDDB database. Dependencies of

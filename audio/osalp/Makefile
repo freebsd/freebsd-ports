@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	osalp
-# Date created:			Jun 4, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	osalp
 PORTVERSION=	0.7.5
@@ -26,6 +21,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-all
 
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 

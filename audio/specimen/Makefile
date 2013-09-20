@@ -22,6 +22,7 @@ LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack \
 		phat:${PORTSDIR}/x11-toolkits/phat
 
 USES=		pkgconfig gmake
+NO_STAGE=	yes
 USE_GNOME=	libgnomecanvas libxml2
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lm

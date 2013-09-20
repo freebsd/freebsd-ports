@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Audio-CD
-# Date created:				22 Oct 2000
-# Whom:	      				Roman Shterenzon <roman@xpert.com>
-#
+# Created by: Roman Shterenzon <roman@xpert.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Audio-CD
 PORTVERSION=	0.04
@@ -18,6 +14,7 @@ COMMENT=	Perl interface to libcdaudio (cd + cddb)
 LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
 
 USES=		perl5
+NO_STAGE=	yes
 USE_PERL5=	configure
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include " \
 		LIBS="-L${LOCALBASE}/lib -lcdaudio"

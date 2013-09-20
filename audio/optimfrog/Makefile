@@ -1,9 +1,5 @@
-# New ports collection makefile for:	optimfrog
-# Date created:		22 July 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	optimfrog
 DISTVERSION=	4.520b1
@@ -19,6 +15,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 NO_CDROM=	No commercial use
 NO_BUILD=	yes
 USE_LINUX=	yes
+NO_STAGE=	yes
 USE_ZIP=	yes
 PLIST_FILES=	bin/off bin/ofr bin/ofs
 

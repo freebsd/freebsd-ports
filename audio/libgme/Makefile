@@ -15,6 +15,7 @@ LICENSE_COMB=	dual
 
 PROJECTHOST=	game-music-emu
 USE_DOS2UNIX=	yes
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		cmake
 USE_LDCONFIG=	yes

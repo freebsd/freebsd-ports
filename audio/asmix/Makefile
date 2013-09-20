@@ -1,9 +1,5 @@
-# New ports collection makefile for:	asmix
-# Date created:		1 January 2003
-# Whom:			mtm@identd.net
-#
+# Created by: mtm@identd.net
 # $FreeBSD$
-#
 
 PORTNAME=	asmix
 PORTVERSION=	1.5
@@ -20,6 +16,7 @@ CONFIGURE_ARGS=	--with-xpm \
 		--with-xpm-includes=${LOCALBASE}/include \
 		--with-xpm-library=${LOCALBASE}/lib
 
+NO_STAGE=	yes
 MAN1=		${PORTNAME}.1x
 PLIST_FILES=	bin/asmix
 

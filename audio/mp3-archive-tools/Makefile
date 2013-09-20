@@ -16,6 +16,7 @@ BUILD_DEPENDS=	libmp3-archive-perl>=0:${PORTSDIR}/audio/libmp3-archive-perl \
 RUN_DEPENDS=	libmp3-archive-perl>=0:${PORTSDIR}/audio/libmp3-archive-perl \
 		p5-MP3-Tag>=0:${PORTSDIR}/audio/p5-MP3-Tag
 
+NO_STAGE=	yes
 USE_PERL5=	configure
 USES=		perl5
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mpg321
-# Date created:			Mar 17, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mpg321
 PORTVERSION=	0.2.10
@@ -18,6 +14,7 @@ LIB_DEPENDS=	ao.4:${PORTSDIR}/audio/libao \
 		id3tag.0:${PORTSDIR}/audio/libid3tag \
 		mad.2:${PORTSDIR}/audio/libmad
 
+NO_STAGE=	yes
 .if defined(WITH_MPG321_SCROBBLER_PATCH)
 RUN_DEPENDS=	scrobbler-helper:${PORTSDIR}/audio/p5-Audio-Scrobbler
 

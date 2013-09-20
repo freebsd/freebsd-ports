@@ -11,6 +11,7 @@ MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Perl extension for Sound Mixer control
 
 USES=		perl5
+NO_STAGE=	yes
 USE_PERL5=	configure
 
 MAN3=		Audio::Mixer.3

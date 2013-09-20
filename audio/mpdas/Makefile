@@ -14,6 +14,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		mpd.4:${PORTSDIR}/audio/libmpd
 
 USES=		pkgconfig
+NO_STAGE=	yes
 USE_BZIP2=	yes
 
 USE_RC_SUBR=	mpdas

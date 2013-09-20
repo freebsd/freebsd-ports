@@ -14,6 +14,7 @@ LIB_DEPENDS=	portaudio.2:${PORTSDIR}/audio/portaudio2 \
 		fftw3:${PORTSDIR}/math/fftw3
 
 USE_PURE=	yes
+NO_STAGE=	yes
 
 post-patch:
 	${REINPLACE_CMD} \

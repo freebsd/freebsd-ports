@@ -1,9 +1,5 @@
-# New ports collection makefile for:    maplay
-# Date created:         Feb 13 1995
-# Whom:                 jkh
-#
+# Created by: jkh
 # $FreeBSD$
-#
 
 PORTNAME=	maplay
 PORTVERSION=	1.2
@@ -18,6 +14,7 @@ COMMENT=	MPEG audio player/decoder decoding layer I and II MPEG audio streams
 LICENSE=	GPLv2
 
 NO_WRKSUBDIR=	yes
+NO_STAGE=	yes
 
 PLIST_FILES=	bin/maplay
 PORTDOCS=	README

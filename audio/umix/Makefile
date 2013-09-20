@@ -1,9 +1,5 @@
-# New ports collection makefile for:   umix
-# Date created:        24 January 2001
-# Whom:                George Reid <greid@ukug.uk.freebsd.org>
-#
+# Created by: George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	umix
 PORTVERSION=	1.0.2
@@ -15,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced tool for adjusting soundcard mixers, replacement for aumix
 
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 
 MAN1=		umix.1
 PLIST_FILES=	bin/umix

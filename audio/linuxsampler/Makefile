@@ -23,6 +23,7 @@ DSSI_DESC=	Enable DSSI support
 LV2CORE_DESC=	Enable LV2 support
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USES=		gmake pathfix pkgconfig
 USE_SQLITE=	3
 USE_AUTOTOOLS=	libtool

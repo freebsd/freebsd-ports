@@ -15,6 +15,7 @@ COMMENT=	A sound library for enlightenment package
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
 USE_AUTOTOOLS=	libtool
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		pathfix pkgconfig:both
 USE_LDCONFIG=	yes

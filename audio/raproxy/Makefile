@@ -1,9 +1,5 @@
-# New ports collection makefile for:	raproxy
-# Date created:		January 24, 1999
-# Whom:		mi@aldan.algebra.com
-#
+# Created by: mi@aldan.algebra.com
 # $FreeBSD$
-#
 
 PORTNAME=	raproxy
 PORTVERSION=	3.0b1
@@ -20,6 +16,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 RESTRICTED=	License allows only use in a firewall or with RA products.
 
+NO_STAGE=	yes
 PLIST_FILES=	libexec/raproxy
 PORTDOCS=	*
 MAN8=		raproxy.8

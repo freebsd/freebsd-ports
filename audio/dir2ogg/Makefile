@@ -16,6 +16,7 @@ RUN_DEPENDS=	faad:${PORTSDIR}/audio/faad \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		oggenc:${PORTSDIR}/audio/vorbis-tools
 
+NO_STAGE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 

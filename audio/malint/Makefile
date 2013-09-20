@@ -14,6 +14,7 @@ COMMENT=	MPEG Audio stream validator
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 
 PORTDOCS=	README
 PLIST_FILES=	bin/malint

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    x11amp
-# Date created:         13 Jul 1998
-# Whom:                 Donald Burr <dburr@FreeBSD.org>
-#
+# Created by: Donald Burr <dburr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	x11amp
 PORTVERSION=	0.9.b1.1
@@ -17,6 +13,7 @@ MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
 COMMENT=	X11-based MP3 player with nice graphical interface
 
 USE_GNOME=	gtk12 esound
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static

@@ -15,6 +15,7 @@ RESTRICTED=	redistribution of software is not permitted
 IA32_BINARY_PORT=	yes
 
 USE_DOS2UNIX=	yes
+NO_STAGE=	yes
 DOS2UNIX_REGEX=	.*\.(conf|css|html|js|txt|xml)
 
 USE_RC_SUBR=	shoutcast

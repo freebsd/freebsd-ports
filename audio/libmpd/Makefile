@@ -10,6 +10,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Abstraction around libmpdclient
 
 USE_AUTOTOOLS=	libtool
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USES=		pathfix pkgconfig
 USE_GNOME=	glib20

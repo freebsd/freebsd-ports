@@ -22,6 +22,7 @@ CONFLICTS=	kdemultimedia-3.[1-3]* akode-plugins-polypaudio-[0-9]*
 PLUGIN=		polyp_sink
 PORTNAMESUFX=	pulseaudio
 
+NO_STAGE=	yes
 USES=		gmake
 USE_AUTOTOOLS=	libltdl
 USE_AUTOTOOLS=	libtool

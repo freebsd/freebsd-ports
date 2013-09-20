@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lz
 ALL_TARGET=	all madtime
+NO_STAGE=	yes
 
 MAN1=		abxtest.1 madplay.1
 

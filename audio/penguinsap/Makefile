@@ -10,6 +10,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line Atari(TM) .sap player
 
 USE_DOS2UNIX=	yes
+NO_STAGE=	yes
 
 SOURCES=	sapPokey pokey1 sapCpu sapEngine main pokey0
 

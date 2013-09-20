@@ -16,6 +16,7 @@ LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 USES=			pkgconfig
+NO_STAGE=	yes
 USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	${PORTNAME}-python

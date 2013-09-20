@@ -15,6 +15,7 @@ COMMENT=	Optimized mpeg 1/2 layer 2 audio encoder
 LICENSE=	LGPL21
 
 USES=		gmake
+NO_STAGE=	yes
 ALL_TARGET=	${PORTNAME}
 MAKE_ARGS=	CC="${CC}" TWEAKS="${CFLAGS}" ARCH="" PG="" OPTIM=""
 USE_CSTD=	gnu89

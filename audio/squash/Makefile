@@ -19,6 +19,7 @@ LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac \
 		ao:${PORTSDIR}/audio/libao
 RUN_DEPENDS=	id3v2:${PORTSDIR}/audio/id3v2
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		gmake
 USE_RUBY=	yes

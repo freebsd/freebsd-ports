@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	GTK2 DOCS
 
+NO_STAGE=	yes
 USES=		shebangfix perl5
 SHEBANG_FILES=	zentime
 USE_PERL5=	run

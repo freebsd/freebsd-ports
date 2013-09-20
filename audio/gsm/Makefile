@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gsm
-# Date created:		5 January 1995
-# Whom:			pst
-#
+# Created by: pst
 # $FreeBSD$
-#
 
 PORTNAME=	gsm
 PORTVERSION=	1.0.13
@@ -19,6 +15,7 @@ COMMENT=	Audio converter and library for converting u-law to gsm encoding
 WRKSRC=		${WRKDIR}/gsm-1.0-pl13
 
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 
 MAN1=		toast.1
 MAN3=		gsm.3 gsm_explode.3 gsm_option.3 gsm_print.3

@@ -12,6 +12,7 @@ MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	Console-based music player with really cool features
 
 USES=		gmake pkgconfig iconv ncurses
+NO_STAGE=	yes
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV+=	HOSTCC=${CC}

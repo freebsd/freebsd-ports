@@ -17,6 +17,7 @@ INTEGER_SAMPLES_DESC=	Use integer sample format
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
+NO_STAGE=	yes
 ACLOCAL_ARGS=	-I config/m4
 AUTOMAKE_ARGS=	--add-missing --copy --foreign
 USE_LDCONFIG=	yes

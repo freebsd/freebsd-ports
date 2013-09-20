@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Monkey's Audio Codec
-# Date created:				8 Aug 2004
-# Whom:			Martin Dieringer <Martin.Dieringer@t-online.de>
-#
+# Created by: Martin Dieringer <Martin.Dieringer@t-online.de>
 # $FreeBSD$
-#
 
 PORTNAME=	mac
 PORTVERSION=	3.99.4.5
@@ -16,6 +12,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Monkey's Audio lossless codec
 
 USE_AUTOTOOLS=	libtool
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

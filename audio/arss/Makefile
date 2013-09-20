@@ -1,9 +1,5 @@
-# New ports collection makefile for:	arss
-# Date created:				2009-12-26
-# Whom:			Timothy Beyer <beyert@cs.ucr.edu>
-#
+# Created by: Timothy Beyer <beyert@cs.ucr.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	arss
 PORTVERSION=	0.2.3
@@ -19,6 +15,7 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
 
 WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
+NO_STAGE=	yes
 USES=		cmake
 USE_LDCONFIG=	${PREFIX}/lib
 CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include

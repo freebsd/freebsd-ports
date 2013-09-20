@@ -14,6 +14,7 @@ LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include

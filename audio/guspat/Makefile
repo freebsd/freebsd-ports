@@ -20,6 +20,7 @@ RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity++
 NO_CDROM=	Some of the patches are marked no-commercial-use
 
 NO_BUILD=	yes
+NO_STAGE=	yes
 
 WRKSRC=		${WRKDIR}/timidity
 PLIST_SUB=	TIMIDITY_DATADIR=${TIMIDITY_DATADIR}

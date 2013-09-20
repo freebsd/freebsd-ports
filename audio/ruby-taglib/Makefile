@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/Taglib
-# Date created:		18 Jan 2009
-# Whom:			TOMIDA, Hiroaki <t.hiroaki.209 at gmail.com>
-#
+# Created by: TOMIDA, Hiroaki <t.hiroaki.209 at gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	taglib
 PORTVERSION=	1.1
@@ -20,6 +16,7 @@ COMMENT=	A Ruby library wrapping the Taglib library
 LIB_DEPENDS=    tag:${PORTSDIR}/audio/taglib
 
 USE_RUBY=	yes
+NO_STAGE=	yes
 USE_BZIP2=	yes
 
 RUBY_RD_FILES=	taglib.rb

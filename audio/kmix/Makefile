@@ -16,6 +16,7 @@ LICENSE=	GPLv2
 CONFLICTS_INSTALL=	kdemultimedia-4.[1-8].*
 
 USES=		cmake:outsource
+NO_STAGE=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 USE_QT4=	gui phonon xml \
 		moc_build qmake_build rcc_build uic_build

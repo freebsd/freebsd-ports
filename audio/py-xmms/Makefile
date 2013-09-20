@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-xmms
-# Date created:		19 March 2002
-# Whom:			Hye-Shik Chang <perky@fallin.lv>
-#
+# Created by: Hye-Shik Chang <perky@fallin.lv>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms
 PORTVERSION=	2.02
@@ -20,6 +16,7 @@ BUILD_DEPENDS=	${XMMS_CONFIG}:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_PYTHON=	yes
+NO_STAGE=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pyxmms
 USE_BZIP2=	yes

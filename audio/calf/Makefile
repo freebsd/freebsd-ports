@@ -22,6 +22,7 @@ OPTIONS_DEFINE=	LASH LV2
 OPTIONS_DEFAULT=LASH LV2
 LV2_DESC=	LV2 audio plugin
 
+NO_STAGE=	yes
 USES=		gmake pkgconfig
 USE_GCC=	any
 USE_GNOME=	gtk20

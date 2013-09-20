@@ -16,6 +16,7 @@ BUILD_DEPENDS=	libumidi>=2.0.7:${PORTSDIR}/audio/libumidi
 LIB_DEPENDS=	libumidi20.so:${PORTSDIR}/audio/libumidi
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 
 USE_QT4=	gui qmake_build moc_build rcc_build network
 

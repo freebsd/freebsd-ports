@@ -13,6 +13,7 @@ COMMENT=	The True Audio Encoder, lossless (de)compressor
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 USES=		gmake
 ALL_TARGET=	ttaenc
 MAKE_ARGS=	CFLAGS="${CFLAGS}" INSDIR="${PREFIX}/bin"

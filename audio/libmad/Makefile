@@ -16,6 +16,7 @@ OPTIONS_DEFINE=	SPEED
 SPEED_DESC=	Optimize for speed over accuracy
 
 USE_AUTOTOOLS=	libtool
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-debugging \

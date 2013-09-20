@@ -23,6 +23,7 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		flowcanvas.5:${PORTSDIR}/x11-toolkits/flowcanvas
 
 USES=		pkgconfig
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=yes
 INSTALLS_ICONS=	yes

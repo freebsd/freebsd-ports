@@ -1,9 +1,5 @@
-# New ports collection makefile for: py-speex
-# Date created:		3 March 2007
-# Whom:			Carl Johan Gustavsson <cjg@bsdmail.org>
-#
+# Created by: Carl Johan Gustavsson <cjg@bsdmail.org>
 # $FreeBSD$
-#
 
 PORTNAME=	speex
 PORTVERSION=	0.2
@@ -21,6 +17,7 @@ LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/speex.so
 USE_PYTHON=	yes
+NO_STAGE=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGVERSION=	1.0
 

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-id3
-# Date created:		8 October 2002
-# Whom:			Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
 
 PORTNAME=	id3
@@ -16,6 +13,7 @@ COMMENT=	Python module for retrieving and setting ID3 tags on MP3 files
 
 WRKSRC=		${WRKDIR}/id3-py-${PORTVERSION}
 USE_PYTHON=	yes
+NO_STAGE=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 PYDISTUTILS_PKGNAME=	ID3

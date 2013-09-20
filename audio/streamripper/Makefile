@@ -23,6 +23,7 @@ OPTIONS_DEFAULT=	FAAD VORBIS
 LICENSE=	GPLv2
 
 USES=		iconv pkgconfig
+NO_STAGE=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-libmad \

@@ -18,6 +18,7 @@ LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile \
 		freetype:${PORTSDIR}/print/freetype2
 
 USES=		pkgconfig
+NO_STAGE=	yes
 
 LICENSE=	GPLv2
 

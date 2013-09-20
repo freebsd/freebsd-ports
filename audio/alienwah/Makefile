@@ -1,4 +1,4 @@
-# CReated by: Tilman Linneweh <arved@FreeBSD.org>
+# Created by: Tilman Linneweh <arved@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	alienwah
@@ -12,6 +12,7 @@ COMMENT=	Paul Nasca's AlienWah LADSPA Plugin
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
+NO_STAGE=	yes
 USES=		gmake
 MAKE_ARGS=	CPP="${CXX}" CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -fPIC"
 

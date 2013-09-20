@@ -14,6 +14,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/id3tool:${PORTSDIR}/audio/id3tool \
 		${LOCALBASE}/bin/mp3_check:${PORTSDIR}/audio/mp3_check
 
 USES=		shebangfix perl5
+NO_STAGE=	yes
 USE_PERL5=	run
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}

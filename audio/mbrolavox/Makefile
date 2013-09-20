@@ -12,6 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voices for MBROLA voice synthesizer
 
 USE_ZIP=	yes
+NO_STAGE=	yes
 NO_BUILD=	yes
 RESTRICTED=	No commercial nor military use, no sale
 WRKSRC=		${WRKDIR}/voices

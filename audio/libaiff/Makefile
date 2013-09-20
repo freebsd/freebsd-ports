@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libaiff
-# Date created:		14 September 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libaiff
 PORTVERSION=	5.0
@@ -16,6 +12,7 @@ COMMENT=	Read and write AIFF files
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+NO_STAGE=	yes
 
 PLIST_FILES=	lib/${PORTNAME}.a include/${PORTNAME}/config.h include/${PORTNAME}/endian.h \
 		include/${PORTNAME}/${PORTNAME}.h include/${PORTNAME}/config.vc.h

@@ -12,6 +12,7 @@ COMMENT=	Tool to manage tags in music files
 LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
 
 USES=		pkgconfig
+NO_STAGE=	yes
 MAKE_ENV=	DESTDIR="${PREFIX}"
 
 MAN1=		tagutil.1

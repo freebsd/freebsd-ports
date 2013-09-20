@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/fpconst.py:${PORTSDIR}/math/py-fpconst \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		pkgconfig
+NO_STAGE=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gconf2
 GCONF_SCHEMAS=	jack_mixer.schemas

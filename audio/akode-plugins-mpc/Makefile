@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	kdemultimedia-3.[1-3]*
 
+NO_STAGE=	yes
 PLUGIN=		mpc_decoder
 PORTNAMESUFX=	${PLUGIN:S/_sink//:S/_decoder//:S/src_//}
 

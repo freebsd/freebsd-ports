@@ -27,6 +27,7 @@ MAN1=		gnupod_addsong.pl.1 gnupod_check.pl.1 gnupod_INIT.pl.1 \
 MANCOMPRESSED=	yes
 
 USES=		perl5
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes
 

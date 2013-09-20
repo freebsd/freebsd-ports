@@ -20,6 +20,7 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		sndfile.1:${PORTSDIR}/audio/libsndfile
 
 USES=		gmake pkgconfig
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

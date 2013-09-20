@@ -13,6 +13,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/valac:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	xmmsclient:${PORTSDIR}/audio/xmms2 \
 		gee:${PORTSDIR}/devel/libgee06
 
+NO_STAGE=	yes
 USES=		pkgconfig
 USE_SCONS=	yes
 USE_GNOME=	gtk30

@@ -11,6 +11,7 @@ COMMENT=	Audio player that decodes MPEG Layer 1/2/3 and WAV files
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 MAN1=		splay.1
 PLIST_FILES=	bin/splay
 

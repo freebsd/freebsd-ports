@@ -20,6 +20,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 USE_PYTHON=	2.6+
+NO_STAGE=	yes
 USE_GNOME=	pygtk2
 USE_PYDISTUTILS=	yes
 USE_GSTREAMER=	good bad python

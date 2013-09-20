@@ -1,9 +1,5 @@
-# New ports collection makefile for:	audio/linux-f10-openal
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	openal
 PORTVERSION=	0.0.9
@@ -19,6 +15,7 @@ CONFLICTS=	linux-openal-[0-9]* linux-f8-openal-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
+NO_STAGE=	yes
 USE_LINUX_APPS=	alsalib arts esound libaudiofile libvorbis sdl12
 LINUX_DIST_VER=	10
 RPMVERSION=	0.15.20060204cvs.fc9

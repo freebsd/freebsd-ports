@@ -12,6 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Documentation for Festival
 
 NO_BUILD=	yes
+NO_STAGE=	yes
 
 INFO=		festival
 FDOC=		${PREFIX}/share/doc/festival

@@ -15,6 +15,7 @@ LICENSE_COMB=	dual
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 USES=		pkgconfig
 
 post-patch:

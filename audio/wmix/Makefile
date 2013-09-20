@@ -1,9 +1,5 @@
-# New ports collection makefile for:   wmix
-# Date created:		2 April 2001
-# Whom:			Konstantinos Konstantinidis <kkonstan@daemon.gr>
-#
+# Created by: Konstantinos Konstantinidis <kkonstan@daemon.gr>
 # $FreeBSD$
-#
 
 PORTNAME=	wmix
 PORTVERSION=	3.1
@@ -17,6 +13,7 @@ COMMENT=	An audio mixer for the WindowMaker dock with TV-like OSD
 PLIST_FILES=	bin/wmix
 ALL_TARGET=	${PORTNAME}
 USE_XORG=	xpm
+NO_STAGE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 

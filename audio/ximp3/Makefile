@@ -10,6 +10,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A simple console MP3 player
 
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 PORTDOCS=	*
 
 PLIST_FILES=	bin/${PORTNAME}

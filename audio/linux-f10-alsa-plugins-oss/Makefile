@@ -1,9 +1,5 @@
-# New ports collection makefile for:	audio/linux-f10-alsa-plugins-oss
-# Date created:				2010-06-06
-# Whom:					hashiz
-#
+# Created by: hashiz
 # $FreeBSD$
-#
 
 PORTNAME=	alsa-plugins-oss
 PORTVERSION=	1.0.21
@@ -17,6 +13,7 @@ COMMENT=	OSS plugin for ALSA (Linux Fedora 10)
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
+NO_STAGE=	yes
 USE_LINUX_APPS=	alsalib
 LINUX_DIST_VER=	10
 RPMVERSION=	3.fc10

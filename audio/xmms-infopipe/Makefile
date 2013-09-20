@@ -15,6 +15,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	gtk12
+NO_STAGE=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes
 

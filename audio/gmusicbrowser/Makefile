@@ -12,6 +12,7 @@ COMMENT=	Jukebox for large collections of mp3/ogg/flac/mpc files
 RUN_DEPENDS=	p5-Gtk2>=1.0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
 NO_BUILD=	yes
+NO_STAGE=	yes
 
 MAN1=		gmusicbrowser.1
 PORTDOCS=	AUTHORS COPYING README NEWS INSTALL layout_doc.html

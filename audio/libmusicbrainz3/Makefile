@@ -18,6 +18,7 @@ LIB_DEPENDS=	discid:${PORTSDIR}/audio/libdiscid \
 LATEST_LINK=	${PORTNAME}3
 
 USES=		cmake
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 
 post-patch:

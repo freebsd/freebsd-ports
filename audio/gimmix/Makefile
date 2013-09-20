@@ -20,6 +20,7 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	NLS
 
 USE_GNOME=	gtk20 intltool libglade2
+NO_STAGE=	yes
 USE_BZIP2=	yes
 
 GNU_CONFIGURE=	yes
