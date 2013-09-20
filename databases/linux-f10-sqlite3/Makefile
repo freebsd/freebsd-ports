@@ -1,9 +1,5 @@
-# New ports collection makefile for:	databases/linux-f10-sqlite3
-# Date created:				2009-05-04
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	sqlite3
 PORTVERSION=	3.5.9
@@ -33,4 +29,5 @@ MAN1=		sqlite3.1
 MANCOMPRESSED=	yes
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

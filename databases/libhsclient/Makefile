@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libhsclient
-# Date created:		2010-12-15
-# Whom:			Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
-#
+# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	libhsclient
 PORTVERSION=	1.0.6
@@ -22,4 +18,5 @@ REVISION=	20110614
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-handlersocket-server=no
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

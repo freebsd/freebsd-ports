@@ -1,9 +1,5 @@
-# New ports collection makefile for:	memcached
-# Date created:		July 21, 2003
-# Whom:			Sean Chittenden <seanc@FreeBSD.org>
-#
+# Created by: Sean Chittenden <seanc@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	memcached
 PORTVERSION=	1.2.8
@@ -39,6 +35,7 @@ PLIST_FILES=	bin/memcached \
 
 PORTDOCS=	protocol.txt threads.txt
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CFLAGS+=       -fstack-protector

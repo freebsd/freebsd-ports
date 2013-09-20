@@ -181,6 +181,7 @@ MAN3=		DBIx::Class.3 \
 		SQL::Translator::Parser::DBIx::Class.3 \
 		SQL::Translator::Producer::DBIx::Class::File.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLT}

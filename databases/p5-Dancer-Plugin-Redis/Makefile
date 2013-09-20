@@ -25,6 +25,7 @@ USE_PERL5=	configure
 
 MAN3=		Dancer::Plugin::Redis.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e \
 		's/_check_connection($$handle->{dbh})/$$handle->{dbh}->ping/' \

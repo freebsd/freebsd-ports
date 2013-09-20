@@ -1,9 +1,5 @@
-# New ports collection makefile for:    unixODBC
-# Date created:         May 11, 2000
-# Whom:                 Nick Sayer <nsayer@FreeBSD.org>
-#
+# Created by: Nick Sayer <nsayer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	unixODBC
 PORTVERSION=	2.3.1
@@ -23,6 +19,7 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's,$$LIBS $$THREADLIB,$$LIBS,;s,$$CFLAGS -pthread,$$CFLAGS,' \
 		${WRKSRC}/configure

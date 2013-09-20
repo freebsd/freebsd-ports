@@ -1,9 +1,5 @@
-# ports collection makefile for:	Constant DataBase
-# Date created:				18th July 1998
-# Whom:					Gary Palmer <gpalmer@freebsd.org>
-#
+# Created by: Gary Palmer <gpalmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cdb
 PORTVERSION=	0.75
@@ -15,6 +11,7 @@ COMMENT=	A fast lookup database library & utilities
 
 ALL_TARGET=	it
 
+NO_STAGE=	yes
 do-configure:
 	@${MV} ${WRKSRC}/conf-home ${WRKSRC}/conf-home.orig
 	${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-home

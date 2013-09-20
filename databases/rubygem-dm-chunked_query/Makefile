@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-dm-chunked_query
-# Date created:		2011-07-30
-# Whom:			Ryan Steinmetz <zi@FreeBSD.org>
-#
+# Created by: Ryan Steinmetz <zi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=		dm-chunked_query
 PORTVERSION=		0.3.1
@@ -20,4 +16,5 @@ USE_RUBY=		yes
 USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

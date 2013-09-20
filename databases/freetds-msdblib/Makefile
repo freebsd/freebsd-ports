@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freetds-msdblib
-# Date created:				15 Jan 2004
-# Whom:					Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-msdblib
 
@@ -13,4 +9,5 @@ WITH_MSDBLIB=	yes
 
 MASTERDIR=	${.CURDIR}/../freetds
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

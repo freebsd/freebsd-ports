@@ -1,9 +1,5 @@
-# New ports collection makefile for:	oracle_odbc_driver
-# Date created:				8 Aug 2005
-# Whom:					Max Khon <fjoe@FreeBSD.org>
-#
+# Created by: Max Khon <fjoe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	oracle_odbc_driver
 PORTVERSION=	0.5.6
@@ -31,6 +27,7 @@ CONFIGURE_ENV=	ORACLE_HOME="${ORACLE_HOME}" \
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/-lclntst8 -lcompat -lpthread -lm/-lclntst8 -lcompat ${PTHREAD_LIBS} -lm/' ${WRKSRC}/configure
 

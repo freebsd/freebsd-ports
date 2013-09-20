@@ -37,4 +37,5 @@ MAN3=	DBIx::Skinny.3 \
 	DBIx::Skinny::SQL.3 \
 	DBIx::Skinny::Schema.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

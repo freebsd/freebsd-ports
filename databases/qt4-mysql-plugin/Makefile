@@ -28,4 +28,5 @@ MAKE_ENV+=	DB="${DB}" DRIVER="${DRIVER}" MOC="${MOC}" \
 		QT_LIBDIR="${QT_LIBDIR}"
 PLIST_SUB=	DB=${DB}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

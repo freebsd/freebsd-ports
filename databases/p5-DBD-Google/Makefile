@@ -23,4 +23,5 @@ USE_PERL5=	configure
 
 MAN3=	DBD::Google.3 SQL::Dialects::Google.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

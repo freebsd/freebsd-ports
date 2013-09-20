@@ -17,6 +17,7 @@ USE_PGSQL=	yes
 
 PORTSCOUT=	site:http://pgfoundry.org/frs/?group_id=1000207
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/bin/postmaster)

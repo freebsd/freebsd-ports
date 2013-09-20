@@ -38,6 +38,7 @@ MAN5=		gda-config.5
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "/^SUBDIRS =/s/testing//" \
 		${WRKSRC}/Makefile.in

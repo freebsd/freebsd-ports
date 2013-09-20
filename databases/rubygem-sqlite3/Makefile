@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sqlite3-ruby
-# Date created:		26 June 2003
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sqlite3
 PORTVERSION=	1.3.7
@@ -24,4 +20,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

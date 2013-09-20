@@ -23,6 +23,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/mysqlidxchk
 PORTDOCS=	mysqlidxchkdoc.html mysqlidxchkguide.html
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/mysqlidxchk ${PREFIX}/bin
 

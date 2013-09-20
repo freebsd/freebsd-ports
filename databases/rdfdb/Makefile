@@ -27,6 +27,7 @@ RDFDB_PORT?=	7001
 
 PLIST_FILES=	bin/rdfdb bin/rdfdb etc/rc.d/rdfdb-server.sh
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 		-e 's,%%PTHREAD_LIBS%%,${PTHREAD_LIBS:S/"//g},g' \

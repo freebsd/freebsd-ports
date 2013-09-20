@@ -20,6 +20,7 @@ USE_PHPEXT=	yes
 CONFIGURE_ARGS=	--enable-mongo=${LOCALBASE}
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

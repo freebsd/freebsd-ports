@@ -24,4 +24,5 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static --disable-documentation
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

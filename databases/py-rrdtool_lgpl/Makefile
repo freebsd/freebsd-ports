@@ -1,7 +1,4 @@
-# Ports collection makefile for:	py-rrdtool_lgpl
-# Date created:			8 January 2003
-# Whom:	      			Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
 
 PORTNAME=	rrdtool_lgpl
@@ -23,4 +20,5 @@ PYDISTUTILS_PKGNAME=	py-rrdtool
 
 LIBDIR?=	${LOCALBASE}/lib # directory where librrd.so lives
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

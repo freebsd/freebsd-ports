@@ -1,9 +1,5 @@
-# New ports collection makefile for: squirrel-sql
-# Date created: 	2006/11/06
-# Whom:         	Roy Boerner
-#
+# Created by: Roy Boerner
 # $FreeBSD$
-#
 
 PORTNAME=	squirrel-sql
 PORTVERSION=	3.5.0
@@ -33,6 +29,7 @@ DESKTOP_ENTRIES="Squirrel-SQL Client" \
 		"Development;Database;Java;" \
 		false
 
+NO_STAGE=	yes
 post-extract:
 	cd "${WRKSRC}" && ${RM} -rf Uninstaller *.bat *.sh .installationinformation
 

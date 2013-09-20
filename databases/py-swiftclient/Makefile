@@ -27,6 +27,7 @@ PLIST_FILES=	bin/swift \
 
 MAN1=		swift.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s/'d2to1', //; s/d2to1=True/pbr=True/" \
 		${WRKSRC}/setup.py

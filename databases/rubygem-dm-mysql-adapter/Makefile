@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-dm-mysql-adapter
-# Date created:		2010-09-10
-# Whom:			Jyun-Yan You <jyyou@cs.nctu.edu.tw>
-#
+# Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	dm-mysql-adapter
 PORTVERSION=	1.2.0
@@ -20,4 +16,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

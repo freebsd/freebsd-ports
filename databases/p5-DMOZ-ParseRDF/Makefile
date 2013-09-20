@@ -13,4 +13,5 @@ COMMENT=	Parse the gigantic dmoz.org content file into smaller parts
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

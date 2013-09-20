@@ -21,4 +21,5 @@ BUILD_DIRS=	src/backend src/pl/plperl
 INSTALL_DIRS=	src/pl/plperl
 SLAVE_ONLY=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

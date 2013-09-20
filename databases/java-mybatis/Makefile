@@ -1,9 +1,5 @@
-# New ports collection makefile for:   mybatis
-# Date created:        5 December 2010
-# Whom:                glewis
-#
+# Created by: glewis
 # $FreeBSD$
-#
 
 PORTNAME=	mybatis
 PORTVERSION=	3.0.3
@@ -35,6 +31,7 @@ PLIST_FILES+=	%%JAVAJARDIR%%/${DEST_JAR_FILE}
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${JAR_FILE} ${JAVAJARDIR}/${DEST_JAR_FILE}
 .if !defined(NOPORTDOCS)

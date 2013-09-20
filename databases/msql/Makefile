@@ -29,6 +29,7 @@ MAKE_ENV+=	WRKSRC=${WRKSRC}
 # dumped your databases (or just build with -DOVERWRITE_DB)
 #OVERWRITE_DB=	YES
 
+NO_STAGE=	yes
 post-patch:
 		cd ${FILESDIR}; \
 		cp slibinstall.mm slibrary_unix.mm ${WRKSRC}/src/makegen

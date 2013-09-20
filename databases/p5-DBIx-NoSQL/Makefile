@@ -34,4 +34,5 @@ USE_PERL5=	configure
 MAN3=		DBIx::NoSQL.3 \
 		DBIx::NoSQLite.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

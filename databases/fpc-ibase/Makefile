@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	IBASE
 IBASE_DESC=	Install Interbase/Firebird client
 OPTIONS_DEFAULT=	IBASE
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -30,6 +30,7 @@ PYDISTUTILS_NOEGGINFO=	yes
 
 PLIST_FILES=	%%PYTHON_LIBDIR%%/lib-dynload/gdbm.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dbview
-# Date created:				7 May 1999
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	dbview
 PORTVERSION=	1.0.4
@@ -17,6 +13,7 @@ COMMENT=	View dBase III files
 MAN1=		dbview.1
 DOCS=		README dBASE
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|; \
 	    s|<endian.h>|<sys/endian.h>|; \

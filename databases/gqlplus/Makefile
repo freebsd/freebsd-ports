@@ -1,6 +1,5 @@
 # Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gqlplus
 PORTVERSION=	1.15
@@ -18,6 +17,7 @@ PLIST_FILES=	bin/gqlplus
 USE_AUTOTOOLS=	autoconf automake aclocal
 AUTOMAKE_ARGS=	--add-missing
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

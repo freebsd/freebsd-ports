@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-Class-DBI-Loader-Relationship
-# Date created:				Apr 4 2004
-# Whom:					Lars Thegler <lars@thegler.dk>
-#
+# Created by: Lars Thegler <lars@thegler.dk>
 # $FreeBSD$
 
 PORTNAME=	Class-DBI-Loader-Relationship
@@ -23,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=		Class::DBI::Loader::Relationship.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

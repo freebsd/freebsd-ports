@@ -24,6 +24,7 @@ MAN1=		grok.1
 
 DATADIR=	${PREFIX}/lib/X11/xmbase-grok
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|^GBIN =|#GBIN =|g ; \
 		 s|^GLIB =|#GLIB =|g ; \

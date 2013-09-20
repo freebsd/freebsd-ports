@@ -28,6 +28,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} PORTNAME=${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    frontbase
-# Date created:                         Mon Apr 16 07:07:22 EST 2007
-# Whom:                                 Quinton Dolan <q@onthenet.com.au>
-#
+# Created by: Quinton Dolan <q@onthenet.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	FrontBase
 PORTVERSION=	4.2.9
@@ -28,6 +24,7 @@ SUB_FILES+=	pkg-message
 
 ONLY_FOR_ARCHS=	i386
 
+NO_STAGE=	yes
 # Binary is built for 5.X :
 LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 

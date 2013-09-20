@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Ludia
-# Date created:		January 5, 2008
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ludia
 PORTVERSION=	1.5.2
@@ -33,4 +28,5 @@ CONFIGURE_ARGS+=--with-pgconfigdir=${LOCALBASE}/bin \
   --with-pgpkglibdir=${LOCALBASE}/lib/postgresql \
   --with-pgsharedir=${LOCALBASE}/share/postgresql
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

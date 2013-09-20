@@ -24,6 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_RC_SUBR=	flared flarei
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-install:
 	@${INSTALL} -d ${_BINOWNGRP} -m 0750 /var/db/flare
 	@${INSTALL_DATA} ${WRKSRC}/etc/flared.conf ${PREFIX}/etc/flared.conf-dist

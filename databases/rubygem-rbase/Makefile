@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-rbase
-# Date created:				15 September 2008
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
 
 PORTNAME=	rbase
@@ -16,4 +13,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

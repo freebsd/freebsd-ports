@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	GDBM
 GDBM_DESC=	Install the GNU database manager
 OPTIONS_DEFAULT=	GDBM
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

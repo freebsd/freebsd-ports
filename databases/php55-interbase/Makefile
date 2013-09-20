@@ -7,4 +7,5 @@ MASTERDIR=	${.CURDIR}/../../lang/php55
 
 PKGNAMESUFFIX=	-interbase
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

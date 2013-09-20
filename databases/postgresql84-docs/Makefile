@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PostgreSQL docs
-# Date created:		August 26, 2002
-# Whom:			Palle Girgensohn <girgen@pingpong.net>
-#
+# Created by: Palle Girgensohn <girgen@pingpong.net>
 # $FreeBSD$
-#
 
 PORTNAME=	postgresql
 PORTREVISION=	0
@@ -23,6 +19,7 @@ PATCHDIR=	mustnotexist
 
 PGDOCSDIR?=	${DOCSDIR}/release-${PGSQL_VER}
 
+NO_STAGE=	yes
 do-install:
 	@ $(MKDIR) ${PGDOCSDIR}; \
 	${GZIP_CMD} -dc ${WRKSRC}/doc/postgres.tar.gz | \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-mssql
-# Date created:		5 March 2004
-# Whom:			Hye-Shik Chang <perky@FreeBSD.org>
-#
+# Created by: Hye-Shik Chang <perky@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mssql
 PORTVERSION=	1.0.2
@@ -21,4 +17,5 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	pymssql
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

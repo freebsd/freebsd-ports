@@ -26,6 +26,7 @@ GNU_CONFIGURE=	yes
 
 PREFIX2FIX=	doc/help/preferences.texi doc/help/preferences.html
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

@@ -30,4 +30,5 @@ MAN3=	DBIx::Skinny::Mixin::Pager.3 \
 	DBIx::Skinny::Pager::Logic::PlusOne.3 \
 	DBIx::Skinny::Pager::Page.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

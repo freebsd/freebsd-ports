@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmjSQL
-# Date created:				04 Mar 2005
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wmjsql
 PORTVERSION=	0.5
@@ -24,6 +20,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^INCDIR.*$$,INCDIR = -I${PREFIX}/include/X11 \
 		-I${PREFIX}/include -I${LOCALBASE}/include,' \

@@ -22,6 +22,7 @@ PORTEXAMPLES=	*
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/lib/${DISTNAME}.jar \
 		${JAVAJARDIR}/${PORTNAME}.jar

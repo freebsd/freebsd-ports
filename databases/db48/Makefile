@@ -1,9 +1,5 @@
-# New ports collection makefile for:	db48
-# Date created:		2009-09-15
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	db48
 PORTVERSION=	4.8.30.0
@@ -31,6 +27,7 @@ LIBTOOLFILES=	${CONFIGURE_SCRIPT}
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-install:
 .for i in libdb libdb_cxx
 	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${PREFIX}/lib

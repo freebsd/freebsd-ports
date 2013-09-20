@@ -50,4 +50,5 @@ MAN3=		MongoDB.3 \
 		MongoDB::Timestamp.3 \
 		MongoDB::Tutorial.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

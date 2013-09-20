@@ -28,4 +28,5 @@ BUILD_DIRS=	src/backend src/pl/plpython
 INSTALL_DIRS=	src/pl/plpython
 SLAVE_ONLY=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

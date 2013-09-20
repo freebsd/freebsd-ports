@@ -28,6 +28,7 @@ MAN1=	mysql_config.1 mysql_upgrade.1 mysql.1 mysqladmin.1 \
 EXTRA_PATCHES=	${MASTERDIR}/files/patch-*
 MDB_CLIENT_SUBDIRS=	include sql-common cmd-line-utils scripts strings regex mysys dbug extra libmysql libmysql_r client @man_dirs@
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%SUBDIRS%%|${MDB_CLIENT_SUBDIRS}|" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-exec-am: install-pkglibLIBRARIES|install-exec-am:|g" ${WRKSRC}/strings/Makefile.in ${WRKSRC}/mysys/Makefile.in ${WRKSRC}/dbug/Makefile.in

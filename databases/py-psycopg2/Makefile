@@ -26,6 +26,7 @@ EXAMPLES=	binary.py copy_from.py copy_to.py cursor.py dialtone.py \
 
 DOCS=		AUTHORS INSTALL README NEWS PKG-INFO
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}

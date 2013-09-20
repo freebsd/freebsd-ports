@@ -1,4 +1,4 @@
-# Created by: Sebastien Gioria <gioria@FreeBSD.ORG>
+# Created by: Sebastien Gioria <gioria@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mantis
@@ -16,6 +16,7 @@ USE_PHP=	hash pcre session
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO} "Installing in WWWDIR: ${WWWDIR}"
 	${MKDIR} ${WWWDIR}/

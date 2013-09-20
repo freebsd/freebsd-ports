@@ -1,9 +1,5 @@
-# ports collection makefile for:	Berkeley DB v4.2
-# Date created:				2003-11-26
-# Whom:					Matthias Andree <matthias.andree@gmx.de>
-#
+# Created by: Matthias Andree <matthias.andree@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	db42
 PORTVERSION=	4.2.52
@@ -22,6 +18,7 @@ MASTERDIR?=	${.CURDIR}
 
 SLAVE_PORT=	no
 
+NO_STAGE=	yes
 .include <${MASTERDIR}/Makefile.db>
 .include <bsd.port.pre.mk>
 

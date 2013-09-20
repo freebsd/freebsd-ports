@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MySQL-client
-# Date created:				28 Jan 2006
-# Whom:					Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mysql
 PKGNAMESUFFIX=	-client
@@ -30,4 +26,5 @@ MAN1=		comp_err.1 msql2mysql.1 mysql.1 mysql_config.1 mysql_find_rows.1 \
 
 CLIENT_ONLY=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

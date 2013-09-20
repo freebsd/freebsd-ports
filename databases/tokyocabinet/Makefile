@@ -38,6 +38,7 @@ SHARED_DESC=	Shared build
 SWAB_DESC=	Swapping byte-orders build
 UYIELD_DESC=	Detecting race conditions
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

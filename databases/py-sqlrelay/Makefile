@@ -29,6 +29,7 @@ CONFIGURE_ENV=	PTHREADINCLUDES="${PTHREAD_CFLAGS}" \
 CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
 		--with-python-prefix="${LOCALBASE}"
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../sqlrelay/Makefile.common"
 
 .include <bsd.port.pre.mk>

@@ -23,4 +23,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES+=	bin/sqlite3_ruby
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

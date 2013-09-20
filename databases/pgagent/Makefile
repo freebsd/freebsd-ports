@@ -1,9 +1,5 @@
-# New ports collection makefile for:    pgagent
-# Date created:                         June 8, 2012
-# Whom:                                 Max Khon
-#
+# Created by: Max Khon
 # $FreeBSD$
-#
 
 PORTNAME=	pgagent
 PORTVERSION=	3.3.0
@@ -25,4 +21,5 @@ IGNORE_WITH_PGSQL=	82 83
 PLIST_FILES=	bin/pgagent
 PORTDATA=	*
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

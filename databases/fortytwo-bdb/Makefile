@@ -30,6 +30,7 @@ ADDITIONAL_LDFLAGS+=	-L${BDB_LIB_DIR}
 
 ENCORE_PORT?=	devel/fortytwo-encore
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

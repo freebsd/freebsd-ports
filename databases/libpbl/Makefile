@@ -1,9 +1,5 @@
-# New ports collection makefile for:	databases/libpbl
-# Date Created:				2 Jan 2006
-# Whom:					Zach Thompson <hideo@lastamericanempire.com>
-#
+# Created by: Zach Thompson <hideo@lastamericanempire.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libpbl
 PORTVERSION=	1.04.04
@@ -23,6 +19,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e 's/=  -Wall -O3/+=  -Wall -Werror/' \
 		-e 's/^CC=/CC?=/' -e '/^.rm -f/d' ${WRKSRC}/makefile

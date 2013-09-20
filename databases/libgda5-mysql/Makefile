@@ -16,4 +16,5 @@ PLIST=		${.CURDIR}/pkg-plist
 
 LIBGDA5_SLAVE=	mysql
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

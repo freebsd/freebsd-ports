@@ -1,9 +1,5 @@
-# New ports collection makefile for:		cyrus-imspd
-# Date created:					Jan 4th 2001
-# Whom:						damien@tougas.net
-#
+# Created by: damien@tougas.net
 # $FreeBSD$
-#
 
 PORTNAME=	cyrus-imspd
 PORTVERSION=	1.8
@@ -28,6 +24,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 USE_RC_SUBR=	imspd
 DOCSDIR=	${PREFIX}/share/doc/imspd
 
+NO_STAGE=	yes
 post-patch:
 		${REINPLACE_CMD} -e "s|<sasl.h>|<sasl2/sasl.h>|" \
 			${WRKSRC}/configure

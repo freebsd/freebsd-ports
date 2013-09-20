@@ -32,4 +32,5 @@ MAN3=	HTML::FormHandler::Generator::DBIC.3 \
 	HTML::FormHandler::TraitFor::DBICFields.3 \
 	HTML::FormHandler::TraitFor::Model::DBIC.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

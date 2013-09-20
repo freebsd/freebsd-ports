@@ -18,6 +18,7 @@ USE_ZIP=	yes
 MAKE_ARGS=	USE_PGXS=1 MODULEDIR=extension
 MODULEDIR=	${PREFIX}/share/postgresql/extension
 
+NO_STAGE=	yes
 post-install:
 	@[ -f ${MODULEDIR}/${PORTNAME}.control ] || \
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.control ${MODULEDIR}

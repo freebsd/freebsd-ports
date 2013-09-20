@@ -58,6 +58,7 @@ MAN5=		account-server.conf.5 \
 		object-server.conf.5 \
 		proxy-server.conf.5
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/swift|${PREFIX}/etc/${PORTNAME}|" \
 		${WRKSRC}/bin/swift-account-audit \

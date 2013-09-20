@@ -65,6 +65,7 @@ MAXKEY_DESC=	Change max key length from 1000 to 4000
 OPTIONS_DEFAULT+=	PBXT MAXKEY
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}

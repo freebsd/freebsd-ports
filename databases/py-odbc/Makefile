@@ -1,6 +1,7 @@
 # Created by: April 15 2009
 # $FreeBSD$
 
+NO_STAGE=	yes
 # Like they say in the postgres-odbc Makefile (and I quote):
 #
 # This ODBC driver should work under either unixODBC or iODBC

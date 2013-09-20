@@ -1,4 +1,3 @@
-# Create by: Palle Girgensohn <girgen@partitur.se>
 # $FreeBSD$
 
 PORTNAME=	postgresql
@@ -37,6 +36,7 @@ CONFIGURE_ARGS+=	--with-iodbc=${LOCALBASE}
 PKGNAMESUFFIX=	-iodbc
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 DATADIR_1=	${DATADIR}/odbc

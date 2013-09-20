@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-dm-active_model
-# Date created:		2011-06-16
-# Whom:			Ryan Steinmetz <rpsfa@rit.edu>
-#
+# Created by: Ryan Steinmetz <rpsfa@rit.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	dm-active_model
 PORTVERSION=	1.2.1
@@ -20,4 +16,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

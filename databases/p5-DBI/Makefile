@@ -73,6 +73,7 @@ MAN3=		Bundle::DBI.3 \
 		Win32::DBIODBC.3
 PORTDOCS=	Changes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPROXY}

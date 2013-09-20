@@ -38,4 +38,5 @@ MAN3=		SQL::Dialects::ANSI.3 \
 		SQL::Statement::TermFactory.3 \
 		SQL::Statement::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

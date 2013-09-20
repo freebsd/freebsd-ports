@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	PGSQL
 PGSQL_DESC=	Install PostgreSQL client
 OPTIONS_DEFAULT=	PGSQL
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

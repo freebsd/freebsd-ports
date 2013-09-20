@@ -25,4 +25,5 @@ MAN3=	DBIx::Connector.3 \
 	DBIx::Connector::Driver::SQLite.3 \
 	DBIx::Connector::Driver::mysql.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

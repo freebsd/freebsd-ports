@@ -20,6 +20,7 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${WWWDIR}
 	@${CP} -Rp ${WRKSRC}/* ${WWWDIR}

@@ -1,9 +1,5 @@
-# ports collection makefile for:	MySQL++
-# Date created:				2008-04-03
-# Whom:					Vlad GALU <dudu@dudu.ro>
-#
+# Created by: Vlad GALU <dudu@dudu.ro>
 # $FreeBSD$
-#
 
 PORTNAME=	mysql++
 PORTVERSION=	3.1.0
@@ -27,6 +23,7 @@ CONFLICTS=	${PORTNAME}*-1.*
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

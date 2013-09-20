@@ -1,9 +1,5 @@
-# New ports collection makefile for: pgfouine
-# Date created:		01 May 2008
-# Whom:			Pierre-Emmanuel Andre <pea@raveland.org>
-#
+# Created by: Pierre-Emmanuel Andre <pea@raveland.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pgfouine
 PORTVERSION=	1.2
@@ -17,6 +13,7 @@ COMMENT=	PostgreSQL log analyzer
 NO_BUILD =	Yes
 USE_PHP=	gd pcre
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's,/usr/bin/php,${LOCALBASE}/bin/php,g;' \
 		-e 's,!!PREFIX!!,${PREFIX},g' \

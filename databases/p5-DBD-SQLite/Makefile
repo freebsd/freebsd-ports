@@ -22,4 +22,5 @@ USE_PERL5=	configure
 
 MAN3=		DBD::SQLite.3 DBD::SQLite::Cookbook.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

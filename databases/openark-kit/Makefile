@@ -16,4 +16,5 @@ PROJECTHOST=	openarkkit
 USE_PYDISTUTILS=	yes
 USE_PYTHON=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

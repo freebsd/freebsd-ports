@@ -1,9 +1,5 @@
-# New ports collection makefile for:	spatialite-gui
-# Date created:		2012-06-14
-# Whom:			lbartoletti <coder@tuxfamily.org>
-#
+# Created by: lbartoletti <coder@tuxfamily.org>
 # $FreeBSD$
-#
 
 PORTNAME=	spatialite_gui
 PORTVERSION=	1.5.0
@@ -31,4 +27,5 @@ USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/spatialite_gui
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

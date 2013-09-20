@@ -36,6 +36,7 @@ PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/bdb.so
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

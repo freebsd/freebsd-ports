@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-handlersocket
-# Date created:				Dec 16 2010
-# Whom:					jnlin@csie.nctu.edu.tw
-#
+# Created by: jnlin@csie.nctu.edu.tw
 # $FreeBSD$
-#
 
 PORTNAME=	handlersocket
 PORTVERSION=	0.3.1
@@ -27,4 +23,5 @@ CONFIGURE_ARGS=	--with-handlersocket=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

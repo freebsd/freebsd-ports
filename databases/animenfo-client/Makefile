@@ -16,6 +16,7 @@ LICENSE=	GPLv2
 USE_GMAKE=	yes
 PLIST_FILES=	bin/animenfo-client
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/animenfo-client ${PREFIX}/bin/
 

@@ -67,6 +67,7 @@ MAN8=		mysqld.8
 
 CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 
+NO_STAGE=	yes
 post-install:
 .if !defined(PACKAGE_BUILDING)
 	@${CAT} ${PKGMESSAGE}

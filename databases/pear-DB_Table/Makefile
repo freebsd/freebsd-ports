@@ -20,6 +20,7 @@ PEAR_DB_DESC=	PEAR::DB support
 PEAR_MDB2_DESC=	PEAR::MDB2 support
 PEAR_AUTOINSTALL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPEAR_HTML_QUICKFORM}

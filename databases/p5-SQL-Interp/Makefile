@@ -20,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=		DBIx::Interp.3 SQL::Interp.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

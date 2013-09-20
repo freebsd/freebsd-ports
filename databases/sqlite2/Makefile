@@ -26,6 +26,7 @@ EXTRACT_AFTER_ARGS=	--exclude CVS
 
 OPTIONS_DEFINE=	TCL THREADS DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCL}

@@ -29,4 +29,5 @@ MAN3=		DBM::Deep.3 DBM::Deep::Cookbook.3 DBM::Deep::Internals.3 \
 		DBM::Deep::Iterator::File::Index.3 DBM::Deep::Null.3 \
 		DBM::Deep::Engine::File.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

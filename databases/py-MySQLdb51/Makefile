@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-MySQLdb51
-# Date created:				2010-11-8
-# Whom:					Tom Judge <tom@tomjudge.com>
-#
+# Created by: Tom Judge <tom@tomjudge.com>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	51
 
@@ -15,4 +11,5 @@ WANT_MYSQL_VER=	51
 
 MASTERDIR=	${.CURDIR}/../py-MySQLdb
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

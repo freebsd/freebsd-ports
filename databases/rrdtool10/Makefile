@@ -36,6 +36,7 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
 OPTIONS_DEFINE=	LATIN2
 LATIN2_DESC=	ISO-8859-2 fonts support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLATIN2}

@@ -24,6 +24,7 @@ MAN3=		gdbm.3
 OPTIONS_DEFINE=	COMPAT NLS
 COMPAT_DESC=	Enable dbm/ndbm compatibility
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOMPAT}

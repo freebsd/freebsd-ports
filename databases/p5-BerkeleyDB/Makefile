@@ -23,6 +23,7 @@ USE_BDB=	47+
 
 MAN3=		BerkeleyDB.3
 
+NO_STAGE=	yes
 post-patch:
 	@${ECHO} "INCLUDE = ${BDB_INCLUDE_DIR}" > ${WRKSRC}/config.in
 	@${ECHO} "LIB = ${LOCALBASE}/lib" >> ${WRKSRC}/config.in

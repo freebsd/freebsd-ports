@@ -43,6 +43,7 @@ DOCS_DESC=	Install javadoc documentation
 
 SUB_FILES=	repaircluster
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 RUN_DEPENDS+=	${JAVALIBDIR}/snappy-java.jar:${PORTSDIR}/archivers/snappy-java

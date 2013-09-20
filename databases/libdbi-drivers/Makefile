@@ -28,6 +28,7 @@ SQLITE2_DESC=	SQLite 2 Database
 USE_GMAKE=	yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

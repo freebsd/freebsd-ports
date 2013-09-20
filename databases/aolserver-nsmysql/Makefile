@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aolserver-nsmysql
-# Date created:		12 Oct 2006
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nsmysql
 PORTVERSION=	1.0
@@ -38,6 +34,7 @@ PLIST_FILES=	${AOLSERVERBASE}/bin/nsmysql.so \
 PORTDOCS=	ChangeLog README INSTALL
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/^MODLIBS  =/MODLIBS +=/g' \
 		-e '/^OBJS      =.*/{n;s/.*/MODOBJS  = $$(OBJS)/g;G;}' \

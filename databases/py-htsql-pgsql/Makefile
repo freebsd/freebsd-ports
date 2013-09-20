@@ -18,4 +18,5 @@ USE_PYTHON=		2.6-2.7
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	${PORTNAME:U}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

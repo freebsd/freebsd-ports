@@ -23,6 +23,7 @@ OPTIONS_DEFINE=		HIREDIS
 HIREDIS_DESC=		Add py-hiredis C extension support
 OPTIONSFILE?=		${PORT_DBDIR}/py-${PORTNAME}/options
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHIREDIS}

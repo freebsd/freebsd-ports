@@ -22,6 +22,7 @@ USE_PGSQL=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${CP} ${DISTDIR}/${DISTNAME} ${WRKDIR}

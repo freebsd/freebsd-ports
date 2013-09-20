@@ -7,4 +7,5 @@ MASTERDIR=	${.CURDIR}/../../lang/php5
 
 PKGNAMESUFFIX=	-pdo_firebird
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

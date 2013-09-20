@@ -27,6 +27,7 @@ SQLITE2_DESC=	SQLite 2 database
 SYBASE_DESC=	Sybase database
 DRIVER_DESC=	Database drivers
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

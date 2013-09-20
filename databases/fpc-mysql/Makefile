@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	MYSQL
 MYSQL_DESC=	Install MySQL client
 OPTIONS_DEFAULT=	MYSQL
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

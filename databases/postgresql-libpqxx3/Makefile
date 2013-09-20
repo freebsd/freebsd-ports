@@ -25,4 +25,5 @@ CONFIGURE_ARGS=	--with-postgres=${LOCALBASE} \
 		--enable-shared \
 		--with-postgres-include=${LOCALBASE}/include/postgresql
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

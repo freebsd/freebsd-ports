@@ -36,4 +36,5 @@ USE_PERL5=	configure
 MAN3=	DBIx::Class::Fixtures.3 \
 	DBIx::Class::Fixtures::External::File.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

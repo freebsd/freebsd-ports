@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-delayed_job_data_mapper
-# Date created:		2011-06-16
-# Whom:			Ryan Steinmetz <rpsfa@rit.edu>
-#
+# Created by: Ryan Steinmetz <rpsfa@rit.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	delayed_job_data_mapper
 DISTVERSION=	1.0.0.rc
@@ -26,4 +22,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 GEM_NAME=	${DISTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -37,6 +37,7 @@ MAN1=		kccachetest.1 \
 		kcutilmgr.1 \
 		kcutiltest.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386" && !defined(CPUTYPE)

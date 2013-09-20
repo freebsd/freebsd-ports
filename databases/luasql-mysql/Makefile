@@ -1,9 +1,5 @@
-# New ports collection makefile for:   luasql
-# Date created:        25 May 2009
-# Whom:                Martin Matuska <martin@matuska.org>
-#
+# Created by: Martin Matuska <martin@matuska.org>
 # $FreeBSD$
-#
 
 PORTNAME=	luasql
 PORTVERSION=	2.1.1
@@ -57,6 +53,7 @@ IGNORE=		unknown or unsupported luasql driver
 LATEST_LINK=	${PORTNAME}-${LUASQL_DRIVER}
 PLIST_SUB+=	LUASQL_DRIVER=${LUASQL_DRIVER}
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${LUA_MODLIBDIR}/luasql
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/${LUASQL_DRIVER}.so ${LUA_MODLIBDIR}/luasql

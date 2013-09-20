@@ -16,6 +16,7 @@ PLIST_FILES=	bin/mysql2pgsql
 USES=		perl5
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${CP} -p ${DISTDIR}/mysql2pgsql.perl ${WRKDIR}

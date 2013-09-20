@@ -122,6 +122,7 @@ MAN3=		SQL::Translator.3 \
 		SQL::Translator::Utils.3 \
 		Test::SQL::Translator.3
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 

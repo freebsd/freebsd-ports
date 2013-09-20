@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ip4r
-# Date created:				15th December 2005
-# Whom:					Ade Lovett <ade@FreeBSD.org>
-#
+# Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ip4r
 PORTVERSION=	1.05
@@ -25,6 +21,7 @@ MAKE_ARGS=	USE_PGXS=1
 
 # In order to make this port PREFIX-safe, we override the install target
 # and install the three files manually
+NO_STAGE=	yes
 do-install:
 	@${INSTALL} -m ${BINMODE} ${WRKSRC}/ip4r.so ${PREFIX}/lib/postgresql
 	@${MKDIR} ${PREFIX}/share/postgresql/contrib

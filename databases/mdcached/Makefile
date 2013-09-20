@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mdcached
-# Date created:			3 February 2012
-# Whom:				Ivan Voras <ivoras@FreeBSD.org>
-#
+# Created by: Ivan Voras <ivoras@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mdcached
 PORTVERSION=	1.0.6
@@ -22,6 +18,7 @@ MAN1=		${PORTNAME}.1
 
 PORTDOCS=	UserGuide.txt mdcached.txt
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|ADDCFLAGS = -Wall -g -O3 -march=native|ADDCFLAGS = ${CFLAGS}|' \
 		${WRKSRC}/Makefile

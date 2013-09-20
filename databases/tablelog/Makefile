@@ -19,6 +19,7 @@ MAKE_ARGS=	USE_PGXS=1
 
 PORTDOCS=	README.table_log table_log.sql
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/lib/postgresql/
 	@${INSTALL_PROGRAM} ${WRKSRC}/table_log.so ${PREFIX}/lib/postgresql/

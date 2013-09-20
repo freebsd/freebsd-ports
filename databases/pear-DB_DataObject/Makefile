@@ -22,6 +22,7 @@ PEAR_VALIDATE_DESC=	"PEAR::Validate support"
 
 PEAR_AUTOINSTALL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPEAR_MDB2}

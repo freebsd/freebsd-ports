@@ -25,6 +25,7 @@ NOT_FOR_ARCHS_REASON=	not yet ported to this platform
 SHLIB_MAJOR=	${PORTVERSION:R:R}
 SHLIB_MINOR=	${PORTVERSION:R:E}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGPERFTOOLS}

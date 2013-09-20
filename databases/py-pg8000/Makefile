@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pg8000
-# Date created:		2008-07-16
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pg8000
 PORTVERSION=	1.09
@@ -17,4 +13,5 @@ COMMENT=	A Pure-Python Interface to the PostgreSQL Database
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

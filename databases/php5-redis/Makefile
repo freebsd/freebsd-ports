@@ -1,6 +1,5 @@
 # Created by: Benedikt Niessen <ports@niessen.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	redis
 PORTVERSION=	2.2.3
@@ -28,6 +27,7 @@ PHP_MODNAME=	redis
 OPTIONS_DEFINE=	IGBINARY
 IGBINARY_DESC=	Build with Igbinary serializer
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIGBINARY}

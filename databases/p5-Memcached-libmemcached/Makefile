@@ -44,6 +44,7 @@ MAN3=		Memcached::libmemcached.3 \
 		Memcached::libmemcached::memcached_verbosity.3 \
 		Memcached::libmemcached::memcached_version.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/my $$configure_args/ s|--disable-shared|& --without-memcached --disable-dtrace|' ${WRKSRC}/Makefile.PL
 

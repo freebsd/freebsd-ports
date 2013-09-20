@@ -1,9 +1,5 @@
-# New ports collection makefile for:	python-couchdb
-# Date created:		2011-03-19
-# Whom:	Andrei Antoukh <niwi@niwi.be>
-#
+# Created by: Andrei Antoukh <niwi@niwi.be>
 # $FreeBSD$
-#
 
 PORTNAME=	CouchDB
 PORTVERSION=	0.8
@@ -20,4 +16,5 @@ USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -30,6 +30,7 @@ MAN3=	DBIx::Class::EncodedColumn.3 \
 	DBIx::Class::EncodedColumn::Crypt::OpenPGP.3 \
 	DBIx::Class::EncodedColumn::Digest.3
 
+NO_STAGE=	yes
 post-extract:
 	@${PERL} -i -ne 'print unless m,^build_requires, || m,^feature, .. m,;,' ${WRKSRC}/Makefile.PL
 

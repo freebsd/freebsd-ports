@@ -27,6 +27,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/hiredis/__init__.py \
 		%%PYTHON_SITELIBDIR%%/hiredis/version.pyo
 PLIST_DIRS=	%%PYTHON_SITELIBDIR%%/hiredis
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/${PYSETUP}
 

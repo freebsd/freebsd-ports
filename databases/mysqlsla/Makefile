@@ -20,6 +20,7 @@ PLIST_FILES=	bin/mysqlsla
 
 MAN3=		mysqlsla.3
 
+NO_STAGE=	yes
 pre-install:
 	@${MKDIR} ${WRKSRC}/doc
 	@pod2man ${WRKSRC}/lib/mysqlsla.pm > ${WRKSRC}/doc/${MAN3}

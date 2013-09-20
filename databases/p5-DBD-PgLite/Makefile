@@ -22,4 +22,5 @@ USE_PERL5=	configure
 MAN3=	DBD::PgLite.3 \
 	DBD::PgLite::MirrorPgToSQLite.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

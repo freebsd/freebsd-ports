@@ -18,4 +18,5 @@ RUBYGEM_AUTOPLIST=	yes
 GEM_ENV	+=EXTERNAL_LIB="YES"
 CONFIGURE_ARGS=	"--with-opt-dir=${LOCALBASE}"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

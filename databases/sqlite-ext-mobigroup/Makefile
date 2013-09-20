@@ -28,6 +28,7 @@ PLIST_DIRS=	libexec/${DIST_SUBDIR}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOMPRESS}

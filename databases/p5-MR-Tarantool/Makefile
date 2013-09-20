@@ -37,4 +37,5 @@ MAN3=	MR::IProto.3 \
 	MR::Tarantool::Box.3 \
 	MR::Tarantool::Box::Singleton.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

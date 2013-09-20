@@ -1,9 +1,4 @@
-# New ports collection makefile for:	kumofs
-# Date created:		18 Jan 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kumofs
 PORTVERSION=	0.4.13
@@ -44,6 +39,7 @@ MAN1=	kumo-gateway.1 \
 	kumostat.1 \
 	kumotop.1
 
+NO_STAGE=	yes
 pre-configure:
 	cd ${WRKSRC}; ${TOUCH} README
 	cd ${WRKSRC}; ${LIBTOOLIZE} --force --copy

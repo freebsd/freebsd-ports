@@ -52,4 +52,5 @@ regression-test: build
 	test/unit/classes/statement )
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

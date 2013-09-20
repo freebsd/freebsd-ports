@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MyODBC
-# Date created:				22 Mar 2004
-# Whom:					sergey@migsoft.com.ua
-#
+# Created by: sergey@migsoft.com.ua
 # $FreeBSD$
-#
 
 PORTNAME=	mysql-connector-odbc
 PORTVERSION=	5.1.9
@@ -47,4 +43,5 @@ DRIVER_MANAGER=		iodbc
 CFLAGS+=		-I${LOCALBASE}/include
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

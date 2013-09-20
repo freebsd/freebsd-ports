@@ -1,9 +1,5 @@
-# New ports collection makefile for:	databases/p5-Class-DBI-Plugin-AbstractCount
-# Date created:				01 April 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-DBI-Plugin-AbstractCount
 PORTVERSION=	0.08
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=	Class::DBI::Plugin::AbstractCount.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

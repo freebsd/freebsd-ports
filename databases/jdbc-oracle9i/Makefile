@@ -1,4 +1,4 @@
-# Created by: Patrick Gardella <patrick@freebsd.org>
+# Created by: Patrick Gardella <patrick@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	oracle9i
@@ -27,6 +27,7 @@ OCRS_FILE=	ocrs12.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${CLASSES}	\
 		%%JAVAJARDIR%%/${OCRS_FILE}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${CLASSES:S|^|${_DISTDIR}/|}})	\

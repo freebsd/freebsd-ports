@@ -26,6 +26,7 @@ INSTALL_TARGET=	site-install
 
 DOCS_EN=	README
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's/gdslib/fbclient/' ${WRKSRC}/extconf.rb
 

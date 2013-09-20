@@ -19,6 +19,7 @@ USE_PERL5=	configure
 
 MAN1=	mkill.1 mtop.1
 
+NO_STAGE=	yes
 post-patch:
 	${RM} ${WRKSRC}/cpan2spec.pl
 

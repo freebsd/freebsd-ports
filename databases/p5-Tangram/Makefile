@@ -58,4 +58,5 @@ MAN3=	Tangram.3 \
 	Tangram::Type::Set::FromOne.3 \
 	Tangram::Type::TimeAndDate.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

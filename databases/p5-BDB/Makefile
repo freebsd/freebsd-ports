@@ -25,6 +25,7 @@ USES=		perl5
 
 MAN3=		BDB.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '18 s|-lpthread -ldb|-l${BDB_LIB_NAME} -pthread|' ${WRKSRC}/Makefile.PL
 

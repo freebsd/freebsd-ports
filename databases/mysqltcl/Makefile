@@ -26,4 +26,5 @@ CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 PLIST_SUB+=	LIB_DIR=${PORTNAME}-${PORTVERSION} \
 		LIB_NAME=libmysqltcl${PORTVERSION}.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

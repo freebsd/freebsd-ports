@@ -1,4 +1,3 @@
-# Created by Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libmemcached
@@ -21,6 +20,7 @@ CONFIGURE_ARGS=	--without-memcached
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
 CXXFLAGS+=	-D__STDC_CONSTANT_MACROS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if exists(${LOCALBASE}/lib/libsasl.so.3)

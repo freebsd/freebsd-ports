@@ -22,4 +22,5 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -DGLIB_COMPILATION
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

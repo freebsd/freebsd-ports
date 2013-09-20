@@ -24,6 +24,7 @@ GO_PROJECT=	mdb
 GO_TAGNAME=	${PORTNAME:U}_${PORTVERSION}
 FETCH_ARGS?=	-o ${DISTDIR}/${DISTFILES}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_LIB} ${WRKSRC}/liblmdb.a ${PREFIX}/lib/
 	${INSTALL_LIB} ${WRKSRC}/liblmdb.so ${PREFIX}/lib/liblmdb.so.0

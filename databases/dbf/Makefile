@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_DOC_TO_MAN=""
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

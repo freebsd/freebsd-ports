@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-qdbm
-# Date created:		2005-09-01
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
@@ -18,4 +14,5 @@ PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${.CURDIR}/pkg-descr
 PATCHDIR=	${.CURDIR}/files
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

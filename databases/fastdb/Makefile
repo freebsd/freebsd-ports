@@ -21,6 +21,7 @@ USE_DOS2UNIX=	${MAKEFILE}
 
 PORTDOCS=	FastDB.htm
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

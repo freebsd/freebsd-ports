@@ -17,6 +17,7 @@ LIB_DEPENDS=	fbclient:${PORTSDIR}/databases/firebird25-client
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 320

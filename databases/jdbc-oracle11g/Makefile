@@ -22,6 +22,7 @@ NO_CDROM=	Packaging prohibited by Oracle license
 
 PLIST_FILES=	%%JAVAJARDIR%%/ojdbc-${PORTVERSION}.jar
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTFILES})

@@ -16,6 +16,7 @@ CONFLICTS=	libgda4-4.*
 
 LIBGDA5_SLAVE=	ui
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC}/libgda-ui && ${GMAKE}
 	@cd ${WRKSRC}/control-center && ${GMAKE}

@@ -45,6 +45,7 @@ MAN1=		yasql.1
 
 PORTDOCS=	README yasql.html
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You may use the following build options:"

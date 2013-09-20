@@ -19,6 +19,7 @@ USE_GMAKE=	yes
 CFLAGS+=	-fPIC
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^REAL_/s/ \$$(ARCH)//' ${WRKSRC}/Makefile
 

@@ -37,6 +37,7 @@ PLIST_FILES=	${AOLSERVERBASE}/bin/nspostgres.so \
 PORTDOCS=	ChangeLog README
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e '/^MODOBJS   =.*/{n;s/.*/OBJS  = $$(MODOBJS)/g;G;}' \

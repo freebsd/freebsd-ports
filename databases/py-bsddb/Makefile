@@ -33,6 +33,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-py${PYTHON_SUFFIX}-_bsddb.c
 
 PLIST_FILES=	%%PYTHON_LIBDIR%%/lib-dynload/_bsddb.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 300

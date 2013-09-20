@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pgpool
-# Date created:				2005-10-19
-# Whom:					Choe, Cheng-Dae <whitekid@gmail.com>
-#
+# Created by: Choe, Cheng-Dae <whitekid@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pgpool-II
 PORTVERSION=	2.2.6
@@ -30,6 +26,7 @@ PORTDOCShtml+=	tutorial-en.html tutorial-ja.html
 
 MAN8=		pgpool.8
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 	${WRKSRC}/configure

@@ -71,4 +71,5 @@ MAN3=	DBIx::Class::Helpers.3 \
 	DBIx::Class::Helper::VirtualView.3 \
 	DBIx::Class::Helpers::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

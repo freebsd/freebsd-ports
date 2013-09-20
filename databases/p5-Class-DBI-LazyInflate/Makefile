@@ -1,9 +1,5 @@
-# New ports collection makefile for:	databases/p5-Class-DBI-LazyInflate
-# Date created:				05 February 2006
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-DBI-LazyInflate
 PORTVERSION=	0.06
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=	Class::DBI::LazyInflate.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ocaml-calendar
-# Date created:				Feb 26, 2007
-# Whom:					Jaap Boender <jaapb@kerguelen.org>
-#
+# Created by: Jaap Boender <jaapb@kerguelen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pgocaml
 PORTVERSION=	1.5
@@ -28,6 +24,7 @@ USE_OCAMLFIND_PLIST=	yes
 
 INSTALL_TARGET=	findlib_install
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/bin/camlp4o.byte)

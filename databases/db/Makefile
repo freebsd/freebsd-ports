@@ -1,9 +1,5 @@
-# New ports collection makefile for:   db-netbsd
-# Date created:        1 January 2004
-# Whom:                Edwin Groothuis (edwin@mavetju.org)
-#
+# Created by: Edwin Groothuis (edwin@mavetju.org)
 # $FreeBSD$
-#
 
 PORTNAME=	db
 PORTVERSION=	1.14
@@ -27,6 +23,7 @@ DIST_DB1=	http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/src/usr.bin/db/db.1?rev
 DIST_DBC=	http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/src/usr.bin/db/db.c?rev=${PORTVERSION}&content-type=text/plain
 DIST_MAKEFILE=	http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/src/usr.bin/db/Makefile?rev=${MAKEVERSION}&content-type=text/plain
 
+NO_STAGE=	yes
 tarball:
 	${MKDIR} ${WRKSRC}
 	fetch -o ${WRKSRC}/db.1 "${DIST_DB1}"

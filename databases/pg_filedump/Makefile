@@ -1,9 +1,4 @@
-# New ports collection makefile for:	pg_filedump
-# Date created:		18 Aug 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pg_filedump
 PORTVERSION=	8.4
@@ -19,6 +14,7 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/databases/postgresql84-client:patch
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-8.4.0
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"

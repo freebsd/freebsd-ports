@@ -41,4 +41,5 @@ MAN3=	DBIx::SearchBuilder.3 DBIx::SearchBuilder::Handle.3 \
 	DBIx::SearchBuilder::Unique.3 \
 	DBIx::SearchBuilder::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

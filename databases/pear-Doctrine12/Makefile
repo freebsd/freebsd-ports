@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Doctrine
-# Date created:			  28 September 2009
-# Whom:				  Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Doctrine
 PORTVERSION=	1.2.4
@@ -35,6 +31,7 @@ SUB_LIST+=	CHANNEL=${CHANNEL} LOCALBASE=${LOCALBASE}
 PKGINSTALL=	${WRKDIR}/pear-install
 LATEST_LINK=	pear-Doctrine12
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 DEFAULT_PHP_VER=5

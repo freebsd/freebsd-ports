@@ -35,4 +35,5 @@ MAN3=	DBIx::DBHResolver.3 \
 	DBIx::DBHResolver::Strategy::Remainder.3 \
 	DBIx::DBHResolver::Strategy::RoundRobin.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

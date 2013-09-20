@@ -1,9 +1,5 @@
-# New ports collection makefile for:  sqlcached
-# Date created:        3 January 2007
-# Whom:                ivoras
-#
+# Created by: ivoras
 # $FreeBSD$
-#
 
 PORTNAME=	sqlcached
 PORTVERSION=	r4
@@ -26,6 +22,7 @@ PORTDOCS=	${PORTNAME}.html ${PORTNAME}.txt
 
 PLIST_FILES=	bin/${PORTNAME} etc/rc.d/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|^(.*FLAGS)=|\1?=|' \
 		${WRKSRC}/Makefile

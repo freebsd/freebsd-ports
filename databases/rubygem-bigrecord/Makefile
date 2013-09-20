@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-bigrecord
-# Date created:		26 August 2010
-# Whom:			Philip M. Gollucci
-#
+# Created by: Philip M. Gollucci
 # $FreeBSD$
-#
 
 PORTNAME=	bigrecord
 PORTVERSION=	0.1.1
@@ -22,4 +18,5 @@ USE_RUBYGEMS=	yes
 USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

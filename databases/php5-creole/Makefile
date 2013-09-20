@@ -1,9 +1,4 @@
-# New ports collection makefile for:	php5-creole
-# Date Created:				9 Nov, 2005
-# Whom:					Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	creole
 PORTVERSION=	1.0.2
@@ -19,6 +14,7 @@ USE_PHP=	yes
 DEFAULT_PHP_VER=5
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}/classes; \
 	for d in `${FIND} creole jargon -type d`; do \

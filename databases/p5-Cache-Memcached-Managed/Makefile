@@ -24,6 +24,7 @@ MAN3=	Cache::Memcached::Managed.3 \
 	Cache::Memcached::Managed::Inactive.3 \
 	Cache::Memcached::Managed::Multi.3
 
+NO_STAGE=	yes
 post-extract:
 	@${PERL} -i.bak -ne 'print unless m,^BEGIN, .. m,^},' ${WRKSRC}/Makefile.PL
 

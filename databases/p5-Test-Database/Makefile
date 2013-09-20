@@ -30,4 +30,5 @@ MAN3=		Test::Database.3 Test::Database::Driver.3 \
 		Test::Database::Tutorial.3 \
 		Test::Database::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

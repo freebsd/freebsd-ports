@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PostgreSQL Pgaccess
-# Date created:		December 1st, 2002
-# Whom:			Palle Girgensohn <girgen@pingpong.net>
-#
+# Created by: Palle Girgensohn <girgen@pingpong.net>
 # $FreeBSD$
-#
 
 PORTNAME=	pgaccess
 PORTVERSION=	0.99.0.20040219
@@ -25,6 +21,7 @@ TCLVERSION?=	8.4
 DOCSDIR=	${PREFIX}/share/doc/postgresql/${PORTNAME}
 PGACCESSDIR=	${PREFIX}/share/postgresql/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/bin,${PREFIX}/bin,g ; " ${WRKSRC}/lib/mainlib.tcl
 	@${RM} ${WRKSRC}/lib/mainlib.tcl.bak

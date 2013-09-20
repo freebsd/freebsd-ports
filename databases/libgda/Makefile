@@ -1,10 +1,6 @@
-# New ports collection makefile for:	libgda
-# Date created:				8th March 2001
-# Whom:					Ade Lovett <ade@FreeBSD.org>
-#
+# Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/databases/libgda/Makefile,v 1.5 2007/05/19 21:36:00 marcus Exp $
-#
 
 PORTNAME=	libgda
 PORTVERSION=	0.2.96
@@ -34,4 +30,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 PLIST_SUB=	VERSION=${PORTVERSION}
 MAKE_JOBS_UNSAFE=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

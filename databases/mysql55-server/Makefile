@@ -46,6 +46,7 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 .error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}

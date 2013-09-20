@@ -27,6 +27,7 @@ USE_PERL5=	configure
 MAN3=		T2.3 T2::Association.3 T2::Attribute.3 T2::Class.3 \
 		T2::DBSetup.3 T2::Method.3 T2::Schema.3 T2::Storage.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/eval/s|^|# | ; \

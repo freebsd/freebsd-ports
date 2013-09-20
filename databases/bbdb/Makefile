@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bbdb (for emacs21)
-# Date Created:		12 Dec 2001
-# Whom:			Yoichi NAKAYAMA <yoichi@FreeBSD.org>
-#
+# Created by: Yoichi NAKAYAMA <yoichi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bbdb
 PORTVERSION=	2.35
@@ -29,6 +25,7 @@ MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/lisp/*.el ${WRKSRC}/lisp/*.elc ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}

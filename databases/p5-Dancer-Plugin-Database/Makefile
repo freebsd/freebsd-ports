@@ -26,4 +26,5 @@ USE_PERL5=	configure
 
 P5MAN3=		Dancer::Plugin::Database.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

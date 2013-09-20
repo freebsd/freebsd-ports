@@ -19,6 +19,7 @@ BINFILES=	column compute dataent etbl headchg jointbl lst2tbl \
 
 DOCFILES=	RDB.pln.noM.gz RDB.ps.gz rdbi.doc
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; \
 	${PERL} -pi -e 's|^\#\! /usr/bin/perl|\#\!${PERL}|g' ${BINFILES}

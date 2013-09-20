@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/ODBC
-# Date created:		17 May 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	odbc
 PORTVERSION=	0.99991
@@ -30,6 +26,7 @@ INSTALL_TARGET=	site-install
 PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/odbc.so \
 		%%RUBY_SITELIBDIR%%/cqgen.rb
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)

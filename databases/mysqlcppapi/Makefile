@@ -20,6 +20,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE}
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} s/libmysqlcppapi-1.9/libmysqlcppapi/g \
 		${WRKSRC}/mysqlcppapi/Makefile.in ${WRKSRC}/examples/Makefile.in

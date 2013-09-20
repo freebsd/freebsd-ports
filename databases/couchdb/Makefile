@@ -41,6 +41,7 @@ STRIP=	#empty
 
 MAN1=	couchdb.1 couchjs.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # This stanza could be removed around version 1.7

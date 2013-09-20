@@ -31,6 +31,7 @@ LOADERGUI_DESC=	Enable shp2pgsql-gui
 RASTER_DESC=	Build with raster support
 TOPOLOGY_DESC=	Build with topology support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLOADERGUI}

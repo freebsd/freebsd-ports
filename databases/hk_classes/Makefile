@@ -40,6 +40,7 @@ SQLITE2_DESC=	Enable SQLite 2 backend
 PARADOX_DESC=	Enable paradox backend
 DBASE_DESC=	Enable Dbase backend
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

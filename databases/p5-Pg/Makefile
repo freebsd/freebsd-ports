@@ -22,4 +22,5 @@ MAN3=		Pg.3
 
 CONFIGURE_ENV=	POSTGRES_INCLUDE=${LOCALBASE}/include POSTGRES_LIB=${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

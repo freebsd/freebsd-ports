@@ -18,6 +18,7 @@ USE_LUA=	5.1+
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKSRC}/pkg-message
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%LUA_INC%|${LUA_INCDIR}|g' \
 			-e 's|%LUA_LIB%|${LUA_LIBDIR}|g' \

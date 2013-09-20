@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-Elixir
-# Date created:		2007-02-13
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Elixir
 PORTVERSION=	0.7.1
@@ -21,4 +17,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.4.0:${PORTSDIR}/databases/py
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

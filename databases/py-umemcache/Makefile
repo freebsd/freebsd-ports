@@ -19,4 +19,5 @@ USE_ZIP=		yes
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/umemcache.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

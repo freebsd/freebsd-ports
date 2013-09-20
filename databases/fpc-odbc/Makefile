@@ -17,4 +17,5 @@ EXTRACTUNITDIR+=	${WRKUNITDIR}
 OPTIONS_DEFINE=	ODBC
 ODBC_DESC=	Install ODBC library suite for Unix
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

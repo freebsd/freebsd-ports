@@ -17,6 +17,7 @@ NO_BUILD=	yes
 
 CLASSES=	jrobin
 
+NO_STAGE=	yes
 do-install:
 .for c in ${CLASSES}
 	${INSTALL_DATA} ${DISTDIR}/${c}-${PORTVERSION}.jar ${JAVAJARDIR}/${c}.jar

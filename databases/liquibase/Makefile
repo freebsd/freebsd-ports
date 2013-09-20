@@ -16,6 +16,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/liquibase.jar ${DATADIR}/

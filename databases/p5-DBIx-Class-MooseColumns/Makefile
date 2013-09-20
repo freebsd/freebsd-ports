@@ -39,4 +39,5 @@ MAN3=	\
 	DBIx::Class::MooseColumns::Meta::Role::Attribute::DBICColumn.3 \
 	DBIx::Class::MooseColumns::Meta::Role::Attribute::DBICColumn::Inflated.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    gadfly
-# Date created:         30 October 1998
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gadfly
 PORTVERSION=	1.0.0
@@ -19,6 +15,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/kjbuckets.so:${PORTSDIR}/devel/py-kjbuckets
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

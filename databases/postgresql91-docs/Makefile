@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PostgreSQL docs
-# Date created:		August 26, 2002
-# Whom:			Palle Girgensohn <girgen@pingpong.net>
-#
+# Created by: Palle Girgensohn <girgen@pingpong.net>
 # $FreeBSD$
-#
 
 PORTNAME=	postgresql
 PORTREVISION=	0
@@ -31,6 +27,7 @@ BUILD_DEPENDS+=	onsgmls:${PORTSDIR}/textproc/opensp			\
 		${dbdir}/dsssl/modular/catalog:${PORTSDIR}/textproc/dsssl-docbook-modular \
 		${dbdir}/4.2/docbook.dtd:${PORTSDIR}/textproc/docbook-420
 
+NO_STAGE=	yes
 do-build:
 	${GMAKE} -C ${WRKSRC} html
 

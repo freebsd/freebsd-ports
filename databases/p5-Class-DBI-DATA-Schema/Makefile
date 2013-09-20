@@ -1,9 +1,5 @@
-# New ports collection makefile for:	databases/p5-Class-DBI-DATA-Schema
-# Date created:				24 October 2004
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-DBI-DATA-Schema
 PORTVERSION=	1.00
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=	Class::DBI::DATA::Schema.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

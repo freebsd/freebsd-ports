@@ -44,6 +44,7 @@ MSDBLIB_DESC=	MS SQL Server compatibility (breaks databases/sybtcl)
 
 CONFLICTS=	freetds-0.64.[0-9]
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}

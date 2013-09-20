@@ -22,6 +22,7 @@ PLIST_FILES=	bin/pgdbf \
 		%%DOCSDIR%%/README
 PLIST_DIRS=	%%DOCSDIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

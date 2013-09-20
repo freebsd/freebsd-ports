@@ -40,6 +40,7 @@ LICENSE=	LGPL3
 
 PLIST_FILES=	${DISTFILES:S|^|%%JAVAJARDIR%%/|:S|-${PORTVERSION}||}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${JAVALIBDIR}/classes12.zip)

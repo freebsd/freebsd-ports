@@ -1,7 +1,4 @@
-# New ports collection makefile for:	proftpd-mod_sql_mysql
-# Date created:		25 Jan 2012
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mod_sql_mysql
@@ -25,4 +22,5 @@ LIBDIRS=	${LOCALBASE}/lib
 
 _BUILDING_PROFTPD_MODULE=	${PORTNAME}
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

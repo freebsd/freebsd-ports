@@ -25,6 +25,7 @@ ADODB_SUBDIRS=	contrib datadict drivers lang pear perf session xsl
 OPTIONS_DEFINE=	TESTS DOCS
 TESTS_DESC=	Install tests
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 SUB_FILES+=	pkg-message

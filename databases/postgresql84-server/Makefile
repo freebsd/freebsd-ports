@@ -113,6 +113,7 @@ DEBUG_DESC=	Builds with debugging symbols
 INTDATE_DESC=	Builds with 64-bit date/time type (server)
 SSL_DESC=	Build with OpenSSL support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}

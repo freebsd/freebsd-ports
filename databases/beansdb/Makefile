@@ -16,4 +16,5 @@ CFLAGS+=	${PTHREAD_LIBS}
 MAN1=		beansdb.1
 PLIST_FILES=	bin/beansdb
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

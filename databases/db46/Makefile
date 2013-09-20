@@ -1,9 +1,5 @@
-# New ports collection makefile for:	db46
-# Date created:		2007-07-26
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	db46
 PORTVERSION=	4.6.21.4
@@ -54,6 +50,7 @@ INSTALL_TARGET+=	install_docs docdir=${DOCSDIR}
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 post-install:
 .for i in libdb libdb_cxx
 	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${PREFIX}/lib

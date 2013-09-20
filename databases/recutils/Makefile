@@ -22,6 +22,7 @@ MAN1=		csv2rec.1 rec2csv.1 recdel.1 recfix.1 recfmt.1 recinf.1 \
 		recins.1 recsel.1 recset.1
 PORTDOCS=	ChangeLog NEWS README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

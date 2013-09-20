@@ -22,4 +22,5 @@ USE_TWISTED_RUN=	yes
 FETCH_ARGS=	-pRr
 USE_RC_SUBR=	carbon
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

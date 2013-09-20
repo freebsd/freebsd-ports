@@ -22,6 +22,7 @@ USE_PHPEXT=	yes
 USE_PHPIZE=	yes
 USE_CSTD=	gnu89
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

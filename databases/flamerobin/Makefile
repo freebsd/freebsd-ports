@@ -1,9 +1,5 @@
-# New ports collection makefile for:  flamerobin
-# Date created:        5 April 2006
-# Whom:            dindin
-#
+# Created by: dindin
 # $FreeBSD$
-#
 
 PORTNAME=	flamerobin
 PORTVERSION=	0.9.2
@@ -28,6 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 SUB_FILES=	pkg-message
 MAN1=		flamerobin.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

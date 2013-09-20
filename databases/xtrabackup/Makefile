@@ -33,6 +33,7 @@ MASTER_SITE_SUBDIR=	XtraBackup/XtraBackup-${PORTVERSION}/source/
 PLIST_FILES=	bin/xtrabackup bin/xtrabackup_55 bin/xtrabackup_56 bin/xbstream \
 	bin/innobackupex bin/xbcrypt
 
+NO_STAGE=	yes
 pre-build:
 	${CP} ${DISTDIR}/percona-xtrabackup-${PORTVERSION}.tar.gz ${WRKSRC}
 

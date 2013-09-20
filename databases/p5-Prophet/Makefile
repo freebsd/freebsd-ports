@@ -1,4 +1,3 @@
-# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Prophet
@@ -138,4 +137,5 @@ MAN3=	Prophet.3 \
 	Prophet::Web::Menu.3 \
 	Prophet::Web::Result.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

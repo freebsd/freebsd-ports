@@ -22,6 +22,7 @@ USE_PERL5=	configure
 
 MAN3=		DBD::Excel.3
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}

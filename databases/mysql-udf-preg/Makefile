@@ -28,6 +28,7 @@ PLIST_FILES=	lib/mysql/plugin/lib_mysqludf_preg.a \
 				%%DATADIR%%/uninstalldb.sql
 PLIST_DIRS=	${DATADIR_REL} lib/mysql/plugin
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/installdb.sql ${DATADIR}/

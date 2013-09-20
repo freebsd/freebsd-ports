@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libmemcache
-# Date created:		November 29, 2004
-# Whom:			Sean Chittenden <seanc@FreeBSD.org>
-#
+# Created by: Sean Chittenden <seanc@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libmemcache
 DISTVERSION=	1.4.0.rc2
@@ -22,6 +18,7 @@ GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DEBUG
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pgpool
-# Date created:				2005-10-19
-# Whom:					Choe, Cheng-Dae <whitekid@gmail.com>
-#
+# Created by: Choe, Cheng-Dae <whitekid@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pgpool
 PORTVERSION=	3.4.1
@@ -24,6 +20,7 @@ PORTDOCS=	README AUTHORS COPYING ChangeLog INSTALL NEWS TODO README.euc_jp
 
 MAN8=		pgpool.8
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

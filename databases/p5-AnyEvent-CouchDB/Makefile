@@ -31,4 +31,5 @@ MAN3=		AnyEvent::CouchDB.3 \
 		AnyEvent::CouchDB::Exceptions.3 \
 		AnyEvent::CouchDB::Stream.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

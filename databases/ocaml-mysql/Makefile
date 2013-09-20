@@ -1,9 +1,5 @@
-# Ports collection makefile for: ocaml-mysql
-# Date created: 2011-09-25
-# Whom: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
-#
+# Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	mysql
 PORTVERSION=	1.1.1
@@ -32,6 +28,7 @@ ALL_TARGET+=		htdoc
 PORTDOCS=		*
 DOCSDIR=		${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/mysql/html/* ${DOCSDIR}
