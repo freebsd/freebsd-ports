@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Net/APNs/Extended.pm
+%%SITE_PERL%%/Net/APNs/Extended/Base.pm
+%%SITE_PERL%%/Net/APNs/Extended/Feedback.pm
+@dirrm %%SITE_PERL%%/Net/APNs/Extended
+@dirrmtry %%SITE_PERL%%/Net/APNs
+@dirrmtry %%SITE_PERL%%/Net

@@ -534,6 +534,7 @@
     SUBDIR += p5-Net
     SUBDIR += p5-Net-AMQP
     SUBDIR += p5-Net-APNS
+    SUBDIR += p5-Net-APNs-Extended
     SUBDIR += p5-Net-ARP
     SUBDIR += p5-Net-Address-Ethernet
     SUBDIR += p5-Net-Address-IPv4-Local
