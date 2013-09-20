@@ -21,4 +21,5 @@ MAN1=		seyon.1
 PLIST_FILES=	bin/seyon lib/X11/app-defaults/Seyon \
 		lib/X11/app-defaults/Seyon-color lib/X11/seyon.help
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

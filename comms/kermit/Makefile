@@ -1,9 +1,5 @@
-# New ports collection makefile for:	C-Kermit
-# Date created:				Oct 27, 1994
-# Whom:					Paul Traina <pst@FreeBSD.org>
-#
+# Created by: Paul Traina <pst@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kermit
 PORTVERSION=	9.0.302
@@ -28,6 +24,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 MAN1=		kermit.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,-O2 -pipe,${CFLAGS},' ${WRKSRC}/${MAKEFILE}
 

@@ -27,4 +27,5 @@ USE_LDCONFIG=	yes
 
 CONFLICTS=	spandsp-devel-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

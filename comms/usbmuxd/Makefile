@@ -20,6 +20,7 @@ OPTIONS_DEFINE=	INOTIFY
 
 INOTIFY_DESC=	Use inotify instead of polling (saves energy)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MINOTIFY}

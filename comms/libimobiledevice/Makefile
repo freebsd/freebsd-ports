@@ -41,6 +41,7 @@ MAN1=		idevice_id.1 idevicebackup.1 idevicebackup2.1 idevicedate.1 \
 		idevicepair.1 ideviceprovision.1 idevicescreenshot.1 \
 		idevicesyslog.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

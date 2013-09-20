@@ -28,6 +28,7 @@ MAN8=		${USE_RC_SUBR}.8 ${PORTNAME}master.8
 CONFIGS=	${PORTNAME}.conf.default ${PORTNAME}.conf.default.rus
 CONFIGURE_ARGS+=--localstatedir=/var
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWWW}

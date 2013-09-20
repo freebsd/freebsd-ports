@@ -19,6 +19,7 @@ USES=		pkgconfig
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/doc
 MAN8=		cwdaemon.8
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}; ${MAKE} install-data

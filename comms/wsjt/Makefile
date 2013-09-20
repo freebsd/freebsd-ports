@@ -36,6 +36,7 @@ USE_AUTOTOOLS=	libtool
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		VERSION=${VERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(BOOTSTRAP)

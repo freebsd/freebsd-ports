@@ -26,6 +26,7 @@ CONFLICTS=	efax-gtk-*
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 post-build:
 	${MV} ${WRKSRC}/fax ${WRKSRC}/fax.orig
 	${CAT} ${WRKSRC}/fax.orig | ${SED} -e s!%%PREFIX%%!${PREFIX}!g > \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aldo
-# Date created:		16 March 2004
-# Whom:			lambert@lambertfam.org
-#
+# Created by: lambert@lambertfam.org
 # $FreeBSD$
-#
 
 PORTNAME=	aldo
 PORTVERSION=	0.7.5
@@ -29,6 +25,7 @@ MAN1=	aldo.1
 
 AUTOTOOLSFILES=	aclocal.m4
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|1.10|%%AUTOMAKE_APIVER%%|g' \
 			  -e 's|2.61|%%AUTOCONF_VERSION%%|g' \

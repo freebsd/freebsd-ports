@@ -33,6 +33,7 @@ OPTIONS_DEFINE=	RTLSDR
 RTLSDR_DESC=	Enable rtl-sdr (RTL2832) support
 OPTIONS_DEFAULT=	RTLSDR
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRTLSDR}

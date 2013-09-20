@@ -1,4 +1,4 @@
-# Created by:	Sebastian Yepes <esn@x123.info>
+# Created by: Sebastian Yepes <esn@x123.info>
 # $FreeBSD$
 
 PORTNAME=	hamlib
@@ -29,6 +29,7 @@ PLIST_SUB=	VER=${PORTVERSION} TCL_VER=${TCL_VER}
 MAN1=		rigctl.1 rigmem.1 rigswr.1 rotctl.1 rigsmtr.1
 MAN8=		rpc.rigd.8 rpc.rotd.8 rigctld.8 rotctld.8
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|g' \
 		-e 's|%%TCL_LIBDIR%%|${TCL_LIBDIR}/hamlib|g' \

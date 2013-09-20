@@ -25,6 +25,7 @@ MAKE_ARGS=	WISH=${WISH} TCLSH=${TCLSH}
 INSTALL_TARGET=	freebsd-install
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-extract:
 	@cd ${WRKSRC}/FreeBSD;for i in *.rc; do \
 		x=`echo $$i | cut -f 1 -d .`; ${CP} $$i $$x; done

@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-2
 PLIST_FILES=	bin/ge-x2212-2
 PORTDOCS=	schematic.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

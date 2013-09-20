@@ -1,9 +1,5 @@
-# New ports collection makefile for:	geoid
-# Date created:				March 20 2007
-# Whom:					Diane Bruce <db@db.net>
-#
+# Created by: Diane Bruce <db@db.net>
 # $FreeBSD$
-#
 
 PORTNAME=	geoid
 PORTVERSION=	1.0
@@ -27,6 +23,7 @@ MAKEFILE=	makefile
 PLIST_FILES=	bin/geoid ${DATADIR_REL}/country.pos share/pixmaps/geoid.png
 PLIST_DIRS=	${DATADIR_REL}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/geoid.cxx

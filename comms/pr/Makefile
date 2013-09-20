@@ -1,9 +1,5 @@
-# New ports collection makefile for:   pr
-# Date created:        27 March 2001
-# Whom:                Anton Voronin <anton@urc.ac.ru>
-#
+# Created by: Anton Voronin <anton@urc.ac.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	pr
 PORTVERSION=	1.1
@@ -18,4 +14,5 @@ WRKSRC=		${WRKDIR}/pr
 
 NO_BUILD=	YES
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

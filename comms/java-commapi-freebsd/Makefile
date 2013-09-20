@@ -30,4 +30,5 @@ PLIST_FILES=	%%JAVA_HOME%%/jre/lib/ext/CommDriver.jar \
 		%%JAVA_HOME%%/jre/lib/${MACHINE_ARCH}/libParallel.so \
 		%%JAVA_HOME%%/jre/lib/javax.comm.properties
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

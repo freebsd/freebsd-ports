@@ -26,6 +26,7 @@ NO_MTREE=	yes
 
 PLIST_SUB=	ARCH=${ARCH}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure ${WRKSRC}/ltconfig
 

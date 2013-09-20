@@ -1,5 +1,5 @@
+# Created by: Carl Makin <carl@stagecraft.cx>
 # $FreeBSD$
-# Created by:		Carl Makin <carl@stagecraft.cx>
 
 PORTNAME=	xastir
 PORTVERSION=	2.0.4
@@ -44,6 +44,7 @@ OPTCFLAGS_DESC=	Use optimized CFLAGS (-O2 -pipe)
 
 OPTIONS_DEFAULT=	SHAPELIB DBFAWK MAGICK CURL RTREE BDB
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSHAPELIB}

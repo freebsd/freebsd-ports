@@ -1,4 +1,4 @@
-# Created by: Julian Stacey <jhs@freebsd.org>
+# Created by: Julian Stacey <jhs@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	hylafax
@@ -58,6 +58,7 @@ OPTIONS_DEFAULT=PAM NLS
 NO_OPTIONS_SORT=yes
 GAWK_DESC=	Use gawk for scripts
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Defaults to "North American Letter".  Use "ISO A4" for A4.

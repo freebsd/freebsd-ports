@@ -26,6 +26,7 @@ PORTDOCS=	*
 PLIST_FILES+=	bin/swreceiver bin/spectrum-viewer-${PORTVERSION} \
 		bin/mini-receiver bin/fmreceiver-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-configure:

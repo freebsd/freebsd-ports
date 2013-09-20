@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bfhist
-# Date created:				26 December 2004
-# Whom:					Andrey Lykhin <lan31@inbox.ru>
-#
+# Created by: Andrey Lykhin <lan31@inbox.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	bfhist
 PORTVERSION=	0.4
@@ -16,4 +12,5 @@ COMMENT=	Statistics generator for BinkleyForce FTN mailer
 
 PLIST_FILES=	bin/bfhist
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

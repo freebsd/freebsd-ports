@@ -37,6 +37,7 @@ HAMLIB_DESC=		Support rig control via hamlib
 
 OPTIONS_DEFAULT=	OPTFLARQ OPTOSS HAMLIB
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

@@ -23,6 +23,7 @@ MAN3=		Device::Modem.3 \
 		Device::Modem::Protocol::Xmodem.3 \
 		Device::Modem::UsRobotics.3
 
+NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"

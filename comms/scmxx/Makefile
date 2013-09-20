@@ -23,6 +23,7 @@ MANLANG=	"" ru de it
 DOCS=		README docs/*.txt
 EXAMPLES=	sms.txt vCalendar.vcs vCard.vcf
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name 'Makefile*' | ${XARGS} \
 		${REINPLACE_CMD} -e "s|CFLAGS=|CFLAGS+=|g"

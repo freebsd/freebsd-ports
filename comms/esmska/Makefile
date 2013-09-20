@@ -1,9 +1,5 @@
-# New ports collection makefile for:	esmska
-# Date created:				18 Feb 2008
-# Whom:					Martin Otto
-#
+# Created by: Martin Otto
 # $FreeBSD$
-#
 
 PORTNAME=	esmska
 PORTVERSION=	0.21
@@ -25,6 +21,7 @@ SUB_FILES=	esmska
 
 PORTDOCS=	readme.txt
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/esmska.jar ${DATADIR}/

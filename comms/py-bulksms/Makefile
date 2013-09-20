@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-bulksms
-# Date created:		06 Dec 2003
-# Whom:			Andy Gilligan <andy@evo6.org>
-#
+# Created by: Andy Gilligan <andy@evo6.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bulksms
 PORTVERSION=	0.1
@@ -21,6 +17,7 @@ PYDISTUTILS_PKGVERSION=	1.0
 
 WRKSRC=		${WRKDIR}/bulksms
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

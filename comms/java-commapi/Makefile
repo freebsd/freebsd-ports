@@ -29,6 +29,7 @@ DISTPATH=	${DISTDIR}/${DISTFILE}
 PLIST_SUB+=	JAVA_HOME=${JAVA_HOME:S/${PREFIX}\///}
 PLIST_FILES+=	%%JAVA_HOME%%/jre/lib/ext/comm.jar
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTPATH})

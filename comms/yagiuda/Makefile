@@ -1,7 +1,4 @@
-# ports collection makefile for:	yagiuda
-# Date created:		19 July 2005
-# Whom:			db
-#
+# Created by: db
 # $FreeBSD$
 
 PORTNAME=	yagiuda
@@ -16,6 +13,7 @@ GNU_CONFIGURE=	yes
 MAN1=		first.1 optimise.1 yagi.1 dipole.1 input.1 output.1
 MAN5=		first.5 optimise.5 yagi.5 input.5 output.5
 
+NO_STAGE=	yes
 do-install:
 .for f in first optimise yagi dipole input output
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${f} ${PREFIX}/bin

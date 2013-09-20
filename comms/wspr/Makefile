@@ -37,6 +37,7 @@ PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		VERSION=${VERSION}
 VERSION=	3.00
 
+NO_STAGE=	yes
 post-configure:
 	cp ${FILESDIR}/wspr ${WRKSRC}
 

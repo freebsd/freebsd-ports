@@ -20,4 +20,5 @@ USE_TK_RUN=	84
 WRKSRC=		${WRKDIR}/tkhylafax
 MAN1=		tkhylafax.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

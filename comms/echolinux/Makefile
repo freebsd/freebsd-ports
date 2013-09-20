@@ -16,6 +16,7 @@ LIB_DEPENDS=	forms.2:${PORTSDIR}/x11-toolkits/xforms \
 
 USE_GCC=	any
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

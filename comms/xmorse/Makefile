@@ -22,4 +22,5 @@ USE_SDL=	sdl
 PLIST_FILES=	bin/xmorse
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

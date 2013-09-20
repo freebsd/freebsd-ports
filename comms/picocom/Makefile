@@ -1,9 +1,5 @@
-# New ports collection makefile for:	picocom
-# Date created:		2008-11-23
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	picocom
 PORTVERSION=	1.7
@@ -19,4 +15,5 @@ USE_GMAKE=	yes
 PLIST_FILES=	bin/picocom
 MAN8=		picocom.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

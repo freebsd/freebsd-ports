@@ -25,4 +25,5 @@ MAN3=		SMS::Send.3 \
 		SMS::Send::Driver.3 \
 		SMS::Send::Test.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

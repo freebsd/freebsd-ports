@@ -1,5 +1,4 @@
 # $FreeBSD$
-#
 
 PORTNAME=	ebook2cwgui
 PORTVERSION=	0.1.2
@@ -21,6 +20,7 @@ USE_WX=	yes
 PLIST_FILES=	bin/ebook2cwgui
 PORTDOCS=	*
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG:S,${PREFIX}/bin/,,}|g' \
 	     ${WRKSRC}/Makefile

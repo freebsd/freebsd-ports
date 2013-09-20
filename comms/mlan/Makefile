@@ -1,9 +1,5 @@
-# New ports collection makefile for:   mlan
-# Date created:        4 January 2000
-# Whom:                phk
-#
+# Created by: phk
 # $FreeBSD$
-#
 
 PORTNAME=	mlan
 PORTVERSION=	1.03
@@ -17,4 +13,5 @@ COMMENT=	API for Dallas Semiconductors 1-wire lan devices
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zssh
-# Date created:			13 October 2001
-# Whom:				Gea-Suan Lin (gslin@ccca.nctu.edu.tw)
-#
+# Created by: Gea-Suan Lin (gslin@ccca.nctu.edu.tw)
 # $FreeBSD$
-#
 
 PORTNAME=	zssh
 PORTVERSION=	1.5c
@@ -22,6 +18,7 @@ HAS_CONFIGURE=	yes
 PLIST_FILES=	bin/zssh bin/ztelnet
 MAN1=		zssh.1 ztelnet.1
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -e 's,^prefix.*,prefix = ${PREFIX},g' ${WRKSRC}/Makefile
 

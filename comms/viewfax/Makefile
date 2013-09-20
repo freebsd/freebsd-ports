@@ -18,4 +18,5 @@ PLIST_FILES=	bin/viewfax lib/viewfax.tif
 
 MAN1=		viewfax.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

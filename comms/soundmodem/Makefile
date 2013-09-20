@@ -18,6 +18,7 @@ HAS_CONFIGURE=	yes
 USE_GNOME=	gtk20 libxml2
 MAN8=		soundmodem.8 soundmodemconfig.8
 
+NO_STAGE=	yes
 pre-patch:
 	@${CP} ${FILESDIR}/soundmodem ${WRKSRC}
 

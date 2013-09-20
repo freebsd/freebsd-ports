@@ -20,6 +20,7 @@ EXTRACT_CMD=	${SH}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PLIST_FILES+=	"@cwd /"

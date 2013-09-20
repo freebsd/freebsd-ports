@@ -22,6 +22,7 @@ MANCOMPRESSED=	yes
 OPTIONS_DEFINE=	X11 SDL DEBUG
 OPTIONS_DEFAULT=	X11 SDL
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 

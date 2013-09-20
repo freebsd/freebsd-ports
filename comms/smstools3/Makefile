@@ -36,6 +36,7 @@ PLIST_SUB+=	SPOOLDIR="${SPOOLDIR}" LOGDIR="${LOGDIR}" PIDDIR="${PIDDIR}" \
 PORTDOCS=	*
 PORTEXAMPLES=	.procmailrc .qmailrc *
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSTATS}

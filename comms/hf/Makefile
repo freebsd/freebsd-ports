@@ -1,9 +1,5 @@
-# ports collection makefile for:	hf
-# Date created:		31 July 2006
-# Whom:			db
-#
+# Created by: db
 # $FreeBSD$
-#
 
 PORTNAME=	hf
 PORTVERSION=	0.8
@@ -27,6 +23,7 @@ MAN1=		hf.1 hfterm.1 hfkernel.1
 MAN1_EN=	dcf77gen.1 dcf77rx.1
 CONFLICTS=	sysutils/lbl-hf-1.*
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
 	    ${WRKSRC}/hfkernel/Makefile

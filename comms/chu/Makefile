@@ -13,6 +13,7 @@ COMMENT=	Synchronise computer clock to CHU radio station
 
 MAN8=	chu.8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-extract:

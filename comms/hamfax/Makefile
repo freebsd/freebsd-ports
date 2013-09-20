@@ -20,4 +20,5 @@ USE_BZIP2=	yes
 
 
 MAN1=		hamfax.1
+NO_STAGE=	yes
 .include <bsd.port.mk>

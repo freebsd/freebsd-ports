@@ -1,9 +1,5 @@
-# Ports collection makefile for:	birda
-# Date Created:		29 December 2001
-# Whom:			Brandon S. Allbery KF8NH <allbery@ece.cmu.edu>
-#
+# Created by: Brandon S. Allbery KF8NH <allbery@ece.cmu.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	birda
 PORTVERSION=	1.3
@@ -19,4 +15,5 @@ MAN1=		ircomm.1 irobex.1 irs.1 \
 		mkobextel.1 mkobextodo.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

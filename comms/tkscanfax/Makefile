@@ -20,6 +20,7 @@ PLIST_SUB=	TKSCANFAXDIR="${TKSCANFAXDIR:S,^${PREFIX}/,,}"
 
 TKSCANFAXDIR=	${PREFIX}/lib/tkscanfax1
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -i '' -e \
 		's|/usr/local/lib|${PREFIX}/lib|g'

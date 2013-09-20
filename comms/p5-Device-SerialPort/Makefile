@@ -17,4 +17,5 @@ USE_PERL5=	configure
 MAN1=		modemtest.1
 MAN3=		Device::SerialPort.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

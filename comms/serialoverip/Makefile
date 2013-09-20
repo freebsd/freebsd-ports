@@ -11,6 +11,7 @@ COMMENT=	Transport of serial interfaces over UDP/IP
 
 PLIST_FILES=	sbin/${PORTNAME}
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC}; ${CC} ${CFLAGS} ${PORTNAME}.c -o ${PORTNAME}
 
