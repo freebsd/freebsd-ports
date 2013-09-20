@@ -35,6 +35,7 @@ PLIST_FILES+=	%%DATADIR%%/${ALIAS}.aff \
 		%%DATADIR%%/${ALIAS}.dic
 .endfor
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/hunspell/de_AT.aff ${WRKSRC}/hunspell/de_AT.dic \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	German phone codes
-# Date created:         1997-12-30
-# Whom:                 wosch
-#
+# Created by: wosch
 # $FreeBSD$
-#
 
 PORTNAME=	phone
 PORTVERSION=	1.0
@@ -22,6 +18,7 @@ EXTRACT_BEFORE_ARGS=	# None
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/de.phone
 NO_BUILD=	YES
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/de.phone ${PREFIX}/share/misc
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	selfhtml
-# Date created:			January 7th 2005
-# Whom:				Frerich Raabe <frerich.raabe@gmx.de>
-#
+# Created by: Frerich Raabe <frerich.raabe@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	selfhtml
 PORTVERSION=	8.1.2
@@ -55,6 +51,7 @@ PORTDOCS=	\
 		src \
 		xml
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DOCSDIR}
 # line taken from textproc/xerces-j maintained by hq@FreeBSD.org

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    dealt-ispell
-# Date created:                         10 February 2000
-# Whom:                                 Alexander Langer <alex@big.endian.de>
-#
+# Created by: Alexander Langer <alex@big.endian.de>
 # $FreeBSD$
-#
 
 PORTNAME=	ispell
 CATEGORIES=	german
@@ -15,6 +11,7 @@ ISPELL_DEALT=	yes
 MASTERDIR=	${.CURDIR}/../../textproc/ispell
 
 .if exists(${.CURDIR}/Makefile.local)
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.local"
 .endif
 

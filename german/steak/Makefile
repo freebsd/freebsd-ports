@@ -1,9 +1,5 @@
-# New ports collection makefile for:    steak
-# Date created:                         2003/01/02
-# Whom:                                 Heiner <h.eichmann@gmx.de>
-#
+# Created by: Heiner <h.eichmann@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	steak
 PORTVERSION=	1.7.3
@@ -36,6 +32,7 @@ PLIST_SUB+=	NOXSTEAK:="@comment "
 PLIST_SUB+=	NOXSTEAK:=""
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,\$$HOME/bin/Steak/Datensatz,${PREFIX}/share/steak/Datensatz,; \
 			s,BINDIR=\$$HOME/bin/Steak,BINDIR=${DATADIR},; \

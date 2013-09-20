@@ -18,6 +18,7 @@ PORTEXAMPLES=	dtaus.cls sample.ctl
 MAN1=		dtaus.1
 MAN5=		dtaus.5
 
+NO_STAGE=	yes
 do-configure:
 	 ${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' \
 		${WRKSRC}/bigint.c ${WRKSRC}/dtaus.c

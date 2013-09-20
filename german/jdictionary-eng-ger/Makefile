@@ -12,4 +12,5 @@ COMMENT=	JDictionary plugin: English-German dictionary
 
 MASTERDIR=	${.CURDIR}/../../textproc/jdictionary
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile.plugin"

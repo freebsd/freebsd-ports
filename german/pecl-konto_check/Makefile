@@ -20,6 +20,7 @@ DEFAULT_PHP_VER=53
 
 WRKSRC=	${WRKDIR}/php
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:
