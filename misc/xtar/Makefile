@@ -19,9 +19,9 @@ MAKE_ARGS=	XINC="-I${LOCALBASE}/include" XMLIB="${MOTIFLIB}" \
 		APPDIR="${PREFIX}/lib/X11/app-defaults" \
 		BINDIR="${PREFIX}/bin" LIBDIR="${PREFIX}/lib/X11/xtar" \
 		MANDIR="${MAN1PREFIX}/man/man1" OPTIMISATION="${CFLAGS}" \
-NO_STAGE=	yes
 		ANSIFLAG=-ansi CC="${CC}" RANLIB=:
 
+NO_STAGE=	yes
 MAN1=		xtar.1
 PLIST_FILES=	bin/xtar lib/X11/xtar/xtar.doc lib/X11/app-defaults/XTar
 PLIST_DIRS=	lib/X11/xtar
