@@ -12,4 +12,5 @@ USE_XORG=	xextproto xineramaproto videoproto
 
 MAN4=		vmware.4x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

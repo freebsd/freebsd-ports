@@ -13,6 +13,7 @@ CONFLICTS=	synaptics-[0-9]*
 OPTIONS_DEFINE=	HAL
 OPTIONS_DEFAULT=HAL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USES=		pathfix

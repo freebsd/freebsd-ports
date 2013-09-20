@@ -15,4 +15,5 @@ USE_XORG=	xf86driproto xextproto glproto
 MAN4=		sunffb.4x
 ONLY_FOR_ARCHS=	sparc64
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

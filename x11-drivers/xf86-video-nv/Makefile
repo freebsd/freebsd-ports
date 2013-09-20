@@ -11,4 +11,5 @@ COMMENT=	X.Org nv display driver
 XORG_CAT=	driver
 MAN4=		nv.4x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -10,4 +10,5 @@ COMMENT=	X.Org i128 display driver
 XORG_CAT=	driver
 MAN4=		i128.4x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

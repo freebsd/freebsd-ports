@@ -19,6 +19,7 @@ MAN4=		nouveau.4x
 # also doesn't work with mesa (libGL) version higher then 7.4.x
 IGNORE=		Not supported, missing kernel support. use the nvidia driver.
 
+NO_STAGE=	yes
 post-configure:
 	${REINPLACE_CMD} '/NV_DRIVER_DATE/s/".*"/"${SNAPDATE}.${SNAPREV}"/' ${WRKSRC}/config.h
 

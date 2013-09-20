@@ -11,4 +11,5 @@ COMMENT=	X.Org rendition display driver
 XORG_CAT=	driver
 MAN4=		rendition.4x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

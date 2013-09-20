@@ -17,6 +17,7 @@ USE_XORG=	xvmc xf86driproto xextproto x11 glproto
 IGNORE=         does not build with X server 1.12
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/lib/xorg/modules/drivers
 	${INSTALL_PROGRAM} ${WRKSRC}/src/.libs/rdc_drv.so \

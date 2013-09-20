@@ -16,4 +16,5 @@ IGNORE=		does not build with xorg-server 1.7.7
 
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -19,4 +19,5 @@ PEN_VERSION=	1.4.1
 PEN_REVISION=	1
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -14,4 +14,5 @@ MAN4=		ati.4x radeon.4x
 
 CONFIGURE_ARGS+=--disable-kms
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

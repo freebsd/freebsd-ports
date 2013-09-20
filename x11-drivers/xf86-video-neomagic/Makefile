@@ -12,4 +12,5 @@ XORG_CAT=	driver
 USE_XORG=	xf86dgaproto
 MAN4=		neomagic.4x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

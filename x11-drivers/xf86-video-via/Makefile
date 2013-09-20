@@ -16,6 +16,7 @@ USE_XORG=	xvmc xf86driproto xextproto x11 glproto
 
 MAN4=		via.4x
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

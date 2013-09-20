@@ -10,4 +10,5 @@ COMMENT=	X.Org dummy display driver
 XORG_CAT=	driver
 USE_XORG=	xf86dgaproto
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

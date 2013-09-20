@@ -12,4 +12,5 @@ XORG_CAT=	driver
 USE_XORG=	glproto xf86driproto xf86miscproto xineramaproto
 MAN4=		r128.4x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

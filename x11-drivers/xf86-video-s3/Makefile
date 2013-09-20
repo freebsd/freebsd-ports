@@ -10,4 +10,5 @@ COMMENT=	X.Org s3 display driver
 XORG_CAT=	driver
 MAN4=		s3.4x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

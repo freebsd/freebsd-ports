@@ -19,6 +19,7 @@ CONFLICTS=	xf86-video-radeonhd-devel-[0-9]*
 
 MAN4=	radeonhd.4x
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUTILS}

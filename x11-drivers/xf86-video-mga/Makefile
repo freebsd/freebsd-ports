@@ -14,6 +14,7 @@ XORG_CAT=	driver
 USE_XORG=	xf86driproto glproto
 MAN4=		mga.4x
 
+NO_STAGE=	yes
 pre-patch:
 #	${REINPLACE_CMD} \
 #		-e 's|values.h|sys/limits.h|g' \

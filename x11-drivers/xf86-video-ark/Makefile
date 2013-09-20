@@ -9,4 +9,5 @@ COMMENT=	X.Org ark display driver
 
 XORG_CAT=	driver
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

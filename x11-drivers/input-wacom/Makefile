@@ -1,9 +1,5 @@
-# New ports collection makefile for:	input-wacom
-# Date Created:				24 Oct 2008
-# Whom:					Dominic Fandrey <kamikaze@bsdforen.de>
-#
+# Created by: Dominic Fandrey <kamikaze@bsdforen.de>
 # $FreeBSD$
-#
 
 PORTNAME=	input-wacom
 PORTVERSION=	${KLD_VERSION}.${WACOM_VERSION:C/-/./g}
@@ -54,6 +50,7 @@ MAKE_ARGS+=	UDEV_CFLAGS=""
 OPTIONS_DEFINE=	UWACOMKLD
 UWACOMKLD_DESC=	Install USB kernel module (not supported on 8.x)
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MUWACOMKLD}

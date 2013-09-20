@@ -13,4 +13,5 @@ XORG_CAT=	driver
 USE_XORG=	xf86driproto glproto
 MAN4=		savage.4x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

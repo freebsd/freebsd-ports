@@ -26,4 +26,5 @@ PLIST_SUB+=	NEW=""
 PLIST_SUB+=	NEW="@comment "
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -20,4 +20,5 @@ VOID_REVISION=	0
 .endif
 
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

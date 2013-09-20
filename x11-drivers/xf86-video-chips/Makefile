@@ -10,4 +10,5 @@ COMMENT=	X.Org chips display driver
 XORG_CAT=	driver
 MAN4=		chips.4x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
