@@ -18,6 +18,7 @@ USE_OPENSSL=	yes
 PORTDOCS=	README docs.html
 PLIST_FILES=	bin/sslwrap
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

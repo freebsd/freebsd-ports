@@ -27,6 +27,7 @@ PLIST_FILES=		include/cryptlib.h \
 
 PORTDOCS=		README
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

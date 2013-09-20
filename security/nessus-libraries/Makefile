@@ -34,6 +34,7 @@ MAN1=		nessus-config.1
 
 .if ! defined(NESSUS_CLIENT_ONLY) && ! defined(PACKAGE_BUILDING)
 MANUAL_PACKAGE_BUILD=	needs /dev/bpf which is not available in pointyhat jail
+NO_STAGE=	yes
 pre-configure:
 	@if [ ! -c /dev/bpf ]; then \
 	    ${ECHO} "********************************************************";\

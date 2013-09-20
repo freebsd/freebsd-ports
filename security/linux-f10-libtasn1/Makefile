@@ -1,8 +1,5 @@
-# New ports collection makefile for:	security/linux-f10-libtasn1
-# Date created:				10 Nov 2010
-# Whom:					Stas Timokhin <devel@stasyan.com>
+# Created by: Stas Timokhin <devel@stasyan.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libtasn1
 PORTVERSION=	1.5
@@ -23,4 +20,5 @@ DOCSDIR_REL=	usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING COPYING.LIB ChangeLog NEWS README THANKS TODO libtasn1.pdf
 DESCR=		${.CURDIR}/../libtasn1/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

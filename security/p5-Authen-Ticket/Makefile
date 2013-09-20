@@ -18,4 +18,5 @@ MAN3=	Authen::Ticket.3 \
 	Authen::Ticket::Server.3 \
 	Authen::Ticket::Signature.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

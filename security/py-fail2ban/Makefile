@@ -1,4 +1,3 @@
-# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
 
 PORTNAME=	fail2ban
@@ -36,6 +35,7 @@ FILES=	${WRKSRC}/fail2ban-regex \
 		${WRKSRC}/client/configreader.py \
 		${WRKSRC}/fail2ban-client
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

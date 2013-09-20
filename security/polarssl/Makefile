@@ -30,6 +30,7 @@ BINFILES=	aescrypt2 benchmark dh_client dh_genprime dh_server hello \
 		ssl_server ssl_test
 
 # cmake install is broken, so we do it by hand
+NO_STAGE=	yes
 do-install:
 	@${TAR} -C ${WRKSRC}/include -cf - polarssl | ${TAR} -C ${PREFIX}/include -xf -
 	${INSTALL_DATA} ${WRKSRC}/library/libpolarssl.a ${PREFIX}/lib/

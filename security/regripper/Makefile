@@ -22,6 +22,7 @@ USES=		perl5
 USE_PERL5=	run
 PLIST_FILES=	bin/rip.pl
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|#! c:\\perl\\bin\\perl.exe|#!${PERL}| ; \
 		s|plugindir = $$str|plugindir = "${DATADIR}"| ; \

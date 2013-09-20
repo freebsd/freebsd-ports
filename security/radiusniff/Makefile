@@ -1,9 +1,5 @@
-# New ports collection makefile for:	radiusniff
-# Date created:		21 April 2000
-# Whom:			Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	radiusniff
 PORTVERSION=	0.2
@@ -16,6 +12,7 @@ COMMENT=	Sniffer for RADIUS traffic
 
 WRKSRC=		${WRKDIR}/radiusniff-0.2
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && \
 	${CC} ${CFLAGS} -DOPENBSD -DCLIENTS_FILENAME=\"${PREFIX}/share/radiusniff/clients\" -DDICTIONARY_FILENAME=\"${PREFIX}/share/radiusniff/dictionary\" -o radiusniff radiusniff.c md5.c -lpcap

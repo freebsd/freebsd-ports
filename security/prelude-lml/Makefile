@@ -29,6 +29,7 @@ USES=		charsetfix gettext iconv pkgconfig
 
 OPTIONS_DEFINE=	FAM
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFAM}

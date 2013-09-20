@@ -1,6 +1,5 @@
 # Created by: Mike Heffner <mheffner@vt.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	bfbtester
 PORTVERSION=	2.0.1
@@ -15,4 +14,5 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/bfbtester
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -59,6 +59,7 @@ MAN3=	Net::SinFP.3 \
 	Net::SinFP::SinFP4.3 \
 	Net::SinFP::SinFP6.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/.*EXE_FILES.*//' ${WRKSRC}/${CONFIGURE_SCRIPT}
 

@@ -90,6 +90,7 @@ SUB_LIST+=	MAIAUSER=${USERS} \
 		MAIAQUARANTINE=${MAIAQUARANTINE}
 USE_RC_SUBR+=	maiad
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Code is a bit fiddly here; we can't use USE variables after pre.mk so we have

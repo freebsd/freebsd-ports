@@ -1,4 +1,4 @@
-# Created by: Michael Nottebrock <lofi@freebsd.org>
+# Created by: Michael Nottebrock <lofi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libassuan
@@ -30,4 +30,5 @@ PLIST_FILES=	bin/libassuan-config include/assuan.h \
 verify: checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.sig
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

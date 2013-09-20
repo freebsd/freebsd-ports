@@ -23,6 +23,7 @@ CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 PORTDOCS=	*
 
 .ifndef(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}/wiki
 	@(cd ${WRKSRC} && ${CP} NEWS ${DOCSDIR})

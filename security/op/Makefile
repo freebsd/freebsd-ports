@@ -14,6 +14,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=		op.1
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${PREFIX}/etc/op.d
 	${INSTALL_DATA} -m 0600 ${WRKSRC}/${PORTNAME}.conf \

@@ -19,4 +19,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/ckpass
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

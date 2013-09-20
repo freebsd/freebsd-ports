@@ -1,9 +1,5 @@
-# Ports collection makefile for:	bioapi
-# Date created:				10 January 2006
-# Whom:					Fredrik Lindberg <fli@shapeshifter.se>
-#
+# Created by: Fredrik Lindberg <fli@shapeshifter.se>
 # $FreeBSD$
-#
 
 PORTNAME=	bioapi
 PORTVERSION=	1.2.2
@@ -24,4 +20,5 @@ CONFIGURE_ARGS=	--localstatedir=/var/db/ --with-Qt-dir=no
 
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

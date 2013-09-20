@@ -36,6 +36,7 @@ PGSQL_DESC=	Use PostgreSQL database/auth storage backend
 IMAP_DESC=	Use IMAP auth backend
 LDAP_DESC=	Use LDAP auth backend
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

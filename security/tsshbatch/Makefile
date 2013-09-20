@@ -28,6 +28,7 @@ PORTDOCS=	WHATSNEW.txt \
 		tsshbatch.ps \
 		tsshbatch.rst
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

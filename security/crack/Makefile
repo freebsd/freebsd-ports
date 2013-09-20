@@ -1,11 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  Crack
-# Date created:			  12 Jan 1997
-# Whom:				  David O'Brien <obrien@FreeBSD.org>
-#				  & Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
-#
+# Created by: David O'Brien <obrien@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	crack
 PORTVERSION=	5.0
@@ -22,6 +16,7 @@ BROKEN=		Fail to package
 
 WRKSRC=		${WRKDIR}/c50a
 
+NO_STAGE=	yes
 pre-configure:
 .if !defined(WITH_DES)
 	@${MV} -f ${WRKSRC}/src/libdes ${WRKSRC}/src/libdes.notused

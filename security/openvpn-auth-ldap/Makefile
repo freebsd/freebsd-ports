@@ -1,7 +1,4 @@
-# New ports collection makefile for:	openvpn-auth-ldap
-# Date created:		06 June 2007
-# Whom:			Nick Barkas <snb@threerings.net>
-#
+# Created by: Nick Barkas <snb@threerings.net>
 # $FreeBSD$
 
 PORTNAME=	openvpn-auth-ldap
@@ -27,6 +24,7 @@ PORTDOCS=	README
 PORTEXAMPLES=	auth-ldap.conf
 PLIST_FILES=	lib/openvpn-auth-ldap.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || ${OSVERSION} < 800505

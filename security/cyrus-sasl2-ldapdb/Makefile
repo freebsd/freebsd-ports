@@ -59,6 +59,7 @@ PLIST_FILES=	lib/sasl2/libldapdb.a \
 		lib/sasl2/libldapdb.so \
 		lib/sasl2/libldapdb.so.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OPENSSLBASE} == /usr

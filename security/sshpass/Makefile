@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sshpass
-# Date created:				2012-02-04
-# Whom:					Hung-Yi Chen <gaod@hychen.org>
-#
+# Created by: Hung-Yi Chen <gaod@hychen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sshpass
 PORTVERSION=	1.05
@@ -20,4 +16,5 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/sshpass
 MAN1=		sshpass.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

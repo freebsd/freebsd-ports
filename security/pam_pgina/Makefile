@@ -19,6 +19,7 @@ USE_OPENSSL=	yes
 USES=		perl5
 USE_PERL5=	run
 
+NO_STAGE=	yes
 post-patch:
 # PREFIX safeness
 # Use correct PAM 'password change' service name

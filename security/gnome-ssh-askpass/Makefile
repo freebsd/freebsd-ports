@@ -21,6 +21,7 @@ PLIST_FILES=	bin/gnome-ssh-askpass2
 USES=		pkgconfig
 USE_GNOME=	gtk20
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 CFLAGS+=	${PTHREAD_LIBS}
 

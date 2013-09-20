@@ -18,6 +18,7 @@ OPTIONS_DEFAULT=	MD5 BINARY
 MD5_DESC=		Include support for using MD5
 BINARY_DESC=		Use the binary package for serialization
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MMD5}

@@ -22,4 +22,5 @@ PYDISTUTILS_PKGNAME=	python-otr
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

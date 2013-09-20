@@ -1,4 +1,4 @@
-# Created by: Alexander Leidinger <netchild@freebsd.org>
+# Created by: Alexander Leidinger <netchild@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libssh2
@@ -22,6 +22,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	GCRYPT TRACE ZLIB
 OPTIONS_DEFAULT=	ZLIB
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 TRACE_DESC=	Enable debug packet traces

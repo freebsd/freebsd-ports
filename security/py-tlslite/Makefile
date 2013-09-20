@@ -13,4 +13,5 @@ COMMENT=	Python module implementing SSL 3.0, TLS 1.0, and TLS 1.1
 USE_PYTHON=		2.6-2.7
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sniff
-# Date created:		7 December 1998
-# Whom:			Rick & Samu
-#
+# Created by: Rick & Samu
 # $FreeBSD$
-#
 
 PORTNAME=		sniff
 PORTVERSION=		1.0
@@ -20,6 +16,7 @@ CONFIGURE_SCRIPT=	configure
 
 PLIST_FILES=		sbin/sniff
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|g' ${WRKSRC}/Makefile.in
 

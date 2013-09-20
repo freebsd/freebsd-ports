@@ -14,6 +14,7 @@ MAN1=		snort-rep.1
 USES=		shebangfix perl5
 SHEBANG_FILES=	snort-rep snort-rep-mail
 
+NO_STAGE=	yes
 do-build:
 	cd ${BUILD_WRKSRC} ; pod2man --lax snort-rep > snort-rep.1
 

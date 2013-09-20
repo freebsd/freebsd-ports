@@ -20,6 +20,7 @@ MAN1=	scrypt.1
 OPTIONS_DEFINE=	SSE2
 SSE2_DESC=	Use SSE2-optimized code
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSE2}

@@ -29,6 +29,7 @@ INSTALL_TARGET=	site-install
 DOCS_EN=	README.en	doc/tcpwrap.html.en
 DOCS_JA=	README.ja	doc/tcpwrap.html.ja
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

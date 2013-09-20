@@ -1,9 +1,5 @@
-# New ports collection makefile for: ssh_askpass_gtk2
-# Date created:        21 Aug 2003
-# Whom:                mig
-#
+# Created by: mig
 # $FreeBSD$
-#
 
 PORTNAME=	ssh_askpass_gtk2
 PORTVERSION=	0.4
@@ -23,6 +19,7 @@ USES=		pkgconfig
 
 PLIST_FILES=	bin/ssh-askpass-fullscreen
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,gcc,${CC}," ${WRKSRC}/Makefile
 

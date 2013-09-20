@@ -14,6 +14,7 @@ COMMENT=	Security scanner for Samba
 USES=		gmake
 MAKE_ARGS=	CC="${CC}" FLAGS1="${CFLAGS}"
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.o" -delete
 	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${WRKSRC}/Makefile

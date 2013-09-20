@@ -25,6 +25,7 @@ MAKE_JOBS_UNSAFE=yes
 SUB_FILES=	pkg-message
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUI}

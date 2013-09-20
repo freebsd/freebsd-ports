@@ -17,6 +17,7 @@ USE_OPENSSL=	yes
 PLIST_FILES=	bin/tlswrap
 PORTDOCS=	README
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E 's,^(CC|CFLAGS|LDFLAGS).*=,\1?=,g' \
 		${WRKSRC}/Makefile.in

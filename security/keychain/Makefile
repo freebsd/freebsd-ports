@@ -24,6 +24,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 PORTDOCS=	ChangeLog README.rst
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${LOCALBASE}/bin/ssh-agent) && !exists(/usr/bin/ssh-agent)

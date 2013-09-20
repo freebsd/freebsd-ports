@@ -19,6 +19,7 @@ MAN1=		doscan.1
 
 PLIST_FILES=	bin/doscan
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|ony o|on yo|' \
 	    ${WRKSRC}/doc/doscan.1

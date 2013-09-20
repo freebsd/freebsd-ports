@@ -18,6 +18,7 @@ MAN1=	cfv.1
 OPTIONS_DEFINE_i386=	PSYCO
 PSYCO_DESC=	Enable devel/py-psyco optimization support
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/Makefile
 

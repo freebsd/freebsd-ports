@@ -17,4 +17,5 @@ MAKE_ARGS+=	PASTHRU_INC=-I${OPENSSLINC}
 
 MAN3=		Crypt::OpenSSL::Bignum::CTX.3 Crypt::OpenSSL::Bignum.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

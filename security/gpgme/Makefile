@@ -1,6 +1,5 @@
 # Created by: teramoto@comm.eng.osaka-u.ac.jp
 # $FreeBSD$
-#
 
 PORTNAME=	gpgme
 PORTVERSION=	1.3.2
@@ -39,6 +38,7 @@ INFO=		gpgme
 PORTDOCS=	AUTHORS ChangeLog COPYING COPYING.LESSER INSTALL \
 		NEWS README THANKS TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUPG1}

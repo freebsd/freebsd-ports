@@ -1,9 +1,5 @@
-# New ports collection makefile for:   pam_mkhomedir
-# Date created:                        08 June 2005
-# Whom:                                Martin Mersberger
-#
+# Created by: Martin Mersberger
 # $FreeBSD$
-#
 
 PORTNAME=	pam_mkhomedir
 PORTVERSION=	0.2
@@ -34,6 +30,7 @@ PLIST_FILES+=	lib/libpam_mkhomedir.a
 MAKE_ARGS+=	NO_INSTALLLIB=yes
 .endif
 
+NO_STAGE=	yes
 pre-everything::
 
 .if !defined(WITH_PROFILE) || !defined(WITH_STATIC)

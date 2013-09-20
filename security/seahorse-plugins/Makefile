@@ -33,6 +33,7 @@ APPLET_DESC=	Clipboard encryption applet
 GCONF_SCHEMAS=	seahorse-plugins.schemas
 MAN1=		seahorse-agent.1 seahorse-tool.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGEDIT}

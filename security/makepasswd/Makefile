@@ -30,6 +30,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAN1=		makepasswd.1
 DOCS=		CHANGES README
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

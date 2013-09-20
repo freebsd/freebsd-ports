@@ -47,6 +47,7 @@ CONFIGURE_ARGS+=	--with-logfac=${LOGFAC}
 CONFIGURE_ARGS+=	--with-secure-path="${SUDO_SECURE_PATH}"
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "arm"

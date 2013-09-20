@@ -15,6 +15,7 @@ COMMENT=	Replacement and extension for Tripwire
 LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash
 USES=		bison
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 USE_GMAKE=	yes

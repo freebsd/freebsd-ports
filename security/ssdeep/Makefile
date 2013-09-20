@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ssdeep
-# Date created:        24 December 2010
-# Whom:                Nobutaka Mantani <nobutaka@FreeBSD.org>
-#
+# Created by: Nobutaka Mantani <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ssdeep
 PORTVERSION=	2.9
@@ -23,4 +19,5 @@ USE_LDCONFIG=	yes
 
 MAN1=		ssdeep.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

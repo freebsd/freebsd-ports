@@ -20,6 +20,7 @@ CLI_DESC=	Enable to build the management CLI
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libreadline.so.6)

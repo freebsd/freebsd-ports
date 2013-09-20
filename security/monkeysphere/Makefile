@@ -1,9 +1,5 @@
-# New ports collection makefile for:   monkeysphere
-# Date created:        2008-09-11 23:38:27-0400
-# Whom:                Daniel Kahn Gillmor <dkg@fifthhorseman.net>
-#
+# Created by: Daniel Kahn Gillmor <dkg@fifthhorseman.net>
 # $FreeBSD$
-#
 
 PORTNAME=	monkeysphere
 PORTVERSION=	0.24
@@ -31,6 +27,7 @@ GROUPS=	monkeysphere
 
 MAKE_ARGS=	ETCPREFIX=${PREFIX} MANPREFIX=${PREFIX}/man ETCSUFFIX=.sample
 
+NO_STAGE=	yes
 # use proper system paths for FreeBSD instead of debian's:
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/monkeysphere|/usr/local/etc/monkeysphere|g' \

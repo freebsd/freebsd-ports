@@ -24,6 +24,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/Net
 
 MAN3=		Net::SAML.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/apps/openssl/std|${LOCALBASE}|' ${WRKSRC}/Makefile.PL
 

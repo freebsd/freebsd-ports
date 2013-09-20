@@ -33,6 +33,7 @@ CISCOVERSION_DESC=	Mask linux presentation string
 
 OPTIONS_DEFAULT=DECRYPT
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDECRYPT}

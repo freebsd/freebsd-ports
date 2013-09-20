@@ -1,6 +1,4 @@
-# New ports collection makefile for:	wapiti
-# Date created:                3 October 2007
-# Whom:                        Philippe Audeoud <jadawin@tuxaco.net>
+# Created by: Philippe Audeoud <jadawin@tuxaco.net>
 # $FreeBSD$
 
 PORTNAME=	wapiti
@@ -24,6 +22,7 @@ PLIST_FILES=	bin/wapiti.py \
 		bin/cookie.py \
 		bin/BeautifulSoup.py
 
+NO_STAGE=	yes
 do-install:
 .for i in wapiti.py lswww.py getcookie.py cookie.py BeautifulSoup.py
 	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/bin/

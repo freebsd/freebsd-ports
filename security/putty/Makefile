@@ -24,6 +24,7 @@ OPTIONS_DEFAULT=GSSAPI GTK2
 
 CONFLICTS=	pssh-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CFLAGS+=	-DBSD_PTYS -DOMIT_UTMP -DIPV6

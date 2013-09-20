@@ -25,6 +25,7 @@ DOCS=		NEWS README TODO *.html
 OPTIONS_DEFINE=	VCHKPW
 VCHKPW_DESC=	Compile cvm-vchkpw
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 ALL_TARGET=all

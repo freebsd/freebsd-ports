@@ -21,6 +21,7 @@ USE_DOS2UNIX=	yes
 NO_BUILD=	yes
 PORTDATA=	*
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/* ${DATADIR}

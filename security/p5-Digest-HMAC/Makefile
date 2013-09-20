@@ -17,4 +17,5 @@ MAN3=		Digest::HMAC.3 \
 		Digest::HMAC_MD5.3 \
 		Digest::HMAC_SHA1.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

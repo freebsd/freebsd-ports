@@ -22,6 +22,7 @@ PORTDOCS=	AUTHORS ChangeLog README TODO
 PLIST_FILES=	bin/fpm share/pixmaps/fpm/logo.xpm
 PLIST_DIRS=	share/pixmaps/fpm
 
+NO_STAGE=	yes
 pre-build:
 	${REINPLACE_CMD} -E -e "s@encrypt\(@bfishencrypt\(@g" ${WRKSRC}/src/blowfish.c
 

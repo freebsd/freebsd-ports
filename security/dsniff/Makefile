@@ -35,6 +35,7 @@ LIBNET_INC=	"`${LIBNET_CONFIG} --defines` `${LIBNET_CONFIG} --cflags`"
 LIBNET_LIB=	"-L${LOCALBASE}/include/libnet${LIBNET_VERSION} \
 		${LOCALBASE}/lib/libnet${LIBNET_VERSION}/libnet.a"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # If net/libnids has been compiled with the GLIB2 option then this port needs

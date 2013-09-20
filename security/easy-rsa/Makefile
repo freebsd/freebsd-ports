@@ -15,4 +15,5 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -16,6 +16,7 @@ USE_PERL5=	configure
 PORTEXAMPLES=	dups
 MAN3=	Digest::SHA::PurePerl.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

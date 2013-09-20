@@ -27,6 +27,7 @@ OPTIONS_MULTI_GPG=	GPG1 GPG2
 GPG1_DESC=	Use GnuPG version 1
 GPG2_DESC=	Use GnuPG version 2
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGPG1}

@@ -25,4 +25,5 @@ IGNORE_WITH_PHP=5
 
 WRKSRC=		${WRKDIR}/crack-0.4
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

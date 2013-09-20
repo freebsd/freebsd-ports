@@ -21,4 +21,5 @@ MAN1=	readpe.1 pedis.1 pepack.1 pescan.1 \
 
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

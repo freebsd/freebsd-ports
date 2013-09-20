@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sshguard
-# Date created:		2007-02-22
-# Whom:			Mij <mij@bitchx.it>
-#
+# Created by: Mij <mij@bitchx.it>
 # $FreeBSD$
-#
 
 PORTNAME=	sshguard
 PORTVERSION=	1.5
@@ -31,6 +27,7 @@ SUB_FILES=	pkg-message
 # backend type in { hosts, ipfw, pf }
 SSHGUARDFW?=	hosts
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(PREFIX)

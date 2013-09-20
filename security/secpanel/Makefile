@@ -28,6 +28,7 @@ USE_TK_WRAPPER=	yes
 DESKTOP_ENTRIES="SecPanel" "${COMMENT}" "${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 		"${PORTNAME}" "" "false"
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|\[file dirname \[info script\]\]/../lib/secpanel|${DATADIR}|' \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-posix1e
-# Date created:		2 January 2003
-# Whom:			Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
-#
 
 PORTNAME=	posix1e
 PORTVERSION=	0.5.0
@@ -25,6 +21,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 PORTDOCS=	COPYING IMPLEMENTATION NEWS PLATFORMS README
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

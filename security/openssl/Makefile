@@ -1049,6 +1049,7 @@ MLINKS=	ASN1_OBJECT_new.3 ASN1_OBJECT_free.3 \
 	ui_compat.3 des_read_pw.3 \
 	ui_compat.3 des_read_pw_string.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 OPENSSL_BASE_SONAME!=	readlink ${DESTDIR}/usr/lib/libcrypto.so || true

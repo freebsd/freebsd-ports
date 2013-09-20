@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	pamtester
-# Date created:				24/05/2005
-# Whom:					andy@fud.org.nz
-#
+# Created by: andy@fud.org.nz
 # $FreeBSD$
-#
 
 PORTNAME=	pamtester
 PORTVERSION=	0.1.2
@@ -21,4 +17,5 @@ USE_GMAKE=	yes
 
 PLIST_FILES=	bin/pamtester
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kripp
-# Date created:			Apr 23, 2003
-# Whom:				Jim Geovedi <jim@corebsd.or.id>
-#
+# Created by: Jim Geovedi <jim@corebsd.or.id>
 # $FreeBSD$
-#
 
 PORTNAME=	kripp
 PORTVERSION=	0.6.1
@@ -22,6 +18,7 @@ NO_BUILD=	yes
 MAN1=		kripp.1
 PLIST_FILES=	bin/kripp
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/kripp ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/kripp.1 ${MANPREFIX}/man/man1

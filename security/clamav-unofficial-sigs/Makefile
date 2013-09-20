@@ -31,6 +31,7 @@ SED_CONF=	-e 's|%%CLAM_DBS%%|/var/db/clamav|g' \
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

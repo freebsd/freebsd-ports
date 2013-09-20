@@ -22,4 +22,5 @@ MAN1+=		netpgp.1 \
 MAN3+=		libnetpgp.3 \
 		libmj.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

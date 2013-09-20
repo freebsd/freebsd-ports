@@ -23,6 +23,7 @@ USE_PYTHON_BUILD=	yes
 
 OPTIONS_DEFINE=	PERL PHP PYTHON
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !empty(PORT_OPTIONS:MPERL)

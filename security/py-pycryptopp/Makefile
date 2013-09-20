@@ -1,9 +1,5 @@
-# New ports collection makefile for: pycryptopp
-# Date created:		30 August 2008
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pycryptopp
 PORTVERSION=	0.5.29
@@ -22,6 +18,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e 's#<malloc.h>#<stdlib.h>#g' \
 		${WRKSRC}/embeddedcryptopp/rijndael.cpp \

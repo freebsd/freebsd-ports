@@ -23,6 +23,7 @@ OPTIONS_DEFAULT=	CLAMDSCAN
 CLAMDSCAN_DESC=		Scanning using clamd
 SUBREWRITE_DESC=	Mail subject rewriting
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLAMDSCAN}

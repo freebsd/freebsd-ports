@@ -18,6 +18,7 @@ PLIST_FILES=	sbin/${PORTNAME} etc/${PORTNAME}.cfg.sample
 NO_BUILD=	YES
 USES=		perl5
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

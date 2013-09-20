@@ -21,6 +21,7 @@ TTITLE_DESC=	Enable Terminal Title
 PWGEN_DESC=	Enable Password Generator
 CSV2YAPET_DESC=	Build csv2yapet
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # --enable-silent-rules:  will make the build quiet

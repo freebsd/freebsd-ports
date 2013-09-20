@@ -1,6 +1,4 @@
-# Ports collection Makefile for:	symbion-sslproxy
-# Date created:				10 Dec 2005
-# Whom:					Gabor Kovesdan
+# Created by: Gabor Kovesdan
 # $FreeBSD$
 
 PORTNAME=	symbion-sslproxy
@@ -18,6 +16,7 @@ USE_GMAKE=	YES
 PLIST_FILES=	sbin/ssl_proxy
 SUB_FILES+=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)

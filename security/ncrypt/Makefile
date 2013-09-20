@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ncrypt
-# Date created:			30 Aug 2005
-# Whom:				Frank Laszlo <laszlof@vonostingroup.com>
-#
+# Created by: Frank Laszlo <laszlof@vonostingroup.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ncrypt
 PORTVERSION=	0.7.0
@@ -19,6 +15,7 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/ncrypt bin/nrm
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -E 's,^(CC|CFLAGS) =,\1 \?=,g' \
 		${WRKSRC}/Makefile

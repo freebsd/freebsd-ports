@@ -19,6 +19,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_CDROM=	Do not sell for profit
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${DISTDIR}/mindterm-ssh.html ${WRKSRC}
 	@${MV} ${WRKSRC}/mindtermfull.jar ${WRKSRC}/mindterm.jar

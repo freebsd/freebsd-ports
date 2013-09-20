@@ -26,6 +26,7 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	AUTHORS.txt CHANGELOG.txt CREDITS.txt README.txt
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	snortsnarf
-# Date created:		29 July 2001
-# Whom:			Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	snortsnarf
 PORTVERSION=	1.0
@@ -21,6 +17,7 @@ USES=		perl5
 NO_BUILD=	yes
 USE_PERL5=	run
 
+NO_STAGE=	yes
 post-patch:
 	@${SED} -e 's|\./include|${PREFIX}/libdata/${PORTNAME}|' \
 		< ${WRKSRC}/snortsnarf.pl > ${WRKSRC}/snortsnarf

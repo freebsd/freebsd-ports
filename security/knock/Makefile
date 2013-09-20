@@ -25,6 +25,7 @@ OPTIONS_MULTI=	MT1
 OPTIONS_MULTI_MT1=	CLIENT SERVER
 OPTIONS_DEFAULT=	CLIENT SERVER
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CLIENT_DESC=	Install knock client

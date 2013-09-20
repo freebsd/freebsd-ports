@@ -17,6 +17,7 @@ OPTIONS_DEFINE=	AUTOLOGIN
 OPTIONS_DEFAULT=	AUTOLOGIN
 AUTOLOGIN_DESC=	Install module for automatic login
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAUTOLOGIN}

@@ -27,6 +27,7 @@ MAKE_JOBS_UNSAFE=	yes
 MAN5=		pam_krb5.5
 MAN8=		pam_krb5.8 pam_krb5_cchelper.8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

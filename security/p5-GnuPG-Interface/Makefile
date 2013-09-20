@@ -34,4 +34,5 @@ MAN3=	GnuPG::Fingerprint.3 \
 	GnuPG::UserAttribute.3 \
 	GnuPG::UserId.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

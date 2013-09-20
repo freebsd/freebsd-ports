@@ -31,6 +31,7 @@ MAN1=		gpa.1
 
 OPTIONS_DEFINE=	NLS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !exists(${LOCALBASE}/bin/gpgsm)

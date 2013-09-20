@@ -22,6 +22,7 @@ NO_BUILD=	yes
 USES=		shebangfix perl5
 SHEBANG_FILES=	sig2dot.pl
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sig2dot.pl ${PREFIX}/bin/sig2dot
 

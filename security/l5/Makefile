@@ -14,6 +14,7 @@ COMMENT=	File Integrity Assessment Tool
 NO_WRKSUBDIR=	true
 ALL_TARGET=	freebsd
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}

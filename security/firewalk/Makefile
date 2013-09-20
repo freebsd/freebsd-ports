@@ -1,6 +1,5 @@
 # Created by: shipley@dis.org
 # $FreeBSD$
-#
 
 PORTNAME=	firewalk
 PORTVERSION=	5.0
@@ -24,6 +23,7 @@ MAN8=		firewalk.8
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lnet|`${LIBNET_CONFIG} --libs`|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}

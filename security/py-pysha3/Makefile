@@ -19,6 +19,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_sha3.so \
 		%%PYTHON_SITELIBDIR%%/sha3.pyc \
 		%%PYTHON_SITELIBDIR%%/sha3.pyo
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 320

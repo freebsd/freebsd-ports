@@ -1,6 +1,5 @@
 # Created by: torstenb@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	libident
 PORTVERSION=	0.32
@@ -18,6 +17,7 @@ USE_LDCONFIG=	yes
 
 MAN3=		ident.3
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

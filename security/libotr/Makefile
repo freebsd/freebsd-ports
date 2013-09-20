@@ -34,6 +34,7 @@ MLINKS=		otr_toolkit.1 otr_parse.1 \
 verify: checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

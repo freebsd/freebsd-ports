@@ -1,9 +1,5 @@
-# New ports collection makefile for:    dradis
-# Date created:				09 May 2010
-# Whom:					Dax Labrador <semprix@bsdmail.org>
-#
+# Created by: Dax Labrador <semprix@bsdmail.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dradis
 DISTVERSION=	2.6.1
@@ -43,6 +39,7 @@ RUBY_NO_BUILD_DEPENDS=	yes
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*(css|rb|txt|js|RELEASE_NOTES)$$
 
+NO_STAGE=	yes
 pre-install:
 	@${FIND} ${WRKSRC}/server -type f \( -name "*.bak" -o -name "*.orig" -o -name "*.swp" \) -delete
 

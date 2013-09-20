@@ -45,6 +45,7 @@ TW_PROMPT_DESC=		Interactive install (ignored when PACKAGE_BUILDING)
 SW_ONLY_DESC=		Install software only, do not post-configure (ignored when PACKAGE_BUILDING)
 DB_BUILD_DESC=		Build database during post-install (ignored when PACKAGE_BUILDING)
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Tripwire config files are stored in TWCFG

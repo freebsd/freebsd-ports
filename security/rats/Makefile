@@ -1,9 +1,5 @@
-# Ports collection makefile for:  rats
-# Date created:			  22 August 2001
-# Whom:				  Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rats
 PORTVERSION=	2.3
@@ -24,6 +20,7 @@ CONFIGURE_ARGS+=--with-expat-lib=${LOCALBASE}/lib \
 
 ALL_TARGET=	${PORTNAME}
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aolserver-nsencrypt
-# Date created:		12 Oct 2006
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	aolserver-nsencrypt
 PORTVERSION=	0.4
@@ -40,6 +36,7 @@ PLIST_FILES=	${AOLSERVERBASE}/bin/nsencrypt.so \
 PORTDOCS=	ChangeLog readme.txt
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e '/^MODOBJS  =.*/{p;s/MODOBJS  =/OBJS  +=/g;}' \

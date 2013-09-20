@@ -1,6 +1,5 @@
 # Created by: Luiz Eduardo R. Cordeiro
 # $FreeBSD$
-#
 
 PORTNAME=	chkrootkit
 PORTVERSION=	0.49
@@ -37,6 +36,7 @@ PLIST_FILES=	${ALL_TARGET:C,^,sbin/,}
 
 BINMODE=	0700
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900007

@@ -26,4 +26,5 @@ MAN3=		Data::Entropy.3 \
 		Data::Entropy::RawSource::RandomnumbersInfo.3 \
 		Data::Entropy::Source.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

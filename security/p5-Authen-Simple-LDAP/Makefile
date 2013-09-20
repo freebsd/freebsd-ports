@@ -20,4 +20,5 @@ USES=		perl5
 MAN3=		Authen::Simple::ActiveDirectory.3 \
 		Authen::Simple::LDAP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

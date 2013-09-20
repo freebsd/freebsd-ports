@@ -22,6 +22,7 @@ USES=        pathfix gmake pkgconfig
 USE_GNOME=	gnomeprefix gtk20 libgnomeui intltool libglade2
 GCONF_SCHEMAS=	gpass.schemas
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|{packageprefix}/share|{datadir}|g' \
 		${WRKSRC}/configure

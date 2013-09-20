@@ -1,9 +1,5 @@
-# New ports collection makefile for:	security/linux-f10-cyrus-sasl2
-# Date created:				2009-06-07
-# Whom:					peter
-#
+# Created by: peter
 # $FreeBSD$
-#
 
 PORTNAME=	cyrus-sasl2
 PORTVERSION=	2.1.22
@@ -31,4 +27,5 @@ PLIST_FILES+=	"@exec mkdir -p %D/etc/sasl2"
 DOCSDIR=	usr/share/doc/cyrus-sasl-lib-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING NEWS README advanced.html appconvert.html components.html gssapi.html index.html install.html macosx.html mechanisms.html options.html plugprog.html programming.html readme.html sysadmin.html upgrading.html windows.html
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

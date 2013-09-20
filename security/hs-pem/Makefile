@@ -12,5 +12,6 @@ LICENSE=	BSD
 
 USE_CABAL=	attoparsec base64-bytestring cereal mtl
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

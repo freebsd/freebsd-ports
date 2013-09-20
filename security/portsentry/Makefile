@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sentry
-# Date created:		3 January 1998
-# Whom:			chris@still.whet.org
-#
+# Created by: chris@still.whet.org
 # $FreeBSD$
-#
 
 PORTNAME=	portsentry
 PORTVERSION=	1.2
@@ -19,6 +15,7 @@ CFLAGS+=	-DPREFIX=\"${PREFIX}\"
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 WRKSRC=		${WRKDIR}/portsentry_beta
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local/psionic/portsentry,${PREFIX}/etc,g' \
 		${WRKSRC}/portsentry.conf ${WRKSRC}/portsentry_config.h

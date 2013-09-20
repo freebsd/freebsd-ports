@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bsmtrace
-# Date created:        13 March 2007
-# Whom:                alm
-#
+# Created by: alm
 # $FreeBSD$
-#
 
 PORTNAME=	bsmtrace
 PORTVERSION=	1.3
@@ -26,6 +22,7 @@ LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 MAKE_ENV+=	PCRE=1
 .endif
 
+NO_STAGE=	yes
 pre-build:
 	${REINPLACE_CMD} -e \
 		's,/etc/bsmtrace.conf,${PREFIX}/etc/bsmtrace.conf,' \

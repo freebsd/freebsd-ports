@@ -1,9 +1,5 @@
-# New ports collection makefile for:	suhosin
-# Date created:			4 Sep 2006
-# Whom:				ale
-#
+# Created by: ale
 # $FreeBSD$
-#
 
 PORTNAME=	suhosin
 PORTVERSION=	0.9.33
@@ -22,6 +18,7 @@ IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--enable-suhosin
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/suhosin.ini ${EXAMPLESDIR}

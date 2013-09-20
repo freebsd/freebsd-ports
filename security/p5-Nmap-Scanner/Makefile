@@ -36,6 +36,7 @@ MAN3=		Nmap::Scanner.3 Nmap::Scanner::Address.3 \
 		Nmap::Scanner::Task.3 Nmap::Scanner::TaskProgress.3 \
 		Nmap::Scanner::Util::BannerScanner.3
 
+NO_STAGE=	yes
 post-configure:
 	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
 

@@ -46,6 +46,7 @@ MAN3=		Crypt::OpenPGP::ErrorHandler.3 Crypt::OpenPGP::Key.3 \
 		Crypt::OpenPGP::Trust.3 Crypt::OpenPGP::Certificate.3 \
 		Crypt::OpenPGP::Message.3 Crypt::OpenPGP::KeyServer.3
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} -f ${WRKSRC}/lib/Crypt/OpenPGP/Ciphertext.pm.orig
 

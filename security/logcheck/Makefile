@@ -58,6 +58,7 @@ PATCH_LIST=	extra-patch-debian__logcheck.cron.d \
 		extra-patch-src__logtail2
 EXTRA_PATCHES=	${PATCH_LIST:C|^|${WRKDIR}/|g}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-patch:

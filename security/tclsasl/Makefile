@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tclsasl
-# Date created:				Wed Apr 26 12:42:16 MSD 2006
-# Whom:					Denis Shaposhnikov <dsh@vlink.ru>
-#
+# Created by: Denis Shaposhnikov <dsh@vlink.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	tclsasl
 PORTVERSION=	1.0
@@ -29,6 +25,7 @@ CONFIGURE_ENV=	INSTALL="${INSTALL_DATA}"
 
 PORTDOCS=	tclsasl.html
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

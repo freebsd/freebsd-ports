@@ -14,6 +14,7 @@ USES=		perl5
 MAN1=	ipfmeta.1
 POD2MAN?=	pod2man
 
+NO_STAGE=	yes
 do-build:
 	@${POD2MAN} ${WRKSRC}/ipfmeta > ${WRKSRC}/${MAN1}
 

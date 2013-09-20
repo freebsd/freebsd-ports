@@ -20,6 +20,7 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 PORTDOCS=	README LICENSE ChangeLog
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

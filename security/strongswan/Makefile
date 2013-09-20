@@ -50,6 +50,7 @@ EAPAKA3GPP2_DESC=	Enable EAP AKA with 3gpp2 backend
 EAPSIMFILE_DESC=	Enable EAP SIM with file backend
 IKEv1_DESC=	Enable IKEv1 support (Experimental)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Extra options

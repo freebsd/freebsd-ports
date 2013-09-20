@@ -1,4 +1,4 @@
-# Created by: Michael Nottebrock <lofi@freebsd.org>
+# Created by: Michael Nottebrock <lofi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pinentry
@@ -38,6 +38,7 @@ QT4_DESC=	Qt 4 frontend
 PKGNAMESUFFIX=	${PINENTRY_SLAVE}
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQT4}

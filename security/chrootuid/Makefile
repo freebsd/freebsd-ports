@@ -1,6 +1,5 @@
 # Created by: truckman
 # $FreeBSD$
-#
 
 PORTNAME=	chrootuid
 PORTVERSION=	1.3
@@ -14,6 +13,7 @@ COMMENT=	Simple wrapper that combines chroot(8) and su(1) into  one  program
 
 MAN8=		chrootuid.8
 
+NO_STAGE=	yes
 do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

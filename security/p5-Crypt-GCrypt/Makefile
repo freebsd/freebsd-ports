@@ -23,4 +23,5 @@ CONFIGURE_ARGS+=	GCRYPTLIBPATH=${LOCALBASE}/lib \
 
 MAN3=		Crypt::GCrypt.3 Crypt::GCrypt::MPI.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

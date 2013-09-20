@@ -1,6 +1,5 @@
 # Created by: Andrew Lewis <freeghb@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	luasec
 PORTVERSION=	0.4
@@ -21,6 +20,7 @@ USE_LUA=	5.1
 WANT_LUA_VER=	5.1
 USE_OPENSSL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # NOTE: OSVERSION is already defined here, and USE_OPENSSL_PORT

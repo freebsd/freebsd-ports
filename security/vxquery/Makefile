@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vxquery
-# Date created:				2004/02/11
-# Whom:					nectar@FreeBSD.org
-#
+# Created by: nectar@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	vxquery
 PORTVERSION=	0.2.1
@@ -16,6 +12,7 @@ COMMENT=	VuXML Query Tool
 USE_BZIP2=	YES
 GNU_CONFIGURE=	YES
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/object/vxquery ${PREFIX}/bin/vxquery
 

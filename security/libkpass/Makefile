@@ -27,4 +27,5 @@ PLIST_FILES=	include/kpass.h \
 		lib/libkpass.la \
 		lib/libkpass.a
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

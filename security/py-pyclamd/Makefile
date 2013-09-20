@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pyClamd
-# Date created:				Jan 7, 2009
-# Whom:					Milan Obuch
-#
+# Created by: Milan Obuch
 # $FreeBSD$
-#
 
 PORTNAME=	pyclamd
 PORTVERSION=	0.2.2
@@ -17,6 +13,7 @@ COMMENT=	Python ClamD interface module
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-extract:

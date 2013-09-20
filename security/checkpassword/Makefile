@@ -20,6 +20,7 @@ INSTALL_TARGET=	setup
 PLIST_FILES=	bin/checkpassword
 PORTDOCS=	CHANGES FILES README SYSDEPS TARGETS TODO VERSION
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

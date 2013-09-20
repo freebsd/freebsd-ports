@@ -16,6 +16,7 @@ OPTIONS_DEFAULT=	STATIC THREADS
 STATIC_DESC=		Build static version only (no shared libs)
 GCC_DESC=		Build with current GCC
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 NO_WRKSUBDIR=		yes

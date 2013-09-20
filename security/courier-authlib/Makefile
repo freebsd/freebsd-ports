@@ -26,6 +26,7 @@ PATCHDIR=	/dev/null
 
 OPTIONS_DEFINE+=	GDBM
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.opt"
 
 .else	# !defined(PKGNAMESUFFIX)

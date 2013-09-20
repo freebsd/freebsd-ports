@@ -16,6 +16,7 @@ PORTDOCS=	_copyright.txt _readme.txt
 PORTDIRS=	attack-payloads wordlists-misc Discovery \
 		web-backdoors wordlists-user-passwd regex
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

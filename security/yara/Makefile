@@ -20,4 +20,5 @@ USE_CSTD=	gnu89
 
 MAN1=	yara.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

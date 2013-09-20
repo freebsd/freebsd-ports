@@ -15,6 +15,7 @@ NO_BUILD=	yes
 MAN1=		ssh-copy-id.1
 PLIST_FILES=	bin/ssh-copy-id
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1000024

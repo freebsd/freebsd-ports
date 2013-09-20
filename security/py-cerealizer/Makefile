@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-cerealizer
-# Date created:		2006-05-07
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	cerealizer
 PORTVERSION=	0.7
@@ -21,4 +17,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Cerealizer
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

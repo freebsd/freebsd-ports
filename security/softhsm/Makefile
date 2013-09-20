@@ -20,4 +20,5 @@ USE_LDCONFIG=	yes
 MAN1=		softhsm.1 softhsm-keyconv.1
 MAN5=		softhsm.conf.5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

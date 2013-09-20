@@ -51,6 +51,7 @@ OPTIONS_DEFINE=		BDB OPENLDAP HTTPFORM
 OPENLDAP_DESC=		Use OpenLDAP
 HTTPFORM_DESC=		Enable HTTP form authentication
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBDB}

@@ -1,4 +1,4 @@
-# Created by:	will
+# Created by: will
 # $FreeBSD$
 
 PORTNAME=	Crypt-Cracklib
@@ -26,4 +26,5 @@ CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include" DEFINE="-DCRACKLIB_DICTPATH=\\\"${P
 
 MAN3=		Crypt::Cracklib.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

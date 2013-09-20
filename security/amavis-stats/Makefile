@@ -1,6 +1,5 @@
 # Created by: Mantas Kaulakys <stone@tainet.lt>
 # $FreeBSD$
-#
 
 PORTNAME=	amavis-stats
 PORTVERSION=	0.1.12
@@ -39,6 +38,7 @@ SUB_LIST+=	AMAVISUSER=${AMAVISUSER} AMAVISGROUP=${AMAVISGROUP}
 pre-install: apply-slist
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/amavis-stats ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/amavis-stats.1 ${MAN1PREFIX}/man/man1

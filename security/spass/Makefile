@@ -25,4 +25,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/spass
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

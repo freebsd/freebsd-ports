@@ -39,6 +39,7 @@ MAN5=		audit.log.5 auditdistd.conf.5 audit_class.5 audit_control.5 \
 		audit_event.5 audit_user.5 audit_warn.5
 MAN8=		auditfilterd.8 audit.8 auditd.8 auditdistd.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} <= 800000

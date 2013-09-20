@@ -1,9 +1,5 @@
-# New ports collection makefile for:	squidclamav
-# Date created:		2008-06-02
-# Whom: 		Laurent LEVIER <llevier@argosnet.com>
-#
+# Created by: Laurent LEVIER <llevier@argosnet.com>
 # $FreeBSD$
-#
 
 PORTNAME=	squidclamav
 PORTVERSION=	5.7
@@ -26,6 +22,7 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.dist
 MAN1=		${PORTNAME}.1
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -E 's|^(LDFLAGS = ).*|\1-L${LOCALBASE}/lib|' \
 		${WRKSRC}/Makefile

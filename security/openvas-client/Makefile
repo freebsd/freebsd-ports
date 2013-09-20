@@ -16,6 +16,7 @@ GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../security/openvas-libraries/Makefile.common"
 
 .include <bsd.port.mk>

@@ -13,5 +13,6 @@ LICENSE=	BSD
 USE_CABAL=	cipher-aes>=0.1 crypto-api>=0.8 crypto-random-api>=0.2 \
 		entropy>=0.2 random
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

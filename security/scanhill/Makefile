@@ -19,6 +19,7 @@ PORTDOCS=	README.txt INSTALL.txt mysql.sql
 
 OPTIONS_DEFINE=	MYSQL DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

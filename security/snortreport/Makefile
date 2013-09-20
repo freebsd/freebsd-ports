@@ -1,9 +1,5 @@
-# New ports collection makefile for:   snortreport
-# Date created:        18 Jan 2004
-# Whom:                Andrea Venturoli <freebsd@netfence.it>
-#
+# Created by: Andrea Venturoli <freebsd@netfence.it>
 # $FreeBSD$
-#
 
 PORTNAME=	snortreport
 PORTVERSION=	1.3.3
@@ -26,6 +22,7 @@ WANT_PHP_WEB=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO} ""
 	@${ECHO} "You have to configure PHP either with MySQL or PostgreSQL"

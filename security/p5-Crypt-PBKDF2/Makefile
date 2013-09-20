@@ -27,4 +27,5 @@ MAN3=		Crypt::PBKDF2.3 \
 		Crypt::PBKDF2::Hash::HMACSHA1.3 \
 		Crypt::PBKDF2::Hash::HMACSHA2.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

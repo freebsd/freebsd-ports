@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pam_helper
-# Date created:				09 August 2008
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pam_helper
 PORTVERSION=	1.0
@@ -17,4 +13,5 @@ USE_BZIP2=	yes
 
 PLIST_FILES=	bin/pam_helper
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

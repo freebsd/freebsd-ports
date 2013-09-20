@@ -20,6 +20,7 @@ NO_BUILD=	yes
 IGNORE=		can't be installed when NOPORTDOCS is defined
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} . ${DOCSDIR})

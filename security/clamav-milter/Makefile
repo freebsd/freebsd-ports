@@ -10,4 +10,5 @@ LATEST_LINK=	clamav-milter
 
 CONFLICTS=	clamav-[0-9]* clamav-devel-[0-9]*
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

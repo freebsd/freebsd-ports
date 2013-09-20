@@ -25,6 +25,7 @@ USE_PERL5=	run
 
 MAN1=		nikto.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSLEAY}

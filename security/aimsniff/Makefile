@@ -27,6 +27,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/aimsniff
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !exists(${LOCALBASE}/lib/perl5/${PERL_VER}/${PERL_ARCH}/GDBM_File.pm)

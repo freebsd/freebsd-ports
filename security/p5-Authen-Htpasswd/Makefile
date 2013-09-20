@@ -25,4 +25,5 @@ MAN3=	Authen::Htpasswd.3 \
 	Authen::Htpasswd::User.3 \
 	Authen::Htpasswd::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

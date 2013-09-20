@@ -22,6 +22,7 @@ CONFIGURE_ENV=	YACC=/usr/bin/yacc
 OPTIONS_DEFINE=	KINK DOCS
 KINK_DESC=	Enable KINK support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-configure:

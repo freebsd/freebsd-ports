@@ -20,6 +20,7 @@ LATEST_LINK=	pear-${PORTNAME}
 
 PEAR_AUTOINSTALL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for opt in BCMATH GMP

@@ -30,6 +30,7 @@ MAN3=		Authen::SASL.3 \
 		Authen::SASL::Perl::LOGIN.3 \
 		Authen::SASL::Perl::PLAIN.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKERBEROS}

@@ -46,6 +46,7 @@ STAGE=		${WRKSRC}/_stage
 WITH_HTTP_PORT?=	80
 WITH_SSL_PORT?=		443
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSERVER_ONLY}

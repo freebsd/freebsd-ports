@@ -1,9 +1,5 @@
-# Ports collection makefile for:        ipguard
-# Date created:                         6 Oct 2008
-# Whom:                                 SeaD
-#
+# Created by: SeaD
 # $FreeBSD$
-#
 
 PORTNAME=	ipguard
 PORTVERSION=	1.04
@@ -21,6 +17,7 @@ MAN8=		${PORTNAME}.8
 PORTDOCS=	COPYRIGHT NEWS README README.tcpdump README.log ethers.sample rfc826.txt
 PLIST_FILES=	sbin/ipguard
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}

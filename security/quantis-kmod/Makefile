@@ -32,6 +32,7 @@ PLIST_FILES=	"@cwd ${KMODDIR}" \
 		"@unexec kldxref ${KMODDIR}" \
 		"@cwd ${PREFIX}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${SRC_BASE}/sys/Makefile)

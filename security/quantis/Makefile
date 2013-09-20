@@ -40,6 +40,7 @@ KMODDIR?=	/boot/modules
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPCI}

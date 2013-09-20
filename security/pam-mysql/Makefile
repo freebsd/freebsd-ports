@@ -1,9 +1,5 @@
-# New ports collection makefile for:    pam_mysql
-# Date created:				29 August 2000
-# Whom:	      				Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	pam_mysql
 PORTVERSION=	0.7.r1
@@ -30,6 +26,7 @@ PLIST_FILES=	lib/pam_mysql.la lib/pam_mysql.so lib/pam_mysql.a
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

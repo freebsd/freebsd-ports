@@ -1,9 +1,5 @@
-# New ports collection makefile for:	unssh
-# Date created:				30 July 2009
-# Whom:					Dax Labrador <semprix@bsdmail.org>
-#
+# Created by: Dax Labrador <semprix@bsdmail.org>
 # $FreeBSD$
-#
 
 PORTNAME=	unssh
 PORTVERSION=	1.5
@@ -18,6 +14,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 NO_BUILD=	yes
 PLIST_FILES=	bin/unssh
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL} -d ${PREFIX}/bin
 	@${CP} ${WRKSRC}/unssh.sh ${PREFIX}/bin/unssh

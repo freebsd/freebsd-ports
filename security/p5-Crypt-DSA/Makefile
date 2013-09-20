@@ -23,4 +23,5 @@ MAN3=		Crypt::DSA::Key::SSH2.3 Crypt::DSA.3 Crypt::DSA::Key.3 \
 		Crypt::DSA::Key::PEM.3 Crypt::DSA::Signature.3 \
 		Crypt::DSA::KeyChain.3 Crypt::DSA::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	py-openssl
-# Date created:			Feb 10, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	openssl
 PORTVERSION=	0.13
@@ -27,6 +22,7 @@ USE_OPENSSL=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
+NO_STAGE=	yes
 pre-configure:
 	@${ECHO_CMD} "[build_ext]" >> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "include-dirs = ${OPENSSLINC}" >> ${WRKSRC}/setup.cfg

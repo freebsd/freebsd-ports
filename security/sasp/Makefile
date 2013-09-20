@@ -1,9 +1,5 @@
-# New ports collection makefile for:    sasp
-# Date created:        2 September 2004
-# Whom:                sviat
-#
+# Created by: sviat
 # $FreeBSD$
-#
 
 PORTNAME=	sasp
 PORTVERSION=	0.1
@@ -24,4 +20,5 @@ PLIST_FILES=	sbin/sasp
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

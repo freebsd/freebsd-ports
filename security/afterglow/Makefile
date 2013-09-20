@@ -1,6 +1,5 @@
 # Created by: pauls
 # $FreeBSD$
-#
 
 PORTNAME=	afterglow
 PORTVERSION=	1.6.2
@@ -22,6 +21,7 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/data
 	${MKDIR} ${DATADIR}/charts

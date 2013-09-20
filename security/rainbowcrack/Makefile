@@ -1,9 +1,5 @@
-# New ports collection makefile for:   rainbowcrack
-# Date created:        8 May 2006
-# Whom:                bryan@freshdns.net
-#
+# Created by: bryan@freshdns.net
 # $FreeBSD$
-#
 
 PORTNAME=	rainbowcrack
 PORTVERSION=	1.2
@@ -15,6 +11,7 @@ COMMENT=	Hash cracker that precomputes plaintext - ciphertext pairs in advance
 
 USE_DOS2UNIX=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

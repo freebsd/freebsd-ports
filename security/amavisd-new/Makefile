@@ -81,6 +81,7 @@ SUB_LIST+=	AMAVISUSER=${AMAVISUSER} \
 
 PLIST_SUB+=	AMAVIS_NOP0F=${AMAVIS_NOP0F}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_RC_SUBR+=	amavisd

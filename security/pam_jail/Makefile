@@ -1,9 +1,5 @@
-# New ports collection makefile for:    pam_jail
-# Date created:                         28 March 2010
-# Whom:                                 Damien Bobillot
-#
+# Created by: Damien Bobillot
 # $FreeBSD$
-#
 
 PORTNAME=	pam_jail
 PORTVERSION=	0.3
@@ -18,6 +14,7 @@ MANCOMPRESSED=	yes
 SUB_FILES=	pkg-message
 PLIST_FILES=	lib/pam_jail.so lib/pam_jail.so.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

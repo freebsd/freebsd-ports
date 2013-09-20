@@ -1,9 +1,5 @@
-# New ports collection makefile for:    chntpw
-# Date created:                         25 July 2007
-# Whom:                    buganini@gmail.com
-#
+# Created by: buganini@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	chntpw
 PORTVERSION=	110511
@@ -25,6 +21,7 @@ PORTDOCS=	README.txt WinReg.txt regedit.txt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '10 s,/usr,$$\(OPENSSLBASE\),' \
 		${WRKSRC}/Makefile

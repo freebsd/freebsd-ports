@@ -35,6 +35,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USERS?=		razorback
 GROUPS?=	razorback
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

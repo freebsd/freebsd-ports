@@ -23,6 +23,7 @@ BCMATH_DESC=	Use bcmath instead of libgmp
 
 USE_PHP=	curl dom
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBCMATH}

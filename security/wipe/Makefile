@@ -19,6 +19,7 @@ PLIST_FILES=	bin/wipe
 MAN1=		wipe.1
 PORTDOCS=	CHANGES INSTALL LICENSE README TESTING TODO copyright
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@CFLAGS@|${CFLAGS}|' ${WRKSRC}/Makefile.in
 

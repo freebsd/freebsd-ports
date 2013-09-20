@@ -1,9 +1,5 @@
-# New ports collection makefile for: pgp
-# Date created:         8 Jul 1995
-# Whom:                 ache
-#
+# Created by: ache
 # $FreeBSD$
-#
 
 PORTNAME=	pgp
 PORTVERSION=	2.6.3i
@@ -24,6 +20,7 @@ PGPLIB=		${PREFIX}/share/pgp
 MAN1=		pgp.1 pgp2.1
 ONLY_FOR_ARCHS=	i386 alpha amd64 sparc64
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}; ${INSTALL_PROGRAM} -c -o bin -g bin -m 555 pgp ${PREFIX}/bin
 	cd ${WRKSRC}/../doc; \

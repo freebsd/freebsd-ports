@@ -27,4 +27,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.gnome.crypto.cache.gschema.xml \
 		org.gnome.crypto.pgp.gschema.xml
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -15,6 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libident.a:${PORTSDIR}/security/libident
 PORTDOCS=	README
 PLIST_FILES=	libexec/identify
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

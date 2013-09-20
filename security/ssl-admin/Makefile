@@ -23,6 +23,7 @@ MANCOMPRESSED=	no
 MAKE_ENV=	ETCDIR=${PREFIX}/etc BINDIR=${PREFIX}/bin \
 		MANDIR=${MANPREFIX}/man
 
+NO_STAGE=	yes
 post-install:
 	${CAT} ${PKGMESSAGE}
 

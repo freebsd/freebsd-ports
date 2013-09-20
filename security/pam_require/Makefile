@@ -1,9 +1,5 @@
-# New ports collection makefile for: pam_require
-# Date created:                      30 March 2006
-# Whom:                              Chris Cowart <ccowart@rescomp.berkeley.edu>
-#
+# Created by: Chris Cowart <ccowart@rescomp.berkeley.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	pam_require
 PORTVERSION=	0.7
@@ -21,4 +17,5 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/_/-/}-${PORTVERSION}
 
 PLIST_FILES=	lib/pam_require.so lib/pam_require.so.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

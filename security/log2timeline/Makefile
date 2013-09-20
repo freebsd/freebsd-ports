@@ -82,4 +82,5 @@ MAN3=	Log2Timeline.3 \
 	Parse::Evtx2.3 \
 	Parse::Evtx2::Chunk.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

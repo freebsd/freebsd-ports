@@ -24,4 +24,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PROJECTHOST=	py-bcrypt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

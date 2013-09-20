@@ -38,6 +38,7 @@ PLIST_FILES=	bin/truecrypt
 OPTIONS_DEFINE=	X11 DOCS
 X11_DESC=	With GUI (depends on X)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

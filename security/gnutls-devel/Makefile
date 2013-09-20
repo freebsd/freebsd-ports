@@ -31,6 +31,7 @@ CONFIGURE_ARGS+=	--disable-guile --disable-silent-rules \
 			--disable-hardware-acceleration
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if (defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.5)) && !defined(WITHOUT_LIBTASN1)

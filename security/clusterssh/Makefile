@@ -34,4 +34,5 @@ MAN3=		App::ClusterSSH.3 \
 		App::ClusterSSH::L10N.3 \
 		App::ClusterSSH::L10N::en.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	poly1305aes
-# Date created:		18 February 2005
-# Whom:			roam@FreeBSD.org
-#
+# Created by: roam@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	poly1305aes
 PORTVERSION=	20050218
@@ -19,6 +15,7 @@ ALL_TARGET=	default
 REPLACE_HDRS=	aes.h cpucycles.h poly1305aes.h
 PROGRAM_FILES=	poly1305aes-speed test-aes test-poly1305aes
 
+NO_STAGE=	yes
 do-install:
 		${MKDIR} ${PREFIX}/include/poly1305
 		${INSTALL_DATA} ${WRKSRC}/*_*.h ${PREFIX}/include/poly1305/

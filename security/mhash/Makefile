@@ -1,6 +1,5 @@
-# Created by: nsayer@freebsd.org
+# Created by: nsayer@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	mhash
 PORTVERSION=	0.9.9.9
@@ -23,6 +22,7 @@ PORTDOCS=	example.c skid2-authentication
 test:	build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

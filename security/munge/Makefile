@@ -37,4 +37,5 @@ MLINKS=		munge.3 munge_strerror.3 \
 		munge_ctx.3 munge_ctx_set.3 \
 		munge_ctx.3 munge_ctx_strerror.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

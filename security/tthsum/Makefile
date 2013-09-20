@@ -25,4 +25,5 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} test runtest
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

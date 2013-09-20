@@ -1,9 +1,5 @@
-# New ports collection makefile for:	steghide
-# Date created:				26 February 2001
-# Whom:					RaRa Rasputin <rasputin@submonkey.net>
-#
+# Created by: RaRa Rasputin <rasputin@submonkey.net>
 # $FreeBSD$
-#
 
 PORTNAME=	steghide
 PORTVERSION=	0.5.1
@@ -29,6 +25,7 @@ CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include -fpermissive
 
 MAN1=		steghide.1
 
+NO_STAGE=	yes
 post-patch:
 .ifdef(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's|install-data-am\: install-docDATA||' \

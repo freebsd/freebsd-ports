@@ -15,4 +15,5 @@ USE_PERL5=	modbuild
 
 MAN3=	Digest::MD5::Reverse.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

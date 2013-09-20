@@ -20,4 +20,5 @@ CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include"
 
 MAN3=		Authen::SASL::Cyrus.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

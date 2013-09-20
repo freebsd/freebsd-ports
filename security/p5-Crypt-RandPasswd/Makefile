@@ -16,6 +16,7 @@ USE_PERL5=	configure
 
 MAN3=		Crypt::RandPasswd.3
 
+NO_STAGE=	yes
 post-patch:
 
 	@${RM} ${WRKSRC}/lib/Crypt/RandPasswd.pm.orig

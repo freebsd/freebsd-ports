@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/*.pl ${PREFIX}/sbin

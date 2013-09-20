@@ -16,6 +16,7 @@ OPTIONS_DEFAULT=	IPFW SAMTOOL
 IPFW_DESC=	checks if configured tables are available
 SAMTOOL_DESC=	install samtool
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 USE_RC_SUBR=	snortsam

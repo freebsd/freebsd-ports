@@ -1,6 +1,5 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Horde_Crypt
 PORTVERSION=	2.2.2
@@ -20,6 +19,7 @@ USE_HORDE_RUN=	Horde_Exception \
 		Horde_Util
 USE_PHP=	hash openssl
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBCMATH}

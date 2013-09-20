@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xinetd
-# Date created:				28 June 1996
-# Whom:					markm
-#
+# Created by: markm
 # $FreeBSD$
-#
 
 PORTNAME=	xinetd
 PORTVERSION=	2.3.15
@@ -24,6 +20,7 @@ CONFIGURE_ARGS+=	--with-loadavg --with-libwrap --with-ipv6
 MAN5=		xinetd.conf.5
 MAN8=		xconv.8 xinetd.8 xinetd.log.8
 
+NO_STAGE=	yes
 post-patch:
 	${FIND} ${WRKSRC}/libs/src -name Makefile.in | ${XARGS} \
 		${REINPLACE_CMD} -e 's!\@INSTALL\@!/bin/cp!; s!-m 640!!'

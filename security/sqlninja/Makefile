@@ -22,6 +22,7 @@ USES=		perl5
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${ETCDIR}
 	${MKDIR} ${ETCDIR}/scripts

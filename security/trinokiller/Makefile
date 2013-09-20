@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  trinokiller
-# Date created:			  Sun Feb 12, 2000
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	trinokiller
 PORTVERSION=	1.0
@@ -20,6 +15,7 @@ COMMENT=	Remotely kill trino nodes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	sbin/trinokiller
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}

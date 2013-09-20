@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 MAN1=		super.1 setuid.1
 MAN5=		super.5
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

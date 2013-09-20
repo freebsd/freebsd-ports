@@ -29,6 +29,7 @@ PORTDATA=	*.schema
 
 MAN5=		pam_ldap.5
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|' \
 	    	${WRKSRC}/vers_string

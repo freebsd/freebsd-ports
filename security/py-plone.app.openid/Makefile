@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-plone.app.openid
-# Date created:				22 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone.app.openid
 PORTVERSION=	2.0.2
@@ -31,4 +26,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 #USE_ZOPE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

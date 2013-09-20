@@ -1,9 +1,5 @@
-# New ports collection makefile for:	clamcour
-# Whom:					Milan Obuch
-# Date created:				January 13 2006
-#
+# Created by: Milan Obuch
 # $FreeBSD$
-#
 
 PORTNAME=	clamcour
 PORTVERSION=	0.3.8
@@ -29,6 +25,7 @@ MAN1=		clamcour.1
 PLIST_DIRS=	etc/courier/clamcour
 PLIST_FILES=	libexec/filters/clamcour
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/^CXXFLAGS *=/CXXFLAGS?=/g' \
 		${WRKSRC}/configure

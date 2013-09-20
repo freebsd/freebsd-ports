@@ -17,6 +17,7 @@ USES=		perl5
 IS_INTERACTIVE=	yes
 NO_BUILD=	true
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} "Installing files"
 	@${INSTALL_DATA} ${WRKSRC}/etc/hunch-special ${PREFIX}/etc

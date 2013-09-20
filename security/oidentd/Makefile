@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	IPV6 MASQ
 OPTIONS_DEFAULT=	MASQ
 MASQ_DESC=	Enable NAT/IP masq support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MIPV6}

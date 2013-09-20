@@ -1,8 +1,5 @@
-# New ports collection makefile for:	security/linux-f10-libgcrypt
-# Date created:				10 Nov 2010
-# Whom:					Stas Timokhin <devel@stasyan.com>
+# Created by: Stas Timokhin <devel@stasyan.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.4.4
@@ -22,6 +19,7 @@ PLIST_FILES=	lib/libgcrypt.so.11 lib/libgcrypt.so.11.5.2
 PLIST_DIRSTRY=	etc/gcrypt
 DESCR=		${.CURDIR}/../libgcrypt/pkg-descr
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${PREFIX}/etc/gcrypt
 

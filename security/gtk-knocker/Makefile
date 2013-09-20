@@ -1,6 +1,5 @@
 # Created by: Patrick Li <pat@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	knocker
 PORTVERSION=	0.6.6
@@ -19,6 +18,7 @@ USE_GNOME=	gtk12
 
 MAN1=		gtk-knocker.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

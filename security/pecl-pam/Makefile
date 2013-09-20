@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pecl-pam
-# Date created:			  1st Dec, 2009
-# Whom:				  wen@FreeBSD.org
-#
+# Created by: wen@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	pam
 PORTVERSION=	1.0.3
@@ -19,4 +15,5 @@ USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

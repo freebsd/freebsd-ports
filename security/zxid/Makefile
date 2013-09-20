@@ -27,6 +27,7 @@ ZXID_BINS=	smime zxcall zxcot zxdecode zxencdectest zxid zxidhlo \
 		zxidhlowsf zxidhrxmlwsc zxidhrxmlwsp zxididp zxidsimple \
 		zxidwsctool zxlogview zxpasswd
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

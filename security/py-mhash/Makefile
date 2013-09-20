@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	py-mhash
-# Date created:			Feb 10, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	mhash
 PORTVERSION=	1.4
@@ -29,4 +24,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 test: install
 	${PYTHON_CMD} ${WRKSRC}/test.py
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

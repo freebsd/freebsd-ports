@@ -24,4 +24,5 @@ SCONS_ARGS=	--prefix=${PREFIX}
 SCONS_ARGS=	--prefix=${LOCALBASE}
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

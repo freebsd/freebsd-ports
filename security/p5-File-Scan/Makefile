@@ -15,6 +15,7 @@ USE_PERL5=	configure
 
 MAN3=		File::Scan.3
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/docs

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	retranslator
-# Date created:		2010-05-25
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	retranslator
 PORTVERSION=	5.0.0
@@ -22,6 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 LIB_DEPENDS+=	m.4:${PORTSDIR}/misc/compat6x
 
+NO_STAGE=	yes
 do-configure:
 
 .for f in 's,./backup/,/var/db/${PORTNAME}/backup,g' \

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-RestrictedPython
-# Date created:				10 October, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	RestrictedPython
 PORTVERSION=	3.6.0
@@ -22,6 +17,7 @@ USE_PYTHON=	2.6-2.7
 USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 270

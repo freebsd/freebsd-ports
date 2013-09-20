@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cryptstring
-# Date created:		2007-02-23
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cryptstring
 PORTVERSION=	0.2
@@ -16,6 +12,7 @@ COMMENT=	Crypto Strings for PHP
 NO_BUILD=	yes
 USE_PHP=	mcrypt mhash
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/cs.inc.php ${DATADIR}

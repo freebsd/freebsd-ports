@@ -1,6 +1,5 @@
 # Created by: Dom Mitchell <dom@happygiraffe.net>
 # $FreeBSD$
-#
 
 PORTNAME=	l0pht-watch
 PORTVERSION=	1.1
@@ -17,6 +16,7 @@ WRKSRC=		${WRKDIR}/temp-watch
 
 ALL_TARGET=	OpenBSD
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/temp-watch ${PREFIX}/bin
 

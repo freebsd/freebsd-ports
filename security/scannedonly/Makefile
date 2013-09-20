@@ -23,6 +23,7 @@ USE_RC_SUBR=	${PORTNAME}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if exists(${LOCALBASE}/sbin/smbd)

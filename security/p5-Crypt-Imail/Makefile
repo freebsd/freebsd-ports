@@ -17,4 +17,5 @@ MAN3=		Crypt::Imail.3
 
 WRKSRC=		${WRKDIR}/Imail
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

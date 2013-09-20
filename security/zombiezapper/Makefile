@@ -22,6 +22,7 @@ LDFLAGS+=	$$(${LIBNET_CONFIG} --libs)
 PORTDOCS=	USAGE tekpaper.txt
 PLIST_FILES=	bin/zz
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

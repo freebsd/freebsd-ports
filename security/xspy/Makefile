@@ -16,6 +16,7 @@ USE_XORG=	x11
 
 ALL_TARGET=	xspy
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xspy ${PREFIX}/bin
 

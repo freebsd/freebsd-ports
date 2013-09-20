@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pidentd
-# Date created:		19 Oct 1994
-# Whom:			torstenb
-#
+# Created by: torstenb
 # $FreeBSD$
-#
 
 PORTNAME=	pidentd
 PORTVERSION=	3.0.19
@@ -31,6 +27,7 @@ PLIST_FILES=	sbin/ibench sbin/identd sbin/idecrypt sbin/ikeygen
 CFLAGS+=	-DINCLUDE_CRYPT -DOPENSSL_DES_LIBDES_COMPATIBILITY
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto
 
+NO_STAGE=	yes
 post-extract:
 	${CP} ${FILESDIR}/idecrypt.8 ${WRKSRC}/doc/idecrypt.8
 

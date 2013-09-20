@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libgringotts
-# Date created:				23 November 2002
-# Whom:					Anders Nordby <anders@FreeBSD.org>
-#
+# Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libgringotts
 PORTVERSION=	1.2.1
@@ -25,6 +21,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-pkg-config-files=${PREFIX}/libdata/pkgconfig
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s|md5sum|md5|g" ${WRKSRC}/Makefile.in
 

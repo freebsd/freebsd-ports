@@ -31,6 +31,7 @@ RADDBFILES=	dictionary \
 		dictionary.versanet \
 		dictionary.xtradius
 
+NO_STAGE=	yes
 pre-configure:
 	@${RM} ${WRKSRC}/install-radius-db.PL
 	@${PERL} -pi -e 's|/etc/raddb|${DATADIR}|' ${WRKSRC}/Radius.pm

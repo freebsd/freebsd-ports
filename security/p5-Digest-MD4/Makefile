@@ -21,6 +21,7 @@ USE_PERL5=	configure
 MAN3=		Digest::MD4.3
 PORTDOCS=	Changes rfc1320.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

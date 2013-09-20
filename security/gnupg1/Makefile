@@ -36,6 +36,7 @@ LIBUSB_DESC=	use libusb
 SUID_GPG_DESC=	install GPG with suid
 CURL_DESC=	use libcurl for the keyserver interface
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${CC} == "clang" || ${OSVERSION} >= 1000024

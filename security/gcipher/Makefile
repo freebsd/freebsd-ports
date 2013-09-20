@@ -1,6 +1,5 @@
 # Created by: Shannon -jj Behrens <jjinux@yahoo.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gcipher
 PORTVERSION=	1.1
@@ -19,6 +18,7 @@ USE_PYTHON=	yes
 MAN1=		gcipher.1
 LICENSE_FILES=	${WRKSRC}/LICENSE
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^VERSION/s|=.*|= "${PORTVERSION}"|g ; \

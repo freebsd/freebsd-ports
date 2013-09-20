@@ -28,4 +28,5 @@ MAN3=		Authen::Simple.3 \
 		Authen::Simple::Log.3 \
 		Authen::Simple::Password.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

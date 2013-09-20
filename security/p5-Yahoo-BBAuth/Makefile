@@ -20,6 +20,7 @@ USE_PERL5=	configure
 
 MAN3=		Yahoo::BBAuth.3
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${WWWDIR}/cgi-bin
 	${INSTALL_SCRIPT} ${WRKSRC}/eg/* ${WWWDIR}/cgi-bin

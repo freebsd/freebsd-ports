@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	ISAKMP daemon
-# Date created:				Fri May 11 18:20:02 EEST 2001
-# Whom:					Martti Kuparinen <martti.kuparinen@iki.fi>
-#
+# Created by: Martti Kuparinen <martti.kuparinen@iki.fi>
 # $FreeBSD$
-#
 
 PORTNAME=	isakmpd
 PORTVERSION=	20041207
@@ -34,6 +30,7 @@ MANCOMPRESSED=	yes
 
 USE_OPENSSL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 OPENSSLINC?=	/usr/include

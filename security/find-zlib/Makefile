@@ -21,6 +21,7 @@ USE_PERL5=	run
 
 PLIST_FILES=	bin/find-zlib
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${DISTDIR}/${DISTNAME} ${PREFIX}/bin
 

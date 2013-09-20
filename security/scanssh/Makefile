@@ -18,6 +18,7 @@ PLIST_FILES=	bin/scanssh
 
 MAN1=		scanssh.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scanssh ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/scanssh.1 ${PREFIX}/man/man1

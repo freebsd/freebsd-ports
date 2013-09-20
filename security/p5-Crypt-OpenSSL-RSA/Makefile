@@ -25,4 +25,5 @@ MAN3=		Crypt::OpenSSL::RSA.3
 regression-test: build
 	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} test
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

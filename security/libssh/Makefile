@@ -26,6 +26,7 @@ USE_LDCONFIG=	yes
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGCRYPT}

@@ -23,6 +23,7 @@ CONFDIR=	${PREFIX}/etc/${PORTNAME}
 
 PORTDOCS=	FAQ README CHANGES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

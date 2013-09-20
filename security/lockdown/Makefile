@@ -1,9 +1,5 @@
-# New ports collection makefile for: lockdown
-# Date created:		2004-02-11
-# Whom:			Daniel Blankensteiner <db@TruNet.dk>
-#
+# Created by: Daniel Blankensteiner <db@TruNet.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	lockdown
 PORTVERSION=	2.0.0
@@ -16,6 +12,7 @@ COMMENT=	Hardening script for FreeBSD
 
 MAN1=		editfile.1 editfstab.1 editkernel.1 editlogin.1 editttys.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
