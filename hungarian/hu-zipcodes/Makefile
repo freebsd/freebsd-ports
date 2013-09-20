@@ -19,6 +19,7 @@ EXTRACT_BEFORE_ARGS=	# None
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/hu.zipcodes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/hu.zipcodes ${PREFIX}/share/misc/
 

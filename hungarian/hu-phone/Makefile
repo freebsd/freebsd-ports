@@ -19,6 +19,7 @@ EXTRACT_BEFORE_ARGS=	# None
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/hu.phone
 NO_BUILD=	YES
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/hu.phone ${PREFIX}/share/misc
 
