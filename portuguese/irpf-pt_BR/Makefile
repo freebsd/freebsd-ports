@@ -1,9 +1,5 @@
-# New ports collection makefile for:	irpf
-# Date created:		Ter  6 Mar 2007 01:50:17 UTC
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	irpf
 PORTVERSION=	2010.1.0
@@ -95,6 +91,7 @@ PLIST_DIRS+=	\
 PLIST_DIRS+=	\
 		%%JAR_DIR%%
 
+NO_STAGE=	yes
 post-patch:
 	@${SED} -e  "s|%%DATADIR%%|${DATADIR}|; \
 		s|%%DATA_FILES%%|${IMAGE_FILES}|; \

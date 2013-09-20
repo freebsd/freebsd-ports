@@ -1,9 +1,5 @@
-# New ports collection makefile for:	portuguese/acroread8
-# Date created:			27 December 2007
-# Whom:				hrs
-#
+# Created by: hrs
 # $FreeBSD$
-#
 
 CATEGORIES=	portuguese print linux
 PKGNAMEPREFIX=	pt_BR-
@@ -13,4 +9,5 @@ DISTINFO_FILE=	${.CURDIR}/distinfo
 
 ADOBE_LANG=	PTB
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

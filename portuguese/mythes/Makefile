@@ -1,9 +1,4 @@
-# New ports collection makefile for:	mythes
-# Date created:		2011-07-21
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mythes
 PORTVERSION=	2006.08.17
@@ -28,6 +23,7 @@ PLIST_FILES=	%%DATADIR%%/th_pt_BR_v2.dat \
 		%%DATADIR%%/th_pt_PT_v2.idx
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/th_pt_PT_v2.dat ${WRKSRC}/th_pt_PT_v2.idx ${DATADIR}/

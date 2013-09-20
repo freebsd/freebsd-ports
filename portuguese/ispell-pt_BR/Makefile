@@ -1,9 +1,5 @@
-# New ports collection makefile for: br-ispell
-# Date created:         5 February 1999
-# Whom:                 Joao Carlos Mendes Luis <jonny@jonny.eng.br>
-#
+# Created by: Joao Carlos Mendes Luis <jonny@jonny.eng.br>
 # $FreeBSD$
-#
 
 PORTNAME=	ispell
 PORTVERSION=	2.4
@@ -19,4 +15,5 @@ BUILD_DEPENDS=	buildhash:${PORTSDIR}/textproc/ispell
 
 MAN1=		conjugue.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,4 +1,3 @@
-# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	hunspell
@@ -23,6 +22,7 @@ PLIST_FILES=	%%DATADIR%%/pt_BR.aff \
 		%%DATADIR%%/pt_PT.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKDIR}/pt_BR.aff ${WRKDIR}/pt_BR.dic \
