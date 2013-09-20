@@ -14,7 +14,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit \
 		dmake:${PORTSDIR}/devel/dmake \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
-		${LOCALBASE}/include/mdds/global.hpp:${PORTSDIR}/devel/mdds \
+		mdds>=0.9.0:${PORTSDIR}/devel/mdds \
 		gpatch:${PORTSDIR}/devel/patch \
 		ucpp:${PORTSDIR}/devel/ucpp \
 		vigra-config:${PORTSDIR}/graphics/vigra \
