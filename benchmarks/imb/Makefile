@@ -31,6 +31,7 @@ CFLAGS=		-O3
 CFLAGS+=	-DCHECK
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/mpi/openmpi/bin/mpirun)

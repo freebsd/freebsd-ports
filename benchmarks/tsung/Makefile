@@ -24,6 +24,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 MAN1=	tsplot.1 tsung-recorder.1 tsung.1
 
+NO_STAGE=	yes
 post-patch-script:
 	@${REINPLACE_CMD} -e 's|MAN_DIR   = $$(datadir)/man/man1/|MAN_DIR   = $$(prefix)/man/man1/|' \
 		${WRKSRC}/Makefile.in

@@ -23,4 +23,5 @@ MAN1=		flowgrind-stop.1 \
 		flowgrind.1 \
 		flowgrindd.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

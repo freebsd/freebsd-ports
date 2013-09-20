@@ -12,6 +12,7 @@ COMMENT=	Calculates round trip time from pcap files or live capture
 PLIST_FILES=	bin/spp
 MAN1=		spp.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E '/(-DDEBUG|-g)/s|^|#|g' \
 		${WRKSRC}/Makefile

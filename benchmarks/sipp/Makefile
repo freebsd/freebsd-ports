@@ -28,6 +28,7 @@ OPENSSL_DESC=	OpenSSL support (for digest auth and SIP over TLS)
 GSL_DESC=	GSL support (for statistical distributed pauses)
 PCAPPLAY_DESC=	RTP play support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGSL}

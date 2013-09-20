@@ -29,6 +29,7 @@ MAN8=		bw_file_rd.8 bw_mem.8 bw_mem_rd.8 bw_mmap_rd.8 \
 
 USES=		gmake
 
+NO_STAGE=	yes
 # the bindir for the PLIST is:
 # (note that ./os needs to be run inside the work dir, running it
 #  outside will give a different result.)

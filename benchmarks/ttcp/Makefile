@@ -1,9 +1,5 @@
-# New ports collection makefile for: ttcp
-# Date created:			Tue Jun  1 22:58:13 PDT 1999
-# Whom:				mharo@FreeBSD.org
-#
+# Created by: mharo@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	ttcp
 PORTVERSION=	1.12
@@ -26,6 +22,7 @@ NO_WRKSUBDIR=	yes
 DIST_SUBDIR=	${PORTNAME}
 MAN1=		ttcp.1
 
+NO_STAGE=	yes
 post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/ttcp.c ${WRKSRC}/
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/ttcp.1 ${WRKSRC}/

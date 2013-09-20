@@ -20,6 +20,7 @@ GNUPLOT_DESC=	Support for plotting graphs
 
 MAN1=		fio.1 fio_generate_plots.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

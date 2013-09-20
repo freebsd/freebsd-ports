@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  iozone
-# Date created:			  26 September 1994
-# Whom:				  jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	iozone
 PORTVERSION=	2.01
@@ -26,4 +21,5 @@ EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=	YES
 MAN1=		iozone.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

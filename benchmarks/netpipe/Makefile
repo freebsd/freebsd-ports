@@ -1,7 +1,4 @@
-# New ports collection makefile for: netpipe
-# Date created:		20 Feb 1998
-# Whom:			jkoshy
-#
+# Created by: jkoshy
 # $FreeBSD$
 
 PORTNAME=	NetPIPE
@@ -21,6 +18,7 @@ PLIST_FILES=	bin/NPtcp bin/NPtcp6
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:L}
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} \
 		&& ${CC} ${CFLAGS} src/netpipe.c src/tcp.c -DTCP -o NPtcp \

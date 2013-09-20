@@ -1,10 +1,5 @@
-# New ports collection makefile for:	tcpblast
-# Date created:		22 August 1994
-# Whom:			mr
-#
+# Created by: mr
 # $FreeBSD$
-#
-# port's source files are in src dir in portball
 
 PORTNAME=	tcpblast
 PORTVERSION=	1.1
@@ -19,6 +14,7 @@ PLIST_FILES=	bin/tcpblast
 
 WRKSRC=		${WRKDIR}/src
 
+NO_STAGE=	yes
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}

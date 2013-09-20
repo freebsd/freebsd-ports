@@ -1,5 +1,4 @@
-# Created by:	Kris Moore <kmoore@FreeBSD.org>
-#
+# Created by: Kris Moore <kmoore@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	phoronix-test-suite
@@ -30,6 +29,7 @@ OPTIONS_DEFAULT=	X11
 BASH_COMPLETIONS_DESC=	Install bash completions
 X11_DESC=		Install X11 icons and mimetypes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

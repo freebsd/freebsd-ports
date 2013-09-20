@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  raidtest
-# Date created:			  Sat Oct 16, 2004
-# Whom:				  David O'Brien (obrien@FreeBSD.org)
-#
+# Created by: David O'Brien (obrien@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	raidtest
 PORTVERSION=	1.2
@@ -18,6 +13,7 @@ COMMENT=	Test performance of storage devices
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/raidtest
 
+NO_STAGE=	yes
 do-fetch:
 
 do-extract:

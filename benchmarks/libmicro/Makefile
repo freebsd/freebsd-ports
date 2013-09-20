@@ -25,6 +25,7 @@ PLIST_SUB=	ARCH="${ARCH}"
 
 PKGLIBDIR=	${PREFIX}/lib/${PORTNAME}
 
+NO_STAGE=	yes
 post-build:
 	@${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/libmicro-bench
 	@${ECHO_CMD} '(cd ${PKGLIBDIR} && ./bench $$1)' >> ${WRKDIR}/libmicro-bench.sh

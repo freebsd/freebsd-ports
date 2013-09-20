@@ -24,6 +24,7 @@ PLIST_FILES=	sbin/bhm sbin/postal bin/postal-list sbin/rabid
 MAN1=	postal-list.1
 MAN8=	bhm.8 postal.8 rabid.8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS=	--disable-gnutls

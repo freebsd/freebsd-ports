@@ -22,6 +22,7 @@ MAKE_ENV+=	OUT="-o" LIBS=${PTHREAD_LIBS}
 PLIST_FILES+=	bin/netio6
 .endif
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; \
 	${SETENV} ${MAKE_ENV} O=.o CFLAGS="${CFLAGS}" ${GMAKE} all

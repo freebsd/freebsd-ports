@@ -1,4 +1,4 @@
-# Whom:					Andy Clark <andrewclarkii@gmail.com>
+# Created by: Andy Clark <andrewclarkii@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	nuttcp
@@ -26,6 +26,7 @@ OPTIONS_DEFAULT=	NUTTSCP
 
 NUTTSCP_DESC=	Install script for copying files over nuttcp
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNUTTSCP}

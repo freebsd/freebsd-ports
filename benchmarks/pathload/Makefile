@@ -19,6 +19,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/pathload_rcv bin/pathload_snd
 
+NO_STAGE=	yes
 do-install:
 .for f in pathload_rcv pathload_snd
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin

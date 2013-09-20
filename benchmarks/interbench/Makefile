@@ -22,6 +22,7 @@ PORTDOCS=	readme readme.interactivity
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

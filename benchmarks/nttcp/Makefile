@@ -20,6 +20,7 @@ USES=		gmake
 MAKE_ENV+=	OPT="${CFLAGS}"
 NOPRECIOUSMAKEVARS=yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nttcp ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/nttcp.1 ${PREFIX}/man/man1/

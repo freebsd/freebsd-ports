@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dkftpbench
-# Date created:		2004-10-22
-# Whom:			Roman Bogorodskiy <bogorodskiy@inbox.ru>
-#
+# Created by: Roman Bogorodskiy <bogorodskiy@inbox.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	dkftpbench
 PORTVERSION=	0.45
@@ -20,4 +16,5 @@ GNU_CONFIGURE=	yes
 
 USE_AUTOTOOLS=	automake14 autoconf
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

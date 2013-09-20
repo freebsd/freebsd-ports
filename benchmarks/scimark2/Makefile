@@ -28,6 +28,7 @@ SMSH=		${PORTNAME}${PKGNAMESUFFIX}
 PLIST_SUB=	SMDIR=${LSMDIR}
 PKGMESSAGE=	${WRKSRC}/pkg-message
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${JAVAC} ${JAVAC_OPTS} commandline.java
 	@${CP} ${WRKSRC}/commandline.class ${WRKSRC}/jnt/scimark2

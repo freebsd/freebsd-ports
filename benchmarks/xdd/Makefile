@@ -17,6 +17,7 @@ PLIST_FILES=	bin/xdd bin/timeserver bin/gettime
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(c|cpp|h)
 
+NO_STAGE=	yes
 post-extract:
 	${CP} ${FILESDIR}/freebsd.makefile ${WRKSRC}
 

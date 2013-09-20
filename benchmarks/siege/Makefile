@@ -23,6 +23,7 @@ MAN1=		siege.1 siege.config.1 bombardment.1 siege2csv.1
 MAN5=		urls_txt.5
 MAN7=		layingsiege.7
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/siege ${PREFIX}/bin/
 	@${INSTALL_SCRIPT} ${WRKSRC}/utils/bombardment ${PREFIX}/bin/

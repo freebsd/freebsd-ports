@@ -17,6 +17,7 @@ MAKE_JOBS_UNSAFE=	yes
 PLIST_FILES=	bin/pathchirp_rcv bin/pathchirp_snd bin/pathchirp_run
 PORTDOCS=	README
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/CFLAGS.*O4/d' ${WRKSRC}/configure
 

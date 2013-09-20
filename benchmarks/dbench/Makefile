@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dbench
-# Date created:		18 Febrary 2002
-# Whom:			Andrew Shevtsov <nyxo@dnuc.polyn.kiae.su>
-#
+# Created by: Andrew Shevtsov <nyxo@dnuc.polyn.kiae.su>
 # $FreeBSD$
-#
 
 PORTNAME=	dbench
 PORTVERSION=	4.0
@@ -28,6 +24,7 @@ CONFIGURE_ARGS+=--datadir=${DATADIR}
 MAN1=		dbench.1
 MLINKS=		dbench.1 tbench.1 dbench.1 tbench_srv.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,$$(mandir),$$(mandir)/man1,' \
 		${WRKSRC}/Makefile.in
