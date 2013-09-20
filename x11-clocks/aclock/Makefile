@@ -1,9 +1,5 @@
-# New ports collection makefile for:    aclock
-# Date created:         6 Oct 2006
-# Whom:                 gurkan@phys.ethz.ch
-#
+# Created by: gurkan@phys.ethz.ch
 # $FreeBSD$
-#
 
 PORTNAME=	aclock
 PORTVERSION=	0.4.0
@@ -24,4 +20,5 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

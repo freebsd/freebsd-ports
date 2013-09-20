@@ -19,6 +19,7 @@ USES=		gettext pathfix gmake pkgconfig
 USE_GSTREAMER=	yes
 USE_GNOME=	gtk20
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

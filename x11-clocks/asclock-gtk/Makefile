@@ -1,9 +1,4 @@
-# New ports collection makefile for:	asclock-gtk
-# Date created:		16 March 1998
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	asclock-gtk
 PORTVERSION=	2.1.10
@@ -23,6 +18,7 @@ USE_XORG=	x11 xt
 USE_GNOME=	gtk12
 HAS_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM}
 

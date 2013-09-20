@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pclock
-# Date created:			15 Apr 1999
-# Whom:				Jim Mock <jim@FreeBSD.org>
-#
+# Created by: Jim Mock <jim@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pclock
 PORTVERSION=	0.13.1
@@ -22,6 +18,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" OBJS="Main.o Graphics.o" \
 		INCDIR="-I. -I${LOCALBASE}/include ${CPPFLAGS}" \
 		LIBDIR="-L${LOCALBASE}/lib ${LDFLAGS}"
 
+NO_STAGE=	yes
 post-extract:
 	cd ${WRKSRC} && ${RM} -f getopt*
 

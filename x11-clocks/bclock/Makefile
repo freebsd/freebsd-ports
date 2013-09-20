@@ -18,4 +18,5 @@ MAN1=		bclock.1
 PLIST_FILES=	bin/bclock \
 		lib/X11/app-defaults/Clock-color
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

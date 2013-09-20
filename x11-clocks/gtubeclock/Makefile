@@ -15,4 +15,5 @@ USE_XORG=	x11
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20 libgnomeui
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

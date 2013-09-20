@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmfuzzy
-# Date created:			4 August 2002
-# Whom:				Adam Weinberger <adam@vectors.cx>
-#
+# Created by: Adam Weinberger <adam@vectors.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	wmfuzzy
 PORTVERSION=	0.7.1
@@ -22,6 +18,7 @@ USE_XORG=	xpm
 PORTDOCS=	README
 PLIST_FILES=	bin/wmfuzzy
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmfuzzy ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

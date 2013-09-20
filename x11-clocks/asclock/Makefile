@@ -22,6 +22,7 @@ USE_XORG=	xpm xext x11
 MAN1=		asclock.1
 PLIST_FILES=	bin/asclock
 
+NO_STAGE=	yes
 pre-configure:
 	(cd ${WRKSRC}; \
 	${ECHO_CMD} ${ASCLOCK_LANG} | ${WRKSRC}/configure > /dev/null)

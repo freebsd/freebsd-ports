@@ -1,9 +1,5 @@
-# New ports collection makefile for:	osdclock
-# Date created:		2004-08-06
-# Whom:			Roman Bogorodskiy <bogorodskiy@inbox.ru>
-#
+# Created by: Roman Bogorodskiy <bogorodskiy@inbox.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	osdclock
 PORTVERSION=	0.5
@@ -26,6 +22,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 PLIST_FILES=	bin/osd_clock
 MAN1=		osd_clock.1
 
+NO_STAGE=	yes
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/osd_clock
 

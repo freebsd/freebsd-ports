@@ -23,6 +23,7 @@ EMICLOCKDIR=	${LOCALBASE}/lib/X11/EmiClock
 PORTDOCS=	COPYRIGHT COPYRIGHT.en
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"

@@ -14,6 +14,7 @@ COMMENT=	Display the current time using the X root cursor
 USES=		imake:notall
 USE_XORG=	x11
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

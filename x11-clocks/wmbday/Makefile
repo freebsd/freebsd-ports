@@ -1,7 +1,4 @@
-# New ports collection makefile for:	wmbday
-# Date created:				2004-01-06
-# Whom:					Ulrich Spoerlein <uspoerlein@gmail.com>
-#
+# Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	wmbday
@@ -24,4 +21,5 @@ MAKE_ENV+=	${CONFIGURE_ENV} X11BASE=${LOCALBASE}
 MAN1=		wmbday.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

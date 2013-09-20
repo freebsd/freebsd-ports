@@ -25,6 +25,7 @@ MAKE_JOBS_UNSAFE=yes
 MAN1=		buici-clock.1
 PLIST_FILES=	bin/buici-clock
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|echo -e|echo| ; \

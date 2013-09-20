@@ -1,13 +1,5 @@
-# ex:ts=8
-# Ports collection Makefile for:  rclock
-# Date created:			  24th Feburary 1997
-# Whom:				  obrien@NUXI.com
-#
+# Created by: obrien@NUXI.com
 # $FreeBSD$
-#
-# If possible, please consider updating the simple ports/x11/rxvt-devel
-# when you upgrade rxvt.  These ports all use the same distfile.
-#
 
 PORTNAME=	rclock
 PORTVERSION=	2.7.10
@@ -28,6 +20,7 @@ PLIST_FILES=	bin/rclock
 
 CPPFLAGS+=	-DMAIL_SPOOL='\"/var/mail/\"'
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		's|^subdirs =.*$$|subdirs = rclock|g' ${WRKSRC}/Makefile.in

@@ -12,4 +12,5 @@ USE_XORG=	x11 xmu xext xt xkbfile
 
 MAN1=		oclock.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
