@@ -9,6 +9,20 @@ matplotlib	math/py-matplotlib
 xlrd		textproc/py-xlrd
 xlwt		textproc/py-xlwt
 
+To use the HTML table parsing capabilities that are new to 0.12.0, you
+will need to install
+
+beautifulsoup	www/py-beautifulsoup
+
+and one or the other or both of
+
+html5lib	www/py-html5lib
+lxml		devel/py-lxml
+
+Please read the pandas documentation before deciding:
+
+http://pandas.pydata.org/pandas-docs/stable/gotchas.html#html-gotchas
+
 Also recommended, but not yet available in ports are:
 
 bottleneck		http://berkeleyanalytics.com/bottleneck/
