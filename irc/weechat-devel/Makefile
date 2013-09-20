@@ -47,6 +47,7 @@ TCL_DESC=	Tcl scripting support
 COLOR256_DESC=	Use ncurses port for 256 color support
 ICON_DESC=	Desktop icon
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCHARSET}

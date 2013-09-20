@@ -35,6 +35,7 @@ PLIST_SUB=	PURELISP=${LISPDIR} \
 		XEMACS_ONLY=${XEMACS_ONLY} \
 		PUREBIN=${PUREBIN}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|CFLAGS=$$(CFLAGS)|| ; \

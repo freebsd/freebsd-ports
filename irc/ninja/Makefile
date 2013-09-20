@@ -17,6 +17,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 LATEST_LINK=	irc-ninja
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%IRCLIB%%|${DATADIR}|g" \
 		${WRKSRC}/include/config.h.dist

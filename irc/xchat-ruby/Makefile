@@ -25,6 +25,7 @@ PLIST_FILES=	lib/xchat/plugins/xchat-ruby.so
 PORTDOCS=	README ChangeLog
 PORTEXAMPLES=	embedify.rb TimerSample.rb JFilter.rb JBanner.rb
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's|^RUBY=.*|RUBY=${RUBY}|' \

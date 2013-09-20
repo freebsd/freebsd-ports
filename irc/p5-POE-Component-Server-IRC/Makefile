@@ -38,4 +38,5 @@ MAN3=		POE::Component::Server::IRC.3 \
 		POE::Component::Server::IRC::Plugin::OperServ.3 \
 		POE::Component::Server::IRC::Backend.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

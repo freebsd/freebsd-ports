@@ -62,6 +62,7 @@ DBUS_CONFIGURE_ENABLE=	dbus
 NOTIFY_RUN_DEPENDS=	notify-send:${PORTSDIR}/devel/libnotify
 NOTIFY_CONFIGURE_ENABLE=	libnotify
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MLIBSEXY} && ! ${PORT_OPTIONS:MGTKSPELL} && ! ${PORT_OPTIONS:MSTATIC}

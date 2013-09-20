@@ -1,9 +1,5 @@
-# New ports collection makefile for:	miau
-# Date created:				23 Apr 2004
-# Whom:					Oliver Eikemeier
-#
+# Created by: Oliver Eikemeier
 # $FreeBSD$
-#
 
 PORTNAME=		miau
 PORTVERSION=		0.6.6
@@ -39,6 +35,7 @@ CPPFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,\$$datadir/doc/miau/examples,${EXAMPLESDIR},g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}

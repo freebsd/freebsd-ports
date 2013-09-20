@@ -29,6 +29,7 @@ MAN1=		ssfe.1 sirc.1
 
 PORTDOCS=	ChangeLog PROGRAMMING README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

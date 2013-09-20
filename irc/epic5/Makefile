@@ -31,6 +31,7 @@ TERMCAP_DESC=	Refuse to use terminfo/ncurses
 CONFIGURE_ARGS+=--with-iconv=${ICONV_PREFIX}
 USES=		iconv
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MIPV6}

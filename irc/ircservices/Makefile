@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ircservices
-# Date created:         Sun Oct 27 11:49:48 CET 2002
-# Whom:                 Alex Dupre <sysadmin@alexdupre.com>
-#
+# Created by: Alex Dupre <sysadmin@alexdupre.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ircservices
 PORTVERSION=	5.1.18
@@ -25,6 +21,7 @@ CONFIGURE_ARGS=	-bindest ${PREFIX}/sbin -datdest ${PREFIX}/etc/ircservices -cfla
 
 IRCSERVICES_LANG?=	EN_US
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 700042

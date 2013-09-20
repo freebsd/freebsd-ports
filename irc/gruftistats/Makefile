@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gruftistats
-# Date created:		29 October 2001
-# Whom:			Matthew West <mwest@uct.ac.za>
-#
+# Created by: Matthew West <mwest@uct.ac.za>
 # $FreeBSD$
-#
 
 PORTNAME=	gruftistats
 PORTVERSION=	0.2.4
@@ -23,6 +19,7 @@ MAKE_ARGS=	NOPORTDOCS=1
 
 MAN1=		gruftistats.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's,strcasestr,strcasestr_x,g' ${WRKSRC}/ircstats.h \

@@ -26,6 +26,7 @@ BAHAMUT_DESC=	Enable Bahamut protocol (P10 is default)
 DEBUG_CONFIGURE_ON=	--enable-debug
 BAHAMUT_CONFIGURE_ON=	--with-protocol=bahamut
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

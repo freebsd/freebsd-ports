@@ -25,6 +25,7 @@ NO_BUILD=	yes
 
 SHEBANG_FILES=	keitairc
 
+NO_STAGE=	yes
 post-extract:
 	${FIND} ${WRKSRC} -name .cvsignore | ${XARGS} ${RM} -rf
 

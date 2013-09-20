@@ -1,9 +1,5 @@
-# Ports collection makefile for:	Solid-IRCd
-# Date created:				26 May 2005
-# Whom:					mj <systemoperator@gmail.com>
-#
+# Created by: mj <systemoperator@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	solid-ircd
 PORTVERSION=	3.4.8
@@ -27,6 +23,7 @@ CONFIGURE_ARGS+=	--disable-openssl
 USE_OPENSSL=	yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900007

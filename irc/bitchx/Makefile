@@ -34,6 +34,7 @@ PLUGINS_DESC=	Build a handful of BitchX plugins
 
 OPTIONS_DEFAULT=PLUGINS SSL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

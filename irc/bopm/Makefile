@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bopm
-# Date Created:				2004.08.06
-# Whom:					Evgueni V. Gavrilov <aquatique@rusunix.org>
-#
+# Created by: Evgueni V. Gavrilov <aquatique@rusunix.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bopm
 PORTVERSION=	3.1.3
@@ -31,6 +27,7 @@ SUB_LIST=	LOGDIR=${LOGDIR}
 USERS=	bopm
 GROUPS=	bopm
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's,data_DATA = bopm.conf.sample,data_DATA =,g' \

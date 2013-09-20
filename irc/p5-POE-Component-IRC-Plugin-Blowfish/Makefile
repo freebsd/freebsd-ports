@@ -25,6 +25,7 @@ USE_PERL5=	configure
 
 MAN3=		POE::Component::IRC::Plugin::Blowfish.3
 
+NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"

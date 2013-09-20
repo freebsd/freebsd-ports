@@ -20,6 +20,7 @@ MANCOMPRESSED=	yes
 PORTDOCS=	README
 PLIST_FILES=	bin/darkbot %%ETCDIR%%/logs/.pkgcreate
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

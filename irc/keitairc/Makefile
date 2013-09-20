@@ -36,6 +36,7 @@ SHEBANG_FILES=	keitairc
 
 PLIST_FILES=	bin/keitairc
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/keitairc ${PREFIX}/bin
 

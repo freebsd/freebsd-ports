@@ -35,6 +35,7 @@ LIBSEXY_DESC=	Spell check support via libsexy
 .if defined(WITH_PYTHON)
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBUS}

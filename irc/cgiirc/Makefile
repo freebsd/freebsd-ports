@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 USES=		perl5
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 pre-install:
 	@${MV} ${WRKSRC}/cgiirc.config ${WRKSRC}/cgiirc.config.sample 2>/dev/null || true
 

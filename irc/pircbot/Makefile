@@ -1,9 +1,5 @@
-# New ports collection makefile for:   pircbot
-# Date created:                2 June 2002
-# Whom:                        Tim Bishop <tim@bishnet.net>
-#
+# Created by: Tim Bishop <tim@bishnet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	pircbot
 PORTVERSION=	1.5.0
@@ -21,6 +17,7 @@ NO_BUILD=	yes
 
 USE_JAVA=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/pircbot.jar ${JAVAJARDIR}
 .ifndef(NOPORTDOCS)

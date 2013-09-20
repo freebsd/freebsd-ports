@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Xaric
-# Date created:		14 Oct 01
-# Whom:			alanp@unixpower.org
-#
+# Created by: alanp@unixpower.org
 # $FreeBSD$
-#
 
 PORTNAME=	xaric
 PORTVERSION=	0.13.6
@@ -25,6 +21,7 @@ PLIST_FILES=	bin/xaric \
 PLIST_DIRS=	%%DATADIR%%/help \
 		%%DATADIR%%
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ggdb3||g' ${WRKSRC}/Makefile.in
 

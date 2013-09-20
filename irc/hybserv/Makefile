@@ -29,6 +29,7 @@ GROUPS=		${USERS}
 DAEMONTOOLS_RUN_DEPENDS=	supervise:${PORTSDIR}/sysutils/daemontools
 DAEMONTOOLS_CONFIGURE_ENABLE=	daemontools
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

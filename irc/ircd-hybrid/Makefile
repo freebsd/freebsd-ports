@@ -1,6 +1,5 @@
 # Created by: David Taylor <davidt@yadt.co.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	ircd-hybrid
 PORTVERSION=	8.0.4
@@ -59,6 +58,7 @@ CONFIGURE_ARGS+=	\
 	--prefix=${LOCAL} \
 	--datarootdir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 pre-su-install:
 	${MKDIR} ${PREFIX}/etc/ircd-hybrid ${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 	${MKDIR} ${PREFIX}/share/${PORTNAME}-${PORTVERSION}/help/

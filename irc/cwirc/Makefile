@@ -17,6 +17,7 @@ BUILD_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 
 USES=		pkgconfig
 
+NO_STAGE=	yes
 post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \

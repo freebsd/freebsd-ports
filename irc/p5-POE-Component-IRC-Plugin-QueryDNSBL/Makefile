@@ -25,6 +25,7 @@ USE_PERL5=	configure
 
 MAN3=		POE::Component::IRC::Plugin::QueryDNSBL.3
 
+NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}

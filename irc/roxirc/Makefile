@@ -13,6 +13,7 @@ COMMENT=	A tcl/tk irc client
 USES+=		tk:run
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|if \[ -x .*|${WISH} "$$0" "$$@"|' ${WRKSRC}/roxirc
 

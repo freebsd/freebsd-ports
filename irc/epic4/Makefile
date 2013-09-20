@@ -29,6 +29,7 @@ OPTIONS_DEFINE=	IPV6 TCL PERL SSL TERMCAP DOCS
 OPTIONS_DEFAULT=	TCL PERL SSL
 TERMCAP_DESC=	Refuse to use terminfo/ncurses
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MIPV6}
