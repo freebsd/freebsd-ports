@@ -24,6 +24,7 @@ BASE_PORTNAME=	freeswitch
 
 WRKSRC=	${WRKDIR}/${BASE_PORTNAME}-${PORTVERSION}/scripts/javascript
 
+NO_STAGE=	yes
 pre-install:
 	@${REINPLACE_CMD} -e 's|include("js_modules/SpeechTools.jm")|include("javascript/js_modules/SpeechTools.jm")|g' ${WRKSRC}/ps_pizza.js
 	@${REINPLACE_CMD} -e 's|asr.setAudioBase("/root/pizza)|asr.setAudioBase("${PREFIX}/share/${BASE_PORTNAME}/sounds/en/us/callie/pizza/8000")|g' ${WRKSRC}/ps_pizza.js

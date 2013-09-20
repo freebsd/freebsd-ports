@@ -19,6 +19,7 @@ USE_PYTHON=	2.5+
 DOCSDIR=	${PREFIX}/share/doc/py-qt4
 PORTDOCS=	*
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC} &&\
 		${MKDIR} ${DOCSDIR} &&\

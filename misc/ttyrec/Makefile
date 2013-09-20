@@ -20,6 +20,7 @@ BINS=	ttyplay ttyrec ttytime
 OPTIONS_DEFINE=	OPENPTY
 OPENPTY_DESC=	Use openpty instead
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	amanda
-# Date created:				28th Feb 1995
-# Whom:					gpalmer
-#
+# Created by: gpalmer
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-client
 PORTREVISION=	4
@@ -17,4 +13,5 @@ PLIST=		${PKGDIR}/pkg-plist.client
 
 CLIENT_ONLY=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

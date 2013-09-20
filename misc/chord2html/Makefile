@@ -21,6 +21,7 @@ MAN1=	chord2html.1
 PLIST_FILES=	bin/chord2html share/chord2html/chord2html.css
 PLIST_DIRS=	share/chord2html
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e "s,%%PREFIX%%,${PREFIX},g ; \
 			 s,chord2html.css,${PREFIX}/share/chord2html/chord2html.css," \

@@ -26,6 +26,7 @@ SHAREOWN=	${PORTNAME}
 SHAREGRP=	${SHAREOWN}
 LATEST_LINK=    ${PORTNAME}${PKGNAMESUFFIX}
 
+NO_STAGE=	yes
 pre-install:
 	@${REINPLACE_CMD} -e 's|include("js_modules/SpeechTools.jm")|include("javascript/js_modules/SpeechTools.jm")|g' ${WRKSRC}/ps_pizza.js
 	@${REINPLACE_CMD} -e 's|asr.setAudioBase("/root/pizza)|asr.setAudioBase("${DATADIR}/sounds/pizza-demo/8000")|g' ${WRKSRC}/ps_pizza.js

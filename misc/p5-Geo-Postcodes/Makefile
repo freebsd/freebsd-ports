@@ -21,4 +21,5 @@ MAN3=		Geo::Postcodes.3 \
 		Geo::Postcodes::Tutorial.3 \
 		Geo::Postcodes::Update.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

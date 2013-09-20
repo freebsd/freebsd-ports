@@ -1,9 +1,5 @@
-# New ports collection makefile for:   fortune-mod-futurama
-# Date created:        18 November 2002
-# Whom:                stolz@i2.informatik.rwth-aachen.de
-#
+# Created by: stolz@i2.informatik.rwth-aachen.de
 # $FreeBSD$
-#
 
 PORTNAME=	fortune-mod-futurama
 PORTVERSION=	0.2
@@ -20,6 +16,7 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	share/games/fortune/futurama share/games/fortune/futurama.dat
 PLIST_DIRS=	share/games/fortune share/games
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && /usr/games/strfile futurama
 

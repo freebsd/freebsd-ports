@@ -15,4 +15,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES+=	bin/reminder bin/rrule
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

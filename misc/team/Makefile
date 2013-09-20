@@ -1,9 +1,5 @@
-# New ports collection makefile for:	team
-# Date created:		1 July 1995
-# Whom:			joerg
-#
+# Created by: joerg
 # $FreeBSD$
-#
 
 PORTNAME=	team
 PORTVERSION=	3.1
@@ -19,4 +15,5 @@ MAN1=		team.1
 MANCOMPRESSED=	maybe
 PLIST_FILES=	bin/team
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

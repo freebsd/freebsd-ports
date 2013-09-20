@@ -17,6 +17,7 @@ USE_QT4=	gui xml qmake_build uic_build moc_build multimedia \
 		rcc_build
 USE_DOS2UNIX=	rc/alarm.pri
 
+NO_STAGE=	yes
 do-configure:
 	cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
 

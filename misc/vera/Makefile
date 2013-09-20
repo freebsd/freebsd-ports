@@ -1,9 +1,5 @@
-# New ports collection makefile for:	V.E.R.A.
-# Date created:		9 March 1999
-# Whom:			Dima Sivachenko	<dima@chg.ru>
-#
+# Created by: Dima Sivachenko	<dima@chg.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	vera
 PORTVERSION=	1.17
@@ -17,6 +13,7 @@ COMMENT=	Virtual Entity of Relevant Acronyms
 INFO=		vera
 LICENSE=	GFDL
 
+NO_STAGE=	yes
 do-build:
 	@ cd ${WRKSRC} && makeinfo --no-split vera.texi
 

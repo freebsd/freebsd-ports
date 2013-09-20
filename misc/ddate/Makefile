@@ -38,6 +38,7 @@ KILLBOB_DESC=	Countdown to X-Day
 
 OPTIONS_DEFAULT=KILLBOB
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUSFORMAT}

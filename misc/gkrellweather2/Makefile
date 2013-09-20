@@ -19,6 +19,7 @@ ALL_TARGET=	gkrellweather.so
 
 MAKE_ENV=	enable_nls=1 PTHREAD_LIBS=${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # uses C99 builtin lrintf

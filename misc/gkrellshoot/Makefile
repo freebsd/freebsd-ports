@@ -18,4 +18,5 @@ PLIST_FILES=	libexec/gkrellm/plugins/gkrellshoot.so
 WRKSRC=		${WRKDIR}/gkrellShoot-${PORTVERSION}
 USE_GNOME=	imlib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

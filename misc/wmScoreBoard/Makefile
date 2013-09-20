@@ -17,6 +17,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 USE_GMAKE=	yes
 USE_XORG=	xpm
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

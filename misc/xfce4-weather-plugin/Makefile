@@ -1,6 +1,5 @@
 # Created by: Filippo Natali <filippo@widestore.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-weather-plugin
 PORTVERSION=	0.8.3
@@ -26,6 +25,7 @@ USE_XFCE=	configenv libmenu libutil panel
 OPTIONS_DEFINE=	UPOWER
 UPOWER_DESC=	Power state support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUPOWER}

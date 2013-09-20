@@ -42,6 +42,7 @@ PARLEY_DESC=		Vocabulary trainer
 ROCS_DESC=		Graph teory IDE
 STEP_DESC=		Interactive physics simulator
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBLINKEN}

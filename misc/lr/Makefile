@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  lr
-# Date created:                          Tue Jul 14, 2002
-# Whom:                                  Michael L. Hostbaek (mich@freebsdcluster.org)
-#
+# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
 # $FreeBSD$
-#
 
 PORTNAME=	lr
 PORTVERSION=	2.0
@@ -15,6 +10,7 @@ DISTNAME=	lazyread-${PORTVERSION}
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Lazyread can auto-scroll files on your screen in movie credit fashion
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(/usr/bin/lesspipe.sh)

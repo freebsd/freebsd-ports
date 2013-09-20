@@ -32,4 +32,5 @@ MAN3=		Business::EDI.3 \
 		Business::EDI::Composite.3 \
 		Business::EDI::Spec.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

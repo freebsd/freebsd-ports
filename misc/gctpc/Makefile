@@ -20,6 +20,7 @@ ALL_TARGET=	libgctpc.so.1
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

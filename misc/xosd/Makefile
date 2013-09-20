@@ -39,6 +39,7 @@ XMMS_DESC=	Build and install XMMS-OSD plugin
 MSEC_DESC=	Use milliseconds timeout (breaks compatibility!)
 XFT_DESC=	Unofficial Xft support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXMMS}

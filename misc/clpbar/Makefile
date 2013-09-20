@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	clpbar
-# Date created:			Sep 3, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	clpbar
 PORTVERSION=	1.11.1
@@ -22,4 +17,5 @@ MAKE_ARGS+=	CFLAGS+="${CFLAGS}"
 MAN1=		bar.1
 PLIST_FILES=	bin/bar
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

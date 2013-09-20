@@ -19,6 +19,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/xbiso
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(CPPFLAGS)|@CPPFLAGS@|g ; \
 		 s|= @LIBS@|= @LDFLAGS@ @LIBS@|g' ${WRKSRC}/Makefile.in

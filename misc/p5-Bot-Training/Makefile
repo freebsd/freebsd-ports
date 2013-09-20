@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Bot::Training
-# Date created:	   2011-07-19
-# Whom:		   milki <milki@rescomp.berkeley.edu>
-#
+# Created by: milki <milki@rescomp.berkeley.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	Bot-Training
 PORTVERSION=	0.04
@@ -36,4 +32,5 @@ USE_PERL5=	configure
 MAN1=	bot-training.1
 MAN3=	Bot::Training.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

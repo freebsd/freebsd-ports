@@ -27,6 +27,7 @@ MHASH_DESC=	Use mhash for hash generation
 
 OPTIONS_DEFAULT=	MHASH
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMHASH}

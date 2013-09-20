@@ -30,6 +30,7 @@ MIMEDIRS=	${LOCALBASE}/share/mime \
 MIMESUBDIRS=	application audio image inode message model multipart \
 		packages text video x-epoc x-content
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/update-mime-database.c

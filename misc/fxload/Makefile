@@ -1,9 +1,5 @@
-# New ports collection makefile for:   fxload
-# Date created:		10 May 2010
-# Whom:			Wojciech A. Koszek <wkoszek@FreeBSD.org>
-#
+# Created by: Wojciech A. Koszek <wkoszek@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fxload
 PORTVERSION=	20100510
@@ -17,6 +13,7 @@ MAN8=		fxload.8
 USE_GMAKE=	yes
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fxload ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/fxload.8 ${PREFIX}/man/man8

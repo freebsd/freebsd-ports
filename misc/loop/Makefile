@@ -1,9 +1,5 @@
-# New ports collection makefile for:	loop
-# Date created:				12 November 2005
-# Whom:					Murray Nesbitt <freebsd@nesbitt.ca>
-#
+# Created by: Murray Nesbitt <freebsd@nesbitt.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	loop
 PORTVERSION=	1.0
@@ -17,4 +13,5 @@ MAN1=		loop.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/loop
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

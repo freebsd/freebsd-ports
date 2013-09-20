@@ -15,4 +15,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	matimatik
 GH_COMMIT=	b6259ab
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

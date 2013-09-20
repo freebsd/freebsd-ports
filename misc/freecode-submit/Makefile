@@ -17,6 +17,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/freecode-submit
 MAN1=		freecode-submit.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

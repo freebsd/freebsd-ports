@@ -18,6 +18,7 @@ MAKE_ENV+=	LIBCGETOPT=0
 MAN1=		getopt.1
 DOCS=		Changelog README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

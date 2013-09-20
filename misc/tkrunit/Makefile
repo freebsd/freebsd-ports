@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tkrunnit
-# Date created:			6 February, 1999
-# Whom:				Stephen Farrell <steve@farrell.org>
-#
+# Created by: Stephen Farrell <steve@farrell.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tkRunIt
 PORTVERSION=	0.94.1
@@ -25,6 +21,7 @@ USE_TK_WRAPPER=	yes
 PORTEXAMPLES=	${PORTNAME:L}
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/bin|${PREFIX}/bin|' ${WRKSRC}/runit.tcl

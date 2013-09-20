@@ -21,4 +21,5 @@ USE_XORG=	xkbfile
 
 MAN1=		ktouch.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

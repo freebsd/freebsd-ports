@@ -57,6 +57,7 @@ NO_BUILD=	yes
 .MAKE.FreeBSD_UL= yes
 
 REF_LIST_INC=	${.CURDIR}/Makefile.inc
+NO_STAGE=	yes
 .include "${REF_LIST_INC}"
 
 .for ref in ${_PORT_REF_LIST:C/^([^:]+).*/\1/}

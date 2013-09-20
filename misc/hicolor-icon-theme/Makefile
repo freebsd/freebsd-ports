@@ -1,10 +1,6 @@
-# New ports collection makefile for:	hicolor-icon-theme
-# Date created:        13 January 2003
-# Whom:                marcus@FreeBSD.org
-#
+# Created by: marcus@FreeBSD.org
 # $FreeBSD$
 #   $MCom: ports/misc/hicolor-icon-theme/Makefile,v 1.9 2009/09/26 12:53:31 marcus Exp $
-#
 
 PORTNAME=	hicolor-icon-theme
 PORTVERSION=	0.12
@@ -32,6 +28,7 @@ STOCK_SUBS=	chart code data form image io media navigation net object table text
 SUB_LIST=	ICON_SIZES="${ICON_SIZES}" ICON_CONTEXTS="${ICON_CONTEXTS}" \
 		STOCK_SUBS="${STOCK_SUBS}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-install:

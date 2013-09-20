@@ -18,6 +18,7 @@ MAKEFILE=	${WRKSRC}/Makefile.gnu
 ALL_TARGET=	birthday
 MAKE_ARGS=	CFLAGS="${CFLAGS} -DUNIX"
 
+NO_STAGE=	yes
 do-configure:
 		cd ${WRKSRC} && ${MAKE} Makefile.gnu
 

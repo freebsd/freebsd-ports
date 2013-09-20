@@ -1,9 +1,5 @@
-# New ports collection makefile for:   fortune-mod-bible
-# Date created:        3/30/2004
-# Whom:                djp
-#
+# Created by: djp
 # $FreeBSD$
-#
 
 PORTNAME=	fortune-mod-bible
 PORTVERSION=	1.0
@@ -22,6 +18,7 @@ USE_BZIP2=	yes
 SUB_FILES+=	pkg-message
 _STRFILE=	/usr/games/strfile
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && ${_STRFILE} -C bible
 

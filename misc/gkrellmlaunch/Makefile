@@ -19,6 +19,7 @@ PLIST_FILES=	libexec/gkrellm/plugins/gkrellmlaunch.so
 USE_GNOME=	imlib
 ALL_TARGET=	${PORTNAME}.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC

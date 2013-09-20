@@ -16,6 +16,7 @@ MAKE_ARGS=	INCLUDES="-I${LOCALBASE}/include/X11 -I${LOCALBASE}/include" \
 		LIBINC="-L${LOCALBASE}/lib" LIBS="-lm -lX11 -lXpm -lXext" \
 		CCFLAGS="${CFLAGS}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

@@ -13,6 +13,7 @@ COMMENT=	CPU identification utility
 PLIST_FILES=	bin/cpuid
 ONLY_FOR_ARCHS=	i386 amd64
 
+NO_STAGE=	yes
 post-patch:
 	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.bak && \
 	    ${CP} ${FILESDIR}/Makefile.bsd ${WRKSRC}/Makefile

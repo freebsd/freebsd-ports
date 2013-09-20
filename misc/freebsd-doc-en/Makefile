@@ -3,6 +3,7 @@
 
 # Several knobs can be used to select the documentation formats.
 #
+NO_STAGE=	yes
 # WITH_HTML_SPLIT allows the build of the "html-split" format:
 # This is the default format, it is the same format used on
 # www.FreeBSD.org.  It is a collection of small, linked HTML files

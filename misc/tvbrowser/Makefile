@@ -17,6 +17,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 SUB_FILES=	tvbrowser
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/share/applications/
 	@${REINPLACE_CMD} -e "s/${PORTNAME}\.sh/${PORTNAME}/" ${WRKSRC}/${PORTNAME}.desktop

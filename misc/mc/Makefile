@@ -31,6 +31,7 @@ SUBSHELL_DESC=	Build with subshell support
 
 OPTIONS_DEFAULT=	SLANG ICONV NLS EDIT X11 SUBSHELL SMB
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's/SUBDIRS = intl/SUBDIRS =/' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's/saved_CPPFLAGS="-ltermcap/saved_CPPFLAGS="/' ${WRKSRC}/configure

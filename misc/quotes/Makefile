@@ -16,6 +16,7 @@ NO_BUILD=	yes
 USES=		shebangfix perl5
 SHEBANG_FILES=	quotes quotesmailer QuExample.pm
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

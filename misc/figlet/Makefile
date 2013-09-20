@@ -19,6 +19,7 @@ MAKE_ARGS=	LD=${CC}
 
 MAN6=		chkfont.6 figlet.6 figlist.6 showfigfonts.6
 
+NO_STAGE=	yes
 regression-test:
 	@ cd ${WRKSRC} && ${MAKE} check
 

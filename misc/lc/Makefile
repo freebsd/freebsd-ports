@@ -12,6 +12,7 @@ COMMENT=	Alternative to ls(1)
 MAN1=		lc.1
 PLIST_FILES=	bin/lc
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/lc ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/lc.1 ${MAN1PREFIX}/man/man1

@@ -19,6 +19,7 @@ USE_TK_WRAPPER=	yes
 MAN1=		tkinfo.1
 PLIST_FILES=	bin/tkinfo
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/info|${LOCALBASE}/info|' ${WRKSRC}/tkinfo

@@ -35,6 +35,7 @@ PLIST_DIRSTRY=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/ISBN \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business \
 		%%SITE_PERL%%/Business
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBARCODE}

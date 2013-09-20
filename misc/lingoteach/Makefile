@@ -36,6 +36,7 @@ CONFIGURE_ARGS+=	--enable-debug
 PLIST=		${WRKDIR}/plist
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	United Kingdom phone codes.
-# Date created:         1998-01-01
-# Whom:                 wosch
-#
+# Created by: wosch
 # $FreeBSD$
-#
 
 PORTNAME=	uk-phone
 PORTVERSION=	2.7
@@ -22,6 +18,7 @@ EXTRACT_AFTER_ARGS=	> ${WRKSRC}/uk.phone
 NO_BUILD=	yes
 PLIST_FILES=	share/misc/uk.phone
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/uk.phone ${PREFIX}/share/misc
 

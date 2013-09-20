@@ -15,6 +15,7 @@ COMMENT=	Unix menuing shell
 NO_WRKSUBDIR=	yes
 MAN1=		mshell.1
 
+NO_STAGE=	yes
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   fortuneit
-# Date created:        25-01-1999
-# Whom:                gmarco@giovannelli.it
-#
+# Created by: gmarco@giovannelli.it
 # $FreeBSD$
-#
 
 PORTNAME=	fortuneit
 PORTVERSION=	1.99
@@ -21,6 +17,7 @@ FORTUNEFILES=	adams banner computer definizioni formiche italia itatrek \
 		computer-o definizioni-o film-o italia-o jackfr-o leggi-o \
 		luttazzi-o obsc-o zuse-o
 
+NO_STAGE=	yes
 pre-build:
 .if !exists(${STRCMD})
 	@${ECHO_MSG} "Please install the games distribution"

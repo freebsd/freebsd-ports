@@ -23,6 +23,7 @@ SUB_FILES=	pipe.sh
 PORTDOCS=*
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/pipe.sh ${PREFIX}/bin/pipe
 	@${MKDIR} ${DATADIR}

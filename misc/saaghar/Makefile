@@ -23,6 +23,7 @@ HAS_CONFIGURE=	yes
 QMAKEFLAGS+=	PREFIX=${PREFIX}
 WRKSRC=		${WRKDIR}/Saaghar
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MDEBUG}

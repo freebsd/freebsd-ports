@@ -29,6 +29,7 @@ PLIST_FILES=	bin/kenny
 
 POD2MAN?=	${LOCALBASE}/bin/pod2man
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/${PORTNAME}
 	@${POD2MAN} ${WRKDIR}/${PORTNAME} > ${WRKDIR}/${PORTNAME}.1

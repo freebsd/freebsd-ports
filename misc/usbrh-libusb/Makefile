@@ -1,9 +1,5 @@
-# New ports collection makefile for:   usbrh-libusb
-# Date created:        2009-07-20
-# Whom:                sanpei@FreeBSD.org
-#
+# Created by: sanpei@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	usbrh-libusb
 PORTVERSION=	0.05
@@ -18,6 +14,7 @@ COMMENT=	Yet another reads temperatures and humidity from a Strawberry Linux USB
 
 PLIST_FILES=	bin/usbrh
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} <= 800097

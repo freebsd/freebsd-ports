@@ -18,6 +18,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/pks2wot bin/wotsap
 PORTSCOUT=	ignore:1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pks2wot ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/wotsap ${PREFIX}/bin

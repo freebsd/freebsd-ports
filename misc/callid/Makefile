@@ -21,6 +21,7 @@ PORTDOCS=	CHANGES README TODO make-db.mysql
 
 RUN_DEPENDS+=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-everything::

@@ -25,6 +25,7 @@ PEAR_XML_SERIALIZER_DESC=	PEAR::XML::Serializer support
 
 PEAR_AUTOINSTALL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPEAR_NET_FTP}

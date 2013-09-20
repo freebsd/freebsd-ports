@@ -34,6 +34,7 @@ PRINTMANAGER_DESC=	Install print manager
 SUPERKARAMBA_DESC=	Install widget framework SuperKaramba
 SWEEPER_DESC=		Install system cleaner Sweeper
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MARK}

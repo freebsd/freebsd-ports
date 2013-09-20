@@ -21,6 +21,7 @@ PLIST_FILES=	libexec/gkrellm2/plugins/helium.so
 CFLAGS+=	-fPIC -I${LOCALBASE}/include
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/lib/gkrellm2/plugins|${PREFIX}/libexec/gkrellm2/plugins| ; \
 		s|CFLAGS =|CFLAGS?=| ; s|-lcurl|-lcurl -L${LOCALBASE}/lib|' ${WRKSRC}/Makefile

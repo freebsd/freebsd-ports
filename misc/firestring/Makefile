@@ -1,9 +1,5 @@
-# New ports collection makefile for:	firestring
-# Date created:		Mon 13 May 14:30:00 WST 2002
-# Whom:			Dean Hollister <dean@odyssey.apana.org.au>
-#
+# Created by: Dean Hollister <dean@odyssey.apana.org.au>
 # $FreeBSD$
-#
 
 PORTNAME=	firestring
 PORTVERSION=	0.9.12
@@ -19,6 +15,7 @@ USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

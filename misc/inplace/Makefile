@@ -26,4 +26,5 @@ PLIST_FILES=	bin/inplace
 test: build
 	cd ${WRKSRC}; ${MAKE} test
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

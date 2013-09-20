@@ -18,6 +18,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_DATA} ${DISTDIR}/${DISTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
 	@${SED} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \

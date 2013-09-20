@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	grc
-# Date created:			Mar 25, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	grc
 PORTVERSION=	1.4
@@ -22,6 +17,7 @@ USE_PYTHON_RUN=	yes
 
 MAN1=	grc.1 grcat.1
 
+NO_STAGE=	yes
 post-patch:
 .for i in grc grcat
 	@${REINPLACE_CMD} -e \

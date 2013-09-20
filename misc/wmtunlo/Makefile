@@ -14,6 +14,7 @@ COMMENT=	Falling-down-a-tunnel dockapp
 USE_XORG=	x11 xpm xextproto
 ALL_TARGET=	wmtunlo
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/wmtunlo ${PREFIX}/bin
 .ifndef NOPORTEXAMPLES

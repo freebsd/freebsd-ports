@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dphys-config
-# Date created:				12 Oct 2006
-# Whom:					<gurkan@phys.ethz.ch>
-#
+# Created by: <gurkan@phys.ethz.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	dphys-config
 PORTVERSION=	20100216
@@ -22,6 +18,7 @@ MAN1=		dphys-config.1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' ${WRKSRC}/${PORTNAME}
 

@@ -16,4 +16,5 @@ USE_GNOME=	gnomeprefix gnomehack gnomepanel
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-panel=gnome2
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

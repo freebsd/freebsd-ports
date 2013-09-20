@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freebsd-doc-hu
-# Date created:		13 August 2008
-# Whom:			Marc Fonvieille <blackend@FreeBSD.org>
-#
+# Created by: Marc Fonvieille <blackend@FreeBSD.org>
 # $FreeBSD$
-#
 
 CATEGORIES=	misc docs
 PKGNAMEPREFIX=	hu-
@@ -16,4 +12,5 @@ PLIST=		${.CURDIR}/pkg-plist
 
 DOCLANG=	hu_HU.ISO8859-2
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

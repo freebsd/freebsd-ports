@@ -69,6 +69,7 @@ SAMBA_DESC=	Enable the use of smbclient
 S3_DESC=	Enable Amazon S3 device support
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTAR}

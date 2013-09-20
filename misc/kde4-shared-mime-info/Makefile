@@ -21,6 +21,7 @@ NO_WRKSUBDIR=	yes
 MIMESUBDIRS=	application audio image inode message model multipart \
 		packages text video x-epoc x-content
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${KDE4_PREFIX} != ${LOCALBASE}

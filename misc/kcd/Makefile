@@ -20,6 +20,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 MAN1=		kcd.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

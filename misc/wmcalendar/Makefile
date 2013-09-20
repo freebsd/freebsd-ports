@@ -29,6 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		wmCalendar.1
 PLIST_FILES=	bin/wmCalendar
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
 			-e 's#/usr/X11R6#${LOCALBASE}#g' \

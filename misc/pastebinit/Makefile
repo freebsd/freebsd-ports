@@ -22,6 +22,7 @@ OPTIONS_DEFINE=	PASTEBINS
 PASTEBINS_DESC=	Install default pastebins
 OPTIONS_DEFAULT=	PASTEBINS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPASTEBINS}

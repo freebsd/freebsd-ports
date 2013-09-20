@@ -24,4 +24,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	quick-lounge.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

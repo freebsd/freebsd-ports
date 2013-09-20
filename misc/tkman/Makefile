@@ -24,6 +24,7 @@ MAKE_ARGS=	WISH="${WISH}" \
 		manformat="{groff -Tlatin1 -te -mandoc}" \
 		manprint="{groff -mandoc -Tps -te -l}"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -1,4 +1,4 @@
-# Created by: lofi@freebsd.org
+# Created by: lofi@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	qtconfig
@@ -41,6 +41,7 @@ DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
 EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 .endfor
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPHONON}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	yaunc
-# Date created:		5 March 2000
-# Whom:			nsayer@freebsd.org
-#
+# Created by: nsayer@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	yaunc
 PORTVERSION=	1.02
@@ -23,6 +19,7 @@ USE_RC_SUBR=	yaunc
 
 MAN1=		yaunc.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/yaunc.1
 

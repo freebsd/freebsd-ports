@@ -17,4 +17,5 @@ MAN1=	reseq.1 teseq.1
 
 PLIST_FILES=	bin/reseq bin/teseq
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

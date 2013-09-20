@@ -18,6 +18,7 @@ NO_BUILD=	yes
 MAN1=		txt2regex.1
 PLIST_FILES=	bin/txt2regex
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		"s,/bin/bash,${LOCALBASE}/bin/bash,g" ${WRKSRC}/${DISTNAME}.sh

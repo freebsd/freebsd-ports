@@ -17,6 +17,7 @@ PORTDOCS=	README anldp.pdf mace2.pdf otter33.pdf
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Metalink editor
-# Date created:		Sun 10 Aug 2008 10:50:59 UTC
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	metalink
 PORTVERSION=	1.2.0
@@ -48,6 +44,7 @@ DOC_FILES=	\
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 post-extract:
 # Create a package to avoid namespace pollution
 	@${MKDIR} ${WRKSRC}/Metalink_editor

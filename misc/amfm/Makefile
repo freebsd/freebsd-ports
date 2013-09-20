@@ -1,9 +1,5 @@
-# New ports collection makefile for:   amfm
-# Date created:        2009-06-21
-# Whom:                sanpei@FreeBSD.org
-#
+# Created by: sanpei@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	amfm
 PORTVERSION=	1.0
@@ -21,6 +17,7 @@ LIB_DEPENDS=	hid.0:${PORTSDIR}/devel/libhid
 
 NO_WRKSUBDIR=   yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 EXTRACT_CMD=            ${CP}

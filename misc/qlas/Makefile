@@ -15,6 +15,7 @@ USES=		shebangfix perl5
 SHEBANG_FILES=	qlas
 USE_DOS2UNIX=	qlas qlas.conf.default
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/qlas ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/qlas.conf.default ${PREFIX}/etc/

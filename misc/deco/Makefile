@@ -1,9 +1,5 @@
-# New ports collection makefile for:	deco
-# Date created:				16 Dec 1997
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	deco
 PORTVERSION=	3.9
@@ -22,4 +18,5 @@ CONFIGURE_ENV=	ac_cv_lib_ncurses_tgetent=no
 MAN1=		deco.1
 MANLANG=	"" ru.KOI8-R
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -31,6 +31,7 @@ DOCS=		CHANGELOG FAQ-MCAL FEATURE-IMPLEMENTATION FUNCTION-REF.html \
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-extract:
 	${CP} -pR ${WRKSRCDRV}/mstore ${WRKSRC}
 	${CP} -pR ${WRKSRCDRV}/icap ${WRKSRC}

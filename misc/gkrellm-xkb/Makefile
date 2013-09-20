@@ -18,4 +18,5 @@ PLIST_FILES=	libexec/gkrellm2/plugins/xkb.so
 MAKE_ENV=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins
 ALL_TARGET=	xkb.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

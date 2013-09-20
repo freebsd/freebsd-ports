@@ -16,6 +16,7 @@ USES=		bison iconv
 
 MAN1=		btedit.1 dbverify.1 llines.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext

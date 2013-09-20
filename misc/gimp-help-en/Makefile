@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gimp-help
-# Date created:		9th April 2010
-# Whom:			SimaMoto,RyoTa <liangtai.s4@gmail.com>
-#
+# Created by: SimaMoto,RyoTa <liangtai.s4@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gimp-help
 PORTVERSION=	2.6.1
@@ -32,6 +28,7 @@ GIMPDATADIR?=	${PREFIX}/share/gimp
 DOCLANG?=	en
 AMPLE?=	"@comment "
 
+NO_STAGE=	yes
 do-install:
 	@ ${MKDIR} ${GIMPDATADIR}/help ; \
 	cd ${WRKDIR}/${PORTNAME}-2/html && \

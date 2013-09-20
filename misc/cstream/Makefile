@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 MAN1=		cstream.1
 PLIST_FILES=	bin/cstream
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^if \[/s| $$CFLAGS | "$$CFLAGS" |' ${WRKSRC}/configure

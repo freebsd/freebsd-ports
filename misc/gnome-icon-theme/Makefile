@@ -24,4 +24,5 @@ CONFIGURE_ARGS=	--enable-icon-mapping
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

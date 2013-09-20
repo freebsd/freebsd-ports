@@ -21,4 +21,5 @@ GNU_CONFIGURE=	yes
 MAN1=		runtest.1
 INFO=		${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

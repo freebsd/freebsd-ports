@@ -36,6 +36,7 @@ vi_PORT=	vietnamese/kde4-l10n
 zh_CN_PORT=	chinese/kde4-l10n-zh_CN
 zh_TW_PORT=	chinese/kde4-l10n-zh_TW
 
+NO_STAGE=	yes
 .include <${.CURDIR}/files/kde4-lang-names>
 # kde4-lang-names is encoded in UTF, override with plain ASCII:
 nb_NAME=	Norwegian Bokmal

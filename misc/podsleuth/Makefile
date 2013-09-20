@@ -22,6 +22,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig pathfix
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^#!/bin/bash$$|#!/bin/sh|' \
 	    ${WRKSRC}/src/PodSleuth.Hal/hal-podsleuth.in \

@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 MAN1=		xdelta3.1
 PLIST_FILES=	bin/xdelta3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/_POSIX_/d ; \

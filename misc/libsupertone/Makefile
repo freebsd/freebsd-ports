@@ -24,6 +24,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 # Add missing dependency in attempt to fix parallel (-jX) builds
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/DEPENDENCIES =/s,$$, $$(lib_LTLIBRARIES),' \
 		${WRKSRC}/Makefile.in

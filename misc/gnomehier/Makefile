@@ -1,7 +1,6 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/misc/gnomehier/Makefile,v 1.39 2012/12/10 10:58:06 kwm Exp $
-# !!DON'T BUMP PORTREVISION ON MTREE CHANGES ANYMORE!!
 
 PORTNAME=	gnomehier
 PORTVERSION=	3.0
@@ -19,6 +18,7 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 GNOME_MTREE=	BSD.gnome.dist
 GNOME_MTREE_ARGS=${MTREE_ARGS:S|${MTREE_FILE}|${PREFIX}/etc/mtree/${GNOME_MTREE}|}
 
+NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 

@@ -1,4 +1,4 @@
-# Created by: lofi@freebsd.org
+# Created by: lofi@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	doc
@@ -17,6 +17,7 @@ EXTRACT_AFTER_ARGS=	'${DISTNAME}/doc'
 
 DOCSDIR=	${PREFIX}/share/doc/qt4
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DOCSDIR} && \
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${DOCSDIR} && \

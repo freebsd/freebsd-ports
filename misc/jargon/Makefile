@@ -1,9 +1,5 @@
-# New ports collection makefile for:  jargon
-# Date created: 	11 July 1998
-# Whom:			moeding
-#
+# Created by: moeding
 # $FreeBSD$
-#
 
 PORTNAME=	jargon
 PORTVERSION=	4.4.7
@@ -17,6 +13,7 @@ NO_BUILD=	yes
 
 DATADIR=	${PREFIX}/share/jargon
 
+NO_STAGE=	yes
 post-extract:
 	(cd ${WRKSRC}; \
 	 ${RM} -rf html/graphics/.xvpics graphics/.xvpics \

@@ -17,6 +17,7 @@ GNU_CONFIGURE=	YES
 MAN1=		hello.1
 INFO=		hello
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

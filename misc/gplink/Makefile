@@ -22,6 +22,7 @@ MAKE_ARGS=	CC="${CC}" \
 
 PLIST_FILES=	bin/gplink
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 USB_CFLAGS=	# none

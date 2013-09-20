@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nagios-base-logos
-# Date created:				4 April 2005
-# Whom:					Dmirty Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmirty Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nagios-base-logos
 PORTVERSION=	1.0
@@ -21,6 +17,7 @@ NAGIOS_LOGOS_DIR=	${PREFIX}/${NAGIOSWWWDIR}/images/logos
 
 PLIST_SUB=	NAGIOSWWWDIR=${NAGIOSWWWDIR}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${NAGIOS_LOGOS_DIR}
 	cd ${WRKDIR}/base && ${FIND} . | ${CPIO} -pdm \

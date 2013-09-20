@@ -16,6 +16,7 @@ PLIST_FILES=	bin/amin bin/helpers bin/huh bin/jot bin/mesg bin/tel \
 		bin/telegram bin/write etc/orville.conf etc/wrthist etc/wrttmp
 MAN1=		amin.1 helpers.1 huh.1 mesg.1 write.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900006

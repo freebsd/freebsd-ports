@@ -1,4 +1,4 @@
-# Created by: Julian Stacey <jhs@freebsd.org>
+# Created by: Julian Stacey <jhs@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=		estic
@@ -44,6 +44,7 @@ MAKEFILE=make/freebsd${X_OR_NOT}.mak
 EXTRA_PATCHES+=		${FILESDIR}/dtr-off.patch
 .endif
 
+NO_STAGE=	yes
 pre-patch:
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
 #	@${PATCH} -d ${PATCH_WRKSRC}/estic --forward --quiet -E -p0 --batch < ${WRKDIR}/estic.diff

@@ -20,4 +20,5 @@ USES=		perl5
 
 MAN3=		Geo::Coder::Googlev3.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

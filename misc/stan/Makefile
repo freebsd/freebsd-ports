@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	stan
-# Date created:			May 1, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	stan
 PORTVERSION=	0.4.1
@@ -19,6 +14,7 @@ GNU_CONFIGURE=	yes
 MAN1=		stan.1
 PLIST_FILES=	bin/stan
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e "s|^CFLAGS =|CFLAGS ?=|g" \
 	${WRKSRC}/src/Makefile.in

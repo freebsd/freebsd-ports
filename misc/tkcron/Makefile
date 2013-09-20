@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tkcron-2.12
-# Date created:		30 July 1996
-# Whom:			Sander Vesik <sander@haldjas.folklore.ee>
-#
+# Created by: Sander Vesik <sander@haldjas.folklore.ee>
 # $FreeBSD$
-#
 
 PORTNAME=	tkcron
 PORTVERSION=	2.12
@@ -28,6 +24,7 @@ EXTRACT_AFTER_ARGS= > tkcron.tcl
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/tkcron
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 

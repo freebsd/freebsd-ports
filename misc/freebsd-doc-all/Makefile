@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freebsd-doc-all
-# Date created:		13 August 2008
-# Whom:			Marc Fonvieille <blackend@FreeBSD.org>
-#
+# Created by: Marc Fonvieille <blackend@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	freebsd-doc-all
 PORTVERSION=	42489
@@ -44,4 +40,5 @@ do-install:	# empty
 DEPENDS_TARGET="package"
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

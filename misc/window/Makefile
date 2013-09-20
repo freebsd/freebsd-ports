@@ -17,6 +17,7 @@ CFLAGS+=	-Wno-return-type
 MAN1=		window.1
 PLIST_FILES=	bin/window
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/window ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1

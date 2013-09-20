@@ -1,9 +1,5 @@
-# New ports collection makefile for:	whichman
-# Date created:				6 June 2000
-# Whom:	      				Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
-#
+# Created by: Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	whichman
 PORTVERSION=	2.4
@@ -19,6 +15,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 MAN1=		ftff.1 ftwhich.1 whichman.1
 PLIST_FILES=	bin/ftff bin/ftwhich bin/whichman
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/man:||g' ${WRKSRC}/whichman.c
 

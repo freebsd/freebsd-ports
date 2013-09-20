@@ -1,9 +1,5 @@
-# New ports collection makefile for:	logsurfer
-# Date created:		28 Jul 1996
-# Whom:			shanee@augusta.de
-#
+# Created by: shanee@augusta.de
 # $FreeBSD$
-#
 
 PORTNAME=	logsurfer+
 PORTVERSION=	1.7
@@ -27,6 +23,7 @@ CONFIGURE_ARGS+=--with-etcdir=${ETCDIR}
 MAN1=		logsurfer.1
 MAN4=		logsurfer.conf.4
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${ETCDIR}
 .for conf in ${EXAMPLE_FILES}

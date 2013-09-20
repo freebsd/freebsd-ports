@@ -21,4 +21,5 @@ GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier gnomedocutils
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

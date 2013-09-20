@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/gkrellShoot-${PORTVERSION}
 
 ALL_TARGET=	${PORTNAME}.so
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.so ${PREFIX}/libexec/gkrellm2/plugins
 

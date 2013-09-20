@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-vpim
-# Date created:		12 August 2006
-# Whom:			Yuichiro AIZAWA aka yaizawa <yaizawa@mdbl.sfc.keio.ac.jp>
-#
+# Created by: Yuichiro AIZAWA aka yaizawa <yaizawa@mdbl.sfc.keio.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	vpim
 PORTVERSION=	0.695
@@ -19,4 +15,5 @@ COMMENT=	vCard and iCalendar support for ruby
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

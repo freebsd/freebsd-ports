@@ -56,4 +56,5 @@ MAN3=		Software::License.3 \
 		Software::License::Zlib.3 \
 		Software::LicenseUtils.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

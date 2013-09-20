@@ -23,6 +23,7 @@ TARGET_DIR=	${PREFIX}/lib/compat
 TARGET32_DIR=	${PREFIX}/lib32/compat
 LDCONFIG_LIB32=	${LDCONFIG} -32
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 ONLY_FOR_ARCH=	i386 amd64

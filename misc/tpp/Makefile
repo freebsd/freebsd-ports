@@ -1,7 +1,4 @@
-# New ports collection makefile for:	tpp
-# Date created:				2004-08-30
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	tpp
@@ -21,4 +18,5 @@ RUBY_NO_BUILD_DEPENDS=	yes
 
 MAN1=	tpp.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

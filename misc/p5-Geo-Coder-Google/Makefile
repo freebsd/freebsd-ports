@@ -29,4 +29,5 @@ MAN3=		Geo::Coder::Google.3 \
 		Geo::Coder::Google::V2.3 \
 		Geo::Coder::Google::V3.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

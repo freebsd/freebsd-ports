@@ -1,9 +1,5 @@
-# ports collection makefile for:	SmsSend
-# Date created:				1st January 2001
-# Whom:					Miklos Niedermayer <mico@bsd.hu>
-#
+# Created by: Miklos Niedermayer <mico@bsd.hu>
 # $FreeBSD$
-#
 
 PORTNAME=	smssend
 PORTVERSION=	3.5
@@ -23,6 +19,7 @@ MANLANG=	"" fr
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/smssend
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	opencyc
-# Date created:				Apr 19 2003
-# Whom:					Alex Semenyaka <alex@rinet.ru>
-#
+# Created by: Alex Semenyaka <alex@rinet.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	opencyc
 PORTVERSION=	0.7.0
@@ -21,6 +17,7 @@ NO_BUILD=	yes
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
+NO_STAGE=	yes
 post-extract:
 	cd ${WRKSRC}/doc && ${RM} '#migration.txt#' 'package-list.~1~' '.#faq' '.#migration.txt'
 

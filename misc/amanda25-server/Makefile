@@ -72,6 +72,7 @@ OPTIONS_DEFINE+=	DUMP_SNAPSHOT
 DUMP_SNAPSHOT_DESC=	Use snapshot by using dump -L
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSH}

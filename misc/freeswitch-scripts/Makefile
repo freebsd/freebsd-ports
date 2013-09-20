@@ -30,6 +30,7 @@ OPTIONS_DEFINE=	JAVASCRIPT PERL PYTHON PHP RSS LUA
 JAVASCRIPT_DESC=	Javascript scripting language
 RSS_DESC=	RSS scripts
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for i in JAVASCRIPT PERL PYTHON PHP RSS LUA C

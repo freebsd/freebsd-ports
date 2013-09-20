@@ -19,6 +19,7 @@ USE_PERL5=	configure
 
 MAN3=		Business::UPS.3
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}

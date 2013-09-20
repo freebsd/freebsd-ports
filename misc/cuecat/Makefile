@@ -23,6 +23,7 @@ MAN1+=		xcuecat.1
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/cuecat
 
+NO_STAGE=	yes
 pre-install:
 	@${MV} ${WRKSRC}/cuecat.py ${WRKSRC}/cuecat.py-orig
 	@${SED} 's;/usr/opt;${PREFIX};' ${WRKSRC}/cuecat.py-orig >${WRKSRC}/cuecat.py
