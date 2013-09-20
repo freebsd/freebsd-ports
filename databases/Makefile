@@ -63,6 +63,7 @@
     SUBDIR += drizzle
     SUBDIR += embedded_innodb
     SUBDIR += emma
+    SUBDIR += epgsql
     SUBDIR += erlang-mysql
     SUBDIR += evolution-data-server
     SUBDIR += exist
