@@ -15,6 +15,7 @@ PLIST_FILES=	bin/jaildaemon \
 		etc/rc.d/jaildaemon
 MAN1=		jaildaemon.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

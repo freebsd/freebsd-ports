@@ -19,6 +19,7 @@ MAN1=		sysvbanner.1
 
 PLIST_FILES=	bin/sysvbanner
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/banner ${PREFIX}/bin/sysvbanner
 	${INSTALL_MAN} ${BUILD_WRKSRC}/banner.1 ${MAN1PREFIX}/man/man1/sysvbanner.1

@@ -14,6 +14,7 @@ LICENSE=	BSD
 
 SSP_UNSAFE=	kernel module does not support ssp
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 KMODDIR?=	/boot/modules

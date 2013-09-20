@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dtpstree
-# Date created:				17 June 2010
-# Whom:					Douglas Thrift
-#
+# Created by: Douglas Thrift
 # $FreeBSD$
-#
 
 PORTNAME=	dtpstree
 PORTVERSION=	1.0.3
@@ -23,4 +19,5 @@ MAKEFILE=	GNUmakefile
 MAN1=		dtpstree.1
 PLIST_FILES=	bin/dtpstree
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

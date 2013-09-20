@@ -26,6 +26,7 @@ OPTIONS_DEFAULT=	DVDCSS
 # DVDCSS version hardcoded in dvdvideo/libdvdcss.py
 DVDCSS_LIBVERSION=	3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDVDCSS}

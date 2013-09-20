@@ -18,6 +18,7 @@ USES=		perl5
 MAN1=		reoback.1 reoback.pl.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 pre-install:
 		cd ${WRKSRC} && ${REINPLACE_CMD} -e 's,/home/sforge/reoback/settings.conf,${PREFIX}/etc/reoback/settings.conf,g' ${WRKSRC}/run_reoback.sh
 		cd ${WRKSRC} && ${REINPLACE_CMD} -e 's,/home/sforge/reoback/reoback.pl,${PREFIX}/bin/reoback.pl,g' ${WRKSRC}/run_reoback.sh

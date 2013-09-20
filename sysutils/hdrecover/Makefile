@@ -1,9 +1,5 @@
-# New ports collection makefile for:   hdrecover
-# Date created:        18 June 2012
-# Whom:                Cy Schubert <cy@freebsd.org>
-#
+# Created by: Cy Schubert <cy@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hdrecover
 PORTVERSION=	0.5
@@ -19,4 +15,5 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 PLIST_FILES=	bin/hdrecover
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

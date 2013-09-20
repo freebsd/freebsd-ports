@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bbcp
-# Date created:		10 August 2012
-# Whom:			John Hein <jhein@symmetricom.com>
-#
+# Created by: John Hein <jhein@symmetricom.com>
 # $FreeBSD$
-#
 
 PORTNAME=	bbcp
 PORTVERSION=	20120520
@@ -23,6 +19,7 @@ PLIST_FILES=	bin/bbcp
 PORTDOCS=	${PORTNAME}.pdf
 USE_XZ=		yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

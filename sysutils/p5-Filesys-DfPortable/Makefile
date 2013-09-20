@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sysutils/p5-Filesys-DfPortable
-# Date created:				07 November 2007
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Filesys-DfPortable
 PORTVERSION=	0.85
@@ -20,4 +16,5 @@ USE_PERL5=	configure
 
 MAN3=	Filesys::DfPortable.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -19,4 +19,5 @@ USE_GNOME=	glib20
 
 PLIST_FILES=	bin/wdfs
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

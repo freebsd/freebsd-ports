@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jailrc
-# Date created:	   8 November 2011
-# Whom:		   Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jailrc
 PORTVERSION=	1.0
@@ -21,6 +17,7 @@ USE_RC_SUBR=	jailrc
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 		@${MKDIR} ${DOCSDIR}

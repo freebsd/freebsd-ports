@@ -1,10 +1,6 @@
-# New ports collection makefile for:	pessulus
-# Date created:				14 March 2006
-# Whom:					FreeBSD GNOME Team
-#
+# Created by: FreeBSD GNOME Team
 # $FreeBSD$
 #   $MCom: ports/sysutils/pessulus/Makefile,v 1.30 2010/11/17 11:53:24 kwm Exp $
-#
 
 PORTNAME=	pessulus
 PORTVERSION=	2.30.4
@@ -30,6 +26,7 @@ DOCS=		AUTHORS COPYING ChangeLog HACKING \
 		MAINTAINERS NEWS README TODO
 
 .ifndef (NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}

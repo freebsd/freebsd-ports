@@ -1,9 +1,5 @@
-# New ports collection makefile for:	httplog
-# Date created:				25 November 2001
-# Whom:					anders
-#
+# Created by: anders
 # $FreeBSD$
-#
 
 PORTNAME=	httplog
 PORTVERSION=	2.1
@@ -22,6 +18,7 @@ PORTDOCS=	ChangeLog README
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
+NO_STAGE=	yes
 post-patch:
 	(cd ${WRKSRC} && \
 	${REINPLACE_CMD} -e "s@<wait.h>@<sys/wait.h>@" httplog.c && \

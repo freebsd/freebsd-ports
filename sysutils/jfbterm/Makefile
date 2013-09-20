@@ -35,6 +35,7 @@ SETUID_DESC=		Install jfbterm with setuid bit set
 TERMCAP_DESC=		Add entry to termcap(5) file
 UNIFONT_DESC=		Install pan-unicode font
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSETUID}

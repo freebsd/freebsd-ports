@@ -19,6 +19,7 @@ USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|\(GNOMEDIR=\).*|\1"${PREFIX}"|; \

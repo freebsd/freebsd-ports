@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-SyslogLogger
-# Date created:		2011-11-28
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	SyslogLogger
 PORTVERSION=	2.0
@@ -17,4 +13,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

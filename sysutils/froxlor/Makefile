@@ -57,6 +57,7 @@ NLS_DESC=	Enable NLS support (required for webFTP frontend)
 
 OPTIONS_DEFAULT=	APACHE MYSQLS POSTFIX DOVECOT PROFTPD WEBALIZER MYSQLS PCNTL NLS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}

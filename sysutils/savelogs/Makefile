@@ -17,6 +17,7 @@ MAN1=		rotation.1 savelogs.1
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

@@ -27,6 +27,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/eyeD3/__init__.py:${PORTSDIR}/audio/py-eyed3
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/hachoir_metadata/__init__.py:${PORTSDIR}/sysutils/hachoir-metadata
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g' ${WRKSRC}/Makefile.in
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmmemfree
-# Date created:				29 Mar 2003
-# Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
-#
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	wmmemfree
 PORTVERSION=	0.7
@@ -21,6 +17,7 @@ USE_XORG=	xpm
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/wmmemfree
 
+NO_STAGE=	yes
 post-patch:
 	@${CP} ${FILESDIR}/mem_freebsd.* ${WRKSRC}
 

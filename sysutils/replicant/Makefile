@@ -28,6 +28,7 @@ CPPFLAGS+=	-D__STDC_LIMIT_MACROS -Du_int32_t=uint32_t \
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		pathfix pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900014 || !exists(/usr/bin/clang++)

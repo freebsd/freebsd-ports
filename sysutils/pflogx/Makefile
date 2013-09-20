@@ -15,6 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 OPTIONS_DEFINE=	EXPAT DOCS
 EXPAT_DESC=	Ability to merge new events (require expat)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXPAT}

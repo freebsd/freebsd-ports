@@ -36,6 +36,7 @@ EXPERIMENTAL_DESC=		Enables experimental functionality
 PROFILER_DESC=			Enables gprof support
 TEST_DESC=			Run quality assurance test
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

@@ -29,6 +29,7 @@ BUILD_DEPENDS+=	bchunk:${PORTSDIR}/sysutils/bchunk \
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "===>  You can enable more features by defining WITH_ADDITIONAL_PROGRAMS"
 	@${ECHO_MSG} "===>"

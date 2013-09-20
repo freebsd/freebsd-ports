@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-XenAPI
-# Date created:				13 April 2012
-# Whom:					Evan Sarmiento <bsdports@wayfair.com>
-#
+# Created by: Evan Sarmiento <bsdports@wayfair.com>
 # $FreeBSD$
-#
 
 PORTNAME=	XenAPI
 PORTVERSION=	1.0
@@ -23,6 +19,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/XenAPI.py \
 		%%PYTHON_SITELIBDIR%%/XenAPI.pyc \
 		%%PYTHON_SITELIBDIR%%/XenAPI.pyo
 
+NO_STAGE=	yes
 post-patch:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}

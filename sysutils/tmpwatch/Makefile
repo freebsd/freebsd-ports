@@ -17,6 +17,7 @@ GNU_CONFIGURE=	yes
 MAN8=		tmpwatch.8
 PLIST_FILES=	sbin/tmpwatch
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E "s/^#include.+mntent.h.+//g" ${WRKSRC}/tmpwatch.c
 

@@ -19,6 +19,7 @@ PLIST_FILES=	bin/fanout bin/fanterm bin/fanmux
 PORTDOCS=	README index.html
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 		${WRKSRC}/fanterm

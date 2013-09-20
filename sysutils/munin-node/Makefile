@@ -29,6 +29,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 REINPLACE_ARGS=	-i ""
 SHEBANG_FILES=	node/sbin/munin-node
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../munin-common/munin.mk"
 
 ALL_TARGET=	build-node build-plugins

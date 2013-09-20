@@ -1,9 +1,5 @@
-# Ports collection makefile for:	xmbmon
-# Date created:				2001/08/30
-# Whom:					kaz@kobe1995.net (NAKAMURA Kauzushi)
-#
+# Created by: kaz@kobe1995.net (NAKAMURA Kauzushi)
 # $FreeBSD$
-#
 
 PORTNAME=	xmbmon
 PORTREVISION=	9
@@ -18,6 +14,7 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 PLIST_FILES=	lib/X11/app-defaults/XMBmon
 MAN1=		xmbmon.1x
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${PREFIX}/lib/X11/app-defaults
 	${INSTALL_DATA} ${WRKSRC}/xmbmon.resources ${PREFIX}/lib/X11/app-defaults/XMBmon

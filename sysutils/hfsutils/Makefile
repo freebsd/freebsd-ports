@@ -41,6 +41,7 @@ DEVLIBS_DESC=	Install developer libraries and header files
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCLTK}

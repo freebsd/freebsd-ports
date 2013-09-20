@@ -26,6 +26,7 @@ SSE2_DESC=	Use SSE2-optimized code
 SSE2_CONFIGURE_ENABLE=	sse2
 SSE2_CFLAGS=	-msse2
 
+NO_STAGE=	yes
 post-install:
 	@if [ ! -f ${PREFIX}/etc/tarsnap.conf ]; then \
 	    ${CP} -p ${PREFIX}/etc/tarsnap.conf.sample ${PREFIX}/etc/tarsnap.conf ; \

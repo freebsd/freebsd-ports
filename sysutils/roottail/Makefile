@@ -23,6 +23,7 @@ USES=		imake
 USE_XORG=	x11 xext
 MAKE_ARGS=	CC="${CC}"
 
+NO_STAGE=	yes
 pre-everything::
 .if defined(WITH_EXTRA_PATCH)
 	@${ECHO_MSG}

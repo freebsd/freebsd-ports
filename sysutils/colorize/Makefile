@@ -23,6 +23,7 @@ SHEBANG_FILES=	colorize
 MAN1=		colorize.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/etc/colorizerc|${PREFIX}/etc/colorizerc|' \
 		${WRKSRC}/colorize

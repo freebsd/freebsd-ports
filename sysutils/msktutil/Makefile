@@ -21,6 +21,7 @@ CONFIGURE_ARGS+=--with-sasldir=${PREFIX}
 MAN1=		msktutil.1
 PLIST_FILES=	sbin/msktutil
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900035

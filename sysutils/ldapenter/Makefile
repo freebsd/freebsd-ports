@@ -21,4 +21,5 @@ MAN1=		ldapform.1 ldapedit.1
 PLIST_FILES=	bin/ldapform \
 		bin/ldapedit
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

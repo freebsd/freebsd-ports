@@ -19,4 +19,5 @@ CONFIGURE_ARGS=	--program-prefix=""
 MAN1=		wmupmon.1
 PLIST_FILES=	bin/wmupmon
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

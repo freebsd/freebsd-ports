@@ -46,6 +46,7 @@ LIBBURNIA_DESC=	libburnia plug-ins
 
 PLIST_SUB=	FULL_VERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNAUTILUS}

@@ -25,6 +25,7 @@ USE_RC_SUBR=	${PORTNAME}
 MAN1=		uprecords.1
 MAN8=		uptimed.8
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/lib/sendmail|/usr/sbin/sendmail| ; \

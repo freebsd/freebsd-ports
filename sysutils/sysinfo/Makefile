@@ -21,6 +21,7 @@ OPTIONS_DEFINE=	DMIDECODE PORTAUDIT
 DMIDECODE_DESC=	Include information from the dmidecode tool
 PORTAUDIT_DESC=	Include information from the portaudit tool
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDMIDECODE}

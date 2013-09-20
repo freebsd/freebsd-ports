@@ -27,6 +27,7 @@ USE_PHP=	session pdo gd xml zlib
 WANT_PHP_WEB=	YES
 DEFAULT_PHP_VER=5
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPHP_MYSQL}

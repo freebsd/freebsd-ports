@@ -34,6 +34,7 @@ MAN3=		Schedule::Load.3 Schedule::Load::Chooser.3 \
 		Schedule::Load::Reporter::Disk.3 Schedule::Load::Reporter::Filesys.3 \
 		Schedule::Load::Reporter::Network.3
 
+NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"

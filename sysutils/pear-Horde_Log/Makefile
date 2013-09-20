@@ -1,7 +1,4 @@
-# Ports collection makefile for:  pear-Horde_Log
-# Date created:			  6 July 2011
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Horde_Log
@@ -18,6 +15,7 @@ SCRIBE_DESC=	Enable scribe support
 USE_HORDE_RUN=	Horde_Constraint \
 		Horde_Exception
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSCRIBE}

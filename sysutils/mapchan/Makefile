@@ -20,6 +20,7 @@ MAN8=		mapchan.8
 PORTDOCS=	README
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${WRKSRC}/doc/mapchan.F ${WRKSRC}/doc/mapchan.8
 

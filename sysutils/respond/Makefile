@@ -1,9 +1,5 @@
-# New ports collection makefile for:   respond
-# Date created:                                8 January 2008
-# Whom:                                        Jouke Witteveen <j.witteveen@gmail.com>
-#
+# Created by: Jouke Witteveen <j.witteveen@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	respond
 PORTVERSION=	1.2
@@ -21,4 +17,5 @@ MAKE_ENV+=	INSTALL_MAN="${INSTALL_MAN}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		MANEXT=${MANEXT}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fileschanged
-# Date created:				18 May 2004
-# Whom:					Konstantin Reznichenko <kot@premierbank.dp.ua>
-#
+# Created by: Konstantin Reznichenko <kot@premierbank.dp.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	fileschanged
 PORTVERSION=	0.6.5
@@ -31,6 +27,7 @@ PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
 PLIST_FILES=	bin/fileschanged
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for DOCFILE in ${PORTDOCS}

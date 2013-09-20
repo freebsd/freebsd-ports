@@ -5,6 +5,7 @@ PORTNAME=	moosefs
 PORTVERSION=	#set via include
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-master
+NO_STAGE=	yes
 .include "bsd.port.moosefs.mk"
 
 MAINTAINER=	chifeng@gmail.com

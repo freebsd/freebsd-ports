@@ -21,4 +21,5 @@ MAN1=		cronolog.1m cronosplit.1m
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

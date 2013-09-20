@@ -29,6 +29,7 @@ PLIST_FILES=	bin/udfdump \
 		bin/cd_disect \
 		bin/mmc_format
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFUSE}

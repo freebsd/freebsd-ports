@@ -17,6 +17,7 @@ USES=		gmake
 PLIST_FILES=	bin/wuzzah
 MAN1=		wuzzah.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

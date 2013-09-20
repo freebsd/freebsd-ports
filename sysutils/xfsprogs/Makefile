@@ -29,6 +29,7 @@ MAN8=	fsck.xfs.8 mkfs.xfs.8 xfs_admin.8 xfs_bmap.8 xfs_check.8 \
 	xfs_io.8 xfs_logprint.8 xfs_mdrestore.8 xfs_metadump.8 xfs_mkfile.8 xfs_ncheck.8 \
 	xfs_quota.8 xfs_repair.8 xfs_rtcp.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

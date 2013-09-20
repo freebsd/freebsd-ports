@@ -27,6 +27,7 @@ DOCS=		package/CHANGES package/README \
 CONFIG=		etc/freebsd/1 etc/2 etc/freebsd/3 etc/freebsd/ctrlaltdel \
 	 	etc/freebsd/getty-ttyv4/run etc/freebsd/getty-ttyv4/finish
 
+NO_STAGE=	yes
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
 

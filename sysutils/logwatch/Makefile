@@ -1,9 +1,5 @@
-# New ports collection makefile for:   logwatch
-# Date created:	       8 December 2007
-# Whom:		       John D. "Trix" Farrar <trix@basement.net>
-#
+# Created by: John D. "Trix" Farrar <trix@basement.net>
 # $FreeBSD$
-#
 
 PORTNAME=	logwatch
 PORTVERSION=	7.4.0
@@ -28,6 +24,7 @@ NO_BUILD=	yes
 
 MAKE_ENV+=	SITE_PERL_REL=${SITE_PERL_REL}
 
+NO_STAGE=	yes
 pre-configure:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 

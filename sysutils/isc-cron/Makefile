@@ -1,9 +1,5 @@
-# New ports collection makefile for:	isc-cron
-# Date created:				7 August 2008
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	isc-cron
 PORTVERSION=	4.1
@@ -25,6 +21,7 @@ MAN1=		crontab.1
 MAN5=		crontab.5
 MAN8=		cron.8
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	cd ${WRKSRC} && ${SH} ${DISTDIR}/${DISTNAME}

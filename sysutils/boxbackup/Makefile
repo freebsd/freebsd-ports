@@ -38,6 +38,7 @@ SERVER_DESC=	Install the bbstored server
 
 OPTIONS_DEFAULT=CLIENT SERVER
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREADLINE}

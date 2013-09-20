@@ -28,6 +28,7 @@ EJECT_DESC=	Ejecting the CD/DVD drive
 NORMALIZE_DESC=	An audio file volume normalizer
 SUDO_DESC=	To allow non-privileged users to burn CD's
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCDRDAO}

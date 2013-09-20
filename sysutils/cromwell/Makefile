@@ -38,6 +38,7 @@ USE_PERL5=		build
 USES=			gmake perl5
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,perl,${PERL},g' \
 			  -e 's,^CC.=,CC ?=,' \

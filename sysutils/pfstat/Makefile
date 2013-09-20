@@ -24,6 +24,7 @@ MANCOMPRESSED=	no
 PLIST_FILES=	bin/pfstat \
 		bin/pfstatd
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700048

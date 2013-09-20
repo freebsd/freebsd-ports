@@ -21,6 +21,7 @@ PLIST_FILES=	bin/less bin/lesskey bin/lessecho
 OPTIONS_DEFINE=	COLORS
 COLORS_DESC=	Enable colors support via escape sequence
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOLORS}

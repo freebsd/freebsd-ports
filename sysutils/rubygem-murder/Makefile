@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-murder
-# Date created:		2011-02-18
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	murder
 PORTVERSION=	0.1.2
@@ -18,4 +14,5 @@ USE_PYTHON=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -35,6 +35,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/web
 # information on these variables.
 WEBFRONTDIR?=	www/ganglia
 
+NO_STAGE=	yes
 # Set custom variables:
 #
 PKGOPTS=	${FILESDIR}/pkg-opts

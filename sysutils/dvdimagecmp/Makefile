@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dvdimagecmp
-# Date created:				11 October 2005
-# Whom:					Tim Welch <ports@thepentagon.org>
-#
+# Created by: Tim Welch <ports@thepentagon.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dvdimagecmp
 PORTVERSION=	0.3
@@ -20,6 +16,7 @@ CFLAGS+=	-D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
 
 PLIST_FILES=	bin/dvdimagecmp
 
+NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}; ${CC} ${CFLAGS} -o dvdimagecmp dvdimagecmp.c )
 

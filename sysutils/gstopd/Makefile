@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gstopd
-# Date created:				18 Oct 2003
-# Whom:					Michael Reifenberger
-#
+# Created by: Michael Reifenberger
 # $FreeBSD$
-#
 
 PORTNAME=	gstopd
 PORTVERSION=	1.1
@@ -17,6 +13,7 @@ COMMENT=	GEOM stop daemon
 MAN8=		gstopd.8
 PLIST_FILES=	sbin/gstopd
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gstopd ${LOCALBASE}/sbin
 	${INSTALL_MAN} ${WRKSRC}/gstopd.8 ${LOCALBASE}/man/man8

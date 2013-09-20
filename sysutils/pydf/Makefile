@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pydf
-# Date created:				29 November 2007
-# Whom:					Baptiste Grenier <gwarf@gwarf.org>
-#
+# Created by: Baptiste Grenier <gwarf@gwarf.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pydf
 PORTVERSION=	10
@@ -31,6 +27,7 @@ MANCOMPRESSED=	no
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}| ; s|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/pydf
 

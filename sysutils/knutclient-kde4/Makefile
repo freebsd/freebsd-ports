@@ -1,9 +1,5 @@
-# New ports collection makefile for:	KDE Nut Client
-# Date created:				Mon Apr 28 05:30:59 UTC 2003
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	knutclient
 PORTVERSION=	1.0.4
@@ -24,4 +20,5 @@ USE_KDE4=	kdehier kdeprefix kdelibs automoc4
 USE_QT4=	corelib gui qmake_build moc_build rcc_build uic_build
 LATEST_LINK=	knutclient-kde4
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

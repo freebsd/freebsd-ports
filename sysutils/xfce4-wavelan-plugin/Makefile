@@ -21,6 +21,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libutil libgui panel
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|--libs "libxfce4panel-1.0"|& "libxfcegui4-1.0"|g; \
 		s|--cflags "libxfce4panel-1.0"|& "libxfcegui4-1.0"|g' \

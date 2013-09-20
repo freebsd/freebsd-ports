@@ -1,9 +1,5 @@
-# New ports collection Makefile for:   be_agent
-# Date created:        20 May 2005
-# Whom:                Tony Shadwick <numbski@hksilver.net>
-#
+# Created by: Tony Shadwick <numbski@hksilver.net>
 # $FreeBSD$
-#
 
 PORTNAME=	be_agent
 PORTVERSION=	5.046
@@ -26,6 +22,7 @@ USE_RC_SUBR=	be-agent
 PLIST_FILES=	bin/agent.be \
 		etc/be-agent.cfg.sample
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-fetch:

@@ -20,6 +20,7 @@ PORTDOCS=	NEWS README
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 do-configure:
 	${ECHO_CMD} "${PREFIX}/bin"	> ${WRKSRC}/conf-bin
 	${ECHO_CMD} "${MANPREFIX}/man"	> ${WRKSRC}/conf-man

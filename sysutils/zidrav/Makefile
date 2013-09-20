@@ -16,6 +16,7 @@ ALL_TARGET=	zidrav
 MAN1=		zidrav.1
 PLIST_FILES=	bin/zidrav
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zidrav ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/zidrav.1 ${MANPREFIX}/man/man1

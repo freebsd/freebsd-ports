@@ -1,9 +1,5 @@
-# New ports collection makefile for:	battmond
-# Date created:				16 June 2006
-# Whom:					ntarmos@ceid.upatras.gr
-#
+# Created by: ntarmos@ceid.upatras.gr
 # $FreeBSD$
-#
 
 PORTNAME=	battmond
 PORTVERSION=	0.3
@@ -19,4 +15,5 @@ MANCOMPRESSED=	yes
 PLIST_FILES=	sbin/battmond \
 		etc/rc.d/battmond
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

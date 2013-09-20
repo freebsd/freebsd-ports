@@ -28,6 +28,7 @@ PLIST_FILES+=	bin/DirComp \
 		share/locale/en/LC_MESSAGES/DirComp.mo \
 		share/locale/es/LC_MESSAGES/DirComp.mo
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -Ee 's/^(SUBDIRS.*)doc/\1/;${MK_PATCH}' ${WRKSRC}/Makefile.in
 

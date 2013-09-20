@@ -1,6 +1,5 @@
-# Created by:	jrhett@netconsonance.com
+# Created by: jrhett@netconsonance.com
 # $FreeBSD$
-#
 
 PORTNAME=	cfengine
 PORTVERSION=	3.3.8
@@ -43,6 +42,7 @@ MYSQL_DESC=	Enable MySQL integration
 LIBVIRT_DESC=	Enable libvirt integration
 OPTIONS_DEFAULT=TOKYOCABINET
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTOKYOCABINET}

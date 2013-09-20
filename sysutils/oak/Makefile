@@ -1,9 +1,5 @@
-# New ports collection makefile for:	oak
-# Date created:				21 June 2005
-# Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	oak
 PORTVERSION=	1.5.0
@@ -19,6 +15,7 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	oak
 PLIST_FILES=	bin/oak
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/oak ${PREFIX}/bin
 

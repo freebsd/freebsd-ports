@@ -1,4 +1,4 @@
-# Created by:	Tomoyuki Sakurai <cherry@trombik.mine.nu>
+# Created by: Tomoyuki Sakurai <cherry@trombik.mine.nu>
 # $FreeBSD$
 
 PORTNAME=	puppet
@@ -45,6 +45,7 @@ OPTIONS_DEFAULT=	PACKAGE_ORIGIN
 MONGREL_DESC=		Run puppet server as a mongrel service
 PACKAGE_ORIGIN_DESC=	Use port origin as package name
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMONGREL}

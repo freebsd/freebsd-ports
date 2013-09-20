@@ -1,9 +1,5 @@
-# New ports collection makefile for:	throttle
-# Date created:			Apr 29, 2004
-# Whom:				Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	throttle
 PORTVERSION=	1.2
@@ -18,4 +14,5 @@ GNU_CONFIGURE=	yes
 MAN1=		throttle.1
 PLIST_FILES=	bin/throttle
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

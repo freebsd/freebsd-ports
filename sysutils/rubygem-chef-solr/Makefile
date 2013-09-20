@@ -21,4 +21,5 @@ RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/chef-solr \
 		bin/chef-solr-installer
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

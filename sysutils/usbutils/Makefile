@@ -22,6 +22,7 @@ MAN1=		usb-devices.1
 MAN8=		lsusb.8
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ENV+=	LIBUSB_CFLAGS="-I/usr/include" \

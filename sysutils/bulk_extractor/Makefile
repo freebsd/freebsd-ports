@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bulk_extractor
-# Date created:		31 May 2012
-# Whom:			MANTANI Nobutaka <nobutaka@FreeBSD.org>
-#
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bulk_extractor
 PORTVERSION=	1.2.2
@@ -32,4 +28,5 @@ MAN1=		bulk_extractor.1
 
 PLIST_FILES=	bin/bulk_extractor
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

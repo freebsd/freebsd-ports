@@ -19,4 +19,5 @@ USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/mtpfs
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

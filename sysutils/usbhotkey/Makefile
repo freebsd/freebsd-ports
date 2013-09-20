@@ -30,4 +30,5 @@ GUI_DESC=	Enable GUI bits (via Imlib)
 GUI_LIB_DEPENDS=	libImlib.so:${PORTSDIR}/graphics/imlib
 GUI_CONFIGURE_OFF=	--without-Imlib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

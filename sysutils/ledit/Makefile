@@ -28,6 +28,7 @@ MAN1=		ledit.1
 PORTDOCS=	CHANGES LICENSE README
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 do-configure:
 	${REINPLACE_CMD} -e '/^BINDIR=/s;/usr/local;${PREFIX};' \
 			-e '/^LIBDIR=/s;/usr/local;${PREFIX};' \

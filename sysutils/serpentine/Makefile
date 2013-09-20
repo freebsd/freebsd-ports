@@ -22,4 +22,5 @@ USE_GMAKE=	yes
 USE_GSTREAMER=	core gnomevfs python
 USE_PYTHON=	2.4+
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

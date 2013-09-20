@@ -18,6 +18,7 @@ MAN1=		cw.1 cwe.1 cwu.1
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

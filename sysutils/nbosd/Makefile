@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nbosd
-# Date created:				19 Mar 2006
-# Whom:					Lars Engels <lars.engels@0x20.net>
-#
+# Created by: Lars Engels <lars.engels@0x20.net>
 # $FreeBSD$
-#
 
 PORTNAME=	nbosd
 PORTVERSION=	0.5.0
@@ -19,6 +15,7 @@ LIB_DEPENDS=	xosd.4:${PORTSDIR}/misc/xosd
 PLIST_FILES=	bin/nbosd
 PORTDOCS=	*
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nbosd ${PREFIX}/bin
 

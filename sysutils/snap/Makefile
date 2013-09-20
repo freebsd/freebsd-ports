@@ -1,9 +1,5 @@
-# New ports collection makefile for:	snap
-# Date created:				2007-05-07
-# Whom:				Wu Chin-Hao <wchunhao@cs.nctu.edu.tw>
-#
+# Created by: Wu Chin-Hao <wchunhao@cs.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	snap
 DISTVERSION=	1.01
@@ -23,6 +19,7 @@ MAN8=		snap.8
 PLIST_FILES=	sbin/snap \
 		etc/snap.conf
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/snap ${PREFIX}/sbin/
 	${INSTALL_MAN} ${WRKSRC}/snap.8 ${PREFIX}/man/man8/

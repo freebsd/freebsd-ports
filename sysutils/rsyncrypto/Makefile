@@ -26,6 +26,7 @@ PLIST_FILES=	bin/rsyncrypto \
 
 MAN1=	rsyncrypto.1 rsyncrypto_recover.1
 
+NO_STAGE=	yes
 post-install:
 	@${ECHO_MSG}
 	@${ECHO_MSG} ${PORTNAME} requires archivers/gzip be built

@@ -1,4 +1,4 @@
-# Created by: Boris Popov <bp@freebsd.org>
+# Created by: Boris Popov <bp@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	nut
@@ -56,6 +56,7 @@ MAN8=		nut-recorder.8 nut-scanner.8 nutupsdrv.8 upsc.8 \
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \

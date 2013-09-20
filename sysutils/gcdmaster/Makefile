@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gcdmaster
-# Date created:				14 February 2004
-# Whom:					marius@alchemy.franken.de
-#
+# Created by: marius@alchemy.franken.de
 # $FreeBSD$
-#
 
 PORTNAME=	gcdmaster
 
@@ -13,4 +9,5 @@ MASTERDIR=	${.CURDIR}/../cdrdao
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

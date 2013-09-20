@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gkrellm
-# Date Created:		Mar 4 2000
-# Whom:			Hajimu UMEMOTO <ume@FreeBSD.org>
-#
+# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gkrellm
 PORTVERSION=	1.2.13
@@ -39,6 +35,7 @@ PORTDOCS=	COPYRIGHT README Themes.html
 # you should not enable this.
 # WITH_SENSOR=yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 ALL_TARGET=	freebsd

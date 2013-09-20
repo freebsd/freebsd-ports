@@ -1,9 +1,5 @@
-# New ports collection makefile for:	deltup
-# Date created:		2005-05-18
-# Whom:			Roman Bogorodskiy <novel@FreeBSD.org>
-#
+# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	deltup
 PORTVERSION=	0.4.4
@@ -42,6 +38,7 @@ WRKSRC_BZIP2_103=	${WRKDIR}/bzip2-${BZIP2_103}
 PORTDOCS=	ChangeLog README
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/Makefile
 

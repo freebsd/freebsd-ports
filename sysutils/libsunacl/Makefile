@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libsunacl
-# Date created:		2010-03-22
-# Whom:			Edward Tomasz Napierala <trasz@FreeBSD.org>
-#
+# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libsunacl
 PORTVERSION=	1.0
@@ -16,6 +12,7 @@ COMMENT=	Wrapper providing SunOS NFSv4 ACL API
 USE_LDCONFIG=	yes
 PLIST_FILES=	include/sunacl.h lib/libsunacl.a lib/libsunacl.so.1 lib/libsunacl.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

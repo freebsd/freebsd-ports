@@ -1,9 +1,5 @@
-# New ports collection makefile for:	raincoat
-# Date created:				24 July 2005
-# Whom:					Ed Schouten <ed@fxq.nl>
-#
+# Created by: Ed Schouten <ed@fxq.nl>
 # $FreeBSD$
-#
 
 PORTNAME=		raincoat
 PORTVERSION=		0.11
@@ -21,6 +17,7 @@ USE_BZIP2=		yes
 
 PORTDOCS=		README
 
+NO_STAGE=	yes
 post-patch:
 .for f in docs/README src/${PORTNAME}.c
 	@${REINPLACE_CMD} -e 's|/etc/raincoat\.conf|${PREFIX}&|g' \

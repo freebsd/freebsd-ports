@@ -26,6 +26,7 @@ SRC_DISTFILES=	# empty, no sources available
 RPMFILE=	${PORTNAME}-${PORTVERSION}-2.${LINUX_RPM_ARCH}.rpm
 EXTRACT_AFTER_ARGS=	-O ${RPMFILE} | ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} - ./usr/sbin/afacli.bin ./usr/sbin/getcfg.afa
 
+NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKDIR}/usr/sbin/afacli.bin ${WRKDIR}/usr/sbin/afacli
 

@@ -22,6 +22,7 @@ PLIST_FILES=	bin/cryptofs
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README cryptofs.conf
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}

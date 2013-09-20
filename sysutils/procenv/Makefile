@@ -22,6 +22,7 @@ FETCH_ARGS=	-Fpr
 MAN1=		procenv.1
 PLIST_FILES=	bin/procenv
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800505

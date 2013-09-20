@@ -18,4 +18,5 @@ USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4
 USES=		cmake:outsource
 USE_QT4=	dbus moc_build qmake_build rcc_build uic_build
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

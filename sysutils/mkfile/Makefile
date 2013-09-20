@@ -15,4 +15,5 @@ PLIST_FILES=	sbin/mkfile
 
 MAKE_ARGS=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

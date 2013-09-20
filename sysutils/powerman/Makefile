@@ -31,6 +31,7 @@ MAN8=		httppower.8 plmpower.8 powermand.8 vpcd.8
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^install-data-am/s|:.*|:|' ${WRKSRC}/scripts/Makefile.in

@@ -32,6 +32,7 @@ NTFSPROGS_DESC=		Use ntfsprogs extensions
 PROGSREISERFS_DESC=	Use reiserfs extensions
 #		E2FSPROGS "Use ext2fs extensions" off \
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 #.if !defined(NOPORTDOCS)

@@ -21,4 +21,5 @@ USE_XFCE=	configenv libmenu panel
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

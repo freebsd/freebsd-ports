@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Filesys-Df
-# Date created:				31 May 2006
-# Whom:	      				Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Filesys-Df
 PORTVERSION=	0.92
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Filesys::Df.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

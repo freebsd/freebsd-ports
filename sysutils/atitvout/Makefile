@@ -1,9 +1,5 @@
-# New ports collection makefile for:	atitvout
-# Date created:		2006-01-31
-# Whom:			Anish Mistry <amistry@am-productions.biz>
-#
+# Created by: Anish Mistry <amistry@am-productions.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	atitvout
 PORTVERSION=	0.4
@@ -21,4 +17,5 @@ MAKEFILE=	Makefile.bsd
 
 PLIST_FILES+=	sbin/atitvout
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

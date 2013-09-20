@@ -9,6 +9,7 @@ USE_MYSQL=	yes
 
 CONFIGURE_ARGS+=--enable-mysql
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} \
 		${WRKSRC}/plugins/ommysql/.libs/ommysql.so ${PREFIX}/lib/rsyslog

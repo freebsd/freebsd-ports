@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ispman
-# Date created:		Wed Sep 26 20:23:38 MSD 2007
-# Whom:			Denis Shaposhnikov <dsh@vlink.ru>
-#
+# Created by: Denis Shaposhnikov <dsh@vlink.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	ispman
 PORTVERSION=	1.3r2
@@ -47,6 +43,7 @@ MAKE_ENV+=	DATA_MODES="-c ${_SHROWNGRP} -m ${SHAREMODE}" \
 		SCRIPT_MODES="-c ${_BINOWNGRP} -m ${BINMODE}"
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.3
 
+NO_STAGE=	yes
 post-patch:
 	${GREP} -FlR '/usr/bin/perl' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -i '' -e 's!/usr/bin/perl!${PERL}!'
 	${FIND} -d ${WRKSRC}/docs -name CVS -exec ${RM} -rf {} +

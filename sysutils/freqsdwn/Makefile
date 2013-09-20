@@ -27,6 +27,7 @@ PORTDOCS=	README
 
 CONFDIR?=	${PREFIX}/etc/freqship
 
+NO_STAGE=	yes
 pre-fetch::
 	@[ -f ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} ] || (   \
 	${ECHO} "Please read and accept following LICENSE:";                \

@@ -40,6 +40,7 @@ MAN1=		auto-admin.1 \
 		auto-update-xorg.conf.1 \
 		auto-xdm-toggle.1
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/sbin ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/Common/* ${PREFIX}/sbin

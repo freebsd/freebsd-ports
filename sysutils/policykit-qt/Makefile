@@ -23,6 +23,7 @@ USES=		cmake gettext
 
 PORTSCOUT=	limit:^0
 
+NO_STAGE=	yes
 post-extract:
 	${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \
 		${WRKSRC}/CMakeLists.txt

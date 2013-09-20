@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pyzfs
-# Date created:				11 July 2010
-# Whom:					Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	zfs
 PORTVERSION=	1
@@ -56,6 +52,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-util.py \
 PLIST_SUB+=	V28="@comment "
 .endif
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${SRCDIR}/cddl/contrib/opensolaris/cmd/pyzfs/pyzfs.py \

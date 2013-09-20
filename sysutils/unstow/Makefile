@@ -1,9 +1,5 @@
-# New ports collection makefile for:	unstow
-# Date created:		3 January 2010
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	unstow
 PORTVERSION=	0.1.1
@@ -20,6 +16,7 @@ PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
 PORTDOCS=	README.md
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin/
 .for man in ${MAN1}

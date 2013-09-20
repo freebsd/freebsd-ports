@@ -27,6 +27,7 @@ USE_CSTD=	gnu89
 
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

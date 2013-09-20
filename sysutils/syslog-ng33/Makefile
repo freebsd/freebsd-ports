@@ -31,6 +31,7 @@ JSON_C_DESC=		Build with JSON-C support
 JSON_GLIB_DESC=		Build with JSON-GLIB support
 SYSLOG2NG_DESC=		Install syslog2ng script
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 LIB_DEPENDS=	evtlog.0:${PORTSDIR}/sysutils/eventlog

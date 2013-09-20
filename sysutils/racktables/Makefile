@@ -29,6 +29,7 @@ PCRE_DESC=	Regular Expression Support
 PCNTL_DESC=	pcntl Support
 LANG_DESC=	Additional Language Support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAP}

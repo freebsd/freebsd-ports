@@ -23,6 +23,7 @@ PLIST_FILES=	bin/${PORTNAME}
 verify:	checksum
 	gpg --verify ${DISTDIR}/inn-${PORTVERSION}${EXTRACT_SUFX}.asc
 
+NO_STAGE=	yes
 post-build:
 	@(cd ${WRKSRC}/backends && ${SETENV} ${MAKE_ENV} ${MAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${PORTNAME})

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ssid
-# Date created:		2011-02-15
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ssid
 PORTVERSION=	0.1
@@ -17,4 +13,5 @@ LICENSE=	MIT
 
 PLIST_FILES=	bin/ssid
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

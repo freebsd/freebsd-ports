@@ -34,6 +34,7 @@ PLIST_FILES=	bin/${PORTNAME}
 MAN8=		${PORTNAME}.8
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDMIDECODE}

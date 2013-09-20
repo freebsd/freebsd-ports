@@ -25,6 +25,7 @@ GNU_CONFIGURE=	yes
 MAN8=		graphicboot.8 sendgbmsg.8
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} pkg-message
 

@@ -21,6 +21,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 # default FreeBSD optimization levels (-O2, -O3, -Os)
 CFLAGS+=	-fno-schedule-insns2 -fno-schedule-insns -fno-caller-saves
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.man \

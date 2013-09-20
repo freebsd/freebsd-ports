@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sysutils/bsdmoted
-# Date created:		2010-02-25
-# Whom:			Daniel Walter <sahne@0x90.at>
-#
+# Created by: Daniel Walter <sahne@0x90.at>
 # $FreeBSD$
-#
 
 PORTNAME=	bsdmoted
 PORTVERSION=	0.4.0
@@ -15,4 +11,5 @@ COMMENT=	Use Wii remote as mouse
 
 PLIST_FILES=	sbin/bsdmoted
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Schedule-At
-# Date created:				10th Jan 2001
-# Whom:					kuriyama
-#
+# Created by: kuriyama
 # $FreeBSD$
-#
 
 PORTNAME=	Schedule-At
 PORTVERSION=	1.15
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Schedule::At.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

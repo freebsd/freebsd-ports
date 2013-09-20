@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cdf
-# Date created:		2004-10-22
-# Whom:			Charlie & <root@lame.novel.ru>
-#
+# Created by: Charlie & <root@lame.novel.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	cdf
 PORTVERSION=	0.2
@@ -18,4 +14,5 @@ PLIST_FILES=	bin/cdf
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

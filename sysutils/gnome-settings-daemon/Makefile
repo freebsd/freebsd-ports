@@ -43,6 +43,7 @@ GCONF_SCHEMAS=	apps_gnome_settings_daemon_housekeeping.schemas \
 		desktop_gnome_peripherals_touchpad.schemas \
 		gnome-settings-daemon.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}

@@ -24,6 +24,7 @@ MAN1=		x86info.1
 MAN8=		lsmsr.8
 PLIST_FILES=	bin/lsmsr bin/x86info
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/x86info ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/lsmsr ${PREFIX}/bin

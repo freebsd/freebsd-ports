@@ -1,9 +1,5 @@
-# New ports collection makefile for:   prune
-# Date created:        29 August 2003
-# Whom:                dds
-#
+# Created by: dds
 # $FreeBSD$
-#
 
 PORTNAME=	fileprune
 PORTVERSION=	1.9
@@ -18,4 +14,5 @@ MAN1=		fileprune.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/fileprune
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

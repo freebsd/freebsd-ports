@@ -51,4 +51,5 @@ MAN3=		Brackup.3 \
 		Brackup::Target::Riak.3 \
 		Brackup::Target::Sftp.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

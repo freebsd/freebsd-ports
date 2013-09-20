@@ -22,6 +22,7 @@ NTFS3G_DESC=		Enable NTFS write support with ntfs-3g over FUSE
 EXT4_DESC=		Support EXT4 filesystem
 EXFAT_DESC=		Support Microsoft exFAT filesystem
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNTFS3G}

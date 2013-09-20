@@ -1,7 +1,4 @@
-# New ports collection makefile for:	apt
-# Date created:		23 October 2006
-# Whom:			Nick Barkas <snb@threerings.net>
-#
+# Created by: Nick Barkas <snb@threerings.net>
 # $FreeBSD$
 
 PORTNAME=	apt
@@ -39,6 +36,7 @@ DPKGDIR?=	/var/db/dpkg
 APTDIR?=	/var/db/apt
 PLIST_SUB+=	APTDIR=${APTDIR:C,^/,,}
 
+NO_STAGE=	yes
 post-patch:
 	${CP} ${FILESDIR}/https.cc ${FILESDIR}/https.h ${WRKSRC}/methods/
 	${REINPLACE_CMD} -e 's|@PREFIX@|${PREFIX}|g' -e \

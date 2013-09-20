@@ -20,6 +20,7 @@ OPTIONS_DEFINE=	CLI GTK2 LANG_ES LANG_EN LANG_FR
 OPTIONS_DEFAULT=	CLI GTK2 LANG_EN
 LANG_EN_DESC=	language support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}

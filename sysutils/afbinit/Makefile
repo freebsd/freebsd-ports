@@ -1,9 +1,5 @@
-# Ports collection makefile for:	afbinit
-# Date created:				15 September 2003
-# Whom:					marius@alchemy.franken.de
-#
+# Created by: marius@alchemy.franken.de
 # $FreeBSD$
-#
 
 PORTNAME=		afbinit
 PORTVERSION=		1.0
@@ -32,6 +28,7 @@ PKGMESSAGE=		${WRKDIR}/pkg-message
 
 MAN8=			afbinit.8
 
+NO_STAGE=	yes
 post-patch:
 .for i in afbinit.c debian/afbinit.8
 	@${REINPLACE_CMD} -E -e 's|\/usr\/lib|${DATADIR}|g; \

@@ -18,6 +18,7 @@ CFLAGS=		-Wno-return-type
 
 RELDATE=	20000521
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

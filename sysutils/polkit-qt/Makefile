@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PolKit-qt
-# Date created:		2009-12-25
-# Whom:			Dima Panov <fluffy@Fluffy.Khv.RU>
-#
+# Created by: Dima Panov <fluffy@Fluffy.Khv.RU>
 # $FreeBSD$
-#
 
 PORTNAME=	polkit-qt
 PORTVERSION=	0.103.0
@@ -32,6 +28,7 @@ USES=		cmake gettext
 #       requiring us to explicitly set LDFLAGS.
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-extract:
 	${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \
 		${WRKSRC}/CMakeLists.txt

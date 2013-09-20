@@ -16,6 +16,7 @@ FETCH_ARGS=		-pRr
 WRKSRC=			"${WRKDIR}/xorg62-${PORTNAME}-${DISTNAME}"
 PLIST_FILES=		bin/tty-clock
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/|${PREFIX}/|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|CFLAGS =|CFLAGS \+=|' ${WRKSRC}/Makefile

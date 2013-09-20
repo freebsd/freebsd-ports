@@ -1,9 +1,5 @@
-# New ports collection makefile for:	personality
-# Date created:		25 Mar 2001
-# Whom:			Andreas Klemm <andreas@FreeBSD.org>
-#
+# Created by: Andreas Klemm <andreas@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	personality
 PORTVERSION=	1.0
@@ -16,6 +12,7 @@ COMMENT=	System configuration management utility to alter system personality
 WRKSRC=		${WRKDIR}/src
 NO_BUILD=	YES
 
+NO_STAGE=	yes
 do-extract:
 	@ ${RM} -rf ${WRKDIR}
 	@ ${MKDIR} ${WRKDIR}

@@ -18,6 +18,7 @@ USES=		perl5
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../munin-common/munin.mk"
 
 ALL_TARGET=	build-common-prime

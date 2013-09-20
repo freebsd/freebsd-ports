@@ -25,6 +25,7 @@ SUB_FILES=	pkg-message
 
 USERMIN_MODULES=
 
+NO_STAGE=	yes
 post-extract:
 	@if [ "${USERMIN_MODULES}" != "" ]; then \
 		for usermin_module in ${USERMIN_MODULES}; do \

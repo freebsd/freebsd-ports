@@ -24,6 +24,7 @@ XTERM_256_DESC=		Enable support for 256 colour xterm
 HOSTINLOCKED_DESC=	Print user@host in locked message
 SHOWENC_DESC=		Show encoding on the status line
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 GNU_CONFIGURE=	yes

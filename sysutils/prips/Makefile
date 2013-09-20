@@ -21,6 +21,7 @@ MAKE_ENV+=	CFLAGS_WARN="-Wall -W"
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

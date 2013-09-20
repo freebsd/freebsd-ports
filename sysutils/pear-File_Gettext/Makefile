@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-File_Gettext
-# Date created:			  01 December 2004
-# Whom:				  Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	File_Gettext
 PORTVERSION=	0.4.2
@@ -19,6 +15,7 @@ USE_PHP=	yes
 
 PEAR_AUTOINSTALL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

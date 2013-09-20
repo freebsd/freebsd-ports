@@ -52,6 +52,7 @@ SUBDIR+=	client
 
 MAKE_ARGS+=	SUBDIR="${SUBDIR}" RRDDIR="${LOCALBASE}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

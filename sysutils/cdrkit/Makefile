@@ -19,6 +19,7 @@ MAN5=		genisoimagerc.5
 
 CONFLICTS=	cdrtools-[0-9]* cjk-cdrtools-[0-9]* cdrtools-devel-[0-9]*
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/include/AddSchilyBits.cmake \
 	    ${WRKSRC}/3rd-party/dirsplit/CMakeLists.txt

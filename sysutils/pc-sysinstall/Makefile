@@ -22,6 +22,7 @@ ONLY_FOR_ARCH=	i386 amd64
 FSVN_REV=	243808
 PSVN_REV=	21630
 
+NO_STAGE=	yes
 post-patch:
 	${RM} -f ${WRKSRC}/Makefile.inc
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \

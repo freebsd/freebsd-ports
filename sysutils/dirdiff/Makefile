@@ -20,6 +20,7 @@ PLIST_FILES=	bin/dirdiff lib/libfilecmp.so.0
 
 CFLAGS+=	-fPIC -I${TCL_INCLUDEDIR}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|.0.0|.0|g ; \

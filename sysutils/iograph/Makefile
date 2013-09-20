@@ -1,9 +1,5 @@
-# New ports collection makefile for:	iograph
-# Date created:				28 September 2007
-# Whom:					Markus Dolze
-#
+# Created by: Markus Dolze
 # $FreeBSD$
-#
 
 PORTNAME=	iograph
 PORTVERSION=	0.9.1
@@ -26,4 +22,5 @@ GNU_CONFIGURE=	yes
 
 MAN8=		iograph.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

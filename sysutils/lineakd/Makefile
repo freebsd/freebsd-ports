@@ -1,9 +1,5 @@
-# New ports collection makefile for: lineakd
-# Date created:				03 June 2002
-# Whom:					Kay Lehmann
-#
+# Created by: Kay Lehmann
 # $FreeBSD$
-#
 
 PORTNAME=	lineakd
 PORTVERSION=	0.9
@@ -29,6 +25,7 @@ PORTDOCS=	README TODO AUTHORS
 MAN1=		lineakd.1
 #MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' \
 		${WRKSRC}/lineak/Makefile.in ${WRKSRC}/lineakd/Makefile.in

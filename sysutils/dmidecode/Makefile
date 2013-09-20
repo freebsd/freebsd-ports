@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dmidecode
-# Date created:				19 November 2003
-# Whom:					Anders Nordby <anders@FreeBSD.org>
-#
+# Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dmidecode
 PORTVERSION=	2.12
@@ -22,6 +18,7 @@ MAKE_ENV+=	DOCSDIR="${DOCSDIR}"
 LICENSE=	GPLv2
 
 .if defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^install.*:/s,install-doc,,' ${WRKSRC}/Makefile
 

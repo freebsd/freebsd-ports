@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zfs-snapshot-mgmt
-# Date created:				6 July 2008
-# Whom:				Marcin Simonides <marcin@studio4plus.com>
-#
+# Created by: Marcin Simonides <marcin@studio4plus.com>
 # $FreeBSD$
-#
 
 PORTNAME=	zfs-snapshot-mgmt
 PORTVERSION=	20090201
@@ -27,6 +23,7 @@ post-patch:	.SILENT
 	${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} \
 		-e 's|/usr/local|${PREFIX}|g' {} +
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${MANPREFIX}/man/man8

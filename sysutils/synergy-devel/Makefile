@@ -1,4 +1,4 @@
-# Created by: George Neville-Neil <gnn@freebsd.org>
+# Created by: George Neville-Neil <gnn@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	synergy
@@ -24,6 +24,7 @@ PLIST_FILES=	bin/synergys bin/synergyc
 PORTEXAMPLES=	synergy.conf.example synergy.conf.example-basic \
 		synergy.conf.example-advanced
 
+NO_STAGE=	yes
 post-extract:
 	cd ${WRKSRC}/tools/
 	${MKDIR} ${WRKSRC}/tools/cryptopp562

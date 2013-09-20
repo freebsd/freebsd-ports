@@ -26,6 +26,7 @@ GH_COMMIT=	${GH_TAGNAME}
 PLIST_FILES=	bin/screenFetch
 PORTDOCS=	CHANGELOG README.mkdn TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

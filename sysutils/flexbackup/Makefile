@@ -29,6 +29,7 @@ MBUFFER_DESC=	Enable mbuffer support
 STAR_DESC=	Enable star support
 ZIP_DESC=	Enable zip support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAFIO}

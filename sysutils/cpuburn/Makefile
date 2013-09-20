@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cpuburn
-# Date created:				Apr 1, 2001
-# Whom:					Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	cpuburn
 DISTVERSION=	1_4
@@ -25,6 +21,7 @@ PORTDOCS=	README Design
 CPUS=		BX K6 K7 MMX P5 P6
 PLIST_FILES=	${CPUS:S+^+bin/burn+}
 
+NO_STAGE=	yes
 do-build:
 .for CPU in ${CPUS}
 	${CC} -m32 -s -nostdlib -o ${WRKSRC}/burn${CPU} ${WRKSRC}/burn${CPU}.S

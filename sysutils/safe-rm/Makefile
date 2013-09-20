@@ -20,6 +20,7 @@ FETCH_ARGS=	-pRr
 PORTDOCS=	COPYING Changes README
 PLIST_FILES=	bin/safe-rm
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

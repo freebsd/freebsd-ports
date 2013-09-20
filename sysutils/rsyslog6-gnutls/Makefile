@@ -17,6 +17,7 @@ CONFIGURE_ARGS+=--enable-gnutls
 PLIST_FILES+=	lib/rsyslog/lmnsd_gtls.la \
 		lib/rsyslog/lmnsd_gtls.so
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} \
 		${WRKSRC}/runtime/.libs/lmnsd_gtls.so ${PREFIX}/lib/rsyslog

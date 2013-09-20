@@ -14,4 +14,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/puppet-lint
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -28,6 +28,7 @@ PROJECTHOST=	semicomplete
 PORTDOCS=	CHANGELIST INSTALL
 MAN1=		grok.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|PREFIX=|PREFIX?=|; s|-g root|-g wheel|' \
 		${WRKSRC}/Makefile

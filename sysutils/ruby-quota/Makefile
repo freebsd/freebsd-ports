@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-quota
-# Date created:		21 June 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	quota
 PORTVERSION=	0.5.1
@@ -24,6 +20,7 @@ INSTALL_TARGET=	site-install
 
 DOCS_EN=	ChangeLog README README.html
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}

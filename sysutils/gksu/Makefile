@@ -25,6 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		gksu.1
 MLINKS=		gksu.1 gksudo.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/gkeyfile.h|glib.h|g' \
 		${WRKSRC}/nautilus-gksu/libnautilus-gksu.c

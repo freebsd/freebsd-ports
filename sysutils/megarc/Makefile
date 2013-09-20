@@ -1,9 +1,5 @@
-# Ports collection makefile for:	megarc
-# Date created:				22 June 2005
-# Whom:					Gerrit Beine <tux@pinguru.net>
-#
+# Created by: Gerrit Beine <tux@pinguru.net>
 # $FreeBSD$
-#
 
 PORTNAME=	megarc
 PORTVERSION=	1.51
@@ -25,6 +21,7 @@ RESTRICTED=	Must be downloaded directly from the manufacturer
 PLIST_FILES=	sbin/megarc
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

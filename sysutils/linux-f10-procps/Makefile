@@ -22,6 +22,7 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 PROCFS= /compat/linux/proc
 
+NO_STAGE=	yes
 post-install:
 	@df ${PROCFS} 2>&1 | ${EGREP} '^linprocfs ' > /dev/null 2>&1 || (echo ">>>" ; echo ">>> You still need to mount ${PROCFS}; see linprocfs(5)" ; echo ">>> for more information" ; echo ">>>")
 

@@ -55,6 +55,7 @@ WWW_FILES=	logo_top.png \
 PORTDOCS=	*
 PORTDATA=	*.pm
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-everything::

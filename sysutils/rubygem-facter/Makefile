@@ -17,6 +17,7 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/facter
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Restrict dmidecode dependency to i386 and amd64 systems

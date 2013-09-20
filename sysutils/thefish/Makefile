@@ -18,6 +18,7 @@ WANT_GNOME=	yes
 #OPTIONS_SINGLE_X11=	GTK2
 #OPTIONS_DEFAULT=	GTK2
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 #.if ${PORT_OPTIONS:MGTK2}

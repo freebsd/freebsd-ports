@@ -1,7 +1,4 @@
-# New ports collection makefile for:    libutempter
-# Date created:				 18 Aug 2004 14:50:41 CEST
-# Whom:					Michael Nottebrock <lofi@freebsd.org>,
-#					David Malone <dwmalone@maths.tcd.ie>
+# Created by: Michael Nottebrock <lofi@FreeBSD.org>,
 # $FreeBSD$
 
 PORTNAME=	libutempter
@@ -17,6 +14,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900004

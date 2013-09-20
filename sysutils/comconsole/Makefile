@@ -13,6 +13,7 @@ COMMENT=	Setup your PC to use serial port COM1 as its console device
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 

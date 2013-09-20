@@ -20,6 +20,7 @@ PLIST_FILES=	libexec/gkrellm2/plugins/${PORTNAME}.so
 USES=		gmake pkgconfig
 MAKE_ARGS=	CC="${CC}"
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.so ${PREFIX}/libexec/gkrellm2/plugins/
 

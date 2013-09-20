@@ -1,5 +1,4 @@
-# Created by: 	Mark Felder <feld@FreeBSD.org>
-#
+# Created by: Mark Felder <feld@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	xe-guest-utilities
@@ -30,6 +29,7 @@ ONLY_FOR_ARCHS_REASON=	"Requires i385 XEN or amd64 XENHVM kernels"
 PLIST_FILES=	sbin/xe-daemon \
 		sbin/xe-update-guest-attrs
 
+NO_STAGE=	yes
 do-build:
 	@${DO_NADA}
 

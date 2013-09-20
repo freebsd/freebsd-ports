@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pbimaker
-# Date created:				June 23, 2011
-# Whom:					Jesse
-#
+# Created by: Jesse
 # $FreeBSD$
-#
 
 PORTNAME=	pbimaker
 PORTVERSION=	1.3
@@ -19,4 +15,5 @@ NO_COFIGURE=	yes
 
 WRKSRC=	${WRKDIR}/PBIMaker
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

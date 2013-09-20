@@ -22,6 +22,7 @@ CFLAGS+=	-std=c99
 MAKE_ARGS+=	LDFLAGS=-static
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386" && ${ARCH} != "alpha" && ${ARCH} != "amd64"

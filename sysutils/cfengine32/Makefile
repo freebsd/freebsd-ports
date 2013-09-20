@@ -42,6 +42,7 @@ MAN8=	cf-agent.8	cf-key.8	cf-monitord.8	\
 	cf-know.8	cf-promises.8	cf-runagent.8
 	
 
+NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} -e '/^htmldir/s!=.*!= @htmldir@!'\
 				  ${WRKSRC}/docs/Makefile.in

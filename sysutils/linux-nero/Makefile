@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sysutils/linux-nero
-# Date created:				23 Apr 2007
-# Whom:					Boris Samorodov <bsam@FreeBSD.org>
-#
+# Created by: Boris Samorodov <bsam@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nero
 PORTVERSION=	4.0.0.0
@@ -27,4 +23,5 @@ USE_LDCONFIG=	yes
 BRANDELF_DIRS=	usr/bin
 SRC_DISTFILES=
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

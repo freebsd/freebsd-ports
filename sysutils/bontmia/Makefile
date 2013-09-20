@@ -19,6 +19,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/bontmia
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bontmia ${PREFIX}/bin
 

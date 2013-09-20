@@ -15,6 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/webmin/webmin-init:${PORTSDIR}/sysutils/webmin
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/virtual-server
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} -r ${WRKSRC}/images/.xvpics
 	@${FIND} ${WRKSRC} -name "*.swp" -delete

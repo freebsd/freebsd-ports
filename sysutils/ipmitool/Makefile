@@ -41,6 +41,7 @@ CONFIGURE_ARGS+=	--enable-intf-open
 CONFIGURE_ARGS+=	--disable-intf-open
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MDOCS)

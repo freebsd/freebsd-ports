@@ -1,9 +1,5 @@
-# New ports collection makefile for: socket
-# Date created:         14 August 1996
-# Whom:                 wosch
-#
+# Created by: wosch
 # $FreeBSD$
-#
 
 PORTNAME=	socket
 PORTVERSION=	1.1
@@ -17,6 +13,7 @@ COMMENT=	Create TCP socket and connect to stdin/out
 MAKE_ENV+=	SWITCHES="-DUSE_INET6 -DHAVE_SYS_PARAM_H -Wall"
 MAN1=		socket.1
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/

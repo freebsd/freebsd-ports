@@ -21,6 +21,7 @@ USE_GNOME=	glib20
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/curlftpfs
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1000000

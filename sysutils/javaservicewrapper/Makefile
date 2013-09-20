@@ -1,9 +1,5 @@
-# New ports collection makefile for:	javaservicewrapper
-# Date created:				2007-09-13
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	javaservicewrapper
 PORTVERSION=	3.5.7
@@ -22,6 +18,7 @@ USE_GMAKE=	yes
 
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == amd64)

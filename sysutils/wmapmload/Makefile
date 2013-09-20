@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmapmload
-# Date created:				Sat Sep 21 01:48:10 EDT 2002
-# Whom:					pat
-#
+# Created by: pat
 # $FreeBSD$
-#
 
 PORTNAME=	wmapmload
 PORTVERSION=	0.3.4
@@ -25,4 +21,5 @@ PLIST_FILES=	bin/wmapmload
 BINMODE=	2755
 BINGRP=		operator
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

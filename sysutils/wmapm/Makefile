@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmapm
-# Date created:		99/07/02
-# Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
-#
+# Created by: Satoshi TAOKA <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wmapm
 PORTVERSION=	3.1
@@ -26,4 +22,5 @@ PLIST_FILES=	bin/wmapm
 BINMODE=	2755
 BINGRP=		operator
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

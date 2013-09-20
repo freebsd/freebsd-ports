@@ -59,6 +59,7 @@ IGNORE=		the variable GMOND_CONF must point to a file when defined
 GMOND_CONF=	${WRKDIR}/gmond.conf
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_RC_SUBR=	gmond

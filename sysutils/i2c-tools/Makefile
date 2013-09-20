@@ -1,9 +1,5 @@
-# New ports collection makefile for:	i2c-tools
-# Date created:		2012-04-18
-# Whom:			Andriy Gapon <avg@icyb.net.ua>
-#
+# Created by: Andriy Gapon <avg@icyb.net.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	i2c-tools
 PORTVERSION=	3.1.0
@@ -20,6 +16,7 @@ USE_PERL5=	run
 
 PLIST_FILES=	sbin/decode-dimms
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/eeprom/decode-dimms ${PREFIX}/sbin/decode-dimms
 

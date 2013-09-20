@@ -50,6 +50,7 @@ NORMALIZE_DESC=	Misc: normalize (adjust audio to a std. level)
 TAGLIB_DESC=	Misc: TagLib (reading/writing audio metadata)
 TRANSCODE_DESC=	Misc: Transcode (DVD ripping)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCDRDAO}

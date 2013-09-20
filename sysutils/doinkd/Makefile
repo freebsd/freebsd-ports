@@ -1,9 +1,5 @@
-# New ports collection makefile for:	doinkd
-# Date created:			12 March 1997
-# Whom:		Andrew <andrew@ugh.net.au>, Iain Templeton <iain@ugh.net.au>
-#
+# Created by: Andrew <andrew@ugh.net.au>, Iain Templeton <iain@ugh.net.au>
 # $FreeBSD$
-#
 
 PORTNAME=	doinkd
 PORTVERSION=	0.01
@@ -23,6 +19,7 @@ USE_RC_SUBR=	${PORTNAME}
 PLIST_FILES=	etc/doinkd/doinkd.cf.template sbin/doinkd
 PLIST_DIRSTRY=	etc/doinkd
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

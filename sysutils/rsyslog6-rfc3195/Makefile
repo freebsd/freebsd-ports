@@ -14,6 +14,7 @@ CONFIGURE_ARGS+=--enable-rfc3195
 PLIST_FILES+=	lib/rsyslog/im3195.la \
 		lib/rsyslog/im3195.so
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} \
 		${WRKSRC}/plugins/im3195/.libs/im3195.so ${PREFIX}/lib/rsyslog

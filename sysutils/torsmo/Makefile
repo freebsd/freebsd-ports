@@ -24,6 +24,7 @@ OPTIONS_DEFINE=	XFT DOUBLE_BUFFER DOCS
 OPTIONS_DEFAULT=	XFT DOUBLE_BUFFER
 DOUBLE_BUFFER_DESC=	Flicker-free operation support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXFT}

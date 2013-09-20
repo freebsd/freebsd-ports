@@ -18,4 +18,5 @@ PLIST_FILES=	bin/pargs \
 		bin/pldd \
 		bin/ptree
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

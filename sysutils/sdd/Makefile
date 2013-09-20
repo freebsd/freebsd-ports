@@ -13,6 +13,7 @@ MAKE_ENV=	MAKEPROG="${GMAKE}" CCOM="${CC}" COPTX="${CFLAGS}"
 MAN1=		sdd.1
 PLIST_FILES=	bin/sdd
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386" || ${CC} != "cc"

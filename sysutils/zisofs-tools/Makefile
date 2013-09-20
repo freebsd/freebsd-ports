@@ -28,6 +28,7 @@ OPTIONS_DEFINE=	LFS DOCS
 OPTIONS_DEFAULT=	LFS
 LFS_DESC=	Enable Large Files Support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MLFS}

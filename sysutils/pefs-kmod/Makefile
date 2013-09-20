@@ -25,6 +25,7 @@ MAN8=		pam_pefs.8 pefs.8
 
 ONLY_FOR_ARCHS=	i386 amd64	# not tested on other archs
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

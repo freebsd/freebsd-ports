@@ -26,4 +26,5 @@ WANT_GNOME=	yes
 INFO=		xorrecord xorriso xorrisofs
 MAN1=		xorrecord.1 xorriso.1 xorrisofs.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

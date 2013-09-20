@@ -50,6 +50,7 @@ PGSQL_DESC=	Enable PostgreSQL connector
 MYSQL_DESC=	Enable MySQL connector
 LIBVIRT_DESC=	Enable libvirt compatibility
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTOKYOCABINET}

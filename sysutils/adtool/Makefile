@@ -1,9 +1,5 @@
-# New ports collection makefile for:	adtool
-# Date created:				Wed 23 Apr 2003
-# Whom:					joseph@randomnetworks.com
-#
+# Created by: joseph@randomnetworks.com
 # $FreeBSD$
-#
 
 PORTNAME=	adtool
 PORTVERSION=	1.3.3
@@ -27,4 +23,5 @@ PLIST_FILES=	bin/adtool \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

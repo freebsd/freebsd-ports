@@ -86,6 +86,7 @@ MAKE_ENV=	CCOM=cc GMAKE_NOWARN=true INS_BASE=${LOCALBASE} \
 		INS_RBASE=${LOCALBASE}
 CDRTLSTARGET=	${ARCH:S/powerpc64/powerpc/}-freebsd-cc
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if exists(${LOCALBASE}/lib/libiconv.a) || \

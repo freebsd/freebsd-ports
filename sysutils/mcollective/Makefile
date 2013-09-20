@@ -25,6 +25,7 @@ SCRIPTS=	mco mc-call-agent
 
 SUB_LIST+=	RUBY=${RUBY}
 
+NO_STAGE=	yes
 do-patch:
 	@${REINPLACE_CMD} -e "s|/etc/mcollective|${ETCDIR}|" \
 	    ${WRKSRC}/bin/mcollectived \

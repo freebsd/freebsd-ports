@@ -1,9 +1,5 @@
-# New ports collection makefile for:	clockspeed-conf
-# Date created:		10 April 2003
-# Whom:			Patrick Atamaniuk <atamaniuk at frobs.net>
-#
+# Created by: Patrick Atamaniuk <atamaniuk at frobs.net>
 # $FreeBSD$
-#
 
 PORTNAME=	clockspeed-conf
 PORTVERSION=	0.4.5
@@ -19,6 +15,7 @@ RUN_DEPENDS=	supervise:${PORTSDIR}/sysutils/daemontools \
 MAN8=		clockspeed-conf.8 taiclockd-conf.8
 DOCS=		COPYRIGHT README TODO
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

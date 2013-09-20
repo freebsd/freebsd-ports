@@ -31,6 +31,7 @@ USE_LDCONFIG=	yes
 # To be kept in sync with sysutils/zeitgeist.
 ZEITGEIST_VERSION=	0.8.2
 
+NO_STAGE=	yes
 post-extract:
 	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${_DISTDIR}/zeitgeist-${ZEITGEIST_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS})

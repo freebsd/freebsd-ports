@@ -36,6 +36,7 @@ SNMP_DESC=	SNMP trap sender for rsyslog
 
 USES=		pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBI}

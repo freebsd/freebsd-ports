@@ -15,6 +15,7 @@ LDFLAGS+=	-lncurses -lform
 
 PLIST_FILES=	bin/cdircmp
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} -c ${WRKSRC}/main.c -o ${WRKSRC}/main.o
 	${CC} ${LDFLAGS} -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/main.o

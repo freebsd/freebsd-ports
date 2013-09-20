@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  tcplist
-# Date created:			  Mon Apr 14, 1997
-# Whom:				  David O'Brien (obrien@FreeBSD.org)
-#
+# Created by: David O'Brien (obrien@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	tcplist
 PORTVERSION=	2.2
@@ -25,4 +20,5 @@ NO_WRKSUBDIR=	yes
 INSTALL_TARGET=	install install.man
 MAN1=		tcplist.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

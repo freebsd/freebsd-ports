@@ -22,6 +22,7 @@ MAN8=		zogftw.8
 
 PORTSCOUT=	ignore:1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUPG}

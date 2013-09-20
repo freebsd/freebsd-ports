@@ -20,6 +20,7 @@ MAN5=		logrotate.conf.5
 MAN8=		logrotate.8
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${SED} -e 's|__PREFIX__|${PREFIX}|' \

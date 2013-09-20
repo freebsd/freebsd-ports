@@ -22,6 +22,7 @@ DEFINES=	-DMBMON_EXECUTABLE=\\\"${LOCALBASE}/bin/mbmon\\\" \
 CPPFLAGS+=	-I${LOCALBASE}/include ${DEFINES}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${CP} -f ${FILESDIR}/mbmon-sensors-interface.* \
 		${FILESDIR}/smartctl-sensors-interface.* ${WRKSRC}/src

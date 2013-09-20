@@ -27,6 +27,7 @@ BINS=		lspci setpci
 MAN8=		lspci.8 setpci.8
 PLIST_FILES=	${BINS:S/^/bin\//}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC=/d; /^CFLAGS=/ s|=|+=|; /^IDSDIR=/ s|$$|/pciids|; /^OPT=/d; /^PREFIX=/d; s| lib/$$(PCILIB)||' ${WRKSRC}/Makefile
 

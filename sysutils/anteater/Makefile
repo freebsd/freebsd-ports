@@ -15,4 +15,5 @@ GNU_CONFIGURE=	yes
 MAN1=		anteater.1
 PLIST_FILES=	bin/anteater
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -27,6 +27,7 @@ PORTDOCS=	AUTHORS NEWS README
 MAN1=		ExplicateUTF8.1 unidesc.1 unifuzz.1 unihist.1 uniname.1	\
 		unireverse.1
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's|TestData|${EXAMPLESDIR}|' ${WRKSRC}/README

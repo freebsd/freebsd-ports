@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bsdinfo
-# Date created:        8 June 2012
-# Whom:                samu <s@samu.pl>
-#
+# Created by: samu <s@samu.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	bsdinfo
 PORTVERSION=	0.22
@@ -18,6 +14,7 @@ GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	X256
 X256_DESC=	Build the 256 color version
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX256}

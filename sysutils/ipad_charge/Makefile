@@ -15,6 +15,7 @@ USE_RC_SUBR=	ipad_charge
 SUB_FILES=	ipad_charge.conf pkg-message
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/etc/devd
 	@${INSTALL_DATA} ${WRKDIR}/ipad_charge.conf ${PREFIX}/etc/devd

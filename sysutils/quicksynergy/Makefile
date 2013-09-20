@@ -22,4 +22,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/quicksynergy \
 		share/locale/pt_BR/LC_MESSAGES/quicksynergy.mo
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

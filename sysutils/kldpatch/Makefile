@@ -1,9 +1,5 @@
-# New ports collection makefile for:		kldpatch
-# Date created:					9 January 2009
-# Whom:						luigi@freebsd.org
-#
+# Created by: luigi@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	kldpatch
 PORTVERSION=	20090116
@@ -20,6 +16,7 @@ PLIST_FILES=	sbin/kldpatch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${PREFIX}/man/man8

@@ -20,6 +20,7 @@ OPTIONS_DEFINE=		GIT XCLIP
 GIT_DESC=		Enable git storage
 XCLIP_DESC=		Enable xclip feature
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGIT}

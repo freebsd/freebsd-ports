@@ -18,4 +18,5 @@ PLIST_FILES=	bin/unquote
 MAKE_ENV+=	RELEASE=yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

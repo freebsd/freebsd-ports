@@ -1,9 +1,5 @@
-# New ports collection makefile for: clockspeed
-# Date created:		16 June 2000
-# Whom:			Mario S F Ferreira <lioux@linf.unb.br> et al.
-#
+# Created by: Mario S F Ferreira <lioux@linf.unb.br> et al.
 # $FreeBSD$
-#
 
 PORTNAME=	clockspeed
 PORTVERSION=	0.62
@@ -27,6 +23,7 @@ PREFIX_FIX_FILES=	leapsecs_read.c INSTALL
 CLOCKSPEED_RC_SCRIPT_SAMPLE=	${FILESDIR}/clockspeed.sh.sample
 RC_SCRIPT_STARTUP_DIR=		${PREFIX}/etc/rc.d
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   jailme
-# Date created:        2 January 2007
-# Whom:                wmoran
-#
+# Created by: wmoran
 # $FreeBSD$
-#
 
 PORTNAME=	jailme
 PORTVERSION=	0.1
@@ -17,4 +13,5 @@ PLIST_FILES=	sbin/jailme
 
 USE_BZIP2=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

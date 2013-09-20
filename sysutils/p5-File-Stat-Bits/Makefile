@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-File-Stat-Bits
-# Date created:			Wed Jun 15 12:44:11 CDT 2005
-# Whom:					Jim Pirzyk pirzyk@freebsd.org
-#
+# Created by: Jim Pirzyk pirzyk@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	File-Stat-Bits
 PORTVERSION=	1.01
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		File::Stat::Bits.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

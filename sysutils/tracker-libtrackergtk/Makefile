@@ -1,7 +1,4 @@
-# New ports collection makefile for:	tracker-libtrackergtk
-# Date created:		2008-03-30
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/sysutils/tracker-libtrackergtk/Makefile,v 1.1 2009/08/08 18:46:43 ahze Exp $
 
@@ -14,4 +11,5 @@ PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${.CURDIR}/pkg-descr
 MASTERDIR=	${.CURDIR}/../../sysutils/tracker-client
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

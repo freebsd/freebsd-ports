@@ -23,4 +23,5 @@ NLS_USES=	gettext
 NLS_CMAKE_ON=	-DNLS_ENABLED=true
 NLS_CMAKE_OFF=	-DNLS_ENABLED=false
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

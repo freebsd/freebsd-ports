@@ -1,9 +1,5 @@
-# New ports collection makefile for:	iogen
-# Date created:		2011-12-14
-# Whom:			Steven Kreuzer <skreuzer@FreeBSD.org>
-#
+# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	iogen
 PORTVERSION=	3.1p0
@@ -20,6 +16,7 @@ PLIST_FILES=	bin/iogen
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; \
 	${CC} ${CFLAGS} -DVERSION=\"${PORTVERSION}\" iogen.c -o iogen

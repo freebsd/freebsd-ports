@@ -13,6 +13,7 @@ COMMENT=	Recover a master.passwd from the hashed database
 MAN8=		pwd_unmkdb.8
 PLIST_FILES=	sbin/pwd_unmkdb
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pwd_unmkdb ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/pwd_unmkdb.8 ${MAN8PREFIX}/man/man8

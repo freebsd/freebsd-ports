@@ -19,6 +19,7 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README
 PORTEXAMPLES=	ogg2mp3.sh mp32wav.sh
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 

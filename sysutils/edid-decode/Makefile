@@ -15,6 +15,7 @@ USE_XZ=		yes
 
 PLIST_FILES=	bin/edid-decode
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/${PORTNAME}.c -o ${WRKSRC}/${PORTNAME}
 

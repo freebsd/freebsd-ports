@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmbluecpu
-# Date created:				29 Mar 2003
-# Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
-#
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	wmbluecpu
 PORTVERSION=	0.4
@@ -21,6 +17,7 @@ USE_XORG=	xpm
 MAN1=		wmbluecpu.1
 PLIST_FILES=	bin/wmbluecpu
 
+NO_STAGE=	yes
 post-patch:
 	@${CP} ${FILESDIR}/cpu_freebsd.* ${WRKSRC}
 

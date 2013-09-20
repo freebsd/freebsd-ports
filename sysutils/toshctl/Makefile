@@ -1,9 +1,5 @@
-# New ports collection makefile for:   toshctl
-# Date created:        22 September 2003
-# Whom:                carl@servicefactory.com
-#
+# Created by: carl@servicefactory.com
 # $FreeBSD$
-#
 
 PORTNAME=	toshctl
 PORTVERSION=	0.0.0p3
@@ -19,6 +15,7 @@ PLIST_FILES=	bin/toshctl
 
 WRKSRC=		${WRKDIR}/toshctl
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 

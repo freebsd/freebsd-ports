@@ -1,9 +1,5 @@
-# Ports collection makefile for: aimage
-# Date created: 	29/03/2008
-# Whom: 		Chris Calvey <chris@securityforensics.co.uk>
-#
+# Created by: Chris Calvey <chris@securityforensics.co.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	aimage
 PORTVERSION=	3.2.5
@@ -21,4 +17,5 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/aimage
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

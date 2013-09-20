@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sbniconfig
-# Date created:				18 Feb 2003
-# Whom:					Max Khon <fjoe@FreeBSD.org>
-#
+# Created by: Max Khon <fjoe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sbniconfig
 PORTVERSION=	1.0
@@ -18,6 +14,7 @@ NO_PACKAGE=	"Depends on kernel"
 ONLY_FOR_ARCHS=	i386
 PLIST_FILES=	bin/sbniconfig
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${FILESDIR}/sbniconfig.c ${WRKDIR}
 

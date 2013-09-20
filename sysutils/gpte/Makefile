@@ -1,7 +1,4 @@
-# Ports collection makefile for:	gpte
-# Date created: 12 Jan 2005
-# Whom: Valentin Nechayev <netch@segfault.kiev.ua>
-#
+# Created by: Valentin Nechayev <netch@segfault.kiev.ua>
 # $FreeBSD$
 
 PORTNAME=	gpte
@@ -17,6 +14,7 @@ MANCOMPRESSED=	yes
 
 PLIST_FILES=	bin/gpte
 
+NO_STAGE=	yes
 post-extract:
 	cd $(WRKSRC) && ${CP} Makefile.bsd Makefile
 

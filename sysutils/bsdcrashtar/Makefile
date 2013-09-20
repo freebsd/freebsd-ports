@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bsdcrashtar
-# Date created:				18 October 2009
-# Whom:					Mikolaj Golub <to.my.trociny@gmail.com>
-#
+# Created by: Mikolaj Golub <to.my.trociny@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	bsdcrashtar
 PORTVERSION=	0.1.3
@@ -19,4 +15,5 @@ MANCOMPRESSED=	yes
 
 MAKE_ENV+=	NO_OBJ=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

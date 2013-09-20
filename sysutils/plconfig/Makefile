@@ -1,9 +1,5 @@
-# New ports collection makefile for:	plconfig
-# Date created:		Mon Jan 27 12:34:34 PST 2003
-# Whom:			Matt Peterson <matt@peterson.org>
-#
+# Created by: Matt Peterson <matt@peterson.org>
 # $FreeBSD$
-#
 
 PORTNAME=	plconfig
 PORTVERSION=	0.2
@@ -18,6 +14,7 @@ COMMENT=	Tool for configuring HomePlug powerline bridges
 
 ALL_TARGET=	plconfig
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

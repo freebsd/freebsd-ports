@@ -48,6 +48,7 @@ MAN1=		nitrogen.1
 DESKTOP_ENTRIES="Nitrogen" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" \
 		"Graphics;Viewer;" true
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXINERAMA}

@@ -20,6 +20,7 @@ USE_XORG=	x11 xext
 
 MAN1=		contool.1
 
+NO_STAGE=	yes
 pre-install:
 	@${MKDIR} ${PREFIX}/lib/help
 

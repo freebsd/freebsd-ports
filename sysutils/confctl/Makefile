@@ -1,9 +1,5 @@
-# New ports collection makefile for:	confctl
-# Date created:		2012-06-18
-# Whom:			Edward Tomasz Napierala <trasz@FreeBSD.org>
-#
+# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	confctl
 PORTVERSION=	1.2
@@ -21,4 +17,5 @@ GNU_CONFIGURE=	yes
 MAN1=		confctl.1
 PLIST_FILES=	bin/confctl
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

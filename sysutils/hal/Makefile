@@ -70,6 +70,7 @@ MAN8=		hald.8
 OPTIONS_DEFINE=	FIXED_MOUNTPOINTS
 FIXED_MOUNTPOINTS_DESC=	use fixed mountpoints
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFIXED_MOUNTPOINTS}

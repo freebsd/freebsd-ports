@@ -1,9 +1,5 @@
-# New ports collection makefile for:	topless
-# Date created:				Jun 11 2005
-# Whom:					koma2@lovepeers.org
-#
+# Created by: koma2@lovepeers.org
 # $FreeBSD$
-#
 
 PORTNAME=	topless
 PORTVERSION=	1.52
@@ -19,4 +15,5 @@ USE_PERL5=	build
 MAN1=		topless.1
 PLIST_FILES=	bin/topless
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

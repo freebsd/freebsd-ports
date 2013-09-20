@@ -14,6 +14,7 @@ MAN8=		pftop.8
 
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900039

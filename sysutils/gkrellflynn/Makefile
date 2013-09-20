@@ -23,6 +23,7 @@ ALL_TARGET=	${PORTNAME}.so
 CFLAGS+=	`pkg-config --cflags gtk+-2.0 gthread-2.0` \
 		-I${LOCALBASE}/include -DGKRELLM2
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gkrellflynn.so \
 		${PREFIX}/libexec/gkrellm2/plugins

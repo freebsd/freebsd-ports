@@ -44,6 +44,7 @@ LIBEWF_LIB_DEPENDS=	libewf.so:${PORTSDIR}/devel/libewf
 LIBEWF_CONFIGURE_ON=	--with-libewf=${LOCALBASE}
 LIBEWF_CONFIGURE_OFF=	--without-libewf
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

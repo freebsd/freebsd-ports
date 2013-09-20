@@ -18,4 +18,5 @@ MAKE_ARGS=	CC="${CC}" CCOPTIONS="-DFreeBSD"
 MAN1=		xfsm.1
 PLIST_FILES=	bin/xfsm
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

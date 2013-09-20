@@ -24,6 +24,7 @@ MAN8=		pdumpfs.8
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

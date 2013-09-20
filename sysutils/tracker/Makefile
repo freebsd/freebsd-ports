@@ -21,6 +21,7 @@ OPTIONS_DEFAULT=GNOME MSOFFICE
 GNOME_DESC=	Gnome preferences, panel applet, and search tool
 MSOFFICE_DESC=	Search support for Microsoft Office Docs (uses gtk)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOME}

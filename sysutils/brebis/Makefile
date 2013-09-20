@@ -21,6 +21,7 @@ MAN1=	brebis.1
 MANCOMPRESSED=	no
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

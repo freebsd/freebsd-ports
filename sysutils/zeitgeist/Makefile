@@ -27,6 +27,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=	zeitgeist-daemon.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|g' \
 		${WRKSRC}/extra/rdfxml2py

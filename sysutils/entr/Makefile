@@ -16,4 +16,5 @@ PLIST_FILES=	bin/entr
 MAN1=	entr.1
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

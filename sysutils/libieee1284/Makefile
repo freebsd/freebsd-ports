@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libieee1284
-# Date created:		2004-12-29
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libieee1284
 PORTVERSION=	0.2.10
@@ -23,6 +19,7 @@ ONLY_FOR_ARCHS=	i386
 USE_PYTHON=	yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 MAN3!=		${CAT} ${FILESDIR}/man3

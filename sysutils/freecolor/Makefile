@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freecolor
-# Date created:		7 January 2004
-# Whom:			Tim Bishop <tim@bishnet.net>
-#
+# Created by: Tim Bishop <tim@bishnet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	freecolor
 PORTVERSION=	0.8.8
@@ -24,6 +20,7 @@ BINGRP?=	kmem
 BINMODE?=	2555
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"

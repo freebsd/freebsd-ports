@@ -29,6 +29,7 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	CHANGES COPYING README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MSSL}

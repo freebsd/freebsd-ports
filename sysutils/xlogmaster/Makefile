@@ -20,6 +20,7 @@ INFO=		xlogmaster
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|getopt_long_only|getopt_long|g' ${WRKSRC}/src/xlogmaster.cc

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	getdelta
-# Date created:			15 December 2007
-# Whom:				Anton Statutov <astatutov@gmail.com>
-#
+# Created by: Anton Statutov <astatutov@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	getdelta
 PORTVERSION=	0.7.8
@@ -29,6 +25,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/getdelta.sh
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

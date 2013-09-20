@@ -18,6 +18,7 @@ OPTIONS_DEFINE=	 OPENBOX NTFS3G
 OPENBOX_DESC=	Openbox pipemenu script
 NTFS3G_DESC=	Use fusefs-ntfs extensions
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENBOX}

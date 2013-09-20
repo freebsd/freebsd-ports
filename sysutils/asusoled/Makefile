@@ -25,6 +25,7 @@ MAKE_ARGS+=	TTF_FONT=${FONTDIR}/TTF/luxisr.ttf
 
 FONTDIR?=	${LOCALBASE}/lib/X11/fonts
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

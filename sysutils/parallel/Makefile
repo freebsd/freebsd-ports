@@ -26,6 +26,7 @@ PLIST_FILES=	bin/parallel bin/sem bin/sql bin/niceload
 PORTDOCS=	parallel.html parallel_tutorial.html sem.html sql.html niceload.html \
 		parallel.texi parallel_tutorial.texi sem.texi sql.texi niceload.texi
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

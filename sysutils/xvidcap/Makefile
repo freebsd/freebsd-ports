@@ -41,6 +41,7 @@ NULLDOCS=		COPYING
 
 MAN1=			xvidcap.1
 
+NO_STAGE=	yes
 pre-configure:
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's|pkgdataDATA install-xvidcapdocDATA|pkgdataDATA|'	\

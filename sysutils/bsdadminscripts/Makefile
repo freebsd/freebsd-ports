@@ -14,6 +14,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 NO_BUILD=	yes
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

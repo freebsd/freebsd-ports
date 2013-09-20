@@ -22,6 +22,7 @@ OPTIONS_DEFINE=	CHEETAH GENSHI
 CHEETAH_DESC=	Support Cheetah Templates
 GENSHI_DESC=	Support Genshi Templates
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_PYTHON=		yes

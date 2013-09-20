@@ -1,9 +1,5 @@
-# New ports collection makefile for:   nrg2iso
-# Date created:        15 Aug 2004
-# Whom:                dieringe
-#
+# Created by: dieringe
 # $FreeBSD$
-#
 
 PORTNAME=	nrg2iso
 PORTVERSION=	0.4
@@ -17,6 +13,7 @@ USE_GMAKE=	yes
 
 PLIST_FILES=	bin/nrg2iso
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|gcc|${CC} ${CFLAGS}|' \

@@ -18,4 +18,5 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/mdf2iso
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

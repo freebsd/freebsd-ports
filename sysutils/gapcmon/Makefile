@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

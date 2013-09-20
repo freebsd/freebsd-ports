@@ -25,6 +25,7 @@ PLIST_FILES=	bin/slmon
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lncurses -lm
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # For gmake>=3.82

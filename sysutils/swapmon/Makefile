@@ -1,9 +1,5 @@
-# ports collection makefile for: swapmon
-# Date Created:		27 July 2010
-# Whom:                 Alexander Kuehn <freebsd@nagilum.org>
-#
+# Created by: Alexander Kuehn <freebsd@nagilum.org>
 # $FreeBSD$
-#
 
 PORTNAME=	swapmon
 PORTVERSION=	1.5
@@ -23,6 +19,7 @@ USE_RC_SUBR=	${PORTNAME}
 
 PLIST_FILES=	sbin/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/${PORTNAME}.sh.in \
 		> ${WRKDIR}/${PORTNAME}.sh

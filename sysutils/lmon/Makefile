@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lmon
-# Date created:				15 Mar 2005
-# Whom:					Anders Nordby <anders@FreeBSD.org>
-#
+# Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lmon
 PORTVERSION=	1.2
@@ -21,6 +17,7 @@ RUN_DEPENDS=	p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles \
 NO_BUILD=	yes
 USES=		perl5
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL} -d -m 0755 ${PREFIX}/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKSRC}/lmon.pl ${PREFIX}/${PORTNAME}/

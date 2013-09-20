@@ -25,4 +25,5 @@ GCONF_SCHEMAS=	gksu.schemas
 USE_GMAKE=	yes
 MAN1=		gksu-properties.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

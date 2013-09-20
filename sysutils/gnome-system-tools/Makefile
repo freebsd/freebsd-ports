@@ -28,6 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.gnome.system-tools.gschema.xml
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|gmodule-export-2.0|gmodule-export-2.0 gthread-2.0|g' \
 		${WRKSRC}/configure

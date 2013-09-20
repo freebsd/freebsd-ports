@@ -1,9 +1,5 @@
-# New ports collection makefile for:	geomWatch
-# Date created:				11 January 2010
-# Whom:					Boris Kochergin <spawk@acm.poly.edu>
-#
+# Created by: Boris Kochergin <spawk@acm.poly.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	geomWatch
 PORTVERSION=	1.3.0
@@ -22,6 +18,7 @@ SUB_FILES=	pkg-message
 
 USE_RC_SUBR=	${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700036

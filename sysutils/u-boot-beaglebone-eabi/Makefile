@@ -28,6 +28,7 @@ PLIST_DIRS=	${U_BOOT_DIR} share/u-boot
 CROSS_PREFIX=	arm-eabi-
 ARCH=		arm
 
+NO_STAGE=	yes
 do-configure:
 	(cd ${WRKSRC}; ${GMAKE} CROSS_COMPILE=${CROSS_PREFIX} am335x_evm_config)
 

@@ -21,6 +21,7 @@ CFLAGS+=	-D__BSD_VISIBLE
 ALL_TARGET=	httpfs2
 PLIST_FILES=	bin/httpfs2
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/httpfs2 ${PREFIX}/bin
 

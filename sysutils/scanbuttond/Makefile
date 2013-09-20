@@ -19,6 +19,7 @@ USE_LDCONFIG=	yes
 
 SUB_FILES+=	pkg-message
 
+NO_STAGE=	yes
 pre-configure:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 		${REINPLACE_CMD} -e 's|-ldl||g'

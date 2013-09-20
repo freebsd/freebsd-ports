@@ -19,6 +19,7 @@ USE_RC_SUBR=	swapd
 MAN5=		swapd.conf.5
 MAN8=		swapd.8
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/${CONFIGURE_SCRIPT}
 

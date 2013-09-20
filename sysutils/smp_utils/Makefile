@@ -1,9 +1,5 @@
-# New ports collection makefile for:   smp_utils
-# Date created:        Feb 1, 2012
-# Whom:                Xin LI <delphij@FreeBSD.org>
-#
+# Created by: Xin LI <delphij@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	smp_utils
 PORTVERSION=	0.97
@@ -49,6 +45,7 @@ MAN8+=		smp_zoned_broadcast.8
 MAN8+=		smp_zone_lock.8
 MAN8+=		smp_zone_unlock.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900000

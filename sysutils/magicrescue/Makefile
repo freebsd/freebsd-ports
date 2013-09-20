@@ -21,6 +21,7 @@ MAN1=		dupemap.1 magicrescue.1 magicsort.1
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

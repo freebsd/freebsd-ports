@@ -1,9 +1,5 @@
-# New ports collection makefile for:	du2ps
-# Date created:		31 May 2001
-# Whom:			Yoshihiko Sarumaru <mistral@imasy.or.jp>
-#
+# Created by: Yoshihiko Sarumaru <mistral@imasy.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	du2ps
 PORTVERSION=	3.1
@@ -27,6 +23,7 @@ PLIST_FILES=	bin/du2ps
 PORTDOCS=	README.ver1 README.ver2 README.xdu du2ps.pdf du2psj.pdf
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/du2ps ${PREFIX}/bin/du2ps
 	${INSTALL_MAN} ${WRKSRC}/du2ps.1 ${PREFIX}/man/man1/du2ps.1

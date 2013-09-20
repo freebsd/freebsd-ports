@@ -1,9 +1,5 @@
-# New ports collection makefile for:	minirsyslogd
-# Date created:		2003-10-30
-# Whom:			lx@redundancy.redundancy.org
-#
+# Created by: lx@redundancy.redundancy.org
 # $FreeBSD$
-#
 
 PORTNAME=	minirsyslogd
 PORTVERSION=	1.02
@@ -16,6 +12,7 @@ COMMENT=	Minimal, fast and secure syslog receiver
 MAN8=		minirsyslogd.8
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c
 

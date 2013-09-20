@@ -1,9 +1,5 @@
-# Ports collection makefile for:  memdump
-# Date created:			  16 June 2004
-# Whom:				  Yonatan <onatan@gmail.com>
-#
+# Created by: Yonatan <onatan@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	memdump
 PORTVERSION=	1.01
@@ -19,6 +15,7 @@ PLIST_FILES=	bin/memdump
 PORTDOCS=	README LICENSE
 MAN1=		memdump.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/memdump ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/memdump.1 ${MANPREFIX}/man/man1

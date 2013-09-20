@@ -23,6 +23,7 @@ PLIST_FILES=	bin/synergys bin/synergyc
 PORTEXAMPLES=	synergy.conf.example synergy.conf.example-basic \
 		synergy.conf.example-advanced
 
+NO_STAGE=	yes
 do-install:
 .for f in synergys synergyc
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/bin

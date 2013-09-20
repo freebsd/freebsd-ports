@@ -1,9 +1,5 @@
-# New ports collection makefile for:	VOB dvd rip
-# Date created:				Sun May 12 09:25:37 BRT 2002
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vobcopy
 PORTVERSION=	1.2.0
@@ -29,6 +25,7 @@ PLIST_FILES=	bin/vobcopy
 PORTDOCS=	COPYING Changelog README TODO \
 		alternative_programs.txt
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

@@ -1,9 +1,5 @@
-# New Ports collection makefile for:	megacli
-# Date created:		12 April 2009
-# Whom:			Vladimir Laskov <samflanker@gmail.com>
-#
+# Created by: Vladimir Laskov <samflanker@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	megacli
 PORTVERSION=	8.05.06
@@ -27,6 +23,7 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	sbin/MegaCli
 
+NO_STAGE=	yes
 pre-fetch:
 	@${FETCH_BINARY} -o /dev/null http://www.lsi.com/magic.axd?x=e&file=http%3A//www.lsi.com/downloads/Public/MegaRAID%2520Common%2520Files/${PORT_VERSION}_MegaCLI.zip
 

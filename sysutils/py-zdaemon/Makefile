@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zdaemon
-# Date created:				22 Nov, 2008
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	zdaemon
 PORTVERSION=	2.0.7
@@ -21,4 +17,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zconfig>0:${PORTSDIR}/devel/py-zconfig
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

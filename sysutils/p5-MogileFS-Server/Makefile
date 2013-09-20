@@ -55,6 +55,7 @@ MAN3=		MogileFS::Checksum.3 \
 		MogileFS::Worker::Query.3 \
 		MogileFS::Worker::Replicate.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

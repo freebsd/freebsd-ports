@@ -22,6 +22,7 @@ CONFIGURE_ARGS+=--localstatedir=/var \
 		--without-cryptsetup \
 		--with-ssbindir=${PREFIX}/sbin
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/src/pam_mount.c
 	${REINPLACE_CMD} -e '/dist_security_DATA/s|\.xml$$|.xml.sample|' \

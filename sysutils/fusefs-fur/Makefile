@@ -26,6 +26,7 @@ CFLAGS+=	-I${LOCALBASE}/include -DFUSE_USE_VERSION=26
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVCHMOD}

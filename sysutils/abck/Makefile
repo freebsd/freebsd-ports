@@ -1,9 +1,5 @@
-# ports collection makefile for: abmgmt
-# Date Created:		27 July 2001
-# Whom:			tundra
-#
+# Created by: tundra
 # $FreeBSD$
-#
 
 PORTNAME=	abck
 PORTVERSION=	2.2
@@ -18,4 +14,5 @@ USE_PYTHON=	yes
 MANCOMPRESSED=	yes
 MAN1=		abck.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

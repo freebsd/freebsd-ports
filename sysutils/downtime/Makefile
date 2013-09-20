@@ -16,4 +16,5 @@ USE_GNOME=	gtk20
 MAN1=		downtime.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 # Created by: Thorsten Greiner <thorsten.greiner@web.de>
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-systemload-plugin
 PORTVERSION=	1.1.1
@@ -25,6 +24,7 @@ USES=	pathfix pkgconfig
 OPTIONS_DEFINE= NLS
 OPTIONS_DEFAULT=        NLS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

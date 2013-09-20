@@ -1,5 +1,4 @@
 # Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-# $MBSDlabs$
 # $FreeBSD$
 
 PORTNAME=	sqlfs
@@ -23,6 +22,7 @@ PORTDOCS=	README
 
 PLIST_FILES=	bin/sqlfs
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:

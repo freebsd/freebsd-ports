@@ -27,6 +27,7 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}salt>=0.13.0:${PORTSDIR}/sysutils/py-salt
 		${PYTHON_PKGNAMEPREFIX}botocore>=0:${PORTSDIR}/devel/py-botocore \
 		sshpass>=0:${PORTSDIR}/security/sshpass
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/setup.py
 

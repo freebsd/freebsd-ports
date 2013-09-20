@@ -1,9 +1,5 @@
-# New ports collection makefile for:	userneu
-# Date created:		7 August 2003
-# Whom:			Andreas Fehlner (fehlner@gmx.de)
-#
+# Created by: Andreas Fehlner (fehlner@gmx.de)
 # $FreeBSD$
-#
 
 PORTNAME=	userneu
 PORTVERSION=	1.38
@@ -33,6 +29,7 @@ DOCS=		BUGS CHANGES CREDITS REQUIREMENTS TODO \
 		doc/README doc/INSTALL doc/userneu.pod doc/userquick.pod
 EXAMPLES=	list-sample
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

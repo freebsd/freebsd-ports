@@ -39,6 +39,7 @@ CONFIGURE_ARGS+=	--with-spool_directory=/var/spool/lpd \
 
 MAN1=		lprngtool.1
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "If you want to replace the default printing system with LPRng, use:"
 	@${ECHO_MSG} "  make PREFIX=/usr SYSCONFDIR=/etc clean all install"

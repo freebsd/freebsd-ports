@@ -1,4 +1,4 @@
-# Created by:	Tomoyuki Sakurai <cherry@trombik.mine.nu>
+# Created by: Tomoyuki Sakurai <cherry@trombik.mine.nu>
 # $FreeBSD$
 
 PORTNAME=	puppet
@@ -49,6 +49,7 @@ PACKAGE_ORIGIN_DESC=	Use port origin as package name
 PACKAGE_ROOT_DESC=	Use PACKAGEROOT insted of PACKAGESITE
 PATCHES_DESC=           Optional exclusive patches
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMONGREL}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rename
-# Date created:				7 July 2005
-# Whom:					Chad Castleberry AKA ritalin
-#
+# Created by: Chad Castleberry AKA ritalin
 # $FreeBSD$
-#
 
 PORTNAME=	rename
 PORTVERSION=	1.3
@@ -21,6 +17,7 @@ USE_GMAKE=	yes
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		rename.1
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} -f ${WRKSRC}/config.cache
 

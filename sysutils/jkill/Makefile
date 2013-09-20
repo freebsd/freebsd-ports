@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jkill
-# Date created:				27 March 2004
-# Whom:					Pavel Novikov
-#
+# Created by: Pavel Novikov
 # $FreeBSD$
-#
 
 PORTNAME=	jkill
 PORTVERSION=	1.0
@@ -21,4 +17,5 @@ MAN1=		jkill.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/jkill
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

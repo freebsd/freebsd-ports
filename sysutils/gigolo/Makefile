@@ -38,6 +38,7 @@ NLS_USES=	gettext
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	Does not compile
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

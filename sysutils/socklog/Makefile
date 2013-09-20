@@ -1,9 +1,5 @@
-# New ports collection makefile for:	socklog
-# Date created:		22 Aug 2002
-# Whom:			Sergei Kolobov <sergei@kolobov.com>
-#
+# Created by: Sergei Kolobov <sergei@kolobov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	socklog
 PORTVERSION=	2.1.0
@@ -22,6 +18,7 @@ MAN1=		tryto.1 uncat.1
 MAN8=		socklog-check.8 socklog-conf.8 socklog.8
 DOCS=		package/CHANGES package/COPYING package/README doc/*.html
 
+NO_STAGE=	yes
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
 

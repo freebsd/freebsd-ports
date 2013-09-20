@@ -28,4 +28,5 @@ USE_GMAKE=	yes
 regression-test: build
 	@cd ${WRKSRC} && ${MAKE} check
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

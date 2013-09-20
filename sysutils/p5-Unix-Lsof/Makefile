@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Unix-Lsof
-# Date created:				Feb  3 2009
-# Whom:					George Cox <gjvc@gjvc.com>
-#
+# Created by: George Cox <gjvc@gjvc.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Unix-Lsof
 PORTVERSION=	0.0.5
@@ -23,4 +19,5 @@ USES=		perl5
 USE_PERL5=	configure
 
 MAN3=		Unix::Lsof.3 Unix::Lsof::Result.3
+NO_STAGE=	yes
 .include <bsd.port.mk>

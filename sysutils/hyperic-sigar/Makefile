@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 SHLIB_MAJOR=	0
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} > 900007
 BROKEN=	fails to build with new utmpx

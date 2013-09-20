@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pbreg
-# Date created:				Mar 29, 2010
-# Whom:					Kris Moore
-#
+# Created by: Kris Moore
 # $FreeBSD$
-#
 
 PORTNAME=	pbreg
 PORTVERSION=	1.0
@@ -25,6 +21,7 @@ QMAKE_PRO=      PBReg.pro
 
 PLIST_FILES=	bin/pbreg
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 				 ${WRKSRC}/${QMAKE_PRO}

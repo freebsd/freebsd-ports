@@ -26,6 +26,7 @@ MAKE_ARGS=	prefix=${PREFIX} exec_prefix=${PREFIX} \
 		libexecdir=${PREFIX}/libexec mandir=${PREFIX}/man \
 		localstatedir=/var
 
+NO_STAGE=	yes
 pre-build:
 	${REINPLACE_CMD} -e '1s,^#!.*perl,#!${PERL},' ${WRKSRC}/test/gen_config_file
 	

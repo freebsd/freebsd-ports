@@ -16,4 +16,5 @@ USE_QT4=	corelib dbus gui moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

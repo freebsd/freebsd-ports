@@ -24,4 +24,5 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 MAN1=		wmfire.1
 PLIST_FILES=	bin/wmfire
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -20,4 +20,5 @@ USE_LDCONFIG=	yes
 MAN1=	fvdeinfo.1 fvdemount.1
 MAN3=	libfvde.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

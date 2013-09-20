@@ -19,6 +19,7 @@ OPTIONS_DEFINE=	NLS
 MAN1=		shmcat.1 \
 		ftok.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

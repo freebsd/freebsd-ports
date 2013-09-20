@@ -17,4 +17,5 @@ USE_BZIP2=	yes
 
 PLIST_FILES=	bin/pp
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

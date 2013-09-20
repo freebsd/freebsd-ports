@@ -31,6 +31,7 @@ MAKEFILE=	Makefile.freebsd
 PROGRAM_LIST=	fixparts gdisk sgdisk
 PLIST_FILES=	${PROGRAM_LIST:C,^,sbin/,}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCGDISK}

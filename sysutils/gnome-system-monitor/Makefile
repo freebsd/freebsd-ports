@@ -30,6 +30,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lutil
 
 GCONF_SCHEMAS=	gnome-system-monitor.schemas
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|<glib/gtypes.h>|<glib.h>|g' \
 		-e 's|<glib/gmacros.h>|<glib.h>|g' \

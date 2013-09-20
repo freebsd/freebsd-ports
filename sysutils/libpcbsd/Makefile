@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libpcbsd
-# Date created:				Jul 14, 2009
-# Whom:					Kris Moore
-#
+# Created by: Kris Moore
 # $FreeBSD$
-#
 
 PORTNAME=	libpcbsd
 PORTVERSION=	8.0
@@ -25,6 +21,7 @@ PLIST_FILES=	lib/libpcbsd.so \
 		include/pcbsd-utils.h \
 		include/pcbsd-netif.h
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/CMakeLists.txt
 

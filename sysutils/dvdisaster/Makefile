@@ -40,6 +40,7 @@ PORTSCOUT=	limitw:1,even
 MAN1=		dvdisaster.1
 MANLANG=	"" cs de it
 
+NO_STAGE=	yes
 do-configure:
 	@(cd ${CONFIGURE_WRKSRC} && \
 		if ! ${SETENV} CC="${CC}" CXX="${CXX}" \

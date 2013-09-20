@@ -17,4 +17,5 @@ USES=		pkgconfig
 
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellm-gkfreq.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

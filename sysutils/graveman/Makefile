@@ -28,6 +28,7 @@ MAN1=		graveman.1
 OPTIONS_DEFINE=	MP3 OGG DVD
 DVD_DESC=	DVD+RW support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMP3}

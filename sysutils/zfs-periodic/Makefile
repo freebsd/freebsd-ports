@@ -27,6 +27,7 @@ PERIODIC_FILES=	etc/periodic/hourly/000.zfs-snapshot \
 PLIST_FILES=	${PERIODIC_FILES} bin/zfs-snapshot
 PLIST_DIRSTRY=	${PERIODIC_DIRS}
 
+NO_STAGE=	yes
 post-patch:
 .for _file in ${PERIODIC_FILES}
 	@${REINPLACE_CMD} -e "s|/etc/periodic/zfs-snapshot|${PREFIX}/bin/zfs-snapshot|" \

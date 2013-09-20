@@ -12,6 +12,7 @@ CONFIGURE_ARGS+=--enable-libdbi
 PLIST_FILES+=	lib/rsyslog/omlibdbi.la \
 		lib/rsyslog/omlibdbi.so
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} \
 		${WRKSRC}/plugins/omlibdbi/.libs/omlibdbi.so ${PREFIX}/lib/rsyslog

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  xosview
-# Date created:			  19 Nov 1997
-# Whom:				  Brian Handy <handy@physics.montana.edu>
-#
+# Created by: Brian Handy <handy@physics.montana.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	xosview
 PORTVERSION=	1.8.3
@@ -19,6 +14,7 @@ USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 MAN1=		xosview.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

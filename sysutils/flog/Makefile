@@ -1,9 +1,5 @@
-# New ports collection makefile for:	flog
-# Date created:				7 October 2001
-# Whom:					Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	flog
 PORTVERSION=	1.8
@@ -16,6 +12,7 @@ COMMENT=	A small STDIN-to-file logger with support for log rotation
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s@|O_LARGEFILE@@" ${WRKSRC}/flog.c
 

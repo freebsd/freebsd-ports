@@ -74,6 +74,7 @@ LCDPROC_DRIVERS=bayrad \
 		tyan \
 		vlsys_m428
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUSB}

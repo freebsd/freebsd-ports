@@ -33,6 +33,7 @@ SUB_FILES=	pkg-message
 PORTEXAMPLES=	*
 MAN1=	ansible-doc.1 ansible-playbook.1 ansible-pull.1 ansible.1
 
+NO_STAGE=	yes
 post-patch-script:
 	@${REINPLACE_CMD} -e "s|/etc/ansible|${ETCDIR}|" \
 		${WRKSRC}/docs/man/man1/ansible-playbook.1 \

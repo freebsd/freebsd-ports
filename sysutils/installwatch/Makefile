@@ -18,6 +18,7 @@ PLIST_FILES=	bin/installwatch lib/installwatch.so
 PORTDOCS=	BUGS CHANGELOG INSTALL README TODO
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

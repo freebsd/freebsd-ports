@@ -61,6 +61,7 @@ CONFIGURE_ARGS+=	--without-pcctsbin --without-pcctsinc \
 MAKE_ENV=		CCOM=cc LANG=C
 SCSILIBTARGET=		${ARCH:S/powerpc64/powerpc/}-freebsd-cc
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::

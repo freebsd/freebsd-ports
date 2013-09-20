@@ -1,9 +1,5 @@
-# New ports collection makefile for:    rmonitor
-# Date created:         March 1st, 2001
-# Whom:                 Konrad Heuer
-#
+# Created by: Konrad Heuer
 # $FreeBSD$
-#
 
 PORTNAME=	rmonitor
 PORTVERSION=	1.2
@@ -20,6 +16,7 @@ MANCOMPRESSED=	yes
 
 #CFLAGS+=	-w
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900007

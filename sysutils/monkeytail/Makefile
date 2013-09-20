@@ -25,6 +25,7 @@ PLIST_FILES=	bin/mtail
 MAN1=		mtail.1
 MAN5=		mtailrc.5
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mtail ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/mtail.1 ${MAN1PREFIX}/man/man1

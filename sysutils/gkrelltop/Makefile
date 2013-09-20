@@ -1,4 +1,4 @@
-# Whom: David Gardner
+# Created by: David Gardner
 # $FreeBSD$
 
 PORTNAME=	gkrelltop
@@ -27,6 +27,7 @@ PLIST_SUB+=	CLIENT=""
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
+NO_STAGE=	yes
 post-patch:
 .if defined(GKRELLM_SERVER_ONLY)
 	${REINPLACE_CMD} 's/^\(PKG.*\)gkrellm/\1gkrellmd/' ${WRKSRC}/configure

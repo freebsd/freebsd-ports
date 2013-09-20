@@ -1,9 +1,5 @@
-# New ports collection makefile for:	feather
-# Date created:		2011-11-30
-# Whom:			Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	feather
 PORTVERSION=	1.0
@@ -24,6 +20,7 @@ STRIP=
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/feather ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/feather.yaml.dist ${PREFIX}/etc

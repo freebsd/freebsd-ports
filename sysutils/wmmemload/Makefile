@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmmemload
-# Date created:				14 May 2002
-# Whom:				Alexey Dokuchaev <danfe@regency.nsu.ru>
-#
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	wmmemload
 PORTVERSION=	0.1.6
@@ -22,6 +18,7 @@ CONFIGURE_ARGS=	--program-prefix=""
 
 MAN1=		wmmemload.1
 
+NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

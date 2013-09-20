@@ -23,6 +23,7 @@ SUB_FILES=	pkg-message
 USE_CSTD=	gnu89
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

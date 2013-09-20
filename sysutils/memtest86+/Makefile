@@ -29,6 +29,7 @@ BOOT_DESC=	Build ELF image loadable by boot2 and loader
 SERIAL_DESC=	Enable serial console at COM1/9600
 HISPEED_DESC=	Set COM1 serial console speed to 115200
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBOOT}

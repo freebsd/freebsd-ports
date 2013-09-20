@@ -22,6 +22,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib `pkg-config --libs libgnomeui-2.0`
 MAN1=		bubblemon-gnome2.1
 MANLANG=	"" hu sv
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

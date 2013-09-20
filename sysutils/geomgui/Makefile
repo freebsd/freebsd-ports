@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 MAN1=	geomgui.1
 PLIST_FILES=	bin/geomgui
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 	${WRKSRC}/Makefile.in

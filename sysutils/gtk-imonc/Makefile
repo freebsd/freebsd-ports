@@ -29,6 +29,7 @@ USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/gnome/apps/Internet|/applications|' ${WRKSRC}/Makefile.in

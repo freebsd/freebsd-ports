@@ -20,6 +20,7 @@ PLIST_FILES=	libexec/gkrellm2/plugins/trayicons.so
 
 ALL_TARGET=	trayicons.so
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(CC) $$(FLAGS)|$$(CC) $$(CFLAGS)|g' \
 		${WRKSRC}/Makefile

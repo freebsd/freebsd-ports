@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-File
-# Date created:			  24 October 2002
-# Whom:				  Thierry Thomas (<thierry@pompo.net>)
-#
+# Created by: Thierry Thomas (<thierry@pompo.net>)
 # $FreeBSD$
-#
 
 PORTNAME=	File
 PORTVERSION=	1.4.1
@@ -19,6 +15,7 @@ RUN_DEPENDS:=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 USE_PHP=	pcre
 PEAR_AUTOINSTALL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

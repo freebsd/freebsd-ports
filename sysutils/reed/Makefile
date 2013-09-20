@@ -20,6 +20,7 @@ CONFIGURE_SCRIPT=	configures
 
 MAN1=	breed.1 reed.1 wrap.1
 
+NO_STAGE=	yes
 post-patch:
 	@${PERL} -pi -e 's!/usr/local!${PREFIX}!g' ${WRKSRC}/configures
 	@${PERL} -pi -e 's!sys/dir.h!dirent.h!g;s!.*getopt.h.*\n!!' \

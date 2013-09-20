@@ -1,4 +1,4 @@
-# Whom:	Robert Gogolok <gogo@cs.uni-sb.de>
+# Created by: Robert Gogolok <gogo@cs.uni-sb.de>
 # $FreeBSD$
 
 PORTNAME=	bundler
@@ -15,4 +15,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/bundle
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

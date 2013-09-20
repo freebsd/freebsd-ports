@@ -32,6 +32,7 @@ MAN8=		yum.8 yum-updatesd.8 yum-shell.8
 
 RPMDIR?=	/var/lib/rpm
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|@PREFIX@|${PREFIX}|g' -e \
 	's|@RPMDIR@|${RPMDIR}|g' -e \

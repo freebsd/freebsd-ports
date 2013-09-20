@@ -19,6 +19,7 @@ MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
 
 # Change "cd foo; $(MAKE)" into "$(MAKE) -C foo" to unbreak parallel builds
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E 's|cd (.+); (\$$\(MAKE\))|\2 -C \1|' \
 		${WRKSRC}/Makefile

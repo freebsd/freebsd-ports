@@ -1,9 +1,5 @@
-# New ports collection makefile for:	warden
-# Date created:				Mar 29, 2010
-# Whom:					Kris Moore
-#
+# Created by: Kris Moore
 # $FreeBSD$
-#
 
 PORTNAME=	warden
 PORTVERSION=	1.1.2
@@ -27,6 +23,7 @@ QMAKE_ARGS=	-unix -recursive ${QMAKE_PRO}
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 				 ${WRKSRC}/warden.pro \

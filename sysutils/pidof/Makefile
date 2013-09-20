@@ -15,6 +15,7 @@ CONFLICTS=	psmisc-1*
 
 PLIST_FILES=	bin/pidof
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's/NOMAN/NO_MAN/g' ${WRKSRC}/Makefile
 

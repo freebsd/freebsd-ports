@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fconfig
-# Date created:			Oct 26, 2009
-# Whom:				thompsa@FreeBSD.org
-#
+# Created by: thompsa@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	fconfig
 PORTVERSION=	20080329
@@ -18,6 +14,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 PLIST_FILES=	sbin/fconfig
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fconfig ${PREFIX}/sbin
 

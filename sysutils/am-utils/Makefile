@@ -31,6 +31,7 @@ MAN8=		amd.8 amq.8 automount2amd.8 fixmount.8 fsinfo.8 hlfsd.8 \
 INFO=		am-utils
 PORTDOCS=	AUTHORS BUGS FAQ NEWS README.attrcache
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENLDAP}

@@ -13,4 +13,5 @@ COMMENT=	Symbolic link maintenance utility
 MAN8=			symlinks.8
 PLIST_FILES=		bin/symlinks
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

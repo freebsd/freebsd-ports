@@ -20,6 +20,7 @@ PLIST_FILES=	bin/chironfs bin/chirctl
 PORTDOCS=	*
 MAN8=		chironfs.8
 
+NO_STAGE=	yes
 post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's, doc , ,' ${WRKSRC}/Makefile.in

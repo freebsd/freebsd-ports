@@ -25,6 +25,7 @@ MAN8=		uhidd.8
 
 LIBDIR=		${PREFIX}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 LIBCUSE=	${LIBDIR}/libcuse4bsd.so

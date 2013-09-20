@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fstyp
-# Date created:				Sun Nov  9
-# Whom:					Sachidananda Urs
-#
+# Created by: Sachidananda Urs
 # $FreeBSD$
-#
 
 PORTNAME=	fstyp
 PORTVERSION=	0.1
@@ -20,4 +16,5 @@ PLIST_FILES=	bin/fstyp
 
 MAN8=		fstyp.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

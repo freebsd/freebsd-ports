@@ -21,6 +21,7 @@ MAKE_JOBS_UNSAFE=yes
 MAN1=		maildir.1 safecat.1
 PLIST_FILES=	bin/maildir bin/safecat
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX}," ${WRKSRC}/conf-root
 	@${REINPLACE_CMD} -e "s,cc -O2,${CC} ${CFLAGS}," ${WRKSRC}/conf-cc

@@ -44,6 +44,7 @@ OPTIONS_DEFAULT=CURL GPGME EXAMPLES NLS
 CURL_DESC=	Use libcurl fetcher instead of external curl/wget
 GPGME_DESC=	Use GPGME for PGP signature verification
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCURL}

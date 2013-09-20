@@ -34,4 +34,5 @@ MAN3=		Monitor::Simple.3 \
 		Monitor::Simple::UserAgent.3 \
 		Monitor::Simple::Utils.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

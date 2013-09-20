@@ -33,6 +33,7 @@ PORTDOCS=	AUTHOR \
 		README \
 		README.FreeBSD
 
+NO_STAGE=	yes
 do-install:
 		@${INSTALL_PROGRAM} ${WRKSRC}/atop ${PREFIX}/bin
 		@${LN} -sf ${PREFIX}/bin/atop ${PREFIX}/bin/atopsar

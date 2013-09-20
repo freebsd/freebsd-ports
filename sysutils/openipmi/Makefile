@@ -42,6 +42,7 @@ GDBM_DESC=	Local SDR caching on startup
 GLIB12_DESC=	Simply OS handler for glib 1.2
 GLIB20_DESC=	Simply OS handler for glib 2.0
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if exists(${LOCALBASE}/lib/libgdbm.so.3)

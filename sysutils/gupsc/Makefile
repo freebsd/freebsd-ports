@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/usr/local|${PREFIX}|' \
 			-e 's|DATADIRNAME=lib|DATADIRNAME=share|' \

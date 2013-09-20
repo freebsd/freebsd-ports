@@ -23,6 +23,7 @@ REINPLACE_SUB=	DATADIR="${DATADIR}"
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 900007

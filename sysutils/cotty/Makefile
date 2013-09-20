@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cotty
-# Date created:		26 January 2001
-# Whom:			Oliver Breuninger <ob@breuninger.org>
-#
+# Created by: Oliver Breuninger <ob@breuninger.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cotty
 PORTVERSION=	0.4c
@@ -20,6 +16,7 @@ EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/${DISTNAME}.c
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/cotty ${WRKSRC}/${DISTNAME}.c
 

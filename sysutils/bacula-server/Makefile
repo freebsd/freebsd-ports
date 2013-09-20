@@ -31,6 +31,7 @@ OPTIONS_DEFINE?=	SQLITE3 MYSQL PGSQL MTX PYTHON NLS OPENSSL
 OPTIONS_DEFAULT?=	NLS OPENSSL PGSQL
 MTX_DESC=		Install mtx for control of autochanger devices
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PKGNAMESUFFIX} == "-client" || ${PKGNAMESUFFIX} == "-server"  #Till end of the file

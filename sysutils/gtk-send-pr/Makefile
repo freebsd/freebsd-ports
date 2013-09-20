@@ -25,6 +25,7 @@ DESKTOP_ENTRIES="Send Problem Report" \
 		"System;" \
 		true
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/gtk-send-pr ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/common/gtk-send-pr.1 ${PREFIX}/man/man1

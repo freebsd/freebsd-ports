@@ -56,6 +56,7 @@ MAN8=		pbs_mom.8 pbsnodes.8 pbs_sched_basl.8 pbs_sched_cc.8 \
 MLINKS=		pbs_sched_cc.8 pbs_sched.8 \
 		pbs_resources_freebsd.7 pbs_resources.7
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

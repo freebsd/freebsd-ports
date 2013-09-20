@@ -24,6 +24,7 @@ MAN1=		f1tattoo.1 cdvdcontrol.1 qscan.1 readdvd.1 qpxtool.1 qscand.1
 MAN8=		pxfw.8
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -e 's|$$(QMAKE4)|& ${QMAKEFLAGS}|' \
 		${WRKSRC}/gui/Makefile

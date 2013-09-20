@@ -26,6 +26,7 @@ MAN1=		syslinux.1
 
 PLIST_FILES+=	bin/syslinux
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # convert elf_i386 to elf_i386_fbsd

@@ -20,6 +20,7 @@ PORTEXAMPLES=	*
 MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

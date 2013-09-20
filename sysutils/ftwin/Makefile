@@ -25,6 +25,7 @@ PORTDOCS=	AUTHORS EXAMPLES TODO CHANGES KNOWN_BUGS VERSION LICENSE README
 
 MAN8=		ftwin.8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

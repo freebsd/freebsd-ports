@@ -22,6 +22,7 @@ USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=pytsk3
 PYDISTUTILS_PKGVERSION=0.1
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/socket\.h/ { h; s|socket|types|; G; }' ${WRKSRC}/misc.h
 	${REINPLACE_CMD} -e 's|/usr/local/include/tsk/|${LOCALBASE}/include/tsk/|' \

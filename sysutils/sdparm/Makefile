@@ -20,4 +20,5 @@ MAN8=		sas_disk_blink.8 \
 PLIST_FILES=	bin/sas_disk_blink \
 		bin/sdparm
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

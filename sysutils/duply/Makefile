@@ -1,4 +1,4 @@
-# Created By: Michael Ranner <michael@ranner.eu>
+# Created by: Michael Ranner <michael@ranner.eu>
 # $FreeBSD$
 
 PORTNAME=	duply
@@ -22,6 +22,7 @@ NO_BUILD=	yes
 PORTDOCS=	INSTALL.txt gpl-2.0.txt
 PLIST_FILES=	bin/duply
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,/etc/duply,${ETCDIR},g" ${WRKSRC}/duply
 

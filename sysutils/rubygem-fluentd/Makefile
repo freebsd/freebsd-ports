@@ -26,6 +26,7 @@ USERS=		fluentd
 GROUPS=		fluentd
 SUB_LIST+=	USER=${USERS} GROUP=${GROUPS}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} == "1.8"
