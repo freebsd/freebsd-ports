@@ -1,12 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:    VN-Xfonts
-# Version required:     1.1.1
-# Date created:         Tue Dec 3, 1996
-# Whom:                 David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
-#	version # is VISCII version supported + .<edit_revision>
 
 PORTNAME=	vnxfonts
 PORTVERSION=	1.1.1
@@ -27,6 +20,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 WRKSRC=		${WRKDIR}/fonts/X
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fonts/vietnamese
 	@cd ${WRKSRC} ; \

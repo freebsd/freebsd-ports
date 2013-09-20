@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:    vnless
-# Date created:         Tue Dec 3, 1996
-# Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
-#
+# Created by: David O'Brien (obrien@cs.ucdavis.edu)
 # $FreeBSD$
-#
 
 PORTNAME=	vnless
 PORTVERSION=	1.0
@@ -19,6 +14,7 @@ COMMENT=	A pager utility that speaks Vietnamese
 ALL_TARGET=	clobber all
 MAN1=		vnless.1 vnlesskey.1
 
+NO_STAGE=	yes
 post-install:
 	@strip ${PREFIX}/bin/vnless*
 	@${CHMOD} a+rx ${PREFIX}/bin/vnless*

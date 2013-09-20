@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:    xvnkb
-# Date created:         Mon Apr 05, 2004
-# Whom:                 Nguyen Tam Chinh (chinhngt@sectorb.msk.ru)
-#
+# Created by: Nguyen Tam Chinh (chinhngt@sectorb.msk.ru)
 # $FreeBSD$
-#
 
 PORTNAME=	xvnkb
 PORTVERSION=	0.2.9
@@ -35,6 +30,7 @@ PLIST_FILES=	bin/xvnkb lib/libxvnkb.so lib/libxvnkb.so.0 lib/xvnkb.so.0.2.9
 
 MAN1=		xvnkb.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' ${WRKSRC}/tools/Makefile.dep
 

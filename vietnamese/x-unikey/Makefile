@@ -1,9 +1,5 @@
-# New ports collection makefile for:	x-unikey
-# Date created:				2010-06-25
-# Whom:					Alexander Yerenkow <yerenkow@gmail.com>
-#
+# Created by: Alexander Yerenkow <yerenkow@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	x-unikey
 PORTVERSION=	1.0.4
@@ -20,4 +16,5 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/unikey bin/ukxim
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  vntex
-# Date created:			  Tue Feb 06, 2001
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	vntex
 PORTVERSION=	1.0
@@ -20,6 +15,7 @@ USE_ZIP=	yes
 USE_TEX=	tex
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	@cd ${WRKDIR}/tex ; tar cf - . \
 		| (cd ${PREFIX}/share/texmf/tex ; tar --unlink -xpBf -)
