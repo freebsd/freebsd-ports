@@ -1,9 +1,5 @@
-# New ports collection makefile for:	emacs-koi8u.el
-# Date created:				Mon Dec 12 23:19:55 UTC 2005
-# Whom:					Andrey Slusar <anray@FreeBSD.org>
-#
+# Created by: Andrey Slusar <anray@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	koi8u
 PORTVERSION=	1.0
@@ -24,6 +20,7 @@ XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 PLIST_FILES=	share/emacs/site-lisp/ukr-koi8u.el lib/xemacs/site-lisp/ukr-koi8u.el
 PLIST_DIRS=	lib/xemacs/site-lisp lib/xemacs
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${EMACSLISPDIR}
 	${MKDIR} ${XEMACSLISPDIR}

@@ -10,4 +10,5 @@ LIB_DEPENDS=	gd:${PORTSDIR}/ukrainian/gd
 
 WEBALIZER_LANG=	ukrainian
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
