@@ -31,6 +31,7 @@ SUB_LIST=	ACROBASE8=${ACROBASE8} \
 		KMODDIR=${KMODDIR}
 USE_RC_SUBR=	linux_adobe
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 MAKE_ENV=	KMODDIR=${KMODDIR} SYSDIR=${SRC_BASE}/sys DESTDIR=${PREFIX}/

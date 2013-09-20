@@ -1,4 +1,4 @@
-# Created by: chuckr@freebsd.org
+# Created by: chuckr@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	transfig
@@ -27,4 +27,5 @@ MAKE_ARGS+=	INSTALLFLAGS="${COPY}" \
 		INSTDATFLAGS="${_SHROWNGRP} -m ${SHAREMODE}" \
 		INSTMANFLAGS="${_MANOWNGRP} -m ${MANMODE}"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

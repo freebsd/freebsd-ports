@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pnm2ppa
-# Date created:		18 November 1998
-# Whom:			smace@freebsd.org
-#
+# Created by: smace@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	pnm2ppa
 PORTVERSION=	1.13
@@ -27,6 +23,7 @@ PLIST_FILES=	bin/asciippafilter bin/calibrate_ppa bin/pnm2ppa bin/ppafilter \
 
 PKGDEINSTALL=	${PKGINSTALL}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(A4) || !empty(PORT_OPTIONS:MA4SIZE)

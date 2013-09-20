@@ -1,7 +1,4 @@
-# New ports collection makefile for:	latex-logreq
-# Date created:		15 Aug 2010
-# Whom:			idolum@users.sourceforge.net
-#
+# Created by: idolum@users.sourceforge.net
 # $FreeBSD$
 
 PORTNAME=	logreq
@@ -37,6 +34,7 @@ DOC_FILES=	README
 
 WRKSRC=		${WRKDIR}/${CLASSNAME}
 
+NO_STAGE=	yes
 pre-install:
 	(for F in ${CLASS_FILES}; do \
 			${ECHO_CMD} "${CLASSDIR}/$${F}"; \

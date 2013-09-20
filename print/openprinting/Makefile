@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openprinting
-# Date created:		6 February 2010
-# Whom:			Bruce M Simpson <bms@FreeBSD.org>
-#
+# Created by: Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openprinting
 PORTVERSION=	1.0
@@ -48,6 +44,7 @@ MAKE_ARGS=	LIBTOOL="${LIBTOOL} --tag=disable-static"
 #	MOD_IPP		"Build example mod_ipp.so for Apache" Off
 #	PSM_CUPS	"Build psm_cups.so for printing to CUPS" Off
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # NOTE: hard dependency on gettext() in distfiles.

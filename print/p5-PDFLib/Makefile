@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	p5-PDFLib
 # Created by: ijliao
 # $FreeBSD$
 
@@ -21,4 +19,5 @@ NO_BUILD=	yes
 
 MAN3=	PDFLib.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

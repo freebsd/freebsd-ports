@@ -1,9 +1,5 @@
-# New ports collection makefile for:   dvi2tty
-# Date created:		17th February 1997
-# Whom:			Joel Sutton <jsutton@bbcon.com.au>
-#
+# Created by: Joel Sutton <jsutton@bbcon.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	dvi2tty
 PORTVERSION=	5.3.4
@@ -21,6 +17,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${STRIP}"
 MAN1=		disdvi.1 dvi2tty.1
 PLIST_FILES=	bin/disdvi bin/dvi2tty
 
+NO_STAGE=	yes
 do-install:
 .for name in disdvi dvi2tty
 	${INSTALL_PROGRAM} ${WRKSRC}/${name} ${PREFIX}/bin

@@ -22,4 +22,5 @@ USE_KDE4=	kdeprefix kdelibs pykde4_build pykde4_run
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

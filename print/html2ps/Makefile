@@ -34,6 +34,7 @@ PLIST_FILES=	bin/html2ps \
 		%%DATADIR%%/hyphen.tex
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|exec perl|exec ${PERL}| ; \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    rprint
-# Date created:         June 19th, 2001
-# Whom:                 Konrad Heuer
-#
+# Created by: Konrad Heuer
 # $FreeBSD$
-#
 
 PORTNAME=	rprint
 PORTVERSION=	3.2
@@ -18,6 +14,7 @@ MAN1=		rprint.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/rprint
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s/^(CC|CFLAGS).+//g" ${WRKSRC}/Makefile
 

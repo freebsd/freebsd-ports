@@ -26,6 +26,7 @@ NO_WRKSRC=	yes
 NO_BUILD=	yes
 TEX_FORMATS=	xmltex
 
+NO_STAGE=	yes
 do-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS}

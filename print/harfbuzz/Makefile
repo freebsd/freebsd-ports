@@ -20,6 +20,7 @@ USE_GNOME=	cairo glib20 ltverhack
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-graphite2
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000024

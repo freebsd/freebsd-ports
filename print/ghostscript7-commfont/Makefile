@@ -37,6 +37,7 @@ GS_RESDIR?=	share/ghostscript/Resource
 
 post-extract:	apply-slist
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

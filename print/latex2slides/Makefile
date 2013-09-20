@@ -22,6 +22,7 @@ PLIST_SUB=	PORTNAME="${PORTNAME}" PORTVERSION="${PORTVERSION}"
 MANCOMPRESSED=	yes
 MAN1=		latex2slides.1
 
+NO_STAGE=	yes
 post-patch:
 .for file in install latex2slides
 	@${REINPLACE_CMD} -e "s,'/usr/bin/,'${PREFIX}/bin/,g ; \

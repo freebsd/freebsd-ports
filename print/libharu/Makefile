@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	libharu
-# Date created:			Jun 15, 2007
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libharu
 PORTVERSION=	2.2.1
@@ -26,6 +21,7 @@ SOVERSION=	2
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		SOVERSION=${SOVERSION}
 
+NO_STAGE=	yes
 post-install:
 	${LN} -s ${PREFIX}/lib/libhpdf-${PORTVERSION}.so \
 		${PREFIX}/lib/libhpdf.so.${SOVERSION}

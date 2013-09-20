@@ -23,6 +23,7 @@ USE_PYTHON=	-2.7
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/cups.so
 PYDISTUTILS_EGGINFO=	py${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}.egg-info
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

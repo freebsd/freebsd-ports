@@ -18,4 +18,5 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	pango
 USES=		pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

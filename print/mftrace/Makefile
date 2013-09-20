@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	mftrace (formerly pktrace)
-# Date created:			Jun w, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	mftrace
 PORTVERSION=	1.2.18
@@ -44,6 +39,7 @@ PLIST_FILES=	\
 		%%PYTHON_SITELIBDIR%%/afm.py \
 		%%PYTHON_SITELIBDIR%%/tfm.py
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gf2pbm ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/mftrace ${PREFIX}/bin

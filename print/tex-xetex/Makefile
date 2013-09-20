@@ -80,6 +80,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 TEX_FORMATS=	xetex
 
+NO_STAGE=	yes
 pre-configure:
 	for D in libs/harfbuzz libs/xpdf; do \
 		cd ${WRKDIR}/${DISTNAME}/$$D && \

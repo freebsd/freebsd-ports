@@ -40,6 +40,7 @@ WRKSRC=		${WRKDIR}/${CLASSNAME}
 OPTIONS_DEFINE=	BIBTEXT8_CSF DOCS
 BIBTEXT8_CSF_DESC=	BibTeX8 sort definition files
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-install:

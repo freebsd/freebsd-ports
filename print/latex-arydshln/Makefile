@@ -1,7 +1,4 @@
-# New ports collection makefile for:	latex-arydshln
-# Date created:		24 Jan 2004
-# Whom:			hrs@FreeBSD.org
-#
+# Created by: hrs@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	latex-arydshln
@@ -31,6 +28,7 @@ CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 CLASS_FILES=	arydshln.dtx arydshln.ins arydshln.sty arydshln-man.tex
 DOC_FILES=	README arydshln-man.pdf
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	cd ${DISTDIR}/${DIST_SUBDIR} && ${CP} ${DISTFILES} ${WRKSRC}

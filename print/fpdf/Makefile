@@ -1,9 +1,5 @@
-# New ports collection makefile for: fpdf
-# Date created:		21 March 2005
-# Whom:			Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	fpdf
 PORTVERSION=	1.7
@@ -31,6 +27,7 @@ PLIST_SUB=	FPDF_DIR=${FPDF_DIR}
 EXT2CNV=	afm css htm php txt
 DOCS=		FAQ.htm changelog.htm doc fpdf.css install.txt license.txt tutorial
 
+NO_STAGE=	yes
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
 	${FETCH_CMD} ${FETCH_BEFORE_ARGS}	\

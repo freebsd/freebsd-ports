@@ -16,6 +16,7 @@ PORTDOCS=	INSTALL
 MAN1=		psrev.1 textps.1
 MAN8=		lprps.8 psif.8 psof.8
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && \

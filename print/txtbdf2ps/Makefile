@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	txtbdf2ps
-# Date created:			Aug 10, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	txtbdf2ps
 PORTVERSION=	0.7.1
@@ -26,6 +21,7 @@ EXTRACT_AFTER_ARGS=	${WRKDIR}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|g' ${WRKSRC}/${DISTNAME}.txt
 

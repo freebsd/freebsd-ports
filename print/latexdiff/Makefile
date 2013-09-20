@@ -1,9 +1,5 @@
-# New ports collection makefile for:   latexdiff
-# Date created:                        01 Oct 2005
-# Whom:                                Maxim Loginov <Zeliboba@mail.ru>
-#
+# Created by: Maxim Loginov <Zeliboba@mail.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	latexdiff
 PORTVERSION=	0.5
@@ -34,6 +30,7 @@ PLIST_FILES=	bin/latexdiff \
 		bin/latexdiff-wrap \
 		bin/latexrevise
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,\/bin\/bash,${LOCALBASE}\/bin\/bash," \
 	${WRKSRC}/contrib/latexdiff-wrap

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-PDF-Template
-# Date created:		2006-06-26
-# Whom:			Yuichiro AIZAWA <yaizawa@mdbl.sfc.keio.ac.jp>
-#
+# Created by: Yuichiro AIZAWA <yaizawa@mdbl.sfc.keio.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	PDF-Template
 PORTVERSION=	0.22
@@ -45,4 +41,5 @@ MAN3=		PDF::Template::Element::Weblink.3 \
 		PDF::Template.3 \
 		PDF::Template::Element::Line.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

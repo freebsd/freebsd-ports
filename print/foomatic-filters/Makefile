@@ -44,6 +44,7 @@ MPAGE_DESC=		Print multiple pages per sheet of paper
 
 MAN1=		foomatic-rip.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCUPS_IMAGE}

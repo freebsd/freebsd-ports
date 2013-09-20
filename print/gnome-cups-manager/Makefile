@@ -27,6 +27,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' \
 		< ${FILESDIR}/gnome-cups-manager.desktop \

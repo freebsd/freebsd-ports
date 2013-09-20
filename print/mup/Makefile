@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mup
-# Date Created:				Oct 4, 2002
-# Whom:					Daniel O'Connor <darius@dons.net.au>
-#
+# Created by: Daniel O'Connor <darius@dons.net.au>
 # $FreeBSD$
-#
 
 PORTNAME=	mup
 PORTVERSION=	5.5
@@ -21,6 +17,7 @@ MOREDOCS=	docs/README0 docs/overview.txt docs/register.txt\
 		docs/mupfeat.txt docs/faq.txt docs/license.txt docs/uguide.ps
 PORTDOCS=	*
 
+NO_STAGE=	yes
 post-extract:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile
 	${CP} ${FILESDIR}/Makefile.mup ${WRKSRC}/mup/Makefile

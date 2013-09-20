@@ -23,6 +23,7 @@ PLIST_FILES=	lib/${PKGNAME}/glyph2uni.tcl \
 		lib/${PKGNAME}/stdmetrics.tcl
 PLIST_DIRS=	lib/${PKGNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

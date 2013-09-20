@@ -17,4 +17,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 NO_BUILD=	yes
 NO_INSTALL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

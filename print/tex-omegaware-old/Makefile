@@ -1,7 +1,4 @@
-# New ports collection makefile for:	tex-omegaware-old
-# Date created:		24 Jan 2004
-# Whom:			hrs@FreeBSD.org
-#
+# Created by: hrs@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	tex-omegaware-old
@@ -37,6 +34,7 @@ CONFIGURE_ARGS= --disable-multiplatform \
 		--with-system-ncurses --with-system-zlib
 CONFIGURE_ENV=	INSTALL_PROGRAM="${BSD_INSTALL_SCRIPT}"
 
+NO_STAGE=	yes
 pre-build:
 	${CP} ${FILESDIR}/Makefile.${PORTNAME} ${WRKSRC}/Makefile
 

@@ -20,6 +20,7 @@ MAN1=		pstotext.1
 PLIST_FILES=	bin/pstotext
 PORTDOCS=	copyright
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

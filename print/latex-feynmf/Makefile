@@ -1,7 +1,4 @@
-# New ports collection makefile for:	latex-feynmf
-# Date created:		24 Jan 2004
-# Whom:			hrs@FreeBSD.org
-#
+# Created by: hrs@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	latex-feynmf
@@ -41,6 +38,7 @@ SCRIPT_FILES=	feynmf.pl
 FONT_FILES=	feynmf.mf
 MP_FILES=	feynmp.mp manpics.mp manpics.1 manpics.2 manpics.3
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	cd ${DISTDIR}/${DIST_SUBDIR} && ${CP} ${DISTFILES} ${WRKSRC}

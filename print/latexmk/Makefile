@@ -26,6 +26,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/latexmk
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

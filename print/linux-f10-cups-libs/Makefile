@@ -1,8 +1,5 @@
-# New ports collection makefile for:	print/linux-f10-cups-libs
-# Date created:				10 Nov 2010
-# Whom:					Stas Timokhin <devel@stasyan.com>
+# Created by: Stas Timokhin <devel@stasyan.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cups-libs
 PORTVERSION=	1.3.11
@@ -24,4 +21,5 @@ USE_LDCONFIG=	yes
 PLIST_FILES=	usr/lib/libcups.so.2 usr/lib/libcupsimage.so.2
 DESCR=		${.CURDIR}/../cups-base/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

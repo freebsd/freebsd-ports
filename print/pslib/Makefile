@@ -26,6 +26,7 @@ OPTIONS_DEFINE=	EXAMPLES MAN NLS
 OPTIONS_DEFAULT=	MAN NLS
 MAN_DESC=	Manual pages
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}

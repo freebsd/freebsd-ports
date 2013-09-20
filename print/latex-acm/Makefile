@@ -1,9 +1,5 @@
-# New ports collection makefile for:  latex-acm
-# Date created:                       Jan 25 2011
-# Whom:                               Eygene Ryabinkin <rea@FreeBSD.org>
-#
+# Created by: Eygene Ryabinkin <rea@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	latex-acm
 PORTVERSION=	1.1
@@ -42,6 +38,7 @@ PLIST_DIRS=	${LATEXDIR} ${BIBTEXDIR}
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		TEXMFLOCAL=${TEXMFLOCAL}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/${LATEXDIR}
 	${INSTALL_DATA} ${CLASS_FILES:S@^@${WRKSRC}/@} ${PREFIX}/${LATEXDIR}

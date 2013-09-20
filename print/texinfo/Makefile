@@ -32,6 +32,7 @@ MAN5=		info.5 texinfo.5
 TEXMF=		share/texmf
 PLIST_SUB=	TEXMF=${TEXMF}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

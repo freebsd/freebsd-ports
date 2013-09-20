@@ -26,6 +26,7 @@ CLASS_FILES=	ifluatex.dtx ifluatex.sty
 
 DOC_FILES=	ifluatex.pdf
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	cd ${DISTDIR}/${DIST_SUBDIR} && ${CP} ${DISTFILES} ${WRKSRC}

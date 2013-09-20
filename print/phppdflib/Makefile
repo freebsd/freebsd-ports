@@ -1,9 +1,5 @@
-# New ports collection makefile for: phppdflib
-# Date created:         30 Aug 2001
-# Whom:                 HSIN-HSIUNG CHANG <sexbear@tmu.edu.tw>
-#
+# Created by: HSIN-HSIUNG CHANG <sexbear@tmu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	phppdflib
 PORTVERSION=	2.8
@@ -27,6 +23,7 @@ MYADMDIR?=	www/data/phppdflib
 
 PLIST_SUB+=	MYADMDIR=${MYADMDIR}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/${MYADMDIR}
 	${CP} -R ${WRKSRC}/* ${PREFIX}/${MYADMDIR}

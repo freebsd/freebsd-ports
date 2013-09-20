@@ -32,6 +32,7 @@ DOC_FILES=	README etoolbox.pdf etoolbox.tex
 
 WRKSRC=		${WRKDIR}/${CLASSNAME}
 
+NO_STAGE=	yes
 pre-install:
 	(for F in ${CLASS_FILES}; do \
 			${ECHO_CMD} "${CLASSDIR}/$${F}"; \

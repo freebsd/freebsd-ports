@@ -1,9 +1,5 @@
-# New ports collection makefile for:    libpaper
-# Date created:         Do 16 Nov 2003 20:00:00 CET
-# Whom:                 lofi@freebsd.org
-#
+# Created by: lofi@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	libpaper
 PORTVERSION=	1.1.24
@@ -30,6 +26,7 @@ MAN3=	defaultpapername.3 defaultpapersizefile.3 paperdone.3 paperfirst.3 \
 MAN5=	papersize.5
 MAN8=	paperconfig.8
 
+NO_STAGE=	yes
 pre-configure:
 	@${TOUCH} ${WRKSRC}/config.sub
 	@${REINPLACE_CMD} -E -e 's|(#!).*/bin/bash|\1/bin/sh|g' \

@@ -23,6 +23,7 @@ DOCFILES=	00readme.txt 01install.txt \
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

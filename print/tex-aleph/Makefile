@@ -75,6 +75,7 @@ MLINKS=	aleph.1 lamed.1 \
 	dvitype.1 odvitype.1 \
 	tangle.1 otangle.1
 
+NO_STAGE=	yes
 pre-configure:
 	for D in libs/obsdcompat libs/xpdf; do \
 		cd ${WRKDIR}/${DISTNAME}/$$D && \

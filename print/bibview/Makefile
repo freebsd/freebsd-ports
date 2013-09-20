@@ -17,4 +17,5 @@ USE_XORG=	ice sm x11 xaw xext xmu xt
 WRKSRC=		${WRKDIR}/bibview-${PORTVERSION}
 MAN1=		bibview.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

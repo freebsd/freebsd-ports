@@ -36,4 +36,5 @@ CPPFLAGS+=	`pkg-config --cflags freetype2` \
 LDFLAGS+=	`pkg-config --libs freetype2` \
 		-L${LOCALBASE}/lib -lm
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

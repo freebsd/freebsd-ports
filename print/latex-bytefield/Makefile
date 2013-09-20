@@ -1,7 +1,4 @@
-# New ports collection makefile for:	latex-bytefield
-# Date created:		24 Jan 2004
-# Whom:			hrs@FreeBSD.org
-#
+# Created by: hrs@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	latex-bytefield
@@ -30,6 +27,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 CLASS_FILES=	bytefield.dtx bytefield.sty bytefield.ins
 PORTDOCS=	README bytefield.pdf example.pdf example.tex
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${DISTFILES} ${WRKSRC}

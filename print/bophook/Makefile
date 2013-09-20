@@ -1,7 +1,4 @@
-# New ports collection makefile for:    bophook
-# Date created:         2012-05-11
-# Whom:                 Hiroto Kagotani <hiroto.kagotani@gmail.com>
-#
+# Created by: Hiroto Kagotani <hiroto.kagotani@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	bophook
@@ -25,6 +22,7 @@ MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 CLASSDIR=	${TEXMFDIR}/tex/latex/${PORTNAME}
 CLASS_FILES=	${PORTNAME}.sty
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}  && latex ${PORTNAME}.ins
 

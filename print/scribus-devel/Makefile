@@ -49,6 +49,7 @@ FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 SVN_REV=	17820		# svn tip at epoch 2009120801
 SVNROOT_URI=	svn://scribus.net/trunk/Scribus
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

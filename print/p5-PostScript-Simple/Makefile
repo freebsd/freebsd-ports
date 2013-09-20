@@ -1,4 +1,3 @@
-# Ports collection makefile for:	p5-PostScript-Simple
 # Created by: tobez
 # $FreeBSD$
 
@@ -16,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=	PostScript::Simple.3 PostScript::Simple::EPS.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

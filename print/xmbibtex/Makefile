@@ -19,6 +19,7 @@ NO_INSTALL_MANPAGES=	yes
 
 PLIST_FILES=	bin/xmbibtex lib/X11/app-defaults/XmBibTeX
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -e 's,(CCLINK,(CXXLINK, ; s,/usr/local,${PREFIX},' \
 		${WRKSRC}/Makefile

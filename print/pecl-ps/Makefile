@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-ps
-# Date created:		25 May 2007
-# Whom:			Alan Garfield <alan@fromorbit.com>
-#
+# Created by: Alan Garfield <alan@fromorbit.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ps
 PORTVERSION=	1.3.6
@@ -26,6 +22,7 @@ PHP_MODNAME=	${PORTNAME}
 DEFAULT_PHP_VER=53
 IGNORE_WITH_PHP=5
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl|-lintl|g' ${WRKSRC}/config.m4
 

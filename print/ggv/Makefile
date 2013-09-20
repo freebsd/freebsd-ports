@@ -23,6 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	ggv.schemas
 
+NO_STAGE=	yes
 post-install:
 	@-update-desktop-database > /dev/null
 

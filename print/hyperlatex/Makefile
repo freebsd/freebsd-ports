@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Hyperlatex
-# Date created:				2 August 1994
-# Whom:					Robert Withrow <witr@rwwa.com>
-#
+# Created by: Robert Withrow <witr@rwwa.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Hyperlatex
 DISTVERSION=	2.9a
@@ -23,6 +19,7 @@ EMACS_PORT_NAME?=	emacs21
 LATEX_DIR=	${PREFIX}/share/texmf/tex/latex/hyperlatex
 HYPERLATEX_DIR=	${PREFIX}/share/hyperlatex
 
+NO_STAGE=	yes
 do-configure:
 	@(cd ${WRKSRC} && \
 	${REINPLACE_CMD} -e 's|http://www.cs.uu.nl/\\~{}otfried/img/||' hlx/siteinit.hlx && \

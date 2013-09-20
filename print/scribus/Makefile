@@ -40,6 +40,7 @@ MAN1=		scribus.1
 MANLANG=	"" pl de
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 post-install:
 	${LN} ${DATADIR}/icons/scribus.png ${PREFIX}/share/pixmaps/
 

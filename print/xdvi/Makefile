@@ -29,6 +29,7 @@ IS_INTERACTIVE=	yes
 
 MAN1=		xdvi.1
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -e "s=distclean::=distclean:=g" ${WRKSRC}/Makefile
 .for F in pkg-install pkg-deinstall

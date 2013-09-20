@@ -48,6 +48,7 @@ PORTDOCS=	BUGS CHANGES INSTALL README README.CVS README.coding \
 		README.config README.cross README.distro README.hacking \
 		README.layout README.xdvik README_maintainer TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

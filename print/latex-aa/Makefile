@@ -1,9 +1,5 @@
-# New ports collection makefile for:	print/latex-aa
-# Date created:		13 November 2007
-# Whom:			Koji Yokota (yokota@res.otaru-uc.ac.jp)
-#
+# Created by: Koji Yokota (yokota@res.otaru-uc.ac.jp)
 # $FreeBSD$
-#
 
 PORTNAME=	latex-aa
 PORTVERSION=	6.1
@@ -27,6 +23,7 @@ AABIBDIR=	bibtex/bst/aa
 AADOCSDIR=	doc/latex/aa
 DOCFILES=	aa.dem aa.dvi aa.pdf aadoc.pdf readme.html readme.txt
 
+NO_STAGE=	yes
 pre-install:
 	( cd ${WRKSRC}/${DISTNAME} && \
 	  latex aa.dem && latex aa.dem && dvips aa.dvi && ps2pdf aa.ps )

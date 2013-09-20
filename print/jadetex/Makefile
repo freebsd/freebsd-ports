@@ -1,9 +1,5 @@
-# New ports collection makefile for:    jadetex
-# Date created:         5 December 1998
-# Whom:                 Sean Kelly <kelly@ad1440.net>
-#
+# Created by: Sean Kelly <kelly@ad1440.net>
 # $FreeBSD$
-#
 
 PORTNAME=	jadetex
 PORTVERSION=	3.13
@@ -26,6 +22,7 @@ MAN1=		jadetex.1 pdfjadetex.1
 
 TEXMFDIR?=	${LOCALBASE}/share/texmf
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} -m 555 ${TEXMFDIR}/tex/jadetex
 	cd ${WRKSRC} && \

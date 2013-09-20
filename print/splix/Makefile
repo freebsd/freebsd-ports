@@ -42,6 +42,7 @@ JBIG_DESC=	Enable use of JBIG algorithm (pattented)
 BLACKOPTIM_DESC=	Enable black correction algorithm
 OPTIONS_DEFAULT=	JBIG BLACKOPTIM
 
+NO_STAGE=	yes
 .include "bsd.port.options.mk"
 
 post-patch:

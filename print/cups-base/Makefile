@@ -80,6 +80,7 @@ GHOSTSCRIPT_DESC=	Build pdftops with GHOSTSCRIPT
 XPDF_DESC=		Build pdftops with XPDF
 XDG_OPEN_DESC=		Build with XDG_OPEN as browser
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(CUPS_CLIENT)

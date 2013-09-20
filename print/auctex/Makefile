@@ -39,6 +39,7 @@ MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
 NOT_FOR_ARCHS=	ia64
 
+NO_STAGE=	yes
 post-install:
 	${MKTEXLSR} ${PREFIX}/${TEXMFDIR}
 	@${CAT} ${PKGMESSAGE}

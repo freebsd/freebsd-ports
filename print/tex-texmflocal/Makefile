@@ -1,7 +1,4 @@
-# New ports collection makefile for:	tex-texmflocal
-# Date created:		24 Jan 2004
-# Whom:			hrs@FreeBSD.org
-#
+# Created by: hrs@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	tex-texmflocal
@@ -29,6 +26,7 @@ TEXMFCONFIGDIR=	share/texmf-config
 TEXMFCONFIG_LSR=${PREFIX}/${TEXMFCONFIGDIR}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 DIRS!=		${CAT} ${FILESDIR}/dirlist

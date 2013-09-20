@@ -96,6 +96,7 @@ MLINKS=		gslp.1 gsbj.1 \
 
 EXCLUDE_DIRS=	freetype jbig2dec jpeg expat jasper lcms lcms2 libpng tiff zlib
 
+NO_STAGE=	yes
 .include "Makefile.drivers"
 .include <bsd.port.options.mk>
 

@@ -1,4 +1,4 @@
-# Created by: Chuck Robey <chuckr@freebsd.org>
+# Created by: Chuck Robey <chuckr@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	a2ps
@@ -44,6 +44,7 @@ NO_OPTIONS_SORT=yes
 EMACS_DESC=Enable Emacs support
 I18N_DESC=Enable I18N support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

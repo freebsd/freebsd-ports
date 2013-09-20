@@ -23,6 +23,7 @@ MAN1=		ttx.1
 
 DOCSDIR=	${PREFIX}/share/doc/py-fonttools
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

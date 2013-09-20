@@ -1,9 +1,5 @@
-# New ports collection makefile for:    musixtex
-# Date created:         9 july 1995
-# Whom:                 jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	musixtex
 PORTVERSION=	T112
@@ -21,6 +17,7 @@ RUN_DEPENDS=	initex:${PORTSDIR}/print/tex
 EXAMPLE_VERSION=	T112
 DISTFILES+=	musixexa-${EXAMPLE_VERSION}.tar.gz
 
+NO_STAGE=	yes
 post-extract:
 	@${MKDIR} ${WRKDIR}/musixtex-${PORTVERSION}/examples
 	@${CP} ${WRKDIR}/musixexa-${EXAMPLE_VERSION}/* ${WRKDIR}/musixtex-${PORTVERSION}/examples/

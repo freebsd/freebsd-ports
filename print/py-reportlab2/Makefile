@@ -38,6 +38,7 @@ DOCS=		reportlab-graphics-reference.pdf \
 		reportlab-reference.pdf \
 		reportlab-userguide.pdf
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/ports/distfiles|${DISTDIR}|g' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|pfbfer.zip|pfbfer-${PFBFER_VERSION}.zip|g' ${WRKSRC}/setup.py

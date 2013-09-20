@@ -21,6 +21,7 @@ USES=		gmake
 
 MAN1=		fix-qdf.1 qpdf.1 zlib-flate.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
 		-e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \

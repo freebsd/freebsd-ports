@@ -35,6 +35,7 @@ ARCHSTART=	1
 ARCHSIZE=	2749762
 ARCHBLOCKS=	84
 
+NO_STAGE=	yes
 do-extract:
 		@${MKDIR} ${WRKSRC} && \
 			cd ${WRKSRC} && \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	epsonepl
-# Date created:		14 February 2003
-# Whom:			Simon 'corecode' Schubert <corecode@corecode.ath.cx>
-#
+# Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	epsonepl
 PORTVERSION=	0.2.2
@@ -22,6 +18,7 @@ LIB_DEPENDS=	ijs.1:${PORTSDIR}/print/libijs
 
 MAKEFILE=	${FILESDIR}/Makefile
 
+NO_STAGE=	yes
 post-extract:
 	@cd ${WRKSRC} && ${LS} ijs* | ${GREP} -v ${PORTNAME} | ${XARGS} ${RM}
 

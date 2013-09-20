@@ -1,9 +1,5 @@
-# New ports collection makefile for:    adobe-cmaps
-# Date created:         Wed, 10 Apr 2002 02:22:30 +0900
-# Whom:                 KATO Tsuguru <tkato@prontomail.com>
-#
+# Created by: KATO Tsuguru <tkato@prontomail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	adobe-cmaps
 PORTVERSION=	20051217
@@ -25,6 +21,7 @@ PLIST_SUB=	CMAPDIR=${CMAPDIR}
 INSTDIRS=	ac15 ag15 ai0 aj16 aj20 ak12 rksj-cmaps
 CMAPDIR=	share/fonts/${PORTNAME}
 
+NO_STAGE=	yes
 post-extract:
 	${RM} -f ${WRKDIR}/ag15/.nfsFA55
 

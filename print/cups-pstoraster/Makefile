@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cups-pstoraster
-# Date created:		Jul 13 2002
-# Whom:			ports@FreeBSD.org
-#
+# Created by: ports@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	cups-pstoraster
 PORTVERSION=	8.15.4
@@ -44,6 +40,7 @@ MAKE_ARGS=	CFLAGS_STANDARD="${CFLAGS} -DUPD_SIGNAL=0" \
 		DEVICE_DEVS="\$$(DD)cups.dev \$$(DD)pxlcolor.dev \$$(DD)pxlmono.dev"
 PLIST_SUB=	GS_VERSION="${GS_VERSION}"
 
+NO_STAGE=	yes
 pre-everything::
 .if !defined(WITH_CJK)
 	@${ECHO_MSG} ""

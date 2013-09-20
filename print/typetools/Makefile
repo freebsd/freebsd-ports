@@ -22,4 +22,5 @@ MAN1=		cfftot1.1 mmafm.1 mmpfb.1 otfinfo.1 otftotfm.1 t1dotlessj.1 \
 
 DATADIR=	${PREFIX}/share/lcdf-${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

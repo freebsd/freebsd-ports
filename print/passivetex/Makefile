@@ -41,6 +41,7 @@ CLASS_FILES=	dummyels.sty fotex.xmt fotex.sty \
 		mlnames.sty ucharacters.sty unicode.sty \
 		dummyels.sty nomulticol.sty
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

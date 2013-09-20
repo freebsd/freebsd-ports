@@ -20,4 +20,5 @@ USE_LDCONFIG=	yes
 
 MAN1=		ijs-config.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

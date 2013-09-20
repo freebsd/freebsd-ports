@@ -17,6 +17,7 @@ CFLAGS+=	-Wno-return-type
 MAN1=		pic2fig.1
 PLIST_FILES=	bin/pic2fig
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} -m 755 ${WRKSRC}/pic2fig ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/pic2fig.1 ${PREFIX}/man/man1

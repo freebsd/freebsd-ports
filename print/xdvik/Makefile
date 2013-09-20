@@ -64,6 +64,7 @@ PKGINSTALL_SUB=	MKTEXLSR=${MKTEXLSR} \
 		TEXCONFIGBIN=${TEXCONFIGBIN} \
 		LOCALBASE=${LOCALBASE}
 
+NO_STAGE=	yes
 pre-install:
 	${SED} ${PKGINSTALL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}

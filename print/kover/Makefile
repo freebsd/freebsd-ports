@@ -23,6 +23,7 @@ USES=		cmake gettext perl5 pkgconfig
 
 MAN1=		kover.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/libcdio/s|>=.*)|)|' ${WRKSRC}/src/CMakeLists.txt

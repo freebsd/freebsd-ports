@@ -28,4 +28,5 @@ MAN1=		psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1 psresize.1 \
 SCRIPTS_ENV+=	PERL5=${PERL5} CC=${CC} DATADIR=${DATADIR} \
 		MANPREFIX=${MANPREFIX} PAPER=dummy
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

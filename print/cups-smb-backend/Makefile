@@ -19,6 +19,7 @@ PLIST_FILES=	libexec/cups/backend/smb
 SAMBA_PORT?=	samba36
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	${LN} -fs ${PREFIX}/bin/smbspool ${PREFIX}/libexec/cups/backend/smb
 	@${CAT} ${PKGMESSAGE}

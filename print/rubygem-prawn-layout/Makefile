@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-prawn-layout
-# Date created:				21 Jan 2009
-# Whom:					wenheping@gmail.com
-#
+# Created by: wenheping@gmail.com
 # $FreeBSD$
 
 PORTNAME=	prawn-layout
@@ -16,4 +13,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

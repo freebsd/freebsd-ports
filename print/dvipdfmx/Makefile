@@ -39,6 +39,7 @@ FONTCMAPDIR=	${TEXMFDIR}/fonts/cmap
 ADOBECMAPDIR=	${LOCALBASE}/share/fonts/adobe-cmaps
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${LOCALBASE}/${FONTCMAPDIR}
 	${LN} -s -f ${ADOBECMAPDIR} \

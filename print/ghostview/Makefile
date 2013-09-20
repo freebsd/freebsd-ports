@@ -22,6 +22,7 @@ MAN1=		ghostview.1
 PLIST_FILES=	bin/ghostview \
 		lib/X11/app-defaults/Ghostview
 
+NO_STAGE=	yes
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 

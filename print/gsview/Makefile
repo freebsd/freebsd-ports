@@ -32,6 +32,7 @@ PORTDOCS=	gsview.css cdorder.txt regorder.txt Readme.htm LICENCE \
 		gvxit.htm gvxnl.htm gvxru.htm gvxse.htm gvxsk.htm
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-patch:
 	${CP} ${WRKSRC}/srcunx/unx.mak ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's;malloc\.h;stdlib\.h;g' \

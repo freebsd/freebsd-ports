@@ -38,6 +38,7 @@ INSTALLS_EGGINFO=	yes
 PYDISTUTILS_PKGNAME=	cupshelpers
 PYDISTUTILS_PKGVERSION=	1.0
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g; \
 		s|%%PREFIX%%|${PREFIX}|g' \
