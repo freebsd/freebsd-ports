@@ -1,4 +1,4 @@
-# New ports collection makefile for:	tegaki-zinnia-japanese
+# $FreeBSD$
 
 # Date created:				15 Aug 2010
 # Whom:					Timothy Beyer <beyert@cs.ucr.edu>
@@ -21,6 +21,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 do-build:
 
 .include <bsd.port.mk>

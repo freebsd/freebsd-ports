@@ -31,6 +31,7 @@ INSTALL_FILES=	Adobe-Japan1.cidToUnicode ISO-2022-JP.unicodeMap \
 		EUC-JP.unicodeMap Shift-JIS.unicodeMap \
 		README ../dot.xpdfrc
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/japanese
 	cd ${WRKSRC} && \

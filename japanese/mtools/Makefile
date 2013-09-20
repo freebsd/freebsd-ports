@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mtools + support 1232KB , Unicode LFN
-# Date created:		6 October 1997
-# Whom:			WATANABE junya <junya-w@remus.dti.ne.jp>
-#
+# Created by: WATANABE junya <junya-w@remus.dti.ne.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	mtools
 PORTVERSION=	3.9.6
@@ -34,6 +30,7 @@ MAN1=		mattrib.1 mbadblocks.1 mcat.1 mcd.1 mcopy.1 mdel.1 mdeltree.1 \
 MAN5=		mtools.5
 MLINKS=		mcopy.1 mwrite.1
 
+NO_STAGE=	yes
 post-patch:
 	@cd ${WRKSRC}; \
 	  ${GZCAT} ${DISTDIR}/mtools-3.9.6.PC98.patch.gz | ${PATCH} -d . >/dev/null 2>&1; \

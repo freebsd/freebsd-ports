@@ -22,6 +22,7 @@ USE_PERL5=	configure
 OPTIONS_DEFINE=	EXAMPLES
 OPTIONSFILE=	${PORT_DBDIR}/ja-p5-${PORTNAME}/options
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-

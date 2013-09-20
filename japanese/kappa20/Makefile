@@ -24,6 +24,7 @@ BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 FONTSDIR=	lib/X11/fonts/local

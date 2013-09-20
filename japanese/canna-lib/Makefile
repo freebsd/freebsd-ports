@@ -27,6 +27,7 @@ INSTALL_TARGET=	instsgs
 
 METAFILE=	${DATADIR_REL}/canna-lib-dic.meta
 
+NO_STAGE=	yes
 post-install:
 	${MTREE_CMD} -cdink uname,gname,mode,nochange \
 		-p ${DATADIR}/dic > ${PREFIX}/${METAFILE}

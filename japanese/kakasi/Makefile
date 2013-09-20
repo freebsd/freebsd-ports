@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kakasi
-# Date created:			26 Mar. 1996
-# Whom:				Masafumi NAKANE <max@FreeBSD.org>
-#
+# Created by: Masafumi NAKANE <max@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kakasi
 PORTVERSION=	2.3.4
@@ -24,6 +20,7 @@ DOCS=		NEWS README README-ja TODO \
 		doc/ChangeLog.lib doc/JISYO \
 		doc/README.lib doc/README.wakati
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/kakasi.1 ${PREFIX}/man/${MANLANG}/man1
 .if !defined(NOPORTDOCS)

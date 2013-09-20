@@ -25,6 +25,7 @@ CONFIGURE_ARGS=		--with-rubydir=${RUBY_SITELIBDIR}
 USE_AUTOTOOLS=	automake autoconf
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL})
 

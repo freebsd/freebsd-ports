@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ryakugo Dictionary - JIS X 4081 version
-# Date created:        	2000.11.28
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ryaku-fpw
 PORTVERSION=	1.0.1
@@ -20,6 +16,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/ryaku
 EXTRACT_BEFORE_ARGS=	-qL
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/ryaku-fpw/ryaku/data
 	${INSTALL_DATA} ${WRKSRC}/ryaku/data/honmon ${PREFIX}/share/dict/ryaku-fpw/ryaku/data

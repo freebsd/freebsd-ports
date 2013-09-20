@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-asterisk-sounds
-# Date created:		2010-06-12
-# Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
-#
+# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
 # $FreeBSD$
-#
 
 PORTNAME=	asterisk
 PORTVERSION=	1.8
@@ -26,6 +22,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTSDIR=${PORTSDIR}
 
+NO_STAGE=	yes
 do-install:
 	@-${MKDIR} ${ASTERISKDIR}/ja
 	for gsm in ${WRKDIR}/ja/*.gsm; do \

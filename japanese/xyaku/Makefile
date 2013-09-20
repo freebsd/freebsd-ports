@@ -19,6 +19,7 @@ USE_XORG=	x11 xt xext ice sm
 OPTIONS_DEFINE=	UTF8
 OPTIONS_DEFAULT=	UTF8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUTF8}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-tomoe
-# Date created:				18 Dec 2005
-# Whom:					Hajimu UMEMOTO <ume@FreeBSD.org>
-#
+# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tomoe
 PORTVERSION=	0.6.0
@@ -53,6 +49,7 @@ MYSQL_DESC=		Enable MySQL dictionary module
 PYTHON_DESC=		Enable Python module
 UNIHAN_DESC=		Enable Unihan database dictionary module
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDICT_RUBY}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XEmacs for Japanese
-# Date created:		5 Dec 1997
-# Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
-#
+# Created by: KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 # $FreeBSD$
-#
 
 PORTREVISION=	2
 CATEGORIES=	japanese
@@ -17,4 +13,5 @@ CANNA=		yes
 
 DESCR=		${.CURDIR}/pkg-descr
 
+NO_STAGE=	yes
 .include	"${MASTERDIR}/Makefile"

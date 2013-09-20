@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dvi2tty
-# Date created:			30 Mar. 1996
-# Whom:				Masafumi NAKANE <max@FreeBSD.org>
-#
+# Created by: Masafumi NAKANE <max@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dvi2tty
 PORTVERSION=	5.0
@@ -30,6 +26,7 @@ PLIST_FILES=	bin/jdvi2tty bin/dvi2tty bin/disdvi
 MAN1=		dvi2tty.1
 MLINKS=		dvi2tty.1 jdvi2tty.1
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} jdvi2tty disdvi ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/dvi2tty.1 ${PREFIX}/man/man1

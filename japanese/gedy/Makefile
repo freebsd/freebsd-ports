@@ -1,7 +1,4 @@
-# New ports collection makefile for:	gedy
-# Date created:				21 February 2010
-# Whom:					Hajimu UMEMOTO <ume@FreeBSD.org>
-#
+# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gedy
@@ -32,6 +29,7 @@ NO_BUILD=		yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_DEFAULT_VER} != ${RUBY_VER}

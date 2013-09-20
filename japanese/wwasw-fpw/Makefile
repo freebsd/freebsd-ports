@@ -1,9 +1,5 @@
-# New ports collection makefile for:	A Biographical Dictionary - JIS X 4081 version
-# Date created:        	2000.11.28
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wwasw-fpw
 PORTVERSION=	1.0.2
@@ -20,6 +16,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/wwasw
 EXTRACT_BEFORE_ARGS=	-qL
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/wwasw-fpw/wwasw/data
 	${INSTALL_DATA} ${WRKSRC}/wwasw/data/honmon ${PREFIX}/share/dict/wwasw-fpw/wwasw/data

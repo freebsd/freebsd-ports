@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wnn7egg
-# Date created:		01/07/16
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wnn7egg
 PORTVERSION=	1.02
@@ -28,6 +24,7 @@ NO_BUILD=	yes
 
 PORTDOCS=	README Setup_wnn7egg
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${ELISPDIR} ${XELISPDIR}
 	${MKDIR} ${ELISPDIR}/its-v309 ${XELISPDIR}/its-v309

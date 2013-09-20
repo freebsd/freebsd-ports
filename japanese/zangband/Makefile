@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-zangband
-# Date Created:			31 May 2000
-# Whom:				Makoto YAMAKURA <makoto@pinpott.spnet.ne.jp>
-#
+# Created by: Makoto YAMAKURA <makoto@pinpott.spnet.ne.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	zangband
 PORTVERSION=	2.4.0${JA_VERSION}
@@ -47,6 +43,7 @@ PATCH_VERSION?=	020104
 JA_VERSION=	.j${PATCH_VERSION}
 JA_DISTFILE=	z${E_VERSION:S/.//g}j104src.tgz
 
+NO_STAGE=	yes
 pre-patch:
 	(cd ${WRKSRC} ; ${TAR} zxf ${DISTDIR}/${DIST_SUBDIR}/${JA_DISTFILE} --no-same-owner)
 	(cd ${WRKSRC}/src ; ${PATCH} -p1 -l -s < ../zj${E_VERSION:S/.//g}.patch ; ${PATCH} -p1 -l -s < ${FILESDIR}/makefile-adjust.patch)

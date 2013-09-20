@@ -22,6 +22,7 @@ USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
 RUN_DEPENDS+=	xjdic:${PORTSDIR}/japanese/edict
 
+NO_STAGE=	yes
 post-build:
 	@cd ${WRKSRC}/makedic && ${MAKE} ${MAKE_ENV} clean all
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-usersguide-jp
-# Date created:			30 Aug 2000
-# Whom:				Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ruby-usersguide
 PORTVERSION=	980206
@@ -27,6 +23,7 @@ SHORTNAME=	${PORTNAME:S/usersguide/uguide/}
 WRKSRC=		${WRKDIR}/${SHORTNAME}
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${RUBY_MODDOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/* ${RUBY_MODDOCDIR}

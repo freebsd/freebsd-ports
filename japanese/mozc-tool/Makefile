@@ -9,4 +9,5 @@ DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 MASTERDIR=	${.CURDIR}/../../japanese/mozc-server
 BUILD_MOZC_LIST=	mozc_tool
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	multiskkserv
-# Date created:		27 Dec 2003
-# Whom:			Takahiro Morishita <morishita@skywing.org>
-#
+# Created by: Takahiro Morishita <morishita@skywing.org>
 # $FreeBSD$
-#
 
 PORTNAME=	multiskkserv
 PORTVERSION=	0.20020201
@@ -28,6 +24,7 @@ USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-cdb=`cd ${PORTSDIR}/databases/cdb; ${MAKE} -V WRKSRC`
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/multiskkserv ${PREFIX}/sbin
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/multiskkserv-ctl ${PREFIX}/sbin

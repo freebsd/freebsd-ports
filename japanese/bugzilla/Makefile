@@ -15,6 +15,7 @@ RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla
 
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../devel/bugzilla/Makefile.common"
 
 USE_BZIP2=	yes

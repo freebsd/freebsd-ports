@@ -1,10 +1,5 @@
-# New ports collection makefile for:	chasen
-# Date created:		21 October 1998
-# Whom:			kuriyama
-#
-# $NetBSD: Makefile,v 1.2 1999/06/07 09:54:39 sakamoto Exp $
+# Created by: kuriyama
 # $FreeBSD$
-#
 
 PORTNAME=	chasen
 PORTVERSION=	2.4.4
@@ -21,6 +16,7 @@ RUN_DEPENDS=	chasen:${PORTSDIR}/japanese/chasen-base \
 
 NO_BUILD=	YES
 
+NO_STAGE=	yes
 do-install:
 
 .include <bsd.port.mk>

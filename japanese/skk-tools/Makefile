@@ -25,6 +25,7 @@ DOCSDIR=	${PREFIX}/share/doc/skk
 PORTDOCS=	README.skktools
 PLIST_FILES=	bin/skkdic-count bin/skkdic-expr bin/skkdic-sort
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXPR2}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	foldoc - JIS X 4081 format version
-# Date created:        	01/08/23
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	foldoc-fpw
 PORTVERSION=	1.0.2
@@ -20,6 +16,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/foldoc
 EXTRACT_BEFORE_ARGS=	-qL
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/foldoc-fpw/foldoc/data
 	${MKDIR} ${PREFIX}/share/dict/foldoc-fpw/foldoc/gaiji

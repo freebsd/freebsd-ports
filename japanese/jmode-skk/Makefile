@@ -1,9 +1,5 @@
-# New ports collection makefile for:   jmode-skk
-# Date created:        24 August 2003
-# Whom:                MANTANI Nobutaka <nobutaka@FreeBSD.org>
-#
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-skk
 
@@ -22,4 +18,5 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:${PORTSDIR}/japanese/skkserv
 
 CONFIGURE_ARGS=	--with-skk
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

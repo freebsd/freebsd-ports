@@ -1,9 +1,5 @@
-# New ports collection makefile for:   newosaka
-# Date created:        20 January 1997
-# Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-#
+# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	newosaka
 PORTVERSION=	1.0
@@ -17,6 +13,7 @@ COMMENT=	Translator of Japanese EUC documents into Osaka language
 PLIST_FILES=	bin/osaka
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}; ${CC} ${CFLAGS} -o osaka osaka.c -I${WRKSRC})
 

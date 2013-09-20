@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-mailman
-# Date created:				21 Feb 2003
-# Whom:					Sunagawa Koji <koj@ofug.net>
-#
+# Created by: Sunagawa Koji <koj@ofug.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mailman
 PORTVERSION=	2.1.14.j7
@@ -85,6 +81,7 @@ COURIER_DESC=		for use with courier
 
 OPTIONS_DEFAULT=	SENDMAIL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSENDMAIL}

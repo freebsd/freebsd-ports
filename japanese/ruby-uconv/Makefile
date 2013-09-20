@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby-uconv
-# Date created:		9 Aug 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	uconv
 PORTVERSION=	0.5.3
@@ -20,6 +16,7 @@ USE_RUBY_EXTCONF=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_TARGET=	site-install
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}

@@ -28,6 +28,7 @@ PLIST_DIRS=	%%EMACS_VERSION_SITE_LISPDIR%%/yc
 OPTIONS_DEFINE=	ICANNA
 ICANNA_DESC=	Enable icanna support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MICANNA}

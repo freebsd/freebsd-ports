@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-awffull
-# Date created:				2008-12-31
-# Whom:					Norikatsu Shigemura <nork@FreeBSD.org>
-#
+# Created by: Norikatsu Shigemura <nork@FreeBSD.org>
 # $FreeBSD$
-#
 
 CATEGORIES=	japanese www
 
@@ -14,4 +10,5 @@ MASTERDIR=	${.CURDIR}/../../www/awffull
 
 EXTRA_PATCHES=	${.CURDIR}/files/awffull-ja.diff
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	--with-vjecfgfile="/usr/local/etc/vje30/vje.cfg"
 
 DIST_SUBDIR=    esecanna
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e " \
 		s,!!PREFIX!!,${PREFIX},g; \

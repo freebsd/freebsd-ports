@@ -24,6 +24,7 @@ FETCH_ARGS=	-pRr
 CONFIGURE_ARGS=	--with-chasen-dir="${PREFIX}"
 INSTALL_TARGET=	site-install
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${RUBY_VER} == 1.9
 BROKEN=	does not build with ruby 1.9

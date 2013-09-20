@@ -17,4 +17,5 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgdocdir=${DOCSDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

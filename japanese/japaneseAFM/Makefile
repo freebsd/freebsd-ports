@@ -1,9 +1,5 @@
-# New ports collection makefile for: japanese AFM files
-# Date created:		11 September 1997
-# Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
-#
+# Created by: KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	japaneseAFM
 PORTVERSION=	1.0
@@ -20,6 +16,7 @@ NO_BUILD=	yes
 
 AFMDIR=		${PREFIX}/share/fonts/afm
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${AFMDIR}
 .for font in GothicBBB-Medium Ryumin-Light

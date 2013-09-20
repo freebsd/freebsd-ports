@@ -1,9 +1,5 @@
-# New ports collection makefile for: virtual fonts tools(n2a,a2n,a2bk,p2pn)
-# Date created:		12 September 1997
-# Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
-#
+# Created by: KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	vftool
 PORTVERSION=	1.2
@@ -31,6 +27,7 @@ FONTSDIR=	${PREFIX}/share/fonts
 JFMDIR=		${WRKDIR}/share/texmf/fonts/tfm/ptex
 TARGETDIRS=	vf-n2a vf-a2n vf-a2bk vf-p2pn
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"

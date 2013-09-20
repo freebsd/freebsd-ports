@@ -25,6 +25,7 @@ PORTEXAMPLES=	Emacs.ad dot.emacs dot.skk
 ALL_TARGET=	elc info
 MAKE_ARGS+=	SKK_LISPDIR=${PREFIX}/${SKK_LISPDIR} SKK_INFODIR=${PREFIX}/${INFO_PATH}
 
+NO_STAGE=	yes
 pre-install:
 	# required for non-standard PREFIX
 	${MKDIR} ${PREFIX}/${SKK_LISPDIR}

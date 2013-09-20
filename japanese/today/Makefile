@@ -1,9 +1,5 @@
-# New ports collection makefile for:	today
-# Date created:		24 June 1996
-# Whom:			ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
-#
+# Created by: ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	today
 PORTVERSION=	2.12
@@ -23,6 +19,7 @@ USE_LHA=	yes
 
 MAKEFILE=	${FILESDIR}/Makefile
 
+NO_STAGE=	yes
 post-extract:
 	@(cd ${WRKSRC}; lha xiqf utility.lzh src/dayinfo.c )
 	@${ECHO_MSG} "===>  Extracting tbl file for ${DISTNAME}"

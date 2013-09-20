@@ -39,6 +39,7 @@ TEXMFDIR?=	share/texmf
 DOC_FILES=	FAQ INSTALL LICENSE README README.patch-2002jp \
 		README.patch-99.1jp
 
+NO_STAGE=	yes
 post-install:
 	(cd ${WRKSRC}; csh mkwrapper ${PREFIX})
 .if !defined(NOPORTDOCS)

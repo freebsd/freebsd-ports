@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Japanese man documents
-# Date created:		6 January 1997
-# Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
-#
+# Created by: Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	man-doc
 PORTVERSION=	5.4.20050911
@@ -34,6 +30,7 @@ JAMANDIR?=	doc/ja_JP.eucJP/man
 MANDIR?=	${PREFIX}/man/ja/man
 
 .if defined(WITH_CVS)
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	cd ${WRKDIR} && \

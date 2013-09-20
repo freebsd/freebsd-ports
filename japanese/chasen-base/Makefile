@@ -1,10 +1,5 @@
-# New ports collection makefile for:	chasen-base
-# Date created:		23 Jul 2001
-# Whom:			kuriyama
-#
-# $NetBSD: Makefile,v 1.2 1999/06/07 09:54:39 sakamoto Exp $
+# Created by: kuriyama
 # $FreeBSD$
-#
 
 PORTNAME=	chasen
 PORTVERSION=	2.4.4
@@ -24,6 +19,7 @@ CONFIGURE_ARGS=	--with-darts=${LOCALBASE}/include ${ICONV_CONFIGURE_BASE}
 USES=		iconv
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-install:
 	${RM} -f ${PREFIX}/lib/libchasen.la
 	${MKDIR} ${PREFIX}/share/chasen/dic

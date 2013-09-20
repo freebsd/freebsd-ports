@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pejv 100 - JIS X 4081 format version
-# Date created:        	2000.11.08
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pejv-fpw
 PORTVERSION=	1.0.4
@@ -20,6 +16,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/pejv
 EXTRACT_BEFORE_ARGS=	-qL
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/pejv-fpw/pejv/data
 	${INSTALL_DATA} ${WRKSRC}/pejv/data/honmon ${PREFIX}/share/dict/pejv-fpw/pejv/data

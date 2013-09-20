@@ -40,6 +40,7 @@ TFM_FILES=	jis-v.tfm jis.tfm jisg-v.tfm jisg.tfm \
 PLDIR=		${TEXMFDIR}/fonts/source/jis
 PL_FILES=	jis-v.pl jis.pl jisn-v.pl jisn.pl
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${CLASS_FILES} ${PREFIX}/${CLASSDIR}

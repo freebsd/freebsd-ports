@@ -1,9 +1,5 @@
-# New ports collection makefile for:    elvis + japanese patch
-# Date created:         5 October 1995
-# Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
-#
+# Created by: Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	elvis
 PORTVERSION=	1.8.4
@@ -27,6 +23,7 @@ MAN1=		elvis.1 ctags.1 ref.1 elvrec.1 elvprsv.1
 
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/ja-elvis.sh
 
+NO_STAGE=	yes
 do-configure:
 	@${CP} ${WRKSRC}/Makefile.mix ${WRKSRC}/Makefile
 

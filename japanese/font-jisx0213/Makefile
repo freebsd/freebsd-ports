@@ -34,6 +34,7 @@ LOCALFONTDIR=	share/font-${PORTNAME}
 
 pre-build: apply-slist
 
+NO_STAGE=	yes
 do-configure:
 	@${DO_NADA}
 

@@ -20,6 +20,7 @@ RG1_DESC=	Skkserver Selection
 DBSKKD_DESC=	Use ja-dbskkd-cdb as skkserver
 RSKKSERV_DESC=	Use ja-rskkserv as skkserver
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBSKKD}

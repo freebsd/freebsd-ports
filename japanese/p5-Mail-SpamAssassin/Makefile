@@ -1,6 +1,5 @@
 # Created by: TAOKA Fumiyoshi
 # $FreeBSD$
-#
 
 PORTREVISION=	4
 CATEGORIES=	japanese mail perl5
@@ -31,6 +30,7 @@ MAN3=		Mail::SpamAssassin::Util::Charset.3 \
 		Mail::SpamAssassin::Plugin::Tokenizer.3 \
 		Mail::SpamAssassin::Plugin::Tokenizer::SimpleJA.3
 
+NO_STAGE=	yes
 pre-install:
 	@${CAT} ${EXTRA_PATCHES:S/.patch/.plist/} > ${PLIST}
 	@${CAT} ${PKGDIR}/pkg-plist >> ${PLIST}

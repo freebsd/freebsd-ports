@@ -1,4 +1,3 @@
-# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ajaxzip2
@@ -20,6 +19,7 @@ NO_BUILD=	YES
 USE_DOS2UNIX=	YES
 SHEBANG_FILES=	work/csv2jsonzip.pl
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${WWWDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/ajaxzip2.js ${WWWDIR}/

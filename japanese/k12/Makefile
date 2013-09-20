@@ -19,6 +19,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 WRKSRC=		${WRKDIR}/fonts

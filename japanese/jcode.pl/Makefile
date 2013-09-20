@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jcode.pl
-# Date created:		20 February 1998
-# Whom:			sada
-#
+# Created by: sada
 # $FreeBSD$
-#
 
 PORTNAME=	jcode.pl
 PORTVERSION=	2.13
@@ -25,6 +21,7 @@ EXTRACT_BEFORE_ARGS=	# none
 EXTRACT_AFTER_ARGS=	${WRKDIR}/${PORTNAME}
 PLIST_FILES=		${SITE_PERL_REL}/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/${SITE_PERL_REL}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME} ${PREFIX}/${SITE_PERL_REL}/

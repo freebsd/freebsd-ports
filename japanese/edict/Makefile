@@ -54,6 +54,7 @@ MAN1=		xjdic.1
 
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

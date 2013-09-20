@@ -106,4 +106,5 @@ ${M}+=	${${M}.${WNNTYPE}}
 . endif
 .endfor
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

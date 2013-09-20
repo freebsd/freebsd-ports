@@ -20,6 +20,7 @@ PLIST_SUB=	TEXMFDIR=${TEXMFDIR} \
 		WEB2CDIR=${WEB2CDIR} \
 		PLATEX209DIR=${PLATEX209DIR}
 
+NO_STAGE=	yes
 do-build:
 	@(cd ${WRKSRC}; ${LOCALBASE}/bin/ptex -ini 'plplain.tex\dump')
 

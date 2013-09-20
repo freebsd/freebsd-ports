@@ -19,4 +19,5 @@ PLIST_FILES=	bin/nkf
 MAN1=		nkf.1
 MANLANG=	"" ja
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

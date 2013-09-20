@@ -1,9 +1,5 @@
-# New ports collection makefile for:   cmigemo
-# Date created:        22 August 2011
-# Whom:                MANTANI Nobutaka <nobutaka@FreeBSD.org>
-#
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cmigemo
 PORTVERSION=	20110227
@@ -43,6 +39,7 @@ INSTALL_TARGET+=gcc-install-doc
 .endif
 
 .if !target(post-extract)
+NO_STAGE=	yes
 post-extract:
 	${CHMOD} a+x ${WRKSRC}/configure
 .endif

@@ -39,6 +39,7 @@ DICDIR=		${PREFIX}/share/canna/dic/canna
 
 INSTALL_DIC=	${INSTALL} ${COPY} -o bin -g bin -m 664
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKDIR} && mkbindic ${PORTNAME}.t
 

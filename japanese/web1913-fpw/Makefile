@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Web1913 - JIS X 4081 format version
-# Date created:        	00/06/19
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	web1913-fpw
 PORTVERSION=	${WEBFPW_VER}
@@ -21,6 +17,7 @@ WRKSRC=		${WRKDIR}/web
 EXTRACT_BEFORE_ARGS=	-qL
 WEBFPW_VER=	1.1.2
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/web-fpw/web/data
 	${INSTALL_DATA} ${WRKSRC}/web/data/honmon ${PREFIX}/share/dict/web-fpw/web/data

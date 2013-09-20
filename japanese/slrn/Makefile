@@ -31,6 +31,7 @@ MANLANG=	'' ja
 MAN1=		slrn.1
 
 # Tentatively improve inner makefiles in attempt to fix parallel builds
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-mkdir|mkdir -p| ; \
 		/DOT_O_DEPS/s|$$| $$(OBJDIR)|' \

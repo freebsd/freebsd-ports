@@ -25,6 +25,7 @@ SUB_LIST=	DESTDIR=${DESTDIR}
 POSTPATCHES=	${FILESDIR}/post-patch-Imakefile \
 		${FILESDIR}/post-patch-include-Const.h
 
+NO_STAGE=	yes
 post-patch:
 	cd ${WRKSRC} && ${CAT} ${POSTPATCHES} | ${PATCH}
 

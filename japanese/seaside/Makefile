@@ -1,9 +1,5 @@
-# New ports collection makefile for:   	seaside
-# Date created:		27 January 2007
-# Whom:			mutoh@openedu.org
-#
+# Created by: mutoh@openedu.org
 # $FreeBSD$
-#
 
 PORTNAME=	seaside
 DISTVERSION=	080908-sq39
@@ -28,6 +24,7 @@ FILES_TO_INSTALL=	Seaside-JPatched${DISTVERSION}.image \
 PLIST_SUB=	DATADIR=lib/squeak \
 		SEASIDEVERSION=${DISTVERSION}
 
+NO_STAGE=	yes
 do-install:
 .for f in ${FILES_TO_INSTALL}
 	(cd ${WRKDIR} && ${INSTALL_DATA} ${f} ${PREFIX}/lib/squeak/)

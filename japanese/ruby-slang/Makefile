@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby-slang (slanglib)
-# Date created:		23 Aug 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 MASTERDIR=	${.CURDIR}/../../devel/ruby-slang
 
@@ -15,4 +11,5 @@ COMMENT=	S-Lang-jp extension module for Ruby
 
 WITH_JAPANESE=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

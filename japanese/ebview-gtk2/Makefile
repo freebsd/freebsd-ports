@@ -25,6 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES=	ebview.desktop
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-pthread|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure

@@ -22,6 +22,7 @@ PORTDOCS=	README
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=DOCS
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
 		${WRKSRC}/config/Project.tmpl \

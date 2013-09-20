@@ -1,9 +1,5 @@
-# New ports collection makefile for:	CG Japanese Dictionary - JIS X 4081 version
-# Date created:        	2000.11.28
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CGdic-fpw
 PORTVERSION=	1.0
@@ -20,6 +16,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/cg
 EXTRACT_BEFORE_ARGS=	-qL
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/CGdic-fpw/cg/data
 	${INSTALL_DATA} ${WRKSRC}/cg/data/honmon ${PREFIX}/share/dict/CGdic-fpw/cg/data

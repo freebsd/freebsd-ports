@@ -24,6 +24,7 @@ EXTRACT_AFTER_ARGS=	a2ps-j
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's,%%PERL%%,${PERL},' \

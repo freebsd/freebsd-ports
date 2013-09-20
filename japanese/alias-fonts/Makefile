@@ -1,9 +1,5 @@
-# Ports collection makefile for: Japanese Font Setup
-# Date created:		22 Jun 1998
-# Whom:                 sada
-#
+# Created by: sada
 # $FreeBSD$
-#
 
 PORTNAME=	alias-fonts
 PORTVERSION=	1.0
@@ -31,6 +27,7 @@ NO_BUILD=	yes
 
 FONTSDIR=	${LOCALBASE}/lib/X11/fonts/local
 
+NO_STAGE=	yes
 do-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

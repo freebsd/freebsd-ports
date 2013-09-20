@@ -20,6 +20,7 @@ PORTDOCS=	README.txt
 PORTEXAMPLES=	FSS README YAMA Ao.png Back2.png Brown.png Royal.png Royal2.png
 PLIST_FILES=	bin/xjtext
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

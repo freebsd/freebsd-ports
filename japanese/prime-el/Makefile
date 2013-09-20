@@ -1,9 +1,5 @@
-# New ports collection makefile for:	prime-el (for emacsen)
-# Date created:				16 Jun 2003
-# Whom:					Gen Otsuji<otsuji@users.sourceforge.jp>
-#
+# Created by: Gen Otsuji<otsuji@users.sourceforge.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	prime
 PORTVERSION=	1.5.1.3
@@ -23,6 +19,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/emacs/site-lisp/init-mell.el:${PORTSDIR}/japane
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake autoconf
 
+NO_STAGE=	yes
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL})
 

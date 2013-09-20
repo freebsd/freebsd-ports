@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/Gyokuro
-# Date created:		5 September 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gyokuro
 PORTVERSION=	1.0.0
@@ -24,6 +20,7 @@ NO_BUILD=	yes
 
 DOCS_JA=	README.ja.rd
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${RUBY_SITELIBDIR}/gyokuro
 	${INSTALL_DATA} ${WRKSRC}/lib/gyokuro/*.rb ${RUBY_SITELIBDIR}/gyokuro/

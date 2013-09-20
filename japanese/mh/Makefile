@@ -42,6 +42,7 @@ READMES=	00.READ.ME.1ST CHANGES.JP COMMANDS.JP FAQ.JP FEATURES.JP \
 
 CONFLICTS=	nmh-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

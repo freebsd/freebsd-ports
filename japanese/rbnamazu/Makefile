@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rbnamazu
-# Date created:		18 Aug 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rbnamazu
 PORTVERSION=	0.4
@@ -29,6 +25,7 @@ DOCS_EN=	${RUBY_RD_FILES:M*.rd.en} \
 DOCS_JA=	${RUBY_RD_FILES:M*.rd.ja} \
 		${RUBY_RD_HTML_FILES:M*.ja.html}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/namazu.rb ${PREFIX}/bin/
 	${LN} -sf namazu.rb ${PREFIX}/bin/rbnamazu

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bookview
-# Date created:			2 Oct 1997
-# Whom:				Motoyuki Kasahara <m-kasahr@sra.co.jp>
-#
+# Created by: Motoyuki Kasahara <m-kasahr@sra.co.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	bookview
 PORTVERSION=	3.2.1
@@ -17,6 +13,7 @@ COMMENT=	NDTP client written in Tcl/Tk
 
 USE_TK_WRAPPER=		yes
 
+NO_STAGE=	yes
 do-build:
 .for i in bookview/bookview doc/bookview.html
 	cd ${WRKSRC} && ${SED} -e \

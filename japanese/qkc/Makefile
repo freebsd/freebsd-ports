@@ -18,6 +18,7 @@ PLIST_FILES=	bin/qkc
 MAN1=		qkc.1
 MANLANG=	ja
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qkc ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/qkc.1 ${PREFIX}/man/ja/man1

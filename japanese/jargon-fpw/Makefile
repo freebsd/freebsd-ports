@@ -1,9 +1,5 @@
-# New ports collection makefile for:	The Jargon File - JIS X 4081 format version
-# Date created:        	00/06/19
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jargon-fpw
 PORTVERSION=	2.0
@@ -22,6 +18,7 @@ WRKSRC=		${WRKDIR}/jargon
 EXTRACT_BEFORE_ARGS=	-qL
 
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/jargon-fpw/jargon/data
 	${MKDIR} ${PREFIX}/share/dict/jargon-fpw/jargon/gaiji

@@ -24,6 +24,7 @@ PLIST_FILES=	bin/ibus-daemon_restart \
 		bin/mozc_tool_hand_writing \
 		bin/mozc_tool_word_register
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${PLIST_FILES:S,bin/,${FILESDIR}/,} ${PREFIX}/bin
 

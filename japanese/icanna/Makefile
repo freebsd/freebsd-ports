@@ -1,9 +1,5 @@
-# New ports collection makefile for:	icanna
-# Date created:				2009/01/08
-# Whom:					Takayuki Nakao <t@nakao.org>
-#
+# Created by: Takayuki Nakao <t@nakao.org>
 # $FreeBSD$
-#
 
 PORTNAME=	icanna
 PORTVERSION=	0.9.0
@@ -18,6 +14,7 @@ YC_VERSION=	4.0.13
 
 PLIST_FILES+=	bin/icanna
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && \
 		${CC} ${CFLAGS} -o icanna icanna.c

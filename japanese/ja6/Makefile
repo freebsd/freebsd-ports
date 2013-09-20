@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja6
-# Date created:		2006-04-10
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	ja6
 PORTVERSION=	2003.03.09.l
@@ -20,6 +16,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_LINUX=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL} -d ${DATADIR}
 	${CP} -Rp ${WRKSRC}/ ${DATADIR}/

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gimp-help
-# Date created:		10th April 2010
-# Whom:			SimaMoto,RyoTa <liangtai.s4@gmail.com>
-#
+# Created by: SimaMoto,RyoTa <liangtai.s4@gmail.com>
 # $FreeBSD$
-#
 
 CATEGORIES=	japanese graphics
 
@@ -15,4 +11,5 @@ MASTERDIR=	${.CURDIR}/../../misc/gimp-help-en
 DOCLANG=	ja
 AMPLE=	""
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -22,6 +22,7 @@ PLIST_SUB=	XAPPLRESDIR=${XAPPLRESDIR}
 
 XAPPLRESDIR=	lib/X11/ja_JP.eucJP/app-defaults
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/${XAPPLRESDIR}
 	${INSTALL_DATA} ${FILESDIR}/Tgif.in ${PREFIX}/${XAPPLRESDIR}/Tgif.ja-dist

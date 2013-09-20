@@ -151,6 +151,7 @@ MANL=		abort.l \
 		vacuum.l \
 		values.l
 
+NO_STAGE=	yes
 do-install:
 .for file in ${MAN1}
 	@${INSTALL_MAN} ${WRKSRC}/man1/${file} ${MANPREFIX}/man/${MANLANG}/man1/

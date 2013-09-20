@@ -13,6 +13,7 @@ COMMENT=	Hyper NIKKI System, a CGI system for Electric Diary Interchange
 USES=		perl5
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	@if [ -d ${DATADIR} ]; then ${RM} -rf ${DATADIR}; fi
 	${MKDIR} ${DATADIR}

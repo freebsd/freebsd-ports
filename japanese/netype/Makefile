@@ -1,9 +1,5 @@
-# New ports collection makefile for:	netype
-# Date created:		07 May 2001
-# Whom:			Takeshi MUTOH <mutoh@info.nara-k.ac.jp>
-#
+# Created by: Takeshi MUTOH <mutoh@info.nara-k.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	netype
 PORTVERSION=	0.1.1
@@ -23,4 +19,5 @@ COMMENT=	Network Type Trainer client program
 USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -21,4 +21,5 @@ GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

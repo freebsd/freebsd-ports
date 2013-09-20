@@ -24,6 +24,7 @@ PORTDOCS=	gjiten-doc.ja.html
 MAN1=		gjiten.1
 GCONF_SCHEMAS=	gjiten-dicfiles.schemas gjiten.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

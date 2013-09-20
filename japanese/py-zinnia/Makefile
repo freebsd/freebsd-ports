@@ -1,4 +1,4 @@
-# New ports collection makefile for:	py-zinnia
+# $FreeBSD$
 
 # Date created:				15 Aug 2010
 # Whom:					Timothy Beyer <beyert@cs.ucr.edu>
@@ -26,6 +26,7 @@ USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	${PORTNAME}_python
 PYDISTUTILS_PKGVERSION=	0.0.0
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 LDFLAGS+=	-L${LOCALBASE}/lib

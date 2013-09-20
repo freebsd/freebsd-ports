@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-jpmobile-terminfo
-# Date created:		2010-09-18
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jpmobile-terminfo
 PORTVERSION=	0.0.3
@@ -19,6 +15,7 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}rubygem-

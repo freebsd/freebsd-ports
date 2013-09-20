@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jls
-# Date created:		4 January 1999
-# Whom:			shige
-#
+# Created by: shige
 # $FreeBSD$
-#
 
 PORTNAME=	ls
 PORTVERSION=	0.5
@@ -26,6 +22,7 @@ PLIST_FILES=	bin/jls
 
 WRKSRC=	${WRKDIR}/ls
 
+NO_STAGE=	yes
 pre-patch:
 	cd ${WRKSRC}; ${MV} ls.1 jls.1
 

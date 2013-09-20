@@ -38,6 +38,7 @@ DATADIR=	${PREFIX}/share/dict/edict-utf-8
 
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-extract:

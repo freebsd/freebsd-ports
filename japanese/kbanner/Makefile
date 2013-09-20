@@ -17,4 +17,5 @@ CFLAGS+=	-Wno-error=return-type
 MAN1=		kbanner.1
 PLIST_FILES=	bin/kbanner
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

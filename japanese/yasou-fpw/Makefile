@@ -17,6 +17,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/yasou
 EXTRACT_BEFORE_ARGS=	-qL
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/yasou-fpw/yasou/data
 	${INSTALL_DATA} ${WRKSRC}/yasou/data/honmon ${PREFIX}/share/dict/yasou-fpw/yasou/data

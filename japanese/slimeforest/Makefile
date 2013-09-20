@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sfa
-# Date created:				21 August 2004
-# Whom:					nivit@email.it
-#
+# Created by: nivit@email.it
 # $FreeBSD$
-#
 
 PORTNAME=	slimeforest
 PORTVERSION=	0.60
@@ -30,6 +26,7 @@ LINK_OPTS=	-s
 
 REPLACE_FILES=	runfs runwin
 
+NO_STAGE=	yes
 post-patch:
 	@for FILE in ${REPLACE_FILES}; do \
 		${SED} -i .bak\

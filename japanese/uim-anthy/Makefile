@@ -30,6 +30,7 @@ UIM_SLAVE=	yes
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-uim_Makefile.in \
 		${PATCHDIR}/extra-patch-gtk2_dict_Makefile.in
 
+NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}/uim && ${GMAKE} libuim-anthy.la)
 	(cd ${WRKSRC}/uim && ${GMAKE} libuim-anthy-utf8.la)
