@@ -4943,3 +4943,7 @@ irc/xchat1|irc/xchat|2013-09-16|Unsupported upstream, consider using irc/xchat
 japanese/xchat|irc/xchat|2013-09-16|Unsupported upstream, consider using irc/xchat
 www/autoindex|www/autoindex2|2013-09-16|Does not work with any of the supported PHP versions
 textproc/rotix||2013-09-20|Has expired: no longer maintained upstream
+devel/ptlib26|devel/ptlib|2013-09-20|Removed old version, update to new version and moved port
+net/opal3|net/opal|2013-09-20|Removed old version, update to new version and moved port
+net/ekiga|net-im/ekiga|2013-09-20|Removed old version, update to new version and moved port
+net/ekiga3|net-im/ekiga|2013-09-20|Removed old version, update to new version and moved port

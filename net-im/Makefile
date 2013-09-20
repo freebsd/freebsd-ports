@@ -19,6 +19,7 @@
     SUBDIR += decibel
     SUBDIR += echat
     SUBDIR += ejabberd
+    SUBDIR += ekiga
     SUBDIR += emesene
     SUBDIR += empathy
     SUBDIR += farsight2
