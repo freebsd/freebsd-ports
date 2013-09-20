@@ -1,9 +1,5 @@
-# New ports collection makefile for:   EyeClock
-# Date created:        4 September 1998
-# Whom:                KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
-#
+# Created by: KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	eyeclock
 PORTVERSION=	2.0
@@ -22,6 +18,7 @@ USE_XORG=	x11 xau xdmcp xpm xt ice
 
 MAN1=		eyeclock.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s#gcc#${CC}#" ${WRKSRC}/Makefile
 

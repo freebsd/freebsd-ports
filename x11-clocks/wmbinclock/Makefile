@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmBinClock
-# Date created:			16 Mar 2003
-# Whom:				Harold Gutch <logix@foobar.franken.de>
-#
+# Created by: Harold Gutch <logix@foobar.franken.de>
 # $FreeBSD$
-#
 
 PORTNAME=	wmbinclock
 PORTVERSION=	0.3
@@ -18,6 +14,7 @@ PLIST_FILES=	bin/wmBinClock
 USE_GMAKE=	yes
 USE_XORG=	xpm
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|#include <values.h>||' ${WRKSRC}/wmBinClock.c
 	@${REINPLACE_CMD} -e 's|^CC.*=|CC ?=|' -e 's|^CFLAGS.*=|CFLAGS +=|' \

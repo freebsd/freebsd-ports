@@ -16,4 +16,5 @@ USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 MAN1=		xtimer.1
 PLIST_FILES=	bin/xtimer
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

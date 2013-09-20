@@ -16,4 +16,5 @@ PLIST_FILES=	bin/wmitime
 USE_XORG=	xpm
 USE_CSTD=	gnu89
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

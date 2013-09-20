@@ -17,6 +17,7 @@ IS_INTERACTIVE=	yes
 
 MAN1=		xalarm.1 xmemo.1 xfortune.1 xyow.1
 
+NO_STAGE=	yes
 pre-install:
 	(cd ${WRKSRC} ; ${CP} XAlarm.ad XAlarm-color.ad)
 

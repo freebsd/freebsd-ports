@@ -1,4 +1,3 @@
-# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	asclock-xlib
@@ -22,6 +21,7 @@ IS_INTERACTIVE=	YES
 HAS_CONFIGURE=	YES
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

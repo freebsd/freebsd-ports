@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gdesklets-ebichuclock
-# Date created:				07 January 2004
-# Whom:					Vincent Tantardini <vinc@FreeBSD-fr.org>
-#
+# Created by: Vincent Tantardini <vinc@FreeBSD-fr.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ebichuclock
 PORTVERSION=	0.1.1
@@ -29,6 +25,7 @@ SUB_LIST=	NAME="${NAME}"
 DATADIR=	${PREFIX}/share/gdesklets
 NAME=		ebichuclock
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}/Displays/${NAME}
 	${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/Displays/${NAME}

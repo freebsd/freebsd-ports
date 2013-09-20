@@ -23,6 +23,7 @@ NAME=		Clock
 
 LANG=		de fr pt sq sr sr@Latn sv
 
+NO_STAGE=	yes
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
 	@${PATCH} ${WRKSRC}/Clock/__init__.py < ${FILESDIR}/Clock::__init__.py

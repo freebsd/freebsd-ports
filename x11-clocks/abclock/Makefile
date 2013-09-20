@@ -1,9 +1,5 @@
-# New ports collection makefile for:	abclock
-# Date created:				15 August 2000
-# Whom:					Chris D. Faulhaber <jedgar@FreeBSD.org>
-#
+# Created by: Chris D. Faulhaber <jedgar@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	abclock
 PORTVERSION=	1.0d
@@ -20,6 +16,7 @@ MAKE_ARGS=	CC="${CC}" OPT="${CFLAGS}"
 
 USE_XORG=	x11 xau xdmcp
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/abclock ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/abc_img ${PREFIX}/bin

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	stopwatch
-# Date created:				28 August 2008
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	stopwatch
 PORTVERSION=	3.5
@@ -22,6 +18,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/stopwatch
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/stopwatch
 

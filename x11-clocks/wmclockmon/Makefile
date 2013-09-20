@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmclockmon
-# Date created:				Sat Sep 21 01:48:10 EDT 2002
-# Whom:					pat
-#
+# Created by: pat
 # $FreeBSD$
-#
 
 PORTNAME=	wmclockmon
 PORTVERSION=	0.8.1
@@ -20,6 +16,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=		wmclockmon.1 wmclockmon-config.1 wmclockmon-cal.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|g' \
 		${WRKSRC}/wmclockmon-config/Makefile.in

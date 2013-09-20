@@ -15,6 +15,7 @@ USE_XORG=	x11 xext
 
 PLIST_FILES=	bin/lmclock
 
+NO_STAGE=	yes
 post-extract:
 	@${TOUCH} ${WRKSRC}/lmclock.man
 

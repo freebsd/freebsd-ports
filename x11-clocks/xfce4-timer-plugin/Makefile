@@ -19,4 +19,5 @@ USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel
 USES=		pkgconfig gettext
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

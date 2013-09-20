@@ -25,4 +25,5 @@ USE_XORG=	x11 xext
 MAN1=		t3d.1
 PLIST_FILES=	bin/t3d
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

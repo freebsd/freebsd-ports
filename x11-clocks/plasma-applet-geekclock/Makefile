@@ -1,9 +1,4 @@
-# New ports collection makefile for:	plasma-applet-geekclock
-# Date Created:				2009-07-08
-# Whom:					Jason E. Hale <bsdkaffee@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	geekclock
 PORTVERSION=	1.0
@@ -25,4 +20,5 @@ PLIST_FILES=	lib/kde4/plasma_applet_geekclock.so \
 		share/apps/desktoptheme/default/widgets/geekclock.svgz \
 		share/kde4/services/plasma-applet-geekclock.desktop
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

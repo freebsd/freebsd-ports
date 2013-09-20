@@ -1,6 +1,5 @@
 # Created by: Martin Wilke (miwi@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-time-out-plugin
 PORTVERSION=	1.0.1
@@ -21,4 +20,5 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

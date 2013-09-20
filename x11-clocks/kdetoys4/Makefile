@@ -21,4 +21,5 @@ USE_XZ=		yes
 
 MAN6=	amor.6
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

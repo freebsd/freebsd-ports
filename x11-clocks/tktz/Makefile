@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tktz
-# Date created:				2 May 2006
-# Whom:					Alexander Gromnizki
-#
+# Created by: Alexander Gromnizki
 # $FreeBSD$
-#
 
 PORTNAME=	tktz
 PORTVERSION=	0.2
@@ -18,6 +14,7 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	@ ${MKDIR} ${PREFIX}/lib/tktz
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/tktz ${PREFIX}/lib/tktz

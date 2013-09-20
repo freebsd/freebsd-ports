@@ -17,6 +17,7 @@ WRKSRC=		${WRKDIR}/wmtime.app/wmtime
 USES=		imake
 USE_XORG=	xpm
 
+NO_STAGE=	yes
 post-extract:
 	${CP} ${WRKSRC}/../Imakefile ${WRKSRC}/Imakefile
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:  	bbdate
-# Date created:		May 3 1999
-# Whom:			Chris Piazza <cpiazza@FreeBSD.org>
-#
+# Created by: Chris Piazza <cpiazza@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bbdate
 PORTVERSION=	0.2.4
@@ -21,6 +17,7 @@ PLIST_FILES=	bin/bbdate share/bbtools/README.bbdate \
 		share/bbtools/bbdate.conf share/bbtools/bbdate.nobb \
 		share/bbtools/bbdate.style share/bbtools/bbtoolsrc.in
 
+NO_STAGE=	yes
 post-install:
 	@${ECHO_CMD} "@unexec rmdir %D/share/bbtools 2>/dev/null || true" \
 		>> ${TMPPLIST}

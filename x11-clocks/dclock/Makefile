@@ -31,6 +31,7 @@ PLIST_FILES=	bin/dclock \
 PLIST_DIRS=	%%DATADIR%%/sounds \
 		%%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSOX}

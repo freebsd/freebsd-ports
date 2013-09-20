@@ -1,9 +1,5 @@
-# New ports collection makefile for:	glclock
-# Date created:		20 September 1999
-# Whom:			Randall Hopper <aa8vb@ipass.net>
-#
+# Created by: Randall Hopper <aa8vb@ipass.net>
 # $FreeBSD$
-#
 
 PORTNAME=	glclock
 DISTVERSION=	6.0b6.0
@@ -47,6 +43,7 @@ PLIST_FILES+=	lib/X11/glclock/${f}
 
 PLIST_DIRS=	lib/X11/glclock
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OPTIMIZED_CFLAGS)

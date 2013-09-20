@@ -1,9 +1,5 @@
-# New ports collection makefile for:   astime
-# Date created:        21 Nov 1998
-# Whom:                Brian Handy <handy@physics.montana.edu>
-#
+# Created by: Brian Handy <handy@physics.montana.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	astime
 PORTVERSION=	2.8
@@ -23,4 +19,5 @@ INSTALL_TARGET=	install install.man
 MAN1=		astime.1
 PLIST_FILES=	bin/astime
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

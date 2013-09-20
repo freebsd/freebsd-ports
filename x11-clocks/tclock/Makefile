@@ -21,4 +21,5 @@ PLIST_FILES=	bin/tclock
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
