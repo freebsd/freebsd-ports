@@ -29,4 +29,5 @@ PLIST_SUB+=	VERSION=${PORTVERSION}	VER1=${PORTVERSION:R} \
 regression-test: build
 	( cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} check )
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

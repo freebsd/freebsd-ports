@@ -19,4 +19,5 @@ MAN3=		Math::BigFloat.3 \
 		Math::BigInt::Calc.3 \
 		Math::BigInt::CalcEmu.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

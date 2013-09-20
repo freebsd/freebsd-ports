@@ -20,6 +20,7 @@ USE_PERL5=	configure
 
 MAN3=		Math::Random::MT::Auto.3 Math::Random::MT::Auto::Range.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

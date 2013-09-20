@@ -20,6 +20,7 @@ USE_PERL5=	configure
 
 MAN3=		Math::BigRat.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/INSTALLDIRS/d' ${WRKSRC}/Makefile.PL
 

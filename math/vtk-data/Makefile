@@ -1,9 +1,5 @@
-# New ports collection makefile for:    vtk-data
-# Date created:         10 Oct 2003
-# Whom:                 Mykola Khotyaintsev <ko@irfu.se>
-#
+# Created by: Mykola Khotyaintsev <ko@irfu.se>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-data
 DISTFILES=	VTKData-${PORTVERSION}.tar.gz
@@ -18,6 +14,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 INSTFILES=	Baseline Data VTKData.readme
 
+NO_STAGE=	yes
 do-configure:
 
 do-patch:

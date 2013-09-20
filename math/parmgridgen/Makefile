@@ -19,6 +19,7 @@ LIB_DEPENDS+=	mpi.1:${PORTSDIR}/net/openmpi
 USES=		gmake
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 post-patch:
 #respect CFLAGS
 .		for f in IMlib Lib Programs

@@ -1,4 +1,3 @@
-# Created by: Max Brazhnikov <makc@issp.ac.ru>
 # $FreeBSD$
 
 PORTNAME=	sivp
@@ -29,6 +28,7 @@ OPTIONS_DEFINE=	HELP
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 HELP_DESC=	Build help files (requires scilab with gui support)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MHELP}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	atlas-devel
-# Date created:		14 September 2003
-# Whom:			Nakata Maho <maho@FreeBSD.org>
-#
+# Created by: Nakata Maho <maho@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	atlas
 PORTVERSION=	3.9.11
@@ -26,6 +22,7 @@ WRKSRC=		${WRKDIR}/ATLAS
 USE_LDCONFIG=	yes
 CONFLICTS=	atlas-[0-9]* cblas-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 NOT_FOR_ARCHS=	alpha

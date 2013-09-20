@@ -18,4 +18,5 @@ MAN3=	Math::Symbolic::Custom::Contains.3
 USES=		perl5
 USE_PERL5=	modbuild
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -22,4 +22,5 @@ MAN3=	GIS::Distance::Fast.3 \
 	GIS::Distance::Formula::Haversine::Fast.3 \
 	GIS::Distance::Formula::Vincenty::Fast.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

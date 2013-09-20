@@ -15,5 +15,6 @@ USE_CABAL=	erf math-functions>=0.1.2 monad-par>=0.3.4 mwc-random>=0.11.0.0 \
 
 INSTALL_PORTDATA=	${INSTALL_DATA} ${WRKSRC}/README.markdown ${DATADIR}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -24,6 +24,7 @@ USE_PYDISTUTILS=	yes
 OPTIONS_DEFINE=	ATLAS
 ATLAS_DESC=	Use optimized blas library
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MATLAS}

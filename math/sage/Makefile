@@ -25,6 +25,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 OPTIONS_DEFINE_amd64=	387
 387_DESC=		Use 387 instead of SSE FPU
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PLIST_FILES=	bin/sage

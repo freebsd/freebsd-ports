@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SuperLU_MT
-# Date created:		31 Apr 2003
-# Whom:			Pedro Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	superlu_mt
 PORTVERSION=	2.0.20080115
@@ -24,6 +20,7 @@ COMMENT=	Routines for performing multithreaded sparse factorization
 USE_FORTRAN=	yes
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libgoto2.so)

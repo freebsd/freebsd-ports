@@ -21,6 +21,7 @@ USE_PYTHON=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^.*__future__.*$$,,' ${WRKSRC}/DataStructures.py
 	@${GREP} -lR "^#!" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \

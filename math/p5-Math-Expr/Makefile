@@ -23,4 +23,5 @@ MAN3=		Math::Expr.3 Math::Expr::FormulaDB.3 \
 		Math::Expr::TypeDB.3 Math::Expr::Var.3 \
 		Math::Expr::VarSet.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

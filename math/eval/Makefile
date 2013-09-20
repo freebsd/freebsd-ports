@@ -1,9 +1,5 @@
-# New ports collection makefile for:    eval
-# Date created:         24 Sep 1997
-# Whom:                 eserte
-#
+# Created by: eserte
 # $FreeBSD$
-#
 
 PORTNAME=	eval
 PORTVERSION=	113
@@ -23,6 +19,7 @@ PLIST_FILES=		bin/Eval
 
 WRKSRC=		${WRKDIR}/Eval/source
 
+NO_STAGE=	yes
 post-extract:
 	-${LN} -s Makefile.unx ${WRKSRC}/Makefile
 

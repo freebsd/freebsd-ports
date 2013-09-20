@@ -24,6 +24,7 @@ CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 PLIST_SUB=	AXIOM_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's/test x$$oa_has_qt = xyes/false/' ${WRKSRC}/configure
 

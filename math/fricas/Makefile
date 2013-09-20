@@ -30,6 +30,7 @@ STRIP=		#nothing, these binaries fail if stripped
 
 PLIST_SUB=	GNU_HOST="${CONFIGURE_TARGET}"
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/CCF=/s|-O2 -pipe|$$CFLAGS| ; \

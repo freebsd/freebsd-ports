@@ -18,4 +18,5 @@ MAN3=	Statistics::Descriptive.3 \
 	Statistics::Descriptive::Smoother::Exponential.3 \
 	Statistics::Descriptive::Smoother::Weightedexponential.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

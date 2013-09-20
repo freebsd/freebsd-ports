@@ -1,9 +1,5 @@
-# New ports collection makefile for:	orpie
-# Date created:		 4 August 2004
-# Whom:			Dylan Simon <dylan@dylex.net>
-#
+# Created by: Dylan Simon <dylan@dylex.net>
 # $FreeBSD$
-#
 
 PORTNAME=	orpie
 PORTVERSION=	1.5.1
@@ -27,4 +23,5 @@ PLIST_FILES=	bin/orpie bin/orpie-curses-keys etc/orpierc
 MAN1=		orpie.1 orpie-curses-keys.1
 MAN5=		orpierc.5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

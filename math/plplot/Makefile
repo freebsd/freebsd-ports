@@ -40,6 +40,7 @@ MAN1=		plm2gif.1 plpr.1 pltek.1 plrender.1
 
 FREEFONT_DIR=	${LOCALBASE}/lib/X11/fonts/freefont-ttf
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFORTRAN}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    vtk-tcl
-# Date created:         10 Oct 2003
-# Whom:                 Mykola Khotyaintsev <ko@irfu.se>
-#
+# Created by: Mykola Khotyaintsev <ko@irfu.se>
 # $FreeBSD$
-#
 
 CATEGORIES+=	tcl tk
 PKGNAMESUFFIX=	-tcl
@@ -29,6 +25,7 @@ CMAKE_DEFS=	-DVTK_WRAP_TCL:BOOL=ON \
 		-DTCL_INCLUDE_PATH:PATH=${TCL_INCLUDE_DIR} \
 		-DTK_INCLUDE_PATH:PATH=${TK_INCLUDE_DIR}
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
 
 post-patch: patch-common

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    wingz
-# Date created:         Wed Nov 27 09:15:10 CST 1996
-# Whom:                 erich@rrnet.com
-#
+# Created by: erich@rrnet.com
 # $FreeBSD$
-#
 
 PORTNAME=	wingzpro
 PORTVERSION=	311
@@ -26,6 +22,7 @@ NO_BUILD=	yes
 
 # XXX: this is missing "${BRANDELF} -t Linux <executables>"
 
+NO_STAGE=	yes
 do-install:
 	${TAR} -xzp -C ${LOCALBASE} -f ${DISTDIR}/${DISTFILES}
 	${SED} 's%_LOCALBASE_%${LOCALBASE}%' \

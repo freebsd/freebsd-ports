@@ -24,6 +24,7 @@ USE_PYTHON=	build
 
 WRKSRC=		${WRKDIR}/${PORTNAME:U}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOIN}

@@ -13,5 +13,6 @@ GNU_CONFIGURE=	yes
 
 USE_TCL_WRAPPER=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 .include <bsd.port.mk>

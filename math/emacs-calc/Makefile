@@ -1,9 +1,5 @@
-# Ports collection makefile for:	emacs-calc
-# Date created:		7/10/5
-# Whom:			andrewb@cs.cmu.edu
-#
+# Created by: andrewb@cs.cmu.edu
 # $FreeBSD$
-#
 
 PORTNAME=	calc
 PORTVERSION=	2.02f
@@ -23,6 +19,7 @@ EMACS_PORT_NAME=emacs21
 
 INFO=		calc
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/Makefile
 

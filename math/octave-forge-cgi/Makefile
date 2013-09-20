@@ -1,4 +1,4 @@
-# Created by: Stephen Montgomery-Smith <stephen@FreeBSd.org>
+# Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	octave-forge-cgi
@@ -14,6 +14,7 @@ OCTSRC=		${OCTAVE_PKGNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 do-build:

@@ -16,4 +16,5 @@ USE_DOS2UNIX=	yes
 
 MAN3=		Statistics::Lite.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

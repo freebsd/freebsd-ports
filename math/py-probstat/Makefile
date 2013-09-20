@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	py-probstat
-# Date created:			Oct 12, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	probstat
 PORTVERSION=	0.912
@@ -23,4 +18,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	0.9
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

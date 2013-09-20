@@ -28,6 +28,7 @@ OPTIONS_DEFAULT=CAIRO GD PDF PLOT TEX WX X11
 
 MAN1=		gnuplot.1 lasergnu.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCAIRO}

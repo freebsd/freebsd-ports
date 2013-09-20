@@ -22,6 +22,7 @@ COMMENT=	Linear Algebra PACKage in C++, a wrapper for LAPACK
 WANT_GNOME=	yes
 USES=	pathfix gmake
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)

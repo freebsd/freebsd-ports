@@ -22,6 +22,7 @@ PORTDOCS=	*
 PLIST_FILES=	include/tommath.h include/tommath_class.h \
 		include/tommath_superclass.h lib/libtommath.a
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

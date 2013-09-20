@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sedumi
-# Date created:		2008/10/6
-# Whom:			NAKATA, Maho <maho@FreeBSD.org>
-#
+# Created by: NAKATA, Maho <maho@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sedumi
 PORTVERSION=    1.1
@@ -22,6 +18,7 @@ BUILD_DEPENDS=	octave:${PORTSDIR}/math/octave
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/SeDuMi_1_1
 
+NO_STAGE=	yes
 pre-patch:
 	@${LS} ${WRKSRC}/*.m ${WRKSRC}/*.c > ${WRKDIR}/FILELIST
 	@for i in `${CAT} ${WRKDIR}/FILELIST`; do \

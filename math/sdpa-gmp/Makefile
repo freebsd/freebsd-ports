@@ -1,9 +1,5 @@
-# New ports collection makefile for:    sdpa-gmp
-# Date created:                         2008/4/11
-# Whom:                                 NAKATA, Maho <maho@FreeBSD.org>
-#
+# Created by: NAKATA, Maho <maho@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sdpa-gmp
 PORTVERSION=	7.1.2
@@ -17,6 +13,7 @@ EXTRACT_ONLY=	${SRCFILE}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Multi precision arithmetic version of math/sdpa
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SRCDATE=	20091005

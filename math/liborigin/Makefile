@@ -22,6 +22,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOXYGEN
 DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDOXYGEN}

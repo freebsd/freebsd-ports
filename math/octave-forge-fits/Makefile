@@ -16,6 +16,7 @@ WRKSRC=	${WRKDIR}/${OCTSRC}/src
 
 LIB_DEPENDS+=	cfitsio:${PORTSDIR}/astro/cfitsio
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 post-build:

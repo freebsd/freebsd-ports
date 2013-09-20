@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	glgraph
-# Date created:			Jan 7, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	glgraph
 PORTVERSION=	0.2.6
@@ -25,6 +20,7 @@ USE_PERL5=	run
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/glgraph ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

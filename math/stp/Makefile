@@ -28,6 +28,7 @@ PLIST_FILES=	bin/stp \
 		lib/libstp.a
 PLIST_DIRS=	include/stp
 
+NO_STAGE=	yes
 post-patch:
 	@${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/src/main/versionString.stamp
 	@${REINPLACE_CMD} -e 's/bash/sh/' ${WRKSRC}/scripts/Makefile.common

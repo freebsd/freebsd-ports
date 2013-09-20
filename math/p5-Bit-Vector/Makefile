@@ -18,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		Bit::Vector.3 Bit::Vector::Overload.3 Bit::Vector::String.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

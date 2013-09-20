@@ -34,6 +34,7 @@ WRKSRC=	${WRKDIR}/geogebra-${PORTVERSION}
 
 FIND_JARS=	-type f -name "*.jar" -maxdepth 1 -print0
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC} && ${MKDIR} ${DATADIR} && \
 	${INSTALL_SCRIPT} ${WRKSRC}/geogebra ${DATADIR} && \

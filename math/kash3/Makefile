@@ -33,6 +33,7 @@ FIND_DATA=	-type f -mindepth 1 -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 FIND_DIRS=	-type d	-exec ${MKDIR} ${DATADIR}/{} \;
 FIND_HERE=	data gap lib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

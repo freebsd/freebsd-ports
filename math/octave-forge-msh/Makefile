@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 RUN_DEPENDS+=	${TARBALLS_DIR}/splines.tar.gz:${PORTSDIR}/math/octave-forge-splines
 RUN_DEPENDS+=	gmsh:${PORTSDIR}/cad/gmsh
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 post-build:

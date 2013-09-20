@@ -23,6 +23,7 @@ USE_EMACS=	yes
 INSTALLS_ICONS=	yes
 USES=		gmake perl5
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${EMACS_NAME} == xemacs

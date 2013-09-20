@@ -26,6 +26,7 @@ MAKE_ENV+=	DATADIR="${DATADIR}"
 FIND_DIRS=	-type d
 FIND_DATA=	-type f
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/src/main.cpp
 

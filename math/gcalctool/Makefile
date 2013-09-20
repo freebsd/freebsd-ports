@@ -26,4 +26,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		gcalctool.1
 GLIB_SCHEMAS=	org.gnome.gcalctool.gschema.xml
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

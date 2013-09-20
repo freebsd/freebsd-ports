@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	blitz++
-# Date created:			Jul 25, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	blitz++
 PORTVERSION=	0.9
@@ -36,6 +31,7 @@ DOCSDIR=	${PREFIX}/share/doc/blitz
 
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|g++|\$${CXX}|g ; \
 		 s|"-ftemplate-depth-30|"\$${CXXFLAGS} -ftemplate-depth-30|g ; \

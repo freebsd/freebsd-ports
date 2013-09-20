@@ -24,6 +24,7 @@ MAKE_ARGS=	READLINE=1
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 regression-test: build

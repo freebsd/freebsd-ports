@@ -24,4 +24,5 @@ MAN3=	Math::Random::OO.3 \
 	Math::Random::OO::Uniform.3 \
 	Math::Random::OO::UniformInt.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

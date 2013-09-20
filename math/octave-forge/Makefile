@@ -114,6 +114,7 @@ ZENITY_DESC=		Install package: zenity
 
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MACTUARIAL}

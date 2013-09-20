@@ -13,6 +13,7 @@ GNU_CONFIGURE=	yes
 
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} s+/bin/bash+${LOCALBASE}/bin/bash+g ${WRKSRC}/src/xraylib/src/*.sh
 	@${REINPLACE_CMD} s+/bin/bash+${LOCALBASE}/bin/bash+g ${WRKSRC}/src/xraylib/src/Makefile

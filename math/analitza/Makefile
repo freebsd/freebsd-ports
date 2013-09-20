@@ -20,4 +20,5 @@ USE_QT4=	corelib gui opengl svg xml \
 USE_GL=		glu
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

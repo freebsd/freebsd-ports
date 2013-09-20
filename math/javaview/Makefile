@@ -1,9 +1,5 @@
-# New ports collection makefile for:	javaview-lite
-# Date created:		07 July 2005
-# Whom:			Nicola Vitale <nivit@email.it>
-#
+# Created by: Nicola Vitale <nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	javaview-lite
 PORTVERSION=	3.95
@@ -35,6 +31,7 @@ FIND_EXCLUDE=	-not \( -name "*.bat" -or -name "*.bak" -or -name "*.orig" -or -na
 
 LINK_OPTS?=	-sf
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
 		-e 's|%%DATADIR%%|${DATADIR:S/\//\\\//g}|' \

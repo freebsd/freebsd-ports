@@ -26,6 +26,7 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	PYTHON_VERSION=${PYTHON_VER}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"

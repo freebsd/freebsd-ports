@@ -26,6 +26,7 @@ PORTDOCS=	Changes Readme Readme.nfs Readme.qs
 OPTIONS_DEFINE=		OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}

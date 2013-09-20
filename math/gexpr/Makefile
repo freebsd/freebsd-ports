@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	gexpr
-# Date created:			Jun 14, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gexpr
 PORTVERSION=	2.0.2
@@ -19,6 +14,7 @@ COMMENT=	A shell calculator
 MAN1=		gexpr.1
 PLIST_FILES=	bin/gexpr
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX}," ${WRKSRC}/Makefile
 

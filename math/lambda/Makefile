@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	lambda
-# Date created:			Mar 23, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	lambda
 PORTVERSION=	0.1.4
@@ -28,6 +23,7 @@ DOCS=		lambda.html lambdamanual.html user_manual_style.css
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lambda ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}

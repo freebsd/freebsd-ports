@@ -1,9 +1,5 @@
-# New ports collection makefile for:   freefem
-# Date created:        20 December 1996
-# Whom:                Pedro Giffuni
-#
+# Created by: Pedro Giffuni
 # $FreeBSD$
-#
 
 PORTNAME=	freefem
 PORTVERSION=	3.5.8
@@ -20,6 +16,7 @@ USE_LDCONFIG=	yes
 
 MAN1=		freefem.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

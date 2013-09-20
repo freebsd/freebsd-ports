@@ -56,6 +56,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall
 LIB_DEPENDS+=	portaudio.0:${PORTSDIR}/audio/portaudio
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800023

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MUMPS
-# Date created:		5 Mar 2006
-# Whom:			Pedro Giffuni
-#
+# Created by: Pedro Giffuni
 # $FreeBSD$
-#
 
 PORTNAME=	mumps
 PORTVERSION=	4.8.4
@@ -21,6 +17,7 @@ COMMENT=	MUltifrontal Massively Parallel sparse direct Solver
 #-----------------------------------------------------------------------
 
 # WARNING: Non-serviceable parts inside, can break other ports
+NO_STAGE=	yes
 # You may define these options/knobs:
 #
 # FFLAGS: Fortran compiler flags for gfortran

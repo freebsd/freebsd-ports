@@ -22,4 +22,5 @@ USES=		perl5
 
 MAN3=		Math::Prime::XS.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

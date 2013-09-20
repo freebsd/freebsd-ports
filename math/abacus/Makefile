@@ -21,6 +21,7 @@ ALL_TARGET=	abacus
 
 WRKSRC=		${WRKDIR}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '\
 	    s|%%LOCALBASE%%|${LOCALBASE}|g; \

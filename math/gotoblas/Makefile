@@ -51,6 +51,7 @@ INTERFACE64_DESC=	Use 8 byte integers on 64-bit architectures
 OPENMP_DESC=		Use OpenMP for threading
 #		QUAD_PRECISION	"Support IEEE quad precision (experimental)" off
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 MAXTHREADS?=	8

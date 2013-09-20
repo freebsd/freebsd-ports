@@ -1,7 +1,4 @@
-# New ports collection makefile for:	facile
-# Date created:				2008-02-09
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	facile
@@ -20,6 +17,7 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	compile
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,make,${GMAKE},; \
 		s,cp,${INSTALL_DATA}," ${WRKSRC}/Makefile

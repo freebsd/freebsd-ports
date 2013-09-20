@@ -23,4 +23,5 @@ MAN3=		Math::Random::Secure.3 Math::Random::Secure::RNG.3
 
 LICENSE=	ART20
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

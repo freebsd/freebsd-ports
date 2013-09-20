@@ -1,9 +1,5 @@
-# New ports collection makefile for:	muparser
-# Date created:		2006-02-14
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	muparser
 PORTVERSION=	2.2.0
@@ -28,6 +24,7 @@ CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 USE_GMAKE=	yes
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"

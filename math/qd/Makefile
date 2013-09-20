@@ -1,9 +1,5 @@
-# New ports collection makefile for:    qd
-# Date created:                         2007/03/28
-# Whom:                                 Nakata Maho <maho@FreeBSD.org>
-#
+# Created by: Nakata Maho <maho@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qd
 PORTVERSION=	2.3.7
@@ -16,6 +12,7 @@ COMMENT=	Double-Double and Quad-Double Arithmetic
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 USE_FORTRAN=	yes

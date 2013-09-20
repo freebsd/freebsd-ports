@@ -1,7 +1,4 @@
-# New ports collection makefile for: 	x12arima
-# Date created:				22 June 2010
-# Whom:					jh@jameshoward.us
-#
+# Created by: jh@jameshoward.us
 # $FreeBSD$
 
 PORTNAME=	x12arima
@@ -27,6 +24,7 @@ DISTFILES+=	docsv03.tar.gz
 .ifndef(NOPORTDOCS)
 PORTDOCS=	ReleaseNotesVersion03.pdf qref03unix.pdf x12adocV03.pdf
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}/docs && ${INSTALL_MAN} ${PORTDOCS} ${DOCSDIR})

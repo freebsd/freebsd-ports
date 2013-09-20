@@ -20,4 +20,5 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-ffa86ffb5570
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

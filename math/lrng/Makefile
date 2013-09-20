@@ -36,6 +36,7 @@ SRCCONF=	/dev/null
 SRCS=	${DISTFILES:M*.c\:1:Nex1.c\:1:S|:1$||}
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS} || make(makesum)

@@ -24,6 +24,7 @@ RESTRICTED=	GPL and METIS licenses are contradictory
 
 CONFLICTS=	umfpack-*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libopenblas.so)

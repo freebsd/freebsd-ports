@@ -23,4 +23,5 @@ MAN3=		Math::Polygon.3 \
 		Math::Polygon::Transform.3 \
 		Math::Polygon::Convex.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

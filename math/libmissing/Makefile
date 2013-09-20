@@ -31,6 +31,7 @@ SRCS=		libmissing.c
 CFLAGS+=	-fno-builtin -fno-math-errno -I. -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPROFILE} || defined(WITH_PROFILE)

@@ -1,6 +1,5 @@
 # Created by: Kurt Jaeger <fbsd-ports@opsec.eu>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-Int128
 PORTVERSION=	0.12
@@ -24,6 +23,7 @@ NOT_FOR_ARCHS=	i386
 MAN3=		Math::Int128.3 \
 		Math::Int128::die_on_overflow.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # need clang 3.2+ or GCC 4.4+

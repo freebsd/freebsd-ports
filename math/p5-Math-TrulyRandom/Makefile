@@ -15,6 +15,7 @@ USE_PERL5=	configure
 
 MAN3=		Math::TrulyRandom.3
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d -m 0755 ${DOCSDIR}

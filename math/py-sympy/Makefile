@@ -21,6 +21,7 @@ MAN1=	isympy.1
 OPTIONS_DEFINE=	PYGLET
 PYGLET_DESC=	Enable plotting support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYGLET}

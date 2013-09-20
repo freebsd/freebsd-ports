@@ -15,6 +15,7 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	NZMATH
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}

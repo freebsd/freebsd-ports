@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	Task::Math::Symbolic
 # Created by: ijliao
 # $FreeBSD$
 
@@ -33,4 +31,5 @@ USE_PERL5=	configure
 
 MAN3=	Task::Math::Symbolic.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -19,6 +19,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/lib/snns --enable-global \
 		--build=${CONFIGURE_TARGET}
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

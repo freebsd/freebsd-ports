@@ -32,6 +32,7 @@ WRKSRC_PROFILE =	${WRKSRC}_PROFILE
 WRKSRC_SHARED=		${WRKSRC}_SHARED
 WRKSRC_STATIC=		${WRKSRC}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if make(makesum) || ${PORT_OPTIONS:MDOCS}

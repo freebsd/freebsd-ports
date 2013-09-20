@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mprime aka prime95
-# Date created:				Tue Apr 29 03:11:28 UTC 2003
-# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mprime
 PORTVERSION=	0.0.${SOURCE_VERSION}
@@ -23,6 +19,7 @@ SUB_FILES=	pkg-message wrapper.sh
 # source code version
 SOURCE_VERSION=	24.14
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mprime ${PREFIX}/bin/mprime-real
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/mprime

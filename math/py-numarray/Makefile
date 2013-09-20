@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-numarray
-# Date created:		30 April 2002
-# Whom:			Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
-#
 
 PORTNAME=	numarray
 PORTVERSION=	1.5.2
@@ -17,6 +13,7 @@ COMMENT=	Numeric array manipulation extension module for Python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+NO_STAGE=	yes
 post-configure:
 	cd ${WRKSRC} && \
 	${PYTHON_CMD} generate.py && \

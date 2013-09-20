@@ -77,6 +77,7 @@ MAN3=		Math::GSL.3 \
 		Math::GSL::Wavelet.3 \
 		Math::GSL::Wavelet2D.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

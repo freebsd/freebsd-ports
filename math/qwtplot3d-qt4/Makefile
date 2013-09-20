@@ -1,9 +1,4 @@
-# New ports collection makefile for:	qwtplot3d-qt4
-# Date created:		2007-05-27
-# Whom:			Max Brazhnikov <makc@issp.ac.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	qwtplot3d
 PORTVERSION=	0.2.7
@@ -24,6 +19,7 @@ USE_DOS2UNIX=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${QMAKE} -unix ${PORTNAME}.pro

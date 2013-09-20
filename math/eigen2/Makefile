@@ -18,6 +18,7 @@ USES=		cmake
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-b23437e61a07
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/pkgconfig|libdata/pkgconfig|g' \
 		${WRKSRC}/CMakeLists.txt

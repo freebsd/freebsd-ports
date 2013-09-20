@@ -43,6 +43,7 @@ regression-test: build
 		${PYTHON_CMD} ${PYSETUP} nosetests \
 	)
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

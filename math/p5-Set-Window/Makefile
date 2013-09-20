@@ -15,6 +15,7 @@ USE_PERL5=	configure
 
 MAN3=		Set::Window.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' '/use 5/d' ${WRKSRC}/Window.pm
 

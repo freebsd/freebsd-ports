@@ -26,6 +26,7 @@ GAP_LIBDIR=	${PREFIX}/lib/${GAP_VERSION}
 WRKSRC=		${WRKDIR}/${GAP_VERSION}
 PLIST_FILES=	bin/gap
 
+NO_STAGE=	yes
 do-install:
 	(${SED} -e "s:GAP_DIR=.*:GAP_DIR=${GAP_LIBDIR}:g" -e "s:GAP_PRG=.*:GAP_PRG=gap:g" ${WRKSRC}/bin/gap.sh > ${PREFIX}/bin/gap; \
 	${CHMOD} 755 ${PREFIX}/bin/gap; )

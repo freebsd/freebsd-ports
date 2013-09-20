@@ -28,6 +28,7 @@ MAKE_ENV+=	SHLIB_MAJOR="${SHLIB_MAJOR}" \
 
 OPTIONS_DEFINE=	PROFILE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPROFILE}

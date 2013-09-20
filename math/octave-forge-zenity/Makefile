@@ -13,5 +13,6 @@ GNU_CONFIGURE=	yes
 
 RUN_DEPENDS+=	zenity:${PORTSDIR}/x11/zenity
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 .include <bsd.port.mk>

@@ -20,4 +20,5 @@ MAKE_JOBS_UNSAFE=	yes
 
 MAN3=		Math::Geometry::Planar::GPC::Polygon.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

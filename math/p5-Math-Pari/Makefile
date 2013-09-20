@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	parilib="-L${LOCALBASE}/lib -lpari" \
 
 MAN3=		Math::Pari.3 Math::libPARI.3 Math::PariInit.3
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's/2001004/2003000/' ${WRKSRC}/Makefile.PL
 

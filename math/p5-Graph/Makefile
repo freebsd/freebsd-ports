@@ -35,4 +35,5 @@ MAN3=		Graph.3 \
 		Heap071::Elem.3 \
 		Heap071::Fibonacci.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

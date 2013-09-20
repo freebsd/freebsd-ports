@@ -42,6 +42,7 @@ F77_DESC=	Enable PDL::Minuit and PDL::Slatec
 READLINE_DESC=	Use GNU readline
 SINK_DESC=	Include PDL kitchen sink
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPGPLOT}

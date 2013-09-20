@@ -18,6 +18,7 @@ GOTOBLAS_DESC=	Use gotoblas (conflict with USE_ATLAS)
 ATLAS_DESC=	Use atlas (conflict with USE_GOTOBLAS)
 # DMALLOC "Use dmalloc" off
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 WITH_BLAS=reference

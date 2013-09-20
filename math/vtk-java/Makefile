@@ -28,6 +28,7 @@ CMAKE_DEFS+=	-DVTK_WRAP_JAVA:BOOL=ON \
 		-DJAVA_INCLUDE_PATH:PATH=${JAVA_HOME}/include \
 		-DJAVA_INCLUDE_PATH2:PATH=${JAVA_HOME}/include/freebsd
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
 
 .ifndef(WITH_TESTING)

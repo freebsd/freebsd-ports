@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ldouble
-# Date created:		2004-09-02
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ldouble
 PORTVERSION=	0.1
@@ -26,6 +22,7 @@ PLIST_FILES=	lib/libml.a \
 		lib/libml.so \
 		lib/libml.so.0
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH}=="i386"

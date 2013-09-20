@@ -1,4 +1,3 @@
-# Created by: Max Brazhnikov makc@issp.ac.ru
 # $FreeBSD$
 
 PORTNAME=	swt
@@ -28,6 +27,7 @@ OPTIONS_DEFAULT=	HELP
 HELP_DESC=	Build help files (requires scilab with gui support)
 SIVP_DESC=	Enable Image and Video support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSIVP}

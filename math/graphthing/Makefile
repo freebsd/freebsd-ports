@@ -27,6 +27,7 @@ PLIST_FILES=	bin/graphthing bin/gt
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|@@CXX@|@CXX@|' ${WRKSRC}/src/GNUmakefile.in

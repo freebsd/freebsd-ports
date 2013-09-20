@@ -22,6 +22,7 @@ NO_BUILD=	yes
 MAN1=		jacal.1
 INFO=		jacal
 
+NO_STAGE=	yes
 do-configure:
 	cd ${WRKSRC}; \
 	${FIND} . -type f -exec ${PERL} -spi -e 's|%%PREFIX%%|${PREFIX}|' {} ';'

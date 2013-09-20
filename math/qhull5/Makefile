@@ -1,7 +1,4 @@
-# New ports collection makefile for:	qhull
-# Date created:				3 March 2004
-# Whom:					pusto@web.de
-#
+# Created by: pusto@web.de
 # $FreeBSD$
 
 PORTNAME=	qhull
@@ -30,6 +27,7 @@ GNU_CONFIGURE=	yes
 MAN1=		qhull.1 rbox.1
 .endif
 
+NO_STAGE=	yes
 pre-configure:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e "s|src html eg config|src config|"		\

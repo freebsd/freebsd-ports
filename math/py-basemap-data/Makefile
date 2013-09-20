@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	py-basemap-data
-# Date created:			April 21, 2006
-# Whom:				mainland@apeiron.net
-#
+# Created by: mainland@apeiron.net
 # $FreeBSD$
-#
 
 PORTNAME=	basemap-data
 PORTVERSION=	0.9
@@ -25,6 +20,7 @@ MAKE_ENV=	BASEMAP_DATA_PATH=${DATADIR}
 PLISTDIR=	${DATADIR}/*_[hi].txt \
 		${PYTHON_SITELIBDIR}/basemap_data-0.9-py2.5.egg-info
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

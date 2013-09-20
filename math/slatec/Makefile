@@ -6,6 +6,7 @@ PORTVERSION=	4.1
 CATEGORIES=	math
 MASTER_SITES=	NL:slatec,blas
 MASTER_SITE_SUBDIR=	slatec/:slatec blas/:blas
+NO_STAGE=	yes
 # Get d1mach.f, i1mach.f, r1mach.f from BLAS, rather than from Slatec:
 # See Netlib FAQ #2.17: http://netlib.org/misc/faq.html#2.17
 DISTFILES=	guide:slatec slatec_chk.tgz:slatec slatec_src.tgz:slatec \

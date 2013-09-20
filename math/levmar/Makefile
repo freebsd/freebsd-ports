@@ -20,6 +20,7 @@ USE_FORTRAN=	yes
 OPTIONS_DEFINE=	PROFILE
 PROFILE_DESC=	Build a profiling library
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libgoto2p.so)

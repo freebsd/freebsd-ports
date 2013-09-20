@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hoc
-# Date created:		14 August 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hoc
 PORTVERSION=	9.2
@@ -18,4 +14,5 @@ COMMENT=	High Order Calculator
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

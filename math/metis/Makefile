@@ -24,6 +24,7 @@ STATIC_DESC=	libmetis archive
 
 OPTIONS_DEFAULT=	SHARED STATIC
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENMP}

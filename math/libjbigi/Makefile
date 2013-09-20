@@ -33,6 +33,7 @@ JBIGI_BUILD_ENV=	\
 JBIGI_LIBS=	\
 		libjbigi-freebsd-none.so
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/jbigi.jar \
 		${JAVAJARDIR}

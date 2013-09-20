@@ -1,9 +1,5 @@
-# New ports collection makefile for:	trlan
-# Date created: 	5 Oct 2011
-# Whom: 	b.f. <bf@FreeBSD.org>
-#
+# Created by: b.f. <bf@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	trlan
 PORTVERSION=	201009
@@ -24,6 +20,7 @@ ALL_TARGET=	lib
 
 PLIST_FILES=	lib/libtrlan.a lib/libtrlan.so lib/libtrlan.so.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .ifndef(NOPORTDOCS)

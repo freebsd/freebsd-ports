@@ -1,9 +1,5 @@
-# New ports collection makefile for:   Clp
-# Date created:        22 July 2007
-# Whom:                Robin Schilham
-#
+# Created by: Robin Schilham
 # $FreeBSD$
-#
 
 PORTNAME=	Clp
 PORTVERSION=	1.12.1
@@ -30,4 +26,5 @@ CONFIGURE_ARGS=	--with-blas="-L${LOCALBASE}/lib -lblas"		\
 regression-test: build
 	(cd ${WRKSRC}/Clp && ${MAKE} unitTest )
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

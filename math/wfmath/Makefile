@@ -15,4 +15,5 @@ USE_LDCONFIG=	yes
 USE_GCC=	yes
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

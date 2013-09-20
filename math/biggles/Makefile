@@ -23,6 +23,7 @@ MAKE_ARGS=	CC="${CC}" \
 		LIBPLOT_CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBPLOT_LDFLAGS="-L${LOCALBASE}/lib -lplot"
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/CC/s,gcc,$$\{CC\},' ${WRKSRC}/make.inc
 

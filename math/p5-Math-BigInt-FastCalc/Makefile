@@ -20,4 +20,5 @@ MAN3=		Math::BigInt::FastCalc.3
 
 PORTSCOUT=	skipv:0.251
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby-FFTW3
-# Date created:		25 June 2004
-# Whom:			Shin'ya Murakami <murakami@ahs.scitec.kobe-u.ac.jp>
-#
+# Created by: Shin'ya Murakami <murakami@ahs.scitec.kobe-u.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	fftw3
 PORTVERSION=	0.4
@@ -30,6 +26,7 @@ USE_RUBY_EXTCONF=	yes
 
 DOCS=		LICENSE.txt doc/*
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}

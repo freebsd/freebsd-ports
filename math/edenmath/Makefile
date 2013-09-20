@@ -1,9 +1,5 @@
-# New ports collection makefile for:    edenmath.app
-# Date created:         30 Aug 2006
-# Whom:                 gurkan@phys.ethz.ch
-#
+# Created by: gurkan@phys.ethz.ch
 # $FreeBSD$
-#
 
 PORTNAME=	edenmath
 PORTVERSION=	1.1.1
@@ -24,4 +20,5 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

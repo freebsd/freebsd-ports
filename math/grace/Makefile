@@ -40,6 +40,7 @@ MAN1=		convcal.1 grace.1 grconvert.1
 MLINKS=		grace.1 gracebat.1 \
 		grace.1 xmgrace.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFFTW}

@@ -15,6 +15,7 @@ OCTSRC=		${OCTAVE_PKGNAME}
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/optim.tar.gz:${PORTSDIR}/math/octave-forge-optim
 
+NO_STAGE=	yes
 do-build:
 	@${DO_NADA}
 

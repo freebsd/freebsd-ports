@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SuperLU
-# Date created:		31 Oct 97
-# Whom:			Pedro Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	superlu
 PORTREVISION=	4
@@ -21,6 +17,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A library of routines for performing sparse factorization
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libgoto2.so)

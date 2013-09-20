@@ -1,6 +1,4 @@
-# New ports collection makefile for:	prng
-# Date created:		16 Feb. 2010
-# Whom:			bf <bf@FreeBSD.org>
+# Created by: bf <bf@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	prng
@@ -20,6 +18,7 @@ PLIST_FILES=	include/prng.h lib/libprng.a
 PORTDOCS=	prng.dvi prng.pdf prng.ps prng.txt
 PORTEXAMPLES=	Makefile pairs.c tuples.c
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

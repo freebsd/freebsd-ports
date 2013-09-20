@@ -23,6 +23,7 @@ MANCOMPRESSED=	yes
 
 MMVERSION=	1.0
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|data_files=\[(join("share", "man", "man1"),|data_files=\[(join("man", "man1"),|' \
 		${WRKSRC}/setup.py

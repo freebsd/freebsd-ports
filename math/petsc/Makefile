@@ -52,6 +52,7 @@ CONFIGURE_ARGS+=	--with-umfpack-include="${LOCALBASE}/include/suitesparse"	\
 			--with-umfpack-lib="[${UMFPACK_LIBS:C/^/${L}/:C/,/, ${L}/g}]"
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

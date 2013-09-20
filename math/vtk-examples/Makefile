@@ -1,9 +1,5 @@
-# New ports collection makefile for:    vtk-examples
-# Date created:         10 Oct 2003
-# Whom:                 Mykola Khotyaintsev <ko@irfu.se>
-#
+# Created by: Mykola Khotyaintsev <ko@irfu.se>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-examples
 
@@ -16,6 +12,7 @@ MASTERDIR=	${.CURDIR}/../vtk
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
 
 do-patch:

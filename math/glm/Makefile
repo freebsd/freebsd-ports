@@ -1,9 +1,5 @@
-# New ports collection makefile for:   	glm
-# Date created:         Aug 03 2012
-# Whom:                 demon@FreeBSD.org
-#
+# Created by: demon@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	glm
 PORTVERSION=	0.9.4.4
@@ -17,6 +13,7 @@ COMMENT=	C++ mathematics library for software based on the OpenGL GLSL
 USE_ZIP=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 		cd ${WRKSRC} && ${FIND} glm -print -depth | ${CPIO} -pdm ${PREFIX}/include/
 

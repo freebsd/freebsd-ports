@@ -26,6 +26,7 @@ OPTIONS_DEFINE=	FOP EXAMPLES
 OPTIONS_DEFAULT=	FOP
 FOP_DESC=	textproc/fop plugin (required for math/scilab)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFOP}

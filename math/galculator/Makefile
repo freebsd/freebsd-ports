@@ -18,4 +18,5 @@ CONFIGURE_ARGS=	--disable-gtk3
 
 MAN1=		galculator.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

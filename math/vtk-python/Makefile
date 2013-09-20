@@ -1,9 +1,5 @@
-# New ports collection makefile for:    vtk-python
-# Date created:         10 Oct 2003
-# Whom:                 Mykola Khotyaintsev <ko@irfu.se>
-#
+# Created by: Mykola Khotyaintsev <ko@irfu.se>
 # $FreeBSD$
-#
 
 CATEGORIES+=	python
 PKGNAMESUFFIX=	-python
@@ -53,6 +49,7 @@ CMAKE_DEFS=	-DVTK_WRAP_PYTHON:BOOL=ON \
 EXTRA_PATCHES+=	${.CURDIR}/files/extra-patch-Common-vtkPythonUtil.cxx
 PLIST_SUB+=	VTK_PTH_LOCATION_DIR=${PYTHON_SITELIBDIR}
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
 
 post-patch: patch-common

@@ -30,6 +30,7 @@ CFLAGS+=	-fPIC
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKEFILE=	makefile
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/include/NTL
 	${INSTALL_DATA} ${WRKSRC}/../include/NTL/*  ${PREFIX}/include/NTL/

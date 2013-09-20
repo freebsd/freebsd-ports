@@ -57,6 +57,7 @@ GSL_DESC=	Enable GNU Scientific library
 FFTW_DESC=	Use FFTW to compute the Discrete Fourier Transform
 READLINE_DESC=	${LIBEDIT_DESC}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Documentation

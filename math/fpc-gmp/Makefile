@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	GMP
 GMP_DESC=	Install gmp library
 OPTIONS_DEFAULT=	GMP
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

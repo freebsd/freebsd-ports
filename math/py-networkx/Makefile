@@ -1,6 +1,4 @@
-# Ports collection makefile for:        py-networkx
-# Date created:			June, 20  2008
-# Whom:				dikshie
+# Created by: dikshie
 # $FreeBSD$
 
 PORTNAME=	networkx
@@ -17,6 +15,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 PYSETUP=	setup_egg.py
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}

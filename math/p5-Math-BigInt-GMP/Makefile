@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include"
 
 MAN3=		Math::BigInt::GMP.3
 
+NO_STAGE=	yes
 post-patch:
 	@${PERL} -pi -e "s!-lgmp!-L${LOCALBASE}/lib $$&!;" \
 		     -e "if (/'LIBS'/) { print qq!'INC' => '-I${LOCALBASE}/include',!; }" \

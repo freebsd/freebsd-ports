@@ -22,6 +22,7 @@ USES=		perl5
 SUB_FILES=	load-octave-pkg
 SUB_LIST+=	PERL=${PERL}
 
+NO_STAGE=	yes
 do-build:
 	@${DO_NADA}
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	concorde
-# Date created:				3 July 2000
-# Whom:					dbader@ece.unm.edu
-#
+# Created by: dbader@ece.unm.edu
 # $FreeBSD$
-#
 
 PORTNAME=	concorde
 PORTVERSION=	20031219
@@ -35,6 +31,7 @@ BINFILES=	BIGGUY/bg_test COMBS/combtest CUT/lin_all CUT/mincut \
 		TOOLS/tourlen TSP/bosstell TSP/concorde TSP/cutserv \
 		TSP/poolcat TSP/probserv TSP/test_tsp VERIFY/verify
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/concorde.a ${PREFIX}/lib/libconcorde.a
 	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 ${PREFIX}/include/concorde

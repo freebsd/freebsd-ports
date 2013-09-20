@@ -21,6 +21,7 @@ CONFIGURE_ARGS+=	--with-all-plugins
 
 ALL_TARGET=	all ggobirc
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|ND_coord_i|ND_coord|' \
 		${WRKSRC}/plugins/GraphLayout/graphviz.c

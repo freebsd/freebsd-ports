@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aribas
-# Date created:		2007-06-19
-# Whom:			Lars Engels <lme@FreeBSD.org>
-#
+# Created by: Lars Engels <lme@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	aribas
 PORTVERSION=	1.64
@@ -21,6 +17,7 @@ PORTDOCS=	README aribas.doc aribas.man aribas.tut
 PORTEXAMPLES=	README factor.ari pi.ari queens.ari
 MAN1=		aribas.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC/d;' \
 	       -e '/^CFLAGS/{s/=/+=/;s/-O -v//;}' \

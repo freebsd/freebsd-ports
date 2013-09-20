@@ -14,6 +14,7 @@ COMMENT=	Linear Algebra package
 LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas
 MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 USE_FORTRAN=	yes

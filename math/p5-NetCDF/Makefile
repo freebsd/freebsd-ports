@@ -29,6 +29,7 @@ CONFIGURE_ENV=	CPP_NETCDF=-I${LOCALBASE}/include LD_NETCDF=-lnetcdf \
 
 MAN1=		netCDFPerl.1
 
+NO_STAGE=	yes
 pre-install:
 	@${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' ${WRKSRC}/perl/Makefile
 

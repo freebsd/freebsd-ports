@@ -21,6 +21,7 @@ NO_WRKSUBDIR=	yes
 VER=		${PORTVERSION:L}
 JARFILES=	JTS_Test acme jts-${VER}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dcdflib
-# Date created:		08 September 1998
-# Whom:			Anton Berezin <tobez@plab.ku.dk>
-#
+# Created by: Anton Berezin <tobez@plab.ku.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	dcdflib.c
 PORTVERSION=	1.1
@@ -20,6 +16,7 @@ USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/.c//}
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 

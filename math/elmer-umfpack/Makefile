@@ -1,9 +1,5 @@
-# New ports collection makefile for:	elmer-umfpack
-# Date created:		5 Jan 2006
-# Whom:			Pedro Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	umfpack
 PORTVERSION=	4.4
@@ -23,6 +19,7 @@ ALL_TARGET=
 # This should be looked up by autoconf
 CFLAGS+=	-DGETRUSAGE
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"

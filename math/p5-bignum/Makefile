@@ -17,4 +17,5 @@ MAN3=		bigint.3 \
 		bignum.3 \
 		bigrat.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
