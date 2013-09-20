@@ -33,6 +33,7 @@ OPTIONS_DEFAULT=	SLANG
 
 SLANG_DESC=	Use S-Lang based display renderer
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

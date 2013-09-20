@@ -22,6 +22,7 @@ MACROS_DESC=	Install default set of macros (highly recommended)
 
 OPTIONS_DEFAULT=	MACROS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

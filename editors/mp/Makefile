@@ -25,6 +25,7 @@ MAN1=		mp-5.1
 
 DATADIR=	${PREFIX}/share/mp-5
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

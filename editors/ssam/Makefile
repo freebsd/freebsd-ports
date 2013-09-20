@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ssam
-# Date Created:				25 February 2006
-# Whom:					Serge Gagnon <serge.gagnon@b2b2c.ca>
-#
+# Created by: Serge Gagnon <serge.gagnon@b2b2c.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	ssam
 PORTVERSION=	1.10
@@ -22,6 +18,7 @@ PLIST_FILES=	bin/ssam
 
 MAN1=	ssam.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ssam ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ssam.1 ${MANPREFIX}/man/man1/

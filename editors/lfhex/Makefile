@@ -21,6 +21,7 @@ PORTDOCS=	README
 PLIST_FILES=	bin/lfhex
 LICENSE_FILES=	${WRKSRC}/../COPYING
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

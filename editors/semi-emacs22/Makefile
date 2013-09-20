@@ -1,9 +1,5 @@
-# New ports collection makefile for:	semi for emacs22
-# Date created:		27 January 2009
-# Whom:			MANTANI Nobutaka <nobutaka@FreeBSD.org>
-#
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	SEMI, Library of MIME feature for GNU Emacs for emacs22
@@ -17,4 +13,5 @@ MASTERDIR=	${.CURDIR}/../../editors/semi
 USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs22
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

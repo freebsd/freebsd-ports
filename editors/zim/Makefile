@@ -32,6 +32,7 @@ GIT_DESC=	Version control for notebooks using git
 MERCURIAL_DESC=	Version control for notebooks using hg
 DITAA_DESC=		Diagram editor support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUR}

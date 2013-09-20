@@ -21,6 +21,7 @@ USE_QT4=	moc_build qmake_build rcc_build uic_build corelib gui xml \
 QMAKE_ARGS=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
 HAS_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \
 		${WRKSRC}/application/src/textroom.cpp \

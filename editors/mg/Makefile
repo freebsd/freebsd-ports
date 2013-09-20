@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mg
-# Date created:			14 May 2001
-# Whom:				Dima Dorfman <dima@unixfreak.org>
-#
+# Created by: Dima Dorfman <dima@unixfreak.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mg
 PORTVERSION=	20110905
@@ -22,6 +18,7 @@ PORTDOCS=	README tutorial
 
 HAS_CONFIGURE=	yes
 
+NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e 's|-Wno-error=unused-but-set-variable||g' \
 		-e '/^CC=/d' -e 's|-g -Wall|-Wall|' -e 's|/usr/local|${PREFIX}|' \

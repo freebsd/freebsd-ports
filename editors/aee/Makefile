@@ -21,6 +21,7 @@ MAN1=		aee.1
 PLIST_FILES=	bin/aee bin/rae %%DATADIR%%/help.ae
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXAE}

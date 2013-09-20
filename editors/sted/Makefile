@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	sted
-# Date created:				19 May 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	sted
 PORTVERSION=	0.2.2
@@ -21,6 +16,7 @@ MAN1=		sted.1
 PORTDOCS=	CHANGES COPYING README
 PLIST_FILES=	bin/sted
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|CC = gcc|CC ?= gcc|" \
 			-e "s|C_OPTS = -Wall -O2|C_OPTS = ${CFLAGS}|" \

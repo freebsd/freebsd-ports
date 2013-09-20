@@ -25,6 +25,7 @@ MANCOMPRESSED=	no
 WRKSRC=		${WRKDIR}/edith
 EDITHDIR=	${PREFIX}/lib/edith
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/linux/edith ${PREFIX}/bin
 	${MKDIR} ${EDITHDIR}

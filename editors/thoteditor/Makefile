@@ -23,6 +23,7 @@ MAKE_JOBS_UNSAFE=	yes
 MAN1=		cextract.1
 MAN5=		cextrc.5
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-configure:

@@ -21,6 +21,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags gnome-vfs-2.0 libgnomeui-
 
 GCONF_SCHEMAS=	mlview.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Autodetect dbus

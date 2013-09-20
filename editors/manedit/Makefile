@@ -17,6 +17,7 @@ USE_GNOME=	gtk12
 
 MAN1=		manedit.1
 
+NO_STAGE=	yes
 pre-configure:
 	@${CP} ${FILESDIR}/mntent* ${WRKSRC}
 

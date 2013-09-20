@@ -1,9 +1,5 @@
-# New ports collection makefile for:	2bsd-vi
-# Date created:			2004-07-12
-# Whom:				David Thiel <lx@redundancy.redundancy.org>
-#
+# Created by: David Thiel <lx@redundancy.redundancy.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vi
 PORTVERSION=	050325
@@ -30,6 +26,7 @@ MLINKS=	ex.1 edit.1  vi.1 vedit.1  vi.1 view.1
 post-extract:	.SILENT
 	${RM} -fr ${WRKSRC}/libuxre ${WRKSRC}/regexp.h
 
+NO_STAGE=	yes
 post-patch:
 .for f in Makefile ex.1 expreserve.c exrecover.c vi.1
 	@${REINPLACE_CMD} -e 's|/var/preserve|${PRESERVEDIR}|' ${WRKSRC}/${f}

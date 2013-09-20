@@ -1,9 +1,5 @@
-# Ports collection makefile for:  impress
-# Date created:			  23 Aug 2001
-# Whom:				  Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	impress
 PORTVERSION=	1.1b9
@@ -27,6 +23,7 @@ USE_TK_WRAPPER=	yes
 PORTDOCS=	*
 PLIST_FILES=	bin/impress
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/impress.tcl ${PREFIX}/bin/impress
 .if !defined(NOPORTDOCS)

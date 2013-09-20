@@ -24,4 +24,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	ghex2.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

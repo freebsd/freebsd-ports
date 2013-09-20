@@ -18,6 +18,7 @@ NO_BUILD=	yes
 SUB_FILES=	installation.rb
 SUB_LIST=	RUBY_SITELIBDIR=${RUBY_SITELIBDIR}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/bin/env ruby|${RUBY}|g' ${WRKSRC}/bin/${PORTNAME}
 

@@ -16,4 +16,5 @@ MANCOMPRESSED=	yes
 
 PLIST_FILES=	bin/dkns
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

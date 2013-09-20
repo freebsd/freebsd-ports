@@ -51,4 +51,5 @@ MAN3=		Vimana.3 \
 		Vimana::Recursive.3 \
 		Vimana::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

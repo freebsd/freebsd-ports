@@ -39,6 +39,7 @@ GCONF_SCHEMAS=	gedit.schemas gedit-file-browser.schemas
 WITH_GNOME=	yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mpygtksourceview}!=""

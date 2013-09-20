@@ -1,4 +1,4 @@
-# Created by:	Shaun Amott <shaun@inerd.com>
+# Created by: Shaun Amott <shaun@inerd.com>
 # $FreeBSD$
 
 PORTNAME=	lazarus
@@ -44,6 +44,7 @@ QT4_DESC=		Use qt4 interface
 OPTIONS_DEFAULT=	GTK2
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"

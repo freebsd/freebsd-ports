@@ -33,6 +33,7 @@ CONTEXT_DESC=		ConTexT support (Experimental)
 VNTEX_DESC=		Vietnamese TeX user
 UNIKEY_GTK_DESC=	Vietname Tex user with UnikeyGTK input method
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCONTEXT}

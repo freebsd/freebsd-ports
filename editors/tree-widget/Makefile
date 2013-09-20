@@ -1,9 +1,5 @@
-# New ports collection makefile for:   tree-widget
-# Date created:                27 July 2004
-# Whom:                        Dryice Liu <dryice@liu.com.cn>
-#
+# Created by: Dryice Liu <dryice@liu.com.cn>
 # $FreeBSD$
-#
 
 PORTNAME=	tree-widget
 PORTVERSION=	2.0
@@ -23,6 +19,7 @@ LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 NO_WRKSUBDIR=	yes
 THEMES_SUBDIR=	default folder
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; ${EMACS_NAME} -batch -no-site-file\
 			--eval="(add-to-list 'load-path \"${WRKSRC}\")"\

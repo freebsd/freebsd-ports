@@ -1,4 +1,3 @@
-# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Proc-InvokeEditor
@@ -23,4 +22,5 @@ USE_PERL5=	configure
 
 MAN3=	Proc::InvokeEditor.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

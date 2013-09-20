@@ -28,6 +28,7 @@ CONFIGURE_ARGS+=	--with-db-prefix=${LOCALBASE} \
 CONFIGURE_SCRIPT=	../dist/configure
 MAN1=			nex.1 nvi.1 nview.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWIDECHAR}

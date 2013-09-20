@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-room
-# Date created:		2009-11-11
-# Whom:			Alexander Best
-#
+# Created by: Alexander Best
 # $FreeBSD$
-#
 
 PORTNAME=	room
 PORTVERSION=	0.4.1
@@ -25,6 +21,7 @@ USE_GNOME=	pygtk2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PyRoom
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%PREFIX%%|${PREFIX}|g' \

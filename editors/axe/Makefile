@@ -21,4 +21,5 @@ MAN1=		axe.1 axinfo.1
 MAKE_JOBS_UNSAFE=	yes
 CFLAGS=		-Wno-return-type
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

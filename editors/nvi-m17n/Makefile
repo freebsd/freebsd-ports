@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nvi-1.79 + multilingual patch(none)
-# Date created:		6 Mar 1997
-# Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
-#
+# Created by: Jun-ichiro itojun Itoh <itojun@itojun.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nvi
 PORTVERSION=	1.79.20040608
@@ -30,6 +26,7 @@ CONFIGURE_ARGS=	--enable-multibyte --program-prefix=n
 MAN1=		nvi.1
 MLINKS=		nvi.1 nex.1  nvi.1 nview.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

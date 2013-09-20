@@ -42,6 +42,7 @@ MAN1=		xvile.1
 
 CONFLICTS_INSTALL=	vile-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFILTERS}

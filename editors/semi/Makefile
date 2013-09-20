@@ -43,6 +43,7 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 

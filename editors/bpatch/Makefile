@@ -1,9 +1,5 @@
-# New ports collection makefile for:    bpatch
-# Date created:         18 March 1996
-# Whom:                 joerg
-#
+# Created by: joerg
 # $FreeBSD$
-#
 
 PORTNAME=	bpatch
 PORTVERSION=	1.0
@@ -19,4 +15,5 @@ MAN1=		bpatch.1
 NO_WRKSUBDIR=   yes
 PLIST_FILES=	bin/bpatch
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

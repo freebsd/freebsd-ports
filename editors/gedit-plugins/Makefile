@@ -33,6 +33,7 @@ GCONF_SCHEMAS=	gedit-show-tabbar-plugin.schemas \
 
 OPTIONS_DEFINE=	PYTHON
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}

@@ -9,5 +9,6 @@ COMMENT=	Dutch messages and documentation for Calligra
 
 CALLIGRA_L10N=	nl
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../editors/calligra-l10n/files/bsd.l10n.mk"
 .include <bsd.port.mk>

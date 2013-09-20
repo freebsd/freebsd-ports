@@ -25,6 +25,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|tcl80|tcl${TCL_VER:S/.//}|; \
 		s|tk80|tk${TK_VER:S/.//}|; \

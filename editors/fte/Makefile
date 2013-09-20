@@ -20,6 +20,7 @@ USE_ZIP=		yes
 USES=		perl5
 USE_PERL5=	build
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^PREFIX=,PREFIX?=,' \
 		${WRKSRC}/Makefile

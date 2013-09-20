@@ -20,6 +20,7 @@ ALL_TARGET=	all doc/elvtags.man
 
 MAN1=		elvfmt.1 elvis.1 elvtags.1 ref.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Support building on systems with or without X11 installed.

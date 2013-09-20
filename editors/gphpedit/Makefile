@@ -28,6 +28,7 @@ WANT_PHP_CLI=	yes
 RUN_DEPENDS+=	${LOCALBASE}/share/doc/php-en/about.html:${PORTSDIR}/lang/php_doc
 .endif
 
+NO_STAGE=	yes
 pre-everything::
 .if !defined(WITHOUT_PHP) || !defined(WITHOUT_PHPDOC)
 	@${ECHO_MSG} "You may specify the following on the command line:"

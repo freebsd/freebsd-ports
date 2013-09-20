@@ -38,6 +38,7 @@ DESKTOP_ENTRIES="morla" \
 		"WebDevelopment;" \
 		true
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/configure

@@ -21,4 +21,5 @@ USES=		gmake pkgconfig
 CONFIGURE_ENV=	DISPLAY=""
 MAKE_ENV=	DISPLAY=""
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

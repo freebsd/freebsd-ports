@@ -90,6 +90,7 @@ PKGDIR=		${.CURDIR}/../../editors/xemacs21-mule
 
 PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Undump and malloc do not behave on amd64 at the moment

@@ -22,6 +22,7 @@ SUB_FILES=	jext.sh
 
 INSTALL_FILES=	Jython-LICENSE LICENSE README History.txt Names.txt bin lib
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/jext.sh ${PREFIX}/bin/jext

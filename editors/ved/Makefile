@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ved
-# Date created:        31 December 2000
-# Whom:                George Reid <greid@ukug.uk.freebsd.org>
-#
+# Created by: George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ved
 PORTVERSION=	1.7
@@ -20,6 +16,7 @@ MAN1=		ved.1
 PLIST_FILES=	bin/ved %%DATADIR%%/ved.help
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

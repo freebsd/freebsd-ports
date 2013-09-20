@@ -74,6 +74,7 @@ ABIWORD_PLUGINS=	garble loadbindings opml xslfo bmp iscii sdw babelfish \
 # Plugins we don't support:
 # gda
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMATHVIEW}

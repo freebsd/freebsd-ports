@@ -31,6 +31,7 @@ PRFX2FIX=	src/makefile.bsd usrshare/conf_user/xinitrc.mined	\
 		src/minedaux.c man/mined.1 src/mkinclud.mak		\
 		src/makefile.gcc
 
+NO_STAGE=	yes
 pre-configure:
 .for FILE in ${PRFX2FIX}
 	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/${FILE}

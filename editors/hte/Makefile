@@ -1,4 +1,4 @@
-# Created By: Ying-Chieh Liao
+# Created by: Ying-Chieh Liao
 # $FreeBSD$
 
 PORTNAME=	hte
@@ -26,6 +26,7 @@ X11_DESC=	X11 textmode support
 NOT_FOR_ARCHS=	ia64
 NOT_FOR_ARCHS_REASON=	does not build on ia64
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLZO2}

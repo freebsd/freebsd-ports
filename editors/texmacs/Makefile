@@ -38,6 +38,7 @@ DESKTOP_ENTRIES=	"TeXmacs" "${COMMENT}" \
 			"${DATADIR}/misc/pixmaps/TeXmacs.xpm" "texmacs" \
 			"Education;Science;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFREETYPE}

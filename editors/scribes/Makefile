@@ -30,6 +30,7 @@ INSTALLS_OMF=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-install:
 	@${PYTHON_CMD} -m compileall ${PREFIX}/lib/scribes
 

@@ -28,4 +28,5 @@ MAN1=		kate.1
 # editors/kate-plugin-pate installs pate
 CMAKE_ARGS+=	-DBUILD_pate=off
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

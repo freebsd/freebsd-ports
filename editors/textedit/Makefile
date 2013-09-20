@@ -1,9 +1,5 @@
-# New ports collection makefile for:    textedit.app
-# Date created:         28 Aug 2006
-# Whom:                 gurkan@phys.ethz.ch
-#
+# Created by: gurkan@phys.ethz.ch
 # $FreeBSD$
-#
 
 PORTNAME=	textedit
 PORTVERSION=	4.0
@@ -24,4 +20,5 @@ USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_MAKE_DIRS=	System/Applications/TextEdit
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

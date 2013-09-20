@@ -9,5 +9,6 @@ COMMENT=	Valencian (southern Catalan) messages and documentation for Calligra
 
 CALLIGRA_L10N=	ca@valencia
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../editors/calligra-l10n/files/bsd.l10n.mk"
 .include <bsd.port.mk>

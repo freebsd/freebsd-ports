@@ -1,9 +1,5 @@
-# New ports collection makefile for:	boiling-egg
-# Date created:		9 January 2001
-# Whom:			Yoichi NAKAYAMA <yoichi@eken.phys.nagoya-u.ac.jp>
-#
+# Created by: Yoichi NAKAYAMA <yoichi@eken.phys.nagoya-u.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	boiling-egg
 PORTVERSION=	0.02
@@ -23,6 +19,7 @@ NO_BUILD=	yes
 ELISPDIR=	share/emacs/site-lisp
 PLIST_SUB+=	ELISPDIR=${ELISPDIR}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/${ELISPDIR}
 	${INSTALL_DATA} ${_DISTDIR}/${DISTNAME} ${PREFIX}/${ELISPDIR}

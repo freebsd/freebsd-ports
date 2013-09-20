@@ -1,9 +1,5 @@
-# New ports collection makefile for:	e3
-# Date created:		Tue 5 Dec 2000
-# Whom:			joseph@randomnetworks.com
-#
+# Created by: joseph@randomnetworks.com
 # $FreeBSD$
-#
 
 PORTNAME=	e3
 PORTVERSION=	2.8
@@ -26,6 +22,7 @@ PLIST_FILES=	bin/e3 bin/e3em bin/e3ne bin/e3pi bin/e3vi bin/e3ws
 
 FETCH_ARGS=	-p -o ${DISTDIR}/${DISTFILES}
 
+NO_STAGE=	yes
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
 		${FETCH_CMD} ${MASTER_SITES}${DISTFILES}?attredirects=0\&d=1 ; \

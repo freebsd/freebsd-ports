@@ -1,9 +1,5 @@
-# New ports collection makefile for:   puff
-# Date created:        10 April 2003
-# Whom:                Leif Pedersen <bilbo@devpit.org>
-#
+# Created by: Leif Pedersen <bilbo@devpit.org>
 # $FreeBSD$
-#
 
 PORTNAME=	puff
 PORTVERSION=	1.0.1
@@ -16,4 +12,5 @@ COMMENT=	Simple and efficient text editor
 
 PLIST_FILES=	bin/puff etc/puff.conf.sample
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

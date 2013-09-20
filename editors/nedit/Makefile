@@ -1,4 +1,4 @@
-# Created by: Daniel Eischen <deischen@freebsd.org>
+# Created by: Daniel Eischen <deischen@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	nedit
@@ -29,6 +29,7 @@ MAN1=		nclient.1 nedit.1
 ALL_TARGET=	freebsd
 MAKE_ENV+=	BINOWN=${BINOWN} BINGRP=${BINGRP} BINMODE=${BINMODE}
 
+NO_STAGE=	yes
 post-extract:
 	${CP} ${DISTDIR}/nedit.app-defaults ${WRKSRC}/NEdit.ad
 

@@ -1,5 +1,6 @@
 # $FreeBSD$
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.common"
 
 PORTREVISION=	0

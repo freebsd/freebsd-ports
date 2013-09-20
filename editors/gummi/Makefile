@@ -32,6 +32,7 @@ LATEXMK_DESC=	Use latexmk typesetter
 RUBBER_DESC=	Use rubber typesetter
 TEXCOUNT_DESC=	With texcount statistics
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

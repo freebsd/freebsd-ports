@@ -40,6 +40,7 @@ DESKTOP_ENTRIES=	"SPE (Stani's Python Editor)" \
 			"Development;IDE;Debugger;GUIDesigner;" \
 			true
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MENCRYPTED_DEBUG}

@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|tests$$||g' \
 		${WRKSRC}/Makefile.in
