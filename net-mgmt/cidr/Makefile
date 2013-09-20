@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 MAN1=		cidr.1
 PLIST_FILES=	bin/cidr
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/${PORTNAME}.c -o ${WRKSRC}/${PORTNAME}
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	flow-extract
-# Date created:				2003 Mar 14
-# Whom:					Marcin Cieslak <saper@system.pl>
-#
+# Created by: Marcin Cieslak <saper@system.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	flow-extract
 PORTVERSION=	2.61
@@ -29,6 +25,7 @@ PLIST_FILES=	bin/flow-extract
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS=	${LOCALBASE}/lib/libft.a -lz
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/flow-extract ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/flow-extract.1 ${MANPREFIX}/man/man1

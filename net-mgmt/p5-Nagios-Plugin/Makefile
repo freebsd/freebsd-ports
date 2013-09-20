@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Nagios-Plugin
-# Date created:				13 08 2006
-# Whom:					Gerrit Beine <gerrit.beine@gmx.de>
-#
+# Created by: Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	Nagios-Plugin
 PORTVERSION=	0.36
@@ -36,6 +32,7 @@ MAN3=		Nagios::Plugin.3 \
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

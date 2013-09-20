@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ehnt
-# Date created:		2 August 2001
-# Whom:			marck@rinet.ru
-#
+# Created by: marck@rinet.ru
 # $FreeBSD$
-#
 
 PORTNAME=	ehnt
 PORTVERSION=	0.3
@@ -23,6 +19,7 @@ PORTDOCS=	README
 MAN1=		ehnt.1
 MAN8=		ehntserv.8
 
+NO_STAGE=	yes
 post-extract:
 	${TOUCH} ${WRKSRC}/asnc.txt
 

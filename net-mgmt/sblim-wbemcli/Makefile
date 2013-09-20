@@ -1,9 +1,4 @@
-# New ports collection makefile for:	sblim-wbemcli
-# Date created:		20 Dec 2008
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	sblim-wbemcli
 PORTVERSION=	1.6.1
@@ -24,4 +19,5 @@ LDFLAGS+=	-L${PREFIX}/lib
 MAKE_ARGS=	RM="${RM} -f"
 MAN1=		wbemcli.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

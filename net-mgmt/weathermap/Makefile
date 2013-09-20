@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MWGET}

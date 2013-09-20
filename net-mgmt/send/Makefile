@@ -1,7 +1,4 @@
-# New ports collection makefile for:    send
-# Date created:         19.09.2007
-# Whom: Janos Mohacsi <mohacsi@niif.hu>
-#
+# Created by: Janos Mohacsi <mohacsi@niif.hu>
 # $FreeBSD$
 
 PORTNAME=	send
@@ -21,6 +18,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PORTDOCS=	README UserGuide.pdf
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900042

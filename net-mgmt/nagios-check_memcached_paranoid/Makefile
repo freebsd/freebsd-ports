@@ -1,9 +1,4 @@
-# New ports collection makefile for:	nagios-check_memcached_paranoid
-# Date created:		29 Apr 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	check_memcached_paranoid
 PORTVERSION=	0.20091016
@@ -31,6 +26,7 @@ EXTRA_DEPENDS=	automake>0:${PORTSDIR}/devel/automake \
 		libtool>0:${PORTSDIR}/devel/libtool \
 		gmake:${PORTSDIR}/devel/gmake
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${FILESDIR}/${FILE} ${WRKSRC}

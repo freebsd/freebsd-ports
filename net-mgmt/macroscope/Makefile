@@ -24,6 +24,7 @@ USES=			cmake
 OPTIONS_DEFINE=	FIREBIRD DOCS #MYSQL
 OPTIONS_DEFAULT=	FIREBIRD
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MDOCS}

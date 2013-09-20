@@ -28,6 +28,7 @@ OPTIONS_DEFINE=	MYSQL
 
 REINPLACE_ARGS=	-i ''
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

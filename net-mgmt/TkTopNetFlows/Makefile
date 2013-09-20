@@ -23,6 +23,7 @@ PORTDOCS=	*
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/TkTopNetFlows.tcl ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/TkTopNetFlowsHist.tcl ${PREFIX}/bin

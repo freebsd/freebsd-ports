@@ -15,4 +15,5 @@ USES=		zenoss
 
 ZPACKGROUP=	core
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

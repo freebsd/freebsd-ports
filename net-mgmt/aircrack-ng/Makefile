@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Aircrack-ng
-# Date created:				2006-05-25
-# Whom:					Lars Engels <lars.engels@0x20.net>
-#
+# Created by: Lars Engels <lars.engels@0x20.net>
 # $FreeBSD$
-#
 
 PORTNAME=	aircrack-ng
 DISTVERSION=	1.1
@@ -35,6 +31,7 @@ PLIST_FILES=	bin/aircrack-ng bin/airdecap-ng bin/airdecloak-ng \
 OPTIONS_DEFINE=	SQLITE
 SQLITE_DESC=	Use SQLite for storing pre-computed key tables
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLITE}

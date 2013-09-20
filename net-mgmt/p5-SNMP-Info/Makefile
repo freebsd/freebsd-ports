@@ -70,4 +70,5 @@ MAN3=	SNMP::Info.3 SNMP::Info::AdslLine.3 SNMP::Info::Airespace.3 \
 	SNMP::Info::Layer2::NWSS2300.3 \
 	SNMP::Info::Layer3::Lantronix.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

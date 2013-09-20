@@ -19,6 +19,7 @@ USES=		bison
 
 PLIST_SUB=	MIBS=share/snmp/mibs
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

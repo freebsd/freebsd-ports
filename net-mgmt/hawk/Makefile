@@ -23,6 +23,7 @@ USE_RC_SUBR=	hawk
 
 SUB_LIST=	PERL=${PERL}
 
+NO_STAGE=	yes
 post-patch:
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#' \
 	    ${WRKSRC}/daemon/hawk > ${WRKSRC}/daemon/hawk.sed

@@ -24,6 +24,7 @@ NO_BUILD=	yes
 USE_PHP=	gd gettext mbstring session json pdo pdo_sqlite
 WANT_PHP_WEB=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 WWW_OWNER?=	${WWWOWN}

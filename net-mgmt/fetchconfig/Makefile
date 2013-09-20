@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fetchconfig
-# Date created:				21 December 2008
-# Whom:					salexanov@gmail.com
-#
+# Created by: salexanov@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	fetchconfig
 PORTVERSION=	0.22
@@ -30,6 +26,7 @@ MODULES=	model/Abstract.pm model/CiscoCAT.pm model/CiscoIOS.pm \
 		model/CiscoPIX.pm model/JunOS.pm model/TellabsMSR.pm
 PORTDOCS=	CHANGES README device_table.example
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '1s|.*|#!${PERL} -w|' ${WRKSRC}/${PORTNAME}.pl
 

@@ -23,6 +23,7 @@ PLIST_DIRSTRY=	man/ru/man8 man/ru
 OPTIONS_DEFINE=	STATIC
 STATIC_DESC=	Build a static version of dhcdrop
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSTATIC}

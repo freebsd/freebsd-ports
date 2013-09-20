@@ -21,6 +21,7 @@ MAN8=		dhcpc.8 dhcps.8 relay.8 dhcpm.8
 DOCS=		README README.jis db_sample/intro.dhcp db_sample/intro.dhcp.jis
 EXAMPLES=	dhcpdb.pool dhcpdb.relay dhcpdb.server
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

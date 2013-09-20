@@ -1,9 +1,5 @@
-# New ports collection makefile for:    bsd-airtools
-# Date created:		2002/07/06
-# Whom:			Sean Chittenden <seanc@FreeBSD.org>
-#
+# Created by: Sean Chittenden <seanc@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bsd-airtools
 PORTVERSION=	0.3
@@ -22,6 +18,7 @@ INST_AIRTOOLS=	${CONF_AIRTOOLS} ${MAKE_AIRTOOLS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-build:
 .for TOOL in ${CONF_AIRTOOLS}
 	@cd ${WRKSRC}/${TOOL}; ${SH} ${CONFIGURE_SCRIPT}; ${MAKE}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	check_snmp_pkgvuln
-# Date created:				2 November 2005
-# Whom:					Jarrod Sayers <jarrod@netleader.com.au>
-#
+# Created by: Jarrod Sayers <jarrod@netleader.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	check_snmp_pkgvuln
 PORTVERSION=	0.01
@@ -25,6 +21,7 @@ NO_WRKSUBDIR=	yes
 
 PLIST_SUB=	NAGIOS_PLUGIN_DIR=${NAGIOS_PLUGIN_DIR}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local/|${PREFIX}/|' ${WRKSRC}/${PORTNAME}
 

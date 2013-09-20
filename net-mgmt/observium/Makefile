@@ -1,6 +1,5 @@
 # Created by: rflynn@acsalaska.net
 # $FreeBSD$
-# $Redports: melflynn/net-mgmt/observium/Makefile 2134 2012-02-21 13:14:38Z melflynn $
 
 PORTNAME=	observium
 PORTVERSION=	0.11.5.2261
@@ -36,6 +35,7 @@ APACHEMOD_DESC=	Use PHP with Apache 2.2+ module
 MYSQLD_DESC=	Use local MySQL server
 JAIL_DESC=	This is a jail installation
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 SUB_FILES+=	pkg-message

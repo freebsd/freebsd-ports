@@ -32,6 +32,7 @@ WRKSRC=		${WRKDIR}
 OPTIONS_DEFINE=	ENCRYPT
 ENCRYPT_DESC=	Encrypt destination URL in redirection
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MENCRYPT}

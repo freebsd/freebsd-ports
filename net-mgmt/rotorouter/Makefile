@@ -1,11 +1,5 @@
-# New ports collection makefile for:	rotorouter
-# Date created:				Sat May 29 01:30:43 EDT 2004
-# Whom:					Paul Chvostek <paul@it.ca>
-#
+# Created by: Paul Chvostek <paul@it.ca>
 # $FreeBSD$
-#
-# This port is self-contained in the src directory.
-#
 
 PORTNAME=	rotorouter
 PORTVERSION=	1.0
@@ -23,6 +17,7 @@ SUB_FILES=	pkg-message
 
 USE_RC_SUBR=	rotorouter
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-extract:

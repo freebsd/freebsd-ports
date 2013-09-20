@@ -82,6 +82,7 @@ MAN3=		FusionInventory::Agent.3 \
 		FusionInventory::Agent::XML::Query::Prolog.3 \
 		FusionInventory::Agent::XML::Response.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCUPS}

@@ -1,4 +1,4 @@
-# Created by:	ijliao
+# Created by: ijliao
 # $FreeBSD$
 
 PORTNAME=	ipy
@@ -18,4 +18,5 @@ PYDISTUTILS_PKGNAME=	IPy
 test: install
 	${PYTHON_CMD} ${WRKSRC}/test/test_IPy.py
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

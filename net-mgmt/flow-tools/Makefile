@@ -46,6 +46,7 @@ FLOW_CAPTURE_UID=	174
 FLOW_CAPTURE_GID=	174
 FLOW_CAPTURE_PIDDIR=	${VARDIR}/run/flow-capture
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPGSQL}

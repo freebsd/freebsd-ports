@@ -13,4 +13,5 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--with-trusted-path=/bin:/sbin:/usr/bin:/usr/sbin:${LOCALBASE}/bin:${LOCALBASE}/sbin \
 			--libexecdir=${PREFIX}/libexec/nagios \
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

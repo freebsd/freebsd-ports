@@ -36,6 +36,7 @@ MAN4=		nefu.conf.4
 DBDIR=		/var/db/nefu
 PLIST_FILES=	bin/nefu
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAP}

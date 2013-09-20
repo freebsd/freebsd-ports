@@ -22,6 +22,7 @@ OPTIONS_DEFAULT=	PERLC PYTHONC
 PERLC_DESC=	A Sample Perl Client
 PYTHONC_DESC=	A Sample Python Client
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPERLC}

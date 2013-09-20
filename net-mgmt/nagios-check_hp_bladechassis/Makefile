@@ -1,7 +1,4 @@
-# New ports collection makefile for:	nagios-check_email_delivery
-# Date created: 	1 July 2011
-# Whom:			Ryan Steinmetz
-#
+# Created by: Ryan Steinmetz
 # $FreeBSD$
 
 PORTNAME=	check_hp_bladechassis
@@ -26,6 +23,7 @@ MAN8=		check_hp_bladechassis.8
 PLIST_FILES=	libexec/nagios/check_hp_bladechassis
 PLIST_DIRSTRY=	libexec/nagios/
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

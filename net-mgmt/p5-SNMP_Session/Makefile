@@ -17,6 +17,7 @@ USE_PERL5=	configure
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

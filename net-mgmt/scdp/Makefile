@@ -1,7 +1,4 @@
-# New ports collection makefile for:   scdp
-# Date created:                14 September 2001
-# Whom:                        arved@FreeBSD.org
-#
+# Created by: arved@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	scdp
@@ -27,6 +24,7 @@ PLIST_FILES=	bin/scdp
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' ${WRKSRC}/scdp.c
 	${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|' \

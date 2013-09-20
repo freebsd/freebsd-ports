@@ -20,6 +20,7 @@ OPTIONS_DEFAULT=
 PY4SUITE_DESC=		Depend on py-4suite-xml (for generating HTML)
 MACRESOLV_DESC=		Enable MAC Manufacturer Resolution (use p5-libwww)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPY4SUITE}

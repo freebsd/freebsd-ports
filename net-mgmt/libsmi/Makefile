@@ -25,4 +25,5 @@ MAN3=	libsmi.3 smi_attribute.3 smi_class.3 smi_config.3 smi_event.3 \
 	smi_identity.3 smi_module.3 smi_macro.3 smi_node.3 smi_type.3 \
 	smi_render.3 smi_util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

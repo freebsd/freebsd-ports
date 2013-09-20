@@ -20,6 +20,7 @@ PLIST_FILES=	libexec/nagios/check_tftp
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 post-patch:
 		${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/check_tftp
 

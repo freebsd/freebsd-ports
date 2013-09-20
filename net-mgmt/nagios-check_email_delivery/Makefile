@@ -1,7 +1,4 @@
-# New ports collection makefile for:	nagios-check_email_delivery
-# Date created: 	9 May 2011
-# Whom:			Ryan Steinmetz
-#
+# Created by: Ryan Steinmetz
 # $FreeBSD$
 
 PORTNAME=	check_email_delivery
@@ -31,6 +28,7 @@ DOC_FILES=	check_email_delivery.html check_email_delivery.pod \
 
 PORTSCOUT=	ignore:1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

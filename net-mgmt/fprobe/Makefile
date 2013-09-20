@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fprobe
-# Date created:        			03.06.2003
-# Whom:               			Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	fprobe
 PORTVERSION=	1.1
@@ -23,6 +19,7 @@ USE_RC_SUBR=	fprobe
 
 MAN8=		fprobe.8
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 

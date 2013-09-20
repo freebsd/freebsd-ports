@@ -19,6 +19,7 @@ USE_OPENSSL=	yes
 
 PLIST_FILES=	bin/cowpatty bin/genpmk
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "Installing additional documentation to ${DOCSDIR}"

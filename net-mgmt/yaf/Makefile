@@ -31,6 +31,7 @@ MAN1=		airdaemon.1 applabel.1 \
 CONFIGURE_ARGS+=	--with-dag=${LOCALBASE}
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 

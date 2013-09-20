@@ -30,6 +30,7 @@ USE_RC_SUBR=	ng_ipacct
 SUB_FILES=	pkg-message
 CFLAGS+=	-DMEM_USE_ZONE
 
+NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 

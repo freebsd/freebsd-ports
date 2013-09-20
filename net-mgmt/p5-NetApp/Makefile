@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-NetApp
-# Date created:		2009-01-31
-# Whom:			Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-#
+# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	NetApp
 PORTVERSION=	1.1.2
@@ -44,4 +40,5 @@ MAN3=		NetApp::Aggregate.3 \
 		NetApp::Snapshot::Schedule.3 \
 		NetApp::Volume.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

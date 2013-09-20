@@ -1,9 +1,5 @@
-# New ports collection makefile for:	net-mgmt/netdot
-# Date created:				16 January 2012
-# Whom:					Nick Hilliard
-#
+# Created by: Nick Hilliard
 # $FreeBSD$
-#
 
 PORTNAME=	netdot
 PORTVERSION=	1.0.4
@@ -57,6 +53,7 @@ SUB_LIST=	WWWDIR="${WWWDIR}"	\
 
 PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 INSTALL_TARGET=	install		\

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nsca
-# Date created:		2003-11-18
-# Whom:			Paul Dlug <paul@nerdlabs.com>
-#
+# Created by: Paul Dlug <paul@nerdlabs.com>
 # $FreeBSD$
-#
 
 PORTNAME=	nsca
 PORTVERSION=	2.7.2
@@ -54,6 +50,7 @@ PLIST_SUB+=	CLIENT="@comment "
 
 DOCS=		Changelog LEGAL README SECURITY
 
+NO_STAGE=	yes
 do-install:
 .if defined(_BUILDING_NSCA_CLIENT)
 	${INSTALL_PROGRAM} ${WRKSRC}/src/send_nsca ${PREFIX}/sbin/send_nsca

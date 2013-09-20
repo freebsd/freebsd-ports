@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Nagios-Object
-# Date created:		2010-10-18
-# Whom:			Steven Kreuzer <skreuzer@FreeBSD.org>
-#
+# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Nagios-Object
 PORTVERSION=	0.21.18
@@ -38,4 +34,5 @@ MAN3=		Nagios::Object::Config.3 \
 		Nagios::Object.3 \
 		Nagios::Config.3 \
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

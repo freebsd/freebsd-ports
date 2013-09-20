@@ -1,9 +1,4 @@
-# New ports collection makefile for:    check_mysql_health
-# Date created:         November 8, 2010
-# Whom:                 pgollucci@p6m7g8.com
-#
 # $FreeBSD$
-#
 
 PORTNAME=	check_mysql_health
 PORTVERSION=	2.1.5.1
@@ -35,4 +30,5 @@ NAGIOSDIR?=	/var/spool/nagios
 PLIST_FILES=	libexec/nagios/check_mysql_health
 PLIST_DIRS=	libexec/nagios
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

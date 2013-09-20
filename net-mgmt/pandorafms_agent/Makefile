@@ -25,6 +25,7 @@ MANCOMPRESSED=	yes
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	${PORTNAME}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../pandorafms_server/bsd.pandora.mk"
 
 PORTDOCS+=	README

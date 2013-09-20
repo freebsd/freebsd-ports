@@ -20,4 +20,5 @@ USES=		perl5
 
 MAN8=		2ping.8 2ping6.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

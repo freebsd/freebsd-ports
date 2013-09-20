@@ -16,4 +16,5 @@ HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=--prefix=${PREFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

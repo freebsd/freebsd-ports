@@ -1,9 +1,5 @@
-# New ports collection makefile for:   cisco_conf
-# Date created:        27 March 2001
-# Whom:                Anton Voronin <anton@urc.ac.ru>
-#
+# Created by: Anton Voronin <anton@urc.ac.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	cisco_conf
 PORTVERSION=	1.2
@@ -24,4 +20,5 @@ DOCSDIR=	${PREFIX}/share/doc/ciscoconf
 
 NO_BUILD=	YES
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

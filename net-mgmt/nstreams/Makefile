@@ -20,6 +20,7 @@ PLIST_FILES=	bin/nstreams \
 		etc/nstreams-networks.sample \
 		etc/nstreams-services
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/nstreams ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/docs/nstreams.1 ${MANPREFIX}/man/man1

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	grepcidr
-# Date created:			2005-04-24
-# Whom:				Douglas Fraser <doug@idmf.net>
-#
+# Created by: Douglas Fraser <doug@idmf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	grepcidr
 PORTVERSION=	1.3
@@ -17,6 +13,7 @@ COMMENT=	Filter IP addresses matching IPv4 CIDR/network specification
 
 PLIST_FILES=	bin/grepcidr
 
+NO_STAGE=	yes
 do-configure:
 	@${REINPLACE_CMD} \
 		-e 's|/usr/local/bin|${PREFIX}/bin|' \

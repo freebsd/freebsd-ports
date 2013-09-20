@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rcpd
-# Date created:		2006-12-16
-# Whom:			Babak Farrokhi <farrokhi@FreeBSD.org>
-#
+# Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rcpd
 PORTVERSION=	1.2
@@ -17,4 +13,5 @@ GNU_CONFIGURE=	yes
 MAN1=		rcpd.1
 PLIST_FILES=	sbin/rcpd
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

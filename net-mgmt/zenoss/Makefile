@@ -37,6 +37,7 @@ JAVA_VERSION=	1.6+
 JAVA_BUILD=	yes
 USE_AUTOTOOLS=	autoconf:env
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBASH}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   NOCOL
-# Date created:                21 Nov 1998
-# Whom:                        bradh
-#
+# Created by: bradh
 # $FreeBSD$
-#
 
 PORTNAME=	nocol
 PORTVERSION=	4.3.1
@@ -26,6 +22,7 @@ CONFIGURE_SCRIPT=	Configure
 
 NO_PACKAGE=	Hostname is needed.
 
+NO_STAGE=	yes
 post-install:
 		@cd ${WRKSRC} && make root
 

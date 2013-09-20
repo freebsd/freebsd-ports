@@ -35,6 +35,7 @@ SUB_FILES=	airport.sh
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*jar ${DATADIR}

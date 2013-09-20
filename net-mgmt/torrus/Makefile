@@ -59,6 +59,7 @@ MAN1=		torrus.1 torrus_acledit.1 torrus_buildsearchdb.1 \
 MAN7=		torrus_action_printemail.7 torrus_action_snmptrap.7 \
 		torrus_action_notify.7 torrus_install_plugin.7
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} pkg-message
 

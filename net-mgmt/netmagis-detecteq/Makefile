@@ -11,4 +11,5 @@ MASTERDIR=	${.CURDIR}/../netmagis-common
 PKGMESSAGE=	${.CURDIR}/pkg-message
 PLIST=		${.CURDIR}/pkg-plist
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

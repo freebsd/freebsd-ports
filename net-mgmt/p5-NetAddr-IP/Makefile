@@ -20,6 +20,7 @@ MAN3=		NetAddr::IP.3 \
 	NetAddr::IP::Util.3 \
 	NetAddr::IP::UtilPP.3
 
+NO_STAGE=	yes
 post-patch:
 	${PERL} -ni -e 'print unless /^=head1/../^=cut/' ${WRKSRC}/Lite/Util/Makefile.PL
 

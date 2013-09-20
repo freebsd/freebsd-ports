@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nagios-check_hdd_health
-# Date created:				2010-12-02
-# Whom:					jamrich.majo@gmail.com
-#
+# Created by: jamrich.majo@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	nagios-check_hdd_health
 PORTVERSION=	1.1
@@ -18,6 +14,7 @@ RUN_DEPENDS=	smartmontools>=0:${PORTSDIR}/sysutils/smartmontools
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/libexec/nagios
 	@${INSTALL_SCRIPT} ${.CURDIR}/src/check_hdd_health ${PREFIX}/libexec/nagios

@@ -15,6 +15,7 @@ USE_PERL5=	configure
 
 MAN3=		Net::IP.3
 
+NO_STAGE=	yes
 post-configure:
 	${PERL} -pi -e 's/-I\S+PERL\S+ //g if m{PERL_DL_NONLAZY}' ${WRKSRC}/Makefile
 

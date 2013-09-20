@@ -26,6 +26,7 @@ ALL_TARGET=	cnagios
 
 MAN1=		cnagios.1
 
+NO_STAGE=	yes
 post-install:
 	@if [ ! -f ${ETCDIR}/cnagiosrc ]; then \
 		${CP} -p ${ETCDIR}/cnagiosrc.sample ${ETCDIR}/cnagiosrc ; \

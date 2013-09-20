@@ -25,4 +25,5 @@ MAKEFILE=		GNUmakefile
 MAKE_ENV=		ZENHOME="${PREFIX}" PY_LIBDIR="${PYTHONPREFIX_SITELIBDIR}"
 ALL_TARGET=		build
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

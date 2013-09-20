@@ -1,9 +1,5 @@
-# New ports collection makefile for:	icmpquery
-# Date created:				Jan 7 1999
-# Whom:					dom@happygiraffe.net
-#
+# Created by: dom@happygiraffe.net
 # $FreeBSD$
-#
 
 PORTNAME=	icmpquery
 PORTVERSION=	1.0.3
@@ -19,6 +15,7 @@ PLIST_FILES=	bin/icmpquery
 NO_WRKSUBDIR=	YES
 ALL_TARGET=	icmpquery
 
+NO_STAGE=	yes
 do-extract:
 		@${MKDIR} ${WRKDIR}
 		@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	braa
-# Date created:				31.05.2003
-# Whom:					Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	braa
 PORTVERSION=	0.82
@@ -21,6 +17,7 @@ LDFLAGS+=	-lcompat
 PORTDOCS=	README
 PLIST_FILES=	bin/braa
 
+NO_STAGE=	yes
 post-patch:
 .for file in Makefile
 	@${REINPLACE_CMD} -e \

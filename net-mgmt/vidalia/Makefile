@@ -17,4 +17,5 @@ USES=		cmake
 INSTALLS_ICONS=	yes
 USE_QT4=	gui moc_build qmake_build rcc_build uic_build network xml linguist_build
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

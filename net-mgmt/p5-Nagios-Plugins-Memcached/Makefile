@@ -1,4 +1,3 @@
-# Created by: Philp M. Gollucci <pgollucci@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Nagios-Plugins-Memcached
@@ -23,6 +22,7 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 MAN3=		Nagios::Plugins::Memcached.3
 PORTDOCS=	Changes README
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${LOCALBASE}/libexec/nagios
 	${INSTALL} ${WRKSRC}/bin/check_memcached ${LOCALBASE}/libexec/nagios/check_memcached

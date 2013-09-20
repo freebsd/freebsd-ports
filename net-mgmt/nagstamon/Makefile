@@ -24,6 +24,7 @@ MAN1=		nagstamon.1
 
 WRKSRC=		${WRKDIR}/Nagstamon
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/\(man/man1\)|\1|' ${WRKSRC}/setup.py
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcptrack
-# Date created:		2004-10-11
-# Whom:			Tor Halvard "Squat" Furulund <squat@squat.no>
-#
+# Created by: Tor Halvard "Squat" Furulund <squat@squat.no>
 # $FreeBSD$
-#
 
 PORTNAME=		tcptrack
 PORTVERSION=		1.3.0
@@ -21,6 +17,7 @@ MAN1=		tcptrack.1
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}

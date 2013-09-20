@@ -24,6 +24,7 @@ MAN1=		nat.1
 PLIST_FILES=	bin/nat %%DATADIR%%/passlist.txt %%DATADIR%%/userlist.txt
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/nat ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/nat.1 ${MANPREFIX}/man/man1

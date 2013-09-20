@@ -26,6 +26,7 @@ PLIST_FILES=	sbin/sing
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} -rf ${WRKSRC}/libpcap-* ;\
 	${RM} -rf ${WRKSRC}/Libnet-*

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   rate
-# Date created:        Thu Aug 21 18:12:35 GMT 2003
-# Whom:                mich@FreeBSD.org
-#
+# Created by: mich@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	rate
 PORTVERSION=	0.9
@@ -17,6 +13,7 @@ MAKE_ARGS=	${MAKE_ENV}
 LDFLAGS+=	-lcompat
 CFLAGS+=	-DOPEN_BSD=1 -DHAVE_REGEX -DSTREAM_ANALYZER -DIOCTL_GETWINSIZE -DAUTOSENSE_DLH
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rate ${PREFIX}/bin/rate
 	${INSTALL_MAN} ${WRKSRC}/doc/rate.1 ${PREFIX}/man/man1

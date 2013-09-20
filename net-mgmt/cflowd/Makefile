@@ -27,6 +27,7 @@ MANL=		cfdases.l cfdifmatrix.l cfdnets.l cfdnexthops.l \
 OPTIONS_DEFINE=	FLOWSCAN
 FLOWSCAN_DESC=	FlowScan patch
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFLOWSCAN}

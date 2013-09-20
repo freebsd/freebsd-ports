@@ -1,9 +1,5 @@
-# New ports collection makefile for:	net-mgmt/sysmon
-# Date created:				23 January 2003
-# Whom:					Manuel Kreutz <mk@nomtec.net>
-#
+# Created by: Manuel Kreutz <mk@nomtec.net>
 # $FreeBSD$
-#
 
 PORTNAME=	sysmon
 PORTVERSION=	0.92.2
@@ -21,6 +17,7 @@ MAN8=		sysmon.man.8 sysmon.conf.man.8
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/sysmon ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/src/sysmond ${PREFIX}/bin

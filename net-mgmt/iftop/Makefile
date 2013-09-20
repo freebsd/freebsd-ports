@@ -1,9 +1,5 @@
-# New ports collection makefile for: 	iftop
-# Date created:       			24 May 2003
-# Whom:					Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	iftop
 PORTVERSION=	0.17
@@ -23,6 +19,7 @@ PORTDOCS=	README
 .endif
 PLIST_FILES=	bin/iftop
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		 ${WRKSRC}/configure

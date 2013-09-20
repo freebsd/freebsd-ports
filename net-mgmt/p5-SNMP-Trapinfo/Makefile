@@ -1,9 +1,5 @@
-# New ports collection makefile for:  p5-SNMP-Trapinfo
-# Date created:	       10 december 2009
-# Whom:		       joris
-#
+# Created by: joris
 # $FreeBSD$
-#
 
 PORTNAME=	SNMP-Trapinfo
 PORTVERSION=	1.02
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		SNMP::Trapinfo.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

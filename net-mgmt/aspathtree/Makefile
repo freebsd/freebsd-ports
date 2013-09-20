@@ -27,6 +27,7 @@ LIB_FILES=	bgp-tree-changes.pl bgp-tree.pl create-homepage.pl elaborate-aspaths.
 DATA_FILES=	6bone.db force.as.name rirs.db
 DOC_FILES=	DISCLAIMER readme.txt changes.txt
 
+NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e 's#%%PATHPERLBIN%%#${PERL5}#; \
 		s#%%PREFIX%%#${PREFIX}#' ${WRKSRC}/update-rtree \

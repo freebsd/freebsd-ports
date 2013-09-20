@@ -1,9 +1,5 @@
-# ports collection makefile for:	bigsister
-# Date created:				25 March 2004
-# Whom:					Bruce M Simpson <bms@FreeBSD.org>
-#
+# Created by: Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bigsister
 PORTVERSION=	1.02
@@ -41,6 +37,7 @@ CONFIGURE_ARGS=	\
 	--with-url=${BS_URL} \
 	--with-user=${BS_USER}
 
+NO_STAGE=	yes
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX}/${PORTNAME} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 

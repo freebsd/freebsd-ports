@@ -19,4 +19,5 @@ ZPACKPREFIX=	ZenPacks.community.
 WRKSRC=  ${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
 TAG= 7ed2d7d
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

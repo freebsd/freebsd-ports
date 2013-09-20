@@ -19,6 +19,7 @@ PLIST_DIRS=	${NAGIOS_PLUGIN_DIR}
 SUB_FILES=	pkg-message
 SUB_LIST=	NAGIOS_PLUGIN_DIR=${NAGIOS_PLUGIN_DIR}
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can redefine the following additional variables:"

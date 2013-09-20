@@ -25,6 +25,7 @@ PLIST_FILES=	sbin/hastmon \
 		sbin/hastmonctl \
 		etc/rc.d/hastmon
 
+NO_STAGE=	yes
 do-build:
 	${SETENV} ${MKCMAKE_ENV} ${MKCMAKE} -C ${WRKSRC}
 

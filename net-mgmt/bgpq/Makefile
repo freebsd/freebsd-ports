@@ -1,7 +1,4 @@
-# New ports collection makefile for:	bgpq
-# Date created:				21 Jan 2002
-# Whom:					Alexandre Snarskii <snar@paranoia.ru>
-#
+# Created by: Alexandre Snarskii <snar@paranoia.ru>
 # $FreeBSD$
 
 PORTNAME=	bgpq
@@ -18,6 +15,7 @@ PLIST_FILES=	bin/bgpq
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/bgpq
 

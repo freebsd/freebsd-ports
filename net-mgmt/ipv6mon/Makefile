@@ -28,6 +28,7 @@ PORTDOCS=	README.TXT \
 		ipv6mon-manual.odt \
 		ipv6mon-manual.pdf
 
+NO_STAGE=	yes
 post-extract:
 	${INSTALL_DATA} ${WRKSRC}/manuals/* ${WRKSRC}
 

@@ -13,6 +13,7 @@ RUN_DEPENDS=	devmon>0:${PORTSDIR}/net-mgmt/devmon
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL} -d ${PREFIX}/devmon/templates/
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${PREFIX}/devmon/templates/)

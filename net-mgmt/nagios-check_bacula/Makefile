@@ -23,4 +23,5 @@ CONFIGURE_ARGS=	--enable-client-only	\
 
 OPTIONS_DEFINE=	#
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

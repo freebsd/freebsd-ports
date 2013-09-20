@@ -83,6 +83,7 @@ NANOSLEEP_DESC=		Use nanosleep in event timing
 EVENT_BROKER_DESC=	Enable event broker functionality
 UNHANDLED_HACK_DESC=	Display passive checks in unhandled queries
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEMBEDDED_PERL}

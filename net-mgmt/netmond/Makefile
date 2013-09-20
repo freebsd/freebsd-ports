@@ -42,6 +42,7 @@ PORTDOCS=	README README.ru CHANGES README.port.eng README.port.ru index.html net
 
 OPTIONS_DEFINE=	DOCS GD
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGD}

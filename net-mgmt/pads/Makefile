@@ -19,4 +19,5 @@ GNU_CONFIGURE=	yes
 
 MAN8=		pads.8 pads-report.8 pads.conf.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

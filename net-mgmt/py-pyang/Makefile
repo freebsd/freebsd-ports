@@ -19,6 +19,7 @@ DATADIR=	${PREFIX}/share/yang
 
 MAN1=		pyang.1 yang2dsdl.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|share/man|man|' ${WRKSRC}/setup.py

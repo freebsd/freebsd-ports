@@ -1,9 +1,5 @@
-# New ports collection makefile for:	net-mgmt/rrdbot
-# Date created:				18 September 2008
-# Whom:					Jeremy Chadwick <koitsu@FreeBSD.org>
-#
+# Created by: Jeremy Chadwick <koitsu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rrdbot
 PORTVERSION=	0.9.7
@@ -35,6 +31,7 @@ CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

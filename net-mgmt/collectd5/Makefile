@@ -63,6 +63,7 @@ CONFLICTS=	collectd-4.[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # NOTE: Plugins without dependencies are defined further down.

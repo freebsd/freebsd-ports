@@ -27,6 +27,7 @@ OPTIONS_DEFAULT=	GTK2 NCURSES
 
 ALL_TARGET=	spectool_net spectool_raw
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}

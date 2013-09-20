@@ -18,4 +18,5 @@ PLIST_FILES=	bin/bwm-ng
 
 CONFIGURE_ENV=	LIBS="`pkg-config --libs libstatgrab`"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

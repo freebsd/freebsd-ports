@@ -19,6 +19,7 @@ USE_MYSQL=	yes
 USE_PHP=	mysql session xml
 WANT_PHP_WEB=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${WWWDIR}
 	@cd ${WRKSRC} && \

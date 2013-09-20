@@ -1,9 +1,5 @@
-# New ports collection makefile for:	grepip
-# Date created:		2 Nov 2005
-# Whom:			Serge Maslov <serge@maslov.biz>
-#
+# Created by: Serge Maslov <serge@maslov.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	grepip
 PORTVERSION=	1.0
@@ -20,6 +16,7 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 PLIST_FILES=	bin/grepip
 PORTDOCS=	README.txt
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; \
 	${CC} ${CFLAGS} -c patricia.c; \

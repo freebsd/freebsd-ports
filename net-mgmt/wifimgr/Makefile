@@ -17,6 +17,7 @@ USE_XORG=	x11
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

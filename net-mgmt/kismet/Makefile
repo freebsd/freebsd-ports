@@ -31,6 +31,7 @@ SETUID_DESC=		Use privilege separation
 
 WRKSRC=	${WRKDIR}/${DISTNAME:S/a$$//}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

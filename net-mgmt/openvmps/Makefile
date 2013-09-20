@@ -20,6 +20,7 @@ CONFIGURE_ARGS=--bindir=${PREFIX}/sbin
 
 MAN1=		vmpsd.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

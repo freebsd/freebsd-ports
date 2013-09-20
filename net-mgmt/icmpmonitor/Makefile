@@ -1,9 +1,5 @@
-# New ports collection makefile for: icmpmonitor
-# Date created:		31 Jul 2001
-# Whom:			nbm
-#
+# Created by: nbm
 # $FreeBSD$
-#
 
 PORTNAME=	icmpmonitor
 PORTVERSION=	1.2
@@ -18,4 +14,5 @@ GNU_CONFIGURE=	YES
 MAN1=		icmpmonitor.1
 PLIST_FILES=	sbin/icmpmonitor
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

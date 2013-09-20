@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nagios-check_netsnmp
-# Date created:				7 December 2011
-# Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	check_netsnmp
 PORTVERSION=	1.0
@@ -24,6 +20,7 @@ NO_BUILD=	yes
 PLIST_FILES=	libexec/nagios/check_netsnmp %%DOCSDIR%%/check_netsnmp.html
 PLIST_DIRS=	%%DOCSDIR%%
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/check_netsnmp ${PREFIX}/libexec/nagios
 	${MKDIR} ${DOCSDIR}

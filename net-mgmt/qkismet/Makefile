@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qkismet
-# Date created:		2009-11-12
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qkismet
 PORTVERSION=	0.3.1
@@ -23,6 +19,7 @@ QMAKE_PRO=	${PORTNAME}.pro
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
+NO_STAGE=	yes
 do-patch:
 	${REINPLACE_CMD} -e 's,:/img/,${DATADIR}/img/,g' \
 	${WRKSRC}/*.cpp
