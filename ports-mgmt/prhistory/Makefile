@@ -28,6 +28,7 @@ MAN7=	prhistory.7
 SUB_FILES=	pkg-message
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

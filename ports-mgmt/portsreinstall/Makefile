@@ -15,6 +15,7 @@ LICENSE=	BSD
 MAN8=		${PORTNAME}.8
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-install:
 	@${ECHO_MSG} "====================================================================="
 	@${ECHO_MSG} "This software invokes some installed files of portupgrade(1)"

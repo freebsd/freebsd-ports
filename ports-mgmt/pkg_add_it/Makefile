@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pkg_add_it
-# Date created:				05 October 2008
-# Whom:					Marin Atanasov <dnaeon@gmail.com>
-#
+# Created by: Marin Atanasov <dnaeon@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pkg_add_it
 PORTVERSION=	1.3.2
@@ -17,6 +13,7 @@ MAN1=		pkg_add_it.1
 MAN5=		pkg_add_it.conf.5
 PLIST_FILES=	etc/pkg_add_it.conf sbin/pkg_add_it
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PKG_RELEASE!=	${UNAME} -r | ${CUT} -d '-' -f 1,2 | ${SED} -e 's|\.[0-9]*.*|-STABLE|'

@@ -19,6 +19,7 @@ MANCOMPRESSED=	no
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/auto-symlink-virtual.sh ${PREFIX}/bin/${PORTNAME}
 

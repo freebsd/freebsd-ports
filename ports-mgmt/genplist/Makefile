@@ -1,4 +1,4 @@
-# Created by:	Jason Bacon
+# Created by: Jason Bacon
 # $FreeBSD$
 
 PORTNAME=	genplist
@@ -16,6 +16,7 @@ PLIST_FILES=	bin/genplist
 
 MAN1=		genplist.1
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/genplist ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/genplist.1 ${MAN1PREFIX}/man/man1

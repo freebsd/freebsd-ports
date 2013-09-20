@@ -16,6 +16,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 SUB_FILES=	600.fbsdmon pkg-message
 USE_RC_SUBR=	fbsdmon
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fbsdmon ${PREFIX}/sbin
 	${MKDIR} /var/db/fbsdmon

@@ -27,6 +27,7 @@ MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/dialog4ports
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 MAKE_ARGS+=	DEBUG_FLAGS="${DEBUG_FLAGS}"

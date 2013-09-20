@@ -23,4 +23,5 @@ USE_PERL5=	configure
 MAN1=		pm2port.1
 MAN3=		App::Pm2Port.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

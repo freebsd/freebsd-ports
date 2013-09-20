@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pkgfe
-# Date created:				2006-01-14
-# Whom:					Sulev-Madis Silber <madis555@hot.ee>
-#
+# Created by: Sulev-Madis Silber <madis555@hot.ee>
 # $FreeBSD$
-#
 
 PORTNAME=	pkgfe
 PORTVERSION=	20090228
@@ -21,6 +17,7 @@ MAN8=		pkgfe.8
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${REINPLACE_CMD} -e 's|%PREFIX%|${PREFIX}|g' ${WRKSRC}/pkgfe
 	${INSTALL_SCRIPT} ${WRKSRC}/pkgfe ${PREFIX}/sbin/pkgfe

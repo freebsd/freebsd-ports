@@ -21,4 +21,5 @@ PLIST_SUB+=	PERIODICDIR="${PERIODICDIR:S,^${PREFIX}/,,}" \
 		REPORTDIR="${REPORTDIR:S,^${PREFIX}/,,}" \
 		XTMPDIR="${XTMPDIR:S,^${PREFIX}/,,}"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

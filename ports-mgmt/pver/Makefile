@@ -26,6 +26,7 @@ PLIST_FILES=	bin/pver \
 		%%DATADIR%%/LICENSE.txt
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSORT}

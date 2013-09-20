@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pkg-orphan
-# Date created:				26 November 2005
-# Whom:					Victor Semionov <semionov@mail.bg>
-#
+# Created by: Victor Semionov <semionov@mail.bg>
 # $FreeBSD$
-#
 
 PORTNAME=	pkg-orphan
 PORTVERSION=	1.0.1
@@ -20,6 +16,7 @@ MAN1=		pkg-orphan.1
 
 PLIST_FILES=	sbin/pkg-orphan
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pkg-orphan.pl ${PREFIX}/sbin/pkg-orphan
 	${INSTALL_MAN} ${WRKSRC}/pkg-orphan.1 ${MAN1PREFIX}/man/man1

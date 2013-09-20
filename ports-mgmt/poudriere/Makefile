@@ -52,6 +52,7 @@ PLIST_DIRS=	libexec/poudriere \
 		share/poudriere/html \
 		share/poudriere
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MZSH}

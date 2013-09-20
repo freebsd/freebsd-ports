@@ -1,4 +1,3 @@
-# Created by: Mark Linimon <linimon@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	port-authoring-tools
@@ -22,4 +21,5 @@ NO_BUILD=	yes
 
 do-install:	# empty
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

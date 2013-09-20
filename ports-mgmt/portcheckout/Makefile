@@ -16,4 +16,5 @@ MAN1=		portcheckout.1
 MANCOMPRESSED=	maybe
 PLIST_FILES=	bin/portcheckout
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

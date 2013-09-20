@@ -1,4 +1,3 @@
-# Created by: Alberto Villa <avilla@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	KPackageKit
@@ -25,4 +24,5 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

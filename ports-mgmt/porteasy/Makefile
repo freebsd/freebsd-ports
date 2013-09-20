@@ -17,6 +17,7 @@ SRC=		${.CURDIR}/src
 
 MAN8=		porteasy.8
 
+NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 

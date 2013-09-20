@@ -22,6 +22,7 @@ MAKE_ENV+=	OSTYPE="${OPSYS}"
 
 SUB_FILES=	bpm.desktop
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 		${REINPLACE_CMD} -e "s|-lintl|-lintl -L${LOCALBASE}/lib|g"

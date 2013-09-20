@@ -1,9 +1,5 @@
-# New ports collection makefile for:	portsearch
-# Date created:				22 Nov 2005
-# Whom:					Vasil Dimov <vd@datamax.bg>
-#
+# Created by: Vasil Dimov <vd@datamax.bg>
 # $FreeBSD$
-#
 
 PORTNAME=	portsearch
 PORTVERSION=	1.3.2
@@ -18,4 +14,5 @@ COMMENT=	Port searching tool that supports search by packing list files
 PLIST_FILES=	bin/portsearch %%DATADIR%%/Makefile
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

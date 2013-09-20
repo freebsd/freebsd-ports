@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pkgsearch
-# Date created:				14 September 2007
-# Whom:					Diego_Rocha <diegorocha1987@gmail.com>
-#
+# Created by: Diego_Rocha <diegorocha1987@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pkgsearch
 PORTVERSION=	1.1.0
@@ -15,4 +11,5 @@ COMMENT=	Find your packages in ports and installed packages
 
 PLIST_FILES=	bin/pkgsearch
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

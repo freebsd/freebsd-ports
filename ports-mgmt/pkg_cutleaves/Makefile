@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pkg_cutleaves
-# Date created:		27 July 2003
-# Whom:			Stefan Walter <sw@gegenunendlich.de>
-#
+# Created by: Stefan Walter <sw@gegenunendlich.de>
 # $FreeBSD$
-#
 
 PORTNAME=	pkg_cutleaves
 PORTVERSION=	20090810
@@ -28,6 +24,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-pkg_cutleaves \
 		${FILESDIR}/extra-patch-pkg_cutleaves.1
 .endif
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${FILESDIR}/pkg_cutleaves ${FILESDIR}/pkg_cutleaves.1 ${WRKSRC}

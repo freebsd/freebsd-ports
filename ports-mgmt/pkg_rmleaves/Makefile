@@ -17,6 +17,7 @@ MAN1=		pkg_rmleaves.1
 
 PLIST_FILES=	sbin/pkg_rmleaves
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pkg_rmleaves ${PREFIX}/sbin/pkg_rmleaves
 	${INSTALL_MAN} ${WRKSRC}/pkg_rmleaves.1 ${MAN1PREFIX}/man/man1

@@ -64,6 +64,7 @@ MLINKS=	pkg-delete.8 pkg-remove.8 \
 	pkg-lock.8 pkg-unlock.8 \
 	pkg.8 pkg-static.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PKGNG)

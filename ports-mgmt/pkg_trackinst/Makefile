@@ -14,6 +14,7 @@ USE_PYTHON=	2.5+
 INSTALLS_EGGINFO=	yes
 MAKE_ENV=	PYTHON_CMD=${PYTHON_CMD}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's,/usr/local,${PREFIX},g' \
 		${WRKSRC}/PkgTrackInst/cmd_support.py

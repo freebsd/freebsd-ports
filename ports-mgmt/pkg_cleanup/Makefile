@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pkg_cleanup
-# Date created:				02 November 2007
-# Whom:					Stephen Hurd <shurd@sasktel.net>
-#
+# Created by: Stephen Hurd <shurd@sasktel.net>
 # $FreeBSD$
-#
 
 PORTNAME=	pkg_cleanup
 PORTVERSION=	1.1
@@ -19,6 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	sbin/pkg_cleanup
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900000 && ${OSVERSION} < 900038

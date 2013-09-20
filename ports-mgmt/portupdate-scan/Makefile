@@ -1,10 +1,5 @@
-# New ports collection makefile for:	portupdate-scan
-# Date created:				08 November 2007
-# Whom:					Alex Stangl <alex@stangl.us>
-#
+# Created by: Alex Stangl <alex@stangl.us>
 # $FreeBSD$
-#
-# This port is self contained in the files directory.
 
 PORTNAME=	portupdate-scan
 PORTVERSION=	0.3
@@ -24,6 +19,7 @@ SRC=		${.CURDIR}/src
 
 MAN8=		portupdate-scan.8
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${SRC}/portupdate-scan ${PREFIX}/sbin/portupdate-scan
 	${INSTALL_MAN} ${SRC}/portupdate-scan.8 ${MAN8PREFIX}/man/man8

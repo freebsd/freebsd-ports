@@ -21,6 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 OPTIONS_DEFINE=	GRAPHVIZ 
 GRAPHVIS_DESCR=	Add GraphViz run-time dependency
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGRAPHVIZ}
