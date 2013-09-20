@@ -19,6 +19,7 @@ PLIST_FILES=	share/fonts/bdf/kc15f.bdf.gz \
 		share/fonts/bdf/8x16.bdf.gz
 
 post-patch: post-patch-zhkon2
+NO_STAGE=	yes
 post-patch-zhkon2:
 	@${REINPLACE_CMD} -e 's,/dev/vga,/dev/ttyv0,g' ${WRKSRC}/src/term.c \
 		${WRKSRC}/src/display/vga.c

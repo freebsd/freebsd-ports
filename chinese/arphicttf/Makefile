@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Arphic Chinese TrueType fonts
-# Date created:		13 Oct 1999
-# Whom:			Jing-Tang Keith Jang <keith@FreeBSD.org>
-#
+# Created by: Jing-Tang Keith Jang <keith@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	arphicttf
 PORTVERSION=	2.11
@@ -20,6 +16,7 @@ WRKSRC=		${WRKDIR}/arphic
 
 TTF=		bkai00mp.ttf bsmi00lp.ttf gbsn00lp.ttf gkai00mp.ttf
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${FONTSDIR}
 .for ttf in ${TTF}

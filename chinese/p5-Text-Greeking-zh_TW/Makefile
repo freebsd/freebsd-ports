@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	Text::Greeking::zh_TW
-# Date created:			Jul 31, 2007
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Greeking-zh_TW
 PORTVERSION=	1.0
@@ -23,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=	Text::Greeking::zh_TW.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

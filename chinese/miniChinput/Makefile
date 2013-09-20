@@ -1,9 +1,5 @@
-# New ports collection makefile for:    zh-miniChinput
-# Date created:		19 Jul 2003
-# Whom:			Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-#
+# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	miniChinput
 PORTVERSION=	0.1.9
@@ -26,6 +22,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		chinput.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

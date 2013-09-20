@@ -23,6 +23,7 @@ USE_GNOME=	gnomeprefix libgnomeui
 
 WORDBOOKS_PATH=	${PREFIX}/share/${PORTNAME}/wordbooks
 
+NO_STAGE=	yes
 post-install:
 	cd ${WRKDIR}/wordbooks && ${INSTALL_DATA} * ${WORDBOOKS_PATH}
 	${INSTALL_DATA} ${FILESDIR}/srecite.desktop ${PREFIX}/share/applications

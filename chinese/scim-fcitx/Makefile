@@ -29,6 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 	${WRKSRC}/configure

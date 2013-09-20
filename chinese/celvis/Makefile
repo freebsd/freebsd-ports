@@ -14,6 +14,7 @@ CFLAGS+=	-Wno-error=return-type
 MAN1=		celvis.1
 MLINKS=		celvis.1 cvi.1
 
+NO_STAGE=	yes
 do-install:
 	@# install target in celvis Makefile is not too good -- this is easier
 	${INSTALL_PROGRAM} ${WRKSRC}/celvis ${WRKSRC}/virec ${PREFIX}/bin

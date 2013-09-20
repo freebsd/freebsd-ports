@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zh-xemacs21
-# Date created:		1 October 2000
-# Whom:			Jing-Tang Keith Jang <keith@FreeBSD.org>
-#
+# Created by: Jing-Tang Keith Jang <keith@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	4
 CATEGORIES=	chinese
@@ -24,6 +20,7 @@ PKGMESSAGE=	${.CURDIR}/pkg-message
 
 WITH_XCIN25=	yes
 
+NO_STAGE=	yes
 post-install::
 	@${MKDIR} ${PREFIX}/lib/xemacs-${XEMACS_VER}/etc/app-defaults/zh_TW.Big5
 	@${INSTALL_DATA} ${.CURDIR}/files/Emacs ${PREFIX}/lib/xemacs-${XEMACS_VER}/etc/app-defaults/zh_TW.Big5

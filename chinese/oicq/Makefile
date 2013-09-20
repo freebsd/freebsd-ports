@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zh-oicq
-# Date created:		10 Nov 2003
-# Whom:			Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-#
+# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	oicq
 PORTVERSION=	1.6
@@ -22,6 +18,7 @@ USE_PERL5=	configure
 
 MAN3=		Net::OICQ.3
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/qq ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/demo1 ${PREFIX}/bin/qq-demo1

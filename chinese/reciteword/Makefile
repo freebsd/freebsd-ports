@@ -25,6 +25,7 @@ PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README TODO readme.txt
 
 XTRACT_AFTER_ARGS+=	--exclude CVS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 LIB_DEPENDS+=	espeak:${PORTSDIR}/audio/espeak

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pine
-# Date created:		15 July 1998
-# Whom:			Tai-hwa Liang <avatar@www.mmlab.cse.yzu.edu.tw>
-#
+# Created by: Tai-hwa Liang <avatar@www.mmlab.cse.yzu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	pine
 PORTVERSION=	4.64
@@ -31,6 +27,7 @@ NO_LATEST_LINK=	yes
 
 MAN1=		pine.1 pico.1 pilot.1
 
+NO_STAGE=	yes
 pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	${SH} pkg-install

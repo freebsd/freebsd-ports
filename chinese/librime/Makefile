@@ -30,6 +30,7 @@ post-patch:     .SILENT
 	${FIND} ${WRKSRC} \( -name '*.cc' -or -name '*.h' \) \
 		-exec ${PERL} -i -pe '$$. == 1 && s/^\xef\xbb\xbf//;' '{}' \;
 
+NO_STAGE=	yes
 post-build:
 	@echo "building rime data."
 	@${MKDIR} ${DATASRC}

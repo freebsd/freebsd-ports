@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zh-joe
-# Date created:			3 July 1999
-# Whom:				Shen Chuan-Hsing <statue@mail.elife.idv.tw>
-#
+# Created by: Shen Chuan-Hsing <statue@mail.elife.idv.tw>
 # $FreeBSD$
-#
 
 PORTREVISION=	1
 CATEGORIES=	chinese
@@ -20,4 +16,5 @@ LATEST_LINK=	${PKGNAMEPREFIX}joe
 MASTERDIR=	${.CURDIR}/../../editors/joe
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

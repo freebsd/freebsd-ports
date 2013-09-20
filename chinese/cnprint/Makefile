@@ -24,6 +24,7 @@ OPTIONS_DEFAULT=	A4SIZE
 
 A4SIZE_DESC=	Set A4 (not Letter) as a default paper size
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-extract:

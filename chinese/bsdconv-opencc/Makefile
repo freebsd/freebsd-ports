@@ -23,4 +23,5 @@ GH_COMMIT=	38b4a80
 
 MAKE_ARGS=	PREFIX=${PREFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

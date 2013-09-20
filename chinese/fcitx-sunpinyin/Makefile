@@ -21,6 +21,7 @@ INSTALLS_ICONS=	yes
 
 PROJECTHOST=	fcitx
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

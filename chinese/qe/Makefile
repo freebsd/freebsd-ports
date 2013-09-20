@@ -1,9 +1,5 @@
-# New ports collection makefile for:   qe
-# Date created:                10 Mar 2001
-# Whom:                        Shen Chuan-Hsing
-#
+# Created by: Shen Chuan-Hsing
 # $FreeBSD$
-#
 
 PORTNAME=	qe
 PORTVERSION=	0.1.1
@@ -18,6 +14,7 @@ COMMENT=	QE is a PE2-like editor program under U*nix
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -e '49s,-s,,' ${WRKSRC}/src/Makefile
 

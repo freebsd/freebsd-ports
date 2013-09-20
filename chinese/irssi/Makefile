@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zh-tw-irssi
-# Date created:				April 26 2001
-# Whom:					vanilla
-#
+# Created by: vanilla
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	chinese
@@ -17,4 +13,5 @@ MASTERDIR=	${.CURDIR}/../../irc/irssi
 EXTRA_PATCHES=	${.CURDIR}/files/patch-irssi.conf \
 		${.CURDIR}/files/patch-utf8_break
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

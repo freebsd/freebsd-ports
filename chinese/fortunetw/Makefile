@@ -1,9 +1,5 @@
-# New ports collection makefile for:   fortunetw
-# Date created:                10 Mar 2001
-# Whom:                        Shen Chuan-Hsing
-#
+# Created by: Shen Chuan-Hsing
 # $FreeBSD$
-#
 
 PORTNAME=	fortunetw
 PORTVERSION=	1.3
@@ -19,6 +15,7 @@ NO_BUILD=	yes
 
 STRCMD=		/usr/games/strfile
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/share/games/fortune
 	@${INSTALL_DATA} ${WRKSRC}/bsdchat ${PREFIX}/share/games/fortune

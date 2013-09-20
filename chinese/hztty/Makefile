@@ -1,9 +1,5 @@
-# Ports collection makefile for:  hztty
-# Date created:			  Wed Sep 24, 1997
-# Whom:				  Ada T Lim <ada@not-enough.bandwidth.org>
-#
+# Created by: Ada T Lim <ada@not-enough.bandwidth.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hztty
 PORTVERSION=	2.0
@@ -17,6 +13,7 @@ ALL_TARGET=	bsd
 MAN1=		hztty.1
 PLIST_FILES=	bin/hztty
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900007

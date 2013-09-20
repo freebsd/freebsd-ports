@@ -45,6 +45,7 @@ QT4_DESC=	Enable Qt4 IM module
 OPENCC_DESC=	Enable OpenCC for Chinese Transform
 TPUNC_DESC=	Use traditional quotation marks
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CMAKE_ARGS+=	-DENABLE_XDGAUTOSTART=OFF -DFORCE_ENCHANT=ON

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	font-std
-# Date created:		15 May 2009
-# Whom:			hrs
-#
+# Created by: hrs
 # $FreeBSD$
-#
 
 PORTNAME=	font-std
 PORTVERSION=	0.0.20090602
@@ -27,6 +23,7 @@ PLIST_FILES=	${FONTSDIR}/std.zh_CN/STHeiti-Regular \
 PLIST_DIRS=	${FONTSDIR}/std.zh_CN
 FONTSDIR=	share/fonts
 
+NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 

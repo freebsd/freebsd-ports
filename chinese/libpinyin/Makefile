@@ -25,6 +25,7 @@ CONFIGURE_ARGS+=CPPFLAGS="-I${LOCALBASE}/include \
 
 PLIST_SUB+=	VER=${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800107

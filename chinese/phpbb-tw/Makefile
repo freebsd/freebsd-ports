@@ -1,9 +1,5 @@
-# New ports collection makefile for:	phpBB-tw
-# Date created:		2005/11/14
-# Whom:	      		chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	phpbb
 PORTVERSION=	2.0.23
@@ -36,6 +32,7 @@ PHPBB_URL?=	phpBB2
 #
 # End of user-configurable variables.
 
+NO_STAGE=	yes
 # Set/override/append to variables from bsd.port.mk:
 #
 WRKSRC=		${WRKDIR}/phpBB2

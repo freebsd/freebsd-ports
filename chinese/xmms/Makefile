@@ -13,4 +13,5 @@ EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-xmms-1.2.x-xfont
 
 MAINTAINER=	ports@FreeBSD.org
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

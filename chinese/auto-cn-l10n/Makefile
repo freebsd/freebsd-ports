@@ -1,7 +1,4 @@
-# New ports collection makefile for:	zh-auto-cn-l10n
-# Date created:		12 May 2006
-# Whom:			Yinghong Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong Liu <relaxbsd@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	auto-cn-l10n
@@ -28,6 +25,7 @@ SCIM_DESC=		Smart Common Input Method platform
 MINICHINPUT_DESC=	A tiny version of Chinput
 RELAXCONF_DESC=		A set of utilities for FreeBSD LiveCD
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MWQY}

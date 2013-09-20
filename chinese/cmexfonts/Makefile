@@ -1,9 +1,5 @@
-# New ports collection makefile for:   cmexfonts
-# Date created:                10 Mar 2001
-# Whom:                        Shen Chuan-Hsing
-#
+# Created by: Shen Chuan-Hsing
 # $FreeBSD$
-#
 
 PORTNAME=	cmexfonts
 PORTVERSION=	0.1
@@ -24,6 +20,7 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/cmexfonts
 
+NO_STAGE=	yes
 post-install:
 	@${SETENV} ${INSTALL_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
