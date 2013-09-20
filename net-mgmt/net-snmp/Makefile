@@ -50,6 +50,7 @@ SUB_FILES=	pkg-message
 CONFIGURE_ARGS+=--with-defaults
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}

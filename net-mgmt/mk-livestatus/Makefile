@@ -36,6 +36,7 @@ COMMAND_FILE?=	/var/spool/nagios/rw/live
 # perl api is really outdated, do not install!
 # Actual version can be found on CPAN
 # http://search.cpan.org/~nierlein/Monitoring-Livestatus/
+NO_STAGE=	yes
 post-extract:
 	@${RM} -rf ${WRKSRC}/api/perl
 

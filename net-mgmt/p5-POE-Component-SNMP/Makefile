@@ -19,6 +19,7 @@ USE_PERL5=	configure
 
 MAN3=		POE::Component::SNMP.3
 
+NO_STAGE=	yes
 post-patch:
 	@${TOUCH} ${WRKSRC}/config.cache
 

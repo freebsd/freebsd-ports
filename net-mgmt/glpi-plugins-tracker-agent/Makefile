@@ -1,9 +1,5 @@
-# New ports collection makefile for:   glpi-plugins-tracker-agent
-# Date created:        01 November 2009
-# Whom:                ddurieux <d.durieux@siprossii.com>
-#
+# Created by: ddurieux <d.durieux@siprossii.com>
 # $FreeBSD$
-#
 
 PORTNAME=	agent
 DISTVERSION=	1.5.3
@@ -31,6 +27,7 @@ CPIOARGS=	--quiet -pdum
 
 TRACKERAGENTDIR?=	share/tracker_agent
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-configure:

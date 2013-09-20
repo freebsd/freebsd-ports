@@ -21,4 +21,5 @@ MAN1=		scli.1
 INFO=		scli
 PLIST_FILES=	bin/scli
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

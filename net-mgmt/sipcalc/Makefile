@@ -14,6 +14,7 @@ MAN1=		sipcalc.1
 
 DOC_FILES=	doc/sipcalc.txt ChangeLog README
 
+NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

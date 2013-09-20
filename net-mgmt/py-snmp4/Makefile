@@ -32,6 +32,7 @@ BASEDOCS=	CHANGES \
 		README \
 		TODO
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

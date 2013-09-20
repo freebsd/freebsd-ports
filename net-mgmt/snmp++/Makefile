@@ -1,9 +1,5 @@
-# New ports collection makefile for:   snmp++
-# Date created:        2007-05-14
-# Whom:                nicolai@catpipe.net
-#
+# Created by: nicolai@catpipe.net
 # $FreeBSD$
-#
 
 PORTNAME=	snmp++
 PORTVERSION=	3.2.25
@@ -20,6 +16,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/src
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-extract:
 	${CP} ${FILESDIR}/Makefile.FreeBSD ${WRKSRC}
 

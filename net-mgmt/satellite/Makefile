@@ -1,9 +1,5 @@
-# New ports collection makefile for:   satellite
-# Date created:        24 Feb 2001
-# Whom:                Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	satellite
 PORTVERSION=	1.0.2
@@ -24,6 +20,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var/log
 
 MAN8=		satcfg.8 satellite.8 satellited.8 satwatch.8
 
+NO_STAGE=	yes
 pre-install:
 	@${SH} pkg-install ${PKGNAME} PRE-INSTALL
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mtrace
-# Date created:		28 September 2006
-# Whom:			Bruce M Simpson <bms@FreeBSD.org>
-#
+# Created by: Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mtrace
 PORTVERSION=	5.2
@@ -17,6 +13,7 @@ MAN8=		mtrace.8
 
 ALL_TARGET=	mtrace
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mtrace ${PREFIX}/sbin/mtrace
 	${INSTALL_MAN} ${WRKSRC}/mtrace.8 ${PREFIX}/man/man8

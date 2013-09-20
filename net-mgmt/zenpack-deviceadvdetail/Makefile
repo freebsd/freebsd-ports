@@ -20,4 +20,5 @@ WRKSRC=	${WRKDIR}/epuzanov-${ZPACKPREFIX}${PORTNAME}-cfbd596
 ZPACK=	${ZPACKPREFIX}${PORTNAME}-2.7-${PYTHON_VERSION:S/thon//}.egg
 ZPACKPREFIX=	ZenPacks.community.
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

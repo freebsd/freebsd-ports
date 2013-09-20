@@ -1,7 +1,4 @@
-# New ports collection makefile for:	flowviewer
-# Date created:			Oct 15, 2006
-# Whom:				Alex Samorukov, samm@os2.kiev.ua
-#
+# Created by: Alex Samorukov, samm@os2.kiev.ua
 # $FreeBSD$
 
 PORTNAME=	flowviewer
@@ -34,6 +31,7 @@ NO_BUILD=	yes
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e "s|%%PREFIX%%|${PREFIX}|" \

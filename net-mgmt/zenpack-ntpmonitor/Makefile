@@ -20,4 +20,5 @@ USE_ZIP=	yes
 ZPACKGROUP=	core
 WRKSRC=	${WRKDIR}/tags/zenoss-3.1.0/zenpacks/${ZPACKPREFIX}${PORTNAME}/
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

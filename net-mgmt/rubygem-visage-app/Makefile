@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-visage
-# Date created:				17 January 2012
-# Whom:					Brad Davis <brd@FreeBSD.org>
-#
+# Created by: Brad Davis <brd@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	visage-app
 PORTVERSION=	2.1.0
@@ -25,4 +21,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/visage-app
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -21,6 +21,7 @@ MAN1=		echolot.1
 PORTDOCS=	*
 PLIST_FILES=	bin/echolot
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

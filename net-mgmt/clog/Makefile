@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  clog
-# Date created:			  Tue Nov 04, 1997
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	clog
 PORTVERSION=	1.6
@@ -19,6 +14,7 @@ WRKSRC=		${WRKDIR}/clog
 ALL_TARGET=	freebsd
 MAN8=		clog.8
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/clog ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/clog.8 ${PREFIX}/man/man8

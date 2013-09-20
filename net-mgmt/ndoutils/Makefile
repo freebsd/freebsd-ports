@@ -29,6 +29,7 @@ USES=		perl5
 USE_RC_SUBR=	ndo2db
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

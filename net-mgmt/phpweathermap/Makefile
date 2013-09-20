@@ -1,9 +1,5 @@
-# New ports collection makefile for:	phpweathermap
-# Date created:		2011-01-06
-# Whom:			Hsin-Han You <hhyou@cs.nctu.edu.tw>
-#
+# Created by: Hsin-Han You <hhyou@cs.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	phpweathermap
 PORTVERSION=	0.97a
@@ -38,6 +34,7 @@ WRKSRC=		${WRKDIR}/weathermap
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 post-patch:
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/editor.php

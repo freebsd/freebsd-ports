@@ -25,4 +25,5 @@ PLIST_DIRSTRY=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/GRNOC/Config \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/GRNOC \
 		%%SITE_PERL%%/GRNOC
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

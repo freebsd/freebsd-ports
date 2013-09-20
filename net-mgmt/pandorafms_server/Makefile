@@ -59,6 +59,7 @@ MAN3=		PandoraFMS::Core.3 \
 SUB_FILES=	pkg-message 199.clean-pandoradb
 USE_RC_SUBR=	${PORTNAME}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/bsd.pandora.mk"
 
 PORTDOCS+=	README

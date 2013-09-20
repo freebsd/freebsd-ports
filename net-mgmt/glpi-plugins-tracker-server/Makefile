@@ -1,9 +1,5 @@
-# New ports collection makefile for:   glpi-plugins-tracker-server
-# Date created:        31 October 2009
-# Whom:                ddurieux <d.durieux@siprossii.com>
-#
+# Created by: ddurieux <d.durieux@siprossii.com>
 # $FreeBSD$
-#
 
 PORTNAME=	server
 DISTVERSION=	2.1.3
@@ -27,6 +23,7 @@ CPIOARGS=	--quiet -pdum -R
 
 GLPIPLUGINDIR?=	www/glpi/plugins/tracker
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-configure:

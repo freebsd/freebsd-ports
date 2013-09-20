@@ -29,6 +29,7 @@ NFTRACK_DESC=		With PortTracker support
 SFLOW_DESC=		Build sflow collector daemon also
 NFDUMP15_DESC=		Enable compatbility with version 1.5
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|-ggdb||' ${WRKSRC}/bin/Makefile.in
 

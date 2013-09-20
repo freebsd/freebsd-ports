@@ -19,4 +19,5 @@ CONFIGURE_ARGS=--with-libdnet=${LOCALBASE}
 
 PLIST_FILES=	bin/arpscan
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

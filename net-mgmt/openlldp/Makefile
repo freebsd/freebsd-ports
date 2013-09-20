@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openlldp
-# Date created:		27 May 2007
-# Whom:			Roar Pettersen <roar@uib.no>
-#
+# Created by: Roar Pettersen <roar@uib.no>
 # $FreeBSD$
-#
 
 PORTNAME=	openlldp
 DISTVERSION=	0.4alpha
@@ -21,6 +17,7 @@ PLIST_FILES=	sbin/lldpd bin/lldpneighbors
 
 MAN8=	lldpd.8
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/^CFLAGS =/CFLAGS +=/g' \
 		${WRKSRC}/src/Makefile.in

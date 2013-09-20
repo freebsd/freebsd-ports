@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Zenoss
-# Date created:                         25 August 2011
-# Whom:                                 Phil Phillips
-#
+# Created by: Phil Phillips
 # $FreeBSD$
-#
 
 PORTNAME=	Zenoss
 PORTVERSION=	1.11
@@ -47,4 +43,5 @@ MAN3=		Zenoss.3 \
 		Zenoss::Router::Tree.3 \
 		Zenoss::Router::ZenPack.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

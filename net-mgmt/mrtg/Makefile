@@ -68,6 +68,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES IPV6 SNMPV3
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

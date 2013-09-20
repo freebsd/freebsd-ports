@@ -67,6 +67,7 @@ CONFLICTS=	collectd-5.[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # NOTE: Feel free to submit patches adding support for any of these

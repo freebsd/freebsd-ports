@@ -38,6 +38,7 @@ SUB_LIST+=	"PORTVERSION=${PORTVERSION}"
 SUB_LIST+=	"PREFIX=${PREFIX}"
 SUB_LIST+=	"WWWDIR=${WWWDIR}"
 
+NO_STAGE=	yes
 post-patch:
 .for nfsenfile in ${REINPLACE_LIST}
 	@${REINPLACE_CMD} ${_SUB_LIST_TEMP} ${WRKSRC}/${nfsenfile}

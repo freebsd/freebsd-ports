@@ -38,6 +38,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 NETXMS_OWN=	netxms
 NETXMS_GRP=	netxms
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SUB_FILES=	pkg-install	pkg-deinstall

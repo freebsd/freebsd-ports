@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bsnmptools
-# Date created:		28 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bsnmptools
 PORTVERSION=	0.0.20060818
@@ -28,6 +24,7 @@ BIN_FILES=	bsnmpget bsnmpset bsnmpwalk
 MAN1=	${BIN_FILES:S/$/.1/}
 MAN3=	${PORTNAME}.3
 
+NO_STAGE=	yes
 post-extract:
 	@${CHMOD} -R u+w ${WRKSRC}
 	@${MV} ${WRKSRC}/lib/libbsnmptools/libbsnmptools ${WRKSRC}/tlib

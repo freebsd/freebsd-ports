@@ -28,6 +28,7 @@ PORTDOCS=	Changelog
 
 CACTIDIR?=	share/cacti
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

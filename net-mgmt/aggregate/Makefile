@@ -1,9 +1,5 @@
-# New ports collection makefile for:   aggregate
-# Date created:        16 Feb 2001
-# Whom:                jabley
-#
+# Created by: jabley
 # $FreeBSD$
-#
 
 PORTNAME=	aggregate
 PORTVERSION=	1.6
@@ -20,4 +16,5 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/aggregate bin/aggregate-ios
 MAN1=		aggregate.1 aggregate-ios.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

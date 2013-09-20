@@ -1,9 +1,5 @@
-# New ports collection makefile for:  		packit
-# Date created:        				02.06.2003
-# Whom:               				Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	packit
 PORTVERSION=	1.0
@@ -32,6 +28,7 @@ CONFIGURE_ARGS+=	--without-capture
 CONFIGURE_ARGS+=	--without-injection
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lnet|`${LIBNET_CONFIG} --libs`|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}

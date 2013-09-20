@@ -1,7 +1,4 @@
-# New ports collection makefile for:	cdpd
-# Date created:				26 Sep 2001
-# Whom:					Alexandre Snarskii <snar@paranoia.ru>
-#
+# Created by: Alexandre Snarskii <snar@paranoia.ru>
 # $FreeBSD$
 
 PORTNAME=	cdpd
@@ -20,6 +17,7 @@ PLIST_FILES=	sbin/cdpd
 
 MAN8=	cdpd.8
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cdpd ${PREFIX}/sbin
 	@${INSTALL_MAN} ${WRKSRC}/cdpd.8 ${MAN8PREFIX}/man/man8

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ifgraph
-# Date created:				Sep 18 2003
-# Whom:                                 Lars Thegler <lars@thegler.dk>
-#
+# Created by: Lars Thegler <lars@thegler.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	ifgraph
 PORTVERSION=	0.4.10
@@ -35,6 +31,7 @@ DOCFILES=	CHANGELOG INSTALACAO INSTALL TODO LICENSE.TXT MUDANCAS
 SUB_FILES=	crontab pkg-deinstall pkg-install pkg-message
 SUB_LIST=	USER=${USERS} PERL=${PERL}
 
+NO_STAGE=	yes
 do-install:
 .for plfile in ${PLFILES}
 	@ ${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \

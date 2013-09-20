@@ -1,9 +1,4 @@
-# New ports collection makefile for:	nagios-check_kumofs
-# Date created:		29 Apr 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	check_kumofs
 PORTVERSION=	0.20100118
@@ -21,6 +16,7 @@ RUN_DEPENDS=	\
 
 PLIST_FILES=	libexec/nagios/check_kumomgr libexec/nagios/check_kumosvr
 
+NO_STAGE=	yes
 do-build:
 	${MKDIR} ${WRKSRC}
 .for f in check_kumomgr check_kumosvr

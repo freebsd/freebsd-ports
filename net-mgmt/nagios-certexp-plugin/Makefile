@@ -1,7 +1,4 @@
-# New ports collection makefile for:	nagios-certexp-plugin
-# Date created:				2007-03-20
-# Whom:					ecronin@gizmolabs.org
-#
+# Created by: ecronin@gizmolabs.org
 # $FreeBSD$
 
 PORTNAME=	nagios-certexp-plugin
@@ -26,6 +23,7 @@ PLIST_DIRS=	${NAGIOS_PLUGIN_DIR}
 
 NAGIOS_PLUGIN_DIR=	libexec/nagios
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}/check_certexp.pl

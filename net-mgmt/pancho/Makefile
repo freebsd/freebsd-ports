@@ -22,6 +22,7 @@ MAN1=		pancho.1
 
 DOCS=		README README.plugins Plugin.sample
 
+NO_STAGE=	yes
 post-patch:
 	@${MV} ${WRKSRC}/lib/Pancho/Plugins/README ${WRKSRC}/README.plugins
 	@${MV} ${WRKSRC}/lib/Pancho/Plugins/Plugin.sample ${WRKSRC}/

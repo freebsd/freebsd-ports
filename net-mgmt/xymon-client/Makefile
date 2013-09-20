@@ -29,6 +29,7 @@ PLIST_SUB+=	XYMONUSER="${XYMONUSER}"
 CONFIG_FILES=	clientlaunch.cfg xymonclient.cfg localclient.cfg
 
 # Configure script is interactive
+NO_STAGE=	yes
 do-configure:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
 

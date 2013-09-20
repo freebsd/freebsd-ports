@@ -43,6 +43,7 @@ NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
 NAGIOSPOLLIP?=	127.0.0.1
 NAGIOSPOLLIP6?=	::1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS=	--with-nagios-user=${NAGIOSUSER} \

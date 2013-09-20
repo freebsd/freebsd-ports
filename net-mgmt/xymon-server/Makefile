@@ -68,6 +68,7 @@ MAN8=	enadis.cgi.8 xymon-mailack.8 xymoncgimsg.cgi.8 xymond.8 \
 OPTIONS_DEFINE=LDAP NETSNMP
 NETSNMP_DESC=Enable Net-SNMP support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAP}

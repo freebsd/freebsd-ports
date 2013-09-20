@@ -1,9 +1,5 @@
-# New ports collection makefile for:   net-mgmt/iog
-# Date created:        4 May 2003
-# Whom:                Larry Rosenman <ler@lerctr.org>
-#
+# Created by: Larry Rosenman <ler@lerctr.org>
 # $FreeBSD$
-#
 
 PORTNAME=	iog
 PORTVERSION=	1.03
@@ -24,6 +20,7 @@ IOG_GROUP=	www
 
 IOGDIR=	${PREFIX}/iog/iog-${PORTVERSION}
 
+NO_STAGE=	yes
 do-install:
 	@PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 	@${MKDIR} -m 755 ${IOGDIR}

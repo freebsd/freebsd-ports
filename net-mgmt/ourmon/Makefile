@@ -1,7 +1,4 @@
-# New ports collection makefile for:    ourmon
-# Date created: 01 May 2005
-# Whom:         Charlie Schluting <manos@cs.pdx.edu>
-#
+# Created by: Charlie Schluting <manos@cs.pdx.edu>
 # $FreeBSD$
 
 PORTNAME=	ourmon
@@ -30,6 +27,7 @@ SUB_FILES=	pkg-message
 
 USE_RC_SUBR=	ourmon
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::

@@ -18,6 +18,7 @@ MAN8=		portmon.8
 PORTDOCS=	README
 PLIST_FILES=	bin/portmon etc/portmon.hosts.sample
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' \
 		 ${WRKSRC}/extras/${PORTNAME}.8

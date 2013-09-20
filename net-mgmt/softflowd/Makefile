@@ -17,6 +17,7 @@ MAN8=		softflowd.8 softflowctl.8
 PORTDOCS=	README
 USE_RC_SUBR=	softflowd
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

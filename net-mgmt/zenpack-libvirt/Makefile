@@ -24,4 +24,5 @@ ZPACKGROUP=	community
 WRKSRC=	${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
 TAG=	4113cfe
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

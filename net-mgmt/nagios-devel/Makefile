@@ -46,6 +46,7 @@ NAGIOSGID=	${NAGIOSUID}
 NAGIOSHTMURL?=	/nagios
 NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC

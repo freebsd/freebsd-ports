@@ -29,6 +29,7 @@ USE_PHP=	mysql pcre zlib session xml gd zip openssl mbstring
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

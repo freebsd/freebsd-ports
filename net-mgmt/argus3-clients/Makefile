@@ -20,6 +20,7 @@ OPTIONS_DEFAULT=MANPAGES MYSQL SASL
 USES=		bison ncurses perl5
 USE_CSTD=	gnu89
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 GNU_CONFIGURE=	true

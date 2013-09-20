@@ -31,6 +31,7 @@ USE_MYSQL=	yes
 USE_PHP=	ctype mysqli session gmp
 WANT_PHP_WEB=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAP}

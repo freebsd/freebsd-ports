@@ -1,9 +1,5 @@
-# New ports collection makefile for:   netustad
-# Date created:                 9 February 2005
-# Whom:                         Ozkan KIRIK <ozkan@enderunix.org>
-#
+# Created by: Ozkan KIRIK <ozkan@enderunix.org>
 # $FreeBSD$
-#
 
 PORTNAME=	netustad
 PORTVERSION=	0.3.1
@@ -27,6 +23,7 @@ SSL_DESC=	Use netUstad with SSL support
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ipv6calc
-# Date created:				30 January 2002
-# Whom:				Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ipv6calc
 PORTVERSION=	0.94.0
@@ -21,4 +17,5 @@ PLIST_FILES=	bin/ipv6calc bin/ipv6logconv bin/ipv6logstats bin/ipv6loganon
 
 MAN8=		ipv6calc.8 ipv6logconv.8 ipv6logstats.8 ipv6loganon.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

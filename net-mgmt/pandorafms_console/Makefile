@@ -25,6 +25,7 @@ WANT_PHP_WEB=	yes
 SUB_FILES+=	pandora_console.conf
 SUB_LIST+=	APACHEETCDIR=${PREFIX}/${APACHEETCDIR}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../pandorafms_server/bsd.pandora.mk"
 
 .include <bsd.port.pre.mk>

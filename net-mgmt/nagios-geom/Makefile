@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nagios-geom
-# Date created:				20 August 2008
-# Whom:					rea-fbsd@codelabs.ru
-#
+# Created by: rea-fbsd@codelabs.ru
 # $FreeBSD$
-#
 
 PORTNAME=	geom
 PORTVERSION=	1.3
@@ -21,6 +17,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PATCH_STRIP=	-p1
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/libexec/nagios
 	${INSTALL_SCRIPT} ${WRKSRC}/check_geom ${PREFIX}/libexec/nagios

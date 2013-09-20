@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-SNMP-MIB-Compiler
-# Date created:				December 12, 2001
-# Whom:	      				Joe Clarke <marcus@marcuscom.com
-#
+# Created by: Joe Clarke <marcus@marcuscom.com
 # $FreeBSD$
-#
 
 PORTNAME=	SNMP-MIB-Compiler
 PORTVERSION=	0.06
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 MAN3=		SNMP::MIB::Compiler.3 \
 		Bundle::SNMP::MIB::Compiler.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

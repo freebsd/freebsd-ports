@@ -1,9 +1,5 @@
-# New ports collection makefile for:   net-mgmt/nagtail
-# Date created:        1 June 2011
-# Whom:                Ryan Steinmetz <rpsfa@rit.edu>
-#
+# Created by: Ryan Steinmetz <rpsfa@rit.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	nagtail
 PORTVERSION=	0.0.31
@@ -21,6 +17,7 @@ MAN1=		nagtail.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/nagtail
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

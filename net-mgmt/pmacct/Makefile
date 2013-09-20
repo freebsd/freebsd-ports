@@ -27,6 +27,7 @@ MMAP_DESC=	Enable mmap(2) support
 LAYER2_DESC=	Enable Layer-2 support: MAC addresses and VLANs
 SHARED_DESC=	Enable shared objects
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>

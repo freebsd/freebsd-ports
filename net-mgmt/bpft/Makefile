@@ -25,6 +25,7 @@ MANCOMPRESSED=	yes
 MAN1=		traflog.1 trafstat.1
 MAN8=		trafstatd.8 trafd.8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

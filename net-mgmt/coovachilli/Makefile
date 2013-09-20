@@ -1,9 +1,5 @@
-# New ports collection makefile for:	CoovaChilli
-# Date created:		24 December 2006
-# Whom:			Sevan Janiyan <venture37@geeklan.co.uk>
-#
+# Created by: Sevan Janiyan <venture37@geeklan.co.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	coovachilli
 PORTVERSION=	1.0.12
@@ -30,6 +26,7 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	coovachilli
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Telnet-Cisco-IOS
-# Date created:		2008-02-07
-# Whom:			Tsung-Han Yeh <snowfly@yunteche.du.tw>
-#
+# Created by: Tsung-Han Yeh <snowfly@yunteche.du.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Telnet-Cisco-IOS
 PORTVERSION=	0.6
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::Telnet::Cisco::IOS.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	arpalert
-# Date created:				11 May 2006
-# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	arpalert
 PORTVERSION=	2.0.12
@@ -19,4 +15,5 @@ ALL_TARGET=	${PORTNAME}
 
 MAN8=		arpalert.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

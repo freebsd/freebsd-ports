@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ipaudit
-# Date created:		15 July 2003
-# Whom:			Ying-Chieh Chen <yinjieh@csie.nctu.edu.tw>
-#
+# Created by: Ying-Chieh Chen <yinjieh@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	ipaudit
 PORTVERSION=	0.95
@@ -21,6 +17,7 @@ BIN=		ipaudit ipstrings total
 MSG_FILE=	${PKGDIR}/pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 do-install:
 .for b in ${BIN}
 	cd ${WRKSRC}/src && ${INSTALL_PROGRAM} $b ${PREFIX}/bin

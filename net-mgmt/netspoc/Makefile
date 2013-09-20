@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	netspoc
-# Date created:			Nov 3, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	netspoc
 PORTVERSION=	3.2
@@ -26,6 +21,7 @@ MAN3=		Netspoc.3
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

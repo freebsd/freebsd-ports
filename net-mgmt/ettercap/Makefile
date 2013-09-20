@@ -40,6 +40,7 @@ MAN8=		ettercap.8 ettercap_curses.8 etterfilter.8 etterlog.8
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}

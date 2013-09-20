@@ -30,6 +30,7 @@ MAN3=		Ocsinventory::Agent::XML::Inventory.3 \
 SUB_FILES=	pkg-message
 SUB_LIST=	SITE_PERL=${SITE_PERL}
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

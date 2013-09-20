@@ -1,9 +1,5 @@
-# New ports collection makefile for:	whatmask
-# Date created:			May 20, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	whatmask
 PORTVERSION=	1.2
@@ -21,6 +17,7 @@ MAN1=		whatmask.1
 DOCS=		AUTHORS ChangeLog README
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}

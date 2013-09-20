@@ -109,6 +109,7 @@ ETC_FILES=	common.cfg \
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	ETC_FILES="${ETC_FILES}"
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${ETCDIR}
 .for f in ${ETC_FILES}

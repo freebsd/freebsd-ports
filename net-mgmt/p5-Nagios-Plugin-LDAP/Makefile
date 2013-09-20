@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Nagios-Plugin-LDAP
-# Date created:		01 Mar 2011
-# Whom:			Alexander Kriventsov <avk@vl.ru>
-#
+# Created by: Alexander Kriventsov <avk@vl.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Nagios-Plugin-LDAP
 PORTVERSION=	0.04
@@ -26,6 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=		Nagios::Plugin::LDAP.3
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 

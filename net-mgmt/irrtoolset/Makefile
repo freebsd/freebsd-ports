@@ -17,4 +17,5 @@ USE_AUTOTOOLS=	libtool
 
 MAN1=		rtconfig.1 peval.1 rpslcheck.1 irrtoolset-errors.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

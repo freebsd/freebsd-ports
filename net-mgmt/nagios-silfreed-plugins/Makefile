@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nagios-silfreed-plugins
-# Date created:				22 Jul 2004
-# Whom:					Bruce M Simpson <bms@FreeBSD.org>
-#
+# Created by: Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nagios-silfreed-plugins
 PORTVERSION=	1.1
@@ -38,6 +34,7 @@ NO_WRKSUBDIR=	yes
 
 NAGIOS_PLUGIN_DIR=	${PREFIX}/libexec/nagios
 
+NO_STAGE=	yes
 pre-everything::
 .if !defined(WITH_EXPECT_TOOLS)
 	@${ECHO_MSG} "${PORTNAME} has the following tunable option(s):"

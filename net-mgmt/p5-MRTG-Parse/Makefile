@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MRTG-Parse
-# Date created:		2008-07-23
-# Whom:			gslin <gslin@gslin.org>
-#
+# Created by: gslin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	MRTG-Parse
 PORTVERSION=	0.03
@@ -20,4 +16,5 @@ USE_PERL5=	configure
 
 MAN3=		MRTG::Parse.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

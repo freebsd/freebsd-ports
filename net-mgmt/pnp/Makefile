@@ -24,6 +24,7 @@ OPTIONS_DEFINE=	PDF
 OPTIONS_DEFAULT=	PDF
 PDF_DESC=	Use built-in fpdf library to produce PDF views
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_PHP=	gd iconv json pcre simplexml sockets xml zlib

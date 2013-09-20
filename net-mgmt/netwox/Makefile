@@ -20,6 +20,7 @@ MAN1=		netwox.1 netwox${SHORTPORTVERSION}.1
 
 PLIST_SUB+=	SHORTPORTVERSION=${SHORTPORTVERSION}
 
+NO_STAGE=	yes
 do-configure:
 		@${REINPLACE_CMD} \
 		-e 's|%%PREFIX%%|${PREFIX}|' \

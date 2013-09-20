@@ -21,6 +21,7 @@ LICENSE=	GPLv2
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 .if defined(WITH_DAG)
+NO_STAGE=	yes
 post-configure:
 	${ECHO_CMD} "#define BSD 1" >> ${WRKSRC}/config.h
 .endif

@@ -20,4 +20,5 @@ CONFIGURE_ARGS=	--with-snmp-prefix=${PREFIX} --with-snmp-type=net
 CPPFLAGS+=	`net-snmp-config --cflags`
 LDFLAGS+=	`net-snmp-config --libs`
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

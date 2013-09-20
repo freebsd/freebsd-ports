@@ -25,6 +25,7 @@ SCRIPTS=	snmptt snmptt-net-snmp-test snmpttconvert \
 DOCS=		faqs.html index.html layout1.css snmptt.html \
 		snmpttconvert.html snmpttconvertmib.html
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:

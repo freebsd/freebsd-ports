@@ -28,6 +28,7 @@ FLOWD_USER=	_flowd
 USERS=		${FLOWD_USER}
 GROUPS=		${FLOWD_USER}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPERL}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	netleak
-# Date created:				1 Nov 2005
-# Whom:					Vaida Bogdan
-#
+# Created by: Vaida Bogdan
 # $FreeBSD$
-#
 
 PORTNAME=	netleak
 PORTVERSION=	0.1a
@@ -32,6 +28,7 @@ MAN8=		netleak.8 netleakd.8
 PLIST_FILES=	etc/netleak.conf etc/netleakd.conf sbin/netleak sbin/netleakd
 PORTDOCS=	BUGS README TODO
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

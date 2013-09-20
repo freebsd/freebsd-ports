@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nagios-snmp-plugins
-# Date created:				19 Jul 2004
-# Whom:					Bruce M Simpson <bms@FreeBSD.org>
-#
+# Created by: Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nagios-snmp-plugins
 PORTVERSION=	1.2
@@ -34,6 +30,7 @@ CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 # Workaround configure.in lameness.
 CPPFLAGS+=	`net-snmp-config --cflags`
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-configure:

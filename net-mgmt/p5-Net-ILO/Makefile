@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-ILO
-# Date created:				2012-04-03
-# Whom:					Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-#
+# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-ILO
 PORTVERSION=	0.54
@@ -28,4 +24,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::ILO.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

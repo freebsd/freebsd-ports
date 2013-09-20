@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ipacco
-# Date created:		25 June 2006
-# Whom:			Babak Farrokhi <babak@farrokhi.net>
-#
+# Created by: Babak Farrokhi <babak@farrokhi.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ipacco
 PORTVERSION=	0.2.0.1
@@ -36,6 +32,7 @@ PORTDOCS1=	INSTALL.html INSTALL.txt RELNOTES.html RELNOTES.txt
 PORTDOCS2=	README.html README.txt LICENSE CreateDB.sql
 .endif
 
+NO_STAGE=	yes
 pre-install:
 	@${FIND} ${WRKSRC} -name '*.bak' -type f -print0 | ${XARGS} -0 ${RM} -f
 

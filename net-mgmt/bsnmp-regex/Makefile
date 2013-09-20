@@ -17,6 +17,7 @@ CPPFLAGS+=	"-I${LOCALBASE}/include"
 OPTIONS_DEFINE=	DEBUG PCRE
 PCRE_DESC=	Use PCRE instead of the default regex library
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

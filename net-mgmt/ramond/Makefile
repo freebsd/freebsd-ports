@@ -20,6 +20,7 @@ USE_RC_SUBR=	ramon
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr1

@@ -56,6 +56,7 @@ CONFIG_FILES=	netdisco.conf netdisco.crontab netdisco-topology.txt \
 
 DOCFILES=	ChangeLog doc/*.pod INSTALL README* UPGRADE
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 MIBSDIR=	${PREFIX}/share/netdisco-mibs

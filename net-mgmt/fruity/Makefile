@@ -22,6 +22,7 @@ USE_MYSQL=	yes
 SUB_LIST+=	REQ_MYSQL=mysql
 USE_PHP=	mysql session dba pcre
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

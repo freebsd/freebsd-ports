@@ -24,6 +24,7 @@ USE_PERL5=	configure
 
 MAN3=		Net::Abuse::Utils.3
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/ip-info.pl ${PREFIX}/sbin/
 

@@ -32,6 +32,7 @@ OPTIONS_DEFAULT=GD
 QPAGE_DESC=	qpage support
 FPING_DESC=	fping support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQPAGE}

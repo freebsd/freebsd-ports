@@ -45,6 +45,7 @@ USERCGI=	.htaccess config.cgi netams_api.pl russian.res \
 IMAGES=		logo_sm.jpg admintool-logo.gif showtable-logo.gif rrdgraph-logo.gif
 MAN8=		netams.8 flowprobe.8 netamsctl.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPOSTGRESQL}

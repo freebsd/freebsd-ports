@@ -18,6 +18,7 @@ MAN8=		ipacctd.8
 MANLANG=	"" ru.KOI8-R
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

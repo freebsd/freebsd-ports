@@ -1,7 +1,4 @@
-# New ports collection makefile for:	nagios-spamd-plugin
-# Date created:				2005-10-29
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	nagios-spamd-plugin
@@ -25,6 +22,7 @@ PLIST_DIRS=	${NAGIOS_PLUGIN_DIR}
 
 NAGIOS_PLUGIN_DIR=	libexec/nagios
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}/check_spamd.pl

@@ -25,6 +25,7 @@ GD_DESC=	Use GD
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_PHP=	session snmp mysql

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	routers2
-# Date created:				December 11th 2006
-# Whom:	      				Xavier Beaudouin <kiwi@oav.net>
-#
+# Created by: Xavier Beaudouin <kiwi@oav.net>
 # $FreeBSD$
-#
 
 PORTNAME=	routers2
 PORTVERSION=	2.19
@@ -32,6 +28,7 @@ USES=		perl5
 
 NO_BUILD=	YES
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/extras/targetnames/BER.pm ${WRKSRC}/extras/targetnames/SNMP_*.pm
 	for file in routers2.cgi.pl routers2.conf ; do \

@@ -28,4 +28,5 @@ MAN1=		remote-viewer.1 virt-viewer.1
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

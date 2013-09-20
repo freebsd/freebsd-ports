@@ -26,6 +26,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PORTDOCS=	CHANGES \
 		README
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

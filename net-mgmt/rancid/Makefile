@@ -46,6 +46,7 @@ OPTIONS_DEFAULT=
 
 SVN_DESC=		Use Subversion instead of CVS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSVN}

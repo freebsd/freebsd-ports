@@ -21,6 +21,7 @@ PORTDOCS=	COPYING CREDITS ChangeLog KNOWN_BUGS README TODO win-memleak.txt
 MAN1=		p0f.1
 WRKSRC=		${WRKDIR}/p0f
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

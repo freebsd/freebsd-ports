@@ -17,6 +17,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 MAN8=		${PORTNAME}.8
 
+NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} -e 's|/share/man|/man|g' ${WRKSRC}/Makefile
 

@@ -21,4 +21,5 @@ USE_LDCONFIG=	yes
 
 MAN1=		gsnmp-get.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

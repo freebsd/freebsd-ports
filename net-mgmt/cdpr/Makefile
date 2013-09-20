@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  cdpr
-# Date created:                          Tue Jul 08, 2002
-# Whom:                                  Michael L. Hostbaek (mich@freebsdcluster.org)
-#
+# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
 # $FreeBSD$
-#
 
 PORTNAME=	cdpr
 PORTVERSION=	2.2.1
@@ -18,6 +13,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lpcap
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
+NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} ${LDFLAGS} -o ${PORTNAME} ${PORTNAME}.c cdprs.c conffile.c)
 

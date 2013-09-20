@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-ACL
-# Date created:		2006-08-25
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-ACL
 PORTVERSION=	0.07
@@ -36,4 +32,5 @@ MAN3=		Net::ACL.3 Net::ACL::Bootstrap.3 Net::ACL::File.3 \
 		Net::ACL::Rule.3 Net::ACL::Set.3 Net::ACL::Set::Add.3 \
 		Net::ACL::Set::Scalar.3 Net::ACL::Set::Union.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

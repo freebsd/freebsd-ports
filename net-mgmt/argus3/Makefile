@@ -19,6 +19,7 @@ OPTIONS_DEFAULT=SASL MANPAGES
 
 USE_RC_SUBR=	argus
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USES=		bison perl5

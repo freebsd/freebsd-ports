@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	gps
-# Date created:			Nov 25, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gps
 PORTVERSION=	0.9.3
@@ -23,6 +18,7 @@ USE_GMAKE=	yes
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

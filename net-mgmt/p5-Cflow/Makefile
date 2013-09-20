@@ -18,6 +18,7 @@ FLOW_TOOLS_DESC=	Enable flow-tools support
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFLOW_TOOLS}

@@ -12,6 +12,7 @@ COMMENT=	Mibs for use with ports-mgmt/netdisco (and snmp)
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include "bsd.port.netdisco.mk"
 
 do-install:

@@ -53,6 +53,7 @@ MAN3=		Net::NSCA::Client.3 \
 		Net::NSCA::Client::Troubleshooting.3 \
 		Net::NSCA::Client::Utils.3
 
+NO_STAGE=	yes
 post-patch:
 	@cd ${WRKSRC} && ${RM} -f bin/send_nsca
 	@cd ${WRKSRC} && ${RM} -f t/send_nsca.t

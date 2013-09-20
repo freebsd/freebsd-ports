@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nagios-check_ports
-# Date created: 	13 August 2008
-# Whom:			Anders Troback
-#
+# Created by: Anders Troback
 # $FreeBSD$
-#
 
 PORTNAME=	check_ports
 PORTVERSION=	0.6.1
@@ -19,6 +15,7 @@ RUN_DEPENDS=	portaudit:${PORTSDIR}/ports-mgmt/portaudit
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

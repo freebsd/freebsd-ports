@@ -23,6 +23,7 @@ PLUGIN_DIR=	libexec/nagios
 
 SHEBANG_FILES=	check_multi
 
+NO_STAGE=	yes
 do-install:
 	-${MKDIR} ${PREFIX}/${PLUGIN_DIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/check_multi ${PREFIX}/${PLUGIN_DIR}/

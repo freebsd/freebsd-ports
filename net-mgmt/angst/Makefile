@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	angst
-# Date created:			Dec 4, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	angst
 PORTVERSION=	0.4b
@@ -24,6 +19,7 @@ PLIST_FILES=	sbin/angst
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -Ee \
 		's,^(CC|CFLAGS).*,#&,; \

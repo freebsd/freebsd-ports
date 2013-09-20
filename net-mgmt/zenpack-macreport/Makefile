@@ -21,4 +21,5 @@ TAG=	b345f53
 
 ZPACKPREFIX=	ZenPacks.sodonnell.
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

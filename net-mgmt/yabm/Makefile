@@ -1,9 +1,5 @@
-# New ports collection makefile for:   	yabm
-# Date created:                         15 January 2005
-# Whom: 				Fredrik Lindberg <fli@shapeshifter.se>
-#
+# Created by: Fredrik Lindberg <fli@shapeshifter.se>
 # $FreeBSD$
-#
 
 PORTNAME=	yabm
 PORTVERSION=	0.2.1
@@ -21,6 +17,7 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=/etc/rc.subr
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-extract:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/scripts/yabm.sh.sample > ${WRKSRC}/scripts/yabm.sh

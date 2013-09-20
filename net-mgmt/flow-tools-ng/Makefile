@@ -1,9 +1,5 @@
-# New ports collection makefile for:	flow-tools
-# Date created:				2000 Jul 25
-# Whom:					@BABOLO <.@babolo.ru>
-#
+# Created by: @BABOLO <.@babolo.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	flow-tools
 PORTVERSION=	0.68.5.1
@@ -69,6 +65,7 @@ CONFIGURE_ARGS+=--with-openssl="${OPENSSLBASE}"
 CONFIGURE_ARGS+=--without-openssl
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD}\
 	 -e 's|@sysconfdir@/sym/|${PREFIX}/share/flow-tools/|' \
