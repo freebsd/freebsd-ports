@@ -14,6 +14,7 @@ COMMENT=	A sound toolkit for scripting languages
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 
 USE_TK=		84+
+NO_STAGE=	yes
 
 OPTIONS_DEFINE=	VORBIS DOCS
 

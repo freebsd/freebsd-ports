@@ -12,6 +12,7 @@ COMMENT=	Renaming program for MP3 files based on their ID3 tag
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
+NO_STAGE=	yes
 PLIST_FILES=	bin/mp3rename
 
 do-build:

@@ -14,6 +14,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
 
+NO_STAGE=	yes
 USES=		cmake pkgconfig
 USE_OPENAL=	soft
 USE_LDCONFIG=	yes

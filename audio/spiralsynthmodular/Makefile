@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
 LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk \
 		sndfile:${PORTSDIR}/audio/libsndfile
 
+NO_STAGE=	yes
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 

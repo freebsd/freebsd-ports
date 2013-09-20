@@ -14,6 +14,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		gdk_pixbuf_xlib.2:${PORTSDIR}/graphics/gdk-pixbuf
 
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 USE_CSTD=	gnu89
 
 MAN1=		wmalbum.1

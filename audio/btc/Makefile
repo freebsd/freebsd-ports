@@ -12,6 +12,7 @@ COMMENT=	Tool for creating bass tablature
 
 WRKSRC=		${WRKDIR}
 
+NO_STAGE=	yes
 PLIST_FILES=	bin/btc
 PORTDOCS=	btc.doc
 

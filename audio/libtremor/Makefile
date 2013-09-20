@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libtremor
-# Date created:				07 December 2003
-# Whom:					kwm@rainbow-runner.nl
-#
+# Created by: kwm@rainbow-runner.nl
 # $FreeBSD$
-#
 
 PORTNAME=	libtremor
 PORTVERSION=	1.0.2.${SNAP_DATE}
@@ -19,6 +15,7 @@ COMMENT=	Integer-only fully Ogg Vorbis compliant decoder library
 SNAP_DATE=	02132004
 WRKSRC=		${WRKDIR}/Tremor
 USE_AUTOTOOLS=	automake autoconf libtool
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

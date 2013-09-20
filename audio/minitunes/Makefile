@@ -1,9 +1,5 @@
-# New ports collection makefile for:	minitunes
-# Date created:		2010-07-06
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	minitunes
 PORTVERSION=	0.1.1
@@ -16,6 +12,7 @@ COMMENT=	Minitunes is just another music player
 
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib
 
+NO_STAGE=	yes
 USE_QT4=	dbus gui moc_build network phonon qmake_build rcc_build \
 		sql uic_build xml
 INSTALLS_ICONS=	yes

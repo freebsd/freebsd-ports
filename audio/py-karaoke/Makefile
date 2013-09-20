@@ -24,6 +24,7 @@ OPTIONS_DEFINE=	MUTAGEN
 MUTAGEN_DESC=	Enable Mutagen support
 
 USES=		iconv
+NO_STAGE=	yes
 USE_ZIP=	yes
 USE_SDL=	sdl
 USE_XORG=	x11 xau xcb xdmcp

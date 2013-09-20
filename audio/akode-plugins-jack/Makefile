@@ -19,6 +19,7 @@ LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack
 
 CONFLICTS=	kdemultimedia-3.[1-3]*
 
+NO_STAGE=	yes
 PLUGIN=		jack_sink
 PORTNAMESUFX=	${PLUGIN:S/_sink//:S/_decoder//:S/src_//}
 

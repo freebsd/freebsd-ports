@@ -13,6 +13,7 @@ COMMENT=	Multi-effects processor plug-in for XMMS
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USES=		gmake
+NO_STAGE=	yes
 USE_GNOME=	gtk12
 
 PLIST_FILES=	lib/xmms/Effect/libdefx.so

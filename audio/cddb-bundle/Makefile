@@ -13,6 +13,7 @@ COMMENT=	CDDB client bundle GNUstep
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes

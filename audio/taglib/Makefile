@@ -1,9 +1,5 @@
-# New ports collection makefile for:	taglib
-# Date Created:				06 Nov 2003
-# Whom:				 	Frank Laszlo <laszlof@vonostingroup.com>
-#
+# Created by: Frank Laszlo <laszlof@vonostingroup.com>
 # $FreeBSD$
-#
 
 PORTNAME=	taglib
 PORTVERSION=	1.8
@@ -23,6 +19,7 @@ OPTIONS_DEFINE=	RCC
 RCC_DESC=	Build with RusXMMS librcc patches (experimental)
 
 USES=		cmake
+NO_STAGE=	yes
 CMAKE_ARGS=	-DWITH_ASF:BOOL=ON \
 		-DWITH_MP4:BOOL=ON
 USE_LDCONFIG=	yes

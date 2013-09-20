@@ -13,6 +13,7 @@ COMMENT=	Command-line player for MPEG Layer 1, 2, and 3 audio files
 LICENSE=	LGPL21
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool libltdl
 USE_GNOME=	gnomehack ltverhack
 USE_LDCONFIG=	yes

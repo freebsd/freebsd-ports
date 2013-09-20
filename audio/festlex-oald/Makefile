@@ -20,6 +20,7 @@ RESTRICTED=	no-commercial-use
 WRKSRC=		${WRKDIR}/festival
 
 NO_BUILD=	yes
+NO_STAGE=	yes
 
 FHOME=		${PREFIX}/share/festival
 

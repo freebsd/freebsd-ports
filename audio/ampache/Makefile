@@ -1,6 +1,4 @@
-# New ports collection makefile for:   ampache
-# Date created:                28 December 2007
-# Whom:                        Philippe Audeoud <jadawin@tuxaco.net>
+# Created by: Philippe Audeoud <jadawin@tuxaco.net>
 # $FreeBSD$
 
 PORTNAME=	ampache
@@ -16,6 +14,7 @@ USE_PHP=	mysql pcre session iconv hash gettext mbstring
 WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
+NO_STAGE=	yes
 USES=		gettext
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall

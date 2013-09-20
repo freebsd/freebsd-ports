@@ -13,6 +13,7 @@ COMMENT=	Loop-based sampler
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+NO_STAGE=	yes
 DOCDIR=		share/doc/${PORTNAME}
 DOC_FILES=	CHANGES COPYING README
 GNU_CONFIGURE=	yes

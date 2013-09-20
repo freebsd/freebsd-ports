@@ -15,6 +15,7 @@ COMMENT=	Real-time graphical equalizer plugin for XMMS
 LIB_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

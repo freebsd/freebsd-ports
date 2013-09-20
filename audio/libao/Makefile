@@ -11,6 +11,7 @@ MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Portable audio output library
 
 USE_AUTOTOOLS=	libtool
+NO_STAGE=	yes
 WANT_GNOME=	yes
 USES=		pathfix pkgconfig
 GNU_CONFIGURE=	yes

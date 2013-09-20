@@ -20,6 +20,7 @@ CONFLICTS=	timidity-0.*
 .endif
 
 USES=		gmake
+NO_STAGE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 

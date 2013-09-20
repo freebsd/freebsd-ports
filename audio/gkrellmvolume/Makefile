@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gkrellmvolume
-# Date Created:		Jun 22 2000
-# Whom:			Hajimu UMEMOTO <ume@FreeBSD.org>
-#
+# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gkrellmvolume
 PORTVERSION=	0.8
@@ -22,5 +18,6 @@ WRKSRC=		${WRKDIR}/volume
 
 PLIST_FILES=	libexec/gkrellm/plugins/volume.so
 USE_GNOME=	imlib
+NO_STAGE=	yes
 
 .include <bsd.port.mk>

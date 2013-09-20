@@ -11,6 +11,7 @@ MAINTAINER=	delphus@gmail.com
 COMMENT=	Another mp3 player
 
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 USES=		gmake
 
 MAN1=		amp.1

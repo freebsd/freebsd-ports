@@ -11,6 +11,7 @@ COMMENT=	Programmable console-based metronome
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 PLIST_FILES=	bin/ctronome \
 		%%DATADIR%%/metronome1.wav \
 		%%DATADIR%%/metronome2.wav

@@ -10,6 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	MP3 console ncurses-based player
 
+NO_STAGE=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes

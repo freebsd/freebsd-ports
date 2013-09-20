@@ -1,9 +1,5 @@
-# New ports collection makefile for: pyvorbis
-# Date created:		23 Sep 2002
-# Whom:			makeport.pl
-#
+# Created by: makeport.pl
 # $FreeBSD$
-#
 
 PORTNAME=	vorbis
 PORTVERSION=	1.4
@@ -22,6 +18,7 @@ LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/ogg/vorbis.so
 USE_PYTHON=		yes
+NO_STAGE=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pyvorbis
 

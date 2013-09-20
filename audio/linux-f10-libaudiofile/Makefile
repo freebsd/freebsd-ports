@@ -1,9 +1,5 @@
-# New ports collection makefile for:	audio/linux-f10-libaudiofile
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	lib${LINUX_NAME}
 PORTVERSION=	0.2.6
@@ -18,6 +14,7 @@ COMMENT=	An implementation of the Audio File Library from SGI (Linux Fedora 10)
 CONTFLICTS=	linux-libaudiofile-[0-9]* linux-f8-libaudiofile-[0-9]*
 
 USE_LINUX_RPM=	yes
+NO_STAGE=	yes
 LINUX_NAME=	audiofile
 LINUX_DIST_VER=	10
 RPMVERSION=	9.fc10

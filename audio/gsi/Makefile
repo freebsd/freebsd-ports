@@ -11,6 +11,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	General sound interface
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USES=		gmake
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" MYFLAGS="${CFLAGS}" OPTIMIZE=""
 USE_LDCONFIG=	yes

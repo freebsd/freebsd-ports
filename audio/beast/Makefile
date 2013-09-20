@@ -21,6 +21,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 OPTIONS_DEFINE_i386=	SSE
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USES=		gmake pathfix gettext pkgconfig
 USE_GCC=	yes
 USE_GNOME=	gnomehier libgnomecanvas

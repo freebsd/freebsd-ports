@@ -17,6 +17,7 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		rdf.0:${PORTSDIR}/textproc/redland
 
 USES=		pkgconfig
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
 USE_LDCONFIG=	yes

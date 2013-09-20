@@ -16,6 +16,7 @@ OPTIONS_DEFAULT=	VORBIS ID3 MP4 FLAC
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 USES=		shebangfix perl5
 USE_BZIP2=	yes
 USE_PERL5=	run

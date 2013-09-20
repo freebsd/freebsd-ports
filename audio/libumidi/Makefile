@@ -12,6 +12,7 @@ COMMENT=	Universal general purpose MIDI library
 
 LICENSE=	BSD
 USE_BZIP2=	yes
+NO_STAGE=	yes
 MAN3=		umidi20.3
 MANCOMPRESSED=	yes
 

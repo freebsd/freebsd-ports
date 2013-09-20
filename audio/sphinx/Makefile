@@ -13,6 +13,7 @@ COMMENT=	Speech recognition system
 
 DEST=		${WRKSRC}/src/libsphinx2/
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USES=		gmake
 USE_AUTOTOOLS=libtool

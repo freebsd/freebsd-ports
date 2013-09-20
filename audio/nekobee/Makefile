@@ -18,6 +18,7 @@ LIB_DEPENDS=	dssialsacompat:${PORTSDIR}/audio/libdssialsacompat \
 		jack:${PORTSDIR}/audio/jack
 
 USE_GITHUB=	yes
+NO_STAGE=	yes
 GH_ACCOUNT=	gordonjcp
 GH_COMMIT=	3f4737f
 

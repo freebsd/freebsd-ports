@@ -18,6 +18,7 @@ ALL_TARGET=	${PROGRAMS}
 
 MAN1=		xmixer.1
 PLIST_FILES=	bin/xmixer
+NO_STAGE=	yes
 
 .include <bsd.port.pre.mk>
 

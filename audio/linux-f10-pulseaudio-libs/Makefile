@@ -1,9 +1,5 @@
-# New ports collection makefile for:	audio/linux-f10-pulseaudio-libs
-# Date created:				2011-04-01
-# Whom:					avg
-#
+# Created by: avg
 # $FreeBSD$
-#
 
 PORTNAME=	pulseaudio-libs
 PORTVERSION=	0.9.14
@@ -18,6 +14,7 @@ COMMENT=	Libraries for PulseAudio clients
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
+NO_STAGE=	yes
 LINUX_DIST_VER=	10
 RPMVERSION=	4.fc10
 SRC_DISTFILES=	${PORTNAME:S/-libs//}-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}

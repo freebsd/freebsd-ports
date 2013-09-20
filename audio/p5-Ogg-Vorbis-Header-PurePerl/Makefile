@@ -16,6 +16,7 @@ LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
 		vorbis:${PORTSDIR}/audio/libvorbis
 
 USES=		perl5
+NO_STAGE=	yes
 USE_PERL5=	configure
 
 MAN3=		Ogg::Vorbis::Header::PurePerl.3

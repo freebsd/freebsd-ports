@@ -1,9 +1,5 @@
-# New ports collection makefile for:	festlex-czech
-# Date created:        			2008-04-29
-# Whom:					František Dvořák <valtri@civ.zcu.cz>
-#
+# Created by: František Dvořák <valtri@civ.zcu.cz>
 # $FreeBSD$
-#
 
 PORTNAME=	festlex-czech
 PORTVERSION=	0.2.1
@@ -17,6 +13,7 @@ COMMENT=	Czech language support for Festival
 
 FHOME=		${PREFIX}/share/festival
 NO_BUILD=	yes
+NO_STAGE=	yes
 rulez=		czech-debug.scm czech-mbrola.scm czech-unisyn.scm czech.scm
 lexicons=	czech-lexicon.scm czech-lexicon.out
 

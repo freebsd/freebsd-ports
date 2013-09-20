@@ -13,6 +13,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A CDDA extraction tool (also known as ripper)
 
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 USES=		gmake
 USE_LDCONFIG=	yes
 

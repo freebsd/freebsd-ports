@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cd-discid
-# Date created:			July 29, 2002
-# Whom:				Munish Chopra <mchopra@engmail.uwaterloo.ca>
-#
+# Created by: Munish Chopra <mchopra@engmail.uwaterloo.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	cd-discid
 PORTVERSION=	0.9
@@ -20,5 +16,6 @@ MAKE_ARGS=	prefix=${PREFIX} mandir=${PREFIX}/man/man1
 
 MAN1=	cd-discid.1
 PLIST_FILES=	bin/cd-discid
+NO_STAGE=	yes
 
 .include <bsd.port.mk>

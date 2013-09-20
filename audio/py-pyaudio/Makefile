@@ -13,6 +13,7 @@ COMMENT=	Portaudio toolkit bindings for Python
 LIB_DEPENDS=	portaudio.2:${PORTSDIR}/audio/portaudio2
 
 USE_PYTHON=		yes
+NO_STAGE=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PyAudio
 

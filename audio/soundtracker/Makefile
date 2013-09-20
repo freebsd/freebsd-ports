@@ -17,6 +17,7 @@ LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
 
 GNU_CONFIGURE=	yes
 USES=		pathfix pkgconfig
+NO_STAGE=	yes
 USE_GNOME=	esound gdkpixbuf
 
 CPPFLAGS+=	-I${LOCALBASE}/include

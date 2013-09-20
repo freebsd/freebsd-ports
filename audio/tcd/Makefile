@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	tcd
-# Date created:				20 June 2008
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	tcd
 PORTVERSION=	2.2.0
@@ -16,6 +12,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A simple, user-friendly ncurses-based CD player
 
 USE_SDL=	sdl
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=	tcd.1

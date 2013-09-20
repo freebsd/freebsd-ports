@@ -18,6 +18,7 @@ LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

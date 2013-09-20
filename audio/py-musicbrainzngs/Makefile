@@ -14,6 +14,7 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_PYTHON=	yes
+NO_STAGE=	yes
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>

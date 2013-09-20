@@ -16,6 +16,7 @@ LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack \
 RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USE_GNOME=	libgnomeui libxml2
 USES=		gettext shebangfix pkgconfig
 USE_PYTHON=	yes

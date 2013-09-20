@@ -16,6 +16,7 @@ CONFLICTS=	linux-alsa-lib-[0-9]* linux-f8-alsa-lib-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
+NO_STAGE=	yes
 LINUX_DIST_VER=	10
 RPMVERSION=	2.fc10
 BRANDELF_FILES=	usr/bin/aserver

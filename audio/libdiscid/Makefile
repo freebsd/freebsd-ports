@@ -12,6 +12,7 @@ COMMENT=	Library for creating MusicBrainz DiscIDs
 LICENSE=	LGPL21
 
 USES=		cmake
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 
 post-patch:

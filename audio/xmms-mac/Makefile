@@ -1,5 +1,4 @@
 # Created by: <arundel@h3c.de>
-#
 # $FreeBSD$
 
 PORTNAME=	mac
@@ -21,6 +20,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		mac.2:${PORTSDIR}/audio/mac
 
 USES=		gmake
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	CPPFLAGS="${CPPFLAGS}"
 USE_AUTOTOOLS=	autoconf

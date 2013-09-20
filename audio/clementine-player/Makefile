@@ -1,4 +1,4 @@
-# Created by: Veniamin Gvozdikov <vg@freebsd.org>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	clementine
@@ -26,6 +26,7 @@ LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 PROJECTHOST=	${PORTNAME}${PKGNAMESUFFIX}
 
 USES=		cmake pkgconfig
+NO_STAGE=	yes
 USE_GL=		glew
 USE_QT4=	dbus gui xml qmake_build uic_build moc_build rcc_build \
 		linguist_build network sql opengl qtestlib corelib webkit

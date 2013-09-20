@@ -13,6 +13,7 @@ COMMENT=	Program for MPEG audio stream validation
 ALL_TARGET=	mp3val
 MAKEFILE=	${WRKSRC}/Makefile.linux
 USES=		gmake
+NO_STAGE=	yes
 
 PLIST_FILES=	bin/mp3val
 

@@ -14,6 +14,7 @@ LIB_DEPENDS=	jansson:${PORTSDIR}/devel/jansson \
 		neon:${PORTSDIR}/www/neon29
 
 USES=		cmake
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 
 

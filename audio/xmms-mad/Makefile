@@ -14,6 +14,7 @@ LIB_DEPENDS=	mad:${PORTSDIR}/audio/libmad \
 		xmms:${PORTSDIR}/multimedia/xmms
 
 USES=		gmake pkgconfig
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

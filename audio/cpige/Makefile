@@ -12,6 +12,7 @@ MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Icecast/Shoutcast stream ripper
 
 USES=		gmake
+NO_STAGE=	yes
 
 MAKE_ARGS=	CC="${CC}"
 

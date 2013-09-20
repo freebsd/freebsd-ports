@@ -1,9 +1,5 @@
-# New ports collection makefile for:	squeezeboxserver-dynamicplaylist
-# Date created:		21 June 2008
-# Whom:			Tim Bishop <tdb@FreeBSD.org>
-#
+# Created by: Tim Bishop <tdb@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dynamicplaylist
 PORTVERSION=	2.8.6
@@ -20,6 +16,7 @@ COMMENT=	Squeezebox Server plugin to create dynamic playlists
 RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezeboxserver
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
+NO_STAGE=	yes
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/sidplay/compconf.h:${PORTSDIR}/audio/libsidp
 LICENSE=	GPLv2
 
 USES=		gmake
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CXXFLAGS+=	-I${LOCALBASE}/include
 PORTDOCS=	ABOUT POINTER

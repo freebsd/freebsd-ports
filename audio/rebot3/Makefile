@@ -15,6 +15,7 @@ RUN_DEPENDS=	p5-CDDB>=0:${PORTSDIR}/audio/p5-CDDB \
 		p5-MP3-ID3v1Tag>=0:${PORTSDIR}/audio/p5-MP3-ID3v1Tag
 
 USES=		perl5
+NO_STAGE=	yes
 NO_BUILD=	yes
 
 MAN1=		${PORTNAME}.1

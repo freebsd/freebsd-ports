@@ -12,6 +12,7 @@ COMMENT=	Update program for the HVSC C= 64 SID tune collection
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USES=		gmake
 WRKSRC=		${WRKDIR}/${PORTNAME:S/-/_/}_Tool_${PORTVERSION:S/.//g}

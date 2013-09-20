@@ -1,9 +1,5 @@
-# New Ports collection makefile for:	xvmixer
-# Date created:			Tue Apr 15 23:07:07 EDT 2003
-# Whom:				Serge Gagnon <gagnon__s@videotron.ca>
-#
+# Created by: Serge Gagnon <gagnon__s@videotron.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	xvmixer
 PORTVERSION=	1.0
@@ -16,6 +12,7 @@ COMMENT=	Open Look-based audio mixer
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
+NO_STAGE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include -DUSE_XBM_ICON" \
 		LDFLAGS="-L${LOCALBASE}/lib" LIBRARIES="-lxview -lolgx -lX11"
 PLIST_FILES=	bin/xvmixer

@@ -1,5 +1,4 @@
 # Created by: Pav Lucistnik <pav@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	oggsplit
@@ -14,6 +13,7 @@ COMMENT=	Split multiplexed (grouped or chained) Ogg files into separate streams
 LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg
 
 USES=		gmake
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	automake autoconf
 AUTOMAKE_ARGS=	--add-missing

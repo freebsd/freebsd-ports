@@ -13,6 +13,7 @@ COMMENT=	MPEG Audio Layer 2 encoder
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
 USES=		gmake pathfix pkgconfig
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

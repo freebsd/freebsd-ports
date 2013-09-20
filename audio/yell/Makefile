@@ -12,6 +12,7 @@ COMMENT=	Command-line pc speaker bell
 PLIST_FILES=	bin/yell
 
 ONLY_FOR_ARCHS=	i386 amd64
+NO_STAGE=	yes
 
 OPTIONS_DEFINE=	SUID
 SUID_DESC=	Use suid to allow execution as non root

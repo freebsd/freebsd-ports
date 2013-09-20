@@ -1,10 +1,6 @@
-# New ports collection makefile for:	libcanberra
-# Date created:				05 August 2008
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/audio/libcanberra-gtk3/Makefile,v 1.8 2011/03/16 10:24:48 kwm Exp $
-#
 
 PORTREVISION=	1
 CATEGORIES=	audio devel
@@ -14,6 +10,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Implementation of the Freedesktop sound theme spec
 
 MASTERDIR=	${.CURDIR}/../../audio/libcanberra
+NO_STAGE=	yes
 SLAVEPORT=	gtk3
 PLIST=		${.CURDIR}/pkg-plist
 

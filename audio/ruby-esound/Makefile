@@ -16,6 +16,7 @@ COMMENT=	A Ruby binding to the EsounD library
 LIB_DEPENDS=	esd:${PORTSDIR}/audio/esound
 
 USES=		pkgconfig
+NO_STAGE=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 

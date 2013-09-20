@@ -16,6 +16,7 @@ LIB_DEPENDS=	xmmsclient.6:${PORTSDIR}/audio/xmms2 \
 		curl:${PORTSDIR}/ftp/curl
 
 USES=		gmake pkgconfig
+NO_STAGE=	yes
 LDFLAGS+=	${PTHREAD_LIBS}
 
 PLIST_FILES=	bin/xmms2-scrobbler

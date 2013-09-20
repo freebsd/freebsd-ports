@@ -19,6 +19,7 @@ GH_TAGNAME=	0.3
 GH_COMMIT=	8e27483
 
 USES=		cmake:outsource
+NO_STAGE=	yes
 USE_KDE4=	automoc4 kdelibs kdeprefix
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_XORG=	xft xpm

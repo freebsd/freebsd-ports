@@ -14,6 +14,7 @@ COMMENT=	Media Tags Plugin
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
 
 USES=		gmake pkgconfig gettext
+NO_STAGE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool intlhack

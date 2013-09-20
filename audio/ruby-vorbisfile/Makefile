@@ -19,6 +19,7 @@ EXPIRATION_DATE=	2013-05-02
 LIB_DEPENDS=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
 
 USE_RUBY=	yes
+NO_STAGE=	yes
 USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install

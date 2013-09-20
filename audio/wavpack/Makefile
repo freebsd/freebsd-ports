@@ -1,9 +1,5 @@
-# New ports collection makefile for:	WavPack
-# Date created:				Fri Jun 24 20:30:04 CEST 2005
-# Whom:					Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wavpack
 PORTVERSION=	4.60.1
@@ -17,6 +13,7 @@ LICENSE=	BSD
 
 USE_BZIP2=	yes
 USES=		pathfix pkgconfig iconv
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

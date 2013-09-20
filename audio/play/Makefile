@@ -15,6 +15,7 @@ CONFLICTS=	sox-[0-9]*
 MAKE_ARGS=	CFLAGS="${CFLAGS}" DESTDIR="${PREFIX}" MANDIR="/man/ja/man"
 
 MANLANG=	ja
+NO_STAGE=	yes
 MAN1=		play.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/play

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	audio/linux-f10-libogg
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	libogg
 PORTVERSION=	1.1.3
@@ -19,6 +15,7 @@ CONFLICTS=	linux-libogg-[0-9]* linux-f8-libogg-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
+NO_STAGE=	yes
 LINUX_DIST_VER=	10
 RPMVERSION=	9.fc9
 USE_LDCONFIG=	yes

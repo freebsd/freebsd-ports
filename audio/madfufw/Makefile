@@ -1,9 +1,5 @@
-# New ports collection makefile for:   madfufw
-# Date created:                July 6, 2010
-# Whom:                        Aragon Gouveia <aragon@phat.za.net>
-#
+# Created by: Aragon Gouveia <aragon@phat.za.net>
 # $FreeBSD$
-#
 
 PORTNAME=	madfufw
 PORTVERSION=	1.0
@@ -26,6 +22,7 @@ PLIST_FILES=	share/maudio/ma003101.bin \
 		etc/devd/maudio-devd.conf
 PLIST_DIRS=	share/maudio
 USE_RC_SUBR=	maudio
+NO_STAGE=	yes
 SUB_FILES=	maudio-devd.conf pkg-message
 NO_BUILD=	yes
 NO_PACKAGE=	redistribution of firmware files not permitted

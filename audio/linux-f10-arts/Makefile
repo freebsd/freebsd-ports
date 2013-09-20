@@ -1,9 +1,5 @@
-# New ports collection makefile for:	audio/linux-f10-arts
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=		arts
 PORTVERSION=		1.5.10
@@ -19,6 +15,7 @@ CONFLICTS=		linux-arts-[0-9]* linux-f8-arts-[0-9]*
 
 ONLY_FOR_ARCHS=		i386 amd64
 USE_LINUX_RPM=		yes
+NO_STAGE=	yes
 LINUX_DIST_VER=		10
 RPMVERSION=		1.fc10
 BRANDELF_DIRS=		usr/bin

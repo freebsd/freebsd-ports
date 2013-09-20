@@ -11,6 +11,7 @@ MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	XMMS input plugin to play bonk files
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
+NO_STAGE=	yes
 
 ALL_TARGET=
 

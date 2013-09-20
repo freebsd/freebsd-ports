@@ -15,6 +15,7 @@ BUILD_DEPENDS=	${STYLESHEET}:${PORTSDIR}/textproc/docbook-xsl \
 		txt2man:${PORTSDIR}/textproc/txt2man
 
 USE_GNOME=	pygtk2
+NO_STAGE=	yes
 WANT_GNOME=	yes
 USE_PYTHON=	yes
 USES=		gettext gmake display pathfix pkgconfig

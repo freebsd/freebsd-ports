@@ -13,6 +13,7 @@ COMMENT=	WMA plugin for xmms
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USES=		gmake
+NO_STAGE=	yes
 USE_BZIP2=	yes
 CFLAGS+=	-fPIC -DPIC
 ONLY_FOR_ARCHS=	i386 amd64 sparc64

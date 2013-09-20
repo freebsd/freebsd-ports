@@ -12,6 +12,7 @@ COMMENT=	A sample multi-channel audio mixer library
 LICENSE=	ZLIB
 
 USES=		gmake pathfix pkgconfig
+NO_STAGE=	yes
 USE_SDL=	sdl2
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib

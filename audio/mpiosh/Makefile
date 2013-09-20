@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mpio-driver
-# Date created:				19 Jun 2003
-# Whom:					Sergey Akifyev <asa@gascom.ru>
-#
+# Created by: Sergey Akifyev <asa@gascom.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	mpiosh
 PORTVERSION=	0.7.1.p2
@@ -15,6 +11,7 @@ DISTNAME=	mpio-${PORTVERSION:S|.p|_pre|}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digit@lway MPIO MP3 player tool
 
+NO_STAGE=	yes
 USES=		iconv
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

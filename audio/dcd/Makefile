@@ -13,6 +13,7 @@ COMMENT=	A simple, programmable, intelligent CD player
 LIB_DEPENDS=	cdaudio:${PORTSDIR}/audio/libcdaudio
 
 USES=		gmake
+NO_STAGE=	yes
 
 MAN1=	dcd.1
 PLIST_FILES=	bin/dcd

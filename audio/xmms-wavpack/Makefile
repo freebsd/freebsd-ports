@@ -13,6 +13,7 @@ LIB_DEPENDS=	wavpack.2:${PORTSDIR}/audio/wavpack \
 		xmms.4:${PORTSDIR}/multimedia/xmms
 
 USES=		pkgconfig
+NO_STAGE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

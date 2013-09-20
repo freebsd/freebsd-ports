@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Ogg-Vorbis-Header
-# Date created:		Sept 11 2004
-# Whom:			Simon Barner <barner@gmx.de>
-#
+# Created by: Simon Barner <barner@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	Audio-WMA
 PORTVERSION=	1.3
@@ -15,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fetch info from WMA audio files
 
 USES=		perl5
+NO_STAGE=	yes
 USE_PERL5=	configure
 
 MAN3=		Audio::WMA.3

@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=1.21:${PORTSDIR}/audio/py-mutagen \
 MAN1=	beet.1
 MAN5=	beetsconfig.5
 
+NO_STAGE=	yes
 USE_PYTHON=	2.7+
 USE_PYDISTUTILS=	easy_install
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-DAAP-Client (formerly p5-dapple)
-# Date created:        27 June 2004
-# Whom:                Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-DAAP-Client
 PORTVERSION=	0.42
@@ -21,6 +17,7 @@ RUN_DEPENDS=	p5-Digest-MD5-M4p>=0:${PORTSDIR}/security/p5-Digest-MD5-M4p \
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
+NO_STAGE=	yes
 USE_PERL5=	modbuild
 
 MAN3=		Net::DAAP::Client.3

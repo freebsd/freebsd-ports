@@ -16,6 +16,7 @@ PLIST_FILES=	lib/bmp/Input/libwma.so \
 		lib/bmp/Input/libwma.la \
 		lib/bmp/Input/libwma.a
 
+NO_STAGE=	yes
 USES=		pkgconfig
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool

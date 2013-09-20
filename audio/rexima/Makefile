@@ -1,9 +1,5 @@
-# New ports collection makefile for:   rexima
-# Date created:        15 Jul 2002
-# Whom:                Jerry Eriksson <jerry@freebsd.se>
-#
+# Created by: Jerry Eriksson <jerry@freebsd.se>
 # $FreeBSD$
-#
 
 PORTNAME=	rexima
 PORTVERSION=	1.4
@@ -16,5 +12,6 @@ COMMENT=	A ncurses-based console mixer
 
 MAN1=		rexima.1
 PLIST_FILES=	bin/rexima
+NO_STAGE=	yes
 
 .include <bsd.port.mk>

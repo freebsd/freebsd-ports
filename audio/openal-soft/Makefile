@@ -12,6 +12,7 @@ COMMENT=	A software implementation of the OpenAL specification
 CONFLICTS=	openal-200[0-9]*
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USES=		cmake
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DALSA:BOOL=OFF -DPORTAUDIO:BOOL=OFF -DSOLARIS:BOOL=OFF \

@@ -12,6 +12,7 @@ COMMENT=	Perl extension for ecasound sampler, recorder, fx-processor
 BUILD_DEPENDS=	libecasoundc-config:${PORTSDIR}/audio/ecasound
 
 USES=		perl5
+NO_STAGE=	yes
 USE_PERL5=	configure
 
 MAN3=	Audio::Ecasound.3

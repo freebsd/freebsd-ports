@@ -13,6 +13,7 @@ COMMENT=	Configurable tool to check collections of audio files
 BUILD_DEPENDS=	libmp3-archive-perl>=0:${PORTSDIR}/audio/libmp3-archive-perl
 RUN_DEPENDS=	libmp3-archive-perl>=0:${PORTSDIR}/audio/libmp3-archive-perl
 
+NO_STAGE=	yes
 USE_PERL5=	configure
 USES=		perl5
 

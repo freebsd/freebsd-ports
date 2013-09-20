@@ -14,6 +14,7 @@ PLIST_FILES=	bin/wmsmixer
 PORTDOCS=	README
 
 USES=		imake
+NO_STAGE=	yes
 USE_XORG=	xpm
 MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS}"
 

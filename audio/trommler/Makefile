@@ -13,6 +13,7 @@ COMMENT=	GTK+2 based drum machine
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 

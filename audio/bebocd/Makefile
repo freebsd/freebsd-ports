@@ -13,6 +13,7 @@ COMMENT=	GTK2 CD Player
 LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
 
 USE_XORG=	x11
+NO_STAGE=	yes
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fmit
-# Date created:		2007-09-08
-# Whom:			Edward Tomasz Napierala <trasz@FreeBSD.org>
-#
+# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fmit
 PORTVERSION=	0.99.2
@@ -23,6 +19,7 @@ OPTIONS_DEFINE=	OSS ALSA PORTAUDIO JACK
 OPTIONS_DEFAULT=	OSS JACK
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USE_XORG=	xmu
 USE_QT4=	corelib gui opengl \
 		linguist_build moc_build qmake_build rcc_build uic_build

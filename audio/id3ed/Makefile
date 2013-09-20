@@ -1,9 +1,5 @@
-# New ports collection makefile for:	id3ed
-# Date created:		05 June 1999
-# Whom:			Chris Piazza <cpiazza@FreeBSD.org>
-#
+# Created by: Chris Piazza <cpiazza@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	id3ed
 PORTVERSION=	1.10.4
@@ -16,6 +12,7 @@ COMMENT=	An id3 tag editor for mp3 files
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 
 MAN1=		id3ed.1
 PLIST_FILES=	bin/id3ed

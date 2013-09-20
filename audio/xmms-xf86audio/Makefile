@@ -11,6 +11,7 @@ COMMENT=	XF86Audio multimedia-key support for XMMS
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 MAKE_ARGS=	CC="${CC}" OPT="${CFLAGS}" DEBUG=""
+NO_STAGE=	yes
 
 .include <bsd.port.options.mk>
 

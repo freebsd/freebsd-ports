@@ -14,6 +14,7 @@ LIB_DEPENDS+=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

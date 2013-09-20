@@ -16,6 +16,7 @@ GH_ACCOUNT=	sebcode
 GH_TAGNAME=	322ee77
 GH_COMMIT=	322ee77
 
+NO_STAGE=	yes
 PLIST_FILES=	bin/id3ren
 MAN1=		id3ren.1
 MANCOMPRESSED=	yes

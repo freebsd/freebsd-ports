@@ -15,6 +15,7 @@ COMMENT=	Simple GTK+ audio tag editor
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
 
 USES=		pathfix pkgconfig
+NO_STAGE=	yes
 USE_GNOME=	gnomeprefix libglade2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

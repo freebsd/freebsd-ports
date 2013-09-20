@@ -13,6 +13,7 @@ COMMENT=	Minimalistic Murmur (Mumble server)
 LIB_DEPENDS=	config.10:${PORTSDIR}/devel/libconfig \
 		protobuf-c.0:${PORTSDIR}/devel/protobuf-c
 
+NO_STAGE=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes

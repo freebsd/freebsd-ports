@@ -13,6 +13,7 @@ COMMENT=	FM radio card manipulation utility
 MAN1=		fmio.1
 MANCOMPRESSED=	no
 ONLY_FOR_ARCHS=	i386
+NO_STAGE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 

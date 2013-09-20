@@ -17,6 +17,7 @@ LIB_DEPENDS=	plist:${PORTSDIR}/devel/libplist \
 		sgutils2:${PORTSDIR}/sysutils/sg3_utils
 
 USE_GNOME=	gtk20
+NO_STAGE=	yes
 USE_SQLITE=	3
 USES=		gettext gmake pkgconfig
 USE_BZIP2=	yes

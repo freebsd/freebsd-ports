@@ -10,6 +10,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A generic sound synthesizer for Java
 
 USE_ZIP=	yes
+NO_STAGE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes

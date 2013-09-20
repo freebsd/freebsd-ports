@@ -21,6 +21,7 @@ PLIST_FILES=	lib/xmms/Input/libsexyspc.a \
 
 ONLY_FOR_ARCHS=	i386	# contains x86 assembler code
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USES=		gmake
 

@@ -1,6 +1,5 @@
 # Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
-#   $Id: Makefile,v 1.54 2007/01/26 03:17:25 tmclau02 Exp $
 
 PORTNAME=	muine
 PORTVERSION=	0.8.11
@@ -22,6 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-glib-1.0.pc:${PORTSDIR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gettext gmake pathfix shebangfix
+NO_STAGE=	yes
 USE_GNOME=	gnomeprefix intltool libgnomeui gnomesharp20
 USE_GSTREAMER=	gconf
 USE_LDCONFIG=	yes

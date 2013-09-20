@@ -26,6 +26,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Corpus-Audio-MPD>=1.113282:${PORTSDIR}/audio/p5-Test-Corpus-Audio-MPD
 
 USES=		perl5
+NO_STAGE=	yes
 USE_PERL5=	modbuild
 
 MAN1=		mpd-dynamic.1 \

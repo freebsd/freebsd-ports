@@ -17,6 +17,7 @@ LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
 
 PLIST_FILES=	lib/bmp/Input/libbmp-flac.so
 
+NO_STAGE=	yes
 USES=		iconv pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

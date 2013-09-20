@@ -1,9 +1,5 @@
-# New ports collection makefile for:   cdplay
-# Date created:        8 July 1997
-# Whom:                Antti Kaipila <anttik@iki.fi>
-#
+# Created by: Antti Kaipila <anttik@iki.fi>
 # $FreeBSD$
-#
 
 PORTNAME=	cdplay
 PORTVERSION=	0.92
@@ -20,6 +16,7 @@ MAKE_ARGS=	CFLAGS="${CFLAGS} -c -ansi"	\
 		MANPATH="${MANPREFIX}/man/man1/"
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 MAN1=		cdplay.1
 PLIST_FILES=	bin/cdplay
 

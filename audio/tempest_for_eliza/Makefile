@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to send AM radio signals using a PC monitor
 
 USES=		gmake
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 

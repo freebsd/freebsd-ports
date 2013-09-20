@@ -21,6 +21,7 @@ CONFLICTS=	cantus-1*
 
 LATEST_LINK=	${PORTNAME}3
 
+NO_STAGE=	yes
 USES=		gmake pathfix gettext pkgconfig
 USE_GNOME=	gnomeprefix libglade2 glib20
 USE_LDCONFIG=	yes

@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	--with-float-samples
 MAKEFILE=	makefile
 ALL_TARGET=	snd snd-info sndplay
 MAKE_JOBS_UNSAFE=	yes
+NO_STAGE=	yes
 
 MAN1=		snd.1
 

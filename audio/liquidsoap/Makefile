@@ -62,6 +62,7 @@ WGET_DESC=		for downloading remote files (http, https, ftp)
 MAKE_JOBS_UNSAFE=	yes
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 
 USE_RC_SUBR=	liquidsoap
 

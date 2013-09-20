@@ -15,6 +15,7 @@ COMMENT=	Loading a M3U file into musicpd
 RUN_DEPENDS=	${LOCALBASE}/bin/mpc:${PORTSDIR}/audio/mpc
 
 USES=		perl5
+NO_STAGE=	yes
 NO_WRKSUBDIR=	yes
 
 MAN1=		${PORTNAME}.1

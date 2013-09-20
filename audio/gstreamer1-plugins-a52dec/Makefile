@@ -9,5 +9,6 @@ GST_PLUGIN=	a52dec
 DIST=		ugly
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
+NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

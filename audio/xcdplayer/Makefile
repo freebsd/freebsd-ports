@@ -12,6 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD player for X
 
 USES=		imake
+NO_STAGE=	yes
 USE_XORG=	xbitmaps xaw
 
 MAN1=		xcdplayer.1

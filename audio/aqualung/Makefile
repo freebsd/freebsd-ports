@@ -32,6 +32,7 @@ LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate \
 		cddb:${PORTSDIR}/audio/libcddb \
 		strfunc:${PORTSDIR}/devel/libstrfunc
 
+NO_STAGE=	yes
 USES=		gmake pkgconfig gettext
 USE_GNOME=	gtk20 libxml2
 GNU_CONFIGURE=	yes

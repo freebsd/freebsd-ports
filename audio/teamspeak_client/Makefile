@@ -16,6 +16,7 @@ COMMENT=	Client side of a group voice chat system
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	jpeg xorglibs
 NO_BUILD=	yes

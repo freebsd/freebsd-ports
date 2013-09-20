@@ -20,6 +20,7 @@ OPTIONS_DEFAULT=	VORBIS
 OPUS_DESC=	Ogg Opus audio codec support
 AACPLUS_DESC=	AAC HEv2 and libsamplerate support
 
+NO_STAGE=	yes
 USE_AUTOTOOLS=	aclocal automake autoconf
 ACLOCAL_ARGS=	# none
 AUTOMAKE_ARGS=	--add-missing --copy --foreign

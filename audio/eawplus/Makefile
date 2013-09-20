@@ -16,6 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/eawpats/acbass.pat:${PORTSDIR}/audio/eawpats \
 		${LOCALBASE}/share/guspat/inst/GUS/acbass.pat:${PORTSDIR}/audio/guspat
 
 NO_CDROM=	Some of the patches are marked no-commercial-use
+NO_STAGE=	yes
 
 NO_WRKSUBDIR=	yes
 

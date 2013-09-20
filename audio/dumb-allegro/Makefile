@@ -3,5 +3,6 @@
 
 OPTIONS_SLAVE=	ALLEGRO
 MASTERDIR=	${.CURDIR}/../dumb
+NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

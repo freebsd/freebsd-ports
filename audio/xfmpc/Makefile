@@ -1,6 +1,5 @@
 # Created by: Martin Wilke (miwi@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	xfmpc
 PORTVERSION=	0.2.2
@@ -16,6 +15,7 @@ COMMENT=	Graphical MPD client focusing on low footprint
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 INSTALLS_ICONS=	yes
 USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes

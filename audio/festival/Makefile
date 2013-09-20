@@ -34,6 +34,7 @@ DIST_SUBDIR=	festival
 CXXFLAGS+=	-DFTLIBDIR=${LOCALBASE}/share/festival/lib
 CONFIGURE_WRKSRC=	${WRKDIR}/festival
 USES=		gmake
+NO_STAGE=	yes
 SPEECHTOOLS=	${WRKSRC}/speech_tools
 FESTIVAL=	${WRKSRC}/festival
 MAKE_ENV+=	GCC="${CC}" \

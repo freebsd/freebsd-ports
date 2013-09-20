@@ -14,6 +14,7 @@ LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 USES=		pkgconfig
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/lib/alsa-lib

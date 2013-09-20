@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cymbaline
-# Date created:			Jun 20, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	cymbaline
 PORTVERSION=	1.3e
@@ -16,6 +12,7 @@ COMMENT=	Console frontend for py-mad
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/aomodule.so:${PORTSDIR}/audio/py-ao \
 		${PYTHON_SITELIBDIR}/madmodule.so:${PORTSDIR}/audio/py-mad
 
+NO_STAGE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   simplemod
-# Date created:        9 june 2003
-# Whom:                Christian Laursen <xi@borderworlds.dk>
-#
+# Created by: Christian Laursen <xi@borderworlds.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	simplemod
 PORTVERSION=	1.1
@@ -19,6 +15,7 @@ WRKSRC=		${WRKDIR}/simplemod
 
 ALL_TARGET=	simplemod
 PLIST_FILES=	bin/simplemod
+NO_STAGE=	yes
 
 do-install:
 	${INSTALL} -o 0 -g 0 -s ${WRKSRC}/simplemod ${PREFIX}/bin

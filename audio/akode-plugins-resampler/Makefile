@@ -22,6 +22,7 @@ CONFLICTS=	kdemultimedia-3.[1-3]*
 PLUGIN=		src_resampler
 PORTNAMESUFX=	${PLUGIN:S/_sink//:S/_decoder//:S/src_//}
 
+NO_STAGE=	yes
 USES=		gmake
 USE_AUTOTOOLS=	libltdl
 USE_AUTOTOOLS=	libtool

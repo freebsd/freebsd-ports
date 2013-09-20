@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-cddb
-# Date created:		8 October 2002
-# Whom:			Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
 
 PORTNAME=	cddb
@@ -15,6 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module to fetch information on audio CDs from CDDB
 
 USE_PYTHON=	yes
+NO_STAGE=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 PYDISTUTILS_PKGNAME=	CDDB

@@ -11,6 +11,7 @@ MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Fork of the Python MPD client library
 
 USE_GITHUB=	yes
+NO_STAGE=	yes
 GH_ACCOUNT=	Mic92
 GH_PROJECT=	python-${PORTNAME}
 GH_TAGNAME=	v${PORTVERSION}

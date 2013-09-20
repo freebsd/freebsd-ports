@@ -23,6 +23,7 @@ CONFIGURE_ENV=	DATADIRNAME=share
 # see this bug for details: http://llvm.org/bugs/show_bug.cgi?id=3814
 #CONFIGURE_ARGS=	--with-werror
 USES=		gettext gmake iconv pkgconfig
+NO_STAGE=	yes
 USE_GNOME=	gtk20
 USE_SQLITE=	yes
 INSTALLS_ICONS=	yes

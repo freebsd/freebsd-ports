@@ -15,6 +15,7 @@ LIB_DEPENDS=	mp4v2.10:${PORTSDIR}/multimedia/mp4v2
 RESTRICTED=	Distribution in binary form is prohibited
 
 USES=		gmake
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_DOS2UNIX=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool

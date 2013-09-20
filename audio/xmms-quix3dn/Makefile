@@ -15,6 +15,7 @@ COMMENT=	3D-sound effect plugin for XMMS
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
+NO_STAGE=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	lib/xmms/Effect/libquix3dn.so

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dagrab
-# Date created:		2nd, Jan 1999
-# Whom:			Chia-liang Kao <clkao@CirX.ORG>
-#
+# Created by: Chia-liang Kao <clkao@CirX.ORG>
 # $FreeBSD$
-#
 
 PORTNAME=	dagrab
 PORTVERSION=	0.3.5
@@ -15,6 +11,7 @@ MASTER_SITE_SUBDIR=	apps/sound/cdrom
 MAINTAINER=	clkao@CirX.ORG
 COMMENT=	Read audio tracks from a CD into wav sound files
 
+NO_STAGE=	yes
 MAN1=		dagrab.1
 PLIST_FILES=	bin/dagrab
 

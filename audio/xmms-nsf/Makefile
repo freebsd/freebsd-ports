@@ -18,6 +18,7 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 USE_CSTD=	gnu89
 
 ONLY_FOR_ARCHS=	i386 amd64

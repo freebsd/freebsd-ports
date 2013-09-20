@@ -21,6 +21,7 @@ RUN_DEPENDS=	mpg321:${PORTSDIR}/audio/mpg321 \
 GNU_CONFIGURE=	yes
 LDFLAGS+=	`fltk-config --ldflags`
 USES=		gmake
+NO_STAGE=	yes
 USE_GNOME=	glib20
 
 pre-build:

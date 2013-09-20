@@ -14,6 +14,7 @@ COMMENT=	Portable cross-platform Audio API
 LICENSE=	MIT
 
 USES=		gmake
+NO_STAGE=	yes
 USE_ZIP=	yes
 GNU_CONFIGURE=	yes
 USE_DOS2UNIX=	yes

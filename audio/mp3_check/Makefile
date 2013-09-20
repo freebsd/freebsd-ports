@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mp3_check
-# Date created:				24 Oct 2000
-# Whom:					ericb@thedeepsky.com
-#
+# Created by: ericb@thedeepsky.com
 # $FreeBSD$
-#
 
 PORTNAME=	mp3_check
 PORTVERSION=	1.98
@@ -15,5 +11,6 @@ MAINTAINER=	ericb@thedeepsky.com
 COMMENT=	Verifies the integrity of mp3 audio files
 
 PLIST_FILES=	bin/mp3_check
+NO_STAGE=	yes
 
 .include <bsd.port.mk>

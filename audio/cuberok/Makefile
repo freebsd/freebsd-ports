@@ -1,4 +1,4 @@
-# Created by: Veniamin Gvozdikov <vg@freebsd.org>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cuberok
@@ -21,6 +21,7 @@ USE_LDCONFIG=	yes
 USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \
 		network phonon-gst sql
 USES=		gettext iconv pkgconfig
+NO_STAGE=	yes
 USE_SDL=	sdl
 QMAKEFLAGS+=	"CONFIG+=player_phonon"
 MAKE_ENV+=	INSTALL_ROOT=${PREFIX}

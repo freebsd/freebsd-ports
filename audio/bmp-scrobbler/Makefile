@@ -1,7 +1,4 @@
-# New ports collection makefile for:	bmp-scrobbler
-# Date created:				01-14-2005
-# Whom:					Roman Bogorodskiy <bogorodskiy@inbox.ru>
-#
+# Created by: Roman Bogorodskiy <bogorodskiy@inbox.ru>
 # $FreeBSD$
 
 PORTNAME=	bmp-scrobbler
@@ -14,6 +11,7 @@ CONFLICTS=	scrobbler-*
 
 MASTERDIR=	${.CURDIR}/../scrobbler
 
+NO_STAGE=	yes
 WITH_BMP=	yes
 
 .include "${MASTERDIR}/Makefile"

@@ -17,6 +17,7 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 USES=		gmake
+NO_STAGE=	yes
 USE_XORG=	x11
 USE_GNOME=	esound gtk20
 MAKE_ENV=	LOCALEDIR="${PREFIX}/share/locale"

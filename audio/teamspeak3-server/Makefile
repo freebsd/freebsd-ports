@@ -22,6 +22,7 @@ IGNORE=		license ${LICENSE} needs confirmation, but BATCH is defined
 .endif
 
 USES=		iconv
+NO_STAGE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/teamspeak/server
 USE_RC_SUBR=	teamspeak
 SUB_FILES=	pkg-message

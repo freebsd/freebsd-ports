@@ -1,9 +1,5 @@
-# Ports collection makefile for:	aureal-kmod
-# Date created:				15 January 2001
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	aureal-kmod
 PORTVERSION=	1.5
@@ -24,6 +20,7 @@ DISTREVISION=	4
 KMODDIR=	${PREFIX}/modules/au88x0
 KMODDIR_REL=	${KMODDIR:S%${PREFIX}/%%}
 
+NO_STAGE=	yes
 USE_RC_SUBR=	aureal
 SUB_FILES=	pkg-message
 SUB_LIST=	KMODDIR=${KMODDIR}

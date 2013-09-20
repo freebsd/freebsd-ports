@@ -1,4 +1,4 @@
-# Created by: Bill Fenner <fenner@FreeBSD.Org>
+# Created by: Bill Fenner <fenner@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	xmms-shn
@@ -14,6 +14,7 @@ BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	gtk12
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.options.mk>

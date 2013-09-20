@@ -1,9 +1,5 @@
-# New ports collection makefile for:	id3lib
-# Date Created:				26 Oct 2000
-# Whom:					Roman Shterenzon <roman@xpert.com>
-#
+# Created by: Roman Shterenzon <roman@xpert.com>
 # $FreeBSD$
-#
 
 PORTNAME=	id3lib
 PORTVERSION=	3.8.3
@@ -16,6 +12,7 @@ COMMENT=	Library for manipulating ID3v1/v1.1 and ID3v2 tags
 
 USE_AUTOTOOLS=	libtool
 USES=		iconv
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

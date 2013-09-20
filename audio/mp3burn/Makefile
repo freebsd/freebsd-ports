@@ -20,6 +20,7 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USES=		perl5
 NO_BUILD=	yes
 

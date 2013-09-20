@@ -22,6 +22,7 @@ OPTIONS_DEFAULT=FFTW
 WRKSRC=		${WRKDIR}/${DISTNAME:S,${DISTVERSIONSUFFIX},,}
 
 USES=		gettext gmake pkgconfig
+NO_STAGE=	yes
 USE_TK_WRAPPER=	yes
 USE_AUTOTOOLS=	aclocal libtoolize autoconf automake
 ACLOCAL_ARGS=	-I m4/generated -I m4

@@ -13,6 +13,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG Layer II audio decoder with multi-channel support
 
+NO_STAGE=	yes
 USES=		gmake
 ALL_TARGET=	#
 MAKE_ARGS=	CC="${CC}" OPTIM="${CFLAGS}"

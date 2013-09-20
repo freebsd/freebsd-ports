@@ -13,6 +13,7 @@ DISTNAME=	baudline_${PORTVERSION:S/.p/pre/}_linux_i686
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Real-time signal analysis and time-frequency browser
 
+NO_STAGE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i686/x86/}
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs

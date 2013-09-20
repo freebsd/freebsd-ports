@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:${PORTSDIR}/devel/py-xdg
 
 USE_PYTHON=	-2.7
+NO_STAGE=	yes
 USE_PYDISTUTILS=yes
 USE_GNOME=	gnomehier
 USE_GSTREAMER=	gnonlin good python

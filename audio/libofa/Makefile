@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libofa
-# Date created:		2006-04-01
-# Whom:			Alexander Botero-Lowry <alex@foxybanana.com>
-#
+# Created by: Alexander Botero-Lowry <alex@foxybanana.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libofa
 PORTVERSION=	0.9.3
@@ -27,6 +23,7 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 
 PROJECTHOST=	musicip-libofa
 USE_DOS2UNIX=	yes
+NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 USES=	pathfix
 GNU_CONFIGURE=	yes

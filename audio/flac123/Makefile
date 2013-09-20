@@ -15,6 +15,7 @@ LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		popt.0:${PORTSDIR}/devel/popt
 
 USES=		gmake
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README.remote

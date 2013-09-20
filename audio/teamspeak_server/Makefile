@@ -1,9 +1,5 @@
-# New ports collection makefile for:	teamspeak_server
-# Date created:				22 January 2003
-# Whom:					Daniel O'Connor
-#
+# Created by: Daniel O'Connor
 # $FreeBSD$
-#
 
 PORTNAME=	teamspeak_server
 PORTVERSION=	2.0.24.01
@@ -21,6 +17,7 @@ WRKSRC=		${WRKDIR}/tss2_rc2
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 USE_LINUX=	yes
+NO_STAGE=	yes
 USERS=		teamspeak
 GROUPS=		${USERS}
 

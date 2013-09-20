@@ -19,5 +19,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
 USE_LDCONFIG=	yes
 USES=		gmake pathfix
+NO_STAGE=	yes
 
 .include <bsd.port.mk>

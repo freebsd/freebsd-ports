@@ -12,6 +12,7 @@ COMMENT=	GTK2.0 Sound Mixer
 LICENSE=	BSD
 
 USE_GITHUB=	yes
+NO_STAGE=	yes
 GH_ACCOUNT=	svagner
 GH_COMMIT=	9e22be7
 

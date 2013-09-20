@@ -15,6 +15,7 @@ LIB_DEPENDS+=	xmmsclient.6:${PORTSDIR}/audio/xmms2
 MASTERDIR=	${.CURDIR}/../xmms2
 
 USE_PYTHON=	yes
+NO_STAGE=	yes
 
 PLIST=		${.CURDIR}/pkg-plist
 

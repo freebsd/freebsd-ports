@@ -15,6 +15,7 @@ LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm	\
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
+NO_STAGE=	yes
 
 pre-configure:
 	@${CP} ${FILESDIR}/freebsdplay.c ${WRKSRC}/config/freebsdplay.c

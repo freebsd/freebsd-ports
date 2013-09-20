@@ -15,6 +15,7 @@ COMMENT=	Monkey's Audio Codec non-win32 port
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
 		mac.2:${PORTSDIR}/audio/mac
 
+NO_STAGE=	yes
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf libtool

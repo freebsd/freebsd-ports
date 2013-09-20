@@ -19,6 +19,7 @@ LIB_DEPENDS=		sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 			ao:${PORTSDIR}/audio/libao
 
 USES=			pathfix pkgconfig
+NO_STAGE=	yes
 USE_GNOME=		gnomeprefix
 USE_AUTOTOOLS=		libtool
 USE_LDCONFIG=		yes

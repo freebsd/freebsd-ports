@@ -19,6 +19,7 @@ LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib \
 MAN1=		easytag.1
 CONFLICTS=	easytag-devel-[0-9]*
 
+NO_STAGE=	yes
 USE_XZ=		yes
 USES=		gettext gmake pkgconfig
 USE_GNOME=	gnomehack gnomeprefix gtk20 desktopfileutils

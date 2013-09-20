@@ -14,6 +14,7 @@ COMMENT=	Unix Amiga Delitracker Emulator
 LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao
 
 USES=		gmake pkgconfig
+NO_STAGE=	yes
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 

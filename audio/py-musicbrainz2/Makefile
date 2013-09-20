@@ -18,6 +18,7 @@ LICENSE=	BSD
 LIB_DEPENDS=	discid:${PORTSDIR}/audio/libdiscid
 
 USE_PYTHON=	-2.7
+NO_STAGE=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	python-musicbrainz2
 

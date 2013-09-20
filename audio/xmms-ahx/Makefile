@@ -20,6 +20,7 @@ PLIST_FILES=	lib/xmms/Input/libahx.la \
 
 GNU_CONFIGURE=	yes
 USES=		gmake
+NO_STAGE=	yes
 USE_GNOME=	gtk12
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

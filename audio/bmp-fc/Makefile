@@ -18,6 +18,7 @@ USES=		pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 
 PLIST_FILES=	lib/bmp/Input/libfc.so lib/bmp/Input/libfc.la
 

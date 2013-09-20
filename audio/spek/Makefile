@@ -17,6 +17,7 @@ LIB_DEPENDS=	avcodec1:${PORTSDIR}/multimedia/ffmpeg1
 MAN1=		spek.1
 
 USE_XZ=		yes
+NO_STAGE=	yes
 USE_GCC=	4.7+
 USES=		gettext gmake
 USE_GNOME=	desktopfileutils intltool

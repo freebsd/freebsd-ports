@@ -28,6 +28,7 @@ TESTS_DESC=		Build liblastfm tests
 OPTIONS_DEFAULT=	FINGERPRINT
 
 USES=		cmake pkgconfig
+NO_STAGE=	yes
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_QT4=	dbus moc_build rcc_build network qmake_build qtestlib sql xml

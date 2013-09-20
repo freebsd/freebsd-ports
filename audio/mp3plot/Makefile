@@ -17,6 +17,7 @@ OPTIONS_DEFAULT=	GD
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-boost-program-options=boost_program_options \
 		--with-boost-thread=boost_thread

@@ -14,6 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-l
 LIB_DEPENDS=	protobuf:${PORTSDIR}/devel/protobuf
 
 USERS=		${PORTNAME}
+NO_STAGE=	yes
 GROUPS=		${USERS}
 USE_QT4=	qmake_build moc_build corelib network xml sql sql-sqlite3_run
 

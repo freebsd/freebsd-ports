@@ -10,6 +10,7 @@ MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	saper@saper.info
 COMMENT=	MPEG audio analysis toolkit
 
+NO_STAGE=	yes
 USES=		gmake
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

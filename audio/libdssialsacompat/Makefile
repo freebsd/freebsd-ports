@@ -11,6 +11,7 @@ COMMENT=	Alsa compatibility library to build DSSI
 
 FETCH_ARGS?=	-Fpr
 USE_AUTOTOOLS=	libtool
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

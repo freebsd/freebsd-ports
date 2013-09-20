@@ -13,6 +13,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_GITHUB=	yes
+NO_STAGE=	yes
 GH_ACCOUNT=	herenvarno
 GH_COMMIT=	90cf6b8
 

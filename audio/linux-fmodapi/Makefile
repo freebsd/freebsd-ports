@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/linux-fmodapi
-# Date created:				2010-01-06
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fmodapi
 PORTVERSION=	4.24.16
@@ -19,6 +15,7 @@ COMMENT=	Music & Sound effects system
 ONLY_FOR_ARCHS=	i386
 INSTALL_SHLIB=	yes
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 NO_BUILD=	yes
 USE_LINUX_PREFIX=	yes
 

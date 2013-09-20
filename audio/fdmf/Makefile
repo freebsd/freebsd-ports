@@ -19,6 +19,7 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		p5-GDBM>=0:${PORTSDIR}/databases/p5-GDBM
 
 USES=		perl5
+NO_STAGE=	yes
 CFLAGS=		-I${LOCALBASE}/include -L. -L${LOCALBASE}/lib
 MAKE_ENV=	VPATH=common
 PORTDOCS=	README

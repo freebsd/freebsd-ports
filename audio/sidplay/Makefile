@@ -18,6 +18,7 @@ CONFIGURE_ARGS=	--with-sidplay-includes=${LOCALBASE}/include \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-base-${PORTVERSION}
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/sidplay ${PREFIX}/bin/sid2wav \

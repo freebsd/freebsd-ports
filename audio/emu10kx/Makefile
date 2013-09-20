@@ -11,6 +11,7 @@ MAINTAINER=	michaels@sdf.lonestar.org
 COMMENT=	SBLive!, Audigy, and Audigy2 driver for FreeBSD
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 SSP_UNSAFE=	kernel module does not support ssp

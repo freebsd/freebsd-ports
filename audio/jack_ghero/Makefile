@@ -15,6 +15,7 @@ LICENSE=	BSD
 LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 MANCOMPRESSED=	yes
 MAN8=		jack_ghero.8
 

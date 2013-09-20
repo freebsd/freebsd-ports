@@ -17,6 +17,7 @@ RUN_DEPENDS:=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Config-Options>=0.8:${PORTSDIR}/devel/p5-Config-Options
 
 USES=		perl5
+NO_STAGE=	yes
 USE_PERL5=	configure
 
 MAN3=	Music::Audioscrobbler::Submit.3

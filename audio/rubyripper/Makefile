@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Rubyripper
-# Date created:				6 Nov 2010
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rubyripper
 DISTVERSION=	0.6.2
@@ -27,6 +23,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		cd-discid:${PORTSDIR}/audio/cd-discid
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USES=		gettext
 USE_RUBY=	yes
 INSTALLS_ICONS=	yes

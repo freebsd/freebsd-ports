@@ -13,6 +13,7 @@ COMMENT=	A tool to normalize the gain of MP3 files
 LICENSE=	LGPL21
 
 PLIST_FILES=	bin/mp3gain
+NO_STAGE=	yes
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 

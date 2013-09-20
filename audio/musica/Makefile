@@ -11,6 +11,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	GTK based midi player
 
 USE_GNOME=	gtk12
+NO_STAGE=	yes
 
 GNU_CONFIGURE=	yes
 USES=		gmake

@@ -15,6 +15,7 @@ LIB_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
 		ogg:${PORTSDIR}/audio/libogg
 
 USES=		gettext iconv
+NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk12
 USE_XORG=	x11 xau xcb xdmcp xext xi

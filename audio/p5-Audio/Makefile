@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Audio
-# Date created:				15 September 2003
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Audio
 PORTVERSION=	1.029
@@ -19,6 +15,7 @@ BUILD_DEPENDS=	p5-Math-GSL>=0:${PORTSDIR}/math/p5-Math-GSL
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
+NO_STAGE=	yes
 USE_PERL5=	configure
 
 MAN3=		Audio::Play.3 Audio::Data.3

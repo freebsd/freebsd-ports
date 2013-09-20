@@ -14,6 +14,7 @@ LIB_DEPENDS=	smpeg:${PORTSDIR}/multimedia/smpeg
 
 GNU_CONFIGURE=	yes
 USES=	pathfix
+NO_STAGE=	yes
 USE_SDL=	sdl
 NO_WRKSUBDIR=	yes
 

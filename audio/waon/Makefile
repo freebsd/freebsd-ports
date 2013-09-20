@@ -16,6 +16,7 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate
 
 USES=		pkgconfig
+NO_STAGE=	yes
 USE_GNOME=	gtk20
 
 MAN1=		waon.1 pv.1 gwaon.1

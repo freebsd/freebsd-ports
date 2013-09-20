@@ -1,6 +1,5 @@
 # Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	mhwaveedit
 PORTVERSION=	1.4.22
@@ -13,6 +12,7 @@ COMMENT=	A graphical program for editing sound files
 LICENSE=	GPLv2
 
 USES=		pkgconfig
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gtk20
 WANT_GNOME=	yes

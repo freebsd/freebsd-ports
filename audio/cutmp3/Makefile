@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cutmp3
-# Date created:				05 Oct 2008
-# Whom:					Dennis Herrmann <adox@mcx2.org>
-#
+# Created by: Dennis Herrmann <adox@mcx2.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cutmp3
 PORTVERSION=	2.0.3
@@ -14,6 +10,7 @@ MASTER_SITES=	http://www.puchalla-online.de/ \
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A small and fast command line MP3 editor
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	yes

@@ -17,6 +17,7 @@ CONFLICTS=	timidity++-2.13.*
 TIINS=		goemon.tgz
 INSTALL_TARGET=	install.all
 MAN1=		timidity.1
+NO_STAGE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's,machine/soundcard.h,sys/soundcard.h,' \

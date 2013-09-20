@@ -21,6 +21,7 @@ USE_BZIP2=	YES
 WRKSRC=		${WRKDIR}/msu_ru_nsh_clunits
 
 NO_BUILD=	yes
+NO_STAGE=	yes
 
 FHOME=		${PREFIX}/share/festival/lib/voices/russian/msu_ru_nsh_clunits
 

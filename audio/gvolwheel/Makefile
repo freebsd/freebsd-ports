@@ -17,6 +17,7 @@ BUILD_DEPENDS=	intltoolize:${PORTSDIR}/textproc/intltool
 CONFIGURE_ARGS+=--enable-oss
 GNU_CONFIGURE=	yes
 USES=		gmake iconv pathfix pkgconfig
+NO_STAGE=	yes
 USE_GNOME=	gtk30
 
 PORTDOCS=	AUTHORS ChangeLog README

@@ -19,6 +19,7 @@ LIB_DEPENDS=	mad:${PORTSDIR}/audio/libmad
 
 CONFLICTS=	kdemultimedia-3.[1-3]*
 
+NO_STAGE=	yes
 PLUGIN=		mpeg_decoder
 PORTNAMESUFX=	${PLUGIN:S/_sink//:S/_decoder//:S/src_//}
 

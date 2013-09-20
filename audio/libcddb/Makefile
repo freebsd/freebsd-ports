@@ -1,4 +1,4 @@
-# Created by:			Michael Johnson <ahze@ahze.net>
+# Created by: Michael Johnson <ahze@ahze.net>
 # $FreeBSD$
 
 PORTNAME=	libcddb
@@ -11,6 +11,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A library to access data on a CDDB server
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USES=	pathfix pkgconfig iconv
 USE_LDCONFIG=	yes

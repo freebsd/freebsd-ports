@@ -14,6 +14,7 @@ BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	gtk12
+NO_STAGE=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

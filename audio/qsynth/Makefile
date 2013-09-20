@@ -19,6 +19,7 @@ GRADIENT_DESC=		Gradient eye-candy
 SYSTEM_TRAY_DESC=	System-tray icon
 
 USE_QT4=	gui linguist_build moc_build qmake_build rcc_build uic_build
+NO_STAGE=	yes
 QT_NONSTANDARD=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes

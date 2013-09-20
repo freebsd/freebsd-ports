@@ -15,6 +15,7 @@ LIB_DEPENDS=	chromaprint:${PORTSDIR}/audio/chromaprint \
 		tag:${PORTSDIR}/audio/taglib \
 		avcodec${FFMPEG_SUFFIX}:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX}
 
+NO_STAGE=	yes
 USES=		cmake
 USE_QT4=	gui network \
 		qmake_build moc_build rcc_build uic_build

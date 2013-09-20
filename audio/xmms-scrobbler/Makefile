@@ -1,7 +1,4 @@
-# New ports collection makefile for:	xmms-scrobbler
-# Date created:							2004-12-06
-# Whom:									arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	xmms-scrobbler
@@ -13,6 +10,7 @@ COMMENT=	XMMS plugin for Audioscrobbler.com
 CONFLICTS=	scrobbler-*
 
 MASTERDIR=	${.CURDIR}/../scrobbler
+NO_STAGE=	yes
 
 WITH_XMMS=	yes
 

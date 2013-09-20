@@ -13,6 +13,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A sound library for SGI audio file
 
 USE_AUTOTOOLS=	libtool
+NO_STAGE=	yes
 USES=	pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

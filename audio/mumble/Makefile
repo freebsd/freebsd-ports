@@ -18,6 +18,7 @@ LIB_DEPENDS+=	speex:${PORTSDIR}/audio/speex \
 		opus:${PORTSDIR}/audio/opus
 
 USES=		gmake pkgconfig
+NO_STAGE=	yes
 USE_QT4=	gui svg iconengines_run xml sql network l10n \
 		linguist_build qmake_build moc_build rcc_build uic_build \
 		opengl sql-sqlite3_run

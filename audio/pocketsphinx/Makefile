@@ -12,6 +12,7 @@ COMMENT=	Speech recognition system
 LIB_DEPENDS=	sphinxad:${PORTSDIR}/audio/sphinxbase
 
 USES=		gmake pkgconfig
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 

@@ -11,6 +11,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Audio Converter
 
 USES=		shebangfix perl5
+NO_STAGE=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 

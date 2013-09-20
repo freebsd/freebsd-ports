@@ -1,9 +1,4 @@
-# New ports collection makefile for:	libmusicbrainz5
-# Date Created:				2012-07-01
-# Whom:					Jason E. Hale <bsdkaffee@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libmusicbrainz
 PORTVERSION=	5.0.1
@@ -20,6 +15,7 @@ LIB_DEPENDS=	neon:${PORTSDIR}/www/neon29
 LATEST_LINK=	${PORTNAME}5
 
 USES=		cmake
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 
 

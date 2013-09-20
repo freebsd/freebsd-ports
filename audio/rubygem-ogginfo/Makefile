@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-ogginfo
-# Date created:		2011-07-09
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ogginfo
 PORTVERSION=	0.6.11
@@ -15,6 +11,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby library to access to information on ogg files
 
 USE_RUBY=	yes
+NO_STAGE=	yes
 USE_RUBYGEMS=	yes
 GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes

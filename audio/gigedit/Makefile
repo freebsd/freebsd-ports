@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		gettext gmake pkgconfig
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	intltool
 MAKE_JOBS_UNSAFE=	yes

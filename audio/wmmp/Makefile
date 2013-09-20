@@ -1,7 +1,4 @@
-# New ports collection makefile for:	WMmp
-# Date created:		09 November 2010
-# Whom:			Peter Vereshagin <peter@vereshagin.org>
-#
+# Created by: Peter Vereshagin <peter@vereshagin.org>
 # $FreeBSD$
 
 PORTNAME=	WMmp
@@ -14,6 +11,7 @@ COMMENT=	Window Maker Dockapp for MusicPD
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xpm
+NO_STAGE=	yes
 
 PLIST_FILES=	bin/WMmp
 MAN1=		WMmp.1

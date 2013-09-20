@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/Freedb
-# Date created:		16 January 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	freedb
 PORTVERSION=	0.5
@@ -18,6 +14,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby library that provides access to Freedb/CDDB servers
 
 USE_RUBY=	yes
+NO_STAGE=	yes
 USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install

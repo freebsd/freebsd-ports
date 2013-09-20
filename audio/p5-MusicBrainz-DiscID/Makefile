@@ -16,6 +16,7 @@ LIB_DEPENDS=	discid.0:${PORTSDIR}/audio/libdiscid
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		pkgconfig perl5
+NO_STAGE=	yes
 USE_PERL5=	modbuild
 
 MAN3=		MusicBrainz::DiscID.3

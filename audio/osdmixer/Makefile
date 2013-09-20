@@ -1,9 +1,5 @@
-# New ports collection makefile for:	osdmixer
-# Date Created:				20 Mar 2007
-# Whom:					Lars Engels <lars.engels@0x20.net>
-#
+# Created by: Lars Engels <lars.engels@0x20.net>
 # $FreeBSD$
-#
 
 PORTNAME=	osdmixer
 PORTVERSION=	0.9
@@ -16,6 +12,7 @@ COMMENT=	Displays audio volume with an OSD
 
 LIB_DEPENDS=	xosd.4:${PORTSDIR}/misc/xosd
 
+NO_STAGE=	yes
 PLIST_FILES=	bin/osdmixer
 
 do-install:

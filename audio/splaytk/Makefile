@@ -17,6 +17,7 @@ RUN_DEPENDS=	splay:${PORTSDIR}/audio/splay
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/splay-tk-${PORTVERSION}
 
+NO_STAGE=	yes
 USE_TK_WRAPPER=	yes
 
 DATADIR=	${PREFIX}/share/splay-tk

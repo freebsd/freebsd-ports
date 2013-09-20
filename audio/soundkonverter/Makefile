@@ -16,6 +16,7 @@ LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 		cdda_paranoia:${PORTSDIR}/audio/cdparanoia
 
 USES=		cmake
+NO_STAGE=	yes
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs libkcddb
 INSTALLS_ICONS=	yes

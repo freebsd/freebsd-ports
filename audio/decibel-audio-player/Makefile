@@ -18,6 +18,7 @@ USE_PYTHON=	2.5+
 USE_GNOME=	pygnome2 pygtk2
 USE_GSTREAMER=	python good bad
 USES=		gmake gettext
+NO_STAGE=	yes
 NO_BUILD=	yes
 MAN1=		decibel-audio-player.1 decibel-audio-player-remote.1
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bonk
-# Date created:			Jun 1, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	bonk
 PORTVERSION=	0.6
@@ -13,6 +9,7 @@ MASTER_SITES=	http://www.logarithmic.net/pfh-files/bonk/
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Lossy/lossless audio compressor
 
+NO_STAGE=	yes
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		PREFIX="${PREFIX}" INSTALL="${INSTALL_PROGRAM}"
 

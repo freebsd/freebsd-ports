@@ -14,6 +14,7 @@ COMMENT=	Interface to FLAC header metadata
 LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac
 
 USES=		perl5
+NO_STAGE=	yes
 USE_PERL5=	configure
 CFLAGS+=	-I${LOCALBASE}/include
 

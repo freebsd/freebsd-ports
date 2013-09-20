@@ -24,6 +24,7 @@ LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
 		jack.0:${PORTSDIR}/audio/jack
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 USE_GNOME=	gtk20
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes

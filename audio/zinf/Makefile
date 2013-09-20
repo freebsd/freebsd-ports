@@ -14,6 +14,7 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		gdbm.4:${PORTSDIR}/databases/gdbm
 
 USES=		pathfix gettext gmake perl5
+NO_STAGE=	yes
 USE_GNOME=	gtk20 lthack
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes

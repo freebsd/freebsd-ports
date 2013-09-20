@@ -1,9 +1,5 @@
-# New ports collection makefile for:	audio/linux-genpuid
-# Date created:		2009-03-24
-# Whom:			Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	genpuid
 PORTVERSION=	1.4
@@ -19,6 +15,7 @@ COMMENT=	Application for generating MusicIP puids
 USE_LINUX=		yes
 NO_BUILD=		yes
 IA32_BINARY_PORT=	yes
+NO_STAGE=	yes
 
 PLIST_FILES=	bin/genpuid bin/mipcore libexec/mipcore
 

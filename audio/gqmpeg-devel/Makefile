@@ -27,6 +27,7 @@ RUN_DEPENDS+=	ogg123:${PORTSDIR}/audio/vorbis-tools
 .endif
 
 USES=		gmake pkgconfig
+NO_STAGE=	yes
 LATEST_LINK=	gqmpeg-devel
 USE_XORG=	xext xrender xinerama xi xrandr xcursor xcomposite xdamage x11 \
 		xfixes xproto

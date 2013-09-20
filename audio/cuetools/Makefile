@@ -13,6 +13,7 @@ COMMENT=	Utilities for working with CUE and TOC files
 LICENSE=	GPLv2
 
 USES=		gmake
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		cuebreakpoints.1 cueconvert.1 cueprint.1

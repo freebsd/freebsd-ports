@@ -1,9 +1,5 @@
-# New ports collection makefile for:	shout
-# Date created:				14 Jun 2000
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	shout
 PORTVERSION=	0.8.0
@@ -17,5 +13,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program that sends mp3 streams to an icecast/shoutcast server
 
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 
 .include <bsd.port.mk>
