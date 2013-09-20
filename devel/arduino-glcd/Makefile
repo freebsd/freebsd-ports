@@ -19,6 +19,7 @@ USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 
 NO_BUILD=	yes
+NO_STAGE=	yes
 
 FILES=	\
 	Buildinfo.txt \
@@ -34,7 +35,6 @@ FILES=	\
 	glcd_Buildinfo.h \
 	glcd_Config.h \
 	glcd_Device.cpp \
-NO_STAGE=	yes
 	include \
 	readme.txt
 
