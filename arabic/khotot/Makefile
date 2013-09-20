@@ -12,6 +12,7 @@ EXTRACT_ONLY=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta-port for popular Arabic font packages
 
+NO_STAGE=	yes
 NO_BUILD=	yes
 NO_INSTALL=	yes
 SUB_FILES=	pkg-message
