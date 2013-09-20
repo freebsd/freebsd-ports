@@ -39,4 +39,5 @@ MAN3=		FLV::File.3 \
 		FLV::AudioTag.3 \
 		FLV::Splice.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

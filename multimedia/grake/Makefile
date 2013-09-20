@@ -1,9 +1,5 @@
-# New ports collection makefile for:	grake
-# Date created:		2010-12-12
-# Whom:			Pierre Guinoiseau <geekounet@poildetroll.net>
-#
+# Created by: Pierre Guinoiseau <geekounet@poildetroll.net>
 # $FreeBSD$
-#
 
 PORTNAME=	grake
 PORTVERSION=	0.1.0
@@ -31,4 +27,5 @@ MAN1=		grake.1
 PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/auto/grake
 PLIST_FILES=	bin/grake ${SITE_PERL_REL}/${PERL_ARCH}/auto/grake/.packlist
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

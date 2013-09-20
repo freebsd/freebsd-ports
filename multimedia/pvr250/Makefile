@@ -27,6 +27,7 @@ MAN4=		cxm.4
 MAN1=		pvr250-setchannel.1
 PORTDOCS=	cxm.txt
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 MODULESDIR=	/boot/kernel

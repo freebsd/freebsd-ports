@@ -25,6 +25,7 @@ MAN8=		rtmpgw.8
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OPENSSLBASE} != "/usr"

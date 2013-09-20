@@ -24,4 +24,5 @@ PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/auto/umph
 PLIST_FILES=	bin/umph \
 		${SITE_PERL_REL}/${PERL_ARCH}/auto/umph/.packlist
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

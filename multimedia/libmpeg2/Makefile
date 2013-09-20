@@ -23,6 +23,7 @@ PORTDOCS=	libmpeg2.txt README
 
 OPTIONS_DEFINE=	DOCS SDL X11
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSDL}

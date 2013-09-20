@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openquicktime
-# Date created:				Mon Sep 24 16:26:33 BRT 2001
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openquicktime
 PORTVERSION=	1.0
@@ -26,6 +22,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 OPTIONS_DEFINE=	DEBUG
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

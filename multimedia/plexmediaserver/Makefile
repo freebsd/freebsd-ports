@@ -27,6 +27,7 @@ SCRIPT_PATH?=	${DATADIR}
 
 ONLY_FOR_ARCHS=	amd64
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900000

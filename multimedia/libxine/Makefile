@@ -80,6 +80,7 @@ DVDCSS_LIBVERSION=	3
 
 PATCH_DIST_ARGS=	-d ${WRKSRC} -p1 --forward --quiet
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"

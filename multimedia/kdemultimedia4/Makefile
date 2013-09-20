@@ -25,6 +25,7 @@ KMIX_DESC=		Audio mixer
 KSCD_DESC=		CD Player
 MPLAYER_DESC=		MPlayer-based video thumbnailer
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDRAGON}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mplayer-fonts
-# Date created:		15 August 2001
-# Whom:			Thomas E. Zander
-#
+# Created by: Thomas E. Zander
 # $FreeBSD$
-#
 
 PORTNAME=	mplayer-fonts
 PORTVERSION=	0.50
@@ -23,6 +19,7 @@ FONTDIRS=	cyrillic koi8r-font iso-8859-1/arial-14 \
 		iso-8859-2/arial-18 iso-8859-2/arial-24 \
 		iso-8859-2/arial-28
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/share/mplayer/fonts
 	@${CHMOD} 0555 ${PREFIX}/share/mplayer/fonts

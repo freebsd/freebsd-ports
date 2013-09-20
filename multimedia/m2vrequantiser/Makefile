@@ -1,9 +1,5 @@
-# New ports collection makefile for:   m2vrequantiser
-# Date created: 	Thu Sep 14 20:47:38 CEST 2011
-# Whom: 		Juergen Lock <nox@FreeBSD.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	m2vrequantiser
 PORTVERSION=	1.1
@@ -19,4 +15,5 @@ CFLAGS+=	-Duint=unsigned
 MAKE_ARGS+=	CC=${CC} CXX=${CXX}
 PLIST_FILES+=	bin/M2VRequantiser
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

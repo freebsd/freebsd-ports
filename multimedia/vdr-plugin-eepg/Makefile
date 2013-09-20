@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vdr-plugin-eepg
-# Date created:		Wed Dec 21 18:34:25 CET 2011
-# Whom:			Juergen Lock <nox@FreeBSD.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugin-eepg
 PORTVERSION=	0.0.6p2011071921
@@ -21,6 +17,7 @@ HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GITHASH}
 
+NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin

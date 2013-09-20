@@ -24,6 +24,7 @@ XMMS_DESC=	xmms support
 BEEP_DESC=	beep-media-player support
 AUDACIOUS_DESC=	audacious support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBEEP}

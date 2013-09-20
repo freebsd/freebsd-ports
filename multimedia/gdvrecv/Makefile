@@ -23,4 +23,5 @@ DESKTOP_ENTRIES="Capture Video" \
 
 CONFLICTS=	dvts-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

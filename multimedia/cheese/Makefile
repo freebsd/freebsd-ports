@@ -32,6 +32,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 DOCS=		AUTHORS COPYING ChangeLog NEWS README
 GCONF_SCHEMAS=	cheese.schemas
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}

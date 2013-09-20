@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mmsclient
-# Date created:				4 March 2002
-# Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
-#
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	mmsclient
 PORTVERSION=	0.0.3
@@ -21,6 +17,7 @@ GNU_CONFIGURE=	yes
 MAN1=		mmsclient.1
 PLIST_FILES=	bin/mmsclient
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/mmsclient.1 ${MANPREFIX}/man/man1
 

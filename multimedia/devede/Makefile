@@ -31,6 +31,7 @@ PSYCO_DESC=	devel/py-psyco optimization support
 DEJAVU_FONTSDIR=	${LOCALBASE}/lib/X11/fonts/dejavu
 DEJAVU_FONTFILE=	${DEJAVU_FONTSDIR}/DejaVuSans.ttf
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIBUS}

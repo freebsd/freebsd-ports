@@ -45,6 +45,7 @@ CONFIGURE_ARGS+=	--without-x --enable-gpl --without-doxygen
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}

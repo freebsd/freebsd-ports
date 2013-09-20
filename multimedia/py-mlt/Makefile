@@ -25,6 +25,7 @@ PLIST=		${.CURDIR}/pkg-plist
 BUILD_WRKSRC=	${WRKSRC}/src/swig/python
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

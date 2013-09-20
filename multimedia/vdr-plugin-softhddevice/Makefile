@@ -1,4 +1,4 @@
-# Created by: Juergen Lock <nox@freebsd.org>
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	vdr-plugin-softhddevice
@@ -29,6 +29,7 @@ CONFIG+=	-DUSE_OSS
 MAKE_ARGS+=	CONFIG="${CONFIG}"
 WRKSRC=		${WRKDIR}/${PLUGIN}-${PORTVERSION}
 
+NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 OPTIONS_DEFINE=	VAAPI

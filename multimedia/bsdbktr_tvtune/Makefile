@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bsdbktr_tvtune
-# Date created:		Sun Jan  4 17:49:00 EST 2004
-# Whom:			Mina Naguib <webmaster@topfx.com>
-#
+# Created by: Mina Naguib <webmaster@topfx.com>
 # $FreeBSD$
-#
 
 PORTNAME=	bsdbktr_tvtune
 PORTVERSION=	0.02
@@ -18,6 +14,7 @@ PLIST_FILES=	bin/bsdbktr_tvtune
 WRKSRC=	${WRKDIR}/${PORTNAME}
 ALL_TARGET=	bsdbktr_tvtune
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bsdbktr_tvtune ${PREFIX}/bin/
 

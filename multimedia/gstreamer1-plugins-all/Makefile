@@ -16,6 +16,7 @@ COMMENT=	Meta-port of all gstreamer 1.x plugins with options
 NO_BUILD=	yes
 USE_GSTREAMER1=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../Mk/bsd.gstreamer.mk"
 
 .for all in ${_GSTREAMER_PLUGINS}

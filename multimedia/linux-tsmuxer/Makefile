@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tsMuxeR (Linux version)
-# Date created:				2010-01-02
-# Whom:					Steve Wills <steve@mouf.net>
-#
+# Created by: Steve Wills <steve@mouf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	tsmuxer
 PORTVERSION=	1.10.6
@@ -20,6 +16,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/tsMuxeR bin/tsMuxerGUI
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/tsMuxeR ${WRKDIR}/tsMuxerGUI \
 		${PREFIX}/bin

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	AtomicParsley
-# Date created:		2008-04-08
-# Whom:			Bapt <baptiste.daroussin@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	AtomicParsley
 PORTVERSION=	0.9.0
@@ -21,6 +16,7 @@ USE_ZIP=	yes
 
 PLIST_FILES=	bin/AtomicParsley
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,g++,${CXX},g' -e 's,-g -O2 -Wall,${CXXFLAGS},g' ${WRKSRC}/build
 

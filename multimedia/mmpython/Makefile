@@ -1,9 +1,5 @@
-# New ports collection makefile for: mmpython
-# Date created:		09 Aug 2003
-# Whom:			larse@isi.edu
-#
+# Created by: larse@isi.edu
 # $FreeBSD$
-#
 
 PORTNAME=	mmpython
 PORTVERSION=	0.4.10
@@ -21,6 +17,7 @@ RUN_DEPENDS=	lsdvd:${PORTSDIR}/multimedia/lsdvd
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's,/usr/local/,${LOCALBASE}/,g' \

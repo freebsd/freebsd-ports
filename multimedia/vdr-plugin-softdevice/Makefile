@@ -1,4 +1,4 @@
-# Created by: Juergen Lock <nox@freebsd.org>
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	vdr-plugin-softdevice
@@ -23,6 +23,7 @@ PORTDOCS=	COPYING README HISTORY
 WRKSRC=		${WRKDIR}/${PLUGIN}
 CONFIGURE_ARGS+=	--disable-vidix --disable-fb --disable-dfb --disable-cle266 --disable-alsa #--disable-yaepg
 
+NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin

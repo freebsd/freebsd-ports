@@ -1,9 +1,5 @@
-# New ports collection makefile for:	flvtool++
-# Date created:		2008-08-07
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	flvtool++
 PORTVERSION=	1.2.1
@@ -21,6 +17,7 @@ PLIST_FILES=	bin/flvtool++
 USE_SCONS=	yes
 SCONS_BUILDENV=	${SCONS_ENV}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local/include/boost-1_33_1|${LOCALBASE}/include|' \
 		${WRKSRC}/SConscript

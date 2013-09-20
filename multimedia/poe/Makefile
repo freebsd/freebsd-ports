@@ -21,6 +21,7 @@ USE_GNUSTEP_INSTALL=	yes
 
 PORTSCOUT=	skipv:0.5.2
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|-lvorbisfile$$|-lvorbisfile -logg|' \
 		${WRKSRC}/GNUmakefile

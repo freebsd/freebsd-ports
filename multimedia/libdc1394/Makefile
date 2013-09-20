@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libdc1394
-# Date created:		2009-04-23
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libdc1394
 PORTVERSION=	2.2.0
@@ -26,4 +22,5 @@ MAN1=		dc1394_multiview.1 \
 		grab_gray_image.1 \
 		grab_partial_image.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

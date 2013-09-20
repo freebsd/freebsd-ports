@@ -19,6 +19,7 @@ PLIST_FILES=	bin/vstream-client \
 		include/vstream-client.h \
 		lib/libvstream-client.a
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$$(INSTALL) -m 755|$${BSD_INSTALL_PROGRAM}| ; \

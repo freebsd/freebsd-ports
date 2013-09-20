@@ -1,4 +1,4 @@
-# Created by: Juergen Lock <nox@freebsd.org>
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	vdr-plugin-epgsearch
@@ -22,6 +22,7 @@ PORTDOCS=	COPYING README HISTORY
 WRKSRC=		${WRKDIR}/vdr-plugin-${PLUGIN}
 MAKE_ARGS+=	INCLUDES="-I$(LOCALBASE)/include -I$(LOCALBASE)/include/vdr -I${WRKSRC}"
 
+NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin

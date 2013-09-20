@@ -93,6 +93,7 @@ MAN3=		ZoneMinder::Trigger::Connection.3 \
 		ZoneMinder::ConfigData.3 \
 		ZoneMinder::Logger.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH}=="i386"

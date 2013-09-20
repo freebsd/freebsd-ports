@@ -1,9 +1,5 @@
-# New ports collection makefile for:	multimedia/linux-f10-libv4l
-# Date created:				2011-04-14
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	libv4l
 PORTVERSION=	0.6.2
@@ -20,4 +16,5 @@ RPMVERSION=	1.fc10
 USE_LDCONFIG=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

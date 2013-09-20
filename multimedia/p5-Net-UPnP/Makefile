@@ -1,4 +1,3 @@
-# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Net-UPnP
@@ -32,4 +31,5 @@ MAN3=	Net::UPnP::HTTP.3 \
 	Net::UPnP::ActionResponse.3 \
 	Net::UPnP::ControlPoint.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

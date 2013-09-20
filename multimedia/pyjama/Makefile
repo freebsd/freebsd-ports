@@ -29,6 +29,7 @@ INSTSUBDIRS=	clLayouts extended_modules images modules plugins themes
 INSTFILES=	about.glade preferences.glade pyjama.cfg pyjama_test.glade \
 		pyjama.doxygen.py pyjama.py pyjama_test.glade
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -i '' 's|path = "locale"|path = "${PREFIX}/share/locale"|' \
 		${WRKSRC}/src/modules/functions.py

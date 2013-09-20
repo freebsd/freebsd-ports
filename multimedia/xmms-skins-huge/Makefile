@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-skins-huge
-# Date created:				2011-06-18
-# Whom:					Jesse <jessefrgsmith@yahoo.ca>
-#
+# Created by: Jesse <jessefrgsmith@yahoo.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-skins-huge
 PORTVERSION=	1.0.0
@@ -20,6 +16,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/Skins
 DATADIR=	${PREFIX}/share/xmms
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/Skins
 	${INSTALL_DATA} ${WRKSRC}/* ${DATADIR}/Skins

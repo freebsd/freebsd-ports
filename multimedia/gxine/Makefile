@@ -35,6 +35,7 @@ MANLANG=	"" de es
 MAN1=		gxine.1 gxine_client.1
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMOZILLA_PLUGIN}

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	kaffeine
-# Date created:				2003-06-25
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	kaffeine
@@ -28,6 +25,7 @@ USES=		cmake gettext
 USE_LDCONFIG=		yes
 USE_XORG=	xscrnsaver
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,add_subdirectory(x-test),,' ${WRKSRC}/po/CMakeLists.txt
 

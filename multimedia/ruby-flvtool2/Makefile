@@ -15,4 +15,5 @@ COMMENT=	Manipulation tool for Macromedia Flash Video files
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

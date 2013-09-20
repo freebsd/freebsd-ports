@@ -19,4 +19,5 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 PLIST_FILES=	bin/vdpauinfo
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

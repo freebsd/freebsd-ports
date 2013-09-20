@@ -46,6 +46,7 @@ STELLAR_FW=	stellar_dvbt
 NOVA_FW=	novab0_dvbbda
 BUILD_FWS=
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${SRC_BASE}/sys/Makefile)

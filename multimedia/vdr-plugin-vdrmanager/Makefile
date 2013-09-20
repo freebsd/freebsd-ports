@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vdr-plugin-vdrmanager
-# Date created:		Fri Mar 23 2012
-# Whom:			Juergen Lock <nox@FreeBSD.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugin-vdrmanager
 PORTVERSION=	0.6
@@ -18,6 +14,7 @@ COMMENT=	Video Disk Recorder - VDR-Manager server plugin
 PATCH_STRIP=	-p1
 PORTDOCS=	COPYING README HISTORY
 
+NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin

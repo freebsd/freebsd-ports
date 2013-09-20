@@ -25,6 +25,7 @@ OPTIONS_DEFINE=	GSTREAMER1
 
 GSTREAMER1_DESC=	Multimedia support via GStreamer 1.0 (instead of 0.10)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGSTREAMER1} || exists(${LOCALBASE}/libdata/pkgconfig/gstreamer-1.0.pc)

@@ -44,6 +44,7 @@ SPEC_DESC=	Visualization opengl_spectrum
 VFILEINFO_DESC=	Enable Extended Vorbis Fileinfo
 RUSXMMS_PATCHES_DESC=	Custom IDv3 patches
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

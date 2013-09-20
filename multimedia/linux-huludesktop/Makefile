@@ -1,9 +1,5 @@
-# New ports collection makefile for:	multimedia/linux-huludesktop
-# Date created:			2010-02-22
-# Whom:				Joseph S. Atkinson <jsa@wickedmachine.net>
-#
+# Created by: Joseph S. Atkinson <jsa@wickedmachine.net>
 # $FreeBSD$
-#
 
 PORTNAME=	huludesktop
 PORTVERSION=	0.9.8
@@ -34,6 +30,7 @@ RESTRICTED=	Non-redistributable, non-commercial, export controlled
 
 SUB_FILES=	${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 90000

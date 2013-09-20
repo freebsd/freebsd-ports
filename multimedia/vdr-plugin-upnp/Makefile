@@ -1,4 +1,4 @@
-# Created by: Juergen Lock <nox@freebsd.org>
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	vdr-plugin-upnp
@@ -23,6 +23,7 @@ HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
 WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION:S/a2//}
 
+NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin

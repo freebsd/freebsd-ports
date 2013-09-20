@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	libdvdcss
-# Date created:		Jul 6, 2001
-# Whom:			ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libdvdcss
 PORTVERSION=	1.2.12
@@ -33,6 +28,7 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 pre-everything::
 .if !defined(WITH_DOXYGEN)
 	@${ECHO_MSG} '==> Define WITH_DOXYGEN to build API documentation'

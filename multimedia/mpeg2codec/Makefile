@@ -34,6 +34,7 @@ PLIST_FILES=	bin/mpeg2decode bin/mpeg2encode \
 		%%DATADIR%%/intra.mat
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

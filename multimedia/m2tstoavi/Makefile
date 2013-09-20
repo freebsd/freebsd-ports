@@ -1,9 +1,5 @@
-# New ports collection makefile for:	m2tstoavi
-# Date created:		2009-12-19
-# Whom:			Steve Wills <steve@mouf.net>
-#
+# Created by: Steve Wills <steve@mouf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	m2tstoavi
 PORTVERSION=	2009121901
@@ -19,6 +15,7 @@ RUN_DEPENDS=	xporthdmv:${PORTSDIR}/multimedia/xporthdmv \
 		ldecod:${PORTSDIR}/multimedia/jmref \
 		ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 
+NO_STAGE=	yes
 do-build:
 	${DO_NADA}
 

@@ -61,6 +61,7 @@ USE_GCC=	any
 DEFAULT_AUDIOSINK?=	osssink
 DEFAULT_AUDIOSRC?=	osssrc
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH}=="i386"

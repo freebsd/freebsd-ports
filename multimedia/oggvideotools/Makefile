@@ -27,4 +27,5 @@ MAN1=		mkThumbs.1 oggCat.1 oggCut.1 oggDump.1 oggJoin.1 \
 		oggLength.1 oggSilence.1 oggSlideshow.1 oggSplit.1 \
 		oggThumb.1 oggTranscode.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	flvmeta
-# Date created:		31 July 2009
-# Whom:			Earl Gay <earl@eeg3.net>
-#
+# Created by: Earl Gay <earl@eeg3.net>
 # $FreeBSD$
-#
 
 PORTNAME=	flvmeta
 PORTVERSION=	1.0.11
@@ -17,6 +13,7 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/flvmeta bin/flvdump
 
+NO_STAGE=	yes
 pre-install:
 	${CHMOD} a+x ${WRKSRC}/install-sh
 

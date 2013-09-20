@@ -51,6 +51,7 @@ SPEEDPITCH_DESC=Speed and Pitch plugin
 LIRC_DESC=	LIRC plugin
 MP3FILEWRITER=	Filewriter plugin for MP3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSDLOUT}

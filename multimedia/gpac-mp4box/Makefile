@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gpac-mp4box
-# Date created:				1 December 2006
-# Whom:					Pascal Vizeli <pvizeli@yahoo.de>
-#
+# Created by: Pascal Vizeli <pvizeli@yahoo.de>
 # $FreeBSD$
-#
 
 PORTNAME=	mp4box
 DISTVERSION=	0.4.5
@@ -21,6 +17,7 @@ LIB_DEPENDS=	gpac.1:${PORTSDIR}/multimedia/gpac-libgpac
 WRKSRC=		${WRKDIR}/gpac/applications/mp4box
 PLIST_FILES=	bin/mp4box
 
+NO_STAGE=	yes
 pre-patch:
 	${RM} -f ${WRKSRC}/Makefile
 

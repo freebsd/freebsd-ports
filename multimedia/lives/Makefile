@@ -76,6 +76,7 @@ FREI0R_RUN_DEPENDS=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MFREI0R}

@@ -37,6 +37,7 @@ SCONS_ARGS=	DVDREAD_LIBPATH=${LOCALBASE}/lib \
 MAN1=		bombono-dvd.1 mpeg2demux.1
 MANDIR=		${MANPREFIX}/man/man1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/SConstruct
 

@@ -18,6 +18,7 @@ USE_XORG=	x11 xext
 MAN1=		mpeg_play.1
 PLIST_FILES=	bin/mpeg_play
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc"

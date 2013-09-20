@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mpeg4ip-libmp4v2
-# Date created:		28 Sep 2004
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mp4v2
 PORTVERSION=	1.9.1
@@ -26,4 +22,5 @@ MAN1=	mp4art.1 \
 	mp4subtitle.1 \
 	mp4track.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

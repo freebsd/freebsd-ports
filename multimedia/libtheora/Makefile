@@ -1,9 +1,5 @@
-# New ports collection makefile for:	theora
-# Date created:				09 februari 2003
-# Whom:					Koop Mast <kwm@rainbow-runner.nl>
-#
+# Created by: Koop Mast <kwm@rainbow-runner.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	libtheora
 PORTVERSION=	1.1.1
@@ -28,6 +24,7 @@ CONFIGURE_ARGS+=--disable-sdltest \
 		--enable-shared \
 		--disable-examples
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

@@ -39,6 +39,7 @@ RM_FILES=	AUTHORS COPY CREDITS INSTALL KNOWN-ISSUES LICENSE NOTES README THANKS 
 LN_OPTS=	-sf
 RM_OPTS=	-rf
 
+NO_STAGE=	yes
 post-patch:
 	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' -e "s|ensureMinimal('2.6')|select('${WX_PYTHON_DIR:S/^wx-//g}')|g" CastPodderGui.py ${CASTPOD_SCRIPT}
 	cd ${WRKSRC} && ${RM} ${RM_OPTS} *.bak *.orig

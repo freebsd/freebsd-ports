@@ -1,9 +1,5 @@
-# New ports collection makefile for:	multimedia/lxdvdrip
-# Date created:				26.01.2005
-# Whom:					Ulrich Spoerlein <q@uni.de>
-#
+# Created by: Ulrich Spoerlein <q@uni.de>
 # $FreeBSD$
-#
 
 PORTNAME=	lxdvdrip
 PORTVERSION=	1.62
@@ -51,6 +47,7 @@ PORTDOCS=	Changelog.de Changelog.en Changelog.fr \
 		TODO freebsd.doc
 MAN1=		lxdvdrip.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

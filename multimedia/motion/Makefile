@@ -34,6 +34,7 @@ PORTDOCS=	CHANGELOG CREDITS README README.FreeBSD \
 PORTEXAMPLES=	motion-dist.conf thread1.conf thread2.conf \
 		thread3.conf thread4.conf
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBKTR}

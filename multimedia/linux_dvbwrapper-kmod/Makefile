@@ -13,6 +13,7 @@ COMMENT=	Linux compatibility layer - DVB ioctl handler
 SSP_UNSAFE=	kernel module does not support ssp
 ONLY_FOR_ARCHS=	i386 amd64
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PLIST_FILES+=	"@cwd /"

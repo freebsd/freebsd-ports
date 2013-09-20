@@ -1,9 +1,5 @@
-# New ports collection makefile for:	szap_s2
-# Date created:		Wed Apr 14 19:30:36 CEST 2010
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	szap_s2
 PORTVERSION=	20100129s
@@ -28,6 +24,7 @@ PORTDOCS=	README
 PLIST_FILES=	bin/szap-s2
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})

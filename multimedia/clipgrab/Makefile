@@ -28,6 +28,7 @@ DESKTOP_ENTRIES="Clipgrab" "Download and convert videos from YouTube and etc" \
 		"${DATADIR}/icon.png" "${PORTNAME}" \
 		"AudioVideo;" false
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,img/,share/${PORTNAME}/,g' \
 	${WRKSRC}/*.cpp

@@ -44,6 +44,7 @@ GST01_DESC=	GStreamer 0.10
 GST10_DESC=	GStreamer 1.0
 GST_PLUG_DESC=	Additional GStreamer plugins
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGST01}

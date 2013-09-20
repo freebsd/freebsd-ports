@@ -1,9 +1,5 @@
-# New ports collection makefile for:  xmms-skins
-# Date created:                19 Aug 2004
-# Whom:                        Filippo Natali <filippo@widestore.net>
-#
+# Created by: Filippo Natali <filippo@widestore.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-skins
 PORTVERSION=	0.1
@@ -104,6 +100,7 @@ DATADIR=	${PREFIX}/share/xmms
 PLIST_FILES=	${DISTFILES:S,^,${DATADIR_REL}/Skins/,}
 PLIST_DIRSTRY=	${DATADIR_REL}/Skins ${DATADIR_REL}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/Skins
 	${INSTALL_DATA} ${DISTFILES:S,^,${DISTDIR}/,} ${DATADIR}/Skins

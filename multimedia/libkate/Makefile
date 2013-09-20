@@ -31,6 +31,7 @@ KATEDJ_DESC=	Install KateDJ (Huge dependencies list)
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOXYGEN} && ${PORT_OPTIONS:MDOCS}

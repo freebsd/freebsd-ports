@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ggrab
-# Date created:        			Fri Jan  6 20:53:15 CET 2006
-# Whom:    				Markus Brueffer <markus@FreeBSD.org>
-#
+# Created by: Markus Brueffer <markus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ggrab
 PORTVERSION=	0.22a
@@ -20,6 +16,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	bin/ggrab bin/sserver
 PORTDOCS=	README
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' \
 		${WRKSRC}/Makefile

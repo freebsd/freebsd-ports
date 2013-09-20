@@ -1,9 +1,5 @@
-# New ports collection makefile for:	multimedia/linux-f10-libtheora
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	libtheora
 PORTVERSION=	1.0rc1
@@ -30,4 +26,5 @@ DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	COPYING README
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -57,6 +57,7 @@ MAN1=		ffmpeg${FFMPEG_SUFFIX}.1 ffprobe${FFMPEG_SUFFIX}.1
 USE_LDCONFIG=	${PREFIX}/lib/ffmpeg${FFMPEG_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # ssl

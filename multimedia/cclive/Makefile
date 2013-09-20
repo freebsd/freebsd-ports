@@ -27,4 +27,5 @@ MAN1=		cclive.1
 PLIST_FILES=	bin/ccl \
 		bin/cclive
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

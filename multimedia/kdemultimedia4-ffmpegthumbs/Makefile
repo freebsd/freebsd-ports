@@ -28,4 +28,5 @@ USE_XZ=		yes
 FFMPEG_SUFFIX?=	1
 CMAKE_ARGS+=	-DFFMPEG_SUFFIX=${FFMPEG_SUFFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vdr-plugin-reelchannelscan
-# Date created:		Fri Apr 29 17:44:18 CEST 2011
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugin-reelchannelscan
 PORTVERSION=	0.6.1b1.7.15
@@ -22,6 +18,7 @@ HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/b1.7.15//}
 
+NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin

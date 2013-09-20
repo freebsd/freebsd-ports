@@ -58,6 +58,7 @@ CFLAGS+=		-msse
 
 CONFIGURE_ARGS+=	--with-ffmpeg-extra-configure="${FFMPEG_CONFIG}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900033

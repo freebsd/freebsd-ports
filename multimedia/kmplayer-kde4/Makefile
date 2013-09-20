@@ -1,9 +1,5 @@
-# New ports collection makefile for:	KMplayer-kde4
-# Date created:				Aug 26, 2008
-# Whom:					Kris Moore
-#
+# Created by: Kris Moore
 # $FreeBSD$
-#
 
 PORTNAME=	kmplayer
 PORTVERSION=	0.11.2b
@@ -26,6 +22,7 @@ USES=		cmake
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
 
+NO_STAGE=	yes
 post-patch:
 #Fix build with kdelibs>=4.5.0
 	${REINPLACE_CMD} -e 's,V4.1.2-Based,V4.2-Based,g' \

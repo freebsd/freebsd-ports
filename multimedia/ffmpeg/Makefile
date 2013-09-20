@@ -69,6 +69,7 @@ COMPAT_HEADERS=libavcodec/avcodec.h \
 
 MAN1+=		ffmpeg.1 ffprobe.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # PORTDOCS

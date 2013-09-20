@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vamps
-# Date created:		Fri Dec 16 04:38:13 UTC 2005
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vamps
 PORTVERSION=	0.99.2
@@ -30,6 +26,7 @@ PROGRAM_FILES=	\
 
 PLIST_FILES=	${PROGRAM_FILES:H:S,^,bin/,}
 
+NO_STAGE=	yes
 do-install:
 .for program in ${PROGRAM_FILES}
 	@${INSTALL_PROGRAM} ${WRKSRC}/${program} ${PREFIX}/bin/${program:H}

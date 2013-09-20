@@ -1,9 +1,5 @@
-# New ports collection makefile for:	youtube-viewer
-# Date created:		2010-08-17
-# Whom:			Dennis Herrmann <dhn@FreeBSD.org>
-#
+# Created by: Dennis Herrmann <dhn@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	youtube
 PORTVERSION=	2.5.9
@@ -30,6 +26,7 @@ USE_PERL5=	run
 NO_BUILD=	yes
 PLIST_FILES=	bin/youtube-viewer
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|#!/usr/bin/perl|#!${PERL}|g" ${WRKDIR}/youtube-viewer
 

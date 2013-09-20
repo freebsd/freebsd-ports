@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux_v4l2wrapper-kmod
-# Date created:				Fri May  6 22:30:00 CEST 2011
-# Whom:					nox@FreeBSD.org
-#
+# Created by: nox@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	linux_v4l2wrapper-kmod
 PORTVERSION=	1.0
@@ -21,6 +17,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/linux_v4l2
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PLIST_FILES+=	"@cwd /"

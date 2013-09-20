@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gstreamer-plugins-v4l2
-# Date created:			27 Mar 2010
-# Whom:				Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	multimedia
@@ -15,4 +11,5 @@ PKGNAMESUFFIX?=	-plugins-v4l2
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

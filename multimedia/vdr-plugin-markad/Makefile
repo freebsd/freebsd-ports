@@ -1,4 +1,4 @@
-# Created by: Juergen Lock <nox@freebsd.org>
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	vdr-plugin-markad
@@ -29,6 +29,7 @@ MAN1=		markad.1
 
 RESTRICTED=	installs station logos
 
+NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 # for libexecinfo: (so that __builtin_frame_address() finds the top

@@ -31,6 +31,7 @@ OPTIONS_DEFINE_amd64=	FFAPASM
 OPTIONS_DEFAULT_amd64=	FFAPASM
 FFAPASM_DESC=	Optimize FFap decoder using devel/yasm
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQSUI}

@@ -24,6 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lswscale
 OPTIONS_DEFINE=	GTKSPELL
 OPTIONS_DEFAULT=GTKSPELL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

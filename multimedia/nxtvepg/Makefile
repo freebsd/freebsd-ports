@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nxtvepg-2.4.2
-# Date created:		07 Jan 2003
-# Whom:			Simon Barner <barner@gmx.de>
-#
+# Created by: Simon Barner <barner@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	nxtvepg
 PORTVERSION=	2.8.0
@@ -23,6 +19,7 @@ MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} WRKSRC=${WRKSRC} X11BASE=${LOCALBASE}
 MAN1=		nxtvepg.1 nxtvepgd.1
 MYPORTDOCS=	README TODO CHANGES manual.html
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,machine/ioctl_bt848.h,dev/bktr/ioctl_bt848.h,; \
 		s,machine/ioctl_meteor.h,dev/bktr/ioctl_meteor.h," \

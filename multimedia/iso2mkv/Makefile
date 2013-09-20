@@ -1,9 +1,5 @@
-# New ports collection makefile for:	iso2mkv
-# Date created:			31 Dec 2006
-# Whom:				Alexander Botero-Lowry <alexbl@FreeBSD.org>
-#
+# Created by: Alexander Botero-Lowry <alexbl@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	iso2mkv
 DISTVERSION=	2007-04-25
@@ -30,6 +26,7 @@ PLIST_FILES=	bin/iso2mkv
 PORTDOCS=	README.utf8.txt
 PORTEXAMPLES=	iso2mkv.conf
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^#!/bin/bash|#!${LOCALBASE}/bin/bash| ; \

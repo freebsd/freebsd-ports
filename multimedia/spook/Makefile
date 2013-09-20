@@ -1,9 +1,5 @@
-# New ports collection makefile for:	spook
-# Date created:		1 Sep 2008
-# Whom:			Bruce M Simpson <bms@FreeBSD.org>
-#
+# Created by: Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	spook
 PORTVERSION=	20050207
@@ -38,6 +34,7 @@ SUB_FILES=	pkg-message
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJPEG}

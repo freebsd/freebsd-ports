@@ -46,6 +46,7 @@ _CCVERSION=	${CC} --version
 USE_GCC=	yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

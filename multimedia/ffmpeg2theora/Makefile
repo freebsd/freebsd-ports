@@ -27,4 +27,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 MAN1=		ffmpeg2theora.1
 PLIST_FILES=	bin/ffmpeg2theora
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	acidrip
-# Date created:		2004-03-31
-# Whom:			michael johnson <ahze@ahze.net>
-#
+# Created by: michael johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	acidrip
 PORTVERSION=	0.14
@@ -29,6 +25,7 @@ DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 DEFAULT_DVD_DEVICE=/dev/acd0
 .endif
 
+NO_STAGE=	yes
 pre-everything::
 .if !defined(WITH_DVD_DEVICE)
 	@${ECHO_MSG} "===> The default DVD device is ${DEFAULT_DVD_DEVICE}"

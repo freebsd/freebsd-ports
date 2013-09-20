@@ -40,6 +40,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		dvdrip.1 dvdrip-progress.1 dvdrip-splitpipe.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVORBIS}

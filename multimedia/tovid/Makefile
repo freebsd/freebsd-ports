@@ -43,6 +43,7 @@ GNU_CONFIGURE=	yes
 MAN1=		idvid.1 makedvd.1 makemenu.1 makeslides.1 makevcd.1 makexml.1 \
 		postproc.1 pymakexml.1 todisc.1 tovid-stats.1 tovid.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|gawk|${AWK}|' \

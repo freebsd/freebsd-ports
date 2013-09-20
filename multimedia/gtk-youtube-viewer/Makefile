@@ -57,6 +57,7 @@ OPTIONS_DEFAULT=	GTK2 GCAP
 CLI_DESC=	Enable CLI version
 GCAP_DESC=	Enable YouTube captions support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLI}

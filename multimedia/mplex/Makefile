@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mplex
-# Date created:         Wed Jul 31 20:54:54 CDT 1996
-# Whom:                 erich@FreeBSD.org
-#
+# Created by: erich@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	mplex
 PORTVERSION=	1.1
@@ -19,6 +15,7 @@ CONFLICTS=	mjpegtools-*
 MAN1=		mplex.1
 PLIST_FILES=	bin/mplex
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mplex ${PREFIX}/bin
 	${INSTALL_MAN} ${FILESDIR}/mplex.1 ${PREFIX}/man/man1

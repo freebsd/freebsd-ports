@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	podcatcher
-# Date created:			Sep 5, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	podcatcher
 PORTVERSION=	3.1.6
@@ -29,6 +24,7 @@ PLIST_FILES=	bin/podcatcher \
 
 PLIST_DIRS=	${EXAMPLESDIR_REL}
 
+NO_STAGE=	yes
 pre-install:
 	@${SED} -i.bak 's,#!/usr/bin/env ruby,#!${RUBY},' ${WRKSRC}/bin/${PORTNAME}
 

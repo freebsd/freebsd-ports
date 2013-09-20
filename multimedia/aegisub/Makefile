@@ -55,6 +55,7 @@ FFMS_CFLAGS=	-I${FFMS_WRKSRC}/include
 FFMS_LIBS=	${FFMS_WRKSRC}/src/core/.libs/libffms2.a \
 		`pkg-config --libs libavcodec libavformat libswscale libavutil`
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

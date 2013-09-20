@@ -1,11 +1,5 @@
-# New ports collection makefile for:	linux-ov511-kmod
-# Date created:				2 February 2007
-# Whom:					luigi
-#
+# Created by: luigi
 # $FreeBSD$
-#
-# XXX MASTER_SITES should be replaced with some good locations
-# for individual files from linux distributions.
 
 PORTNAME=	linux-ov511-kmod
 PORTVERSION=	1.0
@@ -28,6 +22,7 @@ MAKEFILE=	Makefile.kld
 ALL_TARGET=	depend all
 
 # we simply copy the sources from the original site
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	( cd ${_DISTDIR} && ${CP} ${DISTFILES} ${WRKSRC} )

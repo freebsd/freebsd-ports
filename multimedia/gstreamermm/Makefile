@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--disable-documentation
 USE_LDCONFIG=	yes
 PLIST_SUB=	GST_VERSION="${GST_VERSION}"
 
+NO_STAGE=	yes
 post-patch:
 # Fix the build with clang
 	@${REINPLACE_CMD} -e 's|GREP "\\-L"|GREP "conftest\\.$$objext"|g' \

@@ -24,6 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 DESKTOP_ENTRIES="Smile" "${COMMENT}" "${PREFIX}/share/pixmaps/smile.png" \
 		"${PORTNAME}" "AudioVideo;Qt;" false
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|bash|sh|' ${WRKSRC}/mainfrm.cpp \
 		${WRKSRC}/render.cpp

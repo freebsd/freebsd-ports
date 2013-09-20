@@ -17,6 +17,7 @@ USE_GNOME=	gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-gettext
 
+NO_STAGE=	yes
 post-patch:
 # CFLAGS safeness
 # pthread safeness

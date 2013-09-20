@@ -46,6 +46,7 @@ MAN1=		miro.1 miro.real.1
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .SILENT:

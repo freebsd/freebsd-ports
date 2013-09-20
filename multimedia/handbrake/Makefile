@@ -63,6 +63,7 @@ OPTIONS_DEFINE=	X11
 X11_DESC=	Build GTK+2 based GUI program
 OPTIONS_DEFAULT=	X11
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Recent GNU binutils are required to handle inline SSSE3 asm (in x264), and

@@ -34,6 +34,7 @@ MAN1=		${PORTNAME}.1
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README \
 		dbus.txt keyboard_shortcuts.txt plugin-interaction.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALSA}

@@ -27,6 +27,7 @@ PHONON_BRANCH=	stable
 
 PLIST_SUB+=	QT_PREFIX=${QT_PREFIX}
 
+NO_STAGE=	yes
 pre-su-install:
 	${MKDIR} ${QT_PLUGINDIR}/phonon_backend
 

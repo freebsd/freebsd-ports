@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libspigot.a
-# Date Created:		Fri Sep 15 10:04:46 CDT 1995
-# Whom:			james@cs.uwm.edu
-#
+# Created by: james@cs.uwm.edu
 # $FreeBSD$
-#
 
 PORTNAME=	spigot
 PORTVERSION=	1.7
@@ -20,4 +16,5 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 ONLY_FOR_ARCHS=	i386
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	x264
-# Date created:		2005-01-11
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	x264
@@ -50,6 +47,7 @@ CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/incl
 
 PLIST_SUB+=	X264_BUILD=${X264_BUILD}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGCC44}

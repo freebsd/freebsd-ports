@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tivodecode
-# Date created:		2007-01-01
-# Whom:			Yi-Hsuan Hsin <mhsin@mhsin.org>
-#
+# Created by: Yi-Hsuan Hsin <mhsin@mhsin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tivodecode
 DISTVERSION=	0.2pre4
@@ -16,6 +12,7 @@ COMMENT=	Converts .TiVo files to normal MPEG files
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

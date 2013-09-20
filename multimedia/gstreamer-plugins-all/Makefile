@@ -16,6 +16,7 @@ COMMENT=	Meta-port of all gstreamer plugins with options
 .MAKE.FreeBSD_UL=	yes
 NO_BUILD=	yes
 USE_GSTREAMER=	yes
+NO_STAGE=	yes
 .include "${.CURDIR}/../../Mk/bsd.gstreamer.mk"
 
 .for all in ${_GSTREAMER_PLUGINS}

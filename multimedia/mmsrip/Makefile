@@ -17,4 +17,5 @@ GNU_CONFIGURE=	yes
 MAN1=		mmsrip.1
 PLIST_FILES=	bin/mmsrip
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

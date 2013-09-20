@@ -29,6 +29,7 @@ CONFIGURE_ARGS=	-x-libraries=${LOCALBASE}/lib \
 
 MAN1=		vic.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^main,int &,' ${WRKSRC}/tcl/tcl2cpp/tcl2cpp.c
 	${RM} ${WRKSRC}/md5*

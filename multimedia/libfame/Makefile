@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	libfame
-# Date created:			Mar 23, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libfame
 PORTVERSION=	0.9.1
@@ -28,6 +23,7 @@ OPTIONS_DEFAULT=	MMX
 
 SSE_DESC=	"SSE optimized routines (no effect in this release)"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSE}

@@ -21,6 +21,7 @@ MAN1=		recordmydesktop.1
 USE_XORG=	ice sm x11 xext xextproto xfixes xdamage
 PLIST_FILES=	bin/recordmydesktop
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure

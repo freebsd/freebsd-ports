@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcmplex-panteltje
-# Date created:		2004-10-21
-# Whom:			Herve Quiroz <hq@FreeBSD.org>
-#
+# Created by: Herve Quiroz <hq@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tcmplex-panteltje
 PORTVERSION=	0.4.7
@@ -24,6 +20,7 @@ ALL_TARGET=	a.out
 PORTDOCS=	CHANGES COPYRIGHT README
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

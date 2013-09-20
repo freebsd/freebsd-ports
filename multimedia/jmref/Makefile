@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jmref
-# Date created:		2009-08-06
-# Whom:			Steve Wills <steve@mouf.net>
-#
+# Created by: Steve Wills <steve@mouf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	jmref
 PORTVERSION=	18.4
@@ -23,6 +19,7 @@ PLIST_FILES=	bin/ldecod bin/lencod \
 
 USE_DOS2UNIX=	Makefile
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/ldecod.exe ${PREFIX}/bin/ldecod
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/lencod.exe ${PREFIX}/bin/lencod

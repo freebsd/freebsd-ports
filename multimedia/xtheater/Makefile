@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	xtheater
-# Date created:			Jun 7, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	xtheater
 PORTVERSION=	1.0.0.p1
@@ -31,6 +26,7 @@ CONFIGURE_ARGS=	--enable-gl
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure

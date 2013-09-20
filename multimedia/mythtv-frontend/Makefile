@@ -52,6 +52,7 @@ DESKTOP_ENTRIES="MythTV Frontend" "MythTV is a homebrew PVR project" "" \
 OPTIONS_DEFINE=	OPENGL JACK PULSEAUDIO VDPAU
 OPTIONS_DEFAULT=	OPENGL
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # for too old binutils in base

@@ -38,6 +38,7 @@ PORTDOCS=	PKG-INFO README
 
 MAN1=		gpo.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}

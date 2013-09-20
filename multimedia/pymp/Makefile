@@ -1,4 +1,4 @@
-# Created by:   nemysis@gmx.ch
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
 
 PORTNAME=	pymp
@@ -25,6 +25,7 @@ DESKTOP_ENTRIES="Pymp" "MPlayer frontend" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 		"${PORTNAME}" "AudioVideo;Player;" "false"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

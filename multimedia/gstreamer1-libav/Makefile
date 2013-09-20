@@ -51,6 +51,7 @@ CFLAGS+=		-msse
 
 CONFIGURE_ARGS+=	--with-libav-extra-configure="${LIBAV_CONFIG}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900033

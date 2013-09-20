@@ -1,9 +1,5 @@
-# New ports collection makefile for: dvbcut
-# Date created:		Mon Dec 19 23:20:01 CET 2005
-# Whom:			se@freebsd.org
-#
+# Created by: se@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	dvbcut
 PORTVERSION=	0.6.1
@@ -35,6 +31,7 @@ CXXFLAGS+=	-I${PREFIX}/include \
 MAN1=		dvbcut.1
 PLIST_FILES=	bin/dvbcut
 
+NO_STAGE=	yes
 #post-extract:
 #		${RM} ${WRKSRC}/src/mplayererrorbase.h
 

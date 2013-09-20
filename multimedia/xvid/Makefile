@@ -27,6 +27,7 @@ WRKSRC=		${WRKDIR}/xvidcore/build/generic
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

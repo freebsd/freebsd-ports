@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-kaa-imlib2
-# Date created:		2009 January 10
-# Whom:			J.R. Oldroyd <fbsd@opal.com>
-#
+# Created by: J.R. Oldroyd <fbsd@opal.com>
 # $FreeBSD$
-#
 
 PORTNAME=	kaa-imlib2
 PORTVERSION=	0.2.3
@@ -22,4 +18,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_EFL=	imlib2
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

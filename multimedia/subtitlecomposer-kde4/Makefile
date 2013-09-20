@@ -23,6 +23,7 @@ MPLAYER_DESC=	Enable MPlayer backend (recommended)
 XINE_DESC=	Enable Xine backend
 GSTREAMER_DESC=	Enable GStreamer backend (broken)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMPLAYER}

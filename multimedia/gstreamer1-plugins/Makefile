@@ -67,6 +67,7 @@ DEFAULT_AUDIOSRC?=	osssrc
 IGNORE=		DIST not specified
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH}=="i386"

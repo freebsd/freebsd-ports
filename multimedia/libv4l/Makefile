@@ -1,9 +1,5 @@
-# Ports collection makefile for: libv4l
-# Date created: 13 January 2010
-# Whom:         Andrew Thompson <thompsa@FreeBSD.org>
-#
+# Created by: Andrew Thompson <thompsa@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libv4l
 PORTVERSION=	0.8.8
@@ -26,6 +22,7 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

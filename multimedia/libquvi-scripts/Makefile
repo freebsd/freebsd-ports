@@ -26,6 +26,7 @@ PROJECTHOST=	quvi
 
 PORTSCOUT=	limit:0.4.[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNSFW}

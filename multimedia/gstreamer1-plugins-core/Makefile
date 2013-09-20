@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	DVD
 OPTIONS_DEFAULT=DVD
 DVD_DESC=	Include DVD related plugins
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Audio plugins

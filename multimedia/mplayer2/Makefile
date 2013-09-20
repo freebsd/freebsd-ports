@@ -75,6 +75,7 @@ SUB_FILES=	pkg-message
 
 CONFLICTS=	mplayer-1.*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"

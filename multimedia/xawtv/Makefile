@@ -38,6 +38,7 @@ MAN1=		alevtd.1 dump-mixers.1 fbtv.1 mtt.1 motv.1 ntsc-cc.1 pia.1 \
 MAN5=		xawtvrc.5
 MAN8=		v4l-conf.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MAALIB}

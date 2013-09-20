@@ -26,6 +26,7 @@ MENCODER_DESC=	MEncoder support
 MPLAYER_DESC=	MPlayer support
 DVDAUTHOR_DESC=	DVD Author support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMENCODER}

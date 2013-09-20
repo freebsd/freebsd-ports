@@ -26,6 +26,7 @@ ONLY_FOR_ARCHS=	alpha i386 ia64 amd64
 OPTIONS_DEFINE=	EXTRA
 EXTRA_DESC=	Extra programs required to record/playback/save
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # This program does not actually require the programs below unless you

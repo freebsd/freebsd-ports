@@ -56,6 +56,7 @@ TOTEM_PLUGINS=	thumbnail screensaver ontop gromit media-player-keys \
 		properties skipto youtube opensubtitles screenshot \
 		brasero-disc-recorder coherence_upnp dbus-service iplayer
 
+NO_STAGE=	yes
 # Not using:
 # TOTEM_PLUGINS= mythtv bemused jamendo
 

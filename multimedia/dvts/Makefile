@@ -1,9 +1,5 @@
-# New ports collection makefile for:    dvts
-# Date created:				2003/05/10
-# Whom:					nork@FreeBSD.org
-#
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	dvts
 PORTVERSION=	1.0a
@@ -25,6 +21,7 @@ USE_AUTOTOOLS=	autoconf
 
 MAN1=		dvts.1 dvsend.1 dvrecv.1
 
+NO_STAGE=	yes
 pre-install:
 	@${INSTALL_MAN} ${WRKSRC}/dvts.1          ${MANPREFIX}/man/man1/
 	@${INSTALL_MAN} ${WRKSRC}/dvsend/dvsend.1 ${MANPREFIX}/man/man1/
