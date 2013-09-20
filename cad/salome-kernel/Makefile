@@ -12,6 +12,7 @@ SAL_MODULE_UPPER=	KERNEL
 
 BROKEN=	Does not configure
 
+NO_STAGE=	yes
 post-configure::
 	 @${INSTALL_SCRIPT} ${AUTOMAKE_DIR}/py-compile ${WRKSRC}/salome_adm/unix/config_files
 

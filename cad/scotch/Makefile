@@ -65,6 +65,7 @@ PLIST_SUB+=	MPI=""
 PLIST_SUB+=	MPI="@comment "
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"

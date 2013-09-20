@@ -1,7 +1,5 @@
 # Created by: David O'Brien <obrien@cs.ucdavis.edu>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mars
 PORTVERSION=	2.1
@@ -23,6 +21,7 @@ OPTIONS_DEFAULT=X11
 MAKE_JOBS_UNSAFE=	yes
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

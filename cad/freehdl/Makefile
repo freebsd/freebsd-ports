@@ -53,4 +53,5 @@ plist: build
 		| ${GREP} -vE '%%DATADIR%%|freehdl' >> ${PLIST}
 	@${RM} -rf ${PLIST_TMP}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

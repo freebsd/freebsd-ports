@@ -26,6 +26,7 @@ USE_JAVA=	yes
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 FDCJ_MANUAL=	${PORTNAME}_manual_en.pdf

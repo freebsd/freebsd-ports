@@ -1,9 +1,5 @@
-# New ports collection makefile for:	geda
-# Date created:			4 April 2001
-# Whom:				bruno schwander <bruno@tinkerbox.org>
-#
+# Created by: bruno schwander <bruno@tinkerbox.org>
 # $FreeBSD$
-#
 
 PORTNAME=	symbols
 PORTVERSION=	1.4.3
@@ -25,6 +21,7 @@ CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e "s,^(DATADIR[[:space:]]*=[[:space:]]*)gEDA,\1geda," \

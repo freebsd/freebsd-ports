@@ -1,7 +1,4 @@
-# New ports collection makefile for:   cad/salome-randomizer
-# Date created:        20 May 2009
-# Whom:            Stas Timokhin <devel@stasyan.com>
-#
+# Created by: Stas Timokhin <devel@stasyan.com>
 # $FreeBSD$
 
 PORTREVISION=	4
@@ -13,4 +10,5 @@ PORTNAME=	salome
 PKGNAMESUFFIX=	-randomizer
 SAL_MODULE_UPPER=	RANDOMIZER
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

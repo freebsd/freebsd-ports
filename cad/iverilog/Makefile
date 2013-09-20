@@ -21,4 +21,5 @@ CONFIGURE_ARGS=	--disable-suffix
 
 MAN1=		iverilog-vpi.1 iverilog.1 vvp.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

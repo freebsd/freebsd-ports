@@ -15,6 +15,7 @@ OPTIONS_DEFINE=	DEBUG
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=--enable-xspice \

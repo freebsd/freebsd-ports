@@ -124,6 +124,7 @@ CONFLICTS=	gmsh-occ-2.*
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::

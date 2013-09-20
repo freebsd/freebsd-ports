@@ -38,6 +38,7 @@ MAN1=		irsim.1
 MAN3=		irsim-analyzer.3
 MAN5=		netchange.5
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCL}

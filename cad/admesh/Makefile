@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 PORTDOCS=	admesh.doc
 PLIST_FILES=	bin/admesh
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

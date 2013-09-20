@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-eagle5
-# Date created:				20 March, 2009
-# Whom:					Michael Durian <durian@shadetreesoftware.com>
-#
+# Created by: Michael Durian <durian@shadetreesoftware.com>
 # $FreeBSD$
-#
 
 PORTNAME=	linux-eagle5
 EAGLEBASEVERSION?=	5.12
@@ -45,6 +41,7 @@ DESKTOP_ENTRIES=	"Eagle5" "Tool for designing printed circuit boards" \
 			${DATADIR}/ulp/eagle.bmp \
 			"eagle" "Development;Electronics;Engineering;" "false"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PLIST_SUB+=	LINUXBASE=${LINUXBASE}

@@ -40,6 +40,7 @@ MOTIF_DESC=	Motif widgets
 GTK_DESC=	GIMP ToolKit widgets
 NONE_DESC=	No GUI support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

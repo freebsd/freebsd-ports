@@ -38,6 +38,7 @@ PLIST_FILES=	bin/vsp
 
 CFLAGS+=	-I${LOCALBASE}/include/openNURBS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

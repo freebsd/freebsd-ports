@@ -36,6 +36,7 @@ SLAVEDIRS=	cad/salome-kernel cad/salome-gui cad/salome-geom cad/salome-light	\
 		cad/salome-sierpinsky cad/salome-smesh cad/salome-multipr cad/salome-jobmanager \
 		cad/salome-netgenplugin
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !defined(PKGNAMESUFFIX)

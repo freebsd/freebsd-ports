@@ -11,4 +11,5 @@ PORTNAME=	salome
 PKGNAMESUFFIX=	-med
 SAL_MODULE_UPPER=	MED
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

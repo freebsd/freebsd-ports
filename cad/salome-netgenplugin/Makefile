@@ -1,7 +1,4 @@
-# New ports collection makefile for:   cad/salome-netgenplugin
-# Date created:        10 Nov 2010
-# Whom:            Stas Timokhin <devel@stasyan.com>
-#
+# Created by: Stas Timokhin <devel@stasyan.com>
 # $FreeBSD$
 
 PORTREVISION=	6
@@ -13,4 +10,5 @@ PORTNAME=	salome
 PKGNAMESUFFIX=	-netgenplugin
 SAL_MODULE_UPPER=	NETGENPLUGIN
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -38,6 +38,7 @@ DESKTOP_ENTRIES="Xcircuit" "${COMMENT}" "${DATADIR}/pixmaps/xcircuit.gif" \
 # Restrict to stable (odd) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,odd
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

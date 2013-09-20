@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	qmls
-# Date created:			Dec 10, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	qmls
 PORTVERSION=	0.2
@@ -17,4 +12,5 @@ COMMENT=	Quine-McCluskey Logic Simplifier
 PLIST_FILES=	bin/qmls
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -20,6 +20,7 @@ T1LIB_DESC=	Use T1lib Type1 font library
 
 USES=		motif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 FEATURES+=	MOTIF

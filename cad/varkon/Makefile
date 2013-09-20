@@ -26,6 +26,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 VARKON_PREFIX=	${PREFIX}/lib/${PORTNAME}
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -name "*.o" -delete
 

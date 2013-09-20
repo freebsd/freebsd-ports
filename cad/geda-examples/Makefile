@@ -1,9 +1,5 @@
-# New ports collection makefile for:	geda
-# Date created:			27 June 2006
-# Whom:				Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	examples
 PORTVERSION=	1.4.3
@@ -21,6 +17,7 @@ GNU_CONFIGURE=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/geda
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

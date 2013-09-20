@@ -1,4 +1,4 @@
-# Created by: Michael Reifenberger <mr@freebsd.org>
+# Created by: Michael Reifenberger <mr@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	openscad
@@ -31,6 +31,7 @@ QMAKE_FLAGS =		VERSION=${PORTVERSION}
 MAKE_ENV =		INSTALL_ROOT=${DESTDIR}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,XXXFLEXXX,"${LOCALBASE}/bin/flex",' \
 		${WRKSRC}/openscad.pro

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	geda
-# Date created:			27 June 2006
-# Whom:				Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	docs
 PORTVERSION=	1.4.3
@@ -22,4 +18,5 @@ DOCSDIR=	${PREFIX}/share/doc/geda
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

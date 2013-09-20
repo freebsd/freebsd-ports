@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gwave
-# Date created:			16 June 2002
-# Whom:				Duncan Barclay <dmlb@dmlb.org>
-#
+# Created by: Duncan Barclay <dmlb@dmlb.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gwave
 PORTVERSION=	20080127
@@ -41,6 +37,7 @@ DOCFILES=	Guile.notes \
 		hspice.txt \
 		spice3.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPLOTUTILS}

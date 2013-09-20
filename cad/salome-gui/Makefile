@@ -10,4 +10,5 @@ PORTNAME=	salome
 PKGNAMESUFFIX=	-gui
 SAL_MODULE_UPPER=	GUI
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

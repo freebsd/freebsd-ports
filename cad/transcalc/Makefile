@@ -16,6 +16,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=	transcalc.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
 

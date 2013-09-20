@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	chipvault
-# Date created:			Jan 29, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	chipvault
 PORTVERSION=	200607
@@ -25,6 +20,7 @@ PLIST_FILES=	bin/cv
 USES=		perl5
 USE_PERL5=	run
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cv.pl ${PREFIX}/bin/cv
 

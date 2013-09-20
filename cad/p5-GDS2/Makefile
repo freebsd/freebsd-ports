@@ -23,6 +23,7 @@ PROGRAMS=	gdsdump2gds modgds2 gdslayers testgds2 \
 		gdspath4topath0 testgdt
 # XXX: gdsdump disabled for the moment
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_SCRIPT} ${PROGRAMS:S,^,${WRKSRC}/Examples/,} ${PREFIX}/bin
 

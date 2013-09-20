@@ -48,6 +48,7 @@ LOCCROOT=	OpenCAS
 OCCROOT=	${PREFIX}/${LOCCROOT}
 PLIST_SUB=	OCCROOT="${LOCCROOT}"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTBB}

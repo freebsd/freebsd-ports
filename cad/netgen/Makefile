@@ -32,6 +32,7 @@ OCC_DESC=		Compile with OpenCascade geometry kernel
 FFMPEG_DESC=		video recording with FFmpeg
 OPTIONS_DEFAULT=	OCC
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOCC}

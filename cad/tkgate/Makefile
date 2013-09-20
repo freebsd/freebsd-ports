@@ -21,6 +21,7 @@ MAN1=		gmac.1 tkgate.1 verga.1
 TKGATE_IPATH=	-I${TK_INCLUDEDIR} -I${TCL_INCLUDEDIR}
 TKGATE_LIBS=	-ltk${TK_VER:S/.//} -ltcl${TCL_VER:S/.//} -lX11 -lm
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/wish|${WISH}|g' ${WRKSRC}/scripts/tree.tcl
 	@${REINPLACE_CMD} -e \

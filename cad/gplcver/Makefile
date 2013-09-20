@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	gpl-cver
-# Date created:			May 13, 2005
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gplcver
 PORTVERSION=	2.12.a
@@ -22,6 +17,7 @@ MAKEFILE=	makefile.freebsd
 
 PLIST_FILES=	bin/cver
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

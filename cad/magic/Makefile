@@ -39,6 +39,7 @@ DESKTOP_ENTRIES="Magic" "" "" "${PORTNAME}" "" ""
 
 PORTSCOUT=	limit:^7\.
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

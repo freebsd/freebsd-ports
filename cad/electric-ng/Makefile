@@ -45,6 +45,7 @@ DESKTOP_ENTRIES="Electric-NG" "${COMMENT}" "${PORTNAME}${PKGNAMESUFFIX}" \
 			"${PORTNAME}${PKGNAMESUFFIX}" "Development;Electronics;Engineering;" ${FALSE}
 PLIST_FILES+=	share/pixmaps/${PORTNAME}${PKGNAMESUFFIX}.png
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBSH} || exists(${JAVALIBDIR}/bsh.jar)

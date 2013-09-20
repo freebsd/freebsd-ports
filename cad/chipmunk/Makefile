@@ -1,9 +1,5 @@
-# New ports collection makefile for:	chipmunk
-# Date created:		29 July 1995
-# Whom:			janek@gaja.ipan.lublin.pl
-#
+# Created by: janek@gaja.ipan.lublin.pl
 # $FreeBSD$
-#
 
 PORTNAME=	chipmunk
 PORTVERSION=	5.65
@@ -28,6 +24,7 @@ NO_WRKSUBDIR=	yes
 USE_XORG=	x11
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
