@@ -12,7 +12,7 @@ COMMENT=	C++ wrapper for libcurl
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-OPTIONS_DEFINE=	BOOST DOCS EXAMPELS
+OPTIONS_DEFINE=	BOOST DOCS EXAMPLES
 
 CONFIGURE_ARGS=	--disable-ewarning
 CPPFLAGS+=	-I${LOCALBASE}/include
