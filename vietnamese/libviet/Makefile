@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:    libviet
-# Date created:         Fri Feb 09, 2001
-# Whom:                 David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	libviet
 PORTVERSION=	20010210
@@ -19,6 +14,7 @@ COMMENT=	VIQR<->VISCII conversion and VISCII ctype-like routines
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/lib
 USE_BZIP2=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/libvntype.a ${WRKSRC}/libviqr.a  \
 		${PREFIX}/lib

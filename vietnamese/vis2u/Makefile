@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  vis2u
-# Date created:			  Tue Nov 27, 2001
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	vis2u
 PORTVERSION=	1.0
@@ -20,6 +15,7 @@ COMMENT=	VISCII->Unicode conversion
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} ; make vis2u
 

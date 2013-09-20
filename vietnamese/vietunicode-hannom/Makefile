@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vietunicode-hannom
-# Date created:		2007/01/06
-# Whom:			chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	vietunicode-hannom
 PORTVERSION=	2005.02.06
@@ -22,6 +18,7 @@ NO_BUILD=	yes
 
 TTF=		HAN_NOM_A.ttf HAN_NOM_B.ttf
 
+NO_STAGE=	yes
 post-patch:
 	@${MV} ${WRKSRC}/HAN\ NOM\ A.ttf ${WRKSRC}/HAN_NOM_A.ttf
 	@${MV} ${WRKSRC}/HAN\ NOM\ B.ttf ${WRKSRC}/HAN_NOM_B.ttf

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  unicode-uhoai
-# Date created:			  Tue Nov 27, 2001
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	unicode-uhoai
 PORTVERSION=	2.1
@@ -26,6 +21,7 @@ BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir \
 		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fonts/TrueType
 	${INSTALL_DATA} ${WRKSRC}/uhoaiw21.ttf \

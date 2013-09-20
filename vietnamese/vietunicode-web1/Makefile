@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vietunicode-web1
-# Date created:		2007/01/06
-# Whom:			chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	vietunicode-web1
 PORTVERSION=	2004.04.30
@@ -23,6 +19,7 @@ NO_BUILD=	yes
 TTF=		vuTimes.ttf vuTimesBold.ttf vuTimesBoldItalic.ttf vuTimesItalic.ttf \
 		vuArial.ttf vuArialBold.ttf vuArialBoldItalic.ttf vuArialItalic.ttf
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${FONTSDIR}
 .for i in ${TTF}

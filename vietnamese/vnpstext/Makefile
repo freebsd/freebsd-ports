@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:    vnpstext
-# Date created:         Sat Dec 7, 1996
-# Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
-#
+# Created by: David O'Brien (obrien@cs.ucdavis.edu)
 # $FreeBSD$
-#
 
 PORTNAME=	vnpstext
 PORTVERSION=	1.1
@@ -19,6 +14,7 @@ COMMENT=	Converts 8-bit VISCII Vietnamese text into PostScript
 CFLAGS+=	-I../../include
 MAN1=		vnpstext.1
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/share/vn-fonts
 	${INSTALL_PROGRAM} ${WRKSRC}/vnpstext ${PREFIX}/bin
