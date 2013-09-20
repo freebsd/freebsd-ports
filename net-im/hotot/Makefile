@@ -26,6 +26,7 @@ OPTIONS_DEFINE=	GTK2 QT4 KDE4
 OPTIONS_DEFAULT=	GTK2 QT4
 KDE4_DESC=	KDE 4 integration (implies Qt 4)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}

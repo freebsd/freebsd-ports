@@ -16,6 +16,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/@INSTALL@/s/$$INSTALL/${INSTALL}/; \
 		s/echo aout/echo elf/' \

@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--without-gstreamer --with-gstreamer-0.10
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_GETIFADDRS
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 	    	's|-Wno-missing-field-initializers|#|g'

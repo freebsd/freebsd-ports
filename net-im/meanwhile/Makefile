@@ -23,6 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-doc-${PORTVERSION}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
 		${WRKSRC}/samples/*.c ${WRKSRC}/src/*.[ch]

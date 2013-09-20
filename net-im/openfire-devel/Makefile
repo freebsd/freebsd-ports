@@ -37,6 +37,7 @@ VARDB=		/var/db/openfire
 PUSER=		openfire
 PGROUP=		${PUSER}
 
+NO_STAGE=	yes
 do-install:
 
 	(cd ${INSTALL_WRKSRC}/lib && ${INSTALL} -m 744 *.jar ${JAVAJARDIR})

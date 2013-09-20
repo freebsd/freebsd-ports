@@ -31,6 +31,7 @@ MAN1=		db_convert.1
 MAN5=		iserv.conf.5 v3_proto.conf.5 v5_proto.conf.5
 MAN8=		iserverd.8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 700042

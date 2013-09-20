@@ -64,6 +64,7 @@ DOCFILES=	AUTHORS COPYING ChangeLog INSTALL NEWS README \
 
 _REQUIRE=	LOGIN
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 ELP+=	${OPENSSLLIB}

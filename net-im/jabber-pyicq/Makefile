@@ -41,6 +41,7 @@ INST_DIR=	${PREFIX}/lib/jabber/${PORTNAME}
 
 PORTDOCS=	NEWS README README.jabberd14 README.jabberd2 README.external
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJABBER}

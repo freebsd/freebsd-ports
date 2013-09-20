@@ -1,7 +1,4 @@
-# New ports collection makefile for:	pebrot
-# Date created:		26 March 2004
-# Whom:			Kevin Lo <kevlo@FreeBSD.org>
-#
+# Created by: Kevin Lo <kevlo@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pebrot
@@ -17,4 +14,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_EGGINFO=	pebrot-0.8.9-py${PYTHON_VER}.egg-info
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

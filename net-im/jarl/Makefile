@@ -18,6 +18,7 @@ NO_BUILD=	yes
 
 USES=		perl5
 
+NO_STAGE=	yes
 makeplist:
 	${ECHO_CMD} bin/jarl > ${PLIST}
 	${FIND} ${PREFIX}/share/jarl ! -name "*.orig" -type f -print | ${CUT} -d/ -f4- >> \

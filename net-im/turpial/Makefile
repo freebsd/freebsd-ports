@@ -1,9 +1,5 @@
-# New ports collection makefile for: turpial
-# Date created:		2011-02-19
-# Whom:		Olivier Duchateau <duchateau.olivier@gmail.com>
-#
+# Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	turpial
 PORTVERSION=	1.6.7.1
@@ -37,6 +33,7 @@ DATADIR=	${PREFIX}/share/${PORTNAME}
 LOCALES_DIR=	ca ca_ES cs de en es es_ES es_VE eu fr gl he hu it nl nn \
 	pt pt_BR ru ru_RU sr uk_UA zh_CN zh_TW
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Since Python > 2.7, optparse module is deprecated

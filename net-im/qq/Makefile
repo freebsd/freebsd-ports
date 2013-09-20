@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qq
-# Date created:		2009-04-05
-# Whom:			Kai Wang <kaiw27@gmail.com>
-#
+# Created by: Kai Wang <kaiw27@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qq
 DISTVERSION=	v1.0.2-beta1_i386
@@ -25,6 +21,7 @@ PLIST_SUB+=	QQDIR=${QQDIR}
 SUB_FILES=	qq.sh
 SUB_LIST+=	QQDIR=${QQDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-fetch:

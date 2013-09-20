@@ -32,6 +32,7 @@ GPGME_DESC=	Use security/gpgme for PGP support
 OTR_DESC=	Off-the-record messaging support
 ENCHANT_DESC=	Spell checking via enchant
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGPGME}

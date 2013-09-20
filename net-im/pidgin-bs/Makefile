@@ -22,4 +22,5 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	${PREFIX}/lib/pidgin
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

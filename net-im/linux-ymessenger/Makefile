@@ -26,6 +26,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 SHARE_FILES=	yahoo_gnome.png yahoo_kde.xpm ymessenger.desktop\
 		ymessenger.kdelnk
 
+NO_STAGE=	yes
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}

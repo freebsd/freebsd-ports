@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	py-msnp
-# Date created:			Dec 26, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	msnp
 PORTVERSION=	0.4.1
@@ -25,6 +20,7 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	msnp.py
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/tutorial.html ${DOCSDIR}

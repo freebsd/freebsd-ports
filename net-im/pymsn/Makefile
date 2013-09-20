@@ -1,9 +1,4 @@
-# New ports collection makefile for:	pymsn
-# Date created:				Apr 19 2007
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pymsn
 PORTVERSION=	0.3.3
@@ -32,4 +27,5 @@ RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g} \
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

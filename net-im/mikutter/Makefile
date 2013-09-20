@@ -45,6 +45,7 @@ NOTIFY_DESC=		notify-send support
 
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(RUBY_PROVIDED)

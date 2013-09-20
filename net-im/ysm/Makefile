@@ -22,6 +22,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 MAN1=		ysm.1
 PLIST_FILES=	bin/ysm
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure

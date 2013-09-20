@@ -38,4 +38,5 @@ MAN3=		Net::XMPP.3 \
 		Net::XMPP::Roster.3 \
 		Net::XMPP::Stanza.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

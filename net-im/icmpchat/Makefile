@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ICMP-Chat
-# Date created:				8 October 2002
-# Whom:					Matthew West <mwest@uct.ac.za>
-#
+# Created by: Matthew West <mwest@uct.ac.za>
 # $FreeBSD$
-#
 
 PORTNAME=	icmpchat
 PORTVERSION=	0.6
@@ -13,6 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple console-based chat that uses ICMP protocol
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-O2 -Wall -pedantic|${CFLAGS}|;\
 		s|= gcc|?= gcc|;s|default|all|' ${WRKSRC}/Makefile

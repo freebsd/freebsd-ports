@@ -22,6 +22,7 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USES=		gettext gmake pkgconfig
 
+NO_STAGE=	yes
 post-install:
 	${GMAKE} -C ${WRKSRC} install_locales
 

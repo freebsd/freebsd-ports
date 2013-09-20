@@ -31,6 +31,7 @@ INST_DIR=	${PREFIX}/lib/jabber/${PORTNAME}
 
 PORTDOCS=	COPYING README NEWS AUTHORS INSTALL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 

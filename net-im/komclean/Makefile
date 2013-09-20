@@ -29,6 +29,7 @@ DESKTOP_ENTRIES="KOMclean" \
 		"" \
 		false
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::

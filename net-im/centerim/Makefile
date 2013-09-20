@@ -38,6 +38,7 @@ MAN1=	cimconv.1 centerim.1
 
 PORTDOCS=	FAQ README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

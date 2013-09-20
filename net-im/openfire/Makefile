@@ -42,6 +42,7 @@ VARDB=		/var/db/openfire
 USERS=		openfire
 GROUPS=		${USERS}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPLUGINS}

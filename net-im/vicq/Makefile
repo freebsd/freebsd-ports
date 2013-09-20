@@ -20,6 +20,7 @@ USE_PERL5=	configure
 
 SIGNAL_PATCH=p5.8-patch-sigalrm
 
+NO_STAGE=	yes
 post-extract:
 	${MV} ${WRKSRC}/Net/vICQ/*  ${WRKSRC}
 	${RM} ${WRKSRC}/install.pl

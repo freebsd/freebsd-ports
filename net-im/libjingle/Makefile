@@ -52,6 +52,7 @@ PLIST_FILES+=	bin/login \
 		bin/relayserver \
 		bin/stunserver \
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-configure:

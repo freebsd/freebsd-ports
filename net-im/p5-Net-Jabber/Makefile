@@ -27,4 +27,5 @@ MAN3=		Net::Jabber.3 Net::Jabber::Client.3 Net::Jabber::Component.3 \
 		Net::Jabber::Server.3 Net::Jabber::Stanza.3 \
 		Net::Jabber::XDB.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -31,6 +31,7 @@ OPTIONS_DEFAULT=	ASPELL DBUS
 ASPELL_DESC=	Use aspell for spell checking
 ENCHANT_DESC=	Use Enchant for spell checking
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

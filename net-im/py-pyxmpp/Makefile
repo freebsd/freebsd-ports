@@ -1,9 +1,5 @@
-# Ports collection makefile for:	py-pyxmpp
-# Date created:				Mar 04, 2005
-# Whom:	      				Vsevolod Stakhov <vsevolod@highsecure.ru>
-#
+# Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	pyxmpp
 PORTVERSION=	1.1.2
@@ -22,6 +18,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${GREP} -lR "/usr/bin/python" ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -e "s|/usr/bin/python|${PYTHON_CMD}|"

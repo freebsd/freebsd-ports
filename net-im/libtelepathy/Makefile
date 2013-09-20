@@ -1,4 +1,3 @@
-# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/net-im/libtelepathy/Makefile,v 1.3 2008/02/27 14:00:06 ahze Exp $
 
@@ -25,4 +24,5 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack glib20 ltverhack
 USE_AUTOTOOLS=	libtool
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

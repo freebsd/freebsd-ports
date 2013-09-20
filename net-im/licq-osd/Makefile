@@ -24,6 +24,7 @@ PLIST_FILES=	lib/licq/licq_osd.so \
 
 LICQ_PORT?=	net-im/licq
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/${LICQ_PORT}/Makefile.inc"

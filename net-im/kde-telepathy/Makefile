@@ -28,6 +28,7 @@ OPTIONS_DEFAULT=PLASMA SEND_FILE
 PLASMA_DESC=	Applets for KDE Plasma Desktop integration
 SEND_FILE_DESC=	Context menu plugin for sending files
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPLASMA}

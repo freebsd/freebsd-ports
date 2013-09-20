@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USES=		pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

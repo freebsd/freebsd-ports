@@ -66,6 +66,7 @@ SUB_LIST+=	JABBER_USER=${JABBER_USER} JABBER_UID=${JABBER_UID} \
 DOCS=		AUTHORS ChangeLog INSTALL NEWS README README.SQL README.config \
 		README.filespool README.karma README.protocols TODO UPGRADE mysql.sql
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

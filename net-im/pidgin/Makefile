@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gaim
-# Date created:			26 Mar 1999
-# Whom:				Jim Mock <jim@FreeBSD.org>
-#
+# Created by: Jim Mock <jim@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/net-im/pidgin/Makefile,v 1.17 2007/09/17 19:53:06 marcus Exp $
-#
 
 PORTNAME=	pidgin
 PORTREVISION=	1
@@ -36,6 +32,7 @@ CONFIGURE_ARGS=	--disable-consoleui \
 
 MAN1=		pidgin.1
 
+NO_STAGE=	yes
 post-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 	    	Makefile ${MAKE_ARGS} pidgin.desktop

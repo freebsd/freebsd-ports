@@ -23,4 +23,5 @@ USE_GNOME=	gnomehack glib20 ltverhack libxslt:build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -31,6 +31,7 @@ PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README html
 PORTEXAMPLES=	Makefile accounts cm contact-messenger extensions \
 		file-transfer protocols roster stream-tubes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}

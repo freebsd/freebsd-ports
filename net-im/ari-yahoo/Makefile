@@ -15,6 +15,7 @@ USE_GMAKE=	yes
 USE_GCC=	any
 USE_AUTOTOOLS=	autoconf
 
+NO_STAGE=	yes
 pre-configure:
 	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in
 	@(cd ${WRKSRC}/libyahoo && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF} \

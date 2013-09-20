@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qutim
-# Date created:		Mon Jun 16 20:42:11 MSD 2008
-# Whom:			webmaster@kibab.com
-#
+# Created by: webmaster@kibab.com
 # $FreeBSD$
-#
 
 PORTNAME=	qutim
 PORTVERSION=	0.2
@@ -36,4 +32,5 @@ CMAKE_ARGS+=	-DUNIX:BOOL=1 -DBSD:BOOL=1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

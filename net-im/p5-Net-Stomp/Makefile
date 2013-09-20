@@ -21,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::Stomp.3 Net::Stomp::Frame.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

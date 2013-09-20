@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qxmpp
-# Date created:		2012-01-07
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qxmpp
 PORTVERSION=	0.3.91
@@ -20,6 +16,7 @@ USE_QT4=	gui network xml qmake_build uic_build moc_build rcc_build
 
 CONFLICTS=	${PORTNAME}-leechcraft-[0-9]*
 
+NO_STAGE=	yes
 do-configure:
 	${REINPLACE_CMD} -e 's|%%QT_LIBDIR_REL%%|${QT_LIBDIR_REL}|g' \
 		${WRKSRC}/src/src.pro

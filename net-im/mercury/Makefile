@@ -53,6 +53,7 @@ PLIST_SUB+=	VID="" VIDJAR="${VIDJAR}"
 PLIST_SUB+=	VID="@comment " VIDJAR=""
 .endif
 
+NO_STAGE=	yes
 post-extract:
 	${MKDIR} ${WRKDIR}/icons
 	cd ${WRKDIR}/icons &&	\

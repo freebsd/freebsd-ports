@@ -23,6 +23,7 @@ USE_XZ=		yes
 
 # this is a local target to build a tarball
 build-tarball: ${DISTFILES}
+NO_STAGE=	yes
 ${DISTFILES}:
 	${RM} -rf ${WRKSRC}
 	svn export -r${PORTVERSION:E} \

@@ -33,6 +33,7 @@ CONFIGURE_ENV+=	OPENSSL_LIBS="-L/usr/lib -lssl -lcrypto" OPENSSL_CFLAGS="-I/usr/
 #  OPENSSL_LIBS
 #              linker flags for OPENSSL, overriding pkg-config
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|strnlen(\([^,]*\), [^)]*)|strlen(\1)|' \
 		${WRKSRC}/src/idle-connection.c \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cjc
-# Date created:		19 April 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cjc
 PORTVERSION=	1.2.1
@@ -20,6 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxmpp>=1.1.0:${PORTSDIR}/net-im/py-pyxmpp
 
 USE_PYTHON=	2.6+
 
+NO_STAGE=	yes
 post-patch:
 	@${GREP} -lR "/usr/bin/python" ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -e "s|/usr/bin/python|${PYTHON_CMD}|"

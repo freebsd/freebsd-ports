@@ -27,6 +27,7 @@ HAZE_DESC=	libpurple protocols support
 IRC_DESC=	Internet Relay Chat support
 SALUT_DESC=	Link-local (serverless) XMPP support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHAZE}

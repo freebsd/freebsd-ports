@@ -16,6 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin
 PROJECTHOST=	microblog-purple
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${CP} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.Dist
 	@${SED} -e 's#make -C#gmake -C#' \

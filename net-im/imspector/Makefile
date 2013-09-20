@@ -28,6 +28,7 @@ OPTIONS_DEFINE=	IPFW
 OPTIONS_DEFAULT=	IPFW
 IPFW_DESC=	Add IPFW support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPFW}

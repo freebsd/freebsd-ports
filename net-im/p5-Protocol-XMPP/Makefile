@@ -51,4 +51,5 @@ MAN3=		Protocol::XMPP.3 \
 		Protocol::XMPP::TextElement.3 \
 		Protocol::XMPP::User.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
