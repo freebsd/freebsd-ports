@@ -12,6 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	TeX/LaTeX package to generate Arabic writing
 
+NO_STAGE=	yes
 USE_TEX=	base texmf
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

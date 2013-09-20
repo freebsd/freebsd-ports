@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/KacstArabicFonts-${PORTVERSION}
 

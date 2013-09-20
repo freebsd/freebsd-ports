@@ -12,5 +12,6 @@ COMMENT=	Aspell Arabic dictionaries
 
 DICT=		ar
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>
