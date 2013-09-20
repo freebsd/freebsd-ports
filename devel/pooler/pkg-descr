@@ -1,0 +1,5 @@
+The pooler application allows you to manage pools of OTP behaviors such as
+gen_servers, gen_fsms, or supervisors, and provide consumers with exclusive
+access to pool members using pooler:take_member
+
+WWW: https://github.com/seth/pooler

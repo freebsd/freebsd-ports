@@ -1,0 +1,23 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/pooler_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/pooler_starter_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/pooler_starter.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/pooler_pooled_worker_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/pooler_pool_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/pooler_config.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/pooler_app.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/pooler.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/pooler.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/pooler_sup.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/pooler_starter_sup.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/pooler_starter.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/pooler_pooled_worker_sup.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/pooler_pool_sup.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/pooler_config.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/pooler_app.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/pooler.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/pooler.app
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
