@@ -1,7 +1,4 @@
-# New ports collection makefile for:	wmget
-# Date created:				05.01.2004
-# Whom:					Ulrich Spoerlein <uspoerlein@gmail.com>
-#
+# Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	wmget
@@ -27,6 +24,7 @@ MAKE_ENV+=	${CONFIGURE_ENV}
 MAN1=		wmget.1
 PLIST_FILES=	bin/wmget
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmget ${PREFIX}/bin
 .if !defined(NO_INSTALL_MANPAGES)

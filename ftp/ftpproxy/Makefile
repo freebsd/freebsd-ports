@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ftpproxy
-# Date created:				15 May 2001
-# Whom:					Philippe Le Berre <philippe@le-berre.com>
-#
+# Created by: Philippe Le Berre <philippe@le-berre.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ftpproxy
 PORTVERSION=	1.2.3
@@ -23,6 +19,7 @@ MAN1=		ftp.proxy.1
 MANCOMPRESSED=	no
 PLIST_FILES=	sbin/ftp.proxy
 
+NO_STAGE=	yes
 pre-build:
 	@${REINPLACE_CMD} -e 's|^CFLAGS.*|CFLAGS=${CFLAGS} \
 	     -DVERSION=\\"${PORTVERSION}\\"|' ${WRKSRC}/src/Makefile

@@ -23,6 +23,7 @@ CONFIGURE_ENV=	ac_cv_func_getmaxyx=yes
 MAN1=		ncftp2.1
 PLIST_FILES=	bin/${LATEST_LINK}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREADLINE}

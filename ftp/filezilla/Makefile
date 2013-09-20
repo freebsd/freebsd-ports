@@ -1,6 +1,5 @@
 # Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	filezilla
 PORTVERSION=	3.6.0.2
@@ -40,6 +39,7 @@ MAN5=		fzdefaults.xml.5
 OPTIONS_DEFINE=	DBUS NLS
 OPTIONS_DEFAULT=DBUS NLS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBUS}

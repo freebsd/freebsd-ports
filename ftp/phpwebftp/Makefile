@@ -1,9 +1,5 @@
-# New ports collection makefile for:	phpwebftp
-# Date created:		2005-09-15
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	phpwebftp
 PORTVERSION=	3.3
@@ -24,6 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_DIRE=	${INSTALL} -d -m 0755 -o ${WWWOWN} -g ${WWWGRP}
 INSTALL_FILE=	${INSTALL} -m 0644 -o ${WWWOWN} -g ${WWWGRP}
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} -d ${WRKSRC} -name CVS -type d -exec ${RM} -R "{}" \;
 

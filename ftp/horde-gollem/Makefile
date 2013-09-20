@@ -1,9 +1,5 @@
-# Ports collection makefile for:  horde-gollem
-# Date created:			  Oct 11, 2011
-# Whom:				  Martin Matuska (mm@FreeBSD.org)
-#
+# Created by: Martin Matuska (mm@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	gollem
 PORTVERSION=	3.0.1
@@ -42,6 +38,7 @@ USE_HORDE_RUN=	Horde_Role \
 USE_HORDE_RUN+=	Horde_Db \
 		Horde_Share
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
 .include <bsd.port.post.mk>

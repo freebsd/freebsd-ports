@@ -11,4 +11,5 @@ COMMENT=	Find directory&file on a ftp server
 
 PLIST_FILES=	bin/ftpfind
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

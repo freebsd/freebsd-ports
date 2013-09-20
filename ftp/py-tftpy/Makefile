@@ -14,4 +14,5 @@ COMMENT=	Pure Python TFTP Implementation
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

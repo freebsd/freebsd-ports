@@ -50,6 +50,7 @@ DOCS=	README TODO doc/*
 PORTDOCS=	*
 PORTEXAMPLES=	ftpd.conf
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s/root,root/root,wheel/" \
 		-e "s,/usr/sbin,${PREFIX}/sbin," \

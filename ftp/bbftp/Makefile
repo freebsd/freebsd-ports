@@ -19,6 +19,7 @@ USE_RC_SUBR=	bbftpd
 
 MAN1=		bbftp.1 bbftpd.1
 
+NO_STAGE=	yes
 do-configure:
 	${CP} -f ${TEMPLATES}/config.guess ${WRKSRC}
 	${CP} -f ${TEMPLATES}/config.sub ${WRKSRC}

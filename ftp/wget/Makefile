@@ -23,6 +23,7 @@ OPTIONS_DEFAULT=OPENSSL IDN
 
 PCRE_DESC=	Support Perl regular expressions in addition to POSIX
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}

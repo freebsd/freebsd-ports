@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	dmachine
-# Date Created:			Dec 15, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	dmachine
 PORTVERSION=	0.24
@@ -20,6 +15,7 @@ USE_JAVA=	yes
 NO_BUILD=	yes
 SUB_FILES=	dmachine.sh
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/dmachine.sh ${PREFIX}/bin/dmachine
 	@${MKDIR} ${DATADIR}

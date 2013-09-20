@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mirror
-# Date created:		15 May 1995
-# Whom:			torstenb
-#
+# Created by: torstenb
 # $FreeBSD$
-#
 
 PORTNAME=	mirror
 PORTVERSION=	2.9
@@ -36,6 +32,7 @@ NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 MAN1=		mirror.1 mirror-master.1
 
+NO_STAGE=	yes
 pre-install:
 	@${MKDIR} ${PREFIX}/lib/mirror
 

@@ -19,6 +19,7 @@ CONFIGURE_ENV=	PERL_MM_USE_DEFAULT=yes
 
 MAN3=		POE::Component::Client::FTP.3
 
+NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"

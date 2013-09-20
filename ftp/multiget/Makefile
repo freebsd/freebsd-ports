@@ -1,9 +1,5 @@
-# New ports collection makefile for:	multiget
-# Date created:				2006-11-03
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	multiget
 PORTVERSION=	1.1.3
@@ -21,6 +17,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|g++|${CXX}|; \

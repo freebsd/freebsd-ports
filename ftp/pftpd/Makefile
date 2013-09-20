@@ -15,6 +15,7 @@ MAKE_JOBS_UNSAFE=	yes
 MAN1=		pftpd.1 rpad.1
 PLIST_FILES=	sbin/pftpd
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-lpthread|${PTHREAD_LIBS}|g'

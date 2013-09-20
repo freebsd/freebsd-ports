@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	LIBCURL
 LIBCURL_DESC=	Install curl tools and library
 OPTIONS_DEFAULT=	LIBCURL
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

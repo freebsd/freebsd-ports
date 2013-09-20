@@ -1,9 +1,5 @@
-# Ports collection makefile for:  oftpd
-# Date created:			  31 March 2001
-# Whom:				  Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	oftpd
 PORTVERSION=	0.3.7
@@ -20,6 +16,7 @@ MAN8=		oftpd.8
 PORTDOCS=	README AUTHORS ChangeLog NEWS TODO BUGS
 PLIST_FILES=	sbin/oftpd
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g ; \
 		 s|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ftpcopy
-# Date created:				5 June 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ftpcopy
 PORTVERSION=	0.6.7
@@ -20,6 +16,7 @@ WRKSRC=		${WRKDIR}/web/${DISTNAME}
 
 MAN1=		ftpcopy.1 ftpcp.1 ftpls.1
 
+NO_STAGE=	yes
 pre-build:
 	${ECHO} "${CC}" >${WRKSRC}/src/conf-cc
 	${ECHO} "${CPPFLAGS} ${CFLAGS}" >${WRKSRC}/src/conf-cflags

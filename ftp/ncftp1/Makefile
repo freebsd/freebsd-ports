@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  ncftp
-# Date created:			  20 Jun 1996
-# Whom:				  jkh
-#
+# Created by: jkh
 # $FreeBSD$
-#
 
 PORTNAME=	ncftp
 PORTVERSION=	1.9.5
@@ -23,6 +18,7 @@ LATEST_LINK=	ncftp1
 PLIST_FILES=	bin/${LATEST_LINK}
 MAN1=		ncftp.1
 
+NO_STAGE=	yes
 pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "Use INSTALL_AS_NCFTP=yes to install ncftp1 as ${PREFIX}/bin/ncftp"

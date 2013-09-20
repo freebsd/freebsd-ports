@@ -49,6 +49,7 @@ ANONRESUME_DESC=	Allow anonymous user to resume file upload
 ANONRENAME_DESC=	Allow anonymous user to rename file
 ANONDELETE_DESC=	Allow anonymous user to delete file
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # language support requested?

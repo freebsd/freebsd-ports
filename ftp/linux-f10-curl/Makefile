@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ftp/linux-f10-curl
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	curl
 PORTVERSION=	7.19.6
@@ -39,4 +35,5 @@ MANPREFIX=	${PREFIX}/usr/share
 MAN1=		curl.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

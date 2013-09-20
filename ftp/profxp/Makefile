@@ -21,6 +21,7 @@ USES=		shebangfix perl5
 SHEBANG_FILES=	profxpv3.pl
 perl_OLD_CMD=	/home/tom/ActivePerl-5.6/bin/perl
 
+NO_STAGE=	yes
 post-patch1:
 	@${REINPLACE_CMD} -i '' '1s|^\#.*|#!${PERL}|' ${WRKSRC}/profxpv3.pl
 
