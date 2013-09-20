@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 SRC_DISTFILES=
 DISTINFO_FILE=	${MASTERDIR}/distinfo.i386
 
+NO_STAGE=	yes
 post-extract:
 		@${RM} -r ${WRKSRC}/etc ${WRKSRC}/usr/bin ${WRKSRC}/usr/include \
 			${WRKSRC}/usr/share ${WRKSRC}/usr/lib/X11

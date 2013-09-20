@@ -32,6 +32,7 @@ WRKSRC=		${WRKDIR}/PyGUI-${PORTVERSION}
 OPTIONS_DEFINE=	OPENGL DOCS
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENGL}

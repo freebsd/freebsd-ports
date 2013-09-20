@@ -1,9 +1,5 @@
-# New ports collection makefile for:   	flvw
-# Date created:				17 August 2001
-# Whom:                			Cyrille Lefevre <clefevre@citeweb.net>
-#
+# Created by: Cyrille Lefevre <clefevre@citeweb.net>
 # $FreeBSD$
-#
 
 PORTNAME=	flvw
 PORTVERSION=	20000224
@@ -38,6 +34,7 @@ USE_LDCONFIG=	yes
 CFLAGS+=	-fPIC
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's/^#define fl_inactive inactive//' \
 		${WRKSRC}/FL/Flv_List.H

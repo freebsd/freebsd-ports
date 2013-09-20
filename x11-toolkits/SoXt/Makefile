@@ -23,6 +23,7 @@ CONFIGURE_ARGS+=	--with-pthread=yes --with-coin=${LOCALBASE}
 USE_LDCONFIG=	yes
 MAN1=		soxt-config.1
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,echo aout, echo elf," ${WRKSRC}/configure
 

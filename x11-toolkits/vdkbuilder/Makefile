@@ -1,9 +1,5 @@
-# New ports collection makefile for:   vdkbuilder
-# Date created:        29 January 2000
-# Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
-#
+# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdkbuilder
 PORTVERSION=	2.5.0
@@ -30,6 +26,7 @@ MAN1=		vdkb2.1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|cflag="-s"|cflag="$$CXXFLAGS"|g' ${WRKSRC}/configure

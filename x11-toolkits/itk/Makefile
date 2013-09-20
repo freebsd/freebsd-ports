@@ -1,9 +1,5 @@
-# New ports collection makefile for:	itk
-# Date created:		Aug 17 1996
-# Whom:			chuckr
-#
+# Created by: chuckr
 # $FreeBSD$
-#
 
 PORTNAME=	itk
 PORTVERSION=	3.3
@@ -39,6 +35,7 @@ ITK_LIB_FILE=	${ITK_LIB}.${SHLIB_MAJOR}
 .if defined(DISPLAY)
 post-build:	test
 .else
+NO_STAGE=	yes
 post-build:
 	#
 	# DISPLAY is not set, so post-build testing is impossible

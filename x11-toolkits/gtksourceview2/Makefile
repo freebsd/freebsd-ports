@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--enable-compile-warnings=no --enable-glade-catalog=no
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
 
 .endif

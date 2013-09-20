@@ -69,6 +69,7 @@ PLIST_SUB+=	WITH_ASPELL=""
 PLIST_SUB+=	WITH_ASPELL="@comment "
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s|libpng/png.h|png.h|" ${WRKSRC}/configure
 

@@ -14,5 +14,6 @@ USES=		pkgconfig
 USE_CABAL=	glib>=0.12 gtk>=0.12 mtl pango>=0.12
 USE_GNOME=	vte
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

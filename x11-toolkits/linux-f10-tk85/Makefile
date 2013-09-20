@@ -1,8 +1,5 @@
-# New ports collection makefile for:	x11-toolkits/linux-f10-tk85
-# Date created:				2009-05-04
-# Whom:					bsam
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	tk
 PORTVERSION=	8.5.3
@@ -28,4 +25,5 @@ USE_LDCONFIG=	yes
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 DESCR=		${.CURDIR}/../${PORTNAME}${PKGNAMESUFFIX}/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

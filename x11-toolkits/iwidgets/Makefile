@@ -1,9 +1,5 @@
-# New ports collection makefile for:    itk
-# Date created:         Aug 17 1996
-# Whom:                 chuckr
-#
+# Created by: chuckr
 # $FreeBSD$
-#
 
 PORTNAME=	iwidgets
 PORTVERSION=	4.0.1
@@ -45,6 +41,7 @@ MANN=	iwidgets_buttonbox.n iwidgets_calendar.n iwidgets_canvasprintbox.n iwidget
 	iwidgets_spintime.n iwidgets_tabnotebook.n iwidgets_tabset.n iwidgets_timeentry.n iwidgets_timefield.n \
 	iwidgets_toolbar.n iwidgets_watch.n
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,^MKINSTALLDIRS =.*,MKINSTALLDIRS=${MKDIR},' \
 		-e 's,^INSTALL =.*,INSTALL=${INSTALL} -c,' \

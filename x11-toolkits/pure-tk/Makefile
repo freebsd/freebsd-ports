@@ -18,6 +18,7 @@ PLIST_FILES=	lib/pure/gnocl.pure \
 		lib/pure/tk.so \
 		lib/pure/tk.pure
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} \
  		-e "s|/usr/include|${LOCALBASE}/include|g" \

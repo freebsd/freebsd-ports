@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--disable-maintainer-flags --enable-gtk-doc-html=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|g' \
 		-e 's|unique tests doc|unique tests|g' \

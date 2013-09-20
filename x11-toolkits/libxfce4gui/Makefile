@@ -1,6 +1,5 @@
 # Created by: James Earl <jdearl@telus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libxfce4gui
 PORTVERSION=	4.10.0
@@ -31,6 +30,7 @@ OPTIONS_DEFINE=		DOCS NLS STARTUP
 OPTIONS_DEFAULT=	STARTUP
 STARTUP_DESC=		Use libstartup-notification
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

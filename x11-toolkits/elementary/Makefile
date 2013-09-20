@@ -24,6 +24,7 @@ INSTALLS_ICONS=	yes
 
 CONFIGURE_ARGS=	--disable-quick-launch
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

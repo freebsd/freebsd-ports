@@ -19,6 +19,7 @@ LDFLAGS+=	-lintl
 
 MAN1=		sakura.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 post-patch:
 	@${REINPLACE_CMD} -e '/NOT MATCHES "Debug"/d ; \

@@ -20,6 +20,7 @@ USE_PERL5=	modbuild
 USE_WX=		2.6+
 WX_COMPS=	wx contrib
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MUNICODE}

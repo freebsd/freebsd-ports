@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-traitsbackendwx
-# Date created:		2009-08-21
-# Whom:			Jacob Frelinger <jacob.frelinger@duke.edu>
-#
+# Created by: Jacob Frelinger <jacob.frelinger@duke.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	traitsbackendwx
 PORTVERSION=	3.2.0
@@ -26,5 +22,6 @@ PYEASYINSTALL_UNINSTALLARGS=	-q -m -N -S ${PYTHON_SITELIBDIR} ${PYDISTUTILS_PKGN
 USE_WX=		2.8
 WX_COMPS=	python
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>

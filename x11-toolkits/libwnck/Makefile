@@ -32,6 +32,7 @@ OPTIONS_DEFINE=	STARTUP
 OPTIONS_DEFAULT=STARTUP
 STARTUP_DESC=	Startup notification support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSTARTUP}

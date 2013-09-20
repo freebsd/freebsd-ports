@@ -30,6 +30,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	VERSION="2.6" PORTVERSION=${PORTVERSION} \
 		SHLIBVERSION="2.4"
 
+NO_STAGE=	yes
 post-extract:
 	${TOUCH} -f ${WRKSRC}/gal/util/e-util-private.h
 

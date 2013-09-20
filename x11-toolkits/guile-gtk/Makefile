@@ -1,7 +1,4 @@
-# New ports collection makefile for:   guile-gtk
-# Date created:        1 January 2000
-# Whom:                Matt Braithwaite <mab@red-bean.com>
-#
+# Created by: Matt Braithwaite <mab@red-bean.com>
 # $FreeBSD$
 #    $MCom: ports/x11-toolkits/guile-gtk/Makefile,v 1.2 2006/09/10 00:51:17 mezz Exp $
 
@@ -27,6 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		guile-gtk
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|gtk-1\.2/||g'

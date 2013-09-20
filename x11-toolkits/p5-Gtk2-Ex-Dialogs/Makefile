@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Gtk2-Ex-Dialogs
-# Date created:		22 July 2008
-# Whom:			Paul Schmehl <pauls@utdallas.edu>
-#
+# Created by: Paul Schmehl <pauls@utdallas.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	Gtk2-Ex-Dialogs
 PORTVERSION=	0.11
@@ -29,4 +25,5 @@ MAN3=		Gtk2::Ex::Dialogs::Question.3 \
 		Gtk2::Ex::Dialogs::ChoosePreviewFile.3 \
 		Gtk2::Ex::Dialogs.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -46,6 +46,7 @@ MAN3=		Wx.3 \
 		Wx::build::Options.3 \
 		Wx::build::Utils.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501508

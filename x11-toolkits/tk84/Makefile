@@ -50,6 +50,7 @@ PLIST_SUB=	TK_VER=${TK_VER} \
 
 SUB_FILES=	pkgIndex.tcl
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTKMAN} && !defined(NO_INSTALL_MANPAGES)

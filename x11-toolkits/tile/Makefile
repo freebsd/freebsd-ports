@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tile
-# Date created:		18 July 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tile
 PORTVERSION=	0.8.4.0
@@ -24,6 +20,7 @@ GNU_CONFIGURE=	yes
 TKPKG=		${PORTNAME}${PORTVERSION}
 PLIST_SUB=	VER=${PORTVERSION} TKPKG=${TKPKG}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR} \

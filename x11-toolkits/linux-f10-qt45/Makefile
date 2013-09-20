@@ -19,4 +19,5 @@ RPMVERSION=	9.fc10
 USE_LDCONFIG=	yes
 PLIST=		${PKGDIR}/pkg-plist.${LINUX_RPM_ARCH}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

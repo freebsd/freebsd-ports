@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Gtk2-Ex-Utils
-# Date created:		22 July 2008
-# Whom:			Paul Schmehl <pauls@utdallas.edu>
-#
+# Created by: Paul Schmehl <pauls@utdallas.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	Gtk2-Ex-Utils
 PORTVERSION=	0.09
@@ -29,4 +25,5 @@ USE_PERL5=	configure
 MAN3=	Gtk2::Ex::Constants.3 \
 	Gtk2::Ex::Utils.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

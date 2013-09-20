@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wxgtk26-unicode
-# Date created:         		June 27, 2004
-# Whom:					fjoe@FreeBSD.ORG
-#
+# Created by: fjoe@FreeBSD.org
 # $FreeBSD$
-#
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	The wxWidgets GUI toolkit (Unicode)
@@ -11,4 +7,5 @@ COMMENT=	The wxWidgets GUI toolkit (Unicode)
 WXGTK_FLAVOR=	gtk2-unicode
 MASTERDIR=	${.CURDIR}/../wxgtk28
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

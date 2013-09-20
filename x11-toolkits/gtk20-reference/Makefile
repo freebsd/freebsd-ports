@@ -7,6 +7,7 @@ BOOKS=		gdk gtk
 
 PLIST=		${.CURDIR}/pkg-plist
 
+NO_STAGE=	yes
 do-install:
 .for d in ${BOOKS}
 	if [ -d ${REFERENCE_SRC}/${d}/html ]; then \

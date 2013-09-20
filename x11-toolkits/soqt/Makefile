@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SoQt
-# Date created:				10 March 2003
-# Whom:					roland.jesse@gmx.net
-#
+# Created by: roland.jesse@gmx.net
 # $FreeBSD$
-#
 
 PORTNAME=	SoQt
 PORTVERSION=	1.5.0
@@ -34,6 +30,7 @@ USE_LDCONFIG=	yes
 
 MAN1=		soqt-config.1
 
+NO_STAGE=	yes
 post-install:
 	@${TOUCH} ${PREFIX}/include/Inventor/Qt/engines/.keep_me
 

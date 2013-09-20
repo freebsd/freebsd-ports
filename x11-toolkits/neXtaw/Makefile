@@ -17,6 +17,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|version-info.*$$|version-info 8:0:0|g' \
 		${WRKSRC}/X11/neXtaw/Makefile.in

@@ -28,6 +28,7 @@ USE_GNOME=	lthack gtk20
 CONFIGURE_ARGS=	--enable-static=yes \
 		--with-sigc-prefix=${LOCALBASE}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/gmessages.h|glib/gtestutils.h|g' \
 		${WRKSRC}/glib/src/*.ccg ${WRKSRC}/glib/glibmm/*.* \

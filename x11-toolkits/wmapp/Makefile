@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	wmapp
-# Date Created:			Apr 3, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	wmapp
 PORTVERSION=	0.0.4.3
@@ -21,6 +16,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 ALL_TARGET=	# empty
 PLIST_FILES=	lib/libwmapp.a
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|export |#export |g" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s|malloc\.h|stdlib.h|g" ${WRKSRC}/xwrapper.h

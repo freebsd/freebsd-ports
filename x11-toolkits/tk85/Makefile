@@ -51,6 +51,7 @@ DEMOS_DESC=	Install demos
 
 SUB_LIST+=	TCLPATCHLEVEL="${PORTVERSION}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}

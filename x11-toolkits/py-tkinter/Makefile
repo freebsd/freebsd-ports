@@ -30,6 +30,7 @@ PYDISTUTILS_PKGNAME=	Tkinter
 
 PLIST_FILES=	%%PYTHON_LIBDIR%%/lib-dynload/_tkinter.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

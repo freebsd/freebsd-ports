@@ -14,5 +14,6 @@ USE_CABAL=	parsec>=2.1.0 strict
 
 EXECUTABLE=	wxdirect
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wxPython shared common
-# Date created:		Fri Sep  2 03:37:23 UTC 2005
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	6
 
@@ -14,4 +10,5 @@ PYDISTUTILS_NOEGGINFO=	yes
 
 PLIST=	${.CURDIR}/pkg-plist
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

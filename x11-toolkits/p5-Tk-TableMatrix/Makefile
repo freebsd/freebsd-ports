@@ -22,4 +22,5 @@ MAN3=		Tk::TableMatrix.3 \
 		Tk::TableMatrix::Spreadsheet.3 \
 		Tk::TableMatrix::SpreadsheetHideRows.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

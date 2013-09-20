@@ -22,4 +22,5 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-lib-GL
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

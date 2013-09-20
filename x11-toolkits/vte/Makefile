@@ -33,6 +33,7 @@ OPTIONS_DEFINE=	GLX
 GLX_DESC=	Support for DRI/GLX rendering
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGLX} && !defined(MASTERDIR)

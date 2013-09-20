@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--enable-compile-warnings=no
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lgnuregex"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
 
 .endif

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Gtk2-GladeXML
-# Date created:		2004-08-03
-# Whom:			ports@c0decafe.net
-#
+# Created by: ports@c0decafe.net
 # $FreeBSD$
-#
 
 PORTNAME=	Glade
 PORTVERSION=	1.007
@@ -31,4 +27,5 @@ USE_PERL5=	configure
 
 MAN3=	Gtk2::GladeXML.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

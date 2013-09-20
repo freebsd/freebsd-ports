@@ -24,6 +24,7 @@ STRIP_FILES=	lib/libqwt.so.${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.man>
 

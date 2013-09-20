@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	GTK2
 GTK2_DESC=	Gimp Toolkit for X11 GUI (version 2.x)
 OPTIONS_DEFAULT=	GTK2
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -25,6 +25,7 @@ VTE_DESC=		Terminal emulator
 WEBKIT_DESC=		WebKit rendering engine
 SOEGTK_DESC=		Examples for Haskell SoE
 
+NO_STAGE=	yes
 .include "../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MGCONF}

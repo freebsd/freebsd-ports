@@ -14,5 +14,6 @@ USE_WX=		2.9
 WX_COMPS=	wx
 WX_UNICODE=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

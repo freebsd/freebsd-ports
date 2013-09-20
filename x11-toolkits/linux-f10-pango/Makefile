@@ -1,9 +1,5 @@
-# New ports collection makefile for:	x11-toolkits/linux-f10-pango
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	pango
 PORTVERSION=	1.28.3
@@ -30,6 +26,7 @@ USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
+NO_STAGE=	yes
 post-install:
 	@${PREFIX}/usr/bin/pango-querymodules-32 > ${PREFIX}/etc/pango/i686-pc-linux-gnu/pango.modules
 

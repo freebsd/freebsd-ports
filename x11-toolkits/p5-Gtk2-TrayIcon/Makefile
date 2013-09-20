@@ -1,4 +1,3 @@
-# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Gtk2-TrayIcon
@@ -23,4 +22,5 @@ USE_PERL5=	configure
 
 MAN3=		Gtk2::TrayIcon.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

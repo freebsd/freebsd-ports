@@ -1,7 +1,6 @@
 # Created by: Vanilla I. Shu <vanilla@MinJe.com.TW>
 # $FreeBSD$
 #   $MCom: ports/x11-toolkits/gtk20/Makefile,v 1.237 2013/03/04 17:44:38 kwm Exp $
-# Remember to update graphics/gtk-update-icon-cache too.
 
 PORTNAME=	gtk
 PORTVERSION=	2.24.19
@@ -46,6 +45,7 @@ MAN1=		gtk-query-immodules-2.0.1
 OPTIONS_DEFINE=	CUPS DEBUG
 OPTIONS_DEFAULT=CUPS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCUPS}

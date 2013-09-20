@@ -37,6 +37,7 @@ OPTIONS_DEFAULT=SHM XFT
 APPS_DESC=	Install sample applications
 SHM_DESC=	Shared Memory support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 ##

@@ -26,4 +26,5 @@ MAN3=		Gtk.3pm \
 		Gtk::objects.3pm \
 		Gtk::reference.3pm
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

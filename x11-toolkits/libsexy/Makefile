@@ -22,4 +22,5 @@ USE_LDCONFIG=	yes
 USES=		pkgconfig gettext
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

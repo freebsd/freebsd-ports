@@ -282,6 +282,7 @@ MAN3=	MenuPopdown.3 \
 	XtWindowOfObject.3 \
 	XtWindowToWidget.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' \
 		${WRKSRC}/configure

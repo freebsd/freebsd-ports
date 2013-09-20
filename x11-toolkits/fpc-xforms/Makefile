@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	XFORMS
 XFORMS_DESC=	Install xforms graphical user interface toolkit
 OPTIONS_DEFAULT=	XFORMS
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -36,6 +36,7 @@ WXPORT=		gtk2
 
 CONFIGURE_ARGS+=	--enable-aui
 
+NO_STAGE=	yes
 post-extract:
 # only keep the scripts we need
 	@${RM} ${WRKSRC}/scripts/*.py

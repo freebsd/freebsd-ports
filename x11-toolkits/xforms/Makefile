@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xforms
-# Date created:		28 March 1997
-# Whom:			gena
-#
+# Created by: gena
 # $FreeBSD$
-#
 
 PORTNAME=	xforms
 DISTVERSION=	1.0.93sp1
@@ -42,6 +38,7 @@ BROKEN=		Does not work with latest xforms version
 #PATCH_DIST_STRIP=	-p1
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"

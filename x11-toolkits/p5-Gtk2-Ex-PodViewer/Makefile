@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Gtk2-Ex-PodViewer
-# Date created:				2004-08-20
-# Whom:					ports@c0decafe.net
-#
+# Created by: ports@c0decafe.net
 # $FreeBSD$
-#
 
 PORTNAME=	Gtk2-Ex-PodViewer
 PORTVERSION=	0.18
@@ -28,4 +24,5 @@ USE_PERL5=	configure
 MAN1=	podviewer.1
 MAN3=	${PORTNAME:S/-/::/g}.3 ${PORTNAME:S/-/::/g}::Parser.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -34,6 +34,7 @@ PORTDOCS=	*
 MAN1=	fltk-config.1 fluid.1
 MAN3=	fltk.3
 
+NO_STAGE=	yes
 post-patch:
 	prefix="${PREFIX}" ; plength=$$(($${#prefix}+10)) ; \
 	${REINPLACE_CMD} -e "\|/etc/fltk|{s||${PREFIX}&|;s|10|$${plength}|;}" \

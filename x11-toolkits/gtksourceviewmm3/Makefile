@@ -20,4 +20,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBAS}/lib
 CONFIGURE_ARGS=	--disable-documentation
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

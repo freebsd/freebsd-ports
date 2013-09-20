@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pywmdockapps
-# Date created:		2007-05-09
-# Whom:			David Thiel <lx@FreeBSD.org>
-#
+# Created by: David Thiel <lx@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wmdockapps
 PORTVERSION=	1.21
@@ -21,6 +17,7 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pywmdockapps
 USE_XORG=	x11 xpm xau xext xfixes xi
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's|/usr/X11R6|${LOCALBASE}|' ${WRKSRC}/setup.py
 

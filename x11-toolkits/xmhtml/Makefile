@@ -1,4 +1,4 @@
-# Created by: Peter Hawkins <thepish@freebsd.org>
+# Created by: Peter Hawkins <thepish@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	XmHTML
@@ -19,6 +19,7 @@ USE_LDCONFIG=	yes
 USE_XORG=	xmu
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
 
+NO_STAGE=	yes
 do-configure:
 	@${DO_NADA}
 

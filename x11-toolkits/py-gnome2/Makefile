@@ -34,6 +34,7 @@ EG_DST_DIR=	${PREFIX}/share/examples/py-gnome
 
 CONFLICTS=	py*-gnome-1*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)

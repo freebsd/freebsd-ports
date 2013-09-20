@@ -22,6 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gahr
 GH_COMMIT=	378836c
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFOX16}

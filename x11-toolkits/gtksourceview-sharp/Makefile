@@ -1,10 +1,5 @@
-# New ports collection makefile for:    	gtksourceview-sharp
-# Date created:         			20040821
-# Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-#
+# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
-#   $Id: Makefile,v 1.30 2007/05/19 17:34:30 killfill Exp $
-#
 
 PORTNAME=	gtksourceview-sharp
 PORTVERSION=	0.12
@@ -26,6 +21,7 @@ USE_GNOME=	gtksourceview gnomehack gtksharp20
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|[(]prefix[)]/lib/pkgconfig|(prefix)/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
 

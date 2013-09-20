@@ -28,6 +28,7 @@ PLIST_DIRS=	include/gai
 PORTDOCS=	*
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|sdl-config --|${SDL_CONFIG} --|g; \
 		s|/usr/X11R6|${LOCALBASE}|g" ${WRKSRC}/configure

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	p5-Gnome2
-# Date created:			Jan 2, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Gnome2
 PORTVERSION=	1.042
@@ -34,6 +29,7 @@ USE_PERL5=	configure
 
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 post-install:
 	@cd ${WRKSRC}/blib/man3 && ${FIND} * -name "*.3" | ${SED} \
 		's,^,${MAN3PREFIX:S,^${PREFIX}/,,}/man/man3/,' >> ${TMPPLIST}

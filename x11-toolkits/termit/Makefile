@@ -31,6 +31,7 @@ DEBUG_CMAKE_ON=	-DDEBUG:BOOL=YES
 NLS_CMAKE_OFF=	-DENABLE_NLS:BOOL=NO
 NLS_USES=	gettext
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

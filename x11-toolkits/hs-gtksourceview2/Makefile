@@ -14,5 +14,6 @@ USES=		pkgconfig
 USE_CABAL=	glib>=0.12 gtk>=0.12 mtl
 USE_GNOME=	gtksourceview2
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

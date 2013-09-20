@@ -28,6 +28,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 INFO=		gdk gtk
 MAN1=		gtk-config.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

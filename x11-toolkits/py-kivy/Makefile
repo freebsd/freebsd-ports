@@ -76,6 +76,7 @@ X11_MAKE_ENV+=		USE_X11=1
 FFMPEG_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ffmpeg:${PORTSDIR}/multimedia/py-ffmpeg
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPDF}
