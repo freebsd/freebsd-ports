@@ -123,8 +123,6 @@
     SUBDIR += easysoap
     SUBDIR += echoping
     SUBDIR += ecore-con
-    SUBDIR += ekiga
-    SUBDIR += ekiga3
     SUBDIR += empty
     SUBDIR += enet
     SUBDIR += entitymib
@@ -460,7 +458,6 @@
     SUBDIR += onioncat
     SUBDIR += online-desktop
     SUBDIR += opal
-    SUBDIR += opal3
     SUBDIR += openafs
     SUBDIR += openam
     SUBDIR += openbgpd

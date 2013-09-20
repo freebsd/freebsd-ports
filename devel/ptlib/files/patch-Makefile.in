@@ -1,0 +1,35 @@
+--- Makefile.in.orig	2013-02-20 03:12:27.000000000 +0100
++++ Makefile.in	2013-07-11 10:16:26.000000000 +0200
+@@ -111,9 +111,7 @@
+ 		do mkdir -p $$dir ; chmod 755 $$dir ; \
+ 	done )
+ 	( for lib in  $(PT_LIBDIR)/$(LIB_SONAME) \
+-	              $(PT_LIBDIR)/$(DEBUG_SONAME) \
+-	              $(PT_LIBDIR)/lib$(PTLIB_BASE)_s.a \
+-	              $(PT_LIBDIR)/lib$(PTLIB_BASE)_d_s.a ; \
++	              $(PT_LIBDIR)/$(DEBUG_SONAME) ; \
+           do \
+ 	  ( if test -e $$lib ; then \
+ 		$(INSTALL) -m 444 $$lib $(DESTDIR)$(LIBDIR); \
+@@ -160,9 +158,9 @@
+ 	$(INSTALL) -m 755 make/ptlib-config $(DESTDIR)$(PREFIX)/share/ptlib/make/
+ 	(cd $(DESTDIR)$(PREFIX)/bin; rm -f ptlib-config ; ln -snf ../share/ptlib/make/ptlib-config ptlib-config)
+ 
+-	mkdir -p $(DESTDIR)$(LIBDIR)/pkgconfig
+-	chmod 755 $(DESTDIR)$(LIBDIR)/pkgconfig
+-	$(INSTALL) -m 644 ptlib.pc $(DESTDIR)$(LIBDIR)/pkgconfig/
++	mkdir -p $(DESTDIR)$(PREFIX)/libdata/pkgconfig
++	chmod 755 $(DESTDIR)$(PREFIX)/libdata/pkgconfig
++	$(INSTALL) -m 644 ptlib.pc $(DESTDIR)$(PREFIX)/libdata/pkgconfig/
+ 
+ uninstall:
+ 	rm -rf $(DESTDIR)$(PREFIX)/include/ptlib \
+@@ -171,7 +169,7 @@
+ 	       $(DESTDIR)$(PREFIX)/include/ptbuildopts.h \
+ 	       $(DESTDIR)$(PREFIX)/share/ptlib \
+ 	       $(DESTDIR)$(LIBDIR)/$(DEV_PLUGIN_DIR) \
+-	       $(DESTDIR)$(LIBDIR)/pkgconfig/ptlib.pc
++	       $(DESTDIR)$(PREFIX)/libdata/pkgconfig/ptlib.pc
+ 	rm -f $(DESTDIR)$(LIBDIR)/lib$(PTLIB_BASE)_s.a \
+ 	      $(DESTDIR)$(LIBDIR)/$(PTLIB_FILE) \
+ 	      $(DESTDIR)$(LIBDIR)/$(LIB_SONAME)

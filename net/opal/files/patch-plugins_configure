@@ -1,0 +1,189 @@
+--- plugins/configure.orig	2013-07-09 00:25:14.000000000 +0200
++++ plugins/configure	2013-07-09 00:28:04.000000000 +0200
+@@ -6924,7 +6924,7 @@
+ if test "x${HAVE_GSM0610}" = "xyes" ; then
+   ac_config_files="$ac_config_files audio/GSM0610/Makefile"
+ 
+-  SUBDIRS+=" audio/GSM0610"
++  SUBDIRS="${SUBDIRS} audio/GSM0610"
+ 
+   # Check whether --enable-localgsm was given.
+ if test "${enable_localgsm+set}" = set; then :
+@@ -7181,7 +7181,7 @@
+ if test "x${HAVE_GSMAMR}" = "xyes" ; then
+   ac_config_files="$ac_config_files audio/gsm-amr/Makefile"
+ 
+-  SUBDIRS+=" audio/gsm-amr"
++  SUBDIRS="${SUBDIRS} audio/gsm-amr"
+ fi
+ 
+ 
+@@ -7199,7 +7199,7 @@
+ if test "x${HAVE_iLBC}" = "xyes" ; then
+   ac_config_files="$ac_config_files audio/iLBC/Makefile"
+ 
+-  SUBDIRS+=" audio/iLBC"
++  SUBDIRS="${SUBDIRS} audio/iLBC"
+ 
+   ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
+@@ -8632,7 +8632,7 @@
+ 
+   ac_config_files="$ac_config_files audio/Speex/Makefile"
+ 
+-  SUBDIRS+=" audio/Speex"
++  SUBDIRS="${SUBDIRS} audio/Speex"
+ 
+ 
+           old_CFLAGS="$CFLAGS"
+@@ -9002,7 +9002,7 @@
+ if test "x${HAVE_G722}" = "xyes" ; then
+   ac_config_files="$ac_config_files audio/G722/Makefile"
+ 
+-  SUBDIRS+=" audio/G722"
++  SUBDIRS="${SUBDIRS} audio/G722"
+ fi
+ 
+ 
+@@ -9020,7 +9020,7 @@
+ if test "x${HAVE_G7221}" = "xyes" ; then
+   ac_config_files="$ac_config_files audio/G.722.1/Makefile"
+ 
+-  SUBDIRS+=" audio/G.722.1"
++  SUBDIRS="${SUBDIRS} audio/G.722.1"
+ fi
+ 
+ 
+@@ -9038,7 +9038,7 @@
+ if test "x${HAVE_G7222}" = "xyes" ; then
+   ac_config_files="$ac_config_files audio/G.722.2/Makefile"
+ 
+-  SUBDIRS+=" audio/G.722.2"
++  SUBDIRS="${SUBDIRS} audio/G.722.2"
+ fi
+ 
+ 
+@@ -9056,7 +9056,7 @@
+ if test "x${HAVE_G726}" = "xyes" ; then
+   ac_config_files="$ac_config_files audio/G726/Makefile"
+ 
+-  SUBDIRS+=" audio/G726"
++  SUBDIRS="${SUBDIRS} audio/G726"
+ fi
+ 
+ 
+@@ -9074,7 +9074,7 @@
+ if test "x${HAVE_LPC10}" = "xyes" ; then
+   ac_config_files="$ac_config_files audio/LPC_10/Makefile"
+ 
+-  SUBDIRS+=" audio/LPC_10"
++  SUBDIRS="${SUBDIRS} audio/LPC_10"
+ fi
+ 
+ 
+@@ -9092,7 +9092,7 @@
+ if test "x${HAVE_IMA_ADPCM}" = "xyes" ; then
+   ac_config_files="$ac_config_files audio/IMA_ADPCM/Makefile"
+ 
+-  SUBDIRS+=" audio/IMA_ADPCM"
++  SUBDIRS="${SUBDIRS} audio/IMA_ADPCM"
+ fi
+ 
+ 
+@@ -9155,7 +9155,7 @@
+ if test "x${HAVE_SBC}" = "xyes" ; then
+   ac_config_files="$ac_config_files audio/SBC/Makefile"
+ 
+-  SUBDIRS+=" audio/SBC"
++  SUBDIRS="${SUBDIRS} audio/SBC"
+ fi
+ 
+ 
+@@ -9251,7 +9251,7 @@
+                   sed -e "s/\./*10000+/" -e "s/\./*100+/"`\""
+   ac_config_files="$ac_config_files audio/celt/Makefile"
+ 
+-  SUBDIRS+=" audio/celt"
++  SUBDIRS="${SUBDIRS} audio/celt"
+ fi
+ 
+ 
+@@ -9269,7 +9269,7 @@
+ if test "x${HAVE_SILK}" = "xyes" ; then
+   ac_config_files="$ac_config_files audio/SILK/Makefile"
+ 
+-  SUBDIRS+=" audio/SILK"
++  SUBDIRS="${SUBDIRS} audio/SILK"
+ fi
+ 
+ 
+@@ -9288,7 +9288,7 @@
+ if test "x${HAVE_H261}" = "xyes" ; then
+   ac_config_files="$ac_config_files video/H.261-vic/Makefile"
+ 
+-  SUBDIRS+=" video/H.261-vic"
++  SUBDIRS="${SUBDIRS} video/H.261-vic"
+ fi
+ 
+ 
+@@ -9717,13 +9717,13 @@
+ if test "x${HAVE_LIBAVCODEC}" = "xyes"; then
+   ac_config_files="$ac_config_files video/H.263-1998/Makefile"
+ 
+-  SUBDIRS+=" video/H.263-1998"
++  SUBDIRS="${SUBDIRS} video/H.263-1998"
+ fi
+ 
+ if test "x${HAVE_LIBAVCODEC}" = "xyes"; then
+   ac_config_files="$ac_config_files video/MPEG4-ffmpeg/Makefile"
+ 
+-  SUBDIRS+=" video/MPEG4-ffmpeg"
++  SUBDIRS="${SUBDIRS} video/MPEG4-ffmpeg"
+ fi
+ 
+ 
+@@ -9875,7 +9875,7 @@
+ fi
+ 
+ 
+-  SUBDIRS+=" video/H.264"
++  SUBDIRS="${SUBDIRS} video/H.264"
+   ac_config_files="$ac_config_files video/H.264/Makefile"
+ 
+   ac_config_files="$ac_config_files video/H.264/gpl/Makefile"
+@@ -9973,7 +9973,7 @@
+ if test "x$HAVE_THEORA" = "xyes" ; then
+   ac_config_files="$ac_config_files video/THEORA/Makefile"
+ 
+-  SUBDIRS+=" video/THEORA"
++  SUBDIRS="${SUBDIRS} video/THEORA"
+ fi
+ 
+ 
+@@ -10054,7 +10054,7 @@
+ if test "x$HAVE_IXJ" = "xyes" ; then
+   ac_config_files="$ac_config_files LID/IxJ/Makefile"
+ 
+-  SUBDIRS+=" LID/IxJ"
++  SUBDIRS="${SUBDIRS} LID/IxJ"
+ fi
+ 
+ if test -d LID/VPB ; then
+@@ -10101,7 +10101,7 @@
+ if test "x$HAVE_VPB" = "xyes" ; then
+   ac_config_files="$ac_config_files LID/VPB/Makefile"
+ 
+-  SUBDIRS+=" LID/VPB"
++  SUBDIRS="${SUBDIRS} LID/VPB"
+ fi
+ 
+ 
+@@ -10284,7 +10284,7 @@
+ if test "x$HAVE_SPANDSP" = "xyes" ; then
+   ac_config_files="$ac_config_files fax/fax_spandsp/Makefile"
+ 
+-  SUBDIRS+=" fax/fax_spandsp"
++  SUBDIRS="${SUBDIRS} fax/fax_spandsp"
+ fi
+ 
+ 
