@@ -37,6 +37,7 @@ TST2FIX=	c f
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 pre-configure:
 .for ext in am in
 . if defined(NOPORTDOCS)

@@ -40,6 +40,7 @@ DOCS=		A_Lire.txt Readme.txt
 PLIST_SUB=	HOMARDDIR=${LHOMARDDIR} AHPY=${LHOMARDDIR}/${AHPY}			\
 		UNAMES=${OPSYS} HOMARDPG=${HOMARDPG} ASTER_TOOLS=${ASTER_TOOLS}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-configure:

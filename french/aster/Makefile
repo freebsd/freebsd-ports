@@ -9,6 +9,7 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Aster finite element method solver
 
 #-----------------------------------------------------------------------
+NO_STAGE=	yes
 # You may define these options:
 #
 # - FFLAGS: fortan compiler's flags (-O2 by default);

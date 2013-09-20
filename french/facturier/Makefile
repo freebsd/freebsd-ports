@@ -46,6 +46,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 TRASHFILES=	lib/Conf.pm~ cgi-bin/.articlemodif.cgi.swp lib/.Conf.pm.swp	\
 		html/UNGI/Editfacturemaj.pm.back html/temp/log_facture.gif.back
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Vous pouvez définir trois variables :"

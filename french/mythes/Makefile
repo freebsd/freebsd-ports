@@ -26,6 +26,7 @@ PLIST_FILES+=	%%DATADIR%%/th_${ALIAS}_v2.dat \
 		%%DATADIR%%/th_${ALIAS}_v2.idx
 .endfor
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/thes_fr.dat ${DATADIR}/th_fr_FR_v2.dat

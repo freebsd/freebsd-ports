@@ -22,6 +22,7 @@ FRALIASES=	fr_FR fr_BE fr_CA fr_CH fr_LU
 PLIST_FILES+=	%%DATADIR%%/hyph_${ALIAS}.dic
 .endfor
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/hyph_fr.dic ${DATADIR}/

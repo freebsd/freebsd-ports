@@ -14,6 +14,7 @@ SUB_FILES=	pkg-message
 
 STRCMD=		/usr/games/strfile
 
+NO_STAGE=	yes
 pre-build:
 .if !exists(${STRCMD})
 	@${ECHO_MSG} "Please install the games distribution"
