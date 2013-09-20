@@ -1,0 +1,12 @@
+--- ./MANIFEST.in.orig	2013-07-27 06:55:55.000000000 -0400
++++ ./MANIFEST.in	2013-07-27 06:56:02.000000000 -0400
+@@ -2,9 +2,7 @@
+ include LICENSE
+ include RELEASE.md
+ include README.rst
+-include TODO.rst
+ include setup.py
+-include setupegg.py
+ 
+ graft doc
+ prune doc/build
