@@ -1,4 +1,4 @@
-# Created by: lofi@freebsd.org
+# Created by: lofi@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	accessible

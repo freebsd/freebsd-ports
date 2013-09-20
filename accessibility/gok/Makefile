@@ -1,4 +1,4 @@
-# Created by: Adam Weinberger <adamw@freebsd.org>
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/accessibility/gok/Makefile,v 1.112 2010/09/29 07:37:57 kwm Exp $
 
