@@ -22,6 +22,7 @@ DESKTOP_FILES=	gtweakui-galeon.desktop.in \
 				gtweakui-nautilus.desktop.in \
 				gtweakui-session.desktop.in
 
+NO_STAGE=	yes
 post-patch:
 .for FILE in ${DESKTOP_FILES}
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \

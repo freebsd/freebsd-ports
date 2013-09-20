@@ -19,4 +19,5 @@ GNU_CONFIGURE=	yes
 USES=		pkgconfig
 USE_GNOME=	evolutiondataserver gconf2
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

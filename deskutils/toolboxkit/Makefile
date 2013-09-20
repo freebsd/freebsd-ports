@@ -24,4 +24,5 @@ USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 WRKSRC=		${WRKDIR}/Toolbox
 USE_GNUSTEP_MAKE_DIRS+=	Toolbox
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

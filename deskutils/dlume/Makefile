@@ -19,6 +19,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/dlume share/pixmaps/dlume.png
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/src/Makefile.in
 

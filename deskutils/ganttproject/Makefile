@@ -22,6 +22,7 @@ CPIOARGS=	--quiet -pdum -R
 
 SUB_FILES=	${PORTNAME}.sh
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

@@ -19,6 +19,7 @@ USE_GMAKE=	yes
 
 MAN1=		calcurse.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MDOCS)

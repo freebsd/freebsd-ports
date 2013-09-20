@@ -1,9 +1,5 @@
-# New ports collection makefile for:	autocutsel
-# Date created:		13 November 2003
-# Whom:			john@jnielsen.net
-#
+# Created by: john@jnielsen.net
 # $FreeBSD$
-#
 
 PORTNAME=	autocutsel
 PORTVERSION=	0.9.0
@@ -22,4 +18,5 @@ USE_GMAKE=	yes
 PLIST_FILES=	bin/autocutsel \
 		bin/cutsel
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

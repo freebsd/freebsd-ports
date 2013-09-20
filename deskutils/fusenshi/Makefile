@@ -24,6 +24,7 @@ MAKE_ARGS+=	WITHOUT_SSL=yes
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .endif
 
+NO_STAGE=	yes
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/fusenshi
 

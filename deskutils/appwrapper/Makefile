@@ -19,6 +19,7 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/AppWrapper
 
+NO_STAGE=	yes
 post-patch:
 	${RMDIR} ${WRKSRC}/AppWrapper.app/ix86/linux-gnu
 	${RMDIR} ${WRKSRC}/AppWrapper.app/ix86

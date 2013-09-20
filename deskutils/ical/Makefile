@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--with-tclconfig=${TCL_LIBDIR} \
 
 MAN1=		ical.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,tcl->result,Tcl_GetStringResult(tcl),' \
 		${WRKSRC}/ical.C

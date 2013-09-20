@@ -36,6 +36,7 @@ MARBLE_DESC=	Support for desktop globe wallpaper
 IBUS_DESC=	Enable IBUS backend for input dialog
 SCIM_DESC=	Enable SCIM backend for input dialog
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMARBLE}

@@ -21,6 +21,7 @@ OPTIONS_DEFINE=	BBDB PLANNER
 BBDB_DESC=	BBDB support
 PLANNER_DESC=	Planner.el support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${EMACS_PORT_NAME} == "emacs23") || (${EMACS_PORT_NAME} == "emacs24") || (${EMACS_PORT_NAME} == "emacs-devel")

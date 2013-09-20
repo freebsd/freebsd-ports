@@ -24,6 +24,7 @@ NAME=		StarterBar
 
 LANG=		ca cs de en_CA en_GB es fr hr nl pt pt_BR sq sr sr@Latn sv
 
+NO_STAGE=	yes
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
 

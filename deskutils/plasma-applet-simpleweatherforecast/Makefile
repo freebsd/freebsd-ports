@@ -1,9 +1,5 @@
-# New ports collection makefile for:	plasma-applet-simpleweatherforecast
-# Date created:			2009-03-04
-# Whom:				Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	simpleweatherforecast
 PORTVERSION=	1.3
@@ -29,4 +25,5 @@ PLIST_FILES=	lib/kde4/plasma_applet_simpleweatherforecast.so \
 		share/apps/desktoptheme/default/widgets/plasma-simpleweatherforecast.svg \
 		share/kde4/services/plasma-applet-simpleweatherforecast.desktop
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

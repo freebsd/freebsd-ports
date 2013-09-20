@@ -29,6 +29,7 @@ CMAKE_ARGS+=	-Wno-dev  \
 OS_PLUGIN_DIR=	${PREFIX}/lib/opensync-1.0/plugins
 OS_PYPLUGIN_DIR=${PREFIX}/lib/opensync-1.0/python-plugins
 
+NO_STAGE=	yes
 post-patch:
 # Help find opensync, which is apparently renamed in ports
 	${REINPLACE_CMD} -e "s,opensync-1.0,libopensync,g" \

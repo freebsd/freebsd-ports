@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jjclient
-# Date created:				07 June 2008
-# Whom:					Lucas Holt <luke@justjournal.com>
-#
+# Created by: Lucas Holt <luke@justjournal.com>
 # $FreeBSD$
-#
 
 PORTNAME=	jjclient
 PORTVERSION=	1.0.2
@@ -20,4 +16,5 @@ LIB_DEPENDS+=	xmlrpc.3:${PORTSDIR}/net/xmlrpc-c
 
 PLIST_FILES=	bin/jjclient
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

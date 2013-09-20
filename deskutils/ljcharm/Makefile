@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	ljcharm
-# Date created:				2003-02-26
-# Whom:					schmidtcarl@earthlink.net
-#
+# Created by: schmidtcarl@earthlink.net
 # $FreeBSD$
-#
 
 PORTNAME=	charm
 PORTVERSION=	1.9.1
@@ -20,6 +16,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	1.9.1
 
+NO_STAGE=	yes
 post-patch:
 .if !defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's,share/doc/charm,${DOCSDIR},'  ${WRKSRC}/setup.py

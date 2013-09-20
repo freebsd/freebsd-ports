@@ -26,6 +26,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 OPTIONS_DEFINE=		XFCE4_PANEL NLS
 XFCE4_PANEL_DESC=	Xfce panel applet
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXFCE4_PANEL}

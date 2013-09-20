@@ -16,6 +16,7 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""

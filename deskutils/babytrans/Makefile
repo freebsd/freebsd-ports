@@ -19,6 +19,7 @@ USE_GMAKE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-patch:
 .for file in de es fr pt_BR
 	@${REINPLACE_CMD} -e "s|CHARSET|ISO-8859-1|" \

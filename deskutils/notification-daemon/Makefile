@@ -28,4 +28,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFLICTS=	xfce4-notification-daemon-[0-9]* xfce4-notifyd-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

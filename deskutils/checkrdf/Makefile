@@ -25,6 +25,7 @@ PORTDOCS=	README NEWS blog.news.css bluegreek.css myrdf.css
 OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MDOCS)

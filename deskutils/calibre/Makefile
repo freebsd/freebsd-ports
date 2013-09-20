@@ -66,6 +66,7 @@ MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
 		PODOFO_INC_DIR="${LOCALBASE}/include/podofo" \
 		WITH_USB=yes
 
+NO_STAGE=	yes
 do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
 		${PYSETUP} build)

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kchmviewer
-# Date created:				Mon Jul 25 10:42:16 CEST 2005
-# Whom:					Markus Brueffer <markus@FreeBSD.org>
-#
+# Created by: Markus Brueffer <markus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kchmviewer
 PORTVERSION=	6.0
@@ -22,6 +18,7 @@ USES=		cmake
 USE_KDE4=	kdeprefix kdelibs automoc4
 USE_QT4=	webkit qmake_build moc_build rcc_build uic_build
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/packages/kchmviewer.png ${PREFIX}/share/pixmaps

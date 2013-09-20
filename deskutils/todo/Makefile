@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	todo
-# Date created:			Jul 13, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	todo
 PORTVERSION=	2.9
@@ -22,6 +17,7 @@ CONFLICTS=	devtodo-[0-9]*
 OPTIONS_DEFINE=	BASH
 BASH_DESC=	Install programmable completions for Bash
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 NO_BUILD=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for: charm
-# Date created:		12 Feb 2012
-# Whom:			Andriy Gapon <avg@icyb.net.ua>
-#
+# Created by: Andriy Gapon <avg@icyb.net.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	charmtimetracker
 PORTVERSION=	1.6.0
@@ -33,4 +29,5 @@ INSTALLS_ICONS=	yes
 PORTDOCS=	ReadMe.txt License.txt
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

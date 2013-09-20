@@ -1,7 +1,4 @@
-# New ports collection makefile for:	everygui
-# Date Created:				09 Jan 2006
-# Whom:					Remington Lang <MrL0Lz@gmail.com>
-#
+# Created by: Remington Lang <MrL0Lz@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	everygui
@@ -19,6 +16,7 @@ USE_GNOME=	libglade2 pygnome2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.py" | ${XARGS} ${REINPLACE_CMD} -e\
 		's,/usr/share,${PREFIX}/share,g' -e\

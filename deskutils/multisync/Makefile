@@ -21,6 +21,7 @@ CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 pre-configure:
 	@${FIND} ${WRKDIR} -type l -delete
 .for FILE in missing install-sh mkinstalldirs config.guess config.sub depcomp

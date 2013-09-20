@@ -18,6 +18,7 @@ USE_XFCE=	panel libutil libgui
 CFLAGS+=	`pkg-config --cflags libxfce4panel-1.0 libxfcegui4-1.0`
 LDFLAGS+=	`pkg-config --libs libxfce4panel-1.0 libxfcegui4-1.0`
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		"s|@PLUGINDIR@|${PREFIX}/lib/xfce4/xfce4/panel-plugins|" \

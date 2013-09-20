@@ -20,4 +20,5 @@ CMAKE_ARGS+=	-DTASK_DOCDIR:STRING=${DATADIR:S/${PREFIX}\///} \
 MAN1=		task.1
 MAN5=		taskrc.5 task-faq.5 task-color.5 task-sync.5 task-tutorial.5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

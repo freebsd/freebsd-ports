@@ -16,6 +16,7 @@ USE_GNOME=	gtk20
 OPTIONS_DEFINE=	NLS XDOTOOL
 XDOTOOL_DESC=	Automatic paste functionality
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

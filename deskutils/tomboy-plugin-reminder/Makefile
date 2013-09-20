@@ -17,4 +17,5 @@ RUN_DEPENDS=	tomboy:${PORTSDIR}/deskutils/tomboy
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

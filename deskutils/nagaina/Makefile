@@ -39,6 +39,7 @@ DESKTOP_ENTRIES=	"Nagaina" \
 			"Qt;Office;Utility;" \
 			"false"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-configure:

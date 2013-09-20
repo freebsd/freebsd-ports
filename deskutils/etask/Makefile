@@ -1,9 +1,5 @@
-# New ports collection makefile for:   etask
-# Date created:                15 December 2004
-# Whom:                        Dryice Liu <dryice@liu.com.cn>
-#
+# Created by: Dryice Liu <dryice@liu.com.cn>
 # $FreeBSD$
-#
 
 PORTNAME=	etask
 PORTVERSION=	0.3.91
@@ -33,6 +29,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}a
 PORTDOCS=	etasktut.pdf gpl.txt README
 .endif
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; ${EMACS_NAME} -batch -no-site-file\
 			--eval="(add-to-list 'load-path \"${WRKSRC}\")"\

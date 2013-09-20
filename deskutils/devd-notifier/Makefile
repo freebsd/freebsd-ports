@@ -21,6 +21,7 @@ MAN1=		devd-notifier.1
 PLIST_FILES=	bin/devd-notifier
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "You can build devd-notifier with your own config.h using the DEVD-NOTIFIER_CONF knob:"
 	@${ECHO_MSG} "make DEVD-NOTIFIER_CONF=/path/to/devd-notifier/config.h install clean"

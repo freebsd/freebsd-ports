@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qorganizer
-# Date created:		20 August 2007
-# Whom:			Yinghong Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qorganizer
 PORTVERSION=	3.1
@@ -28,6 +24,7 @@ DESKTOP_ENTRIES=	"qOrganizer" \
 			"Qt;KDE;Office;" \
 			"false"
 
+NO_STAGE=	yes
 pre-build:
 	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE}
 

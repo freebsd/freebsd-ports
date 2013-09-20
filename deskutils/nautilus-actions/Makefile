@@ -28,6 +28,7 @@ PORTDOCS=	AUTHORS COPYING ChangeLog ChangeLog-2008 ChangeLog-2009 INSTALL \
 		MAINTAINERS NEWS README TODO export-format-id io-provider-id \
 		objects-hierarchy.odg
 
+NO_STAGE=	yes
 post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's| install-dist_pkgdocDATA||g' \

@@ -25,4 +25,5 @@ MAN3=		ZConf::Runner.3 \
 		ZConf::Runner::GUI.3 \
 		ZConf::Runner::GUI::Curses.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

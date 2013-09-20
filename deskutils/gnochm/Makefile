@@ -24,6 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GCONF_SCHEMAS=	gnochm.schemas
 INSTALLS_OMF=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|$(prefix)/share/man|$(prefix)/man|' ${WRKSRC}/data/Makefile.in
 

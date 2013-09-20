@@ -20,6 +20,7 @@ USE_WX=		2.8
 WX_COMPS=	python:lib
 WX_UNICODE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|taskcoach.py|taskcoach|' \
 		${WRKSRC}/build.in/fedora/taskcoach.desktop

@@ -45,6 +45,7 @@ ASPELL_BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 HTTPLOAD_DISTFILES=	httpload2.py:plugins
 ISPELL_BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MPYXML}

@@ -1,4 +1,4 @@
-# Created by: Daniel Eischen <deischen@freebsd.org>
+# Created by: Daniel Eischen <deischen@FreeBSD.org>
 # $FreeBSD$
 
 # Also update	ports/japanese/plan/ (ja-plan) when this port is updated
@@ -20,6 +20,7 @@ MAN4=		plan.4
 
 MAKE_ENV+=	DATADIR=${DATADIR} EXAMPLESDIR=${EXAMPLESDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} > 900006
 EXTRA_PATCHES=	${PATCHDIR}/utmpx-src-daemon.c

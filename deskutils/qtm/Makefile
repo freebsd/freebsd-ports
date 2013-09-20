@@ -1,6 +1,5 @@
 # Created by: Yinghong.Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qtm
 PORTVERSION=	1.3.13
@@ -25,6 +24,7 @@ CMAKE_ARGS=	-DCMAKE_CXX_FLAGS_RELEASE:STRING="-DNDEBUG" \
 MANCOMPRESSED=	yes
 MAN1=		qtm.1
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

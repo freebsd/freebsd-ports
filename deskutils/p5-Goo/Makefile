@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Goo
-# Date created:				14 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Goo
 PORTVERSION=	0.09
@@ -162,4 +158,5 @@ MAN3=	Goo.3 \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

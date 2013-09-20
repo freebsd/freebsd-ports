@@ -41,6 +41,7 @@ QOF_WRKSRC=	${WRKDIR}/${QOF_DISTNAME}
 LIBQOF_CFLAGS=	-I${QOF_WRKSRC}/qof
 LIBQOF_LIBS=	-L${QOF_WRKSRC}/qof/.libs -lqof
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^AM_CFLAGS =/s|-g||' ${WRKSRC}/src/Makefile.in

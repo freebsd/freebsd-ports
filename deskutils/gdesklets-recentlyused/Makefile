@@ -22,6 +22,7 @@ SUB_FILES=	pkg-message
 DATADIR=	${PREFIX}/share/gdesklets
 NAME=		RecentlyUsed
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}/Displays/${NAME}
 	${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/Displays/${NAME}

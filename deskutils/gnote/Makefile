@@ -46,6 +46,7 @@ PLIST_SUB+=	APPLET="@comment "
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/include/boost|${LOCALBASE}/include/boost|g' \
 		${WRKSRC}/configure

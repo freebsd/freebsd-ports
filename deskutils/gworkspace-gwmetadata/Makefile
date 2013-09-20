@@ -36,6 +36,7 @@ MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 GWORKSPACE_PORT?=	deskutils/gworkspace
 PREFERENCEPANES_PORT?=	deskutils/preferencepanes
 
+NO_STAGE=	yes
 post-patch:
 	${CP} ${WRKSRC}/gmds/mdextractor/Extractors/JpegExtractor/GNUmakefile.in \
 		${WRKSRC}/gmds/mdextractor/Extractors/JpegExtractor/GNUmakefile

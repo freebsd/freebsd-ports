@@ -28,6 +28,7 @@ PLIST_DIRS=	share/dailystrips
 
 PORTSCOUT=	limit:^1\.0\.
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|^#!/usr/bin/perl|#!${PERL}|; \
 		s!/usr/share/dailystrips/strips.def!${DATADIR}/strips.def!' \

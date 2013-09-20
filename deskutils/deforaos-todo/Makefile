@@ -21,4 +21,5 @@ USE_GNOME=	gtk20 desktopfileutils
 INSTALLS_ICONS=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

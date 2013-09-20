@@ -31,6 +31,7 @@ ICAL_DESC=	libical support
 
 MAN1=		globaltime.1 orage.1 tz_convert.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBDB}

@@ -24,6 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		glabels.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mevolutiondataserver}!=""

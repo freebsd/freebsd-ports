@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PyPanel
-# Date created:				24 October 2005
-# Whom:					Florian Unglaub <flo@btw23.de>
-#
+# Created by: Florian Unglaub <flo@btw23.de>
 # $FreeBSD$
-#
 
 PORTNAME=	pypanel
 PORTVERSION=	2.4
@@ -27,6 +23,7 @@ PYDISTUTILS_PKGNAME=	PyPanel
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/bin/freetype-config|${LOCALBASE}/bin/freetype-config|; \

@@ -26,6 +26,7 @@ MODIFY=		GNUmakefile.preamble PrefsModule/GNUmakefile.preamble \
 		Modules/Keyboard/GNUmakefile.preamble \
 		Modules/PrefsApp/GNUmakefile.preamble
 
+NO_STAGE=	yes
 post-patch:
 .for i in ${MODIFY}
 	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}.sed

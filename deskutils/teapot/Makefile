@@ -24,6 +24,7 @@ MAN1=	teapot.1
 # having to generate the pdf and html docs from the LyX sourcecode.
 WRKSRC_DOCS=	${WRKDIR}/${DISTNAME:C/^./T/}-Linux/share/doc/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man/man1|man/man1|g' \
 		${WRKSRC}/CMakeLists.txt

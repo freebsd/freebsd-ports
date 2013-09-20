@@ -25,6 +25,7 @@ PORTDOCS=	manual.html manual.pdf
 OPTIONS_DEFINE=	UTF8 DOCS
 UTF8_CONFIGURE_ENABLE=	utf8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

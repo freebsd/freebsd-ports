@@ -28,6 +28,7 @@ UPNP_DESC=	Build upnp sendto plugin
 # check configure script for allowed_plugins="..." for new plugins
 SENDTO_PLUGINS=	evolution gajim nautilus-burn removable-devices
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPIDGIN}

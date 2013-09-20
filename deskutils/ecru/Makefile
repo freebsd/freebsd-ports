@@ -23,6 +23,7 @@ USE_LDCONFIG=		yes
 MAN1=	ecru-config.1 ecru-delete.1 ecru-edit.1 \
 	ecru-info.1 ecru-list.1 ecru-post.1
 
+NO_STAGE=	yes
 do-configure:
 	@cd ${WRKSRC} && ./waf configure --prefix="${PREFIX}"
 

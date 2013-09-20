@@ -25,6 +25,7 @@ LIBNOTIFY_DESC=	Use notify-osd for libnotify display plugin
 
 USES=		pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLIBNOTIFY}

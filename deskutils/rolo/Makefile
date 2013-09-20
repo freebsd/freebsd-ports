@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rolo
-# Date created:				04 April 2003
-# Whom:	      				Andrew Hsu <ahsu@users.sf.net>
-#
+# Created by: Andrew Hsu <ahsu@users.sf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	rolo
 PORTVERSION=	011
@@ -23,6 +19,7 @@ CFLAGS+=	-I${PREFIX}/include \
 MAN1=		rolo.1
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 .for DOC in AUTHORS ChangeLog NEWS README THANKS

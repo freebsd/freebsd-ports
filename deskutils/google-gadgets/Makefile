@@ -53,6 +53,7 @@ QT_DESC=	Build Qt Host
 GTKWEBKIT_DESC=	Build with GTK Webkit support
 MOZILLA_DESC=	Build with Mozilla support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQT}

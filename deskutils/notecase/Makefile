@@ -22,6 +22,7 @@ DOS2UNIX_REGEX=	.*\.(c|h|cpp)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

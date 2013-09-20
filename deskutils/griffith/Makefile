@@ -33,6 +33,7 @@ NO_BUILD=	yes
 MANLANG=	"" pl pt
 MAN1=		${PORTNAME}.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLXML}

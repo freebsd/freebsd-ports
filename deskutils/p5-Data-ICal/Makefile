@@ -41,6 +41,7 @@ MAN3=	Data::ICal.3 \
 	Data::ICal::Entry::Todo.3 \
 	Data::ICal::Property.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^auto_install/d' ${WRKSRC}/Makefile.PL
 

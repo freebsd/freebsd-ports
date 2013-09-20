@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tuxcards
-# Date created:				08 Jan 2002
-# Whom:			Tilman Linneweh <arved@FreeBSD.org>
-#
+# Created by: Tilman Linneweh <arved@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tuxcards
 PORTVERSION=	2.2.1
@@ -21,6 +17,7 @@ USE_QT4=	gui xml qmake_build moc_build uic_build rcc_build
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
 PLIST_FILES=	bin/tuxcards
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-configure:

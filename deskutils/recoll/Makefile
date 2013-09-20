@@ -29,6 +29,7 @@ OPTIONS_DEFAULT=QT4 ASPELL PYTHON X11MON
 # Wrong versioning upstream
 PORTSCOUT=	skipv:1.19
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQT4}

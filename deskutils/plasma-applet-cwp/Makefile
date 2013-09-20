@@ -21,4 +21,5 @@ USE_QT4=	gui dbus network opengl svg phonon webkit xml \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

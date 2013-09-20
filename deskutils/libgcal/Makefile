@@ -23,4 +23,5 @@ CMAKE_ARGS=	-DLIB_INSTALL_DIR="${LOCALBASE}/lib" \
 USE_LDCONFIG=	yes
 USE_GCC=	4.2+
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

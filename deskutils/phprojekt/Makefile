@@ -1,9 +1,5 @@
-# New ports collection makefile for:	deskutils/phprojekt
-# Date created:				January 33th 2005
-# Whom:	      				Gerrit Beine <tux@pinguru.net>
-#
+# Created by: Gerrit Beine <tux@pinguru.net>
 # $FreeBSD$
-#
 
 PORTNAME=	phprojekt
 PORTVERSION=	6.0.5
@@ -19,6 +15,7 @@ WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${CP} -r ${WRKSRC} ${PREFIX}/www/${PORTNAME}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/www/${PORTNAME}

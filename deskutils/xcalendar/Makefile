@@ -21,4 +21,5 @@ ALL_TARGET=	all XCal-uj.ad xcalendar-uj.hlp xcalendar-uj.man
 MAN1=		xcalendar.1
 MANLANG=	"" ja
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

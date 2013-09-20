@@ -30,6 +30,7 @@ CMAKE_ARGS+=	-Dinstall-pc-path:STRING="${LOCALBASE}/libdata/pkgconfig"
 MAN1=		cairo-dock.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*" | ${XARGS} ${REINPLACE_CMD} -e \
 	    's|/usr/share/pixmaps/|${LOCALBASE}/share/pixmaps/|g; \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	clive
-# Date created:				15 March 2004
-# Whom:					johans
-#
+# Created by: johans
 # $FreeBSD$
-#
 
 PORTNAME=	clive
 PORTVERSION=	0.4.10
@@ -22,6 +18,7 @@ GNU_CONFIGURE=	yes
 CONFLICTS=	*clive-[1-9]*
 LATEST_LINK=	ljclive
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

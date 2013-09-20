@@ -23,6 +23,7 @@ DESKTOP_ENTRIES=	"qLabels" \
 			"Office;Qt;" \
 			"false"
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|/usr|${PREFIX}|g' \
 		${WRKSRC}/qlabels.pro \

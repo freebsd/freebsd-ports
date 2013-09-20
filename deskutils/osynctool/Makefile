@@ -20,4 +20,5 @@ PLIST_FILES=	bin/${PORTNAME} \
 		etc/bash_completion.d/${PORTNAME}.sh
 PLIST_DIRSTRY=	etc/bash_completion.d
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

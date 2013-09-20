@@ -23,6 +23,7 @@ WANT_PHP_MOD=	yes
 OPTIONS_DEFINE=	ADDONS PGSQL NLS
 ADDONS_DESC=	install additional workgroup features (addons)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

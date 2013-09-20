@@ -17,6 +17,7 @@ USES=		cmake iconv pkgconfig
 CMAKE_ARGS+=	-Wno-dev
 CFLAGS+=	"-I${LOCALBASE}/include"
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e "/FIND_PACKAGE( Check )/d" ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e "s|MESSAGE|# MESSAGE|" \

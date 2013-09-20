@@ -1,7 +1,4 @@
-# New ports collection makefile for:	multisync-syncml
-# Date created:			25 Nov 2003
-# Whom:				Pav Lucistnik <pav@FreeBSD.org>
-#
+# Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	multisync-syncml
@@ -19,4 +16,5 @@ WRKSRC=		${WRKDIR}/multisync-${PORTVERSION}/plugins/syncml_plugin
 
 MASTERDIR=	${.CURDIR}/../multisync
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
