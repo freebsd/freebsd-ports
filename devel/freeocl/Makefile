@@ -22,6 +22,7 @@ USES=		cmake
 USE_LDCONFIG=	yes
 CMAKE_BUILD_TYPE=Release
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's:%%PREFIX%%:${PREFIX}:g' ${WRKSRC}/src/icd/icd_loader.cpp \
 		${WRKSRC}/CMakeLists.txt

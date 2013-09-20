@@ -21,6 +21,7 @@ PLIST_SUB+=	GHC_HADDOCK_CMD=${GHC_HADDOCK_CMD} HADDOCK=${PREFIX}/bin/haddock EXE
 
 CONFIGURE_ARGS+=	--program-suffix=-${PORTVERSION}
 
+NO_STAGE=	yes
 post-install::
 	@${LN} -sf ${PREFIX}/bin/${EXECUTABLE} ${PREFIX}/bin/haddock
 

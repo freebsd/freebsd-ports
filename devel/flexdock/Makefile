@@ -1,9 +1,5 @@
-# New ports collection makefile for:   flexdock
-# Date created:        25 Nov 2009
-# Whom:                Otacilio de Araujo Ramos Neto <otacilio.neto@bsd.com.br>
-#
+# Created by: Otacilio de Araujo Ramos Neto <otacilio.neto@bsd.com.br>
 # $FreeBSD$
-#
 
 PORTNAME=	flexdock
 PORTVERSION=	1.1
@@ -25,6 +21,7 @@ ALL_TARGET=	dist
 PLIST_FILES=	${JAVAJARDIR:C^${PREFIX}/^^}/${PORTNAME}.jar
 PORTDOCS=	"User Guide.pdf" api
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA}	${WRKSRC}/build/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
 

@@ -1,9 +1,5 @@
-# ports collection makefile for:	fampp
-# Date created:				18 March 2001
-# Whom:					Jeremy Norris <ishmael27@home.com>
-#
+# Created by: Jeremy Norris <ishmael27@home.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fampp
 PORTVERSION=	1.1
@@ -18,6 +14,7 @@ NO_BUILD=	yes
 USE_FAM=	yes
 WANT_FAM_SYSTEM=fam
 
+NO_STAGE=	yes
 do-install:
 .for FILE in FamppEvents.hh FamppExceptions.hh fam.hh famStatic.hh handle.hh
 	${INSTALL_DATA} ${WRKSRC}/include/${FILE} ${PREFIX}/include

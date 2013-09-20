@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USES+=		ada
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == "FreeBSD"

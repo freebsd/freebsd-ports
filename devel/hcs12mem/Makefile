@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hc12mem
-# Date created:				18 November 2005
-# Whom:					mk
-#
+# Created by: mk
 # $FreeBSD$
-#
 
 PORTNAME=	hcs12mem
 PORTVERSION=	1.4.1
@@ -30,6 +26,7 @@ DATS=	mc9s12a32.dat mc9s12a64.dat mc9s12a128.dat \
 	mc9s12h256.dat mc9s12ne64.dat mc9s12uf32.dat \
 	mc9s12xd256.dat mc9s12xd512.dat
 
+NO_STAGE=	yes
 do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

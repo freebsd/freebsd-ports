@@ -1,7 +1,4 @@
-# New ports collection makefile for:	fib
-# Date created:		8 August 2002
-# Whom:			Hye-Shik Chang <perky@FreeBSD.org>
-#
+# Created by: Hye-Shik Chang <perky@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	fib
@@ -17,6 +14,7 @@ USE_LDCONFIG=	yes
 
 MAN3=		fh_extractmin.3 fh_makeheap.3 fh_makekeyheap.3
 
+NO_STAGE=	yes
 post-install:
 	${LN} -sf ${PREFIX}/lib/libfib.so.1 ${PREFIX}/lib/libfib.so
 .for mf in ${MAN3}

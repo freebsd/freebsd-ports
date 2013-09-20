@@ -31,6 +31,7 @@ EXAMPLES=	GNOME_Foo_SomeInterface.idl \
 		my-glade.gob \
 		my-person.gob
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 .for f in ${EXAMPLES}

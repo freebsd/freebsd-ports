@@ -32,6 +32,7 @@ MAKE_ENV=	HOME=${WRKDIR}
 
 MAN1=		g-ir-compiler.1 g-ir-generate.1 g-ir-scanner.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|'gcc'|'cc'|g' \
 		${WRKSRC}/giscanner/dumper.py

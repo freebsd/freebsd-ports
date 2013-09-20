@@ -28,6 +28,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/zmq.jar	\
 		%%LIB32DIR%%/libjzmq.so	\
 		%%LIB32DIR%%/libjzmq.so.0
 
+NO_STAGE=	yes
 pre-configure:
 	@${MKDIR} ${WRKSRC}/config
 	@cd ${WRKSRC} && ${AUTORECONF} --install --force --verbose -I config

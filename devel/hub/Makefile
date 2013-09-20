@@ -23,6 +23,7 @@ PLIST_DIRSTRY=	etc/bash_completion.d \
 		share/zsh/site-functions share/zsh
 MAN1=		hub.1
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && ${RAKE_BIN} standalone
 

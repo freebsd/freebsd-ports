@@ -15,5 +15,6 @@ USE_CABAL=	haskell-src mtl TypeCompose>=0.9.5
 
 BROKEN=		does not build with GHC 7.6
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -25,6 +25,7 @@ PORTDOCS=	*
 .endif
 PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

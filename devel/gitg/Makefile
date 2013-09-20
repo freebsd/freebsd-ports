@@ -25,4 +25,5 @@ GCONF_SCHEMAS=	gitg.schemas
 
 MAN1=		gitg.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

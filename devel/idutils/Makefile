@@ -1,4 +1,4 @@
-# Created by: pst@freebsd.org
+# Created by: pst@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	idutils
@@ -21,6 +21,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 INFO=		idutils
 MAN1=		aid.1 defid.1 eid.1 fid.1 fnid.1 gid.1 lid.1 mkid.1 xtokid.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

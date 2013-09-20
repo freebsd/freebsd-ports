@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gonzui
-# Date created:	Wed Dec  1 16:35:00 GMT 2004
-# Whom:		sumikawa
-#
+# Created by: sumikawa
 # $FreeBSD$
-#
 
 PORTNAME=	gonzui
 PORTVERSION=	1.2
@@ -26,6 +22,7 @@ GNU_CONFIGURE=	yes
 RUBY_SHEBANG_FILES=	gonzui-db gonzui-import gonzui-remove \
 			gonzui-search gonzui-server gonzui-update
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} == 1.9

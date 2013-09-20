@@ -209,6 +209,7 @@ CVS_DESC=	Enable CVS support
 HTMLDOCS_DESC=	Install additional documentation
 ETCSHELLS_DESC=	Modify /etc/shells
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -1,4 +1,3 @@
-# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	flex_compiler_shell
@@ -24,6 +23,7 @@ WRKSRC=		${WRKDIR}
 NO_BUILD=	YES
 SUB_FILES=	fcsh
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/fcsh ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/lib/fcsh.jar ${JAVAJARDIR}/flex-sdk/

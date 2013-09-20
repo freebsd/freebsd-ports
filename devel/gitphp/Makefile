@@ -20,6 +20,7 @@ SUB_FILES=	pkg-message
 
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xdiff.so:${PORTSDIR}/textproc/pecl-xdiff
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${WWWDIR}
 	(cd ${WRKSRC} \

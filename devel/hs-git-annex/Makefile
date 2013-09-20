@@ -41,6 +41,7 @@ PAIRING_DESC=		Enable pairing (requires web application)
 PRODUCTION_DESC=	Production build
 TDFA_DESC=		Use regex-tdfa for wildcards
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MS3}

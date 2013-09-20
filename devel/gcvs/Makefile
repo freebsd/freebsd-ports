@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--with-tclinclude=${TCL_INCLUDEDIR} \
 		--with-tcllib=${TCL_LIBDIR}
 EXTRACT_AFTER_ARGS=--exclude cvsunix --exclude 'getline.[ch]' --exclude 'getopt*.[ch]'
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -E '/get(line|opt1?)\.[ch]/d'	\
 		${WRKSRC}/common/Makefile.am

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   funnelweb
-# Date created:	       9 Jan 2001
-# Whom:		       jkoshy
-#
+# Created by: jkoshy
 # $FreeBSD$
-#
 
 PORTNAME=	funnelweb
 PORTVERSION=	3.2
@@ -17,6 +13,7 @@ COMMENT=	A powerful literate-programming macro pre-processor
 PLIST_FILES=	bin/fw
 WRKSRC=		fw_src/source
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKDIR}/${WRKSRC} && { \
 		${CC} ${CFLAGS} -c *.c && \

@@ -15,4 +15,5 @@ USES=		gmake pathfix pkgconfig
 
 CONFLICTS=	cocaine-core-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

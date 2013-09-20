@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--with-fftw-includes=${LOCALBASE}/include \
 		--with-fftw-libraries=${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

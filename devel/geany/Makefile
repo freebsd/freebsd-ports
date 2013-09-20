@@ -26,6 +26,7 @@ VTE_DESC=	Embedded virtual terminal
 
 MAN1=		geany.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

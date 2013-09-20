@@ -1,9 +1,5 @@
-# New ports collection makefile for:	frink
-# Date created:			8 May 2001
-# Whom:				Mikhail Teterin
-#
+# Created by: Mikhail Teterin
 # $FreeBSD$
-#
 
 PORTNAME=	frink
 PORTVERSION=	2.2.2p4
@@ -20,6 +16,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-2.2.2
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 .ifndef NOPORTDOCS
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README ${DOCSDIR}

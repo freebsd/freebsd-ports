@@ -21,6 +21,7 @@ SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Detect OS Version

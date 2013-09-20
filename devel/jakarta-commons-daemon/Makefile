@@ -29,6 +29,7 @@ PLIST_FILES=	bin/jsvc %%JAVAJARDIR%%/${PORTNAME}.jar
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

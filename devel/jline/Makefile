@@ -18,6 +18,7 @@ OPTIONS_DEFINE=	JLINEPATCH
 JLINEPATCH_DESC=	Allow ConsoleRunner customized completion
 JLINEJAR=	${WRKSRC}/jline-${PORTVERSION}.jar
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Update jar archive with patched jline.ConsoleRunner class.

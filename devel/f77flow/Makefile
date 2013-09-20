@@ -1,9 +1,5 @@
-# New ports collection makefile for:	f77flow
-# Date created:				25 June 1997
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=		f77flow
 PORTVERSION=		0.12
@@ -19,6 +15,7 @@ ALL_TARGET=
 MAN1=		flow.1
 PLIST_FILES=	bin/flow
 
+NO_STAGE=	yes
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/flow ${PREFIX}/bin/flow
 	@ ${INSTALL_MAN} ${WRKSRC}/flow.1 ${PREFIX}/man/man1

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gaa
-# Date created:		2 February 1999
-# Whom:			Dima Sivachenko <dima@chg.ru>
-#
+# Created by: Dima Sivachenko <dima@chg.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	gaa
 PORTVERSION=	1.6.6
@@ -15,4 +11,5 @@ COMMENT=	GPL Argument Analyser
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

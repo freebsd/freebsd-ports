@@ -25,6 +25,7 @@ SHEBANG_FILES=	Hypersrc.pl
 MAN1=		hypersrc.1
 PLIST_FILES=	bin/hypersrc bin/Hypersrc.pl bin/ctags.pl
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|"ctags"|"${LOCALBASE}/bin/exctags"|' \
 		-e 's|"ctags.pl"|"${PREFIX}/bin/ctags.pl"|' ${WRKSRC}/Hypersrc.pl

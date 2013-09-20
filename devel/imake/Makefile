@@ -35,4 +35,5 @@ MAN1=		ccmakedep.1 \
 		revpath.1 \
 		xmkmf.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -60,6 +60,7 @@ PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
 LIST_DOCS=	COPYRIGHT README *.htm
 
+NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"

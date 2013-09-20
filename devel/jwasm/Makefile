@@ -24,6 +24,7 @@ MAKEFILE=	GccUnix.mak
 PORTDOCS=	*
 PLIST_FILES=	bin/jwasm
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

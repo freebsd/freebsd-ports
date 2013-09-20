@@ -54,6 +54,7 @@ SUB_LIST+=	FLYSPRAYDIR="${FLYSPRAYDIR}" \
 		WWWGRP="${WWWGRP}" \
 		WWWOWN="${WWWOWN}"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

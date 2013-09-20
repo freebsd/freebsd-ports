@@ -52,6 +52,7 @@ post-extract: .SILENT
 # Unbreak against Clang and other strict C++ compilers
 	${REINPLACE_CMD} -e 's/main (/int &void/' ${WRKSRC}/objdump/bool.cc
 
+NO_STAGE=	yes
 do-configure:
 	cd ${GCC_DIR} && ./configure --target=saturn-local-hp48 \
 		--prefix=${PREFIX}

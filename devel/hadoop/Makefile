@@ -75,6 +75,7 @@ MAKE_ARGS=	-Dbuild.classes=${WRKSRC}/hadoop-core-${PORTVERSION}.jar -Dversion=${
 		-Dcompile.c++=true -Dmake.cmd=${GMAKE} -Dlibhdfs=1 -Dlibrecordio=true  -Dskip.record-parser=true
 ALL_TARGET=	compile-core-native compile-c++ compile-c++-libhdfs compile-c++-pipes compile-c++-utils
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

@@ -15,5 +15,6 @@ USE_CABAL=	ansi-terminal>=0.5 hspec-expectations HUnit>=1.2.5 \
 
 EXECUTABLE=	hspec-discover
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -13,5 +13,6 @@ USE_CABAL=	data-default-class data-default-instances-base \
 		data-default-instances-containers data-default-instances-dlist \
 		data-default-instances-old-locale
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

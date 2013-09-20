@@ -35,6 +35,7 @@ OPTIONS_DEFAULT=	SYSLOG SQLITE PYTHON READLINE
 
 PYTHON_DESC=		Enable Python console
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD

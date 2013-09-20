@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:   gtgt
-# Date created:                Feb 13, 2001
-# Whom:                        Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gtgt
 PORTVERSION=	3.2.0
@@ -26,6 +21,7 @@ PLIST_FILES=	${SCRIPTS:S/^/bin\//}
 
 SCRIPTS=	gcng gptg gscg
 
+NO_STAGE=	yes
 post-patch:
 .for file in ${SCRIPTS}
 	@${REINPLACE_CMD} -e \

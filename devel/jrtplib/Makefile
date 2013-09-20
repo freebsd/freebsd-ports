@@ -18,6 +18,7 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	JRTPLIB_VER="${PORTVERSION}"
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/pkgconfig/s|$${LIBRARY_INSTALL_DIR}|$${CMAKE_INSTALL_PREFIX}/libdata|' ${WRKSRC}/CMakeLists.txt

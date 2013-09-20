@@ -21,6 +21,7 @@ USE_LDCONFIG=	yes
 
 MAN1=	jep.1
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/jep.jar ${JAVAJARDIR}/
 

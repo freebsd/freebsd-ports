@@ -11,5 +11,6 @@ COMMENT=	Interface to the GNU readline library
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

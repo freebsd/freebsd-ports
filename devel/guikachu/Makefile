@@ -24,6 +24,7 @@ GCONF_SCHEMAS=	guikachu-form-editor.schemas guikachu-interface.schemas \
 		guikachu-mainwin.schemas
 
 #XXX mime vs mime-info
+NO_STAGE=	yes
 #post-patch:
 #	@${REINPLACE_CMD} -e '/mime_packagedir/s|(mimedir)|(prefix)/share/mime|' \
 #		-e '/(UPDATE_MIME)/s|(mimedir)|(prefix)/share/mime|' \

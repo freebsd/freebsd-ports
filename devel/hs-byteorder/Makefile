@@ -9,5 +9,6 @@ COMMENT=	Exposes the native endianness or byte ordering of the system
 
 LICENSE=	BSD
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

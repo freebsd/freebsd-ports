@@ -12,6 +12,7 @@ MAN1=		${glib_MAN} ${gobject_MAN}
 
 PLIST=		${.CURDIR}/pkg-plist
 
+NO_STAGE=	yes
 do-install:
 .for d in ${BOOKS}
 	if [ -d ${REFERENCE_SRC}/${d}/html ]; then \

@@ -35,6 +35,7 @@ ALL_TARGET+=	javadoc
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's|haltonfailure="no"|haltonfailure="yes"|' \
 		${WRKSRC}/build.xml

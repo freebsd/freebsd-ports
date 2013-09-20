@@ -32,6 +32,7 @@ OPTIONS_DEFINE=	GNOME PYTHON
 OPTIONS_DEFAULT=PYTHON
 GNOME_DESC=	GNOME UI widget support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOME}

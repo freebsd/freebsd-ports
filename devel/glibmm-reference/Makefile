@@ -12,6 +12,7 @@ USES=		pkgconfig
 
 DOCSDIR=	${PREFIX}/share/doc/glibmm-2.4
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC}/examples -name Makefile.in \
 		| ${XARGS} ${REINPLACE_CMD} -e '/^install-am:/ s| all-am||'

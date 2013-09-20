@@ -19,6 +19,7 @@ NO_BUILD=	yes
 
 MAN1=		git-review.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

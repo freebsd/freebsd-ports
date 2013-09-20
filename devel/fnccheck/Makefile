@@ -1,4 +1,3 @@
-# Created by George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	fnccheck
@@ -27,6 +26,7 @@ STRIP=		# none
 
 INFO=		libfc
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # should be same as binutils

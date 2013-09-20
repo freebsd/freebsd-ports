@@ -19,6 +19,7 @@ OPTIONS_DEFAULT=	DEMOS TESTS
 TESTS_DESC=		Build and run tests (requires lang/python)
 DEMOS_DESC=		Build demos
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTESTS}

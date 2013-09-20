@@ -18,5 +18,6 @@ USE_CABAL=	bifunctors>=3 comonad>=3 comonad-transformers>=3 \
 		text>=0.11 transformers>=0.3 unordered-containers>=0.2 \
 		vector>=0.9 void>=0.5
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

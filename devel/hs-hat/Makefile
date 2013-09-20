@@ -22,6 +22,7 @@ NHC98_DESC=	NHC98 support
 
 OPTIONS_DEFAULT=	NHC98
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNHC98} && ${ARCH} == "amd64"

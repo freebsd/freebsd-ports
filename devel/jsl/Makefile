@@ -20,6 +20,7 @@ MAKE_ARGS=	OS_CFLAGS="-DXP_UNIX -DHAVE_VA_COPY -DVA_COPY=va_copy"
 CFLAGS+=	-fPIC
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 JSLCFG_CMD=	${UNAME} -sr | ${SED} 's, ,,'

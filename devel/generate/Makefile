@@ -1,9 +1,5 @@
-# New ports collection makefile for:   generate
-# Date created:        24 August 2006
-# Whom:                D'Arcy J.M. Cain <darcy@druid.net>
-#
+# Created by: D'Arcy J.M. Cain <darcy@druid.net>
 # $FreeBSD$
-#
 
 PORTNAME=	generate
 PORTVERSION=	2.6
@@ -19,6 +15,7 @@ MAN1=		generate.1
 
 PLIST_FILES=	bin/generate bin/rgenerate
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^CFLAGS *=,CFLAGS +=,' \
 		${WRKSRC}/Makefile

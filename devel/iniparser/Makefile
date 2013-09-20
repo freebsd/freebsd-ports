@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	include/dictionary.h include/iniparser.h lib/libiniparser.a \
 		lib/libiniparser.so lib/libiniparser.so.0
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/dictionary.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/src/iniparser.h ${PREFIX}/include

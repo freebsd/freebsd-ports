@@ -31,6 +31,7 @@ USES=		gmake
 PROJECTHOST=	google-js-test
 SNAPSHOT=	20130304
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|\(Get\)\(PointerFromInternalField\)|\1Aligned\2|' \

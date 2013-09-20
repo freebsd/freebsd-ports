@@ -1,9 +1,5 @@
-# New ports collection makefile for:	google-sparsehash
-# Date created:				07 January 2007
-# Whom:					Yuri Victorovich <yuri@tsoft.com>
-#
+# Created by: Yuri Victorovich <yuri@tsoft.com>
 # $FreeBSD$
-#
 
 PORTNAME=	google-perftools
 PORTVERSION=	1.8.3
@@ -24,6 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=	pathfix
 
+NO_STAGE=	yes
 post-patch:
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e \

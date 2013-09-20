@@ -12,5 +12,6 @@ LICENSE=	BSD
 USE_CABAL=	hinotify>=0.3.5 system-fileio>=0.3.8 system-filepath>=0.4.6 \
 		text>=0.11.0
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

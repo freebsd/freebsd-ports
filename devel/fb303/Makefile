@@ -30,6 +30,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/contrib/fb303
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}" PYTHON_VER="${PYTHON_VER}"
 
+NO_STAGE=	yes
 post-build:
 	(cd ${WRKSRC} && ${LOCALBASE}/bin/thrift --gen perl ${WRKSRC}/if/fb303.thrift)
 

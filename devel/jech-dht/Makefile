@@ -1,9 +1,5 @@
-# New ports collection makefile for: jech-dht
-# Date created: July 28, 2012
-# Whom:		Mikhail Teterin <mi@aldan.algebra.com>
-#
+# Created by: Mikhail Teterin <mi@aldan.algebra.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dht
 PORTVERSION=	0.21
@@ -18,6 +14,7 @@ LICENSE=	MIT
 MAKEFILE=	${FILESDIR}/BSDmakefile
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 pre-su-install:
 	${MKDIR} ${PREFIX}/include/dht
 

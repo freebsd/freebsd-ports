@@ -11,6 +11,7 @@ OPTIONS_DEFINE=	GTKSPELL
 OPTIONS_DEFAULT=	GTKSPELL
 GTKSPELL_DESC=	Spell checking support via GtkSpell
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../geany-plugins/files/Makefile.common"
 # bsd.port.options.mk is already included
 

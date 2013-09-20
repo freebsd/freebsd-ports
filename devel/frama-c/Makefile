@@ -29,6 +29,7 @@ GUI_DESC=	Graphical User Interface (requires PLUGINS)
 USE_GMAKE=	yes
 USE_OCAML=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 FRAMAC_DEFAULT_CPP?=	${CPP} -C -I${DATADIR}/libc -I.

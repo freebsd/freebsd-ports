@@ -29,6 +29,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/jna-platform.jar \
 PORTDOCS=	javadoc platform
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${CHMOD} 755 ${WRKSRC}/native/libffi/configure
 	@${CHMOD} 755 ${WRKSRC}/native/libffi/install-sh

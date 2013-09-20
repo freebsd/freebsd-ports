@@ -17,4 +17,5 @@ GNU_CONFIGURE=	yes
 
 INFO=	guile-library
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

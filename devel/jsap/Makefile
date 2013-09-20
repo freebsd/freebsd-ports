@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jsap
-# Date created:				2005-01-16
-# Whom:					Herve Quiroz <hq@FreeBSD.org>
-#
+# Created by: Herve Quiroz <hq@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jsap
 DISTVERSION=	2.1
@@ -30,6 +26,7 @@ PORTDOCS=	ch01.html ch01s02.html ch02.html ch03.html ch03s02.html \
 .endif
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${INSTALL_DATA} ${WRKSRC}/lib/${DISTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar

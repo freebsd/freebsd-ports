@@ -17,4 +17,5 @@ USE_GNOME=	gnomehack gtksharp20
 
 MAKE_JOBS_UNSAFE=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

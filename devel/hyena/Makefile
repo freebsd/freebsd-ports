@@ -18,6 +18,7 @@ USES=		gmake
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtksharp20
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^dnl[[:blank:]]|#|' \
 		${WRKSRC}/Hyena.Data.Sqlite/Makefile.in \

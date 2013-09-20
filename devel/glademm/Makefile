@@ -17,6 +17,7 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/glade-- bin/glademm-embed
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	getxml
-# Date created:			Jul 30, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	getxml
 PORTVERSION=	1.0.4
@@ -20,6 +15,7 @@ LICENSE=	GPLv2 # (or later)
 USE_GNOME=	glib12 libxml
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,glib-config,${GLIB_CONFIG},g" ${WRKSRC}/configure
 

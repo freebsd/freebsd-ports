@@ -9,5 +9,6 @@ COMMENT=	Haskell 98 phantom types to avoid unsafely passing dummy arguments
 
 LICENSE=	BSD
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

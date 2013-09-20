@@ -14,6 +14,7 @@ MAN1=		${PORTNAME}.1
 
 MAKE_ARGS+=	PROG=fmake NO_MAN=yes
 
+NO_STAGE=	yes
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 		${INSTALL_MAN} ${WRKSRC}/make.1 \

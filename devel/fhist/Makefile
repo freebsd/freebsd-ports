@@ -1,4 +1,4 @@
-# Created by: <jkoshy@freebsd.org>
+# Created by: <jkoshy@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	fhist
@@ -31,6 +31,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		fcomp.1 fhist.1 fmerge.1
 PLIST_FILES=	bin/fcomp bin/fhist bin/fmerge
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

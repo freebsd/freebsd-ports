@@ -10,5 +10,6 @@ COMMENT=	Prevent or capture writing to stdout and other handles
 
 LICENSE=	BSD
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

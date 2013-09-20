@@ -18,4 +18,5 @@ MAN1=		gccmakedep.1
 PLIST_FILES=	bin/gccmakedep
 CONFIGURE_ENV+=	ac_cv_path_RAWCPP=tradcpp
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -39,6 +39,7 @@ GAPHAS_DISTNAME=	gaphas-0.7.2
 GAPHAS_EGG=		${GAPHAS_DISTNAME}-py${PYTHON_VER}.egg
 SGENERIC_DISTNAME=	simplegeneric-0.8.1
 
+NO_STAGE=	yes
 post-extract:
 	@${UNZIP_CMD} -qo ${DISTDIR}/${SGENERIC_DISTNAME}.zip -d ${WRKDIR}
 

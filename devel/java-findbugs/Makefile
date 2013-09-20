@@ -1,9 +1,5 @@
-# New ports collection makefile for:   findbugs
-# Date created:        19 December 2010
-# Whom:                glewis
-#
+# Created by: glewis
 # $FreeBSD$
-#
 
 PORTNAME=	findbugs
 PORTVERSION=	1.3.9
@@ -56,6 +52,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 .endif
 
+NO_STAGE=	yes
 do-install:
 	@-${MKDIR} ${DATADIR}/lib
 .for f in ${JAR_FILES}

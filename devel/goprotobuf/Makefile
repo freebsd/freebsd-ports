@@ -16,6 +16,7 @@ RUN_DEPENDS=	protoc:${PORTSDIR}/devel/protobuf
 GO_PKGNAME=	code.google.com/p/goprotobuf
 GO_TARGET=	${GO_PKGNAME}/proto ${GO_PKGNAME}/protoc-gen-go
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/protoc-gen-go ${LOCALBASE}/bin
 	${MKDIR} ${GO_LOCAL_LIBDIR}/${GO_PKGNAME}

@@ -30,6 +30,7 @@ NOT_FOR_ARCHS=	ia64 powerpc
 CFLAGS+=		-fPIC
 CONFIGURE_ARGS=		--disable-Werror
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|"glib"|"glib-2.0"|g ; \

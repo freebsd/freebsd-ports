@@ -17,6 +17,7 @@ INFO=		global
 
 DOCS=		AUTHORS COPYING ChangeLog FAQ INSTALL LICENSE NEWS README THANKS
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -E 's,^(gtags_DATA = )AUTHORS .* THANKS( \\$$),\1\2,' ${WRKSRC}/Makefile.in
 

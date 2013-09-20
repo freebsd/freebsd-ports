@@ -43,4 +43,5 @@ GLIB_SCHEMAS=	org.gnome.desktop.a11y.applications.gschema.xml \
 		org.gnome.system.locale.gschema.xml \
 		org.gnome.system.proxy.gschema.xml
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

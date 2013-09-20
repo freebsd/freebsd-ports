@@ -21,6 +21,7 @@ PORTDOCS=	README fpp_spec fpp_license.ps
 
 PLIST_FILES=	bin/fpp
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

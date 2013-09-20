@@ -17,5 +17,6 @@ EXECUTABLE=	mueval mueval-core
 
 CONFIGURE_ARGS+=	--ghc-options="-dynamic"
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

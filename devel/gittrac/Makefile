@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gittrac
-# Date created:			30 Apr 2008
-# Whom:				Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gittrac
 CATEGORIES=	devel
@@ -16,4 +12,5 @@ MASTERDIR=	${.CURDIR}/../cvstrac
 MAKE_ARGS=	APPNAME=gittrac
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

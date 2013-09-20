@@ -23,4 +23,5 @@ USE_GNUSTEP_GUI=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_CAIRO=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
