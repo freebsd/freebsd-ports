@@ -1,9 +1,5 @@
-# New ports collection makefile for:   darcnes
-# Date created:        22 April 2001
-# Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
-#
+# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	darcnes
 PORTVERSION=	9b0401
@@ -25,6 +21,7 @@ USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" TARGET_CC="${CC}" CXX="${CXX}" TARGET_CXX="${CXX}" \
 		AS="${AS}" TARGET_AS="${CC}" LD="${LD}" TARGET_LD="${CC}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386" || defined(WITHOUT_X86_ASM)

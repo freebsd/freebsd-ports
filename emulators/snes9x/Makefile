@@ -39,6 +39,7 @@ MMX_DESC=	Enable MMX
 JMA_DESC=	Enable JMA archive decompression support
 NETPLAY_DESC=	Enable network support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

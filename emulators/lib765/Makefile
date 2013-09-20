@@ -20,6 +20,7 @@ LIBDSK_DESC=	Include LibDSK support (recommended)
 
 OPTIONS_DEFAULT=	LIBDSK
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLIBDSK}

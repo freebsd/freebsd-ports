@@ -1,8 +1,5 @@
-# New ports collection makefile for:    emulators/linux-systemsimcell
-# Date created:                         20 January 2009
-# Whom:                                 Stas Timokhin <stast@bsdportal.ru>
+# Created by: Stas Timokhin <stast@bsdportal.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	systemsimcell
 PORTVERSION=	3.1.25
@@ -27,6 +24,7 @@ USE_LINUX_APPS=	tcl84 tk84 blt
 USE_LINUX_RPM=	yes
 NOFETCHFILES=	systemsim-cell-3.1-25.f9.${ARCH}.rpm
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 DOWNLOAD_URL=	http://www.alphaworks.ibm.com/tech/cellsystemsim/download

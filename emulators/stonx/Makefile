@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--x-includes=${LOCALBASE}/include \
 		--x-libraries=${LOCALBASE}/lib
 ALL_TARGET=	all fnttobdf tosfonts fonts
 
+NO_STAGE=	yes
 pre-build:
 	${CP} ${DISTDIR}/${TOSIMG} ${WRKSRC}/tos.img
 

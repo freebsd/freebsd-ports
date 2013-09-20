@@ -20,4 +20,5 @@ USE_PERL5=	modbuild
 MAN3=		Acme::6502.3 \
 		Acme::6502::Tube.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

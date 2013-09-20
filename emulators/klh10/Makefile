@@ -1,9 +1,5 @@
-# New ports collection makefile for:   klh10
-# Date created:        11 January 2002
-# Whom:                kstailey
-#
+# Created by: kstailey
 # $FreeBSD$
-#
 
 PORTNAME=	klh10
 PORTVERSION=	2.0a
@@ -80,6 +76,7 @@ KSITS_DOCS=		Intro.txt \
 			utils.txt \
 			vtape.txt
 
+NO_STAGE=	yes
 pre-install:
 	@ ${MKDIR} ${KSITS_KLH10_HOME}
 	@ ${MKDIR} ${KSITS_DRIVER_DIR}

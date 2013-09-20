@@ -49,6 +49,7 @@ MAKE_ENV+=	PORTDOCS=false
 MAKE_ENV+=	PORTDOCS=true
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/configure
 

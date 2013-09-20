@@ -30,6 +30,7 @@ PORTDOCS=	ChangeLog README bsdsocket.txt cmd-line.txt \
 		joystick.txt keyboard.txt scsi.txt
 PLIST_FILES=	bin/readdisk bin/uae
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

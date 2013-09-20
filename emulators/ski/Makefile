@@ -26,6 +26,7 @@ NO_MTREE=		yes
 MAN1=		ski.1
 MLINKS=		ski.1 bski.1  ski.1 xski.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/nue/usr/bin/ski ${PREFIX}/bin
 	brandelf -t Linux ${PREFIX}/bin/ski

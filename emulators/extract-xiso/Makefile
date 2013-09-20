@@ -1,9 +1,5 @@
-# New ports collection makefile for:	extract-xiso
-# Date created:				Sun Apr 20 18:28:16 CEST 2003
-# Whom:					king@v2project.com
-#
+# Created by: king@v2project.com
 # $FreeBSD$
-#
 
 PORTNAME=	extract-xiso
 DISTVERSION=	2.5
@@ -26,6 +22,7 @@ MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 pre-configure:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 

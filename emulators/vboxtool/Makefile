@@ -24,6 +24,7 @@ USE_ZIP=	yes
 
 SAMPLESDIR=	${PREFIX}/share/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|!/bin/bash|!/usr/bin/env bash|' \
 		-e 's|/etc/|${PREFIX}&|g' \

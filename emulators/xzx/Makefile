@@ -26,6 +26,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-pro
 
 # Prevent configure from trying to run auto* since it's not needed and will
 # error if auto* < 2.54
+NO_STAGE=	yes
 post-configure:
 		@${REINPLACE_CMD} 's@autoheader@${TRUE}@g' ${WRKSRC}/Makefile
 		@${REINPLACE_CMD} 's@autoconf@${TRUE}@g' ${WRKSRC}/Makefile

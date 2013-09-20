@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wine-doors
-# Date created:		7 July 2007
-# Whom:			ports@mcdermottroe.com
-#
+# Created by: ports@mcdermottroe.com
 # $FreeBSD$
-#
 
 PORTNAME=	wine-doors
 PORTVERSION=	0.1.2
@@ -29,6 +25,7 @@ NO_BUILD=	yes
 
 SUB_FILES=	preferences.xml
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|/etc/${PORTNAME}|${PREFIX}/etc/${PORTNAME}|g' \
 		${WRKSRC}/src/preferences.py

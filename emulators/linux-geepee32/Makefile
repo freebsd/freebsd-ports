@@ -1,7 +1,4 @@
-# New ports collection makefile for:	geepee32
-# Date Created:				05 October 2003
-# Whom:					<arundel@gmx.net>
-#
+# Created by: <arundel@gmx.net>
 # $FreeBSD$
 
 PORTNAME=	geepee32
@@ -25,6 +22,7 @@ REINPLACE_ARGS=
 
 TARGET_DIR=	${PREFIX}/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD}-e 's|%%GEEPEE32DIR%%|${PREFIX}/${PORTNAME}|' ${SCRIPTDIR}/wrapper.sh > \
 	${WRKDIR}/wrapper.sh

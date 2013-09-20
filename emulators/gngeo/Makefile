@@ -35,6 +35,7 @@ STAR_DESC=	Use Starscream as 68k emulator
 
 MAN1=		gngeo.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MI386ASM} || ${PORT_OPTIONS:MRAZE} || \

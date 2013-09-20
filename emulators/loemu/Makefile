@@ -26,6 +26,7 @@ XMAME_DESC=	Install xmame emulator
 SNES9X_DESC=	Install snes9x emulator
 ZSNES_DESC=	Install zsnes emulator
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMAME}

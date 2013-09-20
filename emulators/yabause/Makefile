@@ -27,6 +27,7 @@ OPTIONS_DEFINE=	QT4
 OPTIONS_DEFAULT=	QT4
 QT4_DESC=	Build wit qt4 interface instead of gtk2 one
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQT4}

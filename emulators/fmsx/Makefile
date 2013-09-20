@@ -34,6 +34,7 @@ BPP16_DESC=	With BPP16
 BPP24_DESC=	With BPP24
 BPP32_DESC=	With BPP32 (see pkg-message)
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

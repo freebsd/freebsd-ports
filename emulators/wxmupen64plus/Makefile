@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wxmupen64plus
-# Date created:		2011-12-17
-# Whom:			Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wxmupen64plus
 PORTVERSION=	0.2
@@ -31,6 +27,7 @@ USE_PYTHON=	yes
 
 WAF_SCRIPT=	waf
 
+NO_STAGE=	yes
 do-configure:
 	@cd ${WRKSRC} && \
 		${PYTHON_CMD} ${WAF_SCRIPT} configure --mupenapi=${LOCALBASE}/include/${PORTNAME:S/wx//} \

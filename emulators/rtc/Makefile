@@ -27,6 +27,7 @@ MAKE_ARGS=	KMODDIR="${KMODDIR}" CDEV_MAJOR="${CDEV_MAJOR}"
 PLIST_SUB=	DEVDIR="${DEVDIR}" CDEV_MAJOR="${CDEV_MAJOR}" \
 		RTC_H_DIR="${RTC_H_DIR}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SRC_BASE?=	/usr/src

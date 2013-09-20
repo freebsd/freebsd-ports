@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cinc
-# Date created:		28 May 2002
-# Whom:			verm@drunkmonk.net
-#
+# Created by: verm@drunkmonk.net
 # $FreeBSD$
-#
 
 PORTNAME=	cinc
 PORTVERSION=	2.1.3
@@ -20,6 +16,7 @@ USE_GMAKE=	yes
 PLIST_FILES=	bin/cinc \
 		bin/casm
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|-I-||g' ${WRKSRC}/Makefile.in
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dynamips
-# Date created:				31 Jan 2006
-# Whom:					Max Khon <fjoe@FreeBSD.org>
-#
+# Created by: Max Khon <fjoe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dynamips
 DISTVERSION=	0.2.7
@@ -32,6 +28,7 @@ MAN1=		${PORTNAME}.1 nvram_export.1
 MAN7=		hypervisor_mode.7
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"

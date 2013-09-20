@@ -33,6 +33,7 @@ MAN1=		desmume-cli.1 \
 		desmume-glade.1 \
 		desmume.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"

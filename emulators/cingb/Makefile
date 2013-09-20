@@ -1,9 +1,5 @@
-# New ports collection makefile for:   cingb
-# Date created:        16 April 2001
-# Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
-#
+# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cingb
 PORTVERSION=	0.31
@@ -29,6 +25,7 @@ PLIST_FILES=	bin/cingb bin/cingb_conf
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "sparc64" && ${ARCH} != "powerpc"

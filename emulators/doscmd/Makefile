@@ -22,6 +22,7 @@ MAKE_ARGS+=	MANDIR="${PREFIX}/man/man"
 MAN1=		doscmd.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-install:
 	@${ECHO_MSG} NOTE:
 	@${ECHO_MSG} =====

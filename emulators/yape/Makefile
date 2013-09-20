@@ -19,6 +19,7 @@ ALL_TARGET=	yape
 PLIST_FILES=	bin/yape
 PORTDOCS=	*
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(c|cpp|h|txt)" -print0 | \
 		${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'

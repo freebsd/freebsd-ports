@@ -1,9 +1,5 @@
-# New ports collection makefile for:  	xbraitenberg
-# Date created:       		28 Mar 2004
-# Whom:  			krion
-#
+# Created by: krion
 # $FreeBSD$
-#
 
 PORTNAME=	xbraitenberg
 PORTVERSION=	0.9
@@ -19,4 +15,5 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/xbraitenberg
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

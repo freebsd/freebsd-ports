@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-ePSXe
-# Date created:			21 Dec 2002
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	epsxe
 PORTVERSION=	1.6.0
@@ -25,6 +21,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 SUB_FILES=	epsxe-wrapper
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/epsxe-wrapper ${PREFIX}/bin/epsxe
 	${INSTALL_PROGRAM} ${WRKSRC}/epsxe ${PREFIX}/libexec

@@ -38,6 +38,7 @@ PROFILING_DESC=	Enable profiling
 GTK2_CONFIGURE_ON=	--enable-gtk=2.4
 PROFILING_CONFIGURE_ENABLE=	profiling
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGTK2}

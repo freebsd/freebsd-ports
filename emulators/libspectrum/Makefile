@@ -23,6 +23,7 @@ MAN3=		libspectrum.3
 OPTIONS_DEFINE=	AUDIOFILE
 AUDIOFILE_DESC=	Support loading from .wav files
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAUDIOFILE}

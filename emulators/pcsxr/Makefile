@@ -43,6 +43,7 @@ PORTDOCS=	ChangeLog README
 # accessed through libcdio (using cam(4) and pass(4))
 DEFAULT_DVD_DEVICE?=	/dev/cd0
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"

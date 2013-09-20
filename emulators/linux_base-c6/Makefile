@@ -106,6 +106,7 @@ NO_WRKSUBDIR=		yes
 DISTINFO_FILE?=		${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
 PLIST_SUB=		GLIBCVER="2.12"
 
+NO_STAGE=	yes
 # TODO:
 # - move master sites to bsd.sites.mk
 # - add 2-3 mirrors from each country (http://www.centos.org/modules/tinycontent/index.php?id=31)

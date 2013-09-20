@@ -22,6 +22,7 @@ USE_GNOME=	gtk20
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-configure:

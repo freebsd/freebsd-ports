@@ -17,6 +17,7 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 IMGDIR=		${PREFIX}/share/${PORTNAME}/img
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${IMGDIR}
 	${INSTALL_DATA} ${WRKSRC}/img/* ${IMGDIR}

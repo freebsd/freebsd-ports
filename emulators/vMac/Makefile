@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vMac
-# Date created:				Jul 11th 1999
-# Whom:					troll
-#
+# Created by: troll
 # $FreeBSD$
-#
 
 PORTNAME=	vMac
 PORTVERSION=	0.1.9.3
@@ -22,6 +18,7 @@ GNU_CONFIGURE=	yes
 USE_XORG=	x11 ice sm xext
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 pre-patch:
 	(cd ${WRKSRC} && ${SH} ${FILESDIR}/dos2unx gemulator.c)
 

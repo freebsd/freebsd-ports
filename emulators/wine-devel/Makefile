@@ -69,6 +69,7 @@ MONO_DESC=	Bundle Mono MSI package for Wine
 
 PORTDATA=	fonts/ generic.ppd l_intl.nls wine.inf
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MCUPS}

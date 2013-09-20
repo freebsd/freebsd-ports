@@ -1,9 +1,5 @@
-# New ports collection makefile for:   vgba-bin
-# Date created:		04 Aug 2000
-# Whom:			Mario S F Ferreira <lioux@linf.unb.br> et al.
-#
+# Created by: Mario S F Ferreira <lioux@linf.unb.br> et al.
 # $FreeBSD$
-#
 
 PORTNAME=	vgba
 PORTVERSION=	3.0
@@ -25,6 +21,7 @@ NO_WRKSUBDIR=	no
 
 INSTALL_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP}
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/vgba ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

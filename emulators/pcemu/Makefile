@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pcemu(1)
-# Date created:		7 March 1995
-# Whom:			joerg
-#
+# Created by: joerg
 # $FreeBSD$
-#
 
 PORTNAME=	pcemu
 PORTVERSION=	1.01b
@@ -33,4 +29,5 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 USE_XORG=	x11 xext
 MAKE_ENV=	FILESDIR=${FILESDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

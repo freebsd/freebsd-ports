@@ -28,6 +28,7 @@ FIXFILES?=	r4300/r4300.c memory/dma.c r4300/recomp.c r4300/x86/assemble.c
 OPTIONS_DEFINE=	GTK2
 GTK2_DESC=	Use gtk20 instead of gtk12
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGTK2}

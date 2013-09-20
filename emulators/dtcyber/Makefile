@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dtcyber
-# Date created:		2006-09-03
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	dtcyber
 PORTVERSION=	2.0b1
@@ -28,6 +24,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_FILES=	bin/dtcyber %%EXAMPLESDIR%%/cyber.ini %%EXAMPLESDIR%%/cos.tap
 PLIST_DIRS=	%%EXAMPLESDIR%%
 
+NO_STAGE=	yes
 pre-patch:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile.x11
 	${REINPLACE_CMD} -e 's|CFLAGS  = -O2|CFLAGS+= |' ${WRKSRC}/Makefile.x11

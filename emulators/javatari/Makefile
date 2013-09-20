@@ -25,6 +25,7 @@ JARFILE=	${DISTNAME}${EXTRACT_SUFX}
 DESKTOP_ENTRIES=	"Javatari" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" "Application;Game;" ${FALSE}
 PLIST_FILES+=	share/pixmaps/${PORTNAME}.png
 
+NO_STAGE=	yes
 post-extract:
 	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -d ${WRKDIR} ${JARFILE} \
 		org/javatari/pc/screen/images/LogoIcon32.png)

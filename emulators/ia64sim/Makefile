@@ -23,6 +23,7 @@ PORTDOCS=	ia64user.txt readme
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-build:

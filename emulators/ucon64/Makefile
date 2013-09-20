@@ -14,6 +14,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/ucon64.c
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/ucon64_misc.c

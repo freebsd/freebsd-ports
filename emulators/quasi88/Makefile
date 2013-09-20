@@ -1,9 +1,5 @@
-# New ports collection makefile for:	QUASI88
-# Date created:		22 May 1999
-# Whom:				Nishika <nishika@cheerful.com>
-#
+# Created by: Nishika <nishika@cheerful.com>
 # $FreeBSD$
-#
 
 PORTNAME=	quasi88
 PORTVERSION=	0.6.3
@@ -27,6 +23,7 @@ PLIST_FILES=	bin/quasi88 %%EXAMPLESDIR%%/keyconf.rc \
 		%%EXAMPLESDIR%%/quasi88.rc
 PLIST_DIRS=	%%EXAMPLESDIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"

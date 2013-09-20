@@ -1,9 +1,5 @@
-# New ports collection makefile for:   	stella
-# Date created:			March 4, 1999
-# Whom:				Jacques Vidrine <nectar@FreeBSD.org>
-#
+# Created by: Jacques Vidrine <nectar@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	stella
 PORTVERSION=	3.6.1
@@ -26,6 +22,7 @@ HAS_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|=sdl-config|="$$SDL_CONFIG"|g' ${WRKSRC}/configure

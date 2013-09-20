@@ -46,6 +46,7 @@ USE_XORG=	x11 xi
 SUB_FILES=	m2000.sh
 PORTDOCS=	M2000.txt
 
+NO_STAGE=	yes
 post-extract:
 	${MKDIR} ${WRKDIR}/tapeconv
 	${UNZIP_CMD} ${DISTDIR}/${DIST_SUBDIR}/tapeconv.zip -d ${WRKDIR}/tapeconv

@@ -39,6 +39,7 @@ PLUGINDIR=	${LOCALBASE}/share/mupen64/plugins
 
 do-install:	# empty
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

@@ -31,6 +31,7 @@ MAKE_ENV=	\
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 		PTHREAD_LIBS=${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PLIST_FILES=	bin/${PORTNAME} bin/nvram_export

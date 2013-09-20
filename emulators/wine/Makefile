@@ -70,6 +70,7 @@ PORTDATA=	fonts/ generic.ppd l_intl.nls wine.inf
 
 PORTSCOUT=	limitw:1,even
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MCUPS}

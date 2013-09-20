@@ -1,9 +1,5 @@
-# New ports collection makefile for:   its
-# Date created:        11 January 2002
-# Whom:                kstailey
-#
+# Created by: kstailey
 # $FreeBSD$
-#
 
 PORTNAME=	its
 PORTVERSION=	1.0
@@ -38,6 +34,7 @@ IMAGE_BZ2=		${IMAGE_NAME}.bz2
 DOCDIR=			${PREFIX}/share/doc/${KSITS_KLH10_DIR}
 PLIST_SUB+=		IMAGE_HOME=${IMAGE_HOME}
 
+NO_STAGE=	yes
 do-install:
 	@ ${ECHO} Installing compressed PI ITS RP06 disk image in ${IMAGE_HOME}
 .if (${IMAGE_HOME} == ${KLH10_HOME})

@@ -30,6 +30,7 @@ OPTIONS_DEFAULT=	SAMPLERATE
 AO_DESC=	Use libao for audio output
 SAMPLERATE_DESC=	Better beeper sound quality
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAO}

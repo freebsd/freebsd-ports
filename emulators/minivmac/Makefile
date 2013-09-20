@@ -1,9 +1,5 @@
-# New ports collection makefile for:	minivmac
-# Date created:				9 November 2002
-# Whom:					Marc Fonvieille <blackend@FreeBSD.org>
-#
+# Created by: Marc Fonvieille <blackend@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	minivmac
 PORTVERSION=	3.0.0
@@ -23,6 +19,7 @@ ALL_TARGET=	# nothing
 
 PLIST_FILES=	bin/minivmac
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|' ${WRKSRC}/Makefile
 

@@ -29,6 +29,7 @@ MOTIF_DESC=	With Motif widget set
 ATHENA_DESC=	With Athen widget set
 XSHM_DESC=	With XShm support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

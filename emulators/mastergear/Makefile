@@ -1,9 +1,5 @@
-# New ports collection makefile for:   mastergear
-# Date created:        02 November 1996
-# Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-#
+# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	mastergear
 PORTVERSION=	2.0
@@ -24,6 +20,7 @@ ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 STRIP=
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mg ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}

@@ -20,6 +20,7 @@ DATADIR=	${PREFIX}/share/wine
 PLIST_FILES=	%%DATADIR%%/mono/wine-mono-%%MONO_VERSION%%.msi
 PLIST_DIRSTRY=	%%DATADIR%%/mono %%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}/mono
 	${INSTALL_DATA} ${DISTDIR}/wine-mono-${DISTVERSION}.msi \

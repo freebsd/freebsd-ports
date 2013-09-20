@@ -1,9 +1,4 @@
-# New ports collection makefile for:	aqemu
-# Date created:		2008-09-03
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	aqemu
 PORTVERSION=	0.8.1
@@ -24,4 +19,5 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S,.0$,,}
 
 MAN1=		aqemu.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

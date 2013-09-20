@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmess
-# Date created:				Tue Aug 17 00:21:10 MET DST 1999
-# Whom:					nox@jelal.kn-bremen.de
-#
+# Created by: nox@jelal.kn-bremen.de
 # $FreeBSD$
-#
 
 PORTNAME=	xmess
 PORTREVISION=	3
@@ -16,4 +12,5 @@ DESCR=		${.CURDIR}/pkg-descr
 
 MAMEMESS=	mess
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

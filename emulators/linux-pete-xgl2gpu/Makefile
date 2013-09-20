@@ -31,6 +31,7 @@ PSEMUPRO_PLUGINS_DIR=	${PREFIX}/lib/psemupro/plugins
 PSEMUPRO_CFGBINS_DIR=	${PREFIX}/libexec/psemupro/cfg
 PSEMUPRO_CFGFILES_DIR=	${PREFIX}/share/psemupro/cfg
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .include "${.CURDIR}/../linux-pete-xgl2gpu/Makefile.inc"

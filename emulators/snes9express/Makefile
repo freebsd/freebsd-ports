@@ -1,9 +1,5 @@
-# New ports collection makefile for:	snes9express
-# Date created:			15 Mar 2004
-# Whom:				Travis Poppe <tlp@liquidx.org>
-#
+# Created by: Travis Poppe <tlp@liquidx.org>
 # $FreeBSD$
-#
 
 PORTNAME=	snes9express
 PORTVERSION=	1.43
@@ -28,6 +24,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		%%DATADIR%%/snsp.s9xskin
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|<endian\.h>|<sys/endian.h>|' \
 		${WRKSRC}/s9xskin.cc

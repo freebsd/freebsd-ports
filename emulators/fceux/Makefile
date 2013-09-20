@@ -39,6 +39,7 @@ LOGO_DESC=		Enable a logoscreen when creating avis (SDL)
 GTK2_DESC=		Enable GTK2 GUI (SDL)
 GTK3_DESC=		Enable GTK3 GUI (SDL)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFRAMESKIP}

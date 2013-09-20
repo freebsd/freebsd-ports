@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pyxmame
-# Date created:		2006-08-01
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pyxmame
 PORTVERSION=	0.4.0
@@ -21,6 +17,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/games|${PREFIX}/share|g ; \
 		s|/usr/share/pixmaps|${PREFIX}/share/pixmaps|g' \

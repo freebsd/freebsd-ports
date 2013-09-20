@@ -77,6 +77,7 @@ ENV=
 .SHELL:		path="/bin/sh" unsetenv=true
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 KMODDIR=	/boot/modules

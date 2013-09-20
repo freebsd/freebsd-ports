@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cpm-emulator
-# Date created:		28 June 1995
-# Whom:			janek@gaja.ipan.lublin.pl
-#
+# Created by: janek@gaja.ipan.lublin.pl
 # $FreeBSD$
-#
 
 PORTNAME=	cpmemu
 PORTVERSION=	0.2.1.1
@@ -22,4 +18,5 @@ COMMENT=	Cpm emulator
 
 ONLY_FOR_ARCHS=	i386
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
