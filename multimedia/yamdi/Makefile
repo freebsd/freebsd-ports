@@ -1,23 +1,20 @@
-# New ports collection makefile for:    yamdi
-# Date created:                         9 July 2007
-# Whom:					buganini@gmail.com
-#
+# Created by: Kuan-Chung Chiu <buganini@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	yamdi
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
 MAINTAINER=	buganini@gmail.com
-COMMENT=	A metadata injector for FLV files
+COMMENT=	Metadata injector for FLV files
+
+LICENSE=	BSD
 
 PLIST_FILES=	bin/yamdi
 
 do-build:
-	cd ${WRKSRC} \
-	&& ${CC} ${CFLAGS} yamdi.c -o yamdi
+	cd ${WRKSRC} && ${CC} ${CFLAGS} yamdi.c -o yamdi
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/yamdi ${PREFIX}/bin
