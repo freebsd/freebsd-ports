@@ -51,6 +51,7 @@ MAN1=		fvm-config.1
 
 TESTSBIN=	fvm_file_test fvm_interface_test fvm_selector_postfix_test fvm_selector_test
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's|-lmpich|-lmpich -lmpl|'	\
 		${WRKSRC}/${CONFIGURE_SCRIPT}

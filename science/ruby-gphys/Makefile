@@ -1,4 +1,4 @@
-# Created by:	Shin'ya Murakami <murakami@ahs.scitec.kobe-u.ac.jp>
+# Created by: Shin'ya Murakami <murakami@ahs.scitec.kobe-u.ac.jp>
 # $FreeBSD$
 
 PORTNAME=	gphys
@@ -34,6 +34,7 @@ DOCSDIR=	${RUBY_MODDOCDIR}
 PORTEXAMPLES=	sample* test*
 PORTDOCS=	ChangeLog LICENSE.txt README TODO_ep_flux doc*
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC} && ${MAKE} install
 	cd ${WRKSRC} && ${RUBY} install.rb

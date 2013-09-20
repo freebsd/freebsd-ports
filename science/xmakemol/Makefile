@@ -21,4 +21,5 @@ PLIST_FILES=	bin/xmake_anim.pl \
 		%%DATADIR%%/elements
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

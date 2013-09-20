@@ -31,6 +31,7 @@ FITS_DESC=	Support for data in FITS format
 MATLAB_DESC=	Support for data in MATLAB format
 NETCDF_DESC=	Support for data in NetCDF format
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFITS}

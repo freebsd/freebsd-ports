@@ -32,6 +32,7 @@ MAN4=		corduroy.4 felt.4
 DOCSDIR=	${PREFIX}/share/doc/FElt
 EXAMPLESDIR=	${PREFIX}/share/examples/FElt
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|["<]malloc\.h[">]|<stdlib.h>|g'

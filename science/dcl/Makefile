@@ -24,6 +24,7 @@ PORTEXAMPLES=	*
 
 RESTRICTED=	No commercial use
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}

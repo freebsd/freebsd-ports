@@ -31,4 +31,5 @@ PLIST_SUB=	GHEMICAL_VERSION="${PORTVERSION}"
 
 MAKE_ENV=	PKG_CONFIG=${LOCALBASE}/pkg-config
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

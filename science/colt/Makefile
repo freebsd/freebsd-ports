@@ -30,6 +30,7 @@ PORTDOCS=	*
 
 PLIST_FILES=	%%JAVAJARDIR%%/colt.jar
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-fetch:

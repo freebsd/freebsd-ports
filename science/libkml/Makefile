@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libkml
-# Date created:				3rd Oct, 2009
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libkml
 PORTVERSION=	1.2.0
@@ -23,4 +19,5 @@ USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

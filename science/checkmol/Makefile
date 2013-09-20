@@ -22,6 +22,7 @@ USE_FPC=	yes
 
 PLIST_FILES=	bin/checkmol bin/matchmol
 
+NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC} && ${LOCALBASE}/bin/fpc ${EXTRACT_ONLY} -S2 -O3)
 

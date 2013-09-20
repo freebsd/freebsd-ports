@@ -27,6 +27,7 @@ PLIST_FILES=	bin/devisorgrid
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

@@ -37,6 +37,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 OPTIONS_DEFINE=	SZIP DOCS
 SZIP_DESC=	SZIP support (must match with science/hdf5-18)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSZIP}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PyBrain
-# Date created:		18 Nov, 2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pybrain
 PORTVERSION=	0.3
@@ -20,4 +16,5 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	PyBrain
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

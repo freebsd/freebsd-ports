@@ -18,4 +18,5 @@ RUN_DEPENDS=	R-cran-spdep>0:${PORTSDIR}/math/R-cran-spdep
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -31,4 +31,5 @@ MAN3=		Geo::BUFR.3 \
 		Geo::bufrread.3 \
 		Geo::bufrresolve.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

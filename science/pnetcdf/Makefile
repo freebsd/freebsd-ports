@@ -30,6 +30,7 @@ PLIST_FILES=	bin/ncmpidiff bin/ncmpidump bin/ncmpigen bin/ncvalid \
 		include/pnetcdf.h include/pnetcdf.inc include/pnetcdf.mod \
 		lib/libpnetcdf.a
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENMPI}

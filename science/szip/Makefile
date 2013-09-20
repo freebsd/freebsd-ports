@@ -26,6 +26,7 @@ PORTDOCS=	Release_notes_2_0.pdf
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

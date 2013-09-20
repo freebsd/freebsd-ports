@@ -38,6 +38,7 @@ MAN1=		mcconvert.1 \
 		mcrun.1 \
 		mcstas.1 \
 
+NO_STAGE=	yes
 post-configure:
 		@cd ${WRKSRC}; make pgplot
 

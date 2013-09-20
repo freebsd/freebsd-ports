@@ -18,6 +18,7 @@ USE_PERL5=	modbuild
 
 MAN3=		Algorithm::SVMLight.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 		${WRKSRC}/Build.PL

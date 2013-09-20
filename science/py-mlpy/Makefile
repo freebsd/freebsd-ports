@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-mlpy
-# Date created:		18 April, 2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mlpy
 PORTVERSION=	2.2.2
@@ -27,4 +23,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	MLPY
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

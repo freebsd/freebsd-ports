@@ -17,6 +17,7 @@ FFTW3_DESC=	Use fftw3 instead of fftw2
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFFTW3}

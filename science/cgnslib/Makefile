@@ -28,6 +28,7 @@ SZIP_DESC=	SZIP support in HDF5
 
 OPTIONS_DEFAULT=HDF5 TESTS TOOLS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHDF5}

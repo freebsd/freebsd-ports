@@ -13,4 +13,5 @@ COMMENT=	A MORE flexible neural network package
 USE_R_MOD=  		yes
 R_MOD_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

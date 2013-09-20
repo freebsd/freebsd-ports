@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bft
-# Date created:		Sun 1 apr 2007
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	bft
 PORTVERSION=	1.1.5
@@ -26,6 +22,7 @@ MAN1=		bft-config.1
 
 TESTSBIN=	bft_test bft_mem_usage_test bft_printf_test
 
+NO_STAGE=	yes
 pre-configure:
 	# No useful doc there
 	${REINPLACE_CMD} -e 's|tests doc|tests|' ${WRKSRC}/Makefile.in

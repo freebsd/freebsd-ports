@@ -44,6 +44,7 @@ SUB_LIST=	DATADIR=${DATADIR}
 
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

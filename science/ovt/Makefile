@@ -29,4 +29,5 @@ CONFIGURE_ARGS=	--with-jdk=${JAVA_HOME}
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

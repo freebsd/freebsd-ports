@@ -16,6 +16,7 @@ LIB_DEPENDS+=	bdd:${PORTSDIR}/science/buddy \
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"

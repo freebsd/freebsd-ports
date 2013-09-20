@@ -24,6 +24,7 @@ MAN3=		Physics::Unit.3 \
 		Physics::Unit::UnitsByName.3 \
 		Physics::Unit::UnitsByType.3
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}

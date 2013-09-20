@@ -33,6 +33,7 @@ OPTIONS_DEFINE=		OPENMPI
 OPTIONS_DEFAULT=	OPENMPI
 OPENMPI_DESC=		MPI support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENMPI}

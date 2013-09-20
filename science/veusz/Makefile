@@ -20,4 +20,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 INSTALLS_EGGINFO=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

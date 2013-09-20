@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ncs
-# Date created:		Sun 1 apr 2007
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	ncs
 PORTVERSION=	2.0.4
@@ -85,6 +81,7 @@ INSTALL_TARGET=	install install-pdf
 DOCS=		AUTHORS COMPATIBILITY ChangeLog README
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)

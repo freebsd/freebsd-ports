@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libsvm-python
-# Date Created:                Nov 16 2004
-# Whom:                        rafan@infor.org
-#
+# Created by: rafan@infor.org
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-python
 
@@ -13,4 +9,5 @@ MASTERDIR=	${.CURDIR}/../../science/libsvm
 
 PLIST=		${.CURDIR}/pkg-plist
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

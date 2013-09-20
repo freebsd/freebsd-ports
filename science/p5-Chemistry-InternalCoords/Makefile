@@ -23,4 +23,5 @@ MAN3=	Chemistry::InternalCoords.3 Chemistry::InternalCoords::Builder.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

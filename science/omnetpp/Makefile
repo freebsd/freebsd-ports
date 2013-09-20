@@ -41,6 +41,7 @@ MAGICK_DESC=	Install ImageMagick for EPS-JPG conversion
 GRAPHVIZ_DESC=	Install Graphviz for generating diagrams
 DOXYGEN_DESC=	Install Doxygen to create the API reference
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMAGICK}

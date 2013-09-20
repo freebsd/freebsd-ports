@@ -1,5 +1,4 @@
-# Created by:	Dmitry Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	scikit-learn
@@ -23,4 +22,5 @@ LATEST_LINK=	py-${PORTNAME}
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

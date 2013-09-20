@@ -11,4 +11,5 @@ MASTERDIR=	${.CURDIR}/../netcdf
 
 WITH_FORTRAN=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

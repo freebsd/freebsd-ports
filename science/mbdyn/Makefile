@@ -29,6 +29,7 @@ CHACO_DESC=	Enable chaco-support
 GINAC_DESC=	Enable GiNaC-support (not implemented yet)
 TCL_DESC=	Enable tcl-support (not implemented yet)
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"

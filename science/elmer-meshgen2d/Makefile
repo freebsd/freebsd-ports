@@ -1,9 +1,5 @@
-# New ports collection makefile for:	elmer-meshgen2d
-# Date created:		5 Jan 2006
-# Whom:			Pedro Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	meshgen2d
 PORTVERSION=	5.0.0
@@ -21,4 +17,5 @@ ALL_TARGET=
 PLIST_FILES=	bin/ElmerMesh2D \
 		bin/Mesh2D
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

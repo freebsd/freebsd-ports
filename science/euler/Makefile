@@ -17,6 +17,7 @@ USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

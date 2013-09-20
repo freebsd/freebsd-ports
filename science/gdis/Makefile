@@ -1,4 +1,3 @@
-# Created y: ijliao
 # $FreeBSD$
 
 PORTNAME=	gdis
@@ -29,6 +28,7 @@ PLIST_DIRS=	%%DATADIR%%
 DESKTOP_ENTRIES="GDIS" "Molecular modelling GUI" \
 		"${PREFIX}/share/pixmaps/gdis.xpm" "${PORTNAME}" "" true
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

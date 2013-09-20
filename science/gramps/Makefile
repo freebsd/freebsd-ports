@@ -37,6 +37,7 @@ ENCHANT_DESC=		Spellchecking support
 PYWEBKITGTK_DESC=	Use webkit backend for Geographic view
 EXIV_DESC=		Managing exiv metadata support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MENCHANT}

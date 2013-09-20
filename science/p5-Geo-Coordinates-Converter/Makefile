@@ -30,4 +30,5 @@ MAN3=		Geo::Coordinates::Converter::Datum.3 \
 		Geo::Coordinates::Converter::Format.3 \
 		Geo::Coordinates::Converter::Format::ISO6709.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

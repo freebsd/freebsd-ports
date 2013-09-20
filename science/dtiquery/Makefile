@@ -1,11 +1,5 @@
-############################################################################
-# New ports collection Makefile for:   DTI-Query
-# Date created:        10 July 2006
-# Whom:                Jason W. Bacon <jwbacon@tds.net>
-#
+# Created by: Jason W. Bacon <jwbacon@tds.net>
 # $FreeBSD$
-#
-############################################################################
 
 PORTNAME=	dtiquery
 PORTVERSION=	1.1
@@ -42,6 +36,7 @@ MAN1=		dtiquery.1 \
 		dtiprecompute_cmd.1 \
 		dtiprecompute_gui.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}.tar.gz)

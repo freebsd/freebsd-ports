@@ -1,9 +1,5 @@
-# New ports collection makefile for: science/harminv
-# Date created:		26 Dec 2009
-# Whom:			Stas Timokhin <devel@stasyan.com>
-#
+# Created by: Stas Timokhin <devel@stasyan.com>
 # $FreeBSD$
-#
 
 PORTNAME=	harminv
 PORTVERSION=	1.3.1
@@ -30,6 +26,7 @@ LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile \
 		blas.2:${PORTSDIR}/math/blas \
 		lapack.4:${PORTSDIR}/math/lapack
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's#%%PKGDIR%%#${PREFIX}/libdata#g' \
 		${WRKSRC}/Makefile.in

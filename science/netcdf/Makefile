@@ -28,6 +28,7 @@ MAN3=		netcdf.3
 OPTIONS_DEFINE=	FORTRAN DOCS
 FORTRAN_DESC=	Build library for Fortran
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

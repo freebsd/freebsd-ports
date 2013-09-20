@@ -38,6 +38,7 @@ GCONF_SCHEMAS=	gwyddion-thumbnailer.schemas
 
 MAN1=		gwyddion.1 gwyddion-thumbnailer.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPERL}

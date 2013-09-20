@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-DendroPy
-# Date created:		09 Jan, 2010
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	DendroPy
 PORTVERSION=	3.12.0
@@ -19,6 +15,7 @@ LICENSE=	BSD
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

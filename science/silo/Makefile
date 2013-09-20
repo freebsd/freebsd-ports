@@ -26,6 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFORTRAN}

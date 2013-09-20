@@ -13,6 +13,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
 WRKSRC =	${WRKDIR}/fasthenry-3.0wr
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -Ee '/CFLAGS =/{s/=/+=/;s/-O[[:digit:]]*//;}' \
 		${WRKSRC}/src/fasthenry/Makefile.default \

@@ -27,6 +27,7 @@ USE_LDCONFIG=	yes
 MAN1=		hdf.1 hdfunpac.1 ncdump.1 ncgen.1
 MAN3=		gr_chunk.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"

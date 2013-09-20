@@ -21,4 +21,5 @@ MAN3=	Chemistry::Atom.3 Chemistry::Bond.3 \
 	Chemistry::Tutorial.3 Chemistry::File::Dumper.3 \
 	Chemistry::Mol.3 Chemistry::File::Formula.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

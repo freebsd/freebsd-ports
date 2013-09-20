@@ -36,6 +36,7 @@ INFO=		netcdf netcdf-c netcdf-cxx netcdf-f77 netcdf-f90 \
 MAN1=		nccopy.1 ncdump.1 ncgen.1 ncgen3.1
 MAN3=		netcdf.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDAP}

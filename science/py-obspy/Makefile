@@ -25,6 +25,7 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s#FC#${FC}#g" ${WRKSRC}/setup.py
 

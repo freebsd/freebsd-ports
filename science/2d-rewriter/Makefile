@@ -14,6 +14,7 @@ MANCOMPRESSED=	yes
 USES=		imake
 USE_XORG=	x11 xext
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}

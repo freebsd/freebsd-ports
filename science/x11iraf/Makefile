@@ -1,8 +1,5 @@
-# New ports collection makefile for:   x11iraf
-# Date created:	                         22 August 2004
-# Whom:	                                 David Syphers <dsyphers@u.washington.edu>
+# Created by: David Syphers <dsyphers@u.washington.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	x11iraf
 PORTVERSION=	1.3.1
@@ -32,6 +29,7 @@ MAN1=		obmsh.1		\
 		ximtool.1	\
 		xtapemon.1
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} "===>  Installing binaries"
 	@${INSTALL_PROGRAM} ${BINS:S|^|${WRKDIR}/bin.freebsd/|} ${PREFIX}/bin/

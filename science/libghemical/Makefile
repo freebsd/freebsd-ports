@@ -26,4 +26,5 @@ USE_FORTRAN=	yes
 CONFIGURE_ARGS+=	--enable-mpqc
 PLIST_SUB=	LIBGHEMICAL_VERSION="${PORTVERSION}"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

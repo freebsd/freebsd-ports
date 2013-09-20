@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ElmerGrid
-# Date created:		5 Jan 2006
-# Whom:			Pedro Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	elmergrid
 PORTVERSION=	5.4.0
@@ -19,4 +15,5 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/ElmerGrid
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

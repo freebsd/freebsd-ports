@@ -1,9 +1,5 @@
-# New ports collection makefile for:	epte
-# Date created:				2010-09-01
-# Whom:					Frederic Culot <frederic@culot.org>
-#
+# Created by: Frederic Culot <frederic@culot.org>
 # $FreeBSD$
-#
 
 PORTNAME=	epte
 PORTVERSION=	2.0.8
@@ -21,6 +17,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/epte
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|/usr|${PREFIX}|' ${WRKSRC}/epte.1
 

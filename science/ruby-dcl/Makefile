@@ -1,9 +1,5 @@
-# New ports collection makefile for:	RubyDCL
-# Date created:		15 Febrary 2004
-# Whom:			Shin'ya Murakami <murakami@ahs.scitec.kobe-u.ac.jp>
-#
+# Created by: Shin'ya Murakami <murakami@ahs.scitec.kobe-u.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	dcl
 PORTVERSION=	1.7.0
@@ -36,6 +32,7 @@ EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
 PORTDOCS=	ChangeLog README ToDo
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
