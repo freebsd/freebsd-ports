@@ -11,6 +11,7 @@ COMMENT=	Cuse4BSD character device loopback driver for userspace
 
 CONFLICTS=	video4bsd-kmod*
 
+SSP_UNSAFE=	kernel module does not support ssp
 USE_BZIP2=	yes
 
 KMODDIR=	/boot/modules

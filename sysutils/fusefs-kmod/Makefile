@@ -17,6 +17,8 @@ COMMENT=	Kernel module for fuse
 
 BUILD_DEPENDS=	fusefs-libs>2.4.1:${PORTSDIR}/sysutils/fusefs-libs
 
+SSP_UNSAFE=	kernel module does not support ssp
+
 USE_RC_SUBR=	fusefs
 KMODDIR?=	${PREFIX}/modules
 PLIST_SUB=	KMODDIR=${KMODDIR}

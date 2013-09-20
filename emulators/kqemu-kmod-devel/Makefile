@@ -19,6 +19,8 @@ COMMENT=	Kernel Accelerator for QEMU CPU Emulator (development version)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+SSP_UNSAFE=	kernel module does not support ssp
+
 ONLY_FOR_ARCHS=	i386 amd64
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes

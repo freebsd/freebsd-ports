@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rtc
-# Date created:		28 March 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rtc
 PORTVERSION=	2004.02.24.1
@@ -17,6 +13,7 @@ COMMENT=	Kernel module which provides /dev/rtc device support
 
 WRKSRC=		${WRKDIR}/files
 
+SSP_UNSAFE=	kernel module does not support ssp
 NO_FETCH=	yes
 USE_LINUX=	yes	# because of ${DEVDIR}
 

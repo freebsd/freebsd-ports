@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		help2man:${PORTSDIR}/misc/help2man
 
 CONFLICTS=	grub-0*
+SSP_UNSAFE=	yes
 USE_XZ=		yes
 USE_GCC=	yes
 USE_AUTOTOOLS=	automake aclocal autoconf

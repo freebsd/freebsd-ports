@@ -10,6 +10,7 @@ DISTFILES=	# none
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Linux compatibility layer - DVB ioctl handler
 
+SSP_UNSAFE=	kernel module does not support ssp
 ONLY_FOR_ARCHS=	i386 amd64
 
 .include <bsd.port.pre.mk>

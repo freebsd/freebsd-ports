@@ -13,6 +13,8 @@ COMMENT=	Device driver for PT1/PT2 ISDB-S/T tuner cards
 
 LICENSE=	GPLv3
 
+SSP_UNSAFE=	kernel module does not support ssp
+
 ONLY_FOR_ARCHS=	amd64 i386
 BUILD_WRKSRC=	${WRKSRC}/dev/ptx
 MAKE_ENV=	KMODDIR=${PREFIX}/${KMODDIR} SYSDIR=${SYSDIR}

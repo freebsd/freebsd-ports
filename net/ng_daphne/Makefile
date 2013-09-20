@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ng_daphne
-# Date created:		8 November 2003
-# Whom:			Gerasimos Dimitriadis
-#
+# Created by: Gerasimos Dimitriadis
 # $FreeBSD$
-#
 
 PORTNAME=	ng_daphne
 PORTVERSION=	1.0
@@ -14,6 +10,8 @@ MASTER_SITES=	http://newton.ee.auth.gr/ng_daphne/ \
 
 MAINTAINER=	gedimitr@auth.gr
 COMMENT=	A simple netgraph module for multihop ad hoc networks
+
+SSP_UNSAFE=	kernel module does not support ssp
 
 .include <bsd.port.pre.mk>
 

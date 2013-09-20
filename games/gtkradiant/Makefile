@@ -20,6 +20,7 @@ LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
 		libmhash.so:${PORTSDIR}/security/mhash \
 		libpng15.so:${PORTSDIR}/graphics/png
 
+SSP_UNSAFE=	yes
 USES=		pkgconfig
 USE_ZIP=	yes
 USE_GNOME=	gtk20 libxml2

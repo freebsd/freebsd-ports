@@ -20,6 +20,8 @@ LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
 
 GCCVERSION=	4.7.2
 
+SSP_UNSAFE=	yes
+
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
 USE_LDCONFIG=	yes
 USES=		bison iconv gmake perl5

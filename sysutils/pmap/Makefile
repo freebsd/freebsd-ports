@@ -11,6 +11,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL:S!$!skv/!} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Detailed process memory display
 
+SSP_UNSAFE=	kernel module does not support ssp
 NO_PACKAGE=	Depends on kernel
 
 KMODDIR=	/boot/modules

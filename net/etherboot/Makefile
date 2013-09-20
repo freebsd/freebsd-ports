@@ -9,6 +9,7 @@ MASTER_SITES=	SF http://etherboot.berlios.de/dist/
 MAINTAINER=	ambrisko@FreeBSD.org
 COMMENT=	Network boot of FreeBSD a.out/ELF kernels (improved netboot)
 
+SSP_UNSAFE=	yes
 ONLY_FOR_ARCHS=	i386
 NO_PACKAGE=	lots of configuration necessary
 

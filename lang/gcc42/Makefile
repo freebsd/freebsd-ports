@@ -27,6 +27,7 @@ USES=		bison gmake iconv perl5
 USE_BZIP2=	yes
 USE_CSTD=	gnu89
 USE_PERL5=	build
+SSP_UNSAFE=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure

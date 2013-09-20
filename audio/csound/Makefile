@@ -35,6 +35,7 @@ FLTK_DESC=	Build FLTK plugin and GUI
 
 CONFLICTS_INSTALL=	outguess-*
 
+SSP_UNSAFE=	yes
 USE_PYTHON=	2.6+
 USES=		bison gettext
 USE_SCONS=	yes

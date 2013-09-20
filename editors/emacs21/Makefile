@@ -21,6 +21,8 @@ CONFLICTS=	emacs-19.* emacs-22.* emacs-23.* emacs-24.* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
 
+SSP_UNSAFE=	yes
+
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \

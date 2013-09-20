@@ -21,6 +21,7 @@ LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
 USES=		bison gmake iconv perl5
 USE_BZIP2=	yes
 USE_PERL=	build
+SSP_UNSAFE=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure

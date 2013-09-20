@@ -20,6 +20,7 @@ REINPLACE_ARGS=	-i ""
 HAS_CONFIGURE=	yes
 ALL_TARGET=	world.opt
 STRIP=
+SSP_UNSAFE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS=	-verbose -prefix "${PREFIX}" -cc "${CC}" -as "${AS}" \
