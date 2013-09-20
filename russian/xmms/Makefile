@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms
-# Date created:				9 November 2003
-# Whom:					oleg dashevskii <be9-ml@be9.ru>
-#
+# Created by: oleg dashevskii <be9-ml@be9.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms
 CATEGORIES=	russian
@@ -17,4 +13,5 @@ CONFLICTS=	xmms-[0-9]*
 
 WITH_RUSXMMS_PATCHES=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -23,6 +23,7 @@ WRKSRC_DOC=	${WRKDIR}/usr/local/share/mova
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 post-build:
 # convert dictionary to other charsets
 	${MV} ${WRKSRC_DIC}/Mueller7accentGPL.koi ${WRKSRC_DIC}/Mueller7accentGPL.ru_RU.KOI8-R

@@ -25,6 +25,7 @@ MOTIF_USES=	motif
 MOTIF_CONFIGURE_ON=	--with-toolkit=motif
 MOTIF_CONFIGURE_OFF=	--with-toolkit=none
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

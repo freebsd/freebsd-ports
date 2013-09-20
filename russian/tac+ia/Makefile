@@ -42,6 +42,7 @@ CONFIGURE_ARGS+=	--disable-deny
 CONFIGURE_ARGS+=	--disable-cron
 CFLAGS+=		-Wno-return-type
 
+NO_STAGE=	yes
 post-build:
 	@mv ${WRKSRC}/tac_plus/tac_plus.1 ${WRKSRC}/tac_plus/tac_plus.8
 

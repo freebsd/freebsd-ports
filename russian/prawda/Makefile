@@ -14,6 +14,7 @@ NO_WRKSUBDIR=	yes
 USE_XORG=	x11 xaw xmu xt sm
 CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|ulong|unsigned long|g;;s|malloc.h|stdlib.h|g" ${WRKSRC}/src/face/video_x.cpp
 	@${REINPLACE_CMD} -e "s|g++|${CXX} ${CXXFLAGS}|g" ${WRKSRC}/src/bin/makefile.exe

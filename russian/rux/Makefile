@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rux
-# Date created:		25 December 2005
-# Whom:			Vyacheslav Anikin <ghos@mail.ru>
-#
+# Created by: Vyacheslav Anikin <ghos@mail.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	rux
 PORTVERSION=	0.79
@@ -20,4 +16,5 @@ MANCOMPRESSED=	maybe
 
 PLIST_FILES=	bin/rux
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

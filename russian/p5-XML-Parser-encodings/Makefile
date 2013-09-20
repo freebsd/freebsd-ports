@@ -20,6 +20,7 @@ USES=		perl5
 NO_WRKSUBDIR=	YES
 RUSSIANENC=	cp1251 cp866 mac-cyrillic
 
+NO_STAGE=	yes
 post-extract:
 .for ICONVPORT in iconv iconv-extra
 	@${LN} -sfh \

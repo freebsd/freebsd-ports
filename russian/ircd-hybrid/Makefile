@@ -49,6 +49,7 @@ CONFIGURE_ARGS+=--with-topiclen=${TOPICLENGTH}
 CONFIGURE_ARGS+=--with-maxconn=${MAXCONN}
 .endif
 
+NO_STAGE=	yes
 pre-extract:
 	@${ECHO_MSG} "* * * Build options for ircd-hybrid-ru * * *"
 	@${ECHO_MSG} "Issue make WITH_SMALL_NET=yes to build server optimized for small network"
