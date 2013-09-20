@@ -22,4 +22,5 @@ USE_XORG=	x11 xext
 MAN1=		xrolo.1
 PLIST_FILES=	bin/xrolo
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -30,6 +30,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	hamster-applet.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # WAF needs that

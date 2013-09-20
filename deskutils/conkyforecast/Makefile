@@ -1,9 +1,5 @@
-# New ports collection makefile for:	conkyforecast
-# Date created:		2010-05-07
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	conkyforecast
 PORTVERSION=	2.20
@@ -33,6 +29,7 @@ FONTSDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}
 
 WRKSRC=		${WRKDIR}/src
 
+NO_STAGE=	yes
 post-patch:
 	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's,/usr/share/${PORTNAME},${DATADIR},g' \
 		setup.py \

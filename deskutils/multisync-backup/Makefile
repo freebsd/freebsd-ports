@@ -1,7 +1,4 @@
-# New ports collection makefile for:	multisync-backup
-# Date created:			3 Dec 2003
-# Whom:				Pav Lucistnik <pav@FreeBSD.org>
-#
+# Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	multisync-backup
@@ -19,4 +16,5 @@ WRKSRC=		${WRKDIR}/multisync-${PORTVERSION}/plugins/backup_plugin
 
 MASTERDIR=	${.CURDIR}/../multisync
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -24,6 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/superswitcher \
 		share/dbus-1/services/superswitcher.SuperSwitcher.service
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's/x11//g' ${WRKSRC}/configure

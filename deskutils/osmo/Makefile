@@ -32,6 +32,7 @@ POFILES=	bg ca cs da de el en_GB es fi fr hu it ja lt nl pl pt \
 
 MSGFMT=		${LOCALBASE}/bin/msgfmt
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/src/Makefile.in

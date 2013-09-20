@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
 
 MAN1=		tpb.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

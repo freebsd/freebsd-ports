@@ -24,6 +24,7 @@ PORTDOCS=	CHANGES.rst README.rst
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

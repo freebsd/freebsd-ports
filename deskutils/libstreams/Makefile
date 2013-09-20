@@ -11,6 +11,7 @@ COMMENT=	Strigi desktop search: streams library
 USES=		iconv
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e \
 		's,$${LIB_DESTINATION}/pkgconfig,libdata/pkgconfig,' \

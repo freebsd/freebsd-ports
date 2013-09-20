@@ -16,6 +16,7 @@ NO_BUILD=	yes
 OPTIONS_DEFINE=	CLIENT DAEMON UTILITIES
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
+NO_STAGE=	yes
 .include <${.CURDIR}/Makefile.common>
 .include <bsd.port.options.mk>
 

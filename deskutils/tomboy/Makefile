@@ -39,6 +39,7 @@ APPLET_DESC=	Enable GNOME panel applet
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MAPPLET}

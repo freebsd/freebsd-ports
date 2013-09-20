@@ -34,6 +34,7 @@ OPTIONS_RADIO=	SOUND
 OPTIONS_RADIO_SOUND=	GSTREAMER OPENAL
 XOSD_DESC=	Xosd support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

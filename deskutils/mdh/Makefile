@@ -30,6 +30,7 @@ CONFIGURE_ARGS+=	--disable-curl
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's| make| $$(MAKE)|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|\.\./lib/getopt/getopt\.c||g ; \

@@ -24,6 +24,7 @@ MAN1=		${PORTNAME}.1
 CPPFLAGS+=	-I${LOCALBASE}/include -Wno-return-type
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|1.1.7|${PORTVERSION}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|"sensible-browser"|"xdg-open"|g' ${WRKSRC}/config.h

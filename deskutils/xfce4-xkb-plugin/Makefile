@@ -19,4 +19,5 @@ USE_GNOME=	gtk20 intltool intlhack librsvg2 libwnck
 USE_XFCE=	configenv libmenu libutil panel
 USE_XORG=	x11
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

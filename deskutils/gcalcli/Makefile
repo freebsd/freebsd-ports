@@ -21,6 +21,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/gcalcli
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/bin/python2,${SETENV} python," ${WRKSRC}/${PORTNAME}
 

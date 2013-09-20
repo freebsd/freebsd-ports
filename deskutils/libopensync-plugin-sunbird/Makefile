@@ -1,6 +1,5 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libopensync-plugin-sunbird
 PORTVERSION=	0.22
@@ -21,6 +20,7 @@ USE_GNOME=	glib20 libxml2
 
 PORTDOCS=	AUTHORS COPYING ChangeLog README
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

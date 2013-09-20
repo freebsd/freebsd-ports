@@ -17,5 +17,6 @@ USE_FAM=	yes
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <${.CURDIR}/../strigi/Makefile.common>
 .include <bsd.port.mk>

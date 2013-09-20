@@ -30,6 +30,7 @@ USE_GNOME=	pygnome2 pygnomeextras pygtk2
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \
 		${WRKSRC}/gourmet/backends/db.py \

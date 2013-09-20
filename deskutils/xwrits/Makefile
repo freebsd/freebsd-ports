@@ -19,6 +19,7 @@ MAN1=		xwrits.1
 
 PORTDOCS=	GESTURES NEWS README TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

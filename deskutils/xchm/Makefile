@@ -20,6 +20,7 @@ WX_CONF_ARGS=	absolute
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CPPFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -1,10 +1,6 @@
-# New ports collection makefile for:	ontv
-# Date created:		2006-07-24
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/deskutils/ontv/Makefile,v 1.7 2007/07/23 21:02:59 mezz Exp $
-#
 
 PORTNAME=	ontv
 PORTVERSION=	3.2.0
@@ -34,6 +30,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GCONF_SCHEMAS=	ontv.schemas
 INSTALLS_ICONS=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/lib/python2.6|${PYTHON_LIBDIR}|' \
 		${WRKSRC}/bin/ontv

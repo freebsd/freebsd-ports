@@ -1,9 +1,5 @@
-# New ports collection makefile for:	opengoo
-# Date created:		2009-08-19
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fengoffice
 PORTVERSION=	2.0.0
@@ -28,6 +24,7 @@ SUB_FILES=	pkg-message
 FENGOFFICE_DIR=		www/${PORTNAME}
 FENGOFFICE_WWWDIR=	${PREFIX}/${FENGOFFICE_DIR}
 
+NO_STAGE=	yes
 post-extract:
 	@${MKDIR} ${WRKDIR}/${PORTNAME}-docs
 	@${MV} ${WRKSRC}/readme.txt ${WRKDIR}/${PORTNAME}-docs/README

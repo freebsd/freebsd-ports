@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection Makefile for:	narval
-# Date created:			Jan 4, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	narval
 PORTVERSION=	2.0.2
@@ -24,6 +19,7 @@ USE_PYDISTUTILS=	yes
 USE_TWISTED=	yes
 USE_GNOME=	pygtk2
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(NOPORTDOCS)

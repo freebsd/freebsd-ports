@@ -23,4 +23,5 @@ PLIST_FILES=	bin/convtest \
 		bin/convcard \
 		bin/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

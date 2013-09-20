@@ -21,6 +21,7 @@ MAN1=	hot-babe.1
 
 PORTDOCS=	ChangeLog NEWS TODO LICENSE CONTRIBUTORS copyright config.example
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Warning! This port contains some adults only content."

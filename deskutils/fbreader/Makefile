@@ -47,6 +47,7 @@ MAKE_ENV+=	TARGET_ARCH=desktop UI_TYPE=${UI} TARGET_STATUS=${STATUS} \
 		LD="${CXX}"
 MAKE_ARGS+=	MAKE=${GMAKE} LIBDIR=${PREFIX}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^CFLAGS/s,-pipe.*$$,${CFLAGS} -DDO_ICONV_CAST -DLIBICONV_PLUG,' \
 		-e '/^CC/d;/^LD/d;/QTINCLUDE/s,-I.*$$,-I${QT_INCDIR},;s,libpng ,libpng15 ,' \

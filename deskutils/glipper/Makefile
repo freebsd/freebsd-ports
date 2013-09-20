@@ -20,6 +20,7 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec
 
 GCONF_SCHEMAS=	glipper.schemas
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/gtypes.h|glib.h|g' \
 		${WRKSRC}/glipper/keybinder/tomboykeybinder.h

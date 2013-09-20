@@ -25,6 +25,7 @@ MAKE_ENV+=	PYTHON="${PYTHON_CMD}"
 
 DATADIR=	${PREFIX}/share/${PORTNAME}2
 
+NO_STAGE=	yes
 post-install:
 	@${RM} -f ${DATADIR}/lib/blogtk2/*.py~
 

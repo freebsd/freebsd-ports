@@ -20,4 +20,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags gnome-vfs-2.0`
 LDFLAGS+=	-L${LOCALBASE}/lib
 GCONF_SCHEMAS=	nautilus-open-terminal.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

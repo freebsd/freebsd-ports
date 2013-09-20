@@ -18,4 +18,5 @@ GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
 USE_TEX=	latex
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

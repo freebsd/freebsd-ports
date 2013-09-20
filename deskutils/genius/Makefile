@@ -29,6 +29,7 @@ USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

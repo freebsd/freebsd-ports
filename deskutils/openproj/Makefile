@@ -19,6 +19,7 @@ DATAFILES=	lib license openproj.jar readme.html
 
 SUB_FILES=	openproj.sh
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC} \
 	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} \; \

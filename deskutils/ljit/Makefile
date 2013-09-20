@@ -25,6 +25,7 @@ USE_GNOME=	gtk20
 PLIST_FILES=	bin/ljit share/locale/ru/LC_MESSAGES/ljit.mo
 PORTDOCS=	BUGS NEWS README THANKS TODO
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e 's, -DMTRACE$$,, ; \
 		s,prefix)/$$(DATADIRNAME,datadir,' ${WRKSRC}/src/Makefile.in

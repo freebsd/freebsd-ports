@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mencal
-# Date created:                 17 April 2002
-# Whom:                         Christian Brueffer <chris@unixpages.org>
-#
+# Created by: Christian Brueffer <chris@unixpages.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mencal
 PORTVERSION=	2.4
@@ -22,6 +18,7 @@ USE_PERL5=	run
 
 PLIST_FILES=	bin/mencal
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^#!/s|/.*|${PERL} -w|' ${WRKSRC}/${PORTNAME}
 

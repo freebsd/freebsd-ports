@@ -1,9 +1,5 @@
-# New ports collection makefile for:	phpcollab
-# Date created:				4 Januar 2011
-# Whom:					jamrich.majo@gmail.com
-#
+# Created by: jamrich.majo@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	phpcollab
 PORTVERSION=	2.5
@@ -28,6 +24,7 @@ PLIST_DIRSTRY=	%%WWWDIR%%
 OPTIONS_DEFINE=	PGSQL APACHE LIGHTTPD
 LIGHTTPD_DESC=	Use Lighttpd webserver
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPGSQL}

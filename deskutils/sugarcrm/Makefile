@@ -21,6 +21,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SUB_FILES+=	pkg-message pkg-install
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${WWWDIR}
 

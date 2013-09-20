@@ -35,4 +35,5 @@ MAN1=		kabcclient.1
 #cannot be built with assuan2
 CMAKE_ARGS+=	-DWITH_Assuan:BOOL=off
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

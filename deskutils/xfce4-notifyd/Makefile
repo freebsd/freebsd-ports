@@ -31,6 +31,7 @@ MAN1=	xfce4-notifyd-config.1
 
 OPTIONS_DEFINE=	NLS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

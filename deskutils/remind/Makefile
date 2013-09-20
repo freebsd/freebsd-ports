@@ -1,9 +1,5 @@
-# New ports collection makefile for:	remind
-# Date created:				10 April 2004
-# Whom:					Lewis Thompson <purple@lewiz.net>
-#
+# Created by: Lewis Thompson <purple@lewiz.net>
 # $FreeBSD$
-#
 
 PORTNAME=	remind
 PORTVERSION=	3.1.12
@@ -26,6 +22,7 @@ MAN1=		rem.1 rem2ps.1 remind.1
 
 PLIST_FILES=	bin/rem bin/rem2ps bin/remind
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCLTK}

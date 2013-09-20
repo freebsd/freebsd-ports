@@ -30,6 +30,7 @@ OPTIONS_DEFAULT=	APACHE
 PHPMOD_DESC=	Use PHP module for Apache
 NGINX_DESC=	Use Nginx
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPHPMOD}

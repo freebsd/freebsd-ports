@@ -28,6 +28,7 @@ CMAKE_ARGS=	-DCOMPILE_GSETTINGS_ON_INSTALL:BOOL=ON \
 
 MAN1=	steadyflow.1
 
+NO_STAGE=	yes
 post-install:
 	@-update-desktop-database
 

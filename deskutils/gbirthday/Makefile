@@ -20,6 +20,7 @@ USE_XZ=		yes
 USE_PYTHON_RUN=	-2.7
 USE_GNOME=	pygtk2 desktopfileutils
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

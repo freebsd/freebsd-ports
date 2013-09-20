@@ -1,9 +1,5 @@
-# New ports collection makefile for:	surrealtodo
-# Date created:				17 January 2011
-# Whom:					jamrich.majo@gmail.com
-#
+# Created by: jamrich.majo@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	surrealtodo
 PORTVERSION=	0.6.1.2
@@ -29,6 +25,7 @@ OPTIONS_DEFINE=	PGSQL APACHE LIGHTTPD
 OPTIONS_DEFAULT=	APACHE
 LIGHTTPD_DESC=	Use Lighttpd webserver
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPOSTGRE}

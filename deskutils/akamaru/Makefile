@@ -19,6 +19,7 @@ USES=		gmake pkgconfig
 USE_GNOME=	gconf2 gnomehier
 GCONF_SCHEMAS=	kiba.schemas
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 	    	${WRKSRC}/populate-dock.sh

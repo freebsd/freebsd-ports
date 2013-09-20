@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bitcollider
-# Date created:		7 January 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bitcollider
 PORTVERSION=	0.6.0
@@ -18,6 +14,7 @@ CFLAGS+=	-lm
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|g' ${WRKSRC}/configure
 

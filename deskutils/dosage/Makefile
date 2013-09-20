@@ -19,6 +19,7 @@ PYDISTUTILS_PKGNAME=Dosage
 
 MAN1=		dosage.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man/man1|man/man1|' ${WRKSRC}/setup.py
 

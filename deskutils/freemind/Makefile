@@ -30,6 +30,7 @@ ZIP_CMD=	zip
 
 SUB_FILES=	freemind.sh
 
+NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}; \
 	${UNZIP_CMD} lib/freemind.jar freemind.properties; \

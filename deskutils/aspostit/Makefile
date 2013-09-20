@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 MAN1=		aspostit.1
 PLIST_FILES=	bin/aspostit
 
+NO_STAGE=	yes
 post-extract:
 	@${LN} -sf aspostit.man ${WRKSRC}/aspostit.1
 

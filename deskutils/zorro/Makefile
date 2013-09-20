@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zorro
-# Date created:         03 Aug 1996
-# Whom:                 shanee@rabbit.augusta.de
-#
+# Created by: shanee@rabbit.augusta.de
 # $FreeBSD$
-#
 
 PORTNAME=	zorro
 PORTVERSION=	1.1.8
@@ -22,6 +18,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/zorro
 PORTDOCS=	DOTzorrorc
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/bin/wish|${WISH}|' \
 		${WRKSRC}/zorro

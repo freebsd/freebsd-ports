@@ -76,6 +76,7 @@ LM2FIX=		textcat_conf.txt textcat3_conf.txt textcat31_conf.txt textcat32_conf.tx
 SHR2FIX=	Core/pinot-search.1 README
 UL2FIX=		Utils/xdgmime/xdgmime.c
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700041

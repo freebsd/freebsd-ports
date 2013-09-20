@@ -38,6 +38,7 @@ MBSTRING_DESC=	Support multi-byte character sets
 POSTGRES_DESC=	PostgreSQL database support
 ZIP_DESC=	Install PHP zip extension
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

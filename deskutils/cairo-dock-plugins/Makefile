@@ -44,6 +44,7 @@ WEBLETS_DESC=		Weblets applet
 
 OPTIONS_SUB=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

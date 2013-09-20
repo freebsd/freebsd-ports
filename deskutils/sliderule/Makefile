@@ -17,4 +17,5 @@ USE_XORG=	x11 xext
 MAN1=		sliderule.1
 PLIST_FILES=	bin/sliderule
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

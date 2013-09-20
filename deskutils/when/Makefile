@@ -17,6 +17,7 @@ MAN1=		${PORTNAME}.1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_dist
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/

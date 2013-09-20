@@ -1,9 +1,5 @@
-# New ports collection makefile for: ithought
-# Date created:		20 Feb 2001
-# Whom:			nbm
-#
+# Created by: nbm
 # $FreeBSD$
-#
 
 PORTNAME=	ithought
 PORTVERSION=	a5
@@ -18,4 +14,5 @@ USE_GNOME=	gtk12 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/libexec
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -16,4 +16,5 @@ USES=		cmake gettext
 USE_KDE4=	automoc4 kdeprefix workspace
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

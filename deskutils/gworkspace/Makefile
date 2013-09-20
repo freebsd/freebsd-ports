@@ -36,6 +36,7 @@ PLIST_SUB+=	PDFVIEW=""
 USE_GHOSTSCRIPT=	yes
 .endif
 
+NO_STAGE=	yes
 pre-configure:
 	${RM} -rf ${WRKSRC}/GWMetadata
 

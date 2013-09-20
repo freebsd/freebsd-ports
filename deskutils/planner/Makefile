@@ -34,6 +34,7 @@ MAN1=		planner.1
 OPTIONS_DEFINE=	GDA
 GDA_DESC=	Enable database support (though libgda)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGDA}

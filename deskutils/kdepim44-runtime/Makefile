@@ -24,6 +24,7 @@ USE_QT4=	qmake_build moc_build rcc_build uic_build \
 		corelib dbus gui network qtestlib xml
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${GREP} -H -r "#include <q" ${WRKSRC} | ${CUT} -d: -f1 | uniq | \
 		${XARGS} ${REINPLACE_CMD} -f ${FILESDIR}/qt3to4headers.txt

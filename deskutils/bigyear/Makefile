@@ -1,9 +1,5 @@
-# New ports collection makefile for:   bigyear
-# Date created:        26 February 2001
-# Whom:                George Reid <greid@ukug.uk.freebsd.org>
-#
+# Created by: George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bigyear
 PORTVERSION=	20010226
@@ -18,6 +14,7 @@ COMMENT=	A program to print a large (one month per page) calendar
 MAN1=		bigyear.1
 PLIST_FILES=	bin/bigyear
 
+NO_STAGE=	yes
 post-extract:
 	${RM} ${WRKSRC}/bigyear
 

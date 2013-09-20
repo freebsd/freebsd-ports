@@ -1,9 +1,5 @@
-# New ports collection makefile for:	planner.el
-# Date created:				March 09 2005
-# Whom:					Dryice Liu <dryice@liu.com.cn>
-#
+# Created by: Dryice Liu <dryice@liu.com.cn>
 # $FreeBSD$
-#
 
 PORTNAME=	planner.el
 PORTVERSION=	3.42
@@ -31,6 +27,7 @@ W3M_DESC=	W3M support
 WL_DESC=	Wanderlust support
 XTLA_DESC=	XTLA support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${EMACS_PORT_NAME} != "emacs23"

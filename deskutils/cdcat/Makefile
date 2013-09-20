@@ -63,6 +63,7 @@ L7Z_VERSION=	1.6.3
 L7Z_DISTFILE=	${L7Z_NAME}-${L7Z_VERSION}.tar.gz
 L7Z_WRKSRC=	${WRKDIR}/${L7Z_NAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 P7Z_WRKSRC=	$$(cd ${PORTSDIR}/archivers/p7zip && ${MAKE} -V WRKSRC)

@@ -21,4 +21,5 @@ USE_GNOME=	glib20 libxml2
 CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 # Created by: Thorsten Greiner <thorsten.greiner@web.de>
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-notes-plugin
 PORTVERSION=	1.7.7
@@ -24,4 +23,5 @@ USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv libgui libutil panel xfconf
 INSTALLS_ICONS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

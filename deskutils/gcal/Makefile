@@ -16,6 +16,7 @@ CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 INFO=		gcal
 #MAN1=		gcal.1 gcal2txt.1 tcal.1 txt2gcal.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

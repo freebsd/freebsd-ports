@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tomboy-wordcount
-# Date created:		2008-12-23
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tomboy-plugin-wordcount
 PORTVERSION=	0.2
@@ -22,6 +18,7 @@ ALL_TARGET=	Wordcount.dll
 
 PLIST_FILES=	lib/tomboy/addins/Wordcount.dll
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} Wordcount.dll ${PREFIX}/lib/tomboy/addins/
 

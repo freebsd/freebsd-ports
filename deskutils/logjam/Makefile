@@ -44,6 +44,7 @@ PLIST_SUB+=		WITH_XMMS="@comment "
 CONFIGURE_ARGS+=	--without-xmms
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgtkhtml3}!=""

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libopensync-plugin-synce-devel
-# Date created:				27 September 2008
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libopensync-plugin-synce
 CATEGORIES=	deskutils palm
@@ -22,4 +18,5 @@ CONFLICTS=	libopensync-plugin-synce-[0-9]*
 ENGINE_VER=	3
 PLUGINDIR=	lib/opensync-1.0/plugins
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

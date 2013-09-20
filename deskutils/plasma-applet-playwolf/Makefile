@@ -1,9 +1,4 @@
-# New ports collection makefile for:	plasma-applet-playwolf
-# Date Created:				2009-02-22
-# Whom:					Jason E. Hale <bsdkaffee@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	playwolf
 PORTVERSION=	0.8.1
@@ -34,6 +29,7 @@ ADD_NEWLINE_TO=	flowlayout.cpp \
 		wolfbuttons.cpp \
 		wolflabel.h
 
+NO_STAGE=	yes
 post-patch:
 .for i in ${ADD_NEWLINE_TO}
 	${ECHO_CMD} >> ${WRKSRC}/${i}

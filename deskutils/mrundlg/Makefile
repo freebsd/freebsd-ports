@@ -17,4 +17,5 @@ USE_XORG=	x11 xmu xt
 MAN1=		mrundlg.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

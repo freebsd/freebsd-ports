@@ -1,9 +1,5 @@
-# New ports collection makefile for:    charmap
-# Date created:         28 Aug 2006
-# Whom:                 gurkan@phys.ethz.ch
-#
+# Created by: gurkan@phys.ethz.ch
 # $FreeBSD$
-#
 
 PORTNAME=	charmap
 PORTVERSION=	0.2
@@ -24,4 +20,5 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

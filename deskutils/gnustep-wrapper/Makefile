@@ -25,6 +25,7 @@ ADDITIONAL_LIB_DIRS+=	-L${WRKSRC}/libGSWrapper/obj
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 MAKE_FLAGS+=	debug=no
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|cp -u|#cp -p|' \
 		${WRKSRC}/WrapperFactory/GNUmakefile.postamble

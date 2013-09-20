@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cal
-# Date created:				2 April 1997
-# Whom:	Andrey Zakhvatov <andy@icc.surw.chel.su>
-#
+# Created by: Andrey Zakhvatov <andy@icc.surw.chel.su>
 # $FreeBSD$
-#
 
 PORTNAME=		cal
 PORTVERSION=		3.5
@@ -19,6 +15,7 @@ MAKEFILE=	makefile.unx
 ALL_TARGET=	cal
 MAN1=		cal.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cal ${PREFIX}/bin/cal
 	${MV} ${WRKSRC}/cal.1 ${WRKSRC}/cal.1.orig

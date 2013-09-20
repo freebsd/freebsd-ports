@@ -1,9 +1,5 @@
-# New ports collection makefile for:	adesklets
-# Date created:		2005-05-25
-# Whom:			Roman Bogorodskiy <novel@FreeBSD.org>
-#
+# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	adesklets
 PORTVERSION=	0.6.1
@@ -46,6 +42,7 @@ PLIST_SUB+=	PERL="@comment "
 CONFIGURE_ARGS+=	--without-history
 .endif
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "You may specify the following on the command line:"
 	@${ECHO_MSG} ""

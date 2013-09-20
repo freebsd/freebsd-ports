@@ -14,6 +14,7 @@ COMMENT=	Graphical RFC viewer
 USE_QT4=	gui network corelib qmake_build uic_build moc_build rcc_build
 PLIST_FILES=	bin/qRFCView
 
+NO_STAGE=	yes
 do-configure:
 	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE} -unix rfcview.pro
 

@@ -23,6 +23,7 @@ USE_GNUSTEP_INSTALL=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's|SimpleAgenda|SimpleAgenda.m|' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|-luuid||' ${WRKSRC}/GNUmakefile.preamble

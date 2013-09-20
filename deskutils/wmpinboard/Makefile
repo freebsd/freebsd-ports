@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmpinboard
-# Date created:			17 January 1999
-# Whom:				Jim Mock <jim@FreeBSD.org>
-#
+# Created by: Jim Mock <jim@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wmpinboard
 PORTVERSION=	1.0
@@ -27,4 +23,5 @@ MAN1=		wmpinboard.1
 
 PLIST_FILES=	bin/wmpinboard
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

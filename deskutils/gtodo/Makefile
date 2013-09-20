@@ -17,4 +17,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	gtodo.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

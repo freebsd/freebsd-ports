@@ -17,6 +17,7 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

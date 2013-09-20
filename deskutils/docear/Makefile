@@ -29,6 +29,7 @@ icon=		${DATADIR}/${PORTNAME}-icon48x48.png
 WRKSRC=		${WRKDIR}/docear-1.0.0.15_rc_build213
 SUB_FILES=	docear.desktop
 
+NO_STAGE=	yes
 post-patch:
 		${REINPLACE_CMD} -e 's/readlink -mn/readlink -n/g' \
 		    -e 's,#!/bin/bash,#!/bin/sh,' \

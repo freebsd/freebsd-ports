@@ -38,6 +38,7 @@ OPTIONS_DEFAULT=NAUTILUS EOG
 NAUTILUS_DESC=	Build Nautilus Plugin
 EOG_DESC=	Build Eye-Of-Gnome Plugin
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNAUTILUS}

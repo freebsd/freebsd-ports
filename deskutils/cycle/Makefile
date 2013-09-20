@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Cycle
-# Date created:				30 Jun 2005
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cycle
 PORTVERSION=	0.3.1
@@ -24,6 +20,7 @@ NO_BUILD=	yes
 
 MAN1=		${PORTNAME}.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,"msg","${PREFIX}/share/locale",' \
 		-e 's,"","${DOCSDIR}", ; s,"icons","${DATADIR}/icons",' \

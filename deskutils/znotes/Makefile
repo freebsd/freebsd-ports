@@ -24,6 +24,7 @@ OPTIONS_DEFINE=		NLS
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
 
+NO_STAGE=	yes
 post-patch:
 	    @${REINPLACE_CMD} -e 's|lrelease|lrelease-qt4|g' \
 		${WRKSRC}/${PORTNAME}.pro

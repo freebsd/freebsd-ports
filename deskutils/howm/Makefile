@@ -21,6 +21,7 @@ PLIST_SUB=	COMPILED_ELISP=""
 PLIST_SUB=	COMPILED_ELISP="@comment "
 .endif
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}; ${INSTALL_DATA} *.el ${PREFIX}/${EMACS_SITE_LISPDIR}
 .if defined(WITH_COMPILED_ELISP)
