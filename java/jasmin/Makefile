@@ -20,6 +20,7 @@ DOS2UNIX_REGEX=	.*\.(txt|xml|j|class|java|mf|css|bnf|html)
 
 SUB_FILES=	jasmin.sh
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/jasmin.jar ${JAVAJARDIR}
 .if !defined(NOPORTEXAMPLES)

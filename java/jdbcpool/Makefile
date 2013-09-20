@@ -19,6 +19,7 @@ PORTDOCS=	CHANGES LICENSE README
 PORTDOCS+=	javadoc
 .endif
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -name CVS -type dir | ${XARGS} ${RM} -rf
 

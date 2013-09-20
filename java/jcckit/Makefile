@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	jcckit
-# Date created:			Aug 30, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	jcckit
 PORTVERSION=	1.1
@@ -26,6 +21,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${JAVAJARDIR}
 .if !defined(NOPORTDOCS)

@@ -23,6 +23,7 @@ JAVALIBNAME=	${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && \
 		${SETENV} JAVA_HOME=${JAVA_HOME} ant jar javadocs

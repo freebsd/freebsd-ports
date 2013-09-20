@@ -24,6 +24,7 @@ GROUP=		www
 DIST_SUBDIR=	${DISTNAME}
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

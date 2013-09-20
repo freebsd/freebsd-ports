@@ -1,9 +1,5 @@
-# New ports collection makefile for:	phpeclipse
-# Date created:				22 Oct 2003
-# Whom:					rtdean@cytherianage.net
-#
+# Created by: rtdean@cytherianage.net
 # $FreeBSD$
-#
 
 PORTNAME=	phpeclipse
 PORTVERSION=	1.2.3
@@ -32,6 +28,7 @@ PLIST_VER=	${PORTVERSION}.200910091456PRD
 PLIST_SUB=	VER=${PLIST_VER} \
 		ECLIPSE=${ECLIPSE}
 
+NO_STAGE=	yes
 post-patch:
 .for _task in ${PATCH_TASKS}
 	@${FIND} ${WRKDIR} -name build.xml -exec ${REINPLACE_CMD} -E \

@@ -29,6 +29,7 @@ PORTDOCS=	*
 DOC_FILES=	LICENSE.txt NOTICE.txt RELEASE-NOTES.txt
 .endif
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${DESTJARFILE}..."
 	@${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}

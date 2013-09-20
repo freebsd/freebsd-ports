@@ -23,6 +23,7 @@ JAVA_VERSION=	1.6+
 JAVA_OS=	native
 PLIST_SUB=	RELEASEVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/lib/eclipse
 	@${CP} -r ${WRKSRC}/plugins  ${PREFIX}/lib/eclipse

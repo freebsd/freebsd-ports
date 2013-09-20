@@ -24,6 +24,7 @@ NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 do-install:
 	@(cd ${WRKDIR} && ${CP} -R features ${PREFIX}/lib/eclipse && ${CP} -R plugins ${PREFIX}/lib/eclipse;)
 

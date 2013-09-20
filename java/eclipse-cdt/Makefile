@@ -45,6 +45,7 @@ RM_XLC=	features/org.eclipse.cdt.xlc.feature_6.0.0.201002161416.jar \
 	plugins/org.eclipse.cdt.managedbuilder.xlupc.ui.source_1.0.0.201002161416.jar \
 	plugins/org.eclipse.cdt.managedbuilder.xlupc.ui_1.0.0.201002161416.jar
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"

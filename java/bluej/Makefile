@@ -19,6 +19,7 @@ NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO} Starting BlueJ graphical installer...  Please install to default path of
 	@${ECHO} ${PREFIX}/bluej.  Close the installer when done.

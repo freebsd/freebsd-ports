@@ -116,6 +116,7 @@ SECURITY_ICONS= security-icon-bw16.png \
 		security-icon-yellow32.png \
 		security-icon-yellow48.png
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MDEBUG)

@@ -21,6 +21,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/lib/eclipse
 	@${MKDIR} ${PREFIX}/lib/eclipse/plugins

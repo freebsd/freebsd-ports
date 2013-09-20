@@ -1,9 +1,5 @@
-# New ports collection makefile for:    jikes
-# Date created:         09 December 1998
-# Whom:                 Matthew Dillon <dillon@backplane.com>
-#
+# Created by: Matthew Dillon <dillon@backplane.com>
 # $FreeBSD$
-#
 
 PORTNAME=	jikes
 PORTVERSION=	1.22
@@ -24,4 +20,5 @@ USE_BZIP2=	yes
 
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

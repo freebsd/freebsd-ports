@@ -1,9 +1,5 @@
-# New ports collection makefile for:    jc
-# Date created:         		20 Feb 2004
-# Whom:                 		Archie Cobbs <archie@freebsd.org>
-#
+# Created by: Archie Cobbs <archie@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jc
 PORTVERSION=	1.4.7
@@ -32,6 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 INFO=		jc
 ONLY_FOR_ARCHS=	i386
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

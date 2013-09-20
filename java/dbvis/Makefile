@@ -1,9 +1,5 @@
-# Ports collection makefile for:	DbVisualizer
-# Date created:			April 08, 2007
-# Whom:				Anton Yudin (<contact@toha.org.ua>)
-#
+# Created by: Anton Yudin (<contact@toha.org.ua>)
 # $FreeBSD$
-#
 
 PORTNAME=	dbvis
 PORTVERSION=	7.1
@@ -22,6 +18,7 @@ RESTRICTED=	Redistribution is not permitted
 PLIST_FILES=	bin/dbvis
 WRKSRC=		DbVisualizer-${PORTVERSION}
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKDIR}/${WRKSRC} \
 	  && ${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \; \

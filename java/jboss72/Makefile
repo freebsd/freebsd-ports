@@ -39,6 +39,7 @@ SUB_LIST=	APP_SHORTNAME=${PORTNAME} \
 		APP_HOME=${PREFIX}/${DISTNAME}
 PLIST_SUB=	APP_HOME=${DISTNAME}
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "To build you should have at least 2Gb of Ram (Or build will fail with java OOM Exception)"

@@ -21,6 +21,7 @@ NO_WRKSUBDIR=	yes
 OPTIONS_DEFINE=	JYTHON
 JYTHON_DESC=	Use Jython as Python interpreter
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJYTHON}

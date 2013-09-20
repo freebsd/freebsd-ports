@@ -25,6 +25,7 @@ USE_LDCONFIG=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/sqlitejdbc-native.jar lib/libsqlitejdbc.so
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile
 

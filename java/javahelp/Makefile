@@ -20,6 +20,7 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/jh2.0
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|$$JAVAHELP_HOME/javahelp/bin/|${JAVAJARDIR}/|' ${WRKSRC}/javahelp/bin/jhindexer
 	${REINPLACE_CMD} -e 's|$$JAVAHELP_HOME/javahelp/bin/|${JAVAJARDIR}/|' ${WRKSRC}/javahelp/bin/jhsearch

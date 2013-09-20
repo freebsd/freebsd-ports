@@ -44,6 +44,7 @@ PLIST_FILES+=	%%DATADIR%%/docs %%DATADIR%%/examples
 SUB_FILES=	poseidon.sh
 SUB_LIST=	JAVA_HOME="${JAVA_HOME}" EDITION="${EDITION}"
 
+NO_STAGE=	yes
 pre-fetch:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "There is a free usable edition of Poseidon for UML,"

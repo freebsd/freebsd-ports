@@ -32,6 +32,7 @@ OPTIONS_DEFINE=	JDK
 OPTIONS_DEFAULT=JDK
 JDK_DESC=	Build with native JDK
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJDK}

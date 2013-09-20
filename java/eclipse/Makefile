@@ -135,6 +135,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 DISTFILES+=	${f}:2
 .endfor
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTESTS}

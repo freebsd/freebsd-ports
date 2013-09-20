@@ -29,6 +29,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/mail.jar
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

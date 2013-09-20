@@ -39,6 +39,7 @@ APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JDK_INTERNAL_VERSION}
 SCRIPT_FILES=	bin/jcontrol jre/bin/jcontrol
 BIN_DIRS=	bin jre/bin
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

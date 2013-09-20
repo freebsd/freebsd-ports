@@ -57,6 +57,7 @@ SUB_LIST=	APP_HOME=${DATADIR} \
 		STOP_TIMEOUT=${STOP_TIMEOUT} \
 		USER=${USER}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:

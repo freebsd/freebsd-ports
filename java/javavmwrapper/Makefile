@@ -1,7 +1,5 @@
-# Created by:	Maxim Sobolev <sobomax@FreeBSD.org>
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
-# This port is self contained in the src directory.
 
 PORTNAME=	javavmwrapper
 PORTVERSION=	2.4
@@ -29,6 +27,7 @@ SCRIPTS=	classpath javavmwrapper
 # we can't do that here since it would result in a circular dependency
 JAVALIBDIR=	${LOCALBASE}/share/java/classes
 
+NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 

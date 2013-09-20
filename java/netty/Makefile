@@ -30,6 +30,7 @@ PORTDATA=	*
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

@@ -30,6 +30,7 @@ NO_BUILD=	yes
 
 do-install: do-install-jar do-install-javadoc
 
+NO_STAGE=	yes
 do-install-jar:
 	@${ECHO_MSG} -n ">> Installing .jar files in ${JAVAJARDIR} ..."
 	@for jarfile in ${JARFILES}; do					\

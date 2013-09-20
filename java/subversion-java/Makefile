@@ -24,6 +24,7 @@ JAVA_RUN=	yes
 
 SVN_BUILD_BINDINGS=yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile.common"
 
 CONFIGURE_ARGS+=	--enable-javahl --with-jdk=${JAVA_HOME} --with-jikes=no

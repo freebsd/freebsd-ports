@@ -1,9 +1,5 @@
-# Ports collection makefile for:	java-getopt
-# Date created:			Apr 7, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	getopt
 PORTVERSION=	1.0.13
@@ -29,6 +25,7 @@ PORTDOCS=	api ${OTHERDOCS}
 ALL_TARGET+=	javadoc
 .endif
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${WRKSRC}/gnu/getopt/buildx.xml ${WRKSRC}/build.xml
 

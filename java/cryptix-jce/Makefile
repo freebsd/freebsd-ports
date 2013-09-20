@@ -15,6 +15,7 @@ JAVA_VERSION=	1.6+
 USE_ZIP=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

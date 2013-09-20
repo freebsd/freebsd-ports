@@ -26,6 +26,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 IGNORE=		No development version available right now. Please use java/netbeans instead.
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i "" -e '19s|#||;19s|/path/to/jdk|${JAVA_HOME}|' \
 	    ${WRKSRC}/etc/netbeans.conf

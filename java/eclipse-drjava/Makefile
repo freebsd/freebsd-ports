@@ -34,6 +34,7 @@ FIND_DATA=	-type f -not \( -name "README" -or -name "LICENSE" \)
 PLIST_SUB+=	EPLUGINID=${EPLUGIN_ID} EPLUGINVER="${PORTVERSION}" \
 		PORTVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKDIR} && ${FIND} ${FIND_HERE} ${FIND_DIRS} -exec ${MKDIR} ${DATADIR}/{} \;
 	cd ${WRKDIR} && ${FIND} ${FIND_HERE} ${FIND_DATA} -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;

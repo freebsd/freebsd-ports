@@ -29,6 +29,7 @@ PLIST_SUB+=	XJAVADOC_VER="${XJAVADOC_VER}"
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}/xdoclet-${PORTVERSION} && ${FIND} lib -name '*xdoclet*' -exec \
 	    ${INSTALL_DATA} \{} ${JAVAJARDIR} \;

@@ -30,6 +30,7 @@ PORTDOCS=	*
 PLIST_FILES=	%%JAVAJARDIR%%/jfreechart.jar \
 		%%JAVAJARDIR%%/gnujaxp.jar
 
+NO_STAGE=	yes
 pre-fetch:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build options:"

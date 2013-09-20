@@ -23,6 +23,7 @@ SUB_FILES=	proguard.sh proguard-gui.sh retrace.sh
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

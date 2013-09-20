@@ -1,4 +1,3 @@
-# Creaetd by:	Archie Cobbs <archie@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	sablevm
@@ -31,6 +30,7 @@ OPTIONS_DEFAULT=MAN SVMCP
 MAN_DESC=	Build and install man pages
 SVMCP_DESC=	Install SableVM classpath
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMAN}

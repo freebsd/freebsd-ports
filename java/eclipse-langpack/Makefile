@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclipse-langpack
-# Date created:				2003/09/03
-# Whom:					nork@FreeBSD.org
-#
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	eclipse
 PORTVERSION=	3.2.1
@@ -27,6 +23,7 @@ NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 PLIST=		${WRKDIR}/pkg-plist
 
+NO_STAGE=	yes
 do-build:
 	@${RM} -f ${PLIST}
 	@${TOUCH} ${PLIST}

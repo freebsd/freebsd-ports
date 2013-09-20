@@ -31,6 +31,7 @@ PORTDOCS=	README.txt\
 		history.txt
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-fetch:

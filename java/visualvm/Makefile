@@ -20,6 +20,7 @@ NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
+NO_STAGE=	yes
 post-extract-script:
 	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.dll' -or -name '*.exe' \) -delete
 	@${RM} -rf ${WRKSRC}/profiler/lib/deployed

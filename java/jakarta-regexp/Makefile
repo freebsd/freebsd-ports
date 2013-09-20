@@ -24,6 +24,7 @@ JAVALIBNAME=	${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 do-build:
 	@if [ ! -f ${WRKSRC}/lib ]; then ${MKDIR} ${WRKSRC}/lib; fi
 	@cd ${WRKSRC} && \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jlint
-# Date created:		June 2, 2001
-# Whom:			Ernst de Haan <znerd@FreeBSD.org>
-#
+# Created by: Ernst de Haan <znerd@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jlint
 PORTVERSION=	3.1.2
@@ -21,6 +17,7 @@ PLIST_FILES=	bin/jlint \
 PORTDOCS=	manual.pdf
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

@@ -21,6 +21,7 @@ JAVASHAREDIR=	share/java
 TDIR=		${JAVASHAREDIR}/${PKGNAME}
 PLIST_SUB+=	T=${TDIR}
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC} && ${FIND} . -type d -exec ${INSTALL} -d ${PREFIX}/${TDIR}/'{}' \; && \
 	${FIND} . -type f -exec ${INSTALL_DATA} '{}' ${PREFIX}/${TDIR}/'{}' \;

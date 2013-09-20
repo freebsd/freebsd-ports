@@ -32,6 +32,7 @@ WRKSRC=		${WRKDIR}/${JDK_ROOT}
 
 INSTALLDIR=	${PREFIX}/${JDK_ROOT}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900010

@@ -29,6 +29,7 @@ MAKE_ENV+=	CLASSPATH=${JAVALIBDIR}/jaxen-jdom.jar
 
 PLIST_FILES=	%%JAVAJARDIR%%/jdom.jar
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/jdom.jar..."
 	@${MKDIR} ${JAVAJARDIR}

@@ -20,6 +20,7 @@ VERILOG_DESC=	Support Verilog with Icarus Verilog
 VHDL_VHDL=	Support VHDL with FreeHDL
 OPTIONS_DEFAULT=	VERILOG VHDL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVERILOG}

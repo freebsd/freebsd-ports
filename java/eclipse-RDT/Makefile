@@ -1,9 +1,5 @@
-# New ports collection makefile for:	RDT
-# Date created:				13 Jan 2008
-# Whom:					rehsack@web.de
-#
+# Created by: rehsack@web.de
 # $FreeBSD$
-#
 
 PORTNAME=	RDT
 PORTVERSION=	0.9.1
@@ -45,6 +41,7 @@ RDTFILES=	features/org.rubypeople.rdt_${RDTVERSION} \
 		plugins/org.rubypeople.rdt.testunit_${RDTVERSION} \
 		plugins/org.rubypeople.rdt.ui_${RDTVERSION}
 
+NO_STAGE=	yes
 post-extract:
 	${MKDIR} ${WRKSRC}
 .for FILE in ${RDTFILES}
