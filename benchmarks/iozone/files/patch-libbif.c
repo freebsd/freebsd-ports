@@ -4,8 +4,8 @@
  #include <string.h>
  #endif
  
--#if defined(linux) || defined(__DragonFly__) || defined(macosx)
-+#if defined(linux) || defined(__DragonFly__) || defined(macosx) || defined(__FreeBSD__)
+-#if defined(linux) || defined(__DragonFly__) || defined(IOZ_macosx)
++#if defined(linux) || defined(__DragonFly__) || defined(IOZ_macosx) || defined(__FreeBSD__)
  #include <unistd.h>
  #include <stdlib.h>
  #endif

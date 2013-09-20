@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iozone
-PORTVERSION=	3.397
+PORTVERSION=	3.420
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.iozone.org/src/current/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
@@ -46,6 +46,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iozone ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/docs/iozone.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/docs/iozone.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
