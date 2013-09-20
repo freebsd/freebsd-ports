@@ -1,9 +1,5 @@
-# New ports collection makefile for: koi8rPS
-# Date created:         22 July 1999
-# Whom:                 mi@aldan.algebra.com
-#
+# Created by: mi@aldan.algebra.com
 # $FreeBSD$
-#
 
 PORTNAME=	monaco
 PORTVERSION=	1.0
@@ -29,6 +25,7 @@ MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ENV+=	INSTALL_DATA="${INSTALL_DATA}" MKDIR="${MKDIR}"
 MAKE_ARGS+=	-j 2
 
+NO_STAGE=	yes
 post-install:
 	${CAT} ${PKGMESSAGE}
 

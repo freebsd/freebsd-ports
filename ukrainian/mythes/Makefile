@@ -1,9 +1,4 @@
-# New ports collection makefile for:	mythes
-# Date created:		2011-07-21
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mythes
 PORTVERSION=	1.6.5
@@ -27,6 +22,7 @@ PLIST_FILES=	%%DATADIR%%/th_uk_UA.dat \
 		%%DATADIR%%/th_uk_UA.idx
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-build:
 	@${PERL} ${WRKSRC}/bin/th_gen_idx.pl < ${WRKSRC}/src/thesaurus/th_uk_UA.dat > ${WRKSRC}/src/thesaurus/th_uk_UA.idx
 
