@@ -7,7 +7,7 @@ CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-lame
 PORTREVISION=	2
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LAME plugin for libquicktime
 
 LIB_DEPENDS=	quicktime.0:${PORTSDIR}/multimedia/libquicktime \

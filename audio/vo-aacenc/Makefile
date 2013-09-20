@@ -6,7 +6,7 @@ PORTVERSION=	0.1.3
 CATEGORIES=	audio
 MASTER_SITES=	SF/opencore-amr/${PORTNAME}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VisualOn AAC encoder library
 
 LICENSE=	AL2

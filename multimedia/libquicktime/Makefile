@@ -7,7 +7,7 @@ PORTREVISION?=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for reading and writing quicktime files
 
 .if !defined(_BUILDING_LIBQUICKTIME_PLUGINS)

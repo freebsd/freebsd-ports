@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://diracvideo.org/download/schroedinger/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-speed Dirac codec
 
 LICENSE=	GPLv2 LGPL20 MIT MPL

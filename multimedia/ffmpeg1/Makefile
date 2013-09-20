@@ -7,7 +7,7 @@ CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
 PKGNAMESUFFIX=	1
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
 
 LICENSE=		GPLv2 LGPL21

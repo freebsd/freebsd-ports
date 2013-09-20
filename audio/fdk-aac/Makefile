@@ -6,7 +6,7 @@ PORTVERSION=	0.1.2
 CATEGORIES=	audio
 MASTER_SITES=	SF/opencore-amr/${PORTNAME}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of the Fraunhofer FDK AAC Codec Library
 
 NOT_FOR_ARCHS=		sparc64
