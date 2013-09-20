@@ -1,13 +1,9 @@
-# New ports collection makefile for:	acroreadwrapper
-# Date created:		20 February 2006
-# Whom:			hrs
-#
+# Created by: hrs
 # $FreeBSD$
-#
 
 PORTNAME=	acroreadwrapper
 PORTVERSION=	0.0.20130208
-CATEGORIES=	print
+CATEGORIES=	print kld
 MASTER_SITES=	http://people.allbsd.org/~hrs/FreeBSD/
 DISTNAME=	linux_adobe_kmod-${PORTVERSION:E}
 
@@ -17,6 +13,8 @@ COMMENT=	Wrapper for Adobe Reader
 LICENSE=	BSD
 
 RUN_DEPENDS=	${LOCALBASE}/lib/linux-libgtkembedmoz/libgtkembedmoz.so:${PORTSDIR}/www/linux-libgtkembedmoz
+
+SSP_UNSAFE=	kernel module does not support ssp
 
 ONLY_FOR_ARCHS=	amd64 i386
 PLIST_FILES=	bin/acroread8 bin/acroread9 bin/acroread \

@@ -1,9 +1,5 @@
-# Ports collection makefile for: mono-kmod
-# Date created:		14 April 2007
-# Whom:			bkoenig@cs.tu-berlin.de
-#
+# Created by: bkoenig@cs.tu-berlin.de
 # $FreeBSD$
-#
 
 PORTNAME=	mono-kmod
 PORTVERSION=	20070416
@@ -15,6 +11,7 @@ COMMENT=	Execute .NET applications from command line
 
 ONLY_FOR_ARCHS=	i386 amd64 arm
 
+SSP_UNSAFE=	kernel module does not support ssp
 USE_BZIP2=	yes
 KMODDIR?=	/boot/modules
 SUB_FILES=	pkg-message

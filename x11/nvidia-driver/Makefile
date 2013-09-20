@@ -27,6 +27,7 @@ LICENSE_NAME=	License For Customer Use of NVIDIA Software
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
+SSP_UNSAFE=	kernel module does not support ssp
 ARCH_SUFX=	${ARCH:S/i386//:S/amd/_/}
 USE_XORG=	xorg-server
 USE_GL=		gl

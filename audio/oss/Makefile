@@ -14,6 +14,7 @@ LICENSE=	BSD
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
+SSP_UNSAFE=	kernel module does not support ssp
 USE_BZIP2=	yes
 ALL_TARGET=	all install
 USE_GNOME=	gtk20

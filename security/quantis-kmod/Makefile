@@ -17,6 +17,7 @@ LICENSE=	BSD GPLv2
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKDIR}/Quantis-${DISTVERSION}/License.txt
 
+SSP_UNSAFE=	kernel module does not support ssp
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-aqo
 

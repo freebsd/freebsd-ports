@@ -1,9 +1,5 @@
-# New ports collection makefile for:	plasma-kmod
-# Date created:				24 January 2001
-# Whom:					George Reid <greid@ukug.uk.freebsd.org>
-#
+# Created by: George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	plasma
 PORTVERSION=	0.1
@@ -16,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A plasma-effect screensaver kernel module
 
 LICENSE=	BSD
+
+SSP_UNSAFE=	kernel module does not support ssp
 
 .include <bsd.port.pre.mk>
 

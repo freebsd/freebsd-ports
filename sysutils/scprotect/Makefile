@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	scprotect
-# Date created:		5 Feb 2009
-# Whom:			Denis Barov  <dindin@dindin.ru>
-#
+# Created by: Denis Barov  <dindin@dindin.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	scprotect
 PORTVERSION=	20091116
@@ -14,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Protect process from killing when the swap space is exhausted
 
 NO_PACKAGE=	Needs to be compiled for specific kernel
+SSP_UNSAFE=	kernel module does not support ssp
 
 KMODDIR?=	/boot/modules
 

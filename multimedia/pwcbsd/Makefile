@@ -15,6 +15,8 @@ COMMENT=	The Linux pwc webcam driver ported to FreeBSD
 
 CONFLICTS=	pwcview-[0-9]*
 
+SSP_UNSAFE=	kernel module does not support ssp
+
 MAN4=		pwc.4
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	parallels-tools
-# Date created:		14 Jun 2009
-# Whom:			Alexander Nedotsukov <bland@FreeBSD.org>
-#
+# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	parallels-tools
 PORTVERSION=	0.1.1
@@ -14,6 +10,7 @@ MASTER_SITE_SUBDIR=	bland
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Parallels Desktop Tools for FreeBSD
 
+SSP_UNSAFE=	kernel module does not support ssp
 USE_BZIP2=	yes
 
 ONLY_FOR_ARCHS=	amd64 i386

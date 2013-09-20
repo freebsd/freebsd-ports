@@ -24,6 +24,8 @@ USES=			pkgconfig
 USE_LDCONFIG=		yes
 CPPFLAGS+=		-Wno-deprecated-declarations
 
+SSP_UNSAFE=		kernel module does not support ssp
+
 CONFIGURE_ARGS+=	--without-procps --sysconfdir=${LOCALBASE}/etc
 .if defined(WITHOUT_X11)
 LIB_DEPENDS+=		glib-2.0:${PORTSDIR}/devel/glib20

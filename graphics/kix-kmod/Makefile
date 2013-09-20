@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kix-kmod
-# Date created:				4 January 2003
-# Whom:					Jonathan Belson <jon@witchspace.com>
-#
+# Created by: Jonathan Belson <jon@witchspace.com>
 # $FreeBSD$
-#
 
 PORTNAME=       kix
 PORTVERSION=	1.0
@@ -15,6 +11,8 @@ PKGNAMESUFFIX=	-kmod
 
 MAINTAINER=	jon@witchspace.com
 COMMENT=	A graphical screensaver kernel module
+
+SSP_UNSAFE=	kernel module does not support ssp
 
 .include <bsd.port.pre.mk>
 

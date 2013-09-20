@@ -10,6 +10,28 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130920:
+AUTHOR: bdrewery@FreeBSD.org
+
+  SSP support has been added to ports with WITH_SSP for i386 and amd64
+  on FreeBSD 10, and amd64 on earlier versions.
+
+  SSP_UNSAFE is added to disable in a port if it fails to build, but
+  this should only be used in rare circumstances such as kernel modules.
+  Otherwise, the port may just be failing due to lack of respecting
+  LDFLAGS.
+
+  On FreeBSD 10, this uses an ldscript in /usr/lib/libc.so to pull in
+  libssp_nonshared.a to address issues linking on i386 [1].
+  
+  On earlier FreeBSD versions the WITH_SSP knob will add -lssp_nonshared
+  to LDFLAGS on i386. This is not needed on amd64. However, several hundred
+  ports do not currently respect LDFLAGS, so this support is disabled currently
+  as it causes build failures if a dependency is looking for the stack_chk
+  symbols.
+
+  [1] http://svnweb.freebsd.org/base/head/lib/libc/libc.ldscript?revision=251668&view=markup
+
 20130919:
 AUTHOR: gahr@FreeBSD.org
 

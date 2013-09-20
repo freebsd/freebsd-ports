@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	libtecla
-# Date created:		Feb 12, 2001
-# Whom:			Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libtecla
 PORTVERSION=	1.6.2
@@ -25,6 +20,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		REALCURDIR="${.CURDIR}" \
 		PORTNAME="${PORTNAME}"
 MAKE_JOBS_UNSAFE=	yes
+SSP_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 

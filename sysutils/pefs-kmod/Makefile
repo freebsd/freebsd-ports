@@ -1,4 +1,4 @@
-# Created by: Gleb Kurtsou <gleb@freebsd.org>
+# Created by: Gleb Kurtsou <gleb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pefs
@@ -12,6 +12,7 @@ COMMENT=	PEFS kernel level stacked cryptographic filesystem
 
 LICENSE=	BSD
 
+SSP_UNSAFE=	kernel module does not support ssp
 FETCH_ARGS=	-Fpr		# work around 302 redirect
 
 KMODDIR?=	/boot/modules

@@ -12,6 +12,7 @@ COMMENT=	Network Traffic Accounting and Monitoring Software
 
 LIB_DEPENDS=	pcap.1:${PORTSDIR}/net/libpcap
 
+SSP_UNSAFE=	kernel module does not support ssp
 USE_SUBMAKE=	yes
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	netams

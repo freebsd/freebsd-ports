@@ -5,6 +5,30 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130920:
+  AFFECTS: Users of ports
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Optional Stack Protector [1] support has been added with the WITH_SSP
+  knob.
+
+  This currently is only supported on FreeBSD 10 amd64/i386 and earlier
+  releases on amd64 only.
+
+  The default SSP_CLFAGS is -fstack-protector, but -fstack-protector-all
+  may optionally be set instead.
+
+  To enable support, add WITH_SSP=yes to your make.conf and rebuild all
+  ports.
+
+  # portmaster -af
+
+  or
+
+  # portupgrade -af
+
+  [1] https://en.wikipedia.org/wiki/Buffer_overflow_protection
+
 20130904:
   AFFECTS: 10-CURRENT users with any port depending on converters/libiconv
   AUTHOR: madpilot@FreeBSD.org

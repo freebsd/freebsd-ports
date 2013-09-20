@@ -9,6 +9,8 @@ MASTER_SITES=	http://download.gna.org/gnustep/
 MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	Replacement Objective-C runtime supporting modern Objective-C features
 
+SSP_UNSAFE=	yes
+
 .include <bsd.port.options.mk>
 
 USES=		cmake

@@ -11,6 +11,8 @@ COMMENT=	Kernel module to retrieve bitmap fonts from BIOS memory
 
 LICENSE=	BSD
 
+SSP_UNSAFE=	kernel module does not support ssp
+
 # only platforms guraranteed to be ok, feedback/patches are welcome
 ONLY_FOR_ARCHS=	i386 amd64
 

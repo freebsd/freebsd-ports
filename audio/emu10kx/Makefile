@@ -1,9 +1,5 @@
-# Ports collection makefile for: emu10kx
-# Date created:  7 Aug 2005
-# Whom: michaels@sdf.lonestar.org
-#
+# Created by: michaels@sdf.lonestar.org
 # $FreeBSD$
-#
 
 PORTNAME=	emu10kx
 PORTVERSION=	20051021
@@ -17,6 +13,7 @@ COMMENT=	SBLive!, Audigy, and Audigy2 driver for FreeBSD
 USE_BZIP2=	yes
 
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
+SSP_UNSAFE=	kernel module does not support ssp
 
 MAN8=	emuctrl.8
 PLIST_FILES=	sbin/emuctrl etc/rc.d/emuctrl.sh
