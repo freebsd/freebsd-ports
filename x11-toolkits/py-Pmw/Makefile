@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PMWVERSION=	${DISTNAME:R:S/./_/g}
 PLIST_SUB=	PMWVERSION="${PMWVERSION}"
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC}/Pmw/${PMWVERSION}/bin; ${TAR} cf - .) | \

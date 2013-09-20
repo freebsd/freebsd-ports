@@ -1,4 +1,4 @@
-# Created by: fjoe@FreeBSD.ORG
+# Created by: fjoe@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	wx
@@ -47,6 +47,7 @@ OPTIONS_DEFINE=	GSTREAMER MSPACK
 OPTIONS_DEFAULT=	GSTREAMER MSPACK
 MSPACK_DESC=	MS archives support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGSTREAMER}

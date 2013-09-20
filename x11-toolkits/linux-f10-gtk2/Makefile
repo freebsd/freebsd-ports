@@ -1,9 +1,5 @@
-# New ports collection makefile for:	x11-toolkits/linux-f10-gtk2
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	gtk2
 PORTVERSION=	2.14.7
@@ -47,6 +43,7 @@ SRC_DISTFILES=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}.src.rpm \
 		pixman-0.12.0-3.fc10.src.rpm \
 		jasper-1.900.1-8.fc9.src.rpm
 
+NO_STAGE=	yes
 post-install:
 	@chroot ${PREFIX} /usr/bin/gtk-query-immodules-2.0-32 > ${PREFIX}/etc/gtk-2.0/i386-redhat-linux-gnu/gtk.immodules
 	@chroot ${PREFIX} /usr/bin/gdk-pixbuf-query-loaders-32 > ${PREFIX}/etc/gtk-2.0/i386-redhat-linux-gnu/gdk-pixbuf.loaders

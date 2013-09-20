@@ -34,6 +34,7 @@ EXAMPLEDIRS=	01.HelloWorld 02.Quake3Map 03.CustomSceneNode 04.Movement 05.UserIn
 OPTIONS_DEFINE=	DEBUG EXAMPLES JOYSTICK
 JOYSTICK_DESC=	Support for Linux Joystick
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if (${ARCH} == "amd64") || (${ARCH} == "ia64")

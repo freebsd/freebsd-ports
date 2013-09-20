@@ -26,6 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_TK=		84+
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} == 1.9

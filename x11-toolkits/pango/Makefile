@@ -41,6 +41,7 @@ MAN1=		pango-view.1 pango-querymodules.1
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

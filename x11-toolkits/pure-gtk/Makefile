@@ -14,5 +14,6 @@ USES=		pkgconfig
 USE_PURE=	ffi
 USE_GNOME=	glib20 gtk20 atk pango
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/pure/bsd.pure.mk"
 .include <bsd.port.mk>

@@ -17,6 +17,7 @@ WX_UNICODE=	yes
 NOPORTDOCS=	yes
 USE_DOS2UNIX=	yes
 
+NO_STAGE=	yes
 post-patch::
 	@${REINPLACE_CMD} 's|"wx-config"|"wxgtk2u-2.9-config"| ; \
 	    s|/sbin/ldconfig -n|/sbin/ldconfig -m| ' ${WRKSRC}/Setup.hs

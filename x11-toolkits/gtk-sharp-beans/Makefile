@@ -15,6 +15,7 @@ GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
 USE_BZIP2=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

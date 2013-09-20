@@ -34,4 +34,5 @@ MAN3=		Gtk2::ImageView.3 \
 		Gtk2::ImageView::Zoom.3 \
 		Gtk2::ImageView::index.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

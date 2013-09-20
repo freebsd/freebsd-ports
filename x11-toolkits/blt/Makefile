@@ -33,6 +33,7 @@ USE_TK=		84+
 INVALID_TK_VER=	86
 USE_XORG=	x11
 
+NO_STAGE=	yes
 post-install:
 	${LN} -sf libBLT24.so.3 ${PREFIX}/lib/libBLT24.so
 	${LN} -sf libBLTlite24.so.3 ${PREFIX}/lib/libBLTlite24.so

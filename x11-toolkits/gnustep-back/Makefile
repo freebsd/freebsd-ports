@@ -49,6 +49,7 @@ CONFIGURE_ARGS+=	--disable-glitz
 PLIST_SUB+=		BACK=cairo-${BACKVERSION}
 BACK_SUFFIX?=		-cairo
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 MAKE_FLAGS+=		messages=yes

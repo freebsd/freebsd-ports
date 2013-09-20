@@ -22,6 +22,7 @@ MAKE_ENV=	DESTDIR=${DESTINY}
 
 #CONFIGURE_ARGS=	--with-gtkada=NO
 
+NO_STAGE=	yes
 post-install:
 	${MV} ${DESTINY}${PREFIX}/examples ${DESTINY}${PREFIX}/share/
 	${CP} -pR ${DESTINY}${PREFIX}/ ${PREFIX}/

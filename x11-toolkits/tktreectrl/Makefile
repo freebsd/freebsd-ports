@@ -21,4 +21,5 @@ USE_LDCONFIG=	${PREFIX}/lib/${TKPKG}
 PLIST_SUB=	TKPKG=${TKPKG}
 MANN=		treectrl.n
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

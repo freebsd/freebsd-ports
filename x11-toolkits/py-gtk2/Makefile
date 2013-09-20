@@ -39,6 +39,7 @@ CONFLICTS=	py*-gtk-0*
 OPTIONS_DEFINE=	NUMPY
 NUMPY_DESC=	Numpy support (pulls in gcc44)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNUMPY}

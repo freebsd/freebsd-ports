@@ -62,4 +62,5 @@ MAN3=		Gtk2::Ex::FormFactory.3 \
 		Gtk2::Ex::FormFactory::Window.3 \
 		Gtk2::Ex::FormFactory::YesNo.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

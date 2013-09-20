@@ -25,6 +25,7 @@ PLIST_SUB+=	GHC="@comment "
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"

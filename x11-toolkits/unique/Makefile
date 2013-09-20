@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--disable-maintainer-flags
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/configure ${WRKSRC}/Makefile.in

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Gtk2-Ex-Simple-List
-# Date created:		3 December 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Gtk2-Ex-Simple-List
 PORTVERSION=	0.50
@@ -23,4 +19,5 @@ USES=		perl5
 USE_PERL5=	configure
 MAN3=	${PORTNAME:S/-/::/g}.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

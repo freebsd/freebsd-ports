@@ -31,6 +31,7 @@ MAN1=		clock.1 cmdtool.1 olwm.1 olwmslave.1 props.1 shelltool.1 \
 		textedit.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 do-install:
 	@cd ${WRKSRC}/clients; ${MAKE} install install.man
 

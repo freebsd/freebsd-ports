@@ -28,6 +28,7 @@ USE_PYTHON=	2.5+
 MAKEFILE=	GNUmakefile
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 post-patch:
 		${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#g' \
 			${WRKSRC}/GNUmakefile

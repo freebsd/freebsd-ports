@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-kiwi
-# Date created:		2006-05-04
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	kiwi
 PORTVERSION=	1.9.29
@@ -30,6 +26,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
 FETCH_ARGS=	-rRp
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}

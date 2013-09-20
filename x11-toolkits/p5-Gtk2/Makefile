@@ -1,9 +1,5 @@
-# New ports collection makefile for:		x11-toolkits/p5-Gtk2
-# Date created:					Oct 27 2003
-# Whom:						clsung@dragon2.net
-#
+# Created by: clsung@dragon2.net
 # $FreeBSD$
-#
 
 PORTNAME=	Gtk2
 PORTVERSION=	1.243
@@ -30,6 +26,7 @@ USE_GMAKE=	yes
 CONFIGURE_ENV+=	FORCE_GMAKE=yes
 MAKE_ENV+=	LANG=C
 
+NO_STAGE=	yes
 post-install:
 	@cd ${WRKSRC}/blib/man3 && ${FIND} * -name "*.3" | ${SED} \
 		's,^,${MAN3PREFIX:S,^${PREFIX}/,,}/man/man3/,' >> ${TMPPLIST}

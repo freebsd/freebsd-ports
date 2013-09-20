@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qt4pas
-# Date created:		2009-01-20
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qt4pas
 PORTVERSION=	2.5
@@ -21,6 +17,7 @@ USE_QT4=	corelib gui network script webkit qmake_build \
 
 QT4_VER_MIN=	4.5.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if  ${QT4_VERSION:S/.//g} < ${QT4_VER_MIN:S/.//g}

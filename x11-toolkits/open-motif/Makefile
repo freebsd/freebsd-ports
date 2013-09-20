@@ -1,5 +1,4 @@
 # $FreeBSD$
-#
 
 PORTNAME=	open-motif
 PORTVERSION=	2.3.4
@@ -47,6 +46,7 @@ EXTRA_PATCHES+=	${WITH_JDK_PATCH}
 
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "sparc64"

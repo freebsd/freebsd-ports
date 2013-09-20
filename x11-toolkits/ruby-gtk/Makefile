@@ -51,6 +51,7 @@ DOCS_EN=	BUGS \
 		ToDo
 DOCS_JA=	README.EXT.ja
 
+NO_STAGE=	yes
 post-extract:
 	${FIND} ${WRKSRC} -name CVS -type d -print0 | ${XARGS} -0 ${RM} -rf
 	${MKDIR} ${WRKSRC}/sample/browser

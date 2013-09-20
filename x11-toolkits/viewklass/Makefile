@@ -16,6 +16,7 @@ BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 USES=		motif
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/^CFLAGS=/CFLAGS+=/g ; \
 		s/^CXXFLAGS=/CXXFLAGS+=/g ; \

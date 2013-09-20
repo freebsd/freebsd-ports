@@ -1,9 +1,5 @@
-# New ports collection makefile for:	x11-toolkits/linux-f10-gtk
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	gtk
 PORTVERSION=	1.2.10
@@ -26,4 +22,5 @@ RPMVERSION=	66.fc10
 USE_LDCONFIG=	yes
 PLIST=		${PKGDIR}/pkg-plist.${LINUX_RPM_ARCH}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

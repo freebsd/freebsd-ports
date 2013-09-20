@@ -24,6 +24,7 @@ USES=		gmake
 MAKE_JOBS_UNSAFE=	yes
 MAKE_ENV=	OPENWINHOME=${LOCALBASE}
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

@@ -40,6 +40,7 @@ MAN1=		reswrap-17.1 shutterbug-17.1 adie-17.1 PathFinder-17.1 \
 MAN_REPLACE+=	s|${man1:S/-17//}|${man1}|;
 .endfor
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJPEG}

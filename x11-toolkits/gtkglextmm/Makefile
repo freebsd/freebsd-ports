@@ -20,6 +20,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-DGDK_DISABLE_DEPRECATED||g' \
 		-e 's|-DGDK_PIXBUF_DISABLE_DEPRECATED||g' \

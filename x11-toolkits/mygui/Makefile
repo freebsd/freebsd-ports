@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 USE_GCC=	yes
 USE_DOS2UNIX=	*.cpp *.h
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/install/ s|lib/pkgconfig|libdata/pkgconfig|' \
 		${WRKSRC}/CMake/ConfigureBuild.cmake

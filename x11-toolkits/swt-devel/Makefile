@@ -46,6 +46,7 @@ MOZILLA_DESC=	Gecko browser support
 
 OPTIONS_DEFAULT=CAIRO GNOMEVFS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCAIRO}

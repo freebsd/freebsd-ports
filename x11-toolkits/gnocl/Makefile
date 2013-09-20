@@ -34,6 +34,7 @@ PLIST_FILES=	${BASEDIR}/${PORTNAME}.so \
 		${BASEDIR}/pkgIndex.tcl
 PLIST_DIRS=	${BASEDIR}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|tclsh|${TCLSH}|; \
 	    s|%%LOCALBASE%%|${LOCALBASE}|; \

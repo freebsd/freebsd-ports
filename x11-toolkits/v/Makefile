@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/home/vgui
 OPTIONS_DEFINE=	OPENGL # DOCS (commented out, see below)
 OPTIONS_DEFAULT=	OPENGL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENGL}

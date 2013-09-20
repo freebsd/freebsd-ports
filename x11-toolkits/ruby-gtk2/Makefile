@@ -1,10 +1,6 @@
-# New ports collection makefile for:	Ruby/GTK2
-# Date created:		19 April 1999
-# Whom:			Yasuhiro Fukuma <yasuf@big.or.jp>
-#
+# Created by: Yasuhiro Fukuma <yasuf@big.or.jp>
 # $FreeBSD$
 #   $MCom: ports/x11-toolkits/ruby-gtk2/Makefile,v 1.5 2007/10/05 05:06:39 mezz Exp $
-#
 
 PORTNAME=	gtk2
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
@@ -32,6 +28,7 @@ CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 MASTERDIR=	${.CURDIR}/../../x11/ruby-gnome2
 PKGDIR=		${.CURDIR}
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile.common"
  
 WRKSRC=		${RUBY_GNOME_WRKSRC}/gtk2

@@ -30,5 +30,6 @@ PLIST_FILES=	lib/libgdiplus.a \
 		lib/libgdiplus.so.0 \
 		libdata/pkgconfig/libgdiplus.pc
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>

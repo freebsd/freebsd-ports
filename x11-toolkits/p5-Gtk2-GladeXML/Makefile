@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Gtk2-GladeXML
-# Date created:		22 July 2008
-# Whom:			Paul Schmehl <pauls@utdallas.edu>
-#
+# Created by: Paul Schmehl <pauls@utdallas.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	Gtk2-GladeXML
 PORTVERSION=	1.007
@@ -29,4 +25,5 @@ USES=		perl5
 USE_PERL5=	configure
 MAN3=	${PORTNAME:S/-/::/g}.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

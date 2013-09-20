@@ -1,9 +1,5 @@
-# New ports collection makefile for:    gnome-sharp
-# Date created:         		20061025
-# Whom:                 		Tom McLaughlin <tmclaugh@FreeBSD.org>
-#
+# Created by: Tom McLaughlin <tmclaugh@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnome-sharp
 PORTVERSION=	2.24.2
@@ -24,6 +20,7 @@ USE_GNOME=	gnomehack gnomepanel gtksharp20 librsvg2 vte libgnomeprintui \
 		libgnomeui
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^#!/usr/bin/perl|#!${PERL}|'

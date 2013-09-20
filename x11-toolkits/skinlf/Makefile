@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	skinlf
-# Date created:		September 2009
-# Whom:			Chris Rees
-#
+# Created by: Chris Rees
 # $FreeBSD$
-#
 
 PORTNAME=	skinlf
 PORTVERSION=	6.7
@@ -27,6 +23,7 @@ NO_BUILD=	yes
 PLIST_FILES=	%%JAVAJARDIR%%/${JAR_NAME} \
 		%%JAVAJARDIR%%/themepack.zip
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${JAVAJARDIR}
 	${INSTALL_DATA} "${WRKSRC}/lib/${JAR_NAME}" ${JAVAJARDIR}/${JAR_NAME}

@@ -48,6 +48,7 @@ OPTIONS_DEFAULT=	CAIRO GNOMEVFS
 GNOMEVFS_DESC=	Gnome VFS Support
 BROWSER_DESC=	Gecko Browser Support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCAIRO}

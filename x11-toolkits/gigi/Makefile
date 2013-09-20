@@ -33,6 +33,7 @@ PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 GIGI_LIBS=	GiGi GiGiSDL
 WRKSRC=		${WRKDIR}/gigi/GG
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOGRE}

@@ -23,6 +23,7 @@ DOCSDIR=	${PREFIX}/share/doc/gtkextra2
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

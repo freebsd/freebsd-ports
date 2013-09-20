@@ -1,10 +1,6 @@
-# New ports collection makefile for:	Ruby/Pango
-# Date created:		9 February
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
 #   $MCom: ports/x11-toolkits/ruby-pango/Makefile,v 1.2 2005/10/17 07:05:43 mezz Exp $
-#
 
 PORTNAME=	pango
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
@@ -32,6 +28,7 @@ CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 MASTERDIR=	${.CURDIR}/../../x11/ruby-gnome2
 PKGDIR=		${.CURDIR}
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile.common"
  
 WRKSRC=		${RUBY_GNOME_WRKSRC}/${PORTNAME}

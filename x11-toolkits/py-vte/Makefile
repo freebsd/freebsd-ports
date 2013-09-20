@@ -1,10 +1,6 @@
-# New ports collection makefile for:	py-vte
-# Date created:				18 February 2007
-# Whom:					Alexander Nedotsukov <bland@FreeBSD.org>
-#
+# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11-toolkits/py-vte/Makefile,v 1.5 2010/09/30 09:15:43 kwm Exp $
-#
 
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnome python
@@ -25,4 +21,5 @@ CONFIGURE_ARGS=	--enable-python \
 		--disable-Bsymbolic \
 		--disable-freetypetest
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

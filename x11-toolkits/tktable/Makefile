@@ -21,6 +21,7 @@ PORTDOCS=	*
 
 PLIST_SUB=	DISTNAME=${DISTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tktray
-# Date created:		14 October 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tktray
 PORTVERSION=	1.1
@@ -26,6 +22,7 @@ PLIST_SUB=	TKPKG=${TKPKG}
 USE_LDCONFIG=	${PREFIX}/lib/${TKPKG}
 MANN=		${PORTNAME}.n
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -Ee '/^.+TCLLIBPATH/s#$$# \\#' ${WRKSRC}/Makefile.in
 

@@ -28,6 +28,7 @@ OPTIONS_DEFINE=	DEBUG DOCS
 
 DEBUG_CONFIGURE_ON=	--enable-debug
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-configure:

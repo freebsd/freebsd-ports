@@ -49,6 +49,7 @@ MAN5 =	VirtualBindings.5 mwmrc.5
 .if defined(HAVE_MOTIF) && !defined(PACKAGE_BUILDING) && !defined(BATCH) && !defined(WANT_LESSTIF)
 MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
 IS_INTERACTIVE=	yes
+NO_STAGE=	yes
 pre-extract:
 	@${ECHO_CMD} "***********************************************************"
 	@${ECHO_CMD} "*                      W a r n i n g                      *"

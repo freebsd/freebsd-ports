@@ -32,6 +32,7 @@ FFMPEG_DESC=	FFmpeg plugin
 QT4_DESC=	Qt4 plugin
 GD_DESC=	GD plugin
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc" && ${OSVERSION} > 900000

@@ -43,6 +43,7 @@ PYDISTUTILS_EGGINFO=	${WX_PYTHON_DIR}/wxPython-${PORTVERSION}-${PYTHON_VERSION:S
 			wxaddons-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg-info
 .endif
 
+NO_STAGE=	yes
 post-extract:
 # only keep the scripts we need
 	@${RM} ${WRKSRC}/scripts/*.py

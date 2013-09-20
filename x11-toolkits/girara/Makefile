@@ -13,6 +13,7 @@ USE_GNOME=	glib20 gtk20
 USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if exists(/usr/bin/clang) && ${OSVERSION} > 900014

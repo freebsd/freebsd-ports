@@ -144,6 +144,7 @@ MAN3=		Tie::Watch.3 \
 		Tk::tkvars.3 \
 		Tk::widgets.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXFT}

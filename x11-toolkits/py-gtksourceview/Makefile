@@ -20,4 +20,5 @@ USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docs
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

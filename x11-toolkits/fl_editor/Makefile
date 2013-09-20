@@ -1,9 +1,5 @@
-# New ports collection makefile for: fl_editor
-# Date created:		17 August 2001
-# Whom:			Cyrille Lefevre <clefevre@citeweb.net>
-#
+# Created by: Cyrille Lefevre <clefevre@citeweb.net>
 # $FreeBSD$
-#
 
 PORTNAME=	fl_editor
 PORTVERSION=	0.4.5
@@ -40,6 +36,7 @@ LIB_FILES=	libfleditor.so.1
 
 post-patch: patch-inplace
 
+NO_STAGE=	yes
 patch-inplace:
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/Makefile.in

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	Mowitz
-# Date created:		this 7th day of January, 2002
-# Whom:			mi
-#
+# Created by: mi
 # $FreeBSD$
 
 PORTNAME=	Mowitz
@@ -21,6 +18,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xawm=Xaw3d
 
+NO_STAGE=	yes
 post-install:
 	${RM} ${PREFIX}/lib/libMowitz.la
 # Anyone knows a better way?

@@ -19,6 +19,7 @@ USE_LDCONFIG=	yes
 MAKE_ENV=	MKDIR="${MKDIR}" \
 		LN="${LN}"
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libeasygtk.a ${PREFIX}/lib/
 	${INSTALL_DATA} ${WRKSRC}/easygtk.h ${PREFIX}/include/

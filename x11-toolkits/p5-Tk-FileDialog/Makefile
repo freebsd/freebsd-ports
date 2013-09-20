@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-Tk-FileDialog
-# Date created:		1 July 2001
-# Whom:			minter
-#
+# Created by: minter
 # $FreeBSD$
 
 PORTNAME=	Tk-FileDialog
@@ -22,4 +19,5 @@ MAN3=		Tk::FileDialog.3
 
 PLIST_SUB=	PERL_VERSION=${PERL_VERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

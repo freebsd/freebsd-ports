@@ -1,9 +1,5 @@
-# New ports collection makefile for:	plib
-# Date created:		26 June 1999
-# Whom:			Brian Buchanan <brian@CSUA.Berkeley.EDU>
-#
+# Created by: Brian Buchanan <brian@CSUA.Berkeley.EDU>
 # $FreeBSD$
-#
 
 PORTNAME=	plib
 PORTVERSION=	1.8.5
@@ -23,6 +19,7 @@ CXXFLAGS+=	-fPIC
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-js-jsBSD.cxx

@@ -11,6 +11,7 @@ GNU_CONFIGURE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/gtkmm-2.4
 
+NO_STAGE=	yes
 do-install:
 .if !defined(NOPORTDOCS)
 .for d in docs

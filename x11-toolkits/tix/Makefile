@@ -1,4 +1,4 @@
-# Created by: Thomas Gellekum <tg@freebsd.org>
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	tix
@@ -39,6 +39,7 @@ MANN=		TixIntro.n compound.n pixmap.n tix.n tixBalloon.n \
 
 TIX_LIB=	libTix${PORTVERSION}.so
 TIX_LIB_FILE=	${TIX_LIB}.0
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-extract:

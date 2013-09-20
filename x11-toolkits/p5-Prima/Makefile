@@ -132,6 +132,7 @@ MAN3=		Prima.3 \
 		pod::Prima::tutorial.3 \
 		pod::gencls.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXFT}

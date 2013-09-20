@@ -44,6 +44,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-gnome-desktop
 DOCSDIR=	${WRKSRC}/share/doc/py-gnome-desktop
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

@@ -1,8 +1,5 @@
-# New ports collection makefile for:	x11-toolkits/linux-f10-blt
-# Date created:				2009-08-04
-# Whom:					Stas Timoknin <stast@bsdportal.ru>
+# Created by: Stas Timoknin <stast@bsdportal.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	blt
 PORTVERSION=	2.4
@@ -21,4 +18,5 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}" TCLVERSION="8.5"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

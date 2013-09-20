@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xscoop
-# Date created:				Sa 04 Nov 2005 00:00:00 MET DST
-# Whom:					Ron Scheckelhoff <rscheckelhoff@fourcalorieservers.com
-#
+# Created by: Ron Scheckelhoff <rscheckelhoff@fourcalorieservers.com
 # $FreeBSD$
-#
 
 PORTNAME=	xscoop
 PORTVERSION=	1.0.2
@@ -21,6 +17,7 @@ NO_BUILD=	yes
 # distfile contains i386 binary
 ONLY_FOR_ARCHS=	i386
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x

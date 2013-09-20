@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-fltk
-# Date created:		6 Apr 2004
-# Whom:			Radim Kolar
-#
+# Created by: Radim Kolar
 # $FreeBSD$
-#
 
 PORTNAME=	fltk
 PORTVERSION=	1.3.0
@@ -31,6 +27,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 XTRADOCS=	CHANGES README TODO
 CFLAGS+=	-DFL_LIBRARY
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/X11R6|${LOCALBASE}|g;s|package_data.*},||g;s|sunos5|freebsd8', 'freebsd9', 'freebsd10|g" ${WRKSRC}/setup.py
 
