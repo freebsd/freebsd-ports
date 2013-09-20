@@ -17,4 +17,5 @@ MAN3=		FontCacheChangeCacheSettings.3 \
 		FontCacheGetCacheStatistics.3 \
 		Xfontcache.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

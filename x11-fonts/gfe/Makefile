@@ -1,9 +1,5 @@
-# New ports collection makefile for:    gfe
-# Date created:         26 December 2001
-# Whom:                 Bruce M Simpson <bms@FreeBSD.org>
-#
+# Created by: Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gfe
 PORTVERSION=	0.0.4
@@ -20,4 +16,5 @@ PLIST_FILES=	bin/gfe
 USE_GNOME=	gtk12
 USE_XORG=	xpm
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -22,6 +22,7 @@ FONTS=		anorexia aqui cure cursor drift edges gelly glisp-bold \
 FONTDIR=	${LOCALBASE}/lib/X11/fonts/${PORTNAME}/
 FILES=		${FONTS:S,$,.pcf.gz,} ${FILESDIR}/fonts.dir
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

@@ -11,4 +11,5 @@ XORG_CAT=	font
 INSTALLS_TTF=	yes
 FONTDIR=	TTF OTF
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

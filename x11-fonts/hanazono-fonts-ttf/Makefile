@@ -1,9 +1,5 @@
-# New ports collection makefile for: hanazono-fonts-ttf
-# Date created:		2011/08/09
-# Whom:		Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	hanazono-fonts-ttf
 PORTVERSION=	20120421
@@ -32,6 +28,7 @@ PLIST_SUB=	FONTDIR=${FONTDIR}
 SUB_FILES=	pkg-message
 SUB_LIST=	FONTDIR=${FONTDIR}
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC}/ && \
 		${LOCALBASE}/bin/mkfontscale && \

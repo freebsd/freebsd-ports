@@ -1,7 +1,4 @@
-# New ports collection makefile for:	gnu-unifont
-# Date created:				Feb 23 2008
-# Whom:					nrg milk <bsdports@gmail.com>
-#
+# Created by: nrg milk <bsdports@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	gnu-unifont
@@ -20,6 +17,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 NO_BUILD=	yes
 PLIST_FILES=	lib/X11/fonts/local/unifont.pcf.gz
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${CP} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${WRKDIR}

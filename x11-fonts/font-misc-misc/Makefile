@@ -11,4 +11,5 @@ COMMENT=	X.Org miscellaneous Misc fonts
 XORG_CAT=	font
 USE_XORG=	fontutil
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

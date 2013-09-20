@@ -22,6 +22,7 @@ USE_BZIP2=	yes
 USES=		shebangfix perl5
 SHEBANG_FILES=	mkitalic
 
+NO_STAGE=	yes
 do-build:
 	@${DO_NADA}
 

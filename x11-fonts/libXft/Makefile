@@ -1,4 +1,3 @@
-#Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libXft
@@ -17,6 +16,7 @@ USE_XORG=	xproto:both xrender
 
 MAN3=		Xft.3
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${FILESDIR}/xft-config.in \
 		${WRKSRC}/xft-config.in

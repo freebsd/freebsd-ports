@@ -34,6 +34,7 @@ PORTDOCS=	FONTLOG.txt OFL-FAQ.txt OFL.txt README.txt
 SUB_LIST=	DIR="${FONTROOTDIR}/${FONTDIR}"
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-configure:
 	@${DO_NADA}
 

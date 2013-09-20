@@ -1,5 +1,4 @@
 # Created by: mi@aldan.algebra.com
-# $NetBSD: Makefile.common,v 1.2 2002/07/13 15:43:36 wiz Exp $
 # $FreeBSD$
 
 PORTNAME=	cyr-rfx-${CYR_RFX_ENCODING}
@@ -30,6 +29,7 @@ INST_DIR=	"lib/X11/fonts/${PORTNAME}"
 MAKE_ENV+=	INST_DIR="${LOCALBASE}/${INST_DIR}" MKDIR="${MKDIR}"
 PLIST_SUB+=	INST_DIR="${INST_DIR}"
 
+NO_STAGE=	yes
 post-install:
 	@${SED} -e 's,/usr/X11R6,${LOCALBASE},g' -e \
 		's,koi8-o,${CYR_RFX_ENCODING},g' < ${PKGMESSAGE}

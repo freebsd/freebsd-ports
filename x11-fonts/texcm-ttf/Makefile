@@ -1,9 +1,5 @@
-# New ports collection makefile for:	texcm-ttf
-# Date created:		6 March 2005
-# Whom:			Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	texcm-ttf
 PORTVERSION=	20010117
@@ -38,6 +34,7 @@ FONTSDIR=	${PREFIX}/lib/X11/fonts/${FONTNAME}
 MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
 MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} &&	${MKFONTSCL_CMD}
 	cd ${WRKSRC} &&	${MKFONTDIR_CMD}

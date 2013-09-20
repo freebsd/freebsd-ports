@@ -31,6 +31,7 @@ TD1_DESC=	Variant with centered '~'
 SUB_LIST=	FONTDIR="${PREFIX}/${FONTDIR}"
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 ALL_TARGET=	pcf

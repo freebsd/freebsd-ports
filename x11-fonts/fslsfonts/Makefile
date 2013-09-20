@@ -14,4 +14,5 @@ PLIST_FILES=	bin/fslsfonts
 
 MAN1=		fslsfonts.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

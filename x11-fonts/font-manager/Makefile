@@ -26,6 +26,7 @@ PORTDATA=	*
 OPTIONS_DEFINE=	REPORTLAB NLS
 REPORTLAB_DESC=	Enable font-sampler (PDF sample sheet)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(NOPORTDATA)

@@ -39,6 +39,7 @@ PLIST_SUB=	FONTSDIR=${FONTSDIR} \
 SUB_FILES=	pkg-message
 SUB_LIST=	FONTSDIR=${PREFIX}/${FONTSDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)

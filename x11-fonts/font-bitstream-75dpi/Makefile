@@ -10,4 +10,5 @@ COMMENT=	X.Org Bitstream Vera 75dpi font
 
 XORG_CAT=	font
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

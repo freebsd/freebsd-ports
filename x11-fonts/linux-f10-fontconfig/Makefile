@@ -1,9 +1,5 @@
-# New ports collection makefile for:	x11-fonts/linux-f10-fontconfig
-# Date created:				2009-05-01
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.6.0
@@ -27,6 +23,7 @@ USE_LDCONFIG=	yes
 
 # We will use some other configuration file, so delete a linux one
 # Don't let the linux fc-cache mess up the native cache file
+NO_STAGE=	yes
 post-extract:
 		@${RM} -r ${WRKSRC}/etc ${WRKSRC}/usr/share/fonts ${WRKSRC}/var \
 			${WRKSRC}/usr/bin/fc-cache \

@@ -17,6 +17,7 @@ NO_WRKSUBDIR=	yes
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/lib/X11/fonts/urwfonts-ttf
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${WRKSRC}/fonts.* ${PREFIX}/lib/X11/fonts/urwfonts-ttf

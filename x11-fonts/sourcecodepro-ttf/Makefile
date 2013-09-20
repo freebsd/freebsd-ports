@@ -34,6 +34,7 @@ INSTDAT=		fonts.dir fonts.scale
 MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
 MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}/TTF/ && ${MKFONTSCL_CMD}
 	cd ${WRKSRC}/TTF/ && ${MKFONTDIR_CMD}

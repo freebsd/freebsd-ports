@@ -14,4 +14,5 @@ PLIST_FILES=	bin/xfsinfo
 
 MAN1=		xfsinfo.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

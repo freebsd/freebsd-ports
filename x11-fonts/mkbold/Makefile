@@ -23,6 +23,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_BZIP2=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mkbold ${PREFIX}/bin
 

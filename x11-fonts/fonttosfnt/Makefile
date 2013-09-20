@@ -16,4 +16,5 @@ PLIST_FILES=	bin/fonttosfnt
 
 MAN1=		fonttosfnt.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

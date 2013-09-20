@@ -20,4 +20,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 MAN1=		gbdfed.1
 PLIST_FILES=	bin/gbdfed
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

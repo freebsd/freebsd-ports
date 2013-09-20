@@ -15,4 +15,5 @@ XORG_CAT=	app
 PLIST_FILES=	bin/mkfontdir
 MAN1=		mkfontdir.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

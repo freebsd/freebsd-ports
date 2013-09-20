@@ -1,9 +1,5 @@
-# Ports collection makefile for:	isabella-ttf
-# Date created:				2010-03-07
-# Whom:					Lowell Gilbert <lgfbsd@be-well.ilk.org>
-#
+# Created by: Lowell Gilbert <lgfbsd@be-well.ilk.org>
 # $FreeBSD$
-#
 
 PORTNAME=	isabella-ttf
 PORTVERSION=	1.202
@@ -28,6 +24,7 @@ PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}" \
 MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
 MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${FONTDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTDIR}

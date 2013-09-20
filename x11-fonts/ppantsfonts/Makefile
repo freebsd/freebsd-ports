@@ -21,6 +21,7 @@ FONTDIR=	${LOCALBASE}/lib/X11/fonts/${PORTNAME}/
 FILES=	${FONTS:S,$,.pcf.gz,} ${FILESDIR}/fonts.dir
 WRKSRC=	${WRKDIR}/ppants
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

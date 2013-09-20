@@ -22,6 +22,7 @@ FONTDIR=	lib/X11/fonts/${PORTNAME}
 NO_BUILD=	yes
 PLIST_SUB+=	FONTDIR=${FONTDIR}
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/${FONTDIR}
 	@${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${PREFIX}/${FONTDIR}

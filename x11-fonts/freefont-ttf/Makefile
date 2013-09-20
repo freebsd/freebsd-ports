@@ -1,9 +1,5 @@
-# Ports collection makefile for:	freefont-ttf
-# Date created:				2005-12-17
-# Whom:					Andreas Kohn <andreas@syndrom23.de>
-#
+# Created by: Andreas Kohn <andreas@syndrom23.de>
 # $FreeBSD$
-#
 
 PORTNAME=	freefont-ttf
 PORTVERSION=	20120503
@@ -27,6 +23,7 @@ PORTDOCS=	AUTHORS ChangeLog CREDITS README
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

@@ -1,9 +1,5 @@
-# New ports collection makefile for: roboto-fonts-ttf
-# Date created:		2012-02-23
-# Whom:			Winston Weinert <winstonw@lavabit.com>
-#
+# Created by: Winston Weinert <winstonw@lavabit.com>
 # $FreeBSD$
-#
 
 PORTNAME=	roboto-fonts-ttf
 PORTVERSION=	20111129
@@ -27,6 +23,7 @@ PLIST_SUB=	FONTDIR=${FONTDIR}
 SUB_FILES=	pkg-message
 SUB_LIST=	FONTDIR=${FONTDIR}
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC}/ && \
 		${LOCALBASE}/bin/mkfontscale && \

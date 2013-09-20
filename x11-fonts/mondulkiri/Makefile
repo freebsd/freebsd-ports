@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mondulkiri
-# Date created:		August 8 2010
-# Whom:			Kuan-Chung Chiu <buganini@gmail.com>
-#
+# Created by: Kuan-Chung Chiu <buganini@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mondulkiri
 PORTVERSION=	2
@@ -24,6 +20,7 @@ PLIST_SUB+=	FONTSDIR=${FONTSDIR}
 
 WRKSRC=		${WRKDIR}/Opentype\ only\ fonts
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${PREFIX}/${FONTSDIR}

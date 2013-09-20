@@ -1,9 +1,5 @@
-# New ports collection makefile for:	font-pingwi
-# Date created:		2010-07-20
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pingwi
 PORTVERSION=	0.1
@@ -25,6 +21,7 @@ FONTSDIR=	${PREFIX}/lib/X11/fonts/pingwi
 SUB_FILES=	pkg-message
 SUB_LIST=	FONTSDIR=${FONTSDIR}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTSDIR}

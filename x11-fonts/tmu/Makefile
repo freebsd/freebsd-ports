@@ -1,9 +1,5 @@
-# New ports collection makefile for:	TibetanMachineUni
-# Date created:		19 May 2008
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tmu
 DISTVERSION=	1.901b
@@ -27,6 +23,7 @@ MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
 MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 FCCACHE_CMD=	${LOCALBASE}/bin/fc-cache -f -v
 
+NO_STAGE=	yes
 post-extract:
 	@cd ${WRKSRC}/&&${MV} TibMachUni-${DISTVERSION}.ttf tmu.ttf
 

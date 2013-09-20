@@ -16,6 +16,7 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 NO_WRKSUBDIR=	yes
 USE_XORG=	x11
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${DESCR}
 

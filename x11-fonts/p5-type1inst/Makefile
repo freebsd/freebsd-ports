@@ -24,6 +24,7 @@ PLIST_FILES=	bin/t1embed bin/type1inst
 
 MAN1=	type1inst.1
 
+NO_STAGE=	yes
 pre-install:
 	${REINPLACE_CMD} 's,^#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/type1inst
 

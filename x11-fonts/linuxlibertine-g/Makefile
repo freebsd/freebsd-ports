@@ -1,6 +1,3 @@
-# New ports collection makefile for:	linuxlibertine-G
-# Date created:				24 April 2012
-# Whom:					Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	linuxlibertine-g
@@ -34,6 +31,7 @@ INSTDAT=	fonts.dir fonts.scale
 
 WRKSRC=	${WRKDIR}/${FONTNAME}
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${MKFONTSCL_CMD}
 	cd ${WRKSRC} && ${MKFONTDIR_CMD}

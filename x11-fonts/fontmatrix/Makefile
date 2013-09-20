@@ -1,9 +1,4 @@
-# New ports collection makefile for:    fontmatrix
-# Date created:         2008-01-13
-# Whom:                 Max Brazhnikov <makc@issp.ac.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	fontmatrix
 DISTVERSION=	0.4.2
@@ -26,6 +21,7 @@ OPTIONS_DEFINE=	FONTFORGE
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 FONTFORGE_DESC=	With FontForge editor
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFONTFORGE}

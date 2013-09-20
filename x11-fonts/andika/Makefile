@@ -31,6 +31,7 @@ SUB_FILES=	pkg-message
 DOCSLIST=	FONTLOG.txt OFL-FAQ.txt README.txt
 PORTDOCS=	${DOCSLIST:C,^.*/,,}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-configure:

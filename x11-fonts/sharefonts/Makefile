@@ -14,6 +14,7 @@ RESTRICTED=	Shareware.  Cannot be distributed w/o prior authorization.
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/lib/X11/fonts/sharefont
 	${CP} ${WRKDIR}/sharefont/* ${PREFIX}/lib/X11/fonts/sharefont

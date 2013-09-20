@@ -26,6 +26,7 @@ USE_ZIP=	yes
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${PORTNAME}
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKDIR} -name __MACOSX | ${XARGS} ${RM} -r
 

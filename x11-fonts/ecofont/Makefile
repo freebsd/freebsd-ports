@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ecofont
-# Date created:		2010-04-09
-# Whom:			Joseph S. Atkinson <jsa@wickedmachine.net>
-#
+# Created by: Joseph S. Atkinson <jsa@wickedmachine.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ecofont
 PORTVERSION=	2.05
@@ -29,6 +25,7 @@ SUB_FILES=	pkg-message
 ECOFONT=	${DISTNAME}.ttf
 ECOFONTDIR=	lib/X11/fonts/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/${ECOFONTDIR}
 	@${INSTALL_DATA} ${WRKDIR}/${ECOFONT} ${PREFIX}/${ECOFONTDIR}

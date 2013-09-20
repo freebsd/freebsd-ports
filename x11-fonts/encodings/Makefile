@@ -12,4 +12,5 @@ XORG_CAT=	font
 USE_XORG=	fontutil
 FONTDIR=	encodings/large encodings
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

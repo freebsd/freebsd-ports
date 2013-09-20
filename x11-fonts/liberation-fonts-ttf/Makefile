@@ -35,6 +35,7 @@ INSTDAT=	AUTHORS fonts.dir fonts.scale
 MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
 MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${MKFONTSCL_CMD}
 	${REINPLACE_CMD} -e 's|-misc-|-redhat-|' ${WRKSRC}/fonts.scale

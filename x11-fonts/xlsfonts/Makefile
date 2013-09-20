@@ -14,4 +14,5 @@ PLIST_FILES=	bin/xlsfonts
 
 MAN1=		xlsfonts.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

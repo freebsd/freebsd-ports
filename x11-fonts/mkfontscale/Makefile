@@ -18,4 +18,5 @@ CONFIGURE_ARGS+=--disable-maintainer-mode
 PLIST_FILES=	bin/mkfontscale
 MAN1=		mkfontscale.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -10,4 +10,5 @@ COMMENT=	X.Org miscellaneous Sony fonts
 
 XORG_CAT=	font
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

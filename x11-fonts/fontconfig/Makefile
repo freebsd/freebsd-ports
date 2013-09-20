@@ -40,6 +40,7 @@ MAN1=		fc-cache.1 fc-cat.1 fc-list.1 fc-match.1 fc-query.1 fc-scan.1
 MAN5=		fonts-conf.5
 PORTDOCS=	fontconfig-user.html fontconfig-user.pdf fontconfig-user.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # work around fc-cache crash on arm platform
