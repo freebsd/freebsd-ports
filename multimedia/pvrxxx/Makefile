@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pvrxxx
-# Date created:				22 August 2006
-# Whom:					usleepless <usleepless@gmail.com>
-#
+# Created by: usleepless <usleepless@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pvrxxx
 PORTVERSION=	20060822
@@ -30,6 +26,7 @@ RESTRICTED=	This port uses a binary driver which is owned by Hauppauge
 MAN4=		cxm.4
 MAN1=		pvr250-setchannel.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 MODULESDIR=	/boot/modules

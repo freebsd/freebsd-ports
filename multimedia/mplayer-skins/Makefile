@@ -15,6 +15,7 @@ COMMENT=	Skins for MPlayer's Graphical User Interface (GUI)
 
 #
 # When adding a new skin, please make sure to add it into the following
+NO_STAGE=	yes
 # Makefiles:
 # - Makefile.skins
 # - Makefile.options

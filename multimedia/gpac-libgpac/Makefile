@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gpac-libm4systems
-# Date created:		2005-05-04
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gpac
 PORTVERSION=	0.4.5
@@ -42,6 +38,7 @@ CONFIGURE_ARGS=	--cc="${CC}" --X11-path="${LOCALBASE}" \
 
 CONFIGURE_ENV+=	LIBVER="${LIBVER}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}

@@ -145,6 +145,7 @@ XVID_CONFIGURE_ENABLE=		libxvid
 
 ZLIB_CONFIGURE_ENABLE=		zlib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}

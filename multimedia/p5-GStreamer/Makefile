@@ -53,6 +53,7 @@ MAN3=	GStreamer.3 GStreamer::Bin.3 GStreamer::Buffer.3 GStreamer::Bus.3 \
 	GStreamer::SystemClock.3 GStreamer::Tag.3 GStreamer::TagSetter.3 \
 	GStreamer::TypeFindFactory.3 GStreamer::index.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PERL_THREADED!=	${PERL} -mthreads -e '' >/dev/null 2>&1 && ${ECHO_CMD} 'yes' || ${ECHO_CMD}

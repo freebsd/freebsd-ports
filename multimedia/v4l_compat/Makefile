@@ -1,9 +1,4 @@
-# New ports collection makefile for:	v4l_compat
-# Date created:				Aug 1 2006
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	v4l_compat
 PORTVERSION=	1.0.${DUMMYDATE}
@@ -20,6 +15,7 @@ NO_BUILD=	yes
 BASE_HEADERS=	input.h uinput.h videodev.h videodev2.h
 DVB_HEADERS=	audio.h ca.h dmx.h frontend.h net.h osd.h version.h video.h
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/include/linux/dvb
 .for f in ${BASE_HEADERS}

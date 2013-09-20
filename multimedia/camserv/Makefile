@@ -1,9 +1,5 @@
-# New ports collection makefile for:	camserv
-# Date created:         Sat 22 July 2000
-# Whom:                 Chuck Hein <chein@freebsd.org> & Jim Overholt <overholt@isdw.net>
-#
+# Created by: Chuck Hein <chein@FreeBSD.org> & Jim Overholt <overholt@isdw.net>
 # $FreeBSD$
-#
 
 PORTNAME=	camserv
 PORTVERSION=	0.5.1
@@ -31,6 +27,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include \
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if exists(/usr/include/dev/bktr/ioctl_bt848.h)
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's#machine/\(ioctl_bt848.h\)#dev/bktr/\1#' \
 		${WRKSRC}/camserv/video_fbsd_bttv.c \

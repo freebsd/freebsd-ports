@@ -31,6 +31,7 @@ USE_LDCONFIG=	${PREFIX}/lib/gnome-subtitles
 
 MAN1=		gnome-subtitles.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vcdgear
-# Date created:	 	06 January 1999
-# Whom:			Chris Piazza <cpiazza@FreeBSD.org>
-#
+# Created by: Chris Piazza <cpiazza@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vcdgear
 PORTVERSION=	1.6d
@@ -15,6 +11,7 @@ COMMENT=	A tool to convert VCDs from cue/bin format to mpeg
 
 ONLY_FOR_ARCHS=	alpha i386 amd64
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386 || ${ARCH} == amd64

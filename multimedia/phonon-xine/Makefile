@@ -27,6 +27,7 @@ USE_QT4=	gui dbus xml phonon \
 
 PLIST_SUB+=	QT_PREFIX=${QT_PREFIX}
 
+NO_STAGE=	yes
 pre-su-install:
 	${MKDIR} ${QT_PLUGINDIR}/phonon_backend
 

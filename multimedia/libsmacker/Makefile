@@ -13,6 +13,7 @@ USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/libsmacker.so
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} '/CFLAGS/s|+=|?=|; s|gcc|${CC}|g' \
 		${WRKSRC}/Makefile

@@ -20,6 +20,7 @@ PLIST_FILES=	bin/replex
 PORTDOCS=	CHANGES README TODO
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${GREP} -lR "<stdint\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<stdint\.h>|<inttypes.h>|g'

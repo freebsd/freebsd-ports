@@ -27,6 +27,7 @@ OPTIONS_DEFAULT=	PROGRAMS
 PROGRAMS_DESC=	Build the programs
 MMAP_DESC=	Enable mmap support (MAY CRASH YOUR SYSTEM)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.kld \

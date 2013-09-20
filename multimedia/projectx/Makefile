@@ -22,6 +22,7 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/Project-X_${PORTVERSION}
 EXTRACT_BEFORE_ARGS+=	-aq
 
+NO_STAGE=	yes
 do-configure:
 	${SED} -e "s|^javac|${JAVAC}|" ${WRKSRC}/build.sh >${WRKSRC}/build-fbsd.sh
 

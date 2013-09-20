@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gstreamer-plugins-ugly
-# Date created:			20 Jan 2006
-# Whom:				Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/multimedia/gstreamer-plugins-ugly/Makefile,v 1.13 2008/03/19 14:05:37 ahze Exp $
-#
 
 PORTREVISION=	0
 CATEGORIES=	multimedia
@@ -25,6 +21,7 @@ PLIST_SUB=	VERSION="${GST_VERSION}"
 NO_GSTREAMER_COMMON=	yes
 PLIST=	${.CURDIR}/pkg-plist
 
+NO_STAGE=	yes
 do-build:
 .for dir in ${UGLY_GST_DIRS}
 	@(cd ${BUILD_WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})

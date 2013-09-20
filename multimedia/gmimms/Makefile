@@ -30,6 +30,7 @@ DESKTOP_ENTRIES=	"GIMMS" \
 			"GTK;AudioVideo;Network;" \
 			"false"
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

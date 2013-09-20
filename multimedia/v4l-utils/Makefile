@@ -1,9 +1,5 @@
-# Ports collection makefile for:	v4l-utils
-# Date created:				Thu Jun  2 22:22:47 CEST 2011
-# Whom:					Juergen Lock <nox@FreeBSD.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	v4l-utils
 PORTVERSION=	0.8.8
@@ -27,6 +23,7 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/utils
 MAN1=		ir-keytable.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

@@ -24,6 +24,7 @@ USE_LDCONFIG=	yes
 # CMAKE_ARGS instructs cmake to skip runtime path removal during install
 CMAKE_ARGS+=	"-DCMAKE_SKIP_RPATH=ON"
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|$${LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \
 		${WRKSRC}/CMakeLists.txt

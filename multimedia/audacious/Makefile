@@ -33,6 +33,7 @@ CHARSET_DESC= Build with automatic charset detection
 EXECINFO_DESC= Build with libexecinfo support
 SSE2_DESC=Build with SSE2 instruction set
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBUS}

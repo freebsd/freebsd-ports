@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vdr-plugin-sleeptimer
-# Date created:		Fri Jul 22 21:45:54 CEST 2011
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugin-sleeptimer
 PORTVERSION=	0.8.2
@@ -20,6 +16,7 @@ HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
 WRKSRC=		${WRKDIR}/${PLUGIN}-${PORTVERSION}
 
+NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin

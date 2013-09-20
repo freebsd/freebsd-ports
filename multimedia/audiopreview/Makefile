@@ -20,4 +20,5 @@ CFLAGS+=	-I${LOCALBASE}/include
 PLIST_FILES=	bin/audiopreview
 MAN1=		audiopreview.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

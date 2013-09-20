@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vdr-plugin-streamdev
-# Date created:		Wed Apr 14 18:11:42 CEST 2010
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugin-streamdev
 PORTVERSION=	0.5.2
@@ -27,6 +23,7 @@ WRKSRC=		${WRKDIR}/${PLUGIN}-${PORTVERSION}
 VDR_PLUGIN_MAKEFILES=	${WRKSRC}/client/Makefile \
 		${WRKSRC}/server/Makefile
 
+NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin

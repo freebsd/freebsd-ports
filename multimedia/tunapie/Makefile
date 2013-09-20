@@ -36,6 +36,7 @@ PLIST_SUB+=	DESKTOPDIR="${DESKTOPDIR:S,^${PREFIX}/,,}"
 
 FIND_FILES=	-type f -and \( -name "install.sh" -or -name "*.py" \)
 
+NO_STAGE=	yes
 post-patch:
 	@cd ${WRKSRC} && ${FIND} . ${FIND_FILES} -exec ${REINPLACE_CMD} \
 		-e 's|%%DATADIR%%|${DATADIR}|g'\

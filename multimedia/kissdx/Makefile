@@ -29,6 +29,7 @@ PLIST_FILES=	etc/kissdx.conf sbin/kissdx sbin/kissd-pretrigger \
 		sbin/kissd-posttrigger
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

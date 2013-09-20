@@ -29,6 +29,7 @@ OPTIONS_DEFAULT=	DBUS STARTUP
 TAGLIB_DESC=	metadata editing support
 STARTUP_DESC=	startup notification support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTABLIB}

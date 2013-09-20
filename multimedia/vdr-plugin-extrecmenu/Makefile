@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vdr-plugin-extrecmenu
-# Date created:		Mon Jun  4 18:08:53 CEST 2012
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugin-extrecmenu
 PORTVERSION=	1.2.2
@@ -21,6 +17,7 @@ HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
 WRKSRC=		${WRKDIR}/${PLUGIN}-${PORTVERSION}
 
+NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin

@@ -30,6 +30,7 @@ MAN1=		cdxa2mpeg.1 vcdimager.1 vcdxminfo.1 vcdxrip.1 vcdxgen.1 \
 		vcdxbuild.1 vcd-info.1
 INFO=		vcdimager vcdxrip vcd-info
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|libvcd||' ${WRKSRC}/libvcdinfo.pc.in
 

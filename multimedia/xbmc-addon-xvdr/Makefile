@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xbmc-addon-xvdr
-# Date created:			Sat Oct  8 16:27:14 CEST 2011
-# Whom:				Juergen Lock <nox@FreeBSD.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xbmc-addon-xvdr
 PORTVERSION=	0.9.5
@@ -27,6 +23,7 @@ AUTOMAKE_ARGS=	--add-missing
 GNU_CONFIGURE_PREFIX=	${PREFIX}/share/xbmc
 CONFLICTS=	xbmc-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900033

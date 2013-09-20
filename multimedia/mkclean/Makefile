@@ -25,6 +25,7 @@ BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 PLIST_FILES=	bin/mkclean \
 		bin/mkWDclean
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/corec/tools/coremake/gcc_mak.inc
 	@${RM} ${WRKSRC}/libmatroska2/test/test.proj

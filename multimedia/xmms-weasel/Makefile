@@ -1,9 +1,5 @@
-# New ports collection makefile for:   xmms-weasel
-# Date created:        4 April 2004
-# Whom:                Narayan Newton <narayan_newton@yahoo.com>
-#
+# Created by: Narayan Newton <narayan_newton@yahoo.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-weasel
 PORTVERSION=	0.0.1
@@ -24,6 +20,7 @@ USE_LDCONFIG=	yes
 PLIST_FILES=	lib/xmms/General/libweasel.la \
 		lib/xmms/General/libweasel.so
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 

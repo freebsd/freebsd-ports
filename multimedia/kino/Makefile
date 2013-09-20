@@ -34,6 +34,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib/libquicktime	\
 CONFIGURE_ARGS=	--with-dv1394
 MAN1=	kino.1 kino2raw.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFFMPEG_KINO}

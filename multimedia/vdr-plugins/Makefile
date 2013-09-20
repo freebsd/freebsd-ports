@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vdr
-# Date created:		Sun Oct 17 21:15:34 CEST 2010
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugins
 PORTVERSION=	1.7.29
@@ -56,6 +52,7 @@ OPTIONS_DEFAULT=	CONTROL EPGSEARCH FEMON INFOSATEPG IPTV OSDPIP \
 		TTXTSUBS WIRBELSCAN XINELIBOUTPUT LIVE UPNP \
 		SLEEPTIMER XVDR EEPG VDRMANAGER SOFTHDDEVICE EXTRECMENU
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCONTROL}

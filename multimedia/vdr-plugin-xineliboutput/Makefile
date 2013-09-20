@@ -1,4 +1,4 @@
-# Created by: Juergen Lock <nox@freebsd.org>
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	vdr-plugin-xineliboutput
@@ -30,6 +30,7 @@ WRKSRC=		${WRKDIR}/vdr-${PLUGIN}
 
 OPTIONS_DEFINE=	LIBBLURAY LIBEXTRACTOR
 
+NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 .include <bsd.port.pre.mk>

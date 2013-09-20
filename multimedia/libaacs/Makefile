@@ -27,6 +27,7 @@ CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
 MAKE_ARGS+=	pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
 		CFLAGS=${CFLAGS:Q}
 
+NO_STAGE=	yes
 run-autotools:
 	@cd ${WRKSRC} && ${SH} bootstrap
 

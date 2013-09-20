@@ -1,9 +1,5 @@
-# New ports collection makefile for:    dtv
-# Date created:         10 Feb 2002
-# Whom:                 dillon
-#
+# Created by: dillon
 # $FreeBSD$
-#
 
 PORTNAME=	dtv
 PORTVERSION=	0.50
@@ -20,6 +16,7 @@ MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	xau x11 xext xxf86dga
 NOT_FOR_ARCHS=	sparc64
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(LDADD +=.*\)|\1 -lxcb -lXau -lXdmcp|' \
 		-e 's/NOMAN/NO_MAN/' ${WRKSRC}/Makefile

@@ -28,6 +28,7 @@ HAL_DESC=		Register Linux DVB devices with HAL
 
 OPTIONS_DEFAULT=	LINUX_COMPAT
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

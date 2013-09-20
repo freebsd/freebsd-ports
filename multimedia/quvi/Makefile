@@ -27,4 +27,5 @@ PLIST_FILES=	bin/quvi
 
 PORTSCOUT=	limit:0.4.[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

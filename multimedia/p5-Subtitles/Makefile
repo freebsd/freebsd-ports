@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Subtitles
-# Date created:		2005-12-28
-# Whom:			osa
-#
+# Created by: osa
 # $FreeBSD$
-#
 
 PORTNAME=	Subtitles
 PORTVERSION=	1.04
@@ -20,6 +16,7 @@ USE_PERL5=	configure
 MAN1=	subs.1
 MAN3=	Subtitles.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SUBTITLES_SUBPLAY)

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	oqtplayer
-# Date created:				Mon Sep 24 16:26:33 BRT 2001
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	OQTEncoder
 PORTVERSION=	0.1
@@ -29,6 +25,7 @@ PLIST_FILES=	bin/oqtencoder
 PORTDOCS=	README
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${TR} -d '\r' < ${WRKSRC}/readme > ${WRKSRC}/README
 	@${REINPLACE_CMD} -e 's|gcc -g|${CC}|g' ${WRKSRC}/Makefile

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-FFmpeg-Command
-# Date created:		2006-08-24
-# Whom:			sumikawa
-#
+# Created by: sumikawa
 # $FreeBSD$
-#
 
 PORTNAME=	FFmpeg-Command
 PORTVERSION=	0.19
@@ -26,4 +22,5 @@ USE_PERL5=	configure
 
 MAN3=		FFmpeg::Command.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

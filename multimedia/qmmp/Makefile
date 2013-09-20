@@ -60,6 +60,7 @@ KDENOTIFY_DESC=	Support to popup notifier for KDE
 UDISKS_DESC=	Support removable disc detection using UDisks
 QMMP_DIALOG_DESC=	An original dialog
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPIDOC}

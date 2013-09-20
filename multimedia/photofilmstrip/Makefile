@@ -29,6 +29,7 @@ ALL_TARGET=	compile
 
 PFSDIR=		${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "To run ${PORTNAME}, you must have sqlite3 installed with extensions enabled."
 

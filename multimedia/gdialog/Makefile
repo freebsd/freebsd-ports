@@ -22,6 +22,7 @@ NO_WRKSUBDIR=	yes
 SUB_FILES=	gdialog
 DATADIR=	${JAVASHAREDIR}/projectx
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/GDialog.jar ${DATADIR}

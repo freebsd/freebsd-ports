@@ -1,9 +1,5 @@
-# New ports collection makefile for:	w_scan
-# Date created:		Wed Apr 14 18:11:42 CEST 2010
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	w_scan
 PORTVERSION=	20120415
@@ -18,6 +14,7 @@ BUILD_DEPENDS=  v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat
 OPTIONS_DEFINE=	LINUX
 LINUX_DESC=	Install Linux binary too (linux-w_scan)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_BZIP2=	yes

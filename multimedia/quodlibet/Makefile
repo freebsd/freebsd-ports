@@ -30,6 +30,7 @@ EXTENSIONS_DESC=	Enable extensions
 
 OPTIONS_DEFAULT=	FLAC MP3 AAC MUSEPACK OGG SPC SPEEX VORBIS WAVPACK DBUS REMOTE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 

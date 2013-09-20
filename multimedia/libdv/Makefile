@@ -30,6 +30,7 @@ PORTDOCS=	AUTHORS COPYING COPYRIGHT ChangeLog NEWS README \
 
 OPTIONS_DEFINE=	SDL DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # XXX - work around compiler bug

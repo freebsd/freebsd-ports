@@ -18,4 +18,5 @@ USES=		cmake
 
 PLIST_FILES=	bin/podcastdl
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

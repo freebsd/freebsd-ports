@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pwcview
-# Date created:				13 January 2010
-# Whom:					Andrew Thompson <thompsa@FreeBSD.org>
-#
+# Created by: Andrew Thompson <thompsa@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pwcview
 PORTVERSION=	1.4.1
@@ -28,6 +24,7 @@ MAN1=		pwcview.1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

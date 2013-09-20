@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qt-faststart
-# Date created:		2010 January 26
-# Whom:			J.R. Oldroyd <fbsd@opal.com>
-#
+# Created by: J.R. Oldroyd <fbsd@opal.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qt-faststart
 PORTVERSION=	0.2
@@ -16,6 +12,7 @@ COMMENT=	Convert QuickTime movie files to streamable format
 
 PLIST_FILES=	bin/qt-faststart
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-extract:

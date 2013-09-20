@@ -17,4 +17,5 @@ USE_LDCONFIG=	yes
 MAN1=		dcadec.1 extract_dca.1
 MLINKS=		dcadec.1 dtsdec.1 extract_dca.1 extract_dts.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

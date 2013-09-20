@@ -28,6 +28,7 @@ DLLDIR=		${PREFIX}/lib/X11/xanim
 PLIST_FILES+=	bin/xanim
 NO_CDROM=	without fee
 
+NO_STAGE=	yes
 post-extract:
 	${CP} ${WRKSRC}/docs/xanim.man ${WRKSRC}
 

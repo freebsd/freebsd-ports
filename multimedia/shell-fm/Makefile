@@ -25,6 +25,7 @@ PORTDOCS=	AUTHORS RELEASE INSTALL
 PORTEXAMPLES=	shell-colors.sh shell-fm-tune.sh \
 		unix.pl zcontrol
 
+NO_STAGE=	yes
 pre-build:
 	@${REINPLACE_CMD} \
 		-e 's/^PREFIX.*$$/\PREFIX := $$(LOCALBASE)/g' \

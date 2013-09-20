@@ -46,6 +46,7 @@ INSTALLS_ICONS=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-vendor-build-id=FreeBSD\ BSD\#\ Project --disable-gio-hardware --disable-boo
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"

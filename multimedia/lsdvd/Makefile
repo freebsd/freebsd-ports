@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lsdvd
-# Date created:		2004-03-30
-# Whom:			michael johnson <ahze@ahze.net>
-#
+# Created by: michael johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	lsdvd
 PORTVERSION=	0.16
@@ -25,6 +21,7 @@ PLIST_FILES=	bin/lsdvd
 
 WITH_DVD_DEVICE?=/dev/acd0
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "===> The default DVD device is ${WITH_DVD_DEVICE}"
 	@${ECHO_MSG} "===> Define WITH_DVD_DEVICE if you want to change the default"

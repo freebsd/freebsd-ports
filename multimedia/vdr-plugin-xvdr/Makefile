@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vdr-plugin-xvdr
-# Date created:		Sat Oct  8 17:45:22 CEST 2011
-# Whom:			Juergen Lock <nox@FreeBSD.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugin-xvdr
 PORTVERSION=	0.9.5
@@ -21,6 +17,7 @@ HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
 WRKSRC=		${WRKDIR}/pipelka-${PORTNAME}-${GITHASH}
 
+NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin

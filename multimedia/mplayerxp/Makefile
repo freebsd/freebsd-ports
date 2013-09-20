@@ -36,6 +36,7 @@ MAN1=	mplayerxp.1
 
 WIN32_CODEC_PREFIX=	${LOCALBASE}/lib/win32
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # add this after <bsd.port.pre.mk> so that we inherit /etc/make.conf

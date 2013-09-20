@@ -20,4 +20,5 @@ SHEBANG_FILES=	scripts/mp3cd
 MAN1=	mp3cd.1
 MANCOMPRESS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

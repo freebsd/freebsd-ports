@@ -108,6 +108,7 @@ CONFIGURE_ARGS+=	--enable-vlc \
 MAN1=		vlc.1 \
 		vlc-wrapper.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Macro section

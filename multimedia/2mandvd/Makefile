@@ -43,6 +43,7 @@ DATADIR=	${PREFIX}/share/2ManDVD
 
 LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -name "*~" -delete
 

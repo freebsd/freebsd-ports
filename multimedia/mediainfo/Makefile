@@ -26,6 +26,7 @@ PLIST_FILES=	bin/mediainfo \
 		lib/libzen.so \
 		lib/libzen.so.0
 
+NO_STAGE=	yes
 do-build:
 	@(cd ${WRKSRC}/ZenLib/Project/GNU/Library/ && ${SH} ./autogen)
 	@(cd ${WRKSRC}/MediaInfoLib/Project/GNU/Library/ && ${SH} ./autogen)

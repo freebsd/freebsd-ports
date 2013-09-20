@@ -1,9 +1,5 @@
-# New ports collection makefile for:	y4mscaler
-# Date created:		Mon Mar  8 21:36:23 EST 2004
-# Whom:			michael johnson <ahze@ahze.net>
-#
+# Created by: michael johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	y4mscaler
 PORTVERSION=	9.0
@@ -26,6 +22,7 @@ PORTDOCS=	COPYING ChangeLog INSTALL README TODO
 MAN1=		y4mscaler.1
 PLIST_FILES=	bin/y4mscaler
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

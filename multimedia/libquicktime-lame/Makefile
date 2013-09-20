@@ -1,9 +1,5 @@
-# Ports collection makefile for:	libquicktime-lame
-# Date Created:				Aug 11, 2009
-# Whom:					mm
-#
+# Created by: mm
 # $FreeBSD$
-#
 
 PORTNAME=	libquicktime
 PORTREVISION=	3
@@ -41,6 +37,7 @@ CONFIGURE_ARGS+=	--with-lame \
 			--without-x264 \
 			--without-schroedinger
 
+NO_STAGE=	yes
 do-install:
 	@cd ${WRKSRC}/plugins/lame && ${GMAKE} install
 

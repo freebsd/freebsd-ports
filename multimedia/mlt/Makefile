@@ -49,6 +49,7 @@ KDE4_DESC=	QImage extra formats support
 QT4_DESC=	Kdenlive titles and images support via QImage
 SOX_DESC=	SoX audio effects support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"

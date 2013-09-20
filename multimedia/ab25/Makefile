@@ -26,6 +26,7 @@ PLIST_DIRS=	include/ab25
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-su-install:

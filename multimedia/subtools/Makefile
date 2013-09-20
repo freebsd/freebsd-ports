@@ -1,9 +1,5 @@
-# New ports collection makefile for:	subtools
-# Date created:		10 January 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	subtools
 PORTVERSION=	20060508
@@ -21,6 +17,7 @@ PYEXECS=	udvd2srt.py udvdshift.py
 PORTDOCS=	CHANGELOG.TXT LICENSE.TXT README.TXT TODO.TXT
 PLIST_FILES=	${EXECS:S/^/bin\//} ${PYEXECS:S/^/bin\//}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,,,g;s,^.*#!.*python.*$$,#!${PYTHON_CMD},' ${WRKSRC}/*
 

@@ -37,6 +37,7 @@ SCREENCAST_DESC=Screen capture support via recordMyDesktop
 #V4L_DESC=	Webcam support via Video 4 Linux
 XINE_DESC=	DVD preview support via xine
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDVDWIZARD}

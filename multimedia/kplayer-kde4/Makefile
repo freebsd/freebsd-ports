@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kplayer
-# Date created:				Fri Apr 11 09:12:55 CEST 2003
-# Whom:					Stefan Eßer <se@FreeBSD.org>
-#
+# Created by: Stefan Eßer <se@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kplayer
 PORTVERSION=	0.7
@@ -23,6 +19,7 @@ USES=		cmake gettext
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
 USE_KDE4=	kdehier kdeprefix kdelibs automoc4
 
+NO_STAGE=	yes
 post-patch:
 .for lang in da en es it pt sv
 	${REINPLACE_CMD} -e "s,HTML_INSTALL_DIR},HTML_INSTALL_DIR}/${lang} SUBDIR kplayer,g" \

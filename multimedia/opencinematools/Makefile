@@ -25,6 +25,7 @@ MAKE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/mkcpl bin/mkpkl bin/mkmap
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC}/build/unix && ${MAKE} ${MAKE_ENV}
 

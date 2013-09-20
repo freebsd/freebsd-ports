@@ -1,9 +1,5 @@
-# New ports collection makefile for:	subtitleoffsetmodificator
-# Date created:				19 Marc 2008
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	subtitleoffsetmodificator
 PORTVERSION=	0.1
@@ -20,6 +16,7 @@ USE_PERL5=	run
 NO_BUILD=	yes
 PLIST_FILES=	bin/subtitle-offset-modificator
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${CP} ${DISTDIR}/subtitle-offset-modificator.pl ${WRKDIR}

@@ -26,6 +26,7 @@ GCONF_SCHEMAS=	swfdec-thumbnailer.schemas
 
 MAN1=		swfdec-player.1 swfdec-thumbnailer.1
 
+NO_STAGE=	yes
 post-install:
 	@-update-desktop-database
 

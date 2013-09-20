@@ -43,6 +43,7 @@ MAN1=		gmerlin.1 \
 		gmerlin_transcoder_remote.1 \
 		gmerlin-record.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MALSA}

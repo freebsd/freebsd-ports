@@ -36,6 +36,7 @@ PLIST_FILES=	lib/${MPEGLIB}.so.${PORTVERSION} \
 		include/vtk-${VTK_VERSION:R}/mpeg2enc_config.h \
 		include/vtk-${VTK_VERSION:R}/vlc.h
 
+NO_STAGE=	yes
 post-build:
 	${MV} ${WRKSRC}/${MPEGLIB}.so ${WRKSRC}/${MPEGLIB}.so.${PORTVERSION}
 

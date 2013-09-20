@@ -44,6 +44,7 @@ LZO_DESC=	LZO compression support
 LIBA52_DESC=	a52 support (as default decoder)
 XML_DESC=	Libxml2 XML support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MX11}

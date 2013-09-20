@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--disable-opengl-player \
 
 MAN1=		gtv.1 plaympeg.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure

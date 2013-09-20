@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	dumpmpeg
-# Date created:			Jun 3, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	dumpmpeg
 PORTVERSION=	0.6
@@ -23,4 +18,5 @@ USE_SDL=	sdl
 MAN1=		dumpmpeg.1
 PLIST_FILES=	bin/dumpmpeg
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

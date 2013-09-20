@@ -7,6 +7,7 @@ PORTREVISION=	0
 
 COMMENT=	High performance media player supporting many formats
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.shared"
 
 OPTIONS_DEFINE= AALIB AMR_NB AMR_WB BLURAY CACA DEBUG DV \

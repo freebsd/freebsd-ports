@@ -30,6 +30,7 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	PULSEAUDIO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}

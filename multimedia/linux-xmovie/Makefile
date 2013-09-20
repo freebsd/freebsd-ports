@@ -23,6 +23,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/xmovie
 WRKSRC=		${WRKDIR}/usr/bin
 
+NO_STAGE=	yes
 pre-install:
 	@${BRANDELF} -t Linux ${WRKSRC}/${PORTNAME}
 

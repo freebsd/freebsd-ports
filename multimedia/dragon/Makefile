@@ -24,6 +24,7 @@ USE_XZ=		yes
 
 MAN1=		dragon.1
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

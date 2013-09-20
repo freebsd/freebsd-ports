@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gcap
-# Date created:		2011-08-07
-# Whom:			Pierre Guinoiseau <geekounet@poildetroll.net>
-#
+# Created by: Pierre Guinoiseau <geekounet@poildetroll.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gcap
 PORTVERSION=	0.1.1
@@ -33,4 +29,5 @@ MAN1=		gcap.1
 PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/auto/gcap
 PLIST_FILES=	bin/gcap ${SITE_PERL_REL}/${PERL_ARCH}/auto/gcap/.packlist
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

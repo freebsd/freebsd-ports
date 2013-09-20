@@ -1,9 +1,5 @@
-# Ports collection makefile for:	abby
-# Date created:		March 1 2009
-# Whom:			Toni Gundogdu <legatvs@gmail.com>
-#
+# Created by: Toni Gundogdu <legatvs@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	abby
 PORTVERSION=	0.4.8
@@ -26,6 +22,7 @@ QMAKE_PRO=	abby.pro
 
 PLIST_FILES=	bin/abby
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCCLIVE}

@@ -29,6 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	lib/va/i965_drv_video.so \
 		lib/va/i965_drv_video.la
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_NEW_XORG)

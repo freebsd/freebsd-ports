@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-kaa-metadata
-# Date created:				2009 January 10
-# Whom:					J.R. Oldroyd <fbsd@opal.com>
-#
+# Created by: J.R. Oldroyd <fbsd@opal.com>
 # $FreeBSD$
-#
 
 PORTNAME=	kaa-metadata
 PORTVERSION=	0.7.7
@@ -26,4 +22,5 @@ USE_PYDISTUTILS=	yes
 CFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

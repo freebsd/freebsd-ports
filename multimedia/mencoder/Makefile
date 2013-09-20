@@ -7,6 +7,7 @@ PORTREVISION=	0
 
 COMMENT=	Convenient video file and movie encoder
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../mplayer/Makefile.shared"
 
 OPTIONS_DEFINE= AMR_NB AMR_WB BLURAY CDIO CDPARANOIA DEBUG DIRAC \

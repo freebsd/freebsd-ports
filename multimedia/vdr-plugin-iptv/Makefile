@@ -1,4 +1,4 @@
-# Created by: Juergen Lock <nox@freebsd.org>
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	vdr-plugin-iptv
@@ -19,6 +19,7 @@ PORTEXAMPLES=	channels.conf.iptv
 MAKE_ARGS+=	IPTV_EXTSHELL=/bin/sh
 WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION}
 
+NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin

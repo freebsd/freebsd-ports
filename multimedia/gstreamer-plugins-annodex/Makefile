@@ -1,7 +1,4 @@
-# New ports collection makefile for:	gstreamer-plugins-annodex
-# Date created:			6 July 2006
-# Whom:				Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/multimedia/gstreamer-plugins-annodex/Makefile,v 1.1 2006/07/06 19:48:44 ahze Exp $
 
@@ -14,4 +11,5 @@ GST_PLUGIN=	annodex
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

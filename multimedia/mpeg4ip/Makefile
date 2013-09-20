@@ -76,6 +76,7 @@ MAN3=	MP4.3 MP4AddAudioTrack.3 MP4AddHintTrack.3 MP4AddODTrack.3 \
 	MP4SetTrackTimeScale.3 MP4SetVerbosity.3 MP4SetVideoProfileLevel.3 \
 	MP4WriteRtpHint.3 MP4WriteSample.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 ###

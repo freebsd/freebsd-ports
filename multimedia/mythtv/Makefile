@@ -55,6 +55,7 @@ OPTIONS_DEFINE=	BINDINGS LIRC MYSQL OPENGL VDPAU
 OPTIONS_DEFAULT=	BINDINGS OPENGL
 BINDINGS_DESC=	Perl and Python bindings
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 SUB_FILES=	pkg-message

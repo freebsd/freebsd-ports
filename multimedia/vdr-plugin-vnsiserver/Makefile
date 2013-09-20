@@ -21,6 +21,7 @@ MAKE_ARGS+=	LIBDIR=${WRKDIR}/lib \
 		VDRSRC=${LOCALBASE}/include/vdr \
 		INCLUDES=-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin

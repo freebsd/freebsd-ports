@@ -32,6 +32,7 @@ PLIST_SUB+=	NLS="@comment "
 PLIST_SUB+=	NLS=""
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|CFLAGS="-g |CFLAGS="$$CFLAGS |g' ${WRKSRC}/configure

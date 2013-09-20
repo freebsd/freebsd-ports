@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	LIBDCA
 LIBDCA_DESC=	Install dts library
 OPTIONS_DEFAULT=	LIBDCA
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

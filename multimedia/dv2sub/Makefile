@@ -18,4 +18,5 @@ USES=		pkgconfig
 PLIST_FILES=	bin/dv2sub
 MAN1=		dv2sub.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Audio-M4P
-# Date created:		2009-01-19
-# Whom:			Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	Audio-M4P
 PORTVERSION=	0.51
@@ -31,4 +27,5 @@ MAN3=		Audio::M4P.3 \
 regression-test: build
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} test
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -21,4 +21,5 @@ MAKE_ARGS+=	PREFIX=${PREFIX}
 USE_GNOME=	gtk20 desktopfileutils
 USES=		pkgconfig gettext
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

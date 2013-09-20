@@ -42,6 +42,7 @@ USE_QT4=	linguist phonon-gst
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 QT_LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
 
+NO_STAGE=	yes
 pre-build:
 	@${MKDIR} -p ${WRKSRC}/resources/i18n/qm
 	@set -e; \

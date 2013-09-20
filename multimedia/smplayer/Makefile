@@ -28,6 +28,7 @@ MANCOMPRESSED=	yes
 PORTDOCS=	Changelog Copying.txt Install.txt Not_so_obvious_things.txt \
 		Readme.txt Release_notes.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

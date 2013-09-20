@@ -8,6 +8,7 @@ CATEGORIES=	multimedia
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Simple GUI based video editor
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.common"
 
 post-configure: post-configure-common

@@ -49,6 +49,7 @@ MAN1_PL=	aaxine.1 xine-remote.1 xine.1
 DOCSDIR=	${PREFIX}/share/doc/xine-ui
 XINE_PLUGINSDIR=	lib/xine/plugins/2.2
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWIN32_CODECS}

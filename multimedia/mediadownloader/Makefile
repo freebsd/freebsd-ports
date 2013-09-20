@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mediadownloader
-# Date created:		2010-07-24
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mediadownloader
 PORTVERSION=	1.5.2
@@ -31,6 +27,7 @@ DESKTOP_ENTRIES="MediaDownloader" "${COMMENT}" \
 		"${DATADIR}/${PORTNAME}.png" "${PORTNAME}" \
 		"" false
 
+NO_STAGE=	yes
 do-configure:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
 		${WRKSRC}/${QMAKEPRO}

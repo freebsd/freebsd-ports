@@ -13,6 +13,7 @@ LICENSE=	BSD
 
 PLIST_FILES=	bin/yamdi
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} yamdi.c -o yamdi
 

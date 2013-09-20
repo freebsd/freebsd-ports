@@ -29,4 +29,5 @@ PLIST_FILES=	bin/clive \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/clive/.packlist
 PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/clive
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

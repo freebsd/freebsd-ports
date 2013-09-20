@@ -22,6 +22,7 @@ PORTDOCS=	*
 
 MAN1=		avinfo.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

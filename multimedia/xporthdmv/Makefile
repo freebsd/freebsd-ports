@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xporthdmv
-# Date created:		2009-08-05
-# Whom:			Steve Wills <steve@mouf.net>
-#
+# Created by: Steve Wills <steve@mouf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xporthdmv
 PORTVERSION=	1.01
@@ -18,6 +14,7 @@ USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=    bin/xporthdmv
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} \
 	&& ${CC} ${CFLAGS} xport.c -o xporthdmv

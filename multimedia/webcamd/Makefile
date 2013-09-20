@@ -52,6 +52,7 @@ WEBCAM_DESC=	Build with USB webcam support (UVC, gspca, ...)
 USERS=		webcamd
 GROUPS=		webcamd
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 LIBCUSE=${LIBDIR}/libcuse4bsd.so

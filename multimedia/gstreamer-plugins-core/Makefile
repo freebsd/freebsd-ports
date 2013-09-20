@@ -1,7 +1,4 @@
-# New ports collection makefile for:	gstreamer-plugins-core
-# Date created:		2004-11-15
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/multimedia/gstreamer-plugins-core/Makefile,v 1.17 2006/07/17 01:39:57 ahze Exp $
 
@@ -22,6 +19,7 @@ PLIST_FILES=	${GST_DIR}/.gstreamer-plugins-core.keep
 
 WANT_GSTREAMER=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Audio plugins

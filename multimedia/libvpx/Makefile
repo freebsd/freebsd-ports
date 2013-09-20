@@ -33,6 +33,7 @@ ALL_TARGET=
 CONFIGURE_ARGS+=	--enable-pic --disable-install-srcs --enable-vp8 --disable-install-docs
 MAKE_ARGS+=	DIST_DIR=${PREFIX} verbose=yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

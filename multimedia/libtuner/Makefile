@@ -14,4 +14,5 @@ LICENSE=	BSD
 MAKE_ARGS+=	INSTALLDIR=${PREFIX}
 USE_LDCONFIG=	${PREFIX}/lib/libtuner
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

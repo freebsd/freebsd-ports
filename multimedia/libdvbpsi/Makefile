@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	libdvbpsi
-# Date created:			Aug 8, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libdvbpsi
 PORTVERSION=	0.2.2
@@ -28,6 +23,7 @@ CONFIGURE_ARGS=		--enable-release
 .endif
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wall|$${CFLAGS}|g ; \
 		 s|-O6||g' ${WRKSRC}/configure

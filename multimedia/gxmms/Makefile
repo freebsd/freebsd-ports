@@ -24,6 +24,7 @@ OPTIONS_DEFAULT=		XMMS
 XMMS_DESC=	Use xmms as frontend
 BMP_DESC=	Use BMP as frontend
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXMMS}

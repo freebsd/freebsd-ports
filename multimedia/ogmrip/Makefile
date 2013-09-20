@@ -43,6 +43,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		dvdcpy.1 avibox.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}

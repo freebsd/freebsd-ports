@@ -38,6 +38,7 @@ MAN1=		dvd-slideshow.1 \
 		gallery1-to-slideshow.1 \
 		jigl2slideshow.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLAME}

@@ -34,6 +34,7 @@ USE_DOS2UNIX=	yes
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
