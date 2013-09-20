@@ -1,5 +1,5 @@
---- Makefile.in.orig	2013-08-30 18:26:25.000000000 +0200
-+++ Makefile.in	2013-09-02 15:13:47.000000000 +0200
+--- Makefile.in.orig	2013-09-13 18:07:56.000000000 +0200
++++ Makefile.in	2013-09-20 09:03:18.000000000 +0200
 @@ -54,6 +54,8 @@
  
  # Directory in which to install the include file tcl.h:
@@ -119,7 +119,7 @@
 +		$(INSTALL_DATA) $$i "$(SCRIPT_INSTALL_DIR)"/encoding; \
 +	done;
 +	@echo "Customizing tcl module path";
-+ 	@echo "::tcl::tm::path add {$(SCRIPT_INSTALL_DIR)}" >> \
++	@echo "::tcl::tm::path add {$(SCRIPT_INSTALL_DIR)}" >> \
 + 	    "$(SCRIPT_INSTALL_DIR)"/tm.tcl;
 +
 +install-tm:
