@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	web2ldap
-PORTVERSION=	1.1.40
+PORTVERSION=	1.1.45
 CATEGORIES=	www
 MASTER_SITES=	http://www.web2ldap.de/download/ \
 		http://www.sfr-fresh.com/unix/www/
@@ -15,6 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap2>=2.4.0:${PORTSDIR}/net/py-ldap2 \
 		${PYTHON_SITELIBDIR}/ipaddr.py:${PORTSDIR}/devel/py-ipaddr \
 		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
+NO_STAGE=	yes
 OPTIONS_DEFINE=	DOCS
 USE_PYTHON=	yes
 SUB_FILES=	pkg-message
@@ -28,7 +29,7 @@ do-build:
 	@(cd ${WRKSRC} && ${PYTHON_CMD} ./sbin/compile.py)
 
 do-install:
-	@${ECHO_CMD} "==> Installing program files..."
+	@${ECHO_MSG} "==> Installing program files..."
 	@${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC}; \
 		${FIND} * -type d | ${GREP} -vE "^htdocs" | ${CPIO} -p ${DATADIR}; \
@@ -38,13 +39,15 @@ do-install:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_CMD} "==> Installing document files..."
+	@${ECHO_MSG} "==> Installing document files..."
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}; \
 		${FIND} * -type d | ${GREP} "^htdocs" | ${CPIO} -p ${DOCSDIR}; \
 		${FIND} * -type f | ${GREP} "^htdocs" | ${CPIO} -pd ${DOCSDIR})
 .endif
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
