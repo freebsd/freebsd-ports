@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tipp10
-# Date created:		2007-11-26
-# Whom:			Heiner <h.eichmann@gmx.de>
-#
+# Created by: Heiner <h.eichmann@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	tipp10
 PORTVERSION=	2.1.0
@@ -26,6 +22,7 @@ USE_QT4=	gui sql corelib network script qtestlib \
 		qmake_build rcc_build uic_build moc_build
 WRKSRC=		${WRKDIR}/tipp10_source_v2-1-0
 
+NO_STAGE=	yes
 pre-configure:
 	@cd ${WRKSRC} \
 	&& for i in `grep -lR 'QCoreApplication::applicationDirPath()' *`; do ${REINPLACE_CMD} -e 's/QCoreApplication::applicationDirPath()/QString(DATADIR)/g' $$i ; done

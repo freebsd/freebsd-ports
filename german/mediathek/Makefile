@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mediathek
-# Date created:		2010-10-17
-# Whom:			Lars Engels <lme@FreeBSD.org>
-#
+# Created by: Lars Engels <lme@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mediathek
 PORTVERSION=	3.1.0
@@ -34,6 +30,7 @@ VLC_DESC=		VLC support
 
 OPTIONS_DEFAULT=	VLC
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMPLAYER}

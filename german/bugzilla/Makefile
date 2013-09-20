@@ -16,6 +16,7 @@ LATEST_LINK=	${PKGNAMEPREFIX}bugzilla
 
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../devel/bugzilla/Makefile.common"
 
 LANGDIR=	${WWWDIR}/template/de

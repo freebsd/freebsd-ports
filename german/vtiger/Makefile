@@ -1,7 +1,4 @@
-# New ports collection makefile for:	german/vtiger
-# Date created:				22 September  2007
-# Whom:					Aron Schlesinger <as@bsdgroup.de>
-#
+# Created by: Aron Schlesinger <as@bsdgroup.de>
 # $FreeBSD$
 
 PORTNAME=	vtiger
@@ -25,6 +22,7 @@ USE_ZIP=	YES
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	@${FIND} ${WRKSRC} -type f -exec ${SH} -c '${INSTALL_DATA} -v {} \
 	$$(${ECHO} {} | ${SED} -e "s,^${WRKSRC},${WWWDIR},")' \;

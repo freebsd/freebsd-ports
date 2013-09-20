@@ -25,6 +25,7 @@ MYDESTDIR=	${PREFIX}/BBBike
 LOCAL_PERL_ARCH=	${PERL_ARCH}
 PLIST_SUB=		LOCAL_PERL_ARCH=${LOCAL_PERL_ARCH}
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}/ext && ${MAKE} PERL=${PERL5} all install
 	cd ${WRKSRC}/ext && ${MAKE} PERL=${PERL5} clean

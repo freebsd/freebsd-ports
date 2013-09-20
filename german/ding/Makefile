@@ -20,6 +20,7 @@ MAN1=		ding.1
 DICTFILE=	de-en.txt
 SWISSDICT=	de_ch-en.txt
 
+NO_STAGE=	yes
 do-build:
 	${SED} -E -e '1,/^exec/ s!wish!wish8.4!' \
 	  -e 's!/usr/share/dict/de-en.txt!${PREFIX}/share/ding/de-en.txt!' \

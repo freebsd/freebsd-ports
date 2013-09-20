@@ -31,6 +31,7 @@ CFLAGS:=	${CFLAGS:S/-O[0-9]*//g}	# gcc generates broken code in uwsmtp
 
 MANUAL_PACKAGE_BUILD=	needs hostname
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

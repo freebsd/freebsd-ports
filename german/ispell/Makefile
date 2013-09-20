@@ -14,6 +14,7 @@ ISPELL_DENEU=	yes
 MASTERDIR=	${.CURDIR}/../../textproc/ispell
 
 .if exists(${.CURDIR}/Makefile.local)
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.local"
 .endif
 
