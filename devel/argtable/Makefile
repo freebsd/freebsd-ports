@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	argtable
-# Date created:			Dec 17, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	argtable
 PORTVERSION=	2.13
@@ -21,6 +16,7 @@ USE_LDCONFIG=	yes
 MAN3=		argtable2.3
 MLINKS=		argtable2.3 argtable.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g ; \
 		 s|^install-data-am: |install-data-am: #|g' ${WRKSRC}/Makefile.in

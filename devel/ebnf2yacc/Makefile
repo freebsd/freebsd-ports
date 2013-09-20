@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	ebnf2yacc
-# Date created:			Jul 3, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	ebnf2yacc
 PORTVERSION=	0.1.1
@@ -18,4 +13,5 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/ebnf2yacc
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

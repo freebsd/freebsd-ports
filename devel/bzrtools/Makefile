@@ -23,6 +23,7 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	2.5.0
 PYDISTUTILS_PKGNAME=	BzrTools
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGRAPHVIZ}

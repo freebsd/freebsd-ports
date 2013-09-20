@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cpan-upload
-# Date created:				Nov 30 2003
-# Whom:					Lars Thegler <lars@thegler.dk>
-#
+# Created by: Lars Thegler <lars@thegler.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	cpan-upload
 PORTVERSION=	2.2
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 
 MAN1=	cpan-upload.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

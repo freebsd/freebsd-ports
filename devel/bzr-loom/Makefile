@@ -1,9 +1,5 @@
-# Ports collection makefile for:	bzr-loom
-# Date created:				22 Aug 2010
-# Whom:					Carlo Strub <c-s@c-s.li>
-#
+# Created by: Carlo Strub <c-s@c-s.li>
 # $FreeBSD$
-#
 
 PORTNAME=	bzr-loom
 PORTVERSION=	2.2.0
@@ -27,4 +23,5 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Loom
 PYDISTUTILS_PKGVERSION=	2.2.1dev0
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

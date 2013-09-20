@@ -23,6 +23,7 @@ PLIST_FILES=	bin/as31 %%X11%%bin/as31_gtk
 OPTIONS_DEFINE=	X11
 OPTIONS_SUB=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

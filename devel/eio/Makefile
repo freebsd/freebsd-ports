@@ -19,4 +19,5 @@ USES=		pathfix pkgconfig
 USE_EFL=	eina eet ecore libtool_hack
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

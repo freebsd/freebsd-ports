@@ -24,6 +24,7 @@ USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_file
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
+NO_STAGE=	yes
 .include "../ecore-main/Makefile.inc"
 
 CONFIGURE_ARGS+=--enable-ecore-file

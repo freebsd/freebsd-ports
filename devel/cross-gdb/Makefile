@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cross-gdb
-# Date created:		11 June 2007
-# Whom:			Stanislav Sedov <stas@FreeBSD.org>
-#
+# Created by: Stanislav Sedov <stas@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gdb
 PORTVERSION=	7.2
@@ -72,6 +68,7 @@ FIXREFS=	${SH} -c '${REINPLACE_CMD} -E \
 		-e "s,$$0\.(texi|info),${OURTARGET}-$$0.\1,g" \
 		-e "s,(@file)\{$$0\},\1\{${OURTARGET}-$$0\},g" $$*' --
 
+NO_STAGE=	yes
 post-patch:
 #
 # Patch and rename info files

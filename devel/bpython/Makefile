@@ -26,6 +26,7 @@ MAN1=		bpython.1
 MAN5=		bpython-config.5
 PORTEXAMPLES=	light.theme sample-config sample.theme
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

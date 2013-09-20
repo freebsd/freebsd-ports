@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dotconf++
-# Date created:		7 July 2005
-# Whom:			Mark Starovoytov <mark_sf@kikg.ifmo.ru>
-#
+# Created by: Mark Starovoytov <mark_sf@kikg.ifmo.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	dotconfpp
 PORTVERSION=	0.0.5
@@ -19,6 +15,7 @@ USE_AUTOTOOLS=	libtool
 
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' \
 		${WRKSRC}/src/dotconfpp.h ${WRKSRC}/src/mempool.h

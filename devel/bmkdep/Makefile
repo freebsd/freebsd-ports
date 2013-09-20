@@ -1,11 +1,5 @@
-# New ports collection makefile for: 	bmkdep
-# Date created: 			29 November 2011
-# Whom: 				trociny
-#
+# Created by: trociny
 # $FreeBSD$
-#
-# This port is self contained in the src directory.
-#
 
 PORTNAME=	bmkdep
 PORTVERSION=	20120114
@@ -22,4 +16,5 @@ MAN1=		bmkdep.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/bmkdep
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

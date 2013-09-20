@@ -30,6 +30,7 @@ MAN3=		cl_application.3 cl_binary.3 cl_calendar.3 cl_consumer.3 \
 		cl_csv.3 cl_dqueue.3 cl_lists.3 cl_math.3 cl_pool.3 cl_queue.3 \
 		cl_queue_srv.3 cl_queue_tab.3 cl_stats.3 cl_string.3 cl_timer.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

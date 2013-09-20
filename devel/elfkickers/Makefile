@@ -1,9 +1,5 @@
-# New ports collection makefile for:	elfkickers
-# Date created:		2010-11-16
-# Whom:			Sofian Brabez <sbrabez@gmail.com>
-#
+# Created by: Sofian Brabez <sbrabez@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	elfkickers
 PORTVERSION=	3.0
@@ -32,6 +28,7 @@ PORTDOCS=	COPYING Changelog README
 
 MAN1=		ebfc.1 elfls.1 elftoc.1 infect.1 objres.1 rebind.1 sstrip.1
 
+NO_STAGE=	yes
 post-patch:
 	@${GREP} -lR "\/elf.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's,linux/,,g' -e 's,asm/,,g'

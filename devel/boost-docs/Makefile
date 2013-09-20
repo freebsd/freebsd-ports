@@ -9,6 +9,7 @@ UNIQ=		/usr/bin/uniq
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/..//boost-all/common.mk"
 
 do-install:

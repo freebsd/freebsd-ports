@@ -32,6 +32,7 @@ LCOV_DESC=	Force dependency on lcov
 regression-test: build
 	@${SETENV} LC_ALL=C ${GMAKE} -C ${WRKSRC} check
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

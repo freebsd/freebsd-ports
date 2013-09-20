@@ -1,7 +1,4 @@
-# New ports collection makefile for:	automoc4
-# Date created:				today
-# Whom:					miwi
-#
+# Created by: miwi
 # $FreeBSD$
 
 PORTNAME=	automoc4
@@ -20,4 +17,5 @@ USE_BZIP2=	yes
 USES=		cmake iconv
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

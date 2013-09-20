@@ -10,4 +10,5 @@ PKGDIR=		${.CURDIR}
 TOOL=		AUTOMAKE
 WRAPPED_TOOLS=	aclocal automake
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

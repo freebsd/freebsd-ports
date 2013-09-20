@@ -10,6 +10,7 @@ PLIST_FILES=	bin/bjam
 
 EXTRACT_AFTER_ARGS=	${DISTNAME}/tools/build/v2/engine
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../boost-all/common.mk"
 
 do-build:

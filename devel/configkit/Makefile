@@ -19,4 +19,5 @@ WRKSRC=		${WRKDIR}/ConfigKit
 
 MAKE_ARGS=	BINDIR=${PREFIX}/bin LIBDIR=${PREFIX}/lib INCLUDEDIR=${PREFIX}/include
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

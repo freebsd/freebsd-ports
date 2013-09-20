@@ -43,6 +43,7 @@ CONFIGURE_ARGS=	--disable-docs \
 
 PLIST_SUB+=	VER=${PORTVERSION:R}
 
+NO_STAGE=	yes
 post-patch:
 	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|SDL/SDL|SDL|g'

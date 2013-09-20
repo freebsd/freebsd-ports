@@ -1,9 +1,5 @@
-# Ports collection makefile for:	bzr-git
-# Date created:		25 May 2010
-# Whom:			Carlo Strub
-#
+# Created by: Carlo Strub
 # $FreeBSD$
-#
 
 PORTNAME=	bzr-explorer
 PORTVERSION=	1.3.0
@@ -25,4 +21,5 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	explorer
 USES=		gettext
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

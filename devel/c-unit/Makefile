@@ -30,6 +30,7 @@ MEM_DESC=	Internal memory tracking
 
 OPTIONS_DEFAULT=	AUT BAS CON
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		's|/@PACKAGE@/Examples/Automated|/examples/@PACKAGE@/Automated|g' \

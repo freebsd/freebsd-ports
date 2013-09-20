@@ -19,6 +19,7 @@ USES=		perl5
 PLIST_FILES=	bin/cvschangelogbuilder
 PORTDOCS=	*
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '1s|/usr/bin/perl|${PERL}|' ${WRKSRC}/${PORTNAME}.pl
 

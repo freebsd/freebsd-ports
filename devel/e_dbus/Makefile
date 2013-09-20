@@ -30,4 +30,5 @@ CONFIGURE_ARGS=	--enable-ehal \
 		--disable-eofono \
 		--disable-ebluez
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for: dyncall
-# Date created:        05 April 2008
-# Whom:                Tassilo Philipp <tphilipp@potion-studios.com>
-#
+# Created by: Tassilo Philipp <tphilipp@potion-studios.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dyncall
 PORTVERSION=	0.7
@@ -22,6 +18,7 @@ MAKEFILE=	BSDmakefile
 # There is no install target in the BSD makefile for this version of the dyncall
 # library, so install it manually.
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"

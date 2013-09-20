@@ -22,6 +22,7 @@ PORTDOCS=	*
 PLIST_FILES=	bin/dasm \
 		bin/ftohex
 
+NO_STAGE=	yes
 do-install:
 .for filename in dasm ftohex
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${filename} ${PREFIX}/bin

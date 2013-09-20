@@ -1,9 +1,5 @@
-# New ports collection makefile for:	boehm-gc
-# Date created:		15 November 1996
-# Whom:			Mike McGaughey <mmcg@cs.monash.edu.au>
-#
+# Created by: Mike McGaughey <mmcg@cs.monash.edu.au>
 # $FreeBSD$
-#
 
 PORTNAME=	boehm-gc
 PORTVERSION=	7.1
@@ -22,6 +18,7 @@ CONFIGURE_ARGS=	--enable-cplusplus --disable-static --disable-threads
 MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE=	DEBUG
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

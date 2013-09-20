@@ -34,6 +34,7 @@ MEM_DESC=	Internal memory tracking
 
 OPTIONS_DEFAULT=	AUT BAS CON
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/doc/@PACKAGE@|/share/doc/@PACKAGE@|g' ${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e 's|/doc/@PACKAGE@|/share/doc/@PACKAGE@|g' ${WRKSRC}/doc/headers/Makefile.in

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	bzr-rewrite
-# Date created:				2010-11-10
-# Whom:					Carlo Strub <c-s@c-s.li>
-#
+# Created by: Carlo Strub <c-s@c-s.li>
 # $FreeBSD$
-#
 
 PORTNAME=	bzr-rewrite
 PORTVERSION=	0.6.3
@@ -25,4 +21,5 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	bzr_rewrite
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

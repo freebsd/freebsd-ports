@@ -21,4 +21,5 @@ USE_PYTHON=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/lang/c++
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

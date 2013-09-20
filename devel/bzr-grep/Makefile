@@ -25,4 +25,5 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	bzr_grep
 PYDISTUTILS_PKGVERSION=	${PORTVERSION}.final.0
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

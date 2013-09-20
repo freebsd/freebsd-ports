@@ -20,6 +20,7 @@ PLIST_FILES=	bin/cvs2html
 USES=		perl5
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} ${DISTDIR}/${PORTNAME} ${WRKDIR}

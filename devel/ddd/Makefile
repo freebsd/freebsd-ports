@@ -39,6 +39,7 @@ LIBXMDIR!=	${ECHO_CMD} ${MOTIFLIB} | ${SED} -e 's/-L//g' | ${AWK} '{print $$1}'
 LIBXMDIR=	${LOCALBASE}
 .endif
 
+NO_STAGE=	yes
 pre-patch:
 	@${RM} -fv ${WRKSRC}/ddd/ddd.info*
 	@${RM} -fv ${WRKSRC}/ddd/ddd-themes.info*

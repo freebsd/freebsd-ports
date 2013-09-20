@@ -1,9 +1,5 @@
-# New ports collection makefile for: cbrowser
-# Date created:		20 April 2000
-# Whom:			jkoshy
-#
+# Created by: jkoshy
 # $FreeBSD$
-#
 
 PORTNAME=	cbrowser
 PORTVERSION=	0.8
@@ -20,6 +16,7 @@ USE_TK=		84+
 USE_TK_RUN=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -i "" -e '3s|wish|${WISH}|' ${WRKSRC}/cbrowser
 

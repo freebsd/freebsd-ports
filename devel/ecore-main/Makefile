@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/ecore
 
+NO_STAGE=	yes
 .include "Makefile.inc"
 .include <bsd.port.options.mk>
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	compiler-rt
-# Date created:		8 Oct 2009
-# Whom:                 Brooks Davis
-#
+# Created by: Brooks Davis
 # $FreeBSD$
-#
 
 PORTNAME=	compiler-rt
 DISTVERSION=	0.r${SVN_REV}
@@ -42,6 +38,7 @@ PLIST_FILES=	include/Block.h \
 		include/Block_private.h \
 		lib/libBlocksRuntime.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"

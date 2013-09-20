@@ -1,7 +1,4 @@
-# New ports collection makefile for:	avltree
-# Date created:				13 January 2000
-# Whom:					Bill Ross <bross@nas.nasa.gov>
-#
+# Created by: Bill Ross <bross@nas.nasa.gov>
 # $FreeBSD$
 
 PORTNAME=	avltree
@@ -16,4 +13,5 @@ COMMENT=	An in-memory index w/ binary and string keys and key counts
 MAN3=		avltree.3
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

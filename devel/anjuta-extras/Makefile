@@ -1,10 +1,6 @@
-# New ports collection makefile for:	anjuta-extras
-# Date created:				8 May 2009
-# Whom:					Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/devel/anjuta-extras/Makefile,v 1.11 2010/09/29 12:14:23 kwm Exp $
-#
 
 PORTNAME=	anjuta-extras
 PORTVERSION=	2.32.1.1
@@ -29,4 +25,5 @@ CONFIGURE_ARGS+=--disable-plugin-valgrind \
 
 GCONF_SCHEMAS=	anjuta-editor-scintilla.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

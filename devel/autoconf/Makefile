@@ -35,6 +35,7 @@ GENERIC_LINKS=	autoconf autoheader autom4te autoreconf autoscan autoupdate \
 MAN1_PAGES=	${GENERIC_LINKS} config.guess config.sub
 MAN1=		${MAN1_PAGES:S/$/-${BUILD_VERSION}.1/g}
 
+NO_STAGE=	yes
 post-patch:
 	@(cd ${WRKSRC}/man && \
 		for file in *.[1x]; do \

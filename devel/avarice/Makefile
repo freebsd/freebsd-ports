@@ -22,4 +22,5 @@ GNU_CONFIGURE=	yes
 
 MAN1=		avarice.1 ice-gdb.1 ice-insight.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -33,6 +33,7 @@ CONFLICTS=	cvsweb-2.*
 USES=		perl5
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Specify where your repository belongs.

@@ -22,6 +22,7 @@ OPTIONS_DEFAULT=CON EVAS FILE IMF IMF_EVAS INPUT INPUT_EVAS IPC X11
 ${NODE}_DESC=	Install ${NODE:L} module
 .endfor
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for NODE in ${OPTIONS_DEFINE}

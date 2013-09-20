@@ -43,6 +43,7 @@ OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
 X11_DESC=	Support X11 Desktop Environments
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

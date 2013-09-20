@@ -21,6 +21,7 @@ PLIST_FILES=	bin/avcimport bin/avcexport bin/avcdelete \
 
 PORTDOCS=	avce00.html
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

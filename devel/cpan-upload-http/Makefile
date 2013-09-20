@@ -20,4 +20,5 @@ USE_PERL5=	configure
 
 MAN1=	cpan-upload-http.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

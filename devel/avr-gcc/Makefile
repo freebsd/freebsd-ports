@@ -1,4 +1,4 @@
-# Created by: Joerg Wunsch <joerg@freebsd.org>
+# Created by: Joerg Wunsch <joerg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gcc
@@ -38,6 +38,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 USES=		bison gettext gmake perl5
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "amd64")

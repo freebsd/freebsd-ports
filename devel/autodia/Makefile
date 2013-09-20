@@ -46,6 +46,7 @@ MAN3=		Autodia.3 autodia.3 \
 		Autodia::Handler::umbrello.3
 PORTDOCS=	CHANGES CREDITS DEVELOP FAQ INSTALL MANIFEST README TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGRAPHVIZ}

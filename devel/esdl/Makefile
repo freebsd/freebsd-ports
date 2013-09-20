@@ -28,6 +28,7 @@ OPTIONS_DEFAULT=SDL_TTF SDL_IMAGE
 SDL_TTF_DESC=	SDL_ttf support
 SDL_IMAGE_DESC=	SDL_image support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSDL_TTF}

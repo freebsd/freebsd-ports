@@ -24,6 +24,7 @@ USES=	gmake
 
 INFO=		clint
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-ldl||g'

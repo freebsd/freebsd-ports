@@ -28,6 +28,7 @@ MAN1=		aclocal-${BUILD_VERSION}-${BUILD_VERSION}.1 \
 		automake-${BUILD_VERSION}-${BUILD_VERSION}.1 \
 		automake-${BUILD_VERSION}.1
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/doc/*.info
 

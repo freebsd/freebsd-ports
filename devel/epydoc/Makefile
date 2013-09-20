@@ -15,6 +15,7 @@ OPTIONS_DEFINE=	DOCS UTF8
 
 UTF8_DESC=	Use UTF-8 instead of iso-8859-1 in HTMLs
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_PYTHON=	yes

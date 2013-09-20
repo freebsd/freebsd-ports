@@ -1,7 +1,5 @@
-# Created by:	nemysis@gmx.ch
-#
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
-#
 
 PORTNAME=	allegro
 DISTVERSION=	5.0.7
@@ -47,6 +45,7 @@ OPTIONS_DEFINE=	DEMOS
 OPTIONS_DEFAULT=	DEMOS
 DEMOS_DESC=	Install Demos programs
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include "Makefile.man"
 

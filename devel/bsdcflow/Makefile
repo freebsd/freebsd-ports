@@ -24,4 +24,5 @@ MANCOMPRESSED=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/gnu
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

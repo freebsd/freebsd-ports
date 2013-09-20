@@ -20,6 +20,7 @@ INSTALL_CMD=	install.py -c -f eric4config.freebsd
 PLIST_FILES=
 SUB_FILES=	eric4.desktop
 
+NO_STAGE=	yes
 do-configure:
 	${SED}  -e 's,PYTHON_SITELIBDIR,${PYTHON_SITELIBDIR},' \
 		-e 's,PREFIX,${PREFIX},' \

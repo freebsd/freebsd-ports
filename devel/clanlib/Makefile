@@ -52,6 +52,7 @@ CONFIGURE_ARGS=	--disable-docs \
 PLIST_SUB+=	VER=${PORTVERSION:R} \
 		SHORT_VER=${PORTVERSION:R:R}${PORTVERSION:R:E}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|LIBS="-lsqlite3 -ldl"|LIBS="-lsqlite3"|g' \
 		${WRKSRC}/configure

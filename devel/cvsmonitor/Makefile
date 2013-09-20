@@ -67,6 +67,7 @@ FILES_DATA=	README setup.conf
 
 CVSMONITOR_ROOT=	${PREFIX}/${CGIDIR}/cvsmonitor
 
+NO_STAGE=	yes
 post-patch:
 	@${PERL} -pi -e '$$_=q{	my $$solaris=1;} if $$.==270' \
 		${WRKSRC}/modules/CVSMonitor/MetaData/Module.pm

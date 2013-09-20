@@ -1,9 +1,5 @@
-# New ports collection makefile for:	CommonC++
-# Date created:				25 July 2000
-# Whom:					David Sugar <dyfet@gnu.org>
-#
+# Created by: David Sugar <dyfet@gnu.org>
 # $FreeBSD$
-#
 
 PORTNAME=	commoncpp
 PORTVERSION=	1.8.1
@@ -27,4 +23,5 @@ INFO=		commoncpp2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

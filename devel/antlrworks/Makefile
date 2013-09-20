@@ -28,6 +28,7 @@ PLIST_FILES=	bin/antlrworks \
 		${JAVAJARDIR:C,${PREFIX}/?,,}/${PORTNAME}.jar \
 		share/pixmaps/antlrworks.png
 
+NO_STAGE=	yes
 do-install:
 	${SED} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|' \
 	-e 's|%%LOCALBASE%%|${LOCALBASE}|' \

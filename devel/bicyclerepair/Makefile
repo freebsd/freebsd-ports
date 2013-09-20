@@ -1,9 +1,5 @@
-# New ports collection makefile for: cuecat
-# Date created:		18 October 2000
-# Whom:			mwm@mired.org
-#
+# Created by: mwm@mired.org
 # $FreeBSD$
-#
 
 PORTNAME=	bicyclerepair
 PORTVERSION=	0.9
@@ -22,6 +18,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/pymacs-services:${PORTSDIR}/devel/pymacs
 .endif
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ide-integration/bike.vim ${DOCSDIR}

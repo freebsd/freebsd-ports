@@ -25,6 +25,7 @@ USES=		gettext
 
 MAN1=		bzr.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSFTP}

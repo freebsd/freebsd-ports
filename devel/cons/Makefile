@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cons
-# Date created:		11 December 1998
-# Whom:			rv@gnu.org
-#
+# Created by: rv@gnu.org
 # $FreeBSD$
-#
 
 PORTNAME=	cons
 PORTVERSION=	2.2.0
@@ -28,6 +24,7 @@ DOCS=		CHANGES COPYING COPYRIGHT INSTALL MANIFEST README RELEASE \
 		cons.html TODO
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

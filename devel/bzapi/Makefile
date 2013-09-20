@@ -32,6 +32,7 @@ USES=		perl5
 USE_PERL5=	configure
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/script/*.pl	${PREFIX}/bin
 	@(cd ${WRKSRC}/extension/BzAPI; ${COPYTREE_SHARE} . ${PREFIX}/www/bugzilla/extensions/BzAPI)

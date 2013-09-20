@@ -1,4 +1,4 @@
-# Created by: Joerg Wunsch <joerg@freebsd.org>
+# Created by: Joerg Wunsch <joerg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	avr-libc
@@ -23,6 +23,7 @@ RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDOCS}

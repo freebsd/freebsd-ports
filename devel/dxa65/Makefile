@@ -20,6 +20,7 @@ MLINKS=	dxa.1 dxa65.1
 PLIST_FILES=	bin/dxa65
 PORTDOCS=	INSTALL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch-script:

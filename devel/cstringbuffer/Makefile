@@ -1,9 +1,5 @@
-# New ports collection makefile for:   cStringBuffer
-# Date created:        10 July 2004
-# Whom:                Mooneer Salem <mooneer@translator.cx>
-#
+# Created by: Mooneer Salem <mooneer@translator.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	cstringbuffer
 PORTVERSION=	0.1.6
@@ -22,4 +18,5 @@ MANCOMPRESSED=	no
 PLIST_FILES=	include/csb.h lib/libcsb.a lib/libcsb.la lib/libcsb.so \
 		lib/libcsb.so.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

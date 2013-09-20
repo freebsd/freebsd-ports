@@ -9,6 +9,7 @@ USE_PYTHON=	yes
 OPTIONS_DEFINE=	VERBOSE_BUILD DEBUG OPTIMIZED_CFLAGS
 VERBOSE_BUILD_DESC=	Show compiler messages
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../boost-all/common.mk"
 
 .include <bsd.port.pre.mk>

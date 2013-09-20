@@ -1,9 +1,5 @@
-# New ports collection makefile for:	autodist
-# Date created:		2007-02-21
-# Whom:			Peter Johnson <johnson.peter@gmail.com>
-#
+# Created by: Peter Johnson <johnson.peter@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	autodist
 PORTVERSION=	1.5
@@ -21,6 +17,7 @@ USE_GMAKE=	yes
 MAN1=		autodist.1
 INFO=		autodist
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

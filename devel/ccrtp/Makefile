@@ -22,6 +22,7 @@ INFO=	ccrtp
 
 BROKEN=		does not build
 
+NO_STAGE=	yes
 post-patch:
 	@cd ${WRKSRC}/src && \
 		${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e "s|<malloc.h>|<stdlib.h>|g" "{}" \;

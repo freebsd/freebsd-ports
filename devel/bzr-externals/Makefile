@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bzr-externals
-# Date created:				2010-08-30
-# Whom:					Carlo Strub
-#
+# Created by: Carlo Strub
 # $FreeBSD$
-#
 
 PORTNAME=	bzr-externals
 PORTVERSION=	1.3.3
@@ -25,4 +21,5 @@ WRKSRC=		${WRKDIR}/externals
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

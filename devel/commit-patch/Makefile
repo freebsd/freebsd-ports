@@ -28,6 +28,7 @@ PLIST_FILES=	bin/commit-partial bin/commit-patch \
 MAN1=		commit-partial.1 commit-patch.1
 PORTDOCS=	*
 
+NO_STAGE=	yes
 post-patch:
 		${REINPLACE_CMD} -e 's/share[/]man/man/' \
 			-e 's/PREFIX=/PREFIX?=/' ${WRKSRC}/Makefile

@@ -35,4 +35,5 @@ MAN3=	ao_string_tokenize.3 configFileLoad.3 optionFileLoad.3 \
 
 INFO=	autogen
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

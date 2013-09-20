@@ -26,4 +26,5 @@ PLIST_FILES=	bin/cvs2darcs share/cvs2darcs/cvs_convert.pl \
 		share/cvs2darcs/branch_detect.pl
 PLIST_DIRS=	share/cvs2darcs
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -29,6 +29,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 STRIP_FILES=	bin/${PORTNAME} libexec/${PORTNAME}/*.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800505

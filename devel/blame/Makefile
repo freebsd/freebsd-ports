@@ -14,4 +14,5 @@ GNU_CONFIGURE=	yes
 MAN1=		blame.1
 PLIST_FILES=	bin/blame
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

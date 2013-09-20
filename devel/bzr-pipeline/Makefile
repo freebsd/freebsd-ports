@@ -1,9 +1,5 @@
-# Ports collection makefile for:	bzr-pipeline
-# Date created:				2010-11-16
-# Whom:					Carlo Strub <c-s@c-s.li>
-#
+# Created by: Carlo Strub <c-s@c-s.li>
 # $FreeBSD$
-#
 
 PORTNAME=	bzr-pipeline
 PORTVERSION=	1.4
@@ -25,4 +21,5 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	BzrPipeline
 WRKSRC=			${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

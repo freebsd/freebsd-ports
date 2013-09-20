@@ -1,9 +1,5 @@
-# New ports collection makefile for: djgpp-crx
-# Date created:		27 Jan 2007
-# Whom:                 Peter Johnson <johnson.peter@gmail.com>
-#
+# Created by: Peter Johnson <johnson.peter@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	crx
 PORTVERSION=	2.03
@@ -22,6 +18,7 @@ USE_ZIP=	yes
 NO_MTREE=	yes
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
 

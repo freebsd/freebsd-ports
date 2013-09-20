@@ -1,8 +1,5 @@
-# New ports collection makefile for: cmph
-# Date created: 30 Jul 2010
-# Whom:                 Jesse Kempf (jessekempf@gmail.com)
+# Created by: Jesse Kempf (jessekempf@gmail.com)
 # $FreeBSD$
-#
 
 PORTNAME=	cmph
 PORTVERSION=	2.0
@@ -18,4 +15,5 @@ USE_LDCONFIG=	yes
 
 MAN1=		cmph.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

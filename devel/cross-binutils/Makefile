@@ -24,6 +24,7 @@ OPTIONS_DEFINE=		RTEMS_PATCHES
 
 RTEMS_PATCHES_DESC=	Apply RTEMS patches
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--disable-nls \

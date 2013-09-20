@@ -35,6 +35,7 @@ COMPILER_LINKS=	Create symlinks to distcc
 
 OPTIONS_DEFAULT=	COMPILER_LINKS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 

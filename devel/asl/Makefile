@@ -1,9 +1,5 @@
-# New ports collection makefile for:	asl
-# Date created:		18 June 1997
-# Whom:			Thomas Gellekum <tg@freebsd.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	asl
 PORTVERSION=	1.41r8
@@ -19,6 +15,7 @@ ONLY_FOR_ARCHS=	i386 alpha amd64
 
 MAN1=	asl.1 p2bin.1 p2hex.1 pbind.1 plist.1
 
+NO_STAGE=	yes
 post-extract:
 	${CP} ${FILESDIR}/Makefile.def ${WRKSRC}
 

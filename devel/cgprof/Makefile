@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cgprof
-# Date created:				16 December 2004
-# Whom:					Adam McLaurin
-#
+# Created by: Adam McLaurin
 # $FreeBSD$
-#
 
 PORTNAME=	cgprof
 PORTVERSION=	1.2
@@ -23,4 +19,5 @@ MAKE_ENV=	prefix=${PREFIX}
 MAN1=		cgprof.1
 PLIST_FILES=	bin/cgprof
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

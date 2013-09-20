@@ -1,9 +1,5 @@
-# New ports collection makefile for:    CSSC
-# Date created:         31 Mar 1999
-# Whom:                 Oliver Fromme
-#
+# Created by: Oliver Fromme
 # $FreeBSD$
-#
 
 PORTNAME=	cssc
 PORTVERSION=	0.15a.0
@@ -22,4 +18,5 @@ INFO=		cssc
 
 WRKSRC=		${WRKDIR}/CSSC-0.15alpha.pl0
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

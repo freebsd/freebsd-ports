@@ -1,9 +1,5 @@
-# New ports collection makefile for: elfsh
-# Date created:		May 02 2003
-# Whom:			Samy Al Bahra <samy@kerneled.com>
-#
+# Created by: Samy Al Bahra <samy@kerneled.com>
 # $FreeBSD$
-#
 
 PORTNAME=	elfsh
 PORTVERSION=	0.51b3
@@ -20,4 +16,5 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

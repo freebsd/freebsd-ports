@@ -26,6 +26,7 @@ PLIST_FILES=	bin/cvsdadm
 
 MAN1=	cvsdadm.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

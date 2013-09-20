@@ -1,9 +1,5 @@
-# New ports collection makefile for:	arduino-mk
-# Date created:		27 Feb 2011
-# Whom:			Craig Leres <leres@ee.lbl.gov>
-#
+# Created by: Craig Leres <leres@ee.lbl.gov>
 # $FreeBSD$
-#
 
 PORTNAME=	arduino-mk
 PORTVERSION=	0.10
@@ -28,6 +24,7 @@ NO_BUILD=	yes
 
 OPTIONS_DEFINE+=	DOCS EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MDOCS)

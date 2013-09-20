@@ -29,6 +29,7 @@ GCONF_SCHEMAS=	bug-buddy.schemas
 
 MAN1=		bug-buddy.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|applications.menu|gnome-applications.menu|' \
 		${WRKSRC}/src/bugzilla.c

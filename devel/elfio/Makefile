@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	elfio
-# Date created:			Jul 26, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	elfio
 PORTVERSION=	1.0.3
@@ -28,6 +23,7 @@ OPTIONE_DEFINE=	EXAMPLES DOCS
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}

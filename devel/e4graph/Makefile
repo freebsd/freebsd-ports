@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	e4graph
-# Date created:			Jul 16, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	e4graph
 PORTVERSION=	1.0a11
@@ -43,6 +38,7 @@ PLIST_SUB+=	PYTHON="@comment "
 TCL_VER?=	8.4
 TCLVND=		${TCL_VER:S/.//}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|=-O$$|="$${CFLAGS}"|g ; \
 		s|gcc -shared|$$(CC) -shared|g ; \

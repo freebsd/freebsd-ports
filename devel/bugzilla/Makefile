@@ -36,6 +36,7 @@ DATA_DIRS_LIST=	images js skins
 # checksetup will fail if these directories are not present!
 EMPTY_DIRS_LIST=data graphs contrib lib t xt
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.common"
 .include "${.CURDIR}/Makefile.options"
 .include <bsd.port.options.mk>

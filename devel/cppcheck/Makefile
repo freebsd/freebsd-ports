@@ -29,6 +29,7 @@ RULES_DESC=		User-defined rule support (requires PCRE)
 
 PLIST_FILES=	bin/cppcheck
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

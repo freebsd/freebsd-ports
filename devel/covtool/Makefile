@@ -21,6 +21,7 @@ MAN1=		cov++.1 \
 		covtool.1 \
 		gen_html.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%PORTNAME%%|${PORTNAME}|g' ${WRKSRC}/cov++

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	dprog
-# Date created:			Apr 6, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	dprog
 PORTVERSION=	0.3.1
@@ -25,6 +20,7 @@ OPTIONS_DEFINE=	EMACS
 OPTIONS_DEFAULT=	EMACS
 EMACS_DESC=	Install emacs syntax files
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEMACS}

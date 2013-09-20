@@ -19,6 +19,7 @@ PLIST_FILES=	bin/cvsplot
 USES=		shebangfix perl5
 SHEBANG_FILES=	cvsplot.pl
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cvsplot.pl ${PREFIX}/bin/cvsplot
 

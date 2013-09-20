@@ -39,6 +39,7 @@ DOCS_DESC=		Install the reference documents
 
 INSLIST=	arduino hardware lib libraries logo.png revisions.txt tools
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MATMEGA644P}

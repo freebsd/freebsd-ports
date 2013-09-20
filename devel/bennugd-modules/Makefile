@@ -26,6 +26,7 @@ USE_DOS2UNIX=	*.c
 
 WRKSRC=		${WRKDIR}/bennugd/${PORTNAME}
 
+NO_STAGE=	yes
 post-extract:
 	@${CHMOD} a+x ${WRKSRC}/configure ${WRKSRC}/install-sh
 

@@ -1,6 +1,7 @@
 # Created by: Henrik Motakef <henrik.motakef@web.de>
 # $FreeBSD$
 
+NO_STAGE=	yes
 # The source tarball was obtained from the project's GIT repository:
 # wget -O asdf-2.017.tar.gz "http://common-lisp.net/gitweb?p=projects/asdf/asdf.git;a=snapshot;h=db16d0cc1a15697f831bcacc9429cc578304b6cb;sf=tgz"
 

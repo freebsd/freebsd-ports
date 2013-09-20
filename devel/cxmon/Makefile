@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cxmon
-# Date created:	10 September 2003
-# Whom:		Joachim Strombergson
-#
+# Created by: Joachim Strombergson
 # $FreeBSD$
-#
 
 PORTNAME=	cxmon
 PORTVERSION=	3.2
@@ -18,4 +14,5 @@ GNU_CONFIGURE=	yes
 MAN1=		cxmon.1
 PLIST_FILES=	bin/cxmon
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

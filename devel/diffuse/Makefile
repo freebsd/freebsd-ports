@@ -29,6 +29,7 @@ MENU_DESC=	Enable a desktop program menu entry
 
 OPTIONS_DEFAULT=DATA MENU
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDATA}

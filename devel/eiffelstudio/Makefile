@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eiffelstudio
-# Date created:				2007-01-01
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	eiffelstudio
 PORTVERSION=	5.7
@@ -38,6 +34,7 @@ EIFFEL_HOST=	${OPSYS:L}-${EIFFEL_ARCH}
 PLIST_SUB+=	EIFFEL_HOST="${EIFFEL_HOST}"
 SUB_LIST+=	EIFFEL_HOST="${EIFFEL_HOST}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Try native version first, then try i386 compatibility framework.

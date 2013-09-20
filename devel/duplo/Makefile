@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	duplo
-# Date created:			Oct 5, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	duplo
 PORTVERSION=	0.2.0
@@ -20,6 +15,7 @@ USE_GMAKE=	yes
 PLIST_FILES=	bin/duplo %%DATADIR%%/duplo.xsl
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,^CC,#CC," \
 		-e "s,^CXXFLAGS,#CXXFLAGS," \

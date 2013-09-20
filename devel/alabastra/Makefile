@@ -24,6 +24,7 @@ ALL_TARGET=	Alabastra
 
 PLIST_FILES=	bin/alabastra
 
+NO_STAGE=	yes
 do-configure:
 	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
 

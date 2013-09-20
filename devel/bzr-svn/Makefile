@@ -1,9 +1,5 @@
-# Ports collection makefile for:	bzr-svn
-# Date created:				8 August 2010
-# Whom:					Carlo Strub
-#
+# Created by: Carlo Strub
 # $FreeBSD$
-#
 
 PORTNAME=	bzr-svn
 PORTVERSION=	1.2.2
@@ -26,4 +22,5 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	bzr_svn
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -17,4 +17,5 @@ PLIST_FILES=	bin/dits
 MAN1=		dits.1
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

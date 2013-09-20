@@ -25,6 +25,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		entity.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

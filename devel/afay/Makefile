@@ -19,6 +19,7 @@ MAN1=		aflex.1 ayacc.1
 NO_WRKSUBDIR=	yes
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

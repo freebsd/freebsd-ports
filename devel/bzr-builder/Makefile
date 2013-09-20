@@ -1,9 +1,5 @@
-# Ports collection makefile for:	bzr-builder
-# Date created:				22 Aug 2010
-# Whom:					Carlo Strub <c-s@c-s.li>
-#
+# Created by: Carlo Strub <c-s@c-s.li>
 # $FreeBSD$
-#
 
 PORTNAME=	bzr-builder
 PORTVERSION=	0.7.3
@@ -26,4 +22,5 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	bzr_builder
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

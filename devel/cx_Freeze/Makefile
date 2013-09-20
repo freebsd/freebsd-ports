@@ -11,4 +11,5 @@ COMMENT=	The cx_Freeze is a set of utilities for freezing Python scripts
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

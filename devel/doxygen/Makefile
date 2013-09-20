@@ -41,6 +41,7 @@ QT4_DESC=	Install Doxywizard GUI
 HTMLDOCS_DESC=	Install documentation in HTML format
 PDFDOCS_DESC=	Install documentation in PDF format
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHTMLDOCS}

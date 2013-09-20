@@ -27,6 +27,7 @@ PLIST_DIRSTRY=	etc/cvsd
 USE_RC_SUBR=	cvsd
 
 OPTIONS_DEFINE=	DOCS
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} > 1000000

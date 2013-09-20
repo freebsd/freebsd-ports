@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	alf
-# Date created:			Sep 4, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	alf
 PORTVERSION=	0.1
@@ -20,4 +15,5 @@ USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

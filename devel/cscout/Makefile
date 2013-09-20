@@ -21,6 +21,7 @@ USE_PERL5=	run
 
 MAN1=	cscout.1 cswc.1
 
+NO_STAGE=	yes
 post-patch:
 .if exists(/usr/include/g++/)
 	${REINPLACE_CMD} -i "" -e 's:g++-3:g++:g' \

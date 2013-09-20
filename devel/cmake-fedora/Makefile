@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cmake-fedora
-# Date created:		2 Jan, 2012
-# Whom:			buganini@gmail.com
-#
+# Created by: buganini@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	cmake-fedora
 PORTVERSION=	1.0.3
@@ -19,6 +15,7 @@ LICENSE=	BSD
 WRKSRC=		${WRKDIR}/Modules
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 

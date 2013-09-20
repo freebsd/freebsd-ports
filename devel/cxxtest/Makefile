@@ -19,6 +19,7 @@ DOCS=		README TODO docs/*.html docs/*.png
 EXAMPLES=	sample/*.cpp sample/*.h sample/*.tpl sample/Construct \
 		sample/Makefile.unix sample/gui/GreenYellowRed.h
 
+NO_STAGE=	yes
 do-install:
 # scripts
 	@${MKDIR} ${PREFIX}/include/cxxtest

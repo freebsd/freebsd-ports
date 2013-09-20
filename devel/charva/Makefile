@@ -1,7 +1,5 @@
 # Created by: Alex Dupre <ale@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	charva
 PORTVERSION=	1.1.4
@@ -31,6 +29,7 @@ PLIST_SUB=	JAVA_HOME=${JAVA_HOME:S/${PREFIX}\///}
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		%%JAVA_HOME%%/jre/lib/${MACHINE_ARCH}/libTerminal.so
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${INSTALL_DATA} ${WRKSRC}/java/dist/lib/${PORTNAME}.jar \

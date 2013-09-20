@@ -1,9 +1,5 @@
-# New ports collection makefile for: elf
-# Date created:        December 31 2002 (HAPPY NEW YEAR!)
-# Whom:                Samy Al Bahra <samy@kerneled.org>
-#
+# Created by: Samy Al Bahra <samy@kerneled.org>
 # $FreeBSD$
-#
 
 PORTNAME=	elf
 PORTVERSION=	0.5.4p1
@@ -21,6 +17,7 @@ PLIST_FILES=	bin/elf
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/gcc/${CC}/g' ${WRKSRC}/src/Makefile.in
 

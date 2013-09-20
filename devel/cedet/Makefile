@@ -28,6 +28,7 @@ SEMANTIC_INFOS=	bovine-cedet.info grammar-fw.info semantic-appdev.info \
 
 CONFLICTS=	eieio-[0-9]* semantic-[0-9]* speedbar-[0-9]*
 
+NO_STAGE=	yes
 pre-build:
 #cleanup info
 	${RM} -f ${WRKSRC}/ede/ede.info

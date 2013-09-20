@@ -19,6 +19,7 @@ ALL_TARGET=	jarfile
 MAN1=		doctorj.1
 PLIST_FILES=	%%JAVAJARDIR%%/doctorj.jar
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/doctorj.jar..."
 	@${MKDIR} ${JAVAJARDIR}

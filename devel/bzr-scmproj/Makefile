@@ -1,9 +1,5 @@
-# Ports collection makefile for:	bzr-scmproj
-# Date created:				2012-04-13
-# Whom:					Carlo Strub <cs@FreeBSD.org>
-#
+# Created by: Carlo Strub <cs@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bzr-scmproj
 PORTVERSION=	0.6.2
@@ -23,4 +19,5 @@ RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

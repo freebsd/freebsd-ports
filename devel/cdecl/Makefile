@@ -22,6 +22,7 @@ PLIST_FILES=	bin/cdecl bin/c++decl
 
 CONFLICTS=	cutils-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

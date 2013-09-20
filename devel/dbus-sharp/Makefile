@@ -1,7 +1,5 @@
 # Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	dbus-sharp
 PORTVERSION=	0.7.0
@@ -19,5 +17,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USES=	pathfix pkgconfig
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>

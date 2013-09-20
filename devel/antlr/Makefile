@@ -27,6 +27,7 @@ PORT_CLASSPATH=	${WRKSRC}/antlrall.jar:.
 
 EXAMPLES=	cpp java
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	ANTLRException.gif closure.gif cpp-runtime.html \

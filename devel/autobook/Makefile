@@ -1,9 +1,5 @@
-# New ports collection makefile for:   autobook
-# Date created:        13 December 2001
-# Whom:                Edwin Groothuis (edwin@mavetju.org)
-#
+# Created by: Edwin Groothuis (edwin@mavetju.org)
 # $FreeBSD$
-#
 
 PORTNAME=	autobook
 PORTVERSION=	1.5
@@ -15,6 +11,7 @@ COMMENT=	GNU autoconf, automake, and libtool - The Book
 
 NO_BUILD=	yes	# it's only text!
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/doc/autobook
 	${CP} ${WRKSRC}/* ${PREFIX}/share/doc/autobook

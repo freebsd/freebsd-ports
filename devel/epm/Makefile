@@ -1,9 +1,5 @@
-# Ports collection makefile for:  epm
-# Date created:			  20 Nov 2004
-# Whom:				  NAKATA Maho <maho@FreeBSD.org>
-#
+# Created by: NAKATA Maho <maho@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	epm
 PORTVERSION=	4.2
@@ -25,6 +21,7 @@ USE_AUTOTOOLS=	autoconf
 MAN1=		epm.1 epminstall.1 mkepmlist.1 setup.1
 MAN5=		epm.list.5 setup.types.5
 
+NO_STAGE=	yes
 post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/docdir/d' ${WRKSRC}/Makefile.in

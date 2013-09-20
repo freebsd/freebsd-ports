@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dwarfdump
-# Date created:		11 Feb 2005
-# Whom:			joerg@FreeBSD.org
-#
+# Created by: joerg@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	dwarfdump
 PORTVERSION=	20130207
@@ -24,6 +20,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		dwarfdump.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "amd64")

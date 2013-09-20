@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devtodo
-# Date Created:				26 May 2001
-# Whom:					Pete Fritchman <petef@databits.net>
-#
+# Created by: Pete Fritchman <petef@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	devtodo
 PORTVERSION=	0.1.20
@@ -28,6 +24,7 @@ MLINKS=	devtodo.1 tda.1 devtodo.1 tdd.1 devtodo.1 tde.1 devtodo.1 tdl.1 \
 	devtodo.1 tdr.1 devtodo.1 todo.1
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/^\ttest -f.*todorc.*\n//' ${WRKSRC}/doc/Makefile.in
 

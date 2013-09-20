@@ -22,6 +22,7 @@ MAN1=		bmake.1
 post-patch:	.SILENT
 	${REINPLACE_CMD} 's/^\.Nx/NetBSD/' ${WRKDIR}/bmake/bmake.1
 
+NO_STAGE=	yes
 do-build:
 	${SETENV} ${MAKE_ENV} ${SH} ${WRKDIR}/bmake/boot-strap \
 		--with-default-sys-path='.../share/mk:${PREFIX}/share/mk' \

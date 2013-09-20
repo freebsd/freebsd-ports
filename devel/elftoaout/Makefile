@@ -1,9 +1,5 @@
-# New ports collection makefile for:	elftoaout
-# Date created:		3 Jul 1998
-# Whom:			kchowksey@hss.hns.com
-#
+# Created by: kchowksey@hss.hns.com
 # $FreeBSD$
-#
 
 PORTNAME=	elftoaout
 PORTVERSION=	2.3
@@ -20,6 +16,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 MAN1=		elftoaout.1
 PLIST_FILES=	bin/elftoaout
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/elftoaout ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/elftoaout.1 ${PREFIX}/man/man1
