@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	boto
-PORTVERSION=	2.13.0
+PORTVERSION=	2.13.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +16,6 @@ USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 
 CONFLICTS=	p5-Net-Amazon-Route53-[0-9]*
-
 NO_STAGE=	yes
+
 .include <bsd.port.mk>
