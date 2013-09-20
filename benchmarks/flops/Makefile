@@ -16,6 +16,7 @@ NO_WRKSUBDIR=	yes
 PORTDOCS=	flops.doc
 PLIST_FILES=	bin/flops
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

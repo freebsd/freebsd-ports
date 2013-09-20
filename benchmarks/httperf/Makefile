@@ -23,6 +23,7 @@ PORTDOCS=	ChangeLog NEWS README TODO
 .endif
 MAN1=		httperf.1
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    bonnie
-# Date created:         26 September 1994
-# Whom:                 se
-#
+# Created by: se
 # $FreeBSD$
-#
 
 PORTNAME=	bonnie
 PORTVERSION=	2.0.6
@@ -23,6 +19,7 @@ ALL_TARGET=	bsd
 MAN1=		bonnie.1
 PLIST_FILES=	bin/bonnie
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Bonnie ${PREFIX}/bin/bonnie
 	${INSTALL_MAN} ${FILESDIR}/bonnie.1 ${PREFIX}/man/man1

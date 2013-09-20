@@ -18,6 +18,7 @@ MAKEFILE=	makefile
 
 PLIST_FILES=	bin/pathrate_rcv bin/pathrate_snd
 
+NO_STAGE=	yes
 do-install:
 .for f in pathrate_rcv pathrate_snd
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin

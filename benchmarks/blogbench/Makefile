@@ -17,6 +17,7 @@ MAN8=		blogbench.8
 PLIST_FILES=	bin/blogbench
 PORTDOCS=	README
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

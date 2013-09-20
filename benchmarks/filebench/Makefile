@@ -1,9 +1,5 @@
-# New ports collection makefile for:	filebench
-# Date created:			Jan 6, 2011
-# Whom:				Tom Judge <tom@tomjudge.com>
-#
+# Created by: Tom Judge <tom@tomjudge.com>
 # $FreeBSD$
-#
 
 PORTNAME=	filebench
 PORTVERSION=	1.4.8.0.8
@@ -19,6 +15,7 @@ ONLY_FOR_ARCHS=	amd64 i386 ia64 ppc
 GNU_CONFIGURE=	yes
 LICENSE=	CDDL
 
+NO_STAGE=	yes
 do-install:
 	( cd ${WRKSRC} && make install-binPROGRAMS )
 .if !defined(NOPORTDATA)

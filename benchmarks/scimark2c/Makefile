@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scimark2c
-# Date created:		Sat Apr 05 2003
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	scimark2c
 DISTVERSION=	2_1
@@ -18,6 +14,7 @@ PLIST_FILES=	bin/scimark2
 WRKSRC=		${WRKDIR}
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scimark2 ${PREFIX}/bin
 

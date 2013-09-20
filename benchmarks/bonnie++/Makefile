@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	bonnie++
-# Date created:			Mar 24, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bonnie++
 PORTVERSION=	1.97
@@ -26,6 +21,7 @@ MAN8=	bonnie++.8 getc_putc.8 zcav.8
 
 PORTDOCS=	readme.html
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

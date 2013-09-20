@@ -1,9 +1,5 @@
-# New ports collection makefile for:   cpipe
-# Date created:        1 March 2013
-# Whom:                uminac
-#
+# Created by: uminac
 # $FreeBSD$
-#
 
 PORTNAME=	cpipe
 PORTVERSION=	3.0.2
@@ -23,4 +19,5 @@ MAKE_ARGS=	"prefix=${PREFIX}"
 
 PLIST_FILES=	bin/cpipe
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

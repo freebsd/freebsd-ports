@@ -1,9 +1,5 @@
-# New ports collection makefile for:	slowloris
-# Date created:				Fri 03 Jul 2009
-# Whom:					Alexey V. Degtyarev
-#
+# Created by: Alexey V. Degtyarev
 # $FreeBSD$
-#
 
 PORTNAME=	slowloris
 PORTVERSION=	0.7
@@ -21,6 +17,7 @@ RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
 
 PLIST_FILES=	bin/slowloris
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PERL_THREADS=	no

@@ -23,6 +23,7 @@ OPTIONS_DEFAULT=	MYSQL
 PGSQL_DESC=	Enable PostgreSQL support
 MYSQL_DESC=	Enable MySQL support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

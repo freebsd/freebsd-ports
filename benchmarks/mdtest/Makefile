@@ -21,6 +21,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 CFLAGS+=	-DDarwin
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENMPI}

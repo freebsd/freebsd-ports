@@ -17,6 +17,7 @@ USES=		cmake
 CMAKE_ARGS=	-DLIBTNT_INCLUDE=${LOCALBASE}/include \
 		-DLIBTNT_LIB=${LOCALBASE}/lib
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} 's#DESTINATION doc#DESTINATION ${DOCSDIR}#g' \
 		${WRKSRC}/CMakeLists.txt

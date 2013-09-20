@@ -1,9 +1,5 @@
-# New ports collection makefile for:	geekbench
-# Date created:		2006-12-09
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	geekbench
 PORTVERSION=	2.1.13
@@ -22,6 +18,7 @@ USE_LINUX=	yes
 WRKSRC=		${WRKDIR}/dist/${DISTNAME}
 PLIST_FILES=	bin/geekbench
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/geekbench_x86_32 ${PREFIX}/bin/geekbench
 

@@ -20,6 +20,7 @@ SOCKETS_DESC=	Enable Unix Domain socket support
 HISTOGRAM_DESC=	Enable optional histogram output
 EXS_DESC=	Enable ICSC async socket support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_CSTD=	gnu89

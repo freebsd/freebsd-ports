@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ubench
-# Date created:				6 June 2000
-# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ubench
 PORTVERSION=	0.32
@@ -19,4 +15,5 @@ HAS_CONFIGURE=	yes
 MAN8=		ubench.8
 PLIST_FILES=	bin/ubench
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

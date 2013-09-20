@@ -29,6 +29,7 @@ OPTIONS_DEFAULT=SSH THREADS
 SSH_DESC=	Use ssh in distributed measurement
 THREADS_DESC=	Enable threading (uses pthreads)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTHREADS}

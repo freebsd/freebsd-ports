@@ -24,6 +24,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" DEBUG_FLAGS= \
 MAN1=	autobench.1 autobench_admin.1 autobenchd.1 bench2graph.1 \
 	crfile.1 sesslog.1
 
+NO_STAGE=	yes
 post-patch:
 .for file in autobench autobench_admin
 	@${REINPLACE_CMD} -i '' -e 's|/etc/|${PREFIX}/etc/|' ${WRKSRC}/${file}

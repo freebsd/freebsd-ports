@@ -22,6 +22,7 @@ EXTRACT_AFTER_ARGS=	${WRKDIR}
 PORTDOCS=	stream.c
 PLIST_FILES=	bin/stream_bench
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	polygraph
-# Date created:         3 March 1999
-# Whom:                 Dima Sivachenko <dima@chg.ru>
-#
+# Created by: Dima Sivachenko <dima@chg.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	polygraph
 PORTVERSION=	4.3.2
@@ -34,6 +30,7 @@ ZLIB_DESC=	Enable HTTP compression support
 
 OPTIONS_DEFAULT=	OPENSSL ZLIB
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUPLOT}

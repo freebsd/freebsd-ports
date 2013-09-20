@@ -17,6 +17,7 @@ OPTIONS_DEFINE=	MPI STATIC OPTIMIZED_CFLAGS
 MPI_DESC=	Build distributed MPI version
 STATIC_DESC=	Link resulting binaries statically
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}

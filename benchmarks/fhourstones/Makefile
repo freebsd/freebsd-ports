@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fhourstones
-# Date created:		2006-11-23
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	fhourstones
 PORTVERSION=	3.1
@@ -19,6 +15,7 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/fhourstones lib/fhourstones/SearchGame lib/fhourstones/inputs
 PLIST_DIRS=	lib/fhourstones
 
+NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile
 		@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/fhourstones

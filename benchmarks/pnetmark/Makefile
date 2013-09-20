@@ -24,6 +24,7 @@ PNET_STRAP_BIN=	pnetmark \
 		linpack \
 		scimark2
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/pnet/Makefile.pnet"
 .include <bsd.port.pre.mk>
 

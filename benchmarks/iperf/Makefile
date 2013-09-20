@@ -20,6 +20,7 @@ MAN1=		iperf.1
 PLIST_FILES=	bin/iperf
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}
