@@ -33,6 +33,7 @@ HGSVCONF_FILES=	access.conf \
 		remote-hgrc.d/access.rc \
 		remote-hgrc.d/logging.rc
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 pre-patch:
 	${SED} -I .orig -e "s#/etc/mercurial-server/#${PREFIX}/etc/${PORTNAME}/#" ${WRKSRC}/src/init/dot-mercurial-server

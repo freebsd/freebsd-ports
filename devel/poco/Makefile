@@ -18,6 +18,7 @@ SAMPLES_DESC=	Build sample programs
 CONFIGURE_ARGS= --config=FreeBSD
 USES=		gmake
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MTEST}

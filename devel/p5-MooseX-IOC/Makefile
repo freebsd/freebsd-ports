@@ -22,4 +22,5 @@ USE_PERL5=	configure
 
 MAN3=		MooseX::IOC.3 MooseX::IOC::Meta::Attribute.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

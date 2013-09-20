@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Data-Properties
-# Date created:		26 March 2003
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Properties
 PORTVERSION=	0.02
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Data::Properties.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

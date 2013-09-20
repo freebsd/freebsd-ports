@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ExtUtils::ParseXS
-# Date created:				29 June 2003
-# Whom:                			Dmitry Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ExtUtils-ParseXS
 PORTVERSION=	3.18
@@ -27,6 +23,7 @@ MAN3=		ExtUtils::ParseXS.3 \
 		ExtUtils::Typemaps::OutputMap.3 \
 		ExtUtils::Typemaps::Type.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

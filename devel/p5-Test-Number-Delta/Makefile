@@ -15,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=	Test::Number::Delta.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -48,4 +48,5 @@ MAN3=		MooseX::App.3 \
 		MooseX::App::Tutorial.3 \
 		MooseX::App::WritingPlugins.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

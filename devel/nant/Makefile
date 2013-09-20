@@ -26,6 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DATADIR=	${PREFIX}/share/NAnt
 DOCSDIR=	${PREFIX}/share/doc/NAnt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

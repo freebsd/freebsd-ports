@@ -23,6 +23,7 @@ MAN3=		Inline::CPP.3 \
 		Inline::CPP::Config.3 \
 		Inline::CPP::grammar.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|g++|${CXX}|' ${WRKSRC}/Makefile.PL
 

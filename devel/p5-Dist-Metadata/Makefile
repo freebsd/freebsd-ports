@@ -34,4 +34,5 @@ MAN3=	Dist::Metadata.3 \
 	Dist::Metadata::Tar.3 \
 	Dist::Metadata::Zip.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

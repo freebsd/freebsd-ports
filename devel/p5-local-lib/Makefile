@@ -20,4 +20,5 @@ MAN3=	POD2::DE::local::lib.3 \
 	lib::core::only.3 \
 	local::lib.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

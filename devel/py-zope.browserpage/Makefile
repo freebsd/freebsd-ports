@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-zope.browserpage
-# Date created:				Nov 15, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	zope.browserpage
 PORTVERSION=	3.12.2
@@ -31,4 +26,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.pagetemplate>=0:${PORTSDIR}/devel/py-zo
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

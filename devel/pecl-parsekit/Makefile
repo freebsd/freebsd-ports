@@ -21,4 +21,5 @@ USE_PHPEXT=	yes
 CONFIGURE_ARGS=	--enable-parsekit
 CFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

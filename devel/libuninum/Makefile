@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libuninum
-# Date created:		2007-01-07
-# Whom:			Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libuninum
 PORTVERSION=	2.7
@@ -23,6 +19,7 @@ USE_LDCONFIG=	yes
 
 MAN1=		numconv.1
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|uninum/||' ${WRKSRC}/uninum.c ${WRKSRC}/numconv.c
 

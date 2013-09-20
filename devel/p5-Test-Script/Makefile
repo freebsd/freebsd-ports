@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Test-Script
-# Date created:				Wed Mar  7 20:14:32 CET 2007
-# Whom:					lth@FreeBSD.org
-#
+# Created by: lth@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Script
 PORTVERSION=	1.07
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=		Test::Script.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

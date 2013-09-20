@@ -1,9 +1,5 @@
-# New ports collection makefile for:	premake
-# Date created:		2004-03-25
-# Whom:			michael johnson <ahze@ahze.net>
-#
+# Created by: michael johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	premake
 PORTVERSION=	3.7
@@ -25,6 +21,7 @@ PLIST_FILES=	bin/premake
 
 PORTDOCS=	CHANGES.txt LICENSE.txt README.txt
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

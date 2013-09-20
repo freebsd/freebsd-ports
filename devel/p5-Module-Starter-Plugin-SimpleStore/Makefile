@@ -19,4 +19,5 @@ MAN3=	Module::Starter::Plugin::InlineStore.3 \
 	Module::Starter::Plugin::DirStore.3 \
 	Module::Starter::Plugin::ModuleStore.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

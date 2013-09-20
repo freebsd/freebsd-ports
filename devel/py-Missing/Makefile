@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-Missing
-# Date created:				Nov 10, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Missing
 PORTVERSION=	2.13.1
@@ -24,4 +19,5 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=		yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

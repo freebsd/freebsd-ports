@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-ToscaWidgets
-# Date created:		1st July, 2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	ToscaWidgets
@@ -19,6 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webob>=0:${PORTSDIR}/www/py-webob
 USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 260

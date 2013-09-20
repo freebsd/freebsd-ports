@@ -23,4 +23,5 @@ USE_PYDISTUTILS=	easy_install
 PLIST_FILES=	bin/flake8 \
 		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

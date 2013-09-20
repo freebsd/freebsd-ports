@@ -1,9 +1,5 @@
-# New ports collection makefile for:   lua-bitlib
-# Date created:                        07 Jan 2008
-# Whom:                                Rong-En Fan <rafan@FreeBSD.org>
-#
+# Created by: Rong-En Fan <rafan@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bitlib
 PORTVERSION=	24
@@ -18,6 +14,7 @@ USE_LUA=	5.0+
 
 PLIST_FILES=	%%LUA_MODLIBDIR%%/bit.so
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && \
 		${CC} -fPIC -shared -o bit.so lbitlib.c \

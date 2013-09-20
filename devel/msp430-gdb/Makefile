@@ -1,9 +1,5 @@
-# New ports collection makefile for:	msp430-gdb
-# Date created:		16 October 2002
-# Whom:			Lev Serebryakov <lev@serebryakov.spb.ru>
-#
+# Created by: Lev Serebryakov <lev@serebryakov.spb.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	gdb
 PORTVERSION=	${GDBVERSION}.${PATCHVERSION}
@@ -40,6 +36,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} GDB_TARG=${PKGNAMEPREFIX:S/-$//} \
 BINARIES=	gdb:gdb run:sim/msp430
 MANPAGES=	gdb.1:gdb run.1:sim/common
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-patch:

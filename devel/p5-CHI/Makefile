@@ -53,4 +53,5 @@ MAN3=	CHI.3 \
 	CHI::Driver::RawMemory.3 \
 	CHI::Stats.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

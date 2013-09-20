@@ -15,5 +15,6 @@ USE_PERL5=	configure
 
 MAN3=	Test::Portability::Files.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-ScriptTest
-# Date created:		2012-09-08
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ScriptTest
 PORTVERSION=	1.2
@@ -20,4 +16,5 @@ LICENSE=	MIT
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

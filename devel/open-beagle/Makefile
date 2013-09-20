@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	beagle
-# Date created:			Jun 9, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	open-beagle
 PORTVERSION=	3.0.3
@@ -27,6 +22,7 @@ BUILD_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed
 
 #unfortunately, some important sed statements rely on GNU sed behavior, and can't be
 #easily changed to call GNU sed by means of the configure script
+NO_STAGE=	yes
 post-configure:
 	${FIND} -X ${WRKSRC} -name 'Makefile' | ${XARGS} ${REINPLACE_CMD} \
 	's/sed /gsed /g'

@@ -18,4 +18,5 @@ MAN3=		Heap.3 Heap::Binary.3 Heap::Binomial.3 Heap::Elem::Num.3 \
 		Heap::Elem::Str.3 Heap::Elem::StrRev.3 Heap::Elem.3 \
 		Heap::Fibonacci.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

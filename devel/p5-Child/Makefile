@@ -25,4 +25,5 @@ MAN3=		Child.3 \
 		Child::Link::Proc.3 \
 		Child::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

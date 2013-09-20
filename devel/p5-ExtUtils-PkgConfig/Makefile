@@ -17,6 +17,7 @@ USE_PERL5=	configure
 
 MAN3=		ExtUtils::PkgConfig.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e '1d' ${WRKSRC}/Makefile.PL
 

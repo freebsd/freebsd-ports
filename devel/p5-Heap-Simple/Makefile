@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Heap::Simple
-# Date created:				26 August 2004
-# Whom:					Aaron Dalton <aaron@daltons.ca>
-#
+# Created by: Aaron Dalton <aaron@daltons.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Heap-Simple
 PORTVERSION=	0.13
@@ -19,6 +15,7 @@ USE_PERL5=	configure
 
 MAN3=		Heap::Simple.3
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

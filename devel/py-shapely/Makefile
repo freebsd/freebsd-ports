@@ -17,4 +17,5 @@ CFLAGS+=	-I${LOCALBASE}/include
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

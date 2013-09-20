@@ -28,4 +28,5 @@ MAN3=		Tree::Binary.3 Tree::Binary::Search.3 \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

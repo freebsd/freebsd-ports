@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/linux-f10-libsigc++20
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=		libsigc++20
 PORTVERSION=		2.2.2
@@ -28,4 +24,5 @@ DOCSDIR=		usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=		AUTHORS COPYING ChangeLog NEWS README TODO
 DESCR=			${.CURDIR}/../${PORTNAME}/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

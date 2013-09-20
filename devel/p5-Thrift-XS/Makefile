@@ -29,4 +29,5 @@ MAN3=		Thrift::XS.3 \
 		Thrift::XS::CompactProtocol.3 \
 		Thrift::XS::MemoryBuffer.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

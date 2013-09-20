@@ -27,6 +27,7 @@ NO_WRKSUBDIR=	yes
 MAKE_ARGS+=	INSTALL_AS_USER=yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ( (${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || ${OSVERSION} < 800505 )

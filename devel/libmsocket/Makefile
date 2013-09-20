@@ -24,6 +24,7 @@ PLIST_FILES=	lib/libmsocket.so \
 		include/msocket.h \
 		include/msocketutils.h
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"

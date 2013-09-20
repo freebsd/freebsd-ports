@@ -1,10 +1,5 @@
-# New ports collection makefile for:	include
-# Date created:		2006-08-05
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
-# $MBSDlabs$
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	include
 PORTVERSION=	0.4.2
@@ -19,6 +14,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-install:
 	@${FIND} -d ${PREFIX}/include/openwince/ -type f | \
 		${SED} -e 's,^${PREFIX}/,,' >> ${TMPPLIST}

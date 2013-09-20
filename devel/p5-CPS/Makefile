@@ -31,4 +31,5 @@ MAN3=		CPS.3 \
 		CPS::Governor::Deferred.3 \
 		CPS::Governor::Simple.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -13,6 +13,7 @@ USES=		bison
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 regression-test:
 	cd ${WRKSRC} && ./test
 

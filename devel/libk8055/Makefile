@@ -22,6 +22,7 @@ PLIST_FILES=	bin/k8055 \
 		lib/libk8055.so.0.2 \
 		include/k8055.h
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/libk8055.c.orig
 

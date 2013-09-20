@@ -1,4 +1,4 @@
-# Created by: Alan Somers <asomers@freebsd.org>
+# Created by: Alan Somers <asomers@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kyua-atf-compat
@@ -19,6 +19,7 @@ USES=		pkgconfig
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}

@@ -24,4 +24,5 @@ MAN3=		MooseX::StrictConstructor.3 \
 		MooseX::StrictConstructor::Trait::Class.3 \
 		MooseX::StrictConstructor::Trait::Method::Constructor.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

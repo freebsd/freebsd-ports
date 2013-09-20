@@ -26,6 +26,7 @@ MAN3=		Sub::Exporter.3 \
 		Sub::Exporter::Tutorial.3 \
 		Sub::Exporter::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

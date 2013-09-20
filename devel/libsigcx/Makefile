@@ -19,4 +19,5 @@ USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	ac_cv_path_DOXYGEN=""
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

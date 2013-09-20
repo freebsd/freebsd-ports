@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-rpyc
-# Date created:		2009-01-20
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	rpyc
 PORTVERSION=	3.1.0
@@ -23,4 +19,5 @@ USE_PYTHON=		2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	RPyC
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

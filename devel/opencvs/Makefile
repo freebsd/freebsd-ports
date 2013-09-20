@@ -25,4 +25,5 @@ MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 
 PLIST_FILES=	bin/opencvs
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

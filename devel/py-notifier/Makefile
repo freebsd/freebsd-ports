@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-notifier
-# Date created:		2006-12-31
-# Whom:			Li-Wen Hsu <lwhsu@lwhsu.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
 # $FreeBSD$
-#
 
 PORTNAME=	notifier
 PORTVERSION=	0.5.8
@@ -24,6 +20,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 WRKSRC=		${WRKDIR}/py${PORTNAME}-${PORTVERSION}
 
 .if !defined(NOPORTEXAMPLES)
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}

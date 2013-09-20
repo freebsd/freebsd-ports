@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-ocempgui
-# Date created:		2006-07-19
-# Whom:			Alexander Botero-Lowry <alex@foxybanana.com>
-#
+# Created by: Alexander Botero-Lowry <alex@foxybanana.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ocempgui
 PORTVERSION=	0.2.9
@@ -24,6 +20,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	OcempGUI
 
+NO_STAGE=	yes
 post-patch:
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -i "" -e 's|datafiles + docfiles|datafiles|g' ${WRKSRC}/setup.py

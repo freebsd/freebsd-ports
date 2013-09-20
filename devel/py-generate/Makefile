@@ -1,9 +1,5 @@
-# New ports collection makefile for:   py-generate
-# Date created:        26 August 2006
-# Whom:                D'Arcy J.M. Cain <darcy@druid.net>
-#
+# Created by: D'Arcy J.M. Cain <darcy@druid.net>
 # $FreeBSD$
-#
 
 PORTNAME=	generate
 PORTVERSION=	2.6
@@ -23,4 +19,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	2.2
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -19,4 +19,5 @@ USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_EGG=	${PORTNAME}-${DISTVERSION:C/-/_/g}-py${PYTHON_VER}.egg
 PYDISTUTILS_PKGVERSION=	${PORTVERSION}-beta
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

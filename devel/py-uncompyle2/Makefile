@@ -17,6 +17,7 @@ USE_PYTHON=	2.7
 USE_PYDISTUTILS=yes
 REINPLACE_ARGS=	-i ""
 
+NO_STAGE=	yes
 pre-patch:
 	# Removing blanks at EOL
 	${FIND} ${WRKSRC} -type f -print0 | \

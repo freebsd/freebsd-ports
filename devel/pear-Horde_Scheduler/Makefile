@@ -1,7 +1,4 @@
-# Ports collection makefile for:  pear-Horde_Sscheduler
-# Date created:			  11 October 2011
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Horde_Scheduler
@@ -15,6 +12,7 @@ USE_HORDE_RUN=	Horde_Core \
 		Horde_Util \
 		Horde_Vfs
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
 .include <bsd.port.post.mk>

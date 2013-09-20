@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Algorithm-LUHN
-# Date created:				25 June 2005
-# Whom:					Aaron Dalton <aaron@daltons.ca>
-#
+# Created by: Aaron Dalton <aaron@daltons.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Algorithm-LUHN
 PORTVERSION=	1.00
@@ -19,4 +15,5 @@ MAN3=		Algorithm::LUHN.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

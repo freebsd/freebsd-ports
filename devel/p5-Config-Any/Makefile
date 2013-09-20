@@ -28,6 +28,7 @@ MAN3=		Config::Any.3 \
 		Config::Any::XML.3 \
 		Config::Any::YAML.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MINI}

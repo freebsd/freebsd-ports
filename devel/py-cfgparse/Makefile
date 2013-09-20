@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cfgparse
-# Date created:		March 18, 2008
-# Whom:			John Ferrell
-#
+# Created by: John Ferrell
 # $FreeBSD$
-#
 
 PORTNAME=	cfgparse
 PORTVERSION=	1.2
@@ -23,6 +19,7 @@ PYDISTUTILS_EGGINFO=	${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-v01_02-${PYTHON
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

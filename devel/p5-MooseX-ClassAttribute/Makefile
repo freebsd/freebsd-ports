@@ -37,4 +37,5 @@ MAN3=		MooseX::ClassAttribute.3 \
 		MooseX::ClassAttribute::Trait::Role.3 \
 		MooseX::ClassAttribute::Trait::Role::Composite.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,4 @@
-# New ports collection makefile for:	liblouis
-# Date created:				06 Feb 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	liblouis
@@ -15,6 +13,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e \
 		's#@libdir@#${PREFIX}/libdata#g' ${WRKSRC}/Makefile.in

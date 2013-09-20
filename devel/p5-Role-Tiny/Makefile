@@ -27,6 +27,7 @@ USES=		perl5
 MAN3=		Role::Tiny.3 \
 		Role::Tiny::With.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

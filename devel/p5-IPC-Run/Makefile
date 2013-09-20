@@ -27,4 +27,5 @@ MAN3=		IPC::Run.3 \
 		IPC::Run::Win32IO.3 \
 		IPC::Run::Win32Pump.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

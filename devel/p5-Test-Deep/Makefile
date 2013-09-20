@@ -20,6 +20,7 @@ REINPLACE_ARGS=	-i ''
 
 MAN3=		Test::Deep.3 Test::Deep::NoTest.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/return (/s/;/);/' ${WRKSRC}/lib/Test/Deep/RegexpOnly.pm
 

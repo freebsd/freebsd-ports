@@ -23,4 +23,5 @@ MAN3=		Config::Objective::List.3 Config::Objective::Boolean.3 \
 		Config::Objective::Hash.3 Config::Objective::Integer.3 \
 		Config::Objective::String.3 Config::Objective::DataType.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

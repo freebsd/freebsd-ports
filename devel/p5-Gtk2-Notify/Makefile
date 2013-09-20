@@ -24,4 +24,5 @@ USE_PERL5=	configure
 
 MAN3=		Gtk2::Notify.3 Gtk2::Notify::index.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

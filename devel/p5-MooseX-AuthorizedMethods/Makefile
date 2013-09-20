@@ -24,4 +24,5 @@ MAN3=		MooseX::AuthorizedMethods.3 \
 		MooseX::Meta::Method::Authorized.3 \
 		MooseX::Meta::Method::Authorized::CheckRoles.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

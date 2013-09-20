@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mime
-# Date created:				3 June 2000
-# Whom:					jmg
-#
+# Created by: jmg
 # $FreeBSD$
-#
 
 PORTNAME=	mime
 PORTVERSION=	1.1
@@ -18,6 +14,7 @@ COMMENT=	C library to parse mime data
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,-fpic,-fpic -fPIC,g" ${WRKSRC}/Makefile.in
 

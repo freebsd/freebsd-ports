@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-unittest2
-# Date created:				Nov 08, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	unittest2
 PORTVERSION=	0.5.1
@@ -21,4 +16,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

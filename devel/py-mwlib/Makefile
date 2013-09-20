@@ -32,6 +32,7 @@ USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's|lockfile==|lockfile>=|' \

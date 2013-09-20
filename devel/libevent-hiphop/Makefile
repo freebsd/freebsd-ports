@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libevent-hiphop
-# Date created:				16 July 2012
-# Whom:					Martin Matuska <mm@FreeBSd.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-hiphop
 PORTREVISION=	3
@@ -28,4 +24,5 @@ DESCR=		${.CURDIR}/pkg-descr
 
 MASTERDIR=	${.CURDIR}/../libevent
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

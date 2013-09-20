@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	Env::PS1
 # Created by: ijliao
 # $FreeBSD$
 
@@ -17,4 +15,5 @@ USE_PERL5=	modbuild
 
 MAN3=	Env::PS1.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

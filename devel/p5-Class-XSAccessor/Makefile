@@ -22,4 +22,5 @@ MAN3=		Class::XSAccessor.3 \
     		Class::XSAccessor::Array.3 \
     		Class::XSAccessor::Heavy.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

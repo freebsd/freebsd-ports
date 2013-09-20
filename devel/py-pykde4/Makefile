@@ -42,6 +42,7 @@ PLIST_SUB+=	SIPDIR=share/sip
 
 OPTIONS_DEFINE=	EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

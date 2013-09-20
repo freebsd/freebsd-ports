@@ -22,4 +22,5 @@ MAN3=		Moose::Policy.3 Moose::Policy::FollowPBP.3 \
 		Moose::Policy::JavaAccessors.3 \
 		Moose::Policy::SingleInheritence.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

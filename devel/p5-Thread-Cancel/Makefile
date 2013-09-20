@@ -18,6 +18,7 @@ USE_PERL5=	configure
 
 MAN3=	Thread::Cancel.3
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "--------------------------------------------------------"
 	@${ECHO_MSG} "This module requires a threaded perl.  If your install"

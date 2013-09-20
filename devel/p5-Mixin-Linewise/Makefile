@@ -1,4 +1,3 @@
-# Created by: bapt <baptiste.daroussin@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	Mixin-Linewise
@@ -34,4 +33,5 @@ PLIST_DIRS+=	%%SITE_PERL%%/Mixin/Linewise \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mixin/Linewise \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mixin
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

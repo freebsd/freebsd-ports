@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Filesys-Virtual-Plain
-# Date created:				05 February 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Filesys-Virtual-Plain
 PORTVERSION=	0.10
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=	Filesys::Virtual::Plain.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

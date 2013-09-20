@@ -21,4 +21,5 @@ MAN3=	Meta::Builder.3 \
 	Meta::Builder::Base.3 \
 	Meta::Builder::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -19,4 +19,5 @@ MAN3=	Module::CPANfile.3 \
 	cpanfile-faq.3 \
 	cpanfile.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

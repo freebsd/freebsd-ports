@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pypersrc
-# Date created:		18 Apr 2006
-# Whom:			Joseph Koshy <jkoshy@FreeBSD.org>
-#
+# Created by: Joseph Koshy <jkoshy@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pypersrc
 PORTVERSION=	20120106
@@ -32,6 +28,7 @@ MAKE_ENV=	CXX_FLAGS="${CXXFLAGS}"
 
 PLIST_FILES=	bin/pypersrc.py bin/pypersrc2.py bin/pypersrc
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/INSTALL_DIR/s|=.*|=$$(PREFIX)/bin| ; \

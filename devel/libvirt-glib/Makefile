@@ -22,6 +22,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 CONFIGURE_ARGS+=	--enable-introspection
 
+NO_STAGE=	yes
 post-patch-script:
 	@${REINPLACE_CMD} 's}--quiet}--quiet --libtool=${LIBTOOL}}' \
 		${WRKSRC}/libvirt-*/Makefile.in

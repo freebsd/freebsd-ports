@@ -22,6 +22,7 @@ USE_PYTHON=	yes
 PLIST_FILES=	bin/ninja
 PORTDOCS=	COPYING HACKING.md README manual.asciidoc
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

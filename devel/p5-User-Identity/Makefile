@@ -28,4 +28,5 @@ MAN3=		Mail::Identity.3 \
 		User::Identity::Location.3 \
 		User::Identity::System.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

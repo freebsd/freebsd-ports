@@ -26,4 +26,5 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAN1=		vshadowinfo.1 vshadowmount.1
 MAN3=		libvshadow.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

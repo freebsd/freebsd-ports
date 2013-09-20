@@ -1,4 +1,4 @@
-# Created by: Oliver Lehmann <oliver@freebsd.org>
+# Created by: Oliver Lehmann <oliver@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libzvbi
@@ -22,6 +22,7 @@ MAN1=		zvbi-ntsc-cc.1
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -L/usr/lib"
 CFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|#cpu (\([^)]*\))|defined(__\1__)|g' \
 		${WRKSRC}/src/misc.h \

@@ -23,6 +23,7 @@ PORTDOCS=	*
 
 # If you manage to make boost_build build luabind with correct
 # includes/libraries/compiler/flags, please send a patch
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC}/src && ${ECHO_CMD} *.cpp | \
 		${XARGS} -n1 -t ${_MAKE_JOBS:C/j/P/} \

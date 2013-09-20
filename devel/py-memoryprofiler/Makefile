@@ -17,6 +17,7 @@ OPTIONS_DEFINE=	PSUTIL
 PSUTIL_DESC=	Use psutil for better performance
 OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MPSUTIL}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}-psutil>0:${PORTSDIR}/sysutils/py-psutil

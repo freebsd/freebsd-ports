@@ -35,4 +35,5 @@ MAN3=		Test::Unit.3 Test::Unit::Assert.3 Test::Unit::Assertion.3 \
 		Test::Unit::TkTestRunner.3 Test::Unit::Tutorial.3 \
 		Test::Unit::UnitHarness.3 Test::Unit::Warning.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

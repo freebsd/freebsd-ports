@@ -23,4 +23,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=		Locale::PO.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

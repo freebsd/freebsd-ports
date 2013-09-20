@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pyside-tools
-# Date created:		2011-12-17
-# Whom:			Nicola Vitale <nivit@mnemosine.domo.sva>
-#
+# Created by: Nicola Vitale <nivit@mnemosine.domo.sva>
 # $FreeBSD$
-#
 
 PORTNAME=	pyside-tools
 PORTVERSION=	0.2.13
@@ -40,6 +36,7 @@ USE_BZIP2=	yes
 USES=		cmake
 USE_PYTHON=	2.5-2.7
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD}
 

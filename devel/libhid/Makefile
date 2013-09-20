@@ -25,4 +25,5 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} --mandir=${MANPREFIX}/man --without-doxygen -
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-usb
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

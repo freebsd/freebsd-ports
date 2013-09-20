@@ -20,4 +20,5 @@ USE_PYDISTUTILS=	yes
 regression-test: build
 	@cd ${WRKSRC} && nosetests
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

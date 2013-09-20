@@ -22,6 +22,7 @@ MAN3=	Test::YAML::Valid.3
 OPTIONS_DEFINE=	YAMLSYCK
 YAMLSYCK_DESC=	Use YAML::Syck for testing
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e '/auto_install.*/d' \
 		${WRKSRC}/Makefile.PL

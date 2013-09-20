@@ -1,4 +1,4 @@
-# Created by: Roger Hardiman <roger@freebsd.org>
+# Created by: Roger Hardiman <roger@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pwlib
@@ -28,6 +28,7 @@ USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"

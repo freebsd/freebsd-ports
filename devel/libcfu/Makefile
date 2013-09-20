@@ -25,6 +25,7 @@ INFO=		${PORTNAME}
 
 # XXX: work around an issue with automake-1.13 erroring out on a
 #      non-existent m4 directory before libtoolize creates it
+NO_STAGE=	yes
 pre-configure::
 	@${MKDIR} ${WRKSRC}/m4
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ll-core
-# Date created:		2005-06-23
-# Whom:			Choe, Cheng-Dae
-#
+# Created by: Choe, Cheng-Dae
 # $FreeBSD$
-#
 
 PORTNAME=	ll-core
 PORTVERSION=	1.11.1
@@ -21,4 +17,5 @@ USE_PYDISTUTILS=	easy_install
 USE_ZIP=		yes
 PYEASYINSTALL_ARCHDEP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

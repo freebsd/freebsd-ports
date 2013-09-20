@@ -21,6 +21,7 @@ PLIST_FILES=	include/libvolume_id.h \
 		lib/libvolume_id.so.0 \
 		libdata/pkgconfig/libvolume_id.pc
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mimir
-# Date created:				19 Nov 2005
-# Whom:					Ed Schouten <ed@fxq.nl>
-#
+# Created by: Ed Schouten <ed@fxq.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	mimir
 PORTVERSION=	2.15
@@ -20,4 +16,5 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

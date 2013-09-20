@@ -1,8 +1,4 @@
-# Ports Collection Makefile for:	ptmalloc
-# Date created:				10 December 2004
-# Who:					Greg 'groggy' Lehey <grog@FreeBSD.org>
-# Whom: is grammatically incorrect in this context.
-#
+# Created by: is grammatically incorrect in this context.
 # $FreeBSD$
 
 PORTNAME=	ptmalloc2
@@ -33,4 +29,5 @@ do-install:	all
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

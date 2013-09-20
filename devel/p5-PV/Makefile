@@ -18,6 +18,7 @@ USES=		perl5
 NO_BUILD=	YES
 PLIST_FILES=	%%SITE_PERL%%/PV.pm
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} -m 755 ${PREFIX}/${SITE_PERL_REL}/
 	${INSTALL_DATA} ${WRKSRC}/PV.pm ${PREFIX}/${SITE_PERL_REL}/

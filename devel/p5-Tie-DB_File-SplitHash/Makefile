@@ -18,4 +18,5 @@ USE_PERL5=	modbuild
 
 MAN3=		Tie::DB_File::SplitHash.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

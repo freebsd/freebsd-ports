@@ -22,6 +22,7 @@ MAN3=		SVN::Access.3 \
 		SVN::Access::Group.3 \
 		SVN::Access::Resource.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}

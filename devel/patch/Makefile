@@ -22,4 +22,5 @@ USES=		charsetfix
 MAN1=		gpatch.1
 PLIST_FILES=	bin/gpatch
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

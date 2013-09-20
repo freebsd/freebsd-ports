@@ -1,9 +1,5 @@
-# New ports collection makefile for:   subversion-python
-# Date Created:                April 17 2004
-# Whom:                        thinker@branda.to
-#
+# Created by: thinker@branda.to
 # $FreeBSD$
-#
 
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -23,6 +19,7 @@ USE_PYTHON=	yes
 
 SVN_BUILD_BINDINGS=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile.common"
 
 CATEGORIES+=	python

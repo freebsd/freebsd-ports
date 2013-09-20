@@ -19,4 +19,5 @@ USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--enable-inclued
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

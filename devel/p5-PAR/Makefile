@@ -26,6 +26,7 @@ MAN3=		PAR.3 \
 		PAR::SetupProgname.3 \
 		PAR::SetupTemp.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 regression-test:

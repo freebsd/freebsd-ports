@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libol
-# Date created:				22 April 2000
-# Whom:					Vince Valenti <vince@blue-box.net>
-#
+# Created by: Vince Valenti <vince@blue-box.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libol
 PORTVERSION=	0.3.18
@@ -17,4 +13,5 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -29,6 +29,7 @@ USE_GNOME=	introspection
 
 MAN3=		Glib::Object::Introspection.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Glib::Object::Introspection requires cairo and glib20 to build

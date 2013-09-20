@@ -22,4 +22,5 @@ MAN3=		Set::Scalar.3 \
 		Set::Scalar::ValuedUniverse.3 \
 		Set::Scalar::Universe.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

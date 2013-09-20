@@ -21,4 +21,5 @@ MAN3=	Data::SExpression.3 \
 	Data::SExpression::Cons.3 \
 	Data::SExpression::Symbol.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

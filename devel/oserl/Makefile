@@ -32,6 +32,7 @@ MAN3=		gen_esme.3 gen_esme_session.3 gen_mc.3 gen_mc_session.3 \
 		smpp_pdu_syntax.3 smpp_ref_num.3 smpp_req_tab.3 smpp_sm.3 \
 		smpp_tty_log_hlr.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

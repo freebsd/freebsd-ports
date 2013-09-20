@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	kjbuckets
-# Date created:				03/27/1999
-# Whom:					nectar@FreeBSD.org
-#
+# Created by: nectar@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=		kjbuckets
 PORTVERSION=		1.0.0
@@ -21,6 +17,7 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	2.2
 WRKSRC=			${WRKDIR}/${DISTNAME}/kjbuckets
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

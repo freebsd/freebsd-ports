@@ -29,4 +29,5 @@ MAN3=		Mock::Quick.3 Object::Quick.3 \
 		Mock::Quick::Object::Control.3 \
 		Mock::Quick::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	Inline::Files
 # Created by: ijliao
 # $FreeBSD$
 
@@ -18,4 +16,5 @@ USE_PERL5=	configure
 MAN3=		Inline::Files.3 \
 		Inline::Files::Virtual.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

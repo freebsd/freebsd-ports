@@ -1,9 +1,5 @@
-# New ports collection makefile for:	thrift
-# Date created:	   30 Nov 2007
-# Whom:		   Jon M. Dugan <jdugan@x1024.net>
-#
+# Created by: Jon M. Dugan <jdugan@x1024.net>
 # $FreeBSD$
-#
 
 PORTNAME=	thrift
 PORTVERSION=	${THRIFT_PORTVERSION} # to keep in sync with thrift
@@ -21,6 +17,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/lib/py
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|setuptools|do_not_use_&|' ${WRKSRC}/${PYSETUP}
 

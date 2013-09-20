@@ -22,6 +22,7 @@ PLIST_FILES=		${SCRIPTS}
 
 SHEBANG_FILES=		${SCRIPTS}
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} -r ${FILESDIR}/bin ${WRKSRC}

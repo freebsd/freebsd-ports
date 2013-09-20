@@ -23,4 +23,5 @@ CMAKE_ARGS+=	-DBUILD_falcon:BOOL=FALSE \
 
 PLIST_FILES=	lib/kde4/krosspython.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

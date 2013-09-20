@@ -22,6 +22,7 @@ USE_PERL5=	configure
 MAN3=		Spiffy.3
 PORTDOCS=	Changes README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

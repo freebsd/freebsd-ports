@@ -33,4 +33,5 @@ MAN3=		IO::All.3 \
 		IO::All::String.3 \
 		IO::All::Temp.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

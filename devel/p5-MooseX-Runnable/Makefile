@@ -33,4 +33,5 @@ MAN3=		MooseX::Runnable.3 \
 		MooseX::Runnable::Run.3 \
 		MooseX::Runnable::Util::ArgParser.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

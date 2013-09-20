@@ -1,4 +1,3 @@
-# Created by: Andrej Zverev <az@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	File-ShareDir-Install
@@ -18,4 +17,5 @@ USE_PERL5=	configure
 
 MAN3=	File::ShareDir::Install.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

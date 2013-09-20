@@ -60,6 +60,7 @@ PLIST_SUB+=	BINUTILS_TARG=${PKGNAMEPREFIX:S/-$//}
 BINARIES=	addr2line ar as c++filt elfedit gprof ld nm objcopy objdump \
 		ranlib readelf size strings strip
 
+NO_STAGE=	yes
 pre-patch:
 	@cd ${WRKSRC} && ${PATCH} -s -p1 < ../mspgcc-${LTSVERSION}/${PKGNAMEPREFIX}${PORTNAME}-${BINUTILVERSION}-${PATCHVERSION}.patch
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Memoize-ExpireLRU
-# Date created:				Mon Jan 12 11:40:14 CST 2004
-# Whom:					Cheng-Lung Sung <clsung@dragon2.net>
-#
+# Created by: Cheng-Lung Sung <clsung@dragon2.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Memoize-ExpireLRU
 PORTVERSION=	0.55
@@ -20,4 +16,5 @@ USE_PERL5=	configure
 
 MAN3=		Memoize::ExpireLRU.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

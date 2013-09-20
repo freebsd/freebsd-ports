@@ -1,9 +1,5 @@
-# New ports collection makefile for:   mcpp
-# Date created:		06 April 2007
-# Whom:			Kiyoshi Matsui <kmatsui@t3.rim.or.jp>
-#
+# Created by: Kiyoshi Matsui <kmatsui@t3.rim.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	mcpp
 PORTVERSION=	2.7.2
@@ -32,4 +28,5 @@ PLIST_FILES=	bin/mcpp    \
 		share/doc/mcpp/mcpp-manual-jp.html
 PLIST_DIRS=	share/doc/mcpp
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

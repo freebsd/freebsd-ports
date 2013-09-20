@@ -30,6 +30,7 @@ MAN3=		DateTime::TimeZone.3 DateTime::TimeZone::Floating.3 \
 
 PORTDOCS=	Changes README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

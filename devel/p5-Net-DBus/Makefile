@@ -36,4 +36,5 @@ MAN3=	Net::DBus::ASyncReply.3 Net::DBus::Annotation.3 Net::DBus::Tutorial.3 \
 	Net::DBus::Error.3 Net::DBus::Test::MockIterator.3 \
 	Net::DBus::Test::MockMessage.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

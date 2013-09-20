@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-IO-Capture
-# Date created:				18 March 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IO-Capture
 PORTVERSION=	0.05
@@ -23,4 +19,5 @@ MAN3=	IO::Capture.3 \
 	IO::Capture::Stdout.3 \
 	IO::Capture::Tie_STDx.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

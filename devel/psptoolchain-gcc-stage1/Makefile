@@ -1,9 +1,5 @@
-# New ports collection makefile for: psptoolchain-gcc-stage1
-# Date created:        19 July 2009
-# Whom:                Tassilo Philipp <tphilipp@potion-studios.com>
-#
+# Created by: Tassilo Philipp <tphilipp@potion-studios.com>
 # $FreeBSD$
-#
 
 PORTNAME=		gcc
 PORTVERSION=		4.6.2
@@ -63,6 +59,7 @@ CONFIGURE_ARGS?=	--prefix=${PREFIX}/${PSP_GCC_STAGE_PREFIX} \
 			--with-as=${LOCALBASE}/bin/psp-as \
 			--mandir=${PREFIX}/man
 
+NO_STAGE=	yes
 pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 

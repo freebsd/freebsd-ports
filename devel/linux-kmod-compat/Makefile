@@ -1,7 +1,4 @@
-# New ports collection makefile for: linux-bsd-kmod
-# Date created:		1 February 2007
-# Whom:			luigi
-#
+# Created by: luigi
 # $FreeBSD$
 
 PORTNAME=	linux-kmod-compat
@@ -22,6 +19,7 @@ MY_MK=	bsd.linux_kmod.mk
 
 PLIST=	${WRKDIR}/pkg-plist
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s|${WRKSRC}|%%DATADIR%%/linux_compat|" >${PLIST}
 	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s|${WRKSRC}|@dirrm %%DATADIR%%/linux_compat|" >> ${PLIST}

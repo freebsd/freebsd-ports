@@ -28,4 +28,5 @@ MAN3=	Qudo.3 \
 	Qudo::Manual::JA::Tutorial.3 \
 	Qudo::Worker.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

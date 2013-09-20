@@ -20,6 +20,7 @@ USE_PHPEXT=	yes
 DEFAULT_PHP_VER?=	53
 PHP_MODNAME=	${PORTNAME}
 
+NO_STAGE=	yes
 post-extract::
 	@${CAT} ${PKGMESSAGE}
 

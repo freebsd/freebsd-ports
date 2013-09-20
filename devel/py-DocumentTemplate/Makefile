@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-DocumentTemplate
-# Date created:				Nov 14, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	DocumentTemplate
 PORTVERSION=	2.13.2
@@ -30,4 +25,5 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=		yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -24,6 +24,7 @@ OPTIONS_DEFAULT=	DOT
 DOT_DESC=	Use GraphViz/dot to render call graphs
 VALGRIND_DESC=	Install devel/valgrind
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOT}

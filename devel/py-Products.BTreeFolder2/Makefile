@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-Products.BTreeFolder2
-# Date created:				Nov 15, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Products.BTreeFolder2
 PORTVERSION=	2.13.4
@@ -29,4 +24,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

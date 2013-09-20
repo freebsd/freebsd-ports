@@ -35,6 +35,7 @@ PORTEXAMPLES=	bigtext.py \
 		treesample.py
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -59,6 +59,7 @@ PLIST_SUB=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 MAN1=		virsh.1 virt-pki-validate.1 virt-xml-validate.1 virt-host-validate.1

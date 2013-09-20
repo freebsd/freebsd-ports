@@ -44,6 +44,7 @@ MAN1=	ppl-config.1 ppl_lcdd.1 ppl_pips.1
 MAN3=	libppl.3 libppl_c.3
 
 .if defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||g' \
 		${WRKSRC}/doc/Makefile.in ${WRKSRC}/Watchdog/doc/Makefile.in

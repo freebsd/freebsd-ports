@@ -1,9 +1,5 @@
-# New ports collection makefile for:	String-Checker
-# Date created:				Mon Jan  1 11:03:15 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	String-Checker
 PORTVERSION=	0.03
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		String::Checker.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

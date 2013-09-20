@@ -30,4 +30,5 @@ MAN3=		File::HomeDir.3 \
 		File::HomeDir::Unix.3 \
 		File::HomeDir::Windows.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

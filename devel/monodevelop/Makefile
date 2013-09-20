@@ -36,6 +36,7 @@ SVN_RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|[(]gnome_data[)]/mime$$|(prefix)/share/mime|g ; \
 		s|[(]gnome_data[)]/mime/packages$$|(prefix)/share/mime/packages|g ; \

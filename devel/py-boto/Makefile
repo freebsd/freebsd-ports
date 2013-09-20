@@ -17,4 +17,5 @@ USE_PYDISTUTILS=	easy_install
 
 CONFLICTS=	p5-Net-Amazon-Route53-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

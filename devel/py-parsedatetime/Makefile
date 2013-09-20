@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-parsedatetime
-# Date created:		Feb. 24, 2007
-# Whom:			Li-Wen Hsu <lwhsu@lwhsu.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
 # $FreeBSD$
-#
 
 PORTNAME=	parsedatetime
 PORTVERSION=	0.8.7
@@ -23,6 +19,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 EXAMPLES=	README.txt basic.py with_locale.py
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

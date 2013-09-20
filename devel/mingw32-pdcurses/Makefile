@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mingw32-pdcurses
-# Date created:				28 April 2006
-# Whom:					Ed Schouten <ed@fxq.nl>
-#
+# Created by: Ed Schouten <ed@fxq.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	pdcurses
 PORTVERSION=	3.4
@@ -24,6 +20,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/win32
 MAKE_ARGS+=	CC=${PKGNAMEPREFIX}gcc LIBEXE=${PKGNAMEPREFIX}ar
 ALL_TARGET=	pdcurses.a
 
+NO_STAGE=	yes
 do-install:
 .for f in curses.h curspriv.h panel.h term.h
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/$f ${PREFIX}/mingw32/include/$f

@@ -17,4 +17,5 @@ MAN3=		IO::BufferedSelect.3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

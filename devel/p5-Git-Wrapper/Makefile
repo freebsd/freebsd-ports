@@ -33,4 +33,5 @@ MAN3=		Git::Wrapper.3 \
 		Git::Wrapper::Status.3 \
 		Git::Wrapper::Statuses.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

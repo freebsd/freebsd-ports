@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-application
-# Date created:		14 July 2011
-# Whom:			Eugene Grosbein <ports@grosbein.net>
-#
+# Created by: Eugene Grosbein <ports@grosbein.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xcaplib
 PORTVERSION=	1.0.16
@@ -26,4 +22,5 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=python_${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

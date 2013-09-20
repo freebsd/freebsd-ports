@@ -91,6 +91,7 @@ EXAMPLES_CPP=	Makefile NEWS PROBLEMS README-first cursesapp.cc \
 		cursesw.h cursslk.cc cursslk.h demo.cc etip.h \
 		internal.h
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1000040                                                    

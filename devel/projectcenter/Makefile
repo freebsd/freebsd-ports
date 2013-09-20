@@ -1,9 +1,5 @@
-# New ports collection makefile for:    projectcenter
-# Date created:         22 Sep 2000
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	projectcenter
 PORTVERSION=	0.6.1
@@ -26,4 +22,5 @@ USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 PLIST_SUB+=	FRAMEVERSION=0.6.0
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -34,6 +34,7 @@ PLIST_FILES=	bin/bison2py \
 		%%PYTHON_SITELIBDIR%%/bison.pyo \
 		%%PYTHON_SITELIBDIR%%/bison_.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"

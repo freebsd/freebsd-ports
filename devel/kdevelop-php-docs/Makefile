@@ -17,6 +17,7 @@ USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
 USES=		cmake
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

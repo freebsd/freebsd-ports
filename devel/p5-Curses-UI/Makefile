@@ -37,4 +37,5 @@ MAN3=		Curses::UI::Color.3 Curses::UI::Label.3 \
 		Curses::UI::Tutorial.3 Curses::UI::Calendar.3 \
 		Curses::UI::Notebook.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

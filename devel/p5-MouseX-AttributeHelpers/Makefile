@@ -34,4 +34,5 @@ MAN3=	MouseX::AttributeHelpers.3 \
 	MouseX::AttributeHelpers::String.3 \
 	MouseX::README.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -59,4 +59,5 @@ MAN3=		Specio.3 \
 		Specio::Registry.3 \
 		Specio::Role::Inlinable.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-breve
-# Date created:		2007-02-14
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Breve
 PORTVERSION=	1.3.0
@@ -19,4 +15,5 @@ COMMENT=	A Python s-expression style template engine
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

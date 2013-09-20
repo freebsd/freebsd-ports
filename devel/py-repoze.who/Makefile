@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-repoze.who
-# Date created:		3rd August,2009
-# Whom:	      		Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	repoze.who
 PORTVERSION=	2.0
@@ -21,4 +17,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

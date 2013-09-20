@@ -26,4 +26,5 @@ MAN3=		Data::Util.3 \
 		Data::Util::JA.3 \
 		Data::Util::PurePerl.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

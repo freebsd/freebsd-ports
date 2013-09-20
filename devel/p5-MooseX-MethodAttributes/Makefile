@@ -39,4 +39,5 @@ MAN3=		MooseX::MethodAttributes.3 \
 		MooseX::MethodAttributes::Role::Meta::Role::Application.3 \
 		MooseX::MethodAttributes::Role::Meta::Role::Application::Summation.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

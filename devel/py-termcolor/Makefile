@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-termcolor
-# Date created:		2012-06-25
-# Whom:			Volodymyr Kostyrko <c.kworr@gmail.com>
-#
+# Created by: Volodymyr Kostyrko <c.kworr@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	termcolor
 PORTVERSION=	1.1.0
@@ -19,4 +15,5 @@ LICENSE=	MIT
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

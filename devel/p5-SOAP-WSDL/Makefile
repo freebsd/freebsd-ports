@@ -80,4 +80,5 @@ MAN3=		SOAP::WSDL.3 \
 		SOAP::WSDL::XSD::Typelib::Element.3 \
 		SOAP::WSDL::XSD::Typelib::SimpleType.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

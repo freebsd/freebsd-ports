@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-File-Random
-# Date created: 			01 July 2005
-# Whom: 				Aaron Dalton <aaron@daltons.ca>
-#
+# Created by: Aaron Dalton <aaron@daltons.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Random
 PORTVERSION=	0.17
@@ -29,4 +25,5 @@ USE_PERL5=	configure
 
 MAN3=		File::Random.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

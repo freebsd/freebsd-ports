@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Regexp-Subst-Parallel
-# Date created:		30 April 2010
-# Whom:			Kevin Lo <kevlo@FreeBSD.org>
-#
+# Created by: Kevin Lo <kevlo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Regexp-Subst-Parallel
 PORTVERSION=	0.11
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=	Regexp::Subst::Parallel.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

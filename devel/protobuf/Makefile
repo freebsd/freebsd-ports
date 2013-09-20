@@ -19,4 +19,5 @@ ONLY_FOR_ARCHS=	i386 amd64
 tests: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

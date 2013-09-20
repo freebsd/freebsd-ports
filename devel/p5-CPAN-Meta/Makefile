@@ -29,6 +29,7 @@ MAN3=		CPAN::Meta.3 \
 		CPAN::Meta::Spec.3 \
 		CPAN::Meta::Validator.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

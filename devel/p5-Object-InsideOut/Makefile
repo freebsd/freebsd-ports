@@ -26,6 +26,7 @@ MAN3=		Bundle::Object::InsideOut.3 \
 		Object::InsideOut.3 \
 		Object::InsideOut::Metadata.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

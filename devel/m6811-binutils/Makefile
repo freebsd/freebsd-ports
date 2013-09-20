@@ -1,9 +1,5 @@
-# New ports collection makefile for:	m6811-binutils
-# Date created:		Fri Feb  4 12:27:19 PST 2000
-# Whom:			jburkhol@home.com
-#
+# Created by: jburkhol@home.com
 # $FreeBSD$
-#
 
 PORTNAME=	binutils
 PORTVERSION=	2.15
@@ -52,6 +48,7 @@ INFO=		${M68_TARGET}-as \
 		${M68_TARGET}-binutils \
 		${M68_TARGET}-ld \
 
+NO_STAGE=	yes
 post-patch:
 	# as.info -> ${M68_TARGET}-as.info
 	@${REINPLACE_CMD} -e 's|setfilename as.info|setfilename ${M68_TARGET}-as.info|' ${WRKSRC}/gas/doc/as.texinfo

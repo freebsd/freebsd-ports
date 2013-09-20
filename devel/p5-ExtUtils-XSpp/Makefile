@@ -41,6 +41,7 @@ MAN3=		ExtUtils::XSpp.3 \
 		ExtUtils::XSpp::Plugin.3 \
 		ExtUtils::XSpp::Typemap.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501301

@@ -20,4 +20,5 @@ MAN3=		SSN::Validate.3
 test: all
 	cd ${WRKSRC} && ${MAKE} test
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -18,4 +18,5 @@ MAN3=		Unix::Uptime.3 \
 		Unix::Uptime::BSD.3 \
 		Unix::Uptime::Linux.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

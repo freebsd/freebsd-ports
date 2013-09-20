@@ -25,6 +25,7 @@ USE_PERL5=	configure
 
 MAN3=		POE::Quickie.3
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/lib/POE/Quickie.pm.orig
 

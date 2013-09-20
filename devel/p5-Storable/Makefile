@@ -15,6 +15,7 @@ USE_PERL5=	configure
 
 MAN3=		Storable.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|INSTALLDIRS.*||' ${WRKSRC}/Makefile.PL
 

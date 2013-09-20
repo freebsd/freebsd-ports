@@ -19,4 +19,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBESTR_CFLAGS="-I${LOCALBASE}/include" LIBESTR_LIBS="-L${LOCALBASE}/lib -lestr"
 CONFIGURE_ARGS+=	--prefix="${PREFIX}" --disable-testbench
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

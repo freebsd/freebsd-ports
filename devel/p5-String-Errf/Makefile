@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-String-Errf
-# Date created:				2011-09-19
-# Whom:					Geraud CONTINSOUZAS <geraud@gcu.info>
-#
+# Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
 # $FreeBSD$
-#
 
 PORTNAME=	String-Errf
 PORTVERSION=	0.006
@@ -27,6 +23,7 @@ USE_PERL5=	configure
 
 MAN3=	String::Errf.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

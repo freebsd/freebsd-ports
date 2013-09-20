@@ -1,4 +1,4 @@
-# Created by: Alan Somers <asomers@freebsd.org>
+# Created by: Alan Somers <asomers@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	lutok
@@ -18,6 +18,7 @@ USES=		pkgconfig
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}

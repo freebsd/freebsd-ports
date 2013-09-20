@@ -18,6 +18,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 # Try to fix parallel (-jX) builds
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^lognormalizer_DEPENDENCIES/s,=,= $$(lib_LTLIBRARIES),' \

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	py-resourcepackage
-# Date created:			Feb 17, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	resourcepackage
 PORTVERSION=	1.0.0
@@ -20,6 +15,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	ResourcePackage
 
+NO_STAGE=	yes
 post-install:
 	@${FIND} ${PYTHON_SITELIBDIR}/resourcepackage -type f | \
 		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}

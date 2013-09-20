@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Log-Trace
-# Date created:				27 May 2007
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Log-Trace
 PORTVERSION=	1.070
@@ -21,4 +17,5 @@ USE_PERL5=	configure
 MAN3=	Log::Trace.3 \
 	Log::Trace::Manual.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

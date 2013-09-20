@@ -31,4 +31,5 @@ MAN3=	AnyEvent::Filesys::Notify.3 \
 	AnyEvent::Filesys::Notify::Role::Inotify2.3 \
 	AnyEvent::Filesys::Notify::Role::KQueue.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

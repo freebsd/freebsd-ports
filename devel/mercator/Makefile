@@ -19,4 +19,5 @@ USE_GCC=	yes
 CXXFLAGS+=	-include wchar.h
 CONFIGURE_ARGS+="CXXFLAGS=${CXXFLAGS}"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

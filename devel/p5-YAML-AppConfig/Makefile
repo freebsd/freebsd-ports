@@ -20,6 +20,7 @@ USE_PERL5=	configure
 
 MAN3=	YAML::AppConfig.3
 
+NO_STAGE=	yes
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM}
 

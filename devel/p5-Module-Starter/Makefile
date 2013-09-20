@@ -26,4 +26,5 @@ MAN3=		Module::Starter.3 \
 		Module::Starter::Plugin::Template.3 \
 		Module::Starter::Simple.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

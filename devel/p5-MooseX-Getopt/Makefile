@@ -46,4 +46,5 @@ MAN3=		MooseX::Getopt.3 \
 		MooseX::Getopt::ProcessedArgv.3 \
 		MooseX::Getopt::Strict.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

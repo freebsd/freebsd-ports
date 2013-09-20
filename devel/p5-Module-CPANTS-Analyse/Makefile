@@ -53,4 +53,5 @@ MAN3=		Module::CPANTS::Analyse.3 \
 		Module::CPANTS::Kwalitee::Uses.3 \
 		Module::CPANTS::Kwalitee::Version.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

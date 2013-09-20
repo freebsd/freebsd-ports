@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class-Handle
-# Date created:	   12 February 2005
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Handle
 PORTVERSION=	1.07
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=		Class::Handle.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

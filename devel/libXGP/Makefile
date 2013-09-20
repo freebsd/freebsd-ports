@@ -4,4 +4,5 @@
 PORTNAME=	libXGP
 MASTERDIR=	${.CURDIR}/../libYGP
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

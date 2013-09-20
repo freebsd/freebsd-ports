@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-PHPUnit2
-# Date created:			  09 September 2004
-# Whom:				  Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	PHPUnit
 PORTVERSION=	2.3.6
@@ -36,6 +32,7 @@ USE_PHP=	dom pcre
 DEFAULT_PHP_VER=5
 IGNORE_WITH_PHP=4
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPEAR_LOG}

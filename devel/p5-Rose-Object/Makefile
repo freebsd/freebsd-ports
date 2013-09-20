@@ -22,4 +22,5 @@ MAN3=	Rose::Class.3 \
 	Rose::Object::MakeMethods::Generic.3 \
 	Rose::Object::MixIn.3 \
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

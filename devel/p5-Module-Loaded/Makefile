@@ -15,4 +15,5 @@ MAN3=	Module::Loaded.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

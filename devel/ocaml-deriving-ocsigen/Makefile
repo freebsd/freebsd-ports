@@ -17,4 +17,5 @@ USE_OCAML_LDCONFIG=	yes
 
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 USE_QT4=	corelib network webkit xml \
 		qmake_build moc_build rcc_build uic_build
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e '/pkgconfig/ s/$${LIB_INSTALL_DIR}/libdata/' \
 		${WRKSRC}/libkgapi/CMakeLists.txt

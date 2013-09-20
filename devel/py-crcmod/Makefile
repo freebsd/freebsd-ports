@@ -1,9 +1,5 @@
-# New ports collection makefile for:	crcmod
-# Date created:				19 Sep 2010
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	crcmod
 PORTVERSION=	1.7
@@ -22,6 +18,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

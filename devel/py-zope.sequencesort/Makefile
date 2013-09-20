@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-zope.sequencesort
-# Date created:				Nov 14, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	zope.sequencesort
 PORTVERSION=	3.4.0
@@ -20,4 +15,5 @@ LICENSE=	ZPL21
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

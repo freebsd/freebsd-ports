@@ -31,6 +31,7 @@ MAN3=		DateTime.3 DateTime::Duration.3 \
 		DateTime::LeapSecond.3
 PORTDOCS=	CREDITS Changes TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

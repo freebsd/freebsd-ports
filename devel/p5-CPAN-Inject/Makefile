@@ -28,4 +28,5 @@ USE_PERL5=	configure
 MAN1=		cpaninject.1
 MAN3=		CPAN::Inject.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

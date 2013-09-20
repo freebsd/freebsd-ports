@@ -43,4 +43,5 @@ MAN3=		Forest.3 \
 		Forest::Tree::Indexer::SimpleUIDIndexer.3 \
 		Forest::Tree::Roles::HasNodeFormatter.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

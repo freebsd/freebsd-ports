@@ -43,4 +43,5 @@ PLIST_FILES=	include/gutenfetch.h \
 
 PLIST_DIRS=	share/libgutenfetch
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

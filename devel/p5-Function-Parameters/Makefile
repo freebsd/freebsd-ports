@@ -29,4 +29,5 @@ USES=		perl5
 MAN3=		Function::Parameters.3 \
 		Function::Parameters::Info.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

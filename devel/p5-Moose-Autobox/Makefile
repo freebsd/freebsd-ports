@@ -37,4 +37,5 @@ MAN3=	Moose::Autobox.3 \
 	Moose::Autobox::Undef.3 \
 	Moose::Autobox::Value.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

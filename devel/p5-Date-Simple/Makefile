@@ -17,4 +17,5 @@ MAN3=			Date::Simple.3 Date::Simple::NoXS.3 \
 			Date::Simple::D8.3 Date::Simple::Fmt.3 \
 			Date::Simple::ISO.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

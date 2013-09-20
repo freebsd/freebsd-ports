@@ -27,6 +27,7 @@ CONFIGURE_ARGS+=	--with-pgsqldir=${LOCALBASE} \
 			--with-libprepsdir=${LOCALBASE} \
 			--localstatedir=/var
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@PACKAGE@/gnome/help|gnome/help|g' \
 		${WRKSRC}/help/C/Makefile.in

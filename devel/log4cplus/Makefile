@@ -1,9 +1,5 @@
-# New ports collection makefile for:	log4cplus
-# Date created:				16 November 2004
-# Whom:					Petri Totterman <petri.totterman@hmv.fi>
-#
+# Created by: Petri Totterman <petri.totterman@hmv.fi>
 # $FreeBSD$
-#
 
 PORTNAME=	log4cplus
 PORTVERSION=	1.0.4
@@ -25,6 +21,7 @@ MAKE_JOBS_UNSAFE=	yes
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/include/log4cplus
 .if !defined(NOPORTDOCS)

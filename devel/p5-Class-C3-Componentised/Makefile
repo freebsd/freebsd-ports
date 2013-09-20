@@ -27,6 +27,7 @@ USE_PERL5=	configure
 
 MAN3=		Class::C3::Componentised.3 Class::C3::Componentised::ApplyHooks.3
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -i '' -e '/Test::/d' ${WRKSRC}/Makefile.PL
 

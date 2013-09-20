@@ -19,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		B::Deobfuscate.3 B::Deobfuscate::Dict::Flowers.3 B::Deobfuscate::Dict::PGPHashWords.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -114,4 +114,5 @@ MAN3=		Algorithm::Evolutionary.3 \
 		Algorithm::Evolutionary::Wheel.3 \
 		Algorithm::Evolutionary::XML.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

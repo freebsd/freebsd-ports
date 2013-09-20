@@ -1,6 +1,5 @@
 # Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Dialog
 PORTVERSION=	0.03
@@ -18,6 +17,7 @@ MAN3=		Dialog.3
 
 EXPIRATION_DATE=2014-01-01
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900000

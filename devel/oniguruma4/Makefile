@@ -17,6 +17,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 DOCS=		HISTORY README doc/*
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
 		-e 's|freebsd1|freebsd1.|' \

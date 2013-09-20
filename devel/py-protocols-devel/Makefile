@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-protocols-devel
-# Date created:		15 December 2006
-# Whom:			Dryice Liu	<dryice@dryice.name>
-#
+# Created by: Dryice Liu	<dryice@dryice.name>
 # $FreeBSD$
-#
 
 PORTNAME=	PyProtocols
 PORTVERSION=	1.0.a0.r2302
@@ -23,4 +19,5 @@ USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 PYDISTUTILS_PKGVERSION=	1.0a0dev-r2302
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

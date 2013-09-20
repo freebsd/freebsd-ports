@@ -38,4 +38,5 @@ MAN3=		SVN::S4.3 \
 		SVN::S4::ViewSpec.3 \
 		SVN::S4::WorkProp.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

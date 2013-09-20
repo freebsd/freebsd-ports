@@ -16,4 +16,5 @@ OPTIONS_DEFAULT=
 
 PLIST=	${.CURDIR}/pkg-plist
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

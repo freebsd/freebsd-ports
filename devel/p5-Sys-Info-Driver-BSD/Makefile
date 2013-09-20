@@ -27,4 +27,5 @@ MAN3=		Sys::Info::Driver::BSD.3 \
 		Sys::Info::Driver::BSD::Device::CPU.3 \
 		Sys::Info::Driver::BSD::OS.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

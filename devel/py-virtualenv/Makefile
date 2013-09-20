@@ -24,6 +24,7 @@ USE_PYDISTUTILS=	easy_install
 PIPVER=	1.4.1
 SETUPTOOLSVER=	0.9.8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>

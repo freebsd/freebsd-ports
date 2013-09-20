@@ -22,4 +22,5 @@ MAN3=	CPAN::Changes.3 \
 	CPAN::Changes::Spec.3 \
 	Test::CPAN::Changes.3 \
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

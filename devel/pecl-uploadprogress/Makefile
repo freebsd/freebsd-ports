@@ -18,4 +18,5 @@ IGNORE_WITH_PHP=4
 
 CONFIGURE_ARGS=	--enable-uploadprogress
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

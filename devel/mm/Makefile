@@ -16,6 +16,7 @@ GNU_CONFIGURE=	yes
 MAN1=		mm-config.1
 MAN3=		mm.3
 
+NO_STAGE=	yes
 post-build:
 	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
 

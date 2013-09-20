@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-ParseTemplate
-# Date created:				03 August 2010
-# Whom:					Frederic Culot <frederic@culot.org>
-#
+# Created by: Frederic Culot <frederic@culot.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ParseTemplate
 PORTVERSION=	3.08
@@ -22,6 +18,7 @@ USE_PERL5=	configure
 
 MAN3=		Parse::Template.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

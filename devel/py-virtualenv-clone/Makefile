@@ -1,9 +1,5 @@
-# New ports collection makefile for:	virtualenv-clone
-# Date created:		2012-06-30
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	virtualenv-clone
 PORTVERSION=	0.2.4
@@ -20,4 +16,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	virtualenv_clone
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

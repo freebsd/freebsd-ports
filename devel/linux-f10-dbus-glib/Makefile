@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/linux-f10-dbus-glib
-# Date created:				2009-07-27
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	dbus-glib
 PORTVERSION=	0.76
@@ -28,4 +24,5 @@ DOCSDIR=	usr/share/doc/dbus-glib-0.76
 PORTDOCS=	COPYING ChangeLog NEWS
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

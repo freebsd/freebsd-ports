@@ -18,4 +18,5 @@ MAN3=	Log::Any.3 \
 	Log::Any::Adapter::Null.3 \
 	Log::Any::Test.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

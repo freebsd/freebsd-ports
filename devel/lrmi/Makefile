@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lrmi
-# Date created:		2006-01-31
-# Whom:			Anish Mistry <amistry@am-productions.biz>
-#
+# Created by: Anish Mistry <amistry@am-productions.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	lrmi
 PORTVERSION=	0.10
@@ -20,6 +16,7 @@ MAKEFILE=	Makefile.bsd
 SHLIB_VERSION=	0
 PLIST_SUB+=	"SHLIB_VERSION=${SHLIB_VERSION}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

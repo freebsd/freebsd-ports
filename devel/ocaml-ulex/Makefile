@@ -29,6 +29,7 @@ PORTDOCS=	*
 
 PKGDEINSTALL=	${PKGINSTALL}
 
+NO_STAGE=	yes
 post-install:
 	@${FIND} ${PREFIX}/${OCAML_SITELIBDIR}/${PORTNAME} -type f | \
 		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}

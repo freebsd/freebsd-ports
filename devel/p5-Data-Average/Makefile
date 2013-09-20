@@ -19,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=	Data::Average::Bounded.3 Data::Average::BoundedExpires.3 Data::Average::Expires.3 Data::Average.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

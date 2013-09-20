@@ -15,6 +15,7 @@ TEST_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
 OPTIONS_DEFINE=	TESTS
 TESTS_DESC=	Include tools for test suite
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTESTS}

@@ -46,6 +46,7 @@ MAN3=		Form::Sensible.3 \
 		Form::Sensible::Validator.3 \
 		Form::Sensible::Validator::Result.3
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/lib/Form/Sensible/Renderer/HTML/RenderedForm.pm.orig
 

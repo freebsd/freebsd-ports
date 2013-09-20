@@ -1,9 +1,5 @@
-# New ports collection makefile for:	noweb
-# Date created:		29 July 1995
-# Whom:			Thomas Gellekum <tg@freebsd.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	noweb
 PORTVERSION=	2.11b
@@ -33,6 +29,7 @@ MLINKS=		notangle.1 noweave.1	notangle.1 nountangle.1
 NOWEBTEXDIR=	${PREFIX}/share/texmf-local/tex/plain/noweb
 NOWEBLATEXDIR=	${PREFIX}/share/texmf-local/tex/latex/noweb
 
+NO_STAGE=	yes
 post-patch:
 	@${TOUCH} ${WRKSRC}/c/modules.[ch]
 

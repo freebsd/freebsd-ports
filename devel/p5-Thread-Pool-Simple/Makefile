@@ -1,4 +1,3 @@
-# Created by: Andrej Zverev <az@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Thread-Pool-Simple
@@ -15,4 +14,5 @@ USE_PERL5=	configure
 
 MAN3=	Thread::Pool::Simple.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

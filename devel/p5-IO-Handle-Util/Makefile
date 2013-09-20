@@ -24,4 +24,5 @@ MAN3=	IO::Handle::Iterator.3 \
 	IO::Handle::Prototype::Fallback.3 \
 	IO::Handle::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

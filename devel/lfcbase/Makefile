@@ -15,6 +15,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf:env
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|-O3||g' ${WRKSRC}/src/Makefile.in
 

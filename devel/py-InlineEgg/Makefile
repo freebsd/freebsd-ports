@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-InlineEgg
-# Date created:		2009-12-22
-# Whom:			Sofian Brabez <sbrabez@gmail.com>
-#
+# Created by: Sofian Brabez <sbrabez@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	InlineEgg
 PORTVERSION=	1.08
@@ -24,6 +20,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 PORTDOCS=	InlineEgg.html Changelog README
 .endif
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

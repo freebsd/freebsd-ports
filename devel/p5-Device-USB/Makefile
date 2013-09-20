@@ -27,4 +27,5 @@ MAN3=		Device::USB.3 \
 		Device::USB::FAQ.3 \
 		Device::dump_usb.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

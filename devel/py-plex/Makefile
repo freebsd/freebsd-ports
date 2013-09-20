@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-plex
-# Date created:		11 April 2002
-# Whom:			Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
-#
 
 PORTNAME=	plex
 PORTVERSION=	1.1.5
@@ -22,6 +18,7 @@ NO_WRKSUBDIR=	yes
 DOCSDIR=	share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
+NO_STAGE=	yes
 post-extract:
 	${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|g' ${FILESDIR}/setup.py \
 		> ${WRKSRC}/setup.py

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libtar
-# Date created:        06 January 2001
-# Whom:                George Reid <greid@ukug.uk.freebsd.org>
-#
+# Created by: George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libtar
 PORTVERSION=	1.2.11
@@ -18,6 +14,7 @@ USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/libtar.so.0 ${PREFIX}/lib
 	${LN} -sf libtar.so.0 ${PREFIX}/lib/libtar.so

@@ -28,6 +28,7 @@ MAKE_ENV=	COMPAT="${COMPAT_SRC}"
 PLIST_FILES=	%%LUA_MODLIBDIR%%/ldfui.so \
 		%%LUA_MODSHAREDIR%%/dfui.lua
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ldfui.so ${LUA_MODLIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/dfui.lua ${LUA_MODSHAREDIR}

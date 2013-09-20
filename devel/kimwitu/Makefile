@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	kimwitu
-# Date created:			Apr 23, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kimwitu
 PORTVERSION=	4.6.1
@@ -22,6 +17,7 @@ MAKE_JOBS_UNSAFE=	yes
 MAN1=		kc.1
 PLIST_FILES=	bin/kc
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/Gen/kc ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/../man/kc.1 ${MAN1PREFIX}/man/man1

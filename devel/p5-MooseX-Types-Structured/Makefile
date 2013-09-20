@@ -34,6 +34,7 @@ MAN3=		MooseX::Meta::TypeCoercion::Structured.3 \
 		MooseX::Types::Structured::MessageStack.3 \
 		MooseX::Types::Structured::OverflowHandler.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/auto_install/d' ${WRKSRC}/Makefile.PL
 

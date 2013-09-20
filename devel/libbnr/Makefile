@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libbnr
-# Date created:				2005-02-27
-# Whom:			Ion-Mihai "IOnut" Tetcu<itetcu@people.tecnik93.com>
-#
+# Created by: Ion-Mihai "IOnut" Tetcu<itetcu@people.tecnik93.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libbnr
 PORTVERSION=	2.0.3
@@ -26,6 +22,7 @@ CFLAGS+=	-g -DDEBUG
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example.c ${EXAMPLESDIR}

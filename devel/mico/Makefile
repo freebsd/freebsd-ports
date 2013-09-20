@@ -1,4 +1,4 @@
-# Created by: Marc G. Fournier <scrappy@freebsd.org>
+# Created by: Marc G. Fournier <scrappy@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mico
@@ -29,6 +29,7 @@ SERVICES_DESC=	With services, plain ORB
 GTK1_DESC=	Build with GTK1 support
 TCL_DESC=	Build with TCL support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 NOT_FOR_ARCHS=		sparc64

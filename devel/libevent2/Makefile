@@ -23,6 +23,7 @@ OPTIONS_DEFAULT=	OPENSSL THREADS
 
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/event2
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}

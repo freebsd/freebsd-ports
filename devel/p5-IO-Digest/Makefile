@@ -19,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		IO::Digest.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

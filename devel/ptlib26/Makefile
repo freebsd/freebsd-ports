@@ -1,4 +1,4 @@
-# Created by: Roger Hardiman <roger@freebsd.org>
+# Created by: Roger Hardiman <roger@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ptlib
@@ -32,6 +32,7 @@ OPTIONS_DEFINE=	ODBC ALSA V4L BSDVIDEO SDL LDAP
 OPTIONS_DEFAULT=BSDVIDEO SDL
 BSDVIDEO_DESC=	BSD video support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \

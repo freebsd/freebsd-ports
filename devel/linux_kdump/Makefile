@@ -1,9 +1,5 @@
-# New ports collection makefile for:    linux_kdump
-# Date created:         Nov 26 1997
-# Whom:                 msmith@FreeBSD.org
-#
+# Created by: msmith@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	linux_kdump
 PORTVERSION=	1.5
@@ -22,6 +18,7 @@ NO_MANCOMPRESS=	yes
 MAN1=		linux_kdump.1.gz
 PLIST_FILES=	bin/linux_kdump
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::

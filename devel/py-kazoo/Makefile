@@ -27,4 +27,5 @@ PYDISTUTILS_PKGVERSION=	${PORTVERSION}dev
 
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

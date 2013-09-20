@@ -23,4 +23,5 @@ MAN3=	Data::MessagePack.3 \
 	Data::MessagePack::PP.3 \
 	Data::MessagePack::Unpacker.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

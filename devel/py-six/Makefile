@@ -19,6 +19,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/six.py \
 		%%PYTHON_SITELIBDIR%%/six.pyc \
 		%%PYTHON_SITELIBDIR%%/six.pyo
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

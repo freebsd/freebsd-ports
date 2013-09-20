@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-wsgiutils
-# Date created:         		25 June 2006
-# Whom:                 		Jordi Haarman
-#
+# Created by: Jordi Haarman
 # $FreeBSD$
-#
 
 PORTNAME=	wsgiutils
 PORTVERSION=	0.7
@@ -22,4 +18,5 @@ PYDISTUTILS_PKGNAME=	WSGIUtils
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PYEASYINSTALL_EGG}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

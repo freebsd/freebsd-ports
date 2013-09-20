@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-zope.lifecycleevent
-# Date created:				Nov 12, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	zope.lifecycleevent
 PORTVERSION=	3.7.0
@@ -24,4 +19,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

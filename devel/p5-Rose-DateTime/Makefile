@@ -22,4 +22,5 @@ MAN3=	Rose::DateTime.3 \
 	Rose::DateTime::Parser.3 \
 	Rose::DateTime::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

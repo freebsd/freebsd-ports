@@ -1,9 +1,5 @@
-# Ports collection makefile for:				py-elementtree
-# Date created:							Feb 28, 2005
-# Whom:								barner
-#
+# Created by: barner
 # $FreeBSD$
-#
 
 PORTNAME=	elementtree
 PORTVERSION=	1.2.6
@@ -23,6 +19,7 @@ PYDISTUTILS_PKGVERSION=	1.2.6-20050316
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

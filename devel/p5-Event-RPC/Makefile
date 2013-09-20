@@ -36,6 +36,7 @@ SSL_DESC=	Dependency to SSL lib
 
 OPTIONS_DEFAULT=	EVENT ANYEVENT SSL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 

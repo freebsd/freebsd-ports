@@ -1,7 +1,3 @@
-# New ports collection makefile for:	py-versiontools
-# Date created:				13 April 2012
-# Whom:					Ruslan Mahmatkhanov <rm@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	versiontools
@@ -19,4 +15,5 @@ USE_PYDISTUTILS=easy_install
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -15,4 +15,5 @@ GNU_CONFIGURE=	yes
 
 INFO=		avl
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

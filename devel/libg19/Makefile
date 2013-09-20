@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libg19
-# Date created:				Apr 15 2011
-# Whom:					Armin Pirkovitsch <armin@frozen-zone.org>
-#
+# Created by: Armin Pirkovitsch <armin@frozen-zone.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libg19
 PORTVERSION=	1.1.1
@@ -22,6 +18,7 @@ PLIST_FILES=	include/libg19.h \
 		lib/libg19.so \
 		lib/libg19.so.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800069

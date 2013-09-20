@@ -21,4 +21,5 @@ CONFIGURE_ARGS+=	INC="`pkg-config libstatgrab --cflags`" \
 
 MAN3=		Unix::Statgrab.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

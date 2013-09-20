@@ -69,4 +69,5 @@ MAN3=		AnyEvent::Subprocess.3 \
 		AnyEvent::Subprocess::Running::Delegate::Timeout.3 \
 		AnyEvent::Subprocess::Types.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

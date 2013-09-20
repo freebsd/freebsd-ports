@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	INC="-I${PREFIX}/include/tcl8.4" \
 
 MAN3=		Inline::Tcl.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i.bak '2,99d' ${WRKSRC}/Makefile.PL
 

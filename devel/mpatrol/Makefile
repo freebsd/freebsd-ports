@@ -1,8 +1,5 @@
-# New ports collection makefile for:	mpatrol
-# Date created:				8 July 2003
-# Whom:					Patrick MARIE <mycroft@virgaria.org>
+# Created by: Patrick MARIE <mycroft@virgaria.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mpatrol
 PORTVERSION=	1.4.8
@@ -39,6 +36,7 @@ DOCSIMG=	cc1.eps cc1.jpg cc1.pdf \
 		test.eps test.jpg test.pdf \
 		trace.eps trace.jpg trace.pdf
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

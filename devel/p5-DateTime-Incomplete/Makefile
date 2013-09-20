@@ -27,6 +27,7 @@ MAN3=		DateTime::Incomplete.3
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes LICENSE MANIFEST README TODO
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	py-log4py
-# Date created:			Mar 14, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	log4py
 PORTVERSION=	1.3
@@ -19,6 +14,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}

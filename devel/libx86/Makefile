@@ -1,9 +1,5 @@
-# Ports collection makefile for:  libx86
-# Date created:                   2008-12-05
-# Whom:                           Jung-uk Kim <jkim@FreeBSD.org>
-#
+# Created by: Jung-uk Kim <jkim@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libx86
 PORTVERSION=	1.1
@@ -24,6 +20,7 @@ ALL_TARGET=	default
 MAKE_ARGS+=	LIBDIR=${PREFIX}/lib
 MAKE_ENV+=	BACKEND=x86emu
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lrmi.h ${PREFIX}/include/libx86.h
 	${INSTALL_DATA} ${WRKSRC}/libx86.a ${PREFIX}/lib

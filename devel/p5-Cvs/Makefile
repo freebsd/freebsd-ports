@@ -36,4 +36,5 @@ RUN_DEPENDS+=    p5-IO-Tty>=0:${PORTSDIR}/devel/p5-IO-Tty
 RUN_DEPENDS+=   p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS+=   p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

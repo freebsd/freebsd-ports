@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-shape
-# Date created:			15 Nov 2007
-# Whom:				Ditesh Shashikant Gathani <ditesh@gathani.org>
-#
+# Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
 # $FreeBSD$
-#
 
 PORTNAME=	shape
 PORTVERSION=	0.9.2
@@ -28,6 +24,7 @@ IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS+=--with-shp=${LOCALBASE}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|include/libshp|include|g' ${WRKSRC}/config.m4
 	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/config.m4

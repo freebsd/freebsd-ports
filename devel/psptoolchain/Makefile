@@ -1,9 +1,5 @@
-# New ports collection makefile for: psptoolchain
-# Date created:        26 February 2009
-# Whom:                Tassilo Philipp <tphilipp@potion-studios.com>
-#
+# Created by: Tassilo Philipp <tphilipp@potion-studios.com>
 # $FreeBSD$
-#
 
 PORTNAME=		psptoolchain
 PORTVERSION=		20111215
@@ -34,6 +30,7 @@ NO_WRKSUBDIR=		YES
 NO_BUILD=		YES
 NO_FETCH=		YES
 
+NO_STAGE=	yes
 do-install:
 
 .include <bsd.port.mk>

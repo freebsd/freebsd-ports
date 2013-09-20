@@ -16,6 +16,7 @@ USE_PERL5=	configure
 
 MAN3=		parent.3
 
+NO_STAGE=	yes
 regression-test:
 	cd ${WRKSRC} && ${MAKE} test
 

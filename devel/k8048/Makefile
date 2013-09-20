@@ -20,6 +20,7 @@ PLIST_FILES=	bin/${PORTNAME} bin/kio ${BIN_SYMLINKS}
 
 BIN_SYMLINKS=	bin/k12 bin/k14 bin/k16 bin/ktest
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CC=|CC?=| ; \

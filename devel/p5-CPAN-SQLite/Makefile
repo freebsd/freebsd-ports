@@ -36,4 +36,5 @@ MAN3=	CPAN::SQLite::Index.3 \
 	CPAN::SQLite::Info.3 \
 	CPAN::SQLite::Search.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

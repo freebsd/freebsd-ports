@@ -31,4 +31,5 @@ MAN3=	MooseX::Daemonize.3 \
 	MooseX::Daemonize::WithPidFile.3 \
 	Test::MooseX::Daemonize.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

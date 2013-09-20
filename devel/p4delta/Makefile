@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  p4delta
-# Date created:                   Wed Apr 16, 2003
-# Whom:                           Michael L. Hostbaek (mich@freebsdcluster.org)
-#
+# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
 # $FreeBSD$
-#
 
 PORTNAME=	p4delta
 PORTVERSION=	1.3.2
@@ -19,6 +14,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/p4:${PORTSDIR}/devel/p4
 USE_RUBY=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^#!/usr/bin/ruby|#!${RUBY}|' ${WRKSRC}/p4delta
 

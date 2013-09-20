@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 MAN1=		newfile.1
 PORTDOCS=	newfile.html
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

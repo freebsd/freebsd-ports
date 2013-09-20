@@ -26,4 +26,5 @@ MAN3=	DateTime::Format::Flexible.3 \
 	DateTime::Format::Flexible::lang::en.3 \
 	DateTime::Format::Flexible::lang::es.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

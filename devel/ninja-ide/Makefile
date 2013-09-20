@@ -30,4 +30,5 @@ GH_ACCOUNT=	ninja-ide
 GH_COMMIT=	85027df
 GH_TAGNAME=	v${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

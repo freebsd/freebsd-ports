@@ -31,6 +31,7 @@ TTF_DESC=	Enable TTF support
 
 OPTIONS_DEFAULT=	GFX IMAGE MIXER NET TTF
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGFX}

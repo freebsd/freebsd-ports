@@ -1,4 +1,3 @@
-# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
 
 PORTNAME=	Slurp
@@ -23,4 +22,5 @@ PLIST_FILES=	%%SITE_PERL%%/Slurp.pm \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slurp/.packlist
 PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slurp
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

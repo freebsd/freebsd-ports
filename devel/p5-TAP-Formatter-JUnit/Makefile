@@ -27,4 +27,5 @@ MAN3=	TAP::Formatter::JUnit.3 \
 	TAP::Formatter::JUnit::Result.3 \
 	TAP::Formatter::JUnit::Session.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

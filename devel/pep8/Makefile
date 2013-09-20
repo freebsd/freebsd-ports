@@ -22,4 +22,5 @@ regression-test: extract
 	@(cd ${WRKSRC}; ${PYTHON_CMD} ${PORTNAME}.py \
 		--doctest --testsuite=testsuite)
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libtool
-# Date created:		6 May 1998
-# Whom:			Motoyuki Kasahara <m-kasahr@sra.co.jp>
-#
+# Created by: Motoyuki Kasahara <m-kasahr@sra.co.jp>
 # $FreeBSD$
-#
 
 PORTNAME?=	libtool
 PORTVERSION=	2.4.2
@@ -29,6 +25,7 @@ INFO?=		libtool
 MAN1=		libtool.1 libtoolize.1
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|sed gsed|sed|g' \
 		-e 's|CC=cc|CC=${CC}|g' \

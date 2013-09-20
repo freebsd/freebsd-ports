@@ -20,4 +20,5 @@ USE_PERL5=	modbuild
 
 MAN3=	TAP::Harness::JUnit.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

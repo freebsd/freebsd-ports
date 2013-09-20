@@ -28,4 +28,5 @@ MAN1=		ewfacquire.1 ewfacquirestream.1 ewfexport.1 \
 		ewfinfo.1 ewfmount.1 ewfrecover.1 ewfverify.1
 MAN3=		libewf.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

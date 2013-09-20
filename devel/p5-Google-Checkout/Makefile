@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Google-Checkout
-# Date created:				20 July 2007
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Google-Checkout
 PORTVERSION=	1.1.1
@@ -70,4 +66,5 @@ MAN3=	Google::Checkout::Command::AddMerchantOrderNumber.3 \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

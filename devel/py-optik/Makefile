@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	py-optik
-# Date created:			Nov 13, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	optik
 PORTVERSION=	1.5.3
@@ -21,6 +16,7 @@ USE_PYDISTUTILS=	yes
 .if !defined(NOPORTDOCS)
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 PLIST_SUB+=	DOCSDIR=${DOCSDIR:S@^${PREFIX}/@@}
+NO_STAGE=	yes
 post-install::
 	@${MKDIR} ${DOCSDIR}/test
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}

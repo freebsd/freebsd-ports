@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Module-Starter-PBP
-# Date created:				12 September 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Module-Starter-PBP
 PORTVERSION=	0.0.3
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=	Module::Starter::PBP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

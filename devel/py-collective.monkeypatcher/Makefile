@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-collective.monkeypatcher
-# Date created:				03 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	collective.monkeypatcher
 PORTVERSION=	1.0.1
@@ -21,4 +16,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

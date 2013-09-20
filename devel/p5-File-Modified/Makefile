@@ -23,6 +23,7 @@ MAN3=		File::Modified.3
 PORTDOCS=	Changes README bug.txt
 EXAMPLES=	example/1.pl example/Export.cfg example/Import.cfg
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

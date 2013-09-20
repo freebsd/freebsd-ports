@@ -26,4 +26,5 @@ MAN3=		Parse::ErrorString::Perl.3 \
 		Parse::ErrorString::Perl::ErrorItem.3 \
 		Parse::ErrorString::Perl::StackItem.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

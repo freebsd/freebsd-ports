@@ -1,9 +1,5 @@
-# New ports collection makefile for: psptoolchain-binutils
-# Date created:        13 February 2009
-# Whom:                Tassilo Philipp <tphilipp@potion-studios.com>
-#
+# Created by: Tassilo Philipp <tphilipp@potion-studios.com>
 # $FreeBSD$
-#
 
 PORTNAME=		binutils
 PORTVERSION=		2.22
@@ -48,6 +44,7 @@ MAN1=			psp-addr2line.1 \
 			psp-windres.1
 
 # Disable installation of .info files and libiberty.
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E 's/^(install-data-am:)(.*)install-info-am(.*)/\1 \2 \3/' \
 		${WRKSRC}/ld/Makefile.in

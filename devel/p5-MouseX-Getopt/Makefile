@@ -31,4 +31,5 @@ MAN3=		MouseX::Getopt.3 \
 		MouseX::Getopt::OptionTypeMap.3 \
 		MouseX::Getopt::Strict.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

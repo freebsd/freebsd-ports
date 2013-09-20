@@ -19,6 +19,7 @@ USE_PERL5=	configure
 MAN3=		Params::Check.3
 PORTDOCS=	CHANGES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

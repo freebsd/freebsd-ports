@@ -20,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=		Contextual::Return.3 Contextual::Return::Failure.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

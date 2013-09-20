@@ -25,4 +25,5 @@ MAN3=		MooseX::Types::PortNumber.3
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

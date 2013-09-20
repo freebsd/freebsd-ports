@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ossp-val
-# Date created:				2003-01-31
-# Whom:					Alan Eldridge <alane@geeksrus.net>
-#
+# Created by: Alan Eldridge <alane@geeksrus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	val
 PORTVERSION=	0.9.4
@@ -30,4 +26,5 @@ NOT_FOR_ARCHS=	alpha
 check:	build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

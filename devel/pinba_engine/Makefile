@@ -48,6 +48,7 @@ SUB_FILES=	pkg-message
 PORTDOCS=	NEWS TODO README
 .endif
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDATA)
 	@${MKDIR} ${DATADIR}

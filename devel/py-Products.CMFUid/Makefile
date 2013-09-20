@@ -21,4 +21,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 #USE_ZOPE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

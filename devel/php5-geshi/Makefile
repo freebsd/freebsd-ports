@@ -1,9 +1,5 @@
-# New ports collection makefile for:	php5-geshi
-# Date created:				2009-03-18
-# Whom:					Eygene Ryabinkin <rea-fbsd@codelabs.ru>
-#
+# Created by: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	geshi
 PORTVERSION=	1.0.8.2
@@ -238,6 +234,7 @@ EXAMPLESFILES=	\
 		example.php \
 		langcheck.php
 
+NO_STAGE=	yes
 post-extract:
 # Generate packing list
 .for f in ${FILES}

@@ -18,4 +18,5 @@ USES=		perl5
 
 MAN3=		IO::Pty::Easy.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pythontidy
-# Date created:		Jan. 16 ,2007
-# Whom:			Li-Wen Hsu <lwhsu@lwhsu.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pythontidy
 PORTVERSION=	1.23
@@ -24,6 +20,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/pythontidy
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${WRKDIR}

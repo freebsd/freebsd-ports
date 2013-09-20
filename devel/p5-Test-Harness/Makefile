@@ -69,6 +69,7 @@ MAN3=		App::Prove.3 \
 PLIST_SUB=	P5_PREFIX="p5"
 MAN1=		p5prove.1
 
+NO_STAGE=	yes
 pre-patch:
 	@${MV} ${WRKSRC}/bin/prove ${WRKSRC}/bin/p5prove
 	@${REINPLACE_CMD} "s,^bin/prove$$,bin/p5prove," ${WRKSRC}/MANIFEST

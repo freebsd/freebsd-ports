@@ -1,9 +1,4 @@
-# New ports collection makefile for:	npth
-# Date Created:				2012-08-12
-# Whom:					Jason E. Hale <bsdkaffee@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	npth
 PORTVERSION=	0.91
@@ -22,4 +17,5 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

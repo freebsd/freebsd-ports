@@ -1,9 +1,5 @@
-# New ports collection makefile for:    pyst
-# Date created:         06 Sep 2011
-# Whom:                 Mikhail T. <m.tsatsenko@gmail.com>
-#
+# Created by: Mikhail T. <m.tsatsenko@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pyst
 PORTVERSION=	0.4.38
@@ -21,6 +17,7 @@ USE_PYDISTUTILS=	yes
 
 PORTDOCS=	README README.html ChangeLog
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

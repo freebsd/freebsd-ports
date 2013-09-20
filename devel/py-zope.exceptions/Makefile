@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-zope.exceptions
-# Date created:				18 Aug, 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	zope.exceptions
 PORTVERSION=	4.0.0.1
@@ -23,4 +19,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>0:${PORTSDIR}/devel/py-zope.i
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

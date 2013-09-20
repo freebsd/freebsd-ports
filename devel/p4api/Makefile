@@ -1,9 +1,4 @@
-# New ports collection makefile for:	p4api
-# Date created:				27 Mar 2003
-# Whom:					kuriyama@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	p4api
 PORTVERSION=	${VERSION}
@@ -25,6 +20,7 @@ WRKSRC=		${WRKDIR}/p4api-2008.1.158777
 PLATFORM=	freebsd60
 VERSION=	08.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386

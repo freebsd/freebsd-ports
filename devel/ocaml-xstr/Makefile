@@ -1,6 +1,5 @@
 # Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	xstr
 PORTVERSION=	0.2.1
@@ -24,4 +23,5 @@ USE_OCAMLFIND_PLIST=yes
 USE_GMAKE=	yes
 ALL_TARGET=	all opt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

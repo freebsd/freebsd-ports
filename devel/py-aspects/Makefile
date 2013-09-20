@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-aspects
-# Date created:		2009-02-02
-# Whom:			Sofian Brabez <sbrabez@gmail.com>
-#
+# Created by: Sofian Brabez <sbrabez@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	aspects
 PORTVERSION=	1.3
@@ -28,6 +24,7 @@ EXAMPLESFILES=	httpget_example.py timeout_advice.py timeout_example.py \
 		typecheck_example.py
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
+NO_STAGE=	yes
 do-build:
 	@${GMAKE} -C ${WRKSRC} check
 

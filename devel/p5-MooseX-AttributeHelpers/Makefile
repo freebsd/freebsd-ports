@@ -49,6 +49,7 @@ MAN3=	MooseX::AttributeHelpers.3 \
 	MooseX::AttributeHelpers::Trait::Number.3 \
 	MooseX::AttributeHelpers::Trait::String.3
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -i '' '/build_requires/d' ${WRKSRC}/Makefile.PL
 

@@ -41,4 +41,5 @@ MAN3=		pp.3 \
 		PAR::StrippedPARL::Base.3 \
 		Static.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

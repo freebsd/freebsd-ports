@@ -26,6 +26,7 @@ MAN3=		File::MimeInfo::Applications.3 \
 		File::MimeInfo::Rox.3 \
 		File::MimeInfo.3
 
+NO_STAGE=	yes
 regression-test:
 	cd ${WRKSRC} && ${PERL5} ${PL_BUILD} test
 

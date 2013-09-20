@@ -22,6 +22,7 @@ MAN3=	Net::EmptyPort.3 \
 	Test::TCP.3 \
 	Test::TCP::CheckPort.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

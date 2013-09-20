@@ -28,6 +28,7 @@ TOX_CMD=	${LOCALBASE}/bin/tox
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>

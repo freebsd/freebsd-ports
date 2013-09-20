@@ -33,6 +33,7 @@ PLIST_SUB=		GCONF_API_VERSION=${GCONF_API_VERSION} \
 
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 		${WRKSRC}/configure

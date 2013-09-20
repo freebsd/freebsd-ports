@@ -23,4 +23,5 @@ MAN3=		PerlIO::Util.3 \
 		PerlIO::reverse.3 \
 		PerlIO::tee.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

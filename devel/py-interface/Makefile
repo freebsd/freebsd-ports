@@ -1,9 +1,5 @@
-# New ports collection makefile for:    py-interface
-# Date created:         		20 July 2009
-# Whom:                 		Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	interface
 PORTVERSION=	1.1.1
@@ -21,6 +17,7 @@ PYDISTUTILS_PKGNAME=	py_${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/py_${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py_${PORTNAME}
 
+NO_STAGE=	yes
 post-install:
 	@${TRUE}
 .if !defined(NOPORTDOCS)

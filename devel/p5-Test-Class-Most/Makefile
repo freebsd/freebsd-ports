@@ -26,4 +26,5 @@ PLIST_DIRSTRY=	%%SITE_PERL%%/Test/Class %%SITE_PERL%%/Test
 
 MAN3=		Test::Class::Most.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

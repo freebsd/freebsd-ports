@@ -18,4 +18,5 @@ USES=		perl5
 
 MAN3=		Regexp::Compare.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

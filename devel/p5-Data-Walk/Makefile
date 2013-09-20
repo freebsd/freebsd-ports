@@ -1,4 +1,3 @@
-# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
 
 PORTNAME=	Data-Walk
@@ -25,4 +24,5 @@ PLIST_DIRS=	%%SITE_PERL%%/Data \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Walk \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

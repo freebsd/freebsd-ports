@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-configobj
-# Date created:		2006-10-20
-# Whom:			Choe, Cheng-Dae
-#
+# Created by: Choe, Cheng-Dae
 # $FreeBSD$
-#
 
 PORTNAME=	configobj
 PORTVERSION=	4.7.2
@@ -23,6 +19,7 @@ USE_PYDISTUTILS=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR} && \

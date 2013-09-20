@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-px
-# Date created:		19 July 2002
-# Whom:			Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
 
 PORTNAME=	px
@@ -30,6 +27,7 @@ PLIST_FILES=	bin/px \
 		%%PYTHON_SITELIBDIR%%/p4lib.pyc \
 		%%PYTHON_SITELIBDIR%%/p4lib.pyo
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

@@ -41,6 +41,7 @@ RUN_DEPENDS+=	${PKGNAMEPREFIX2}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-c
 		${PKGNAMEPREFIX2}phonon>=${PYQT4_VERSION}:${PORTSDIR}/multimedia/py-qt4-phonon \
 		${PKGNAMEPREFIX2}qscintilla2>=${QSCI2_VERSION}:${PORTSDIR}/devel/py-qt4-qscintilla2
 
+NO_STAGE=	yes
 .include "${.CURDIR}/bsd.pyqt.mk"
 .include <bsd.port.options.mk>
 

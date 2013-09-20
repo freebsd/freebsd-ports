@@ -1,9 +1,5 @@
-# New ports collection makefile for:	monodevelop-python
-# Date created:		2011-09-21
-# Whom:			Romain Tartiere <romain@FreeBSD.org>
-#
+# Created by: Romain Tartiere <romain@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	monodevelop-python
 PORTVERSION=	2.8.8.4
@@ -24,6 +20,7 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtksharp20
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!/usr/bin/env bash|' \
 	    ${WRKSRC}/configure

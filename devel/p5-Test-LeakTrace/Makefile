@@ -17,4 +17,5 @@ MAN3=		Test::LeakTrace.3 \
 		Test::LeakTrace::JA.3 \
 		Test::LeakTrace::Script.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

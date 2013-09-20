@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	pyobfuscate
-# Date created:			May 4, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	pyobfuscate
 PORTVERSION=	0.3
@@ -21,6 +16,7 @@ USE_PYDISTUTILS=	yes
 
 PLIST_FILES=	bin/pyobfuscate
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,'/usr/bin','${PREFIX}/bin'," ${WRKSRC}/setup.py
 

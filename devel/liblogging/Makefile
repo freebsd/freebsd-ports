@@ -1,9 +1,5 @@
-# New ports collection makefile for:	liblogging
-# Date created:		9 July 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	liblogging
 PORTVERSION=	0.7.1
@@ -17,6 +13,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^pkgconfigdir =/s|=.*| \
 		= ${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/Makefile.in

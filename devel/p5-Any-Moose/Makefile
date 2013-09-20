@@ -22,6 +22,7 @@ OPTIONS_DEFAULT=	MOUSE
 MOOSE_DESC=	Use Moose
 MOUSE_DESC=	Use Mouse
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMOOSE}

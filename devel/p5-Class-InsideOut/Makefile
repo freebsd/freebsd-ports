@@ -21,4 +21,5 @@ USE_PERL5=	configure
 MAN3=		Class::InsideOut::Manual::About.3 Class::InsideOut.3 \
 		Class::InsideOut::Manual::Advanced.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	monodevelop-java
-# Date created:		2008-03-02
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	monodevelop-java
 PORTVERSION=	2.8.8.4
@@ -27,6 +23,7 @@ USES=		gettext
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GNOME=	gtksharp20
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|[(]prefix[)]/lib/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/JavaBinding.make

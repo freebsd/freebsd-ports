@@ -22,6 +22,7 @@ USES=		gmake pathfix
 INFO=		check
 MAN1=		checkmk.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -20,6 +20,7 @@ CPPFLAGS+=	-Wno-return-type
 CONFIGURE_ENV+=	CPPCFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|\(DATADIRNAME=\)lib|\1share|g ; \
 		s|USE_INCLUDED_LIBINTL=yes|#&|g ; \

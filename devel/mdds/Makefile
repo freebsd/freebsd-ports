@@ -1,4 +1,3 @@
-# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mdds
@@ -17,6 +16,7 @@ PROJECTHOST=	multidimalgorithm
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-configure:
 	@${SED} -e 's|@prefix@|${PREFIX}|' \
 	    -e 's|@includedir@|$${prefix}/include|' \

@@ -1,10 +1,6 @@
-# New ports collection makefile for:	oaf
-# Date created:				1st June 2000
-# Whom:					Ade Lovett <ade@FreeBSD.org>
-#
+# Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/devel/oaf/Makefile,v 1.5 2007/05/19 21:36:06 marcus Exp $
-#
 
 PORTNAME=	oaf
 PORTVERSION=	0.6.10
@@ -32,4 +28,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=	oafd.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

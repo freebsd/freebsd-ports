@@ -28,4 +28,5 @@ MAN3=	MooseX::Has::Options.3 \
 	MooseX::Has::Options::Handler::NativeTypes.3 \
 	MooseX::Has::Options::Handler::NoInit.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,6 +23,7 @@ PYEASYINSTALL_ARCHDEP=	yes
 DOCSDIR?=	${PREFIX}/share/doc/py-fusefs
 EXAMPLESDIR?=	${PREFIX}/share/examples/py-fusefs
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/libs =/s|$$| + " ${ICONV_LIB}"|'\
 		${WRKSRC}/setup.py

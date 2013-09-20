@@ -21,6 +21,7 @@ MAN3=	MooseX::Async.3 \
 	MooseX::Async::Meta::Class.3 \
 	MooseX::Async::Meta::Method::State.3
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} -f ${WRKSRC}/lib/MooseX/._Async.pm
 

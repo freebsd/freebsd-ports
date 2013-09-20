@@ -1,9 +1,5 @@
-# New ports collection makefile for:	m4
-# Date created:		25 October 1994
-# Whom:			mr
-#
+# Created by: mr
 # $FreeBSD$
-#
 
 PORTNAME=	m4
 PORTVERSION=	1.4.16
@@ -29,6 +25,7 @@ EXAMPLESDIR=	share/examples/gm4
 OPTIONS_DEFINE=		LIBSIGSEGV
 LIBSIGSEGV_DESC=	Use libsigsegv for better diagnostics
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${PREFIX}/${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.m4 ${PREFIX}/${EXAMPLESDIR}

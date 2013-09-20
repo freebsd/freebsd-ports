@@ -17,6 +17,7 @@ PLIST_SUB+=	EXAMPLESDIR="share/examples/${PORTNAME}"
 
 MAN3=		Class::Contract.3 Class::Contract::Production.3
 
+NO_STAGE=	yes
 pre-configure:
 	${MKDIR} ${WRKSRC}/examples
 	${MV} ${WRKSRC}/demo.pl ${WRKSRC}/examples

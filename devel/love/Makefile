@@ -37,6 +37,7 @@ PLIST_FILES=	bin/love
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -23,4 +23,5 @@ USE_PERL5=	configure
 MAN1=		bucketize.1
 MAN3=		Algorithm::Bucketizer.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

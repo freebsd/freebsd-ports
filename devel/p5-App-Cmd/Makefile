@@ -37,4 +37,5 @@ MAN3=		App::Cmd.3 \
 		App::Cmd::Tester::CaptureExternal.3 \
 		App::Cmd::Tutorial.3 \
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

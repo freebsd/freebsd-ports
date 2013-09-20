@@ -36,6 +36,7 @@ ANTHY_DESC=	Kana-Kanji conversion support via Anthy
 ISPELL_DESC=	Spell checking support via Ispell
 THAI_DESC=	Thai language support via libThai
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MANTHY}

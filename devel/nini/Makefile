@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nini
-# Date created:		2009-04-27
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nini
 PORTVERSION=	1.1.0
@@ -37,6 +33,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 .endif
 
+NO_STAGE=	yes
 do-install:
 	@(cd ${INSTALL_WRKSRC}/Bin/Mono/1.1/Release && ${SETENV} MONO_SHARED_DIR=${WRKDIR} ${LOCALBASE}/bin/gacutil -root ${PREFIX}/lib/ -gacdir ${PREFIX}/lib -package ${PORTNAME}-${NINI_VERSION} -i Nini.dll)
 	@${INSTALL_DATA} ${WRKDIR}/nini.pc ${PREFIX}/libdata/pkgconfig/nini-${NINI_VERSION}.pc

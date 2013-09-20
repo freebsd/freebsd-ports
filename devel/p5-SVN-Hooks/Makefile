@@ -40,4 +40,5 @@ MAN3=		SVN::Hooks.3 \
 		SVN::Hooks::Notify.3 \
 		SVN::Hooks::UpdateConfFile.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

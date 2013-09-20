@@ -17,4 +17,5 @@ MAN3=		List::Rotation::Cycle.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

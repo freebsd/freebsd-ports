@@ -27,6 +27,7 @@ MAN1=		phpsh.1
 OPTIONS_DEFINE=	PCNTL
 PCNTL_DESC=	Fork on every command (pcntl PHP extension)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPCNTL}

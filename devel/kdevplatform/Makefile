@@ -26,6 +26,7 @@ USE_LDCONFIG=	yes
 PLIST_SUB+=	SHLIB_VER=7.0.0 \
 		SHLIB_SHVER=7
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

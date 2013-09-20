@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gitosis
-# Date created:				25 June 2009
-# Whom:					Douglas Thrift <douglas@douglasthrift.net>
-#
+# Created by: Douglas Thrift <douglas@douglasthrift.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gitosis
 PORTVERSION=	0.2.20090917
@@ -28,6 +24,7 @@ GROUPS=		${USERS}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PYDISTUTILS_PKGVERSION=	${PORTVERSION:R}
 
+NO_STAGE=	yes
 post-install:
 	${CHMOD} +x ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}/gitosis/templates/admin/hooks/post-update
 	@${CAT} ${PKGMESSAGE}

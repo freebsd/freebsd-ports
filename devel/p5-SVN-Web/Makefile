@@ -58,6 +58,7 @@ MAN3=		SVN::CHANGES.3 \
 		SVN::Web::X.3 \
 		SVN::Web::action.3
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} -p ${WWWDIR}
 	@${CP} -r ${WRKSRC}/SVN-Web.psgi ${WRKSRC}/template ${WRKSRC}/css ${WWWDIR}

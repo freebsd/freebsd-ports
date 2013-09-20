@@ -15,4 +15,5 @@ PLIST_FILES=	bin/lndir
 
 MAN1=		lndir.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

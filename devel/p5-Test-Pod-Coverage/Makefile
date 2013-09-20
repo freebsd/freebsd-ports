@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Test-Pod-Coverage
-# Date created:				20 november 2004
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Pod-Coverage
 PORTVERSION=	1.08
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		Test::Pod::Coverage.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

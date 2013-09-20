@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libdaemon
-# Date created:		2005-10-17
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libdaemon
 PORTVERSION=	0.14
@@ -18,4 +14,5 @@ USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack ltverhack
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

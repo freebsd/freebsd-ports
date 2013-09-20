@@ -1,9 +1,5 @@
-# Ports collection makefile for:	memcheck
-# Date created:				Mon Sep 2, 2002
-# Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	memcheck
 PORTVERSION=	0.2.4
@@ -19,4 +15,5 @@ USE_LDCONFIG=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

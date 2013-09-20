@@ -36,6 +36,7 @@ MAN3=		DateTime::Format::Epoch.3 \
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README TODO
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

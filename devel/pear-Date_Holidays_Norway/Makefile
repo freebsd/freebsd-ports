@@ -1,9 +1,4 @@
-# New ports collection makefile for:	pear-Date_Holidays_Norway
-# Date created:		2008-06-05
-# Whom:			Thomas Abthorpe <tabthorpe@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Date_Holidays_Norway
 PORTVERSION=	0.1.2
@@ -18,6 +13,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 CATEGORY=	Date
 FILES=		Holidays/Driver/Norway.php
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

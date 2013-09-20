@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-zope.browserresource
-# Date created:				Nov 15, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	zope.browserresource
 PORTVERSION=	3.10.3
@@ -32,4 +27,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

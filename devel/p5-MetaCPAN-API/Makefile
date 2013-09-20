@@ -35,6 +35,7 @@ regression-test: build
 	cd ${WRKSRC} && ${PERL5} ${PL_BUILD} test
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

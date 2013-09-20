@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Test-XML-Valid
-# Date created:				10 April 2007
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-XML-Valid
 PORTVERSION=	0.04
@@ -24,4 +20,5 @@ USE_PERL5=	modbuild
 
 MAN3=	Test::XML::Valid.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

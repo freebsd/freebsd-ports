@@ -20,6 +20,7 @@ USE_LDCONFIG=	yes
 
 MAN3=		popt.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

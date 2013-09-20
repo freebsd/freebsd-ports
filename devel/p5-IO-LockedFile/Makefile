@@ -16,4 +16,5 @@ USE_PERL5=	configure
 MAN3=	IO::LockedFile.3 \
 	IO::LockedFile::Flock.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

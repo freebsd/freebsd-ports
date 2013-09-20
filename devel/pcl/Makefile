@@ -1,9 +1,5 @@
-# New ports collection makefile for: pcl
-# Date Created:                      13 Oct 2008
-# Whom:                              Manuel Giraud <manuel.giraud@gmail.com>
-#
+# Created by: Manuel Giraud <manuel.giraud@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pcl
 PORTVERSION=	1.6
@@ -21,6 +17,7 @@ MAN3=		pcl.3
 
 WRKSRC=		${WRKDIR}/lib${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

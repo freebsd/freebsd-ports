@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-BytecodeAssembler
-# Date created:		23 June, 2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	BytecodeAssembler
 PORTVERSION=	0.6
@@ -24,4 +20,5 @@ USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

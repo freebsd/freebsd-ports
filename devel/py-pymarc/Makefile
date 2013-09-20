@@ -20,4 +20,5 @@ USE_PYDISTUTILS=	easy_install
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} test.py
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Devel-Cycle
-# Date created:	   16 January 2004
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-Cycle
 PORTVERSION=	1.11
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		Devel::Cycle.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

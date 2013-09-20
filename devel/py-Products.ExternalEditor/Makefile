@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-Products.ExternalEditor
-# Date created:				20 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Products.ExternalEditor
 PORTVERSION=	1.1.0
@@ -21,4 +16,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

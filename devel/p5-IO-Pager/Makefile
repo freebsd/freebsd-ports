@@ -19,4 +19,5 @@ MAN3=		IO::Pager::Buffered.3 \
 		IO::Pager::Unbuffered.3 \
 		IO::Pager.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

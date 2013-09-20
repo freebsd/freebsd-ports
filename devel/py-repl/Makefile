@@ -18,6 +18,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	pyrepl
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|platforms =.*|zip_safe = False,|' ${WRKSRC}/setup.py

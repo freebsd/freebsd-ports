@@ -19,6 +19,7 @@ JAVA_VERSION=	1.6+
 
 MAN3=		Java.3 JavaArray.3
 
+NO_STAGE=	yes
 post-patch:
 	${RM} ${WRKSRC}/java_server_install.pl
 

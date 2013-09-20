@@ -1,6 +1,5 @@
 # Created by: Ilya Bakulin <webmaster@kibab.com>
 # $FreeBSD$
-#
 
 PORTNAME=	thrift
 PORTVERSION=	${THRIFT_PORTVERSION}
@@ -21,6 +20,7 @@ PHP_MODNAME=	thrift_protocol
 
 WRKSRC=		${WRKDIR}/php/src/ext/thrift_protocol
 
+NO_STAGE=	yes
 post-extract:
 	${LN} -sfh \
 		`${MAKE} -C ${PORTSDIR}/devel/thrift -V WRKSRC`/lib/php \

@@ -27,6 +27,7 @@ MAN3=		ExtUtils::Command::MM.3 ExtUtils::Liblist.3 ExtUtils::MM.3 \
 		ExtUtils::MakeMaker::Tutorial.3 ExtUtils::Mkbootstrap.3 \
 		ExtUtils::Mksymlists.3 ExtUtils::testlib.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

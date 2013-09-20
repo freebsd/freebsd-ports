@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libevent
-# Date created:				20 June 2001
-# Whom:					Pete Fritchman <petef@databits.net>
-#
+# Created by: Pete Fritchman <petef@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libevent
 PORTVERSION=	1.4.14b
@@ -89,6 +85,7 @@ MLINKS=	event.3 event_init.3 \
 	- evdns_config_windows_nameservers.3
 .endif
 
+NO_STAGE=	yes
 pre-configure:
 	@${MKDIR} ${WRKSRC}/m4
 

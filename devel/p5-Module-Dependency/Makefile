@@ -20,4 +20,5 @@ MAN3=		Module::Dependency.3 \
 		Module::Dependency::Grapher.3 \
     		Module::pmd_dump.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

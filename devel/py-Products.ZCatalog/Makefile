@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-Products.ZCatalog
-# Date created:				Nov 14, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Products.ZCatalog
 PORTVERSION=	2.13.23
@@ -38,4 +33,5 @@ USE_PYTHON=	-2.7
 USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

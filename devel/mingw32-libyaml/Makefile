@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mingw32-libyaml
-# Date created:		5 December 2011
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libyaml
 PORTVERSION=	0.1.4
@@ -25,4 +21,5 @@ CONFIGURE_ARGS=	--host="mingw32"
 CC=		${PKGNAMEPREFIX}gcc
 CFLAGS=		-O3	# Override CFLAGS for a cross-build
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

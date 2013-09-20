@@ -18,4 +18,5 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH}
 INFO=		libconfig
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

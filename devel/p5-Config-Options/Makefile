@@ -16,4 +16,5 @@ USE_PERL5=	configure
 MAN3=	Config::Options.3 \
 	Config::Options::Threaded.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

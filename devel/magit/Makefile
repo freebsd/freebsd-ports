@@ -15,4 +15,5 @@ USE_EMACS=	YES
 USE_GMAKE=	YES
 INFO=		magit
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -64,4 +64,5 @@ MAN3=	Badger.3 \
 	Badger::Hub::Badger.3 \
 	Badger::URL.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

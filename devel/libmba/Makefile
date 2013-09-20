@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	libmba
-# Date Created:			Sep 24, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libmba
 PORTVERSION=	0.9.1
@@ -27,6 +22,7 @@ MANCOMPRESSED=	yes
 
 SHLIB_MAJOR=	0
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,-g,$$(CFLAGS),' \
 		-e '/^prefix/s/=/?=/' \

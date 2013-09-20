@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Sepia
-# Date created:		2011-12-01
-# Whom:			Ashish SHUKLA <ashish@FreeBSD.org>
-#
+# Created by: Ashish SHUKLA <ashish@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Sepia
 PORTVERSION=	0.992
@@ -35,4 +31,5 @@ INFO=	sepia
 
 CONFIGURE_ARGS+=	--emacs ${EMACS_CMD} --lisp ${PREFIX}/${EMACS_SITE_LISPDIR}/sepia --info ${PREFIX}/${INFO_PATH}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

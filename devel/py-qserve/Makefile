@@ -1,9 +1,5 @@
-# New ports collection makefile for:    py-qserve
-# Date created:				Oct 30, 2011
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qserve
 PORTVERSION=	0.2.8
@@ -18,4 +14,5 @@ USE_ZIP=	yes
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

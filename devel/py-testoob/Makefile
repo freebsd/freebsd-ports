@@ -1,9 +1,5 @@
-# New ports collection makefile for:	testoob
-# Date created:		Sun Oct 29 18:28:14 CET 2006
-# Whom:			Tobias Roth <ports@fsck.ch>
-#
+# Created by: Tobias Roth <ports@fsck.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	testoob
 PORTVERSION=	1.15
@@ -29,6 +25,7 @@ PYDISTUTILS_PKGNAME=	${PORTNAME}
 PYDISTUTILS_PKGVERSION=	${PORTVERSION}
 PYDISTUTILS_NOEGGINFO=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTWISTED}

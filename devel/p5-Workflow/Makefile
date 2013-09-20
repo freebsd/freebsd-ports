@@ -81,6 +81,7 @@ MAN3=	Workflow.3 \
 	Workflow::Validator::InEnumeratedType.3 \
 	Workflow::Validator::MatchesDateFormat.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}

@@ -28,4 +28,5 @@ MAN3=		MooseX::Singleton.3 \
 		MooseX::Singleton::Role::Meta::Method::Constructor.3 \
 		MooseX::Singleton::Role::Object.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

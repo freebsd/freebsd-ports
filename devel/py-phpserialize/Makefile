@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-phpserialize
-# Date created:		2008-07-23
-# Whom:			Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
-#
+# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	phpserialize
 PORTVERSION=	0.4
@@ -23,6 +19,7 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PHPSerialize
 
+NO_STAGE=	yes
 post-extract:
 	${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|g' ${FILESDIR}/setup.py \
 		> ${WRKSRC}/setup.py

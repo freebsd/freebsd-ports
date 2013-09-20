@@ -44,4 +44,5 @@ MAN3=	XML::Checker.3 XML::Checker::Parser.3 XML::DOM.3 XML::DOM::AttDef.3 \
 	XML::Handler::PrintEvents.3 XML::RegExp.3 XML::UM.3 XML::XQL.3 \
 	XML::XQL::DOM.3 XML::XQL::Date.3 XML::XQL::Query.3 XML::XQL::Tutorial.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

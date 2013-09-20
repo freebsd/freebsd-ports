@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mingw64-binutils
-# Date created:         10/19/2009
-# Whom:                 stas
-#
+# Created by: stas
 # $FreeBSD$
-#
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -11,4 +7,5 @@ TGTARCH=	x86_64
 TGTABI=		pc-mingw32
 
 MASTERDIR=	${.CURDIR}/../cross-binutils
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -21,6 +21,7 @@ USE_PYDISTUTILS=yes
 OPTIONS_DEFINE=	GUI
 OPTIONS_DEFAULTS=
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUI}

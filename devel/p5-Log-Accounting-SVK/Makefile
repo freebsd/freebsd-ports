@@ -24,4 +24,5 @@ USE_PERL5=	configure
 MAN1=	svk-accounting.pl.1 svk-developer-graph.pl.1
 MAN3=	Log::Accounting::SVK.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for: msrc0
-# Date created:        17 November 1999
-# Whom:                ajk@waterspout.com
-#
+# Created by: ajk@waterspout.com
 # $FreeBSD$
-#
 
 PORTNAME=	msrc0
 PORTVERSION=	0.7
@@ -21,6 +17,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/makeme
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.6
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/makeme ${PREFIX}/bin
 

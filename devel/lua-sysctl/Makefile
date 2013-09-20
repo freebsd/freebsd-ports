@@ -18,6 +18,7 @@ GH_ACCOUNT=	kAworu
 GH_PROJECT=	${PORTNAME}
 GH_COMMIT=	345dc69
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

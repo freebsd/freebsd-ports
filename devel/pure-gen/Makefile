@@ -17,5 +17,6 @@ MAN1=		pure-gen.1
 
 CC= 		gcc
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/pure/bsd.pure.mk"
 .include <bsd.port.mk>

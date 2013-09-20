@@ -35,6 +35,7 @@ MAN3=		DateTime::Format::Builder.3 DateTime::Format::Builder::Parser.3 \
 PORTDOCS=	Changes README
 PORTEXAMPLES=	Apache.pm Fall.pm ICal.pm MySQL.pm Simple.pm Tivoli.pm W3CDTF.pm
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

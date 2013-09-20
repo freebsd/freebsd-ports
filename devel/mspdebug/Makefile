@@ -18,6 +18,7 @@ USE_GMAKE=		yes
 
 PLIST_FILES=		bin/mspdebug
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mspdebug ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/mspdebug.man ${PREFIX}/man/man1/mspdebug.1

@@ -18,6 +18,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DEBUG OPTIMIZED_CFLAGS DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "powerpc"

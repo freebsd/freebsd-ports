@@ -36,4 +36,5 @@ USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	${PORTNAME:S/-/./}
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

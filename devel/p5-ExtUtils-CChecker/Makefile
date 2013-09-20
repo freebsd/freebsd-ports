@@ -20,6 +20,7 @@ MAN3=		ExtUtils::CChecker.3
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
 
+NO_STAGE=	yes
 post-install:
 	@${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m 555 -d ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-sysv_ipc
-# Date created:		2010-11-03
-# Whom:			Li-Wen Hsu <lwhsu@FreeBSD.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sysv_ipc
 PORTVERSION=	0.6.3
@@ -21,4 +17,5 @@ USE_PYDISTUTILS=	yes
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/sysv_ipc.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

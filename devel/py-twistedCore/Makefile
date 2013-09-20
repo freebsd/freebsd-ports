@@ -30,6 +30,7 @@ REINPLACE_ARGS=	-i ''
 
 MAN1=		manhole.1 pyhtmlizer.1 tap2deb.1 tap2rpm.1 tapconvert.1 trial.1 twistd.1
 
+NO_STAGE=	yes
 post-install:
 # permission safeness
 	@${CHMOD} -R ${SHAREMODE} ${PYTHONPREFIX_SITELIBDIR}/twisted/

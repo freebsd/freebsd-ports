@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-Products.StandardCacheManagers
-# Date created:				Nov 16, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Products.StandardCacheManagers
 PORTVERSION=	2.13.0
@@ -25,4 +20,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

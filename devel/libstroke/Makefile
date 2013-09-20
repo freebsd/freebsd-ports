@@ -20,6 +20,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	GTK1
 GTK1_DESC=	Build with legacy Gtk+/GNOME stroke support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK1} || !empty(HAVE_GNOME:Mgtk12)

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-CPAN-YACSmoke
-# Date created:				3 March 2005
-# Whom:					Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CPAN-YACSmoke
 PORTVERSION=	0.03
@@ -31,4 +27,5 @@ MAN3=		CPAN::YACSmoke.3 \
 		CPAN::YACSmoke::Plugin::SmokeDB.3 \
 		CPAN::YACSmoke::Plugin::Recent.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

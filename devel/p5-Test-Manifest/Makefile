@@ -13,4 +13,5 @@ COMMENT=	Perl module to interact with a t/test_manifest file
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

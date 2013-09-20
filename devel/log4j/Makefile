@@ -1,9 +1,5 @@
-# Ports collection makefile for:	Jakarta Log4J
-# Date created:				11 October 2002
-# Whom:					Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
-#
+# Created by: Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
 # $FreeBSD$
-#
 
 PORTNAME=	log4j
 PORTVERSION=	1.2.16
@@ -24,6 +20,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/log4j.jar
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${INSTALL_DATA} ${WRKSRC}/log4j-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar

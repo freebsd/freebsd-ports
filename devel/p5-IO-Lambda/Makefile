@@ -47,4 +47,5 @@ MAN3=	IO::Lambda.3 \
 	IO::Lambda::Throttle.3 \
 	IO::Lambda::Thread.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

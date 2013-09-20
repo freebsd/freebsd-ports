@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libmcve
-# Date Created:				16 March 2002
-# Whom:					Brad House <brad@monetra.com>
-#
+# Created by: Brad House <brad@monetra.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libmonetra
 PORTVERSION=	7.0.4
@@ -18,4 +14,5 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

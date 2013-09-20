@@ -59,6 +59,7 @@ MAN5=	hgignore.5 hgrc.5
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

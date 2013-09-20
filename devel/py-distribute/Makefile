@@ -27,6 +27,7 @@ EASYINSTALL_PTH=	${PYTHON_SITELIBDIR}/easy-install.pth
 SITE_PY=	${PYTHON_SITELIBDIR}/site.py
 PYFILES=	site.py
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 320

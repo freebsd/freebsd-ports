@@ -31,6 +31,7 @@ MAN3=		Moo.3 \
 		Sub::Defer.3 \
 		Sub::Quote.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

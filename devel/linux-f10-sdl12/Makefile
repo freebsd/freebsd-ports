@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/linux-f10-sdl12
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	sdl
 PORTVERSION=	1.2.13
@@ -31,4 +27,5 @@ DOCSDIR=	${PREFIX}/usr/share/doc/${LINUX_NAME}-${PORTVERSION}
 PORTDOCS=	BUGS COPYING CREDITS README-SDL.txt
 DESCR=		${.CURDIR}/../${PORTNAME}12/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -22,6 +22,7 @@ USES=		cmake:outsource
 CMAKE_ARGS=	-DCMAKE_MODULE_PATH=${WRKSRC}/cmake/llvm-3.1-modules \
 		-DKLEE_PATH_TO_LLVM_BUILD=${LOCALBASE}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

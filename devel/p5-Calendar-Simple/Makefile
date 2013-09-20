@@ -15,4 +15,5 @@ USE_PERL5=	modbuild
 
 MAN3=		Calendar::Simple.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -42,4 +42,5 @@ MAN3=		JSON::RPC::Common::Marshal::Text.3 \
 		JSON::RPC::Common::Procedure::Return::Version_1_0::Error.3 \
 		JSON::RPC::Common::Marshal::HTTP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

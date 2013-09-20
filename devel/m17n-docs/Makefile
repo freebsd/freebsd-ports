@@ -14,6 +14,7 @@ NO_BUILD=	yes
 OPTIONS_DEFINE=	JAPANESE
 JAPANESE_DESC=	Japanese documentation (HTML and PDF)
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.man"
 
 .include <bsd.port.options.mk>

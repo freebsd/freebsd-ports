@@ -25,6 +25,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAN3=		DateTime::Astro.3 \
 		DateTime::Event::SolarTerm.3
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -e '/^INC = / s|$$| -I${LOCALBASE}/include|' ${WRKSRC}/Makefile
 

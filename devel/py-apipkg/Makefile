@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-apipkg
-# Date created:				5 Nov, 2010
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	apipkg
 PORTVERSION=	1.0
@@ -17,4 +13,5 @@ COMMENT=	Namespace control and lazy-import mechanism
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

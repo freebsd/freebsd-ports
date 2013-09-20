@@ -22,6 +22,7 @@ REINPLACE_ARGS=	-i ""
 
 MAN1=		openvex.1 openvex-new-project.1
 
+NO_STAGE=	yes
 post-patch:
 # Use make's -C option to descent into directories and fix parallel builds
 	@${REINPLACE_CMD} -e 's/^all:/& depend/ ; s/ make depend &&//' \

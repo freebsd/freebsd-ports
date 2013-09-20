@@ -13,5 +13,6 @@ USE_PURE=	yes
 USE_GCC=	yes
 CXXFLAGS+=	-std=c++0x -DHAVE_STD_IS_PERMUTATION
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/pure/bsd.pure.mk"
 .include <bsd.port.mk>

@@ -48,4 +48,5 @@ PLIST_SUB+=		SAIDAR=""
 MAN1+=			saidar.1
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

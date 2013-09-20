@@ -26,4 +26,5 @@ MAN3=		MooseX::NonMoose.3 \
 		MooseX::NonMoose::Meta::Role::Class.3 \
 		MooseX::NonMoose::Meta::Role::Constructor.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

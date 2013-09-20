@@ -37,4 +37,5 @@ PLIST_SUB+=	PROFILE="@comment "
 PLIST_SUB+=	PROFILE=""
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

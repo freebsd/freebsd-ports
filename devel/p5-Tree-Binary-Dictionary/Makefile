@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Tree-Binary-Dictionary
-# Date created:				24 May 2006
-# Whom:					Aaron Dalton <aaron@daltons.ca>
-#
+# Created by: Aaron Dalton <aaron@daltons.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Tree-Binary-Dictionary
 PORTVERSION=	1.01
@@ -22,4 +18,5 @@ MAN3=		Tree::Binary::Dictionary.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

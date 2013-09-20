@@ -18,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		Term::Animation.3 Term::Animation::Entity.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

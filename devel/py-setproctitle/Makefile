@@ -19,6 +19,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PORTNAME}.so
 
 PORTDOCS=	COPYRIGHT HISTORY.rst README.rst
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

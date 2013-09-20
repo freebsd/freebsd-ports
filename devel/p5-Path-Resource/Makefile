@@ -27,4 +27,5 @@ USE_PERL5=	configure
 
 MAN3=	Path::Resource.3 Path::Resource::Base.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

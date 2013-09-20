@@ -27,4 +27,5 @@ MAN3=		SVN::Dumpfile.3 \
 		SVN::Dumpfile::Node::Properties.3 \
 		SVN::Dumpfile::Tutorial.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

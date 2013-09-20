@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Test-Data
-# Date created:				18 March 2006
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Data
 PORTVERSION=	1.23
@@ -27,4 +23,5 @@ MAN3=		Test::Data.3 \
 		Test::Data::Hash.3 \
 		Test::Data::Scalar.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

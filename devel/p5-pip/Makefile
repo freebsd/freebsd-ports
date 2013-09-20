@@ -34,6 +34,7 @@ MAN3=		Module::Plan::Base.3 \
 		Module::Plan::Lite.3 \
 		pip.3
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} 's|(INST_SCRIPT)/pip|(INST_SCRIPT)/pip-perl|' ${WRKSRC}/Makefile
 

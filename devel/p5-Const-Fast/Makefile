@@ -25,4 +25,5 @@ USE_PERL5=	modbuildtiny
 
 MAN3=		Const::Fast.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

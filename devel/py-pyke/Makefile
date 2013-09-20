@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pyke
-# Date created:		2008-12-23
-# Whom:			Thinker K.F. Li <thinker@branda.to>
-#
+# Created by: Thinker K.F. Li <thinker@branda.to>
 # $FreeBSD$
-#
 
 PORTNAME=	pyke
 PORTVERSION=	1.1.1
@@ -20,6 +16,7 @@ USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

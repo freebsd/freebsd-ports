@@ -19,6 +19,7 @@ USE_PERL5=	configure
 MAN3=		Class::C3.3 \
 		Class::C3::next.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXS}

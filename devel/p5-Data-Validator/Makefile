@@ -30,6 +30,7 @@ MAN3=		Data::Validator.3 \
 		Data::Validator::Role::Sequenced.3 \
 		Data::Validator::Role::StrictSequenced.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

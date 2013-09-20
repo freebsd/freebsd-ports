@@ -27,4 +27,5 @@ MAN3=		Sys::Info::Base.3 \
 regression-test test: build
 	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} test
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -37,4 +37,5 @@ MAN3=	Carton.3 \
 	Carton::Doc::Tree.3 \
 	Carton::Doc::Version.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

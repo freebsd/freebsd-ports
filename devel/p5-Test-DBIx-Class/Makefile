@@ -59,6 +59,7 @@ MAN3=	Test::DBIx::Class.3 \
 	Test::DBIx::Class::SchemaManager::Trait::Testpostgresql.3 \
 	Test::DBIx::Class::Types.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

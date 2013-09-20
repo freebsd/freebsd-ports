@@ -20,6 +20,7 @@ JARFILES=	java40.jar LICENSE.java40.txt
 
 PLIST_FILES=	${JARFILES:S|^|%%JAVAJARDIR%%/|}
 
+NO_STAGE=	yes
 post-extract:
 	${MV} ${WRKSRC}/License ${WRKSRC}/LICENSE.java40.txt
 

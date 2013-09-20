@@ -18,6 +18,7 @@ USE_PERL5=	configure
 
 MAN3=		Tie::ToObject.3
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e '/Test::/d' ${WRKSRC}/Makefile.PL
 

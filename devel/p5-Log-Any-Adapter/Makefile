@@ -26,4 +26,5 @@ MAN3=	Log::Any::Adapter.3 \
 	Log::Any::Adapter::Stderr.3 \
 	Log::Any::Adapter::Stdout.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

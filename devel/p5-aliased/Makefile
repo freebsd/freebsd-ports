@@ -20,4 +20,5 @@ PLIST_FILES=	${SITE_PERL_REL}/aliased.pm
 
 MAN3=	aliased.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

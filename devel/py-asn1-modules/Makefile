@@ -27,6 +27,7 @@ TOOLS=		cmpdump.py crldump.py crmfdump.py ocspclient.py ocspreqdump.py \
 		ocsprspdump.py ocspserver.py pkcs10dump.py pkcs1dump.py \
 		pkcs7dump.py pkcs8dump.py snmpget.py x509dump.py
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

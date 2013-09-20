@@ -27,4 +27,5 @@ PLIST_FILES=	%%SITE_PERL%%/Future.pm %%SITE_PERL%%/Future/Phrasebook.pod \
 		%%SITE_PERL%%/Future/Utils.pm
 PLIST_DIRS=	%%SITE_PERL%%/Future
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -17,4 +17,5 @@ USE_PERL5=	modbuild
 MAN3=		accessors.3 accessors::chained.3 accessors::classic.3 \
 		accessors::ro.3 accessors::rw.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

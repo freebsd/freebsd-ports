@@ -1,9 +1,5 @@
-# New ports collection makefile for:	librcd
-# Date created:			30-12-2007
-# Whom:				Ulrich Spoerlein <uspoerlein@gmail.com>
-#
+# Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	librcd
 PORTVERSION=	0.1.13
@@ -22,4 +18,5 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -25,4 +25,5 @@ MAN3=		Carp::Datum::Assert.3 \
 		Carp::Datum::Cfg.3 \
 		Carp::Datum::Flags.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -51,6 +51,7 @@ MAN3=		POE.3 POE::Component.3 POE::Component::Client::TCP.3 \
 		POE::Wheel::ReadWrite.3 POE::Wheel::Run.3 \
 		POE::Wheel::SocketFactory.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

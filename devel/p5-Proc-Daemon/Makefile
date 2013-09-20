@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Proc-Daemon
-# Date created:				Wed Jan  3 10:24:19 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Proc-Daemon
 PORTVERSION=	0.14
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Proc::Daemon.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -20,4 +20,5 @@ MAN3=		Test::Mock::HTTP::Request.3 \
 		Test::Mock::LWP::UserAgent.3 \
 		Test::Mock::LWP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

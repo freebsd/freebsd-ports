@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-mimeparse
-# Date created:				08 May 2012
-# Whom:					William Grzybowski
-#
+# Created by: William Grzybowski
 # $FreeBSD$
-#
 
 PORTNAME=	mimeparse
 PORTVERSION=	0.1.3
@@ -19,4 +15,5 @@ USE_PYDISTUTILS=yes
 
 PLIST_SUB=	VERSION=${PORTVERSION} PYVER=${PYTHON_VERSION:S/python//}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

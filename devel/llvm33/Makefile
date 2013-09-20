@@ -77,6 +77,7 @@ FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
 # Enable AMD r600 backend used by the r600/radeonsi graphics/dri gallium drivers
 CONFIGURE_ARGS+=--enable-experimental-targets=R600
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASSERTS}

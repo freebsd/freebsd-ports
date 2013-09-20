@@ -24,4 +24,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		libIDL2
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

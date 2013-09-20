@@ -23,6 +23,7 @@ PLIST_FILES=	lib/libvc.a \
 		include/vc.h
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

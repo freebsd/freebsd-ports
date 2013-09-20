@@ -19,4 +19,5 @@ USES=		perl5
 
 MAN3=		MouseX::StrictConstructor.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

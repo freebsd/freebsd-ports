@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-zope.app.dependable
-# Date created:				20 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	zope.app.dependable
 PORTVERSION=	3.5.1
@@ -29,4 +24,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

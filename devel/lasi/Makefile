@@ -28,6 +28,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmake+modules+lasi.cmake
 .endif
 
+NO_STAGE=	yes
 pre-install:
 .if defined(NOPORTEXAMPLES)
 	@${REINPLACE_CMD} 's/^\(add_subdirectory(examples)\)/#\1/' ${WRKSRC}/CMakeLists.txt

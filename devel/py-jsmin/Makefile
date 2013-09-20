@@ -18,6 +18,7 @@ PORTDOCS=	PKG-INFO
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

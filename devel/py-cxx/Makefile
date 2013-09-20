@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	PyCXX
-# Date created:			Oct 7, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	cxx
 PORTVERSION=	6.0.0
@@ -26,6 +21,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PORTDOCS=	*
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 		@${MKDIR} ${DOCSDIR}
 		${INSTALL_DATA} ${WRKSRC}/Doc/PyCXX.html ${DOCSDIR}

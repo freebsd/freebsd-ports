@@ -52,6 +52,7 @@ MAN3=		Mouse.3 \
 		Test::Mouse.3 \
 		ouse.3
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGDIR}/pkg-message
 

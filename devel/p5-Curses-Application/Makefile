@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	p5-Curses-Application
-# Date created:			Apr 3, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Curses-Application
 PORTVERSION=	0.2
@@ -24,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=	Curses::Application.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

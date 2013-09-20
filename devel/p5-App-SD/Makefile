@@ -54,6 +54,7 @@ MAN3=	App::SD::ForeignReplica::PullEncoder.3 \
 
 MAN1=	sd.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGITHUB}

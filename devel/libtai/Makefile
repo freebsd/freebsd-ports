@@ -29,6 +29,7 @@ LIBFILE=	libtai
 PROGRAM_FILES=	easter nowutc leapsecs yearcal
 HEADER_FILES=	caldate.h caltime.h leapsecs.h tai.h taia.h uint64.h
 
+NO_STAGE=	yes
 do-configure:
 	@${REINPLACE_CMD} -e "s!%%PREFIX%%!${PREFIX}!g" \
 		${WRKSRC}/leapsecs.3 ${WRKSRC}/leapsecs_read.c

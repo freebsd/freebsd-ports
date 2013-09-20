@@ -1,9 +1,5 @@
-# New ports collection makefile for:	llvm
-# Date created:		20 Nov 2005
-# Whom:			Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
-#
 
 PORTNAME=	llvm31
 PORTVERSION=	3.1
@@ -49,6 +45,7 @@ MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 
 PLIST_SUB+=		PORTVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(MAINTAINER_MODE)

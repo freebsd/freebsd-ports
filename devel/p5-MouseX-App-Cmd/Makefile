@@ -28,4 +28,5 @@ USES=		perl5
 MAN3=		MouseX::App::Cmd.3 \
 		MouseX::App::Cmd::Command.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

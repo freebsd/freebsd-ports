@@ -1,10 +1,5 @@
-# New ports collection makefile for:		log4net
-# Date created:					July 8th, 2005
-# Whom:				Christopher Nehren <apeiron@coitusmentis.info>
-#
+# Created by: Christopher Nehren <apeiron@coitusmentis.info>
 # $FreeBSD$
-#   $Id: Makefile,v 1.13 2006/10/10 00:26:57 killfill Exp $
-#
 
 PORTNAME=	log4net
 PORTVERSION=	1.2.10
@@ -35,6 +30,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 .endif
 
+NO_STAGE=	yes
 do-install:
 	@(cd ${INSTALL_WRKSRC}/bin/mono/2.0/release && ${SETENV} MONO_SHARED_DIR=${WRKDIR} ${LOCALBASE}/bin/gacutil /root ${PREFIX}/lib/ /gacdir ${PREFIX}/lib /package 2.0 /i log4net.dll)
 	${INSTALL_DATA} ${WRKDIR}/log4net.pc ${PREFIX}/libdata/pkgconfig/log4net.pc

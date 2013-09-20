@@ -24,6 +24,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PORTDOCS=	*
 DOCS_FILES=	CHANGES.txt CREDITS.txt TODO.txt README.rst
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

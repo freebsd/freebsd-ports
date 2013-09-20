@@ -23,6 +23,7 @@ MAN3=		B::Clobbers.3 \
 		B::Walker.3 \
 		PerlReq::Utils.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's| perl.clean||' ${WRKSRC}/Makefile.PL
 

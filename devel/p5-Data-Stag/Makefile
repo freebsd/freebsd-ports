@@ -40,4 +40,5 @@ MAN3=		Data::Stag::GraphHandler.3 Data::Stag::PodParser.3 \
 		Data::Stag.3 Data::Stag::XSLTHandler.3 \
 		Data::Stag::JSONWriter.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

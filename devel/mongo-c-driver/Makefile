@@ -33,4 +33,5 @@ PLIST_FILES=	include/mongo.h \
 		lib/libbson.so.0.7 \
 		lib/libbson.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

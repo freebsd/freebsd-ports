@@ -23,6 +23,7 @@ USE_PERL5=	configure
 
 MAN3=		POE::Loop::Glib.3
 
+NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"

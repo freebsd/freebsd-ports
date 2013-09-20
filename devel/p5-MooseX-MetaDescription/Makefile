@@ -26,4 +26,5 @@ MAN3=		MooseX::MetaDescription.3 \
 		MooseX::MetaDescription::Meta::Class.3 \
 		MooseX::MetaDescription::Meta::Trait.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

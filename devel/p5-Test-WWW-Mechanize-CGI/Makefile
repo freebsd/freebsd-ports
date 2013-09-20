@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Test-WWW-Mechanize-CGI
-# Date created:				25 November 2008
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-WWW-Mechanize-CGI
 PORTVERSION=	0.1
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=	Test::WWW::Mechanize::CGI.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

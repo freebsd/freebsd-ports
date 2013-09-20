@@ -1,9 +1,5 @@
-# New ports collection makefile for:	phpbt
-# Date created:				28 November 2004
-# Whom:					Wes Peters <wes@FreeBSD.ORG>
-#
+# Created by: Wes Peters <wes@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	phpbt
 PORTVERSION=	1.0.1
@@ -23,6 +19,7 @@ NO_BUILD=	YES
 PHPBT=		www/data-dist/phpbt
 PLIST_SUB=	PHPBT=${PHPBT}
 
+NO_STAGE=	yes
 do-install:
 	-${MKDIR} ${PREFIX}/${PHPBT}
 	@(cd ${WRKSRC} && ${CP} -R * ${PREFIX}/${PHPBT})

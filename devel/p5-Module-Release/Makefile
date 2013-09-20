@@ -35,4 +35,5 @@ MAN3=		Module::Release.3 \
 		Module::Release::SVN.3 \
 		Module::Release::SourceForge.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

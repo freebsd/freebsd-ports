@@ -36,6 +36,7 @@ MKIN_PATCH=	s/@MYSUBDIRS@/YGP/;
 BROKEN=		Does not build with recent boost
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/test.*==/s|==|=|g;/LIBRELEASE=/s|=.*|=0|;${CFG_PATCH}' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -Ee '${XGP_PATCH}' ${WRKSRC}/XGP/Makefile.in

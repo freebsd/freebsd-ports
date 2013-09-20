@@ -37,4 +37,5 @@ MAN3=		Data::ObjectDriver.3 Data::ObjectDriver::BaseObject.3 \
 		Data::ObjectDriver::SQL.3 \
 		Data::ObjectDriver::SQL::Oracle.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

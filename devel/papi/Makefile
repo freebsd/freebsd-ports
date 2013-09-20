@@ -25,6 +25,7 @@ OPTIONS_DEFINE=	CORETEMP DEBUGINFO
 CORETEMP_DESC=	Add Intel Core thermal sensor (need coretemp.ko)
 DEBUGINFO_DESC=	Add debug information (increased verbosity)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 HAS_HWMPC!=	${SYSCTL} kern.hwpmc >/dev/null 2>&1 && echo yes || true

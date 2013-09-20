@@ -27,6 +27,7 @@ PLIST_FILES=	lib/libtpl.la lib/libtpl.a \
 
 PORTDOCS=	ChangeLog.txt examples.txt userguide.txt compiling.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

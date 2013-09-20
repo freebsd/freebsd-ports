@@ -22,4 +22,5 @@ MAN3=		ExtUtils::XSBuilder.3 ExtUtils::XSBuilder::C::grammar.3 \
 		ExtUtils::XSBuilder::ParseSource.3 \
 		ExtUtils::XSBuilder::WrapXS.3 ExtUtils::xsbuilder.osc2002.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

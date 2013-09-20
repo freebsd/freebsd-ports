@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-zope.app.cache
-# Date created:				20 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	zope.app.cache
 PORTVERSION=	3.7.0
@@ -34,4 +29,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -80,6 +80,7 @@ USE_APACHE_RUN=	22+
 
 PLIST_SUB+=	VER_CKEDITOR="4.0"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

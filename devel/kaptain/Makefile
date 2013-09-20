@@ -1,4 +1,4 @@
-# Created by: Alan Eldridge <alane@freebsd.org>
+# Created by: Alan Eldridge <alane@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kaptain
@@ -22,6 +22,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/kaptain
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -30,6 +30,7 @@ GROUPS=	p4admin
 # This variable is configurable.
 PERFORCE_PORT?=		1666
 
+NO_STAGE=	yes
 post-extract:
 	${MKDIR} ${WRKSRC}/${PORTNAME}/www
 	${TAR} -xf ${WRKSRC}/cgi_files.tar -C ${WRKSRC}/${PORTNAME}/www/

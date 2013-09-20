@@ -45,4 +45,5 @@ MAN3=		Data::Rx.3 \
 		Data::Rx::TypeBundle::Core.3 \
 		Data::Rx::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

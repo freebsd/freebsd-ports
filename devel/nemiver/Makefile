@@ -34,6 +34,7 @@ INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 MAN1=		nemiver.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !exists(${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc)

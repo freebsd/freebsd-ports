@@ -25,4 +25,5 @@ MAN3=		Algorithm::FloodControl.3 Algorithm::FloodControl::Backend::Cache::Memcac
 		Algorithm::FloodControl::Backend::Cache::FastMmap.3 \
 		Algorithm::FloodControl::Backend.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -31,6 +31,7 @@ MAN1=		whiptail.1
 
 SOVERSION=	${PORTVERSION:R:E}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

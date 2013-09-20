@@ -27,4 +27,5 @@ MAN3=	CPAN::Testers::Fact::LegacyReport.3 \
 	CPAN::Testers::Fact::Prereqs.3 \
 	CPAN::Testers::Fact::PerlConfig.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

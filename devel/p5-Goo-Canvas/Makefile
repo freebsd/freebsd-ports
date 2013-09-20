@@ -59,4 +59,5 @@ MAN3=		Goo::Canvas::Item.3 \
 		Goo::Canvas::Points.3 \
 		Goo::Canvas::ItemSimple.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -17,4 +17,5 @@ USE_PERL5=	configure
 MANPREFIX=	${SITE_PERL}
 MAN3=		Mknod.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

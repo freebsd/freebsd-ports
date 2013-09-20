@@ -22,6 +22,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 PORTDOCS=	AUTHORS CHANGE_LOG LICENSE README.rst
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

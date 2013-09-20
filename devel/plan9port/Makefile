@@ -95,6 +95,7 @@ EMPTY_DIRS=	plan9/log \
 		plan9/dist/debian \
 		plan9/dist/pkg
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC}/man -type f -regex ".*\.[0-9?]$\" \
 		| ${XARGS} ${REINPLACE_CMD} -e 's|\\\*9|${PLAN9}|'

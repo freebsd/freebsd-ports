@@ -31,4 +31,5 @@ MAN3=		App::Control::Apache.3 \
 		RunApp::Template.3 \
 		RunApp::Template::Apache.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

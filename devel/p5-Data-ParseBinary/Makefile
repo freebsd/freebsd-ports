@@ -28,4 +28,5 @@ MAN3=	Data::ParseBinary::Graphics::WMF.3 \
 	Data::ParseBinary::Graphics::PNG.3 \
 	Data::ParseBinary::FileSystem::MBR.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

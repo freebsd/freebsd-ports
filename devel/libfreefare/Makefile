@@ -137,4 +137,5 @@ MLINKS=		freefare.3 freefare_free_tags.3 \
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

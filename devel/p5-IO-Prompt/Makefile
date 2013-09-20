@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-IO-Prompt
-# Date created:				13 September 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IO-Prompt
 PORTVERSION=	0.99.7002
@@ -28,4 +24,5 @@ MAN3=	IO::Prompt.3
 regression-test: build
 	cd ${WRKSRC}/ && ${MAKE} test
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mercurialeclipse
-# Date created:		2009-06-27
-# Whom:			Edmondas Girkantas <eg@fbsd.lt>
-#
+# Created by: Edmondas Girkantas <eg@fbsd.lt>
 # $FreeBSD$
-#
 
 PORTNAME=	mercurialeclipse
 PORTVERSION=	1.4.1286
@@ -28,6 +24,7 @@ NO_WRKSUBDIR=	yes
 ECLIPSE=	${PREFIX}/lib/eclipse
 PLUGINS=	plugins
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${ECLIPSE}/${PLUGINS}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${ECLIPSE}/${PLUGINS}/

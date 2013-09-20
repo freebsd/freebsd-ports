@@ -21,4 +21,5 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/importlib/__init__.py \
 		%%PYTHON_SITELIBDIR%%/importlib/__init__.pyo
 PLIST_DIRS=	%%PYTHON_SITELIBDIR%%/importlib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	AI::Pathfinding::AStar
-# Date created:				26 August 2004
-# Whom:					Aaron Dalton <aaron@daltons.ca>
-#
+# Created by: Aaron Dalton <aaron@daltons.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	AI-Pathfinding-AStar
 PORTVERSION=	0.10
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		AI::Pathfinding::AStar.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

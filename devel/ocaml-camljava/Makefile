@@ -15,6 +15,7 @@ USE_OCAML=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

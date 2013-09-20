@@ -34,4 +34,5 @@ MAN3=		AnyEvent::Gearman.3 \
 		AnyEvent::Gearman::Worker.3 \
 		AnyEvent::Gearman::Worker::Connection.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -22,4 +22,5 @@ MAN3=		IO::All::FTP.3 \
 		IO::All::HTTPS.3 \
 		IO::All::LWP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -21,4 +21,5 @@ MAN3=		File::Monitor::Base.3 \
 		File::Monitor::Delta.3 \
 		File::Monitor::Object.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

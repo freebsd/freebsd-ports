@@ -30,6 +30,7 @@ MAN3=		MooseX::Role::Parameterized.3 \
 		MooseX::Role::Parameterized::Parameters.3 \
 		MooseX::Role::Parameterized::Tutorial.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

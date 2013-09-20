@@ -1,9 +1,5 @@
-# New ports collection makefile for:	premake4
-# Date created:		2011-08-21
-# Whom:			Vitaly Magerya <vmagerya@gmail.com>
-#
+# Created by: Vitaly Magerya <vmagerya@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	premake4
 PORTVERSION=	4.3
@@ -25,6 +21,7 @@ PLIST_FILES=	bin/premake4
 
 PORTDOCS=	CHANGES.txt LICENSE.txt README.txt
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

@@ -15,6 +15,7 @@ FETCH_ARGS=	-pRr
 WRKSRC=		"${WRKDIR}/michaeldv-${PORTNAME}-fd6b3ef"
 PLIST_FILES=	bin/pit
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pit ${PREFIX}/bin
 

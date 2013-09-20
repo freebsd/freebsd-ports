@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	Term::ReadLine::Zoid
 # Created by: ijliao
 # $FreeBSD$
 
@@ -26,4 +24,5 @@ MAN3=	Term::ReadLine::Zoid.3 \
 	Term::ReadLine::Zoid::ISearch.3 \
 	Term::ReadLine::Zoid::ViCommand.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

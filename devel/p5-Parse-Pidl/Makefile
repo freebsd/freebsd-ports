@@ -33,6 +33,7 @@ MAN3=			Parse::Pidl::Dump.3 Parse::Pidl::NDR.3 \
 			Parse::Pidl::Util.3 Parse::Pidl::Wireshark::Conformance.3 \
 			Parse::Pidl::Wireshark::NDR.3
 
+NO_STAGE=	yes
 post-extract:
 			@${RM} -rf ${WRKSRC}/lib/Parse/Yapp ${WRKSRC}/lib/wscript_build
 

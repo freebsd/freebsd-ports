@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-mocked
-# Date created:				21 June 2007
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mocked
 PORTVERSION=	0.09
@@ -26,4 +22,5 @@ USE_PERL5=	configure
 MAN3=	mocked.3 \
 	unmocked.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

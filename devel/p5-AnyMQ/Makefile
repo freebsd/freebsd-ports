@@ -28,4 +28,5 @@ MAN3=		AnyMQ.3 \
 		AnyMQ::Topic.3 \
 		AnyMQ::Topic::Trait::WithBacklog.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

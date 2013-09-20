@@ -19,4 +19,5 @@ GH_ACCOUNT=	${PORTNAME}
 GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	76d6490
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

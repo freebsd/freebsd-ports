@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	Sub::Multi
 # Created by: ijliao
 # $FreeBSD$
 
@@ -22,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=	Sub::Multi.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

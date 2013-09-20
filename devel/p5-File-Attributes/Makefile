@@ -24,4 +24,5 @@ MAN3=	File::Attributes.3 \
 	File::Attributes::Base.3 \
 	File::Attributes::Simple.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

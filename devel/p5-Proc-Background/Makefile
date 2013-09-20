@@ -18,4 +18,5 @@ MAN3=		Proc::Background.3 \
 		Proc::Background::Win32.3 \
 		Proc::Background::Unix.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

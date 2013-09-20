@@ -101,6 +101,7 @@ MAN3=		RevML::Doctype.3 \
 		VCP::Utils::revml.3 \
 		VCP::Utils::vss.3
 
+NO_STAGE=	yes
 post-patch:
 	${FIND} ${WRKSRC} -name "*.orig" -a -exec ${RM} -f {} \;
 

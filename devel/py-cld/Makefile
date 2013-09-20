@@ -23,4 +23,5 @@ PYDISTUTILS_PKGNAME=	chromium_compact_language_detector
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/cld.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

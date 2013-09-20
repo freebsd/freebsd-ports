@@ -32,6 +32,7 @@ MAKE_ENV+=	EXTRAFILES="${PORTDOCS:C|.*\.pdf|doc/&|}"
 MAKE_ENV+=	EXTRAFILES=""
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${ECHO_CMD} "MKDEP ?= bmkdep" >> ${WRKSRC}/sys.mk
 

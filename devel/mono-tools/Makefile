@@ -1,10 +1,5 @@
-# New ports collection makefile for:	mono-tools
-# Date created:			2005-06-16
-# Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-#
+# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
-#   $Id: Makefile,v 1.30 2007/12/13 19:32:53 killfill Exp $
-#
 
 PORTNAME=	mono-tools
 PORTVERSION=	2.10
@@ -29,6 +24,7 @@ MAN1=		create-native-map.1 gd2i.1 gendarme.1 mperfmon.1 \
 		mprof-decoder.1 mprof-heap-viewer.1
 MAN5=		gendarme.5
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

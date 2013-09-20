@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Object-Enum
-# Date created:				21 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Object-Enum
 PORTVERSION=	0.07.2
@@ -26,4 +22,5 @@ MAN3=	Object::Enum.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

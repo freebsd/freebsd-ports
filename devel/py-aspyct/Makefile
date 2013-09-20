@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-aspyct
-# Date created:		2009-08-07
-# Whom:			Sofian Brabez <sbrabez@gmail.com>
-#
+# Created by: Sofian Brabez <sbrabez@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	aspyct
 PORTVERSION=	3.0
@@ -19,6 +15,7 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_EGGINFO=	${DISTNAME}-py${PYTHON_VER}.egg-info
 
+NO_STAGE=	yes
 post-install:
 .if !defined(BATCH)
 	@${CAT} ${PKGMESSAGE}

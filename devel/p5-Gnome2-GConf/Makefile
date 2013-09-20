@@ -32,4 +32,5 @@ MAN3=		Gnome2::GConf.3 \
 		Gnome2::GConf::main.3 \
 		Gnome2::GConf::version.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

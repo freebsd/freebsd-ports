@@ -20,6 +20,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-pytemplate
 
 EXAMPLES=	daemonexample.py example.py threadexample.py
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}

@@ -23,6 +23,7 @@ USE_PERL5=	configure
 
 MAN3=	Gtk2::Spell.3
 
+NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} -e 's=1.00rc2=1.001=g' ${WRKSRC}/Makefile.PL
 

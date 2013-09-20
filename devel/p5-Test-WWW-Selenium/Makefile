@@ -29,4 +29,5 @@ MAN3=		Devel::REPL::Plugin::Selenium.3 \
 		WWW::Selenium::Util.3 \
 		WWW::Selenium.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

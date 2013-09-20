@@ -1,9 +1,4 @@
-# New ports collection makefile for:	MooseX::CompileTime::Traits
-# Date created:		10 Oct 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-CompileTime-Traits
 PORTVERSION=	1.102570
@@ -24,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=	MooseX::CompileTime::Traits.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

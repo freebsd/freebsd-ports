@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-C-Scan
-# Date created:				October 20th 1996
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	C-Scan
 PORTVERSION=	0.74
@@ -21,4 +17,5 @@ USE_PERL5=	configure
 
 MAN3=		C::Scan.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

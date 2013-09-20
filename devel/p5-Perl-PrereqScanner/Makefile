@@ -35,4 +35,5 @@ MAN3=	Perl::PrereqScanner.3 \
 	Perl::PrereqScanner::Scanner::Perl5.3 \
 	Perl::PrereqScanner::Scanner::TestMore.3 \
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

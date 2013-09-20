@@ -66,4 +66,5 @@ MAN3=	Devel::REPL.3 \
 	Devel::REPL::Plugin::Turtles.3 \
 	Devel::REPL::Profile.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

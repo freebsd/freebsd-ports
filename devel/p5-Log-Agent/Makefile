@@ -40,4 +40,5 @@ MAN3=		Log::Agent.3 \
 		Log::Agent::Tag_List.3 \
 		Log::changes.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

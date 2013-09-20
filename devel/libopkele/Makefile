@@ -29,6 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 # This port needs OpenSSL 0.9.8b which is present in 7.0 and up
 USE_OPENSSL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"

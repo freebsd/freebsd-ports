@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Date-Holidays-DK
-# Date created:				28 October 2005
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Date-Holidays-DK
 PORTVERSION=	0.03
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=	Date::Holidays::DK.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

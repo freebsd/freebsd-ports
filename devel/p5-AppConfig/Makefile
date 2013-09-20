@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-AppConfig
-# Date created:				23 October 1999
-# Whom:					Igor Vinokurov <igor@zynaps.ru>
-#
+# Created by: Igor Vinokurov <igor@zynaps.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	AppConfig
 PORTVERSION=	1.66
@@ -25,4 +21,5 @@ MAN3=		AppConfig.3 \
 		AppConfig::State.3 \
 		AppConfig::Sys.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

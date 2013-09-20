@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-turbojson
-# Date created:		2006-12-02
-# Whom:			Nicola Vitale <nivit@email.it>
-#
+# Created by: Nicola Vitale <nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	TurboJson
 PORTVERSION=	1.1.4
@@ -25,4 +21,5 @@ LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}11
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

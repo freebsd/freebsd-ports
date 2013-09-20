@@ -22,6 +22,7 @@ IGNORE_WITH_PHP=4
 
 CONFIGURE_ARGS+=--with-expect=${LOCALBASE}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 	  's/\(LIBRARY_WITH_PATH(\)expect/\1expect543/' \

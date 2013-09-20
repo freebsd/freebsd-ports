@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mingw32-libffi
-# Date created:		5 December 2011
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libffi
 PORTVERSION=	3.0.12
@@ -24,6 +20,7 @@ CC=		${PKGNAMEPREFIX}gcc
 CFLAGS=		-O2	# Override CFLAGS for a cross-build
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,^INFO_DEPS[ \t]*=,#&,' \
 	                 -e '/^SUBDIRS[ \t]*=/s, man$$,,' \

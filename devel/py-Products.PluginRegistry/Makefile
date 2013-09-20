@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-Products.PluginRegistry
-# Date created:				20 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Products.PluginRegistry
 PORTVERSION=	1.3
@@ -24,4 +19,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 #USE_ZOPE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

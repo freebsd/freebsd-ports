@@ -1,8 +1,5 @@
-# New ports collection makefile for: python-daemon
-# Date created: 7 Jul 2010
-# Whom:			jessekempf@gmail.com
+# Created by: jessekempf@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	daemon
 PORTVERSION=	1.5.5
@@ -23,4 +20,5 @@ USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME =	python-daemon
 PYDISTUTILS_NOEGGINFO =	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

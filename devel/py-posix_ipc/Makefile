@@ -17,4 +17,5 @@ USE_PYDISTUTILS=	yes
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/posix_ipc.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

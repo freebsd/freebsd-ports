@@ -21,4 +21,5 @@ MAN3=		Test::Class.3 \
 		Test::Class::Load.3 \
 		Test::Class::MethodInfo.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

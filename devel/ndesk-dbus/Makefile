@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 DOCS=		AUTHORS COPYING README
 
 .ifndef (NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}

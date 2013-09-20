@@ -25,4 +25,5 @@ USE_PERL5=	configure
 
 MAN3=	Parallel::Prefork.3 Parallel::Prefork::SpareWorkers.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -25,6 +25,7 @@ MAN3=	Cache::AgainstFile::Memory.3 \
 	Cache::AgainstFile::Base.3 \
 	Cache::AgainstFile::CacheModule.3
 
+NO_STAGE=	yes
 regression-test:
 	cd ${WRKSRC} && ${MAKE} test
 

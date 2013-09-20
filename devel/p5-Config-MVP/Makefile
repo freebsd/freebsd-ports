@@ -42,6 +42,7 @@ MAN3=		Config::MVP.3 \
 		Config::MVP::Section.3 \
 		Config::MVP::Sequence.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

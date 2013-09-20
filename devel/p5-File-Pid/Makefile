@@ -19,6 +19,7 @@ USE_PERL5=	configure
 
 MAN3=		File::Pid.3
 
+NO_STAGE=	yes
 post-patch:
 	${RM} ${WRKSRC}/lib/File/Pid.pm.orig
 

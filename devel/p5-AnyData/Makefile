@@ -28,4 +28,5 @@ MAN3=	AnyData.3 \
 	AnyData::Format::XML.3 \
 	AnyData::Storage::File.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

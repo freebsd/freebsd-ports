@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--disable-tests
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-configure:
 	@${ECHO_CMD} "#define HAVE_STRCHR 1" >> ${WRKSRC}/config.h
 

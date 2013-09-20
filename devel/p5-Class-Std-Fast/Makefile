@@ -24,4 +24,5 @@ USE_PERL5=	configure
 MAN3=		Class::Std::Fast.3 \
 		Class::Std::Fast::Storable.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

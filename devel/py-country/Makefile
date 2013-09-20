@@ -17,6 +17,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	pycountry
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

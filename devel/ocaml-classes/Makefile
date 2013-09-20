@@ -16,6 +16,7 @@ COMMENT=	Ocaml Object interface for ocaml's standard library modules
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${FILESDIR}/META ${WRKSRC}
 

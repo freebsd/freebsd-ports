@@ -26,6 +26,7 @@ CONFIGURE_PREFIX=	${PREFIX}/mingw32
 OPENSSLDIR=		${CONFIGURE_PREFIX}/openssl
 INSTALL_TARGET=		install_sw
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|m4 -B 8192|m4|g' \
 		${WRKSRC}/crypto/des/Makefile

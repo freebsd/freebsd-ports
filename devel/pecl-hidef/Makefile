@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--enable-hidef
 CFLAGS+=-I${LOCALBASE}/include
 LDFLAGS+=-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,g' \
 	${WRKSRC}/hidef.c

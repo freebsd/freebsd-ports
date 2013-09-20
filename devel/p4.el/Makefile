@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p4.el for Emacsen
-# Date created:		2 September 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	p4.el
 PORTVERSION=	10.6
@@ -22,6 +18,7 @@ NO_WRKSUBDIR=	yes
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${EMACSLISPDIR}
 	${INSTALL_DATA} ${WRKSRC}/p4.el ${EMACSLISPDIR}/

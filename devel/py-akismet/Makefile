@@ -1,9 +1,5 @@
-# New ports collection makefile for: py-akismet
-# Date created: Thu 29 Oct 2009
-# Whom: Jacob Myers (jacob@whotookspaz.org)
-#
+# Created by: Jacob Myers (jacob@whotookspaz.org)
 # $FreeBSD$
-#
 
 PORTNAME=	akismet
 PORTVERSION=	0.2.0
@@ -23,6 +19,7 @@ USE_ZIP=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

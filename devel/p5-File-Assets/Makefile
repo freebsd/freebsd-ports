@@ -42,4 +42,5 @@ USE_PERL5=	configure
 
 MAN3=	File::Assets.3 File::Assets::Asset.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -21,4 +21,5 @@ USES=		perl5
 MAN3=		Test::CPAN::Meta::YAML.3 \
 		Test::CPAN::Meta::YAML::Version.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

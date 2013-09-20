@@ -18,6 +18,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/serpent.py \
 		%%PYTHON_SITELIBDIR%%/serpent.pyc \
 		%%PYTHON_SITELIBDIR%%/serpent.pyo
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 320

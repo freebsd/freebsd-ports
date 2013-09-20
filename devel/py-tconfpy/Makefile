@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-tconfpy
-# Date Created:				24 April 2004
-# Whom:					tundra
-#
+# Created by: tundra
 # $FreeBSD$
 
 PORTNAME=	tconfpy
@@ -24,6 +21,7 @@ MAN1=		test-tc.1
 MAN3=		tconfpy.3
 PORTDOCS=	READ-1ST.txt WHATSNEW.txt tconfpy-license.txt tconfpy.html tconfpy.pdf tconfpy.ps tconfpy.txt test-tc.html test-tc.pdf test-tc.ps test-tc.txt
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

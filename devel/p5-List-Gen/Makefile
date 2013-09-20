@@ -23,4 +23,5 @@ MAN3=		List::Gen.3 \
 		List::Gen::Perl6.3 \
 		List::Generator.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

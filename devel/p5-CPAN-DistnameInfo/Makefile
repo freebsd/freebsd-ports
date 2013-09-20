@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-CPAN-DistnameInfo
-# Date created:				Mar 27 2004
-# Whom:					Lars Thegler <lars@thegler.dk>
-#
+# Created by: Lars Thegler <lars@thegler.dk>
 # $FreeBSD$
 
 PORTNAME=	CPAN-DistnameInfo
@@ -18,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		CPAN::DistnameInfo.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

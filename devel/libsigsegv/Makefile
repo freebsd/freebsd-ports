@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libsigsegv
-# Date created:		28 May 2004
-# Whom:			Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
-#
 
 PORTNAME=	libsigsegv
 PORTVERSION=	2.10
@@ -23,6 +19,7 @@ PLIST_FILES=	include/sigsegv.h \
 		lib/libsigsegv.so.2 \
 		lib/libsigsegv.so
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

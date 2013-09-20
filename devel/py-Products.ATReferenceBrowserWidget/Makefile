@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-Products.ATReferenceBrowserWidget
-# Date created:				02 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Products.ATReferenceBrowserWidget
 PORTVERSION=	3.0
@@ -24,4 +19,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

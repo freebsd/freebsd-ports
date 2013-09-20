@@ -21,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=		B::Utils.3 B::Utils::OP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	php5-dav
-# Date created:				2011-08-22
-# Whom:					Valery Komarov <komarov@valerka.net>
-#
+# Created by: Valery Komarov <komarov@valerka.net>
 # $FreeBSD$
-#
 
 PORTNAME=	dav
 PORTVERSION=	1.2
@@ -26,4 +22,5 @@ PHP_MODNAME=	dav
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

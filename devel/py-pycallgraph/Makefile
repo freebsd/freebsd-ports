@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pycallgraph
-# Date created:		Feb. 09, 2007
-# Whom:			Li-Wen Hsu <lwhsu@lwhsu.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pycallgraph
 PORTVERSION=	0.5.1
@@ -27,6 +23,7 @@ MAN1=	pycallgraph.1
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NO_INSTALL_MANPAGES)
 	${INSTALL_MAN} ${WRKSRC}/man/pycallgraph.1 ${MAN1PREFIX}/man/man1

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-gyp
-# Date created:				26 June 2010
-# Whom:					Daichi GOTO <daichi@freebsd.org>
-#
+# Created by: Daichi GOTO <daichi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gyp
 PORTVERSION=	r832
@@ -19,4 +15,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	0.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

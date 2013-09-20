@@ -37,6 +37,7 @@ PLIST_SUB+=	SHVER_1=${PORTVERSION} \
     		SHVER_2=${PORTVERSION:R} \
 		SHVER_3=${PORTVERSION:R:R}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '\
 	    s|%%PREFIX%%|${PREFIX}|g; \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mox
-# Date created:				12 Dec 2009
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mox
 PORTVERSION=	0.5.3
@@ -18,4 +14,5 @@ PROJECTHOST=	pymox
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

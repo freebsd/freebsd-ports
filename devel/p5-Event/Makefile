@@ -18,6 +18,7 @@ USE_PERL5=	configure
 MAN3=		Event.3 Event::MakeMaker.3 Event::generic.3
 PORTDOCS=	ANNOUNCE ChangeLog INSTALL MANIFEST README TODO Tutorial.pdf
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

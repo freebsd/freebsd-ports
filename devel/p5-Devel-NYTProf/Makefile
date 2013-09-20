@@ -34,4 +34,5 @@ MAN3=	Devel::MemoryProfiling.3 \
 	Devel::NYTProf::Run.3 \
 	Devel::NYTProf::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -24,6 +24,7 @@ USE_PERL5=	configure
 
 MAN3=		Term::ProgressBar.3
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|Term-ProgressBar|Term/ProgressBar|' ${WRKSRC}/Makefile.PL
 

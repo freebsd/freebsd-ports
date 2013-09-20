@@ -21,4 +21,5 @@ MAN3=		Test::Reporter.3 \
 		Test::Reporter::Transport::File.3 \
 		Test::Reporter::Transport::Null.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

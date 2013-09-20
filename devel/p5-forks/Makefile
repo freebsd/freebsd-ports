@@ -29,4 +29,5 @@ MAN3=		forks.3 forks::signals.3 \
 		threads::shared::hash.3 \
 		threads::shared::scalar.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

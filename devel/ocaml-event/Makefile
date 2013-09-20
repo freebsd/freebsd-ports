@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ocaml libevent
-# Date created:		Thu Aug 25 15:34:53 UTC 2005
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	event
 PORTVERSION=	0.6.0
@@ -56,6 +52,7 @@ PLIST_FILES+=	lib/ocaml/${file}
 PLIST_FILES+=	lib/ocaml/stublibs/${file}
 .endfor
 
+NO_STAGE=	yes
 post-configure:
 # CFLAGS, LOCALBASE safeness
 	${REINPLACE_CMD} -E -e \

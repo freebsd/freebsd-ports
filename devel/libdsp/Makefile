@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libdsp
-# Date created:		Jan 16, 2001
-# Whom:			Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libdsp
 PORTVERSION=	5.0.2
@@ -26,6 +22,7 @@ USE_LDCONFIG=	yes
 
 INLINE_VER=	1.4.0
 
+NO_STAGE=	yes
 do-configure:
 	@${DO_NADA}
 

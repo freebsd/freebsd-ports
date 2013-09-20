@@ -28,4 +28,5 @@ MAN3=		POE::Component::IKC.3 POE::Component::IKC::Channel.3 \
 		POE::Component::IKC::Responder.3 POE::Component::IKC::Server.3 \
 		POE::Component::IKC::Specifier.3 POE::Component::IKC::Timing.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

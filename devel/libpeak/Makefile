@@ -22,4 +22,5 @@ regression-test: build
 	    ${MAKE} $$alltests && ./test-suite.pl $$alltests \
 	)
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

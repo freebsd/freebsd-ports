@@ -34,4 +34,5 @@ MAN3=		MooseX::Role::WithOverloading.3 \
 		MooseX::Role::WithOverloading::Meta::Role::Application::ToRole.3 \
 		MooseX::Role::WithOverloading::Meta::Role::Composite.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,4 +23,5 @@ MAN3=		MouseX::Types.3 \
 		MouseX::Types::Moose.3 \
 		MouseX::Types::Mouse.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

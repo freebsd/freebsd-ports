@@ -39,6 +39,7 @@ ARGS=		-b ${PREFIX}/bin \
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/dbus/mainloop/qt.so
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 
 .if defined(WITH_DEBUG)

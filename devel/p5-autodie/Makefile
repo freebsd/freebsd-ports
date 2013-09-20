@@ -23,4 +23,5 @@ MAN3=	Fatal.3 \
 	autodie::hints.3 \
 	autodie::skip.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

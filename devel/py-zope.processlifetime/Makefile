@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-zope.processlifetime
-# Date created:				Nov 16, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	zope.processlifetime
 PORTVERSION=	1.0
@@ -22,4 +17,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

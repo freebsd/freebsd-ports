@@ -16,6 +16,7 @@ BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
 SUB_FILES=	pkg-message
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}; scons)
 
