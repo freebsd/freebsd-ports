@@ -41,6 +41,7 @@ MAN3=		Ace.3 Ace::Browser::AceSubs.3 Ace::Browser::SearchSubs.3 \
 		Ace::Sequence::Homol.3 Ace::Sequence::Multi.3 \
 		Ace::Sequence::Transcript.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"

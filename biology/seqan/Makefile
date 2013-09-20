@@ -1,9 +1,5 @@
-# New ports collection makefile for:   seqan
-# Date created:        3 May 2012
-# Whom:                h2
-#
+# Created by: h2
 # $FreeBSD$
-#
 
 PORTNAME=	seqan
 PORTVERSION=	1.3.1
@@ -29,6 +25,7 @@ MAKE_JOB_SAFE=	yes
 SUB_FILES=	pkg-message
 PKG_MESSAGE=	${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	phred
-# Date created:		8 July 2005
-# Whom:			Motomichi Matsuzaki <mzaki@biol.s.u-tokyo.ac.jp>
-#
+# Created by: Motomichi Matsuzaki <mzaki@biol.s.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	consed
 PORTVERSION=	16.0
@@ -62,6 +58,7 @@ EXAMPLES=	standard autofinish assembly_view polyphred
 PLIST=		${PKGDIR}/pkg-plist.examples
 .endif
 
+NO_STAGE=	yes
 post-build:
 	(cd ${WRKSRC}/misc/454; ${CC} ${CFLAGS} sffinfo.c -o sffinfo)
 	(cd ${WRKSRC}/misc/454; ${CC} ${CFLAGS} sff2scf.c -o sff2scf)

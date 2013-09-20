@@ -39,6 +39,7 @@ SCRIPTUTILS=	cmerge2.pl draft.pl mextract.pl mf2bin.pl mpretty.pl \
 READMES=	README.FIRST README.chaos README.lagan README.mlagan \
 		README.tools README.shuffle
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
 		'/^CC/s|^|#| ; \

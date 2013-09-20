@@ -1,9 +1,5 @@
-# Ports collection makefile for:   gmap
-# Date created:        24 September 2006
-# Whom:                Bob Zimmermann <rpz@cse.wustl.edu>
-#
+# Created by: Bob Zimmermann <rpz@cse.wustl.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	gmap
 PORTVERSION=	2006.04.21
@@ -17,4 +13,5 @@ COMMENT=	A Genomic Mapping and Alignment Program for mRNA and EST Sequences
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

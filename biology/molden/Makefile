@@ -31,6 +31,7 @@ PORTDOCS=	*
 PORTDATA=	*
 PLIST_FILES=	bin/ambfor bin/gmolden bin/molden bin/surf
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -43,6 +43,7 @@ DATAFILES=	BLOSUM30.bla BLOSUM45.bla BLOSUM62.bla BLOSUM80.bla aa.rnd \
 		human.stats idenity.bla methods pb.gf pombe.gf tm.pri \
 		wise.2 wise.per worm.gf
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

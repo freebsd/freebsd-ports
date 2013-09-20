@@ -17,6 +17,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 BINARIES=	baseml basemlg chi2 codeml evolver pamp yn00
 DOC_FILES=	MCMCtreeDoc.pdf pamlDOC.pdf pamlFAQs.pdf pamlHistory.txt
 
+NO_STAGE=	yes
 do-install:
 .for f in ${BINARIES}
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin

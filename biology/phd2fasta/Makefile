@@ -25,6 +25,7 @@ PLIST_FILES=	bin/phd2fasta
 
 PORTDOCS=	PHD2FASTA.DOC
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .for f in ${DISTFILES}

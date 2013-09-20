@@ -20,6 +20,7 @@ USE_FORTRAN=	yes	# Make it use the same compiler as lapack
 
 PLIST_FILES=	bin/plink
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/plink ${PREFIX}/bin

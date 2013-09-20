@@ -24,6 +24,7 @@ AUTOMAKE_ARGS=	--add-missing
 
 PLIST_FILES=	bin/phyml
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^AC_INIT/s|,esyscmd.*,|,[${PORTVERSION}],| ; \

@@ -52,6 +52,7 @@ MLINKS=		blast.1 bl2seq.1 blast.1 blastall.1 blast.1 blastcl3.1 \
 		blast.1 blastpgp.1 blast.1 impala.1 blast.1 megablast.1 \
 		blast.1 seedtop.1 blast.1 rpsblast.1 
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

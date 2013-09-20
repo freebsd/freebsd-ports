@@ -983,6 +983,7 @@ MAN3=		Bio::Align::AlignI.3 \
 		Bio::WebAgent.3
 
 # now install all extra stuff (docs, examples, scripts, models)
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DATADIR}
 	${CP} -R ${WRKSRC}/scripts ${WRKSRC}/models ${DATADIR}

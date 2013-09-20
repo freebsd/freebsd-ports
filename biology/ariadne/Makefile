@@ -18,6 +18,7 @@ PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}| ; \
 		s|CC =|CC ?=| ; \

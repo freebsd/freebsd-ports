@@ -27,4 +27,5 @@ MAN3=		Bio::GFF3::LowLevel.3 \
 		Bio::GFF3::LowLevel::Parser::1_0_backcompat.3 \
 		Bio::GFF3::Transform::FromFasta.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

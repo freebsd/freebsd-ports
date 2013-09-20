@@ -20,6 +20,7 @@ PORTDOCS=	fastDNAml_doc_1.2.txt fastDNAml_scripts.txt
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

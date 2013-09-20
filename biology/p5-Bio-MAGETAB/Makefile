@@ -87,6 +87,7 @@ MAN3=		Bio::MAGETAB.3 \
 		Bio::MAGETAB::Util::Writer::SDRF.3 \
 		Bio::MAGETAB::Util::Writer::Tabfile.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^auto_install;/d' ${WRKSRC}/Makefile.PL
 

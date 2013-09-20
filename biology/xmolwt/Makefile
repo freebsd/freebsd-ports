@@ -19,6 +19,7 @@ ALL_TARGET=	gmolwt
 PORTDOCS=	*
 PLIST_FILES=	bin/gmolwt bin/molwt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}

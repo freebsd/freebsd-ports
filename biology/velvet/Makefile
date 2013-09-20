@@ -1,9 +1,5 @@
-# New ports collection makefile for:	velvet
-# Date created:		27 Oct 2009
-# Whom:			Motomichi Matsuzaki <mzaki@m.u-tokyo.ac.jp>
-#
+# Created by: Motomichi Matsuzaki <mzaki@m.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	velvet
 PORTVERSION=	1.1.04
@@ -62,6 +58,7 @@ PLIST_FILES+=	%%SITE_PERL%%/${f:H:T}/${f:T}
 
 PORTDOCS=	ChangeLog Manual.pdf Columbus_manual.pdf
 
+NO_STAGE=	yes
 post-patch:
 .for f in ${SCRIPTS}
 	${REINPLACE_CMD} -e s,#!/usr/bin/perl,${PERL}, ${WRKSRC}/${f}

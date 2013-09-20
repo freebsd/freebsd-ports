@@ -24,6 +24,7 @@ EXAMPLES=	7LESS_DROME Pkinase.sto fn3.sto globins4.sto minifam.h3f minifam.h3p \
 OPTIONS_DEFINE=	PVM
 PVM_DESC=	PVM support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPVM}

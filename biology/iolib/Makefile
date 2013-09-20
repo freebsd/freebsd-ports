@@ -30,4 +30,5 @@ MAN3=	read_scf_header.3 read_allocate.3 ExperimentFile.3 \
 	read2exp.3 fread_scf.3
 MAN4=	Read.4
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	MUMmer
-# Date created:				20 November 2007
-# Whom:					Tony Maher
-#
+# Created by: Tony Maher
 # $FreeBSD$
-#
 
 PORTNAME=	mummer
 PORTVERSION=	3.23
@@ -24,6 +19,7 @@ SCRIPTS=	dnadiff exact-tandems mapview mummerplot nucmer \
 		nucmer2xfig promer run-mummer1 run-mummer3
 DOCUMENTS=	COPYRIGHT INSTALL LICENSE README
 
+NO_STAGE=	yes
 do-install:
 .for program in ${PROGRAMS}
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${program} ${PREFIX}/bin)

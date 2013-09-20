@@ -25,6 +25,7 @@ INSTALLS_ICONS=	yes
 MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

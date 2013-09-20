@@ -27,6 +27,7 @@ INSTALL_TARGET=	rename
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MOPTIMIZED_FFLAGS}

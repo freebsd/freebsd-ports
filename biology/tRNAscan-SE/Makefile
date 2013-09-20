@@ -24,6 +24,7 @@ PORTDOCS=	Manual.ps
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|tRNAscanSE setpaths|tRNAscanSE|g ; \
 		 s|if tRNAscan-SE|if ./tRNAscan-SE|g' ${WRKSRC}/Makefile

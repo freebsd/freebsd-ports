@@ -30,6 +30,7 @@ DATA_FILES=	analyze.cfg avida.cfg default-gx.org \
 		instset-heads-sex.cfg instset-heads.cfg instset-smt.cfg \
 		instset-transsmt.cfg
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

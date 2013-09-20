@@ -25,6 +25,7 @@ PORTEXAMPLES=	demos
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .if !defined(WITHOUT_TESTS)
+NO_STAGE=	yes
 regression-test:
 	@(cd ${BUILD_WRKSRC}; \
 		${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} runtests)

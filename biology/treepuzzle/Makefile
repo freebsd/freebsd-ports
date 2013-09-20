@@ -1,9 +1,5 @@
-# Ports collection makefile for:	treepuzzle
-# Date created:				26 August 2002
-# Whom:					lentferj
-#
+# Created by: lentferj
 # $FreeBSD$
-#
 
 PORTNAME=	treepuzzle
 PORTVERSION=	5.2
@@ -17,6 +13,7 @@ COMMENT=	Maximum likelihood phylogeny reconstruction using quartets
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/puzzle
 
+NO_STAGE=	yes
 pre-configure:
 	@${ECHO_MSG} "---------------------------------------------"
 	@${ECHO_MSG} ""

@@ -31,4 +31,5 @@ MAN3=	Bio::Das.3 Bio::Das::AGPServer::Config.3 Bio::Das::AGPServer::Daemon.3 \
 	Bio::Das::Request::Types.3 Bio::Das::Segment.3 Bio::Das::Stylesheet.3 \
 	Bio::Das::Type.3 Bio::Das::TypeHandler.3 Bio::Das::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

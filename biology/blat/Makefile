@@ -27,6 +27,7 @@ PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 post-patch:
 	@${MKDIR} ${WRKSRC}/bin/${ARCH}
 	@${MKDIR} ${WRKSRC}/lib/${ARCH}

@@ -32,6 +32,7 @@ BLASTA_LINKS=	blastn blastp blastx tblastn tblastx
 XDFORMAT_LINKS=	setdb pressdb
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64

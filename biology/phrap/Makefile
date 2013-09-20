@@ -1,9 +1,5 @@
-# New ports collection makefile for:	phrap
-# Date created:		21 June 2005
-# Whom:			Motomichi Matsuzaki <mzaki@biol.s.u-tokyo.ac.jp>
-#
+# Created by: Motomichi Matsuzaki <mzaki@biol.s.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	phrap
 PORTVERSION=	0.990329
@@ -35,6 +31,7 @@ PLIST_FILES+=	bin/${f}
 PORTDATA=	BLOSUM50 BLOSUM62 PAM250 mat50 mat70 penalty2 vector.seq
 PORTDOCS=	general.doc phrap.doc swat.doc
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .for f in ${DISTFILES}

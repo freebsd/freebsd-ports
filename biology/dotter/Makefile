@@ -1,4 +1,4 @@
-# Created by:  Fernan Aguero <fernan@iib.unsam.edu.ar>
+# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
 # $FreeBSD$
 
 PORTNAME=	dotter
@@ -22,6 +22,7 @@ ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME} bin/${DISTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${BRANDELF} -t Linux ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}
 	${INSTALL_PROGRAM} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} \

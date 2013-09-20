@@ -21,6 +21,7 @@ ALL_TARGET=	ssaha
 DATA_FILES=	test.fasta test_extract.fasta test_filter.fail \
 		test_filter.fastq test_protein.fasta README
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/ssaha ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}

@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	mafft
-# Date created:				1 Feb 2006
-# Whom:					Fernan Aguero <fernan@iib.unsam.edu.ar>
-#
+# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
 # $FreeBSD$
-#
 
 PORTNAME=	mafft
 PORTVERSION=	6.903
@@ -37,6 +32,7 @@ LN_FILES=	einsi fftns fftnsi ginsi linsi mafft-einsi mafft-fftns \
 		mafft-fftnsi mafft-ginsi mafft-linsi mafft-nwns mafft-nwnsi \
 		mafft-qinsi mafft-xinsi nwns nwnsi
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
