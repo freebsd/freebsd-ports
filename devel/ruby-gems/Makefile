@@ -37,6 +37,7 @@ GEMS_DOC_DIR=		${GEMS_DOC_BASE_DIR}/${DISTNAME}
 GEMS_DOC_DIR_P=		${GEMS_DOC_BASE_DIR_P}/%%DISTNAME%%
 RUBY_VER_SHORT=		${RUBY_VER:S/.//}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

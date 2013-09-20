@@ -63,6 +63,7 @@ MLINKS=	cweb.1 ctangle.1 \
 	mf.1 mf-nowin.1 \
 	pdftex.1 pdflatex.1
 
+NO_STAGE=	yes
 pre-configure:
 	for D in libs/obsdcompat libs/xpdf; do \
 		cd ${WRKDIR}/${DISTNAME}/$$D && \

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	shmap
-# Date Created:			Feb 20, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	shmap
 PORTVERSION=	0.3.2
@@ -23,4 +18,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

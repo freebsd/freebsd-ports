@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/SDL
-# Date created:		27 Mar 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sdl
 PORTVERSION=	1.3.1
@@ -41,6 +37,7 @@ DOCS_JA=	NEWS.ja README.ja \
 		${RUBY_RD_FILES:N*.en.rd} \
 		${RUBY_RD_HTML_FILES:N*.en.html}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

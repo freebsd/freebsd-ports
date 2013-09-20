@@ -22,6 +22,7 @@ USE_RUBY=	yes
 USE_XZ=		yes
 USES=		cmake:outsource
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CMAKE_ARGS+=	-DRUBY_LIBRARY=${LOCALBASE}/lib/lib${RUBY_NAME}.so \

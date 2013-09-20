@@ -30,6 +30,7 @@ EXAMPLES_JA=	pager.rb
 DOCS_EN=	README		changes.txt
 DOCS_JA=	README.euc
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} == 1.9

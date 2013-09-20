@@ -1,7 +1,5 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rebar
 PORTVERSION=	2.0.0
@@ -22,6 +20,7 @@ PLIST_FILES=	bin/${PORTNAME}
 GITVERSION=	1c98f6c
 FETCH_ARGS=	-Fpr
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 

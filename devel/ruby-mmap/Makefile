@@ -28,6 +28,7 @@ DOCS=		Changes \
 		${RUBY_RD_HTML_FILES} \
 		doc/doc
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} == 1.9

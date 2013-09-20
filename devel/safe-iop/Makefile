@@ -1,9 +1,5 @@
-# ports collection makefile for:	safe-iop
-# Date created:				09/26/2010
-# Whom:					stas
-#
+# Created by: stas
 # $FreeBSD$
-#
 
 PORTNAME=	safe-iop
 PORTVERSION=	0.3.1
@@ -20,6 +16,7 @@ CFLAGS+=	-fPIC
 PLIST_FILES=	include/safe_iop.h \
 		lib/libsafe_iop.so.0
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E -e 's,(^CC[[:space:]]*=.*),#\1,' \
 	    -e 's,(^CFLAGS[[:space:]]*)=.*,\1+= -Iinclude,' \

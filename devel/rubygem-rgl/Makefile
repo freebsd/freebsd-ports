@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/rubygem-rgl
-# Date created:				02.08.2005
-# Whom:					Ulrich Spoerlein <uspoerlein@gmail.com>
-#
+# Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	rgl
 PORTVERSION=	0.4.0
@@ -20,4 +16,5 @@ USE_RUBYGEMS=	yes
 USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

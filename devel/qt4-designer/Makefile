@@ -1,4 +1,4 @@
-# Created by: lofi@freebsd.org
+# Created by: lofi@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	designer
@@ -44,6 +44,7 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's|^TARGET.*|TARGET=designer-qt4|g' \
 		${BUILD_WRKSRC}/src/${PORTNAME}/${PORTNAME}.pro

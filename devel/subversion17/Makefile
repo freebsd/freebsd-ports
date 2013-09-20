@@ -44,6 +44,7 @@ SVNMUCC_DESC=		Install Multiple URL Command Client
 SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper (umask setter)
 TEST_DESC=		Run subversion test suite
 
+NO_STAGE=	yes
 .include "Makefile.common"
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

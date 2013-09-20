@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-bugspots
-# Date created:		2012-01-11
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bugspots
 PORTVERSION=	0.1.2
@@ -22,4 +18,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/bugspots bin/git-bugspots
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

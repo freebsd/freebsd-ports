@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rlog
-# Date created:		2007-01-05
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	rlog
 PORTVERSION=	1.4
@@ -21,6 +17,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS/s|docs||' ${WRKSRC}/Makefile.in

@@ -19,6 +19,7 @@ USES=		pkgconfig
 
 INSTALL_TARGET=	site-install
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}

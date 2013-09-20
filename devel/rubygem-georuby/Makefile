@@ -1,9 +1,4 @@
-# New ports collection makefile for:	rubygem-georuby
-# Date created:		7 April 2009
-# Whom:			Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	GeoRuby
 PORTVERSION=	1.3.4
@@ -17,4 +12,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	polyglot
-# Date created:		11 Oct, 2009
-# Whom:			Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	polyglot
 PORTVERSION=	0.3.3
@@ -17,4 +13,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

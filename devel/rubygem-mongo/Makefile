@@ -16,4 +16,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/mongo_console
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

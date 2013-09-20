@@ -22,6 +22,7 @@ DOC_FILES=	BLURB CHANGES LEGAL LICENSE README.API \
 EXAMPLE_FILES=	Rakefile Rantfile
 
 # make sure setup.rb honours $PREFIX
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -E 's,^([^r].+=)${LOCALBASE}(.*)$$,\1${PREFIX}\2,g' ${WRKSRC}/.config
 

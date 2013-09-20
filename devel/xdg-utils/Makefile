@@ -1,10 +1,6 @@
-# New ports collection makefile for:	xdg-utils
-# Date created:		2006-07-02
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports-stable/devel/xdg-utils/Makefile,v 1.3 2010/06/29 17:32:55 kwm Exp $
-#
 
 PORTNAME=	xdg-utils
 PORTVERSION=	1.0.2
@@ -32,6 +28,7 @@ XDG_FILES=	xdg-desktop-icon \
 PLIST_FILES+=	${XDG_FILES:S|^|bin/|}
 MAN1+=		${XDG_FILES:S|$|.1|}
 
+NO_STAGE=	yes
 pre-patch:
 	@${RM} -f ${WRKSRC}/*/*.orig
 

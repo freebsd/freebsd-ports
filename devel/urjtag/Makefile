@@ -31,6 +31,7 @@ USB_DESC=	Build support for USB JTAG adapters
 FTDI_DESC=	Build support for FTDI-based USB JTAG adapters
 JEDEC_DESC=	Enable experimental JEDEC flash detection
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJEDEC}

@@ -1,7 +1,4 @@
-# New ports collection makefile for: ros-rx
-# Date created:	2011-03-20
-# Whom: Rene Ladan <rene@FreeBSD.org>
-#
+# Created by: Rene Ladan <rene@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ros-rx
@@ -52,6 +49,7 @@ MAKE_ENV+=	CPATH=${LOCALBASE}/include \
 		ROS_BOOST_ROOT=${LOCALBASE}
 MAKE_ARGS=	-i --no-rosdep --status-rate=0 --disable-logging
 
+NO_STAGE=	yes
 post-extract:
 	# move 3rdparty distfiles into place
 	${MKDIR} ${WRKSRC}/wxswig/build

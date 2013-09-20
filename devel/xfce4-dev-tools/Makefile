@@ -18,4 +18,5 @@ USE_XFCE=	configenv	# to get MASTER_SITE_SUBDIR something has to be defined
 USE_GNOME=	glib20
 USES=		pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

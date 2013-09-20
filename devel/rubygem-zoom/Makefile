@@ -21,6 +21,7 @@ RUBYGEM_AUTOPLIST=	yes
 
 CONFIGURE_ARGS+=	--with-opt-dir="${LOCALBASE}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${RUBY_VER} == 1.9
 BROKEN=	does not work with ruby 1.9

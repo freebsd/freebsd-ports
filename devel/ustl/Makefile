@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	uSTL
 # Created by: ijliao
 # $FreeBSD$
 
@@ -24,6 +22,7 @@ ALL_TARGET=	# empty
 
 PLIST_FILES=	lib/libustl.so lib/libustl.so.1 lib/libustl.so.1.0.0
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"

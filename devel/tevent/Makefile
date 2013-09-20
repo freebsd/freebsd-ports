@@ -34,6 +34,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 OPTIONS_DEFINE=		PYTHON
 OPTIONS_DEFAULT=	PYTHON
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PLIST_FILES=		include/tevent.h \

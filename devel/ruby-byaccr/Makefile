@@ -1,9 +1,5 @@
-# New ports collection makefile for:	byaccr
-# Date created:		2 Nov 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	byaccr
 PORTVERSION=	0.1
@@ -21,6 +17,7 @@ RUBY_NO_RUN_DEPENDS=	yes
 
 DOCS=		README		README.html
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's,^#include <malloc\.h>,#include <stdlib.h>,' ${WRKSRC}/*.[ch]
 

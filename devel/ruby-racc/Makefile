@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--with=racc
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-all
 WRKDIR_RACC=	${WRKSRC}/packages/racc
 
+NO_STAGE=	yes
 do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}

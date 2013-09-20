@@ -22,6 +22,7 @@ CONNECTORS=	Subversive-connectors-3.0.0.I20121109-1700.zip
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../java/eclipse/Makefile.plugins"
 
 .include <bsd.port.mk>

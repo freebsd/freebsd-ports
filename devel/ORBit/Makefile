@@ -1,9 +1,5 @@
-# New ports collection makefile for:   orbit
-# Date Created:			16 Aug 1998
-# Whom:				Chia-liang Kao <clkao@CirX.ORG>
-#
+# Created by: Chia-liang Kao <clkao@CirX.ORG>
 # $FreeBSD$
-#
 
 PORTNAME=	ORBit
 PORTVERSION=	0.5.17
@@ -26,6 +22,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		libIDL
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure ${WRKSRC}/libIDL/configure ${WRKSRC}/popt/configure
 	@${TOUCH} ${WRKSRC}/configure

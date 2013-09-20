@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--without-sphinx-build  --enable-shared
 INFO=		udis86
 PORTDOCS=	x86
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

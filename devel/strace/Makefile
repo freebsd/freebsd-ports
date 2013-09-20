@@ -22,6 +22,7 @@ SHEBANG_FILES=	strace-graph
 MAN1=		strace.1
 PLIST_FILES=	bin/strace bin/strace-graph
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

@@ -1,7 +1,4 @@
-# Ports collection makefile for:	dep_selector
-# Date created:				13 Dec 2011
-# Whom:					Scott Sanders <scott@jssjr.com>
-#
+# Created by: Scott Sanders <scott@jssjr.com>
 # $FreeBSD$
 
 PORTNAME=	dep_selector
@@ -21,4 +18,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 CONFIGURE_ARGS+=	--with-opt-dir=${LOCALBASE}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

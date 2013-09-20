@@ -1,7 +1,3 @@
-# Ports collection makefile for:	rubygem-i18n
-# Date created:				1 September 2010
-# Whom:						Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
 # $FreeBSD$
 
 PORTNAME=	i18n
@@ -17,4 +13,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

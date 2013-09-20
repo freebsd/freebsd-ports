@@ -19,6 +19,7 @@ USES=		cmake
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,share/pkgconfig,libdata/pkgconfig,g" \
 		${WRKSRC}/src/CMakeLists.txt

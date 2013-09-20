@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 MANN=		fifo.n fifo2.n memchan.n memchanapi.n null.n random.n zero.n
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 regression-test test:
 	${MAKE} -C ${WRKSRC} test
 

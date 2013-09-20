@@ -33,6 +33,7 @@ PATCH_FILES+=	${PORTNAME}${PORTVERSION:R:S/.//}-${p:C/.*(...)$/\1/}
 .endfor
 PATCHLEVEL=	${PATCHES:Q:S/ /./g:E}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-configure:

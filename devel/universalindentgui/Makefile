@@ -23,6 +23,7 @@ QMAKE_ARGS=	-unix PREFIX=${PREFIX}
 
 DESKTOP_ENTRIES="UniversalIndentGUI" "${COMMENT}" "" "${PORTNAME}" "" true
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/#${PREFIX}/#g' -e 's#/share/man/#/man/#g' \
 		${WRKSRC}/UniversalIndentGUI.pro ${WRKSRC}/src/SettingsPaths.cpp

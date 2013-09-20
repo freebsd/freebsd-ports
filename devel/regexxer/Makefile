@@ -24,6 +24,7 @@ GCONF_SCHEMAS=		regexxer.schemas
 INSTALLS_ICONS=		regexxer.png
 
 # This target is only meant to be used by the port maintainer.
+NO_STAGE=	yes
 x-generate-plist:
 	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX}|${GREP} regexxer) > temp-pkg-plist
 

@@ -22,6 +22,7 @@ QMAKE_ARGS=	-unix PREFIX=${PREFIX}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/designer-Qt4Qt5
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
 

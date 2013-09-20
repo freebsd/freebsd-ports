@@ -25,4 +25,5 @@ CMAKE_ARGS+=	-DBUILD_python:BOOL=FALSE \
 
 PLIST_FILES=	lib/kde4/krossruby.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

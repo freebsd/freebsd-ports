@@ -19,6 +19,7 @@ MAN1=		xxgdb.1
 #  Yes, I know this will recompile the program every time, but
 #  we have the cookie anyway and it's much easier this way
 #  than modifying the Imakefile.
+NO_STAGE=	yes
 post-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -o xxgdbiowin xxgdbiowin.c
 

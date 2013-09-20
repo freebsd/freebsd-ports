@@ -61,6 +61,7 @@ MAN5=	srec_aomf.5 \
 	srec_vmem.5 \
 	srec_wilson.5
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${PLIST_FILES:S,^,${WRKSRC}/,} ${PREFIX}/bin/
 	@${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/man/man1/,} ${MAN1PREFIX}/man/man1/

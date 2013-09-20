@@ -1,9 +1,5 @@
-# New ports collection makefile for:	svntrac
-# Date created:			13 May 2008
-# Whom:				Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	svntrac
 PORTREVISION=	4
@@ -17,4 +13,5 @@ MASTERDIR=	${.CURDIR}/../cvstrac
 MAKE_ARGS=	APPNAME=svntrac
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	silc-toolkit
-# Date created:				2003.12.15
-# Whom:					Evgueni V. Gavrilov <aquatique@rusunix.org>
-#
+# Created by: Evgueni V. Gavrilov <aquatique@rusunix.org>
 # $FreeBSD$
-#
 
 PORTNAME=	silc
 PORTVERSION=	1.1.10
@@ -46,6 +42,7 @@ PLIST_SUB+=	PORTDOCS="@comment "
 CONFIGURE_ARGS+=	--without-pthreads
 .endif
 
+NO_STAGE=	yes
 pre-everything::
 .ifndef(WITHOUT_IPV6)
 	@${ECHO_MSG} '===> Define WITHOUT_IPV6 to disable IPv6 support'

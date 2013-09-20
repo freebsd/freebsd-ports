@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qca
-# Date created:				27 March 2005
-# Whom:					Vsevolod Stakhov <vsevolod@highsecure.ru>
-#
+# Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	qca
 PORTVERSION=	2.0.3
@@ -44,6 +40,7 @@ CONFIGURE_ARGS+=--debug
 PLIST_SUB+=	DEBUG=""
 .endif
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/configure
 	${MKDIR} ${WRKSRC}/libdata/pkgconfig

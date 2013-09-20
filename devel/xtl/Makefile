@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	xtl
-# Date created:			Sep 1, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	xtl
 PORTVERSION=	1.4.2
@@ -16,6 +11,7 @@ COMMENT=	A library for R/W structured data to/from an external representation
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${CP} -R ${WRKSRC}/include/* ${PREFIX}/include
 

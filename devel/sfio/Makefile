@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  sfio
-# Date created:			  8 November 1997
-# Whom:				  jraynard
-#
+# Created by: jraynard
 # $FreeBSD$
-#
 
 PORTNAME=	sfio
 PORTVERSION=	1999
@@ -25,6 +20,7 @@ MAN3=		sfio.3
 PLIST=		${WRKDIR}/pkg-plist
 
 # Remove a test that's too clever for its own good
+NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKDIR}/src/lib/sfio/Sfio_t/tmmap2read.c \
 		${WRKDIR}/src/lib/sfio/Sfio_t/.tmmap2read.c

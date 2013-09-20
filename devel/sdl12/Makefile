@@ -42,6 +42,7 @@ VGL_DESC=		Video Graphics Lib support
 OPTIONS_DEFAULT+=	VGL
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 MAN3!=		${CAT} ${FILESDIR}/man3

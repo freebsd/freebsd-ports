@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-posix-spawn
-# Date created:		2011-10-29
-# Whom:			Steve Wills <swills@rubick>
-#
+# Created by: Steve Wills <swills@rubick>
 # $FreeBSD$
-#
 
 PORTNAME=	posix-spawn
 PORTVERSION=	0.3.6
@@ -18,6 +14,7 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/posix-spawn-benchmark
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 800000
 IGNORE=		missing posix_spawnp

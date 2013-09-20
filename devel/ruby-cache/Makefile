@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/Cache
-# Date created:		22 November 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cache
 PORTVERSION=	0.3
@@ -25,6 +21,7 @@ RUBY_SETUP=	install.rb
 
 DOCS=		MANUAL.rd README.rd
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${RUBY_MODDOCDIR}

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	rubygem-rubyforge
-# Date created:				3 December 2006
-# Whom:					Jonathan Weiss (<jw@innerewut.de>)
-#
+# Created by: Jonathan Weiss (<jw@innerewut.de>)
 # $FreeBSD$
-#
 
 PORTNAME=	rubyforge
 PORTVERSION=	2.0.4
@@ -20,4 +16,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/rubyforge
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -28,6 +28,7 @@ PLIST_SUB+=	VER="${VER}"
 OPTIONS_DEFINE=	LUA DOCS EXAMPLES
 LUA_DESC=	Enable Lua support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MLUA}

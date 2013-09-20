@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-memoize
-# Date created:		2011-04-23
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	memoize
 PORTVERSION=	1.3.1
@@ -26,6 +22,7 @@ PORTEXAMPLES=	example_fibonacci.rb \
 		example_memoize.rb
 EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/lib/memoize.rb ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTEXAMPLES)

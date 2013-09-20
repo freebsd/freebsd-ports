@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  stlport
-# Date Created:			  2 December 1998
-# Whom:				  Josh Gilliam <josh@quick.net>
-#
+# Created by: Josh Gilliam <josh@quick.net>
 # $FreeBSD$
-#
 
 PORTNAME=	stlport
 PORTVERSION=	5.1.7
@@ -41,6 +36,7 @@ PTR_SPECIALIZATIONS_DESC=	Use pointer types specializations
 TEMPLATE_EXPRESSION_DESC=	Use template expressions for string
 BOOST_DESC=	Use Boost type traits
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if empty(PORT_OPTIONS:MSHORT_STRING_OPTIM)

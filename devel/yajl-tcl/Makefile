@@ -25,4 +25,5 @@ PLIST_FILES=	lib/yajltcl${PORTVERSION}/libyajltcl.so.1 \
 		lib/yajltcl${PORTVERSION}/yajl.tcl
 PLIST_DIRS=	lib/yajltcl${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ztcl
-# Date created:				Tue Apr 25 17:49:31 MSD 2006
-# Whom:					Denis Shaposhnikov <dsh@vlink.ru>
-#
+# Created by: Denis Shaposhnikov <dsh@vlink.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	ztcl
 DISTVERSION=	1.0b4
@@ -36,6 +32,7 @@ LDFLAGS+=	-L ${PREFIX}/lib
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 post-extract:
 	${MV} ${WRKSRC}/doc/zlib.texi ${WRKSRC}/doc/${PORTNAME}-zlib.texi
 

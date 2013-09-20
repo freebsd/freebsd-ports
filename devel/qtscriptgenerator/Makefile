@@ -24,6 +24,7 @@ USE_QT4=	corelib declarative designer doc help help-tools gui \
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPHONON}

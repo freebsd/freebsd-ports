@@ -26,4 +26,5 @@ MAN5=		makefiles.5 makerules.5
 RULEUSED=	"`${WRKSRC}/conf/oarch.sh`"
 PLIST_SUB=	RULESUSED="${RULEUSED}"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

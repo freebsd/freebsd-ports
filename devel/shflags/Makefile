@@ -13,6 +13,7 @@ COMMENT=	Command-line flags module for Unix shell scripts
 NO_BUILD=	yes
 PLIST_FILES=	lib/shflags
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/shflags ${PREFIX}/lib
 

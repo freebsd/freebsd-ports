@@ -38,4 +38,5 @@ CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include \
 CPPFLAGS+=	-I${QT_INCDIR} -I${LOCALBASE}/include
 LDFLAGS+=	-L${QT_LIBDIR} -L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

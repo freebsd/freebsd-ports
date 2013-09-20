@@ -1,7 +1,4 @@
-# New ports collection makefile for:	qgit
-# Date created:				2009-04-19
-# Whom:				Ion-Mihai "IOnut" Tetcu <itetcu@FreeBSD.org>
-#
+# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	qgit
@@ -22,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-configure:
 	@cd ${WRKSRC} && ${QMAKE} ${PORTNAME}.pro
 

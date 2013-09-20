@@ -1,7 +1,4 @@
-# New ports collection makefile for:	atoulme-Antwrap
-# Date created:				2011-09-11
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	atoulme-Antwrap
@@ -19,4 +16,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-deprecated
-# Date created:		23 Aug, 2009
-# Whom:			Wen Heping<wenheping@gmail.com>
-#
+# Created by: Wen Heping<wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	deprecated
 PORTVERSION=	3.0.1
@@ -17,4 +13,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

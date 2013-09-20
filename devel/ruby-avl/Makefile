@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/AVL
-# Date created:		22 August 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	avl
 PORTVERSION=	0.1
@@ -29,6 +25,7 @@ EXAMPLES=	Dussel.txt	getwords.rb \
 		test3.rb	test4.rb
 DOCS=		README
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

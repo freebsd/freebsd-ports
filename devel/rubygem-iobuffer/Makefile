@@ -1,9 +1,4 @@
-# New ports collection makefile for:	rubygem-iobuffer
-# Date created:		10 Jul 2012
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	iobuffer
 PORTVERSION=	1.1.2
@@ -17,4 +12,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

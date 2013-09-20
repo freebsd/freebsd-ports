@@ -1,8 +1,6 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/devel/seed/Makefile,v 1.35 2013/01/29 16:33:10 kwm Exp $
-# NOTE: It may be necessary to update ${FILESDIR}/Seed.js on each release.
-# To do that, just replace imports.searchPaths with "." and ".." elements.
 
 PORTNAME=	seed
 PORTVERSION=	2.31.91
@@ -36,6 +34,7 @@ CONFIGURE_ARGS+=--enable-gtk-doc=no --with-webkit=1.0
 
 MAN1=		seed.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

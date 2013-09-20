@@ -1,9 +1,5 @@
-# New ports collection makefile for:   rubygem-rubygame
-# Date created:    28 April 2010
-# Whom:	ws	Christoph Kick
-#
+# Created by: ws	Christoph Kick
 # $FreeBSD$
-#
 
 PORTNAME=	rubygame
 PORTVERSION=	2.6.4
@@ -22,4 +18,5 @@ USE_RAKE=		yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

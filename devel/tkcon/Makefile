@@ -15,6 +15,7 @@ USE_TK_WRAPPER=	yes
 PORTDOCS=	*
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%DOCSDIR%%|${DOCSDIR}|g' ${WRKSRC}/${PORTNAME}.tcl

@@ -17,4 +17,5 @@ PLIST_FILES=	bin/tradcpp
 
 MAN1=		tradcpp.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

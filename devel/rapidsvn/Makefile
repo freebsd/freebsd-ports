@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--with-apr-config=apr-1-config \
 USE_LDCONFIG=	yes
 MAN1=		rapidsvn.1
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/manpage/rapidsvn.1 ${MAN1PREFIX}/man/man1/
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zmq
-# Date created:		2008-07-28
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	zmq
 PORTVERSION=	2.2.0
@@ -51,6 +47,7 @@ MAN7=		zmq.7 \
 		zmq_pgm.7 \
 		zmq_tcp.7
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '9s|$$| -pthread|' ${WRKSRC}/src/libzmq.pc.in
 

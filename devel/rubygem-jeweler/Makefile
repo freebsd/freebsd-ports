@@ -26,4 +26,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/jeweler
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

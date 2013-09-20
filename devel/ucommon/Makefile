@@ -20,6 +20,7 @@ USE_LDCONFIG=	yes
 MAN1=	args.1 car.1 commoncpp-config.1 mdsum.1 pdetach.1 \
 	scrub-files.1 sockaddr.1 ucommon-config.1 zerofill.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 regression-test: build

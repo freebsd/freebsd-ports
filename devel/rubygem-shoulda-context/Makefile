@@ -15,6 +15,7 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES+=	bin/convert_to_should_syntax
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -type d -exec ${CHMOD} g+rx '{}' +
 	@${FIND} ${WRKSRC} -type f -exec ${CHMOD} g+r  '{}' +

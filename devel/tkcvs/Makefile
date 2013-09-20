@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tkcvs
-# Date created:		02 Aug 1996
-# Whom:			Andreas Kohout <shanee@augusta.de>
-#
+# Created by: Andreas Kohout <shanee@augusta.de>
 # $FreeBSD$
-#
 
 PORTNAME=	tkcvs
 PORTVERSION=	8.2.3
@@ -26,6 +22,7 @@ USE_TK_WRAPPER=	yes
 
 MAN1=		tkcvs.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tkcvs/tkcvs ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/tkcvs/tkcvs.1 ${MAN1PREFIX}/man/man1

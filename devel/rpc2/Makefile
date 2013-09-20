@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e \
 		's#(libdir)#{prefix}/libdata#g' \

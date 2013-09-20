@@ -22,6 +22,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDLIBS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	LDLIBS="${LDLIBS}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

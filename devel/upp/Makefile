@@ -44,6 +44,7 @@ DESKTOP_ENTRIES="TheIDE" "IDE for cross-platform C++ development" \
 OPTIONS_DEFINE=	SDL OPENGL MYSQL PGSQL USEMALLOC
 USEMALLOC_DESC=	Compile without U++ heap allocator
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSDL}

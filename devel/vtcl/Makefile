@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vtcl
-# Date Created:		29 May 1997
-# Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
-#
+# Created by: Vanilla I. Shu <vanilla@MinJe.com.TW>
 # $FreeBSD$
-#
 
 PORTNAME=	vtcl
 PORTVERSION=	1.6.1a1
@@ -23,6 +19,7 @@ USE_DOS2UNIX=	configure
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	${PREFIX}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|wish8.5|${WISH:T}| ; \

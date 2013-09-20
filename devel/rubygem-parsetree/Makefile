@@ -26,6 +26,7 @@ PLIST_FILES=	bin/parse_tree_abc	\
 
 GEM_NAME=	${DISTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${RUBY_VER} == 1.9
 BROKEN=	Builds with ruby 1.9, but does not work with ruby 1.9

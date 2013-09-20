@@ -1,10 +1,6 @@
-# New ports collection makefile for:	Ruby/GLib2
-# Date created:		24 November 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
 #   $MCom: ports/devel/ruby-glib2/Makefile,v 1.5 2007/10/05 05:06:39 mezz Exp $
-#
 
 PORTNAME=	glib2
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
@@ -29,6 +25,7 @@ CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 MASTERDIR=	${.CURDIR}/../../x11/ruby-gnome2
 PKGDIR=		${.CURDIR}
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile.common"
  
 WRKSRC=		${RUBY_GNOME_WRKSRC}/glib2

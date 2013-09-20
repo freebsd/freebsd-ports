@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sml_tk
-# Date created:		2008-01-13
-# Whom:			Timothy Bourke <timbob@bigpond.com>
-#
+# Created by: Timothy Bourke <timbob@bigpond.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sml_tk
 PORTVERSION=	3.0
@@ -28,6 +24,7 @@ ALL_TARGET=	smltk
 SUB_FILES=	sml_tk.1
 MAN1=		sml_tk.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSMLNJDEVEL}

@@ -21,4 +21,5 @@ CFLAGS+=	-I${LOCALBASE}/include
 MAN1=		xdg-user-dir.1 xdg-user-dirs-update.1
 MAN5=		user-dirs.conf.5 user-dirs.defaults.5 user-dirs.dirs.5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

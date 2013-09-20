@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-rbprof
-# Date created:		08 April 2002
-# Whom:			Sean Chittenden <sean@chittenden.org>
-#
+# Created by: Sean Chittenden <sean@chittenden.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rbprof
 PORTVERSION=	0.2.1
@@ -22,6 +18,7 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 .ifndef NOPORTDOCS
 	@${MKDIR} ${PORTDOCS}${RUBY_DOCDIR}/rbprof

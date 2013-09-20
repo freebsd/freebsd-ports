@@ -21,6 +21,7 @@ CUTECOM_DESC=	Install cutecom for Vex debugging
 MAN1=		legoctl.1 vexctl.1 nxtremote.1
 MAN3=		roboctl.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCUTECOM}

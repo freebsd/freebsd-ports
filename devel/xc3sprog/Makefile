@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xc3sprog
-# Date created:		15 May 2010
-# Whom:			Wojciech A. Koszek <wkoszek@FreeBSD.org>
-#
+# Created by: Wojciech A. Koszek <wkoszek@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xc3sprog
 PORTVERSION=	r449
@@ -22,6 +18,7 @@ ALL_TARGET=	xc3sprog
 
 PLIST_FILES=	bin/xc3sprog
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xc3sprog ${PREFIX}/bin
 

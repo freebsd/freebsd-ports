@@ -23,6 +23,7 @@ PLIST_SUB+=	SCONS_VER=${PORTVERSION}
 
 USE_PYTHON=	-2.7
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined (NO_INSTALL_MANPAGES)

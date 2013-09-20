@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	terminality
-# Date created:			Apr 28, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	terminality
 PORTVERSION=	2.1
@@ -18,6 +13,7 @@ COMMENT=	A cross-platform terminal manipulation library
 
 USE_CSTD=	gnu89
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/include/tn
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/tn

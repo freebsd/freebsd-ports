@@ -19,6 +19,7 @@ USES=		cmake:outsource
 CMAKE_ARGS+=	-DSMOKE_CMAKE_MODULE_DIR:PATH=${PREFIX}/lib/cmake/smoke
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's|share/smoke/cmake|lib/cmake/smoke|g' \
 		${WRKSRC}/smokebase/CMakeLists.txt

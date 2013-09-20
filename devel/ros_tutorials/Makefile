@@ -1,7 +1,4 @@
-# New ports collection makefile for: ros_tutorials
-# Date created:	2010-10-31
-# Whom: Rene Ladan <rene@FreeBSD.org>
-#
+# Created by: Rene Ladan <rene@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ros_tutorials
@@ -38,6 +35,7 @@ MAKE_ENV+=	CPATH=${LOCALBASE}/include \
 
 MAKE_ARGS=	-i --no-rosdep --status-rate=0 --disable-logging
 
+NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC} ; ${MAKE_ENV} ${LOCALBASE}/bin/rosmake ${MAKE_ARGS})
 

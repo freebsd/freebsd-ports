@@ -21,4 +21,5 @@ post-patch:     .SILENT
 	${REINPLACE_CMD} 's|$${LIB_INSTALL_DIR}/pkgconfig|${LOCALBASE}/libdata/pkgconfig|' \
 		${WRKSRC}/CMakeLists.txt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

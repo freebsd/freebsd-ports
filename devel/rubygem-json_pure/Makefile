@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/json_pure
-# Date created:		Oct 7, 2008
-# Whom:			Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	json_pure
 PORTVERSION=	1.7.7
@@ -17,6 +13,7 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} < 1.9

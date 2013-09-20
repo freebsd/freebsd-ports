@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-test
-# Date created:		2011-06-19
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	test
 PORTVERSION=	0.4.3
@@ -20,4 +16,5 @@ USE_RUBYGEMS=		yes
 GEM_NAME=		rubygems-test-${PORTVERSION}
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

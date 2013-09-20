@@ -22,6 +22,7 @@ USE_PYTHON=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${PYTHON_CMD}-config)

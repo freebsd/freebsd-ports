@@ -14,6 +14,7 @@ NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
 USES=		perl5
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} -f ${WRKSRC}/bin/tmake.orig ${WRKSRC}/lib/unix/generic.t.orig
 	@${REINPLACE_CMD} \

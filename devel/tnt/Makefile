@@ -1,9 +1,5 @@
-# Ports collection makefile for:	tnt
-# Date created:				Mar 15, 2003
-# Whom:					Pedro F. Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro F. Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tnt
 PORTVERSION=	1.2.6
@@ -28,6 +24,7 @@ NO_BUILD=	yes
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/include/tnt
 	${INSTALL_DATA} ${WRKDIR}/*.h ${PREFIX}/include/tnt

@@ -1,4 +1,4 @@
-# Created by: lofi@freebsd.org, mi@aldan.algebra.com
+# Created by: lofi@FreeBSD.org, mi@aldan.algebra.com
 # $FreeBSD$
 
 PORTNAME=	qmake
@@ -37,6 +37,7 @@ EXTRACT_AFTER_ARGS= \
 	'${DISTNAME}/tools/shared/symbian' \
 	'${DISTNAME}/tools/shared/windows'
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2|${CXXFLAGS}|' \
 		-e 's|/usr/local|${LOCALBASE}|' \

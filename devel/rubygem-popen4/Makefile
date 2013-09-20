@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-popen4
-# Date created:				2011-06-16
-# Whom:					rpsfa@rit.edu
-#
+# Created by: rpsfa@rit.edu
 # $FreeBSD$
 
 PORTNAME=	popen4
@@ -21,4 +18,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 GEM_NAME=	POpen4-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

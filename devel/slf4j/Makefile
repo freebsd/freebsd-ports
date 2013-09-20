@@ -1,9 +1,5 @@
-# New ports collection makefile for:	slf4j
-# Date created:		2009-10-13
-# Whom:			Steven Kreuzer <skreuzer@FreeBSD.org>
-#
+# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	slf4j
 PORTVERSION=	1.7.5
@@ -32,6 +28,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/slf4j-api.jar \
 		${JARFILES:S,^,%%DATADIR%%/,}
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/slf4j-api-${PORTVERSION}.jar ${JAVAJARDIR}/slf4j-api.jar
 	@${MKDIR} ${DATADIR}

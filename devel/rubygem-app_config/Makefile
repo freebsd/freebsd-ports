@@ -17,6 +17,7 @@ MONGO_DESC=	mongo backend support
 SQLITE3_DESC=	sqlite3 backend support
 OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLITE3}

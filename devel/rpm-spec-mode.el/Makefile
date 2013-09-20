@@ -1,7 +1,4 @@
-# New ports collection makefile for:	rpm-spec-mode.el
-# Date created:				24 Apr 2006
-# Whom:					Max N. Boyarov <m.boyarov@gmail.com>
-#
+# Created by: Max N. Boyarov <m.boyarov@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	rpm-spec-mode.el
@@ -26,6 +23,7 @@ PLIST_FILES=	share/emacs/site-lisp/${PORTNAME} \
 		lib/xemacs/site-lisp/${PORTNAME}
 PLIST_DIRS=	lib/xemacs/site-lisp lib/xemacs
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${EMACSLISPDIR}
 	${MKDIR} ${XEMACSLISPDIR}

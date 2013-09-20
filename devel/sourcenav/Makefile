@@ -1,10 +1,5 @@
-# ex: ts=8
-# New ports collection makefile for:	sourcenav
-# Date created:			23 July 2000
-# Whom:				Donald Burr <dburr@FreeBSD.ORG>
-#
+# Created by: Donald Burr <dburr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sourcenav
 PORTVERSION=	4.4
@@ -25,6 +20,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--prefix=${PREFIX}/sourcenav
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|@XINCLUDES@|-I${LOCALBASE}/include|; \
 	    s|@XLIBSW@|-L${LOCALBASE}/lib -lX11|' ${WRKSRC}/tk/unix/Makefile.in

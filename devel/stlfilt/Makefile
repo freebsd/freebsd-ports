@@ -21,6 +21,7 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/gSTLFilt.pl bin/gfilt
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,[$$]HOME,${PREFIX}/bin," ${WRKSRC}/gfilt
 

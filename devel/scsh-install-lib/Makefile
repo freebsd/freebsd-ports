@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scsh-install-lib
-# Date created:				14 July 2004
-# Whom:					bkhl@elektrubadur.se
-#
+# Created by: bkhl@elektrubadur.se
 # $FreeBSD$
-#
 
 PORTNAME=	scsh-install-lib
 PORTVERSION=	1.3.0
@@ -19,6 +15,7 @@ PLIST_SUB=	VER=${PORTVERSION}
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	(cd ${WRKSRC}; ./install.scm --bindir ${PREFIX}/lib/scsh --prefix ${PREFIX}/lib/scsh)
 

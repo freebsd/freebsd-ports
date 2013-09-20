@@ -1,7 +1,4 @@
-# New ports collection makefile for:    qprog
-# Date created:		2007/07/20
-# Whom:			Brandon Fosdick <bfoz@bfoz.net>
-#
+# Created by: Brandon Fosdick <bfoz@bfoz.net>
 # $FreeBSD$
 
 PORTNAME=	qprog
@@ -21,6 +18,7 @@ WRKSRC=		${WRKDIR}/QProg
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-configure:
 	( cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} -unix PREFIX=${PREFIX} QProg.pro )

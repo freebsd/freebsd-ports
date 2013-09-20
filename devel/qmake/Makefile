@@ -30,6 +30,7 @@ EXTRACT_AFTER_ARGS= \
 EXTRACT_AFTER_ARGS+='${DISTNAME}/doc/html/qmake*'
 DOCSDIR=${PREFIX}/share/doc/qt
 PLIST_SUB+=	DOCSDIR='${DOCSDIR}'
+NO_STAGE=	yes
 post-install:
 	${MKDIR} '${DOCSDIR}'
 	${CP} -Rp '${WRKSRC:H}/doc/html' '${DOCSDIR}'

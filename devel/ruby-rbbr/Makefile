@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rbbr
-# Date created:		24 November 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rbbr
 PORTVERSION=	0.6.0
@@ -30,6 +26,7 @@ DOCS_EN=	AUTHORS COPYING ChangeLog README
 DOCS_JA=	COPYING.ja README.ja
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}

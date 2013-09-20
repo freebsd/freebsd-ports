@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/setup.rb
-# Date created:		11 June 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	setup.rb
 PORTVERSION=	3.4.1
@@ -28,6 +24,7 @@ RUBY_SHEBANG_FILES=	${_SCRIPTS:S:^:${WRKSRC}/ruby-:}
 DOCS_EN=	doc.en/* NEWS.en Usage_en.txt README.en ChangeLog TODO
 DOCS_JA=	doc.ja/* NEWS.ja Usage_ja.txt README.ja
 
+NO_STAGE=	yes
 post-extract:
 .for f in ${_SCRIPTS}
 	${CP} -p ${WRKSRC}/${f} ${WRKSRC}/ruby-${f}

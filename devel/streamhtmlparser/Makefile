@@ -1,9 +1,5 @@
-# New ports collection makefile for:	streamhtmlparser
-# Date created:        7 August 2012
-# Whom:                HU Dong <itechbear@gmail.com>
-#
+# Created by: HU Dong <itechbear@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	streamhtmlparser
 PORTVERSION=	0.1
@@ -25,6 +21,7 @@ PYBINDINGS_DESC=Install Python bindings
 STATIC_DESC=	Install static library
 OPTIONS_DEFAULT=STATIC
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYBINDINGS}

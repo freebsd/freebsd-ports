@@ -18,6 +18,7 @@ MAKEFILE=	BSDmakefile
 
 PLIST_FILES=	bin/mkimage
 
+NO_STAGE=	yes
 post-extract:
 	${CP} ${PATCHDIR}/BSDmakefile ${WRKSRC}/tools
 

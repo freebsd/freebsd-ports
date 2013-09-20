@@ -19,6 +19,7 @@ CONFIGURE_ARGS=	--enable-ipv6
 USE_XZ=		yes
 MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
 
+NO_STAGE=	yes
 post-configure:
 	@for f in ${FILESDIR}/*.bsd ; do \
 		${LN} -sf $$f ${WRKSRC}/src/`${BASENAME} $$f .bsd` ; \

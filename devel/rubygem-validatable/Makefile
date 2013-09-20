@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-validatable
-# Date created:		28, Dec 2008
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	validatable
 PORTVERSION=	1.6.7
@@ -18,4 +14,5 @@ USE_RUBYGEMS=	yes
 USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

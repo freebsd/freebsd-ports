@@ -24,6 +24,7 @@ PORTDOCS=	ChangeLog.txt todo.txt userguide.txt utarray.txt \
 PLIST_FILES=	include/utarray.h include/uthash.h include/utlist.h \
 		include/utstring.h
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

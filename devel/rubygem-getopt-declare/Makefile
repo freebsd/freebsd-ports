@@ -17,6 +17,7 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 # Workaround weird files permissions
+NO_STAGE=	yes
 post-install:
 	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type f -exec ${CHMOD} 644 '{}' ';'
 

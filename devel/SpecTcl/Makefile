@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SpecTcl1.1
-# Date created:		Fri Oct  3 18:50:53 CEST 1997
-# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
-#
+# Created by: Andreas Klemm <andreas@klemm.gtn.com>
 # $FreeBSD$
-#
 
 PORTNAME=	SpecTcl
 PORTVERSION=	1.2.2a
@@ -19,6 +15,7 @@ NO_BUILD=	yes
 
 USE_TK_WRAPPER=	yes
 
+NO_STAGE=	yes
 post-patch:
 .for file in specJava specTcl
 	@${REINPLACE_CMD} -e \

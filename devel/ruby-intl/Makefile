@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby-intl
-# Date created:		9 Aug 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	intl
 PORTVERSION=	0.11
@@ -24,6 +20,7 @@ USE_RUBY_EXTCONF=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_TARGET=	site-install
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}/po/

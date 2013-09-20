@@ -1,9 +1,5 @@
-# Ports collection makefile for:	rubygem-mixlib-shellout
-# Date created:				23 Aug 2012
-# Whom:					ndewing@experts-exchange.com
-#
+# Created by: ndewing@experts-exchange.com
 # $FreeBSD$
-#
 
 PORTNAME=	mixlib-shellout
 PORTVERSION=	1.2.0
@@ -17,4 +13,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

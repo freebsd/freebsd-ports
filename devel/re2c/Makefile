@@ -18,6 +18,7 @@ PLIST_FILES=	bin/re2c
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

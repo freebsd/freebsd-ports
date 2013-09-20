@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-allison
-# Date created:		2011-06-18
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	allison
 PORTVERSION=	2.0.3
@@ -20,4 +16,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/allison
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

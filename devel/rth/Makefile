@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rth
-# Date created:		2006-06-06
-# Whom:			Jan Siml <jsi@jules.de>
-#
+# Created by: Jan Siml <jsi@jules.de>
 # $FreeBSD$
-#
 
 PORTNAME=	rth
 PORTVERSION=	1.7.0
@@ -25,6 +21,7 @@ WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO} "Installing in ${PREFIX}/www/rth"
 	${MKDIR} ${PREFIX}/www/rth

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    qt4-qtsolutions-singleapplication
-# Date created:         19 July 2011
-# Whom:                 Yuri Momotiuk <yurkis@gmail.com>
-#
+# Created by: Yuri Momotiuk <yurkis@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qt4-qtsolutions-singleapplication
 PORTVERSION=	20110722
@@ -33,6 +29,7 @@ QMAKE_PRO=	buildlib.pro
 LIBRARY_NAME=	libQtSolutions_SingleApplication-head.so
 LIBRARY_HEADERS=	qtsingleapplication.h qtsinglecoreapplication.h
 
+NO_STAGE=	yes
 do-configure:
 	cd ${BUILD_WRKSRC} && ${QMAKE} ${QMAKEFLAGS} ${QMAKE_PRO}
 

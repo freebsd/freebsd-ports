@@ -1,9 +1,4 @@
-# New ports collection makefile for:	rubygem-deeptest
-# Date created:		7 April 2009
-# Whom:			Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	deep_test
 PORTVERSION=	1.2.2
@@ -18,4 +13,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/deep_test
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

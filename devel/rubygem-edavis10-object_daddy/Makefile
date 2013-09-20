@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-edavis10-object_daddy
-# Date created:				2011-03-06
-# Whom:					milki <milki@rescomp.berkeley.edu>
-#
+# Created by: milki <milki@rescomp.berkeley.edu>
 # $FreeBSD$
 
 PORTNAME=	edavis10-object_daddy
@@ -18,4 +15,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

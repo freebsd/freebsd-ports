@@ -25,6 +25,7 @@ RUBY_SHEBANG_FILES=	${WRKSRC}/samples/*.rb
 DOCSDIR=	${RUBY_MODDOCDIR}
 PORTDOCS=	ChangeLog NEWS README
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} == 1.9

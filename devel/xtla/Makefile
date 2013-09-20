@@ -1,9 +1,5 @@
-# New ports collection makefile for:   xtla
-# Date created:                27 June 2004
-# Whom:                        Dryice Liu <dryice@liu.com.cn>
-#
+# Created by: Dryice Liu <dryice@liu.com.cn>
 # $FreeBSD$
-#
 
 PORTNAME=	xtla
 PORTVERSION=	1.2.1
@@ -30,6 +26,7 @@ CONFIGURE_ARGS+=	--with-emacs=${EMACS_NAME} --with-diff=gdiff --with-patch=gpatc
 USE_GMAKE=	yes
 INFO=		xtla
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${LISPDIR}
 .for i in *.el *.elc

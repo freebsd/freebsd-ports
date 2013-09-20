@@ -1,14 +1,11 @@
-# New ports collection Makefile for:	qt4-qtsolutions-soap
-# Date created:				26 June 2012
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 MASTERDIR=	${.CURDIR}/../qt4-qtsolutions-singleapplication
 
 USE_QT4=	qmake_build moc_build rcc_build uic_build network xml gui
 
+NO_STAGE=	yes
 .include	"${MASTERDIR}/Makefile"
 
 PORTNAME=	qt4-qtsolutions-soap

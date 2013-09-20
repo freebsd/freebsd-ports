@@ -1,9 +1,5 @@
-# New ports collection makefile for:   rubygem-nice-ffi
-# Date created:    28 April 2010
-# Whom:	ws	Christoph Kick
-#
+# Created by: ws	Christoph Kick
 # $FreeBSD$
-#
 
 PORTNAME=	nice-ffi
 PORTVERSION=	0.4
@@ -20,4 +16,5 @@ USE_RUBY=		yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -24,6 +24,7 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 802515 || ${OSVERSION} >= 900000 && ${OSVERSION} < 900501

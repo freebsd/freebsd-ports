@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	regexx
-# Date created:			Mar 2, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	regexx
 PORTVERSION=	0.98.1
@@ -20,6 +15,7 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 MAKE_ENV+=	INCLUDES="-I${WRKSRC}/pcre"
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@LIBTOOL@|${LIBTOOL}|g ; \
 		s|	\./libtool|${LIBTOOL}|g ; \

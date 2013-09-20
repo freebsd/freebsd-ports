@@ -1,7 +1,4 @@
-# Ports collection makefile for:	gem-cri
-# Date created:				26 Apr 2012
-# Whom:					Ryan Steinmetz <zi@FreeBSD.org>
-#
+# Created by: Ryan Steinmetz <zi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cri
@@ -19,4 +16,5 @@ USE_RUBYGEMS=	yes
 USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

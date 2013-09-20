@@ -19,6 +19,7 @@ USE_RUBY=	yes
 
 SVN_BUILD_BINDINGS=yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile.common"
 
 CATEGORIES+=	ruby

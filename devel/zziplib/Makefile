@@ -1,7 +1,5 @@
 # Created by: George Reid <greid@ukug.uk.freebsd.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	zziplib
 PORTVERSION=	0.13.62
@@ -53,6 +51,7 @@ MAN3=		__zzip_fetch_disk_trailer.3 __zzip_parse_root_directory.3 __zzip_try_open
 
 PORTSCOUT=	limit:^0\.
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSDL}

@@ -28,6 +28,7 @@ WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 
 DOCS=		README TODO ${RUBY_RD_HTML_FILES}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

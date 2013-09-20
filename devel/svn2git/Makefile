@@ -24,6 +24,7 @@ FREEBSD_REPO_DESC=	FreeBSD-repo only mode
 
 PLIST_FILES=	bin/svn2git
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFREEBSD_REPO}

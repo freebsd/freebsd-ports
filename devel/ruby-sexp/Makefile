@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-sexp
-# Date created:		24 Marth 2008
-# Whom:			Stanislav Sedov <stas@FreeBSD.org>
-#
+# Created by: Stanislav Sedov <stas@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sexp
 PORTVERSION=	0.2.1
@@ -25,6 +21,7 @@ SADIR=		${RUBY_SITELIBDIR}
 
 EXAMPLES=	example.rb
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/sexp.rb ${RUBY_SITELIBDIR}/
 	${INSTALL_DATA} ${WRKSRC}/sexpressions.rb ${RUBY_SITELIBDIR}/

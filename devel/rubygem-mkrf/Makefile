@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-mkrf
-# Date created:		2011-03-14
-# Whom:			Steve Wills <steve@meatwad.mouf.net>
-#
+# Created by: Steve Wills <steve@meatwad.mouf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mkrf
 PORTVERSION=	0.2.3
@@ -19,6 +15,7 @@ USE_RUBYGEMS=	yes
 USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 post-install:
 	@${REINPLACE_CMD} -e "s,{|l| \"-l#{l}\"}.join(' '),{|l| if l =~ /-/ then \"#{l}\" else \"-l#{l}\" end}.join(' ')," \
 		${PREFIX}/${GEMS_DIR}/${PORTNAME}-${PORTVERSION}/lib/mkrf/availability.rb

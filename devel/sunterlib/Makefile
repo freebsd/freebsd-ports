@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sunterlib
-# Date created:				14 July 2004
-# Whom:					bkhl@elektrubadur.se
-#
+# Created by: bkhl@elektrubadur.se
 # $FreeBSD$
-#
 
 PORTNAME=	sunterlib
 PORTVERSION=	0.8
@@ -18,6 +14,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/scsh/scsh-install-pkg:${PORTSDIR}/devel/scsh-insta
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	(cd ${WRKSRC}; ${LOCALBASE}/lib/scsh/scsh-install-pkg --prefix=${PREFIX}/lib/scsh)
 

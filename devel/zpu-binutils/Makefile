@@ -25,6 +25,7 @@ MAN1=		zpu-elf-addr2line.1 zpu-elf-ar.1 zpu-elf-dlltool.1 \
 
 INFO=		zpu/as zpu/bfd zpu/binutils zpu/configure zpu/ld zpu/standards
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/%%CC%%/${CC}/' ${WRKSRC}/build.sh
 	${CP}	${FILESDIR}/install.sh ${WRKSRC}
