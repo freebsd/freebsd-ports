@@ -23,6 +23,7 @@ MAN1=		optipng.1
 PORTDOCS=	history.txt optipng.man.html optipng.man.pdf optipng.man.txt \
 		png_optimization.html todo.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MBUNDLED_LIBPNG)

@@ -25,6 +25,7 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=	EXAMPLES HTMLDOCS
 HTMLDOCS_DESC=	Build and install HTML documentation
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}

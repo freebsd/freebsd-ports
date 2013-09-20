@@ -21,6 +21,7 @@ USE_SDL=	sdl
 
 PORTDOCS=	README ChangeLog
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 regression-test:

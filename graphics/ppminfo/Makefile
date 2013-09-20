@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ppminfo
-# Date created:		7 August 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ppminfo
 PORTVERSION=	0.1
@@ -21,6 +17,7 @@ PLIST_FILES=	bin/${PORTNAME}
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|min(|MIN(|;s|max(|MAX(|' ${WRKSRC}/pi.c
 	@${REINPLACE_CMD} 's|-O2||;/^LDFLAGS=/s|=|+=|;\

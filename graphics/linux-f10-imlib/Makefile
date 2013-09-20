@@ -1,9 +1,5 @@
-# New ports collection makefile for:	graphics/linux-f10-imlib
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	imlib
 PORTVERSION=	1.9.15
@@ -24,4 +20,5 @@ BRANDELF_FILES=	usr/bin/imlib_config
 USE_LDCONFIG=	yes
 PLIST=		${PKGDIR}/pkg-plist.${LINUX_RPM_ARCH}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

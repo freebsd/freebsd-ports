@@ -30,4 +30,5 @@ CONFIGURE_ARGS+=--mandir=${PREFIX}/man --prefix=${PREFIX}
 
 MAN1=		iccexamin.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

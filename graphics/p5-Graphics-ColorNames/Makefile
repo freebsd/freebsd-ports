@@ -24,4 +24,5 @@ MAN3=	Graphics::ColorNames.3 \
 	Graphics::ColorNames::Windows.3 \
 	Graphics::ColorNames::X.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

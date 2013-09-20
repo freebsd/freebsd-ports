@@ -31,6 +31,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	eog.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 _WITH_EXIF=	no

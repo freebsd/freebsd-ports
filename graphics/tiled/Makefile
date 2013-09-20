@@ -20,6 +20,7 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

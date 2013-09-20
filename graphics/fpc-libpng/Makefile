@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	LIBPNG
 LIBPNG_DESC=	Install png library for manipulating PNG images
 OPTIONS_DEFAULT=	LIBPNG
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

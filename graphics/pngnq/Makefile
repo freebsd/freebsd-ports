@@ -26,6 +26,7 @@ PORTDOCS=	README COPYING
 PLIST_FILES=	bin/pngcomp bin/pngnq
 MAN1=		pngnq.1
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

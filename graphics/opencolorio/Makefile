@@ -38,6 +38,7 @@ OPTIONS_DEFINE=		DOCS SSE
 OPTIONS_DEFAULT=	DOCS SSE
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MDOCS) || defined(OCIO_TOOLS)

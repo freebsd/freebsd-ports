@@ -1,3 +1,4 @@
+NO_STAGE=	yes
 # Created by: Alex Dupre <ale@FreeBSD.org:
 # $FreeBSD$
 

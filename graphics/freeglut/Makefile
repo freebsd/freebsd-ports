@@ -28,6 +28,7 @@ DOCS=	download.html freeglut.html freeglut_logo.png		\
 	progress.html structure.html
 BINS=	CallbackMaker Fractals Fractals_random Lorenz One shapes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-configure:

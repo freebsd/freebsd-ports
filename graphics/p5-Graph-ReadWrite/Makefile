@@ -30,6 +30,7 @@ MAN3=		Graph::Reader.3 \
 		Graph::Writer::XML.3 \
 		Graph::Writer::daVinci.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|Graph-ReadWrite|Graph::ReadWrite|' ${WRKSRC}/Makefile.PL
 

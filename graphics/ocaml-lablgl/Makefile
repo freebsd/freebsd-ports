@@ -35,6 +35,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/lablgl
 
 CONFLICTS=	ocaml-notk-[0-9]* ocaml-nox11-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_TK=		84+

@@ -32,6 +32,7 @@ FIND_HERE=	userdoc
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

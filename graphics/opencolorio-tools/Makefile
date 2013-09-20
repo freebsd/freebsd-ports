@@ -29,4 +29,5 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-CMakeLists.txt
 
 OCIO_TOOLS=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

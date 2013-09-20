@@ -35,6 +35,7 @@ OPTIONS_DEFAULT=	XCB GLIB X11
 XCB_DESC=	Enable XCB (X C-language Binding) Support
 GLIB_DESC=	Enable GObject Functions Feature
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"

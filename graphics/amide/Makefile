@@ -36,6 +36,7 @@ GSL_DESC=	Use gsl
 VOLPACK_DESC=	Use volpack
 XMEDCON_DESC=	Use xmedcon
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDCMTK}

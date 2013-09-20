@@ -1,9 +1,5 @@
-# New ports collection makefile for:	barcode
-# Date created:		Sun Sep 23 11:07:00 IST 2001
-# Whom:			Emil J.V. Björsell (Jev)
-#
+# Created by: Emil J.V. Björsell (Jev)
 # $FreeBSD$
-#
 
 PORTNAME=	barcode
 PORTVERSION=	0.98
@@ -21,4 +17,5 @@ MAN3=		barcode.3
 GNU_CONFIGURE=	yes
 INFO=		barcode
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

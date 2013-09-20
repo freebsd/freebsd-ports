@@ -26,4 +26,5 @@ PLIST_FILES=	include/svg-cairo.h \
 		lib/libsvg-cairo.so.1 \
 		libdata/pkgconfig/libsvg-cairo.pc
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

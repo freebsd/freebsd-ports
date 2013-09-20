@@ -20,6 +20,7 @@ PLIST_FILES=	bin/multican lib/libmultican.so.0 lib/libmultican.so \
 
 PORTDOCS=	ChangeLog README TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

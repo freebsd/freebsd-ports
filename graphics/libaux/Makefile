@@ -17,6 +17,7 @@ USES=		imake
 USE_GL=		glut
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libaux.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/aux.h ${PREFIX}/include/GL

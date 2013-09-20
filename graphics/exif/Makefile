@@ -18,6 +18,7 @@ CONFIGURE_ENV=	POPT_CFLAGS=-I${LOCALBASE}/include POPT_LIBS="-L${LOCALBASE}/lib 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

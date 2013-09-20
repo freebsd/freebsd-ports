@@ -21,6 +21,7 @@ USE_OPENAL=	al
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} != "i386"

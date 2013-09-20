@@ -32,6 +32,7 @@ USE_QT4=	corelib gui imageformats linguist_build \
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCUNEIFORM}

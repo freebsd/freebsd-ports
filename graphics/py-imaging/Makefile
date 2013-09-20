@@ -35,6 +35,7 @@ TKINTER_DESC=	tkinter for X support
 
 OPTIONS_DEFAULT=	TKINTER
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTKINTER}

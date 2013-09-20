@@ -27,6 +27,7 @@ USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/modules/engines/gl_x11
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
+NO_STAGE=	yes
 .include "../evas-core/Makefile.inc"
 CONFIGURE_ARGS+=	--enable-gl-xlib
 

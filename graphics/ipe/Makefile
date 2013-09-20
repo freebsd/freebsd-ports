@@ -48,6 +48,7 @@ PORTDOCS=	*
 DESKTOP_ENTRIES="Ipe" "" "${DATADIR}/${PORTVERSION}/ipe.png" \
 		"${PORTNAME}" "" true
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	graphics/linux-f10-libmng
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=		libmng
 PORTVERSION=		1.0.9
@@ -26,4 +22,5 @@ USE_LDCONFIG=	yes
 
 PLIST_FILES=	usr/lib/libmng.so.1 usr/lib/libmng.so.1.0.0
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -32,4 +32,5 @@ USE_LDCONFIG=	yes
 
 MAN1=		listgeo.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-imlib2
-# Date created:				18 September 2006
-# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	imlib2
 PORTVERSION=	0.1.00
@@ -27,6 +23,7 @@ USE_EFL=	imlib2
 # imlib2 extension doesn't need X related functions in libImlib2
 CFLAGS+=	-DX_DISPLAY_MISSING
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/-ldl//' ${WRKSRC}/config.m4
 	@${REINPLACE_CMD} -e '/Xlib.h/d' ${WRKSRC}/php_imlib2.h

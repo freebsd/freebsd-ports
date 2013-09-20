@@ -1,9 +1,5 @@
-# New ports collection makefile for:    compupic
-# Date created:         Thu Mar 14 22:40:58 PST 2002
-# Whom:                 Abel Chow <ozsanh45vds001@sneakemail.com>
-#
+# Created by: Abel Chow <ozsanh45vds001@sneakemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	compupic
 PORTVERSION=	5.1.1063
@@ -21,6 +17,7 @@ ONLY_FOR_ARCHS=	i386
 
 MAN1=		compupic.1
 
+NO_STAGE=	yes
 do-install:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTNAME}.tar.gz \
 		${EXTRACT_AFTER_ARGS} -C ${PREFIX}

@@ -48,4 +48,5 @@ MAN3=		Color::Library.3 \
 		Color::Library::Dictionary::Windows.3 \
 		Color::Library::Dictionary::X11.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

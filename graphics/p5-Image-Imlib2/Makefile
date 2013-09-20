@@ -23,6 +23,7 @@ MAN3=		Image::Imlib2.3
 PORTDOCS=	CHANGES
 EXAMPLES=	examples/benchmark.pl examples/benchmark.txt examples/maeda.pl
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

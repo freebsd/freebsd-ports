@@ -23,6 +23,7 @@ PORT_VERBS=	${PORTNAME} imgfuncs
 
 OPTIONS_DEFINE=	DOCS GNOME
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOME}

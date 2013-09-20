@@ -25,6 +25,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C/-.$//}
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != i386

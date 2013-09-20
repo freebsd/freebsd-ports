@@ -23,6 +23,7 @@ AR?=		/usr/bin/ar
 
 WRKSRC=		${WRKDIR}/src
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} -fPIC -I${LOCALBASE}/include -I${WRKDIR}/include -c -o ${WRKSRC}/libglpng.o ${WRKSRC}/glpng.c
 	${CC} ${CFLAGS} -fPIC -L${LOCALBASE}/lib -shared -lGL -lpng -lz -lm -o ${WRKSRC}/libglpng.so.1 ${WRKSRC}/libglpng.o

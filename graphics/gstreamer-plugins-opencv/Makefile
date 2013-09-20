@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gstreamer-plugins-opencv
-# Date created:			27 Jan 2011
-# Whom:				Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	graphics
@@ -14,4 +10,5 @@ GST_PLUGIN=	opencv
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -57,6 +57,7 @@ ALL_DESC=	All translations
 OPTIONS_DEFINE+=	${lang:U}
 .endfor
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for lang in ${LANG_ALL}

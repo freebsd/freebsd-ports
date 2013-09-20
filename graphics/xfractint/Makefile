@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xfractint
-# Date created:		7 Sept 1995
-# Whom:			cacho@mexicano.gdl.iteso.mx
-#
+# Created by: cacho@mexicano.gdl.iteso.mx
 # $FreeBSD$
-#
 
 PORTNAME=	xfractint
 PORTVERSION=	20.04p12
@@ -24,6 +20,7 @@ MAN1=		${PORTNAME}.1
 
 DESKTOP_ENTRIES+="Xfracint" "${COMMENT}" "" "${PORTNAME}" "" "false"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

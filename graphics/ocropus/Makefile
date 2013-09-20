@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--without-fst --without-tesseract --with-iulib=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSDL}

@@ -20,6 +20,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		%%PORTDOCS%%%%DOCSDIR%%/README
 PLIST_DIRS=	%%PORTDOCS%%%%DOCSDIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

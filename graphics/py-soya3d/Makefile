@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-soya3d
-# Date created:				2005-10-04
-# Whom:					Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	soya3d
 PORTVERSION=	0.14
@@ -45,6 +41,7 @@ SOYATUTVER=	0.14
 DISTFILES+=	SoyaTutorial-${SOYATUTVER}${EXTRACT_SUFX}
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

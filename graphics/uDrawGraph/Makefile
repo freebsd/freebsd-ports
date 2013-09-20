@@ -29,6 +29,7 @@ LINK_OPTS=	-sf
 
 RESTRICTED=	binary under GNU LGPL without accompanying source
 
+NO_STAGE=	yes
 do-install:
 # licenses required at startup
 	@cd ${WRKSRC}; \

@@ -29,6 +29,7 @@ OPTIONS_DEFINE=	DOCS
 DESKTOP_ENTRIES="Founts" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Graphics;Game;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

@@ -20,6 +20,7 @@ PYSETUP=	Setup.py
 USE_PYTHON_PREFIX=	yes
 PYDISTUTILS_PKGNAME=	gdmodule
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/\/usr\/lib/d ; \

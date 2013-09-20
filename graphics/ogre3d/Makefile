@@ -22,6 +22,7 @@ USES=		cmake
 USE_SDL=	sdl
 USE_XORG=	xaw
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBOOST}

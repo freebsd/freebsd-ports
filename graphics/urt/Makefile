@@ -58,6 +58,7 @@ MAN3=	buildmap.3 bwdithermap.3 colorquant.3 dither.3 ditherbw.3	\
 MAN5=	rle.5
 MLINKS=	rle.5 RLE.5
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

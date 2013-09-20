@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	tulip
-# Date created:			Feb 8, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	tulip
 PORTVERSION=	3.8.0
@@ -37,6 +32,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}-src
 PLIST_SUB+=	TULIP_VERSION=${PORTVERSION} \
 		TULIP_VERS=${PORTVERSION:R}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"

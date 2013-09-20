@@ -28,6 +28,7 @@ USE_LDCONFIG=	yes
 MAKEDIRS=	${WRKSRC}/src/modules/loaders/jpeg \
 		${WRKSRC}/src/modules/savers/jpeg
 
+NO_STAGE=	yes
 .include "../evas-core/Makefile.inc"
 CONFIGURE_ARGS+=	--enable-image-loader-jpeg
 

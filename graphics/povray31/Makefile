@@ -31,6 +31,7 @@ LATEST_LINK=	povray31
 #   no UNIX source files for POV-Ray 3.1.
 #
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

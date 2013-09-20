@@ -24,6 +24,7 @@ DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 PLIST_FILES=	bin/xmagv
 PORTDOCS=	xmagv.doc
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/xmagv.j ${PREFIX}/man/ja/man1
 	${MV} ${PREFIX}/man/ja/man1/xmagv.j ${PREFIX}/man/ja/man1/xmagv.1

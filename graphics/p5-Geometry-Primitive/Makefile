@@ -1,4 +1,3 @@
-# Ports collection makefile for:	Geometry-Primitive
 # Created by: chinsan
 # $FreeBSD$
 
@@ -35,4 +34,5 @@ MAN3=		Geometry::Primitive.3 \
 		Geometry::Primitive::Rectangle.3 \
 		Geometry::Primitive::Shape.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -28,6 +28,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${DISTNAME}.jar \
 SUB_FILES=	tintfu.sh
 SUB_LIST=	DISTNAME=${DISTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar ${JAVAJARDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/tintfu.sh ${PREFIX}/bin/tintfu

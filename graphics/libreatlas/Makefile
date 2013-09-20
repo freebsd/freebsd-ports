@@ -46,6 +46,7 @@ PLIST_FILES=	bin/LibreAtlas
 DESKTOP_ENTRIES="LibreAtlas" "${COMMENT}" "" "LibreAtlas" \
 		"Graphics;Viewer;" true
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|wx-config|$${WX_CONFIG}|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' \

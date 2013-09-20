@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	pictureboook
-# Date created:			    	25 December 2000
-# Whom:				    	Takanori Watanabe <takawata@FreeBSD.ORG>
-#
+# Created by: Takanori Watanabe <takawata@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	picturebook
 PORTVERSION=	20010422
@@ -21,6 +17,7 @@ ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GNOME=	imlib
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-build:

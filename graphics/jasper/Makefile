@@ -32,6 +32,7 @@ MASTER_SITE_IMAGEMAGICK=	\
 OPTIONS_DEFINE= OPENGL UUID
 UUID_DESC=	UUID support (required by GDAL)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENGL}

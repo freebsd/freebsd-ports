@@ -1,9 +1,5 @@
-# New ports collection makefile for:   qcread
-# Date created:        23 August 1998
-# Whom:                Bill Fumerola <billf@chc-chimes.com>
-#
+# Created by: Bill Fumerola <billf@chc-chimes.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qcread
 PORTVERSION=	0.3
@@ -16,6 +12,7 @@ COMMENT=	Supports both color and B&W parallel-port Connectix QuickCam for PC
 
 ONLY_FOR_ARCHS=	i386
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -I. -DFreeBSD ${CPPFLAGS} \
 		-o qcread qcread.c cqc.c -lm ${LDFLAGS}

@@ -17,4 +17,5 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 USES=			pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

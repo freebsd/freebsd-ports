@@ -15,6 +15,7 @@ COMMENT=	A Message Sequence Chart Renderer
 OPTIONS_DEFINE=	PNG
 OPTIONS_DEFAULT=	PNG
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPNG}

@@ -24,6 +24,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 
 SUB_FILES=	jpatch.sh
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/jpatch.jar ${JAVAJARDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/jpatch.sh ${PREFIX}/bin/jpatch

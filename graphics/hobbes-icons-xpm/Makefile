@@ -16,6 +16,7 @@ NO_BUILD=	yes
 # Where it will be installed (change pkg/PLIST if you change this)
 LIBDIR=		${PREFIX}/include/X11/pixmaps
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

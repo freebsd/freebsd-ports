@@ -1,9 +1,5 @@
-# New ports collection makefile for:	image_size
-# Date created:		13 May 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	image_size
 PORTVERSION=	0.0.20040618
@@ -30,6 +26,7 @@ DOCS_EN=	${RUBY_RD_FILES:N*.ja.rd} \
 DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 		${RUBY_RD_HTML_FILES:M*.ja.html}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/image_size.rb ${RUBY_SITELIBDIR}/
 

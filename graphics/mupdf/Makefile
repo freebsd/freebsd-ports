@@ -34,6 +34,7 @@ OPTIONS_DEFAULT=SCROLL
 SCROLL_DESC=	Build with scroll hacks
 JS_DESC=	JavaScript support (V8 engine)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${CC:T:Mclang} == "clang"

@@ -28,6 +28,7 @@ OPTIONS_DEFINE=		FONTS
 OPTIONS_DEFAULT=	FONTS
 FONTS_DESC=		install TrueType fonts
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFONTS}

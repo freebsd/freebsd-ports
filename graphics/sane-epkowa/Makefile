@@ -19,6 +19,7 @@
 # Given that there is no other way for us to get version 2.11.0,
 # and since this is allowed by the license, we go straight at the
 # URL for the .tar.gz we need.
+NO_STAGE=	yes
 # The various versions of the code are at:
 #
 # http://lx1.avasys.jp/iscan/2.7.0/iscan-2.7.0-1.c2.tar.gz

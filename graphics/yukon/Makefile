@@ -1,10 +1,5 @@
-# New ports collection makefile for:	yukon
-# Date created:		12th January 2010
-# Whom:			bms
-#
+# Created by: bms
 # $FreeBSD$
-#
-# TODO: roll svn tarball, add patches with sedification.
 
 PORTNAME=	yukon
 PORTVERSION=	2010011201
@@ -44,6 +39,7 @@ FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 SVN_REV=	158		# svn tip at epoch 2009120801
 SVNROOT_URI=	https://devel.neopsis.com/svn/yukon
 
+NO_STAGE=	yes
 do-fetch:
 	${MKDIR} ${WRKDIR}
 	svn export -r ${SVN_REV} ${SVNROOT_URI}/trunk ${WRKSRC}

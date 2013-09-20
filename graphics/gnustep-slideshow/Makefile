@@ -24,4 +24,5 @@ OBJCFLAGS+=	-Dsel_eq=sel_isEqual
 
 SLIDESHOWKIT_PORT?=	graphics/gnustep-slideshowkit
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

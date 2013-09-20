@@ -40,6 +40,7 @@ PLIST_FILES=	bin/pqiv
 CPPFLAGS+=	`pkg-config --cflags gtk+-2.0 gthread-2.0`
 LDFLAGS+=	`pkg-config --libs gtk+-2.0 gthread-2.0`
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MSORTING)

@@ -1,9 +1,5 @@
-# ports collection makefile for: 	danpei
-# Date created:         		4 Fev 2005
-# Whom:                 		Andrey V. Elsukov <bu7cher@yandex.ru>
-#
+# Created by: Andrey V. Elsukov <bu7cher@yandex.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	danpei
 PORTVERSION=	2.9.7
@@ -27,4 +23,5 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--without-included-gettext
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

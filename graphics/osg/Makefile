@@ -46,6 +46,7 @@ OPTIONS_DEFAULT=	FREETYPE GIF XRANDR
 # broken (openvrml from ports is too old)
 #		OPENVRML "Support for OpenVRML"             off
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # GUI toolkits are only needed for building examples, which are not even installed

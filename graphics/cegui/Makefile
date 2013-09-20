@@ -36,6 +36,7 @@ USE_PYTHON=	2.6+
 USES=		pathfix pkgconfig
 PLIST_SUB+=	WITH_OGRE=""
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

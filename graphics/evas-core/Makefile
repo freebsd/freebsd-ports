@@ -26,6 +26,7 @@ USE_LDCONFIG=	yes
 DATADIR=	${PREFIX}/share/evas
 EXAMPLESDIR=	${PREFIX}/share/examples/evas
 
+NO_STAGE=	yes
 .include "Makefile.inc"
 
 OPTIONS_DEFINE=	EET FONTCONFIG FRIBIDI

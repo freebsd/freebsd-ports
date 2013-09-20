@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gocr
-# Date created:				03 June 2002
-# Whom:					Kay Lehmann
-#
+# Created by: Kay Lehmann
 # $FreeBSD$
-#
 
 PORTNAME=	gocr
 PORTVERSION=	0.49
@@ -30,6 +26,7 @@ USE_TK_WRAPPER=	yes
 PLIST_FILES+=	bin/gocr.tcl
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@LIBS@|-L${LOCALBASE}/lib @LIBS@|g' ${WRKSRC}/src/Makefile.in
 .if defined(WITHOUT_X11)

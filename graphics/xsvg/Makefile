@@ -19,4 +19,5 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/xsvg
 MAN1=		xsvg.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

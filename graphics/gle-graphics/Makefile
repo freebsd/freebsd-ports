@@ -30,6 +30,7 @@ REINPLACE_FILES=	configure
 USE_GMAKE=	yes
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 post-patch:
 	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' ${REINPLACE_FILES}
 

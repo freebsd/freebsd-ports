@@ -31,6 +31,7 @@ LIBPAPER_DESC=	Enable libpaper
 TYPE1_DESC=	Ghostscript type1 fonts
 OPTIONS_DEFAULT=	TYPE1 X11
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTYPE1}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	seam-carving-gui
-# Date created:				18 Oct 2008
-# Whom:					buganini@gmail.com
-#
+# Created by: buganini@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	seam-carving-gui
 PORTVERSION=	1.11
@@ -24,6 +20,7 @@ WRKSRC=		${WRKDIR}/Src\ Seam\ Carving\ GUI\ ${PORTVERSION}
 
 PLIST_FILES=	bin/SeamCarvingGui
 
+NO_STAGE=	yes
 do-configure:
 	cd ${WRKSRC} && 	\
 	${SETENV} QMAKESPEC="${QMAKESPEC}" ${QMAKE} seam-carving-gui.pro

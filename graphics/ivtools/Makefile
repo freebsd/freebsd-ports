@@ -25,4 +25,5 @@ USE_XORG=	x11 xaw ice xext
 MANCOMPRESSED=	no
 MAN1=	idraw.1 iclass.1 drawtool.1 comterp.1 comdraw.1 flipbook.1 graphdraw.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

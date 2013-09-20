@@ -1,9 +1,4 @@
-# New ports collection makefile for:	libpgf
-# Date Created:				2012-06-04
-# Whom:					Jason E. Hale <bsdkaffee@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libpgf
 PORTVERSION=	6.12.24
@@ -26,6 +21,7 @@ ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 pre-configure:
 	@cd ${WRKSRC}; ${TOUCH} NEWS AUTHORS
 

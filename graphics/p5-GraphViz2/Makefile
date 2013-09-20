@@ -63,6 +63,7 @@ MAN3=		GraphViz2.3 \
 		GraphViz2::Parse::Yapp.3 \
 		GraphViz2::Utils.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

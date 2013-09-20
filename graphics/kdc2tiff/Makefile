@@ -23,6 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/kdc2jpeg bin/kdc2tiff
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^main|int main|' ${WRKSRC}/kdc2tiff.cpp

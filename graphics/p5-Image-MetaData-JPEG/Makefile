@@ -18,4 +18,5 @@ MAN3=		Image::MetaData::JPEG.3 \
 		Image::MetaData::JPEG::Structures.3 \
 		Image::MetaData::JPEG::TagLists.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

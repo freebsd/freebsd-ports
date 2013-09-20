@@ -27,6 +27,7 @@ PLIST_FILES=	include/radius.h \
 		libdata/pkgconfig/radius-engine.pc
 PLIST_DIRSTRY=	libdata/pkgconfig
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|lua5.1|lua-5.1|g' \
 		${WRKSRC}/acinclude.m4 ${WRKSRC}/configure

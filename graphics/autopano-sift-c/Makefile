@@ -30,6 +30,7 @@ PORTDOCS=	*
 MAN1=		autopano-c-complete.1 autopano.1 generatekeys.1
 MAN7=		autopano-sift-c.7
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

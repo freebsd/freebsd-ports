@@ -17,6 +17,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|: install-docsDATA|:|g' ${WRKSRC}/Makefile.in
 

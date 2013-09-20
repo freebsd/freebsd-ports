@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-gvgen
-# Date created:				19 May 2008
-# Whom:					Sofian Brabez <sbrabez@gmail.com>
-#
+# Created by: Sofian Brabez <sbrabez@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gvgen
 PORTVERSION=	0.9
@@ -21,6 +17,7 @@ PYDISTUTILS_EGGINFO=	GvGen-${PORTVERSION}-py${PYTHON_VER}.egg-info
 
 PORTDOCS=	user-guide.tex.lyx
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

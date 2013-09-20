@@ -19,4 +19,5 @@ USES=		bison cmake
 
 MAN1=		pcv.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

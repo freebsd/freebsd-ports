@@ -71,6 +71,7 @@ FFMPEG_DESC=	ffmpeg media handler
 GSTREAMER_DESC=	GStreamer media handler
 VAAPI_DESC=	VAAPI support (requires FFMPEG)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Cygnal option processing

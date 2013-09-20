@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-exifr
-# Date created:				4 October 2008
-# Whom:					stas
-#
+# Created by: stas
 # $FreeBSD$
 
 PORTNAME=	exifr
@@ -17,4 +14,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/exifr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

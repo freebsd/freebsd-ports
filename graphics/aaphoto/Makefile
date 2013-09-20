@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aaphoto
-# Date created:				2009-12-24
-# Whom:					Andras Horvath <han@log69.com>
-#
+# Created by: Andras Horvath <han@log69.com>
 # $FreeBSD$
-#
 
 PORTNAME=	aaphoto
 PORTVERSION=	0.41
@@ -32,6 +28,7 @@ PLIST_FILES=	bin/aaphoto
 PORTDOCS=	AUTHORS ChangeLog COPYING COPYRIGHT INSTALL LICENSE \
 		NEWS README TODO
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "amd64" || ${ARCH} == "i386") && ${OSVERSION} >= 700000

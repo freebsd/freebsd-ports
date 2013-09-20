@@ -25,6 +25,7 @@ WRKSRC=		${WRKDIR}/luxrays-${HG_NODEID}
 
 CMAKE_ARGS=	-DLUXRAYS_DISABLE_OPENCL:BOOL=ON
 
+NO_STAGE=	yes
 do-install:
 	(cd ${WRKSRC}/include && ${COPYTREE_SHARE} . ${PREFIX}/include)
 	${INSTALL_DATA} ${WRKSRC}/lib/libluxrays.a ${PREFIX}/lib

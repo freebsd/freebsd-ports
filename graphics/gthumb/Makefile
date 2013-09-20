@@ -43,6 +43,7 @@ SOUP_DESC=	Web services uploaders
 BRASERO_DESC=	Write galleries to CD/DVD (large dependency)
 YELP_DESC=	Viewer for built-in help system
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXIV2}

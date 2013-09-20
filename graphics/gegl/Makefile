@@ -42,6 +42,7 @@ EXAMPLES=	2geglbuffer csugar float-lookup \
 
 SHEBANG_FILES=	tools/xml_insert.sh
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPIXBUF}

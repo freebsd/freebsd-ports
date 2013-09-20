@@ -30,6 +30,7 @@ PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 PNG_CONFIGURE_ON=	--with-libpng=${LOCALBASE}
 PNG_CFLAGS=		-I${LOCALBASE}/include/libpng15
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTESTS}

@@ -28,6 +28,7 @@ USE_LDCONFIG=	yes
 MAN1=		gtkmorph.1 xmorph.1
 INFO=		xmorph
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

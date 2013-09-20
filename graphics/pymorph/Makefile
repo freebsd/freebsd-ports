@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pymorph
-# Date created:				2011-01-18
-# Whom:					Pedro Garcia Freitas <sawp@sawp.com.br>
-#
+# Created by: Pedro Garcia Freitas <sawp@sawp.com.br>
 # $FreeBSD$
-#
 
 PORTNAME=	pymorph
 PORTVERSION=	0.96
@@ -21,4 +17,5 @@ RUN_DEPENDS+=	${PYNUMPY}
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

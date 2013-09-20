@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	qslim
-# Date created:			Jan 6, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	qslim
 PORTVERSION=	2.1
@@ -38,6 +33,7 @@ CFLAGS+=	-DMIX_ANSI_IOSTREAMS -fpermissive -fPIC ${CPPFLAGS}
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -DHAVE_BOOL
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} -rf ${WRKSRC}/libgfx/
 

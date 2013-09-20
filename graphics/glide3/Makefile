@@ -1,9 +1,5 @@
-# New ports collection makefile for:	glide3
-# Date created:				31 Mar 2001
-# Whom:					Nick Sayer <nsayer@freebsd.org>
-#
+# Created by: Nick Sayer <nsayer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	glide3
 PORTVERSION=	20020113
@@ -37,6 +33,7 @@ CFLAGS+=	-O
 OPTIONS_DEFINE=	VOODOO3
 VOODOO3_DESC=	Enable this if you have a Voodoo3 or Banshee card
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900035

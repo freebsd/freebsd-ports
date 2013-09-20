@@ -22,6 +22,7 @@ PORTDOCS=	AUTHORS COPYING NEWS README THANKS
 MAN3=		libpuzzle.3 puzzle_set.3
 MAN8=		puzzle-diff.8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

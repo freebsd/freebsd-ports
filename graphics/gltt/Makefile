@@ -26,4 +26,5 @@ CONFIGURE_ARGS=	--with-ttf-includes=${LOCALBASE}/include/freetype1 \
 		--with-glut-libraries=${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

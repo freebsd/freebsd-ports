@@ -26,6 +26,7 @@ EXAMPLES=	japan-traces-small.config japan-traces.config \
 		nyxem-hosts-both.config \
 		witty-combined-small.config witty-combined.config
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|../lib|../lib/cuttlefish|" \
 		${WRKSRC}/bin/cuttlefish.pl

@@ -29,6 +29,7 @@ PORTDOCS=	NVIDIA_Texture_Tools_README.txt ChangeLog
 OPTIONS_DEFINE=	COMPRESSUI DOCS
 COMPRESSUI_DESC=Build compressor UI (requires Qt4)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOMPRESSUI}

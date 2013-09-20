@@ -29,6 +29,7 @@ MAN1=		blender.1
 
 OUTDIR=		${INSTALL_WRKSRC}/bin/2.68
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.options"
 
 .include <bsd.port.options.mk>

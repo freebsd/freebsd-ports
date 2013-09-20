@@ -1,9 +1,5 @@
-# New ports collection makefile for:    price
-# Date created:         28 Aug 2006
-# Whom:                 gurkan@phys.ethz.ch
-#
+# Created by: gurkan@phys.ethz.ch
 # $FreeBSD$
-#
 
 PORTNAME=	price
 PORTVERSION=	1.1.0
@@ -23,4 +19,5 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/PRICE-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

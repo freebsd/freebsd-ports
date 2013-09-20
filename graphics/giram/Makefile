@@ -27,6 +27,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		giram.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '36s,static ,,' ${WRKSRC}/src/tools/tool_disc.c
 	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \

@@ -27,6 +27,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_lcms.so \
 		%%PYTHON_SITELIBDIR%%/lcms.py
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/.libs/_lcms.so \
 		${PYTHON_SITELIBDIR}/_lcms.so

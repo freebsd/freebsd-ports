@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--with-libintl-prefix="${LOCALBASE}"
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

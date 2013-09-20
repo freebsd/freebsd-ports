@@ -23,6 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gtkam.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libgimp-2.0.so) && !defined(WITHOUT_GIMP)

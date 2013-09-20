@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/-/~/}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/SUBDIRS/ s|docs||; /SUBDIRS/ s|demo||' \
 		${WRKSRC}/Makefile.in

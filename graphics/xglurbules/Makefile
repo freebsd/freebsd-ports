@@ -1,9 +1,5 @@
-# New ports collection makefile for:   xglurbules
-# Date created:        30 August 2002
-# Whom:                Stephen Roome <steve@pepcross.com>
-#
+# Created by: Stephen Roome <steve@pepcross.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xglurbules
 PORTVERSION=	3.3
@@ -23,4 +19,5 @@ MANCOMPRESSED=	yes
 PLIST_FILES=	bin/xglurbules \
 		bin/xglurbules-noshm
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

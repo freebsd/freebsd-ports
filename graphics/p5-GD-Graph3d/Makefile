@@ -20,4 +20,5 @@ USE_DOS2UNIX=	lib/GD/Graph3d.pm # pod2man doesn't work without this
 
 MAN3=		GD::Graph3d.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -15,6 +15,7 @@ RUN_DEPENDS=	xv:${PORTSDIR}/${PKGCATEGORY}/xv
 
 NOMAN=		yes
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/xv ${PREFIX}/bin/xv-m17n
 	@if [ ! -f ${PREFIX}/bin/xv.orig ]; then \

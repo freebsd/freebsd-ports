@@ -24,6 +24,7 @@ USE_GNOME=	imlib
 PORTDOCS=	README imagesortrc.sample
 PLIST_FILES=	bin/imagesort
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

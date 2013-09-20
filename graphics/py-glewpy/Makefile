@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-glewpy
-# Date created:		2006-09-26
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	glewpy
 PORTVERSION=	0.7.4
@@ -28,4 +24,5 @@ USE_PYDISTUTILS=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

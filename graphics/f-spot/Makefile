@@ -44,6 +44,7 @@ CONFIGURE_ARGS+=--with-vendor-build-id=FreeBSD\ BSD\#\ Project
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|#!/bin/bash|#!/usr/bin/env bash|g' \
 		${WRKSRC}/src/Clients/MainApp/f-spot.in

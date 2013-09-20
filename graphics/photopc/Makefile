@@ -1,5 +1,4 @@
-# Created by:			Douglas Carmichael <dcarmich@mcs.com>
-#
+# Created by: Douglas Carmichael <dcarmich@mcs.com>
 # $FreeBSD$
 
 PORTNAME=	photopc
@@ -21,6 +20,7 @@ MAN1=		epinfo.1 photopc.1
 
 PORTDOCS=	README protocol.htm usage.htm
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

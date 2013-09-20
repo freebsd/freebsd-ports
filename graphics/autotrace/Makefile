@@ -28,6 +28,7 @@ LDFLAGS+=	$$(libpng-config --L_opts) ${PTHREAD_LIBS}
 
 MAN1=		autotrace.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}

@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	dynamechs
-# Date created:			Dec 6, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	dynamechs
 PORTVERSION=	4.0.p1
@@ -29,6 +24,7 @@ LDFLAGS+=	${PTHREAD_LIBS}
 ALL_TARGET=	freebsd
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-configure:

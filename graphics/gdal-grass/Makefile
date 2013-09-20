@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gdal-grass
-# Date created:		Feb 2006
-# Whom:			Laurent Courty
-#
+# Created by: Laurent Courty
 # $FreeBSD$
-#
 
 PORTNAME=	gdal-grass
 PORTVERSION=	1.4.3
@@ -27,6 +23,7 @@ CONFIGURE_ARGS=	--with-gdal=${LOCALBASE}/bin/gdal-config \
 		--with-autoload=${GDAL_AUTOLOAD_DIR}
 ALL_TARGET=
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-install:

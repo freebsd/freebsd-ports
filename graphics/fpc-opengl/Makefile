@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	OPENGL
 OPENGL_DESC=	Install opengl libraries
 OPTIONS_DEFAULT=	OPENGL
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

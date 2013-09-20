@@ -23,6 +23,7 @@ MAN1=		gqview.1
 CONFLICTS=	gqview-1.4* gqview-2.0*
 LATEST_LINK=	gqview-devel
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$prefix/share/doc/gqview-$$VERSION|${DOCSDIR}|g' \
 		${WRKSRC}/configure

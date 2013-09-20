@@ -47,4 +47,5 @@ MAN3=	Graph::Easy.3 \
 	Graph::Easy::Parser::VCG.3 \
 	Graph::Easy::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

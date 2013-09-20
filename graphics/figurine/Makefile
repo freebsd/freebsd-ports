@@ -1,9 +1,5 @@
-# New ports collection makefile for:	figurine
-# Date created:		15 September 2002
-# Whom:			Marc Fonvieille <blackend@FreeBSD.org>
-#
+# Created by: Marc Fonvieille <blackend@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	figurine
 PORTVERSION=	1.0.5
@@ -21,6 +17,7 @@ USE_XORG=	xpm
 
 MAN1=		figurine.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Optimizations produce bad assembly code on sparc64

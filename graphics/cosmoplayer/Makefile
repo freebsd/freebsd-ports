@@ -24,6 +24,7 @@ JARFILES=	npcosmop211.jar LICENSE.npcosmop211.txt
 
 PLIST_FILES=	${JARFILES:S|^|%%JAVAJARDIR%%/|}
 
+NO_STAGE=	yes
 post-extract:
 	${MV} ${WRKDIR}/comsoplayer-jar ${WRKSRC}
 	${MV} ${WRKSRC}/License ${WRKSRC}/LICENSE.npcosmop211.txt

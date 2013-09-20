@@ -1,9 +1,5 @@
-# New ports collection makefile for:   GraphicsMagick
-# Date created:        25 july 2005
-# Whom:                Ron van Daal
-#
+# Created by: Ron van Daal
 # $FreeBSD$
-#
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.1.15
@@ -63,6 +59,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 test check:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 

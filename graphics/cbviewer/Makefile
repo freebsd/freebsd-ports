@@ -41,6 +41,7 @@ DESKTOP_ENTRIES="CBViewer" "Comic book viewer" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 		"${PORTNAME}" "Graphics;Viewer;Java;" true
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

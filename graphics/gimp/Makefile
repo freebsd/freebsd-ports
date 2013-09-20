@@ -24,6 +24,7 @@ HELP_DESC=	Gimp-Help (50+MB distfile)
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHELP}

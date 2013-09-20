@@ -29,6 +29,7 @@ DESKTOP_ENTRIES=	"gsnapshot" \
 			"Graphics;GTK;" \
 			"false"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-configure:

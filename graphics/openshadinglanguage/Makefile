@@ -31,6 +31,7 @@ CXXFLAGS+=	-I${LOCALBASE}/include/flex
 USE_LDCONFIG=	yes
 USES=		bison cmake:outsource
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900000

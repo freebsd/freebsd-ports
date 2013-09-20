@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	LIBGD
 LIBGD_DESC=	Install gd graphic library
 OPTIONS_DEFAULT=	LIBGD
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

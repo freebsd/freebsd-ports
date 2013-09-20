@@ -19,4 +19,5 @@ OPTIONS_DEFINE=	LIBCAIRO
 LIBCAIRO_DESC=	Install cairo vector graphics library
 OPTIONS_DEFAULT=	LIBCAIRO
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -18,4 +18,5 @@ MAN1=		xbmbrowser.1
 
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -26,6 +26,7 @@ USES=		cmake:outsource pkgconfig
 USE_XZ=		yes
 USE_GNOME=	gtk20 glib20
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 # base GCC and clang in 9.1-RELEASE are insufficient:
 USE_GCC=	yes
 CFLAGS+=	-I${LOCALBASE}/include -fPIC ${PTHREAD_CFLAGS}

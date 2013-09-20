@@ -39,6 +39,7 @@ PLIST_FILES=	bin/gtk-update-icon-cache
 
 MAN1=		gtk-update-icon-cache.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-configure:

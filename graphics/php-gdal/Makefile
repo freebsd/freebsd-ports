@@ -28,6 +28,7 @@ USE_PHP_BUILD=	yes
 USES=		gmake
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig/php
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SWIG = swig/ s|$$|2.0|' ${WRKSRC}/../SWIGmake.base
 	@${REINPLACE_CMD} -e 's|^CC=.*$$|CC=${CC}|; s|^CXX=.*$$|CXX=${CXX}|; s|^CFLAGS=.*$$|CFLAGS=${CFLAGS}|' ${WRKSRC}/${MAKEFILE}

@@ -18,6 +18,7 @@ ALL_TARGET=	intergif
 
 PLIST_FILES=	bin/intergif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|=.*cc|= $$(CC)| ; \

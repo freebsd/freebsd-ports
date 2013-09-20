@@ -36,4 +36,5 @@ MAN3=		Bundle::Image::Info::Everything.3 \
 		Image::Info::XBM.3 \
 		Image::Info::XPM.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

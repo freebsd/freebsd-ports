@@ -27,6 +27,7 @@ PLIST_FILES=	bin/png22pnm bin/tif22pnm
 TIF22PNM_SRCS=	ptspnm.c minigimp.c miniglib.c ptstiff3.c tif22pnm.c
 PNG2PNM_SRCS=	png22pnm.c
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} \
 		&& ${CC} ${CFLAGS} -DNDEBUG -I${LOCALBASE}/include \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   	flPhoto
-# Date created:				24 November, 2003
-# Whom:                			johan
-#
+# Created by: johan
 # $FreeBSD$
-#
 
 PORTNAME=	flphoto
 PORTVERSION=	1.3.1
@@ -28,6 +24,7 @@ GNU_CONFIGURE=	yes
 MAN1=		flphoto.1
 MAN5=		album.5
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@OPTIM@|-DHAVE_CONFIG_H|g' ${WRKSRC}/Makefile.in
 

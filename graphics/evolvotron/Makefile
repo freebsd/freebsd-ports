@@ -38,6 +38,7 @@ DESKTOP_ENTRIES="Evolvotron" "Interactive image generator" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 		"${PORTNAME}" "Graphics;2DGraphics;" true
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 

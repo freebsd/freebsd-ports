@@ -22,6 +22,7 @@ CFLAGS+=	-I${LUA_INCDIR} -I${LOCALBASE}/include
 LDFLAGS+=	-shared -L${LOCALBASE}/lib -lgd -L${LUA_LIBDIR} -llua -lm
 GDFEATURES=	`gdlib-config --features |sed -e "s/GD_/-DGD_/g"`
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} ==	"amd64"

@@ -20,6 +20,7 @@ ALL_TARGET=	World
 MAN1=		plotmtv.1
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

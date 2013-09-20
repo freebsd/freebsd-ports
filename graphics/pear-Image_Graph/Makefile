@@ -20,6 +20,7 @@ DEFAULT_PHP_VER=	5
 
 LATEST_LINK=	pear-Image_Graph
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 post-patch:
 # don't modify images

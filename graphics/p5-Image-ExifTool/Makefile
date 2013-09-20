@@ -54,6 +54,7 @@ MAN3=		File::RandomAccess.3 Image::ExifTool.3		\
 
 MAN1=		exiftool.1
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

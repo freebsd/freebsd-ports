@@ -20,4 +20,5 @@ USE_GNUSTEP_INSTALL=	yes
 
 ADDITIONAL_OBJCFLAGS+=	-Dlog2=logb
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

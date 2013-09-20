@@ -36,6 +36,7 @@ MAGICK_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 MAGICK_CFLAGS=		-DIMAGEPIPE
 OPTIONS_SUB=		yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

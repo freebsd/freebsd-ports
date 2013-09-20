@@ -1,9 +1,5 @@
-# New ports collection makefile for: seejpeg-1.10.tgz
-# Date created:		2000 Oct 19
-#
-# Whom:			Donn Miller <dmmiller@cvzoom.net>
+# Created by: Donn Miller <dmmiller@cvzoom.net>
 # $FreeBSD$
-#
 
 PORTNAME=	seejpeg
 PORTVERSION=	1.10
@@ -28,6 +24,7 @@ USE_GMAKE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-extract:
 	${CHMOD} 0644 ${WRKSRC}/Makefile
 

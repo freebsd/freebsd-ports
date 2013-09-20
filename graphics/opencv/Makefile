@@ -50,6 +50,7 @@ TBB_DESC=	TBB support
 
 OPTIONS_DEFAULT=	EIGEN2 JASPER JPEG PNG TIFF V4L
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}

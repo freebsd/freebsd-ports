@@ -17,6 +17,7 @@ OPTIONS_DEFAULT=	X11
 
 OPTIONSFILE?=	${PORT_DBDIR}/ruby-${PORTNAME}/options
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

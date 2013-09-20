@@ -25,6 +25,7 @@ SHEBANG_FILES=	makehtml maketex
 SUFFIXES=	flib clib bin
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH:M*64*}

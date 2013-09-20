@@ -19,6 +19,7 @@ MAKE_ARGS=	CC=${CC} CCC=${CXX}
 MAKEFILE=	makefile
 EXAMPLESDIR=	${PREFIX}/libexec/openNURBS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != i386

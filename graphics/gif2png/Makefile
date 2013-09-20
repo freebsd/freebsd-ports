@@ -1,9 +1,5 @@
-# New ports collection makefile for: gif2png
-# Date created:         30 Aug 1999
-# Whom:                 saper@system.pl
-#
+# Created by: saper@system.pl
 # $FreeBSD$
-#
 
 PORTNAME=	gif2png
 PORTVERSION=	2.5.4
@@ -25,4 +21,5 @@ PLIST_FILES=	bin/${PORTNAME} bin/web2png
 CPPFLAGS+=	`libpng-config --I_opts`
 LDFLAGS+=	`libpng-config --L_opts`
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -41,6 +41,7 @@ GCC_DESC=	Build with modern GCC (better OpenMP support)
 
 OPTIONS_DEFAULT=	GPHOTO RAWSPEED GCC
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGPHOTO}

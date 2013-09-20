@@ -30,4 +30,5 @@ MAN3=		Image::Compare.3 \
 		Image::Compare::THRESHOLD.3 \
 		Image::Compare::THRESHOLD_COUNT.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -25,4 +25,5 @@ MAN3=	Color::Palette.3 \
 	Color::Palette::Schema.3 \
 	Color::Palette::Types.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

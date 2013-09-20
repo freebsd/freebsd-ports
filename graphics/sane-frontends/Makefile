@@ -28,6 +28,7 @@ OPTIONS_DEFINE=	GTK1 GIMP
 GTK1_DESC=	GTK1 support (Default is GTK2)
 GIMP_DESC=	also build xscanimage as a GIMP plug-in
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK1}

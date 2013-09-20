@@ -40,6 +40,7 @@ WMS_DESC=		Web map service server and client support
 WFS_DESC=		Web feature service support
 MAPSERV_DESC=		Mapserv cgi interface support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMAPSERV}

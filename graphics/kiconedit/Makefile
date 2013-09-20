@@ -1,9 +1,4 @@
-# New ports collection makefile for:	kiconedit
-# Date created:		2008-09-01
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kiconedit
 PORTVERSION=	${EXTRA_VER}
@@ -23,6 +18,7 @@ USES=		cmake
 
 EXTRA_VER=	4.4.0
 
+NO_STAGE=	yes
 post-patch:
 #Fix build with kdelibs>=4.5.0
 	${REINPLACE_CMD} -e 's,V4.1.2-Based,V4.2-Based,g' \

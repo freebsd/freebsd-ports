@@ -19,6 +19,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MAN1PREFIX}/man/man1 \
 MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/if \[/s|==|=|g' ${WRKSRC}/configure
 

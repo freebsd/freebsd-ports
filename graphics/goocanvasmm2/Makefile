@@ -21,4 +21,5 @@ CONFIGURE_ARGS=	--disable-documentation
 USE_XZ=		yes
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

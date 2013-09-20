@@ -16,6 +16,7 @@ USE_PYDISTUTILS=	easy_install
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|cmdclass={'upload_doc': upload_doc}||" \
 		${WRKSRC}/setup.py

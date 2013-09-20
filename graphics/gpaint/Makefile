@@ -1,7 +1,5 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gpaint
 PORTVERSION=	0.3.3
@@ -21,6 +19,7 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/gpaint-2 %%DATADIR%%/glade/gpaint.glade
 PLIST_DIRS=	%%DATADIR%%/glade %%DATADIR%%
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|_RESPONSE_DISCARD|_RESPONSE_NO|g' ${WRKSRC}/src/drawing.c

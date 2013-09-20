@@ -1,7 +1,4 @@
-# New ports collection makefile for:	proj
-# Date created:				15 November 2001
-# Whom:					jedgar@FreeBSD.org
-#
+# Created by: jedgar@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	proj
@@ -28,6 +25,7 @@ USE_ZIP=	yes
 MAN1=		cs2cs.1 geod.1 proj.1
 MAN3=		pj_init.3
 
+NO_STAGE=	yes
 post-extract:
 	@${UNZIP_CMD} -q ${DISTDIR}/${DATUM_GRID_FILES} -d ${WRKSRC}/nad
 

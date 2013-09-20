@@ -20,6 +20,7 @@ NO_WRKSUBDIR=	yes
 
 PORTDOCS=	release-notes.txt
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${PREFIX}/share/gimp/scripts/
 

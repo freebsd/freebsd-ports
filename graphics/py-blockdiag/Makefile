@@ -36,6 +36,7 @@ PDF_DESC=	Enable PDF output
 
 OPTIONS_DEFAULT=	PDF
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPDF}

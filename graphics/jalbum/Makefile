@@ -23,6 +23,7 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 SUB_FILES=	jalbum.sh
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${TAR} -cf - * | ${TAR} -xf - -C ${DATADIR}

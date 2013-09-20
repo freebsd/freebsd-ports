@@ -1,15 +1,5 @@
-# New ports collection makefile for:   linux-panorama-tools
-# Date created:        26 august 2004
-# Whom:                cartola (Carlos E. G. Carvalho)
-#
+# Created by: cartola (Carlos E. G. Carvalho)
 # $FreeBSD$
-#
-# This port has been made as a running dependence for the hugin port.
-# The hugin port for itself would run with no problem without this port,
-# but the final step that generates the panorama images make use of the
-# external program PTStitcher, installed by this port.
-# This port, as a dependence, does not install the complete linux
-# panorama tools, just the few things necessary to hugin.
 
 PORTNAME=	linux-panorama-tools
 PORTVERSION=	2.6b1
@@ -31,6 +21,7 @@ USE_LINUX_APPS=	jpeg png10 tiff
 
 WRKSRC=	${WRKDIR}/PTLinux
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Helpers/PTStitcher ${PREFIX}/usr/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/libpano12.so ${PREFIX}/usr/lib/

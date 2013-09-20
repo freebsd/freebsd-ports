@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	HERMES
 HERMES_DESC=	Install hermes graphics library
 OPTIONS_DEFAULT=	HERMES
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

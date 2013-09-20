@@ -17,4 +17,5 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

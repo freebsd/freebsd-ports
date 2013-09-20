@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libEMF
-# Date created:		04 Oct 2003
-# Whom:			NAKATA Maho <maho@FreeBSD.org>
-#
+# Created by: NAKATA Maho <maho@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libEMF
 PORTVERSION=	1.0
@@ -16,6 +12,7 @@ COMMENT=	Enhanced Metafile Library
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

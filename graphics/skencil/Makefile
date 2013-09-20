@@ -37,6 +37,7 @@ CFLAGS+=	-I${TK_INCLUDEDIR} -I${LOCALBASE}/include \
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

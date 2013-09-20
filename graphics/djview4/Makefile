@@ -36,6 +36,7 @@ USE_WEBPLUGINS=		gecko*
 WEBPLUGINS_DIR=		${PREFIX}/lib/djview4/plugins
 WEBPLUGINS_FILES=	nsdejavu.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 

@@ -33,6 +33,7 @@ AALIB_CONFIGURE_OFF=	--without-aalib
 NLS_USES=	gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

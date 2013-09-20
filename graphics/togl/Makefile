@@ -28,6 +28,7 @@ LDFLAGS+=	-L${TK_LIBDIR}
 
 PLIST_SUB+=	TK_VER=${TK_VER}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

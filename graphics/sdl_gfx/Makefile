@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE_i386=	MMX
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMMX}

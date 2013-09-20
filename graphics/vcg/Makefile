@@ -25,6 +25,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 MANL=		pbmrot90.l pbmshift.l pbm2hp.l vcgdemomaker.l vcg.l xvcg.l
 
+NO_STAGE=	yes
 pre-patch:
 	@${MKDIR} ${WRKSRC}/preconf/X11ccFreeBSD
 .for file in conf demo.csh globals.h tMakefile

@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	libAfterImage
-# Date created:			Oct 7, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libafterimage
 PORTVERSION=	1.20
@@ -39,6 +34,7 @@ MAN1=		ascompose.1x
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${MACHINE_CPU:Mmmx}

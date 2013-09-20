@@ -28,6 +28,7 @@ MAN1=			stl2ps.1 stlinfo.1 stl2pov.1
 OPTIONS_DEFINE=		PYCAIRO
 PYCAIRO_DESC=		Use (py)Cairo to enable stl2pdf
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 STL_SCRIPTS=		stl2pov stl2ps stlinfo

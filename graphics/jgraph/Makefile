@@ -23,4 +23,5 @@ MAKE_ENV+=	DATADIR=${DATADIR}
 
 CFLAGS+=	-Wno-return-type
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,6 +23,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 PLIST_FILES=	include/alpng.h \
 		lib/libalpng.a
 
+NO_STAGE=	yes
 do-configure:
 	@${REINPLACE_CMD} -e "s/gcc/${CC}/g" ${WRKSRC}/makefile
 

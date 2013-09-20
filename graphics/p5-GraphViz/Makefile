@@ -37,4 +37,5 @@ regression-test: build
 	cd ${WRKSRC} && ${MAKE} test
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

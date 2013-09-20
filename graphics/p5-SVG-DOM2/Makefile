@@ -21,4 +21,5 @@ MAN3=		SVG::DOM2.3 SVG::DOM2::Attribute::Transform.3 \
 		SVG::DOM2::Element::Shape::Font.3 \
 		SVG::DOM2::Element::Shape::Stroke.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

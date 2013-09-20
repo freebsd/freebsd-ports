@@ -28,6 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lpng -lz -ltiff -ljpeg -lm
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

@@ -32,6 +32,7 @@ MAN1=		qgis.1
 
 OPTIONS_DEFINE=		GRASS POSTGIS MAPSERVER PYTHON
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 800000

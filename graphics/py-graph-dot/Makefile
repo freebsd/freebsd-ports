@@ -21,4 +21,5 @@ PYDISTUTILS_PKGNAME=	python_graph_dot
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

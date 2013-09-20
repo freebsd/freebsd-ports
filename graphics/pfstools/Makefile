@@ -68,6 +68,7 @@ MLINKS=		pfsoutppm.1 \
 		pfsoutppm.1 \
 		pfsoutrgbe.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNETPBM}

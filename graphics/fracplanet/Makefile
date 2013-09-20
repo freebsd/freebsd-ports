@@ -28,6 +28,7 @@ MAN1=		${PORTNAME}.1
 PORTDOCS=	${PORTNAME}.css ${PORTNAME}.htm
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 .for file in BUILD VERSION configure
 	@${REINPLACE_CMD} -e \

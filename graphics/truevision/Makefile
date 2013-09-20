@@ -29,6 +29,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include \
 LDFLAGS+=	-L${LOCALBASE}/lib \
 		`pkg-config --libs gtkglext-1.0`
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|CXXFLAGS=""||g ; \
 		 s|-I/usr/include/gtkglext-1.0/||g ; \

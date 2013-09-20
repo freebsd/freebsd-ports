@@ -1,9 +1,5 @@
-# New ports collection makefile for:	x-face.el
-# Date created:                17 Feb 2002
-# Whom:                        Yoichi NAKAYAMA <yoichi@FreeBSD.org>
-#
+# Created by: Yoichi NAKAYAMA <yoichi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xface.el
 PORTVERSION=	1.3.6.24
@@ -44,6 +40,7 @@ PLIST_SUB+=	E21_ONLY="@comment " \
 PLIST_SUB+=	LISPDIR=${LISPDIR} \
 		DOCSDIR=share/doc/${PORTNAME}
 
+NO_STAGE=	yes
 post-extract:
 .if (${EMACS_PORT_NAME} == emacs21)
 	${CP} ${DISTDIR}/x-face-e21.el.gz ${WRKSRC}

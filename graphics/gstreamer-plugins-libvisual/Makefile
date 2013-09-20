@@ -11,4 +11,5 @@ GST_PLUGIN=	libvisual
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

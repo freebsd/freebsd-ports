@@ -32,6 +32,7 @@ OPTIONS_DEFINE=	X11 IMLIB2 SLANG DOCS
 OPTIONS_DEFAULT=	X11 IMLIB2
 X11_DESC=	X11 and OpenGL support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

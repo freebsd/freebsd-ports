@@ -34,6 +34,7 @@ PLIST_FILES=	bin/exiftran bin/ida lib/X11/app-defaults/Ida \
 		${DESKTOPDIR:S/${PREFIX}\///}/ida.desktop
 PLIST_DIRSTRY=	${DESKTOPDIR:S/${PREFIX}\///}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGIF}

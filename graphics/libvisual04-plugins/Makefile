@@ -34,6 +34,7 @@ DATADIR=	${PREFIX}/share/${PORTNAME}-${PKGNAMESUFFIX:C/.*-//}-${MAJORMINOR}
 PLIST_SUB=	PLUGINS_BASE_DIR=${LOCALBASE}/lib/${PORTNAME}-${MAJORMINOR} \
 		DATADIR_REL=${DATADIR_REL}
 
+NO_STAGE=	yes
 pre-configure:
 # /usr/bin/objformat is obsolete, hardcode the object format
 	@${REINPLACE_CMD} -e 's,objformat=.*,objformat=elf,' \

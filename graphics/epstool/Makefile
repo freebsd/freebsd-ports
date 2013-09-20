@@ -29,6 +29,7 @@ PLIST_FILES=	bin/epstool
 PORTDOCS=	epstool.htm gsview.css
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/epstool ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/epstool.1 ${MANPREFIX}/man/man1

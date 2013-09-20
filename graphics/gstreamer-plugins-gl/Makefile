@@ -27,4 +27,5 @@ CONFIGURE_ARGS=--disable-examples
 
 PLIST_SUB=	VERSION="0.10"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

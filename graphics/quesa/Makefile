@@ -1,9 +1,5 @@
-# New ports collection makefile for: quesa
-# Date created:		03 Feb 2004
-# Whom:			Igor Pokrovsky <tiamat@comset.net>
-#
+# Created by: Igor Pokrovsky <tiamat@comset.net>
 # $FreeBSD$
-#
 
 PORTNAME=	quesa
 PORTVERSION=	1.8
@@ -28,6 +24,7 @@ USE_LDCONFIG=	yes
 
 WRKSRC_EXAMPLES=	${WRKDIR}/${PORTNAME}examples-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined (WITH_EXAMPLES)

@@ -26,6 +26,7 @@ USE_LDCONFIG=	yes
 MAN3=		libmng.3
 MAN5=		mng.5 jng.5
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MMNG_OPTIMIZE}
 MAKE_ARGS+=	WITH_MNG_OPTIMIZE=true

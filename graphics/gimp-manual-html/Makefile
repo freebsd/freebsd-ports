@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gimp-manual
-# Date created:		5 June 1998
-# Whom:			Brett Taylor
-#
+# Created by: Brett Taylor
 # $FreeBSD$
-#
 
 PORTNAME=	GimpUserManual
 PORTVERSION=	2
@@ -20,6 +16,7 @@ COMMENT=	The user manual for the GNU Image Manipulation Program (GIMP)
 DOCFORMAT=HTML
 .else
 .if ${DOCFORMAT} != "HTML" && ${DOCFORMAT} != "PDF"
+NO_STAGE=	yes
 .BEGIN:
 	@${ECHO_MSG} "ERROR: invalid value for DOCFORMAT: \"${DOCFORMAT}\""
 	@${ECHO_MSG} "Possible values are:  HTML, PDF."

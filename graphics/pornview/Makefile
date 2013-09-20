@@ -26,6 +26,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 OPTIONS_DEFINE=	LIBXINE MPLAYER NLS
 OPTIONS_DEFAULT=	LIBXINE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MLIBXINE}
 LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine

@@ -23,6 +23,7 @@ HLPSKRIPT=	jave6
 
 PLIST_SUB+=DATADIR=%%JAVASHAREDIR%%/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO} "Installing JavE6 files in ${DATADIR}..."
 	@${MKDIR} ${DATADIR}

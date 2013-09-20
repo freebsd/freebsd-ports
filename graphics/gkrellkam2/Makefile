@@ -24,4 +24,5 @@ PLIST_FILES=	libexec/gkrellm2/plugins/gkrellkam2.so
 MAKE_ENV+=	MKDIR="${MKDIR}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

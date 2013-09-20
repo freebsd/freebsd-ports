@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 MASTERDIR=	${.CURDIR}/../../x11/ruby-gnome2
 PKGDIR=		${.CURDIR}
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile.common"
 
 WRKSRC=		${RUBY_GNOME_WRKSRC}/rsvg2

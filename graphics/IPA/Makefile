@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	ipa
 # Created by: ijliao
 # $FreeBSD$
 
@@ -24,4 +22,5 @@ MAN1=		iterm.1
 MAN3=		IPA.3 IPA::Geometry.3 IPA::Global.3 IPA::Local.3 IPA::Misc.3 \
 		IPA::Morphology.3 IPA::Point.3 IPA::Region.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -31,6 +31,7 @@ KMS_DESC=	Enable KMS support
 OPTIONS_DEFAULT+=	MANPAGES
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKMS}

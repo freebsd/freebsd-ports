@@ -68,6 +68,7 @@ PERL5=		configure
 MAN1=		${PORTNAME}.1 scanadf-perl.1 scanimage-perl.1
 PORT_VERBS=	${PORTNAME} Gscan2pdf
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -35,6 +35,7 @@ DST_DESC=	Use local time for timestamps
 FITS_DESC=	FITS output support
 GIMP_DESC=	Install GIMP plugin
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCONTRAST}

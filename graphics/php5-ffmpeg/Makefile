@@ -1,9 +1,5 @@
-# New ports collection makefile for:	php4-ffmpeg
-# Date created:		2006-10-19
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.6.0
@@ -28,6 +24,7 @@ USE_PHPEXT=	yes
 
 CONFIGURE_ARGS+=	--with-ffmpeg=${LOCALBASE}/include
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|==|=|g' ${WRKSRC}/config.m4
 

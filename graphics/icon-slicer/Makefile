@@ -24,6 +24,7 @@ PLIST_FILES=	bin/icon-slicer
 
 PORTDOCS=	AUTHORS ChangeLog README TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

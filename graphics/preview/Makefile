@@ -20,4 +20,5 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/Preview
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

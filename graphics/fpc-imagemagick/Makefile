@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	IMAGEMAGICK
 IMAGEMAGICK_DESC=	Install ImageMagick image proccesing tool
 OPTIONS_DEFAULT=	IMAGEMAGICK
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

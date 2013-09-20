@@ -31,6 +31,7 @@ CONFIGURE_ARGS+=	--enable-gd2_0 \
 		--with-gd-include="${LOCALBASE}/include"
 LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Hmm, GREP and TRUE seem to be defined in the bsd.port.post.mk stage.

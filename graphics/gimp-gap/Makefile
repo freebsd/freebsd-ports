@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gimp-gap
-# Date created:		2007-08-22
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gimp-gap
 PORTVERSION=	2.4.0
@@ -41,4 +37,5 @@ USE_GNOME=	intltool
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ffmpeg
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

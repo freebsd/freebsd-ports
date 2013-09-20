@@ -23,6 +23,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 OPTIONS_DEFINE=	EXAMPLES
 EXAMPLES_DESC=	Compile examples, need libglut
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}

@@ -50,6 +50,7 @@ EXAMPLESDIR2=		${EXAMPLESDIR}/tests
 EXAMPLES_FILES2=	accuracy defaults dynamic events fsaa fsinput iconify \
 			joysticks peter reopen tearing version
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

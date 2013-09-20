@@ -32,6 +32,7 @@ MAKE_ENV+=	RM="${RM} -f"
 
 MAN1=		xpaint.1 pdfconcat.1 imgmerge.1
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} -f ${WRKSRC}/XPaint.ad
 

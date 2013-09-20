@@ -1,9 +1,5 @@
-# New ports collection makefile for:	unpaper
-# Date created:		01 February 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	unpaper
 PORTVERSION=	0.3
@@ -13,6 +9,7 @@ MASTER_SITES=	CENKES BERLIOS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Post-processing tool for scanned sheets of paper
 
+NO_STAGE=	yes
 do-build:
 	@${CC} ${CFLAGS} -o ${WRKSRC}/${PORTNAME} \
 		${WRKSRC}/src/${PORTNAME}.c -lm

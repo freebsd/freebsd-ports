@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	SETUID DOCS
 OPTIONS_DEFAULT=	SETUID
 SETUID_DESC=	Install with setuid bit set
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSETUID}

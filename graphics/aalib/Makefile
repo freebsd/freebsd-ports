@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INFO=		aalib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

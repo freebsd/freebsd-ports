@@ -46,6 +46,7 @@ NO_WRKSUBDIR=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-r${PLUS_REV}-PLUS
 PLUS_REV=	3576
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_CMD} "---> Installing JAR files"
 	${MKDIR} ${TARGET_DIR}/lib

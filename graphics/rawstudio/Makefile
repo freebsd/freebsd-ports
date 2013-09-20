@@ -32,6 +32,7 @@ USE_GNOME=	gtk20 libxml2 gconf2 desktopfileutils gnomehack
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's, libssl,,' ${WRKSRC}/configure
 

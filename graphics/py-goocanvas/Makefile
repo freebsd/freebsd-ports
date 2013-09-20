@@ -26,6 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docs
 USES=		gmake pkgconfig
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(PYGOBJECT_PYGDOCS)/style.css||; \
 		s|demo docs|demo|' \

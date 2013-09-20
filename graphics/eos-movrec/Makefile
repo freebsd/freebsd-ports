@@ -30,6 +30,7 @@ DESKTOP_ENTRIES=	"eos_movrec" "EOS Camera Movie Recorder" \
 			"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 			"eos_movrec" "Graphics;Photography;Qt;" false
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,GLIBC,${OPSYS},' ${WRKSRC}/os_api.h
 

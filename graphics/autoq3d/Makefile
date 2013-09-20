@@ -29,6 +29,7 @@ DESKTOP_ENTRIES="AutoQ3D" \
 		"Graphics;3DGraphics;Qt;" \
 		false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 post-patch:
 .for file in src/main.cpp src/fgui/cadform.cpp src/dialogs/prgsettings.cpp

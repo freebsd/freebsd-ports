@@ -24,6 +24,7 @@ NO_WRKSUBDIR=	yes
 MAN1=		xmandel.1
 PLIST_FILES=	bin/xmandel
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -i '' -e 's|malloc.h|stdlib.h|' ${WRKSRC}/mandel.c
 

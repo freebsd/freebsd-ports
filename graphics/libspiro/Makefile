@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libspiro
-# Date created:				10 Janurary 2008
-# Whom:					Naram Qashat <cyberbotx@cyberbotx.com>
-#
+# Created by: Naram Qashat <cyberbotx@cyberbotx.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libspiro
 DISTVERSION=	20071029
@@ -21,4 +17,5 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

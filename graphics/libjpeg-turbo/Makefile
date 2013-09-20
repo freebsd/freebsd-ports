@@ -30,6 +30,7 @@ SOVERSION=	11
 OPTIONS_DEFINE=	PIC
 PIC_DESC=	Static library with PIC (required for VirtualGL)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPIC}

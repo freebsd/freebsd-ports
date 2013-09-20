@@ -1,9 +1,5 @@
-# New ports collection makefile for:	insert
-# Date created:				Wed 12 Jul 2000
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	jslice
 PORTVERSION=	1.0.0
@@ -18,6 +14,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
 PLIST_FILES=	bin/jslice
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jslice ${PREFIX}/bin
 

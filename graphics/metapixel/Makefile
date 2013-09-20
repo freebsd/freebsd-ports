@@ -32,6 +32,7 @@ PLIST_FILES=	bin/metapixel \
 PORTDOCS=	NEWS README
 PORTEXAMPLES=	metapixelrc
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

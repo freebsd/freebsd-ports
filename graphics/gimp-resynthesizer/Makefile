@@ -28,6 +28,7 @@ USE_GCC=	any # uses nested functions (gcc ext.)
 OPTIONS_DEFINE=	THREADS
 THREADS_DESC=	Threading support (produces nondeterministic results)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -39,6 +39,7 @@ MAN1=		dune.1 illegal2vrml.1
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Try to fix parallel builds (-jX) by calling submakes correctly

@@ -19,4 +19,5 @@ USES=		pkgconfig
 MAN1=		svg2png.1
 PLIST_FILES=	bin/svg2png
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

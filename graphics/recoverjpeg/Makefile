@@ -21,6 +21,7 @@ MAN1=		recoverjpeg.1
 OPTIONS_DEFINE=	SSCRIPTS
 SSCRIPTS_DESC=	Install sort-pictures script
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if  ${PORT_OPTIONS:MSSCRIPTS}

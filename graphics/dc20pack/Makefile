@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dc20pack
-# Date created:		Jul 31 1999
-# Whom:			Maurice Castro <maurice@serc.rmit.edu.au>
-#
+# Created by: Maurice Castro <maurice@serc.rmit.edu.au>
 # $FreeBSD$
-#
 
 PORTNAME=		dc20pack
 PORTVERSION=		1.0
@@ -17,6 +13,7 @@ COMMENT=	Digital camera control and download tool for Kodak DC20/25 camera
 
 WRKSRC=			${WRKDIR}
 
+NO_STAGE=	yes
 post-extract:
 	for file in `${FIND} ${WRKSRC} -type f`; do \
 		${TR} -d '\015' < $${file} > $${file}.new; \

@@ -21,6 +21,7 @@ OPTIONS_DEFINE=	PHP PYTHON RUBY
 
 OPTIONS_SUB=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPHP} || ${PORT_OPTIONS:MPYTHON} || ${PORT_OPTIONS:MRUBY}

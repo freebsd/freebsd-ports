@@ -22,6 +22,7 @@ OPTIONS_DEFAULT=X11
 
 OPTIONS_SUB=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MX11}

@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	tinows
-# Date created:				2011-10-18
-# Whom:					Joris Dedieu <joris.dedieu@gmail.com>
-#
+# Created by: Joris Dedieu <joris.dedieu@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=		tinyows
 PORTVERSION=		1.0.0
@@ -23,6 +19,7 @@ GNU_CONFIGURE=		YES
 OPTIONS_DEFINE=		FASTCGI
 OPTIONS_DEFAULT=	FASTCGI
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFASTCGI}

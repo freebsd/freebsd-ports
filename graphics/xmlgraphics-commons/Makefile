@@ -20,6 +20,7 @@ USE_ANT=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/build/${PORTNAME}-${PORTVERSION}.jar \
 		${JAVAJARDIR}/${PORTNAME}.jar

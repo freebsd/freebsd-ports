@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|make|$$(MAKE)| ; \
 		/bin/s|$$(INSTALL)|${INSTALL_PROGRAM}| ; \

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	ffff
-# Date created:				Sep 20, 2006
-# Whom:					rossiya@gmail.com
-#
+# Created by: rossiya@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	ffff
 PORTVERSION=	323
@@ -34,6 +30,7 @@ PLIST_FILES=	bin/ffff
 # contains x86 assembler
 ONLY_FOR_ARCHS=	i386
 
+NO_STAGE=	yes
 do-build:
 .for f in ${SOURCE}
 	${CXX} ${CXXFLAGS} -c ${WRKSRC}/${f}.cpp -o ${WRKSRC}/${f}.obj

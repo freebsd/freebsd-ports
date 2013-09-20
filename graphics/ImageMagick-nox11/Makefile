@@ -1,13 +1,10 @@
-# New ports collection makefile for:   ImageMagick-nox11
-# Date created:		14 May 2011
-# Whom:			mm@FreeBSD.org
-#
+# Created by: mm@FreeBSD.org
 # $FreeBSD$
-#
 
 WITHOUT_X11=	yes
 PORTSCOUT=	ignore:1
 
 MASTERDIR=	${.CURDIR}/../ImageMagick
 
+NO_STAGE=	yes
 .include        "${MASTERDIR}/Makefile"

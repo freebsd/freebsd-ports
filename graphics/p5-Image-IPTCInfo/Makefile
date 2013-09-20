@@ -16,6 +16,7 @@ SHEBANG_FILES=	demo.pl
 
 MAN3=		Image::IPTCInfo.3
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} -f ${WRKSRC}/._*
 

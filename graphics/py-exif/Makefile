@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-exif
-# Date created:		30 January 2001
-# Whom:	      		Johann Visagie <wjv@FreeBSD.org>
-#
+# Created by: Johann Visagie <wjv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	exif
 PORTVERSION=	0.9
@@ -21,6 +17,7 @@ WRKSRC=		${WRKDIR}/pyexif
 DATADIR=	${PREFIX}/share/py-exif
 DOCSDIR=	${PREFIX}/share/doc/py-exif
 
+NO_STAGE=	yes
 post-patch:
 .for pyfile in exiftool exifinfo.py
 	@ cd ${WRKSRC}/bin && ${MV} ${pyfile} ${pyfile}.orig && \

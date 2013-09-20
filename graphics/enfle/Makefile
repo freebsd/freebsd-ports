@@ -1,9 +1,5 @@
-# New ports collection makefile for:	enfle
-# Date created:		Tue Sep 28 02:25:17 JST 1999
-# Whom:			Yuki Sawada <samy@goldmoon.org>
-#
+# Created by: Yuki Sawada <samy@goldmoon.org>
 # $FreeBSD$
-#
 
 PORTNAME=	enfle
 PORTVERSION=	20101006
@@ -45,6 +41,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"

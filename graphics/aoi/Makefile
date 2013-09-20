@@ -34,6 +34,7 @@ DESKTOP_ENTRIES="Art of Illusion" "3D modelling and rendering studio" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 		"${PORTNAME}" "Graphics;3DGraphics;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

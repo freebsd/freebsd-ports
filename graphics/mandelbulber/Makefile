@@ -25,6 +25,7 @@ PLIST_DIRSTRY=	share/applications
 PORTDOCS=	README NEWS
 PORTDATA=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

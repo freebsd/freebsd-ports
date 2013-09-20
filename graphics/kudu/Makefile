@@ -32,6 +32,7 @@ DESKTOP_ENTRIES="Kudu" \
 		"Graphics;3DGraphics;GTK;" \
 		true
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|COPYING||' ${WRKSRC}/Makefile.in
 

@@ -32,6 +32,7 @@ PLIST_DIRS=	%%DOCSDIR%%
 PLIST_FILES+=	%%DOCSDIR%%/README
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/commons-csv-creator ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/commons-upload ${PREFIX}/bin

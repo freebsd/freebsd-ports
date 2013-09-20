@@ -31,6 +31,7 @@ DOCS_EN=	FuncUsage	README.en
 DOCS_JA=	README.ja
 EXAMPLES_EN=	pgdemo*.rb	test/*.rb
 
+NO_STAGE=	yes
 pre-configure:
 	${DIRNAME} `${FC} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 

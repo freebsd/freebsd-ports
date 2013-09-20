@@ -35,6 +35,7 @@ CONFIGURE_ARGS=	COMPILED_BY=${MAINTAINER} --prefix=${PREFIX} \
 		--program-transform-name='s/${PORTNAME}/${UNIQUENAME}/' \
 		--disable-optimiz
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

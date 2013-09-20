@@ -23,4 +23,5 @@ CONFIGURE_ENV=	${ECHO_CMD} "N" |
 
 MAN3=		Image::Grab.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

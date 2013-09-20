@@ -26,4 +26,5 @@ PLIST_FILES=	bin/xli bin/xlito bin/xview bin/xsetbg lib/X11/app-defaults/Xli
 
 XLI_SNAPVER=	2006-11-10
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

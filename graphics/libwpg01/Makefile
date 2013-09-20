@@ -21,6 +21,7 @@ USE_GNOME=	gnomeprefix gnomehack ltverhack
 USES=		perl5 pkgconfig
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E '/^SUBDIRS = /s/docs//g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E '/^SUBDIRS = /s/conv//g' ${WRKSRC}/src/Makefile.in

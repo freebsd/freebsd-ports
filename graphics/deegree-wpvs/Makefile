@@ -1,7 +1,5 @@
-# Created by:	wenheping@gmail.com
-#
+# Created by: wenheping@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	wpvs
 PORTVERSION=	2.5
@@ -31,6 +29,7 @@ OPTIONS_SINGLE=	AS
 OPTIONS_SINGLE_AS=	TOMCAT6 TOMCAT7
 OPTIONS_DEFAULT=	TOMCAT6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTOMCAT6}

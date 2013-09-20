@@ -55,6 +55,7 @@ IMAGEVIEWER_DESC=	Build image viewer
 OCIO_DESC=		Colour management support
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

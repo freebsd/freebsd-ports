@@ -57,6 +57,7 @@ MAN3=		SWF.3 \
 		SWF::TextField.3 \
 		SWF::VideoStream.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

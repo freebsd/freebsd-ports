@@ -26,6 +26,7 @@ CONFIGURE_ENV=	LIBLEPT_HEADERSDIR="${LOCALBASE}/include/leptonica" \
 		LIBS="${PTHREAD_LIBS}"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .ifndef NOPORTDATA

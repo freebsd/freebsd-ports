@@ -1,9 +1,5 @@
-# New ports collection makefile for:	graphics/linux-f10-ungif
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	ungif
 PORTVERSION=	4.1.3
@@ -31,4 +27,5 @@ PLIST_FILES=	usr/lib/libgif.so.4 \
 DOCSDIR=	${PREFIX}/usr/share/doc/giflib-${PORTVERSION}
 PORTDOCS=	AUTHORS BUGS COPYING ChangeLog NEWS ONEWS README TODO
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

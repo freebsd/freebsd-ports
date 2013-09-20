@@ -19,4 +19,5 @@ USES=		gmake pkgconfig
 PLIST_FILES=	lib/zathura/djvu.so
 PLIST_DIRSTRY=	lib/zathura
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

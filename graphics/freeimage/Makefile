@@ -31,6 +31,7 @@ PLIST_FILES=	include/FreeImage.h \
 		lib/libfreeimageplus.so.3 \
 		lib/libfreeimageplus.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

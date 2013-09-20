@@ -23,6 +23,7 @@ CXXFLAGS+=	-fPIC \
 		-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 701000

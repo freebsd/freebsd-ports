@@ -1,9 +1,5 @@
-# New ports collection makefile for:	GLE
-# Date created:				29 August 2000
-# Whom:					David Gilbert <dgilbert@velocet.ca>
-#
+# Created by: David Gilbert <dgilbert@velocet.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	gle
 PORTVERSION=	3.1.0
@@ -30,6 +26,7 @@ MAN3=		gle.3gle gleExtrusion.3gle gleHelicoid.3gle gleLathe.3gle \
 		gleSuperExtrusion.3gle gleTextureMode.3gle gleToroid.3gle \
 		gleTwistExtrusion.3gle
 
+NO_STAGE=	yes
 post-patch:
 .for file in ex_angle.c ex_cut_round.c ex_raw.c extrude.c round_cap.c segment.c texgen.c
 	@${REINPLACE_CMD} -e "s/malloc.h/stdlib.h/g" ${WRKSRC}/src/${file}

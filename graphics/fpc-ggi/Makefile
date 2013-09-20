@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	LIBGGI
 LIBGGI_DESC=	Install ggi library
 OPTIONS_DEFAULT=	LIBGGI
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

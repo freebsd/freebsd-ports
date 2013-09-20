@@ -1,9 +1,5 @@
-# ports collection makefile for:	p5-Imlib2
-# Date created:				16 March 2001
-# Whom:					Jeremy Norris <ishmael27@home.com>
-#
+# Created by: Jeremy Norris <ishmael27@home.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Imlib2
 PORTVERSION=	1.0.0
@@ -23,6 +19,7 @@ USE_PERL5=	configure
 
 MAN3=		Imlib2.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' ${WRKSRC}/Makefile.PL
 

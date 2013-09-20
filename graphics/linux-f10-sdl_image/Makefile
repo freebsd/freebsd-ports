@@ -1,9 +1,5 @@
-# New ports collection makefile for:	graphics/linux-f10-sdl_image
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	sdl_image
 PORTVERSION=	1.2.6
@@ -33,4 +29,5 @@ DOCSDIR=	${PREFIX}/usr/share/doc/${LINUX_NAME}-${PORTVERSION}
 PORTDOCS=	CHANGES COPYING README
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

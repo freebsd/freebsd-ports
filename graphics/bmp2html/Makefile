@@ -20,6 +20,7 @@ DEFINES=	-D_REENTRANT
 
 PLIST_FILES=	bin/bmp2html
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/${PORTNAME}
 

@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --with-html-dir=${PREFIX}/www/data/orca
 
 MAN1=		orca.1
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

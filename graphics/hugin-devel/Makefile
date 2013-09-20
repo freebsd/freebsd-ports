@@ -79,6 +79,7 @@ MAN1=		align_image_stack.1 \
 		PTBatcherGUI.1 \
 		vig_optimize.1
 
+NO_STAGE=	yes
 post-configure:
 	${REINPLACE_CMD} \
 		's/-pthread;-D_THREAD_SAFE/-pthread -D_THREAD_SAFE/g' \

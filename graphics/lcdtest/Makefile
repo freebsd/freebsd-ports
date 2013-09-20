@@ -1,4 +1,4 @@
-# Created By: Eric P. Scott <eps+pbug0703@ana.com>
+# Created by: Eric P. Scott <eps+pbug0703@ana.com>
 # $FreeBSD$
 
 PORTNAME=	lcdtest
@@ -25,6 +25,7 @@ MAN1=	lcdtest.1
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

@@ -16,6 +16,7 @@ USE_PYDISTUTILS=	easy_install
 OPTIONS_DEFINE=		CAIRO
 OPTIONS_DEFAULT=	CAIRO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCAIRO}

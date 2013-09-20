@@ -1,7 +1,4 @@
-# New ports collection makefile for:	prison
-# Date created:			Tue  9 Aug 2011, 00:42:14
-# Whom:				fluffy@
-#
+# Created by: fluffy@
 # $FreeBSD$
 
 PORTNAME=	prison
@@ -22,4 +19,5 @@ USE_QT4=	corelib gui qmake_build moc_build rcc_build uic_build
 USES=		cmake
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -30,6 +30,7 @@ PYDISTUTILS_PKGVERSION=	${PORTVERSION:S/.b/b/}
 
 USE_DOS2UNIX=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTKINTER}

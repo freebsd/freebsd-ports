@@ -1,9 +1,5 @@
-# New ports collection makefile for:	graphics/linux-f10-tiff
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	tiff
 PORTVERSION=	3.8.2
@@ -30,4 +26,5 @@ USE_LDCONFIG=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

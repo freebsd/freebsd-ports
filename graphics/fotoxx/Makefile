@@ -28,6 +28,7 @@ INSTALL_TARGET=	install manpage
 
 LDFLAGS+=	-O3 -g -Wall -rdynamic -lexecinfo
 
+NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 			${WRKSRC}/Makefile \

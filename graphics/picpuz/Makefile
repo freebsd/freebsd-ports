@@ -24,4 +24,5 @@ DESKTOP_ENTRIES="Picpuz" \
 		"Graphics;Game;GTK;" \
 		true
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

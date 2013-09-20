@@ -23,6 +23,7 @@ EDB_DESC=	Enable edb loader
 EET_DESC=	Enable eet loader
 XCF_DESC=	Enable XCF loader
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEDB}

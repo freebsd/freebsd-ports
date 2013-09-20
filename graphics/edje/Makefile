@@ -25,6 +25,7 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=	--without-vim
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E -e "/^SUBDIRS[[:space:]]+=/s/utils//" \
 	    ${WRKSRC}/Makefile.in

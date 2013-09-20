@@ -16,6 +16,7 @@ USE_XORG=	x11 xext
 USE_LDCONFIG=	yes
 NO_INSTALL_MANPAGES=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

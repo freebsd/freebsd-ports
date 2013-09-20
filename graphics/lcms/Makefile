@@ -22,6 +22,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	gnomehack lthack
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJPEGICC}

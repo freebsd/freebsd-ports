@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zimg
-# Date created:		20 Feb 2000
-# Whom:			Will Andrews <andrews@technologist.com>
-#
+# Created by: Will Andrews <andrews@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	zimg
 PORTVERSION=	5.0.0
@@ -27,4 +23,5 @@ PLIST_FILES=	include/zimg.h bin/zimg
 
 CFLAGS+=	-DHAVE_GD_FREETYPE
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

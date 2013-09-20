@@ -22,4 +22,5 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/gphotofs
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

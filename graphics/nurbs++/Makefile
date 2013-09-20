@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nurbs++
-# Date created:				14 May 2000
-# Whom:					R Joseph Wright <rjoseph@mammalia.org>
-#
+# Created by: R Joseph Wright <rjoseph@mammalia.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nurbs++
 PORTVERSION=	3.0.11
@@ -22,4 +18,5 @@ USE_LDCONFIG=	yes
 
 MAN1=	nurbs++-config.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -37,6 +37,7 @@ NETCDF_DESC=	Build netcdf-support
 PORTDATA=	*
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

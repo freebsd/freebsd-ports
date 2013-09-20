@@ -18,6 +18,7 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ENV+=	PKG_CONFIG_PATH=${PREFIX}/libdata/pkgconfig
 
+NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} 's:(libdir)/pkgconfig:(prefix)/libdata/pkgconfig:g' \
 			${WRKSRC}/Makefile.in

@@ -22,6 +22,7 @@ SHEBANG_FILES=	clara.pl mkdoc.pl selthresh
 
 MAN1=	clara-adv.1 clara-dev.1 clara.1 selthresh.1
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/selthresh.1 ${MAN1PREFIX}/man/man1/
 

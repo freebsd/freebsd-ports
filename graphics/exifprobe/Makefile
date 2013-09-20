@@ -12,6 +12,7 @@ COMMENT=	Probes JPEG or TIFF images and reports contents and structure
 MAN1=		exifgrep.1 exifprobe.1
 PLIST_FILES=	bin/exifgrep bin/exifprobe
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|cc|${CC}|; s|-DC|${CFLAGS} -DC|' \
 		${WRKSRC}/${MAKEFILE}

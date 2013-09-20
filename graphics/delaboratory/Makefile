@@ -17,6 +17,7 @@ USE_WX=		2.8+
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,-Ofast.*},${CXXFLAGS},' ${WRKSRC}/${MAKEFILE}
 

@@ -28,6 +28,7 @@ USES=		perl5 shebangfix
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

@@ -16,5 +16,6 @@ USE_GL=	glut
 
 MAKE_ARGS+=	LinkGL="-lglut -lGLU -lGL"
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/pure/bsd.pure.mk"
 .include <bsd.port.mk>

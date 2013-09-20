@@ -27,6 +27,7 @@ PLIST_FILES=	bin/panoglview
 OPTIONS_DEFINE=	UNICODE
 OPTIONS_DEFAULT=	UNICODE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "powerpc"

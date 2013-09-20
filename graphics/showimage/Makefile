@@ -22,4 +22,5 @@ PLIST_FILES=	bin/${PORTNAME}-kde4 \
 		share/applications/kde4/${PORTNAME}.desktop \
 		share/icons/hicolor/32x32/apps/${PORTNAME}.png
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

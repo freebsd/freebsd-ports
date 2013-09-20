@@ -4,4 +4,5 @@
 _BUILDING_OPENCV_PYTHON=	yes
 MASTERDIR=	${.CURDIR}/../opencv
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

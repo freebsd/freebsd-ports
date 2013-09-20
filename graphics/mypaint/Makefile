@@ -29,6 +29,7 @@ INSTALLS_ICONS=	yes
 
 SUB_FILES=	pkg-install
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/brushlib/operationqueue.c \

@@ -24,4 +24,5 @@ USES=		gmake pathfix pkgconfig
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

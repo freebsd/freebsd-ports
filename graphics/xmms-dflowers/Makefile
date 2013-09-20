@@ -17,6 +17,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	gtk12
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|-m486||; s|-O2||; \
 		s|-Wall|-Wall ${CFLAGS}|; \

@@ -25,6 +25,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LIBS="-lGL -lXext ${LIBS}"
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} -f ${WRKSRC}/config.cache
 	@${REINPLACE_CMD} -e 's|-O2||; \

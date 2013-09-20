@@ -21,6 +21,7 @@ NO_BUILD=	yes
 USES=		perl5
 USE_PERL5=	run
 
+NO_STAGE=	yes
 post-patch:
 	@ ${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" ${WRKSRC}/npretty.pl
 

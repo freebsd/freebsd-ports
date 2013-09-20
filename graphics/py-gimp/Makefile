@@ -22,4 +22,5 @@ INSTALL_WRKSRC=	${WRKSRC}/plug-ins/pygimp
 
 MASTERDIR=	${.CURDIR}/../../graphics/gimp-app
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

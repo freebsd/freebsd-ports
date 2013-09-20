@@ -1,4 +1,3 @@
-# Ports collection makefile for:	Layout-Manager
 # Created by: chinsan
 # $FreeBSD$
 
@@ -32,4 +31,5 @@ MAN3=		Layout::Manager.3 \
 		Layout::Manager::Grid.3 \
 		Layout::Manager::Single.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

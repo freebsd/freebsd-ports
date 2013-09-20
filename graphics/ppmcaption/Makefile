@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ppmcaption
-# Date created:			May 31, 2001
-# Whom:				Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	ppmcaption
 PORTVERSION=	1.1
@@ -22,6 +18,7 @@ PLIST_FILES=	bin/ppmcaption
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	does not compile on ia64 or amd64
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,-lang-c89,," ${WRKSRC}/configure
 

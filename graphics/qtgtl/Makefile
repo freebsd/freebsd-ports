@@ -1,4 +1,3 @@
-# Created by: Alberto Villa <villa.alberto@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	qtgtl
@@ -21,6 +20,7 @@ USE_BZIP2=	yes
 USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's|set(QTGTL_LIB_SOVERSION.*|set(QTGTL_LIB_SOVERSION "0")|' \
 		${PATCH_WRKSRC}/CMakeLists.txt

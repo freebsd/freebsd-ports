@@ -23,6 +23,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 PORTDOCS=	Changes README TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

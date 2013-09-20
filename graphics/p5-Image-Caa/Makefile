@@ -18,6 +18,7 @@ USE_PERL5=	configure
 
 MAN3=		Image::Caa.3
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/demos/* ${EXAMPLESDIR}

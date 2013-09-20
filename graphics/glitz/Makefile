@@ -20,4 +20,5 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

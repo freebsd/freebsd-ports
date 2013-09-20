@@ -1,9 +1,5 @@
-# New ports collection makefile for: 	opendis
-# Date created:		22 May 2001
-# Whom:			Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	opendis
 PORTVERSION=	0.0.3
@@ -18,6 +14,7 @@ COMMENT=	Access Flashpoint Digita-based cameras, download images, and more
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pedantic -W|-pedantic|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's| -g| @CFLAGS@|g' ${WRKSRC}/src/Makefile.in

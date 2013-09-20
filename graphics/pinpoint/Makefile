@@ -25,6 +25,7 @@ USES=	pathfix pkgconfig
 OPTIONS_DEFINE=	GST
 GST_DESC=	Live videos as slide backgrounds
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGST}

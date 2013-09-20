@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gkrellkam
-# Date Created:				Fri Aug 17 15:57:42 EDT 2001
-# Whom:					Patrick Li <pat@databits.net>
-#
+# Created by: Patrick Li <pat@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gkrellkam
 PORTVERSION=	0.3.4
@@ -27,6 +23,7 @@ USE_GMAKE=	yes
 MAN5=		gkrellkam-list.5
 PLIST_FILES=	libexec/gkrellm/plugins/gkrellkam.so
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/gkrellkam.so \
 		${PREFIX}/libexec/gkrellm/plugins

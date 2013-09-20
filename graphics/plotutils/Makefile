@@ -30,4 +30,5 @@ test: build
 
 regression-test: test
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

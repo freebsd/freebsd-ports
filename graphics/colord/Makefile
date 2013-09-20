@@ -42,6 +42,7 @@ GLIB_SCHEMAS=	org.freedesktop.ColorHelper.gschema.xml
 
 OPTIONS_DEFINE=	MANPAGES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES}

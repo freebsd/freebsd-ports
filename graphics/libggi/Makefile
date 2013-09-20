@@ -121,6 +121,7 @@ CONFIGURE_ARGS=	--disable-directfb
 OPTIONS_DEFINE=	AALIB SVGALIB X11
 OPTIONS_DEFAULT=X11
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if exists(/usr/include/dev/kgi/kgi.h)

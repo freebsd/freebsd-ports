@@ -29,6 +29,7 @@ x-generate-examples: extract
 	@${FIND} ${WRKSRC}/sample -type f | ${SORT} | ${SED} 's@${WRKSRC}/sample/@@' |\
 		${FMT} -50 | ${SED} -e 's@^@		@' -e 's@$$@ \\@'
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

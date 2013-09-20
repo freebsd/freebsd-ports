@@ -28,4 +28,5 @@ CFLAGS+=	-D_X_SENTINEL\(x\)= -D_X_ATTRIBUTE_PRINTF\(x,y\)= \
 
 MAN1=		pixmap.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -19,4 +19,5 @@ USES=		pkgconfig
 MAN1=		svg2pdf.1
 PLIST_FILES=	bin/svg2pdf
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -25,6 +25,7 @@ MALLOCSIZE_DESC=	Improve malloc size
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	COPYRIGHT README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRETVALUE}

@@ -18,6 +18,7 @@ MAKEFILE=	Makefile.unix
 MAN1=		pecomato.1
 PLIST_FILES=	bin/pecomato
 
+NO_STAGE=	yes
 post-build:
 	${PYTHON} ${WRKSRC}/devtools/txt2tags.py --no-rc -t man \
 		-i ${WRKSRC}/doc/manpage.t2t -o ${WRKSRC}/doc/${MAN1}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ppsei
-# Date created:		2011-05-19
-# Whom:			Romain Tartiere <romain@FreeBSD.org>
-#
+# Created by: Romain Tartiere <romain@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ppsei
 PORTVERSION=	0.3
@@ -18,6 +14,7 @@ COMMENT=	PowerPoint images extractor
 PLIST_FILES=	bin/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-build:
 	@(cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c)
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    MegaPov
-# Date created:         25 July 2003
-# Whom:                 maho@FreeBSD.org
-#
+# Created by: maho@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	megapov
 PORTVERSION=	1.2.1
@@ -30,6 +26,7 @@ CFLAGS+= -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 CXXFLAGS+= -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 CPPFLAGS+= -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "i386")

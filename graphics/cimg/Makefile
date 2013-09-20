@@ -77,6 +77,7 @@ PROGS=		CImg_demo captcha curve_editor2d dtmri_view3d			\
 NO_BUILD=	yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)

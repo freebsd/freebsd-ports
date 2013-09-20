@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libiptcdata
-# Date created:				3rd December 2006
-# Whom:					Pav Lucistnik <pav@FreeBSD.org>
-#
+# Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libiptcdata
 PORTVERSION=	1.0.4
@@ -19,6 +15,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/libiptcdata/Makefile.in
 

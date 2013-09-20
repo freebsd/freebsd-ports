@@ -17,6 +17,7 @@ RUBYGEM_AUTOPLIST=	yes
 
 REINPLACE_ARGS=	-i ''
 
+NO_STAGE=	yes
 post-install:
 	@${REINPLACE_CMD} -e '/s.date/d' ${PREFIX}/${GEM_SPEC}
 

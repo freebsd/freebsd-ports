@@ -29,6 +29,7 @@ OPTIONS_DEFAULT=EMOTION ETHUMBD
 EMOTION_DESC=	Build with Emotion module
 ETHUMBD_DESC=	Build ethumbd daemon (requires dbus)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEMOTION}

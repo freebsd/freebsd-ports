@@ -41,6 +41,7 @@ OPTIONS_DEFAULT=POPPLER
 POPPLER_DESC=	PDF preview rendering
 GNOMEVFS_DESC=	Use gnomevfs for loading files
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOMEVFS}
