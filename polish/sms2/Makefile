@@ -1,9 +1,5 @@
-# New ports collection makefile for: sms2
-# Date created:		04 sep 2004
-# Whom:			Krzysztof Kowalewski <pyzmen@kam.pl>
-#
+# Created by: Krzysztof Kowalewski <pyzmen@kam.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	sms
 PORTVERSION=	2.1.0
@@ -26,4 +22,5 @@ LATEST_LINK=	sms2
 
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

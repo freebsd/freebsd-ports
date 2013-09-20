@@ -1,4 +1,3 @@
-# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	hunspell
@@ -21,6 +20,7 @@ PLIST_FILES=	%%DATADIR%%/pl_PL.aff \
 		%%DATADIR%%/pl_PL.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-extract:
 	@${EXTRACT_CMD} ${WRKDIR}/pl_PL.zip -d ${WRKSRC}/
 

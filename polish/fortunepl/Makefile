@@ -1,9 +1,5 @@
-# New ports collection makefile for:   fortunepl
-# Date created:        13-01-2005
-# Whom:                Aleksander Fafula <alex@bsdguru.org>
-#
+# Created by: Aleksander Fafula <alex@bsdguru.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fortunepl
 PORTVERSION=	0.0.20051022
@@ -32,6 +28,7 @@ FORTUNES=	7thguard advocacy apcoh argante bajki bok cnp cows \
 		teleturnieje testnaosobowosc wierszyki wieza-pilot zen \
 		znaki_zodiaku
 
+NO_STAGE=	yes
 pre-everything::
 .if !exists(${STRCMD})
 IGNORE=		need strfile command. Please install games distribution of base system

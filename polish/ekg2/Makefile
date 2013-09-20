@@ -87,6 +87,7 @@ XOSD_CONFIGURE_ON=	--with-libxosd
 XOSD_CONFIGURE_OFF=	--without-libxosd
 XOSD_LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
