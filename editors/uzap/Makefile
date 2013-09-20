@@ -18,4 +18,5 @@ NO_WRKSUBDIR=	yes
 MAN1=		uzap.1
 PLIST_FILES=	bin/uzap
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

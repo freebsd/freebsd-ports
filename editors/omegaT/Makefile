@@ -35,6 +35,7 @@ DESKTOP_ENTRIES="OmegaT" "Translation memory application" \
 		"omegaT" "Office;WordProcessor;Java;" \
 		false
 
+NO_STAGE=	yes
 post-build:
 	@cd ${WRKDIR} && ${MV} 'dist' ${PORTNAME}
 

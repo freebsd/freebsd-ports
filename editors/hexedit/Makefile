@@ -19,6 +19,7 @@ MAN1=		hexedit.1
 
 PLIST_FILES=	bin/hexedit
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hexedit ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/hexedit.1 ${PREFIX}/man/man1

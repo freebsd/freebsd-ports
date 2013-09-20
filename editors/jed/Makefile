@@ -41,6 +41,7 @@ MAKE_ENV+=	JED_DOC_FILES="" \
 ALL_TARGET=	all getmail
 MAN1=		jed.1 rgrep.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MX11}

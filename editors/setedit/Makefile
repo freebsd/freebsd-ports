@@ -34,6 +34,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --without-mp3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MBZIP2}

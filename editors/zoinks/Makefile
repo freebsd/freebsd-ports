@@ -20,6 +20,7 @@ CONFIGURE_ARGS+=	--disable-imlib
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

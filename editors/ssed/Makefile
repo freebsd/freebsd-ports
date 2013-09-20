@@ -16,6 +16,7 @@ CONFIGURE_ARGS=	--program-prefix=s
 
 MAN1=		ssed.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -31,6 +31,7 @@ INFO=		psgml psgml-api
 PSGML_STARTUPEL=	psgml-startup.el
 PSGML_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/psgml
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${EMACS_PORT_NAME} == xemacs21-mule

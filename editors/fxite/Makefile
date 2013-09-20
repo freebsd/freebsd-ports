@@ -35,6 +35,7 @@ CONFIGURE_ARGS+=--with-system-lua \
 CONFIGURE_ENV+=	FOX_CFLAGS="${FOX_CFLAGS}" \
 		FOX_LIBS="${FOX_LIBS}"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFOX16}

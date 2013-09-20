@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	hexcurse
-# Date created:			Jun 3, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	hexcurse
 PORTVERSION=	1.55
@@ -20,4 +15,5 @@ GNU_CONFIGURE=	yes
 MAN1=		hexcurse.1
 PLIST_FILES=	bin/hexcurse
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

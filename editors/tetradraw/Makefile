@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	tetradraw
-# Date created:			1 October 2002
-# Whom:				Frederic Cambus
-#
+# Created by: Frederic Cambus
 # $FreeBSD$
-#
 
 PORTNAME=	tetradraw
 PORTVERSION=	2.0.2
@@ -19,6 +14,7 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/tetradraw bin/tetraview
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CFLAGS =.*$$|CFLAGS = @CFLAGS@|g' ${WRKSRC}/src/Makefile.in

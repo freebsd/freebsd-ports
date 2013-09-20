@@ -1,9 +1,5 @@
-# New ports collection makefile for:	joe
-# Date created:		01 Jul 1995
-# Whom:			torstenb@FreeBSD.org
-#
+# Created by: torstenb@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	joe
 PORTVERSION=	2.9.8
@@ -27,6 +23,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 ALL_TARGET=	${PORTNAME}
 MAN1=		${PORTNAME}.1
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

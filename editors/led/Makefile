@@ -15,4 +15,5 @@ USES=		perl5
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

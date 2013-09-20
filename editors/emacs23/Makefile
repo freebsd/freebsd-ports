@@ -70,6 +70,7 @@ OPTIONS_SINGLE_X11TOOLKIT=	GTK2 XAW XAW3D MOTIF
 OPTIONS_DEFAULT=DBUS GCONF GIF GTK2 JPEG M17N OTF PNG SOUND SOURCES SVG TIFF SYNC_INPUT \
 		SCROLLBARS XFT XIM XPM
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 DBUS_PTHREAD_LIBS=	${CC} -dumpspecs | ${GREP} -m 1 pthread: | ${SED} -e 's|^.*%{\!pg: %{pthread:||' -e 's|}.*$$||' || ${TRUE}

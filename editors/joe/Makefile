@@ -28,6 +28,7 @@ MAN1=		${PORTNAME}.1
 
 MANLANG=	"" ru
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MDOCS}

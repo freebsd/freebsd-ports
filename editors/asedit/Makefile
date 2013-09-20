@@ -17,4 +17,5 @@ USE_XORG=	ice sm x11 xext xmu xp xt
 
 MAN1=		asedit.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

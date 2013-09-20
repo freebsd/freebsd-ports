@@ -19,6 +19,7 @@ MAKE_ENV+=	LIBPATH=${PREFIX}/lib
 
 MAN1=		y.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

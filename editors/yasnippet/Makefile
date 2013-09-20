@@ -16,6 +16,7 @@ USE_EMACS=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC}/snippets -type d -empty | ${XARGS} ${RMDIR}
 

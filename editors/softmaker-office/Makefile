@@ -31,6 +31,7 @@ ONLY_FOR_ARCHS=	i386
 
 ALL_DICTS_DISTFILES=	sml06dict.tgz
 
+NO_STAGE=	yes
 post-extract:
 	cd ${WRKSRC} && ${FIND} . -type f -execdir ${CHMOD} ${SHAREMODE} \{\} \; && \
 		${CHMOD} ${BINMODE} planmaker textmaker

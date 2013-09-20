@@ -17,6 +17,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		hnb.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} != "i386"

@@ -16,6 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -name .cvsignore | ${XARGS} ${RM}
 	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf

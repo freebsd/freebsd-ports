@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	komodo-ide
-# Date created:				2010-11-22
-# Whom:					Dereckson <dereckson@gmail.com>
-#
+# Created by: Dereckson <dereckson@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	komodo-ide
@@ -27,6 +24,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_NAME=	ActiveState Komodo IDE license agreement
 LICENSE_PERMS=
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)

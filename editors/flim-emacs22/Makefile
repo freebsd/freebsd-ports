@@ -1,9 +1,5 @@
-# New ports collection makefile for:	flim for emacs22
-# Date created:		27 January 2010
-# Whom:			MANTANI Nobutaka <nobutaka@FreeBSD.org>
-#
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	FLIM, message representation or encoding elisp library for emacs22
@@ -17,4 +13,5 @@ MASTERDIR=	${.CURDIR}/../../editors/flim
 USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs22
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

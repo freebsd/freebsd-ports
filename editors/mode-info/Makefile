@@ -33,6 +33,7 @@ PLIST_SUB+=	MI_WITH_MAKE="@comment "
 
 USE_EMACS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 LISPDIR?=	${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}

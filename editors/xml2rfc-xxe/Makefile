@@ -1,5 +1,4 @@
 # Created by: Bill Fenner
-#
 # $FreeBSD$
 
 PORTNAME=	xml2rfc-xxe
@@ -19,6 +18,7 @@ WRKSRC=		${WRKDIR}/xml2rfc
 
 PLIST_SUB=	XXE_DIR=${XXE_DIR}
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/svn-commit.tmp
 

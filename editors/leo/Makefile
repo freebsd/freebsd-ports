@@ -32,6 +32,7 @@ USE_PYTHON=	yes
 
 LEO_DIR=	${PYTHONPREFIX_SITELIBDIR}/leo
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYENCHANT}

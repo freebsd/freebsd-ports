@@ -43,6 +43,7 @@ DOCSDIR=	${PREFIX}/share/doc/Ted
 AFMDIR=		${DATADIR}/afm
 INDDIR=		${DATADIR}/dfa
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}

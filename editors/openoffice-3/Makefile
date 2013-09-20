@@ -35,6 +35,7 @@ OPTIONS_DEFINE=	GCONF GNOMEVFS
 OPTIONS_DEFAULT=GCONF GNOMEVFS
 GNOMEVFS_DESC=	Enable GNOME Virtual File System
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 USE_JAVA=	yes

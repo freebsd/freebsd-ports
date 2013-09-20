@@ -55,6 +55,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		%%DATADIR%%/syntax/vhdl.jsf %%DATADIR%%/syntax/xml.jsf
 PLIST_DIRS=	%%DATADIR%%/syntax %%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !defined(WITH_DEBUG)

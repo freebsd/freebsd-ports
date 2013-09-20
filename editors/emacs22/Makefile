@@ -64,6 +64,7 @@ INFO=		ada-mode autotype calc ccmode cl dired-x ebrowse ediff \
 
 LATEST_LINK=	emacs22
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"

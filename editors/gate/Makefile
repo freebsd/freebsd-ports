@@ -19,6 +19,7 @@ ALL_TARGET=	gate gate.1
 
 MAN1=		gate.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$${res_datadir}|${DATADIR}|g' ${WRKSRC}/configure

@@ -15,6 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gvim:${PORTSDIR}/editors/vim
 NO_BUILD=	yes
 PLIST_SUB=	VIMRUNTIME="${VIMRUNTIME:S/${PREFIX}\///}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 VIMRUNTIME!=	cd ${PORTSDIR}/editors/vim && ${MAKE} -V DATADIR

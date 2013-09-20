@@ -29,6 +29,7 @@ OPTIONS_DEFINE=	XDVI GV
 GV_DESC=	View ps files with gv
 XDVI_DESC=	View dvi files with xdvi
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXDVI}

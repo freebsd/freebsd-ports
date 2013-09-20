@@ -17,6 +17,7 @@ USES=		imake
 USE_XORG=	xaw
 MAN1=		xed.1
 
+NO_STAGE=	yes
 pre-build:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
 		's|extern char \*malloc();|/\* extern char \*malloc(); \*/|g'

@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	komodo-edit
-# Date created:				2008-02-13
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	komodo-edit
@@ -31,6 +28,7 @@ DESKTOP_ENTRIES="Komodo Edit" \
 		"Development;Utility;TextEditor;" \
 		${FALSE}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

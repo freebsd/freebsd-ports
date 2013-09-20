@@ -37,6 +37,7 @@ OPTIONS_DEFAULT=GCONF GNOMEVFS
 GNOMEVFS_DESC=	Enable GNOME Virtual File System
 CCACHE_DESC=	Mimimize compile time of C/C++ programs
 
+NO_STAGE=	yes
 .include "${.CURDIR}/files/Makefile.localized"
 
 .include <bsd.port.options.mk>

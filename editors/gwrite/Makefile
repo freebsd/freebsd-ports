@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gwrite
-# Date created:				07 Mar 2010
-# Whom:					Ju Pengfei <jupengfei@gmail.com>
-#
+# Created by: Ju Pengfei <jupengfei@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gwrite
 PORTVERSION=	0.5.1
@@ -30,4 +26,5 @@ USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

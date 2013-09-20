@@ -34,4 +34,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/libxml2 ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} ${ICONV_LIB}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

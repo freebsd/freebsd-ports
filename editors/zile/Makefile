@@ -29,6 +29,7 @@ PLIST_DIRS=	%%DOCSDIR%%
 CPPFLAGS+=	-I${LOCALBASE}/include -isystem /usr/include/gnu
 LDFLAGS+=	-L${LOCALBASE}/lib -lgnuregex
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/need_charset_alias=/s|true|false|g' ${WRKSRC}/lib/Makefile.in

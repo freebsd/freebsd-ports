@@ -30,6 +30,7 @@ PORTDOCS=	AUTHORS ChangeLog ChangeLog.1997-1998 \
 		README.Debian changelog.Debian
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${EMACS_PORT_NAME} == emacs21 || \

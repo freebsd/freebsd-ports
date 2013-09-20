@@ -1,9 +1,5 @@
-# New ports collection makefile for:	X-Emacs Packages with Mule
-# Date created:		24 Oct 1999
-# Whom:			KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
-#
+# Created by: KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	xemacs-mule-packages
 PORTVERSION=	4.6
@@ -31,6 +27,7 @@ WRKSRC=		${WRKDIR}/${PACKAGES_SUBDIR}
 XEMACSDIR=	${PREFIX}/lib/xemacs
 PACKAGES_SUBDIR=	mule-packages
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 .for f in ${DISTFILES}

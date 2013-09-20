@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fb
-# Date created:				Oct 15, 1999
-# Whom:					Mikhail Teterin
-#
+# Created by: Mikhail Teterin
 # $FreeBSD$
-#
 
 PORTNAME=	fb
 PORTVERSION=	1.5
@@ -23,4 +19,5 @@ PLIST_FILES=	bin/fb
 MAKEFILE=	${FILESDIR}/Makefile.in
 MAKE_ARGS+=	PREFIX="${PREFIX}"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -26,6 +26,7 @@ PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
 glib_gtk2_CFLAGS=`${PKG_CONFIG} --cflags gtk+-2.0`
 glib_gtk2_LIBS=	`${PKG_CONFIG} --libs gtk+-2.0`
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

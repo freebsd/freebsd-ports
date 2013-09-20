@@ -1,9 +1,5 @@
-# New ports collection makefile for:	flim for xemacs21-mule
-# Date created:		25 July 1999
-# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
-#
+# Created by: Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 # $FreeBSD$
-#
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
@@ -56,4 +52,5 @@ xemacs-package: install
 	  ${TAR} -zcf ${.CURDIR}/${XEMACS_PKG_TARBALL} ${XEMACS_PKG_CONTENTS} ;\
 	)
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	slime
-# Date created:		13 Nov 2004
-# Whom:			Dominic Mitchell
-#
+# Created by: Dominic Mitchell
 # $FreeBSD$
-#
 
 PORTNAME=	slime
 PORTVERSION=	20110714
@@ -26,6 +22,7 @@ INFO=		slime
 PORTDOCS=	ChangeLog HACKING NEWS PROBLEMS README
 .endif
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}/doc && ${GMAKE} slime.info
 	cd ${WRKSRC} && ${EMACS_CMD} -batch \

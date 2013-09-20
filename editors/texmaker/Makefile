@@ -29,6 +29,7 @@ XDVI_DESC=	View dvi files with xdvi
 
 STRIP_FILES=	bin/texmaker
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXDVI}

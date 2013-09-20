@@ -23,6 +23,7 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 USE_LDCONFIG=	yes
 
 # Fix for GCC 4.2
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '257s,((char\*)\*n),n,' \
 		-e '/gtk_xml_modules_add_module/s,const ,,' \

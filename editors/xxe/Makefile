@@ -21,6 +21,7 @@ BINS=		convertdoc csscheck deploywebstart translatexxe xmltool xxe
 
 PLIST_SUB=	XXE=${XXE_DIR}
 
+NO_STAGE=	yes
 post-extract:
 		@${SED} -e 's,%%JAVA_HOME%%,${JAVA_HOME},' \
 			-e 's,%%PREFIX%%,${PREFIX},' \

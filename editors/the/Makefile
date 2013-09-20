@@ -1,9 +1,5 @@
-# New ports collection makefile for:	THE
-# Date created:		7 May 1999
-# Whom:			giffunip@asme.org
-#
+# Created by: giffunip@asme.org
 # $FreeBSD$
-#
 
 PORTNAME=	the
 PORTVERSION=	3.2
@@ -32,6 +28,7 @@ XAW3D_DESC=	Enable Xaw3D
 XCURSES_DESC=	Build XCurses (X11) version
 REXX_REGINA_DESC=	Enable Rexx interpreter
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"

@@ -74,6 +74,7 @@ CMAKE_ARGS+=	-DWITH_PACKAGERS_BUILD:BOOL=TRUE
 CMAKE_ARGS+=	-DWITH_PACKAGERS_BUILD:BOOL=FALSE
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTL} || exists(${LOCALBASE}/lib/libQtShiva.so)

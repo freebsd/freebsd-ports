@@ -32,6 +32,7 @@ MAINTAINER?=	obrien@FreeBSD.org
 COMMENT?=	Vi "workalike", with many additional features
 
 SLAVEDIRS=	editors/vim-lite
+NO_STAGE=	yes
 
 .if !defined(LITE)
 .if defined(WITH_OPTIONS) || defined(WITH_VIM_OPTIONS)

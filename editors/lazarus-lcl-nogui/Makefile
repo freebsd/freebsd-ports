@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lazarus-lcl-nogui
-# Date Created:				2012-05-01
-# Whom:					Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 PKGNAMESUFFIX=	-lcl-nogui
@@ -16,4 +12,5 @@ LCL_INTERFACE=	nogui
 
 MASTERDIR=	${.CURDIR}/../../editors/lazarus
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	apel for emacs22
-# Date created:		27 January 2010
-# Whom:			MANTANI Nobutaka <nobutaka@FreeBSD.org>
-#
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	A Portable Emacs Library for emacs22
@@ -17,4 +13,5 @@ MASTERDIR=	${.CURDIR}/../../editors/apel
 USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs22
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

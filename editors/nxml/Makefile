@@ -26,6 +26,7 @@ NXML_EXCLEXP=	nxml-mode.xml\|nxml-mode.rnc\|test.invalid.xml\|test.valid.xml
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

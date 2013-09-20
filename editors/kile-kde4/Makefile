@@ -22,6 +22,7 @@ LATEST_LINK=	${PORTNAME}-kde4
 OPTIONS_DEFINE=	OKULAR
 OKULAR_DESC=	Use Okular for viewing
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOKULAR}

@@ -1,4 +1,4 @@
-# Created by:	tg
+# Created by: tg
 # $FreeBSD$
 
 PORTNAME=	uemacs
@@ -16,6 +16,7 @@ NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-Laq
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/src/*.c
 

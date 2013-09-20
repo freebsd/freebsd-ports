@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aewan
-# Date created:				07.05.2004
-# Whom:					krion
-#
+# Created by: krion
 # $FreeBSD$
-#
 
 PORTNAME=	aewan
 PORTVERSION=	1.0.01
@@ -24,6 +20,7 @@ PLIST_FILES=	bin/aecat bin/aewan bin/aemakeflic
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|OSTYPE == |OSTYPE = |g' ${WRKSRC}/configure
 

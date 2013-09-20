@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xcoral
-# Date created:         1995/10/02
-# Whom:                 erich@rrnet.com
-#
+# Created by: erich@rrnet.com
 # $FreeBSD$
-#
 
 PORTNAME=	xcoral
 PORTVERSION=	3.47
@@ -21,6 +17,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's| regex\.c | |g ; \
 		 s| -g | |g' ${WRKSRC}/Makefile.in

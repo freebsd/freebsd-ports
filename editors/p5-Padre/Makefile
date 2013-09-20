@@ -211,6 +211,7 @@ WXSC_VERSION=	0.39
 WXSC_DISTNAME=	${WXSC_NAME}-${WXSC_VERSION}
 WXSC_DISTFILE=	${WXSC_DISTNAME}.tar.gz
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${PERL})

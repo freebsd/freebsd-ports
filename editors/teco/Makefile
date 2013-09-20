@@ -1,9 +1,5 @@
-# New ports collection makefile for:	teco
-# Date created:				Feb 15 2005
-# Whom:					Stanislav Sedov <stas@core.310.ru>
-#
+# Created by: Stanislav Sedov <stas@core.310.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	teco
 PORTVERSION=	0398
@@ -22,6 +18,7 @@ ALL_TARGET=	#
 DOCSFILES=	src/readme.1st src/readme.lnx src/changes.txt src/aaout.txt \
 		src/problems.txt src/video.txt doc/teco.doc doc/wchart.txt
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/tecoc ${PREFIX}/bin
 	${MKDIR} ${DATADIR}

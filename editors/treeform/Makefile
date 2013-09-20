@@ -18,6 +18,7 @@ SUB_FILES=	treeform
 
 WRKSRC=		${WRKDIR}/TreeForm
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/treeform ${PREFIX}/bin
 	cd ${WRKSRC} \

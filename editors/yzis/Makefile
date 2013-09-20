@@ -37,6 +37,7 @@ OPTIONS_DEFINE=	KYZIS NYZIS
 KYZIS_DESC=	Build kyzis and Yzis kpart
 NYZIS_DESC=	Build nyzis (ncurses frontend)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKYZIS}

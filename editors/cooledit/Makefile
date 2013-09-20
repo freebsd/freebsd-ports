@@ -1,9 +1,5 @@
-# New ports collection makefile for:	 cooledit
-# Date created:		18 November 1997
-# Whom:			brett@peloton.physics.montana.edu
-#
+# Created by: brett@peloton.physics.montana.edu
 # $FreeBSD$
-#
 
 PORTNAME=	cooledit
 PORTVERSION=	3.17.17
@@ -33,6 +29,7 @@ CFLAGS+=	-DHAVE_MBRTOWC
 CONFIGURE_ARGS+=	--enable-NeXT-look
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|po pixmap man|po man|g' ${WRKSRC}/Makefile.in
 

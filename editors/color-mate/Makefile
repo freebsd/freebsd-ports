@@ -19,6 +19,7 @@ XELISPDIR=	${SITEPKGDIR}/lisp/color-mate
 THEME_DIR=	${ELISPDIR}/theme
 MANIFEST=	MANIFEST.color-mate
 
+NO_STAGE=	yes
 do-build:
 # Create color-mate-rgb.el
 	cd ${WRKSRC}; \

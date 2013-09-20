@@ -27,6 +27,7 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

@@ -16,4 +16,5 @@ PLIST_FILES=	bin/tweak
 MAKEFILE=	${FILESDIR}/Makefile.in
 MAKE_ENV+=	BINDIR="${LOCALBASE}/bin" MANDIR="${PREFIX}/man/man"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

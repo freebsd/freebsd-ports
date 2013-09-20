@@ -1,4 +1,4 @@
-# Created by:	John Merryweather Cooper et al
+# Created by: John Merryweather Cooper et al
 # $FreeBSD$
 
 PORTREVISION=	0
@@ -16,4 +16,5 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR} ${FPCSRCDIR}/compiler ${FPCSRCDIR}/rtl ${FPCSRCDIR}/packages/fv
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

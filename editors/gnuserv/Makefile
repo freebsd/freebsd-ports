@@ -1,9 +1,5 @@
-# New ports collection makefile for:   gnuserv
-# Date created:        10 February 2001
-# Whom:                ilya
-#
+# Created by: ilya
 # $FreeBSD$
-#
 
 PORTNAME=	gnuserv
 PORTVERSION=	3.12.8
@@ -46,6 +42,7 @@ PLIST_SUB=	EMACS_PORT_NAME=${EMACS_PORT_NAME} \
 
 lispdir=	${PREFIX}/${EMACS_SITE_LISPDIR}/gnuserv
 
+NO_STAGE=	yes
 post-patch:
 .for i in gnudoit gnuattach
 	@${REINPLACE_CMD} 's/gnuclient/gnuclient${BINSUFFIX}/' ${WRKSRC}/${i}

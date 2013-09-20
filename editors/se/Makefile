@@ -13,4 +13,5 @@ GNU_CONFIGURE=	yes
 MAN1=		se.1 scriptse.1
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

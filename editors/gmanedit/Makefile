@@ -18,6 +18,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gmanedit.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/<argz\.h>/d' ${WRKSRC}/src/callbacks.c
 
