@@ -7,6 +7,22 @@ you update your ports collection, before attempting any port upgrades.
 
 20130920:
   AFFECTS: Users of ports
+  AUTHOR: bapt@FreeBSD.org
+
+  New way to override the default version of a language in the ports
+  tree.
+
+  The make variable, DEFAULT_VERSIONS, allows users to override the
+  default version defined by the ports tree.
+
+  For example, to declare specific versions for Perl, Ruby and Tcl/Tk,
+  it would be defined as:
+  DEFAULT_VERSIONS=	perl5=5.18 ruby=2.0 tcltk=8.6
+
+  Today, this only is supported by Perl, Ruby and Tcl/Tk.
+
+20130920:
+  AFFECTS: Users of ports
   AUTHOR: bdrewery@FreeBSD.org
 
   Optional Stack Protector [1] support has been added with the WITH_SSP
