@@ -20,4 +20,5 @@ USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20 intltool intlhack orbit2
 USE_XFCE=	configenv libgui libutil panel
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

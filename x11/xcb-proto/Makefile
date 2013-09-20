@@ -18,4 +18,5 @@ GNU_CONFIGURE=	yes
 
 DATADIR=	${PREFIX}/share/xcb
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

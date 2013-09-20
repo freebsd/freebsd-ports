@@ -47,6 +47,7 @@ OPTIONS_DEFAULT=EVOLUTION BONOBO
 EVOLUTION_DESC=	Use the Evolution calendar
 BONOBO_DESC=	Support for bonobo applets aka Gnome 2 applets
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEVOLUTION}

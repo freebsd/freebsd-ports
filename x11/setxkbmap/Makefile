@@ -16,4 +16,5 @@ PLIST_FILES=	bin/setxkbmap
 
 MAN1=		setxkbmap.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -14,4 +14,5 @@ PLIST_FILES=	bin/xhost
 
 MAN1=		xhost.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

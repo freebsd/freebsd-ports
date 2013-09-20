@@ -45,6 +45,7 @@ OPTIONS_RADIO_ONE=	PAM XLOCK_GROUP
 
 NO_OPTIONS_SORT=yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKERBEROS4}

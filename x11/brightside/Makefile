@@ -21,4 +21,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	brightside.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

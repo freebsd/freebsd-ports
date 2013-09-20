@@ -16,4 +16,5 @@ PLIST_FILES=	bin/iceauth
 
 MAN1=		iceauth.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

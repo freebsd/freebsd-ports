@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--disable-debug
 
 OPTIONS_DEFINE=	NLS DBUS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

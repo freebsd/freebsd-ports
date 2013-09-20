@@ -18,4 +18,5 @@ USE_XORG=	x11 xt xaw
 MAN1=		xascii.1
 PLIST_FILES=	bin/xascii
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

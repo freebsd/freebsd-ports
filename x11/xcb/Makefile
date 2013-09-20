@@ -21,4 +21,5 @@ MAN1=		xcb.1
 PLIST_FILES=	bin/xcb \
 		lib/X11/app-defaults/Xcb
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

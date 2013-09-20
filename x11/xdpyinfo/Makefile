@@ -17,4 +17,5 @@ PLIST_FILES=	bin/xdpyinfo
 
 MAN1=		xdpyinfo.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

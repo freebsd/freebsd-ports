@@ -16,4 +16,5 @@ PLIST_FILES=	bin/xmodmap
 
 MAN1=		xmodmap.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

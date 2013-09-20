@@ -24,4 +24,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=ac_cv_lib_ICE_IceConnectionNumber=no
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

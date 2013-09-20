@@ -19,4 +19,5 @@ MAN1=		xtrap.1 \
 		xtrapreset.1 \
 		xtrapstats.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -20,6 +20,7 @@ USE_QT4=	linguist_build moc_build qmake_build rcc_build uic_build \
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 # Fix path to the translation files
 	@${REINPLACE_CMD} -e 's,\.\./,,' ${WRKSRC}/CMakeLists.txt

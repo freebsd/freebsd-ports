@@ -1,9 +1,5 @@
-# New ports collection makefile for:   tabbed
-# Date created:                September 03, 2010
-# Whom:                        Winston Weinert <winstonw@lavabit.com>
-#
+# Created by: Winston Weinert <winstonw@lavabit.com>
 # $FreeBSD$
-#
 
 PORTNAME=	tabbed
 PORTVERSION=	0.3
@@ -21,6 +17,7 @@ MAN1=		tabbed.1
 PLIST_FILES=	bin/tabbed
 PORTDOCS=	LICENSE README
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "You can build tabbed with your own config.h using the TABBED_CONF knob:"
 	@${ECHO_MSG} "make TABBED_CONF=/path/to/tabbed/config.h install clean"

@@ -19,4 +19,5 @@ PLIST_FILES=	bin/xwatchwin
 USES=		imake
 USE_XORG=	x11 xext
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

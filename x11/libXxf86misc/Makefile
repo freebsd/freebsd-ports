@@ -23,4 +23,5 @@ MAN3=		XF86Misc.3 \
 		XF86MiscSetMouseSettings.3 \
 		XF86MiscSetSaver.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

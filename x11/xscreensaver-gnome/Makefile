@@ -82,6 +82,7 @@ MAN6?=	anemone.6 anemotaxis.6 antinspect.6 antmaze.6 antspotlight.6 \
 	lcdscrub.6 skytentacles.6 rubikblocks.6 surfaces.6 \
 	xscreensaver-gl-helper.6
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MALL_FORTUNES}

@@ -20,6 +20,7 @@ USE_XORG=	xtst x11 xinerama
 PLIST_FILES=	bin/keynav
 PORTEXAMPLES=	keynavrc
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

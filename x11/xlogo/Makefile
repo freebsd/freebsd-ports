@@ -14,4 +14,5 @@ USE_XORG=	xrender xft xext xt xaw xp xprintutil
 
 MAN1=		xlogo.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -9,4 +9,5 @@ COMMENT=	DRI2 prototype headers
 
 XORG_CAT=	proto
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

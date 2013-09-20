@@ -1,9 +1,5 @@
-# New ports collection makefile for:	x11/linux-f10-xorg-libs
-# Date created:				2009-05-01
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	xorg-libs
 PORTVERSION=	7.4
@@ -99,6 +95,7 @@ USE_LINUX_APPS=		fontconfig
 LINUX_DIST_VER=		10
 USE_LDCONFIG=		yes
 
+NO_STAGE=	yes
 post-install:
 	@${INSTALL_DATA} ${FILESDIR}/xorg-x11-i386.conf ${PREFIX}/etc/ld.so.conf.d
 

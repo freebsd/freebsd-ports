@@ -18,4 +18,5 @@ PLIST_FILES=	bin/xcursorgen
 
 MAN1=		xcursorgen.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

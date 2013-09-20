@@ -20,6 +20,7 @@ USE_BZIP2=	yes
 USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20 desktopfileutils intltool intlhack
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

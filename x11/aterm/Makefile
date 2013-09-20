@@ -35,6 +35,7 @@ MAN1=		aterm.1
 
 PLIST_FILES=       bin/aterm
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} > 900007
 CONFIGURE_ARGS+=	--disable-utmp

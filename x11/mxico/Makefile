@@ -18,6 +18,7 @@ USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		mxico.1
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

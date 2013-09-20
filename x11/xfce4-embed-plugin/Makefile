@@ -1,6 +1,5 @@
 # Created by: Olivier Duchateau
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-embed-plugin
 PORTVERSION=	1.4.1
@@ -23,6 +22,7 @@ USE_XFCE=	configenv libmenu libutil panel
 
 OPTIONS_DEFINE=	NLS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

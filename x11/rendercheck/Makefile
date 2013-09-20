@@ -1,9 +1,5 @@
-# New ports collection makefile for:   rendercheck
-# Date Created:			26 Sep, 2004
-# Whom:				Eric Anholt <anholt@FreeBSD.org>
-#
+# Created by: Eric Anholt <anholt@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rendercheck
 PORTVERSION=	1.4
@@ -19,4 +15,5 @@ MAN1=		rendercheck.1
 
 PLIST_FILES=	bin/rendercheck
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

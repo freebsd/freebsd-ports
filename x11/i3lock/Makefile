@@ -33,4 +33,5 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USES=		iconv pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

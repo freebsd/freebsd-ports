@@ -17,6 +17,7 @@ USES=		pkgconfig
 USE_XORG=	xpm
 USE_GNOME=	gtk20
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	@${MKDIR} ${EXAMPLESDIR}

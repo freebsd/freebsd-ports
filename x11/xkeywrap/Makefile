@@ -1,9 +1,5 @@
-# New ports collection makefile for:   XKeyWrap
-# Date created:        7 January 2000
-# Whom:                Sakai Hiroaki <sakai@seki.ee.kagu.sut.ac.jp>
-#
+# Created by: Sakai Hiroaki <sakai@seki.ee.kagu.sut.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	xkeywrap
 PORTVERSION=	1.1
@@ -23,6 +19,7 @@ PORTDOCS=	README demo.dat xkeywrap_demo.c
 
 PLIST_FILES=	bin/xkeywrap
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xkeywrap ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xkeywrap.1.gz ${PREFIX}/man/man1

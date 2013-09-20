@@ -28,6 +28,7 @@ PNEE_DESC=	GNOME panel frontend
 GNEE_CONFIGURE_ENABLE=	gui
 PNEE_CONFIGURE_ENABLE=	gnome-applet
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNEE}

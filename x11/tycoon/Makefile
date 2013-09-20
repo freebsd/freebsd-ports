@@ -17,6 +17,7 @@ USES=		imake
 USE_XORG=	xaw
 REINPLACE_ARGS=	-i ""
 
+NO_STAGE=	yes
 post-patch:
 	${RM} -f ${WRKSRC}/xbackdrop/backdrops/index~
 	${REINPLACE_CMD} -e 's,/usr/lib,${PREFIX}/lib,' \

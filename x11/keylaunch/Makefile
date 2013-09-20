@@ -18,6 +18,7 @@ USE_XORG=	x11
 
 PKGMESSAGE=	${WRKSRC}/pkg-message
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile
 

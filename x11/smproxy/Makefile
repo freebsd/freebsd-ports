@@ -14,4 +14,5 @@ PLIST_FILES=	bin/smproxy
 
 MAN1=		smproxy.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

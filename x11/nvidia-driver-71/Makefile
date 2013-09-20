@@ -8,4 +8,5 @@ PORTREVISION=	3
 MASTERDIR=	${.CURDIR}/../nvidia-driver
 NO_LATEST_LINK=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

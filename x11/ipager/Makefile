@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ipager
-# Date created:				22 Mar 2006
-# Whom:					Vlad V. Teterya <vlad@vlad.uz.ua>
-#
+# Created by: Vlad V. Teterya <vlad@vlad.uz.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	ipager
 PORTVERSION=	1.1.0
@@ -35,6 +31,7 @@ THEMES=		atlantis.conf \
 		light_gray.conf \
 		light_orange.conf
 
+NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} -e '35,36d;89d;92,94d' \
 			${WRKSRC}/SConstruct

@@ -15,4 +15,5 @@ USE_XORG=	x11 xext
 MAN1=		xtestpicture.1
 PLIST_FILES=	bin/xtestpicture
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

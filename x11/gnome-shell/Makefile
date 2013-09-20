@@ -1,10 +1,6 @@
-# New ports collection makefile for:   gnome-shell
-# Date created:        14 Aug 2009
-# Whom:                Pawel Worach <pawel.worach@gmail.com>
-#
+# Created by: Pawel Worach <pawel.worach@gmail.com>
 # $FreeBSD$
 #   $MCom: ports/x11/gnome-shell/Makefile,v 1.16 2010/11/20 15:05:25 kwm Exp $
-#
 
 PORTNAME=	gnome-shell
 PORTVERSION=	2.31.2
@@ -40,6 +36,7 @@ GCONF_SCHEMAS=	gnome-shell.schemas
 
 MAN1=		gnome-shell.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' \
 		${WRKSRC}/configure

@@ -18,4 +18,5 @@ MAN1=		xprompt.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/xprompt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -43,6 +43,7 @@ GCONF_SCHEMAS=	charpick.schemas drivemount.schemas geyes.schemas \
 OPTIONS_DEFINE=	MINI_COMMANDER NOTIFY
 MINI_COMMANDER_DESC=	Mini-commander applet
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if exists(${LOCALBASE}/libdata/pkgconfig/libnotify.pc) || \

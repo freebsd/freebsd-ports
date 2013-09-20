@@ -23,4 +23,5 @@ MAN1=		pat2ppm.1 patextract.1 png2pat.1 rgb2pat.1 \
 		visgrep.1 xmousepos.1 xte.1
 MAN7=		xautomation.7
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

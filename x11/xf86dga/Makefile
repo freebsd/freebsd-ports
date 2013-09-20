@@ -16,4 +16,5 @@ PLIST_FILES=	bin/dga
 
 MAN1=		dga.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

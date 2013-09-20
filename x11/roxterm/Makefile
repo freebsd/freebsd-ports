@@ -31,6 +31,7 @@ MAN1=	roxterm.1 \
 
 MAITCHFLAGS=	CC=${CC};CPP=${CC};CFLAGS=${CFLAGS};PARALLEL=${MAKE_JOBS_NUMBER}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -29,6 +29,7 @@ CMAKE_ARGS+=	-DCMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS=-rdynamic
 # 'USES= moderncompiler' would help, for now force dependency on GCC
 USE_GCC=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Workaround to keep kactivitymanagerd from crashing:

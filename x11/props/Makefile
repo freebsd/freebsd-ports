@@ -22,6 +22,7 @@ USES=		imake
 USE_XORG=	x11 xext
 MAKE_ARGS=	INFOFILES=""
 
+NO_STAGE=	yes
 post-install:
 		${MKDIR} ${PREFIX}/lib/X11/locale/C/props; \
 		${INSTALL_DATA} ${WRKSRC}/C/* ${PREFIX}/lib/X11/locale/C/props

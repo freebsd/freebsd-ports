@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 MAN1=	wmappl.1
 MAN5=	wmapplrc.5
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

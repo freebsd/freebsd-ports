@@ -17,4 +17,5 @@ USE_XORG=	x11 xext
 MAN1=		xzoom.1
 PLIST_FILES=	bin/xzoom
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

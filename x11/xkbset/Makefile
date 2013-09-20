@@ -22,6 +22,7 @@ MAKE_ARGS=	X11BASE="${LOCALBASE}" X11PREFIX="${PREFIX}" \
 OPTIONS_DEFINE=	GUI
 GUI_DESC=	Install Tk GUI
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUI}

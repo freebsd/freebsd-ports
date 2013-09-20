@@ -81,6 +81,7 @@ MAN8=	kbuildsycoca4.8 \
 OPTIONS_DEFINE=	AVAHI
 AVAHI_DESC=	Use Avahi's mDNSResponder (otherwise Apple's)
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)

@@ -15,6 +15,7 @@ USE_XORG=	xpm
 MAN6=		xsnow.6
 PLIST_FILES=	bin/xsnow
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} \
 		-e 's: BINDIR .*:BINDIR=${PREFIX}/bin:' \

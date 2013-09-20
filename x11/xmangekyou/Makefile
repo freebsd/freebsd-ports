@@ -19,6 +19,7 @@ PORTDOCS=	COPYRIGHT.euc HISTORY.euc README.euc
 PLIST_FILES=	bin/xmangekyou lib/X11/XMangekyou/animation.dat
 PLIST_DIRS=	lib/X11/XMangekyou
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

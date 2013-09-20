@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gnome2-power-tools
-# Date created:				18 January 2004
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/x11/gnome2-power-tools/Makefile,v 1.84 2008/09/30 13:18:29 kwm Exp $
-#
 
 PORTREVISION=	2
 CATEGORIES=	x11 gnome
@@ -37,4 +33,5 @@ MASTERDIR=	${.CURDIR}/../gnome2
 GNOME_SLAVE=	yes
 
 DESCR=		${.CURDIR}/pkg-descr
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

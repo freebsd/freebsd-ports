@@ -15,4 +15,5 @@ MAN1=		settitle.1
 MANCOMPRESSED=	maybe
 PLIST_FILES=	bin/settitle
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

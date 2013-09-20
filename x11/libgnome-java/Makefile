@@ -39,6 +39,7 @@ PLIST_SUB=		GNOME_API_VERSION=${GNOME_API_VERSION} PORTNAME=${PORTNAME}
 
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e 's|||g' \
 		${WRKSRC}/gnome2-java.pc.in

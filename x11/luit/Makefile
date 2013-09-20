@@ -16,4 +16,5 @@ PLIST_FILES=	bin/luit
 
 MAN1=		luit.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -20,4 +20,5 @@ PLIST_FILES=	bin/xtacy
 
 WRKSRC=		${WRKDIR}/Xtacy
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

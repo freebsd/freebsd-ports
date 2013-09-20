@@ -70,6 +70,7 @@ XSCREENSAVER_DESC=	Use xscreensaver as screen saver app
 
 do-install:	# empty
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(GNOME_SLAVE)

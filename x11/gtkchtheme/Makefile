@@ -18,6 +18,7 @@ USE_GNOME=	gnomehack gnomeprefix gtk20
 PLIST_FILES=	bin/gtk-chtheme
 MAN1=		gtk-chtheme.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gtk-chtheme ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/gtk-chtheme.1 ${PREFIX}/man/man1

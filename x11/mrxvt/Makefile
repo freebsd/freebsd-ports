@@ -19,6 +19,7 @@ CONFLICTS=	mrxvt-0.5.*
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900007

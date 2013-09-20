@@ -14,4 +14,5 @@ PLIST_FILES=	bin/xdpr bin/xpr
 
 MAN1=		xdpr.1 xpr.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -21,4 +21,5 @@ MAN3=		Xinerama.3 \
 		XineramaIsActive.3 \
 		XineramaQueryScreens.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

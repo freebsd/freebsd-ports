@@ -16,4 +16,5 @@ PLIST_FILES=	bin/xkbprint
 
 MAN1=		xkbprint.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

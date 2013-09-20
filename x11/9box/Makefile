@@ -1,9 +1,5 @@
-# New ports collection makefile for:	9box
-# Date created:		Fri Mar 21 10:10:48 EST 2003
-# Whom:			Serge Gagnon <gagnon__s@videotron.ca>
-#
+# Created by: Serge Gagnon <gagnon__s@videotron.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	9box
 PORTVERSION=	0.2.1
@@ -21,6 +17,7 @@ USE_XORG=	xbitmaps x11 xt
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g; \
 		s|%%CC%%|${CC}|g' \

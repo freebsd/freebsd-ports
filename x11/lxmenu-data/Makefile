@@ -1,4 +1,4 @@
-# Created by: Kris Moore <kmoore@freebsd.org>
+# Created by: Kris Moore <kmoore@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	lxmenu-data
@@ -26,6 +26,7 @@ PORTDOCS=	AUTHORS README TODO
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

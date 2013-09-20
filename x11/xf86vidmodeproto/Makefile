@@ -10,4 +10,5 @@ COMMENT=	XFree86-VidModeExtension extension headers
 
 XORG_CAT=	proto
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

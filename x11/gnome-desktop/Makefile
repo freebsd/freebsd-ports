@@ -32,6 +32,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=	gnome-about.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|xsltproc -o| xsltproc --nonet -o|g' \
 		${WRKSRC}/desktop-docs/fdl/Makefile.in \

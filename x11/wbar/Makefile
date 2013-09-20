@@ -27,6 +27,7 @@ OPTIONS_DEFAULT=	NLS WBARCONFIG
 
 WBARCONFIG_DESC=	Build the GTK+ configuration interface
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -27,4 +27,5 @@ MAKE_ENV+=	MANDIR=${MANPREFIX}/man
 
 MAN1=		locker.1 lockerctl.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

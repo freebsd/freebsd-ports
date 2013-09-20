@@ -19,4 +19,5 @@ USE_XORG=	xaw xmu xt sm ice xpm xp xext x11
 USES=		imake
 MAN1=		xcolors.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

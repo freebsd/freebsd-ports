@@ -20,6 +20,7 @@ CONFIGURE_ARGS=	--disable-gpm
 
 MAN1=		imwheel.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

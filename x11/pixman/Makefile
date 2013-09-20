@@ -16,6 +16,7 @@ CONFIGURE_ARGS=	--disable-gtk
 
 OPTIONS_DEFINE=	SIMD
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! {PORT_OPTIONS:MSIMD}

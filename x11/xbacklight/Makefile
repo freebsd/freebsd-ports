@@ -17,4 +17,5 @@ USE_XORG=	x11 xrender xrandr xcb
 MAN1=		xbacklight.1
 PLIST_FILES=	bin/xbacklight
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -14,6 +14,7 @@ USE_AUTOTOOLS=	libtool
 
 MAN1=		xrx.1 libxrx.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|mozilla-plugin|disabled-libxul-plugin|g' \
 		${WRKSRC}/configure

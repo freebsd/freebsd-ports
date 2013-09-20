@@ -16,6 +16,7 @@ EXPIRATION_DATE=	2013-10-18
 USE_BZIP2=	yes
 USE_XORG=	xpm x11
 
+NO_STAGE=	yes
 pre-everything::
 .if defined(WITHOUT_IMLIB)
 	@${ECHO_CMD} "Disabling Imlib support; only XPM images are supported"

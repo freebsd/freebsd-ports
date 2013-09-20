@@ -16,6 +16,7 @@ USE_XORG=	x11
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-extract:

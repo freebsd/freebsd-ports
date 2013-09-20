@@ -22,6 +22,7 @@ MAKE_ARGS=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lX11" \
 PORTDOCS=	README
 PLIST_FILES=	bin/swarp
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -21,4 +21,5 @@ MAN8=		stjerm.8
 LICENSE_FILE=	${WRKSRC}/COPYING
 PLIST_FILES=	bin/stjerm
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

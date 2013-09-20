@@ -32,4 +32,5 @@ USE_XORG=	x11 xext xtst xfixes xcomposite xdamage
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	parti_all
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

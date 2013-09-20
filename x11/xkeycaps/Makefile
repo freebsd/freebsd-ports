@@ -16,4 +16,5 @@ USE_XORG=	xbitmaps xaw
 MAN1=		xkeycaps.1
 PLIST_FILES=	bin/xkeycaps
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

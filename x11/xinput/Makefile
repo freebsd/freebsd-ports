@@ -15,4 +15,5 @@ PLIST_FILES=	bin/xinput
 
 MAN1=		xinput.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

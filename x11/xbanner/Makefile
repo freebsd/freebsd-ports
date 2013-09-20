@@ -14,6 +14,7 @@ COMMENT=	Make your XDM login screen look beautiful
 
 USE_XORG=	xpm x11
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

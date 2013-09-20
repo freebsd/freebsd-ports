@@ -16,4 +16,5 @@ PLIST_FILES=	bin/xset
 
 MAN1=		xset.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

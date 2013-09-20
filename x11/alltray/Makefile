@@ -22,6 +22,7 @@ MAN1=		alltray.1
 OPTIONS_DEFINE=	KDE
 KDE_DESC=	Support only KDE desktop
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKDE}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	E-Run 1.2
-# Date created:				17 June 2000
-# Whom:					Kelly Yancey <kbyanc@posi.net>
-#
+# Created by: Kelly Yancey <kbyanc@posi.net>
 # $FreeBSD$
-#
 
 PORTNAME=	E-Run
 PORTVERSION=	1.2
@@ -26,6 +22,7 @@ USE_EFL=	imlib2
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib -lepplet -lImlib2 -lGL ${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -o ${PORTNAME}.epplet \
 		${PORTNAME}.c ${LDFLAGS}

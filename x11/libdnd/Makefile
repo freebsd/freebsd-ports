@@ -20,6 +20,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include/
 LDFLAGS+=	-L${LOCALBASE}/lib/
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

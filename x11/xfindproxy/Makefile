@@ -16,4 +16,5 @@ PLIST_FILES=	bin/xfindproxy
 
 MAN1=		xfindproxy.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

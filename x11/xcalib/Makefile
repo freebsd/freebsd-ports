@@ -19,6 +19,7 @@ DEFINES=	-DXCALIB_VERSION=\"${PORTVERSION}\" -DUNIX
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib -lm -lX11 -lXxf86vm -lXext
 CFLAGS+=	-I./icclib -I${LOCALBASE}/include -I${LOCALBASE}/include
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

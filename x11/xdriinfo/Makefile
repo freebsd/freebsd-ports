@@ -14,4 +14,5 @@ USE_XORG=	x11 glproto
 MAN1=		xdriinfo.1
 PLIST_FILES=	bin/xdriinfo
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

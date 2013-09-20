@@ -18,6 +18,7 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"

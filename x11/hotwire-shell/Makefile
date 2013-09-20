@@ -27,4 +27,5 @@ INSTALLS_ICONS=	yes
 
 PYDISTUTILS_PKGNAME=	hotwire
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -25,6 +25,7 @@ PLIST_FILES+=	${DOCSDIR_REL}/README
 PLIST_DIRS+=	${DOCSDIR_REL}
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/${INSTDIR_REL}
 .for s in ${SCRIPTS}

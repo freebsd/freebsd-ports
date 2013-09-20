@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 MAN1=		xclip.1 xclip-copyfile.1
 PLIST_FILES=	bin/xclip bin/xclip-copyfile bin/xclip-cutfile bin/xclip-pastefile
 
+NO_STAGE=	yes
 pre-configure:
 	@cd ${WRKSRC}; ./bootstrap
 

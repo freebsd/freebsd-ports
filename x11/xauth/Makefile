@@ -16,4 +16,5 @@ PLIST_FILES=	bin/xauth
 
 MAN1=		xauth.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

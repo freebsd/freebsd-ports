@@ -14,4 +14,5 @@ PLIST_FILES=	bin/sessreg
 
 MAN1=		sessreg.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

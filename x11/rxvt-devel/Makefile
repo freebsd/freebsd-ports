@@ -1,8 +1,5 @@
 # Created by: Gary Palmer <gpalmer@FreeBSD.org>
 # $FreeBSD$
-#
-# If possible, please consider updating the simple ports/x11-clocks/rclock
-# when you upgrade rxvt. These ports all use the same distfile.
 
 PORTNAME=	rxvt
 PORTVERSION=	2.7.10
@@ -46,6 +43,7 @@ USE_LDCONFIG=	yes
 
 MAN1=		rxvt.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900007

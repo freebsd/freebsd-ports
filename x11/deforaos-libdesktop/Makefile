@@ -22,6 +22,7 @@ MAKE_ARGS+=	PREFIX=${PREFIX}
 
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/lib/|/libdata/|g' \
 		${WRKSRC}/data/pkgconfig.sh

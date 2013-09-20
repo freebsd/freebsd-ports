@@ -95,4 +95,5 @@ MAN3=		XAllowDeviceEvents.3 \
 		XUngrabDeviceButton.3 \
 		XUngrabDeviceKey.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

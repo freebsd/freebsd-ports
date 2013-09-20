@@ -15,6 +15,7 @@ MAN3=		Xau.3 XauDisposeAuth.3 XauFileName.3 XauGetAuthByAddr.3 \
 		XauGetBestAuthByAddr.3 XauLockAuth.3 XauReadAuth.3 \
 		XauUnlockAuth.3 XauWriteAuth.3
 
+NO_STAGE=	yes
 post-install:
 	${LN} -sf ${PREFIX}/lib/libXau.so.6 ${PREFIX}/lib/libXau.so.0
 

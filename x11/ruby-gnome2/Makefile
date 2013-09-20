@@ -1,10 +1,6 @@
-# New ports collection makefile for:	Ruby-GNOME2
-# Date created:		28 February 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
 #   $MCom: ports/x11/ruby-gnome2/Makefile,v 1.6 2007/10/05 05:12:56 mezz Exp $
-#
 
 PORTNAME=	gnome2
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
@@ -27,6 +23,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gio2.so:${PORTSDIR
 
 USE_RUBY=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.common"
 
 NO_BUILD=	yes

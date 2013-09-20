@@ -23,4 +23,5 @@ MAN3=		Xss.3 \
 		XScreenSaverUnregister.3 \
 		XScreenSaverUnsetAttributes.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

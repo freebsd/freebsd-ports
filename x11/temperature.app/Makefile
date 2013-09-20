@@ -18,6 +18,7 @@ RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_XORG=	x11 xpm
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

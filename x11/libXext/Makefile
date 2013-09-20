@@ -77,4 +77,5 @@ MAN3=		DBE.3 \
 		XShmQueryExtension.3 \
 		XShmQueryVersion.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

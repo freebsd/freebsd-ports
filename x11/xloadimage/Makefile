@@ -36,6 +36,7 @@ MAN1=		xloadimage.1 uufilter.1
 MLINKS=		xloadimage.1 xsetbg.1 \
 		xloadimage.1 xview.1
 
+NO_STAGE=	yes
 post-patch:
 	@${CHMOD} a+rx ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|TIFFHeader|TIFFHeaderClassic|g' \

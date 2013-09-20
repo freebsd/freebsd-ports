@@ -21,4 +21,5 @@ USES=		motif
 MAN1=		xforward.1
 PLIST_FILES=	bin/xforward
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

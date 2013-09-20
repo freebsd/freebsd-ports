@@ -34,6 +34,7 @@ SCIM_DESC=	"SCIM support (experimental)"
 SIXEL_DESC=	"Sixel graphics support"
 UIM_DESC=	"uim support (experimental)"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MFRIBIDI}

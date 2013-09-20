@@ -25,6 +25,7 @@ SUB_FILES+=	pkg-message
 MANCOMPRESSED=	yes
 MAN1=	wmdrawer.1x
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR},g" ${WRKSRC}/wmdrawerrc.example
 	@${REINPLACE_CMD} -e "s,CFLAGS = -O3,CFLAGS +=,g; \

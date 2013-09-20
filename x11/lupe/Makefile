@@ -24,6 +24,7 @@ MAN1=		${PORTNAME}.1
 PORTDOCS=	${PORTNAME}.doc
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

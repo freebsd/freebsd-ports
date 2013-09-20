@@ -29,4 +29,5 @@ MAN3=		DMX.3 \
 		DMXRemoveScreen.3 \
 		DMXSync.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

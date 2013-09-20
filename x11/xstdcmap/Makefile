@@ -16,4 +16,5 @@ PLIST_FILES=	bin/xstdcmap
 
 MAN1=		xstdcmap.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

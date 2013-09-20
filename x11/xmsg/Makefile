@@ -16,4 +16,5 @@ PLIST_FILES=	bin/xmsg
 USES=		imake
 USE_XORG=	x11 xext xaw xmu xt sm ice
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

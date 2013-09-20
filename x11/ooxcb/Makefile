@@ -14,4 +14,5 @@ USE_XORG=	xcb
 USE_PYDISTUTILS=easy_install
 PLIST_FILES=	${PYTHON_SITELIBDIR:S/${LOCALBASE}\///}/${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}.egg
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

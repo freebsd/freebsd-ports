@@ -20,6 +20,7 @@ USE_XORG=	xaw
 
 MAN1=		bricons.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

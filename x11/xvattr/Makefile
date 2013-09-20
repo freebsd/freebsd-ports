@@ -23,6 +23,7 @@ PLIST_FILES=	bin/${PORTNAME} bin/g${PORTNAME}
 
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK1}

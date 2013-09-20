@@ -1,4 +1,3 @@
-# Create by: Vlad V. Teterya <vlad@vlad.uz.ua>
 # $FreeBSD$
 
 PORTNAME=	tilda
@@ -18,6 +17,7 @@ USES=		gmake pkgconfig
 
 DOCS=		AUTHORS ChangeLog README TODO
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|ps -C tilda -o pid=|pgrep tilda|' \
 		${WRKSRC}/src/tilda.c

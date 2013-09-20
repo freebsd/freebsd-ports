@@ -21,6 +21,7 @@ USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
 MAN1=		xvkbd.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXAW3D}

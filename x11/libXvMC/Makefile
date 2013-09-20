@@ -11,4 +11,5 @@ COMMENT=	X Video Extension Motion Compensation library
 XORG_CAT=	lib
 USE_XORG=	x11 xext xv xextproto videoproto:both xproto:both
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -25,4 +25,5 @@ DISTINFO_FILE=	${PORTSDIR}/x11/kde4-baseapps/distinfo
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}/lib/konq
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -12,6 +12,7 @@ LIB_DEPENDS=	Xcm:${PORTSDIR}/x11/libXcm
 
 XORG_CAT=	app
 # xcm should be added to XORG_MODULES at /usr/ports/Mk/bsd.xorg.mk
+NO_STAGE=	yes
 # and LIB_DEPENDS is replaced by the following line:
 #USE_XORG=	xcm
 

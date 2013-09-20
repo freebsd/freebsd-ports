@@ -23,6 +23,7 @@ USE_PERL5=	configure patch
 MANPREFIX=	${SITE_PERL}
 MAN3=		X11::IdleTime.3
 
+NO_STAGE=	yes
 post-patch:
 .for i in IdleTime.pm
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/${i}

@@ -16,6 +16,7 @@ USE_GNOME=	libwnck libglade2 gtk20
 USES=		pkgconfig
 INSTALLS_ICONS=	yes
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

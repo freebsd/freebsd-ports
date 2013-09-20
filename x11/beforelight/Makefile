@@ -12,4 +12,5 @@ USE_XORG=	x11 xscrnsaver xt xaw7 xt
 
 MAN1=		beforelight.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

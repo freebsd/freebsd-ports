@@ -85,6 +85,7 @@ UPOWER_DESC=	Power management via UPower
 VLC_DESC=	Multimedia via Phonon-VLC
 WALLPAPERS_DESC=Install official KDE wallpapers
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGPS}

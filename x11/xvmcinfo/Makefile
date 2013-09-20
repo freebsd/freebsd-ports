@@ -18,6 +18,7 @@ PLIST_FILES=	bin/xvmcinfo
 
 NO_MAN=		defined
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} ${CPPFLAGS} \
 	    -I${LOCALBASE}/include -L${LOCALBASE}/lib \

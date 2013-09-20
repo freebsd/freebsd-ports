@@ -28,6 +28,7 @@ MAN1=		xfce4-terminal.1
 MANLANG=	"" ar ca da de el es fr gl id it ja ko lt \
 	pl pt pt_BR ru sr sv tr ug uk zh_CN
 
+NO_STAGE=	yes
 .include  <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 MAN1=		wmblob.1
 PLIST_FILES=	bin/wmblob
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/wmblob ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/doc/wmblob.1 ${MANPREFIX}/man/man1

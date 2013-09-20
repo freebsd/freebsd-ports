@@ -24,6 +24,7 @@ CFLAGS+=	-Wno-error=return-type
 
 MAN1=		xgrab.1 xgrabsc.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's,\*envp,\*\*envp,g' ${WRKSRC}/xgrabxaw.c
 

@@ -29,4 +29,5 @@ MAN3=		Xrandr.3 \
 		XRRSetScreenConfig.3 \
 		XRRSetScreenConfigAndRate.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

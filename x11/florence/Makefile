@@ -1,4 +1,4 @@
-# Created by: Kris Moore <kmoore@freebsd.org>
+# Created by: Kris Moore <kmoore@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	florence
@@ -37,6 +37,7 @@ OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

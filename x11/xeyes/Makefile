@@ -14,4 +14,5 @@ PLIST_FILES=	bin/xeyes
 
 MAN1=		xeyes.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

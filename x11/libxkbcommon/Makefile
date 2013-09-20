@@ -23,4 +23,5 @@ CONFIGURE_ARGS=	--without-default-layout \
 		--without-default-variant \
 		--without-doxygen
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

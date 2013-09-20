@@ -16,4 +16,5 @@ PLIST_FILES=	bin/xdbedizzy
 
 MAN1=		xdbedizzy.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

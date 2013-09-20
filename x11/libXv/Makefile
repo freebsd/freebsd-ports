@@ -41,4 +41,5 @@ MAN3=	Xv.3 \
 	XvUngrabPort.3 \
 	XvVideoNotify.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

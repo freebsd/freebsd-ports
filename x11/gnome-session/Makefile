@@ -39,4 +39,5 @@ MAN1=		gnome-session.1 gnome-wm.1 gnome-session-properties.1 \
 		gnome-session-save.1
 GCONF_SCHEMAS=	gnome-session.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

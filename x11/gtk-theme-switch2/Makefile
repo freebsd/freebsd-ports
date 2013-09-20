@@ -17,4 +17,5 @@ USE_GNOME=	gtk20
 MAN1=		switch2.1
 PLIST_FILES=	bin/switch2
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 # Created by: Matt Lancereau
 # $FreeBSD$
-#
 
 PORTNAME=	libexo
 PORTVERSION=	0.10.2
@@ -33,6 +32,7 @@ OPTIONS_DEFINE=	DOCS NLS
 
 MAN1=		exo-csource.1 exo-open.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

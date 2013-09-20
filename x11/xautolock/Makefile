@@ -24,4 +24,5 @@ XLOCK_RUN_DEPENDS=	xlock:${PORTSDIR}/x11/xlockmore
 MAN1=		xautolock.1
 PLIST_FILES=	bin/xautolock
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

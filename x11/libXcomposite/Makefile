@@ -24,4 +24,5 @@ MAN3=		Xcomposite.3 \
 		XCompositeGetOverlayWindow.3 \
 		XCompositeReleaseOverlayWindow.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

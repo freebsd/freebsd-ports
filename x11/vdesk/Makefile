@@ -14,6 +14,7 @@ DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README
 PLIST_DIRS=	share/doc/vdesk
 PLIST_FILES=	bin/vdesk
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MDOCS}	
 .for ii in ${DOCS}

@@ -36,6 +36,7 @@ MENUBAR_DESC=		Menubar
 TEXTSHADOW_DESC=	Text shadow
 FRILLS_DESC=		Internal borders and smart resizing
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--enable-utempter

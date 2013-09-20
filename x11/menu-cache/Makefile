@@ -1,4 +1,4 @@
-# Created by: Kris Moore <kmoore@freebsd.org>
+# Created by: Kris Moore <kmoore@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	menu-cache
@@ -20,4 +20,5 @@ USE_FAM=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

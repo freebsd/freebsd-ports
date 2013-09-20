@@ -16,6 +16,7 @@ USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!${SH}|' \
 		${WRKSRC}/configure

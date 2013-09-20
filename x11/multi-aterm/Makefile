@@ -25,6 +25,7 @@ CONFIGURE_ARGS+=	--enable-utmp
 CONFIGURE_ARGS+=	--enable-wtmp
 .endif
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can specify the following options:"

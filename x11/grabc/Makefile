@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	grabc
-# Date Created:			Dec 30, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	grabc
 PORTVERSION=	1.1
@@ -21,6 +16,7 @@ USE_XORG=	x11
 CFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lX11
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c ${LIBS}
 

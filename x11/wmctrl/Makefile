@@ -19,4 +19,5 @@ PLIST_FILES=	bin/wmctrl
 
 MAN1=		wmctrl.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

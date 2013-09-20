@@ -19,4 +19,5 @@ MANCOMPRESSED=	yes
 MAN1=		xcmd.1
 PLIST_FILES=	bin/xcmd
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

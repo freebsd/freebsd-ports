@@ -14,4 +14,5 @@ PLIST_FILES=	bin/xprop
 
 MAN1=		xprop.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

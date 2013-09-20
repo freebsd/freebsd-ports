@@ -18,4 +18,5 @@ PLIST_FILES+=	bin/viewres \
 PLIST_DIRS+=	share/X11/app-defaults \
 		share/X11
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

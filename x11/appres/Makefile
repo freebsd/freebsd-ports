@@ -13,4 +13,5 @@ USE_XORG=	x11 xt
 MAN1=		appres.1
 PLIST_FILES=	bin/appres
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

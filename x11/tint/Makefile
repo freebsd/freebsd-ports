@@ -32,6 +32,7 @@ MAN1=		tint2.1
 
 PORTDOCS=	AUTHORS ChangeLog README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYCONF}

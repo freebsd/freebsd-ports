@@ -1,11 +1,5 @@
-# New ports collection Makefile for: rxvt
-# Date created:         5th December 1994
-# Whom:                 gpalmer@FreeBSD.org
-#
+# Created by: gpalmer@FreeBSD.org
 # $FreeBSD$
-#
-# If possible, please consider updating the simple ports/x11-clocks/rclock
-# when you upgrade rxvt. These ports all use the same distfile.
 
 PORTNAME=	rxvt
 PORTVERSION=	2.6.4
@@ -41,6 +35,7 @@ MAN1=		rxvt.1
 PLIST_FILES=	bin/rxvt
 
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # fails to build with new utmpx

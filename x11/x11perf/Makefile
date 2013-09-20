@@ -16,4 +16,5 @@ MAN1=		Xmark.1 \
 		x11perf.1 \
 		x11perfcomp.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

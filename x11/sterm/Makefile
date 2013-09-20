@@ -25,6 +25,7 @@ PLIST_FILES=	bin/st
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-everything::
