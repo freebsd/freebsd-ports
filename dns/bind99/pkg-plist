@@ -145,11 +145,13 @@ include/isc/resource.h
 include/isc/result.h
 include/isc/resultclass.h
 include/isc/rwlock.h
+include/isc/safe.h
 include/isc/serial.h
 include/isc/sha1.h
 include/isc/sha2.h
 include/isc/sockaddr.h
 include/isc/socket.h
+include/isc/stat.h
 include/isc/stdio.h
 include/isc/stdlib.h
 include/isc/stdtime.h
