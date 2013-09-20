@@ -18,6 +18,7 @@ JAVA_VERSION=	1.7+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_RC_SUBR=	${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 LUCENEVER=	4.2.1

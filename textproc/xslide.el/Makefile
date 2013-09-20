@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xslide.el
-# Date created:		14 January 2002
-# Whom:			Leo Kim <leo@florida.sarang.net>
-#
+# Created by: Leo Kim <leo@florida.sarang.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xslide.el
 PORTVERSION=	0.2.2
@@ -21,6 +17,7 @@ PORTDOCS=	README.TXT TODO NEWS ChangeLog
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${ELISPDIR} ${XELISPDIR}
 	(cd ${WRKSRC} && \

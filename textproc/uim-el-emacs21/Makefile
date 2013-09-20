@@ -1,9 +1,5 @@
-# New ports collection makefile for:   uim-el-xemacs21-mule
-# Date created:        4 August 2007
-# Whom:                MANTANI Nobutaka <nobutaka@freebsd.org>
-#
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
@@ -20,4 +16,5 @@ DESCR=		${MASTERDIR}/pkg-descr
 
 MASTERDIR=	${.CURDIR}/../uim-el
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

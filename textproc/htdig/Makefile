@@ -32,6 +32,7 @@ MAN8=		htdigconfig.8
 OPTIONS_DEFINE=	APACHE DOCS
 OPTIONS_DEFAULT=	APACHE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}

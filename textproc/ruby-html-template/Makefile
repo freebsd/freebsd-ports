@@ -1,9 +1,5 @@
-# New ports collection makefile for:	HTML/Template for Ruby
-# Date created:		28 February 2003
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	html-template
 PORTVERSION=	0.16
@@ -24,6 +20,7 @@ DOCS_EN=	ChangeLog \
 		html-template.rd
 DOCS_JA=	html-template.ja.rd
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}

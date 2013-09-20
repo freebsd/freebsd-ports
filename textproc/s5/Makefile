@@ -1,9 +1,5 @@
-# New ports collection makefile for:	s5
-# Date created:			28 October 2005
-# Whom:				Peter Pentchev <roam@FreeBSD.org>
-#
+# Created by: Peter Pentchev <roam@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	s5
 PORTVERSION=	1.1
@@ -29,6 +25,7 @@ MANCOMPRESSED=	no
 S5_DIR=		${PREFIX}/share/${PORTNAME}
 S5_SUBDIRS=	pix primer s5-blank ui
 
+NO_STAGE=	yes
 post-extract:
 		cd ${WRKSRC} && ${UNZIP_CMD} s5-blank.zip
 		${SED} -e "s,/usr/local,${PREFIX}," ${FILESDIR}/s5.sh > ${WRKDIR}/s5

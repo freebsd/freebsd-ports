@@ -22,6 +22,7 @@ USE_DOS2UNIX=	yes
 MAN3=		SVG.3 SVG::DOM.3 SVG::Element.3 SVG::Extension.3 \
 		SVG::XML.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

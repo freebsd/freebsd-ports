@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--with-iconv=${ICONV_PREFIX} \
 DOCSDIR=	${PREFIX}/share/doc/py-libxml2
 EXAMPLESDIR=	${PREFIX}/share/examples/py-libxml2
 
+NO_STAGE=	yes
 post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}

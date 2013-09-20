@@ -56,4 +56,5 @@ MAN3=	Text::Pipe.3 \
 	Text::Pipe::Uppercase.3 \
 	Text::Pipe::UppercaseFirst.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

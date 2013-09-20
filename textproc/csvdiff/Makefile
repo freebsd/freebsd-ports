@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}
 PORTDOCS=	CHANGES README TODO
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
 		${PREFIX}/bin/${PORTNAME}

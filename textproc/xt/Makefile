@@ -1,4 +1,3 @@
-# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	xt
@@ -27,6 +26,7 @@ PORTDOCS=	${OTHERDOCS} api
 SAMPLES=	date.xsl nxml.xsl slides.xml slides.xsl sort-uniq.xml \
 		sort-uniq.xsl split.xml split.xsl textfile.xml textfile.xsl
 
+NO_STAGE=	yes
 do-configure:
 	${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},g' ${FILESDIR}/xt.sh > ${WRKSRC}/xt
 

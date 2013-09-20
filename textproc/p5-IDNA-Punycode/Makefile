@@ -17,6 +17,7 @@ USE_PERL5=	configure
 
 MAN3=		IDNA::Punycode.3
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} -f ${WRKSRC}/lib/IDNA/.Punycode.pm.swp
 

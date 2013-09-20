@@ -25,4 +25,5 @@ MAN3=		XML::Stream.3 \
 		XML::Stream::Parser::DTD.3 \
 		XML::Stream::Tree.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

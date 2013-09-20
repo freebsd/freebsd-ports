@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sdf
-# Date created:				12 December 2000
-# Whom:					dannyman <dannyman@tellme.com>
-#
+# Created by: dannyman <dannyman@tellme.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sdf
 PORTVERSION=	2.001
@@ -21,6 +17,7 @@ USE_PERL5=	configure
 
 MAN1=		pod2sdf.1
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

@@ -22,4 +22,5 @@ USE_PERL5=	configure
 MAN1=		language-guess.1
 MAN3=		Text::Language::Guess.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

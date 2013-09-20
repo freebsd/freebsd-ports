@@ -17,6 +17,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--without-gtk
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 	    	${WRKSRC}/configure

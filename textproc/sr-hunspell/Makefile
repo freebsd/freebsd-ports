@@ -1,9 +1,4 @@
-# New ports collection makefile for:	sr-hunspell
-# Date created:		2011-07-20
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hunspell
 PORTVERSION=	0.18
@@ -29,6 +24,7 @@ PLIST_FILES=	%%DATADIR%%/sh_YU.aff \
 		%%DATADIR%%/sr_YU.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/sr-RS-Latn.aff ${DATADIR}/sh_YU.aff

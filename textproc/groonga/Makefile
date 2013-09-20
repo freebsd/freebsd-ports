@@ -25,6 +25,7 @@ MECAB_DESC=	Enable morphological analysis
 SUGGEST_DESC=	Enable suggestions
 OPTIONS_DEFAULT=MECAB SUGGEST
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

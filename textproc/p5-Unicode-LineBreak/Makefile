@@ -32,4 +32,5 @@ MAN3=		Unicode::LineBreak.3 \
 		Unicode::GCString.3 \
 		Text::LineFold::JA_JP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

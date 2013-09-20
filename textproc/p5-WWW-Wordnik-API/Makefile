@@ -27,4 +27,5 @@ PLIST_DIRS=	%%SITE_PERL%%/WWW/Wordnik %%SITE_PERL%%/WWW \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Wordnik \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

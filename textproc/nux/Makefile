@@ -23,6 +23,7 @@ JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 

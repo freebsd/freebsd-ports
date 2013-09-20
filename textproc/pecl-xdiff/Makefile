@@ -21,4 +21,5 @@ USE_PHPEXT=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

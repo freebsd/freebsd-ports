@@ -25,4 +25,5 @@ MAN3=	XML::RAI.3 \
 	XML::RAI::Item.3 \
 	XML::RAI::Object.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

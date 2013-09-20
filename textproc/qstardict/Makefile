@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qstardict
-# Date created:		12 Jul 2007
-# Whom:			Yinghong.Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong.Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qstardict
 PORTVERSION=	1.0.1
@@ -24,6 +20,7 @@ DICPATH=	${LOCALBASE}/share/stardict/dic
 OPTIONS_DEFINE=	DBUS DOCS NLS
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

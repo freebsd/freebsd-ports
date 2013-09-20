@@ -21,4 +21,5 @@ USE_PERL5=	configure
 MAN1=		mkdtskel.1 mkdtdskel.1 mkxmltype.1
 MAN3=		XML::DT.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

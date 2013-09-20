@@ -20,4 +20,5 @@ MAN1=		urifind.1
 MAN3=		URI::Find.3 \
 		URI::Find::Schemeless.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

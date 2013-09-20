@@ -20,4 +20,5 @@ MAN3=	Algorithm::RabinKarp.3 Algorithm::RabinKarp::Util.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

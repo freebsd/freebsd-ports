@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--program-prefix="${PROGRAM_PREFIX}"
 MAN1=		${PROGRAM_PREFIX}texi2html.1
 INFO=		texi2html
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

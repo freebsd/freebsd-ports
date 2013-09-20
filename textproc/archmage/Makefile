@@ -1,9 +1,5 @@
-# New ports collection makefile for:	archmage
-# Date created:				22 February 2005
-# Whom:					Vsevolod Stakhov <vsevolod@highsecure.ru>
-#
+# Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	archmage
 PORTVERSION=	0.2.4
@@ -23,6 +19,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 MAN1=	${PORTNAME}.1
 
+NO_STAGE=	yes
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/${PORTNAME}.1.gz
 

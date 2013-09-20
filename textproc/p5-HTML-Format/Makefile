@@ -29,6 +29,7 @@ MAN3=		HTML::FormatPS.3 \
 		HTML::FormatText.3 \
 		HTML::Formatter.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

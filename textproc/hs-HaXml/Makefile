@@ -15,5 +15,6 @@ USE_CABAL=	polyparse>=1.9 random
 EXECUTABLE=	Canonicalise CanonicaliseLazy DtdToHaskell FpMLToHaskell \
 		MkOneOf Validate XsdToHaskell Xtract
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

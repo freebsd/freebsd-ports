@@ -1,11 +1,5 @@
-# New ports collection makefile for:	docbook-410
-# Date created:		26 June 2000
-# Whom:			murray
-#
-# Based on nik's docbook-310 port
-#
+# Created by: murray
 # $FreeBSD$
-#
 
 PORTNAME=	docbook
 PORTVERSION=	4.1
@@ -41,6 +35,7 @@ SGMLCAT_RM=	${XMLCATMGR} -sc ${SGMLCAT} remove \
 
 LATEST_LINK=	docbook-410
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/${DTDDIR}
 	files=$$(${FIND} ${WRKSRC} -type f \! -name '.*'); \

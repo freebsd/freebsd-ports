@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-rttool
-# Date created:		2010-10-04
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rttool
 PORTVERSION=	1.0.3
@@ -26,6 +22,7 @@ RUBY_MODNAME=	rt
 DOCS_EN=	rttool.en.html rttool.en.rd
 DOCS_JA=	rttool.ja.html rttool.ja.rd
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja

@@ -22,4 +22,5 @@ CONFIGURE_ARGS=	EXPATLIBPATH=${LOCALBASE}/lib \
 MAN3=		XML::SAX::ExpatXS.3 XML::SAX::ExpatXS::Encoding.3 \
 		XML::SAX::ExpatXS::Preload.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

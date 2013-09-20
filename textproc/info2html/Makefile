@@ -1,9 +1,5 @@
-# New ports collection makefile for: info2html
-# Date created:         9 October 1997
-# Whom:                 wosch
-#
+# Created by: wosch
 # $FreeBSD$
-#
 
 PORTNAME=	info2html
 PORTVERSION=	2.0
@@ -17,6 +13,7 @@ COMMENT=	Translate GNU info files into HTML pages
 NO_BUILD=	yes
 PLIST_FILES=	bin/info2html bin/infocat bin/info2html.css bin/info2html.conf
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/info2html ${LOCALBASE}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/infocat ${LOCALBASE}/bin

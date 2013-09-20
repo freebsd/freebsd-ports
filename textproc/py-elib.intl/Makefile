@@ -20,4 +20,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 PYDISTUTILS_PKGVERSION=	${PORTVERSION}.dev
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

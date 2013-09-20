@@ -1,9 +1,5 @@
-# Ports collection makefile for:	py-zpt
-# Date created:				8 Mar 2005
-# Whom:					Benno Rice <benno@jeamland.net>
-#
+# Created by: Benno Rice <benno@jeamland.net>
 # $FreeBSD$
-#
 
 PORTNAME=	zpt
 PORTVERSION=	2.5
@@ -23,4 +19,5 @@ PYDISTUTILS_PKGVERSION=	0.0.0
 PYDISTUTILS_EGGINFODIR=	${PYTHONPREFIX_SITELIBDIR}/ZopePageTemplates
 WRKSRC=		${WRKDIR}/ZopePageTemplates
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

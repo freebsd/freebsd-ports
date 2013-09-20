@@ -1,6 +1,5 @@
 # Created by: Oliver Lehmann (oliver@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-dict
 PORTVERSION=	0.7.0
@@ -25,4 +24,5 @@ USE_LDCONFIG=	yes
 
 MAN1=		xfce4-dict.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

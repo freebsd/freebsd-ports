@@ -23,6 +23,7 @@ DEFAULT_PHP_VER=	5
 SUB_FILES+=		pkg-message
 SUB_LIST+=		DATADIR=${DATADIR} PREFIX=${PREFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

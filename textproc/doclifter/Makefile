@@ -1,6 +1,5 @@
 # Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	doclifter
 PORTVERSION=	2.12
@@ -18,6 +17,7 @@ NO_BUILD=	yes
 MAN1=		doclifter.1 manlifter.1
 PLIST_FILES=	bin/doclifter bin/manlifter
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} '1s/python/python2/' ${WRKSRC}/doclifter
 

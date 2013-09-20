@@ -29,4 +29,5 @@ MAN3=		POE::Filter::XML.3 \
 		POE::Filter::XML::NS.3 \
 		POE::Filter::XML::Node.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

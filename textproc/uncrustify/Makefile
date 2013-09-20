@@ -17,6 +17,7 @@ MAN1=		uncrustify.1
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

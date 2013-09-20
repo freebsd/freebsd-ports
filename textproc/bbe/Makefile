@@ -1,9 +1,5 @@
-# New ports collection makefile for:    bbe
-# Date created:                         8 November 2006
-# Whom:                                 Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	bbe
 PORTVERSION=	0.2.2
@@ -21,6 +17,7 @@ PLIST_FILES=	bin/${PORTNAME}
 DOCS=		AUTHORS ChangeLog README
 PORTDOCS=	bbe.html ${DOCS}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MAN1PREFIX}/man/man1

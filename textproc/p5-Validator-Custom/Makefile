@@ -28,4 +28,5 @@ MAN3=		Validator::Custom.3 \
 		Validator::Custom::Guide::Ja.3 \
 		Validator::Custom::Result.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

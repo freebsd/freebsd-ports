@@ -56,6 +56,7 @@ MAN3=	Text::Xslate.3 \
 	Text::Xslate::Type::Raw.3 \
 	Text::Xslate::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501600

@@ -30,6 +30,7 @@ XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 MAN1=		openjade.1
 DATADIR=	${PREFIX}/share/sgml/openjade
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|<iostream.h>|<iostream>|' ${WRKSRC}/style/MultiLineInlineNote.cxx

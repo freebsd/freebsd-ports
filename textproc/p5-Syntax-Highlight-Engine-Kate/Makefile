@@ -151,6 +151,7 @@ MAN3=	Syntax::Highlight::Engine::Kate.3 \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	mathml-xsd
-# Date created:			Feb 9, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	mathml-xsd
 PORTVERSION=	2
@@ -19,6 +14,7 @@ COMMENT=	The MathML XML Schema
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -name "CVS" -type d -delete
 

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	libstree
-# Date created:			Thu Mar  2 08:50:15 CST 2006
-# Whom:				clsung
-#
+# Created by: clsung
 # $FreeBSD$
-#
 
 PORTNAME=	libstree
 PORTVERSION=	0.4.2
@@ -18,6 +14,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^\(SUBDIRS = src test\) docs,\1,' \
 		${WRKSRC}/Makefile.in

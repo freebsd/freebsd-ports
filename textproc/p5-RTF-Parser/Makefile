@@ -21,4 +21,5 @@ MAN3=		RTF::HTML::Converter.3 \
 		RTF::TEXT::Converter.3 \
 		RTF::Parser.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

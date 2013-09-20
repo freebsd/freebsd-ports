@@ -1,9 +1,5 @@
-# New ports collection makefile for:	java2html
-# Date created:				21 March 1999
-# Whom:					Martin Kammerhofer
-#
+# Created by: Martin Kammerhofer
 # $FreeBSD$
-#
 
 PORTNAME=		java2html
 PORTVERSION=		0.9.2
@@ -20,6 +16,7 @@ USE_AUTOTOOLS=	autoconf213
 MAN1=			java2html.1
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for file in AUTHORS NEWS README

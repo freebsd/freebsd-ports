@@ -1,7 +1,5 @@
 # Created by: eivind
 # $FreeBSD$
-# This port is self contained in the src directory.
-#
 
 PORTNAME=	cdiff
 PORTVERSION=	1.5
@@ -21,6 +19,7 @@ SRC=		${.CURDIR}/src
 MAN1=		cdiff.1
 PLIST_FILES=	bin/cdiff
 
+NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 

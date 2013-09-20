@@ -23,6 +23,7 @@ NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 SUB_FILES=	jdictionary.sh
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/jdictionary.jar ${DATADIR}/

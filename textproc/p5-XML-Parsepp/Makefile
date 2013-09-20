@@ -18,6 +18,7 @@ USES=		perl5
 
 MAN3=		XML::Parsepp.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|lib/Acme/XMLpp.pm|lib/XML/Parsepp.pm|' ${WRKSRC}/Makefile.PL
 

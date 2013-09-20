@@ -1,4 +1,4 @@
-# Created by: MANTANI Nobutaka <nobutaka@freebsd.org>
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	uim-el
@@ -37,6 +37,7 @@ DOCSDIR_JA=	${PREFIX}/share/doc/ja/uim-el
 PLIST_SUB+=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}"
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR_JA}

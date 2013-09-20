@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sgmltools
-# Date created:				7 Apr 2000
-# Whom:					Benno Rice <benno@netizen.com.au>
-#
+# Created by: Benno Rice <benno@netizen.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	sgmltools-lite
 PORTVERSION=	3.0.3
@@ -24,6 +20,7 @@ MAN1=		sgmltools-lite.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-etcsgml=${PREFIX}/etc/sgml --datadir=${PREFIX}/share
 
+NO_STAGE=	yes
 pre-configure:
 	${RM} -f ${WRKSRC}/config.cache
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	costsh
-# Date created:				May 22, 2000
-# Whom:					Allan Bowhill <kosmos@blarg.net>
-#
+# Created by: Allan Bowhill <kosmos@blarg.net>
 # $FreeBSD$
-#
 
 PORTNAME=	cost
 PORTVERSION=	2.2p1
@@ -23,6 +19,7 @@ CONFIGURE_ARGS+=--with-tcl=${LOCALBASE}/lib/tcl8.4 \
 CONFIGURE_ENV+=	TCL_INCLUDE_SPEC="${LOCALBASE}/include/tcl8.4"
 CFLAGS+=	-fPIC
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|TCL_SRC_DIR%g|TCL_INCLUDE_SPEC%g|' \
 		${WRKSRC}/configure

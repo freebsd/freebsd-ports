@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	silvercity
-# Date created:			Dec 29, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	silvercity
 PORTVERSION=	0.9.7
@@ -20,4 +15,5 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	SilverCity
 USE_DOS2UNIX=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

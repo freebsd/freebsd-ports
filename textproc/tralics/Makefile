@@ -17,6 +17,7 @@ ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
 

@@ -19,6 +19,7 @@ NO_BUILD=	yes
 USES=		perl5
 USE_PERL5=	run
 
+NO_STAGE=	yes
 pre-install:
 	${MKDIR} ${PREFIX}/www/metaf2xml/cgi-bin \
 		${PREFIX}/www/metaf2xml/htdocs

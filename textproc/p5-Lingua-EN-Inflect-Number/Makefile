@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-Lingua-EN-Inflect-Number
-# Date created:				Apr 4 2004
-# Whom:					Lars Thegler <lars@thegler.dk>
-#
+# Created by: Lars Thegler <lars@thegler.dk>
 # $FreeBSD$
 
 PORTNAME=	Lingua-EN-Inflect-Number
@@ -21,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		Lingua::EN::Inflect::Number.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

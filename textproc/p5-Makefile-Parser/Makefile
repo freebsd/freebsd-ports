@@ -34,4 +34,5 @@ MAN3=		Makefile::AST.3 \
 		Makefile::Parser.3 \
 		Makefile::Parser::GmakeDB.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

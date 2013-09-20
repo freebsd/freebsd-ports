@@ -13,6 +13,7 @@ ALL_TARGET=	${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O1||' ${WRKSRC}/Makefile
 

@@ -23,6 +23,7 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-gtk2_toolbar_Makefile.in
 IGNORE=		requires X11
 .endif
 
+NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}/gtk2/toolbar && ${GMAKE})
 

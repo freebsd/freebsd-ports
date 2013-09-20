@@ -43,6 +43,7 @@ MLINKS=		jw.1 docbook2dvi.1 \
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/sgml/catalog|${PREFIX}/share/sgml/catalog|g' \
 		${WRKSRC}/doc/HTML/Makefile.in

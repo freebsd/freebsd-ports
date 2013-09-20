@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/htree
-# Date created:		3 May 2004
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	htree
 PORTVERSION=	0.8
@@ -27,6 +23,7 @@ DOCS=		README \
 
 RUBY_REQUIRE=	Ruby >= 180
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(RUBY_PROVIDED)

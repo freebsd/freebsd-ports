@@ -19,6 +19,7 @@ CONFIGURE_ARGS=	--disable-gtk-doc-html
 
 PLIST_SUB=	VERSION="0.6"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900035

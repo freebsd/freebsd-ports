@@ -16,6 +16,7 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 PLIST_SUB=	HEVEAVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

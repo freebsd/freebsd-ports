@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dadadodo
-# Date created:			May 31, 2001
-# Whom:				Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	dadadodo
 PORTVERSION=	1.04
@@ -15,6 +11,7 @@ COMMENT=	Text processor which analyses text and generates random sentences
 
 PLIST_FILES=	bin/dadadodo
 
+NO_STAGE=	yes
 pre-patch:
 	${REINPLACE_CMD} -E "s/^(CC|CFLAGS).+//" ${WRKSRC}/Makefile
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   dictionary
-# Date created:                23 March 2002
-# Whom:                        Kimura Fuyuki <fuyuki@mj.0038.net>
-#
+# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
 # $FreeBSD$
-#
 
 PORTNAME=	dictionary
 PORTVERSION=	1.8.7
@@ -21,6 +17,7 @@ USE_EMACS=	yes
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 ELS=		connection.el dictionary.el link.el
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; ${EMACS_CMD} -batch -l lpath.el -f batch-byte-compile ${ELS}
 

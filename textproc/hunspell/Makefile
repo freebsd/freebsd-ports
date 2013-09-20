@@ -26,6 +26,7 @@ MAN3_EN=	hunspell.3
 MAN4_EN=	hunspell.4
 MAN4_HU=	hunspell.4
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/tools/hunspell.cxx
 

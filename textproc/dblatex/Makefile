@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dblatex
-# Date created:		2007-02-25
-# Whom:			Peter Johnson <johnson.peter@gmail.com>
-#
+# Created by: Peter Johnson <johnson.peter@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dblatex
 PORTVERSION=	0.3.2
@@ -31,6 +27,7 @@ PLIST_SUB+=	PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO}
 MAN1=		dblatex.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/pdfdocs),/d' ${WRKSRC}/setup.py

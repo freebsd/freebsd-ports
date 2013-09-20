@@ -14,4 +14,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

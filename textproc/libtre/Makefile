@@ -28,6 +28,7 @@ OPTIONS_DEFINE=	NLS OPTIMIZED_CFLAGS PGO DOCS
 
 MAN1=	tre_agrep.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

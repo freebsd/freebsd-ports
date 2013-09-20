@@ -29,6 +29,7 @@ PLIST_DIRS=	%%DATADIR%%
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} -X ${WRKSRC} -type f -and -name "*.[1h]" | ${XARGS} \
 		${REINPLACE_CMD} -e \

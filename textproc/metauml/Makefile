@@ -1,9 +1,5 @@
-# New ports collection makefile for:	metauml
-# Date created:		2007-08-29
-# Whom:			TAKATSU Tomonari <tota@rtfm.jp>
-#
+# Created by: TAKATSU Tomonari <tota@rtfm.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	metauml
 PORTVERSION=	0.2.5
@@ -35,6 +31,7 @@ NO_BUILD=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}_lib
 EXAMPLES=	*.1 *.jpg *.mp lop lop.html lop.pdf lop.tex
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/${MPDIR}
 	${INSTALL_DATA} ${WRKSRC}/thrunk/*.mp ${PREFIX}/${MPDIR}

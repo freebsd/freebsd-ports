@@ -31,4 +31,5 @@ MAN3=		XML::DOM.3 XML::DOM::AttDef.3 XML::DOM::AttlistDecl.3 \
 		XML::DOM::ProcessingInstruction.3 XML::DOM::Text.3 \
 		XML::DOM::XMLDecl.3 XML::Handler::BuildDOM.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -29,6 +29,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		lib/lib${PORTNAME}.so
 PLIST_DIRS=	include/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MACCESS}

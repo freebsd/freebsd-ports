@@ -15,5 +15,6 @@ USE_GNOME=	libxml2 libxslt
 PLIST_FILES=	lib/pure/xml.pure \
 		lib/pure/xml.so
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/pure/bsd.pure.mk"
 .include <bsd.port.mk>

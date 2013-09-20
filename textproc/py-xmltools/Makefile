@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection Makefile for:	xmltools
-# Date created:			Jan 4, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	xmltools
 PORTVERSION=	1.4.0
@@ -20,6 +15,7 @@ USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 RUN_DEPENDS=	${PYXML}

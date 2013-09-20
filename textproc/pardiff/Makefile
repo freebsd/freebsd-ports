@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pardiff
-# Date created:		08 July 2001
-# Whom:			Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	pardiff
 PORTVERSION=	0.9.4
@@ -22,6 +18,7 @@ PLIST_FILES=	bin/pardiff bin/diffp
 PORTDOCS=	AUTHORS ChangeLog README
 .endif
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d -m 0755 ${PREFIX}/share/doc/pardiff

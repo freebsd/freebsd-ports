@@ -26,6 +26,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/yali
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${WRKSRC}
 

@@ -55,4 +55,5 @@ MAN3=	KinoSearch1.3 \
 	KinoSearch1::Store::InvIndex.3 \
 	KinoSearch1::Store::RAMInvIndex.3 \
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for: 	sgrep2
-# Date created:			Oct 31, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	sgrep2
 PORTVERSION=	1.94a
@@ -24,4 +19,5 @@ CONFLICTS=	sgrep-0.*
 
 MAN1=		sgrep.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

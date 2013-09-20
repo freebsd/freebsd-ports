@@ -34,6 +34,7 @@ OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 CONFLICTS_INSTALL=	stardict-2.[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOME}

@@ -27,4 +27,5 @@ MAN3=		WWW::Google::SiteMap.3		\
 		WWW::Google::SiteMap::Robot.3	\
 		WWW::Google::SiteMap::URL.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

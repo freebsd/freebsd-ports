@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XHTML DTD
-# Date created:		10 May 2000
-# Whom:			kuriyama
-#
+# Created by: kuriyama
 # $FreeBSD$
-#
 
 PORTNAME=	xhtml
 PORTVERSION=	1.0.20020801
@@ -37,6 +33,7 @@ XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 CATALOG_PORTS_XML=	${PREFIX}/share/xml/catalog.ports
 
+NO_STAGE=	yes
 post-patch:
 	${SED} -e 's#@@DTDDIR@@#${DTDDIR}#' < ${FILESDIR}/catalog.xml > ${WRKSRC}/catalog.xml
 

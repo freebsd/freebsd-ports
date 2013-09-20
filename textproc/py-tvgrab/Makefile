@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PyTVGrab
-# Date created:		Sun May  8 07:22:39 UTC 2005
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	TVGrab
 PORTVERSION=	0.5.1
@@ -25,6 +21,7 @@ PYDISTUTILS_PKGNAME=	pytvgrab_lib
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${FILESDIR}/timezone.py ${WRKSRC}/lib/timezone.py
 

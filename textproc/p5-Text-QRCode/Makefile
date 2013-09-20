@@ -20,4 +20,5 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 MAN3=		Text::QRCode.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

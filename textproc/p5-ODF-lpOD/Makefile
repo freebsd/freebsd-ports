@@ -32,4 +32,5 @@ MAN3=		ODF::lpOD.3 \
 		ODF::lpOD::TextElement.3 \
 		ODF::lpOD::Tutorial.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

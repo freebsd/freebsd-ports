@@ -25,4 +25,5 @@ MAN3=		Petal.3 \
 		Petal::Hash::Test.3 \
 		Petal::I18N.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

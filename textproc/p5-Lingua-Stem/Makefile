@@ -30,4 +30,5 @@ MAN3=			Lingua::Stem.3 Lingua::Stem::AutoLoader.3 \
 			Lingua::Stem::No.3 Lingua::Stem::De.3 \
 			Lingua::Stem::Sv.3 Lingua::Stem::Da.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

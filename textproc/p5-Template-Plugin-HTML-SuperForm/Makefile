@@ -1,4 +1,3 @@
-# Created by: Philip M. Goillucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
 
 PORTNAME=	Template-Plugin-HTML-SuperForm
@@ -20,4 +19,5 @@ WRKSRC=	${WRKDIR}/${PORTNAME}
 
 MAN3=	Template::Plugin::HTML::SuperForm.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

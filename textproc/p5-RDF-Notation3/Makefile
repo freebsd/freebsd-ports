@@ -27,6 +27,7 @@ MAN3=		RDF::Notation3.3 RDF::Notation3::PrefTriples.3 \
 		RDF::Notation3::Template::TXML.3 RDF::Notation3::Triples.3 \
 		RDF::Notation3::XML.3
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.pm" | \
 	${XARGS} ${REINPLACE_CMD} -i '' -e 's!^require 5.005_62;!!'

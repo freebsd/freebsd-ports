@@ -29,6 +29,7 @@ MAN3=		XML::Filter::Distributor.3 XML::Filter::DocSplitter.3 \
 regression-test: build
 	${MAKE} -C ${WRKSRC} test
 
+NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTEXAMPLES)
 		@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"

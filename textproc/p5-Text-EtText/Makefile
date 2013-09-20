@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-Parser
-# Date created: 			21 June 2002
-# Whom:					Joseph Koshy <jkoshy@freebsd.org>
-#
+# Created by: Joseph Koshy <jkoshy@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-EtText
 PORTVERSION=	2.2
@@ -26,4 +22,5 @@ MAN3=		Text::EtText.3 Text::EtText::DefaultGlossary.3 \
 		Text::EtText::HTML2EtText.3
 MAN1=		ethtml2text.1 ettext2html.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

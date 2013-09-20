@@ -28,6 +28,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static --disable-documentation
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples//' \
 		${WRKSRC}/Makefile.in

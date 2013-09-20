@@ -1,9 +1,5 @@
-# New ports collection makefile for:    tn-aspell
-# Date created:                         31 March 2004
-# Whom:                                 Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	${DICT}-aspell
 DISTVERSION=	5-tn-1.0.1-0
@@ -16,5 +12,6 @@ COMMENT=	Aspell Tswana dictionary
 
 DICT=	 	tn
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

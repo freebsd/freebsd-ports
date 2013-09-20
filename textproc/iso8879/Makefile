@@ -1,9 +1,5 @@
-# New ports collection makefile for:	iso8879
-# Date created:		June 19, 1997
-# Whom:			jfieber
-#
+# Created by: jfieber
 # $FreeBSD$
-#
 
 PORTNAME=	iso8879
 PORTVERSION=	1986
@@ -28,6 +24,7 @@ INSTDIR=	${PREFIX}/share/sgml/iso8879
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${INSTDIR}
 	@${INSTALL_DATA} ${WRKSRC}/ISO* ${INSTDIR}

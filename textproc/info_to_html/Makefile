@@ -14,6 +14,7 @@ PLIST_FILES=	bin/info_to_html
 USES=		perl5
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

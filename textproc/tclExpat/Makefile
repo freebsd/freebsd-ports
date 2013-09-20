@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	TclExpat
-# Date created:				Nov 16 2000
-# Whom:					mi@aldan.algebra.com
-#
+# Created by: mi@aldan.algebra.com
 # $FreeBSD$
-#
 
 PORTNAME=	TclExpat
 PORTVERSION=	1.1
@@ -24,6 +20,7 @@ PLIST_SUB+=	TCL_VERSION=${TCL_VER}
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ENV+=	TCL_VERSION=${TCL_VER}
 
+NO_STAGE=	yes
 # Remove the old version of expat bundled with the package:
 post-extract:
 	${RM} -rf ${WRKSRC}/expat

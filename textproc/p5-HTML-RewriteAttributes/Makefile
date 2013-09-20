@@ -1,4 +1,3 @@
-# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
 
 PORTNAME=	HTML-RewriteAttributes
@@ -32,4 +31,5 @@ PLIST_DIRSTRY=	%%SITE_PERL%%/HTML/RewriteAttributes \
 			%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/RewriteAttributes \
 			%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -35,6 +35,7 @@ PORTDOCS=	api api-guide.html changes.html conditions.html \
 SUB_LIST=	SAXON_JARS="${JARFILES:S,^,${JAVAJARDIR}/,}"
 SUB_FILES=	saxon.sh
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing JARs in ${JAVAJARDIR}..."
 .for JARFILE in ${JARFILES}

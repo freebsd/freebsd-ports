@@ -1,9 +1,5 @@
-# New ports collection makefile for:    gpp
-# Date created:         06 Sep 2001
-# Whom:                 Jos Backus <josb@cncdsl.com>
-#
+# Created by: Jos Backus <josb@cncdsl.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gpp
 PORTVERSION=	2.24
@@ -18,4 +14,5 @@ GNU_CONFIGURE=	yes
 
 MAN1=		gpp.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -22,6 +22,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-zlib=/usr --datadir=${PREFIX}/lib/ltxml12
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}

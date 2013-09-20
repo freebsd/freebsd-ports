@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-hikidoc
-# Date created:		2011-07-30
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hikidoc
 PORTVERSION=	0.0.6
@@ -27,6 +23,7 @@ PLIST_FILES=	bin/hikidoc \
 		%%RUBY_SITELIBDIR%%/hikidoc.rb
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}

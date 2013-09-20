@@ -21,4 +21,5 @@ USE_PERL5=	configure
 MAN1=		xupdate.1
 MAN3=		XML::Normalize::LibXML.3 XML::XUpdate::LibXML.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

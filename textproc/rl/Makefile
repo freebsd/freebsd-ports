@@ -14,4 +14,5 @@ GNU_CONFIGURE=	yes
 MAN1=		rl.1
 PLIST_FILES=	bin/rl
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

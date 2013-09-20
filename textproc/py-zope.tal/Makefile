@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-zope.tal
-# Date created:				Nov 11, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	zope.tal
 PORTVERSION=	3.6.1
@@ -24,4 +19,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

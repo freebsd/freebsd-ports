@@ -20,6 +20,7 @@ SHEBANG_FILES=	xmlpp.pl
 
 PLIST_FILES=	bin/xmlprpr
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} -f ${_DISTDIR}/${_DISTFILES} ${WRKSRC}

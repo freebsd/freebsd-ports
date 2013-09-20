@@ -1,9 +1,5 @@
-# New ports collection makefile for:   emacs-wiki
-# Date created:                March 09 2005
-# Whom:                        Dryice Liu <dryice@liu.com.cn>
-#
+# Created by: Dryice Liu <dryice@liu.com.cn>
 # $FreeBSD$
-#
 
 PORTNAME=	emacs-wiki
 PORTVERSION=	2.72
@@ -35,6 +31,7 @@ PLIST_SUB+=	CONTRIB="@comment "
 INFO=		emacs-wiki
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 pre-everything::
 .if !defined(WITH_CONTRIB)
 	@${ECHO_MSG} ""

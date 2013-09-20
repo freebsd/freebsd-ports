@@ -21,6 +21,7 @@ USE_PERL5=	configure
 
 MAN3=		Search::Estraier.3
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/bin
 

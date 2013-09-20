@@ -24,4 +24,5 @@ MAN3=	Template::Semantic.3 \
 	Template::Semantic::Document.3 \
 	Template::Semantic::Filter.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

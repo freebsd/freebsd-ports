@@ -21,6 +21,7 @@ USES=		gettext gmake pkgconfig
 
 MAN1=		scim-make-table.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__

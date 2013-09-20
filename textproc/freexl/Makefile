@@ -18,6 +18,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ARGS+=CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in

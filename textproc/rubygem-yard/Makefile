@@ -19,4 +19,5 @@ PLIST_FILES=	bin/yard \
 		bin/yardoc \
 		bin/yri
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

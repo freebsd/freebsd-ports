@@ -41,6 +41,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_TEX=	latex:build dvipsk:build
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/usr"|"${PREFIX}"| ; \
 		s|"/share/yodl"|"/share/${PORTNAME}-${PORTVERSION}"| ; \

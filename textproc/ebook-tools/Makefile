@@ -15,4 +15,5 @@ USES=		cmake
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

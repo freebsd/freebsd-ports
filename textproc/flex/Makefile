@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 MAN1=		flex.1
 INFO=		flex
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	tk-hunspell
-# Date created:		2011-07-20
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hunspell
 PORTVERSION=	0.01
@@ -27,6 +22,7 @@ PLIST_FILES=	%%DATADIR%%/tk.aff \
 		%%DATADIR%%/tk.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/tk.aff ${WRKSRC}/tk.dic ${DATADIR}/

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ga-aspell
-# Date created:                         13 March 2004
-# Whom:                                 Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	${DICT}-aspell
 DISTVERSION=	5-ga-4.5-0
@@ -15,5 +11,6 @@ COMMENT=	Aspell Irish (Gaelic) dictionary
 
 DICT=	 	ga
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

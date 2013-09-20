@@ -27,6 +27,7 @@ STABILIZATION_DESC=	Stabilize the libraries for SML/NJ.
 DEVEL_DESC=	Prefer the devel version of SML/NJ.
 MLTON_DESC=	Build executables with mlton.
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

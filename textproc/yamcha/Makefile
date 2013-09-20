@@ -23,6 +23,7 @@ DOC_FILES=	feature.png feature2.png feature3.png \
 MAN1=		yamcha.1
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${DOC_FILES}

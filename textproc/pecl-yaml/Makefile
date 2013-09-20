@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-yaml
-# Date created:				11 Feb, 2010
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	yaml
 PORTVERSION=	1.1.0
@@ -22,4 +18,5 @@ USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

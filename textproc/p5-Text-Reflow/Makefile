@@ -17,4 +17,5 @@ MAN3=		Text::Reflow.3
 
 EXTRA_PATCHES=	${PATCHDIR}/5.8-Reflow.pm
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

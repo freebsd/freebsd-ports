@@ -28,6 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PROJECTHOST=	ibus
 WRKSRC=			${WRKDIR}/${DISTNAME}
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

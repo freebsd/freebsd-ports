@@ -1,4 +1,4 @@
-# Created by: Stephane Legrand <stephane@freebsd.org>
+# Created by: Stephane Legrand <stephane@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pxp
@@ -21,6 +21,7 @@ USE_OCAML=	true
 USE_OCAML_FINDLIB=	true
 USE_OCAML_LDCONFIG=	true
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MULEX}

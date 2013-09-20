@@ -27,6 +27,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}-core-${PORTVERSION}.jar
 PKGNAMESUFFIX:=	4
 LASTEST_LINK=	${PORTNAME}4
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONTRIBS=	benchmark \

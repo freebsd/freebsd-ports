@@ -31,4 +31,5 @@ MAN3=	Template::Declare.3 \
 	Template::Declare::TagSet::XUL.3 \
 	Template::Declare::Tags.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Parse-Flex
-# Date created:				30 May 2006
-# Whom:	      				Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Parse-Flex
 PORTVERSION=	0.12
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Parse::Flex.3 Parse::Flex::Generate.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

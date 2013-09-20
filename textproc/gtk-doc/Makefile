@@ -37,6 +37,7 @@ PLIST_SUB=	XMLCATMGR=${XMLCATMGR} \
 		CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML} \
 		CATALOG_DIR=${CATALOG_DIR}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|g' \
 		${WRKSRC}/tests/tools.sh

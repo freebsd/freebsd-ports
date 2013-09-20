@@ -1,8 +1,5 @@
-# New ports collection makefile for:   xmlcharent # Date created:                31 January 2002
-# Whom:                        Kimura Fuyuki <fuyuki@mj.0038.net>
-#
+# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xmlcharent
 PORTVERSION=	0.3
@@ -28,6 +25,7 @@ XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 CATALOG_PORTS_XML=	${PREFIX}/share/xml/catalog.ports
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${XMLDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ent\

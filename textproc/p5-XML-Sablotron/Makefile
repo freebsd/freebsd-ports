@@ -25,6 +25,7 @@ MAN3=		XML::Sablotron.3 XML::Sablotron::DOM.3 \
 		XML::Sablotron::DOM::DOMHandler.3 XML::Sablotron::SAXBuilder.3 \
 		XML::Sablotron::Situation::DOMHandlerDispatcher.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} > 501400
 BROKEN=	POLLUTE is gone, does not compile, no release since 2005, textproc/p5-XML-SAXDriver-Sablotron&www/p5-HTML-Webmake depend on me

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	DocBook XML for ScrollKeeper
-# Date created:		16 January 2003
-# Whom:			marcus@FreeBSD.org
-#
+# Created by: marcus@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	docbook-sk
 PORTVERSION=	4.1.2
@@ -31,6 +27,7 @@ XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 CATALOG_PORTS_XML=	${PREFIX}/share/xml/catalog.ports
 
+NO_STAGE=	yes
 pre-su-install:
 	@[ -d ${DOCBOOKDIR}/ent ] || ${MKDIR} ${DOCBOOKDIR}/ent
 

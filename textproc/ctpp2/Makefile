@@ -24,6 +24,7 @@ MD5_DESC=		Enable md5 support
 DISCARD_ILSEQ_DESC=	Discard illegal sequence and continue
 TRANSLITERATE_DESC=	Enable transliteration in the conversion
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

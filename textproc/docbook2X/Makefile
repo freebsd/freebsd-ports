@@ -1,9 +1,5 @@
-# New ports collection makefile for:	docbook2X
-# Date created:				23 Apr 2009
-# Whom:					Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	docbook2X
 PORTVERSION=	0.8.8
@@ -33,6 +29,7 @@ USES=		iconv gmake perl5
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-doc__Makefile.in
 .endif
 
+NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} "s|\$${prefix}|${PREFIX}|" \
 			${WRKSRC}/configure

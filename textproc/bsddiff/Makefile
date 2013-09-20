@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bsd-diff
-# Date created:				12 Juni 2007
-# Whom:					Gabor Kovesdan <gabor@FreeBSD.org>
-#
+# Created by: Gabor Kovesdan <gabor@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	diff
 PORTVERSION=	20120705
@@ -23,6 +19,7 @@ MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		MANDIR="${MANPREFIX}/man/man" \
 		CATDIR="${MANPREFIX}/man/man"
 
+NO_STAGE=	yes
 post-install:
 	${LN} -s ${PREFIX}/bin/bsddiff ${PREFIX}/bin/diff
 	${LN} -s /usr/bin/diff ${PREFIX}/bin/gnudiff

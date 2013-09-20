@@ -60,6 +60,7 @@ DOCS=	CHANGES README doc/FAQ.pod doc/NSP-Class-diagram.pdf \
 	doc/USAGE.pod doc/cicling2003.pdf doc/cicling2003.ps \
 
 .ifndef (NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}

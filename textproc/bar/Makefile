@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bar
-# Date created:			Wed May 18 2005
-# Whom:				Erik Greenwald <erik@smluc.org>
-#
+# Created by: Erik Greenwald <erik@smluc.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bar
 PORTVERSION=	1.4
@@ -19,6 +15,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/bar
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bar ${PREFIX}/bin
 

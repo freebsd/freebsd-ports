@@ -17,6 +17,7 @@ CFLAGS+=	-Wno-return-type
 MAN1=		rot.1
 PLIST_FILES=	bin/rot
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} "s:^CFLAGS=:#CFLAGS=:" ${WRKSRC}/Makefile
 

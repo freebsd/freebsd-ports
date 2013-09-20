@@ -1,9 +1,4 @@
-# New ports collection makefile for:	sv-hyphen
-# Date created:		2011-07-21
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hyphen
 PORTVERSION=	2005.04.15
@@ -27,6 +22,7 @@ PLIST_FILES=	%%DATADIR%%/hyph_sv_FI.dic \
 		%%DATADIR%%/hyph_sv_SE.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/hyph_sv_SE.dic ${DATADIR}/

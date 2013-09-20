@@ -1,9 +1,4 @@
-# New ports collection makefile for:	tn-hunspell
-# Date created:		2011-07-20
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hunspell
 PORTVERSION=	20110323
@@ -29,6 +24,7 @@ PLIST_FILES=	%%DATADIR%%/tn_BW.aff \
 		%%DATADIR%%/tn_ZA.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/tn-ZA.aff ${DATADIR}/tn_ZA.aff

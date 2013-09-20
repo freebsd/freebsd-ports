@@ -1,9 +1,5 @@
-# New ports collection makefile for:	humanzip
-# Date created:		21 July 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	humanzip
 PORTVERSION=	0.5
@@ -13,6 +9,7 @@ MASTER_SITES=	SAVANNAH CENKES
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compresses text to human readable output
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|g++|${CXX}|;s|-O2|${CFLAGS}|' \
 		${WRKSRC}/${MAKEFILE}

@@ -20,6 +20,7 @@ USE_PERL5=	configure
 
 MAN3=		XML::Generator.3 XML::Generator::DOM.3
 
+NO_STAGE=	yes
 regression-test test:
 	@(cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} test)
 

@@ -90,6 +90,7 @@ ICONSDIR?=	www/icons
 #
 PLIST_SUB+=	CGIDIR="${CGIDIR}"
 
+NO_STAGE=	yes
 post-patch:
 # fix man install location
 	@${REINPLACE_CMD} -e \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	smu
-# Date created:		2011-03-07
-# Whom:			Dennis Herrmann <dhn@FreeBSD.org>
-#
+# Created by: Dennis Herrmann <dhn@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	smu
 PORTVERSION=	1.3
@@ -20,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 MAN1=	smu.1
 PLIST_FILES=	bin/smu
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|cc|${CC}|g' ${WRKSRC}/config.mk
 

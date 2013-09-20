@@ -22,4 +22,5 @@ USE_PERL5=	modbuild
 MAN3=		Text::WikiFormat.3 \
 		Text::WikiFormat::Blocks.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

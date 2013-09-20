@@ -19,6 +19,7 @@ PORTDOCS=	README README.libtextcat TODO
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PLIST_SUB+=	EXEEXT='x'

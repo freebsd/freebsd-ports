@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtkdiff
-# Date created:				17 November 1999
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gtkdiff
 PORTVERSION=	1.8.0
@@ -21,6 +17,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gtkdiff.1 gtkdiff-rcs.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 

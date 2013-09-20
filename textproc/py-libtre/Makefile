@@ -1,9 +1,5 @@
-# Ports collection makefile for:	py-libtre
-# Date created:				6 June 2007
-# Whom:					bf <bf2006a@yahoo.com>
-#
+# Created by: bf <bf2006a@yahoo.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libtre
 PORTVERSION=	0.8.0
@@ -38,4 +34,5 @@ CFLAGS+=	-Wuninitialized -ffast-math -finline-functions \
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/tre.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

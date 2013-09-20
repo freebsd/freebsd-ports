@@ -1,9 +1,5 @@
-# New ports collection makefile for:   dtd2relax
-# Date created:                2 February 2002
-# Whom:                        Kimura Fuyuki <fuyuki@mj.0038.net>
-#
+# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
 # $FreeBSD$
-#
 
 PORTNAME=	dtd2relax
 PORTVERSION=	1.1.1
@@ -26,6 +22,7 @@ JARFILE=	${DISTNAME}-bin-XML4J.jar
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${DISTDIR}/${JARFILE} ${JAVAJARDIR}/${PORTNAME}.jar
 

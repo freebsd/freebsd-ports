@@ -23,6 +23,7 @@ HTMLDOCGUI_DESC=	Build GUI front-end
 #USE_BZIP2=	yes
 
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 # Configure seems broken and ignores these ATM:
 CONFIGURE_ARGS+=--enable-localjpeg --enable-localzlib --enable-localpng
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

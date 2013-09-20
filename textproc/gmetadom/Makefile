@@ -22,6 +22,7 @@ OPTIONS_DEFINE=	OCAML
 
 OCAML_DESC=	OCAML language support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOCAML}

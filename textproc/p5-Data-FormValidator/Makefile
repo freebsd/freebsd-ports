@@ -31,4 +31,5 @@ MAN3=		Data::FormValidator.3 \
 		Data::FormValidator::Filters.3 \
 		Data::FormValidator::Results.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

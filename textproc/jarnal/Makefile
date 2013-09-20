@@ -25,6 +25,7 @@ NO_WRKSUBDIR=	yes
 SCRIPTS=	jarnal.sh jarnalannotate.sh
 LIBFILES=	lbouncy_license.html lib-ver.txt jarnal-readme.txt
 
+NO_STAGE=	yes
 pre-configure:
 	${MV} ${WRKDIR}/lib/readme.txt ${WRKDIR}/lib/jarnal-readme.txt
 	${REINPLACE_CMD} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|'	\

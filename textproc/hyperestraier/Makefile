@@ -1,7 +1,4 @@
-# New ports collection makefile for:	hyperestraier
-# Date created:		2005-09-11
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports-stable/textproc/hyperestraier/Makefile,v 1.3 2006/10/17 11:45:45 ahze Exp $
 
@@ -32,6 +29,7 @@ MECAB_DESC=	Enable mecab support
 MAN1=		estcall.1 estcmd.1 estconfig.1 estmaster.1 estwaver.1
 MAN3=		estnode.3 estraier.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MLZO}

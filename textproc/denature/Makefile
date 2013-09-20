@@ -25,6 +25,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		denature.1
 PLIST_FILES=	bin/denature
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 			-e 's|%%JAVA_HOME%%|${JAVA_HOME}|' \

@@ -19,6 +19,7 @@ BUILD_DEPENDS=	racc:${PORTSDIR}/devel/ruby-racc
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	racc-runtime
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; racc -v -g -c -o xmldtd.rb xmldtd.ry
 

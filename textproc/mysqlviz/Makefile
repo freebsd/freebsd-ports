@@ -20,6 +20,7 @@ PORTEXAMPLES=	eg.png eg.sql sqlite-eg.sql
 
 OPTIONS_DEFINE=	EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

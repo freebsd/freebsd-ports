@@ -25,6 +25,7 @@ PYGNOMEDESKTOP_DESC=	Code syntax highlighting (many dependencies)
 
 NLS_USES=	gettext
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

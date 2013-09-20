@@ -34,6 +34,7 @@ PORTDOCS=	AUTHORS COPYING ChangeLog
 SUB_FILES=	pkg-message
 
 .if exists(${LOCALBASE}/bin/skim)
+NO_STAGE=	yes
 pre-patch:
 	@${ECHO_MSG} ---------------------------------------------------------
 	@${ECHO_MSG}   You have SKIM installed. KMFL-SCIM-IMEngine will work

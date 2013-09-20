@@ -15,6 +15,7 @@ USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${DESTDIR}$${libdir}/pkgconfig|$${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile

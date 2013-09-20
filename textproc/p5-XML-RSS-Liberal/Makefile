@@ -19,4 +19,5 @@ USE_PERL5=	modbuild
 
 MAN3=		XML::RSS::Liberal.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-escape
-# Date created:		2011-03-29
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	escape
 PORTVERSION=	0.2
@@ -21,6 +17,7 @@ NO_BUILD=	yes
 
 DOCS=	ChangeLog README
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_DATA} ${INSTALL_WRKSRC}/escape.rb ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)

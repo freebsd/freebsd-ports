@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-translationstring
-# Date created:				2011-03-21
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	translationstring
 PORTVERSION=	0.4
@@ -17,4 +13,5 @@ COMMENT=	Utility library for i18n relied on by various Repoze packages
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -45,6 +45,7 @@ MAN1=	bib2ris.1 bib2ris-utf8.1 db2ris.1 eenc.1 en2ris.1 marc2ris.1 med2ris.1 \
 #MAN7=	RefDB.7
 MAN8=	refdb.8 refdb.sh.8 refdb-init.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 

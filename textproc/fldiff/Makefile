@@ -25,6 +25,7 @@ PORTDOCS=	index.html fldiff.jpg
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -21,6 +21,7 @@ MAN3=		XML::AutoWriter.3 \
 		XML::Doctype::ElementDecl.3 \
 		XML::Doctype.3
 
+NO_STAGE=	yes
 post-patch:
 	${RM} ${WRKSRC}/lib/XML/*.orig
 

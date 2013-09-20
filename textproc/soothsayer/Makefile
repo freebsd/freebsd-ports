@@ -30,6 +30,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORT_VERBS=	${PORTNAME} text2ngram
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|\$$\^|$${.ALLSRC}| ; \
 		 s|lib/soothsayer|soothsayer|g' ${WRKSRC}/resources/Makefile.in

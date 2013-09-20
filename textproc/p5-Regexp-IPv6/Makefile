@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Regexp-IPv6
-# Date created:				01 September 2011
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Regexp-IPv6
 PORTVERSION=	0.03
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Regexp::IPv6.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

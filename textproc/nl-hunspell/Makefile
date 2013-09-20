@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nl-hunspell
-# Date created:		2012-02-03
-# Whom:			Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-#
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hunspell
 PORTVERSION=	2.10
@@ -33,6 +29,7 @@ PLIST_FILES+=	%%DATADIR%%/${ALIAS}.aff \
 		%%DATADIR%%/${ALIAS}.dic
 .endfor
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/nl_NL.aff ${DATADIR}/nl_NL.aff

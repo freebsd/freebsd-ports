@@ -1,9 +1,5 @@
-# Ports collection makefile for:	ml1
-# Date created:				29 August 2010
-# Whom:					Bob Eager <rde@ml1.org.uk>
-#
+# Created by: Bob Eager <rde@ml1.org.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	ml1
 PORTVERSION=	4.10
@@ -19,6 +15,7 @@ MANCOMPRESSED=	yes
 
 PLIST_FILES=	bin/ml1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

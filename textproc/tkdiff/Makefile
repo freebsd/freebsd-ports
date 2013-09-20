@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tkdiff
-# Date created:		4 Oct. 1999
-# Whom:			Kevin Lo <kevlo@FreeBSD.org>
-#
+# Created by: Kevin Lo <kevlo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tkdiff
 PORTVERSION=	4.2
@@ -23,6 +19,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/tkdiff
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/tkdiff ${PREFIX}/bin
 

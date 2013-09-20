@@ -19,4 +19,5 @@ MAN3=	Lingua::Treebank.3 \
 	Lingua::Treebank::Const.3 \
 	Lingua::Treebank::HeadFinder.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

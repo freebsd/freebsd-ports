@@ -1,7 +1,4 @@
-# New ports collection makefile for:	scim-kmfl-sil-ezra
-# Date created:		14 July 2009
-# Whom:			Nikola Lecic <nikola.lecic@anthesphoria.net>
-#
+# Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
 # $FreeBSD$
 
 PORTNAME=	kmfl-sil-ezra
@@ -43,6 +40,7 @@ PLIST_FILES=	${KMFL_DIR}/EZRAUNI24.kmn \
 PLIST_DIRSTRY=	${KMFL_ICONS_DIR} \
 		${KMFL_DIR}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${LOCALBASE}/${KMFL_DIR} ${LOCALBASE}/${KMFL_ICONS_DIR}
 	${CP} -f ${WRKSRC}/Keyman/EZRAUNI24.KMN ${WRKSRC}/Keyman/EZRAUNI24.kmn

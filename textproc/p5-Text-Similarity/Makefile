@@ -20,4 +20,5 @@ MAN3=		Text::OverlapFinder.3 \
 		Text::Similarity.3 \
 		Text::Similarity::Overlaps.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

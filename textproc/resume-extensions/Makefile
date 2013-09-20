@@ -1,6 +1,4 @@
-# New ports collection makefile for:	resume-extensions
-# Date created:                		August 03 2004
-# Whom:                        		Aaron Straup Cope
+# Created by: Aaron Straup Cope
 # $FreeBSD$
 
 PORTNAME=	resume-extensions
@@ -19,6 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/xsl/resume:${PORTSDIR}/textproc/resume \
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local/share|${LOCALBASE}/share|' \
 		${WRKSRC}/lib/extrefs.xsl

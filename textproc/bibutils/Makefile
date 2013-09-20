@@ -17,6 +17,7 @@ USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
+NO_STAGE=	yes
 do-configure:
 	@cd ${WRKSRC} && ./configure --install-dir ${PREFIX}/bin
 

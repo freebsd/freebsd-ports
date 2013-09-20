@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	xmlppm
-# Date created:			May 15, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	xmlppm
 PORTVERSION=	0.98.3
@@ -31,6 +26,7 @@ PORTDOCS=	README
 
 PLIST_FILES=	bin/xmlppm bin/xmlunppm
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xmlppm ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xmlunppm ${PREFIX}/bin

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ro-mythes
-# Date created:		2011-07-21
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mythes
 PORTVERSION=	3.3
@@ -27,6 +22,7 @@ PLIST_FILES=	%%DATADIR%%/th_ro_RO.dat \
 		%%DATADIR%%/th_ro_RO.idx
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/th_ro_RO.dat ${WRKSRC}/th_ro_RO.idx ${DATADIR}/

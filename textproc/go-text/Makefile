@@ -12,6 +12,7 @@ COMMENT=	Go package for manipulating paragraphs of text
 SUBLIBDIR=	github.com/kr
 GO_PKGNAME=	${SUBLIBDIR}/text
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${GO_LOCAL_LIBDIR}/${SUBLIBDIR}
 	${INSTALL_DATA} ${GO_WRKDIR_PKG}/${SUBLIBDIR}/text.a ${GO_LOCAL_LIBDIR}/${SUBLIBDIR}

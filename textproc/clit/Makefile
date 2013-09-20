@@ -1,9 +1,5 @@
-# New ports collection makefile for:   clit
-# Date created:        2005-01-11
-# Whom:                Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
-#
+# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
 # $FreeBSD$
-#
 
 PORTNAME=	clit
 PORTVERSION=	${MAJ_VER}.${MIN_VER}
@@ -29,6 +25,7 @@ PLIST_FILES=	bin/clit
 USE_ZIP=	yes
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 post-extract:
 	cd ${WRKDIR} && ${BZIP2_CMD} -dc "${DISTDIR}/ltm-0.33.tar.bz2" | \
 		${TAR} -xf -

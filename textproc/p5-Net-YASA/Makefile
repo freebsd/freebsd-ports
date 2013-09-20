@@ -18,4 +18,5 @@ USE_PERL5=	modbuild
 
 MAN3=		Net::YASA.3 Net::YASA::ConfigData.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

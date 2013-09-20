@@ -31,6 +31,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		xml2po.1
 
+NO_STAGE=	yes
 post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}/xml2po
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}/xml2po/modes

@@ -1,4 +1,3 @@
-# Ports collection makefile for:	Perl::Critic
 # Created by: ijliao
 # $FreeBSD$
 
@@ -236,4 +235,5 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Violation.3 \
 	Test::Perl::Critic::Policy.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

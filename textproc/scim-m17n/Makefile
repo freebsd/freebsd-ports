@@ -19,4 +19,5 @@ RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

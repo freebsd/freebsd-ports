@@ -29,6 +29,7 @@ OPTIONS_DEFAULT=	CONTRIB
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}-core-${PORTVERSION}.jar
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONTRIBS=	benchmark \

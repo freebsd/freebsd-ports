@@ -20,4 +20,5 @@ MAN3=	CSS.3 CSS::Value.3 CSS::Parse::Compiled.3 CSS::Property.3 CSS::Parse::Heav
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

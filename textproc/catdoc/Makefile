@@ -26,6 +26,7 @@ OPTIONS_DEFAULT=	WORDVIEW
 CFLAGS+=	-DLATIN1=1
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/doc/catdoc.1.in
 

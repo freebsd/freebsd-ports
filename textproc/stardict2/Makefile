@@ -24,6 +24,7 @@ OPTIONS_DEFAULT=	GNOME
 
 CONFLICTS=	stardict-3.[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 

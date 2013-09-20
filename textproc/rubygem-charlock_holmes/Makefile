@@ -16,4 +16,5 @@ RUBYGEM_AUTOPLIST=	yes
 CONFIGURE_ARGS=	--with-icu-include=${LOCALBASE}/include
 PLIST_FILES=	lib/ruby/gems/${RUBY_VER}/gems/charlock_holmes-${PORTVERSION}/ext/charlock_holmes/src/file-5.08/src/.libs/libmagic.la
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

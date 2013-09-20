@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-String-Truncate
-# Date created:				6 December 2009
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	String-Truncate
 PORTVERSION=	1.100600
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		String::Truncate.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

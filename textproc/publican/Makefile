@@ -75,6 +75,7 @@ MAN3=	Publican.3 Publican::Builder.3 Publican::CreateBook.3 \
 	Publican::CreateBrand.3 Publican::Localise.3 Publican::Translate.3 \
 	Publican::TreeView.3 Publican::WebSite.3 Publican::XmlClean.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
 			-e 's,%%DATADIR%%,${DATADIR},g' \

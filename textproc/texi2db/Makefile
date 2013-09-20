@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	texi2db
-# Date created:			May 27, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	texi2db
 PORTVERSION=	0.5
@@ -25,4 +20,5 @@ PLIST_FILES=	bin/texi2db \
 		${SITE_PERL_REL}/${PERL_ARCH}/auto/texi2db/.packlist
 PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/auto/texi2db
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

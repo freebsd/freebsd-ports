@@ -30,6 +30,7 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-qt4_toolbar_CMakeLists.txt
 IGNORE=		requires X11
 .endif
 
+NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}/qt4/toolbar/build && ${SETENV} ${MAKE_ENV} ${GMAKE})
 

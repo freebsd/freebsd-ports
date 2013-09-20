@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	py-paragrep
-# Date created:				Mar 29, 2010
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	paragrep
 PORTVERSION=	3.0.5
@@ -25,6 +21,7 @@ USE_PYDISTUTILS=easy_install
 
 MAN1=		paragrep.1
 
+NO_STAGE=	yes
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/man/paragrep.1 ${PREFIX}/man/man1/
 

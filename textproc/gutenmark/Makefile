@@ -1,8 +1,4 @@
-# ex:ts=8
-# Ports collection makefile for:	GutenMark
-# Date created:			Jun 7, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
 
 PORTNAME=	gutenmark
@@ -25,6 +21,7 @@ PLIST_FILES=	bin/GutenMark bin/GutenSplit bin/GUItenMark \
 		%%DATADIR%%/convert.jpg %%DATADIR%%/logo.jpg
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|cc|${CC}|g ; \
 		 s|-O3|${CFLAGS}|g ; \

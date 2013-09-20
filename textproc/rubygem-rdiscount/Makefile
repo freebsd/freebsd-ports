@@ -15,4 +15,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/rdiscount
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

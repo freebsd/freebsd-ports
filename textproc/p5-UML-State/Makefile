@@ -21,4 +21,5 @@ MAN3=		UML::drawstate.3 \
 		UML::drawstatexml.3 \
 		UML::State.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

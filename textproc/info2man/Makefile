@@ -17,6 +17,7 @@ NO_BUILD=	yes
 
 PLSCRIPTS=	info2man info2pod
 
+NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/info2pod
 

@@ -30,4 +30,5 @@ MAN3=	Pod::WSDL.3 \
 	Pod::WSDL::Utils.3 \
 	Pod::WSDL::Writer.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

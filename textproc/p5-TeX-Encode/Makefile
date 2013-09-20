@@ -20,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=		TeX::Encode.3 TeX::Encode::BibTeX.3 TeX::Encode::charmap.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

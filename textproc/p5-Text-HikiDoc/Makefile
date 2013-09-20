@@ -18,4 +18,5 @@ USE_PERL5=	modbuild
 
 MAN3=	Text::HikiDoc::Plugin.3 Text::HikiDoc.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

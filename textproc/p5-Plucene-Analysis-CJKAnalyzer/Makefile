@@ -21,4 +21,5 @@ USE_PERL5=	configure
 MAN3=		Plucene::Analysis::CJKAnalyzer.3 \
 		Plucene::Analysis::CJKTokenizer.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

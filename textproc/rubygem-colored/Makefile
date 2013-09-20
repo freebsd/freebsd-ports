@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-colored
-# Date created:		2012-08-04
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	colored
 PORTVERSION=	1.2
@@ -18,4 +14,5 @@ USE_RUBYGEMS=	yes
 USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

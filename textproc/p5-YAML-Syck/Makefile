@@ -16,4 +16,5 @@ CONFIGURE_ARGS+=	< /dev/null
 
 MAN3=		JSON::Syck.3 YAML::Syck.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -46,6 +46,7 @@ MAN7=	scrollkeeper.7
 MAN8=	scrollkeeper-preinstall.8 scrollkeeper-rebuilddb.8 \
 	scrollkeeper-update.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

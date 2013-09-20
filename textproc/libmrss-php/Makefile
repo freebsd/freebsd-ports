@@ -29,4 +29,5 @@ PLIST_FILES=	lib/php/${PHP_EXT_DIR}/mrss.so
 PLIST_DIRSTRY=	lib/php/${PHP_EXT_DIR} \
 		lib/php
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

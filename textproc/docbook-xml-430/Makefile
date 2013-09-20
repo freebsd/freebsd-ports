@@ -1,7 +1,4 @@
-# New ports collection makefile for:	docbook-xml-430
-# Date created:		02 Apr 2004
-# Whom:			hrs
-#
+# Created by: hrs
 # $FreeBSD$
 
 PORTNAME=	docbook-xml
@@ -43,6 +40,7 @@ ENT_FILES=	iso-amsa.ent iso-amsb.ent iso-amsc.ent iso-amsn.ent \
 		iso-grk3.ent iso-grk4.ent iso-lat1.ent iso-lat2.ent \
 		iso-num.ent iso-pub.ent iso-tech.ent
 
+NO_STAGE=	yes
 pre-install:
 	(for F in ${ENT_FILES}; do \
 			${ECHO_CMD} "${ENTDIR}/$${F}"; \

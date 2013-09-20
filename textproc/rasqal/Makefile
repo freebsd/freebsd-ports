@@ -29,6 +29,7 @@ OPTIONS_RADIO_DEC=	GMP MPFR
 GMP_DESC=	Use GMP library for decimals
 MPFR_DESC=	Use MPFR library for decimals
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMPFR}

@@ -13,6 +13,7 @@ ALL_TARGET=	default
 
 PLIST_FILES=	bin/ripole
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^CFLAGS/d' ${WRKSRC}/Makefile
 

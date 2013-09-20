@@ -22,4 +22,5 @@ USES=		pathfix pkgconfig
 PLIST_SUB+=	APVER="${APVER}"
 MAN1=	lt-comp.1 lt-expand.1 lt-proc.1 lt-tmxcomp.1 lt-tmxproc.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

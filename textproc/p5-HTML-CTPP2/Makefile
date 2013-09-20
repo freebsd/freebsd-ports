@@ -22,6 +22,7 @@ MAN3=		HTML::CTPP2.3
 # The port actually requires ${CXX} when ${CC} is defined
 CC=		${CXX}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 	    ${WRKSRC}/Makefile.PL

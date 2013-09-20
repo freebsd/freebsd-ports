@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pootle
-# Date created:		14 Dec 2009
-# Whom:			Denis Pokataev <catone@cpan.org>
-#
+# Created by: Denis Pokataev <catone@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pootle
 PORTVERSION=	2.1.6
@@ -62,6 +58,7 @@ SUBVERSION_DESC=	${SVN_DESC}
 LUCENE_DESC=	py-lucene for faster searching
 MEMCACHED_DESC=	Enable memcached support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

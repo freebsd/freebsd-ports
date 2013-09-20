@@ -1,9 +1,5 @@
-# New ports collection makefile for: errorhandler
-# Date created:		2009-08-19
-# Whom:			Dikshie
-#
+# Created by: Dikshie
 # $FreeBSD$
-#
 
 PORTNAME=	errorhandler
 PORTVERSION=	1.1.1
@@ -17,4 +13,5 @@ COMMENT=	A logging framework handler that tracks when messages above a certain l
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

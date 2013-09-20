@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	glark
-# Date created:			Jul 30, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	glark
 PORTVERSION=	1.8.0
@@ -32,6 +27,7 @@ PLIST_FILES=	bin/glark \
 		share/glark/text.rb
 PLIST_DIRS=	share/glark
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/glark ${PREFIX}/bin
 	${MKDIR} ${DATADIR}

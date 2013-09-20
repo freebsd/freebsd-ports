@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ro-aspell
-# Date created:                         7 September 2002
-# Whom:                                 Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	${DICT}-aspell
 DISTVERSION=	5-ro-3.3-2
@@ -15,5 +11,6 @@ COMMENT=	Aspell Romanian dictionary
 
 DICT=	 	ro
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

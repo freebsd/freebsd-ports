@@ -1,9 +1,5 @@
-# New ports collection makefile for:   coco
-# Date created:     2 December 2001
-# Whom:             Teruaki Ata <PFA03027@nifty.ne.jp>
-#
+# Created by: Teruaki Ata <PFA03027@nifty.ne.jp>
 # $FreeBSD$
-#
 
 PORTNAME=       coco
 PORTVERSION=    ${MULE_VERSION}
@@ -29,6 +25,7 @@ EMACS_VERSION=	19.34
 
 INSTALL_TARGET=	install-coco install-m2ps
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"

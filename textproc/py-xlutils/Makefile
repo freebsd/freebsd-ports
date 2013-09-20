@@ -18,4 +18,5 @@ RUN_DEPENDS:=   ${BUILD_DEPENDS}
 USE_PYTHON=	2.5-2.7
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

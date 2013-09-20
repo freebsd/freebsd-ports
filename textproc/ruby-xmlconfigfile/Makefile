@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/xmlconfigfile
-# Date created:		25 February 2003
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xmlconfigfile
 PORTVERSION=	0.9.7
@@ -23,6 +19,7 @@ RUBY_SETUP=	install.rb
 
 DOCS=		docs CHANGES README TODO
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}

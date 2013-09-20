@@ -42,6 +42,7 @@ MAN3=		CAM::PDF.3 CAM::PDF::Content.3 CAM::PDF::Decrypt.3 \
 .if !defined(NOPORTDOCS)
 PORTDOCS=	CHANGES README
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

@@ -24,6 +24,7 @@ ALL_TARGET=	dict
 INSTALL_TARGET=	install.dict
 MAN1=		dict.1 dictl.1 dict_lookup.1
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/dict.1.in
 

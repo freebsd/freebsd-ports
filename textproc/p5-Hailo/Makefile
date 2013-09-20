@@ -69,6 +69,7 @@ MAN3=		Hailo.3 \
 OPTIONS_DEFINE=	SQLITE PGSQL MYSQL
 OPTIONS_DEFAULT=	SQLITE
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 

@@ -29,6 +29,7 @@ PORTDOCS=	xmlstarlet.txt \
 		html.css
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}

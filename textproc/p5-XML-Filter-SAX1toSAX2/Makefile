@@ -19,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		XML::Filter::SAX1toSAX2.3 XML::Filter::SAX2toSAX1.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

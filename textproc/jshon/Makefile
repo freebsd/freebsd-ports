@@ -22,6 +22,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=	${PORTNAME}.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,-ljansson,-L${LOCALBASE}/lib -ljansson,g' ${WRKSRC}/Makefile
 

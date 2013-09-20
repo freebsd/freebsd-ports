@@ -21,6 +21,7 @@ USE_WX=		2.8
 WX_COMPS=	wx
 WX_UNICODE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/setup.py
 

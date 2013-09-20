@@ -1,9 +1,5 @@
-# New ports collection makefile for:    tr-aspell
-# Date created:                         31 March 2004
-# Whom:                                 Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	${DICT}-aspell
 DISTVERSION=	-tr-0.50-0
@@ -16,5 +12,6 @@ COMMENT=	Aspell Turkish dictionary
 
 DICT=	 	tr
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

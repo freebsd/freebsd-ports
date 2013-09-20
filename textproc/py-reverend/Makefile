@@ -1,9 +1,5 @@
-# New ports collection makefile for:	reverend
-# Date created:		2006-04-29
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	reverend
 PORTVERSION=	0.3
@@ -28,6 +24,7 @@ PORTEXAMPLES=	""
 .endif
 PLIST_SUB=	PORTEXAMPLES=${PORTEXAMPLES}
 
+NO_STAGE=	yes
 post-install:
 .if !defined(WITHOUT_EXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}

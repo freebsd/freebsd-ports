@@ -15,4 +15,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=yes
 PLIST_FILES=	bin/ri_cal
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

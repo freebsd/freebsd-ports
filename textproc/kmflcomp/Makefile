@@ -1,9 +1,5 @@
-# New ports collection makefile for:    kmflcomp
-# Date created:		10 October 2007
-# Whom:			Nikola Lecic <nikola.lecic@anthesphoria.net>
-#
+# Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
 # $FreeBSD$
-#
 
 PORTNAME=	kmflcomp
 PORTVERSION=	0.9.9
@@ -36,6 +32,7 @@ DOCS=		${DISTDIR}/${DIST_SUBDIR}/KMFL-Compiler.sxw \
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^install-data-am: install-kmflcompdocDATA|install-data-am:|' \
 		${WRKSRC}/Makefile.in

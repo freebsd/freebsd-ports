@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xlhtml
-# Date created:				27 March 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xlhtml
 PORTVERSION=	0.5
@@ -23,6 +19,7 @@ CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 MAN1=		ppthtml.1 xlhtml.1
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 .for dir in xlhtml ppthtml
 	@${MKDIR} ${DOCSDIR}/${dir}

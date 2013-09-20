@@ -23,6 +23,7 @@ USE_JAVA=	yes
 PORTEXAMPLES=	*
 LATEST_LINK=	apache-solr
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

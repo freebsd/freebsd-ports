@@ -30,6 +30,7 @@ PCRE_CONFIGURE_ENABLE=	pcre
 PCRE_BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
 PCRE_RUN_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
 
+NO_STAGE=	yes
 post-extract:
 # For non-standard prefixes
 .if !exists(${OCAMLFIND_DESTDIR})

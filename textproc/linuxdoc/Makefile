@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linuxdoc
-# Date created:		July 8, 1997
-# Whom:			jfieber
-#
+# Created by: jfieber
 # $FreeBSD$
-#
 
 PORTNAME=	linuxdoc
 PORTVERSION=	1.1
@@ -30,6 +26,7 @@ ISOCAT=		${PREFIX}/share/sgml/iso8879/catalog
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 
+NO_STAGE=	yes
 pre-su-install:
 	@[ -d ${INSTDIR} ] || ${MKDIR} ${INSTDIR}
 

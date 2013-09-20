@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	xhtml1-xsd
-# Date created:			Feb 9, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	xhtml1-xsd
 PORTVERSION=	200208
@@ -23,6 +18,7 @@ EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	.
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}
 	@${CP} -R ${WRKSRC}/* ${DATADIR}

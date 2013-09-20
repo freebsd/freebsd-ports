@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-ezamar
-# Date created:		2010-01-20
-# Whom:			Jyun-Yan You <jyyou@cs.nctu.edu.tw>
-#
+# Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	ezamar
 PORTVERSION=	2009.06
@@ -18,4 +14,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

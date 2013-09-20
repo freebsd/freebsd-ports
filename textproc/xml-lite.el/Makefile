@@ -1,9 +1,5 @@
-# New ports collection makefile for:   xml-lite.el
-# Date created:                18 February 2002
-# Whom:                        Kimura Fuyuki <fuyuki@mj.0038.net>
-#
+# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xml-lite.el
 PORTVERSION=	1.1
@@ -27,6 +23,7 @@ EXTRACT_AFTER_ARGS=${WRKSRC}/${PORTNAME}
 PLIST_FILES=	${EMACS_SITE_LISPDIR}/${PORTNAME} \
 		${EMACS_SITE_LISPDIR}/${PORTNAME}c
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; ${EMACS_CMD} -batch -q -f batch-byte-compile ${PORTNAME}
 

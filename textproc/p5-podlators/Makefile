@@ -20,6 +20,7 @@ USE_PERL5=	configure
 MAN3=		Pod::Man.3 Pod::ParseLink.3 Pod::Text.3 Pod::Text::Color.3 \
 		Pod::Text::Overstrike.3 Pod::Text::Termcap.3
 
+NO_STAGE=	yes
 post-patch:
 
 .include <bsd.port.pre.mk>

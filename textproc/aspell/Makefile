@@ -34,6 +34,7 @@ SUB_FILES=		aspell.ver
 PLIST_SUB=		VER=${VERINST}
 SUB_LIST=		VERINST=${VERINST}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext

@@ -40,4 +40,5 @@ MAN3=		Pod::POM.3 \
 		Pod::POM::View::Pod.3 \
 		Pod::POM::View::Text.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -21,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=		Text::CSV::Encoded.3 Text::CSV::Encoded::Coder::Base.3 Text::CSV::Encoded::Coder::Encode.3 Text::CSV::Encoded::Coder::EncodeGuess.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	php5-xmlreader
-# Date created:			26 Nov 2005
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 CATEGORIES=	textproc
 
@@ -11,4 +7,5 @@ MASTERDIR=	${.CURDIR}/../../lang/php5
 
 PKGNAMESUFFIX=	-xmlreader
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

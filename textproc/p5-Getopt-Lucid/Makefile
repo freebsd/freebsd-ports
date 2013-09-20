@@ -22,4 +22,5 @@ USE_PERL5=	configure
 
 MAN3=		Getopt::Lucid.3 Getopt::Lucid::Exception.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

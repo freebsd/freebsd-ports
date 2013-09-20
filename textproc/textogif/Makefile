@@ -19,6 +19,7 @@ USE_TEX=	latex dvipsk
 USES=		perl5
 USE_PERL5=	run
 
+NO_STAGE=	yes
 do-install:
 	@cd ${WRKDIR};\
 	${INSTALL_SCRIPT} ${PORTNAME} ${PREFIX}/bin

@@ -26,6 +26,7 @@ OPTIONS_DEFAULT=	MECAB NFKC
 MECAB_DESC=	use mecab for morphological analysis
 NFKC_DESC=	use nfkc based utf8 normalization
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "sparc64"

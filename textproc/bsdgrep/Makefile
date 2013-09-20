@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bsd-grep
-# Date created:				12 Juni 2007
-# Whom:					Gabor Kovesdan <gabor@FreeBSD.org>
-#
+# Created by: Gabor Kovesdan <gabor@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	grep
 PORTVERSION=	20111002
@@ -44,6 +40,7 @@ GNU_COMPAT_DESC=	Use GNU regex library (recommended)
 
 CONFLICTS=	gnugrep-*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !(${OSVERSION} >= 900012 || (${OSVERSION} < 900000 && ${OSVERSION} >= 800505))

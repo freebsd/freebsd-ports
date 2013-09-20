@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libtext-wrapi18n-perl
-# Date created:				08 Januar 2006
-# Whom:					Meno Abels <meno.abels@adviser.com>
-#
+# Created by: Meno Abels <meno.abels@adviser.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libtext-wrapi18n-perl
 PORTVERSION=	0.06
@@ -24,6 +20,7 @@ USE_PERL5=	configure
 
 MAN3=		Text::WrapI18N.3
 
+NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKSRC}.orig ${WRKSRC}
 

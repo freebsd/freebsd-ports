@@ -16,6 +16,7 @@ NO_BUILD=		yes
 USE_RUBY=		yes
 USE_RUBY_FEATURES=	fileutils optparse ruby18
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

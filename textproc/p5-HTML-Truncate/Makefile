@@ -19,6 +19,7 @@ USE_PERL5=	configure
 
 MAN3=		HTML::Truncate.3
 
+NO_STAGE=	yes
 post-patch:
 	${RM} -f ${WRKSRC}/lib/HTML/Truncate.pm.orig
 

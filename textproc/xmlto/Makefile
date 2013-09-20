@@ -38,6 +38,7 @@ PDFXMLTEX_CMD=	${LOCALBASE}/bin/pdftex
 MAN1=		xmlif.1 xmlto.1
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS THANKS
 # these two documentation files do not convey information useful for
+NO_STAGE=	yes
 # the FreeBSD port at this time:
 # PORTDOCS+=	FAQ README
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    luaexpat
-# Date created:				25 June 2009
-# Whom:					Andrew Lewis <freeghb@gmail.com>
-#
+# Created by: Andrew Lewis <freeghb@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	luaexpat
 PORTVERSION=	1.2.0
@@ -25,6 +21,7 @@ WANT_LUA_VER=	5.1
 
 CFLAGS+=	-fPIC
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${LUA_VER} == 5.0

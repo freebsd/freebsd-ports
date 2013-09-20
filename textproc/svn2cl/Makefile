@@ -1,9 +1,5 @@
-# New ports collection makefile for:    svn2cl
-# Date created:                         20 December 2006
-# Whom:                                 Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	svn2cl
 PORTVERSION=	0.13
@@ -22,6 +18,7 @@ MAN1=		${PORTNAME}.1
 PORTDOCS=	ChangeLog NEWS README TODO
 DATAFILES=	authors.xml svn2cl.xsl svn2html.css svn2html.xsl
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|XSL="$$dir|XSL="${DATADIR}|' ${WRKSRC}/${PORTNAME}.sh
 

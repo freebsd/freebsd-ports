@@ -16,6 +16,7 @@ USE_PERL5=	configure
 
 MAN3=			Lingua::EN::Sentence.3
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} -f ${WRKSRC}/lib/Lingua/EN/Sentence.pm~
 

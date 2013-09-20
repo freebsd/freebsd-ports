@@ -26,6 +26,7 @@ UIM_SLAVE=	yes
 
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-uim_Makefile.in
 
+NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}/uim && ${GMAKE} libuim-m17nlib.la)
 

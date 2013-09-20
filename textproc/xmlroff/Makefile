@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--disable-gtk-doc \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
 		${WRKSRC}/libfo/fo-libfo-basic.h

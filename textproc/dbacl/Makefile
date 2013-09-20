@@ -20,6 +20,7 @@ DOCS=		AUTHORS ChangeLog README doc/dbacl.ps \
 		doc/email.html doc/tutorial.html doc/costs.ps
 EXAMPLES=	sample*.txt japanese.txt example*.risk toy.risk prop.pl
 
+NO_STAGE=	yes
 pre-install:
 	@cd ${WRKSRC}/src && \
 	${REINPLACE_CMD} -e 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' \

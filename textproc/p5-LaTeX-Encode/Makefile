@@ -20,4 +20,5 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 MAN1=	latex-encode.1
 MAN3=	LaTeX::Encode.3 LaTeX::Encode::EncodingTable.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

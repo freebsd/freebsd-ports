@@ -1,9 +1,5 @@
-# New ports collection makefile for:	redland-bindings-python
-# Date created:				23 March 2005
-# Whom:					Jordi Haarman
-#
+# Created by: Jordi Haarman
 # $FreeBSD$
-#
 
 CATEGORIES=	textproc python
 
@@ -17,4 +13,5 @@ CONFLICTS=	redland-bindings-[0-9]*
 
 WITH_PYTHON=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

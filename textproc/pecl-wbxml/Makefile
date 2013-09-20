@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-wbxml
-# Date created:		2009-03-11
-# Whom:			Florian Smeets <flo@smeets.im>
-#
+# Created by: Florian Smeets <flo@smeets.im>
 # $FreeBSD$
-#
 
 PORTNAME=	wbxml
 PORTVERSION=	1.0.3
@@ -23,4 +19,5 @@ CONFIGURE_ARGS=	--with-wbxml=${LOCALBASE} \
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

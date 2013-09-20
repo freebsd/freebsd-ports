@@ -20,6 +20,7 @@ CONFIGURE_ENV=	WNHOME=${WNHOME}
 
 MAN3=		WordNet::QueryData.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e  \
 		'/wnHomeUnix/s|/usr/local/WordNet-3.0|${WNHOME}|; \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ispell
-# Date created:				6 November 1994
-# Whom:					jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.3.02
@@ -40,6 +36,7 @@ DATADIR=	${PREFIX}/share/ispell
 ISPELL=		${WRKSRC}/ispell
 
 .if (!defined(ISPELL_ES) && !defined(ISPELL_IT) && !defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF) && !defined(ISPELL_FI) && !defined(ISPELL_PL) && !defined(ISPELL_BG) && !defined(ISPELL_SK) && !defined(ISPELL_CS))
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} '*********************************************************'
 	@${ECHO_MSG} '* You can add further dictionaries:                     *'

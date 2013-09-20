@@ -1,9 +1,5 @@
-# New ports collection makefile for:    hr-aspell
-# Date created:                         19 March 2004
-# Whom:                                 Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	${DICT}-aspell
 DISTVERSION=	-hr-0.51-0
@@ -16,5 +12,6 @@ COMMENT=	Aspell Croatian dictionary
 
 DICT=	 	hr
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

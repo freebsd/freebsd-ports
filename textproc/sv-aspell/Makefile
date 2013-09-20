@@ -1,9 +1,5 @@
-# New ports collection makefile for:    sv-aspell
-# Date created:                         7 September 2002
-# Whom:                                 Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	${DICT}-aspell
 DISTVERSION=	-sv-0.51-0
@@ -16,5 +12,6 @@ COMMENT=	Aspell Swedish dictionary
 
 DICT=	 	sv
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

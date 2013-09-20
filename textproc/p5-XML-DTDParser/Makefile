@@ -18,6 +18,7 @@ MAN3=		XML::DTDParser.3
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

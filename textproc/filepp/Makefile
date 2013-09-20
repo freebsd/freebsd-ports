@@ -15,4 +15,5 @@ NO_BUILD=	yes
 
 MAN1=	filepp.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

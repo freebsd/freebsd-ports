@@ -35,6 +35,7 @@ CONFIGURE_ENV+=	ac_cv_prog_AWK=gawk
 PLIST_FILES+=	%%DATADIR%%/hyph_${ALIAS}.dic
 .endfor
 
+NO_STAGE=	yes
 post-install:
 .for ALIAS in ${USALIASES}
 	${LN} -s hyph_en_US.dic ${DATADIR}/hyph_${ALIAS}.dic

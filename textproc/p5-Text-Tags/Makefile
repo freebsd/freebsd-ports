@@ -15,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Text::Tags.3 Text::Tags::Parser.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

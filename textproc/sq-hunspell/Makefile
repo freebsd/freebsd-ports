@@ -1,9 +1,4 @@
-# New ports collection makefile for:	sq-hunspell
-# Date created:		2011-07-20
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hunspell
 PORTVERSION=	1.6.2
@@ -24,6 +19,7 @@ PLIST_FILES=	%%DATADIR%%/sq_AL.aff \
 		%%DATADIR%%/sq_AL.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/sq_AL.aff ${WRKSRC}/sq_AL.dic ${DATADIR}/

@@ -1,4 +1,4 @@
-# Created by: fenner@FreeBSD.Org
+# Created by: fenner@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	idnits
@@ -20,6 +20,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '1 s|^#!/bin/bash|#!${LOCALBASE}/bin/bash|' ${WRKSRC}/${PORTNAME}
 

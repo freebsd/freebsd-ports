@@ -24,6 +24,7 @@ MANCOMPRESSED=	yes
 PORTDOCS=	ChangeLog README
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

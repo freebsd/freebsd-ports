@@ -32,6 +32,7 @@ MAKE_JOBS_UNSAFE=	yes
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 
+NO_STAGE=	yes
 post-extract:
 	@${CHMOD} u+w ${WRKSRC}/configure
 

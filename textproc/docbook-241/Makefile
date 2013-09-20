@@ -1,11 +1,5 @@
-# New ports collection makefile for:	docbook
-# Date created:		7 April 1997
-# Whom:			nik
-#
-# Based heavily on work by jfieber.
-#
+# Created by: nik
 # $FreeBSD$
-#
 
 PORTNAME=	docbook
 PORTVERSION=	2.4.1
@@ -42,6 +36,7 @@ SGMLCAT_RM=	${XMLCATMGR} -sc ${SGMLCAT} remove \
 
 LATEST_LINK=	docbook-241
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/${DTDDIR}
 	files=$$(${FIND} ${WRKSRC} -type f \! -name '.*'); \

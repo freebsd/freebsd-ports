@@ -16,4 +16,5 @@ USE_PERL5=	configure
 MAN3=	HTML::Entities::ImodePictogram.3 \
 	HTML::Entities::ImodePictogram.ja.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

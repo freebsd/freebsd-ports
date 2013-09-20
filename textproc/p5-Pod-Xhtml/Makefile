@@ -20,4 +20,5 @@ USE_PERL5=	configure
 MAN1=		pod2xhtml.1
 MAN3=		Pod::Hyperlink::BounceURL.3 Pod::Xhtml.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

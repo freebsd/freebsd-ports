@@ -26,6 +26,7 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-gtk3_candwin_Makefile.in \
 IGNORE=		requires X11
 .endif
 
+NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}/uim && ${GMAKE} libuim-x-util.la libuim-counted-init.la)
 	(cd ${WRKSRC}/gtk3 && ${GMAKE})

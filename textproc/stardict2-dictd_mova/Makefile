@@ -46,6 +46,7 @@ ${dict:U:S|-|_|g}_DESC=	${dict} dictionary
 .endfor
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for dict in ${DICTIONARIES}

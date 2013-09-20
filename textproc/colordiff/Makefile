@@ -18,6 +18,7 @@ SHEBANG_FILES=	colordiff.pl
 
 MAN1=		colordiff.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' ${WRKSRC}/${MAN1}
 

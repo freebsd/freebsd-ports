@@ -14,6 +14,7 @@ PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
 PORTDOCS=	${PORTNAME}.html
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/^install-data-am: install-htmlDATA install-info-am install-man/install-data-am: install-man/' ${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e 's|setmode|setmode123|g' ${WRKSRC}/configure

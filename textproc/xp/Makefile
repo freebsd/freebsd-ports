@@ -24,6 +24,7 @@ PORTDOCS=	api copying.txt index.html
 JARFILE=	${PORTNAME}.jar
 PLIST_FILES+=	%%JAVAJARDIR%%/${JARFILE}
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_CMD} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
 	@${MKDIR} ${JAVAJARDIR}

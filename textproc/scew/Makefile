@@ -20,6 +20,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 SCEW_EXAMPLES=	print stream write
 
+NO_STAGE=	yes
 post-install:
 .for ex in ${SCEW_EXAMPLES}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/${PORTNAME}_${ex}/${PORTNAME}_${ex} ${PREFIX}/bin

@@ -1,9 +1,5 @@
-# New ports collection makefile for: pocketreader
-# Date created: 14 April 2002
-# Whom: Simon Dick <simond@irrelevant.org>
-#
+# Created by: Simon Dick <simond@irrelevant.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pocketreader
 PORTVERSION=	1.0
@@ -23,6 +19,7 @@ PLIST_FILES=	bin/pocketreader
 
 WRKSRC=		${WRKDIR}/linux
 
+NO_STAGE=	yes
 do-install:
 	${BRANDELF} -t Linux ${WRKSRC}/installfiles/pocketreader_static
 	${CP} ${WRKSRC}/installfiles/pocketreader_static ${PREFIX}/bin/pocketreader

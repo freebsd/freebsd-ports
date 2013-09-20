@@ -20,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=	XML::Parser::Style::EasyTree.3 XML::Parser::Style::ETree.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

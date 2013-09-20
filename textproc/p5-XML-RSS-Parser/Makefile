@@ -26,4 +26,5 @@ MAN3=		XML::RSS::Parser.3 \
 		XML::RSS::Parser::Feed.3 \
 		XML::RSS::Parser::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

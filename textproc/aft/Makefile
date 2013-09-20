@@ -18,4 +18,5 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-binSCRIPTS install-pkgdataDATA install-pkgdataSCRIPTS
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

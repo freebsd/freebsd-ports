@@ -1,9 +1,4 @@
-# New ports collection makefile for:	it-hyphen
-# Date created:		2011-07-21
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hyphen
 PORTVERSION=	2007.11.26
@@ -27,6 +22,7 @@ PLIST_FILES=	%%DATADIR%%/hyph_it_CH.dic \
 		%%DATADIR%%/hyph_it_IT.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/hyph_it_IT.dic ${DATADIR}/

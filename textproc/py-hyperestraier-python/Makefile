@@ -1,7 +1,4 @@
-# New ports collection makefile for:    py-hyperestraier-python
-# Date created:                         30 March 2007
-# Whom:                                 Junji NAKANISHI <jun-g@daemonfreaks.com>
-#
+# Created by: Junji NAKANISHI <jun-g@daemonfreaks.com>
 # $FreeBSD$
 
 PORTNAME=	hyperestraier
@@ -22,6 +19,7 @@ USE_PYDISTUTILS=yes
 PORTEXAMPLES=	example.py asyn_example.py
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}${PKGNAMESUFFIX}
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}

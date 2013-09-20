@@ -44,4 +44,5 @@ MAN3=		XML::GDOME.3 \
 		XML::GDOME::XPath::Namespace.3 \
 		XML::GDOME::XPath::Result.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

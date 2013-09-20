@@ -27,6 +27,7 @@ MAN1=		eqe.1 eqedit.1
 PORTDOCS=	TODO changelog README FAQ copyright
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^\(install:\) install-doc,\1,' \
 		${WRKSRC}/Makefile

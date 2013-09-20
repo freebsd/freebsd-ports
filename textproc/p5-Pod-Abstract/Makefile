@@ -37,4 +37,5 @@ MAN3=		Pod::Abstract.3 \
 		Pod::Abstract::Serial.3 \
 		Pod::Abstract::Tree.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

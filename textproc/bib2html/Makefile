@@ -17,6 +17,7 @@ USES=		perl5
 USE_PERL5=	run
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${SED} -e \
 		's:= "$$0";:= "${PREFIX}/${SITE_PERL_REL}/Bib2HTML";:g' \

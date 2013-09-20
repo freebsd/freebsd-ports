@@ -25,6 +25,7 @@ MAN1=	x12valid.1 x12norm.1 x12xml.1 x12html.1 xmlx12.1
 MAN5=	pyx12.conf.xml.5
 SUB_FILES=	pkg-deinstall
 
+NO_STAGE=	yes
 post-install:
 	${WRKSRC}/bin/x12_build_pkl.py ${PREFIX}/share/pyx12/map/
 	cd ${WRKSRC}/bin && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1

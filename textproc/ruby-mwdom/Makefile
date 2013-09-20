@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/MWDOM
-# Date created:		22 August 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mwdom
 PORTVERSION=	0.1.5
@@ -22,6 +18,7 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${CP} -R ${WRKSRC}/mwdom ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)

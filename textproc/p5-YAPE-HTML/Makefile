@@ -16,4 +16,5 @@ USE_PERL5=	configure
 
 MAN3=		YAPE::HTML.3 YAPE::HTML::Element.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -32,6 +32,7 @@ PLIST_FILES=	${JARFILES:S|^|%%JAVAJARDIR%%/|} bin/xalan-j
 
 SUB_FILES=	xalan-j.sh
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR files in ${JAVAJARDIR}..."
 .for jarfile in ${JARFILES}

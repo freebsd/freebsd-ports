@@ -19,6 +19,7 @@ MAN3=		btparse.3 bt_language.3 bt_input.3 bt_traversal.3 \
 		bt_postprocess.3 bt_macros.3 bt_split_names.3 \
 		bt_format_names.3 bt_misc.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 

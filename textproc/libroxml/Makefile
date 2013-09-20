@@ -26,6 +26,7 @@ PLIST_FILES=	bin/roxml \
 		include/roxml.h \
 		libdata/pkgconfig/libroxml.pc
 
+NO_STAGE=	yes
 pre-build:
 	@cd ${WRKSRC} && ${GMAKE} clean
 

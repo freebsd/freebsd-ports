@@ -1,9 +1,5 @@
-# New ports collection makefile for:   Queequeg
-# Date created:                28 February 2004
-# Whom:                        Kimura Fuyuki <fuyuki@nigredo.org>
-#
+# Created by: Kimura Fuyuki <fuyuki@nigredo.org>
 # $FreeBSD$
-#
 
 PORTNAME=	queequeg
 PORTVERSION=	0.91
@@ -25,6 +21,7 @@ MAKE_ARGS=	dict WORDNETDICT="${LOCALBASE}/share/WordNet"
 PORTDOCS=	address.png index-e.html index.html
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/qq ${DATADIR}

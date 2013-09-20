@@ -24,6 +24,7 @@ EXTRACT_AFTER_ARGS=	${WRKSRC}/rst.el
 
 ELISPDIR=	${PREFIX}/${EMACS_SITE_LISPDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${EMACS_NAME} == "xemacs")

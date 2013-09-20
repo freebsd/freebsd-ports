@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Tempita
-# Date created:		24 Feb, 2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Tempita
 PORTVERSION=	0.5.1
@@ -17,4 +13,5 @@ COMMENT=	A very small text templating language
 USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

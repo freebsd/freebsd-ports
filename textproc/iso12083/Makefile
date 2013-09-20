@@ -1,9 +1,5 @@
-# New ports collection makefile for:	iso12083
-# Date created:		July 9, 1997
-# Whom:			jfieber
-#
+# Created by: jfieber
 # $FreeBSD$
-#
 
 PORTNAME=	iso12083
 PORTVERSION=	1993
@@ -31,6 +27,7 @@ INSTDIR=	${PREFIX}/share/sgml/iso12083
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 
+NO_STAGE=	yes
 pre-install:
 	@[ -d ${INSTDIR} ] || ${MKDIR} ${INSTDIR}
 

@@ -38,6 +38,7 @@ MEM_DEBUG_DESC=	Enable memory debugging
 CRYPTO_DESC=	Enable crypto support for exslt
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMEM_DEBUG}

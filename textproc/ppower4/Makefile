@@ -37,6 +37,7 @@ PLIST_SUB=	STY_DIR="${STY_DIR:S,^${PREFIX}/,,}" \
 SUB_FILES=	ppower4.sh
 SUB_LIST=	JARFILE=${JAR_DIR}/pp4p.jar
 
+NO_STAGE=	yes
 do-install:
 # install docs?
 .if !defined(NOPORTDOCS)

@@ -16,6 +16,7 @@ OPTIONS_DEFINE=		CGI
 
 CGI_DESC=		Compile CGI executable
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MCGI}

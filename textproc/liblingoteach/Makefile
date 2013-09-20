@@ -24,6 +24,7 @@ CONFIGURE_ARGS+=	--with-compression
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "liblingoteach can be used with the following switches:"

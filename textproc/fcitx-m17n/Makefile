@@ -18,4 +18,5 @@ USE_XZ=		yes
 USES=		cmake gettext pkgconfig
 USE_GNOME=	intltool
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

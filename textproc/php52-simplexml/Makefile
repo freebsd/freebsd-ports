@@ -1,9 +1,5 @@
-# New ports collection makefile for:	php52-simplexml
-# Date created:			17 Apr 2010
-# Whom:				Alex Keda <admin@lissyara.su>
-#
+# Created by: Alex Keda <admin@lissyara.su>
 # $FreeBSD$
-#
 
 CATEGORIES=	textproc
 
@@ -11,4 +7,5 @@ MASTERDIR=	${.CURDIR}/../../lang/php52
 
 PKGNAMESUFFIX=	-simplexml
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

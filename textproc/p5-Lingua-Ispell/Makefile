@@ -20,6 +20,7 @@ USES=		perl5
 
 MAN3=		Lingua::Ispell.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/lib/Lingua/Ispell.pm
 

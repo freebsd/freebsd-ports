@@ -21,4 +21,5 @@ CONFIGURE_ARGS=	poppler_CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/po
 PLIST_FILES=	bin/pdfgrep
 MAN1=		pdfgrep.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -25,6 +25,7 @@ PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/ibus.el \
 		libexec/ibus-el-agent
 PORTDOCS=	README
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && ${EMACS_CMD} -batch -q -no-site-file -no-init-file \
 		-f batch-byte-compile ibus.el

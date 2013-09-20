@@ -17,6 +17,7 @@ ALL_TARGET=	#
 MAN1=		par.1
 PLIST_FILES=	bin/par
 
+NO_STAGE=	yes
 do-configure:
 	(cd ${WRKSRC}; ${CP} protoMakefile Makefile)
 

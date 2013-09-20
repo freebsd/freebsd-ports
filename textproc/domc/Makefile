@@ -28,6 +28,7 @@ MAN3=		DOM_CharacterData.3m DOM_Document.3m DOM_Element.3m \
 		DOM_NodeList.3m DOM_Text.3m
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

@@ -36,4 +36,5 @@ MAN3=		XML::Feed.3 \
 		XML::Feed::Enclosure.3 \
 		XML::Feed::Entry.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -31,4 +31,5 @@ MAN3=	RDF::Simple.3 \
 	RDF::Simple::Serialiser.3 \
 	RDF::Simple::Serializer.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

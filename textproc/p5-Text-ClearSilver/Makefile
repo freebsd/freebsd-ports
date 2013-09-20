@@ -24,4 +24,5 @@ MAN3=	Text::ClearSilver.3 \
 	Text::ClearSilver::FunctionSet::html.3 \
 	Text::ClearSilver::FunctionSet::string.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

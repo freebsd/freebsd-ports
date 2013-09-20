@@ -1,7 +1,4 @@
-# Ports collection makefile for:  heirloom-doctools
-# Date created:			  Saturday, 3 December 2005
-# Whom:				  Hiroki Sato <hrs@FreeBSD.org>
-#
+# Created by: Hiroki Sato <hrs@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	heirloom-doctools
@@ -51,6 +48,7 @@ MLINKS+=	lookbib.1 indxbib.1 \
 
 PORTDOCS=	CHANGES README LICENSE
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

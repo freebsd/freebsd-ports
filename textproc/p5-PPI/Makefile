@@ -118,4 +118,5 @@ MAN3=	PPI.3 \
 	PPI::Transform.3 \
 	PPI::Transform::UpdateCopyright.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

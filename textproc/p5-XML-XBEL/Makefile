@@ -30,4 +30,5 @@ MAN3=	XML::XBEL.3 \
 	XML::XBEL::thingy.3 \
 	XML::XBEL::url.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

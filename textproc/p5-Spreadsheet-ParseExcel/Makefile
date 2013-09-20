@@ -35,6 +35,7 @@ MAN3=		Spreadsheet::ParseExcel.3 \
 		Spreadsheet::ParseExcel::Workbook.3 \
 		Spreadsheet::ParseExcel::Worksheet.3
 
+NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"

@@ -26,6 +26,7 @@ MAKE_ENV+=	CLASSPATH=${JAVAJARDIR}/xincluder.jar
 
 PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${MKDIR} ${JAVAJARDIR}

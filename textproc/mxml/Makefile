@@ -31,6 +31,7 @@ PLIST_FILES=	bin/mxmldoc include/mxml.h \
 		lib/libmxml.so lib/libmxml.so.1 lib/libmxml.so.1.5 \
 		libdata/pkgconfig/mxml.pc
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

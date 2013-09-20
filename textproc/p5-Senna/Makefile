@@ -23,4 +23,5 @@ MAN3=		Senna.3 \
 	Senna::Records.3 Senna::Set.3 Senna::Snippet.3 Senna::Symbol.3 \
 	Senna::Values.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

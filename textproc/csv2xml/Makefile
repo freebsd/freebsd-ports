@@ -1,9 +1,5 @@
-# New ports collection makefile for:	csv2xml
-# Date created:				13 November 2004
-# Whom:					Jacob Rhoden <jacob@dominoid.org>
-#
+# Created by: Jacob Rhoden <jacob@dominoid.org>
 # $FreeBSD$
-#
 
 PORTNAME=	csv2xml
 PORTVERSION=	0.6
@@ -20,6 +16,7 @@ MANCOMPRESSED=	yes
 PLIST_FILES=	bin/csv2xml
 MAKE_ARGS=	FLAGS="${CXXFLAGS}"
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' \
 		-e 's/^\(COMPILER[^g]*\)g++$$/\1${CXX}/' \

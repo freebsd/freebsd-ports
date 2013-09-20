@@ -1,9 +1,5 @@
-# New ports collection makefile for:    hil-aspell
-# Date created:                         02 June 2005
-# Whom:                                 Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	${DICT}-aspell
 DISTVERSION=	5-hil-0.11-0
@@ -16,5 +12,6 @@ COMMENT=	Aspell Hiligaynon dictionary
 
 DICT=	 	hil
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

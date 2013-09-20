@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-XML-SAX-Expat-Incremental
-# Date created:				22 December 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-SAX-Expat-Incremental
 PORTVERSION=	0.05
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=	XML::SAX::Expat::Incremental.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

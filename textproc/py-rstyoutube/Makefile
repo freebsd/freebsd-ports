@@ -1,9 +1,5 @@
-# New ports collection makefile for: py-rstyoutube
-# Date created:		2011-12-16
-# Whom:		Olivier Duchateau <duchateau.olivier@gmail.com>
-#
+# Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	rstyoutube
 PORTVERSION=	0.1.1
@@ -19,4 +15,5 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/docutils/__init__.py:${PORTSDIR}/textproc/py-d
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

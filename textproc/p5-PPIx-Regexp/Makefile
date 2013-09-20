@@ -78,4 +78,5 @@ MAN3=	PPIx::Regexp.3 \
 	PPIx::Regexp::Tokenizer.3 \
 	PPIx::Regexp::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

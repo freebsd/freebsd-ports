@@ -30,6 +30,7 @@ MAN3=		XML::RSS::LibXML.3 \
 		XML::RSS::LibXML::MagicElement.3 \
 		XML::RSS::LibXML::Namespaces.3
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}/

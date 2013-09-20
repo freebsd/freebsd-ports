@@ -22,6 +22,7 @@ PLIST_DIRS=	share/examples/popup
 PLIST_FILES+=	share/examples/popup/${i}
 .endfor
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKDIR}
 .for i in ${DISTFILES}

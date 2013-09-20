@@ -1,9 +1,5 @@
-# New ports collection makefile for:	spellutils
-# Date created:		Mar 30 jul 2002 22:42:49 CEST
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	spellutils
 PORTVERSION=	0.7
@@ -27,6 +23,7 @@ MAN1=		pospell.1 newsbody.1
 DOCS=		NEWS README
 EXAMPLES=	aspell.sl
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

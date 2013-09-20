@@ -26,6 +26,7 @@ USE_PERL5=	configure
 MAN1=	umlclass.pl.1
 MAN3=	UML::Class::Simple.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' '/auto_install/d' ${WRKSRC}/Makefile.PL
 

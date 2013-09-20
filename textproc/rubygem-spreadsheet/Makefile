@@ -20,4 +20,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/xlsopcodes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	rubygem-heredoc_unindent
-# Date created:		2011-07-08
-# Whom:			Loic Pefferkorn <loic-freebsd@loicp.eu>
-#
+# Created by: Loic Pefferkorn <loic-freebsd@loicp.eu>
 # $FreeBSD$
 
 PORTNAME=	heredoc_unindent
@@ -20,4 +17,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

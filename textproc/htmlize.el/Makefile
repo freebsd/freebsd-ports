@@ -1,9 +1,5 @@
-# New ports collection makefile for:	htmlize.el
-# Date created:				15 January 2004
-# Whom:					Marc van Woerkom <marc.vanwoerkom@fernuni-hagen.de>
-#
+# Created by: Marc van Woerkom <marc.vanwoerkom@fernuni-hagen.de>
 # $FreeBSD$
-#
 
 PORTNAME=	htmlize.el
 PORTVERSION=	1.39
@@ -29,6 +25,7 @@ PLIST_FILES=	${EMACS_SITE_LISPDIR}/htmlize.el \
 
 LISPDIR=	${PREFIX}/${EMACS_SITE_LISPDIR}
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; ${EMACS_CMD} -batch -q -f batch-byte-compile htmlize.el
 

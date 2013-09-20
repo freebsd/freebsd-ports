@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	SDOM
-# Date created:			Mar 22, 2007
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	sdom
 PORTVERSION=	0.5.1
@@ -29,6 +24,7 @@ PLIST_FILES=	share/guile/sdom/common.scm \
 		share/guile/sdom/parser.scm
 PLIST_DIRS=	share/guile/sdom
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/share/guile/sdom
 .for f in common.scm core.scm events.scm ls.scm parser.scm

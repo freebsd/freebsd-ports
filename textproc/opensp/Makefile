@@ -19,6 +19,7 @@ CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

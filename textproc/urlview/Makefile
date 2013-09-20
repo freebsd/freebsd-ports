@@ -20,6 +20,7 @@ MAN1=		urlview.1
 PLIST_FILES=	bin/urlview \
 		etc/urlview.conf.sample
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
 		-e 's/url_handler.sh/firefox/' \

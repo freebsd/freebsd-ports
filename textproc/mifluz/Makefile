@@ -30,6 +30,7 @@ INFO=		mifluz
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE -pthread|${PTHREAD_CFLAGS}|g' \
 		${WRKSRC}/configure

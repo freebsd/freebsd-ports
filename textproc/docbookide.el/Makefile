@@ -1,9 +1,5 @@
-# New ports collection makefile for:	docbookide
-# Date created:		2 July 2002
-# Whom:			Sean Chittenden <seanc@FreeBSD.org>
-#
+# Created by: Sean Chittenden <seanc@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	docbookide.el
 PORTVERSION=	0.1
@@ -24,6 +20,7 @@ ELISP_FILES=	dbide-abbrev.el dbide-data.el dbide-font.el \
 EMACS_LISPDIR=	${PREFIX}/share/emacs/site-lisp/docbookide
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp/docbookide
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${EMACS_LISPDIR}
 	${MKDIR} ${XEMACSLISPDIR}

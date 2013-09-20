@@ -1,9 +1,5 @@
-# New ports collection makefile for:	perl2html
-# Date created:				27 May 1999
-# Whom:					Martin Kammerhofer
-#
+# Created by: Martin Kammerhofer
 # $FreeBSD$
-#
 
 PORTNAME=		perl2html
 PORTVERSION=		0.9.2
@@ -20,6 +16,7 @@ USE_AUTOTOOLS=	autoconf213
 MAN1=			perl2html.1
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for file in AUTHORS NEWS README

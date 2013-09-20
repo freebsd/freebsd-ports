@@ -18,4 +18,5 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 MAN3=		Tree::Suffix.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

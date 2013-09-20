@@ -25,6 +25,7 @@ NO_WRKSUBDIR=	yes
 USE_QT4=	qmake gui svg webkit xml moc uic rcc imageformats linguist
 USE_GNOME=	desktopfileutils
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/CMakeLists.txt
 

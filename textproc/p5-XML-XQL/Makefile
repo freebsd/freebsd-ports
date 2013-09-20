@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XML::XQL
-# Date created:				Sat Nov 23 17:24:19 UTC 2002
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-XQL
 PORTVERSION=	0.68
@@ -26,4 +22,5 @@ USE_PERL5=	configure
 MAN3=		XML::XQL.3 XML::XQL::DOM.3 XML::XQL::Date.3 \
 		XML::XQL::Query.3 XML::XQL::Tutorial.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

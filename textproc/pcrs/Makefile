@@ -27,6 +27,7 @@ PLIST_FILES=	bin/pcrsed \
 		lib/libpcrs.so \
 		lib/libpcrs.so.0
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pcrsed ${PREFIX}/bin
 

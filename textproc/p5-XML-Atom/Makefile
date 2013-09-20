@@ -33,4 +33,5 @@ MAN3=		XML::Atom.3 \
 		XML::Atom::Server.3 \
 		XML::Atom::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

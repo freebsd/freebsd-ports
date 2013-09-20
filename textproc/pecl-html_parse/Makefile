@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-html_parse
-# Date created:			21 December 2007
-# Whom:				Ditesh Shashikant Gathani <ditesh@gathani.org>
-#
+# Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
 # $FreeBSD$
-#
 
 PORTNAME=	html_parse
 PORTVERSION=	1.0.0
@@ -27,4 +23,5 @@ IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--enable-html_parse
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

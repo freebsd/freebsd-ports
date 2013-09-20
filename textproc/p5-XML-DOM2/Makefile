@@ -27,4 +27,5 @@ MAN3=		XML::DOM2::Attribute.3 XML::DOM2::Element.3 \
 		XML::DOM2::DOM::Element.3 XML::DOM2::Element::Comment.3 \
 		XML::DOM2::DOM::Attribute.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

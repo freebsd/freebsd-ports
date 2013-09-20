@@ -22,4 +22,5 @@ MAN3=	Petal::CodePerl.3 Petal::CodePerl::Expr.3 \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

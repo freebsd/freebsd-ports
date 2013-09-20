@@ -1,9 +1,5 @@
-# New ports collection makefile for:	FormatR
-# Date created:		20 September 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	format
 PORTVERSION=	1.09
@@ -20,6 +16,7 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${RUBY} -i.orig -pe 'gsub(/"(format_test\.pl)/, "\"./\\1")' ${WRKSRC}/test_format.rb
 

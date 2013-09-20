@@ -27,4 +27,5 @@ MAN3=		XML::LibXML::Cache.3 \
 		XML::LibXML::Cache::Base.3 \
 		XML::LibXSLT::Cache.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

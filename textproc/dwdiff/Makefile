@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 MAN1=		${PORTNAME}.1 dwfilter.1
 PORTDOCS=	COPYING Changelog README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

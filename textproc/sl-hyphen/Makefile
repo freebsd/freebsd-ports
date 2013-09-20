@@ -1,9 +1,4 @@
-# New ports collection makefile for:	sl-hyphen
-# Date created:		2011-07-21
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hyphen
 PORTVERSION=	2007.01.27
@@ -26,6 +21,7 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	%%DATADIR%%/hyph_sl_SI.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/hyph_sl_SI.dic ${DATADIR}/

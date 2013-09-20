@@ -36,6 +36,7 @@ PLIST_FILES+=	${JARFILES:S,^,%%JAVAJARDIR%%/,} bin/saxon bin/saxon-xquery
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 

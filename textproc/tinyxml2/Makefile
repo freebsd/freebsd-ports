@@ -27,6 +27,7 @@ PLIST_FILES=	include/tinyxml2.h \
 		lib/libtinyxml2.so.1.0.11 \
 		libdata/pkgconfig/tinyxml2.pc
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -16,6 +16,7 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	no
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_VERSION} == python3.2

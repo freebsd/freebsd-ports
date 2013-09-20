@@ -20,6 +20,7 @@ CONFIGURE_ARGS=	--program-prefix=g
 INFO=		diffutils
 MAN1=		gcmp.1 gdiff.1 gdiff3.1 gsdiff.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^mkdir/s:@mkdir_p@:${MKDIR}:' \
 		${WRKSRC}/po/Makefile.in.in

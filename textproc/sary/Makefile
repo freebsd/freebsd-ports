@@ -17,6 +17,7 @@ USE_LDCONFIG=	yes
 
 MAN1=		sary.1	mksary.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|docs||g' ${WRKSRC}/Makefile.in
 

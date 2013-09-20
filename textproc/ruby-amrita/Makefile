@@ -23,6 +23,7 @@ RUBY_SHEBANG_FILES=	${BINS}
 BINS=		${WRKSRC}/bin/*
 DOCS=		ChangeLog README* docs/*
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}; ${RUBY} install.rb
 	${INSTALL_SCRIPT} ${BINS} ${PREFIX}/bin/

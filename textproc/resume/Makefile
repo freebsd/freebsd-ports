@@ -1,9 +1,5 @@
-# New ports collection makefile for:   resume
-# Date created:                17 January 2002
-# Whom:                        Kimura Fuyuki <fuyuki@mj.0038.net>
-#
+# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
 # $FreeBSD$
-#
 
 PORTNAME=	resume
 PORTVERSION=	1.5.1
@@ -24,6 +20,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|\.\./\.\./css|css|' ${WRKSRC}/xsl/params.xsl
 	${FIND} ${WRKSRC} -name '*.bak' -delete

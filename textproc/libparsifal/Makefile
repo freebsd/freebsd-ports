@@ -18,6 +18,7 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|g' ${WRKSRC}/configure
 

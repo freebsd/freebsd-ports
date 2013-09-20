@@ -1,9 +1,4 @@
-# New ports collection makefile for:	sv-mythes
-# Date created:		2011-07-21
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mythes
 PORTVERSION=	2008.06.10
@@ -29,6 +24,7 @@ PLIST_FILES=	%%DATADIR%%/th_sv_SE.dat \
 		%%DATADIR%%/th_sv_FI.idx
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/th_sv_SE.dat ${WRKSRC}/th_sv_SE.idx ${DATADIR}/

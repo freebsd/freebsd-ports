@@ -19,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		Text::Diff.3 Text::Diff::Config.3 Text::Diff::Table.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

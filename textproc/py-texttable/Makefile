@@ -1,9 +1,5 @@
-# Ports collection makefile for:	py-texttable
-# Date created:		24 April 2007
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	texttable
 PORTVERSION=	0.8.1
@@ -21,4 +17,5 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/texttable.py \
 		%%PYTHON_SITELIBDIR%%/texttable.pyc \
 		%%PYTHON_SITELIBDIR%%/texttable.pyo
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

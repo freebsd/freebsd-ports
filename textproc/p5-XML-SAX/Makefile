@@ -26,6 +26,7 @@ OPTIONS_DEFINE=	WRITE_INI_OK
 
 WRITE_INI_OK_DESC=	Alter ParserDetails.ini information
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWRITE_INI_OK}

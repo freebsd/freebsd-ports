@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Lingua::PT::Stemmer
-# Date created:				31 Dec 2003
-# Whom:					Thorsten Greiner <thorsten.greiner@web.de>
-#
+# Created by: Thorsten Greiner <thorsten.greiner@web.de>
 # $FreeBSD$
-#
 
 PORTNAME=	Lingua-PT-Stemmer
 PORTVERSION=	0.01
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=	Lingua::GL::Stemmer.3 Lingua::PT::Stemmer.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

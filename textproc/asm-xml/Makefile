@@ -16,6 +16,7 @@ USE_DOS2UNIX=	YES
 
 PLIST_FILES=	include/asm-xml.h lib/libasm-xml.a
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000

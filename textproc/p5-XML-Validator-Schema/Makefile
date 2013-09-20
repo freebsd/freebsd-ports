@@ -40,6 +40,7 @@ MAN3=		XML::Validator::Schema.3 \
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ANNOUNCE Changes README TODO
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

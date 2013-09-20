@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ku-aspell
-# Date created:                         12 February 2007
-# Whom:                                 Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	${DICT}-aspell
 DISTVERSION=	5-ku-0.20-1
@@ -16,5 +12,6 @@ COMMENT=	Aspell Kurdi dictionary
 
 DICT=	 	ku
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

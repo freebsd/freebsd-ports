@@ -1,9 +1,4 @@
-# New ports collection makefile for:	scim-bridge
-# Date created:		2008-09-10
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	scim-bridge
 PORTVERSION=	0.4.16
@@ -35,6 +30,7 @@ CONFIGURE_ARGS+=--with-libintl-prefix=${LOCALBASE} \
 
 PLIST_FILES=	bin/scim-bridge
 
+NO_STAGE=	yes
 post-patch:
 	@${GREP} -lR "<malloc\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc\.h>|<stdlib.h>|g'

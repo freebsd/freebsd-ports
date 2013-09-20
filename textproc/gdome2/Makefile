@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 
 MAN1=	gdome-config.1
 
+NO_STAGE=	yes
 post-patch:
 .ifndef(NOPORTDOCS)
 	@${REINPLACE_CMD} -E -e \

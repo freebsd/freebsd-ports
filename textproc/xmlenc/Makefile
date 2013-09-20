@@ -23,6 +23,7 @@ PORTDOCS=	*
 JARFILE=	${PORTNAME}.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 JDK_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jdk1.? -maxdepth 1 -name api -type d 2>/dev/null || ${ECHO_CMD}) | ${TAIL} -n 1

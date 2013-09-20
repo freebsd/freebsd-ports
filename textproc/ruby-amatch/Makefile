@@ -26,6 +26,7 @@ AMATCH_RUBY=	install.rb
 DOCSDIR=	${RUBY_MODDOCDIR}
 PORTDOCS=	CHANGES README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

@@ -14,6 +14,7 @@ COMMENT=	The Leading Implementation of ISO Schematron
 USE_ZIP=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKDIR}/xslt1
 	${MKDIR} ${WRKDIR}/xslt2

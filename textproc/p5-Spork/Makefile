@@ -22,6 +22,7 @@ MAN3=		Spork.3 Spork::Config.3 \
 		Spork::Formatter.3 Spork::Slides.3 \
 		Spork::Command.3 Spork::Plugin.3
 
+NO_STAGE=	yes
 post-install:
 		@${CAT} ${PKGMESSAGE}
 

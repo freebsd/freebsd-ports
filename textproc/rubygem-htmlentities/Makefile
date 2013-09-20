@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-htmlentities
-# Date created:		2009-07-13
-# Whom:			TERAMOTO Masahiro <markun@onohara.to>
-#
+# Created by: TERAMOTO Masahiro <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	htmlentities
 PORTVERSION=	4.3.1
@@ -19,4 +15,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

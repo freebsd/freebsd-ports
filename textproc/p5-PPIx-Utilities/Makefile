@@ -24,4 +24,5 @@ USE_PERL5=	modbuild
 MAN3=		PPIx::Utilities.3 PPIx::Utilities::Exception::Bug.3 \
 		PPIx::Utilities::Node.3 PPIx::Utilities::Statement.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

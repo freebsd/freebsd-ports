@@ -12,5 +12,6 @@ LICENSE=	MIT
 
 USE_CABAL=	hxt-charproperties>=9 parsec>=2.1
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

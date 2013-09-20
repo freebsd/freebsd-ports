@@ -23,6 +23,7 @@ MAN3=		XML::STX.3 XML::STX::Base.3 XML::STX::Buffer.3 \
 		XML::STX::STXPath.3 XML::STX::Stylesheet.3 XML::STX::TrAX.3 \
 		XML::STX::Writer.3
 
+NO_STAGE=	yes
 post-extract:
 	@${MKDIR} ${WRKSRC}/scripts
 	@${MV} ${WRKSRC}/stx*.pl ${WRKSRC}/scripts

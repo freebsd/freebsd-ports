@@ -30,4 +30,5 @@ regression-test: install
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} testing)
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

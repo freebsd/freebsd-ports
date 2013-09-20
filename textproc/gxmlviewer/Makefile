@@ -19,6 +19,7 @@ USE_WEBPLUGINS=	native
 WEBPLUGINS_DIR=	${PREFIX}/lib/gxmlviewer/plugins
 WEBPLUGINS_FILES=npgxmlviewer.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 
