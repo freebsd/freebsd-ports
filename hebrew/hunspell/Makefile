@@ -1,4 +1,3 @@
-# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	hunspell
@@ -22,6 +21,7 @@ PLIST_FILES=	%%DATADIR%%/he.aff \
 		%%DATADIR%%/he.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/bin/perl|${PERL}|g' ${WRKSRC}/pmerge
 
