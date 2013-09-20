@@ -13,6 +13,7 @@ COMMENT=	GNU version of the traditional tape archiver
 
 INFO=		tar
 
+NO_STAGE=	yes
 USES=		iconv
 USE_AUTOTOOLS=	autoconf:env	# autom4te
 USE_XZ=		yes

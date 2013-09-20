@@ -13,6 +13,7 @@ COMMENT=	Extract, view & test ACE archives
 
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 USES=		gmake
 ALL_TARGET=	clean unace
 PLIST_FILES=	bin/unace

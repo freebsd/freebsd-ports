@@ -11,6 +11,7 @@ COMMENT=	Create and Use PHP Archive files
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
+NO_STAGE=	yes
 PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>

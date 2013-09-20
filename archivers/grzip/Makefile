@@ -10,6 +10,7 @@ MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/compression/ CENKES
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Efficient file compressor
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		gettext
 USE_LDCONFIG=	yes

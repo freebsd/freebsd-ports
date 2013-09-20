@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 PLIST_FILES=	bin/qpress
 
 do-build:

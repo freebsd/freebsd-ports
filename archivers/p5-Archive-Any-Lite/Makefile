@@ -21,6 +21,7 @@ TEST_DEPENDS=	p5-Test-Pod>=1.18:${PORTSDIR}/devel/p5-Test-Pod \
 
 USE_PERL5=	configure
 USES=		perl5
+NO_STAGE=	yes
 
 MAN3=		Archive::Any::Lite.3
 

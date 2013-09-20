@@ -11,6 +11,7 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Extracts .lzx archives from Amiga systems
 
+NO_STAGE=	yes
 PLIST_FILES=	bin/unlzx
 
 do-extract:

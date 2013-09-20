@@ -11,6 +11,8 @@ COMMENT=	Utility for manipulating of Quake packed data files
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	danfe
 GH_TAGNAME=	${GH_COMMIT}

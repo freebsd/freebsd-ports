@@ -9,6 +9,7 @@ MASTER_SITES=	ftp://ftp.42.org/pub/OLD/b/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Block-sorting file compressor
 
+NO_STAGE=	yes
 RESTRICTED=	may be covered by patents
 MAN1=		bzip.1 bunzip.1
 USE_CSTD=	gnu89

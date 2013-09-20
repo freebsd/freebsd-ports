@@ -11,6 +11,7 @@ COMMENT=	Program to extract Microsoft cabinet (.CAB) files
 
 LICENSE=	GPLv3
 
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 
 MANLANG=	"" ja

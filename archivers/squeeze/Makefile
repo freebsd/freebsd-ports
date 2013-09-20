@@ -19,6 +19,7 @@ LIB_DEPENDS=	thunar-vfs-1:${PORTSDIR}/x11-fm/thunar-vfs
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
+NO_STAGE=	yes
 USES=		pkgconfig gmake gettext pathfix desktop-file-utils
 USE_XFCE=	configenv libutil thunar
 USE_XORG=	x11

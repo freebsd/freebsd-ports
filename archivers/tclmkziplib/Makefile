@@ -17,6 +17,7 @@ USES+=		tcl
 USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/mkZiplib${PORTVERSION}
+NO_STAGE=	yes
 
 .include <bsd.port.options.mk>
 

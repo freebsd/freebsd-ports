@@ -19,6 +19,7 @@ TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 
 USE_PERL5=	modbuild
 USES=		perl5
+NO_STAGE=	yes
 
 MAN3=		Archive::Extract::Libarchive.3
 

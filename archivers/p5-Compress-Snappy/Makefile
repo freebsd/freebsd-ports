@@ -17,6 +17,7 @@ LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
 
 USE_PERL5=	configure
 USES=		perl5
+NO_STAGE=	yes
 
 MAN3=		Compress::Snappy.3
 

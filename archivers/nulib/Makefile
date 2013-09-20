@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nulib
-# Date created:				Thu May  8 00:14:31 PDT 1997
-# Whom:					Steven Wallace <swallace@FreeBSD.org>
-#
+# Created by: Steven Wallace <swallace@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nulib
 PORTVERSION=	3.25
@@ -18,6 +14,7 @@ COMMENT=	NuFX archive utility
 
 WRKSRC=		${WRKDIR}/nulib
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+NO_STAGE=	yes
 
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}

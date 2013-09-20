@@ -13,6 +13,7 @@ DISTNAME=	${PYDISTUTILS_PKGNAME}-${PORTVERSION}
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Python binding for the LZMA compression library
 
+NO_STAGE=	yes
 USES=		pkgconfig
 USE_BZIP2=	yes
 USE_PYTHON=	2.6+

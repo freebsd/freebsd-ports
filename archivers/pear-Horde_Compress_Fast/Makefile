@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	pear-
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Fast Compression Library
 
+NO_STAGE=	yes
 USE_HORDE_RUN=	Horde_Exception
 
 .include <bsd.port.pre.mk>

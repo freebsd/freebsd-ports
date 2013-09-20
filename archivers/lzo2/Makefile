@@ -13,6 +13,7 @@ COMMENT=	Portable speedy, lossless data compression library
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --docdir=${DOCSDIR}

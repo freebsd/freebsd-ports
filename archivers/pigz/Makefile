@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.zlib.net/pigz/ \
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Parallel GZIP
 
+NO_STAGE=	yes
 USES=		gmake
 
 .if !defined(NO_INSTALL_MANPAGES)

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	epkg
-# Date created:				12 May 2006
-# Whom:						Jim Pirzyk <pirzyk@freebsd.org>
-#
+# Created by: Jim Pirzyk <pirzyk@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	epkg
 PORTVERSION=	2.3.9
@@ -18,6 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libfget.a:${PORTSDIR}/ftp/fget
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		expat.6:${PORTSDIR}/textproc/expat2
 
+NO_STAGE=	yes
 HAS_CONFIGURE=	YES
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

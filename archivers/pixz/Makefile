@@ -12,6 +12,7 @@ COMMENT=	Parallel, indexing version of XZ
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NO_STAGE=	yes
 SUB_FILES=	Makefile
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1

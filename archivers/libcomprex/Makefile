@@ -14,6 +14,7 @@ LICENSE=	LGPL21
 
 OPTIONS_DEFINE=	NLS
 
+NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 USES=		pathfix pkgconfig
 USE_LDCONFIG=	yes

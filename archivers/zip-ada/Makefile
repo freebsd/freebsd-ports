@@ -12,6 +12,7 @@ COMMENT=	Zip compressed archive file format library written in Ada
 
 LICENSE=	MIT
 
+NO_STAGE=	yes
 USES=		ada perl5
 USE_PERL5=	build
 USE_ZIP=	yes

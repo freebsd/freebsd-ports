@@ -1,9 +1,5 @@
-# New ports collection makefile for:	macutils
-# Date created:		14th April 1997
-# Whom:			Joel Sutton <jsutton@bbcon.com.au>
-#
+# Created by: Joel Sutton <jsutton@bbcon.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	macutils
 PORTVERSION=	2.0b3
@@ -17,6 +13,7 @@ COMMENT=	Utilities for Apple Macintosh files
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
+NO_STAGE=	yes
 
 MAN1=		macunpack.1 hexbin.1 macsave.1 macstream.1 binhex.1 tomac.1 \
 		frommac.1 macutil.1

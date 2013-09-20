@@ -20,6 +20,7 @@ MANLANG=	ja
 PLIST_FILES=	bin/lha
 #PLIST_DIRS=	man/ja/man1
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 
 RESTRICTED=	no permission to redistribute
 

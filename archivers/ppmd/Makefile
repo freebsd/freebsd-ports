@@ -9,6 +9,7 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Fast archiver with good compression ratio
 
+NO_STAGE=	yes
 MAN1=		ppmd.1
 PORTDOCS=	read_me.txt
 PLIST_FILES=	bin/ppmd

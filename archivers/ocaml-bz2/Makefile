@@ -14,6 +14,7 @@ COMMENT=	OCaml library to manipulate bz2 files
 
 GNU_CONFIGURE=	yes
 USES=		gmake
+NO_STAGE=	yes
 
 USE_OCAML=		yes
 USE_OCAML_LDCONFIG=	yes

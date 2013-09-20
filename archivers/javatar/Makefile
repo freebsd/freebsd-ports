@@ -13,6 +13,7 @@ COMMENT=	Java tar archive I/O package
 
 RUN_DEPENDS=	${JAVALIBDIR}/activation.jar:${PORTSDIR}/java/jaf
 
+NO_STAGE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 

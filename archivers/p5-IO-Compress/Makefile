@@ -23,6 +23,7 @@ CONFLICTS=	p5-Compress-Zlib-2* p5-IO-Compress-Base-2* p5-IO-Compress-Zlib-2* p5-
 
 USE_PERL5=	configure
 USES=		perl5
+NO_STAGE=	yes
 
 MAN3=		Compress::Zlib.3 \
 		File::GlobMapper.3 \

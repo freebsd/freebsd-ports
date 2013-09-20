@@ -10,5 +10,6 @@ COMMENT=	Compression and decompression in the gzip and zlib formats
 
 LICENSE=	BSD
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

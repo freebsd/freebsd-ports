@@ -1,9 +1,5 @@
-# New ports collection makefile for:	librtfcomp
-# Date Created:				13 June 2008
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	librtfcomp
 PORTVERSION=	1.1
@@ -14,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	LZRTF compression library
 
 
+NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

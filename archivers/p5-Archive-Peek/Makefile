@@ -1,9 +1,5 @@
-# New ports collection makefile for:	archivers/p5-Archive-Peek
-# Date created:				01 September 2011
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Archive-Peek
 PORTVERSION=	0.35
@@ -24,6 +20,7 @@ TEST_DEPENDS=	p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN3=		Archive::Peek.3
 

@@ -14,6 +14,7 @@ CONFLICTS=	lzmautils-[0-9]* xz-[0-9]*
 
 USES=		gmake
 USE_BZIP2=	yes
+NO_STAGE=	yes
 NO_WRKSUBDIR=	yes
 USE_DOS2UNIX=	yes
 BUILD_WRKSRC=	${WRKSRC}/CPP/7zip/Bundles/LzmaCon

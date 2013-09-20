@@ -14,6 +14,7 @@ COMMENT=	The HA archiver using the HSC compression method
 
 PROJECTHOST=	ak-various-projects
 
+NO_STAGE=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/ha
 MAKEFILE=	makefile.nix

@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	hl:${PORTSDIR}/games/hllib
 
+NO_STAGE=	yes
 USE_DOS2UNIX=	yes
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/HLExtract

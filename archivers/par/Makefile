@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	par-[0-9]*
 
+NO_STAGE=	yes
 MAKEFILE=	Makefile.Linux
 MAKE_ARGS=	CC="${CC}"
 

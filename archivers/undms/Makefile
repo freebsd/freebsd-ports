@@ -1,9 +1,5 @@
-# New ports collection makefile for:	undms
-# Date created:				Sat 3 June 2000
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	undms
 PORTVERSION=	1.3
@@ -16,6 +12,7 @@ EXTRACT_SUFX=	.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts .dms Amiga disk images to uncompressed .adf images
 
+NO_STAGE=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/undms
 

@@ -31,6 +31,7 @@ GH_TAGNAME=	snappy-java-${PORTVERSION}
 GH_COMMIT=	487f82d
 USE_GITHUB=	yes
 
+NO_STAGE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7
 USES=		gmake

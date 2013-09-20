@@ -16,6 +16,7 @@ LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 
+NO_STAGE=	yes
 USE_PERL5=	configure
 USES=		perl5
 

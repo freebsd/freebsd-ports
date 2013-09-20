@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ppunpack
-# Date created:				Sat 3 June 2000
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	ppunpack
 PORTVERSION=	1.0
@@ -18,6 +14,7 @@ COMMENT=	Decompresses Amiga PowerPacker files
 
 NO_CDROM=	No commercial redistribution
 
+NO_STAGE=	yes
 WRKSRC=		${WRKDIR}/PPUnpack
 MAKE_ARGS=	CC="${CC}" COPTS="${CFLAGS}"
 PLIST_FILES=	bin/ppunpack

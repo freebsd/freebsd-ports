@@ -1,9 +1,5 @@
-# New ports collection makefile for:    9e
-# Date created:         17 Mar 1999
-# Whom:			Jerry Hicks
-#
+# Created by: Jerry Hicks
 # $FreeBSD$
-#
 
 PORTNAME=	9e
 PORTVERSION=	1.0
@@ -14,6 +10,7 @@ DISTNAME=	9e
 MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Explode Plan9 archives
 
+NO_STAGE=	yes
 PLIST_FILES=	bin/9e
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="" HDRS=""
 

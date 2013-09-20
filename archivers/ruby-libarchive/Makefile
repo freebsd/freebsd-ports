@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ruby-libarchive
-# Date created:		7 January 2009
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
 
 PORTNAME=	libarchive
@@ -15,6 +12,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby bindings for libarchive
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

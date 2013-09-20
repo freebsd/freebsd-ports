@@ -18,6 +18,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN3=		POE::Filter::LZF.3
 

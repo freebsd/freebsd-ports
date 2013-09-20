@@ -1,9 +1,5 @@
-# New ports collection makefile for:	unmakeself
-# Date created:			31 Mar 2005
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	unmakeself
 PORTVERSION=	1.1
@@ -17,6 +13,7 @@ LDFLAGS+=	-larchive -lbz2 -lz -lcrypto -lmd
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/unmakeself
+NO_STAGE=	yes
 
 do-configure:
 	@${RM} -f ${WRKSRC}/config.h

@@ -14,6 +14,7 @@ LICENSE=	GPLv3
 
 OPTIONS_DEFINE=	NLS
 
+NO_STAGE=	yes
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g --disable-uucode

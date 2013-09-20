@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kzip
-# Date created:		Thu Jan 8 2009 14:06:34 UTC
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kzip
 DISTVERSION=	20070805
@@ -20,6 +16,7 @@ RESTRICTED=	${NO_CDROM}
 
 ONLY_FOR_ARCHS=	i386
 
+NO_STAGE=	yes
 USE_LINUX=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/kzipmix-static

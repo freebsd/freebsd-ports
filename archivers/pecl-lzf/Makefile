@@ -12,6 +12,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Handles LZF de/compression
 
+NO_STAGE=	yes
 USE_PHP=	yes
 USE_PHPEXT=	yes
 

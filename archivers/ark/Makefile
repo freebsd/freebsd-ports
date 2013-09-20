@@ -15,6 +15,7 @@ LIB_DEPENDS=	qjson.0:${PORTSDIR}/devel/qjson
 
 CONFLICTS_INSTALL=	kdeutils-4.[0-7].*
 
+NO_STAGE=	yes
 USE_XZ=		yes
 USE_KDE4=	kdeprefix kdehier automoc4 kdelibs libkonq
 USES=		cmake:outsource

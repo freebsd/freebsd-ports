@@ -9,6 +9,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Compression utility designed to be a replacement for compress
 
+NO_STAGE=	yes
 USES=		charsetfix
 GNU_CONFIGURE=	yes
 

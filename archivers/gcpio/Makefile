@@ -11,6 +11,7 @@ PKGNAMEPREFIX=	g
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	GNU cpio copies files to and from archives
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g \

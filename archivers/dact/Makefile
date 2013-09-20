@@ -12,6 +12,7 @@ COMMENT=	Dynamic Adaptive Compression Tool
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 		lzo2.2:${PORTSDIR}/archivers/lzo2
 
+NO_STAGE=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib

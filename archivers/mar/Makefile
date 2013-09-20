@@ -13,6 +13,7 @@ COMMENT=	Simple binary file format for storing arbitrary meta and user data
 LICENSE=	MIT
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+NO_STAGE=	yes
 
 MAN1=		mar.1
 

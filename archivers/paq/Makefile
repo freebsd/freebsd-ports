@@ -15,6 +15,7 @@ COMMENT=	Family of archivers with extremely high compression ratios
 LICENSE=	GPLv3 MIT
 LICENSE_COMB=	multi
 
+NO_STAGE=	yes
 USE_DOS2UNIX=	yes
 USE_ZIP=	yes
 

@@ -11,6 +11,7 @@ COMMENT=	Library for lossless LAS compression
 
 LICENSE=	LGPL3
 
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USES=		cmake
 USE_LDCONFIG=	yes

@@ -23,6 +23,7 @@ TEST_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 
 USE_PERL5=	configure
 USES=		perl5
+NO_STAGE=	yes
 
 MAN3=		IO::Compress::Lzma.3 IO::Compress::Xz.3 \
 		IO::Uncompress::UnLzma.3 IO::Uncompress::UnXz.3

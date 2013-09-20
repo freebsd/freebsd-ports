@@ -19,6 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 MAN3=		Archive::SimpleExtractor::Zip.3 \
 		Archive::SimpleExtractor::Tar.3 \
 		Archive::SimpleExtractor.3 \

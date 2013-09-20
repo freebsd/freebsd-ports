@@ -10,6 +10,7 @@ MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Portable library and utility to use Microsoft cabinet files (.cab)
 
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 
 SRCFILE=	${WRKSRC}/listcab.cpp
 PROGFILE=	${SRCFILE:S/.cpp$//}

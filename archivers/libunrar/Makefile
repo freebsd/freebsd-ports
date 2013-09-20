@@ -13,6 +13,7 @@ COMMENT=	Library to work with RAR archives
 
 WRKSRC=		${WRKDIR}/unrar
 
+NO_STAGE=	yes
 USES=		gmake
 MAKEFILE=	makefile.unix
 ALL_TARGET=	lib

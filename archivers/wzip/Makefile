@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Preprocessor for lossy data compression
 
+NO_STAGE=	yes
 ALL_TARGET=	${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAN1=		${PORTNAME}.1

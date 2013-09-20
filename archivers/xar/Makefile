@@ -15,6 +15,7 @@ LICENSE=	BSD
 
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 USES=		gmake
 USE_GNOME=	libxml2
 USE_OPENSSL=	yes

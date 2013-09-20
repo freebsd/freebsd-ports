@@ -16,6 +16,7 @@ COMMENT=	LZMA compression and decompression tools
 
 CONFLICTS=	lzma-[0-9]* lzmautils-[0-9]* lzmalib-[0-9]*
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USES=	pathfix
