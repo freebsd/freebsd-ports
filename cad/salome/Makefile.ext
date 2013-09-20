@@ -295,8 +295,6 @@ CXXFLAGS+=	${QSCIFLAGS} ${QTFLAGS}
 
 .include <bsd.port.pre.mk>
 
-#MAKE_JOBS_SAFE=	yes
-
 .if ${SAL_MODULE} == "kernel"
     post-patch:
 .	     if ${PYTHON_REL} > 260

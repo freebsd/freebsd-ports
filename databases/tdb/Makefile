@@ -54,10 +54,8 @@ CONFIGURE_ENV+=		NOCOLOR=yes
 MAKE_ENV+=		NOCOLOR=yes
 
 .if !defined(DISABLE_MAKE_JOBS) && !defined(MAKE_JOBS_UNSAFE)
-.if defined(MAKE_JOBS_SAFE) || defined(FORCE_MAKE_JOBS)
 CONFIGURE_ARGS+=	--jobs=${MAKE_JOBS_NUMBER}
 _MAKE_JOBS=		--jobs=${MAKE_JOBS_NUMBER}
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}

@@ -12,7 +12,6 @@ DIST_SUBDIR=	subversion18
 MASTER_SITE_SUBDIR=	subversion/:main \
 			lev/:book
 
-MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_KDE4=	# Used below if KWallet support is enabled
