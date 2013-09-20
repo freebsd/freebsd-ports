@@ -27,6 +27,7 @@ MAN1=		gamt.1 ${PORTNAME}.1 amttool.1
 MAN7=		amt-howto.7
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/sbin/ldconfig -p,${LDCONFIG} -r,' \
 		${WRKSRC}/mk/Autoconf.mk

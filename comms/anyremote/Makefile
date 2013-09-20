@@ -20,6 +20,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 OPTIONS_DEFINE=	DOCS DBUS X11
 OPTIONS_DEFAULT=	DBUS X11
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDBUS}

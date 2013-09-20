@@ -1,7 +1,4 @@
-# New ports collection makefile for:	cutecom
-# Date created:			Thu Jul 15 02:07:06 CEST 2004
-# Whom:				Markus Brueffer <markus@FreeBSD.org>
-#
+# Created by: Markus Brueffer <markus@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cutecom
@@ -21,4 +18,5 @@ USES=		cmake
 
 MAN1=		cutecom.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -28,6 +28,7 @@ MAKE_ARGS+=	LIBS+="${ICONV_LIB} -lcurses"
 
 MAN1=		minicom.1 runscript.1 ascii-xfr.1 xminicom.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLRZSZ}

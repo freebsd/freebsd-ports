@@ -17,6 +17,7 @@ PLIST_FILES=	bin/gkermit
 
 ALL_TARGET=	posix
 
+NO_STAGE=	yes
 post-extract:
 	cd ${WRKSRC} && ${MV} makefile Makefile
 

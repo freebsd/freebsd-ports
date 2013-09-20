@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	PDF
 OPTIONS_DEFAULT=	PDF
 PDF_DESC=	Enable PDF Writing (requires libharu)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPDF}

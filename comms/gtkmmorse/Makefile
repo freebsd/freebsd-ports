@@ -21,4 +21,5 @@ USES=		pkgconfig
 PLIST_FILES=	bin/gtkmmorse
 MAN1=		gtkmmorse.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

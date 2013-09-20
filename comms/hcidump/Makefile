@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hcidump
-# Date created:				10 Dec 2004
-# Whom:					Pav Lucistnik <pav@FreeBSD.org>
-#
+# Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hcidump
 PORTVERSION=	1.5.1
@@ -21,4 +17,5 @@ MAN1=		hcidump.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/hcidump
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

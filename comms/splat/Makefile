@@ -40,6 +40,7 @@ HRM_4X4_DESC=	4 x 4 degrees
 HRM_5X5_DESC=	5 x 5 degrees
 HRM_6X6_DESC=	6 X 6 degrees
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHRM}

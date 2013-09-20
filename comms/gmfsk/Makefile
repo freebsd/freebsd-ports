@@ -29,6 +29,7 @@ OPTIONS_DEFINE=	HAMLIB
 HAMLIB_DESC=	Enable HAMLIB Support
 OPTIONS_DEFAULT=	HAMLIB
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MHAMLIB}

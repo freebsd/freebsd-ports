@@ -18,6 +18,7 @@ PLIST_FILES=	bin/dfu-programmer
 MAN1=		dfu-programmer.1
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

@@ -17,6 +17,7 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 
+NO_STAGE=	yes
 post-install:
 .if	!defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

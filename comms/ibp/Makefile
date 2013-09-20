@@ -20,6 +20,7 @@ PLIST_FILES=	bin/ibp
 MAN1=		ibp.1
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM}	${WRKSRC}/ibp ${PREFIX}/bin/
 	${INSTALL_MAN}	${WRKSRC}/ibp.1 ${MANPREFIX}/man/man1/ibp.1

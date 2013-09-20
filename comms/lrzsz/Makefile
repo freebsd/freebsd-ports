@@ -14,4 +14,5 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	all # vcheck
 MAN1=		lrz.1 lsz.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

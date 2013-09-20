@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bluez-firmware
-# Date created:				30 July 2007
-# Whom:					dirkx@webweaving.org
-#
+# Created by: dirkx@webweaving.org
 # $FreeBSD$
-#
 
 PORTNAME=	bluez-firmware
 PORTVERSION=	1.2
@@ -16,6 +12,7 @@ COMMENT=	Firmware for the D-Link BCM2033 bluetooth adaptor for use by bcmfw(1)
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} pkg-message
 

@@ -44,4 +44,5 @@ MAN3=		modbus_close.3 modbus_connect.3 modbus_flush.3 modbus_free.3 \
 		modbus_write_registers.3
 MAN7=		libmodbus.7
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

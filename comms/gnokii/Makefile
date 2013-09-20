@@ -53,6 +53,7 @@ SMSD_DESC=	Enable smsd daemon (includes "file" backend)
 SMSDDB_DESC=	Enable database support in smsd (select one or more)
 X11_DESC=	Build graphical version (xgnokii)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MICAL}

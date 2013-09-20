@@ -30,6 +30,7 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

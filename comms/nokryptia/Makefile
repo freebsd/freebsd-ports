@@ -20,4 +20,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 MAN1=		nokryptia.1
 PLIST_FILES=	bin/nokryptia
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/librtlsdr
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800069

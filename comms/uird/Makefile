@@ -20,6 +20,7 @@ ALL_TARGET=	${PORTNAME}
 PLIST_FILES=	bin/uird
 PORTDOCS=	Documentation
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|$${CC}\ $${CFLAGS}|; /strip/d' \
 		${WRKSRC}/Makefile

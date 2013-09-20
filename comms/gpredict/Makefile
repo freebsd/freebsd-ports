@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=		gpredict.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^Icon/s|=.*|=${PREFIX}/share/pixmaps/gpredict-icon.png|' \

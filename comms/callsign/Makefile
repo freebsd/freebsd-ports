@@ -15,6 +15,7 @@ WRKSRC=		${WRKDIR}
 NO_BUILD=	YES
 PLIST_FILES=	bin/callsign
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/callsign ${LOCALBASE}/bin/
 

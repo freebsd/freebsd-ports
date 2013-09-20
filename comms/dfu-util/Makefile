@@ -19,4 +19,5 @@ CONFIGURE_ARGS=	--disable-silent-rules
 MAN1=		dfu-util.1
 PLIST_FILES=	bin/dfu-suffix bin/dfu-util
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

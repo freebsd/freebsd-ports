@@ -1,7 +1,4 @@
-# New ports collection makefile for:	kb
-# Date created:		June 5, 2007
-# Whom:			Diane Bruce <db@db.net>
-#
+# Created by: Diane Bruce <db@db.net>
 # $FreeBSD$
 
 PORTNAME=	kb
@@ -29,6 +26,7 @@ DESKTOP_ENTRIES="KB" \
 		"" \
 		true
 
+NO_STAGE=	yes
 pre-configure:
 	@${CP}	${FILESDIR}/Makefile ${WRKSRC}
 .if !exists(/usr/include/dev/speaker/speaker.h)

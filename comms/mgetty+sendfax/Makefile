@@ -65,6 +65,7 @@ MLINKS=		pvf.1 pvfamp.1 \
 		pvf.1 wavtopvf.1
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CFLAGS+=	-DAUTO_PPP

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ems-flasher
-# Date created:        2012-03-22
-# Whom:                Nicole Reid <root@cooltrainer.org>
-#
+# Created by: Nicole Reid <root@cooltrainer.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ems-flasher
 PORTVERSION=	0.03
@@ -24,6 +20,7 @@ USE_GCC=	yes
 
 PLIST_FILES=	bin/ems-flasher
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800069

@@ -25,6 +25,7 @@ USES=		perl5
 NO_BUILD=	yes
 MAN1=		yfklog.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' \
 	     ${WRKSRC}/yfk ${WRKSRC}/yfksubs.pl

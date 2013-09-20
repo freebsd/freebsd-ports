@@ -31,4 +31,5 @@ MAN3=		Nexmo::SMS.3 \
 		Nexmo::SMS::TextMessage.3 \
 		Nexmo::SMS::WAPPushMessage.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

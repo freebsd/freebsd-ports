@@ -17,6 +17,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		zmrx.1 zmtx.1
 PLIST_FILES=	bin/zmrx bin/zmtx
 
+NO_STAGE=	yes
 do-install:
 .for f in zmrx zmtx
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin

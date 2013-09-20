@@ -32,4 +32,5 @@ MAN3=		WWW::SMS::IE::aftsms.3 \
 		WWW::SMS::IE::threesms.3 \
 		WWW::SMS::IE::vodasms.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

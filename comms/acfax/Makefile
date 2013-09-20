@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		imake
 USE_XORG=	x11 xext xmu xt sm ice
 
+NO_STAGE=	yes
 post-extract:
 	@${TOUCH} ${WRKSRC}/acfax.man
 

@@ -1,9 +1,5 @@
-# ports collection makefile for:	linrad
-# Date created:		7 July 2004
-# Whom:			db
-#
+# Created by: db
 # $FreeBSD$
-#
 
 PORTNAME=	linrad
 PORTVERSION=	3.08
@@ -36,6 +32,7 @@ LINRAD_DOCFILES=	z_APM.txt z_BUFFERS.txt z_CALIBRATE.txt \
 			z_PARALLEL_PORT.txt z_SETTINGS.txt \
 			z_USERS_EXTRA.txt z_USERS_HWARE.txt
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g'\

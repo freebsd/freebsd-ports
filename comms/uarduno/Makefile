@@ -17,6 +17,7 @@ SSP_UNSAFE=	kernel module does not support ssp
 MAKE_ENV+=	KMODDIR=${KMODDIR}
 PREFIX=		${KMODDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SRCPREFIX?=	${SRC_BASE}

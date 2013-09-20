@@ -18,6 +18,7 @@ PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} -Wall -o ${WRKSRC}/sredird ${WRKSRC}/sredird.c
 

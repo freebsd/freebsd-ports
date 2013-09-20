@@ -14,4 +14,5 @@ MAN8=		comservd.8
 MANCOMPRESSED=	yes
 PLIST_FILES=	sbin/comservd etc/comservd.conf.sample etc/rc.d/comservd.sh.sample
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

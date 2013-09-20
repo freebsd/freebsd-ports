@@ -33,6 +33,7 @@ MAKE_ENV+=	KMODDIR=${KMODDIR}
 
 MAN4=		uhso.4
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${SRC_BASE}/sys/Makefile)

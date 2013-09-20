@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py23-lirc
-# Date created:		6 January 2004
-# Whom:			Lewis Thompson (purple@lewiz.net)
-#
+# Created by: Lewis Thompson (purple@lewiz.net)
 # $FreeBSD$
-#
 
 PORTNAME=	lirc
 PORTVERSION=	0.0.5
@@ -28,4 +24,5 @@ USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 PYDISTUTILS_PKGNAME=	pylirc
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

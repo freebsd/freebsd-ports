@@ -20,6 +20,7 @@ USE_GNOME=	gtk20
 MAN1=		xnecview.1
 PLIST_FILES=	bin/xnecview
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xnecview ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xnecview.man ${MANPREFIX}/man/man1/xnecview.1

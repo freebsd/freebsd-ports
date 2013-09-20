@@ -20,6 +20,7 @@ MAN5=		trustedqsl.5
 
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

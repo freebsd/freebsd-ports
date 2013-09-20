@@ -19,6 +19,7 @@ USE_RC_SUBR=	tbd
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ENV=	AUTOMAKE=/usr/bin/true
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libirman
-# Date created:				2003-03-29
-# Whom:	      				Douglas K. Rand <rand@meridian-enviro.com>
-#
+# Created by: Douglas K. Rand <rand@meridian-enviro.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libirman
 PORTVERSION=	0.4.4
@@ -17,4 +13,5 @@ HAS_CONFIGURE=	YES
 USE_GMAKE=	YES
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

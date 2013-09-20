@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-callsign
-# Date created:				31 July 2009
-# Whom:					Rick Elrod <codeblock@eighthbit.net>
-#
+# Created by: Rick Elrod <codeblock@eighthbit.net>
 # $FreeBSD$
 
 PORTNAME=	callsign
@@ -19,4 +16,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -19,6 +19,7 @@ USES=		gmake pkgconfig
 MAN1=		xdx.1
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-D.*_DISABLE_DEPRECATED||g'

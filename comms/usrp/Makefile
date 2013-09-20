@@ -33,6 +33,7 @@ OPTIONS_DEFAULT=	USRP1 USRP2
 USRP1_DESC=	Build Ettus USRP1 firmware
 USRP2_DESC=	Build Ettus USRP2 firmware
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

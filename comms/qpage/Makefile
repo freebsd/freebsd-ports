@@ -19,6 +19,7 @@ IDENT_PATCH_DESC=	Disable libwrap ident lookups
 
 MAN1=		qpage.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 

@@ -23,6 +23,7 @@ OSS_DESC=	Beep using OSS (/dev/dsp)
 X11_DESC=	Beep using X server
 PULSEAUDIO_DESC=	Beep using Pulse Audio
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOSS}

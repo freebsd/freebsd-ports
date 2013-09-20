@@ -1,5 +1,4 @@
 # $FreeBSD$
-#
 
 PORTNAME=	ebook2cw
 PORTVERSION=	0.8.2
@@ -16,6 +15,7 @@ LIB_DEPENDS=	mp3lame:${PORTSDIR}/audio/lame \
 
 MAN1=		ebook2cw.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|'g \
 	     ${WRKSRC}/Makefile

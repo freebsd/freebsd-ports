@@ -25,6 +25,7 @@ FILES_TO_PATCH=	Makefile psk31.1 twpskHelp user-twpsk/makefile \
 				user-twpsk/savedir/twpsk.C \
 				user-twpsk/savedir/twpskDiags.C \
 				user-twpsk/savedir/twpskHelp
+NO_STAGE=	yes
 post-patch:
 .for file in ${FILES_TO_PATCH}
 	@${REINPLACE_CMD} -e \

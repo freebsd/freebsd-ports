@@ -1,9 +1,5 @@
-# ports collection makefile for:	locator
-# Date created:		30 June 2005
-# Whom:			db
-#
+# Created by: db
 # $FreeBSD$
-#
 
 PORTNAME=	locator
 PORTVERSION=	0.1
@@ -17,6 +13,7 @@ CONFLICTS=	wwl*
 PORTDOCS=	README
 PLIST_FILES=	bin/locator
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/locator ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

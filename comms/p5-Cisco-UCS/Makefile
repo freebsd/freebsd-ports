@@ -29,4 +29,5 @@ MAN3=		Cisco::UCS.3 Cisco::UCS::Blade.3 Cisco::UCS::Chassis.3 \
 		Cisco::UCS::Fault.3 Cisco::UCS::Interconnect.3 \
 		Cisco::UCS::MgmtEntity.3 Cisco::UCS::ServiceProfile.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

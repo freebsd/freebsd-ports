@@ -17,6 +17,7 @@ JUPITER_DESC=	With Jupiter support
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJUPITER}

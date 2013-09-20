@@ -24,6 +24,7 @@ PLIST_FILES=	${PYTHONPREFIX_SITELIBDIR:S,^${PREFIX}/,,}/imobiledevice.a \
 		${PYTHONPREFIX_SITELIBDIR:S,^${PREFIX}/,,}/imobiledevice.la \
 		${PYTHONPREFIX_SITELIBDIR:S,^${PREFIX}/,,}/imobiledevice.so
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,../src/libimobiledevice.la,${LOCALBASE}/lib/libimobiledevice.la,' \
 		${BUILD_WRKSRC}/Makefile.in

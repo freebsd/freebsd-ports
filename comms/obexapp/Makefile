@@ -26,6 +26,7 @@ MAKE_ENV+=	NO_MAN=yes
 
 MAKE_ENV+=	NO_WERROR=yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/Makefile
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qico
-# Date created:		13 Jan 2000
-# Whom:			Denis Shaposhnikov <dsh@vlink.ru>
-#
+# Created by: Denis Shaposhnikov <dsh@vlink.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	qico
 PORTVERSION=	0.49.10.3
@@ -28,6 +24,7 @@ CONFIGURE_ARGS+=	--disable-qcc
 PLIST_SUB+=	WITH_QICO_MORDA="@comment "
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/qico.conf.sample ${PREFIX}/etc/
 	${INSTALL_PROGRAM} ${WRKSRC}/src/qico ${PREFIX}/libexec/

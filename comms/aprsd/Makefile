@@ -1,9 +1,5 @@
-# ports collection makefile for:	aprsd
-# Date created:		14 Jan 2008
-# Whom:			db
-#
+# Created by: db
 # $FreeBSD$
-#
 
 PORTNAME=	aprsd
 PORTVERSION=	2.2.515
@@ -17,6 +13,7 @@ COMMENT=	Server daemon providing Internet access to APRS packet data
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

@@ -20,6 +20,7 @@ USES=		gettext gmake pkgconfig
 
 MAN1=		grig.1
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.* | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-D.*_DISABLE_DEPRECATED||g'

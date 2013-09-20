@@ -14,6 +14,7 @@ MAKE_ARGS=	etc_DATA=wy60.rc.sample
 
 MAN1=		wy60.1
 
+NO_STAGE=	yes
 pre-build:
 	@${CP} ${WRKSRC}/wy60.rc ${WRKSRC}/wy60.rc.sample
 

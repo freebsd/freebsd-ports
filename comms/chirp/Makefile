@@ -1,6 +1,4 @@
-#
 # $FreeBSD$
-#
 
 PORTNAME=	chirp
 PORTVERSION=	0.3.0
@@ -19,6 +17,7 @@ USE_PYTHON=	YES
 USE_PYDISTUTILS=	YES
 MAN1=		chirpw.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-configure:

@@ -1,9 +1,5 @@
-# ports collection makefile for:	nasawash
-# Date created:		4 July 2004
-# Whom:			db
-#
+# Created by: db
 # $FreeBSD$
-#
 
 PORTNAME=	nasawash
 PORTVERSION=	0.50
@@ -21,6 +17,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION}
 PLIST_FILES=	bin/nasawash
 PORTDOCS=	nasawash.txt nasawash.upd
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CPPFLAGS} ${CFLAGS} -c -o ${WRKSRC}/nasawash.o ${WRKSRC}/nasawash.c
 	${CC} -o ${WRKSRC}/nasawash ${WRKSRC}/nasawash.o ${LIBS}

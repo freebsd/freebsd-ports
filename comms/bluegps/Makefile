@@ -13,6 +13,7 @@ COMMENT=	Command line tool to download datalogs from the Royaltek RBT-3000 bluet
 MAN1=		bluegps.1
 PLIST_FILES=	bin/bluegps
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC=/d' ${WRKSRC}/Makefile
 

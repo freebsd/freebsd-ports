@@ -13,4 +13,5 @@ COMMENT=	Version 3.00 beta API for Dallas Semiconductors 1-wire lan devices
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pylafax
-# Date created:		6 January 2005
-# Whom:			Michael Reifenberger (mike@Reifenberger.com)
-#
+# Created by: Michael Reifenberger (mike@Reifenberger.com)
 # $FreeBSD$
-#
 
 PORTNAME=	pyla
 PORTVERSION=	1.1.7.1
@@ -26,6 +22,7 @@ DATADIR=	${PREFIX}/lib/pyla
 USE_PYTHON=	yes
 PLIST=		${WRKDIR}/pkg-plist
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:

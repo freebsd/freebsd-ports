@@ -1,9 +1,5 @@
-# New ports collection makefile for:	umcs7840
-# Date created:				09 Nov 2010
-# Whom:					Lev Serebryakov <lev@FreeBSD.org>
-#
+# Created by: Lev Serebryakov <lev@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	umcs7840
 PORTVERSION=	${MAINVERSION}.${VERSIONDATE}
@@ -31,6 +27,7 @@ MAKE_ENV+=	KMODDIR=${KMODDIR}
 MANCOMPRESSED=	yes
 MAN4=		${PORTNAME}.4
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${SRC_BASE}/sys/Makefile)

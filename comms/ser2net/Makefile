@@ -21,6 +21,7 @@ MAN8=		${PORTNAME}.8
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
 PLIST_FILES=	sbin/${PORTNAME} etc/${PORTNAME}.conf.sample
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:    conserver
-# Date created:         22 November 1997
-# Whom:                 Peter Wemm <peter@netplex.com.au>
-#
+# Created by: Peter Wemm <peter@netplex.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	conserver
 PORTVERSION=	8.5
@@ -32,6 +27,7 @@ MAKE_ENV+=	DEFAULTHOST="${DEFAULTHOST}" DEFAULTPORT="${DEFAULTPORT}"
 #PKGMESSAGE=	${WRKDIR}/MESSAGE
 USE_RC_SUBR=	conserver
 
+NO_STAGE=	yes
 do-build:
 	${REINPLACE_CMD} -e 's:/usr/local/lib:${PREFIX}/etc:g'  \
 	    ${WRKSRC}/etc/conserver/cons.h

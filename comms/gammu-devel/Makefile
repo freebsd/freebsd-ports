@@ -39,6 +39,7 @@ MAN7=		gammu-smsd-files.7 gammu-smsd-mysql.7 gammu-smsd-pgsql.7 \
 
 .endif
 
+NO_STAGE=	yes
 post-install:
 .for opt in -Qold -O
 	${PYTHON_CMD} ${opt} -m compileall -l ${PYTHONPREFIX_SITELIBDIR}/gammu
