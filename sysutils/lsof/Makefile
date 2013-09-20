@@ -37,6 +37,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/${SRCBALL_NAME}
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"

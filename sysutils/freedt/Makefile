@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freedt
-# Date created:		25 May 2003
-# Whom:			Tim Bishop <tim@bishnet.net>
-#
+# Created by: Tim Bishop <tim@bishnet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	freedt
 PORTVERSION=	0.22
@@ -19,4 +15,5 @@ CONFLICTS=	daemontools-[0-9]*
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

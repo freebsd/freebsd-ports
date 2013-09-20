@@ -19,6 +19,7 @@ OPTIONS_DEFINE=	TESTS
 TESTS_DESC=	Install mock for running unit tests
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTESTS}

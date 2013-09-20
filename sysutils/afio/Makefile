@@ -16,6 +16,7 @@ MAN1=		afio.1
 OPTIONS_DEFINE=	DOCS EXAMPLES
 PORTDOCS=	README SCRIPTS
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC=.*$$|CC=${CC}|' \
 		${WRKSRC}/Makefile

@@ -23,6 +23,7 @@ CFLAGS+=-DWITH_SCPROTECT_LIST
 #MAN4=		scprotect.4
 #MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${SRC_BASE}/sys/Makefile)

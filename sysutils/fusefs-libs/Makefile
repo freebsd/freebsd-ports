@@ -27,6 +27,7 @@ MAN1=	fusermount.1 \
 MAN8=	mount.fuse.8
 
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    timemon.app
-# Date created:         28 Aug 2006
-# Whom:                 gurkan@phys.ethz.ch
-#
+# Created by: gurkan@phys.ethz.ch
 # $FreeBSD$
-#
 
 PORTNAME=	timemon
 PORTVERSION=	4.1
@@ -22,6 +18,7 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${RM} ${WRKSRC}/shared_obj/*.*
 

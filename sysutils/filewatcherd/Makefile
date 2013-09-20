@@ -21,6 +21,7 @@ USE_RC_SUBR=	filewatcherd
 SUB_FILES=	pkg-message
 PLIST_FILES=	sbin/filewatcherd etc/watchtab.sample
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/filewatcherd ${PREFIX}/sbin
 	${INSTALL_DATA} ${FILESDIR}/watchtab.sample ${PREFIX}/etc

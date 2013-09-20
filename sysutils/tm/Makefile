@@ -18,6 +18,7 @@ MAKE_ENV=	LINUX_LIBS=-lutil
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKSRC}/web/index.html ${WRKSRC}/
 

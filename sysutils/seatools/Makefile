@@ -23,6 +23,7 @@ PORTDOCS=		sthelp.txt
 
 OPTIONS_DEFINE=		DOCS
 
+NO_STAGE=	yes
 do-build:
 	@${BRANDELF} -t Linux ${WRKSRC}/st
 

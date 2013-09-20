@@ -20,6 +20,7 @@ CONFIGURE_ARGS=	--disable-kernel-module --prefix=${PREFIX} \
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}/lib \
 	&& ${MAKE}

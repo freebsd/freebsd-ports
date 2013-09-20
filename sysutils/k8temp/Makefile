@@ -1,9 +1,5 @@
-# New ports collection makefile for:    k8temp
-# Date created:        21 October 2007
-# Whom:                Thomas Hurst <tom@hur.st>
-#
+# Created by: Thomas Hurst <tom@hur.st>
 # $FreeBSD$
-#
 
 PORTNAME=	k8temp
 PORTVERSION=	0.4.0
@@ -19,6 +15,7 @@ MAN8=	k8temp.8
 
 PLIST_FILES=	sbin/k8temp
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|WARNS=.*[6-9]|WARNS=5|g' ${WRKSRC}/Makefile
 

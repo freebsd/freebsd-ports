@@ -1,4 +1,4 @@
-# Created by: Kris Moore <kmoore@freebsd.org>
+# Created by: Kris Moore <kmoore@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	lxterminal
@@ -27,6 +27,7 @@ PORTDOCS=	AUTHORS README
 
 OPTIONS_DEFINE=	DOCS NLS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

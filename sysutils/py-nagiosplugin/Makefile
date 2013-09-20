@@ -1,4 +1,3 @@
-# Created by: Brooks Davis <brooks@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	nagiosplugin
@@ -15,4 +14,5 @@ LICENSE=	ZPL21
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# Created by:	Bjoern A. Zeeb <bzeeb+freebsd+ports@zabbadoz.net>
+# Created by: Bjoern A. Zeeb <bzeeb+freebsd+ports@zabbadoz.net>
 # $FreeBSD$
 
 PORTNAME=	amrstat
@@ -13,6 +13,7 @@ COMMENT=	Utility for LSI Logic's MegaRAID RAID controllers
 OPTIONS_DEFINE=	MEGARC
 MEGARC_DESC=	Install LSI megarc binary port
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # We may want this for periodic script and to actually be able

@@ -17,6 +17,7 @@ GNU_CONFIGURE=	yes
 MAN1=		pipemeter.1
 PLIST_FILES=	bin/pipemeter
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pipemeter ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/pipemeter.1 ${MANPREFIX}/man/man1

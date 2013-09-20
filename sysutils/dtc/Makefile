@@ -1,9 +1,5 @@
-# Ports collection makefile for:	dtc
-# Date created:				1 December 2003
-# Whom:					Frederic Cambus & Thomas Goirand & Marc G. Fournier
-#
+# Created by: Frederic Cambus & Thomas Goirand & Marc G. Fournier
 # $FreeBSD$
-#
 
 PORTNAME=	dtc
 PORTVERSION=	0.34.2.1
@@ -129,6 +125,7 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/radiusd:${PORTSDIR}/net/freeradius2
 SUB_FILES=	dtc-install dtc-deinstall
 SUB_LIST+=	QMAIL_DIR="${QMAIL_DIR}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

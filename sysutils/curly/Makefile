@@ -1,9 +1,5 @@
-# New ports collection makefile for:    curly
-# Date created:         Nov 1 2002
-# Whom:                 Stephen Gunn <csg@fedex.com>, <csg@waterspout.com>
-#
+# Created by: Stephen Gunn <csg@fedex.com>, <csg@waterspout.com>
 # $FreeBSD$
-#
 
 PORTNAME=	curly
 PORTVERSION=	3.4
@@ -26,6 +22,7 @@ MAKEFILE=
 MAN1=		${PORTNAME}.1
 MLINKS=		${PORTNAME}.1 un${PORTNAME}.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,CFLAGS=,CFLAGS+=,' -e 's,^DEBUG,#DEBUG,'\
 		-e 's,gcc,${CC},' ${WRKSRC}/bin/curly/Make.host

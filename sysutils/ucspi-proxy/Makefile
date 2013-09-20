@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ucspi-proxy
-# Date created:				15 November 2005
-# Whom:					Dale Woolridge <dale.woolridge@gmail.com>
-#
+# Created by: Dale Woolridge <dale.woolridge@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ucspi-proxy
 PORTVERSION=	0.98
@@ -25,6 +21,7 @@ MAN1=		ucspi-proxy-http-xlate.1 ucspi-proxy.1
 PLIST_FILES=	bin/ucspi-proxy bin/ucspi-proxy-log bin/ucspi-proxy-pop3 \
 		bin/ucspi-proxy-imap bin/ucspi-proxy-http-xlate
 
+NO_STAGE=	yes
 do-configure:
 	${ECHO_CMD} "${PREFIX}/bin"     > ${WRKSRC}/conf-bin
 	${ECHO_CMD} "${MANPREFIX}/man"  > ${WRKSRC}/conf-man

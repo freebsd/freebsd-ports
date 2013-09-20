@@ -15,6 +15,7 @@ USE_PYDISTUTILS=	yes
 
 MAN1=		ranger.1 rifle.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|setuptools|distutils.core|; s|share/man/man|man/man|' ${WRKSRC}/${PYSETUP}
 

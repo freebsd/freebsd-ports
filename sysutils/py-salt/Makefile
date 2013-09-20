@@ -43,6 +43,7 @@ MAN1=		salt-call.1 \
 
 MAN7=		salt.7
 
+NO_STAGE=	yes
 post-patch:
 .for file in conf/minion conf/master doc/man/salt-key.1 \
 	doc/man/salt-cp.1 doc/man/salt-minion.1 doc/man/salt-syndic.1 \

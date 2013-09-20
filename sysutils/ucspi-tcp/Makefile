@@ -49,6 +49,7 @@ SCRIPTS=	date@ \
 		who@ \
 		tcpcat
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # SSL and LIMITS can't coexist

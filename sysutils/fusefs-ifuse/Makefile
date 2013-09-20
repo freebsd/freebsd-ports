@@ -27,6 +27,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 MAN1=		ifuse.1
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

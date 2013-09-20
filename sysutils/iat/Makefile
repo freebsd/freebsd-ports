@@ -15,6 +15,7 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/iat
 MAN1=		iat.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/install-data-am:/ s|install-includeHEADERS||' \
 		${WRKSRC}/src/Makefile.in

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sb16config
-# Date created:				13 Apr 2003
-# Whom:					Max Khon <fjoe@FreeBSD.org>
-#
+# Created by: Max Khon <fjoe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sb16config
 PORTVERSION=	1.0
@@ -20,6 +16,7 @@ MAN8=		sb16config.8
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/sb16config
 
+NO_STAGE=	yes
 post-extract:
 .for _i in ${DISTFILES}
 	@${GZCAT} ${DISTDIR}/${_i} >${WRKDIR}/${_i:R}

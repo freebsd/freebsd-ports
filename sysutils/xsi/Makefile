@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xsi
-# Date created:        			18 October 2006
-# Whom:					Tom McLaughlin <tmclaugh@FreeBSD.org>
-#
+# Created by: Tom McLaughlin <tmclaugh@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xsi
 PORTVERSION=	1.0.b2
@@ -23,6 +19,7 @@ USE_RC_SUBR=	xsi
 
 MAN8=		xsi.8
 
+NO_STAGE=	yes
 post-patch:
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e '/^install-data-am/s|install-docDATA||' \

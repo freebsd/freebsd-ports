@@ -1,8 +1,4 @@
-# ex:ts=8
-# New ports collection makefile for:	ttyload
-# Date Created:			Nov 21, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
 
 PORTNAME=	ttyload
@@ -22,6 +18,7 @@ PLIST_FILES=	bin/ttyload
 PORTDOCS=	*
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "Installing additional documentation to ${DOCSDIR}"

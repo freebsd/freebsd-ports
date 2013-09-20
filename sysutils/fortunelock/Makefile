@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fortunelock
-# Date created:			25 April 2000
-# Whom:				Daniel Harris <dannyboy@subdimension.com>
-#
+# Created by: Daniel Harris <dannyboy@subdimension.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fortunelock
 PORTVERSION=	0.1.2
@@ -20,4 +16,5 @@ MAN1=		fortunelock.1
 MANCOMPRESSED=	no
 PLIST_FILES=	bin/fortunelock
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

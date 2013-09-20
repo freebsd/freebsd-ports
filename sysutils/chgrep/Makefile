@@ -1,9 +1,5 @@
-# Ports collection makefile for:       	chgrep
-# Date created:                 April 20, 2003
-# Whom:                        	Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	chgrep
 PORTVERSION=	1.2.4
@@ -20,6 +16,7 @@ USE_GMAKE=	yes
 MAN1=		chgrep.1
 PLIST_FILES=	bin/chgrep
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/chgrep \
 		${PREFIX}/bin

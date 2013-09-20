@@ -26,6 +26,7 @@ DEFAULT_DVD_DEVICE?=	/dev/cd0
 
 OPTIONS_DEFINE=	DOCS NLS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -1,4 +1,4 @@
-# Created by: Boris Popov <bp@freebsd.org>
+# Created by: Boris Popov <bp@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	nut
@@ -44,6 +44,7 @@ MAN8=		nutupsdrv.8 upsc.8 upscmd.8 upsd.8 upsdrvctl.8 \
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \

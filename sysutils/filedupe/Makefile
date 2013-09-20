@@ -14,6 +14,7 @@ LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 
 PLIST_FILES=	bin/filedupe
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|filename\[80\]|filename[1024]|g; \
 		s|your_database|/var/db/filedupe.db|' ${WRKSRC}/filedupe.c

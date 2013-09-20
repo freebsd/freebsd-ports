@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mount.app
-# Date created:         		20 Mar 2003
-# Whom:                 		Gaspar Chilingarov <nm@web.am>
-#
+# Created by: Gaspar Chilingarov <nm@web.am>
 # $FreeBSD$
-#
 
 PORTNAME=	mountapp
 PORTVERSION=	3.0
@@ -23,4 +19,5 @@ GNU_CONFIGURE=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib -lintl
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

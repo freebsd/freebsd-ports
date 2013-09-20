@@ -42,6 +42,7 @@ RRDTOOL_DESC=		Use RRDTool to generate pool statistic graphs
 SMBCLIENT_DESC=		Samba client
 XML_RSS_DESC=		Perl extension to manage RSS files
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MARCHIVE_ZIP}

@@ -27,6 +27,7 @@ FAM_CONFIGURE_ON=	--with-fam=${LOCALBASE}
 PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 PCRE_COFNIGURE_ON=	--with-pcre=${LOCALBASE}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E -e 's,struct (circle_struct),\1,g' \
 		${WRKSRC}/src/hits_circle.*

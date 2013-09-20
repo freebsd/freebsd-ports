@@ -1,9 +1,5 @@
-# Ports collection makefile for:  vbetool
-# Date created:                   2008-12-05
-# Whom:                           Jung-uk Kim <jkim@FreeBSD.org>
-#
+# Created by: Jung-uk Kim <jkim@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vbetool
 PORTVERSION=	1.1
@@ -27,4 +23,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-x86emu
 CFLAGS+=	-I${PREFIX}/include -L${PREFIX}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

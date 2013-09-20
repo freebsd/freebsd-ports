@@ -17,6 +17,7 @@ MAN8=		qjail.8 qjail-intro.8 qjail-howto.8
 
 CONFLICTS_INSTALL=	qjail-2.*
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|/usr/local|${PREFIX}|'

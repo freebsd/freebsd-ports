@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ascpu
-# Date created:         18 February 1999
-# Whom:                 Dima Sivachenko <dima@chg.ru>
-#
+# Created by: Dima Sivachenko <dima@chg.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	ascpu
 PORTVERSION=	1.11
@@ -25,6 +21,7 @@ MAKE_ENV=	EXTRA_LIBRARIES="-L${LOCALBASE}/lib"
 MAN1=		ascpu.1
 PLIST_FILES=	bin/ascpu
 
+NO_STAGE=	yes
 do-install:
 	@ ${INSTALL_MAN} ${WRKSRC}/ascpu.man ${PREFIX}/man/man1/ascpu.1
 	@ ${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g kmem -m 2755 ${WRKSRC}/ascpu ${PREFIX}/bin

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	asfsm
-# Date created:		4 June 1999
-# Whom:				jack
-#
+# Created by: jack
 # $FreeBSD$
-#
 
 PORTNAME=	asmem
 PORTVERSION=	1.12
@@ -23,6 +19,7 @@ CONFIGURE_ARGS=	--with-xpm \
 MAN1=		asmem.1
 PLIST_FILES=	bin/asmem
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} -g kmem -m 2755 ${WRKSRC}/asmem ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/asmem.man ${MANPREFIX}/man/man1/asmem.1

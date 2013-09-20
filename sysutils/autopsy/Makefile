@@ -22,6 +22,7 @@ WEBHELP=	help/*
 PERLBITS=	lib/*.pm lib/*.pl conf.pl
 MAN1=		autopsy.1
 
+NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e 's,lib/,,' ${WRKSRC}/base/autopsy.base
 

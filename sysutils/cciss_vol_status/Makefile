@@ -20,6 +20,7 @@ PLIST_FILES=	bin/cciss_vol_status etc/periodic/daily/cciss_vol_status
 PLIST_DIRS=	etc/periodic/daily etc/periodic
 SUB_FILES=	cciss_vol_status
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${SRC_BASE}/sys/dev/ciss/cissio.h)

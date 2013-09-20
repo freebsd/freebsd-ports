@@ -31,6 +31,7 @@ S3_DESC=	Install Amazon S3 backend
 SSH_DESC=	Install SSH/SCP/SFTP backend
 U1_DESC=	Install Ubuntu One backend
 
+NO_STAGE=	yes
 .include "bsd.port.options.mk"
 
 .if ${PORT_OPTIONS:MNLS}

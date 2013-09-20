@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sformat
-# Date created:				16 December 2002
-# Whom:					marius@alchemy.franken.de
-#
+# Created by: marius@alchemy.franken.de
 # $FreeBSD$
-#
 
 PORTNAME=	sformat
 PORTVERSION=	3.5
@@ -23,6 +19,7 @@ LIBSCHILY=	libschily-2.01.01a07.tar.gz
 USE_GMAKE=	yes
 MAN1=		sformat.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CCOM!=		${BASENAME} ${CC}

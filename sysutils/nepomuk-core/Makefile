@@ -30,6 +30,7 @@ SUB_FILES=	nepomuk-env.sh
 # supported versions: ffmpeg1, ffmpeg-devel
 FFMPEG_SUFFIX?=	1
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${PREFIX}/env
 	${INSTALL_SCRIPT} ${WRKDIR}/nepomuk-env.sh ${PREFIX}/env

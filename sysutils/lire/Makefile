@@ -258,6 +258,7 @@ MAN3=		\
 
 MAN7=		lire.7
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCHARTS}

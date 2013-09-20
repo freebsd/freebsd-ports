@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	mcron
-# Date created:			Dec 17, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	mcron
 PORTVERSION=	1.0.4
@@ -24,4 +19,5 @@ MAKEFILE=	makefile
 
 INFO=		mcron
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

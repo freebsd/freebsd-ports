@@ -20,6 +20,7 @@ ALL_TARGET=	xsysstats
 
 PLIST_FILES=	bin/xsysstats
 
+NO_STAGE=	yes
 pre-patch:
 	${RM} ${WRKSRC}/headers.h && ${TOUCH} ${WRKSRC}/headers.h
 

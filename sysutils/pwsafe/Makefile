@@ -19,6 +19,7 @@ USE_GMAKE=	yes
 MAN1=		pwsafe.1
 PLIST_FILES=	bin/pwsafe
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

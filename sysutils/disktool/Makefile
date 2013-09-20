@@ -1,9 +1,5 @@
-# New ports collection makefile for:	disktool
-# Date created:			Thu Apr 24 05:10:34 EDT 2003
-# Whom:				Serge Gagnon <gagnon__s@videotron.ca>
-#
+# Created by: Serge Gagnon <gagnon__s@videotron.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	disktool
 PORTVERSION=	2.0
@@ -24,6 +20,7 @@ ALL_TARGET=	disktool
 MAN1=		disktool.1
 PLIST_FILES=	bin/disktool
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile
 

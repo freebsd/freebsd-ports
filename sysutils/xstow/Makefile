@@ -23,6 +23,7 @@ MAN5=		xstow.ini.5
 # This port always installs documentation, so we cannot respect NOPORTDOCS
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README TODO xstow.html xstow.ini xstow.ini.html
 
+NO_STAGE=	yes
 post-install:
 	(cd ${WRKSRC} && \
 	 ${INSTALL_MAN} AUTHORS COPYING ChangeLog NEWS README TODO ${DOCSDIR})

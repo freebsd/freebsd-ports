@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fpkg
-# Date created:		28 January 2006
-# Whom:			Yuki SHIMAZU  <y.shimazu@nifty.com>
-#
+# Created by: Yuki SHIMAZU  <y.shimazu@nifty.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fpkg
 PORTVERSION=	0.2
@@ -22,6 +18,7 @@ NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
 PLIST_FILES=	bin/fpkg
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_SCRIPT} ${DISTDIR}/${DISTNAME} ${PREFIX}/bin/${PORTNAME}
 

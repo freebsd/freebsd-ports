@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libchk
-# Date created:		2 September 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libchk
 PORTVERSION=	1.10.3
@@ -27,4 +23,5 @@ MAN1=		libchk.1
 MANCOMPRESSED=	maybe
 PLIST_FILES=	sbin/libchk
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

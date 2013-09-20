@@ -14,4 +14,5 @@ PLIST_FILES=	bin/clone
 
 MAN1=	clone.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -11,6 +11,7 @@ COMMENT=	Tiling window management for the console
 MAN1=		dvtm.1
 PLIST_FILES=	bin/dvtm bin/dvtm-status
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "You can build dvtm with your own config.h using the DVTM_CONF knob:"
 	@${ECHO_MSG} "make DVTM_CONF=/path/to/dvtm/config.h install clean"

@@ -22,6 +22,7 @@ DSHGROUPS_DESC=		DSH groups supprt
 NETGROUP_DESC=		NIS Netgroup support
 RSH_DESC=		RSH support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSH}

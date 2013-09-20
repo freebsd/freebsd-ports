@@ -25,6 +25,7 @@ MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
 PLIST_DIRS=	etc/netident
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} -v ${DISTDIR}/${DISTNAME} ${WRKSRC}
 

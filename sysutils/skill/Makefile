@@ -1,9 +1,5 @@
-# New ports collection makefile for:    skill
-# Date created:         20 Oct 1998
-# Whom:                 Joao Carlos Mendes Luis <jonny@jonny.eng.br>
-#
+# Created by: Joao Carlos Mendes Luis <jonny@jonny.eng.br>
 # $FreeBSD$
-#
 
 PORTNAME=	skill
 PORTVERSION=	4.1.4
@@ -18,4 +14,5 @@ COMMENT=	SuperKILL, kill, or renice processes by pid, name, tty, or uid
 MAN1=		skill.1
 MLINKS=		skill.1 snice.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

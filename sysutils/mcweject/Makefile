@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	mcweject
-# Date created:				11 Jan 2005
-# Whom:					Jason Bacon <jbacon@mcw.edu>
-#
+# Created by: Jason Bacon <jbacon@mcw.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	mcweject
 PORTVERSION=	1.0
@@ -22,6 +18,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_FILES=	sbin/eject share/examples/mcweject/eject.allow
 PLIST_DIRS=	share/examples/mcweject
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

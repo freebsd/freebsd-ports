@@ -16,6 +16,7 @@ NO_BUILD=	yes
 
 MAN1=		${PORTNAME}.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/Doc/${PORTNAME}.man \

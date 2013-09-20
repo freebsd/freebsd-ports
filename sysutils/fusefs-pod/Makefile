@@ -21,4 +21,5 @@ GNU_CONFIGURE=	yes
 MAN1=		fusepod.1
 PLIST_FILES=	bin/fusepod
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

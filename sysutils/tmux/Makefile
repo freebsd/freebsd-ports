@@ -30,6 +30,7 @@ LIBEVENT2_DESC=	Use libevent version 2
 LIBEVENT_STATIC_DESC=	Build with static libevent
 BACKSPACE_DESC=	Build with tty/keys patch
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLIBEVENT2}

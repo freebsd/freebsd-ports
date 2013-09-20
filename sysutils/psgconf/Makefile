@@ -1,9 +1,5 @@
-# New ports collection makefile for:	psgconf
-# Date created:				17 Feb 2004
-# Whom:						Jim Pirzyk <pirzyk@freebsd.org>
-#
+# Created by: Jim Pirzyk <pirzyk@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	psgconf
 PORTVERSION=	3.3
@@ -186,6 +182,7 @@ MAN3=		PSGConf.3 \
 PKGINSTALL=	${WRKSRC}/postinstall
 PKGDEINSTALL=	${WRKSRC}/postinstall
 
+NO_STAGE=	yes
 post-patch:
 	${FIND} ${WRKSRC} -name "*.orig" -delete
 

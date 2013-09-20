@@ -19,6 +19,7 @@ MAN8=		downtimed.8
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-install:
 		@${MKDIR} /var/db/downtimed
 		@${CAT} ${PKGMESSAGE}

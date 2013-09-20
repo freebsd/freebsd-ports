@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mcelog
-# Date created:				1 October 2011
-# Whom:					Jeremy Chadwick <freebsd@jdc.parodius.com>
-#
+# Created by: Jeremy Chadwick <freebsd@jdc.parodius.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mcelog
 DISTVERSION=	1.0pre3
@@ -32,6 +28,7 @@ LDFLAGS=	-lkvm
 PLIST_FILES=	bin/mcelog
 MAN8=		mcelog.8
 
+NO_STAGE=	yes
 post-patch:
 	@${CP} ${FILESDIR}/memstream.c ${WRKSRC}/memstream.c
 

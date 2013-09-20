@@ -1,9 +1,5 @@
-# Ports collection Makefile for:  diskcheckd
-# Date created:			  Thu Aug 23, 2001
-# Whom:				  David W. Chapman Jr. (dwcjr@FreeBSD.org)
-#
+# Created by: David W. Chapman Jr. (dwcjr@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	diskcheckd
 PORTVERSION=	20110729
@@ -23,6 +19,7 @@ CFLAGS+=	-D_PATH_CONF='\"${PREFIX}/etc/diskcheckd.conf\"'
 MAKEFILE=	/usr/share/mk/bsd.prog.mk
 MAKE_ARGS=	PROG=diskcheckd MAN8=${MAN8}
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 .for f in diskcheckd.c diskcheckd.8

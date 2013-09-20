@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-fileinfo
-# Date created:			21 Jul 2004
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fileinfo
 PORTVERSION=	1.0.4
@@ -24,4 +20,5 @@ IGNORE_WITH_PHP=5 53
 
 CONFIGURE_ARGS=	--with-fileinfo=/usr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

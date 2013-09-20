@@ -19,6 +19,7 @@ IA32_BINARY_PORT=	yes
 
 APP_PREFIX=	${PREFIX}/lib/compaq/hpacucli
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/${PORTNAME}
 

@@ -27,6 +27,7 @@ CPPFLAGS+=	-I../include \
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	${LN} -sf rename.1 ${BUILD_WRKSRC}/${PORTNAME}.1
 

@@ -29,6 +29,7 @@ DESKTOP_ENTRIES="TkDVD" \
 		"" \
 		true
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

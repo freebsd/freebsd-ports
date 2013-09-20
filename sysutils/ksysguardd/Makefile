@@ -27,6 +27,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/ksysguard/${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/${PORTNAME}rc
 
+NO_STAGE=	yes
 pre-build:
 	${REINPLACE_CMD} -e 's/<config-workspace.h>/"config-${PORTNAME}.h"/' \
 		${WRKSRC}/${PORTNAME}.c

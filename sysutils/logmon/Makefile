@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 PORTEXAMPLES=	logmon.conf.example
 PLIST_FILES=	bin/logmon
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	usb_modeswitch
-# Date created:				14 January 2011
-# Whom:					Alexander V. Chernikov <melifaro@FreeBSD.org>
-#
+# Created by: Alexander V. Chernikov <melifaro@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	usb_modeswitch
 PORTVERSION=	1.2.1
@@ -22,6 +18,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		usb_modeswitch.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

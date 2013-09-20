@@ -37,6 +37,7 @@ MAN8=		mkntfs.8 ntfs-3g.8 ntfs-3g.probe.8 \
 		ntfscluster.8 ntfscmp.8 ntfscp.8 ntfsfix.8 ntfsinfo.8 \
 		ntfslabel.8 ntfsls.8 ntfsprogs.8 ntfsresize.8 ntfsundelete.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MLOCK}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	detox
-# Date created:				4 March 2005
-# Whom:					Doug Harple
-#
+# Created by: Doug Harple
 # $FreeBSD$
-#
 
 PORTNAME=	detox
 PORTVERSION=	1.2.0
@@ -22,4 +18,5 @@ GNU_CONFIGURE=	yes
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

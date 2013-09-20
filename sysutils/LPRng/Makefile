@@ -61,6 +61,7 @@ MAN1=	lpf.1 psbanner.1 lp.1 cancel.1 lprng_certs.1 lprng_index_certs.1 \
 MAN5=	printcap.5 lpd.conf.5 lpd.perms.5
 MAN8=	lpc.8 checkpc.8 lpd.8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -24,6 +24,7 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}salt>0:${PORTSDIR}/sysutils/py-salt
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/setup.py
 

@@ -43,6 +43,7 @@ GCONF_SCHEMAS=	control-center.schemas fontilus.schemas \
 WITH_GNOME=	yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mevolutiondataserver}!=""

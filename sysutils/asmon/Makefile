@@ -23,6 +23,7 @@ MAKE_ARGS+=	LIBDIR="-L${LOCALBASE}/lib" \
 
 PLIST_FILES=	bin/asmon
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's:gcc:${CC} ${CFLAGS}:' ${BUILD_WRKSRC}/Makefile
 

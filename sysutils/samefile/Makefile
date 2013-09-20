@@ -1,9 +1,5 @@
-# New ports collection makefile for:   samefile
-# Date created:        15 March 2001
-# Whom:                schweikh
-#
+# Created by: schweikh
 # $FreeBSD$
-#
 
 PORTNAME=	samefile
 PORTVERSION=	2.12
@@ -21,6 +17,7 @@ GNU_CONFIGURE=	yes
 
 CFLAGS+=	-ansi -pedantic -Wall -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wconversion -Wsign-compare -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wmissing-noreturn -Wredundant-decls -Wnested-externs -Winline -Wno-long-long
 
+NO_STAGE=	yes
 post-build:
 	@${ECHO_MSG} "   >>>>                        <<<<"
 	@${ECHO_MSG} "   >>>> Running the test suite <<<<"

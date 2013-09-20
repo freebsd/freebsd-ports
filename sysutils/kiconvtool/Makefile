@@ -16,4 +16,5 @@ PLIST_FILES=	sbin/kiconvtool etc/rc.d/kiconv
 
 MAN8=		kiconvtool.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

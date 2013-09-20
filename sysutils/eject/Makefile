@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eject
-# Date created:		03 January 2000
-# Whom:			shige
-#
+# Created by: shige
 # $FreeBSD$
-#
 
 PORTNAME=	eject
 PORTVERSION=	1.5
@@ -22,6 +18,7 @@ PORTDOCS=	README README-J
 MAN1=		eject.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,4555,555,' ${WRKSRC}/Makefile
 

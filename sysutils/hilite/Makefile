@@ -13,6 +13,7 @@ COMMENT=	Command-line utility to highlight anything printed to stderr
 
 PLIST_FILES=	bin/hilite
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}

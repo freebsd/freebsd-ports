@@ -30,6 +30,7 @@ MAN1=		lineak_xosdplugin.1
 PLIST_FILES=	lib/lineakd/plugins/xosdplugin.la \
 		lib/lineakd/plugins/xosdplugin.so
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|"-O2 $$CXXFLAGS"|"$$CXXFLAGS"| ; \

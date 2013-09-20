@@ -33,6 +33,7 @@ PLIST_FILES=	lib/lineakd/plugins/defaultplugin.a \
 		lib/lineakd/plugins/mediadetectplugin.so \
 		etc/media-detect.conf
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure

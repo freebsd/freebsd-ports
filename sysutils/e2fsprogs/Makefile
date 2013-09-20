@@ -38,6 +38,7 @@ MAN8=		badblocks.8 debugfs.8 dumpe2fs.8 e2fsck.8 e2image.8 e2label.8 \
 		findfs.8 blkid.8 logsave.8 fsck_ext2fs.8 e2freefrag.8
 PORTDOCS=	COPYING RELEASE-NOTES
 
+NO_STAGE=	yes
 post-extract:
 	@${CHMOD} u+w ${WRKSRC}/po/*.po ${WRKSRC}/po/*.pot \
 		${WRKSRC}/${CONFIGURE_SCRIPT}

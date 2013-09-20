@@ -21,6 +21,7 @@ SHEBANG_FILES=	rsnapshot-program.pl
 MAN1=		rsnapshot.1 rsnapshot-diff.1
 PORTDOCS=	AUTHORS ChangeLog README TODO
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/bin/pod2man,pod2man,' ${WRKSRC}/Makefile.in
 

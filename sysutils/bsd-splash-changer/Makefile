@@ -1,11 +1,5 @@
-# New ports collection makefile for:	bsd-splash-changer
-# Date created:		11 Feb 2006
-# Whom:			Martin Otto
-#
+# Created by: Martin Otto
 # $FreeBSD$
-#
-# This port is self contained.
-#
 
 PORTNAME=	bsd-splash-changer
 PORTVERSION=	060211
@@ -20,6 +14,7 @@ USE_RC_SUBR=	change_splash
 SUB_FILES=	pkg-message
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 

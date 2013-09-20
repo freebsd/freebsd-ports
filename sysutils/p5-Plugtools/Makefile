@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sysutils/p5-Plugtools
-# Date created:		2009-10-31
-# Whom:			Zane C, Bowers <vvelox@vvelox.net>
-#
+# Created by: Zane C, Bowers <vvelox@vvelox.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Plugtools
 PORTVERSION=	1.3.0
@@ -31,4 +27,5 @@ USE_PERL5=	configure
 MAN3=		Plugtools.3 \
 		Plugtools::Plugins::Dump.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

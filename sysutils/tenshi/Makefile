@@ -25,6 +25,7 @@ MAN8=			tenshi.8
 
 PORTDOCS=		README Changelog
 
+NO_STAGE=	yes
 post-patch:
 	@${PERL5} -pi.bak -e ' \
 		s"/usr/bin/perl"${PERL}" if $$. == 1; \

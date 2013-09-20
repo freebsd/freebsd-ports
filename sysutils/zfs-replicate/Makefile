@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zfs-replicate
-# Date created:		2008-05-26
-# Whom:			Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
-#
+# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	zfs-replicate
 PORTVERSION=	0.7
@@ -23,6 +19,7 @@ USE_BZIP2=	yes
 
 PLIST_FILES=	sbin/zfs-replicate
 
+NO_STAGE=	yes
 do-patch:
 	@${REINPLACE_CMD} -e 's|^#!/bin/ksh|#!${PREFIX}/bin/ksh|g' ${WRKSRC}/zfs-replicate_v${PORTVERSION}
 	@${REINPLACE_CMD} -e 's|/usr/sbin/zfs|/sbin/zfs|g' ${WRKSRC}/zfs-replicate_v${PORTVERSION}

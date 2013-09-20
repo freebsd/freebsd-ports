@@ -22,6 +22,7 @@ PLIST_FILES=	sbin/fvcool
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@CC@|& ${CFLAGS}|; \
 		s|-O3||g ; s| -s | |g' ${BUILD_WRKSRC}/Makefile.in

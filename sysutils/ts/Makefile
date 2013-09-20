@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ts
-# Date created:		3 April 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ts
 PORTVERSION=	0.7.3
@@ -18,6 +14,7 @@ PLIST_FILES=	bin/ts
 PORTDOCS=	OBJECTIVES PROTOCOL README TRICKS
 MAN1=		ts.1
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/^GLIBCFLAGS/d;/^CFLAGS/d'\
 		${WRKSRC}/Makefile

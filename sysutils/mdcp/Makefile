@@ -1,9 +1,5 @@
-# New ports collection makefile for:   mdcp
-# Date created:                11 Apr 2008
-# Whom:                        Monzyne, W. <wamonzyne@hotmail.com>
-#
+# Created by: Monzyne, W. <wamonzyne@hotmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mdcp
 PORTVERSION=	0.1.2.2
@@ -20,4 +16,5 @@ PLIST_FILES=	sbin/mdcp
 
 MAN1=		mdcp.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

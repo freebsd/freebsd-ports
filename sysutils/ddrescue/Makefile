@@ -24,6 +24,7 @@ INFO=		ddrescue
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 PLIST_FILES=	bin/ddrescue bin/ddrescuelog
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

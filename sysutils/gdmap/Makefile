@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=	gdmap.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,<sys/vfs.h>,<sys/statvfs.h>,' \
 		${WRKSRC}/src/gui_main.c

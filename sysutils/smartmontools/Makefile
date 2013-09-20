@@ -27,6 +27,7 @@ MAN8=		smartd.8 smartctl.8
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDOCS}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rsyncmanager
-# Date created:				29 October 2004
-# Whom:					Kelley Reynolds <kelley@insidesystems.net>
-#
+# Created by: Kelley Reynolds <kelley@insidesystems.net>
 # $FreeBSD$
-#
 
 PORTNAME=	rsyncmanager
 PORTVERSION=	1.1
@@ -25,6 +21,7 @@ PORTDOCS=	README
 USE_RC_SUBR=	${PORTNAME}
 SUB_LIST=	RUBY_WITHOUT_SUFFIX="${RUBY_WITHOUT_SUFFIX}"
 
+NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 

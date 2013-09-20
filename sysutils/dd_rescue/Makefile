@@ -1,4 +1,4 @@
-# Created by: MANTANI Nobutaka <nobutaka@freebsd.org>
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	dd_rescue
@@ -19,6 +19,7 @@ USE_CSTD=	gnu89
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	default
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

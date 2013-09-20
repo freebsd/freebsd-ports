@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bbapm
-# Date created:				3 August 2001
-# Whom:				Adam Weinberger <adam@vectors.cx>
-#
+# Created by: Adam Weinberger <adam@vectors.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	bbapm
 PORTVERSION=	0.0.1
@@ -28,6 +24,7 @@ PLIST_FILES=	bin/bbapm share/bbtools/README.bbapm share/bbtools/bbapm.conf \
 		share/bbtools/bbapm.nobb share/bbtools/bbapm.style \
 		share/bbtools/bbtoolsrc.in
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g operator \
 		-m 2555 ${WRKSRC}/bbapm ${PREFIX}/bin

@@ -18,6 +18,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 MAN4=		biosfont.4
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 KMODDIR=	/boot/modules

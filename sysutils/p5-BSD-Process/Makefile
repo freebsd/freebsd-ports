@@ -20,6 +20,7 @@ SHEBANG_FILES=	eg/*
 
 MAN3=	BSD::Process.3
 
+NO_STAGE=	yes
 post-install:
 .for script in procinfo showprocattr topten
 	@${INSTALL_SCRIPT} ${WRKSRC}/eg/${script} ${PREFIX}/bin

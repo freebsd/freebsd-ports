@@ -19,6 +19,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 WRKSRC=	${WRKDIR}/wiimms-iso-tools
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

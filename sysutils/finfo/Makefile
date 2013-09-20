@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  finfo
-# Date created:                          Tue Jul 18, 2002
-# Whom:                                  Michael L. Hostbaek (mich@freebsdcluster.org)
-#
+# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
 # $FreeBSD$
-#
 
 PORTNAME=	finfo
 PORTVERSION=	0.1
@@ -17,6 +12,7 @@ COMMENT=	Finfo displays potentially useful information about a file
 PLIST_FILES=	bin/finfo
 MAN1=		finfo.1
 
+NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c)
 

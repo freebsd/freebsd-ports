@@ -36,6 +36,7 @@ PLIST_FILES=	bin/chronic \
 		bin/vipe \
 		bin/zrun
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES}

@@ -22,6 +22,7 @@ SUB_FILES+=	407.status-3ware-raid
 PORTDOCS=	tw_cli.8.html
 MAN8+=		tw_cli.8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

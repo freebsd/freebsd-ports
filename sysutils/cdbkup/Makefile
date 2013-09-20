@@ -25,4 +25,5 @@ CONFIGURE_ENV+=	PATH=${PATH}:${LOCALBASE}/sbin
 MAN1=		cdbkup.1 cdappend.1 cdcat.1 cdrstr.1 cdsplit.1
 PORTDOCS=	README TODO COMPLIANCE
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

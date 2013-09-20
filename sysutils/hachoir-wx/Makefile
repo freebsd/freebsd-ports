@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hachoir-wx
-# Date created:		25 January 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hachoir-wx
 PORTVERSION=	0.3
@@ -22,4 +18,5 @@ WX_COMPS=	python
 WX_UNICODE=	yes
 USE_PYDISTUTILS=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -36,4 +36,5 @@ MAN1=		rdup.1 \
 
 MAN7=		rdup-backups.7
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dolly
-# Date created:		Thu Jul 15 10:01:46 UTC 2004
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dolly
 DISTVERSION=	0.58C
@@ -22,6 +18,7 @@ HIGHEST_COMPRESSION_DESC=	Highest rather than fastest compression
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 do-configure:
 # C{C,FLAGS} safeness

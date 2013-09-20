@@ -26,6 +26,7 @@ SUB_FILES=	pkg-message
 
 WEBMIN_MODULES=
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} -f ${WRKSRC}/mount/freebsd-mounts-?
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \

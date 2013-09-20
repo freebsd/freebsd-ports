@@ -12,4 +12,5 @@ COMMENT=	Convert tai64n format invented by Dan Bernstein
 MAN1=		tai64nfrac.1
 PLIST_FILES=	bin/tai64nfrac
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

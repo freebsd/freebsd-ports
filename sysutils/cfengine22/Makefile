@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cfengine
-# Date created:		March 16, 1998
-# Whom:			jseger@FreeBSD.org
-#
+# Created by: jseger@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	cfengine
 PORTVERSION=	2.2.10
@@ -40,6 +36,7 @@ MAN8=		cfagent.8 cfengine.8 cfenvd.8 cfenvgraph.8 cfetoolcheck.8 \
 		cfetoolinfo.8 cfetoolupdate.8 cfexecd.8 cfkey.8 \
 		cfrun.8 cfservd.8 cfshow.8
 
+NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} -e '/^docdir/s!=.*!= @docdir@!'\
 				  ${WRKSRC}/doc/Makefile.in \

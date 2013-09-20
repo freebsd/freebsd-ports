@@ -19,4 +19,5 @@ PLIST_FILES=	bin/injail \
 		sbin/jailer \
 		sbin/reboot
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

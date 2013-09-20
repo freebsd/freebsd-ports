@@ -1,9 +1,5 @@
-# New ports collection makefile for:	danzfs
-# Date created:		26 May 2012
-# Whom:			Daniel Knaggs	<knaggsy2000@gmail.com>
-#
+# Created by: Daniel Knaggs	<knaggsy2000@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	danzfs
 PORTVERSION=	0.2.0
@@ -24,6 +20,7 @@ WRKSRC=	${WRKDIR}/danzfs
 
 EXAMPLESDIR=	${PREFIX}/share/examples/danzfs
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})

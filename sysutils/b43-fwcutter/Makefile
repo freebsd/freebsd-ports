@@ -1,9 +1,5 @@
-# New ports collection makefile for:	b43-fwcutter
-# Date created:		7 May 2009
-# Whom:			swhetzel@gmail.com
-#
+# Created by: swhetzel@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	b43-fwcutter
 PORTVERSION=	015
@@ -19,4 +15,5 @@ USE_GMAKE=	yes
 MAN1=		b43-fwcutter.1
 PLIST_FILES=	bin/b43-fwcutter
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

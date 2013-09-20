@@ -45,6 +45,7 @@ MAN8=		grub-reboot.8 grub-set-default.8 grub-probe.8 \
 		grub-mkconfig.8 grub-bios-setup.8 grub-mknetdir.8 \
 		grub-install.8 grub-sparc64-setup.8 grub-ofpathname.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "amd64"

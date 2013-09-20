@@ -1,10 +1,5 @@
-# New ports collection makefile for:	FreeBSD Services Control
-# Date created:				07 May 2012
-# Whom:					Tom Rhodes <trhodes@FreeBSD.org>
-#
-# $Id: Makefile 1969 2012-06-04 20:00:10Z bsdtrhodes $
+# Created by: Tom Rhodes <trhodes@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fsc
 PORTVERSION=	1.0.1
@@ -25,6 +20,7 @@ PLIST_FILES=	bin/fscadm \
 		man/man8/fscadm.8.gz \
 		man/man8/fscd.8.gz
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' \
 		${WRKSRC}/rc.d/fscd

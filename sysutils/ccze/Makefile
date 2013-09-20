@@ -19,6 +19,7 @@ USE_LDCONFIG=	yes
 MAN1=		ccze.1 ccze-cssdump.1
 MAN7=		ccze-plugin.7
 
+NO_STAGE=	yes
 post-install:
 	@${WRKSRC}/src/ccze-dump > ${PREFIX}/etc/cczerc-sample
 .if !defined(NOPORTDOCS)

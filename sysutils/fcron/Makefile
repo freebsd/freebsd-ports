@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	fcron
-# Date created:			Mar 1, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fcron
 PORTVERSION=	3.0.6
@@ -50,6 +45,7 @@ DOCSRC=		${WRKSRC}/doc/en
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 pre-su-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 

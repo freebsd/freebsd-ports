@@ -31,6 +31,7 @@ MAN1=		mogadm.1 \
 		mogupload.1
 MAN3=		MogileFS::Utils.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/NAME/ s|MogileFS-Utils|MogileFS::Utils|' ${WRKSRC}/Makefile.PL
 

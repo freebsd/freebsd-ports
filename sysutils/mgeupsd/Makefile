@@ -18,6 +18,7 @@ PLIST_FILES=		sbin/mgeupsd sbin/powerhandler etc/rc.d/mgeupsd.sh
 MAN8=			mgeupsd.8
 SUB_FILES=		pkg-message
 
+NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} -e '/^CC=/s:gcc:${CC}:' \
 			-e '/^CFLAGS=/s:-Wall -O2:${CFLAGS}:' ${WRKSRC}/Makefile

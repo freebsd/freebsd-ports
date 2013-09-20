@@ -31,6 +31,7 @@ MAKE_ENV+=	SYSDIR=${SYSDIR}
 MANCOMPRESSED=	yes
 MAN8=		${PORTNAME}.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${SRC_BASE}/sys/Makefile)

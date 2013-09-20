@@ -16,6 +16,7 @@ CONFLICTS=	psmisc-[0-9]*
 
 PLIST_FILES=	bin/pstree
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKDIR} && ${CC} ${CFLAGS} -o pstree pstree.c
 

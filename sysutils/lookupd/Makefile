@@ -1,7 +1,4 @@
-# New ports collection makefile for:	lookupd
-# Date created:				3 July 2004
-# Whom:					Michael Bushkov <bushman@rsu.ru>
-#
+# Created by: Michael Bushkov <bushman@rsu.ru>
 # $FreeBSD$
 
 PORTNAME=	lookupd
@@ -22,6 +19,7 @@ MAKE_ENV=	WARNS=0
 MAN5=		lookupd.conf.5
 MAN8=		lookupd.8
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

@@ -18,6 +18,7 @@ NO_BUILD=	yes
 
 SHEBANG_FILES=	enteruser
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}

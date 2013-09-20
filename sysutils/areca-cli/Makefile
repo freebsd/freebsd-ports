@@ -27,6 +27,7 @@ SUB_FILES+=	${PERIODICSCRIPT}
 
 WRKSRC=		${WRKDIR}/V${CLI_VER}_${CLI_REV}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

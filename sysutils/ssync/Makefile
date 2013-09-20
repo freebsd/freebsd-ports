@@ -16,6 +16,7 @@ MAKEFILE=	makefile
 
 MAN1=		ssync.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's@/etc/init.d/ssyncd@\$$0@g' ${WRKSRC}/ssyncd.init
 	@${REINPLACE_CMD} -e "s@/etc@${PREFIX}/etc@g;s@/usr/sbin@${PREFIX}/sbin@g;" \

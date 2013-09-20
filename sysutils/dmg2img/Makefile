@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dmg2img
-# Date created:		2009-11-27
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dmg2img
 PORTVERSION=	1.6.2
@@ -18,6 +14,7 @@ COMMENT=	DMG2IMG convert tool
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/vfdecrypt
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}/bin|g' \
 		${WRKSRC}/Makefile

@@ -32,6 +32,7 @@ MAN1=		xfburn.1
 OPTIONS_DEFINE=	DBUS HAL GSTREAMER NLS
 OPTIONS_DEFAULT=	DBUS HAL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ldapvi
-# Date created:		Mon Apr 24 09:37:02 CEST 2006
-# Whom:			Joerg Pulz <Joerg.Pulz@frm2.tum.de>
-#
+# Created by: Joerg Pulz <Joerg.Pulz@frm2.tum.de>
 # $FreeBSD$
-#
 
 PORTNAME=	ldapvi
 PORTVERSION=	1.7
@@ -41,4 +37,5 @@ PLIST_DIRS=	${DOCSDIR_REL}
 CONFIGURE_ARGS+=--without-sasl
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

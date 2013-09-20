@@ -1,9 +1,5 @@
-# New ports collection makefile for: cdeploy
-# Date created:		8 May 2010
-# Whom:				jfreund
-#
+# Created by: jfreund
 # $FreeBSD$
-#
 
 PORTNAME=		cdeploy
 PORTVERSION=	0.2.1
@@ -20,4 +16,5 @@ MANCOMPRESSED=	yes
 
 PLIST_FILES=	sbin/cdeploy
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# Created by:	Damjan Jovanovic <damjan.jov@gmail.com>
+# Created by: Damjan Jovanovic <damjan.jov@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	prelink
@@ -27,4 +27,5 @@ PLIST_FILES=	bin/execstack \
 
 MAN8=		execstack.8 prelink.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -30,6 +30,7 @@ CONFIGURE_ARGS+=	--disable-applet
 PLIST_SUB+=	APPLET="@comment "
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

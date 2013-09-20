@@ -18,6 +18,7 @@ USE_BZIP2=	yes
 MAN8=		fdisk-linux.8 cfdisk-linux.8 sfdisk-linux.8
 ONLY_FOR_ARCHS=	i386 amd64
 
+NO_STAGE=	yes
 pre-patch:
 	@rm -f ${WRKSRC}/Makefile
 	@cp ${FILESDIR}/linuxfdisk-Makefile ${WRKSRC}/Makefile

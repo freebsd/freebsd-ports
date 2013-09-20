@@ -27,4 +27,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	polkit-gnome.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

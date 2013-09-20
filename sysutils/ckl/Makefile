@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ckl
-# Date created:				1 June 2010
-# Whom:					Tomaz Muraus <kami@k5-storitve.net>
-#
+# Created by: Tomaz Muraus <kami@k5-storitve.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ckl
 PORTVERSION=	0.9.1
@@ -23,6 +19,7 @@ USE_BZIP2=	yes
 
 PORTDOCS=	CHANGES LICENSE NOTICE README
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/src/ckl.h
 

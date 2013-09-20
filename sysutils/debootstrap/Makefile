@@ -23,6 +23,7 @@ MAN8=		debootstrap.8
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	Debian GNU/kFreeBSD available only for i386 and amd64
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,g' \
 		${WRKSRC}/debootstrap

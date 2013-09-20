@@ -30,6 +30,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -export-dynamic
 ONLY_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	Coredump on amd64, see PR: ports/130972
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDVD}

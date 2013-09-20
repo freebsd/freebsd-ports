@@ -62,6 +62,7 @@ LDIRECTORD_DESC=	Enable Linux Director Daemon
 APCSNMP_DESC=		Enable APC SNMP Stonith Device
 DRAC3_DESC=		Enable Dell DRACIII Stonith Device
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !defined(BATCH)

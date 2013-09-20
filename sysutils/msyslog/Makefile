@@ -25,6 +25,7 @@ MANCOMPRESSED=	yes
 
 PORTSCOUT=	skipv:1.09d
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} > 900006

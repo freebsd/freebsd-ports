@@ -29,6 +29,7 @@ MAN1=		affcat.1
 
 AUTOTOOLSFILES=	aclocal.m4
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|2.61|%%AUTOCONF_VERSION%%|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|(libdir)|(libdir)/lib|' \

@@ -21,6 +21,7 @@ USE_SCONS=	yes
 MAN8=		mount.exfat-fuse.8
 PLIST_FILES=	bin/mount.exfat-fuse bin/mount.exfat
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fuse/mount.exfat-fuse ${PREFIX}/bin
 	${LN} -s ${PREFIX}/bin/mount.exfat-fuse ${PREFIX}/bin/mount.exfat

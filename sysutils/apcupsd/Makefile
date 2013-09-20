@@ -55,6 +55,7 @@ GAPCMON_DESC=		Build GTK GUI front-end
 
 PORTDOCS=	${PORTNAME}.pdf
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPCSMART_DRV}

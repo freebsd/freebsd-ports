@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  asr-utils
-# Date created:			  Sun Feb 16, 2003
-# Whom:				  David O'Brien (obrien@FreeBSD.org)
-#
+# Created by: David O'Brien (obrien@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	asr-utils
 PORTVERSION=	3.04
@@ -39,6 +34,7 @@ PLIST_SUB+=	LIBXM="@comment "
 
 .ifndef (WITHOUT_X11)
 PLIST_SUB+=	X11=""
+NO_STAGE=	yes
 do-build:
 	${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 	    ${FILESDIR}/dptmgr.sh.in > ${WRKDIR}/dptmgr.sh

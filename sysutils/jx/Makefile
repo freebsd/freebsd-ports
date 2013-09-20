@@ -21,6 +21,7 @@ MANCOMPRESSED=	yes
 OPTIONS_DEFINE=	CONFIG
 CONFIG_DESC=	Enable custom config (recuire Config::General)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCONFIG}

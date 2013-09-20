@@ -23,6 +23,7 @@ DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 PORTDOCS=	CHANGES README README.GDK TODO
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

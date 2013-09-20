@@ -1,9 +1,5 @@
-# New ports collection makefile for:    news
-# Date created:         Tue Jan 24 12:42:05 CST 2012
-# Whom:                 Hokan <hokan@me.umn.edu>
-#
+# Created by: Hokan <hokan@me.umn.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	news
 PORTVERSION=	1.2
@@ -13,6 +9,7 @@ MASTER_SITES=	http://www.menet.umn.edu/~hokan/
 MAINTAINER=	hokan@me.umn.edu
 COMMENT=	Print news items
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 ALL_TARGET=	news

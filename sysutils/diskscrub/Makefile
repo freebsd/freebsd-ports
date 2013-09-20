@@ -17,4 +17,5 @@ MAN1=	scrub.1
 
 PLIST_FILES=	bin/scrub
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

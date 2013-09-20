@@ -26,6 +26,7 @@ MAN1=		most.1
 
 PORTSCOUT=	skipv:5.0.0a
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|' \
 		${WRKSRC}/src/jdmacros.h

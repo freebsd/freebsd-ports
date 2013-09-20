@@ -18,4 +18,5 @@ USES=		fuse
 MAN1=		funionfs.1
 PLIST_FILES=	bin/funionfs
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

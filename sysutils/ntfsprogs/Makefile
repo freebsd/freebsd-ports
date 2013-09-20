@@ -36,6 +36,7 @@ MLINKS=	ntfsmount.8 mount_ntfs-fuse.8
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOMEVFS2}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wait_on
-# Date created:		29 Jan 2002
-# Whom:			Andrew Stevenson <andrew@ugh.net.au>
-#
+# Created by: Andrew Stevenson <andrew@ugh.net.au>
 # $FreeBSD$
-#
 
 PORTNAME=	wait_on
 PORTVERSION=	1.1
@@ -19,4 +15,5 @@ MAN1=		wait_on.1
 MANCOMPRESSED=	maybe
 PLIST_FILES=	bin/wait_on
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

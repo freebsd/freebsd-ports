@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zfs-stats
-# Date created:		2010-10-20
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	zfs-stats
 PORTVERSION=	1.2.2
@@ -22,6 +18,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/zfs-stats \
 		bin/zfs-mon
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/bin/env -iS perl|${PERL}|g" ${WRKSRC}/zfs-stats
 

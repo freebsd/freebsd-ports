@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sysutils/vlogger
-# Date created:		18 August 2011
-# Whom:			Linh Pham <question+fbsdports@closedsrc.org>
-#
+# Created by: Linh Pham <question+fbsdports@closedsrc.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vlogger
 PORTVERSION=	1.3
@@ -22,6 +18,7 @@ NO_BUILD=	yes
 
 MAN1=		${PORTNAME}.1
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 

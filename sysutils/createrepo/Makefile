@@ -26,6 +26,7 @@ MAKE_ARGS=	MAKE=${GMAKE} INSTALL="${GINSTALL} -p -v" PYTHON=${PYTHON_CMD} \
 MAN1=		mergerepo.1 modifyrepo.1
 MAN8=		createrepo.8
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/share/createrepo|${DATADIR}|g' \
 		${WRKSRC}/bin/mergerepo \

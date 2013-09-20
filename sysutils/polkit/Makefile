@@ -36,6 +36,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	MANPAGES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES}

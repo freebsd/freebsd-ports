@@ -1,9 +1,5 @@
-# New ports collection makefile for:	istatd
-# Date created:		2009-12-01
-# Whom:			Babak Farrokhi <farrokhi@FreeBSD.org>
-#
+# Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	istatd
 PORTVERSION=	0.5.7
@@ -24,6 +20,7 @@ MAN5=		istat.conf.5
 PLIST_FILES=	bin/istatd etc/istat.conf-dist
 SUB_FILES+=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/istatd ${PREFIX}/bin
 		${INSTALL_SCRIPT} ${WRKDIR}/istatd ${PREFIX}/etc/rc.d

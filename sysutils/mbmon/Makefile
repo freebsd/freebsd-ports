@@ -33,6 +33,7 @@ SMB_DESC=	"Enable smb(4) support"
 USE_RC_SUBR=	mbmon
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASUS}

@@ -19,6 +19,7 @@ USE_GNOME=	glib20
 
 MAN1=	sshfs.1
 
+NO_STAGE=	yes
 post-install:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}

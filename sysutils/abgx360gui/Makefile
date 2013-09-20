@@ -1,9 +1,5 @@
-# New ports collection makefile for:   abgx360gui
-# Date created:        21 November 2009
-# Whom:                okeeblow <root@cooltrainer.org>
-#
+# Created by: okeeblow <root@cooltrainer.org>
 # $FreeBSD$
-#
 
 PORTNAME=	abgx360gui
 PORTVERSION=	1.0.2
@@ -37,6 +33,7 @@ DESKTOP_ENTRIES=	"abgx360" \
 			"Utility;" \
 			false
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/abgx360gui ${PREFIX}/bin
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/abgx360-256.png ${PREFIX}/share/pixmaps

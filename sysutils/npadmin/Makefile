@@ -15,6 +15,7 @@ PLIST_FILES=	bin/npadmin
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 pre-configure:
 	${RM} ${WRKSRC}/getopt.h ${WRKSRC}/getopt1.c
 

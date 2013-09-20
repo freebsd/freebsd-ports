@@ -31,6 +31,7 @@ MAKE_ARGS+=	SKIP_STRIP=y CC="${CC}" HOSTCC="${CC}" CXX="${CXX}" HOSTCXX="${CXX}"
 USES=		gmake
 USE_BZIP2=	yes
 # avoid clang, breaks in findutils/find.c l. 752+,
+NO_STAGE=	yes
 # uses a GCC extension/invalid C code:
 USE_GCC?=	4.2+
 

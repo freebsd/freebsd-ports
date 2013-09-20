@@ -1,9 +1,5 @@
-# New ports collection makefile for:   anacron
-# Date created:        15 Jul 2003
-# Whom:                Derik van Zuetphen <dz@426.ch>
-#
+# Created by: Derik van Zuetphen <dz@426.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	anacron
 PORTVERSION=	2.3
@@ -20,6 +16,7 @@ USE_GMAKE=	yes
 USE_RC_SUBR=	anacron
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-patch:
 .for f in Makefile anacron.8 anacrontab.5
 	@${REINPLACE_CMD} -e 's|\(/etc/anacrontab\)|${PREFIX}\1|' ${WRKSRC}/${f}

@@ -15,6 +15,7 @@ MAN8=		foremost.8
 
 PLIST_FILES=	bin/foremost etc/foremost.conf.sample
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|-Wall -O2|${CFLAGS}|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/config.c

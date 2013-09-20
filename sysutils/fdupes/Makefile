@@ -16,6 +16,7 @@ PLIST_FILES=	bin/fdupes
 
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\"
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/${PORTNAME}.c ${WRKSRC}/md5/md5.c \
 		-o ${WRKSRC}/${PORTNAME}

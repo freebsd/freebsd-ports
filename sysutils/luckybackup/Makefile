@@ -1,7 +1,3 @@
-# New ports collection makefile for:	luckybackup
-# Date created:				2009-04-28
-# Whom:					Jason E. Hale <bsdkaffee@gmail.com>
-#
 # $FreeBSD$
 
 PORTNAME=	luckybackup
@@ -23,6 +19,7 @@ MAKE_ENV=	INSTALL_ROOT=${PREFIX}
 MAN8=		luckybackup.8
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr||g' -e '/INSTALLS/s|debianmenu ||' \
 		-e '/manpage/s|share/||' ${WRKSRC}/luckybackup.pro

@@ -36,6 +36,7 @@ MAN3=		Sys::Filesystem::Mswin32.3 \
 
 CONFIGURE_ENV+=	PATH_FSTAB=${WRKDIR}/fstab.phony
 
+NO_STAGE=	yes
 pre-configure:
 	@${TOUCH} ${WRKDIR}/fstab.phony
 

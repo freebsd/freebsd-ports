@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tentakel
-# Date created:			May 24, 2003
-# Whom:				Munish Chopra <mchopra@engmail.uwaterloo.ca>
-#
+# Created by: Munish Chopra <mchopra@engmail.uwaterloo.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	tentakel
 PORTVERSION=	2.2
@@ -21,4 +17,5 @@ USE_PYDISTUTILS=	yes
 
 MAN1=		tentakel.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

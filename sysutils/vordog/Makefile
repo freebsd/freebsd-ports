@@ -14,6 +14,7 @@ KMODDIR=	/boot/modules
 
 ONLY_FOR_ARCHS=	i386
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/vordog.ko ${KMODDIR}
 

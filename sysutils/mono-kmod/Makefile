@@ -17,6 +17,7 @@ KMODDIR?=	/boot/modules
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SRC_BASE?=	/usr/src

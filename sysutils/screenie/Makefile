@@ -19,6 +19,7 @@ NO_BUILD=	yes
 MAN1=		screenie.1
 PLIST_FILES=	sbin/screenie
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1

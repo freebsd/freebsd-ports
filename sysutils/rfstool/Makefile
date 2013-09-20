@@ -15,6 +15,7 @@ USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/rfstool-0.14/RFSTOOL
 MAKEFILE=	makefile.gcc3x
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e "s,g++,\$${CXX},g" ${WRKSRC}/${MAKEFILE}
 

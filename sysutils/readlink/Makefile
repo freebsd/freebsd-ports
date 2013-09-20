@@ -1,9 +1,5 @@
-# New ports collection makefile for:	readlink
-# Date created:			16 June 2001
-# Whom:				dd
-#
+# Created by: dd
 # $FreeBSD$
-#
 
 PORTNAME=	readlink
 PORTVERSION=	20010616
@@ -27,6 +23,7 @@ MANCOMPSUFFIX=
 
 PLIST_FILES=	bin/readlink
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/readlink ${PREFIX}/bin/readlink
 .for __s in ${MANSECTS}

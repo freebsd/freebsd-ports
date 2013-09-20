@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Fuse-Simple
-# Date created:		2006-08-06
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Fuse-Simple
 PORTVERSION=	1.00
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		Fuse::Simple.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -16,6 +16,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|setuptools|distutils.core|' ${WRKSRC}/${PYSETUP}
 

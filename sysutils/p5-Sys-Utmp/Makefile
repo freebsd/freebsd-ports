@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Sys-Utmp
-# Date created:				Fri Aug 20 13:33:55 MSD 2004
-# Whom:					Alexander Zhuravlev <zaa@zaa.pp.ru>
-#
+# Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Sys-Utmp
 PORTVERSION=	1.6
@@ -19,6 +15,7 @@ USE_PERL5=	configure
 
 MAN3=		Sys::Utmp.3 Sys::Utmp::Utent.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '254 s,strcpy,strncpy,' ${WRKSRC}/Utmp.xs
 

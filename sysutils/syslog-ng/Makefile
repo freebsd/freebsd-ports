@@ -34,6 +34,7 @@ GEOIP_DESC=		Build with GeoIP support
 
 USES=		pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 LIB_DEPENDS=	evtlog.0:${PORTSDIR}/sysutils/eventlog

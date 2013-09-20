@@ -28,6 +28,7 @@ SUB_LIST+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 MAN1=		update-gosa.1
 MAN5=		gosa.conf.5
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's!"/etc/gosa"!"${ETCDIR}"!g' \

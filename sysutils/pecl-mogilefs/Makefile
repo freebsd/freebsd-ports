@@ -1,6 +1,5 @@
 # Created by: Wen Heping<wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mogilefs
 PORTVERSION=	0.9.2
@@ -21,6 +20,7 @@ USE_PHP_BUILD=	spl
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/config.m4
 

@@ -21,6 +21,7 @@ MAN8=	xsu.8
 
 DOCS=	CHANGELOG COPYING INSTALL
 
+NO_STAGE=	yes
 post-patch:
 .ifdef NOPORTDOCS
 	${REINPLACE_CMD} -e '/doc_path\/$$name/s,^[[:blank:]],#&,' \

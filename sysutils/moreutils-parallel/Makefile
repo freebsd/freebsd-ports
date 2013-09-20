@@ -21,6 +21,7 @@ MAN1=		parallel.1
 MANCOMPRESSED=	no
 PLIST_FILES=	bin/parallel
 
+NO_STAGE=	yes
 post-patch:
 	${CP} ${FILESDIR}/parallel.1 ${WRKSRC}/
 

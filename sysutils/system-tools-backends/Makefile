@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--with-stb-group=wheel \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -e 's|@GETTEXT_PACKAGE@|system-tools-backends|g' \
 		${WRKSRC}/po/Makefile

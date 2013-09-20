@@ -24,6 +24,7 @@ CONFIGURE_ARGS+=--without-included-gettext --datadir=${PREFIX}/share
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-patch:

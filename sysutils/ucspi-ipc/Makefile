@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ucspi-ipc
-# Date created:		2004-07-07
-# Whom:			David Thiel <lx@redundancy.redundancy.org>
-#
+# Created by: David Thiel <lx@redundancy.redundancy.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ucspi-ipc
 PORTVERSION=	0.67
@@ -23,6 +19,7 @@ DOCS=		CHANGES
 
 WRKSRC=		${WRKDIR}/host/superscript.com/net/${DISTNAME}
 
+NO_STAGE=	yes
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
 

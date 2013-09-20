@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sysutils/p5-BSD-Sysctl
-# Date created:		2006/09/05
-# Whom:			chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	BSD-Sysctl
 PORTVERSION=	0.10
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		BSD::Sysctl.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

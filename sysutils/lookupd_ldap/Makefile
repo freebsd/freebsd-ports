@@ -1,7 +1,4 @@
-# New ports collection makefile for:	lookupd_ldap
-# Date created:				3 July 2004
-# Whom:					Michael Bushkov <bushman@rsu.ru>
-#
+# Created by: Michael Bushkov <bushman@rsu.ru>
 # $FreeBSD$
 
 PORTNAME=	lookupd_ldap
@@ -24,6 +21,7 @@ PLIST_FILES=	lib/lkpd_ldap.so lib/lkpd_ldap.so.1
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-config.h
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

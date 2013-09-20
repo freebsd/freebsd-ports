@@ -14,4 +14,5 @@ COMMENT=	A tool to compress ISO images to CSO format
 USE_DOS2UNIX=	yes
 PLIST_FILES=	bin/ciso
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

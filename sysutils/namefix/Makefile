@@ -1,9 +1,5 @@
-# New ports collection makefile for:	namefix
-# Date created:		28 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	namefix
 PORTVERSION=	4.0.2
@@ -33,6 +29,7 @@ NO_BUILD=	yes
 USES=		perl5
 USE_PERL5=	run
 
+NO_STAGE=	yes
 do-configure:
 .for bin in ${PORTNAME} ${PORTNAME}-cli
 	@${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/${bin}.in

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bchunk
-# Date created:			9 Jan 1999
-# Whom:				bsdx
-#
+# Created by: bsdx
 # $FreeBSD$
-#
 
 PORTNAME=	bchunk
 PORTVERSION=	1.2.0
@@ -16,6 +12,7 @@ COMMENT=	Converts .bin/.cue files to .iso/audio
 MAN1=		bchunk.1
 PLIST_FILES=	bin/bchunk
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; ${CC} ${CFLAGS} bchunk.c -o bchunk
 

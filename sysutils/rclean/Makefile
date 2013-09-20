@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rcorder
-# Date created:		Sat Apr 27 17:49:09 CET 2002
-# Whom:			Lapo Luchini <lapo@lapo.it>
-#
+# Created by: Lapo Luchini <lapo@lapo.it>
 # $FreeBSD$
-#
 
 PORTNAME=	rclean
 PORTVERSION=	1.14
@@ -16,6 +12,7 @@ COMMENT=	Command-line rc.conf ordering and cleaning tool
 PLIST_FILES=	bin/rclean
 USE_BZIP2=	yes
 
+NO_STAGE=	yes
 do-build:
 	@(cd ${WRKSRC}; ${CC} -o ${PORTNAME} ${PORTNAME}.c)
 

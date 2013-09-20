@@ -18,6 +18,7 @@ OPTIONS_DEFINE=	SETUID
 SETUID_DESC=	Install setuid open binary
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

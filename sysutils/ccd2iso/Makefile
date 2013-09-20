@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ccd2iso
-# Date created:				23 Jun 2004
-# Whom:					Sergey A. Osokin <osa@FreeBSD.org>
-#
+# Created by: Sergey A. Osokin <osa@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ccd2iso
 PORTVERSION=	0.9
@@ -19,6 +15,7 @@ PLIST_FILES=	bin/ccd2iso
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ccd2iso ${PREFIX}/bin
 

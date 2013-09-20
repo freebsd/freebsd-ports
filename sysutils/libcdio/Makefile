@@ -28,6 +28,7 @@ MAN1=	cd-drive.1 cd-info.1 iso-read.1 iso-info.1 cd-read.1
 
 INFO=		libcdio
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 _MANLANG=	"" ja

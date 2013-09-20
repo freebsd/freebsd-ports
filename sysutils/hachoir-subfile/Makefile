@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hachoir-subfile
-# Date created:		13 July 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hachoir-subfile
 PORTVERSION=	0.5.3
@@ -19,4 +15,5 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:${PORTSDIR}/devel/h
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

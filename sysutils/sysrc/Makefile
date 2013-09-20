@@ -24,6 +24,7 @@ PLIST_DIRS=	share/${PORTNAME}           \
 		libexec/${PORTNAME}/include \
 		libexec/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin/
 	${MKDIR} ${PREFIX}/share/${PORTNAME}

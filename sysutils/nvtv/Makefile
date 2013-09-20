@@ -24,4 +24,5 @@ MAN1=		nvtv.1x
 MAN8=		nvtvd.8
 PLIST_FILES=	bin/nvtv bin/nvtvd
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

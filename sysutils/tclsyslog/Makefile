@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tclsyslog
-# Date created:				31 March 2008
-# Whom:					Frank Fenor <frank@fenor.de>
-#
+# Created by: Frank Fenor <frank@fenor.de>
 # $FreeBSD$
-#
 
 PORTNAME=	tclsyslog
 PORTVERSION=	2.1
@@ -24,6 +20,7 @@ PLIST_FILES=	lib/syslog/libsyslog.so.2.1 \
 		lib/syslog/pkgIndex.tcl
 PLIST_DIRS=	lib/syslog
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|CC=gcc|CC=${CC}|' \

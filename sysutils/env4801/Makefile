@@ -26,6 +26,7 @@ OPTIONS_DEFINE=	STATIC
 OPTIONS_DEFAULT=	STATIC
 STATIC_DESC=	Build a statically linked executable
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

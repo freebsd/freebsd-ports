@@ -33,6 +33,7 @@ PLIST_FILES=	\
 PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/watchmen \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/App
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

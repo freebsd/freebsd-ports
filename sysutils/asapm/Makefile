@@ -1,9 +1,5 @@
-# New ports collection makefile for:	asapm
-# Date created:		6 Aug 1998
-# Whom:			Brian Handy <handy@physics.montana.edu>
-#
+# Created by: Brian Handy <handy@physics.montana.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	asapm
 PORTVERSION=	3.1
@@ -23,4 +19,5 @@ INSTALL_TARGET=	install install.man
 MAN1=		asapm.1
 PLIST_FILES=	bin/asapm
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

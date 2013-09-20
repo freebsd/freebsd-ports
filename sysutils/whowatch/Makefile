@@ -1,9 +1,5 @@
-# New ports collection makefile for:	whowatch
-# Date created:		12 June 2000
-# Whom:			Daniel Harris <dannyboy@subdimension.com>
-#
+# Created by: Daniel Harris <dannyboy@subdimension.com>
 # $FreeBSD$
-#
 
 PORTNAME=	whowatch
 PORTVERSION=	1.4
@@ -21,6 +17,7 @@ GNU_CONFIGURE=	yes
 MAN1=		whowatch.1
 PLIST_FILES=	bin/whowatch
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900006

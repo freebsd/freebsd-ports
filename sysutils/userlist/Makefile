@@ -1,9 +1,5 @@
-# New ports collection makefile for:	userlist
-# Date created:			8 May 2001
-# Whom:				Jamie Heckford <jamie@jamiesdomain.co.uk>
-#
+# Created by: Jamie Heckford <jamie@jamiesdomain.co.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	userlist
 PORTVERSION=	0.1
@@ -17,6 +13,7 @@ COMMENT=	Prints a list of all usernames in /etc/passwd
 NO_BUILD=	yes
 PLIST_FILES=	bin/userlist
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/userlist ${PREFIX}/bin
 

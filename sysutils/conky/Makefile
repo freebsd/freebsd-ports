@@ -53,6 +53,7 @@ RSS_DESC=		Display RSS feeds
 XMMS2_DESC=		Control XMMS2 media player
 XOAP_DESC=		Display XOAP weather reports
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MARGB} || ${PORT_OPTIONS:MDOUBLE_BUFFER} || ${PORT_OPTIONS:MIMLIB2} || ${PORT_OPTIONS:MLUA_CAIRO} || ${PORT_OPTIONS:MLUA_IMLIB2} || ${PORT_OPTIONS:MXFT} || ${PORT_OPTIONS:MX11}

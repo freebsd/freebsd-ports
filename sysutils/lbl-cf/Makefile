@@ -19,6 +19,7 @@ MAN1=		cf.1
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-install:
 	(cd ${WRKSRC} && make install-man)
 

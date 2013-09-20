@@ -26,6 +26,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOME_KEYRING}

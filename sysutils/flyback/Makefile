@@ -1,9 +1,5 @@
-# New ports collection makefile for:	flyback
-# Date created:		2008-01-20
-# Whom:			Lars Engels <lme@FreeBSD.org>
-#
+# Created by: Lars Engels <lme@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	flyback
 PORTVERSION=	0.4.0
@@ -23,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2 pygnome2 libglade2
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SUB_FILES=	flyback.sh

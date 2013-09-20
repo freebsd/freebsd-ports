@@ -25,6 +25,7 @@ JDISKDIR?=	${PREFIX}/lib/jdiskreport
 DESKTOP_ENTRIES="JDiskReport" "${COMMENT}" "" "jdiskreport" \
 		"System;Filesystem;" "false"
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKDIR}
 	@${SED} -e 's,%%JDISKDIR%%,${JDISKDIR},g' \

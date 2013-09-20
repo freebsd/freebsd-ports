@@ -1,9 +1,5 @@
-# New ports collection makefile for:	epylog
-# Date created:				3 July 2005
-# Whom:					Alan Snelson <alan@wave2.co.uk>
-#
+# Created by: Alan Snelson <alan@wave2.co.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	epylog
 PORTVERSION=	1.0.3
@@ -41,6 +37,7 @@ LOCAL_CONF_FILES=	epylog.conf \
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	LOCAL_CONF_FILES="${LOCAL_CONF_FILES}"
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$sysconfdir/cron\.daily|$$sysconfdir/epylog|' \
 		${WRKSRC}/configure

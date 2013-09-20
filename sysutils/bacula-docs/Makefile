@@ -21,6 +21,7 @@ PORTDOCS=	*.pdf
 IGNORE=		consists of only documentation, please undef NOPORTDOCS and try again
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DOCSDIR}
 

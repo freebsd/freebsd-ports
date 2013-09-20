@@ -1,7 +1,5 @@
 # Created by: Patrick M. Hausen (pmh@hausen.com)
-#
 # $FreeBSD$
-#
 
 PORTNAME=		linux-megamgr
 PORTVERSION=		5.20
@@ -22,6 +20,7 @@ USE_LINUX=		yes
 SUB_FILES=		megamgr.sh
 USE_DOS2UNIX=		ut_linux_mgr_5.20.txt
 
+NO_STAGE=	yes
 do-build:
 	${CHMOD} 755 ${WRKSRC}/megamgr.bin
 	${BRANDELF} -t Linux ${WRKSRC}/megamgr.bin

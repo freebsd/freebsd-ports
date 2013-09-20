@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gstreamer-plugins-hal
-# Date created:			16 May 2006
-# Whom:				Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/sysutils/gstreamer-plugins-hal/Makefile,v 1.6 2008/03/19 14:05:38 ahze Exp $
-#
 
 PORTREVISION=	0
 CATEGORIES=	sysutils
@@ -15,4 +11,5 @@ GST_PLUGIN=	hal
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

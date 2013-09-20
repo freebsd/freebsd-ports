@@ -18,6 +18,7 @@ GH_COMMIT=	2228749
 PERIODICDIR?=	${PREFIX}/etc/periodic
 PLIST_SUB+=	PERIODICDIR="${PERIODICDIR:S,^${PREFIX}/,,}"
 
+NO_STAGE=	yes
 do-patch:
 .for period in hourly daily weekly monthly reboot
 	@${SED} -e "s/xPERIODICx/${period}/g" -e "s#xPREFIXx#${PREFIX}/sbin#g" ${WRKSRC}/xPERIODICx_zfSnap.sh > ${WRKSRC}/${period}_zfSnap.sh

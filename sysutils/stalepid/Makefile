@@ -21,4 +21,5 @@ MAN1=		stalepid.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/stalepid
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

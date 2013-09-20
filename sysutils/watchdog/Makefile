@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ezload
-# Date created:		18 august 2003
-# Whom:			dirkx@webweaving.org
-#
+# Created by: dirkx@webweaving.org
 # $FreeBSD$
-#
 
 PORTNAME=	watchdog
 PORTVERSION=	1.00
@@ -18,4 +14,5 @@ MAN8=		watchdogd.8
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/watchdogd
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cvsweb-converters
-# Date created:		4 Mar 2001
-# Whom:			Martin Kammerhofer <mkamm@gmx.net>
-#
+# Created by: Martin Kammerhofer <mkamm@gmx.net>
 # $FreeBSD$
-#
 
 PORTNAME=	cvsweb-converters
 PORTVERSION=	0.3.4
@@ -29,6 +25,7 @@ PLIST_FILES=	bin/commitlog2cvsweb bin/cvsrdiff2cvsweb \
 		bin/cvsuplog2cvsweb etc/cvsweb-converters.conf.sample
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

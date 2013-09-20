@@ -17,4 +17,5 @@ GNU_CONFIGURE=	yes
 USES=		pkgconfig gettext
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --disable-rpath
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

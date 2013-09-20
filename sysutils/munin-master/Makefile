@@ -45,6 +45,7 @@ USES=		gmake perl5
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../munin-common/munin.mk"
 
 EXTRA_PATCHES=	${MUNIN_PATCHES}

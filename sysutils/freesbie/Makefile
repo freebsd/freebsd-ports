@@ -19,6 +19,7 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2
 
+NO_STAGE=	yes
 do-install:
 	@ ${MKDIR} ${DATADIR}
 	@ ${RM} ${WRKSRC}/scripts/iso.sh.orig

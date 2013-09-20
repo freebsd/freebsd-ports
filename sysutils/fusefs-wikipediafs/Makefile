@@ -18,6 +18,7 @@ USE_PYDISTUTILS=yes
 PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README TODO
 MAN1=		mount.${PORTNAME}.1
 
+NO_STAGE=	yes
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/doc/*gz
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-teamocil
-# Date created:		2012-01-30
-# Whom:			Dennis Herrmann <dhn@FreeBSD.org>
-#
+# Created by: Dennis Herrmann <dhn@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	teamocil
 PORTVERSION=	0.3.7
@@ -19,4 +15,5 @@ USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/teamocil
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

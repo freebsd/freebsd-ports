@@ -5,6 +5,7 @@ PORTNAME=	moosefs
 PORTVERSION=	#
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-chunkserver
+NO_STAGE=	yes
 .include "${.CURDIR}/../moosefs-master/bsd.port.moosefs.mk"
 
 MAINTAINER=	chifeng@gmail.com

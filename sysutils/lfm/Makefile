@@ -21,6 +21,7 @@ USE_PYDISTUTILS=	yes
 MAN1=		lfm.1 pyview.1
 PORTDOCS=	ChangeLog NEWS README README.pyview TODO
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/DOC_FILES/d ; \

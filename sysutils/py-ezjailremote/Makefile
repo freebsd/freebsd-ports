@@ -20,4 +20,5 @@ GH_COMMIT=	9ee5f8b
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

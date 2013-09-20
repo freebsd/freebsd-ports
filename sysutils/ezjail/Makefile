@@ -14,6 +14,7 @@ MAN5=		ezjail.conf.5
 MAN7=		ezjail.7
 MAN8=		ezjail-admin.8
 
+NO_STAGE=	yes
 post-install:
 	[ -f ${PREFIX}/etc/${PORTNAME}.conf ] || \
 		${CP} -p ${PREFIX}/etc/${PORTNAME}.conf.sample \

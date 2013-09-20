@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pslist
-# Date created:				27 October 2000
-# Whom:					roam@orbitel.bg
-#
+# Created by: roam@orbitel.bg
 # $FreeBSD$
-#
 
 PORTNAME=	pslist
 PORTVERSION=	1.3
@@ -22,4 +18,5 @@ PLIST_FILES=	bin/pslist \
 		bin/rkill \
 		bin/rrenice
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

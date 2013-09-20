@@ -31,6 +31,7 @@ USE_PYTHON_BUILD=	-2.7
 
 MAN1=	htop.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLSOF}

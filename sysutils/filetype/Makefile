@@ -1,9 +1,5 @@
-# New ports collection makefile for: filetype
-# Date created:        May 31 2009
-# Whom:                ismail.yenigul@endersys.com.tr
-#
+# Created by: ismail.yenigul@endersys.com.tr
 # $FreeBSD$
-#
 
 PORTNAME=	filetype
 PORTVERSION=	0.1.3
@@ -18,6 +14,7 @@ PORTDOCS=	README CHANGELOG CONTRIBUTORS INSTALL LICENSE TODO
 
 PLIST_FILES=	bin/filetype
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/filetype ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/filetype.1 ${MANPREFIX}/man/man1/

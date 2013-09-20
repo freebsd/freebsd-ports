@@ -1,9 +1,5 @@
-# New ports collection makefile for:   pcpustat
-# Date created:        13 July 2010
-# Whom:                sterling
-#
+# Created by: sterling
 # $FreeBSD$
-#
 
 PORTNAME=	pcpustat
 PORTVERSION=	1.6
@@ -20,6 +16,7 @@ MAN1=		pcpustat.1
 USE_BZIP2=	yes
 PLIST_FILES=	bin/pcpustat
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/man1/${PORTNAME}.1 ${MANPREFIX}/man/man1

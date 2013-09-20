@@ -1,9 +1,5 @@
-# New ports collection makefile for:	usrinfo
-# Date created:				28 January 2004
-# Whom:					Aaron Landwehr <aaron@snaphat.com>
-#
+# Created by: Aaron Landwehr <aaron@snaphat.com>
 # $FreeBSD$
-#
 
 PORTNAME=	usrinfo
 PORTVERSION=	.10
@@ -20,6 +16,7 @@ PLIST_FILES=	bin/usrinfo
 MANCOMPRESSED=	no
 MAN1=		usrinfo.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/usrinfo ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/usrinfo.1 ${MANPREFIX}/man/man1

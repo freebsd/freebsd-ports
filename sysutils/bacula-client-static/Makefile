@@ -17,4 +17,5 @@ CONFIGURE_ARGS+=	--enable-client-only \
 			--disable-build-dird \
 			--disable-build-stored
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

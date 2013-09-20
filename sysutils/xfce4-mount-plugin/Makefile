@@ -1,6 +1,5 @@
 # Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-mount-plugin
 PORTVERSION=	0.6.4
@@ -22,4 +21,5 @@ USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_XFCE=	configenv libmenu panel
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

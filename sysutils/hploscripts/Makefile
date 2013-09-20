@@ -21,6 +21,7 @@ PORTDOCS=	iLO_perl_xml.pdf linux-LOsamplescripts.txt
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nvramtool
-# Date created:				13 Mar 2011
-# Whom:					Andrey Zonov <andrey@zonov.org>
-#
+# Created by: Andrey Zonov <andrey@zonov.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nvramtool
 PORTVERSION=	r6440
@@ -23,6 +19,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 MAN8=		${PORTNAME}.8
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/cli/${MAN8} ${MANPREFIX}/man/man8

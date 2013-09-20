@@ -44,6 +44,7 @@ MAN8=		chef-client.8 chef-solo.8
 SUB_LIST=	RUBY=${RUBY}
 USE_RC_SUBR=	chef_client
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NO_INSTALL_MANPAGES)
 .for n in 1 8

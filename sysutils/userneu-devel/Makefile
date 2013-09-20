@@ -1,9 +1,5 @@
-# New ports collection makefile for:	userneu-devel
-# Date created:		22 November 2003
-# Whom:			Andreas Fehlner (fehlner@gmx.de)
-#
+# Created by: Andreas Fehlner (fehlner@gmx.de)
 # $FreeBSD$
-#
 
 PORTNAME=	userneu
 PORTVERSION=	1.43
@@ -36,6 +32,7 @@ LDOCS2=		README INSTALL userneu.pod userneu.conf.pod
 PORTDOCS=	${LDOCS1} ${LDOCS2}
 EXAMPLES=	userlist userneu.conf.example
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

@@ -19,6 +19,7 @@ USES=		fuse pkgconfig
 PLIST_FILES=	bin/pakmount
 MAN1=		pakmount.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,Linux,${OPSYS}, ; s,Fatnasy,Fantasy,' \
 		${WRKSRC}/src/${MAN1}

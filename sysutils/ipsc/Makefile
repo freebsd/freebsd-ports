@@ -21,6 +21,7 @@ MAN8=	ipsc.8
 
 PRIPS_WRKSRC!=	cd ${.CURDIR}/../prips && ${MAKE} -V WRKSRC
 
+NO_STAGE=	yes
 post-extract:
 	${LN} -s ${PRIPS_WRKSRC} ${WRKDIR}/prips
 

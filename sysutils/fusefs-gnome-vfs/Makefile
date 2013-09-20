@@ -19,6 +19,7 @@ USE_GMAKE=	yes
 PLIST_FILES=	bin/gnomevfs-mount
 PORTDOCS=	README
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gnomevfs-mount ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

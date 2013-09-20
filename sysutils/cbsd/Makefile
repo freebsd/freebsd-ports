@@ -25,6 +25,7 @@ CBSD_HOME?=	${PREFIX}/cbsd
 
 MAN7=		cbsd.7
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 901000

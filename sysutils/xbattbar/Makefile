@@ -17,4 +17,5 @@ WRKSRC=		${WRKDIR}/xbattbar-${PORTVERSION}
 MAN1=		xbattbar.1
 PLIST_FILES=	bin/xbattbar
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

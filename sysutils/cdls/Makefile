@@ -13,6 +13,7 @@ PLIST_FILES=	bin/cdls
 
 USES=		ncurses
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${NCURSESBASE} == /usr

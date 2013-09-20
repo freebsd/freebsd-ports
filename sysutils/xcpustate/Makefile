@@ -23,4 +23,5 @@ USE_XORG=	ice sm x11 xaw xext xmu xt
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

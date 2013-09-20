@@ -25,6 +25,7 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	BUGS README TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 800076

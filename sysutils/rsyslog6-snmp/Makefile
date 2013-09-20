@@ -12,6 +12,7 @@ CONFIGURE_ARGS+=--enable-snmp
 PLIST_FILES+=	lib/rsyslog/omsnmp.la \
 		lib/rsyslog/omsnmp.so
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} \
 		${WRKSRC}/plugins/omsnmp/.libs/omsnmp.so ${PREFIX}/lib/rsyslog

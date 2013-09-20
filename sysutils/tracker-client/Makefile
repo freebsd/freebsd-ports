@@ -48,6 +48,7 @@ CONFIGURE_ARGS=	--enable-video-extractor=gstreamer \
 		--enable-external-qdbm --enable-libexif --enable-libvorbis \
 		--enable-libiptcdata
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(TRACKER_SLAVE)

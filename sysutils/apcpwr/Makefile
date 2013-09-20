@@ -15,6 +15,7 @@ RUN_DEPENDS=	snmpwalk:${PORTSDIR}/net-mgmt/net-snmp
 PLIST_FILES=	bin/apcpwr etc/apcpwr.conf.dist
 MAN8=		apcpwr.8
 
+NO_STAGE=	yes
 post-install:
 	@ ${ECHO}
 	@ ${SED} -e "s:%%PREFIX%%:${PREFIX}:g" pkg-message | fmt

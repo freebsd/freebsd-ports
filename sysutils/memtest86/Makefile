@@ -1,9 +1,5 @@
-# New ports collection makefile for:	memtest86
-# Date created:		27 Mar 2004
-# Whom:			Radim Kolar
-#
+# Created by: Radim Kolar
 # $FreeBSD$
-#
 
 PORTNAME=	memtest86
 PORTVERSION=	4.0b
@@ -27,6 +23,7 @@ PLIST_DIRS=	%%DATADIR%%
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-extract:
 	@${UNZIP_CMD} -qo ${DISTDIR}/${DISTNAME:S,b,s,}.iso.zip -d ${WRKSRC}
 

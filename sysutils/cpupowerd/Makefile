@@ -1,9 +1,5 @@
-# New ports collection makefile for:   cpupowerd
-# Date created:        2008-06-01
-# Whom:                Bernhard Froehlich <decke@bluelife.at>
-#
+# Created by: Bernhard Froehlich <decke@bluelife.at>
 # $FreeBSD$
-#
 
 PORTNAME=	cpupowerd
 PORTVERSION=	0.2.1
@@ -20,6 +16,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKE_ENV+=	GROUP=wheel \
 		RIGHTS=555
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${OSVERSION} < 800042 && ${OSVERSION} >= 800000) || ${OSVERSION} < 701102

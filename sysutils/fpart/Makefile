@@ -20,6 +20,7 @@ MAN1=		fpart.1
 PLIST_FILES=	bin/fpart
 PORTDOCS=	Changelog README TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

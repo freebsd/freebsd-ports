@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bsdhwmon
-# Date created:				5 October 2008
-# Whom:					Jeremy Chadwick <jdc@parodius.com>
-#
+# Created by: Jeremy Chadwick <jdc@parodius.com>
 # $FreeBSD$
-#
 
 PORTNAME=	bsdhwmon
 PORTVERSION=	20120702
@@ -19,6 +15,7 @@ MAN8=		bsdhwmon.8
 OPTIONS_DEFINE=	DEBUG
 DEBUG_DESC=	Enable debug build
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

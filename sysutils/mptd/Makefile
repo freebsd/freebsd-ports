@@ -12,6 +12,7 @@ COMMENT=	Monitoring daemon for mpt RAID controllers
 USE_RC_SUBR=	mptd
 PLIST_FILES+=	sbin/mptd
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mptd ${PREFIX}/sbin/mptd
 

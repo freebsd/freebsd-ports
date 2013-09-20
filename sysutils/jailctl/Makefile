@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jailctl
-# Date created:				04.04.2005
-# Whom:					Eirik Oeverby <ltning@anduin.net>
-#
+# Created by: Eirik Oeverby <ltning@anduin.net>
 # $FreeBSD$
-#
 
 PORTNAME=	jailctl
 PORTVERSION=	0.80
@@ -21,4 +17,5 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/jailctl
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

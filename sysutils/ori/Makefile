@@ -26,6 +26,7 @@ PLIST_FILES=	bin/ori \
 		bin/ori_httpd
 MAN1=		ori.1 orifs.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

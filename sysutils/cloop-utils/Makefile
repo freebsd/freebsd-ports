@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cloop-utils
-# Date created:				19 Jan 2004
-# Whom:					Max Khon <fjoe@FreeBSD.org>
-#
+# Created by: Max Khon <fjoe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cloop-utils
 PORTVERSION=	${CLOOP_VERSION}.${CLOOP_REVISION}
@@ -26,6 +22,7 @@ PORTDOCS=	README
 CLOOP_VERSION=	2.01
 CLOOP_REVISION=	2
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/^CFLAGS:=/CFLAGS?=/' ${WRKSRC}/Makefile
 

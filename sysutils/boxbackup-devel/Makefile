@@ -41,6 +41,7 @@ CLIENT_DESC=		Install the bbackupd client
 SERVER_DESC=		Install the bbstored server
 GNUREADLINE_DESC=	Enable the use of GNU readline
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUREADLINE}

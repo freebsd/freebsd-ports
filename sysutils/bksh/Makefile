@@ -11,6 +11,7 @@ COMMENT=	Backup-only shell
 
 PLIST_FILES=	bin/bksh
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s/NOMAN/NO_MAN/" ${WRKSRC}/local.mk
 

@@ -20,6 +20,7 @@ MAN1=		multitail.1
 PLIST_FILES=	bin/multitail etc/multitail.conf.sample
 PORTDOCS=	readme.txt license.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

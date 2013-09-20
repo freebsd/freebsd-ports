@@ -49,6 +49,7 @@ MYSQL_DESC=	Enable MySQL integration
 LIBVIRT_DESC=	Enable libvirt integration
 OPTIONS_DEFAULT=TOKYOCABINET
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTOKYOCABINET}

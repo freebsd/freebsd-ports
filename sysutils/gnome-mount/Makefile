@@ -28,4 +28,5 @@ MAN1=		gnome-mount.1
 MLINKS=		gnome-mount.1 gnome-eject.1 \
 		gnome-mount.1 gnome-umount.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

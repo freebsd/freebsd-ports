@@ -52,6 +52,7 @@ MAN1=	gbasename.1 gcat.1 gchcon.1 gchgrp.1 gchmod.1 gchown.1 gchroot.1 \
 OPTIONS_DEFINE=	GMP NLS
 OPTIONS_DEFAULT=NLS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-Unix-Mknod
-# Date created:                        Wed Jun 15 12:44:11 CDT 2005
-# Whom:                                        Jim Pirzyk pirzyk@freebsd.org
-#
+# Created by: Jim Pirzyk pirzyk@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	Unix-Mknod
 PORTVERSION=	0.04
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=	Unix::Mknod.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

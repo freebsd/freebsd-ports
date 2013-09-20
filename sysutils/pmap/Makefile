@@ -24,6 +24,7 @@ MAKE_ENV+=	KMODDIR=${KMODDIR}
 MAN8=		pmap.8
 MANCOMPRESSED=	maybe
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-fetch:

@@ -43,6 +43,7 @@ MAN1=		gnome-power-manager.1 gnome-power-preferences.1 \
 		gnome-power-statistics.1
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lresolv|| ; s|-Werror||g' \
 		${WRKSRC}/configure

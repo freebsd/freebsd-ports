@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-filelike
-# Date created:		2009-08-19
-# Whom:			Dikshie
-#
+# Created by: Dikshie
 # $FreeBSD$
 
 PORTNAME=	filelike
@@ -15,4 +12,5 @@ COMMENT=	Python module for building and manipulating file-like object
 USE_PYTHON=		yes	
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

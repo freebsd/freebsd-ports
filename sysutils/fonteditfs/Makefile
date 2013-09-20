@@ -1,9 +1,5 @@
-# New ports collection makefile for:    fnteditfs
-# Date created:         Sat Oct 12 21:03:00 IST 2002
-# Whom:                 uri@keves.org
-#
+# Created by: uri@keves.org
 # $FreeBSD$
-#
 
 PORTNAME=	fonteditfs
 PORTVERSION=	1.2
@@ -18,6 +14,7 @@ COMMENT=	Full screen syscons font editor
 MAN1=		fnteditfs.1
 PLIST_FILES=	bin/fnteditfs
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|__PREFIX__|${PREFIX}|g ; \
 		s|__INSTALL_MAN__|${INSTALL_MAN}|g ; \

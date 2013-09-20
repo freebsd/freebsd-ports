@@ -19,6 +19,7 @@ USE_ZIP=	yes
 
 PLIST_FILES=	bin/pdixtract
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKDIR}; ${CC} ${CFLAGS} pdixtract.c -o pdixtract
 

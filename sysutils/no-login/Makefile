@@ -14,4 +14,5 @@ COMMENT=	Refuse a login to a user, and make a note of it in syslog
 PLIST_FILES=	bin/nologin
 MAN8=		nologin.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	uschedule
-# Date created:		2004-02-19
-# Whom:			Thomas Seck <tmseck@netcologne.de>
-#
+# Created by: Thomas Seck <tmseck@netcologne.de>
 # $FreeBSD$
-#
 
 PORTNAME=	uschedule
 PORTVERSION=	0.7.1
@@ -31,6 +27,7 @@ sbin=		uscheduled
 PLIST_FILES=	${bin:S,^,bin/,}
 PLIST_FILES+=	${sbin:S,^,sbin/,}
 
+NO_STAGE=	yes
 pre-build:
 	${ECHO_CMD} "${CC}" > ${WRKSRC}/src/conf-cc
 	${ECHO_CMD} "${CFLAGS}" > ${WRKSRC}/src/conf-cflags

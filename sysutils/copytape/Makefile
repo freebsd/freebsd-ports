@@ -1,9 +1,5 @@
-# New ports collection makefile for: copytape
-# Date created:		23 October 1998
-# Whom:			Stephen J. Roznowski <sjr@home.net>
-#
+# Created by: Stephen J. Roznowski <sjr@home.net>
 # $FreeBSD$
-#
 
 PORTNAME=		copytape
 PORTVERSION=		1.0
@@ -29,6 +25,7 @@ MAN1=			copytape.1
 MAN5=			copytape.5
 PLIST_FILES=		bin/copytape
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/copytape ${PREFIX}/bin/copytape
 	@${INSTALL_MAN} ${WRKSRC}/copytape.1 ${PREFIX}/man/man1/copytape.1

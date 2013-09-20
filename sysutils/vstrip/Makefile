@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vstrip
-# Date created:		Mon Jan  2 18:13:03 UTC 2006
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vstrip
 DISTVERSION=	0.8f
@@ -23,6 +19,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -type f -print0 | \
 		${XARGS} -0 -x -n 10 \

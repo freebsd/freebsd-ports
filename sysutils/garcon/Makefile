@@ -20,6 +20,7 @@ USES=		pathfix pkgconfig
 
 OPTIONS_DEFINE=		DOCS NLS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

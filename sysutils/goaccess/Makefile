@@ -31,6 +31,7 @@ MAN1=	${PORTNAME}.1
 
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README TODO
 
+NO_STAGE=	yes
 do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

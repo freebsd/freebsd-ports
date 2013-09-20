@@ -17,4 +17,5 @@ GNU_CONFIGURE=	yes
 NO_INSTALL_MANPAGES=	yes
 USES=		fuse pkgconfig iconv gmake
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

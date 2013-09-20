@@ -23,4 +23,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/guard
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

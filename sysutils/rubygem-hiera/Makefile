@@ -17,6 +17,7 @@ RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/hiera
 HIERA_DBDIR=	/var/db/hiera
 
+NO_STAGE=	yes
 post-install:
 	@${REINPLACE_CMD} "s!/etc/hiera.yaml!${PREFIX}/etc/hiera.yaml!" \
 		${PREFIX}/${GEM_LIB_DIR}/bin/hiera \

@@ -19,6 +19,7 @@ PLIST_FILES=	bin/dwatch etc/dwatch.conf-dist
 CFLAGS+=	-DETCDIR="\"${PREFIX}/etc\"" \
 		-DPS="\"/bin/ps -ax\""
 
+NO_STAGE=	yes
 do-build:
 	(cd ${BUILD_WRKSRC}; ${CC} ${CFLAGS} -o dwatch dwatch.c)
 

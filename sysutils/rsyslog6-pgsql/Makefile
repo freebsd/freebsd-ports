@@ -9,6 +9,7 @@ USE_PGSQL=	yes
 
 CONFIGURE_ARGS+=--enable-pgsql
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} \
 		${WRKSRC}/plugins/ompgsql/.libs/ompgsql.so ${PREFIX}/lib/rsyslog

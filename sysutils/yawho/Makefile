@@ -1,9 +1,5 @@
-# New ports collection makefile for:	yawho
-# Date created:		16 December 2000
-# Whom:			Daniel Harris <dannyboy@FreeBSD.org>
-#
+# Created by: Daniel Harris <dannyboy@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	yawho
 PORTVERSION=	1.2
@@ -17,6 +13,7 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/yawho
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -E -e 's/kp_.?proc\.._/ki_/' ${WRKSRC}/process.c
 

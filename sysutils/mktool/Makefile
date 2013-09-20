@@ -14,6 +14,7 @@ BROKEN=		Unfetchable due to MASTER_SITES reorganization
 USES=		gmake
 USE_BZIP2=	yes
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e ' \
 		s,^OPT=.*,OPT=${CFLAGS},; \

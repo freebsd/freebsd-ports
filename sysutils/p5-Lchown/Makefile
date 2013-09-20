@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Lchown
-# Date created:		2008-04-28
-# Whom:			Jeffrey Goldberg <jeffrey@goldmark.org>
-#
+# Created by: Jeffrey Goldberg <jeffrey@goldmark.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Lchown
 PORTVERSION=	1.01
@@ -21,4 +17,5 @@ USE_PERL5=	modbuild
 
 MAN3=		Lchown.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

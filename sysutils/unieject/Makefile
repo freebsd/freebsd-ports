@@ -30,6 +30,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		unieject.1
 MAN5=		unieject.conf.5
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/-D_POSIX_C_SOURCE/s|^CPPFLAGS|#CPPFLAGS|' ${WRKSRC}/configure

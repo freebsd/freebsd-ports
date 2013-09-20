@@ -1,9 +1,5 @@
-# New ports collection makefile for:	slst
-# Date created:				22 January 2006
-# Whom:					Jeffrey H. Johnson <CPE1704TKS@bellsouth.net>
-#
+# Created by: Jeffrey H. Johnson <CPE1704TKS@bellsouth.net>
 # $FreeBSD$
-#
 
 PORTNAME=	slst
 PORTVERSION=	0.2
@@ -18,4 +14,5 @@ ALL_TARGET=	all
 
 PLIST_FILES=	bin/slst
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

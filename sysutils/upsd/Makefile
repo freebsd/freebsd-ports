@@ -14,6 +14,7 @@ WRKSRC=		${WRKDIR}/upsd-2.0
 
 PLIST_FILES=	sbin/upsd etc/upsd.conf etc/rc.d/upsd.sh
 
+NO_STAGE=	yes
 pre-build:
 	@${MV} ${WRKSRC}/config.h ${WRKSRC}/conf.h.orig
 	@${SED} -e "s!@prefix@!${PREFIX}!g" ${WRKSRC}/conf.h.orig > ${WRKSRC}/conf.h

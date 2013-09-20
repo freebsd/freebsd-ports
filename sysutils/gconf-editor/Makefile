@@ -25,4 +25,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		gconf-editor.1
 GCONF_SCHEMAS=	gconf-editor.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

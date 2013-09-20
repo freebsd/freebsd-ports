@@ -20,6 +20,7 @@ PORTDOCS=	README.txt LICENSE.txt chipset_info.txt changes.log
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && \
 		${CC} ${CFLAGS} 915resolution.c -o 915resolution

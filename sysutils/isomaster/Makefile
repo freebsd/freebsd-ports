@@ -26,6 +26,7 @@ PLIST_SUB=	DESKTOPDIR="${DESKTOPDIR:S,^${PREFIX}/,,}"
 
 MAN1=		isomaster.1
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|@$$(CC)|$$(CC)|'

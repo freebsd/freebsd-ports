@@ -21,6 +21,7 @@ PLIST_FILES=	bin/sysupdate.sh
 OPTIONS_DEFINE=	FASTEST_CVSUP
 FASTEST_CVSUP_DESC=	Support fastest_cvsup
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFASTEST_CVSUP}

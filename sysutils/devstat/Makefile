@@ -12,6 +12,7 @@ COMMENT=	Utility to display device statistics
 PLIST_FILES=	bin/devstat
 MAN8=		devstat.8
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/devstat ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/devstat.8 ${PREFIX}/man/man8

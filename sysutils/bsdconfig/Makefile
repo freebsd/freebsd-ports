@@ -208,6 +208,7 @@ PLIST_DIRS=	${BSDCFG_LIBE}/020.docsinstall/include \
 		${BSDCFG_SHARE}                        \
 		share/examples/bsdconfig
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900030

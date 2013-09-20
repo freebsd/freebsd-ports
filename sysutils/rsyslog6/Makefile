@@ -49,6 +49,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-rtinst --enable-debug
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"

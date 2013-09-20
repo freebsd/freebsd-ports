@@ -17,6 +17,7 @@ ALL_TARGET=	dupmerge
 PLIST_FILES=	bin/dupmerge
 PORTDOCS=	readme.txt
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dupmerge ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)

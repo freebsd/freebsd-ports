@@ -1,4 +1,3 @@
-# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/sysutils/consolekit/Makefile,v 1.25 2010/10/23 10:12:30 kwm Exp $
 
@@ -26,6 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-pid-file=/var/run/${PORTNAME}.pid \
 		--localstatedir=/var
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/ck-get-x11-display-device \
 	    	${PREFIX}/libexec/ck-get-x11-display-device

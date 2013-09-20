@@ -41,6 +41,7 @@ MAN3=		Tail::Stat.3 \
 		Tail::Stat::Plugin::nginx.3 \
 		Tail::Stat::Plugin::spamd.3
 
+NO_STAGE=	yes
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 

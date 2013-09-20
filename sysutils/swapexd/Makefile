@@ -13,6 +13,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	sbin/${PORTNAME} etc/rc.d/swapexd
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

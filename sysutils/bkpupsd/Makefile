@@ -1,9 +1,5 @@
-# New ports collection makefile for: bkpupsd
-# Date created:             26 May 1995
-# Whom:                     Yoshifumi Watanabe <mwatts@edu1.tokyo-med.ac.jp>
-#
+# Created by: Yoshifumi Watanabe <mwatts@edu1.tokyo-med.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	bkpupsd
 PORTVERSION=	1.0a
@@ -15,4 +11,5 @@ COMMENT=	A simple UPS daemon for APC BK Pro(TM)
 
 MAN8=		bkpupsd.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

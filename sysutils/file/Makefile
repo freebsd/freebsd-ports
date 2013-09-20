@@ -23,6 +23,7 @@ MAN1=		file.1
 MAN3=		libmagic.3
 MAN5=		magic.5
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

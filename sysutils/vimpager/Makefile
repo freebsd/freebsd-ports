@@ -1,4 +1,4 @@
-# Created by:	Adam Weinberger <adamw@FreeBSD.org>
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	vimpager
@@ -16,6 +16,7 @@ FETCH_ARGS=	-prR
 PLIST_FILES=	bin/${PORTNAME} bin/vimcat etc/${PORTNAME}rc
 MAN1=		${PORTNAME}.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/vimcat ${PREFIX}/bin

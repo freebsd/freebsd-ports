@@ -1,9 +1,5 @@
-# New ports collection makefile for:    vmdktool
-# Date created:         February 24, 2012
-# Whom:                 Brian Somers <brian@FreeBSD.org>
-#
+# Created by: Brian Somers <brian@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vmdktool
 PORTVERSION=	1.3
@@ -21,4 +17,5 @@ MAN8=		vmdktool.8
 
 PLIST_FILES=	bin/vmdktool
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

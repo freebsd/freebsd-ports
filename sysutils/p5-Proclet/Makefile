@@ -32,4 +32,5 @@ MAN1=	proclet.1
 MAN3=	Proclet.3 \
 	Proclet::Declare.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

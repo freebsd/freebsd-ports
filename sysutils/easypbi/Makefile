@@ -1,6 +1,4 @@
-#
 # $FreeBSD$
-#
 
 PORTNAME=	easypbi
 PORTVERSION=	2.0
@@ -18,6 +16,7 @@ WRKSRC=		${WRKDIR}/EasyPBI-source
 
 QMAKE_PRO=	EasyPBI.pro
 
+NO_STAGE=	yes
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} -unix CONFIG+="configure" ${QMAKE_PRO}

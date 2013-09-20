@@ -20,6 +20,7 @@ USES=		perl5
 
 MAN1=		sysgather.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MEXAMPLES)

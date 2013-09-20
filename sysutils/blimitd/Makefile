@@ -1,9 +1,5 @@
-# New ports collection makefile for:	blimitd
-# Date created:		29 Jul 2001
-# Whom:			Andrew Stevenson <andrew@ugh.net.au>
-#
+# Created by: Andrew Stevenson <andrew@ugh.net.au>
 # $FreeBSD$
-#
 
 PORTNAME=	blimitd
 PORTVERSION=	0.1
@@ -19,6 +15,7 @@ WRKSRC=		${WRKDIR}/blimitd
 MAN8=		blimitd.8
 MANCOMPRESSED=	maybe
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900007

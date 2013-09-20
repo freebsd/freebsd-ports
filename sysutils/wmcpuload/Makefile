@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmcpuload
-# Date created:				18 Apr 2001
-# Whom:					Soeren Boll Overgaard <boll@tolkien.dk>
-#
+# Created by: Soeren Boll Overgaard <boll@tolkien.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	wmcpuload
 PORTVERSION=	1.0.1
@@ -22,6 +18,7 @@ MAN1=		wmcpuload.1
 PORTDOCS=	ChangeLog README
 PLIST_FILES=	bin/wmcpuload
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^DEFS/s|-I\.\.$$|-I.. -I../libdockapp/|g ; \
 		 /^CFLAGS/s|-I../libdockapp/||g' ${WRKSRC}/src/Makefile.in

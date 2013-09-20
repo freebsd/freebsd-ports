@@ -18,4 +18,5 @@ LATEST_LINK=	${PORTNAME}-kde4
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

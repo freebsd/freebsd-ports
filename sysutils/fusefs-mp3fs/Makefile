@@ -23,4 +23,5 @@ USES=		fuse pkgconfig
 MAN1=		mp3fs.1
 PLIST_FILES=	bin/mp3fs
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,6 +23,7 @@ PORTDOCS=	CHANGELOG INSTALL README SECURITY VERSION \
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's!/usr/bin/perl!${PERL}!' \
 		-e 's!gcc!$(CC)!' ${WRKSRC}/Makefile

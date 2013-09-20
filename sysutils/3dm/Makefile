@@ -20,6 +20,7 @@ SSLFIX_DESC=	Install KB16625-patched binaries
 
 OPTIONS_DEFAULT=	SSLFIX
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !empty(PORT_OPTIONS:MSSLFIX)

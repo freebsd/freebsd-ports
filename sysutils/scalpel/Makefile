@@ -22,6 +22,7 @@ PLIST_FILES+=	etc/scalpel.conf.sample bin/scalpel
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's/#ifdef __APPLE__/#if defined(__APPLE__) || defined(__FreeBSD__)/' \

@@ -1,9 +1,5 @@
-# @(#) $Id: Makefile,v 1.3 2008/04/26 04:19:19 leres Exp $ (LBL)
-# New ports collection makefile for: lbl-hf
-# Date created:	24 Apr 2008
-# Whom:		leres@ee.lbl.gov
+# Created by: leres@ee.lbl.gov
 # $FreeBSD$
-#
 
 PORTNAME=	hf
 PORTVERSION=	1.3
@@ -33,6 +29,7 @@ verify: checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
 # Only install hf
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hf ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/hf.1 ${PREFIX}/man/man1

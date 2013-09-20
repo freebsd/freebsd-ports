@@ -19,4 +19,5 @@ GNU_CONFIGURE=	yes
 MAN1=		ui.1
 MLINKS=		ui.1 userinfo.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

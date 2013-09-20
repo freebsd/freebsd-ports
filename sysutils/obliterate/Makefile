@@ -13,4 +13,5 @@ COMMENT=	Securely delete file[s]
 PLIST_FILES=	bin/obliterate
 MAN8=		obliterate.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

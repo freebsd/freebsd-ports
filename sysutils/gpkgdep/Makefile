@@ -19,4 +19,5 @@ AUTOMAKE_ARGS=	--add-missing
 USES=		gmake pkgconfig
 PLIST_FILES=	bin/gpkgdep
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

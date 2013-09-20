@@ -31,6 +31,7 @@ USE_AUTOTOOLS=	autoconf
 MAN1=		hdup.1
 MAN5=		hdup.conf.5
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTAR_PORT}

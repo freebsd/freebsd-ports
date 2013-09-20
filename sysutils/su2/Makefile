@@ -1,9 +1,5 @@
-# New ports collection makefile for:	su2
-# Date created:		12 Sep 1996
-# Whom:			gurney_j@efn.org
-#
+# Created by: gurney_j@efn.org
 # $FreeBSD$
-#
 
 PORTNAME=	su2
 PORTVERSION=	1.3
@@ -19,6 +15,7 @@ NO_CDROM=	Don't sell for profit
 MAN1=		su2.1
 PLIST_FILES=	bin/su2
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/^CC=gcc/d' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's,/etc/super,${PREFIX}/etc/super,g' \

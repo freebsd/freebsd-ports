@@ -1,9 +1,5 @@
-# Ports collection makefile for:	vcp
-# Date created:		Tue Feb 11, 2003
-# Whom:			Michael L. Hostbaek (mich@freebsdcluster.org)
-#
+# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
 # $FreeBSD$
-#
 
 PORTNAME=	vcp
 PORTVERSION=	2.2
@@ -19,6 +15,7 @@ CONFLICTS=	p5-VCP-[0-9]* \
 
 LDFLAGS+=	-lncurses
 
+NO_STAGE=	yes
 pre-build:
 	@${REINPLACE_CMD} -e 's|/etc/vcp.conf|${PREFIX}/etc/vcp.conf|' ${WRKSRC}/misc.c
 	@${REINPLACE_CMD} -e 's|/etc/vcp.conf|${PREFIX}/etc/vcp.conf|g' ${WRKSRC}/vcp.1

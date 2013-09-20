@@ -1,7 +1,4 @@
-# New ports collection makefile for:    xen-tools
-# Date created:                         13 December 2011
-# Whom:                                 Evan Sarmiento <esarmiento@wayfair.com>
-#
+# Created by: Evan Sarmiento <esarmiento@wayfair.com>
 # $FreeBSD$
 
 PORTNAME=	xen-tools
@@ -34,6 +31,7 @@ PLIST_FILES=	lib/libxenstore.so.3.0 \
 		bin/xenstore-rm \
 		bin/xenstore-write
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}/tools && ${GMAKE} -C include
 	cd ${WRKSRC}/tools/misc && ${GMAKE} xen-detect

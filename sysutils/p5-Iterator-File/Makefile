@@ -21,4 +21,5 @@ MAN3=		Iterator::File::Status.3 \
 		Iterator::File.3 \
 		Iterator::File::State::IPCShareable.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

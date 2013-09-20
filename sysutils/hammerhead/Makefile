@@ -1,9 +1,5 @@
-# New ports collection makefile for:   hammerhead
-# Date created:        14 November 2002
-# Whom:                John von Essen
-#
+# Created by: John von Essen
 # $FreeBSD$
-#
 
 PORTNAME=	hammerhead
 PORTVERSION=	2.1.4
@@ -16,6 +12,7 @@ COMMENT=	A webserver stressing tool
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
 		${WRKSRC}/src/Makefile

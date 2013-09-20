@@ -23,6 +23,7 @@ plist: patch
 
 # Use "amd -S" to avoid a vm locking panic, the scope of which has not yet
 # been determined. See kern/181590.
+NO_STAGE=	yes
 do-install:
 		@cd ${WRKSRC}; ./install.sh -prefix=${PREFIX} \
 			-amd="/usr/sbin/amd -S"

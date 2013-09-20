@@ -18,6 +18,7 @@ PLIST_FILES+=	lib/rsyslog/imrelp.la \
 		lib/rsyslog/omrelp.la \
 		lib/rsyslog/omrelp.so
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} \
 		${WRKSRC}/plugins/omrelp/.libs/omrelp.so ${PREFIX}/lib/rsyslog

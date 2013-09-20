@@ -1,9 +1,5 @@
-# New ports collection makefile for:	videogen
-# Date created:			Mar 30, 2002
-# Whom:				Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	videogen
 PORTVERSION=	0.33
@@ -19,6 +15,7 @@ MAN1=		${PORTNAME}.1
 PORTDOCS=	BUGS CHANGES README THANKS
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 post-extract:
 	@${LN} -sf ${PORTNAME}.1x ${WRKSRC}/${PORTNAME}.1
 

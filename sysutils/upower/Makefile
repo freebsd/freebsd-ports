@@ -43,4 +43,5 @@ MAN7=		UPower.7
 MAN8=		upowerd.8
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

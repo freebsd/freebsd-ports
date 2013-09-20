@@ -24,6 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-kcmodules-1
 
 PORTDATE=	20121008
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr,${KDE4_PREFIX},' \
 		-e 's,/etc,${KDE4_PREFIX}/etc,' \

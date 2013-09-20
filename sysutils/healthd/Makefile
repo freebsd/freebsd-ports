@@ -1,9 +1,5 @@
-# New ports collection makefile for:	healthd
-# Date created:		15 November 1999
-# Whom:			jim@thehousleys.net
-#
+# Created by: jim@thehousleys.net
 # $FreeBSD$
-#
 
 PORTNAME=	healthd
 PORTVERSION=	0.7.9
@@ -16,6 +12,7 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A daemon to monitor vital motherboard parameters
 
 OPTIONS_DEFINE=	IPV6 FULL_CONFIG
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 FULL_CONFIG_DESC= Remotely reading the full config

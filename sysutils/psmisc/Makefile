@@ -20,6 +20,7 @@ USE_GMAKE=	yes
 
 OPTIONS_DEFINE=	NLS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 MAN1=		killall.1 pstree.1

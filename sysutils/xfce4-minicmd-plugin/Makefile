@@ -1,6 +1,5 @@
 # Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-minicmd-plugin
 PORTVERSION=	0.4
@@ -19,4 +18,5 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	libgui configenv panel
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

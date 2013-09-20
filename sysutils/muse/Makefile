@@ -1,9 +1,5 @@
-# New ports collection makefile for:	muse
-# Date created:				27 December 1999
-# Whom:					freebsd@spatula.net
-#
+# Created by: freebsd@spatula.net
 # $FreeBSD$
-#
 
 PORTNAME=	muse
 PORTVERSION=	0.2
@@ -17,4 +13,5 @@ MAN1=		muse.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/muse
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

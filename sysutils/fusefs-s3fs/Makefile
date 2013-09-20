@@ -20,6 +20,7 @@ USES=		fuse pkgconfig
 
 MAN1=		s3fs.1
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's/libcrypto >= 0.9//g' ${WRKSRC}/configure
 

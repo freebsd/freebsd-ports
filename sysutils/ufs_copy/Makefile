@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ufs_copy
-# Date created:        3 July 2005
-# Whom:                MANTANI Nobutaka <nobutaka@freebsd.org>
-#
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ufs_copy
 PORTVERSION=	20060921
@@ -18,6 +14,7 @@ COMMENT=	Fast copy utility for UFS filesystem
 WRKSRC=		${WRKDIR}/ufs
 MAKE_ARGS=	BINDIR=${PREFIX}/sbin
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

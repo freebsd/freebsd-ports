@@ -1,9 +1,5 @@
-# New ports collection makefile for:    recoverdm
-# Date created:         22 January 2004
-# Whom:                 Jeffrey H. Johnson <CPE1704TKS@bellsouth.net>
-#
+# Created by: Jeffrey H. Johnson <CPE1704TKS@bellsouth.net>
 # $FreeBSD$
-#
 
 PORTNAME=	recoverdm
 PORTVERSION=	0.20
@@ -18,4 +14,5 @@ MAN1=		recoverdm.1
 
 PLIST_FILES=	bin/mergebad bin/recoverdm
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for: ffs2recov
-# Date created:         20070204
-# Whom:                 sten@blinkenlights.nl
-#
+# Created by: sten@blinkenlights.nl
 # $FreeBSD$
-#
 
 PORTNAME=	ffs2recov
 PORTVERSION=	1.0
@@ -22,4 +18,5 @@ PLIST_FILES=	sbin/ffs2recov
 MAKE_ENV=	BINDIR=${PREFIX}/sbin MANDIR=${MANPREFIX}/man/man \
 		WARNS=0
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

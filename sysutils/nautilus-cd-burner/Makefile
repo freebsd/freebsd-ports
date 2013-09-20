@@ -35,6 +35,7 @@ OPTIONS_DEFINE=	DVD
 OPTIONS_DEFAULT=DVD
 DVD_DESC=	DVD support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDVD}

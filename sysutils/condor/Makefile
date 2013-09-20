@@ -101,6 +101,7 @@ MAN1=	\
 	uniq_pid_midwife.1 \
 	uniq_pid_undertaker.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

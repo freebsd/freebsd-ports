@@ -20,6 +20,7 @@ USE_SCONS=	yes
 MAN8=		exfatlabel.8 mkexfatfs.8 dumpexfat.8 exfatfsck.8
 PLIST_FILES=	sbin/exfatlabel sbin/dumpexfat sbin/exfatfsck sbin/mkexfatfs
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/label/exfatlabel ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/dump/dumpexfat ${PREFIX}/sbin

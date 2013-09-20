@@ -29,6 +29,7 @@ WRKSRC=		${WRKDIR}/host/superscript.com/net/${DISTNAME}
 
 SCRIPTS_TO_INSTALL=	https@ sslcat sslconnect
 
+NO_STAGE=	yes
 post-patch:
 .for x in ${SCRIPTS_TO_INSTALL}
 	@${REINPLACE_CMD} -i ''	-e 's|HOME/command/|${PREFIX}/bin/|' \

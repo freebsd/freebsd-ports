@@ -20,6 +20,7 @@ SRCF=		crc32 dlink weedit md5
 
 PLIST_FILES=	bin/weedit bin/weeditreaddb
 
+NO_STAGE=	yes
 do-build:
 .for f in ${SRCF}
 	${CC} ${CFLAGS} -c ${WRKSRC}/${f}.c -o ${WRKSRC}/${f}.o

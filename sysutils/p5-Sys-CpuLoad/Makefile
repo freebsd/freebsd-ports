@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Sys-CpuLoad
-# Date created:				Sun Jan  5 09:13:46 CET 2003
-# Whom:					Lars Thegler <lars@thegler.dk>
-#
+# Created by: Lars Thegler <lars@thegler.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	Sys-CpuLoad
 PORTVERSION=	0.03
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Sys::CpuLoad.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

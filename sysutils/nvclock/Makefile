@@ -26,6 +26,7 @@ OPTIONS_DEFAULT=	NVCONTROL X11
 NVCONTROL_DESC=	NV-CONTROL support (for OpenGL settings)
 X11_DESC=	Build GUI program (requires GTK+ 2.x)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNVCONTROL}

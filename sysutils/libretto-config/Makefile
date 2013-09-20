@@ -22,6 +22,7 @@ MANLANG=	. ja
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

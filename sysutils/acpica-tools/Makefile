@@ -23,6 +23,7 @@ YFLAGS=		-v -d
 YFLAGS+=	-y
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC[[:blank:]]*=.*|CC = ${CC}|' \
 	    -e 's|^INSTALL[[:blank:]]*=.*|INSTALL = ${INSTALL}|g' \

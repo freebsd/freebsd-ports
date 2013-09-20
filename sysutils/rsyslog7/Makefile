@@ -34,6 +34,7 @@ UUID_DESC=	Support for generating a UUID per log message
 
 USES=		pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBI}

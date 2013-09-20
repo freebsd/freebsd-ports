@@ -19,6 +19,7 @@ CFLAGS+=	-D_ST_FLAGS_PRESENT_
 MAN1=		cpdup.1
 PLIST_FILES=	bin/cpdup
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cpdup ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/cpdup.1 ${PREFIX}/man/man1

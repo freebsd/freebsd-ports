@@ -26,6 +26,7 @@ PLIST_FILES=	bin/log_analysis \
 PLIST_DIRS=	%%DATADIR%%/Tk \
 		%%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTK}

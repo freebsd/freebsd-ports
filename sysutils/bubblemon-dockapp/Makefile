@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bubblemon-dockapp
-# Date created:			Apr 16, 2001
-# Whom:				Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	bubblemon-dockapp
 PORTVERSION=	1.46
@@ -22,6 +18,7 @@ MAKE_ARGS+=	PREFIX="${PREFIX}"
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s@CC = gcc@CC = ${CC}@g; \
 		s@-O3 -ansi -Wall@${CFLAGS} -Wall@g; \

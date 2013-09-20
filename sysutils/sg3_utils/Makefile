@@ -66,4 +66,5 @@ MAN8+=		sg_write_buffer.8
 MAN8+=		sg_write_long.8
 MAN8+=		sg_write_same.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
