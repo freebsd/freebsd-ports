@@ -14,6 +14,9 @@ COMMENT=	Gateway6 Tunnel Setup Protocol Client - Free IPv6 tunnel
 
 CONFLICTS=	freenet6-[0-9]*
 
+DEPRECATED=	Unsupported upstream, consider using net/gogoc
+EXPIRATION_DATE=	2013-12-31
+
 USE_RC_SUBR=	gateway6
 WRKSRC=		${WRKDIR}/gw6c-6_0_1
 ETCDIR=		${PREFIX}/etc
