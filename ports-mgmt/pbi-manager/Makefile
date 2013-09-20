@@ -1,7 +1,4 @@
-# New ports collection makefile for:	pbi-manager
-# Date created:				27 May 2010
-# Whom:					Kris Moore <kmoore@FreeBSD.org>
-#
+# Created by: Kris Moore <kmoore@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pbi-manager
@@ -30,6 +27,7 @@ MAN5=		pbi.conf.5
 MAN8=		pbi_addrepo.8 pbi_autobuild.8 pbi_deleterepo.8 \
 		pbi_makepatch.8 pbi_makeport.8 pbi_makerepo.8 pbid.8
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC} && ./install.sh ${LOCALBASE}
 

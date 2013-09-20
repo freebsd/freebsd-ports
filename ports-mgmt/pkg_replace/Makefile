@@ -27,6 +27,7 @@ PKGDB_FIX_DESC=		Fixing tool of installed package dependencies
 
 OPTIONS_SUB=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPKGDB_FIX}

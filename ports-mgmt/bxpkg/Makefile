@@ -20,6 +20,7 @@ USE_BZIP2=	YES
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

@@ -29,6 +29,7 @@ CFGFILE=	${WANTEDPORTSCFG}
 CFGFILE?=	/var/db/${PORTNAME}.conf
 .endif
 
+NO_STAGE=	yes
 .if exists(${CFGFILE})
 .include "${CFGFILE}"
 .endif

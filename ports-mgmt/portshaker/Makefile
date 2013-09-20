@@ -33,6 +33,7 @@ TEXLIVE_DESC=		Enable TeXLive ports (Experimental)
 XORG_DESC=		Enable Xorg development ports
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORTNAME} == "portshaker"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    portsopt
-# Date created:                         25 Dec 2006
-# Whom:                                 Beat Gaetzi <beat@chruetertee.ch>
-#
+# Created by: Beat Gaetzi <beat@chruetertee.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	portsopt
 PORTVERSION=	1.5
@@ -17,6 +13,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	sbin/portsopt
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/portsopt ${PREFIX}/sbin
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    pib
-# Date created:         30 December 1996
-# Whom:                 Mike Smith <msmith@freebsd.org>
-#
+# Created by: Mike Smith <msmith@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pib
 PORTVERSION=	1.2
@@ -18,6 +14,7 @@ COMMENT=	GUI Ports Collection management tool
 USE_TK=		84
 USE_TK_BUILD=	84
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}
 
 PLIST_FILES=	sbin/pkg-rmleaf
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${FILESDIR}/pkg-rmleaf ${WRKSRC}

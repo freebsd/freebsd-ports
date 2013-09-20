@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mkreadmes
-# Date created:	2012-03-01
-# Whom:		Conrad J. Sabatier <conrads@cox.net>
-#
+# Created by: Conrad J. Sabatier <conrads@cox.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mkreadmes
 DISTVERSION=	1.3
@@ -21,6 +17,7 @@ MANCOMPRESSED=	maybe
 PLIST_FILES=	sbin/${PORTNAME}
 PORTDATA=	*
 
+NO_STAGE=	yes
 post-extract:
 # adjust definition of PREFIX in mkreadmes.h only if it differs from
 # the current setting of ${PREFIX}

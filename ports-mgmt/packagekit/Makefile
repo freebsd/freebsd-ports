@@ -47,6 +47,7 @@ OPTIONS_DEFINE=	PORTS MANPAGES
 OPTIONS_DEFAULT=PORTS
 PORTS_DESC=Use portupgrade for management, dummy if disabled
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 . if ${PORT_OPTIONS:MMANPAGES}

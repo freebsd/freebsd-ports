@@ -1,9 +1,5 @@
-# New ports collection makefile for:	portrac
-# Date created:				12 Sep 2009
-# Whom:					mgp
-#
+# Created by: mgp
 # $FreeBSD$
-#
 
 PORTNAME=	portrac
 PORTVERSION=	0.4
@@ -28,6 +24,7 @@ USE_BZIP2=	yes
 
 USE_QT4=	gui moc_build qmake_build
 
+NO_STAGE=	yes
 do-configure:
 		@cd ${WRKDIR}/${DISTNAME} && ${QMAKE} portrac.pro
 

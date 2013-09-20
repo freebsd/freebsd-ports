@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-FreeBSD-Pkgs-Findupdates
-# Date created:		2009-04-01
-# Whom:			Zane C, Bowers <vvelox@vvelox.net>
-#
+# Created by: Zane C, Bowers <vvelox@vvelox.net>
 # $FreeBSD$
-#
 
 PORTNAME=	FreeBSD-Pkgs-FindUpdates
 PORTVERSION=	0.3.0
@@ -26,4 +22,5 @@ USE_PERL5=	configure
 
 MAN3=		FreeBSD::Pkgs::FindUpdates.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

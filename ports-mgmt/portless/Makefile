@@ -1,9 +1,5 @@
-# New ports collection makefile for:   portless
-# Date created:        8 June 2006
-# Whom:                Martin Kammerhofer
-#
+# Created by: Martin Kammerhofer
 # $FreeBSD$
-#
 
 PORTNAME=	portless
 PORTVERSION=	0.2.7
@@ -23,6 +19,7 @@ MANCOMPRESSED=	no
 
 PLIST_FILES=	bin/portless
 
+NO_STAGE=	yes
 do-build:
 	${SED} -e 's;@BASH@;${LOCALBASE}/bin/bash;g' \
 		${FILESDIR}/portless.sh >${WRKDIR}/portless

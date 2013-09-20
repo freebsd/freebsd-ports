@@ -33,6 +33,7 @@ KDEBASE_DESC=	Pull in kdebase-runtime for kdesu
 IGNORE=		only works with traditional pkg-tools
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOXYGEN}

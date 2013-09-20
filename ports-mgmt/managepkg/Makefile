@@ -20,6 +20,7 @@ WRKSRC=	${WRKDIR}
 NO_BUILD=	yes
 PLIST_FILES=	sbin/managepkg
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin/
 

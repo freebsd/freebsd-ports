@@ -1,9 +1,5 @@
-# New ports collection makefile for:	portshaker-config
-# Date created:		2010-04-29
-# Whom:			Romain Tartiere <romain@FreeBSD.org>
-#
+# Created by: Romain Tartiere <romain@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	portshaker-config
 CATEGORIES=	ports-mgmt
@@ -20,4 +16,5 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

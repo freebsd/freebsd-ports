@@ -1,9 +1,5 @@
-# New ports collection makefile for:	portaudit-db
-# Date created:				12 Jun 2004
-# Whom:					Oliver Eikemeier
-#
+# Created by: Oliver Eikemeier
 # $FreeBSD$
-#
 
 PORTNAME=	portaudit-db
 PORTVERSION=	0.2.3
@@ -29,6 +25,7 @@ SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e "s|%%PORTVERSION%%|${PORTVERSION}|g" \
 		-e "s|%%DATABASEDIR%%|${DATABASEDIR}|g"
 
+NO_STAGE=	yes
 do-build:
 	@for f in packaudit.sh packaudit.conf; do \
 		${SED} ${SED_SCRIPT} "${FILESDIR}/$$f" > "${WRKDIR}/$$f"; \

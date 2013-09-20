@@ -17,6 +17,7 @@ PLIST_FILES=	bin/pkg-plist
 NO_BUILD=	yes
 FETCH_ARGS=	-Fpr
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pkg-plist ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/pkg-plist.1 ${MAN1PREFIX}/man/man1/

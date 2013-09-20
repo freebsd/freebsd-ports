@@ -18,6 +18,7 @@ USE_XZ=		yes
 
 PORTDOCS=	BUGS ChangeLog COPYRIGHT README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

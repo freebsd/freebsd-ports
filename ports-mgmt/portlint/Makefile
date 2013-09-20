@@ -1,8 +1,5 @@
 # Created by: Jun-ichiro itojun Hagino <itojun@itojun.org>
 # $FreeBSD$
-#
-# This port is self contained in the src directory.
-#
 
 PORTNAME=	portlint
 PORTVERSION=	2.14.4
@@ -28,6 +25,7 @@ PLIST_FILES+=	%%EXAMPLESDIR%%/portlintgrep
 PLIST_DIRS=	%%EXAMPLESDIR%%
 .endif
 
+NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 

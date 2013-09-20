@@ -20,6 +20,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/xps
 MAN1=		xps.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/xps ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1

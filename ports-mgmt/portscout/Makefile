@@ -29,6 +29,7 @@ RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI	\
 		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite		\
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLITE3}

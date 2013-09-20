@@ -32,6 +32,7 @@ SUB_FILES=	pkg-message
 SUB_LIST=	MAN7PREFIX="${MAN7PREFIX}"
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

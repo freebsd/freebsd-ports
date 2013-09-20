@@ -1,9 +1,5 @@
-# New ports collection makefile for:	portaudit
-# Date created:				25 Jan 2004
-# Whom:					Oliver Eikemeier
-#
+# Created by: Oliver Eikemeier
 # $FreeBSD$
-#
 
 PORTNAME=	portaudit
 PORTVERSION=	0.6.1
@@ -36,6 +32,7 @@ SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e "s|%%REQPKGVER%%|${REQPKGVER}|g" \
 		-e "s|%%BZIP2_CMD%%|${BZIP2_CMD}|g" \
 
+NO_STAGE=	yes
 do-build:
 .for f in portaudit-cmd.sh portaudit.sh portaudit.1 portaudit.conf
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/${f} >${WRKDIR}/${f}

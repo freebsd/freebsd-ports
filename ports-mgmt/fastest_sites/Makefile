@@ -15,6 +15,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/fastest_sites
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}

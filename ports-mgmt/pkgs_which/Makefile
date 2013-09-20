@@ -16,6 +16,7 @@ USES=		perl5
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

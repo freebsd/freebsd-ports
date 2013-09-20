@@ -35,6 +35,7 @@ MAN1=	gpk-application.1 gpk-backend-status.1 gpk-install-local-file.1 \
 	gpk-install-provide-file.1 gpk-prefs.1 gpk-repo.1 gpk-update-icon.1 \
 	gpk-update-viewer.1
 
+NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -E -e 's/.*CPPFLAGS.*-Werror/#$$&/' \
 		-e 's|-Wmissing-include-dirs||g' ${WRKSRC}/configure

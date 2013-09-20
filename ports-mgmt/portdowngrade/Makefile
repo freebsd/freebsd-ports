@@ -15,6 +15,7 @@ RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 NO_BUILD=	yes
 PLIST_FILES=	sbin/portdowngrade
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/${PORTNAME} ${PREFIX}/sbin/
 

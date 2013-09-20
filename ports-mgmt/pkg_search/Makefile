@@ -1,9 +1,5 @@
-# New ports collection makefile for:   pkg_search
-# Date created:        3 December 2007
-# Whom:                Matthias Schmidt
-#
+# Created by: Matthias Schmidt
 # $FreeBSD$
-#
 
 PORTNAME=	pkg_search
 PORTVERSION=	1.3
@@ -18,6 +14,7 @@ PLIST_FILES=	bin/pkg_search
 
 MAN1=		pkg_search.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1

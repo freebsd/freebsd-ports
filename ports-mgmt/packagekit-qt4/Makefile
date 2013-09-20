@@ -1,10 +1,6 @@
-# New ports collection makefile for:	PackageKit-qt
-# Date created:		5 jan 2009
-# Whom:			Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/ports-mgmt/packagekit-qt4/Makefile,v 1.1 2010/01/08 02:16:38 kwm Exp $
-#
 
 PORTREVISION=	1
 PKGNAMESUFFIX=	-qt4
@@ -19,4 +15,5 @@ INSTALL_WRKSRC=	${WRKSRC}/lib/packagekit-qt
 SLAVEPORT=	qt4
 PLIST=		${.CURDIR}/pkg-plist
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

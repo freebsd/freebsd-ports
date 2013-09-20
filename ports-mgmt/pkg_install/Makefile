@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pkg_install
-# Date created:				14 Jul 2003
-# Whom:					Oliver Eikemeier
-#
+# Created by: Oliver Eikemeier
 # $FreeBSD$
-#
 
 PORTNAME=		pkg_install
 PORTVERSION=		20120822
@@ -26,6 +22,7 @@ OPTIONS_DEFINE=	WRAPPER
 OPTIONS_DEFAULT=	WRAPPER
 WRAPPER_DESC=	Use ports version instead of base if more recent
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWRAPPER}
