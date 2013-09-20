@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pcbsd-netmanager
-# Date created:				Jul 14, 2009
-# Whom:					Kris Moore
-#
+# Created by: Kris Moore
 # $FreeBSD$
-#
 
 PORTNAME=	pcbsd-netmanager
 PORTVERSION=	8.0
@@ -28,6 +24,7 @@ MAKE_ARGS=	INSTALL_ROOT=${DESTDIR}
 QMAKE_ARGS=	-unix -recursive ${QMAKE_PRO}
 QMAKE_PRO=	pcbsdnetmanager.pro
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/kde4|${PREFIX}|g' \
 				 ${WRKSRC}/pcbsdnetmanager.pro \

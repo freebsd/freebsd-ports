@@ -1,9 +1,5 @@
-# Ports collection makefile for:  Dante
-# Date created:			  20 October 1999
-# Whom:				  Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	dante
 PORTVERSION=	1.3.2
@@ -34,6 +30,7 @@ MAN1=	socksify.1
 MAN5=	sockd.conf.5 socks.conf.5
 MAN8=	sockd.8
 
+NO_STAGE=	yes
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/example/socks.conf ${PREFIX}/etc/socks.conf.example
 	@${INSTALL_DATA} ${WRKSRC}/example/sockd.conf ${PREFIX}/etc/sockd.conf.example

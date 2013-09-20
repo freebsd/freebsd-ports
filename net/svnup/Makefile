@@ -18,6 +18,7 @@ MAN1=	${PORTNAME}.1
 MAN5=	${PORTNAME}.conf.5
 PORTDOCS=	ChangeLog
 
+NO_STAGE=	yes
 post-patch-script:
 	@${REINPLACE_CMD} -e 's|8.3|${OSREL}|' ${WRKSRC}/svnup.conf
 

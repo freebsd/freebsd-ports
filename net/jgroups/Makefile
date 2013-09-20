@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jgroups
-# Date created:			18 Mar 2011
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jgroups
 PORTVERSION=	2.12.0
@@ -30,6 +26,7 @@ PORTDOCS=	*
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/dist/${DISTNAME}.Final.jar \
 		${JAVAJARDIR}/${PORTNAME}.jar

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   nstxd
-# Date created:        1 April 2007
-# Whom:                nagilum
-#
+# Created by: nagilum
 # $FreeBSD$
-#
 
 PORTNAME=	nstxd
 PORTVERSION=	1.1b6
@@ -28,6 +24,7 @@ WRKSRC=		${WRKDIR}/nstx-1.1-beta6
 ALL_TARGET=	nstxd
 INSTALL_TARGET=	nstxd
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nstxd ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/nstxd.8 ${PREFIX}/man/man8/

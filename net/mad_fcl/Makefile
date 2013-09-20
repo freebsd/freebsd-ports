@@ -23,6 +23,7 @@ DOC_FILES=	fdt-example.xml flute-sdp-example.sdp
 PORTDOCS=	${DOC_FILES} README.TXT
 PLIST_FILES=	bin/flute
 
+NO_STAGE=	yes
 pre-patch:
 	# Fixing the end-of-lines:
 	for f in `${FIND} ${WRKSRC}/.. -type f` ; do \

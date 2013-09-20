@@ -23,6 +23,7 @@ USES=		gmake pathfix pkgconfig
 CONFIGURE_ARGS=	--disable-werror --with-boost=${LOCALBASE} --without-man
 PLIST_SUB=	MAJVER=${PORTVERSION:R}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|@WITH_LIBCMIS_MAN_FALSE@|#|g" \
 	    ${WRKSRC}/Makefile.in

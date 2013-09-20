@@ -23,6 +23,7 @@ ALL_TARGET=	${PORTNAME}
 MAN1=		shmux.1
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFPING}

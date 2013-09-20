@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ldapdiff
-# Date created:         15 February 2002
-# Whom:                 Christian Brueffer <chris@unixpages.org)
-#
+# Created by: Christian Brueffer <chris@unixpages.org)
 # $FreeBSD$
-#
 
 PORTNAME=	ldapdiff
 PORTVERSION=	1.4.1
@@ -29,6 +25,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	CHANGES ChangeLog README TODO
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ! empty(ICONV_LIB)

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Net-SFTP-Foreign
-# Date created:				27 Jun 2006
-# Whom:					Simun Mikecin <numisemis@yahoo.com>
-#
+# Created by: Simun Mikecin <numisemis@yahoo.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-SFTP-Foreign
 PORTVERSION=	1.73
@@ -30,4 +26,5 @@ MAN3=		Net::SFTP::Foreign.3 \
 		Net::SFTP::Foreign::Constants.3 \
 		Net::SFTP::Foreign::Local.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

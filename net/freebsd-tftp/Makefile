@@ -1,9 +1,5 @@
-# Ports collection makefile for:	net/freebsd-tftp
-# Whom:					Edwin Groothuis <edwin@FreeBSD.org>
-# Date created:				2008-01-30
-#
+# Created by: Edwin Groothuis <edwin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	freebsd-tftp
 PORTVERSION=	1.0
@@ -22,6 +18,7 @@ PREFIX=		/usr
 MAN8=		tftpd.8
 MAN1=		tftp.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/usr.bin/tftp/tftp ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/libexec/tftpd/tftpd ${PREFIX}/libexec

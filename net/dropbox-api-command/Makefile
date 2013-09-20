@@ -35,6 +35,7 @@ USE_PERL5=	configure
 MAN1=	dropbox-api.1
 PLIST_FILES=	bin/dropbox-api bin/upload-to-dropbox
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' ${WRKSRC}/upload-to-dropbox
 	${TAIL} +3 ${WRKSRC}/lib/App/dropboxapi.pm >> ${WRKSRC}/dropbox-api

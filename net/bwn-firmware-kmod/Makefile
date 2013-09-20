@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bwn-firmware-kmod
-# Date created:				February 17 2009
-# Whom:					Weongyo Jeong <weongyo@FreeBSD.org>
-#
+# Created by: Weongyo Jeong <weongyo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bwn-firmware
 PORTVERSION=	0.1.0
@@ -53,6 +49,7 @@ PLIST_SUB=	KMODNAME="${KMODNAME}" \
 
 NO_PACKAGE=	this is a modified version of a restricted firmware
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:

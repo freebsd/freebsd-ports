@@ -19,4 +19,5 @@ RUN_DEPENDS+=	p5-Test-Simple>=0.44:${PORTSDIR}/devel/p5-Test-Simple \
 
 MAN3=		Net::SMS::Mollie.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

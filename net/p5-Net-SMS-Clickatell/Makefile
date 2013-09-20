@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-SMS-Clickatell
-# Date created:		2010-12-01
-# Whom:			John Bayly <freebsd.ports@tipstrade.net>
-#
+# Created by: John Bayly <freebsd.ports@tipstrade.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-SMS-Clickatell
 PORTVERSION=	0.05
@@ -21,6 +17,7 @@ USE_PERL5=	configure
 
 MAN3=		Net::SMS::Clickatell.3
 
+NO_STAGE=	yes
 post-patch:
 	${FIND} ${WRKSRC} -name "*.orig" -delete
 

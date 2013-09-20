@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	SLP_SECURITY ASYNC_API DOCS
 SLP_SECURITY_DESC=	Turn on SLPv2 security support
 ASYNC_API_DESC=		Enable asynchronous communication API
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSLP_SECURITY}

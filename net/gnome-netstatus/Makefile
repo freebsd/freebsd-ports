@@ -24,4 +24,5 @@ CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 GCONF_SCHEMAS=	netstatus.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libdnet
-# Date created:				15 April 2002
-# Whom:			Dominic Marks <dominic.marks@btinternet.com>
-#
+# Created by: Dominic Marks <dominic.marks@btinternet.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libdnet
 PORTVERSION=	1.11
@@ -25,6 +21,7 @@ MAN3=	dnet.3
 MAN8=	dnet.8
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(LIBDNET_SLAVE)

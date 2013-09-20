@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pen
-# Date created:			Nov 13, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	pen
 PORTVERSION=	0.18.0
@@ -40,4 +36,5 @@ MAKE_ARGS+=	-DNOPORTDOCS
 
 MAN1=		mergelogs.1 pen.1 penctl.1 penlog.1 penlogd.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

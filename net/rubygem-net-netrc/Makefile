@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-net-netrc
-# Date created:		2008-04-13
-# Whom:			IWATSUKI Hiroyuki <don@na.rim.or.jp>
-#
+# Created by: IWATSUKI Hiroyuki <don@na.rim.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	net-netrc
 PORTVERSION=	0.2.2
@@ -19,4 +15,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

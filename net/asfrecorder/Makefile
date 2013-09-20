@@ -1,9 +1,5 @@
-# Ports collection makefile for:  asfrecorder
-# Date created:			  Oct 6 2000
-# Whom:				  Roman Shterenzon <roman@xpert.com>
-#
+# Created by: Roman Shterenzon <roman@xpert.com>
 # $FreeBSD$
-#
 
 PORTNAME=	asfrecorder
 PORTVERSION=	1.1.20010307
@@ -16,6 +12,7 @@ COMMENT=	Tool for downloading streaming media from the Internet
 
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/source/asfrecorder.c -o ${WRKSRC}/asfrecorder
 

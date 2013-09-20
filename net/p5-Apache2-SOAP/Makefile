@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Apache2-SOAP
-# Date Created:				26 January 2006
-# Whom:					Simun Mikecin <numisemis@yahoo.com>
-#
+# Created by: Simun Mikecin <numisemis@yahoo.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Apache2-SOAP
 PORTVERSION=	0.73
@@ -25,4 +21,5 @@ USE_APACHE=	22+
 
 MAN3=		Apache2::SOAP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

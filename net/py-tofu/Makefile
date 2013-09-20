@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-tofu
-# Date created:				2005-10-05
-# Whom:					Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	tofu
 PORTVERSION=	0.5
@@ -24,6 +20,7 @@ PYDISTUTILS_PKGNAME=	Tofu
 WRKSRC=		${WRKDIR}/Tofu-${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-tofu
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}

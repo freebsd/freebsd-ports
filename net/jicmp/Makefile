@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	JAVA_HOME=${JAVA_HOME}
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	"Installation settings:"

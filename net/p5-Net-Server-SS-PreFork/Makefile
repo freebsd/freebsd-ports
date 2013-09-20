@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Server-SS-PreFork
-# Date created:				2012-01-21
-# Whom:					Denis Pokataev <catone@cpan.org>
-#
+# Created by: Denis Pokataev <catone@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Server-SS-PreFork
 PORTVERSION=	0.05
@@ -31,4 +27,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::Server::SS::PreFork.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

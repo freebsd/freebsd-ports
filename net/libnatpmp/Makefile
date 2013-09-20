@@ -22,4 +22,5 @@ PLIST_FILES=	bin/natpmpc \
 		lib/libnatpmp.so \
 		lib/libnatpmp.so.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

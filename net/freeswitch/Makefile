@@ -26,6 +26,7 @@ MUSIC_DESC=	Music on hold for use with FreeSwitch PBX
 PIZZA_DESC=	Pizza Shop voice demo
 SCRIPTS_DESC=	Freeswitch various scripts
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSOUNDS}

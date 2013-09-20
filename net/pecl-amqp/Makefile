@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-amqp
-# Date created:		2011-09-19
-# Whom:			Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
-#
+# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	amqp
 PORTVERSION=	1.0.9
@@ -22,4 +18,5 @@ PHP_MODNAME=	${PORTNAME}
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

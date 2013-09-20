@@ -29,6 +29,7 @@ USE_GNOME=	gnomehack pygtk2
 USE_PYTHON=	yes
 MAN1=		avahi-bookmarks.1 avahi-discover.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@pkglibdir@|${DATADIR}|' \
 	    	${WRKSRC}/avahi-python/avahi/ServiceTypeDatabase.py.in

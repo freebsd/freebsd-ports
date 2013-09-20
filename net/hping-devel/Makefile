@@ -38,6 +38,7 @@ PLIST_FILES+=	%%EXAMPLESDIR%%/${file}
 .endfor
 .endif
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/configure
 

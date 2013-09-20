@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pcap
-# Date created:		24 Nov 2001
-# Whom:			Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
-#
 
 PORTNAME=	pcap
 PORTVERSION=	0.6.4
@@ -29,4 +25,5 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_pcapmodule.so \
 		%%PYTHON_SITELIBDIR%%/pcap.pyc \
 		%%PYTHON_SITELIBDIR%%/pcap.pyo
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

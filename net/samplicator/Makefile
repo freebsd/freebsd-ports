@@ -15,6 +15,7 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/samplicate
 PORTDOCS=	NEWS README
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/samplicate ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)

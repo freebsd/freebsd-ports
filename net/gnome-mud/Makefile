@@ -25,4 +25,5 @@ INSTALLS_ICONS=	yes
 MAN6=		gnome-mud.6
 GCONF_SCHEMAS=	gnome-mud.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

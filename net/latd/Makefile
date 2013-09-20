@@ -18,6 +18,7 @@ MAN5=		latd.conf.5
 MAN8=		latd.8 latcp.8 moprc.8
 PLIST_FILES=	bin/llogin etc/latd.conf.sample sbin/latcp sbin/latd sbin/moprc
 
+NO_STAGE=	yes
 post-extract:
 	@${CHMOD} ${BINMODE} ${WRKSRC}/install-sh
 

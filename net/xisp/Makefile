@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xisp
-# Date created:		June 24, 1999
-# Whom:			tm@onepost.net
-#
+# Created by: tm@onepost.net
 # $FreeBSD$
-#
 
 PORTNAME=	xisp
 PORTVERSION=	2.7p4
@@ -24,6 +20,7 @@ MAKE_ENV+=	CCFLAGS="${CFLAGS}"
 
 MAN1=		xisp.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/Makefile

@@ -28,6 +28,7 @@ OPTIONS_DEFAULT=	GNOME
 TIGHTVNC_DESC=	vncviewer support
 XNEST_DESC=	X via Xnest support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOME}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freevrrpd
-# Date created:				Tue Jan 29 18:44:25 EST 2002
-# Whom:					Sebastien Petit <spe@phear.org>
-#
+# Created by: Sebastien Petit <spe@phear.org>
 # $FreeBSD$
-#
 
 PORTNAME=	freevrrpd
 PORTVERSION=	1.1
@@ -19,6 +15,7 @@ MAN8=		freevrrpd.8
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/freevrrpd ${PREFIX}/sbin
 	@${INSTALL_DATA} ${WRKSRC}/freevrrpd.conf.sample ${PREFIX}/etc

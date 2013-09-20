@@ -38,6 +38,7 @@ PORTDOCS=	${DOC_FILES} \
 PLIST_FILES=	\
 		%%JAVAJARDIR%%/${PORTNAME:L}.jar
 
+NO_STAGE=	yes
 pre-build:
 # use our build.xml
 	@${CP} ${FILESDIR}/build.xml ${WRKSRC}

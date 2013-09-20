@@ -114,6 +114,7 @@ DAG_DESC=	Support for Endace DAG hardware
 
 OPTIONS_DEFAULT=	IPV6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

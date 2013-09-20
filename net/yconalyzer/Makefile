@@ -1,9 +1,5 @@
-# New ports collection makefile for:	yconalyzer
-# Date created:		2010-09-08
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	yconalyzer
 PORTVERSION=	1.0.4
@@ -21,6 +17,7 @@ USE_GMAKE=	yes
 
 MAN8=		yconalyzer.8
 
+NO_STAGE=	yes
 pre-install:
 	${CHMOD} a+x ${WRKSRC}/install-sh
 

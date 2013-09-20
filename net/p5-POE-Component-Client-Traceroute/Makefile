@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-POE-Component-Client-Traceroute
-# Date created:		2006-08-09
-# Whom:			Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-#
+# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Client-Traceroute
 PORTVERSION=	0.21
@@ -22,6 +18,7 @@ USE_PERL5=	configure
 
 MAN3=	POE::Component::Client::Traceroute.3
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"

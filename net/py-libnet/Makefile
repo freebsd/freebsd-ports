@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	py-libnet
-# Date created:			Jan 30, 2002
-# Whom:	      			ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libnet
 PORTVERSION=	1.1
@@ -36,6 +31,7 @@ LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 EXAMPLESFILES=	test-libnet-icmp-echo-req.py test-libnet-tcp-syn.py test-libnet-arp-req.py
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Test-URI
-# Date created:		2007-10-30
-# Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
-#
+# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-URI
 PORTVERSION=	1.08
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=		Test::URI.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

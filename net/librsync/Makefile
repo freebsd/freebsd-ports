@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	librsync
-# Date created:			Mar 13, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	librsync
 PORTVERSION=	0.9.7
@@ -29,4 +24,5 @@ USE_LDCONFIG=	yes
 MAN1=	rdiff.1
 MAN3=	librsync.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

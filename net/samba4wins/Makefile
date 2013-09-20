@@ -53,6 +53,7 @@ PLIST_SUB+=		S4W_LOGDIR=${S4W_LOGDIR} \
 
 INSTALL_TARGET=		showlayout installbin installdat installmisc installlib installpc
 
+NO_STAGE=	yes
 post-build:
 			@for f in ${WRKSRC}/scripting/bin/*; do \
 			    ${REINPLACE_CMD} -i '' -e 's|smbscript|${PREFIX}/bin/smbscript4|' \

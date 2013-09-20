@@ -1,9 +1,5 @@
-# Ports collection makefile for:	py-yadis
-# Date created:				Dec 19, 2006
-# Whom:	      				Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	yadis
 PORTVERSION=	1.1.0
@@ -19,4 +15,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	python-yadis
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

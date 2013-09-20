@@ -26,4 +26,5 @@ USE_XZ=		yes
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

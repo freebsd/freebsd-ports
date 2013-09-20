@@ -31,4 +31,5 @@ USE_LDCONFIG=	yes
 DOCSDIR=	/usr/local/share/doc/ocsync
 ETCDIR=		/usr/local/etc/ocsync
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

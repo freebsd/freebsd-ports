@@ -1,9 +1,5 @@
-# New ports collection makefile for:   pfflowd
-# Date created:        24 Feburary 2003
-# Whom:                Andrew Thompson <andy@fud.org.nz>
-#
+# Created by: Andrew Thompson <andy@fud.org.nz>
 # $FreeBSD$
-#
 
 PORTNAME=	pfflowd
 PORTVERSION=	0.7
@@ -19,6 +15,7 @@ MAN8=		pfflowd.8
 
 PLIST_FILES=	sbin/pfflowd
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900000

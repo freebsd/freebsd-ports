@@ -1,9 +1,5 @@
-# ports collection makefile for:	perl extension for connectiong to a Nessus server
-# Date created:				25 January 2011
-# Whom:					Paul Schmehl <pauls@utdallas.edu>
-#
+# Created by: Paul Schmehl <pauls@utdallas.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Nessus-XMLRPC
 PORTVERSION=	0.30
@@ -27,4 +23,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::Nessus::XMLRPC.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

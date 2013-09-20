@@ -28,6 +28,7 @@ MAN8=		ovs-appctl.8 ovs-brcompatd.8 ovs-bugtool.8 ovs-controller.8 \
 OPTIONS_DEFINE=	THREADED
 THREADED_DESC=	Experimental high-performance threading patch
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTHREADED}

@@ -19,6 +19,7 @@ PLIST_DIRS=	%%EXAMPLESDIR%%
 
 OPTIONS_DEFINE=	XML
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MXML}

@@ -24,6 +24,7 @@ OPTIONS_DEFAULT=
 
 IPV6_DESC=		Enable IPv6 PTR lookups
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

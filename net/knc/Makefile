@@ -17,4 +17,5 @@ MAN1=		knc.1
 
 PLIST_FILES=	bin/knc
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

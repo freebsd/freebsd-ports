@@ -30,4 +30,5 @@ MAN3=		Net::Frame.3 Net::Frame::Layer.3 \
 		Net::Frame::Layer::TCP.3 \
 		Net::Frame::Layer::UDP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

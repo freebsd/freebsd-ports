@@ -28,6 +28,7 @@ CONFIGURE_ARGS+=	--with-aso
 CONFIGURE_ARGS+=	--with-https
 .endif
 
+NO_STAGE=	yes
 pre-configure:
 	@${RM} -rf ${WRKSRC}/mkfls/unix/CVS
 	@${CP} ${WRKSRC}/mkfls/unix/* ${WRKSRC}/

@@ -23,6 +23,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

@@ -29,6 +29,7 @@ CONFLICTS_INSTALL=	mosh-0.[2-9].*
 PLIST_FILES=	bin/mosh bin/mosh-server bin/mosh-client
 MAN1=		mosh-client.1 mosh-server.1 mosh.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900004

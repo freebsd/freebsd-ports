@@ -32,6 +32,7 @@ FUSE_CONFIGURE_ENABLE=	fuse
 GCRYPT_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 GCRYPT_CONFIGURE_ENABLE=gcrypt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFUSE}

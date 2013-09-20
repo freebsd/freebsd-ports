@@ -25,6 +25,7 @@ SUB_LIST+=	RUBY=${RUBY}
 
 PLIST_FILES=	sbin/dtcpauth sbin/dtcpc sbin/dtcps
 
+NO_STAGE=	yes
 pre-install:
 	@for script in ${USE_RC_SUBR}; do \
 		if [ -f ${PREFIX}/etc/rc.d/$${script} ]; then \

@@ -21,6 +21,7 @@ MAN8=		hostapd.8
 PLIST_FILES=	sbin/hostapd \
 		sbin/hostapd_cli
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

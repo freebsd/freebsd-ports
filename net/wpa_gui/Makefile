@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/wpa_supplicant/wpa_gui-qt4
 USE_QT4=	gui moc_build qmake_build rcc_build uic_build
 HAS_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|Exec=wpa_gui|Exec=${PREFIX}/sbin/wpa_gui|" \
 	    ${WRKSRC}/wpa_gui.desktop

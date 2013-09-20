@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cnd
-# Date created:		12 March 2004
-# Whom:			Daniel Bryan <sisko@bsdmail.com>
-#
+# Created by: Daniel Bryan <sisko@bsdmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cnd
 PORTVERSION=	0.7
@@ -15,4 +11,5 @@ COMMENT=	Console network display
 
 PLIST_FILES=	bin/cnd
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

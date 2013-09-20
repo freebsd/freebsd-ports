@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  rdist
-# Date created:			  11 November 2000
-# Whom:				  David O'Brien <obrien@NUXI.com>
-#
+# Created by: David O'Brien <obrien@NUXI.com>
 # $FreeBSD$
-#
 
 PORTNAME=	44bsd-rdist
 PORTVERSION=	20001111
@@ -21,6 +16,7 @@ NO_WRKSUBDIR=	yes
 MAN1=		44bsd-rdist.1
 PLIST_FILES=	bin/44bsd-rdist
 
+NO_STAGE=	yes
 post-extract:
 	cd ${WRKSRC} ; co RCS/*,v
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	samba-smbclient
-# Date created:				Mon Jul 28 12:43:50 BRT 2008
-# Whom:					garga
-#
+# Created by: garga
 # $FreeBSD$
-#
 
 PORTREVISION=		0
 PORTEPOCH=		0
@@ -31,6 +27,7 @@ PLIST_SUB+=		SAMBA_CONFDIR="${SAMBA_CONFDIR:S,^${PREFIX}/,,}" \
 
 ALL_TARGET=		bin/smbclient
 
+NO_STAGE=	yes
 do-install:
 	-@${MKDIR} ${SAMBA_CONFDIR}
 	${INSTALL_DATA} ${FILESDIR}/smb-client.conf.sample ${SAMBA_CONFDIR}/${SAMBA_CONFIG}.sample

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	py-smbpasswd
-# Date created:				May 24, 2004
-# Whom:					Alexander Novitsky
-#
+# Created by: Alexander Novitsky
 # $FreeBSD$
-#
 
 PORTNAME=	smbpasswd
 PORTVERSION=	1.0.2
@@ -25,4 +21,5 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/smbpasswd.so
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

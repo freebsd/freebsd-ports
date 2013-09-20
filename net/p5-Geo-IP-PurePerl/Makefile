@@ -1,4 +1,3 @@
-# Ports collection Makefile for:	p5-Geo-IP-PurePerl
 # Created by: Joe Horn <joehorn@gmail.com>
 # $FreeBSD$
 
@@ -17,4 +16,5 @@ USE_PERL5=	configure
 MAN1=	geoip-lookup.1
 MAN3=	Geo::IP::PurePerl.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

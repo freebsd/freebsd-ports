@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ilbc
-# Date created:				16 January 2006
-# Whom:					Alex Miller <asm@asm.kiev.ua>
-#
+# Created by: Alex Miller <asm@asm.kiev.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	ilbc
 DISTVERSION=	rfc3951
@@ -19,4 +15,5 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# Created by:	Bruce M Simpson <bms@FreeBSD.org>
+# Created by: Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	xorp-devel
@@ -40,6 +40,7 @@ FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 SVN_REV=	11685		# svn tip at epoch 2009120801
 SVNROOT_URI=	http://xorp.svn.sourceforge.net/svnroot/xorp
 
+NO_STAGE=	yes
 do-fetch:
 	${MKDIR} ${WRKDIR}
 	svn export -r ${SVN_REV} ${SVNROOT_URI}/trunk/xorp ${WRKSRC}

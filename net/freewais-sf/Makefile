@@ -30,6 +30,7 @@ MAN3=		ftw.3 regexp.3 scandir.3
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"

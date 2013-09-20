@@ -17,6 +17,7 @@ WRKSRC=		${WRKDIR}/dev/aoe
 MAN4=		aoe.4
 USE_RC_SUBR=	aoe
 
+NO_STAGE=	yes
 pre-everything::
 	@if [ ! -f /usr/src/sys/Makefile ]; then \
 		${ECHO_MSG} ">> The AoE port needs FreeBSD kernel source code to compile."; \

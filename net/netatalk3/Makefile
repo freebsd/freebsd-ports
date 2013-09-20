@@ -41,6 +41,7 @@ KRB5_DESC=	Enable Kerberos V UAM
 DTRACE_DESC=	Enable DTrace support
 SENDFILE_DESC=	Enable Sendfile support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 MAN1=		ad.1 afpldaptest.1 afppasswd.1 apple_dump.1 asip-status.pl.1 \

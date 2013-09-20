@@ -30,6 +30,7 @@ PLIST_FILES=	bin/grive
 MAN1=		grive.1
 
 # Allow to build with GCC 4.2
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,log::,gr::&,g' ${WRKSRC}/grive/src/main.cc
 

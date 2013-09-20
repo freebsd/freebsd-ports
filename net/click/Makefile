@@ -93,6 +93,7 @@ USERCLICK_DESC=		Build user-space Click
 WIFI_ELEMS_DESC=	Build Wi-Fi elements
 XML_EXPAT_DESC=		Enable XML support with expat
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXML_EXPAT}

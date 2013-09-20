@@ -1,9 +1,5 @@
-# Ports collection makefile for:	Virtual EtherDrive(R) blade AoE target
-# Date created:				14 Sep 2010
-# Whom:					Max Khon <fjoe@FreeBSD.org>
-#
+# Created by: Max Khon <fjoe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vblade
 PORTVERSION=	21
@@ -25,4 +21,5 @@ ALL_TARGET=
 PLIST_FILES=	sbin/vblade sbin/vbladed
 MAN8=		vblade.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wired
-# Date created:		2006-11-23
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	wired
 PORTVERSION=	1.3.4
@@ -23,6 +19,7 @@ MAN1=		wiredctl.1
 MAN5=		wired.conf.5
 MAN8=		wired.8
 
+NO_STAGE=	yes
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 

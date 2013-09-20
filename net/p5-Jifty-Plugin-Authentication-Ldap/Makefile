@@ -23,4 +23,5 @@ MAN3=		Jifty::Plugin::Authentication::Ldap.3 \
 		Jifty::Plugin::Authentication::Ldap::View.3 \
 		Jifty::Plugin::Authentication::Ldap::Mixin::Model::User.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-Net-Trackback
-# Date created:				07 October 2007
-# Whom:					Cory R. King <coryking@mozimedia.com>
-#
+# Created by: Cory R. King <coryking@mozimedia.com>
 # $FreeBSD$
 
 PORTNAME=	Net-Trackback
@@ -29,4 +26,5 @@ MAN3=		Net::Trackback.3 \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

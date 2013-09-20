@@ -42,6 +42,7 @@ MEETME_DESC=	Build  app_meetme (requires ZAPTEL)
 LDAP_DESC=	Build  app_ldap application
 SNMP_DESC=	SNMP support (broken)
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

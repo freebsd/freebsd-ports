@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kwooty
-# Date created:		5 Apr 2010
-# Whom:			Mina R Waheeb <syncer@gmail.com>
-#
+# Created by: Mina R Waheeb <syncer@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	kwooty
 PORTVERSION=	0.8.3
@@ -22,6 +18,7 @@ USE_QT4=	qmake_build moc_build rcc_build uic_build
 USES=		cmake
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|g' \
 		${WRKSRC}/src/preferences/kwootysettings.kcfg

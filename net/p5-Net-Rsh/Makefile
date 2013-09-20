@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-Net-Rsh
-# Date created:                                13 Dec 2004
-# Whom:                                        Jon Nistor <nistor@snickers.org>
-#
+# Created by: Jon Nistor <nistor@snickers.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Rsh
 PORTVERSION=	0.05
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::Rsh.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

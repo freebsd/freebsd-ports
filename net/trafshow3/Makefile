@@ -1,9 +1,5 @@
-# New ports collection makefile for:	trafshow
-# Date created:         25 September 1996
-# Whom:                 igor@zynaps.ru
-#
+# Created by: igor@zynaps.ru
 # $FreeBSD$
-#
 
 PORTNAME=	trafshow
 PORTVERSION=	3.1
@@ -33,6 +29,7 @@ ALL_TARGET=	trafshow
 
 MAN1=		trafshow.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/*.c
 

@@ -17,6 +17,7 @@ PEAR_AUTH_SASL_DESC=	PEAR::Auth_SASL support
 
 PEAR_AUTOINSTALL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPEAR_AUTH_SASL}

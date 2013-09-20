@@ -41,6 +41,7 @@ PLIST_SUB+=	AFSMNTDIR=${AFSMNTDIR:C,^/,,} \
 		AFSSTATEDIR=${AFSSTATEDIR:C,^/,,} \
 		AFSCACHEDIR=${AFSCACHEDIR:C,^/,,}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 KERNCONF?=	GENERIC

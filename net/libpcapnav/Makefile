@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libpcapnav
-# Date created:		2004-04-23
-# Whom:			Yann Berthier <yb@sainte-barbe.org>
-#
+# Created by: Yann Berthier <yb@sainte-barbe.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libpcapnav
 PORTVERSION=	0.8
@@ -17,6 +13,7 @@ USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${DOCSDIR}
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|DOC_MODULE = pcapnav|DOC_MODULE =|' \
 	${WRKSRC}/docs/Makefile.in

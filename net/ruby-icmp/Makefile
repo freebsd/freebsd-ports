@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ICMPModule for Ruby
-# Date created:		1 Nov 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	icmp
 PORTVERSION=	0.2.1
@@ -23,6 +19,7 @@ INSTALL_TARGET=	site-install
 
 EXAMPLES=	sample/*
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}

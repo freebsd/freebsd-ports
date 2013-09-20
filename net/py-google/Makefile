@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-google
-# Date created:		22 April 2002
-# Whom:			Hye-Shik Chang <perky@fallin.lv>
-#
+# Created by: Hye-Shik Chang <perky@fallin.lv>
 # $FreeBSD$
-#
 
 PORTNAME=	google
 PORTVERSION=	0.6
@@ -28,6 +24,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-google
 EXAMPLESDIR=	${PREFIX}/share/examples/py-google
 .endif
 
+NO_STAGE=	yes
 post-patch:
 # www/py-websvcs has an incompatible version of SOAP.py
 	@${MV} ${WRKSRC}/SOAP.py ${WRKSRC}/SOAPgoogle.py

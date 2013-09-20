@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	rexx-sock
-# Date created:			Nov 11, 2003
-# Whom:	      			ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	sock
 PORTVERSION=	1.4
@@ -29,6 +24,7 @@ USE_LDCONFIG=	yes
 
 DATADIR=	${PREFIX}/share/rx${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|ld -Bdynamic -Bshareable|$${CC} -shared|g' \
 		${WRKSRC}/configure

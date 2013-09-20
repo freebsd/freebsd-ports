@@ -23,6 +23,7 @@ MAN1=		wmnd.1
 PORTEXAMPLES=	wmndrc
 PLIST_FILES=	bin/wmnd
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

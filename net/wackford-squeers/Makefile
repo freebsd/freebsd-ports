@@ -1,9 +1,5 @@
-# New ports collection makefile for:  wackford-squeers
-# Date created:                       Fri, 22 Oct 2010 19:43:10 EDT
-# Whom:                               James Bailie <jimmy@mammothcheese.ca>
-#
+# Created by: James Bailie <jimmy@mammothcheese.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	wackford-squeers
 PORTVERSION=	1.16
@@ -21,4 +17,5 @@ MAN8=		squeers.8
 
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

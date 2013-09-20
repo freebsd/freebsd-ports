@@ -28,6 +28,7 @@ OPTIONS_DEFAULT=	CUPS PULSEAUDIO X11
 X11_DESC=	Build FreeRDP X11 client
 DIRECTFB_DESC=	Build FreeRDP DirectFB client
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

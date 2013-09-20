@@ -17,6 +17,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 pre-install:
 .if defined(NOPORTDOCS)
 	${RM} -rf ${WRKSRC}/docs/html

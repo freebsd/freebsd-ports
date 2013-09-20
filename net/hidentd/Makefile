@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hidentd
-# Date created:				02.11.2003
-# Whom:					Kirill Ponomarew <krion@FreeBSD.org>
-#
+# Created by: Kirill Ponomarew <krion@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hidentd
 PORTVERSION=	0.4
@@ -20,6 +16,7 @@ MAN8=		hidentd.8
 PORTDOCS=	README
 PLIST_FILES=	sbin/hidentd
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

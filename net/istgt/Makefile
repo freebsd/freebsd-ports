@@ -34,6 +34,7 @@ OPTIONS_DEFAULT=
 SYMLNKDEV_DESC=	Allow symbolic link for device file
 VBOXVD_DESC=	Build with VBox VD support(no X11 required)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSYMLNKDEV}

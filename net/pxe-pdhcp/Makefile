@@ -24,4 +24,5 @@ OPTIONS_DEFINE=	DOCS
 post-extract: apply-slist
 	@${INSTALL_DATA} ${WRKDIR}/Makefile ${FILESDIR}/${PORTNAME}.8 ${WRKSRC}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

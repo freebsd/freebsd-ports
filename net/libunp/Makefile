@@ -1,9 +1,5 @@
-# Ports collection makefile for:  libunp
-# Date created:			Sept 28, 1999
-# Whom:				james@targetnet.com
-#
+# Created by: james@targetnet.com
 # $FreeBSD$
-#
 
 PORTNAME=	libunp
 PORTVERSION=	1.0
@@ -18,6 +14,7 @@ COMMENT=	The networking library used in UNIX Network Programming Volume 1 2e
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 pre-patch:
 	@ ${CP} ${WRKSRC}/lib/wrapsock.c ${WRKSRC}/lib/wrapsock_r.c
 

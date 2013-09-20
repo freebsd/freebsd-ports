@@ -25,6 +25,7 @@ PLIST_FILES=	bin/shelldap
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-extract:
 	${LOCALBASE}/bin/pod2man < ${WRKSRC}/shelldap > ${WRKSRC}/shelldap.1
 

@@ -1,6 +1,4 @@
-# New ports collection makefile for:	nepim
-# Date created:				19th September 2005
-# Whom:					Marcin Jessa <yazzy@yazzy.org>
+# Created by: Marcin Jessa <yazzy@yazzy.org>
 # $FreeBSD$
 
 PORTNAME=	nepim
@@ -21,6 +19,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 PLIST_FILES=	bin/nepim
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		${WRKSRC}/Makefile

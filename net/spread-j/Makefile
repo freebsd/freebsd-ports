@@ -30,6 +30,7 @@ ANT_PARAMS+=	-Dlib.dir=${JAVAJARDIR} -Djavadoc.destdir=docs -Dversion=${PORTVERS
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}/java
 PLIST_SUB+=	PORTNAME="${PORTNAME}" PORTVERSION="${PORTVERSION}"
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && \
 		${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT} ${ANT_TARGET} ${ANT_PARAMS}

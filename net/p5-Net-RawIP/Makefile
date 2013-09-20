@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-RawIP
-# Date created:				18 February 1999
-# Whom:                			Dima Sivachenko <dima@chg.ru>
-#
+# Created by: Dima Sivachenko <dima@chg.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-RawIP
 PORTVERSION=	0.25
@@ -19,4 +15,5 @@ USES=		perl5
 USE_PERL5=	configure
 MAN3=		Net::RawIP.3 Net::RawIP::libpcap.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

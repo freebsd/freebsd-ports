@@ -1,9 +1,4 @@
-# New ports collection makefile for:	URI::Match
-# Date created:		09 Sep 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	URI-Match
 PORTVERSION=	0.00001
@@ -23,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=	URI::Match.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   tethereal-lite
-# Date created:        20 March 2004
-# Whom:                Bill Fumerola <billf@mu.org>
-#
+# Created by: Bill Fumerola <billf@mu.org>
 # $FreeBSD$
-#
 
 LITE=		yes
 PKGNAMESUFFIX=	-lite
@@ -11,4 +7,5 @@ PKGNAMESUFFIX=	-lite
 MASTERDIR=	${.CURDIR}/../tshark
 COMMENT=        A powerful network analyzer/capture tool (lite package)
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

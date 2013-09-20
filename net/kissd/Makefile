@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kissd
-# Date created:				25 Aug 2005
-# Whom:					Ed Schouten <ed@fxq.nl>
-#
+# Created by: Ed Schouten <ed@fxq.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	kissd
 PORTVERSION=	0.3
@@ -17,6 +13,7 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/kissd
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/configure

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Analysis
-# Date created:		2006-09-05
-# Whom:			Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-#
+# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Analysis
 PORTVERSION=	0.41
@@ -41,4 +37,5 @@ MAN3=		Net::Analysis.3 \
 		Net::Analysis::TCPSession.3 \
 		Net::Analysis::Time.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

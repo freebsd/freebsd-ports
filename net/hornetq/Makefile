@@ -40,6 +40,7 @@ LIBTOOLFILES=	native-src/aclocal.m4
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal/
 AUTOMAKE_ARGS=	--add-missing -c
 
+NO_STAGE=	yes
 do-build:
 		cd ${WRKSRC} && ./build.sh bin-distro
 		${MV} ${WRKSRC}//build/hornetq-${DISTVERSION}.tar.gz ${WRKDIR}

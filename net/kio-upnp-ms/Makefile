@@ -1,7 +1,4 @@
-# New ports collection makefile for:	kio-upnp-ms
-# Date created:				2010-12-29
-# Whom:					Dima Panov <fluffy@FreeBSD.org>
-#
+# Created by: Dima Panov <fluffy@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kio-upnp-ms
@@ -31,4 +28,5 @@ PLIST_FILES=	include/kio/upnp-ms-types.h \
 		lib/kde4/kio_upnp_ms.so \
 		share/kde4/services/kio_upnp_ms.protocol
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

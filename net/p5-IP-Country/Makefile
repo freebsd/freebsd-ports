@@ -24,4 +24,5 @@ MAN3=		IP::Authority.3 \
 		IP::Country::Slow.3 \
 		IP::Country.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

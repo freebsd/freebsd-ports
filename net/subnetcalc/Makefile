@@ -21,4 +21,5 @@ USE_GMAKE=	yes
 PLIST_FILES=	bin/subnetcalc
 MAN1=		subnetcalc.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

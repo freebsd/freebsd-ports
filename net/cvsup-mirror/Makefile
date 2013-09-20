@@ -25,6 +25,7 @@ SUB_FILES=	update.sh
 base=${PREFIX}/etc/cvsup
 distrib=${base}/sup.client/distrib
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-extract:

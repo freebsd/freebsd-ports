@@ -1,9 +1,5 @@
-# New ports collection makefile for:	acx100
-# Date created:				2004-07-01
-# Whom:					Leonid Zolotarev <leoz.2005@gmail.com>
-#
+# Created by: Leonid Zolotarev <leoz.2005@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	acx
 PORTVERSION=	6.1
@@ -39,6 +35,7 @@ KMODDIR?=	/boot/modules
 MAKE_ENV+=	KMODDIR="${KMODDIR}"
 PLIST_SUB+=	KMODDIR=${KMODDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900002

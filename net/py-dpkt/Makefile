@@ -1,4 +1,3 @@
-# Createe by: Krzysztof Pawlowski
 # $FreeBSD$
 
 PORTNAME=	dpkt
@@ -21,6 +20,7 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	AUTHORS CHANGES HACKING LICENSE PKG-INFO README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

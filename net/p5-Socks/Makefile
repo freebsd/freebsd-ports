@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-Socks
-# Date created:        22 January 1999
-# Whom:                Yukihiro Nakai <Nacai@iname.com>
-#
+# Created by: Yukihiro Nakai <Nacai@iname.com>
 # $FreeBSD$
-#
 
 PORTNAME=	SOCKS
 PORTVERSION=	0.03
@@ -20,4 +16,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::SOCKS.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for: arprelease
-# Date created:		02 Aug 2001
-# Whom:			nbm
-#
+# Created by: nbm
 # $FreeBSD$
-#
 
 PORTNAME=	arprelease
 PORTVERSION=	1.2
@@ -22,6 +18,7 @@ PLIST_FILES=	bin/arprelease
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
+NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC} && \
 		${CC} ${CFLAGS} `${LIBNET_CONFIG} --defines` \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dhcpcd
-# Date created:				30 December 2007
-# Whom:					Roy Marples <roy@marples.name>
-#
+# Created by: Roy Marples <roy@marples.name>
 # $FreeBSD$
-#
 
 PORTNAME=	dhcpcd
 PORTVERSION=	3.2.3
@@ -21,4 +17,5 @@ USE_RC_SUBR=	dhcpcd
 MAN8=		dhcpcd.8
 PLIST_FILES=	sbin/dhcpcd
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

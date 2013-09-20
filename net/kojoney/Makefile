@@ -1,9 +1,5 @@
-# Ports collection makefile for:	kojoney
-# Date created:				5 December 2006
-# Whom:					mj <systemoperator@gmail.com>
-#
+# Created by: mj <systemoperator@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	kojoney
 PORTVERSION=	0.0.4.2
@@ -25,4 +21,5 @@ USE_OPENSSL=	yes
 USES=		perl5
 USE_PERL5=	run
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

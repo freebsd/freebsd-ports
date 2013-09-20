@@ -1,9 +1,5 @@
-# Ports collection makefile for:  thcrut
-# Date created:			  23 Aug 2001
-# Whom:				  Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	thcrut
 PORTVERSION=	1.2.5
@@ -19,4 +15,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libnet=${LOCALBASE} \
 		 	--sysconfdir=${DATADIR}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,6 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lpcre -lggz -lgnutls -lintl ${PTHREAD_LIBS}
 MAN1=		morebalance.1
 MAN5=		morebalance.conf.5
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.sample

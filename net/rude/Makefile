@@ -22,6 +22,7 @@ MAN8=		rude.8 crude.8
 DOC_FILES=	README README.rude README.crude TODO example.cfg
 EXAMPLE_FILES=	crude_jitter.pl crude_parse.pl dump2trace.pl
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/grude/grude ${PREFIX}/bin
 .ifndef(NOPORTDOCS)

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ss5
-# Date created:        25 August 2006
-# Whom:                Raffaele De Lorenzo  - raffaele.delorenzo@libero.it
-#
+# Created by: Raffaele De Lorenzo  - raffaele.delorenzo@libero.it
 # $FreeBSD$
-#
 
 PORTNAME=	ss5
 PORTVERSION=	3.8.5
@@ -32,6 +28,7 @@ MAN1=		ss5.1 ss5srv.1
 MAN5=		ss5.conf.5 ss5.pam.5 ss5.passwd.5 ss5.ha.5 ss5_gss.5 ss5_supa.5
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's,/usr/local/etc/opt/ss5,${PREFIX}/etc/ss5,' \

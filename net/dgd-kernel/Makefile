@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dgd-kernel
-# Date created:		2 April 2010
-# Whom:			glewis
-#
+# Created by: glewis
 # $FreeBSD$
-#
 
 PORTNAME=	dgd-kernel
 PORTVERSION=	1.3.4
@@ -25,6 +21,7 @@ NO_BUILD=	yes
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	cd ${WRKSRC} && ${FIND} . -name '*.orig' -delete
 

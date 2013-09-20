@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	rubygem-twitter4r
-# Date created:			Jul 9, 2007
-# Whom:				Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	twitter4r
 PORTVERSION=	0.7.0
@@ -22,4 +17,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/t4r-oauth-access bin/t4rsh
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

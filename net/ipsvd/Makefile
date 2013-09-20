@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ipsvd
-# Date created:		01 Apr 2002
-# Whom:			Sergei Kolobov <sergei@kolobov.com>
-#
+# Created by: Sergei Kolobov <sergei@kolobov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ipsvd
 PORTVERSION=	1.0.0
@@ -21,6 +17,7 @@ MAN7=		ipsvd.7
 MAN8=		ipsvd-cdb.8 sslio.8 sslsvd.8 tcpsvd.8 udpsvd.8
 DOCS=		package/CHANGES package/COPYING package/README doc/*.html
 
+NO_STAGE=	yes
 do-configure:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
 	@${ECHO_CMD} "${LOCALBASE}/include/libdjbdns" \

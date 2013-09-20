@@ -25,6 +25,7 @@ MAKEFILE=	GNUmakefile
 MAN1=		bmon.1
 PLIST_FILES=	sbin/bmon
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRRDTOOL}

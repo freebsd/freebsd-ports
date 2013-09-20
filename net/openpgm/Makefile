@@ -1,6 +1,5 @@
 # Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
-# Do not forget fix version openpgm in devel/libxs
 
 PORTNAME=	openpgm
 PORTVERSION=	5.2.122
@@ -24,6 +23,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 DOCS_DESC=	Install documetation
 EXAMPLES_DESC=	Install examples
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}

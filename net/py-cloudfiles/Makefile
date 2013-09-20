@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-cloudfiles
-# Date created:		2009-10-24
-# Whom:			Roberto Pereyra <freebsd@contenidosonline.com.ar>
-#
+# Created by: Roberto Pereyra <freebsd@contenidosonline.com.ar>
 # $FreeBSD$
-#
 
 PORTNAME=	cloudfiles
 PORTVERSION=	1.6.0
@@ -20,4 +16,5 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PLIST_SUB+=	PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

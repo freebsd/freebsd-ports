@@ -45,6 +45,7 @@ CONFIG_FILES=	access.deny client.conf clients config dictionary \
 EXAMPLE_FILES=	README ascend.rw c3620.rw cisco.rw comos.rw config.syntax \
 		filter.rw hints-0.96 jetstream.rw nt.rw pam.conf radius.php
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 900007

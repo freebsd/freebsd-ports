@@ -1,10 +1,5 @@
-# New ports collection makefile for:	gkrellmqst
-# Date Created:				Thu Jun 28 01:54:57 EDT 2001
-# Whom:					Patrick Li <pat@databits.net>
-# With help from:	Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Patrick Li <pat@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gkrellmqst
 PORTVERSION=	0.4
@@ -28,4 +23,5 @@ MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 ALL_TARGET=	qst.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

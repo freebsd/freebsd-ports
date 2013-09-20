@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dgd-lpmud
-# Date created:		10 November 1994
-# Whom:			adam
-#
+# Created by: adam
 # $FreeBSD$
-#
 
 PORTNAME=	dgd-lpmud
 PORTVERSION=	2.4.5
@@ -24,6 +20,7 @@ NO_PACKAGE=	no monetary gain, tarball OK for CDROM
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/mud
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${FILESDIR}/oconv.c ${WRKSRC}/
 	@${CP} ${FILESDIR}/Makefile.bin ${WRKSRC}/Makefile

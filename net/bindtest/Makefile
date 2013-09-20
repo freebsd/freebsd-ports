@@ -18,6 +18,7 @@ COMMENT=	Test bind() semantics of IPv6 sockets
 
 MAN1=		bindtest.1
 
+NO_STAGE=	yes
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/bindtest ${PREFIX}/bin/
 		${INSTALL_SCRIPT} ${WRKSRC}/test.sh ${PREFIX}/bin/bindtest.sh

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-TcpDumpLog
-# Date created:		2010-10-07
-# Whom:			Steven Kreuzer <skreuzer@FreeBSD.org>
-#
+# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-TcpDumpLog
 PORTVERSION=	0.11
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=	Net::TcpDumpLog.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

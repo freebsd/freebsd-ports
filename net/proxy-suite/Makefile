@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	proxy-suite
-# Date created:				06 April 2001
-# Whom:					Thomas Quinot <thomas@cuivre.fr.eu.org>
-#
+# Created by: Thomas Quinot <thomas@cuivre.fr.eu.org>
 # $FreeBSD$
-#
 
 PORTNAME=	proxy-suite
 PORTVERSION=	1.9.2.4
@@ -57,6 +53,7 @@ MAN8=		ftp-proxy.8
 MAN5=		ftp-proxy.conf.5
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # XXX: newer autoconf's rely on the compiler result, not the preprocessor

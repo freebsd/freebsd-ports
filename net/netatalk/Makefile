@@ -49,6 +49,7 @@ MAN8=		afpd.8 cnid_dbd.8 cnid_metad.8 timelord.8
 
 CONFLICTS=	bigloo-2.* cap-6.0.* tct-1.* netatalk-1* yudit-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKRB5}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	6tunnel
-# Date created:		Sun Nov 19 12:51:37 CET 2000
-# Whom:			Vassili Tchersky <vt@bsdjeunz.org>
-#
+# Created by: Vassili Tchersky <vt@bsdjeunz.org>
 # $FreeBSD$
-#
 
 PORTNAME=	6tunnel
 DISTVERSION=	0.11rc2
@@ -24,4 +20,5 @@ MAN1=		6tunnel.1
 MANCOMPRESSED=	no
 PLIST_FILES=	bin/6tunnel
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

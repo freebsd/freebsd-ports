@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  tcpshow
-# Date created:			  Tue Nov 04, 1997
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	tcpshow
 PORTVERSION=	1.74
@@ -22,6 +17,7 @@ COMMENT=	Decode tcpdump(1) output
 NO_WRKSUBDIR=	yes
 MAN1=		tcpshow.1
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} ${DISTDIR}/tcpshow.c ${WRKDIR}

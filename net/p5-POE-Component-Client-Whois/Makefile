@@ -20,4 +20,5 @@ MAN3=		POE::Component::Client::Whois.3 \
 		POE::Component::Client::Whois::IPBlks.3 \
 		POE::Component::Client::Whois::TLDList.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

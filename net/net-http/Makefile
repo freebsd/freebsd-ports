@@ -17,6 +17,7 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 GUILE_VER!=	${MAKE} -C ${PORTSDIR}/lang/guile -V GUILE_VER

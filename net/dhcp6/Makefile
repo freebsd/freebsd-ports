@@ -24,6 +24,7 @@ OPTIONS_DEFINE=	DOCS
 MAN5=		dhcp6c.conf.5 dhcp6s.conf.5
 MAN8=		dhcp6c.8 dhcp6s.8 dhcp6relay.8 dhcp6ctl.8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

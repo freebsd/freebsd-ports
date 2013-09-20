@@ -22,6 +22,7 @@ IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-configure:

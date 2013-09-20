@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 PLIST_FILES=	bin/mgen
 PORTDOCS=	README.TXT VERSION.TXT mgen.html example.mgn
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/unix/Makefile.common \
 		${WRKSRC}/protolib/unix/Makefile.common

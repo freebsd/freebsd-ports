@@ -38,6 +38,7 @@ OPTIONS_DEFINE=	NOCLIENTS INFINITE
 NOCLIENTS_DESC=	Omit client commands
 INFINITE_DESC=	Infinite retry in client commands
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MINFINITE}

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	libproxy-gnome
-# Date created:		26 February 2009
-# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/net/libproxy-gnome/Makefile,v 1.1 2011/01/12 13:10:53 kwm Exp $
 
@@ -21,6 +18,7 @@ USE_GNOME=	gconf2
 
 LIBPROXY_SLAVE=	gnome
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/lib/${PORTNAME}/${PORTVERSION}/modules/
 	${INSTALL_LIB} ${WRKSRC}/libproxy/config_gnome.so \

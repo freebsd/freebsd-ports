@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Horde_Kolab_Format
-# Date created:			  7 July 2011
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Horde_Kolab_Server
 PORTVERSION=	2.0.1
@@ -24,6 +20,7 @@ LDAP_DESC=		Enable LDAP support
 # Not required but we want it
 USE_HORDE_RUN+=	Horde_Date
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MLDAP}

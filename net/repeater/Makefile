@@ -1,9 +1,5 @@
-# New ports collection makefile for:	repeater
-# Date created:				14 December 2005
-# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	repeater
 PORTVERSION=	0.14
@@ -28,6 +24,7 @@ SUB_LIST=	REP_USER=${REP_USER} REP_GROUP=${REP_GROUP}
 PLIST_FILES=	sbin/repeater etc/uvncrepeater.ini.sample
 PORTDOCS=	changelog.txt readme.txt ultravncrepeaterlinuxport.html
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/repeater ${PREFIX}/sbin/repeater
 	${INSTALL_DATA} ${WRKSRC}/uvncrepeater.ini ${PREFIX}/etc/uvncrepeater.ini.sample

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	spread
-# Date created:		11 June 2001
-# Whom:			Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	spread
 PORTVERSION=	3.17.4
@@ -43,6 +39,7 @@ MAN3=		libsp.3 SP_connect.3 SP_disconnect.3 SP_equal_group_ids.3 \
 		SP_multigroup_scat_multicast.3 SP_poll.3 SP_receive.3 \
 		SP_scat_multicast.3 SP_scat_receive.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # bsd.port.mk doesn't allow us to use GNU_CONFIGURE and PERL_CONFIGURE together.

@@ -20,6 +20,7 @@ USE_PERL5=	configure
 
 RESTRICTED=	Commercial software
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTFILES})

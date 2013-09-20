@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Net::CIDR::MobileJP
-# Date created:		19 Jul 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Net-CIDR-MobileJP
 PORTVERSION=	0.24
@@ -27,4 +22,5 @@ USE_PERL5=	configure
 MAN3=	Net::CIDR::MobileJP.3 \
 	Net::CIDR::net-cidr-mobilejp-scraper.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

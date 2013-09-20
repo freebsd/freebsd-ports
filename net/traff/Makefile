@@ -1,9 +1,5 @@
-# New ports collection makefile for:	traff
-# Date created:				2005-09-26
-# Whom:					Dan Caescu <daniel at freebsd.ro>
-#
+# Created by: Dan Caescu <daniel at freebsd.ro>
 # $FreeBSD$
-#
 
 PORTNAME=	traff
 PORTVERSION=	0.7
@@ -26,6 +22,7 @@ CONFIGURE_ENV+=	"LIBS=-largp"
 OPTIONS_DEFINE=		MYSQL PGSQL
 OPTIONS_DEFAULT=	MYSQL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

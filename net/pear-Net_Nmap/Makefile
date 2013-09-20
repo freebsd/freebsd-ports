@@ -1,9 +1,5 @@
-# Ports collection makefile for:	pear-Net_Nmap
-# Date created:				13 Oct 2008
-# Whom:					Wen Heping<wenheping@gmail.com>
-#
+# Created by: Wen Heping<wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Net_Nmap
 PORTVERSION=	1.0.4
@@ -17,6 +13,7 @@ RUN_DEPENDS:=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser
 
 PEAR_AUTOINSTALL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

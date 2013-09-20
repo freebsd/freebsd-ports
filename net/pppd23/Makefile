@@ -1,9 +1,5 @@
-# New ports collection makefile for:   pppd 2.3.11
-# Date created:        10 April 2004
-# Whom:                netch@netch.kiev.ua
-#
+# Created by: netch@netch.kiev.ua
 # $FreeBSD$
-#
 
 PORTNAME=	pppd
 PORTVERSION=	2.3.11
@@ -20,6 +16,7 @@ GNU_CONFIGURE=	yes
 MAN8=		pppd.8 pppstats.8 chat.8
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800045

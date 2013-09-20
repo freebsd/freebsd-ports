@@ -28,6 +28,7 @@ EXTRACT_AFTER_ARGS=--exclude junit.jar	\
 USERS=	dlna
 GROUPS=	dlna
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${JAVAJARDIR}/${PORTNAME}/plugins
 	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${JAVAJARDIR}/${PORTNAME}/

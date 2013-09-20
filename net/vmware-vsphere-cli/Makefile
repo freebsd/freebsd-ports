@@ -34,6 +34,7 @@ MAN3=			VMware::VIM25Runtime.3 VMware::VIM2Stub.3 VMware::VIM2Runtime.3 \
 
 DISTREL=		780721
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (!exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}))

@@ -16,6 +16,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '2s#-lpcap#-L${LOCALBASE}/lib -lpcap#' ${WRKSRC}/Makefile
 

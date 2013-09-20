@@ -18,6 +18,7 @@ OPTIONS_DEFAULT=	REUSEADDR
 REUSEADDR_DESC=	Reuse the listening socket address
 NOFORK_DESC=	Do not fork and background
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MREUSEADDR}

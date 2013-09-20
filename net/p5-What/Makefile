@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-What
-# Date created:		2006-07-15
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	What
 PORTVERSION=	1.01
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=		What.3 What::MTA.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

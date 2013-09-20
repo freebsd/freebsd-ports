@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Net-TiVo
-# Date created:				Jan 10 2006
-# Whom:					Christopher Boumenot <boumenot@gmail.com>
-#
+# Created by: Christopher Boumenot <boumenot@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-TiVo
 PORTVERSION=	0.11
@@ -27,4 +23,5 @@ MAN3=		Net::TiVo.3 \
 		Net::TiVo::Show.3 \
 		Net::TiVo::Folder.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

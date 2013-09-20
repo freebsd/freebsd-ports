@@ -20,6 +20,7 @@ USE_RC_SUBR=	${PORTNAME}
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/radsecproxy ${PREFIX}/bin/catgconf
 	${INSTALL_PROGRAM} ${WRKSRC}/radsecproxy ${PREFIX}/sbin/radsecproxy

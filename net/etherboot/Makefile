@@ -19,6 +19,7 @@ USE_PERL5=	build
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG}
 	@${ECHO_MSG} Refer to ${DESCR} and ${WRKDIR}/${PKGNAME}/doc for \

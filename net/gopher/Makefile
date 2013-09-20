@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gopher
-# Date created:		11 Dec 1994
-# Whom:			ats (original)
-#
+# Created by: ats (original)
 # $FreeBSD$
-#
 
 PORTNAME=	gopher
 PORTVERSION=	3.0.6
@@ -23,6 +19,7 @@ USE_GMAKE=	yes
 MAN1=	gopher.1 gophfilt.1
 MAN5=	gopherrc.5
 
+NO_STAGE=	yes
 pre-patch:
 	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
 		's,<malloc.h>,<stdlib.h>,'

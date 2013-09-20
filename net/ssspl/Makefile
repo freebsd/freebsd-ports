@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ssspl
-# Date created:		2011-04-02
-# Whom:			Hung-Yi Chen <gaod@hychen.org>
-#
+# Created by: Hung-Yi Chen <gaod@hychen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ssspl
 PORTVERSION=	0.1
@@ -23,6 +19,7 @@ NO_BUILD=	yes
 PLIST_FILES=	sbin/sss.pl
 STRIP=
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}

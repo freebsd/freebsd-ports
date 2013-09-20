@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-SOAP-MySOAP
-# Date created:		2007-04-30
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	SOAP-MySOAP
 PORTVERSION=	0.023
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=		SOAP::MySOAP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

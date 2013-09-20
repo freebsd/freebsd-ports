@@ -19,6 +19,7 @@ PORTDOCS=	*
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 src!=		${MAKE} -C ${PORTSDIR}/net/cvsup-without-gui -V WRKSRC

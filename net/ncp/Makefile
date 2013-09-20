@@ -1,7 +1,4 @@
-# New ports collection makefile for:   ncp
-# Date created:        2003-03-06
-# Whom:                Matthias Teege <matthias@mteege.de>
-#
+# Created by: Matthias Teege <matthias@mteege.de>
 # $FreeBSD$
 
 PORTNAME=	ncp
@@ -25,6 +22,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC=gcc|CC=${CC}|' \
 		${WRKSRC}/Makefile

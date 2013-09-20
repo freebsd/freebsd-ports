@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-WhitePages
-# Date created:				16 Oct 2010
-# Whom:	      				Zane C. Bowers <vvelox@vvelox.net>
-#
+# Created by: Zane C. Bowers <vvelox@vvelox.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-WhitePages
 PORTVERSION=	1.04
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::WhitePages.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

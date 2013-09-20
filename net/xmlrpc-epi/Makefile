@@ -29,6 +29,7 @@ METHODS=	TestNormal TestFault TestStruct TestArray TestBoolean \
 
 CONFLICTS=	xmlrpc-c-0.* xmlrpc-c-devel-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

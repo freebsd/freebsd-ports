@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-cvsclient
-# Date created:			2006/08/21
-# Whom:				chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cvsclient
 PORTVERSION=	0.2
@@ -21,4 +17,5 @@ USE_PHPEXT=	yes
 DEFAULT_PHP_VER=53
 IGNORE_WITH_PHP=5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/ntpd
 MAN5=		ntpd.conf.5
 MAN8=		ntpd.8
 
+NO_STAGE=	yes
 post-extract:
 .for i in compat.h adjfreq.c
 	@${CP} ${FILESDIR}/$i ${WRKSRC}

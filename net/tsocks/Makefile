@@ -1,7 +1,4 @@
-# New ports collection makefile for:	tsocks
-# Date created:				5th September 2003
-# Whom:					Marcin Jessa <freebsd@yazzy.org>
-#
+# Created by: Marcin Jessa <freebsd@yazzy.org>
 # $FreeBSD$
 
 PORTNAME=	tsocks
@@ -45,6 +42,7 @@ CONFIGURE_ARGS+=	--disable-debug
 CONFIGURE_ARGS+=	--disable-hostnames
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::

@@ -28,6 +28,7 @@ PLIST_SUB=		PORTNAME="${PORTNAME}"
 # TODO: Install txAMQP examples.
 
 # Don't try to install Twisted yourself, txAMQP. thx!
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/install_requires/s/^/#/' ${WRKSRC}/setup.py
 

@@ -28,6 +28,7 @@ SUB_LIST=	LOGFILE="${LOGFILE}"
 
 OPTIONS_DEFINE=	LDAP
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAP}

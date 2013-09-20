@@ -1,9 +1,5 @@
-# New ports collection makefile for:   quoted
-# Date created:        1 December 2004
-# Whom:                Bob Frazier
-#
+# Created by: Bob Frazier
 # $FreeBSD$
-#
 
 PORTNAME=	quoted
 PORTVERSION=	1.0
@@ -21,4 +17,5 @@ USE_GMAKE=	yes
 
 USE_RC_SUBR=	 ${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

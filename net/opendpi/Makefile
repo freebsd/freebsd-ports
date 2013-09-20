@@ -1,9 +1,5 @@
-# New ports collection makefile for:	opendpi
-# Date created:		13 November 2009
-# Whom:			fernandotcl
-#
+# Created by: fernandotcl
 # $FreeBSD$
-#
 
 PORTNAME=	opendpi
 PORTVERSION=	1.2.0
@@ -15,6 +11,7 @@ COMMENT=	An open source deep packet inspection engine
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

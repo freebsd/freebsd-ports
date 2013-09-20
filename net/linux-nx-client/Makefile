@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-nx-client
-# Date created:			01 Sep 2004
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=		linux-nx-client
 PORTVERSION=		3.4.0
@@ -29,6 +25,7 @@ PLIST_SUB+=		PORTVERSION=${PORTVERSION}
 
 # Patch binary to expect EINVAL (FreeBSD) instead of EOPNOTSUPP (Linux) when
 # trying to set TCP_NODELAY on the X11 unix domain socket.
+NO_STAGE=	yes
 do-build:
 	${REINPLACE_CMD} -e 's/\x83\xf8\x5f\x0f\x84/\x83\xf8\x16\x0f\x84/' \
 		${NXSRC}/lib/libXcomp.so.${PORTVERSION}

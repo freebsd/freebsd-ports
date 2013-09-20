@@ -27,6 +27,7 @@ PLIST_FILES=	bin/dropShell.sh bin/dropbox_uploader.sh
 
 USE_GITHUB=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -E -e 's,("darwin9"),\1 -o "$${OSTYPE:0:7}" == "freebsd" ,1' -i.bak ${WRKSRC}/dropShell.sh
 

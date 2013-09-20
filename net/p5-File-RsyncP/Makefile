@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-File-RsyncP
-# Date created:				Mon Dec 22 10:30:25 GMT 2003
-# Whom:					Lars Thegler <lars@thegler.dk>
-#
+# Created by: Lars Thegler <lars@thegler.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	File-RsyncP
 PORTVERSION=	0.70
@@ -24,4 +20,5 @@ MAN3=		File::RsyncP.3 \
 		File::RsyncP::FileIO.3 \
 		File::RsyncP::FileList.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

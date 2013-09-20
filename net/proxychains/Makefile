@@ -1,4 +1,4 @@
-# Created by:	Patrick MARIE <mycroft@virgaria.org>
+# Created by: Patrick MARIE <mycroft@virgaria.org>
 # $FreeBSD$
 
 PORTNAME=	proxychains
@@ -14,6 +14,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's!$$(srcdir)/proxychains.conf!$$(srcdir)/proxychains.conf.sample!' \
 		-e 's!libproxychains_la_LIBADD = -ldl!libproxychains_la_LIBADD =!' \

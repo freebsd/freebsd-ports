@@ -55,6 +55,7 @@ UDPFROMTO_DESC=		Compile in UDPFROMTO support
 DEVELOPER_DESC=		Enable developer options
 EDIR_DESC=		Enable eDirectory support (implies LDAP)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Default requirements for rc script

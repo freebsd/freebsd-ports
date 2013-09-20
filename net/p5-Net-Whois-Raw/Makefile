@@ -1,4 +1,4 @@
-# Created by: Alex Kapranoff <kappa@freebsd.org.ua>
+# Created by: Alex Kapranoff <kappa@FreeBSD.org.ua>
 # $FreeBSD$
 
 PORTNAME=	Net-Whois-Raw
@@ -27,4 +27,5 @@ USE_PERL5=	configure
 MAN1=		pwhois.1
 MAN3=		Net::Whois::Raw.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

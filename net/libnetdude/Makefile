@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libnetdude
-# Date created:		2004-04-23
-# Whom:			Yann Berthier <yb@sainte-barbe.org>
-#
+# Created by: Yann Berthier <yb@sainte-barbe.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libnetdude
 PORTVERSION=	0.12
@@ -23,6 +19,7 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|netinet/if_fddi.h|net/fddi.h|g" \
 	${WRKSRC}/protocols/fddi/libnd_fddi.h

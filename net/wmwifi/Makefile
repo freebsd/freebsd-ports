@@ -1,9 +1,5 @@
-# New ports collection makefile for:	net/wmwifi
-# Date created:				01.07.2005
-# Whom:					Ulrich Spoerlein <uspoerlein@gmail.com>
-#
+# Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	wmwifi
 PORTVERSION=	0.4
@@ -25,4 +21,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_FILES=	bin/wmwifi
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

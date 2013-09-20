@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sl2tps
-# Date created:				4 Jul 2004
-# Whom:					Archie Cobbs
-#
+# Created by: Archie Cobbs
 # $FreeBSD$
-#
 
 PORTNAME=	sl2tps
 PORTVERSION=	0.4.2
@@ -23,6 +19,7 @@ MAN1=		sl2tps.1
 PLIST_FILES=	bin/sl2tps %%ETCDIR%%/config.xml.sample
 PLIST_DIRS=	%%ETCDIR%%
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$${PREFIX}/include|$${LOCALBASE}/include|g ; \

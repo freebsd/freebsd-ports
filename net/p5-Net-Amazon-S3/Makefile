@@ -62,4 +62,5 @@ MAN3=		Net::Amazon::S3.3 Net::Amazon::S3::Bucket.3 \
 
 MAN1=		s3cl.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

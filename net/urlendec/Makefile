@@ -1,9 +1,5 @@
-# New ports collection makefile for:	urlendec
-# Date created:				25 October 2000
-# Whom:					G. Adam Stanislav <adam@whizkidtech.net>
-#
+# Created by: G. Adam Stanislav <adam@whizkidtech.net>
 # $FreeBSD$
-#
 
 PORTNAME=	urlendec
 PORTVERSION=	1.0
@@ -20,6 +16,7 @@ ONLY_FOR_ARCHS=	i386
 BINARIES=	urlencode urldecode
 DOCFILES=	index.html rfc1738.txt
 
+NO_STAGE=	yes
 do-install:
 .for f in ${BINARIES}
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin

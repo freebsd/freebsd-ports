@@ -1,9 +1,5 @@
-# New ports collection makefile for:	balance
-# Date created:				Wed 6 Dec 2000
-# Whom:					Joseph Scott <joseph@randomnetworks.com>
-#
+# Created by: Joseph Scott <joseph@randomnetworks.com>
 # $FreeBSD$
-#
 
 PORTNAME=	balance
 PORTVERSION=	3.54
@@ -18,6 +14,7 @@ USE_RC_SUBR=	balance
 
 MAN1=		balance.1
 
+NO_STAGE=	yes
 pre-build:
 	@${REINPLACE_CMD} -e 's|^CFLAGS|CFLAGS?|' \
 	-e 's|^CC|CC?|' ${WRKSRC}/Makefile

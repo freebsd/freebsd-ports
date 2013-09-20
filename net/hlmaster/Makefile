@@ -1,9 +1,5 @@
-# New ports collection makefile for:	HL Master
-# Date created:				Mon Jul  9 02:40:56 EDT 2001
-# Whom:					pat@databits.net
-#
+# Created by: pat@databits.net
 # $FreeBSD$
-#
 
 PORTNAME=	hlmaster
 PORTVERSION=	0.9.3
@@ -18,6 +14,7 @@ GNU_CONFIGURE=	yes
 MAN1=		${PORTNAME}.1 ${PORTNAME}.gameserver.1 \
 		${PORTNAME}.filter.1 ${PORTNAME}.list.1
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in | \

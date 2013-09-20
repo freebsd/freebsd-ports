@@ -42,6 +42,7 @@ PORTDATA=	html plugins
 PORTDOCS=	CHANGELOG-get_iplayer.cgi.txt CHANGELOG.txt \
 		README-get_iplayer.cgi.txt README.md web.sh
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

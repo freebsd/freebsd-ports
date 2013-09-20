@@ -21,6 +21,7 @@ PLIST_FILES=	bin/icpld etc/icpld.conf.sample etc/rc.d/icpld.sh.sample
 
 OPTIONS_DEFINE=	IPV6 DOCS
 
+NO_STAGE=	yes
 .include  <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:  igmpproxy
-# Date created:	       5 January 2009
-# Whom:		       asami
-#
+# Created by: asami
 # $FreeBSD$
-#
 
 PORTNAME=	igmpproxy
 PORTVERSION=	0.1
@@ -25,4 +21,5 @@ GNU_CONFIGURE=	yes
 MAN5=		igmpproxy.conf.5
 MAN8=		igmpproxy.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

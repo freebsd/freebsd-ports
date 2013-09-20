@@ -28,6 +28,7 @@ MAKE_FLAGS=	OSVER="${OSVERSION}" HASH_TYPE=openssl
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

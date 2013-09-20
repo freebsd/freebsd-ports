@@ -20,6 +20,7 @@ GH_TAGNAME=	${GH_COMMIT}
 USES=		cmake
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|lib/$${CMAKE_LIBRARY_ARCHITECTURE}/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/CMakeLists.txt
 

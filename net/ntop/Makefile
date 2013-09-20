@@ -51,6 +51,7 @@ XMLDUMP_DESC=		Enable XML Dump support
 JUMBO_FRAMES_DESC=	Jumbo Frames. Experimental.
 MAKO_DESC=		Install py-mako for Host Map, Region View
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 

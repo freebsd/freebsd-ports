@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openmq
-# Date created:		2009-12-05
-# Whom:			Radim Kolar <hsn@sanatana.iol.cz>
-#
+# Created by: Radim Kolar <hsn@sanatana.iol.cz>
 # $FreeBSD$
-#
 
 PORTNAME=	openmq
 PORTVERSION=	4.5.1.b.3
@@ -45,6 +41,7 @@ SUB_FILES=	pkg-message
 # Get the bootstrap jars in place before the build starts, because
 # pointyhat doesn't allow them to be downloaded by the "bootstrap"
 # target in the Ant file.
+NO_STAGE=	yes
 pre-build:
 		@${MKDIR} ${WRKSRC}/extlib
 		@${CP} ${DISTDIR}/javaee-api-6.0.jar \

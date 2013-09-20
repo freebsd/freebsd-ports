@@ -20,6 +20,7 @@ DEFAULT_PHP_VER=	5
 OPTIONS_DEFINE=	SUPHP
 SUPHP_DESCR=	suPHP support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSUPHP}

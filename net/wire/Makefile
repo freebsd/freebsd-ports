@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wire
-# Date created:		2006-11-23
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	wire
 PORTVERSION=	1.1.3
@@ -38,6 +34,7 @@ LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 #.include <bsd.port.post.mk>
 
 #TODO this is fucking dirty :(
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} ;${GMAKE}
 

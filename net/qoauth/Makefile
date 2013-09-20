@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qoauth
-# Date created:		2010-09-18
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qoauth
 PORTVERSION=	1.0.1
@@ -26,6 +22,7 @@ USE_OPENSSL=	yes
 
 QMAKEFLAGS+=	PREFIX=${PREFIX}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,target.path}/pkgconfig,INSTALL_PREFIX}/libdata/pkgconfig,g' \
 		${WRKSRC}/src/src.pro

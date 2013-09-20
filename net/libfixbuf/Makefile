@@ -15,6 +15,7 @@ USES=		pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 

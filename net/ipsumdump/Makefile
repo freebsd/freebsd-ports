@@ -24,6 +24,7 @@ OPTIONS_SUB=	yes
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Try to unbreak parallel (-jX) builds

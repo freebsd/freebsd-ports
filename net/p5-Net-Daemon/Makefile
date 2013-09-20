@@ -1,4 +1,4 @@
-# Created by: Vanilla I. Shu <vanilla@FreeBSD.ORG>
+# Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Net-Daemon
@@ -18,4 +18,5 @@ MAN3=		Net::Daemon.3 \
 		Net::Daemon::Log.3 \
 		Net::Daemon::Test.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# Created by: Alfred Perlstein <alfred@freebsd.org>
+# Created by: Alfred Perlstein <alfred@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mDNSResponder
@@ -31,6 +31,7 @@ PLIST_FILES=	bin/dns-sd ${EXTRA_BIN} \
 		lib/libdns_sd.so lib/libdns_sd.so.1 \
 		sbin/mdnsd ${EXTRA_SBIN}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/	cc / s|cc|$${CC}|' ${WRKSRC}/Clients/Makefile
 	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g; s|mDNSResponder.8|mDNSResponderPosix.8|g' ${WRKSRC}/mDNSPosix/Makefile

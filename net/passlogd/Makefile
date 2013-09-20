@@ -1,9 +1,5 @@
-# New ports collection makefile for:	passlogd
-# Date Created:				10 June 2001
-# Whom:					Pete Fritchman <petef@databits.net>
-#
+# Created by: Pete Fritchman <petef@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	passlogd
 PORTVERSION=	0.1f
@@ -15,6 +11,7 @@ COMMENT=	Intercept and dump syslog remote log packets
 
 PLIST_FILES=	sbin/passlogd
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s|.(CXX)|${CC} ${CFLAGS}|g" ${WRKSRC}/Makefile
 

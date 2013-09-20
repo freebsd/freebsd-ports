@@ -49,6 +49,7 @@ OPTIONS_DEFAULT=	GNUTLS NLS PAM VIEWER
 VIEWER_DESC=		Build vncviewer
 HPJPG_DESC=		Build with High-Performance JPEG support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CMAKE_ARGS=	-G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=${PREFIX}

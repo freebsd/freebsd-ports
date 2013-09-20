@@ -17,6 +17,7 @@ PORTDOCS=	README
 PORTEXAMPLES=	README ipTopTalkers ipTrafficMatrix sflowRRDChart.cgi \
 		sflowRRDLoad sflowenable
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

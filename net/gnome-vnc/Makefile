@@ -14,4 +14,5 @@ PLIST_FILES=	bin/gnome-vnc-viewer
 USE_GNOME=	gnomelibs
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

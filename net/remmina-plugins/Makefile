@@ -16,6 +16,7 @@ MAINTAINER?=	fluffy@FreeBSD.org
 COMMENT?=	Remmina plugin system
 
 .if defined(PKGNAMESUFFIX)
+NO_STAGE=	yes
 .include "${.CURDIR}/../remmina-plugins/bsd.plugin.mk"
 .else
 

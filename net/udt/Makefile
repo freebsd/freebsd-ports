@@ -18,6 +18,7 @@ EXTRACT_AFTER_ARGS=	--exclude '*md5*'	\
 USE_LDCONFIG=	yes
 UDT_APPS=	appclient appserver recvfile sendfile test
 
+NO_STAGE=	yes
 post-build:
 	# Building sample applications:
 .for a in ${UDT_APPS}

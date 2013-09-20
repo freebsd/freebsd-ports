@@ -18,6 +18,7 @@ CFLAGS+=	-D_GNU_SOURCE
 MAN8=		minissdpd.8
 PLIST_FILES=	sbin/minissdpd
 
+NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKSRC}/${PORTNAME}.1 ${WRKSRC}/${MAN8}
 

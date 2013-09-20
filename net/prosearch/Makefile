@@ -38,6 +38,7 @@ SPHINX_DESC=		sphinx fulltext search engine
 
 #		NGINX "With web server deps (NGINX)" off
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 RUN_DEPENDS+=\

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ntraceroute
-# Date created:		25 June 2004
-# Whom:			Bruce M Simpson <bms@FreeBSD.org>
-#
+# Created by: Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ntraceroute
 PORTVERSION=	6.4.2
@@ -28,6 +24,7 @@ EXTRACT_AFTER_ARGS=	.
 NOMAN=		defined
 PLIST_FILES=	sbin/${PORTNAME}
 
+NO_STAGE=	yes
 do-build:
 	${CC} -o ${WRKSRC}/${PORTNAME} -lm \
 	    ${WRKSRC}/${DISTFILES}

@@ -28,6 +28,7 @@ USE_PERL5=	run
 MAN1=		ssvnc.1 ssvncviewer.1 ssvnc-gui.1
 NO_INSTALL_MANPAGES=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MULTRAFTP}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    wmping
-# Date created:         16 February 2004
-# Whom:                 Sergey Velichkevych <serg@cad.kiev.ua>
-#
+# Created by: Sergey Velichkevych <serg@cad.kiev.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	wmping
 PORTVERSION=	0.2.1
@@ -22,6 +18,7 @@ MAN1=		wmping.1
 PLIST_FILES=	bin/wmping
 PORTDOCS=	BUGS CHANGES README TODO
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL} -c -s -m 4555 -o root -g wheel ${WRKSRC}/wmping ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/wmping.1 ${PREFIX}/man/man1

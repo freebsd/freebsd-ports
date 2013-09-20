@@ -23,6 +23,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 USE_RC_SUBR=	bird6
 
+NO_STAGE=	yes
 post-install:
 	@if [ ! -f ${PREFIX}/etc/bird6.conf ]; then \
 		${CP} -p ${PREFIX}/etc/bird6.conf.example ${PREFIX}/etc/bird6.conf ; \

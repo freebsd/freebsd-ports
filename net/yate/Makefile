@@ -49,6 +49,7 @@ SPANDSP_DESC=	Spandsp faxing support
 DAHDI_DESC=	Dahdi driver
 H323_DESC=	H323 software channel/protocol support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

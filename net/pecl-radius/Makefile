@@ -1,9 +1,5 @@
-# Ports collection makefile for:	pecl-radius
-# Date created:				09 March 2005
-# Whom:					Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	radius
 PORTVERSION=	1.2.5
@@ -22,6 +18,7 @@ USE_PHPEXT=	yes
 CONFIGURE_ARGS=	--enable-radius
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}

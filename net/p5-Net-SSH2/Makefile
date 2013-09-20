@@ -23,4 +23,5 @@ MAN3=		Net::SSH2.3 Net::SSH2::Channel.3 \
 		Net::SSH2::Listener.3 Net::SSH2::PublicKey.3 \
 		Net::SSH2::SFTP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

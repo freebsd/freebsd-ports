@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-MAC
-# Date created:				25 Oct 2008
-# Whom:					Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-MAC
 PORTVERSION=	2.103622
@@ -22,4 +18,5 @@ MAN3=		Net::MAC.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

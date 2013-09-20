@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	slurm
-# Date created:			Tue Oct 30, 2002
-# Whom:				Michael L. Hostbaek (mich@freebsdcluster.org)
-#
+# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
 # $FreeBSD$
-#
 
 PORTNAME=	slurm
 PORTVERSION=	0.3.3
@@ -22,6 +17,7 @@ CONFIGURE_ARGS=	CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 
 MAN1=	slurm.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

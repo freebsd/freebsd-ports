@@ -21,6 +21,7 @@ ACLOCAL_ARGS=	-I.
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's|$$(libdir)/\(pkgconfig\)|$$(prefix)/libdata/\1|' \
 		${WRKSRC}/Makefile.am

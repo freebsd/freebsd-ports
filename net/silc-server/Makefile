@@ -1,9 +1,5 @@
-# New ports collection makefile for:	silc server
-# Date created:				Thu Nov 8 01:50:05 BRST 2001
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	silc
 PORTVERSION=	1.1.18
@@ -41,6 +37,7 @@ CONFIGURE_ARGS=	--with-silcd-config-file=${PREFIX}/etc/${PORTNAME}/silcd.conf \
 MAN5=	silcd.conf.5
 MAN8=	silcd.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"

@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	TESTS
 TESTS_DESC=	Install tools for unit tests
 OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_PYTHON=		-2.7

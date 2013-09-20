@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nusoap
-# Date created:		2007-09-07
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nusoap
 PORTVERSION=	0.9.5
@@ -18,6 +14,7 @@ NO_WRKSUBDIR=	yes
 USE_PHP=	curl zlib xml
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

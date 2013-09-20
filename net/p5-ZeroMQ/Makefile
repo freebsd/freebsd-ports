@@ -1,4 +1,3 @@
-# Created by: Andrej Zverev <az@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ZeroMQ
@@ -40,6 +39,7 @@ MAN3=	\
 	ZeroMQ::Poller.3 \
 	ZeroMQ::Message.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

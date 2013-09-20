@@ -1,9 +1,5 @@
-# New ports collection makefile for:	net/linux-f10-openldap
-# Date created:				2009-06-07
-# Whom:					peter
-#
+# Created by: peter
 # $FreeBSD$
-#
 
 PORTNAME=	openldap
 PORTVERSION=	2.4.12
@@ -30,6 +26,7 @@ MAN5=		ldap.conf.5 ldif.5
 MANCOMPRESSED=	yes
 
 # do not install any openldap configuration directories/files
+NO_STAGE=	yes
 post-extract:
 	${RM} -rf ${WRKSRC}/etc
 

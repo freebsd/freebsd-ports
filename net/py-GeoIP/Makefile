@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-GeoIP
-# Date created:		27 February 2004
-# Whom:			Stefan Walter <sw@gegenunendlich.de>
-#
+# Created by: Stefan Walter <sw@gegenunendlich.de>
 # $FreeBSD$
-#
 
 PORTNAME=	GeoIP
 PORTVERSION=	1.2.8
@@ -27,6 +23,7 @@ EXAMPLE_FILES=	README test.py test_city.py test_org.py test_region.py
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/GeoIP.so
 PORTEXAMPLES=	README test.py test_city.py test_org.py test_region.py
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/setup.py \

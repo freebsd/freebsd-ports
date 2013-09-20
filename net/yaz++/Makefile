@@ -1,9 +1,5 @@
-# New ports collection makefile for:	yaz++
-# Date created:				8 Nov 2002
-# Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	yaz++
 PORTVERSION=	1.4.0
@@ -22,4 +18,5 @@ USE_LDCONFIG=	yes
 
 MAN1=		yazpp-config.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -73,6 +73,7 @@ MAN8=	venus-setup.8 \
 	vutil.8
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${CODA_SUITE} == client

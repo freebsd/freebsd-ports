@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	GNUTLS
 #		MATRIXSSL	"Enable matrixssl support" off \
 #		XYSSL		"Enable xyssl support" off
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMATRIXSSL}

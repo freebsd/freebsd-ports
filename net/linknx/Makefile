@@ -23,6 +23,7 @@ OPTIONS_DEFAULT=	LIBESMTP
 LIBESMTP_DESC=	Install libesmtp for SMTP support
 LIBCURL_DESC=	Install libcurl for Clickatell SMS support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MLIBESMTP}

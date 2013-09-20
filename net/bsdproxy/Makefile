@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bsdproxy
-# Date created:		2 November 2001
-# Whom:			roam@FreeBSD.org
-#
+# Created by: roam@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	bsdproxy
 PORTVERSION=	0.04
@@ -19,6 +15,7 @@ USE_GNOME=	glib12
 DOCS=		ChangeLog README
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}

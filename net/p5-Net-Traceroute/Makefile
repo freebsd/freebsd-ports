@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Traceroute
-# Date created:				April 7nd 2001
-# Whom:					kuriyama
-#
+# Created by: kuriyama
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Traceroute
 PORTVERSION=	1.14
@@ -20,4 +16,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::Traceroute.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

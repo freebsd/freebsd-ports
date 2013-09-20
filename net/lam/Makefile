@@ -366,6 +366,7 @@ MAN7=	LAM.7 \
 	libmpi.7 \
 	mpi.7
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64 || ${ARCH} == ia64 || ${ARCH} == sparc64

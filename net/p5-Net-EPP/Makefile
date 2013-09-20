@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Net-EPP-Client
-# Date created:				18 Feb 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-EPP
 PORTVERSION=	0.19
@@ -66,4 +62,5 @@ MAN3=	Net::EPP.3 \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

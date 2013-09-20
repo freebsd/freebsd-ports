@@ -1,9 +1,5 @@
-# New ports collection makefile for:	net/p5-XML-Compile-SOAP-WSA
-# Date created:				23 Nov 2010
-# Whom:					Patrick Powell <papowell@astart.com>
-#
+# Created by: Patrick Powell <papowell@astart.com>
 # $FreeBSD$
-#
 
 PORTNAME=	XML-Compile-SOAP-WSA
 PORTVERSION=	0.12
@@ -28,4 +24,5 @@ USE_PERL5=	configure
 MAN3=	XML::Compile::SOAP::WSA.3 \
 	XML::Compile::SOAP::WSA::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

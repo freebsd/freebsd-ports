@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mping
-# Date Created:				19 Dec 2005
-# Whom:					Babak Farrokhi <babak@farrokhi.net>
-#
+# Created by: Babak Farrokhi <babak@farrokhi.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mping
 PORTVERSION=	2.01
@@ -20,6 +16,7 @@ PORTDOCS=	ChangeLog README TODO
 
 MAN8=		mping.8
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/mping ${PREFIX}/sbin/mping
 	${INSTALL_MAN} ${WRKSRC}/man/mping.8 ${PREFIX}/man/man8/mping.8

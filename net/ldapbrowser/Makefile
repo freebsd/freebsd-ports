@@ -21,6 +21,7 @@ NOMAN=		defined
 WRKSRC=		${WRKDIR}/${PORTNAME}
 REINPLACE_ARGS=	-i ''
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e 's|lbe\.jar|${PREFIX}/lib/ldapbrowser/lbe.jar|' \
 		${WRKSRC}/lbe.sh

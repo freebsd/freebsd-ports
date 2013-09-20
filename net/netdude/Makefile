@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for: 	netdude
-# Date created:			Dec 27, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	netdude
 PORTVERSION=	0.5.1
@@ -26,6 +21,7 @@ USE_GNOME=	glib12 gtk12
 
 MAN1=	netdude.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|DOC_MODULE = netdude|DOC_MODULE =|' \
 	${WRKSRC}/doc/netdude-manual/Makefile.in

@@ -26,6 +26,7 @@ PLIST_FILES=	%%DATADIR%%/gpxe.dsk \
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 ONLY_FOR_ARCHS=		amd64 i386

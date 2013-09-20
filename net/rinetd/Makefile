@@ -25,6 +25,7 @@ PLIST_FILES=	sbin/rinetd
 
 USE_RC_SUBR=	rinetd
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

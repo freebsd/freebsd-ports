@@ -18,4 +18,5 @@ USE_XORG=	x11 xext
 MAN1=		wmnet2.1
 PLIST_FILES=	bin/wmnet2
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

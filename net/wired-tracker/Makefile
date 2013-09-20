@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wired-tracker
-# Date created:		2006-12-02
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	wired-tracker
 PORTVERSION=	1.0.2
@@ -28,6 +24,7 @@ MAN1=		trackerdctl.1
 MAN5=		trackerd.conf.5
 MAN8=		trackerd.8
 
+NO_STAGE=	yes
 post-install:
 	@if [ ! -f ${PREFIX}/wired/etc/trackerd.conf ]; then \
 		${CP} -p ${PREFIX}/wired/etc/trackerd.conf.sample ${PREFIX}/wired/etc/trackerd.conf ; \

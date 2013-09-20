@@ -18,6 +18,7 @@ USE_PERL5=	configure
 
 MAN3=		Filesys::SmbClient.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's!%%LOCALBASE%%!${LOCALBASE}!g' \
 		${WRKSRC}/Makefile.PL

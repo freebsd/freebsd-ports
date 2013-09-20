@@ -50,4 +50,5 @@ MAN3=		XML::Compile::SOAP.3 \
 		XML::Compile::XOP.3 \
 		XML::Compile::XOP::Include.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

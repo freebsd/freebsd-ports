@@ -20,4 +20,5 @@ MAN1=		pload.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/pload
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

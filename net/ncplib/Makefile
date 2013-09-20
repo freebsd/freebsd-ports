@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ncplib
-# Date created:		9 Dec 1999
-# Whom:			Boris Popov <bp@butya.kz>
-#
+# Created by: Boris Popov <bp@butya.kz>
 # $FreeBSD$
-#
 
 PORTNAME=	ncplib
 PORTVERSION=	1.3.4
@@ -24,6 +20,7 @@ MANCOMPRESSED=	yes
 MAN1=	ncpasswd.1 ncprint.1 ncpsend.1 ncpurge.1
 MAN8=	ipxping.8 ncpsvc.8
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  mopd
-# Date created:			  Sun Nov 14, 1999
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	mopd
 PORTVERSION=	2.5.3
@@ -21,6 +16,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	MOP Loader Daemon for netbooting DEC machines
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 MAKE_ENV=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man NO_MANCOMPRESS=true

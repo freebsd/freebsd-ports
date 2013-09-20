@@ -1,6 +1,5 @@
 # Created by: Sergey Matveychuk <sem@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dhcprelya
 PORTVERSION=	4.7
@@ -27,6 +26,7 @@ PLIST_FILES=	sbin/${PORTNAME} lib/${PORTNAME}_log_plugin.so \
 #OPTIONS_DEFINE=	RADIUS_PLUGIN
 RADIUS_PLUGIN_PLUGIN_DESC=	build radius plugin
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRADIUS_PLUGIN}

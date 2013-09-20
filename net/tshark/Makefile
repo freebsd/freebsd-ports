@@ -1,12 +1,5 @@
-# New ports collection makefile for:   tethereal
-# Date created:        4 February 2002
-# Whom:                Bill Fumerola <billf@mu.org>
-# A slave of ports collection makefile for:   ethereal
-# Date created:        10 August 1998
-# Whom:                Bill Fumerola <billf@chc-chimes.com>
-#
+# Created by: Bill Fumerola <billf@mu.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tshark
 PORTREVISION=	0
@@ -16,4 +9,5 @@ MASTERDIR=	${.CURDIR}/../wireshark
 
 WITHOUT_X11=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

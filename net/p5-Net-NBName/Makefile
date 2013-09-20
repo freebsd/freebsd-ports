@@ -1,7 +1,4 @@
-# New ports collection makefile for:	p5-Net-NBName
-# Date created:				18 Feb 2006
-# Whom:	      				Bill Fenner <fenner@FreeBSD.Org>
-#
+# Created by: Bill Fenner <fenner@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Net-NBName
@@ -18,4 +15,5 @@ USE_PERL5=	configure
 MAN3=	Net::NBName.3 Net::NBName::NameQuery.3 Net::NBName::NameQuery::RR.3 \
 	Net::NBName::NodeStatus.3 Net::NBName::NodeStatus::RR.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

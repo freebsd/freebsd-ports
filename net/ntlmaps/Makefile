@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ntlmaps
-# Date created:				1 August 2007
-# Whom:					kevlo
-#
+# Created by: kevlo
 # $FreeBSD$
 
 PORTNAME=	ntlmaps
@@ -18,6 +15,7 @@ USE_DOS2UNIX=	yes
 
 DOCS=		COPYING Install.txt changelog.txt readme.txt research.txt
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 	    's,^#! /usr/bin/python,#!${PYTHON_CMD},' ${WRKSRC}/main.py

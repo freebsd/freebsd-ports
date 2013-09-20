@@ -1,9 +1,5 @@
-# New ports collection makefile for:    sendfile
-# Date created:         30 Oct 1997
-# Whom:                 sec@42.org
-#
+# Created by: sec@42.org
 # $FreeBSD$
-#
 
 PORTNAME=	sendfile
 PORTVERSION=	2.1a
@@ -28,6 +24,7 @@ MAN7=		fetchfile.7
 MAN8=		sendfiled.8
 MLINKS=		utf7encode.1 utf7decode.1
 
+NO_STAGE=	yes
 post-install:
 	@if [ ! -f ${PREFIX}/etc/sendfile.cf ]; then \
 	  ${CP} -p ${PREFIX}/etc/sendfile.cf.sample ${PREFIX}/etc/sendfile.cf ; \

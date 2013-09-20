@@ -1,9 +1,5 @@
-# New ports collection makefile for:	popular pppd pppoe client
-# Date created:		22 Mar 2001
-# Whom:			Mario Sergio Fujikawa Ferreira <liouxFreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <liouxFreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rp-pppoe
 PORTVERSION=	3.11
@@ -32,6 +28,7 @@ SCRIPT_FILES=	pppoe-connect pppoe-init pppoe-setup pppoe-start \
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 # work around "Present But Cannot Be Compiled" issue in GNU configure:
 CFLAGS+=	-include sys/types.h -include sys/socket.h -include netinet/in.h
 

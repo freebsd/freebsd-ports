@@ -1,9 +1,5 @@
-# New ports collection makefile for:	iscsi-target
-# Date created:				2006-04-18
-# Whom:					Frederic Senault <fred@lacave.net>
-#
+# Created by: Frederic Senault <fred@lacave.net>
 # $FreeBSD$
-#
 
 PORTNAME=	iscsi
 PORTVERSION=	20080207
@@ -26,6 +22,7 @@ MAN8=		iscsi-target.8
 
 USE_RC_SUBR=	iscsi_target
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|_LDFLAGS= -pthread|_LDFLAGS= ${PTHREAD_CFLAGS}|' ${WRKSRC}/Makefile.in

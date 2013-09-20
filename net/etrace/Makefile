@@ -1,9 +1,5 @@
-# New ports collection makefile for:	etrace
-# Date created:				2006-05-07
-# Whom:					dave.ryan@gmail.com
-#
+# Created by: dave.ryan@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	etrace
 PORTVERSION=	1.1
@@ -25,4 +21,5 @@ CONFIGURE_ARGS=		--with-libdnet=${PREFIX}
 
 MAN8=	etrace.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

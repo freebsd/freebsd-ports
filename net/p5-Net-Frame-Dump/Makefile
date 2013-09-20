@@ -27,4 +27,5 @@ MAN3=		Net::Frame::Dump.3 \
 		Net::Frame::Dump::Online2.3 \
 		Net::Frame::Dump::Writer.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

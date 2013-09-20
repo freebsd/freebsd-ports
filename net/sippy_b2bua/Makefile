@@ -1,9 +1,5 @@
-# New ports collection makefile for:    pychecker
-# Date created:         		20 November 2009
-# Whom:                 		Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sippy_b2bua
 PORTVERSION=	1.0.2
@@ -24,6 +20,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PYDISTUTILS_PKGNAME}
 DOCS=		COPYING README
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}

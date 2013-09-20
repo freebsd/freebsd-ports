@@ -12,6 +12,7 @@ COMMENT=	Utility for detecting traceroutes and reporting them via syslog
 PLIST_FILES=	sbin/tdetect etc/rc.d/tdetect.sh
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e 's/trdetect/tdetect/g' ${WRKSRC}/config.h
 	@${REINPLACE_CMD} -e 's/LOG_AUTHPRIV/LOG_SECURITY/g' ${WRKSRC}/config.h

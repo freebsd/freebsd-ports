@@ -1,9 +1,5 @@
-# Ports collection makefile for:  sbd
-# Date created:			  2004-07-08
-# Whom:				  David Thiel (lx@redundancy.redundancy.org)
-#
+# Created by: David Thiel (lx@redundancy.redundancy.org)
 # $FreeBSD$
-#
 
 PORTNAME=	sbd
 PORTVERSION=	1.37
@@ -19,6 +15,7 @@ ALL_TARGET=	unix
 PLIST_FILES=	bin/sbd
 PORTDOCS=	README
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sbd ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

@@ -11,6 +11,7 @@ COMMENT=	Grabbing TCP streams from network interface (SAT internet)
 
 SSP_UNSAFE=	kernel module does not support ssp
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SYSDIR?=	${SRC_BASE}/sys

@@ -1,11 +1,5 @@
-# New ports collection makefile for:    cnet
-# Date created:         Feb 8th, 1988
-# Whom:                 jkh
-#
+# Created by: jkh
 # $FreeBSD$
-#
-# $Tecnik: ports/net/cnet/Makefile,v 1.5 2006/03/18 20:13:12 itetcu Exp $
-#
 
 PORTNAME=	cnet
 PORTVERSION=	2.0.10
@@ -26,6 +20,7 @@ USE_GMAKE=	yes
 ALL_TARGET=	# empty
 MAN1=		cnet.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "amd64"

@@ -36,4 +36,5 @@ MAN1=		calcappclient.1 \
 		terminal.1
 
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

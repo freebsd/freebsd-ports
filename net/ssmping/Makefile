@@ -19,6 +19,7 @@ PLIST_FILES=	bin/ssmping \
 		bin/mcfirst \
 		sbin/ssmpingd
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} <= 800000

@@ -33,6 +33,7 @@ SCRIPTS_DESC=		Install Freeswitch various scripts
 OPTIONS_DEFAULT=	VANILLA SOUNDS MUSIC
 NO_OPTIONS_SORT=        yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for conf in vanilla sbc insideout curl

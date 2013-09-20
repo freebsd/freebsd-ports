@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-growl
-# Date created:		2011-05-08
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	growl
 PORTVERSION=	3.0
@@ -28,6 +24,7 @@ PLIST_FILES=	bin/growl \
 PORTDOCS=	History.txt README.txt
 DOCSDIR=	${RUBY_MODDOCDIR}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/growl ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/lib/ruby-growl.rb ${RUBY_SITELIBDIR}/

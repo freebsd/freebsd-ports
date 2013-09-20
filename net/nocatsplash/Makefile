@@ -1,9 +1,5 @@
-# New ports collection makefile for:    NoCatSplash
-# Date created:         19 November 2003
-# Whom:                 Bruce M Simpson <bms@FreeBSD.org>
-#
+# Created by: Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nocatsplash
 PORTVERSION=	0.82
@@ -35,4 +31,5 @@ CONFIGURE_ARGS+=	--with-mode=${AUTHMODE}
 CONFIGURE_ARGS+=	--with-docroot=${DOCROOT}
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

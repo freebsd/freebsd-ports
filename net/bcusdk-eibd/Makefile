@@ -27,6 +27,7 @@ CONFIGURE_ARGS+=--enable-onlyeibd \
 
 OPTIONS_DEFINE=	JAVA EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJAVA}

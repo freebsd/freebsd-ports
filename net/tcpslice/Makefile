@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcpslice
-# Date created:		15 April 2002
-# Whom:			smace@freebsd.org
-#
+# Created by: smace@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	tcpslice
 PORTVERSION=	2008.05.19
@@ -18,4 +14,5 @@ PLIST_FILES=	sbin/tcpslice
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

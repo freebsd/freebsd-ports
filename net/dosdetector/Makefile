@@ -1,7 +1,4 @@
-# New ports collection makefile for:   dosdetector
-# Date created:        5 June 2005
-# Whom:                msciciel
-#
+# Created by: msciciel
 # $FreeBSD$
 
 # The port will be at version 0.0 (based on dated CVS snapshots)
@@ -22,4 +19,5 @@ USE_AUTOTOOLS=	autoheader
 PLIST_FILES=	bin/dosdetector
 MAN1=		dosdetector.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

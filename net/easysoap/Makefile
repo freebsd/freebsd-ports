@@ -1,9 +1,5 @@
-# New ports collection makefile for:	easysoap
-# Date created:			21th September 2001
-# Whom:				Gabriel Ambuehl <gabriel_ambuehl@buz.ch>
-#
+# Created by: Gabriel Ambuehl <gabriel_ambuehl@buz.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	easysoap
 PORTVERSION=	0.8.0
@@ -23,6 +19,7 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700042 && ${ARCH} == "amd64"

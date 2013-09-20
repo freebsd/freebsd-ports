@@ -38,6 +38,7 @@ MAN3=		Net::Amazon::MechanicalTurk.3 \
 SUB_LIST+=	HOME=${HOME} EXAMPLESDIR=${EXAMPLESDIR}
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	@${INSTALL} -d ${EXAMPLESDIR}

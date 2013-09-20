@@ -59,6 +59,7 @@ RTP_DESC=		Enable support for playing back RTP streams
 ADNS_DESC=		Enable asynchronous DNS lookup support
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

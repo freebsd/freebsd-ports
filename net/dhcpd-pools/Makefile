@@ -27,6 +27,7 @@ PORTDATA=	dhcpd-pools.cgi snmptest.pl
 
 MAN1=		dhcpd-pools.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/features.h/d' ${WRKSRC}/src/getdata.c
 

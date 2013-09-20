@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wackamole
-# Date created:		2007-05-02
-# Whom:			Marcin Cieslak <saper@system.pl>
-#
+# Created by: Marcin Cieslak <saper@system.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	wackamole
 PORTVERSION=	2.1.4
@@ -22,4 +18,5 @@ CONFIGURE_ENV+=	YACC=${YACC}
 MAN5=		wackamole.conf.5
 MAN8=		wackamole.8 wackatrl.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

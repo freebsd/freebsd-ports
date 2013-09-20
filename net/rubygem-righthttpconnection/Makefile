@@ -17,4 +17,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 LICENSE=	MIT
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

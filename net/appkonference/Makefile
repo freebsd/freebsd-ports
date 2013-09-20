@@ -1,9 +1,5 @@
-# New ports collection makefile for:	net/appkonference
-# Date created:				19 October 2010
-# Whom:					Alex Deiter <Alex.Deiter@Gmail.COM>
-#
+# Created by: Alex Deiter <Alex.Deiter@Gmail.COM>
 # $FreeBSD$
-#
 
 PORTNAME=	appkonference
 PORTVERSION=	2.1
@@ -25,4 +21,5 @@ PLIST_FILES=	lib/asterisk/modules/app_konference.so
 ONLY_FOR_ARCHS=		amd64 arm i386 ia64
 ONLY_FOR_ARCHS_REASON=	not yet ported to this architecture
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

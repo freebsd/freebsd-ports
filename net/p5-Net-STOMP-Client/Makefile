@@ -30,4 +30,5 @@ MAN3=	Net::STOMP::Client.3 \
 	Net::STOMP::Client::Tutorial.3 \
 	Net::STOMP::Client::Version.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

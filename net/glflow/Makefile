@@ -1,9 +1,5 @@
-# Ports collection makefile for:  glflow
-# Date created:			  2004-07-12
-# Whom:				  David Thiel (lx@redundancy.redundancy.org)
-#
+# Created by: David Thiel (lx@redundancy.redundancy.org)
 # $FreeBSD$
-#
 
 PORTNAME=	glFlow
 PORTVERSION=	0.1.4
@@ -23,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-0.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-debug --with-hash=md4
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/glflow ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

@@ -25,6 +25,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/nidsmodule.so
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LIBNET_CONFIG})

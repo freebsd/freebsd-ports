@@ -1,10 +1,6 @@
-# New ports collection makefile for:   service-discovery-applet
-# Date Created:			06 May 2006
-# Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/net/service-discovery-applet/Makefile,v 1.5 2007/08/06 16:57:53 mezz Exp $
-#
 
 PORTNAME=	service-discovery-applet
 PORTVERSION=	0.4.3
@@ -29,6 +25,7 @@ CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 GCONF_SCHEMAS=	service-discovery-applet.schemas
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 	    	${WRKSRC}/plugins/gconfterminal.py.in

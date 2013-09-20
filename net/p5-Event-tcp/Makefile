@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Event-tcp
-# Date created:				2009-11-15
-# Whom:					steinex
-#
+# Created by: steinex
 # $FreeBSD$
-#
 
 PORTNAME=	Event-tcp
 PORTVERSION=	0.14
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		Event::tcpsession.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

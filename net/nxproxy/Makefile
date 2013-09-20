@@ -1,7 +1,4 @@
-# New ports collection makefile for:	nxproxy
-# Date created:				2010-06-24
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	nxproxy
@@ -29,6 +26,7 @@ CXXFLAGS+=	-I${LOCALBASE}/include/libpng15
 CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}"
 PLIST_FILES=	bin/nxproxy bin/setsid
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc" && ${OSVERSION} > 900000

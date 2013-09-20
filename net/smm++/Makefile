@@ -21,6 +21,7 @@ USE_GMAKE=	yes
 USE_TK=		84+
 EXTRACT_AFTER_ARGS=--exclude CVS
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,itkarray=.*,itkarray=${WISH},' ${WRKSRC}/itk.sh
 

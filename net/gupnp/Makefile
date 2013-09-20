@@ -25,6 +25,7 @@ USE_PYTHON=	yes
 USE_XZ=		yes
 USES=		gmake pathfix pkgconfig
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|' ${WRKSRC}/tools/gupnp-binding-tool
 

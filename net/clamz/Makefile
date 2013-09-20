@@ -22,6 +22,7 @@ USES=		pkgconfig
 
 MAN1=		${PORTNAME}.1
 
+NO_STAGE=	yes
 post-install:
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}

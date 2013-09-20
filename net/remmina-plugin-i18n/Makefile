@@ -1,6 +1,5 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-i18n
 
@@ -10,4 +9,5 @@ MASTERDIR=	${.CURDIR}/../remmina-plugins
 
 USES+=	gettext
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -14,4 +14,5 @@ USES=		gmake
 
 PLIST_FILES=	sbin/ftelnetd
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

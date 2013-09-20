@@ -26,6 +26,7 @@ USE_RC_SUBR=	miniupnpd
 OPTIONS_DEFINE=	PF_ENABLE_FILTER_RULES
 PF_ENABLE_FILTER_RULES_DESC=	Enable pf generation of filter rules
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MWITH_PF_ENABLE_FILTER_RULES}
 EXTRA_PATCHES=	${PATCHDIR}/pf_enable_filter_rules.patch

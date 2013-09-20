@@ -1,4 +1,4 @@
-# Created by: scrappy@freebsd.org
+# Created by: scrappy@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	perl-ldap
@@ -75,4 +75,5 @@ MAN3=		Bundle::Net::LDAP.3 \
 		Net::LDAPI.3 \
 		Net::LDAPS.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

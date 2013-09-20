@@ -1,9 +1,5 @@
-# Ports collection makefile for:	ssltunnel-client
-# Date created:			June 10, 2003
-# Whom:				at@rominet.net
-#
+# Created by: at@rominet.net
 # $FreeBSD$
-#
 
 PORTNAME=	ssltunnel
 PORTVERSION=	1.18
@@ -30,6 +26,7 @@ WANT_GNOME=	yes
 WITHOUT_GNOME=	yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgtk12}!=""

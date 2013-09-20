@@ -24,6 +24,7 @@ MAN1=		${PORTNAME}.1
 OPTION_DEFINE=	LIBDLNA
 LIBDLNA_DESC=	DLNA (PS3) support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLIBDLNA}

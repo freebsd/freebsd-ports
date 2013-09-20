@@ -1,9 +1,5 @@
-# Ports collection Makefile for:   pdb
-# Date created:        26 January 2007
-# Whom:                gnn
-#
+# Created by: gnn
 # $FreeBSD$
-#
 
 PORTNAME=	pdb
 PORTVERSION=	0.1
@@ -20,4 +16,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

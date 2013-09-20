@@ -11,4 +11,5 @@ MASTERDIR=	${.CURDIR}/../remmina-plugins
 
 WITH_TELEP=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

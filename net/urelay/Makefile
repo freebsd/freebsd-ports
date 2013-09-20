@@ -1,9 +1,5 @@
-# New ports collection makefile for:	urelay
-# Date created:			28 October 2005
-# Whom:				Peter Pentchev <roam@FreeBSD.org>
-#
+# Created by: Peter Pentchev <roam@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	urelay
 PORTVERSION=	1.0
@@ -17,4 +13,5 @@ MAN1=		urelay.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/urelay
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

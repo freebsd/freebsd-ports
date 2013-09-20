@@ -26,4 +26,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-gtkglext=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

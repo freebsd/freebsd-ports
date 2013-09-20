@@ -27,6 +27,7 @@ USE_RC_SUBR=		miredo-server miredo
 
 LDFLAGS+=		-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

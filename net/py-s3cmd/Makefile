@@ -1,9 +1,5 @@
-# New ports collection makefile for:	s3cmd
-# Date created:		2007-05-02
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	s3cmd
 PORTVERSION=	1.0.1
@@ -22,6 +18,7 @@ MAN1=		s3cmd.1
 
 FETCH_ARGS=	-Fpr
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,share/man,man,' ${WRKSRC}/setup.py
 .ifndef(NOPORTDOCS)

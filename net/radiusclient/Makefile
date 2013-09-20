@@ -1,9 +1,5 @@
-# New ports collection makefile for:   radiusclient
-# Date created:        Wed Nov  4 08:48:08 EST 1998
-# Whom:                maurice
-#
+# Created by: maurice
 # $FreeBSD$
-#
 
 PORTNAME=	radiusclient
 PORTVERSION=	0.5.6
@@ -20,4 +16,5 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

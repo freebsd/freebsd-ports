@@ -17,6 +17,7 @@ SUB_FILES=	pkg-message
 PORTDOCS=	INSTALL LICENSE
 PLIST_FILES=	sbin/frickin2 etc/frickin.conf.sample
 
+NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 

@@ -40,6 +40,7 @@ DLMALLOC_DESC=		Use dlmalloc (makes bgpd much faster)
 NO_BGP_ANNOUNCE_DESC=	Turn off BGP route announcement
 OSPF_NEXTHOP_DESC=	Set ip next-hop in OSPF route maps
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CFLAGS+=	-I${LOCALBASE}/include

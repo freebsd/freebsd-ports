@@ -26,4 +26,5 @@ MAN3=		Net::Frame::Layer::IPv6.3 \
 		Net::Frame::Layer::IPv6::Option.3 \
 		Net::Frame::Layer::IPv6::Destination.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

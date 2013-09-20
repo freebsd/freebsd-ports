@@ -15,4 +15,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/ruby-whois
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

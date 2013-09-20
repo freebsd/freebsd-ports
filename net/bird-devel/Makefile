@@ -25,6 +25,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 USE_RC_SUBR=	bird
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MKMPLS}

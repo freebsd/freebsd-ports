@@ -1,9 +1,5 @@
-# New ports collection makefile for:	entitymib
-# Date created:				9 January 2004
-# Whom:					Garrett Wollman <wollman@FreeBSD.org>
-#
+# Created by: Garrett Wollman <wollman@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	entitymib
 PORTVERSION=	20040109
@@ -27,6 +23,7 @@ MAN1=		entitymib.1
 
 NO_BUILD=	nope
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${DISTDIR}/entitymib ${PREFIX}/bin/entitymib
 	${INSTALL_MAN} ${DISTDIR}/entitymib.1 ${MANPREFIX}/man/man1

@@ -144,6 +144,7 @@ NSUPDATE_DESC=		Use internal DNS with NSUPDATE utility
 
 OPTIONS_DEFAULT+=	NSUPDATE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # !SAMBA4_SUBPORT

@@ -27,6 +27,7 @@ MAN1=		trickle.1
 MAN5=		trickled.conf.5
 MAN8=		trickled.8
 
+NO_STAGE=	yes
 post-install:
 	if [ ! -f ${PREFIX}/etc/trickled.conf ]; then \
 		${INSTALL_DATA} ${FILESDIR}/trickled.conf ${PREFIX}/etc/trickled.conf; \

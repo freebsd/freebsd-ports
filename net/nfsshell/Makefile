@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nfsshell
-# Date created:				5 February 2005
-# Whom:					johans@stack.nl
-#
+# Created by: johans@stack.nl
 # $FreeBSD$
-#
 
 PORTNAME=	nfsshell
 PORTVERSION=	19980519
@@ -20,6 +16,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DREADLINE" LIBS="-lreadline"
 
 PLIST_FILES=	bin/nfsshell
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nfs ${PREFIX}/bin/nfsshell
 

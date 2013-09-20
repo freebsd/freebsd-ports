@@ -1,9 +1,5 @@
-# Ports collection makefile for:	rubygem-rightflexiscale
-# Date created:			23 Apr 2009
-# Whom:				Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rightflexiscale
 PORTVERSION=	0.1.0
@@ -23,4 +19,5 @@ GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
 UNIQUENAME=	${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

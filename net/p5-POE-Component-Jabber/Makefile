@@ -35,6 +35,7 @@ MAN3=		POE::Component::Jabber.3 \
 		POE::Component::Jabber::ProtocolFactory.3 \
 		POE::Component::Jabber::XMPP.3
 
+NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"

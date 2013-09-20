@@ -21,4 +21,5 @@ GH_COMMIT=	479117d
 
 PYDISTUTILS_PKGNAME=	twitter
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

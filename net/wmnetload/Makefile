@@ -18,6 +18,7 @@ USE_BZIP2=	yes
 USE_XORG=	xpm x11
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

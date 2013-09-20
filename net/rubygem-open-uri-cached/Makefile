@@ -1,9 +1,4 @@
-# New ports collection makefile for:	rubygem-open-uri-cached
-# Date created:		September 09, 2011
-# Whom:				Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	open-uri-cached
 PORTVERSION=	0.0.5
@@ -17,4 +12,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=  yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

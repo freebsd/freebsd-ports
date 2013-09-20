@@ -27,6 +27,7 @@ USE_PERL5=	run
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-patch:
 	@${GREP} -lR "/usr/abills" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/usr/abills|${PREFIX}/abills|g'

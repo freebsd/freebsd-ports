@@ -61,6 +61,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-D_PATH_DHCLIENT_SCRIPT='\"${PREFIX}/sbin/dhclient-script\"' -D_PATH_DHCLIENT_CONF='\"${PREFIX}/etc/dhclient.conf\"' -D_PATH_DHCPD_CONF='\"${PREFIX}/etc/dhcpd.conf\"'
 SCRIPTS_ENV+=	PKG_PREFIX=${PREFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${SUBSYS} == client

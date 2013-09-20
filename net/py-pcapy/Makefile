@@ -25,6 +25,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pcapy.so
 PORTDOCS=	README pcapy.html
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

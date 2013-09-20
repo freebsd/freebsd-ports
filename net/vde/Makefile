@@ -16,6 +16,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CFLAGS+=	${CPPFLAGS} -fPIC

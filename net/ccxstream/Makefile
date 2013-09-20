@@ -1,9 +1,5 @@
-# Ports collection makefile for:	ccxstream
-# Date created:				2004-08-14
-# Whom:					Michael Handler <handler@grendel.net>
-#
+# Created by: Michael Handler <handler@grendel.net>
 # $FreeBSD$
-#
 
 PORTNAME=		ccxstream
 PORTVERSION=		1.0.15
@@ -25,6 +21,7 @@ USE_RC_SUBR=		ccxstream
 PLIST_FILES=		bin/ccxtest \
 			sbin/ccxstream
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

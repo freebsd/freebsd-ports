@@ -1,9 +1,5 @@
-# New ports collection makefile for:   dhcprelay
-# Date created:        15 November 2005
-# Whom:                Edwin Groothuis (edwin@mavetju.org)
-#
+# Created by: Edwin Groothuis (edwin@mavetju.org)
 # $FreeBSD$
-#
 
 PORTNAME=	dhcprelay
 PORTVERSION=	1.2
@@ -19,6 +15,7 @@ LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
 PLIST_FILES=	bin/dhcprelay 
 USE_RC_SUBR=	${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dhcprelay ${PREFIX}/bin
 

@@ -25,4 +25,5 @@ PLIST_FILES+= bin/amqp-deleteq bin/amqp-dequeue bin/amqp-enqueue bin/amqp-peek b
 		bin/amqp-purge bin/amqp-spy bin/amqp-statq bin/amqp-unbind \
 		bin/amqp-delexch bin/amqp-exchange
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

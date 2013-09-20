@@ -21,6 +21,7 @@ SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 PORTDOCS=	protocol.txt
 MAN1=		beanstalkd.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/beanstalkd ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MAN1PREFIX}/man/man1

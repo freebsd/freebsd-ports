@@ -1,9 +1,5 @@
-# New ports collection makefile for: ptpd2
-# Date created:		16 November 2010
-# Whom:			Steven Kreuzer <skreuzer@FreeBSD.org>
-#
+# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ptpd
 DISTVERSION=	2.2.2
@@ -27,6 +23,7 @@ USE_RC_SUBR=	ptpd2
 
 MAN8=		ptpd2.8
 
+NO_STAGE=	yes
 do-install::
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}2 ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}2.8 ${MANPREFIX}/man/man8

@@ -21,4 +21,5 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	python_twitter
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

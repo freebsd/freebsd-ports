@@ -17,4 +17,5 @@ USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

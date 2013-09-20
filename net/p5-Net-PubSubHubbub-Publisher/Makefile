@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-PubSubHubbub-Publisher
-# Date created:		2010-12-05
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-PubSubHubbub-Publisher
 PORTVERSION=	0.91
@@ -21,4 +17,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::PubSubHubbub::Publisher.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -29,4 +29,5 @@ PLIST_FILES=	sbin/map-mbone sbin/mrouted sbin/mrinfo sbin/mtrace \
 MAKE_ARGS+=	datadir=${WRKDIR}/doc
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

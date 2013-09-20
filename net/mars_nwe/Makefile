@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mars_nwe
-# Date created:		29 Dec 1998
-# Whom:			Boris Popov <bp@FreeBSD.org>
-#
+# Created by: Boris Popov <bp@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mars_nwe
 PORTVERSION=	0.99.b20
@@ -22,6 +18,7 @@ WRKSRC=		${WRKDIR}/mars_nwe
 
 PLIST=	${WRKDIR}/PLIST.DYN
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900007

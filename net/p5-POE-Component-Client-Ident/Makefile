@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Component-Client-Ident
-# Date created:		6 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Client-Ident
 PORTVERSION=	1.16
@@ -25,4 +21,5 @@ MAN3=		POE::Component::Client::Ident.3 \
 		POE::Component::Client::Ident::Agent.3 \
 		POE::Filter::Ident.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

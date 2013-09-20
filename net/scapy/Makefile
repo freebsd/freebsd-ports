@@ -1,7 +1,5 @@
 # Created by: vanhu <vanhu@netasq.com>
 # $FreeBSD$
-#
-# TODO: - configurable --enable-xxx for various additional dependancies
 
 PORTNAME=	scapy
 PORTVERSION=	2.2.0
@@ -31,6 +29,7 @@ NMAP_DESC=	nmap OS signatures database
 MANUF_DESC=	wireshark's MANUF MAC database
 SOX_DESC=	Support for VoIP
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYX}

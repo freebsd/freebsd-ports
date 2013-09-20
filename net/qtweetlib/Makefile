@@ -23,4 +23,5 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_QT4=	gui moc_build network qmake_build rcc_build uic_build
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

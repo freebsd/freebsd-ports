@@ -28,6 +28,7 @@ USE_RC_SUBR=	crtmpserver
 
 MAN1=	crtmpserver.1
 
+NO_STAGE=	yes
 pre-install:
 	@${SH} $(WRKSRC)/fixConfFile.sh "${WRKSRC}/builders/cmake/crtmpserver/crtmpserver.lua" "${PREFIX}" "${WRKSRC}"
 	@${SH} $(WRKSRC)/fixConfFile.sh "${WRKSRC}/builders/cmake/crtmpserver/all.debug.lua" "${PREFIX}" "${WRKSRC}"

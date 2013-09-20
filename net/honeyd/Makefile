@@ -1,9 +1,5 @@
-# New ports collection makefile for:	honeyd
-# Date created:				16/04/2002
-# Whom:				Dominic Marks <dominic.marks@btinternet.com>
-#
+# Created by: Dominic Marks <dominic.marks@btinternet.com>
 # $FreeBSD$
-#
 
 PORTNAME=	honeyd
 PORTVERSION=	1.5c
@@ -36,6 +32,7 @@ LICENSE=	GPLv2
 MAN1=		honeydctl.1
 MAN8=		honeyd.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITH_PYTHON)

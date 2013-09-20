@@ -36,6 +36,7 @@ NOMAN=		defined
 XORP_GROUP=	xorp
 USE_RC_SUBR=	xorp
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MADVMCAST}

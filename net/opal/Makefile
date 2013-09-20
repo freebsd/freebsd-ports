@@ -1,4 +1,4 @@
-# Created by: Roger Hardiman <roger@freebsd.org>
+# Created by: Roger Hardiman <roger@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	opal

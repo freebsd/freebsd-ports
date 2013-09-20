@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-SSH
-# Date created:				23 Jan 2001
-# Whom:	      				Vadim Belman <vab@lflat.vas.mobilix.dk>
-#
+# Created by: Vadim Belman <vab@lflat.vas.mobilix.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-SSH
 PORTVERSION=	0.09
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::SSH.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

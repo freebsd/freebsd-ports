@@ -43,6 +43,7 @@ TIGHTVNC_DESC=	Use TightVNC
 TRIDIAVNC_DESC=	Use TridiaVNC
 JP106_DESC=	Install Japanese JP106 keymap
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Which Xserver to use

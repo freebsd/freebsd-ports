@@ -21,6 +21,7 @@ MAN8=		rtpproxy.8
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
+NO_STAGE=	yes
 post-build:
 	${SED} 's|%%PREFIX%%|${PREFIX}|g ; s|%%RC_SUBR%%|/etc/rc.subr|g' \
 	    ${WRKSRC}/freebsd/rtpproxy.in > ${WRKDIR}/rtpproxy

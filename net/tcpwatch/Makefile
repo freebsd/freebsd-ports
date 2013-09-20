@@ -19,4 +19,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGVERSION=	1.2.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

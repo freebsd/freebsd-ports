@@ -17,6 +17,7 @@ USE_RC_SUBR=	lvwimax
 
 PLIST_FILES=	etc/devd/lvwimax.conf sbin/lvwimax
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile
 

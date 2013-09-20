@@ -36,6 +36,7 @@ SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 PLIST_SUB+=	STATEDIR=${STATEDIR}
 PKGMESSAGE=	${WRKDIR}/pkg_message
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

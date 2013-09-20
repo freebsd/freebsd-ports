@@ -66,4 +66,5 @@ MAN3=		Apache::SOAP.3 \
 SHEBANG_FILES=	bin/* t/*.pl t/*.t
 perl_OLD_CMD=	.*perl
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

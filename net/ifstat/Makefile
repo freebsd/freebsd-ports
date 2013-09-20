@@ -19,6 +19,7 @@ OPTIONS_DEFINE=	SNMP
 MAN1=		ifstat.1
 PLIST_FILES=	bin/ifstat
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSNMP}

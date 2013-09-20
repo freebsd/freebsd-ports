@@ -1,4 +1,3 @@
-# ex:ts=8
 # Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
 
@@ -25,4 +24,5 @@ MAN3=	Apache::XMLRPC.3 \
 	Frontier::RPC2.3 \
 	Frontier::Responder.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

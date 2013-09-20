@@ -1,9 +1,5 @@
-# New ports collection makefile for:	iodine
-# Date created:				Feb 15 2006
-# Whom:					Rong-En Fan <rafan@FreeBSD.org>
-#
+# Created by: Rong-En Fan <rafan@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	iodine
 PORTVERSION=	0.6.0r1
@@ -24,6 +20,7 @@ MLINKS=		iodine.8 iodined.8
 
 USE_RC_SUBR=	iodined
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

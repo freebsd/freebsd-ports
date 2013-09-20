@@ -27,6 +27,7 @@ WRKSRC=	${WRKDIR}/HawkNL1.70
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64 || ${ARCH} == ia64

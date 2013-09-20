@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	ulxmlrpcpp
-# Date created:			Dec 10, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	ulxmlrpcpp
 PORTVERSION=	1.7.5
@@ -30,6 +25,7 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS/s| docs | |g' ${WRKSRC}/ulxmlrpcpp/Makefile.in

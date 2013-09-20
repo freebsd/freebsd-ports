@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	pfinger
-# Date created:			Apr 25, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pfinger
 PORTVERSION=	0.7.10
@@ -30,6 +25,7 @@ MAN1=	finger.1 pfinger.1
 MAN5=	fingerconf.5
 MAN8=	in.fingerd.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   dhcperf
-# Date created:        1 November 2006
-# Whom:                Edwin Groothuis (edwin@mavetju.org)
-#
+# Created by: Edwin Groothuis (edwin@mavetju.org)
 # $FreeBSD$
-#
 
 PORTNAME=	dhcperf
 PORTVERSION=	1.0.1.0
@@ -27,6 +23,7 @@ PLIST_FILES=	bin/dhcperf \
 PLIST_DIRS=	share/doc/dhcperf
 MAN1=		dhcperf.1
 
+NO_STAGE=	yes
 post-extract:
 	${TAR} -C ${WRKSRC} -zxvf ${WRKSRC}/${PORTNAME}-${PORTVERSION}_1.tgz
 

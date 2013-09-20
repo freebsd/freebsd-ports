@@ -35,6 +35,7 @@ MAKE_ENV+=	MAKE="${MAKE}"				\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"		\
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

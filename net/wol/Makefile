@@ -20,6 +20,7 @@ MAN1=		wol.1
 INFO=		wol
 DOCS=		AUTHORS NEWS README TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext iconv

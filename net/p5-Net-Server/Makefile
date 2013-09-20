@@ -41,6 +41,7 @@ MAN3=		Net::Server.3 \
 		Net::Server::SIG.3 \
 		Net::Server::Single.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

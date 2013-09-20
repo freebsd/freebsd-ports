@@ -1,9 +1,5 @@
-# New ports collection makefile for:	omnitty
-# Date created:				May 21 2006
-# Whom:					Rong-En Fan <rafan@infor.org>
-#
+# Created by: Rong-En Fan <rafan@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	omnitty
 PORTVERSION=	0.3.0
@@ -25,6 +21,7 @@ MAN1=		${PORTNAME}.1
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's|<alloca.h>|<stdlib.h>|' \
 		${WRKSRC}/machmgr.c

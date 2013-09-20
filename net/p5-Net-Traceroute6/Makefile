@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Traceroute6
-# Date created:				13 August 2001
-# Whom:					petef
-#
+# Created by: petef
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Traceroute6
 PORTVERSION=	0.03
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::Traceroute6.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

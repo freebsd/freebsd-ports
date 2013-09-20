@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-BBS-UserInfo
-# Date created:		2006-08-20
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	BBS-UserInfo
 PORTVERSION=	0.01
@@ -20,4 +16,5 @@ USE_PERL5=	configure
 
 MAN3=		BBS::UserInfo.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

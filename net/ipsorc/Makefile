@@ -13,6 +13,7 @@ COMMENT=	A tool to create and send IP packets with a graphical GTK front-end
 USE_GNOME=	gtk12
 USE_BZIP2=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.old
 	@${SED} s,gtk-config,${GTK_CONFIG}, < ${WRKSRC}/Makefile.old \

@@ -26,6 +26,7 @@ DPCRE_DESC=		Link dynamically
 SPCRE_DESC=		Link statically
 OPTIONS_DEFAULT=	PCRE DPCRE OPENSSL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS USE_GETADDRINFO=1 \

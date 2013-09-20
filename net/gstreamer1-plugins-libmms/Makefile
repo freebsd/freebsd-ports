@@ -10,4 +10,5 @@ DIST=		bad
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -1,4 +1,3 @@
-# Created by: Andrej Zverev <az@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Net-OpenSSH
@@ -25,4 +24,5 @@ MAN3=	Net::OpenSSH::Constants.3 \
 	Net::OpenSSH::OSTracer.3 \
 	Net::OpenSSH.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

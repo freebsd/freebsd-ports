@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pypcap
-# Date created:		15 Jul 2006
-# Whom:			George V. Neville-Neil
-#
+# Created by: George V. Neville-Neil
 # $FreeBSD$
-#
 
 PORTNAME=	pypcap
 PORTVERSION=	1.1
@@ -24,6 +20,7 @@ PYDISTUTILS_PKGNAME=	pcap
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pcap.so
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/pcap.c
 

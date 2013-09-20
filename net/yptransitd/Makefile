@@ -16,6 +16,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-ldap-prefix=${LOCALBASE}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E 's,^([[:blank:]]+)\([^\)]+\) ,\1,' \
 		${WRKSRC}/src/modules.c

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	go.net
-# Date created:		2012-05-02
-# Whom:			Julien Laffaye <jlaffaye@FreeBSD.org>
-#
+# Created by: Julien Laffaye <jlaffaye@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	go.net
 PORTVERSION=	20120502
@@ -18,6 +14,7 @@ GO_TARGET=	${GO_PKGNAME}/dict	\
 		${GO_PKGNAME}/spdy	\
 		${GO_PKGNAME}/websocket
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${GO_LOCAL_LIBDIR}/${GO_PKGNAME}
 .for t in ${GO_TARGET}

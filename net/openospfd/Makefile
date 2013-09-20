@@ -1,9 +1,4 @@
-# New ports collection makefile for:	openospfd-devel
-# Date created:				Mar 08 2005
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	openospfd
 PORTVERSION=	4.3
@@ -42,6 +37,7 @@ MAN8=		ospfctl.8	\
 SUBDIRS=	ospfd \
 		ospfctl
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/if_media.h ${WRKSRC}/ospfctl/
 

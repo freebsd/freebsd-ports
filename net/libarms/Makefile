@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libarms
-# Date created:        27 March 2012
-# Whom:                shigeru@iij.ad.jp
-#
+# Created by: shigeru@iij.ad.jp
 # $FreeBSD$
-#
 
 PORTNAME=	libarms
 PORTVERSION=	5.01
@@ -23,6 +19,7 @@ USE_LDCONFIG=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} 's|$${datarootdir}/doc/$${PACKAGE_TARNAME}|${DOCSDIR}|' \
 		${WRKSRC}/Makefile

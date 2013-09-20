@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcpdump398
-# Date created:				1 October 2009
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tcpdump398
 PORTVERSION=	1.0
@@ -18,6 +14,7 @@ MAN1=		tcpdump398.1
 
 USE_BZIP2=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

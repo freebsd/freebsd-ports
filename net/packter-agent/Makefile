@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	IPV6 PACKTERTC
 PACKTERTC_DESC=	Install Packter TC
 OPTIONS_DEFAULT=	IPV6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

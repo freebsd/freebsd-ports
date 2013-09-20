@@ -37,6 +37,7 @@ IGNORE=	requires a valid conf distribution in FREESWITCH_CONF_DIST; use a slave 
 
 CONF_EXTENSIONS=	xml ttml tpl conf types yaml FS0
 
+NO_STAGE=	yes
 post-patch:
 	@cd ${WRKSRC} && for i in $$(${FIND} . -type f ${CONF_EXTENSIONS:C/.*/-name \*.& -o/} -false); \
 		do [ -f $${i}.sample ] || ${MV} $$i $${i}.sample ; done

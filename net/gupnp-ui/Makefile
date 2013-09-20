@@ -23,4 +23,5 @@ USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USES=		pathfix pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

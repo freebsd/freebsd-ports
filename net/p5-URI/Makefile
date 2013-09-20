@@ -29,4 +29,5 @@ MAN3=		URI.3 \
 		URI::file.3 \
 		URI::ldap.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

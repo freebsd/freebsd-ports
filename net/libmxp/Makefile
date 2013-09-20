@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libmxp
-# Date created:		2007-02-25
-# Whom:			Michael Nottebrock <lofi@kiste>
-#
+# Created by: Michael Nottebrock <lofi@kiste>
 # $FreeBSD$
-#
 
 PORTNAME=	libmxp
 PORTVERSION=	0.2.4
@@ -16,6 +12,7 @@ COMMENT=	Parser for the MUD eXtension protocol
 USES=		cmake
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|objformat=.*|objformat=elf|g' \
 		${WRKSRC}/configure

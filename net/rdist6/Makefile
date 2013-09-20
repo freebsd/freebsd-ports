@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rdist
-# Date created:		19 August 1995
-# Whom:			peter
-#
+# Created by: peter
 # $FreeBSD$
-#
 
 PORTNAME=	rdist
 PORTVERSION=	6.1.5
@@ -24,6 +20,7 @@ MAN1=		${RDIST_NAME}.1
 MAN8=		rdistd.8
 PLIST_SUB=	RDIST_NAME=${RDIST_NAME}
 
+NO_STAGE=	yes
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/${RDIST_NAME}
 	@${STRIP_CMD} ${PREFIX}/bin/rdistd

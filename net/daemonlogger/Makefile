@@ -15,4 +15,5 @@ USE_RC_SUBR=	daemonlogger
 
 PLIST_FILES=	bin/daemonlogger
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

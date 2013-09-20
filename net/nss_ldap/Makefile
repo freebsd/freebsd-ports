@@ -41,6 +41,7 @@ MAN5=	nss_ldap.5
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKERBEROS}

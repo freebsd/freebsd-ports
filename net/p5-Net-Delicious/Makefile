@@ -41,4 +41,5 @@ MAN3=		Net::Delicious.3 \
 		Net::Delicious::Tag.3 \
 		Net::Delicious::User.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

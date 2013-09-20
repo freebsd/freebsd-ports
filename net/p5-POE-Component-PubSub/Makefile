@@ -19,4 +19,5 @@ USE_PERL5=	modbuild
 
 MAN3=	POE::Component::PubSub.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

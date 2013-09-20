@@ -11,4 +11,5 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 
 MASTERDIR=	${.CURDIR}/../remmina-plugins
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

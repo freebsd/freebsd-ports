@@ -1,9 +1,4 @@
-# New ports collection makefile for:	URI::Template::Restrict
-# Date created:		22 Jan 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	URI-Template-Restrict
 PORTVERSION=	0.06
@@ -31,4 +26,5 @@ USE_PERL5=	configure
 MAN3=		URI::Template::Restrict.3 \
 		URI::Template::Restrict::Expansion.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

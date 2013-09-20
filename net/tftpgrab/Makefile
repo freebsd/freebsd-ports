@@ -13,4 +13,5 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/tftpgrab
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

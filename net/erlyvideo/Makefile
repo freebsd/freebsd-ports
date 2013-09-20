@@ -1,9 +1,4 @@
-# New ports collection makefile for:    erlyvideo
-# Date created:                         14 January 2011
-# Whom:                                 Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	erlyvideo
 PORTVERSION=	2.8.1
@@ -29,6 +24,7 @@ DEPSLIST=	amf log4erl erlmedia mpegts rtmp rtp rtsp ibrowse
 PLIST_SUB=	PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}
 SUB_FILES=	pkg-deinstall
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's#/etc/#${PREFIX}/etc/#g' \
 		${WRKSRC}/src/${PORTNAME}.erl ${WRKSRC}/contrib/erlyctl \

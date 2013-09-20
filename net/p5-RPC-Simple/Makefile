@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-RPC-Simple
-# Date created:		2006-08-19
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	RPC-Simple
 PORTVERSION=	1.002
@@ -22,4 +18,5 @@ MAN3=		RPC::Simple.3 RPC::Simple::Agent.3 RPC::Simple::AnyLocal.3 \
 		RPC::Simple::CallHandler.3 RPC::Simple::Factory.3 \
 		RPC::Simple::ObjectHandler.3 RPC::Simple::Server.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

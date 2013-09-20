@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-XML_RPC2
-# Date created:		11 September 2008
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	XML_RPC2
 PORTVERSION=	1.1.1
@@ -23,6 +19,7 @@ RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 PEAR_AUTOINSTALL=	yes
 USE_PHP=	curl
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

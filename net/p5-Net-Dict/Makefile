@@ -19,6 +19,7 @@ USES=		perl5
 
 MAN3=		Net::Dict.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/&configure_testsuite/d; /EXE_FILES/d' ${WRKSRC}/Makefile.PL
 	@${ECHO_CMD} '$$HOST = "test.dict.org"; $$PORT = 2628;' > ${WRKSRC}/t/test_host.cfg

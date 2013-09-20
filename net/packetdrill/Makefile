@@ -20,6 +20,7 @@ PORTEXAMPLES=	fr-4pkt-sack-bsd.pkt fr-4pkt-sack-linux.pkt
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_DEFAULT=DOCS EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-configure:

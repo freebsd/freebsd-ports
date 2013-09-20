@@ -15,6 +15,7 @@ USE_RC_SUBR=	dtcpclient
 MAN8=		dtcpclient.8
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 pre-install:
 	@if [ -f ${PREFIX}/etc/rc.d/${USE_RC_SUBR} ]; then \
 		${ECHO_CMD} "Remove old ${PREFIX}/etc/rc.d/${USE_RC_SUBR} before install."; \

@@ -1,9 +1,5 @@
-# Ports collection makefile for:  cryptcat
-# Date created:			  20 Dec 2000
-# Whom:				  Roman Shterenzon <roman@xpert.com>
-#
+# Created by: Roman Shterenzon <roman@xpert.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cryptcat
 PORTVERSION=	1.2.1
@@ -22,6 +18,7 @@ ALL_TARGET=	freebsd
 PLIST_FILES=	bin/cryptcat
 PORTDOCS=	README.cryptcat
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cryptcat ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

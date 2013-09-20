@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ipa_ipfw
-# Date created:				27 December 2005
-# Whom:					Andrey Simonenko
-#
+# Created by: Andrey Simonenko
 # $FreeBSD$
-#
 
 PORTNAME=	ipa_ipfw
 PORTVERSION=	1.1
@@ -20,6 +16,7 @@ NO_PACKAGE=	Needs to be built uniquely for each host
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 LOCALINCLUDE?=	${LOCALBASE}/include

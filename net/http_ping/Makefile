@@ -17,6 +17,7 @@ MAN1=		http_ping.1
 MANCOMPRESSED=	no
 PLIST_FILES=	bin/http_ping
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/http_ping ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/http_ping.1 ${PREFIX}/man/man1
