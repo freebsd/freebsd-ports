@@ -1,9 +1,5 @@
-# New ports collection makefile for:   wmnet
-# Date created:        24 November 1998
-# Whom:                Rich Neswold <rneswold@mcs.net>
-#
+# Created by: Rich Neswold <rneswold@mcs.net>
 # $FreeBSD$
-#
 
 PORTNAME=	wmnet
 PORTVERSION=	1.2
@@ -20,4 +16,5 @@ USE_XORG=	xpm
 MAN1=		wmnet.1
 PLIST_FILES=	bin/wmnet
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

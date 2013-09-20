@@ -16,6 +16,7 @@ USE_RC_SUBR=	${PORTNAME}
 MAKE_ENV=	BINDIR=${PREFIX}/sbin INITDIR=${PREFIX}/etc/rc.d \
 		CONFDIR=${ETCDIR}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' \
 	    	-e '/scripts\/hsflowd /d' \

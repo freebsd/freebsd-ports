@@ -17,4 +17,5 @@ MAN3=	Queue::Beanstalk.3
 PLIST_FILES=	"%%SITE_PERL%%/Queue/Beanstalk.pm"
 PLIST_FILES+=	"@dirrmtry %%SITE_PERL%%/Queue"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	pydirector
-# Date created:				Thu Feb 26
-# Whom:					Clement Laforet <clement@FreeBSD.org>
-#
+# Created by: Clement Laforet <clement@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pydirector
 PORTVERSION=	1.0.0
@@ -19,6 +15,7 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PORTDOCS=		*
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

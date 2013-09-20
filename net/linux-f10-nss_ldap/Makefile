@@ -1,9 +1,5 @@
-# New ports collection makefile for:    linux-f10-nss_ldap
-# Date created:                2012-01-04
-# Whom:                    rskinner port_maintainer@herveybayaustralia.com.au
-#
+# Created by: rskinner port_maintainer@herveybayaustralia.com.au
 # $FreeBSD$
-#
 
 PORTNAME=	nss_ldap
 PORTVERSION=	${NSS_LDAP_VERSION}
@@ -43,6 +39,7 @@ PLIST_SUB+=	PAM="@comment "
 
 PORTDOCS=*
 
+NO_STAGE=	yes
 pre-fetch:
 .if !defined(WITH_PAM)
 	@${ECHO_MSG} "Use WITH_PAM if you require more advanced ldap support in the linuxulator"

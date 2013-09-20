@@ -18,4 +18,5 @@ WRKSRC=		${WRKDIR}/gkrellmwireless
 USE_XORG=	x11
 USES=		gmake pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

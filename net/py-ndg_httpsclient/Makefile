@@ -1,6 +1,5 @@
 # Created by: Olivier Duchateau
 # $FreeBSD$
-#
 
 PORTNAME=	ndg_httpsclient
 PORTVERSION=	0.3.2
@@ -18,4 +17,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0.13:${PORTSDIR}/security/py-openss
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   vde2
-# Date created:        20 January 2007
-# Whom:                Philip M. Gollucci <ports@FreeBSD.org>
-#
+# Created by: Philip M. Gollucci <ports@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vde2
 PORTVERSION=	2.3.2
@@ -36,6 +32,7 @@ MAN1=		dpipe.1 slirpvde.1 unixcmd.1 unixterm.1 \
 		vdeq.1 vdetaplib.1 vdeterm.1 wirefilter.1
 MAN8=		vde_tunctl.8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}

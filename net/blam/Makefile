@@ -1,6 +1,5 @@
 # Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
-#   $Id: Makefile,v 1.22 2006/10/26 05:32:53 tmclau02 Exp $
 
 PORTNAME=	blam
 PORTVERSION=	1.8.7
@@ -24,4 +23,5 @@ GCONF_SCHEMAS=	blam.schemas
 
 MAN1=		blam.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

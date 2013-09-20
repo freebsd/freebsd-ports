@@ -1,9 +1,5 @@
-# New ports collection makefile for:	prtunnel
-# Date created:		19.06.2003
-# Whom:			Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	prtunnel
 PORTVERSION=	0.2.7
@@ -20,6 +16,7 @@ MAN1=		prtunnel.1
 PORTDOCS=	ChangeLog README
 PLIST_FILES=	bin/prtunnel
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E '/^(CC|CFLAGS|PREFIX)/d' \
 		${WRKSRC}/Makefile

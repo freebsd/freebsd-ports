@@ -768,6 +768,7 @@ SHEBANG_FILES=	\
 
 MAKE_ENV+=	"NUTTYPE=host"
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/Makefile.inc
 

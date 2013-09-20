@@ -25,4 +25,5 @@ MAN8=		nbd-client.8
 regression-test: build
 		cd ${WRKSRC} && ${MAKE} check
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

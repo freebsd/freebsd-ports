@@ -1,9 +1,5 @@
-# New ports collection makefile for:    speedtouch
-# Date created:         August 30 2001
-# Whom:                 Brian Somers <brian@freebsd-services.com>
-#
+# Created by: Brian Somers <brian@freebsd-services.com>
 # $FreeBSD$
-#
 
 PORTNAME=		pppoa
 PORTVERSION=		1.3.1
@@ -29,6 +25,7 @@ WRKSRC=			${WRKDIR}/${SPEEDTOUCH}
 MAN8=			modem_run.8 pppoa2.8 pppoa3.8
 USE_BZIP2=		yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 BROKEN=		does not build

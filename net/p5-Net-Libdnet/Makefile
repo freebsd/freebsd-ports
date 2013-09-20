@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Libdnet
-# Date created:		21 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Libdnet
 PORTVERSION=	0.96
@@ -25,6 +21,7 @@ MAN3=	Net::Libdnet.3 Net::Libdnet::Entry::Intf.3 Net::Libdnet::Intf.3 \
 	Net::Libdnet::Ip.3 Net::Libdnet::Eth.3 Net::Libdnet::Tun.3 \
 	Net::Libdnet::Route.3 Net::Libdnet::Fw.3 Net::Libdnet::Arp.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|dumbnet|dnet|g' ${WRKSRC}/Libdnet.xs
 

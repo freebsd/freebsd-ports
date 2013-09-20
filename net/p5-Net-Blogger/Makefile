@@ -35,4 +35,5 @@ MAN3=	Net::Blogger.3 \
 	Net::Blogger::Engine::Userland.3 \
 	Net::Blogger::Engine::Userland::metaWeblog.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

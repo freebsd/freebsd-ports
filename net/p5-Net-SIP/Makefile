@@ -50,4 +50,5 @@ MAN3=		Net::SIP.3 \
 		Net::SIP::StatelessProxy.3 \
 		Net::SIP::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

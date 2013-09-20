@@ -1,9 +1,5 @@
-# New ports collection makefile for:   tcpdstat
-# Date created:        08 Januari 2003
-# Whom:                Richard Arends
-#
+# Created by: Richard Arends
 # $FreeBSD$
-#
 
 PORTNAME=	tcpdstat
 PORTVERSION=	0.9
@@ -17,4 +13,5 @@ COMMENT=	A tool for generating statistics from tcpdump (libpcap) files
 PLIST_FILES=	bin/tcpdstat
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

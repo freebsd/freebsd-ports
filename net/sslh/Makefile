@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sslh
-# Date created:		2010-03-29
-# Whom:			Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
-#
+# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	sslh
 PORTVERSION=	1.13
@@ -29,6 +25,7 @@ OPTIONS_DEFAULT=	MANPAGES EXAMPLES
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES}

@@ -56,6 +56,7 @@ RIPDARGS?=	-d
 RIPNGDARGS?=	-d
 ZEBRAARGS?=	-d
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MIPV6)

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	clusterit
-# Date created:			4 February 1999
-# Whom:				Dima Sivachenko
-#
+# Created by: Dima Sivachenko
 # $FreeBSD$
-#
 
 PORTNAME=	clusterit
 PORTVERSION=	2.5
@@ -18,6 +14,7 @@ GNU_CONFIGURE=	yes
 MAN1=		barrier.1 barrierd.1 clustersed.1 dsh.1 dshbak.1 \
 		dtop.1 jsh.1 jsd.1 pcp.1 pdf.1 prm.1 rseq.1 run.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined (WITHOUT_X11)

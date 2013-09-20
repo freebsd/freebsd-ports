@@ -24,6 +24,7 @@ MAN3=		erlang_xmlrpc.3
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

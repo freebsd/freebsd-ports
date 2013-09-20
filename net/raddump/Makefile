@@ -1,9 +1,5 @@
-# New ports collection makefile for:   raddump
-# Date created:        31 October 2004
-# Whom:                shanali
-#
+# Created by: shanali
 # $FreeBSD$
-#
 
 PORTNAME=	raddump
 PORTVERSION=	0.3.1
@@ -19,4 +15,5 @@ MAN1=		raddump.1
 
 PLIST_FILES=	bin/raddump
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

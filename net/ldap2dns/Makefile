@@ -37,6 +37,7 @@ PLIST_FILES=	bin/ldap2dns \
 PLIST_DIRS=	%%DATADIR%%
 
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 post-patch:
 	@${REINPLACE_CMD} -e \

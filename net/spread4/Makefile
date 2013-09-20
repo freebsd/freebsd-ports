@@ -40,6 +40,7 @@ MAN3=		SP_connect.3 SP_disconnect.3 SP_equal_group_ids.3 \
 		SP_scat_get_vs_sets_info.3 SP_scat_multicast.3 \
 		SP_scat_receive.3 SP_version.3 libspread.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

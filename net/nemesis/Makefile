@@ -1,9 +1,5 @@
-# Ports collection makefile for:  nemesis
-# Date created:			  Fri July 07, 2000
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	nemesis
 PORTVERSION=	1.4
@@ -28,6 +24,7 @@ PLIST_FILES=	bin/nemesis
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}

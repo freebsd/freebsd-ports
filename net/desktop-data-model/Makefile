@@ -28,6 +28,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-maemo=no
 USE_XORG=	xscrnsaver
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e s,%%LOCALBASE%%,${LOCALBASE}, ${WRKSRC}/Makefile.in
 

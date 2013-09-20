@@ -1,9 +1,4 @@
-# Ports collection makefile for:	pypvm
-# Date created:				Wed, Jan 19 2005
-# Whom:					Brooks Davis <brooks@freebsd.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pypvm
 PORTVERSION=	0.94
@@ -32,6 +27,7 @@ PORTDOCS=	ChangeLog \
 		README
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "amd64"

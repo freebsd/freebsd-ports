@@ -21,6 +21,7 @@ MAN1=		trafshow.1
 
 OPTIONS_DEFINE=		IPV6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

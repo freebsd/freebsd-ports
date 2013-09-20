@@ -20,6 +20,7 @@ PLIST_FILES=	sbin/pimdd \
 
 PORTDOCS=	pimd-dense.html README CHANGES RELEASE.NOTES
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-defs.h

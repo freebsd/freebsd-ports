@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Proxy
-# Date created:				2008-01-03
-# Whom:					Philippe Audeoud <jadawin@tuxaco.net>
-#
+# Created by: Philippe Audeoud <jadawin@tuxaco.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Proxy
 PORTVERSION=	0.12
@@ -31,4 +27,5 @@ MAN3=	Net::Proxy.3 \
 MAN1=	connect-tunnel.1 \
 	sslh.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

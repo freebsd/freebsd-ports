@@ -16,6 +16,7 @@ PLIST_FILES=	libexec/micro_proxy
 MAN8=		micro_proxy.8
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} -c ${WRKSRC}/${PORTNAME}.c -o ${WRKSRC}/${PORTNAME}.o
 	${CC} ${CFLAGS} ${WRKSRC}/${PORTNAME}.o -o ${WRKSRC}/${PORTNAME}

@@ -17,6 +17,7 @@ USE_RC_SUBR=	vncreflector
 ALL_TARGET=	default
 WRKSRC=		${WRKDIR}/vnc_reflector
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile
 

@@ -28,6 +28,7 @@ PLIST_FILES=	bin/ngrep
 PORTDOCS=	CHANGES.txt CREDITS.txt INSTALL.txt LICENSE.txt \
 		README.txt REGEX.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPCRE}

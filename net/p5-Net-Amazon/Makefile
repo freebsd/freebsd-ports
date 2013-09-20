@@ -22,6 +22,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include "Makefile.man"
 
 .include <bsd.port.mk>

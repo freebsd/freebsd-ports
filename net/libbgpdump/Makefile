@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	libbgpdump
-# Date created:			Jan 8, 2007
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libbgpdump
 PORTVERSION=	1.4.99.13
@@ -23,6 +18,7 @@ USE_LDCONFIG=	yes
 PORTDOCS=	README
 PORTEXAMPLES=	example.c
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/bgpdump ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/libbgpdump.* ${PREFIX}/lib

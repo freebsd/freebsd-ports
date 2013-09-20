@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmwlmon
-# Date created:				04 May 2006
-# Whom:					Marcus Glocker <marcus@nazgul.ch>
-#
+# Created by: Marcus Glocker <marcus@nazgul.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	wmwlmon
 PORTVERSION=	1.0
@@ -19,6 +15,7 @@ USE_XORG=	x11 xpm
 MAN1=		wmwlmon.1
 PLIST_FILES=	bin/wmwlmon
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700052

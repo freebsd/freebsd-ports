@@ -25,6 +25,7 @@ USE_MYSQL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSAMPLE_CONFIG}

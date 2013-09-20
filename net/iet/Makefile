@@ -34,6 +34,7 @@ MAKE_ENV+=	KMODDIR=${KMODDIR} DATADIR=${DATADIR} SYSDIR="${SRC_BASE}/sys"
 
 IET_CONF_FILES=	ietd.conf initiators.allow initiators.deny targets.allow
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${SRC_BASE}/sys/Makefile)

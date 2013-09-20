@@ -24,6 +24,7 @@ USES=		pkgconfig
 MAN8=		mtr.8
 PLIST_FILES=	sbin/mtr
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGLIB}

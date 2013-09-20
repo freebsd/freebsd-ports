@@ -16,6 +16,7 @@ MAN8=		rmsgd.8
 PLIST_FILES=	bin/rmsg sbin/rmsgd
 USE_RC_SUBR=	rmsgd
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900007

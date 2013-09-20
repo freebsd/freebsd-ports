@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gogoc
-# Date created:				17 June 2010
-# Whom:					Tomaž Muraus <kami@k5-storitve.net>
-#
+# Created by: Tomaž Muraus <kami@k5-storitve.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gogoc
 PORTVERSION=	1.2
@@ -28,6 +24,7 @@ PORTDOCS=	README CLIENT-LICENSE.TXT GUI-LICENSE.TXT
 SUB_FILES=	gogoc
 SUB_LIST=	LOCALBASE=${LOCALBASE}
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}/gogoc-tsp/ && \
 	    ${GMAKE} platform=freebsd installdir=${PREFIX} install

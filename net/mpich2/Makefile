@@ -61,6 +61,7 @@ VERSOM=		${VERSO:R}
 PLIST_SUB=	VER=${VERSO} VERM=${VERSOM}
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

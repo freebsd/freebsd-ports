@@ -1,9 +1,5 @@
-# New ports collection makefile for:	net/sendsnpp
-# Date created:				2005-12-17
-# Whom:			Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
-#
+# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
 # $FreeBSD$
-# $Tecnik: ports/net/sendsnpp/Makefile,v 1.4 2006/06/11 20:04:50 itetcu Exp $
 
 PORTNAME=	sendSNPP
 DISTVERSION=	v1.03
@@ -21,6 +17,7 @@ USE_PERL5=	run
 
 PLIST_FILES=	bin/sendSNPP.pl
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|g' ${WRKSRC}/${PORTNAME}.pl
 

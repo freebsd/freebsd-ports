@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	--disable-optimize \
 		--with-nspr-inc=${LOCALBASE}/include/nspr \
 		--with-nspr-lib=${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-extract:
 	@${MKDIR} ${WRKDIR}/fakeroot
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	net/p5-Net-HL7
-# Date created:				26 Jul 2005
-# Whom:					Brent B. Powers <bbp2006@columbia.edu>
-#
+# Created by: Brent B. Powers <bbp2006@columbia.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-HL7
 PORTVERSION=	0.75
@@ -29,6 +25,7 @@ MAN3=		Net::HL7.3 \
 		Net::HL7::Segments::MSH.3 \
 		Net::HL7::Messages::ACK.3
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

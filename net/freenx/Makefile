@@ -1,9 +1,5 @@
-# New ports collection makefile for:    freenx
-# Date created:                         Sat 11 Sep 2004
-# Whom:                                 Lauri Watts <lauri@kde.org>
-#
+# Created by: Lauri Watts <lauri@kde.org>
 # $FreeBSD$
-#
 
 PORTNAME=	freenx
 PORTVERSION=	0.6.0
@@ -26,6 +22,7 @@ BUILD_WRKSRC=	${WRKSRC}/nxserver-helper
 
 NXPREFIX?=	${PREFIX}/NX
 
+NO_STAGE=	yes
 post-patch:
 	@cd ${WRKSRC} && ${REINPLACE_CMD} -e "s|/usr/local/|${PREFIX}/|" \
 		-e "s|!/bin/bash|!${PREFIX}/bin/bash|" \

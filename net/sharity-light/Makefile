@@ -15,6 +15,7 @@ MAN8=		smbmount.8
 PLIST_FILES=	sbin/shlight sbin/unshlight
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

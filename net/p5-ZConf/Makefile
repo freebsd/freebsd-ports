@@ -30,4 +30,5 @@ MAN3=		ZConf.3 \
 		ZConf::backends::file.3 \
 		ZConf::backends::ldap.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

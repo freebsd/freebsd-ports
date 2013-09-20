@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-medusa
-# Date created:		27 March 2002
-# Whom:			Hye-Shik Chang <perky@fallin.lv>
-#
+# Created by: Hye-Shik Chang <perky@fallin.lv>
 # $FreeBSD$
-#
 
 PORTNAME=	medusa
 PORTVERSION=	0.5.4
@@ -27,6 +23,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

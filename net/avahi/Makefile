@@ -24,6 +24,7 @@ LIBDNS_DESC=	Apple's mDNSResponder compatibility library
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAUTOIPD}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   tcpxtract
-# Date created:        3 January 2006
-# Whom:                MANTANI Nobutaka <nobutaka@freebsd.org>
-#
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tcpxtract
 PORTVERSION=	1.0.1
@@ -18,4 +14,5 @@ MAN1=		tcpxtract.1
 
 PLIST_FILES=	bin/tcpxtract etc/tcpxtract.conf
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

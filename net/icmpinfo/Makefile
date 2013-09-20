@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  icmpinfo
-# Date created:			  Mon June 23, 1997
-# Whom:				  David O'Brien (obrien@FreeBSD.org)
-#
+# Created by: David O'Brien (obrien@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	icmpinfo
 PORTVERSION=	1.11
@@ -20,6 +15,7 @@ MAN1=		icmpinfo.1
 PLIST_FILES=	bin/icmpinfo
 PORTDOCS=	README
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/icmpinfo ${PREFIX}/bin
 	${CHOWN} root ${PREFIX}/bin/icmpinfo

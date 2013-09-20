@@ -45,6 +45,7 @@ SCRIPT_DESC=		Include scripting support
 TN3270E_DESC=		Include TN3270-Extended support
 TRACE_DESC=		Include trace support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

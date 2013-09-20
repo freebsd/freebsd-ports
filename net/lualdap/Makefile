@@ -23,6 +23,7 @@ MAKE_ARGS+=	LUA_LIBDIR="${LUA_LIBDIR}" \
 
 ALL_TARGET=
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

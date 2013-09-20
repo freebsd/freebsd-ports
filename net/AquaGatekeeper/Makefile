@@ -1,9 +1,5 @@
-# New ports collection makefile for:   AquaGatekeeper
-# Date created:        2 November 2003
-# Whom:                Eugene Grosbein <eugen@grosbein.pp.ru>
-#
+# Created by: Eugene Grosbein <eugen@grosbein.pp.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	AquaGatekeeper
 PORTVERSION=	1.22
@@ -32,6 +28,7 @@ DEPRECATED=	Binary port of software abandoned by the vendor
 IS_INTERACTIVE=	yes
 .endif
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/AquaGatekeeper ${PREFIX}/sbin/
 	@${INSTALL_SCRIPT} ${FILESDIR}/agk.sh.sample ${PREFIX}/etc/rc.d/

@@ -33,6 +33,7 @@ REDIS_DESC=	Redis support for user database and for status and statistics report
 
 OPTIONS_DEFAULT=	MYSQL PGSQL REDIS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PORTDOCS=	html TURNServerRESTAPI.pdf TurnNetworks.pdf

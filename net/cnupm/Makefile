@@ -26,6 +26,7 @@ PLIST_SUB+=	CNUPM_OWN="${CNUPM_OWN}" CNUPM_GRP="${CNUPM_GRP}"
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 post-install:
 	${PW} groupshow ${CNUPM_GRP} 2>/dev/null || ${PW} groupadd \
 		-n ${CNUPM_GRP}

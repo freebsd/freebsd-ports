@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-xmlrpclib
-# Date created:		29 May 2001
-# Whom:	      		Johann Visagie <johann@egenetics.com>
-#
+# Created by: Johann Visagie <johann@egenetics.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xmlrpclib
 PORTVERSION=	1.0.1
@@ -20,6 +16,7 @@ USE_ZIP=	yes
 XRL_DOCDIR=	${PREFIX}/share/doc/py-xmlrpclib
 XRL_EGDIR=	${PREFIX}/share/examples/py-xmlrpclib
 
+NO_STAGE=	yes
 do-build:
 	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 	@ ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   devel/p5-Sort-Key-IPv4
-# Date created:                                15 November 2008
-# Whom:					Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Sort-Key-IPv4
 PORTVERSION=	0.03
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=	Sort::Key::IPv4.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

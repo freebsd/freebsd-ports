@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sendEmail
-# Date created:				2005-12-17
-# Whom:			Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
-#
+# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sendEmail
 PORTVERSION=	1.56
@@ -27,6 +23,7 @@ OPTIONS_DEFINE=	SSL
 OPTIONS_DEFINE=	DOCS
 SSL_DESC=	SSL/TLS support for communicating with the SMTP server
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${PORT_OPTIONS:MSSL}
 RUN_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL

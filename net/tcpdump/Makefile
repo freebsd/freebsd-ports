@@ -29,6 +29,7 @@ SMI_DESC=	Allow MIBs to be loaded on the fly
 USER_DESC=	Drop privileges to nobody
 CHROOT_DESC=	Chroot to /var/run/tcpdump (set CHROOTDIR to change)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 # The --without-crypto flag needs to be explicitly specified. The
 # configure script gets confused if you specify --with-crypto and

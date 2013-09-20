@@ -24,6 +24,7 @@ USES=		perl5
 USE_GMAKE=	yes
 ONLY_FOR_ARCHS=	i386
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^static int terminal,int terminal,' \
 		${WRKSRC}/nfl.c

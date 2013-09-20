@@ -44,4 +44,5 @@ MAN3=		Net::GitHub.3 \
 		Net::GitHub::V3::Search.3 \
 		Net::GitHub::V3::Users.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

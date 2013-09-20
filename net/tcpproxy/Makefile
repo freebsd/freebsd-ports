@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcpproxy
-# Date created:				2011-03-30
-# Whom:					Alexander Hausner <alex@hugo.bmg.gv.at>
-#
+# Created by: Alexander Hausner <alex@hugo.bmg.gv.at>
 # $FreeBSD$
-#
 
 PORTNAME=	tcpproxy
 PORTVERSION=	1.0
@@ -31,6 +27,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 PLIST_FILES=	bin/tcpproxy etc/tcpproxy_sample.conf
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpproxy ${PREFIX}/bin
 	${INSTALL_DATA}  ${WRKDIR}/${PORTNAME}-${PORTVERSION}/contrib/example.conf ${PREFIX}/etc/tcpproxy_sample.conf

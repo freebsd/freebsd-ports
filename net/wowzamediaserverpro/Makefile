@@ -39,6 +39,7 @@ SUB_LIST=	STDERR_LOG=${STDERR_LOG} \
 		STDOUT_LOG=${STDOUT_LOG} \
 		USER=${WOWZA_USER}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-extract:

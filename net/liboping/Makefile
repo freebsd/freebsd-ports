@@ -1,9 +1,5 @@
-# New ports collection makefile for:	liboping
-# Date created:				Sat Sep 29 03:38:37 PDT 2007
-# Whom:					Matt Peterson <matt@peterson.org>
-#
+# Created by: Matt Peterson <matt@peterson.org>
 # $FreeBSD$
-#
 
 PORTNAME=	liboping
 PORTVERSION=	0.3.5
@@ -22,4 +18,5 @@ MAN3=		liboping.3 ping_construct.3 ping_setopt.3 ping_host_add.3 \
 		ping_iterator_get_info.3 ping_iterator_get_context.3
 MAN8=		oping.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

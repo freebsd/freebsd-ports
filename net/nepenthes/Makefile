@@ -30,6 +30,7 @@ GNU_CONFIGURE=	yes
 DOCS=	README README.VFS logo-shaded.svg
 MAN8=	nepenthes.8
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in -print0 | ${XARGS} -0 \
 	${REINPLACE_CMD} -e 's,-Werror,,'

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	panoptis
-# Date created:		2006-11-28
-# Whom:			Babak Farrokhi <farrokhi@FreeBSD.org>
-#
+# Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	panoptis
 PORTVERSION=	0.1.4
@@ -26,6 +22,7 @@ PLIST_FILES=	bin/panoptis \
 		bin/pview.py \
 		bin/speed.py
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/panoptis/panoptis ${PREFIX}/bin/panoptis
 .for f in mail.py pview.py speed.py

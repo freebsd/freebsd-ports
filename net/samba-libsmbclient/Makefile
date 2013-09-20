@@ -24,6 +24,7 @@ MAN7=			libsmbclient.7
 
 ALL_TARGET=		${SAMBA_INSTALL_LIBS}
 
+NO_STAGE=	yes
 do-install:
 			-@${MKDIR} ${MAN7PREFIX}/man/man7
 .for man in ${MAN7}

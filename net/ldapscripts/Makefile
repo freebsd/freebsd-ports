@@ -37,6 +37,7 @@ MAN5=	ldapscripts.5
 
 PORTDOCS=	README CHANGELOG VERSION TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Unset 'all' target set by default to 'help'

@@ -38,6 +38,7 @@ CONFIGURE_ARGS=	--with-appli-perso="corba dsa moma" \
 # However, GPL 2012 is particularly unstable, so a custom tarball from
 # SVN revision 201373 has been created, which is the last of PCS version 5.
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} default
 

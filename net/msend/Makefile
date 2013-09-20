@@ -1,9 +1,5 @@
-# New ports collection makefile for:	msend
-# Date created:				Apr 2, 2001
-# Whom:					Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	msend
 PORTVERSION=	3.0
@@ -27,6 +23,7 @@ MAN8=		mesgd.8
 PLIST_FILES=	bin/msend \
 		sbin/mesgd
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900007

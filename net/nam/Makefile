@@ -1,9 +1,5 @@
-# New ports collection makefile for: nam
-# Date created:		26 April 1999
-# Whom:			obonilla
-#
+# Created by: obonilla
 # $FreeBSD$
-#
 
 PORTNAME=	nam
 PORTVERSION=	1.15
@@ -28,6 +24,7 @@ ALL_TARGET=	${PORTNAME}
 
 MAN1=		nam.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 		${WRKSRC}/configure

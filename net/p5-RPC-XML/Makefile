@@ -30,4 +30,5 @@ MAN3=		Apache::RPC::Server.3 \
 		RPC::XML::Procedure.3 \
 		RPC::XML::Server.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

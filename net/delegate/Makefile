@@ -1,9 +1,5 @@
-# New ports collection makefile for:	DeleGate
-# Date created:			26 Jan 1997
-# Whom:				Masafumi NAKANE <max@FreeBSD.org>
-#
+# Created by: Masafumi NAKANE <max@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	delegate
 PORTVERSION=	9.9.7
@@ -23,6 +19,7 @@ SUB_LIST=	DOCSDIR=${DOCSDIR}
 # Strip breaks binary checksumming
 STRIP=
 
+NO_STAGE=	yes
 post-extract:
 	@cd ${WRKSRC} && ${MV} COPYRIGHT doc/
 

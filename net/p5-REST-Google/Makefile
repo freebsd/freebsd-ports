@@ -35,4 +35,5 @@ MAN3=	REST::Google.3 \
 	REST::Google::Search::Web.3 \
 	REST::Google::Translate.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

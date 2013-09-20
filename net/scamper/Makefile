@@ -19,4 +19,5 @@ MAN1=		scamper.1 sc_ally.1 sc_analysis_dump.1 sc_attach.1 \
 MAN3=		libscamperfile.3
 MAN5=		warts.5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

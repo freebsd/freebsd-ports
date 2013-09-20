@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-netifaces
-# Date created:			May 27 2009
-# Whom:				Stanislav Svirid <count@211.ru>
-#
+# Created by: Stanislav Svirid <count@211.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	netifaces
 PORTVERSION=	0.6
@@ -18,4 +14,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

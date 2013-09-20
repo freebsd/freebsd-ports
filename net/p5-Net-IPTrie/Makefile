@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Net-IPTrie
-# Date created: 			13 December 2007
-# Whom:					Matthew Luckie <mjl@luckie.org.nz>
-#
+# Created by: Matthew Luckie <mjl@luckie.org.nz>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-IPTrie
 PORTVERSION=	0.7
@@ -23,4 +19,5 @@ USE_PERL5=	modbuild
 
 MAN3=		Net::IPTrie.3 Net::IPTrie::Node.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

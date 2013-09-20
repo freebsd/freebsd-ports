@@ -42,6 +42,7 @@ RENAMED_DESC=	Add support for renamed file detection
 
 OPTIONS_DEFAULT=SSH
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTIMELIMIT}

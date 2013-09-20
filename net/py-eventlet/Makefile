@@ -1,6 +1,5 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	eventlet
 PORTVERSION=	0.13.0
@@ -23,4 +22,5 @@ USE_PYDISTUTILS=	easy_install
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

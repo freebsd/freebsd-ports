@@ -12,4 +12,5 @@ MASTERDIR=	${.CURDIR}/../remmina-plugins
 
 WITH_NX=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

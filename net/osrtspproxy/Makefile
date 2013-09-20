@@ -1,9 +1,5 @@
-# New ports collection makefile for:	osrtspproxy
-# Date created:			2002-10-13
-# Whom:				Volker Stolz <stolz@i2.informatik.rwth-aachen.de>
-#
+# Created by: Volker Stolz <stolz@i2.informatik.rwth-aachen.de>
 # $FreeBSD$
-#
 
 PORTNAME=	osrtspproxy
 PORTVERSION=	2.0
@@ -17,6 +13,7 @@ COMMENT=	The RTSP Proxy Kit - A reference implementation of an RTSP proxy
 
 HAS_CONFIGURE=	YES
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rtspproxy/rtspproxy ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${FILESDIR}/rtspproxy.sh ${PREFIX}/etc/rc.d/rtspproxy.sh.sample

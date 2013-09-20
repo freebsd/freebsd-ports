@@ -23,6 +23,7 @@ PLIST_FILES=	bin/ipgrab
 PORTDOCS=	README AUTHORS COPYING ChangeLog DEVELOPER-HOWTO \
 		INSTALL NEWS TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

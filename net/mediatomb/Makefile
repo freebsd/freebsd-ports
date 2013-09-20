@@ -63,6 +63,7 @@ EXTERNAL_TRANSCODING_DESC=	external transcoding support
 ID3LIB_DESC=			id3lib support
 LIBEXTRACTOR_DESC=		libextractor support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSQLITE}

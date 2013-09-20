@@ -31,4 +31,5 @@ MAN3=	XML::Compile::SOAP::Daemon.3 \
 	XML::Compile::SOAP::Daemon::NetServer.3 \
 	XML::Compile::SOAP::Daemon::PSGI.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

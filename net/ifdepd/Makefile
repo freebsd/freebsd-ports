@@ -1,6 +1,4 @@
-# New ports collection makefile for: ifdepd
-# Date created:         03 03 2005
-# Whom:                 Alexander Hausner <alex@hugo.bmg.gv.at>
+# Created by: Alexander Hausner <alex@hugo.bmg.gv.at>
 # $FreeBSD$
 
 PORTNAME=	ifdepd
@@ -17,6 +15,7 @@ PLIST_FILES=	bin/ifdepd
 
 USE_RC_SUBR=	${PORTNAME}
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

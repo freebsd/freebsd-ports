@@ -39,4 +39,5 @@ MAN3=		Net::AMQP.3 \
 		Net::AMQP::Protocol::v0_8.3 \
 		Net::AMQP::Value.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

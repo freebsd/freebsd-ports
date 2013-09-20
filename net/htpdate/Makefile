@@ -21,6 +21,7 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	Changelog README
 USE_RC_SUBR=	${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

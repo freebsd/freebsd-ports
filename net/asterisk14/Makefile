@@ -54,6 +54,7 @@ OPTIONS_DEFAULT_amd64=	DAHDI
 OPTIONS_DEFINE_sparc64=	DAHDI
 OPTIONS_DEFAULT_sparc64=	DAHDI
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PREFIX} == ${LOCALBASE}

@@ -14,4 +14,5 @@ CONFLICTS=	silc-toolkit-1.1.* silc-client-1.1.*
 
 IRSSI_PLUGIN=	-irssi
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

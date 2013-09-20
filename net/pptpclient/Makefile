@@ -18,6 +18,7 @@ MAKE_ARGS=	DEBUG="" CC="${CC}"
 
 MAN8=		pptp.8
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pptp ${PREFIX}/sbin
 	@${MKDIR} ${PREFIX}/share/examples/pptpclient

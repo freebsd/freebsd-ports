@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-ARP
-# Date created:		2006-11-01
-# Whom:			Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-#
+# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-ARP
 PORTVERSION=	1.0.6
@@ -24,4 +20,5 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN3=	Net::ARP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

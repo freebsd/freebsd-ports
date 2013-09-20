@@ -21,6 +21,7 @@ USE_LDCONFIG=	yes
 MAN1=		serveez.1 serveez-config.1
 INFO=		serveez
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS/s|test||' ${WRKSRC}/Makefile.in

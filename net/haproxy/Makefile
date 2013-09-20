@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	haproxy
-# Date created:				Apr 30, 2003
-# Whom:					Clement Laforet
-#
+# Created by: Clement Laforet
 # $FreeBSD$
-#
 
 PORTNAME=	haproxy
 PORTVERSION=	1.4.24
@@ -30,6 +26,7 @@ DPCRE_DESC=	Link dynamically
 SPCRE_DESC=	Link statically
 OPTIONS_DEFAULT=PCRE DPCRE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS CC=${CC}

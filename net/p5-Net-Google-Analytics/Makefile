@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Net::Google::Analytics
-# Date created:		28 Dec 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Google-Analytics
 PORTVERSION=	3.01
@@ -30,4 +25,5 @@ MAN3=	Net::Google::Analytics.3 \
 	Net::Google::Analytics::Response.3 \
 	Net::Google::Analytics::Row.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

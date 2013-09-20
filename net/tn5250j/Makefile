@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tn5250j
-# Date created:		2008-06-12
-# Whom:			Marcin Cieslak <saper@SYSTEM.PL>
-#
+# Created by: Marcin Cieslak <saper@SYSTEM.PL>
 # $FreeBSD$
-#
 
 PORTNAME=	tn5250j
 PORTVERSION=	0.6.0
@@ -45,6 +41,7 @@ DOC_FILES=	CHANGELOG.txt applet.txt filetransfers.txt readme.txt antbuild.txt\
 SUB_FILES=	tn5250j
 SUB_LIST=	JYTHON_JAR=${JYTHON_JAR}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

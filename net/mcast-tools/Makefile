@@ -1,9 +1,5 @@
-# New ports collection makefile for: mcast-tools
-# Date created:  15 Sep 2005
-# Whom:   suz
-#
+# Created by: suz
 # $FreeBSD$
-#
 
 PORTNAME=	mcast-tools
 PORTVERSION=	20061214
@@ -26,6 +22,7 @@ MAN1=		mcastread.1 mcastsend.1 pim6stat.1 pmsft.1
 MAN5=		pim6dd.conf.5 pim6sd.conf.5
 MAN8=		mfc.8 mtrace6.8 pim6dd.8 pim6sd.8
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pim6sd/pim6sd.conf.sample ${PREFIX}/etc
 	${INSTALL_DATA} ${FILESDIR}/pim6dd.conf.sample ${PREFIX}/etc

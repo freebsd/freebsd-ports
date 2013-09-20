@@ -1,9 +1,5 @@
-# New ports collection makefile for:	link-monitor-applet
-# Date created:			27 Jul 2004
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	link-monitor-applet
 PORTVERSION=	3.0
@@ -28,6 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	link-monitor-applet.schemas
 
+NO_STAGE=	yes
 do-configure:
 	@(cd ${WRKSRC} && ${SH} jb configure cc="${CC}" cflags="${CFLAGS}" \
 		cppflags="${CPPFLAGS}" ldflags="${LDFLAGS}" \

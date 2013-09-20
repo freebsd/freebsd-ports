@@ -1,4 +1,3 @@
-# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	openbgpd
@@ -19,6 +18,7 @@ OPTIONS_DEFINE=	IPV6LLPEER
 OPTIONS_DEFAULT=IPV6LLPEER
 IPV6LLPEER_DESC=Support nexthop using IPv6 link-local address
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  netcat
-# Date created:			  Thur Nov 21, 1996
-# Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
-#
+# Created by: David O'Brien (obrien@cs.ucdavis.edu)
 # $FreeBSD$
-#
 
 PORTNAME=	netcat
 PORTVERSION=	1.10
@@ -37,6 +32,7 @@ MAN1=		netcat.1
 PORTDOCS=	README
 PLIST_FILES=	bin/netcat
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

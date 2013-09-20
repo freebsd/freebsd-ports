@@ -26,6 +26,7 @@ MLINKS+=	bssh.1 bvnc.1 \
 		bssh.1 bshell.1
 USE_GNOME+=	libglade2
 
+NO_STAGE=	yes
 post-build:
 	@(cd ${WRKSRC}/avahi-discover-standalone; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})

@@ -1,8 +1,5 @@
-# New ports collection makefile for:	tac_plus-libradius
-# Date created:				January, 21th. 2002
-# Whom:	      				Martin Mersberger <gremlin@portal-to-web.de>
+# Created by: Martin Mersberger <gremlin@portal-to-web.de>
 # $FreeBSD$
-#
 
 PORTNAME=	tac_plus-libradius
 PORTVERSION=	5.0.0
@@ -28,6 +25,7 @@ USE_OPENSSL=	yes
 ALL_TARGET=	tac_plus
 MAN1=		tac_plus.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

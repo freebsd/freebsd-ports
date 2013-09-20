@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linphone
-# Date created:				30 December 2002
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	4
 CATEGORIES=	net gnome
@@ -12,4 +8,5 @@ LINPHONE_GUI=	yes
 
 MASTERDIR=	${.CURDIR}/../../net/linphone-base
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -33,6 +33,7 @@ OPTIONS_DEFINE=	GUI DOCS
 OPTIONS_DEFAULT=	GUI
 GUI_DESC=	Build with graphics/gd dependency
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PLIST_FILES=	bin/vnstat \

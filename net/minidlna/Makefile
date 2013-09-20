@@ -35,6 +35,7 @@ GROUPS=	dlna
 MAN5=	minidlna.conf.5
 MAN8=	minidlnad.8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

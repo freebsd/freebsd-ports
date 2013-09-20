@@ -18,6 +18,7 @@ OPTIONS_DEFAULT=	IPV4
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--bindir="${PREFIX}/sbin"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV4}

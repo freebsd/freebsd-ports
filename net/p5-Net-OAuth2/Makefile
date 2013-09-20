@@ -33,4 +33,5 @@ MAN3=		Net::OAuth2.3 \
 		Net::OAuth2::Profile::Password.3 \
 		Net::OAuth2::Profile::WebServer.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

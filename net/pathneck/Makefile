@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pathneck
-# Date Created:				22 Dec 2005
-# Whom:					Babak Farrokhi <babak@farrokhi.net>
-#
+# Created by: Babak Farrokhi <babak@farrokhi.net>
 # $FreeBSD$
-#
 
 PORTNAME=	pathneck
 PORTVERSION=	1.3
@@ -21,6 +17,7 @@ PLIST_FILES=	sbin/pathneck \
 PORTDOCS=	COPYING ChangeLog README
 MAKEFILE=	Makefile.bsd
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^CC .=,CC ?=,' \
 			  -e 's,^CFLAGS .=,CFLAGS +=,' \

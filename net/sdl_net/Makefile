@@ -1,7 +1,5 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	sdl_net
 PORTVERSION=	1.2.8
@@ -20,6 +18,7 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=--disable-gui
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -e \
 		's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \

@@ -23,4 +23,5 @@ MAN3=		POE::Component::Generic.3 \
 		POE::Component::Generic::Net::SSH2.3 \
 		POE::Component::Generic::Object.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	net/p5-Net-Ping
-# Date created:				28 July 2007
-# Whom:					Sergey Matveychuk <sem@FreeBSD.org>
-#
+# Created by: Sergey Matveychuk <sem@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Ping
 PORTVERSION=	2.40
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=	Net::Ping.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

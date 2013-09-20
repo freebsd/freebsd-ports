@@ -17,4 +17,5 @@ MAN3=		Net::BGP.3 Net::BGP::ASPath.3 Net::BGP::NLRI.3 \
 		Net::BGP::Notification.3 Net::BGP::Peer.3 Net::BGP::Process.3 \
 		Net::BGP::Refresh.3 Net::BGP::Transport.3 Net::BGP::Update.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

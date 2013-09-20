@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:   pvm++
-# Date created:                Jan 29, 2001
-# Whom:                        Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pvm++
 PORTVERSION=	0.6.0
@@ -24,6 +19,7 @@ CONFIGURE_ARGS=	--with-pvm-incs=${LOCALBASE}/include \
 		--with-pvm-libs=${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

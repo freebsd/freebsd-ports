@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sup
-# Date created:		21 August 1994
-# Whom:			jkh
-#
+# Created by: jkh
 # $FreeBSD$
-#
 
 PORTNAME=	sup
 PORTVERSION=	2.0.20060802
@@ -20,4 +16,5 @@ MAN8=		supservers.8
 MLINKS=		supservers.8 supfilesrv.8 \
 		supservers.8 supscan.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

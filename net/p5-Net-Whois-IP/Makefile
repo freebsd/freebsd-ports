@@ -18,4 +18,5 @@ MAN3=		Net::Whois::IP.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

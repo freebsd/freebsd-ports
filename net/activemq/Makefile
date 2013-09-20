@@ -72,6 +72,7 @@ PLIST_SUB=	MQUSER="${MQUSER}" \
 		LVDBVERSION="${LVDBVERSION}" \
 		LVDBJNIVERSION="${LVDBJNIVERSION}"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

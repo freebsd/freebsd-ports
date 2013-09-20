@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	libnss_mysql
-# Date created:				05/05/2003
-# Whom:					Clement Laforet <sheepkiller@cultdeadsheep.org>
-#
+# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libnss-mysql
 PORTVERSION=	1.5
@@ -20,4 +16,5 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_MYSQL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

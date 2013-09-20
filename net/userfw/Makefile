@@ -21,6 +21,7 @@ USE_LDCONFIG=	yes
 KMODDIR?=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

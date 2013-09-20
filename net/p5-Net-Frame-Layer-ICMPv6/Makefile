@@ -31,4 +31,5 @@ MAN3=		Net::Frame::Layer::ICMPv6.3 \
 		Net::Frame::Layer::ICMPv6::TimeExceed.3 \
 		Net::Frame::Layer::ICMPv6::TooBig.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

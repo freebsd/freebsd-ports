@@ -35,6 +35,7 @@ CONFIGURE_ARGS+=	--with-samba-sysconfdir=${LOCALBASE}/etc \
 			--with-perl=${PERL} \
 			--with-perl-libdir=sitelib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMIGRATION_SCRIPTS}

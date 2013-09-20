@@ -23,6 +23,7 @@ SUB_FILES=	pkg-message
 MAN5=		gw6c.conf.5
 MAN8=		gw6c.8
 
+NO_STAGE=	yes
 post-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
 		${MV} ${DISTDIR}/file.asp*file_id*166* \

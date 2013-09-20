@@ -1,9 +1,5 @@
-# New ports collection makefile for:	utftpd
-# Date created:		15 January 2002
-# Whom:			andreas@freebsd.org
-#
+# Created by: andreas@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	utftpd
 PORTVERSION=	0.2.4
@@ -21,4 +17,5 @@ MAN1=		utftp.1
 MAN5=		utftpd.conf.5
 MAN8=		utftpd.8 utftpd_make.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

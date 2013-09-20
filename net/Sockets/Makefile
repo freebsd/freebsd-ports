@@ -25,6 +25,7 @@ USE_LDCONFIG=	yes
 ALL_TARGET=	all shared
 INSTALL_TARGET=	install_shared
 
+NO_STAGE=	yes
 post-patch:
 # PREFIX safeness
 	@${CP} ${PATCHDIR}/Makefile.Defines.freebsd ${WRKSRC}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-DLookup
-# Date created:				11 June 2001
-# Whom:	      				Danny Howard <dannyman@tellme.com>
-#
+# Created by: Danny Howard <dannyman@tellme.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-DLookup
 PORTVERSION=	1.01
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::DLookup.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

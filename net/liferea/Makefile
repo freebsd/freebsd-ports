@@ -30,4 +30,5 @@ MANLANG=	"" pl
 GCONF_SCHEMAS=	liferea.schemas
 INSTALLS_ICONS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,6 +23,7 @@ MAN8=		tac_plus.8 tac_pwd.8
 
 CONFLICTS=	ru-tac+ia-[0-9]* tac_plus-libradius-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

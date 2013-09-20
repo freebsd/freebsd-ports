@@ -35,4 +35,5 @@ CONFIGURE_ARGS+=--enable-libnotify=yes
 CONFIGURE_ARGS+=--enable-libnotify=no
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-GrowlClient
-# Date created:		2007-11-22
-# Whom:			Masahiro Teramoto <markun@onohara.to>
-#
+# Created by: Masahiro Teramoto <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-GrowlClient
 PORTVERSION=	0.02
@@ -21,4 +17,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::GrowlClient.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

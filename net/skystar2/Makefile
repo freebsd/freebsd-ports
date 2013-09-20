@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SkyStar2
-# Date created:		15 November 2007
-# Whom:			Alex Keda <admin@lissyara.su>
-#
+# Created by: Alex Keda <admin@lissyara.su>
 # $FreeBSD$
-#
 
 PORTNAME=	skystar2
 PORTVERSION=	1.32
@@ -18,6 +14,7 @@ COMMENT=	Kernel module and program for SkyStar2/SkyStar2.8A
 
 USE_BZIP2=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SYSDIR?=	${SRC_BASE}/sys

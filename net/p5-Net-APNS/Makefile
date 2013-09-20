@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Net::APNS
-# Date created:		14 Aug 2012
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Net-APNS
 PORTVERSION=	0.0202
@@ -27,4 +22,5 @@ USE_PERL5=	configure
 MAN3=	Net::APNS.3 \
 	Net::APNS::Notification.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

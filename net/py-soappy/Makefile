@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-soappy
-# Date created:		2 Aug 2004
-# Whom:	      		Alexander Leidinger
-#
+# Created by: Alexander Leidinger
 # $FreeBSD$
-#
 
 PORTNAME=		soappy
 PORTVERSION=		0.11.6
@@ -26,4 +22,5 @@ RUN_DEPENDS+=	${PYXML} \
 
 CONFLICTS=	py*-soappy-devel-0.12.*
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

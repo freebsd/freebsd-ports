@@ -1,4 +1,4 @@
-# Created by:	Kevin Lo <kevlo@FreeBSD.org>
+# Created by: Kevin Lo <kevlo@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	vtun
@@ -30,6 +30,7 @@ ALL_TARGET=	vtund
 DOCS=		ChangeLog Credits FAQ README README.LZO README.Setup \
 		README.Shaper TODO
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${CC} == "clang" || ${CXX} == "clang++" || ${OSVERSION} >= 1000026

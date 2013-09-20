@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sysutils/p5-Net-LDAP-posixGroup
-# Date created:		2009-10-31
-# Whom:			Zane C, Bowers <vvelox@vvelox.net>
-#
+# Created by: Zane C, Bowers <vvelox@vvelox.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-LDAP-posixGroup
 PORTVERSION=	0.0.2
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::LDAP::posixGroup.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

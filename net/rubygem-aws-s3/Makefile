@@ -18,4 +18,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/s3sh
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

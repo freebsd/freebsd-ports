@@ -16,4 +16,5 @@ USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 MAN1=		xipmsg.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -25,6 +25,7 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == i386 && ! ${CFLAGS:M-march=*}

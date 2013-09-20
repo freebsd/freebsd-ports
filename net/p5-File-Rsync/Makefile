@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-File-Rsync
-# Date created:				20 May 2001
-# Whom:					petef@FreeBSD.org
-#
+# Created by: petef@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	File-Rsync
 PORTVERSION=	0.43
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		File::Rsync.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

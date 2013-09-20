@@ -22,6 +22,7 @@ MAN8=	radvd.8 radvdump.8
 PORTDOCS=	CHANGES COPYRIGHT INTRO.html README TODO
 PLIST_FILES=	etc/radvd.conf.example sbin/radvd sbin/radvdump
 
+NO_STAGE=	yes
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/radvd.conf.example ${PREFIX}/etc/
 .ifndef NOPORTDOCS

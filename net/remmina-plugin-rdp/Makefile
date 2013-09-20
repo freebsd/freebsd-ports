@@ -10,4 +10,5 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MASTERDIR=	${.CURDIR}/../remmina-plugins
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

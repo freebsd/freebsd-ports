@@ -13,6 +13,7 @@ COMMENT=	A simple netgraph module for multihop ad hoc networks
 
 SSP_UNSAFE=	kernel module does not support ssp
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SYSDIR?=	${SRC_BASE}/sys

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmwave
-# Date created:		27 December 2001
-# Whom:			Bruce M Simpson <bms@FreeBSD.org>
-#
+# Created by: Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wmwave
 PORTVERSION=	0.4
@@ -26,6 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 CFLAGS+=	-DWICACHE -I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib -lX11 -lXpm -lXext -lm
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/${PORTNAME}.c ${WRKSRC}/wmgeneral.c \
 		-o ${WRKSRC}/${PORTNAME}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dgd
-# Date created:		23 August 1994
-# Whom:			adam@veda.is
-#
+# Created by: adam@veda.is
 # $FreeBSD$
-#
 
 PORTNAME=	dgd
 PORTVERSION=	1.4.20
@@ -40,6 +36,7 @@ PORTDOCS=	*
 USERS=		mud
 GROUPS=		mud
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 EXTRA_DEFINES=

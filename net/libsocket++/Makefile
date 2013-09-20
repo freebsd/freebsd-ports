@@ -1,10 +1,5 @@
-# Ports collection makefile for:  libsocket++
-# Date created:			  Sun Jan 19, 1997
-# Whom:				  Narvi <narvi@haldjas.folklore.ee>
-#				  David O'Brien (obrien@FreeBSD.org)
-#
+# Created by: Narvi <narvi@haldjas.folklore.ee>
 # $FreeBSD$
-#
 
 PORTNAME=	libsocket++
 PORTVERSION=	1.12.13
@@ -24,6 +19,7 @@ SCRIPTS_ENV+=	ACLOCAL_FLAGS="-I ${LOCALBASE}/share/aclocal/"
 
 INFO=	socket++
 
+NO_STAGE=	yes
 pre-configure:
 	@(cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ${SH} ./autogen)
 

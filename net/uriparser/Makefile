@@ -16,6 +16,7 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|$$(libdir)/pkgconfig|$$(libdir)data/pkgconfig|' \
 	    ${WRKSRC}/Makefile.in

@@ -27,6 +27,7 @@ PLIST_SUB=	PORTNAME=${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/openh323
 EXAMPLESDIR=	${PREFIX}/share/examples/openh323
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/obj_r/ohphone ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ohphone.1 ${PREFIX}/man/man1

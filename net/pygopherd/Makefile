@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	pygopherd
-# Date created:			Sep 6, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	pygopherd
 PORTVERSION=	2.0.16
@@ -23,6 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN8=	pygopherd.8
 
+NO_STAGE=	yes
 post-patch:
 .for f in setup.py bin/pygopherd conf/pygopherd.conf doc/pygopherd.8
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${f}

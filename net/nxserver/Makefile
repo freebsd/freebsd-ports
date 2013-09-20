@@ -1,9 +1,5 @@
-# New ports collection makefile for:    nxserver
-# Date created:                         Sun 5 Sep 2004
-# Whom:                                 Will Andrews <will@freebsd.org>
-#
+# Created by: Will Andrews <will@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nxserver
 PORTVERSION=	2.1.0
@@ -41,6 +37,7 @@ PLIST_SUB+=	NX_MAJOR=${PORTVERSION:R:R} NX_VERSION=${PORTVERSION}
 NXPREFIX?=	${PREFIX}/NX
 USE_LDCONFIG=	${NXPREFIX}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

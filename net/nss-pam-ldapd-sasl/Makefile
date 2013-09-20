@@ -14,4 +14,5 @@ OPTIONS_SET+=	SASL
 SLAVE_PORT=	sasl # In case we come up with more
 MASTERDIR=	${.CURDIR}/../nss-pam-ldapd
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

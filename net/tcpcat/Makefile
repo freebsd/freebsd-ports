@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcpcat
-# Date created:		18 October 2000
-# Whom:			roam@orbitel.bg
-#
+# Created by: roam@orbitel.bg
 # $FreeBSD$
-#
 
 PORTNAME=	tcpcat
 PORTVERSION=	1.2.0
@@ -18,4 +14,5 @@ COMMENT=	A simple utility for sending/receiving data over a TCP or a Unix-domain
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/tcpcat
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

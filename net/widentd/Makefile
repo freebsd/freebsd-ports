@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	widentd
-# Date created:			Mar 3, 2001
-# Whom:				Dirk-Willem van Gulik / dirkx@webweaving.org
-#
+# Created by: Dirk-Willem van Gulik / dirkx@webweaving.org
 # $FreeBSD$
-#
 
 PORTNAME=	widentd
 PORTVERSION=	1.03
@@ -23,6 +18,7 @@ USE_RC_SUBR=	widentd
 
 MAKE_ENV+=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"

@@ -33,6 +33,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 MAN1=		cyclient.1 cycmd.1 cyphesis.1 cyphesis-tools.1 cyaddrules.1 \
 		cyconvertrules.1 cydumprules.1 cyloadrules.1 cypasswd.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

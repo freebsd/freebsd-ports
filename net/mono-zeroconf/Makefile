@@ -1,4 +1,3 @@
-# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mono-zeroconf
@@ -19,6 +18,7 @@ CONFIGURE_ARGS+=	--program-transform-name="" \
 			--disable-mdnsresponder
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 

@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Net_SMS
-# Date created:		2006/08/03
-# Whom:			chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Net_SMS
 PORTVERSION=	0.2.0
@@ -20,6 +16,7 @@ RUN_DEPENDS=	${PEARDIR}/Mail.php:${PORTSDIR}/mail/pear-Mail \
 USE_PHP=	gettext
 PEAR_AUTOINSTALL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

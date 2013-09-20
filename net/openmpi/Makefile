@@ -1,5 +1,6 @@
 # $FreeBSD$
 
+NO_STAGE=	yes
 # TODO:
 #  - etc/*.sample support
 

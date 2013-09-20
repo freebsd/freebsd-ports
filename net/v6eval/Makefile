@@ -179,6 +179,7 @@ MAN3PREFIX=	${LOCALBASE}/lib/perl5/${PERL_VER}
 MAN1=		pktctl.1.gz pktsend.1.gz
 MAN3=		V6evalRemote.3 V6evalTool.3
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
 		${WRKSRC}/script/pmod/V6evalCommon/V6evalCommon.pm

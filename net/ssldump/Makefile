@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ssldump
-# Date created:				10 November 2000
-# Whom:					Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ssldump
 PORTVERSION=	0.9b3
@@ -26,6 +22,7 @@ AES_DESC=	Enable AES support from CVS (EXPERIMENTAL)
 MAN1=		ssldump.1
 PLIST_FILES=	bin/ssldump
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAES}

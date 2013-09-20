@@ -27,6 +27,7 @@ MAN1=		sntp.1 \
 		ntpsnmpd.1 \
 		ntp-keygen.1 \
 
+NO_STAGE=	yes
 .include "Makefile.inc"
 
 .include <bsd.port.options.mk>

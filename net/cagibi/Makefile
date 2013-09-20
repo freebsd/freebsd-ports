@@ -1,7 +1,4 @@
-# New ports collection makefile for:	cogibi
-# Date created:				2010-08-14
-# Whom:					Dima Panov <fluffy@FreeBSD.org>
-#
+# Created by: Dima Panov <fluffy@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cagibi
@@ -19,4 +16,5 @@ USE_KDE4=	automoc4
 USE_QT4=	corelib network xml dbus \
 		qmake_build moc_build rcc_build uic_build
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

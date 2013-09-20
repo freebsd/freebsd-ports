@@ -1,7 +1,4 @@
-# New ports collection makefile for:	x2goclient-cli
-# Date created:				2010-06-24
-# Whom:					arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	x2goclient-cli
@@ -25,6 +22,7 @@ PLIST_FILES=	bin/x2goclient-cli
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S,-1.2,,}
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/x2goclient-cli ${PREFIX}/bin
 

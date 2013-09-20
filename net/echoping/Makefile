@@ -26,6 +26,7 @@ MAN1=		echoping.1 echoping_dns.1 echoping_random.1 echoping_whois.1
 OPTIONS_DEFINE=	LDAP PGSQL
 OPTIONS_DEFAULT=	LDAP
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAP}

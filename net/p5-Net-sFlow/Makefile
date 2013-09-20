@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-sFlow
-# Date created:				2012-04-04
-# Whom:					Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-#
+# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-sFlow
 PORTVERSION=	0.11
@@ -21,4 +17,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::sFlow.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

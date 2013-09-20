@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	ssltunnel-server
-# Date created:			June 10, 2003
-# Whom:				at@rominet.net
-#
+# Created by: at@rominet.net
 # $FreeBSD$
-#
 
 PORTNAME=	ssltunnel
 PORTVERSION=	1.18
@@ -23,6 +19,7 @@ TCPWRAPPERS_DESC=	libwrap support
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-client
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCPWRAPPERS}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sprinkle
-# Date created:		2008-04-10
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sprinkle
 DISTVERSION=	2007-08-07
@@ -17,6 +13,7 @@ NO_BUILD=	yes
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/sprinkle-dist
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sprinkle.py ${PREFIX}/sbin
 .ifndef(NOPORTDOCS)

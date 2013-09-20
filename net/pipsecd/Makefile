@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pipsecd
-# Date created:			16 Aug 1999
-# Whom:				Patrick Bihan-Faou <patrick@mindstep.com>
-#
+# Created by: Patrick Bihan-Faou <patrick@mindstep.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pipsecd
 PORTVERSION=	19991014
@@ -20,6 +16,7 @@ USE_OPENSSL=	YES
 
 ALL_TARGET=	pipsecd
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pipsecd ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/pipsecd.sh ${PREFIX}/etc/rc.d

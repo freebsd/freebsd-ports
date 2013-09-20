@@ -24,4 +24,5 @@ AVAHI_SLAVE=	autoipd
 
 MAN8=		avahi-autoipd.8
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

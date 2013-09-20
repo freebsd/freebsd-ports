@@ -126,6 +126,7 @@ WINBIND_DESC=		WinBIND support
 # !SAMBA_SUBPORT
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # There are reports that on ARM PIE makes binaries to core dump(#149186)

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    wmpiki
-# Date created:         19 February 2004
-# Whom:                 Thomas Kempka <t.kempka@web.de>
-#
+# Created by: Thomas Kempka <t.kempka@web.de>
 # $FreeBSD$
-#
 
 PORTNAME=	wmpiki
 PORTVERSION=	0.2.1
@@ -19,6 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_XORG=	xpm
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|$$(LOCALBASE)|g' \
 		-e 's|/include/X11|/include|g' \

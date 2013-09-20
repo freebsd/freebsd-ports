@@ -1,9 +1,5 @@
-# New ports collection makefile for:	e169-stats
-# Date created:				1 June 2009
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	e169-stats
 PORTVERSION=	0.6
@@ -15,6 +11,7 @@ COMMENT=	Curses realtime statistics for the Huawei E169 modem
 
 PLIST_FILES=	bin/e169-stats
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/e169-stats ${PREFIX}/bin
 

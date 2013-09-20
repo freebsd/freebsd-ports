@@ -23,6 +23,7 @@ MAN3=		Bundle::PlRPC.3 \
 		RPC::PlClient.3 \
 		RPC::PlServer.3
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name ".svn" | ${XARGS} ${RM} -rf
 	@${REINPLACE_CMD} -i '' -e 's/perldoc -t/echo perldoc -t/' \

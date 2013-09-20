@@ -1,9 +1,5 @@
-# New ports collection makefile for:    libtnl
-# Date created:         26 Jan 2006
-# Whom:                 aaron@FreeBSD.org
-#
+# Created by: aaron@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	libtnl
 PORTVERSION=	1.5.0
@@ -18,6 +14,7 @@ WRKSRC=		${WRKDIR}/tnl/tnl
 USE_LDCONFIG=	yes
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ARGS=	-j`${SYSCTL} -n hw.ncpu`
+NO_STAGE=	yes
 # Other arches can be added easily, provided there is hardware to test:
 ONLY_FOR_ARCHS=	i386 amd64
 .if defined(NO_PROFILE) || defined(NOPROFILE)

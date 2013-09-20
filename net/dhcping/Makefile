@@ -1,9 +1,5 @@
-# New ports collection makefile for:   dhcping
-# Date created:        1 March 2001
-# Whom:                Edwin Groothuis (edwin@mavetju.org)
-#
+# Created by: Edwin Groothuis (edwin@mavetju.org)
 # $FreeBSD$
-#
 
 PORTNAME=	dhcping
 PORTVERSION=	1.2
@@ -19,4 +15,5 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 MAN8=		dhcping.8
 PLIST_FILES=	bin/dhcping
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -34,6 +34,7 @@ TERM_DESC=	Build with terminal support
 AVAHI_DESC=	Build with Avahi support
 UNIQUE_DESC=	Build with Unique-App support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CMAKE_ARGS+=	--build=build

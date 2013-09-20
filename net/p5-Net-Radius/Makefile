@@ -16,4 +16,5 @@ USES=		perl5
 USE_PERL5=	configure
 MAN3=		Net::Radius::Dictionary.3 Net::Radius::Packet.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

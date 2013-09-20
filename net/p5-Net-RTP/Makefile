@@ -27,4 +27,5 @@ MAN1=		rtpdump.pl.1 \
 MAN3=		Net::RTP.3 \
 		Net::RTP::Packet.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

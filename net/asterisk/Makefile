@@ -75,6 +75,7 @@ ASTERISK_GROUP?=	asterisk
 USERS=	${ASTERISK_USER}
 GROUPS=	${ASTERISK_GROUP} dahdi
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PREFIX} == ${LOCALBASE}

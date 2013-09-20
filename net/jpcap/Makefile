@@ -1,9 +1,5 @@
-# New ports collection makefile for:   jpcap
-# Date created:                10 February 2010
-# Whom:                        bms
-#
+# Created by: bms
 # $FreeBSD$
-#
 
 PORTNAME=	jpcap
 PORTVERSION=	0.7
@@ -35,6 +31,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/jpcap.jar lib/libjpcap.so
 BUILD_WRKSRC=	${WRKSRC}/src/c
 ALL_TARGET=	# empty
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} =="ia64" || ${ARCH} == "sparc64"

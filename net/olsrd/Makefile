@@ -35,6 +35,7 @@ MAKE_ARGS+=	LIBNET=1
 MAKE_ARGS+=	PREFIX=${PREFIX}
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"

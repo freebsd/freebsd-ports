@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-zsi
-# Date created:		17 September 2001
-# Whom:	      		Johann Visagie <wjv@FreeBSD.org>
-#
+# Created by: Johann Visagie <wjv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	zsi
 PORTVERSION=	2.0
@@ -25,6 +21,7 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	ZSI
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

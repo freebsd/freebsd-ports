@@ -15,6 +15,7 @@ USE_RC_SUBR=	httpry
 OPTIONS_DEFINE=	EXTRASCRIPTS
 EXTRASCRIPTS_DESC=	Install additional scripts
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MEXTRASCRIPTS}

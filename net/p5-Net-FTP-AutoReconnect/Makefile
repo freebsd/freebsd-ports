@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Net-FTP-AutoReconnect
-# Date created:				2010-11-10
-# Whom:					Jase Thew <freebsd@beardz.net>
-#
+# Created by: Jase Thew <freebsd@beardz.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-FTP-AutoReconnect
 PORTVERSION=	0.3
@@ -20,4 +16,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::FTP::AutoReconnect.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

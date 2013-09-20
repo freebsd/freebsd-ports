@@ -21,6 +21,7 @@ PLIST_FILES=	sbin/moo
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/moo ${PREFIX}/sbin
 

@@ -23,4 +23,5 @@ MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS+=	--enable-cluster
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

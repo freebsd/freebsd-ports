@@ -1,9 +1,5 @@
-# New ports collection makefile for:	despoof
-# Date created:				02 September 2000
-# Whom:					Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	despoof
 PORTVERSION=	0.9
@@ -20,6 +16,7 @@ BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-I$${LOCALBASE}/include ||; \

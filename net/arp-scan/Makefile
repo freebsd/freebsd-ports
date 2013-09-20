@@ -1,9 +1,5 @@
-# New ports collection makefile for:	arp-scan
-# Date created:				09 Oct 2008
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	arp-scan
 PORTVERSION=	1.8
@@ -19,4 +15,5 @@ USE_LDCONFIG=	yes
 MAN1=	arp-scan.1 get-oui.1 get-iab.1 arp-fingerprint.1
 MAN5=	mac-vendor.5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gwhois
-# Date created:		28 August 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gwhois
 PORTVERSION=	20120626
@@ -28,6 +24,7 @@ PLIST_DIRS=	%%DATADIR%%
 MAN1=	${PORTNAME}.1
 PORTDOCS=	TODO README.RIPE
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/gwhois|${DATADIR}|g'\
 		${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.1

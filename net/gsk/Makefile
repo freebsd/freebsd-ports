@@ -16,6 +16,7 @@ USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-gtk-doc
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS/s|doc||' ${WRKSRC}/Makefile.in

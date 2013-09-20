@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mpd
-# Date created:				26 Jun 2000
-# Whom:					Archie Cobbs
-#
+# Created by: Archie Cobbs
 # $FreeBSD$
-#
 
 PORTNAME=	suckblow
 PORTVERSION=	1.1
@@ -19,4 +15,5 @@ MAN1=		suck.1
 MLINKS=		suck.1 blow.1
 MANCOMPRESSED=	maybe
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

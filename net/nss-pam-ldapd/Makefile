@@ -48,6 +48,7 @@ CONFLICTS+=		nss-pam-ldapd-sasl-[0-9]*
 USERS=			nslcd
 GROUPS=			nslcd
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CPPFLAGS+=		-I${LOCALBASE}/include

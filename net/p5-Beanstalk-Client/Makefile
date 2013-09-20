@@ -23,4 +23,5 @@ MAN3=	Beanstalk::Client.3 \
 		Beanstalk::Stats.3 \
 		Beanstalk::Job.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

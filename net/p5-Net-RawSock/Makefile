@@ -15,6 +15,7 @@ USE_PERL5=	configure patch
 MAN3=		Net::RawSock.3
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' \
 		-e '$$_="" if /use warnings/;' \

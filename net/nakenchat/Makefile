@@ -31,6 +31,7 @@ DOTQ_CONFIGURE_ON=		--enable-dotQ
 FUSERLIST_CONFIGURE_ON=		--enable-whofile
 ELITEFILTER_CONFIGURE_ON=	--enable-elite
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

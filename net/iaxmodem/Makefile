@@ -28,6 +28,7 @@ MAN1=		${PORTNAME}.1
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

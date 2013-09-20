@@ -1,6 +1,4 @@
-# New ports collection makefile for:	yaph
-# Date created:		14 jui 2003
-# Whom:			Patrick MARIE <mycroft@virgaria.org>
+# Created by: Patrick MARIE <mycroft@virgaria.org>
 # $FreeBSD$
 
 PORTNAME=	yaph
@@ -13,6 +11,7 @@ COMMENT=	Yaph is a proxy scanner
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/yaph/Makefile.in

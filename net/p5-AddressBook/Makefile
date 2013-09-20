@@ -24,4 +24,5 @@ MAN3=	AddressBook.3 AddressBook::Config.3 AddressBook::DB::BBDB.3 \
 	AddressBook::DB::LDIF.3 AddressBook::DB::PDB.3 AddressBook::DB::Text.3 \
 	AddressBook::Entry.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -18,6 +18,7 @@ PLIST_FILES=	include/fsplib.h lib/libfsplib.a
 OPTIONS_DEFINE=	SHARED
 SHARED_DESC=	Install shared library (EXPERIMENTAL)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSHARED}

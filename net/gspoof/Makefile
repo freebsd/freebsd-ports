@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	gspoof
 # Created by: ijliao
 # $FreeBSD$
 
@@ -20,6 +18,7 @@ GNU_CONFIGURE=	yes
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-Wall -O2|$${CFLAGS}|g; \

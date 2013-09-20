@@ -23,6 +23,7 @@ CSYNC2_COMPARE_DESC=	Install csync2-compare script
 
 USES=	pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 MAN1=		csync2.1

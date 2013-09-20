@@ -1,7 +1,5 @@
-# Created by:                 Sergey Matveychuk <sem@FreeBSD.org>
-#
+# Created by: Sergey Matveychuk <sem@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	quagga
 PORTVERSION=	0.99.17.12
@@ -44,6 +42,7 @@ TCPSOCKETS_DESC=	Use TCP/IP sockets for protocol daemons
 DLMALLOC_DESC=		Use dlmalloc (makes bgpd much faster)
 NO_BGP_ANNOUNCE_DESC=	Turn off BGP route announcement
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CFLAGS+=	-I${LOCALBASE}/include

@@ -25,4 +25,5 @@ CONFIGURE_ENV+=	GMSGFMT="${LOCALBASE}/bin/msgfmt"
 GCONF_SCHEMAS=	twitux.schemas
 INSTALLS_ICONS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

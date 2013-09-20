@@ -23,6 +23,7 @@ PORTDOCS=	ARGS CHANGES FAQ README README.mailing_list \
 		README.modules README.tline_graphs README.tput_graphs \
 		README.version README.xpl2gpl THANKS dot_tcptracerc
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

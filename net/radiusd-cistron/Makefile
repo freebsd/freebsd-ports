@@ -26,6 +26,7 @@ DOCFILES=	COPYRIGHT INSTALL doc/ChangeLog doc/README doc/README.Y2K \
 		doc/README.cisco doc/README.pam doc/README.proxy \
 		doc/README.simul doc/README.usersfile
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE}
 

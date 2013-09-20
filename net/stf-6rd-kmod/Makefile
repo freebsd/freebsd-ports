@@ -22,6 +22,7 @@ PLIST_SUB=	KMODDIR=${KMODDIR:C,^/,,}
 IGNORE=		requires kernel source to be installed
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSREL} != "8.1" && ${OSREL} != "8.2" && ${OSREL} != "8.3" && ${OSREL} != "8.4" && ${OSREL} != "9.1"

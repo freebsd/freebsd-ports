@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-OurNet-BBSAgent
-# Date created:		2006-07-14
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	OurNet-BBSAgent
 PORTVERSION=	1.61
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		OurNet::BBSAgent.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

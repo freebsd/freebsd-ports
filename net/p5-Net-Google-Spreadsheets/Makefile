@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Google-Spreadsheets
-# Date created:				23 March 2010
-# Whom:					Gunter Wambaugh <gunter@six-two.net>
-#
+# Created by: Gunter Wambaugh <gunter@six-two.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Google-Spreadsheets
 PORTVERSION=	0.15.01
@@ -38,4 +34,5 @@ MAN3=		Net::Google::Spreadsheets.3 \
 		Net::Google::Spreadsheets::Table.3 \
 		Net::Google::Spreadsheets::Worksheet.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

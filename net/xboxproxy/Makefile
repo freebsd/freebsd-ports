@@ -21,6 +21,7 @@ PLIST_FILES=	bin/xboxproxy
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|libnet-config|${LIBNET_CONFIG}|g; \

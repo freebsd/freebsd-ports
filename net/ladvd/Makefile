@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ladvd
-# Date Created:				27 Jul 2008
-# Whom:					sten@blinkenlights.nl
-#
+# Created by: sten@blinkenlights.nl
 # $FreeBSD$
-#
 
 PORTNAME=	ladvd
 PORTVERSION=	1.0.2
@@ -32,6 +28,7 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	sbin/ladvd \
 		sbin/ladvdc
 
+NO_STAGE=	yes
 post-patch:
 .if defined(NOPORTDOCS)
 	@@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA|install-data-am:|' \

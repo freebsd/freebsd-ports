@@ -14,6 +14,7 @@ LICENSE=	MIT
 PLIST_FILES=	bin/tcpsplit
 PORTDOCS=	README
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E '/^(CC|CFLAGS|INC|LD)/d' ${WRKSRC}/Makefile
 

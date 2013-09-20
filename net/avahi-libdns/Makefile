@@ -21,4 +21,5 @@ AVAHI_PKGCONFIG=avahi-compat-libdns_sd.pc
 
 CONFLICTS=	mDNSResponder-[0-9]*
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

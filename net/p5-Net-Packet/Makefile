@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Net-Packet
-# Date created:				01 Feb 2005
-# Whom:					GomoR <netpkt@gomor.org>
-#
+# Created by: GomoR <netpkt@gomor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Packet
 DISTVERSION=	3.27
@@ -40,6 +36,7 @@ Net::Packet::SLL.3 Net::Packet::STP.3 Net::Packet::TCP.3 Net::Packet::UDP.3 Net:
 Net::Packet::VLAN.3
 
 .if !defined(NOPORTEXAMPLES)
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})

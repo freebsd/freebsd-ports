@@ -33,4 +33,5 @@ MAN3=		Net::OAI::Base.3 Net::OAI::Error.3 Net::OAI::GetRecord.3 \
 		Net::OAI::Record.3 Net::OAI::Record::Header.3 \
 		Net::OAI::Record::OAI_DC.3 Net::OAI::ResumptionToken.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -27,6 +27,7 @@ CFLAGS+=	-I${LOCALBASE}/include -Wno-error
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

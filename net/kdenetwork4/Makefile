@@ -43,6 +43,7 @@ KOPETE_DESC=	Multi-protocol instant messenger
 KRDC_DESC=	RDP and VNC client for KDE
 KRFB_DESC=	VNC server for KDE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKOPETE}

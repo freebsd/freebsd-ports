@@ -1,9 +1,5 @@
-# New ports collection makefile for:	online-desktop
-# Date created:		2008-05-28
-# Whom:			Ashish Shukla <wahjava@gmail.com>
-#
+# Created by: Ashish Shukla <wahjava@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	online-desktop
 PORTVERSION=	0.3.2
@@ -40,6 +36,7 @@ GCONF_SCHEMAS=	online-desktop.schemas
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -type f -exec fgrep -l '%%PREFIX%%' {} \; |${XARGS} ${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' -i .bak
 	@${FIND} ${WRKSRC} -type f -exec fgrep -l '%%LOCALBASE%%' {} \; |${XARGS} ${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' -i .bak

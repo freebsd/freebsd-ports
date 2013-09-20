@@ -17,6 +17,7 @@ ONLY_FOR_ARCHS=	amd64 i386 sparc64
 OPTIONS_DEFINE=	X11 STATIC
 OPTIONS_DEFAULT=	X11
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSTATIC}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qadsl
-# Date created:				13 December 2001
-# Whom:					Arne Lundberg <arlu@telia.com>
-#
+# Created by: Arne Lundberg <arlu@telia.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qadsl
 PORTVERSION=	1.3.3
@@ -30,6 +26,7 @@ MAN5=		qadsl.conf.5
 INFO=		qadsl
 PLIST_FILES=	sbin/qadsl etc/qadsl.conf.sample
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${WRKSRC}/etc/qadsl.conf ${WRKSRC}/etc/qadsl.conf.sample
 

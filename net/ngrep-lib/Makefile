@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ngrep-lib
-# Date created:        28 August 2001
-# Whom:                Edwin Groothuis (edwin@mavetju.org)
-#
+# Created by: Edwin Groothuis (edwin@mavetju.org)
 # $FreeBSD$
-#
 
 PORTNAME=	ngrep-lib
 PORTVERSION=	1.3
@@ -20,6 +16,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} -without-restart
 
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "amd64"

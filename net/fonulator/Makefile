@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fonulator
-# Date created:				12 Jan 2010
-# Whom:					Max Khon <fjoe@FreeBSD.org>
-#
+# Created by: Max Khon <fjoe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fonulator
 PORTVERSION=	2.0.1
@@ -26,6 +22,7 @@ LIBNET_CONFIG=	${LOCALBASE}/bin/libnet11-config
 PLIST_FILES=	bin/fonulator
 MAN1=		fonulator.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD}\
 	    -e 's,/usr/lib/libargtable2.a,${LOCALBASE}/lib/libargtable2.a,'\

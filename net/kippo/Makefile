@@ -27,6 +27,7 @@ GROUPS=		kippo
 SUB_FILES=	pkg-message
 SUB_LIST+=	PYTHON=${PYTHON_CMD}
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}
 .for f in kippo.cfg kippo.tac fs.pickle

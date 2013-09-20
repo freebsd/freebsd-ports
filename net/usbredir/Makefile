@@ -18,6 +18,7 @@ CONFIGURE_ENV+=	LIBUSB_CFLAGS=-I/usr/include\ -DLIBUSB_CALL=
 CONFIGURE_ENV+=	LIBUSB_LIBS=-lusb
 MAN1=		usbredirserver.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 803000

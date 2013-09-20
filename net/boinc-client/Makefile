@@ -52,6 +52,7 @@ SCRIPT_DESC=		Command line options in script
 NO_GUI_RPC_DESC=	Do not allow GUI RPC, do not make socket (breaks boinc_curses)
 NO_NET_INFO_DESC=	Do not send host address and name to servers
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 #.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

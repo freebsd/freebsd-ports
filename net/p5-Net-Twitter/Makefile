@@ -63,4 +63,5 @@ MAN3=		Net::Identica.3 \
 		Net::Twitter::Role::WrapError.3 \
 		Net::Twitter::Search.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

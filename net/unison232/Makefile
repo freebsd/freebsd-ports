@@ -27,6 +27,7 @@ MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE= DOCS X11
 OPTIONS_DEFAULT=	DOCS X11
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

@@ -50,6 +50,7 @@ MAN3=		Apache::SOAP.3 \
 		XMLRPC::Transport::POP3.3 \
 		XMLRPC::Transport::TCP.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|^#!.*perl|#!${PERL}|' \
 		${WRKSRC}/bin/* ${WRKSRC}/t/*

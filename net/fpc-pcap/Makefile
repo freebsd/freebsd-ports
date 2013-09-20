@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	LIBPCAP
 LIBPCAP_DESC=	Install ubiquitous network traffic capture library
 OPTIONS_DEFAULT=	LIBPCAP
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

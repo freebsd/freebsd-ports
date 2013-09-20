@@ -18,6 +18,7 @@ USES=		perl5
 
 PLIST_FILES=	bin/xrdesktop
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/xrdesktop ${PREFIX}/bin
 

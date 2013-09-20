@@ -19,4 +19,5 @@ CONFIGURE_ARGS=	LIBS='-L${LOCALBASE}/lib' INC='-I${LOCALBASE}/include'
 
 MAN3=		Geo::Mirror.3 Geo::IP.3 Geo::IP::Record.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

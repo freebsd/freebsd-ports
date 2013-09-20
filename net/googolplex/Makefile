@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	googolplex
-# Date created:			Feb 9, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	googolplex
 PORTVERSION=	0.1.0
@@ -18,6 +13,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/googolplex.py
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/googolplex.py ${PYTHON_SITELIBDIR}
 

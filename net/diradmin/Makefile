@@ -1,9 +1,5 @@
-# New ports collection makefile for:	diradmin
-# Date created:		24 April 2003
-# Whom:			Lewis Thompson <purple@lewiz.net>
-#
+# Created by: Lewis Thompson <purple@lewiz.net>
 # $FreeBSD$
-#
 
 PORTNAME=	diradmin
 PORTVERSION=	1.5.1
@@ -26,6 +22,7 @@ CFLAGS+=	-I/usr/src/lib/libcrypt
 PORTDOCS=	AUTHORS CREDITS ChangeLog INSTALL NEWS \
        		README TODO
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

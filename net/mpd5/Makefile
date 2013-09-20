@@ -20,6 +20,7 @@ CONFIGURE_WRKSRC=	"${WRKSRC}/src"
 
 USE_OPENSSL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNG_IPACCT}

@@ -1,4 +1,4 @@
-# Created by: Roger Hardiman <roger@freebsd.org>
+# Created by: Roger Hardiman <roger@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	openh323
@@ -29,6 +29,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${WRKSRC}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	BUILDTIME="YES"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .ifdef (WITH_FFMPEG)

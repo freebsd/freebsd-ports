@@ -1,9 +1,5 @@
-# New ports collection makefile for:	flowgrep
-# Date created:		22 Jun 2005
-# Whom:			Corey Smith
-#
+# Created by: Corey Smith
 # $FreeBSD$
-#
 
 PORTNAME=	flowgrep
 PORTVERSION=	0.9
@@ -24,6 +20,7 @@ PLIST_FILES=	sbin/flowgrep
 
 MAN8=	flowgrep.8
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/flowgrep.py ${PREFIX}/sbin/flowgrep
 	${INSTALL_MAN} ${WRKSRC}/flowgrep.8 ${PREFIX}/man/man8/flowgrep.8

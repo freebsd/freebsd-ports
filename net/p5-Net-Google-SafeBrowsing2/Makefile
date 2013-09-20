@@ -42,6 +42,7 @@ MAN3=	Net::Google::SafeBrowsing2::Storage.3 \
 	Net::Google::SafeBrowsing2::MySQL.3 \
 	Net::Google::SafeBrowsing2::Sqlite.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLite}

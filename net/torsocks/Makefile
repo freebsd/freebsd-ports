@@ -41,6 +41,7 @@ OPTIONS_DEFAULT=	DOCS DEFAULT
 
 PORTDOCS=	INSTALL README TODO ChangeLog
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSOCKSDNS}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ser
-# Date created:				6 November 2002
-# Whom:					andrei
-#
+# Created by: andrei
 # $FreeBSD$
-#
 
 PORTNAME=	ser
 PORTVERSION=	0.9.6
@@ -29,6 +25,7 @@ MAN8=		ser.8
 MAN5=		ser.cfg.5
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITH_SYSTEM_MALLOC)

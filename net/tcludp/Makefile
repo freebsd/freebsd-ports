@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcludp
-# Date created:				24 March 2008
-# Whom:					Frank Fenor <frank@fenor.de>
-#
+# Created by: Frank Fenor <frank@fenor.de>
 # $FreeBSD$
-#
 
 PORTNAME=	tcludp
 PORTVERSION=	1.0.8
@@ -25,4 +21,5 @@ PLIST_FILES=	lib/udp1.0.8/libudp1.0.8.so \
 		lib/udp1.0.8/pkgIndex.tcl
 PLIST_DIRS=	lib/udp1.0.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

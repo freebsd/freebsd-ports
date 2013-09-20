@@ -64,4 +64,5 @@ MAN3=		Net::Riak.3 \
 		Net::Riak::Transport::REST.3 \
 		Net::Riak::Types.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

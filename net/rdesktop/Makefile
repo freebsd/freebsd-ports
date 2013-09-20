@@ -1,9 +1,5 @@
-# New ports collection makefile for:  rdesktop
-# Date created:               13 December 2000
-# Whom:                       mwest@uct.ac.za
-#
+# Created by: mwest@uct.ac.za
 # $FreeBSD$
-#
 
 PORTNAME=	rdesktop
 PORTVERSION=	1.7.1
@@ -22,6 +18,7 @@ GNU_CONFIGURE=	yes
 DOCS=		doc/AUTHORS doc/TODO doc/*.txt
 MAN1=		rdesktop.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libao.so) || defined(WITH_LIBAO)

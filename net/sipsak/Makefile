@@ -16,4 +16,5 @@ GNU_CONFIGURE=	yes
 MAN1=		sipsak.1
 PLIST_FILES=	bin/sipsak
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

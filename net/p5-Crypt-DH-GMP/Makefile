@@ -22,6 +22,7 @@ USE_PERL5=	configure
 MAN3=		Crypt::DH::GMP.3 \
 		Crypt::DH::GMP::Compat.3
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#g' ${WRKSRC}/Makefile.PL
 

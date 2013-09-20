@@ -17,4 +17,5 @@ USE_PERL5=	configure
 MAN3=		Net::Gen.3 Net::Inet.3 Net::TCP.3 Net::TCP::Server.3 \
 		Net::UDP.3 Net::UNIX.3 Net::UNIX::Server.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

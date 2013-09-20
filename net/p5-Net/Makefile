@@ -34,4 +34,5 @@ MAN3=		Net::Cmd.3 \
 		Net::Time.3 \
 		Net::libnetFAQ.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

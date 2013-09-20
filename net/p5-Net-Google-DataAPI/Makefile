@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Google-DataAPI
-# Date created:				23 March 2010
-# Whom:					Gunter Wambaugh <gunter@six-two.net>
-#
+# Created by: Gunter Wambaugh <gunter@six-two.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Google-DataAPI
 PORTVERSION=	0.28.01
@@ -46,4 +42,5 @@ MAN3=		Net::Google::DataAPI.3 \
 		Net::Google::DataAPI::Role::HasContent.3 \
 		Net::Google::DataAPI::Role::Service.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

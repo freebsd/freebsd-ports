@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Google-Code
-# Date created:				2010-08-26
-# Whom:					Frederic Culot <frederic@culot.org>
-#
+# Created by: Frederic Culot <frederic@culot.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Google-Code
 PORTVERSION=	0.19
@@ -55,4 +51,5 @@ MAN3=		Net::Google::Code.3 \
 		Net::Google::Code::Wiki.3 \
 		Net::Google::Code::Wiki::Comment.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

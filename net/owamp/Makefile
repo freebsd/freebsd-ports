@@ -17,4 +17,5 @@ MAN1=		aespasswd.1 owfetch.1 owping.1 owstats.1 owup.1 \
 MAN5=		owampd.conf.5 owampd.limits.5 owampd.pfs.5
 MAN8=		owampd.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

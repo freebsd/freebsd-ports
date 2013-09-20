@@ -20,4 +20,5 @@ post-install:	.SILENT
 			${ETCDIR}/${PORTNAME}.conf; \
 	fi
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

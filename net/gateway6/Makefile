@@ -1,9 +1,5 @@
-# New ports collection makefile for:   gateway6
-# Date created:        11 Jul 2007
-# Whom:                Michael Scholz (mike@fth-devel.net)
-#
+# Created by: Michael Scholz (mike@fth-devel.net)
 # $FreeBSD$
-#
 
 PORTNAME=	gateway6
 PORTVERSION=	6.0
@@ -39,6 +35,7 @@ USE_PERL5=	build
 MAKE_JOBS_UNSAFE=yes
 MAKE_ARGS=	target=freebsd installdir=${PREFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

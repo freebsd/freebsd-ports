@@ -1,9 +1,5 @@
-# New ports collection makefile for:	asterisk-oh323
-# Date created:		17 Jun 2005
-# Whom:			Andriy Pylypenko <bamby@portaone.com>
-#
+# Created by: Andriy Pylypenko <bamby@portaone.com>
 # $FreeBSD$
-#
 
 PORTNAME=	asterisk-oh323
 PORTVERSION=	0.7.3.1
@@ -26,6 +22,7 @@ MAKE_ENV=	MKDIR="${MKDIR}" \
 		CPP="${CXX}" \
 		SYSLIBDIR=${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # XXX: bsd.gcc.mk now defines CPP

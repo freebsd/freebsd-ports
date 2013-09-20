@@ -1,9 +1,5 @@
-# New ports collection makefile for:	drawterm
-# Date created:	January 07, 2012
-# Whom:		Winston Weinert <winstonw@lavabit.com>
-#
+# Created by: Winston Weinert <winstonw@lavabit.com>
 # $FreeBSD$
-#
 
 PORTNAME=	drawterm
 PORTVERSION=	20110822
@@ -25,6 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKE_ARGS=	CONF=pthread
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/drawterm ${PREFIX}/bin
 

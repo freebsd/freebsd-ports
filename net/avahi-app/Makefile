@@ -60,6 +60,7 @@ DAEMON_CONFIG_FILES=	hosts avahi-daemon.conf
 USE_RC_SUBR=yes
 .endif # !avahi-header
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${AVAHI_SLAVE} != header

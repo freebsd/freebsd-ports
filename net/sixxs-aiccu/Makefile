@@ -27,6 +27,7 @@ WRKSRC=		${WRKDIR}/aiccu
 BUILD_WRKSRC=	${WRKDIR}/aiccu/unix-console
 PORTDOCS=	README
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's:verbose true:verbose false:' \

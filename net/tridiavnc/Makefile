@@ -31,6 +31,7 @@ PREFIX=${TRIDIAVNC_BASE}
 MAKE_ENV+=	DESTDIR=${TRIDIAVNC_BASE}
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != i386

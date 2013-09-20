@@ -1,9 +1,5 @@
-# New ports collection makefile for:	poptop
-# Date created:		04 October 1999
-# Whom:			Nick Sayer <nsayer@freebsd.org>
-#
+# Created by: Nick Sayer <nsayer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	poptop
 PORTVERSION=	1.3.4
@@ -29,6 +25,7 @@ MAN8=		pptpd.8 pptpctrl.8
 CONFIGURE_ARGS+=	--with-bsdppp
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/pptpctrl.c
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/pptpd.8

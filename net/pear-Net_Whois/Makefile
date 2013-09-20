@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Net_Whois
-# Date created:			  2006/12/22
-# Whom:				  chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	Net_Whois
 PORTVERSION=	1.0.5
@@ -18,6 +14,7 @@ RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 
 PEAR_AUTOINSTALL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

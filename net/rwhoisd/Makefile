@@ -38,6 +38,7 @@ ETCFILES=	rwhoisd.allow rwhoisd.auth_area rwhoisd.conf rwhoisd.deny \
 		rwhoisd.dir rwhoisd.root rwhoisd.x.dir
 PLIST_SUB+=	ETCFILES="${ETCFILES}"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MIPV6)

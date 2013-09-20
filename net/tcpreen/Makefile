@@ -16,6 +16,7 @@ MAN1=		tcpreen.1
 
 DOC_FILES=	AUTHORS NEWS README THANKS TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

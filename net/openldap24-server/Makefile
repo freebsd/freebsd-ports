@@ -124,6 +124,7 @@ OPENLDAP_PKGFILESUFX=
 
 CONFIGURE_SED=		-e 's,-kthread,${PTHREAD_LIBS},g' -e 's,uuid/uuid.h,xxuuid/uuid.h,g'
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(CLIENT_ONLY)

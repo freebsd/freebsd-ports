@@ -20,4 +20,5 @@ AVAHI_SLAVE=	qt4
 USE_QT4=	corelib moc_build
 AVAHI_PKGCONFIG=	avahi-qt4.pc
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

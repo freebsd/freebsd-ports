@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SkyStar3
-# Date created:		07 June 2008
-# Whom:			Alex Keda <admin@lissyara.su>
-#
+# Created by: Alex Keda <admin@lissyara.su>
 # $FreeBSD$
-#
 
 PORTNAME=	ttbudget
 PORTVERSION=	5.3
@@ -18,6 +14,7 @@ COMMENT=	Driver for 'TechnoTrend budget DVB S-1401' (SkyStar3)
 
 USE_BZIP2=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SYSDIR?=	${SRC_BASE}/sys

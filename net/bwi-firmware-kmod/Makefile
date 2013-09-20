@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bwi-firmware-kmod
-# Date created:				May 01 2009
-# Whom:					Andrew Thompson <thompsa@FreeBSD.org>
-#
+# Created by: Andrew Thompson <thompsa@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bwi-firmware
 PORTVERSION=	${FWVERSION}
@@ -36,6 +32,7 @@ PLIST_SUB=	KMODNAME="${KMODNAME}" \
 
 NO_PACKAGE=	this is a modified version of a restricted firmware
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:

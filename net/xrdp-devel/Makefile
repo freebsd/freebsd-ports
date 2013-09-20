@@ -36,6 +36,7 @@ OPTIONS_DEFAULT=	JP106
 GATEWAY_DESC=	Install xrdp as RDP gateway (no VNC backend)
 JP106_DESC=	Install Japanese JP106 keymap
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

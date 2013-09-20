@@ -20,4 +20,5 @@ GH_PROJECT=	py-${PORTNAME}
 GH_COMMIT=	10f0ded
 GH_TAGNAME=	v${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

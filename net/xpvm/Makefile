@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpvm
-# Date created:				02 April 2004
-# Whom:					Rong-En Fan <rafan@infor.org>
-#
+# Created by: Rong-En Fan <rafan@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xpvm
 PORTVERSION=	1.2.5
@@ -30,6 +26,7 @@ SUB_FILES=	pkg-message
 
 ALL_TARGET=	default
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "If your PVM is not installed in the default directory,"

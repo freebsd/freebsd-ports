@@ -69,6 +69,7 @@ MAN3=		Net::Amazon::EC2.3 \
 		Net::Amazon::EC2::UserIdGroupPair.3 \
 		Net::Amazon::EC2::Volume.3
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

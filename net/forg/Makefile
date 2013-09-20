@@ -18,6 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinte
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-patch:
 .for file in forg.py mini-forg.py
 	@${REINPLACE_CMD} -e "s,/usr/bin/python,${PYTHON_CMD},g" ${WRKSRC}/${file}

@@ -18,6 +18,7 @@ MAN8=		u6rd.8
 
 PLIST_FILES=	sbin/u6rd
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

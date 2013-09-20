@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ldap-stats
-# Date created:				Fri 09 Oct 2009
-# Whom:					Alexey V. Degtyarev <alexey@renatasystems.org>
-#
+# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ldap-stats
 PORTVERSION=	5.2
@@ -20,6 +16,7 @@ USES=		perl5
 
 PLIST_FILES=	bin/ldap-stats
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ldap-stats.pl ${PREFIX}/bin/ldap-stats
 

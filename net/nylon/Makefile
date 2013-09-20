@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	nylon
-# Date created:			Jun 11, 2001
-# Whom:				William Ward <William.Ward@ericsson.com>
-#
+# Created by: William Ward <William.Ward@ericsson.com>
 # $FreeBSD$
-#
 
 PORTNAME=	nylon
 PORTVERSION=	1.21
@@ -20,6 +15,7 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 USE_RC_SUBR=	nylon
 
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 # Necessary for $PREFIX to work:
 CONFIGURE_ARGS=	--with-libevent=${LOCALBASE}
 

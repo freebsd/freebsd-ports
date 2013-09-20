@@ -1,9 +1,5 @@
-# New ports collection makefile for:   hf6to4
-# Date created:                26 September 2003
-# Whom:                        Kimura Fuyuki <fuyuki@nigredo.org>
-#
+# Created by: Kimura Fuyuki <fuyuki@nigredo.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hf6to4
 PORTVERSION=	1.5
@@ -23,6 +19,7 @@ BROKEN=		does not fetch.
 
 MAN8=		hf6to4.8
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 .for i in ${DISTFILES}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	csocks
-# Date created:				06 August 2007
-# Whom:					Raffaele De Lorenzo - raffaele.delorenzo@libero.it
-#
+# Created by: Raffaele De Lorenzo - raffaele.delorenzo@libero.it
 # $FreeBSD$
-#
 
 PORTNAME=	csocks
 PORTVERSION=	1.5
@@ -23,6 +19,7 @@ MAN1=		csocks.1
 MAN5=		csocks.conf.5
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} "s#/usr/local#${PREFIX}#" ${WRKDIR}/src/Makefile
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	net/udpxy
-# Date created:				2 January 2009
-# Whom:					Alex Deiter <Alex.Deiter@Gmail.COM>
-#
+# Created by: Alex Deiter <Alex.Deiter@Gmail.COM>
 # $FreeBSD$
-#
 
 PORTNAME=	udpxy
 PORTVERSION=	1.0.23
@@ -29,6 +25,7 @@ OPTIONS_DEFAULT=	RELEASE
 PLIST_FILES=	sbin/udpxy \
 		sbin/udpxrec
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/udpxy ${PREFIX}/sbin/
 	@${LN} -s udpxy ${PREFIX}/sbin/udpxrec

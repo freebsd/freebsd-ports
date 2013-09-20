@@ -29,6 +29,7 @@ MAKE_ARGS=	LIBTOOL="${LIBTOOL}" \
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if empty(PORT_OPTIONS:MDEBUG)

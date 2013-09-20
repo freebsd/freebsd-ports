@@ -38,6 +38,7 @@ OPTIONS_DEFINE=	EXAMPLES DOCS BPF
 OPTIONS_DEFAULT=	BPF
 BPF_DESC=	link layer bpf
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 LIBNET_LINK=	none

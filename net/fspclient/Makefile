@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fspclient
-# Date created:		7 Nov 1994
-# Whom:			ache
-#
+# Created by: ache
 # $FreeBSD$
-#
 
 PORTNAME=	fspclient
 PORTVERSION=	0.93.0
@@ -21,6 +17,7 @@ MAN1=		fsp.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/fsp
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include <bsd.port.post.mk>

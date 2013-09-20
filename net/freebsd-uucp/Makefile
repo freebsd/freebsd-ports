@@ -29,6 +29,7 @@ BPKGNAME=	base-uucp-1.06.1
 # fix errros for -std=iso9899:1999 in FreeBSD 5.1
 MAKE_ENV+=	CSTD=gnu99
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PAM)

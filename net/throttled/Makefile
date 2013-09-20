@@ -18,6 +18,7 @@ USE_RC_SUBR=	${PORTNAME}
 
 PLIST_FILES=	sbin/throttled sbin/throttled-startup
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" \
 	${WRKSRC}/Makefile

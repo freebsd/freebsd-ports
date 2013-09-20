@@ -23,6 +23,7 @@ MAN3=	POE::Component::ControlPort.3 \
 	POE::Component::ControlPort::Command.3 \
 	POE::Component::ControlPort::DefaultCommands.3
 
+NO_STAGE=	yes
 post-extract:
 	@${PERL} -pi -e 's/my \$$ret =.*/my \$$ret = 0;/' ${WRKSRC}/Makefile.PL
 

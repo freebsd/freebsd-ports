@@ -35,6 +35,7 @@ REINPLACE_ARGS=	-e 's,%%PREFIX%%,${PREFIX},1' \
 		-e 's,%%DATADIR%%,${DATADIR},1' \
 		-i.bak
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES}

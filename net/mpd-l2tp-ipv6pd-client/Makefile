@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mpd-l2tp-ipv6pd-client
-# Date created:				Nov 2 2006
-# Whom:					Hajimu UMEMOTO <ume@FreeBSD.org>
-#
+# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mpd-l2tp-ipv6pd-client
 PORTVERSION=	20081105
@@ -26,6 +22,7 @@ OPTIONS_DEFAULT=	MPD5
 MPD4_DESC=		Use mpd4
 MPD5_DESC=		Use mpd5
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMPD4}

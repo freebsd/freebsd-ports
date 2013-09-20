@@ -1,9 +1,5 @@
-# Ports collection makefile for:  imapproxy
-# Date created:                   Mon July 28, 2003
-# Whom:                           Lasse L. Johnsen (lasse@freebsdcluster.org)
-#
+# Created by: Lasse L. Johnsen (lasse@freebsdcluster.org)
 # $FreeBSD$
-#
 
 PORTNAME=	imapproxy
 PORTVERSION=	1.0
@@ -17,6 +13,7 @@ COMMENT=	ImapProxy is a caching IMAP proxy daemon to be used with Horde/IMP
 GNU_CONFIGURE=	yes
 HAS_CONFIGURE=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/example.conf ${PREFIX}/etc/imapproxy.conf.dist

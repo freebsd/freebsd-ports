@@ -16,6 +16,7 @@ LICENSE=	MIT
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} '/DEFAULT_CONFIG_PATH/ s|/etc|${PREFIX}&|' ${WRKSRC}/port_for/store.py
 

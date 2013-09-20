@@ -20,4 +20,5 @@ USE_PERL5=	modbuildtiny
 
 MAN3=		AnyEvent::Twitter::Stream.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

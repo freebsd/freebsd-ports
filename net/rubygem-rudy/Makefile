@@ -26,4 +26,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/rudy bin/rudy-ec2 bin/rudy-s3 bin/rudy-sdb
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

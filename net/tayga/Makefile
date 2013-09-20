@@ -17,4 +17,5 @@ GNU_CONFIGURE=	yes
 MAN5=		tayga.conf.5
 MAN8=		tayga.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

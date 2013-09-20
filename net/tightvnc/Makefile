@@ -35,6 +35,7 @@ MAN1=		Xvnc.1 vncviewer.1 vncpasswd.1 vncconnect.1 vncserver.1
 OPTIONS_DEFINE=	JVNC_VIEWER
 JVNC_VIEWER_DESC=	Install Java-based vnc viewer
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJVNC_VIEWER}

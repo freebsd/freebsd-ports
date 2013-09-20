@@ -11,6 +11,7 @@ COMMENT=	Tool to measure practical TCP throughput between two machines
 
 DOC_FILES=	README
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/netstrain ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/netstraind ${PREFIX}/bin

@@ -21,6 +21,7 @@ USE_PYDISTUTILS=yes
 
 PYDISTUTILS_EGGINFO=	apache_${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}.egg-info
 
+NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKSRC}/libcloud/test ${WRKSRC}/test # no need to install tests
 	@${FIND} ${WRKSRC} -name "*.rej" -delete

@@ -30,6 +30,7 @@ PLIST_SUB+=	SHORTPORTVERSION=${SHORTPORTVERSION}
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -Ee \
 		's|libnet-config|${LIBNET_CONFIG}|; \

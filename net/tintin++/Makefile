@@ -33,6 +33,7 @@ PORTDOCS=	${DOCS:T}
 
 SLAVEDIRS=	chinese/tintin++
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBIG5}

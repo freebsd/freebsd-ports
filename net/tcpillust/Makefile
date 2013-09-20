@@ -28,6 +28,7 @@ PLIST_FILES=	bin/tcpillust \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-build:
 .for file in binread.c button.c draw.c parser.c tcpillust.c tcpdump/print-tcp.c
 	${CC} ${CFLAGS} -I/usr/include -I/usr/include/pcap -I${LOCALBASE}/include/ -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} \

@@ -35,6 +35,7 @@ USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_RC_SUBR=	${PORTNAME}
 
+NO_STAGE=	yes
 post-build:
 	${LOCALBASE}/bin/thrift -o ${WRKSRC} -I ${LOCALBASE}/share --gen "perl" ${WRKSRC}/if/scribe.thrift
 

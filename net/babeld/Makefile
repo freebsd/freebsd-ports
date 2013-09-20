@@ -13,4 +13,5 @@ PLIST_FILES=	bin/babeld
 
 MAN8=		babeld.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

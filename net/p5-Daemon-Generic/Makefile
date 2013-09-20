@@ -25,4 +25,5 @@ MAN3=	Daemon::Generic.3 \
 	Daemon::Generic::While1.3 \
 	Daemon::Generic::AnyEvent.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

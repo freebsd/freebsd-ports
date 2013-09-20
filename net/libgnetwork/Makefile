@@ -27,6 +27,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--enable-ssl=no
 #.endif
 
+NO_STAGE=	yes
 #pre-everything::
 #	@${ECHO_MSG} ""
 #	@${ECHO_MSG} "libgnetwork has the following configurable option(s):"

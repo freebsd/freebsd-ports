@@ -24,6 +24,7 @@ MAN1=	traceanon.1 traceconvert.1 tracefilter.1 tracemerge.1 \
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 	${WRKSRC}/configure

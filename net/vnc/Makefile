@@ -40,6 +40,7 @@ MAN1=		vncviewer.1 \
 PREFIX=${REALVNC_BASE}
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"

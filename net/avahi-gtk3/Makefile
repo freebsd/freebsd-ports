@@ -22,6 +22,7 @@ AVAHI_PKGCONFIG=avahi-ui-gtk3.pc
 
 USE_GNOME+=	gtk30
 
+NO_STAGE=	yes
 do-build:
 	@(cd ${WRKSRC}/avahi-ui; ${GMAKE} libavahi-ui-gtk3.la)
 

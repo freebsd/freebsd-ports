@@ -1,7 +1,4 @@
-# New ports collection makefile for:    rubygem-stompserver
-# Date created:         2011-09-01
-# Whom:                 Mike Carlson <carlson39@llnl.gov>
-#
+# Created by: Mike Carlson <carlson39@llnl.gov>
 # $FreeBSD$
 
 PORTNAME=	stompserver
@@ -22,4 +19,5 @@ RUN_DEPENDS:=	rubygem-eventmachine>=0.7.2:${PORTSDIR}/devel/rubygem-eventmachine
 		rubygem-hoe>=1.3.0:${PORTSDIR}/devel/rubygem-hoe \
 		rubygem-daemons>=1.0.2:${PORTSDIR}/devel/rubygem-daemons
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

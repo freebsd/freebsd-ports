@@ -31,6 +31,7 @@ USE_GMAKE=	yes
 ALL_TARGET=	dictd dictzip
 INSTALL_TARGET=	install.dictd install.dictzip
 
+NO_STAGE=	yes
 post-patch:
 .for i in Makefile.in dict.1.in dictd.8.in
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/$i

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   DIMES
-# Date created:        18 April 2006
-# Whom:            stast
+# Created by: stast
 # $FreeBSD$
-#
-#
 
 PORTNAME=	dimes
 PORTVERSION=	0.5.2
@@ -28,6 +24,7 @@ JAVA_OS=	linux
 JAVA_VENDOR=	sun
 DATADIR=	${JAVASHAREDIR}/dimes
 
+NO_STAGE=	yes
 post-extract:
 	${REINPLACE_CMD} 's|$$CURRENT_DIR/..|${DATADIR}/|g' ${WRKSRC}/scripts_linux/agent.sh
 	${REINPLACE_CMD} 's|#. colors.sh|JAVA_HOME=${JAVA_HOME}|g' ${WRKSRC}/scripts_linux/agent.sh

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	l4ip
-# Date created:				17 February 2006
-# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	l4ip
 PORTVERSION=	1.0.294
@@ -18,6 +14,7 @@ COMMENT=	L4 health check daemon for IPFILTER
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,service_type_t,script_type_t,g' ${WRKSRC}/service.c
 	${REINPLACE_CMD} -e 's,/usr/sbin,/sbin,g' ${WRKSRC}/l4ip.conf

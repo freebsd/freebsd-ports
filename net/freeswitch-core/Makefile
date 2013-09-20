@@ -167,6 +167,7 @@ MODHTTPCACHE_DESC=	mod_http_cache (new)
 MODEVENTZMQ_DESC=	mod_event_zmq (build issues) (new)
 SAMPLECONFIGS_DESC=	Sample Configurations
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"

@@ -16,6 +16,7 @@ LDFLAGS+=	-lcurses
 
 PLIST_FILES=	bin/recvnet
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} -c ${WRKSRC}/${PORTNAME}.c -o ${WRKSRC}/${PORTNAME}.o
 	${CC} ${LDFLAGS} ${WRKSRC}/${PORTNAME}.o -o ${WRKSRC}/${PORTNAME}

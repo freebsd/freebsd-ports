@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtic
-# Date created:		22 August 1999
-# Whom:			Denis Shaposhnikov <dsh@vlink.ru>
-#
+# Created by: Denis Shaposhnikov <dsh@vlink.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	gtic
 PORTVERSION=	1.3.b
@@ -21,6 +17,7 @@ MAKE_ENV+=	DEFINES="${DEFINES}"
 DEFINES+=	-DAMIGA4D
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

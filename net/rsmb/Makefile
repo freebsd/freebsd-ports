@@ -23,6 +23,7 @@ RESTRICTED+=	\nMove the file to ${DISTDIR} and restart the build.\n\n
 USE_RC_SUBR=	rsmbd
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

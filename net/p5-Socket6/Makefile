@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Socket6
-# Date created:		24 May 2000
-# Whom:			Hajimu UMEMOTO <ume@FreeBSD.org>
-#
+# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Socket6
 PORTVERSION=	0.23
@@ -24,4 +20,5 @@ PLIST_FILES=	%%SITE_PERL%%/%%PERL_ARCH%%/Socket6.pm \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket6/Socket6.so
 PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket6
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

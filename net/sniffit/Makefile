@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  sniffit
-# Date created:			  28 Mar 1998
-# Whom:				  bsdx
-#
+# Created by: bsdx
 # $FreeBSD$
-#
 
 PORTNAME=	sniffit
 PORTVERSION=	0.3.7b
@@ -26,6 +21,7 @@ ALL_TARGET=
 MAN5=		sniffit.5
 MAN8=		sniffit.8
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sniffit ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/sniffit.5 ${PREFIX}/man/man5

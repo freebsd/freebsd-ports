@@ -18,6 +18,7 @@ USE_PHP=	yes
 USE_PHPEXT=	yes
 USES=		pkgconfig
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's| -ldl||g' ${WRKSRC}/config.m4
 

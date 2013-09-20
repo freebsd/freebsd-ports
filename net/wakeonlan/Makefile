@@ -14,6 +14,7 @@ USE_PERL5=	configure
 
 MAN1=		wakeonlan.1
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/lab001.wol ${EXAMPLESDIR}

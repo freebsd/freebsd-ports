@@ -36,6 +36,7 @@ PORTDOCS=	LICENSE.txt NOTICE.txt api
 ALL_TARGET+=	javadoc
 .endif
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${INSTALL_DATA} ${WRKSRC}/target/${PORTNAME}-${PORTVERSION}.jar \

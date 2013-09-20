@@ -25,4 +25,5 @@ MAN3=		Net::HTTP.3 \
 		Net::HTTPS.3 \
 		Net::HTTP::NB.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

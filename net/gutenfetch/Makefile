@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gutenfetch
-# Date created:		22-Aug-2001
-# Whom:			Russell Francis
-#
+# Created by: Russell Francis
 # $FreeBSD$
-#
 
 PORTNAME=	gutenfetch
 PORTVERSION=	1.5
@@ -25,6 +21,7 @@ MAN1=		gutenfetch.1
 PLIST_FILES=	bin/gutenfetch
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/gutenfetch
 	@${CAT} ${PKGMESSAGE}

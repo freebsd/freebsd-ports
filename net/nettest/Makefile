@@ -1,9 +1,5 @@
-# New ports collection makefile for:    nettest
-# Date created:         Mon Oct 20 14:30:06 CDT 1997
-# Whom:                 proot@iaces.com
-#
+# Created by: proot@iaces.com
 # $FreeBSD$
-#
 
 PORTNAME=	nettest
 PORTVERSION=	92.11.09
@@ -18,6 +14,7 @@ COMMENT=	Performs client and server functions for timing data throughput
 NO_WRKSUBDIR=	yes
 MAN8=		nettest.8
 
+NO_STAGE=	yes
 do-install:
 	$(INSTALL_PROGRAM) -s  $(WRKSRC)/nettest $(PREFIX)/bin/nettest
 	$(INSTALL_PROGRAM) -s $(WRKSRC)/nettestd $(PREFIX)/bin/nettestd

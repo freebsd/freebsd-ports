@@ -1,9 +1,5 @@
-# New ports collection makefile for:        iplog
-# Date created:		4 Oct 1999
-# Whom:			Dominik Rothert <dr@domix.de>
-#
+# Created by: Dominik Rothert <dr@domix.de>
 # $FreeBSD$
-#
 
 PORTNAME=	iplog
 PORTVERSION=	2.2.3
@@ -24,6 +20,7 @@ MAN8=		iplog.8
 USE_RC_SUBR=	iplog
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 post-patch:
 .for FILE in example-iplog.conf iplog.8 iplog.conf.5 src/iplog.h

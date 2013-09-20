@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	Net::Jaiku
-# Date created:		Jun 3, 2008
-# Whom:			Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
-#
+# Created by: Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Jaiku
 PORTVERSION=	0.0501
@@ -28,4 +23,5 @@ USE_PERL5=	configure
 
 MAN3=	Net::Jaiku.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

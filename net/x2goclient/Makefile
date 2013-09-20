@@ -27,6 +27,7 @@ INSTALLS_ICONS=	yes
 
 MAN1=		x2goclient.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAP}

@@ -1,5 +1,4 @@
 # Created by: Wu Ching-hong <woju@freebsd.ee.ntu.edu.tw>
-# 				  and David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
 
 PORTNAME=	queso
@@ -17,6 +16,7 @@ OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

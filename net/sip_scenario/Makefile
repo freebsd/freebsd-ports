@@ -27,6 +27,7 @@ WRKSRC=		${WRKDIR}
 PLIST_FILES=	bin/sip_scenario.pl
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${SED} -i -e '1s/local\///' ${WRKSRC}/sip_scenario.pl
 	${INSTALL_SCRIPT} ${WRKSRC}/sip_scenario.pl ${PREFIX}/bin

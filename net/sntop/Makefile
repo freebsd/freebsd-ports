@@ -18,6 +18,7 @@ SUB_FILES=	pkg-message
 
 MAN1=		sntop.1
 
+NO_STAGE=	yes
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/sntop
 .if !defined(NOPORTDOCS)

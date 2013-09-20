@@ -60,6 +60,7 @@ OPTIONS_DEFAULT=	MYSQL
 SNMPSTATS_DESC=		SNMPStats support
 AUTHRADIUS_DESC=	auth_radius module
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

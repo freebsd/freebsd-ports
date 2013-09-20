@@ -57,6 +57,7 @@ EXTRA_PATCHES += \
 MAN1=		silc.1
 .endif
 
+NO_STAGE=	yes
 post-patch:
 # install neither documentation nor silc server, we have ports for those
 	@${REINPLACE_CMD} -e 's/-D_THREAD_SAFE//' ${WRKSRC}/${CONFIGURE_SCRIPT}

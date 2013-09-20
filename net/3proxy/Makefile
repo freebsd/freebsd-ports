@@ -1,9 +1,5 @@
-# New ports collection makefile for:    3proxy
-# Date created:         2003 July 25
-# Whom:                 tim@relay.nnn.tstu.ru
-#
+# Created by: tim@relay.nnn.tstu.ru
 # $FreeBSD$
-#
 
 PORTNAME=	3proxy
 PORTVERSION=	0.6.1
@@ -25,6 +21,7 @@ MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 MAN3=	3proxy.cfg.3
 MAN8=	3proxy.8 ftppr.8 pop3p.8 proxy.8 socks.8 tcppm.8 udppm.8
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s|%%CFLAGS%%|${CFLAGS}|" \
 		${WRKSRC}/Makefile.unix

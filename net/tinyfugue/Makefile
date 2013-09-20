@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tinyfugue
-# Date created:		4 January 1997
-# Whom:			mike@binghamton.edu
-#
+# Created by: mike@binghamton.edu
 # $FreeBSD$
-#
 
 PORTNAME=	tf
 PORTVERSION=	5.0b8
@@ -20,4 +16,5 @@ CONFIGURE_ARGS=	--enable-manpage --enable-version --enable-symlink --datadir=${P
 
 PLIST_SUB=	DISTNAME=${DISTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

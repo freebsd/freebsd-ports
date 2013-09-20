@@ -26,4 +26,5 @@ MAN3=	AnyEvent::MPRPC.3 \
 	AnyEvent::MPRPC::CondVar.3 \
 	AnyEvent::MPRPC::Server.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -31,6 +31,7 @@ PLIST_SUB+=	HAVE_ICA_CERTS="@comment "
 SUB_FILES=	wfcmgr wfica
 SUB_LIST=	CDIR=${CDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

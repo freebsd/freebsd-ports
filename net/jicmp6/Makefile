@@ -20,4 +20,5 @@ PLIST_FILES=	lib/libjicmp6.la \
 		lib/libjicmp6.so \
 		share/java/jicmp6.jar
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

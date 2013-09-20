@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pvm3
-# Date created:				11 March 1999
-# Whom:					Dima Sivachenko <dima@chg.ru>
-#
+# Created by: Dima Sivachenko <dima@chg.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	pvm
 PORTVERSION=	3.4.6
@@ -114,6 +110,7 @@ MLINKS=		pvm_intro.1 PVM.1 pvmd3.1 pvmd.1 \
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 NOT_FOR_ARCHS=	powerpc

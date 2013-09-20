@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/TCPSocketPipe
-# Date created:		20 July 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tcpsocketpipe
 PORTVERSION=	1.8.2
@@ -24,6 +20,7 @@ USE_RUBY_FEATURES=	devel-logger
 NO_BUILD=	yes
 PLIST_FILES=	%%RUBY_SITELIBDIR%%/socketproxy.rb
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/socketproxy.rb ${RUBY_SITELIBDIR}/
 

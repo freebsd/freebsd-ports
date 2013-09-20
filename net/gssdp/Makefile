@@ -25,6 +25,7 @@ USE_LDCONFIG=	yes
 USE_XZ=		yes
 USES=		gmake pathfix pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK3}

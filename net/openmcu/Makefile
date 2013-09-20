@@ -30,6 +30,7 @@ PLIST_SUB=	PORTNAME=${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/openh323
 EXAMPLESDIR=	${PREFIX}/share/examples/openh323
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == sparc64

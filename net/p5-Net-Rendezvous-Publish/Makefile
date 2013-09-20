@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Rendezvous-Publish
-# Date created:		2009-07-12
-# Whom:			TERAMOTO Masahiro <markun@onohara.to>
-#
+# Created by: TERAMOTO Masahiro <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Rendezvous-Publish
 PORTVERSION=	0.04
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 MAN3=		Net::Rendezvous::Publish.3 \
 		Net::Rendezvous::Publish::Service.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

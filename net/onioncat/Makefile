@@ -20,6 +20,7 @@ USE_RC_SUBR=	${PORTNAME}
 MAN1=		ocat.1
 PLIST_FILES=	bin/ocat
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/CFLAGS=/s|-O2|$$CFLAGS|' ${WRKSRC}/configure

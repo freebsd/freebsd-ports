@@ -26,6 +26,7 @@ USE_QT4=	corelib gui network opengl script svg webkit \
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/smb4k
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

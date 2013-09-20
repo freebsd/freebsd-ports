@@ -1,9 +1,4 @@
-# New ports collection makefile for:	RPC::EPC::Service
-# Date created:		19 Mar 2012
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	RPC-EPC-Service
 PORTVERSION=	0.0.7
@@ -25,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=	RPC::EPC::Service.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

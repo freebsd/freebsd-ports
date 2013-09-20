@@ -20,6 +20,7 @@ PYDISTUTILS_PKGNAME=	py${PORTNAME}
 
 DOCSDIR=	${PREFIX}/share/doc/py-smb
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

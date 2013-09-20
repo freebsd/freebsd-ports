@@ -1,9 +1,5 @@
-# Ports collection makefile for:	py-radix
-# Date created:			10. August, 2005
-# Whom:				Lars Erik Gullerud <lerik@nolink.net>
-#
+# Created by: Lars Erik Gullerud <lerik@nolink.net>
 # $FreeBSD$
-#
 
 PORTNAME=	radix
 PORTVERSION=	0.5
@@ -19,4 +15,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/radix.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

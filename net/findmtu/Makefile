@@ -11,6 +11,7 @@ COMMENT=	A tool for performing IPv6 path MTU discovery on *NIX
 
 SUB_FILES=	findmtu
 
+NO_STAGE=	yes
 do-configure:
 	${LN} -s ${WRKSRC}/Makefile.rawsocket ${WRKSRC}/Makefile
 
