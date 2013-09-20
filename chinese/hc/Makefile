@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  hc
-# Date created:			  Mon Feb 03, 1997
-# Whom:				  David O'Brien (obrien@FreeBSD.org)
-#
+# Created by: David O'Brien (obrien@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	hc
 PORTVERSION=	3.0
@@ -20,6 +15,7 @@ EXTRACT_ONLY=	hc-30.tar.gz
 ALL_TARGET=	hc b2g g2b
 MAN1=		hc.1
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/hclib.c
 

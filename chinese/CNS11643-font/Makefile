@@ -24,6 +24,7 @@ NO_BUILD=	yes
 
 TTF=		TW-Kai-98_1.ttf TW-Sung-98_1.ttf
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${FONTSDIR}
 .for f in ${TTF}

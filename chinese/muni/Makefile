@@ -1,9 +1,5 @@
-# New ports collection makefile for:	muni
-# Date created:		6 May 1999
-# Whom:			G. Adam Stanislav <adam@whizkidtech.net>
-#
+# Created by: G. Adam Stanislav <adam@whizkidtech.net>
 # $FreeBSD$
-#
 
 PORTNAME=	muni
 PORTVERSION=	1.0
@@ -13,6 +9,7 @@ MASTER_SITES=	http://www.whizkidtech.redprince.net/i18n/muni/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find Unicode values for Chinese characters
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/muni ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/m7773 ${PREFIX}/bin

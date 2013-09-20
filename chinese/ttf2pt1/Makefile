@@ -1,9 +1,5 @@
-# New ports collection makefile for:    zh-ttf2pt1
-# Date created:		8 March 2001
-# Whom:			Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-#
+# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	ttf2pt1
 PORTVERSION=	3.4.0
@@ -21,4 +17,5 @@ MAKE_ARGS=	INSTDIR="${PREFIX}"
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

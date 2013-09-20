@@ -16,6 +16,7 @@ USE_XZ=		yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 pre-install:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 	@${MV} ${WRKSRC}/make.conf.in ${WRKSRC}/make.conf

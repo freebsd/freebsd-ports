@@ -33,6 +33,7 @@ ANDROID_DB_DESC=	Build Android DB
 OPENPHRASE_DB_DESC=	Build Open Phrase DB
 OPENCC_DESC=		Use opencc
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MANDROID_DB}

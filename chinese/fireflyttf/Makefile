@@ -22,6 +22,7 @@ LGJ_FONT_DESC=	Patch for Taiwan horn
 
 TTF=		fireflysung.ttf
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MLGJ_FONT}

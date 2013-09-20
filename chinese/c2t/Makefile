@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  c2t
-# Date created:			  Mon Feb 03, 1997
-# Whom:				  David O'Brien (obrien@FreeBSD.org)
-#
+# Created by: David O'Brien (obrien@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	c2t
 PORTVERSION=	1.0
@@ -20,6 +15,7 @@ NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=	c2t.tar.gz
 MAN1=		c2t.1
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/share/chinese/gb
 	${INSTALL_PROGRAM} ${WRKSRC}/c2t ${PREFIX}/bin

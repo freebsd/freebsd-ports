@@ -1,9 +1,5 @@
-# New ports collection makefile for:	telnet8
-# Date created:		13 Feb 1999
-# Whom:			Ching-Hong Wu <woju@freebsd.ntu.edu.tw>
-#
+# Created by: Ching-Hong Wu <woju@freebsd.ntu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	telnet
 PORTVERSION=	1.0
@@ -18,6 +14,7 @@ COMMENT=	8bit compatible telnet client for Chinese input
 MAN1=		zh-telnet.1
 PLIST_FILES=	bin/zh-telnet
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists (${SRC_BASE}/contrib/telnet/telnet)

@@ -1,9 +1,5 @@
-# New ports collection makefile for:        gb2jis
-# Date created:     8 November 2001
-# Whom:             Zhang Shu
-#
+# Created by: Zhang Shu
 # $FreeBSD$
-#
 
 PORTNAME=	jis2gb
 PORTVERSION=	1.5
@@ -19,4 +15,5 @@ ALL_TARGET=
 
 MAN1=		${PORTNAME}.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Encode-HanConvert
-# Date created:		15 April 2003
-# Whom:	      		Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-#
+# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Encode-HanConvert
 PORTVERSION=	0.35
@@ -19,6 +15,7 @@ USE_PERL5=	configure
 
 MAN1=		b2g.pl.1 g2b.pl.1
 
+NO_STAGE=	yes
 regression-test:
 	cd ${WRKSRC} && ${MAKE} test
 

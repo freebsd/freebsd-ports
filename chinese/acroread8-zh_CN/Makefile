@@ -1,9 +1,5 @@
-# New ports collection makefile for:	acroread8-zh_CN
-# Date created:			27 December 2007
-# Whom:				hrs
-#
+# Created by: hrs
 # $FreeBSD$
-#
 
 CATEGORIES=	chinese print linux
 PKGNAMEPREFIX=	zh_CN-
@@ -13,4 +9,5 @@ DISTINFO_FILE=	${.CURDIR}/distinfo
 
 ADOBE_LANG=	CHS
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

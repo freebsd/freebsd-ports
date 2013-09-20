@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xsim
-# Date created:		30 Dec 2002
-# Whom:			Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-#
+# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	xsim
 PORTVERSION=	0.3.9.4
@@ -28,6 +24,7 @@ USE_BDB=	40+
 CFLAGS+=	-fPIC
 MAKE_ARGS+=	gcclib=`${CXX} -print-file-name=libgcc_s.so`
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/xsim/IMdkit/IMConn.c

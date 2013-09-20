@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cwTeX Chinese TrueType fonts
-# Date created:		18 Dec 2002
-# Whom:			Shen Chuan-Hsing <satue@freebsd.sinica.edu.tw>
-#
+# Created by: Shen Chuan-Hsing <satue@freebsd.sinica.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	cwtexttf
 PORTVERSION=	1.2
@@ -22,6 +18,7 @@ WRKSRC=		${WRKDIR}/texmf/fonts/truetype/cwTeX
 
 TTF=		bbttf.ttf fttf.ttf kttf.ttf mttf.ttf rttf.ttf
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${FONTSDIR}
 .for i in ${TTF}

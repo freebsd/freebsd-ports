@@ -1,9 +1,5 @@
-# New ports collection makefile for:  BitchX
-# Date created:                   Mon Jan  8 2001
-# Whom:                           clive
-#
+# Created by: clive
 # $FreeBSD$
-#
 
 PORTNAME=	BitchX
 PORTREVISION=	5
@@ -25,4 +21,5 @@ WITHOUT_GNOME=	YES
 # If without gnome, esound support isn't needed.
 WITHOUT_ESOUND=	YES
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

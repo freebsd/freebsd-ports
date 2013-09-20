@@ -1,9 +1,5 @@
-# New ports collection makefile for:	OpenDesktop.Org.tw Font
-# Date created:		2 Sep 2004
-# Whom:			Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-#
+# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	opendesktop-fonts
 PORTVERSION=	1.4.2
@@ -21,6 +17,7 @@ NO_BUILD=	yes
 
 TTF=		odokai-ExtB.ttf odokai.ttf odosung-ExtB.ttf odosung.ttc
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_X11)

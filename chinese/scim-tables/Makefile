@@ -17,6 +17,7 @@ USES=		pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__

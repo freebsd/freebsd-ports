@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zh Big5/GB-izedenscript (a4)
-# Date created:		27 Nov, 2000
-# Whom:			Jing-Tang Keith Jang <keith@FreeBSD.org>
-#
+# Created by: Jing-Tang Keith Jang <keith@FreeBSD.org>
 # $FreeBSD$
-#
 
 CATEGORIES=	chinese
 
@@ -20,6 +16,7 @@ PKGMESSAGE=	${.CURDIR}/pkg-message
 
 USE_GHOSTSCRIPT_RUN=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${ECHO_CMD} "share/enscript/README.BIG5" > ${WRKDIR}/pkg-plist
 	@${CAT} ${MASTERDIR}/pkg-plist >> ${WRKDIR}/pkg-plist

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ydict
-# Date created:		2011-02-08
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ydict
 PORTVERSION=	1.2.6
@@ -20,6 +16,7 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/ydict
 USE_PYTHON_RUN=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ydict ${PREFIX}/bin/
 

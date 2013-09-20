@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Chinese Big5 TrueType fonts
-# Date created:		9 July 1999
-# Whom:			Jing-Tang Keith Jang <keith@FreeBSD.org>
-#
+# Created by: Jing-Tang Keith Jang <keith@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	moettf
 PORTVERSION=	2.0
@@ -29,6 +25,7 @@ TTF_DEFAULT=	moe_sung.ttf
 TTF_DEFAULTKAI=	moe_kai.ttf
 TTF=		moe_lishu.ttf moe_kai.ttf moe_sung.ttf moe_sungext.ttf moe_sungsym.ttf
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@unrar x ${DISTDIR}/${DIST_SUBDIR}/edustd-15.exe ${WRKSRC}

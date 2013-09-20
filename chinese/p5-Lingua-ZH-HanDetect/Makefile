@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Lingua-ZH-HanDetect
-# Date created:		2006-09-25
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Lingua-ZH-HanDetect
 PORTVERSION=	0.04
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Lingua::ZH::HanDetect.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,8 +1,4 @@
-# ex:ts=8
-# Ports collection makefile for:	p5-Lingua-ZH-Summarize
-# Date Created:			Oct 10, 2003
-# Whom:				clsung
-#
+# Created by: clsung
 # $FreeBSD$
 
 PORTNAME=	Lingua-ZH-Summarize
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=	Lingua::ZH::Summarize.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

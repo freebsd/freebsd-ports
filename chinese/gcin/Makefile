@@ -31,6 +31,7 @@ MAN1=		gcin.1 gcin-exit.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
 		phoa2d.1 sim2trad.1 tsa2d32.1 tslearn.1 \
 		ts-contribute.1 ts-edit.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQT_IM_MODULE}

@@ -1,4 +1,3 @@
-# ex:ts=8
 # Created by: ijliao
 # $FreeBSD$
 
@@ -24,6 +23,7 @@ CONFIGURE_ARGS=	DB="${BDB_LIB_NAME}"
 
 MAN3=		Lingua::ZH::TaBE.3
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "You may specify db version to use:"

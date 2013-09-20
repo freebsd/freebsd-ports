@@ -20,4 +20,5 @@ PLIST=		${MASTERDIR}/pkg-plist
 
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  gb2ps
-# Date created:			  Mon Feb 03, 1997
-# Whom:				  David O'Brien (obrien@FreeBSD.org)
-#
+# Created by: David O'Brien (obrien@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	gb2ps
 PORTVERSION=	2.02
@@ -22,6 +17,7 @@ COMMENT=	Converts Chinese GB (simple) encoded text to PostScript
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 WRKSRC=		${WRKDIR}/GB2PS
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/share/chinese/gb
 	${INSTALL_PROGRAM} ${WRKSRC}/gb2ps ${PREFIX}/bin

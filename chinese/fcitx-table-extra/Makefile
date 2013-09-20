@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fcitx-table-extra
-# Date created:				5 Sep 2012
-# Whom:			Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fcitx-table-extra
 PORTVERSION=	0.3.3
@@ -24,4 +20,5 @@ STRIP=
 
 PROJECTHOST=	fcitx
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

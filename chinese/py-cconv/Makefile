@@ -19,4 +19,5 @@ USE_PYDISTUTILS=yes
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PORTNAME}.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

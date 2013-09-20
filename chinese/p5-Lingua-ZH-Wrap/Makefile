@@ -1,7 +1,4 @@
-# Ports collection makefile for:	p5-Lingua-ZH-Wrap
-# Date Created:			Oct 13th 2003
-# Whom:				clsung@dragon2.net
-#
+# Created by: clsung@dragon2.net
 # $FreeBSD$
 
 PORTNAME=	Lingua-ZH-Wrap
@@ -18,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=	Lingua::ZH::Wrap.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

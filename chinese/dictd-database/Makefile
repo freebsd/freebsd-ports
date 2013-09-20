@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dict-zh
-# Date created:		25 Oct 1999
-# Whom:			Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-#
+# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	dictd-database
 PORTVERSION=	1.6
@@ -23,6 +19,7 @@ SUB_FILES=	pkg-message
 
 DICTFILES=	cedict pydict moecomp netterm
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/lib/dict
 	for f in ${DICTFILES}; do \

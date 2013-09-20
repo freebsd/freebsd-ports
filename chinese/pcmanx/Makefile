@@ -31,6 +31,7 @@ PROXY_DESC=	Proxy support
 
 MAN1=		pcmanx.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

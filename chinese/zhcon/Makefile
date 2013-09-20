@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Zhcon
-# Date created:				Sun Sep 9, 2001
-# Whom:			Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-#
+# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	zhcon
 PORTVERSION=	0.2.6
@@ -36,6 +32,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	BIG5 DOCS
 BIG5_DESC=	Use Big5 by default (Taiwan, Hong Kong, Macau)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

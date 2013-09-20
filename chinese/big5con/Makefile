@@ -1,9 +1,5 @@
-# New ports collection makefile for:	big5con
-# Date created:		07 Jan 1997
-# Whom:			Hung-Chi Chu <hcchu@r350.ee.ntu.edu.tw>
-#
+# Created by: Hung-Chi Chu <hcchu@r350.ee.ntu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	big5con
 PORTVERSION=	0.92i
@@ -15,6 +11,7 @@ COMMENT=	Big5 Chinese console
 
 ONLY_FOR_ARCHS=	i386
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900007

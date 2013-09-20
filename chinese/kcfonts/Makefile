@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kcfonts
-# Date Created:				5 Dec 1997
-# Whom:					Ming-I Hseh <PA@FreeBSD.Ntu.edu.TW>
-#
+# Created by: Ming-I Hseh <PA@FreeBSD.Ntu.edu.TW>
 # $FreeBSD$
-#
 
 PORTNAME=	kcfonts
 PORTVERSION=	1.05
@@ -18,6 +14,7 @@ COMMENT=	Kuo Chauo Chinese Fonts collection
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

@@ -38,6 +38,7 @@ SIMP_FILES=	Adobe-GB1.cidToUnicode EUC-CN.unicodeMap GBK.unicodeMap \
 TRAD_FILES=	Adobe-CNS1.cidToUnicode Big5.unicodeMap \
 		Big5ascii.unicodeMap README
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/chinese-simplified
 	cd ${WRKSRC}/xpdf-chinese-simplified \

@@ -24,6 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PROJECTHOST=	libhz
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

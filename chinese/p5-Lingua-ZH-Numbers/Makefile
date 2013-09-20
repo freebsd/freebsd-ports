@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	p5-Lingua-ZH-Numbers
-# Date Created:			Jan 22, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Lingua-ZH-Numbers
 PORTVERSION=	0.04
@@ -20,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=	Lingua::ZH::Numbers.3 Lingua::ZH::Numbers::Currency.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -25,6 +25,7 @@ SCONS_ARGS+=	--prefix=${PREFIX} --libdatadir=${PREFIX}/share
 USE_LDCONFIG=	yes
 USES=		gmake pkgconfig
 
+NO_STAGE=	yes
 post-patch:
 	@${CP} ${_DISTDIR}/lm_sc.t3g.arpa.tar.bz2 \
 		${_DISTDIR}/dict.utf8.tar.bz2 ${WRKSRC}/raw

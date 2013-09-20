@@ -1,9 +1,5 @@
-# New ports collection makefile for:	big5width
-# Date created:				Sep 20 2006
-# Whom:					Rong-En Fan <rafan@FreeBSD.org>
-#
+# Created by: Rong-En Fan <rafan@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	big5width
 PORTVERSION=	1.0
@@ -22,6 +18,7 @@ PLIST_SUB=	BASELOCALEDIR=${BASELOCALEDIR} \
 		LOCALEDIR=${LOCALEDIR} \
 		LANG=${LANG}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SRCDIR=		${SRC_BASE}/share/mklocale

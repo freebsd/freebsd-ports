@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  cless
-# Date created:			  Sat Aug 10, 1996
-# Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
-#
+# Created by: David O'Brien (obrien@cs.ucdavis.edu)
 # $FreeBSD$
-#
 
 PORTNAME=	cless
 PORTVERSION=	290
@@ -19,6 +14,7 @@ CFLAGS+=	-DHANZI # LDFLAGS=-s datadir=/usr/local/lib/less
 CPP=		#
 MAN1=		cless.1 clesskey.1
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/cless

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bg5pdf
-# Date created:		17 June 1998
-# Whom:					Shen Chuan-Hsing
-#
+# Created by: Shen Chuan-Hsing
 # $FreeBSD$
-#
 
 PORTNAME=	bg5pdf
 PORTVERSION=	1.0.0
@@ -21,6 +17,7 @@ CFLAGS+=	-fPIC
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/bin/python,python,g'  ${WRKSRC}/bg5pdf
 

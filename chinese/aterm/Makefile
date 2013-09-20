@@ -13,6 +13,7 @@ USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-xim --enable-big5
 
+NO_STAGE=	yes
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/aterm
 

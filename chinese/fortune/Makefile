@@ -1,9 +1,5 @@
-# New ports collection makefile for: zh-fortune
-# Date created:                17 Dec 2009
-# Whom:                        Ju Pengfei <jupengfei@gmail.com>
-#
+# Created by: Ju Pengfei <jupengfei@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fortune
 PORTVERSION=	1.2.2
@@ -27,6 +23,7 @@ SUB_FILES=	pkg-message
 IGNORE=		needs the FreeBSD games distribution
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/|${PREFIX}/|" \
 		-e "s|strfile|/usr/games/strfile|" \

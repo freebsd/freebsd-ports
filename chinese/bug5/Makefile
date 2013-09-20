@@ -21,4 +21,5 @@ MAKE_ARGS=	PREFIX=${PREFIX}
 
 PLIST_FILES=	bin/bug5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

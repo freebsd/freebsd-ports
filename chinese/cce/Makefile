@@ -1,9 +1,5 @@
-# New ports collection makefile for:   cce
-# Date created:                8 Oct 2003
-# Whom:                        Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-#
+# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	cce
 PORTVERSION=	0.51
@@ -28,4 +24,5 @@ CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 MAN1=		cce.1 cceconv.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

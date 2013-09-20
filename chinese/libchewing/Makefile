@@ -19,6 +19,7 @@ USE_BZIP2=	yes
 DATADIR=	${PREFIX}/share/chewing
 PROJECTHOST=	chewing
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"

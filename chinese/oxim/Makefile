@@ -36,6 +36,7 @@ CONFIGURE_ARGS+=--disable-qt-immodule
 
 MAN1=		oxim.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}

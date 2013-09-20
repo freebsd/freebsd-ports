@@ -1,11 +1,5 @@
-# New ports collection makefile for:	zh-docproj
-# Date created:		26 Feb 2006
-# Whom:			Xin LI <delphij@FreeBSD.org>
-#
+# Created by: Xin LI <delphij@FreeBSD.org>
 # $FreeBSD$
-#
-# This port is self contained in the src directory.
-#
 
 PORTNAME=	docproj
 PORTVERSION=	0.1.20060303
@@ -28,6 +22,7 @@ WRKSRC=		${WRKDIR}/src
 
 SRC=		${.CURDIR}/src
 
+NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 

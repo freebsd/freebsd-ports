@@ -1,9 +1,5 @@
-# New ports collection makefile for:    zh-oto
-# Date created:		8 March 2003
-# Whom:			Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-#
+# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	oto
 PORTVERSION=	0.5
@@ -19,6 +15,7 @@ USE_GMAKE=	YES
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${ICONV_LIB}"
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC}/src/ -type f -print0 | \
 	    ${XARGS} -0 ${REINPLACE_CMD} -e 's,stdint.h,inttypes.h,'
