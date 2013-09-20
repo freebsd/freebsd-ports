@@ -1,9 +1,5 @@
-# New ports collection makefile for: lipsf
-# Date created:		6 Dec 1996
-# Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
-#
+# Created by: Mita Yoshio <mita@jp.FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lipsf
 PORTVERSION=	2.00
@@ -20,6 +16,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//}
 MANLANG=	ja
 MAN1=		lipsf.1 pols.1
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

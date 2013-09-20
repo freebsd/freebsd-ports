@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-TexT-MeCab
-# Date created:		30 July 2006
-# Whom:			TAOKA Fumiyoshi <fmysh@iijmio-mail.jp>
-#
+# Created by: TAOKA Fumiyoshi <fmysh@iijmio-mail.jp>
 # $FreeBSD$
-#
 
 PORTNAME=		Text-MeCab
 PORTVERSION=		0.20009
@@ -35,6 +31,7 @@ CONFIGURE_ARGS=	</dev/null
 # dictionary encoding (euc-jp, shift_jis, utf-8)
 ENCODING?=	euc-jp
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "/default_encoding = /s/euc-jp/${ENCODING}/" \
 		${WRKSRC}/tools/probe_mecab.pl

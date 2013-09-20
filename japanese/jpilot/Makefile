@@ -1,9 +1,5 @@
-# New ports collection makefile for:   jpilot (japanized)
-# Date created:        Tue Aug 31 23:23:00 JST 1999
-# Whom:                sumikawa
-#
+# Created by: sumikawa
 # $FreeBSD$
-#
 
 MASTERDIR=	${.CURDIR}/../../palm/jpilot
 
@@ -16,4 +12,5 @@ CONFLICTS=	jpilot-[0-9]*
 
 CONFIGURE_ARGS=	--with-japanese
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

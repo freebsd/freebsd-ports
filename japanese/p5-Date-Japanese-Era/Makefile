@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-Date-Japanese-Era
-# Date created:                7 March 2002
-# Whom:                        Kimura Fuyuki <fuyuki@mj.0038.net>
-#
+# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Date-Japanese-Era
 PORTVERSION=	0.06
@@ -24,6 +20,7 @@ MAN3=		Date::Japanese::Era.3 \
 		Date::Japanese::Era::Table.3 \
 		Date::Japanese::Era::Table::JIS_X0301.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-

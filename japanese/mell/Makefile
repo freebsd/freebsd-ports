@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-mell
-# Date created:				6 Jun 2003
-# Whom:					Gen Otsuji<otsuji@users.sourceforge.jp>
-#
+# Created by: Gen Otsuji<otsuji@users.sourceforge.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	mell
 PORTVERSION=	1.0.0
@@ -18,6 +14,7 @@ GNU_CONFIGURE=		yes
 USE_AUTOTOOLS=	automake autoconf
 AUTOMAKE_ARGS=		-af
 
+NO_STAGE=	yes
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL})
 

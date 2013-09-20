@@ -1,9 +1,5 @@
-# New ports collection makefile for:	V.E.R.A - JIS X 4081 format version
-# Date created:        	00/06/19
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vera-fpw
 PORTVERSION=	${VERA_VER}.${VERAFPW_VER}
@@ -22,6 +18,7 @@ EXTRACT_BEFORE_ARGS=	-qL
 VERA_VER=	1.8
 VERAFPW_VER=	1.0.3
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/vera-fpw/vera/data
 	${MKDIR} ${PREFIX}/share/dict/vera-fpw/vera/gaiji

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jman - japanese man with EUC
-# Date created:		4 December 1996
-# Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
-#
+# Created by: Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	man
 PORTVERSION=	1.1j
@@ -31,6 +27,7 @@ MAN1=		jman.1 jmanpath.1 japropos.1 \
 MAN8=		jmakewhatis.local.8 jcatman.local.8
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-patch:
 .for file in	apropos/apropos.sh catman/catman.perl \
 		makewhatis/jmakewhatis.local.man \

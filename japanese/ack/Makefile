@@ -21,4 +21,5 @@ MANLANG=	ja
 MAN1=		ack.1
 PLIST_FILES=	bin/ack
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

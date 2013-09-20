@@ -14,4 +14,5 @@ OPTIONS_SLAVE=	DOCS JAPANESE
 NO_DIALOG=	yes
 CONFLICTS=	ja-w3m-img-0.5.* w3m-0.5.* w3m-img-0.5.*
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

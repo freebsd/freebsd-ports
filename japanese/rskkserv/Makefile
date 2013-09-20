@@ -46,6 +46,7 @@ MANLANG=	"" ja
 DOCS_EN=	ChangeLog
 DOCS_JA=	TODO
 
+NO_STAGE=	yes
 post-extract:
 	${LN} -s ${WRKSRC}/skkserv.rb.in ${WRKSRC}/rskkserv.in
 

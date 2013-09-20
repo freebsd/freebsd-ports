@@ -25,6 +25,7 @@ SEDSUB=		${SED} -e 's@%PREFIX%@${PREFIX}@'
 # Please set this!
 HTMLLINT_ADMIN?=	kuriyama@FreeBSD.org
 
+NO_STAGE=	yes
 do-build:
 	@${SEDSUB} ${FILESDIR}/htmllint > ${WRKSRC}/htmllint
 	@${SEDSUB} ${WRKSRC}/htmllintenv > ${WRKSRC}/htmllint.env

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mendexk-euc
-# Date created:         1 Dec 1997
-# Whom:                 Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
-#
+# Created by: Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	mendexk
 PORTVERSION=	2.6c
@@ -36,6 +32,7 @@ TETEX_SRC=	tetex-src-3.0
 
 KANJICODE?=	EUC
 
+NO_STAGE=	yes
 post-extract:
 	${MV} ${WRKSRC_MENDEX} ${WRKSRC_TETEX}/texk
 

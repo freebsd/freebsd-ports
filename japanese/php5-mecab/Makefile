@@ -1,9 +1,4 @@
-# New ports collection makefile for:	php5-mecab
-# Date created:		31 Aug 2006
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mecab
 PORTVERSION=	0.4.0
@@ -26,6 +21,7 @@ CONFIGURE_ARGS=	--with-mecab=${LOCALBASE}/bin/mecab-config
 CONFIGURE_ENV=	LIBS="${LIBS} ${PTHREAD_LIBS}"
 CFLAGS+=	${PTHREAD_CFLAGS}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}php5-

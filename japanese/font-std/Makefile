@@ -31,6 +31,7 @@ STD_GothicBBB-Medium=	${LOCALBASE}/share/font-ipa/ipag.otf
 STD_Ryumin-Light.gs7=	${LOCALBASE}/share/font-mplus-ipa/fonts/ipam.ttf
 STD_GothicBBB-Medium.gs7=	${LOCALBASE}/share/font-mplus-ipa/fonts/ipag.ttf
 
+NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 

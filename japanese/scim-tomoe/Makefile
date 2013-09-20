@@ -31,6 +31,7 @@ PLIST_FILES=	bin/scim-tomoe \
 		share/locale/ja/LC_MESSAGES/scim-tomoe.mo \
 		share/scim/icons/scim-tomoe.png
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO}

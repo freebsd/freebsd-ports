@@ -20,6 +20,7 @@ USES=		perl5
 
 PKG_DIR=	${PREFIX}/share/dict/lookup-package
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PKG_DIR}
 	${INSTALL_DATA} ${WRKSRC}/srd-fpw.el ${PKG_DIR}

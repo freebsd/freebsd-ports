@@ -28,6 +28,7 @@ GCONF_SCHEMAS=	im-ja.schemas
 CPPFLAGS+=	-I${LOCALBASE}/include -DNO_MALLOC_H
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MANTHY}

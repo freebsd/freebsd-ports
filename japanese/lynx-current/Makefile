@@ -67,6 +67,7 @@ INSTALL_TARGET=	install install-help
 L_LIB=		${PREFIX}/etc
 L_HELP=		${PREFIX}/share/lynx_help
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lssl -lcrypto|-L${OPENSSLLIB} &|g' \
 		${WRKSRC}/configure

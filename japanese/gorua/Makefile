@@ -1,9 +1,5 @@
-# New ports collection makefile for:	goRua
-# Date created:		12 December 2001
-# Whom:			MANTANI Nobutaka <nobutaka@nobutaka.com>
-#
+# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gorua
 PORTVERSION=	0.17
@@ -26,6 +22,7 @@ NO_BUILD=	yes
 
 CONFIG_FILES=	board_info bookmarks config gtkrc
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/goRua.rb ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/goRua_bookmarks_translator.rb ${PREFIX}/bin

@@ -1,4 +1,4 @@
-# New ports collection makefile for:	zinnia-tomoe
+# $FreeBSD$
 
 # Date created:				15 Aug 2010
 # Whom:					Timothy Beyer <beyert@cs.ucr.edu>
@@ -26,4 +26,5 @@ USE_BZIP2=	yes
 GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

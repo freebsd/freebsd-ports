@@ -1,9 +1,5 @@
-# New ports collection makefile for:	GNU emacs
-# Date created:		10 Apr. 2002
-# Whom:			NAKAJI Hiroyuki <nakaji@jp.freebsd.org>
-#
+# Created by: NAKAJI Hiroyuki <nakaji@jp.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	emcws
 PORTVERSION=	${EMACS_VER}
@@ -148,6 +144,7 @@ PLIST_SUB+=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET} \
 SCRIPTS_ENV=	SED=${SED} MV=${MV} \
 		DOC_FILE=${DOC_FILE}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"

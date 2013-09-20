@@ -43,6 +43,7 @@ PORTDOCS=	cygwin.txt differen.doc fepctrl.doc readme.doc \
 CPPFLAGS+=	-DBSD_UNIX -DUSE_LOCALE
 LIBS=		-ltermlib -L${PREFIX}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

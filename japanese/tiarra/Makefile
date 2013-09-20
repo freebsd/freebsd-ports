@@ -30,6 +30,7 @@ PLIST_SUB=	TIARRA_USER=${TIARRA_USER} \
 TIARRA_USER=	tiarra
 TIARRA_GROUP=	tiarra
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/tiarra
 	@${TAR} cfC - ${WRKSRC} . | ${TAR} xfC - ${PREFIX}/tiarra

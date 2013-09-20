@@ -1,9 +1,5 @@
-# New ports collection makefile for:	TiMidity++
-# Date created:		27 Feb 1999
-# Whom:			Yoichi Asai <yatt@msc.biglobe.ne.jp>
-#
+# Created by: Yoichi Asai <yatt@msc.biglobe.ne.jp>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-slang
 
@@ -19,4 +15,5 @@ JAPANESE=	yes
 
 PLIST_FILES=	${TIMID_LIBDIR}/interface_s.so
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

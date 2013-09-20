@@ -19,6 +19,7 @@ USE_PERL5=	run
 PLIST_FILES=	${SITE_PERL_REL}/${PORTNAME}
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 pre-install:
 	@cd ${WRKSRC}; ${PERL} ${WRKSRC}/test.pl
 

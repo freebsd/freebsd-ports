@@ -23,4 +23,5 @@ CONFIGURE_ARGS=	--without-gnome --datadir=${PREFIX}/share/gtkicq
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

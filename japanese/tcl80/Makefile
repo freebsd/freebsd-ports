@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-tcl8.0
-# Date created:		23 Jan 1998
-# Whom:			taguchi@tohoku.iij.ad.jp
-#
+# Created by: taguchi@tohoku.iij.ad.jp
 # $FreeBSD$
-#
 
 PORTNAME=	tcl
 PORTVERSION=	8.0.5
@@ -34,6 +30,7 @@ PKGINSTALL=	${PORTSDIR}/lang/tcl82/pkg-install.tclsh
 PKGDEINSTALL=	${PORTSDIR}/lang/tcl82/pkg-deinstall.tclsh
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

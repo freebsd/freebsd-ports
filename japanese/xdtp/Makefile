@@ -26,6 +26,7 @@ INCLUDE_DESC=	Install with XDTP include files
 
 OPTIONS_DEFAULT=	GDK INCLUDE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"

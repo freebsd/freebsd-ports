@@ -17,6 +17,7 @@ USE_EMACS=	yes
 
 INFO?=		lookup lookup-guide
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${EMACS_PORT_NAME} == "xemacs21-mule")

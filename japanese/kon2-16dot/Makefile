@@ -26,6 +26,7 @@ PORTDOCS=	README README.FreeBSD
 SUB_LIST=	KON16FONT=${KON16FONT} \
 		KON14FONT=${KON14FONT}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(KONFONT)

@@ -16,6 +16,7 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/src/contrib/im/Xsi
 PORTDOCS=	README
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
 		${WRKSRC}/config/Project.tmpl \

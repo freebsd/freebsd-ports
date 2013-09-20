@@ -1,9 +1,5 @@
-# New ports collection makefile for:    jadetex-ptex
-# Date created:         11 June 2003
-# Whom:                 Hiroki Sato <hrs@FreeBSD.org>
-#
+# Created by: Hiroki Sato <hrs@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jadetex
 PORTVERSION=	3.13
@@ -32,6 +28,7 @@ MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 TEXMFDIR=	share/texmf
 TEXMFLOCALDIR=	share/texmf-local
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}${PKGNAMESUFFIX}

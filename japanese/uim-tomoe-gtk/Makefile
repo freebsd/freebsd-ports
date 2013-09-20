@@ -23,4 +23,5 @@ PLIST_FILES=	bin/uim-tomoe-gtk \
 
 CONFIGURE_ENV+=	GMSGFMT="${LOCALBASE}/bin/msgfmt"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

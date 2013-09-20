@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cannadic
-# Date created:		26 Oct 2000
-# Whom:			TOGAWA Satoshi <toga@puyo.org>
-#
+# Created by: TOGAWA Satoshi <toga@puyo.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cannadic
 PORTVERSION=	0.95c
@@ -26,6 +22,7 @@ DICS=		gcanna.cbd gcanna.cld gcannaf.ctd
 DICSFILE=	dics.dir.gpl_canna
 DICDIR=		${LOCALBASE}/share/canna/dic/canna
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC} && \
 	${INSTALL} -c -g bin -m 664 -o bin ${DICS} ${DICSFILE} ${DICDIR}

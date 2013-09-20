@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-man-jp
-# Date created:			19 Aug 2000
-# Whom:				Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 MASTERDIR=	${.CURDIR}/../../lang/ruby-man
 
@@ -17,4 +13,5 @@ PKGDIR=		${.CURDIR}
 
 LANGSUFFIX=	-jp
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

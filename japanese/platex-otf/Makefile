@@ -1,7 +1,4 @@
-# New ports collection makefile for:	platex-otf
-# Date created:		21 Aug 2004
-# Whom:			hrs@FreeBSD.org
-#
+# Created by: hrs@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	platex-otf
@@ -522,6 +519,7 @@ DVIPSFILES_O=	"ckt.map(for udvips)" \
 
 DOC_FILES=	readme.txt
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${SH} ./makeotf
 

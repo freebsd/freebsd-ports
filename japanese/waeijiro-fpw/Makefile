@@ -26,6 +26,7 @@ SRCFILE?=	waeiji52.txt
 # For eijiro included in a book sold by ALC Inc.
 # (http://www.alc.co.jp/alcshop/eng/eijiro/)
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 DICT_ARCHIVE!=	${ECHO_CMD} ${DICT_PATH}/eijiro-original/*.exe || ${TRUE}
 .if exists(${DICT_ARCHIVE})

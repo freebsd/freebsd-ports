@@ -1,4 +1,4 @@
-# Created by:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
+# Created by: Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 # $FreeBSD$
 
 CATEGORIES=	japanese
@@ -15,6 +15,7 @@ RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv
 
 NOMAN=		yes
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/xv ${PREFIX}/bin/ja-xv
 	@if [ ! -f ${PREFIX}/bin/xv.orig ]; then \

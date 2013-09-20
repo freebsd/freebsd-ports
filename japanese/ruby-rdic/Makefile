@@ -1,9 +1,5 @@
-# Ports collection makefile for:	Ruby/rdic
-# Date created:			3 Aug 2003
-# Whom:				Takahiro Morishita <morishita@skywing.org>
-#
+# Created by: Takahiro Morishita <morishita@skywing.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rdic
 PORTVERSION=	0.1.8
@@ -48,6 +44,7 @@ DOCS_ETC=	eliminate.default \
 		keymap.default \
 		rdic.conf.sample
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}

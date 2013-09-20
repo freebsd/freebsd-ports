@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mypaedia-fpw-package
-# Date created:		00/04/24
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mypaedia-fpw-package
 PORTVERSION=	1.0.7
@@ -24,6 +20,7 @@ PLIST_SUB=	PKGNAME=${PKGNAME}
 
 PKG_DIR=	${PREFIX}/share/dict/lookup-package
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PKG_DIR}
 	${INSTALL_DATA} ${WRKSRC}/mypaedia-fpw.el ${PKG_DIR}

@@ -38,6 +38,7 @@ PYDISTUTILS_NOEGGINFO=	yes
 PYDISTUTILS_PKGVERSION=	${PORTVERSION}.ja2
 
 # This target is only meant to be used by the port maintainer.
+NO_STAGE=	yes
 x-generate-plist:
 	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
 	| ${SED} -E \

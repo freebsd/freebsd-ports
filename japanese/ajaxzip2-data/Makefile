@@ -21,6 +21,7 @@ USE_PERL5=	build
 PORTVERSION_K?=	${PORTVERSION}
 PORTVERSION_J?=	${PORTVERSION}
 
+NO_STAGE=	yes
 do-build:
 	${MKDIR} ${WRKSRC}/data ${WRKSRC}/work
 	cd ${WRKSRC}/work && ${DATADIR}/csv2jsonzip.pl ../ken_all.csv ../jigyosyo.csv

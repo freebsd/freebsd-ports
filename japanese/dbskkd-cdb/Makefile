@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dbskkd-cdb
-# Date created:		17 Jun 1999
-# Whom:			Makoto Matsushita <matusita@jp.FreeBSD.ORG>
-#
+# Created by: Makoto Matsushita <matusita@jp.FreeBSD.ORG>
 # $FreeBSD$
-#
 
 PORTNAME=	dbskkd-cdb
 PORTVERSION=	2.00
@@ -34,6 +30,7 @@ PORTDOCS_FILE=	CHANGES LICENSE READMEJP \
 PORTDOCS_SH=	makeskkcdb.sh skktocdbm.sh
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

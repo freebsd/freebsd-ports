@@ -17,6 +17,7 @@ USES=		perl5
 MAN1=	${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.default
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' ${WRKSRC}/${PORTNAME}* ${WRKSRC}/default.conf
 

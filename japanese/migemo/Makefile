@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Migemo
-# Date created:		19 February 2001
-# Whom:			MANTANI Nobutaka <nobutaka@nobutaka.com>
-#
+# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
 # $FreeBSD$
-#
 
 PORTNAME=	migemo
 PORTVERSION=	0.40
@@ -43,6 +39,7 @@ SHEBANG_FILES=	migemo migemo-client migemo-grep migemo-server
 
 SKKDIC_FILE=	SKK-JISYO.L-20110813
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} == 1.9

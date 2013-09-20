@@ -27,6 +27,7 @@ DBSKKD_DESC=	Use ja-dbskkd-cdb as skkserver
 RSKKSERV_DESC=	Use ja-rskkserv as skkserver
 SKK10_DESC=	Install SKK10 elisp files
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSKK10}

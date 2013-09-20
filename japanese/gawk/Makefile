@@ -24,6 +24,7 @@ MAN1=		gawk.1 igawk.1
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

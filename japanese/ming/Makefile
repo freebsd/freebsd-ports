@@ -37,6 +37,7 @@ DOCS=		CHANGES \
 DOCS_UTIL=	README \
 		TODO
 
+NO_STAGE=	yes
 post-extract:
 	${SED} -e 's:"\.\./\.\./ming\.h":<ming.h>:g' \
 		${WRKSRC}/ming.h > ${WRKSRC}/mingpp.h

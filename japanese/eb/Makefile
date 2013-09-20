@@ -75,6 +75,7 @@ OPTIONS_DEFINE=	DOCS NLS
 
 APPENDIXDIR=	${DATADIR}/appendix
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

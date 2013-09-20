@@ -26,6 +26,7 @@ PLIST_SUB=	EBNETD_RUNDIR=${RUNDIR}/${PORTNAME}
 
 INFO=		ebnetd ebnetd-ja
 
+NO_STAGE=	yes
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO}

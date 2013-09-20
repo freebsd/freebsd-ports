@@ -26,6 +26,7 @@ DESKTOP_ENTRIES="Ochusha" "${COMMENT}" \
 		"ochusha" "Network;" \
 		false
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.* | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-DG.*_DISABLE_DEPRECATED||g'

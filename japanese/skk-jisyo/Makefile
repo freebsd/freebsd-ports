@@ -39,6 +39,7 @@ CDBSUFFIX=		#empty
 NO_BUILD=		yes
 .endif
 
+NO_STAGE=	yes
 post-extract:
 	@(cd ${WRKDIR}; ${BZIP2_CMD} -d *.bz2)
 

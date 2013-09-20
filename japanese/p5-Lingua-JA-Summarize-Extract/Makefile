@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Lingua-JA-Summarize-Extract
-# Date created:		2007-04-10
-# Whom:			Masahiro Teramoto <markun@onohara.to>
-#
+# Created by: Masahiro Teramoto <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	Lingua-JA-Summarize-Extract
 PORTVERSION=	0.02
@@ -28,6 +24,7 @@ MAN3=		Lingua::JA::Summarize::Extract::Plugin::Sentence::Base.3 \
 		Lingua::JA::Summarize::Extract.3 \
 		Lingua::JA::Summarize::Extract::Plugin::Parser::NgramSimple.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-

@@ -1,4 +1,4 @@
-# New ports collection makefile for:	py-tegaki-gtk
+# $FreeBSD$
 
 # Date created:				15 Aug 2010
 # Whom:					Timothy Beyer <beyert@cs.ucr.edu>
@@ -27,4 +27,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	${PORTNAME}_pygtk
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

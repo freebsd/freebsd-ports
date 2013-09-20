@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-aterm
-# Date Created:		17 Mar 2001
-# Whom:			Yoichi NAKAYAMA <yoichi@eken.phys.nagoya-u.ac.jp>
-#
+# Created by: Yoichi NAKAYAMA <yoichi@eken.phys.nagoya-u.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	aterm
 PORTVERSION=	0.4.2
@@ -32,6 +28,7 @@ CONFIGURE_ARGS?= \
 		--enable-fading --enable-utmp --enable-wtmp \
 		--enable-kanji --enable-linespace --enable-xim
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900007

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eterm
-# Date created:        11th December 1998
-# Whom:                MANTANI Nobutaka <nobutaka@nobutaka.com>
-#
+# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
 # $FreeBSD$
-#
 
 CATEGORIES=	japanese
 
@@ -27,6 +23,7 @@ PLIST=		${MASTERDIR}/pkg-plist
 
 THEMES=		Escreen Eterm auto trans
 
+NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e "s,echo aout,echo elf,g" ${WRKSRC}/configure
 

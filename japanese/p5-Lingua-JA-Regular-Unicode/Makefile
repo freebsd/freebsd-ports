@@ -17,4 +17,5 @@ USE_PERL5=	modbuild
 
 MAN3=	Lingua::JA::Regular::Unicode.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

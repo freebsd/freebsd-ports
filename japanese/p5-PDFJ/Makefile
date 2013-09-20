@@ -1,9 +1,4 @@
-# New ports collection makefile for:	p5-PDFJ
-# Date created:		Oct 22, 2002
-# Whom:			kuriyama@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	PDFJ
 PORTVERSION=	0.90
@@ -20,6 +15,7 @@ USE_PERL5=	configure
 WRKSRC=		${WRKDIR}
 EXTRACT_BEFORE_ARGS=	-qo -a
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-

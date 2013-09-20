@@ -24,4 +24,5 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/NKF.mod
 
 MAN3=		NKF.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

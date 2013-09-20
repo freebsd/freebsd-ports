@@ -1,4 +1,4 @@
-# Created by: Daichi GOTO <daichi@freebsd.org>
+# Created by: Daichi GOTO <daichi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ibus-anthy
@@ -32,6 +32,7 @@ INCLUDEDIR_REPLACE_FILES= \
 		engine/Makefile.am \
 		engine/Makefile.in
 
+NO_STAGE=	yes
 post-patch:
 	cd ${WRKSRC} && \
                 ${REINPLACE_CMD} "s,@@LOCALBASE@@,${LOCALBASE},g" \

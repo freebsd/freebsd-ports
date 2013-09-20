@@ -19,6 +19,7 @@ PORTDOCS=	README
 PLIST_FILES=	bin/kanjipad bin/kpengine %%DATADIR%%/jdata.dat
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kanjipad ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/kpengine ${PREFIX}/bin

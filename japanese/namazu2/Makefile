@@ -25,6 +25,7 @@ RUN_DEPENDS+=	ja-p5-Text-Kakasi>=0:${PORTSDIR}/japanese/p5-Text-Kakasi
 RUN_DEPENDS+=	ja-p5-MeCab>=0:${PORTSDIR}/japanese/p5-MeCab
 .endif
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../databases/namazu2/Makefile.common"
 
 NO_BUILD=	yes

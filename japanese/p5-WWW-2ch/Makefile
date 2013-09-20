@@ -25,4 +25,5 @@ MAN3=		WWW::2ch.3	\
 	WWW::2ch::Dat.3		\
 	WWW::2ch::Plugin::Jbbs.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

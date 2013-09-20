@@ -8,4 +8,5 @@ MAINTAINER=	tota@FreeBSD.org
 TDIARY_LANG=	ja
 MASTERDIR=	${.CURDIR}/../../www/tdiary
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

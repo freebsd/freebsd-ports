@@ -21,6 +21,7 @@ BINS=		rmime wmime rbody wbody
 LIBS=		mimer.pl mimew.pl
 PLIST_FILES=	${BINS:C,^,bin/,} ${LIBS:C,^,${SITE_PERL_REL}/,}
 
+NO_STAGE=	yes
 do-install:
 		@${INSTALL_SCRIPT} ${BINS:C,^,${WRKSRC}/,} ${PREFIX}/bin
 		@${INSTALL_DATA}   ${LIBS:C,^,${WRKSRC}/,} ${SITE_PERL}

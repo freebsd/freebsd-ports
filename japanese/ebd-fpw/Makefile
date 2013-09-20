@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ebd - JIS X 4081 format version
-# Date created:        	01/08/23
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ebd-fpw
 PORTVERSION=	1.0
@@ -20,6 +16,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/ebd
 EXTRACT_BEFORE_ARGS=	-qL
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/ebd-fpw/ebd/data
 	${INSTALL_DATA} ${WRKSRC}/ebd/data/honmon ${PREFIX}/share/dict/ebd-fpw/ebd/data

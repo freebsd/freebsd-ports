@@ -52,6 +52,7 @@ MAN3=		WWW::MobileCarrierJP::EZWeb::PictogramInfo.3 \
 		WWW::MobileCarrierJP::ThirdForce::UserAgent.3 \
 		WWW::MobileCarrierJP.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Wnn6
-# Date created:		15 July 1997
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Wnn6
 PORTVERSION=	97.6.6
@@ -27,6 +23,7 @@ RESTRICTED=	You should buy from Omron Software Co., Ltd
 NO_BUILD=	yes
 IS_INTERACTIVE=	yes
 
+NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 fetch-list:

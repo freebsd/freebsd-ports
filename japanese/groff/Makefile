@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-groff
-# Date created:		14 April 1995
-# Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
-#
+# Created by: Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	groff
 PORTVERSION=	1.18.1
@@ -72,6 +68,7 @@ MAN7=		ditroff.7 groff.7 groff_char.7 groff_diff.7 \
 		groff_me.7 groff_mm.7 groff_mmse.7 groff_mom.7 groff_ms.7 \
 		groff_trace.7 groff_www.7 roff.7
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)

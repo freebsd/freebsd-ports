@@ -84,6 +84,7 @@ UPDMAP_SYS=	${LOCALBASE}/bin/updmap-sys --progname=ptex
 TEXCONFIGBIN=	${SETENV} TEXCONFIGINPUTS=\$$TEXMF/texconfig/ptex/ \
 			${LOCALBASE}/bin/texconfig-sys
 
+NO_STAGE=	yes
 post-configure:
 	cd ${PATCH_WRKSRC} && \
 		${RM} -rf udvipsk && ${CP} -R dvipsk udvipsk

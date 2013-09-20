@@ -39,6 +39,7 @@ DISCORD_DESC=	Install Ricty-Discord
 
 OPTIONS_DEFAULT=	DISCORD
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDISCORD}

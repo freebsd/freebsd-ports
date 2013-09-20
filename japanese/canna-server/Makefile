@@ -45,6 +45,7 @@ MLINKS= uilib.3 XKanjiControl.3 uilib.3 XLookupKanjiString.3 uilib.3	\
 
 METAFILE=	${DATADIR_REL}/canna-server-dic.meta
 
+NO_STAGE=	yes
 post-install:
 	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install.man
 	${MTREE_CMD} -cdink uname,gname,mode,nochange \

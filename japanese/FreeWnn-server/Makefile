@@ -74,6 +74,7 @@ ${M}+=		${${M}.${WNNTYPE}}
 . endif
 .endfor
 
+NO_STAGE=	yes
 post-install:
 	${SETENV} PKG_PREFIX=${PREFIX} \
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

@@ -46,6 +46,7 @@ JAPANESE_UTF8_CONFIGURE_ENABLE=	japanese-utf8
 COLOR_STYLE_CONFIGURE_ENABLE=	color-style
 DEFAULT_COLORS_CONFIGURE_ENABLE=default-colors
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

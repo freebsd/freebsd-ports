@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Encode::EUCJPMS
-# Date created:		25 August 2006
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Encode-EUCJPMS
 PORTVERSION=	0.07
@@ -17,6 +13,7 @@ COMMENT=	A Perl5 module defining Microsoft compatible encodings for Japanese
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

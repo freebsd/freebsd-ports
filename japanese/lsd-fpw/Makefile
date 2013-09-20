@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lsd - JIS X 4081 version
-# Date created:        	00/02/09
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lsd-fpw
 PORTVERSION=	3.0.1
@@ -20,6 +16,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/lsd
 EXTRACT_BEFORE_ARGS=	-qL
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/lsd-fpw/lsd/data
 	${INSTALL_DATA} ${WRKSRC}/lsd/data/honmon ${PREFIX}/share/dict/lsd-fpw/lsd/data

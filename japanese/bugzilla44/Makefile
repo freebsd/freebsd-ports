@@ -17,6 +17,7 @@ LATEST_LINK=	${PKGNAMEPREFIX}bugzilla44
 
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../devel/bugzilla44/Makefile.common"
 
 USE_BZIP2=	yes

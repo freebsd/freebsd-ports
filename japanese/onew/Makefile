@@ -40,6 +40,7 @@ RK_DIR.WNN6=		${LOCALBASE}/lib/wnn/ja_JP/rk.wnn6
 BUILD_DEPENDS.WNN7=	${BUILD_DEPENDS.FREEWNN}
 RK_DIR.WNN7=		${LOCALBASE}/lib/wnn/ja_JP/rk.wnn7
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for I in ${OPTIONS_DEFINE:NDOCS}

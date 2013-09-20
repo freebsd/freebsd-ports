@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gd2
-# Date created:				19 Aug 1998
-# Whom:					ichiro@ichiro.org
-#
+# Created by: ichiro@ichiro.org
 # $FreeBSD$
-#
 
 CATEGORIES=	japanese
 
@@ -14,4 +10,5 @@ MASTERDIR=	${.CURDIR}/../../graphics/gd
 
 CPPFLAGS+=	-DJISX0208
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

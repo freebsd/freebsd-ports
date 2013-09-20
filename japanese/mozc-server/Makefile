@@ -49,6 +49,7 @@ USE_GNOME=	glib20 gtk20
 USE_EMACS=	yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800107

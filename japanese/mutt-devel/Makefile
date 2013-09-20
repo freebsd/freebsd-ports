@@ -82,6 +82,7 @@ CYRUS_SASL2_DESC=	SASL2 authentication
 IMAP_HEADER_CACHE_DESC=	imap header cache
 MAILDIR_HEADER_CACHE_DESC=	maildir header cache
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MNLS}

@@ -32,6 +32,7 @@ OPTIONS_DEFINE=	ONIGURUMA PANGOLAYOUT
 ONIGURUMA_DESC=	Use oniguruma regular expressions library
 PANGOLAYOUT_DESC=	Use PANGOLayout instead of PangoGlyphString
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 

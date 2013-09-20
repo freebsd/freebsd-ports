@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ptex
-# Date created:		9 Feb 2004
-# Whom:			hrs
-#
+# Created by: hrs
 # $FreeBSD$
 
 PORTNAME=	ptex
@@ -87,6 +84,7 @@ SUB_LIST=	PREFIX=${PREFIX} \
 
 DOC_FILES=	COPYRIGHT COPYRIGHT.jis Changes.txt README.txt
 
+NO_STAGE=	yes
 post-extract:
 	${MV} ${WRKDIR}/ptex-src-${VER_PTEX} ${WRKSRC}
 	${MKDIR} ${WRKDIR}/ptex-texmf/fonts/map/ptex/dvips \

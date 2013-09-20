@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mobileimap
-# Date created:				2004/05/09
-# Whom:					nork@FreeBSD.org
-#
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	mobileimap
 PORTVERSION=	2.7
@@ -22,6 +18,7 @@ ALL_TARGET=	mobileimap
 
 PLIST_FILES=	bin/mobileimap
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/Makefile
 

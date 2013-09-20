@@ -1,9 +1,5 @@
-# New ports collection makefile for:	skk
-# Date created:		04 Mar 1997
-# Whom:			Makoto Matsushita <matusita@jp.freebsd.org>
-#
+# Created by: Makoto Matsushita <matusita@jp.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	skk
 PORTVERSION=	9.6
@@ -27,4 +23,5 @@ SKKJISYO?=	SKK-JISYO.${SKKJISYO_SIZE}
 
 do-install:	# empty
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

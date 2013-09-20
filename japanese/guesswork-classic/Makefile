@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-guesswork-classic
-# Date created:		10 Oct 2005
-# Whom:			Shinsuke Matsui (<smatsui@karashi.org>)
-#
+# Created by: Shinsuke Matsui (<smatsui@karashi.org>)
 # $FreeBSD$
-#
 
 PORTNAME=	guesswork-classic
 PORTVERSION=	0.0.3
@@ -24,6 +20,7 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	ChangeLog README LICENSE
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -name '.cvsignore' -delete
 

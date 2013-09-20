@@ -35,6 +35,7 @@ OPTIONS_DEFAULT=	DOCS
 ODIC_DESC=	Okinawa Dictionary
 GSKKDIC_DESC=	SKK Dictionary
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:M2CHDIC}

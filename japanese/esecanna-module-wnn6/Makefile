@@ -1,9 +1,5 @@
-# New ports collection Makefile for: esecanna module for Wnn6
-# Date created:		26 February 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	esecanna-module-wnn6
 PORTVERSION=	1.0.0
@@ -27,6 +23,7 @@ CFLAGS+=	-I${PREFIX}/include/wnn6
 
 DIST_SUBDIR=    esecanna
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/esecanna

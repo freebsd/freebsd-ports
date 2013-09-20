@@ -20,6 +20,7 @@ USES=		perl5
 WRKSRC=		${WRKDIR}/srd-fpw${PORTVERSION}
 DICT_PATH?=	/cdrom
 
+NO_STAGE=	yes
 post-extract:
 	@if [ ! -f ${DICT_PATH}/SRD.INI ]; then \
 	  ${ECHO} "###################################################"; \

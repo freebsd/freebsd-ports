@@ -1,9 +1,5 @@
-# New ports collection makefile for:    nxedit
-# Date created:        15 Nov 1999
-# Whom:                SASAKI Shunsuke <ele@pop17.odn.ne.jp>
-#
+# Created by: SASAKI Shunsuke <ele@pop17.odn.ne.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	ne
 PORTVERSION=	3.05
@@ -20,6 +16,7 @@ MANLANG=	ja
 DOCS=		BUGS.jp CHANGES.jp HISTORY.jp INSTALL.jp README.jp TODO.jp
 MAKE_ENV=	LANG=${MANLANG}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "powerpc"

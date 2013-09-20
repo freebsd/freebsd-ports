@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kanji18
-# Date created:		23 November 1999
-# Whom:			Yoshiro MIHIRA <sanpei@sanpei.org>
-#
+# Created by: Yoshiro MIHIRA <sanpei@sanpei.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kanji
 PORTVERSION?=	1.0
@@ -27,6 +23,7 @@ DIST_SUBDIR=	${DISTNAME}
 FONTSDIR=	lib/X11/fonts/local
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 EXTRACT_CMD=		${GZCAT}

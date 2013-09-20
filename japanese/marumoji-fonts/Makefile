@@ -25,6 +25,7 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 NO_WRKSUBDIR=	yes
 FONTSDIR=	lib/X11/fonts/local
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 EXTRACT_CMD=		${CP}

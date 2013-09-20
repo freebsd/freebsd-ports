@@ -1,4 +1,4 @@
-# New ports collection makefile for:	tegaki-recognize
+# $FreeBSD$
 
 # Date created:				15 Aug 2010
 # Whom:					Timothy Beyer <beyert@cs.ucr.edu>
@@ -25,6 +25,7 @@ USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	${PORTNAME}_recognize
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

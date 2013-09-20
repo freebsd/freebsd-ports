@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-tk8.0
-# Date created:		26 Dec 1997
-# Whom:			taguchi@tohoku.iij.ad.jp
-#
+# Created by: taguchi@tohoku.iij.ad.jp
 # $FreeBSD$
-#
 
 PORTNAME=	tk
 PORTVERSION=	8.0.5
@@ -41,6 +37,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 RANLIB=		ranlib
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

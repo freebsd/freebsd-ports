@@ -22,6 +22,7 @@ TEXMFDISTDIR=	share/texmf-dist
 #      in print/teTeX-base.
 DEPENDS_ARGS+=	BATCH=yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   XShodou
-# Date created:        11 January 1999
-# Whom:                Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
-#
+# Created by: Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	xshodou
 PORTVERSION=	1.11
@@ -19,6 +15,7 @@ USE_TK_WRAPPER=	yes
 MANCOMPRESSED=	yes
 MAN1=		xshodou.1
 
+NO_STAGE=	yes
 post-patch:
 .for f in Makefile xshodou
 	@${REINPLACE_CMD} -e \

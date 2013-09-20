@@ -1,7 +1,4 @@
-# New ports collection makefile for:	edyvalue
-# Date created:				18 January 2007
-# Whom:					Yoshihiko Sarumaru <mistral@imasy.or.jp>
-#
+# Created by: Yoshihiko Sarumaru <mistral@imasy.or.jp>
 # $FreeBSD$
 
 PORTNAME=	edyvalue
@@ -21,6 +18,7 @@ LIB_DEPENDS=	pasori.1:${PORTSDIR}/devel/libpasori
 
 PLIST_FILES=	bin/EdyValue
 
+NO_STAGE=	yes
 post-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} -f ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${WRKSRC}

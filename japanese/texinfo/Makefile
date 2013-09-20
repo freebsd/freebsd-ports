@@ -1,9 +1,5 @@
-# New ports collection makefile for: texinfo
-# Date created: 18 Aug 1999
-# Whom: Mitsuru Yoshida <mitsuru@riken.go.jp>
-#
+# Created by: Mitsuru Yoshida <mitsuru@riken.go.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	texinfo
 PORTVERSION=	4.7
@@ -34,4 +30,5 @@ TEXMFLOCAL=	share/texmf-local
 MAN1=		jinfo.1 jinfokey.1 jinstall-info.1 jmakeinfo.1 jtexindex.1 jtexi2dvi.1
 MAN5=		jinfo.5 jtexinfo.5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

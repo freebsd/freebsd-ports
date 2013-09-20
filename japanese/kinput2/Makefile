@@ -76,6 +76,7 @@ PLIST.WNN=		lib/X11/ccdef/ccdef.kinput2 \
 			lib/X11/ccdef/rule.katakana.egg \
 			lib/X11/ccdef/rule.kigou.egg
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFREEWNN} || \

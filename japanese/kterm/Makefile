@@ -59,6 +59,7 @@ VGAFONT_DESC= install VGA font
 
 NKFCMD=		${LOCALBASE}/bin/nkf
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MXAW3DLIB}

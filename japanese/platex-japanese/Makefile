@@ -1,9 +1,5 @@
-# New ports collection makefile for:	platex-japanese
-# Date created:		2007-11-19
-# Whom:			Koji Yokota <yokota@res.otaru-uc.ac.jp>
-#
+# Created by: Koji Yokota <yokota@res.otaru-uc.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	japanese
 PORTVERSION=	1.3
@@ -34,6 +30,7 @@ TEXTFILE=	README
 ENCODING?=	EUC-JP
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
+NO_STAGE=	yes
 .SILENT::
 pre-configure:
 	@${ECHO_MSG}

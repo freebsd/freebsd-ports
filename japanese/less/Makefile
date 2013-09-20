@@ -37,6 +37,7 @@ MAN1=		jless.1 jlesskey.1
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

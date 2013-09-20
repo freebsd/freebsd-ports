@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-S-lang library
-# Date created:		3 September 1999
-# Whom:			IWASHITA Yoji <shuna@pop16.odn.ne.jp>
-#
+# Created by: IWASHITA Yoji <shuna@pop16.odn.ne.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	libslang
 PORTVERSION=	${VERSION}.j${JP_VERSION}
@@ -28,6 +24,7 @@ INSTALL_TARGET=	install-elf
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/slang-j.doc ${PREFIX}/share/doc/slang
 

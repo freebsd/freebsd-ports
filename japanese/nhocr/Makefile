@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nhocr
-# Date created:		2009-05-20
-# Whom:			Hiroto Kagotani <hiroto.kagotani@gmail.com>
-#
+# Created by: Hiroto Kagotani <hiroto.kagotani@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	nhocr
 PORTVERSION=	0.16
@@ -18,6 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libsip.a:${PORTSDIR}/graphics/O2-tools
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-O2tools=${LOCALBASE} --datadir=${DATADIR}
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${PREFIX}/share/ocropus/scripts
 	${INSTALL_DATA} ${WRKSRC}/ocropus/rec-nhocr-0.3.lua ${PREFIX}/share/ocropus/scripts/rec-nhocr.lua

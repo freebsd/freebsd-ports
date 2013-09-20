@@ -20,6 +20,7 @@ USE_LDCONFIG=	yes
 
 #OPTIONS=	GUCHARMAP	"Compile with gucharmap"		on
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 #.if defined(WITHOUT_GUCHARMAP)

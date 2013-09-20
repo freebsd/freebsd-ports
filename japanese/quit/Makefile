@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ja-quit
-# Date created:				2003/08/28
-# Whom:					nork@FreeBSD.org
-#
+# Created by: nork@FreeBSD.org
 # $FreeBSD$
-#
 
 CATEGORIES=	japanese games
 
@@ -13,4 +9,5 @@ MASTERDIR=	${.CURDIR}/../../games/quit
 
 CPPFLAGS+=	-DJAPANESE
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

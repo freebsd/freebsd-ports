@@ -10,4 +10,5 @@ PKGMESSAGE=	${.CURDIR}/pkg-message
 
 BUILD_MOZC_LIST=mozc_el
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

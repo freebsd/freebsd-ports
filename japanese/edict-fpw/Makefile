@@ -1,9 +1,5 @@
-# New ports collection makefile for:	EDICT - JIS X 4081 format version
-# Date created:        	00/01/14
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
-#
+# Created by: Satoshi Taoka <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	edict-fpw
 PORTVERSION=	1.2.2
@@ -20,6 +16,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/edict
 EXTRACT_BEFORE_ARGS=	-qL
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/edict-fpw/edict/data
 	${INSTALL_DATA} ${WRKSRC}/edict/data/honmon ${PREFIX}/share/dict/edict-fpw/edict/data

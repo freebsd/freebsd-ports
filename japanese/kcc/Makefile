@@ -1,9 +1,5 @@
-# New ports collection makefile for: kcc
-# Date created:		26 May 1997
-# Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
-#
+# Created by: Satoshi TAOKA <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kcc
 PORTVERSION=	1.0
@@ -20,4 +16,5 @@ MANLANG=	ja
 MAN1=		kcc.1
 PLIST_FILES=	bin/kcc
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

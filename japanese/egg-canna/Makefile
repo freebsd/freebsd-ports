@@ -1,9 +1,5 @@
-# New ports collection makefile for:	egg-canna
-# Date created:		4 March 2005
-# Whom:			Hajimu UMEMOTO <ume@FreeBSD.org>
-#
+# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	egg-canna
 PORTVERSION=	20011110
@@ -22,6 +18,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_EMACS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${EMACS_MAJOR_VER} >= 23
