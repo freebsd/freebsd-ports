@@ -28,6 +28,7 @@ USE_QT4=	network_run webkit_run
 
 MAN1=		${PORTNAME}.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/|${PREFIX}/share/|' \
 		${WRKSRC}/runanki

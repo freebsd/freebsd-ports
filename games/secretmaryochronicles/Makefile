@@ -33,6 +33,7 @@ WRKSRC=		${WRKDIR}/smc
 
 PORTDOCS=	controls.html history.html style.css
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

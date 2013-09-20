@@ -19,4 +19,5 @@ USE_XORG=	x11 xext xp xt xmu
 MAN1=		xblackjack.1
 CFLAGS+=	-Wno-error=return-type
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

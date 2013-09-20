@@ -22,6 +22,7 @@ NO_WRKSUBDIR=	yes
 DATADIR=	share/${PKGNAMEPREFIX:S/-//}
 PLIST=		${WRKDIR}/pkg-plist
 
+NO_STAGE=	yes
 post-extract:
 	@cd ${WRKDIR}/base && \
 		${FIND} * -type f -exec ${UNZIP_CMD} "{}" -d ${WRKDIR}/base \;

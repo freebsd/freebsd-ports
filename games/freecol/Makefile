@@ -28,6 +28,7 @@ PORTDOCS=	*
 
 DESKTOP_ENTRIES="FreeCol" "${COMMENT}" "${DATADIR}/freecol.xpm" "freecol" "Game;StrategyGame;" "false"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

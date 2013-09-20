@@ -23,6 +23,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 OPTIONS_DEFINE=	NVIDIA
 NVIDIA_DESC=	Nvidia support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 

@@ -25,6 +25,7 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/tcl8.4
 USE_GMAKE=	yes
+NO_STAGE=	yes
 # for plib (sound):
 CONFIGURE_ARGS+=	--with-plib=${LOCALBASE}/plib
 

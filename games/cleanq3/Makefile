@@ -34,6 +34,7 @@ PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 VM_ARCHS=	i386
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"

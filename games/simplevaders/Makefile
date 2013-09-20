@@ -19,6 +19,7 @@ USE_GL=		gl glu
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' ${WRKSRC}/main.cpp
 	@${RM} ${WRKSRC}/data/*\~

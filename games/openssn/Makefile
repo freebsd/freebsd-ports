@@ -19,6 +19,7 @@ USE_SDL=	sdl gfx image mixer
 USE_XORG=	x11 xau xdmcp xext xmu xpm xxf86vm
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,share/man/man6,man/man6,g' ${WRKSRC}/Makefile
 

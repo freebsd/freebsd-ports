@@ -1,9 +1,5 @@
-# New ports collection makefile for: rt2 demo
-# Date created:		Sun Jun 18 11:23:18 CEST 2000
-# Whom:			se@freebsd.org
-#
+# Created by: se@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	rt2_demo
 PORTVERSION=	1.54b
@@ -21,6 +17,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_LINUX=	yes
 
+NO_STAGE=	yes
 do-install:
 		@${SH} ${FILESDIR}/do-install ${PREFIX} ${DISTDIR}
 

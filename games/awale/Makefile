@@ -1,9 +1,5 @@
-# New ports collection makefile for:	awale
-# Date created:		15 August 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	awale
 PORTVERSION=	1.5
@@ -19,6 +15,7 @@ GUI_DESC=	Installs Tcl/Tk GUI
 
 MAN6=		${PORTNAME}.6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUI}

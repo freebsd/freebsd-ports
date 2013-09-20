@@ -23,6 +23,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 DESKTOP_ENTRIES="Xce" "${COMMENT}" ${PORTNAME} \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps
 

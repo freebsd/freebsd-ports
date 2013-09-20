@@ -23,6 +23,7 @@ MAKE_ARGS=	CXX=${CXX}
 
 PORTDOCS=	changeLog.txt how_to_play.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

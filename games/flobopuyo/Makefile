@@ -24,6 +24,7 @@ DESKTOP_ENTRIES="FloboPuyo" \
 		"Game;BlocksGame;" \
 		false
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -name '._*' -delete
 

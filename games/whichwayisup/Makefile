@@ -33,6 +33,7 @@ DESKTOP_ENTRIES="Which Way Is Up" "${COMMENT}" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

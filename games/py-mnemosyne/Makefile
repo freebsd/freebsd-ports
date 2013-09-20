@@ -20,6 +20,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Mnemosyne
 
+NO_STAGE=	yes
 post-install:
 	@cd ${WRKSRC}/mo && ${COPYTREE_SHARE} . ${PREFIX}/share/locale
 	@${MKDIR} ${PREFIX}/share/applications

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xworm
-# Date created:				18 March 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	xworm
 PORTVERSION=	1.02
@@ -26,6 +22,7 @@ DATA=		font grid raw
 PLIST_FILES=	bin/xworm ${DATA:S/^/%%DATADIR%%\/xworm./}
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xworm ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/share/xworm

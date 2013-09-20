@@ -28,6 +28,7 @@ USE_SDL=	image mixer ttf
 
 PLIST_FILES=	bin/${PORTNAME} bin/${PORTNAME}-server
 
+NO_STAGE=	yes
 post-patch:
 # Sanitize Makefile: honor CC/CXX and C[XX]FLAGS, trim `-mt' suffix from boost
 # libraries, remove superfluous libraries when linking server executable (add

@@ -15,6 +15,7 @@ USE_XORG=	x11 xext xmu xpm xaw xt sm ice
 
 MAN1=		gru.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

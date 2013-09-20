@@ -1,9 +1,5 @@
-# New ports collection makefile for:	slune
-# Date created:				2005-10-06
-# Whom:					Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	slune
 PORTVERSION=	1.0.15
@@ -39,6 +35,7 @@ DESKTOP_ENTRIES=	"Slune" \
 			"Game;ArcadeGame;" \
 			false
 
+NO_STAGE=	yes
 post-extract:
 .for FILE in slune.po.orig slune.po.rej
 	@${RM} ${WRKSRC}/locale/es/LC_MESSAGES/${FILE}

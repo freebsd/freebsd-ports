@@ -1,9 +1,5 @@
-# New ports collection makefile for:	World of Goo (Linux demo version)
-# Date created:				14 Sep 2009
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	worldofgoo
 PORTVERSION=	1.41
@@ -32,6 +28,7 @@ USE_LINUX_APPS+=	libglu
 USE_LINUX_APPS+=	dri
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"

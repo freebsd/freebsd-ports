@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sdlquake2
-# Date created:				5 May 2006
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	sdlquake2
 PORTVERSION=	0.1.4
@@ -29,6 +25,7 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 MAKE_ENV=	LIBDIR="${LIBDIR}"
 PLIST_SUB=	LIBDIR=${LIBDIR:S/${PREFIX}\///}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 
 .include <bsd.port.options.mk>

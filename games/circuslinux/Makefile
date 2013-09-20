@@ -1,9 +1,5 @@
-# New ports collection makefile for:	circuslinux
-# Date created:				1 March 2003
-# Whom:					Edwin Groothuis
-#
+# Created by: Edwin Groothuis
 # $FreeBSD$
-#
 
 PORTNAME=	circuslinux
 PORTVERSION=	1.0.3
@@ -18,4 +14,5 @@ USE_SDL=	image mixer sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=""
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

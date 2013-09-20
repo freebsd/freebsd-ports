@@ -32,6 +32,7 @@ PLIST_SUB=	SCOREDIR=${SCOREDIR}
 DESKTOP_ENTRIES="Monsterz" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

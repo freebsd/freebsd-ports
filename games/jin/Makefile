@@ -28,6 +28,7 @@ FIND_DIRS=	. -type d
 FIND_DATA=	. -type f
 RM_FILES=	${PORTNAME} README changelog.txt gpl.txt
 
+NO_STAGE=	yes
 post-extract:
 .for f in ${RM_FILES}
 	@${RM} ${WRKSRC}/${f}

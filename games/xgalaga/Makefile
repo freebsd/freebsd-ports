@@ -29,6 +29,7 @@ OPTIONS_SUB=	yes
 
 SOUND_CONFIGURE_OFF=	--without-sound
 
+NO_STAGE=	yes
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/xgalaga
 

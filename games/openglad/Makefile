@@ -1,9 +1,5 @@
-# New ports collection makefile for:  	openglad
-# Date created:       		13 May 2003
-# Whom:  			Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	openglad
 PORTVERSION=	0.98
@@ -23,6 +19,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 NOT_FOR_ARCHS=	sparc64
 
 .if defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^docs_DOCS = |nono&|' ${WRKSRC}/Makefile.in
 .endif

@@ -25,6 +25,7 @@ OPTIONS_DEFAULT=SDL CURSES
 SDL_DESC=	Enable SDL interface
 CURSES_DESC=	Enable curses interface
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCURSES}

@@ -38,6 +38,7 @@ GRAY_DESC=	Install The gray incident data
 
 SUB_FILES=	wrapper
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 DATADIR!=	cd ${PORTSDIR}/games/alephone && ${MAKE} -V DATADIR

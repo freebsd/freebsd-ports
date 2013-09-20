@@ -19,6 +19,7 @@ MUSIC_DESC=	In-game MIDI music support
 
 PLIST_FILES=	bin/uhexen
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"

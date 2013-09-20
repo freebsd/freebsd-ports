@@ -18,6 +18,7 @@ NO_BUILD=	yes
 SUB_FILES=	outerspace
 SUB_LIST=	PROGRAM_DIR="${PREFIX}/lib/${PORTNAME}"
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/outerspace|${PREFIX}/lib/${PORTNAME}/res|' ${WRKSRC}/outerspace
 

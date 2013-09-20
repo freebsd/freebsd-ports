@@ -27,6 +27,7 @@ ALL_TARGET=	${PORTNAME}
 PORTDOCS=	README STORY TO_DO
 PLIST_FILES=	bin/alienwave
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLEVEL_EASY}

@@ -23,6 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN6=		afternoonstalker.6
 PORTDOCS=	AUTHORS COPYING INSTALL NEWS README THANKS TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

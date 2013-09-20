@@ -1,9 +1,5 @@
-# New ports collection makefile for:	avanor
-# Date created:		2007-02-27
-# Whom:			Martin Tournoij <carpetsmoker@xs4all.nl>
-#
+# Created by: Martin Tournoij <carpetsmoker@xs4all.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	avanor
 PORTVERSION=	0.5.8
@@ -19,6 +15,7 @@ USE_GMAKE=	yes
 MAKE_ARGS+=	VERSION=${PORTVERSION} DATA_DIR=${DATADIR}/
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|g++|${CXX}|; \
 		s|CFLAGS =|CFLAGS+=|;" \

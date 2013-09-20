@@ -30,5 +30,6 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-tls=OpenSSL
 .endif
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../libggz/bsd.ggz.mk"
 .include <bsd.port.mk>

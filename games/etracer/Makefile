@@ -22,6 +22,7 @@ GNU_CONFIGURE=		yes
 
 USE_TCL=		84+
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 CONFIGURE_ARGS=		--with-tcl="${TCL_LIBDIR}" \
 			--with-tcl-inc="${TCL_INCLUDEDIR}" \

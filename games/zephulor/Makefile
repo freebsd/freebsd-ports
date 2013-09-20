@@ -38,6 +38,7 @@ DESKTOP_ENTRIES="Adventures on Planet Zephulor" "${COMMENT}" "${PORTNAME}" \
 
 SUB_FILES=	${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

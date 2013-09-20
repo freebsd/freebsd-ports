@@ -1,9 +1,5 @@
-# Ports collection makefile for:	py-sgfsummary
-# Date created:			January 16, 2004
-# Whom:				Leland Wang <llwang@infor.org>
-#
+# Created by: Leland Wang <llwang@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sgfsummary
 PORTVERSION=	1.0
@@ -23,6 +19,7 @@ USE_PYTHON=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sgfsummary.py ${PREFIX}/bin
 

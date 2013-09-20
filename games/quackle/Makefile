@@ -24,6 +24,7 @@ USE_QT4=	gui moc_build qmake_build
 
 DESKTOP_ENTRIES="Quackle" "${COMMENT}" "" "quackle" "Game;BoardGame;" "true"
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} \( -name "*.[ao]" -or -name "moc_*" \) -delete
 

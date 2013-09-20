@@ -18,6 +18,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/npcomplete
 DATADIR=	${PREFIX}/share/numptyphysics
 
+NO_STAGE=	yes
 post-extract:
 # this level will crash the game
 	@${RM} -f "${WRKSRC}/L02_bridge Gaps tut.nph"

@@ -1,9 +1,5 @@
-# Ports collection makefile for:  newvox
-# Date created:			  23 Aug 2001
-# Whom:				  Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	newvox
 PORTVERSION=	1.0
@@ -17,6 +13,7 @@ COMMENT=	Voxel-style landscape rendering fly-by
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/newvox ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

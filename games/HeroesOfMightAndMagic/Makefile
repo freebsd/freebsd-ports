@@ -1,9 +1,5 @@
-# New ports collection makefile for:    HeroesOfMightAndMagic3
-# Date created:         24 Feb 2001
-# Whom:                 Holger Lamm <holger@eit.uni-kl.de>
-#
+# Created by: Holger Lamm <holger@eit.uni-kl.de>
 # $FreeBSD$
-#
 
 PORTNAME=	HeroesOfMightAndMagic
 PORTVERSION=	3
@@ -29,6 +25,7 @@ GAMESUBDIR=	games/Heroes3
 GAMEDIR=	${PREFIX}/${GAMESUBDIR}
 SCRIPTS_ENV+=	INSTALL_DATA="${INSTALL_DATA}" PLIST=${PLIST} PKGDIR=${PKGDIR}
 
+NO_STAGE=	yes
 do-install:
 		@cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/do-install
 

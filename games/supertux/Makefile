@@ -19,6 +19,7 @@ CONFIGURE_ARGS=		--disable-debug
 
 PORTSCOUT=	limit:^0\.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,Menu::,,' ${WRKSRC}/src/menu.h
 

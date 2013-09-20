@@ -30,6 +30,7 @@ LDFLAGS+=	$$(pkgconf --libs-only-L sdl) -L${LOCALBASE}/lib
 
 PORT_VERBS=	${PORTNAME} ustunts
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

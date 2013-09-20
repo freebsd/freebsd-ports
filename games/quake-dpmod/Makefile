@@ -20,6 +20,7 @@ NO_WRKSUBDIR=	yes
 
 DATADIR=	${Q1DIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-extract:
 # Remove CVS directories
 	@${FIND} ${WRKDIR} -type d -name CVS -print0 | ${XARGS} -0 ${RM} -rf

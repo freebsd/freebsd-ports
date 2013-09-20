@@ -1,9 +1,5 @@
-# New ports collection makefile for:    Gomoku
-# Date created:         19 Sep 2000
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gomoku
 PORTVERSION=	1.2.9
@@ -21,4 +17,5 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

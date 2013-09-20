@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sudsol
-# Date created:				25 Aug 2005
-# Whom:					Ed Schouten <ed@fxq.nl>
-#
+# Created by: Ed Schouten <ed@fxq.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	sudsol
 PORTVERSION=	0.1
@@ -18,6 +14,7 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/sudsol
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' ${WRKSRC}/src/sudsol.c
 

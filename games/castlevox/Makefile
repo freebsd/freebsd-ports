@@ -26,6 +26,7 @@ DESKTOP_ENTRIES="Castle Vox" "${COMMENT}" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 		"${PORTNAME}" "Game;StrategyGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

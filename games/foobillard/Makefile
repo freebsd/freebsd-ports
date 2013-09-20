@@ -17,6 +17,7 @@ OPTIONS_DEFINE=	SDL NVIDIA_BUMPREF
 SDL_DESC=	SDL instead of glut
 NVIDIA_BUMPREF_DESC=	NVidia extensions
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config

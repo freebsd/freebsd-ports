@@ -17,6 +17,7 @@ USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	ac_cv_prog_doxygen=no ac_cv_path_SDL_CONFIG=no
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-extract:
 	@${CHMOD} ${BINMODE} ${WRKSRC}/install-sh
 

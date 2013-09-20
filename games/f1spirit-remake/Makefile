@@ -29,6 +29,7 @@ PLIST_FILES=	bin/f1s
 PORTDOCS=	readme.txt
 PORTDATA=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

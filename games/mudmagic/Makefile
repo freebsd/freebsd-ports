@@ -26,6 +26,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		mudmagic.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
 		${WRKSRC}/src/network/network.h \

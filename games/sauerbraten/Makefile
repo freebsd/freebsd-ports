@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sauerbraten
-# Date created:		2006-02-01
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	sauerbraten
 PORTVERSION=	20130203
@@ -42,6 +38,7 @@ MASTER_DESC=	Build master server
 
 SUB_FILES=	sauer_client sauer_master sauer_server pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}

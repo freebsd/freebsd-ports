@@ -34,6 +34,7 @@ SAMURAIWARSDIR=	lib/${PKGNAMEPREFIX}${PORTNAME}
 OPTIONS_DEFINE=	NVIDIA_GL
 NVIDIA_GL_DESC=	Install support for nvidia
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MNVIDIA_GL}

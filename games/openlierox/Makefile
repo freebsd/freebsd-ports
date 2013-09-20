@@ -46,6 +46,7 @@ PLIST_DIRSTRY=	share/applications
 OPTIONS_DEFINE=	DEDICATED_ONLY DOCS
 DEDICATED_ONLY_DESC=Build dedicated server only
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEDICATED_ONLY}

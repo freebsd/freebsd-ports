@@ -20,6 +20,7 @@ INSTALLS_ICONS=	yes
 
 PORTDOCS=	CREDITS ChangeLog NEWS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

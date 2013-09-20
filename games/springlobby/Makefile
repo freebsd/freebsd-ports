@@ -28,6 +28,7 @@ OPTIONS_DEFAULT=	TORRENT SOUND
 TORRENT_DESC=	Support automatic content downloads via torrent
 SOUND_DESC=	Enable sound
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

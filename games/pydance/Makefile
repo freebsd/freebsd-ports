@@ -1,9 +1,5 @@
-# New ports collection makefile for:    pydance
-# Date created:                         26 October 2003
-# Whom:                                 Rudolf Polzer <freebsd-dr@durchnull.de>
-#
+# Created by: Rudolf Polzer <freebsd-dr@durchnull.de>
 # $FreeBSD$
-#
 
 PORTNAME=	pydance
 PORTVERSION=	1.1.0
@@ -37,6 +33,7 @@ MAN6=		pydance.6
 
 DOCFILES=	BUGS CREDITS ChangeLog HACKING INSTALL LICENSE README TODO docs/dance-spec.txt docs/dwi-hall-of-shame.txt docs/ksf-format.txt docs/manual.html
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,/etc,${LOCALBASE}/etc," ${WRKSRC}/constants.py
 do-install:

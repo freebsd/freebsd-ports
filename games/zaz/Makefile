@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--with-icondir="${PREFIX}/share/pixmaps"
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Unconditially disable NLS for now: the game segfaults with 8bit locales

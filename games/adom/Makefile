@@ -1,9 +1,5 @@
-# New ports collection makefile for:    adom
-# Date created:		22 July 1999
-# Whom:			Oleg V. Volkov <rover@lglobus.ru>
-#
+# Created by: Oleg V. Volkov <rover@lglobus.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	adom
 PORTVERSION=	1.1.1
@@ -30,6 +26,7 @@ WRKSRC=		${WRKDIR}/adom
 NO_BUILD=	yes
 STRIP=		# empty: do not strip linux binary!
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/adom ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

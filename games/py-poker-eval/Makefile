@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	PYTHON=""
 
 PLIST_SUB=	PYVER=${PYTHON_VER:S/./_/}
 
+NO_STAGE=	yes
 post-configure:
 	@${INSTALL_SCRIPT} ${AUTOMAKE_DIR}/py-compile ${WRKSRC}/config
 

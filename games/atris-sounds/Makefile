@@ -1,9 +1,5 @@
-# New ports collection makefile for:	games/atris-sounds
-# Date created:			9 Aug 2005
-# Whom:				Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	atris
 PORTVERSION=	1.0.1
@@ -22,6 +18,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 post-patch:
 # Fix path to ${DATADIR}
 	${REINPLACE_CMD} -e 's|\(GAME_INSTALLDIR=\).*|\1"${DATADIR}"|' \

@@ -25,6 +25,7 @@ BINGRP=		games
 BINMODE=	2755
 MAKE_ENV+=	BINOWN=${BINOWN} BINGRP=${BINGRP} BINMODE=${BINMODE}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

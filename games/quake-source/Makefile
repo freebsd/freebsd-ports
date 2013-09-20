@@ -24,6 +24,7 @@ OPTIONS_DEFAULT=	QUAKEWORLD
 
 QUAKEWORLD_DESC=	Install QuakeWorld game source
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQUAKEWORLD}

@@ -24,6 +24,7 @@ LDFLAGS+=	`${SDL_CONFIG} --libs`
 
 MAN6=		hangman.6
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DICTIONARY)

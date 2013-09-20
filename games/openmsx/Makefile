@@ -1,9 +1,5 @@
-# New ports collection makefile for:	OpenMSX
-# Date created:				2010-11-04
-# Whom:					Ilya A. Arhipov <admin@gorodkirov.ru>
-#
+# Created by: Ilya A. Arhipov <admin@gorodkirov.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	openmsx
 PORTVERSION=	0.3.1
@@ -21,6 +17,7 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 LATEST_LINK=	openttd-${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/share/openttd/baseset/openmsx
 	${INSTALL_DATA} ${WRKDIR}/openmsx-${PORTVERSION}/* \

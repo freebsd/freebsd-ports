@@ -20,6 +20,7 @@ NO_WRKSUBDIR=	yes
 DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}
 
+NO_STAGE=	yes
 do-build:
 .for f in et etded
 	@(${ECHO_CMD} "#!/bin/sh"; \

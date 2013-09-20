@@ -29,6 +29,7 @@ ALL_TARGET=	nh342-dt
 INSTALL_TARGET=	install_nh342-dt
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::

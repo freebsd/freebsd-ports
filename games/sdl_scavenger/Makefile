@@ -28,6 +28,7 @@ PORTDOCS=	CREDITS DOC NEW_FEATURES README STRATEGY
 DESKTOP_ENTRIES="SDL Scavenger" "${COMMENT}" "sdlscavenger" \
 		"sdlscavenger" "Game;ArcadeGame;" ${FALSE}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

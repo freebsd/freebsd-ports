@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cavezofphear
-# Date created:			23 July 2005
-# Whom:				Travis Poppe <tlp@liquidx.org>
-#
+# Created by: Travis Poppe <tlp@liquidx.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cavezofphear
 PORTVERSION=	0.5.1
@@ -28,6 +24,7 @@ ALL_TARGET=	phear
 
 PORTDOCS=	ChangeLog README README-EDITOR TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -37,6 +37,7 @@ SDL_AUDIO_DESC=		Use SDL for audio
 SDL_VIDEO_DESC=		Use SDL for video
 SMP_CLIENT_DESC=	Build SMP (threaded) client
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for arch in ${ARCH}

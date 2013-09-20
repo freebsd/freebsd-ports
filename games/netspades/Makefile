@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	NetSpades
-# Date created:				23 July 2002
-# Whom:					Frank Laszlo <laszlof@freebsdmatrix.net>
-#
+# Created by: Frank Laszlo <laszlof@freebsdmatrix.net>
 # $FreeBSD$
-#
 
 PORTNAME=	NetSpades
 PORTVERSION=	4.2.0
@@ -24,4 +20,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib -ltermcap
 
 MAN6=		gspades.6 slspades.6 spadesd.6
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

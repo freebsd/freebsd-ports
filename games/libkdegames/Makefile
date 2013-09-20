@@ -21,4 +21,5 @@ USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DWITH_OpenAL:BOOL=False
 CMAKE_ARGS+=	-DWITH_SndFile:BOOL=False
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

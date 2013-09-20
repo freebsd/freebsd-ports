@@ -21,6 +21,7 @@ DATADIR=	${DMDIR}/${PORTNAME}
 PLIST_FILES=	%%DATADIR%%/${DISTNAME}
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
 .include <bsd.port.pre.mk>

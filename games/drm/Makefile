@@ -1,9 +1,5 @@
-# New ports collection makefile for:	drm
-# Date created:				4 August 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=		drm
 PORTVERSION=		1.0
@@ -18,6 +14,7 @@ COMMENT=	Very simple Tetris-style game
 
 ALL_TARGET=
 
+NO_STAGE=	yes
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/bugs ${PREFIX}/bin/drm
 .if !defined(NOPORTDOCS)

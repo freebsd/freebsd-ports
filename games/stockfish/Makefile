@@ -39,6 +39,7 @@ OPTIONS_DEFINE=	DOCS POPCNT_ENABLED PROFILE_BUILD
 POPCNT_ENABLED_DESC=	Use the POPCNT instruction
 PROFILE_BUILD_DESC=	Make a Profile build
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPROFILE_BUILD}

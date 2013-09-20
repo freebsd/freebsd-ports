@@ -17,6 +17,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -D__linux__
 USE_SDL=	mixer image net sdl
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

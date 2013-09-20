@@ -19,6 +19,7 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	%%Q2DIR%%/${PORTNAME}/game.so
 PLIST_DIRS=	%%Q2DIR%%/${PORTNAME}
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} && uncompress -c ${DISTDIR}/${DISTFILES} | \

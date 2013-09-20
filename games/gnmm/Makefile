@@ -18,4 +18,5 @@ USE_GNOME=	gnomeprefix gnomelibs gdkpixbuf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	"${ICONV_CONFIGURE_ARG}"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

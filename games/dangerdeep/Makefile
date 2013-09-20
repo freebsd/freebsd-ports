@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dangerdeep
-# Date created:		2005-10-28
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	dangerdeep
 PORTVERSION=	0.3.0
@@ -33,6 +29,7 @@ PLIST_DIRS=	%%DATADIR%%
 MAN6=		dangerdeep.6
 PORTDOCS=	CREDITS README
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(PACKAGE_BUILDING)

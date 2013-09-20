@@ -22,6 +22,7 @@ PLIST_FILES=	bin/xmille
 MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	-Wno-error=return-type
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -name '*.[ao]' -delete
 

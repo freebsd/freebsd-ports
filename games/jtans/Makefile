@@ -24,6 +24,7 @@ NO_BUILD=	yes
 SUB_FILES=	jtans.sh
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/jtans.sh ${PREFIX}/bin/jtans
 	@${MKDIR} ${DATADIR}

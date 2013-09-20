@@ -21,6 +21,7 @@ USES=		imake
 USE_XORG=	x11 xaw xext xmu xt xpm sm ice
 MAN1=		yamsweeper.1
 
+NO_STAGE=	yes
 pre-configure:
 	@${MV} ${WRKSRC}/Imakefile ${WRKSRC}/Imakefile.old
 	@${CP} ${FILESDIR}/Imakefile ${WRKSRC}

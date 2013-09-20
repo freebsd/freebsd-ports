@@ -34,6 +34,7 @@ GLX_DESC=	Build OpenGL renderer
 SDL_DESC=	Sound support via SDL
 SDLGL_DESC=	Build SDL OpenGL renderer
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGLX} || ${PORT_OPTIONS:MSDLGL}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    America's Army
-# Date created:                         Sun Sep 11 15:45:00 PET 2005
-# Whom:                                 acardenas@bsd.org.pe
-#
+# Created by: acardenas@bsd.org.pe
 # $FreeBSD$
-#
 
 PORTNAME=	americasarmy
 PORTVERSION=	2.5.0
@@ -35,6 +31,7 @@ NO_WRKSUBDIR=	yes
 ARMYDIR=	${PREFIX}/lib/${PORTNAME}
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@cd ${WRKSRC} && \

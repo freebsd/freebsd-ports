@@ -34,6 +34,7 @@ PORTDOCS=	HISTORY MANIFEST README
 MAKE_FLAGS+=	DATADIR=${DATADIR}
 MAKE_ENV+=	GDT_FLAG=-DHAVE_GDT
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-patch:

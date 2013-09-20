@@ -22,6 +22,7 @@ PLIST_FILES=	bin/${PORTNAME}
 GTI_SPEED?=	50
 CFLAGS+=	-DGTI_SPEED=${GTI_SPEED}
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} " You can change the speed of the car at compile time."

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	block
-# Date created:				10 May 1997
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	block
 PORTVERSION=	0.6
@@ -20,6 +16,7 @@ MAKEFILE=	makefile
 ALL_TARGET=	block bed
 MAN6=		block.6 bed.6
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} -f ${WRKSRC}/block
 	@${RM} -f ${WRKSRC}/bed

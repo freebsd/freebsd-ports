@@ -1,9 +1,5 @@
-# New ports collection makefile for:    tileworld
-# Date created:         08. Oct 02
-# Whom:                 sec@42.org
-#
+# Created by: sec@42.org
 # $FreeBSD$
-#
 
 PORTNAME=	tileworld
 PORTVERSION=	1.3.0
@@ -23,6 +19,7 @@ DATADIR=	share/tworld
 
 MAN6=		tworld.6
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|make|$${MAKE}|g; s|cp -i|cp|' ${WRKSRC}/Makefile.in
 

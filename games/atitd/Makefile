@@ -1,9 +1,5 @@
-# New ports collection makefile for:	atitd
-# Date created:         17 Jul 2003
-# Whom:                 Matthew N. Dodd <mdodd@FreeBSD.ORG>
-#
+# Created by: Matthew N. Dodd <mdodd@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	atitd
 PORTVERSION=	1.0
@@ -19,6 +15,7 @@ COMMENT=	The Linux "A Tale in the Desert" (ATITD) client
 
 RUN_DEPENDS=	${LOCALBASE}/bin/xhost:${PORTSDIR}/x11/xhost
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .ifdef(WITH_NVIDIA_GL)

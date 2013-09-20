@@ -32,6 +32,7 @@ OPTIONS_DEFINE=	OPENAL DOCS
 OPTIONS_DEFAULT=	DOCS
 OPENAL_DESC=	Build OpenAL sound plugin
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENAL}

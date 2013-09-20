@@ -27,6 +27,7 @@ USE_PYTHON=	yes
 
 WRKSRC=	${WRKDIR}/MKGIChessClub-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

@@ -19,6 +19,7 @@ NO_BUILD=	yes
 RESTRICTED=	Redistribution prohibited
 PLIST=		${WRKDIR}/.pkg-plist
 
+NO_STAGE=	yes
 pre-install:
 	@${RM} -f ${PLIST}
 	@cd ${WRKSRC} && \

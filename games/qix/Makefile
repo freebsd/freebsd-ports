@@ -1,7 +1,5 @@
 # Created by: jmz
-#
 # $FreeBSD$
-#
 
 PORTNAME=	qix
 PORTVERSION=	1.2
@@ -32,6 +30,7 @@ MAN1=		qix.1
 FONTSDIR=	lib/X11/fonts/local
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
+NO_STAGE=	yes
 do-configure:
 	@${CP} ${WRKSRC}/Makefile ${WRKSRC}/Makefile~
 	${SED} -e s:/usr/local:${PREFIX}: -e s:/usr/X11R6:${PREFIX}: \

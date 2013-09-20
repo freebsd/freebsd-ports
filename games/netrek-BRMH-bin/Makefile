@@ -1,9 +1,5 @@
-# New ports collection makefile for:    netrek
-# Date created:         15 Mar 1999
-# Whom:                 Donald Burr <dburr@FreeBSD.org>
-#
+# Created by: Donald Burr <dburr@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	netrek-BRMH
 PORTVERSION=	2.2.2
@@ -21,6 +17,7 @@ NO_BUILD=		YES
 NO_WRKSUBDIR=		YES
 PLIST_FILES=	bin/netrek
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${GUNZIP_CMD} < ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/netrek

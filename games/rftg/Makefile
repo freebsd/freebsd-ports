@@ -16,6 +16,7 @@ USE_GNOME=      gtk20
 USE_BZIP2=      yes
 DOWNLOAD_URL=   http://www.keldon.net/rftg/
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

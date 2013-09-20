@@ -22,6 +22,7 @@ MAN6=		xpat2.6
 
 DESKTOP_ENTRIES="XPat2" "" "" "${PORTNAME}" "" ""
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/xpat2.man

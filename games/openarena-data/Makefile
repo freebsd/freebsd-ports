@@ -21,6 +21,7 @@ FETCH_ARGS=
 OA_DATA=	${PKGNAMEPREFIX}${OA_DATA_VER}.zip
 OA_DATA_VER=	0.8.8
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../openarena/Makefile.include"
 
 do-install:

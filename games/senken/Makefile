@@ -16,6 +16,7 @@ USE_GNOME=	gtk20
 USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-I/usr/X11R6/include||g  ; \
 		 s|-L/usr/X11R6/lib||g' ${WRKSRC}/configure

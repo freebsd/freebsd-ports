@@ -18,6 +18,7 @@ MAN6=		editss.6
 NO_INSTALL_MANPAGES=	yes
 SUB_FILES=	editss
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|xxpms/ships2|.xpilot-shipshapes|' \
 		${WRKSRC}/editssrc

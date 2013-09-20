@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bombermaze
-# Date created:				25 July 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bombermaze
 PORTVERSION=	0.6.6
@@ -23,4 +19,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CFLAGS+=	-fpermissive
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

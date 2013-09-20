@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PORTDOCS=	*
 PLIST_FILES=	bin/glsfcave
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

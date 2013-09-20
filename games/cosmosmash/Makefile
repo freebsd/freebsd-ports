@@ -27,6 +27,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} `${SDL_CONFIG} --libs`
 
 MAN6=	cosmosmash.6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

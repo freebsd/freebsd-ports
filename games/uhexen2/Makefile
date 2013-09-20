@@ -1,9 +1,5 @@
-# New ports collection makefile for:	uhexen2
-# Date created:				2006-12-30
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	uhexen2
 PORTVERSION=	1.5.1
@@ -42,6 +38,7 @@ X86_ASM_DESC=	Enable use of optimized x86 assembly code
 
 PORTSCOUT=	skipb:yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDEMO}

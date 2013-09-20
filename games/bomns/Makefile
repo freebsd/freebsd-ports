@@ -26,6 +26,7 @@ OPTIONS_DEFAULT=	EDITOR LAUNCHER OPTIMIZED_CFLAGS
 EDITOR_DESC=	Enable building of the map editor
 LAUNCHER_DESC=	Enable building of the GTK2 launcher
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEDITOR}

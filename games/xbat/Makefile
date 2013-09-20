@@ -19,6 +19,7 @@ USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/Xev111
 ALL_TARGET=	xbat
 
+NO_STAGE=	yes
 post-install:
 	${CHOWN} root:games ${PREFIX}/bin/xbat
 	${CHMOD} 2755 ${PREFIX}/bin/xbat

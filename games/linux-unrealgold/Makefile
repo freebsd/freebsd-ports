@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-unrealgold
-# Date created:				22 June 2008
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	unrealgold
 PORTVERSION=	436
@@ -38,6 +34,7 @@ PORTDOCS=	${HELPFILES}
 
 CDDIRS=		Help Maps Maps/UPak Music Sounds Sounds/int System Textures
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 UT_DATADIR!=	cd ${PORTSDIR}/games/linux-ut && ${MAKE} -V DATADIR

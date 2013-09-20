@@ -32,6 +32,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB} -lintl
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

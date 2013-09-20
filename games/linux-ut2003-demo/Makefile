@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ut2003-demo
-# Date created:				31 Aug 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	ut2003-demo
 PORTVERSION=	2206
@@ -40,6 +36,7 @@ PORTDOCS=	*
 LIBDIRS=	Animations Benchmark ForceFeedback KarmaData Maps Music \
 		Sounds StaticMeshes System Textures Web
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_NVIDIA_GL)

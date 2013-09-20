@@ -20,6 +20,7 @@ MAN3=		Games::Bingo.3 \
 		Games::Bingo::ColumnCollection.3 \
 		Games::Bingo::Constants.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

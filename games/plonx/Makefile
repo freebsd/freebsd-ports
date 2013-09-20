@@ -1,7 +1,4 @@
-# New ports collection makefile for:	plonx
-# Date created:				25 November 2005
-# Whom:					clive crous <clive@darkarts.co.za>
-#
+# Created by: clive crous <clive@darkarts.co.za>
 # $FreeBSD$
 
 PORTNAME=	plonx
@@ -17,6 +14,7 @@ PORTDOCS=	README
 
 LDFLAGS+=	-lncurses
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} ${LDFLAGS} -o ${WRKSRC}/${PORTNAME} \
 		${WRKSRC}/${PORTNAME}.c

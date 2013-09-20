@@ -20,6 +20,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	FAQ README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

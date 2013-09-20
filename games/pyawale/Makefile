@@ -33,6 +33,7 @@ DOC_FILES2=	*.rest *.html *.jpg
 
 SUB_FILES=	${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

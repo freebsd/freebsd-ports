@@ -1,7 +1,4 @@
-# New ports collection makefile for:	adonthell
-# Date created:		Sat May 10 15:26:09 CEST 2003
-# Whom:			Miguel Mendez <flynn@energyhq.es.eu.org>
-#
+# Created by: Miguel Mendez <flynn@energyhq.es.eu.org>
 # $FreeBSD$
 #    $MCom: ports/games/adonthell/Makefile,v 1.1 2006/10/04 20:13:33 ahze Exp $
 
@@ -37,6 +34,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 WEDGE_VERSION=	0.3.5
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

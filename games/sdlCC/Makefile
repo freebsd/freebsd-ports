@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sdlCC
-# Date created:		21 November 2007
-# Whom:			Frank W. Josellis <frank@dynamical-systems.org>
-#
+# Created by: Frank W. Josellis <frank@dynamical-systems.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sdlCC
 PORTVERSION=	0.0.0
@@ -19,6 +15,7 @@ USE_AUTOTOOLS=	libtool
 USE_SDL=	image mixer sdl
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure ${WRKSRC}/libltdl/configure
 

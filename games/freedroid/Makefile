@@ -25,6 +25,7 @@ DESKTOP_ENTRIES=	"Freedroid Classic" "${COMMENT}" \
 
 MAN6=		freedroid.6
 
+NO_STAGE=	yes
 post-extract:
 .for d in graphics map sound
 	@${FIND} ${WRKSRC}/${d} -type f -name "Makefile*" -print0 | \

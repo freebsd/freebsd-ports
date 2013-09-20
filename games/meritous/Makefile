@@ -32,6 +32,7 @@ DESKTOP_ENTRIES="Meritous" \
 		"Game;ActionGame;AdventureGame;" \
 		false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

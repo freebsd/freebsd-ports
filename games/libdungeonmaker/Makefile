@@ -1,9 +1,5 @@
-# New ports collection makefile for:    DungeonMaker
-# Date created:         08 Nov 2005
-# Whom:                 aaron@FreeBSD.org
-#
+# Created by: aaron@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	libdungeonmaker
 PORTVERSION=	2.05
@@ -19,6 +15,7 @@ USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
 PLIST_SUB+=	HAS_DOCS=${HAS_DOCS}
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${WRKSRC}/Makefile.bsd ${WRKSRC}/Makefile
 

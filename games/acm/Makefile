@@ -1,9 +1,5 @@
-# New ports collection makefile for:	acm
-# Date created:		5 March 1995
-# Whom:			joerg
-#
+# Created by: joerg
 # $FreeBSD$
-#
 
 PORTNAME=	acm
 PORTVERSION=	5.0
@@ -23,6 +19,7 @@ USE_PERL5=	build
 
 MAN6=		acm.6
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Include sound support (Use network audio server (nas))

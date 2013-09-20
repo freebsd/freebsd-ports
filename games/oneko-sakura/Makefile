@@ -21,6 +21,7 @@ NO_CDROM=	Including derivatives from CARDCAPTOR SAKURA. See http://www.clamp-net
 
 NO_LATEST_LINK=	yes
 
+NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e 's,/\*\*/# Cannot compile in using Gcc,/* Cannot compile using Gcc */,' \
 		${WRKSRC}/Imakefile

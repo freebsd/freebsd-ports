@@ -18,6 +18,7 @@ USE_PERL5=	build
 DATAFILES=	24P_Copperplate_Blue.png ball.tga logo.jpg \
 		paddle.tga red.png
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/usr/local/share/games/pengpong|${DATADIR}|' \
 		${WRKSRC}/files.h

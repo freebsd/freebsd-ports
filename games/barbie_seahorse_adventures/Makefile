@@ -1,4 +1,4 @@
-# Created by:	nemysis@gmx.ch
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
 
 PORTNAME=	barbie_seahorse_adventures
@@ -33,6 +33,7 @@ SUB_FILES=	${PORTNAME}
 DESKTOP_ENTRIES="Barbie Seahorse Adventures" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

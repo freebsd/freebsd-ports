@@ -33,6 +33,7 @@ post-extract: .SILENT
 # us Linux .o files instead.  With some hacking, we can build native FreeBSD
 # executables from those .o files.  Pretty neat, huh?  :-)
 #
+NO_STAGE=	yes
 pre-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -c fbsd_stub.c
 	${OBJCOPY} --redefine-sym stdout=__stdoutp ${WRKSRC}/aespages.o

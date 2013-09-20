@@ -27,6 +27,7 @@ DATADIRS=	sound graphics maps
 PORTDOCS=	*
 PORTDATA=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"

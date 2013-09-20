@@ -25,6 +25,7 @@ MLINKS=		xmj.1 mj-player.1 \
 		xmj.1 mj-server.1
 PLIST_FILES=	bin/mj-server bin/mj-player bin/xmj
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD}  -e \
 		's|^CC|#CC|g ; \

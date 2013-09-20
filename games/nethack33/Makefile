@@ -46,6 +46,7 @@ GRAPHICS=	# none
 .endif
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include <bsd.port.options.mk>

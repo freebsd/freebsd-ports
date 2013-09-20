@@ -19,6 +19,7 @@ PLIST_FILES=	bin/wmshuffle \
 		%%DATADIR%%/skin-lucyenne.xpm
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^void .*main|int main|' ${WRKSRC}/wmshuffle.c

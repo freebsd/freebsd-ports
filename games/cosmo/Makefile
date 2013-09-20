@@ -26,6 +26,7 @@ USES=		imake:notall
 USE_XORG=	x11 xext
 NO_INSTALL_MANPAGES=	yes
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/cosmorc ${PREFIX}/lib/X11/cosmo
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/moon.tif.gz \

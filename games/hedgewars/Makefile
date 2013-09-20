@@ -36,6 +36,7 @@ OPTIONS_DEFAULT=VIDEOREC SERVER
 VIDEOREC_DESC=	Enable video recording (requires ffmpeg)
 SERVER_DESC=	Build server (requires haskell)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVIDEOREC}

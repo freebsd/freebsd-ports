@@ -31,6 +31,7 @@ DESKTOP_ENTRIES=	"Bos Wars" "${COMMENT}" "" \
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

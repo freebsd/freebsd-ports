@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	nInvaders
-# Date created:			Tue Jul 09, 2002
-# Whom:				Michael L. Hostbaek (mich@freebsdcluster.org)
-#
+# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
 # $FreeBSD$
-#
 
 PORTNAME=	nInvaders
 PORTVERSION=	0.1.1
@@ -16,6 +11,7 @@ MAINTAINER=	mich@FreeBSD.org
 COMMENT=	The nIvaders game is a Space Invaders clone for ncurses
 
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CC|#CC|g" \
 	-e "s|^CFLAGS|#CFLAGS|g" ${WRKSRC}/Makefile

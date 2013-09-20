@@ -19,6 +19,7 @@ USE_SDL=	sdl image gfx ttf
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 ALL_TARGET=	linux
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|make|${GMAKE}|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/^CXX=/ d; s|^SDL=.*|SDL=${SDL_CONFIG}|; \

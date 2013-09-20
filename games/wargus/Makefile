@@ -25,6 +25,7 @@ SUB_FILES=	${PORTNAME} pkg-message
 
 MAKE_ARGS+=	CFLAGS+="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15" LDFLAGS+=-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 	cd ${WRKSRC} && \

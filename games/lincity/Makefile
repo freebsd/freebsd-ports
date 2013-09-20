@@ -21,6 +21,7 @@ MAN6=		lincity.6
 
 OPTIONS_DEFINE=	SVGALIB NLS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSVGALIB}

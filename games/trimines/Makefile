@@ -13,6 +13,7 @@ COMMENT=	Mine sweeper game that uses triangles instead of squares
 
 USE_SDL=	sdl
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' ${WRKSRC}/src/gfx.c
 

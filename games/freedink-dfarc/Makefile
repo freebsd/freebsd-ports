@@ -20,4 +20,5 @@ CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG} --disable-upx --disable-static
 
 MAN1=		dfarc.1 freedink-dfarc.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

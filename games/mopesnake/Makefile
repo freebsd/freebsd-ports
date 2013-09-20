@@ -27,6 +27,7 @@ DESKTOP_ENTRIES="Master Of Pain (Eating) - Snake" "${COMMENT}" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

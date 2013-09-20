@@ -1,9 +1,5 @@
-# New ports collection makefile for:	glest-data
-# Date created:				2006-04-10
-# Whom:					Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	data
 PORTVERSION=	3.2.1
@@ -27,6 +23,7 @@ DATADIR=	share/${PKGNAMEPREFIX:S/-//}
 DOCSDIR=	share/doc/${PKGNAMEPREFIX:S/-//}
 GLESTDATADIRE=	data maps scenarios techs tilesets tutorials
 
+NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKSRC}/docs/license.txt ${WRKSRC}/docs/license-data.txt
 	@${RMDIR} ${WRKSRC}/screens

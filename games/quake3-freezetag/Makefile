@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Q3 Mod: Freeze Tag
-# Date created:				Sun Jun 24 00:08:58 EDT 2001
-# Whom:					pat@databits.net
-#
+# Created by: pat@databits.net
 # $FreeBSD$
-#
 
 PORTNAME=	freezetag
 PORTVERSION=	1.51b
@@ -24,6 +20,7 @@ NO_BUILD=	yes
 
 DATADIR=	${Q3DIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../quake3-data/Makefile.include"
 
 .include <bsd.port.pre.mk>

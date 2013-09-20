@@ -40,6 +40,7 @@ OPENAL_DESC=	Build OpenAL sound module
 IRC_DESC=	Build IRC client module
 TV_SRV_DESC=	Build Warsow TV server
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}

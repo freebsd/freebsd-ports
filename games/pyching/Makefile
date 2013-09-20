@@ -20,6 +20,7 @@ USE_PYTHON=	yes
 
 MAN1=		${PORTNAME}.1
 
+NO_STAGE=	yes
 post-patch:
 	@cd ${WRKSRC}; ${SED} 's|/usr/share/|${PYTHON_SITELIBDIR}/|g' \
 		< ${PORTNAME}.sh > ${PORTNAME}

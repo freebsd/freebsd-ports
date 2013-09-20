@@ -26,6 +26,7 @@ PORTDOCS=	*
 PORTDATA=	*
 MAN6=		netpanzer.6
 
+NO_STAGE=	yes
 post-configure:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/SConstruct
 

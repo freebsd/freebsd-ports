@@ -47,6 +47,7 @@ DESKTOP_ENTRIES="eboard" \
 		"Game;BoardGame;GTK;" \
 		true
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJOYSTICK}

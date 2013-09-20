@@ -31,6 +31,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 DATA_DIRS=	art campaigns collision fonts levels meshes scenes scripts textures
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

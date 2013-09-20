@@ -1,4 +1,4 @@
-# Created by:   nemysis@gmx.ch
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
 
 PORTNAME=	tong
@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 DESKTOP_ENTRIES="TONG!" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

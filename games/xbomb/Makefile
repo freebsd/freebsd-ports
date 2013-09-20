@@ -21,6 +21,7 @@ PLIST_FILES=	bin/xbomb \
 		lib/X11/xbomb/xbomb6.hi
 PLIST_DIRS=	lib/X11/xbomb
 
+NO_STAGE=	yes
 do-build:
 	cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} -DLOCALBASE=\"${LOCALBASE}\" \
 		`pkg-config --cflags xaw7` *.c -o xbomb \

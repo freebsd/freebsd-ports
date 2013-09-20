@@ -31,6 +31,7 @@ SERVER_DESC=	Enable dedicated server
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:R}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

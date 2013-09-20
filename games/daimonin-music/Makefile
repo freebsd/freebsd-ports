@@ -21,6 +21,7 @@ MYDATADIR=	${DATADIR:S/-music//}
 
 EXTRACT_BEFORE_ARGS=	-aqo
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${MYDATADIR}/media
 	${CP} -p ${WRKDIR}/* ${MYDATADIR}/media/

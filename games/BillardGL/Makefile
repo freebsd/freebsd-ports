@@ -39,6 +39,7 @@ OPTIONS_DEFINE=	LANG
 OPTIONS_DEFAULT=LANG
 LANG_DESC=	Install Language
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLANG}

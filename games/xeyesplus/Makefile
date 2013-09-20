@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xeyes+
-# Date created:         20 Oct 1996
-# Whom:                 Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
-#
+# Created by: Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	xeyes+
 PORTVERSION=	2.02
@@ -19,6 +15,7 @@ USE_XORG=	xpm
 
 PLIST_FILES=	bin/xeyes+
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${LOCALBASE}/include -DXPM -DUSLEEP \
 		-o xeyes+ xeyes+.c -L${LOCALBASE}/lib -lX11 -lXpm -lm

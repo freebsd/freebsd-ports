@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}/SDL\ Sand/SDL\ Sand
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	readme.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

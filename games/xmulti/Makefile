@@ -20,6 +20,7 @@ MAN1=		xmaid.1
 NO_MANCOMPRESS=	yes
 DOCSDIR=	${PREFIX}/share/doc/ja/{PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

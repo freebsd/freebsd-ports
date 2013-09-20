@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cardpics
-# Date created:		Mon 8 mar 2004
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=		cardpics
 PORTVERSION=		0.4
@@ -17,4 +13,5 @@ COMMENT=		Free cards for your free card games!
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

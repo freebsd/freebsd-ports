@@ -38,6 +38,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 OPTIONS_DEFINE=	EDITOR
 EDITOR_DESC=	Install MegaGlest Editor
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEDITOR}

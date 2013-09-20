@@ -30,6 +30,7 @@ SUB_FILES+=	pkg-message
 MAN6=		empire.6 emp_server.6 empdump.6 empsched.6 \
 		fairland.6 files.6 pconfig.6
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

@@ -20,6 +20,7 @@ PORTVER=	20121209
 
 do-install:	# empty
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "This is a meta-port, meaning that it just depends on its subparts of the port."
 	@${ECHO_MSG} "It won't build and install all the parts until you have typed make install"

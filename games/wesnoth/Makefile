@@ -46,6 +46,7 @@ SERVER_DESC=	Server
 TESTS_DESC=	Unit tests
 TOOLS_DESC=	Extra tools for artists and translators
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # XXX: breaks compilation because of -Werror

@@ -19,6 +19,7 @@ DESKTOP_ENTRIES=	"HexGlass" "${COMMENT}" \
 			"${PREFIX}/share/pixmaps/${PORTNAME}.xpm" \
 			"${PORTNAME}" "BlocksGame;Game;" false
 
+NO_STAGE=	yes
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS}
 

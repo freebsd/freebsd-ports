@@ -33,6 +33,7 @@ DATADIR=	share/balazar_brothers
 OPTIONS_DEFINE=	OPENAL
 OPTIONS_DEFAULT=	OPENAL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 

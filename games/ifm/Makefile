@@ -19,6 +19,7 @@ CONFIGURE_ENV=	WISH=${LOCALBASE}/bin/wish8.4
 
 MAN1=		ifm.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/lib doc man/lib man/g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/docdir/d' ${WRKSRC}/Makefile.in

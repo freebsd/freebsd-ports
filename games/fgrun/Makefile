@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--with-boost="${LOCALBASE}"
 USE_GMAKE=	yes
 USE_GL=		gl
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

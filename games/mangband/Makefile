@@ -23,6 +23,7 @@ GCU_DESC=	Display module GCU
 X11_DESC=	Display module X11
 SDL_DESC=	Display module SDL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGCU}

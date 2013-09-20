@@ -29,6 +29,7 @@ MAN6=		liquidwar.6 \
 
 OPTIONS_DEFINE=		ASM
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MASM}

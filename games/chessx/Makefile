@@ -21,6 +21,7 @@ STOCKFISH_DESC=	Build with Stockfish Chess Engine
 CRAFTY_DESC=	Build with Crafty Chess Application
 OPTIONS_DEFAULT=STOCKFISH CRAFTY
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSTOCKFISH}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	einstein
-# Date created:				30 january 2005
-# Whom:					edwin@mavetju.org
-#
+# Created by: edwin@mavetju.org
 # $FreeBSD$
-#
 
 PORTNAME=	einstein
 PORTVERSION=	2.0
@@ -18,6 +14,7 @@ COMMENT=	Remake of old DOS game Sherlock, which was inspired by Albert Einstein'
 USE_SDL=	sdl ttf mixer
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

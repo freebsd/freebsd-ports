@@ -12,6 +12,7 @@ COMMENT=	Classic space-age stock trading game
 MAN6=		starlanes.6
 PLIST_FILES=	bin/starlanes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's| restrict| m_restrict| ; \

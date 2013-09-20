@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--enable-scorefile=${PREFIX}/share/xinvaders/xinvaders.scores
 
 MAN6=		xinvaders.6
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/Vaders.ad ${PREFIX}/lib/X11/app-defaults/Vaders
 	@${MKDIR} ${PREFIX}/share/xinvaders

@@ -21,6 +21,7 @@ USE_GL=		glew
 USES=		cmake:outsource iconv
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/^Icon=/s,supertux.png,supertux2.png,' \
 		${WRKSRC}/supertux2.desktop

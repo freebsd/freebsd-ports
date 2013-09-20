@@ -30,6 +30,7 @@ DESKTOP_ENTRIES="Kartofel" \
 		"Game;LogicGame;ArcadeGame;" \
 		false
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^CXXOPTIONS/ d; s|g++|${CXX} ${CXXFLAGS}|; \
 		s|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/Makefile

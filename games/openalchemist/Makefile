@@ -40,6 +40,7 @@ USES=		pkgconfig iconv
 
 PORTDOCS=	AUTHORS ChangeLog README TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

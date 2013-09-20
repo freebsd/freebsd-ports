@@ -31,6 +31,7 @@ DOCSRCDIR2=	${WRKSRC}/src/manual
 DOCSDIR2=	${DOCSDIR}/manual
 DOC_FILES2=	*.jpg *.html
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

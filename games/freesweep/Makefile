@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freesweep
-# Date created:				25 July 1999
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	freesweep
 PORTVERSION=	0.92
@@ -28,6 +24,7 @@ PORTDOCS=	CHANGES README
 PLIST_FILES=	bin/freesweep %%DATADIR%%/sweeprc %%DATADIR%%/sweeptimes
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

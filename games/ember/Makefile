@@ -40,6 +40,7 @@ USES=	pathfix pkgconfig
 USE_BZIP2=	YES
 CPPFLAGS+=	-DBR_NO_MACROS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

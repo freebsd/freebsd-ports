@@ -29,6 +29,7 @@ PYDISTUTILS_PKGNAME=	UnknownHorizons
 
 MAN6=			unknown-horizons.6
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386

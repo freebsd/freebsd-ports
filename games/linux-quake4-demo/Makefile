@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-quake4-demo
-# Date created:				19 Jul 2006
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	quake4
 PORTVERSION=	1.0
@@ -27,6 +23,7 @@ NO_PACKAGE=	Package will be 337MB, set FORCE_PACKAGE if you really want it
 Q4DIR=		lib/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 PLIST_SUB=	Q4DIR="${Q4DIR}"
 
+NO_STAGE=	yes
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	childsplay_plugins
-# Date created:				6 July 2004
-# Whom:					bruno
-#
+# Created by: bruno
 # $FreeBSD$
-#
 
 PORTNAME=	childsplay_plugins
 PORTVERSION=	0.90
@@ -20,6 +16,7 @@ RUN_DEPENDS=	childsplay:${PORTSDIR}/games/childsplay
 
 USE_PYTHON=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900000

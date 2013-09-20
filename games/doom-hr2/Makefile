@@ -22,6 +22,7 @@ PLIST_FILES=	%%DATADIR%%/hr2final.wad
 PLIST_DIRS=	%%DATADIR%%
 PORTDOCS=	hr2final.txt
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/hr2final.wad ${DATADIR}

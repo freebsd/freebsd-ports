@@ -54,6 +54,7 @@ MLINKS=	filters.1 b1ff.1 \
 		filters.1 scottish.1 \
 		filters.1 scramble.1
 
+NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKSRC}/${PORTNAME}.6 ${WRKSRC}/${MAN1}
 

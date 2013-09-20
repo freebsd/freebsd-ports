@@ -30,6 +30,7 @@ DESKTOP_ENTRIES="Enemy Territory TrueCombat:Elite" \
 		"" \
 		false
 
+NO_STAGE=	yes
 do-build:
 .for f in et etded
 	@${ECHO_CMD} '#!/bin/sh' > ${WRKSRC}/${f}-tce

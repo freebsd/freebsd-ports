@@ -1,9 +1,5 @@
-# New ports collection makefile for:	balazar
-# Date created:				2005-10-06
-# Whom:					Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	balazar
 PORTVERSION=	0.3.4
@@ -34,6 +30,7 @@ USES=		gettext
 PYDISTUTILS_PKGNAME=	Balazar
 PYDISTUTILS_EGGINFODIR=	${PREFIX}/share
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/setup.cfg
 

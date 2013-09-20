@@ -1,4 +1,3 @@
-# Create by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
 
 PORTNAME=	warzone2100
@@ -42,6 +41,7 @@ REINPLACE_ARGS=	-i ''
 PORTDOCS=	*
 USE_GCC=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

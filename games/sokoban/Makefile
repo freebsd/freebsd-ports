@@ -14,6 +14,7 @@ COMMENT=	Logical game: problems with packets in cave
 WRKSRC=			${WRKDIR}/sokoban
 ALL_TARGET=
 
+NO_STAGE=	yes
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/sokoban ${PREFIX}/bin/sokoban
 	@ ${CHOWN} root:games ${PREFIX}/bin/sokoban

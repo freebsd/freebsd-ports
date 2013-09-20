@@ -1,9 +1,5 @@
-# New ports collection makefile for: glbsp
-# Date created:		22 Jan 2004
-# Whom:			Igor Pokrovsky <tiamat@comset.net>
-#
+# Created by: Igor Pokrovsky <tiamat@comset.net>
 # $FreeBSD$
-#
 
 PORTNAME=	glbsp
 PORTVERSION=	2.20
@@ -25,6 +21,7 @@ PLUGIN_DESC=	Build plugin used in DOOM engines
 MAN1=		glbsp.1
 PORTDOCS=	README.txt USAGE.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUI}

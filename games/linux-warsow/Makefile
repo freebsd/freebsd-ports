@@ -52,6 +52,7 @@ FLAVOR_DESC=	Executable Selection
 
 OPTIONS_DEFAULT=	CLIENT SERVER
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 

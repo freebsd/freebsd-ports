@@ -24,6 +24,7 @@ OPTIONS_DEFINE=	MUSIC DOCS
 OPTIONS_DEFAULT=	MUSIC
 MUSIC_DESC=	Install original music pack
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMUSIC}

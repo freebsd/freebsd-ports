@@ -24,6 +24,7 @@ USES=		motif
 CONFIGURE_ARGS+=	--with-motif
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|XSHISEN_VERSION|${PORTVERSION}|g' ${WRKSRC}/lang/XShisen.ad*

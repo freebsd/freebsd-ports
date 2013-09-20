@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Algorithm-Pair-Best
-# Date created:				12 Jun 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Algorithm-Pair-Best
 PORTVERSION=	1.036
@@ -21,4 +17,5 @@ USE_PERL5=	configure
 
 MAN3=		Algorithm::Pair::Best.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

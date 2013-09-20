@@ -21,6 +21,7 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpenguins
-# Date created:				24 January 2001
-# Whom:					lyngbol@candid.dk
-#
+# Created by: lyngbol@candid.dk
 # $FreeBSD$
-#
 
 PORTNAME=	xpenguins
 PORTVERSION=	2.2
@@ -23,6 +19,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=		xpenguins.1
 
+NO_STAGE=	yes
 post-install:
 	/usr/bin/umask 0222 && \
 	${TAR} zx --no-same-owner -f ${DISTDIR}/xpenguins-daemon-1.2.tar.gz -C ${DATADIR}/themes

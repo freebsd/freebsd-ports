@@ -1,9 +1,5 @@
-# New ports collection makefile for:  tetrons
-# Date created:                       Tue, Dec 19 2006 15:00:38 EST
-# Whom:                               James Bailie <jimmy@mammothcheese.ca>
-#
+# Created by: James Bailie <jimmy@mammothcheese.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	tetrons
 PORTVERSION=	1.10
@@ -19,4 +15,5 @@ MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	x11 xext xi
 PLIST_FILES=	bin/tetrons
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

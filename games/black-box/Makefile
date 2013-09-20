@@ -1,4 +1,4 @@
-# Created By: nemysis@gmx.ch
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
 
 PORTNAME=	black-box
@@ -25,6 +25,7 @@ PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
 DESKTOP_ENTRIES="Black-Box" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

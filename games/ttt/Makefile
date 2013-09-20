@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ttt
-# Date created:				11 July 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	ttt
 PORTVERSION=	2011.04
@@ -33,6 +29,7 @@ PORTDOCS=	README
 
 SUB_FILES=	${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

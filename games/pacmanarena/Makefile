@@ -30,6 +30,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 PORTDATA=	*
 PORTDOCS=	README
 
+NO_STAGE=	yes
 post-patch:
 # Fix data location
 	@${REINPLACE_CMD} -e 's|@prefix@|${DATADIR}|' \

@@ -45,6 +45,7 @@ CLIENT_DESC=	Build client
 DEDICATED_DESC=	Build dedicated server
 MASTER_DESC=	Build master server
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}

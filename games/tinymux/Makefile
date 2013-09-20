@@ -1,9 +1,5 @@
-# New ports collection makefile for:	TinyMUX
-# Date created:		1998/05/28
-# Whom:			cjohnson
-#
+# Created by: cjohnson
 # $FreeBSD$
-#
 
 PORTNAME=	tinymux
 PORTVERSION=	2.6.5.${PATCHLEVEL}
@@ -28,6 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PATCHLEVEL=	33
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

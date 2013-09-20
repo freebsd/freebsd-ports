@@ -35,6 +35,7 @@ OPTIONS_DEFINE=	GOD_MODE OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 GOD_MODE_DESC=	Enable God Mode (toggle with 'g')
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

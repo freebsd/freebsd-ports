@@ -1,9 +1,5 @@
-# New ports collection makefile for:	games/wmquake
-# Date created:				17.01.2005
-# Whom:					Ulrich Spoerlein <uspoerlein@gmail.com>
-#
+# Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	wmquake
 PORTVERSION=	1.1
@@ -26,6 +22,7 @@ PLIST_FILES=	bin/wmquake
 CFLAGS+=	-O3 -fomit-frame-pointer -funroll-loops -fno-strength-reduce
 .endif
 
+NO_STAGE=	yes
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG} "Define WITH_OPTIMIZED_CFLAGS to enable aggressive optimizations"

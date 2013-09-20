@@ -26,6 +26,7 @@ DESKTOP_ENTRIES=	"Pingus" "${COMMENT}" "" \
 
 PLIST=		${WRKDIR}/pkg-plist
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|add_path("data")|add_path("${DATADIR}")|g' \
 		${WRKSRC}/src/pingus_main.cpp

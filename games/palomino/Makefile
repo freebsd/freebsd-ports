@@ -44,6 +44,7 @@ PORTDOCS=	*
 DESKTOP_ENTRIES=	"Palomino" "${COMMENT}" "${PORTNAME}" \
 			"${PORTNAME}" "Game;ArcadeGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSDL}

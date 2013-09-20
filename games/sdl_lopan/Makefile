@@ -34,6 +34,7 @@ PORTDOCS=	Changelog README
 DESKTOP_ENTRIES="SDL Lopan" "${COMMENT}" "sdllopan" \
 		"sdllopan" "Game;ArcadeGame;" ${FALSE}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

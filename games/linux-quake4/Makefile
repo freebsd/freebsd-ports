@@ -29,6 +29,7 @@ GERMANY_DESC=	Germany version
 
 OPTIONS_DEFAULT=	THREADS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 

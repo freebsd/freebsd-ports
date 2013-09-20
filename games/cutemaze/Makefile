@@ -20,6 +20,7 @@ INSTALLS_ICONS=	yes
 
 PORTDOCS=	ChangeLog README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-configure:

@@ -26,6 +26,7 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # XXX: should probably be converted to use the LICENSE framework

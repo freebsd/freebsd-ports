@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MANUAL_PACKAGE_BUILD=huge
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.am" -delete
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-doom3
-# Date created:				7 May 2006
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	doom3
 PORTVERSION=	1.3.1.1304
@@ -30,6 +26,7 @@ NO_CDKEY_DESC=	Use older version which doesn't require cd key
 DATADIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	doom3 doom3-ded pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNO_CDKEY}

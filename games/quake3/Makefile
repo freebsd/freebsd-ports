@@ -42,6 +42,7 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 REALVERSION=	1.32b
 VM_ARCHS=	i386 powerpc
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 

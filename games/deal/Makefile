@@ -1,9 +1,5 @@
-# New ports collection makefile for:	deal
-# Date created:				Apr 2, 2001
-# Whom:					Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	deal
 PORTVERSION=	2.5
@@ -18,6 +14,7 @@ PLIST_FILES=	bin/deal
 
 CFLAGS+=	-lm
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -o deal deal.c
 

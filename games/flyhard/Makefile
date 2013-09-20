@@ -23,6 +23,7 @@ LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

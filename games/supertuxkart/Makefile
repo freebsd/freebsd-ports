@@ -38,6 +38,7 @@ IRR_CPPFLAGS=	-DNO_IRR_USE_NON_SYSTEM_JPEG_LIB_ \
 		-DNO_IRR_COMPILE_WITH_BZIP2_ \
 		-DNO_IRR_COMPILE_WITH_JOYSTICK_EVENTS_
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|libIrrlicht.a|& -L${LOCALBASE}/lib -lpng -ljpeg|' ${WRKSRC}/CMakeLists.txt
 

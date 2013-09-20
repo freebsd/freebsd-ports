@@ -37,6 +37,7 @@ CMAKE_ARGS+=	-DJPEG_FACTORY:BOOL=ON \
 
 MAN1=	js_demo.1 fgjs.1 gl-info.1 fgfs.1 fgpanel.1 terrasync.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

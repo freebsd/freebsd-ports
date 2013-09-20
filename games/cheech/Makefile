@@ -30,6 +30,7 @@ DESKTOP_ENTRIES=	"cheech" \
 INSTALL_TARGET=	install install-cheechdocDATA
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|doc/cheech|share/doc/cheech|g" \
 		-e "s|: install-cheechdocDATA|:|g" \

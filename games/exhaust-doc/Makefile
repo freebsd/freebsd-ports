@@ -12,6 +12,7 @@ COMMENT=	Redcode simulator easy to embed into applications (docs)
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|./\(exhaust\)|\1|g' ${WRKSRC}/test.pl
 

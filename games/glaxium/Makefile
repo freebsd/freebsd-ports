@@ -30,6 +30,7 @@ DESKTOP_ENTRIES=	"Glaxium" \
 			"Game;ArcadeGame;" \
 			false
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g; \
 		 s|/games/glaxium|/glaxium|g' ${WRKSRC}/configure

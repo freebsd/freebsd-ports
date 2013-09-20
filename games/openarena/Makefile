@@ -38,4 +38,5 @@ Q3DIR=		${DATADIR}
 # No icon included with OpenArena
 Q3ICON=
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

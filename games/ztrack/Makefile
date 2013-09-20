@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ztrack
-# Date created:				1 May 1997
-# Whom: Andrey Zakhvatov <andy@icc.surw.chel.su>
-#
+# Created by: Andrey Zakhvatov <andy@icc.surw.chel.su>
 # $FreeBSD$
-#
 
 PORTNAME=	ztrack
 PORTVERSION=	1.0
@@ -21,6 +17,7 @@ ALL_TARGET=	ztrack
 MAN6=		ztrack.6
 PLIST_FILES=	bin/ztrack
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ztrack ${PREFIX}/bin/ztrack
 	${INSTALL_MAN} ${WRKSRC}/ztrack.6 ${MANPREFIX}/man/man6

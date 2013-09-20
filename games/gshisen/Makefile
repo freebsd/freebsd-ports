@@ -1,9 +1,5 @@
-# New ports collection makefile for:    GShisen
-# Date created:         12 Jun 2001
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gshisen
 PORTVERSION=	1.3.0
@@ -22,4 +18,5 @@ USE_GNUSTEP_INSTALL=	yes
 
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -22,4 +22,5 @@ USE_XORG=	x11
 MAN1=		xzip.1
 PLIST_FILES=	bin/xzip
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

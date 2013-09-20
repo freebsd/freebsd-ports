@@ -37,6 +37,7 @@ DEDICATED_DESC=	Build dedicated server
 GAME_DESC=	Build main game (default mod)
 REF_GL_DESC=	Build renderer (required for client)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}

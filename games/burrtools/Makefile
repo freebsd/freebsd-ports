@@ -30,6 +30,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/burrTxt bin/burrTxt2 bin/burrGui
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

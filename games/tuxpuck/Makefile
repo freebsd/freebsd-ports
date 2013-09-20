@@ -28,6 +28,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 MAN6=		${PORTNAME}.6
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

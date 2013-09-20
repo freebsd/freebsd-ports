@@ -33,6 +33,7 @@ SUB_FILES=	pkg-message
 DESKTOP_ENTRIES="Python Kye" "${COMMENT}" "Kye" \
 		"Kye" "Game;LogicGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract-script:

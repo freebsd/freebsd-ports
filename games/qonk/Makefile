@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qonk
-# Date created:				10 Jul 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	qonk
 PORTVERSION=	0.3.1
@@ -21,6 +17,7 @@ USE_SDL=	sdl gfx ttf image
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lSDL |`${SDL_CONFIG} --libs` |' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}

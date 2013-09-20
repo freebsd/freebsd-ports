@@ -26,6 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
 PORTDOCS=	CHANGELOG README_EN.TXT README_RU.TXT
 
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -31,6 +31,7 @@ OPTIONS_DEFAULT=	ELSOUND ELMUSIC
 ELSOUND_DESC=	Install additional sound files
 ELMUSIC_DESC=	Install additional music files
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MELSOUND}

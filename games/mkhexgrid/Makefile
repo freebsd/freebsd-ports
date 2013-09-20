@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mkhexgrid
-# Date created:         		29 Dec 2006
-# Whom:                 		aaron@FreeBSD.org
-#
+# Created by: aaron@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	mkhexgrid
 PORTVERSION=	0.1.1
@@ -26,6 +22,7 @@ USE_GMAKE=	yes
 PORTDOCS=	mkhexgrid.html
 PLIST_FILES=	bin/mkhexgrid
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mkhexgrid ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

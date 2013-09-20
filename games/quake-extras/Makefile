@@ -33,6 +33,7 @@ RETEXTURE_HQ_DESC=	High quality textures (200MB)
 RETEXTURE_LW_DESC=	Low (still good) quality textures (15MB)
 SKYBOXES_DESC=		Skyboxes (sky replacement images)
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../quake-data/Makefile.include"
 .include <bsd.port.options.mk>
 

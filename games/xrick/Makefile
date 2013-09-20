@@ -1,9 +1,5 @@
-# New ports collection makefile for:   xrick
-# Date created:        15 March 2002
-# Whom:                David Siebörger <drs@rucus.ru.ac.za>
-#
+# Created by: David Siebörger <drs@rucus.ru.ac.za>
 # $FreeBSD$
-#
 
 PORTNAME=	xrick
 PORTVERSION=	021212
@@ -24,6 +20,7 @@ USE_SDL=	sdl
 MAN6=		xrick.6
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|sysarg_args_data = NULL|sysarg_args_data = "${PREFIX}/share/xrick/data.zip"|' ${WRKSRC}/src/sysarg.c
 

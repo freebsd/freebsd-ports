@@ -25,6 +25,7 @@ INSTALLS_OMF=	yes
 run-autotools:: run-autotools-aclocal run-autotools-autoheader \
 		run-autotools-automake run-autotools-autoconf
 
+NO_STAGE=	yes
 post-extract:
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/intltoolize -c -f
 

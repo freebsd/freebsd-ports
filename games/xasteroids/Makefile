@@ -26,6 +26,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lXext -lX11 -lm
 MAN6=		xasteroids.6
 PLIST_FILES=	bin/xasteroids
 
+NO_STAGE=	yes
 post-extract:
 	@${LN} -sf xast.man ${WRKSRC}/xasteroids.6
 

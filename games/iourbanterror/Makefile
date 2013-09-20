@@ -33,6 +33,7 @@ HOMEPATH=	/.ioUrbanTerror
 MAKE_ARGS+=	BUILD_MISSIONPACK=0 \
 		BUILD_STANDALONE=1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's/ioquake3/${Q3CLIENT}/g' \

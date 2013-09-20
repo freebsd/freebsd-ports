@@ -1,9 +1,5 @@
-# New ports collection makefile for:    tksol
-# Date created:         26 June 1995
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tksol
 PORTVERSION=	1.8.4
@@ -24,6 +20,7 @@ USE_TK_WRAPPER=	yes
 
 MAN6=		tksol.6
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^#/bin/sh|#!/bin/sh| ; \

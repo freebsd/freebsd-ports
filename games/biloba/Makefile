@@ -21,6 +21,7 @@ DESKTOP_ENTRIES="Biloba" \
 		"Game;LogicGame;" \
 		false
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/biloba_icon.png ${DATADIR}/
 

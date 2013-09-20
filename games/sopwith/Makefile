@@ -17,4 +17,5 @@ GNU_CONFIGURE=	yes
 
 MAN6=		sopwith.6
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

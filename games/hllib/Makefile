@@ -24,6 +24,7 @@ HLLIB_VERS=	2.4.4
 PLIST_FILES=	include/hl.h lib/libhl.so.${HLLIB_VERS} \
 		lib/libhl.so.2 lib/libhl.so
 
+NO_STAGE=	yes
 post-patch:
 # Allow propagating of CXX, CXXFLAGS, and PREFIX; fix Linuxism and symlinks
 	@${REINPLACE_CMD} -E 's,^([CP][^=]*)=,\1?=, ; s,g root,g wheel, ; \

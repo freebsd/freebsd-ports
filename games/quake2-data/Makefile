@@ -33,6 +33,7 @@ Q2_DEMO=	q2-314-demo-x86.exe
 Q2_SRC=		q2src${PORTVERSION:S/.//}.shar.Z
 Q2_UPDATE=	q2-${PORTVERSION}-x86-full.exe
 
+NO_STAGE=	yes
 .include "Makefile.include"	# must be included before bsd.port.options.mk
 .include <bsd.port.options.mk>
 

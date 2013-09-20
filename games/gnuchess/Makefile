@@ -21,6 +21,7 @@ OPTIONS_DEFINE=		OPENING_BOOK
 OPTIONS_DEFAULT=	OPENING_BOOK
 OPENING_BOOK_DESC=	Install opening book (25 MB download)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENING_BOOK}

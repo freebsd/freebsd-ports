@@ -27,6 +27,7 @@ ICON_SIZES=	16x16 22x22 32x32 48x48
 DESKTOP_ENTRIES="PySpaceWar" "${COMMENT}" ${PORTNAME} \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-nwserver
-# Date created:		22 July 2002
-# Whom:			Igor Pokrovsky <tiamat@comset.net>
-#
+# Created by: Igor Pokrovsky <tiamat@comset.net>
 # $FreeBSD$
-#
 
 PORTNAME=	nwserver
 PORTVERSION=	1.32
@@ -20,6 +16,7 @@ USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}
 
+NO_STAGE=	yes
 do-build:
 	${BRANDELF} -t Linux ${WRKDIR}/nwserver
 

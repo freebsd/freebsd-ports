@@ -30,6 +30,7 @@ DESKTOP_ENTRIES="Nelly's Rooftop Garden" "${COMMENT}" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

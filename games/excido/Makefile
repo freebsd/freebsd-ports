@@ -1,9 +1,5 @@
-# New ports collection makefile for:	excido
-# Date created:				19 Aug 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	excido
 PORTVERSION=	0.1.5c
@@ -29,6 +25,7 @@ USE_SDL=	image sdl ttf
 USE_OPENAL=	al alut
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

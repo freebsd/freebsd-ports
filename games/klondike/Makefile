@@ -1,9 +1,5 @@
-# New ports collection makefile for:    klondike
-# Date created:         26-Apr-97
-# Whom:                 johnh@isi.edu
-#
+# Created by: johnh@isi.edu
 # $FreeBSD$
-#
 
 PORTNAME=	klondike
 PORTVERSION=	1.9
@@ -19,6 +15,7 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --datadir=${PREFIX}/share/games
 USE_TK_RUN=	yes
 MAN6=		klondike.6
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ENV=	WISHX=${WISH}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	legends
-# Date created:				2007-12-16
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	legends
 PORTVERSION=	0.4.1.43
@@ -32,6 +28,7 @@ DATADIR=	${PREFIX}/lib/${PORTNAME}
 MAP_PACK=	BTMappack-1.05.unf
 PLIST_SUB=	MAP_PACK="${MAP_PACK}"
 
+NO_STAGE=	yes
 post-extract:
 	@cd ${WRKDIR} && ${TAR} xf legends.tar
 

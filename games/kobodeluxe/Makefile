@@ -34,6 +34,7 @@ DESKTOP_ENTRIES="Kobo Deluxe" \
 OPTIONS_DEFINE=	OPENGL
 OPTIONS_DEFAULT=OPENGL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENGL}

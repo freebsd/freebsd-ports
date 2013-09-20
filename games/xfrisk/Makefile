@@ -22,6 +22,7 @@ USE_XORG=	x11 xt xaw xmu sm ice
 USE_GMAKE=	yes
 MAKE_ENV=	XDIR="${LOCALBASE}"
 
+NO_STAGE=	yes
 do-install:
 .for file in aiColson aiConway aiDummy friskserver xfrisk
 	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin

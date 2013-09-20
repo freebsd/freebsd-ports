@@ -1,9 +1,5 @@
-# New ports collection makefile for:	games/exhaust-ma
-# Date created:			7 Aug 2005
-# Whom:				Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	exhaust-ma
 PORTVERSION=	1.9
@@ -23,6 +19,7 @@ USE_DOS2UNIX=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/exhaust ${PREFIX}/bin/${PORTNAME}
 

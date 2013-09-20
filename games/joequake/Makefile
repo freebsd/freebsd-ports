@@ -32,6 +32,7 @@ HUD_DESC=	High quality HUD images (for OpenGL)
 HUD_SA_DESC=	Same for Scourge of Armagon (hipnotic)
 X86_ASM_DESC= Enable x86 assembly code
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
 .include <bsd.port.options.mk>

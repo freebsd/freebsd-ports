@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	lm-solve
-# Date created:			Sep 5, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	lm-solve
 PORTVERSION=	0.8.4
@@ -27,4 +22,5 @@ MAN3=	Games::LMSolve.3 Games::LMSolve::Base.3 Games::LMSolve::Input.3 \
 	Games::LMSolve::Plank::Hex.3 Games::LMSolve::Plank::Base.3 \
 	Games::LMSolve::Registry.3 Games::LMSolve::Tilt::Base.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

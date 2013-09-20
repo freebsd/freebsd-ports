@@ -26,6 +26,7 @@ NO_WRKSUBDIR=	yes
 DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}-${VERSTR}
 DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}-${VERSTR}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

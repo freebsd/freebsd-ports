@@ -24,6 +24,7 @@ DESKTOP_ENTRIES="The Butterfly Effect" "Inspired by The Incredible Machine" \
 		"${DATADIR}/images/tbe-icon.png" \
 		"${PREFIX}/bin/tbe" "LogicGame;Game;" false
 
+NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} 's/ make/ ${GMAKE}/' \
 			${WRKSRC}/3rdParty/Makefile

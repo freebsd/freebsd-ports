@@ -29,6 +29,7 @@ PLIST_FILES=	bin/traindir3
 
 MAKEFILE=	Makefile.fc9
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/traindir3 ${PREFIX}/bin
 

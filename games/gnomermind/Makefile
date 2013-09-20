@@ -18,6 +18,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	OLD_PO_FILE_INPUT=1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^Info|#Info|g' ${WRKSRC}/Makefile.in
 

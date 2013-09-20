@@ -1,9 +1,5 @@
-# New ports collection makefile for:	blockade
-# Date created:		29 May 1999
-# Whom:			Chris Piazza <cpiazza@FreeBSD.org>
-#
+# Created by: Chris Piazza <cpiazza@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	blockade
 PORTVERSION=	1.00
@@ -23,6 +19,7 @@ USE_XORG=	x11
 MAN6=		blockade.6
 PLIST_FILES=	bin/blockade
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/blockade ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/blockade.6 ${MAN6PREFIX}/man/man6

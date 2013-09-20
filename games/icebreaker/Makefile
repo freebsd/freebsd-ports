@@ -27,6 +27,7 @@ PORTDOCS=	ChangeLog README README.SDL README.ifyoumakechanges README.themes TODO
 
 MAN6=		${PORTNAME}.6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

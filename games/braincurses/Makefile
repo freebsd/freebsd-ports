@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  braincurses
-# Date created:		Wed Jan 15, 2003
-# Whom:			Michael L. Hostbaek (mich@freebsdcluster.org)
-#
+# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
 # $FreeBSD$
-#
 
 PORTNAME=	braincurses
 PORTVERSION=	0.5a
@@ -17,6 +12,7 @@ COMMENT=	A clone of the Mastermind game
 LDFLAGS+=	-lncurses
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && \
 	${CXX} -c -o curses/windows.o curses/windows.cpp && \

@@ -20,6 +20,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 PORTDOCS=	*.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

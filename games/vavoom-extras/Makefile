@@ -33,6 +33,7 @@ MODELS_DESC=	Install 3D models (17MB)
 SOUNDTRACKS_DESC=	Install enhanced soundtracks (482MB)
 TEXTURES_DESC=	Install high resolution textures (157MB)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMODELS}

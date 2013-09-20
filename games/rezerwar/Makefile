@@ -21,6 +21,7 @@ CONFIGURE_ENV=	TARGET_BIN=${PREFIX}/bin \
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -27,6 +27,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		latrine.1
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<ncursesw/|<|'

@@ -20,6 +20,7 @@ PLIST_FILES=	bin/euchre
 
 DESKTOP_ENTRIES="Euchre" "" "" "${PORTNAME}" "" true
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^AM_/s|-Werror||' ${WRKSRC}/configure

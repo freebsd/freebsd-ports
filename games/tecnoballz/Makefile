@@ -32,6 +32,7 @@ DESKTOP_ENTRIES=	"TecnoballZ" \
 			"Game;ArcadeGame;" \
 			false
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC}/include -name '*.h' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|SDL/||'

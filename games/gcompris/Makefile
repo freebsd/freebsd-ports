@@ -37,6 +37,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN6=		gcompris.6
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 	    	${WRKSRC}/src/gcompris/gcompris.c

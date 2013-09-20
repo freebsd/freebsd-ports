@@ -35,6 +35,7 @@ USE_LINUX_APPS+=dri
 OPTIONS_DEFINE=	NWMOVIES
 NWMOVIES_DESC=	Support for movies using BinkPlayer
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 

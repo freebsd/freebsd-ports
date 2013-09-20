@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnocotan
-# Date created:				22nd July 2000
-# Whom:					Ade Lovett <ade@FreeBSD.org>
-#
+# Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pioneers
 PORTVERSION=	14.1
@@ -27,4 +23,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 MAN6=		pioneers.6 pioneers-server-gtk.6 pioneers-server-console.6 \
 		pioneersai.6 pioneers-meta-server.6 pioneers-editor.6
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	biorythm
-# Date created:				4 May 1999
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	biorythm
 PORTVERSION=	1.1.4
@@ -20,6 +16,7 @@ MAN6=		${PORTNAME}.6
 PORTDOCS=	ChangeLog README
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/VERSION/s|[[:space:]]"$$|\\n"| ; \
 		/COMPILED_DATE/d' ${WRKSRC}/biorythm.c

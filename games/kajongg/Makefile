@@ -21,5 +21,6 @@ USE_TWISTED_RUN=	yes
 USE_XZ=		yes
 CMAKE_ARGS=	-DINSTALL_KAJONGG:BOOL=TRUE
 
+NO_STAGE=	yes
 .include <${.CURDIR}/../kdegames4/Makefile.common>
 .include <bsd.port.mk>

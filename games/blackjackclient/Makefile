@@ -17,6 +17,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		%%JAVAJARDIR%%/${PORTNAME}.jar
 SUB_FILES=	${PORTNAME}.sh
 
+NO_STAGE=	yes
 post-extract-script:
 	@${ECHO_CMD} "Main-Class: ${PORTNAME}" > ${WRKDIR}/src/MANIFEST.MF
 

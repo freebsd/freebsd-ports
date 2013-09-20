@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freesynd
-# Date created:				2007-05-27
-# Whom:					Lars Engels <lars.engels@0x20.net>
-#
+# Created by: Lars Engels <lars.engels@0x20.net>
 # $FreeBSD$
-#
 
 PORTNAME=	freesynd
 PORTVERSION=	0.2
@@ -24,6 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
 SUB_FILES=	freesynd.sh
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|-lpng|-lpng -L${LOCALBASE}/lib|g; \
 		s|g++|${CXX}|g; \

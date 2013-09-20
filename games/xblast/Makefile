@@ -58,6 +58,7 @@ MODELS_DATE=	2005-01-06
 MUSICS_DATE=	2005-01-06
 SOUNDS_DATE=	2004-04-29
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext

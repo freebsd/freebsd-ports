@@ -54,6 +54,7 @@ ZAERO_DESC=	Build Zaero mission pack
 
 MAKE_ENV+=	BUILD_ARTS_SND=NO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for mod in ${MOD_LIST}

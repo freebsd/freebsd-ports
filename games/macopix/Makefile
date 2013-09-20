@@ -53,6 +53,7 @@ CONFIGURE_ARGS+=	--with-gtk1
 USE_GNOME+=	gtk20
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/_MAIL } MailStatus/_MAIL } MailStatus2/' ${WRKSRC}/src/main.h
 

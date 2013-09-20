@@ -28,6 +28,7 @@ WXUNICODE_DESC=	Enable Unicode support
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # The `-fno-strict-aliasing' flag (default on FreeBSD 6.0+) produces

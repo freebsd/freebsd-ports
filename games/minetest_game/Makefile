@@ -20,6 +20,7 @@ GH_COMMIT=	3928ecc
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/minetest/games/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} '*' ${DATADIR}/

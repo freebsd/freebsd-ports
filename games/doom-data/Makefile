@@ -34,6 +34,7 @@ HERETIC_WAD=	heretic1.wad
 HEXEN_WAD=	hexen.wad
 STRIFE_WAD=	strife0.wad
 
+NO_STAGE=	yes
 .include "Makefile.include"
 
 .include <bsd.port.options.mk>

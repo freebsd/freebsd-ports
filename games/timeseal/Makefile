@@ -1,9 +1,5 @@
-# New ports collection makefile for:	timeseal
-# Date created:				21 Feb 2006
-# Whom:					Jean-Yves Lefort <jylefort@FreeBSD.org>
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	timeseal
 PORTVERSION=	1.0
@@ -22,6 +18,7 @@ STRIP=		# strip(1) does not support a.out binaries
 PLIST_FILES=	bin/timeseal
 PKGMESSAGE=	pkg-message.aout
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${_DISTDIR}/${_DISTFILES} ${PREFIX}/bin/timeseal
 

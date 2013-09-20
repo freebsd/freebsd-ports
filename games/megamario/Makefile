@@ -1,5 +1,4 @@
-# Created by:	nemysis@gmx.ch
-#
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
 
 PORTNAME=	megamario
@@ -24,6 +23,7 @@ ALL_TARGET=	${PORTNAME}
 USE_SDL=	sdl image mixer ttf
 USE_GL=		glu
 
+NO_STAGE=	yes
 pre-extract:
 		${MKDIR} ${WRKDIR}/${DISTNAME}
 

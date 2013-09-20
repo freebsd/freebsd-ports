@@ -42,6 +42,7 @@ MANUAL_PACKAGE_BUILD=	yes # huge
 
 PORTDATA=	*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Taken from Mk/bsd.gnustep.mk

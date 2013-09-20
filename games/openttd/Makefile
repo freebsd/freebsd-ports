@@ -65,6 +65,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/${PORTNAME}/baseset/opengfx/opengfx.obg:${PORTS
 		${LOCALBASE}/share/${PORTNAME}/baseset/opensfx/opensfx.obs:${PORTSDIR}/games/opensfx
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::

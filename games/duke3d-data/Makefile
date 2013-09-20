@@ -1,7 +1,4 @@
-# New ports collection makefile for:	duke3d-data
-# Date Created:				2 Aug 2006
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
 
 PORTNAME=	data
@@ -31,6 +28,7 @@ SHAREWARE_DESC=	Install shareware game data version 1.3
 
 DATADIR=	${DN3DDIR}
 
+NO_STAGE=	yes
 .include "Makefile.include"
 
 .include <bsd.port.options.mk>

@@ -27,6 +27,7 @@ DESKTOP_ENTRIES=	"GL-117" \
 
 MAN6=		gl-117.6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	etpro
-# Date created:				7 May 2006
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	etpro
 PORTVERSION=	3.2.6
@@ -31,6 +27,7 @@ DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}
 
 PLIST_SUB=	VERSION="${PORTVERSION:S/./_/g}"
 
+NO_STAGE=	yes
 do-build:
 .for f in et etded
 	@(${ECHO} "#!/bin/sh"; \

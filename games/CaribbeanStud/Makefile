@@ -1,7 +1,5 @@
 # Created by: Andrey Zakhvatov
-#
 # $FreeBSD$
-#
 
 PORTNAME=		CaribbeanStud
 PORTVERSION=		1.0
@@ -18,6 +16,7 @@ MAKEFILE=		Xmakefile
 USES=			motif
 CFLAGS+=		-Wno-deprecated
 
+NO_STAGE=	yes
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/CaribbeanStud ${PREFIX}/bin
 	@ ${INSTALL_DATA} ${WRKSRC}/CaribbeanStud.res ${PREFIX}/lib/X11/app-defaults/CaribbeanStud

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vectoroids
-# Date created:				27 June 2003
-# Whom:					Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vectoroids
 PORTVERSION=	1.1.0
@@ -28,6 +24,7 @@ MAN6=		${PORTNAME}.6
 PORTDATA=	*
 PORTDOCS=	CHANGES.txt README.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

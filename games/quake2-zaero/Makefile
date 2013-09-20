@@ -23,6 +23,7 @@ DM_DESC=	Deathmatch maps
 
 DOCSDIR=	${PREFIX}/share/doc/${LATEST_LINK}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 
 .include <bsd.port.options.mk>

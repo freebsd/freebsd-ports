@@ -33,6 +33,7 @@ WRKSRC=		${WRKDIR}/GPL/GtkRadiant
 
 SUB_FILES=	${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/-ldl//' ${WRKSRC}/SConscript
 	@${GREP} -Rl 'defined[[:blank:]]*([[:blank:]]*__linux__[[:blank:]]*) || defined[[:blank:]]*([[:blank:]]*__APPLE__[[:blank:]]*)' ${WRKSRC} | \

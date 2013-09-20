@@ -36,6 +36,7 @@ OPTIONS_DEFINE=	NLS MUSIC
 MUSIC_DESC=	Install additional music
 OPTIONS_DEFAULT=	NLS MUSIC
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

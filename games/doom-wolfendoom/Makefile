@@ -17,6 +17,7 @@ NO_WRKSUBDIR=	yes
 
 DATADIR=	${DMDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
 .include <bsd.port.pre.mk>

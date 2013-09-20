@@ -1,9 +1,5 @@
-# New ports collection makefile for:	OpenSFX
-# Date created:				2010-11-04
-# Whom:					Ilya A. Arhipov <admin@gorodkirov.ru>
-#
+# Created by: Ilya A. Arhipov <admin@gorodkirov.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	opensfx
 PORTVERSION=	0.2.3
@@ -21,6 +17,7 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 LATEST_LINK=	openttd-${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/share/openttd/baseset/opensfx
 	${INSTALL_DATA} ${WRKDIR}/opensfx-${PORTVERSION}/* \

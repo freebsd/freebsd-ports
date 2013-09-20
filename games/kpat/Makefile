@@ -17,6 +17,7 @@ USES=		cmake:outsource
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d' \
 		${WRKSRC}/mimetypes/CMakeLists.txt

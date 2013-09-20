@@ -54,6 +54,7 @@ DESKTOP_ENTRIES=	"TORCS" \
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 EMPTYDIR=	champ dtmrace endrace ncrace practice quickrace

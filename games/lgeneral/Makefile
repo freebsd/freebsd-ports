@@ -31,6 +31,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		lgc-pg.1
 MAN6=		lgeneral.6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSOUND}

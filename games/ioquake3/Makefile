@@ -14,6 +14,7 @@ COMMENT?=	Cleaned-up and enhanced version of Quake 3
 
 USES=		pkgconfig gmake
 
+NO_STAGE=	yes
 # Port configuration flags:
 # 	CLIENT SERVER TOOLS DLRENDERER GAMELIBS OPUS OPENGL2
 IOQ3?=		CLIENT TOOLS GAMELIBS

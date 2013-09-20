@@ -21,6 +21,7 @@ PLIST_FILES=	bin/empire \
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

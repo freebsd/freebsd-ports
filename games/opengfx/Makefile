@@ -16,6 +16,7 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 LATEST_LINK=	openttd-${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/share/openttd/baseset/opengfx
 	${INSTALL_DATA} ${WRKDIR}/opengfx-${PORTVERSION}/* \

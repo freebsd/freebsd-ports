@@ -1,9 +1,5 @@
-# New ports collection makefile for:    Enemy Territory
-# Date created:                         Sun Jan 18 18:54:00 CET 2004
-# Whom:                                 benlutz@datacomm.ch
-#
+# Created by: benlutz@datacomm.ch
 # $FreeBSD$
-#
 
 PORTNAME=	enemyterritory
 PORTVERSION=	2.60b
@@ -27,6 +23,7 @@ INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
 PATCH_260B_DIR=	Enemy Territory 2.60b
 USE_LINUX_APPS=	dri
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@cd ${WRKSRC} && \

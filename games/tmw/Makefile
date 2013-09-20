@@ -30,6 +30,7 @@ OPTIONS_DEFAULT=	MUSIC OPENGL
 MANASERV_DESC=	Server component
 MUSIC_DESC=	Install additional music
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANASERV}

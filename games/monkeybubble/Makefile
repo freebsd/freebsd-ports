@@ -22,6 +22,7 @@ INSTALLS_OMF=	yes
 
 GCONF_SCHEMAS=	monkey-bubble.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

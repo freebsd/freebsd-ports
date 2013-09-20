@@ -1,5 +1,4 @@
-# Created by:		nemysis@gmx.ch
-#
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
 
 PORTNAME=	smashbattle
@@ -20,6 +19,7 @@ USE_DOS2UNIX=	*.cpp *.h *.ini Makefile
 ALL_TARGET=	battle
 USE_SDL=	sdl image mixer
 
+NO_STAGE=	yes
 pre-extract:
 	@${MKDIR} ${WRKDIR}/${DISTNAME}
 

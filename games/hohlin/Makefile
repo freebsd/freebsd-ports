@@ -22,6 +22,7 @@ USE_LINUX_APPS=	xorglibs
 ONLY_FOR_ARCHS=	i386
 SHORTPORTVERSION=${PORTVERSION:C/([0-9]*)\.([0-9]*)/\1\2/}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:

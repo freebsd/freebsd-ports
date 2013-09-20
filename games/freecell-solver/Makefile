@@ -29,6 +29,7 @@ MAN6=		fc-solve-board_gen.6 fc-solve.6 \
 		make_pysol_freecell_board.py.6 \
 		pi-make-microsoft-freecell-board.6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCMALLOC}

@@ -26,6 +26,7 @@ DESKTOP_ENTRIES="Zatacka" \
 		"Game;ArcadeGame;" \
 		false
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|__linux__|__FreeBSD__|; s|\[30\]|[PATH_MAX]|' \
 		${WRKSRC}/src/main.cpp

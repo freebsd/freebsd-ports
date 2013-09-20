@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nehquake
-# Date created:				16 May 2006
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	nehquake
 PORTVERSION=	1.0
@@ -29,6 +25,7 @@ X86_ASM_DESC=	Enable x86 assembly code
 ALL_TARGET=	release
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
 .include <bsd.port.options.mk>

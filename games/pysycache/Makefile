@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pysycache
-# Date created:		2006-02-22
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	pysycache
 PORTVERSION=	2.0
@@ -24,6 +20,7 @@ NO_BUILD=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/datas.py ${WRKSRC}/datas.py \
 		${WRKSRC}/datasclass.py ${WRKSRC}/pysybuttons.py ${WRKSRC}/pysyclick.py ${WRKSRC}/pysymove.py \

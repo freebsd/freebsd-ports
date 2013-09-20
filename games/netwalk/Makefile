@@ -40,6 +40,7 @@ PORTDOCS=	README
 DESKTOP_ENTRIES="NetWalk" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;LogicGame;" "false"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	d2x
-# Date created:		5 Apr 2004
-# Whom:			Radim Kolar
-#
+# Created by: Radim Kolar
 # $FreeBSD$
-#
 
 PORTNAME=	d2x
 PORTVERSION=	0.2.5
@@ -30,6 +26,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
+NO_STAGE=	yes
 pre-everything::
 .ifndef(WITH_OPENGL)
 	@${ECHO_MSG} ""

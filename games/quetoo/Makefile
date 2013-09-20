@@ -38,6 +38,7 @@ VANCTF_DESC=	Build Vanilla CTF mod
 QMASS_DESC=	Build QMass deathmatch mod
 MYSQL_DESC=	Enable frag logging with MySQL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGAME}

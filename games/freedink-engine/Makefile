@@ -26,6 +26,7 @@ EMBEDDED_DESC=	Embedded Resources
 
 OPTIONS_DEFAULT=	EMBEDDED
 
+NO_STAGE=	yes
 post-patch:
 	@${CHMOD} 0755 ${WRKSRC}/autotools/install-reloc
 

@@ -29,6 +29,7 @@ ALL_TARGET=	${PORTNAME}
 SUB_FILES=	${PORTNAME}-sh
 FLEETS_FILE=	gh_fleets_020906.zip
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFLEETS}

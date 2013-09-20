@@ -19,6 +19,7 @@ MAKE_FLAGS=	XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults -f
 ALL_TARGET=	xmris xmred
 MAN6=		xmred.6 xmris.6 xmsit.6
 
+NO_STAGE=	yes
 post-configure:
 	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's/MANSUFFIX = 1/MANSUFFIX = 6/' \
 	  -e 's/OWNER = -o games/OWNER = -g games/' \

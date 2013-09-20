@@ -22,6 +22,7 @@ CXXFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 
 PLIST_FILES=	bin/valley
 
+NO_STAGE=	yes
 post-configure:
 	${REINPLACE_CMD} \
 		-e 's,^LIBTOOL =.*,LIBTOOL= $$(SHELL) ${LIBTOOL} --silent,' \

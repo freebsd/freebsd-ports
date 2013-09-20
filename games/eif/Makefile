@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eif
-# Date created:				4 March 2003
-# Whom:					johans
-#
+# Created by: johans
 # $FreeBSD$
-#
 
 PORTNAME=	eif
 PORTVERSION=	1.3.4
@@ -18,6 +14,7 @@ MAN1=		eif.1
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

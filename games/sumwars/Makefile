@@ -33,6 +33,7 @@ FETCH_ARGS?=	-pRr
 
 CMAKE_ARGS+=	-DGETTEXT_SEARCH_PATH=${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/local/lib/|${LOCALBASE}/lib/|g' ${WRKSRC}/CMakeModules/FindEnet.cmake \
 		${WRKSRC}/CMakeModules/FindPhysFS.cmake \

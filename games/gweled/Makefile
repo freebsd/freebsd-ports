@@ -16,6 +16,7 @@ USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeui librsvg2
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/games|${PREFIX}/share/games|' \
 		${WRKSRC}/configure

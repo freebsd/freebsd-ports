@@ -24,6 +24,7 @@ SUB_FILES=	i7.sh
 
 MAN6=		i7.6
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:

@@ -18,6 +18,7 @@ MAN6=		${PORTNAME}.6
 PORTDOCS=	CHANGELOG
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

@@ -37,6 +37,7 @@ FLAVOR_DESC=	Clients and servers
 CLIENT_DESC=	Build client
 SERVER_DESC=	Build dedicated server
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}

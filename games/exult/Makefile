@@ -26,6 +26,7 @@ MAN6=	exult.6
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

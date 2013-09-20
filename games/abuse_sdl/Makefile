@@ -29,6 +29,7 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 DESKTOP_ENTRIES="Abuse-SDL" "${COMMENT}" "abuse" \
 		"abuse" "Game;StrategyGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	icbm3d
-# Date created:				20 March 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	icbm3d
 PORTVERSION=	0.4
@@ -30,6 +26,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 PORTDOCS=	README.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

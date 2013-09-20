@@ -23,6 +23,7 @@ BUILD_WRKSRC=	${WRKSRC}/sources
 
 PORTDOCS=	readme.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

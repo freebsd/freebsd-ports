@@ -27,6 +27,7 @@ PLIST_DIRS=	%%DATADIR%%
 
 MANUAL_PACKAGE_BUILD=	very large distfile (>400 MB)
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} -f ${WRKSRC}/COPYING
 

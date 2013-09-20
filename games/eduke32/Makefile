@@ -32,6 +32,7 @@ TIMIDITYPLUS_DESC=	Use Timidity++ instead of Timidity
 
 OPTIONS_DEFAULT=	MIDI VORBIS
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../duke3d-data/Makefile.include"
 
 .include <bsd.port.options.mk>

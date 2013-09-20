@@ -1,9 +1,5 @@
-# New ports collection makefile for:	shrub
-# Date created:				7 May 2006
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	shrub
 PORTVERSION=	1.2
@@ -30,6 +26,7 @@ PLIST_FILES=	bin/et-${PORTNAME} \
 		%%DATADIR%%/qagame.mp.i386.so
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-build:
 .for f in et etded
 	@(${ECHO} "#!/bin/sh"; \

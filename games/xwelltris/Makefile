@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xwelltris
-# Date created:		1 Feb 2004
-# Whom:			lev
-#
+# Created by: lev
 # $FreeBSD$
-#
 
 PORTNAME=	xwelltris
 PORTVERSION=	1.0.1
@@ -29,4 +25,5 @@ PLIST_DIRS=	share/xwelltris
 GNU_CONFIGURE=	yes
 USE_XORG=	ice sm x11 xau xcursor xdmcp xext xfixes xi xrandr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

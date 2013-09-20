@@ -16,6 +16,7 @@ CONFLICTS=	frobtads-1.*
 
 WRKSRC=		${WRKDIR}/tads-3.0.8/tads2
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/tads2
 .for i in tadsc tadsr tdb

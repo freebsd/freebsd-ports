@@ -1,9 +1,5 @@
-# Ports collection makefile for:  bsdtris
-# Date created:	                  01 Apr 2003
-# Whom:                           Yonatan <onatan@gmail.com>
-#
+# Created by: Yonatan <onatan@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	bsdtris
 PORTVERSION=	1.1
@@ -18,6 +14,7 @@ NO_WRKSUBDIR=	yes
 
 MAN6=		bsdtris.6
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -E "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/pathnames.h
 

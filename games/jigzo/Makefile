@@ -29,6 +29,7 @@ DESKTOP_ENTRIES="Jigzo" \
 		"Game;LogicGame;KidsGame;" \
 		false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

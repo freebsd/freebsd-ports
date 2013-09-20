@@ -24,6 +24,7 @@ BACKTRACE_DESC=	Use backtrace() to generate nice bug reports
 
 OPTIONS_DEFAULT=	BACKTRACE OPENGL VORBIS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBACKTRACE}

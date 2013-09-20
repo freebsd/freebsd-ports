@@ -32,6 +32,7 @@ DESKTOP_ENTRIES="Bubble Chains" "${COMMENT}" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 P7ZIP_CMD=	${LOCALBASE}/bin/7z

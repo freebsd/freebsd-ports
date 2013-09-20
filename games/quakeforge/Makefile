@@ -44,6 +44,7 @@ SUB_FILES=	pkg-message
 
 DATADIR=	${Q1DIR}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
 .include <bsd.port.options.mk>

@@ -19,6 +19,7 @@ PORTDOCS=	readme
 PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/words721.txt
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

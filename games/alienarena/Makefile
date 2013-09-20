@@ -47,6 +47,7 @@ PLIST_SUB=	LIBDIR=${LIBDIR:S/${PREFIX}\///}
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}

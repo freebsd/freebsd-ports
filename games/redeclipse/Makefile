@@ -38,6 +38,7 @@ OPTIONS_DEFAULT=CLIENT DEDICATED OPTIMIZED_CFLAGS
 CLIENT_DESC=	Build client
 DEDICATED_DESC=	Build dedicated server
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"

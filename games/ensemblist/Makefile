@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ensemblist
-# Date created:				06 Sep 2005
-# Whom:					Igor Pokrovsky <ip@doom.homeunix.org>
-#
+# Created by: Igor Pokrovsky <ip@doom.homeunix.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ensemblist
 PORTVERSION=	040126
@@ -30,6 +26,7 @@ PLIST_DIRS=	%%DATADIR%%
 MAN6=		ensemblist.6
 PORTDOCS=	*
 
+NO_STAGE=	yes
 pre-install:
 	@${RM} -f ${PLIST}
 	@${FIND} ${WRKSRC}/datas -type f | ${SORT} \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    PySol Cardsets
-# Date created:         18 Sep 2000
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pysol-cardsets
 PORTVERSION=	4.40
@@ -36,6 +32,7 @@ CARDSETS=	1567 1750 1815 1880-delarue 1880-tarot 1890-grimaud aisleriot \
 		xpat2-nox-medium xpat2-nox-small xpat2-nox-tiny xskat-french \
 		xskat-french-large xskat-german
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/share/pysol
 .for set in ${CARDSETS}

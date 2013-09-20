@@ -21,6 +21,7 @@ NO_PACKAGE=	Package will be 487MB, set FORCE_PACKAGE
 WRKSRC=		${WRKDIR}/rq3
 DATADIR=	${Q3DIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../quake3-data/Makefile.include"
 
 .include <bsd.port.pre.mk>

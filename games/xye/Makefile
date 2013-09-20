@@ -61,6 +61,7 @@ SKINS_DESC=	Install additional skins
 
 OPTIONS_SUB=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract-script:

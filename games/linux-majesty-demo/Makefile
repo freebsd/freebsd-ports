@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-majesty-demo
-# Date created:		2009-01-30
-# Whom:			Marcus von Appen <mva@sysfault.org>
-#
+# Created by: Marcus von Appen <mva@sysfault.org>
 # $FreeBSD$
-#
 
 PORTNAME=	majesty-demo
 PORTVERSION=	1.0.0
@@ -26,6 +22,7 @@ DATADIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	majesty
 PORTDOCS=	README README.licenses EULA
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-extract:

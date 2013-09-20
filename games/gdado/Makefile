@@ -14,6 +14,7 @@ GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gtk20 libgnomeui
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} "s|-O2|${CFLAGS}|" ${WRKSRC}/configure
 

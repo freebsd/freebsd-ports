@@ -29,6 +29,7 @@ GNU_CONFIGURE=	yes
 
 MAN8=	pokerconfigupgrade.8
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|{datadir}/pkgconfig|(prefix)/libdata/pkgconfig|g' \

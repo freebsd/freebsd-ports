@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpired
-# Date created:				2 July 2002
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xpired
 PORTVERSION=	1.22
@@ -18,6 +14,7 @@ COMMENT=	An action-puzzle maze escape game (SDL)
 USE_SDL=	gfx image mixer sdl
 WRKSRC=		${WRKDIR}/src
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/xpired ${WRKSRC}/xpiredit ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}/img

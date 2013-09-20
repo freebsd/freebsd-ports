@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sjeng
-# Date created:				18 Feb 2006
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	sjeng
 PORTVERSION=	11.2
@@ -23,4 +19,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lgdbm
 
 PLIST_FILES=	bin/sjeng
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -15,6 +15,7 @@ USE_SDL=	sdl
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/gamma256/gameSource
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(PLATFORM_LINK_FLAGS =\).*|\1 ${PTHREAD_LIBS}|' \
 		${WRKSRC}/Makefile.GnuLinux

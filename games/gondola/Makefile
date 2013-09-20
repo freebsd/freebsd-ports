@@ -32,6 +32,7 @@ DESKTOP_ENTRIES="Gondola" \
 		"Game;StrategyGame;" \
 		false
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|g' ${WRKSRC}/gamelib/*.py
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' \

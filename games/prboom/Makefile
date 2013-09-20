@@ -28,6 +28,7 @@ MAN6=		prboom.6 prboom-game-server.6
 DATADIR=	${DMDIR}
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
 .include <bsd.port.options.mk>

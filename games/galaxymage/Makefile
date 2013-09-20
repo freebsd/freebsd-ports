@@ -22,6 +22,7 @@ NO_BUILD=	yes
 OPTIONS_DEFINE=	PSYCO
 PSYCO_DESC=	Use just-in-time Python compiler
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPSYCO}

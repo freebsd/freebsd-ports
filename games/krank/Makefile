@@ -23,6 +23,7 @@ PORTDOCS=	CHANGELOG.txt README
 DESKTOP_ENTRIES="Krank" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

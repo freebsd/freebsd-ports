@@ -32,6 +32,7 @@ OPTIONS_DEFAULT_i386=	ASM
 OPTIONS_DEFINE_amd64=	ASM
 OPTIONS_DEFAULT_amd64=	ASM
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASM}

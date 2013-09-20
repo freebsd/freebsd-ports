@@ -27,6 +27,7 @@ LDFLAGS+=	`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib
 
 DATADIR=	${PREFIX}/share/gamediameter
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|; /^CFLAGS=.*march/ d; \
 		/PKG_CONFIG/ s|libpng|libpng15|' ${WRKSRC}/configure

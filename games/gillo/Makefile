@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gillo
-# Date created:				23 Jan 2006
-# Whom:					Igor Pokrovsky <ip@doom.homeunix.org>
-#
+# Created by: Igor Pokrovsky <ip@doom.homeunix.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gillo
 DISTVERSION=	1.0beta1
@@ -26,6 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 JAM?=		${LOCALBASE}/bin/jam
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|SDL/||g' ${WRKSRC}/src/*
 	@${REINPLACE_CMD} -e 's|%%SDL_CFLAGS%%|`${SDL_CONFIG} --cflags`|' \

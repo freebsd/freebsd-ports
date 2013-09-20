@@ -33,6 +33,7 @@ MAKE_JOBS_UNSAFE=	yes
 USE_GMAKE=	yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::

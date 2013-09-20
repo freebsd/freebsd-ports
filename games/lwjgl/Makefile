@@ -42,6 +42,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}/${PORTNAME}.jar \
 PLIST_DIRS=	%%JAVAJARDIR%%/${PORTNAME} \
 		lib/${PORTNAME}${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386

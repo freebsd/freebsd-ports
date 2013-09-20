@@ -30,6 +30,7 @@ DESKTOP_ENTRIES="game" \
 		"Game;BlocksGame;" \
 		false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -17,4 +17,5 @@ USE_GL=		yes
 
 MAKE_ENV+=	DATADIR="${DATADIR}"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

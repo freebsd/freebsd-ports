@@ -1,9 +1,5 @@
-# New ports collection makefile for:    games/fxsudoku
-# Date created:         31 March 2006
-# Whom:			Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fxsudoku
 PORTVERSION=	0.5.1
@@ -20,6 +16,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 PLIST_FILES=	bin/fxsudoku
 
+NO_STAGE=	yes
 post-extract:
 	${CP} ${FILESDIR}/config.freebsd ${WRKSRC}/build
 

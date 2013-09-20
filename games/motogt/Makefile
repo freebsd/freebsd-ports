@@ -34,6 +34,7 @@ PORTDATA=	*
 
 WRKSRC=		${WRKDIR}/MotoGT
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/MotoGT.bin ${PREFIX}/libexec/
 	${INSTALL_SCRIPT} ${WRKDIR}/motogt ${PREFIX}/bin/

@@ -27,6 +27,7 @@ LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCTF}

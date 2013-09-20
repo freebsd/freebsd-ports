@@ -25,6 +25,7 @@ PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} "s|^.*@chgrp .(CONQGROUP) conq.*||g; \
 		s|^.*@chmod 2771 conq.*||g;" ${WRKSRC}/Makefile.in

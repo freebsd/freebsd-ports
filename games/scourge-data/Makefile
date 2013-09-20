@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scourge-data
-# Date created:		2006-06-13
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	data
 PORTVERSION=	0.21.1
@@ -22,6 +18,7 @@ DATADIR=	share/${PKGNAMEPREFIX:S/-//}
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX:S/-/_/}${PORTNAME}
 
+NO_STAGE=	yes
 pre-install:
 	@${RM} -f ${PLIST}
 	@cd ${WRKSRC} && \

@@ -15,6 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinte
 
 USE_PYTHON=	yes
 
+NO_STAGE=	yes
 do-build:
 	@${FIND} ${WRKSRC} -name "*.pyc" | ${XARGS} ${RM}
 	@${FIND} ${WRKSRC} \( -type f -or -type l \) | ${XARGS} ${CHMOD} 644

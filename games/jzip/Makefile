@@ -20,6 +20,7 @@ MAN1=		jzip.1
 PORTDOCS=	Jzip.doc
 PLIST_FILES=	bin/jzip
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

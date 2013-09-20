@@ -1,9 +1,5 @@
-# New ports collection makefile for:	battalion
-# Date created:				17 May 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	battalion
 PORTVERSION=	1.4b
@@ -26,6 +22,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 MAN6=		battalion.6
 
+NO_STAGE=	yes
 post-extract:
 	@${GZCAT} ${DISTDIR}/battalionSUN4.tar.gz | \
 		(cd ${WRKDIR} && ${TAR} --unlink -xf -)

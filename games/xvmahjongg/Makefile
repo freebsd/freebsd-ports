@@ -26,6 +26,7 @@ MAN6=		xvmahjongg.6
 PORTDOCS=	Notes README README.too
 PLIST_FILES=	bin/xvmahjongg
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

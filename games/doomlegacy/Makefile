@@ -34,6 +34,7 @@ SVN_REV=	999
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFINE_i386=	ASM
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASM}

@@ -18,6 +18,7 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${RM} -rf ${WRKSRC}/GRubik.app/ix86
 	${REINPLACE_CMD} -e 's|^//|# //|' ${WRKSRC}/GNUmakefile

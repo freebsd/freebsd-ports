@@ -36,4 +36,5 @@ PLIST_FILES=	bin/${PORTNAME} \
 PLIST_DIRS=	%%DATADIR%%
 PLIST_DIRSTRY=	share/applications
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -38,6 +38,7 @@ EDITOR_DESC=	Build map editor
 
 EXTRACT_AFTER_ARGS=	-d ${WRKDIR}/${DISTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 

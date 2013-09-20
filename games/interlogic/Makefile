@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/interlogic
 
 PLIST_FILES=	bin/interlogic
 
+NO_STAGE=	yes
 post-patch:
 	@${ECHO_CMD} "#!/bin/sh" > ${WRKSRC}/missing # suppress autotools madness
 

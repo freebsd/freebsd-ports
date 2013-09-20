@@ -1,9 +1,5 @@
-# New ports collection makefile for:	QTV (Quake TV, formerly EZTV)
-# Date created:				29 July 2009
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qtv
 PORTVERSION=	1.00
@@ -18,6 +14,7 @@ ALL_TARGET=	${PORTNAME}
 MAKE_ARGS=	CC=${CC}
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}.bin ${PREFIX}/bin/${PORTNAME}
 	@${FIND} ${WRKSRC} -type d -name .svn -print0 | ${XARGS} -0 ${RM} -r

@@ -18,6 +18,7 @@ PLIST_DIRS=	share/sudoku
 
 MAN6=	sudoku.6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

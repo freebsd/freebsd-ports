@@ -17,6 +17,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 MAN6=		kardsgt.6
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^QT +=|#QT +=|g' \
 		${WRKSRC}/src/src.pro

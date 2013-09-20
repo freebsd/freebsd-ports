@@ -21,6 +21,7 @@ USE_PERL5=	build
 USE_XORG=	x11 xaw xext xmu xpm xt
 WRKSRC=		${WRKDIR}/3Dc/src
 
+NO_STAGE=	yes
 post-patch:
 .for file in init.c main.c piece.c stack.c xif.c
 	@${REINPLACE_CMD} -i '' -e 's|malloc.h|stdlib.h|' \

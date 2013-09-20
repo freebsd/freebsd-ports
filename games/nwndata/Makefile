@@ -1,9 +1,5 @@
-# New ports collection makefile for:    Neverwinter Nights Data
-# Date created:				4 April 2003
-# Whom:					Erik Olson <erikolson@olsonexpress.com>
-#
+# Created by: Erik Olson <erikolson@olsonexpress.com>
 # $FreeBSD$
-#
 
 PORTNAME=	nwndata
 PORTVERSION=	${NWNVER}
@@ -41,6 +37,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/nwn
 NO_PACKAGE=	Compressed package is in excess of 1 GB
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 .if defined(NWN_DIAMOND)

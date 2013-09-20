@@ -1,9 +1,5 @@
-# New ports collection makefile for:	54321
-# Date created:				22 November 2001
-# Whom:					Leland Wang <llwang@infor.org>
-#
+# Created by: Leland Wang <llwang@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	54321
 PORTVERSION=	1.0.2001.11.16
@@ -23,6 +19,7 @@ USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	all size
 
+NO_STAGE=	yes
 post-extract:
 	@${MKDIR} ${WRKSRC}/archs/FreeBSD
 	@${CP} ${FILESDIR}/variables.GNU ${WRKSRC}/archs/FreeBSD

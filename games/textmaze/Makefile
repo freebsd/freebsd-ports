@@ -21,6 +21,7 @@ PLIST_FILES=	bin/textmaze
 
 WRKSRC=		${WRKDIR}/TextMaze
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 

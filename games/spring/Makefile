@@ -41,6 +41,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SYNC_DEBUG)

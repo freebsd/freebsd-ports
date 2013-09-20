@@ -24,6 +24,7 @@ DESKTOP_ENTRIES="Mad Bomber" "${COMMENT}" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

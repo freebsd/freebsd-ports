@@ -23,6 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 DATA_WRKSRC=	${WRKDIR}/${PORTNAME}-data-${PORTVERSION}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/LIBS/ s|-lSDL_[a-z]*|& $${SDL_LIBS}|' ${WRKSRC}/configure
 

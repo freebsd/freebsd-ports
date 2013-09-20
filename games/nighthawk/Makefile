@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nighthawk
-# Date created:				Apr 4, 2001
-# Whom:					Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	nighthawk
 PORTVERSION=	3.0.0
@@ -30,6 +26,7 @@ CFLAGS+=	-DINSTALL_DIR=\\\"\${DATADIR}\\\" \
 		-I${LOCALBASE}/include
 LDFLAGS+=	-lm -L${LOCALBASE}/lib -lX11 -lGL -lGLU -lglut
 
+NO_STAGE=	yes
 post-patch:
 	${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|make|$$(MAKE)|g ; \

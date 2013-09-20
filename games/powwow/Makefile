@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	powwow
-# Date created:				15 Nov 2004
-# Whom:					Juraj Lutter <otis@sk.freebsd.org>
-#
+# Created by: Juraj Lutter <otis@sk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	powwow
 PORTVERSION=	1.2.14
@@ -18,6 +14,7 @@ GNU_CONFIGURE=	yes
 
 MAN6=		powwow.6
 
+NO_STAGE=	yes
 pre-build:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/defines.h \
 		${WRKSRC}/list.c ${WRKSRC}/main.c ${WRKSRC}/cmd2.c ${WRKSRC}/beam.c

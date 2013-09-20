@@ -35,6 +35,7 @@ post-patch:	.SILENT
 		${WRKSRC}/src/gui.c \
 		${WRKSRC}/src/options.c \
 		${WRKSRC}/src/stats.c
+NO_STAGE=	yes
 post-install:
 	-update-desktop-database ${PREFIX}/share/applications
 

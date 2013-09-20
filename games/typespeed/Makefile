@@ -24,6 +24,7 @@ SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	SCOREDIR="${SCOREDIR}" SCOREFILE="${SCOREFILE}" WRKSRC="${WRKSRC}"
 MAN1=		typespeed.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

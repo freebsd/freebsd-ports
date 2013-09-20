@@ -1,9 +1,5 @@
-# New Ports collection makefile for:	twind
-# Date created:		2012-04-11
-# Whom:			nemysis@gmx.ch
-#
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
-#
 
 PORTNAME=	twind
 PORTVERSION=	1.1.0
@@ -23,6 +19,7 @@ PORTDOCS=	AUTHORS CREDITS ChangeLog NEWS README TODO
 DESKTOP_ENTRIES="Twin Distress" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:
