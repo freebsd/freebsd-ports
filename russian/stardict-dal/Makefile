@@ -1,9 +1,4 @@
-# New ports collection makefile for:	stardict-dal
-# Date created:		2010-02-28
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	stardict-dal
 PORTVERSION=	2.4.2
@@ -14,5 +9,6 @@ DISTNAME=	${PORTNAME}-ru-${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Dal's Explanatory Dictionary
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../stardict-mueller7/files/Makefile.common"
 .include <bsd.port.mk>

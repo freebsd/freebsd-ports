@@ -14,6 +14,7 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${MKDIR} ${PREFIX}/share/games/fortune/ru_RU.UTF-8

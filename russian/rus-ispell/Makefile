@@ -26,6 +26,7 @@ ALL_TARGET=	koi
 
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} russian.hash russian.dict russian.aff \

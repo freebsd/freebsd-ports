@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PSCyr
-# Date created:				29 Jun 2001
-# Whom:					kapr@crosswinds.net
-#
+# Created by: kapr@crosswinds.net
 # $FreeBSD$
-#
 
 PORTNAME=	PSCyr
 PATCH_LEVEL=	2
@@ -28,6 +24,7 @@ PLIST_SUB=	UPDMAP_SYS=${UPDMAP_SYS} \
 UPDMAP_SYS?=	${LOCALBASE}/bin/updmap-sys
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
+NO_STAGE=	yes
 do-install:
 	(cd ${WRKDIR}; ${SETENV} ${MAKE_ENV} ${SH} install.sh)
 

@@ -16,6 +16,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 STRCMD=		/usr/games/strfile
 
+NO_STAGE=	yes
 do-install:
 	@${SETENV} STRCMD=${STRCMD} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${MKDIR} ${PREFIX}/share/games/fortune/rus

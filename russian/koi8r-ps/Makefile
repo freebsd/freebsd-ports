@@ -1,9 +1,5 @@
-# New ports collection makefile for: koi8rPS
-# Date created:         22 July 1999
-# Whom:                 mi@aldan.algebra.com
-#
+# Created by: mi@aldan.algebra.com
 # $FreeBSD$
-#
 
 PORTNAME=	koi8rPS
 PORTVERSION=	1.0
@@ -20,6 +16,7 @@ EXTRACT_ONLY=
 
 DIST_SUBDIR=	koi8r-ps
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(FONTMAP)

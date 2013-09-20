@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-rutils
-# Date created:				04 January 2007
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
 
 PORTNAME=	rutils
@@ -18,4 +15,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/gilensize bin/rutilize
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
