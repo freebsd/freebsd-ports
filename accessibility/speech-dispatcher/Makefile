@@ -15,6 +15,7 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	dotconf:${PORTSDIR}/devel/dotconf \
 		sndfile:${PORTSDIR}/audio/libsndfile
 
+NO_STAGE=	yes
 # gnomehier is required because of share/sounds directory.
 USES=		gmake pkgconfig
 USE_GNOME=	glib20 gnomehier

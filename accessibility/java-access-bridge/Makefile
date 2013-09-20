@@ -15,6 +15,7 @@ COMMENT=	Gnome Java Accessibility Bridge
 BUILD_DEPENDS=	xprop:${PORTSDIR}/x11/xprop
 RUN_DEPENDS=	xprop:${PORTSDIR}/x11/xprop
 
+NO_STAGE=	yes
 USES=		gmake pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
