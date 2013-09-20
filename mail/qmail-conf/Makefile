@@ -15,6 +15,7 @@ MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Configure various qmail services to run under daemontools
 
 USES=		qmail:vars
+NO_STAGE=	yes
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check

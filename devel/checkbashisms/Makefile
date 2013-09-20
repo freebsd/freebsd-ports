@@ -18,6 +18,7 @@ USES=		perl5
 USE_PERL5=	run
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+NO_STAGE=	yes
 
 PLIST_FILES=	bin/${DISTNAME}
 

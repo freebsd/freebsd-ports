@@ -14,6 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	vermaden
 GH_COMMIT=	a7c1c73
 
+NO_STAGE=	yes
 NO_BUILD=	YES
 
 CONFLICTS_INSTALL=	beadm-devel-*

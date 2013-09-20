@@ -16,6 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
 
 USE_CSTD=	gnu89
+NO_STAGE=	yes
 
 GNU_CONFIGURE=	YES
 USES=		iconv gmake

@@ -18,6 +18,7 @@ BUILD_DEPENDS=	eggdrop:${PORTSDIR}/irc/eggdrop
 RUN_DEPENDS=	eggdrop:${PORTSDIR}/irc/eggdrop
 
 USE_TCL=	85+
+NO_STAGE=	yes
 
 WRKSRC=		${WRKDIR}/eggdrop
 

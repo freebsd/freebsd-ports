@@ -12,7 +12,7 @@ MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Tools to analyze qmail-send's activity
 
 USES=		qmail:run
-
+NO_STAGE=	yes
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup

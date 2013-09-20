@@ -30,6 +30,7 @@ USES=			perl5
 USE_PERL5=		build
 USE_AUTOTOOLS=		autoconf autoheader
 USE_OPENSSL=		yes
+NO_STAGE=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		ac_cv_func_strnvis=no
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-md5-passwords \

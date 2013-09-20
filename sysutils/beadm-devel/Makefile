@@ -10,6 +10,7 @@ COMMENT=	Solaris-like utility to manage Boot Environments on ZFS
 
 LICENSE=	BSD
 
+NO_STAGE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	vermaden
 GH_COMMIT=	d7d7cd3

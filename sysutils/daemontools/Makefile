@@ -31,6 +31,8 @@ OPTIONS_SINGLE_SEQ=	S_EARLY S_NORMAL
 
 OPTIONS_DEFAULT=	MAN S_NORMAL TESTS
 
+NO_STAGE=	yes
+
 .include <bsd.port.options.mk>
 
 . if ${PORT_OPTIONS:MS_EARLY}

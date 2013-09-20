@@ -12,6 +12,7 @@ COMMENT=	OpenSolaris-compatible auto snapshotting for ZFS
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+NO_STAGE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	bdrewery
 GH_COMMIT=	05b95b5

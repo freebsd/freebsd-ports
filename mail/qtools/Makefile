@@ -13,6 +13,7 @@ COMMENT=	Tools to use in .qmail files
 RUN_DEPENDS=	${EZMLM_DIR}/bin/ezmlm-weed:${PORTSDIR}/mail/ezmlm
 
 USES=		qmail:vars
+NO_STAGE=	yes
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
