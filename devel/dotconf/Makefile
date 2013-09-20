@@ -15,6 +15,7 @@ USES=	pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIR/s|=.*|= src|' ${WRKSRC}/Makefile.in

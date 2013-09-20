@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cmunge
-# Date created:			October 26th 2005
-# Whom:				Frerich Raabe <frerich.raabe@gmx.de>
-#
+# Created by: Frerich Raabe <frerich.raabe@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	cmunge
 PORTVERSION=	1.0
@@ -22,6 +18,7 @@ MAKE_ARGS=	CC="${CC} ${CFLAGS}"
 PLIST_FILES=	bin/cmunge bin/ctran bin/proc-incl
 PORTDOCS=	*
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/vcpc_users/jhm/bin/cmunger|${PREFIX}|; \
 		s|/usr/ccs/lib/cpp|/usr/bin/cpp|' ${WRKSRC}/cmunge

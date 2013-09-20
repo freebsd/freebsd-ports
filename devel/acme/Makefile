@@ -34,6 +34,7 @@ PLIST_DIRSTRY=	%%DATADIR%%/6502 \
 		%%DATADIR%%/Own \
 		%%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

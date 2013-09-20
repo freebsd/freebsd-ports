@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/easygit
-# Date created:				11 March 2009
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	easygit
 PORTVERSION=	0.98
@@ -25,6 +21,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/eg bin/easygit
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${_DISTDIR}/eg ${PREFIX}/bin/
 	${LN} -s ${PREFIX}/bin/eg ${PREFIX}/bin/easygit

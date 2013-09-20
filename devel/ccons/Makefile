@@ -34,6 +34,7 @@ WRKSRC=	${WRKDIR}/ccons
 
 MAN1=	ccons.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900044

@@ -1,7 +1,4 @@
-# New ports collection makefile for: apr
-# Date created:		19 February 2002
-# Whom:			Garrett Rooney <rooneg@electricjellyfish.net>
-#
+# Created by: Garrett Rooney <rooneg@electricjellyfish.net>
 # $FreeBSD$
 
 PORTNAME=	apr
@@ -29,6 +26,7 @@ NDBM_DESC=	NDBM support in apr-util
 DEVRANDOM_DESC= Use /dev/random or compatible
 DEVELOPER_ONLY_DESC=	I want to test apr2 not the maintainer
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USES=		iconv perl5

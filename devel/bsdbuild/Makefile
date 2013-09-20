@@ -28,4 +28,5 @@ MAN5=	build.www.mk.5 \
 	build.dep.mk.5 \
 	build.common.mk.5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

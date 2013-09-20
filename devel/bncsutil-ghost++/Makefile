@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bncsutil
-# Date created:		2011-02-13
-# Whom:			 <ports@c0decafe.net>
-#
+# Created by: <ports@c0decafe.net>
 # $FreeBSD$
-#
 
 PORTNAME=	bncsutil
 PORTVERSION=	1.3.2
@@ -27,4 +23,5 @@ WRKSRC=		${WRKDIR}/ghost/bncsutil/src/bncsutil
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

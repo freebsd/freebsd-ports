@@ -1,9 +1,5 @@
-# New ports collection makefile for:	adabooch
-# Date created:			21 December 2002
-# Whom:				David Holm <david@realityrift.com>
-#
+# Created by: David Holm <david@realityrift.com>
 # $FreeBSD$
-#
 
 PORTNAME=	adabooch-doc
 PORTVERSION=	20030309
@@ -23,6 +19,7 @@ NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/adabooch-doc-html
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
+NO_STAGE=	yes
 pre-extract:
 	@${MKDIR} ${WRKSRC}
 

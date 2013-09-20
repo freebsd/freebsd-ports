@@ -26,6 +26,7 @@ PORTDOCS=	*
 post-patch:	.SILENT
 	${REINPLACE_CMD} 's|sbcl|${SBCL}|' ${WRKSRC}/Makefile
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

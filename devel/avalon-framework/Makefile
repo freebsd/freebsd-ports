@@ -27,6 +27,7 @@ PORTDOCS=	api basics.html cop cvs-usage.html dependencies.html images \
 JARFILES=	${PORTNAME}.jar ${PORTNAME}-api.jar ${PORTNAME}-impl.jar
 PLIST_FILES+=	${JARFILES:S,^,%%JAVAJARDIR%%/,}
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing JARs in ${JAVAJARDIR}/..."
 .for jarfile in ${JARFILES}

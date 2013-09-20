@@ -29,4 +29,5 @@ GNU_CONFIGURE=	yes
 
 USES=	gmake perl5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

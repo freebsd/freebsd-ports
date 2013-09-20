@@ -23,4 +23,5 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	bzr_git
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

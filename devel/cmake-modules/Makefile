@@ -9,6 +9,7 @@ COMMENT=	Modules and Templates for CMake
 
 CMAKE_MODULES=	yes
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/Modules
 	${MKDIR} ${DATADIR}/Templates

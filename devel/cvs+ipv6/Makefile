@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cvs+ipv6
-# Date created:	Tue Jul 23 11:24:24 JST 2002
-# Whom:		sumikawa
-#
+# Created by: sumikawa
 # $FreeBSD$
-#
 
 PORTNAME=	cvs
 PORTVERSION=	1.11.17
@@ -36,6 +32,7 @@ INFO=		cvs cvsclient
 CVS_SITE?=	:pserver:anoncvs@anoncvs.jp.FreeBSD.org:/home/ncvs
 CVS_VER?=	v${PORTVERSION:S/./_/g}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's/${PORTVERSION:S/./\./g}/&+IPv6/g' ${WRKSRC}/configure
 	@${CP} ${FILESDIR}/missing ${WRKSRC}

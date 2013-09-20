@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eclemma
-# Date created:				18 Mar 2010
-# Whom:					kamikaze@bsdforen.de
-#
+# Created by: kamikaze@bsdforen.de
 # $FreeBSD$
-#
 
 PORTNAME=	eclemma
 PORTVERSION=	1.5.3
@@ -26,6 +22,7 @@ ECLIPSE=	lib/eclipse
 PLIST_SUB=	VER=${PORTVERSION} \
 		ECLIPSE=${ECLIPSE}
 
+NO_STAGE=	yes
 do-install:
 .for _path in ${PLUGIN_PATHS}
 	@${MKDIR} ${PREFIX}/${ECLIPSE}/${_path}

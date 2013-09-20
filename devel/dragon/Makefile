@@ -17,4 +17,5 @@ PLIST_FILES=	bin/dragon
 
 MAKE_JOBS_UNSAFE=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

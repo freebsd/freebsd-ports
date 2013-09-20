@@ -24,6 +24,7 @@ CFLAGS+=	-Dstricmp=strcasecmp
 
 PLIST_FILES=	bin/codeworker
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.cpp" -or -name "*.h" | ${XARGS} \
 		${REINPLACE_CMD} -e \

@@ -19,6 +19,7 @@ SHEBANG_FILES=	configure
 
 MAN1=		spatch.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|CAMLreturn0|return 0|' \
 		${WRKSRC}/pycaml/pycaml_ml.c

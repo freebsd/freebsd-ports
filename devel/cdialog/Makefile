@@ -1,10 +1,5 @@
-# New ports collection makefile for:	ncdialog
-# Date created:		2003-01-11
-# Whom:			AlanE <alane@freebsd.org>
-#
-# $Carpetsmoker: ports/cdialog/Makefile,v 1.4 2007/04/22 11:30:53 carpetsmoker Exp $
+# Created by: AlanE <alane@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cdialog
 PORTVERSION=	1.1.20120215
@@ -35,6 +30,7 @@ MANCOMPRESSED=	no
 
 INSTALL_TARGET=	install-strip install-man install-lib
 
+NO_STAGE=	yes
 .if !defined(NOPORTEXAMPLES)
 post-patch:
 	@${FIND} ${WRKSRC}/samples/ -type f -exec ${REINPLACE_CMD} -i "" "s|dialog|cdialog|g" {} \;

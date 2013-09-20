@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Atlas
-# Date created:				29 March 2001
-# Whom:					Oliver Lehmann <lehmann@ans-netz.de>
-#
+# Created by: Oliver Lehmann <lehmann@ans-netz.de>
 # $FreeBSD$
-#
 
 PORTNAME=	Atlas
 PORTVERSION=	0.5.2
@@ -20,6 +16,7 @@ USE_LDCONFIG=	YES
 USE_BZIP2=	YES
 USES=	pathfix
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's| install-docDATA | |g'	${WRKSRC}/Makefile.in
 

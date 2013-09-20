@@ -1,7 +1,4 @@
-# Ports collection makefile for:  boost_build
-# Date Created:			  13 February 2008
-# Whom:				  Bruce M. Simpson
-#
+# Created by: Bruce M. Simpson
 # $FreeBSD$
 
 PORTNAME=	boost_build
@@ -334,6 +331,7 @@ PLIST_DIRS+=	${BOOST_BUILD_EXAMPLE_DIRS:C/^/${EXAMPLESDIR_REL}\//} \
 PLIST_FILES+=	${BOOST_BUILD_EXAMPLE_FILES:C/^/${EXAMPLESDIR_REL}\//}
 .endif
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}
 .for _dir in ${BOOST_BUILD_DIRS}

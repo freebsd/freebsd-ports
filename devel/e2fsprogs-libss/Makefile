@@ -25,6 +25,7 @@ MAN1=	mk_cmds.1
 
 PKGDIR=		${.CURDIR}
 
+NO_STAGE=	yes
 pre-build:
 	@(cd ${WRKSRC}/lib/ss && compile_et ss_err.et && \
 	${REINPLACE_CMD} -f ${FILESDIR}/fix-ss_err.h.sed ss_err.h)

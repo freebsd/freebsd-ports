@@ -37,6 +37,7 @@ MAN1=		ccmake.1 \
 		ctest.1
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@(${FIND} ${WRKSRC}/Modules -name "*.cmake" -print0; \
 		${FIND} ${WRKSRC}/Tests -name "CMakeLists.txt" -print0 ) | \

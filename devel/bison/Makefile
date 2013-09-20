@@ -25,6 +25,7 @@ CONFIGURE_ARGS+=--disable-yacc
 MAN1=		bison.1
 INFO=		bison
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	apiextractor
-# Date created:		2011-03-21
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	apiextractor
 PORTVERSION=	0.10.10
@@ -29,4 +25,5 @@ USE_BZIP2=	yes
 USES=		cmake
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Elib for GNU Emacs 21
-# Date created:		24 Feb 2000
-# Whom:			OKAZAKI Tetsurou
-#
+# Created by: OKAZAKI Tetsurou
 # $FreeBSD$
-#
 
 PORTNAME=	elib
 PORTVERSION=	1.0
@@ -32,6 +28,7 @@ ALL_TARGET?=	all
 
 INFO=	elib
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)

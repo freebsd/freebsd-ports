@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 PORTDOCS=	COPYING EXPANDING INSTALL NOTES README TODO
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=--with-ncurses

@@ -17,6 +17,7 @@ USE_PYDISTUTILS=yes
 
 MAN1=		dreampie.1
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e "s|share/man/man1|man/man1|" ${WRKSRC}/setup.py
 

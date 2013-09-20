@@ -64,6 +64,7 @@ INFO=		as \
 		configure \
 		ld
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Actual earliest version may differ slightly

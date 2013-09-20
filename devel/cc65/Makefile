@@ -27,6 +27,7 @@ SHEBANG_FILES=	src/ca65html/ca65html \
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

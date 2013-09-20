@@ -1,9 +1,5 @@
-# New ports collection makefile for: djgpp-binutils
-# Date created:		27 Jan 2007
-# Whom:			Peter Johnson <johnson.peter@gmail.com>
-#
+# Created by: Peter Johnson <johnson.peter@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	binutils
 PORTVERSION=	${BINUTILVERSION}
@@ -50,6 +46,7 @@ INFO_PATH=	${TARGET}/info
 BINARIES=	addr2line ar as c++filt ld nm objcopy objdump ranlib \
 		readelf size strings strip
 
+NO_STAGE=	yes
 pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 

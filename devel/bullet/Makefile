@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bullet
-# Date created:		2008-01-09
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bullet
 PORTVERSION=	2.77
@@ -28,6 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "amd64") || (${ARCH} == "ia64")

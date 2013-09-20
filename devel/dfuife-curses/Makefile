@@ -1,9 +1,5 @@
-# New ports collection makefile for:   dfuife-curses
-# Date created:        20 April 2006
-# Whom:                Andrew Turner <andrew+ports@fubar.geek.nz>
-#
+# Created by: Andrew Turner <andrew+ports@fubar.geek.nz>
 # $FreeBSD$
-#
 
 PORTNAME=	dfuife-curses
 PORTVERSION=	1.5.1.20050829
@@ -20,6 +16,7 @@ USE_BZIP2=	yes
 
 PLIST_FILES=	bin/dfuife_curses
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dfuife_curses ${PREFIX}/bin
 

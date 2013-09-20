@@ -137,6 +137,7 @@ OPTIONS_DEFAULT=	CXX OBJC
 
 RTEMS_PATCHES_DESC=	Apply RTEMS patches
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(TGTARCH)

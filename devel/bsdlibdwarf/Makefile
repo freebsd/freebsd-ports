@@ -1,9 +1,5 @@
-# New ports collection makefile for:	BSD licenced libdwarf
-# Date created:		16 June 2011
-# Whom:			Niclas Zeising
-#
+# Created by: Niclas Zeising
 # $FreeBSD$
-#
 
 PORTNAME=	bsdlibdwarf
 PORTVERSION=	0.20110616
@@ -185,6 +181,7 @@ MLINKS+=	dwarf_attrval_signed.3	dwarf_attrval_flag.3	\
 		dwarf_set_frame_cfa_value.3 dwarf_set_frame_same_value.3 \
 		dwarf_set_frame_cfa_value.3 dwarf_set_frame_undefined_value.3
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_LIB} ${WRKSRC}/libdwarf/libdwarf.so.3 ${PREFIX}/lib/
 	${INSTALL_LIB} ${WRKSRC}/libdwarf/libdwarf.a ${PREFIX}/lib/

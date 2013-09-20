@@ -19,6 +19,7 @@ MAN1=		cvsutils.1
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

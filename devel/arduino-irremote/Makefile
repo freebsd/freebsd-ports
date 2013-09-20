@@ -1,9 +1,5 @@
-# New ports collection makefile for:	arduino-irremote
-# Date created:		02 Apr 2011
-# Whom:			Craig Leres <leres@ee.lbl.gov>
-#
+# Created by: Craig Leres <leres@ee.lbl.gov>
 # $FreeBSD$
-#
 
 PORTNAME=	arduino-irremote
 PORTVERSION=	0.1
@@ -30,6 +26,7 @@ PLIST_FILES=	arduino/libraries/IRremote/IRremote.cpp \
 		arduino/libraries/IRremote/keywords.txt
 PLIST_DIRS=	arduino/libraries/IRremote
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}

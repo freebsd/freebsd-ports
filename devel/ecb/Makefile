@@ -31,6 +31,7 @@ CEDET_DESC=	Use the Cedet library
 
 PORTDOCS=	NEWS README RELEASE_NOTES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCEDET}

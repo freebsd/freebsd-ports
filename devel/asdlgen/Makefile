@@ -20,6 +20,7 @@ CII_DESC=	libcii for use by generated C and C++ code
 
 OPTIONS_DEFAULT=	CII
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCII}

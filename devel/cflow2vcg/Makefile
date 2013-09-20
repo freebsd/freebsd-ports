@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	cflow2vcg
-# Date created:			May 14, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	cflow2vcg
 PORTVERSION=	0.5
@@ -17,6 +12,7 @@ COMMENT=	Convert the result of the cflow utility in a VCG format
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

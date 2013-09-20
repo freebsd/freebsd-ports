@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bouml-doc
-# Date created:		23 December 2007
-# Whom:			Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	bouml-doc
 PORTVERSION=	4.23
@@ -18,6 +14,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/doc
 DOCSDIR=	${PREFIX}/share/doc/bouml
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DOCSDIR})

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ald
-# Date created:        11 July 2003
-# Whom:                Patrick Alken <alken@colorado.edu>
-#
+# Created by: Patrick Alken <alken@colorado.edu>
 # $FreeBSD$
-#
 
 PORTNAME=		ald
 PORTVERSION=		0.1.7
@@ -20,4 +16,5 @@ PLIST_FILES=		bin/ald
 ONLY_FOR_ARCHS=		i386
 NOPRECIOUSMAKEVARS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

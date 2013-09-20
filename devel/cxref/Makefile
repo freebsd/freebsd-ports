@@ -1,4 +1,4 @@
-# Created by: Thomas Gellekum <tg@freebsd.org>
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cxref
@@ -20,6 +20,7 @@ ALL_TARGET=	programs
 
 MAN1=		cxref.1 cxref-query.1
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/*.pl ${DATADIR}

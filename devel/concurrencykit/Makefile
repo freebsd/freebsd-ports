@@ -19,6 +19,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.man"
 
 post-extract:

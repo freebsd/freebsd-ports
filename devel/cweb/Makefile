@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cweb
-# Date created:		10 Feb 1998
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cweb
 PORTVERSION=	3.64a.a
@@ -24,6 +20,7 @@ MAKE_ARGS=	CWEBINPUTS="${DATADIR}" \
 
 MAN1=		cweb.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/cweb.1
 

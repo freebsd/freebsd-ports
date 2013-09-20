@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aros-sdk
-# Date created:				11 Jan 2007
-# Whom:					Jona Joachim <walkingshadow@grummel.net>
-#
+# Created by: Jona Joachim <walkingshadow@grummel.net>
 # $FreeBSD$
-#
 
 PORTNAME=	aros-sdk
 PORTVERSION=	0.20060207
@@ -17,6 +13,7 @@ COMMENT=	The Software development kit (SDK) for the AROS Operating System
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 LD!=		${CC} -print-prog-name=ld

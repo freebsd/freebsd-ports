@@ -32,6 +32,7 @@ SUBVERSION_DESC=	Build with subversion support
 GIT_DESC=		Build with git support
 BAZAAR_DESC=		Build with Bazaar support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} > 1000000

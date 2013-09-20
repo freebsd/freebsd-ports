@@ -22,6 +22,7 @@ PLIST_FILES=	bin/ccdoc
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 do-configure:
 	${REINPLACE_CMD} -e "s:%%PERL%%:${PERL}:" \
 		-e "s:%%CXX%%:${CXX}:" \

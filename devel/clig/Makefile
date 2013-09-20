@@ -1,9 +1,5 @@
-# New ports collection makefile for:   clig
-# Date created:        27 July 1998
-# Whom:                Bill Fumerola <billf@chc-chimes.com>
-#
+# Created by: Bill Fumerola <billf@chc-chimes.com>
 # $FreeBSD$
-#
 
 PORTNAME=	clig
 PORTVERSION=	1.9.11.1
@@ -25,6 +21,7 @@ MANN=		clig_Commandline.n clig_Description.n clig_Double.n clig_Flag.n \
 		clig_Float.n clig_Int.n clig_Long.n clig_Name.n clig_Rest.n \
 		clig_String.n clig_Usage.n clig_Version.n clig_parseCmdline.n
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/example/.cvsignore
 	@${FIND} -d ${WRKSRC} -type d -and -name CVS -exec ${RM} -r {} \;

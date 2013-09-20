@@ -30,6 +30,7 @@ GH_TAGNAME=	${GH_COMMIT}
 
 CONFLICTS=	json-c-[0-9]*
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,boost_thread,boost_thread,g" \
 		${WRKSRC}/CMakeLists.txt

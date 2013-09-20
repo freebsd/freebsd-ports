@@ -1,10 +1,6 @@
-# New ports collection makefile for:	bonobo
-# Date created:				8th October 1999
-# Whom:					Ade Lovett <ade@lovett.com>
-#
+# Created by: Ade Lovett <ade@lovett.com>
 # $FreeBSD$
 #   $MCom: ports/devel/bonobo/Makefile,v 1.5 2007/05/19 21:36:04 marcus Exp $
-#
 
 PORTNAME=	bonobo
 PORTVERSION=	1.0.22
@@ -25,6 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 	    	${WRKSRC}/configure \

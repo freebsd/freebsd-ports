@@ -19,6 +19,7 @@ PLIST_FILES+=	bin/cvsline${ii}
 
 MAN1=	cvslines.1
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -i '' -e 's|the the|the|' ${WRKSRC}/cvslines.1
 

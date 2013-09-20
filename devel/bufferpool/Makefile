@@ -15,4 +15,5 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USES=	pathfix pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

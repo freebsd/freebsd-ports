@@ -23,6 +23,7 @@ INFO=	cvs cvsclient
 
 MAKE_ENV+=	DESTDIR=${PREFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900000

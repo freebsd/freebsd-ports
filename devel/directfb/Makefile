@@ -47,6 +47,7 @@ CONFIGURE_ARGS=	--disable-osx --disable-extra-warnings --disable-profiling \
 		--with-inputdrivers=all --with-smooth-scaling \
 		--with-dither-rgb16=advanced
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

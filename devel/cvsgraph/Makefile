@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--with-gd-inc=${LOCALBASE}/include \
 		LDFLAGS="-L${PREFIX}/lib"
 REINPLACE_ARGS=	-i ""
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e "s:/home/bertho/tmp/cvstest:/home/ncvs:g" ${WRKSRC}/cvsgraph.conf
 

@@ -21,6 +21,7 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 DISTINFO_FILE=  ${.CURDIR}/../cmake/distinfo
 
+NO_STAGE=	yes
 post-patch:
 	@(${FIND} ${WRKSRC}/Modules -name "*.cmake" -print0; \
 		${FIND} ${WRKSRC}/Tests -name "CMakeLists.txt" -print0 ) | \

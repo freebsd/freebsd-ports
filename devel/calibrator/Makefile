@@ -14,6 +14,7 @@ COMMENT=		Cache Profiling Tool
 NO_WRKSUBDIR=		yes
 PLIST_FILES=		bin/calibrator
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}

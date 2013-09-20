@@ -10,4 +10,5 @@ BUILD_DEPENDS=	arm-eabi-as:${PORTSDIR}/devel/arm-eabi-binutils
 RUN_DEPENDS=	arm-eabi-as:${PORTSDIR}/devel/arm-eabi-binutils
 
 MASTERDIR=	${.CURDIR}/../cross-gcc
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

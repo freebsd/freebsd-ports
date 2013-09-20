@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Atlas
-# Date created:				3 February 2005
-# Whom:					Janni <jannisan@t-online.de>
-#
+# Created by: Janni <jannisan@t-online.de>
 # $FreeBSD$
-#
 
 PORTNAME=	Atlas
 PORTVERSION=	0.6.2
@@ -22,6 +18,7 @@ NO_LATEST_LINK=	YES
 
 CONFIGURE_ARGS+=--program-transform-name=
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

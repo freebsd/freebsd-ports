@@ -14,6 +14,7 @@ NO_CDROM=	Commercial redistribution prohibited
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DOCSDIR}
 	@${CP} -r ${WRKSRC}/* ${DOCSDIR}

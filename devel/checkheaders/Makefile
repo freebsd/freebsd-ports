@@ -1,9 +1,5 @@
-# New ports collection makefile for:	checkheaders
-# Date created:		August 18, 2010
-# Whom:	      		bf <bf@FreeBSD.org>
-#
+# Created by: bf <bf@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	checkheaders
 PORTVERSION=	1.0.1
@@ -20,6 +16,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 LICENSE=	GPLv3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^CXX.*=/d' ${WRKSRC}/Makefile
 

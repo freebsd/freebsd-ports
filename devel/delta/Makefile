@@ -14,6 +14,7 @@ PLIST_FILES=	bin/delta bin/multidelta bin/topformflat
 
 USES=	gmake
 
+NO_STAGE=	yes
 do-install:
 .for file in delta multidelta
 	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin

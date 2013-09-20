@@ -39,6 +39,7 @@ LIBFILES=	App/Cilly/KeptFile.pm \
 		App/Cilly/TempFile.pm
 LIBBINS=	patcher
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

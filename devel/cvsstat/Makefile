@@ -17,6 +17,7 @@ USES=		perl5
 NO_BUILD=	yes
 PLIST_FILES=	bin/cvsstat
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} -p ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} ${WRKSRC}

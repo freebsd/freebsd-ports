@@ -34,6 +34,7 @@ PORTDOCS=	manual-${PORTVERSION}.pdf quickguide-${PORTVERSION}.pdf
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 DESKTOP_ENTRIES=	"ArgoUML" \

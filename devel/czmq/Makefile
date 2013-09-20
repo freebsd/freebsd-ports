@@ -37,4 +37,5 @@ MAN3= 		zbeacon.3 \
 
 MAN7=		czmq.7
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

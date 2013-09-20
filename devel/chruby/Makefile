@@ -27,6 +27,7 @@ GH_TAGNAME=	v${PORTVERSION}
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/chruby-exec ${PREFIX}/bin
 	( cd ${WRKSRC}/share/chruby && ${COPYTREE_BIN} \* ${PREFIX}/share/chruby )

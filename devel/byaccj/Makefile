@@ -1,9 +1,5 @@
-# New ports collection makefile for:	byacc
-# Date created:				28 Jun 2002
-# Whom:					David Xu
-#
+# Created by: David Xu
 # $FreeBSD$
-#
 
 PORTNAME=	byaccj
 PORTVERSION=	1.15
@@ -17,6 +13,7 @@ COMMENT=	Java extension of BSD YACC-compatible parser generator
 PLIST_FILES=	bin/byaccj
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/src
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's#<malloc.h>#<stdlib.h>#' ${WRKSRC}/defs.h ${WRKSRC}/*c
 

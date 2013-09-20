@@ -31,6 +31,7 @@ MIMEDIRS=	${PORT_MIMEDIRS}
 
 RMDIRS=		${PORT_MIMEDIRS}
 
+NO_STAGE=	yes
 post-patch:
 	@${SED} -e 's|%%MIMEDIRS%%|${MIMEDIRS}| ;\
 		s|%%RMDIRS%%|${RMDIRS}| ; \

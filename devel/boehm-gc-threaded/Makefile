@@ -1,9 +1,5 @@
-# New ports collection makefile for:	boehm-gc-redirect
-# Date created:		12/17/2009
-# Whom:			stas
-#
+# Created by: stas
 # $FreeBSD$
-#
 
 PORTNAME=	boehm-gc
 PORTVERSION=	7.1
@@ -35,6 +31,7 @@ PLIST_FILES=	${INSTLIBS:S,^,lib/lib,g:S,$,-${GC_VARIANT}.so.${SOVER},g} \
 		${INSTLIBS:S,^,lib/lib,g:S,$,-${GC_VARIANT}.so,g} \
 		libdata/pkgconfig/bdw-gc-${GC_VARIANT}.pc
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"

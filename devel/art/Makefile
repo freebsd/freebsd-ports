@@ -16,6 +16,7 @@ LIB_DEPENDS=	xml++-2.6:${PORTSDIR}/textproc/libxml++26
 
 USES=	gmake pkgconfig
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/artlibgen/src/artlibgen ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/artrepgen/artrepgen ${PREFIX}/bin

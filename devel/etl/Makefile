@@ -13,6 +13,7 @@ COMMENT=	Voria Extended Class and Template Library
 USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

@@ -65,6 +65,7 @@ OPTIONS_DEFINE=	SVN DEVHELP
 OPTIONS_DEFAULT=DEVHELP
 DEVHELP_DESC=	Devhelp support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSVN}

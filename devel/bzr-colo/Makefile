@@ -1,9 +1,5 @@
-# Ports collection makefile for:	bzr-colo
-# Date created:		2010-10-18
-# Whom:			Carlo Strub
-#
+# Created by: Carlo Strub
 # $FreeBSD$
-#
 
 PORTNAME=	bzr-colo
 PORTVERSION=	0.4.0
@@ -25,4 +21,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	bzr_colo
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

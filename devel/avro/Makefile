@@ -20,6 +20,7 @@ PYTHON_DESC=	Install Python library
 
 OPTIONS_DEFAULT=C CPP PYTHON
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MC}

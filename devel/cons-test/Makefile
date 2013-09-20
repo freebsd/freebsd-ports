@@ -35,6 +35,7 @@ DOCS=		CHANGES COPYRIGHT README TODO Tests.txt
 TESTS=		1..83,101..147
 TEST_LIBS=	Cmd.pm Cons.pm
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's:/usr/lib:${PREFIX}/lib:g' \
 		${WRKSRC}/cons-test

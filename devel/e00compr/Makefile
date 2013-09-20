@@ -15,6 +15,7 @@ PLIST_FILES=	bin/e00conv include/e00compr.h \
 		lib/e00compr.a
 PORTDOCS=	e00compr.html
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	eventxx
-# Date created:			Apr 9, 2007
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	eventxx
 PORTVERSION=	1.0.1
@@ -23,6 +18,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e 's|-I..|-I.. -I${LOCALBASE}/include -L${LOCALBASE}/lib|g' \
 	    ${WRKSRC}/test/Makefile

@@ -14,6 +14,7 @@ MASTERDIR=	${.CURDIR}/../dconf
 
 PLIST=		${.CURDIR}/pkg-plist
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC}/editor && ${GMAKE}
 

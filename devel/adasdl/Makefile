@@ -17,6 +17,7 @@ USE_SDL=	mixer image sdl
 USES=		ada gmake
 GMAKE=		${SETENV} ${MAKE_ENV} gmake
 
+NO_STAGE=	yes
 do-patch:
 	for i in `${FIND} ${WRKSRC} -name 'Makefile'`; do \
 		${REINPLACE_CMD} -e '/gnatmake/!s/make\ /gmake\ /' $${i}; \

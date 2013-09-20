@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bcc
-# Date created:		26 March 1995
-# Whom:			joerg
-#
+# Created by: joerg
 # $FreeBSD$
-#
 
 PORTNAME=	bcc
 PORTVERSION=	1995.03.12
@@ -19,4 +15,5 @@ MAN1=		as86.1 bcc.1 bcc-cc1.1 ld86.1
 MANCOMPRESSED=	yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

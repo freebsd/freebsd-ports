@@ -1,9 +1,5 @@
-# Ports collection makefile for:	bzr-stats
-# Date created:				2011-02-27
-# Whom:					Carlo Strub
-#
+# Created by: Carlo Strub
 # $FreeBSD$
-#
 
 PORTNAME=	bzr-stats
 PORTVERSION=	0.1.0
@@ -26,4 +22,5 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	bzr_stats
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

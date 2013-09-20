@@ -20,6 +20,7 @@ CONFLICTS=	bcc-[0-9]* dev86-[0-9]*
 
 BINS=		as/as86 ld/ld86 ld/objchop ld/catimage ld/objdump86
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

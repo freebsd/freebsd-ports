@@ -27,6 +27,7 @@ DESKTOP_ENTRIES=	"DrPython" "Python editor and IDE" \
 			"${PYTHONPREFIX_SITELIBDIR}/drpython/bitmaps/drpython.png" \
 			"drpython" "Development;IDE;" "false"
 
+NO_STAGE=	yes
 post-install:
 	@${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/drpython.sh
 	@${ECHO_CMD} '(cd ${PYTHONPREFIX_SITELIBDIR}/drpython && ${PYTHON_CMD} drpython.py)' >> ${WRKDIR}/drpython.sh

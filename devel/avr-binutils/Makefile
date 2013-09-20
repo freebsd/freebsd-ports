@@ -1,4 +1,4 @@
-# Created by: Joerg Wunsch <joerg@freebsd.org>
+# Created by: Joerg Wunsch <joerg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	binutils
@@ -47,6 +47,7 @@ MAN1=	\
 INFO=		as binutils gprof ld bfd standards configure
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 
+NO_STAGE=	yes
 add-plist-post:
 	@${ECHO_CMD} "@unexec rm %D/${INFO_PATH}/dir 2> /dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/${INFO_PATH} 2> /dev/null || true" >> ${TMPPLIST}

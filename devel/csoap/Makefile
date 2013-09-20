@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	csoap
-# Date created:				10 November 2009
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	csoap
 PORTVERSION=	1.1.0
@@ -20,4 +16,5 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/libsoap-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

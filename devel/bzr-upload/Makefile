@@ -1,9 +1,5 @@
-# Ports collection makefile for:	bzr-upload
-# Date created:				2010-12-11
-# Whom:					Carlo Strub <c-s@c-s.li>
-#
+# Created by: Carlo Strub <c-s@c-s.li>
 # $FreeBSD$
-#
 
 PORTNAME=	bzr-upload
 PORTVERSION=	1.1.0
@@ -26,4 +22,5 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	bzr_upload
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

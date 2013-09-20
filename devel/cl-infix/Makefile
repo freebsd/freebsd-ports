@@ -21,6 +21,7 @@ NO_CDROM=	No fees or compensation can be charged
 
 USE_ASDF=	yes
 
+NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKSRC}/infix.cl ${WRKSRC}/infix.lisp
 

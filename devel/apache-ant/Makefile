@@ -1,4 +1,4 @@
-# Created by:	Ernst de Haan <znerd@FreeBSD.org>
+# Created by: Ernst de Haan <znerd@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	apache-ant
@@ -45,6 +45,7 @@ MAN5=		build.xml.5
 
 SUB_FILES=	ant.sh
 
+NO_STAGE=	yes
 post-extract:
 	@${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${MANPAGE_DISTFILE}
 

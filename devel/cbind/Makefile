@@ -1,9 +1,5 @@
-# New ports collection makefile for:   cbind
-# Date created:        23 December 2002
-# Whom:                David Holm <david@realityrift.com>
-#
+# Created by: David Holm <david@realityrift.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cbind
 PORTVERSION=	6
@@ -22,6 +18,7 @@ MAN1=		cbind.1
 
 ${WRKSRC}=	${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cbind ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/cbfe ${PREFIX}/bin

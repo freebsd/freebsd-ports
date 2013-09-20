@@ -29,6 +29,7 @@ OPTIONS_DEFINE=	TOOLS
 OPTIONS_DEFAULT=TOOLS
 TOOLS_DESC=	Enable deprecated tools
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1000021

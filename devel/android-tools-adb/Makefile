@@ -24,4 +24,5 @@ MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/adb
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

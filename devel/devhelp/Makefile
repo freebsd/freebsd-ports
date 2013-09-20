@@ -33,6 +33,7 @@ LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 OPTIONS_DEFINE=	GEDIT
 GEDIT_DESC=	Enable GEdit plug-in support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGEDIT}

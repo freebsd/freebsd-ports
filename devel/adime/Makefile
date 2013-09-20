@@ -14,6 +14,7 @@ LIB_DEPENDS=	alleg:${PORTSDIR}/devel/allegro
 
 USES=	gmake
 
+NO_STAGE=	yes
 .include "Makefile.man"
 
 MAKEFILE=	makefile

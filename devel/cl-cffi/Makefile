@@ -31,6 +31,7 @@ NO_BUILD=	yes
 
 USE_ASDF=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

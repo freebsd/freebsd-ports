@@ -17,6 +17,7 @@ USE_BZIP2=	yes
 
 PLIST_FILES=	bin/bam
 
+NO_STAGE=	yes
 do-build:
 .if defined(CC) && ${CC:T:Mclang}
 	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/make_unix_clang.sh

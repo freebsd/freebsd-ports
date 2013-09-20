@@ -26,6 +26,7 @@ PLIST_FILES=	bin/bgdc bin/bgdi \
 		libexec/bgdc libexec/bgdi \
 		lib/libbgdrtm.a lib/libbgdrtm.la lib/libbgdrtm.so
 
+NO_STAGE=	yes
 post-extract:
 	@${CHMOD} a+x ${WRKSRC}/configure ${WRKSRC}/install-sh
 

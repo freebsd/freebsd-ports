@@ -55,6 +55,7 @@ PLIST_FILES=	bin/disasm \
 		lib/libdistorm3.so.1
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

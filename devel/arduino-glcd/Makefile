@@ -1,9 +1,5 @@
-# New ports collection makefile for:	arduino-lib-glcd
-# Date created:		03 Apr 2011
-# Whom:			Craig Leres <leres@ee.lbl.gov>
-#
+# Created by: Craig Leres <leres@ee.lbl.gov>
 # $FreeBSD$
-#
 
 PORTNAME=	arduino-glcd
 PORTVERSION=	3.20111205
@@ -38,6 +34,7 @@ FILES=	\
 	glcd_Buildinfo.h \
 	glcd_Config.h \
 	glcd_Device.cpp \
+NO_STAGE=	yes
 	include \
 	readme.txt
 

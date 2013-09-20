@@ -1,9 +1,5 @@
-# New ports collection makefile for:	exercisix
-# Date created:		6 July 2011
-# Whom:			Alexander Churannov <churanov.port.maintainer@gmail.com>
-#
+# Created by: Alexander Churannov <churanov.port.maintainer@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	exercisix
 PORTVERSION=	1.2
@@ -17,4 +13,5 @@ USE_BZIP2=	YES
 MAN3=		exercisix.3
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

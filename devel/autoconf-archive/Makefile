@@ -1,9 +1,5 @@
-# New ports collection makefile for: autoconf-archive
-# Date Created:	18 October 2006
-# Whom:		Martin Kammerhofer
-#
+# Created by: Martin Kammerhofer
 # $FreeBSD$
-#
 
 PORTNAME=	autoconf-archive
 PORTVERSION=	0.${DISTDATE:C/-/./g}
@@ -21,4 +17,5 @@ INFO=		${PORTNAME}
 
 PLIST_SUB=	MACRODIR=share/aclocal
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

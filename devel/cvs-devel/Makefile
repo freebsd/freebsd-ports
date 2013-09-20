@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cvs-devel
-# Date created:				Wed, 14 Nov 2007 00:21:45 +0530
-# Whom:					Balwinder S Dheeman <bdheeman@gmail.com>
-#
+# Created by: Balwinder S Dheeman <bdheeman@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cvs
 PORTVERSION=	1.12.13
@@ -32,6 +28,7 @@ INFO=		cvs cvsclient
 CVS_SITE?=	:pserver:anoncvs@anoncvs.jp.FreeBSD.org:/home/ncvs
 CVS_VER?=	v${PORTVERSION:S//_/g}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's/${PORTVERSION:S/./\./g}/&-devel/g' \
 		${WRKSRC}/configure

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	ace+tao-doc
-# Date created:				9 January 2004
-# Whom:					Sergey Matveychuk <sem@ciam.ru>
-#
+# Created by: Sergey Matveychuk <sem@ciam.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	ace+tao-doc
 PORTVERSION=	5.5.0
@@ -23,6 +19,7 @@ PLIST=		${WRKDIR}/pkg-plist
 DIRLIST=	${WRKDIR}/dir-list
 INSTALL_DIR=	share/doc/${PORTNAME}
 
+NO_STAGE=	yes
 pre-install:
 	@${ECHO_MSG} "--> Generating a directories list"; \
 	cd ${WRKSRC}; \

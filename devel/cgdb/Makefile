@@ -20,6 +20,7 @@ MAKE_JOBS_UNSAFE=	yes
 # we have to specify the full path.
 LDFLAGS+=	/usr/lib/libutil.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # at this time we can not use LIB_DEPENDS, please read ports/99327

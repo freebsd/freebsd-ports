@@ -15,6 +15,7 @@ CONFLICTS=	cvsps-devel-[0-9]*
 MAN1=		cvsps.1
 PLIST_FILES=	bin/cvsps
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

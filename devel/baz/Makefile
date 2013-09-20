@@ -1,9 +1,5 @@
-# Ports collection makefile for:	baz
-# Date created:		11 October 2005
-# Whom:			Ulf Lilleengen
-#
+# Created by: Ulf Lilleengen
 # $FreeBSD$
-#
 
 PORTNAME=	baz
 PORTVERSION=	1.4.2
@@ -38,6 +34,7 @@ PATCH_WRKSRC=	${BASEWRKDIR}
 LDFLAGS+=	-L ${LOCALBASE}/lib
 CFLAGS+=	-I ${LOCALBASE}/include ${LDFLAGS}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-patch:

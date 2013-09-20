@@ -1,9 +1,5 @@
-# New ports collection makefile for:	aegis
-# Date created:				2007-12-20
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	aegis
 PORTVERSION=	4.24.3
@@ -52,6 +48,7 @@ MAN5=	aecattr.5 aecstate.5 aedir.5 aefattr.5 aefstate.5 aegis.5 \
 PORTDATA=	*
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

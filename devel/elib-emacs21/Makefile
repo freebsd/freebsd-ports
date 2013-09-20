@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Elib for GNU Emacs 21
-# Date created:		4 August 2007
-# Whom:			MANTANI Nobutaka <nobutaka@FreeBSD.org>
-#
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -16,4 +12,5 @@ MASTERDIR=	${.CURDIR}/../../devel/elib
 USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs21
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

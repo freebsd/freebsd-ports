@@ -28,4 +28,5 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 MAN1=		dbus-binding-tool.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

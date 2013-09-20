@@ -18,6 +18,7 @@ MAN1=		deheader.1
 
 PLIST_FILES=	bin/deheader
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/deheader ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/deheader.1 ${PREFIX}/man/man1

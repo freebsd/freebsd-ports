@@ -18,6 +18,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		cvschk.1
 
+NO_STAGE=	yes
 do-configure:
 	${SED} -e "s,^#!/usr/bin/perl -w,#! ${PERL} -w," \
 	<${DISTDIR}/${DISTNAME} >${WRKSRC}/${DISTNAME}

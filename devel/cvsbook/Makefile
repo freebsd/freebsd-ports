@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cvsbook
-# Date created:		2002/02/28
-# Whom:			Alan Eldridge <alane@geeksrus.net>
-#
+# Created by: Alan Eldridge <alane@geeksrus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	cvsbook
 PORTVERSION=	1.21
@@ -26,6 +22,7 @@ OPTIONS_DEFAULT=	INFO SINGLE_HTML POSTSCRIPT PDF
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSPLIT_HTML}

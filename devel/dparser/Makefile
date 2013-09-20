@@ -24,6 +24,7 @@ PORTDOCS=	*
 PLIST_FILES=	bin/make_dparser include/dparse.h include/dparse_tables.h \
 		include/dparse_tree.h include/dsymtab.h lib/${LIBDPARSE}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBOEHM}

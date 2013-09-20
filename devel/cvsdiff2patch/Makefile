@@ -1,4 +1,4 @@
-# Created by: alfred@freebsd.org
+# Created by: alfred@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	cvsdiff2patch
@@ -13,6 +13,7 @@ COMMENT=	Turn cvs diff output into patch input
 
 PLIST_FILES=	bin/cvsdiff2patch
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s/NOMAN/NO_MAN/" ${WRKSRC}/Makefile
 

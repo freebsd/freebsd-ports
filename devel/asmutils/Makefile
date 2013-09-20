@@ -1,9 +1,5 @@
-# New ports collection makefile for:	asmutils
-# Date created:				22 January 2001
-# Whom:					George Reid <greid@ukug.uk.freebsd.org>
-#
+# Created by: George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	asmutils
 PORTVERSION=	0.18
@@ -45,6 +41,7 @@ PLIST_FILES=	${BINS:S/^/bin\/asmutils\//:S/bonus\///} \
 PLIST_DIRS=	bin/asmutils lib/asmutils
 PORTDOCS=	*
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^static ,,' ${WRKSRC}/lib/libm.c
 

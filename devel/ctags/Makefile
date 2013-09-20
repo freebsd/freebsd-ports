@@ -1,9 +1,5 @@
-# New ports collection makefile for:   Exuberant Ctags
-# Date created:        4 June 1996
-# Whom:                jkoshy
-#
+# Created by: jkoshy
 # $FreeBSD$
-#
 
 PORTNAME=	ctags
 PORTVERSION=	5.8
@@ -21,6 +17,7 @@ MAN1=		exctags.1
 
 SUB_FILES+=	pkg-message
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

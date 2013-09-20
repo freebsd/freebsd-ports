@@ -19,6 +19,7 @@ USE_GCC=	yes
 
 WRKSRC=		${WRKDIR}/astyle/build/gcc
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's,^CFLAGS,#CFLAGS,; s,g++,${CXX},;' ${WRKSRC}/Makefile
 

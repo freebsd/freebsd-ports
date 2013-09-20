@@ -23,6 +23,7 @@ PLIST_FILES=	lib/libargp.la lib/libargp.a \
 		lib/libargp.so lib/libargp.so.0 \
 		include/argp.h
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-configure:

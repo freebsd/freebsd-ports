@@ -17,6 +17,7 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/lang/c
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 pre-configure:
 	@${REINPLACE_CMD} 's|/bin/bash|/bin/sh|g' \

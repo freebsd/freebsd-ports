@@ -30,6 +30,7 @@ WRKSRC=		${WRKDIR}/bisonc++-${PORTVERSION}
 
 USE_GCC=	4.6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

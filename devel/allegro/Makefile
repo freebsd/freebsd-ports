@@ -33,6 +33,7 @@ LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib \
 		jack.0:${PORTSDIR}/audio/jack \
 		png15:${PORTSDIR}/graphics/png
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	cvsadmin
-# Date Created:			Jun 10, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	cvsadmin
 PORTVERSION=	1.0.3
@@ -20,6 +15,7 @@ GNU_CONFIGURE=	yes
 MAN1=		cvsadmin.1
 PLIST_FILES=	bin/cvsadmin
 
+NO_STAGE=	yes
 post-configure:
 	${ECHO_CMD} "#define HAVE_MKDTEMP 1" >> ${WRKSRC}/config.h
 

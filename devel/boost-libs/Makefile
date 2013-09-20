@@ -13,6 +13,7 @@ OPTIONS_DEFAULT=	ICU
 VERBOSE_BUILD_DESC=	Show compiler messages
 ICU_DESC=		Boost.Regex with ICU unicode support
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../boost-all/common.mk"
 
 .include <bsd.port.pre.mk>
