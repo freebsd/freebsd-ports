@@ -6,7 +6,7 @@ PORTVERSION=	0.4.18
 CATEGORIES=	devel
 MASTER_SITES= 	http://gstreamer.freedesktop.org/data/src/orc/
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library and toolset to operate arrays of data
 
 LICENSE=	BSD

@@ -9,7 +9,7 @@ MASTER_SITES=	http://git.videolan.org/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	ffmpeg-${GIT_SUFFIX}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
 
 LICENSE=		GPLv2 LGPL21
