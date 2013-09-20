@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmic
-PORTVERSION=	1.5.6.1
+PORTVERSION=	1.5.7.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME} \
 		SF/${PORTNAME}/old
@@ -12,12 +12,12 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	GREYC's Magic Image Converter
 
-LIB_DEPENDS=	GraphicsMagick++.9:${PORTSDIR}/graphics/GraphicsMagick13 \
-		IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		Magick++:${PORTSDIR}/graphics/ImageMagick \
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		fftw3:${PORTSDIR}/math/fftw3 \
-		gimp-2.0:${PORTSDIR}/graphics/gimp-app
+LIB_DEPENDS=	libGraphicsMagick++.so:${PORTSDIR}/graphics/GraphicsMagick13 \
+		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
+		libMagick++.so:${PORTSDIR}/graphics/ImageMagick \
+		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
+		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
 
 OPTIONS_DEFINE=	BASH
 BASH_DESC=	Install programmable completions for Bash
@@ -39,6 +39,7 @@ CXXFLAGS:=	${CXXFLAGS:N-O*:N-pipe}
 
 MAN1=		gmic.1
 MANCOMPRESSED=	yes
+NO_STAGE=	yes
 
 .include <bsd.port.options.mk>
 
