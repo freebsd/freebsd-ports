@@ -10,6 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	ATK accessibility wrapper for python
 
+NO_STAGE=	yes
 USES=		pkgconfig
 USE_GNOME=	atk
 USE_PYTHON=	yes

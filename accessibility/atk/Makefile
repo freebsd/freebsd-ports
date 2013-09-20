@@ -16,6 +16,7 @@ USE_XZ=		yes
 
 .if !defined(REFERENCE_PORT)
 
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USES=		gettext gmake pathfix pkgconfig

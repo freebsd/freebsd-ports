@@ -14,6 +14,7 @@ LIB_DEPENDS=	speechd.5:${PORTSDIR}/accessibility/speech-dispatcher
 
 CONFLICTS_INSTALL=	kdeaccessibility-4.[0-7].*
 
+NO_STAGE=	yes
 USE_XZ=		yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USES=		cmake:outsource

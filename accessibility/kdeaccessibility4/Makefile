@@ -12,6 +12,7 @@ COMMENT=	Accessibility applications for KDE 4
 
 USE_KDE4=	kdeprefix
 NO_BUILD=	yes
+NO_STAGE=	yes
 
 LATEST_LINK=	${PORTNAME}4
 

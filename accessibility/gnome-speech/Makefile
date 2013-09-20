@@ -11,6 +11,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME text-to-speech API
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix libbonobo
 USES=		gmake pathfix pkgconfig

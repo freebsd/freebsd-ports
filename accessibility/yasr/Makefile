@@ -12,6 +12,7 @@ COMMENT=	General-purpose console screen reader
 
 LICENSE=	LGPL20
 
+NO_STAGE=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes
 MAN1=		yasr.1

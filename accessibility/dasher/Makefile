@@ -17,6 +17,7 @@ BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier libgnomeui atspi \

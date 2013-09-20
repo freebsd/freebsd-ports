@@ -14,6 +14,7 @@ COMMENT=	Collection of accessibility apps for GNOME 2
 
 LIB_DEPENDS=	gnome-mag.2:${PORTSDIR}/accessibility/gnome-mag
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		gettext gmake pkgconfig
 USE_LDCONFIG=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	accessibility/linux-f10-atk
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	atk
 PORTVERSION=	1.24.0
@@ -17,6 +13,7 @@ COMMENT=	Accessibility Toolkit, Linux/i386 binary (Linux Fedora 10)
 
 CONFLICTS=	linux-atk-[0-9]* linux-f8-atk-[0-9]*
 
+NO_STAGE=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	10

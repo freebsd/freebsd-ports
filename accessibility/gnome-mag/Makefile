@@ -12,6 +12,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME screen magnifier
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_XORG=	xfixes xdamage ice xcomposite sm
 USE_GNOME=	gnomehack gnomeprefix atspi libbonobo intlhack ltverhack

@@ -22,6 +22,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py-dbus \
 
 LATEST_LINK=	gnome-orca
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		gmake gettext pkgconfig
 USE_PYTHON=	yes

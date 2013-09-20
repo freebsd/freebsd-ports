@@ -12,6 +12,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Interactive Python accessibility explorer for GNOME
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	pygnomedesktop atspi intlhack
 USE_PYTHON=	yes
