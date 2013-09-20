@@ -21,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=	jQuery::File::Upload.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

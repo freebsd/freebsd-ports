@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mini_httpd
-# Date created:         24 July 2002
-# Whom:                 se
-#
+# Created by: se
 # $FreeBSD$
-#
 
 PORTNAME=	mini_httpd
 PORTVERSION=	1.19
@@ -21,6 +17,7 @@ MAKE_ARGS+=	-DUSE_OPENSSL
 MAN1=	${PORTNAME}-htpasswd.1
 MAN8=	${PORTNAME}.8
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's/htpasswd/${PORTNAME}-htpasswd/g' ${WRKSRC}/htpasswd.1
 	${REINPLACE_CMD} -e 's/\(htpasswd(1)\)/${PORTNAME}-\1/g' ${WRKSRC}/${PORTNAME}.8

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wikitools
-# Date created:		2009-07-26
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wikitools
 PORTVERSION=	1.1.1
@@ -20,6 +16,7 @@ PROJECTHOST=	python-${PORTNAME}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easyinstall
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 260

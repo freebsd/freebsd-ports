@@ -14,6 +14,7 @@ COMMENT=	Swiggle is a commandline web image gallery generator
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		exif.12:${PORTSDIR}/graphics/libexif
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/Makefile
 

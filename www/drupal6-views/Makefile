@@ -1,9 +1,5 @@
-# New ports collection makefile for:	drupal5-views
-# Date created:				25 Jul 2007
-# Whom:					Geoff Glasson <g_glasson@jimali.dyndns.org>
-#
+# Created by: Geoff Glasson <g_glasson@jimali.dyndns.org>
 # $FreeBSD$
-#
 
 PORTNAME=	views
 DISTVERSION=	6.x-2.12
@@ -408,4 +404,5 @@ module-dirs: patch
 module-files: patch
 	@cd ${WRKSRC}; ${FIND} -s . -type f -d | ${SED} -e's|^\./|		|;s|$$| \\|'
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

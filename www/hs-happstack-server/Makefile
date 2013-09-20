@@ -15,5 +15,6 @@ USE_CABAL=	base64-bytestring blaze-html>=0.5 extensible-exceptions \
 		threads>=0.5 time-compat transformers>=0.1.3 \
 		transformers-base>=0.4 utf8-string>=0.3.4 xhtml zlib
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

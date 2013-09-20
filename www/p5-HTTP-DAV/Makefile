@@ -25,4 +25,5 @@ MAN1=		dave.1
 MAN3=		HTTP::DAV.3 HTTP::DAV::Lock.3 HTTP::DAV::Resource.3 \
 		HTTP::DAV::Response.3 HTTP::DAV::Changes.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

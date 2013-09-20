@@ -20,6 +20,7 @@ MAKE_JOBS_UNSAFE=yes
 
 STRIP=		# none
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PREFIX:=	${PREFIX}/${PORTNAME}

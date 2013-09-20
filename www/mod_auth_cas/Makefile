@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mod_auth_cas
-# Date created:            				Thursday December 24, 2009
-# Whom:                				 	Kimo <kimor79@yahoo.com>
-#
+# Created by: Kimo <kimor79@yahoo.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_auth_cas
 PORTVERSION=	1.0.9.1
@@ -30,6 +26,7 @@ AP_GENPLIST=	yes
 AP_LIB=		${LOCALBASE}/lib
 AP_EXTRAS=	-l ssl -l curl
 
+NO_STAGE=	yes
 post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/mod_auth_cas.c ${WRKSRC}/mod_auth_cas.c
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/mod_auth_cas.h ${WRKSRC}/mod_auth_cas.h

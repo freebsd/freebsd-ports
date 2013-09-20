@@ -28,4 +28,5 @@ USE_PERL5=	modbuild
 
 MAN3=		MasonX::WebApp.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

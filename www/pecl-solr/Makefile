@@ -20,4 +20,5 @@ USE_PHPEXT=	yes
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

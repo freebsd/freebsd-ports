@@ -16,6 +16,7 @@ SHEBANG_FILES=	calamaris
 
 MAN1=		calamaris.1
 
+NO_STAGE=	yes
 do-install:
 	@ ${INSTALL_MAN} ${WRKSRC}/calamaris.1 ${PREFIX}/man/man1/calamaris.1
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/calamaris ${PREFIX}/bin/calamaris

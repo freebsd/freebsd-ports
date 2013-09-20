@@ -38,6 +38,7 @@ LIB_DEPENDS+=	enchant.1:${PORTSDIR}/textproc/enchant
 CONFIGURE_ARGS+=	--enable-enchant
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-DGNOME_DISABLE_DEPRECATED||g ; \
 		s|-DGNOMEUI_DISABLE_DEPRECATED||g ; \

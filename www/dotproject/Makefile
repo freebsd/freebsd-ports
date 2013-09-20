@@ -19,6 +19,7 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	LDAP
 OPTIONS_DEFAULT=LDAP
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MLDAP}

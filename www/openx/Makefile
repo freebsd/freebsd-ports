@@ -16,6 +16,7 @@ NO_BUILD=	yes
 SUB_LIST+=	PKGNAME=${PKGNAME}
 SUB_FILES+=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_PHP_DEPENDS)

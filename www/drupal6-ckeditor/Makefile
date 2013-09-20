@@ -314,6 +314,7 @@ DOC_FILES=	ckeditor/LICENSE.html ckeditor/INSTALL.html \
 		TROUBLESHOOTING.txt README.txt \
 		LICENSE.txt CHANGELOG.txt
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

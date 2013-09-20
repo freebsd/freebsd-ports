@@ -26,4 +26,5 @@ MAN3=		Catalyst::Plugin::Server.3 Catalyst::Plugin::Server::XMLRPC.3 \
 		Catalyst::Plugin::Server::XMLRPC::DispatchType::XMLRPCRegex.3 \
 		Catalyst::Plugin::Server::XMLRPC::Tutorial.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -39,6 +39,7 @@ FULL_CGI_REFS_DESC=Show full cgi parameters in referers
 CLICKABLE_REFERER_DESC=Make referers clickable
 LARGE_URL_DESC=Enable URLs longer 512 bytes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGEODB} || ${PORT_OPTIONS:MGEOIP} || make(makesum) || defined(FETCH_ALL)

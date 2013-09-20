@@ -1,7 +1,4 @@
-# New ports collection makefile for:   	netoffice
-# Date created:                         22 Sep 2006
-# Whom:                                 Marcelo Araujo <araujo@bsdmail.org>
-#
+# Created by: Marcelo Araujo <araujo@bsdmail.org>
 # $FreeBSD$
 
 PORTNAME=	netoffice
@@ -23,6 +20,7 @@ WEBGRP?=	www
 APACHEDIR=	${LOCALBASE}/www/
 INSTALLDIR=	${APACHEDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${INSTALLDIR}
 	cd ${WRKSRC}; ${FIND} . \

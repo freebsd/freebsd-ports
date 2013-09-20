@@ -1,4 +1,4 @@
-# Created by: Marc van Woerkom <3d@freebsd.org>
+# Created by: Marc van Woerkom <3d@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	openvrml
@@ -46,6 +46,7 @@ MAKE_JOBS_UNSAFE=yes
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 

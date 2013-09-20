@@ -38,6 +38,7 @@ TEST_DEPENDS=	\
 OPTIONS_DEFINE=	YAML
 OPTIONS_DEFAULT=	YAML
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MYAML}

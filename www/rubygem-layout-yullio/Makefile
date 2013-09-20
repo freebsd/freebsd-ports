@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	layout-yullio
-# Date created:			Dec 27, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	layout-yullio
 PORTVERSION=	0.9.0
@@ -23,4 +18,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=  yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

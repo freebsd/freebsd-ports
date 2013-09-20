@@ -39,6 +39,7 @@ SOUTH_DESC=		Use South database migration tool for upgrades
 FEDEX_DESC=		Use Fedex web services for shipping
 AKISMET_DESC=	Use Akismet for spam filtering on product reviews
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSOUTH}

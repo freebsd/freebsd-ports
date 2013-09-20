@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-libgtkembedmoz
-# Date created:				6 Aug 2010
-# Whom:					hrs
-#
+# Created by: hrs
 # $FreeBSD$
-#
 
 PORTNAME=	libgtkembedmoz
 PORTVERSION=	0.0.20100806
@@ -25,6 +21,7 @@ PLIST_SUB=	MOZLIBDIR=${MOZLIBDIR}
 
 MOZLIBDIR=	lib/${PKGNAMEPREFIX}${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
 	${MKDIR} ${PREFIX}/${MOZLIBDIR}

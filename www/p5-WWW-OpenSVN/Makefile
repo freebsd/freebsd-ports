@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-OpenSVN
-# Date created:		2006-07-24
-# Whom:			Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-#
+# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-OpenSVN
 PORTVERSION=	0.1.3
@@ -22,4 +18,5 @@ USE_PERL5=	modbuild
 
 MAN3=		WWW::OpenSVN.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

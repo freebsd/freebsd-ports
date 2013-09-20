@@ -38,6 +38,7 @@ OPTIONS_DEFAULT=	ICONV
 
 PORTSCOUT=	limit:^1\.0\.
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MICONV}

@@ -19,6 +19,7 @@ USE_LINUX_APPS=	dbusglib dbuslibs alsalib alsa-plugins-oss
 PREFS_FILE=	${WRKSRC}/${APP_SUBDIR}defaults/preferences/browser-prefs.js
 APP_SUBDIR=	browser/ # plugins, extensions
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../linux-seamonkey/Makefile.common"
 
 .include <bsd.port.mk>

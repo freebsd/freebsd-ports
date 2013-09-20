@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vee
-# Date created:		24 April 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vee
 DISTVERSION=	0.9.9-zeta
@@ -18,6 +14,7 @@ COMMENT=	Tiny CLI blogging tool
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|^function ([[:graph:]]+)|\1 ()|' ${WRKSRC}/bin/${PORTNAME}
 

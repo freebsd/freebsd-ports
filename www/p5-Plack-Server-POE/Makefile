@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Plack::Server::POE
-# Date created:		23 Dec 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Plack-Server-POE
 PORTVERSION=	0.4
@@ -28,4 +23,5 @@ USE_PERL5=	configure
 
 MAN3=	Plack::Server::POE.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

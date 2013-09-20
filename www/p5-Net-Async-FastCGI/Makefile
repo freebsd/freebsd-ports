@@ -29,4 +29,5 @@ MAN3=	Net::Async::FastCGI.3 \
 	Net::Async::FastCGI::Request.3 \
 	Plack::Handler::Net::Async::FastCGI.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

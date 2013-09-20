@@ -1,9 +1,4 @@
-# New ports collection makefile for:	HTTP::MobileAgent::Plugin::Locator
-# Date created:		05 Jul 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-MobileAgent-Plugin-Locator
 PORTVERSION=	0.04
@@ -28,4 +23,5 @@ USE_PERL5=	configure
 
 MAN3=	HTTP::MobileAgent::Plugin::Locator.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

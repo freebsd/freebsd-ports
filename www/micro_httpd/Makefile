@@ -1,9 +1,5 @@
-# New ports collection makefile for:	micro_httpd
-# Date created:				13 Jul 2001
-# Whom:					Kim Scarborough <user@unknown.nu>
-#
+# Created by: Kim Scarborough <user@unknown.nu>
 # $FreeBSD$
-#
 
 PORTNAME=	micro_httpd
 PORTVERSION=	2001.12.14
@@ -19,6 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN8=		micro_httpd.8
 PLIST_FILES=	sbin/micro_httpd
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s:/usr/local/sbin:${PREFIX}/sbin:g; \
 		s:/usr/local/man/man8:${MAN8PREFIX}/man/man8:g; \

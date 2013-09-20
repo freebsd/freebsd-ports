@@ -42,6 +42,7 @@ MAN3=		WWW::Mechanize.3 WWW::Mechanize::Cookbook.3 \
 DOCS=		Changes etc/www-mechanize-logo.png
 PORTDOCS=	${DOCS:T}
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/

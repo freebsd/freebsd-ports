@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-default_full_zoom_level
-# Date created:				2009-04-17
-# Whom:					Norikatsu Shigemura <nork@FreeBSD.org>
-#
+# Created by: Norikatsu Shigemura <nork@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	default_full_zoom_level
 PORTVERSION=	4.3
@@ -22,6 +18,7 @@ XPI_DIRS=	chrome defaults/preferences defaults
 
 REINPLACE_ARGS=	-i ""
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} '/em:maxVersion/s/"[^"][^"]*"/"3.6.*"/' ${WRKSRC}/install.rdf
 

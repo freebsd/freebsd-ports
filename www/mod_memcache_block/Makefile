@@ -24,4 +24,5 @@ AP_GENPLIST=	yes
 AP_INC=		${LOCALBASE}/include/libmemcached
 AP_LIB=		${LOCALBASE}/lib -lmemcached
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

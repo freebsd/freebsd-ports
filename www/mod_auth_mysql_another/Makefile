@@ -1,4 +1,4 @@
-# Created by: mbr@freebsd.org
+# Created by: mbr@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	mod_auth_mysql
@@ -23,6 +23,7 @@ AP_LIB=	${LOCALBASE}/lib/mysql
 AP_EXTRAS=	-lmysqlclient -lz -lm
 AP_EXTRAS+=	-DAPACHE2
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Catalyst-Model-Memcached
-# Date created:	   24 Mar 2010
-# Whom:		   Denis Pokataev <catone@cpan.org>
-#
+# Created by: Denis Pokataev <catone@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Model-Memcached
 PORTVERSION=	0.02
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=		Catalyst::Model::Memcached.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

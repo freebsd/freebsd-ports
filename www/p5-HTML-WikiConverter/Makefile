@@ -27,4 +27,5 @@ MAN3=		HTML::WikiConverter.3 HTML::WikiConverter::Dialects.3 \
 		HTML::WikiConverter::Normalizer.3 \
 		HTML::WikiConverter::WebApp.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -29,6 +29,7 @@ OPTIONS_DEFINE=	MYSQL PGSQL
 MYSQL_DESC=	MySQL dependency to run on RC start
 PGSQL_DESC=	PgSQL dependency to run on RC start
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

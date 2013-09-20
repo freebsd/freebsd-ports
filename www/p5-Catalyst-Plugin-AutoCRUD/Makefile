@@ -39,4 +39,5 @@ MAN3=		Catalyst::Plugin::AutoCRUD.3 \
 		Catalyst::Plugin::AutoCRUD::Manual::Limitations.3 \
 		Catalyst::Plugin::AutoCRUD::Manual::Troubleshooting.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

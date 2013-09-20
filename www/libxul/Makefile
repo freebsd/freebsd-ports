@@ -50,6 +50,7 @@ MOZ_PKGCONFIG_FILES=	libxul-embedding libxul mozilla-js \
 
 OPTIONS_DEFAULT=GSTREAMER
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
 # OSS is gone after bug 852401

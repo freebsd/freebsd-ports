@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-HTML-Query
-# Date created:                         Sat Oct 10 17:28:20 EDT 2009
-# Whom:                                 Vivek Khera <vivek@khera.org>
-#
+# Created by: Vivek Khera <vivek@khera.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CSS-Inliner
 PORTVERSION=	3674
@@ -37,4 +33,5 @@ PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Inliner \
 PLIST_DIRSTRY=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS \
 		%%SITE_PERL%%/CSS
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

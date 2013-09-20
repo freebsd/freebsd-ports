@@ -38,6 +38,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES JYTHON JRUBY
 JYTHON_DESC=	Use Python to write verticles
 JRUBY_DESC=	Use Ruby to write verticles
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJYTHON}

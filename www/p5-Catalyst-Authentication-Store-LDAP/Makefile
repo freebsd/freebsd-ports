@@ -24,4 +24,5 @@ MAN3=		Catalyst::Authentication::Store::LDAP.3 \
 		Catalyst::Authentication::Store::LDAP::Backend.3 \
 		Catalyst::Authentication::Store::LDAP::User.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

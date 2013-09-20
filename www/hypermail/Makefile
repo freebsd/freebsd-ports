@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hypermail
-# Date created:				23 Dec 1997
-# Whom:					mjhsieh
-#
+# Created by: mjhsieh
 # $FreeBSD$
-#
 
 PORTNAME=	hypermail
 PORTVERSION=	2.2.0
@@ -26,4 +22,5 @@ CFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		hypermail.1
 MAN4=		hmrc.4
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

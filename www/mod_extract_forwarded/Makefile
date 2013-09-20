@@ -27,6 +27,7 @@ AP_GENPLIST=	yes
 #   http://lists.freebsd.org/pipermail/freebsd-ports/2012-June/075466.html
 UNIQUENAME=	ap22-${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MYOSHFUJI}

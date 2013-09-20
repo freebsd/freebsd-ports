@@ -19,6 +19,7 @@ USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 MAN1=		chimera.1
 
 # Call the port's configure script explicitly, since USES=imake masks it out
+NO_STAGE=	yes
 pre-configure:
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 

@@ -18,6 +18,7 @@ NOPORTDOCS=	yes
 PORTDOCS=	changelog.html documentation.html download.html \
 		index.html
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

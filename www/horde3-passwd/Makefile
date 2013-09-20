@@ -1,9 +1,5 @@
-# Ports collection makefile for:	horde-passwd
-# Date created:		Thu Feb 12, 2004
-# Whom:			Joao Carlos Mendes Luis (<jonny@jonny.eng.br>)
-#
+# Created by: Joao Carlos Mendes Luis (<jonny@jonny.eng.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	passwd
 PORTVERSION=	3.1.3
@@ -18,5 +14,6 @@ USE_HORDE=	base
 USES=		gettext
 PORTDOCS=	README CHANGES CREDITS INSTALL RELEASE_NOTES TODO
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../www/horde3-base/bsd.horde.mk"
 .include <bsd.port.mk>

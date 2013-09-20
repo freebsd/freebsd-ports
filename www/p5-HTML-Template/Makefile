@@ -15,4 +15,5 @@ USE_PERL5=	configure
 MAN3=		HTML::Template.3 \
 		HTML::Template::FAQ.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

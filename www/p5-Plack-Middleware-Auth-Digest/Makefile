@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Plack::Middleware::Auth::Digest
-# Date created:		03 Apr 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Plack-Middleware-Auth-Digest
 PORTVERSION=	0.04
@@ -25,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=	Plack::Middleware::Auth::Digest.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

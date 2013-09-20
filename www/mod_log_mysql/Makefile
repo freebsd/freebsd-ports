@@ -28,4 +28,5 @@ USE_MYSQL=	yes
 AP_INC+=	${LOCALBASE}/include/mysql
 AP_LIB+=	${LOCALBASE}/lib/mysql -lmysqlclient
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

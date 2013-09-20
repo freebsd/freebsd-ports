@@ -33,6 +33,7 @@ MAN3=	Furl.3 \
 	Furl::Request.3 \
 	Furl::Response.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-django-tagging
-# Date created:				18 October 2009
-# Whom:					Kevin Golding <ports@caomhin.org>
-#
+# Created by: Kevin Golding <ports@caomhin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	django-tagging
 PORTVERSION=	0.3.1
@@ -21,6 +17,7 @@ USE_PYDISTUTILS=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

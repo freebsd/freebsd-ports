@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-staticmatic
-# Date created:				15 November 2007
-# Whom:					Robert Gogolok <gogo@cs.uni-sb.de>
-#
+# Created by: Robert Gogolok <gogo@cs.uni-sb.de>
 # $FreeBSD$
 
 PORTNAME=	staticmatic
@@ -23,4 +20,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/staticmatic
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

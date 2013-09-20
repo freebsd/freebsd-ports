@@ -19,4 +19,5 @@ SHORTMODNAME=	rpaf
 
 SRC_FILE=	mod_rpaf-2.0.c
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

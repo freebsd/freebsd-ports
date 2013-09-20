@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-HatenaStar
-# Date created:		2009-04-07
-# Whom:			Masahiro Teramoto <markun@onohara.to>
-#
+# Created by: Masahiro Teramoto <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-HatenaStar
 PORTVERSION=	0.04
@@ -27,4 +23,5 @@ MAN3=		WWW::HatenaStar.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

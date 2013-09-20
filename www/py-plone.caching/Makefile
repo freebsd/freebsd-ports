@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-plone.caching
-# Date created:				02 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone.caching
 PORTVERSION=	1.0
@@ -31,4 +26,5 @@ USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 #USE_ZOPE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

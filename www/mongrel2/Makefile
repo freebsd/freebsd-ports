@@ -28,6 +28,7 @@ EXAMPLES_LIST=	bbs \
 
 OPTIONS_DEFINE=		EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}

@@ -1,4 +1,3 @@
-# Ports collection makefile for:	p5-Catalyst-Plugin-Authorization-Roles
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
 
@@ -23,6 +22,7 @@ USE_PERL5=	configure
 
 MAN3=	Catalyst::Plugin::Authorization::Roles.3
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e '/^test_requires/d' ${WRKSRC}/${CONFIGURE_SCRIPT}
 

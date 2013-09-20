@@ -1,9 +1,5 @@
-# New ports collection makefile for:	closure-linter
-# Date created:		2011-01-10
-# Whom:			Julien Laffaye <kimelto@gmail.com>
-#
+# Created by: Julien Laffaye <kimelto@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	closure-linter
 PORTVERSION=	2.3.5
@@ -25,4 +21,5 @@ PLIST_FILES=	bin/fixjsstyle \
 		bin/gjslint \
 		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

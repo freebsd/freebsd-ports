@@ -1,9 +1,4 @@
-# New ports collection makefile for:	p5-Catalyst-View-JSON
-# Date created:		May 10, 2006
-# Whom:			kuriyama@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-View-JSON
 PORTVERSION=	0.33
@@ -25,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=	Catalyst::Helper::View::JSON.3 Catalyst::View::JSON.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

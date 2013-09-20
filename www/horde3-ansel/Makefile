@@ -1,9 +1,5 @@
-# Ports collection makefile for:	ansel
-# Date created:			Mon Mar 19, 2007
-# Whom:				Beech Rintoul <beech@FreeBSD.org>
-#
+# Created by: Beech Rintoul <beech@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ansel
 DISTVERSION=	1.1.2
@@ -18,5 +14,6 @@ USE_HORDE=	base pkg-message
 USES=		gettext
 PORTDOCS=	CHANGES CREDITS TODO README
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../www/horde3-base/bsd.horde.mk"
 .include <bsd.port.mk>

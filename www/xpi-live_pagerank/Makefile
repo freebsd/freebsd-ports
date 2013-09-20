@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-live_pagerank
-# Date created:				2009-04-26
-# Whom:					Norikatsu Shigemura <nork@FreeBSD.org>
-#
+# Created by: Norikatsu Shigemura <nork@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	live_pagerank
 PORTVERSION=	0.9.7
@@ -19,5 +15,6 @@ XPI_FILES=	chrome.manifest chrome/livepr.jar \
 		install.rdf
 XPI_DIRS=	chrome
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

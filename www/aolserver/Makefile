@@ -49,6 +49,7 @@ HTMLDOCS_DESC=	Install HTML documentation
 MANPAGES_DESC=	Install manpages
 TESTS_DESC=	Install tests in example directory
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 SUB_LIST+=	MKDIR="${MKDIR}" ECHO_CMD="${ECHO_CMD}" \

@@ -45,4 +45,5 @@ MAN3=	\
 	Squatting::With::MockRequest.3 \
 	Squatting::With::Mount.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

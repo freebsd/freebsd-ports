@@ -22,6 +22,7 @@ IGNORE_WITH_MYSQL=	41 50
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${WWWDIR}
 		@cd ${WRKSRC} && \

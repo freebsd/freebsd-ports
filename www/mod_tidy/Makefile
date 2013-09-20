@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_tidy
-# Date created:				Sun Oct  5
-# Whom:					Clement Laforet <sheepkiller@cultdeadsheep.org>
-#
+# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_tidy
 PORTVERSION=	0.5.5
@@ -27,6 +23,7 @@ AP_LIB+=	${LOCALBASE}/lib -ltidy
 PLIST_FILES=	${DOCSDIR:S/${PREFIX}\///}/LICENSE
 PLIST_DIRS=	${DOCSDIR:S/${PREFIX}\///}
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/../LICENSE ${DOCSDIR}

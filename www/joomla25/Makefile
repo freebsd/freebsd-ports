@@ -29,6 +29,7 @@ USE_PHP=	gd json mbstring mysql mysqli pcre pdf session simplexml xml zip zlib
 
 WANT_PHP_WEB=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${WWWDIR}
 	@cd ${WRKSRC} && \

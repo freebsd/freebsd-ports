@@ -50,6 +50,7 @@ OPTIONS_DEFAULT=	GIT
 
 GIT_DESC=	GIT support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAP}

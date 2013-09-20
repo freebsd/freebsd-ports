@@ -51,6 +51,7 @@ NSS_DESC=	Import passwords from 2.26 and older on first run
 SPELLCHECK_DESC=Enable spell checking by default
 SEED_DESC=	Seed (JavaScript) support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNSS}

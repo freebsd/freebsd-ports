@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dummyflash
-# Date Created:				June 16 2004
-# Whom:					Daniel O'Connor <darius@dons.net.au>
-#
+# Created by: Daniel O'Connor <darius@dons.net.au>
 # $FreeBSD$
-#
 
 PORTNAME=	dummyflash
 PORTVERSION=	1.0
@@ -24,6 +20,7 @@ MAKEFILE=	makefile.freebsd
 USE_WEBPLUGINS=	native
 WEBPLUGINS_FILES=dummyflash.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 

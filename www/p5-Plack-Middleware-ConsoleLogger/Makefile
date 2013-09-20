@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Plack::Middleware::ConsoleLogger
-# Date created:		16 May 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Plack-Middleware-ConsoleLogger
 PORTVERSION=	0.04
@@ -24,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=	Plack::Middleware::ConsoleLogger.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

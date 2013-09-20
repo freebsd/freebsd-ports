@@ -37,4 +37,5 @@ LIB_DEPENDS+=	gssapi_krb5:${PORTSDIR}/security/krb5
 CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE} --without-krb4
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	webobjects
-# Date created:				Thu Apr 12 04:43:26 EST 2007
-# Whom:					Quinton Dolan <q@onthenet.com.au>
-#
+# Created by: Quinton Dolan <q@onthenet.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	webobjects
 PORTVERSION=	5.3.3
@@ -28,6 +24,7 @@ USE_RC_SUBR=	wotaskd JavaMonitor
 USE_JAVA=	1.4+
 EXTRACT_PRESERVE_OWNERSHIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${MASTERDIR}/Makefile.plist"
 

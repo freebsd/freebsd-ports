@@ -1,9 +1,5 @@
-# New ports collection makefile for:	 asWedit
-# Date created:		25 June 1997
-# Whom:			brett@peloton.physics.montana.edu
-#
+# Created by: brett@peloton.physics.montana.edu
 # $FreeBSD$
-#
 
 PORTNAME=	asWedit
 PORTVERSION=	4.0.1
@@ -23,6 +19,7 @@ USE_LINUX=	yes
 
 WRKSRC=		${WRKDIR}/asWedit-4.0.1
 
+NO_STAGE=	yes
 do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/asWedit
 

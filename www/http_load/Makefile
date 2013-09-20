@@ -1,9 +1,5 @@
-# New ports collection makefile for:	http_load
-# Date created:				9 May 2000
-# Whom:					Ask Bjoern Hansen <ask@valueclick.com>
-#
+# Created by: Ask Bjoern Hansen <ask@valueclick.com>
 # $FreeBSD$
-#
 
 PORTNAME=	http_load
 PORTVERSION=	20060312
@@ -24,4 +20,5 @@ PLIST_FILES=	bin/http_load
 USE_OPENSSL=	yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

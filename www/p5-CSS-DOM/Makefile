@@ -43,4 +43,5 @@ MAN3=		CSS::DOM.3 \
 		CSS::DOM::Value::List.3 \
 		CSS::DOM::Value::Primitive.3 \
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

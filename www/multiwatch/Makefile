@@ -24,4 +24,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/multiwatch
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

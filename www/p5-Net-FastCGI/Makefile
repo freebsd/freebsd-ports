@@ -21,4 +21,5 @@ MAN3=	Net::FastCGI.3 \
 	Net::FastCGI::IO.3 \
 	Net::FastCGI::Protocol.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

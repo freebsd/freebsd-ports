@@ -1,4 +1,3 @@
-# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mod_auth_tkt
@@ -26,6 +25,7 @@ OPTIONS_DEFINE=	QUERY_SEP
 QUERY_SEP_DESC=	Experimental TKTAuthQuerySeparator directive
 OPTIONS_DEFAULT=QUERY_SEP
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQUERY_SEP}

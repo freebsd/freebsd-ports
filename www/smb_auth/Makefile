@@ -1,9 +1,5 @@
-# New ports collection makefile for:	smb_auth
-# Date created:				13 January 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	smb_auth
 PORTVERSION=	0.05
@@ -22,6 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/${SAMBA_PORT}
 ALL_TARGET=	smb_auth
 SAMBA_PORT?=	net/samba36
 
+NO_STAGE=	yes
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/smb_auth ${PREFIX}/bin
 		${INSTALL_SCRIPT} ${WRKSRC}/smb_auth.sh ${PREFIX}/bin

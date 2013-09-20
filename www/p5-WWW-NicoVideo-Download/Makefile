@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-Nicovideo-Download
-# Date created:		2009-03-03
-# Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
-#
+# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-NicoVideo-Download
 PORTVERSION=	0.06
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=		WWW::NicoVideo::Download.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

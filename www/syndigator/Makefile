@@ -26,6 +26,7 @@ NO_BUILD=	yes
 
 GNOMEDIR=	${PREFIX}/share
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|./lib|${PREFIX}/${SITE_PERL_REL}/${PORTNAME}|' \
 		${WRKSRC}/syndigator

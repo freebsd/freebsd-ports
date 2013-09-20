@@ -31,6 +31,7 @@ MAN3=		Bundle::ParallelUA.3 \
 		LWP::ParallelUA.3 \
 		LWP::RobotPUA.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/protocol->parse_head/d' ${WRKSRC}/lib/LWP/Parallel/UserAgent.pm
 

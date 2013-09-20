@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-amf
-# Date created:				14 July 2008
-# Whom:					Junji NAKANISHI <jun-g@daemonfreaks.com>
-#
+# Created by: Junji NAKANISHI <jun-g@daemonfreaks.com>
 # $FreeBSD$
 
 PORTNAME=	amf
@@ -21,4 +18,5 @@ USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	PyAMF
 PYEASYINSTALL_ARCHDEP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

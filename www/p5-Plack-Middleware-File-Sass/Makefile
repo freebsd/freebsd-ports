@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Plack::Middleware::File::Sass
-# Date created:		09 Apr 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Plack-Middleware-File-Sass
 PORTVERSION=	0.03
@@ -25,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=	Plack::Middleware::File::Sass.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

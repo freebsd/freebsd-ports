@@ -18,6 +18,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 USE_WEBPLUGINS=	native
 WEBPLUGINS_FILES=npplugger.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 

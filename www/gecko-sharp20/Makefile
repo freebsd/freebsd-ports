@@ -1,6 +1,5 @@
 # Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
-#   $Id: Makefile,v 1.19 2007/02/07 15:49:20 killfill Exp $
 
 PORTNAME=	gecko-sharp
 PORTVERSION=	0.13
@@ -19,6 +18,7 @@ LATEST_LINK=	gecko-sharp20
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|[(]prefix[)]/lib/pkgconfig|(prefix)/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
 

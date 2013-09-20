@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-inline-google-definitions
-# Date created:		21 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	inline-google-definitions
 PORTVERSION=	1.4
@@ -17,5 +13,6 @@ XPI_DISTNAME=	inline_google_definitions
 XPI_NUM=	2083
 XPI_ID=		{70171e70-9057-11da-9562-00e08161165f}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

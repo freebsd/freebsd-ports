@@ -27,6 +27,7 @@ PORTDOCS=	CHANGELOG LICENSE README UPGRADE
 
 INSTALL_DIRS=	framework
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREQPHP}

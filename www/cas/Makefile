@@ -54,6 +54,7 @@ INSTALL_CAS_DATA_DESC=		Install CAS data files
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG_MODE}

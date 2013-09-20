@@ -37,6 +37,7 @@ MANLANG=	"" de
 MAN1=		linkchecker.1
 MAN5=		linkcheckerrc.5
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # For Virus checking

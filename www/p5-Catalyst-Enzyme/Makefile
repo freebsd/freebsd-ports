@@ -44,4 +44,5 @@ MAN3=	Catalyst::Enzyme.3 \
 	Catalyst::Helper::Model::Enzyme::CDBI.3 \
 	Catalyst::Helper::View::Enzyme::TT.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

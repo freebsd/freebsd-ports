@@ -1,9 +1,5 @@
-# New ports collection makefile for:	spreadlogd
-# Date created:			08 May 2005
-# Whom:				Meno Abels <meno.abels@adviser.com>
-#
+# Created by: Meno Abels <meno.abels@adviser.com>
 # $FreeBSD$
-#
 
 PORTNAME=	spreadlogd
 PORTVERSION=	1.4.2
@@ -25,6 +21,7 @@ PLIST_FILES=	sbin/spreadlogd etc/spreadlogd.conf.sample
 PORTDOCS=	README Artistic.txt
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' ${WRKSRC}/spreadlogd.c
 

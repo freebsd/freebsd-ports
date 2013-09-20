@@ -51,6 +51,7 @@ APACHE_DESC=	Apache mod connector (experimental)
 
 CONFIGURE_ARGS+=	-disable-gtk
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}

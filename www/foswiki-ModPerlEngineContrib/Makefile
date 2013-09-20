@@ -16,5 +16,6 @@ SVNREV=		8600
 
 USE_APACHE_RUN=	22+
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../foswiki/bsd.foswiki.mk"
 .include <bsd.port.mk>

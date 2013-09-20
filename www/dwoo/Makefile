@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dwoo
-# Date created:		2010-10-26
-# Whom:			Joe Horn <joehorn@gmail.com>
-#
+# Created by: Joe Horn <joehorn@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dwoo
 PORTVERSION=	1.1.1
@@ -28,6 +24,7 @@ IGNORE_WITH_PHP=4
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}
 	@cd ${WRKSRC}; ${FIND} . -type d \

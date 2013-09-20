@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-fasterfox
-# Date created:		28 March 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fasterfox
 PORTVERSION=	2.0.0
@@ -19,5 +15,6 @@ XPI_FILES=	chrome/fasterfox.jar chrome.manifest defaults/preferences/fasterfox.j
 		install.rdf readme.txt 
 XPI_DIRS=	chrome defaults/preferences defaults 
 
+NO_STAGE=	yes
 .include "../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

@@ -35,6 +35,7 @@ OPTIONS_DEFINE=	HTML_TIDY
 OPTIONS_DEFAULT=HTML_TIDY
 HTML_TIDY_DESC=	Enable HTML Markup Cleaning
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MHTML_TIDY}

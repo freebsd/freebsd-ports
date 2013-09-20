@@ -35,6 +35,7 @@ SUB_LIST=	TOMCAT_HOME=${TOMCAT_HOME} \
 		TOMCAT_USER=${WWWOWN} \
 		JAVA_HOME=${JAVA_HOME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-patch:

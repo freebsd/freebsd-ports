@@ -14,6 +14,7 @@ COMMENT=	The Elegant MVC Web Application Framework (Runtime)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+NO_STAGE=	yes
 # Do not add the following ports to TEST_DEPENDS to avoid cyclic dependencies in tinderbox:
 # - devel/p5-Test-WWW-Mechanize-Catalyst
 # - www/p5-Catalyst-Engine-PSGI

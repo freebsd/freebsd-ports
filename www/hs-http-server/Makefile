@@ -19,6 +19,7 @@ INSTALL_PORTEXAMPLES=	cd ${WRKSRC}/example && \
 OPTIONS_DEFINE=		EXAMPLES
 OPTIONS_DEFAULT=	EXAMPLES
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MEXAMPLES}

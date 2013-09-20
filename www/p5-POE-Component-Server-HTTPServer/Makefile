@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Component-Server-HTTPServer
-# Date created:		23 Feb 2005
-# Whom:			Zach Thompson <lin-chi@lastamericanempire.com>
-#
+# Created by: Zach Thompson <lin-chi@lastamericanempire.com>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Server-HTTPServer
 PORTVERSION=	0.9.2
@@ -34,4 +30,5 @@ MAN3=		POE::Component::Server::HTTPServer.3 \
 		POE::Component::Server::HTTPServer::StaticHandler.3 \
 		POE::Component::Server::HTTPServer::TemplateHandler.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

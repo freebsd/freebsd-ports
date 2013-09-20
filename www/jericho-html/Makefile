@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jerichohtml
-# Date created:		2008-06-17
-# Whom:			Marcin Cieslak <saper@SYSTEM.PL>
-#
+# Created by: Marcin Cieslak <saper@SYSTEM.PL>
 # $FreeBSD$
-#
 
 PORTNAME=	jericho-html
 PORTVERSION=	3.2
@@ -23,6 +19,7 @@ INTERFACES:=	"compile-time-dependencies/slf4j-api-1.6.1.jar:\
 PORTDOCS=	*
 PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
+NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC} &&  ${RM} -rf classes/* && ${JAVAC}         \
 		-classpath ${INTERFACES:S, ,,g}                   \

@@ -40,4 +40,5 @@ MAN3=		\
 		HTTP::Proxy::HeaderFilter::simple.3 \
 		HTTP::Proxy::HeaderFilter::standard.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

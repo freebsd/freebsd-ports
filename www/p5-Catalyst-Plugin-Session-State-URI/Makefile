@@ -1,4 +1,3 @@
-# Ports collection makefile for:	p5-Catalyst-Plugin-Session-State-URI
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
 
@@ -29,4 +28,5 @@ USE_PERL5=	configure
 
 MAN3=	Catalyst::Plugin::Session::State::URI.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

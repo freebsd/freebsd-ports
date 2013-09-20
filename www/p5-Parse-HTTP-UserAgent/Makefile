@@ -27,4 +27,5 @@ MAN3=		Parse::HTTP::UserAgent.3 \
 		Parse::HTTP::UserAgent::Base::Parsers.3 \
 		Parse::HTTP::UserAgent::Constants.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

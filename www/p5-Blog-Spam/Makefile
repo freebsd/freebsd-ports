@@ -46,4 +46,5 @@ MAN3=		Blog::Spam::API.3 \
 		Blog::Spam::Plugin::wordcount.3 \
 		Blog::Spam::Server.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

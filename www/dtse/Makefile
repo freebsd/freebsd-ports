@@ -1,9 +1,5 @@
-# New ports collection makefile for: dtse
-# Date created: 7 Mar 2004
-# Whom: Douglas Thrift <douglas@douglasthrift.net>
-#
+# Created by: Douglas Thrift <douglas@douglasthrift.net>
 # $FreeBSD$
-#
 
 PORTNAME=	dtse
 PORTVERSION=	1.3
@@ -36,6 +32,7 @@ MAKEFILE=	GNUmakefile
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 pre-configure:
 	cd ${WRKSRC}; ${SH} autogen.sh
 

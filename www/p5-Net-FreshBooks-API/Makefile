@@ -61,6 +61,7 @@ MAN3=		Net::FreshBooks::API.3 \
 		Net::FreshBooks::API::Role::LineItem.3 \
 		Net::FreshBooks::API::Role::SendBy.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

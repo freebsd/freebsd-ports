@@ -1,9 +1,5 @@
-# New ports collection makefile for: trac-tocmacro
-# Date created:                      May 18 2007
-# Whom:                              Gerrit Beine <gerrit.beine@gmx.de>
-#
+# Created by: Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	tocmacro
 PORTVERSION=	11.0.0.3
@@ -24,4 +20,5 @@ PYDISTUTILS_PKGNAME=	TracTocMacro
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} PYTHONVERSION=${PYTHON_VER}
 PYDISTUTILS_NOEGGINFO=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

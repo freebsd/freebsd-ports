@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eventum
-# Date created:		2006-01-06
-# Whom:			Babak Farrokhi <babak@farrokhi.net>
-#
+# Created by: Babak Farrokhi <babak@farrokhi.net>
 # $FreeBSD$
-#
 
 PORTNAME=	phproxy
 PORTVERSION=	0.5b2
@@ -23,6 +19,7 @@ EXTRACT_AFTER_ARGS+=	-d ${WRKSRC}
 
 DOCFILES=	ChangeLog.txt LICENSE.txt README.txt TODO.txt
 
+NO_STAGE=	yes
 do-install:
 
 .if !defined(NOPORTDOCS)

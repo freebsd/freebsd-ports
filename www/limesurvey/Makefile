@@ -21,6 +21,7 @@ GD_DESC=		Install PHP gd extension
 LDAP_DESC=		Install PHP LDAP extension
 ZIP_DESC=		Install PHP zip extension
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # http://docs.limesurvey.org/Installation&structure=English+Instructions+for+LimeSurvey#Make_sure_you_can_use_LimeSurvey_on_your_website

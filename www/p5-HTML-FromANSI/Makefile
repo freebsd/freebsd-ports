@@ -22,4 +22,5 @@ USE_PERL5=	configure
 MAN1=		ansi2html.1
 MAN3=		HTML::FromANSI.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

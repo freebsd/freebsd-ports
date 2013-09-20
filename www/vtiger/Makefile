@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/vtigercrm
 
 OPTIONS_DEFINE=		MYSQL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFLICTS=	vtiger-4.*

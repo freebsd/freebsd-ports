@@ -35,6 +35,7 @@ OPTPHP_DESC=	Install optional PHP dependencies
 
 PORTDOCS=	CHANGELOG.md INSTALL.md README-GIT.md CONTRIBUTING.md README.md
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Add all of the required and/or optional PHP extension dependencies,

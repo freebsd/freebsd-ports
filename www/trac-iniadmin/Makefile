@@ -1,9 +1,5 @@
-# New ports collection makefile for: trac-iniadmin
-# Date created:                      May 18 2007
-# Whom:                              Gerrit Beine <gerrit.beine@gmx.de>
-#
+# Created by: Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	iniadmin
 PORTVERSION=	0.2.3915
@@ -26,4 +22,5 @@ PYDISTUTILS_PKGVERSION=	${PORTVERSION:R}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION:R} PYTHONVERSION=${PYTHON_VER}
 PYDISTUTILS_NOEGGINFO=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

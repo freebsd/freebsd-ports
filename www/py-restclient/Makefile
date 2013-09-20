@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-restclient
-# Date created:		Apr. 15, 2007
-# Whom:			Li-Wen Hsu <lwhsu@FreeBSD.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	restclient
 PORTVERSION=	0.10.2
@@ -20,6 +16,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}httplib2>=0:${PORTSDIR}/www/py-httplib2
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,install_requires.*,,' ${WRKSRC}/setup.py
 

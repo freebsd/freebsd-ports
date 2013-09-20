@@ -20,6 +20,7 @@ USE_PERL5=	configure
 
 MAN3=	Catalyst::Component::ACCEPT_CONTEXT.3
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -i '' -e '/auto_install/d' \
 		-e '/Devel::Cycle/d' ${WRKSRC}/Makefile.PL

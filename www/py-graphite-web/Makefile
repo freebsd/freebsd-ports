@@ -21,6 +21,7 @@ FETCH_ARGS=	-pRr
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 
+NO_STAGE=	yes
 post-patch:
 	@${MKDIR} ${WRKSRC}/graphite/webapp/
 	@${CP} -LR ${WRKSRC}/webapp/content ${WRKSRC}/graphite/webapp

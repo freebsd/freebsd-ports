@@ -1,9 +1,5 @@
-# New ports collection makefile for:	quixote
-# Date created:		18 September 2001
-# Whom:	      		Johann Visagie <wjv@FreeBSD.org>
-#
+# Created by: Johann Visagie <wjv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	quixote
 PORTVERSION=	2.7
@@ -21,6 +17,7 @@ USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Quixote
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

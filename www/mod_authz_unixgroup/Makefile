@@ -16,4 +16,5 @@ AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SHORTMODNAME=	authz_unixgroup
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

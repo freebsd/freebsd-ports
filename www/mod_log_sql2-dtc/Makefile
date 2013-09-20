@@ -1,4 +1,4 @@
-# Created by: Marc G. Fournier <scrappy@freebsd.org>
+# Created by: Marc G. Fournier <scrappy@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mod_log_sql
@@ -25,6 +25,7 @@ PLIST_SUB+=	SSL=${SSL_PLIST}
 USE_MYSQL=	yes
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if defined(WITH_DBI) || exists(${LOCALBASE}/include/dbi/dbi.h)
 CONFIGURE_ARGS+=	--with-dbi=${LOCALBASE}

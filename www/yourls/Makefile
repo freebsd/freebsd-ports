@@ -1,9 +1,5 @@
-# New ports collection makefile for: yourls
-# Date created:		2010-01-28
-# Whom:			Joe Horn <joehorn@gmail.com>
-#
+# Created by: Joe Horn <joehorn@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=		yourls
 DISTVERSION=		1.5.1
@@ -26,6 +22,7 @@ USE_PHP=		bcmath curl json mysql pcre xml
 SUB_LIST+=		PKGNAME=${PKGNAME}
 SUB_FILES+=		pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

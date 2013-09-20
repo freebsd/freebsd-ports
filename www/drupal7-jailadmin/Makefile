@@ -14,6 +14,7 @@ LICENSE=	BSD
 
 USE_DRUPAL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 DRUPAL_MODULE=	yes

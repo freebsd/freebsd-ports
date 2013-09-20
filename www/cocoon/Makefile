@@ -61,6 +61,7 @@ SUB_FILES=	\
 		message-advanced
 
 # Load options (before including bsd.port.pre.mk)
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.options"
 
 .include <bsd.port.pre.mk>

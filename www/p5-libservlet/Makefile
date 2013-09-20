@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	p5-libservlet
-# Date created:			Jul 28, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libservlet
 PORTVERSION=	0.9.2
@@ -61,4 +56,5 @@ MAN3=	Servlet.3 \
 	Servlet::SingleThreadModel.3 \
 	Servlet::UnavailableException.3 \
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

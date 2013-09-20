@@ -26,6 +26,7 @@ MAN3=		Router::Simple.3 \
 		Router::Simple::Route.3 \
 		Router::Simple::SubMapper.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

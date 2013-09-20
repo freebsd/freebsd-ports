@@ -1,9 +1,5 @@
-# New ports collection makefile for:   monast
-# Date created:                09 Mar 2010
-# Whom:                        Marcelo/Porks Rossi <marcelorossi@gmail.com>
-#
+# Created by: Marcelo/Porks Rossi <marcelorossi@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	monast
 PORTVERSION=	1.4
@@ -19,6 +15,7 @@ USE_RC_SUBR=	monast
 
 NO_BUILD=	YES
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin/python,${PYTHON_CMD},' \
 			  -e 's,/etc,${PREFIX}/etc,g' \

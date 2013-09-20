@@ -49,6 +49,7 @@ OPTIONS_DEFAULT=	NLS UNIQUE
 UNIQUE_DESC=	Single instance support
 ZEITGEIST_DESC=	User logs activities
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # WAF needs that

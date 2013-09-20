@@ -21,4 +21,5 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/OpenSSLProxy.py \
 		%%PYTHON_SITELIBDIR%%/OpenSSLProxy.pyc \
 		%%PYTHON_SITELIBDIR%%/OpenSSLProxy.pyo
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

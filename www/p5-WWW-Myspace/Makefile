@@ -29,4 +29,5 @@ MAN3=		WWW::Myspace.3 WWW::Myspace::Comment.3 \
 		WWW::Myspace::FriendChanges.3 \
 		WWW::Myspace::Message.3 WWW::Myspace::MyBase.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

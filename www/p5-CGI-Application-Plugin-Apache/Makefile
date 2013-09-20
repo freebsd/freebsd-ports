@@ -25,4 +25,5 @@ MAN3=		CGI::Application::Plugin::Apache.3 \
 		CGI::Application::Plugin::Apache::Request.3 \
 		CGI::Application::Plugin::Apache2::Request.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

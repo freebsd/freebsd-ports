@@ -37,6 +37,7 @@ VACATION_DESC=	Vacation & Auto Respond
 WHUPS_DESC=	Bug Tracking/Ticket System
 KLUTZ_DESC=	Comic Strip Viewer
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/base/rpc.php:${PORTSDIR}/www/horde3-base

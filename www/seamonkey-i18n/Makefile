@@ -31,6 +31,7 @@ XPI_DISTNAMES=	${SEAMONKEY_I18N_}
 RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
 .endif
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.option"
 .include <bsd.port.options.mk>
 .include "${.CURDIR}/Makefile.lang"

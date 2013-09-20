@@ -29,6 +29,7 @@ SUB_LIST+=	PORTNAME=${PORTNAME} DOKUWIKI_DIR=${DOKUWIKI_DIR}
 
 REINPLACE_ARGS=	-i ''
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # This target is only meant to be used by the port maintainer.

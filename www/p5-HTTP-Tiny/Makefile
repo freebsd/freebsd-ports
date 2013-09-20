@@ -22,6 +22,7 @@ USES=		perl5
 
 MAN3=		HTTP::Tiny.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOOKIE}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   eFront
-# Date created:		07 June 2008
-# Whom:			Wen heping <wenheping@gmail.com>
-#
+# Created by: Wen heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	efront
 DISTVERSION=	3.6.6
@@ -25,6 +21,7 @@ EFRONT_DIRS=	libraries PEAR \
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 do-install:
 	@if [ ! -f ${WWWDIR} ]; then \

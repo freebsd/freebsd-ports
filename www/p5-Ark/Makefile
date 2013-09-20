@@ -1,9 +1,4 @@
-# New ports collection makefile for:	p5-Ark
-# Date created:		06 Jun 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Ark
 PORTVERSION=	0.1.r1
@@ -48,4 +43,5 @@ MAN3=	Ark::Command.3 \
 	Ark::Command::Server.3 \
 	Ark::Command::View.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

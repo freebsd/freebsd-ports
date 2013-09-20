@@ -14,6 +14,7 @@ PLIST_FILES=	bin/dfileserver
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's,g++,${CXX},;s,$$GCCFLAGS,${CXXFLAGS},; \
 		s,strip,${STRIP_CMD},' ${WRKSRC}/build.sh

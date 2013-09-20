@@ -34,6 +34,7 @@ MAN3=		Catalyst::Plugin::Session.3 \
 		Catalyst::Plugin::Session::Test::Store.3 \
 		Catalyst::Plugin::Session::Tutorial.3
 
+NO_STAGE=	yes
 post-extract:
 	@${PERL} -i.bak -ne 'print unless /^(is_upgrading_needed|test_requires)/' ${WRKSRC}/Makefile.PL
 

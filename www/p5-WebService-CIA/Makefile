@@ -23,4 +23,5 @@ MAN3=		WebService::CIA.3 WebService::CIA::Parser.3 \
 		WebService::CIA::Source.3 WebService::CIA::Source::DBM.3 \
 		WebService::CIA::Source::Web.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

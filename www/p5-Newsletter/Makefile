@@ -23,4 +23,5 @@ USE_PERL5=	configure
 MAN3=	Newsletter::Html.3 Newsletter::Html::Templ.3 Newsletter::Html::CSS.3 \
 	Newsletter::Html::Upload.3 Newsletter.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

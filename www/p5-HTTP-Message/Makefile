@@ -33,6 +33,7 @@ MAN3=		HTTP::Config.3 \
 		HTTP::Response.3 \
 		HTTP::Status.3
 
+NO_STAGE=	yes
 post-patch:
 		@${RM} ${WRKSRC}/lib/HTTP/Headers.pm.orig
 

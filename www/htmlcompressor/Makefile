@@ -23,6 +23,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/htmlcompressor %%JAVAJARDIR%%/htmlcompressor.jar
 SUB_FILES=	htmlcompressor
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

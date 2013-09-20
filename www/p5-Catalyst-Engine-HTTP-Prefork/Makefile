@@ -22,6 +22,7 @@ USE_PERL5=	configure
 
 MAN3=		Catalyst::Engine::HTTP::Prefork.3
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -i '' -e 's/Cookie::XS/CGI::Cookie::XS/g' \
 		${WRKSRC}/lib/Catalyst/Engine/HTTP/Prefork/Handler.pm

@@ -36,6 +36,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		awffull.1
 MAN5=		awffull.conf.5
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGEOIP}

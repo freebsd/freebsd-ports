@@ -27,6 +27,7 @@ PORTDOCS=	${DISTNAME}.pdf
 OPTIONS_DEFINE=	CGI DOCS
 CGI_DESC=	Install CGI binary
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

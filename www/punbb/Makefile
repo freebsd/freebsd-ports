@@ -31,6 +31,7 @@ OPTIONS_DEFAULT=	LANGUAGE_PACK EXTRAS
 LANGUAGE_PACK_DESC=	Install language packs
 EXTRAS_DESC=		Install all plugins available
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLANGUAGE_PACK}

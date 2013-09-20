@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-django_compressor
-# Date created:		2011-07-21
-# Whom:			Lung-Pin Chang <changlp@cs.nctu.edu.tw>
-#
+# Created by: Lung-Pin Chang <changlp@cs.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	django_compressor
 PORTVERSION=	1.1.2
@@ -27,6 +23,7 @@ BEAUTIFULSOUP_DESC=	Enable BeautifulSoupParser
 LXML_DESC=		Enable LxmlParser
 HTML5LIB_DESC=		Enable Html5LibParser
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBEAUTIFULSOUP}

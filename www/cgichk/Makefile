@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cgichk
-# Date created:			Jun 8, 2001
-# Whom:				Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	cgichk
 PORTVERSION=	2.60
@@ -18,6 +14,7 @@ COMMENT=	A web site vulnerability scanner
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	cgichk
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s/^(CC|CFLAGS).+//g" ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e \

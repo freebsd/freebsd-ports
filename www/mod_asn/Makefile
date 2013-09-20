@@ -17,6 +17,7 @@ USE_APACHE=	22
 AP_FAST_BUILD=	yes
 MANUAL_PACKAGE_BUILD=	devel/apr1 with pgsql option required
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-build:

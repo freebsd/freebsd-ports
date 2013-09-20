@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WebService-MusicBrainz
-# Date created:		2009-01-19
-# Whom:			Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	WebService-MusicBrainz
 PORTVERSION=	0.93
@@ -61,4 +57,5 @@ MAN3=		WebService::MusicBrainz.3 \
 		WebService::MusicBrainz::Response::UserTag.3 \
 		WebService::MusicBrainz::Response::UserTagList.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

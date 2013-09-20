@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-TableLayout
-# Date Created:			01 February 2000
-# Whom:				Dmitry Sivachenko <dima@Chg.RU>
-#
+# Created by: Dmitry Sivachenko <dima@Chg.RU>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-TableLayout
 PORTVERSION=	1.001008
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		HTML::TableLayout.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

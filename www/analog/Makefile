@@ -33,6 +33,7 @@ LIMGDIR?=	www/data/images
 IMGDIR=		${PREFIX}/${LIMGDIR}
 PLIST_SUB=	IMGDIR="${LIMGDIR}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

@@ -29,4 +29,5 @@ MODULE_FILES=	tests/content_access.test \
 
 DOC_FILES=	README.txt UPGRADE.txt LICENSE.txt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

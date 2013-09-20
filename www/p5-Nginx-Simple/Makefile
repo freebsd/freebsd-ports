@@ -18,4 +18,5 @@ MAN3=		Nginx::Simple::Dispatch.3 Nginx::Simple::Cookie.3 \
 		Nginx::Simple::Dispatcher::Attributes.3 \
 		Nginx::Simple::Dispatcher.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

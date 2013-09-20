@@ -3,6 +3,7 @@
 
 # $FreeBSD$
 #
+NO_STAGE=	yes
 # Tunables not (yet) configurable via 'make config':
 # SQUID_{U,G}ID
 #   Which user/group Squid should run as (default: squid/squid).

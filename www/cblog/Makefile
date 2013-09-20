@@ -23,6 +23,7 @@ PLIST_FILES=	libexec/cblog.fcgi \
 
 MAN1=		cblog.fcgi.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s#^INCLUDES=.*#INCLUDES=-I${LOCALBASE}/include#g" \
 		-e "s#^LIBDIR=.*#LIBDIR=-L${LOCALBASE}/lib#g" \

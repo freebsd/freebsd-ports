@@ -30,6 +30,7 @@ AP_LIB+=	${LOCALBASE}/lib -lGeoIP
 SUB_FILES+=	pkg-message
 PORTDOCS=	Changes INSTALL README README.php
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

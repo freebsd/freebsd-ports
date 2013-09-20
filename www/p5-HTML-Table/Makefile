@@ -18,6 +18,7 @@ USE_PERL5=	configure
 
 MAN3=		HTML::Table.3
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e 's|2.08a|2.08_1|' ${WRKSRC}/lib/HTML/Table.pm
 	${RM}  ${WRKSRC}/lib/HTML/Table.pm.bak

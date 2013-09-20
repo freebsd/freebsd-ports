@@ -1,9 +1,5 @@
-# New ports collection makefile for:	GeekLog
-# Date Created: 	22 April 2002
-# Whom:			Bob Bomar <bob@fly.homeunix.org>
-#
+# Created by: Bob Bomar <bob@fly.homeunix.org>
 # $FreeBSD$
-#
 
 PORTNAME=	geeklog
 PORTVERSION=	1.6.1
@@ -20,6 +16,7 @@ USE_MYSQL=	yes
 NO_BUILD=	yes
 USE_PHP=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL} -o ${WWWOWN} -g ${WWWGRP} -m 555 -d ${WWWDIR}
 	@(cd ${WRKSRC} && \

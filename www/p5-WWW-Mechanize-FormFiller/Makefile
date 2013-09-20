@@ -31,4 +31,5 @@ MAN3=	WWW::Mechanize::FormFiller.3 \
 	WWW::Mechanize::FormFiller::Value::Random::Date.3 \
 	WWW::Mechanize::FormFiller::Value::Random::Word.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

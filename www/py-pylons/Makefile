@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pylons
-# Date created:		Thu Jun 21 16:05:21 MSD 2007
-# Whom:			Denis Shaposhnikov <dsh@vlink.ru>
-#
+# Created by: Denis Shaposhnikov <dsh@vlink.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	pylons
 PORTVERSION=	1.0
@@ -38,4 +34,5 @@ USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Pylons
 PYDISTUTILS_NOEGGINFO=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

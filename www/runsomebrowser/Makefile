@@ -1,9 +1,5 @@
-# New ports collection makefile for:	runsomebrowser
-# Date created:		2007-11-06
-# Whom:			Jason Bacon <jwbacon@tds.net>
-#
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
-#
 
 PORTNAME=	runsomebrowser
 PORTVERSION=	0.2
@@ -18,6 +14,7 @@ NO_BUILD=	yes
 
 MAN1=		runsomebrowser.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/runsomebrowser ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/runsomebrowser.1 ${MAN1PREFIX}/man/man1

@@ -26,6 +26,7 @@ OPTINT_DESC=	Install Perl modules for intl character support
 OPTOTH_DESC=	Install other optional Perl modules
 APACHE_DESC=	Install Apache web server and sample config file
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPTINT}

@@ -13,5 +13,6 @@ LICENSE=	BSD
 
 USE_CABAL=	HTTP>=4000.0.2 network>=2
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	Flickr::Upload
 # Created by: ijliao
 # $FreeBSD$
 
@@ -23,4 +21,5 @@ USE_PERL5=	configure
 MAN1=		flickr_upload.1
 MAN3=		Flickr::Upload.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

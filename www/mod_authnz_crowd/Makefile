@@ -34,6 +34,7 @@ PLIST_FILES=	${APACHEMODDIR}/mod_authnz_crowd.so \
 
 LDFLAGS+=	-L${PREFIX}/lib
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/zzz_authnz_crowd.conf \
 		${PREFIX}/${APACHEETCDIR}/Includes/

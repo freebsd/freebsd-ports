@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/dotclear
-# Date created:		2008-12-28
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dotclear
 PORTVERSION=	2.1.6
@@ -20,6 +16,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

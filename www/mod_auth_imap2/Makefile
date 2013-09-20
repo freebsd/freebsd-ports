@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_auth_imap
-# Date created:				Jun 5 2004
-# Whom:					Clement Laforet <clement@FreeBSD.org>
-#
+# Created by: Clement Laforet <clement@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_auth_imap
 PORTVERSION=	2.2.0
@@ -28,6 +24,7 @@ AP_GENPLIST=	yes
 PORTDOCS=	htaccess-example httpd.conf-append-example
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}

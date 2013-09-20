@@ -17,4 +17,5 @@ MAKE_ARGS+=	CC=${CXX} LD=${CXX}
 
 MAN3=		HTTP::HeaderParser::XS.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

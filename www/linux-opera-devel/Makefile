@@ -46,6 +46,7 @@ RENAME=		opera-next opera-next-widget-manager lib/opera-next \
 		share/mime/packages/opera-next-unite-application.xml \
 		share/mime/packages/opera-next-widget.xml
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION}<700055

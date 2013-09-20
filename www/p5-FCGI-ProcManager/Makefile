@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-FCGI-ProcManager
-# Date created:		2007-12-28
-# Whom:			Peter <peter@vereshagin.org>
-#
+# Created by: Peter <peter@vereshagin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	FCGI-ProcManager
 PORTVERSION=	0.24
@@ -20,4 +16,5 @@ USE_PERL5=	configure
 MAN3=		FCGI::ProcManager.3 \
 		FCGI::ProcManager::Constrained.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

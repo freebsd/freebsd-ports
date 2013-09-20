@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mergelog
-# Date created:				Jun 25, 2002
-# Whom:					Anton Berezin <tobez@FreeBSD.org>
-#
+# Created by: Anton Berezin <tobez@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mergelog
 PORTVERSION=	4.5
@@ -19,4 +15,5 @@ GNU_CONFIGURE=	yes
 
 MAN1=	mergelog.1 zmergelog.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

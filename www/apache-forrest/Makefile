@@ -33,6 +33,7 @@ ANT=		${DATADIR}/tools/ant/bin/ant
 ANT_TARGET=	local-deploy
 PLUGINSDIR=	${DATADIR}/plugins/org.apache.forrest.plugin.output.pdf
 
+NO_STAGE=	yes
 post-patch:
 	@for FILE in ${REPLACE_FILES}; do \
 		${REINPLACE_CMD} -e "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/g" \

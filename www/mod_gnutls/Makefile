@@ -25,6 +25,7 @@ GNU_CONFIGURE=	yes
 
 DOCS=		LICENSE NEWS README README.ENV
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 DBDIR=	${PREFIX}/var/db/${PORTNAME}

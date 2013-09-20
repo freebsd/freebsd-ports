@@ -20,6 +20,7 @@ RED5_HOME?=	${PREFIX}/${PORTNAME}
 
 SUB_LIST+=	RED5_USER=${RED5_USER} RED5_HOME=${RED5_HOME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/host=0.0.0.0/host=127.0.0.1/' ${WRKSRC}/conf/red5.properties
 	@${RM} ${WRKSRC}/conf/red5.properties.bak

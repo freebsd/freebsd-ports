@@ -67,6 +67,7 @@ MODULE_DIRS=	editors/css editors/js editors plugins/break/images \
 
 DOC_FILES=	CHANGELOG.txt README.txt LICENSE.txt
 
+NO_STAGE=	yes
 post-install:
 	${LN} -s ${PREFIX}/${TINYMCEDIR} ${PREFIX}/${DRUPAL_MODDIR}
 

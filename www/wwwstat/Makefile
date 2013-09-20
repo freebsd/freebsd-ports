@@ -21,6 +21,7 @@ MAKE_ENV+=	PERL5=${PERL5}
 
 MAN1=	wwwstat.1 splitlog.1
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/wwwstat    ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/splitlog   ${PREFIX}/bin

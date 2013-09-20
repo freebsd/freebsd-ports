@@ -21,4 +21,5 @@ RUN_DEPENDS+=	rubygem-icalendar>=0.4.2:${PORTSDIR}/devel/rubygem-icalendar \
 
 REDMINE_PLUGIN_NAME=	redmine_backlogs
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../www/redmine/bsd.redmine.mk"

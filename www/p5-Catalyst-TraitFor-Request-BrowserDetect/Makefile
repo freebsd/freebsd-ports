@@ -1,4 +1,3 @@
-# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
 
 PORTNAME=	Catalyst-TraitFor-Request-BrowserDetect
@@ -20,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		Catalyst::TraitFor::Request::BrowserDetect.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

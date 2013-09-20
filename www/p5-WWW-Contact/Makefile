@@ -46,4 +46,5 @@ MAN3=		WWW::Contact.3 \
 		WWW::Contact::Rediffmail.3 \
 		WWW::Contact::Yahoo.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

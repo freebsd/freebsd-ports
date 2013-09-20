@@ -1,5 +1,5 @@
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-# Created by:	Adam Weinberger <adamw@FreeBSD.org>
 
 PORTNAME=		baikal
 PORTVERSION=	0.2.4
@@ -24,6 +24,7 @@ SUB_FILES=		pkg-install pkg-message
 PORTDOCS=		*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 post-patch:
 	${FIND} ${WRKSRC} -type f -not -name '*.php' -exec ${CHMOD} ${SHAREMODE} {} \;

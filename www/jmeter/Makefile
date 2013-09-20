@@ -15,6 +15,7 @@ LICENSE=	AL2
 
 # These are JAR-files installed by other ports. The list should keep
 # growing until all Java applications install just their own JARs -- not
+NO_STAGE=	yes
 # the 3rd-party ones:
 RUN_DEPENDS=	${JAVAJARDIR}/activation.jar:${PORTSDIR}/java/jaf	\
 		${JAVAJARDIR}/avalon-framework.jar:${PORTSDIR}/devel/avalon-framework	\

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	squidclamav
-# Date created:				15 August 2012
-# Whom:					Martin Matuska <mm@FreeBSD.org>
-#
-# $FreeBSD: ports/www/squidclamav/Makefile,v 1.3 2012/11/17 06:03:06 svnexp Exp $
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
+# $FreeBSD$
 
 PORTNAME=	squidclamav
 PORTVERSION=	6.10
@@ -27,6 +23,7 @@ CONFIGURE_ARGS+=	--enable-shared --enable-static \
 			--sysconfdir="${PREFIX}/etc/c-icap" \
 			--with-c-icap=${LOCALBASE}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFGDIR=.*|CFGDIR="${PREFIX}/etc/c-icap"|g' \
 		${WRKSRC}/configure.in ${WRKSRC}/configure

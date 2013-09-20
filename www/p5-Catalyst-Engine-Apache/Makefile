@@ -22,4 +22,5 @@ MAN3=		Catalyst::Engine::Apache.3 \
 		Catalyst::Engine::Apache2::MP20.3 \
 		Catalyst::Engine::Apache::MP13.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

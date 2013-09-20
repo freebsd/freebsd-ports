@@ -14,6 +14,7 @@ USE_QT4=	designer gui webkit \
 USE_XZ=		yes
 USES=		cmake
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

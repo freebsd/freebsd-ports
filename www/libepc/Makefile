@@ -23,4 +23,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-static
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

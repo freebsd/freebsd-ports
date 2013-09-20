@@ -1,9 +1,5 @@
-# New ports collection makefile for:	turbogears2
-# Date created:		9 Aug, 2009
-# Whom:			Wen Heping	<wenheping@gmail.com>
-#
+# Created by: Wen Heping	<wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	TurboGears2
 PORTVERSION=	2.1.4
@@ -37,4 +33,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ToscaWidgets>=0.9.4:${PORTSDIR}/devel/py-Tos
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

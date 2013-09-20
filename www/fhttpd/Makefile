@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fhttpd
-# Date created:		21 Dec 1999
-# Whom:			Will Andrews <andrews@technologist.com>
-#
+# Created by: Will Andrews <andrews@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fhttpd
 PORTVERSION=	0.4.2
@@ -19,6 +15,7 @@ PLIST_SUB+=	LOGFILE=${LOGFILE}
 
 CXXFLAGS+=	-Wno-deprecated -Wno-write-strings
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${FILESDIR}/fhttpd.sh ${WRKSRC}
 

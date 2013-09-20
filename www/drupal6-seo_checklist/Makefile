@@ -13,4 +13,5 @@ DRUPAL6_MODULE=	yes
 MODULE_FILES=	seochecklist.info seochecklist.install seochecklist.module
 DOC_FILES=	LICENSE.txt README.txt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

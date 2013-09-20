@@ -30,6 +30,7 @@ RUN_DEPENDS=	\
 USES=		perl5
 WRKSRC=	${WRKDIR}/twiki
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} -rf ${WRKSRC}/lib/CPAN
 	@${CAT} ${.CURDIR}/../twiki-*/pkg-plist |\

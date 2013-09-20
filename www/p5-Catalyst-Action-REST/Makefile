@@ -42,4 +42,5 @@ MAN3=		Catalyst::Action::Deserialize.3 \
 		Catalyst::TraitFor::Request::REST.3 \
 		Catalyst::TraitFor::Request::REST::ForBrowsers.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

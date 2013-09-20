@@ -32,6 +32,7 @@ LDFLAGS+=	$$(gdlib-config --ldflags) $$(gdlib-config --libs)
 
 MAN1=		http-analyze.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

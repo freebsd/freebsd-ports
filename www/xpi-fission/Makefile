@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-fission
-# Date created:		18 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fission
 PORTVERSION=	1.0.9
@@ -19,5 +15,6 @@ XPI_FILES=	chrome/fission.jar chrome.manifest defaults/preferences/fission.js in
 		license.txt
 XPI_DIRS=	chrome defaults/preferences defaults
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

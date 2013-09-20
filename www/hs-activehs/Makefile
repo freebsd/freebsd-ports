@@ -21,5 +21,6 @@ USE_CABAL=	activehs-base>=0.2 blaze-html>=0.5 blaze-markup>=0.5.1.0 \
 STANDALONE=	yes
 EXECUTABLE=	activehs
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

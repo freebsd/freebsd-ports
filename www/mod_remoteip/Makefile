@@ -17,4 +17,5 @@ AP_GENPLIST=	yes
 
 SRC_FILE=	modules/metadata/${PORTNAME}.c
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

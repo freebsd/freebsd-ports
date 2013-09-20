@@ -29,6 +29,7 @@ GRADIENTBG_DESC=	Gradient background image support
 REMINDERS_DESC=		Email reminder support
 PALM_DESC=		Palm export support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

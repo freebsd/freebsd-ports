@@ -1,9 +1,5 @@
-# New ports collection makefile for:	AutoIndex
-# Date created:				17 December 2004
-# Whom:					Daniel Gerzo <danger@rulez.sk>
-#
+# Created by: Daniel Gerzo <danger@rulez.sk>
 # $FreeBSD$
-#
 
 PORTNAME=	AutoIndex
 PORTVERSION=	2.2.4
@@ -25,6 +21,7 @@ NO_BUILD=	yes
 
 PLIST_SUB+=	INSTALLDIR=${WWWDIR:S,^${PREFIX}/,,}
 
+NO_STAGE=	yes
 pre-fetch:
 .if !defined(INSTALLDIR)
 	@${ECHO_MSG} ""

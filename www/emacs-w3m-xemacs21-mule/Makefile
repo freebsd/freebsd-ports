@@ -1,9 +1,5 @@
-# New ports collection makefile for:	emacs-w3m-xemacs21-mule
-# Date Created:		11 Apr 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 MASTERDIR=	${.CURDIR}/../emacs-w3m
 
@@ -30,4 +26,5 @@ PLIST_SUB+=		PKGINFODIR=${PKGINFODIR} EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR}
 
 WITHOUT_OCTET_VIEWER=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

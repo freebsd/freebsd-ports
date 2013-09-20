@@ -1,9 +1,5 @@
-# New ports collection makefile for:    davical
-# Date created:                 Tue May 13 09:59:22 EST 2008
-# Whom:                         Maurice Castro <maurice@castro.aus.net>
-#
+# Created by: Maurice Castro <maurice@castro.aus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	davical
 PORTVERSION=	1.1.1
@@ -27,6 +23,7 @@ USE_PHP=	gettext iconv pcre pdo pdo_pgsql pgsql xml calendar
 
 SUB_FILES=	pkg-message httpd-davical.conf
 
+NO_STAGE=	yes
 do-install:
 .for dirs in htdocs inc config
 	${MKDIR} ${WWWDIR}/${dirs}

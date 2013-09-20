@@ -1,9 +1,5 @@
-# New ports collection makefile for:	html2hdml
-# Date created:		27 February 2003
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	html2hdml
 PORTVERSION=	1.0.5
@@ -17,4 +13,5 @@ COMMENT=	An i-mode HTML to EZweb HDML converter
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/html2hdml
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dalbum
-# Date created:				21 October 2005
-# Whom:					Sergey Matveychuk <sem@FreeBSD.org>
-#
+# Created by: Sergey Matveychuk <sem@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dalbum
 PORTVERSION=	140.152
@@ -25,6 +21,7 @@ PLIST_SUB+=	DALBUM_DIR=${DALBUM_DIR}
 SUB_LIST+=	DALBUM_DIR=${DALBUM_DIR}
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} -p ${WRKSRC}

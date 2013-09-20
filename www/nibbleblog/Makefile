@@ -22,6 +22,7 @@ USE_PHP=	session filter xml simplexml gd
 PKGMESSAGE=	${MASTERDIR}/pkg-message
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}

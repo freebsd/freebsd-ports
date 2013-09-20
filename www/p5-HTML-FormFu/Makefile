@@ -171,4 +171,5 @@ MAN3=		HTML::FormFu.3 \
 		HTML::FormFu::Validator.3 \
 		HTML::FormFu::Validator::Callback.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

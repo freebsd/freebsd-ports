@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-YAP
-# Date created:		2010-01-21
-# Whom:			Steven Kreuzer <skreuzer@FreeBSD.org>
-#
+# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-YAP
 PORTVERSION=	0.6
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::YAP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -194,4 +194,5 @@ MAN3=	\
 	HTML::FormHandler::Field::Captcha.3 \
 	HTML::FormHandler::Manual.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

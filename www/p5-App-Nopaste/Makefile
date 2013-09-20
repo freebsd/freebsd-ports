@@ -1,4 +1,3 @@
-# Created by: bapt <baptiste.daroussin@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	App-Nopaste
@@ -46,6 +45,7 @@ MAN3=		App::Nopaste.3 \
 		App::Nopaste::Service::Ubuntu.3 \
 		App::Nopaste::Service::ssh.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIPBOARD}

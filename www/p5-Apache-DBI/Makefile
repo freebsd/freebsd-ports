@@ -31,4 +31,5 @@ PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DBI
 PLIST_DIRSTRY=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache \
 		%%SITE_PERL%%/Apache
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

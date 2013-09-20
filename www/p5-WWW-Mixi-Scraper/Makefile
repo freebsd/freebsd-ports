@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-Mixi-Scraper
-# Date created:		2007-12-28
-# Whom:			Masahiro Teramoto <markun@onohara.to>
-#
+# Created by: Masahiro Teramoto <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Mixi-Scraper
 PORTVERSION=	0.34
@@ -54,4 +50,5 @@ MAN3=		WWW::Mixi::Scraper::Utils.3 \
 		WWW::Mixi::Scraper::Plugin::RecentEcho.3 \
 		WWW::Mixi::Scraper::Plugin::ShowSchedule.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

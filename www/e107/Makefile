@@ -13,6 +13,7 @@ COMMENT=	A content management system written in PHP
 USE_PHP=	mysql xml
 WRKSRC=		${WRKDIR}/e107
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 NO_BUILD=	yes

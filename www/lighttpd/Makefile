@@ -82,6 +82,7 @@ PLIST_SUB+=		LOGROOT="${LIGHTTPD_LOGROOT}" \
 
 .endif # !defined(_BUILDING_LIGHTTPD_MODULE)
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)

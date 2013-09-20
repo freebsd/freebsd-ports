@@ -49,6 +49,7 @@ RENAME=		opera opera-widget-manager lib/opera \
 		share/mime/packages/opera-unite-application.xml \
 		share/mime/packages/opera-widget.xml
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION}<700055

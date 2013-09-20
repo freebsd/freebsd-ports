@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-plone.scale
-# Date created:				02 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone.scale
 PORTVERSION=	1.2.2
@@ -29,4 +24,5 @@ USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

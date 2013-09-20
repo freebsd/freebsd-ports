@@ -132,6 +132,7 @@ MAN3=		Mojo.3 \
 		Test::Mojo.3 \
 		ojo.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

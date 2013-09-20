@@ -1,7 +1,4 @@
-# New ports collection makefile for:	twill
-# Date created:				15 June 2008
-# Whom:					Junji NAKANISHI <jun-g@daemonfreaks.com>
-#
+# Created by: Junji NAKANISHI <jun-g@daemonfreaks.com>
 # $FreeBSD$
 
 PORTNAME=	twill
@@ -15,6 +12,7 @@ COMMENT=	A simple scripting language for Web browsing
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

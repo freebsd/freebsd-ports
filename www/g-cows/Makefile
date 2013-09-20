@@ -14,4 +14,5 @@ GNU_CONFIGURE=	YES
 PLIST_FILES=	bin/cows \
 		bin/cows-mkgen
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

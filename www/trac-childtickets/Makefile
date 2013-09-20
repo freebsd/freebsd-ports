@@ -1,9 +1,5 @@
-# New ports collection makefile for:	trac-childtickets
-# Date created:				2012-08-16
-# Whom:					Radim Kolar <hsn@sendmail.cz>
-#
+# Created by: Radim Kolar <hsn@sendmail.cz>
 # $FreeBSD$
-#
 
 PORTNAME=	childtickets
 PORTVERSION=	2.5.2
@@ -29,6 +25,7 @@ PYDISTUTILS_PKGNAME=	Tracchildtickets
 SUB_FILES=	pkg-message
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-HTTP-Server-Simple
-# Date created:				30 March 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-Server-Simple
 PORTVERSION=	0.44
@@ -21,4 +17,5 @@ MAN3=	HTTP::Server::Simple.3 \
 	HTTP::Server::Simple::CGI.3 \
 	HTTP::Server::Simple::CGI::Environment.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

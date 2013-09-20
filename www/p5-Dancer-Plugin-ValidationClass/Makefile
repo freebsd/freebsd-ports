@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Dancer::Plugin::ValidationClass
-# Date created:		27 Jul 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Dancer-Plugin-ValidationClass
 PORTVERSION=	0.120490
@@ -25,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=	Dancer::Plugin::ValidationClass.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

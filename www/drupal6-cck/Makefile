@@ -1,9 +1,5 @@
-# New ports collection makefile for:	drupal6-cck
-# Date created:		28 jul	2008
-# Whom:			Eygene Ryabinkin <rea-fbsd@codelabs.ru>
-#
+# Created by: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	cck
 DISTVERSION=	6.x-2.8
@@ -248,4 +244,5 @@ MODULE_FILES=	help/add-existing-field.html \
 DOC_FILES=	CHANGELOG.txt DEVELOPER.txt README.txt UPGRADE.txt \
 		LICENSE.txt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

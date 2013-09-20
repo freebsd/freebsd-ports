@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Apache2-SiteControl
-# Date created: 			18 June 2011
-# Whom:					Nick Hilliard <nick@foobar.org
-#
+# Created by: Nick Hilliard <nick@foobar.org
 # $FreeBSD$
-#
 
 PORTNAME=	Apache2-SiteControl
 PORTVERSION=	1.05
@@ -41,6 +37,7 @@ MAN3=		Apache2::SiteControl.3 \
 		Apache2::SiteControl::User.3 \
 		Apache2::SiteControl::UserFactory.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MRADIUS}

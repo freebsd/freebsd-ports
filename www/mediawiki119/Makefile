@@ -31,6 +31,7 @@ EACCEL_DESC=	use eAccelerator (instead of pecl-APC)
 XCACHE_DESC=	use xCache (instead of pecl-APC)
 IMAGICK_DESC=	use ImageMagick
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

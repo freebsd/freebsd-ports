@@ -18,4 +18,5 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	${APACHEMODDIR}/mod_auth_xradius.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -18,4 +18,5 @@ AP_FAST_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/apache2
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

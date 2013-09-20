@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-RobotRules-Parser
-# Date created:		2008-01-30
-# Whom:			Masahiro Teramoto <markun@onohara.to>
-#
+# Created by: Masahiro Teramoto <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-RobotRules-Parser
 PORTVERSION=	0.04001
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=		WWW::RobotRules::Parser.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

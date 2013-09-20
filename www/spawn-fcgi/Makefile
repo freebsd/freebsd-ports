@@ -1,9 +1,5 @@
-# New ports collection makefile for:		spawn-fcgi
-# Date created:					17 Mar 2009
-# Whom:						genserg@hotmail.com
-#
+# Created by: genserg@hotmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	spawn-fcgi
 PORTVERSION=	1.6.3
@@ -24,6 +20,7 @@ MAN1=		spawn-fcgi.1
 
 PLIST_FILES=	bin/spawn-fcgi
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SUB_LIST+=	REQUIRE="DAEMON"

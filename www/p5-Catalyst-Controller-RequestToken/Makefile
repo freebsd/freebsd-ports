@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Catalyst-Controller-RequestToken
-# Date created:				24 July 2009
-# Whom:					Bill Brinzer <bill.brinzer@gmail.com>
-#
+# Created by: Bill Brinzer <bill.brinzer@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Controller-RequestToken
 PORTVERSION=	0.07
@@ -30,4 +26,5 @@ MAN3=	Catalyst::Controller::RequestToken.3 \
 	Catalyst::Controller::RequestToken::Action::RemoveToken.3 \
 	Catalyst::Controller::RequestToken::Action::ValidateToken.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

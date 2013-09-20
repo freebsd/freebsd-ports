@@ -1,9 +1,5 @@
-# New ports collection makefile for: redmine-http-auth
-# Date created:                      2010-09-12
-# Whom:                              Eygene Ryabinkin <rea-fbsd@codelabs.ru>
-#
+# Created by: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	http-auth
 PORTVERSION=	20100730
@@ -18,4 +14,5 @@ COMMENT=	HTTP authentication plugin for Redmine
 GITREV=		df98baf
 REDMINE_PLUGIN_NAME=	redmine_http_auth
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../www/redmine/bsd.redmine.mk"

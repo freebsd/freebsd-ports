@@ -26,4 +26,5 @@ MAN3=		HTTP::Cookies.3 \
 		HTTP::Cookies::Microsoft.3 \
 		HTTP::Cookies::Netscape.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

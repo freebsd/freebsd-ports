@@ -30,4 +30,5 @@ MAN3=		WWW::OpenSearch.3 \
 		WWW::OpenSearch::Request.3 \
 		WWW::OpenSearch::Url.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

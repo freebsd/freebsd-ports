@@ -1,9 +1,5 @@
-# New ports collection makefile for:	phpSysInfo
-# Date created:				Mon Mar 04, 2002
-# Whom:					Bob Bomar <bob@fly.homeunix.org>
-#
+# Created by: Bob Bomar <bob@fly.homeunix.org>
 # $FreeBSD$
-#
 
 PORTNAME=	phpsysinfo
 PORTVERSION=	3.0.10
@@ -26,6 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

@@ -51,6 +51,7 @@ GROUPS?=	rt
 
 BUILD_DEPENDS+=	${LOCALBASE}/bin/jsmin:${PORTSDIR}/devel/jsmin
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.cpan"
 
 BUILD_DEPENDS+=	${CORE_DEPS}       \

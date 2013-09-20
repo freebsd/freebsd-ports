@@ -50,6 +50,7 @@ OPTIONS_DEFAULT=	DOCS OCTET_VIEWER SHIMBUN
 OCTET_VIEWER_DESC=	Octet stream viewer support
 SHIMBUN_DESC=	Build and/or install Shimbun
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MSHIMBUN}

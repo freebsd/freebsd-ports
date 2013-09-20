@@ -1,9 +1,4 @@
-# New ports collection makefile for:	rubygem-journey
-# Date created:		2012-02-07
-# Whom:			Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	journey
 PORTVERSION=	1.0.4
@@ -17,4 +12,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

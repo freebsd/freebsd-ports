@@ -53,4 +53,5 @@ MAN3=		Catalyst::Manual.3 \
 		Catalyst::Manual::Tutorial::10_Appendices.3 \
 		Catalyst::Manual::WritingPlugins.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

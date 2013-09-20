@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Catalyst-Model-Adaptor
-# Date created:		2008-09-01
-# Whom:			Vladimir Timofeev <vovkasm@gmail.com>
-#
+# Created by: Vladimir Timofeev <vovkasm@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Model-Adaptor
 PORTVERSION=	0.10
@@ -31,4 +27,5 @@ MAN3=	Catalyst::Helper::Model::Adaptor.3 \
 	Catalyst::Model::Factory.3 \
 	Catalyst::Model::Factory::PerRequest.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

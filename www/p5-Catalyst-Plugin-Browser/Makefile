@@ -1,4 +1,3 @@
-# Created by: Andrej Zverev <az@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-Browser
@@ -19,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=	Catalyst::Plugin::Browser.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -32,6 +32,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-3.1.13
 
 PORTDOCS=	CHANGELOG INSTALL NOTICE apc.php
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFILEHITS}

@@ -20,6 +20,7 @@ SHORTMODNAME=	auth_external
 
 PORTDOCS=	AUTHENTICATORS INSTALL README
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/

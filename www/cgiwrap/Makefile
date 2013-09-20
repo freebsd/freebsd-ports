@@ -67,6 +67,7 @@ CONFIGURE_ARGS=	--with-httpd-user=${WWWOWN} \
 		--with-check-shell \
 		--with-wall
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 ##

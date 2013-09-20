@@ -1,9 +1,5 @@
-# New ports collection makefile for:	crawl
-# Date created:				20 June 2001
-# Whom:					Pete Fritchman <petef@databits.net>
-#
+# Created by: Pete Fritchman <petef@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	crawl
 PORTVERSION=	0.4
@@ -22,6 +18,7 @@ CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} --program-transform-name=''
 
 MAN1=	crawl.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

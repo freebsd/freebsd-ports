@@ -30,6 +30,7 @@ PGSQL_DESC=		PostgreSQL database support[obsolete]
 SQLITE_DESC=		SQLite3 database support[obsolete]
 SQLITE2_DESC=		SQLite2 database support[obsolete]
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 DATADIR=	www/data

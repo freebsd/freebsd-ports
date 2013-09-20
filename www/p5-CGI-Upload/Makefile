@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-CGI-Upload
-# Date created:                        21 June 2003
-# Whom:                                Daniel B. Hemmerich
-#
+# Created by: Daniel B. Hemmerich
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Upload
 PORTVERSION=	1.11
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		CGI::Upload.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -138,6 +138,7 @@ MAN3=		Gantry.3 \
 		Gantry::Utils::Threeway.3 \
 		Template::Plugin::GantryAuthCookie.3
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,/home/httpd/html/gantry,${WWWDIR},g' \
 		-e 's,\$ENV{'GANTRY_TEMPLATE_PATH'},${WWWDIR},g' \

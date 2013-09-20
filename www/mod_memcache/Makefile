@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_memcache
-# Date created:		2009-01-06
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_memcache
 PORTVERSION=	0.1.0
@@ -24,4 +20,5 @@ AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SRC_FILE=	src/${PORTNAME}.c
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

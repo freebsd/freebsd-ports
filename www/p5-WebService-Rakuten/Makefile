@@ -22,4 +22,5 @@ USE_PERL5=	configure
 
 MAN3=		WebService::Rakuten.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

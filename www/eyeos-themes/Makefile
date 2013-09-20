@@ -38,6 +38,7 @@ eyeOSVista_THEME_DESC=	based on the new Vista style
 animus_THEME_DESC=	created by AnimusMedia.com
 minimal_THEME_DESC=	based on minimalist art
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .for theme in ${OPTIONS_DEFINE:M*_THEME:S/_THEME//}

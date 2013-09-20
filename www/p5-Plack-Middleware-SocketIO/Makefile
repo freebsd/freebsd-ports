@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Plack::Middleware::SocketIO
-# Date created:		05 Jul 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Plack-Middleware-SocketIO
 PORTVERSION=	0.00904
@@ -36,4 +31,5 @@ MAN3=	Plack::Middleware::SocketIO.3 \
 	Plack::Middleware::SocketIO::XHRMultipart.3 \
 	Plack::Middleware::SocketIO::XHRPolling.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

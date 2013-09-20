@@ -16,6 +16,7 @@ USE_PERL5=	configure patch
 
 MAN3=		Maypole::Component.3
 
+NO_STAGE=	yes
 post-patch:
 	@${PERL} -pi -e 's/use 5.006/use 5.005/' ${WRKSRC}/Makefile.PL
 	@${PERL} -pi -e 's/^our (\S+)/use vars qw($$1); $$1/' ${WRKSRC}/Component.pm

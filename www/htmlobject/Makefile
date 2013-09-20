@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	htmlobject
-# Date created:			Jul 30, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	htmlobject
 PORTVERSION=	2.29
@@ -29,6 +24,7 @@ MAN3=		HTMLObject::Base.3 HTMLObject::Form.3 \
 		HTMLObject::WMLDeck.3 HTMLObject::Widgets.3 \
 		HTMLObject::ErrorBase.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

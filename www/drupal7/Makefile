@@ -33,6 +33,7 @@ DOCS=		CHANGELOG.txt INSTALL.mysql.txt INSTALL.sqlite.txt \
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLITE3}

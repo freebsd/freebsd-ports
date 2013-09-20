@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MHonArc
-# Date created:				18 June 1997
-# Whom:					koshy@india.hp.com
-#
+# Created by: koshy@india.hp.com
 # $FreeBSD$
-#
 
 PORTNAME=	mhonarc
 PORTVERSION=	2.6.18
@@ -34,6 +30,7 @@ INSTALL_ARGS+=	-docpath ${DOCSDIR}
 INSTALL_ARGS+=	-nodoc
 .endif
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC} && ${PERL5} install.me ${INSTALL_ARGS}
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	crp
-# Date created:				June 01 2004
-# Whom:					Lars Eggert <lars.eggert@gmx.net>
-#
+# Created by: Lars Eggert <lars.eggert@gmx.net>
 # $FreeBSD$
-#
 
 PORTNAME=	crp
 PORTVERSION=	20031012
@@ -23,6 +19,7 @@ SPOOLDIR?=	/var/spool/conference
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 post-patch:
 	@${SED} -e 's|%%WWWDIR%%|${WWWDIR}|g; s|%%DISTNAME%%|${DISTNAME}|g' \
 		${MASTERDIR}/pkg-message > ${PKGMESSAGE}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-HatenaLogin
-# Date created:		2009-04-06
-# Whom:			Masahiro Teramoto <markun@onohara.to>
-#
+# Created by: Masahiro Teramoto <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-HatenaLogin
 PORTVERSION=	0.03
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=		WWW::HatenaLogin.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -19,4 +19,5 @@ AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SRC_FILE=	${WRKSRC}/apache2/${MODULENAME}.c
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

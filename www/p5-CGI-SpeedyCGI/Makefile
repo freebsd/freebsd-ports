@@ -19,6 +19,7 @@ OPTIONS_DEFINE=	APACHE
 OPTIONS_DEFAULT=APACHE
 APACHE_DESC=	Build mod_speedycgi
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}

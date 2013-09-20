@@ -1,5 +1,4 @@
 # Created by: chinsan <chinsan.tw@gmail.com>, Gea-Suan Lin <gslin@gslin.org>
-# Thanks to Gea-Suan Lin for his great patch for this port.
 # $FreeBSD$
 
 PORTNAME=	WWW-VenusEnvy
@@ -20,4 +19,5 @@ USE_PERL5=	modbuild
 
 MAN3=		WWW::VenusEnvy.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

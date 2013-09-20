@@ -45,6 +45,7 @@ MAN7=		npm-coding-style.7 npm-config.7 npm-developers.7 \
 		npm-scripts.7 removing-npm.7 semver.7
 MANPREFIX=	${PREFIX}/lib/node_modules/npm
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNODE_DEVEL}

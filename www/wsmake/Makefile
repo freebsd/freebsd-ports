@@ -1,9 +1,5 @@
-# New ports collection makefile for: wsmake
-# Date created:        31 May, 2002
-# Whom:                Joseph Koshy <jkoshy@freebsd.org>
-#
+# Created by: Joseph Koshy <jkoshy@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wsmake
 PORTVERSION=	0.7.901
@@ -18,6 +14,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gwsmake=no --enable-iswmake=no
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(NOPORTDOCS)

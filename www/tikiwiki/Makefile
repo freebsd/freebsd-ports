@@ -33,6 +33,7 @@ x-generate-plist: extract
 		${SED} -e 's|^|@dirrm %%TIKIWIKI_DIR%%/|' >> ${TEMP_PLIST} \
 		&& ${ECHO_CMD} "@dirrmtry %%TIKIWIKI_DIR%%" >> ${TEMP_PLIST}
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${TAR} -yxf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} -C ${WRKDIR}

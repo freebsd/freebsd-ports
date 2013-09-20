@@ -27,6 +27,7 @@ OPTIONS_DEFAULT=	MYSQL LDAP
 MEMCACHE_DESC=	memcached cache system
 DB_DESC=	DB backend
 
+NO_STAGE=	yes
 pre-install::
 	@${ECHO_MSG} "======================================================================"
 	@${ECHO_MSG} "If you are upgrading please refer to docs/UPGRADE or browse to"

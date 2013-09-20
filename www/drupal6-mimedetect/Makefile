@@ -1,9 +1,5 @@
-# New ports collection makefile for:	drupal6-mimedetect
-# Date created:		05 Feb,2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mimedetect
 DISTVERSION=	6.x-1.3
@@ -20,4 +16,5 @@ MODULE_FILES=	magic magic.mgc magic.mime \
 		mimedetect.info mimedetect.install mimedetect.module
 DOC_FILES=	LICENSE.txt README.txt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

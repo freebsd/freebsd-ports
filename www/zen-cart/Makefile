@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zen-cart
-# Date created:		6 June 2011
-# Whom:	      		Beech Rintoul <beech@FreeBSD.org>
-#
+# Created by: Beech Rintoul <beech@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	zen-cart
 PORTVERSION=	1.3.9h
@@ -31,6 +27,7 @@ SUB_LIST=	WWWDIR="${WWWDIR}" PORTNAME="${PORTNAME}"
 PLIST_SUB+=	WWWDIR=${WWWDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} EXAMPLESDIR_REL=${EXAMPLESDIR_REL} \
 			PORTNAME=${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	@if [ ! -d ${WWWDIR} ]; then mkdir ${WWWDIR} ; fi
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${EXAMPLESDIR} && rm -rf ${WRKSRC}/docs

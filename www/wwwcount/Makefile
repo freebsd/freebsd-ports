@@ -1,9 +1,5 @@
-# New ports collection makefile for:    wwwcount
-# Date created:         16 May 1996
-# Whom:                 ache
-#
+# Created by: ache
 # $FreeBSD$
-#
 
 PORTNAME=	wwwcount
 PORTVERSION=	2.5
@@ -20,6 +16,7 @@ IS_INTERACTIVE=	yes
 USE_GMAKE=	yes
 MAN1=		mkstrip.1
 
+NO_STAGE=	yes
 pre-configure:
 	cd ${WRKSRC}; PREFIX=${PREFIX} ./Count-config
 

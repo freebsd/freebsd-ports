@@ -199,6 +199,7 @@ TRANSCLUSION_DESC=	Transclusion support
 AMAZON_DESC=		Amazon boxes
 EMOTICONS_DESC=		Emoticons
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEPLOY}

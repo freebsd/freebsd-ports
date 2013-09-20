@@ -23,6 +23,7 @@ WANT_PHP_CLI=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-configure:

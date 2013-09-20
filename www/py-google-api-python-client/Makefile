@@ -28,6 +28,7 @@ DJANGO_DESC=	Use the library with Django
 GAE_DESC=	Use the library with Google App Engine
 WEBTEST_DESC=	Use WebTest helper to test WSGI apps (Python 2.6+)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PYDISTUTILS_PKGVERSION=	${DISTVERSION}

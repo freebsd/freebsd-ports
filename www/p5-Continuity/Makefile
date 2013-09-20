@@ -31,4 +31,5 @@ MAN3=	Continuity.3 \
 	Continuity::Request.3 \
 	Continuity::RequestCallbacks.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

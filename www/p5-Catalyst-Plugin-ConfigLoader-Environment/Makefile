@@ -1,5 +1,4 @@
-# Ports collection makefile for: p5-Catalyst-Plugin-ConfigLoader-Environment
-# Created by: lbr@freebsd.org
+# Created by: lbr@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-ConfigLoader-Environment
@@ -21,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=	Catalyst::Plugin::ConfigLoader::Environment.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

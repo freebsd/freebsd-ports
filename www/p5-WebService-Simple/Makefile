@@ -35,4 +35,5 @@ MAN3=		WebService::Simple.3 \
 		WebService::Simple::Parser::XML::Simple.3 \
 		WebService::Simple::Response.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

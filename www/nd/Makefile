@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nd
-# Date created:			Sep 4, 2002
-# Whom:				Volker Stolz <stolz+nd@i2.informatik.rwth-aachen.de>
-#
+# Created by: Volker Stolz <stolz+nd@i2.informatik.rwth-aachen.de>
 # $FreeBSD$
-#
 
 PORTNAME=	nd
 PORTVERSION=	0.8.2
@@ -20,4 +16,5 @@ GNU_CONFIGURE=	yes
 MAN1=		nd.1
 PLIST_FILES=	bin/nd
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

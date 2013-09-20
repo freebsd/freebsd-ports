@@ -52,4 +52,5 @@ MAN3=		WWW::Search.3 \
 		WWW::Search::Simple.3 \
 		WWW::Search::Test.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

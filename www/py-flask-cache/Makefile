@@ -19,4 +19,5 @@ USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Flask_Cache
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

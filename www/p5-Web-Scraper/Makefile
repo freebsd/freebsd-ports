@@ -1,4 +1,4 @@
-# Created by:			Gea-Suan Lin <gslin@gslin.org>
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
 
 PORTNAME=	Web-Scraper
@@ -35,4 +35,5 @@ USE_PERL5=	configure
 
 MAN3=		Web::Scraper.3 Web::Scraper::Filter.3 Web::Scraper::LibXML.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

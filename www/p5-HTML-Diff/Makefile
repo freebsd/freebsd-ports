@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MasonX-WebApp
-# Date created:			2004.07.16
-# Whom:				Travis Campbell <hcoyote@ghostar.org>
-#
+# Created by: Travis Campbell <hcoyote@ghostar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Diff
 PORTVERSION=	0.561
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		HTML::Diff.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

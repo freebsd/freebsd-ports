@@ -24,6 +24,7 @@ USE_GNOME=	libxml2
 
 MAN1=	newsbeuter.1 podbeuter.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

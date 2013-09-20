@@ -20,6 +20,7 @@ SRC_FILE=	mod_log_config.c
 SHORTMODNAME=	log_config
 MODULENAME=	mod_log_config-st
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

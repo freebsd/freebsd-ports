@@ -1,9 +1,5 @@
-# New ports collection makefile for:	redmine-basecamp
-# Date created:		2010-01-16
-# Whom:			Bernhard Froehlich <decke@bluelife.at>
-#
+# Created by: Bernhard Froehlich <decke@bluelife.at>
 # $FreeBSD$
-#
 
 PORTNAME=	basecamp
 PORTVERSION=	20101203
@@ -27,6 +23,7 @@ PLIST_FILES=	%%WWWDIR%%/README.md \
 PLIST_DIRS=	%%WWWDIR%%/stylesheets \
 		%%WWWDIR%%
 
+NO_STAGE=	yes
 do-install:
 		${MKDIR} ${WWWDIR}
 		cd ${WRKSRC} && ${PAX} -r -w . ${WWWDIR}

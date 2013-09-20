@@ -21,6 +21,7 @@ LIBARCHIVE_DESC=	Archive downloading support
 FILECACHE_DESC=		Flat file caching support
 MYSQLCACHE_DESC=	MySQL caching support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 

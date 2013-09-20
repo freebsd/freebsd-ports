@@ -56,6 +56,7 @@ MAN3=		Perlbal.3 \
 		Perlbal::Test.3 \
 		Perlbal::Util.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's,/etc/perlbal,${PREFIX}/etc/perlbal,g' \
 		${WRKSRC}/lib/Perlbal/Manual/Configuration.pod \

@@ -16,4 +16,5 @@ MODULE_FILES=	googleanalytics.admin.inc googleanalytics.install googleanalytics.
 
 DOC_FILES=	LICENSE.txt README.txt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

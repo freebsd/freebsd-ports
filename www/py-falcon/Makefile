@@ -1,6 +1,5 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	falcon
 PORTVERSION=	0.1.4
@@ -21,4 +20,5 @@ USE_PYTHON=	2.7+
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   polipo
-# Date created:        2005-01-25
-# Whom:                Frank Behrens <frank@pinky.sax.de>
-#
+# Created by: Frank Behrens <frank@pinky.sax.de>
 # $FreeBSD$
-#
 
 PORTNAME=	polipo
 PORTVERSION=	1.0.4.1
@@ -18,6 +14,7 @@ MAN1=		polipo.1
 
 USE_RC_SUBR=	polipo
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(NO_PTEXINFO)

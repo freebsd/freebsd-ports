@@ -25,6 +25,7 @@ DESC_STATIC=	Possible use of mimetex on another machine
 
 PORTDOCS=	${PORTNAME}.html
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 # usefull if you run mimetex on another machine
 .if ${PORT_OPTIONS:MSTATIC}

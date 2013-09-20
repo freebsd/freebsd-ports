@@ -57,6 +57,7 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 		ModPerl::Util.3 mod_perl2.3 Apache2::ConnectionUtil.3 \
 		APR::ThreadRWLock.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${APACHE_VERSION} > 22

@@ -38,6 +38,7 @@ ISOFILES=	Admin/ManageTemplates.pl Admin/ModuleChecker.pl Languages/English/Admi
 		Templates/blue_1/AdminCentre.template Templates/default/AdminCentre.template \
 		Templates/yabb21/AdminCentre.template Templates/yabb25/AdminCentre.template
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

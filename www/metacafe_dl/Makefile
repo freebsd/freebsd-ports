@@ -20,6 +20,7 @@ USE_PYTHON=	2.5+
 
 PLIST_FILES=	bin/metacafe-dl
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

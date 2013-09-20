@@ -1,9 +1,5 @@
-# New ports collection makefile for:	WebFlash
-# Date created:		6th July, 2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	WebFlash
 PORTVERSION=	0.1a9
@@ -17,6 +13,7 @@ COMMENT=	Library to display flash messages in python web applications
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 260

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Mobile-UserAgent
-# Date created:		Jun 15 2011
-# Whom:			Dmitry Liakh <dliakh@ukr.net>
-#
+# Created by: Dmitry Liakh <dliakh@ukr.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Mobile-UserAgent
 PORTVERSION=	1.05
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 MAN3=		Mobile::UserAgent.3 \
 		Mobile::UserAgentFactory.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

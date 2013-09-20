@@ -22,4 +22,5 @@ USE_AUTOTOOLS=	aclocal automake autoconf
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

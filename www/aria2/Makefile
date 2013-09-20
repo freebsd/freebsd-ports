@@ -37,6 +37,7 @@ PLIST_DIRSTRY=	man/ru/man1 \
 		man/pt/man1 \
 		man/pt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCA_BUNDLE}

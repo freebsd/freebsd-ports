@@ -32,4 +32,5 @@ MAN3=	Plack::App::Proxy.3 \
 	Plack::Middleware::Proxy::LoadBalancer.3 \
 	Plack::Middleware::Proxy::RewriteLocation.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

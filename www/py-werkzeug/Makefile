@@ -1,6 +1,5 @@
 # Created by: Moggie <moggie@elasticmind.net>
 # $FreeBSD$
-#
 
 PORTNAME=	werkzeug
 PORTVERSION=	0.9.4
@@ -22,6 +21,7 @@ PYDISTUTILS_NOEGGINFO=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>

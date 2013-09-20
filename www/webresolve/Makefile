@@ -1,9 +1,5 @@
-# New ports collection makefile for:	webresolve
-# Date created:				Wed 6 Dec 2000
-# Whom:					Joseph Scott <joseph@randomnetworks.com>
-#
+# Created by: Joseph Scott <joseph@randomnetworks.com>
 # $FreeBSD$
-#
 
 PORTNAME=	webresolve
 PORTVERSION=	0.2.0
@@ -21,6 +17,7 @@ ALL_TARGET=	webresolve
 
 MAN1=		webresolve.1 splitwr.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; s|\-g||' \
 		${WRKSRC}/configure

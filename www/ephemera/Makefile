@@ -1,9 +1,5 @@
-# New ports collection makefile for:  ephemera
-# Date created:                       Sat, 17 Apr 2010 18:17:00 EDT
-# Whom:                               James Bailie <jimmy@mammothcheese.ca>
-#
+# Created by: James Bailie <jimmy@mammothcheese.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	ephemera
 PORTVERSION=	2.9
@@ -18,4 +14,5 @@ RUN_DEPENDS=	munger:${PORTSDIR}/lang/munger
 MAN8=		ephemera.8
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

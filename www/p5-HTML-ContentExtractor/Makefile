@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-ContentExtractor
-# Date created:				2008-05-30
-# Whom:					Oleg Mamontov <oleg@mamontov.net>
-#
+# Created by: Oleg Mamontov <oleg@mamontov.net>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-ContentExtractor
 PORTVERSION=	0.03
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		HTML::ContentExtractor.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

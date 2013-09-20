@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tDOM
-# Date created:				July 2005
-# Whom:					Aldert Nooitgedagt
-#
+# Created by: Aldert Nooitgedagt
 # $FreeBSD$
-#
 
 PORTNAME=	tDOM
 PORTVERSION=	0.8.3
@@ -23,6 +19,7 @@ USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure
 
+NO_STAGE=	yes
 pre-configure:
 	${RM} -f ${WRKSRC}/../generic/domalloc.?
 

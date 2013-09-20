@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/Amazon
-# Date created:		9 February 2004
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	amazon
 PORTVERSION=	0.9.2
@@ -26,6 +22,7 @@ EXAMPLES=	example/*
 
 RUBY_REQUIRE=	Ruby > 180
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(RUBY_PROVIDED)

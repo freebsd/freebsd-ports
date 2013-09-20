@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-PrettyPrinter
-# Date created:				Wed Mar  1 15:41:13 EST 2006
-# Whom:					Vivek Khera <vivek@khera.org>
-#
+# Created by: Vivek Khera <vivek@khera.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-PrettyPrinter
 PORTVERSION=	0.03
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		HTML::PrettyPrinter.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -24,6 +24,7 @@ MAN3=		WebService::NoPaste.3
 OPTIONS_DEFINE=	X11
 X11_DESC=	X11 Clipboard support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

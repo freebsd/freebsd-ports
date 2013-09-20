@@ -33,6 +33,7 @@ EXAMPLES=	examples/caution.xbm examples/clickable_image.cgi \
 		examples/popup.cgi examples/save_state.cgi \
 		examples/tryit.cgi examples/wilogo.gif
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}

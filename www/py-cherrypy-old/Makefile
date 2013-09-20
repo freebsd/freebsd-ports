@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-cherrypy
-# Date created:		2006-01-11
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	cherrypy
 PORTVERSION=	2.3.0
@@ -36,6 +32,7 @@ PLIST_SUB=	PORTPYTHON_SITELIBDIR="@comment "
 PLIST_SUB=	PORTPYTHON_SITELIBDIR=""
 .endif
 
+NO_STAGE=	yes
 post-install:
 .if defined(NOPORTEXAMPLES)
 	@${RM} ${RM_OPTS} ${CPEXAMPLES}

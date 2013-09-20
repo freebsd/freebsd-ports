@@ -25,6 +25,7 @@ SUB_LIST+=	ASTERISKDIR=${ASTERISKDIR}
 OPTIONS_DEFINE=	PGSQL
 PGSQL_DESC=	Use PostgreSQL instead of MySQL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGSQL}

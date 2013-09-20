@@ -1,9 +1,5 @@
-# New ports collection makefile for:	multisort
-# Date created:				06 Oct 2008
-# Whom:					Dennis Herrmann <adox@mcx2.org>
-#
+# Created by: Dennis Herrmann <adox@mcx2.org>
 # $FreeBSD$
-#
 
 PORTNAME=	multisort
 PORTVERSION=	1.1
@@ -16,4 +12,5 @@ COMMENT=	A small program to take multiple httpd logfiles into one
 
 PLIST_FILES=	bin/multisort
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

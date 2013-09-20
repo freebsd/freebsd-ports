@@ -24,6 +24,7 @@ GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install install-packages
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--with-apache-version=2 \

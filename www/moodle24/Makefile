@@ -25,6 +25,7 @@ OPTIONS_DEFAULT=MYSQL
 MSSQL_DESC=	MS SQL Server support
 MIMETEX_DESC=	mimeTeX filter functionality support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

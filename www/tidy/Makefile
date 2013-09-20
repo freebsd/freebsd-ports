@@ -19,6 +19,7 @@ MAN1=		tidy4.1
 ALL_TARGET=	tidy
 DOCFILES=	Overview.html tidy.gif release-notes.html grid.gif
 
+NO_STAGE=	yes
 do-configure:
 	${REINPLACE_CMD} -e 's|tidy|tidy4|' ${WRKSRC}/man_page.txt
 

@@ -35,6 +35,7 @@ RUN_DEPENDS+=	openoffice-1.1-swriter:${PORTSDIR}/editors/openoffice-1.1
 .endif
 
 #
+NO_STAGE=	yes
 # Missing because not ported to FreeBSD:
 #	audio/STsound
 #	graphics/p5-gimp-perl

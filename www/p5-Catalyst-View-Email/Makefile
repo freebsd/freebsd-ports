@@ -32,4 +32,5 @@ MAN3=		Catalyst::Helper::View::Email.3 \
 		Catalyst::View::Email.3 \
 		Catalyst::View::Email::Template.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

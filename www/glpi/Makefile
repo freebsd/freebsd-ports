@@ -24,6 +24,7 @@ GLPIDIR?=	www/${PORTNAME}
 OPTIONS_DEFINE=	LDAP IMAP
 IMAP_DESC=	IMAP support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAP}

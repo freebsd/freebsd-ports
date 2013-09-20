@@ -17,4 +17,5 @@ EXTRACTUNITDIR+=	${WRKUNITDIR}
 OPTIONS_DEFINE=	APACHE22
 APACHE22_DESC=	Install apache22 server
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

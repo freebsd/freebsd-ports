@@ -21,4 +21,5 @@ CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include/ClearSilver"
 MAN3=		ClearSilver.3
 WRKSRC=		${WRKDIR}/${DISTNAME}/perl
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

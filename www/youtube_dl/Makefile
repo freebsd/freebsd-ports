@@ -31,6 +31,7 @@ MAN1=		youtube-dl.1
 
 WRKSRC=		${WRKDIR}/youtube-dl
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRTMPDUMP}

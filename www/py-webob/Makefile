@@ -25,6 +25,7 @@ OPTIONS_DEFINE=	DOCS TESTS
 
 TESTS_DESC=	Run tests with Nose
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>

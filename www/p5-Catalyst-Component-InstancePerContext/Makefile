@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Catalyst-Component-InstancePerContext
-# Date created:		2008-09-26
-# Whom:			Charlie & <root@dev2.rambler.ru>
-#
+# Created by: Charlie & <root@dev2.rambler.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Component-InstancePerContext
 PORTVERSION=	0.001001
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		Catalyst::Component::InstancePerContext.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

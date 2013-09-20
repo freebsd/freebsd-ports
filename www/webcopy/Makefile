@@ -13,6 +13,7 @@ COMMENT=	A Web Mirroring Program
 RESTRICTED=	This program cannot be distributed if modified in any way.  Don't sell for profit without written permission
 ALL_TARGET=
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}; ${INSTALL_SCRIPT} webcopy ${PREFIX}/bin
 	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \

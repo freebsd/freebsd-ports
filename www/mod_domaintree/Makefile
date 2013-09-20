@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_domaintree
-# Date created:				May 5th 2006
-# Whom:					Daniel Gerzo <danger@rulez.sk>
-#
+# Created by: Daniel Gerzo <danger@rulez.sk>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_domaintree
 PORTVERSION=	1.6
@@ -27,6 +23,7 @@ PLIST_FILES=	share/doc/mod_domaintree/LICENSE.txt \
 		share/doc/mod_domaintree/ChangeLog
 PLIST_DIRS=	share/doc/mod_domaintree
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}

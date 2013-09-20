@@ -13,6 +13,7 @@ MAN8=		drood.8 plunger.8
 
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

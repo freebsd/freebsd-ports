@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ttf2eot
-# Date Created:				July 16 2009
-# Whom:					Stefan Bethke <stb@lassitu.de>
-#
+# Created by: Stefan Bethke <stb@lassitu.de>
 # $FreeBSD$
-#
 
 PORTNAME=	ttf2eot
 DISTVERSION=	0.0.2-2
@@ -19,6 +15,7 @@ ALL_TARGET=	ttf2eot
 PLIST_FILES=	bin/ttf2eot
 PORTDOCS=	README
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|g++|${CXX}|' ${WRKSRC}/Makefile
 

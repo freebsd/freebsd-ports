@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tidy
-# Date created:		27 Oct 1998
-# Whom:			Abel Chow <achow@transoft.net>
-#
+# Created by: Abel Chow <achow@transoft.net>
 # $FreeBSD$
-#
 
 PORTNAME?=	tidy
 DISTVERSION=	090315-cvs
@@ -61,6 +57,7 @@ DOCFILES+=	Overview.html checked_by_tidy.gif faq.html grid.gif pending.html	\
 CVSROOT=	":pserver:anonymous@tidy.cvs.sourceforge.net:/cvsroot/tidy"
 CVS_PASSFILE=	${WRKDIR}/temp-cvs-passfile
 
+NO_STAGE=	yes
 getcvs:
 	${MKDIR} ${WRKDIR}/cvs
 	${ECHO_CMD} ${CVSROOT} A > ${CVS_PASSFILE}

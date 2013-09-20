@@ -30,6 +30,7 @@ OPTIONS_DEFINE=	BIG5 GD IMAGEMAGICK
 OPTIONS_DEFAULT=	GD
 BIG5_DESC=	Big5 chinese template fix
 #
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGD}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   guile-www
-# Date created:                30 August 2002
-# Whom:                        Kimura Fuyuki <fuyuki@hadaly.org>
-#
+# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
 # $FreeBSD$
-#
 
 PORTNAME=	guile-www
 PORTVERSION=	1.1.1
@@ -20,4 +16,5 @@ RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile
 GNU_CONFIGURE=	yes
 INFO=		guile-www
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

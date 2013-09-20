@@ -22,6 +22,7 @@ MAN3=	WWW.3
 MAN4=	swish++.conf.4 swish++.index.4
 MAN8=	searchd.8 searchmonitor.8
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^#error/d' ${WRKSRC}/config.h
 .for file in scripts/searchd scripts/searchmonitor

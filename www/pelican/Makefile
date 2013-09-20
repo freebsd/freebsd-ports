@@ -25,6 +25,7 @@ OPTIONS_DEFINE=	TESTS
 TESTS_DESC=	Install tools for test suite
 OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_GITHUB=		yes

@@ -19,6 +19,7 @@ MAN1=		w3mir.1 w3mfix.1
 
 INSTALL_TARGET=	pure_install
 
+NO_STAGE=	yes
 do-configure:
 	@ cd ${WRKSRC}; \
 	${SETENV} ${MAKE_ENV} ${PERL} Makefile.PL PREFIX=${PREFIX} \

@@ -23,4 +23,5 @@ AP_INC=		${LOCALBASE}/include/mysql
 AP_LIB=		${LOCALBASE}/lib/mysql -lmysqlclient
 SRC_FILE=	mod_auth_cookie_sql2.c mod_auth_cookie_sql2_mysql.c
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

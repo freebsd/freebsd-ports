@@ -27,4 +27,5 @@ USE_PERL5=	configure
 
 MAN3=		CatalystX::Profile.3 CatalystX::Profile::Controller::ControlProfiling.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

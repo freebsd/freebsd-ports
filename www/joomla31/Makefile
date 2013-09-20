@@ -29,6 +29,7 @@ USE_PHP=	gd json mbstring mysql mysqli pcre pdf session simplexml xml zip zlib
 WANT_PHP_WEB=	yes
 WWWDIR=	${PREFIX}/www/joomla31
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${WWWDIR}
 	@cd ${WRKSRC} && \

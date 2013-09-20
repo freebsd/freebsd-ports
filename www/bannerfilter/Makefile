@@ -25,6 +25,7 @@ CONFIG_FILES=	bannerfilter.conf banners.data banners.local.data \
 
 SHEBANG_FILES=	redirector.pl
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^;\ \(DATA\ =\ \).*|\1${PREFIX}/etc/${PORTNAME}/|' \

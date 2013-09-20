@@ -29,6 +29,7 @@ PLIST_FILES=	bin/volta
 PORTDOCS=	README INSTALL LICENSE ChangeLog
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

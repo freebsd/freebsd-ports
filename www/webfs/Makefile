@@ -1,9 +1,5 @@
-# New ports collection makefile for:	webfs
-# Date created:				18 October 1999
-# Whom:					Chris D. Faulhaber <jedgar@fxp.org>
-#
+# Created by: Chris D. Faulhaber <jedgar@fxp.org>
 # $FreeBSD$
-#
 
 PORTNAME=	webfs
 PORTVERSION=	1.21
@@ -31,6 +27,7 @@ MIMEFILE?=	${LOCALBASE}/etc/mime.types
 
 USE_RC_SUBR=	webfsd
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "==========================================="

@@ -24,4 +24,5 @@ USE_PERL5=	configure
 
 MAN3=		IMDB::BaseClass.3 IMDB::Film.3 IMDB::Persons.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

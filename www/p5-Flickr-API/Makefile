@@ -19,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		Flickr::API.3 Flickr::API::Request.3 Flickr::API::Response.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

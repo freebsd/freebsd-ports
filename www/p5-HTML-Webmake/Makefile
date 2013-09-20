@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-Parser
-# Date created: 			21 June 2002
-# Whom:					Joseph Koshy <jkoshy@freebsd.org>
-#
+# Created by: Joseph Koshy <jkoshy@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-WebMake
 PORTVERSION=	2.3
@@ -30,4 +26,5 @@ MAN1=		webmake.1
 MAN3=		HTML::WebMake.3 HTML::WebMake::MetadataContent.3 HTML::WebMake::PerlCodeLibrary.3 \
 		HTML::WebMake::Content.3 HTML::WebMake::Main.3 HTML::WebMake::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

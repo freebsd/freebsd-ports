@@ -22,6 +22,7 @@ USE_BZIP2=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME:R}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}

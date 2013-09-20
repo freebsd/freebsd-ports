@@ -1,4 +1,3 @@
-# Creaed by: Peter Mutsaers
 # $FreeBSD$
 
 PORTNAME=	wwwoffle
@@ -41,6 +40,7 @@ MAN1=		wwwoffle.1
 MAN5=		wwwoffle.conf.5
 MAN8=		wwwoffled.8
 
+NO_STAGE=	yes
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/conf/upgrade-config.pl ${WWWOFFLE_SPOOL}
 	@${CAT} ${PKGMESSAGE}

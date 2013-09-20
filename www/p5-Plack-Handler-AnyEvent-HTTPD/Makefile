@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Plack::Handler::AnyEvent::HTTPD
-# Date created:		05 Apr 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Plack-Handler-AnyEvent-HTTPD
 PORTVERSION=	0.03
@@ -27,4 +22,5 @@ USE_PERL5=	configure
 
 MAN3=	Plack::Handler::AnyEvent::HTTPD.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

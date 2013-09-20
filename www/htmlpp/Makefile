@@ -15,6 +15,7 @@ USES=		perl5
 
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 do-build:
 	${SED} -e '1,1s:/usr/bin/perl:${PERL5}:' \
 		${WRKDIR}/htmlpp > ${WRKDIR}/htmlpp.temp

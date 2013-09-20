@@ -28,6 +28,7 @@ USE_PERL5=	configure
 MAN3=	URI::Fetch.3 \
 	URI::Fetch::Response.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MCACHE}

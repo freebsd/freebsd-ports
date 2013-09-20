@@ -25,4 +25,5 @@ USE_PERL5=	modbuild
 
 MAN3=	Plack::Handler::CLI.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

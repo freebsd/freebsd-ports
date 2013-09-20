@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Gtk2-WebKit
-# Date created:		2009-01-26
-# Whom:			Zane C, Bowers-Hadley <vvelox@vvelox.net>
-#
+# Created by: Zane C, Bowers-Hadley <vvelox@vvelox.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Gtk2-WebKit
 PORTVERSION=	0.09
@@ -51,4 +47,5 @@ MAN3=		Gtk2::WebKit.3 \
 		Gtk2::WebKit::WebWindowFeatures.3 \
 		Gtk2::WebKit::index.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

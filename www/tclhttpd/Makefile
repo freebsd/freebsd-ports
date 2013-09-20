@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tclhttpd
-# Date created:		27 Apr 2000
-# Whom:			Mikhail Teterin <mi@aldan.algebra.com>
-#
+# Created by: Mikhail Teterin <mi@aldan.algebra.com>
 # $FreeBSD$
-#
 
 PORTNAME=	tclhttpd
 PORTVERSION=	3.5.1
@@ -26,6 +22,7 @@ CONFIGURE_ARGS=	--with-tcl="${TCL_LIBDIR}"	\
 USE_TCL=	84+
 MAN1=		tclhttpd.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SHLIB_NAME!=	${MAKE} -f "${FILESDIR}/Makefile.lib" -V SHLIB_NAME

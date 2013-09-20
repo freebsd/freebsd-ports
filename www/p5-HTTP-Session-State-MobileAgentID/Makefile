@@ -1,9 +1,4 @@
-# New ports collection makefile for:	HTTP::Session::State::MobileAgentID
-# Date created:		01 Aug 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-Session-State-MobileAgentID
 PORTVERSION=	0.46
@@ -27,4 +22,5 @@ USE_PERL5=	configure
 
 MAN3=	HTTP::Session::State::MobileAgentID.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

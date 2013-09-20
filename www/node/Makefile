@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} --without-npm
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 REINPLACE_ARGS=	-i ''
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/deps/v8/build/common.gypi \

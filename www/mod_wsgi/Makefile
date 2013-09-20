@@ -31,6 +31,7 @@ SUB_FILES=	pkg-message
 
 PORTSCOUT=	limit:^2\.
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "======================= ATTENTION! ======================"
 	@${ECHO_MSG}

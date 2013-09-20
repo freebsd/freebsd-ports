@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-django-haystack
-# Date created:			July 29 2011
-# Whom:				Kristaps Kulis <kristaps.kulis@gmail.com>
-#
+# Created by: Kristaps Kulis <kristaps.kulis@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	django-haystack
 PORTVERSION=	1.2.7
@@ -21,4 +17,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.3:${PORTSDIR}/www/py-django
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

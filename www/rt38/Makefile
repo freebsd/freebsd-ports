@@ -1,5 +1,6 @@
 # $FreeBSD$
 
+NO_STAGE=	yes
 # TODO:
 # o etc/rt38 files permissions
 # o GRANTS

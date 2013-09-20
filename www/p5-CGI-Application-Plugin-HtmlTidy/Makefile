@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-CGI-Application-Plugin-HtmlTidy
-# Date created:				14 September 2005
-# Whom:					George Hartzell <hartzell@alerce.com>
-#
+# Created by: George Hartzell <hartzell@alerce.com>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Application-Plugin-HtmlTidy
 PORTVERSION=	1.05
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=	CGI::Application::Plugin::HtmlTidy.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

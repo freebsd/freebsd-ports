@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Template Lite
-# Date created:		2006-09-21
-# Whom:	      		Alexander Zhuravlev <zaa@zaa.pp.ru>
-#
+# Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	templatelite
 PORTVERSION=	2.10
@@ -20,6 +16,7 @@ WANT_PHP_WEB=	yes
 WRKSRC=	${WRKDIR}/template_lite
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}
 	@cd ${WRKSRC}/src && ${FIND} * | ${TAR} cTf - - | ${TAR} xUCf ${DATADIR} -

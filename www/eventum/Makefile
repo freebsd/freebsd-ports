@@ -1,9 +1,5 @@
-# New ports collection makefile for:	eventum
-# Date created:		2005-07-18
-# Whom:			Babak Farrokhi <babak@farrokhi.net>
-#
+# Created by: Babak Farrokhi <babak@farrokhi.net>
 # $FreeBSD$
-#
 
 PORTNAME=	eventum
 PORTVERSION=	2.2
@@ -18,6 +14,7 @@ NO_BUILD=	YES
 USE_PHP=	pcre session mysql gd gettext
 WANT_PHP_WEB=	YES
 
+NO_STAGE=	yes
 pre-install:
 	@${MV} ${WRKSRC}/setup/config.php ${WRKSRC}/setup/config.php-dist
 

@@ -50,6 +50,7 @@ OPTIONS_DEFINE=	WEBGL DEBUG
 OPTIONS_DEFAULT=WEBGL
 WEBGL_DESC=	Enable Web GL support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWEBGL}

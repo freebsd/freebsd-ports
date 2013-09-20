@@ -25,6 +25,7 @@ USE_TK_WRAPPER=	yes
 PORTDOCS=	specchars.txt
 PLIST_FILES=	bin/august
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/bin|${LOCALBASE}/bin|g' ${WRKSRC}/august

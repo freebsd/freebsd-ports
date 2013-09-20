@@ -20,6 +20,7 @@ NO_LATEST_LINK=	yes
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-extract:
 	@${TOUCH} \
 	  	${WRKSRC}/jscripts/tiny_mce/plugins/spellchecker/classes/utils/.keepme \

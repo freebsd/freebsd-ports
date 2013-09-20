@@ -22,4 +22,5 @@ MAN3=	Plack::Middleware::Reproxy.3 \
 	Plack::Middleware::Reproxy::Callback.3 \
 	Plack::Middleware::Reproxy::Furl.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

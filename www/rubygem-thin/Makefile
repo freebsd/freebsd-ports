@@ -1,7 +1,4 @@
-# Ports collection makefile for:	thin
-# Date created:				24 Jan 2008
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	thin
@@ -21,4 +18,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/thin
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

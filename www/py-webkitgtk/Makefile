@@ -25,6 +25,7 @@ USE_GNOME=	glib20 libxslt pygtk2
 USES=		gmake pkgconfig
 USE_PYTHON=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in

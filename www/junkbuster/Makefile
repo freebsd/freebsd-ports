@@ -1,7 +1,4 @@
-# New ports collection makefile for:	junkbuster
-# Date created:		2 May 1998
-# Whom:			Ian Struble <ian@broken.net>
-#
+# Created by: Ian Struble <ian@broken.net>
 # $FreeBSD$
 
 PORTNAME=	junkbuster
@@ -24,6 +21,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 GNUREGEXP=	's:gnu_regex.h:gnu/regex.h:'
 
+NO_STAGE=	yes
 post-patch:
 .for f in junkbstr.ini saclfile.ini sblock.ini scookie.ini sforward.ini strust.ini win32.h
 	@${REINPLACE_CMD} -e "s:`/usr/bin/printf '\r'`::" ${WRKSRC}/${f}

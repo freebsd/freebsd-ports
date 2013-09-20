@@ -25,4 +25,5 @@ MAN3=		HTML::Parser::Simple.3 \
 		HTML::Parser::Simple::Attributes.3 \
 		HTML::Parser::Simple::Reporter.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

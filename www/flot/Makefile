@@ -24,6 +24,7 @@ PORTDOCS=	API.txt	\
 		README.txt
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL} -d -g ${USERS} -o ${GROUPS} ${WWWDIR}
 	${INSTALL_DATA} -o www -g www ${WRKSRC}/*.js ${WWWDIR}

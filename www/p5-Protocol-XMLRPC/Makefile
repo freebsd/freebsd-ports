@@ -33,4 +33,5 @@ MAN3=		Protocol::XMLRPC.3 \
 		Protocol::XMLRPC::Value::Struct.3 \
 		Protocol::XMLRPC::ValueFactory.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

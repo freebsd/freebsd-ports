@@ -25,4 +25,5 @@ MAN3=	HTML::Lint.3 \
 	HTML::Lint::Parser.3 \
 	Test::HTML::Lint.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

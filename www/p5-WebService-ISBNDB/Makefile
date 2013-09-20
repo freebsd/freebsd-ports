@@ -32,4 +32,5 @@ MAN3=	WebService::ISBNDB.3 \
 	WebService::ISBNDB::Agent::REST.3 \
 	WebService::ISBNDB::Iterator.3 \
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

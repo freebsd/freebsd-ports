@@ -1,9 +1,5 @@
-# New ports collection makefile for:	links
-# Date created:		21 January 2000
-# Whom:			Michael Vasilenko <acid@stu.cn.ua>
-#
+# Created by: Michael Vasilenko <acid@stu.cn.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	links
 DISTVERSION=	2.7
@@ -41,6 +37,7 @@ OPTIONS_DEFAULT=	UTF8 X11
 MAN1=		links.1
 PLIST_FILES=	bin/links
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)

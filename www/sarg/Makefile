@@ -29,6 +29,7 @@ CONFIGURE_ARGS=	CPPFLAGS=-I${LOCALBASE}/include \
 
 MAN1=		sarg.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

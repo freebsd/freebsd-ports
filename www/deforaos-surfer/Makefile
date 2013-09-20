@@ -30,4 +30,5 @@ MAKE_ENV+=	MANDIR=${MANPREFIX}/man
 
 MAN1=		download.1 helper.1 surfer.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

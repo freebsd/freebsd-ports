@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bins
-# Date created:		Sat Nov 23 01:17:35 UTC 2002
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bins
 PORTVERSION=	1.1.29
@@ -42,6 +38,7 @@ DOC_EXTS=	html sgml xml
 
 MAN1=	bins-edit-gui.1 bins.1 bins_edit.1
 
+NO_STAGE=	yes
 post-patch::
 # perl PREFIX safeness
 	@${FIND} ${WRKSRC} -type f | \

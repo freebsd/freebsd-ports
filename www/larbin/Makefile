@@ -24,6 +24,7 @@ MAKE_JOBS_UNSAFE=	yes
 PORTDOCS=	*
 PLIST_FILES=	bin/larbin etc/larbin.conf.sample
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-everything::

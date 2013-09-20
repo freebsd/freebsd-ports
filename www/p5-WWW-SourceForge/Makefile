@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-WWW-SourceForge
-# Date created:				21 Oct 2004
-# Whom:					Yuan-Chung Hsiao <ychsiao@ychsiao.idv.tw>
-#
+# Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.idv.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-SourceForge
 PORTVERSION=	0.090
@@ -26,4 +22,5 @@ USE_PERL5=	configure
 
 MAN3=	WWW::SourceForge.3 WWW::SourceForge::Project.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cgihtml
-# Date created:		3 Nov 1997
-# Whom:			Ian Vaudrey <i.vaudrey@bigfoot.com>
-#
+# Created by: Ian Vaudrey <i.vaudrey@bigfoot.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cgihtml
 PORTVERSION=	1.69
@@ -18,6 +14,7 @@ COMMENT=	Library that simplifies the task of writing CGI programs in C
 
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.dist
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}

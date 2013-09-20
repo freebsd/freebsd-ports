@@ -1,9 +1,5 @@
-# New ports collection makefile for:  shttpd
-# Date created:			  Wed Dec 15, 2004
-# Whom:				  Sergey Lyubka (valenok@gmail.com)
-#
+# Created by: Sergey Lyubka (valenok@gmail.com)
 # $FreeBSD$
-#
 
 PORTNAME=	shttpd
 PORTVERSION=	1.42
@@ -21,6 +17,7 @@ BUILD_WRKSRC=	${WRKSRC}/src
 
 PLIST_FILES=	bin/shttpd
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/shttpd ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/src/shttpd.1 ${MANPREFIX}/man/man1

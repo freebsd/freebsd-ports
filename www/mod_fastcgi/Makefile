@@ -19,6 +19,7 @@ AP_GENPLIST=	yes
 SRC_FILE=	*.c
 PORTDOCS=	LICENSE.TERMS mod_fastcgi.html
 
+NO_STAGE=	yes
 do-install:
 	@${APXS} -i -a -n ${SHORTMODNAME} ${WRKSRC}/${MODULENAME}.${AP_BUILDEXT}
 

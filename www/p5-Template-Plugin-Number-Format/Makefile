@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Template-Plugin-Number-Format
-# Date created:				26 January 2006
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Template-Plugin-Number-Format
 PORTVERSION=	1.02
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=	Template::Plugin::Number::Format.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

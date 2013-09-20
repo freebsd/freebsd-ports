@@ -31,6 +31,7 @@ JAPANESE_DESC=		Japanese messages and migemo support
 INLINE_IMAGE_DESC=	Inline image support
 KEY_LYNX_DESC=		Keymap like lynx browser
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJAPANESE}

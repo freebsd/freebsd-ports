@@ -12,6 +12,7 @@ COMMENT=	Netscape bookmarks.html converter
 USES=		perl5
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -i '' -e \
 		's|/usr/bin/perl|${PERL}|g ; \

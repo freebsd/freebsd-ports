@@ -26,6 +26,7 @@ USES=		perl5
 MAN1=		googlecode_upload.pl.1
 MAN3=		Google::Code::Upload.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

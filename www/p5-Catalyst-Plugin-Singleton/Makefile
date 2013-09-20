@@ -1,4 +1,3 @@
-# Ports collection makefile for:	p5-Catalyst-Plugin-Singleton
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
 
@@ -23,4 +22,5 @@ USE_PERL5=	modbuild
 
 MAN3=	Catalyst::Plugin::Singleton.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

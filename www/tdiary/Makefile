@@ -61,6 +61,7 @@ OPTIONS_DEFAULT=	NORA
 
 NORA_DESC=	Use Nora
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-patch:

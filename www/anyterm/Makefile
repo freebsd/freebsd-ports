@@ -25,6 +25,7 @@ USE_GCC=	any
 ALL_TARGET=	default_target
 PLIST_FILES=	sbin/anytermd
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/private/etc/apache2|${FILESDIR}|' \
 		${WRKSRC}/scripts/mimetype.sh

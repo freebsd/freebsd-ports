@@ -1,9 +1,5 @@
-# New ports collection makefile for: trac-tweakui
-# Date created:                      Dec 09 2008
-# Whom:                              glarkin
-#
+# Created by: glarkin
 # $FreeBSD$
-#
 
 PORTNAME=	tweakui
 PORTVERSION=	0.1.7413
@@ -35,6 +31,7 @@ PYDISTUTILS_PKGVERSION=	${PORTVERSION:R}
 PLIST_SUB+=	EGGVERSION="${PORTVERSION:R}" PYTHONVERSION=${PYTHON_VER}
 PYDISTUTILS_NOEGGINFO=	yes
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	@cd ${WRKSRC}/tractweakui/htdocs && ${COPYTREE_SHARE} . ${EXAMPLESDIR}

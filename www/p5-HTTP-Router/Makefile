@@ -1,9 +1,4 @@
-# New ports collection makefile for:	HTTP::Router
-# Date created:		22 Jan 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-Router
 PORTVERSION=	0.05
@@ -39,4 +34,5 @@ MAN3=		HTTP::README.3 \
 		HTTP::Router::Route.3 \
 		Test::HTTP::Router.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

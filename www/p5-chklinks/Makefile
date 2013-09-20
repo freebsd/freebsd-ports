@@ -24,4 +24,5 @@ PLIST_FILES=	bin/chklinks \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/chklinks/.packlist
 PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/chklinks
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

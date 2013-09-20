@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-less
-# Date created:		2010-12-07
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	less
 PORTVERSION=	1.2.21
@@ -23,4 +19,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/lessc
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

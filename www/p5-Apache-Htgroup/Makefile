@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Apache-Htgroup
-# Date created:				Fri Mar 19 11:05:42 BRT 2010
-# Whom:					otaviof@gmail.com
-#
+# Created by: otaviof@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	Apache-Htgroup
 PORTVERSION=	1.23
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Apache::Htgroup.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

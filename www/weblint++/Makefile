@@ -32,4 +32,5 @@ USE_PERL5=	configure
 
 MAN1=		weblint++.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 # $FreeBSD$
-#
+
 # Apache 2.2.X with peruser mpm 0.3.0-dc3
 # Peruser main url:		http://telana.com/peruser.php
 # Peruser patches:		http://source.kood.ee/
@@ -10,6 +10,7 @@ MASTERDIR=		${.CURDIR}/../apache22
 MAINTAINER=		ports@FreeBSD.org
 
 WITH_MPM=		peruser
+NO_STAGE=		yes
 
 LATEST_LINK=		apache22-${WITH_MPM}-mpm
 DESCR=			${.CURDIR}/pkg-descr

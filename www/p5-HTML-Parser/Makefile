@@ -24,4 +24,5 @@ MAN3=		HTML::Entities.3 \
 		HTML::PullParser.3 \
 		HTML::TokeParser.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -25,4 +25,5 @@ USE_PERL5=	configure
 
 MAN3=		HTTP::Async.3 HTTP::Async::Polite.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

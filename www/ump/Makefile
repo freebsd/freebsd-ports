@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ump
-# Date created:		15 Nov 2001
-# Whom:			Leland Wang <llwang@infor.org>
-#
+# Created by: Leland Wang <llwang@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ump
 PORTVERSION=	1.10
@@ -55,6 +51,7 @@ WEBPLUGINS_FILES=ump.so
 # USE_MOTIF=	yes
 # CONFIGURE_ENV=	MOTIFLIB="${MOTIFLIB}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 

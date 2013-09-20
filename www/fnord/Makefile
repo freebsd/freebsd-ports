@@ -27,6 +27,7 @@ DIR_LIST_DESC=		Enable directory listing
 SYSTEM_SYMLINK_DEREF_DESC=	Enable system symlink (needs DIR_LIST)
 OLD_STYLE_REDIRECT_DESC= "Enable old style redirection
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDAEMONTOOLS}

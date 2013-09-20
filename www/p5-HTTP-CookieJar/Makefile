@@ -27,4 +27,5 @@ USES=		perl5
 MAN3=		HTTP::CookieJar.3 \
 		HTTP::CookieJar::LWP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

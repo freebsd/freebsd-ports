@@ -85,6 +85,7 @@ MAN3=		Rose::HTML::Anchor.3 \
 		Rose::HTML::Text.3 \
 		Rose::HTML::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501600

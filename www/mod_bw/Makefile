@@ -21,6 +21,7 @@ AP_GENPLIST=	yes
 SRC_FILE=	mod_bw.c
 PORTDOCS=	LICENSE mod_bw.txt
 
+NO_STAGE=	yes
 post-install:
 .ifndef NOPORTDOCS
 	@${MKDIR} ${DOCSDIR}

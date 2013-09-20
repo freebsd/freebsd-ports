@@ -20,5 +20,6 @@ USE_CABAL=	base64-bytestring>=0.1 blaze-html>=0.4 cgi ConfigFile>=1 \
 
 EXECUTABLE=	expireGititCache gitit
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

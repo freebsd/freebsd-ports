@@ -19,6 +19,7 @@ HAS_CONFIGURE=	yes
 MAN1=		mknmz-wwwoffle.1
 PORTDOCS=	AUTHORS COPYING INSTALL INSTALL.ja NEWS README README.ja THANKS
 
+NO_STAGE=	yes
 post-build:
 .if !defined(NOPORTDOCS)
 post-install:

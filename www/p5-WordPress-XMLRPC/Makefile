@@ -1,4 +1,3 @@
-# Created by: bapt <baptiste.daroussin@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	WordPress-XMLRPC
@@ -23,4 +22,5 @@ PLIST_DIRS=	%%SITE_PERL%%/WordPress \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/WordPress/XMLRPC \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/WordPress \
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

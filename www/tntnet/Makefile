@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tntnet
-# Date created:		Wed Apr 14 18:11:42 CEST 2010
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tntnet
 PORTVERSION=	2.1
@@ -40,6 +36,7 @@ MAN8=		tntnet.8
 USERS=		www
 GROUPS=		www
 
+NO_STAGE=	yes
 post-configure:
 	${REINPLACE_CMD} 's/^\(#define[[:space:]]*HAVE_SENDFILE[[:space:]]*\).*/\1\0/' ${WRKSRC}/framework/common/config.h
 

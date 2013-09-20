@@ -35,6 +35,7 @@ MECAB_DESC=	Enable MeCab japanese analyzer
 CHASEN_DESC=	Enable ChaSen japanese analyzer
 EXTRACT_DESC=	Enable libextractor support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ENV+=	PORTNAME="${PORTNAME}"

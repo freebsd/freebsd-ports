@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Template-GD
-# Date created:		22 June 2006
-# Whom:			Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Template-GD
 PORTVERSION=	2.66
@@ -38,4 +34,5 @@ MAN3=		Template::Plugin::GD.3 \
 		Template::Plugin::GD::Text::Align.3 \
 		Template::Plugin::GD::Text::Wrap.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -190,4 +190,5 @@ DOC_FILES=	README.txt LICENSE.txt \
 		KNOWN_ISSUES.txt INSTALL.txt \
 		D6UPDATE.txt CHANGELOG.txt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

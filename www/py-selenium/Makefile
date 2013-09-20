@@ -22,6 +22,7 @@ USE_PYDISTUTILS=	easy_install
 OPTIONS_DEFINE=	FIREFOX
 FIREFOX_DESC=	Install Firefox
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFIREFOX}

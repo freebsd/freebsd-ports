@@ -16,4 +16,5 @@ USES=		gettext
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	grappelli_safe
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

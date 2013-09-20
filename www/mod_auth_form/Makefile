@@ -27,6 +27,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 PORTDOCS=	AUTHORS NEWS README
 
+NO_STAGE=	yes
 post-install:
 	${ECHO} ${APACHE_VERSION}
 .if !defined(NOPORTDOCS)

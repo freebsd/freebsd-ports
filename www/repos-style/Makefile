@@ -1,9 +1,5 @@
-# New ports collection makefile for: repos-style
-# Date created:		12 Aug 2009
-# Whom:			Alexander Kriventsov
-#
+# Created by: Alexander Kriventsov
 # $FreeBSD$
-#
 
 PORTNAME=	repos-style
 PORTVERSION=	2.0
@@ -28,6 +24,7 @@ WRKSRC=		${WRKDIR}/repos-web
 SUB_LIST+=	PORTNAME=${PORTNAME}
 SUB_FILES+=	pkg-message
 
+NO_STAGE=	yes
 pre-install:
 # Prevent installation of .orig files by deleting them.
 	@${FIND} ${WRKSRC} -name '*.orig' -delete

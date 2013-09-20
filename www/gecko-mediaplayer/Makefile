@@ -39,6 +39,7 @@ CONFIGURE_ARGS+=--with-plugin_dir="${WEBPLUGINS_DIR}"
 
 PORTDOCS=	README COPYING AUTHORS ChangeLog INSTALL NEWS javascript.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCACHE}

@@ -75,4 +75,5 @@ MAN3=		Bigtop.3 \
 		Bigtop::TentMakerPath.3 \
 		Bigtop::grammar.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

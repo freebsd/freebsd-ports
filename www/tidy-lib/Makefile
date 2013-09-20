@@ -1,9 +1,5 @@
-# New ports collection makefile for:    tidy-lib
-# Date created:                         21 February 2003
-# Whom:                                 Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	tidy
 CATEGORIES=	www
@@ -16,4 +12,5 @@ MASTERDIR=	${.CURDIR}/../../www/tidy-devel
 
 WITH_SHLIB=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

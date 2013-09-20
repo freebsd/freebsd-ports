@@ -30,6 +30,7 @@ USE_GMAKE=	yes
 MAN1=		llgal.1
 MAN5=		llgalrc.5
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

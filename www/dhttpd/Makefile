@@ -1,9 +1,5 @@
-# New ports collection makefile for: 	dhttpd
-# Date created:				24 June 2002
-# Whom:					Gea-Suan Lin <gslin@ccca.nctu.edu.tw>
-#
+# Created by: Gea-Suan Lin <gslin@ccca.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	dhttpd
 PORTVERSION=	1.02a
@@ -23,6 +19,7 @@ MAN1=		dhttpd.1
 
 USE_RC_SUBR=	dhttpd
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "=============================================================="
 	@${ECHO_MSG} "To change the default document root"

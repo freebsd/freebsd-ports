@@ -25,6 +25,7 @@ GD_DESC=	Enable Image Manager extension (requires gd)
 
 OPTIONS_DEFAULT=	APACHE MYSQLS GD
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQLS}

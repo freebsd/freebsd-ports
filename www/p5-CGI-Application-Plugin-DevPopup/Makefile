@@ -26,4 +26,5 @@ MAN3=	CGI::Application::Plugin::DevPopup.3 \
 	CGI::Application::Plugin::DevPopup::Timing.3 \
 	CGI::Application::Plugin::DevPopup::Log.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,6 +23,7 @@ USE_PERL5=	configure
 MAN3=	Catalyst::Helper::Prototype.3 \
 	Catalyst::Plugin::Prototype.3
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -name '._Prototype.pm' -delete
 

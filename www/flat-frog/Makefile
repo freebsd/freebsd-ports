@@ -1,9 +1,5 @@
-# New ports collection makefile for:	flat-frog
-# Date created:		2006-10-10
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	flat-frog
 PORTVERSION=	2.2.13
@@ -17,6 +13,7 @@ NO_BUILD=	yes
 USE_PHP=	yes
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR} ${DATADIR}/plugins
 	${INSTALL_DATA} ${WRKSRC}/src/class.* ${DATADIR}

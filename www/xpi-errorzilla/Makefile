@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-errorzilla
-# Date created:		02 Nov 2006
-# Whom:			Steven Kreuzer <skreuzer@exit2shell.com>
-#
+# Created by: Steven Kreuzer <skreuzer@exit2shell.com>
 # $FreeBSD$
-#
 
 PORTNAME=	errorzilla
 PORTVERSION=	0.42
@@ -45,5 +41,6 @@ XPI_DIRS=	chrome/content/images \
 		defaults/preferences \
 		defaults
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

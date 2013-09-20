@@ -28,6 +28,7 @@ CPPFLAGS+=	-I${WRKSRC}/src/cmods
 PLIST_SUB+=	PIKEVERSION=${PIKEVERSION}
 CONFLICTS+=	caudium12-[0-9]*
 
+NO_STAGE=	yes
 post-patch:
 	@${SED} -e 's:@CAUDIUM_SERVERDIR@:${PREFIX}/caudium/server:' \
 		-e 's:^#############$$:${ECHO} "$${caudium_enable}" | ${EGREP} -iq "^yes|^true" || exit:' \

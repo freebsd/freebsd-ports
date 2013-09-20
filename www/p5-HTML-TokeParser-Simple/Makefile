@@ -26,4 +26,5 @@ MAN3=		HTML::TokeParser::Simple.3 HTML::TokeParser::Simple::Token.3 \
 		HTML::TokeParser::Simple::Token::Tag::Start.3 \
 		HTML::TokeParser::Simple::Token::Text.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

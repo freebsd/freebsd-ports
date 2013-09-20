@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vdr-plugin-live
-# Date created:		Wed Apr 14 18:11:42 CEST 2010
-# Whom:			Juergen Lock <nox@freebsd.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vdr-plugin-live
 PORTVERSION=	0.2.0s20120325
@@ -27,6 +23,7 @@ WRKSRC=		${WRKDIR}/vdr-plugin-${PLUGIN}
 VDR_PLUGIN_MAKEFILES=	${WRKSRC}/httpd/Makefile ${WRKSRC}/pages/Makefile
 MAKE_ARGS+=	INCLUDES="-I$(LOCALBASE)/include -I${WRKSRC}"
 
+NO_STAGE=	yes
 .include	"${.CURDIR}/../../multimedia/vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin

@@ -44,6 +44,7 @@ MAN3=		Catalyst::Helper::Model::DBIC::Schema.3 \
 		Catalyst::TraitFor::Model::DBIC::Schema::Replicated.3 \
 		Catalyst::TraitFor::Model::DBIC::Schema::SchemaProxy.3
 
+NO_STAGE=	yes
 #post-patch:
 #	@${PERL} -i.bak -ne 'print unless m,^feature, .. m,;$$,' ${WRKSRC}/Makefile.PL
 

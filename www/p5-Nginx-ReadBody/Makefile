@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Nginx-ReadBody
-# Date created:				2010-04-19
-# Whom:					jupengfei <jupengfei@gmail.com>
-#
+# Created by: jupengfei <jupengfei@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Nginx-ReadBody
 PORTVERSION=	0.07
@@ -18,6 +14,7 @@ COMMENT=	Nginx embeded perl module to read and evaluate a request body
 OPTIONS_DEFINE=	NGINX_DEVEL
 NGINX_DEVEL_DESC=	Use nginx-devel
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNGINX_DEVEL}

@@ -1,6 +1,5 @@
 # Created by: Martin Tournoij <martin@arp242.net>
 # $FreeBSD$
-#
 
 PORTNAME=	download-gemist
 PORTVERSION=	1.2
@@ -21,6 +20,7 @@ PLIST_FILES=	bin/download-gemist \
 		bin/download-gemist-guide \
 		%%DOCSDIR%%/README.md
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/download-gemist* ${PREFIX}/bin/
 	${MKDIR} ${DOCSDIR}

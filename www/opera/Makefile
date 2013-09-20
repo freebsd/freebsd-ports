@@ -42,6 +42,7 @@ OPTIONS_DEFAULT=	CUPS VIDEO
 CUPS_DESC=	support for printing (requires CUPS)
 VIDEO_DESC=	support for HTML5 video (requires GStreamer)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(FETCH_ALL)

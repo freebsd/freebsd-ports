@@ -35,4 +35,5 @@ MAN3=	Plack::Middleware::Session.3 \
 	Plack::Session::Store::File.3 \
 	Plack::Session::Store::Null.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

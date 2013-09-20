@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-no-referrer
-# Date created:			2006/05/06
-# Whom:				chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	no-referrer
 PORTVERSION=	1.0.1
@@ -19,5 +15,6 @@ XPI_FILES=	chrome/icon.gif chrome/referrer.js chrome/referrer.xul \
 		chrome.manifest install.rdf
 XPI_DIRS=	chrome
 
+NO_STAGE=	yes
 .include "../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

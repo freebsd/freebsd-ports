@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-CatalystX-Component-Traits
-# Date created:				25 July 2009
-# Whom:					Bill Brinzer <bill.brinzer@gmail.com>
-#
+# Created by: Bill Brinzer <bill.brinzer@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	CatalystX-Component-Traits
 PORTVERSION=	0.16
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=	CatalystX::Component::Traits.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

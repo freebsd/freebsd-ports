@@ -1,9 +1,5 @@
-# New ports collection makefile for:	UserManager
-# Date created:				19 December 2004
-# Whom:					Daniel Gerzo <danger@FreeBSD.org>
-#
+# Created by: Daniel Gerzo <danger@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	UserManager
 PORTVERSION=	2.1
@@ -26,6 +22,7 @@ PLIST_SUB+=	INSTALLDIR=${INSTALLDIR}
 _INSTDIR=	www/data/UserManager
 INSTALLDIR?=	${_INSTDIR}
 
+NO_STAGE=	yes
 pre-fetch:
 .if ${INSTALLDIR} == ${_INSTDIR}
 	@${ECHO_MSG} ""

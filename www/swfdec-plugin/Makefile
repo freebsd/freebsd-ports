@@ -24,6 +24,7 @@ USE_LDCONFIG=	yes
 USE_WEBPLUGINS=	gecko*
 WEBPLUGINS_FILES=libswfdecmozilla.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 .include <bsd.port.post.mk>

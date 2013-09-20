@@ -20,6 +20,7 @@ USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracFullBlogNotificationPlugin
 
 .if defined(BOOTSTRAP)
+NO_STAGE=	yes
 do-fetch:
 	${MKDIR} ${WRKDIR}
 	svn export http://trac-hacks.org/svn/fullblognotificationplugin/0.12/ \

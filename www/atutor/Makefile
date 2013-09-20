@@ -13,6 +13,7 @@ COMMENT=	An Open Source Web-based Learning Content Management System (LCMS)
 USE_PHP=	session mbstring zlib mysql
 WRKSRC=		${WRKDIR}/ATutor
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 NO_BUILD=	yes

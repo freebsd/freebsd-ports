@@ -1,9 +1,5 @@
-# New ports collection makefile for:	php-plurk-api
-# Date created:		2010-02-26
-# Whom:			Bo-Yi Wu <appleboy.tw@gmail.com>
-#
+# Created by: Bo-Yi Wu <appleboy.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	php-plurk-api
 PORTVERSION=	1.6.4
@@ -23,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTVERSION}
 SUB_LIST=	PKGNAME=${PKGNAME}
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}

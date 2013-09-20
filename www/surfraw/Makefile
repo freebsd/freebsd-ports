@@ -24,6 +24,7 @@ post-patch:	.SILENT
 		-e 's/^function[[:space:]]//' \
 		${WRKSRC}/examples/uzbl_load_url_from_surfraw.IN
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/uzbl_load_url_from_surfraw \
 		${PREFIX}/bin

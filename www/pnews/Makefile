@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	pnews
-# Date created:			Feb 25, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	pnews
 PORTVERSION=	2.6.6
@@ -24,6 +19,7 @@ PNEWSDIR?=	www/pnews
 PNEWSFULLDIR=	${PREFIX}/${PNEWSDIR}
 PLIST_SUB+=	PNEWSDIR="${PNEWSDIR}"
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PNEWSFULLDIR}
 	@${CP} -R ${WRKSRC}/* ${PNEWSFULLDIR}

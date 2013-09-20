@@ -1,9 +1,5 @@
-# New ports collection makefile for:	HTTP::Server::Simple::Mason
-# Date created:				28 April 2005
-# Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-Server-Simple-Mason
 PORTVERSION=	0.14
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=	HTTP::Server::Simple::Mason.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

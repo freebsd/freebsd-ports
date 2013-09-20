@@ -26,6 +26,7 @@ PYDISTUTILS_PKGVERSION=	${PLUGIN_VERSION}
 PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 .if defined(BOOTSTRAP)
+NO_STAGE=	yes
 do-fetch:
 	${MKDIR} ${WRKDIR}
 	svn export -r ${SVN_REV} http://trac-hacks.org/svn/downloadsplugin/${TRAC_VERSION}/ ${WRKSRC}

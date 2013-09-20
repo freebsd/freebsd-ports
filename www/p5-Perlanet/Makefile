@@ -44,4 +44,5 @@ MAN3=		Perlanet.3 \
 		Perlanet::Trait::Tidy.3 \
 		Perlanet::Trait::YAMLConfig.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,6 +23,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CFLAGS=		-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

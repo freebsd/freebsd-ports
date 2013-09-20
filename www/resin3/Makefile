@@ -12,6 +12,7 @@ COMMENT=		Java-based Application Server, 3.x branch
 OPTIONS_DEFINE=	APACHE22
 APACHE22_DESC=	Use Apache 2.2
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_JAVA=		yes

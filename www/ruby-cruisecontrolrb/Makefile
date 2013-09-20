@@ -1,7 +1,3 @@
-# Ports collection makefile for:	ruby-cruisecontrolrb
-# Date created:				25 Sep 2007
-# Whom:					Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
 # $FreeBSD$
 
 PORTNAME=	cruisecontrolrb
@@ -25,6 +21,7 @@ NO_BUILD=	yes
 
 CPIOARGS=	--quiet -pdum -R
 
+NO_STAGE=	yes
 do-install:
 	@ ${INSTALL} -d -m 0755 ${WWWDIR}
 	@ cd ${WRKSRC} && ${FIND} . -name \*.bat -o -name \*.orig -o -name \*Changelog -o -name .gitignore -o -print | \

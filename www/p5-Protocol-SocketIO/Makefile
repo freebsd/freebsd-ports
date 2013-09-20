@@ -24,4 +24,5 @@ MAN3=		Protocol::SocketIO.3 \
 		Protocol::SocketIO::Message.3 \
 		Protocol::SocketIO::Path.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

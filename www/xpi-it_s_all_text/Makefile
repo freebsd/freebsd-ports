@@ -25,5 +25,6 @@ XPI_FILES=	chrome.manifest \
 XPI_DIRS=	chrome \
 		defaults/preferences defaults
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

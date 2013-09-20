@@ -1,9 +1,4 @@
-# New ports collection makefile for:	POE::Component::Server::PSGI
-# Date created:		02 Apr 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Server-PSGI
 PORTVERSION=	0.6
@@ -23,4 +18,5 @@ USE_PERL5=	configure
 MAN3=	POE::Component::Server::PSGI.3 \
 	Plack::Server::POE.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -25,4 +25,5 @@ MAN3=		HTML::Prototype.3 \
 		HTML::Prototype::Helper.3 \
 		HTML::Prototype::Js.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

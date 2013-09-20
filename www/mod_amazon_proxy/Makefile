@@ -20,6 +20,7 @@ CONFDIR=	${PREFIX}/${APACHEETCDIR}/Includes
 PORTDOCS=	README
 PORTEXAMPLES=	rpaproxy.yaml
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|modules|${APACHEMODDIR}|' ${WRKSRC}/${CONFFILE}.sample
 

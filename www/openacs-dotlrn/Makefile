@@ -1,9 +1,5 @@
-# New ports collection makefile for:  .LRN (dotLRN)
-# Date created:         July 2005
-# Whom:                 Aldert Nooitgedagt <nooitgedagt.net>
-#
+# Created by: Aldert Nooitgedagt <nooitgedagt.net>
 # $FreeBSD$
-#
 
 PORTNAME=	dotlrn
 DISTVERSION=	2.5.0
@@ -28,4 +24,5 @@ DISTINFO_FILE=	${.CURDIR}/distinfo
 
 MASTERDIR=	${.CURDIR}/../openacs
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

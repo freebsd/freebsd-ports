@@ -26,6 +26,7 @@ CONFIGURE_ARGS+=--with-apxs="${APXS}" --with-python="${PYTHON_CMD}" \
 		--without-flex
 MAKE_ENV=	EXPR_COMPAT=yes
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

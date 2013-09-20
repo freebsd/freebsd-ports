@@ -35,4 +35,5 @@ MAN3=		WebService::Google::Reader.3 \
 		WebService::Google::Reader::Feed.3 \
 		WebService::Google::Reader::ListElement.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

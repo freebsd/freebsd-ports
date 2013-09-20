@@ -17,6 +17,7 @@ DATAFILES=	aliases users words
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

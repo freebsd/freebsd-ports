@@ -8,5 +8,6 @@ MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \
 
 COMMENT=	Create user's topic for externally authenticated users
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../twiki/bsd.twiki.mk"
 .include <bsd.port.mk>

@@ -35,6 +35,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 LICENSE_TEXT=	Commercial software with shareware license to 50 threads
 RESTRICTED=	Commercial software with shareware license to 50 threads
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"

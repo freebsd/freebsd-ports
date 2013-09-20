@@ -33,6 +33,7 @@ SQUATTING_DESC=		Squatting::On
 CGIAPP_DESC=		CGI::Application::PSGI
 #OPTIONS:=${OPTIONS:C/off/on/g}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFASTCGI}

@@ -18,6 +18,7 @@ RUN_DEPENDS=	analog:${PORTSDIR}/www/analog \
 NO_BUILD=	yes
 USES=		perl5
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|%%PREFIX%%|${PREFIX}|' \
 	   ${WRKSRC}/configfiles/serverwide/webstats.ini \

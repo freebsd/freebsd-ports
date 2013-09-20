@@ -1,4 +1,3 @@
-# Created by: Andrej Zverev <az@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Catalyst-View-RRDGraph
@@ -23,4 +22,5 @@ USE_PERL5=	configure
 MAN3=	Catalyst::Helper::View::RRDGraph.3 \
 	Catalyst::View::RRDGraph.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

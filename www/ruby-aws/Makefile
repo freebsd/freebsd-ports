@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-aws
-# Date created:		2008-03-30
-# Whom:			IWATSUKI Hiroyuki <don@na.rim.or.jp>
-#
+# Created by: IWATSUKI Hiroyuki <don@na.rim.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	aws
 PORTVERSION=	0.8.1
@@ -26,6 +22,7 @@ EXAMPLES=	example/*
 
 RUBY_REQUIRE=	Ruby > 180
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(RUBY_PROVIDED)

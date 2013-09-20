@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Catalyst-TraitFor-Controller-DBIC-DoesPaging
-# Date created:		2010-07-28
-# Whom:			Alex Bakhtin <Alex.Bakhtin@gmail.com>
-#
+# Created by: Alex Bakhtin <Alex.Bakhtin@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-TraitFor-Controller-DBIC-DoesPaging
 PORTVERSION=	1.001000
@@ -29,4 +25,5 @@ USE_PERL5=	configure
 
 MAN3=		Catalyst::TraitFor::Controller::DBIC::DoesPaging.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

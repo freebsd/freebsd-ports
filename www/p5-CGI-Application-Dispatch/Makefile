@@ -29,4 +29,5 @@ MAN3=		CGI::Application::Dispatch.3 \
 		CGI::Application::Dispatch::PSGI.3 \
 		CGI::Application::Dispatch::Regexp.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

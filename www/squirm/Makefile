@@ -1,9 +1,5 @@
-# New ports collection makefile for:	squirm
-# Date created:				24 May 1999
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	squirm
 PORTVERSION=	1.26
@@ -25,6 +21,7 @@ MAKE_ENV+=	SQUID_UID=${SQUID_UID} SQUID_GID=${SQUID_GID}
 
 PLIST_SUB=	SQUID_UID=${SQUID_UID} SQUID_GID=${SQUID_GID}
 
+NO_STAGE=	yes
 pre-install:
 .if (${SQUID_UID} == "nobody") || (${SQUID_GID} == "nogroup")
 	@${ECHO_MSG}

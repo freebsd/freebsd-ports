@@ -1,9 +1,5 @@
-# New ports collection makefile for:   	mod_backtrace
-# Date created:        			Thu Nov  4 10:08:27 CET 2010
-# Whom:                			Frank Wall <fw@moov.de>
-#
+# Created by: Frank Wall <fw@moov.de>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_backtrace
 PORTVERSION=	1.0
@@ -31,6 +27,7 @@ SHORTMODNAME=	backtrace
 
 WRKSRC=		${WRKDIR}
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "*********************** PLEASE NOTE! ***********************"
 	@${ECHO_MSG} "Apache httpd must be built with the --enable-exception-hook"

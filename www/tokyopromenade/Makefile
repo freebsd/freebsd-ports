@@ -24,6 +24,7 @@ SUB_FILES=	pkg-message
 
 MAN1=		prommgr.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLUA}

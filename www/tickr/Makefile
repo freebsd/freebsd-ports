@@ -23,6 +23,7 @@ USE_DOS2UNIX=	tickr.h
 USE_GNOME=	desktopfileutils gtk20 libxml2
 USES=		pkgconfig
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} ${WRKSRC}/${PORTNAME}.desktop ${WRKSRC}/src/tickr/tickr.h
 

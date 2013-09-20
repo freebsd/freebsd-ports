@@ -38,6 +38,7 @@ RAPTOR_LIB_DEPENDS=		libraptor2.so:${PORTSDIR}/textproc/raptor2
 RAPTOR_CONFIGURE_ON=		--with-raptor=2
 RAPTOR_CONFIGURE_OFF=		--with-raptor=no
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

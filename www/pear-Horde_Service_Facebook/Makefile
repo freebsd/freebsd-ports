@@ -1,7 +1,4 @@
-# Ports collection makefile for:  pear-Horde_Service_Facebook
-# Date created:			  7 July 2011
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Horde_Service_Facebook
@@ -17,6 +14,7 @@ USE_HORDE_RUN=	Horde_Exception \
 		Horde_Translation \
 		Horde_Support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
 .include <bsd.port.post.mk>

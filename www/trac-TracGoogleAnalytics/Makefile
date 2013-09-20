@@ -1,9 +1,5 @@
-# New ports collection makefile for:    trac-TracGoogleAnalytics
-# Date created:                         14 October 2010
-# Whom:                                 Douglas Thrift
-#
+# Created by: Douglas Thrift
 # $FreeBSD$
-#
 
 PORTNAME=	TracGoogleAnalytics
 PORTVERSION=	0.2.4
@@ -27,4 +23,5 @@ USE_PYDISTUTILS=	easy_install
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

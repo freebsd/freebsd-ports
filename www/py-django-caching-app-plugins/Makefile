@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-django-caching-app-plugins
-# Date created:				12 January 2012
-# Whom:					Kevin Golding <ports@caomhin.org>
-#
+# Created by: Kevin Golding <ports@caomhin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	django-caching-app-plugins
 PORTVERSION=	0.1.3
@@ -24,4 +20,5 @@ WRKSRC=		${WRKDIR}/bkroeze-django-caching-app-plugins-tip
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

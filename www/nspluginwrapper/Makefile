@@ -45,6 +45,7 @@ PLIST_SUB=	LIBDIR="${LIBDIR:C/^${PREFIX}\///}" HOST_ARCH="${HOST_ARCH}"
 SUB_FILES=	npviewer
 SUB_LIST+=	NSPLUGINWRAPPER="${LIBDIR}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

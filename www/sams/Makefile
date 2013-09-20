@@ -1,9 +1,5 @@
-# New ports collection makefile for:  sams
-# Date created:		12 December 2006
-# Whom:			dindin
-#
+# Created by: dindin
 # $FreeBSD$
-#
 
 PORTNAME=	sams
 DISTVERSION=	1.0.5
@@ -27,6 +23,7 @@ OPTIONS_DEFAULT=GD
 
 INSTALLGD_DESC=	Graphic reports
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}

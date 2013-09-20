@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Catalyst-Plugin-Session-Store-Memcached-Fast
-# Date created:				11 Dec 2008
-# Whom:					Denis Pokataev <catone@cpan.org>
-#
+# Created by: Denis Pokataev <catone@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Plugin-Session-Store-Memcached-Fast
 PORTVERSION=	0.02
@@ -26,4 +22,5 @@ USE_PERL5=	modbuild
 
 MAN3=	Catalyst::Plugin::Session::Store::Memcached::Fast.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_myvhost
-# Date created:				2012-03-26
-# Whom:					Olli Hauer <ohauer@FreeBSD.org>
-#
+# Created by: Olli Hauer <ohauer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_myvhost
 PORTVERSION=	0.21
@@ -32,6 +28,7 @@ OPTIONS_DEFAULT=	PHP_MODULE
 PHP_MODULE_DESC=	Enable PHP
 DEBUG_MODULE_DESC=	Enable debugging
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG_MODULE}

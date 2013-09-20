@@ -18,4 +18,5 @@ USE_GNUSTEP_LOCAL_LIBS+=	RSSKit:${RSSKIT_PORT}
 
 RSSKIT_PORT?=	www/rsskit
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

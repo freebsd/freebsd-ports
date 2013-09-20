@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-django-profiles
-# Date created:				30 November 2010
-# Whom:					Josh Paetzel <jpaetzel@FreeBSD.org>
-#
+# Created by: Josh Paetzel <jpaetzel@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	django-profiles
@@ -23,6 +20,7 @@ USE_PYDISTUTILS=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
