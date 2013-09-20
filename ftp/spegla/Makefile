@@ -23,6 +23,7 @@ MAN1=		spegla.1
 
 OPTIONS_DEFINE=	IPV6 NLS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -18,6 +18,7 @@ PLIST_FILES=	bin/ftpdir bin/ftpget bin/ftplist bin/ftprm bin/ftpsend \
 		bin/qftp include/ftplib.h \
 		lib/libftp.a lib/libftp.so lib/libftp.so.4
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^SOVERSION/s|=.*|= $$(SONAME)| ; \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    jftpgw
-# Date created:         Sun Jul 15 13:19:01 CEST 2001
-# Whom:                 se
-#
+# Created by: se
 # $FreeBSD$
-#
 
 PORTNAME=	jftpgw
 PORTVERSION=	0.13.5
@@ -24,6 +20,7 @@ MAN1=		jftpgw.1
 
 USE_RC_SUBR=	${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/jftpgw ${PREFIX}/sbin/
 		${INSTALL_DATA} ${WRKSRC}/jftpgw.conf.sample ${PREFIX}/etc/

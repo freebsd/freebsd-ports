@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tnftpd
-# Date created:				3 August 2003
-# Whom:					ports
-#
+# Created by: ports
 # $FreeBSD$
-#
 
 PORTNAME=	tnftpd
 PORTVERSION=	20130325
@@ -17,6 +13,7 @@ USE_AUTOTOOLS=	aclocal automake libtool
 AUTOMAKE_ARGS=	--add-missing
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900007

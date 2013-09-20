@@ -14,4 +14,5 @@ GNU_CONFIGURE=	yes
 MAN1=		tnftp.1
 PLIST_FILES=	bin/tnftp
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

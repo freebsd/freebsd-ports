@@ -27,6 +27,7 @@ CONFIGURE_ENV=	WXRC="${WXRC_CMD}"
 
 MAN1=		wxdfast.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|pt_BR||' ${WRKSRC}/man/Makefile.am

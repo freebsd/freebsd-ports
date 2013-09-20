@@ -20,6 +20,7 @@ PLIST_FILES=	sbin/${PORTNAME} etc/${PORTNAME}.conf.sample
 MAN8=		bftpd.8
 PORTDOCS=	en pl sk
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900000

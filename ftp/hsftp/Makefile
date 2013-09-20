@@ -24,6 +24,7 @@ MAKEFILE=	makefile
 MAN1=		hsftp.1
 PLIST_FILES=	bin/hsftp
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSH}

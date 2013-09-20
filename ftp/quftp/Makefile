@@ -21,6 +21,7 @@ LDFLAGS+=	${PTHREAD_LIBS}
 MAN1=		quftp.1
 PLIST_FILES=	bin/quftp
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CFLAGS|#CFLAGS|' ${WRKSRC}/Makefile.in

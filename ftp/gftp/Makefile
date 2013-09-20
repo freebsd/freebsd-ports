@@ -25,6 +25,7 @@ BROKEN=		Dumps core when connecting to a host with pthread_mutex_lock: Operation
 OPTIONS_DEFINE=	X11 NLS
 OPTIONS_DEFAULT=	X11
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

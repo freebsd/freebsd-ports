@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ftpsesame
-# Date created:				1 May 2006
-# Whom:					Sergey Matveychuk <sem@FreeBSD.org>
-#
+# Created by: Sergey Matveychuk <sem@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ftpsesame
 PORTVERSION=	0.95
@@ -21,4 +17,5 @@ USE_RC_SUBR=	ftpsesame
 
 MAKE_ARGS=	PREFIX=${PREFIX} MANPREFIX=${MANPREFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

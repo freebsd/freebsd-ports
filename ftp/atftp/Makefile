@@ -22,4 +22,5 @@ PLIST_FILES=	bin/atftp \
 MAN1=		atftp.1
 MAN8=		atftpd.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

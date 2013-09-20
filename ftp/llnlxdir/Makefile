@@ -19,4 +19,5 @@ WRKSRC=		${WRKDIR}/llnlxdir2_1_2/sources
 USES=		imake motif
 USE_XORG=	ice sm x11 xext xp xt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

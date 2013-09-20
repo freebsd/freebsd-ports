@@ -23,6 +23,7 @@ CONFIGURE_ENV+=	PERL="${PERL}" INSTALL_PROGRAM="${INSTALL_SCRIPT}"
 
 PORTDOCS=	README.jis RELEASE.jis
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -i '' -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/Fan/Fan.pm
 

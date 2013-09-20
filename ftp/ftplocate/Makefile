@@ -16,6 +16,7 @@ USES=		shebangfix perl5
 NO_BUILD=	yes
 SHEBANG_FILES=	bin/*.pl template/ftplocate
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -i '' -e 's|/usr/local/www|${PREFIX}/www|' \
 		-e 's|/usr/local/apache/share|${PREFIX}/www|' ${WRKSRC}/install.pl

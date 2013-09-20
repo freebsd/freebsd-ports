@@ -21,6 +21,7 @@ USE_OPENSSL=	yes
 
 MAKE_ENV+=	OBJFORMAT=elf
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Client only part

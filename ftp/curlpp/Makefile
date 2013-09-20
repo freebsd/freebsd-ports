@@ -26,6 +26,7 @@ BOOST_RUN_DEPENDS=	${BOOST_BUILD_DEPENDS}
 BOOST_CONFIGURE_ON=	--with-boost=${LOCALBASE}
 BOOST_CONFIGURE_OFF=	--without-boost
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

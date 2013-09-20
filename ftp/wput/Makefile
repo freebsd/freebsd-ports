@@ -25,6 +25,7 @@ OPTIONS_DEFAULT=	TLS
 
 MAN1=		wdel.1 wput.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTLS}

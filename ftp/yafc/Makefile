@@ -30,6 +30,7 @@ INFO=		yafc
 PORTEXAMPLES=	inputrc yafcrc
 PLIST_FILES=	bin/yafc
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

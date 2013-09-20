@@ -96,6 +96,7 @@ PLIST_SUB+=	LOCALSTATEDIR="${LOCALSTATEDIR}"
 
 .endif #!defined(_BUILDING_PROFTPD_MODULE)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(USE_OPENSSL)

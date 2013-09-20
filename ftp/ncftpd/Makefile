@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	ncftpd
-# Date created:		19 June 2001
-# Whom:			Justin Stanford <jus@security.za.net>
-#
+# Created by: Justin Stanford <jus@security.za.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ncftpd
 PORTVERSION=	2.8.7
@@ -27,6 +23,7 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	install.html README README.freebsd LICENSE
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900000

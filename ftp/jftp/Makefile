@@ -25,6 +25,7 @@ PLIST_DIRS=	%%DATADIR%%
 PLIST_FILES=	bin/jftp %%DATADIR%%/jftp.jar
 SUB_FILES=	jftp.sh
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/jftp.sh ${PREFIX}/bin/jftp

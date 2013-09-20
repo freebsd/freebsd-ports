@@ -34,6 +34,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		siteconfig.1 siteuptime.1 sitewho.1 wzd-config.1
 MAN8=		wzdftpd.8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MICONV}
