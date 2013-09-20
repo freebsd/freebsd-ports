@@ -21,4 +21,5 @@ MAN3=		Asterisk::AGI.3 \
 		Asterisk::Outgoing.3 \
 		Asterisk::Voicemail.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for: py-osd
-# Date created:		08 Aug 2003
-# Whom:			larse@isi.edu
-#
+# Created by: larse@isi.edu
 # $FreeBSD$
-#
 
 PORTNAME=	osd
 PORTVERSION=	0.2.14
@@ -26,6 +22,7 @@ PYDISTUTILS_PKGNAME=	pyosd
 PORTDOCS=	AUTHORS ChangeLog ChangeLog.old README README.daemon pyosd.html
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/setup.py
 

@@ -13,6 +13,7 @@ COMMENT=	Emulates Matrix terminal's "green tears" effect
 PLIST_FILES=	bin/termatrix
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

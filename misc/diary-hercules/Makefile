@@ -24,6 +24,7 @@ USE_WX=		2.6+
 WX_UNICODE=	yes
 WX_COMPS=	python
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 		${WRKSRC}/Hercules/globals.py

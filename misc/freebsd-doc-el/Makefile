@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freebsd-doc-el
-# Date created:		13 August 2008
-# Whom:			Marc Fonvieille <blackend@FreeBSD.org>
-#
+# Created by: Marc Fonvieille <blackend@FreeBSD.org>
 # $FreeBSD$
-#
 
 CATEGORIES=	misc docs
 PKGNAMEPREFIX=	el-
@@ -16,4 +12,5 @@ PLIST=		${.CURDIR}/pkg-plist
 
 DOCLANG=	el_GR.ISO8859-7
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

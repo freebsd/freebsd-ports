@@ -18,6 +18,7 @@ MAKE_ARGS=	PROG=aclgen
 MAN1=		aclgen.1
 PLIST_FILES=	bin/aclgen
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|<malloc.h>|<unistd.h>| ; \

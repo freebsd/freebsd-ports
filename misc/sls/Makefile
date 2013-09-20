@@ -1,9 +1,5 @@
-# New ports collection makefile for:    sls
-# Date created:         16. Dec 97
-# Whom:                 sec@42.org
-#
+# Created by: sec@42.org
 # $FreeBSD$
-#
 
 PORTNAME=	sls
 PORTVERSION=	1.00
@@ -20,4 +16,5 @@ WRKSRC=		${WRKDIR}/sls
 MAN1=		sls.1
 PLIST_FILES=	bin/sls
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

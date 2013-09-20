@@ -20,4 +20,5 @@ MAN1=		xdelta.1
 
 NO_LATEST_LINK=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,6 +23,7 @@ JAPANESE_DESC=	Use Japanese as default language
 
 USE_TK=		yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MJAPANESE}

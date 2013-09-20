@@ -24,4 +24,5 @@ PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/LineReader \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Array \
 		%%SITE_PERL%%/Array
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

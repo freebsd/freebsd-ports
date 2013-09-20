@@ -1,9 +1,4 @@
-# Ports collection makefile for:	chef
-# Date created:				Wed Jun 12, 2002
-# Whom:					Brooks Davis <brooks@freebsd.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	chef
 PORTVERSION=	19930426
@@ -22,6 +17,7 @@ PLIST_FILES=	bin/chef
 
 WRKSRC=		${WRKDIR}/bork
 
+NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC} && lex chef.x && ${CC} ${CFLAGS} -o chef lex.yy.c -ll)
 

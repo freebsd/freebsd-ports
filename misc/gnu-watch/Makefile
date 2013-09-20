@@ -19,6 +19,7 @@ LDFLAGS+=	-lncurses
 MAN1=		gnu-watch.1
 PLIST_FILES=	bin/${UNIQUENAME}
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/${PORTNAME}.c \
 		-o ${WRKSRC}/${UNIQUENAME}

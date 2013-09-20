@@ -1,9 +1,5 @@
-# New ports collection makefile for:	numchar
-# Date created:				3 August 1999
-# Whom:					G. Adam Stanislav <adam@whizkidtech.net>
-#
+# Created by: G. Adam Stanislav <adam@whizkidtech.net>
 # $FreeBSD$
-#
 
 PORTNAME=	numchar
 PORTVERSION=	1.0
@@ -13,6 +9,7 @@ MASTER_SITES=	ftp://www.whizkidtech.redprince.net/unix/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts phone numbers between digits and characters
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/numchar ${PREFIX}/bin
 	${LN} -fs ${PREFIX}/bin/numchar ${PREFIX}/bin/phdecode

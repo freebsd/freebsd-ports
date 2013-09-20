@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|[(]datadir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 	    	${WRKSRC}/Makefile.in

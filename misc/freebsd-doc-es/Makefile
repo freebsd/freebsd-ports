@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freebsd-doc-es
-# Date created:		13 August 2008
-# Whom:			Marc Fonvieille <blackend@FreeBSD.org>
-#
+# Created by: Marc Fonvieille <blackend@FreeBSD.org>
 # $FreeBSD$
-#
 
 CATEGORIES=	misc docs
 PKGNAMEPREFIX=	es-
@@ -16,4 +12,5 @@ PLIST=		${.CURDIR}/pkg-plist
 
 DOCLANG=	es_ES.ISO8859-1
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

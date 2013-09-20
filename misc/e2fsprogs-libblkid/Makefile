@@ -1,10 +1,5 @@
-# New ports collection makefile for:	e2fsprogs-libblkid
-# Date created:				2007-09-07
-# Whom:					Matthias Andree <matthias.andree@gmx.de>
-#
+# Created by: Matthias Andree <matthias.andree@gmx.de>
 # $FreeBSD$
-#
-# set PORTREVISION to avoid override by master port
 
 PORTREVISION=	0
 CATEGORIES=	misc devel
@@ -28,6 +23,7 @@ MAN3=		libblkid.3
 
 PKGDIR=		${.CURDIR}
 
+NO_STAGE=	yes
 pre-build:
 	${MKDIR} ${WRKSRC}/lib/blkid/elfshared
 	cd ${WRKSRC}/util && ${GMAKE} subst

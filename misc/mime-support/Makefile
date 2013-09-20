@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mime-support
-# Date created:		7 March 2003
-# Whom:			Simon 'corecode' Schubert <corecode@corecode.ath.cx>
-#
+# Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	mime-support
 PORTVERSION=	3.54
@@ -20,6 +16,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/run-mailcap etc/mime.types
 MAN1=		run-mailcap.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/run-mailcap ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/mime.types ${PREFIX}/etc

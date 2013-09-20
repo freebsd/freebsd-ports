@@ -1,9 +1,5 @@
-# New ports collection makefile for:    dnetc
-# Date created:         26 Dec 1999
-# Whom:                 dbaker
-#
+# Created by: dbaker
 # $FreeBSD$
-#
 
 PORTNAME=	dnetc
 PORTVERSION=	${VERSION}
@@ -46,6 +42,7 @@ SUB_LIST=	BINDIR="${BINDIR}" \
 		CLIENTGROUP="${CLIENTGROUP}" \
 		CLIENTUID="${CLIENTUID}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386

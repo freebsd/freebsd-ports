@@ -26,6 +26,7 @@ PLIST_FILES=	bin/xpns \
 PLIST_DIRS=	%%DATADIR%% \
 		libexec/xpns
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

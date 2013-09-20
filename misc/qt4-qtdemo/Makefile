@@ -1,4 +1,4 @@
-# Created by: lofi@freebsd.org
+# Created by: lofi@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	qtdemo
@@ -42,6 +42,7 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/app +=/s|"assistant"|"assistant-qt4"|' \
 		${BUILD_WRKSRC}/${PORTNAME}/menumanager.cpp \

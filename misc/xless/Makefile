@@ -19,4 +19,5 @@ MAKE_ARGS=	MAKE="${MAKE_CMD}"
 MAN1=		xless.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

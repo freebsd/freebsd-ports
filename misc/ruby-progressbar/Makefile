@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-progressbar
-# Date created:		2008-08-25
-# Whom:			TAKATSU Tomonari <tota@rtfm.jp>
-#
+# Created by: TAKATSU Tomonari <tota@rtfm.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	progressbar
 PORTVERSION=	0.9
@@ -22,6 +18,7 @@ NO_BUILD=	yes
 RUBY_RD_FILES=	progressbar.en.rd progressbar.ja.rd
 DOCS=	ChangeLog ${RUBY_RD_FILES}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/${PORTNAME}.rb ${RUBY_SITELIBDIR}
 .if !defined(NOPORTDOCS)

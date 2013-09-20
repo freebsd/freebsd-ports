@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libutf
-# Date created:				Fri May  9 16:43:42 EDT 2003
-# Whom:					Serge Gagnon <gagnon__s@videotron.ca>
-#
+# Created by: Serge Gagnon <gagnon__s@videotron.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	libutf
 PORTVERSION=	2.10
@@ -21,4 +17,5 @@ MAKE_ARGS=	ETCDIR=${EXAMPLESDIR}
 
 MAN3=		ure.3 utf.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

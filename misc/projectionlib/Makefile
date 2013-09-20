@@ -19,6 +19,7 @@ USE_DOS2UNIX=	*.cpp *.h
 USE_LDCONFIG=	yes
 MAKEFILE=	${FILESDIR}/Makefile
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${PREFIX}/include/ProjectionLib
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/ProjectionLib

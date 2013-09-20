@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  translate
-# Date created:                   Thu Jun 13, 2002
-# Whom:                           Michael L. Hostbaek (mich@freebsdcluster.org)
-#
+# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
 # $FreeBSD$
-#
 
 PORTNAME=	translate
 PORTVERSION=	1.11
@@ -20,6 +15,7 @@ USES=		perl5
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1

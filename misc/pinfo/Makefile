@@ -29,6 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		pinfo.1
 INFO=		pinfo
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PLIST_FILES=	bin/pinfo etc/pinforc

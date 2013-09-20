@@ -1,9 +1,5 @@
-# New ports collection makefile for:	elscreen
-# Date created:		27 May 2002
-# Whom:			Yoichi NAKAYAMA <yoichi@FreeBSD.org>
-#
+# Created by: Yoichi NAKAYAMA <yoichi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	elscreen
 PORTVERSION=	1.4.6
@@ -16,6 +12,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	GNU screen like utility on Emacsen
 
 USE_EMACS=	yes
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if (${EMACS_PORT_NAME} == "emacs20")
 DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}

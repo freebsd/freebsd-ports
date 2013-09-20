@@ -1,9 +1,5 @@
-# New ports collection makefile for:	legacy locale data for FreeBSD 6+
-# Date created:		13 Jun 2005
-# Whom:			sf
-#
+# Created by: sf
 # $FreeBSD$
-#
 
 PORTNAME=	localedata
 PORTVERSION=	5.4
@@ -23,6 +19,7 @@ TARGET_DIR=	${PREFIX}/share/compat
 
 WRKSRC=		${WRKDIR}/${ARCH}
 
+NO_STAGE=	yes
 post-extract:
 	cd ${WRKDIR}/ia64; ${MV} usr/share/locale .
 

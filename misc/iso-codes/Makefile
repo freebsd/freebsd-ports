@@ -16,4 +16,5 @@ USES=		pathfix gettext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

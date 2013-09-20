@@ -16,6 +16,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS} ${CPPFLAGS}" \
 		CXXFLAGS="${CXXFLAGS} ${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PLIST_FILES=	bin/dvorakng

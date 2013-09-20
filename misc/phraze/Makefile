@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  phraze
-# Date created:                   Wed Apr 16, 2003
-# Whom:                           Michael L. Hostbaek <mich@freebsdcluster.org>
-#
+# Created by: Michael L. Hostbaek <mich@freebsdcluster.org>
 # $FreeBSD$
-#
 
 PORTNAME=	phraze
 PORTVERSION=	0.4
@@ -17,6 +12,7 @@ COMMENT=	Converts telephone number to combinations of valid words
 USE_RUBY=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^#!/usr/bin/ruby|#!${RUBY}|; \
 	s|/usr/share/phraze|${DATADIR}|' ${WRKSRC}/phraze ${WRKSRC}/phraze.1

@@ -1,4 +1,3 @@
-# Created by:Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Geo-Coder-Multiple
@@ -19,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		Geo::Coder::Multiple.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -15,6 +15,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}.app/${PORTNAME}
 USE_GMAKE=	yes
 USE_XORG=	xpm
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 	    's|^void main|int main|' ${WRKSRC}/wmfirew.c

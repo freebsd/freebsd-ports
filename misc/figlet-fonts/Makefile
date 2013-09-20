@@ -1,9 +1,5 @@
-# New ports collection makefile for:	figlet-fonts
-# Date created:			11 August 2001
-# Whom:				dd
-#
+# Created by: dd
 # $FreeBSD$
-#
 
 PORTNAME=	figlet-fonts
 PORTVERSION=	20121202
@@ -23,6 +19,7 @@ NO_WRKSUBDIR=	yes
 DATADIR=	${PREFIX}/share/figlet
 PLIST_SUB=	DATADIR=${DATADIR:S|^${PREFIX}/||}
 
+NO_STAGE=	yes
 post-extract:
 	@cd ${WRKDIR}/contributed && \
 		${TAR} xf Obanner-canon.tgz -C ${WRKDIR}/contributed/ && \

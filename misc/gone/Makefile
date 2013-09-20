@@ -16,6 +16,7 @@ GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	SETUID
 SETUID_DESC=	Install gone setuid root for password support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 

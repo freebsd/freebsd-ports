@@ -15,6 +15,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}.app/${PORTNAME}
 USE_GMAKE=	yes
 USE_XORG=	xpm xext
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 

@@ -18,6 +18,7 @@ USE_BZIP2=	yes
 PORTDOCS=	README
 PLIST_FILES=	bin/telbook
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

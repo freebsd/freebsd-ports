@@ -23,6 +23,7 @@ PLIST=			${WRKDIR}/PLIST
 
 TET_CONFIG_TARGET?=	inet	# options are `lite', `xti' and `inet'
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

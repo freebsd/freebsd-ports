@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Norge
-# Date created:				17 May 2005
-# Whom:					Anders Nordby <anders@FreeBSD.org>
-#
+# Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Norge
 PORTVERSION=	1.08
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		No::Sort.3 No::KontoNr.3 No::PersonNr.3 No::Dato.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

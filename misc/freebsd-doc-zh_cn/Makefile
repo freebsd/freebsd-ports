@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freebsd-doc-zh_cn
-# Date created:		13 August 2008
-# Whom:			Marc Fonvieille <blackend@FreeBSD.org>
-#
+# Created by: Marc Fonvieille <blackend@FreeBSD.org>
 # $FreeBSD$
-#
 
 CATEGORIES=	misc docs
 PKGNAMEPREFIX=	zh_cn-
@@ -17,4 +13,5 @@ PLIST=		${.CURDIR}/pkg-plist
 DOCLANG=	zh_CN.GB2312
 DOCLANG_PREFIX=	zh_CN
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

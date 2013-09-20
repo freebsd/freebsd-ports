@@ -14,6 +14,7 @@ QT_NONSTANDARD=	yes
 
 EXTRACT_AFTER_ARGS+=	--include '${DISTNAME}/translations'
 
+NO_STAGE=	yes
 do-build:
 	${LOCALBASE}/bin/lrelease-qt4 ${WRKSRC}/translations/*.ts
 

@@ -23,6 +23,7 @@ PLIST_FILES=	bin/esniper
 
 PORTEXAMPLES=	sample_auction.txt sample_config.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

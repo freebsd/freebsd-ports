@@ -1,9 +1,5 @@
-# New ports collection makefile for:	buffer
-# Date created:         23 February 1998
-# Whom:                 Joao Carlos Mendes Luis <jonny@jonny.eng.br>
-#
+# Created by: Joao Carlos Mendes Luis <jonny@jonny.eng.br>
 # $FreeBSD$
-#
 
 PORTNAME=	buffer
 PORTVERSION=	1.19
@@ -19,6 +15,7 @@ COMMENT=	Buffer sporadic I/O for faster tape and pipe throughput
 MAN1=		buffer.1
 PLIST_FILES=	bin/buffer
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|^(CC[[:space:]]*=).*$$|\1${CC}|' \

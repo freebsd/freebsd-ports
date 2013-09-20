@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  cwish
-# Date created:			  Thur Sept 25, 1998
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	cwish
 PORTVERSION=	3.52
@@ -20,6 +15,7 @@ ALL_TARGET=	cwish
 MAN1=		cwish.1
 PLIST_FILES=	bin/cwish
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 65d ${WRKSRC}/cwish.h
 

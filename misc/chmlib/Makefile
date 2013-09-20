@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	chmlib
-# Date created:			Apr 5, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	chmlib
 PORTVERSION=	0.40
@@ -20,6 +15,7 @@ CONFIGURE_ARGS=	--disable-io64 --disable-pread --exec-prefix=${PREFIX} --disable
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS}," ${WRKSRC}/configure
 

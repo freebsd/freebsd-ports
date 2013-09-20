@@ -1,9 +1,5 @@
-# Ports collection makefile for:	dahdi
-# Date created:				3 Mar 2010
-# Whom:					Maxim Khon <fjoe@FreeBSD.org>
-#
+# Created by: Maxim Khon <fjoe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dahdi
 PORTVERSION=	${DAHDI_VERSION:S/-//g}
@@ -38,6 +34,7 @@ MAN8=	dahdi_cfg.8\
 	dahdi_tool.8\
 	fxotune.8
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}/etc,g'\
 		${WRKSRC}/dahdi_cfg.c ${WRKSRC}/fxotune.c\

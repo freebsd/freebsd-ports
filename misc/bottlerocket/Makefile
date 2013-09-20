@@ -1,9 +1,5 @@
-# New ports collection makefile for:   bottlerocket
-# Date created:        15 July 1999
-# Whom:                Mike Smith <msmith@freebsd.org>
-#
+# Created by: Mike Smith <msmith@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bottlerocket
 PORTVERSION=	0.04c
@@ -19,4 +15,5 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	br
 PLIST_FILES=	bin/br
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

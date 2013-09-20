@@ -21,6 +21,7 @@ CFLAGS+=	-fno-strength-reduce
 MAN1=		${PORTNAME}.1
 PORT_VERBS=	${PORTNAME} caca2tlf share/figlet/*tlf
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/CFLAGS=/d;/ac_build_date=/s|=.*|="$$stamp"|'\
 		${WRKSRC}/configure

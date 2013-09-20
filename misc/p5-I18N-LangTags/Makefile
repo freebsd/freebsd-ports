@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-I18N-LangTags
-# Date created:			26 December 1999
-# Whom:	      			Dmitry Sivachenko <dima@Chg.RU>
-#
+# Created by: Dmitry Sivachenko <dima@Chg.RU>
 # $FreeBSD$
-#
 
 PORTNAME=	I18N-LangTags
 PORTVERSION=	0.35
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		I18N::LangTags.3 I18N::LangTags::Detect.3 I18N::LangTags::List.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

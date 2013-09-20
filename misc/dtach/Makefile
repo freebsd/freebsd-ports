@@ -17,6 +17,7 @@ MAN1=		dtach.1
 PORTDOCS=	README
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

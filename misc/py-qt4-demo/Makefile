@@ -22,6 +22,7 @@ OPTIONSFILE?=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 EXAMPLESDIR=	${PREFIX}/share/examples/py-qt4
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../devel/py-qt4/bsd.pyqt.mk"
 .include <bsd.port.options.mk>
 

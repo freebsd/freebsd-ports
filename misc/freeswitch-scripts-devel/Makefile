@@ -26,6 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}/scripts/
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 pre-su-install:
 	@${RM} ${WRKSRC}/javascript/ps_pizza.js
 	@${RM} ${WRKSRC}/javascript/pizza.js

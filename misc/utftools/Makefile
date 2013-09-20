@@ -1,9 +1,5 @@
-# New ports collection makefile for:	utftools
-# Date created:				Sat May 10 13:31:49 EDT 2003
-# Whom:					Serge Gagnon <gagnon__s@videotron.ca>
-#
+# Created by: Serge Gagnon <gagnon__s@videotron.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	utftools
 PORTVERSION=	1.6
@@ -20,4 +16,5 @@ CONFIGURE_ARGS+=	'--libdir=${PREFIX}/lib'
 
 MAN1=	utf8-expand.1 utf8-fmt.1 utf8-unexpand.1 utf8-wc.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

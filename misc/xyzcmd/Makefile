@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xyzcmd
-# Date created:		2010-01-18
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xyzcmd
 PORTVERSION=	0.0.4
@@ -21,6 +17,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 INSTALLS_EGGINFO=yes
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

@@ -21,6 +21,7 @@ USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/ohcount
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${RUBY_VER} == 1.9
 BROKEN=	does not work with ruby 1.9

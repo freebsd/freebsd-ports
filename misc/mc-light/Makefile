@@ -32,6 +32,7 @@ CONFIGURE_ARGS+=--with-included-slang \
 MAN1=		mc.1 mcedit.1
 MAN8=		mcserv.8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MSUBSHELL}

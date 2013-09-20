@@ -17,6 +17,7 @@ RUN_DEPENDS=	/boot/modules/biosfont.ko:${PORTSDIR}/sysutils/biosfont
 
 PLIST_FILES=	bin/showchar bin/showdati
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/showchar.c -o ${WRKSRC}/showchar -I${LOCALBASE}/include
 	${CC} ${CFLAGS} ${WRKSRC}/showdati.c -o ${WRKSRC}/showdati -I${LOCALBASE}/include -lcurses

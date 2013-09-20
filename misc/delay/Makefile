@@ -1,9 +1,5 @@
-# New ports collection makefile for:   misc/delay
-# Date created:        03 Mar 1999
-# Whom:                gmarco@giovannelli.it
-#
+# Created by: gmarco@giovannelli.it
 # $FreeBSD$
-#
 
 PORTNAME=	delay
 PORTVERSION=	1.6
@@ -19,6 +15,7 @@ GNU_CONFIGURE=	yes
 MAN1=		delay.1
 PLIST_FILES=	bin/delay
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/delay ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/delay.1 ${MANPREFIX}/man/man1

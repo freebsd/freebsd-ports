@@ -46,6 +46,7 @@ GROUPS=		dahdi
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 CONFLICTS=	zaptel-[0-9]* dahdi-kmod26-*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 703000 || (${OSVERSION} >= 800000 && ${OSVERSION} < 800108)

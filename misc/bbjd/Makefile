@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bbjd
-# Date created:		3 February 1999
-# Whom:			Dima Sivachenko
-#
+# Created by: Dima Sivachenko
 # $FreeBSD$
-#
 
 PORTNAME=	bbjd
 PORTVERSION=	1.01
@@ -18,6 +14,7 @@ COMMENT=	Beat the blackjack dealer
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/bbjd
 
+NO_STAGE=	yes
 do-install:
 		@ ${INSTALL_PROGRAM} ${WRKSRC}/bbjd ${PREFIX}/bin/
 		@ ${INSTALL_PROGRAM} ${WRKSRC}/simbj ${PREFIX}/bin/

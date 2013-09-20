@@ -17,6 +17,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lX11
 PORTDOCS=	README
 PLIST_FILES=	bin/wmpal
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

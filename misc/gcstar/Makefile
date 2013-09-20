@@ -40,6 +40,7 @@ USE_PERL5=	run
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 		@${MKDIR} ${PREFIX}/share/applications
 		@${MKDIR} ${PREFIX}/share/pixmaps

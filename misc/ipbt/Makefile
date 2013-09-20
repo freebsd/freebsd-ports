@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ipbt
-# Date created:                7 May 2006
-# Whom:                        Matt Mills <matt_mills@btopenworld.com>
-#
+# Created by: Matt Mills <matt_mills@btopenworld.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ipbt
 DISTVERSION=	r8765
@@ -22,6 +18,7 @@ USES=		perl5
 ALL_TARGET=	${PORTNAME}
 PLIST_FILES=	bin/ipbt bin/ttygrep bin/ttydump
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '1s|.*|#!${PERL} -w|' ${WRKSRC}/sbcsgen.pl
 	@${REINPLACE_CMD} -e 's|perl|${PERL}|' ${WRKSRC}/${MAKEFILE}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   fortune-mod-bofh
-# Date created:        3/3/2004
-# Whom:                Yonatan@Xpert.com
-#
+# Created by: Yonatan@Xpert.com
 # $FreeBSD$
-#
 
 PORTNAME=	fortune-mod-bofh
 PORTVERSION=	2.0
@@ -24,6 +20,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 STRFILE=	/usr/games/strfile
 
+NO_STAGE=	yes
 post-patch:
 	@${CAT} pkg-message | ${SED} 's|PREFIX|${PREFIX}|' > ${PKGMESSAGE}
 

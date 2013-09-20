@@ -16,4 +16,5 @@ PLIST_FILES=	sbin/ftdi-eeprom
 MAN8=		ftdi-eeprom.8
 MANCOMPRESSED=	maybe
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

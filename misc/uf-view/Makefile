@@ -16,6 +16,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openr2
-# Date created:				28 Jun 2012
-# Whom:					Max Khon <fjoe@FreeBSD.org>
-#
+# Created by: Max Khon <fjoe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openr2
 PORTVERSION=	1.3.2
@@ -24,6 +20,7 @@ MAN8=		r2test.8
 
 CONF_FILES=	etc/r2proto.conf etc/r2test.conf
 
+NO_STAGE=	yes
 post-install:
 .for f in ${CONF_FILES}
 	[ -e ${PREFIX}/$f ] || ${INSTALL_DATA} ${PREFIX}/$f-dist ${PREFIX}/$f

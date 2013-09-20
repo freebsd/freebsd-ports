@@ -19,4 +19,5 @@ USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11 xrender
 USE_XZ=		yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

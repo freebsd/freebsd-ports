@@ -23,6 +23,7 @@ MAN1=		gnome-osd-client.1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

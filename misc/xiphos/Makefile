@@ -31,6 +31,7 @@ WEBKIT_DESC=		Use webkit for rendering (preferred)
 
 OPTIONS_DEFAULT=	WEBKIT
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWEBKIT}

@@ -21,6 +21,7 @@ PLIST_DIRS=	share/tempcontrol
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Must (re)generate depedencies, otherwise parallel builds would not work

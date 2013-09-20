@@ -1,9 +1,5 @@
-# New ports collection makefile for: viz
-# Date created:                      8 Mar 1997
-# Whom:                              Brent J. Nordquist <bjn@visi.com>
-#
+# Created by: Brent J. Nordquist <bjn@visi.com>
 # $FreeBSD$
-#
 
 PORTNAME=	viz
 PORTVERSION=	1.1.1
@@ -20,6 +16,7 @@ MAKE_ARGS=	CC="${CC}" DEFS="${CFLAGS}"
 MAN1=		viz.1 inviz.1
 PLIST_FILES=	bin/viz bin/inviz
 
+NO_STAGE=	yes
 do-install:
 		cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PLIST_FILES:T} ${PREFIX}/bin/
 		cd ${WRKSRC} && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1/

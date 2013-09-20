@@ -1,10 +1,5 @@
-# New ports collection makefile for:	gkrellmfmonitor
-# Date Created:		08 Sep 2002
-# Whom:			Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-# $Id: Makefile,v 1.2 2002/11/09 03:14:54 jylefort Exp $
-#
 
 PORTNAME=	gkrellmfmonitor
 PORTVERSION=	0.3
@@ -26,6 +21,7 @@ ALL_TARGET=	fmonitor.so
 CFLAGS+=	-fPIC `${GTK_CONFIG} --cflags` `imlib-config --cflags-gdk`
 MAKE_ARGS=	CC="${CC} ${CFLAGS}" GTK_LIB="`${GTK_CONFIG} --libs`"
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fmonitor.so ${PREFIX}/libexec/gkrellm/plugins
 

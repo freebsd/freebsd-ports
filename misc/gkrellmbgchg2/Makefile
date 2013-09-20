@@ -20,6 +20,7 @@ USE_GNOME=	gtk20
 
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmbgchg.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:

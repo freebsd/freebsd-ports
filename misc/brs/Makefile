@@ -17,6 +17,7 @@ ALL_TARGET=
 CFLAGS+=	-Wno-error=return-type
 MAN1=		bible.1
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's=%%PREFIX%%=${PREFIX}=g' \
 		${WRKSRC}/brl.c ${WRKSRC}/bible.1

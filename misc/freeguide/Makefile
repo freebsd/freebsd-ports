@@ -30,6 +30,7 @@ MAKE_ARGS=	-Dinstall_share_dir=${PREFIX}/share \
 		-Dinstall_jar_dir=${JAVAJARDIR}/freeguide
 INSTALL_TARGET=	install
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|__ANT_INSTALL_DIRECTORY__|${JAVAJARDIR}/freeguide|; \
 		s|=java|=${JAVA}|;' \

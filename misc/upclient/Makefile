@@ -28,6 +28,7 @@ DOC_FILES=	AUTHORS COPYING FAQ HISTORY INSTALL README TODO
 DOC_FILES+=	doc/UptimesProtocol5
 DOC_FILES+=	HISTORY-BETA
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract: rename-doc

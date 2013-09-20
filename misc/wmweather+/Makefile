@@ -45,6 +45,7 @@ MAN1=		wmweather+.1
 
 PLIST_FILES=	bin/wmweather+
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWM}

@@ -14,6 +14,7 @@ COMMENT=	Generic script compiler
 MAN1=		shc.1
 PLIST_FILES=	bin/shc
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/shc
 

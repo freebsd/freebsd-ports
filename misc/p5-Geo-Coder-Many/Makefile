@@ -53,6 +53,7 @@ MAN3=		Geo::Coder::Many.3 \
 		Geo::Coder::Many::Scheduler::UniquenessScheduler::WeightedRandom.3 \
 		Geo::Coder::Many::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	gman
-# Date created:			Mar 30, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gman
 PORTVERSION=	0.9.3
@@ -36,6 +31,7 @@ MAN1=	gman.1x
 
 CXXFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^CXX =,#CXX =,g' \
 		-e 's,^CXXFLAGS =,CXXFLAGS+=,g' \

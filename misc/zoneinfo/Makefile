@@ -1,7 +1,4 @@
-# New ports collection makefile for:	zoneinfo
-# Date created:				27 March 2006
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
 
 PORTNAME=	zoneinfo
@@ -32,6 +29,7 @@ NO_PACKAGE=	Overwrites files in the base system
 MASTER_SITES+=	http://people.freebsd.org/~edwin/
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # The following country codes can be missing from /usr/share/misc/iso3166 and

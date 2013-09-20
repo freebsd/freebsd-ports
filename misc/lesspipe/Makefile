@@ -39,6 +39,7 @@ SUB_FILES=	pkg-message
 
 MAN1=		lesspipe.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/code2color  ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/lesspipe.sh ${PREFIX}/bin

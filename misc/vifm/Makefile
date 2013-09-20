@@ -29,4 +29,5 @@ PLIST_FILES=	bin/vifm \
 		%%DATADIR%%/vifmrc
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

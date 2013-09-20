@@ -21,6 +21,7 @@ INFO=		${PORTNAME}
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

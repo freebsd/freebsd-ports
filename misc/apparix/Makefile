@@ -1,9 +1,5 @@
-# New ports collection makefile for:    apparix
-# Date created:         16 Apr 2006
-# Whom:                 Frank Steinborn <steinex@nognu.de>
-#
+# Created by: Frank Steinborn <steinex@nognu.de>
 # $FreeBSD$
-#
 
 PORTNAME=	apparix
 PORTVERSION=	20110303
@@ -24,6 +20,7 @@ MAN1=		apparix.1
 PORTDOCS=	apparix.azm apparix.html apparix.ps
 PLIST_FILES=	bin/apparix
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

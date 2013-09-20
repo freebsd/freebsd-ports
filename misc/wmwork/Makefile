@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmwork
-# Date created:			16 May 2002
-# Whom:				Alexey Dokuchaev <danfe@regency.nsu.ru>
-#
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	wmwork
 PORTVERSION=	0.2.5
@@ -28,6 +24,7 @@ PLIST_FILES=	bin/wmwork
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmwork ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/wmwork.1 ${MANPREFIX}/man/man1

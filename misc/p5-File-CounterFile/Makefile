@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-File-CounterFile
-# Date created:				Jan 28 2000
-# Whom:					Wei-chun Chao
-#
+# Created by: Wei-chun Chao
 # $FreeBSD$
-#
 
 PORTNAME=	File-CounterFile
 PORTVERSION=	1.04
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		File::CounterFile.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -19,4 +19,5 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	lib/kde4/chmthumbnail.so \
 		share/kde4/services/chmthumbnail.desktop
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -16,6 +16,7 @@ USE_GMAKE=	yes
 USES=		perl5
 USE_PERL5=	build
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

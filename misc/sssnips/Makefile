@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sssnips
-# Date created:		Fri Sep 10 16:37:35 EEST 2010
-# Whom:			Peter Pentchev <roam@FreeBSD.org>
-#
+# Created by: Peter Pentchev <roam@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sssnips
 PORTVERSION=	0.04
@@ -25,4 +21,5 @@ USE_GMAKE=	1
 
 MAKE_ENV+=	BINGRP=wheel MANDIR=${PREFIX}/man/man
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

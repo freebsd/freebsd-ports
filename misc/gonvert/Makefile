@@ -17,6 +17,7 @@ NO_BUILD=	yes
 
 PORTDOCS=	CHANGELOG FAQ README THANKS TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

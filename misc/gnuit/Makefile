@@ -1,9 +1,5 @@
-# New ports collection makefile for:	git
-# Date created:		12 Jul 1995
-# Whom:			torstenb@FreeBSD.org
-#
+# Created by: torstenb@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	gnuit
 PORTVERSION=	4.9.5
@@ -20,6 +16,7 @@ MAN1=		gitaction.1 gitdpkgname.1 gitfm.1 gitinternal.1 \
 		gitkeys.1 gitmount.1 gitps.1 gitregrep.1 gitrfgrep.1 \
 		gitrgrep.1 gitunpack.1 gitview.1 gitwipe.1
 
+NO_STAGE=	yes
 post-install:
 	 ${RM} -f ${PREFIX}/man/man1/gitmkdirs.1
 	 ${RM} -f ${PREFIX}/man/man1/gitwhich.1

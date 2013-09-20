@@ -20,4 +20,5 @@ USES=		gmake pkgconfig
 USE_GNOME=	gnomehier
 INSTALLS_OMF=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

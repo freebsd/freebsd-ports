@@ -1,6 +1,4 @@
-# New ports collection Makefile for:	c-hey
-# Date Created:			10 June 2003
-# Whom:				Philip Reynolds
+# Created by: Philip Reynolds
 # $FreeBSD$
 
 PORTNAME=	c-hey
@@ -18,6 +16,7 @@ MAN1=		c-hey.1
 MLINKS=		c-hey.1 hey.1
 PLIST_FILES=	bin/c-hey bin/hey
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900007

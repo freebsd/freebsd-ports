@@ -23,6 +23,7 @@ SUB_FILES=	xdg-env.sh
 PLIST_FILES=	env/xdg-env.sh
 PLIST_DIRSTRY=	env
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/env
 	${INSTALL_SCRIPT} ${WRKDIR}/xdg-env.sh ${PREFIX}/env

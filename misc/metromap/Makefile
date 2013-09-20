@@ -22,6 +22,7 @@ USES=		gettext
 
 PORTDOCS=	AUTHORS NEWS README README.data TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	detachtty
-# Date created:		25 March 2003
-# Whom:			johs
-#
+# Created by: johs
 # $FreeBSD$
-#
 
 PORTNAME=	detachtty
 PORTVERSION=	9
@@ -21,6 +17,7 @@ MAN1=		detachtty.1
 MLINKS=		detachtty.1 attachtty.1
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NO_INSTALL_MANPAGES)
 	${INSTALL_MAN} ${WRKSRC}/detachtty.1 ${MANPREFIX}/man/man1

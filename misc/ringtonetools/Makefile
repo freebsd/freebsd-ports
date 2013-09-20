@@ -13,6 +13,7 @@ RESTRICTED=	no-commercial-use
 
 MAKE_ARGS=	CC="${CC}" FLAGS="${CFLAGS}"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

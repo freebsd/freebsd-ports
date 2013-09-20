@@ -30,6 +30,7 @@ MAN1=		hotkeys.1
 OPTIONS_DEFINE=	OSD
 OPTIONS_DEFAULT=	OSD
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOSD}

@@ -21,6 +21,7 @@ USES=		cmake gettext
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_KDE4=	automoc4 kdeprefix kdelibs qimageblitz sharedmime
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLITE}

@@ -15,6 +15,7 @@ USE_TK_RUN=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/tkregexp
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|wish8.3|${WISH}|' ${WRKSRC}/visual_regexp.tcl
 

@@ -16,6 +16,7 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CHANGES LICENSE README
 PORTEXAMPLES=	mtailrc
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

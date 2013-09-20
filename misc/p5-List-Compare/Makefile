@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-List-Compare
-# Date created:				23 Oct 2004
-# Whom:					Dmitry Morozovsky <marck@FreeBSD.org>
-#
+# Created by: Dmitry Morozovsky <marck@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=		List-Compare
 PORTVERSION=	0.37
@@ -38,6 +34,7 @@ MAN3=			List::Compare.3 \
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

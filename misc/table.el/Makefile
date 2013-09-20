@@ -1,9 +1,5 @@
-# New ports collection makefile for:	table.el
-# Date created:				Sun Aug 20 14:17:25 MSD 2006
-# Whom:					Denis Shaposhnikov <dsh@vlink.ru>
-#
+# Created by: Denis Shaposhnikov <dsh@vlink.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	table.el
 PORTVERSION=	1.5.54
@@ -21,6 +17,7 @@ NO_WRKSUBDIR=	yes
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${GUNZIP_CMD} -c ${DISTDIR}/${DISTNAME} > ${WRKDIR}/${PORTNAME}

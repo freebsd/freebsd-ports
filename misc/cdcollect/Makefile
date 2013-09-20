@@ -21,6 +21,7 @@ GCONF_SCHEMAS=	cdcollect.schemas
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-extract:
 	${REINPLACE_CMD} -e 's,SqliteClient,Sqlite,' \
 	    ${WRKSRC}/src/Makefile.in \

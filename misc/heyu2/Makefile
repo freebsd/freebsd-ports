@@ -39,6 +39,7 @@ OREGON_DESC=	Oregon Support
 
 OPTIONS_DEFAULT=	CM17A EXTENDED RFXSENS RFXMETER DMX OREGON
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MCM17A}

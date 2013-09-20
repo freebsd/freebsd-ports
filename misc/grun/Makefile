@@ -19,4 +19,5 @@ MAN1=		grun.1x
 PLIST_FILES=	bin/grun %%DATADIR%%/consfile %%DATADIR%%/gassoc
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

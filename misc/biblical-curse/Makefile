@@ -17,6 +17,7 @@ WRKSRC=		${WRKDIR}/src
 
 SRC=		${.CURDIR}/src
 
+NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 

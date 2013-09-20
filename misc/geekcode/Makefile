@@ -14,6 +14,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 PLIST_FILES=	bin/geekcode
 PORTDOCS=	geekcode.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	quranref
-# Date created:				26 July 2000
-# Whom:					Kim Scarborough <user@unknown.nu>
-#
+# Created by: Kim Scarborough <user@unknown.nu>
 # $FreeBSD$
-#
 
 PORTNAME=	quranref
 PORTVERSION=	1.01
@@ -16,6 +12,7 @@ COMMENT=	An interactive Quran (Koran)
 
 BUILD_DEPENDS=	icont:${PORTSDIR}/lang/icon
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

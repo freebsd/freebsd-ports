@@ -21,4 +21,5 @@ MAN1=		bogosort.1
 INFO=		bogosort
 PLIST_FILES=	bin/bogosort
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for: achievo
-# Date created:		19 Jan 2001
-# Whom:			mkptools
-#
+# Created by: mkptools
 # $FreeBSD$
-#
 
 PORTNAME=	achievo
 PORTVERSION=	1.1.0
@@ -25,6 +21,7 @@ NO_BUILD=	YES
 ACHVODIR?=	www/achievo
 PLIST_SUB=	ACHVODIR=${ACHVODIR}
 
+NO_STAGE=	yes
 post-patch:
 	@${MV} ${WRKSRC}/config.inc.php ${WRKSRC}/config.inc.php-default
 

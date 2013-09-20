@@ -1,9 +1,5 @@
-# New ports collection makefile for:	posixtestsuite
-# Date created:				11 November 2003
-# Whom:					Alexey Zelkin <phantom@FreeBSD.org>
-#
+# Created by: Alexey Zelkin <phantom@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	posixtestsuite
 PORTVERSION=	1.5.2
@@ -21,6 +17,7 @@ NO_PACKAGE=	"Nothing to package"
 
 USE_GMAKE=	YES
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 REGR_LOG=	log.run-5current

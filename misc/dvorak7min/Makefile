@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dvorak7min
-# Date created:			31 Jan 2003
-# Whom:				Leland Wang <llwang@infor.org>
-#
+# Created by: Leland Wang <llwang@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dvorak7min
 PORTVERSION=	1.6.1
@@ -13,6 +9,7 @@ MASTER_SITES=	http://www.linalco.com/ragnar/
 MAINTAINER=	llwang@infor.org
 COMMENT=	An ncurses-based Dvorak typing tutor
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 MAKE_ARGS=	PROF="${CPPFLAGS} ${CFLAGS}" LDFLAGS="${LDFLAGS}"

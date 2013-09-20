@@ -22,4 +22,5 @@ MAN3=		Locale::Geocode.3 \
 		Locale::Geocode::Division.3 \
 		Locale::Geocode::Territory.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

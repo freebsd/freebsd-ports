@@ -1,9 +1,5 @@
-# New ports collection makefile for:	distributed.net-v2personalproxy
-# Date created:         31 Oct 1999
-# Whom:                 globalpanic@gmx.net
-#
+# Created by: globalpanic@gmx.net
 # $FreeBSD$
-#
 
 PORTNAME=	proxyper
 PORTVERSION=	347
@@ -29,6 +25,7 @@ SHAREOWN=	${PROXYUSER}
 SHAREGRP=	${PROXYGROUP}
 SHAREMODE=	644
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 WRKSRC=		${WRKDIR}/proxyper${PORTVERSION}-freebsd-x86

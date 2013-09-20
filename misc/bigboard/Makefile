@@ -32,6 +32,7 @@ USE_PYTHON=	2.5+
 USE_GNOME=	pygtk2 gtk20 gnomevfs2 gnomedesktop gnomepanel gconf2 pygnome2 gnomehack
 GCONF_SCHEMAS=	bigboard.schemas
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -type f -exec fgrep -l '%%LOCALBASE%%' {} \; |${XARGS} ${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' -i .bak
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \

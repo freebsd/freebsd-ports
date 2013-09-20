@@ -27,6 +27,7 @@ PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/FOOD_DES.txt \
 		%%DATADIR%%/WEIGHT.txt %%DATADIR%%/sr25.nut
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFLTK}

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	amanda-perl-wrapper
-# Date created:		1 Nov 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	amanda-perl-wrapper
 PORTVERSION=	1.01
@@ -21,6 +16,7 @@ SUB_LIST=	PREFIX=${LOCALBASE}
 PLIST_FILES=	bin/perl-amanda
 WRKSRC=		${WRKDIR}
 
+NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 

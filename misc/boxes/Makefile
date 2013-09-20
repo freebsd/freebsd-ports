@@ -29,6 +29,7 @@ MAN1=		boxes.1
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

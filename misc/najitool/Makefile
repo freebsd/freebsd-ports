@@ -13,6 +13,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libnaji.a:${PORTSDIR}/devel/libnaji
 
 DISTVERSIONSUFFIX=	.src
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|cflags =|cflags = -I${LOCALBASE}/include|; s|libnaji.a|${LOCALBASE}/lib/libnaji.a|' ${WRKSRC}/${MAKEFILE}
 

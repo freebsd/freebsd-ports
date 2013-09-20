@@ -32,4 +32,5 @@ MAN3=		Text::FIGlet.3 \
 		Text::FIGlet::LICENSE.3 \
 		Text::FIGlet::Ransom.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

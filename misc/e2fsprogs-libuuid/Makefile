@@ -1,9 +1,5 @@
-# New ports collection makefile for:	e2fsprogs-libuuid
-# Date created:				26 Jan 2006
-# Whom:					Matthias Andree <matthias.andree@gmx.de>
-#
+# Created by: Matthias Andree <matthias.andree@gmx.de>
 # $FreeBSD$
-#
 
 PORTREVISION=	0
 CATEGORIES=	misc devel
@@ -37,6 +33,7 @@ MAN8=		uuidd.8
 
 PKGDIR=		${.CURDIR}
 
+NO_STAGE=	yes
 post-patch::
 	${REINPLACE_CMD} -e 's,/var/lib/libuuid,/var/run/libuuid,g' \
 	    -e 's,/usr/sbin/uuidd,${PREFIX}/sbin/uuidd,' \

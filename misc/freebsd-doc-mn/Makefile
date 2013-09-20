@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freebsd-doc-mn
-# Date created:		13 August 2008
-# Whom:			Marc Fonvieille <blackend@FreeBSD.org>
-#
+# Created by: Marc Fonvieille <blackend@FreeBSD.org>
 # $FreeBSD$
-#
 
 CATEGORIES=	misc docs
 PKGNAMEPREFIX=	mn-
@@ -16,4 +12,5 @@ PLIST=		${.CURDIR}/pkg-plist
 
 DOCLANG=	mn_MN.UTF-8
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -1,9 +1,5 @@
-# ports collection makefile for: hb
-# Date Created:		17 July 2001
-# Whom:			tundra
-#
+# Created by: tundra
 # $FreeBSD$
-#
 
 PORTNAME=	hb
 PORTVERSION=	1.88
@@ -18,4 +14,5 @@ USE_PYTHON=	yes
 MANCOMPRESSED=	yes
 MAN1=           hb.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

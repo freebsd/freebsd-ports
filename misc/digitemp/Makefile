@@ -27,6 +27,7 @@ ALL_TARGET=	ds9097 ds9097u
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 pre-install:
 	${CP} ${WRKSRC}/${MAN1} ${WRKSRC}/digitemp.1.M
 	${CAT} ${WRKSRC}/digitemp.1.M | ${SED} -e "s/dev\/ttyS/dev\/cuau/g" > ${WRKSRC}/${MAN1}

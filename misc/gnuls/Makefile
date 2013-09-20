@@ -28,6 +28,7 @@ PLIST_FILES=	bin/dir \
 		bin/gnuls \
 		bin/vdir
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dir ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dircolors ${PREFIX}/bin

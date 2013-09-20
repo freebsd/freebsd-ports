@@ -19,4 +19,5 @@ PLIST_FILES=	libexec/gkrellm2/plugins/gamma.so
 MAKE_ENV=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins
 ALL_TARGET=	gamma.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

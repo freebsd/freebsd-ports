@@ -13,6 +13,7 @@ NO_BUILD=	yes
 USE_LDCONFIG=	${KDE4_PREFIX}/lib
 USE_KDE4=	#
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${KDE4_PREFIX} != ${PREFIX}

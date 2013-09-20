@@ -28,6 +28,7 @@ OPTIONS_DEFINE=	CURL CLUCENE
 CLUCENE_DESC=	Include indexing capability
 OPTIONS_DEFAULT=CURL CLUCENE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCURL}

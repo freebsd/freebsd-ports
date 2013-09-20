@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mmv
-# Date created:		2 Feb 1995
-# Whom:			Michael Elbel (me)
-#
+# Created by: Michael Elbel (me)
 # $FreeBSD$
-#
 
 PORTNAME=	mmv
 PORTVERSION=	1.01b.15
@@ -23,6 +19,7 @@ MAN1=		mmv.1 mad.1 mcp.1 mln.1
 PLIST_FILES=	bin/mmv bin/mad bin/mcp bin/mln
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.01b.orig
 
+NO_STAGE=	yes
 do-build:
 	@(cd ${WRKSRC} ; \
 	${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c ; )

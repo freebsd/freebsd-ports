@@ -36,6 +36,7 @@ PORTDOCS=	*
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 # docs
 .ifndef(NOPORTDOCS)

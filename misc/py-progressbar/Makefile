@@ -1,7 +1,4 @@
-# New ports collection makefile for:	progressbar
-# Date created:		Wed Apr  7 13:54:04 UTC 2010
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	progressbar
@@ -25,6 +22,7 @@ PLIST_FILES=	\
 		%%PYTHON_SITELIBDIR%%/progressbar.pyc \
 		%%PYTHON_SITELIBDIR%%/progressbar.pyo
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|/usr/bin/python|${PYTHON_CMD}|' \
 		${WRKSRC}/${PORTNAME}.py

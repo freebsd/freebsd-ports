@@ -38,6 +38,7 @@ PLIST_FILES=	bin/pdmenu \
 		%%DATADIR%%/showdir.pl
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^LANGS/s|=.*$$|= da es fr ru|g' ${WRKSRC}/Makefile

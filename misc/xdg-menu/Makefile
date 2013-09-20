@@ -37,6 +37,7 @@ ROX_DESC=	Enable ROX panel applet support
 
 SUB_FILES=	${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

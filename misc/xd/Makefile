@@ -19,4 +19,5 @@ MAN1=		xd.1
 MANCOMPRESSED=	maybe
 PLIST_FILES=	bin/xd
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

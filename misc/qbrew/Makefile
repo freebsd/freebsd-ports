@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qbrew
-# Date created:				22 September 2000
-# Whom:					David Johnson <david@usermode.org>
-#
+# Created by: David Johnson <david@usermode.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qbrew
 PORTVERSION=	0.4.1
@@ -22,6 +18,7 @@ CONFIGURE_ENV+=	BINDIR="${PREFIX}/bin" \
 		DATADIR="${DATADIR}" \
 		DOCDIR="${DOCSDIR}"
 
+NO_STAGE=	yes
 pre-configure:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/INSTALLS/s|doc||' \
