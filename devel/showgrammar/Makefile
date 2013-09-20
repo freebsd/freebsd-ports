@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	showgrammar
-# Date Created:			Jul 11, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	showgrammar
 PORTVERSION=	1.1
@@ -26,6 +21,7 @@ USE_PYTHON=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|#!/usr/bin/python|#!/usr/bin/env python|g" ${WRKSRC}/${DISTFILES}
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rudeconfig
-# Date created:				14 August 2007
-# Whom:					Hardy Schumacher <lowmaster@web.de>
-#
+# Created by: Hardy Schumacher <lowmaster@web.de>
 # $FreeBSD$
-#
 
 PORTNAME=	rudeconfig
 PORTVERSION=	5.0.5
@@ -20,6 +16,7 @@ USE_LDCONFIG=	yes
 
 MAN3=		rudeconfig.3
 
+NO_STAGE=	yes
 pre-install:
 	${CHMOD} 744 ${WRKSRC}/install-sh
 

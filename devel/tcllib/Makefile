@@ -23,6 +23,7 @@ INSTALL_ARGS=	-pkgs -pkg-path ${PREFIX}/lib/tcllib \
 		-apps -app-path ${PREFIX}/bin \
 		-no-wait -no-gui -no-examples
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 #

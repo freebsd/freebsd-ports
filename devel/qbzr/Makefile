@@ -1,9 +1,5 @@
-# Ports collection makefile for:        qbzr
-# Date created:         26 May 2010
-# Whom:                 Carlo Strub
-#
+# Created by: Carlo Strub
 # $FreeBSD$
-#
 
 PORTNAME=	qbzr
 PORTVERSION=	0.23.0
@@ -31,4 +27,5 @@ USE_PYDISTUTILS=	yes
 USES=		gettext
 INSTALLS_ICONS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

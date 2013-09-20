@@ -26,6 +26,7 @@ NO_BUILD=	yes
 
 REINPLACE_ARGS=	-i ''
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|\$$root/completions|${DATADIR}/completions|g" ${WRKSRC}/libexec/rbenv-init
 

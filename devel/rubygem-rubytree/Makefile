@@ -17,4 +17,5 @@ USE_RUBYGEMS=	yes
 USE_RUBY_RDOC=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

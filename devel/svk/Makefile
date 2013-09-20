@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/svk
-# Date created:				Mar 15 2004
-# Whom:					Autrijus Tang <autrijus@autrijus.org>
-#
+# Created by: Autrijus Tang <autrijus@autrijus.org>
 # $FreeBSD$
-#
 
 PORTNAME=	svk
 PORTVERSION=	2.2.3
@@ -157,6 +153,7 @@ MAN3=		SVK.3 \
 		SVK::Version.3 \
 		SVK::XD.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::

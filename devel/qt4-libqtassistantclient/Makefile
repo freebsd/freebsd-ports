@@ -1,4 +1,4 @@
-# Created by: lofi@freebsd.org
+# Created by: lofi@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	libQtAssistantClient
@@ -24,6 +24,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C/src/version/}
 BUILD_WRKSRC=	${WRKSRC}/lib
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's|$$$$\[QT_INSTALL_HEADERS]|${PREFIX}/${QT_INCDIR_REL}|g' \
 		-e 's|$$$$\[QT_INSTALL_LIBS]|${PREFIX}/${QT_LIBDIR_REL}|g' \

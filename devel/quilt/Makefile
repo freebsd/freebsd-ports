@@ -34,6 +34,7 @@ CONFIGURE_ARGS=	--with-sed=${LOCALBASE}/bin/gsed \
 MAN1=		guards.1 quilt.1
 PORTDOCS=	README README.MAIL quilt.pdf
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRPMBUILD}

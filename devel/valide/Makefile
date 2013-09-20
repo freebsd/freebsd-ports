@@ -1,9 +1,5 @@
-# New ports collection makefile for:	valide
-# Date created:		2008-08-05
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	valide
 PORTVERSION=	0.7.1
@@ -28,6 +24,7 @@ USE_PYTHON=	yes
 
 MAN1=		ctags-vala.1 valide.1
 
+NO_STAGE=	yes
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${PYTHON} ./waf --prefix="${PREFIX}" configure
 

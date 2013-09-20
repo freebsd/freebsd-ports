@@ -43,6 +43,7 @@ DOCS=	RUDL/audio.html \
 
 EXAMPLES=	samples/*
 
+NO_STAGE=	yes
 post-extract:
 	@${RUBY} -i -pe 'sub(/\r$$/, "")' \
 		${WRKSRC}/*.[ch] \

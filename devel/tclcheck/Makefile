@@ -18,6 +18,7 @@ MAN1=		tclCheck.1
 PLIST_FILES=	bin/tclCheck
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -22,6 +22,7 @@ BUILD_WRKSRC=	${WRKSRC}/build/gnu
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !defined(WITH_DEBUG)

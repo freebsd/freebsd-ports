@@ -1,9 +1,5 @@
-# New ports collection makefile for:	str
-# Date Created:				09 Jan 2000
-# Whom:					Ralf S. Engelschall
-#
+# Created by: Ralf S. Engelschall
 # $FreeBSD$
-#
 
 PORTNAME=	str
 PORTVERSION=	0.9.12
@@ -20,6 +16,7 @@ USE_LDCONFIG=	yes
 MAN1=		str-config.1
 MAN3=		str.3
 
+NO_STAGE=	yes
 post-build:
 	@${ECHO_MSG} "===>  Use 'make check' to run a quick test suite."
 

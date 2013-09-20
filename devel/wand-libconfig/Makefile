@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wand-libconfig
-# Date created:				Tue Oct  9 00:56:22 PDT 2007
-# Whom:					Matt Peterson <matt@peterson.org>
-#
+# Created by: Matt Peterson <matt@peterson.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libconfig
 PORTVERSION=	1.0.5
@@ -27,6 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	include/libconfig.h lib/libconfig.a lib/libconfig.la \
 		lib/libconfig.so lib/libconfig.so.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 	${WRKSRC}/configure

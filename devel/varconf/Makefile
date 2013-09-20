@@ -16,6 +16,7 @@ USE_BZIP2=	yes
 USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

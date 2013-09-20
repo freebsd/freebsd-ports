@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-analogger
-# Date created:				01 April 2007
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
 
 PORTNAME=	analogger
@@ -20,4 +17,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/analogger
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -24,6 +24,7 @@ INSTALL_TARGET=	site-install
 
 DOCS=		README doc event_codes.txt
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}

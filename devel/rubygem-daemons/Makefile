@@ -1,7 +1,4 @@
-# Ports collection makefile for:	daemons
-# Date created:				20 May 2006
-# Whom:					Rui Lopes (<rgl ruilopes com>)
-#
+# Created by: Rui Lopes (<rgl ruilopes com>)
 # $FreeBSD$
 
 PORTNAME=	daemons
@@ -16,4 +13,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,7 +1,5 @@
 # Created by: ijliao
-#
 # $FreeBSD$
-#
 
 PORTNAME=	yasm
 PORTVERSION=	1.2.0
@@ -19,6 +17,7 @@ CONFIGURE_ARGS+=--disable-python --disable-python-bindings
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "ia64"

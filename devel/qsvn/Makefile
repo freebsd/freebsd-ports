@@ -24,6 +24,7 @@ DESKTOP_ENTRIES="QSvn" "SVN client" "${PREFIX}/share/pixmaps/qsvn.png" \
 SVNQT_INCLUDE_DIR=	include/svnqt4
 PLIST_SUB=	SVNQT_INCLUDE_DIR="${SVNQT_INCLUDE_DIR}"
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's,include/svnqt,${SVNQT_INCLUDE_DIR},g' \
 		${WRKSRC}/svnqt/CMakeLists.txt

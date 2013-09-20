@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zookeeper
-# Date created: 6 July 2012
-# Whom: gnn@freebsd.org
-#
+# Created by: gnn@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	zookeeper
 PORTVERSION=	3.3.6
@@ -49,6 +45,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 SUB_LIST=	ZOOKEEPER_LOGDIR=${ZOOKEEPER_LOGDIR} \
 		ZOOKEEPER_RUNDIR=${ZOOKEEPER_RUNDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}

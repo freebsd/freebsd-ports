@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	rubygem-rapt
-# Date created:			Jan 7, 2007
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	rapt
 PORTVERSION=	0.2.2
@@ -19,4 +14,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/rapt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

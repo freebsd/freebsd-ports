@@ -25,6 +25,7 @@ PORTEXAMPLES=	examples.cc
 OPTIONS_DEFINE=	DOXYGEN
 DOXYGEN_DESC=	Build documentation with doxygen
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !defined(NOPORTDOCS) && ${PORT_OPTIONS:MDOXYGEN}

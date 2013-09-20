@@ -23,6 +23,7 @@ QMAKE_ARGS=	-unix PREFIX=${PREFIX}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 .include <bsd.port.options.mk>
 

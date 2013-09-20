@@ -1,9 +1,5 @@
-# New ports collection makefile for:	stormlib
-# Date created:		2011-02-13
-# Whom:			 <ports@c0decafe.net>
-#
+# Created by: <ports@c0decafe.net>
 # $FreeBSD$
-#
 
 PORTNAME=	stormlib
 PORTVERSION=	6.25
@@ -26,4 +22,5 @@ WRKSRC=		${WRKDIR}/ghost/StormLib/stormlib
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

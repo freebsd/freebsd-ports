@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby-calendar
-# Date created:		4 November 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	calendar
 PORTVERSION=	1.11.4r
@@ -24,6 +20,7 @@ DOCS_EN=	README.en ext/sdn/README.sdncal20
 DOCS_JA=	README
 EXAMPLES_EN=	ext/calendar/cal*.rb
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}

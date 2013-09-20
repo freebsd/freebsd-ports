@@ -1,4 +1,4 @@
-# Created by: lofi@freebsd.org
+# Created by: lofi@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	assistant
@@ -24,6 +24,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C/src/version/}
 
 PLIST_FILES=	bin/assistant_adp
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's|$$$$\[QT_INSTALL_BINS]|${PREFIX}/bin|g' \
 		${WRKSRC}/compat.pro

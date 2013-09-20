@@ -18,6 +18,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	SDL_IMAGE
 SDL_IMAGE_DESC=	SDL Image support
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/objformat/s/aout/elf/' ${WRKSRC}/${CONFIGURE_SCRIPT}
 

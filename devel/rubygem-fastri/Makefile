@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-fastri
-# Date created:		2011-07-09
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fastri
 PORTVERSION=	0.3.1.1
@@ -19,4 +15,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/fastri-server bin/fri bin/qri bin/ri-emacs
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

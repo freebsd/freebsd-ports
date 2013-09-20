@@ -19,4 +19,5 @@ RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/ruby_parse \
 		bin/ruby_parse_extract_error
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

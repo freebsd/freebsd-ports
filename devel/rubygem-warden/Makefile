@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-warden
-# Date created:				2011-06-16
-# Whom:					Ryan Steinmetz <rpsfa@rit.edu>
-#
+# Created by: Ryan Steinmetz <rpsfa@rit.edu>
 # $FreeBSD$
 
 PORTNAME=	warden
@@ -18,4 +15,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

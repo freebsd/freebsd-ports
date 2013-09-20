@@ -1,7 +1,4 @@
-# New ports collection makefile for:	svnmerge
-# Date created:				2010-11-10
-# Whom:					Tom Judge <tom@tomjudge.com>
-#
+# Created by: Tom Judge <tom@tomjudge.com>
 # $FreeBSD$
 
 PORTNAME=	svnmerge
@@ -27,6 +24,7 @@ PLIST_FILES=	bin/svnmerge
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SVN_PORTDIR=		${PORTSDIR}/devel/subversion16

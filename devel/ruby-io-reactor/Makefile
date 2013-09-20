@@ -25,6 +25,7 @@ EXAMPLES=	examples/*
 
 BUILD_DEPENDS=	rubygem-rdoc>=0:${PORTSDIR}/devel/rubygem-rdoc
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}; ${RUBY} ${RAKE_BIN} install
 .if !defined(NOPORTDOCS)

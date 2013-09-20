@@ -1,9 +1,5 @@
-# New ports collection makefile for: z80-asm
-# Date created:        January 20 2003
-# Whom:                Samy Al Bahra <samy@kerneled.org>
-#
+# Created by: Samy Al Bahra <samy@kerneled.org>
 # $FreeBSD$
-#
 
 PORTNAME=	z80-asm
 PORTVERSION=	2.4.p3
@@ -30,6 +26,7 @@ PLIST_FILES=	${BINS:S,^,bin/,}
 
 BINS=		z80-asm z80-mon
 
+NO_STAGE=	yes
 post-extract:
 	@${TOUCH} ${WRKSRC}/hardware/bus_masters
 

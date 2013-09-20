@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-bacon
-# Date created:		2012-06-04
-# Whom:			Charlie & <root@meatwad.mouf.net>
-#
+# Created by: Charlie & <root@meatwad.mouf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	bacon
 PORTVERSION=	1.2.0
@@ -19,4 +15,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/bacon
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

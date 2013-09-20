@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Ruby ActionSCript UTility
-# Date created:		2 Dec 2007
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rascut
 PORTVERSION=	0.2.1
@@ -25,4 +20,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/rascut
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

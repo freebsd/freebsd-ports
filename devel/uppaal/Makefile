@@ -28,6 +28,7 @@ MANCOMPRESSED=	no
 
 RESTRICTED=	Downloading requires completion of a license agreement
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 LINUX_SYSCTL=	${ECHO_CMD} `${SYSCTL} -n compat.linux.osrelease 2>/dev/null`

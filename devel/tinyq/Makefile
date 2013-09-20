@@ -19,6 +19,7 @@ CONFIGURE_ENV+=	QTDIR="${WRKSRC}"
 MAKE_ENV+=	QTDIR="${WRKSRC}"
 REINPLACE_ARGS=	-i ''
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2|${CXXFLAGS}|' \
 		-e 's|gcc|${CC}|' \

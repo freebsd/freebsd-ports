@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rvi
-# Date Created:				2 July 2001
-# Whom:					Pete Fritchman <petef@databits.net>
-#
+# Created by: Pete Fritchman <petef@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	rvi
 PORTVERSION=	1.0.0
@@ -19,6 +15,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	bin/rvi
 PORTDOCS=	rvi.txt
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC}/&&${CXX} -I. ${CFLAGS} -o rvi src/rvi.cc
 

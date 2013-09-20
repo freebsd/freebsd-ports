@@ -22,6 +22,7 @@ USE_GMAKE=	yes
 USES=		bison
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${MKDIR} ${WRKSRC}/tigcc

@@ -18,6 +18,7 @@ NO_BUILD=	yes
 MAN1=		tkmerge.1
 PLIST_FILES=	bin/tkmerge
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

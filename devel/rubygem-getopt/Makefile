@@ -1,7 +1,4 @@
-# Ports collection makefile for:	getopt
-# Date created:				Tue 16 Mar 2010
-# Whom:					Alexey V. Degtyarev <alexey@renatasystems.org>
-#
+# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
 # $FreeBSD$
 
 PORTNAME=	getopt
@@ -17,4 +14,5 @@ USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-sugar-high
-# Date created:				2011-06-16
-# Whom:					rpsfa@rit.edu
-#
+# Created by: rpsfa@rit.edu
 # $FreeBSD$
 
 PORTNAME=	sugar-high
@@ -19,4 +16,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

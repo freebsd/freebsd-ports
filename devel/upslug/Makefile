@@ -1,9 +1,5 @@
-# New ports collection makefile for:	upslug
-# Date created:		1 October 2008
-# Whom:			Bruce M. Simpson <bms@FreeBSD.org>
-#
+# Created by: Bruce M. Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	upslug
 PORTVERSION=	2.11
@@ -23,4 +19,5 @@ NO_MAN=		defined
 
 PLIST_FILES=	sbin/upslug2
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

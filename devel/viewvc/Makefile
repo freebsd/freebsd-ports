@@ -38,6 +38,7 @@ SUB_LIST=	INSTDIR="${PREFIX}/${INSTDIR}" \
 INSTDIR?=	${PORTNAME}
 PLIST_SUB=	INSTDIR=${INSTDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # standalone script is usefull even if a webserver was choosen.

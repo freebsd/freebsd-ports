@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-ruby-debug-base
-# Date created:				27 July 2007
-# Whom:					Robert Gogolok <gogo@cs.uni-sb.de>
-#
+# Created by: Robert Gogolok <gogo@cs.uni-sb.de>
 # $FreeBSD$
 
 PORTNAME=	ruby-debug-base
@@ -18,4 +15,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

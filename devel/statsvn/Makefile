@@ -30,6 +30,7 @@ ALL_TARGET=	dist
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	@cd ${WRKSRC}/dist && ${COPYTREE_SHARE} . ${DATADIR}
 .if !defined(NOPORTDOCS)

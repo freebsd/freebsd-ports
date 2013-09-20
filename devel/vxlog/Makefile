@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vxlog
-# Date created:               2010-05-18
-# Whom:                       Konstantin Lepa <konstantin.lepa@gmail.com>
-#
+# Created by: Konstantin Lepa <konstantin.lepa@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	vxlog
 PORTVERSION=	1.0.3
@@ -22,4 +18,5 @@ USE_GCC=	4.2+
 
 CMAKE_ARGS+=	-DTESTING:BOOL=OFF
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

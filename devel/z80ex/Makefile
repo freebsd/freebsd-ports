@@ -13,6 +13,7 @@ COMMENT=	ZiLOG Z80 CPU emulator library
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/$$(TOOLS_PREFIX)gcc/$${CC}/' \
 		-e 's/$$(TOOLS_PREFIX)ar/$${AR}/' \

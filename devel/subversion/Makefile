@@ -35,6 +35,7 @@ SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper (umask setter)
 TEST_DESC=		Run subversion test suite
 TOOLS_DESC=		Install several tools (svnauthz-validate and mod_dontdothat are among them)
 
+NO_STAGE=	yes
 .include "Makefile.common"
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

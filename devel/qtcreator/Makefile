@@ -51,6 +51,7 @@ INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
 DESKTOP_ENTRIES=	"Qt Creator" "${COMMENT}" "QtProject-qtcreator" \
 			"${PREFIX}/bin/${PORTNAME}" "Development;Qt;" true
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|lrelease|lrelease-qt4|' \
 		${WRKSRC}/share/qtcreator/translations/translations.pro

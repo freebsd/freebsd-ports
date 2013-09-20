@@ -1,9 +1,5 @@
-# New ports collection makefile for:	subclipse
-# Date created:				06 Mar 2005
-# Whom:					tux@pinguru.net
-#
+# Created by: tux@pinguru.net
 # $FreeBSD$
-#
 
 PORTNAME=	subclipse
 PORTVERSION=	1.6.5
@@ -45,6 +41,7 @@ SUBCLIPSEFILES=	features/${SUBCLIPSE}_${PORTVERSION} \
 		plugins/com.sun.jna_3.0.9 \
 		plugins/org.tmatesoft.svnkit_1.3.0.5847
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

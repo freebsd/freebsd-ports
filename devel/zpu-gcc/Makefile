@@ -22,6 +22,7 @@ MAN1=		zpu-elf-cpp.1 zpu-elf-gcc.1 zpu-elf-gcov.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 INFO=		zpuc/cpp zpuc/cppinternals zpuc/gcc zpuc/gccinstall zpuc/gccint
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/%%CC%%/${CC}/' ${WRKSRC}/build.sh
 	${CP}	${FILESDIR}/install.sh ${WRKSRC}

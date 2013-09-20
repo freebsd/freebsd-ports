@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -name CVS -type d -delete
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby GetText
-# Date created:		4 February 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gettext
 PORTVERSION=	2.3.1
@@ -20,4 +16,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/rmsgfmt bin/rmsginit bin/rmsgmerge bin/rxgettext
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

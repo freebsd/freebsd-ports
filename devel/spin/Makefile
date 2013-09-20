@@ -14,6 +14,7 @@ OPTIONS_DEFINE=	XSPIN DOCS
 OPTIONS_DEFAULT=	XSPIN
 XSPIN_DESC=	Install xspin and TCL/Tk dependency
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXSPIN}

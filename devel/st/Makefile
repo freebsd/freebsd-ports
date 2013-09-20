@@ -1,6 +1,5 @@
 # Created by: tobez
 # $FreeBSD$
-#
 
 PORTNAME=	st
 PORTVERSION=	1.9
@@ -19,6 +18,7 @@ DOCS=		fig.gif notes.html reference.html st.html \
 EXAMPLES=	Makefile README error.c lookupdns.c proxy.c \
 		res.c server.c
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

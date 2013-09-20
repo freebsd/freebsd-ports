@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sysfsutils
-# Date created:		2008-02-08
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sysfsutils
 PORTVERSION=	2.1.0
@@ -18,4 +14,5 @@ USE_LDCONFIG=	yes
 
 MAN1=		systool.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

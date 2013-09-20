@@ -38,6 +38,7 @@ SUB_FILES=	javasvn.sh svnsync.sh jsvnadmin.sh jsvnlook.sh jsvnversion.sh jsvndum
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 .for file in ${DATA_FILES}

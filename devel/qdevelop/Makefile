@@ -33,6 +33,7 @@ OPTIONS_DEFINE=	TOOLS DOCS NLS
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 TOOLS_DESC=	Install Qt4 dev. tools (qmake, moc, etc.)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -21,6 +21,7 @@ USES=		perl5
 
 PLIST_FILES=	bin/svn_load_dirs
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}

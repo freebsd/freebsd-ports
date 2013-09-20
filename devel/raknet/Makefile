@@ -32,6 +32,7 @@ USE_GCC=	yes
 USE_GMAKE=	yes
 USES=		cmake
 
+NO_STAGE=	yes
 # XXX Do not provide Samples for the following reason :
 # - potential licensing problems
 # XXX Disable build of DependentExtensions for the following reasons :

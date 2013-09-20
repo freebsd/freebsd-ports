@@ -18,6 +18,7 @@ SUB_FILES=	${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	${PORTNAME}.py errors.en
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,\(DATADIR = \)'\.',\1'${DATADIR}'," \
 		${WRKSRC}/${PORTNAME}.py

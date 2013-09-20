@@ -1,9 +1,5 @@
-# New ports collection makefile for:	umem
-# Date created:				02 October 2006
-# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	umem
 PORTVERSION=	1.0.1
@@ -19,6 +15,7 @@ USE_AUTOTOOLS=	libtool
 ONLY_FOR_ARCHS=	i386 amd64
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/ -ldl//g' ${WRKSRC}/Makefile.in
 

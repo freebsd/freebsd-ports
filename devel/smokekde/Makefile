@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	ATTICA
 ATTICA_DESC=	Bindings for libattica (may crash build)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Attica bindings often cause the build to coredump.

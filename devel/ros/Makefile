@@ -54,6 +54,7 @@ SUB_LIST=	LOCALBASE=${LOCALBASE} \
 
 PORTDOCS=	AUTHORS README
 
+NO_STAGE=	yes
 post-patch:
 	# fix path to bash
 	${GREP} -l -r "^#\!/bin/bash" ${WRKSRC} | ${XARGS} \

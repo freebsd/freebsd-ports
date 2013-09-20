@@ -21,6 +21,7 @@ INSTALL_TARGET=	site-install
 
 DOCS=		${RUBY_RD_HTML_FILES}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${RUBY_VER} == 1.9
 BROKEN=	does not build with ruby 1.9

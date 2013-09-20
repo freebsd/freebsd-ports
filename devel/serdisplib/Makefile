@@ -1,9 +1,5 @@
-# New ports collection makefile for:	serdisplib
-# Date created:		2011-03-31
-# Whom:			Markus Dolze <bsdfan@nurfuerspam.de>
-#
+# Created by: Markus Dolze <bsdfan@nurfuerspam.de>
 # $FreeBSD$
-#
 
 PORTNAME=	serdisplib
 PORTVERSION=	1.97.9
@@ -19,4 +15,5 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

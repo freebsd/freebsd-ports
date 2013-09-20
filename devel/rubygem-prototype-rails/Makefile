@@ -1,9 +1,5 @@
-# Ports collection makefile for:	rubygem-prototype-rails
-# Date created:				2012-05-19
-# Whom:					Mikhail T. <m.tsatsenko@gmail.com>
-#
+# Created by: Mikhail T. <m.tsatsenko@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	prototype-rails
 PORTVERSION=	3.2.1
@@ -19,4 +15,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

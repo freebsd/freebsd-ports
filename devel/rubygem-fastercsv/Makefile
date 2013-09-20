@@ -1,8 +1,4 @@
-# ex:ts=8
-# Ports collection makefile for:	rubygem-fastercsv
-# Date created:			Sep 5, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
 
 PORTNAME=	fastercsv
@@ -17,4 +13,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

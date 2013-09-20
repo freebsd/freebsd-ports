@@ -1,7 +1,4 @@
-# New ports collection makefile for: ros_comm
-# Date created: 2011-03-14
-# Whom: Rene Ladan <rene@FreeBSD.org>
-#
+# Created by: Rene Ladan <rene@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ros_comm
@@ -42,6 +39,7 @@ MAKE_ENV+=	CPATH=${LOCALBASE}/include \
 		ROS_PACKAGE_PATH=${WRKSRC}
 MAKE_ARGS=	-i --no-rosdep --status-rate=0 --disable-logging
 
+NO_STAGE=	yes
 post-patch:
 	# fix path to bash
 	${GREP} -l -r "^#\!/bin/bash" ${WRKSRC} | ${XARGS} \

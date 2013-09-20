@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Gem Finder
-# Date created:		12 Nov 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gemfinder
 PORTVERSION=	1.9.6
@@ -30,6 +26,7 @@ DOCS=		README \
 		${RUBY_RD_FILES} \
 		${RUBY_RD_HTML_FILES}
 
+NO_STAGE=	yes
 do-install:
 	(cd ${WRKSRC}; ./install.rb --prefix=${PREFIX} --sitedir=${RUBY_SITELIBDIR})
 

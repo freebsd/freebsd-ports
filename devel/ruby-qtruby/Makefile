@@ -29,6 +29,7 @@ SUB_FILES=	ruby-kdebindings-env.sh pkg-message
 SUB_LIST+=	RUBY_SITELIBDIR=${RUBY_SITELIBDIR} \
 		RUBY_SITEARCHLIBDIR=${RUBY_SITEARCHLIBDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CMAKE_ARGS+=	-DRUBY_LIBRARY=${LOCALBASE}/lib/lib${RUBY_NAME}.so \

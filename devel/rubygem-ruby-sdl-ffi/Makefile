@@ -1,9 +1,5 @@
-# New ports collection makefile for:   rubygem-ruby-sdl-ffi
-# Date created:    28 April 2010
-# Whom:		Christoph Kick
-#
+# Created by: Christoph Kick
 # $FreeBSD$
-#
 
 PORTNAME=	ruby-sdl-ffi
 PORTVERSION=	0.4
@@ -19,4 +15,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

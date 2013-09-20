@@ -19,4 +19,5 @@ PLIST_FILES=	share/aclocal/xorg-macros.m4 \
 
 PLIST_DIRS=	share/util-macros
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

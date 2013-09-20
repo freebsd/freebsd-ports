@@ -19,6 +19,7 @@ JARFILE=	${PORTNAME}.jar tinycp.jar
 PORTDOCS=	readme.html gpl.txt lgpl.txt
 PLIST_FILES=	${JARFILE:S|^|%%JAVAJARDIR%%/|}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${JARFILE:S|^|${WRKSRC}/|} ${JAVAJARDIR}
 .if !defined(NOPORTDOCS)

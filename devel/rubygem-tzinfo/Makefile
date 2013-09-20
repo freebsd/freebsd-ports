@@ -1,4 +1,4 @@
-# Whom:	Rui Lopes (rgl ruilopes com)
+# Created by: Rui Lopes (rgl ruilopes com)
 # $FreeBSD$
 
 PORTNAME=	tzinfo
@@ -13,4 +13,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -24,4 +24,5 @@ USE_XZ=		yes
 USES=		cmake:outsource
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

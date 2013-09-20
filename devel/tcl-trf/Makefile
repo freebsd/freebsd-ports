@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcl-Trf
-# Date created:			May 22, 2000
-# Whom:				Mikhail Teterin <mi@aldan.algebra.com>
-#
+# Created by: Mikhail Teterin <mi@aldan.algebra.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Trf
 PORTVERSION=	2.1.4
@@ -36,6 +32,7 @@ CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl${TCL_VER} \
 		--enable-static-zlib --enable-static-bzlib \
 		--enable-static-md5
 
+NO_STAGE=	yes
 post-patch:
 .ifdef TRF_USE_MD
 	#

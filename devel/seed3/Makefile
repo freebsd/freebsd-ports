@@ -1,8 +1,6 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/trunk/devel/seed3/Makefile 17268 2013-04-01 05:13:11Z marcus $
-# NOTE: It may be necessary to update ${FILESDIR}/Seed.js on each release.
-# To do that, just replace imports.searchPaths with "." and ".." elements.
 
 PORTNAME=	seed
 PORTVERSION=	3.2.0
@@ -37,6 +35,7 @@ DATADIR=	share/seed-gtk3
 
 MAN1=		seed.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

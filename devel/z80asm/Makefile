@@ -1,9 +1,5 @@
-# New ports collection makefile for: z80asm
-# Date created: 29 Dec 2007
-# Whom: Sean McLaughlin <sigma.zx@gmail.com>
-#
+# Created by: Sean McLaughlin <sigma.zx@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	z80asm
 PORTVERSION=	1.8
@@ -17,6 +13,7 @@ COMMENT=	Assembler for the Z80 microprocessor
 USE_GMAKE=	yes
 MAN1=		z80asm.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's#/bin/bash#/bin/sh#' ${WRKSRC}/Makefile
 

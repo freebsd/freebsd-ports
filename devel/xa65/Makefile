@@ -27,6 +27,7 @@ PLIST_FILES=	bin/xa65 \
 		bin/printcbm \
 		bin/uncpk
 
+NO_STAGE=	yes
 post-patch-script:
 .for i in CC LDFLAGS CFLAGS
 	@${REINPLACE_CMD} 's|${i} = |${i} ?= |g' ${WRKSRC}/Makefile

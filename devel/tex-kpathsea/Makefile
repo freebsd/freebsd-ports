@@ -26,4 +26,5 @@ INFO=	kpathsea
 MAN1=	kpseaccess.1 kpsereadlink.1 kpsestat.1 kpsewhich.1 mktexlsr.1 \
 	mktexmf.1 mktexpk.1 mktextfm.1 texhash.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

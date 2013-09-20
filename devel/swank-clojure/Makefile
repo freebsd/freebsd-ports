@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}/technomancy-swank-clojure-0af258a
 
 PLIST_FILES=	%%JAVAJARDIR%%/swank-clojure-1.2.1.jar
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && ${JAR} cf ${PORTNAME}-${PORTVERSION}.jar -C src swank
 

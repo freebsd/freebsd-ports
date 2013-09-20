@@ -20,6 +20,7 @@ PLIST_SUB+=	VERSION="${PORTVERSION}"
 CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 		--with-tcl-includes=${TCL_INCLUDEDIR}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} \
 	    -e '/^#define MALLOC/d; /^#define FREE/d; s|MALLOC|malloc|g; s|FREE|free|g' \

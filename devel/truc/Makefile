@@ -1,9 +1,5 @@
-# New ports collection makefile for:	truc
-# Date created:		2007-03-10
-# Whom:			Jan Siml <jsi@jules.de>
-#
+# Created by: Jan Siml <jsi@jules.de>
 # $FreeBSD$
-#
 
 PORTNAME=	truc
 PORTVERSION=	0.12.0
@@ -22,6 +18,7 @@ SUB_FILES=	pkg-message
 
 WANT_PHP_WEB=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO} "Installing in ${PREFIX}/www/truc"
 	${MKDIR} ${PREFIX}/www/truc

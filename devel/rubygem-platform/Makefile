@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-Platform
-# Date created:		2008-04-13
-# Whom:			IWATSUKI Hiroyuki <don@na.rim.or.jp>
-#
+# Created by: IWATSUKI Hiroyuki <don@na.rim.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	platform
 PORTVERSION=	0.4.0
@@ -20,4 +16,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

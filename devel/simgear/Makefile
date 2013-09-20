@@ -27,4 +27,5 @@ USE_GL=		gl glu glut
 USES=		cmake
 CMAKE_ARGS+=	-DJPEG_FACTORY:BOOL=ON
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

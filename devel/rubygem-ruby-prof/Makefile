@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-ruby-prof
-# Date created:				27 July 2007
-# Whom:					Robert Gogolok <gogo@cs.uni-sb.de>
-#
+# Created by: Robert Gogolok <gogo@cs.uni-sb.de>
 # $FreeBSD$
 
 PORTNAME=	ruby-prof
@@ -17,4 +14,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/ruby-prof
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

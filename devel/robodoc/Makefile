@@ -26,6 +26,7 @@ PORTEXAMPLES=	*
 
 PLIST_FILES=	bin/robodoc bin/robohdrs
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

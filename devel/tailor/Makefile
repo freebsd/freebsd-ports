@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tailor
-# Date created:				16 June 2006
-# Whom:					Rui Lopes <rgl ruilopes com>
-#
+# Created by: Rui Lopes <rgl ruilopes com>
 # $FreeBSD$
-#
 
 PORTNAME=	tailor
 PORTVERSION=	0.9.35
@@ -20,6 +16,7 @@ USE_PYDISTUTILS=	yes
 
 PORTDOCS=	README*
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

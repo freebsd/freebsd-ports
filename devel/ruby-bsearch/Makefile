@@ -1,9 +1,5 @@
-# Ports collection makefile for:	Ruby/Bsearch
-# Date created:			13 July 2001
-# Whom:				Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bsearch
 PORTVERSION=	1.5
@@ -27,6 +23,7 @@ DOCS_EN=	ChangeLog \
 DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 		${RUBY_RD_HTML_FILES:M*.ja.html}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

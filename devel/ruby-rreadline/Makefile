@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby Readline
-# Date created:		29 June 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rreadline
 PORTVERSION=	0.5.4
@@ -20,6 +16,7 @@ RUBY_NO_BUILD_DEPENDS=	yes
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-extract:
 	${ECHO_CMD} '#!/bin/sh' > ${WRKSRC}/rbsh
 	${ECHO_CMD} 'ruby RubyShell.rb' >> ${WRKSRC}/rbsh

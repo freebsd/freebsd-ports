@@ -24,6 +24,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_FILES=	bin/umlgraph %%JAVAJARDIR%%/UmlGraph.jar
 
+NO_STAGE=	yes
 post-configure:
 	${REINPLACE_CMD} -e 's|%%JAVA_HOME%%|${JAVA_HOME}|; \
 		s|%%JAVAJARDIR%%|${JAVAJARDIR}|' \

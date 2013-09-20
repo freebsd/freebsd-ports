@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vtg
-# Date created:		2011-10-09
-# Whom:			Romain Tartiere <romain@FreeBSD.org>
-#
+# Created by: Romain Tartiere <romain@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vtg
 PORTVERSION=	0.12.0
@@ -30,4 +26,5 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20 intltool
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

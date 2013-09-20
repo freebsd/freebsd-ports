@@ -30,6 +30,7 @@ WANT_LUA_VER=	5.0+
 
 CONFIGURE_ARGS+=--program-suffix=${VER}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_LUA:Mlua-5.*} != ""

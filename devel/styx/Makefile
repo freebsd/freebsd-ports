@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	styx
-# Date created:			Apr 17, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	styx
 PORTVERSION=	1.6.1
@@ -24,6 +19,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME}
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 .if defined(NOPORTEXAMPLES)
 	${REINPLACE_CMD} -e '/SUBDIRS/s|spexml||' ${WRKSRC}/Makefile.in

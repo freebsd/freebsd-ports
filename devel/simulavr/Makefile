@@ -1,9 +1,5 @@
-# Ports collection makefile for:	simulavr
-# Date created:				3 Sep 2002
-# Whom:					Joerg Wunsch <joerg@FreeBSD.org>
-#
+# Created by: Joerg Wunsch <joerg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	simulavr
 PORTVERSION=	0.1.2
@@ -34,6 +30,7 @@ CONFIGURE_ARGS=	--disable-versioned-doc --enable-pdf
 MAN1=		simulavr.1 simulavr-disp.1
 INFO=		simulavr
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

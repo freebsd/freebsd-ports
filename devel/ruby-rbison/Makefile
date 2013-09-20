@@ -23,6 +23,7 @@ EXAMPLES=	CalcFileLexer.rb	CalcStringLexer.rb	\
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rbison ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)

@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 		XML_CONFIG="${XML_CONFIG}"
 PLIST_SUB=	VER=${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

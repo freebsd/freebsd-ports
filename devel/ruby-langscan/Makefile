@@ -33,6 +33,7 @@ DOCSDIR=	${RUBY_MODDOCDIR}
 OPTIONS_DEFINE=	DOCS
 OPTIONSFILE=	${PORT_DBDIR}/ruby-${PORTNAME}/options
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CFLAGS+=	-fPIC

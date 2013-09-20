@@ -1,4 +1,4 @@
-# Created by: lofi@freebsd.org
+# Created by: lofi@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	qvfb
@@ -44,6 +44,7 @@ CONFIGURE_ARGS+=	-I../../include/Qt -I../../include
 
 EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
+NO_STAGE=	yes
 pre-configure:
 	${MKDIR} ${WRKSRC}/mkspecs
 	${REINPLACE_CMD} -e 's|^TARGET.*|TARGET=qvfb-qt4|g' \

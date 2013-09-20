@@ -19,6 +19,7 @@ PLIST_FILES+=	bin/colortab bin/term_display bin/term_mandel
 
 PORTEXAMPLES=	cdiff decolor
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

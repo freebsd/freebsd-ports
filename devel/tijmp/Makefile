@@ -28,6 +28,7 @@ PLIST_FILES=	lib/lib${PORTNAME}.la \
 		lib/lib${PORTNAME}.so lib/lib${PORTNAME}.so.0 \
 		%%JAVAJARDIR%%/${PORTNAME}.jar
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 

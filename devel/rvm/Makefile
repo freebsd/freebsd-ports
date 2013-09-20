@@ -23,6 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		rdsinit.1 rvmutl.1
 
+NO_STAGE=	yes
 post-extract:
 .for file in Makefile.in
 	@${REINPLACE_CMD} -e \

@@ -15,4 +15,5 @@ RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES+= bin/b2json \
 	      bin/j2bson
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

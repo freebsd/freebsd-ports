@@ -22,6 +22,7 @@ USE_LDCONFIG=	yes
 
 MAN3=		vstr.3 vstr_const.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

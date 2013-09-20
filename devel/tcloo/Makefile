@@ -30,4 +30,5 @@ MAN3=	Class.3 \
 	Method.3 \
 	OOInitStubs.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

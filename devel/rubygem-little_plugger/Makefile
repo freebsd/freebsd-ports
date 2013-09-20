@@ -1,7 +1,4 @@
-# Ports collection makefile for:	gem-little_plugger
-# Date created:				06 Nov 2009
-# Whom:					Ryan Steinmetz (<rpsfa@rit.edu>)
-#
+# Created by: Ryan Steinmetz (<rpsfa@rit.edu>)
 # $FreeBSD$
 
 PORTNAME=	little_plugger
@@ -20,4 +17,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 RUN_DEPENDS=	rubygem-rspec>=0:${PORTSDIR}/devel/rubygem-rspec
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

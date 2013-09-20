@@ -25,4 +25,5 @@ USE_LDCONFIG=	yes
 
 INFO=		sdts++
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -63,6 +63,7 @@ MAN3=	\
 	zmq_unbind.3 \
 	zmq_version.3
 
+NO_STAGE=	yes
 regression-test:
 	cd ${WRKSRC} && ${MAKE}	check
 

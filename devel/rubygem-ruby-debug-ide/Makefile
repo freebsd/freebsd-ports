@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-ruby-debug-ide
-# Date created:				22 June 2009
-# Whom:					Alexander Logvinov <avl@FreeBSD.org>
-#
+# Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ruby-debug-ide
@@ -22,4 +19,5 @@ RUBYGEM_AUTOPLIST=	yes
 RELATIVE_VER=	0.0.9
 PLIST_SUB+=	RELATIVE_VER=${RELATIVE_VER}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

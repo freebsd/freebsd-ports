@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-rubigen
-# Date created:				8 October 2008
-# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	rubigen
@@ -22,4 +19,5 @@ PLIST_FILES=	bin/install_rubigen_scripts	\
 		bin/rubigen			\
 		bin/ruby_app
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

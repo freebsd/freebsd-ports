@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-lockfile
-# Date created:		2009-01-25
-# Whom:			Dennis Herrmann <adox@mcx2.org>
-#
+# Created by: Dennis Herrmann <adox@mcx2.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lockfile
 PORTVERSION=	1.4.3
@@ -19,4 +15,5 @@ USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/rlock bin/rlock-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

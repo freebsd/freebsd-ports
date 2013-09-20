@@ -31,6 +31,7 @@ USE_GMAKE=	yes
 
 MAN1=		xsdcxx.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

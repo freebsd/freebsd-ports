@@ -15,6 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_LDCONFIG=	yes
 USES=		gmake
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/include/spdict
 	${INSTALL_DATA} ${WRKSRC}/*.hpp ${PREFIX}/include/spdict

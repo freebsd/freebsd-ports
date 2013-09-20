@@ -1,9 +1,5 @@
-# New ports collection makefile for:	silentbob
-# Date created:		2008-11-13
-# Whom:			TAKATSU Tomonari <tota@rtfm.jp>
-#
+# Created by: TAKATSU Tomonari <tota@rtfm.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	silentbob
 PORTVERSION=	2.4.2
@@ -21,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 PORTDOCS=	*
 PLIST_FILES=	bin/bob
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/CMakeCache.txt
 	@${REINPLACE_CMD} -e 's|/usr/lib/silent_bob/|${PREFIX}/lib/silent_bob/|' \

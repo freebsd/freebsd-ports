@@ -30,4 +30,5 @@ regression-test: build
 	    echo "load ../libmmap${PORTVERSION}.so; source $$t" | ${TCLSH}; \
 	done;
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

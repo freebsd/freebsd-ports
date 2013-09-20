@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-facets
-# Date created:				24 Jul 2007
-# Whom:					Yarema <yds@CoolRat.org>
-#
+# Created by: Yarema <yds@CoolRat.org>
 # $FreeBSD$
-#
 
 PORTNAME=	facets
 PORTVERSION=	2.9.3
@@ -17,4 +13,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tkp4
-# Date created:         17 May 2002
-# Whom:                 mi@aldan.algebra.com
-#
+# Created by: mi@aldan.algebra.com
 # $FreeBSD$
-#
 
 PORTNAME=	tkp4
 PORTVERSION=	1.12
@@ -20,6 +16,7 @@ NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
 USE_TK_RUN=	yes
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.tcl ${DATADIR}

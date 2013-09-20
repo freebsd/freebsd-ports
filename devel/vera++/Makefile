@@ -24,6 +24,7 @@ CMAKE_ARGS+=	-DTCL_INCLUDE_PATH=${TCL_INCLUDEDIR} \
 
 MAN1=		vera++.1
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_MAN} ${WRKDIR}/vera++.1 ${PREFIX}/man/man1
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-mutter
-# Date created:		2010-12-07
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mutter
 PORTVERSION=	0.5.3
@@ -18,4 +14,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,6 +23,7 @@ ALL_TARGET=	default
 
 WRKSRC=	${WRKDIR}/tbb41_20130314oss
 
+NO_STAGE=	yes
 post-extract:
 .if ${CC} != "gcc"
 	@${CP} ${WRKSRC}/build/FreeBSD.gcc.inc ${WRKSRC}/build/FreeBSD.${CC}.inc

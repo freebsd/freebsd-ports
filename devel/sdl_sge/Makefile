@@ -1,9 +1,5 @@
-# New ports collection makefile for:   SGE
-# Date created:        30 July 2006
-# Whom:                Jona Joachim <walkingshadow@grummel.net>
-#
+# Created by: Jona Joachim <walkingshadow@grummel.net>
 # $FreeBSD$
-#
 
 PORTNAME=	sdl_sge
 PORTVERSION=	0.030809
@@ -27,6 +23,7 @@ USE_SDL=	sdl
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFREETYPE}

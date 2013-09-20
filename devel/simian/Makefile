@@ -34,6 +34,7 @@ OPTIONS_MULTI_LANG=	JAVA MONO
 
 OPTIONS_DEFAULT=	JAVA
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MJAVA}

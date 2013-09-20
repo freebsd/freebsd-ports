@@ -20,4 +20,5 @@ ONLY_FOR_ARCHS=	i386
 MAKE_ENV=	T3XDIR="${LOCALBASE}/t3x/r8"
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:   ucpp
-# Date created:                Feb 16, 2001
-# Whom:                        Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ucpp
 PORTVERSION=	1.3.2
@@ -22,6 +17,7 @@ USE_GMAKE=	yes
 
 WRKSRC= ${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1

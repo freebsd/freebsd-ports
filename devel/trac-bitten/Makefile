@@ -27,6 +27,7 @@ BITTEN_MASTER_DESC=	Build bitten master
 
 OPTIONS_DEFAULT=	BITTEN_MASTER
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-distribute

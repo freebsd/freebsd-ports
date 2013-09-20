@@ -1,4 +1,4 @@
-# Whom:	Jonathan Weiss (<jw@innerewut.de>)
+# Created by: Jonathan Weiss (<jw@innerewut.de>)
 # $FreeBSD$
 
 PORTNAME=	rake
@@ -16,6 +16,7 @@ RUBYGEM_AUTOPLIST=	yes
 MANCOMPRESSED=	yes
 MAN1=		rake.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 PLIST_FILES=	bin/rake
 

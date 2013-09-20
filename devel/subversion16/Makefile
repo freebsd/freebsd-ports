@@ -37,6 +37,7 @@ GNOME_KEYRING_DESC=	Build with GNOME Keyring auth support
 KDE_KWALLET_DESC=	Build with KDE KWallet auth support
 BOOK_DESC=		Install the Subversion Book
 
+NO_STAGE=	yes
 .include "Makefile.common"
 
 SVNREPOS?=	/home/svn/repos
