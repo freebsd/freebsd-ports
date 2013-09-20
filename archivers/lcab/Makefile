@@ -1,9 +1,5 @@
-# New ports collection makefile for:	LCAB
-# Date created:				27 May 2005
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lcab
 DISTVERSION=	1.0b12
@@ -15,6 +11,7 @@ COMMENT=	Microsoft .CABinet file creator
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 PLIST_FILES=	bin/lcab
 

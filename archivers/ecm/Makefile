@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	gmp-ecm-[0-9]*
 
+NO_STAGE=	yes
 PLIST_FILES=	bin/ecm bin/unecm
 PORTDOCS=	format.txt
 

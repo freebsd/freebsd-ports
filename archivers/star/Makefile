@@ -11,6 +11,7 @@ COMMENT=	Unique standard tape archiver with many enhancements
 
 BUILD_DEPENDS=	smake:${PORTSDIR}/devel/smake
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		gettext iconv
 

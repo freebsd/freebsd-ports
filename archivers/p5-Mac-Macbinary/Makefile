@@ -12,6 +12,7 @@ COMMENT=	Perl module that can extract info from Macbinary files
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN3=		Mac::Macbinary.3
 

@@ -13,6 +13,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby extension to unpack LHA-compressed files
 
+NO_STAGE=	yes
 USE_ZIP=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

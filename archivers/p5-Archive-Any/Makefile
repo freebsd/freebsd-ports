@@ -24,6 +24,7 @@ TEST_DEPENDS=	p5-Test-Perl-Critic>=0:${PORTSDIR}/textproc/p5-Test-Perl-Critic \
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN3=		Archive::Any.3 Archive::Any::Plugin.3 \
 		Archive::Any::Plugin::Tar.3 Archive::Any::Plugin::Zip.3

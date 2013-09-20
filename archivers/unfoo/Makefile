@@ -1,9 +1,5 @@
-# New ports collection makefile for:	unfoo
-# Date created:		13 August 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	unfoo
 PORTVERSION=	1.0.6
@@ -19,6 +15,7 @@ RUN_DEPENDS=	unace:${PORTSDIR}/archivers/unace \
 		unzip:${PORTSDIR}/archivers/unzip \
 		7z:${PORTSDIR}/archivers/p7zip
 
+NO_STAGE=	yes
 NO_BUILD=	yes
 USE_BZIP2=	yes
 PLIST_FILES=	bin/${PORTNAME}

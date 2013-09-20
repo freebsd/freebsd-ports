@@ -17,6 +17,7 @@ COMMENT=	Zlib library interface for AOLserver
 LICENSE=	MPL GPLv1
 LICENSE_COMB=	dual
 
+NO_STAGE=	yes
 AOLSERVERBASE?=	aolserver
 
 BUILD_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver

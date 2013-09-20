@@ -12,6 +12,7 @@ COMMENT=	Efficient compressor for XML
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
 
+NO_STAGE=	yes
 USE_ZIP=	yes
 USE_DOS2UNIX=	${MAKEFILE} XMill/BZlib.cpp
 

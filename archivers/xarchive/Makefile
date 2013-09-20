@@ -12,6 +12,7 @@ COMMENT=	GTK+ front end for various archiving tools
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+NO_STAGE=	yes
 USES=		pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20

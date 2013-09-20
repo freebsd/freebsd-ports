@@ -1,9 +1,5 @@
-# New ports collection makefile for:	DeuTex
-# Date created:				20 Dec 2005
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	deutex
 PORTVERSION=	4.4.0
@@ -19,6 +15,7 @@ LICENSE=	GPLv2
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
+NO_STAGE=	yes
 MAN6=		${PORTNAME}.6
 PLIST_FILES=	bin/deusf bin/deutex
 PORTDOCS=	*

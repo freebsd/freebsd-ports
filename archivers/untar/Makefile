@@ -13,6 +13,7 @@ EXTRACT_ONLY=
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Lists/Extracts files from a "*.tgz" or "*.gz" archive
 
+NO_STAGE=	yes
 MAKEFILE=	/usr/share/mk/bsd.prog.mk
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/untar

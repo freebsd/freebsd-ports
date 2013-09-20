@@ -17,6 +17,7 @@ COMMENT=	ZOO archive extractor
 
 EXTRA_DEFINES=	-DSYS_IS_UNIX -DSYS_HAS_MKDIR
 
+NO_STAGE=	yes
 MAN1=		unzoo.1
 PLIST_FILES=	bin/unzoo
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lzop
-# Date created:				Fri 2 June 2000
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	lzop
 DISTVERSION=	1.03
@@ -21,6 +17,7 @@ LIB_DEPENDS=	lzo2.2:${PORTSDIR}/archivers/lzo2
 LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 .endif
 
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

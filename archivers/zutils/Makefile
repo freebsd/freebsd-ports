@@ -27,6 +27,7 @@ MAN1=		zcat.1 \
 		ztest.1
 INFO=		zutils
 
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:

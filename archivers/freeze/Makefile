@@ -1,9 +1,5 @@
-# New ports collection makefile for:    freeze
-# Date created:         20 Jul 1996
-# Whom:                 lukin@okbmei.msk.su
-#
+# Created by: lukin@okbmei.msk.su
 # $FreeBSD$
-#
 
 PORTNAME=	freeze
 PORTVERSION=	2.5
@@ -16,6 +12,7 @@ MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/compression/ \
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Compression program - often used in QNX
 
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	prog
 MAKE_ARGS+=	CFLAGS="${CFLAGS} -I. -DCOMPAT" CC="${CC}"

@@ -17,6 +17,7 @@ RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
 		gpatch:${PORTSDIR}/devel/patch \
 		gmd5sum:${PORTSDIR}/sysutils/coreutils
 
+NO_STAGE=	yes
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USES=		gmake iconv perl5 pkgconfig

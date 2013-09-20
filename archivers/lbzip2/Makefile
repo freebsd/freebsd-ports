@@ -12,6 +12,7 @@ COMMENT=	Multi-threaded bzip2/bunzip2 filter
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/lbzip2
 
+NO_STAGE=	yes
 MAN1=		lbzip2.1
 
 PORTDOCS=	ChangeLog README

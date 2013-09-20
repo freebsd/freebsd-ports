@@ -12,6 +12,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Horde LZ4 Compression Extension for php
 
+NO_STAGE=	yes
 USE_PHP=	yes
 USE_PHPEXT=	yes
 

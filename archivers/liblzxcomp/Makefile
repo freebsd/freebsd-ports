@@ -16,6 +16,7 @@ PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
 MAN3=		lzxcomp.3
 MANCOMPRESSED=	yes
+NO_STAGE=	yes
 
 .if defined(NOPROFILE)
 PLIST_SUB+=	PROFILE="@comment "

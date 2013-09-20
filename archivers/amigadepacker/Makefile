@@ -12,6 +12,7 @@ COMMENT=	Tool for depacking some compressed Amiga formats
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_CSTD=	gnu89

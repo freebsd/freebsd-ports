@@ -1,9 +1,5 @@
-# New ports collection makefile for:    stuffit
-# Date created:		12 Dec 2001
-# Whom:			Nathan Ahlstrom <nra@FreeBSD.org>
-#
+# Created by: Nathan Ahlstrom <nra@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	stuffit
 PORTVERSION=	5.2.0.611
@@ -19,6 +15,7 @@ RESTRICTED=	Only unmodified original package can be distributed
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+NO_STAGE=	yes
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 STUFFIT_FILES=	bin/unstuff bin/stuff

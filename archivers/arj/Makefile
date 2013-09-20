@@ -12,6 +12,7 @@ COMMENT=	Open-source ARJ
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 USES=		gmake
 USE_AUTOTOOLS=	autoconf
 MAKE_JOBS_UNSAFE=	yes

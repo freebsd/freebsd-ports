@@ -15,6 +15,7 @@ COMMENT=	Unix reader for the Microsoft Tape Format used by NT Backup
 LICENSE=	GPLv2
 
 ALL_TARGET=	# empty
+NO_STAGE=	yes
 PLIST_FILES=	bin/mtf
 PORTDOCS=	README
 

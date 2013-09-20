@@ -12,6 +12,7 @@ COMMENT=	Version of JDK's `jar' command written entirely in C
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 USES=		gmake perl5
 USES_PERL5=	build
 USE_BZIP2=	yes

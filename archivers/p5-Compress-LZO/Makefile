@@ -16,6 +16,7 @@ LIB_DEPENDS=	lzo2:${PORTSDIR}/archivers/lzo2
 CFLAGS+=	-I${LOCALBASE}/include/lzo
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile.PL

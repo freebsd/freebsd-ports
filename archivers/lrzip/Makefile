@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	nasm>=0:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	lzo2:${PORTSDIR}/archivers/lzo2
 
+NO_STAGE=		yes
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-asm
 GNU_CONFIGURE=	yes

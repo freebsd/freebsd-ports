@@ -12,6 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Allows files to be extracted from ARJ archives
 
+NO_STAGE=	yes
 PLIST_FILES=	bin/unarj
 PORTDOCS=	unarj.txt technote.txt
 

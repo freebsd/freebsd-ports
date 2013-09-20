@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libarc
-# Date Created:				20 June 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libarc
 PORTVERSION=	2.0.2
@@ -16,6 +12,7 @@ COMMENT=	Tiny C decompression library for several popular compression formats
 
 SOLIB=		libarc.so
 SOVERSION=	1
+NO_STAGE=	yes
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I." LN="${LN} -sf" \
 		SOLIB="${SOLIB}" SOVERSION="${SOVERSION}"

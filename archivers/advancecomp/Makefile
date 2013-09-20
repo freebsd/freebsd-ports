@@ -9,6 +9,7 @@ MASTER_SITES=	SF/advancemame/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	Recompression utilities for .ZIP, .PNG, .MNG, and .GZ files
 
+NO_STAGE=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes
 

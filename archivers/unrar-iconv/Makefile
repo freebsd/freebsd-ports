@@ -1,9 +1,5 @@
-# New ports collection makefile for:	unrar-iconv
-# Date created:				18 Oct 2007
-# Whom:					Yarodin <yarodin@gmail.com>
-#
+# Created by: Yarodin <yarodin@gmail.com>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-iconv
 
@@ -13,6 +9,7 @@ MASTERDIR=	${.CURDIR}/../unrar
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-iconv
 
+NO_STAGE=	yes
 CPPFLAGS+=	-DWITH_ICONV -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 USES+=		iconv

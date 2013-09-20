@@ -9,6 +9,7 @@ MASTER_SITES=	http://www.jcraft.com/jzlib/
 MAINTAINER=	danilogondolfo@gmail.com
 COMMENT=	Reimplementation of zlib in pure Java
 
+NO_STAGE=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

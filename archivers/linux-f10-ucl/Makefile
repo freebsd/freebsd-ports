@@ -1,9 +1,5 @@
-# New ports collection makefile for:	archivers/linux-f10-ucl
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=		ucl
 PORTVERSION=		1.03
@@ -17,6 +13,7 @@ COMMENT=		UCL, a lossless data compression library (Linux Fedora 10)
 
 CONFLICTS=		linux-ucl-[0-9]* linux-f8-ucl-[0-9]*
 
+NO_STAGE=		yes
 USE_LINUX_RPM=		yes
 LINUX_DIST_VER=		10
 RPMVERSION=		8.fc9

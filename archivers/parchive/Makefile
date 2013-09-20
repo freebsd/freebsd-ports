@@ -1,9 +1,5 @@
-# New ports collection makefile for:	parchive
-# Whom:					Chris D. Faulhaber <jedgar@FreeBSD.org>
-# Date created:				26 November 2001
-#
+# Created by: Chris D. Faulhaber <jedgar@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	parchive
 PORTVERSION=	1.1
@@ -14,6 +10,7 @@ DISTNAME=	par-v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parity Archiver - makes multiple parity volumes from a set of files
 
+NO_STAGE=	yes
 MAKEFILE=	${FILESDIR}/Makefile
 PLIST_FILES=	bin/parchive
 WRKSRC=		${WRKDIR}/par-cmdline

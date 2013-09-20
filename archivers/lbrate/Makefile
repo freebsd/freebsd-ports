@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lbrate
-# Date created:			26 August 2001
-# Whom:				Gea-Suan Lin (gslin@ccca.nctu.edu.tw)
-#
+# Created by: Gea-Suan Lin (gslin@ccca.nctu.edu.tw)
 # $FreeBSD$
-#
 
 PORTNAME=	lbrate
 PORTVERSION=	1.1
@@ -19,6 +15,7 @@ LICENSE=	GPLv2
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CPPFLAGS} ${CFLAGS} ${LDFLAGS}"
 
+NO_STAGE=	yes
 MAN1=		lbrate.1
 PORTDOCS=	ChangeLog README TODO
 PLIST_FILES=	bin/lbrate

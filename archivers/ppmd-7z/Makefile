@@ -11,6 +11,7 @@ DISTNAME=	p7zip_${DISTVERSION}_src_all
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	High-ratio PPMD compressor
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		gmake
 WRKSRC=		${WRKDIR}/p7zip_${DISTVERSION}

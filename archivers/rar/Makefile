@@ -1,9 +1,5 @@
-# New ports collection makefile for:    rar
-# Date created:         15 May 1996
-# Whom:                 ache
-#
+# Created by: ache
 # $FreeBSD$
-#
 
 PORTNAME=	rar
 PORTVERSION=	4.2.0
@@ -21,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RESTRICTED=	only unmodified original package can be distributed
+NO_STAGE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rar
 PLIST_FILES=	bin/rar lib/default.sfx etc/rarfiles.lst man/cat1/rar.1

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	archivers/linux-f10-upx
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=		upx
 PORTVERSION=		3.03
@@ -17,6 +13,7 @@ COMMENT=		UPX, a high-performance executable packer (Linux Fedora 10)
 
 CONFLICTS=		linux-upx-[0-9]* linux-f8-upx-[0-9]*
 
+NO_STAGE=		yes
 USE_LINUX_RPM=		yes
 USE_LINUX_APPS=		ucl
 LINUX_DIST_VER=		10

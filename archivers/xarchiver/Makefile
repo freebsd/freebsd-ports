@@ -12,6 +12,7 @@ COMMENT=	Desktop-agnostic GTK+2 frontend to various archiving tools
 
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
+NO_STAGE=	yes
 USES=		gmake pkgconfig desktop-file-utils
 USE_BZIP2=	yes
 USE_GNOME=	glib20 gtk20 intltool

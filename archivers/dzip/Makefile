@@ -12,6 +12,7 @@ COMMENT=	File compression utility specializing in Quake demo compression
 
 LICENSE=	ZLIB
 
+NO_STAGE=	yes
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 

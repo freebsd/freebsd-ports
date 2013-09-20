@@ -11,6 +11,7 @@ COMMENT=	Tool for decompressing Amiga DMS files
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}

@@ -21,6 +21,7 @@ TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 
 USE_PERL5=	configure
 USES=		perl5
+NO_STAGE=	yes
 
 MAN3=		IO::Compress::Lzop.3 IO::Uncompress::UnLzop.3
 

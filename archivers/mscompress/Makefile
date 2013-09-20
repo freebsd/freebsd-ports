@@ -1,9 +1,5 @@
-# Ports collection makefile for:  mscompress
-# Date created:			  15 Apr 2000
-# Whom:				  Patrick Seal <patseal@hyperhost.net>
-#
+# Created by: Patrick Seal <patseal@hyperhost.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mscompress
 PORTVERSION=	0.3
@@ -16,6 +12,7 @@ COMMENT=	Microsoft "compress.exe/expand.exe" compatible (de)compressor
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
+NO_STAGE=	yes
 
 MAN1=		mscompress.1 msexpand.1
 

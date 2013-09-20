@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pxz
-# Date created:		2011-23-16
-# Whom:			mm
-#
+# Created by: mm
 # $FreeBSD$
-#
 
 PORTNAME=	pxz
 PORTVERSION=	0.20120930
@@ -20,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 PLIST_FILES=	bin/pxz
 MAN1=	pxz.1
 

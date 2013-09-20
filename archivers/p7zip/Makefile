@@ -16,6 +16,7 @@ OPTIONS_DEFAULT=       MODULES
 MINIMAL_DESC=  Support only .7z file format
 MODULES_DESC=  Build modules
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}

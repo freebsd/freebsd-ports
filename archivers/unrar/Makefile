@@ -19,6 +19,7 @@ OPENSSL_AES_DESC=	Use OpenSSL implementation of AES
 
 CONFLICTS?=	zh-unrar-[0-9].* unrar-iconv-[0-9].*
 
+NO_STAGE=	yes
 MAKE_ARGS=	STRIP=${STRIP_CMD}
 MAKEFILE=	makefile.unix
 USES+=		gmake

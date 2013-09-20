@@ -17,6 +17,7 @@ MAN1=		pbzip2.1
 MLINKS=		pbzip2.1 pbunzip2.1
 
 USES=		gmake
+NO_STAGE=	yes
 
 PLIST_FILES=	bin/pbzip2 bin/pbunzip2
 

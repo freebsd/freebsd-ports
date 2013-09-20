@@ -10,6 +10,7 @@ MASTER_SITES=	https://dl.dropboxusercontent.com/u/59565338/LZ4/ \
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Fast compressor using LZ4 algorithm
 
+NO_STAGE=		yes
 USES=		gmake
 ALL_TARGET=	lz4c
 

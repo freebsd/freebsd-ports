@@ -10,5 +10,7 @@ COMMENT=	Reading, writing, and manipulating ".tar" archive files
 
 LICENSE=	BSD
 
+NO_STAGE=	yes
+
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

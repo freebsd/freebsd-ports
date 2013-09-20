@@ -12,6 +12,7 @@ COMMENT=	TAR archiver for GNUstep
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

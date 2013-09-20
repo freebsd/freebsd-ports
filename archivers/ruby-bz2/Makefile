@@ -15,6 +15,7 @@ COMMENT=	Ruby extension to use libbz2
 DEPRECATED=	Does not work with Ruby 1.9
 EXPIRATION_DATE=	2013-05-02
 
+NO_STAGE=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 

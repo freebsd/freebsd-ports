@@ -13,6 +13,7 @@ COMMENT=	Perl module to create, manipulate, read, and write Zip archive files
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN3=		Archive::Zip.3 Archive::Zip::Tree.3 Archive::Zip::FAQ.3 Archive::Zip::MemberRead.3
 

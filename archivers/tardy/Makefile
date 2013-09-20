@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 		${LOCALBASE}/include/libiberty/libiberty.h:${PORTSDIR}/devel/gnulibiberty
 LIB_DEPENDS=	explain:${PORTSDIR}/devel/libexplain
 
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 
 MAKE_JOBS_UNSAFE=	yes
