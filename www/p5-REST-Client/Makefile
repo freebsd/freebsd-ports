@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-REST-Client
-# Date created:                         2012-03-09
-# Whom:                                 Paul Schmehl <pauls@utdallas.edu>
-#
+# Created by: Paul Schmehl <pauls@utdallas.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	REST-Client
 PORTVERSION=	249
@@ -27,4 +23,5 @@ USE_PERL5=	configure
 
 MAN3=		REST::Client.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

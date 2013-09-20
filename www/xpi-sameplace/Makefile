@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-sameplace
-# Date created:		3 April 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sameplace
 PORTVERSION=	0.7.9.2007113020
@@ -21,5 +17,6 @@ XPI_FILES=	chrome/sameplace.jar chrome.manifest components/CommandLine.js\
 		components/ProtocolHandler.js defaults/preferences/sameplace.js install.rdf
 XPI_DIRS=	chrome components defaults/preferences defaults
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

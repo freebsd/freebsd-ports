@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-routes
-# Date created:		April 24 2007
-# Whom:			Dryice Liu <dryice@dryice.name>
-#
+# Created by: Dryice Liu <dryice@dryice.name>
 # $FreeBSD$
-#
 
 PORTNAME=	routes
 PORTVERSION=	1.13
@@ -19,4 +15,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Routes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -36,4 +36,5 @@ MAN3=	Amon2::Plugin::Web::MobileAgent.3 \
 	Amon2::Plugin::Web::MobileCharset.3 \
 	Amon2::Setup::Flavor::MobileJP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

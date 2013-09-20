@@ -25,6 +25,7 @@ USE_MYSQL=	yes
 USE_APACHE=	22
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DBI) || exists(${LOCALBASE}/include/dbi/dbi.h)

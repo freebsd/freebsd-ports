@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-VUser-Google-ProvisioningAPI
-# Date created:		2011-04-28
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	VUser-Google-ProvisioningAPI
 PORTVERSION=	0.24
@@ -30,4 +26,5 @@ MAN3=	VUser::Google::ProvisioningAPI::V2_0::EmailListEntry.3 \
 	VUser::Google::ProvisioningAPI::V2_0::EmailListRecipientEntry.3 \
 	VUser::Google::ProvisioningAPI::V2_0::UserEntry.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -20,6 +20,7 @@ OPTIONS_DEFAULT=	ZLIB
 NETWORK_DESC=	Moodle Network functionality
 MIMETEX_DESC=	mimeTeX filter functionality
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MMYSQL} && ! ${PORT_OPTIONS:MPGSQL} && ! ${PORT_OPTIONS:MMSSQL}

@@ -30,4 +30,5 @@ MAN3=		Catalyst::DispatchType::LocalRegex.3 \
 		Catalyst::DispatchType::Regex.3 \
 		Catalyst::DispatchType::Regexp.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

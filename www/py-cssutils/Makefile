@@ -18,6 +18,7 @@ USE_PYDISTUTILS=	easy_install
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 .if !defined(NOPORTEXAMPLES)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}

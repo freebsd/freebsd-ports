@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Plack::Middleware::AMF
-# Date created:		22 May 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Plack-Middleware-AMF
 PORTVERSION=	0.02
@@ -25,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=	Plack::Middleware::AMF.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

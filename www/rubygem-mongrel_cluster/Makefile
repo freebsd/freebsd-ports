@@ -1,7 +1,4 @@
-# Ports collection makefile for:	mongrel_cluster
-# Date created:				20 May 2006
-# Whom:					Rui Lopes (<rgl ruilopes com>)
-#
+# Created by: Rui Lopes (<rgl ruilopes com>)
 # $FreeBSD$
 
 PORTNAME=	mongrel_cluster
@@ -22,6 +19,7 @@ RUBYGEM_AUTOPLIST=	yes
 REINPLACE_ARGS=	-i ""
 PLIST_FILES=	bin/mongrel_cluster_ctl
 
+NO_STAGE=	yes
 post-install:
 	@${REINPLACE_CMD} -e 's|/usr/bin/env ruby|${RUBY}|' ${PREFIX}/bin/mongrel_cluster_ctl
 	@${REINPLACE_CMD} -e 's|mongrel_rails|${PREFIX}/bin/mongrel_rails|g' \

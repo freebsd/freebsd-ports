@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--with-apxs=${APXS}
 ALL_TARGET=	#
 PORTDOCS=	libpatricia.copyright documentation.txt faq.txt
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

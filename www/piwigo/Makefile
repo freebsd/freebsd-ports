@@ -36,6 +36,7 @@ PLIST_SUB+=	WWWOWN="${WWWOWN}" \
 		WWWGRP="${WWWGRP}" \
 		CHOWN="${CHOWN}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MIMAGICK}

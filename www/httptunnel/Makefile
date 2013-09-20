@@ -1,9 +1,5 @@
-# New ports collection makefile for:    httptunnel
-# Date created:         March 20 2000
-# Whom:                 Brian Somers <brian@FreeBSD.org>
-#
+# Created by: Brian Somers <brian@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	httptunnel
 PORTVERSION=	3.3
@@ -27,6 +23,7 @@ USE_RC_SUBR=	hts htc
 
 PLIST_FILES=	bin/hts bin/htc
 
+NO_STAGE=	yes
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 

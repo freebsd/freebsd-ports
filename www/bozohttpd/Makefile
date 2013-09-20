@@ -23,6 +23,7 @@ HTPASSWD_DESC=		Enable htpassword support
 SSL_DESC=		Enable SSL support
 CGI_DESC=		Enable CGI support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHTPASSWD}

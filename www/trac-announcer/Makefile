@@ -32,6 +32,7 @@ PLIST_FILES+=	%%PYTHON_SITELIBDIR%%/AnnouncerPlugin-${EGG_VER}-py%%PYTHONVERSION
 # We must fix file permissions -- ZIP file have 0000 for every file.
 # Directory permissions are fine (they aren't stored inside ZIP
 # file), but we set them too -- just in case.
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${CHMOD} 644
 	@${FIND} ${WRKSRC} -type d | ${XARGS} ${CHMOD} 755

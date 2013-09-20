@@ -18,6 +18,7 @@ TINYMCE3_DESC=	Install TinyMCE3 Editor
 CKEDITOR_DESC=	Install CKEditor
 YUI_DESC=	Install Yahoo UI Editor
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTINYMCE3}

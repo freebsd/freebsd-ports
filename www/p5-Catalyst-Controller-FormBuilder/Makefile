@@ -1,4 +1,3 @@
-# Ports collection makefile for:	p5-Catalyst-Controller-FormBuilder
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
 
@@ -26,4 +25,5 @@ USE_PERL5=	configure
 
 MAN3=	Catalyst::Controller::FormBuilder.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

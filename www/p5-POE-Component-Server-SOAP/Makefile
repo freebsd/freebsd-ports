@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-POE-Component-Server-SOAP
-# Date created:				12 October 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Server-SOAP
 PORTVERSION=	1.14
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 MAN3=	POE::Component::Server::SOAP.3 \
 	POE::Component::Server::SOAP::Response.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

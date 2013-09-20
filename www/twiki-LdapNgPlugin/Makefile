@@ -10,5 +10,6 @@ COMMENT=	Query and display data from an LDAP directory
 
 TWDEP=		LdapContrib>=0
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../twiki/bsd.twiki.mk"
 .include <bsd.port.mk>

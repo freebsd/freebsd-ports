@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	HTMLgen
-# Date created:				03/20/1999
-# Whom:					nectar@FreeBSD.org
-#
+# Created by: nectar@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	HTMLgen
 PORTVERSION=	2.2.2
@@ -26,6 +22,7 @@ PORTDOCS=	*
 .endif
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${TAR} -C ${WRKSRC} -cf - README html image | \

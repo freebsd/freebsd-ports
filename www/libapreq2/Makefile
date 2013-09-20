@@ -49,6 +49,7 @@ MAN3=		APR::Request.3 \
 
 PLIST_SUB+=	WITH_MODPERL2=""
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e "s!%%APACHEINCLUDEDIR%%!${APACHEINCLUDEDIR}!" \
 		${WRKSRC}/glue/perl/Makefile.PL

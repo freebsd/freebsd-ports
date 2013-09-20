@@ -46,6 +46,7 @@ CONFDIR=	${PREFIX}/etc/dansguardian
 
 RESTRICTED=	Redistribution and commercial download is restricted.  Check ${DG_URL} for more info
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}

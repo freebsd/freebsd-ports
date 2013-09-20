@@ -35,6 +35,7 @@ CONFIGURE_ARGS=	--with-zlib --libdir="${L_LIB}" \
 
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 MAKE_FLAGS=	helpdir=${L_HELP} docdir=${L_DOC} -f

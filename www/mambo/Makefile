@@ -22,6 +22,7 @@ OPTIONS_MULTI_DB=	MYSQLI MYSQL
 MYSQLI_DESC=	MySQL 4.1+ back-end (use mysqli PHP extension)
 MYSQL_DESC=	MySQL back-end (use mysql PHP extension)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_PHP=	session zlib gd pdf xml pcre

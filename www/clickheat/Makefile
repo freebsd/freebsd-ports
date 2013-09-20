@@ -1,6 +1,4 @@
-# New ports collection makefile for:	clickheat
-# Date created:                27 June 2008
-# Whom:                        Philippe Audeoud <jadawin@FreeBSD.org>
+# Created by: Philippe Audeoud <jadawin@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	clickheat
@@ -25,6 +23,7 @@ SUB_FILES=	pkg-message pkg-deinstall
 SUB_LIST=	PORTNAME=${PORTNAME} \
 		WWWDIR=${WWWDIR}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${WWWDIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR} \

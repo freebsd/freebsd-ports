@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-WWW-Mechanize-TreeBuilder
-# Date created:				25 December 2009
-# Whom:					Alex Deiter <Alex.Deiter@Gmail.COM>
-#
+# Created by: Alex Deiter <Alex.Deiter@Gmail.COM>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Mechanize-TreeBuilder
 PORTVERSION=	1.10003
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=	WWW::Mechanize::TreeBuilder.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

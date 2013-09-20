@@ -1,7 +1,4 @@
-# New ports collection makefile for:	www/vtiger-customerportal
-# Date created:				22 September  2007
-# Whom:					Aron Schlesinger <as@bsdgroup.de>
-#
+# Created by: Aron Schlesinger <as@bsdgroup.de>
 # $FreeBSD$
 
 PORTNAME=	customerportal
@@ -29,6 +26,7 @@ SUB_FILES=	pkg-message
 
 CONFIG=		PortalConfig.php
 
+NO_STAGE=	yes
 do-install:
 	@${FIND} ${WRKSRC} -type d | ${SED} 's,^${WRKSRC},${WWWDIR},' | ${XARGS} ${MKDIR}
 	@${FIND} -s ${WRKSRC} -type f -not -name '.*' -and -not \

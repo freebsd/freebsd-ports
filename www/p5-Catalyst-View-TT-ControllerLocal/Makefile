@@ -22,4 +22,5 @@ USE_PERL5=	configure
 MAN3=	Catalyst::Helper::View::TTControllerLocal.3 \
 	Catalyst::View::TT::ControllerLocal.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Webware
-# Date created:		9 July 2002
-# Whom:			Stefan Schwarzer <sschwarzer@sschwarzer.net>
-#
+# Created by: Stefan Schwarzer <sschwarzer@sschwarzer.net>
 # $FreeBSD$
-#
 
 PORTNAME=	webware
 DISTVERSION=	1.1.1
@@ -33,6 +29,7 @@ INSTALL_ENV=	PKG_PREFIX=${PREFIX} \
 
 PLIST_SUB+=	WEBWARE_MASTER_DIR=${WEBWARE_MASTER_DIR:S,^${PREFIX}/,,}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

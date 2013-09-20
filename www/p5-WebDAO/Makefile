@@ -55,6 +55,7 @@ MAN3=		WebDAO.3 \
 		WebDAO::Test.3 \
 		WebDAO::Util.3
 
+NO_STAGE=	yes
 # maintainer section:
 x-generate-plist:
 	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \

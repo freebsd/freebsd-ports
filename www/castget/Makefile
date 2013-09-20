@@ -25,4 +25,5 @@ PLIST_FILES=	bin/castget include/libcastget.h lib/libcastget.la lib/libcastget.s
 MAN1=	castget.1
 MAN5=	castgetrc.5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

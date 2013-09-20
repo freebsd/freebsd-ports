@@ -1,9 +1,5 @@
-# New ports collection makefile for:   linkcheck
-# Date created:                 17 Feb 2004
-# Whom:				ismail@enderunix.org
-#
+# Created by: ismail@enderunix.org
 # $FreeBSD$
-#
 
 PORTNAME=	linkcheck
 PORTVERSION=	1.4
@@ -18,4 +14,5 @@ PLIST_FILES=	bin/linkcheck
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

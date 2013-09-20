@@ -1,9 +1,5 @@
-# New ports collection makefile for:	abyssws
-# Date created:				26 August 2007
-# Whom:					Daniel Voisine <voisined@wit.edu>
-#
+# Created by: Daniel Voisine <voisined@wit.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	abyssws
 PORTVERSION=	2.6
@@ -22,6 +18,7 @@ NO_BUILD=	yes
 
 USE_RC_SUBR=	abyssws
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700043

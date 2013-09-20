@@ -15,5 +15,6 @@ USE_CABAL=	cgi>=3000.0.0
 
 LIB_DEPENDS=	fcgi.0:${PORTSDIR}/www/fcgi
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

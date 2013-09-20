@@ -26,6 +26,7 @@ SUB_LIST=	"APACHEMODDIR=${APACHEMODDIR}"
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-extract:
 	${REINPLACE_CMD} -e 's,-Werror,,' ${WRKSRC}/configure.in
 

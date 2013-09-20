@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Catalyst-Plugin-Log-Dispatch
-# Date created:				2008-07-02
-# Whom:					Oleg Mamontov <oleg@mamontov.net>
-#
+# Created by: Oleg Mamontov <oleg@mamontov.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Plugin-Log-Dispatch
 PORTVERSION=	0.121
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=		Catalyst::Plugin::Log::Dispatch.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

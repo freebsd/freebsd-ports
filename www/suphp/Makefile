@@ -35,6 +35,7 @@ CONFIGURE_ARGS=	CFLAGS="${CFLAGS}" --with-apxs=${APXS}
 WITH_SETID_MODE?=	owner
 CONFIGURE_ARGS+=	--with-setid-mode=${WITH_SETID_MODE}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}

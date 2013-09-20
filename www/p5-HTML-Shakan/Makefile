@@ -51,6 +51,7 @@ MAN3=	HTML::Shakan.3 \
 	HTML::Shakan::Widgets::Simple.3 \
 	HTML::Shakan::Widgets::jQueryUI.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

@@ -45,6 +45,7 @@ OPTIONS_DEFINE=	OPTIMIZED_CFLAGS SA_DEBUG
 OPTIMIZED_CFLAGS_DESC=	Build with distribution-recommended CFLAGS
 SA_DEBUG_DESC=		Enable Free-SA debugging (level 1)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-everything::

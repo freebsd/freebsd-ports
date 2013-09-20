@@ -14,6 +14,7 @@ USE_XPI=	*firefox*
 XPI_ID=		ServerSpy@jacquet.eu.org
 XPI_NUM=	2036
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|<em:maxVersion>22\.\*<|<em:maxVersion>99.*<|' \
 		${WRKSRC}/install.rdf

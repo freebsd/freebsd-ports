@@ -30,6 +30,7 @@ PLIST_FILES=	bin/webinject.pl \
 		${DATADIR:S,^${PREFIX}/,,}/testcases.xml
 PLIST_DIRS=	${DATADIR:S,^${PREFIX}/,,}
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} *.xml ${DATADIR}

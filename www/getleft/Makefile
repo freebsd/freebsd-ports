@@ -1,9 +1,5 @@
-# New ports collection makefile for:	getleft
-# Date created:				2006-11-07
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	getleft
 PORTVERSION=	1.2
@@ -21,6 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/Tktable2.10/libTktable2.10.so:${PORTSDIR}/x11-tool
 USE_TK=		84+
 PORTSCOUT=	ignore:1
 
+NO_STAGE=	yes
 do-build:
 	@(${ECHO_CMD} "#!${SH}"; ${ECHO_CMD} "cd ${DATADIR} || exit 1"; \
 	  ${ECHO_CMD} 'exec ${WISH} Getleft.tcl "$$@"') > ${WRKDIR}/${PORTNAME}

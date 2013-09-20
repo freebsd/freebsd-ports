@@ -27,6 +27,7 @@ IMAP_DESC=	IMAP support
 GD_DESC=	Gallery support (GD)
 WBXML_DESC=	Synchronization Support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMAP}

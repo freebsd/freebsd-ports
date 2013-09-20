@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-mplayerplug-in
-# Date Created:		17 June 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mplayerplug-in
 PORTVERSION=	3.55
@@ -31,5 +27,6 @@ NPAPI_WRKSRC=	${WRKDIR}/usr/lib/mozilla/plugins
 NPAPI_FILES=	${PLUGINS_EXT:S/^/${PORTNAME}/}
 PLUGINS_EXT=	.so .xpt -dvx.so -dvx.xpt -qt.so -qt.xpt -rm.so -rm.xpt -wmp.so -wmp.xpt
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.npapi"
 .include <bsd.port.mk>

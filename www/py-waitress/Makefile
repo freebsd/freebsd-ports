@@ -1,6 +1,5 @@
 # Created by: Olivier Duchateau
 # $FreeBSD$
-#
 
 PORTNAME=	waitress
 PORTVERSION=	0.8.7
@@ -16,6 +15,7 @@ LICENSE=	ZPL21
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 320

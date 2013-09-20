@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-CGI-Session-ExpireSessions
-# Date created:		11 March 2009
-# Whom:			Gerard Seibert <gerard@seibercom.net>
-#
+# Created by: Gerard Seibert <gerard@seibercom.net>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Session-ExpireSessions
 PORTVERSION=	1.12
@@ -26,4 +22,5 @@ MANCOMPRESSED=	no
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -11,5 +11,6 @@ LICENSE=	MIT
 
 USE_CABAL=	path-pieces>=0.1 text>=0.5 vector>=0.8
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

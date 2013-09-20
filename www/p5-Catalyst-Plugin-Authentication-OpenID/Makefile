@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Catalyst-Plugin-Authentication-OpenID
-# Date created:		2007-05-04
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Plugin-Authentication-OpenID
 PORTVERSION=	0.02
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=		Catalyst::Plugin::Authentication::OpenID.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

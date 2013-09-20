@@ -33,6 +33,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION="3.14"
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@INTLTOOL_LIBDIR@|${LOCALBASE}/libdata|' \
 	    	${WRKSRC}/intltool-merge.in

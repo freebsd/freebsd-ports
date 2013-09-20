@@ -21,6 +21,7 @@ USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	${PORTNAME:S/-/_/}
 PYDISTUTILS_PKGVERSION=	${DISTVERSION:S/-/_/}
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*.orig" -delete
 

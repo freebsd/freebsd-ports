@@ -28,4 +28,5 @@ MAN3=	CGI::Application::Plugin::AnyTemplate.3 \
 	CGI::Application::Plugin::AnyTemplate::Driver::HTMLTemplateExpr.3 \
 	CGI::Application::Plugin::AnyTemplate::Driver::Petal.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

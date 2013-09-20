@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/fcgi
-# Date created:		7 December 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fcgi
 PORTVERSION=	0.8.8
@@ -25,6 +21,7 @@ CONFIGURE_ARGS=	-- --with-fcgi-include=${LOCALBASE}/include \
 
 DOCS=		ChangeLog README README.signals
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}

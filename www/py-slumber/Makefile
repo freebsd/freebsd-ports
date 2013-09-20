@@ -17,6 +17,7 @@ OPTIONS_DEFINE=		YAML
 YAML_DESC=		Enable YAML serializer support
 OPTIONSFILE?=		${PORT_DBDIR}/py-${PORTNAME}/options
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MYAML}

@@ -26,4 +26,5 @@ MAN3=		HTML::Parse.3 HTML::TreeBuilder.3 HTML::AsSubs.3 \
 		HTML::Tree::Scanning.3 HTML::Tree::AboutObjects.3 \
 		HTML::Tree::AboutTrees.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,7 +1,5 @@
 # Created by: ijliao
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hydra
 PORTVERSION=	0.1.8
@@ -30,6 +28,7 @@ SUB_FILES=	pkg-deinstall
 PLIST_SUB=	LOGDIR=${LOGDIR}
 SUB_LIST=	LOGDIR=${LOGDIR}
 
+NO_STAGE=	yes
 post-patch:
 .for f in src/defines.h examples/hydra.conf
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" \

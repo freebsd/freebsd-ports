@@ -22,4 +22,5 @@ MAN3=	Apache::Singleton.3 \
 	Apache::Singleton::Process.3 \
 	Apache::Singleton::Request.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

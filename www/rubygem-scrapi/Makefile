@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-scrapi
-# Date created:				29 Jan 2007
-# Whom:					IWATSUKI Hiroyuki <don@na.rim.or.jp>
-#
+# Created by: IWATSUKI Hiroyuki <don@na.rim.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	scrapi
 PORTVERSION=	1.2.0
@@ -22,6 +18,7 @@ USE_LDCONFIG=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	${GEM_LIB_DIR}/lib/tidy/libtidy.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

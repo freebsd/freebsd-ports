@@ -1,9 +1,5 @@
-# New ports collection makefile for:	visitors
-# Date created:				May 13 2004
-# Whom:					Florent Thoumie <flz@xbsd.org>
-#
+# Created by: Florent Thoumie <flz@xbsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	visitors
 PORTVERSION=	0.7.0
@@ -20,6 +16,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_0.7
 PLIST_FILES=	bin/visitors
 PORTDOCS=	doc.html
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/visitors ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

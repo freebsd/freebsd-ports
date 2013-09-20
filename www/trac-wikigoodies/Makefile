@@ -1,9 +1,5 @@
-# New ports collection makefile for:	trac-wikigoodies
-# Date created:				Fri 01 May 2009
-# Whom:					Alexey V. Degtyarev <alexey@renatasystems.org>
-#
+# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wikigoodies
 PORTVERSION=	0.3.3522
@@ -31,4 +27,5 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION:R} \
 		PYTHONVERSION=${PYTHON_VER}
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

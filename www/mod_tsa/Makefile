@@ -33,6 +33,7 @@ AP_LIB=	${LOCALBASE}/lib
 
 PORTEXAMPLES=	*.sql tsa.conf
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

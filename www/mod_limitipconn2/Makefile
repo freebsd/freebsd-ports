@@ -25,6 +25,7 @@ PLIST_FILES+=	${APACHEMODDIR}/${PORTNAME}.so
 
 PORTDOCS=	ChangeLog INSTALL README
 
+NO_STAGE=	yes
 post-install:
 .if !defined (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/

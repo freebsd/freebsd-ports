@@ -17,4 +17,5 @@ MODULE_FILES=	pathauto.admin.inc pathauto.inc pathauto.install pathauto.module \
 		pathauto.pathauto.inc pathauto.tokens.inc
 DOC_FILES=	INSTALL.txt API.txt README.txt LICENSE.txt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

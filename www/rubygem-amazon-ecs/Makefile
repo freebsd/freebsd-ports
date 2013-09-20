@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-amazon-ecs
-# Date created:		2007-07-18
-# Whom:			TAKATSU Tomonari <tota@rtfm.jp>
-#
+# Created by: TAKATSU Tomonari <tota@rtfm.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	amazon-ecs
 PORTVERSION=	2.2.4
@@ -22,4 +18,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

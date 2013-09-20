@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mod_uid
-# Date created:				02 December 2003
-# Whom:					Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_uid
 PORTVERSION=	1.1.0
@@ -21,6 +17,7 @@ PORTDOCS=	README.html
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${APACHE_VERSION} == 13

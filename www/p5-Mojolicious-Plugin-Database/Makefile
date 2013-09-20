@@ -1,4 +1,4 @@
-# Created by:			Henk van Oers <hvo.pm@xs4all.nl>
+# Created by: Henk van Oers <hvo.pm@xs4all.nl>
 # $FreeBSD$
 
 PORTNAME=	Mojolicious-Plugin-Database
@@ -25,4 +25,5 @@ USE_PERL5=	configure
 MAN3=		Mojolicious::Plugin::Database.3 \
 		Mojolicious::Plugin::README.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

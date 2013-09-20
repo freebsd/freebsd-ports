@@ -12,4 +12,5 @@ COMMENT=	HTML validator and sanity checker
 
 MAN1=		weblint.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -51,6 +51,7 @@ MAN3=		LWP.3 \
 		lwpcook.3 \
 		lwptut.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHTTPS}

@@ -28,4 +28,5 @@ MAN3=		Apache::AuthTicket.3 \
 		Apache::AuthTicket::Base.3 \
 		Apache2::AuthTicket.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

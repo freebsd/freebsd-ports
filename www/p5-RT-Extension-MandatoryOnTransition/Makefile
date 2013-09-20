@@ -22,6 +22,7 @@ MAN3=	RT::Extension::MandatoryOnTransition.3
 PLIST_SUB+=	RT_VER=${RT_VER}
 RT_VER=	40
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,$$RT::LocalPath/man/man3,${PREFIX}/lib/perl5/${PERL_VER}/man/man3,g' ${WRKSRC}/inc/Module/Install/RTx.pm
 	${REINPLACE_CMD} -e 's,$$RT::LocalPath/man,${PREFIX}/lib/perl5/${PERL_VER}/man,g' ${WRKSRC}/inc/Module/Install/RTx.pm

@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	p5-Catalyst-Plugin-Textile
 # Created by: Travis Campbell <hcoyote@ghostar.org>
 # $FreeBSD$
 
@@ -24,4 +22,5 @@ USE_PERL5=	configure
 
 MAN3=	Catalyst::Plugin::Textile.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

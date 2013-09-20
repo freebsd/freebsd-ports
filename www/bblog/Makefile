@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bBlog
-# Date created:		2005-04-16
-# Whom:			chinsan@mail2000.com.tw
-#
+# Created by: chinsan@mail2000.com.tw
 # $FreeBSD$
-#
 
 PORTNAME=	bBlog
 PORTVERSION=	0.7.6
@@ -31,6 +27,7 @@ OPTIONS_DEFINE=	GD IMAGICK
 OPTIONS_DEFAULT=GD
 IMAGICK_DESC=	${IMAGEMAGICK_DESC}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGD}

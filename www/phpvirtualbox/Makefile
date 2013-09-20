@@ -1,4 +1,4 @@
-# Created by:	Bernhard Froehlich <decke@bluelife.at>
+# Created by: Bernhard Froehlich <decke@bluelife.at>
 # $FreeBSD$
 
 PORTNAME=	phpvirtualbox
@@ -19,6 +19,7 @@ NO_BUILD=	yes
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(php|txt|js|css|html)
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${WWWDIR}
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "*" ${WWWDIR} "! -name *.orig")

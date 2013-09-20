@@ -50,4 +50,5 @@ MAN3=		WWW::Facebook::API.3 \
 		WWW::Facebook::API::Users.3 \
 		WWW::Facebook::API::Video.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

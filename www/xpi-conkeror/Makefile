@@ -1,9 +1,5 @@
-# New ports collection makefile for:	conkeror
-# Date created:		27 April 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	conkeror
 PORTVERSION=	20090821
@@ -22,6 +18,7 @@ USE_GECKO=	libxul
 
 BUILD_ID=echo -n `whoami`@`hostname`_`date +%s`
 
+NO_STAGE=	yes
 post-patch:
 	cd ${WRKSRC} && \
 		${REINPLACE_CMD} -e "s/%%PREFIX%%/${PREFIX:S/\//\\\//g}/g" \

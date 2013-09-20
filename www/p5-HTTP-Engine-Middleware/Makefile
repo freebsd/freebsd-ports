@@ -1,9 +1,4 @@
-# New ports collection makefile for:	HTTP::Engine::Middleware
-# Date created:		20 Feb 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-Engine-Middleware
 PORTVERSION=	0.22
@@ -44,4 +39,5 @@ MAN3=	HTTP::Engine::Middleware.3 \
 	HTTP::Engine::Middleware::Status::Memory.3 \
 	HTTP::Engine::Middleware::UploadTemp.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

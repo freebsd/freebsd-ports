@@ -1,9 +1,5 @@
-# New ports collection makefile for:   	mod_authn_sasl
-# Date created:        			February 16, 2009
-# Whom:                			Joerg Pulz <Joerg.Pulz@frm2.tum.de>
-#
+# Created by: Joerg Pulz <Joerg.Pulz@frm2.tum.de>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_authn_sasl
 PORTVERSION=	1.2
@@ -23,6 +19,7 @@ LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 OPTIONS_DEFINE=	SASLAUTHD
 SASLAUTHD_DESC=	cyrus-sasl2-saslauthd support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_BZIP2=	yes

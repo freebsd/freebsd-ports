@@ -32,6 +32,7 @@ PYDISTUTILS_NOEGGINFO=	yes
 USE_RC_SUBR=	tracd
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSILVERCITY}

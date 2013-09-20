@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ctemplate
-# Date created:        02 April 2007
-# Whom:                Alex Pesternikov <ap@page2rss.com>
-#
+# Created by: Alex Pesternikov <ap@page2rss.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ctemplate
 PORTVERSION=	0.5
@@ -18,4 +14,5 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES+=	bin/h2ap
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

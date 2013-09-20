@@ -21,6 +21,7 @@ UTF8_LOCALE_DESC=	Use UTF8 locale (read Makefile for details)
 MENU_FIREFOX_DESC=	Add menu entry for firefox
 MENU_THUNDERBIRD_DESC=	Add menu entry for thunderbird
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # firefox/thunderbird can't display unicode filenames with special

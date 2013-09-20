@@ -53,6 +53,7 @@ SUB_LIST=	AJP_1_3_PORT=${AJP_1_3_PORT} \
 		TOMCAT_VERSION=${MAJOR_VER:S/.//} \
 		USER=${TOMCAT_USER}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-patch:

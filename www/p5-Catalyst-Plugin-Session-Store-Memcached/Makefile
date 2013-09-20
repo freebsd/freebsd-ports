@@ -25,4 +25,5 @@ USE_PERL5=	configure
 
 MAN3=		Catalyst::Plugin::Session::Store::Memcached.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

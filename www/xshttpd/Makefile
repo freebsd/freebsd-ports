@@ -35,6 +35,7 @@ PERSISTENT_PERL_DESC=	Enable persistent Perl interpreter
 
 PORTDOCS=	README ChangeLog
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # By default XS-HTTPD stores its data in ${PREFIX}/lib/httpd

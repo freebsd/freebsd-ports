@@ -1,9 +1,5 @@
-# New ports collection makefile for:	logtools
-# Date created:		8 January 2002
-# Whom:			Mark Huizer; Eindhoven
-#
+# Created by: Mark Huizer; Eindhoven
 # $FreeBSD$
-#
 
 PORTNAME=	logtools
 PORTVERSION=	0.13d
@@ -25,4 +21,5 @@ PLIST_FILES=	bin/clfmerge \
 GNU_CONFIGURE=	yes
 MAN1=		clfmerge.1 logprn.1 funnel.1 clfsplit.1 clfdomainsplit.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	trac-gitplugin
-# Date created:				2 November 2009
-# Whom:					Douglas Thrift
-#
+# Created by: Douglas Thrift
 # $FreeBSD$
-#
 
 PORTNAME=	gitplugin
 PORTVERSION=	0.12.0.5
@@ -33,4 +29,5 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 GITPLUGIN_HASH=	722342e
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

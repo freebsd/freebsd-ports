@@ -22,6 +22,7 @@ SUB_FILES=	pkg-message
 
 MAN3=		Text::MultiMarkdown::ApacheHandler.3
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/lib/Text/MultiMarkdown/ApacheHandler.pm.orig
 

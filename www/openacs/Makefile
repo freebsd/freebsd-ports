@@ -51,6 +51,7 @@ OPTIONS_DEFAULT=TCLTHREAD TCLWEBTEST
 TCLTHREAD_DESC=	Depend on tclthread
 TCLWEBTEST_DESC=Depend on tclwebtest
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Parse ${PORTSDIR}/UIDs and GIDs for the defaults

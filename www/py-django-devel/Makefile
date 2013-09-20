@@ -1,4 +1,3 @@
-# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	django
@@ -41,6 +40,7 @@ HTMLDOCS_DESC=	Install the HTML documentation (requires Sphinx)
 
 MAN1=		daily_cleanup.1 django-admin.1 gather_profile_stats.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPGSQL}

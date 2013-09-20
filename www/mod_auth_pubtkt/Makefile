@@ -16,4 +16,5 @@ USE_APACHE=	22+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--apxs=${APXS}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

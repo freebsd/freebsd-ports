@@ -1,9 +1,5 @@
-# New ports collection makefile for:   webstone
-# Date created:        25 March 1997
-# Whom:                Soren Dossing <sauber@netcom.com>
-#
+# Created by: Soren Dossing <sauber@netcom.com>
 # $FreeBSD$
-#
 
 PORTNAME=	webstone
 PORTVERSION=	2.5
@@ -20,6 +16,7 @@ WRKSRC=		${WRKDIR}/WebStone2.5/src
 ALL_TARGET=	install
 NO_INSTALL_MANPAGES=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${RM} ${WRKSRC}/../bin/runs/keepme
 	@${RMDIR} ${WRKSRC}/../bin/runs

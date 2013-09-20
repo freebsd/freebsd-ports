@@ -19,6 +19,7 @@ USE_APACHE=	22+
 XML2_INC=	${LOCALBASE}/include/libxml2
 XML2_LIB=	${LOCALBASE}/lib
 
+NO_STAGE=	yes
 pre-extract:
 	@${MKDIR} ${WRKDIR}
 

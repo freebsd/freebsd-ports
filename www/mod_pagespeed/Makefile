@@ -57,6 +57,7 @@ GYP_DEFINES+=	\
 		system_include_path_icu=${LOCALBASE}/include \
 		include_dirs=${LOCALBASE}/include
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # testing

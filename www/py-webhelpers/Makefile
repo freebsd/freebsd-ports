@@ -20,4 +20,5 @@ USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	WebHelpers
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

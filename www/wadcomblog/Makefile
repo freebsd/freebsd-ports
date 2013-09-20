@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wadcomblog
-# Date created:		2008-10-09
-# Whom:			Julien Laffaye <kimelto@gmail.com>
-#
+# Created by: Julien Laffaye <kimelto@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	WadcomBlog
 PORTVERSION=	0.3
@@ -17,6 +13,7 @@ COMMENT=	Simple open-source static blog engine written in Python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"

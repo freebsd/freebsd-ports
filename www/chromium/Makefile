@@ -1,4 +1,3 @@
-# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
 
 #TODO eadler: s/python/python2/g on a number of files, chromium does not build with python3
@@ -99,6 +98,7 @@ GCC_DESC=	Build Chromium with GCC 4.6+
 
 OPTIONS_DEFAULT=	CODECS GCONF
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCODECS}

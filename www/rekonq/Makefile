@@ -19,6 +19,7 @@ OPTIONS_DEFAULT=	NEPOMUK
 OPERA_DESC=	Support for Opera Sync service
 NEPOMUK_DESC=	Bookmarks tagging via Nepomuk
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

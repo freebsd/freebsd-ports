@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Geo-Caching
-# Date created:				18 Feb 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Geo-Caching
 PORTVERSION=	0.11
@@ -25,4 +21,5 @@ MAN3=	Geo::Caching.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

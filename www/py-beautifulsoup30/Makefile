@@ -19,4 +19,5 @@ LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}30
 
 CONFLICTS=	py[0-9]*-beautifulsoup-3.1.*
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

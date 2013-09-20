@@ -1,9 +1,4 @@
-# New ports collection makefile for:	p5-HTTP-WebTest
-# Date Created:				9 Jan, 2003
-# Whom:					Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	HTTP-WebTest
 PORTVERSION=	2.04
@@ -46,4 +41,5 @@ MAN3=		Bundle::HTTP::WebTest.3 \
 		HTTP::WebTest::Test.3 HTTP::WebTest::TestResult.3 \
 		HTTP::WebTest::Utils.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

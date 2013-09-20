@@ -36,6 +36,7 @@ NOSE_DESC=	Use nose TG[testtools]
 SQLOBJECT_DESC=	Use SQLObject as DB backend
 SQLALCHEMY_DESC=Use SQLAlchemy as DB backend TG[future]
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

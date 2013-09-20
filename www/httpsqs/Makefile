@@ -18,6 +18,7 @@ USES=		pkgconfig
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	${CP} ${PATCHDIR}/Makefile ${WRKSRC}
 	@${REINPLACE_CMD} -e 's|{ 0 }|"${PREFIX}/bin/${PORTNAME}"|' \

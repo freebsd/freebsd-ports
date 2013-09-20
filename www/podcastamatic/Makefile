@@ -1,9 +1,5 @@
-# New ports collection makefile for:	podcastamatic
-# Date created:				12 July 2005
-# Whom:					lars.eggert@gmx.net
-#
+# Created by: lars.eggert@gmx.net
 # $FreeBSD$
-#
 
 PORTNAME=	podcastamatic
 PORTVERSION=	1.3
@@ -25,6 +21,7 @@ USE_PERL5=	run
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-patch:
 	@${REINPLACE_CMD} -e "s|${PORTNAME}.conf|${PREFIX}/etc/${PORTNAME}.conf|"\
 		 ${WRKSRC}/${PORTNAME}.pl

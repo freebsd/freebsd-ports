@@ -36,6 +36,7 @@ PORTDOCS=	cgiparams.html index.html omegascript.html overview.html \
 		${MORE_PORTDOCS}
 PORTEXAMPLES=	omega.conf
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MICONV}

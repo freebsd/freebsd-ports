@@ -1,4 +1,3 @@
-# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mohawk
@@ -31,6 +30,7 @@ MAN8=	mhtpasswd.8 \
 CFLAGS+=	-I${LOCALBASE}/include/event2/compat -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib/event2
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

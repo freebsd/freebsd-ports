@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ompload
-# Date created:        3 December 2009
-# Whom:                Philippe Pepiot
-#
+# Created by: Philippe Pepiot
 # $FreeBSD$
-#
 
 PORTNAME=	ompload
 PORTVERSION=	20100913
@@ -27,6 +23,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/ompload
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${DISTDIR}/${DISTNAME} ${PREFIX}/bin/ompload
 

@@ -39,6 +39,7 @@ HIGHLIGHT_DESC=		HTML highlighting using DOM engine
 NOROOT_DESC=		Prevention of usage by root
 FASTMEM_DESC=		Fast memory allocation functions
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--without-zlib

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_cfg_ldap
-# Date created:				Sun Oct 19
-# Whom:					Clement Laforet <sheepkiller@cultdeadsheep.org>
-#
+# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_cfg_ldap
 PORTVERSION=	1.2
@@ -29,6 +25,7 @@ AP_LIB+=	${LDAP_LIB}
 PORTDOCS=	AUTHORS cfg_ldap.conf ChangeLog COPYING INSTALL \
 		mod_cfg_ldap.schema README TODO
 
+NO_STAGE=	yes
 post-install:
 .if !defined (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

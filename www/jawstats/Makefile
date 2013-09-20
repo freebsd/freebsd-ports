@@ -1,9 +1,5 @@
-# New ports collection makefile for:    jawstats
-# Date created:                         14 November 2008
-# Whom:                                 Alan Snelson <alan@wave2.org>
-#
+# Created by: Alan Snelson <alan@wave2.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jawstats
 DISTVERSION=	0.7beta
@@ -23,6 +19,7 @@ DEFAULT_PHP_VER=5
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${WWWDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR}

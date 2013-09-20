@@ -1,6 +1,5 @@
 # Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Flask
 PORTVERSION=	0.10.1
@@ -20,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}werkzeug>=0.8:${PORTSDIR}/www/py-werkzeug \
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 320

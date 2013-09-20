@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fluxbb
-# Date created:		19 May 2008
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fluxbb
 PORTVERSION=	1.4.4
@@ -20,6 +16,7 @@ USE_PHP=	yes
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	MYSQL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

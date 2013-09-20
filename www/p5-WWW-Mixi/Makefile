@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-Mixi
-# Date created:		2005-08-06
-# Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
-#
+# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Mixi
 PORTVERSION=	0.50
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		WWW::Mixi.3 WWW::Mixi::Cookbook.3 WWW::Mixi::Mixi.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

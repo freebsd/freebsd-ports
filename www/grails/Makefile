@@ -30,6 +30,7 @@ PLIST_FILES=	${SCRIPTFILES:S,^,bin/,} \
 PLIST_DIRS=	${DATADIR:S,${PREFIX}/,,}/bin
 SUB_FILES=	edit-startGrails.sed pkg-message
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing data files in ${DATADIR}..."
 	@cd ${WRKSRC} \

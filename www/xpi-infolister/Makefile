@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-infolister
-# Date created:		27 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	infolister
 DISTVERSION=	0.9f.2
@@ -21,5 +17,6 @@ XPI_FILES=	chrome/infolister.jar chrome.manifest \
 		license.txt
 XPI_DIRS=	chrome components defaults/preferences defaults
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

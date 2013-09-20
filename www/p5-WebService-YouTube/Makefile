@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	WebService::YouTube
 # Created by: ijliao
 # $FreeBSD$
 
@@ -29,4 +27,5 @@ MAN3=	WebService::YouTube.3 \
 	WebService::YouTube::Video.3 \
 	WebService::YouTube::Videos.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

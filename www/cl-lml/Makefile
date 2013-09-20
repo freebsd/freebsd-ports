@@ -20,6 +20,7 @@ USE_ASDF=	yes
 PORTDOCS=	Makefile make.lisp readme.html readme.lml
 .endif
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${ASDF_PATHNAME}
 	@${INSTALL_DATA} ${WRKSRC}/*.lisp ${ASDF_PATHNAME}

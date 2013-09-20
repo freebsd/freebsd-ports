@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Template-Provider-Encoding
-# Date created:		2006-02-28
-# Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
-#
+# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Template-Provider-Encoding
 PORTVERSION=	0.10
@@ -25,4 +21,5 @@ MAN3=	Template::Provider::Encoding.3 \
 	Template::Stash::ForceUTF8.3 \
 	Template::Plugin::encoding.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

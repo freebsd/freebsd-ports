@@ -46,6 +46,7 @@ DEBUG_DESC=	Compile with debug symbols and verbose output
 
 OPTIONS_DEFAULT=	CLANG
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 900033 || ! ${PORT_OPTIONS:MCLANG}

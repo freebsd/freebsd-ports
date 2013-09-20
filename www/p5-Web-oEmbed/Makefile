@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Web-oEmbed
-# Date created:		2011-01-14
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Web-oEmbed
 PORTVERSION=	0.04
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=		Web::oEmbed.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

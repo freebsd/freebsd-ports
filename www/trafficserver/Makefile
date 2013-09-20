@@ -1,9 +1,5 @@
-# New ports collection makefile for:	trafficserver
-# Date created:		2010-08-15
-# Whom:			Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
-#
+# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	trafficserver
 PORTVERSION=	3.2.4
@@ -34,6 +30,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-expat=${LOCALBASE} \
 		--with-pcre=${LOCALBASE}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)

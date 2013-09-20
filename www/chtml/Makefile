@@ -1,9 +1,5 @@
-# New ports collection makefile for:	chtml
-# Date created:         1 Aug 2001
-# Whom:                 David Bushong <david+ports@bushong.net>
-#
+# Created by: David Bushong <david+ports@bushong.net>
 # $FreeBSD$
-#
 
 PORTNAME=       chtml
 PORTVERSION=    0.0
@@ -23,4 +19,5 @@ MAKE_ENV=	SITE_PERL=${SITE_PERL}
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

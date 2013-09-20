@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-anemone
-# Date created:				2010-04-11
-# Whom:					niels <niels@FreeBSD.org>
-#
+# Created by: niels <niels@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	anemone
@@ -20,4 +17,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/anemone
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

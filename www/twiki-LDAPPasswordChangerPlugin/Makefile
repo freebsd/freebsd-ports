@@ -1,9 +1,5 @@
-# New ports collection makefile for:	twiki-LDAPPasswordChangerPlugin
-# Date created:				Wed 29 Jul 2009
-# Whom:					Alexey V. Degtyarev
-#
+# Created by: Alexey V. Degtyarev
 # $FreeBSD$
-#
 
 PORTNAME=	LDAPPasswordChangerPlugin
 PORTVERSION=	0.0.${SVNREV}
@@ -17,5 +13,6 @@ RUN_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 
 SVNREV=		18108
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../twiki/bsd.twiki.mk"
 .include <bsd.port.mk>

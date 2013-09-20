@@ -20,4 +20,5 @@ USES=		gettext
 
 CONFLICTS_INSTALL=	pootle-*
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -40,6 +40,7 @@ WEBLINT_DESC=	Include Weblint syntax and style checker
 
 OPTIONS_DEFAULT=	WEBLINT
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

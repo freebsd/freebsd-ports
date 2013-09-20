@@ -18,6 +18,7 @@ LICENSE=	GPLv2
 PORTDOCS=	LICENSE.txt README.txt
 PORTEXAMPLES=	example.htaccess example.web.config
 
+NO_STAGE=	yes
 # Requirements:
 # http://book.pivotx.net/index.php?page=app-e#anchor-determining-if-your-server-meets-pivotxs-requirements
 

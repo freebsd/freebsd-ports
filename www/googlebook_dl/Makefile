@@ -1,9 +1,5 @@
-# New ports collection makefile for:	googlebook_dl
-# Date created:		2010-12-02
-# Whom:			<spam@rm-rf.kiev.ua>
-#
+# Created by: <spam@rm-rf.kiev.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	googlebook_dl
 PORTVERSION=	20100502
@@ -20,6 +16,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
 

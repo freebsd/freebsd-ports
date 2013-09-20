@@ -30,6 +30,7 @@ USE_PERL5=	modbuild
 MAN1=		podsite.1
 MAN3=		Pod::Site.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPODT}

@@ -25,6 +25,7 @@ OPTIONS_DEFAULT=	IMAP MBSTRING
 IMAP_DESC=	Email Support
 MBSTRING_DESC=	Inbound email feature
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMAP}

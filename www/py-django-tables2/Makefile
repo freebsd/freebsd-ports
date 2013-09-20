@@ -18,6 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.2:${PORTSDIR}/www/py-django \
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|classifiers=\[|zip_safe=False, classifiers=\[|' \
 		${WRKSRC}/setup.py

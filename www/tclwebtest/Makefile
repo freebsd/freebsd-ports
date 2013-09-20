@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tclwebtest
-# Date created:				July 2005
-# Whom:					Aldert Nooitgedagt
-#
+# Created by: Aldert Nooitgedagt
 # $FreeBSD$
-#
 
 PORTNAME=	tclwebtest
 PORTVERSION=	1.0
@@ -23,6 +19,7 @@ NO_BUILD=	YES
 LIBDIR=		lib/tclwebtest${PORTVERSION}
 PLIST_SUB+=	LIBDIR="${LIBDIR}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

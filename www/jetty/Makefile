@@ -49,6 +49,7 @@ SUB_FILES=	\
 		message \
 		message-advanced
 
+NO_STAGE=	yes
 do-build:
 
 post-build:

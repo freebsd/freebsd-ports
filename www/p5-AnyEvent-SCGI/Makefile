@@ -1,9 +1,4 @@
-# New ports collection makefile for:	AnyEvent::SCGI
-# Date created:		16 Apr 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	AnyEvent-SCGI
 PORTVERSION=	1.1
@@ -23,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=	AnyEvent::SCGI.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

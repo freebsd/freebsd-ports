@@ -23,4 +23,5 @@ MAN3=		Catalyst::Plugin::XMLRPC.3 \
 		Catalyst::Plugin::XMLRPC::DispatchType::XMLRPC.3 \
 		Catalyst::Action::XMLRPC.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

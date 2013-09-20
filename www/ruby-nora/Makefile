@@ -17,6 +17,7 @@ EXPIRATION_DATE=	2013-05-02
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${RUBY} -i -pe 'sub(/malloc\.h/, "stdlib.h")' ${WRKSRC}/ext/web/escape_ext/escape_ext.c
 

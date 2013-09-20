@@ -31,4 +31,5 @@ MAN3=	RT::Client::REST.3 \
 	RT::Client::REST::Transaction.3 \
 	RT::Client::REST::User.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -26,4 +26,5 @@ USE_PERL5=	modbuild
 MAN3=		HTML::TreeBuilder::LibXML::Node.3 \
 		HTML::TreeBuilder::LibXML.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

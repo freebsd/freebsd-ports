@@ -1,9 +1,5 @@
-# New ports collection makefile for: trac-mastertickets
-# Date created:                      May 18 2007
-# Whom:                              Gerrit Beine <gerrit.beine@gmx.de>
-#
+# Created by: Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	mastertickets
 PORTVERSION=	3.0.2
@@ -29,4 +25,5 @@ PLIST_SUB+=		PORTVERSION=${PORTVERSION} \
 			PYTHONVERSION=${PYTHON_VER}
 PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/TracMasterTickets-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

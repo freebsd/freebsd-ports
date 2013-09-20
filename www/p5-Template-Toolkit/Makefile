@@ -26,6 +26,7 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	TT_ACCEPT=y
 
+NO_STAGE=	yes
 .include "Makefile.man"
 
 .include <bsd.port.options.mk>

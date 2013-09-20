@@ -19,6 +19,7 @@ CONFIGURE_ARGS=	--with-plugin-headers
 
 MAN1=		cssed.1
 
+NO_STAGE=	yes
 post-patch:
 .for file in scintilla/gtk/ScintillaGTK.cxx
 	@cd ${WRKSRC} && ${MV} ${file} ${file}.pre_tr \

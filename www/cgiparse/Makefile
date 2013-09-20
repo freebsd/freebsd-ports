@@ -16,6 +16,7 @@ MAN3=		cgiclose.3 cgigetvalue.3 cginewquerystr.3
 USE_LDCONFIG=	yes
 CFLAGS+=	"-fPIC"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

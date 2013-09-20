@@ -56,6 +56,7 @@ USE_HORDE_RUN=	Horde_Role \
 # Optional in package but we want them in
 USE_HORDE_RUN+=	Horde_Feed
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(WITH_FACEBOOK)

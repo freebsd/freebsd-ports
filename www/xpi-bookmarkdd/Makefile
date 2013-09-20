@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-bookmarkdd
-# Date created:		2007-09-21
-# Whom:			Gustavo Fukao <gustavofukao@gmail.com>
-#
+# Created by: Gustavo Fukao <gustavofukao@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	bookmarkdd
 PORTVERSION=	0.7.5
@@ -21,5 +17,6 @@ XPI_FILES=	chrome.manifest install.rdf \
 		defaults/preferences/prefs.js
 XPI_DIRS=	chrome defaults/preferences defaults
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-HTML-Chunks
-# Date created:        27 November 2005
-# Whom:                Alexander Koch <fbsd@meersau.de>
-#
+# Created by: Alexander Koch <fbsd@meersau.de>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Chunks
 PORTVERSION=	1.55.1
@@ -23,4 +19,5 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN3=		HTML::Chunks.3 HTML::Chunks::Local.3 HTML::Chunks::Super.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

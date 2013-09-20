@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-cherrypy
-# Date created:		2006-01-11
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	cherrypy
 PORTVERSION=	3.2.2
@@ -31,6 +27,7 @@ PLIST_SUB=	PY2=${PY2} PYMAJORVER=${PYMAJORVER}
 
 PYMAJORVER=	${PYTHON_VER:R}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

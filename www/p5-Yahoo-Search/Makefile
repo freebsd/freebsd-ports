@@ -24,4 +24,5 @@ MAN3=	Yahoo::Search.3 \
 	Yahoo::Search::Result.3 \
 	Yahoo::Search::XML.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

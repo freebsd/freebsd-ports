@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jesred
-# Date created:		Mon Nov  8 17:42:20 MSK 1999
-# Whom:			dsh@vlink.ru
-#
+# Created by: dsh@vlink.ru
 # $FreeBSD$
-#
 
 PORTNAME=	jesred
 PORTVERSION=	1.2.1
@@ -16,6 +12,7 @@ DISTNAME=	jesred-1.2pl1
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	A redirector for Squid
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jesred ${PREFIX}/libexec
 	${MKDIR} ${PREFIX}/etc/jesred

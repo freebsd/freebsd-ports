@@ -1,11 +1,5 @@
-#
-# New ports collection makefile for: osCommerce
-#
-# Date Created:	Dec  5 2003
-# Whom:		Travis Campbell <hcoyote@ghostar.org>
-#
+# Created by: Travis Campbell <hcoyote@ghostar.org>
 # $FreeBSD$
-#
 
 PORTNAME=	oscommerce
 DISTVERSION=	2.2rc2a
@@ -25,6 +19,7 @@ SUB_FILES=	pkg-message
 DOCS=		CHANGELOG LICENSE STANDARD community_docs.pdf \
 			documentation.pdf upgrade.html
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${WWWDIR}
 	${CP} -R ${WRKSRC}/catalog ${WWWDIR}

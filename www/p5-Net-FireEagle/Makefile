@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-FireEagle
-# Date created:				2008-04-02
-# Whom:					Steven Kreuzer <skreuzer@exit2shel.com>
-#
+# Created by: Steven Kreuzer <skreuzer@exit2shel.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-FireEagle
 PORTVERSION=	1.6
@@ -27,4 +23,5 @@ USE_PERL5=	configure
 MAN1=		fireeagle.1
 MAN3=		Net::FireEagle.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -25,6 +25,7 @@ GNU_CONFIGURE=	yes
 MAN8=		fcgiwrap.8
 PLIST_FILES=	sbin/fcgiwrap
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's/@prefix@@mandir@/@mandir@/' ${WRKSRC}/Makefile.in
 

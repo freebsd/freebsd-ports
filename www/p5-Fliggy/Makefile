@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Fliggy
-# Date created:		04 Dec 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Fliggy
 PORTVERSION=	0.009003
@@ -27,4 +22,5 @@ MAN3=	Fliggy.3 \
 	Fliggy::Server.3 \
 	Plack::Handler::Fliggy.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

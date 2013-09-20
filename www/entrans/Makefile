@@ -20,6 +20,7 @@ PLIST=		${WRKDIR}/pkg-plist
 
 PORTDOCS=	README INSTALL COPYING AUTHORS HACKING THANKS
 
+NO_STAGE=	yes
 pre-install:
 	cd ${WRKSRC} && ${FIND} -s * -type f | \
 		${SED} -e 's|^|${ENTRANS}/|' > ${PLIST} \

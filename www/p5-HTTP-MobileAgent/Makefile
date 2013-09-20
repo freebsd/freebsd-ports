@@ -34,4 +34,5 @@ MAN3=		HTTP::MobileAgent.3 \
 		HTTP::MobileAgent::NonMobile.3 \
 		HTTP::MobileAgent::Vodafone.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

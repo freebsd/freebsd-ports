@@ -37,6 +37,7 @@ BENCHMARKS_DESC=	Install some benchmark programs
 TLS_DESC=		Build and install tlsgatling
 ZLIB_DESC=		Compress outgoing data
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBENCHMARKS}

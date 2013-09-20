@@ -29,4 +29,5 @@ USE_PERL5=	configure
 MAN1=		gist.1
 MAN3=		App::gist.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

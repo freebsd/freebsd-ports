@@ -42,6 +42,7 @@ APACHEDIR=	${MASTERDIR}
 WITH_MPM?=		prefork # or worker, event, itk, peruser
 WITH_HTTP_PORT?=	80
 
+NO_STAGE=	yes
 .include "${APACHEDIR}/Makefile.options"
 .include <bsd.port.options.mk>
 .include "${APACHEDIR}/Makefile.doc"

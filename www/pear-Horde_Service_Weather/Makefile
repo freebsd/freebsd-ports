@@ -1,7 +1,4 @@
-# Ports collection makefile for:  pear-Horde_Service_Weather
-# Date created:			  3 March 2012
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Horde_Service_Weather
@@ -18,6 +15,7 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Http \
 		Horde_Url
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
 .include <bsd.port.post.mk>

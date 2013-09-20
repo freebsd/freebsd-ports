@@ -16,6 +16,7 @@ COMMENT=	The Kwiki Wiki Building Framework
 KWIKIDIR?=	kwiki
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/${KWIKIDIR}
 	${CP} -RH ${WRKSRC}/ ${PREFIX}/${KWIKIDIR}

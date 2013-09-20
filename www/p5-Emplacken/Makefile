@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Emplacken
-# Date created:		2011-02-16
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Emplacken
 PORTVERSION=	0.01
@@ -35,4 +31,5 @@ USE_PERL5=	configure
 MAN3=		Emplacken.3 \
 		Emplacken::Types.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

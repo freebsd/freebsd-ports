@@ -29,4 +29,5 @@ USE_PERL5=	modbuild
 MAN3=	Amon2::Lite.3 \
 	Amon2::Setup::Flavor::Lite.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

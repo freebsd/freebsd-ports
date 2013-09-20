@@ -1,9 +1,5 @@
-# New ports collection makefile for:	free-sa
-# Date created:				22 Mar 2007
-# Whom:					Anton Karpov <toxa@toxahost.ru>
-#
+# Created by: Anton Karpov <toxa@toxahost.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	free-sa
 PORTVERSION=	1.6.2
@@ -22,6 +18,7 @@ MAN5=	free-sa.conf.5
 CONFLICTS=	free-sa-devel[0-9]*
 LATEST_LINK=	free-sa
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

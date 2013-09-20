@@ -41,6 +41,7 @@ DESKTOP_ENTRIES="RSSOwl" \
 		"Network;News;Java;" \
 		true
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$${java\.io\.tmpdir}/source/|$${basedir}/temp/|; \

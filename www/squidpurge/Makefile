@@ -1,9 +1,5 @@
-# New ports collection makefile for:	squidpurge
-# Date created:		Fri Oct 19 23:00:00 WST 2001
-# Whom:			Dean Hollister <dean@odyssey.apana.org.au>
-#
+# Created by: Dean Hollister <dean@odyssey.apana.org.au>
 # $FreeBSD$
-#
 
 PORTNAME=	squidpurge
 PORTVERSION=	1.17
@@ -22,6 +18,7 @@ WRKSRC=		${WRKDIR}/purge
 
 PLIST_FILES=	sbin/purge
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/purge ${PREFIX}/sbin
 

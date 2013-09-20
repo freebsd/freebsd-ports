@@ -31,4 +31,5 @@ MAN3=		WebService::BuzzurlAPI.3 \
 		WebService::BuzzurlAPI::Response.3 \
 		WebService::BuzzurlAPI::Request.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

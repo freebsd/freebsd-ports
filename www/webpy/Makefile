@@ -1,9 +1,5 @@
-# New ports collection makefile for:	webpy
-# Date created:		2008-12-24
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	webpy
 PORTVERSION=	0.37
@@ -19,4 +15,5 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	web.py
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

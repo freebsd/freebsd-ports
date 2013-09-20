@@ -103,6 +103,7 @@ MAN3=		Gungho.3 \
 		Gungho::Response.3 \
 		Gungho::Util.3
 
+NO_STAGE=	yes
 post-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/script/gungho ${PREFIX}/bin/gungho
 

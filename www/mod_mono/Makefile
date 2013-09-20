@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--man=${PREFIX}/man
 
 MAN8=		mod_mono.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${APACHE_VERSION} == 13
 MOD_MONOCONFDIR=${APACHEETCDIR}

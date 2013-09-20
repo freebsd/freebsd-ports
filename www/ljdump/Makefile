@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ljdump
-# Date created:				11 Jan 2008
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ljdump
 PORTVERSION=	1.5
@@ -20,6 +16,7 @@ USE_PYTHON_RUN=	yes
 
 PLIST_FILES=	bin/ljdump etc/ljdump.config.sample
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE}, ; \
 		s,%%PREFIX%%,${PREFIX},' ${WRKSRC}/ljdump.py

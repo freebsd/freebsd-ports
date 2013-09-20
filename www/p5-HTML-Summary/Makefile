@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-Summary
-# Date created:			3 January 2000
-# Whom:				Dmitry Sivachenko <dima@Chg.RU>
-#
+# Created by: Dmitry Sivachenko <dima@Chg.RU>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Summary
 PORTVERSION=	0.017
@@ -21,4 +17,5 @@ USE_PERL5=	configure
 
 MAN3=		HTML::Summary.3 Text::Sentence.3 Lingua::JA::Jtruncate.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

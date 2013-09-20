@@ -1,4 +1,4 @@
-# Created by:	Christopher Key <cjk32@cam.ac.uk>
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
 
 PORTREVISION=	0
@@ -14,4 +14,5 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -59,6 +59,7 @@ MAN3=		HTML::Mason.3 \
 
 OPTIONS_DEFINE=	MODPERL
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/bin\/convert/d' ${WRKSRC}/Makefile.PL
 

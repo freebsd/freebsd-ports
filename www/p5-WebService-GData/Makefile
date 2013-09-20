@@ -48,4 +48,5 @@ MAN3=	WebService::GData::Error.3 \
 	WebService::GData::YouTube::Feed::PlaylistLink.3 \
 	WebService::GData::YouTube::Feed::VideoMessage.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-django-threaded-multihost
-# Date created:				8 December 2009
-# Whom:					Kevin Golding <ports@caomhin.org>
-#
+# Created by: Kevin Golding <ports@caomhin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	django-threaded-multihost
 PORTVERSION=	1.4.1
@@ -28,4 +24,5 @@ PYEASYINSTALL_EGG=	${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PORTVERSION:C/(
 PYEASYINSTALL_UNINSTALLARGS=	-q -m -S ${PYTHON_SITELIBDIR} \
 				${PYDISTUTILS_PKGNAME}==${PYDISTUTILS_PKGVERSION:C/([[:digit:]]\.[[:digit:]])\./\1_/g}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

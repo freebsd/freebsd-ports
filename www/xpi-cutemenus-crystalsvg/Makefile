@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-cutemenus-crystalsvg
-# Date created:			4 May 2006
-# Whom:				Lapo Luchini <lapo@lapo.it>
-#
+# Created by: Lapo Luchini <lapo@lapo.it>
 # $FreeBSD$
-#
 
 PORTNAME=	cutemenus-crystalsvg
 PORTVERSION=	1.9.3
@@ -20,5 +16,6 @@ XPI_FILES=	chrome/cutemenus.jar chrome.manifest components/cutemenus.js\
 		defaults/preferences/cutemenus.js install.js install.rdf
 XPI_DIRS=	chrome components defaults/preferences defaults
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

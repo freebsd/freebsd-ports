@@ -1,9 +1,5 @@
-# New ports collection makefile for:	webtrees
-# Date created:				2010 December 13
-# Whom:					J.R. Oldroyd <fbsd@opal.com>
-#
+# Created by: J.R. Oldroyd <fbsd@opal.com>
 # $FreeBSD$
-#
 
 PORTNAME=	webtrees
 PORTVERSION=	1.0.6
@@ -23,6 +19,7 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message pkg-deinstall
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

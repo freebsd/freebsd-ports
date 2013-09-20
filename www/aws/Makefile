@@ -45,6 +45,7 @@ CONF_ARGS+=	prefix=${PREFIX}
 CONF_ARGS+=	LPATH=${PREFIX}/lib
 CONF_ARGS+=	ZPATH=/usr/lib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 ###################

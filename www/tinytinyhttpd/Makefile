@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tinytinyhttpd
-# Date created:		01 Aug 2009
-# Whom:			Shinsuke Matsui <smatsui@karashi.org>
-#
+# Created by: Shinsuke Matsui <smatsui@karashi.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tinytinyhttpd
 PORTVERSION=	0.0.11
@@ -20,6 +16,7 @@ PLIST_FILES=	bin/tthttpd
 SUB_FILES=	example.conf
 PORTDOCS=	README example.conf ChangeLog
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tthttpd ${PREFIX}/bin
 

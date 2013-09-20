@@ -148,4 +148,5 @@ MODULE_FILES=	contrib/image_attach/tests/image_attach.test \
 
 DOC_FILES=	LICENSE.txt CHANGELOG.txt INSTALL.txt README.txt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

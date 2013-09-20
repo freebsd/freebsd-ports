@@ -1,9 +1,5 @@
-# New ports collection makefile for:	CGI-ArgChecker
-# Date created:				Mon Jan  1 11:01:44 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-ArgChecker
 PORTVERSION=	0.02
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		CGI::ArgChecker.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

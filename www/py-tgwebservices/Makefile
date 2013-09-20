@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-tgwebservices
-# Date created:		2007-02-14
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tgwebservices
 PORTVERSION=	1.2.4
@@ -24,4 +20,5 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TGWebServices
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

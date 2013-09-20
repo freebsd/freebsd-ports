@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-swish
-# Date created:			2007/03/02
-# Whom:				chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	swish
 PORTVERSION=	0.5.0
@@ -24,4 +20,5 @@ USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--enable-swish --with-swish=${LOCALBASE}/bin
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

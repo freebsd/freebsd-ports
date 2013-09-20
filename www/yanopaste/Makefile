@@ -15,6 +15,7 @@ USE_PHP=	xsl session xmlwriter xmlreader
 SUB_FILES=	pkg-message
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

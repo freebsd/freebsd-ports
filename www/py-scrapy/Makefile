@@ -24,6 +24,7 @@ OPTIONS_DEFINE=	SSL
 OPTIONS_DEFAULT=SSL
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}

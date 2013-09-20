@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-wmlbrowser
-# Date created:		27 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wmlbrowser
 PORTVERSION=	0.7.28
@@ -18,5 +14,6 @@ XPI_FILES=	chrome/wmlbrowser.jar components/wml-service.js defaults/preferences/
 		install.js install.rdf chrome.manifest
 XPI_DIRS=	chrome components defaults/preferences defaults
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

@@ -1,10 +1,5 @@
-# New ports collection makefile for: ClearSilver
-# Date created:                      17 April 2004
-# Whom:                              thinker <thinker@branda.to>
-# Whom:                              Rui Lopes <rui@ruilopes.com>
-#
+# Created by: thinker <thinker@branda.to>
 # $FreeBSD$
-#
 
 PORTNAME=	clearsilver
 PORTVERSION=	0.10.5
@@ -63,6 +58,7 @@ MAN3=	cBroadcast.3 cCreate.3 cDestroy.3 cSignal.3 cWait.3 \
 	skipDelete.3 skipFreeList.3 skipInsert.3 skipNewList.3 skipNext.3 \
 	skipRelease.3 skipSearch.3 wdb_keys.3
 
+NO_STAGE=	yes
 post-patch:
 	@# Remove CFLAGS when building the python module, pydistfile is used
 	@# and will do the right thing.

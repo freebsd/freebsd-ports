@@ -34,6 +34,7 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS IPV6
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

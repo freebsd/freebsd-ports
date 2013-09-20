@@ -16,6 +16,7 @@ FAQ_DIR=	attachments data images inc pdf xml
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 
+NO_STAGE=	yes
 do-install:
 	-${MKDIR} ${WWWDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR}

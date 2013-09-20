@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Plack::Middleware::AddDefaultCharset
-# Date created:		02 Nov 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Plack-Middleware-AddDefaultCharset
 PORTVERSION=	0.02
@@ -23,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=	Plack::Middleware::AddDefaultCharset.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -20,6 +20,7 @@ MAN1=		otptool.1
 
 PORTEXAMPLES=	users.sample
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-libapreq2
-# Date created:				June 5, 2004
-# Whom:	      				Autrijus Tang <autrijus@autrijus.org>
-#
+# Created by: Autrijus Tang <autrijus@autrijus.org>
 # $FreeBSD$
-#
 
 CATEGORIES=	www perl5 devel
 
@@ -15,4 +11,5 @@ MASTERDIR=	${.CURDIR}/../libapreq2
 WITH_MODPERL2=	yes
 MAKE_ENV+=	MAKE=${GMAKE} ## MakeMaker blows it without this
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_auth_mysql2
-# Date created:				Sep 10 2005
-# Whom:					Clement Laforet <clement@FreeBSD.org>
-#
+# Created by: Clement Laforet <clement@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_auth_mysql
 PORTVERSION=	1.10
@@ -38,6 +34,7 @@ AP_EXTRAS+=	-DMYSQL_USE_SSL
 PORTDOCS=	INSTALL example_data.html htpasswd.sql
 .endif
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

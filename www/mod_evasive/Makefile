@@ -21,6 +21,7 @@ AP_GENPLIST=	yes
 
 PORTDOCS=	LICENSE README test.pl
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 MODULENAME=	${PORTNAME}20

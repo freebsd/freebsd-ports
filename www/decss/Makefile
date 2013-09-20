@@ -15,6 +15,7 @@ WRKSRC=		${WRKDIR}/source
 NO_BUILD=	YES
 USES=		perl5
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/DeCSS ${PREFIX}/bin/decss
 	${MKDIR} ${PREFIX}/share/doc/decss

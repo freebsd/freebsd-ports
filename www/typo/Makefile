@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/typo
-# Date created:				May 29th 2005
-# Whom:					Jonathan Weiss <jw@innerewut.de>
-#
+# Created by: Jonathan Weiss <jw@innerewut.de>
 # $FreeBSD$
-#
 
 PORTNAME=	typo
 PORTVERSION=	5.3
@@ -23,6 +19,7 @@ NO_BUILD=	yes
 
 TYPODIR=	www/${DISTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${CP} -R ${WRKSRC} ${PREFIX}/${TYPODIR}
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${TYPODIR}/log

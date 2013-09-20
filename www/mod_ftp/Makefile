@@ -18,6 +18,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=configure.apxs
 CONFIGURE_ENV+=	APXS="${APXS}"
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 	${TEST} -e ${PREFIX}/${APACHEETCDIR}/extra/ftpd.conf ||	\

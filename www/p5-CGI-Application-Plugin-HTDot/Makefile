@@ -1,9 +1,5 @@
-# New ports collection makefile for:	CGI::Application::Plugin::HTDot
-# Date created:				05 March 2006
-# Whom:					Espen Tagestad <espen@tagestad.no>
-#
+# Created by: Espen Tagestad <espen@tagestad.no>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Application-Plugin-HTDot
 PORTVERSION=	0.07
@@ -26,4 +22,5 @@ USE_PERL5=	configure
 
 MAN3=		CGI::Application::Plugin::HTDot.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

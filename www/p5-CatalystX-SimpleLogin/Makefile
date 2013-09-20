@@ -52,4 +52,5 @@ MAN3=		Catalyst::ActionRole::NeedsLogin.3 \
 		CatalystX::SimpleLogin::TraitFor::Controller::Login::RenderAsTTTemplate.3 \
 		CatalystX::SimpleLogin::TraitFor::Controller::Login::WithRedirect.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

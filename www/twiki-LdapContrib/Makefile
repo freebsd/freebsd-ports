@@ -11,5 +11,6 @@ COMMENT=	LDAP services for TWiki
 
 RUN_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../twiki/bsd.twiki.mk"
 .include <bsd.port.mk>

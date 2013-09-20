@@ -34,6 +34,7 @@ SSL_DESC=	SSL proxying (not scanned, only forwarded!)
 CLAMAV_DESC=	libclamav support
 TROPHIE_DESC=	Trend Micro (Trophie) support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}

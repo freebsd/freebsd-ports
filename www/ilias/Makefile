@@ -35,6 +35,7 @@ SUB_LIST=	ILIASDATADIR=${ILIASDATADIR}
 
 OPTIONS_DEFINE=	SCORM2004 Checker Mail Docs
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSCORM2004}

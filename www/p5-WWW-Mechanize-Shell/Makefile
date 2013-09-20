@@ -32,6 +32,7 @@ MAN3=		WWW::Mechanize::Shell.3
 PORTDOCS=	Changes README
 PORTEXAMPLES=	banking.postbank.de.mech hotmail.signup.mech wwwshell.pl
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

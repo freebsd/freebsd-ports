@@ -22,4 +22,5 @@ MAN3=	Template::Alloy.3 Template::Alloy::Compile.3 \
 	Template::Alloy::TT.3 Template::Alloy::Tmpl.3 \
 	Template::Alloy::VMethod.3 Template::Alloy::Velocity.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

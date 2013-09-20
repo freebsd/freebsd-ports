@@ -41,6 +41,7 @@ MAN3=	Scrappy.3 \
 	Scrappy::Scraper::Parser.3 \
 	Scrappy::Session.3
 
+NO_STAGE=	yes
 post-patch:
 	rm -f ${WRKSRC}/perltidy.pl
 	rm -f ${WRKSRC}/lib/Scrappy.pm.bak

@@ -31,6 +31,7 @@ SHEBANG_FILES=	utils/aub \
 		utils/help2man \
 		utils/make_dir_index.pl
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${LOCALBASE}/bin/xlsfonts)

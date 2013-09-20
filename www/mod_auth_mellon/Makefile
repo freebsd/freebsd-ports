@@ -23,4 +23,5 @@ USE_APACHE=		22
 
 PLIST_FILES=		${APACHEMODDIR}/mod_auth_mellon.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

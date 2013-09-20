@@ -18,6 +18,7 @@ USE_PYTHON=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 post-extract:
 	@${RM}	${WRKSRC}/.bzrignore
 	@${FIND} ${WRKSRC}/ -type d -name '.bzr' | ${XARGS} ${RM} -rf

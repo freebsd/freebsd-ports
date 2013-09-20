@@ -38,6 +38,7 @@ MAN1=		node.1
 
 WAF_ARGS=	--jobs=${MAKE_JOBS_NUMBER}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSHARED_V8}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libghttp
-# Date Created:				24 Dec 1998
-# Whom:					Vanilla I. Shu <vanilla@FreeBSD.org>
-#
+# Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libghttp
 PORTVERSION=	1.0.9
@@ -18,4 +14,5 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

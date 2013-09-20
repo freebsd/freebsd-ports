@@ -28,6 +28,7 @@ OPTIONS_DEFINE=	DEFAULT_COLORS IPV6 NLS SSL
 OPTIONS_DEFAULT=	SSL
 DEFAULT_COLORS_DESC=	Colors support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MNLS)

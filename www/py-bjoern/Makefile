@@ -1,6 +1,5 @@
 # Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	bjoern
 PORTVERSION=	1.3.4
@@ -23,4 +22,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lc
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PORTNAME}.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for: py-apachelog
-# Date created:		12 mar 2007
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	apachelog
 PORTVERSION=	1.1
@@ -18,4 +14,5 @@ COMMENT=	Python access log parser.
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

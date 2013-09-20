@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST}
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 NO_LATEST_LINK=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64

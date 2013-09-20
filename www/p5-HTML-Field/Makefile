@@ -1,9 +1,5 @@
-# New ports collection makefile for:	HTML::Field
-# Date created:				28 November 2009
-# Whom:					Sahil Tandon <sahil@tandon.net>
-#
+# Created by: Sahil Tandon <sahil@tandon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Field
 PORTVERSION=	1.19
@@ -20,4 +16,5 @@ MAN3=		HTML::Field.3 \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

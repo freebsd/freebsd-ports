@@ -27,6 +27,7 @@ PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_antiloris.conf
 SUB_FILES+=	pkg-message.rules
 .endif
 
+NO_STAGE=	yes
 post-install:
 .if !defined(SKIP_RULES)
 	@${INSTALL_DATA} ${WRKDIR}/mod_antiloris.conf ${PREFIX}/${APACHEETCDIR}/Includes/

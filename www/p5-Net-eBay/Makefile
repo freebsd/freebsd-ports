@@ -30,6 +30,7 @@ USES=		perl5
 
 MAN3=		Net::eBay.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

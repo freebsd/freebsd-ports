@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pastescript
-# Date created:		15 December 2006
-# Whom:			Dryice Liu	<dryice@dryice.name>
-#
+# Created by: Dryice Liu	<dryice@dryice.name>
 # $FreeBSD$
-#
 
 PORTNAME=	PasteScript
 PORTVERSION=	1.7.5
@@ -25,4 +21,5 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

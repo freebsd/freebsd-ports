@@ -18,4 +18,5 @@ CONFIGURE_ARGS=	LIBS="-L${LOCALBASE}/lib -lghttp" INC="-I${LOCALBASE}/include"
 
 MAN3=		HTTP::GHTTP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

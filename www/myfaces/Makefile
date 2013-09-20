@@ -24,6 +24,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		${JAR_FILES:S|^|%%DATADIR%%/|}
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

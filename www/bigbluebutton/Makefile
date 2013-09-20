@@ -77,6 +77,7 @@ SUB_LIST+=	PORTNAME=${PORTNAME} \
 
 SUB_FILES=	pkg-message openoffice nginx.conf-dist bbb-conf
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMEETME} || ${PORT_OPTIONS:MKONFERENCE}

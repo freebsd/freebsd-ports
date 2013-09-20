@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-Google-Calculator
-# Date created:		2006-07-29
-# Whom:			Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-#
+# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Google-Calculator
 PORTVERSION=	0.07
@@ -28,4 +24,5 @@ USE_PERL5=	configure
 
 MAN3=		WWW::Google::Calculator.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

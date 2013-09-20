@@ -1,4 +1,3 @@
-# Created by: Andrej Zverev <az@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Model-LDAP
@@ -24,4 +23,5 @@ MAN3=	Catalyst::Model::LDAP::Entry.3 Catalyst::Model::LDAP::Search.3 \
 	Catalyst::Helper::Model::LDAP.3 Catalyst::Model::LDAP::Connection.3 \
 	Catalyst::Model::LDAP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

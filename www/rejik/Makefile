@@ -30,6 +30,7 @@ BAN_DESC=	With banlists
 DBL_DESC=	With DBL scripts
 WWW_DESC=	With error pages
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Redifine this if you need

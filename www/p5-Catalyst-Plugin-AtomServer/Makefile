@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Catalyst-Plugin-AtomServer
-# Date created:				2008-08-22
-# Whom:					Oleg Mamontov <oleg@mamontov.net>
-#
+# Created by: Oleg Mamontov <oleg@mamontov.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Plugin-AtomServer
 PORTVERSION=	0.04
@@ -30,4 +26,5 @@ MAN3=		Catalyst::Plugin::AtomServer.3					\
 		Catalyst::Plugin::Authentication::Credential::Atom.3		\
 		Catalyst::View::Atom::XML.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=		erwin.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|gtkhtml-3.6|gtkhtml-3.14|g" \
 		${WRKSRC}/configure

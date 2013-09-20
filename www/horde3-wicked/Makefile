@@ -1,9 +1,5 @@
-# Ports collection makefile for:  horde-wicked
-# Date created:			  Jul 20, 2008
-# Whom:				  Beech Rintoul <beech@FreeBSD.org>
-#
+# Created by: Beech Rintoul <beech@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wicked
 DISTVERSIONPREFIX?=
@@ -22,5 +18,6 @@ PORTDOCS=	README CHANGES CREDITS INSTALL TODO
 
 BUILD_DEPENDS+=	${PEARDIR}/Text/Wiki.php:${PORTSDIR}/www/pear-Text_Wiki
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../www/horde3-base/bsd.horde.mk"
 .include <bsd.port.mk>

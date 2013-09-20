@@ -1,9 +1,5 @@
-# New ports collection makefile for:   lilurl
-# Date created:                2006/09/10
-# Whom:                        chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	lilurl
 PORTVERSION=	0.1.1
@@ -23,6 +19,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

@@ -18,6 +18,7 @@ USE_ZIP=	yes
 USES=		perl5
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-extract:
 	${SED} -e 's|__DATADIR__|${DATADIR}|' ${FILESDIR}/setup.sh \
 		>${WRKSRC}/setup.sh

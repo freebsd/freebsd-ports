@@ -1,9 +1,5 @@
-# New ports collection makefile for:   blogsum
-# Date created:        2 November 2009
-# Whom:                jhuldtgren
-#
+# Created by: jhuldtgren
 # $FreeBSD$
-#
 
 PORTNAME=	blogsum
 PORTVERSION=	1.1
@@ -27,6 +23,7 @@ NO_BUILD=	yes
 USE_PERL5=	run
 USE_APACHE_RUN=	22+
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SUB_FILES=	pkg-message

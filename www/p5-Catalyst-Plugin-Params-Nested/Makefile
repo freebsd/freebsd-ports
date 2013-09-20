@@ -21,4 +21,5 @@ USE_PERL5=	configure
 MAN3=	Catalyst::Plugin::Params::Nested.3 \
 	Catalyst::Plugin::Params::Nested::Expander.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

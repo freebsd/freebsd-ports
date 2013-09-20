@@ -21,6 +21,7 @@ SUB_FILES=	pkg-deinstall
 OPTIONS_DEFINE=	TOMCAT7
 TOMCAT7_DESC=	Use Tomcat instead of default Jetty
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTOMCAT7}

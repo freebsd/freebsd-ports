@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-LWP-UserAgent-Determined
-# Date created:				2008-03-16
-# Whom:					Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	LWP-UserAgent-Determined
 PORTVERSION=	1.06
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		LWP::UserAgent::Determined.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

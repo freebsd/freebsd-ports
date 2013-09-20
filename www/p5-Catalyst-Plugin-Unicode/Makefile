@@ -1,4 +1,3 @@
-# Ports collection makefile for:	p5-Catalyst-Plugin-Unicode
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
 
@@ -23,6 +22,7 @@ USE_PERL5=	configure
 
 MAN3=	Catalyst::Plugin::Unicode.3
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e '/build_requires/d' ${WRKSRC}/Makefile.PL
 

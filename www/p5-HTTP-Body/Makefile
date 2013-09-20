@@ -31,4 +31,5 @@ MAN3=		HTTP::Body.3 \
 		HTTP::Body::XForms.3 \
 		HTTP::Body::XFormsMultipart.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -32,6 +32,7 @@ USE_LDCONFIG=	yes
 MAN1=		htntlm.1 htproxy.1 htremote.1 httest.1
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|`$$APR_CONFIG --cflags`||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' ${WRKSRC}/generate_modules_c.sh

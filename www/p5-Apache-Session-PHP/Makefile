@@ -19,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		Apache::Session::PHP.3 Apache::Session::Serialize::PHP.3 Apache::Session::Store::PHP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -16,6 +16,7 @@ MAKE_ARGS=	CC="${CC}" FLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/asp2php
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgtk12}

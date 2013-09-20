@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-modify_headers
-# Date created:			24 January 2009
-# Whom:				Dominic Fandrey <kamikaze@bsdforen.de>
-#
+# Created by: Dominic Fandrey <kamikaze@bsdforen.de>
 # $FreeBSD$
-#
 
 PORTNAME=	modify_headers
 PORTVERSION=	0.7.1.2b
@@ -70,6 +66,7 @@ XPI_DIRS=	chrome/content/bindings \
 		defaults/preferences \
 		defaults
 
+NO_STAGE=	yes
 post-patch:
 		@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} \{} \;
 

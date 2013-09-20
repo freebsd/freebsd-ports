@@ -61,6 +61,7 @@ MAN7=	wml_barebone.7 \
 	wml_std_html401.7 wml_std_wai10.7 wml_std_xhtml10.7 \
 	wml_intro.7 wml_macros.7 wml_tutorial.7 wml_faq.7 wml_tags.7
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

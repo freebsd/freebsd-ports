@@ -45,4 +45,5 @@ MAN3=		PocketIO.3 \
 		PocketIO::Transport::XHRMultipart.3 \
 		PocketIO::Transport::XHRPolling.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

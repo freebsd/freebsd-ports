@@ -33,6 +33,7 @@ OPTIONS_DEFINE=	PDOPGSQL PDOMYSQL
 PDOPGSQL_DESC=	Install POSTGRESQL PDO Connector
 PDOMYSQL_DESC=	Install MySQL PDO Connector
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPDOPGSQL}

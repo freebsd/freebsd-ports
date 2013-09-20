@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-Shorten-Bitly
-# Date created:				May 7, 2009
-# Whom:					Masafumi NAKANE <max@FreeBSD.org>
-#
+# Created by: Masafumi NAKANE <max@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Shorten-Bitly
 PORTVERSION=	1.17
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 MAN1=		bitly_url.1
 MAN3=		WWW::Shorten::Bitly.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

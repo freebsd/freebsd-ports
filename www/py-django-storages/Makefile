@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-django-storages
-# Date created:		2011-02-26
-# Whom:			Li-Wen Hsu <lwhsu@FreeBSD.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	django-storages
 PORTVERSION=	1.1.4
@@ -17,4 +13,5 @@ COMMENT=	Generic storages for Django
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -29,4 +29,5 @@ USE_PERL5=	configure
 MAN3=		HTML::FormFu::Constraint::DBIC::Unique.3 \
 		HTML::FormFu::Model::DBIC.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

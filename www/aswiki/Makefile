@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-aswiki
-# Date created:		13 June 2003
-# Whom:			Makoto Matsushita <matusita@FreeBSD.org>
-#
+# Created by: Makoto Matsushita <matusita@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=		aswiki
 PORTVERSION=		1.0.4
@@ -24,6 +20,7 @@ USE_RUBY=		YES
 RUBY_SHEBANG_FILES=	aswiki.cgi
 USE_RUBY_FEATURES=	strscan
 
+NO_STAGE=	yes
 post-extract:
 	${CP} ${FILESDIR}/setup.sh ${WRKSRC}
 

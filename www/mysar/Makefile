@@ -30,6 +30,7 @@ SUB_FILES=	pkg-message
 SUB_LIST=	MYSARDIR=${MYSARDIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 post-extract:
 	${CHMOD} +x ${WRKSRC}/config/*
 

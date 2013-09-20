@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textpattern
-# Date created:		30 Nov 2005
-# Whom:			babak@farrokhi.net
-#
+# Created by: babak@farrokhi.net
 # $FreeBSD$
-#
 
 PORTNAME=	textpattern
 PORTVERSION=	4.2.0
@@ -20,6 +16,7 @@ USE_PHP=	mbstring xml mysql pcre
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	-${MKDIR} ${WWWDIR}
 	@${CP} -R ${WRKSRC}/ ${WWWDIR}/

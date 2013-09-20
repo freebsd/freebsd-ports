@@ -1,9 +1,5 @@
-# New ports collection makefile for:	HTML-Template-Associate
-# Date created:				2 Sep 2003
-# Whom:					Manuel Rábade <mig@mig-29.net>
-#
+# Created by: Manuel Rábade <mig@mig-29.net>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Template-Associate
 PORTVERSION=	2.01
@@ -26,4 +22,5 @@ MAN3=		HTML::Template::Associate.3 \
 		HTML::Template::Associate::DBI.3 \
 		HTML::Template::Associate::FormValidator.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

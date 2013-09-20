@@ -1,9 +1,5 @@
-# New ports collection makefile for:	samidare
-# Date created:		2008-04-30
-# Whom:			TAKATSU Tomonari <tota@rtfm.jp>
-#
+# Created by: TAKATSU Tomonari <tota@rtfm.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	samidare
 PORTVERSION=	0.7
@@ -26,6 +22,7 @@ RUBY_SHEBANG_FILES=	main.rb rb-link rb2rm rm2rb
 PORTDOCS=	README README.ja
 PORTEXAMPLES=	config.yml t.latest.html
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(RUBY_PROVIDED)

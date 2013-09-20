@@ -39,6 +39,7 @@ NO_BUILD=	yes
 OPTIONS_DEFINE=		CUPS VIDEO GTK2 KDE4
 OPTIONS_DEFAULT=	CUPS VIDEO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MCUPS}

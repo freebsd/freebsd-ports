@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  bk2site
-# Date created:                   Wed Dec 06, 2000
-# Whom:                           clive
-#
+# Created by: clive
 # $FreeBSD$
-#
 
 PORTNAME=	bk2site
 PORTVERSION=	1.1.9
@@ -15,6 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transforms Netscape bookmarks into a Yahoo-like website
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if exists(${APXS})
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}

@@ -19,4 +19,5 @@ MAN1=		thumbnail_index.1
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

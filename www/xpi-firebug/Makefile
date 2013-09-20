@@ -15,5 +15,6 @@ LICENSE=	BSD
 XPI_NUM=	1843
 XPI_ID=		firebug@software.joehewitt.com
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

@@ -25,6 +25,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

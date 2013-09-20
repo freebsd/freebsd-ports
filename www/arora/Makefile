@@ -19,6 +19,7 @@ QMAKE_ARGS+=	-unix -recursive PREFIX=${PREFIX}
 
 MAN1=		arora.1 arora-cacheinfo.1 arora-placesimport.1 htmlToXBel.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == ia64

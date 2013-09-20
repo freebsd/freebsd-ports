@@ -51,6 +51,7 @@ INSTALL_TARGET=	installnodoc
 
 MAN1=		ocsigen.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

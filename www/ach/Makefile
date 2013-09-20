@@ -22,6 +22,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
 
 # Get rid of temp files packaged in the upstream distfile
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -type f -not -name .htaccess -a \
 		-name .\* -delete

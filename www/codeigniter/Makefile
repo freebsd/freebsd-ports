@@ -1,9 +1,5 @@
-# New ports collection makefile for:	codeigniter
-# Date created:        04 January 2008
-# Whom:                Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	codeigniter
 PORTVERSION=	2.1.3
@@ -77,6 +73,7 @@ ODBC=	Install ODBC support for PHP
 PGSQL_DESC=	Install PostgreSQL support for PHP
 SQLITE_DESC=	Install SQLite support for PHP
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}

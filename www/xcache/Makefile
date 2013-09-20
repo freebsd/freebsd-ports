@@ -30,6 +30,7 @@ PLIST_DIRSTRY=	lib/php/%%PHP_EXT_DIR%%
 
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCONSTANT}

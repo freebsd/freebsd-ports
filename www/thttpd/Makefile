@@ -27,6 +27,7 @@ PORTDOCS=	notes.html
 MAN1=		makeweb.1 thttpdpasswd.1
 MAN8=		thttpd.8 redirect.8 ssi.8 syslogtocern.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

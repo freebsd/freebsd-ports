@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-django-appmedia
-# Date created:		2011-02-15
-# Whom:			Kurt Lidl <kurt.lidl@cello.com>
-#
+# Created by: Kurt Lidl <kurt.lidl@cello.com>
 # $FreeBSD$
-#
 
 PORTNAME=	django-appmedia
 PORTVERSION=	1.0.1
@@ -20,4 +16,5 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

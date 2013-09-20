@@ -36,6 +36,7 @@ COOKIES_DESC=		Cookie support
 HYPHENATION_DESC=	Hyphenation file(s) for HYPHENATION_LANGS
 SSL_DESC=		Experimental HTTPS support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOOKIES}

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Plack::Middleware::JSConcat
-# Date created:		07 Apr 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Plack-Middleware-JSConcat
 PORTVERSION=	0.29
@@ -24,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=	Plack::Middleware::JSConcat.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

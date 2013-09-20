@@ -35,6 +35,7 @@ EXPLICIT_PACKAGE_DEPENDS=	yes
 
 PLIST_FILES=	lib/opera/pluginwrapper/operapluginwrapper-ia32-linux
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/opera/pluginwrapper/operapluginwrapper-native \
 		${PREFIX}/lib/opera/pluginwrapper/operapluginwrapper-ia32-linux

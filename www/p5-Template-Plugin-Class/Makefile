@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Template-Plugin-Class
-# Date created:		24 June 2004
-# Whom:			Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Template-Plugin-Class
 PORTVERSION=	0.14
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		Template::Plugin::Class.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

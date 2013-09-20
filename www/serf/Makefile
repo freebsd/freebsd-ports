@@ -22,6 +22,7 @@ CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}/bin/apr-1-config \
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -23,6 +23,7 @@ PLIST_FILES=	include/qdecoder.h \
 		lib/libqdecoder.so \
 		lib/libqdecoder.so.12
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

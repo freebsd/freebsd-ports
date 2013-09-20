@@ -17,4 +17,5 @@ USE_RUBY_FEATURES=	iconv
 RUBYGEM_AUTOPLIST=  yes
 PLIST_FILES=	bin/maruku bin/marutex
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

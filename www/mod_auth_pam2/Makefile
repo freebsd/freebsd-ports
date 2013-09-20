@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_auth_pam2
-# Date created:				Sun Oct  5
-# Whom:					Clement Laforet <sheepkiller@cultdeadsheep.org>
-#
+# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_auth_pam
 PORTVERSION=	1.1.1
@@ -30,6 +26,7 @@ AP_GENPLIST=	yes
 
 AP_EXTRAS+=	-lpam
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}/

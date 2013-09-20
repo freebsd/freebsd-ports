@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Corona
-# Date created:		04 Apr 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Corona
 PORTVERSION=	0.1004
@@ -29,4 +24,5 @@ MAN1=	corona.1
 MAN3=	Corona.3 \
 	Plack::Handler::Corona.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

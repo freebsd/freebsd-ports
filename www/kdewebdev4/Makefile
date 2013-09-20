@@ -24,4 +24,5 @@ USE_QT4=	dbus porting_build \
 		qmake_build moc_build rcc_build uic_build uic3_build
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

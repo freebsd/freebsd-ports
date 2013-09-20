@@ -19,6 +19,7 @@ MAN1=		cplanet.1
 
 OPTIONS_DEFINE=	EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}

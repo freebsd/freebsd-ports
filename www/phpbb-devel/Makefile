@@ -1,9 +1,5 @@
-# New ports collection makefile for:	phpbb-devel
-# Date created:		1 Jun 2007
-# Whom:	      		Zhen REN <bg1tpt@gmail.com>
-#
+# Created by: Zhen REN <bg1tpt@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	phpbb
 PORTVERSION=	3.0.0
@@ -38,6 +34,7 @@ SUB_LIST=	PHPBBURL="${PHPBBURL}" \
 
 PLIST_SUB+=	PHPBBDIR=${PHPBBDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
+NO_STAGE=	yes
 # Set custom variables:
 #
 PHPBBDIR=	${WWWDOCROOT}/${PHPBBURL}

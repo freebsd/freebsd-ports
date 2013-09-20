@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-CGI-FCKeditor
-# Date created:		2007-04-05
-# Whom:			Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-#
+# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-FCKeditor
 PORTVERSION=	0.02
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		CGI::FCKeditor.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

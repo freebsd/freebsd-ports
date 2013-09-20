@@ -34,6 +34,7 @@ MAN1=		luakit.1
 OPTIONS_DEFINE=	LUAJIT
 LUAJIT_DESC=	Use the Just-In-Time compiler for lua
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"

@@ -1,4 +1,4 @@
-# Created by: Lawrence Stewart <lstewart@freebsd.org>
+# Created by: Lawrence Stewart <lstewart@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	plone.app.ldap
@@ -20,4 +20,5 @@ USE_PYTHON=	-2.7
 USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

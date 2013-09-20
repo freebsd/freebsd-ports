@@ -1,9 +1,5 @@
-# New ports collection makefile for:	http_get
-# Date created:				15. May 2003
-# Whom:					Aaron Zauner <az_mail@gmx.at>
-#
+# Created by: Aaron Zauner <az_mail@gmx.at>
 # $FreeBSD$
-#
 
 PORTNAME=	http_get
 PORTVERSION=	1.0.20100619
@@ -25,4 +21,5 @@ PLIST_FILES=	bin/http_get
 USE_OPENSSL=	yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

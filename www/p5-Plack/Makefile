@@ -118,4 +118,5 @@ MAN3=	HTTP::Message::PSGI.3 \
 	Plack::Util.3 \
 	Plack::Util::Accessor.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -50,4 +50,5 @@ MAN3=	Amon2.3 \
 	Amon2::Web::Response::Callback.3 \
 	Amon2::Web::WebSocket.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

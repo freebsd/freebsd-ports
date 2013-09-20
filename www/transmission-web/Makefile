@@ -17,6 +17,7 @@ PORTDOCS=	*
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC}/web -name Makefile.* -delete
 

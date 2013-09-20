@@ -29,4 +29,5 @@ MAN3=		WWW::Search::AltaVista.3 \
 		WWW::Search::AltaVista::Intranet.3 \
 		WWW::Search::AltaVista::Intranet3.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -14,6 +14,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./-/}
 
 USE_RC_SUBR=	www6to4
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}/etc,' \
 		${WRKSRC}/www6to4.c

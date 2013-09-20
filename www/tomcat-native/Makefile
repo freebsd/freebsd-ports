@@ -35,6 +35,7 @@ PLIST_FILES=	lib/libtcnative-1.a \
 		lib/libtcnative-1.so \
 		lib/libtcnative-1.so.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOCSP}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_jk
-# Date created:				Sun May 20 12:58:02 CEST 2001
-# Whom:					Dirk Froemberg <dirk@FreeBSD.org>
-#
+# Created by: Dirk Froemberg <dirk@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_jk
 PORTVERSION=	1.2.37
@@ -21,6 +17,7 @@ COMMENT?=	Apache JK module for connecting to Tomcat using AJP1X
 USE_APACHE?=	22+
 APACHE_VER=	2.0
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 WRKSRC=		${WRKDIR}/tomcat-connectors-${PORTVERSION}-src/native

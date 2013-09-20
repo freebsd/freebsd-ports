@@ -23,6 +23,7 @@ MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ENV=	LIBS=-L${OPENSSLLIB}
 CFLAGS+=	-I${OPENSSLINC}
 
+NO_STAGE=	yes
 do-install:
 	@${RMDIR} ${WRKSRC}/../bin/runs
 	@${MKDIR} ${PREFIX}/webstone-ssl/bin

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	adzap
-# Date created:		03 March 2001
-# Whom:			Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	adzap
@@ -19,6 +16,7 @@ USE_PERL5=	run
 SUB_FILES=	adzap.conf pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 do-configure:
 .for FILE in squid_redirect-nodata wrapzap zapchain
 	${REINPLACE_CMD} -e "s:/usr/bin/perl:${PERL5}:g" \

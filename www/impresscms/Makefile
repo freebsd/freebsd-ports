@@ -16,6 +16,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} htdocs ${WWWDIR}

@@ -44,4 +44,5 @@ MAN3=		Catalyst::Devel.3 \
 		Catalyst::Restarter::Win32.3 \
 		Module::Install::Catalyst.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

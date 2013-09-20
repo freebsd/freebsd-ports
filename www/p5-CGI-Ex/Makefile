@@ -23,6 +23,7 @@ MAN3=		CGI::Ex.3 CGI::Ex::App.3 CGI::Ex::App::Constants.3 \
 
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}/

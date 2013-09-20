@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-django-openid-auth
-# Date created:				31 Jan 2012
-# Whom:					Matthew X. Economou <xenophon+fbsdports@irtnog.org>
-#
+# Created by: Matthew X. Economou <xenophon+fbsdports@irtnog.org>
 # $FreeBSD$
-#
 
 PORTNAME=	django-openid-auth
 PORTVERSION=	0.4
@@ -28,6 +24,7 @@ NO_WRKSUBDIR=	yes
 PORTDOCS=	*.txt *.html
 PORTEXAMPLES=	example_consumer
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

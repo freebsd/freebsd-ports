@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-CGI-Ajax
-# Date created:				19 September 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-Ajax
 PORTVERSION=	0.707
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=	CGI::Ajax.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

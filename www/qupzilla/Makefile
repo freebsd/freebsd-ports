@@ -20,6 +20,7 @@ MAKE_ENV+=	QUPZILLA_PREFIX=${PREFIX}/ USE_LIBPATH=${PREFIX}/lib/
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
+NO_STAGE=	yes
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} ${QMAKEFLAGS} QupZilla.pro

@@ -13,5 +13,6 @@ USE_BZIP2=	yes
 
 USE_LINUX_APPS=	dbusglib dbuslibs alsalib alsa-plugins-oss
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.common"
 .include <bsd.port.mk>

@@ -19,4 +19,5 @@ USES=		perl5
 
 MAN3=		HTTP::Server::Simple::Authen.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

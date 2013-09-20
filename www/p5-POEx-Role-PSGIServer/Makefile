@@ -1,9 +1,4 @@
-# New ports collection makefile for:	POEx::Role::PSGIServer
-# Date created:		09 Oct 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	POEx-Role-PSGIServer
 PORTVERSION=	1.110670
@@ -42,4 +37,5 @@ MAN3=	POEx::Role::PSGIServer.3 \
 	POEx::Role::PSGIServer::Streamer.3 \
 	POEx::Types::PSGIServer.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -49,4 +49,5 @@ MAN3=		Apache::Session.3 \
 		Apache::Session::Store::Sybase.3 \
 		Apache::Session::Sybase.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	rubygem-merb-core
-# Date created:				13 Dec 2011
-# Whom:					Scott Sanders <scott@jssjr.com>
-#
+# Created by: Scott Sanders <scott@jssjr.com>
 # $FreeBSD$
-#
 
 PORTNAME=	merb-core
 PORTVERSION=	1.1.3
@@ -26,4 +22,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/merb
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

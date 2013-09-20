@@ -1,5 +1,4 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	c-icap
@@ -28,6 +27,7 @@ CONFIGURE_ARGS+=	--enable-static \
 			--with-c-icap=${LOCALBASE} \
 			--with-clamav=${LOCALBASE}
 
+NO_STAGE=	yes
 post-install:
 	@${CP} -np ${PREFIX}/etc/c-icap/srv_url_check.conf.default \
 		${PREFIX}/etc/c-icap/srv_url_check.conf || ${TRUE}

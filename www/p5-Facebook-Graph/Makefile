@@ -52,4 +52,5 @@ MAN3=	Facebook::Graph.3 \
 	Facebook::Graph::Role::Uri.3 \
 	Facebook::Graph::Session.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

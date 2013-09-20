@@ -26,4 +26,5 @@ MODULE_FILES=	includes/forum.inc includes/image.inc includes/node.inc \
 		nodewords_og/nodewords_og.module
 DOC_FILES=	README.txt CHANGELOG.txt API.txt LICENSE.txt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

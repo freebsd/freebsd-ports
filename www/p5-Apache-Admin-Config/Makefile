@@ -15,6 +15,7 @@ USE_PERL5=	configure patch
 
 MAN3=		Apache::Admin::Config.3
 
+NO_STAGE=	yes
 post-patch:
 	${PERL} -pi -e 's/(!\$$)/0 && $1/;' \
 		-e 's|(VERSION_FROM\s+=>\s+)(.*)(,.*)$$|$$1$$2$$3\nMAN3PODS=>{$$2=>q!\\\$$(INST_MAN3DIR)/${MAN3}!},|;' \

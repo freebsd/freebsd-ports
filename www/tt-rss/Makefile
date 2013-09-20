@@ -45,6 +45,7 @@ PHP2FIX=	config.php-dist update.php update_daemon2.php
 
 SCRIPTS=	update.php update_daemon2.php
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "	By default, Tiny Tiny RSS will use MySQL as a back-end;"

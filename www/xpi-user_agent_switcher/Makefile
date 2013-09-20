@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-user_agent_switcher
-# Date created:				2009-04-26
-# Whom:					Norikatsu Shigemura <nork@FreeBSD.org>
-#
+# Created by: Norikatsu Shigemura <nork@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	user_agent_switcher
 PORTVERSION=	0.7.3
@@ -21,5 +17,6 @@ XPI_FILES=	chrome.manifest \
 		license.txt
 XPI_DIRS=	chrome
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

@@ -14,6 +14,7 @@ USE_PHP=	mysql
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

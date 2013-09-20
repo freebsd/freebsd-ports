@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pyjamas
-# Date created:		2008-10-07
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pyjamas
 PORTVERSION=	0.5
@@ -24,6 +20,7 @@ PYDISTUTILS_PKGNAME=	Pyjamas
 
 REINPLACE_ARGS=	-i '' -e 's,../../bin,${PREFIX}/bin,'
 
+NO_STAGE=	yes
 post-patch:
 	${FIND} ${WRKSRC}/examples -type f -name "build.sh" -print0 | ${XARGS} -0 ${REINPLACE_CMD}
 

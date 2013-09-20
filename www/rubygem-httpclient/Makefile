@@ -1,4 +1,3 @@
-# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
 
 PORTNAME=	httpclient
@@ -15,4 +14,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES+=	bin/httpclient
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

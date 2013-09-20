@@ -24,6 +24,7 @@ POD2MAN?=	pod2man
 
 MAN1=	goose.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		-e "s|%%DATADIR%%|${DATADIR}|g" \

@@ -34,6 +34,7 @@ OPTIONS_DEFINE=	PGSQL MYSQL DB ICONV MBSTRING
 DB_DESC=	Use older pear DB (instead of MDB2)
 MBSTRING_DESC=	Support multi-byte character sets
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

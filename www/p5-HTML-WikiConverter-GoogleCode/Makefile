@@ -19,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		HTML::WikiConverter::GoogleCode.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

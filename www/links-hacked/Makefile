@@ -32,6 +32,7 @@ DIRECTFB_DESC=	directfb driver support
 FORMSAVE_DESC=	Enable forms saving
 JS_DESC=	Enable Javascript (very basic)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSVGALIB} || ${PORT_OPTIONS:MX11} || ${PORT_OPTIONS:MDIRECTFB}

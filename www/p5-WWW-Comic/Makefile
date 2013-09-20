@@ -24,4 +24,5 @@ MAN3=		WWW::Comic.3 WWW::Comic::Plugin::uComics.3 \
 		WWW::Comic::Plugin.3 WWW::Comic::Plugin::Dilbert.3 \
 		WWW::Comic::Plugin::Goats.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

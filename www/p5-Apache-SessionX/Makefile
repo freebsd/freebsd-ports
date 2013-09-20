@@ -20,4 +20,5 @@ USES=		perl5
 USE_PERL5=	configure
 IS_INTERACTIVE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

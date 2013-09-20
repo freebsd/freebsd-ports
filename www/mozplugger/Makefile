@@ -19,6 +19,7 @@ USE_WEBPLUGINS=	native
 WEBPLUGINS_FILES=mozplugger.so
 MAKE_ENV=	WEBPLUGINS_DIR="${WEBPLUGINS_DIR}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 

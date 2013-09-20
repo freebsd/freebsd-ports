@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-mrtech-local-install
-# Date created:			2006/05/06
-# Whom:				chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mrtech-local-install
 DISTVERSION=	5.3.2.3
@@ -17,5 +13,6 @@ XPI_DISTNAME=	mr_tech_local_install
 XPI_NUM=	421
 XPI_ID=		{9669CC8F-B388-42FE-86F4-CB5E7F5A8BDC}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

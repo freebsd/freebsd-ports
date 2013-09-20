@@ -21,4 +21,5 @@ USE_PERL5=	modbuild
 MAN3=	CGI::Compress::Gzip.3 \
 	CGI::Compress::Gzip::FileHandle.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

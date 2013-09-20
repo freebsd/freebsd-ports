@@ -25,4 +25,5 @@ USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Djblets
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

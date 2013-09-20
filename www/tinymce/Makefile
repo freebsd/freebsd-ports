@@ -19,6 +19,7 @@ NO_BUILD=	yes
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${WWWDIR}/
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/

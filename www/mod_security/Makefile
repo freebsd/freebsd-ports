@@ -37,6 +37,7 @@ PLIST_FILES=	etc/modsecurity.conf-example \
 OPTIONS_DEFINE=	LUA MLOGC
 MLOGC_DESC=	Build ModSecurity Log Collector
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMLOGC}

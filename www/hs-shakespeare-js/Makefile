@@ -11,5 +11,6 @@ LICENSE=	MIT
 
 USE_CABAL=	aeson>=0.5 shakespeare>=1.0.5 text>=0.7
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

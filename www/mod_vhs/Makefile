@@ -38,6 +38,7 @@ DBD_DESC=	mod_dbd support
 ITK_DESC=	mpm-itk support (needs a specific apache)
 VDEBUG_DESC=	debug version (very verbose !)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 ### mod_vhs options

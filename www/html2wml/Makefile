@@ -22,6 +22,7 @@ MAN1=		html2wml.1
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 do-build:
 	cd ${BUILD_WRKSRC}/doc; \
 	${LN} -sf readme.pod html2wml.pod; \

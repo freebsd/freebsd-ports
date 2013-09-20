@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wikindx
-# Date created:		23 Dec 2005
-# Whom:			babak@farrokhi.net
-#
+# Created by: babak@farrokhi.net
 # $FreeBSD$
-#
 
 PORTNAME=	wikindx
 PORTVERSION=	3.8.2
@@ -25,6 +21,7 @@ ROOTDIRS=	attachments core docs files languages modules \
 DOCFILES=	CHANGELOG CUSTOMIZATION DISCLAIMER INSTALL \
 		LICENSE README README_CMS README_RSS UPGRADE
 
+NO_STAGE=	yes
 pre-install:
 	@${ECHO} ${WWWDIR}
 

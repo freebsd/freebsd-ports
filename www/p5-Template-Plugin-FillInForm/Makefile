@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Template-Plugin-FillInForm
-# Date created:				07 November 2007
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Template-Plugin-FillInForm
 PORTVERSION=	0.04
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=	Template::Plugin::FillInForm.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-django-filer
-# Date created:		19 Jun 2012
-# Whom:			Matthew X. Economou <xenophon+fbsdports@irtnog.org>
-#
+# Created by: Matthew X. Economou <xenophon+fbsdports@irtnog.org>
 # $FreeBSD$
-#
 
 PORTNAME=	django-filer
 PORTVERSION=	0.8.6
@@ -21,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=0:${PORTSDIR}/www/py-django \
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

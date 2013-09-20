@@ -21,4 +21,5 @@ MAN3=		CGI::Simple.3 \
 		CGI::Simple::Standard.3 \
 		CGI::Simple::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

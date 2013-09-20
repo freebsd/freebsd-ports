@@ -48,6 +48,7 @@ TOGGLE_DESC=		Support for remote toggling
 
 OPTIONS_DEFAULT=	BROKEN_STRPTIME EDITOR DOCS FORCE TOGGLE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MACCEPT_FILTER}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_geoip
-# Date created:			27 Aug 2010
-# Whom:				Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_geoip
 CATEGORIES=	www geography
@@ -31,6 +27,7 @@ ALL_TARGET=	${PORTNAME}.la
 
 _BUILDING_LIGHTTPD_MODULE=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_KLD} ${WRKSRC}/src/.libs/${PORTNAME}.so \
 		${LOCALBASE}/lib/lighttpd

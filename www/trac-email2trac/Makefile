@@ -27,6 +27,7 @@ USE_PYTHON=	-2.7
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPOSTFIX}

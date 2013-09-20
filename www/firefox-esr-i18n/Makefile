@@ -28,6 +28,7 @@ PLIST?=		${WRKDIR}/plist
 PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.option"
 .include <bsd.port.pre.mk>
 

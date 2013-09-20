@@ -1,6 +1,5 @@
 # Created by: Frank Wall <fw@moov.de>
 # $FreeBSD$
-#
 
 PORTNAME=	mawstats
 DISTVERSION=	0.8
@@ -22,6 +21,7 @@ DEFAULT_PHP_VER=5
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${WWWDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR}

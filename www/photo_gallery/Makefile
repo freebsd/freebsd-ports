@@ -1,7 +1,4 @@
-# New ports collection makefile for: 	photo_gallery
-# Date created:				Feb 5 2003
-# Whom:					Bob Bomar <bob@bomar.us>
-#
+# Created by: Bob Bomar <bob@bomar.us>
 # $FreeBSD$
 
 PORTNAME=		photo_gallery
@@ -23,6 +20,7 @@ USE_APACHE_RUN=	22+
 USES=		perl5
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 		${MKDIR} ${WWWDIR}/
 		@cd ${WRKSRC}; ${FIND} . \

@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=		CLAMAVDEVEL
 CLAMAVDEVEL_DESC=	development version of CLAMAV
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLAMAVDEVEL}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-TWSMS
-# Date created:		2006-08-11
-# Whom:			Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-#
+# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-TWSMS
 PORTVERSION=	0.01
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		WWW::TWSMS.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

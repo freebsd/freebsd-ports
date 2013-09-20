@@ -40,4 +40,5 @@ MAN3=		HTTP::Session.3 \
 		HTTP::Session::Store::OnMemory.3 \
 		HTTP::Session::Store::Test.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

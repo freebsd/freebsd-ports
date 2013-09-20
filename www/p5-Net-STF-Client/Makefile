@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Net::STF::Client
-# Date created:		03 Jan 2012
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Net-STF-Client
 PORTVERSION=	1.01
@@ -33,4 +28,5 @@ MAN3=	Net::STF::Bucket.3 \
 	Net::STF::Client.3 \
 	Net::STF::Object.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

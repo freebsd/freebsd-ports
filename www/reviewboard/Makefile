@@ -40,6 +40,7 @@ OPTIONS_DEFAULT=	SVN
 
 SVN_DESC=	Support reviews for SVN repository
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSVN}

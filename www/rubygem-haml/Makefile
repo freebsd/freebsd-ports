@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-haml
-# Date created:				13 July 2007
-# Whom:					Robert Gogolok <gogo@cs.uni-sb.de>
-#
+# Created by: Robert Gogolok <gogo@cs.uni-sb.de>
 # $FreeBSD$
 
 PORTNAME=	haml
@@ -18,4 +15,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/haml bin/html2haml
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

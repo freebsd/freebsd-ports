@@ -23,6 +23,7 @@ PLIST_SUB+=	PMWIKIDIR=${PMWIKIDIR}
 SUB_LIST+=	PMWIKIDIR=${PMWIKIDIR}
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 pre-fetch:
 .if !defined(PMWIKIDIR)
 	@${ECHO_MSG} ""

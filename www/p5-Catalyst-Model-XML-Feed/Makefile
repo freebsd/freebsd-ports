@@ -1,5 +1,4 @@
-# Ports collection makefile for:	p5-Catalyst-Model-XML-Feed
-# Created by: lbr@freebsd.org
+# Created by: lbr@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Model-XML-Feed
@@ -23,4 +22,5 @@ USE_PERL5=	configure
 MAN3=	Catalyst::Model::XML::Feed.3 \
 	Catalyst::Model::XML::Feed::Item.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

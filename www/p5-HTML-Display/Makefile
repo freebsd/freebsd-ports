@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-Display
-# Date created:				24 Oct 2007
-# Whom:					Rong-En Fan <rafan@FreeBSD.org>
-#
+# Created by: Rong-En Fan <rafan@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Display
 PORTVERSION=	0.39
@@ -38,4 +34,5 @@ MAN3=	HTML::Display.3 \
 	HTML::Display::Win32::IE.3 \
 	HTML::Display::Win32::OLE.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -13,6 +13,7 @@ COMMENT=	JavaScript library for image/html/multimedia content display
 NO_BUILD=	yes
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${WWWDIR}/
 	cd ${WRKSRC}/${PORTNAME}/ && ${INSTALL_DATA} * ${WWWDIR}/

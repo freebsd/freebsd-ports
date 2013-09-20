@@ -23,6 +23,7 @@ USERFILES=	announcements.inc.php3 config.inc.php3 dbconfig.inc.php3 \
 		images.inc.php3 login.footer.inc.php3 login.form.php3 \
 		login.header.inc.php3 mainmenu.inc.php3 newusergroups.inc.php3
 
+NO_STAGE=	yes
 do-install:
 	-${MKDIR} ${PREFIX}/${TWIG}/config
 	@(cd ${WRKSRC} && ${CP} ${ROOTFILES} ${PREFIX}/${TWIG}/ )

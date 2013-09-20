@@ -1,8 +1,4 @@
-# -*- mode: makefile-bsdmake -*-
-# New ports collection makefile for:	www/mathjax
-# Date created:				7 December 2010
-# Whom:					Lukasz Stelmach <lukasz.stelmach@iem.pw.edu.pl>
-#
+# Created by: Lukasz Stelmach <lukasz.stelmach@iem.pw.edu.pl>
 # $FreeBSD$
 
 PORTNAME=	MathJax
@@ -22,6 +18,7 @@ WRKSRC=	${WRKDIR}/mathjax-MathJax-07669ac
 
 # Changing permissions of 30k files with find -exec (COPYTREE) is way
 # too slow.
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${WWWDIR}
 	(cd ${WRKSRC} && \

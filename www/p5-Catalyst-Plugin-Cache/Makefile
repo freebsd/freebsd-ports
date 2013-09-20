@@ -1,4 +1,4 @@
-# Created by: lbr@freebsd.org
+# Created by: lbr@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-Cache
@@ -30,6 +30,7 @@ MAN3=	Catalyst::Plugin::Cache.3 \
 	Catalyst::Plugin::Cache::Store.3 \
 	Catalyst::Plugin::Cache::Store::Memory.3
 
+NO_STAGE=	yes
 post-patch:
 	@${PERL} -i.bak -ne 'print unless m,ok|Test::,' ${WRKSRC}/Makefile.PL
 

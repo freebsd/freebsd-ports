@@ -29,6 +29,7 @@ OPTIONS_DEFINE=	SSL
 SSL_DESC=	SSL support (POE::Component::SSLify)
 OPTIONS_DEFAULT=	SSL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}

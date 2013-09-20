@@ -26,4 +26,5 @@ PYEASYINSTALL_ARCHDEP=	yes
 USE_BZIP2=		yes
 PYDISTUTILS_PKGNAME=	ll-xist
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

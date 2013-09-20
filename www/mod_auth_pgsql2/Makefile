@@ -22,6 +22,7 @@ AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 PORTDOCS=	mod_auth_pgsql.html
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

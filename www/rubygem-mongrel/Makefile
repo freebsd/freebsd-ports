@@ -23,6 +23,7 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/mongrel_rails
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${RUBY_VER} == 1.9
 BROKEN=	does not work with ruby 1.9

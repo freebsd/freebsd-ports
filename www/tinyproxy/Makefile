@@ -34,6 +34,7 @@ XHEADER_DESC=		X-Tinyproxy header
 REVERSE_DESC=		Reverse proxy support
 TRANSPARENT_DESC=	Transparent proxy support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREVERSE}

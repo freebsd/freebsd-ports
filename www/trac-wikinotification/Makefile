@@ -1,9 +1,5 @@
-# New ports collection makefile for: trac-wikinotification
-# Date created:                      December 28 2006
-# Whom:                              Gerrit Beine <gerrit.beine@gmx.de>
-#
+# Created by: Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	wikinotificationplugin
 PORTVERSION=	0.2.1
@@ -25,4 +21,5 @@ USE_PYDISTUTILS=easy_install
 PYDISTUTILS_PKGNAME=	TracWikiNotification
 PYDISTUTILS_PKGVERSION=	${PORTVERSION:S/p/rc/}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

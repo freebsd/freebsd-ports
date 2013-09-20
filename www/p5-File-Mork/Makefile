@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-File-Mork
-# Date created:		2007-11-06
-# Whom:			Masahiro Teramoto <markun@onohara.to>
-#
+# Created by: Masahiro Teramoto <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Mork
 PORTVERSION=	0.3
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 MAN1=		mork.1
 MAN3=		File::Mork.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

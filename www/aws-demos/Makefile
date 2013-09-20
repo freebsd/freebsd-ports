@@ -58,6 +58,7 @@ DEMO_DIRS+=	zdemo
 #DEMO_DIRS+=	hello_wsdl
 #DEMO_DIRS+=	interoplab
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}

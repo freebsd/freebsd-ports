@@ -29,4 +29,5 @@ MAN3=		Plack::Handler::FCGI::Async.3 \
 		FCGI::Async::PSGI.3 \
 		FCGI::Async.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

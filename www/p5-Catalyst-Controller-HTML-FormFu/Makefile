@@ -47,4 +47,5 @@ MAN3=		Catalyst::Controller::HTML::FormFu.3 \
 		Catalyst::Helper::HTML::FormFu.3 \
 		HTML::FormFu::Element::RequestToken.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -32,6 +32,7 @@ EXTJS_DESC=		Enable Ext JS support
 
 OPTIONS_DEFAULT=	MYSQL EXTJS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

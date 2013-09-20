@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_h264_streaming
-# Date created:				May 14, 2009
-# Whom:					Li-Wen Hsu <lwhsu@FreeBSD.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_h264_streaming
 PORTVERSION=	2.2.7
@@ -28,4 +24,5 @@ RESTRICTED=	no-commercial-use
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_SUB=	SED=${SED}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

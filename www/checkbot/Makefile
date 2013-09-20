@@ -1,9 +1,5 @@
-# New ports collection makefile for:	checkbot
-# Date created:				2. Feb 1998
-# Whom:	      				wosch@FreeBSD.org
-#
+# Created by: wosch@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	checkbot
 PORTVERSION=	1.80
@@ -32,4 +28,5 @@ USE_PERL5=	configure
 PLIST_FILES=	bin/checkbot ${SITE_PERL:S!${LOCALBASE}/!!}/${PERL_ARCH}/auto/checkbot/.packlist
 PLIST_DIRS=	${SITE_PERL:S!${LOCALBASE}/!!}/${PERL_ARCH}/auto/checkbot
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

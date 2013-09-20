@@ -19,6 +19,7 @@ USE_MYSQL=	yes
 SUB_FILES=	pkg-message
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

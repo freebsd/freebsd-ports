@@ -23,4 +23,5 @@ MODULE_DIRS=	translations
 
 DOC_FILES=	API.txt LICENSE.txt README.txt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

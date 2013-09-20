@@ -27,6 +27,7 @@ SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS+=--prefix=${PREFIX} --localstatedir=/var
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

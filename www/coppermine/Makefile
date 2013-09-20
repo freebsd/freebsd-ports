@@ -1,4 +1,3 @@
-# Created by: Brooks Davis <brooks@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	coppermine
@@ -23,6 +22,7 @@ DOCFILES=	CHANGELOG.txt COPYING.txt README.txt
 
 SUB_FILES+=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}

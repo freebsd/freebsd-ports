@@ -22,6 +22,7 @@ USE_PHP_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-build:
 	@${WRKSRC}/bin/build_bootstrap.php
 

@@ -31,6 +31,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

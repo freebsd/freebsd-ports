@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_cvs2
-# Date created:				6 January 2003
-# Whom:					Clement Laforet <clement@FreeBSD.org>
-#
+# Created by: Clement Laforet <clement@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_cvs
 PORTVERSION=	0.5.91
@@ -24,6 +20,7 @@ AP_GENPLIST=	yes
 
 PORTDOCS=	reference.html guide.html README
 
+NO_STAGE=	yes
 post-install:
 .if !defined (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/

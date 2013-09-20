@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-PyWebDAV
-# Date created:		2008-07-16
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	PyWebDAV
 PORTVERSION=	0.9.8
@@ -19,4 +15,5 @@ COMMENT=	WebDAV Library and Server for Python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

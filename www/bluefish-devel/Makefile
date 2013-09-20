@@ -34,6 +34,7 @@ CONFIGURE_ARGS=	--with-freedesktop_org-menu=${PREFIX}/share/applications \
 		--without-gnome2_4-appreg \
 		--with-icon-path=${PREFIX}/share/pixmaps
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_WEBLINT)

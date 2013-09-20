@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-google-notebook
-# Date created:		18 May 2006
-# Whom:			chinsan <chinsan.tw@gmail.com>
-#
+# Created by: chinsan <chinsan.tw@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	google-notebook
 PORTVERSION=	1.0.0.5
@@ -17,5 +13,6 @@ COMMENT=	An extension to allow notetaking while browsing
 
 XPI_ID=		notebook@google.com
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

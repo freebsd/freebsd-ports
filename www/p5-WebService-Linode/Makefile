@@ -25,4 +25,5 @@ MAN3=		WebService::Linode.3 \
 		WebService::Linode::Base.3 \
 		WebService::Linode::DNS.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

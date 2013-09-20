@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sfnt2woff
-# Date Created:				Sep 23 2011
-# Whom:					Andrey Chernov <ache@freebsd.org>
-#
+# Created by: Andrey Chernov <ache@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sfnt2woff
 PORTVERSION=	20091004
@@ -20,6 +16,7 @@ USE_GMAKE=	yes
 
 PLIST_FILES=	bin/sfnt2woff bin/woff2sfnt
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sfnt2woff ${WRKSRC}/woff2sfnt \
 		 ${PREFIX}/bin

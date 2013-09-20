@@ -28,6 +28,7 @@ DOCS_EN=	COPYING ChangeLog LEGAL LICENSE.apreq NOTICE \
 		README.en doc/default.css doc/*.en.*
 DOCS_JA=	README.ja doc/default.css doc/*.ja.*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${APACHE_VERSION} > 20

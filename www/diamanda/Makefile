@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/diamanda
-# Date created:				11 January 2008
-# Whom:	      				Oleg Ukraincev <oleg@ht-systems.ru>
-#
+# Created by: Oleg Ukraincev <oleg@ht-systems.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	diamanda
 PORTVERSION=	0.0.${SNAPSHOT:S/.//g}
@@ -30,6 +26,7 @@ USE_PYTHON=	yes
 USES=		gettext
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

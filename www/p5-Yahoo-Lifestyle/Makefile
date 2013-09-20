@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Yahoo-Lifestyle
-# Date created:				16 Jan 2008
-# Whom:					Rong-En Fan <rafan@FreeBSD.org>
-#
+# Created by: Rong-En Fan <rafan@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Yahoo-Lifestyle
 PORTVERSION=	0.2
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=		Yahoo::Lifestyle.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

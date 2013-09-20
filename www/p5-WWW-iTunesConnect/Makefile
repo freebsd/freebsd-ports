@@ -29,4 +29,5 @@ PLIST_DIRS=	%%SITE_PERL%%/WWW \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/iTunesConnect \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

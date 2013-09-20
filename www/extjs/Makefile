@@ -33,6 +33,7 @@ WWW_SUB=	"bootstrap.js build.xml builds cmd ext-all-debug-w-comments.js \
 		 packages plugins release-notes.html resources src \
 		 welcome"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 SUB_FILES+=	pkg-message

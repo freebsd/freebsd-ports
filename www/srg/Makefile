@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=		srg.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

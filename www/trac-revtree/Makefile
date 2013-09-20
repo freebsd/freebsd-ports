@@ -1,9 +1,5 @@
-# New ports collection makefile for: trac-revtree
-# Date created:                      Nov 10 2008
-# Whom:                              glarkin
-#
+# Created by: glarkin
 # $FreeBSD$
-#
 
 PORTNAME=	revtree
 PORTVERSION=	0.6.4
@@ -36,6 +32,7 @@ PYDISTUTILS_NOEGGINFO=	yes
 
 BROKEN=		fails to build
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMINFOENH}

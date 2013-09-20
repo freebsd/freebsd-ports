@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 XPI_NUM=	590
 XPI_ID=		{3e9bb2a7-62ca-4efa-a4e6-f6f6168a652d}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|<em:maxVersion>14\.\*<|<em:maxVersion>99.*<|; \
 		s|<em:maxVersion>2\.11\.\*<|<em:maxVersion>99.99.*<|' \

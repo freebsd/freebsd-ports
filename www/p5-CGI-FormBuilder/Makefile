@@ -44,6 +44,7 @@ MAN3=	CGI::FormBuilder.3 \
 	CGI::FormBuilder::Test.3 \
 	CGI::FormBuilder::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTT}

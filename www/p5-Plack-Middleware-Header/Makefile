@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Plack::Middleware::Header
-# Date created:		02 Apr 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Plack-Middleware-Header
 PORTVERSION=	0.04
@@ -23,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=	Plack::Middleware::Header.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	admuser
-# Date created:		18 December 2003
-# Whom:			Jean Milanez Melo <jmelo@FreeBSD.org>
-#
+# Created by: Jean Milanez Melo <jmelo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	admuser
 PORTVERSION=	2.3.2
@@ -19,6 +15,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/etc/admuser \
 		--enable-language=English \
 		--enable-cgidir=${PREFIX}/www/cgi-bin \
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-install:

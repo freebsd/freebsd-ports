@@ -42,4 +42,5 @@ MAN3=	CGI::Application::Plugin::Authentication::Display.3 \
 	CGI::Application::Plugin::Authentication::Driver::HTPasswd.3 \
 	CGI::Application::Plugin::Authentication::Driver::Dummy.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,4 +1,3 @@
-# Create by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	estimator
@@ -22,6 +21,7 @@ PYDISTUTILS_PKGNAME=	estimatorplugin
 PYDISTUTILS_PKGVERSION=	${PORTVERSION:S/.r/_r/}
 PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

@@ -23,4 +23,5 @@ USE_PERL5=	modbuild
 MAN3=	FurlX::Coro.3 \
 	FurlX::Coro::HTTP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

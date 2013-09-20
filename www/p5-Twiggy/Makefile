@@ -27,4 +27,5 @@ MAN1=	twiggy.1
 MAN3=	Plack::Handler::Twiggy.3 \
 	Twiggy.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

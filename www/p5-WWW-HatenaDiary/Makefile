@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-HatenaDiary
-# Date created:		2009-04-06
-# Whom:			Masahiro Teramoto <markun@onohara.to>
-#
+# Created by: Masahiro Teramoto <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-HatenaDiary
 PORTVERSION=	0.02
@@ -26,4 +22,5 @@ USE_PERL5=	configure
 
 MAN3=		WWW::HatenaDiary.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

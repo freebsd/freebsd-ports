@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Template-Plugin-Clickable-Email
-# Date created:				27 January 2006
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Template-Plugin-Clickable-Email
 PORTVERSION=	0.01
@@ -23,4 +19,5 @@ USE_PERL5=	modbuild
 
 MAN3=	Template::Plugin::Clickable::Email.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

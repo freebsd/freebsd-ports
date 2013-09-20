@@ -18,6 +18,7 @@ SHEBANG_FILES=	${DISTNAME}
 
 PLIST_FILES=	bin/linklint
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin/${PORTNAME}
 

@@ -38,4 +38,5 @@ MAN3=		HTML::Template::Compiled.3 \
 		HTML::Template::Compiled::Token.3 \
 		HTML::Template::Compiled::Utils.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

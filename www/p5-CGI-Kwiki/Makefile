@@ -34,6 +34,7 @@ MAN3=		CGI::Kwiki.3 \
 		CGI::Kwiki::Slides.3 CGI::Kwiki::Style.3 \
 		CGI::Kwiki::Template.3
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

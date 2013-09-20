@@ -1,9 +1,5 @@
-# New ports collection Makefile for:    tivoka
-# Date created:				16 July 2012
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	tivoka
 PORTVERSION=	3.0.1
@@ -24,6 +20,7 @@ GH_COMMIT=	4cbf436
 LIBDIR=		${PREFIX}/lib/php/${PHP_EXT_DIR}/${PORTNAME}
 PLIST_SUB+=	LIBDIR=${LIBDIR:S/${PREFIX}\///}
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${LIBDIR}
 	@${INSTALL_DATA} ${WRKSRC}/include.php ${LIBDIR}

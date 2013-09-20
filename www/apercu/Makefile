@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	apercu
-# Date created:				Sep 21, 2006
-# Whom:					mich
-#
+# Created by: mich
 # $FreeBSD$
-#
 
 PORTNAME=	apercu
 PORTVERSION=	1.0.2
@@ -20,6 +15,7 @@ NO_BUILD=	yes
 MAN1=		apercu.1
 PLIST_FILES=	bin/apercu
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/ruby|${RUBY}|' ${WRKSRC}/apercu
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for: trac-customroadmap
-# Date created:                      Oct 08 2008
-# Whom:                              Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	advancedticketworkflow
 PORTVERSION=	0.10.3940
@@ -27,4 +23,5 @@ PYDISTUTILS_PKGVERSION=	${PORTVERSION:R}dev
 PLIST_SUB+=	PORTVERSION=${PORTVERSION:R}dev PYTHONVERSION=${PYTHON_VER}
 PYDISTUTILS_NOEGGINFO=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

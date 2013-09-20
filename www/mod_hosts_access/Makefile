@@ -17,4 +17,5 @@ AP_GENPLIST=	yes
 
 AP_LIB+=	${LOCALBASE}/lib -lwrap
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

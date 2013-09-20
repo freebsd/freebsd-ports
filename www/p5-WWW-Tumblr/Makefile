@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-Tumblr
-# Date created:		2010-03-14
-# Whom:			TERAMOTO Masahiro <markun@onohara.to>
-#
+# Created by: TERAMOTO Masahiro <markun@onohara.to>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Tumblr
 PORTVERSION=	4.1
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=		WWW::Tumblr.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

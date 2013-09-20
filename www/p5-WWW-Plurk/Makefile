@@ -24,6 +24,7 @@ USE_PERL5=	configure
 
 MAN3=		WWW::Plurk.3 WWW::Plurk::Friend.3 WWW::Plurk::Message.3
 
+NO_STAGE=	yes
 post-patch:
 	${FIND} ${WRKSRC} -name "*.orig" -delete
 

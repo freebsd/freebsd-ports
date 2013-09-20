@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Catalyst-Plugin-Cache-Memcached-Fast
-# Date created:	   10 Oct 2008
-# Whom:		   Denis Pokataev <catone@cpan.org>
-#
+# Created by: Denis Pokataev <catone@cpan.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-Plugin-Cache-Memcached-Fast
 PORTVERSION=	0.14
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=	Catalyst::Plugin::Cache::Memcached::Fast.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

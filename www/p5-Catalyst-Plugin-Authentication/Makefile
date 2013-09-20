@@ -51,4 +51,5 @@ MAN3=	Catalyst::Authentication::Credential::NoPassword.3 \
 	Catalyst::Plugin::Authentication::User.3 \
 	Catalyst::Plugin::Authentication::User::Hash.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

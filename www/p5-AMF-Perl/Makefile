@@ -25,6 +25,7 @@ MAN3=		AMF::Perl.3 AMF::Perl::App::Executive.3 \
 		AMF::Perl::Sql::MysqlRecordSet.3 AMF::Perl::Util::Object.3 \
 		AMF::Perl::Util::RemotingService.3
 
+NO_STAGE=	yes
 post-patch:
 	@${PERL} -pi -e 's/=(?==head)//g' ${WRKSRC}/lib/AMF/Perl.pm
 

@@ -16,6 +16,7 @@ LICENSE=	MIT
 USE_PYTHON=	2.6-
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 320

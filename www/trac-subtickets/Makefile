@@ -30,4 +30,5 @@ PYDISTUTILS_PKGVERSION=	${PORTVERSION:C/${GITDATE}//g}dev
 PLIST_FILES=		bin/check-trac-subtickets \
 			%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

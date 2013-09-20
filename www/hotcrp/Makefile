@@ -26,6 +26,7 @@ SUB_FILES=	pkg-message
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${WWWDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}

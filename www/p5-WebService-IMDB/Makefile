@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WebService-IMDB
-# Date created:		2011-06-13
-# Whom:			Christopher Key <cjk32@cam.ac.uk>
-#
+# Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	WebService-IMDB
 PORTVERSION=	0.05
@@ -60,4 +56,5 @@ MAN3=		WebService::IMDB.3 \
 		WebService::IMDB::UserComment.3 \
 		WebService::IMDB::WhereNow.3 \
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

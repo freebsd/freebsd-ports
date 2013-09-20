@@ -110,4 +110,5 @@ MAN3=	Dancer2.3 \
 	Dancer2::Test.3 \
 	Dancer2::Tutorial.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

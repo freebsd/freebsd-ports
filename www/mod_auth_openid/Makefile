@@ -23,4 +23,5 @@ CONFIGURE_ARGS=	--with-pcre=${LOCALBASE}
 
 CFLAGS+=	-I${LOCALBASE}/include -I/usr/include/openssl
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

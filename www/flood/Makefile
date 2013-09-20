@@ -27,6 +27,7 @@ EX_DATA=	flood.dtd relative-averages-time.awk round-robin-dynamic.xml \
 		round-robin-relative-reports.xml round-robin-ssl.xml \
 		round-robin-timed.xml round-robin.xml
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 .for f in ${EX_SCRIPTS}

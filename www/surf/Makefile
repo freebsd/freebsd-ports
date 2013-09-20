@@ -32,6 +32,7 @@ CONFLICTS=	surf-1* # math/surf
 # Name conflicts with the math/surf port
 NO_LATEST_LINK=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-everything::

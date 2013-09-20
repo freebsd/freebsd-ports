@@ -32,6 +32,7 @@ USE_RC_SUBR=	twms
 USERS=		${TWMS_USER}
 GROUPS=		${TWMS_GROUP}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '1,1 s|/usr/bin/python|/usr/bin/env python|' ${WRKSRC}/twms.py
 	@${REINPLACE_CMD} -e 's|/etc/twms/twms.conf|${PREFIX}/etc/twms.conf|' ${WRKSRC}/twms/twms.py

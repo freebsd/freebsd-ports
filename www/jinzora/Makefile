@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jinzora
-# Date created:		27 October 2010
-# Whom:			Kevin Lo <kevlo@FreeBSD.org>
-#
+# Created by: Kevin Lo <kevlo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jinzora
 PORTVERSION=	3.0
@@ -22,6 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 SUB_FILES=      pkg-message
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${WWWDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}

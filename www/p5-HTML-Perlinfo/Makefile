@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-HTML-Perlinfo
-# Date created:				9 May 2009
-# Whom:					Kurt Jaeger <fbsd-ports@opsec.eu>
-#
+# Created by: Kurt Jaeger <fbsd-ports@opsec.eu>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Perlinfo
 PORTVERSION=	1.62
@@ -25,4 +21,5 @@ MAN1=		perlinfo.1
 MAN3=		HTML::Perlinfo.3 HTML::Perlinfo::HTML.3 \
 		HTML::Perlinfo::Loaded.3 HTML::Perlinfo::Modules.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -53,4 +53,5 @@ MAN3=		Catalyst::Plugin::ErrorCatcher.3 \
 		Catalyst::Plugin::ErrorCatcher::Plugin::CleanUp::Pg::UniqueConstraintViolation.3 \
 		Catalyst::Plugin::ErrorCatcher::Plugin::CleanUp::TxnDo.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

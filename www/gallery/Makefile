@@ -19,6 +19,7 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

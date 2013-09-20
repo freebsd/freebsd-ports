@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/rubygem-rails-app-installer
-# Date created:				15 September 2006
-# Whom:					Geraud Continsouzas <geraud@gcu.info>
-#
+# Created by: Geraud Continsouzas <geraud@gcu.info>
 # $FreeBSD$
-#
 
 PORTNAME=	rails-app-installer
 PORTVERSION=	0.2.0
@@ -26,4 +22,5 @@ PLIST_FILES=	bin/rails-app-installer-setup \
 		bin/rails-backup \
 		bin/rails-restore
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

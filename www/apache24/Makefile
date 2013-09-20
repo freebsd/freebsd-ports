@@ -44,6 +44,7 @@ APACHEDIR=	${MASTERDIR}
 WITH_HTTP_PORT?=	80
 WITH_SSL_PORT?=		443
 
+NO_STAGE=	yes
 .include "${APACHEDIR}/Makefile.options"
 .include "${APACHEDIR}/Makefile.options.desc"
 .include <bsd.port.options.mk>

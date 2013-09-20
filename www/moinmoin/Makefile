@@ -44,6 +44,7 @@ MOINSCRIPT=	${MOINDIR}/server/moin.wsgi
 BROKEN=		MOINTYPE must be a STANDALONE, FCGI, WSGI, MOD_PYTHON or CGI.
 .endif
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO}
 	@${ECHO} "Set MOINTYPE=(CGI|FCGI|WSGI|STANDALONE) to define"

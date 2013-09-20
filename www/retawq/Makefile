@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	retawq
-# Date created:			Dec 30, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	retawq
 DISTVERSION=	0.2.6c
@@ -40,6 +35,7 @@ CONFIGURE_ARGS+=	--set-tls=2
 LDFLAGS+=	-lssl -lcrypto
 .endif
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -e 's|_IN_H 0|_IN_H 1|g ; \
 		 s|_SOCKET_H 0|_SOCKET_H 1|g' ${WRKSRC}/.config

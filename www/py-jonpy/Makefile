@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jonpy
-# Date created:				12 Sep 2005
-# Whom:					Søren Straarup <xride@x12.dk>
-#
+# Created by: Søren Straarup <xride@x12.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	jonpy
 PORTVERSION=	0.10
@@ -20,6 +16,7 @@ NO_BUILD=		yes
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

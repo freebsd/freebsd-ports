@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-Image-Delivery
-# Date created:                                08 September 2007
-# Whom:                                        TAKAHASHI Kaoru <kaoru@kaisei.org>
-#
+# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Image-Delivery
 PORTVERSION=	0.14
@@ -28,4 +24,5 @@ USE_PERL5=	configure
 
 MAN3=		Image::Delivery.3 Image::Delivery::Provider.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	websh
-# Date created:				January 31, 2007
-# Whom:					Mikhail Teterin <mi@aldan.algebra.com>
-#
+# Created by: Mikhail Teterin <mi@aldan.algebra.com>
 # $FreeBSD$
-#
 
 PORTNAME=	websh
 PORTVERSION=	3.6.0b5
@@ -40,6 +36,7 @@ CPPFLAGS+=	-I ${LOCALBASE}/include/apr-1
 CPPFLAGS+=	-Wall -Werror
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local/websh,${PREFIX},' \
 		${WRKSRC:H:H}/doc/mod_websh/conf/websh.conf

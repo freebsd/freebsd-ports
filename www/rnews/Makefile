@@ -18,6 +18,7 @@ OPTIONS_DEFINE=	GD MYSQLSERVER DOCS
 OPTIONS_DEFAULT=	GD
 MYSQLSERVER_DESC=	Use MySQL-Server on localhost
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_PHP=	mysql mbstring pcre xml iconv

@@ -40,6 +40,7 @@ MAN8=		c-icap-client.8 \
 CONFIGURE_ARGS+=	--enable-static \
 			--sysconfdir="${PREFIX}/etc/c-icap"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBDB}

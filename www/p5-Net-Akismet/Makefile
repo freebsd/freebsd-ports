@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-Akismet
-# Date created:				April 20th, 2006
-# Whom:	      				Peter Pentchev <roam@FreeBSD.org>
-#
+# Created by: Peter Pentchev <roam@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-Akismet
 PORTVERSION=	0.05
@@ -29,4 +25,5 @@ MAN3=		Net::Akismet.3
 test:		build
 		@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

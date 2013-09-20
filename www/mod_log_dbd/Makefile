@@ -17,6 +17,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apache=${PREFIX}
 
+NO_STAGE=	yes
 do-install:
 	${APXS} -i -a -n log_dbd ${WRKSRC}/mod_log_dbd.la
 

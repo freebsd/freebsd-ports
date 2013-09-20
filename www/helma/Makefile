@@ -35,6 +35,7 @@ PLIST_SUB=	DBDIR="${DBDIR}" \
 OPTIONS_DEFINE=	MYSQL
 OPTIONS_DESC=	"Install MySQL Connector for Java"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

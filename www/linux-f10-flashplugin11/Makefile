@@ -38,6 +38,7 @@ GNOME_DESC=	include gnome support for .desktop file
 OPTIONS_SUB=	yes
 GNOME_USES=	desktop-file-utils
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOME}

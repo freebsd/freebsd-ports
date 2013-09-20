@@ -21,4 +21,5 @@ USES=		perl5
 
 MAN3=		LWP::Protocol::https.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

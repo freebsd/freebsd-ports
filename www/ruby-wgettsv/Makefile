@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ruby-wgettsv
-# Date created:                         17 Jan 2009
-# Whom:                                 Qing Feng <qingfeng@douban.com>
-#
+# Created by: Qing Feng <qingfeng@douban.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ruby-wgettsv
 PORTVERSION=	0.95
@@ -24,6 +20,7 @@ NO_BUILD=		yes
 
 PLIST_FILES=	bin/wgettsv
 
+NO_STAGE=	yes
 post-extract:
 	${CP} ${DISTDIR}/${DISTNAME} ${WRKDIR}/${DISTNAME}
 

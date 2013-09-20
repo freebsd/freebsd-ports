@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-pencil
-# Date created:		2009-03-09
-# Whom:			Ashish Shukla <wahjava@gmail.com>
-#
+# Created by: Ashish Shukla <wahjava@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pencil
 DISTVERSION=	2.0-3
@@ -18,5 +14,6 @@ COMMENT=	Firefox addon to do GUI prototyping and simple sketching
 XPI_DISTNAME=	Pencil
 XPI_ID=		pencil@evolus.vn
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

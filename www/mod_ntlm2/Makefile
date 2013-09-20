@@ -20,4 +20,5 @@ SAMBA_PORT?=	net/samba36
 USE_APACHE=	22
 MAKE_ENV=	APXS=${APXS}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

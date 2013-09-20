@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-linkification
-# Date created:		20 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	linkification
 PORTVERSION=	1.3.9
@@ -19,5 +15,6 @@ XPI_FILES=	chrome/linkification.jar chrome.manifest defaults/preferences/linkifi
 		install.js install.rdf
 XPI_DIRS=	chrome defaults/preferences defaults
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

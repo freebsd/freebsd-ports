@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pyramid_rpc
-# Date created:		2011-08-25
-# Whom:			Li-Wen Hsu <lwhsu@FreeBSD.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pyramid_rpc
 PORTVERSION=	0.3
@@ -20,4 +16,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

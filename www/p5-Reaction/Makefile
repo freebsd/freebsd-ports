@@ -215,4 +215,5 @@ MAN3=		Catalyst::Model::Reaction::InterfaceModel::DBIC.3 \
 		Reaction::UI::WidgetClass.3 \
 		Reaction::UI::Window.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

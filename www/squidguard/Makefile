@@ -55,6 +55,7 @@ SQUID27_DESC=	Depend on Squid 2.7.x
 SQUID32_DESC=	Depend on Squid 3.2.x
 SQUID33_DESC=	Depend on Squid 3.3.x
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQUID27}

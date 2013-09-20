@@ -16,6 +16,7 @@ WRKSRC=		${WRKDIR}/magento
 OPTIONS_DEFINE=	MYSQL56
 MYSQL56_DESC=	Add installer patch for MySQL 5.6 server
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL56}

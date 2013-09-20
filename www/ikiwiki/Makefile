@@ -47,6 +47,7 @@ MAN8=		ikiwiki-mass-rebuild.8
 PORTDOCS=	CHANGELOG NEWS README
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPO4A}

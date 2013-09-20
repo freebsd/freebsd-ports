@@ -30,6 +30,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/_/-/g}-${PORTVERSION}.0
 IGNORE=		Requires support of LDAP in apache 2.x port
 .endif
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}

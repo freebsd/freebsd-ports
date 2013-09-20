@@ -1,9 +1,4 @@
-# New ports collection makefile for:	mod_reproxy
-# Date created:		2 Jan 2012
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mod_reproxy
 PORTVERSION=	0.02.20110826
@@ -19,4 +14,5 @@ USE_APACHE=	22+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

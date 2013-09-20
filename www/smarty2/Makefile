@@ -1,9 +1,5 @@
-# New ports collection makefile for:	smarty
-# Date created:		10 March 2002
-# Whom:			Simon 'corecode' Schubert <corecode@corecode.ath.cx>
-#
+# Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	smarty
 PORTVERSION=	2.6.27
@@ -23,6 +19,7 @@ WRKSRC=		${WRKDIR}/Smarty-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

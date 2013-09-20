@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Catalyst-View-Jemplate
-# Date created:				05 April 2007
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-View-Jemplate
 PORTVERSION=	0.06
@@ -26,4 +22,5 @@ USE_PERL5=	configure
 MAN3=	Catalyst::Helper::View::Jemplate.3 \
 	Catalyst::View::Jemplate.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -45,6 +45,7 @@ MODPERL2_DESC=	mod_perl2 support
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMODPERL2}

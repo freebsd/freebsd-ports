@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Template-Toolkit-Simple
-# Date created:		2010-04-24
-# Whom:			Li-Wen Hsu <lwhsu@FreeBSD.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Template-Toolkit-Simple
 PORTVERSION=	0.16
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=	Template::Toolkit::Simple.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

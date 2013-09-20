@@ -26,6 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${WWWDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Template::Stash::AutoEscape
-# Date created:		04 Sep 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Template-Stash-AutoEscape
 PORTVERSION=	0.03
@@ -26,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=	Template::Stash::AutoEscape.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -19,4 +19,5 @@ USE_PERL5=	configure
 MAN3=		HTML::ElementRaw.3 HTML::ElementGlob.3 \
 		HTML::ElementSuper.3 HTML::ElementTable.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

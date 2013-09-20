@@ -17,4 +17,5 @@ MAN3=	PSGI::Extensions.3 \
 	PSGI::FAQ.3 \
 	PSGI.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -30,6 +30,7 @@ PLIST_DIRS=	www/cgi-bin
 
 PATCH_STRIP=	-p1
 
+NO_STAGE=	yes
 pre-su-install:
 	${MKDIR} ${PREFIX}/www/cgi-bin
 

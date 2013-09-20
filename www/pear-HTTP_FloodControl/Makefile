@@ -20,6 +20,7 @@ PEAR_MDB2_DESC=	PEAR::MDB2 support
 
 PEAR_AUTOINSTALL=	yes
 
+NO_STAGE=	yes
 post-extract:
 	${MKDIR} ${WRKSRC}/docs
 	${MV} ${WRKSRC}/README ${WRKSRC}/LICENSE ${WRKSRC}/docs

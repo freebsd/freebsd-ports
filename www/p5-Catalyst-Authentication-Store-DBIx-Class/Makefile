@@ -30,4 +30,5 @@ MAN3=		Catalyst::Authentication::Realm::SimpleDB.3 \
 		Catalyst::Authentication::Store::DBIx::Class.3 \
 		Catalyst::Authentication::Store::DBIx::Class::User.3 \
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

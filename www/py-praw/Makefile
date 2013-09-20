@@ -26,4 +26,5 @@ GH_COMMIT=	8687d58
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

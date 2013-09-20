@@ -1,9 +1,5 @@
-# New ports collection makefile for:	boa
-# Date created:				21 May 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	boa
 PORTVERSION=	0.94.14.r21
@@ -24,6 +20,7 @@ MAN8=		boa.8
 
 PORTDOCS=	boa.texi boa.html boa.txt boa_banner.png
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/examples/boa.conf ${WRKSRC}/src/defines.h

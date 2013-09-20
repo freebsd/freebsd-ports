@@ -39,4 +39,5 @@ MAN3=		Apache::ASP.3 \
 		Bundle::Apache::ASP.3 \
 		Bundle::Apache::ASP::Extra.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

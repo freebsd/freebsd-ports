@@ -23,6 +23,7 @@ PORTDOCS=	README history todo
 
 DOS2UNIX_REGEX=	.+\.[^j][^a][^r]$
 
+NO_STAGE=	yes
 do-configure:
 		${SED} -e "s|%%JAVA%%|${LOCALBASE}/bin/java|" \
 		-e "s|%%JAVAJARDIR%%|${JAVAJARDIR}|" \

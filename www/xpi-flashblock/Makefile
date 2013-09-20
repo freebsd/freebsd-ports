@@ -14,6 +14,7 @@ USE_XPI=	*firefox*
 XPI_ID=		{3d7eb24f-2740-49df-8937-200b1cc08f8a}
 XPI_NUM=	433
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|<em:maxVersion>8\.0<|<em:maxVersion>99.*<|' \
 	    ${WRKSRC}/install.rdf

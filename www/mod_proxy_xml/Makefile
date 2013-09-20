@@ -23,6 +23,7 @@ AP_GENPLIST=	yes
 AP_INC=	${LOCALBASE}/include/libxml2
 AP_LIB=	${LOCALBASE}/lib -lxml2
 
+NO_STAGE=	yes
 pre-extract:
 	@${MKDIR} ${WRKDIR}
 

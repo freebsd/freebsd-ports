@@ -33,4 +33,5 @@ MAN3=		Net::Plurk.3 \
 		Net::Plurk::User.3 \
 		Net::Plurk::UserProfile.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

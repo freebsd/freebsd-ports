@@ -23,4 +23,5 @@ R_MOD_AUTOPLIST=	yes
 
 MAKE_ENV=	MAKE=${GMAKE}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

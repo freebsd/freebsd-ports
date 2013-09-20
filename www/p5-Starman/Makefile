@@ -33,4 +33,5 @@ MAN3=	HTTP::Server::PSGI::Net::Server::PreFork.3 \
 	Starman.3 \
 	Starman::Server.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

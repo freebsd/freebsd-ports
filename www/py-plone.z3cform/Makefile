@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-plone.z3cform
-# Date created:				03 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone.z3cform
 PORTVERSION=	0.7.8
@@ -27,4 +22,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

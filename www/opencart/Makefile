@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION}/upload
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

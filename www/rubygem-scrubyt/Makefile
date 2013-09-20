@@ -18,6 +18,7 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's/0.4.1/${PORTVERSION}/' ${BUILD_WRKSRC}/${GEMFILES}spec
 

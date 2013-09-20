@@ -30,4 +30,5 @@ MAN3=	CGI::Application::Plugin::Authorization::Driver::Generic.3 \
 	CGI::Application::Plugin::Authorization.3 \
 	CGI::Application::Plugin::Authorization::Driver::HTGroup.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

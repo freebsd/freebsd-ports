@@ -22,6 +22,7 @@ INSTALL_TARGET=	pure_install
 MAN3=		HTML::Template::JIT.3 HTML::Template::JIT::Compiler.3 \
 		HTML::Template::JIT::Base.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

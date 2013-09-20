@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-slimmer
-# Date created:		22 May 2006
-# Whom:			Corey Smith
-#
+# Created by: Corey Smith
 # $FreeBSD$
-#
 
 PORTNAME=	slimmer
 PORTVERSION=	0.1.30
@@ -19,4 +15,5 @@ USE_PYDISTUTILS=easy_install
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

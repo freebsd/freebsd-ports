@@ -14,6 +14,7 @@ WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 PHPWEBAPP?=	${PREFIX}/www/data/web_app
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} -p ${PREFIX}/www/data
 	${CP} -R ${WRKSRC}/web_app/ ${PHPWEBAPP}

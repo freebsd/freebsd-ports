@@ -30,4 +30,5 @@ MAN3=		WWW::Mechanize::Pluggable.3 \
 		WWW::Mechanize::Plugin::Cookbook.3 \
 		WWW::Mechanize::Plugin::HelloWorld.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

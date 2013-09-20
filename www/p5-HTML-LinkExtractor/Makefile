@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-HTML-LinkExtractor
-# Date created:			18 April 2004
-# Whom:				Lars Eggert <lars.eggert@gmx.net>
-#
+# Created by: Lars Eggert <lars.eggert@gmx.net>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-LinkExtractor
 PORTVERSION=	0.130
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=		HTML::LinkExtractor.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

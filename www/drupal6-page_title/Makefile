@@ -25,4 +25,5 @@ MODULE_DIRS=	modules views/plugins/ views tests
 
 DOC_FILES=	CHANGELOG.txt README.txt LICENSE.txt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

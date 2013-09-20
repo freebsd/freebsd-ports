@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	csstidy
-# Date created:			Apr 9, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	csstidy
 PORTVERSION=	1.2
@@ -20,6 +15,7 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/csstidy
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && ${CXX} ${CXXFLAGS} *.cpp -o ${PORTNAME}
 

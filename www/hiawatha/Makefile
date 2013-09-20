@@ -53,6 +53,7 @@ TOMAHAWK_DESC=	Enable Tomahawk command channel
 TOOLKIT_DESC=	Enable URL toolkit
 XSLT_DESC=	Enable XSLT support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCACHE}

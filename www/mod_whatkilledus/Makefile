@@ -21,6 +21,7 @@ SHORTMODNAME=	whatkilledus
 
 WRKSRC=		${WRKDIR}
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/mod_whatkilledus.c ${WRKSRC}

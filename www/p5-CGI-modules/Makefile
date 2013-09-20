@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-CGI
-# Date created:				September 30th 1996
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-modules
 PORTVERSION=	2.76
@@ -23,6 +19,7 @@ USE_PERL5=	configure
 MAN3=		CGI::Base.3 CGI::BasePlus.3 CGI::Carp.3 CGI::Form.3 \
 		CGI::MiniSvr.3 CGI::Request.3
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/CGI/*.orig
 

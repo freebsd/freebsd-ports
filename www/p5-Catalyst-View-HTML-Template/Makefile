@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-Catalyst-View-HTML-Template
-# Date created:				28 May 2005
-# Whom:					Gruen Christian <kiki@bsdro.org>
-#
+# Created by: Gruen Christian <kiki@bsdro.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Catalyst-View-HTML-Template
 PORTVERSION=	0.03
@@ -25,4 +21,5 @@ USE_PERL5=	modbuild
 MAN3=		Catalyst::Helper::View::HTML::Template.3 \
 		Catalyst::View::HTML::Template.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -20,6 +20,7 @@ USE_PYTHON=	-2.7
 
 PLIST_FILES=	bin/tracremind.py etc/tracremind.conf
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," \
 		 -e "s,%%PYTHON%%,${PYTHON_CMD}," ${WRKSRC}/tracremind.py

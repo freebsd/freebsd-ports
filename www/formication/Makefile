@@ -1,9 +1,5 @@
-# New ports collection makefile for:	formication
-# Date created:		2004-01-25
-# Whom:			Michael Ranner <mranner@inode.at>
-#
+# Created by: Michael Ranner <mranner@inode.at>
 # $FreeBSD$
-#
 
 PORTNAME=	formication
 PORTVERSION=	1.0.b1
@@ -25,6 +21,7 @@ PORTDOCS=	BLURB COPYING feedback.fcn feedback.html formication.txt
 PLIST_FILES=	www/cgi-bin/formication.pl
 SUB_FILES+=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PLIST_DIRSTRY=	www/cgi-bin

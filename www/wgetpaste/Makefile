@@ -18,6 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 NO_BUILD=	yes
 USE_BZIP2=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|/etc/|${PREFIX}/etc/|g' \

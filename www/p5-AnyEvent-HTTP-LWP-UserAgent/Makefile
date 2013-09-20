@@ -22,4 +22,5 @@ USE_PERL5=	configure
 
 MAN3=	AnyEvent::HTTP::LWP::UserAgent.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

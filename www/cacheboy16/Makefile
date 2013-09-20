@@ -111,6 +111,7 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  \
 		--disable-linux-tproxy \
 		--disable-epoll
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 800037

@@ -21,6 +21,7 @@ LDFLAGS+=	"-L${LOCALBASE}/lib"
 PLIST_FILES=	bin/uwsgi \
 		%%PYTHON_SITELIBDIR%%/uwsgidecorators.py
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' ${WRKSRC}/Makefile
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-urllink
-# Date created:		20 May 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	urllink
 PORTVERSION=	2.03.3
@@ -20,5 +16,6 @@ XPI_FILES=	chrome/urllink.jar chrome.manifest \
 		defaults/preferences/urllink.js install.rdf
 XPI_DIRS=	chrome defaults/preferences defaults
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

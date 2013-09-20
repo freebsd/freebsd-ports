@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-HTML-Selector-XPath
-# Date created:				28 Aug 2007
-# Whom:					Shinsuke Matsui <smatsui@karashi.org>
-#
+# Created by: Shinsuke Matsui <smatsui@karashi.org>
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Selector-XPath
 PORTVERSION=	0.14
@@ -21,4 +17,5 @@ USE_PERL5=	configure
 
 MAN3=		HTML::Selector::XPath.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

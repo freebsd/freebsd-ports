@@ -22,6 +22,7 @@ USE_WEBPLUGINS=	native
 WEBPLUGINS_NAME=	# empty
 WEBPLUGINS_FILES=	lib${PORTNAME}.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/firefox/Makefile.webplugins"
 .include <bsd.port.post.mk>

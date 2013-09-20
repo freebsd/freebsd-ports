@@ -31,6 +31,7 @@ OPTIONS_DEFAULT=EXAMPLES GTK3
 
 SUB_FILES=	xombrero
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 800041

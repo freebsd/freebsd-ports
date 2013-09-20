@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-FreeProxy
-# Date created:				10 Oct 2008
-# Whom:					Dennis Herrmann <adox@mcx2.org>
-#
+# Created by: Dennis Herrmann <adox@mcx2.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-FreeProxy
 PORTVERSION=	0.04
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		WWW::FreeProxy.3 WWW::FreeProxy::Proxy4Free.3 WWW::FreeProxy::Samair.3 WWW::FreeProxy::Look.3 WWW::FreeProxy::PublicProxyServers.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

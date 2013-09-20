@@ -18,6 +18,7 @@ ALL_TARGET=	cntlm
 
 MAN1=		cntlm.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|DESTDIR=|DESTDIR=${PREFIX}|' \
 		-e 's|-Wno-unused-but-set-variable -pedantic -O3||' \

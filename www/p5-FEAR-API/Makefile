@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	FEAR::API
 # Created by: ijliao
 # $FreeBSD$
 
@@ -51,4 +49,5 @@ MAN3=	FEAR::API.3 \
 	FEAR::API::Filters.3 \
 	FEAR::API::Document.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	www/p5-W3C-LinkChecker
-# Date created:				25 November 2004
-# Whom:					Aaron Dalton <aaron@daltons.ca>
-#
+# Created by: Aaron Dalton <aaron@daltons.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	W3C-LinkChecker
 PORTVERSION=	4.81
@@ -31,4 +27,5 @@ MANCOMPRESSED=	no
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

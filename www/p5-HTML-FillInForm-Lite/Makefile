@@ -16,4 +16,5 @@ MAN3=	HTML::FillInForm::Lite.3 \
 	HTML::FillInForm::Lite::Compat.3 \
 	HTML::FillInForm::Lite::JA.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -19,4 +19,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.1.1<1.5:${PORTSDIR}/www/py-django1
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,4 +1,3 @@
-# Changes: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-ConfigLoader
@@ -23,4 +22,5 @@ USE_PERL5=	configure
 MAN3=	Catalyst::Plugin::ConfigLoader.3 \
 	Catalyst::Plugin::ConfigLoader::Manual.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

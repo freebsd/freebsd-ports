@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xpi-jv
-# Date created:				2009-04-26
-# Whom:					Norikatsu Shigemura <nork@FreeBSD.org>
-#
+# Created by: Norikatsu Shigemura <nork@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jv
 PORTVERSION=	0.51
@@ -24,6 +20,7 @@ XPI_DIRS=	chrome \
 
 REINPLACE_ARGS=	-i ""
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} "/em:maxVersion/s/3\.5\.\*/3.6.*/" ${WRKSRC}/install.rdf
 

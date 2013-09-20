@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	wsdlpull
-# Date created:			Mar 18, 2005
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	wsdlpull
 PORTVERSION=	1.24
@@ -24,6 +19,7 @@ USE_LDCONFIG=	yes
 
 MAN1=		wsdlpull.1 wsdlpull-schema.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/-O2 -Wall/d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} \

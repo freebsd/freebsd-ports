@@ -32,6 +32,7 @@ CONFIGURE_ARGS=	--disable-tcmalloc --disable-hoard
 PLIST_FILES=	sbin/pound sbin/poundctl
 PORTDOCS=	README FAQ CHANGELOG
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMSDAV}

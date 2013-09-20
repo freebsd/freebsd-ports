@@ -22,6 +22,7 @@ PHPMYSQLI_DESC=	Use mysqli php module
 
 OPTIONS_DEFAULT=	PHPPDOMYSQL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPHPMYSQLI}

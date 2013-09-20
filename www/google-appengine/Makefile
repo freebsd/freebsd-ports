@@ -27,6 +27,7 @@ USES=		gettext
 OPTIONS_DEFINE=	EXAMPLES MYSQL
 OPTIONS_DEFAULT=	MYSQL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 WRKSRC=	${WRKDIR}/${PORTNAME:S,-,_,}

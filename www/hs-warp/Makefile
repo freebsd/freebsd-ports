@@ -15,5 +15,6 @@ USE_CABAL=	blaze-builder>=0.2.1.4 blaze-builder-conduit>=0.5 \
 		simple-sendfile>=0.2.7 transformers>=0.2.2 unix-compat>=0.2 \
 		void wai>=1.3
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

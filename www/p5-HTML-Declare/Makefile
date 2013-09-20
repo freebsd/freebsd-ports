@@ -21,4 +21,5 @@ PLIST_FILES=	%%SITE_PERL%%/HTML/Declare.pm \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Declare/.packlist
 PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Declare
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

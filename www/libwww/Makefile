@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libwww
-# Date created:		18 Feb 1996
-# Whom:			torstenb
-#
+# Created by: torstenb
 # $FreeBSD$
-#
 
 PORTNAME=	libwww
 PORTVERSION=	5.4.0
@@ -25,6 +21,7 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure

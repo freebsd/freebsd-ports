@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-IMDb
-# Date created:				Wed Jul  17 08:00:30 2001
-# Whom:					Michael L. Hostbaek (mich@freebsdcluster.org)
-#
+# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
 # $FreeBSD$
-#
 
 PORTNAME=	IMDb
 PORTVERSION=	0.01
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=		IMDb.3 IMDb::People.3 IMDb::Title.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

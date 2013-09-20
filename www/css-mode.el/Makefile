@@ -1,9 +1,5 @@
-# New ports collection makefile for:	css-mode.el
-# Date created:		21 October 1999
-# Whom:			Shigeyuki Fukushima <shige@FreeBSD.org>
-#
+# Created by: Shigeyuki Fukushima <shige@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	css-mode-elisp
 PORTVERSION=	0.11
@@ -32,6 +28,7 @@ DOCSDIR=	${PREFIX}/share/doc/css-mode
 
 PLIST_SUB=	ELISP_SUBDIR=${ELISP_SUBDIR} XELISP_SUBDIR=${XELISP_SUBDIR}
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/${ELISP_SUBDIR}
 	${INSTALL_DATA} ${_DISTDIR}/${DISTNAME} ${PREFIX}/${ELISP_SUBDIR}/

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   elog
-# Date created:        8 July 2006
-# Whom:                David Otto <ottodavid@gmx.net>
-#
+# Created by: David Otto <ottodavid@gmx.net>
 # $FreeBSD$
-#
 
 PORTNAME=	elog
 DISTVERSION=	2.9.2-1
@@ -30,6 +26,7 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/elog-2.9.2
 MAKE_ENV=	LOGBOOKDIR=${LOGBOOKDIR}
 
+NO_STAGE=	yes
 pre-fetch:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You may change the data directory with the option LOGBOOKDIR"

@@ -47,6 +47,7 @@ OPTIONS_DEFAULT=	GSTREAMER
 
 GSTREAMER_DESC=	HTML5 audio and video via GStreamer
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGSTREAMER}

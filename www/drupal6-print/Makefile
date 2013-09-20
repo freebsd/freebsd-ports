@@ -1,7 +1,4 @@
-# New ports collection makefile for:	drupal6-print
-# Date created:		Jul 28 2008
-# Whom:		Eygene Ryabinkin <rea-fbsd@codelabs.ru>
-#
+# Created by: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
 # $FreeBSD$
 
 PORTNAME=	print
@@ -35,4 +32,5 @@ MODULE_FILES=	icons/mail_icon.gif icons/pdf_icon.gif icons/print_icon.gif \
 DOC_FILES=	CHANGELOG.txt CREDITS.txt INSTALL.txt \
 		LICENSE.txt MAINTAINERS.txt README.txt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

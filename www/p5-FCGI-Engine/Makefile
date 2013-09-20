@@ -41,4 +41,5 @@ MAN3=		FCGI::Engine.3 \
 		Plack::Server::FCGI::Engine.3 \
 		Plack::Server::FCGI::Engine::ProcManager.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

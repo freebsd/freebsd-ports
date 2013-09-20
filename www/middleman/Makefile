@@ -35,6 +35,7 @@ CONFIGURE_ARGS+=	--enable-mtime
 MMAN_CACHE=	/var/cache/mman
 PLIST_SUB+=	MMAN_CACHE=${MMAN_CACHE}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 	's|/usr/bin/mman|${PREFIX}/bin/mman|g ; \

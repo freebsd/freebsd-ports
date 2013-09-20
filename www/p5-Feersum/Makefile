@@ -35,4 +35,5 @@ MAN3=		Feersum.3 \
 		Feersum::Runner.3 \
 		Plack::Handler::Feersum.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

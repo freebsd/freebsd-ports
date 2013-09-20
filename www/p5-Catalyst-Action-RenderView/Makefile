@@ -24,6 +24,7 @@ USE_PERL5=	configure
 
 MAN3=	Catalyst::Action::RenderView.3
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -i '' '/test_requires/d' ${WRKSRC}/Makefile.PL
 

@@ -17,6 +17,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rssroll ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/www/data/rssroll ${PREFIX}/www/cgi-bin

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	php-screw
-# Date created:         Wed May 22 12:21:01 CET 2002
-# Whom:                 Alex Dupre <sysadmin@alexdupre.com>
-#
+# Created by: Alex Dupre <sysadmin@alexdupre.com>
 # $FreeBSD$
-#
 
 PORTNAME=	php-screw
 PORTVERSION=	1.5
@@ -26,6 +22,7 @@ IGNORE_WITH_PHP=4
 
 CONFIGURE_ARGS+=--enable-php_screw=shared
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO} ""
 	@${ECHO} "To achieve real security, define your own encryption"

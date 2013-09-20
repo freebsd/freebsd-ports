@@ -21,6 +21,7 @@ USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracFullBlogPlugin
 
 .if defined(BOOTSTRAP)
+NO_STAGE=	yes
 do-fetch:
 	${MKDIR} ${WRKDIR}
 	svn export http://trac-hacks.org/svn/fullblogplugin/0.11/ ${WRKSRC}

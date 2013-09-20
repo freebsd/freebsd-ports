@@ -1,9 +1,5 @@
-# New ports collection makefile for:	videocache
-# Date created:		2009-04-30
-# Whom:			Murilo Opsfelder <mopsfelder@gmail.com>
-#
+# Created by: Murilo Opsfelder <mopsfelder@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	videocache
 PORTVERSION=	1.9.2
@@ -25,6 +21,7 @@ PORTDOCS=	CHANGELOG COPYING Readme
 PORTEXAMPLES=	squid.conf
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

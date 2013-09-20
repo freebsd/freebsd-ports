@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	sitebar
-# Date created:			Jun 23, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	sitebar
 PORTVERSION=	3.3.9
@@ -21,6 +16,7 @@ WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/www/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}
 	@cd ${WRKSRC} && \

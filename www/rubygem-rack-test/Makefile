@@ -1,9 +1,4 @@
-# New ports collection makefile for:	rubygem-rack-test
-# Date created:		1 September 2010
-# Whom:				Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rack-test
 PORTVERSION=	0.6.2
@@ -19,4 +14,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

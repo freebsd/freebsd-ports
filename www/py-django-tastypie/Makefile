@@ -18,6 +18,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

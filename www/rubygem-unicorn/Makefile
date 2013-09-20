@@ -18,4 +18,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/unicorn bin/unicorn_rails
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

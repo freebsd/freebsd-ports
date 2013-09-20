@@ -33,6 +33,7 @@ HASTYMAIL_REV=	2011.08.22
 OPTIONS_DEFINE=	PGSQL MYSQL DB
 DB_DESC=	Use older pear DB (instead of MDB2)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

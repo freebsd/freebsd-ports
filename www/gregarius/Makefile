@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gregarius
-# Date created:		2006-12-16
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gregarius
 PORTVERSION=	0.6.1
@@ -18,6 +14,7 @@ USE_PHP=	gettext iconv mbstring session xml zlib
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${WWWDIR}
 	${CP} -R ${WRKSRC}/ ${WWWDIR}

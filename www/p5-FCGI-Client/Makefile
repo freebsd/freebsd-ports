@@ -25,4 +25,5 @@ MAN3=	FCGI::Client.3 \
 	FCGI::Client::RecordFactory.3 \
 	FCGI::Client::RecordHeader.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

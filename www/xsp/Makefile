@@ -25,6 +25,7 @@ MAN1=		asp-state.1 dbsessmgr.1 mod-mono-server.1 xsp.1 \
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 pre-su-install:
 	${MKDIR} ${XSP_DOCROOT}
 

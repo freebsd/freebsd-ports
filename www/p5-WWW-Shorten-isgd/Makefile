@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-WWW-Shorten-isgd
-# Date created:				May 18, 2009
-# Whom:					Masafumi NAKANE <max@FreeBSD.org>
-#
+# Created by: Masafumi NAKANE <max@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	WWW-Shorten-isgd
 PORTVERSION=	0.02
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		WWW::Shorten::isgd.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

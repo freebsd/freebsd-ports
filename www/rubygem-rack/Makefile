@@ -1,4 +1,3 @@
-# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
 
 # XXX: If updating this port, please check compatibality with at least the following ports,
@@ -22,4 +21,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/rackup
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

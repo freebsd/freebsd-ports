@@ -15,4 +15,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Beaker
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

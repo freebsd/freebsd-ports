@@ -18,6 +18,7 @@ DOS2UNIX_REGEX=	.*\.php
 WANT_PHP_WEB=	yes
 SUB_FILES=	pkg-deinstall pkg-install pkg-message
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} -f ${WRKSRC}/plugins/gui.ajax/res/themes/vision/images/mimes/16/._users-folder.png
 	@${MV} ${WRKSRC}/conf/bootstrap_conf.php ${WRKDIR}/bootstrap_conf.php.sample

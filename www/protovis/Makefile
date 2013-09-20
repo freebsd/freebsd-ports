@@ -14,6 +14,7 @@ USE_ZIP=	yes
 
 PROJECTHOST=	${PORTNAME}-js
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DOCSDIR}/ ${EXAMPLESDOR}/ ${WWWDIR}/
 .if !defined(NOPORTDOCS)

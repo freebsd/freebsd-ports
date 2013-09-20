@@ -22,4 +22,5 @@ USE_PERL5=	modbuild
 MAN1=	hypertoc.1
 MAN3=	HTML::GenToc.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

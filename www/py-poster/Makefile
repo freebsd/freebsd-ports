@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-poster
-# Date created:		2010-12-30
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	poster
 PORTVERSION=	0.8.1
@@ -19,4 +15,5 @@ COMMENT=	Streaming HTTP uploads and multipart/form-data encoding
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

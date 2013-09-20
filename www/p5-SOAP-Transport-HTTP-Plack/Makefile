@@ -19,4 +19,5 @@ USE_PERL5=	configure
 MAN3=	SOAP::Transport::HTTP::Plack.3 \
 	XMLRPC::Transport::HTTP::Plack.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

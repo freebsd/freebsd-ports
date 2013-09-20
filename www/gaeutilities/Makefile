@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gaeutilities
-# Date created:		2009-08-18
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gaeutilities
 PORTVERSION=	1.4
@@ -24,6 +20,7 @@ WRKSRC=	${WRKDIR}/joerussbowman-gaeutilities-ea3f7e1
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

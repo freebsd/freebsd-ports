@@ -23,6 +23,7 @@ USE_QT4=	gui moc_build qmake_build rcc_build uic_build
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-configure:
 	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
 

@@ -28,6 +28,7 @@ MAKE_ARGS+=	INCLUDES="-I${LOCALBASE}/include/apache${APACHE_VERSION} -I${LOCALBA
 INSTALL_TARGET=	install-modules-yes
 DOCSDIR=	${PREFIX}/share/doc/apache${APACHE_VERSION}/mod
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

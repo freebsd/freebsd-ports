@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-django-json-rpc
-# Date created:	Feb 3, 2012
-# Whom:	John Hixson <john@ixsystems.com>
-#
+# Created by: John Hixson <john@ixsystems.com>
 # $FreeBSD$
-#
 
 PORTNAME=	django-json-rpc
 PORTVERSION=	0.6.2
@@ -23,4 +19,5 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

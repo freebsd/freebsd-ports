@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-W3C-LogValidator
-# Date created:			Jun 24, 2004
-# Whom:				toni.viemero@iki.fi
-#
+# Created by: toni.viemero@iki.fi
 # $FreeBSD$
-#
 
 PORTNAME=	W3C-LogValidator
 PORTVERSION=	1.4
@@ -37,6 +33,7 @@ MAN3=	W3C::LogValidator.3 \
 	W3C::LogValidator::Output::Raw.3 \
 	W3C::LogValidator::SurveyEngine.3
 
+NO_STAGE=	yes
 post-install:
 .ifndef (NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}/

@@ -54,6 +54,7 @@ INTPCRE_DESC=	Use internal PCRE library
 RRDTOOL_DESC=	Usage graphs support
 UWSGI_DESC=	uWSGI support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MADMIN}

@@ -1,6 +1,5 @@
 # Created by: gugu
 # $FreeBSD$
-# Generated with App::Pm2Port . Do not edit directly, please
 
 PORTNAME=	HTML-FormFu-Imager
 PORTVERSION=	0.03006
@@ -24,4 +23,5 @@ MAN3=	HTML::FormFu::Imager.3 \
 		HTML::FormFu::Transformer::Imager.3 \
 		HTML::FormFu::Validator::Imager::Size.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

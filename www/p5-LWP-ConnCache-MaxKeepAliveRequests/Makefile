@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-LWP-ConnCache-MaxKeepAliveRequests
-# Date created:				2009-02-04
-# Whom:					Greg Larkin <glarkin@FreeBSD.org>
-#
+# Created by: Greg Larkin <glarkin@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	LWP-ConnCache-MaxKeepAliveRequests
 PORTVERSION=	0.33
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		LWP::ConnCache::MaxKeepAliveRequests.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
