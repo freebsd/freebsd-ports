@@ -6,7 +6,7 @@ MASTER_SITES?=	MOZILLA/${PORTNAME}/releases/${PORTVERSION}esr/linux-i686/en-US
 PKGNAMEPREFIX?=		linux-
 
 .if defined(REPLACE_GRE)
-EXTRACT_DEPENDS+=${NONEXISTENT}:${.CURDIR}/../../www/linux-seamonkey:extract
+EXTRACT_DEPENDS+=${NONEXISTENT}:${PORTSDIR}/www/linux-seamonkey:extract
 .endif
 
 NO_BUILD=	yes
