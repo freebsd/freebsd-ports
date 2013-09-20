@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dlmalloc
-PORTVERSION=	2.8.4
+PORTVERSION=	2.8.6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://gee.cs.oswego.edu/pub/misc/ 
 DISTFILES=	malloc-${PORTVERSION}.c malloc-${PORTVERSION}.h
