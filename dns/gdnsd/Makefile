@@ -1,8 +1,8 @@
-# Created by: Stefan Caunter <stef@scaleengine.com>
+# Created by: Allan Jude <ports@scaleengine.com>
 # $FreeBSD$
 
 PORTNAME=	gdnsd
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.0
 CATEGORIES=	dns
 MASTER_SITES=	http://downloads.gdnsd.net/ \
 		http://gdnsd.scaleengine.net/gdnsd/
@@ -12,7 +12,7 @@ COMMENT=	Authoritative-only GeoIP-aware DNS server
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	ev:${PORTSDIR}/devel/libev
+LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev
 
 OPTIONS_DEFINE=	GEOIP
 
@@ -39,5 +39,10 @@ GROUPS?=	gdnsd
 .if ${PORT_OPTIONS:MGEOIP}
 RUN_DEPENDS+=	${LOCALBASE}/share/GeoIP/GeoIP.dat:${PORTSDIR}/net/GeoIP
 .endif
+
+post-install:
+	${MKDIR} ${PREFIX}/var/run/gdnsd
+	${MKDIR} ${PREFIX}/etc/gdnsd/zones
+	${TOUCH} ${PREFIX}/etc/gdnsd/zones/.keep-me
 
 .include <bsd.port.mk>
