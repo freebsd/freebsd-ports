@@ -30,6 +30,7 @@ DOC_FILES=	doc/manual.txt \
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

@@ -24,6 +24,7 @@ USE_PERL5=	configure
 MAN3=		Finance::Currency::Convert::XE.3
 PORTDOCS=	Changes README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

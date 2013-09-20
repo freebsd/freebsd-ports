@@ -1,9 +1,5 @@
-# New ports collection makefile for:	myBudget
-# Date created:				2004 05 July
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	myBudget
 PORTVERSION=	0.60
@@ -18,6 +14,7 @@ NO_BUILD=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pygnome2
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|gobject.so|_gobject.so|' \
 	    ${WRKSRC}/install.py

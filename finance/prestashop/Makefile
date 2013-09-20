@@ -19,6 +19,7 @@ USE_PHP=	mysql gd
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-install:

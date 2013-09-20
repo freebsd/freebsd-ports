@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Business::OnlinePayment::iAuthorizer
-# Date created:				17 December 2003
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Business-OnlinePayment-iAuthorizer
 PORTVERSION=	0.2.1
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=		Business::OnlinePayment::iAuthorizer.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

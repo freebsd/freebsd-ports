@@ -1,7 +1,4 @@
-# Ports collection makefile for:	aqmoney
-# Date created:				April 15, 2003
-# Whom:					Heiner Strauss <heiner@bilch.com>
-#
+# Created by: Heiner Strauss <heiner@bilch.com>
 # $FreeBSD$
 
 PORTNAME=		aqmoney
@@ -18,4 +15,5 @@ GNU_CONFIGURE=		yes
 MAN1=			aqmoney.1
 PLIST_FILES=		bin/aqmoney
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Business::OnlinePayment::OCV
-# Date created:				17 December 2003
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Business-OnlinePayment-OCV
 PORTVERSION=	0.01
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=		Business::OnlinePayment::OCV.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Finance-Bitcoin
-# Date created:		2011-04-02
-# Whom:			Steven Kreuzer <skreuzer@FreeBSD.org>
-#
+# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Finance-Bitcoin
 PORTVERSION=	0.004
@@ -30,6 +26,7 @@ MAN3=	Finance::Bitcoin::API.3 \
 	Finance::Bitcoin::Wallet.3 \
 	Finance::Bitcoin.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

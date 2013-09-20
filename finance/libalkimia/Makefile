@@ -1,4 +1,3 @@
-# Created by: Jason E. Hale <bsdkaffee@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	libalkimia
@@ -24,6 +23,7 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 post-patch:
 
 	@${REINPLACE_CMD} -e 's|pkgconfig|../libdata/pkgconfig|' \

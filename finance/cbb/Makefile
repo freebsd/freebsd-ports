@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	cbb
-# Date created:			24 September, 1998
-# Whom:				kline
-#
+# Created by: kline
 # $FreeBSD$
-#
 
 PORTNAME=	cbb
 DISTVERSION=	0.9.5b
@@ -24,6 +20,7 @@ CONFIGURE_ARGS+=--with-perl=${PERL} \
 WRKSRC=		${WRKDIR}/${PKGNAME:R}
 PLIST_SUB+=	VERSION=${PORTVERSION:R:R}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD}  -e 's|.aboutwin.frame.a.l6 ||' \
 	    ${WRKSRC}/tcl/help.tcl

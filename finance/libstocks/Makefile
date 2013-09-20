@@ -13,6 +13,7 @@ USE_LDCONFIG=	yes
 REINPLACE_ARGS=	-i ""
 MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/' \
 			-e 's/__UNIX__/__unix__/' \

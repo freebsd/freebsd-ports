@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xtrader
-# Date created:		2005-04-16
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xtrader
 PORTVERSION=	0.99.9
@@ -28,6 +24,7 @@ PLIST_FILES=	bin/xtrader \
 		%%DATADIR%%/sample.xt
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|char|const char|' \
 	    ${WRKSRC}/xtrader/src/Resource.cpp

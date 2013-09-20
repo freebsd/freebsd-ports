@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Finance::YahooQuote
-# Date created:				2009-10-06
-# Whom:					Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Finance-YahooQuote
 PORTVERSION=	0.24
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 MAN1=		yahooquote.1
 MAN3=		Finance::YahooQuote.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

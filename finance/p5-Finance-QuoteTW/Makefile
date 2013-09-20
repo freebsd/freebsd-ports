@@ -1,4 +1,3 @@
-# Ports collection makefile for:	p5-Finance-QuoteTW
 # Created by: chinsan
 # $FreeBSD$
 
@@ -35,4 +34,5 @@ MAN3=		Finance::QuoteTW.3 \
 		Finance::QuoteTW::Schroders.3 \
 		Finance::QuoteTW::Tisc.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
