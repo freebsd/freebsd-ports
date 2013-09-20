@@ -33,6 +33,7 @@ ICON_SIZES=	32x32 48x48 64x64 72x72 96x96 128x128
 DESKTOP_ENTRIES="Asteroids3D" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
+NO_STAGE=	yes
 pre-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./autogen.sh)
 

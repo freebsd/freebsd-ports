@@ -1,9 +1,5 @@
-# New ports collection makefile for:    seahaven
-# Date created:         23 Dec 1998
-# Whom:                 imp
-#
+# Created by: imp
 # $FreeBSD$
-#
 
 PORTNAME=	seahaven
 PORTVERSION=	1.60
@@ -19,4 +15,5 @@ USE_XORG=	x11 xext xft
 MAN6?=		seahaven.6
 PLIST_FILES=	bin/seahaven
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

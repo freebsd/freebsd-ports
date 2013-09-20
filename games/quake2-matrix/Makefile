@@ -1,9 +1,5 @@
-# New ports collection makefile for:	quake2-matrix
-# Date created:				2006-12-24
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	matrix
 PORTVERSION=	1
@@ -23,6 +19,7 @@ ALL_TARGET=	release
 
 DOCSDIR=	${PREFIX}/share/doc/${LATEST_LINK}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 
 .include <bsd.port.pre.mk>

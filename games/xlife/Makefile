@@ -26,6 +26,7 @@ DESKTOP_ENTRIES="XLife" "" "" "${PORTNAME}" "" false
 DOC_FILES=	CHANGES DEVELOPMENT-TREE HACKING HOW-TO-INSTALL INSTALL \
 		MISSED README SHORT-INFO changelog.debian changelog.openbsd
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

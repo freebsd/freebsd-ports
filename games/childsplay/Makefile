@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pyassetml
-# Date created:				6 July 2004
-# Whom:					bruno
-#
+# Created by: bruno
 # $FreeBSD$
-#
 
 PORTNAME=	childsplay
 PORTVERSION=	0.90.2
@@ -28,6 +24,7 @@ MAKE_ENV=	LANG=C
 MAN6=		childsplay.6 letters-trans.6
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s@PREFIX=/usr/local@PREFIX=${PREFIX}@g " ${WRKSRC}/INSTALL.sh
 	@${REINPLACE_CMD} -e "s@ASSETMLROOT = '/usr/local@ASSETMLROOT= '${PREFIX}@g" ${WRKSRC}/pyassetml.py

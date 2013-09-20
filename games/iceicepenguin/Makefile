@@ -34,6 +34,7 @@ SUB_FILES=	${PORTNAME}
 DESKTOP_ENTRIES="Ice Ice Penguin" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

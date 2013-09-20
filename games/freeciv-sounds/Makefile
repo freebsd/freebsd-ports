@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freeciv-sounds
-# Date created:		28 July 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	freeciv
 PORTVERSION=	3
@@ -18,6 +14,7 @@ COMMENT=	Freeciv standard sound set
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/data
 
+NO_STAGE=	yes
 do-install:
 	@cd ${WRKSRC}/&&${COPYTREE_SHARE} . ${DATADIR}/
 

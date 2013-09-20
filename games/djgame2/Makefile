@@ -24,6 +24,7 @@ DATADIR=	${PREFIX}/share/djgame2
 
 SUB_FILES=	djgame2.desktop startdjg
 
+NO_STAGE=	yes
 post-patch:
 	${RM} -f ${WRKSRC}/Hall/HallRes/platform/x11/install
 	@${REINPLACE_CMD} -e 's|linux/soundcard.h|sys/soundcard.h|g' \

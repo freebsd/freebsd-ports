@@ -36,6 +36,7 @@ DEDICATED_DESC=		Build dedicated server
 GAMELIBS_DESC=		Force building game libraries
 SMP_CLIENT_DESC=	Build SMP (threaded) client
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	species
-# Date created:				2008-01-15
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	species
 PORTVERSION=	1.2d
@@ -22,6 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 OPTIONS_DEFINE=	VISITOOL
 VISITOOL_DESC=	Buil GUI tool for displaying evolution
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVISITOOL}

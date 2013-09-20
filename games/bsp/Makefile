@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bsp
-# Date created:			22 April 2002
-# Whom:				Christian Brueffer <chris@unixpages.org>
-#
+# Created by: Christian Brueffer <chris@unixpages.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bsp
 PORTVERSION=	5.2
@@ -18,6 +14,7 @@ GNU_CONFIGURE=	yes
 
 MAN6=		bsp.6
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2 -fomit-frame-pointer|${CFLAGS} &|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}

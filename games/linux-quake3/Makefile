@@ -39,6 +39,7 @@ LIBDIR=		${PREFIX}/libexec/${PKGNAMEPREFIX}${PORTNAME}
 Q3DATAFILE=	linuxq3apoint-1.32b-3.x86.run
 Q3PATCHFILE=	quake3-${PORTVERSION}.zip
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} && ${TAIL} +356 ${_DISTDIR}/${Q3DATAFILE} | \

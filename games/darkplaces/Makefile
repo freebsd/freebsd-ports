@@ -34,6 +34,7 @@ PLIST_FILES=	%%DATADIR%%/dummy
 PLIST_DIRS=	%%DATADIR%%
 PORTDOCS=	darkplaces.txt
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
 .include <bsd.port.options.mk>

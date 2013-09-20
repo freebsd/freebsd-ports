@@ -1,4 +1,3 @@
-# Creted by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
 
 PORTNAME=	pouetchess
@@ -24,6 +23,7 @@ DESKTOP_ENTRIES="pouetChess" \
 		"Game;BoardGame;" \
 		false
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} \( -name "*.cpp" -o -name "*.h" -o -name Makefile \
 		-o -name config.ini \) -exec ${REINPLACE_CMD} -e \

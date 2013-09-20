@@ -21,6 +21,7 @@ USE_XORG=	x11
 MAN1=		xskat.1 xskat-de.1
 PLIST_FILES=	bin/xskat
 
+NO_STAGE=	yes
 pre-fetch:
 .if !defined(WITH_ALTENBURGER_CARDS)
 	@${ECHO}

@@ -29,6 +29,7 @@ SDL_NET_DESC=	Build with network support
 
 OPTIONS_DEFAULT=	SDL_MIXER SDL_NET
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"

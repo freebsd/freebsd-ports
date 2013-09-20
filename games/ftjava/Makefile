@@ -40,6 +40,7 @@ DESKTOP_ENTRIES=	"FTJava" "A PBEM client for Full Thrust" \
 			"ftjava" "Game;BoardGame;StrategyGame;" \
 			false
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} ";"

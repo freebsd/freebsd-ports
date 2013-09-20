@@ -31,6 +31,7 @@ CXXFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 OPTIONS_DEFINE=	WXGTK
 OPTIONS_DEFAULT=	WXGTK
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 

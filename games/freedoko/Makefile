@@ -23,6 +23,7 @@ USE_ZIP=	yes
 USES=		gmake pkgconfig
 MAKE_ENV=	OS="${OPSYS}" DATADIR="${DATADIR}" DOCSDIR="${DOCSDIR}"
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "*Makefile*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|\.\./data|$$(DATADIR)|g ; \

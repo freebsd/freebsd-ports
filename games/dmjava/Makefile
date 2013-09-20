@@ -20,6 +20,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/${PORTNAME}
 	@${CP} -r ${WRKSRC}/* ${PREFIX}/${PORTNAME}

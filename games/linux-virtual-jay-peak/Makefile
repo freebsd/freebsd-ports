@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-virtual-jay-peak
-# Date created:			03 Apr 2005
-# Whom:				Jean-Yves Lefort <jylefort@FreeBSD.org>
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	virtual-jay-peak
 PORTVERSION=	1.1a
@@ -22,6 +18,7 @@ USE_LINUX_APPS=	xorglibs
 NO_BUILD=	yes
 SUB_FILES=	virtual-jay-peak
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/virtual-jay-peak ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/soulride-static ${PREFIX}/libexec

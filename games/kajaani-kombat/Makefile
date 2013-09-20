@@ -28,6 +28,7 @@ SUB_FILES=	${PORTNAME}
 DESKTOP_ENTRIES="Kajaani Kombat" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   spheresofchaos-demo
-# Date created:        31 January 2005
-# Whom:                Peter Pentchev <roam@FreeBSD.org>
-#
+# Created by: Peter Pentchev <roam@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	spheresofchaos
 PORTVERSION=	2.06
@@ -25,6 +21,7 @@ USE_LINUX_APPS=	sdl12
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/Chaosl ${PREFIX}/bin
 	${BRANDELF} -t Linux ${PREFIX}/bin/Chaosl

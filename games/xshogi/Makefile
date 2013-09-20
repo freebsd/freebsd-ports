@@ -1,9 +1,5 @@
-# New ports collection makefile for:   xshogi
-# Date created:        20 October 1996
-# Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-#
+# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	xshogi
 PORTVERSION=	${GNUSHOGI_PORTVERSION}
@@ -26,6 +22,7 @@ USE_CSTD=	gnu99
 MAN6=		xshogi.6
 PLIST_FILES=	bin/xshogi
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../games/gnushogi/Makefile.common"
 .include <bsd.port.pre.mk>
 

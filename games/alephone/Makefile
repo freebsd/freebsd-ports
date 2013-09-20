@@ -34,6 +34,7 @@ ZZIP_DESC=	Enable zziplib support
 
 OPTIONS_DEFAULT=	MAD OGG SPEEX SMPEG TTF ZZIP
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMAD}

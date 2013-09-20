@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ut2004-demo
-# Date created:			31 Mar 2005
-# Whom:				Jean-Yves Lefort <jylefort@FreeBSD.org>
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ut2004-demo
 PORTVERSION=	3334
@@ -42,6 +38,7 @@ PORTDOCS=	*
 LIBDIRS=	Animations Benchmark ForceFeedback KarmaData Maps Music \
 		Sounds Speech StaticMeshes System Textures Web
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_NVIDIA_GL)

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vultures-eye
-# Date created:				13 April 2006
-# Whom:					Leland Wang <llwang@infor.org>
-#
+# Created by: Leland Wang <llwang@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vultures
 PORTVERSION=	2.1.0
@@ -32,6 +28,7 @@ CFLAGS+=	-I${LOCALBASE}/include/libpng15
 MAKE_ENV+=	DATADIR="${DATADIR}" MAKE="${GMAKE}" BASECFLAGS="${CFLAGS}"
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 pre-configure:
 	@${CHMOD} 755 ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 

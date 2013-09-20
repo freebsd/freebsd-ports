@@ -1,9 +1,5 @@
-# New ports collection makefile for:	QWDtools
-# Date created:				24 Sen 2003
-# Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
-#
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	qwdtools
 CATEGORIES=	games converters
@@ -13,4 +9,5 @@ PKGMESSAGE=	/nonexistent
 
 MASTERDIR=	${.CURDIR}/../mvdsv
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

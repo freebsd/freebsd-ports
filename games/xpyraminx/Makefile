@@ -18,6 +18,7 @@ MAN1=		xpyraminx.1
 MANCOMPRESSED=	no
 XFREE86_HTML_MAN=	no
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xpyraminx ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/Pyraminx.ad ${PREFIX}/lib/X11/app-defaults/Pyraminx

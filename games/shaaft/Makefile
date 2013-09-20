@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Shaaft
-# Date created:				02 Jan 2004
-# Whom:					Kirill Ponomarew <krion@FreeBSD.org>
-#
+# Created by: Kirill Ponomarew <krion@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	shaaft
 PORTVERSION=	0.5.0
@@ -33,6 +29,7 @@ PLIST_DIRS=	%%DATADIR%%
 
 MAN6=		${PORTNAME}.6
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

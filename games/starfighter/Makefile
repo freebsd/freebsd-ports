@@ -29,6 +29,7 @@ INSTALLS_ICONS=	yes
 DESKTOP_ENTRIES="Project Starfighter" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

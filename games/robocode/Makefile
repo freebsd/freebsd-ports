@@ -34,6 +34,7 @@ SUB_FILES=	${PORTNAME}.sh pkg-message
 DESKTOP_ENTRIES="Robocode" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;StrategyGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

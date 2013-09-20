@@ -1,9 +1,5 @@
-# New ports collection makefile for:  	briquolo
-# Date created:       			18 Nov 2003
-# Whom:  				Kirill Ponomarew <krion@FreeBSD.org>
-#
+# Created by: Kirill Ponomarew <krion@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	briquolo
 PORTVERSION=	0.5.7
@@ -40,6 +36,7 @@ USES+=		gettext
 PLIST_SUB+=	NLS=""
 #.endif
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|png_infopp_NULL|NULL|g' \
 		-e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \

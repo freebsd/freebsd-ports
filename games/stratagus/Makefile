@@ -32,6 +32,7 @@ MAN6=		stratagus.6
 PORTDOCS=	*
 PLIST_FILES=	bin/png2stratagus bin/stratagus sbin/metaserver
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMIKMOD}

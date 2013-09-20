@@ -1,9 +1,5 @@
-# New ports collection makefile for:   gma
-# Date created:         22 June 1999
-# Whom:                 Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
-#
+# Created by: Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	gma
 PORTVERSION=	0.6
@@ -15,4 +11,5 @@ COMMENT=	Go-moku game which learns playing the game from studying its opponent
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

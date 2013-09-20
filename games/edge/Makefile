@@ -1,9 +1,5 @@
-# New ports collection makefile for:	edge
-# Date created:				2007-11-30
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	edge
 PORTVERSION=	1.35
@@ -39,6 +35,7 @@ PLIST_DIRSTRY=	%%DMDIR%%
 
 CFLAGS+=	-ffast-math
 
+NO_STAGE=	yes
 post-extract:
 	@${TAR} -C ${WRKDIR} \
 		--exclude "License.txt" \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	netris
-# Date created:	1 August 1996
-# Whom:	desmo
-#
+# Created by: desmo
 # $FreeBSD$
-#
 
 PORTNAME=		netris
 PORTVERSION=		0.52
@@ -23,6 +19,7 @@ CONFIGURE_ARGS=		--cc '${CC}' --copt '${CFLAGS}'
 CONFIGURE_ARGS+=	--enable-ipv6
 MAN1=			netris.1
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/netris.1 ${PREFIX}/man/man1
 

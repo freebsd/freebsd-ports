@@ -40,6 +40,7 @@ OPTIONS_DEFINE=	MAPPACK DOCS
 OPTIONS_DEFAULT=	MAPPACK
 MAPPACK_DESC=		Install community map pack
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMAPPACK}

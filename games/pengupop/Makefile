@@ -19,4 +19,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 PLIST_FILES=	bin/pengupop
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

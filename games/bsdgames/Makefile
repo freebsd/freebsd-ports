@@ -77,6 +77,7 @@ GAMESPATH_FILES=backgammon/backgammon/backgammon.6 \
 SGID_BINARIES=	atc battlestar canfield/canfield cribbage hack phantasia \
 		robots sail snake/snake
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s/NOMAN/NO_MAN/" \
 		${WRKSRC}/backgammon/teachgammon/Makefile \

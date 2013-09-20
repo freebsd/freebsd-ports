@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nethack
-# Date created:		27 March 1995
-# Whom:			asami
-#
+# Created by: asami
 # $FreeBSD$
-#
 
 PORTNAME=	nethack
 PORTVERSION=	3.2.3
@@ -40,6 +36,7 @@ DATADIR=	${PREFIX}/${HACKDIR}
 DOCSDIR=	${PREFIX}/share/doc/${HACKNAME}
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${PREFIX}/bin/${HACKLINK}) && ${HACKNAME} != ${HACKLINK}

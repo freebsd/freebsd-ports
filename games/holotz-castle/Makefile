@@ -42,6 +42,7 @@ OPTIONS_DEFINE=	SOLUTIONS
 OPTIONS_DEFAULT=SOLUTIONS
 SOLUTIONS_DESC=	Solutions for Holotz's Castle
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSOLUTIONS}

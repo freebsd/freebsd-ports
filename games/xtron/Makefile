@@ -20,6 +20,7 @@ DESKTOP_ENTRIES="xtron" \
 		"Game;ArcadeGame;" \
 		false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

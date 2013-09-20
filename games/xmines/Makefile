@@ -17,6 +17,7 @@ CFLAGS+=	-Wno-error=return-type
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

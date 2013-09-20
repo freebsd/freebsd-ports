@@ -64,6 +64,7 @@ PLIST=	${WRKDIR}/.pkg-plist
 
 MANUAL_PACKAGE_BUILD=	package exceeds pointyhat filesize limit
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -type f \
 		\( -name COPYING -or -name LICENSE -or -name copyright \) -delete

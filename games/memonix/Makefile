@@ -33,6 +33,7 @@ WRKSRC=		${WRKDIR}/MemonixSourceCode
 PLIST_FILES=	bin/Memonix %%DATADIR%%/gamedata.vfs
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-extract:
 	@${TAR} -C ${WRKDIR} -xzf ${DISTDIR}/memx16.tar.gz
 

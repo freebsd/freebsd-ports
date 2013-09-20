@@ -19,4 +19,5 @@ USE_QT4=	declarative opengl phonon xmlpatterns \
 		moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

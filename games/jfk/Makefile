@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jfk
-# Date created:				8 September 2002
-# Whom:					Stefan Farfeleder <e0026813@stud3.tuwien.ac.at>
-#
+# Created by: Stefan Farfeleder <e0026813@stud3.tuwien.ac.at>
 # $FreeBSD$
-#
 
 PORTNAME=	jfk
 PORTVERSION=	0.1.1
@@ -22,6 +18,7 @@ GNU_CONFIGURE=	yes
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

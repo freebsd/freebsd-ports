@@ -37,6 +37,7 @@ SDL_MIXER_DESC=	SDL_mixer sound backend
 
 OPTIONS_DEFINE=	OPENAL SDL_MIXER
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENAL}

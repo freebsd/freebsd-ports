@@ -26,6 +26,7 @@ MAN6=		amoebax.6
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|doc||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|datarootdir|datadir|' ${WRKSRC}/data/Makefile.in

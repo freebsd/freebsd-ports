@@ -18,6 +18,7 @@ MAN1=		xmball.1
 MANCOMPRESSED=	no
 XFREE86_HTML_MAN=	no
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xmball ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/Mball.ad ${PREFIX}/lib/X11/app-defaults/Mball

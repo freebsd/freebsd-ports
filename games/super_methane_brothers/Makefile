@@ -29,6 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 PORTDOCS=	*
 PLIST_FILES=	bin/methane
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

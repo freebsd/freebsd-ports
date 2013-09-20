@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hinversi
-# Date created:		2 April 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hinversi
 PORTVERSION=	0.8.2
@@ -24,6 +20,7 @@ USE_LDCONFIG=	yes
 
 MAN1=		hinversi-cli.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

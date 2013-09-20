@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lexter
-# Date created:			Feb 17, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lexter
 PORTVERSION=	1.0.3
@@ -23,6 +19,7 @@ USES=		gettext
 
 MAN6=	lexter.6
 
+NO_STAGE=	yes
 post-install:
 	@${CHOWN} root:games ${PREFIX}/bin/lexter
 	@${CHMOD} g+s ${PREFIX}/bin/lexter

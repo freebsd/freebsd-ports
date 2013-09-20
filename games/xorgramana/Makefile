@@ -32,6 +32,7 @@ DESKTOP_ENTRIES="XorGramana" \
 		"Game;LogicGame;" \
 		false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

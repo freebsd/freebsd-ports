@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--without-nas
 
 MAN6=		xabacus.6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMOTIF}

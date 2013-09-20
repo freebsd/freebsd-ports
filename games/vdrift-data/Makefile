@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vdrift-data
-# Date created:		2006-02-21
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	data
 PORTVERSION=	20100630
@@ -25,6 +21,7 @@ WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${DATE_VERSION}
 
 DATE_VERSION=	2010-06-30
 
+NO_STAGE=	yes
 post-extract:
 	@cd ${WRKSRC}/data && \
 		${FIND} * -name "SConscript*" -print0 | ${XARGS} -0 ${RM}

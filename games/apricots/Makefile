@@ -32,6 +32,7 @@ DESKTOP_ENTRIES="Apricots" \
 OPTIONS_DEFINE=	OPENAL
 OPTIONS_DEFAULT=OPENAL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENAL}

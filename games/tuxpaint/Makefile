@@ -34,6 +34,7 @@ MAKE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 MANCOMPRESSED=	yes
 MAN1=		tp-magic-config.1 tuxpaint.1 tuxpaint-import.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDOCS}

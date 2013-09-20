@@ -19,6 +19,7 @@ USE_SDL=	sdl mixer
 
 CONFIGURE_ARGS+=	NORSA='\#'
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|ushort  damage|unsigned short damage|' \
 		${WRKSRC}/short.c

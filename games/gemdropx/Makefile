@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gemdropx
-# Date created:				9 March 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	gemdropx
 PORTVERSION=	0.9
@@ -28,6 +24,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 PORTDATA=	*
 PORTDOCS=	AUTHORS.txt CHANGES.txt ICON.txt README.txt TODO.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

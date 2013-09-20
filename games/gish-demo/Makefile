@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gish-demo
-# Date created:				04 September 2006
-# Whom:					Jona Joachim <walkingshadow@grummel.net>
-#
+# Created by: Jona Joachim <walkingshadow@grummel.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gish-demo
 PORTVERSION=	1.60
@@ -24,6 +20,7 @@ DATADIR=	${PREFIX}/lib/${PORTNAME}
 SUB_FILES=	rungish.sh
 SUB_LIST=	LINUXBASE=${LINUXBASE}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	${CP} -R ${WRKSRC}/* ${DATADIR}

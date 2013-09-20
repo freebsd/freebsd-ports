@@ -45,6 +45,7 @@ DESKTOP_ENTRIES="Vamos" "${COMMENT}" ${PORTNAME} \
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

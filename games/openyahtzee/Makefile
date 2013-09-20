@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openyahtzee
-# Date created:		04 January 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openyahtzee
 PORTVERSION=	1.9.1
@@ -34,4 +30,5 @@ PLIST_FILES=	bin/openyahtzee \
 		share/pixmaps/openyahtzee.png
 PLIST_DIRSTRY=	share/applications
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

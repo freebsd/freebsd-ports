@@ -1,9 +1,5 @@
-# New ports collection makefile for:	moria
-# Date created:		6 August 2003
-# Whom:			glewis@FreeBSD.org
-#
+# Created by: glewis@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	moria
 PORTVERSION=	5.5.2
@@ -23,6 +19,7 @@ ALL_TARGET=	moria
 MAKE_ENV+=	DOCSDIR="${DOCSDIR}" MKDIR="${MKDIR}" CHOWN="${CHOWN}" \
 	CHGRP="${CHGRP}" CHMOD="${CHMOD}" TOUCH="${TOUCH}"
 
+NO_STAGE=	yes
 do-configure:
 	for i in ${WRKSRC}/source/config.h ${WRKSRC}/unix/Makefile; do \
 		${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" $$i; \

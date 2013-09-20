@@ -29,6 +29,7 @@ DESKTOP_ENTRIES="Brain Workshop" \
 		"Game;LogicGame;" \
 		false
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^FOLDER_RES = / s|res|${DATADIR}|; \
 		/^FOLDER_DATA = / s|.data.|os.environ["HOME"]+"/.brainworkshop"|' \

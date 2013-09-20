@@ -24,6 +24,7 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
 OPTIONS_DEFINE=	NLS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

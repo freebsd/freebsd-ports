@@ -16,6 +16,7 @@ USE_SDL=	sdl mixer image
 USE_DOS2UNIX=	yes
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} -f ${WRKSRC}/data/Thumbs.db
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|g' \

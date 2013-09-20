@@ -23,6 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lXpm -lXext -lX11
 PORTDOCS=	README TODO
 PLIST_FILES=	bin/minichess
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

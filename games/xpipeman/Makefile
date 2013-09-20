@@ -24,6 +24,7 @@ CFLAGS+=	-Wno-error=return-type
 BINGRP=		games
 BINMODE=	2555
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xpipeman ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xpipeman.man ${MANPREFIX}/man/man6/xpipeman.6

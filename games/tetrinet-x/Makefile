@@ -1,9 +1,5 @@
-# New ports collection makefile for:   tetrinet-x-1.13.16
-# Date created:        11 Apr 1999
-# Whom:                gmarco@giovannelli.it
-#
+# Created by: gmarco@giovannelli.it
 # $FreeBSD$
-#
 
 PORTNAME=	tetrinet-x
 PORTVERSION=	1.13.16
@@ -21,6 +17,7 @@ WRKSRC=		${WRKDIR}/tetrinetx-${PORTVERSION}
 
 INSTALLDIR=	${PREFIX}/tetrinet-x
 
+NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}/src && \
 		${CC} ${CFLAGS} main.c -o ../bin/tetrix.freebsd)

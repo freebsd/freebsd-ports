@@ -55,6 +55,7 @@ RnD_jue_DESC=	Levels default for R'n'D jue
 
 PREFIX=		/usr/local
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRnD}

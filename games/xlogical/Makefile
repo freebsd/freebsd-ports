@@ -1,9 +1,5 @@
-# New ports collection makefile for:   xlogical
-# Date created:        8 August 2007
-# Whom:                Aaron Baugher
-#
+# Created by: Aaron Baugher
 # $FreeBSD$
-#
 
 PORTNAME=	xlogical
 PORTVERSION=	1.0p8
@@ -21,6 +17,7 @@ USE_GMAKE=	yes
 USE_SDL=	sdl image mixer
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-extract:
 	${CHMOD} 755 ${WRKSRC}/missing
 	${RM} ${WRKSRC}/LICENSE

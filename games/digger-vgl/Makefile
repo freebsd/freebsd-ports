@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Digger
-# Date created:				14 April 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	digger
 PORTVERSION=	20020314
@@ -23,6 +19,7 @@ USE_SDL=	yes
 MAKE_ENV=	SOUND=yes
 .endif
 
+NO_STAGE=	yes
 pre-everything::
 .if !defined(WITH_SOUND)
 	@${ECHO_MSG} ""

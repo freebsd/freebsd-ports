@@ -21,5 +21,6 @@ USE_QT4=	corelib gui corelib gui network qt3support svg xml \
 USE_XZ=		yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <${.CURDIR}/../kdegames4/Makefile.common>
 .include <bsd.port.mk>

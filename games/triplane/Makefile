@@ -23,6 +23,7 @@ MAKE_ENV=	DATADIR="${DATADIR}"
 MAN6=		triplane.6
 
 # ALL_TARGET="depend all" would not work in -jX case due to races
+NO_STAGE=	yes
 pre-build:
 	${GMAKE} -C ${BUILD_WRKSRC} depend
 

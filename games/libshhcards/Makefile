@@ -16,6 +16,7 @@ MAKEFILE=	${FILESDIR}/Makefile.lib
 USE_LDCONFIG=	yes
 MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

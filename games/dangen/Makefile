@@ -28,6 +28,7 @@ PLIST_DIRS=	%%DATADIR%%/image %%DATADIR%%
 
 MAN6=		dangen.6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -42,6 +42,7 @@ FLAVOR_DESC=	Executable Selection
 
 OPTIONS_DEFAULT=	CLIENT SDL_CLIENT SERVER MAPPAC
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMAPPACK}

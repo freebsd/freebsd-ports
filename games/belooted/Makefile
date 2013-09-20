@@ -22,6 +22,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

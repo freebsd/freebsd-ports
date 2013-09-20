@@ -47,6 +47,7 @@ D2_DESC=	Diablo II server (D2CS/D2DBS)
 
 OPTIONS_DEFAULT=	D2
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

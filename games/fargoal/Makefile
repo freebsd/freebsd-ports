@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fargoal
-# Date Created:				13 December 2003
-# Whom:				 	chris_pressey@yahoo.ca
-#
+# Created by: chris_pressey@yahoo.ca
 # $FreeBSD$
-#
 
 PORTNAME=	fargoal
 PORTVERSION=	20040629
@@ -24,6 +20,7 @@ USE_GMAKE=	yes
 
 SUB_FILES=	${PORTNAME}-sh
 
+NO_STAGE=	yes
 do-install:
 # Script
 	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-sh ${PREFIX}/bin/${PORTNAME}

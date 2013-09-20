@@ -19,6 +19,7 @@ CONFIGURE_ARGS=	--localstatedir=${DATADIR}
 
 MAN6=		gtkballs.6x
 
+NO_STAGE=	yes
 post-install:
 	${CHMOD} 2755 ${PREFIX}/bin/gtkballs
 	${CHOWN} root:games ${PREFIX}/bin/gtkballs

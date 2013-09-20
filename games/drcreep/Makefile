@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}/DrCreep
 
 SUB_FILES+=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 801000

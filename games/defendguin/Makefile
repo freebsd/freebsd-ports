@@ -31,6 +31,7 @@ DESKTOP_ENTRIES="Defendguin" "${COMMENT}"  \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

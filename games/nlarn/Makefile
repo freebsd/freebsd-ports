@@ -16,6 +16,7 @@ USE_LUA=	5.1
 USE_GNOME=	glib20
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} 's|/usr/share/nlarn|${DATADIR}|' \
 		${WRKSRC}/src/game.c

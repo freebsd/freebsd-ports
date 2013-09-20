@@ -26,6 +26,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 DATADIR=	${PREFIX}/share/llk_linux
 DOCSDIR=	${PREFIX}/share/doc/llk_linux
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

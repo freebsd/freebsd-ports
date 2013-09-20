@@ -37,6 +37,7 @@ LPMUD_DESC=	Install default mudlib (LP-245)
 
 PORTSCOUT=	skipv:3.4.2
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

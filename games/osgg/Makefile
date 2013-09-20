@@ -16,6 +16,7 @@ USE_GL=		yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} -f ${WRKSRC}/osgg
 	@${REINPLACE_CMD} -e 's|"[a-z]*.txt"|DATADIR&|; s|endian.h|sys/&|' \

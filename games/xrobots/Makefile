@@ -16,6 +16,7 @@ USE_XORG=	x11 xaw xext xmu xt sm ice
 WRKSRC=		${WRKDIR}/xrobots-1.0
 MAN6=		xrobots.6
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL} -c -g games -m 664 ${FILESDIR}/xrobotscores ${PREFIX}/lib/X11
 

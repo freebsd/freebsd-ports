@@ -17,6 +17,7 @@ CPPFLAGS=	-I${WRKDIR}/include
 INFO=		gtypist gtypist.cs gtypist.es
 MAN1=		gtypist.1 typefortune.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

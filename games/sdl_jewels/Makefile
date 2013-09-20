@@ -33,6 +33,7 @@ PORTDOCS=	ChangeLog README
 DESKTOP_ENTRIES="SDL Jewels" "${COMMENT}" "sdljewels" \
 		"sdljewels" "Game;ArcadeGame;" ${FALSE}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

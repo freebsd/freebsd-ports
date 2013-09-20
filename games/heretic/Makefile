@@ -25,6 +25,7 @@ SG1_DESC=	Graphics Selections
 
 OPTIONS_DEFAULT=	X11 WAD
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

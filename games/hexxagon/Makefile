@@ -19,4 +19,5 @@ GNU_CONFIGURE=	yes
 DESKTOP_ENTRIES="Hexxagon" "Strategy Game" "" \
 		"hexxagon" "Game;StrategyGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

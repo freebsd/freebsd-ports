@@ -1,9 +1,5 @@
-# New ports collection makefile for:  	barrage
-# Date created:       	23 April 2003
-# Whom:  	Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	barrage
 PORTVERSION=	1.0.4
@@ -19,6 +15,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-profile-path=/var/games
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/games/|/|g' ${WRKSRC}/configure
 

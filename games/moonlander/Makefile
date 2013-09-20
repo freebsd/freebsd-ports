@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/moon-lander
 
 OPTIONS_DEFINE=	SOUND
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 install_dirs=	fonts images

@@ -19,6 +19,7 @@ MANLANG=	"" ja
 
 ACTXDIR=	${PREFIX}/share/examples/actx
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

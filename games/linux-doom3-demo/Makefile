@@ -1,9 +1,5 @@
-# New ports collection makefile for:	doom3-demo
-# Date created:			31 Mar 2005
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	doom3-demo
 PORTVERSION=	1.1.1286
@@ -33,6 +29,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	doom3-demo
 SUB_LIST=	DOOMDIR="${DOOMDIR}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_NVIDIA_GL)

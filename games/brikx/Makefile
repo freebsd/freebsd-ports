@@ -25,6 +25,7 @@ DESKTOP_ENTRIES="Brikx" \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/DIR_DATA/ s|data/|${DATADIR}/|' \
 		${WRKSRC}/src/brikx.h

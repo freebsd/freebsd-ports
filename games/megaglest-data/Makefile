@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST=		${WRKDIR}/pkg-plist
 
+NO_STAGE=	yes
 pre-install:
 	${RM} -f ${PLIST}
 .for DIR in data maps scenarios techs tilesets tutorials

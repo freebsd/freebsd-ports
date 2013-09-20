@@ -38,6 +38,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=		${PORTNAME}.1
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' \
 		${WRKSRC}/data/klavaro.desktop.in

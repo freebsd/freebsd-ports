@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wanderer
-# Date created:		15 August 2004
-# Whom:			marina@surferz.net
-#
+# Created by: marina@surferz.net
 # $FreeBSD$
-#
 
 PORTNAME=	wanderer
 PORTVERSION=	3.2
@@ -20,6 +16,7 @@ ALL_TARGET=	all
 MAKE_ENV+=	DOCSDIR="${DOCSDIR}" MKDIR="${MKDIR}" CHOWN="${CHOWN}" \
 		CHGRP="${CHGRP}" CHMOD="${CHMOD}" TOUCH="${TOUCH}"
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/local|${PREFIX}|g' ${WRKSRC}/Makefile
 

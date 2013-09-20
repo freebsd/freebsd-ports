@@ -30,6 +30,7 @@ DATAFILES=	annelid.dat apple.tga apple.wav backd.tga backn.tga font.dat \
 		score.wav segment.tga shrink.wav slow.wav speed.wav title.tga \
 		vortex.wav
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

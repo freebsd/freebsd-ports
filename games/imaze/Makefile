@@ -33,6 +33,7 @@ MAKE_ENV=	SOUNDDIR="${DATADIR}/sounds"
 
 MAN6=		genlab.6 imaze.6 imazesrv.6 imazestat.6 ninja.6 xlabed.6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MAUDIO)

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ladder
-# Date created:         11 Sep 2006
-# Whom:                 gurkan@phys.ethz.ch
-#
+# Created by: gurkan@phys.ethz.ch
 # $FreeBSD$
-#
 
 PORTNAME=	ladder
 PORTVERSION=	1.0
@@ -29,4 +25,5 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

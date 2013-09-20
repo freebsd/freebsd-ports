@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Games-GuessWord
-# Date created:				23 Dec 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Games-GuessWord
 PORTVERSION=	0.16
@@ -19,4 +15,5 @@ MAN3=	Games::GuessWord.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

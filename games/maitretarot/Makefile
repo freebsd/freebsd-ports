@@ -22,4 +22,5 @@ CONFIGURE_ARGS=		--with-default-config-file=${PREFIX}/etc/maitretarotrc.xml
 
 PLIST_FILES=		bin/maitretarot_server
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

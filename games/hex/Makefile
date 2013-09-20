@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Hex
-# Date created:		9 Aug 1999
-# Whom:			Will Andrews <andrews@technologist.com>
-#
+# Created by: Will Andrews <andrews@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	hex
 PORTVERSION=	0.0.2
@@ -20,6 +16,7 @@ MAKE_ENV=	GRAPHICPATH="${GRAPHICPATH}" LEVELPATH="${LEVELPATH}"
 GRAPHICPATH=	${PREFIX}/share/hex/graphics
 LEVELPATH=	${PREFIX}/share/hex/levels
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hex ${PREFIX}/bin
 	@${MKDIR} ${GRAPHICPATH}

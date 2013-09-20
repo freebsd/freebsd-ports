@@ -44,6 +44,7 @@ GRAPHICS=	GNOME_GRAPHICS
 .elif ${PKGNAMESUFFIX} == "-nox11"
 GRAPHICS=	# none
 #
+NO_STAGE=	yes
 # Patch notes:
 # 1) hpmon and statuscolors conflict with one another
 # 2) menucolors patch must be applied before statuscolors

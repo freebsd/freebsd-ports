@@ -1,9 +1,5 @@
-# New ports collection makefile for: fotaq (Flight of the Amazon Queen)
-# Date created:        Fri Mar 26 23:34:32 BST 2004
-# Whom:                Alex Trull <freebsd.alex@trull.org>
-#
+# Created by: Alex Trull <freebsd.alex@trull.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fotaq
 PORTVERSION=	1.0
@@ -23,6 +19,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/queen.1c ${DATADIR}

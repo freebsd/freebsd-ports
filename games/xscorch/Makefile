@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 
 MAN6=		xscorch.6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMIKMOD}

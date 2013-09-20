@@ -37,6 +37,7 @@ PORTEXAMPLES=	*
 DESKTOP_ENTRIES="3D Pong" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

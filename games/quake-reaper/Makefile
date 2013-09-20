@@ -21,6 +21,7 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../quake-data/Makefile.include"
 .include <bsd.port.options.mk>
 

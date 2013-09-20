@@ -1,9 +1,5 @@
-# New ports collection makefile for:    PySol-Music
-# Date created:         18 Sep 2000
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pysol-music
 PORTVERSION=	4.40
@@ -20,6 +16,7 @@ RUN_DEPENDS=	pysol:${PORTSDIR}/games/pysol
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/share/pysol
 	(cd ${WRKSRC}/data; tar cf - *) | \

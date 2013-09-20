@@ -18,6 +18,7 @@ USE_GMAKE=	yes
 
 PLIST_FILES=	bin/wmtictactoe
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^void .*main|int main|' ${WRKSRC}/wmtictactoe.c

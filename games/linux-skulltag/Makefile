@@ -1,9 +1,5 @@
-# New ports collection makefile for:	games/linux-skulltag
-# Date created:				2010-01-10
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	skulltag
 PORTVERSION=	0.9.8a
@@ -25,6 +21,7 @@ NO_BUILD=	yes
 
 SUB_FILES=	skulltag.sh pkg-message
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/skulltag ${PREFIX}/bin/skulltag.bin
 	${INSTALL_PROGRAM} ${WRKDIR}/skulltag-server ${PREFIX}/bin/

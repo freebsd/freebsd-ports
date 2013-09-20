@@ -45,6 +45,7 @@ OPT=		-DCPUS=4 -DHASHSTATS -DTRACE -DBOOKDIR=\\\"${WITH_BOOKDIR}\\\" \
 		-DTBDIR=\\\"${WITH_TBDIR}\\\" \
 		-DPERSDIR=\\\"${WITH_PERSDIR}\\\" -DSKILL
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"

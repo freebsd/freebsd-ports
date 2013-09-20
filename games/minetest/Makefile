@@ -33,6 +33,7 @@ CLIENT_DESC=	Build client
 SERVER_DESC=	Build server
 SOUND_DESC=	Enable sound
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -1,9 +1,5 @@
-# New ports collection makefile for: games/avp-demo
-# Date created:		11 Sep 2009
-# Whom:			Stas Timokhin <devel@stasyan.com>
-#
+# Created by: Stas Timokhin <devel@stasyan.com>
 # $FreeBSD$
-#
 
 PORTNAME=	avp-demo
 PORTVERSION=	0.1
@@ -23,6 +19,7 @@ WRKSRC=		${WRKDIR}
 BUILD_WRKSRC=	${WRKDIR}/avp_git
 USE_OPENAL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !(${ARCH} == i386 || ${ARCH} == pc98)

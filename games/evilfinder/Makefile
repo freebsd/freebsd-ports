@@ -1,9 +1,5 @@
-# New ports collection makefile for:	evilfinder
-# Date created:				11 June 2003
-# Whom:					Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	evilfinder
 PORTVERSION=	1.00
@@ -33,6 +29,7 @@ OPTIONS_DEFINE=	WRAPPER
 WRAPPER_DESC=	Evilfinder local wrapper
 OPTIONS_DEFAULT=	WRAPPER
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWRAPPER}

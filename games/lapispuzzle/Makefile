@@ -1,9 +1,5 @@
-# New ports collection makefile for:    lapispuzzle
-# Date created:         13 Oct 2006
-# Whom:                 gurkan@phys.ethz.ch
-#
+# Created by: gurkan@phys.ethz.ch
 # $FreeBSD$
-#
 
 PORTNAME=	lapispuzzle
 PORTVERSION=	1.2
@@ -24,4 +20,5 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/LapisPuzzle-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -25,6 +25,7 @@ USE_GCC=	yes
 
 PORTDOCS=	README AUTHORS Changelog
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

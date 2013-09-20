@@ -30,6 +30,7 @@ SEARCH_DESC=		Thing, linedef, or sector search by type
 EXTRA_TOOLS_DESC=	Add a few extra tools to Yadex' repertoire
 LAPTOP_KEYS_DESC=	Key bindings for easier editing on laptops
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PATCH_SITES=	http://glbsp.sourceforge.net/%SUBDIR%/

@@ -20,6 +20,7 @@ MAKEFILE=	${FILESDIR}/Makefile
 SUB_FILES=	pkg-message
 PORTDOCS=	ChangeLog INSTALL README TODO
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}

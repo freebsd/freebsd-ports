@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Cake
-# Date created:				28 July 2004
-# Whom:					Alexey Dokuchaev <danfe@regency.nsu.ru>
-#
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	cake
 PORTVERSION=	2005.12.26
@@ -50,6 +46,7 @@ post-patch: .SILENT
 # Fix for GCC 4.x
 	${REINPLACE_CMD} -e 's/Mat3x2:://' ${WRKSRC}/cake/math.h
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/main ${PREFIX}/bin/cake
 

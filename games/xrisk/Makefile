@@ -16,4 +16,5 @@ MAN6=		xrisk.6
 
 RESTRICTED=	Possible trademark infringement
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

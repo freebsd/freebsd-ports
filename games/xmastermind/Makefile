@@ -1,4 +1,4 @@
-# Whom: Andrey Zakhvatov
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
 
 PORTNAME=	xmastermind
@@ -23,6 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lforms -lXpm -lX11
 PORTDOCS=	BUGS README.for.developers README.for.users
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^CC/s| =| ?=| ; \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	oneko
-# Date created:		5 December 1994
-# Whom:			asami
-#
+# Created by: asami
 # $FreeBSD$
-#
 
 PORTNAME=	oneko
 PORTVERSION=	2.0b
@@ -36,6 +32,7 @@ MAKE_ARGS=	MANSUFFIX=6 \
 		MANDIR=${PREFIX}/man/man6 \
 		JMANDIR=${PREFIX}/man/ja/man6
 
+NO_STAGE=	yes
 do-patch:
 	@(cd ${WRKSRC}; \
 	${PATCH} -p1 < ../oneko-2.0b-pop1.1.patch ; \

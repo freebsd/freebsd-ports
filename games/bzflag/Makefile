@@ -29,4 +29,5 @@ DESKTOP_ENTRIES=	"BZFlag" "Battle enemy tanks" \
 MAN5=	bzw.5
 MAN6=	bzadmin.6 bzflag.6 bzfs.6
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

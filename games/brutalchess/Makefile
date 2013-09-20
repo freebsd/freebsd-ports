@@ -1,9 +1,5 @@
-# New ports collection makefile for:   Brutalchess
-# Date created:         2005-02-07
-# Whom:                 Gustavo Perez Querol <gustau.perez@gmail.com>
-#
+# Created by: Gustavo Perez Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=		brutalchess
 PORTVERSION=		0.5.2
@@ -26,6 +22,7 @@ USE_AUTOTOOLS=		libtool
 USE_GL=			yes
 USE_SDL=		sdl image
 
+NO_STAGE=	yes
 pre-build:
 	${CHMOD} 0755 ${WRKSRC}/install-sh
 

@@ -16,6 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinte
 
 USE_PYTHON=	yes
 
+NO_STAGE=	yes
 do-build:
 	@(${ECHO_CMD} "#!${SH}"; \
 	  ${ECHO_CMD} "cd ${DATADIR} && ${PYTHON_CMD} board.py") \

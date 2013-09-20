@@ -33,6 +33,7 @@ SUB_LIST=	RUBY=${RUBY}
 DESKTOP_ENTRIES="Magic Maze" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

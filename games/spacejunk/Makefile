@@ -30,6 +30,7 @@ DESKTOP_ENTRIES=	"Spacejunk" \
 			"Game;ArcadeGame;" \
 			false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"

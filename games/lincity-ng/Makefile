@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--with-libphysfs=${PREFIX} \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's| -O| -I${LOCALBASE}/include&|g' \
 		${WRKSRC}/Jamrules

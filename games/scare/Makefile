@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scare
-# Date created:				6 February 2005
-# Whom:					Peter Pentchev <roam@FreeBSD.org>
-#
+# Created by: Peter Pentchev <roam@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	scare
 PORTVERSION=	1.3.10
@@ -29,6 +25,7 @@ USE_ZIP=	yes
 
 PLIST_FILES=	bin/scare
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXGLK}

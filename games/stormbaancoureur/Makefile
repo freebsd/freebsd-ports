@@ -23,6 +23,7 @@ INSTALL_WRKSRC=	${WRKSRC}/src-stormbaancoureur
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -65,6 +65,7 @@ PLIST_SUB+=	MAPS=""
 MAPS_EXCLUDE=	# Empty
 .endif
 
+NO_STAGE=	yes
 do-extract:
 	@${CAT} ${PKGMESSAGE}
 	@${MKDIR} ${WRKSRC}

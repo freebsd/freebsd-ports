@@ -21,6 +21,7 @@ PORTDOCS=	AUTHORS BUGS ChangeLog DUMB HOW_TO_PLAY README
 PORTEXAMPLES=	frotz.conf-big frotz.conf-small
 PLIST_FILES=	bin/frotz
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

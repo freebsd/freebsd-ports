@@ -28,6 +28,7 @@ SUB_FILES=	${PORTNAME}
 DESKTOP_ENTRIES="Rescue! Max" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;StrategyGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

@@ -27,6 +27,7 @@ DESKTOP_ENTRIES="Pushover" \
 		"Game;LogicGame;" \
 		false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -33,6 +33,7 @@ AFRICA_DESC=		Africa activity theme
 
 OPTIONS_DEFAULT=	ANIMALS EARTH FOOD PLANTS SKY SPORTS VEHICLE WORLD AFRICA
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MANIMALS}

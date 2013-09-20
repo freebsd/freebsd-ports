@@ -44,6 +44,7 @@ MAKE_ARGS=	prefix=${PREFIX} \
 		SQLITE_LIB=-lsqlite3 \
 		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/lua51"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${CC:T:M*clang*}

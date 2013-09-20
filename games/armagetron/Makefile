@@ -28,6 +28,7 @@ ARMA_SERVER_ONLY_DESC=	Build dedicated server only
 
 OPTIONS_DEFAULT=	MUSIC
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MARMA_SERVER_ONLY}

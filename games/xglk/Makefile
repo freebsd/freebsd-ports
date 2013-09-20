@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xglk
-# Date created:         4 February 2005
-# Whom:                 Peter Pentchev <roam@FreeBSD.org>
-#
+# Created by: Peter Pentchev <roam@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xglk
 PORTVERSION=	411
@@ -24,6 +20,7 @@ USE_XORG=	x11
 
 MAKE_ENV+=	AR=${AR} RANLIB=${RANLIB} ECHO=${ECHO} RM=${RM}
 
+NO_STAGE=	yes
 do-install:
 		${MKDIR} ${PREFIX}/include/xglk
 		${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/xglk/

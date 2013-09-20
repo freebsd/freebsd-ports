@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/Frets\ on\ Fire-${PORTVERSION}
 
 EXTRACT_AFTER_ARGS=	--exclude 'win32' "Frets on Fire-${PORTVERSION}/${PORTNAME}"
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/${DATADIR}
 	@cd ${WRKSRC}/data && \

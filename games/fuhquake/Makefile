@@ -37,6 +37,7 @@ X11_DESC=	Build X11 client
 HUD_DESC=	Install high quality HUD images
 XMMS_DESC=	Enable MP3 player feature
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../quake-data/Makefile.include"
 .include <bsd.port.options.mk>
 

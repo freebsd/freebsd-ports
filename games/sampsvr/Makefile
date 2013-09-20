@@ -1,7 +1,4 @@
-# New ports collection makefile for:	sampsvr
-# Date created:				6 November 2006
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
 
 PORTNAME=	sampsvr
@@ -29,6 +26,7 @@ SUB_LIST+=	NOTEWORK="Read ${DOCSDIR}/README to configure SA-MP Server"
 SUB_LIST+=	NOTEWORK=""
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

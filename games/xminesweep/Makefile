@@ -20,4 +20,5 @@ USE_XORG=	x11 xext xmu xaw xt xpm sm ice
 MAN1=		xminesweep.1
 PLIST_FILES=	bin/xminesweep
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

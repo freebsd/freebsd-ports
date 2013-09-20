@@ -23,6 +23,7 @@ DATA_FILES=	menus pieces.3x20 pieces.783 pieces.bonus pieces.colours \
 		pieces.round pieces.small pieces.square pieces.star \
 		pieces.triangle
 
+NO_STAGE=	yes
 pre-install:
 	 @${REINPLACE_CMD} -e "s:%%DATADIR%%:${DATADIR}:g" ${WRKSRC}/polypuzzle
 do-install:

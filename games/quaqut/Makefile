@@ -1,9 +1,5 @@
-# New ports collection makefile for:	quaqut
-# Date created:				19 October 2006
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	quaqut
 PORTVERSION=	0.2.0
@@ -20,6 +16,7 @@ MAN1=		${PORTNAME}.1
 PORTDOCS=	AUTHORS COPYING ChangeLog README
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1

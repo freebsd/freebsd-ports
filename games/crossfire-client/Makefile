@@ -26,6 +26,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN6=	crossfire-client-gtk2.6
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/#include <curl\/types.h>/d' \
 		${WRKSRC}/common/metaserver.c

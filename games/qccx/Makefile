@@ -22,6 +22,7 @@ PORTDOCS=	manual.txt readme.txt
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

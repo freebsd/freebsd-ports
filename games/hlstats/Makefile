@@ -1,9 +1,5 @@
-# New ports collection makefile for:	HLStats
-# Date created:				26 December 2003
-# Whom:					Hideki Machida <hido@neojapangz.com>
-#
+# Created by: Hideki Machida <hido@neojapangz.com>
 # $FreeBSD$
-#
 
 PORTNAME=	hlstats
 PORTVERSION=	1.62
@@ -26,6 +22,7 @@ USE_PERL5=	run
 HLSTATS?=	www/${PORTNAME}
 PLIST_SUB+=	HLSTATS=${HLSTATS}
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/${HLSTATS}
 	cd ${WRKSRC} && ${TAR} cf - ChangeLog README* [a-z]* | ${TAR} xf - \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	heroes
-# Date created:				15 August 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	heroes
 PORTVERSION=	0.21
@@ -53,6 +49,7 @@ INFO=		heroes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib -lsmpeg ${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 pre-everything::
 .ifndef(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG} '>>>'

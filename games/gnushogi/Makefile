@@ -1,9 +1,5 @@
-# New ports collection makefile for:   gnushogi
-# Date created:        9 October 1996
-# Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-#
+# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	${GNUSHOGI_PORTNAME}
 PORTVERSION=	${GNUSHOGI_PORTVERSION}
@@ -22,6 +18,7 @@ MAKE_JOBS_UNSAFE=	yes
 MAN6=		gnushogi.6
 INFO=		gnushogi
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../games/gnushogi/Makefile.common"
 .include <bsd.port.pre.mk>
 

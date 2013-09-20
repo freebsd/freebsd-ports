@@ -30,6 +30,7 @@ WRKSRC=		"${WRKDIR}/Frets on Fire-${PORTVERSION}"
 
 FOF_DIR=	${PREFIX}/lib/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"

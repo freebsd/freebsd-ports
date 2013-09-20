@@ -23,6 +23,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 PLIST_DIRS=	${DESKTOPDIR:S,${PREFIX}/,,}
 
 #Respect PREFIX, LOCALBASE, CC, etc.
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 		-e 's,%%PREFIX%%,${PREFIX},g' \

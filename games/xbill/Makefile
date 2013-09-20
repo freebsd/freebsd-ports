@@ -34,6 +34,7 @@ ATHENA_DESC=	Athena widget set
 GTK_DESC=	GTK widget set
 MOTIF_DESC=	Motif widget set
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MATHENA}

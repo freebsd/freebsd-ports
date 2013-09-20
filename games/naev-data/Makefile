@@ -1,9 +1,5 @@
-# New ports collection makefile for:	naev-data
-# Date created:		2009-04-26
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-#
+# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	data
 PORTVERSION=	0.5.3
@@ -25,6 +21,7 @@ DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX:S/-//}
 PLIST_FILES=	share/${PKGNAMEPREFIX:S/-//}/${PORTNAME:S/^/n/}-${PORTVERSION}
 PLIST_DIRS=	share/${PKGNAMEPREFIX:S/-//}
 
+NO_STAGE=	yes
 do-extract:
 	@@${MKDIR} ${WRKSRC}
 	@${CP} ${_DISTDIR}/${DISTFILES} ${WRKSRC}

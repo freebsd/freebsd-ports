@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/bugsx
 MAN1=		bugsx.1
 PLIST_FILES=	bin/bugsx
 
+NO_STAGE=	yes
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/bugsx
 

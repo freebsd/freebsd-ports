@@ -23,4 +23,5 @@ MAN6=		xtris.6 xtserv.6 xtbot.6
 
 MAKE_ENV=	IPV6_CFLAGS="-DINET6"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

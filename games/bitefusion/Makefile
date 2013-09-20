@@ -19,6 +19,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 PLIST_FILES=	bin/bitefusion
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-linux-gnu|-portbld-freebsd|' \
 		${WRKSRC}/configure

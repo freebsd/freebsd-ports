@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pykawari
-# Date created:				23 Jan 2004
-# Whom:					UMENO Takashi
-#
+# Created by: UMENO Takashi
 # $FreeBSD$
-#
 
 PORTNAME=	pykawari
 PORTVERSION=	8.2.8
@@ -31,6 +27,7 @@ USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/kawari-${PORTVERSION:S/.//g}
 CFLAGS+=	${PTHREAD_CFLAGS} -fPIC
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"

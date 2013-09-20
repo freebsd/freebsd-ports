@@ -1,9 +1,5 @@
-# New ports collection makefile for:	freeciv-nox11
-# Date created:		22 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 MASTERDIR=	${.CURDIR}/../freeciv
 
@@ -11,4 +7,5 @@ MASTERDIR=	${.CURDIR}/../freeciv
 OPTIONS_DEFINE=	MYSQL IPV6
 OPTIONS_DEFAULT=MYSQL IPV6
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

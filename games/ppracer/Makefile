@@ -22,6 +22,7 @@ USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(c|cpp|h)
 USE_XORG=	x11 xi xext xmu xt
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
 		-e 's,libpng12,libpng15,g' ${WRKSRC}/configure

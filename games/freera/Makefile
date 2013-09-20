@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/freera++
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-patch:
 	@${MV} ${WRKSRC}/SConstruct ${WRKSRC}/SConstruct.orig
 	@${CP} ${FILESDIR}/SConstruct ${WRKSRC}/

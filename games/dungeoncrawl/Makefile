@@ -1,9 +1,5 @@
-# New ports collection makefile for:   dungeoncrawl
-# Date created:        10 March 2003
-# Whom:                refugee
-#
+# Created by: refugee
 # $FreeBSD$
-#
 
 PORTNAME=	dungeoncrawl
 PORTVERSION=	4.0.0.b26
@@ -23,6 +19,7 @@ PLIST_FILES=	bin/dungeoncrawl
 PORTDOCS=	buglist.txt crawl.txt
 MAN6=		dungeoncrawl.6
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|g++|${CXX}|; \
 		s|/tmp/CRAWLTEST/testdev|${PREFIX}/bin|; \

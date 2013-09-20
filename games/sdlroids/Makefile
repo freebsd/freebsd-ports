@@ -30,6 +30,7 @@ PORTDOCS=	ChangeLog README README.orig README.petopt README.xhyperoid TODO
 DESKTOP_ENTRIES="SDLRoids" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME} -n 2" "Game;ArcadeGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

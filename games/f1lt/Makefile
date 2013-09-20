@@ -29,6 +29,7 @@ PLIST_FILES=	bin/F1LT \
 PLIST_DIRSTRY=	share/f1lt
 PORTDOCS=	CHANGELOG
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch-script:

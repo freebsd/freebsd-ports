@@ -18,6 +18,7 @@ MAN1=		xskewb.1
 MANCOMPRESSED=	no
 XFREE86_HTML_MAN=	no
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xskewb ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/Skewb.ad ${PREFIX}/lib/X11/app-defaults/Skewb

@@ -20,6 +20,7 @@ MAN6=		xhime.6
 
 NO_CDROM=	'contains commercial character data'
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

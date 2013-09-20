@@ -35,6 +35,7 @@ PORTDOCS=	AUTHORS CHANGELOG README.md
 OPTIONS_DEFINE=	CRASHREPORTER 
 CRASHREPORTER_DESC=	Build crash reporter (requires Qt4)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCRASHREPORTER}

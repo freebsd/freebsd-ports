@@ -33,6 +33,7 @@ PORTDOCS=	README
 DESKTOP_ENTRIES="XGalaga++" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

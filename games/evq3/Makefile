@@ -1,9 +1,5 @@
-# New ports collection makefile for:	evq3
-# Date created:				8 Aug 2006
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	evq3
 PORTVERSION=	1.3.20080810
@@ -47,6 +43,7 @@ PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 VM_ARCHS=	amd64 i386
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../quake3-data/Makefile.include"
 
 .include <bsd.port.pre.mk>

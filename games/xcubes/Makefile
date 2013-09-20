@@ -18,6 +18,7 @@ MAN1=		xcubes.1
 MANCOMPRESSED=	no
 XFREE86_HTML_MAN=	no
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xcubes ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/Cubes.ad ${PREFIX}/lib/X11/app-defaults/Cubes

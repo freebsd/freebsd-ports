@@ -34,6 +34,7 @@ MAN6=		crossfire-config.6 crossfire-server.6 crossloop.6 \
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 post-extract:
 	@cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/${DISTNAME}.maps.tar.bz2 ${EXTRACT_AFTER_ARGS}

@@ -41,6 +41,7 @@ GAMELIBS_DESC=		Force building game libraries
 OPENAL_DLOPEN_DESC=	Enable dynamic loading of OpenAL
 SMP_CLIENT_DESC=	Build SMP (threaded) client
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for arch in ${ARCH}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Games-Bingo-Bot
-# Date created:				20. August 2003
-# Whom:					Lars Thegler <lars@thegler.dk>
-#
+# Created by: Lars Thegler <lars@thegler.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	Games-Bingo-Bot
 PORTVERSION=	0.01
@@ -22,6 +18,7 @@ USE_PERL5=	configure
 
 MAN3=		Games::Bingo::Bot.3
 
+NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing example for ${PKGNAME}"

@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 MAN6=		residualvm.6
 NO_MANCOMPRESS=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|{datarootdir}/man|{prefix}/man|' ${WRKSRC}/configure
 

@@ -1,7 +1,4 @@
-# New ports collection makefile for:	jfsw
-# Date Created:				11 March 2010
-# Whom:	Ganael Laplanche <ganael.laplanche@martymac.org>
-#
+# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
 # $FreeBSD$
 
 PORTNAME=	jfsw
@@ -31,6 +28,7 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	readme.txt releasenotes.html
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

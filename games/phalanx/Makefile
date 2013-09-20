@@ -1,9 +1,5 @@
-# New ports collection makefile for:	phalanx
-# Date created:				2 May 1999
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	phalanx
 PORTVERSION=	23.b
@@ -38,6 +34,7 @@ PLIST_FILES=	bin/phalanx \
 		%%DATADIR%%/sbook.phalanx
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/phalanx ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}

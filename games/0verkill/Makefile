@@ -1,9 +1,5 @@
-# New ports collection makefile for:    0verkill
-# Date created:         5 May 2001
-# Whom:                 Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	0verkill
 PORTVERSION=	0.16
@@ -27,6 +23,7 @@ CONFIGURE_ARGS+=	--with-x
 PLIST_SUB=	X11=""
 .endif
 
+NO_STAGE=	yes
 pre-everything::
 .if !defined(WITHOUT_X11)
 	@${ECHO_MSG}

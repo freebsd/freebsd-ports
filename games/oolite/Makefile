@@ -40,6 +40,7 @@ USE_PYTHON_BUILD=	yes
 SUB_FILES=		pkg-message
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
+NO_STAGE=	yes
 post-extract:
 	@(cd ${WRKSRC}/deps/Cross-platform-deps && \
 		${BZIP2_CMD} -dc ${_DISTDIR}/firefox-4.0.source.js-only.tbz | ${TAR} -xf - && \

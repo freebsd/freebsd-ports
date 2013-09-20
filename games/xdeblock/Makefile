@@ -17,6 +17,7 @@ USES=		imake
 USE_XORG=	xpm
 NO_INSTALL_MANPAGES=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/main.c
 

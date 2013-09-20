@@ -25,6 +25,7 @@ PLIST_FILES=	bin/${PORTNAME} libexec/${PORTNAME}
 
 PORTDATA=	*
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/egoboo|${DATADIR}|g; \
 		s|cp -a|cp -RPp|; s|/usr/libexec|${PREFIX}/libexec|' \

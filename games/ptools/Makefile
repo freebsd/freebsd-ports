@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ptools
-# Date created:				2008-01-15
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	ptools
 PORTVERSION=	1.1
@@ -28,6 +24,7 @@ NO_WRKSUBDIR=	yes
 
 MAN6=		ptools-mopt.6 ptools-mts.6
 
+NO_STAGE=	yes
 post-build:
 	(${ECHO_CMD} "#!${PERL}"; ${CAT} ${DISTDIR}/p3-2.pl) \
 		> ${WRKSRC}/p3-2.pl

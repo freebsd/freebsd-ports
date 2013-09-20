@@ -1,9 +1,5 @@
-# New ports collection makefile for:	exmars
-# Date created:				16 Jul 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	exmars
 PORTVERSION=	0.01
@@ -20,6 +16,7 @@ ALL_TARGET=	${PORTNAME}
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
+NO_STAGE=	yes
 do-install:
 # Program.
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

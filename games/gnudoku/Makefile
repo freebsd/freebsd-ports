@@ -16,6 +16,7 @@ LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
 USES=		gmake pkgconfig
 MAKE_ENV=	CXXLAGS="${CXXFLAGS}"
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|PREFIX=|PREFIX?=|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|CXXFLAGS=|CXXFLAGS+=|' ${WRKSRC}/Makefile

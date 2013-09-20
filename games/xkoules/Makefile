@@ -18,6 +18,7 @@ USE_XORG=	x11 xext
 MAN6=		xkoules.6
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

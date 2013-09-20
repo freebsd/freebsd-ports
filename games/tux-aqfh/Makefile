@@ -40,6 +40,7 @@ DESKTOP_ENTRIES="Tuxedo The Penguin: A Quest for Herring" "${COMMENT}" ${PORTNAM
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

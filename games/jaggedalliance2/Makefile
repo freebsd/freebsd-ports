@@ -38,6 +38,7 @@ POLISH_DESC=		Compile for Polish version
 RUSSIAN_DESC=		Compile for Russian version
 RUSSIAN_GOLD_DESC=	Compile for Russian Gold version
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for i in ${OPTIONS_SINGLE_LANGUAGE}

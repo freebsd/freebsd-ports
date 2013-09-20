@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sarien
-# Date created:		25 May 2004
-# Whom:			Radim Kolar
-#
+# Created by: Radim Kolar
 # $FreeBSD$
-#
 
 PORTNAME=	sarien
 PORTVERSION=	0.7.0
@@ -23,6 +19,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_FILES=	bin/sarien etc/sarien.conf
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/src/filesys/unix/path.c
 

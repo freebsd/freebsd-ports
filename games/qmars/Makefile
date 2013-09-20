@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BZIP2=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|g++|$${CXX}| ; \
 		s|-O3|$${CXXFLAGS}|' ${WRKSRC}/${MAKEFILE}

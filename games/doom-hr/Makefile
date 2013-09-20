@@ -29,6 +29,7 @@ DEMO_UV_DESC=	Install Ultra-Violence demos
 
 DATADIR=	${DMDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-extract:
 	@(cd ${WRKDIR} && ${SH} ${SCRIPTDIR}/lowercase.sh)
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	garith
-# Date created:				5 August 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	garith
 PORTVERSION=	2.1
@@ -22,6 +18,7 @@ LDFLAGS+=	`${GTK_CONFIG} --libs`
 PORTDOCS=	BUGS HISTORY README TODO
 PLIST_FILES=	bin/garith
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|gldouble|double|;/gnome/d;/all.*apps/d'\
 		${WRKSRC}/garith.c

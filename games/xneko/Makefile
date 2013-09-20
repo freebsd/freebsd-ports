@@ -19,4 +19,5 @@ USE_XORG=	x11
 MAN6=		xneko.6
 PLIST_FILES=	bin/xneko
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

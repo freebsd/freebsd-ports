@@ -25,6 +25,7 @@ OPTIONS_DEFAULT=	TEAMARENA
 
 TEAMARENA_DESC=		Install Quake III Team Arena data files
 
+NO_STAGE=	yes
 .include "Makefile.include"	# must be included before bsd.port.options.mk
 .include <bsd.port.options.mk>
 

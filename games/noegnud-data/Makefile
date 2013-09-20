@@ -1,9 +1,5 @@
-# New ports collection makefile for:	noegnud-data
-# Date created:				7 April 2004
-# Whom:					Leland Wang <llwang@infor.org>
-#
+# Created by: Leland Wang <llwang@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	noegnud
 PORTVERSION=	0.8.3
@@ -23,4 +19,5 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/variants
 ALL_TARGET=	data
 INSTALL_TARGET=	install_data
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

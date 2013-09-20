@@ -41,6 +41,7 @@ GLX_DESC=	Build OpenGL renderer
 SDLCLIENT_DESC=	Build SDL client
 SDLGL_DESC=	Build SDL OpenGL renderer
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGLX} || ${PORT_OPTIONS:MSDLGL}

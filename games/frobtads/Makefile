@@ -24,6 +24,7 @@ CONFIGURE_ENV=	LIBS="-lcompat"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 pre-configure:
 	(cd ${WRKSRC}; ${SH} bootstrap)
 

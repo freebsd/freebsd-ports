@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vitetris
-# Date created:		2008-09-22
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vitetris
 PORTVERSION=	0.57
@@ -27,6 +23,7 @@ PLIST_FILES=	bin/vitetris \
 PLIST_DIRS=	share/allegro \
 		share/applications
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,docdir,datadir,g' \
 	    ${WRKSRC}/Makefile

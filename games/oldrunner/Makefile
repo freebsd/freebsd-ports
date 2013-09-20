@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/oldrunner ${DATADIR_REL}/original.lvl
 PLIST_DIRS=	${DATADIR_REL}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/LEVELS_PATH/s,/usr/local/share/oldrunner,${DATADIR},g' \
 		 ${WRKSRC}/cfg.h

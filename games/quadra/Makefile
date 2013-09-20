@@ -1,9 +1,5 @@
-# New ports collection makefile for:	quadra
-# Date created:		2011-12-25
-# Whom:			Karsten Brandt <kbrandt@sdf-eu.org>
-#
+# Created by: Karsten Brandt <kbrandt@sdf-eu.org>
 # $FreeBSD$
-#
 
 PORTNAME=	quadra
 PORTVERSION=	1.3.0
@@ -37,6 +33,7 @@ DESKTOP_ENTRIES=	"Quadra" "${COMMENT}" \
 			"${PREFIX}/share/pixmaps/${PORTNAME}.xpm" \
 			"${PORTNAME}" "BlocksGame;Game;" false
 
+NO_STAGE=	yes
 # maintainer relevant make target:
 SVN_REV=	757
 SVN_SRC=	http://quadra.googlecode.com/svn/trunk/quadra/

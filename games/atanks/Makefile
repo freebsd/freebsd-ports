@@ -1,9 +1,5 @@
-# New ports collection makefile for:	atanks
-# Date created:			10 June 2010
-# Whom:				Jesse Smith <jessefrgsmith@yahoo.ca>
-#
+# Created by: Jesse Smith <jessefrgsmith@yahoo.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	atanks
 PORTVERSION=	5.1
@@ -19,6 +15,7 @@ USE_GMAKE=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}/
 PATCH_DEBUG=	1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

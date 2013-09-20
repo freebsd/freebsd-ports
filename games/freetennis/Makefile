@@ -25,6 +25,7 @@ PLIST=		${WRKDIR}/pkg-plist
 PLIST_FILES=	bin/freetennis
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|sfxDir = "sfx"|sfxDir = "${DATADIR}/sfx"|; \
 		s|gfxDir = "graphics"|gfxDir = "${DATADIR}/graphics"|' \

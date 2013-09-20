@@ -1,9 +1,5 @@
-# New ports collection makefile for:	chanta
-# Date created:		2006-04-01
-# Whom:			Charlie & <root@HellFire.BSD.org.pe>
-#
+# Created by: Charlie & <root@HellFire.BSD.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	chanta
 PORTVERSION=	0.15
@@ -22,6 +18,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD}
 
 CHANTADIRS=	data ima
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -e 's|-lSDL |`sdl-config --libs` |g' ${WRKSRC}/src/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's|^CXXFLAGS|^CXXFLAGS?|g' ${WRKSRC}/src/${MAKEFILE}

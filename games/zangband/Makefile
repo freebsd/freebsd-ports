@@ -34,6 +34,7 @@ BINMODE=	2755
 ANGBANDLIB?=	lib/${PORTNAME}
 ANGBANDBIN?=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -i '' -e 's|^aclocal|${ACLOCAL}|' \
 		-e 's|^autoheader|${AUTOHEADER}|' \

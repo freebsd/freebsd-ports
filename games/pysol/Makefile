@@ -23,6 +23,7 @@ NO_BUILD=	yes
 
 MAN6=		pysol.6
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/src/tk/soundoptionsdialog.py.orig
 	@${REINPLACE_CMD} -e "s|@pkgdatadir@|${DATADIR}|" \

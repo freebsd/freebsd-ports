@@ -18,6 +18,7 @@ MAN1=		xhexagons.1
 XFREE86_HTML_MAN=	no
 NO_INSTALL_MANPAGES=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xhexagons ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/Hexagons.ad ${PREFIX}/lib/X11/app-defaults/Hexagons

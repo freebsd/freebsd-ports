@@ -14,4 +14,5 @@ USES=		imake
 USE_XORG=	xaw
 MAN1=		xonix.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

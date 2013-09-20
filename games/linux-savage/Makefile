@@ -33,6 +33,7 @@ SAVAGEDIR=	lib/${PKGNAMEPREFIX}${PORTNAME}
 OPTIONS_DEFINE=	NVIDIA_GL
 NVIDIA_GL_DESC=	Support for nvidia
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 

@@ -54,6 +54,7 @@ NO_PACKAGE=	Way too big
 WITH_TBDIR=	${PREFIX}/lib/crafty/TB
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${WITH_TBDIR}
 	@list='${DISTFILES}'; for i in $$list; do \

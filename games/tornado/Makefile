@@ -16,4 +16,5 @@ MANLANG=	"" de fr it nl no ru
 USES=		gettext
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -27,6 +27,7 @@ SFALCONSEYE_DESC=	falcons eye sound theme
 
 OPTIONS_DEFAULT=	ABSURD
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MABSURD}

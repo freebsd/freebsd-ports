@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xroads
-# Date created:				21 June 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	xroads
 PORTVERSION=	0.6
@@ -17,6 +13,7 @@ COMMENT=	Commodore 64 "Crossroads"-like video game for X Window System
 
 USE_XORG=	x11 xpm xext
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

@@ -1,4 +1,4 @@
-# Created by:			Dmitry Marakasov <amdmi3@amdmi3.ru>
+# Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
 # $FreeBSD$
 
 PORTNAME=	solarconquest
@@ -19,6 +19,7 @@ USE_DOS2UNIX=	makefile source/MenuScreen.h source/main.cpp
 
 MAKEFILE=	makefile
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|images/|${DATADIR}/images/|' \
 		${WRKSRC}/source/main.cpp

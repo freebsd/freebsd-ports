@@ -20,6 +20,7 @@ ALL_TARGET=	#empty
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -14,6 +14,7 @@ COMMENT=	Curses based battleship type game
 
 PORTDOCS=	readme.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

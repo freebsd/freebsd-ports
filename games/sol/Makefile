@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sol
-# Date created:				12 April 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	sol
 PORTVERSION=	1.0.7
@@ -26,6 +22,7 @@ USE_XORG=	xpm x11 xaw
 
 MAN6=		sol.6
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-build:

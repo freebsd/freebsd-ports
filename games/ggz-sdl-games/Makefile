@@ -18,6 +18,7 @@ USE_GGZ=	client
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/geekgame/module.dsc ${PREFIX}/share/ggz/geekgame.dsc
 	${INSTALL_DATA} ${WRKSRC}/ttt3d/module.dsc ${PREFIX}/share/ggz/ttt3d.dsc

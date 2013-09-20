@@ -23,6 +23,7 @@ PLIST_FILES=	bin/wmpuzzle
 CPPFLAGS+=	-I${LOCALBASE}/include -DBSD
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmpuzzle ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/wmpuzzle.6 ${MAN6PREFIX}/man/man6

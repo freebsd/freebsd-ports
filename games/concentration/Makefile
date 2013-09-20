@@ -20,4 +20,5 @@ LDFLAGS+=	`${SDL_CONFIG} --libs`
 
 MAN6=		concentration.6
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

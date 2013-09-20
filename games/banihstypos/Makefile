@@ -1,6 +1,4 @@
-# New ports collection makefile for:  banihstypos
-# Date created:                05 October 2007
-# Whom:                        Philippe Audeoud <jadawin@tuxaco.net>
+# Created by: Philippe Audeoud <jadawin@tuxaco.net>
 # $FreeBSD$
 
 PORTNAME=	banihstypos
@@ -20,6 +18,7 @@ PLIST_FILES=	bin/banihstypos
 
 PORTDOCS=	readme.txt
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/banihstypos ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

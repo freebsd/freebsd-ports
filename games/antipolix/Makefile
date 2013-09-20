@@ -17,6 +17,7 @@ USES=		imake
 USE_XORG=	x11
 NO_INSTALL_MANPAGES=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 pre-build:
 	@${TOUCH} ${WRKSRC}/client.man ${WRKSRC}/server.man

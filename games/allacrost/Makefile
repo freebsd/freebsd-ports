@@ -39,6 +39,7 @@ PORTDOCS=	MANUAL
 OPTIONS_DEFINE=	EDITOR DOCS
 EDITOR_DESC=	Enable editor
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEDITOR}

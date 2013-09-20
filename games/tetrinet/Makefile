@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tetrinet
-# Date created:		23 Februari 2001
-# Whom:			Fredrik Carlsson <fredrik@wasadata.com>
-#
+# Created by: Fredrik Carlsson <fredrik@wasadata.com>
 # $FreeBSD$
-#
 
 PORTNAME=	tetrinet
 PORTVERSION=	0.11
@@ -16,6 +12,7 @@ COMMENT=	A console tetrinet client
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DHAVE_IPV6 -fno-builtin-log"
 PLIST_FILES=	bin/tetrinet bin/tetrinet-server
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

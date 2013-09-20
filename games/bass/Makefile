@@ -1,9 +1,5 @@
-# New ports collection makefile for: bass (Beneath a Steel Sky)
-# Date created:        Tue Sep  2 23:34:32 BST 2003
-# Whom:                Alex Trull <freebsd.alex@trull.org>
-#
+# Created by: Alex Trull <freebsd.alex@trull.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bass
 PORTVERSION=	1.2
@@ -28,6 +24,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/sky.dnr ${DATADIR}

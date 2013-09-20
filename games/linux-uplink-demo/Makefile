@@ -28,6 +28,7 @@ DOCFILES=	license.txt mods.txt Readme-UplinkSupport.txt readme.txt
 OPTIONS_DEFINE=	NVIDIA
 NVIDIA_DESC=	support for nvidia
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNVIDIA}

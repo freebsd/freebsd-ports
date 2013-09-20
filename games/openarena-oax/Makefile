@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openarena-oax
-# Date created:				21 May 2010
-# Whom:					Dominic Fandrey
-#
+# Created by: Dominic Fandrey
 # $FreeBSD$
-#
 
 PORTNAME=	oax
 PORTVERSION=	B50
@@ -22,6 +18,7 @@ NO_BUILD=	yes
 
 OABASE=		${DISTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DATADIR})

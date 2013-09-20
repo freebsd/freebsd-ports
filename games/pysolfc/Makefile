@@ -35,6 +35,7 @@ OPTIONS_DEFINE=	CARDSETS DOCS NLS
 CARDSETS_DESC=	Install additional cardsets
 
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCARDSETS}

@@ -24,6 +24,7 @@ NO_WRKSUBDIR=	yes
 
 DATADIR=	${DMDIR}
 
+NO_STAGE=	yes
 post-extract:
 	@cd ${WRKDIR} && ${TAR} xzf linuxdoom-1.10.src.tgz && ${TAR} xzf sndserv.tgz
 

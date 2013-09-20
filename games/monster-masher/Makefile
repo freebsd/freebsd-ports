@@ -25,6 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lesd
 
 GCONF_SCHEMAS=	monster-masher.schemas
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
 		${WRKSRC}/src/pixbuf-drawing.hpp

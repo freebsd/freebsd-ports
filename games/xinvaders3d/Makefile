@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xinv3d
-# Date created:				21 January 2000
-# Whom:					Chris D. Faulhaber <jedgar@FreeBSD.org>
-#
+# Created by: Chris D. Faulhaber <jedgar@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xinvaders3d
 PORTVERSION=	1.3.6
@@ -19,6 +15,7 @@ USE_XORG=	x11
 PLIST_FILES=	bin/xinv3d
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xinv3d ${PREFIX}/bin
 

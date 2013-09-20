@@ -22,6 +22,7 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-build:

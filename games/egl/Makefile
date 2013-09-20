@@ -32,6 +32,7 @@ CLIENT_DESC=	Build client
 DEDICATED_DESC=	Build dedicated server
 GAME_DESC=	Build main game (default mod)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}

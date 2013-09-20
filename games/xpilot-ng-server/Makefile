@@ -53,6 +53,7 @@ DESKTOP_ENTRIES=	"Xpilot-ng X11" "Xpilot game client program" \
 			"" "xpilot-ng-xp-mapedit" "Game;ArcadeGame;" false
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PKGNAMESUFFIX} == "-server"

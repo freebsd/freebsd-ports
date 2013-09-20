@@ -30,6 +30,7 @@ PLIST_FILES=	bin/xteddy bin/xteddy_test bin/xtoys \
 		%%DATADIR%%/xtrouble.png %%DATADIR%%/xtuxxy.png
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-patch:
 .for f in configure xteddy.c
 	@${REINPLACE_CMD} -e \

@@ -20,4 +20,5 @@ WRKSRC=		${WRKDIR}/xinfocom
 USES=		imake
 USE_XORG=	xt sm ice xext x11
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

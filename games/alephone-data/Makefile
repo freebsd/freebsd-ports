@@ -30,6 +30,7 @@ INFINITY_DESC=	Install Marathon Infinity data
 
 SUB_FILES=	wrapper
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 DATADIR!=	cd ${PORTSDIR}/games/alephone && ${MAKE} -V DATADIR

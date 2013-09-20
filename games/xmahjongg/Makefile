@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmahjongg
-# Date created:		16 Aug 1996
-# Whom:			joerg@freebsd.org
-#
+# Created by: joerg@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	xmahjongg
 PORTVERSION=	3.7
@@ -19,4 +15,5 @@ GNU_CONFIGURE=	yes
 
 MAN6=		xmahjongg.6
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -15,6 +15,7 @@ NO_BUILD=	yes
 
 PORTVER=	20121209
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/Makefile

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tsito
-# Date created:		14 Oct 2004
-# Whom:			Kuang-che Wu <kcwu@csie.org>
-#
+# Created by: Kuang-che Wu <kcwu@csie.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tsito
 PORTVERSION=	0.8.4
@@ -19,4 +15,5 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}"
 
 MAN1=		tsito.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

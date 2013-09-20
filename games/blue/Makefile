@@ -21,6 +21,7 @@ PLIST_FILES=	bin/blue \
 MAN6=		bluemoon.6
 MLINKS=		bluemoon.6 blue.6
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|CFLAGS?=|g ; \
 		 s|cc |$${CC} |g' ${WRKSRC}/Makefile

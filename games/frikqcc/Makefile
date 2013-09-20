@@ -19,6 +19,7 @@ MAKEFILE=	${FILESDIR}/Makefile
 
 PLIST_FILES=	bin/frikqcc bin/frikqcdec
 
+NO_STAGE=	yes
 do-install:
 .for p in ${PLIST_FILES:T}
 	${INSTALL_PROGRAM} ${WRKSRC}/${p} ${PREFIX}/bin

@@ -31,6 +31,7 @@ MAKE_ARGS=	CFLAGS+="${CFLAGS}" \
 
 PLIST_FILES=	bin/${PORTNAME}${PKGNAMESUFFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MICWS94}

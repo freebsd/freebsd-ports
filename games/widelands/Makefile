@@ -36,6 +36,7 @@ DESKTOP_ENTRIES="Widelands" \
 		"Game;StrategyGame;" \
 		false
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/cmake/Modules/*.cmake

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fgkicker
-# Date created:		30 November 2003
-# Whom:			Erik Greenwald <erik@smluc.org>
-#
+# Created by: Erik Greenwald <erik@smluc.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fgkicker
 PORTVERSION=	1.0
@@ -20,6 +16,7 @@ RUN_DEPENDS=	fgfs:${PORTSDIR}/games/flightgear
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} "s|-fmessage-length=0|| ; s|-O0|${CFLAGS}|" ${WRKSRC}/fgkicker.mak
 

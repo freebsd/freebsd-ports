@@ -1,9 +1,5 @@
-# New ports collection makefile for:	games/alienblaster
-# Date created:			8 Aug 2005
-# Whom:				Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	alienblaster
 PORTVERSION=	1.1.0
@@ -23,6 +19,7 @@ REINPLACE_ARGS=	-i ''
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 # Fix make command
 	@${REINPLACE_CMD} -e 's|make|${GMAKE}|g' ${WRKSRC}/${MAKEFILE}

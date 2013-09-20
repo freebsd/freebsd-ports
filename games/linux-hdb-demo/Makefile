@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-hdb-demo
-# Date created:		2009-02-01
-# Whom:			Marcus von Appen <mva@sysfault.org>
-#
+# Created by: Marcus von Appen <mva@sysfault.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hdb-demo
 PORTVERSION=	1.0
@@ -26,6 +22,7 @@ DATADIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	hdb
 PORTDOCS=	README README.licenses README.unixthanks license.txt
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-extract:

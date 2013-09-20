@@ -22,6 +22,7 @@ OPTIONS_DEFINE=	MIKMOD ROTATE_FIXED AIBREED
 ROTATE_FIXED_DESC=	Fix position of one blob during rotation
 AIBREED_DESC=	Allow AI breeding
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMIKMOD} || exists(${LOCALBASE}/lib/libmikmod.a)

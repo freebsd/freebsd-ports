@@ -41,6 +41,7 @@ USE_GL=			gl
 
 USES=			pkgconfig
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's/X11R6/local/g; s/libpng/ligpng15/g' ${WRKSRC}/build/openbsd4-config.py && \
 		${MV} ${WRKSRC}/build/openbsd4-config.py ${WRKSRC}/build/${PYTHON_PLATFORM}-config.py

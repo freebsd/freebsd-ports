@@ -30,6 +30,7 @@ DESKTOP_ENTRIES="Railroad Rampage" \
 		"Game;StrategyGame;ArcadeGame;" \
 		false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

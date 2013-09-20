@@ -1,9 +1,5 @@
-# New ports collection makefile for: Slash'Em (tty interface)
-# Date created:	15th April 2001
-# Whom:	Adam Kranzel (adam@alameda.edu)
-#
+# Created by: Adam Kranzel (adam@alameda.edu)
 # $FreeBSD$
-#
 
 PORTNAME=	slashem
 PORTVERSION=	0.0.7E.7F.3
@@ -24,6 +20,7 @@ MAKE_JOBS_UNSAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([A-Z])./\1/g}
 MAKE_ENV+=	DATADIR="${DATADIR}"
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e \
 		"s@%%DATADIR%%@${DATADIR}@g" ${WRKSRC}/include/config.h

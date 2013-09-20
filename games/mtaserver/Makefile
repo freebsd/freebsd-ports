@@ -1,7 +1,4 @@
-# New ports collection makefile for:	mtaserver
-# Date created:				25 November 2006
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
 
 PORTNAME=	${MTANAME:L}
@@ -34,6 +31,7 @@ SUB_LIST+=	NOTEWORK="Read ${DOCSDIR}/README for details"
 SUB_LIST+=	NOTEWORK=""
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

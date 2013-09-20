@@ -15,6 +15,7 @@ USE_SDL=	sdl mixer image
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

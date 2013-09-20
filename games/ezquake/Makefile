@@ -37,6 +37,7 @@ OPTIONS_MULTI_OUTPUT=	X11 OPENGL
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	OPENGL X11 OPTIMIZED_CFLAGS
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
 .include <bsd.port.pre.mk>

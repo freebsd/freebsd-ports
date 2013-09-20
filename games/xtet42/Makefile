@@ -1,9 +1,5 @@
-# New ports collection makefile for:   xtet42
-# Date created:        14 Feb 1999
-# Whom:                gmarco@giovannelli.it
-#
+# Created by: gmarco@giovannelli.it
 # $FreeBSD$
-#
 
 PORTNAME=	xtet42
 PORTVERSION=	2.21
@@ -20,6 +16,7 @@ USE_XORG=	x11
 
 MAN6=	xtet42.6
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^hiscoredir.*,hiscoredir=${DATADIR},' \
 		${WRKSRC}/Makefile.in

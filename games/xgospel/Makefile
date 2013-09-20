@@ -1,7 +1,4 @@
-# New ports collection makefile for:	xgospel
-# Date created:        13 November 2001
-# Whom:                Shao Zhang <shaoz@asia.com>
-#
+# Created by: Shao Zhang <shaoz@asia.com>
 # $FreeBSD$
 
 PORTNAME=	xgospel
@@ -21,6 +18,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS=	--with-x --with-xpm --with-xaw3d
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,#ifndef _POSIX_SOURCE,#if 0," \
 		${WRKSRC}/connect.c ${WRKSRC}/relay.c ${WRKSRC}/relog.c \

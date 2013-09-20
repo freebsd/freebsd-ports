@@ -1,5 +1,4 @@
-# Created by:			nemysis@gmx.ch
-#
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
 
 PORTNAME=	pycadia
@@ -34,6 +33,7 @@ DESKTOP_ENTRIES="Pycadia" "${COMMENT}" "${PORTNAME}" \
 
 SUB_FILES=	${PORTNAME}.sh
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

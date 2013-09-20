@@ -19,6 +19,7 @@ CFLAGS+=	-DDEFAULT_PATH="\\\"${DATADIR}/lib/\\\""
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 .for f in tomenet tomenet.server accedit evilmeta
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin

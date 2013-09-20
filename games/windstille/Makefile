@@ -28,6 +28,7 @@ USES=		bison
 DEPRECATED=	Unplayable, development ceased
 EXPIRATION_DATE=2013-11-12
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} -rf ${WRKSRC}/lib ${WRKSRC}/data/music/*
 

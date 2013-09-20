@@ -1,9 +1,5 @@
-# New ports collection makefile for:    sl
-# Date created:                17 Sep 1999
-# Whom:                        HIYAMA Takeshi <th@cis.ibaraki.ac.jp>
-#
+# Created by: HIYAMA Takeshi <th@cis.ibaraki.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	sl
 PORTVERSION=	3.03${SLPATCHVERSION}
@@ -29,6 +25,7 @@ ALL_TARGET=	sl
 MAN1=		sl.1
 MANLANG=	ja
 
+NO_STAGE=	yes
 pre-everything::
 .if !defined(WITH_PERSISTENT)
 	@${ECHO_MSG}

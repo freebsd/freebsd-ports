@@ -1,9 +1,5 @@
-# New Ports collection makefile for:	sets
-# Date created:		2012-04-21
-# Whom:			nemysis@gmx.ch
-#
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
-#
 
 PORTNAME=	sets
 PORTVERSION=	1.0.0
@@ -24,6 +20,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

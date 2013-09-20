@@ -40,6 +40,7 @@ CONFIG_FILES=	banned-ips.txt \
 		server.properties \
 		white-list.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

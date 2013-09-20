@@ -35,6 +35,7 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DEBUG NLS DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

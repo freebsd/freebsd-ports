@@ -27,6 +27,7 @@ OPTIONS_DEFINE=	MOVIES
 OPTIONS_DEFAULT=	MOVIES
 MOVIES_DESC=	Play in-game movies
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMOVIES}

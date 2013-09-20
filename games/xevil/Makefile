@@ -28,6 +28,7 @@ ALL_TARGET=	${OPSYS:L}
 PORTDOCS=	*
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

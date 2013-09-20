@@ -24,6 +24,7 @@ SUB_LIST=	PROGRAM_DIR="${PREFIX}/lib/${PORTNAME}"
 
 PORTDOCS=	README.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

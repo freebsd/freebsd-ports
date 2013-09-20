@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xarchon
-# Date created:		8 November 2002
-# Whom:			Marc Fonvieille <blackend@FreeBSD.org>
-#
+# Created by: Marc Fonvieille <blackend@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xarchon
 PORTVERSION=	0.50
@@ -22,6 +18,7 @@ GNU_CONFIGURE=	yes
 
 MAN6=	xarchon.6
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}

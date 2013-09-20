@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sex
-# Date created:				26 April 2001
-# Whom:					Nick Johnson <freebsd@spatula.net>
-#
+# Created by: Nick Johnson <freebsd@spatula.net>
 # $FreeBSD$
-#
 
 PORTNAME=	sex
 PORTVERSION=	1.0
@@ -18,6 +14,7 @@ MAN6=		sex.6
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/sex
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

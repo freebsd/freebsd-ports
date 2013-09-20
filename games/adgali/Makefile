@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	adgali
-# Date created:			Sep 23, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	adgali
 PORTVERSION=	0.2.4
@@ -34,6 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 CONFIGURE_ARGS=	--enable-compile-optim=no
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"

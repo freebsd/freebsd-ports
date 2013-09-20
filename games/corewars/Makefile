@@ -1,4 +1,3 @@
-# Ceeated by: Jim Mock <jim@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	corewars
@@ -25,6 +24,7 @@ USE_GMAKE=	yes
 MAN6=		corewars.6
 MLINKS=		corewars.6 corewars-cmd.6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

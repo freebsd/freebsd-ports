@@ -42,6 +42,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 SCORCH_VERSION=		43.3d
 SCORCH_REVISION=	# none
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

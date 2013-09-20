@@ -19,6 +19,7 @@ USE_QT4=	corelib gui gui \
 USE_XZ=		yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d' \
 		${WRKSRC}/mime/CMakeLists.txt

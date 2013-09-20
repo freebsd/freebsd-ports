@@ -19,6 +19,7 @@ USE_PYDISTUTILS=	yes
 
 GCONF_SCHEMAS=	glchess.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

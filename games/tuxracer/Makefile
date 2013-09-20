@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tuxracer
-# Date created:				8 August 2000
-# Whom:					Eric Anholt
-#
+# Created by: Eric Anholt
 # $FreeBSD$
-#
 
 PORTNAME=	tuxracer
 PORTVERSION=	0.61
@@ -33,6 +29,7 @@ CONFIGURE_ARGS=	--with-tcl-inc="${TCL_INCLUDEDIR}" \
 		--with-data-dir=${DATADIR}
 MAKE_ENV=	${CONFIGURE_ENV}
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/missing
 

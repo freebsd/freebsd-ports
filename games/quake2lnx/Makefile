@@ -46,6 +46,7 @@ RETEXTURE_DESC=		Retextured graphics support
 JOYSTICK_DESC=		Joystick support
 REDBLUE_DESC=		Enable 3D glasses rendering
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 ###                       #

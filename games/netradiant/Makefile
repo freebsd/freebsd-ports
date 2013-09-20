@@ -35,6 +35,7 @@ SUB_LIST=	ARCH=${ARCH}
 
 MAN6=		q3map2.6
 
+NO_STAGE=	yes
 post-patch:
 # Add missing checks for __FreeBSD__
 	@${FIND} ${WRKSRC}/tools -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} \

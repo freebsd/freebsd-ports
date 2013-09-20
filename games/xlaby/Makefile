@@ -19,4 +19,5 @@ USE_XORG=	x11
 MAN6=		xlaby.6
 PLIST_FILES=	bin/xlaby
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -40,6 +40,7 @@ DESKTOP_ENTRIES="Fish Fillets - Next Generation" \
 
 OPTIONS_DEFINE=	FRIBIDI
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MFRIBIDI}

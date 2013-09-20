@@ -28,6 +28,7 @@ OPTIONS_DEFAULT=	ROUTES
 
 ROUTES_DESC=	Install routes for DM and CTF maps (recommended)
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 .include <bsd.port.options.mk>
 

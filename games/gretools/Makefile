@@ -20,6 +20,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/python -t|/usr/bin/env python|g ; \
 		 s|@prefix@|${LOCALBASE}|g ; s|@share@|share|g' \

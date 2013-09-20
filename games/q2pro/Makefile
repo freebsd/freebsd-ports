@@ -37,6 +37,7 @@ GL_DESC=	Build OpenGL render
 SOFT_DESC=	Build software render
 UI_DESC=	Build user interface (for client menus)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}

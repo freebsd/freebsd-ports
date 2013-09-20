@@ -18,6 +18,7 @@ NO_INSTALL_MANPAGES=	yes
 
 XSCRABBLEDIR=	${PREFIX}/lib/X11/xscrabble
 
+NO_STAGE=	yes
 post-patch:
 	@${ECHO_CMD} '#define VERSION ${PORTVERSION:S/.//g}' \
 		> ${WRKSRC}/src/config.h

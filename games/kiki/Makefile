@@ -30,6 +30,7 @@ DESKTOP_ENTRIES="kiki the nanobot" \
 		"Game;LogicGame;" \
 		false
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^CXXFLAGS/ s|.*|CXXFLAGS+=$$(KODI_INCLUDES) -I${LOCALBASE}/include `${SDL_CONFIG} --cflags`|' ${WRKSRC}/kodilib/linux/Makefile
 	@${REINPLACE_CMD} -e 's|getenv("KIKI_HOME")|"${DATADIR}"|' ${WRKSRC}/src/main/KikiController.cpp

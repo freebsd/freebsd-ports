@@ -18,4 +18,5 @@ USE_XORG=	x11 xext
 MAN1=		pacman.1
 PLIST_FILES=	bin/pacman
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -22,6 +22,7 @@ SHEBANG_LANG=	wish
 wish_OLD_CMD=	/usr/bin/wish
 wish_CMD=		${LOCALBASE}/bin/wish8.4
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/usr/local/share/ttraffic/|${DATADIR}/|' \
 		${WRKSRC}/ttraffic.tcl

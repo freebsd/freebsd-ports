@@ -48,6 +48,7 @@ MAN6=		glchess.6 glines.6 gnect.6 gnibbles.6 gnobots2.6 \
 		gnome-sudoku.6 gnomine.6 gnotravex.6 gnotski.6 \
 		gtali.6 iagno.6 mahjongg.6 quadrapassel.6 sol.6
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libavahi-client.a) || defined(WITH_MDNS)

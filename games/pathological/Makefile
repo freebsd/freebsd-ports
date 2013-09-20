@@ -19,6 +19,7 @@ MANCOMPRESSED=	yes
 
 DOC_FILES=	favicon.ico index.html
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}
 	(cd ${WRKSRC}; tar -cf - circuits graphics music sounds pathological.ico pathological.py pathological.xpm) | \

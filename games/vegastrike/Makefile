@@ -40,6 +40,7 @@ PORTDOCS=	README
 OPTIONS_DEFINE=	MESHER
 MESHER_DESC=	Enable mesher modelling tool
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

@@ -1,5 +1,4 @@
-# Created by:	nemysis@gmx.ch
-#
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
 
 PORTNAME=	tuxfighter
@@ -35,6 +34,7 @@ SUB_FILES=	${PORTNAME}
 DESKTOP_ENTRIES="TuxFighter" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

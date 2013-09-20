@@ -29,6 +29,7 @@ SUB_FILES=	pcgen.sh
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing in ${DATADIR}..."
 	@cd ${WRKSRC} && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} ";"

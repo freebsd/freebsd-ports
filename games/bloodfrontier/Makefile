@@ -32,6 +32,7 @@ FLAVOR_DESC=	Executable Selections
 
 OPTIONS_DEFAULT=	CLIENT DEDICATED OPTIMIZED_CFLAGS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

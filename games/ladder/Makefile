@@ -19,4 +19,5 @@ EXTRACT_CMD=		${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
 EXTRACT_AFTER_ARGS=	# empty
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

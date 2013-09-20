@@ -1,9 +1,5 @@
-# New ports collection makefile for:   jinput
-# Date created:                        Mar 25 2012
-# Whom:                                loader <loader@freebsdmall.com>
-#
+# Created by: loader <loader@freebsdmall.com>
 # $FreeBSD$
-#
 
 PORTNAME=	jutils
 PORTVERSION=	20070610.r26
@@ -23,6 +19,7 @@ USE_ANT=	YES
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}/${PORTNAME}.jar
 PLIST_DIRS=	%%JAVAJARDIR%%/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Install JAR files in ${JAVAJARDIR}/${PORTNAME}/ ..."
 	@${MKDIR} ${JAVAJARDIR}/${PORTNAME}

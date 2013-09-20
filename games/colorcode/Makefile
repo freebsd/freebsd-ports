@@ -21,6 +21,7 @@ DESKTOP_ENTRIES=	"ColorCode" "${COMMENT}" \
 PLIST_FILES=	bin/colorcode \
 		share/pixmaps/colorcode.png
 
+NO_STAGE=	yes
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS}
 

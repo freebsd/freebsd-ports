@@ -23,6 +23,7 @@ MAN6=		xvmines.6
 PORTDOCS=	Copyright
 PLIST_FILES=	bin/xvmines
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

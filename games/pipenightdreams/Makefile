@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pipenightdreams
-# Date created:			Apr 12, 2001
-# Whom:				Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	pipenightdreams
 PORTVERSION=	0.10.0
@@ -22,6 +18,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN6=		pipenightdreams.6
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xsoldier
-# Date created:		22 January 1997
-# Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-#
+# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	xsoldier
 PORTVERSION=	1.8
@@ -23,6 +19,7 @@ MAN6=		xsoldier.6
 SCOREFILE=	/var/games/xsoldier.scores
 PLIST_SUB=	SCOREFILE=${SCOREFILE}
 
+NO_STAGE=	yes
 post-install:
 	${CHGRP} games ${PREFIX}/bin/xsoldier
 	${CHMOD} g+s ${PREFIX}/bin/xsoldier

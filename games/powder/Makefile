@@ -22,6 +22,7 @@ PLIST_FILES=	bin/powder
 
 PORTDOCS=	README.TXT LICENSE.TXT CREDITS.TXT
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

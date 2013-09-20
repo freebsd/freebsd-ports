@@ -21,6 +21,7 @@ ASM_DESC=	x86 assembly code when possible
 
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS ASM
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
 .include <bsd.port.options.mk>

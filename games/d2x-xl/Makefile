@@ -35,6 +35,7 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	OPENGL
 OPTIONS_DEFAULT=	OPENGL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"

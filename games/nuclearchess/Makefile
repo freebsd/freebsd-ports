@@ -29,6 +29,7 @@ DESKTOP_ENTRIES="NuclearChess" "${COMMENT}"  \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 		"${PORTNAME}" "Game;BoardGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

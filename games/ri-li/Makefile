@@ -24,6 +24,7 @@ DESKTOP_ENTRIES="Ri-li" \
 		"Game;ArcadeGame;" \
 		false
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lSDL |`${SDL_CONFIG} --libs`|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's| gentoo||' ${WRKSRC}/Makefile.in

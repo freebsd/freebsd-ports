@@ -1,9 +1,5 @@
-# New ports collection makefile for:	yahtzee
-# Date created:		Friday 4th July, 1997
-# Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
-#
+# Created by: Joel Sutton <sutton@aardvark.apana.org.au>
 # $FreeBSD$
-#
 
 PORTNAME=	yahtzee
 PORTVERSION=	1.0
@@ -21,6 +17,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 # Distribution does not include an install target. So here it is.
 #
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} -m 2755 -o root -g games ${WRKSRC}/yahtzee ${PREFIX}/bin
 	${MKDIR} -m 0755 ${DATADIR}

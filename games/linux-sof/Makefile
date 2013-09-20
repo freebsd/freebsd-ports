@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-sof
-# Date created:				09 October 2008
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sof
 PORTVERSION=	1.06a
@@ -31,6 +27,7 @@ EXTRACT_FILES=	libopenal-0.0.so libSDL-1.1.so.0 README.105 README.106 base/pak2.
 PORTDOCS=	README README.105 README.106
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-extract:

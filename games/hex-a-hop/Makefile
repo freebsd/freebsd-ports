@@ -26,6 +26,7 @@ DESKTOP_ENTRIES="Hex-a-Hop" "${COMMENT}" \
 		"${DATADIR}/icon.bmp" \
 		"hex-a-hop" "LogicGame;Game;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDEBUG}

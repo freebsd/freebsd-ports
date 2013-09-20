@@ -20,4 +20,5 @@ PLIST_FILES=	%%SITE_PERL%%/Acme/GuessNumber.pm \
 PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme-GuessNumber \
 		%%SITE_PERL%%/Acme
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

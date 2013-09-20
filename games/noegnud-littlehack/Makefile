@@ -29,6 +29,7 @@ ALL_TARGET=	lh001
 INSTALL_TARGET=	install_lh001
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::

@@ -28,6 +28,7 @@ GLCLIENT_DESC=	Build OpenGL client
 SDLCLIENT_DESC=	Build SDL client
 SERVER_DESC=	Build dedicated server
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../quake-data/Makefile.include"
 .include <bsd.port.options.mk>
 

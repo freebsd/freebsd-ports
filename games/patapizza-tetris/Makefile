@@ -25,6 +25,7 @@ PORTDOCS=	README.md
 
 SUB_FILES=	${PORTNAME}.sh
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

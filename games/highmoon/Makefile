@@ -1,9 +1,5 @@
-# New ports collection makefile for:	HighMoon
-# Date created:				20 Jan 2005
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	highmoon
 PORTVERSION=	1.2.4
@@ -23,6 +19,7 @@ MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LIBS="${LDFLAGS}"
 CXXFLAGS+=	`${SDL_CONFIG} --cflags`
 LDFLAGS+=	`${SDL_CONFIG} --libs` -lSDL_image
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC}/src -type f | ${XARGS} ${REINPLACE_CMD} -e \
 		's|SDL/SDL|SDL|g ; \

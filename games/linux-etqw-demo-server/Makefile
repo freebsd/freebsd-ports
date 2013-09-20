@@ -1,9 +1,5 @@
-# New ports collection makefile for:	etqw-demo-server
-# Date created:		2008-04-21
-# Whom:			ayu <ayunyan@gmail.com>
-#
+# Created by: ayu <ayunyan@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	etqw
 PORTVERSION=	2.0.r1
@@ -27,6 +23,7 @@ USE_ZIP=	yes
 
 ETQWDIR=	${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-extract:

@@ -19,6 +19,7 @@ MAN5=		chocolate-doom.cfg.5 default.cfg.5
 MAN6=		chocolate-doom.6 chocolate-server.6 chocolate-setup.6
 PORTDOCS=	CMDLINE ChangeLog HACKING INSTALL NEWS NOT-BUGS README README.OPL
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
 .include <bsd.port.options.mk>

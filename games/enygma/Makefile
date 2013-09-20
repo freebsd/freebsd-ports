@@ -1,9 +1,5 @@
-# New ports collection makefile for:   enygma
-# Date created:                14 September 2008
-# Whom:                        Wouter Reckman <gennerate@zonnet.nl>
-#
+# Created by: Wouter Reckman <gennerate@zonnet.nl>
 # $FreeBSD$
-#
 
 PORTNAME=		enygma
 PORTVERSION=	1.04
@@ -17,4 +13,5 @@ COMMENT=		A text-based puzzle game
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

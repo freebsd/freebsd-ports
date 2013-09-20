@@ -44,6 +44,7 @@ MANCOMPRESSED=	yes
 MAKE_ENV+=	NO_INSTALL_MANPAGES=${NO_INSTALL_MANPAGES}
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	cd ${WRKSRC} && ${REINPLACE_CMD} ${PORTNAME} ${PYSETUP} lib/pychess/widgets/newGameDialog.py lib/pychess/Players/PyChess.py
 

@@ -16,6 +16,7 @@ USES=		imake
 USE_XORG=	x11 xext xaw xmu xt sm ice
 NO_INSTALL_MANPAGES=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

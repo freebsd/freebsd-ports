@@ -1,9 +1,5 @@
-# New ports collection makefile for:    dontspace
-# Date created:         26-Apr-97
-# Whom:                 johnh@isi.edu
-#
+# Created by: johnh@isi.edu
 # $FreeBSD$
-#
 
 PORTNAME=	dontspace
 PORTVERSION=	1.2
@@ -20,4 +16,5 @@ CONFIGURE_ENV=	WISHX=${PREFIX}/bin/wish8.4
 USE_TK=		yes
 MAN6=		dontspace.6
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

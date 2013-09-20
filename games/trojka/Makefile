@@ -1,9 +1,5 @@
-# New ports collection makefile for:   trojka
-# Date created:        22 march 2000
-# Whom:                Edwin Mons
-#
+# Created by: Edwin Mons
 # $FreeBSD$
-#
 
 PORTNAME=	trojka
 PORTVERSION=	1.0
@@ -17,6 +13,7 @@ COMMENT=	A game of skill
 MAN6=		trojka.6
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

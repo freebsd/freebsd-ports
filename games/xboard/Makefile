@@ -35,6 +35,7 @@ DATADIR=	${PREFIX}/share/games/${PORTNAME}
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README SHORTLOG TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCRAFTY}

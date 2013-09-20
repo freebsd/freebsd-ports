@@ -24,6 +24,7 @@ GNU_CONFIGURE=	yes
 MAN6=		nibbles.6 znibbles.6 znibblesX.6
 PLIST_FILES=	bin/nibbles bin/znibbles bin/znibblesX
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK1}

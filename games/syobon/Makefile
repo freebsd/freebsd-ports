@@ -26,6 +26,7 @@ PORTDATA=	*
 
 MAKE_ENV=	GAMEDATA="${DATADIR}"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

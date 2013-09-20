@@ -38,6 +38,7 @@ PLIST_FILES+=	share/moon-buggy/jump.wav \
 		share/moon-buggy/crash.wav
 PLIST_DIRS+=	share/moon-buggy
 
+NO_STAGE=	yes
 pre-patch:
 	cd ${WRKSRC} && ${PATCH} -p1 < sound.patch
 .endif

@@ -40,6 +40,7 @@ OPTIONS_SUB=	yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-configure:

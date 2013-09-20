@@ -26,4 +26,5 @@ RUN_DEPENDS+=		${LOCALBASE}/bin/maitretarot_server:${PORTSDIR}/games/maitretarot
 RUN_DEPENDS+=		${LOCALBASE}/bin/mt_dolphin_ia:${PORTSDIR}/games/mt_dolphin_ia
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

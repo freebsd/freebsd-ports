@@ -1,4 +1,4 @@
-# Created by: Michael Nottebrock <lofi@freebsd.org>
+# Created by: Michael Nottebrock <lofi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	bastet
@@ -24,6 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN6=		bastet.6
 PLIST_FILES=	bin/bastet
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"

@@ -17,6 +17,7 @@ WRKSRC=		${WRKDIR}/xsokoban
 ALL_TARGET=	xsokoban
 MAN1=		xsokoban.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/config.h
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nil
-# Date created:				28 September 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nil
 DISTVERSION=	20050603-1400
@@ -25,6 +21,7 @@ GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=OPTIMIZED_CFLAGS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "ia64"

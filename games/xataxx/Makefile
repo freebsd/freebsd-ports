@@ -19,6 +19,7 @@ USE_XORG=	x11 xext
 
 MAN6=		xataxx.6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

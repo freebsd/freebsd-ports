@@ -16,4 +16,5 @@ USE_GNOME=	gnomeprefix gnomevfs2 libgnomeui
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

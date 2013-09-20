@@ -1,9 +1,5 @@
-# New ports collection makefile for:   hlstats
-# Date created:        29 December 2003
-# Whom:                hideki
-#
+# Created by: hideki
 # $FreeBSD$
-#
 
 PORTNAME=	steam
 PORTVERSION=	1.1
@@ -29,6 +25,7 @@ SUB_FILES=	pkg-message
 SUB_LIST=	INSTALLDIR=${PREFIX}/${INSTALLDIR}
 PLIST_SUB+=	INSTALLDIR=${INSTALLDIR}
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "You can use the INSTALLDIR option to change the install directory."
 

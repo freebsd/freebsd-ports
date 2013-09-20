@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rottdc
-# Date created:				18 Feb 2004
-# Whom:					Igor Pokrovsky <tiamat@comset.net>
-#
+# Created by: Igor Pokrovsky <tiamat@comset.net>
 # $FreeBSD$
-#
 
 PORTNAME=	rottdc
 DISTVERSION=	1.0-2
@@ -21,6 +17,7 @@ PATCH_WRKSRC=	${WRKSRC}/rott
 # Crashes when compiling with -O2 or greater, so downgrade to -O1.
 CFLAGS:=	${CFLAGS:C/-O[2-9]/-O1/}
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${FILESDIR}/${MAKEFILE} ${WRKSRC}
 

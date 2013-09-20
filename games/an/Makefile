@@ -1,9 +1,5 @@
-# New ports collection makefile for:	an
-# Date created:		28 Feb 1997
-# Whom:			proff
-#
+# Created by: proff
 # $FreeBSD$
-#
 
 PORTNAME=	an
 PORTVERSION=	0.95
@@ -19,6 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN6=		an.6
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/<stdint.h>/d' ${WRKSRC}/an.c
 

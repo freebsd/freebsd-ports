@@ -1,9 +1,5 @@
-# Ports collection makefile for:	xspringies
-# Date created:				12 January 1997
-# Whom:					jkh
-#
+# Created by: jkh
 # $FreeBSD$
-#
 
 PORTNAME=	xspringies
 PORTVERSION=	1.12
@@ -23,6 +19,7 @@ ALL_TARGET=	${PORTNAME}
 
 MAN1=		xspringies.1
 
+NO_STAGE=	yes
 post-patch:
 	@cd ${WRKSRC} && ${SED} -e \
 		's|/usr/games/|${PREFIX}/| ; \

@@ -19,6 +19,7 @@ MAN6=		scavenger.6
 
 CFLAGS+=	-Wno-return-type -Wno-pointer-sign
 
+NO_STAGE=	yes
 pre-configure:
 	@${LN} -sf scavenger.6 ${WRKSRC}/scavenger.man
 	@${ECHO_CMD} "MANSUFFIX=6" >> ${WRKSRC}/Imakefile

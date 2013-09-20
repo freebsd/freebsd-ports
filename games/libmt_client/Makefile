@@ -20,4 +20,5 @@ GNU_CONFIGURE=		yes
 USE_GNOME=		glib20 libxml2 lthack
 USE_LDCONFIG=		yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

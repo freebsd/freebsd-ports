@@ -32,6 +32,7 @@ OPTIONS_GROUP_REMIXES+=REMIXPACK${i}
 REMIXPACK${i}_DESC=	UQM Remix Pack ${i} add-on
 .endfor
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVOICE}

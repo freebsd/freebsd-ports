@@ -1,9 +1,5 @@
-# New ports collection makefile for:	alienarena-data
-# Date created:				11 May 2005
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	alienarena
 PORTVERSION=	2011.753
@@ -26,6 +22,7 @@ NO_PACKAGE=	Package will be 370MB, set FORCE_PACKAGE if you want it
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/${PORTNAME}-7.53
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-install:

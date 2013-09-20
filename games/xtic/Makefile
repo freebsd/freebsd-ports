@@ -17,6 +17,7 @@ USE_XORG=	xaw
 MAN1=		xtic.1
 PLIST_FILES=	bin/xtic
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/configure.h
 

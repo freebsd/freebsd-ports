@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tuxpaint-config
-# Date created:				28 Nov 2005
-# Whom:					Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	tuxpaint-config
 PORTVERSION=	0.0.12
@@ -35,4 +31,5 @@ INSTALL_TARGET=	install-bin install-data install-man install-gettext
 INSTALL_TARGET=	install-bin install-data install-man install-gettext install-doc
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

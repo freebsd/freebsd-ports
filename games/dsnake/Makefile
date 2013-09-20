@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dsnake
-# Date created:				18 Nov 2003
-# Whom:					Pav Lucistnik <pav@FreeBSD.org>
-#
+# Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dsnake
 PORTVERSION=	3.0.0
@@ -27,6 +23,7 @@ SUB_LIST=	CONFIG_FILES="config.dat hiscores.dat stats.dat"
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/dsnake
 

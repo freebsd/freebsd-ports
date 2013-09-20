@@ -19,6 +19,7 @@ CONFIGURE_ARGS=	--disable-ggz
 
 GCONF_SCHEMAS=	teg.schemas
 
+NO_STAGE=	yes
 post-patch:
 	@${GREP} -lR " LIST_NEXT" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's| LIST_NEXT| TEG_LIST_NEXT|g'

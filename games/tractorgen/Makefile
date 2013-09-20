@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tractorgen
-# Date created:				12 December 2002
-# Whom:					elfrink@introcom.nl
-#
+# Created by: elfrink@introcom.nl
 # $FreeBSD$
-#
 
 PORTNAME=	tractorgen
 PORTVERSION=	0.31.7
@@ -21,6 +17,7 @@ MAN6=		tractorgen.6
 PLIST_FILES=	bin/tractorgen
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/tractorgen.6 ${PREFIX}/man/man6/tractorgen.6
 .if !defined(NOPORTDOCS)

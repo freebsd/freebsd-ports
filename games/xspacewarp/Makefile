@@ -15,6 +15,7 @@ USES=		imake
 USE_XORG=	x11 xaw xext xmu xt xpm sm ice
 NO_INSTALL_MANPAGES=	yes
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${WRKSRC}/XSpacewarp.app_def ${WRKSRC}/XSpacewarp.ad
 

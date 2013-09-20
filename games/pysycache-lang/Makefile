@@ -29,6 +29,7 @@ SPANISH_DESC=	Spanish language support
 
 OPTIONS_DEFAULT=	FRENCH GERMAN ITALIAN PORTUGUESE SPANISH
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFRENCH}

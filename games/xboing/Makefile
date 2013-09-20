@@ -26,6 +26,7 @@ PLIST_SUB+=	WITH_SOUND="@comment "
 PLIST_SUB+=	WITH_SOUND=""
 .endif
 
+NO_STAGE=	yes
 post-install:
 	${CHOWN} root:games ${PREFIX}/bin/xboing
 	${CHMOD} 2755 ${PREFIX}/bin/xboing

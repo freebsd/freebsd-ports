@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-ningpo-demo
-# Date created:		2009-01-31
-# Whom:			Marcus von Appen <mva@sysfault.org>
-#
+# Created by: Marcus von Appen <mva@sysfault.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ningpo-demo
 PORTVERSION=	1.05.04
@@ -26,6 +22,7 @@ DATADIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	ningpo
 PORTDOCS=	README README.licenses license.txt
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-extract:

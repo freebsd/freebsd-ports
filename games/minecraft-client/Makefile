@@ -31,6 +31,7 @@ DESKTOP_ENTRIES="Minecraft" \
 		"Game;Java;" \
 		false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNATIVE_LIBS}

@@ -17,6 +17,7 @@ NO_INSTALL_MANPAGES=	yes
 PORTDOCS=	README
 PLIST_FILES=	bin/wmeyes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

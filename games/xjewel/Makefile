@@ -23,6 +23,7 @@ MAN6=		xjewel.6
 FONTSDIR=	lib/X11/fonts/local
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
+NO_STAGE=	yes
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGREQ} ${PKGNAME} INSTALL

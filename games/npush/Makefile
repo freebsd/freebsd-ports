@@ -12,6 +12,7 @@ COMMENT=	A curses-based logic game similar to Sokoban and Boulder Dash
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

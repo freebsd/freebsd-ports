@@ -17,6 +17,7 @@ USE_XORG=	x11 ice sm
 MAN6=		cgoban.6
 PLIST_FILES=	bin/cgoban
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/gnugo|${LOCALBASE}/bin/gnugo|' ${WRKSRC}/src/cgoban.c
 	@${REINPLACE_CMD} -e 's|linux/soundcard.h|sys/soundcard.h|' ${WRKSRC}/configure

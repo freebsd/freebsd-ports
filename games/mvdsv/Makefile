@@ -35,6 +35,7 @@ OPTIONS_DEFAULT+=	KQUEUE
 
 KQUEUE_DESC=	Kqueue support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MKQUEUE}

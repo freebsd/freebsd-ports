@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Q3 Mod: Excessive
-# Date created:				Sat Jun 23 23:40:21 EDT 2001
-# Whom:					pat@databits.net
-#
+# Created by: pat@databits.net
 # $FreeBSD$
-#
 
 PORTNAME=	excessive
 PORTVERSION=	003
@@ -23,6 +19,7 @@ NO_BUILD=	yes
 
 DATADIR=	${Q3DIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-extract:
 	@(cd ${WRKSRC}; ${UNZIP_CMD} description.pk3)
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for: criticalmass
-# Date created:		30 Aug 2002
-# Whom:			nbm
-#
+# Created by: nbm
 # $FreeBSD$
-#
 
 PORTNAME=	criticalmass
 PORTVERSION=	1.0.0
@@ -35,6 +31,7 @@ PLIST_FILES=	bin/Packer \
 		share/Critical_Mass/resource.dat
 PLIST_DIRS=	share/Critical_Mass
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

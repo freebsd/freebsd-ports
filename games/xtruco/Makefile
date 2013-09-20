@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xtruco
-# Date created:				14 March 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	xtruco
 PORTVERSION=	1.0
@@ -19,6 +15,7 @@ COMMENT=	Simple version for X Window of the famous card game Super Truco
 USE_XORG=	x11
 PLIST_FILES=	bin/xtruco
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xtruco ${PREFIX}/bin
 

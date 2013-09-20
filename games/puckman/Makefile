@@ -1,9 +1,5 @@
-# New Ports collection makefile for	puckman
-# Date created:		2012-08-08
-# Whom:			nemysis@gmx.ch
-#
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
-#
 
 PORTNAME=	puckman
 PORTVERSION=	1.0
@@ -25,6 +21,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 PORTDATA=	*
 PORTDOCS=	README.md
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

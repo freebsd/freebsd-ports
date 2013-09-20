@@ -1,9 +1,5 @@
-# New ports collection makefile for:	KnightCap
-# Date created:				10 May 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	knightcap
 PORTVERSION=	3.6
@@ -25,6 +21,7 @@ DOCSDIR=	${PREFIX}/share/doc/KnightCap
 PORTDOCS=	README
 PLIST_FILES=	bin/KnightCap
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/KnightCap ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

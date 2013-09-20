@@ -41,6 +41,7 @@ DESKTOP_ENTRIES=Simutrans "" "" simutrans "Game;Simulation;" "false"
 PLIST_FILES=	bin/simutrans bin/simutrans-bin
 PORTDATA=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPAK64}

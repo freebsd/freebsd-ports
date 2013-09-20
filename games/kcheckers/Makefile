@@ -1,7 +1,4 @@
-# New ports collection makefile for:	kcheckers
-# Date created: 			2004-01-08
-# Whom: 				arved
-#
+# Created by: arved
 # $FreeBSD$
 
 PORTNAME=	kcheckers
@@ -16,6 +13,7 @@ COMMENT=	Qt version of the classic boardgame checkers
 USE_QT4=	corelib gui qmake_build moc_build rcc_build
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/common.h
 	@${REINPLACE_CMD} -e 's|..PREFIX/share/kcheckers|${DATADIR}|' \

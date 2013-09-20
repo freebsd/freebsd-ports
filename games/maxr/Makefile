@@ -24,6 +24,7 @@ DESKTOP_ENTRIES="M.A.X.R." \
 		"Game;StrategyGame;" \
 		false
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^LIBS=/ s|-lSDL_|`${SDL_CONFIG} --libs` &|' \
 		-e '/^LIBS=/ s|-lSDL |`${SDL_CONFIG} --libs` |' \

@@ -25,6 +25,7 @@ verify: fetch
 	@${ECHO_MSG} "Done"
 .endif
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}; ${SH} install.sh ${PREFIX}
 	@${INSTALL_DATA} ${FILESDIR}/box.cow ${PREFIX}/share/cows

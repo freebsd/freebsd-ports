@@ -1,9 +1,5 @@
-# New ports collection makefile for:	uhexen2-extras
-# Date created:				2006-12-30
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	uhexen2
 PORTVERSION=	1.4.1
@@ -30,6 +26,7 @@ HEXEN2_LITS_DESC=	Install colored light data for Hexen II
 HEXEN2_MODS_DESC=	Install several mods for Hexen II
 HW_MODS_DESC=	Install several mods for HexenWorld
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHEXEN2_DEMOS}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    solarwolf
-# Date created:         		4 May 2001
-# Whom:                 		Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	solarwolf
 PORTVERSION=	1.5
@@ -19,6 +15,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 USE_PYTHON=	yes
 MAN6=		solarwolf.6
 
+NO_STAGE=	yes
 post-extract:
 	${FIND} ${WRKSRC} -type d | ${XARGS} ${CHMOD} 755
 	${CHMOD} 755 ${WRKSRC}/solarwolf.py

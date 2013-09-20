@@ -21,4 +21,5 @@ USE_GNOME=	gnomeprefix pygnome2 pygnomedesktop
 
 PYDISTUTILS_PKGNAME=	gnome-sudoku
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

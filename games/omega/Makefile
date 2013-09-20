@@ -21,6 +21,7 @@ MYPORTDOCS=	buglist.txt docs/compile.all docs/omega.txt docs/readme.1st \
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

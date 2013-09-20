@@ -1,10 +1,5 @@
-#
-# New ports collection makefile for:	xrally
-# Date created:				86 May 2005
-# Whom:					Edwin Groothuis
-#
+# Created by: Edwin Groothuis
 # $FreeBSD$
-#
 
 PORTNAME=	xrally
 PORTVERSION=	1.1.1
@@ -26,4 +21,5 @@ CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 MAKE_ENV=	INCLUDES="-I${LOCALBASE}/include"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

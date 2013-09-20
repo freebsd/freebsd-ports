@@ -22,6 +22,7 @@ WANT_SDL=	yes
 OPTIONS_DEFINE=	SDL
 OPTIONS_DEFAULT=	SDL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSDL}

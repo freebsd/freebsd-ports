@@ -29,6 +29,7 @@ PORTDOCS=	readme.txt license.txt
 OPTIONS_DEFINE=	SERVER
 SERVER_DESC=	Build dedicated server only
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "ia64"

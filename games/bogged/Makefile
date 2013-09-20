@@ -22,6 +22,7 @@ USE_TK_WRAPPER=	yes
 
 PLIST_FILES=	bin/bogged
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 

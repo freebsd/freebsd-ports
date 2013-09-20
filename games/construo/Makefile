@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	GLUT
 OPTIONS_DEFAULT=GLUT
 GLUT_DESC=	Use glut
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGLUT}

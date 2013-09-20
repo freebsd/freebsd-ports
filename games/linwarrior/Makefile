@@ -27,6 +27,7 @@ DESKTOP_ENTRIES="LinWarrior 3D" \
 		"Game;ActionGame;Simulation;" \
 		false
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -type d -exec chmod a+rx {} \;
 	@${FIND} ${WRKSRC} -type f -exec chmod a+r {} \;

@@ -19,6 +19,7 @@ USE_XORG=	x11 xext
 ALL_TARGET=	xkobo
 MAN1=		xkobo.1
 
+NO_STAGE=	yes
 post-install:
 	${CHMOD} u-s,g+s ${PREFIX}/bin/xkobo
 	${CHOWN} root:games ${PREFIX}/bin/xkobo ${PREFIX}/lib/X11/xkobo-scores

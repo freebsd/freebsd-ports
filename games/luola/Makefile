@@ -26,6 +26,7 @@ SDL_GFX_DESC=	Nicer graphics
 
 OPTIONS_DEFAULT=	SDL_GFX SOUND
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSDL_GFX}

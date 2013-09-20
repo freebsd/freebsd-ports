@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tbclock
-# Date created:		9 February 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tbclock
 PORTVERSION=	1.10
@@ -17,6 +13,7 @@ HAS_CONFIGURE=	yes
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC/d;/^CFLAGS/d' ${WRKSRC}/configure
 

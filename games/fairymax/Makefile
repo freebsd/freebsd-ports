@@ -34,6 +34,7 @@ USE_PERL5=	build
 MAKE_ARGS+=	INI_F=${DATADIR}/fmax.ini \
 		INI_Q=${DATADIR}/qmax.ini
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}

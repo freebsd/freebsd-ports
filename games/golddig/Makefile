@@ -19,6 +19,7 @@ MAN6=		gdedit.6 golddig.6
 
 DESKTOP_ENTRIES="Gold Digger" "" "" "${PORTNAME}" "" ""
 
+NO_STAGE=	yes
 post-patch:
 	@${GREP} -lR "@PREFIX@" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|@PREFIX@|${PREFIX}|'

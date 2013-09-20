@@ -23,6 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN6=		burgerspace.6 burgerspace-server.6
 PORTDOCS=	AUTHORS COPYING INSTALL NEWS README THANKS TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

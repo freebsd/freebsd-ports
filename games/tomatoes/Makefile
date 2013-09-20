@@ -47,6 +47,7 @@ DESKTOP_ENTRIES=	"Tomatoes" \
 			"Game;ArcadeGame;" \
 			false
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

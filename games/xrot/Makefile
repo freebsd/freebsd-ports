@@ -25,6 +25,7 @@ CFLAGS+=	-Wno-return-type
 
 PLIST_FILES=	bin/xrot
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xrot ${PREFIX}/bin
 	${CHOWN} root:games ${PREFIX}/bin/xrot

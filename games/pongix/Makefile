@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pongix
-# Date created:		2006-04-01
-# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-#
+# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
-#
 
 PORTNAME=	pongix
 PORTVERSION=	0.4
@@ -22,6 +18,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	@cd ${WRKSRC}/src && \

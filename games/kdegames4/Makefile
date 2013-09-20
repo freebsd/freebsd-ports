@@ -15,6 +15,7 @@ NO_BUILD=	yes
 OPTIONS_DEFINE=	${KDE4_GAMES_ALL}
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
+NO_STAGE=	yes
 .include <${.CURDIR}/Makefile.common>
 
 .for game in ${KDE4_GAMES_ALL}

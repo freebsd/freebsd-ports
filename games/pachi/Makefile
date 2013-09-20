@@ -24,6 +24,7 @@ WRKSRC=		${WRKDIR}/Pachi
 SCOREDIR=	/var/games/pachi
 SCOREFILE=	${SCOREDIR}/scores.dat
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib/games/$$PACKAGE|${SCOREDIR}|' \
 		${WRKSRC}/configure

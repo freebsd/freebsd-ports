@@ -31,6 +31,7 @@ FULLGAME_DESC=	Install full game version
 QW_DATA_DESC=	Install QuakeWorld data
 QW_SKINS_DESC=	Install QuakeWorld skins
 
+NO_STAGE=	yes
 .include "Makefile.include"	# must be included before bsd.port.options.mk
 .include <bsd.port.options.mk>
 

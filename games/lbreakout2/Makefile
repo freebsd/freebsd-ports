@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lbreakout2
-# Date created:		12 June 2002
-# Whom:			verm@drunkmonk.net
-#
+# Created by: verm@drunkmonk.net
 # $FreeBSD$
-#
 
 PORTNAME=	lbreakout2
 PORTVERSION=	2.6
@@ -26,6 +22,7 @@ CONFIGURE_ARGS=	--enable-sdl-net \
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|== "-D|= "-D|g' ${WRKSRC}/configure

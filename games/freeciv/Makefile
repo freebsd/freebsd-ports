@@ -26,6 +26,7 @@ MAN6=		freeciv-server.6 freeciv-client.6 \
 OPTIONS_DEFINE?=	X11 SDL MYSQL IPV6
 OPTIONS_DEFAULT?=	X11 MYSQL IPV6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSDL} && empty(PORT_OPTIONS:MX11)

@@ -31,6 +31,7 @@ PORTDATA=	*
 
 PLIST_FILES=	bin/intensityengine_client libexec/intensityengine_client
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

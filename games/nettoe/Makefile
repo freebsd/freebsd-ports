@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nettoe
-# Date created:		01 July 2001
-# Whom:			Christopher Preston <rbg@gayteenresource.org>
-#
+# Created by: Christopher Preston <rbg@gayteenresource.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nettoe
 PORTVERSION=	1.3.2
@@ -26,6 +22,7 @@ GNU_CONFIGURE=	yes
 PORTDOCS=	AUTHORS BUGS ChangeLog NEWS README TO-DO
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for I in ${PORTDOCS}

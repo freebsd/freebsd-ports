@@ -1,9 +1,5 @@
-# New ports collection makefile for:	miscom
-# Date created:				6 August 1998
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=		miscom
 PORTVERSION=		1.0
@@ -19,6 +15,7 @@ ALL_TARGET=
 WRKSRC=			${WRKDIR}/miscom
 MAN6=			miscom.6
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"

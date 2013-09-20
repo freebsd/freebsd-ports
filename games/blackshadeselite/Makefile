@@ -25,6 +25,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	Readme Readme.elite
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   el
-# Date created:        25 January 2005
-# Whom:                Janni
-#
+# Created by: Janni
 # $FreeBSD$
-#
 
 PORTNAME=	el
 PORTVERSION=	192
@@ -33,6 +29,7 @@ ALL_TARGET=	el.bin
 MAKEFILE=	Makefile.bsd
 PLIST=		${WRKDIR}/pkg-plist
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

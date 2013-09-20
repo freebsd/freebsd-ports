@@ -25,6 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN6=		gbrainy.6
 INSTALLS_ICONS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

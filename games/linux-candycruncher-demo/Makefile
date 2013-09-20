@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-candycruncher-demo
-# Date created:		2009-01-30
-# Whom:			Marcus von Appen <mva@sysfault.org>
-#
+# Created by: Marcus von Appen <mva@sysfault.org>
 # $FreeBSD$
-#
 
 PORTNAME=	candycruncher-demo
 PORTVERSION=	1.56
@@ -28,6 +24,7 @@ PORTDOCS=	README README.licenses README.unixthanks license.txt
 LIBFILES=	libcrypto.so.0.9.8 libgrapple-0.9.so.2 liblua.so liblualib.so \
 		libssl.so.0.9.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-extract:

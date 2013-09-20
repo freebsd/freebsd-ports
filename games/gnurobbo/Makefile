@@ -20,6 +20,7 @@ MAKE_ENV=	PACKAGE_DATA_DIR="${DATADIR}" \
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

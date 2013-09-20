@@ -29,6 +29,7 @@ OPTIONS_DEFINE=	SDL_MIXER GLUT NLS DOCS
 SDL_MIXER_DESC=	Use SDL_mixer instead of OpenAL for audio
 GLUT_DESC=	Use GLUT instead of SDL for video
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGLUT}

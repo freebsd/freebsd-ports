@@ -18,6 +18,7 @@ USES=		pkgconfig
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|{libdir}/pkgconfig|(prefix)/libdata/pkgconfig|g' \

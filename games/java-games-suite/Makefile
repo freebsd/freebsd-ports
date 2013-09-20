@@ -21,6 +21,7 @@ PLIST_FILES=	bin/java-games-suite \
 SUB_FILES=	${PORTNAME}.sh
 GAMES=	MM reversi Mine Tetris RT Number
 
+NO_STAGE=	yes
 post-extract-script:
 .for game in ${GAMES}
 	@${ECHO_CMD} "Main-Class: ${game}" > ${WRKSRC}/${game}/MANIFEST.MF

@@ -18,6 +18,7 @@ MANCOMPRESSED=	yes
 MAN6=		ctris.6
 PLIST_FILES=	bin/ctris
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|gcc|${CC}|" -e "s|CFLAGS=.*|CFLAGS+=-Wall|" \
 		 ${WRKSRC}/Makefile

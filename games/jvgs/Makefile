@@ -24,6 +24,7 @@ NO_CDROM=	contains data under CC-by-NC-SA
 
 PORTDOCS=	AUTHORS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

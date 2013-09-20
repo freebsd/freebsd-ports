@@ -27,6 +27,7 @@ CTF_SRC=	quake2-r0.16.2.tar.gz
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 .include <bsd.port.options.mk>
 

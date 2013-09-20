@@ -20,6 +20,7 @@ USE_GNOME=	gtk20 libxml2
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

@@ -56,6 +56,7 @@ PLIST_FILES=	bin/scummvm \
 		$(ENGINEDATA:S/^/%%DATADIR%%\//)
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

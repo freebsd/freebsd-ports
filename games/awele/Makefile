@@ -24,6 +24,7 @@ USE_TK=		yes
 MAN6=		xawele.6
 PLIST_FILES=	bin/awelewish bin/xawele
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%LOCALBASE%%|${LOCALBASE}|; \

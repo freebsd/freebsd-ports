@@ -1,9 +1,5 @@
-# New ports collection makefile for: games/blockout
-# Date created:		06 Aug 2009
-# Whom:			Stas Timokhin <stast@bsdportal.ru>
-#
+# Created by: Stas Timokhin <stast@bsdportal.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	blockout
 PORTVERSION=	2.4
@@ -28,6 +24,7 @@ BUILD_WRKSRC=	${WRKSRC}/BlockOut
 FETCH_ARGS?=	-pRr
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 pre-build:
 		cd ${WRKSRC}/ImageLib/src && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS}
 

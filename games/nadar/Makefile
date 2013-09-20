@@ -1,9 +1,5 @@
-# New ports collection makefile for:	NADAR
-# Date created:		22 April 2000
-# Whom:			Sakai Hiroaki <sakai@seki.ee.kagu.sut.ac.jp>
-#
+# Created by: Sakai Hiroaki <sakai@seki.ee.kagu.sut.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	nadar
 PORTVERSION=	2.0
@@ -21,6 +17,7 @@ MAKE_JOBS_UNSAFE=	yes
 MAN1=		nadars.1 nadar.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nadar ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/nadars ${PREFIX}/bin

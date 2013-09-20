@@ -36,6 +36,7 @@ OPTIONS_MULTI_COMPONENTS=CLIENT DEDICATED
 CLIENT_DESC=	Build client
 DEDICATED_DESC=	Build dedicated server
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}

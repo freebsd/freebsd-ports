@@ -19,4 +19,5 @@ USE_QT4=	xml corelib declarative gui opengl script xml \
 USE_XZ=		yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

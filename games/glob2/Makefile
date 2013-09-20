@@ -34,6 +34,7 @@ LINKFLAGS=		${PTHREAD_LIBS} -L${LOCALBASE}/lib
 
 LICENSE=		GPLv3
 
+NO_STAGE=	yes
 post-install:
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}

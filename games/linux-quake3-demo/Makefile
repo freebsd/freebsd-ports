@@ -1,4 +1,4 @@
-# Created by: Marc van Woerkom <3d@freebsd.org>
+# Created by: Marc van Woerkom <3d@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	quake3
@@ -28,6 +28,7 @@ DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 SUB_FILES=	q3demo
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} && ${TAIL} +165 ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \

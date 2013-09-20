@@ -18,6 +18,7 @@ USE_GMAKE=	yes
 MAN6=		bs.6
 PLIST_FILES=	bin/bs
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bs ${PREFIX}/bin
 	${INSTALL_MAN} ${MAN6:S|^|${WRKSRC}/|} ${MAN6PREFIX}/man/man6

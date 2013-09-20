@@ -17,6 +17,7 @@ NO_BUILD=	yes
 USES=		perl5
 PLIST_FILES=	bin/asciiquarium
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 

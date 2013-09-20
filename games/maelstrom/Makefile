@@ -29,6 +29,7 @@ PORTDOCS=	*
 DESKTOP_ENTRIES="Maelstrom" "${COMMENT}" ${PORTNAME} \
 		"Maelstrom" "Game;ArcadeGame;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

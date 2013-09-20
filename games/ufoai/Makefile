@@ -46,6 +46,7 @@ SERVER_DESC=		Install dedicated server
 UFO2MAP_DESC=		Install UFO tools
 UFORADIANT_DESC=	Install UFO map editor
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if $(PORT_OPTIONS:MSERVER)

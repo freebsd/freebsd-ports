@@ -24,6 +24,7 @@ PORTDOCS=	README README.licenses EULA
 OPTIONS_DEFINE=	NVIDIA DOCS
 NVIDIA_DESC=	Enable nvidia graphics driver support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNVIDIA}

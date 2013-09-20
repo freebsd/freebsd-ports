@@ -30,6 +30,7 @@ LIB_DEPENDS+=	liballeg.so:${PORTSDIR}/devel/allegro \
 		libogg.so:${PORTSDIR}/audio/libogg \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

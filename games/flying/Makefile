@@ -17,4 +17,5 @@ USE_XORG=	x11
 MAN1=		flying.1
 PLIST_FILES=	bin/flying
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
