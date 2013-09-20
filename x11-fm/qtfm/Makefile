@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qtfm
-# Date created:				2012-04-29
-# Whom:					Zhihao Yuan <lichray@gmail.com>
-#
+# Created by: Zhihao Yuan <lichray@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qtfm
 DISTVERSION=	5.5
@@ -21,6 +17,7 @@ DOS2UNIX_REGEX=	.*\.(h|cpp)
 USE_QT4=	gui network qmake_build moc_build rcc_build \
 		imageformats_run
 
+NO_STAGE=	yes
 # Override -A option:
 FETCH_ARGS=	-Fpr
 

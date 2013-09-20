@@ -27,4 +27,5 @@ PLIST_FILES=	bin/catseye-fm \
 
 PLIST_DIRS=		share/catseye-fm
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

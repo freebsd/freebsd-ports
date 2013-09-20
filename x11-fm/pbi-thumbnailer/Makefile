@@ -17,4 +17,5 @@ MAKE_ENV=	GCONF_CONFIG_SOURCE=${GCONF_CONFIG_SOURCE}
 
 GCONF_SCHEMAS=	pbi-thumbnail.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

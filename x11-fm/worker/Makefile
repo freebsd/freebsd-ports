@@ -1,9 +1,5 @@
-# New ports collection makefile for:	worker
-# Date created:				14 March 2001
-# Whom:					Simon Dick <simond@irrelevant.org>
-#
+# Created by: Simon Dick <simond@irrelevant.org>
 # $FreeBSD$
-#
 
 PORTNAME=	worker
 PORTVERSION=	2.19.4
@@ -27,6 +23,7 @@ MAN1=		worker.1
 CFLAGS+=	${PTHREAD_CFLAGS}
 OPTIONS_DEFINE=	XFT
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXFT}

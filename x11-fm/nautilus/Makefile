@@ -37,6 +37,7 @@ GCONF_SCHEMAS=	apps_nautilus_preferences.schemas
 MAN1=		nautilus-connect-server.1 nautilus-file-management-properties.1 \
 		nautilus.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|G_CONST_RETURN|const|g' \
 		${WRKSRC}/eel/eel-*.[ch] \

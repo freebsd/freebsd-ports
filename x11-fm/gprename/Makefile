@@ -25,6 +25,7 @@ NO_BUILD=	yes
 
 MAN1=		gprename.1
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} -rf ${WRKSRC}/build
 

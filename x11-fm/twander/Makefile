@@ -18,6 +18,7 @@ USE_PYTHON=	yes
 MANCOMPRESSED=	yes
 MAN1=		twander.1
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

@@ -34,6 +34,7 @@ INSTALLS_OMF=	yes
 
 MAN1=		gnome-commander.1
 
+NO_STAGE=	yes
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -W none
 

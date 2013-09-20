@@ -22,6 +22,7 @@ USES=		gmake
 
 MAN1=		ezfm.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ezfm ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/share/ezfm

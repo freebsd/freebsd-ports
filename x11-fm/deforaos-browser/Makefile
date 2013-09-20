@@ -35,6 +35,7 @@ MAN1=		browser.1 \
 		properties.1 \
 		view.1
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/lib/|/libdata/|g' \
 		${WRKSRC}/data/pkgconfig.sh

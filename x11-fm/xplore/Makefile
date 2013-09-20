@@ -19,6 +19,7 @@ CFLAGS+=	-Wno-return-type
 
 MAN1=		xplore.1 xploretype.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's| read| read dummy|g' ${WRKSRC}/system.xplorerc
 

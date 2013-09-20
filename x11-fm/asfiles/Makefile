@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ASFiles
-# Date created:                17 August 1997
-# Whom:                        lukin@okbmei.msk.su
-#
+# Created by: lukin@okbmei.msk.su
 # $FreeBSD$
-#
 
 PORTNAME=	asfiles
 PORTVERSION=	1.0
@@ -28,6 +24,7 @@ MAN3=	regexp.3
 CONFIGURE_ARGS+=--with-dnd-inc=${LOCALBASE}/include \
 		--with-dnd-lib=${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-install:
 	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/last-patch-aa
 	${INSTALL_DATA} ${WRKSRC}/src/Files.ad ${PREFIX}/lib/X11/app-defaults/

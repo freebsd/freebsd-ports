@@ -42,6 +42,7 @@ OPTIONS_SINGLE_LCL=	GTK2 QT4
 
 OPTIONS_DEFAULT=	GTK2
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGTK2}

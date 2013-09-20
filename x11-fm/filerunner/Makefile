@@ -19,6 +19,7 @@ USE_TK_WRAPPER=	yes
 
 PORTDOCS=	FAQ HISTORY README *.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

@@ -30,6 +30,7 @@ THUMB_DESC=	Thumbnail plugin
 TRACKER_DESC=	Tracker-UI plugin
 HAL_DESC=	Use HAL for automated device detection
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

@@ -29,6 +29,7 @@ LDFLAGS+=	`${LOCALBASE}/bin/pkgconf --libs SDL_image gl` \
 		`${LOCALBASE}/bin/smpeg-config --libs` \
 		-L ${LOCALBASE}/lib -lGLU -lglut
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:

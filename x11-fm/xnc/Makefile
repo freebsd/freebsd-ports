@@ -13,6 +13,7 @@ COMMENT=	File manager for X11 similar to Norton Commander
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 # xnc will use the following programs if you have them installed:
 #RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 #		unzip:${PORTSDIR}/archivers/unzip \
