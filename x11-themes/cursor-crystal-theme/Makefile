@@ -21,6 +21,7 @@ BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|function ||' \
 		${WRKSRC}/colorize.sh \

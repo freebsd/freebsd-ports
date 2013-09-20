@@ -20,4 +20,5 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

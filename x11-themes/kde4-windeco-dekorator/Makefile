@@ -1,9 +1,5 @@
-# New ports collection makefile for:    kde4-windeco-dekorator
-# Date created:         2009-01-03
-# Whom:                 Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dekorator
 PORTVERSION=	0.5.1
@@ -26,4 +22,5 @@ USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
 USES=		cmake
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

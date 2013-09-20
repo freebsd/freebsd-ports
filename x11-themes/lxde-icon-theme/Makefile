@@ -1,4 +1,4 @@
-# Created by: Kris Moore <kmoore@freebsd.org>
+# Created by: Kris Moore <kmoore@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	lxde-icon-theme
@@ -24,6 +24,7 @@ PORTDOCS=	AUTHORS
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

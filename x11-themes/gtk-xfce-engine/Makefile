@@ -21,4 +21,5 @@ CONFIGURE_ARGS+=--disable-glibtest \
 	--enable-gtk2 \
 	--disable-gtk3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

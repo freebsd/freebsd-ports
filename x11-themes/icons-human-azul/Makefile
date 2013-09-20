@@ -1,9 +1,5 @@
-# New ports collection makefile for:	icons-tango
-# Date created:		2006-04-16
-# Whom:			Phillip Neumann <pneumann@gmail.com>
-#
+# Created by: Phillip Neumann <pneumann@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	icons-human-azul
 PORTVERSION=	0.1
@@ -18,6 +14,7 @@ COMMENT=	A set of icons from the Ubuntu human look
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/HumanAzul
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/share/icons/HumanAzul
 	@${CP} -rip ${WRKSRC} ${PREFIX}/share/icons/

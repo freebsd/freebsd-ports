@@ -1,6 +1,5 @@
 # Created by: Olivier Duchateau
 # $FreeBSD$
-#
 
 PORTNAME=	greybird
 PORTVERSION=	1.2
@@ -27,6 +26,7 @@ OPTIONS_DEFINE=	NOTIFYD
 OPTIONS_DEFAULT=	NOTIFYD
 NOTIFYD_DESC=	Install xfce4-notifyd theme
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

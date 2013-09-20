@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Lila-xfwm4
-# Date created:		25 June 2004
-# Whom:			Filippo Natali <filippo@widestore.net>
-#
+# Created by: Filippo Natali <filippo@widestore.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Lila-xfwm4
 PORTVERSION=	0.3.2
@@ -22,6 +18,7 @@ NO_BUILD=	yes
 
 USE_BZIP2=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/share/themes/Lila/xfwm4
 	@cd ${WRKSRC}/lila-xfwm/Lila \

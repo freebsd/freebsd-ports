@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cursor-ecliz
-# Date created:		2009-11-13
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ecliz
 PORTVERSION=	0.1
@@ -19,6 +15,7 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/Ecliz
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/icons/${PORTNAME}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} cursors ${PREFIX}/lib/X11/icons/${PORTNAME}

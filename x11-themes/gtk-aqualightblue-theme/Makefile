@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtk-aqualightblue-theme
-# Date Created:				14 March 2003
-# Whom:					Philip Paeps <philip@paeps.cx>
-#
+# Created by: Philip Paeps <philip@paeps.cx>
 # $FreeBSD$
-#
 
 PORTNAME=	gtk-aqualightblue-theme
 PORTVERSION=	0.1
@@ -21,6 +17,7 @@ WRKSRC=		${WRKDIR}/AquaLightBlue
 NO_BUILD=	yes
 USE_GNOME=	gtk20
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/themes/AquaLightBlue/gtk-2.0
 	${FIND} ${WRKSRC}/gtk -type f | ${XARGS} -J % ${INSTALL_DATA} \

@@ -27,6 +27,7 @@ ANIMATION_DESC=	Enable experimental animated progressbars
 METACITY_DESC=	Depend on MetaCity Theme
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !defined(PKGNAMESUFFIX)

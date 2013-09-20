@@ -74,6 +74,7 @@ NEWTHEMES:=	${ALLTHEMES}	${n}
 ALLTHEMES:=	${NEWTHEMES}
 .endfor # t in ${THEMELIST}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .for n in ${ALLTHEMES}

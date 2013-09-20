@@ -1,9 +1,5 @@
-# New ports collection makefile for:	KDE iconset OS-K
-# Date created:		Qua 12 Dez 2007 00:07:35 UTC
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	os-k
 PORTVERSION=	1.15
@@ -16,4 +12,5 @@ USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/OS-K
 PLIST_FILE_PATTERN_EXTRA=	-v "^\./(buildset|README)"
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

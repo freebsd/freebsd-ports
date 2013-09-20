@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
 USE_GNOME=	gnomehack gtk20
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

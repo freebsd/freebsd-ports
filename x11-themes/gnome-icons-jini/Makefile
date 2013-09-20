@@ -15,6 +15,7 @@ WRKSRC=		${WRKDIR}
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 
+NO_STAGE=	yes
 post-extract:
 	@for FILE in ${WRKDIR}/JiniOrange/scalable/apps/haansoft-hwp.svg \
 		${WRKDIR}/JiniYellowishGreen/scalable/apps/haansoft-hwp.svg \

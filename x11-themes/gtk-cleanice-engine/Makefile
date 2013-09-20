@@ -21,6 +21,7 @@ USE_AUTOTOOLS=	libtool
 THEME=		cleanice-theme-1.2.7
 THEMEDIR=	${WRKDIR}/${THEME}/Theme
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${PREFIX}/share/themes/CleanIce
 	${INSTALL_DATA} ${THEMEDIR}/cleanice/index.theme \

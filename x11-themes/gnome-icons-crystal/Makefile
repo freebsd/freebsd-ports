@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Gnome iconset Crystal SVG
-# Date created:				29 Feb 2004
-# Whom:					Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-#
+# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
-#
 
 # Port logic gratuitously stolen from x11-themes/kde-icons-noia by
 # lioux@.  If it's not defined here and you think it should be, check
@@ -25,6 +21,7 @@ RESTRICTED=	${REASON}
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/CfG-Crystal-SVG-${PORTVERSION}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|\(^Directories=.*\),,|\1,|' ${WRKSRC}/index.theme
 

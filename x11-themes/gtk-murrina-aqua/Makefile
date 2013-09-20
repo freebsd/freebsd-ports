@@ -1,6 +1,5 @@
 # Created by: Phillip Neumann <pneumann@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gtk-murrina-aqua
 PORTVERSION=	0.1
@@ -21,6 +20,7 @@ GTKRC_DIR=	${DISTNAME}/gtk-2.0
 USE_GNOME=	gtk20
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${LOCALBASE}/share/themes/${GTKRC_DIR}
 	@${INSTALL_DATA} ${WRKDIR}/${GTKRC_DIR}/gtkrc ${LOCALBASE}/share/themes/${GTKRC_DIR}

@@ -16,6 +16,7 @@ USE_BZIP2=	yes
 USES=		cmake pkgconfig
 USE_GNOME=	gtk20
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800067

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtk-gray-theme
-# Date Created:				2006 FEB 11
-# Whom:					Babak Farrokhi <babak@farrokhi.net>
-#
+# Created by: Babak Farrokhi <babak@farrokhi.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gtk-gray-theme
 PORTVERSION=	1.7
@@ -20,6 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/Tango:${PORTSDIR}/x11-themes/icons-tango
 NO_BUILD=	yes
 USE_GNOME=	gtk20
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/themes/Gray/gtk-2.0
 	${MKDIR} ${PREFIX}/share/themes/Gray-Flat/gtk-2.0

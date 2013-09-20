@@ -1,9 +1,5 @@
-# New ports collection makefile for:	icons-buuf
-# Date created:		2006-10-09
-# Whom:			Phillip Neumann <pneumann@gmail.com>
-#
+# Created by: Phillip Neumann <pneumann@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	icons-buuf
 PORTVERSION=	1.6r2
@@ -22,6 +18,7 @@ WRKSRC=	${WRKDIR}/Buuf
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${RM} ${WRKSRC}/128x128/status/sunny.png
 	@${MKDIR} ${PREFIX}/share/icons/Buuf

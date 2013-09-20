@@ -16,6 +16,7 @@ USE_GNOME=	gtk20
 
 THEME_DIR=	${PREFIX}/share/themes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc) || defined(WITH_GTKENGINE)

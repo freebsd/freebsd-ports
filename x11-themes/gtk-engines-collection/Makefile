@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtk-engines-collection
-# Date created:				13 June 2000
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gtk-engines-collection
 PORTVERSION=	1.8
@@ -26,4 +22,5 @@ NO_BUILD=	yes
 
 do-install:	# empty
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

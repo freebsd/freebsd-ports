@@ -1,9 +1,5 @@
-# New ports collection makefile for:	clearlooks-themes
-# Date created:		2005-04-12
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	clearlooks
 PKGNAMESUFFIX+=	-themes
@@ -12,6 +8,7 @@ COMMENT=	Clearlooks themes with the engine coming from gtk-engines2
 
 MASTERDIR=	${.CURDIR}/../../x11-themes/clearlooks
 
+NO_STAGE=	yes
 pre-patch:
 .for f in themes/Clearlooks/gtk-2.0/gtkrc \
     themes/Clearlooks-DeepSky/gtk-2.0/gtkrc \

@@ -36,6 +36,7 @@ OPTIONS_DEFINE=	ANIMATION EXAMPLES DOCS
 OPTIONS_DEFAULT=	ANIMATION
 ANIMATION_DESC=	Enable animation support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MANIMATION}

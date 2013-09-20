@@ -18,4 +18,5 @@ USES=		cmake:outsource
 INSTALL_TARGET=	install
 EXTRACT_AFTER_ARGS=	--exclude '${DISTNAME}/scalable'
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtk-lila-theme
-# Date Created:				2 Feb 2005
-# Whom:					Filippo Natali <filippo@widestore.net>
-#
+# Created by: Filippo Natali <filippo@widestore.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gtk-lila-theme
 PORTVERSION=	0.5.5
@@ -21,6 +17,7 @@ NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 
+NO_STAGE=	yes
 .SILENT:
 
 do-install:

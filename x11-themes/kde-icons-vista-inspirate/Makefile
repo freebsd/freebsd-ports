@@ -1,9 +1,5 @@
-# New ports collection makefile for:	KDE iconset Vista Inspirate
-# Date created:		Ter 11 Dez 2007 22:25:22 UTC
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vista-inspirate
 PORTVERSION=	1.0
@@ -14,4 +10,5 @@ COMMENT=	KDE Vista Inspirate iconset
 
 WRKSRC=		"${WRKDIR}/Vista-Inspirate_${PORTVERSION}"
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

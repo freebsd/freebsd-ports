@@ -1,9 +1,5 @@
-# New ports collection makefile for:	KDE iconset Steel
-# Date created:		Fri Feb 13 11:24:29 UTC 2004
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	steel
 PORTVERSION=	1.2.5
@@ -17,4 +13,5 @@ BROKEN=	does not fetch
 
 WRKSRC=		"${WRKDIR}/Steel"
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

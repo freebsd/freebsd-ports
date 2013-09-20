@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cursor-grounation-theme
-# Date created:			12 Feb 2006
-# Whom:				Babak Farrokhi <babak@farrokhi.net>
-#
+# Created by: Babak Farrokhi <babak@farrokhi.net>
 # $FreeBSD$
-#
 
 PORTNAME=	cursor-grounation-theme
 PORTVERSION=	0.3
@@ -20,6 +16,7 @@ USE_BZIP2=	yes
 
 WRKSRC=		${WRKDIR}/Grounation-${PORTVERSION}
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/icons/grounation/cursors
 	cd ${WRKSRC}/Grounation/cursors \

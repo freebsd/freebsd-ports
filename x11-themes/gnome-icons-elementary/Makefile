@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnome-icons-elementary
-# Date created:		2010-04-16
-# Whom:			Nicole Reid <root@cooltrainer.org>
-#
+# Created by: Nicole Reid <root@cooltrainer.org>
 # $FreeBSD$
-#
 
 PORTNAME=	elementary
 PORTVERSION=	2.5
@@ -15,5 +11,6 @@ COMMENT=	Elementary icon set
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"
 .include <bsd.port.mk>

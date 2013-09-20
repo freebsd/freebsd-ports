@@ -24,4 +24,5 @@ CMAKE_ARGS+=	-DQTC_QT_ONLY:BOOL=ON \
 PLIST_FILES=	${QT_PLUGINDIR_REL}/styles/qtcurve.so
 PLIST_DIRSTRY=	${QT_PLUGINDIR_REL}/styles
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

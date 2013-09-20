@@ -1,9 +1,4 @@
-# New ports collection makefile for:	icons-tango-extras
-# Date created:				Feb 7 2007
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	icons-tango-extras
 PORTVERSION=	0.1.0
@@ -27,4 +22,5 @@ USE_GMAKE=	yes
 USE_GNOME=	intlhack
 INSTALLS_ICONS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 # Created by: Phillip Neumann <pneumann@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gtk-murrine-themes
 PORTVERSION=	0.3
@@ -20,6 +19,7 @@ USE_GNOME=	gtk20
 NO_BUILD=	yes
 USE_BZIP2=	yes
 
+NO_STAGE=	yes
 do-install:
 	@(for theme in MurrinaCandy MurrinaCappuccino MurrinaEalm MurrinaNeoGraphite; do \
 		${MKDIR} ${LOCALBASE}/share/themes/$$theme/gtk-2.0; \

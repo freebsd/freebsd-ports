@@ -1,6 +1,5 @@
 # Created by: pneumann@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	gtk-murrina-fancy-clearlooks
 PORTVERSION=	0.5
@@ -19,6 +18,7 @@ WRKSRC=	${WRKDIR}/MurrinaFancyClearlooks
 USE_GNOME=	gtk20
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	@(cd ${WRKSRC} && for theme in *; do \
 		${MKDIR} ${LOCALBASE}/share/themes/$$theme/gtk-2.0; \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   polyester
-# Date created:                        Sat May 20 00:41:23 CEST 2006
-# Whom:                                Markus Brueffer <markus@FreeBSD.org>
-#
+# Created by: Markus Brueffer <markus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	polyester
 PORTVERSION=	2.0.0
@@ -20,4 +16,5 @@ USE_KDE4=	kdelibs kdehier kdeprefix automoc4
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
 USES=		cmake
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

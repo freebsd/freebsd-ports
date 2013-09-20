@@ -15,4 +15,5 @@ USES=		cmake
 USE_QT4=	corelib qmake_build uic_build moc_build rcc_build
 USE_KDE4=	kdelibs workspace kdehier kdeprefix automoc4
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

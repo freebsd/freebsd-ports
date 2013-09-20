@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	e16-themes
-# Date created:				20 August 2008
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	e16-themes
 PORTVERSION=	1.0.1
@@ -16,4 +12,5 @@ COMMENT=	A set of themes for the e16 window manager
 DATADIR=	${PREFIX}/share/e16
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

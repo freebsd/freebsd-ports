@@ -1,9 +1,5 @@
-# New ports collection makefile for:	KDE iconset Cezanne
-# Date created:		Mon Nov 15 20:20:32 UTC 2004
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cezanne
 PORTVERSION=	0.3b
@@ -19,4 +15,5 @@ PORT_SHAREDIR?=	"${PORTNAME}-${PORTVERSION}"
 
 PLIST_FILE_PATTERN_EXTRA=	-v "buildset"
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

@@ -20,6 +20,7 @@ PLIST=		${WRKDIR}/pkg-plist
 
 THEMESDIR_REL=	share/irssi/themes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${MASTERDIR}/Makefile.inc"
 

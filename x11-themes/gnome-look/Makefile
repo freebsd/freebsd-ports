@@ -1,7 +1,4 @@
-# New ports collection makefile for:	gnome-look
-# Date Created:				10 June 2000
-# Whom:				 	Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/x11-themes/gnome-look/Makefile,v 1.1 2006/07/19 19:56:14 ahze Exp $
 
@@ -18,6 +15,7 @@ USE_GNOME=	gtk12
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure

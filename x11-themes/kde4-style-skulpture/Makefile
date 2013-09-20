@@ -1,9 +1,5 @@
-# New ports collection makefile for:   skulpture
-# Date created:                        Thu Dec  3 04:12:48  EST 2009
-# Whom:                                Steve Wills <steve@mouf.net>
-#
+# Created by: Steve Wills <steve@mouf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	skulpture
 PORTVERSION=	0.2.3
@@ -21,4 +17,5 @@ USE_KDE4=	kdelibs kdehier kdeprefix automoc4 workspace
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
 USES=		cmake
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

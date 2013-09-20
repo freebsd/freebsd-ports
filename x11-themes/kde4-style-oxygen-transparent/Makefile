@@ -15,4 +15,5 @@ USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
 USES=		cmake
 USE_XZ=		yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

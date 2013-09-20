@@ -1,9 +1,5 @@
-# New ports collection makefile for:    bluecurve-unified
-# Date created:         3 October 2002
-# Whom:                 Eugeney Ryzhyk
-#
+# Created by: Eugeney Ryzhyk
 # $FreeBSD$
-#
 
 PORTNAME=	gtk-bluecurve-theme
 
@@ -20,6 +16,7 @@ GTK2_ENGINEDIR=	lib/gtk-2.0/${GTK2_VERSION}/engines
 PLIST=		${WRKDIR}/pkg-plist
 EXTRA_STYLES=	BerriesAndCream Gnome Grape Lime Slate Strawberry Tangerine
 
+NO_STAGE=	yes
 post-patch:
 .for s in ${EXTRA_STYLES}
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|' \

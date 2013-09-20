@@ -23,6 +23,7 @@ THEMES=		Faenza Faenza-Dark Faenza-Darkest Faenza-Darker \
 FAENZA_LIGHT=	Faenza
 FAENZA_DARK=	Faenza-Dark
 
+NO_STAGE=	yes
 do-install:
 .for theme in ${THEMES}
 	@cd ${WRKDIR} && ${TAR} -xf ${theme}.tar.gz

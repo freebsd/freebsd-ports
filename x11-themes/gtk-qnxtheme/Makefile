@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qnxtheme
-# Date created:         Thu Jan 30 13:27:44 CET 2003
-# Whom:                 Miguel Mendez <flynn@energyhq.homeip.net>
-#
+# Created by: Miguel Mendez <flynn@energyhq.homeip.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gtk-qnxtheme
 PORTVERSION=	0.1
@@ -24,6 +20,7 @@ NO_BUILD=	yes
 
 WANT_GNOME=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}

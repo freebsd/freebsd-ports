@@ -1,4 +1,3 @@
-# Created by: Max Brazhnikov <makc@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	oxygen
@@ -22,4 +21,5 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USES=		cmake pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
