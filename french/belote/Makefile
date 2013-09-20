@@ -27,6 +27,7 @@ DESKTOP_ENTRIES="Belote" \
 		"" \
 		false
 
+NO_STAGE=	yes
 post-extract:
 	@${UNZIP_CMD} -qo ${WRKSRC}/data.bin rsc/vp.gif -d ${WRKSRC}
 

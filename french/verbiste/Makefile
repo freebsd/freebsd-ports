@@ -25,6 +25,7 @@ MAN1=		french-conjugator.1 french-deconjugator.1
 MAN3=		verbiste.3
 MANLANG=	"" fr
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}

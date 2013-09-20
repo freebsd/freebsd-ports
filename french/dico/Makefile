@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dico
-# Date created:				11 October 2000
-# Whom:					Cyrille Lefevre <clefevre@citeweb.net>
-#
+# Created by: Cyrille Lefevre <clefevre@citeweb.net>
 # $FreeBSD$
-#
 
 PORTNAME=	dico
 PORTVERSION=	1.1
@@ -32,6 +28,7 @@ REINPLACE_SUB=	PREFIX=${PREFIX}
 # Post-patch
 #
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/sources/dico.c

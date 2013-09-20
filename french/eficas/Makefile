@@ -44,6 +44,7 @@ FIXUBIN=	Openturns_Study/prefs_OPENTURNS_STUDY.py	\
 		Openturns_Wrapper/prefs_OPENTURNS_WRAPPER.py.in	\
 		Aster/prefs_ASTER.py
 
+NO_STAGE=	yes
 pre-configure:
 .for FILE in ${FIXSHQT4}
 	${REINPLACE_CMD} -e "s|/usr/bin/sh|/bin/sh|" ${WRKSRC}/InterfaceQT4/${FILE}

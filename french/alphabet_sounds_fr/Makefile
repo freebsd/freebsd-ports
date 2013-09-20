@@ -1,6 +1,4 @@
-# New ports collection makefile for:	alphabet_sounds_fr
-# Date created:				6 July 2004
-# Whom:					bruno
+# Created by: bruno
 # $FreeBSD$
 
 PORTNAME=	alphabet_sounds_fr
@@ -18,6 +16,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s@PREFIX=/usr/local@PREFIX=${PREFIX}@g " ${WRKSRC}/install.sh
 
