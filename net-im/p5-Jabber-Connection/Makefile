@@ -18,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		Jabber::Connection.3 Jabber::NS.3 Jabber::NodeFactory.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

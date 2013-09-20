@@ -24,4 +24,5 @@ MAN3=		Net::Async::XMPP.3 \
 		Net::Async::XMPP::Protocol.3 \
 		Net::Async::XMPP::Server.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

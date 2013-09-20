@@ -31,6 +31,7 @@ KRB5_DESC=		With Kerberos5
 CONFIGURE_ARGS+=	--enable-purple \
 			--disable-telepathy
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOSC2005}

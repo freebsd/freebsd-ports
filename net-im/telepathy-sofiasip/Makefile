@@ -19,4 +19,5 @@ USE_OPENSSL=	yes
 USES=		pkgconfig
 USE_GNOME=	glib20
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

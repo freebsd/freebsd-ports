@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	lib/pidgin/pidgin-osd.so \
 		lib/pidgin/pidgin-osd.la
+NO_STAGE=	yes
 pre-configure:
 	# Module really needs xosd version 2.2.12 or greater.
 	${REINPLACE_CMD} -e 's,2\.2\.14,2.2.12,g' ${WRKSRC}/configure

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qwit
-# Date created:		Sun March 1 19:29:11 MSD 2009
-# Whom:			Sokolov Alexey <sokolov@TrueBSD.org>
-#
+# Created by: Sokolov Alexey <sokolov@TrueBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qwit
 DISTVERSION=	r154
@@ -21,6 +17,7 @@ USE_QT4=	gui network xml qmake_build moc_build rcc_build \
 
 PLIST_FILES=	bin/qwit
 
+NO_STAGE=	yes
 pre-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -o Makefile qwit.pro
 

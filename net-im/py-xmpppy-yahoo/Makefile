@@ -34,6 +34,7 @@ SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD} BINDIR=${PYTHON_SITELIBDIR}/xmpp/yahoo \
 USE_RC_SUBR=	${UNIQUENAME:S/-/_/}
 DDIR=		${PYTHON_SITELIBDIR}/xmpp/yahoo
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEJABBERD}

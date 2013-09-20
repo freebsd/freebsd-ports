@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	lib/pidgin/pidgin-rhythmbox.la \
 		lib/pidgin/pidgin-rhythmbox.so
 
+NO_STAGE=	yes
 post-patch:
 		@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
 			-e 's#\([@(]\)PIDGIN_INSTALL\([@)]\)#\1libdir\2/pidgin#' \

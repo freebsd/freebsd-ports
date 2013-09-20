@@ -27,6 +27,7 @@ MAN8=		mission-control-5.8
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/gtk-doc/html|/${DOCSDIR}|' \
 		${WRKSRC}/configure

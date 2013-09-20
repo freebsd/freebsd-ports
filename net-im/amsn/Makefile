@@ -45,6 +45,7 @@ CXXFLAGS+=	-I${LOCALBASE}/include/libpng15
 CONFIGURE_ENV+=	CFLAGS+="-I${LOCALBASE}/include" \
 		LDFLAGS+="-L${LOCALBASE}/lib"
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' | ${XARGS} ${REINPLACE_CMD} -e 's|||'
 	@${FIND} ${WRKSRC} -name '*.bak' -delete

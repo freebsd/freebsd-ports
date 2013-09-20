@@ -44,4 +44,5 @@ MAN3=	DJabberd.3\
 	DJabberd::SASL::DumbPlain.3\
 	DJabberd::SASL::ManagerBase.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

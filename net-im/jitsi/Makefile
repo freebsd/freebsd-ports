@@ -28,6 +28,7 @@ DESKTOP_ENTRIES="Jitsi" \
 		"Network;InstantMessaging;VideoConference;Java;" \
 		true
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

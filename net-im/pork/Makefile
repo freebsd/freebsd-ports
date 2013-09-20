@@ -14,6 +14,7 @@ USE_OPENSSL=		yes
 
 GNU_CONFIGURE=		yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/^inline //' ${WRKSRC}/src/*.h
 

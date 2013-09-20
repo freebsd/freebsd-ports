@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-AIM
-# Date created:				19 Jan 2003
-# Whom:					petef
-#
+# Created by: petef
 # $FreeBSD$
-#
 
 PORTNAME=	Net-AIM
 PORTVERSION=	1.22
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=	Net::AIM.3 Net::AIM::Connection.3 Net::AIM::Event.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -30,6 +30,7 @@ CONFIGURE_ARGS+=--with-openssl-inc=${OPENSSLINC}
 CONFIGURE_ARGS+=--with-openssl-lib=${OPENSSLLIB}
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

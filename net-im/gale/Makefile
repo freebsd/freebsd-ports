@@ -29,6 +29,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib \
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 # cheesy hack - test-oop doesn't build, but we don't care.
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's/\(^noinst_PROGRAMS =.*\)test-oop/\1/' \
 			${WRKSRC}/liboop/Makefile.in

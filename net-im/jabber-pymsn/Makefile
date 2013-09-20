@@ -1,7 +1,4 @@
-# New ports collection makefile for:	Jabber Python MSN Transport
-# Date created:				Tue Nov 23 16:42:07 CET 2004
-# Whom:					Martijn Lina <martijn@pacno.net>
-#
+# Created by: Martijn Lina <martijn@pacno.net>
 # $FreeBSD$
 
 PORTNAME=	pymsn
@@ -46,6 +43,7 @@ INST_DIR=	${PREFIX}/lib/jabber/${PORTNAME}
 
 PORTDOCS=	COPYING README README.jabberd14 README.jabberd2 README.external
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJABBER}

@@ -19,6 +19,7 @@ USES=		cmake
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|lib$${LIB_SUFFIX}/pkgconfig|libdata/pkgconfig|g' \
 		${WRKSRC}/CMakeLists.txt

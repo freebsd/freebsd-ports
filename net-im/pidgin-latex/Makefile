@@ -26,6 +26,7 @@ USE_BZIP2=	yes
 
 PLIST_FILES=	lib/pidgin/LaTeX.so
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/LaTeX.so ${PREFIX}/lib/pidgin
 

@@ -26,6 +26,7 @@ FIND_DIRS=	lib
 
 SUB_FILES=	convey.sh
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

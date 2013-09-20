@@ -28,6 +28,7 @@ OTR_DESC=	Enable OTR encryption support
 REMOTE_DESC=	Enable Remote control fifo support
 XMPP_DESC=	Enable XMPP Jabber support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOTR}

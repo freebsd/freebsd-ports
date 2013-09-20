@@ -1,6 +1,4 @@
-# New ports collection makefile for:   p5-Net-MSN
-# Date created:        22 June 2004
-# Whom:                snowchyld
+# Created by: snowchyld
 # $FreeBSD$
 
 PORTNAME=	Net-MSN
@@ -23,4 +21,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

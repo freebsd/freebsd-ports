@@ -66,6 +66,7 @@ CFLAGS+=	-DHAVE_LINUX_INTEGER_TYPES=1
 OPTIONS_DEFINE=	XMMS
 XMMS_DESC=	XMMS Kopete nowlistening plugin
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 

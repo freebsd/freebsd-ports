@@ -24,6 +24,7 @@ USES=		pkgconfig
 USE_BZIP2=	yes
 ALL_TARGET=	manualsize.so
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-g root -m 755|-g wheel -m 755|g' ${WRKSRC}/makefile
 

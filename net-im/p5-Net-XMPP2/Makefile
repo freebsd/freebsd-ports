@@ -85,4 +85,5 @@ MAN3=		Net::XMPP2.3 \
 		Net::XMPP2::Util.3 \
 		Net::XMPP2::Writer.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

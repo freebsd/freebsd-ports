@@ -79,6 +79,7 @@ OPTIONSFILE=	${PORT_DBDIR}/${UNIQUENAME}/options
 
 CONFIGURE_ARGS+=--disable-doxygen
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCLTK}

@@ -20,6 +20,7 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/build
 
+NO_STAGE=	yes
 post-extract:
 	${MKDIR} ${WRKSRC}
 

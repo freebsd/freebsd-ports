@@ -40,6 +40,7 @@ post-patch: .SILENT
 # Remove gettext `.po' files: not needed when we have them precompiled
 	${FIND} ${WRKSRC}/locale -name pwytter.po -delete
 
+NO_STAGE=	yes
 post-install:
 # Install themes and media files where they belong
 	@${MKDIR} ${DATADIR}/media ${DATADIR}/theme

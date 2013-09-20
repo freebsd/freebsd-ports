@@ -1,5 +1,4 @@
 # Created by: arved
-#
 # $FreeBSD$
 
 PORTNAME=	decibel
@@ -17,6 +16,7 @@ USE_QT4=	xml dbus gui qtestlib qmake_build moc_build uic_build rcc_build
 USE_LDCONFIG=	yes
 USES=		cmake pkgconfig
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e \
 		"s,$${LIB_INSTALL_DIR}/pkgconfig,data/pkgconfig,g"\

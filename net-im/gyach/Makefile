@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gyach
-# Date created:				08 November 2003
-# Whom:					Aaron Landwehr <aaron@snaphat.com>
-#
+# Created by: Aaron Landwehr <aaron@snaphat.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gyach
 PORTVERSION=	0.9.8
@@ -19,6 +15,7 @@ LDFLAGS+=	${PTHREAD_LIBS}
 CFLAGS+=	${PTHREAD_CFLAGS}
 USE_GNOME=	gtk20
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"

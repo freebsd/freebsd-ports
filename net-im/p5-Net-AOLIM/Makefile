@@ -16,4 +16,5 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN3=		Net::AOLIM.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,10 +1,5 @@
-# New ports collection makefile for:	telepathy-butterfly
-# Date created:				Apr 19 2007
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
 #   $MCom: ports/net-im/telepathy-butterfly/Makefile,v 1.3 2009/01/08 06:51:59 marcus Exp $
-#
 
 PORTNAME=	telepathy-butterfly
 PORTVERSION=	0.5.15
@@ -26,4 +21,5 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

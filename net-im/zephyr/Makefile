@@ -25,6 +25,7 @@ MAN8=	zhm.8 zephyrd.8 zstat.8 zshutdown_notify.8
 OPTIONS_DEFINE=		HEIMDAL
 HEIMDAL_DESC=		Link against libss.so from security/heimdal
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHEIMDAL}

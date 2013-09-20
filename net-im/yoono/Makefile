@@ -37,6 +37,7 @@ USE_LINUX_APPS=	alsalib dbuslibs gtk2 xorglibs
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-desktop
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && \

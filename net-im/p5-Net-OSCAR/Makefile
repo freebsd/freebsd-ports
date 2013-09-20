@@ -34,4 +34,5 @@ MAN3=	Net::OSCAR.3 \
 	Net::OSCAR::XML.3 \
 	Net::OSCAR::_BLInternal.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

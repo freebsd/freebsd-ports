@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gaim
-# Date created:			26 Mar 1999
-# Whom:				Jim Mock <jim@FreeBSD.org>
-#
+# Created by: Jim Mock <jim@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports-stable/net-im/gaim-consoleui-devel/Makefile,v 1.2 2006/10/29 18:55:28 marcus Exp $
-#
 
 PORTNAME=	finch
 PORTREVISION=	1
@@ -30,6 +26,7 @@ CONFIGURE_ARGS=	--disable-gtkui \
 
 MAN1=		finch.1
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/finch.1 ${MAN1PREFIX}/man/man1
 

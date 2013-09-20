@@ -15,6 +15,7 @@ USES=        pathfix
 USE_GNOME=	glib20 gnomehack
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wall -ansi -pedantic||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-g -Wall||g ; \

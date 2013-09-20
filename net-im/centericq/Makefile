@@ -37,6 +37,7 @@ MAN1=	cicqconv.1 cicqsync.1
 
 PORTDOCS=	FAQ README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"

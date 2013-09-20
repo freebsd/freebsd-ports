@@ -27,6 +27,7 @@ USE_RC_SUBR=	jggtrans
 OPTIONS_DEFINE=	DEBUG EJABBERD
 EJABBERD_DESC=	transport with ejabberd
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDEBUG}

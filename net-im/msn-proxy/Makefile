@@ -1,9 +1,5 @@
-# New ports collection makefile for:	msn-proxy
-# Date created:			20 January 2008
-# Whom:				Luiz Otavio O Souza <loos.br@gmail.com>
-#
+# Created by: Luiz Otavio O Souza <loos.br@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	msn-proxy
 PORTVERSION=	0.7
@@ -38,6 +34,7 @@ USE_MYSQL=	yes
 MAKE_ARGS=	SYSCONFDIR=$(DESTDIR)${PREFIX}/etc/msn-proxy \
 		BINDIR=$(DESTDIR)${PREFIX}/bin
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

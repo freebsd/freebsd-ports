@@ -41,6 +41,7 @@ PLIST_SUB=	LIBVER=25 VERSION=33
 CONFIGURE_ARGS+=--enable-libsocialweb-backend=no
 #.endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^build_old_libs=yes|build_old_libs=no|g' \
 		${WRKDIR}/gnome-libtool

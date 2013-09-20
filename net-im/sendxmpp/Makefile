@@ -22,4 +22,5 @@ PLIST_FILES=	bin/sendxmpp \
 		%%SITE_PERL%%/mach/auto/sendxmpp/.packlist
 PLIST_DIRS=	%%SITE_PERL%%/mach/auto/sendxmpp
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

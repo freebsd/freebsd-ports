@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fugu
-# Date created:				11 August 2000
-# Whom:					Peter Haight <peterh@sapros.com>
-#
+# Created by: Peter Haight <peterh@sapros.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fugu
 PORTVERSION=	1.2.3
@@ -19,4 +15,5 @@ USE_OPENSSL=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

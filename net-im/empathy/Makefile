@@ -58,6 +58,7 @@ HAZE_DESC=	Libpurple protocol integration
 NST_DESC=	Nautilus SendTo plugin
 MAP_DESC=	Graphical map support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJABBER}

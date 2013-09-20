@@ -28,6 +28,7 @@ USE_BZIP2=	yes
 CMAKE_ARGS=	-DUSE_COMMON_CMAKE_PACKAGE_CONFIG_DIR:BOOL=True
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/FIND_PROGRAM/ s,qmake ,,' \
 		${WRKSRC}/cmake/modules/FindQt.cmake

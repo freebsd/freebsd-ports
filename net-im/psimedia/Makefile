@@ -1,4 +1,3 @@
-# Created by: Max Brazhnikov <makc@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	psimedia
@@ -33,6 +32,7 @@ CONFIGURE_ARGS+=	--debug
 PLIST_SUB+=	DEBUG=""
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
 		${WRKSRC}/gstprovider/rwcontrol.h \

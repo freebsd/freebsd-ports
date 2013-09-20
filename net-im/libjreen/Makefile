@@ -1,4 +1,3 @@
-# Created by: Max Brazhnikov <makc@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libjreen
@@ -27,6 +26,7 @@ USE_QT4=	moc_build qmake_build rcc_build network
 
 USES=		cmake pkgconfig:build
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's,lib.*/pkgconfig,libdata/pkgconfig,' \
 		${WRKSRC}/CMakeLists.txt

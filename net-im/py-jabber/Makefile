@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	py-jabber
-# Date created:				Jan 13, 2002
-# Whom:	      				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	jabber
 PORTVERSION=	0.5
@@ -21,6 +16,7 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	jabber.py
 PYDISTUTILS_PKGVERSION=	0.3-1
 
+NO_STAGE=	yes
 post-install:
 	@${ECHO} "jabber" > ${PYTHON_SITELIBDIR}/jabber.pth
 

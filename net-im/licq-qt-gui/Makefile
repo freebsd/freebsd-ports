@@ -34,6 +34,7 @@ PLIST_SUB+=	WITH_QT=""
 
 LICQ_PORT?=	net-im/licq
 
+NO_STAGE=	yes
 pre-fetch:
 .if defined(WITH_KDE)
 	@${ECHO_MSG} ""

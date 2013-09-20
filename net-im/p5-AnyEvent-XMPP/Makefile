@@ -72,6 +72,7 @@ MAN3=	AnyEvent::XMPP.3 \
 	AnyEvent::XMPP::Ext::Receipts.3 \
 	AnyEvent::XMPP::Client.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 # One of it's dependency is p5-GSSAPI which is marked broken for 7.X
 .if ${OSVERSION} < 800000

@@ -19,4 +19,5 @@ PLIST_FILES=	bin/tmsnc
 
 MAN1=		tmsnc.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

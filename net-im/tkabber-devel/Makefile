@@ -36,6 +36,7 @@ SUBDIRS=	emoticons ifacetk mclistbox msgs pixmaps plugins sounds \
 
 OPTIONS_DEFINE=	ZLIB
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

@@ -20,6 +20,7 @@ OPTIONS_DEFAULT=PROD
 PROD_DESC=	Use production irc/irssi port
 DEVEL_DESC=	Use development irc/irssi-devel port
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPROD}

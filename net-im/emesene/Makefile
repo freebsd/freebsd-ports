@@ -1,9 +1,5 @@
-# New ports collection makefile for:	emesene
-# Date created:				31 May 2007
-# Whom:					Yinghong Liu <relaxbsd@gmail.com>
-#
+# Created by: Yinghong Liu <relaxbsd@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	emesene
 PORTVERSION=	1.6.3
@@ -37,6 +33,7 @@ DESKTOP_ENTRIES="${PORTNAME}" \
 		"Network;InstantMessaging;GTK;" \
 		"false"
 
+NO_STAGE=	yes
 post-extract:
 	@cd ${WRKSRC} && \
 		${RM} -fr GPL LGPL PSF README pygif pyisf docs && \

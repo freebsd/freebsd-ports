@@ -1,9 +1,5 @@
-# New ports collection makefile for:    prosody
-# Date created:				25 June 2009
-# Whom:					Andrew Lewis <freeghb@gmail.com>
-#
+# Created by: Andrew Lewis <freeghb@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	prosody
 PORTVERSION=	0.8.2
@@ -35,6 +31,7 @@ CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}" PREFIX="${PREFIX}" LUA_SUFFIX="-${LUA_V
 
 SUB_FILES=	pkg-install pkg-deinstall
 
+NO_STAGE=	yes
 pre-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	${REINPLACE_CMD} -e 's|/usr/bin/env lua|${LUA_CMD}|' ${WRKSRC}/prosody ${WRKSRC}/prosodyctl

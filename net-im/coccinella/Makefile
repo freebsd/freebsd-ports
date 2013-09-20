@@ -1,9 +1,5 @@
-# New ports collection makefile for:	coccinella
-# Date created:				21 Oct 2004
-# Whom:					Marc Bruenink
-#
+# Created by: Marc Bruenink
 # $FreeBSD$
-#
 
 PORTNAME=	coccinella
 PORTVERSION=	0.96.20
@@ -30,6 +26,7 @@ USE_TK_WRAPPER=	yes
 LIBTARGETDIR=	${PREFIX}/${PORTNAME}
 PLIST_SUB=	LIBTARGETDIR="${PORTNAME}"
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${LIBTARGETDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/Coccinella.tcl ${LIBTARGETDIR}
