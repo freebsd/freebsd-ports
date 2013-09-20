@@ -1,5 +1,4 @@
 # Created by: Dominic Marks <dom@wirespeed.org.uk>
-# $Tecnik: ports/mail/dspam/Makefile,v 1.18 2006/06/07 23:40:55 itetcu Exp $
 # $FreeBSD$
 
 # Note to commiters: If don't commit a maintainer patch and as a result PKGNAME
@@ -108,6 +107,7 @@ DSPAM_HOME_OWNER?=	${DSPAM_OWNER}
 DSPAM_HOME_GROUP?=	${DSPAM_GROUP}
 DSPAM_HOME_MODE?=	0770
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--sysconfdir=${DSPAM_ETC}

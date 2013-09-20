@@ -1,9 +1,5 @@
-# New ports collection makefile for:	RubyMail
-# Date created:		16 January 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rmail
 PORTVERSION=	0.17
@@ -22,6 +18,7 @@ RUBY_SETUP=	install.rb
 
 DOCS=		NEWS NOTES README THANKS TODO doc
 
+NO_STAGE=	yes
 post-extract:
 	${FIND} ${WRKSRC} -name '*~' -delete
 

@@ -33,6 +33,7 @@ OPTIONS_DEFAULT=	ANALOG
 ANALOG_DESC=	quickml-analog
 LIMIT_DESC=	Creators and Members Limitation Patch
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} == 1.9

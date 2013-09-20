@@ -59,6 +59,7 @@ STARTUP_LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notifi
 
 THEMES_RUN_DEPENDS=	${LOCALBASE}/share/claws-mail/themes/ZX-0_1.1/down_arrow.xpm:${PORTSDIR}/x11-themes/claws-mail-themes
 
+NO_STAGE=	yes
 .include "Makefile.claws"
 .include <bsd.port.options.mk>
 

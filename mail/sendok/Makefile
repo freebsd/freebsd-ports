@@ -16,6 +16,7 @@ PLIST_FILES=	bin/sendok-check bin/sendok-create
 
 ALL_TARGET=	it
 
+NO_STAGE=	yes
 post-patch:
 	@${ECHO_CMD} ${CC} ${CFLAGS} >${WRKSRC}/conf-cc
 

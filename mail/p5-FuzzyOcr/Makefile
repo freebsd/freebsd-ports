@@ -46,6 +46,7 @@ PLIST_FILES=	${SA_CONFIGDIR}/FuzzyOcr.pm				\
 		%%EXAMPLESDIR%%/FuzzyOcr.cf %%EXAMPLESDIR%%/FuzzyOcr.words
 PLIST_DIRS=	%%EXAMPLESDIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

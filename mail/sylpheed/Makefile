@@ -40,6 +40,7 @@ ONIGURUMA_DESC=	Oniguruma support
 
 OPTIONS_DEFAULT=SSL GTKSPELL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}

@@ -33,6 +33,7 @@ LIBS+=		${PTHREAD_LIBS}
 
 MAN8=		rmilter.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 

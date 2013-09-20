@@ -54,6 +54,7 @@ DCC_DESC=		Add DCC support (see LICENSE)
 SUB_FILES=	pkg-install
 SUB_LIST=	USER=${USERS} GROUP=${GROUPS} INSTALL="${INSTALL}"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}

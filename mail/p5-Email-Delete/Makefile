@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mail/p5-Email-Delete
-# Date created:				31 December 2004
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Email-Delete
 PORTVERSION=	2.00.1
@@ -30,4 +26,5 @@ MAN3=	Email::Delete.3 \
 	Email::Delete::Maildir.3 \
 	Email::Delete::Mbox.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

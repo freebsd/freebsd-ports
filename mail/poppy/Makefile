@@ -1,9 +1,5 @@
-# New ports collection makefile for:	poppy
-# Date created:				13 June 2001
-# Whom:					Kevin Lo <kevlo@FreeBSD.org>
-#
+# Created by: Kevin Lo <kevlo@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	poppy
 PORTVERSION=	4.01
@@ -17,6 +13,7 @@ NO_BUILD=	yes
 
 #USE_PERL5=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/poppy ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/spamkill ${PREFIX}/bin

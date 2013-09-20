@@ -21,6 +21,7 @@ MAN3=		Mail::LMLM.3 Mail::LMLM::Object.3 Mail::LMLM::Render.3 \
 		Mail::LMLM::Types::Listar.3 Mail::LMLM::Types::Listserv.3 \
 		Mail::LMLM::Types::Mailman.3 Mail::LMLM::Types::Majordomo.3
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${DATADIR}

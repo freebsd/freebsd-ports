@@ -17,6 +17,7 @@ DATABASE_DESC=	Database feature support (with Ruby & Sqlite3)
 # emacs port setup
 USE_EMACS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDATABASE}

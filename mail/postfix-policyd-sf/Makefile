@@ -1,9 +1,5 @@
-# New ports collection makefile for:	postfix-policyd-sf
-# Date created:				2005-08-02
-# Whom:					Xavier Beaudouin <kiwi@oav.net>
-#
+# Created by: Xavier Beaudouin <kiwi@oav.net>
 # $FreeBSD$
-#
 
 PORTNAME=	policyd
 PORTVERSION=	1.82
@@ -38,6 +34,7 @@ PLIST_FILES=	sbin/${REALNAME}-cleanup \
 		sbin/${REALNAME} \
 		etc/${REALNAME}.conf.sample
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,policyd.pid,postfix-policyd-sf.pid,' \
 		${WRKSRC}/policyd.conf

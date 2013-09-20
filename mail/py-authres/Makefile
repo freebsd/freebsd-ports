@@ -21,6 +21,7 @@ FETCH_ARGS=	-pRr
 
 PORTDOCS=	CHANGES README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

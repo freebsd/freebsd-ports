@@ -16,5 +16,6 @@ USE_PERL5=	run
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME:S/-/_/}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 .include <bsd.port.mk>

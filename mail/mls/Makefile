@@ -19,4 +19,5 @@ PLIST_FILES=	bin/mls
 MAKE_ARGS+=	DESTDIR="${PREFIX}" CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	mls
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

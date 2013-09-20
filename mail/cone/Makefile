@@ -5,6 +5,7 @@ PORTNAME=	cone
 PORTVERSION=	0.90
 PORTREVISION=	1
 CATEGORIES=	mail
+NO_STAGE=	yes
 # This is for beta versions, leave it in please:
 #MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/ \
 #		http://www.lerctr.org/~ler/

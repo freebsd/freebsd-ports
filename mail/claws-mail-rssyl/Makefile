@@ -9,5 +9,6 @@ COMMENT=	RSS/Atom feed reader plugin for Claws Mail
 
 CLAWS_PLUGINS_BUILD=	rssyl
 
+NO_STAGE=	yes
 .include "../claws-mail/Makefile.claws"
 .include <bsd.port.mk>

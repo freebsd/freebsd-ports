@@ -14,6 +14,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USES=		imake motif
 USE_XORG=	ice sm x11 xext xmu xp xt
 
+NO_STAGE=	yes
 pre-configure:
 	@${ECHO_MSG} "===>  Building c-client"
 	@( cd ${WRKSRC}/../imap-4; make bsi )

@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--enable-cgibindir=${PREFIX}/${CGIBINDIR} \
 		--enable-htmldir=${PREFIX}/${WEBDATADIR} \
 		--enable-qmaildir=${QMAIL_PREFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PLIST_SUB+=	CGIBINDIR=${CGIBINDIR} WEBDATADIR=${WEBDATADIR}

@@ -37,6 +37,7 @@ PLIST_SUB=	VERSION=${VERSION} EVO_VERSION=${EVO_VERSION} \
 
 GCONF_SCHEMAS=	apps_exchange_addressbook-${VERSION}.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(HEIMDAL_HOME) || defined(WITH_HEIMDAL) || defined(NO_KERBEROS)

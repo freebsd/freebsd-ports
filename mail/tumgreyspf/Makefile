@@ -37,6 +37,7 @@ TUMGREYSPF_DIR?=	/var/db/${PORTNAME}
 TUMGREYSPF_USER?=	nobody
 TUMGREYSPF_GROUP?=	nobody
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-everything::

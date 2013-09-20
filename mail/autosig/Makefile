@@ -1,9 +1,5 @@
-# New ports collection makefile for:	autosig
-# Date created:				23 April 2001
-# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
-#
+# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	autosig
 PORTVERSION=	2.3
@@ -17,6 +13,7 @@ MAKEFILE=	makefile
 PLIST_FILES=	bin/autosig
 ALL_TARGET=	${PORTNAME}
 
+NO_STAGE=	yes
 pre-build:
 	${REINPLACE_CMD} -e '/^CC/d' ${WRKSRC}/makefile
 

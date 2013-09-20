@@ -1,9 +1,5 @@
-# New ports collection makefile for:	popcheck
-# Date created:		25 Jan 2004
-# Whom:			Radim Kolar
-#
+# Created by: Radim Kolar
 # $FreeBSD$
-#
 
 PORTNAME=	popcheck
 PORTVERSION=	1.3
@@ -23,6 +19,7 @@ MAN1=		popcheck.1
 
 PLIST_FILES=	bin/popcheck
 
+NO_STAGE=	yes
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/popcheck ${PREFIX}/bin
 .if !defined(NO_INSTALL_MANPAGES)

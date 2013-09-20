@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	CHASEN DOCS MECAB
 CHASEN_DESC=	Japanese Morphological Analysis Support
 MECAB_DESC=	Part-of-Speech and Morphological Analyzer
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCHASEN}

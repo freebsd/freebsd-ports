@@ -28,6 +28,7 @@ WRKSRC=		${WRKDIR}/Addresses/Goodies
 ADDRESSES_PORT?=	mail/addresses
 GWORKSPACE_PORT?=	deskutils/gworkspace
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|LDAPAddressBook||' \
 		-e 's|VCFViewer||' \

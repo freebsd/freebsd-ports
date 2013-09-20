@@ -30,6 +30,7 @@ USE_XORG=	ice sm x11 xaw xext xmu xt xpm
 
 MAN1=		xfaces.1
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DATADIR}/images
 	${INSTALL_DATA} ${WRKSRC}/images/* ${DATADIR}/images

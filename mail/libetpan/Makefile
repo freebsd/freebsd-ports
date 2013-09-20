@@ -37,6 +37,7 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 
 OPENSSL_CONFIGURE_ON=	--without-gnutls
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}

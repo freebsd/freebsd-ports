@@ -35,6 +35,7 @@ OPTIONS_DEFINE=	DB4
 OPTIONS_DEFAULT=	DB4
 DB4_DESC=	Build db4 pdm module
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDB4}

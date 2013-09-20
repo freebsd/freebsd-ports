@@ -43,6 +43,7 @@ PLIST_SUB+=		NLS="@comment "
 # Only install support if gnomepanel is already installed.
 WANT_GNOME=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgnomepanel}!=""

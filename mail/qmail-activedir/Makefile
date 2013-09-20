@@ -29,6 +29,7 @@ PORTDOCS=	INSTALL README
 WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

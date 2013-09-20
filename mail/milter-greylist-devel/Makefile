@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	LIBSPF2 GEOIP CURL LDAP POSTFIX
 LIBSPF2_DESC=	Include SPF support
 POSTFIX_DESC=	Use Postfix instead of Sendmail
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 ##

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libspf
-# Date created:		28 February 2004
-# Whom:			Daniel Roethlisberger <daniel@roe.ch>
-#
+# Created by: Daniel Roethlisberger <daniel@roe.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	libspf
 DISTVERSION=	1.0.0-p5
@@ -27,6 +23,7 @@ OPTIONS_DEFINE=	RFC_RECURSION LOGFILE_STATS DEBUG DOCS
 RFC_RECURSION_DESC=	Change SPF recursion to 20 (as per RFC)
 LOGFILE_STATS_DESC=	Enables logfile stats
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRFC_RECURSION}

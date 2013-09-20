@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	vacation
-# Date created:				01/30/2008
-# Whom:					Adam McDougall <mcdouga9@egr.msu.edu>
-#
+# Created by: Adam McDougall <mcdouga9@egr.msu.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	vacation
 PORTVERSION=	3.3.0
@@ -25,6 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	bin/vacation
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldb|-l${BDB_LIB_NAME}|g' \
 		${WRKSRC}/Makefile

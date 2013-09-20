@@ -18,6 +18,7 @@ PLIST_FILES=	libexec/gkrellm/plugins/mailwatch.so
 USES=		pkgconfig
 USE_GNOME=	imlib
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/libexec/gkrellm/plugins
 	${INSTALL_PROGRAM} ${WRKSRC}/mailwatch.so ${PREFIX}/libexec/gkrellm/plugins

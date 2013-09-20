@@ -1,9 +1,5 @@
-# New ports collection makefile for:  movemail
-# Date created:        1997/09/09
-# Whom:                wosch
-#
+# Created by: wosch
 # $FreeBSD$
-#
 
 PORTNAME=	movemail
 PORTVERSION=	1.0
@@ -18,4 +14,5 @@ MAN1=		movemail.1
 MANCOMPRESSED=	maybe
 PLIST_FILES=	bin/movemail
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

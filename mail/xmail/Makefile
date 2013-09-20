@@ -16,4 +16,5 @@ USES=		imake
 USE_XORG=	xbitmaps xaw
 MAN1=		xmail.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

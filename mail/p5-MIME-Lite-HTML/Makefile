@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-MIME-Lite-HTML
-# Date created:				2004-06-23 18:16:13
-# Whom:	      				Jean-Baptiste Quenot <jb.quenot@caraldi.com>
-#
+# Created by: Jean-Baptiste Quenot <jb.quenot@caraldi.com>
 # $FreeBSD$
-#
 
 PORTNAME=	MIME-Lite-HTML
 PORTVERSION=	1.24
@@ -28,4 +24,5 @@ USE_PERL5=	configure
 
 MAN3=		MIME::Lite::HTML.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

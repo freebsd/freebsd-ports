@@ -19,6 +19,7 @@ PORTDOCS=	NEWS README
 SUB_FILES=	pkg-message
 SUB_LIST=	QMAIL_PREFIX=${QMAIL_PREFIX}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/var/qmail,${QMAIL_PREFIX},' \
 	    ${WRKSRC}/src/usendmail.c

@@ -14,5 +14,6 @@ LICENSE=	GPLv2
 USES=		perl5
 USE_PERL5=	run
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 .include <bsd.port.mk>

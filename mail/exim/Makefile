@@ -21,6 +21,7 @@ USE_BZIP2=	yes
 WANT_GNOME=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 # One can tune the following "hidden" knobs:
 # - EXIM_USER: user exim is running as;
 # - EXIM_GROUP: ditto for the group;

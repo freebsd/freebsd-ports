@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lurker
-# Date created:				01 Feb 2011
-# Whom:					Kevin Rauwolf <sweetpea-freebsd@tentacle.net>
-#
+# Created by: Kevin Rauwolf <sweetpea-freebsd@tentacle.net>
 # $FreeBSD$
-#
 
 PORTNAME=	lurker
 PORTVERSION=	2.3
@@ -31,6 +27,7 @@ CONFIGURE_ARGS=	--with-mimelib-local \
 MAN1=		lurker-index.1 lurker-list.1 lurker-params.1 \
 		lurker-regenerate.1 lurker-search.1 lurker-prune.1
 
+NO_STAGE=	yes
 post-extract:
 	@cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/mimelib-${MIMELIB_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS}

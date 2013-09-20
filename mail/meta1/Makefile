@@ -42,6 +42,7 @@ EXTRA_SBIN=	libcheck/noroot libconf/tree libmta/statit \
 #GROUPS=	meta1s meta1q meta1c meta1m meta1
 #USERS=		meta1s meta1q meta1c meta1m meta1
 
+NO_STAGE=	yes
 # default config:
 META1CONFDIR?=	${PREFIX}/etc/meta1
 NOLOGIN_CMD?=	/usr/sbin/nologin

@@ -62,6 +62,7 @@ RG2_DESC=	Kerberos network authentication protocol type
 
 OPTIONS_DEFAULT=	PCRE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \

@@ -18,6 +18,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 NO_BUILD=	yes
 PLIST_FILES=	bin/biabam
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '1s|\(#!\)\(/bin/bash\)|\1${LOCALBASE}\2|' \
 		${WRKSRC}/${PORTNAME}

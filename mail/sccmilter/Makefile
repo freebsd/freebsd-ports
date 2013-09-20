@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sccmilter
-# Date created:				25 Jul 2003
-# Whom:					Rashid N. Achilov <shelton@granch.ru>
-#
+# Created by: Rashid N. Achilov <shelton@granch.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	sccmilter
 PORTVERSION=	0.95.7
@@ -37,6 +33,7 @@ LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-debug
 .endif
 
+NO_STAGE=	yes
 pre-configure:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "For debugging information support you should specify"

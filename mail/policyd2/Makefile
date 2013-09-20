@@ -1,9 +1,5 @@
-# New ports collection makefile for:	policyd2
-# Date created:				2 December 2008
-# Whom:	      				Chifeng QU <chifeng@gmail.com>
-#
+# Created by: Chifeng QU <chifeng@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	policyd2
 PORTVERSION=	2.0.12
@@ -33,6 +29,7 @@ PORTDATA=	*
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	MYSQL
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 USE_PHP=	pdo_mysql
 .if ${PORT_OPTIONS:MMYSQL}

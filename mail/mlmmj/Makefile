@@ -53,6 +53,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
 
 MAN1=		mlmmj-bounce.1 mlmmj-list.1 mlmmj-maintd.1 mlmmj-make-ml.sh.1 mlmmj-process.1 mlmmj-recieve.1 mlmmj-send.1 mlmmj-sub.1 mlmmj-unsub.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

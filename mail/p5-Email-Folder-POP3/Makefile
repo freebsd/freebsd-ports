@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mail/p5-Email-Folder-POP3
-# Date created:				11 October 2005
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Email-Folder-POP3
 PORTVERSION=	1.01.3
@@ -26,4 +22,5 @@ USE_PERL5=	configure
 
 MAN3=	Email::Folder::POP3.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

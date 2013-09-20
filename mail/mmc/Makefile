@@ -22,4 +22,5 @@ PORTSCOUT=	skipv:0.35
 
 CFLAGS+=	-fpermissive
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

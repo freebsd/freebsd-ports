@@ -8,5 +8,6 @@ DIST_SUBDIR=	squirrelmail
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ask user to enter Full name and Email address at initial logon
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 .include <bsd.port.mk>

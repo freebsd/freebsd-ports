@@ -33,6 +33,7 @@ PLIST_FILES=	bin/ses-get-stats.pl \
 
 SCRIPTS=	ses-get-stats.pl ses-send-email.pl ses-verify-email-address.pl
 
+NO_STAGE=	yes
 post-extract:
 	@cd ${WRKSRC} && ${REINPLACE_CMD} -e '1 s|/usr/bin/perl|${PERL}|' ${SCRIPTS}
 

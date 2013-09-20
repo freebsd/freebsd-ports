@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qconfirm
-# Date created:		22 Aug 2002
-# Whom:			Sergei Kolobov <sergei@kolobov.com>
-#
+# Created by: Sergei Kolobov <sergei@kolobov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qconfirm
 PORTVERSION=	0.14.3
@@ -23,6 +19,7 @@ MAN1=		qconfirm.1 qconfirm-accept.1 qconfirm-check.1 \
 		qconfirm-notice.1 qconfirm-return.1
 DOCS=		package/CHANGES package/COPYING package/README doc/*.html
 
+NO_STAGE=	yes
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
 

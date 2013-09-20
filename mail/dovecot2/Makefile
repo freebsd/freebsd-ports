@@ -55,6 +55,7 @@ VPOPMAIL_DESC=	vpopmail support
 LUCENE_DESC=	CLucene FTS support
 SOLR_DESC=	Solr FTS support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"

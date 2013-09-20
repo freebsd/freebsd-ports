@@ -29,6 +29,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS PST2DII
 PST2DII_DESC=	Allow Summation Document Image Information output
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPST2DII}

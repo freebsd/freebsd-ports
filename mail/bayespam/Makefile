@@ -21,6 +21,7 @@ FILES_DOCS=	AUTHORS COPYING Changelog INSTALL README TODO \
 		qmail.sample
 FILES_SCRIPTS=	bayes_process_email.pl bayes_spam_check.pl bayestest.pl
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

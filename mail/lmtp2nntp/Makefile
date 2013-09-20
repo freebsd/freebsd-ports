@@ -25,6 +25,7 @@ PORTDOCS=	INSTALL README
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Try to fix parallel builds (-jX)

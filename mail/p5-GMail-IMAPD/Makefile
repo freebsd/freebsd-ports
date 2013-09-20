@@ -1,9 +1,5 @@
-# New ports collection makefile for:	GMail-IMAPD
-# Date created:				Jun 4, 2007
-# Whom:					Ali Mashtizadeh <ali@mashtizadeh.org>
-#
+# Created by: Ali Mashtizadeh <ali@mashtizadeh.org>
 # $FreeBSD$
-#
 
 PORTNAME=	GMail-IMAPD
 PORTVERSION=	0.94
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		GMail::IMAPD.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

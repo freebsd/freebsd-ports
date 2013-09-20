@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MailStats
-# Date created:				Wed Jan  3 15:09:46 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	MailStats
 PORTVERSION=	0.02
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		Mail::Stats::Record.3 Mail::Stats.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

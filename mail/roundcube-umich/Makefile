@@ -1,9 +1,5 @@
-# New ports collection makefile for:	umich
-# Date created:				Thu 13 Aug 2009
-# Whom:					Alexey V. Degtyarev
-#
+# Created by: Alexey V. Degtyarev
 # $FreeBSD$
-#
 
 PORTNAME=	umich
 PORTVERSION=	20090813
@@ -28,6 +24,7 @@ x-generate-plist: build
 	${FIND} . -type d | ${SORT} -r | ${SED} \
 		-e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
 		-e "s,^\.,@dirrm %%WWWDIR%%," >>${.CURDIR}/pkg-plist.tmp
+NO_STAGE=	yes
 post-patch:
 	${FIND} ${WRKSRC} -type f -name '*.orig' -delete
 

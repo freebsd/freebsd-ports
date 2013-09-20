@@ -1,9 +1,5 @@
-# New ports collection makefile for:	uebimiau
-# Date created: 			13 August 2003
-# Whom: 				Francisco Gomez <francisco@gomezmarin.com>
-#
+# Created by: Francisco Gomez <francisco@gomezmarin.com>
 # $FreeBSD$
-#
 
 PORTNAME=	uebimiau
 PORTVERSION=	2.7.11
@@ -22,6 +18,7 @@ WANT_PHP_MOD=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/www/data/${PORTNAME}
 	${CP} -vR ${WRKSRC}/* ${PREFIX}/www/data/${PORTNAME}

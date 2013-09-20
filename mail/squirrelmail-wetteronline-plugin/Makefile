@@ -1,7 +1,4 @@
-# New ports collection makefile for:		squirrelmail-wetteronline-plugin
-# Date created:		10 Feb 2006
-# Whom:		Gerrit Beine <gerrit.beine@gmx.de>
-#
+# Created by: Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD$
 
 PORTNAME=		squirrelmail-${SQUIRREL_PLUGIN_NAME}-plugin
@@ -44,6 +41,7 @@ WANT_PHP_WEB=		yes
 IGNORE_WITH_PHP=5 # known incompatibilities with php-5.4, use 5.3 for now
 DEFAULT_PHP_VER=53
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO} ""
 .ifndef WITHOUT_ACTIVATE

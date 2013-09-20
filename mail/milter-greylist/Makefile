@@ -19,6 +19,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 MAKE_JOBS_UNSAFE=	yes
 
 ##
+NO_STAGE=	yes
 # Use the following quirks to choose which sendmail to use (ports or system):
 #
 #   WITH_SENDMAIL_BASE=yes

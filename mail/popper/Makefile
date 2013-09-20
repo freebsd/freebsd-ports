@@ -1,9 +1,5 @@
-# New ports collection makefile for:	popper
-# Date created:		1 April 1995
-# Whom:			pst
-#
+# Created by: pst
 # $FreeBSD$
-#
 
 PORTNAME=	qpopper
 PORTVERSION=	2.53
@@ -58,6 +54,7 @@ LATEST_LINK=	popper
 
 PORTSCOUT=	limit:^2\.
 
+NO_STAGE=	yes
 post-patch:
 	$(RM) ${WRKSRC}/md5.h
 	$(CP) ${FILESDIR}/sendto.c ${WRKSRC}

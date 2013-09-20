@@ -40,6 +40,7 @@ PLIST_FILES=	bin/imapfilter \
 		%%EXAMPLESDIR%%/extend.lua
 PLIST_DIRS=	%%DATADIR%% %%EXAMPLESDIR%%
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -Ee ' \
 	    s|^(PREFIX =).*|\1${PREFIX}|; \

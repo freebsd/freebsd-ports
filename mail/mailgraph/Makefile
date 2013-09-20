@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mailgraph
-# Date created:			30 August 2002
-# Whom:				Gea-Suan Lin (gslin@ccca.nctu.edu.tw)
-#
+# Created by: Gea-Suan Lin (gslin@ccca.nctu.edu.tw)
 # $FreeBSD$
-#
 
 PORTNAME=	mailgraph
 PORTVERSION=	1.14
@@ -36,6 +32,7 @@ DOCS=		README CHANGES
 PORTDOCS=	${DOCS}
 .endif
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may set following options:"

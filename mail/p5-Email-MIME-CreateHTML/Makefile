@@ -32,4 +32,5 @@ MAN3=	Email::MIME::CreateHTML.3 \
 	Email::MIME::CreateHTML::Resolver::Filesystem.3 \
 	Email::MIME::CreateHTML::Resolver::LWP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

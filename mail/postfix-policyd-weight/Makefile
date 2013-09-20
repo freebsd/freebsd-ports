@@ -28,6 +28,7 @@ NO_BUILD=	yes
 MAN8+=	policyd-weight.8
 MAN5+=	policyd-weight.conf.5
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

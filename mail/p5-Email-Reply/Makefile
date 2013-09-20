@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mail/p5-Email-Reply
-# Date created:				21 February 2007
-# Whom:					Kay Abendroth <kay.abendroth@raxion.net>
-#
+# Created by: Kay Abendroth <kay.abendroth@raxion.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Email-Reply
 PORTVERSION=	1.202
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=	Email::Reply.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

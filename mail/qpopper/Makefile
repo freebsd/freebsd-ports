@@ -1,5 +1,4 @@
 # Created by: pst
-#
 # $FreeBSD$
 
 PORTNAME=	qpopper
@@ -62,6 +61,7 @@ U_OPTION_DESC=	include support for user .qpopper-options
 
 OPTIONS_DEFAULT=	APOP QPOPAUTH_SETUID SSL U_OPTION
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MAPOP)

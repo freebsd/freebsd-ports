@@ -36,6 +36,7 @@ LOGFILE_DESC=	log file
 USERPREFS_DESC=	user defined revaliases
 XORIGIP_DESC=	Add X-Originating-IP header
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLOGFILE}

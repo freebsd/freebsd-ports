@@ -29,6 +29,7 @@ CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-gui=none
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}/mu && ${INSTALL_PROGRAM} mu ${PREFIX}/bin
 	cd ${FILESDIR} && ${INSTALL_SCRIPT} mu-ask ${PREFIX}/bin

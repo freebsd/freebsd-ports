@@ -15,5 +15,6 @@ LICENSE=	GPLv2
 USE_PHP+=	ldap
 USES=		gettext
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 .include <bsd.port.mk>

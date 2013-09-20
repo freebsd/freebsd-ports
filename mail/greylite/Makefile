@@ -27,6 +27,7 @@ GEOIP_DESC=		Support for GeoIP in suspicion rules
 DNSBLENV_DESC=		Module for interfacing with DNS blacklists
 UCSPI2SOCKET_DESC=	Module for using greylite as SMTP proxy
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGEOIP}

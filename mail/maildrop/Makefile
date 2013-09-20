@@ -1,6 +1,7 @@
 # Created by: Tom Hukins <tom@eborcom.com>
 # $FreeBSD$
 
+NO_STAGE=	yes
 # The following compile-time options are available:
 # WITH_AUTHLIB=yes	Enable optional support for Courier Auth Library
 # WITH_FAM=yes		Enable optional support for File Alteration Monitor

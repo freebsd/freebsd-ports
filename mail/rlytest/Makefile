@@ -21,6 +21,7 @@ USES=		perl5
 MAN1=		rlytest.1
 PLIST_FILES=	bin/rlytest
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^#!.*|#!${PERL}|' ${WRKSRC}/${PORTNAME}
 

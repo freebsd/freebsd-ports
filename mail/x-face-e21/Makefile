@@ -16,6 +16,7 @@ COMMENT=	X-Face utilities for Emacs 21 (and possibly 22)
 RUN_DEPENDS=	uncompface:${PORTSDIR}/mail/faces
 USE_EMACS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 NO_WRKSUBDIR=	yes

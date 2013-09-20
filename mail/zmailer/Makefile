@@ -19,6 +19,7 @@ USES=		perl5 pkgconfig
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MSSL}

@@ -44,6 +44,7 @@ MAN3=	Mail::ListDetector.3 \
 	Mail::ListDetector::Detector::Yahoogroups.3 \
 	Mail::ListDetector::List.3
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/sample.pl ${EXAMPLESDIR}

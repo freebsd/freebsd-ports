@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mvision2
-# Date created:				Thu 16 Jul 2009
-# Whom:					Alexey V. Degtyarev
-#
+# Created by: Alexey V. Degtyarev
 # $FreeBSD$
-#
 
 PORTNAME=	mvision2
 PORTVERSION=	2
@@ -32,6 +28,7 @@ x-generate-plist: build
 		-e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
 		-e "s,^\.,@dirrm %%WWWDIR%%," >>${.CURDIR}/pkg-plist.tmp
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${WWWDIR}
 	cd ${WRKDIR}/mvision2_en && ${PAX} -r -w . \

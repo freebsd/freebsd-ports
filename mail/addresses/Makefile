@@ -1,6 +1,5 @@
 # Created by: Miguel Mendez <flynn@energyhq.es.eu.org>
 # $FreeBSD$
-#
 
 PORTNAME=	addresses
 PORTVERSION=	0.4.8
@@ -21,4 +20,5 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

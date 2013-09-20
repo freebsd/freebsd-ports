@@ -1,9 +1,5 @@
-# Ports collection makefile for:	vacation3
-# Date created:			Thu Mar 08, 2007
-# Whom:				Beech Rintoul <beech@FreeBSD.org>
-#
+# Created by: Beech Rintoul <beech@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vacation
 PORTVERSION=	3.2.1
@@ -15,6 +11,7 @@ MAINTAINER=	horde@FreeBSD.org
 COMMENT=	E-mail auto-responder
 
 #-----------------------------------------------------------------------
+NO_STAGE=	yes
 # You may define these options:
 #
 # - WITHOUT_LDAP	if you do not need OpenLDAP;

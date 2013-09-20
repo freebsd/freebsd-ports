@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Mail-IMAPTalk-MailCache
-# Date created:		2009-09-27
-# Whom:			Zane C, Bowers <vvelox@vvelox.net>
-#
+# Created by: Zane C, Bowers <vvelox@vvelox.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-IMAPTalk-MailCache
 PORTVERSION=	0.0.1
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		Mail::IMAPTalk::MailCache.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Mail-Verify
-# Date created:				2 August 2001
-# Whom:					Pete Fritchman <petef@databits.net >
-#
+# Created by: Pete Fritchman <petef@databits.net >
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-Verify
 PORTVERSION=	0.02
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		Mail::Verify.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

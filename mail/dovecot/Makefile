@@ -59,6 +59,7 @@ KQUEUE_DESC=		kqueue(2) support
 MANAGESIEVE_DESC=	ManageSieve support
 VPOPMAIL_DESC=		VPopMail support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	annoyance-filter
-# Date created:		2004-01-02
-# Whom:			Sergei Kolobov <sergei@FreeBSD.org>
-#
+# Created by: Sergei Kolobov <sergei@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	annoyance-filter
 PORTVERSION=	1.0d
@@ -22,6 +18,7 @@ DOCS=		COPYING INSTALL README *.pdf
 
 CFLAGS=		${CPPFLAGS}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}-run ${PREFIX}/bin

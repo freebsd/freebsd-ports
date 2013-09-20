@@ -19,6 +19,7 @@ MAN3=		Log::Procmail.3
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

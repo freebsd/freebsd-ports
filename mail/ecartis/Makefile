@@ -1,9 +1,5 @@
-# New ports collection makefile for: ecartis
-# Date created:                20 January 2002
-# Whom:                        Trish Lynch <trish@bsdunix.net>
-#
+# Created by: Trish Lynch <trish@bsdunix.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ecartis
 PORTVERSION=	1.0.0.s20060813
@@ -22,6 +18,7 @@ NO_PACKAGE=	Requires ecartis uid
 IS_INTERACTIVE=	"Stops to ask to create ecartis user/group"
 WRKSRC=		${WRKDIR}/ecartis-1.0.0/src
 
+NO_STAGE=	yes
 pre-patch:
 	@${CP} ${WRKSRC}/Makefile.dist ${WRKSRC}/Makefile
 

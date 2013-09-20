@@ -1,9 +1,5 @@
-# New ports collection makefile for:	grepmail
-# Date created:				20 November 1999
-# Whom:					Chris D. Faulhaber <jedgar@fxp.org>
-#
+# Created by: Chris D. Faulhaber <jedgar@fxp.org>
 # $FreeBSD$
-#
 
 PORTNAME=	grepmail
 PORTVERSION=	5.3033
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN1=		grepmail.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	DOCS
 
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

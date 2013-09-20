@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Lens
-# Date created:		2006-03-31
-# Whom:			TAKATSU Tomonari <tota@rtfm.jp>
-#
+# Created by: TAKATSU Tomonari <tota@rtfm.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	lens
 PORTVERSION=	0.2
@@ -21,6 +17,7 @@ USE_RUBY=	yes
 LIB_FILES=	lens.rb maildir.rb message.rb parsedate.rb classify.rb
 RUBY_SHEBANG_FILES=	lens
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/lens ${PREFIX}/bin
 	${MKDIR} ${RUBY_SITELIBDIR}/lens

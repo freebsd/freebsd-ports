@@ -22,6 +22,7 @@ SUB_LIST+=	ANTIVIRUS=${ANTIVIRUS_DIR}
 SED_SCRIPT=	-e 's|%%ANTIVIRUS%%|${ANTIVIRUS_DIR}|g' \
 		-e 's|%%PREFIX%%|${PREFIX}|g'
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sa-stats
-# Date created:				Tue 16 Mar 2010
-# Whom:					Alexey V. Degtyarev <alexey@renatasystems.org>
-#
+# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sa-stats
 PORTVERSION=	1.0
@@ -26,6 +22,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/sa-stats
 
+NO_STAGE=	yes
 post-extract:
 		${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
 

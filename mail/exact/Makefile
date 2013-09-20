@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	--with-user=${MAILUSER} \
 		--with-group=${MAILGROUP} \
 		--with-watch=${MAILLOG}
 
+NO_STAGE=	yes
 pre-install:
 	@${SED} -e "s,/usr/local/var,/var,g; s,/state,,g" ${WRKSRC}/exact.conf > ${WRKSRC}/exact.conf.sample
 	@${SED} -e "s,%%PREFIX%%,${PREFIX},g; s,%%EXACTDIR%%,${EXACTDIR},g" ${FILESDIR}/exact.sh > ${WRKSRC}/exact.sh

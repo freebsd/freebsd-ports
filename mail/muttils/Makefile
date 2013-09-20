@@ -1,9 +1,5 @@
-# New ports collection makefile for:	muttils
-# Date created:		April 2 2011
-# Whom:			Jason Helfman <jhelfman@experts-exchange.com>
-#
+# Created by: Jason Helfman <jhelfman@experts-exchange.com>
 # $FreeBSD$
-#
 
 PORTNAME=	muttils
 PORTVERSION=	1.3
@@ -25,6 +21,7 @@ USE_PYDISTUTILS=	yes
 
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

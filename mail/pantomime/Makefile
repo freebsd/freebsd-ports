@@ -1,9 +1,5 @@
-# New ports collection makefile for:    pantomime
-# Date created:         17 Sep 2001
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pantomime
 PORTVERSION=	1.2.0
@@ -25,4 +21,5 @@ USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
 DEFAULT_LIBVERSION=	1.2
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

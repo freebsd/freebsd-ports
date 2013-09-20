@@ -26,6 +26,7 @@ CONFIGURE_ENV=	REHASH=${SCRIPTDIR}/c_rehash
 MAKE_ENV:=	${CONFIGURE_ENV}
 
 #
+NO_STAGE=	yes
 # options available:
 #
 # WITH_SYSLOG_FACILITY:         The syslogfacility to use

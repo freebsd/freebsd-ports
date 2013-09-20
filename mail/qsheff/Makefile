@@ -39,6 +39,7 @@ DISABLELOCAL_DESC=	Disable Filters For Local Users
 BACKUP_DESC=		Logging Incoming/Outgoing Mail
 CUSTOMERROR_DESC=	Custom Error Patch
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MCLAMAV}

@@ -38,4 +38,5 @@ PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/OpenDKIM \
 PLIST_DIRSTRY=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail \
 		%%SITE_PERL%%/%%PERL_ARCH%%/Mail
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	FuzzyOcr
-# Date Created:				2006-11-03
-# Whom:					Shaun Amott <shaun@FreeBSD.org>
-#
+# Created by: Shaun Amott <shaun@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	FuzzyOcr
 DISTVERSION=	3.6.0
@@ -55,6 +51,7 @@ PLIST_FILES=	%%SITE_PERL%%/${SA_PLUGINDIR}/FuzzyOcr.pm		\
 		%%EXAMPLESDIR%%/FuzzyOcr.preps %%EXAMPLESDIR%%/FuzzyOcr.mysql
 PLIST_DIRS=	%%EXAMPLESDIR%% %%SITE_PERL%%/${SA_PLUGINDIR}/FuzzyOcr
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 #.if defined(WITH_OCRAD)

@@ -67,6 +67,7 @@ SUB_LIST+=	QS_USER=${QS_USER} \
 		QS_ID=${QS_ID} \
 		SPOOLDIR=${SPOOLDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Options

@@ -29,6 +29,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 CXXFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 pre-configure:
 	@cd ${WRKSRC} && ${ACLOCAL}
 

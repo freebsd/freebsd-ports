@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pfqueue
-# Date created:				13 Jan 2004
-# Whom:					Marcus Alves Grando <mnag@FreeBSD.org>
-#
+# Created by: Marcus Alves Grando <mnag@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pfqueue
 PORTVERSION=	0.5.6
@@ -21,6 +17,7 @@ CPPFLAGS+=	${PTHREAD_CFLAGS}
 MAN1=		pfqueue.1
 MAN5=		pfqueue.conf.5
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|-lc_r|${PTHREAD_LIBS}|g" \
 		-e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure

@@ -1,9 +1,5 @@
-# New ports collection makefile for: Email::AddressParser
-# Date created: Jun 6 2011
-# Whom: dliakh
-#
+# Created by: dliakh
 # $FreeBSD$
-#
 
 PORTNAME=	Email-AddressParser
 PORTVERSION=	0.04
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=	Email::AddressParser.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

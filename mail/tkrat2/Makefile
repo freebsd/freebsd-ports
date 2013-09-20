@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tkrat2
-# Date created:		9 November 1999
-# Whom:			Stephen J. Roznowski <sjr@home.net>
-#
+# Created by: Stephen J. Roznowski <sjr@home.net>
 # $FreeBSD$
-#
 
 PORTNAME=	tkrat
 PORTVERSION=	2.1.5
@@ -34,6 +30,7 @@ DOCFILES=	CONFIGURATION COPYRIGHT README doc/interface doc/userprocs \
 
 MAN1=		tkrat.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

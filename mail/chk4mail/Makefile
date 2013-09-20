@@ -16,4 +16,5 @@ MAN1=		chk4mail.1 chkimap.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-imap
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

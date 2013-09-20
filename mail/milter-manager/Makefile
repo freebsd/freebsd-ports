@@ -27,6 +27,7 @@ USE_GNOME=	glib20 intltool
 USE_LDCONFIG=	yes
 USE_RUBY=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 MANLANG=	"" ja

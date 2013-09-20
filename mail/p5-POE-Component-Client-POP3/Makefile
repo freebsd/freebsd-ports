@@ -18,6 +18,7 @@ USE_PERL5=	configure
 
 MAN3=		POE::Component::Client::POP3.3
 
+NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"

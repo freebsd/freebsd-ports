@@ -25,6 +25,7 @@ SKEM_NETINET_DESC=	Support IPv4 addresses
 OPTIONS_DEFAULT=	SKEM_NETINET
 
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

@@ -71,6 +71,7 @@ OPTIONS_DEFAULT=ICONV SMTP TLS
 SMTP_DESC=	Enable SMTP submission protocol (RFC2746) support
 TLS_DESC=	Enable POP STLS and IMAP STARTTLS support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Local variables

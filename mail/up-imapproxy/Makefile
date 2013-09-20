@@ -30,6 +30,7 @@ SUB_FILES=	pkg-message
 DOCS=		ChangeLog README README.debian README.known_issues README.ssl
 SBIN=		in.imapproxyd pimpstat
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOVECOT}

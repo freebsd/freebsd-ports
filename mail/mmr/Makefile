@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mmr
-# Date created:				23 October 1997
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	mmr
 PORTVERSION=	1.6.0
@@ -31,6 +27,7 @@ CXXFLAGS+=	-DTHREADMAIL \
 		-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB} -lcurses -lmd
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|md5/libmd5.a||g' ${WRKSRC}/Makefile
 

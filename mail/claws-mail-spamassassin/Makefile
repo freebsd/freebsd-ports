@@ -10,5 +10,6 @@ RUN_DEPENDS=	spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
 CLAWS_PLUGINS_BUILD=	spamassassin
 
+NO_STAGE=	yes
 .include "../claws-mail/Makefile.claws"
 .include <bsd.port.mk>

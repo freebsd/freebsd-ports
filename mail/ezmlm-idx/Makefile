@@ -29,6 +29,7 @@ MYSQL_DESC=		Build the MySQL extension
 PGSQL_DESC=		Build the PostgreSQL extension
 SQLITE_DESC=		Build the SQLite3 extension
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 ALL_TARGET=	it

@@ -25,4 +25,5 @@ USE_PERL5=	configure
 MAN1=		spfd.1 spfquery.1
 MAN3=		Mail::SPF::Query.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

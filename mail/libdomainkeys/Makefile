@@ -15,6 +15,7 @@ PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
 USE_OPENSSL=	YES
 
+NO_STAGE=	yes
 post-patch:
 	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.prev
 	@${SED} -e "s=%%SHLIB_MAJOR%%=${SHLIB_MAJOR}=g" \

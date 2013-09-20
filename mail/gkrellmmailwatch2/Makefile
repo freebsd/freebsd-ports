@@ -1,4 +1,4 @@
-# Created by:			Jean-Yves Lefort <jylefort@brutele.be>
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
 
 PORTNAME=	gkrellmmailwatch
@@ -23,4 +23,5 @@ USE_LDCONFIG=	yes
 
 MAKE_ENV+=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

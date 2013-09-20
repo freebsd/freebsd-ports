@@ -16,6 +16,7 @@ MAKE_JOBS_UNSAFE=	yes
 PLIST_FILES=	bin/ripmime
 MAN1=		ripmime.1
 
+NO_STAGE=	yes
 pre-build:
 	@${REINPLACE_CMD} -e 's!CC=!CC?=!; s!/usr/local!${PREFIX}!; \
 		s!^CFLAGS=!CFLAGS ?=!' \

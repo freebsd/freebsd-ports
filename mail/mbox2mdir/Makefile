@@ -15,6 +15,7 @@ USE_BZIP2=	yes
 
 PLIST_FILES=	bin/mbox2mdir
 
+NO_STAGE=	yes
 do-build:
 	${CXX} ${CXXFLAGS} ${WRKSRC}/mbox2mdir.cpp -o ${WRKSRC}/mbox2mdir
 

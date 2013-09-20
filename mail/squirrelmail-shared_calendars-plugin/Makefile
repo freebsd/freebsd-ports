@@ -1,7 +1,4 @@
-# New ports collection makefile for:		squirrelmail-shared_calendars-plugin
-# Date created:		02 Jan 2008
-# Whom:		Gerrit Beine <gerrit.beine@gmx.de>
-#
+# Created by: Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD$
 
 PORTNAME=		shared_calendars
@@ -51,6 +48,7 @@ SQL_DESC=	use SQL backend
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQL}

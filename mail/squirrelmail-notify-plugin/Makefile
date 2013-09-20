@@ -1,7 +1,4 @@
-# New ports collection makefile for:		squirrelmail-notify-plugin
-# Date created:		10 Feb 2006
-# Whom:		Gerrit Beine <gerrit.beine@gmx.de>
-#
+# Created by: Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD$
 
 PORTNAME=		squirrelmail-${SQUIRREL_PLUGIN_NAME}-plugin
@@ -42,6 +39,7 @@ USE_PERL5=		build
 USE_PHP=		yes
 WANT_PHP_WEB=		yes
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO} ""
 .ifndef WITHOUT_ACTIVATE

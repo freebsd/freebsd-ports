@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ovs
-# Date created:			26 August 2007
-# Whom:				Xavier Beaudouin <kiwi@oav.net>
-#
+# Created by: Xavier Beaudouin <kiwi@oav.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ovs
 PORTVERSION=	1.05
@@ -35,6 +31,7 @@ DOCS=		README CHANGES COPYING CHANGES.old README.old
 PORTDOCS=	${DOCS}
 .endif
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may set following options:"

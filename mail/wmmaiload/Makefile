@@ -37,6 +37,7 @@ MAKE_ARGS+=	GTK_CFLAGS="pkg-config --cflags gtk+" \
 		GTK_LIBS="pkg-config --libs gtk+"
 .endif
 
+NO_STAGE=	yes
 post-patch:
 .for i in wmmaiload/Init.make
 	@${REINPLACE_CMD} -e 's|-L/usr/X11R6/lib||g' ${WRKSRC}/${i}

@@ -21,6 +21,7 @@ MAKE_ARGS=	-DPCRE -DDB
 MAN1=	fdm.1
 MAN5=	fdm.conf.5
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

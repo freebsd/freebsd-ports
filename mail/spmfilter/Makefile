@@ -32,6 +32,7 @@ DB4_DESC=	DB4 backend
 # Default requirement for spmfilter rc script
 _REQUIRE=	LOGIN
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDB4}

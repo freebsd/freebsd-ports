@@ -1,4 +1,4 @@
-# Created by:		Gerrit Beine <gerrit.beine@gmx.de>
+# Created by: Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD$
 
 PORTNAME=		calendar_file_backend
@@ -12,5 +12,6 @@ COMMENT=		File backend for SquirrelMail Calendar plugin
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 .include <bsd.port.mk>

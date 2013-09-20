@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mboxgrep
-# Date created:				28 October 2001
-# Whom:					Anders Nordby <anders@fix.no>
-#
+# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
-#
 
 PORTNAME=	mboxgrep
 PORTVERSION=	0.7.9
@@ -28,6 +24,7 @@ INFO=		mboxgrep
 
 DOCS=		ChangeLog NEWS README TODO
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,void \*tmpp,FILE \*tmpp,g' ${WRKSRC}/src/main.c
 

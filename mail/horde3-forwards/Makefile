@@ -1,9 +1,5 @@
-# Ports collection makefile for:	forwards3
-# Date created:			Mon Mar 26, 2007
-# Whom:				Beech Rintoul <beech@FreeBSD.org>
-#
+# Created by: Beech Rintoul <beech@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	forwards
 PORTVERSION=	3.2.1
@@ -15,6 +11,7 @@ MAINTAINER=	horde@FreeBSD.org
 COMMENT=	E-mail forward
 
 #-----------------------------------------------------------------------
+NO_STAGE=	yes
 # You may define these options:
 #
 # - WITHOUT_LDAP	if you do not need OpenLDAP;

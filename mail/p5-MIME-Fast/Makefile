@@ -21,4 +21,5 @@ CONFIGURE_ENV=	PREFIX="${PREFIX}" CCFLAGS="${CCFLAGS} ${PTHREAD_CFLAGS}"
 
 MAN3=		MIME::Fast.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

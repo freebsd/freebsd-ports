@@ -23,6 +23,7 @@ MAN1=		pgppipe.1 sendpgppass.1
 MAN8=		pgpsendmail.8 pgpdaemon.8
 PLIST_FILES=	bin/pgpdaemon bin/pgppipe bin/sendpgppass libexec/pgpsendmail
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CC =|CC ?=| ; \

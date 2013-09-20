@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  hbiff
-# Date created:			  Mon Dec 23, 1998
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	hbiff
 PORTVERSION=	1.2
@@ -20,6 +15,7 @@ COMMENT=	A replacement for xbiff that handles popup window with mail headers
 USE_XORG=	x11
 MAN1=		hbiff.1
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} ; cc -I${LOCALBASE}/include hbiff.c -L${LOCALBASE}/lib -lX11
 

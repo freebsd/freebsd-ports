@@ -29,6 +29,7 @@ AUTOMAKE_ARGS+=		--add-missing -Wno-portability
 OPTIONS_DEFINE=		PYTHONLIBS
 PYTHONLIBS_DESC=	Install the Python API
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(PREFIX)

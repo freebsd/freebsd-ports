@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-SMTP-TLS
-# Date created:		2006-07-10
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-SMTP-TLS
 PORTVERSION=	0.12
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::SMTP::TLS.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

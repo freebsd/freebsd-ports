@@ -25,6 +25,7 @@ PKGMESSAGE=	${FILESDIR}/post-install-notes
 
 DOCSDIR=	${PREFIX}/${PORTNAME}/doc
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-fetch:

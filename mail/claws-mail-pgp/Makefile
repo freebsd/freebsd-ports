@@ -10,5 +10,6 @@ LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
 
 CLAWS_PLUGINS_BUILD=	pgpcore pgpinline pgpmime smime
 
+NO_STAGE=	yes
 .include "../claws-mail/Makefile.claws"
 .include <bsd.port.mk>

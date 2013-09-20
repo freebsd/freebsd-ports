@@ -16,6 +16,7 @@ MANCOMPRESSED=	no
 OPTIONS_DEFINE=	PAM APOP
 APOP_DESC=	Build with APOP command support (requires PAM)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

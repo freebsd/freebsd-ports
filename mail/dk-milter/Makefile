@@ -39,6 +39,7 @@ SITE+=		${FILESDIR}/site.config.m4
 SITE_SUB+=	-e "s|%%PREFIX%%|${PREFIX}|g" \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 WITHOUT_MILTER_CFLAGS=	yes

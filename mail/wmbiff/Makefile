@@ -26,6 +26,7 @@ PLIST_DIRS=	%%DATADIR%%/skins \
 		%%DATADIR%% \
 		lib/wmbiff
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}

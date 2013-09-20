@@ -53,6 +53,7 @@ NETSCAPEHACK_DESC=	Enable X-NETSCAPE extensions
 NNTP_DESC=		Enable NNTP support
 REPLICATION_DESC=	Enable replication (experimental)
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Autocreate Inbox and Autosieve patches from UoA

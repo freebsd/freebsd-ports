@@ -27,6 +27,7 @@ DOCSFILES=	Changelog INSTALL LICENSE docs/docs.html docs/docs.txt \
 		conf/db.rcpt conf/db.rdnsbl conf/db.sndr \
 		conf/policy.html conf/spamilter.rc
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"

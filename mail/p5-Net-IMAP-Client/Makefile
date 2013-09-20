@@ -19,4 +19,5 @@ USE_PERL5=	configure
 MAN3=		Net::IMAP::Client.3 Net::IMAP::Client::MsgAddress.3 \
 		Net::IMAP::Client::MsgSummary.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

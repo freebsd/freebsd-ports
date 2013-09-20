@@ -16,6 +16,7 @@ USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USES=		gmake pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

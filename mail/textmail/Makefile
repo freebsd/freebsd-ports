@@ -21,6 +21,7 @@ PLIST_FILES=	bin/${PORTNAME}
 NO_WRKSUBDIR=	yes
 MAN1=	${PORTNAME}.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '3s|^|\${.newline}$$ENV{'PATH'} = "${LOCALBASE}/libexec/xpdf:$$ENV{'PATH'}";\${.newline}|' ${WRKSRC}/${PORTNAME}
 

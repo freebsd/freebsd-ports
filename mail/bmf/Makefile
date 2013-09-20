@@ -1,9 +1,5 @@
-# New ports collection makefile for:   bmf
-# Date created:        15 March 2003
-# Whom:                Sean Chittenden <seanc@FreeBSD.org>
-#
+# Created by: Sean Chittenden <seanc@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bmf
 PORTVERSION=	0.9.4
@@ -19,6 +15,7 @@ OPTIONS_DEFAULT=	BDB
 BDB_DESC=			Berkeley DB support (may specify w/ WITH_BDB_VER)
 MYSQL_DESC=			Adds MySQL Support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBDB}

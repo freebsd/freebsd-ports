@@ -13,5 +13,6 @@ COMMENT=		Automatically log in user based on HTTP authentication
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 .include <bsd.port.mk>

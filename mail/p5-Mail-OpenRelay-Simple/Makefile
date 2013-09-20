@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-Mail-OpenRelay-Simple
-# Date created:        2006-07-21
-# Whom:                Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-#
+# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-OpenRelay-Simple
 PORTVERSION=	0.02
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=	Mail::OpenRelay::Simple.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

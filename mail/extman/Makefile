@@ -19,6 +19,7 @@ NO_BUILD=	yes
 OPTIONS_DEFINE=		MYSQL LDAP
 OPTIONS_DEFAULT=	MYSQL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

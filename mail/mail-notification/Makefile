@@ -43,6 +43,7 @@ POP3_DESC=	POP3 support
 SYLPHEED_DESC=	Sylpheed support
 YAHOO_DESC=	Yahoo! Mail support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MMBOX}

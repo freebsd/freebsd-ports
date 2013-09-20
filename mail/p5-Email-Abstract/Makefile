@@ -25,4 +25,5 @@ MAN3=		Email::Abstract.3 \
 		Email::Abstract::MailMessage.3 \
 		Email::Abstract::Plugin.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

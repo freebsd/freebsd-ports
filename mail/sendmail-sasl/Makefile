@@ -11,6 +11,7 @@ SENDMAIL_PORT?=		sendmail
 MASTERDIR?=	${.CURDIR}/../${SENDMAIL_PORT}
 
 .if exists(${.CURDIR}/Makefile.local)
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.local"
 .endif
 

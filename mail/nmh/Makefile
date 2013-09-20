@@ -1,52 +1,5 @@
 # Created by: Scott Blachowicz <scott+ports@sabami.seaslug.org>
 # $FreeBSD$
-#
-# Makefile variables of interest:
-#
-# NMH_EDITOR - pass an EDITOR specification through to nmh's configure
-#           script's '--with-editor' option.
-#
-# NMH_EXTRA_CONFIGURE_ARGS - extra args passed through to 'configure'.
-#
-# NMH_LOCKING - specify the style of locking to be used by nmh for the
-#           users' spool files (e.g. the 'inc' command). Must match the
-#           locking style used by your MTA - the default is FLOCK_LOCKING
-#           (the documented behavior for the 'mail.local' delivery program).
-#           Do a 'make patch', then look in the source directory (currently
-#           the config.h.in file) for more information on different locking
-#           settings. Current valid settings are:
-#             DOT_LOCKING FCNTL_LOCKING LOCKF_LOCKING FLOCK_LOCKING
-#
-# NMH_MASQUERADE - specify the type(s) of masquerading to allow.  This
-#           is passed through to nmh's "--enable-masquerade" configure
-#           option and the current syntax for that string is:
-#             'draft_from[ mmailid[ username_extension]]'
-#
-# NMH_MTS - pass an MTS specification through to nmh's configure
-#           script's "--with-mts" option.  Do a "make extract" and check
-#           the NMH distribution's "INSTALL" file for more info.
-#           Currently, the valid choices are
-#    "smtp" - [the default] Open a connection to the SMTP port on
-#           the configured server, default - localhost.  The server would
-#           be specified in the etc/nmh/mts.conf file after installation.
-#           This requires access to a SMTP daemon on the localhost or the
-#           specified server system.
-#    "sendmail" - Fork a copy of sendmail to handle the message. This
-#           will have different behavior than "smtp" depending on your
-#           local MTA and its configuration.  For example, some of the
-#           rewriting facilities of "qmail-inject", if you are using qmail,
-#           may be available this way, but not via NMH_MTS=smtp.
-#
-# NMH_PAGER - pass an PAGER specification through to nmh's configure
-#           script's '--with-pager' option.
-#
-# NMH_POP - specify "enable" or "disable" for --enable-pop (or --disable-pop).
-#           Default is "enable".
-#
-# NMH_SMTPSERVERS - specify a blank-separated list of SMTP servers -
-#           passed through to nmh's configure scripts '--with-smtpservers'
-#           option.
-#
 
 PORTNAME=	nmh
 PORTVERSION=	1.5
@@ -96,6 +49,7 @@ CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 
 OPTIONS_DEFINE=	SASL2
 SASL2_DESC=	Cyrus SASL2 support
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSASL2}

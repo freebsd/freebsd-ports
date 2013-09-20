@@ -41,6 +41,7 @@ MAN3=		Net::IMAP::Simple.3 \
 OPTIONS_DEFINE=	SX
 SX_DESC=	Simple protocol extensions (use Parse::RecDescent)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSX}

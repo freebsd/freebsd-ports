@@ -17,6 +17,7 @@ WRKSRC=		${WRKDIR}/anomy
 
 DOCS=		CHANGELOG.sanitizer CREDITS README.sanitizer sanitizer.html
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${SITE_PERL}/Anomy/Sanitizer/
 	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/HTMLCleaner.pm ${SITE_PERL}/Anomy

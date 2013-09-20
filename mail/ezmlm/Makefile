@@ -32,6 +32,7 @@ MAN1=		ezmlm-list.1 ezmlm-make.1 ezmlm-manage.1 ezmlm-reject.1 \
 MAN5=		ezmlm.5
 DOCS=		BLURB INSTALL README THANKS TODO
 
+NO_STAGE=	yes
 post-patch:
 	@${ECHO_CMD} ${PREFIX}/bin > ${WRKSRC}/conf-bin
 	@${ECHO_CMD} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc

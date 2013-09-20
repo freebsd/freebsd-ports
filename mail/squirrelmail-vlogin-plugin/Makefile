@@ -19,6 +19,7 @@ USE_SM_COMPAT=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 
 # We need to rearrange, install and cleanup documentation pre-install

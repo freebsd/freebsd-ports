@@ -18,6 +18,7 @@ SEMI_TRUNK=	1.14
 SEMI_COOKIE=	semi-${EMACS_PORT_NAME}-${SEMI_TRUNK}.FreeBSD-packages
 
 USE_EMACS=	yes
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${EMACS_PORT_NAME} == xemacs21-mule

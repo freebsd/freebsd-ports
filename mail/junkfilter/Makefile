@@ -31,6 +31,7 @@ JFFILES=	LICENSE Makefile README TODO addresses bodychk dialups \
 
 JFDOMFILES=	general
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${BINDIR}/domains
 .for FILE in ${JFFILES}

@@ -26,6 +26,7 @@ EXAMPLEARCHIVE=	samples/archive/*.gz
 
 MAN3=	Mail::Graph.3
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${MKDIR} ${EXAMPLESDIR}/archive

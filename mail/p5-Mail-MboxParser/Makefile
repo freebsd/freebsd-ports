@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mail/p5-Mail-MboxParser
-# Date created:				31 March 2006
-# Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-MboxParser
 PORTVERSION=	0.55
@@ -27,4 +23,5 @@ MAN3=		Mail::MboxParser.3 Mail::MboxParser::Base.3 \
 		Mail::MboxParser::Mail::Body.3 \
 		Mail::MboxParser::Mail::Convertable.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

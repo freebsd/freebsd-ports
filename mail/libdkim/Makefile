@@ -20,6 +20,7 @@ USE_OPENSSL=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 #Check for OPENSSL 0.9.8 in BASE:  If not present require PORT

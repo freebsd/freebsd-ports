@@ -51,6 +51,7 @@ NNTP_DESC=		Enable NNTP support
 SNMP_5_DESC=		Enable SNMP support
 PASS8BITHACK_DESC=	Add pass8bit option (not recommended)
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 501400

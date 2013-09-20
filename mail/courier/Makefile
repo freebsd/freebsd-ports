@@ -133,6 +133,7 @@ WEBMAILRSENT_DESC=	enable Autorename Sent folder
 SYSTEMALIASES_DESC=	symlink system /etc/aliases
 EMPTYALIASES_DESC=	create empty aliases file
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include "${.CURDIR}/Makefile.doc"
 .include "${.CURDIR}/Makefile.man"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	exim-doc-html
-# Date created:		27 November 2001
-# Whom:	      		Johann Visagie <wjv@FreeBSD.org>
-#
+# Created by: Johann Visagie <wjv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	exim
 PORTVERSION=	4.71
@@ -40,6 +36,7 @@ PORTDOCS=	*.ps
 .elif ${DOCFORMAT} == "info"
 PLIST=		${PKGDIR}/pkg-plist_${DOCFORMAT}
 .else
+NO_STAGE=	yes
 pre-everything::
 	@ ${ECHO} 'ERROR: invalid value for DOCFORMAT: "${DOCFORMAT}"'
 	@ ${ECHO} 'Possible values are "html", "pdf", "postscript" and "info".'

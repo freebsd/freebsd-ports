@@ -1,9 +1,5 @@
-# New ports collection makefile for:	isbg
-# Date created:		2010-01-28
-# Whom:			Bernhard Froehlich <decke@bluelife.at>
-#
+# Created by: Bernhard Froehlich <decke@bluelife.at>
 # $FreeBSD$
-#
 
 PORTNAME=	isbg
 PORTVERSION=	0.99
@@ -25,6 +21,7 @@ USE_PYTHON=	2.5+
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/isbg.py ${PREFIX}/bin/${PORTNAME}
 

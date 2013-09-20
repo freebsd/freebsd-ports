@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mail/p5-MIME-Lite-TT
-# Date created:				23 March 2008
-# Whom:					Tuc <freebsd-ports@t-b-o-h.net>
-#
+# Created by: Tuc <freebsd-ports@t-b-o-h.net>
 # $FreeBSD$
-#
 
 PORTNAME=	MIME-Lite-TT
 PORTVERSION=	0.02
@@ -27,4 +23,5 @@ USE_PERL5=	configure
 
 MAN3=	MIME::Lite::TT.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

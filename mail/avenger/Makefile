@@ -29,6 +29,7 @@ CONFIGURE_ARGS=	--with-db=${LOCALBASE} --with-etcdir=${ETCDIR}
 
 OPTIONS_DEFINE=	SASL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSASL}

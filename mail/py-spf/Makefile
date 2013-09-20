@@ -24,6 +24,7 @@ PYDISTUTILS_PKGNAME=	py${PORTNAME}
 
 PORTDOCS=	CHANGELOG README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -30,6 +30,7 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 USE_RC_SUBR=	davmail
 SUB_FILES=	davmail.sh
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's#exec=\"davmail\"#exec=\"${PREFIX}/bin/davmail\"#' \
 		-e 's#icon=\"/usr/share/davmail/davmail.png\"#icon=\"${DATADIR}/davmail.png\"#' \

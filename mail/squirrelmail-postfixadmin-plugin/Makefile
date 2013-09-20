@@ -19,6 +19,7 @@ RUN_DEPENDS=	ZendFramework>=1.9.0:${PORTSDIR}/www/zend-framework1
 USE_BZIP2=	yes
 DEFAULT_PHP_VER=	53
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 
 pre-install:

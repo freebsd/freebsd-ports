@@ -19,6 +19,7 @@ MAKE_JOBS_UNSAFE=yes
 MAN1=		checkpayment.1 firepay.1 multiwrap.1 processmail.1 \
 		sendmailpay.1 strippayment.1 takepayment.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

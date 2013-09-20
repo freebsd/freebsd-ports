@@ -42,6 +42,7 @@ GUILE_CONFIGURE_ON=	--with-guile
 GUILE_CONFIGURE_OFF=	--without-guile
 GUILE_LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGDBM}

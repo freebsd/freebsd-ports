@@ -1,9 +1,5 @@
-# New ports collection makefile for:   minimalist
-# Date created:        15 September 1999
-# Whom:                gmarco@scotty.masternet.it
-#
+# Created by: gmarco@scotty.masternet.it
 # $FreeBSD$
-#
 
 PORTNAME=	minimalist
 PORTVERSION=	2.5.3
@@ -21,6 +17,7 @@ NO_BUILD=	yes
 EXTRA_SUB_FILES=docs/README minimalist.conf-sample minimalist.pl \
 		contrib/minimalist_request.pl
 
+NO_STAGE=	yes
 post-patch:
 	@(cd ${WRKSRC}; ${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},;s,#!/bin/perl,${PERL},;s,--fqdn,,;s,/usr/lib/sendmail,/usr/sbin/sendmail,' ${EXTRA_SUB_FILES})
 

@@ -39,6 +39,7 @@ GROUPS=		prayer
 MAN5=		prayer.cf.5
 MAN8=		prayer-session.8 prayer-ssl-prune.8 prayer.8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSESSIONCACHE}

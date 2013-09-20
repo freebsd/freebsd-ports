@@ -26,4 +26,5 @@ USE_PERL5=	modbuild
 
 MAN3=	MIME::Lite::TT::HTML.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

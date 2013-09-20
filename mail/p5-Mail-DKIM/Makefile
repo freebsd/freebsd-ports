@@ -38,6 +38,7 @@ MAN3=		Mail::DKIM.3 \
 		Mail::DKIM::Verifier.3 \
 		Mail::DKIM::TextWrap.3
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/dkim*.pl ${PREFIX}/bin
 

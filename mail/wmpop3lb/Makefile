@@ -23,6 +23,7 @@ PORTDOCS=	CHANGE_LOG COPYING INSTALL README
 
 BUILD_WRKSRC=	${WRKSRC}/wmpop3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,cc ,${CC} ,g" \
 			  -e "s,^FLAGS *=.*$$,FLAGS = ${CFLAGS}," \

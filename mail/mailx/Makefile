@@ -24,6 +24,7 @@ USE_PERL5=	run build patch
 MAN1=		mailx.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${PERL5} -pi.bak -e 's/^(\.Nm mail)/$$1x/i; s/^(\.Dt MAIL)/$$1X/' ${WRKSRC}/mail.1
 

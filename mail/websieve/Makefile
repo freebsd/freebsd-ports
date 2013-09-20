@@ -1,9 +1,5 @@
-# New ports collection makefile for:	websieve
-# Date created:				25 Apr 2003
-# Whom:				Oliver Eikemeier <eikemeier@fillmore-labs.com>
-#
+# Created by: Oliver Eikemeier <eikemeier@fillmore-labs.com>
 # $FreeBSD$
-#
 
 PORTNAME=	websieve
 PORTVERSION=	0.63.a
@@ -33,6 +29,7 @@ CYRUS_IMAPD_22_DESC=	With Cyrus IMAPd version 2.2.x
 CYRUS_IMAPD_23_DESC=	With Cyrus IMAPd version 2.3.x
 CYRUS_IMAPD_24_DESC=	With Cyrus IMAPd version 2.4.x
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCYRUS_IMAPD_24}

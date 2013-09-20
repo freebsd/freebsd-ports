@@ -25,6 +25,7 @@ SNAPTIME=	0900
 CONFLICTS=	wanderlust-*-2.14.*
 NO_LATEST_LINK=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 MIMEUI_PORT_NAME=	${MIMEUI_PRODUCT}

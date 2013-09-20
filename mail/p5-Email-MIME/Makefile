@@ -25,4 +25,5 @@ MAN3=		Email::MIME.3 \
 		Email::MIME::Header.3 \
 		Email::MIME::Modifier.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

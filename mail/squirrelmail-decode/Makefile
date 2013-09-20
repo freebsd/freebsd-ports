@@ -1,6 +1,5 @@
-# Created by:	Adam Weinberger <adamw@FreeBSD.org>
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=		squirrelmail-decode
 PORTVERSION=	1.2
@@ -23,6 +22,7 @@ PORTDOCS=		*
 SQUIRRELDIR?=	${PREFIX}/www/squirrelmail
 PLIST_SUB=		SQUIRRELDIR="${SQUIRRELDIR:S,^${PREFIX}/,,}"
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${SQUIRRELDIR}/functions/decode
 .for DIR in eastasia x-mac

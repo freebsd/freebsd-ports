@@ -1,9 +1,5 @@
-# New ports collection makefile for:	squirrelmail
-# Date created: 			27 December 2001
-# Whom: 				Simon Dick <simond@irrelevant.org>
-#
+# Created by: Simon Dick <simond@irrelevant.org>
 # $FreeBSD$
-#
 
 PORTNAME=	squirrelmail
 PORTVERSION=	1.4.22
@@ -50,6 +46,7 @@ PORTDOCS=	* .htaccess
 
 CONFLICTS=	squirreloutlook-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDATABASE}

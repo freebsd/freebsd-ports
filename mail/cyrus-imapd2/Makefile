@@ -74,6 +74,7 @@ PLIST_SUB+=	MURDER=""
 PLIST_SUB+=	MURDER="@comment "
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 501400

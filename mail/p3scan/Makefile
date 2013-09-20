@@ -29,6 +29,7 @@ MANCOMPRESSED=	yes
 USE_RC_SUBR=	p3scan
 SUB_FILES=	p3scan pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

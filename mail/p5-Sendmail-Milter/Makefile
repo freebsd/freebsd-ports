@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Sendmail::Milter
-# Date created:				25 March 2003
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Sendmail-Milter
 PORTVERSION=	0.18
@@ -19,6 +15,7 @@ USE_PERL5=	configure
 
 MAN3=		Sendmail::Milter.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${PERL5})

@@ -19,6 +19,7 @@ USE_PERL5=	configure
 
 MAN3=		Email::LocalDelivery::Ezmlm.3
 
+NO_STAGE=	yes
 post-patch:
 		@${RM} ${WRKSRC}/lib/Email/LocalDelivery/Ezmlm.pm.orig
 test:

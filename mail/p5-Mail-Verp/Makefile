@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Mail-Verp
-# Date created:				Wed Aug  2 17:15:13 EDT 2006
-# Whom:					Vivek Khera <vivek@khera.org>
-#
+# Created by: Vivek Khera <vivek@khera.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-Verp
 PORTVERSION=	0.06
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=	Mail::Verp.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

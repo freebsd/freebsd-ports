@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xfmail
-# Date created:		30 June 1996
-# Whom:			gena
-#
+# Created by: gena
 # $FreeBSD$
-#
 
 PORTNAME=	xfmail
 PORTVERSION=	1.5.5
@@ -28,6 +24,7 @@ GNU_CONFIGURE=	yes
 USE_XORG=	xpm
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS=	--with-dbm-lib=gdbm

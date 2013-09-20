@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mailgraph
-# Date created:			11 September 2005
-# Whom:				Xavier Beaudouin (kiwi@oav.net)
-#
+# Created by: Xavier Beaudouin (kiwi@oav.net)
 # $FreeBSD$
-#
 
 PORTNAME=	couriergraph
 PORTVERSION=	20060202
@@ -32,6 +28,7 @@ STARTUP_FILE=	${PREFIX}/etc/rc.d/couriergraph.sh
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You may set following options:"

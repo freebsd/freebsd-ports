@@ -17,6 +17,7 @@ MAN1=		${PORTNAME}.1
 USES=		perl5
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} -v ${DISTDIR}/${DISTNAME} ${WRKSRC}
 

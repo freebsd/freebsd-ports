@@ -50,6 +50,7 @@ SUB_FILES=	pkg-install \
 SUB_LIST=	PREFIX=${PREFIX} \
 		${PLIST_SUB}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-install:

@@ -17,6 +17,7 @@ PEAR_SYSTEM_COMMAND_DESC=	PEAR::System_Command support
 
 PEAR_AUTOINSTALL=yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPEAR_SYSTEM_COMMAND}

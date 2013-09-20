@@ -26,4 +26,5 @@ MAN3=	Mail::IMAPClient.3 \
 	Mail::IMAPClient::MessageSet.3 \
 	Mail::IMAPClient::Thread.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

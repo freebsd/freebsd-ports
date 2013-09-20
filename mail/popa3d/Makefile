@@ -24,6 +24,7 @@ SMTP_AFTER_POP3_DESC=Enable SMTP-after-POP support
 STANDALONE_POP3_DESC=Enable standalone server mode
 SETPROCTITLE_DESC=Enable setproctitle() support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSTANDALONE_POP3}

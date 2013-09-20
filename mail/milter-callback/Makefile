@@ -28,6 +28,7 @@ CFLAGS+=	-DFREEBSD -DHAVE_NS_TYPE -DWITH_SPF -I${LOCALBASE}/include \
 		-I${WRKSRC} -std=gnu99
 LDFLAGS+=	-lmilter -lthr -L${LOCALBASE}/lib -lspf2
 
+NO_STAGE=	yes
 do-build:
 .for f in ${SRC_FILES}
 	${CC} ${CFLAGS} -c ${WRKSRC}/${f} -o ${WRKSRC}/${f:C/\.c/.o/}

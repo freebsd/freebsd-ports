@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hashcash
-# Date created:				Jan 30, 2003
-# Whom:					bremner@unb.ca
-#
+# Created by: bremner@unb.ca
 # $FreeBSD$
-#
 
 PORTNAME=	hashcash
 PORTVERSION=	1.22
@@ -21,6 +17,7 @@ ALL_TARGET=	generic
 
 .if defined(NOPORTDOCS)
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/DOC_INSTALL_PATH/d' ${WRKSRC}/Makefile
 .endif

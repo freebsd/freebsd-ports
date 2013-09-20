@@ -51,6 +51,7 @@ MAN3=	MIME::Body.3 \
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ChangeLog README
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	mimp3
-# Date created:			Mon Feb 05, 2007
-# Whom:				Beech Rintoul <beech@FreeBSD.org>
-#
+# Created by: Beech Rintoul <beech@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mimp
 PORTVERSION=	1.1.4
@@ -15,6 +11,7 @@ MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Mobile webmail system
 
 #-----------------------------------------------------------------------
+NO_STAGE=	yes
 # You may define these options:
 #
 # - WITHOUT_LDAP	if you do not need OpenLDAP;

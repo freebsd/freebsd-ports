@@ -12,5 +12,6 @@ COMMENT=	Checks for plugin updates by parsing the SM site
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 .include <bsd.port.mk>

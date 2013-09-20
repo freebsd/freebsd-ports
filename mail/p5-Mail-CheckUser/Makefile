@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Mail-CheckUser
-# Date created:				2 January 2004
-# Whom:					Attila Nagy <bra@fsn.hu>
-#
+# Created by: Attila Nagy <bra@fsn.hu>
 # $FreeBSD$
-#
 
 PORTNAME=	Mail-CheckUser
 PORTVERSION=	1.21
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 MAN1=		cufilter.1
 MAN3=           Mail::CheckUser.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

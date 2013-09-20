@@ -24,6 +24,7 @@ USE_PERL5=	configure
 
 MAN3=		Mail::ClamAV.3
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

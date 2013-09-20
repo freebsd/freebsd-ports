@@ -27,6 +27,7 @@ NOCCCOMP=	.htaccess favicon.ico robots.txt \
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

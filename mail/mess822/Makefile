@@ -29,6 +29,7 @@ MAN8=		ofmipd.8 ofmipname.8
 
 NO_MTREE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|-O2|${CFLAGS}|" ${WRKSRC}/conf-cc
 	@${REINPLACE_CMD} -e "s|.var.qmail|${QMAIL_PREFIX}|" ${WRKSRC}/conf-qmail

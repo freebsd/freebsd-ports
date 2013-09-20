@@ -21,6 +21,7 @@ ADDAUTH_PATCH_DESC=	Bypass checks for SMTP AUTH connections
 REJECTTEXT_PATCH_DESC=	Customize SMTP reject message
 SENDMAIL_PORT_DESC=	Build against sendmail port
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 ORIG_ARGS=	fd:mMp:P:r:u:D:i:b:B:e:x

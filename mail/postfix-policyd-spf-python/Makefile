@@ -39,6 +39,7 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 OPTIONS_DEFINE=	DOCS
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   spamguard
-# Date created:                 21 Oct 2003
-# Whom:                         Omer Faruk Sen <ofsen@enderunix.org>
-#
+# Created by: Omer Faruk Sen <ofsen@enderunix.org>
 # $FreeBSD$
-#
 
 PORTNAME=	spamguard
 PORTVERSION=	1.8
@@ -27,6 +23,7 @@ DOCS_TR=	BENIOKU BENIOKU.DigitalUnix COPYING DEGISIKLIKLER \
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 pre-configure:
 	        cd ${WRKSRC}; \
 		./autogen.sh

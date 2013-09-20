@@ -8,5 +8,6 @@ COMMENT=	Not attached file warning plugin for Claws Mail
 
 CLAWS_PLUGINS_BUILD=	attachwarner
 
+NO_STAGE=	yes
 .include "../claws-mail/Makefile.claws"
 .include <bsd.port.mk>

@@ -59,6 +59,7 @@ OPTIONS_DEFAULT=ENIGMAIL LIGHTNING
 ALL_TARGET=	build
 MAKEFILE=	${WRKSRC}/client.mk
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
 # OSS is gone after bug 852401

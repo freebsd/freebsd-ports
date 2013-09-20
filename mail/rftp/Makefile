@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rftp
-# Date created:			13 Dec, 1997
-# Whom:				kline
-#
+# Created by: kline
 # $FreeBSD$
-#
 
 PORTNAME=	rftp
 PORTVERSION=	1.2
@@ -16,6 +12,7 @@ COMMENT=	Automatically reconstruct ftpmail- or bitftp-retrieved files
 MAN1=		rftp.1 uucat.1
 
 #	rftp's `make install' stinks, do it properly here
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rftp ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/uucat ${PREFIX}/bin

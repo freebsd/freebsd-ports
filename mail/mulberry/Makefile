@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mulberry
-# Date created:				12 Dec 2001
-# Whom:					Yarema <yds@CoolRat.org>
-#
+# Created by: Yarema <yds@CoolRat.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mulberry
 PORTVERSION=	4.0.8
@@ -23,6 +19,7 @@ USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 INSTALL_DIR?=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755

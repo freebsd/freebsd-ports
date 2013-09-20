@@ -27,6 +27,7 @@ MAN5=		smtp-gated.conf.5
 MAN8=		smtp-gated.8
 PLIST_FILES=	sbin/smtp-gated
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNAT}

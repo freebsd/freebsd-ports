@@ -40,6 +40,7 @@ PORTDOCS=	CHANGELOG.txt \
 		utilities/ \
 		contrib/
 
+NO_STAGE=	yes
 post-extract:
 	@${CHMOD} -Rf u+w ${WRKSRC}
 

@@ -19,6 +19,7 @@ PERL_AUTHEN_NTLM_DESC=	Add support for AUTH NTLM
 USES=		perl5
 USE_PERL5=	run
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPERL_NET_DNS}

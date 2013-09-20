@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 MAN1=		bbmail.1
 PLIST_FILES=	bin/bbmail share/bbtools/bbmail.rc
 
+NO_STAGE=	yes
 post-install:
 	@${ECHO_CMD} "@unexec rmdir %D/share/bbtools 2>/dev/null || true" \
 		>> ${TMPPLIST}

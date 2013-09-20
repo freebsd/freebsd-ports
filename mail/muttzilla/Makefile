@@ -9,6 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mutt MUA plugin for Netscape for use on "mailto:" URLs
 
+NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} \
 		-e "s:/etc/muttzilla.conf:${PREFIX}/etc/muttzilla.conf:g"  \

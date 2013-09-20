@@ -39,6 +39,7 @@ MAN1=		${PORTNAME}.1 policy-test.1 postgreyreport.1
 USES=		shebangfix perl5
 SHEBANG_FILES=	${WRKSRC}/postgrey
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

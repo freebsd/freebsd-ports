@@ -51,6 +51,7 @@ PKGNAMESUFFIX=	-lite
 OPTIONS_EXCLUDE=	SGML_DOCS
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support

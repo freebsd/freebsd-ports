@@ -29,6 +29,7 @@ MODULES_DIR=	${PREFIX}/libexec/${PORTNAME}
 
 DOCS=		NEWS README TODO *.html
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 ALL_TARGET=	all

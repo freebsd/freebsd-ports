@@ -15,6 +15,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/spfval
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/spfval ${PREFIX}/bin
 

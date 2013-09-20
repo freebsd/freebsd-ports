@@ -19,6 +19,7 @@ USE_RC_SUBR=	milterregex
 SPOOLDIR?=	/var/run/milter-regex
 SUB_LIST=	SPOOLDIR=${SPOOLDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"

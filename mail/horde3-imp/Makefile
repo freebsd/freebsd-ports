@@ -1,9 +1,5 @@
-# Ports collection makefile for:  imp3
-# Date created:			  Mon Oct 08, 2001
-# Whom:				  Thierry Thomas (<thierry@thomas.as>)
-#
+# Created by: Thierry Thomas (<thierry@thomas.as>)
 # $FreeBSD$
-#
 
 PORTNAME=	imp
 PORTVERSION=	4.3.11
@@ -18,6 +14,7 @@ COMMENT=	Webmail system for IMAP/POP3 mailboxes
 WRKSRC=		${WRKDIR}/${PORTNAME}-h3-${PORTVERSION}
 
 #-----------------------------------------------------------------------
+NO_STAGE=	yes
 # You may define these options:
 #
 # - WITHOUT_LDAP	: if you do not need OpenLDAP;

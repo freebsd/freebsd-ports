@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rss2email
-# Date created:		17 March 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rss2email
 PORTVERSION=	2.70
@@ -22,6 +18,7 @@ PLIST_FILES=	bin/r2e %%DATADIR%%/${PORTNAME}.py
 PLIST_DIRS=	%%DATADIR%%
 PORTEXAMPLES=	config.py.example
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@PYTHONCMD@|${PYTHON_CMD}|;s|@DATADIR@|${DATADIR}|'\
 		${WRKSRC}/r2e

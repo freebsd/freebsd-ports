@@ -1,9 +1,5 @@
-# New ports collection makefile for:  mail/p5-Email-Date-Format
-# Date created:         2007-12-26
-# Whom:                 Anton Yuzhaninov <citrin@rambler-co.ru>
-#
+# Created by: Anton Yuzhaninov <citrin@rambler-co.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Email-Date-Format
 PORTVERSION=	1.002
@@ -20,4 +16,5 @@ USE_PERL5=	configure
 
 MAN3=	Email::Date::Format.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -28,6 +28,7 @@ MAILTRAIN_DESC=		send mail to special addresses for training
 DEBUG_DESC=		Turn on debug information (syslog)
 DEBUG_VERBOSE_DESC=	Turn on verbose debug
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-configure:

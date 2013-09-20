@@ -77,6 +77,7 @@ WEBDATAURL?=
 PLIST_SUB+=	CGIBINDIR="${CGIBINDIR}" CGIBINSUBDIR="${CGIBINSUBDIR}" \
 		WEBDATADIR="${WEBDATADIR}" WEBDATASUBDIR="${WEBDATASUBDIR}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # End of user-configurable variables

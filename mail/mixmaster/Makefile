@@ -32,6 +32,7 @@ WRKDIST=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MIXMASTER_FILES=	${WRKDIST}/conf/* ${WRKDIST}/README ${WRKDIR}/allpingers.txt
 MIXMASTER_SCRIPTS=	${WRKDIR}/mixmaster-update.pl
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

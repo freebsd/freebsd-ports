@@ -24,6 +24,7 @@ CONFIGURE_ARGS+=	--with-libidn
 MAN1=	mpop.1
 INFO=	mpop
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}

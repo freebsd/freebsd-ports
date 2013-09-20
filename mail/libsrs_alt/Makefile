@@ -20,6 +20,7 @@ PLIST_SUB=		SHLIB_MAJOR="${SHLIB_MAJOR}"
 OPTIONS_DEFINE=		COMPAT_BASE64
 COMPAT_BASE64_DESC=	MTA Friendly base64 compatibility mode
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOMPAT_BASE64}

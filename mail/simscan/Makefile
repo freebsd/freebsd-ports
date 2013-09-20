@@ -41,6 +41,7 @@ PASSTHRU_DESC=	Pass Spam Thru, Do Not Reject (required SPAMD)
 HEADERS_DESC=	Add a Received Line With Versions of Scanners
 DSPAM_DESC=	Turn on DSPAM scanning
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS=--enable-clamavdb-path=/var/db/clamav \
