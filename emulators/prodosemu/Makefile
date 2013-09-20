@@ -19,6 +19,7 @@ PORTDOCS=	README
 PLIST_FILES=	bin/prodos share/apple2/prodos-2e.rom
 PLIST_DIRS=	share/apple2
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

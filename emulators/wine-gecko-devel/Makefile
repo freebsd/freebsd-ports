@@ -22,6 +22,7 @@ DATADIR=	${PREFIX}/share/wine
 PLIST_FILES=	%%DATADIR%%/gecko/wine_gecko-%%GECKO_VERSION%%-x86.msi
 PLIST_DIRSTRY=	%%DATADIR%%/gecko %%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}/gecko
 	${INSTALL_DATA} ${DISTDIR}/wine_gecko-${DISTVERSION}-x86.msi \

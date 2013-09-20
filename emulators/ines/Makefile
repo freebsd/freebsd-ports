@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ines
-# Date created:		02 November 1996
-# Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-#
+# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	ines
 PORTVERSION=	3.0
@@ -26,6 +22,7 @@ USE_XORG=	x11 xext
 NO_BUILD=	yes
 STRIP=
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ines ${PREFIX}/bin
 	${MKDIR} ${DATADIR}

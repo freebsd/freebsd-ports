@@ -19,6 +19,7 @@ PLIST_SUB=	KMODDIR=${KMODDIR:C,^/,,}
 NEEDSUBDIRS=	amd64 cam conf contrib dev/pci geom i386 kern net netinet netinet6 \
 	sys tools vm x86
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${SRC_BASE}/sys/Makefile)

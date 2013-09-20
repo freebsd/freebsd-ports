@@ -25,6 +25,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 MAKE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${MASTERDIR}/Makefile.common"

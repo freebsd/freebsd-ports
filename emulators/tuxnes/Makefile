@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tuxnes
-# Date created:		13 Feb 2000
-# Whom:			Jeroen Ruigrok van der Werven <asmodai@freebsd.org>
-#
+# Created by: Jeroen Ruigrok van der Werven <asmodai@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tuxnes
 PORTVERSION=	0.75
@@ -23,4 +19,5 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/romfixer bin/tuxnes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

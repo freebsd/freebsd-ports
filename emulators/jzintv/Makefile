@@ -31,6 +31,7 @@ TOOLS=	as1600 bin2rom cgc_update crc32 dasm0256 dasm1600 dasm1600o dis1600 \
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTOOLS}

@@ -24,6 +24,7 @@ PORTDOCS+=	${i}-eucj.txt ${i}-sjis.txt ${i}.txt
 PLIST_FILES+=	sbin/${i}
 .endfor
 
+NO_STAGE=	yes
 do-install:
 .for i in ${SBINS}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/sbin/

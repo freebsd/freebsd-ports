@@ -41,4 +41,5 @@ DESKTOP_ENTRIES="KCemu" "${COMMENT}" \
 		"${LOCALBASE}/share/KCemu/icons/kcemu-icon.png" "kcemu" \
 		"System;Emulator;" "true"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

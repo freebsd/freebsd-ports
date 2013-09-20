@@ -1,9 +1,5 @@
-# New ports collection makefile for:	raine
-# Date created:				Jul 22 2004
-# Whom:					Florent Thoumie <flz@xbsd.org>
-#
+# Created by: Florent Thoumie <flz@xbsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	raine
 PORTVERSION=	0.43.3
@@ -29,6 +25,7 @@ MAKEFILE=	makefile
 
 ONLY_FOR_ARCHS=	i386
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

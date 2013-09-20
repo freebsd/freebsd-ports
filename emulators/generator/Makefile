@@ -1,9 +1,5 @@
-# New ports collection makefile for:   generator
-# Date created:        16 April 2001
-# Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
-#
+# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	generator
 PORTVERSION=	0.35
@@ -35,6 +31,7 @@ SDL_DESC=	Use SDL for audio
 
 PLIST_FILES=	bin/${PORTNAME}-gtk
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}

@@ -30,6 +30,7 @@ MAN1=		advmenu.1
 PORTDOCS=	*
 PLIST_FILES=	bin/advmenu
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFREETYPE}

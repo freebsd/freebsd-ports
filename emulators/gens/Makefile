@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gens
-# Date created:			22 Jun 2005
-# Whom:				Travis Poppe <tlp@liquidx.org>
-#
+# Created by: Travis Poppe <tlp@liquidx.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gens
 PORTVERSION=	2.12a
@@ -25,6 +21,7 @@ USE_GMAKE=	yes
 
 ONLY_FOR_ARCHS=	i386
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/Makefile

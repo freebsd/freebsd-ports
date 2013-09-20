@@ -40,6 +40,7 @@ CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUGGER}

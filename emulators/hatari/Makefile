@@ -38,6 +38,7 @@ CFLAGS+=	-I${LOCALBASE}/include/portaudio2
 PA2_INCLUDE_DIR=-I${LOCALBASE}/include/portaudio2
 PA2_LIBRARY=	${LOCALBASE}/lib/portaudio2/libportaudio.so
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

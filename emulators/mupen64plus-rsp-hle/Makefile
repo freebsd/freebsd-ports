@@ -9,4 +9,5 @@ MASTERDIR=	${.CURDIR}/../mupen64plus-core
 
 OPTIONS_DEFINE=	#
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

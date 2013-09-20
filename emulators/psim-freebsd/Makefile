@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	GDB 5.1 PowerPC simulator
-# Date created:				12 October 2001
-# Whom:					Mark Peek <mp@FreeBSD.org>
-# 					David O'Brien <obrien@NUXI.com>
+# Created by: Mark Peek <mp@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	psim-freebsd
 .if defined(WITHOUT_GPLv3)
@@ -27,6 +22,7 @@ CONFIGURE_ARGS=	--enable-psim --target=powerpc-freebsd-elf \
 		--program-suffix=psim \
 		--disable-nls
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${PREFIX}/bin/${PORTNAME}
 	${MKDIR} ${EXAMPLESDIR}

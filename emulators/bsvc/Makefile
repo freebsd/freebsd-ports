@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	bsvc
-# Date created:		03-Mar-1997
-# Whom:			tenser@spitfire.ecsel.psu.edu
-#
+# Created by: tenser@spitfire.ecsel.psu.edu
 # $FreeBSD$
-#
 
 PORTNAME=	bsvc
 PORTVERSION=	2.1
@@ -21,6 +17,7 @@ MAKE_ENV=	PROJECT_BASE=${PREFIX} WRKSRC=${WRKSRC}
 USE_TK_RUN=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-patch:

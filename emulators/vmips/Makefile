@@ -16,4 +16,5 @@ GNU_CONFIGURE=	yes
 MAN1=		vmips.1 vmipstool.1
 INFO=		vmips
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

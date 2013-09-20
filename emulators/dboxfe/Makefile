@@ -29,6 +29,7 @@ DESKTOP_ENTRIES=	"DBoxFE" "DOSBox configuration manager" \
 
 PRO_DIRS=	. dboxfetray
 
+NO_STAGE=	yes
 do-configure:
 .for dir in ${PRO_DIRS}
 	@(cd ${WRKSRC}/${dir} && \

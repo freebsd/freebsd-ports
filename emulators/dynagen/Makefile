@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dynagen
-# Date created:		2006-11-07
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
+# Created by: trasz <trasz@pin.if.uz.zgora.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	dynagen
 PORTVERSION=	0.11.0
@@ -50,6 +46,7 @@ USE_PYDISTUTILS=	yes
 ALL_TARGET=	# empty
 USE_DOS2UNIX=	yes
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dynagen ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/dynagen.ini ${PREFIX}/etc/dynagen.ini.sample

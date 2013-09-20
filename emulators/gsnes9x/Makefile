@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^SUBDIRS = intl|SUBDIRS =|g ; \

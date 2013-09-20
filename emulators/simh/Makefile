@@ -1,9 +1,5 @@
-# New ports collection makefile for:    sim
-# Date created:         7 November 1997
-# Whom:			jraynard
-#
+# Created by: jraynard
 # $FreeBSD$
-#
 
 PORTNAME=	simh
 PORTVERSION=	3.9.0
@@ -32,6 +28,7 @@ PORTDOCS=	0readme_${PORTVERSION:R:S/.//}.txt 0readme_ethernet.txt
 PLIST_FILES=	${BIN_FILES:S/^/bin\//g} bin/simh-eclipse %%DATADIR%%/ka655x.bin
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 pre-patch:
 	@${MKDIR} ${WRKSRC}/BIN
 

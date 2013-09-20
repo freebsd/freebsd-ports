@@ -37,6 +37,7 @@ PKGNAMEPREFIX=	linux_dist-
 PREFIX_SUBDIR=	${PORTNAME}/
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(PACKAGE_BUILDING) || (defined(PACKAGE_BUILDING) && !defined(LINUX_OSRELEASE) )

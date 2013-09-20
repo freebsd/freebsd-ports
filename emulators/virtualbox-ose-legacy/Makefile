@@ -1,4 +1,4 @@
-# Created by:	Bernhard Froehlich <decke@bluelife.at>
+# Created by: Bernhard Froehlich <decke@bluelife.at>
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
@@ -69,6 +69,7 @@ VDE_DESC=	Build with VDE support
 VNC_DESC=	Build with VNC support
 WEBSERVICE_DESC=	Build Webservice
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PLIST_SUB+=	PYTHON_VER=${PYTHON_VER} \

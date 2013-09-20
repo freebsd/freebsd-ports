@@ -53,6 +53,7 @@ PORTAUDIO_DESC=	Enable PortAudio (mic) support
 FRAMEDUMPS_DESC=	Encode framedumps in AVI format
 OPTIONS_DEFAULT=	PORTAUDIO FRAMEDUMPS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

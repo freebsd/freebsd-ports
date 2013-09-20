@@ -61,6 +61,7 @@ CONFIGURE_ARGS+=	--enable-fullscreen --enable-ipv6 --disable-dependency-tracking
 #CONFIGURE_ARGS+=	--enable-parsid
 #CONFIGURE_ARGS+=	--enable-memmap
 
+NO_STAGE=	yes
 Optional Features:
 
 

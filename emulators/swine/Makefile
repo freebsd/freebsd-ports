@@ -1,4 +1,4 @@
-# Created by:   nemysis@gmx.ch
+# Created by: nemysis@gmx.ch
 # $FreeBSD$
 
 PORTNAME=	swine
@@ -29,6 +29,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"

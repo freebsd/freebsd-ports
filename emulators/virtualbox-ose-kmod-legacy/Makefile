@@ -1,4 +1,4 @@
-# Created by:	Bernhard Froehlich <decke@bluelife.at>
+# Created by: Bernhard Froehlich <decke@bluelife.at>
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
@@ -39,6 +39,7 @@ CONFLICTS_INSTALL=	virtualbox-ose-kmod-[3,4]* virtualbox-ose-kmod-devel-[3,4]*
 OPTIONS_DEFINE=	DEBUG VIMAGE
 VIMAGE_DESC=	VIMAGE virtual networking support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PLIST_SUB+=	KMODDIR=${KMODDIR:C,^/,,}

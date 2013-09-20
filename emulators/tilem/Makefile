@@ -21,6 +21,7 @@ USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
 
 # Unbreak parallel builds (-jX)
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E 's,cd (.+) && (\$$\(MAKE\)),\2 -C \1,' \
 		${WRKSRC}/Makefile.in

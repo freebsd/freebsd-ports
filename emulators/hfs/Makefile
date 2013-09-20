@@ -28,6 +28,7 @@ PORTDOCS=	README
 OPTIONS_DEFINE=	ALIASES DOCS
 ALIASES_DESC=	Install subcommand symbolic links
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALIASES}

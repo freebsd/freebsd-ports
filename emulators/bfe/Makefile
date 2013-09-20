@@ -28,6 +28,7 @@ USE_GNOME+=	gtk12
 CONFIGURE_ARGS+=	--gtk 1.2
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%CFLAGS%%|"${CFLAGS}"|g ; \

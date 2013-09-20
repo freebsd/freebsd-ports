@@ -44,6 +44,7 @@ MAKE_ARGS=	INSTALL_BASE="${PREFIX}" \
 		CATAPULT_OPENMSX_SHARE="${LOCALBASE}/share/openmsx" \
 		SYMLINK_FOR_BINARY="false"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

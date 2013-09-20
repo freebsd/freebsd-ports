@@ -35,6 +35,7 @@ NETPLAY_DESC=	Enable network support
 XV_DESC=	Enable XVideo output on GTK
 XRANDR_DESC=	Enable XRandR support on GTK
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

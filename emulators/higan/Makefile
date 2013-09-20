@@ -46,6 +46,7 @@ PULSEAUDIO_DESC=	Build Pulseaudio sound driver
 INPUT_SDL_DESC=		Build SDL input driver
 INPUT_X_DESC=		Build X input driver
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MACCURACY}

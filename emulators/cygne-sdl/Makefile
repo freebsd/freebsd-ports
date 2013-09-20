@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Cygne/SDL
-# Date created:				4 May 2006
-# Whom:					Li-Lun Wang <llwang@infor.org>
-#
+# Created by: Li-Lun Wang <llwang@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cygne-sdl
 PORTVERSION=	0.1
@@ -20,6 +16,7 @@ USE_GMAKE=	yes
 ONLY_FOR_ARCHS=	i386
 WRKSRC=	${WRKDIR}/Cygne-SDL-${PORTVERSION}/src
 
+NO_STAGE=	yes
 post-patch:
 	${CP} ${FILESDIR}/Makefile.bsd ${WRKSRC}/Makefile
 

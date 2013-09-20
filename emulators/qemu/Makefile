@@ -38,6 +38,7 @@ ADD_AUDIO_DESC=		Emulate more audio hardware (experimental!)
 ALL_TARGETS_DESC=	Also build non-x86 targets
 OPTIONS_DEFAULT=	SDL GNUTLS CURL PCAP GNS3 CDROM_DMA ALL_TARGETS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if empty(PORT_OPTIONS:MALL_TARGETS)

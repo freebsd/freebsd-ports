@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	gnuboy
-# Date created:			Mar 11, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnuboy
 PORTVERSION=	1.0.3
@@ -31,6 +26,7 @@ PLIST_FILES=	bin/sdlgnuboy bin/sgnuboy bin/xgnuboy
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 do-install:
 .for file in sdlgnuboy sgnuboy xgnuboy
 	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin

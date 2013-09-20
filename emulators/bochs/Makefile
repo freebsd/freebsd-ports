@@ -90,6 +90,7 @@ MAN5=		bochsrc.5
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MTERM) && empty(PORT_OPTIONS:MWXGTK) && empty(PORT_OPTIONS:MX11)

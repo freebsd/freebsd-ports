@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xhomer
-# Date created:			24 May 2006
-# Whom:				trasz
-#
+# Created by: trasz
 # $FreeBSD$
-#
 
 PORTNAME=	xhomer
 DISTVERSION=	9-16-06
@@ -28,6 +24,7 @@ PLIST_FILES=	bin/xhomer %%EXAMPLESDIR%%/xhomer.cfg
 PLIST_DIRS=	%%EXAMPLESDIR%%
 PORTDOCS=	README LICENSE SIMH
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

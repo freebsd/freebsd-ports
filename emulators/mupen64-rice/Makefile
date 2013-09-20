@@ -28,6 +28,7 @@ PLIST_DIRS+=	share/mupen64
 
 FIXME2=		glh_genext.h
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|CDaedalusRender::IsTextureEnabled|IsTextureEnabled|' \
 		${WRKSRC}/DaedalusRender.h

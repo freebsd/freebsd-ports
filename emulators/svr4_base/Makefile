@@ -1,11 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  svr4_base
-# Version required:     	  2.6
-# Date created:			  Monday Dec 25, 2000
-# Whom:				  David O'Brien (obrien@NUXI.com)
-#
+# Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
-#
 
 PORTNAME=	svr4_base
 PORTVERSION=	2.6
@@ -22,6 +16,7 @@ NO_BUILD=	yes
 EXTRACT_ONLY=	# empty
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 do-install:
 .for D in dev etc/default
 	@[ -d ${PREFIX}/compat/svr4/$D ] || ${MKDIR} ${PREFIX}/compat/svr4/$D

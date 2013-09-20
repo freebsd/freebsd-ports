@@ -28,6 +28,7 @@ OPTIONS_DEFAULT=	AUDIOTOOLS
 
 AUDIOTOOLS_DESC=	Build audio <-> tape utilities
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAUDIOTOOLS}

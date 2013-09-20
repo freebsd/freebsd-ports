@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dynamips
-# Date created:				21 Mar 2007
-# Whom:					Pavel I Volkov <pavelivolkov@googlemail.com>
-#
+# Created by: Pavel I Volkov <pavelivolkov@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dynamips
 DISTVERSION=	0.2.8-RC2
@@ -36,6 +32,7 @@ MAN1=		${PORTNAME}.1 nvram_export.1
 MAN7=		hypervisor_mode.7
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

@@ -26,6 +26,7 @@ PLIST_FILES=	bin/gxemul
 # a virtual VGA adaptor.
 CONFLICTS=	svgalib-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

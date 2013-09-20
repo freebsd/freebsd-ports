@@ -64,6 +64,7 @@ CONFIGURE_ARGS+=	--enable-bufferedlog
 CONFIGURE_ARGS+=	--enable-veryslow
 .endif
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Atari800 has the following tunable option(s):"

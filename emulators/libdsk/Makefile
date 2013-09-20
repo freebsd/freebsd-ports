@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libdsk
-# Date created:        31 January 2008
-# Whom:                pixel
-#
+# Created by: pixel
 # $FreeBSD$
-#
 
 PORTNAME=	libdsk
 PORTVERSION=	1.2.1
@@ -23,4 +19,5 @@ MAN5=	libdskrc.5
 
 NO_MANCOMPRESSED=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

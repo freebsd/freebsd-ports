@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vmsbackup
-# Date created:		18 Apr 1994
-# Whom:			Jonathan M. Bresler (jmb)
-#
+# Created by: Jonathan M. Bresler (jmb)
 # $FreeBSD$
-#
 
 PORTNAME=	vmsbackup
 PORTVERSION=	4.1.1
@@ -24,6 +20,7 @@ PLIST_FILES=	bin/vmsbackup
 MAN1=		vmsbackup.1
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${UNZIP_CMD} ${DISTDIR}/${DISTNAME} -d ${WRKSRC}

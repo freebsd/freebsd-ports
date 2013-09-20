@@ -1,9 +1,5 @@
-# New ports collection makefile for:	seabios-devel
-# Date created:			Sat Sep 10 19:00:54 CEST 2011
-# Whom:				Juergen Lock <nox@FreeBSD.org>
-#
+# Created by: Juergen Lock <nox@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	seabios-devel
 PORTVERSION=	1.6.3.1
@@ -24,6 +20,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 # Doesn't run with qemu 0.11.1
 CONFLICTS_INSTALL=	qemu-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900033

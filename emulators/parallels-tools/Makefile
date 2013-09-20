@@ -19,4 +19,5 @@ KMODDIR?=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}
 MAKE_ENV+=	KMODDIR=${KMODDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

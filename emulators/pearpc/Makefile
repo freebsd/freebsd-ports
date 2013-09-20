@@ -23,6 +23,7 @@ PLIST_DIRS=	%%DATADIR%%
 OPTIONS_DEFINE=	SDL OPTIMIZED_CFLAGS DEBUG
 SDL_DESC=	Use SDL for user interface
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"

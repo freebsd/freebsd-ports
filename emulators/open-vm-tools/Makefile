@@ -76,6 +76,7 @@ LIB_DEPENDS+=		icuuc:${PORTSDIR}/devel/icu
 
 USE_RC_SUBR=		vmware-guestd vmware-kmod
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

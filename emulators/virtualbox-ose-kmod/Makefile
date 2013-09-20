@@ -40,6 +40,7 @@ OPTIONS_DEFINE=	DEBUG VIMAGE
 DEBUG_DESC=	Debug symbols, additional logs and assertions
 VIMAGE_DESC=	VIMAGE virtual networking support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PLIST_SUB+=	KMODDIR=${KMODDIR:C,^/,,}

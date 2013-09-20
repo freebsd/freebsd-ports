@@ -38,6 +38,7 @@ PLIST_FILES=	bin/${PORTNAME}${PKGNAMESUFFIX}-gtk
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MOPTIMIZED_CFLAGS)

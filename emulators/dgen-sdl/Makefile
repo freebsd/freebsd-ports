@@ -19,6 +19,7 @@ PLIST_FILES=	bin/dgen \
 MAN1=		dgen.1 dgen_tobin.1
 MAN5=		dgenrc.5
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386

@@ -20,6 +20,7 @@ RSP_Z64_DESC=	z64 RSP plugin
 
 OPTIONS_DEFAULT=	VIDEO_ARACHNOID VIDEO_GLIDE64 VIDEO_Z64 RSP_Z64
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Graphics plugins

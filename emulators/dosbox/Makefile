@@ -32,6 +32,7 @@ OPTIONS_RADIO_DEBUGGER=DEBUGGER_ENABLE DEBUGGER_HEAVY
 DEBUGGER_ENABLE_DESC=Enable internal debugger
 DEBUGGER_HEAVY_DESC=Enable internal debugger with extra features
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUGGER_ENABLE}

@@ -30,6 +30,7 @@ CONFLICTS=	kqemu-kmod-devel-[0-9]*
 
 USE_RC_SUBR=	kqemu
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PORTDOCS=	kqemu-doc.html kqemu-tech.html

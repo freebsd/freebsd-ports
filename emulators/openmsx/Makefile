@@ -39,6 +39,7 @@ IGNORE=		opemsx requires port data, unset NOPORTDATA to install
 MAKE_ARGS+=	INSTALL_DOC_DIR=${WRKSRC}/dummy
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/{TCL_LIB_SPEC}/& $${TCL_LD_FLAGS}/' \
 		${WRKSRC}/build/libraries.py

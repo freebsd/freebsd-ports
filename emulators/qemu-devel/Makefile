@@ -47,6 +47,7 @@ BSD_USER_DESC=		Also build bsd-user targets (for testing)
 STATIC_LINK_DESC=	Statically link the executables
 OPTIONS_DEFAULT=X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--extra-ldflags=-L${LOCALBASE}/lib

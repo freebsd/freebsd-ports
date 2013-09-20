@@ -115,6 +115,7 @@ EXTRACT_CMD?=		${TAR}
 EXTRACT_BEFORE_ARGS?=	-xf
 EXTRACT_AFTER_ARGS?=
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(PACKAGE_BUILDING) || (defined(PACKAGE_BUILDING) && !defined(LINUX_OSRELEASE) )

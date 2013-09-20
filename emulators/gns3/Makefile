@@ -30,6 +30,7 @@ DESKTOP_ENTRIES=	"GNS3" "${COMMENT}" "" "${PORTNAME}" "System;Emulator;" "true"
 OPTIONS_DEFINE=		MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES}

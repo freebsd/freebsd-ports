@@ -23,6 +23,7 @@ USE_SDL=	sdl
 
 ROM=		1541 Basic Char Kernal
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		${WRKDIR}/${WRKNAME}/TkGui.tcl

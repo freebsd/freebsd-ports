@@ -1,9 +1,5 @@
-# Ports collection makefile for:  skyeye
-# Date created:			  Mon July 18, 2005
-# Whom:				  Ruan Wei (iamayan@gmail.com)
-#
+# Created by: Ruan Wei (iamayan@gmail.com)
 # $FreeBSD$
-#
 
 PORTNAME=	skyeye
 PORTVERSION=	1.2
@@ -26,6 +22,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk20
 WRKSRC=		${WRKDIR}/${PORTNAME}-v1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 ONLY_FOR_ARCHS=	i386

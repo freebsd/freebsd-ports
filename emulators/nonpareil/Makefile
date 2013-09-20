@@ -50,6 +50,7 @@ PLIST_FILES=	${PLIST_EXECS} ${PLIST_DATA}
 PLIST_DIRS=	lib/nonpareil
 PORTDOCS=	CREDITS DEBUGGING README TODO
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

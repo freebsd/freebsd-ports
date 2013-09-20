@@ -1,10 +1,5 @@
-# New ports collection makefile for:   aftp
-# Date created:		18th Febuary 1997
-# Last updated:		2nd August, 1998
-# Whom:			Joel Sutton <jsutton@bbcon.com.au>
-#
+# Created by: Joel Sutton <jsutton@bbcon.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	aftp
 PORTVERSION=	1.0
@@ -19,6 +14,7 @@ COMMENT=	A ftp-like shell for accessing Apple II disk images
 MAN1=		aftp.1
 PLIST_FILES=	bin/aftp
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|^CC=.*|CC=${CC} ${CPPFLAGS} ${CFLAGS}|' ${WRKSRC}/Makefile
 

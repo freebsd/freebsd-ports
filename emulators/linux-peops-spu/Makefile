@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-peops-spu
-# Date created:			21 Dec 2002
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
-#
+# Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#
 
 PORTNAME=	peops-spu
 PORTVERSION=	1.9
@@ -27,6 +23,7 @@ MAJOR=		${PORTVERSION:R}
 MINOR=		${PORTVERSION:E}
 PLIST_SUB+=	MAJOR=${MAJOR} MINOR=${MINOR}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PSEMUPRO_PLUGINS_DIR=	${PREFIX}/lib/psemupro/plugins
