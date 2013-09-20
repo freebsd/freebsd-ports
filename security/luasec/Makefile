@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.inf.puc-rio.br/~brunoos/luasec/download/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	kelly.hays@jkhfamily.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lua binding for the OpenSSL library to provide TLS/SSL communication
 
 RUN_DEPENDS+=	${LUA_MODLIBDIR}/socket/core.so:${PORTSDIR}/net/luasocket
