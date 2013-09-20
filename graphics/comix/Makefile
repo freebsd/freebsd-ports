@@ -24,6 +24,7 @@ INSTALLS_ICONS=	yes
 DOCS=		COPYING ChangeLog README
 MAN1=		comix.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${HAVE_GNOME:Mnautilus2}!="" || defined(WITH_THUMBNAILS)) && !defined(WITHOUT_THUMBNAILS)

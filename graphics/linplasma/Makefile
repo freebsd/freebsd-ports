@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/linplasma
 PORTDOCS=	README
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s:PI:M_PI:" ${WRKSRC}/linplasma.c
 	@${REINPLACE_CMD} -e \

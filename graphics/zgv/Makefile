@@ -1,9 +1,5 @@
-# New ports collection makefile for:	zgv
-# Date created:				2004-04-15
-# Whom:					Radim Kolar
-#
+# Created by: Radim Kolar
 # $FreeBSD$
-#
 
 PORTNAME=	zgv
 PORTVERSION=	5.9
@@ -35,6 +31,7 @@ INFO=		zgv
 PORTDOCS=	NEWS README SECURITY TODO INSTALL
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	${RM} ${WRKSRC}/doc/zgv
 	@${REINPLACE_CMD} -e 's|ZGV_LIBS=|ZGV_LIBS+=|' ${WRKSRC}/src/Makefile

@@ -17,4 +17,5 @@ USES=		gettext pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

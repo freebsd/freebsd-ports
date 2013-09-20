@@ -21,6 +21,7 @@ USE_GNOME=	gtk12
 USE_SDL=	sdl
 CFLAGS+=	-I${PREFIX}/include
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(#include.*\)SDL/\(SDL.*\)|\1\2| ; \
 		s|/usr/local|${PREFIX}|' ${WRKSRC}/*.cc ${WRKSRC}/*.h

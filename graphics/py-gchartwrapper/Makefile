@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gchartwrapper
-# Date created:		2009-01-09
-# Whom:			Nicola Vitale	<nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale	<nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	GChartWrapper
 PORTVERSION=	0.9
@@ -32,6 +28,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 PROJECTHOST=	google-chartwrapper
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-extract:
 	@cd ${WRKDIR} && ${RM} -R doc/.svn && ${RM} -R demo/.svn
 .endif

@@ -26,6 +26,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/scalex bin/scalerx
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMMX}

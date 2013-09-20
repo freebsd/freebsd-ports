@@ -27,6 +27,7 @@ OPTIONS_DEFAULT=MARBLE
 
 MARBLE_DESC=	Geolocation support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMARBLE}

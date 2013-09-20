@@ -109,6 +109,7 @@ MLINKS=	TIFFError.3tiff          TIFFSetErrorHandler.3tiff \
 	TIFFtile.3tiff           TIFFTileRowSize.3tiff \
 	TIFFtile.3tiff           TIFFVTileSize.3tiff
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} \
 		-e 's|^LIBTIFF_VERSION_INFO =.*$$|LIBTIFF_VERSION_INFO = 4:0:0|' \

@@ -1,10 +1,6 @@
-# New ports collection makefile for:	py-clutter
-# Date created:		2008-12-26
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/graphics/py-clutter/Makefile,v 1.8 2010/08/26 21:06:34 marcus Exp $
-#
 
 PORTNAME=	clutter
 PORTVERSION=	1.0.2
@@ -37,4 +33,5 @@ CONFIGURE_ARGS=	--disable-docs
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

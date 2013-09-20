@@ -21,4 +21,5 @@ PLIST_FILES=	lib/zathura/pdf.so \
 PLIST_DIRSTRY=	lib/zathura \
 		share/applications
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

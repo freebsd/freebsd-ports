@@ -63,6 +63,7 @@ PLIST_SUB+=	JAVA="@comment "
 
 PLIST_SUB+=	UNAMEP=${ARCH}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_JAVA) && ${ARCH} != "i386"

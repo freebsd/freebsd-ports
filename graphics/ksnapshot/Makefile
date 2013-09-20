@@ -18,4 +18,5 @@ USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11 xext xfixes
 USE_XZ=		yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -27,6 +27,7 @@ PLIST_SUB=	VERSION=${PORTVERSION:R}
 OPTIONS_DEFINE=	PULSEAUDIO
 PULSEAUDIO_DESC="Enable the PulseAudio sound module"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}

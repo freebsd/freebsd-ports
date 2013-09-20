@@ -28,6 +28,7 @@ LIBAV_PC=	libavcodec1 libavformat1 libavutil1 libswscale1
 LIBAV_CFLAGS=	$$(pkg-config --cflags ${LIBAV_PC})
 LIBAV_LIBS=	$$(pkg-config --libs ${LIBAV_PC})
 
+NO_STAGE=	yes
 post-extract:
 .for i in configure install-sh
 	@${CHMOD} ${BINMODE} ${WRKSRC}/${i}

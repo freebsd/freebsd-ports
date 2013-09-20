@@ -29,6 +29,7 @@ SUB_FILES=	${PORTNAME}
 
 DOWNLOAD_URL?=	http://www.yworks.com/en/products_download.php?file=${DISTNAME}${EXTRACT_SUFX}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

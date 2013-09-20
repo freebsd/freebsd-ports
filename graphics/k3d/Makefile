@@ -52,6 +52,7 @@ USE_LDCONFIG=	yes
 MAN1=		k3d.1 k3d-renderframe.1 k3d-renderjob.1 k3d-sl2xml.1 \
 		k3d-uuidgen.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:M3DS}

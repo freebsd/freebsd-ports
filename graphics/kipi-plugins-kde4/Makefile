@@ -14,6 +14,7 @@ LATEST_LINK=	${PORTNAME}-kde4
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../digikam-kde4/Makefile.common"
 
 OPTIONS_DEFINE=		DOCS NLS

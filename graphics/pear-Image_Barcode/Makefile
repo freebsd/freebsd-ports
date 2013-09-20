@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Image_Barcode
-# Date created:			  11 March 2005
-# Whom:				  Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	Image_Barcode
 PORTVERSION=	1.1.3
@@ -24,6 +20,7 @@ PEAR_PHP_COMPAT_DESC=	"PEAR::PHP_Compat support"
 
 PEAR_AUTOINSTALL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPEAR_PHP_COMPAT}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	icoconvert
-# Date created:				Apr 30 2004
-# Whom:					Florent Thoumie <flz@xbsd.org>
-#
+# Created by: Florent Thoumie <flz@xbsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	icoconvert
 PORTVERSION=	2.0
@@ -19,6 +15,7 @@ LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 
 PLIST_FILES=	bin/icoconvert
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^icoconvert|all|' -e 's|^\(FLAGS=\)|\1-I${LOCALBASE}/include |' \
 		-e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile

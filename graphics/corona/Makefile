@@ -1,7 +1,4 @@
-# New ports collection makefile for:	corona
-# Date created:				25 May 2004
-# Whom:					David Yeske <dyeske@gmail.com>
-#
+# Created by: David Yeske <dyeske@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	corona
@@ -24,6 +21,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LIBS="${LIBS} -L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-Wall||' \

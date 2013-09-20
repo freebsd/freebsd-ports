@@ -25,6 +25,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lm
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/.libs/showimage ${PREFIX}/bin
 

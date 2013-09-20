@@ -12,5 +12,6 @@ LICENSE=	BSD
 
 USE_CABAL=	data-pprint>=0.2 dia-base>=0.1 mtl>=2.0 xhtml>=3000.2
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

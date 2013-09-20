@@ -30,4 +30,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--disable-debug --disable-yydebug
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

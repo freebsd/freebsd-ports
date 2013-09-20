@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ditta
-# Date created:				2011.05.03
-# Whom:					Aldis Berjoza <aldis@bsdroot.lv>
-#
+# Created by: Aldis Berjoza <aldis@bsdroot.lv>
 # $FreeBSD$
-#
 
 PORTNAME=	ditaa
 DISTVERSION=	0_9
@@ -25,6 +21,7 @@ NO_BUILD=	YES
 PLIST_FILES=	%%JAVASHAREDIR%%/${PORTNAME}/${PORTNAME}.jar bin/${PORTNAME}
 PLIST_DIRS=	%%JAVASHAREDIR%%/${PORTNAME}
 
+NO_STAGE=	yes
 pre-install:
 	${ECHO} "#!/bin/sh" > ${WRKDIR}/${PORTNAME}.sh
 	${ECHO} "${PREFIX}/bin/java -jar ${JAVASHAREDIR}/${PORTNAME}/${PORTNAME}.jar \$$*" >> ${WRKDIR}/${PORTNAME}.sh

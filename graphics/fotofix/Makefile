@@ -20,6 +20,7 @@ USE_PERL5=	run
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 

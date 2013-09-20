@@ -26,6 +26,7 @@ PLIST_FILES=	bin/${PORTNAME}
 DESKTOP_ENTRIES=	"burplex" "${COMMENT}" ""  \
 			"burplex" "" "false"
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' \
 		${WRKSRC}/mainwindow.cpp

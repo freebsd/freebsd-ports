@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE}
 MAN1=		jpegoptim.1
 PLIST_FILES=	bin/jpegoptim
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^bindir =.*$$|bindir = @bindir@|g ; \

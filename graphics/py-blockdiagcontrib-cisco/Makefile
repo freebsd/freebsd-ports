@@ -14,6 +14,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}blockdiag>=0.8.0:${PORTSDIR}/graphics/py-blockdiag
 USE_PYTHON=	2.4-2.7
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 x-generate-plist:
 	${FIND} ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG} -type f | ${SORT} | \
 	${SED} -e 's,${PYTHON_SITELIBDIR},%%PYTHON_SITELIBDIR%%,' \

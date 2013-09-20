@@ -1,9 +1,5 @@
-# New ports collection makefile for:    jpeginfo
-# Date created:         9.8.2001
-# Whom:                 ache
-#
+# Created by: ache
 # $FreeBSD$
-#
 
 PORTNAME=	jpeginfo
 PORTVERSION=	1.6.1
@@ -24,4 +20,5 @@ MAKE_ARGS=	mandir=${MANPREFIX}/man
 MAN1=		jpeginfo.1
 PLIST_FILES=	bin/jpeginfo
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

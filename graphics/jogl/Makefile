@@ -46,6 +46,7 @@ JAVA_VERSION=	1.6+
 
 BUILD_WRKSRC=	${WRKSRC}/jogl/make
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|g' \
 		${WRKSRC}/gluegen/make/build.xml

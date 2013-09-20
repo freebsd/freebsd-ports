@@ -27,6 +27,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 UTILS=		linkicc psicc transicc
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJPEGICC}

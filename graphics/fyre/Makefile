@@ -25,6 +25,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386" && !empty(PORT_OPTIONS:MOPT_CFLAGS)

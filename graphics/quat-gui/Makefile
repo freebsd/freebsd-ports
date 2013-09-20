@@ -36,6 +36,7 @@ PLIST_FILES=	bin/quat
 
 DESKTOP_ENTRIES="Quat" "3D Fractal Generator" "" "${PORTNAME}" "" ""
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}

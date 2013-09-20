@@ -70,4 +70,5 @@ MAN3=		Chart::Clicker.3 \
 		Chart::Clicker::Renderer::StackedBar.3 \
 		Chart::Clicker::Tutorial.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

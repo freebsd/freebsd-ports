@@ -49,6 +49,7 @@ THEMES=		blue-steel.theme \
 		tv-large.theme \
 		tv.theme
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cthumb ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/cthumb.1 ${PREFIX}/man/man1

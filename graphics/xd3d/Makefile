@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xd3d
-# Date created:		Tue Sept. 16 2003
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	xd3d
 PORTVERSION=	8.3.1
@@ -15,6 +11,7 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A simple scientific visualization tool
 
 #--------------------------------------------------------------------------
+NO_STAGE=	yes
 # You may define these options:
 #
 # - WITHOUT_IMAGEMAGICK	:	if you don't need to export bitmap images

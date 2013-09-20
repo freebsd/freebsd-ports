@@ -19,6 +19,7 @@ USE_PYTHON=	2.6+
 
 OIIO_PYBIND=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_LIB} ${BUILD_WRKSRC}/python/OpenImageIO.so ${PYTHON_SITELIBDIR}/
 

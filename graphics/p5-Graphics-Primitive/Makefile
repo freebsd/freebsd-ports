@@ -1,4 +1,3 @@
-# Ports collection makefile for:	p5-Graphics-Primitive
 # Created by: chinsan
 # $FreeBSD$
 
@@ -49,4 +48,5 @@ MAN3=		Graphics::Primitive.3 \
 		Graphics::Primitive::Path.3 \
 		Graphics::Primitive::TextBox.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

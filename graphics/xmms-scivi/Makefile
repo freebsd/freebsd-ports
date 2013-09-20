@@ -19,6 +19,7 @@ USE_XORG=	x11 xt
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 

@@ -17,6 +17,7 @@ USE_QT4=	qmake_build corelib gui opengl moc_build rcc_build xml script
 WRKSRC=		${WRKDIR}/structure-synth
 USE_DOS2UNIX=	*.cpp *.h
 
+NO_STAGE=	yes
 post-extract:
 	@${MV} "${WRKDIR}/Structure Synth Source Code" ${WRKSRC}
 	@${RM} -rf ${WRKSRC}/Examples/DontDeploy

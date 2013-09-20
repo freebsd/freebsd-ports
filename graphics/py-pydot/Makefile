@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pydot
-# Date created:				15 Sep 2004
-# Whom:					Stefan Walter <sw@gegenunendlich.de>
-#
+# Created by: Stefan Walter <sw@gegenunendlich.de>
 # $FreeBSD$
-#
 
 PORTNAME=	pydot
 PORTVERSION=	1.0.28
@@ -30,4 +26,5 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/dot_parser.py \
 		%%PYTHON_SITELIBDIR%%/pydot.pyc \
 		%%PYTHON_SITELIBDIR%%/pydot.pyo
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

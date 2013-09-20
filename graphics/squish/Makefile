@@ -19,6 +19,7 @@ OPTIONS_RADIO_RG1=	ALTIVEC SSE
 ALTIVEC_DESC=	Use Altivec instructions
 RG1_DESC=	Optimizations Selection
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CXXFLAGS+=	-fPIC

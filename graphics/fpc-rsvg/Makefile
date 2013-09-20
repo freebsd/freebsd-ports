@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	LIBRSVG2
 LIBRSVG2_DESC=	Install librsvg2 library
 OPTIONS_DEFAULT=	LIBRSVG2
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

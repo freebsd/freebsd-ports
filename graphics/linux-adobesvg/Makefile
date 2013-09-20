@@ -28,6 +28,7 @@ PLIST_FILES=	${SHLIB_FILES:S|^|lib/linux-adobesvg/|}
 PLIST_DIRS=	${LIBDIR:S|^${PREFIX}/||}
 PORTDOCS=	LICENSE.txt ReadMe.html SVGHelp.html
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

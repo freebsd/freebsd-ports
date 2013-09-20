@@ -39,6 +39,7 @@ OPTIONS_DEFAULT=	QT4
 QT4_DESC=		Qt4-enabled GUI executable
 WX_DESC=		wxWidgets-enabled GUI executable
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQT4}

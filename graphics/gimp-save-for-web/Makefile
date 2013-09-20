@@ -19,6 +19,7 @@ USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack intltool
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|GMSGFMT = @GMSGFMT@|GMSGFMT = @MSGFMT@|g' ${WRKSRC}/po/Makefile.in.in
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jogamp-jogl
-# Date created:		2010-09-18
-# Whom:			Tassilo Philipp <tphilipp@potion-studios.com>
-#
+# Created by: Tassilo Philipp <tphilipp@potion-studios.com>
 # $FreeBSD$
-#
 
 PORTNAME=	jogamp-jogl
 PORTVERSION=	2.0.20100914
@@ -44,6 +40,7 @@ JAVA_VERSION=	1.6+
 
 BUILD_WRKSRC=	${WRKDIR}/jogl/make
 
+NO_STAGE=	yes
 post-extract:
 	${MV} ${WRKDIR}/sgothel-gluegen-a61c650 ${WRKDIR}/gluegen
 	${MV} ${WRKDIR}/sgothel-jogl-dc9191f ${WRKDIR}/jogl

@@ -29,6 +29,7 @@ USE_TK=		84+
 USE_TK_BUILD=	${USE_TK}
 MAKE_ENV+=	TCL_VER=${TCL_VER}
 
+NO_STAGE=	yes
 # We don't need the bundled libraries:
 EXTRACT_AFTER_ARGS=	--exclude '*/libz/*' \
 		--exclude '*/compat/*' --exclude '*/libtiff/*' \

@@ -1,4 +1,3 @@
-# Created by: Philip M. Gollucci <pgollucci@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	GD
@@ -22,4 +21,5 @@ MAN1=		bdf2gdfont.pl.1
 MAN3=		GD.3 GD::Polyline.3 GD::Simple.3 \
 		GD::Image.3 GD::Polygon.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

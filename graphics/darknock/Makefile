@@ -28,6 +28,7 @@ DESKTOP_ENTRIES=	"${PORTNAME}" \
 
 LRELEASE=	${QT_PREFIX}/bin/lrelease-qt4
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

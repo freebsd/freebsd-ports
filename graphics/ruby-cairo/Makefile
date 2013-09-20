@@ -21,6 +21,7 @@ CONFIGURE_ARGS+=--ruby=${RUBY}
 
 DOCS=		AUTHORS COPYING GPL NEWS
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${RUBY_MODEXAMPLESDIR}/agg

@@ -22,6 +22,7 @@ PYDISTUTILS_BUILD_TARGET=build_ext
 PYDISTUTILS_BUILDARGS=	-L${LOCALBASE}/lib \
 			-I${LOCALBASE}/include:${LOCALBASE}/include/freetype2
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/src/utils/fs.py
 

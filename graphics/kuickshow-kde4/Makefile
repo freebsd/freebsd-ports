@@ -24,4 +24,5 @@ LATEST_LINK=	${PORTNAME}-kde4
 APP_VER=	0.9.1
 EXTRA_VER=	4.4.0
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

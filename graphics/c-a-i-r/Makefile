@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}
 
 PLIST_FILES=	bin/cair
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cair ${PREFIX}/bin
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    duhdraw
-# Date created:         March 18 2002
-# Whom:                 Kyle Martin <mkm@ieee.org>
-#
+# Created by: Kyle Martin <mkm@ieee.org>
 # $FreeBSD$
-#
 
 PORTNAME=	duhdraw
 PORTVERSION=	2.8.13
@@ -17,6 +13,7 @@ MAKE_ARGS=	CC="${CC} ${CFLAGS}"
 
 PLIST_FILES=	bin/ansi bin/ansitoc bin/duhdraw
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/<malloc.h>/d' ${WRKSRC}/duhdraw.c
 

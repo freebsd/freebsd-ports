@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rayshade
-# Date created:		21 January 1998
-# Whom:			giffunip@asme.org
-#
+# Created by: giffunip@asme.org
 # $FreeBSD$
-#
 
 PORTNAME=	rayshade
 PORTVERSION=	4.0.6
@@ -39,6 +35,7 @@ PLIST_FILES=	bin/rayshade
 CONFIGURE_ARGS=	< ${WRKDIR}/config.ans
 .endif
 
+NO_STAGE=	yes
 pre-configure:
 	@${SED} -e \
 		"s,@CFLAGS@,${CFLAGS},g ; \

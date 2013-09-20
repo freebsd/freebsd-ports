@@ -21,6 +21,7 @@ USE_GMAKE=	yes
 USE_GL=		yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g' \

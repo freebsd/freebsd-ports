@@ -28,4 +28,5 @@ USE_QT4=	corelib gui linguist_build moc_build qmake_build \
 		rcc_build uic_build
 USE_GNOME=	glib20
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

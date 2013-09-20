@@ -50,6 +50,7 @@ COMICS_DESC=	Comic book archives support
 IMPRESS_DESC=	Impress presentations support
 DJVU_DESC=	DJVU support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDVI} || ${PORT_OPTIONS:MT1LIB}

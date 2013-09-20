@@ -1,6 +1,5 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cenon
 PORTVERSION=	4.0.2
@@ -28,6 +27,7 @@ CENON_LIB_DIR=	${GNUSTEP_LOCAL_ROOT}/Library/Cenon
 OPTIONS_DEFINE=	FULL_LIBRARY
 FULL_LIBRARY_DESC=	Install complete Cenon Library
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFULL_LIBRARY} || make(makesum) || defined(FETCH_ALL)

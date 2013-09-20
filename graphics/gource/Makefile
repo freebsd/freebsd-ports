@@ -30,4 +30,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gource.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

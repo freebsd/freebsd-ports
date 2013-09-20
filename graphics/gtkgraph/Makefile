@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -i '' -e 's|-O2|${CFLAGS}| ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure

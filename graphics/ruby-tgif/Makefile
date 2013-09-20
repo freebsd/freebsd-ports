@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/Tgif
-# Date created:		6 April 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tgif
 PORTVERSION=	20010408
@@ -37,6 +33,7 @@ INSTALL_TARGET=	site-install
 DOCS_EN=	README
 DOCS_JA=	ChangeLog.ja	README.ja
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"

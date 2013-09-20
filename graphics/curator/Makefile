@@ -1,9 +1,5 @@
-# New ports collection makefile for:	curator
-# Date created:				03 Jul 2004
-# Whom:					Stefan Walter <sw@gegenunendlich.de>
-#
+# Created by: Stefan Walter <sw@gegenunendlich.de>
 # $FreeBSD$
-#
 
 PORTNAME=	curator
 PORTVERSION=	2.1
@@ -23,6 +19,7 @@ PIL_DESC=	Use Python Imaging Library instead of ImageMagick
 PLIST_FILES=	bin/curator
 MAN1=		curator.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPIL}

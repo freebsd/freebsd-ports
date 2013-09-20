@@ -21,6 +21,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	DOCBOOK X11
 DOCBOOK_DESC=	Generate API documentation (requires DOCS)
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCBOOK} && ${PORT_OPTIONS:MDOCS}

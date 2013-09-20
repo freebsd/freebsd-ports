@@ -25,6 +25,7 @@ PORTDOCS=	readme.txt
 
 OPTIONS_DEFINE=	DOCS STATIC
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSTATIC}

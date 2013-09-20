@@ -33,6 +33,7 @@ LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR
 LIB_DEPENDS+=	cairomm-1.0.1:${PORTSDIR}/graphics/cairomm
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800025

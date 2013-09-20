@@ -22,4 +22,5 @@ MAN3=		Graphics::ColorNames::CSS.3 \
 		Graphics::ColorNames::SVG.3 \
 		Graphics::ColorNames::WWW.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

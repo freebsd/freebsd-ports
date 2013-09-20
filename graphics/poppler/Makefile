@@ -37,6 +37,7 @@ OPTIONS_DEFINE=	CAIRO OPENJPEG
 OPTIONS_DEFAULT=CAIRO OPENJPEG
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(SLAVEPORT)

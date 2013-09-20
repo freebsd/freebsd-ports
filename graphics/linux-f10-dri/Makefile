@@ -1,9 +1,5 @@
-# New ports collection makefile for:	graphics/linux-f10-dri
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	dri
 PORTVERSION=	7.2
@@ -38,4 +34,5 @@ USE_LINUX_APPS=	xorglibs
 LINUX_DIST_VER=	10
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

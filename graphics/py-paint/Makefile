@@ -25,6 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 post-patch:
 	@${REINPLACE_CMD} -e "s,art_lgpl,art_lgpl_2," ${WRKSRC}/setup.py

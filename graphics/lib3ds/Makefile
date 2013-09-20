@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lib3ds
-# Date Created:				18 January 2001
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lib3ds
 PORTVERSION=	1.3.0
@@ -26,4 +22,5 @@ MAN1=		3dsdump.1 lib3ds-config.1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

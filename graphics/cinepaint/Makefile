@@ -43,6 +43,7 @@ PLIST_SUB=	VER="${DISTVERSION}"
 
 MAN1=		cinepaint.1 cinepainttool.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOYRANOS}

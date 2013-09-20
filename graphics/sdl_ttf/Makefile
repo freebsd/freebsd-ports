@@ -24,6 +24,7 @@ USE_LDCONFIG=	yes
 USE_GL=		yes
 .endif
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/.libs/glfont ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/.libs/showfont ${PREFIX}/bin/sdl-showfont

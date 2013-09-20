@@ -1,4 +1,4 @@
-# Created by:                cartola (Carlos E. G. Carvalho)
+# Created by: cartola (Carlos E. G. Carvalho)
 # $FreeBSD$
 
 PORTNAME=	vigra
@@ -25,6 +25,7 @@ OPTIONS_DEFINE=		HDF5 OPENEXR NUMPY
 OPTIONS_DEFAULT=	HDF5 OPENEXR
 NUMPY_DESC=		NumPy mathematical computing (USE Fortran/GCC46+)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHDF5}

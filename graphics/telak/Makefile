@@ -24,6 +24,7 @@ ALL_TARGET=	${PORTNAME}
 PLIST_FILES=	bin/telak
 MAN1=		telak.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1

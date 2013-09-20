@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	iiview
-# Date created:		2008/06/16
-# Whom:			Martin Sugioarto <martin.sugioarto@udo.edu>
-#
+# Created by: Martin Sugioarto <martin.sugioarto@udo.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	iiview
 PORTVERSION=	0.28
@@ -26,4 +22,5 @@ MAN1=		iiview.1
 MANCOMPRESSED=	yes
 USE_BZIP2=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

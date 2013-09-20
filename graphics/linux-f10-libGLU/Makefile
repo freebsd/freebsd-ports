@@ -1,9 +1,5 @@
-# New ports collection makefile for:	graphics/linux-f10-libGLU
-# Date created:				2009-09-10
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	libGLU
 PORTVERSION=	7.2
@@ -29,4 +25,5 @@ SRC_DISTFILES=	mesa-${PORTVERSION}-${RPMVERSION}.src.rpm
 PLIST_FILES=	usr/lib/libGLU.so.1 usr/lib/libGLU.so.1.3.070300
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

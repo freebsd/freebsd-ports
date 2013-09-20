@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libecwj2
-# Date created:		3 August 2010
-# Whom:			glebius@FreeBSD.org
-#
+# Created by: glebius@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	libecwj2
 PORTVERSION=	3.3
@@ -24,6 +20,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

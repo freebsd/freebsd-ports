@@ -1,4 +1,4 @@
-# Created by: Patrick Gardella <patrick@freebsd.org>
+# Created by: Patrick Gardella <patrick@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	backfract
@@ -19,6 +19,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/backfract
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		"/'-O3'/s|^|#| ; \

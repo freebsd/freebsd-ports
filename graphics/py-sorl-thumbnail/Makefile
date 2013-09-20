@@ -28,6 +28,7 @@ WORD_DESC=	Word Document thumbnail handling
 
 OPTIONS_DEFAULT=	DJANGO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDJANGO}

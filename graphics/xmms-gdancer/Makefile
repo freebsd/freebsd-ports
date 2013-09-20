@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	lib/xmms/Visualization/gdancer.so
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 

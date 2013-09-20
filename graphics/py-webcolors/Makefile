@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-webcolors
-# Date created:		2011-08-02
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	webcolors
 PORTVERSION=	1.4
@@ -21,6 +17,7 @@ DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 PORTDOCS=	README
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${INSTALL_WRKSRC}/${PORTDOCS} ${DOCSDIR}

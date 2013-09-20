@@ -1,7 +1,4 @@
-# New ports collection makefile for:   panomatic
-# Date created:        Fri Mar  7 11:06:34 UTC 2008
-# Whom:                argv[0] (Iouri V. Ivliev)
-#
+# Created by: argv[0] (Iouri V. Ivliev)
 # $FreeBSD$
 
 PORTNAME=	panomatic
@@ -26,4 +23,5 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	bin/panomatic
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

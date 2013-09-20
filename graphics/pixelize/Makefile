@@ -19,6 +19,7 @@ USES=		pkgconfig
 USE_GNOME=	gtk20 imlib
 PLIST_FILES=	bin/make_db bin/pixelize
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CC|#CC|" -e "s|CFLAGS = -g|CFLAGS+= |" \
 		-e "s|gtk-config|${GTK_CONFIG}|g" \

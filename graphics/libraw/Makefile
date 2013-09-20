@@ -30,6 +30,7 @@ DEMOSAIC_PACK_GPL3_DESC=	Enable GPLv3 demosaic pack
 OPTIMIZED_CFLAGS_DESC=		Enable optimizations (on x86)
 OPENMP_DESC=			Enable OpenMP (implies GCC 4.6+)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}

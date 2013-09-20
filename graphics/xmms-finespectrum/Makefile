@@ -22,6 +22,7 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/finespectrum-1.0.1alpha
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/ltconfig
 

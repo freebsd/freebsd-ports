@@ -21,4 +21,5 @@ USE_AUTOTOOLS=	libtool
 
 PLIST_FILES=	bin/swfmill
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

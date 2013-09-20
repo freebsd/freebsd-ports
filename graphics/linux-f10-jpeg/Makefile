@@ -1,9 +1,5 @@
-# New ports collection makefile for:	graphics/linux-f10-jpeg
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	jpeg
 PORTVERSION=	6b
@@ -27,4 +23,5 @@ USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

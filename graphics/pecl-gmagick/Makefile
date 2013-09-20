@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-gmagick
-# Date created:			7 Feb 2011
-# Whom:				Dan Rowe <bsdports@csnstores.com>
-#
+# Created by: Dan Rowe <bsdports@csnstores.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gmagick
 PORTVERSION=	1.0.8b1
@@ -25,4 +21,5 @@ IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--with-gmagick=${LOCALBASE}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

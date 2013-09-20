@@ -1,4 +1,3 @@
-# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	flasm
@@ -20,6 +19,7 @@ USES=		bison
 NO_WRKSUBDIR=	YES
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/flasm ${PREFIX}/bin
 

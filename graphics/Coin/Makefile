@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Coin
-# Date created:				10 May 2002
-# Whom:					roland.jesse@gmx.net
-#
+# Created by: roland.jesse@gmx.net
 # $FreeBSD$
-#
 
 PORTNAME=	Coin
 PORTVERSION=	3.1.3
@@ -30,6 +26,7 @@ MAKE_ENV=	LANG=C
 
 MAN1=		coin-config.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|DATA install-data-local|DATA|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure

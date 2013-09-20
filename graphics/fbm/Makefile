@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fbm
-# Date created:		21 January 1998
-# Whom:			giffunip@asme.org
-#
+# Created by: giffunip@asme.org
 # $FreeBSD$
-#
 
 PORTNAME=	fbm
 PORTVERSION=	1.2
@@ -27,4 +23,5 @@ MANL=	clr2gray.l fbcat.l fbclean.l fbconv.l fbedge.l fbext.l fbhalf.l \
 	gray2clr.l idiff.l pbm2ps.l pbmtitle.l qrt2fbm.l raw2fbm.l tiff2fbm.l \
 	uunet2fbm.l
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

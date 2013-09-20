@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libgfx
-# Date created:		28 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libgfx
 DISTVERSION=	1.1.0
@@ -36,6 +32,7 @@ CFLAGS+=	-fPIC
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^CC /d ; \

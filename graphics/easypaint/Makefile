@@ -1,9 +1,5 @@
-# New ports collection makefile for:	easypaint
-# Date created:		2012-01-06
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	easypaint
 PORTVERSION=	0.6.0
@@ -26,6 +22,7 @@ DESKTOP_ENTRIES="easyPaint" "${COMMENT}" "" "easypaint" \
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-configure:
 	cd ${WRKSRC} && ${QMAKE}
 

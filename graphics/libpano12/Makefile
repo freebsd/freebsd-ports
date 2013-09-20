@@ -44,6 +44,7 @@ CONFIGURE_ARGS+=	--with-java=${JAVA_HOME}
 CONFIGURE_ARGS+=	--without-java
 .endif
 
+NO_STAGE=	yes
 pre-configure:
 	cd ${WRKSRC} && ./bootstrap
 

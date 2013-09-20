@@ -20,6 +20,7 @@ OPTIONS_DEFINE=	X11 IMAGEMAGICK V4L PYTHON GTK2 QT4
 OPTIONS_DEFAULT=	X11 IMAGEMAGICK
 V4L_DESC=	Build zbarcam video scanner
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if exists(${LOCALBASE}/lib/libjpeg.so)

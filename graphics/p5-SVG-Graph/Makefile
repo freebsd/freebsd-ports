@@ -40,4 +40,5 @@ MAN3=		SVG::Graph.3 \
 		SVG::Graph::Glyph::tree.3 \
 		SVG::Graph::Glyph::wedge.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

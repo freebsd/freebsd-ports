@@ -1,9 +1,5 @@
-# New ports collection makefile for:	graphics/linux-f10-png
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	png
 PORTVERSION=	1.2.37
@@ -34,4 +30,5 @@ DOCSDIR=	${PREFIX}/usr/share/doc/libpng-${PORTVERSION}
 PORTDOCS=	CHANGES LICENSE README TODO example.c libpng-1.2.37.txt
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

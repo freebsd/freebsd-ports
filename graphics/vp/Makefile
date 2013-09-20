@@ -16,4 +16,5 @@ USE_XZ=		yes
 MAN1=		vp.1
 PLIST_FILES=	bin/vp
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

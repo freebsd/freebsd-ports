@@ -33,6 +33,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 PLIST_FILES=	bin/pencil
 PORTDOCS=	README TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-configure:

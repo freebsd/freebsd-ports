@@ -17,4 +17,5 @@ EXTRACTUNITDIR+=	${WRKUNITDIR}
 OPTIONS_DEFINE=	SVGA
 SVGA_DESC=	Install svgalib low level console graphics library
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

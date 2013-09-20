@@ -34,6 +34,7 @@ MAN1=		okular.1
 OPTIONS_DEFINE=	DVI
 DVI_DESC=	Support DVI files (requires teTeX)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDVI}

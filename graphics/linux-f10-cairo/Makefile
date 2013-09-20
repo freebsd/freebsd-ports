@@ -1,9 +1,5 @@
-# New ports collection makefile for:	graphics/linux-f10-cairo
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	cairo
 PORTVERSION=	1.8.0
@@ -31,4 +27,5 @@ DOCSDIR=	${PREFIX}/usr/share/doc/cairo-${PORTVERSION}
 PORTDOCS=	AUTHORS BIBLIOGRAPHY BUGS COPYING COPYING-LGPL-2.1 \
 		COPYING-MPL-1.1 ChangeLog NEWS PORTING_GUIDE README
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

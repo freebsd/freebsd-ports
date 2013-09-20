@@ -25,6 +25,7 @@ NO_BUILD=	yes
 USES=		shebangfix perl5
 SHEBANG_FILES=	springgraph.pl
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/springgraph.pl ${PREFIX}/bin/springgraph
 

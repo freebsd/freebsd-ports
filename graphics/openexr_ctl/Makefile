@@ -22,6 +22,7 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 test check:	build

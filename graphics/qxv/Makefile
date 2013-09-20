@@ -33,6 +33,7 @@ HAS_CONFIGURE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 	${QMAKE} PREFIX=${PREFIX} ${PORTNAME}.pro

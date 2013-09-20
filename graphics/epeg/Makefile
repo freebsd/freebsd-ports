@@ -1,9 +1,5 @@
-# New ports collection makefile for:	epeg
-# Date created:		05/09/2005
-# Whom:			vanilla
-#
+# Created by: vanilla
 # $FreeBSD$
-#
 
 PORTNAME=	epeg
 PORTVERSION=	0.9.1.042
@@ -25,4 +21,5 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

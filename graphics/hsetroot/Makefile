@@ -18,4 +18,5 @@ USE_EFL=	imlib2
 
 PLIST_FILES=	bin/hsetroot
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

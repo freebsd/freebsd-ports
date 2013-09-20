@@ -27,4 +27,5 @@ USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 PYDISTUTILS_PKGNAME=	python_poppler_qt4
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

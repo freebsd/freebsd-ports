@@ -42,6 +42,7 @@ MANTAGS=	AES AFCP AIFF APE APP12 ASF BMP BZZ BigTIFF BuildTagLookup \
 		WritePhotoshop WritePostScript WriteXMP Writer XMP XMP2 \
 		XMPStruct ZIP iWork
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/

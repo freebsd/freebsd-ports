@@ -20,6 +20,7 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} " >> Installing JAR files"
 	${MKDIR} ${TARGET_DIR}/lib/ext/

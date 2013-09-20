@@ -22,6 +22,7 @@ OPTIONS_DEFAULT=METRIC A4
 METRIC_DESC=	Use metric units (cm) as default
 A4_DESC=	Use A4 as the default papersize
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MA4}

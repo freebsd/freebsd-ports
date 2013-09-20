@@ -27,6 +27,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		xml2ps.1 passepartout.1x
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libfam.a)

@@ -24,6 +24,7 @@ PLIST_FILES=	lib/libtifmerge.a \
 
 MAN3=		tifmerge.3
 
+NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKSRC}/TIFMERGE.H ${WRKSRC}/tifmerge.h
 	@${MV} ${WRKSRC}/TIFMERGE.C ${WRKSRC}/tifmerge.c

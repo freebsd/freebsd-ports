@@ -25,6 +25,7 @@ LIB_DEPENDS=	libagg.so:${PORTSDIR}/graphics/agg \
 
 CFLAGS+=	-fPIC
 #hack to get custom exactcode configure script to enable tiff support with
+NO_STAGE=	yes
 #broken headers on c++ in base system:
 CPPFLAGS+=	-fpermissive -I${LOCALBASE}/include/libpng15
 USE_BZIP2=	yes

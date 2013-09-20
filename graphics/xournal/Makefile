@@ -25,6 +25,7 @@ OPTIONS_DEFINE=		GHOSTSCRIPT
 GHOSTSCRIPT_DESC=	Install ghostscript (PS/PDF as bitmap bg)
 OPTIONS_DEFAULT=	GHOSTSCRIPT
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGHOSTSCRIPT}

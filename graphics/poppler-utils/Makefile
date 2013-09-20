@@ -12,4 +12,5 @@ MASTERDIR=	${.CURDIR}/../../graphics/poppler
 SLAVEPORT=	utils
 PLIST=		${.CURDIR}/pkg-plist
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

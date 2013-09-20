@@ -19,4 +19,5 @@ MAN3=	GraphViz::Traverse.3 GraphViz::Traverse::Filesystem.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

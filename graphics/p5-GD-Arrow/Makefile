@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	GD::Arrow
-# Date created:			Apr 22, 2005
-# Whom:	      			ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	GD-Arrow
 PORTVERSION=	0.01
@@ -23,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		GD::Arrow.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

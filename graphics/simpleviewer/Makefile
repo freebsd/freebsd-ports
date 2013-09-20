@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Simple Viewer GL
-# Date created:				08 Apr 2011
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	simpleviewer
 PORTVERSION=	1.7.1553.8560
@@ -30,6 +26,7 @@ MAKE_ARGS=	CC=${CXX}
 
 PLIST_FILES=	bin/sviewgl
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

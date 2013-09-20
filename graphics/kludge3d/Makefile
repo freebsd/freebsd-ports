@@ -27,6 +27,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include \
 LDFLAGS+=	-L${LOCALBASE}/lib \
 		-L${PYTHON_LIBDIR}/config ${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|@EXTRA_CFLAGS@|@CFLAGS@|g ; \

@@ -24,4 +24,5 @@ USE_LDCONFIG=	yes
 MAN1=		image_to_j2k.1 j2k_dump.1 j2k_to_image.1
 MAN3=		libopenjpeg.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

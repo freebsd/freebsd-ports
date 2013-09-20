@@ -27,6 +27,7 @@ PORTDOCS=	*
 
 REINPLACE_ARGS=	-i ""
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""

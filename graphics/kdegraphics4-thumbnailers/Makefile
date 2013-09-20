@@ -17,4 +17,5 @@ USES=		cmake:outsource
 USE_QT4=	gui qmake_build moc_build uic_build rcc_build
 USE_XZ=		yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -20,4 +20,5 @@ USE_XORG=	x11 xext
 MAN1=		glib.1 xgrasp.1
 PLIST_FILES=	bin/glib bin/xgrasp
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

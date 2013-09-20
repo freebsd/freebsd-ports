@@ -1,9 +1,5 @@
-# New ports collection makefile for:	php5-facedetect
-# Date created:		2010-03-26
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	facedetect
 PORTVERSION=	1.1
@@ -35,6 +31,7 @@ USE_PHPEXT=	yes
 CONFIGURE_ARGS+=	--with-facedetect
 CONFIGURE_ENV+=		LIBS="${LIBS}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

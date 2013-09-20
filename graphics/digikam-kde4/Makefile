@@ -10,6 +10,7 @@ CATEGORIES=	graphics kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE4 digital photo management application
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.common"
 
 BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Eigen:${PORTSDIR}/math/eigen3

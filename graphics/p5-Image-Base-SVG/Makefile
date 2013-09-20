@@ -20,6 +20,7 @@ USES=		perl5
 
 MAN3=		Image::Base::SVG.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|Image-Base-SVG|Image::Base::SVG|g' ${WRKSRC}/Makefile.PL
 

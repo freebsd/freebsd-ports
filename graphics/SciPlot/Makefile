@@ -26,6 +26,7 @@ PORTDOCS=	README SciPlot.html SciPlotDemo.html SciPlotProg.html
 EXDATA=		data.txt
 EXBINS=		realtime sciplot
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${INCLUDES:S|^|${WRKSRC}/|} ${PREFIX}/include/${PORTNAME}

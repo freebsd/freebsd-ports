@@ -29,6 +29,7 @@ OPTIONS_DEFAULT=	RAW TIFF
 RAW_DESC=	RAW images support
 TIFF_DESC=	Support multi-page TIFF images
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRAW}

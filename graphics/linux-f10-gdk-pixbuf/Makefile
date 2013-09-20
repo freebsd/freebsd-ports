@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/linux-f10-gdk-pixbuf
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	gdk-pixbuf
 PORTVERSION=	0.22.0
@@ -23,4 +19,5 @@ LINUX_DIST_VER=	10
 RPMVERSION=	36.fc9
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

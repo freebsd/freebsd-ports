@@ -24,6 +24,7 @@ USE_LDCONFIG=	yes
 
 MAKEDIRS=	${WRKSRC}/src/modules/loaders/tga
 
+NO_STAGE=	yes
 .include "../evas-core/Makefile.inc"
 CONFIGURE_ARGS+=	--enable-image-loader-tga
 

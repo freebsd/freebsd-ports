@@ -33,6 +33,7 @@ DESKTOP_ENTRIES="cbrPager" "Comic book viewer" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 		"${PORTNAME}" "Graphics;Viewer;GNOME;" true
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

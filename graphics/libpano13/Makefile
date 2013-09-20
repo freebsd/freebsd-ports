@@ -54,6 +54,7 @@ CONFIGURE_ARGS+=	--without-java
 PLIST_SUB=	JAVA="@comment "
 .endif
 
+NO_STAGE=	yes
 pre-configure:
 	cd ${WRKSRC} && ./bootstrap
 

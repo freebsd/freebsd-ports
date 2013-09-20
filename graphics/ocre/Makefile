@@ -27,6 +27,7 @@ MAKE_ENV=	CFLAGS1="${CFLAGS}"
 MANLANG=	"" es
 MAN1=		${PORTNAME}.1
 
+NO_STAGE=	yes
 post-extract:
 	@cd ${WRKSRC} && ${TAR} --exclude "*.orig" -xof ocre-decsWood-${PORTVERSION}.tgz
 

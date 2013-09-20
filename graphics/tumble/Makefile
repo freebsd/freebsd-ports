@@ -28,6 +28,7 @@ ONLY_FOR_ARCHS_REASON=	Only works on little endian systems
 PLIST_FILES=	bin/tumble
 PORTDOCS=	README
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|LDFLAGS =|LDFLAGS= ${LDFLAGS}|' ${WRKSRC}/Makefile

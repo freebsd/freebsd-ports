@@ -20,6 +20,7 @@ PLIST_FILES=	lib/xmms/Visualization/libjess.so lib/xmms/Visualization/libjess.la
 USE_GNOME=	glib12
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 

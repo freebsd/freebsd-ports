@@ -19,6 +19,7 @@ MAN1=		jhead.1
 PLIST_FILES=	bin/jhead
 PORTDOCS=	usage.html
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

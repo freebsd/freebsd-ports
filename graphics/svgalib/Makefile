@@ -1,4 +1,4 @@
-# Created by:				Maxim Sobolev <sobomax@FreeBSD.org>
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	svgalib
@@ -20,6 +20,7 @@ MANCOMPRESSED=	yes
 
 ALL_TARGET=	shared static
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"

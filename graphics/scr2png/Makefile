@@ -20,6 +20,7 @@ MANCOMPRESSED=	yes
 PLIST_FILES=	bin/scr2png
 MAKE_ARGS=	BINDIR=${PREFIX}/bin SHAREDIR=${PREFIX}
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|<gd/gd\.h>|<gd.h>|' ${WRKSRC}/scr2png.c

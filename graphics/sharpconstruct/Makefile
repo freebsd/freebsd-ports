@@ -23,6 +23,7 @@ ONLY_FOR_ARCHS_REASON=	uses SSE
 
 MAN1=		sharpconstruct.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/include/Align.hh
 	@${REINPLACE_CMD} -e 's|"/sharpconstruct|"|' ${WRKSRC}/src/MainWindow.cc

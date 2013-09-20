@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-GD-Barcode
-# Date created:				May 28 2001
-# Whom:					vanilla
-#
+# Created by: vanilla
 # $FreeBSD$
-#
 
 PORTNAME=	GD-Barcode
 PORTVERSION=	1.15
@@ -35,4 +31,5 @@ MAN3=		GD::Barcode.3 \
 		GD::Barcode::UPCA.3 \
 		GD::Barcode::UPCE.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

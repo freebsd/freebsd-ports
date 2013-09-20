@@ -28,6 +28,7 @@ PLIST_FILES=	bin/qrencode \
 		lib/libqrencode.so.3 \
 		libdata/pkgconfig/libqrencode.pc
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,libpng12,libpng,' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '9s|$$| ${PTHREAD_LIBS}|' ${WRKSRC}/libqrencode.pc.in

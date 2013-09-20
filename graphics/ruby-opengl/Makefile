@@ -26,6 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIGURE_ARGS=	--with-ruby-dir="${LOCALBASE}" --with-x11-dir="${LOCALBASE}"
 INSTALL_TARGET=	site-install
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}

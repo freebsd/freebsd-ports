@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	PROJ
 PROJ_DESC=	Install proj library
 OPTIONS_DEFAULT=	PROJ
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

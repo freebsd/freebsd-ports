@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnomecanvas
-# Date created:				18 May 2001
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnomecanvas
 PORTREVISION=	1
@@ -21,6 +17,7 @@ BUILD_CANVAS=	yes
 
 NAME=	gnomecanvaspixbuf
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/${NAME}Conf.sh ${PREFIX}/etc
 	cd ${WRKSRC}/gdk-pixbuf/.libs && \

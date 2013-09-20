@@ -20,6 +20,7 @@ DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 PORTDOCS=	xpx.doc xpxrc.eg
 PLIST_FILES=	bin/xpx
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|myname|my_name|g' ${WRKSRC}/magtoppm.c
 	@${REINPLACE_CMD} -e '/edit_mode/d' ${WRKSRC}/work.h

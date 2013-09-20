@@ -21,6 +21,7 @@ WRKSRC=			${WRKDIR}/lug
 MAKEFILE=		Makefile.linux
 USE_LDCONFIG=		yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-DiTIFF|-DiTIFF -DTIFF_VERSION=TIFF_VERSION_CLASSIC|' \
 		${WRKSRC}/Makefile.linux

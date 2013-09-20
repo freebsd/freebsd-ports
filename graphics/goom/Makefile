@@ -1,9 +1,5 @@
-# New ports collection makefile for:	goom
-# Date created:				12 February 2005
-# Whom:					Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	goom
 PORTVERSION=	2k4.0
@@ -31,6 +27,7 @@ PLIST_SUB+=	XMMS=""
 PLIST_SUB+=	XMMS="@comment "
 .endif
 
+NO_STAGE=	yes
 pre-everything::
 .if !defined(WITH_XMMS)
 	@${ECHO} ""

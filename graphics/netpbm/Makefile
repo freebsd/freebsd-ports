@@ -32,6 +32,7 @@ MAN1=		netpbm.1
 
 OPTIONS_DEFINE=	X11 MANPAGES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

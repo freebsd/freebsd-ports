@@ -21,6 +21,7 @@ OPTIONS_DEFAULT=	T1CODE KPATHSEA
 T1CODE_DESC=		Fast t1 font encoding/decoding
 KPATHSEA_DESC=		Python wrapper around kpathsea
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MT1CODE} || ${PORT_OPTIONS:MKPATHSEA}

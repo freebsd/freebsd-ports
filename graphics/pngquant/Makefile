@@ -33,6 +33,7 @@ MAN1=		pngquant.1
 PORTDOCS=	CHANGELOG README.md
 PLIST_FILES=	bin/pngquant
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MDEBUG)

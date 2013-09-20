@@ -33,6 +33,7 @@ MAN1=		pstoedit.1
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMAGICK}

@@ -17,6 +17,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME:L}
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|1.1.2|${PORTVERSION}|' ${WRKSRC}/setup.py
 

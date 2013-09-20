@@ -8,5 +8,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${KIPI_PLUGIN}_DESC}
 
 KIPI_PLUGIN=	photolayoutseditor
+NO_STAGE=	yes
 .include "${.CURDIR}/../digikam-kde4/Makefile.common"
 .include <bsd.port.mk>

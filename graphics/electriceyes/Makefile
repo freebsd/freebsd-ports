@@ -1,9 +1,5 @@
-# New ports collection makefile for:	electriceyes
-# Date created:				21 August 1998
-# Whom:					Yukihiro Nakai <Nakai@technologist.com>
-#
+# Created by: Yukihiro Nakai <Nakai@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	electriceyes
 PORTVERSION=	0.3.12
@@ -23,6 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 post-install:
 	${MV} ${PREFIX}/bin/ee ${PREFIX}/bin/ElectricEyes
 

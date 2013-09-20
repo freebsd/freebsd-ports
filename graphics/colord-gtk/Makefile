@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--enable-gtk-doc-html=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wclobbered||g' \
 		-e 's|-Wempty-body||g' \

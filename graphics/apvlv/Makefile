@@ -29,6 +29,7 @@ OPTIONS_DEFINE=	DJVU WEBKIT
 DJVU_DESC=	Build with DjVu support
 WEBKIT_DESC=	Build with WebKit support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDJVU}

@@ -1,10 +1,6 @@
-# New ports collection makefile for:	openclipart
-# Date created:		2005-07-16
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports-stable/graphics/openclipart/Makefile,v 1.1 2005/08/09 02:14:05 ahze Exp $
-#
 
 PORTNAME=	openclipart
 PORTVERSION=	2.0
@@ -24,6 +20,7 @@ OPTIONS_DEFINE=	PNG
 OPTIONS_DEFAULT=	PNG
 PNG_DESC=	Install png files
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPNG}

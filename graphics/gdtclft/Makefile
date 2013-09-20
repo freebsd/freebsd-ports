@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Gdtclft
-# Date Created:				10 February 2000
-# Whom:					Mikhail Teterin <mi@aldan.algebra.com>
-#
+# Created by: Mikhail Teterin <mi@aldan.algebra.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Gdtclft
 PORTVERSION=	2.2.5
@@ -28,6 +24,7 @@ ALL_TARGET=	all
 
 MANN=		gdtclft.n
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -Ee 's,[[:space:]]+$$,,' ${WRKSRC}/${MANN}
 

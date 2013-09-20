@@ -37,6 +37,7 @@ GDAL_DESC=	Compile in experimental GDAL support
 NETCDF_DESC=	With netCDF (7) support
 OCTAVE_DESC=	With OCTAVE support
 
+NO_STAGE=	yes
 .include "Makefile.man"
 
 NETCDF_LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf4

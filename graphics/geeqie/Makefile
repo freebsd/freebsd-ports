@@ -33,6 +33,7 @@ LCMS_DESC=	Color adjusting
 LIRC_DESC=	Remote control
 GPS_DESC=	GPS map support (libchamplain) EXPERIMENTAL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXIV2}

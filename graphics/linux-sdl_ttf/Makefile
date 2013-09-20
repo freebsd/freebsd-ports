@@ -17,4 +17,5 @@ ONLY_FOR_ARCHS=	i386 amd64
 DIST_SUBDIR=	rpm
 PLIST_SUB+=	SDLTTFVER=${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

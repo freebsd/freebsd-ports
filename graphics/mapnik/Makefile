@@ -54,6 +54,7 @@ DOCSRCDIR2=	${WRKSRC}/docs
 DOCSDIR2=	${DOCSDIR}/docs
 DOC_FILES2=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCAIRO}

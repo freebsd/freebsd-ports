@@ -18,6 +18,7 @@ USE_GNOME=	imlib gdkpixbuf gtk20
 MAN1=		xzgv.1
 PLIST_FILES=	bin/xzgv
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

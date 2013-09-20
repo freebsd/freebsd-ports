@@ -18,4 +18,5 @@ USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/image_science_thumb
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

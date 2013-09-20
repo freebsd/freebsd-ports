@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--disable-gui \
 PORTDOCS=	*
 PLIST_FILES=	bin/quat-txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}

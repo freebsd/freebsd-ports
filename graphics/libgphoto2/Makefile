@@ -28,6 +28,7 @@ PLIST_SUB=	VERSION="${PORTVERSION}" VERSION_PORT=0.8.0
 
 MAN3=		libgphoto2.3 libgphoto2_port.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000040

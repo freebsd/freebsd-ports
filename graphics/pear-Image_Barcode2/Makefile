@@ -16,6 +16,7 @@ PEAR_AUTOINSTALL=	yes
 
 LATEST_LINK=	pear-${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

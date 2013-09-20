@@ -31,4 +31,5 @@ FORTYTWO_BDB_PORT?=	databases/fortytwo-bdb
 ADDITIONAL_OBJCFLAGS+=	-I${BDB_INCLUDE_DIR}
 ADDITIONAL_LDFLAGS+=	-L${BDB_LIB_DIR}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

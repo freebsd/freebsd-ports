@@ -21,6 +21,7 @@ WX_UNICODE=	yes
 PLIST_FILES=	bin/comical
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

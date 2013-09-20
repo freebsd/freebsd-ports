@@ -27,4 +27,5 @@ MAN3=		Imager::Graph.3 \
 		Imager::Graph::Util.3 \
 		Imager::Graph::Vertical.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

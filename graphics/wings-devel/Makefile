@@ -28,6 +28,7 @@ USE_GMAKE=	yes
 
 PORTSCOUT=	limitw:1,odd
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(GCC)|${CC} -I${LOCALBASE}/include -L${LOCALBASE}/lib|g' \
 		${WRKSRC}/plugins_src/accel/Makefile

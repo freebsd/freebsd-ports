@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ayam
-# Date created:				19 Apr 2003
-# Whom:					Igor Pokrovsky <tiamat@comset.net>
-#
+# Created by: Igor Pokrovsky <tiamat@comset.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ayam
 PORTVERSION=	1.20
@@ -29,6 +25,7 @@ MAKE_JOBS_UNSAFE=	yes
 AYAM_PLUGINS=	csphere mfio
 PLUGINS_DIR=	${PREFIX}/lib/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"

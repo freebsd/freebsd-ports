@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xnview-mp
-# Date created:				23 Jul 2008
-# Whom:					Serge Negodyuck <petr@petrovich.kiev.ua>
-#
+# Created by: Serge Negodyuck <petr@petrovich.kiev.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	XnViewMP
 PORTVERSION=	0.015
@@ -29,6 +25,7 @@ PLIST_FILES=	bin/xnview-mp lib/xnview-mp/libQtCore.so.4 \
 		lib/xnview-mp/libQtGui.so.4 lib/xnview-mp/xnview
 PLIST_DIRS=	lib/xnview-mp
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|\.|${PREFIX}/lib/xnview-mp|" ${WRKSRC}/xnview.sh
 

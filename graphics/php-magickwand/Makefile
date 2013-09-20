@@ -1,9 +1,5 @@
-# New ports collection makefile for:	php-magickwand
-# Date created:			05 Jan 2005
-# Whom:				<mark@goodstorm.com>
-#
+# Created by: <mark@goodstorm.com>
 # $FreeBSD$
-#
 
 PORTNAME=	magickwand
 PORTVERSION=	1.0.9
@@ -23,4 +19,5 @@ USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--with-magickwand=${LOCALBASE}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

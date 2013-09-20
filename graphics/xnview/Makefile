@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xnview
-# Date created:         9 Jul 2002
-# Whom: Serge Negodyuck <petr@petrovich.kiev.ua>
-#
+# Created by: Serge Negodyuck <petr@petrovich.kiev.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	xnview
 PORTVERSION=	1.70
@@ -24,6 +20,7 @@ MAN1=		xnview.1 nview.1
 MLINKS=		nview.1 nv.1 \
 		nview.1	nconvert.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x

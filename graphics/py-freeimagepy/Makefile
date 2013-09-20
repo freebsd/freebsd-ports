@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-freeimagepy
-# Date created:		2005-09-01
-# Whom:			Choe, Cheng-Dae
-#
+# Created by: Choe, Cheng-Dae
 # $FreeBSD$
-#
 
 PORTNAME=	freeimagepy
 PORTVERSION=	2.0.1
@@ -24,4 +20,5 @@ USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	FreeImagePy
 PYDISTUTILS_PKGVERSION=	2.0.0
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

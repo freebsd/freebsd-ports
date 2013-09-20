@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libdmtx
-# Date created:				16 April 2009
-# Whom:					johans
-#
+# Created by: johans
 # $FreeBSD$
-#
 
 PORTNAME=	libdmtx
 PORTVERSION=	0.7.4
@@ -22,6 +18,7 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/^pkgconfigdir /s:(libdir):{prefix}/libdata:' \
 		${WRKSRC}/Makefile.in

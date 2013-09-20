@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	graphopt
-# Date created:			Dec 5, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	graphopt
 PORTVERSION=	0.4.1
@@ -19,4 +14,5 @@ COMMENT=	Graph Layout Optimizer
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--without-glew --with-fribidi
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

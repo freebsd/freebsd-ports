@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Hermes
-# Date created:				29 April 1999
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=	Hermes
 PORTVERSION=	1.3.3
@@ -26,6 +22,7 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == sparc64

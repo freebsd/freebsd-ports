@@ -1,9 +1,4 @@
-# New ports collection makefile for:	shiva-collections
-# Date created:				26 February 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	shiva-collections
 PORTVERSION=	1.4
@@ -17,4 +12,5 @@ USE_BZIP2=	yes
 USES=		cmake
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

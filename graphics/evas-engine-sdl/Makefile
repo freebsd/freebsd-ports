@@ -26,6 +26,7 @@ USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/modules/engines/software_16_sdl
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
+NO_STAGE=	yes
 .include "../evas-core/Makefile.inc"
 CONFIGURE_ARGS+=	--enable-software-16-sdl
 

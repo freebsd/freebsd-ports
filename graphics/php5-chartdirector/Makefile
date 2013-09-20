@@ -20,6 +20,7 @@ USE_LDCONFIG=	yes
 
 WRKSRC=	${WRKDIR}/ChartDirector
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 DISTVERSION=	${PORTVERSION:C/\.//g}

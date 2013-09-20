@@ -29,6 +29,7 @@ MAN1=		gdk-pixbuf-csource.1 gdk-pixbuf-query-loaders.1
 OPTIONS_DEFINE=	JASPER JPEG PNG TIFF
 OPTIONS_DEFAULT=JASPER JPEG PNG TIFF
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -39,6 +39,7 @@ SHEBANG_FILES=	${WRKSRC}/${CONFIGURE_SCRIPT} ${WRKSRC}/chkver
 
 GLIB_SCHEMAS=	org.yorba.shotwell.gschema.xml org.yorba.shotwell-extras.gschema.xml
 
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -E \
 		-e 's|share/shotwell|${DATADIR_REL}|g' \

@@ -34,6 +34,7 @@ KSNAPSHOT_DESC=		Screen capture program
 OKULAR_DESC=		Universal document viewer
 SANE_DESC=		Plugin for scanning on KDE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGPHOTO}

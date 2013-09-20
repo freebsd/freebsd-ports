@@ -38,6 +38,7 @@ MAN1=		medcon.1 xmedcon-config.1
 MAN3=		medcon.3
 MAN4=		m-acr.4 m-anlz.4 m-ecat.4 m-gif.4 m-intf.4 m-inw.4
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

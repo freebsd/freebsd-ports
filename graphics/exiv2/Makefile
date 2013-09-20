@@ -1,9 +1,5 @@
-# New ports collection makefile for:	exiv2
-# Date created:		2004-09-24
-# Whom:			Michael Johnson <ahze@ahze.net>
-#
+# Created by: Michael Johnson <ahze@ahze.net>
 # $FreeBSD$
-#
 
 PORTNAME=	exiv2
 PORTVERSION=	0.23
@@ -25,6 +21,7 @@ ALLTARGET=	all
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/src/Makefile

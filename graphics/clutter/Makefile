@@ -29,6 +29,7 @@ CONFIGURE_ARGS=	--with-x --enable-conformance=no
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|G_CONST_RETURN|const|g' \
 		${WRKSRC}/clutter/cally/*.c \

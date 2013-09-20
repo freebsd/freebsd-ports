@@ -1,10 +1,6 @@
-# New ports collection makefile for:	py-clutter-gtk
-# Date created:		04 Sep 2009
-# Whom:			Koop Mast <kwm@FreeBSD.org>
-#
+# Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/graphics/py-clutter-gtk/Makefile,v 1.3 2010/02/15 10:36:26 kwm Exp $
-#
 
 PORTNAME=	clutter
 PORTVERSION=	0.10.0
@@ -34,4 +30,5 @@ CONFIGURE_ARGS=	--disable-docs
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -40,6 +40,7 @@ post-patch: .SILENT
 		${WRKSRC}/build/tibs/compiler/gcc.mak
 	${REINPLACE_CMD} -e '/GROUPS/s| DOCS||' ${WRKSRC}/build/tibs/rules.mak
 
+NO_STAGE=	yes
 post-install:
 	${LN} -sf lib${PORTNAME}.so \
 		${PREFIX}/lib/lib${PORTNAME}.so.${LIBVERSION}

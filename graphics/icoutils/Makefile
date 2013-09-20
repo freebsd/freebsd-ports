@@ -29,6 +29,7 @@ MAN1=		icotool.1 wrestool.1
 PLIST_FILES=	bin/icotool \
 		bin/wrestool
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRESSCRIPTS}

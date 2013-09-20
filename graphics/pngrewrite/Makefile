@@ -18,6 +18,7 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/pngrewrite
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
 		-o ${WRKSRC}/pngrewrite ${WRKSRC}/pngrewrite.c ${WRKSRC}/libpngrewrite.c -lpng -lz -lm

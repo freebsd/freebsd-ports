@@ -41,4 +41,5 @@ MAN3=		volpack-BruteForce.3 volpack-Callback.3 \
 		volpack-VoxelField.3 volpack-VoxelSize.3 volpack-Window.3 \
 		volpack-WindowPHIGS.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

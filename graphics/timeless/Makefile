@@ -1,9 +1,5 @@
-# New ports collection makefile for:   timeless
-# Date created:        5 August 2006
-# Whom:                Jeff Molofee
-#
+# Created by: Jeff Molofee
 # $FreeBSD$
-#
 
 PORTNAME=	timeless
 PORTVERSION=	1.0
@@ -20,4 +16,5 @@ USE_SDL=	sdl mixer
 PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/time.s3m
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

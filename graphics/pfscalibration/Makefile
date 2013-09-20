@@ -28,4 +28,5 @@ MAN1=		jpeg2hdrgen.1 \
 SHEBANG_FILES=	src/dcraw2hdrgen src/jpeg2hdrgen
 bash_CMD=	${SH}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

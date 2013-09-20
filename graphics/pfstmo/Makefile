@@ -29,6 +29,7 @@ MAN1=		pfstmo_pattanaik00.1 \
 		pfstmo_mantiuk06.1 \
 		pfstmo_fattal02.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FFTW3F)

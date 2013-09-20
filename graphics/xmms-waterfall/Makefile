@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	lib/xmms/Visualization/libwaterfall.la \
 		lib/xmms/Visualization/libwaterfall.so
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2|${CFLAGS}|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig

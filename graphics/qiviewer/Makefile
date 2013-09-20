@@ -31,6 +31,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/src
 OPTIONS_DEFINE=	WEBP
 WEBP_DESC=	Support for WebP image format (experimental)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWEBP}

@@ -36,6 +36,7 @@ OPTIONS_DEFINE=	GHOSTSCRIPT I18N DOCS
 OPTIONS_DEFAULT=	GHOSTSCRIPT I18N
 I18N_DESC=	I18N support and Japanese docs
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	icontact
-# Date created:			Apr 16, 2001
-# Whom:				Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	icontact
 PORTVERSION=	1.5
@@ -19,6 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/ppmmake:${PORTSDIR}/graphics/netpbm \
 
 MAN1=		icontact.1 xvtoppm.1
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} "s|CC=cc|CC=${CC}|g; s|CFLAGS=-O|CFLAGS=${CFLAGS}|g" \
 		${WRKSRC}/Makefile

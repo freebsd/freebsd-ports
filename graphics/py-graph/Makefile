@@ -19,6 +19,7 @@ USE_PYTHON=	yes
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${DO_NADA}
 

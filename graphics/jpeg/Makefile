@@ -33,6 +33,7 @@ CONFIGURE_ARGS+=	--enable-maxmem=${J_MAXMEM}
 
 MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

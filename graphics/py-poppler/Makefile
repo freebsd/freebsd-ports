@@ -20,4 +20,5 @@ GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
 USE_GNOME=	atk pygtk2
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

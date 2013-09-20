@@ -23,6 +23,7 @@ MAN3=		SWF::BinStream.3 SWF::BinStream::Codec.3 \
 		SWF::BinStream::Codec::Zlib.3 SWF::BinStream::File.3 \
 		SWF::Element.3 SWF::File.3 SWF::Parser.3
 
+NO_STAGE=	yes
 post-configure:
 	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
 

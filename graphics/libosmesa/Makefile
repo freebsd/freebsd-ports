@@ -37,6 +37,7 @@ MAKE_JOBS_UNSAFE=
 
 WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (empty(CC:T:Mgcc4*) && empty(CC:T:Mclang*)) || (empty(CXX:T:Mg??4*) && empty(CXX:T:Mclang++*))

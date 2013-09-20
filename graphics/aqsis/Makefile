@@ -29,4 +29,5 @@ PLIST_SUB+=	LIBVERS=${PORTVERSION:R}
 
 INSTALLS_ICONS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

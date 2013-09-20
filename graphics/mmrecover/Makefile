@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mmrecover
-# Date created:		2009-08-16
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mmrecover
 PORTVERSION=	1.0
@@ -17,4 +13,5 @@ PLIST_FILES=	bin/mmrecover
 MAN1=		mmrecover.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

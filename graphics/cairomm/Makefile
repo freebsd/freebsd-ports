@@ -28,6 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--disable-documentation
 
 .else
+NO_STAGE=	yes
 post-configure:
 	@${TOUCH} -f ${WRKSRC}/docs/reference/html/index.html
 .endif

@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 PORTDOCS=	README changes.txt
 PLIST_FILES=	bin/psmdel bin/psmdir bin/psmget bin/psmsho
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC=|#CC=|g ; \
 		 s|-Wall -pedantic|$$(CFLAGS)|g' ${WRKSRC}/Makefile

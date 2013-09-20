@@ -32,6 +32,7 @@ MAN1=		biof.1 busyspheres.1 colorfire.1 cyclone.1 drempels.1 \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lXext
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFREEALUT}

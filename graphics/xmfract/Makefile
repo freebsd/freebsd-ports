@@ -19,6 +19,7 @@ ACLOCAL_ARGS=	# none
 CONFIGURE_ARGS=	--with-editres \
 		--with-motif="motif_includes=${LOCALBASE}/include motif_libraries=${LOCALBASE}/lib"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"

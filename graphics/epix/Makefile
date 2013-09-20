@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--with-bash=${LOCALBASE}/bin/bash \
 MAN1=		elaps.1 epix.1 flix.1 laps.1
 INFO=		epix
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

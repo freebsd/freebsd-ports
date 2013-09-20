@@ -26,6 +26,7 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 PORTDOCS=	CHANGES NOTICE README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

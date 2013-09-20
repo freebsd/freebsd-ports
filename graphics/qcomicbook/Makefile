@@ -51,6 +51,7 @@ OPTIONS_DEFAULT=7ZIP ACE
 7ZIP_DESC=	7-Zip (.cb7) comic book archives support
 ACE_DESC=	ACE (.cba) comic book archives support
 
+NO_STAGE=	yes
 post-patch:
 # fix man install directory
 	@${REINPLACE_CMD} -E \

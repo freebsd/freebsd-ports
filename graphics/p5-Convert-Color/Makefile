@@ -27,4 +27,5 @@ MAN3=	Convert::Color.3 \
 	Convert::Color::VGA.3 \
 	Convert::Color::X11.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

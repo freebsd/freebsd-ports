@@ -25,6 +25,7 @@ MAN1=		qvalldel.1 qvplay.1 qvrec.1
 PORTDOCS=	FAQ.txt HISTORY PROTOCOL.eng PROTOCOL.txt \
 		README README.FreeBSD README.eng
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -41,6 +41,7 @@ PLIST_FILES=	bin/bmeps \
 PLIST_DIRS=	%%DATADIR%%/de \
 		%%DATADIR%%
 
+NO_STAGE=	yes
 post-build:
 	@(cd ${WRKSRC} && ./stc --/log/stderr/level=error \
 		--log/stdout/level=none --/log/file/keep=none \

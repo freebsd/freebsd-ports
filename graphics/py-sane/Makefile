@@ -1,9 +1,5 @@
-# New ports collection makefile for:    py-sane
-# Date created:         5 August 2011
-# Whom:                 buganini@gmail.com
-#
+# Created by: buganini@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	sane
 PORTVERSION=	2.0
@@ -25,6 +21,7 @@ USE_PYDISTUTILS=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Sane
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/setup.py
 

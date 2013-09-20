@@ -17,6 +17,7 @@ USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto:both
 
 SUB_FILES=	pkg-install pkg-deinstall
 
+NO_STAGE=	yes
 do-install:
 	${RM} -f ${WRKSRC}/include/GL/glu*.h
 	cd ${WRKSRC}/src/mesa; ${GMAKE} install-libgl

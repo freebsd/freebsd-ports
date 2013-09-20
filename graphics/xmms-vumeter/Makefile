@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 
 DATADIR=	${PREFIX}/share/xmms/VU_Meter_skins
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/src/vumeter.h
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure

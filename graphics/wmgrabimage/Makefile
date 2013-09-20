@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmGrabImage
-# Date created:		4th November 1999
-# Whom:			Sergey Osokin aka oZZ <ozz@FreeBSD.org.ru>
-#
+# Created by: Sergey Osokin aka oZZ <ozz@FreeBSD.org.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	wmGrabImage
 PORTVERSION=	0.72
@@ -23,4 +19,5 @@ USE_XORG=	xpm
 
 MAN1=		wmGrabImage.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

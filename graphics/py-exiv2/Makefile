@@ -25,6 +25,7 @@ SCONS_BUILDENV=	${SCONS_ENV} CXXFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 SCONS_ARGS+=	prefix=${PREFIX} use_env=1
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|python_inc_path\]|python_inc_path,\
 	"${PREFIX}/include"\]|' -e 's|LIBS=libs|LIBS=libs,\

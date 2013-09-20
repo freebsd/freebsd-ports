@@ -37,6 +37,7 @@ DOC_FILES2=	MultiViewOpenEXR.pdf OpenEXRFileLayout.pdf \
 OPTIONS_DEFINE=		LARGE_STACK
 LARGE_STACK_DESC=	Enable sys-dependant large stack optimizations
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLARGE_STACK}

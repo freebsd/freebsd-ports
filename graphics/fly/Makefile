@@ -1,9 +1,5 @@
-# New ports collection makefile for: fly
-# Date created:         30 December 1997
-# Whom:                 Juergen Unger <j.unger@choin.net>
-#
+# Created by: Juergen Unger <j.unger@choin.net>
 # $FreeBSD$
-#
 
 PORTNAME=	fly
 PORTVERSION=	2.0.1
@@ -21,6 +17,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/fly
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${LOCALBASE}/include fly.c -o fly \
 		-L${LOCALBASE}/lib -lgd

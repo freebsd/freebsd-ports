@@ -34,6 +34,7 @@ USES+=		bison gmake pathfix
 DOCS=		HISTORY NEWS README TODO
 DOCS_UTIL=	README TIPS TODO swftoperl.html
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

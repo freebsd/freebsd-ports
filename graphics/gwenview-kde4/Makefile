@@ -24,6 +24,7 @@ USE_QT4=	corelib gui opengl qmake_build moc_build uic_build rcc_build
 USE_XZ=		yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # mkdtemp() is not defined in stdlib.h in FreeBSD 7.

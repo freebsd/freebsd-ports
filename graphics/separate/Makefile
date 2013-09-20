@@ -35,6 +35,7 @@ PORTEXAMPLES=	qproof.scm qexport.scm
 
 MAKE_ENV+=	TARGETS="${BIN_TARGETS}"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

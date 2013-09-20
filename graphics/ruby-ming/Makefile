@@ -1,7 +1,4 @@
-# New ports collection makefile for:	Ruby/Ming
-# Date created:		16 Oct 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
 
 PORTNAME=	ming
@@ -29,6 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-ruby
 
 DOCS=	ChangeLog INSTALL LGPL NEWS README TODO
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}

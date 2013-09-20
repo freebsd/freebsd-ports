@@ -21,6 +21,7 @@ USE_AUTOTOOLS=	libtool
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 test check:	build

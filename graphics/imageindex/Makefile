@@ -26,6 +26,7 @@ PORTDOCS=	README
 
 MAN1=	imageindex.1
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|share/man|man| ;' ${WRKSRC}/Makefile
 

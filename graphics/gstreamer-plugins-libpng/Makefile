@@ -1,7 +1,4 @@
-# New ports collection makefile for:	gstreamer-plugins-libpng
-# Date created:			3 Oct 2004
-# Whom:				Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/graphics/gstreamer-plugins-libpng/Makefile,v 1.5 2008/03/19 14:05:34 ahze Exp $
 
@@ -14,4 +11,5 @@ GST_PLUGIN=	libpng
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

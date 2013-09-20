@@ -1,10 +1,6 @@
-# New ports collection makefile for:	imlib
-# Date created:		10 June 1997
-# Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-#
+# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 # $FreeBSD$
 #    $MCom: ports/graphics/imlib/Makefile,v 1.2 2006/09/10 00:51:11 mezz Exp $
-#
 
 PORTNAME=	imlib
 PORTVERSION=	1.9.15
@@ -33,6 +29,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 
 MAN1=		imlib-config.1 imlib_config.1
 
+NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e "s|10:15:9|5:0:0|" ${WRKSRC}/*/Makefile.in
 	@${REINPLACE_CMD} -e "s|glib-config|${GLIB_CONFIG}|" ${WRKSRC}/configure

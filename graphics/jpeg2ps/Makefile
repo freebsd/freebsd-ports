@@ -19,6 +19,7 @@ MAKE_ARGS=	LDADD="${LDADD}"
 MAN1=		jpeg2ps.1
 PLIST_FILES=	bin/jpeg2ps
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

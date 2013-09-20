@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pysvg
-# Date created:				2009-08-26
-# Whom:					Olivier Duchateau <duchateau.olivier@gmail.com>
-#
+# Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pysvg
 PORTVERSION=	0.2.1
@@ -19,4 +15,5 @@ USE_ZIP=	yes
 
 PLIST_SUB=	PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

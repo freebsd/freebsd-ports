@@ -13,6 +13,7 @@ SLAVEPORT=	glib
 PLIST=	${.CURDIR}/pkg-plist
 MAKE_ENV+=	GI_SCANNER_DISABLE_CACHE=yes
 
+NO_STAGE=	yes
 pre-build:
 	@cd ${WRKSRC}/poppler && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} libpoppler-cairo.la

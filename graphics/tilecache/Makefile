@@ -1,9 +1,5 @@
-# New ports collection makefile for:  tilecache
-# Date created:        2011-10-18
-# Whom:                joris
-#
+# Created by: joris
 # $FreeBSD$
-#
 
 PORTNAME=	tilecache
 PORTVERSION=	2.11
@@ -24,6 +20,7 @@ PYDISTUTILS_PKGNAME=	TileCache
 
 FILES_ETC=	TileCache/Service.py setup.py tilecache_install_config.py
 
+NO_STAGE=	yes
 post-patch:
 	@cd ${WRKSRC}; \
 	${REINPLACE_CMD} -e 's|/etc|${ETCDIR}|' ${FILES_ETC};

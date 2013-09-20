@@ -24,6 +24,7 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/ltconfig
 

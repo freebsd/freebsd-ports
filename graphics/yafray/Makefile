@@ -1,9 +1,5 @@
-# New ports collection makefile for:	YafRay
-# Date created:				18 May 2003
-# Whom:					David Yeske <dyeske@gmail.com>
-#
+# Created by: David Yeske <dyeske@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	yafray
 PORTVERSION=	0.0.9
@@ -22,6 +18,7 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 pre-patch:
 	@${MV} ${WRKSRC}/linux-settings.py ${WRKSRC}/freebsd-settings.py
 

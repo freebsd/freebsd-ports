@@ -26,4 +26,5 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-Wno-long-long
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

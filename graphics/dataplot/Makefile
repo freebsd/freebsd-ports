@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dataplot
-# Date created:		20 July 2003
-# Whom:			Pedro F. Giffuni <pfgshield-freebsd@yahoo.com>
-#
+# Created by: Pedro F. Giffuni <pfgshield-freebsd@yahoo.com>
 # $FreeBSD$
-#
 
 PORTNAME=	dataplot
 PORTVERSION=	20090821
@@ -30,6 +26,7 @@ USE_XORG=	x11 xi
 NO_WRKSUBDIR=	yes
 MAXOBV?=	400000	# Change if you need more observations/variable
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ((${ARCH}=="amd64") || (${ARCH}=="sparc64") || (${ARCH}=="ia64"))

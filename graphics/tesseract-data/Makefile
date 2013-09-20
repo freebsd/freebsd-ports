@@ -48,6 +48,7 @@ DATADIR=	${PREFIX}/share/tessdata
 PORTDATA=	${TESSERACT_LANGS:O:u:S|$|.traineddata|}
 .endif
 
+NO_STAGE=	yes
 pre-fetch:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "The choice of language data to be installed may"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:		jpg2pdf
-# Date created:					13 January 2009
-# Whom:						luigi@freebsd.org
-#
+# Created by: luigi@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	jpg2pdf
 PORTVERSION=	20090113
@@ -20,6 +16,7 @@ PLIST_FILES=	bin/jpg2pdf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC} ; ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c )
 

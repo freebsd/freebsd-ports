@@ -16,4 +16,5 @@ USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 MAN1=		xtexcad.1
 PLIST_FILES=	bin/xtexcad lib/X11/app-defaults/XTeXcad
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

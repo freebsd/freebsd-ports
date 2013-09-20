@@ -1,9 +1,5 @@
-# New ports collection makefile for:	processing
-# Date created:				20 June 2008
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	processing
 PORTVERSION=	1.5.1
@@ -26,6 +22,7 @@ SUB_FILES=	processing
 
 WRKSRC=         ${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 post-extract:
 	${RM} -rf ${WRKSRC}/java
 	${MV} ${WRKSRC}/processing ${WRKSRC}/start-processing

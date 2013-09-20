@@ -23,6 +23,7 @@ SSE2_DESC=	Enable SSE2 optimization
 
 STRIP_FILES=	bin/fraqtive
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MSSE2}

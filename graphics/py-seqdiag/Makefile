@@ -27,6 +27,7 @@ MAN1=	${PORTNAME}.1
 PORTDOCS=	README.txt
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

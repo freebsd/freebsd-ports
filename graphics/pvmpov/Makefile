@@ -33,6 +33,7 @@ PORTDOCS=	*
 PLIST_FILES=	bin/x-pvmpov \
 		lib/pvm/bin/FREEBSD/x-pvmpov
 
+NO_STAGE=	yes
 pre-configure:
 		@ (cd ${WRKDIRPREFIX}${.CURDIR}/../../graphics/povray31/work && \
 			 ${TAR} -c -f - povray31 ) \

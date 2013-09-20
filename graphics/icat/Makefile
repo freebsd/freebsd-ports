@@ -25,6 +25,7 @@ PLIST_FILES=	bin/icat
 
 CONFLICTS=	sleuthkit-[0-9]*
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 

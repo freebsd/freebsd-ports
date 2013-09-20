@@ -21,4 +21,5 @@ MAN3=		Geo::GML.3 Geo::GML::Util.3 Geo::GML::GeoPoint.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

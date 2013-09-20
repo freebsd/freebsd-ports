@@ -16,4 +16,5 @@ GNU_CONFIGURE=	yes
 USE_EFL=	evas ecore edje elementary
 USE_EFL_ECORE=	file
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -38,6 +38,7 @@ USE_XZ=		yes
 USE_PERL5=	run build patch
 WANT_GNOME=	yes
 USE_AUTOTOOLS=	libltdl
+NO_STAGE=	yes
 # For some reason, using our libtool breaks the build into pieces:
 #USE_AUTOTOOLS+=	libtool
 GNU_CONFIGURE=	yes

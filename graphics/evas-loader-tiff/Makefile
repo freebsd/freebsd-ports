@@ -28,6 +28,7 @@ USE_LDCONFIG=	yes
 MAKEDIRS=	${WRKSRC}/src/modules/loaders/tiff \
 		${WRKSRC}/src/modules/savers/tiff
 
+NO_STAGE=	yes
 .include "../evas-core/Makefile.inc"
 CONFIGURE_ARGS+=	--enable-image-loader-tiff
 

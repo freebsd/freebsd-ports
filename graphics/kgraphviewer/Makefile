@@ -14,6 +14,7 @@ COMMENT=	GraphViz dot graph viewer for KDE
 
 LIB_DEPENDS=	gvc:${PORTSDIR}/graphics/graphviz
 
+NO_STAGE=	yes
 # Several problems at once here:
 # - The port does not include graphviz's include directory, assuming it is
 #   always in the compiler's default path (ie. /usr/include).

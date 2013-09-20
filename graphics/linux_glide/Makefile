@@ -1,10 +1,5 @@
-# New ports collection makefile for:    linux_glide
-# Date created:         Oct, 8, 1998
-# Whom:                 cracauer@cons.org "Martin Cracauer"
-#
+# Created by: cracauer@cons.org "Martin Cracauer"
 # $FreeBSD$
-#
-#
 
 PORTNAME=	glide
 PORTVERSION=	2.4
@@ -25,6 +20,7 @@ USE_LINUX_PREFIX=yes
 USE_LINUX=	yes
 WRKSRC=		${WRKDIR}/Glide2.4
 
+NO_STAGE=	yes
 do-build:
 	@zcat ${WRKSRC}/dist.tar.gz | \
 		(cd ${WRKSRC}; tar fx - lib include bin/test00)

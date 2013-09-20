@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-graphviz
-# Date created:		25 December 2001
-# Whom:			Hye-Shik Chang <perky@fallin.lv>
-#
+# Created by: Hye-Shik Chang <perky@fallin.lv>
 # $FreeBSD$
 
 PORTNAME=	graphviz
@@ -25,6 +22,7 @@ PYDISTUTILS_PKGNAME=	pygraphviz
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+; \
 		s+^docdirbase.*=.*+docdirbase = "${DOCSDIR:S/${PREFIX}\///}"+' ${WRKSRC}/setup.py

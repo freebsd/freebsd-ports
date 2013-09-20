@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mingplot
-# Date created:				14 Nov 2003
-# Whom:					UMENO Takashi <umeno@rr.iij4u.or.jp>
-#
+# Created by: UMENO Takashi <umeno@rr.iij4u.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	mingplot
 PORTVERSION=	0.4
@@ -19,4 +15,5 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/ming/mingc.so:${PORTSDIR}/graphics/ruby-ming
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

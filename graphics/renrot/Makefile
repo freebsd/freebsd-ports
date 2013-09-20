@@ -23,6 +23,7 @@ IMAGEMAGICK_DESC=	Image::Magick Perl module support
 MAN1=		${PORTNAME}.1
 PORTDOCS=	AUTHORS README README.russian ChangeLog NEWS TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}

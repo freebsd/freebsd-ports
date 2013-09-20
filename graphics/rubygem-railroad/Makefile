@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-railroad
-# Date created:				17 April 2007
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
 
 PORTNAME=	railroad
@@ -18,4 +15,5 @@ RUBYGEM_AUTOPLIST=	YES
 
 PLIST_FILES=	bin/railroad
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

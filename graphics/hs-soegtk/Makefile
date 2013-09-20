@@ -13,5 +13,6 @@ LICENSE=	LGPL21
 USE_CABAL=	cairo>=0.12 gtk>=0.11 mtl stm>=2
 USE_GNOME=	gtk20
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

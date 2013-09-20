@@ -12,6 +12,7 @@ MASTERDIR=	${.CURDIR}/../../graphics/poppler
 SLAVEPORT=	qt4
 PLIST=		${.CURDIR}/pkg-plist
 
+NO_STAGE=	yes
 pre-build:
 	cd ${WRKSRC}/poppler && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} libpoppler-arthur.la

@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
 OPTIONS_DEFINE=	GNOME
 OPTIONS_DEFAULT=	GNOME
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOME}

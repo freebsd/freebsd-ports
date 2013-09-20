@@ -67,6 +67,7 @@ HELPBROWSER_DESC=	Internal help browser
 
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(GIMP_SLAVE)

@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	IMLIB2
 IMLIB2_DESC=	Install imlib graphic library
 OPTIONS_DEFAULT=	IMLIB2
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -1,5 +1,4 @@
 # $FreeBSD$
-#
 
 PORTNAME=	electrix
 PORTVERSION=	0.2.0
@@ -26,6 +25,7 @@ OPTIONS_DEFAULT=	DBUS PDF
 PDF_DESC=	Portable Document Format Support
 PS_DESC=	PostScript Support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBUS}

@@ -42,6 +42,7 @@ INFO=		enfuse enblend
 MAN1=		enblend.1 enfuse.1
 PLIST_FILES=	bin/enblend bin/enfuse
 
+NO_STAGE=	yes
 post-install:
 		${INSTALL_DATA} ${WRKSRC}/doc/*.info ${PREFIX}/${INFO_PATH}
 

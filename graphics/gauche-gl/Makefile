@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Gauche-gl
-# Date created:				16 December 2002
-# Whom:					Kimura Fuyuki <fuyuki@hadaly.org>
-#
+# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gl
 PORTVERSION=	0.5.1
@@ -33,6 +29,7 @@ PLIST_SUB=	TARGET="${CONFIGURE_TARGET}"
 INFO=		gauche-gl-refe gauche-gl-refj
 .endif
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}/src; ${MAKE} ${INSTALL_TARGET}
 	cd ${WRKSRC}/lib; ${MAKE} ${INSTALL_TARGET}

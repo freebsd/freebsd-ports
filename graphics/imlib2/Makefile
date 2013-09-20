@@ -25,6 +25,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	JPEG PNG TIFF GIF ID3 X11
 OPTIONS_DEFAULT=	JPEG PNG TIFF GIF ID3 X11
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386" && !empty(MACHINE_CPU:Mmmx)

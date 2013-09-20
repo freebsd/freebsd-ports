@@ -23,6 +23,7 @@ USES=		cmake gettext
 APP_VER=	1.1.3
 EXTRA_VER=	4.3.1
 
+NO_STAGE=	yes
 post-patch:
 #Fix build with kdelibs>=4.5.0
 	${REINPLACE_CMD} -e 's,V4.1.2-Based,V4.2-Based,g' \

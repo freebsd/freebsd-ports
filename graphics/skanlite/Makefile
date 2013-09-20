@@ -19,4 +19,5 @@ USES=		cmake
 # Fix build with no-default PREFIX
 CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH=${KDE4_PREFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

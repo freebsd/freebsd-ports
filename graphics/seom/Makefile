@@ -1,9 +1,5 @@
-# New ports collection makefile for:	seom
-# Date created:		12th January 2010
-# Whom:			bms
-#
+# Created by: bms
 # $FreeBSD$
-#
 
 PORTNAME=	seom
 PORTVERSION=	2010011201
@@ -25,6 +21,7 @@ USE_XORG=	x11 xv
 USE_GL=		yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 ONLY_FOR_ARCHS=	i386 amd64

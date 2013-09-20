@@ -1,9 +1,4 @@
-# New ports collection makefile for:	klatexformula
-# Date created:		2009-11-18
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	klatexformula
 PORTVERSION=	3.1.2
@@ -26,6 +21,7 @@ QMAKE_ARGS=	QMAKE=${QMAKE} INSTALLPREFIX=${PREFIX} \
 
 STRIP_FILES=	bin/klatexformula
 
+NO_STAGE=	yes
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS}
 

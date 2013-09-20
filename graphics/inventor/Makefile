@@ -144,6 +144,7 @@ MAN3=	SoAction.3iv SoCallbackAction.3iv SoGLRenderAction.3iv \
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ;\
 			      s|%%CXX%%|${CXX}|g ; \

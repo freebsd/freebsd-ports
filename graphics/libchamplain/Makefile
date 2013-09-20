@@ -30,4 +30,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION=0.8
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

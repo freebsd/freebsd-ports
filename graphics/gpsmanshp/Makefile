@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gpsmanshp
-# Date created:		7 July 2004
-# Whom:			John Hay
-#
+# Created by: John Hay
 # $FreeBSD$
-#
 
 PORTNAME=	gpsmanshp
 PORTVERSION=	1.2
@@ -23,6 +19,7 @@ LIB_DEPENDS=	shp.1:${PORTSDIR}/devel/shapelib \
 TCLVERSION?=	8.4
 PLIST_SUB=	TCLVERSION=${TCLVERSION} PORTVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

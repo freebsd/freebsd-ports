@@ -38,6 +38,7 @@ INFO=		geomview
 # Allow user to specify "make install MAPLE_LIB=foo" as geomview wants
 MAKE_ENV=	CPU=FreeBSD MAPLE_LIB=${MAPLE_LIB}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMOTION_AVG}

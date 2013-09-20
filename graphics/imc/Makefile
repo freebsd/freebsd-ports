@@ -34,6 +34,7 @@ DOC_FILES2=	*.html *.ref *.txt
 
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

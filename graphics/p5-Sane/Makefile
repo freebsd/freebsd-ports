@@ -1,4 +1,3 @@
-# Ports collection makefile for:	Sane
 # Created by: chinsan
 # $FreeBSD$
 
@@ -20,6 +19,7 @@ USE_PERL5=	configure
 
 MAN3=		Sane.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^my $$inc = / s|-I\.|& -I${LOCALBASE}/include|' ${WRKSRC}/Makefile.PL
 

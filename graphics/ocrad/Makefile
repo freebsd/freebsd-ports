@@ -24,6 +24,7 @@ MAN1=		ocrad.1
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

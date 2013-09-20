@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jbig
-# Date created:		19 November 1996
-# Whom:			mi
-#
+# Created by: mi
 # $FreeBSD$
-#
 
 PORTNAME=	jbigkit
 PORTVERSION=	1.6
@@ -20,6 +16,7 @@ MAN1=	jbgtopbm.1 pbmtojbg.1
 
 DOCSDIR?=	${PREFIX}/share/doc/jbig
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

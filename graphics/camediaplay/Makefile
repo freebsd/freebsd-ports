@@ -1,9 +1,5 @@
-# New ports collection makefile for:	camediaplay
-# Date created:		2 May 1997
-# Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
-#
+# Created by: Jun-ichiro itojun Itoh <itojun@itojun.org>
 # $FreeBSD$
-#
 
 PORTNAME=	camediaplay
 PORTVERSION=	20010211
@@ -21,6 +17,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPTFLAG=""
 MAN1=		camediaplay.1
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/camediaplay

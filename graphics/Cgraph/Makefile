@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cgraph
-# Date created:		25 September 1998
-# Whom:			Anton Berezin <tobez@plab.ku.dk>
-#
+# Created by: Anton Berezin <tobez@plab.ku.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	Cgraph
 PORTVERSION=	2.04
@@ -21,6 +17,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME:L}
 
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 

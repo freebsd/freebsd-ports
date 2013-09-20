@@ -1,9 +1,5 @@
-# New ports collection makefile for:	webp
-# Date created:		1 October 2010
-# Whom:			johans
-#
+# Created by: johans
 # $FreeBSD$
-#
 
 PORTNAME=	webp
 PORTVERSION=	0.3.1
@@ -24,4 +20,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 MAN1=		cwebp.1 dwebp.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

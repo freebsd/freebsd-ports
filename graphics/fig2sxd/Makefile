@@ -17,6 +17,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAN1=		fig2sxd.1
 PLIST_FILES=	bin/fig2sxd
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^CXX/d; s|^\(all:\).*|\1 $$(TARGET1) fig2sxd.1|' \

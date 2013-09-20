@@ -21,4 +21,5 @@ USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
 WRKSRC=		${WRKDIR}/CameraKit
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

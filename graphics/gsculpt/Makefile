@@ -30,6 +30,7 @@ USE_LDCONFIG=	${PREFIX}/lib/gSculpt
 
 DATADIR=	${PREFIX}/share/gSculpt
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

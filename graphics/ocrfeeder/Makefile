@@ -30,6 +30,7 @@ USE_GNOME=	pygtk2 pygnomeextras
 USES=		gettext gmake pkgconfig
 USE_GHOSTSCRIPT=yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

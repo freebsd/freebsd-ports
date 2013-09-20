@@ -22,6 +22,7 @@ USES=		gettext gmake pkgconfig
 MAN1=		pinta.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-install:
 	-@update-desktop-database
 

@@ -33,6 +33,7 @@ PLIST_SUB+=	XAOSDIR="share/XaoS"
 
 DESKTOP_ENTRIES=	"XaoS" "${COMMENT}" "" "xaos" "" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPTHREAD}

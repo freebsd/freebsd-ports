@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 
 BINSRC=		${WRKSRC}/src/bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-build:
 	${MAKE} -C ${BINSRC}
 

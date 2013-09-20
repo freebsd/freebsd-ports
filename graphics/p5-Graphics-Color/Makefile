@@ -1,4 +1,3 @@
-# Ports collection makefile for:	p5-Graphics-Color
 # Created by: chinsan
 # $FreeBSD$
 
@@ -35,4 +34,5 @@ MAN3=		Graphics::Color.3 \
 		Graphics::Color::YIQ.3 \
 		Graphics::Color::YUV.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

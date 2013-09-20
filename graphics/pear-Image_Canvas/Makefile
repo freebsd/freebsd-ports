@@ -19,6 +19,7 @@ PEAR_AUTOINSTALL=	yes
 
 LATEST_LINK=	pear-Image_Canvas
 
+NO_STAGE=	yes
 post-patch:
 .for file in ${FILES}
 	@${REINPLACE_CMD} -e "s|@package_version@|${DISTVERSION}|" ${WRKSRC}/${file}

@@ -31,6 +31,7 @@ USE_XORG=	xinerama ice
 CONFIGURE_ARGS=	--with-gtk2
 CFLAGS+=	-DUSE_GTK2
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MSPLASH}

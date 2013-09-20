@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-imagick
-# Date created:			13 Apr 2007
-# Whom:				Andrey Slusar <anray@FreeBSD.org>
-#
+# Created by: Andrey Slusar <anray@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	imagick
 DISTVERSION=	3.1.0RC2
@@ -30,4 +26,5 @@ USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--with-imagick=${LOCALBASE}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,6 +23,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-extract:
 	@${LN} -sf ${PORTNAME}.man ${WRKSRC}/${PORTNAME}.6
 

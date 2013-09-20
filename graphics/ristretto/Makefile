@@ -25,4 +25,5 @@ INSTALLS_ICONS=	yes
 USE_XFCE=	configenv libmenu libutil xfconf
 USE_XORG=	x11
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
