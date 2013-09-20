@@ -22,6 +22,7 @@ GH_COMMIT=	c1f2eb6
 
 OPTIONS_DEFINE=	NLS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

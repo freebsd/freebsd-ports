@@ -1,9 +1,5 @@
-# New ports collection makefile for:   scv
-# Date created:        16 December 2006
-# Whom:                Peter Johnson
-#
+# Created by: Peter Johnson
 # $FreeBSD$
-#
 
 PORTNAME=	scv
 PORTVERSION=	1.0p2
@@ -29,6 +25,7 @@ CONFIGURE_WRKSRC=	${WRKSRC}/objdir
 BUILD_WRKSRC=	${WRKSRC}/objdir
 INSTALL_WRKSRC=	${WRKSRC}/objdir
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

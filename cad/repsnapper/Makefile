@@ -41,6 +41,7 @@ USE_AUTOTOOLS=	automake libtool
 USE_XORG=	ice pixman sm x11 xau xcb xcomposite xcursor xdamage xdmcp \
 		xext xfixes xi xinerama xmu xrandr xrender xt xxf86vm
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

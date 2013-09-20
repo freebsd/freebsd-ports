@@ -28,6 +28,7 @@ Z88_BINS=	z88f z88i1 z88i2 z88com z88d z88e z88g z88h z88n z88o	\
 		z88x z88v
 Z88_DATA=	z88.fcd z88.dyn *.dxf *.txt
 
+NO_STAGE=	yes
 post-patch:
 	@${CP} ${WRKSRC}/z88.fcd.linux ${WRKSRC}/z88.fcd
 	@${CP} ${WRKSRC}/z88.mk.kernel.gcc32 ${WRKSRC}/z88.kernel.mk

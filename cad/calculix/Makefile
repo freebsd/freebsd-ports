@@ -1,9 +1,5 @@
-# New ports collection makefile for:	CalculiX
-# Date created:		19 April 2003
-# Whom:			Pedro Giffuni
-#
+# Created by: Pedro Giffuni
 # $FreeBSD$
-#
 
 PORTNAME=	CalculiX
 PORTVERSION=	2.6.1
@@ -56,6 +52,7 @@ PSVIEWER?=	gv
 CCX_VER=	ccx_${PORTVERSION}
 CGX_VER=	cgx_2.6
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 

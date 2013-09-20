@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	pythoncad
-# Date created:			Nov 11, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	pythoncad
 PORTVERSION=	37
@@ -26,6 +21,7 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PythonCAD
 PYDISTUTILS_PKGVERSION=	DS1-R${PORTVERSION}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 		${WRKSRC}/PythonCAD/Generic/preferences.py \

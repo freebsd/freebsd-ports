@@ -14,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Graphical interface for Code_Aster (server side)
 
 #-----------------------------------------------------------------------
+NO_STAGE=	yes
 # You may define these options:
 #
 # - WITH_ZSH or WITH_BASH or WITH_KSH: select a shell among

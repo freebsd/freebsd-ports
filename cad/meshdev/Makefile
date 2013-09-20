@@ -1,9 +1,5 @@
-# New ports collection Makefile for:    meshdev
-# Date created:                         6 February 2012
-# Whom:                                 gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	meshdev
 PORTVERSION=	0.5
@@ -21,6 +17,7 @@ MAKEFILE=	Makefile.release.gcc
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME} ${PREFIX}/bin
 

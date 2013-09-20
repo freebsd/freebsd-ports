@@ -44,6 +44,7 @@ CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 		-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 BUILD_DEPENDS=	wxgtk2-2.8-config:${PORTSDIR}/x11-toolkits/wxgtk28 \

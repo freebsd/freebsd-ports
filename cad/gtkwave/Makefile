@@ -21,6 +21,7 @@ TCL_DESC=	Enable support for TCL/TK
 
 PORTDOCS=	gtkwave.odt
 
+NO_STAGE=	yes
 .include	<bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCL}

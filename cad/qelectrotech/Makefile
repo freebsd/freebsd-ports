@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qelectrotech
-# Date created:		2010-03-24
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qelectrotech
 PORTVERSION=	0.22
@@ -26,6 +22,7 @@ MAN1=		qelectrotech.1
 MANLANG=	"" es fr.ISO8859-1 fr.UTF-8 fr pt_PT
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 do-configure:
 	${MV} ${WRKSRC}/man/files/pt ${WRKSRC}/man/files/pt_PT
 	${REINPLACE_CMD} -e 's,/usr/local/,${PREFIX}/,g' \

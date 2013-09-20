@@ -26,6 +26,7 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 
 MAN1=		gerbv.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|desktop||g' ${WRKSRC}/Makefile.in
 

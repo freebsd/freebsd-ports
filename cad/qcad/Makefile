@@ -50,6 +50,7 @@ SHRDIR=		fonts libraries patterns plugins scripts ts
 QSCRIPTS=	bbox dwg2bmp dwg2pdf dwg2svg
 SUB_FILES=	${QSCRIPTS}
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"	\
 		${WRKSRC}/src/core/RSettings.cpp

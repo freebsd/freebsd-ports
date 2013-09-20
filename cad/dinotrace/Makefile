@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 INFO=		dinotrace
 PLIST_FILES=	bin/dinotrace
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEMACS}

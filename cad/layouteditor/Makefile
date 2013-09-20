@@ -20,6 +20,7 @@ USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/layout
 PLIST_FILES=	bin/layout
 
+NO_STAGE=	yes
 do-configure:
 	cd ${WRKSRC} && ${QMAKE} -makefile -spec ${QMAKESPEC}
 

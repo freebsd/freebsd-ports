@@ -1,9 +1,5 @@
-# New ports collection makefile for:   systemc
-# Date created:        15 December 2005
-# Whom:                Daniel Thiele
-#
+# Created by: Daniel Thiele
 # $FreeBSD$
-#
 
 PORTNAME=	systemc
 PORTVERSION=	2.2.0
@@ -24,6 +20,7 @@ CONFIGURE_WRKSRC=	${WRKSRC}/objdir
 BUILD_WRKSRC=	${WRKSRC}/objdir
 INSTALL_WRKSRC=	${WRKSRC}/objdir
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

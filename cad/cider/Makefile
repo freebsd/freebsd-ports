@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cider
-# Date created:		1999-12-12
-# Whom:			AMAKAWA Shuhei <amakawa@jp.FreeBSD.org>
-#
+# Created by: AMAKAWA Shuhei <amakawa@jp.FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cider
 PORTVERSION=	1.b1
@@ -24,6 +20,7 @@ MAN5=		mfbcap.5
 MLINKS=		spice.1 spice3.1
 USE_XORG=	xt xaw xmu
 
+NO_STAGE=	yes
 pre-patch:
 	@${CP} -f ${WRKSRC}/spice/common/lib/helpdir/spice.txt ${WRKSRC}/cider/common/lib/helpdir/spice.txt
 

@@ -172,6 +172,7 @@ MAN3=	addcapa.3 addchain.3 addht.3 addhtitem.3 addlocon.3 addlofig.3 \
 MAN5=	ap.5 catal.5 prol.5 vbe.5 vhdl.5 vst.5 al.5 spi.5 ctl.5 fsm.5 pat.5 \
 	lax.5 sxlib.5 vasy.5
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

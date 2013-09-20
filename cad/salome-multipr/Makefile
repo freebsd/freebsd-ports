@@ -1,7 +1,4 @@
-# New ports collection makefile for:   cad/salome-multipr
-# Date created:        20 May 2009
-# Whom:            Stas Timokhin <devel@stasyan.com>
-#
+# Created by: Stas Timokhin <devel@stasyan.com>
 # $FreeBSD$
 
 PORTREVISION=	6
@@ -13,4 +10,5 @@ PORTNAME=	salome
 PKGNAMESUFFIX=	-multipr
 SAL_MODULE_UPPER=	MULTIPR
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -29,6 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gnetlist.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e "s,^(DATADIR[[:space:]]*=[[:space:]]*)gEDA,\1geda," \

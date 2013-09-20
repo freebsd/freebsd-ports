@@ -32,6 +32,7 @@ PLIST_FILES=	bin/sweethome3d \
 
 DESKTOP_ENTRIES="Sweet Home 3D" "" "${PORTNAME}-icon" "${PORTNAME}" "" false
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/install/${JARNAME} ${JAVAJARDIR}/${JARNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/sweethome3d.sh ${PREFIX}/bin/sweethome3d

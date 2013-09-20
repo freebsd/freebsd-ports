@@ -24,6 +24,7 @@ PLIST_DIRS=	%%DATADIR%%
 
 DESKTOP_ENTRIES="Logisim" "${COMMENT}" "" "${PORTNAME}" "" false
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${WRKSRC}

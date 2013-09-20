@@ -43,6 +43,7 @@ OPTIONS_DEFINE=		OPTIMIZATION
 OPTIMIZATION_DESC=	Build with optimizations
 OPTIONS_DEFAULT=	OPTIMIZATION
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.man"
 .include <bsd.port.pre.mk>
 

@@ -1,9 +1,5 @@
-# Ports collection makefile for:  findhier
-# Date created:			  Sat, Apr 28, 2007
-# Whom:				  Hiroki Sato <hrs@FreeBSD.org>
-#
+# Created by: Hiroki Sato <hrs@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	findhier
 PORTVERSION=	1.14
@@ -19,6 +15,7 @@ PLIST_FILES=	bin/fh
 
 MAN1=		fh.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fh ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/fh.1 ${MAN1PREFIX}/man/man1

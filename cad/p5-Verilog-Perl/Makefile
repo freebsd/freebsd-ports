@@ -26,6 +26,7 @@ MAN3=	Verilog::EditFiles.3 Verilog::Netlist::Logger.3 \
 	Verilog::Netlist::ContAssign.3 Verilog::Netlist::ModPort.3 \
 	Verilog::Verilog-Perl.3 Verilog::Netlist::Interface.3 Verilog::Std.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

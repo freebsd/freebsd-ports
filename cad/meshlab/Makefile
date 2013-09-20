@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}/src
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
 	   ${WRKSRC}/common/pluginmanager.cpp

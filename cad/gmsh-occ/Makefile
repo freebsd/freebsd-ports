@@ -1,9 +1,5 @@
-# New ports collection makefile for:    gmsh-occ
-# Date created:                         31 December 2008
-# Whom:                                 Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gmsh
 CATEGORIES=	cad
@@ -16,4 +12,5 @@ MASTERDIR=	${.CURDIR}/../../cad/gmsh
 
 WITH_OCC=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -39,6 +39,7 @@ ICON_SIZES=	16x16 24x24 32x32 48x48 128x128 256x256
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

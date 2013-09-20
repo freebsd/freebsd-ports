@@ -42,6 +42,7 @@ GMSH_DESC=	Enable automatic 3D finite element mesh generator
 DESKTOP_ENTRIES="Impact" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}gui" "Graphics;3DGraphics;Education;" false
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGMSH}
