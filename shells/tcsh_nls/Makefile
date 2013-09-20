@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcsh_nls
-# Date created:		14 Feb 2006
-# Whom:			Hajimu UMEMOTO <ume@FreeBSD.org>
-#
+# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tcsh_nls
 PORTVERSION=	1.0
@@ -61,6 +57,7 @@ NLS_CATALOGS=	de_DE.ISO8859-1:de_AT.UTF-8 \
 		uk_UA.KOI8-U:uk_UA.ISO8859-5 \
 		uk_UA.KOI8-U:uk_UA.UTF-8 \
 
+NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 

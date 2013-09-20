@@ -18,6 +18,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 INFO=		esh
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|<readline.h>|<readline/readline.h>| ; \

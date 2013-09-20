@@ -22,6 +22,7 @@ LICENSE=	BSD
 GNU_CONFIGURE=	yes
 MAN1=		ksh.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 1000039

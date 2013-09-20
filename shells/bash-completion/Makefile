@@ -1,7 +1,5 @@
-# Created by:	kirk@strauser.com
-#
+# Created by: kirk@strauser.com
 # $FreeBSD$
-#
 
 PORTNAME=	bash-completion
 PORTVERSION=	2.1
@@ -29,6 +27,7 @@ SUB_FILES=	pkg-message
 SUB_LIST+=	RUNFILE=${DATADIR}/bash_completion.sh
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -51,6 +51,7 @@ MAN3=	Bundle::Zoidberg.3 \
 	Zoidberg::Utils::GetOpt.3 \
 	Zoidberg::Utils::Output.3
 
+NO_STAGE=	yes
 post-install:
 	@${ECHO_CMD} ${PREFIX}/bin/zoid >> /etc/shells
 

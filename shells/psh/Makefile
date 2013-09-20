@@ -84,6 +84,7 @@ MAN3=	Psh::Builtins::Alias.3 \
 	Psh::Strategy::Perlfunc_heavy.3 \
 	Psh::Strategy::Perlscript.3
 
+NO_STAGE=	yes
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 

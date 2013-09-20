@@ -18,6 +18,7 @@ MAN1=		fd2.1 goto.1 if.1 osh.1 sh6.1 glob6.1
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

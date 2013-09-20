@@ -1,9 +1,5 @@
-# New ports collection makefile for:   wapsh
-# Date created:        13 January 2001
-# Whom:                George Reid <greid@ukug.uk.freebsd.org>
-#
+# Created by: George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	wapsh
 PORTVERSION=	1.0.1
@@ -42,6 +38,7 @@ HTDOCS=		command.php command_html.inc command_wml.inc          \
 		login_html.php login_wml.php scroll_wml.php           \
 		shortcuts_wml.php index.html
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900007

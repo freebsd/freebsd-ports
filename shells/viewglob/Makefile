@@ -20,4 +20,5 @@ GNU_CONFIGURE=	yes
 
 MAN1=		vgd.1 vgseer.1 viewglob.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

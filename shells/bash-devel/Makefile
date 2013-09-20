@@ -33,6 +33,7 @@ HELP_DESC=		Enable builtin help
 
 USES=			bison
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMPLICITCD}

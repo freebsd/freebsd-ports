@@ -15,6 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=		mksh.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:

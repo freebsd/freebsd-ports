@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ch
-# Date created:				2 August 2006
-# Whom:					conrads@cox.net
-#
+# Created by: conrads@cox.net
 # $FreeBSD$
-#
 
 PORTNAME=	ch
 PORTVERSION=	7.0.0
@@ -27,6 +23,7 @@ MAN1=		installpkg.1 strconcat.1 strjoin.1. strputc.1 pkginstall.1 strgetc.1 gnup
 MAN1PREFIX=	${PREFIX}/${PORTNAME}/docs
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:
