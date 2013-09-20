@@ -20,4 +20,5 @@ MAN3=		ShipIt.3 ShipIt::Conf.3 ShipIt::ProjectType.3 \
 		ShipIt::VC.3 ShipIt::VC::Git.3 ShipIt::VC::Mercurial.3 \
 		ShipIt::VC::SVK.3 ShipIt::VC::SVN.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

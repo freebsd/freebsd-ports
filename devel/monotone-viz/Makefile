@@ -28,4 +28,5 @@ MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/monotone-viz
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

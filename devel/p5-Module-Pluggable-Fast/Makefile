@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	p5-Module-Pluggable-Fast
 # Created by: ijliao
 # $FreeBSD$
 
@@ -21,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		Module::Pluggable::Fast.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

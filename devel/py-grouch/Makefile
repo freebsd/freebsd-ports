@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-grouch
-# Date created:				6 September 2001
-# Whom:					Johann Visagie <wjv@FreeBSD.org>
-#
+# Created by: Johann Visagie <wjv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	grouch
 PORTVERSION=	0.4
@@ -20,6 +16,7 @@ USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Grouch
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}

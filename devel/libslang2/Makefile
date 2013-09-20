@@ -36,6 +36,7 @@ ONIG_DESC=	Oniguruma support
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPCRE}

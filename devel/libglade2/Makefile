@@ -36,6 +36,7 @@ PLIST_SUB=	XMLCATALOG="${LOCALBASE}/bin/xmlcatalog" \
 OPTIONS_DEFINE=	PYTHON
 OPTIONS_DEFAULT=PYTHON
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}

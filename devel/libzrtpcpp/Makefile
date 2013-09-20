@@ -23,6 +23,7 @@ CXXFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@cd ${WRKSRC}/src && \
 		${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e "s|<malloc.h>|<stdlib.h>|g" "{}" \; && \

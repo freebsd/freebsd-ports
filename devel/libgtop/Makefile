@@ -26,6 +26,7 @@ INFO=		libgtop2
 
 PKGMESSAGE=	${FILESDIR}/pkg-message
 
+NO_STAGE=	yes
 post-configure:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 

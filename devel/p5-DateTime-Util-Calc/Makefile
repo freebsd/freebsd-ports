@@ -22,6 +22,7 @@ MAN3=		DateTime::Util::Calc.3
 
 OPTIONS_DEFINE=	GMP
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGMP}

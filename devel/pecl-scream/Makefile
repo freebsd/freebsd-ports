@@ -1,8 +1,5 @@
-# Date created:			  2011-12-28
-# Whom:				  Volodymyr Kostyrko <c.kworr@gmail.com>
-#
+# Created by: Volodymyr Kostyrko <c.kworr@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	scream
 DISTVERSION=	0.1.0
@@ -23,4 +20,5 @@ USE_PHPEXT=	yes
 test: build
 	@(cd ${WRKSRC} && ${MAKE} test)
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

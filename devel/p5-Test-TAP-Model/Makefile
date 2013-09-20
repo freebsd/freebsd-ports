@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Test-TAP-Model
-# Date created:	   08 July 2007
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-TAP-Model
 PORTVERSION=	0.10
@@ -28,6 +24,7 @@ MAN3=		Test::TAP::Model.3 Test::TAP::Model::Consolidated.3 \
 		Test::TAP::Model::File::Consolidated.3 \
 		Test::TAP::Model::Subtest.3
 
+NO_STAGE=	yes
 post-patch:
 	${RM} ${WRKSRC}/example.pl
 

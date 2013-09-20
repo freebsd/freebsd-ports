@@ -30,6 +30,7 @@ USE_PERL5=	configure
 
 MAN3=	Config::JFDI.3
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -i '' '/Test::/d' ${WRKSRC}/Makefile.PL
 

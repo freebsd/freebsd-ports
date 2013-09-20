@@ -18,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		Date::ICal.3 Date::ICal::Duration.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

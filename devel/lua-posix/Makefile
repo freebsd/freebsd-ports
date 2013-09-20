@@ -1,9 +1,5 @@
-# New ports collection makefile for:   lua50-posix
-# Date created:        27 March 2006
-# Whom:                Andrew Turner <andrew+ports@fubar.geek.nz>
-#
+# Created by: Andrew Turner <andrew+ports@fubar.geek.nz>
 # $FreeBSD$
-#
 
 PORTNAME=	posix
 PORTVERSION=	5.0
@@ -21,6 +17,7 @@ WRKSRC=		${WRKDIR}/posix
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/posix.lua \
 		%%LUA_MODLIBDIR%%/lposix.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${USE_LUA} == 5.1

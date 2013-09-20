@@ -25,4 +25,5 @@ MAN3=		Test::Dependencies.3 \
 		Test::Dependencies::Heavy.3 \
 		Test::Dependencies::Light.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

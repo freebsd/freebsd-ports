@@ -21,6 +21,7 @@ MAN3=		Test::NoWarnings.3
 OPTIONS_DEFINE=	DEVEL_STACKTRACE
 DEVEL_STACKTRACE_DESC=	Stack trace support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEVEL_STACKTRACE}

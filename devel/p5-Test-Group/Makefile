@@ -22,4 +22,5 @@ MAN3=		Test::Group.3 \
 		Test::Group::Plan.3 \
 		Test::Group::Tester.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

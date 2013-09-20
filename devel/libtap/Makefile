@@ -18,6 +18,7 @@ USE_LDCONFIG=	yes
 
 MAN3=		tap.3
 
+NO_STAGE=	yes
 post-build:
 	@${CAT} ${PKGMESSAGE}
 

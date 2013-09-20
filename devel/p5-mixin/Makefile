@@ -18,4 +18,5 @@ USE_PERL5=	modbuild
 
 MAN3=		mixin.3 mixin::with.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

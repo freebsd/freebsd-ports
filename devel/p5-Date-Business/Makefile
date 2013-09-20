@@ -1,4 +1,3 @@
-# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
 PORTNAME=	Date-Business
 PORTVERSION=	1.2
@@ -14,4 +13,5 @@ USE_PERL5=	configure
 
 MAN3=	Date::Business.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

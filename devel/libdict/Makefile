@@ -17,6 +17,7 @@ USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-extract:
 .	for ___f in avl_insert.pdf empty.pdf treap_insert.pdf
 	@${CP} ${DISTDIR}/${___f} ${WRKSRC}/

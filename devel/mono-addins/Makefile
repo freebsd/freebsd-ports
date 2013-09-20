@@ -27,6 +27,7 @@ MAN1=		mautil.1
 
 PLIST_SUB+=	VER=0.6.0
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 

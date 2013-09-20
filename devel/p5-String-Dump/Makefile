@@ -19,4 +19,5 @@ USE_PERL5=	modbuild
 MAN1=	dumpstr.1
 MAN3=	String::Dump.3 String::Dump::Debugging.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

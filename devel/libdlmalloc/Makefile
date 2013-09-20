@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Doug Lea malloc library
-# Date created:		3 June 1995
-# Whom:			roberto
-#
+# Created by: roberto
 # $FreeBSD$
-#
 
 PORTNAME=	dlmalloc
 PORTVERSION=	2.8.6
@@ -17,6 +13,7 @@ COMMENT=	Small, fast malloc library by Doug Lea
 NO_WRKSUBDIR=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 .for f in ${DISTFILES}

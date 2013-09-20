@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-TurboJinja
-# Date created:		2007-02-14
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	TurboJinja
 PORTVERSION=	0.9.1
@@ -23,4 +19,5 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	py-pqueue
-# Date created:				24 October 2001
-# Whom:					Hye-Shik Chang <perky@fallin.lv>
-#
+# Created by: Hye-Shik Chang <perky@fallin.lv>
 # $FreeBSD$
-#
 
 PORTNAME=	pqueue
 PORTVERSION=	0.2
@@ -23,6 +19,7 @@ PYDISTUTILS_PKGVERSION=	0.0.0
 
 WRKSRC=		${WRKDIR}/PQueue
 
+NO_STAGE=	yes
 post-patch:
 	${CP} ${FILESDIR}/setup.py ${WRKSRC}
 

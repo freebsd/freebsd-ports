@@ -24,4 +24,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--with-html-dir="${PREFIX}/share/doc"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

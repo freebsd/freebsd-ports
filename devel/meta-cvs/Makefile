@@ -1,9 +1,5 @@
-# New ports collection makefile for:	meta-cvs
-# Date created:		13 February 2003
-# Whom:			johs
-#
+# Created by: johs
 # $FreeBSD$
-#
 
 PORTNAME=	meta-cvs
 PORTVERSION=	1.1.98
@@ -34,6 +30,7 @@ PORTDOCS=	Meta-CVS-PAPER \
 		QUICK-GUIDE \
 		SCRIPTING
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPDFDOC} && !defined(NOPORTDOCS)

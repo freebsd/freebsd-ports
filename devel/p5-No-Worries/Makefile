@@ -33,4 +33,5 @@ MAN3=	No::Worries.3 \
 	No::Worries::Syslog.3 \
 	No::Worries::Warn.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

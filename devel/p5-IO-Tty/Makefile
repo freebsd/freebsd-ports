@@ -17,4 +17,5 @@ MAN3=		IO::Pty.3 \
 		IO::Tty.3 \
 		IO::Tty::Constant.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

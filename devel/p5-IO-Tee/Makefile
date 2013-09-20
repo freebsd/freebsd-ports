@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-IO-Tee
-# Date created:		Sun Jan 18 07:27:41 CST 2004
-# Whom:					dcf@aracnet.com
-#
+# Created by: dcf@aracnet.com
 # $FreeBSD$
-#
 
 PORTNAME=	IO-Tee
 PORTVERSION=	0.64
@@ -20,4 +16,5 @@ USE_PERL5=	configure
 
 MAN3=		IO::Tee.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

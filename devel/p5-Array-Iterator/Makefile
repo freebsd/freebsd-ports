@@ -21,4 +21,5 @@ MAN3=		Array::Iterator.3 \
 		Array::Iterator::Circular.3 \
 		Array::Iterator::Reusable.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

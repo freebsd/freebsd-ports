@@ -1,4 +1,4 @@
-# Created by:	Ryan Steinmetz <zi@FreeBSD.org>
+# Created by: Ryan Steinmetz <zi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libcidr
@@ -28,4 +28,5 @@ MAKE_ENV+=	NO_DOCS=yes
 MAKE_ENV+=	NO_EXAMPLES=yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	unittestplus
-# Date created:				13 Jun 2009
-# Whom:					Kouki Hashimoto <hsmtkk@gmail.com>
-#
+# Created by: Kouki Hashimoto <hsmtkk@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=		unittestplus
 PORTVERSION=		1.1.1
@@ -18,4 +14,5 @@ USE_ZIP=		yes
 USE_PYTHON=		2.6+
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

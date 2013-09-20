@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Component-DirWatch
-# Date created:	   06 July 2002
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-DirWatch
 PORTVERSION=	0.300001
@@ -34,6 +30,7 @@ MAN3=	POE::Component::DirWatch.3 \
 	POE::Component::DirWatch::Role::Signatures.3 \
 	POE::Component::DirWatch::Unmodified.3
 
+NO_STAGE=	yes
 regression-test:
 	@(cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} && ${MAKE} test)
 

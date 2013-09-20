@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-IPC-Cache
-# Date created:				April 03 2001
-# Whom:	      				vanilla
-#
+# Created by: vanilla
 # $FreeBSD$
-#
 
 PORTNAME=	IPC-Cache
 PORTVERSION=	0.02
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		IPC::Cache.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

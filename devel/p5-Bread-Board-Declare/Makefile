@@ -36,4 +36,5 @@ MAN3=		Bread::Board::Declare.3 \
 		Bread::Board::Declare::Role::Object.3 \
 		Bread::Board::Declare::Role::Service.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

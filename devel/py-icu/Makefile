@@ -25,4 +25,5 @@ MAKE_ENV+= \
 
 LIB_DEPENDS+=	icudata:${PORTSDIR}/devel/icu
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

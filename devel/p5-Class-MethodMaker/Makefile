@@ -25,4 +25,5 @@ MAN3=	Class::MethodMaker.3 \
 	Class::MethodMaker::hash.3 \
 	Class::MethodMaker::scalar.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

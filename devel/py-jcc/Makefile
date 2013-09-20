@@ -32,4 +32,5 @@ MAKE_ENV+=	JCC_INCLUDES=${JCC_INCLUDES} JCC_CFLAGS=${JCC_CFLAGS} \
 		JCC_JAVADOC=${JAVADOC} \
 		JCC_JAVAC=javac JCC_ARGSEP=";"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

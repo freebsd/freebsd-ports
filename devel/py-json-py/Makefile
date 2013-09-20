@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-json-py
-# Date created:		2006-01-11
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	json-py
 PORTVERSION=	3.4
@@ -22,6 +18,7 @@ NO_WRKSUBDIR=	yes
 USE_PYTHON=	2.5+
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 do-build:
 	# compile python files
 	cd ${WRKDIR}; \

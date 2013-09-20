@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/linux-f10-dbus-libs
-# Date created:				2009-07-27
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	dbus-libs
 PORTVERSION=	1.2.4
@@ -24,4 +20,5 @@ DESCR=		${.CURDIR}/../dbus/pkg-descr
 
 PLIST_FILES=	lib/libdbus-1.so.3 lib/libdbus-1.so.3.4.0
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

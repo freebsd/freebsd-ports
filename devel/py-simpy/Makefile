@@ -22,6 +22,7 @@ TKINTER_DESC=	py-tkinter for plot
 
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 

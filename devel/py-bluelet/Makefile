@@ -19,4 +19,5 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/bluelet.py \
 		%%PYTHON_SITELIBDIR%%/bluelet.pyc \
 		%%PYTHON_SITELIBDIR%%/bluelet.pyo
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lua-rds-parser
-# Date created:		12 Jan 2012
-# Whom:			osa
-#
+# Created by: osa
 # $FreeBSD$
-#
 
 PORTNAME=	redis-parser
 DISTVERSION=	0.09rc7
@@ -25,6 +21,7 @@ WRKSRC=		${WRKDIR}/agentzh-lua-redis-parser-${GITVERSION:S/^0-g//}
 PLIST_FILES=	%%LUA_MODLIBDIR%%/redis/parser.so
 PLIST_DIRS=	%%LUA_MODLIBDIR%%/redis
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${LUA_MODLIBDIR}/redis
 	${INSTALL_PROGRAM} ${WRKSRC}/parser.so ${LUA_MODLIBDIR}/redis

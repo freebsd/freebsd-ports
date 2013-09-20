@@ -30,6 +30,7 @@ MAN1=		pcsc-spy.1
 MAN5=		reader.conf.5
 MAN8=		pcscd.8
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_USB) && ${OSVERSION} >= 800069

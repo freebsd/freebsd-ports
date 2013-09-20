@@ -36,4 +36,5 @@ MAN3=	Declare::Constraints::Simple::Library::Scalar.3 \
 	Declare::Constraints::Simple::Library::Base.3 \
 	Declare::Constraints::Simple::Library::General.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

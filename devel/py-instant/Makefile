@@ -26,6 +26,7 @@ MANCOMPRESSED=	yes
 
 MMVERSION=	1.2
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 	's|\[(join("share", "man", "man1"),|\[(join("man", "man1"),|' \

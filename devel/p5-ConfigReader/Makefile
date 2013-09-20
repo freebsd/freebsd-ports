@@ -14,6 +14,7 @@ COMMENT=	Perl5 module to read directives from a configuration file
 USES=		perl5
 NO_BUILD=	YES
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/${SITE_PERL_REL}/ConfigReader/
 	${INSTALL_DATA} ${WRKSRC}/DirectiveStyle.pm ${WRKSRC}/Spec.pm \

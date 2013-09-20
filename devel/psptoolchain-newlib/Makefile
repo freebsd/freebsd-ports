@@ -1,9 +1,5 @@
-# New ports collection makefile for: psptoolchain-newlib
-# Date created:        13 February 2009
-# Whom:                Tassilo Philipp <tphilipp@potion-studios.com>
-#
+# Created by: Tassilo Philipp <tphilipp@potion-studios.com>
 # $FreeBSD$
-#
 
 PORTNAME=		newlib
 PORTVERSION=		1.20.0
@@ -34,6 +30,7 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} --target="psp"
 MAKE_ARGS+=		CC="${CC}" CFLAGS="${CFLAGS} -g" # Apparently, it doesn't work on the PSP without debug information
 
 # Disable installation of .info files and fix includedir reference.
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E 's/^(install.*:.*)install-info(.*)/\1\2/' ${WRKSRC}/etc/Makefile.in
 	@${REINPLACE_CMD} -E 's#(-I\$${prefix}/)psp(/sdk/include)#-I${LOCALBASE}/${PSP_SDK_STAGE_PREFIX:S,/,\\/,}\2#' ${WRKSRC}/newlib/configure.host

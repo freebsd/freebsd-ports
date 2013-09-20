@@ -22,4 +22,5 @@ MAN3=	Parallel::Scoreboard.3 \
 	Parallel::Scoreboard::PSGI::App.3 \
 	Parallel::Scoreboard::PSGI::App::JSON.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

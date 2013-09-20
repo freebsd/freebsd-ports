@@ -14,6 +14,7 @@ NO_BUILD=	yes
 PORTDOCS=	ChangeLog README NEWS
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

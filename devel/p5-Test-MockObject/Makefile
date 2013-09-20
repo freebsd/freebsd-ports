@@ -1,9 +1,4 @@
-# New ports collection makefile for:	p5-Test-MockObject
-# Date Created:				16 Jul, 2003
-# Whom:					Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Test-MockObject
 PORTVERSION=	1.20120301
@@ -28,6 +23,7 @@ INSTALL_TARGET=	pure_install
 
 MAN3=		Test::MockObject.3 Test::MockObject::Extends.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

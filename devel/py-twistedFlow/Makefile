@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-twistedFlow
-# Date created:		14 April 2005
-# Whom:	      		Neal Nelson <neal@nelson.name>
-#
+# Created by: Neal Nelson <neal@nelson.name>
 # $FreeBSD$
-#
 
 PORTNAME=	twistedFlow
 PORTVERSION=	8.2.0
@@ -25,4 +21,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Twisted_Flow
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

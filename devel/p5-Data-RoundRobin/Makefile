@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-RoundRobin
-# Date created:		Jan. 05, 2007
-# Whom:			Li-Wen Hsu <lwhsu@lwhsu.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Data-RoundRobin
 PORTVERSION=	0.03
@@ -19,6 +15,7 @@ USE_PERL5=	configure
 
 MAN3=	Data::RoundRobin.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

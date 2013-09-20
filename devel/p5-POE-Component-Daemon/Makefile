@@ -23,6 +23,7 @@ MAN3=		POE::Component::Daemon.3
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@for i in ${WRKSRC}/eg/*forking; do \

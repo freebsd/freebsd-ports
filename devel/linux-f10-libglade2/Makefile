@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/linux-f10-libglade2
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	libglade2
 PORTVERSION=	2.6.3
@@ -31,4 +27,5 @@ DOCSDIR=	usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING NEWS README
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

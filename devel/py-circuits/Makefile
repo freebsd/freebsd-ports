@@ -18,6 +18,7 @@ USE_PYDISTUTILS=	easy_install
 # Bypass ports infrastructure bug
 OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 regression-test: build

@@ -20,6 +20,7 @@ PYDISTUTILS_PKGNAME=	py
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PORTDOCS=	CHANGELOG README.txt
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

@@ -24,6 +24,7 @@ OPTIONS_DEFAULT=	STRICT
 TRANSITIONAL_DESC=	Compatible syntax tree with old versions
 STRICT_DESC=		New syntax tree quotations kit
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PATCHLEVEL=	1

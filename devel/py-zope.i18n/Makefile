@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-zope.i18n
-# Date created:				Aug 10, 2011
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	zope.i18n
 PORTVERSION=	3.8.0
@@ -25,4 +21,5 @@ USES=		gettext
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

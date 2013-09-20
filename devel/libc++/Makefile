@@ -23,6 +23,7 @@ CC=	clang33
 CXX=	clang++33
 CPP=	clang-cpp33
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} <  901502

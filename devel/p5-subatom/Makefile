@@ -20,4 +20,5 @@ PLIST_FILES=	bin/subatom
 
 MAN1=		subatom.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

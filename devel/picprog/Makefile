@@ -14,6 +14,7 @@ USE_GMAKE=	yes
 PLIST_FILES=	bin/picprog
 MAN1=		picprog.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

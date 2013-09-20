@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ydbf
-# Date created:        10 May 2009
-# Whom:                Andrey Polyakov <andrey.polyakov@unix.net>
-#
+# Created by: Andrey Polyakov <andrey.polyakov@unix.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ydbf
 PORTVERSION=	0.0.1
@@ -23,4 +19,5 @@ PYDISTUTILS_NOEGGINFO=	yes
 PYDISTUTILS_PKGNAME=	YDbf
 PYDISTUTILS_PKGVERSION=	0.0.1dev_20080514
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -26,6 +26,7 @@ USE_QT4=	corelib gui xml network dbus svg qt3support sql \
 
 MAN1=		kdesvn.1 kdesvnaskpass.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

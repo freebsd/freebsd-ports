@@ -26,4 +26,5 @@ USE_PERL5=	configure
 MAN3=	Test::Aggregate.3 Test::Aggregate::Base.3 \
 	Test::Aggregate::Builder.3 Test::Aggregate::Nested.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

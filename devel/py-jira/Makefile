@@ -22,4 +22,5 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	jira_python
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

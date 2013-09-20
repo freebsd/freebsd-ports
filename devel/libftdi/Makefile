@@ -21,6 +21,7 @@ USES=			pathfix pkgconfig
 
 PORTDOCS=		COPYING.LIB ChangeLog README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBOOST}

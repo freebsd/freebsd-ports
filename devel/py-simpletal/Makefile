@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-simpletal
-# Date created:				26 June 2006
-# Whom:					Jordi Haarman
-#
+# Created by: Jordi Haarman
 # $FreeBSD$
-#
 
 PORTNAME=	simpletal
 PORTVERSION=	4.3
@@ -22,4 +18,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	SimpleTAL
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -20,4 +20,5 @@ MAN3=	Config::MySQL.3 \
 	Config::MySQL::Reader.3 \
 	Config::MySQL::Writer.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

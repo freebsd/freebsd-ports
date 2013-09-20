@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-five.localsitemanager
-# Date created:				18 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	five.localsitemanager
 PORTVERSION=	2.0.5
@@ -32,4 +27,5 @@ USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 #USE_ZOPE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

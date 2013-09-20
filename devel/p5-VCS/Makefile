@@ -20,4 +20,5 @@ MAN1=		diff-hist.1
 MAN3=		VCS.3 VCS::Cvs.3 VCS::Dir.3 VCS::File.3 \
 		VCS::Rcs.3 VCS::Version.3 VCS_dev.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

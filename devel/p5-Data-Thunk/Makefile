@@ -27,4 +27,5 @@ MAN3=	Data::Thunk.3 \
 	Data::Thunk::Object.3 \
 	Data::Thunk::ScalarValue.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

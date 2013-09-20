@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Tree::Parser
-# Date created:				1 August 2004
-# Whom:					Aaron Dalton <aaron@daltons.ca>
-#
+# Created by: Aaron Dalton <aaron@daltons.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Tree-Parser
 PORTVERSION=	0.15
@@ -25,4 +21,5 @@ MAN3=		Tree::Parser.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

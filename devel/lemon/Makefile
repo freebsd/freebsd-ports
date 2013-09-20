@@ -1,9 +1,5 @@
-# Ports collection makefile for:  lemon
-# Date created:			  June 4, 2001
-# Whom:				  Mikhail Teterin
-#
+# Created by: Mikhail Teterin
 # $FreeBSD$
-#
 
 PORTNAME=	lemon
 PORTVERSION=	1.69
@@ -18,6 +14,7 @@ USE_BZIP2=	yes
 MAKEFILE=	/dev/null
 ALL_TARGET=	${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's| = pathsearch(.*| = "${DATADIR}/lempar.c";|' \
 		${WRKSRC}/lemon.c

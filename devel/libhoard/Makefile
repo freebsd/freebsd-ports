@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libhoard
-# Date created:			May 24, 2003
-# Whom:				Sergey A. Osokin <osa@FreeBSD.org>
-#
+# Created by: Sergey A. Osokin <osa@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libhoard
 PORTVERSION=	3.8
@@ -24,6 +20,7 @@ ALL_TARGET=	freebsd
 
 PLIST_FILES=	lib/libhoard.so lib/libhoard.so.1
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's!g++!${CXX}!; s!-O2!${CFLAGS}!' ${WRKSRC}/Makefile
 

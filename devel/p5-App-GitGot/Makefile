@@ -64,4 +64,5 @@ MAN3=		App::GitGot.3 \
 		App::GitGot::Repo.3 \
 		App::GitGot::Repo::Git.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

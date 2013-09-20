@@ -20,6 +20,7 @@ USE_PERL5=	configure
 
 MAN3=		JSON::Path.3
 
+NO_STAGE=	yes
 post-patch::
 	@${RM} ${WRKSRC}/lib/JSON/Path.pm.orig
 

@@ -23,4 +23,5 @@ MAN3=	Test::Base.3 \
 	Test::Base::Filter.3 \
 	Module::Install::TestBase.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

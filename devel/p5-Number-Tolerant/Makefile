@@ -39,4 +39,5 @@ MAN3=		Number::Tolerant.3 \
 		Number::Tolerant::Union.3 \
 		Test::Tolerant.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

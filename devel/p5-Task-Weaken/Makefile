@@ -1,4 +1,4 @@
-# Created by: lbr@freebsd.org
+# Created by: lbr@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	Task-Weaken
@@ -15,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=	Task::Weaken.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -26,4 +26,5 @@ USE_PERL5=	modbuildtiny
 
 MAN3=		Test::TempDir.3 Test::TempDir::Factory.3 Test::TempDir::Handle.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

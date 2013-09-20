@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-fam
-# Date created:		8 October 2002
-# Whom:			Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
 
 PORTNAME=	fam
@@ -21,6 +18,7 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	0.0.0
 USE_FAM=	yes
 
+NO_STAGE=	yes
 pre-patch:
 	${INSTALL_DATA} ${FILESDIR}/setup.py ${WRKSRC}
 

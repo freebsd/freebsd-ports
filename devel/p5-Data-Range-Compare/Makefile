@@ -20,4 +20,5 @@ MAN3=		Data::Range::Compare.3 \
 		Data::Range::Compare::Cookbook::Recipe_a_to_z.3 \
 		Data::Range::Compare::Cookbook::Recipe_subclass_a_to_z.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

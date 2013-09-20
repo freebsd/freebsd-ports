@@ -27,4 +27,5 @@ MAN3=		B::Hooks::EndOfScope.3 \
 		B::Hooks::EndOfScope::PP::HintHash.3 \
 		B::Hooks::EndOfScope::XS.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

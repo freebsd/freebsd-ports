@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Config::ApacheFormat
-# Date created:				26 Jul 2006
-# Whom:					Martin Tournoij <carpetsmoker@gmail.com>
-#
+# Created by: Martin Tournoij <carpetsmoker@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Config-ApacheFormat
 PORTVERSION=	1.2
@@ -21,4 +17,5 @@ USES=		perl5
 USE_PERL5=	configure
 MAN3=		Config::ApacheFormat.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

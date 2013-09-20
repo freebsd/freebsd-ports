@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p4p
-# Date created:				3 Apr 2010
-# Whom:					gordon@FreeBSD.org
-#
+# Created by: gordon@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	p4p
 PORTVERSION=	2012.1.549175
@@ -38,6 +34,7 @@ SUB_LIST=	P4CACHE=${P4CACHE} \
 
 USE_RC_SUBR=	p4p
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${.CURDIR}/../p4/Makefile.inc"

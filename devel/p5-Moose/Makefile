@@ -183,6 +183,7 @@ MAN3=		Class::MOP.3 \
 		metaclass.3 \
 		oose.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^check_conflicts()/d' ${WRKSRC}/Makefile.PL
 

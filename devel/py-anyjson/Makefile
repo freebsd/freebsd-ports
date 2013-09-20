@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-anyjson
-# Date created:		2010-02-06
-# Whom:			Mirko Zinn <mail@derzinn.de>
-#
+# Created by: Mirko Zinn <mail@derzinn.de>
 # $FreeBSD$
-#
 
 PORTNAME=	anyjson
 PORTVERSION=	0.3.3
@@ -19,4 +15,5 @@ LICENSE=	BSD
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

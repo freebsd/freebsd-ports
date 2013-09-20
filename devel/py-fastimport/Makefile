@@ -1,6 +1,5 @@
 # Created by: Carlo Strub
 # $FreeBSD$
-#
 
 PORTNAME=	fastimport
 PORTVERSION=	0.9.2
@@ -19,4 +18,5 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	fastimport
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

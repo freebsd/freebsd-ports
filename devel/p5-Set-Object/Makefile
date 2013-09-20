@@ -20,6 +20,7 @@ USE_PERL5=	configure
 MAN3=		Set::Changes.3 Set::Object.3 Set::Object::Weak.3
 PORTDOCS=	Changes.pod README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

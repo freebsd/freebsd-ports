@@ -22,4 +22,5 @@ MAN3=	Config::Setting.3 \
 	Config::Setting::IniParser.3 \
 	Config::Setting::XMLParser.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ocfpcsc
-# Date created:		2009-01-07
-# Whom:			Marcin Cieslak <saper@saper.info>
-#
+# Created by: Marcin Cieslak <saper@saper.info>
 # $FreeBSD$
-#
 
 PORTNAME=	ocfpcsc
 PORTVERSION=	0.0.1
@@ -26,6 +22,7 @@ CFLAGS+=	-fPIC
 PORTEXAMPLES=	opencard.properties
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_MOZILLA_PLUGIN)

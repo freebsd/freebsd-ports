@@ -18,6 +18,7 @@ WRKSRC_SUBDIR=	${PORTNAME}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

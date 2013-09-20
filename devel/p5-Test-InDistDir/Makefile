@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Test-InDistDir
-# Date created:				05 October 2011
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-InDistDir
 PORTVERSION=	1.112071
@@ -23,4 +19,5 @@ MAN3=	Test::InDistDir.3
 regression-test: build
 	cd ${WRKSRC}/ && ${MAKE} test
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

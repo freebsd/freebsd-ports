@@ -32,4 +32,5 @@ MAN3=		Git::Repository.3 \
 		Git::Repository::Tutorial.3 \
 		Test::Git.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

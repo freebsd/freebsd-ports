@@ -63,6 +63,7 @@ MAN3=		CPANPLUS.3 \
 		CPANPLUS::Shell::Default::Plugins::Remote.3 \
 		CPANPLUS::Shell::Default::Plugins::Source.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTEST_REPORTER}

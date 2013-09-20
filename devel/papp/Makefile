@@ -14,4 +14,5 @@ LICENSE=	BSD
 
 MAN1=		papp.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

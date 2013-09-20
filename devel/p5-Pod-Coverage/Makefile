@@ -26,6 +26,7 @@ MAN3=		Pod::Coverage.3 \
 PORTDOCS=	Changes
 PORTEXAMPLES=	check_installed script-covered
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/

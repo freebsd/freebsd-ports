@@ -63,6 +63,7 @@ USE_HORDE_RUN=	Horde_Role \
 # Not required but wanted
 USE_HORDE_RUN+=	Horde_Routes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_KOLAB)

@@ -84,4 +84,5 @@ MAN3=	\
 	Validation::Class::Simple::Streamer.3 \
 	Validation::Class::Whitepaper.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

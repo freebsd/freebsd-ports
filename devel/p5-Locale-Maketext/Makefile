@@ -25,4 +25,5 @@ MAN3=		Locale::Maketext.3 \
 		Locale::Maketext::GutsLoader.3 \
 		Locale::Maketext::TPJ13.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

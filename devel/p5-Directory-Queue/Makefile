@@ -22,4 +22,5 @@ MAN3=	Directory::Queue.3 \
 	Directory::Queue::Set.3 \
 	Directory::Queue::Simple.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

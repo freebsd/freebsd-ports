@@ -44,4 +44,5 @@ MAN3=	\
 	logc_setLogFormat.3 \
 	logc_setRingbuffer.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

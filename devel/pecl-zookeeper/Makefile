@@ -18,6 +18,7 @@ USE_PHP=	session
 USE_PHP_BUILD=	session
 USE_PHPEXT=	yes
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/zookeeper-api.php ${DATADIR}/

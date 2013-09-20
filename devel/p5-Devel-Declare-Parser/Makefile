@@ -27,4 +27,5 @@ MAN3=	Devel::Declare::Interface.3 \
 	Devel::Declare::Parser::Method.3 \
 	Devel::Declare::Parser::Sublike.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

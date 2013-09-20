@@ -15,6 +15,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-html-docs --disable-doxygen
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's| -pedantic||g' ${WRKSRC}/configure
 

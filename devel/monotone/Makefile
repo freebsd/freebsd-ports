@@ -56,6 +56,7 @@ MAN1=		mtn.1 \
 .endif
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

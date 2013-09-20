@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	Regexp::Bind
 # Created by: ijliao
 # $FreeBSD$
 
@@ -17,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=	Regexp::Bind.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

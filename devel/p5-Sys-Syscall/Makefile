@@ -16,6 +16,7 @@ USE_PERL5=	configure
 
 MAN3=		Sys::Syscall.3 Sys::README.3
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/lib/Sys/Syscall.pm.orig
 

@@ -23,6 +23,7 @@ LATIN1_DESC=	Enable support for Latin1 keys
 NEXTAW_DESC=	Link with NeXtaw
 XAW3D_DESC=	Link with Xaw3d
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for opt in DEBUG LATIN1

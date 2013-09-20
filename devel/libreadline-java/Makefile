@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libreadline-java
-# Date created:                20 September 2007
-# Whom:                        Martin Kammerhofer <mkamm@gmx.net>
-#
+# Created by: Martin Kammerhofer <mkamm@gmx.net>
 # $FreeBSD$
-#
 
 PORTNAME=		libreadline-java
 PORTVERSION=		0.8.0
@@ -35,6 +31,7 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libreadline-java.jar ${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/libJavaReadline.so ${PREFIX}/lib

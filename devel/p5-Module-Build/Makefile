@@ -49,6 +49,7 @@ MAN3=		inc::latest.3 \
 		Module::Build::YAML.3
 PORTDOCS=	Changes INSTALL README
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

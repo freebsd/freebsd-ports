@@ -30,4 +30,5 @@ MAN3=		POE::Callback.3 POE::Request.3 POE::Request::Emit.3 \
 		POE::Watcher.3 POE::Watcher::Delay.3 POE::Watcher::Input.3 \
 		POE::Watcher::Wheel.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

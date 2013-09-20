@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-TestGears
-# Date created:		2006-01-11
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	TestGears
 PORTVERSION=	0.2
@@ -18,4 +14,5 @@ COMMENT=	Python module to run tests written as simple functions
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

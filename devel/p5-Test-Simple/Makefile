@@ -18,4 +18,5 @@ MAN3=		Test::Builder.3 Test::More.3 Test::Simple.3 Test::Tutorial.3 \
 		Test::Builder::Module.3 Test::Builder::Tester.3 \
 		Test::Builder::Tester::Color.3 Test::Builder::IO::Scalar.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

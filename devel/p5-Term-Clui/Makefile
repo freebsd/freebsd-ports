@@ -23,4 +23,5 @@ MAN3=		Term::Clui.3 \
 		Term::Clui::FileSelect.3
 
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

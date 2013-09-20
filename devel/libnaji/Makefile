@@ -13,6 +13,7 @@ MAKE_ARGS=	cc=${CC}
 
 DISTVERSIONSUFFIX=	.src
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libnaji.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libnaji.a ${PREFIX}/lib

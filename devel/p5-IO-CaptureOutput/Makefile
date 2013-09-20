@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-IO-CaptureOutput
-# Date created:				27 December 2004
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IO-CaptureOutput
 PORTVERSION=	1.11.02
@@ -20,4 +16,5 @@ USE_PERL5=	configure
 
 MAN3=	IO::CaptureOutput.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

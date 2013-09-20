@@ -18,6 +18,7 @@ PYDISTUTILS_PKGNAME=	py${PORTNAME}
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

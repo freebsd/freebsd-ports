@@ -17,4 +17,5 @@ USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--enable-vld
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

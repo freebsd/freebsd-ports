@@ -22,6 +22,7 @@ PLIST_FILES=	include/${PORTNAME}.h \
 
 PORT_VERBS=	relp
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/CFLAGS/s| -g||g' \
 		${WRKSRC}/configure

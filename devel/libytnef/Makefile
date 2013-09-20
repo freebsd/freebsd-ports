@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libytnef
-# Date created:		21 Feb 2005
-# Whom:			Rodrigo Graeff <delphus@gmail.com>
-#
+# Created by: Rodrigo Graeff <delphus@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libytnef
 PORTVERSION=	1.5
@@ -20,6 +16,7 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS NEWS README
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

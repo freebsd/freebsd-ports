@@ -27,6 +27,7 @@ MAKE_ENV=	MAKE_KYRA=RELEASE KYRA_OPENGL=YES
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" LD="${CXX}" \
 		RELEASE_CFLAGS="${CFLAGS}" RELEASE_CXXFLAGS="${CXXFLAGS}"
 
+NO_STAGE=	yes
 do-install:
 .for i in encoder spriteed
 	(cd ${WRKSRC}/${i} && ${INSTALL_PROGRAM} kr${i} ${PREFIX}/bin)

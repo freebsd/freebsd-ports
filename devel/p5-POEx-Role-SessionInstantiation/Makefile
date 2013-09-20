@@ -31,4 +31,5 @@ MAN3=	POEx::Role::Event.3 \
 	POEx::Role::SessionInstantiation::Meta::Session::Magic.3 \
 	POEx::Role::SessionInstantiation::Meta::Session::Sugar.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

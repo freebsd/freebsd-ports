@@ -26,6 +26,7 @@ MAKE_JOBS_UNSAFE=yes
 CPPFLAGS+=	-I${TCL_INCLUDEDIR} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|8\.4|${TCL_VER:S/.//}|g' ${WRKSRC}/configure
 

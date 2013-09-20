@@ -53,6 +53,7 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 # IMPORTANT INFORMATION FOR DEVELOPERS:
 # Some Interfaces and Options are not on the list because they break a build.
 # If you need them working on FreeeBSD, code, patches are welcome :-)

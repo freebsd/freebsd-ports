@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib \
 		${ICONV_LIB}
 
+NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -Ee 's,^(pkgconfigdir = ).*,\1$$(exec_prefix)/libdata/pkgconfig,' ${WRKSRC}/Makefile.am
 	@cd ${WRKSRC} && ${SH} ./autogen.sh

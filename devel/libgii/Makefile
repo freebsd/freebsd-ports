@@ -183,6 +183,7 @@ MLINKS=		gg-error.3 ggi-error.3 - gii-error.3 \
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS=	--disable-linux-kbd --disable-linux-joy --disable-linux-evdev

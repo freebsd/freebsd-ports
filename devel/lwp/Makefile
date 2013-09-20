@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lwp
-# Date created:				Tue Mar 21 17:51:25 EST 2000
-# Whom:					jaharkes
-#
+# Created by: jaharkes
 # $FreeBSD$
-#
 
 PORTNAME=	lwp
 PORTVERSION=	2.6
@@ -20,6 +16,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e \
 		's#(libdir)#{prefix}/libdata#g' \

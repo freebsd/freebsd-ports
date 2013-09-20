@@ -66,4 +66,5 @@ MAN3=		Devel::TypeTiny::Perl56Compat.3 \
 		Types::Standard.3 \
 		Types::TypeTiny.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

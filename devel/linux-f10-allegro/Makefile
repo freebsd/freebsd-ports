@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/linux-f10-allegro
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	allegro
 PORTVERSION=	4.2.2
@@ -26,4 +22,5 @@ USE_LDCONFIG=		yes
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

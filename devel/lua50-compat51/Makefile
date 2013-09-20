@@ -1,9 +1,5 @@
-# New ports collection makefile for:   lua50-compat51
-# Date created:        14 April 2006
-# Whom:                Andrew Turner <andrew+ports@fubar.geek.nz>
-#
+# Created by: Andrew Turner <andrew+ports@fubar.geek.nz>
 # $FreeBSD$
-#
 
 PORTNAME=	compat
 DISTVERSION=	${CVER}${CREV}
@@ -27,6 +23,7 @@ PLIST_FILES=	%%LUA_MODSHAREDIR%%/compat-${CVER}.lua \
 CVER=		5.1
 CREV=		r5
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 

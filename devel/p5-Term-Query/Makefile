@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-Term-Query
-# Date created:				21 May 1998
-# Whom:	      				Garrett Wollman <wollman@lcs.mit.edu>
-#
+# Created by: Garrett Wollman <wollman@lcs.mit.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	Term-Query
 PORTVERSION=	2.0
@@ -21,4 +17,5 @@ USE_PERL5=	configure
 
 MAN3=		Term::Query.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

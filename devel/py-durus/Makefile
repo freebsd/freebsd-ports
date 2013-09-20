@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-durus
-# Date created:		13 Nov 2006
-# Whom:	      		Dryice Liu <dryice@dryice.name>
-#
+# Created by: Dryice Liu <dryice@dryice.name>
 # $FreeBSD$
-#
 
 PORTNAME=	durus
 PORTVERSION=	3.9
@@ -21,6 +17,7 @@ USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 PYDISTUTILS_PKGNAME=	Durus
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

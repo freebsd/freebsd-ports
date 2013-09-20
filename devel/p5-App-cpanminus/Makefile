@@ -17,4 +17,5 @@ MAN1=	cpanm.1
 MAN3=	App::cpanminus.3 \
 	App::cpanminus::fatscript.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

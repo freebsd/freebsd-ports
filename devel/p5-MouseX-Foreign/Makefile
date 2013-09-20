@@ -25,4 +25,5 @@ MAN3=		MouseX::Foreign.3 \
 		MouseX::Foreign::Meta::Role::Method::Destructor.3 \
 		MouseX::NonMoose.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

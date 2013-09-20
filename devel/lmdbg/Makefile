@@ -33,6 +33,7 @@ INSTALL_TARGET=	install
 INSTALL_TARGET+=install-doc
 .endif
 
+NO_STAGE=	yes
 do-build:
 	${SETENV} ${MKCMAKE_ENV} ${MKCMAKE} -C ${WRKSRC}
 

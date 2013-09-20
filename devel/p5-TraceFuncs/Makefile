@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p5-TraceFuncs
-# Date created:				June 26th 1997
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	TraceFuncs
 PORTVERSION=	0.1
@@ -21,4 +17,5 @@ USE_PERL5=	configure
 
 MAN3=		Devel::TraceFuncs.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/Libphk
 MAN3=	libphk.3 phk_argv.3 phk_binheap.3
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${SED} -i -e 's!/usr/local!$${PREFIX}!g' ${WRKSRC}/Makefile
 

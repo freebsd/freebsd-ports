@@ -21,6 +21,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST=		${.CURDIR}/pkg-plist
 FILESDIR=	${.CURDIR}/files
 
+NO_STAGE=	yes
 post-patch:
 	@${CP} ${FILESDIR}/CMakeLists.txt ${WRKSRC}
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libconfuse
-# Date created:				18 September 2004
-# Whom:					Juraj Lutter <otis@sk.freebsd.org>
-#
+# Created by: Juraj Lutter <otis@sk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libconfuse
 PORTVERSION=	2.7
@@ -29,4 +25,5 @@ CONFIGURE_ARGS+=	--with-check=${LOCALBASE}
 CFLAGS+=	-I${LOCALBASE}/include
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

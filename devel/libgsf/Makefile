@@ -22,4 +22,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gsf.1 gsf-office-thumbnailer.1 gsf-vba-dump.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -28,4 +28,5 @@ MAN3=		Devel::Events::Generator::Objects.3 \
 		Devel::Events::Handler::ObjectTracker.3 \
 		Devel::Events::Objects.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

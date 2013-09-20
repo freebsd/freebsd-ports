@@ -33,6 +33,7 @@ MAN3=	Log::Dispatchouli.3 \
 	Log::Dispatchouli::Global.3 \
 	Log::Dispatchouli::Proxy.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

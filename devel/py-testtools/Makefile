@@ -1,6 +1,5 @@
 # Created by: Carlo Strub
 # $FreeBSD$
-#
 
 PORTNAME=	testtools
 PORTVERSION=	0.9.21
@@ -17,4 +16,5 @@ LICENSE=	MIT
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

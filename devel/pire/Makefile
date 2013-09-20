@@ -23,6 +23,7 @@ ONLY_FOR_ARCHS_REASON=	not yet ported to big-endian platforms
 OPTIONS_DEFINE=	UNITTEST
 OPTIONS_UNITTEST_DESC=	Compile with unittest support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUNITTEST} || defined(PACKAGE_BUILDING)

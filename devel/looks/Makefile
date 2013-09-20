@@ -27,6 +27,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} \
 DOCFILES=	README.html RELEASE-NOTES.txt
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

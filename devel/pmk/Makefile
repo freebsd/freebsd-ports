@@ -15,6 +15,7 @@ MAN1=	pmk.1 pmkscan.1 pmkinstall.1 pmkpc.1
 MAN5=	pmk.conf.5 pmkfile.5 pmksyntax.5 scanfile.5
 MAN8=	pmksetup.8
 
+NO_STAGE=	yes
 do-configure:
 	cd ${WRKSRC}; SYSCONFDIR=${PREFIX}/etc ./pmkcfg.sh
 

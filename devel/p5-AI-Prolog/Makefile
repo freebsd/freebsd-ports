@@ -1,4 +1,3 @@
-# ex:ts=8
 # Created by: ijliao
 # $FreeBSD$
 
@@ -46,4 +45,5 @@ MAN3=	AI::Prolog.3 \
 	AI::Prolog::TermList::Primitive.3 \
 	AI::Prolog::TermList::Step.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

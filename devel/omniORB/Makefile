@@ -30,6 +30,7 @@ PLIST_SUB+=	STATIC=""
 MAN1=		catior.1 convertior.1 genior.1 nameclt.1 omniidl.1
 MAN8=		omniMapper.8 omniNames.8
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#g' ${WRKSRC}/mk/beforeauto.mk.in
 

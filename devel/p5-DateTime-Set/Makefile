@@ -27,6 +27,7 @@ MAN3=		DateTime::Set.3 \
 		Set::Infinite::_recurrence.3
 PORTDOCS=	Changes README TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

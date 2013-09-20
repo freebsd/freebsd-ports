@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-DateTime
-# Date created:				10 October, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	DateTime
 PORTVERSION=	3.0
@@ -25,4 +20,5 @@ USE_PYTHON=	-2.7
 USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

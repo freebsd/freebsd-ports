@@ -25,4 +25,5 @@ PLIST_DIRS=	%%SITE_PERL%%/mach/auto/Async/MergePoint \
 		%%SITE_PERL%%/mach/auto/Async \
 		%%SITE_PERL%%/Async
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

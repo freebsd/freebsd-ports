@@ -25,4 +25,5 @@ IGNORE_WITH_PHP=4
 
 CONFIGURE_ARGS+=--with-spread=${LOCALBASE}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

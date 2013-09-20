@@ -1,4 +1,3 @@
-# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Path-Dispatcher-Declarative
@@ -25,4 +24,5 @@ USE_PERL5=	configure
 
 MAN3=	Path::Dispatcher::Declarative.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

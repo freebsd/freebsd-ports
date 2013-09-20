@@ -1,9 +1,5 @@
-# New ports collection makefile for: psptoolchain-gdb
-# Date created:        15 February 2009
-# Whom:                Tassilo Philipp <tphilipp@potion-studios.com>
-#
+# Created by: Tassilo Philipp <tphilipp@potion-studios.com>
 # $FreeBSD$
-#
 
 PORTNAME=		gdb
 PORTVERSION=		7.3.1
@@ -33,6 +29,7 @@ MAN1=			psp-gdb.1 \
 			psp-run.1
 
 # Disable installation of .info files and libiberty.
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E 's/^(INFO_DEPS.*=)(.*)/\1#\2/' ${WRKSRC}/bfd/doc/Makefile.in
 	@${REINPLACE_CMD} -E 's/^(INFO_DEPS.*=)(.*)/\1#\2/' ${WRKSRC}/gdb/doc/Makefile.in

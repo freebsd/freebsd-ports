@@ -19,6 +19,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 PORTDOCS=	HISTORY.txt README.txt
 PORTEXAMPLES=	README.txt das.c simple.c
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"

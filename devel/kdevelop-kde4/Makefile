@@ -27,6 +27,7 @@ OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 OKTETA_DESC=	Hex editing support via Okteta
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOKTETA}

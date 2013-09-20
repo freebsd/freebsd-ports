@@ -35,6 +35,7 @@ MAN3=		ght_create.3 \
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

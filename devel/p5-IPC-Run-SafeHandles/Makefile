@@ -1,4 +1,3 @@
-# created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
 
 PORTNAME=	IPC-Run-SafeHandles
@@ -27,4 +26,5 @@ PLIST_DIRS=	%%SITE_PERL%%/IPC/Run \
 PLIST_FILES=	%%SITE_PERL%%/IPC/Run/SafeHandles.pm \
 				%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Run/SafeHandles/.packlist
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

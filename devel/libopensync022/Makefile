@@ -26,6 +26,7 @@ CONFLICTS=	libopensync-0.[3-9]*
 
 LATEST_LINK=	libopensync022
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "NOTE: You may want to avoid extra dependencies"
 	@${ECHO_MSG} " from devel/swig13 by building with the following"

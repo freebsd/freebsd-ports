@@ -1,9 +1,5 @@
-# New ports collection makefile for:	List-PowerSet
-# Date created:				Wed Aug 9 2006
-# Whom:					Anish Mistry <amistry@am-productions.biz>
-#
+# Created by: Anish Mistry <amistry@am-productions.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	List-PowerSet
 PORTVERSION=	0.01
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		List::PowerSet.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

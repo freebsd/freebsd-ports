@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libmatheval
-# Date created:				4 July 2004
-# Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libmatheval
 PORTVERSION=	1.1.10
@@ -25,6 +21,7 @@ CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 INFO=		libmatheval
 
+NO_STAGE=	yes
 post-patch:
 	${RM} ${WRKSRC}/doc/libmatheval.info
 

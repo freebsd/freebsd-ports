@@ -19,6 +19,7 @@ USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
 MAN1=		wfut.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/ python//g' ${WRKSRC}/Makefile.in
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libmpcbdm
-# Date created:		2006-06-24
-# Whom:			Stanislav Sedov <stas@fonon.realnet>
-#
+# Created by: Stanislav Sedov <stas@fonon.realnet>
 # $FreeBSD$
-#
 
 PORTNAME=	libmpcbdm
 PORTVERSION=	0.0.3
@@ -23,6 +19,7 @@ USE_LDCONFIG=	yes
 
 ONLY_FOR_ARCHS=	i386
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E -e 's,(objformat=).*,\1elf,' \
 		${WRKSRC}/configure

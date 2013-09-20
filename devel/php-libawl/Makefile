@@ -1,6 +1,4 @@
-# New ports collection Makefile for:	php-libawl
-# Date created:				28 Jan 2009
-# Whom:					Cristiano Rolim Pereira <cristianorolim@hotmail.com>
+# Created by: Cristiano Rolim Pereira <cristianorolim@hotmail.com>
 # $FreeBSD$
 
 PORTNAME=	php-libawl
@@ -18,6 +16,7 @@ WRKSRC=		${WRKDIR}/awl-${PORTVERSION}
 OPTIONS_DEFINE=	PHP
 OPTIONS_DEFAULT=	PHP
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPHP}

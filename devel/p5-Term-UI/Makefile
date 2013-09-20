@@ -15,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Term::UI.3 Term::UI::History.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

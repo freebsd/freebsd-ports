@@ -28,6 +28,7 @@ OPTIONS_DEFAULT=	STACK_RECURSION
 
 STACK_RECURSION_DESC=	Use the stack for recursion during matching
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} != "sparc64" && ${ARCH} != "ia64"

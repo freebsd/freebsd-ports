@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-Locale-PGetText
-# Date created:        27 January 2000
-# Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
-#
+# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Locale-PGetText
 PORTVERSION=	0.16
@@ -20,4 +16,5 @@ USE_PERL5=	configure
 MAN1=		MsgFormat.1 XText.1
 MAN3=		Locale::PGetText.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

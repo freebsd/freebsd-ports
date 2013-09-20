@@ -27,4 +27,5 @@ MAN3=	Jonk.3 \
 	Jonk::Cookbook::ForkModel.3 \
 	Jonk::Worker.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

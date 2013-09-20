@@ -22,4 +22,5 @@ USES=		perl5
 
 MAN3=		Perl6::Slurp.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

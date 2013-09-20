@@ -82,4 +82,5 @@ MAN3=		Devel::AssertOS.3 \
 		Devel::CheckOS.3 \
 		Devel::CheckOS::Families.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

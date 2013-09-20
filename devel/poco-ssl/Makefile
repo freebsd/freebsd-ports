@@ -1,7 +1,5 @@
 # Created by: wes@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	poco
 PORTVERSION=	1.4.3
@@ -29,6 +27,7 @@ OPTIONS_DEFAULT=	MYSQL IODBC SQLITE
 
 CONFIGURE_ARGS= --config=FreeBSD
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MTEST}

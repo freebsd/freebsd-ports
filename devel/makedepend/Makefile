@@ -16,4 +16,5 @@ PLIST_FILES=	bin/makedepend
 
 MAN1=		makedepend.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

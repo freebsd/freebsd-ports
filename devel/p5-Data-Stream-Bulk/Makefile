@@ -38,4 +38,5 @@ MAN3=		Data::Stream::Bulk.3 \
 		Data::Stream::Bulk::Path::Class.3 \
 		Data::Stream::Bulk::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

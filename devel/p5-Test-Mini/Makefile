@@ -33,4 +33,5 @@ MAN3=	Test::Mini.3 \
 	Test::Mini::TestCase.3 \
 	Test::README.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

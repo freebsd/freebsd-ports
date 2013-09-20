@@ -24,4 +24,5 @@ MAN3=		DateTime::Util::Astro.3 \
 		DateTime::Util::Astro::Moon.3 \
 		DateTime::Util::Astro::Sun.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

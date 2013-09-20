@@ -15,6 +15,7 @@ WRKSRC=		${WRKDIR}/am335x_pru_package-${PORTNAME}-${PORTVERSION}
 FETCH_ARGS=	"-Fpr"
 PLIST_FILES=	bin/pasm
 
+NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}/pru_sw/utils/pasm_source && \
 		${CC} ${CFLAGS} -D_UNIX_ pasm.c pasmpp.c pasmexp.c pasmop.c \

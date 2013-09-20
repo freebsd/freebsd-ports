@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	libruin
-# Date created:			Mar 22, 2007
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	libruin
 PORTVERSION=	0.1.4
@@ -25,4 +20,5 @@ USE_LDCONFIG=	yes
 MAN3=	ruin.3
 INFO=	libruin
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

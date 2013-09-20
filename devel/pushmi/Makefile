@@ -35,4 +35,5 @@ MAN3=		Pushmi.3 \
 		Pushmi::Command::Sync.3 \
 		Pushmi::Command::Verify.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,4 +23,5 @@ MAN3=	Mac::PropertyList.3 \
 	Mac::PropertyList::ReadBinary.3 \
 	Mac::PropertyList::WriteBinary.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

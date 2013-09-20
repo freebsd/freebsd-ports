@@ -21,6 +21,7 @@ PLIST_FILES=	bin/avro \
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/lang/py
 
+NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} 's|@AVRO_VERSION@|${PORTVERSION}|g' \
 		${WRKSRC}/setup.py

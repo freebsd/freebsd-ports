@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Stream
-# Date created:				21 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Stream
 PORTVERSION=	1.00
@@ -17,4 +13,5 @@ COMMENT=	Generic stream classes for Perl
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

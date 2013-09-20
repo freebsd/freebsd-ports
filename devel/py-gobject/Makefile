@@ -36,6 +36,7 @@ CONFIGURE_ARGS=	--disable-docs --disable-introspection --with-ffi
 CONFLICTS=	py*-gtk-0*
 PLIST_SUB=	PYTHON_VER="${PYTHON_VER}"
 
+NO_STAGE=	yes
 post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 		${PREFIX}/share/pygobject/2.0/codegen

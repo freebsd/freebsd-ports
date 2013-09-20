@@ -30,6 +30,7 @@ PLIST_SUB=	VER=${PORTVERSION}
 
 MAN1=		RSA_SecurID_getpasswd.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 801000

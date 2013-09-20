@@ -165,4 +165,5 @@ MAN3=		Locale::Messages.3 \
 		Locale::gettext_xs.3 \
 		Locale::libintlFAQ.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

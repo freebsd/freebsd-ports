@@ -23,6 +23,7 @@ EXAMPLES=	access.pl ci.pl co-tree.pl co.pl comments.pl \
 		rcsdiff.pl revdate.pl rlog.pl symbols.pl symrev.pl \
 		test1.pl test2.pl test3.pl unlock.pl
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${MKDIR} ${EXAMPLESDIR}/project

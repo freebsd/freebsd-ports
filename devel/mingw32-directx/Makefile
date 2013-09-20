@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mingw32-directx
-# Date created:				25 July 2006
-# Whom:					Ed Schouten <ed@fxq.nl>
-#
+# Created by: Ed Schouten <ed@fxq.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	directx
 PORTVERSION=	20020518
@@ -21,6 +17,7 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 .for f in d3dtypes.h ddraw.h dinput.h directx.h dsound.h
 	${INSTALL_DATA} ${WRKSRC}/include/w32api/$f \

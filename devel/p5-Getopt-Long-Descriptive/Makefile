@@ -24,6 +24,7 @@ MAN3=		Getopt::Long::Descriptive.3 \
 		Getopt::Long::Descriptive::Opts.3 \
 		Getopt::Long::Descriptive::Usage.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

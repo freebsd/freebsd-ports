@@ -20,4 +20,5 @@ MAN3=		SVN::Dump.3 \
 		SVN::Dump::Record.3 \
 		SVN::Dump::Text.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

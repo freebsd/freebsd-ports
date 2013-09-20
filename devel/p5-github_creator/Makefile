@@ -24,4 +24,5 @@ USE_PERL5=	configure
 
 MAN1=		github_creator.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

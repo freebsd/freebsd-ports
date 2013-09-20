@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ocaml libmagic(3)
-# Date created:		Fri May 12 12:52:15 UTC 2006
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	magic
 PORTVERSION=	0.7.3
@@ -40,6 +36,7 @@ EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 LIB_DEPENDS+=	magic:${PORTSDIR}/sysutils/file
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

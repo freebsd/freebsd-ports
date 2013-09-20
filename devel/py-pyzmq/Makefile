@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pyzmq
-# Date created:				2011-01-10
-# Whom:					Roman Bogorodskiy <novel@FreeBSD.org>
-#
+# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pyzmq
 PORTVERSION=	2.2.0
@@ -21,6 +17,7 @@ LIB_DEPENDS=	zmq.1:${PORTSDIR}/devel/zmq
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-configure:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-ordereddict
-# Date created:		2011-11-20
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ordereddict
 PORTVERSION=	1.1
@@ -24,4 +20,5 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/ordereddict.py \
 		%%PYTHON_SITELIBDIR%%/ordereddict.pyc \
 		%%PYTHON_SITELIBDIR%%/ordereddict.pyo
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

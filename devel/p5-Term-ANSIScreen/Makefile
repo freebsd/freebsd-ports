@@ -16,4 +16,5 @@ USES=		perl5
 
 MAN3=		Term::ANSIScreen.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

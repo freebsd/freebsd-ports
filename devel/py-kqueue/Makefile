@@ -1,9 +1,5 @@
-# Ports collection Makefile for:	PyKQueue
-# Date created:				05/23/2000
-# Whom:					dwhite@FreeBSD.org
-#
+# Created by: dwhite@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=		kqueue
 PORTVERSION=		1.4
@@ -23,6 +19,7 @@ FILES=			kqsyscallmodule.so KQueue.py KQueue.pyc
 PLIST_FILES=		${FILES:S+^+%%PYTHON_SITELIBDIR%%/+g}
 MAKE_ENV=		MAINCC=${CC}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

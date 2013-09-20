@@ -19,4 +19,5 @@ MAN3=		IO.3 IO::Dir.3 IO::File.3 IO::Handle.3 IO::Pipe.3 IO::Poll.3 \
 		IO::Seekable.3 IO::Select.3 IO::Socket.3 IO::Socket::INET.3 \
 		IO::Socket::UNIX.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

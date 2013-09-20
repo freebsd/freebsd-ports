@@ -54,4 +54,5 @@ MAN3=	Data::Model.3 \
 	Data::Model::Schema::SQL.3 \
 	Data::Model::Transaction.3 \
 	Data::Model::Tutorial::JA.3
+NO_STAGE=	yes
 .include <bsd.port.mk>

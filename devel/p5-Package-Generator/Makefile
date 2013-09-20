@@ -15,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Package::Reaper.3 Package::Generator.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

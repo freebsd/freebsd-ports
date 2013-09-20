@@ -30,6 +30,7 @@ OPTIONS_DEFINE=	DEBUG DOCS TESTS
 OPTIONS_DEFAULT=TESTS
 TESTS_DESC=	Run tests
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT

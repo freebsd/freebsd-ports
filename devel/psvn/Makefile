@@ -30,6 +30,7 @@ PLIST_DIRS=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
 ELISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; ${EMACS_CMD} -batch -q -f batch-byte-compile psvn.el
 

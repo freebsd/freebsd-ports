@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-statgrab
-# Date created:			04 April 2005
-# Whom:				Tim Bishop <tim@bishnet.net>
-#
+# Created by: Tim Bishop <tim@bishnet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	statgrab
 PORTVERSION=	0.6.0
@@ -29,4 +25,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib -ldevstat ${EXTRA_LIBS}
 
 CONFIGURE_ARGS=	--with-statgrab=${LOCALBASE}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

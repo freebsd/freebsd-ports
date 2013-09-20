@@ -24,4 +24,5 @@ PLIST_FILES=	include/libg19draw.h \
 		lib/libg19draw.so \
 		lib/libg19draw.so.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

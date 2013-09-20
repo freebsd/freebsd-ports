@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-HTML_Template_IT
-# Date created:			  02 September 2003
-# Whom:				  Alex Miller (<asm@asm.kiev.ua>)
-#
+# Created by: Alex Miller (<asm@asm.kiev.ua>)
 # $FreeBSD$
-#
 
 PORTNAME=	HTML_Template_IT
 PORTVERSION=	1.3.0
@@ -22,6 +18,7 @@ do-install-tests-msg: .USE
 	@${ECHO_MSG} "     (These tests require PHPUnit - see"
 	@${ECHO_MSG} "     <http://pear.php.net/package-info.php?package=PHPUnit>;;)."
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

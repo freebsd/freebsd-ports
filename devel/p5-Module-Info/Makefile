@@ -19,4 +19,5 @@ USE_PERL5=	configure
 MAN1=		module_info.1 pfunc.1
 MAN3=		B::BUtils.3 B::Module::Info.3 Module::Info.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

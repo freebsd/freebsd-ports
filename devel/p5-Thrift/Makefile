@@ -18,6 +18,7 @@ FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 post-extract:
 	@${LN} -sfh \
 	`cd ${PORTSDIR}/devel/thrift && ${MAKE} -V WRKSRC`/lib/perl ${WRKSRC}

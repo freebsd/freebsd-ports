@@ -30,6 +30,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 USES=		shebangfix
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

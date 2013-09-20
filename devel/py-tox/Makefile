@@ -22,6 +22,7 @@ OPTIONS_DEFINE=	PYTEST
 PYTEST_DESC=	Include the pytest test runner
 OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTEST}

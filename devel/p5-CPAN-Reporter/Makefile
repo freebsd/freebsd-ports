@@ -32,4 +32,5 @@ MAN3=	CPAN::Reporter::API.3 CPAN::Reporter::Config.3 \
 	CPAN::Reporter::History.3 CPAN::Reporter::PrereqCheck.3 \
 	CPAN::Reporter.3 CPAN::Reporter::FAQ.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

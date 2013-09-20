@@ -18,6 +18,7 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 pre-build:
 	@${MKDIR} ${WRKSRC}/google/protobuf/compiler
 

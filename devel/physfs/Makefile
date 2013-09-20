@@ -14,6 +14,7 @@ USES=		cmake
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 patch-autotools-libtool:
 	@${DO_NADA}
 

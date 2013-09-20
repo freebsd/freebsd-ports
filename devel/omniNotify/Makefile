@@ -1,9 +1,5 @@
-# New ports collection makefile for:	omniNotify
-# Date created:		23 November 2004
-# Whom:			Sergey Matveychuk <sem@FreeBSD.org>
-#
+# Created by: Sergey Matveychuk <sem@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	omniNotify
 PORTVERSION=	2.1.01
@@ -36,6 +32,7 @@ CONFIGURE_SCRIPT=	../configure
 CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD}
 CONFIGURE_ARGS=	--with-omniorb=${LOCALBASE}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-configure:

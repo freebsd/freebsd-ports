@@ -19,4 +19,5 @@ USE_PERL5=	configure
 MAN3=		Date::Format.3 Date::Language.3 Date::Language::Bulgarian.3 \
 		Date::Language::Hungarian.3 Date::Parse.3 Time::Zone.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

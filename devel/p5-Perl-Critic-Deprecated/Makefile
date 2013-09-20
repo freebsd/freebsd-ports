@@ -21,4 +21,5 @@ MAN3=	Perl::Critic::Deprecated.3 \
 	Perl::Critic::Policy::NamingConventions::ProhibitMixedCaseVars.3 \
 	Perl::Critic::Utils::PPIRegexp.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

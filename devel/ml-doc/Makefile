@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ml-doc
-# Date created:        21 Aug 2007
-# Whom:                Timothy Bourke <timbob@bigpond.com>
-#
+# Created by: Timothy Bourke <timbob@bigpond.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ml-doc
 PORTVERSION=	2.0
@@ -37,6 +33,7 @@ MLINKS=		ml-doc.1 extract-sig.1 ml-doc.1 extract-info.1 \
 OPTIONS_DEFINE=	LATEX
 LATEX_DESC=	Install LaTeX if necessary (needed for pdf output)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLATEX}

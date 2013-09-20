@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Yapps2
-# Date created:				27 April 2008
-# Whom:					xenophon+fbsdports@irtnog.org
-#
+# Created by: xenophon+fbsdports@irtnog.org
 # $FreeBSD$
-#
 
 PORTNAME=	yapps2
 PORTVERSION=	2.1.1
@@ -21,4 +17,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	Yapps
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

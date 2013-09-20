@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-rope
-# Date created:				2011-05-11
-# Whom:					Jose Jachuf <jjachuf@gmail.com>
-#
+# Created by: Jose Jachuf <jjachuf@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	rope
 PORTVERSION=	0.9.4
@@ -17,4 +13,5 @@ COMMENT=	Rope is a python refactoring library
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

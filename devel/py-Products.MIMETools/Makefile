@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-Products.MIMETools
-# Date created:				Nov 15, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Products.MIMETools
 PORTVERSION=	2.13.0
@@ -23,4 +18,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

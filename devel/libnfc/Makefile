@@ -33,6 +33,7 @@ MAN1=		nfc-anticol.1 nfc-dep-initiator.1 nfc-dep-target.1 \
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MACR122}

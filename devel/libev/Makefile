@@ -19,6 +19,7 @@ MAN3=		ev.3
 
 PKGCONFIGDIR?=	${PREFIX}/libdata/pkgconfig
 
+NO_STAGE=	yes
 post-patch:
 	@${SED} -e 's|%PREFIX%|${PREFIX}|g ; s|%VERSION%|${PORTVERSION}|g' \
 		${FILESDIR}/libev.pc.in > ${WRKDIR}/libev.pc

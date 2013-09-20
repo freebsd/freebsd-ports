@@ -18,4 +18,5 @@ USES=		perl5
 USE_PERL5=	modbuild
 MAN3=		VCS::CVS.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

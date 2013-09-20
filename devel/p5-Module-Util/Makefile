@@ -16,4 +16,5 @@ USE_PERL5=	modbuild
 MAN1=	pm_which.1
 MAN3=	Module::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

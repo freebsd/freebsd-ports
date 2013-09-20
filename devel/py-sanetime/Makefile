@@ -20,6 +20,7 @@ OPTIONS_DEFINE=	TESTS
 TESTS_DESC=	Include tools for unit tests
 OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTESTS}

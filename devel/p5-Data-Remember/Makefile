@@ -27,4 +27,5 @@ MAN3=	Data::Remember.3 \
 	Data::Remember::POE.3 \
 	Data::Remember::YAML.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

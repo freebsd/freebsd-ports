@@ -1,9 +1,5 @@
-# New ports collection makefile for:	loki
-# Date created:		5 Feb 2006
-# Whom:			Sun Chang-Ming
-#
+# Created by: Sun Chang-Ming
 # $FreeBSD$
-#
 
 PORTNAME=	loki
 PORTVERSION=	0.1.7
@@ -21,6 +17,7 @@ DOCS=		README CHANGES doc/flex/flex_string.html \
 		doc/yasli/Notes.txt \
 		doc/yasli/yasli.html
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

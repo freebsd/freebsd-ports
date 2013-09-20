@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-repoze.who-friendlyform
-# Date created:     2012-05-08
-# Whom:             Yuan-Chung Hsiao <ychsiao@gmail.com>
-#
+# Created by: Yuan-Chung Hsiao <ychsiao@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	repoze.who-friendlyform
 PORTVERSION=	1.0.8
@@ -25,4 +21,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	repoze.who-friendlyform
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

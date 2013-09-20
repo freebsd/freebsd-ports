@@ -17,6 +17,7 @@ MAN3=		Data::Uniqid.3
 
 PORTDOCS=	Changes README
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

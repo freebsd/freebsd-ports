@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libphish
-# Date created:                17 Apr 2006
-# Whom:                        Rashid N. Achilov <shelton@granch.ru>
-#
+# Created by: Rashid N. Achilov <shelton@granch.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	libphish
 PORTVERSION=	0.1.0
@@ -24,6 +20,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -DFreeBSD
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

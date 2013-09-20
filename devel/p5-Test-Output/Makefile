@@ -1,4 +1,4 @@
-# Created by:	Gea-Suan Lin <gslin@gslin.org>
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
 
 PORTNAME=	Test-Output
@@ -19,6 +19,7 @@ USE_PERL5=	configure
 
 MAN3=		Test::Output.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/File::Temp/d' ${WRKSRC}/${CONFIGURE_SCRIPT}
 

@@ -24,4 +24,5 @@ USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 ORBIT_CONFIG=	${LOCALBASE}/bin/orbit2-config
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

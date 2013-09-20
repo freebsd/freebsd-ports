@@ -16,6 +16,7 @@ USE_PERL5=	configure
 MAN3=		ExtUtils::Constant.3 ExtUtils::Constant::Base.3 \
 		ExtUtils::Constant::Utils.3 ExtUtils::Constant::XS.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/INSTALLDIRS/d' ${WRKSRC}/Makefile.PL
 

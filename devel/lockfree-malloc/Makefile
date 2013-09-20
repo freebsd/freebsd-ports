@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lockfree-malloc
-# Date created:		2012-08-01
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	lockfree-malloc
 PORTVERSION=	0.0.${DATE}
@@ -27,6 +23,7 @@ DOCS_DESC=	Install README
 PLIST_FILES=	lib/liblite-malloc-shared.so \
 		lib/liblite-malloc-static.a
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

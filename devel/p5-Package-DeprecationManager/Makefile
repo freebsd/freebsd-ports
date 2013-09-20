@@ -27,6 +27,7 @@ USE_PERL5=	configure extract
 
 MAN3=		Package::DeprecationManager.3
 
+NO_STAGE=	yes
 post-extract:
 	@${PERL} -i -ne "print unless /'BUILD_REQUIRES'/../},/" ${WRKSRC}/Makefile.PL
 

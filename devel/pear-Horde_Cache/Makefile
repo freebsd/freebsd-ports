@@ -17,6 +17,7 @@ USE_HORDE_RUN=	Horde_Compress_Fast \
 		Horde_Util
 USE_PHP=	hash
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MAPC}

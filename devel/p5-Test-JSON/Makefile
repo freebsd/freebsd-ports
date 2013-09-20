@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Test-JSON
-# Date created:				26 April 2007
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-JSON
 PORTVERSION=	0.11
@@ -26,4 +22,5 @@ USE_PERL5=	configure
 
 MAN3=	Test::JSON.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

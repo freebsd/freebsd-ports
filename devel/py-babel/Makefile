@@ -18,6 +18,7 @@ USE_PYDISTUTILS=	easy_install
 
 PORTDOCS=	docs/*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

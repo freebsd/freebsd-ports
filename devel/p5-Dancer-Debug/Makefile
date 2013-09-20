@@ -25,4 +25,5 @@ MAN3=		Dancer::Debug.3 \
 		Plack::Middleware::Debug::Dancer::Settings.3 \
 		Plack::Middleware::Debug::Dancer::Version.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

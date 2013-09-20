@@ -25,4 +25,5 @@ MAN3=		Devel::PatchPerl.3 \
 		Devel::PatchPerl::Hints.3 \
 		Devel::PatchPerl::Plugin.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-virtualenvwrapper
-# Date created:		2010-05-06
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	virtualenvwrapper
 PORTVERSION=	3.6
@@ -26,6 +22,7 @@ USE_PYDISTUTILS=	easy_install
 # Python3 ready
 USE_PYTHON=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lock_file
-# Date created:		5 June 2007
-# Whom:			Martin Horcicka <martin@horcicka.eu>
-#
+# Created by: Martin Horcicka <martin@horcicka.eu>
 # $FreeBSD$
-#
 
 PORTNAME=	lock_file
 PORTVERSION=	2.0
@@ -19,4 +15,5 @@ COMMENT=	Lock file manipulation
 USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

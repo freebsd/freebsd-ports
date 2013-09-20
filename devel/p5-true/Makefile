@@ -25,4 +25,5 @@ USES=		perl5
 MAN3=		true.3 \
 		true::VERSION.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

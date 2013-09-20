@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	make++
-# Date created:			Fab 21, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	make++
 PORTVERSION=	2.0
@@ -44,6 +39,7 @@ MAN1=		makepp.1 makepp_build_algorithm.1 \
 		makepplog.1 makeppreplay.1 \
 		perl_performance.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(NOPORTDOCS)

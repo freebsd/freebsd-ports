@@ -21,4 +21,5 @@ USE_PHPEXT=	yes
 PHP_MODNAME=	pthreads
 IGNORE_WITH_PHP=	52
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

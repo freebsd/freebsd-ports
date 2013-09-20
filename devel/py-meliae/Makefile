@@ -1,4 +1,3 @@
-# Creatd by: Sofian Brabez <sbz@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	meliae
@@ -22,4 +21,5 @@ PYDISTUTILS_PKGVERSION=	${PORTVERSION}.final.0
 regression-test: extract
 	(cd ${WRKSRC}; ${MAKE} check)
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

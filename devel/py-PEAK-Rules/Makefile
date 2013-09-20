@@ -1,9 +1,5 @@
-# New ports collection makefile for:	PEAK-Rules
-# Date created:		23 June, 2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	PEAK-Rules
 PORTVERSION=	0.5a1
@@ -26,4 +22,5 @@ USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	PEAK_Rules
 PYDISTUTILS_PKGVERSION=	0.5a1.dev_r2686
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

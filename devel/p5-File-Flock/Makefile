@@ -27,4 +27,5 @@ MAN3=		File::Flock.3 \
 		File::Flock::Forking.3 \
 		File::Flock::Subprocess.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

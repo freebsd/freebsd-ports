@@ -35,4 +35,5 @@ MAN3=		Data::Serializer.3 Data::Serializer::Bencode.3 \
 		Data::Serializer::XML::Simple.3 Data::Serializer::YAML.3 \
 		Data::Serializer::YAML::Syck.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

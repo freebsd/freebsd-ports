@@ -26,6 +26,7 @@ INSTANCE_FILE=	030004-${PORTNAME}-${PORTVERSION}
 INSTANCES_DIR=	etc/maven-wrapper/instances.d/
 PLIST_FILES=	${INSTANCES_DIR}/${INSTANCE_FILE}
 
+NO_STAGE=	yes
 post-extract:
 	${RM} -f ${WRKSRC}/bin/*.bat
 	${ECHO_CMD} "${DATADIR}" > ${WRKSRC}/${INSTANCE_FILE}

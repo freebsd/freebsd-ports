@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-psyco
-# Date created:		5 September 2002
-# Whom:			Alex Rodioukov <simuran@shaw.ca>
-#
+# Created by: Alex Rodioukov <simuran@shaw.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	psyco
 PORTVERSION=	1.6
@@ -22,6 +18,7 @@ USE_PYDISTUTILS=yes
 
 WRKSRC=		${WRKDIR}/psyco-${PORTVERSION}
 
+NO_STAGE=	yes
 post-install:
 # permission safeness
 	@${CHMOD} -R ${SHAREMODE} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/

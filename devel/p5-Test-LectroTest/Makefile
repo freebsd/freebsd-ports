@@ -22,4 +22,5 @@ MAN3=		Test::LectroTest.3 \
 		Test::LectroTest::TestRunner.3 \
 		Test::LectroTest::Tutorial.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

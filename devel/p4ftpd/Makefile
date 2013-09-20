@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p4ftpd
-# Date created:				3 Apr 2010
-# Whom:					gordon@FreeBSD.org
-#
+# Created by: gordon@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	p4ftpd
 PORTVERSION=	2012.1.442152
@@ -34,6 +30,7 @@ SUB_LIST=	P4LOG=${P4LOG}
 
 USE_RC_SUBR=	p4ftpd
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${.CURDIR}/../p4/Makefile.inc"

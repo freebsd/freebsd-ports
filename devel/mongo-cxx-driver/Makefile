@@ -22,4 +22,5 @@ GH_COMMIT=	41691d5
 
 USE_PYTHON=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

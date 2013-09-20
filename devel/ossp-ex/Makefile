@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ossp-ex
-# Date created:				2003-01-31
-# Whom:					Alan Eldridge <alane@geeksrus.net>
-#
+# Created by: Alan Eldridge <alane@geeksrus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ex
 PORTVERSION=	1.0.6
@@ -21,6 +17,7 @@ USE_LDCONFIG=	yes
 
 MAN3=	ex.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"

@@ -18,6 +18,7 @@ MAKE_FLAGS=	LIBDIR=${PREFIX}/lib \
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

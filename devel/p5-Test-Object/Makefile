@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Test-Object
-# Date created:				05 September 2006
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Object
 PORTVERSION=	0.07
@@ -21,4 +17,5 @@ USE_PERL5=	configure
 
 MAN3=		Test::Object.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

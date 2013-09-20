@@ -1,4 +1,3 @@
-# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
 
 PORTNAME=	Package-Stash
@@ -30,4 +29,5 @@ MAN3=		Package::Stash.3 \
 		Package::Stash::Conflicts.3 \
 		Package::Stash::PP.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

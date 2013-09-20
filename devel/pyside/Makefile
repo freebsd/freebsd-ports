@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pyside
-# Date created:		2011-03-22
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pyside
 PORTVERSION=	1.1.1
@@ -40,6 +36,7 @@ USES=		cmake
 USE_LDCONFIG=	yes
 USE_PYTHON=	-2.7
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/devel/qt4/files/Makefile.options"

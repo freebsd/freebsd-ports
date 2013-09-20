@@ -37,6 +37,7 @@ MAN3=		JSON::RPC.3 \
 		JSON::RPC::Procedure.3 \
 		JSON::RPC::Test.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

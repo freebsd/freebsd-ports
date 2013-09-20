@@ -1,9 +1,5 @@
-# New ports collection makefile for:	msp430-gcc
-# Date created:		15 October 2002
-# Whom:			Lev Serebryakov <lev@serebryakov.spb.ru>
-#
+# Created by: Lev Serebryakov <lev@serebryakov.spb.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}.${PATCHVERSION}
@@ -54,6 +50,7 @@ INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 
 BINARIES=	gcc gcc-${GCCVERSION} gcov cpp
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-configure:

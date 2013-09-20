@@ -15,6 +15,7 @@ USE_PERL5=	configure
 
 MAN3=		SNMP::Persist.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PERL_THREADED!= ${PERL} -mthreads -e '' >/dev/null 2>&1 && ${ECHO_CMD} 'yes' || ${ECHO_CMD}

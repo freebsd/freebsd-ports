@@ -23,6 +23,7 @@ TEST_DEPENDS:=	${RUN_DEPENDS}
 regression-test: build
 	@cd ${WRKSRC} && PYTHONPATH=${WRKSRC} ${PYTHON_CMD} pytest.py --ignore=doc/ja
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

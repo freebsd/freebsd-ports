@@ -22,4 +22,5 @@ USE_GMAKE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include/${LUA_SUBDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

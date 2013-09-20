@@ -32,4 +32,5 @@ MAN3=		App::CLI::Extension.3 \
 		App::CLI::Extension::Exception.3 \
 		App::CLI::README.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

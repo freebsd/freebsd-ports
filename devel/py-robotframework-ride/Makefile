@@ -22,4 +22,5 @@ PYDISTUTILS_NOEGGINFO=	yes
 USE_WX=		2.8+
 WX_COMPS=	python:run
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

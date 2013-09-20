@@ -18,4 +18,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=		Devel::SimpleTrace.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for: py-xattr
-# Date created:		9 Apr 2008
-# Whom:			bland@FreeBSD.org
-#
+# Created by: bland@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	xattr
 PORTVERSION=	0.6.4
@@ -21,4 +17,5 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

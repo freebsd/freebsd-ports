@@ -40,4 +40,5 @@ MAN3=		Dist::Joseki.3 \
 		Dist::Joseki::Find.3 \
 		Dist::Joseki::Version.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

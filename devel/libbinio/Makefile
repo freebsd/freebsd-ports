@@ -23,6 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	${CPPFLAGS}
 CXXFLAGS+=	${CPPFLAGS}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(SUBDIRS\ =\).*|\1 src|' ${WRKSRC}/Makefile.in
 

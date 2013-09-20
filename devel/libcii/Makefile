@@ -26,6 +26,7 @@ SAMPLES=	double calc ids	mpcalc wf xref cref iref kref \
 		idents words basename dirname
 I386_SAMPLES=	sort spin sieve
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"

@@ -17,6 +17,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 INFO=		omake-doc
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"

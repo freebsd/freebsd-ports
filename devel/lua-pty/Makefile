@@ -1,9 +1,5 @@
-# New ports collection makefile for:   lua50-pty
-# Date created:        17 April 2006
-# Whom:                Andrew Turner <andrew+ports@fubar.geek.nz>
-#
+# Created by: Andrew Turner <andrew+ports@fubar.geek.nz>
 # $FreeBSD$
-#
 
 PORTNAME=	pty
 PORTVERSION=	1.25
@@ -30,6 +26,7 @@ DISTFILES+=	compat-5.1r5.tar.gz:compat
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/pty.lua \
 		%%LUA_MODLIBDIR%%/lpty.so
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 .for file in ${DISTFILES:C,:.*,,}

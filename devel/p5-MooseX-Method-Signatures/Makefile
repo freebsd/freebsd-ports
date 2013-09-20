@@ -41,4 +41,5 @@ MAN3=		MooseX::Method::Signatures.3 \
 		MooseX::Method::Signatures::Types.3 \
 		MooseX::Method::Signatures::Meta::Method.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -25,6 +25,7 @@ CONFIGURE_ENV=	ARCHIVE_CFLAGS=" " ARCHIVE_LIBS="-larchive"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

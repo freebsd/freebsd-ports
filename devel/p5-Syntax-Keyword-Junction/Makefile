@@ -24,4 +24,5 @@ MAN3=		Syntax::Feature::Junction.3 \
 		Syntax::Keyword::Junction::None.3 \
 		Syntax::Keyword::Junction::One.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

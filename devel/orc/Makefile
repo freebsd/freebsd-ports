@@ -27,6 +27,7 @@ EXAMPLES_EXEC=	example1 example2 example3 mt19937ar volscale
 OPTIONS_DEFINE=	DOCS EXAMPLES
 DOCS_DESC=	Include gtk-doc documentation
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

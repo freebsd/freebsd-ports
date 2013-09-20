@@ -25,6 +25,7 @@ OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 PHPDOCS_DESC=	Integrate with PHP.net documentation
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPHPDOCS}

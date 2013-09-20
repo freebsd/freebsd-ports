@@ -21,4 +21,5 @@ USE_PERL5=	modbuild
 MAN3=		Params::Callback.3 Params::CallbackRequest.3 \
 		Params::CallbackRequest::Exceptions.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

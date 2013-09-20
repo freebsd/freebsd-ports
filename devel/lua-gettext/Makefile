@@ -1,9 +1,5 @@
-# New ports collection makefile for:   lua50-gettext
-# Date created:        31 May 2006
-# Whom:                Andrew Turner <andrew+ports@fubar.geek.nz>
-#
+# Created by: Andrew Turner <andrew+ports@fubar.geek.nz>
 # $FreeBSD$
-#
 
 PORTNAME=	gettext
 PORTVERSION=	1.5
@@ -26,6 +22,7 @@ LVER=		${PORTVERSION}
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/gettext.lua \
 		%%LUA_MODLIBDIR%%/lgettext.so
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 .for file in ${DISTFILES}

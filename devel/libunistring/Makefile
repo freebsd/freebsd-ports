@@ -20,6 +20,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INFO=		${PORTNAME}
 
+NO_STAGE=	yes
 pre-patch:
 .if defined(NOPORTDOCS)
 	cd ${WRKSRC}/doc && ${REINPLACE_CMD}\

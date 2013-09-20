@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-traits
-# Date created:		2008-12-12
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	traits
 PORTVERSION=	3.6.0
@@ -25,6 +21,7 @@ USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Traits
 PYEASYINSTALL_ARCHDEP=	yes
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}

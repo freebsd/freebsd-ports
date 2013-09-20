@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Devel-ptkdb
-# Date created:				May 9th 2002
-# Whom:					Alex Kapranoff <kappa@freebsd.org.ua>
-#
+# Created by: Alex Kapranoff <kappa@FreeBSD.org.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-ptkdb
 PORTVERSION=	1.1091
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		Devel::ptkdb.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

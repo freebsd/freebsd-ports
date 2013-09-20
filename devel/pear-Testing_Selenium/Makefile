@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-Testing_Selenium
-# Date created:			  15 December 2007
-# Whom:				  Martin Wilke (miwi@FreeBSD.org)
-#
+# Created by: Martin Wilke (miwi@FreeBSD.org)
 # $FreeBSD$
-#
 
 PORTNAME=	Testing_Selenium
 PORTVERSION=	0.4.4
@@ -17,6 +13,7 @@ RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 PEAR_AUTOINSTALL=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

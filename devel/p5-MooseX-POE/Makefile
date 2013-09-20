@@ -36,4 +36,5 @@ MAN3=		MooseX::POE.3 \
 		MooseX::POE::Role.3 \
 		MooseX::POE::SweetArgs.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

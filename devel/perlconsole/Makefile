@@ -32,6 +32,7 @@ PLIST_FILES=	bin/perlconsole \
 
 PLIST_DIRS=	${SITE_PERL_REL}/PerlConsole
 
+NO_STAGE=	yes
 do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

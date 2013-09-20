@@ -24,4 +24,5 @@ USE_PERL5=	modbuild
 MAN3=		Attribute::Params::Validate.3 \
 		Params::Validate.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fudge
-# Date created:				08 Mar 2010
-# Whom:					Yi-Huan Chan <yhchan@csie.nctu.edu.tw>
-#
+# Created by: Yi-Huan Chan <yhchan@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	fudge
 PORTVERSION=	1.0.3
@@ -19,4 +15,5 @@ USE_PYDISTUTILS=	easy_install
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

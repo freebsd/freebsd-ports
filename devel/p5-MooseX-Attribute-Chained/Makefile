@@ -26,4 +26,5 @@ MAN3=		Moose::Meta::Attribute::Custom::Trait::Chained.3 \
 		MooseX::ChainedAccessors::Accessor.3 \
 		MooseX::Traits::Attribute::Chained.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

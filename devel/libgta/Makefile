@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libgta
-# Date created:		2012-06-10
-# Whom:			lbartoletti <coder@tuxfamily.org>
-#
+# Created by: lbartoletti <coder@tuxfamily.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libgta
 PORTVERSION=	1.0.2
@@ -21,6 +17,7 @@ USE_GMAKE=	yes
 USES=	pathfix
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -20,4 +20,5 @@ MAN3=		Module::Collect.3 \
 		Module::README.3 \
 		Module::Collect::Package.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

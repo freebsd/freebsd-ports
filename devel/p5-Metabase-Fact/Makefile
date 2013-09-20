@@ -37,4 +37,5 @@ MAN3=	Metabase::Fact.3 Metabase::Resource::metabase.3 \
 	Metabase::User::Profile.3 \
 	Metabase::Report.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

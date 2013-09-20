@@ -31,4 +31,5 @@ MAN3=		Test::Metadata.3 Test::Parser.3 Test::Parser::Dbench.3 \
 		Test::Parser::iozone.3 Test::Parser::lhcs_regression.3 \
 		Test::Parser::ltp.3 Test::Parser::newpynfs.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

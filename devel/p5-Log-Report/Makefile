@@ -44,4 +44,5 @@ MAN3=	Log::Report.3 \
 	Log::Report::Util.3 \
 	Log::Report::Win32Locale.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    devel/p5-Devel-TraceCalls
-# Date created:                         Fri Dec  9 18:46:07 CET 2005
-# Whom:                                 Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Devel-TraceCalls
 PORTVERSION=	0.04
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Devel::TraceCalls.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

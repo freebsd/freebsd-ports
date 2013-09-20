@@ -1,9 +1,5 @@
-# New ports collection makefile for: psptoolchain-gcc-stage2
-# Date created:        15 February 2009
-# Whom:                Tassilo Philipp <tphilipp@potion-studios.com>
-#
+# Created by: Tassilo Philipp <tphilipp@potion-studios.com>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=		-stage2
 
@@ -31,4 +27,5 @@ MAN1=			psp-g++.1
 PLIST=			${.CURDIR}/pkg-plist
 MASTERDIR=		${.CURDIR}/../psptoolchain-gcc-stage1
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

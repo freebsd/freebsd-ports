@@ -25,4 +25,5 @@ MAN1=		dir-dump.1
 MAN3=		File::Dir::Dumper.3 File::Dir::Dumper::App.3 File::Dir::Dumper::Base.3 File::Dir::Dumper::Scanner.3 \
 		File::Dir::Dumper::Stream::JSON::Reader.3 File::Dir::Dumper::Stream::JSON::Writer.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

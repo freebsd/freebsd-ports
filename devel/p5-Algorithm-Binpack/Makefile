@@ -16,4 +16,5 @@ MAN3=		Algorithm::BinPack.3
 
 PORTSCOUT=	limit:^\d+\.\d+
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

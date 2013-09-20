@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-svn
-# Date created:			20051220
-# Whom:				Alex Kiesel <kiesel@schlund.de>
-#
+# Created by: Alex Kiesel <kiesel@schlund.de>
 # $FreeBSD$
-#
 
 PORTNAME=	svn
 PORTVERSION=	1.0.2
@@ -23,4 +19,5 @@ LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion16
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

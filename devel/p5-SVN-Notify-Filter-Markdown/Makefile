@@ -22,4 +22,5 @@ USE_PERL5=	modbuild
 
 MAN3=		SVN::Notify::Filter::Markdown.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

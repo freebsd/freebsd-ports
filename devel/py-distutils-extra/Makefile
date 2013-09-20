@@ -21,6 +21,7 @@ PYDISTUTILS_NOEGGINFO=	yes
 
 PLIST_SUB=	PYTHON_SUFFIX=${PYTHON_SUFFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 320

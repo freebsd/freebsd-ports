@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Test::WWW::Mechanize::PSGI
-# Date created:		03 Apr 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Test-WWW-Mechanize-PSGI
 PORTVERSION=	0.35
@@ -25,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=	Test::WWW::Mechanize::PSGI.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

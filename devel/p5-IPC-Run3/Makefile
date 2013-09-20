@@ -20,4 +20,5 @@ MAN3=		IPC::Run3.3 \
 		IPC::Run3::ProfPP.3 \
 		IPC::Run3::ProfReporter.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

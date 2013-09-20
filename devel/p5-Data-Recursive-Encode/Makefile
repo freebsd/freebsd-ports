@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Data::Recursive::Encode
-# Date created:		23 Jan 2010
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Data-Recursive-Encode
 PORTVERSION=	0.04
@@ -19,4 +14,5 @@ USE_PERL5=	configure
 
 MAN3=	Data::Recursive::Encode.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

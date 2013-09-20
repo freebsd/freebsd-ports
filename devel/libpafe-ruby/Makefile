@@ -1,7 +1,4 @@
-# New ports collection makefile for:	libpafe-ruby
-# Date created:				21 February 2010
-# Whom:					Hajimu UMEMOTO <ume@FreeBSD.org>
-#
+# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libpafe-ruby
@@ -26,4 +23,5 @@ PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/pasori.so
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

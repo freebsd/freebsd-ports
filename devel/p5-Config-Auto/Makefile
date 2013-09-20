@@ -22,6 +22,7 @@ USE_PERL5=	configure
 OPTIONS_DEFINE=	XMLSIMPLE
 XMLSIMPLE_DESC=	Support for XML config files
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXMLSIMPLE}

@@ -1,4 +1,3 @@
-# Create by: stas
 # $FreeBSD$
 
 PORTNAME=	opengrok
@@ -31,6 +30,7 @@ OPTIONS_SINGLE=	AS
 OPTIONS_SINGLE_AS=	TOMCAT7 TOMCAT6 RESIN3
 OPTIONS_DEFAULT=	TOMCAT6
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 JARFILE=	${DATADIR}/opengrok.jar

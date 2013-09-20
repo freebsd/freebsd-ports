@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Heap-Simple-XS
-# Date created:				11 November 2004
-# Whom:					Aaron Dalton <aaron@daltons.ca>
-#
+# Created by: Aaron Dalton <aaron@daltons.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	Heap-Simple-XS
 PORTVERSION=	0.10
@@ -23,4 +19,5 @@ CONFIGURE_ARGS+=-n
 
 MAN3=		Heap::Simple::XS.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

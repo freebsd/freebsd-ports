@@ -28,6 +28,7 @@ OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
 CONFLICTS?=	pth-hard-2.*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PKGNAMESUFFIX} == "-hard"

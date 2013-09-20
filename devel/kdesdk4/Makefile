@@ -64,6 +64,7 @@ ANTLR_DESC=	Support for po2xml and swappo tools
 KATE_DESC=	Install Kate advanced text editor
 KATE_PATE_DESC=	Support for Python plugins in Kate
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MANTLR}

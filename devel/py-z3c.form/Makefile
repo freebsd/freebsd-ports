@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-z3c.form
-# Date created:				18 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	z3c.form
 PORTVERSION=	2.5.1
@@ -36,4 +31,5 @@ DIST_SUBDIR=	zope
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

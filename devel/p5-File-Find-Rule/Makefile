@@ -21,4 +21,5 @@ MAN1=		findrule.1
 MAN3=		File::Find::Rule.3 File::Find::Rule::Extending.3 \
 		File::Find::Rule::Procedural.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

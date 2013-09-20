@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-anonfunc
-# Date created:		3 January 2004
-# Whom:			Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
 
 PORTNAME=	anonfunc
@@ -18,4 +15,5 @@ COMMENT=	Python module that provides easy anonymous function
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

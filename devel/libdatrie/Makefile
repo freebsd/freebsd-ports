@@ -22,4 +22,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		trietool-0.2.1
 PORTDOCS=	README.migration
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

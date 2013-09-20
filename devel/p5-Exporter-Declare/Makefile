@@ -29,4 +29,5 @@ MAN3=	Exporter::Declare.3 \
 	Exporter::Declare::Meta.3 \
 	Exporter::Declare::Specs.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

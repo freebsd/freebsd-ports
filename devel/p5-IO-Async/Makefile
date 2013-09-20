@@ -58,6 +58,7 @@ MAN3=		IO::Async.3 \
 		IO::Async::Timer::Countdown.3 \
 		IO::Async::Timer::Periodic.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501600

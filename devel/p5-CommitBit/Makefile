@@ -28,4 +28,5 @@ MAN3=		CommitBit.3 \
 		CommitBit::Notification::InviteToProject.3 \
 		CommitBit::Test.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

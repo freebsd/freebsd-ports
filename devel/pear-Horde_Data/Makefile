@@ -1,7 +1,4 @@
-# Ports collection makefile for:  pear-Horde_Data
-# Date created:			  6 July 2011
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Horde_Data
@@ -19,6 +16,7 @@ USE_HORDE_RUN=	Horde_Browser \
 		Horde_Translation \
 		Horde_Util
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
 .include <bsd.port.post.mk>

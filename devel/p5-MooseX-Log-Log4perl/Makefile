@@ -22,6 +22,7 @@ USE_PERL5=	configure
 MAN3=		MooseX::Log::Log4perl.3 \
 		MooseX::Log::Log4perl::Easy.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e '/auto_install;/d' \
 		${WRKSRC}/Makefile.PL

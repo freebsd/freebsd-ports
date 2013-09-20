@@ -31,6 +31,7 @@ PLIST_FILES=	include/maa.h \
 		lib/libmaa.so.3
 PORTDOCS=	${DOCS:T}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

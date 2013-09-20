@@ -19,4 +19,5 @@ MAN3=		Locale::Msgfmt::Utils.3 \
 		Locale::Msgfmt::po.3 \
 		Locale::Msgfmt.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

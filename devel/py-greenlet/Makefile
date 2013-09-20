@@ -17,4 +17,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

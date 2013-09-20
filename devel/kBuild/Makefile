@@ -1,4 +1,4 @@
-# Created by:	Bruce Simpson
+# Created by: Bruce Simpson
 # $FreeBSD$
 
 PORTNAME=	kBuild
@@ -44,6 +44,7 @@ ENV=
 .SHELL:		path="/bin/sh" unsetenv=true
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '11269d;11274d' ${WRKSRC}/src/sed/configure
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Config.kmk

@@ -1,4 +1,3 @@
-# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Path-Dispatcher
@@ -43,4 +42,5 @@ MAN3=		Path::Dispatcher.3 \
 		Path::Dispatcher::Rule::Tokens.3 \
 		Path::Dispatcher::Rule::Under.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

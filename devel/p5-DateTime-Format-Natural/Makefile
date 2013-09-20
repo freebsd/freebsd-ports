@@ -43,4 +43,5 @@ MAN3=		DateTime::Format::Natural.3 \
 regression-test: build
 	@cd ${WRKSRC} && ./Build test
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

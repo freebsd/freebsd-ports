@@ -20,6 +20,7 @@ OPTIONS_DEFINE=	ARGNAMES
 OPTIONS_DEFAULT=	ARGNAMES
 ARGNAMES_DESC=	Enable DwarnN subroutine
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MARGNAMES}

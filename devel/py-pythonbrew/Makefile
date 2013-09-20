@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pythonbrew
-# Date created:		2011-06-13
-# Whom:			Lung-Pin Chang <changlp@cs.nctu.edu.tw>
-#
+# Created by: Lung-Pin Chang <changlp@cs.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	pythonbrew
 PORTVERSION=	1.3
@@ -19,4 +15,5 @@ LICENSE=	MIT
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

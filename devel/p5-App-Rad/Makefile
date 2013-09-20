@@ -22,4 +22,5 @@ MAN3=		App::Rad.3 \
 		App::Rad::Include.3 \
 		App::Rad::Plugin.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

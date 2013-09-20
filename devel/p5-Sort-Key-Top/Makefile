@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	Sort::Key::Top
-# Date created:			Aug 23, 2007
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	Sort-Key-Top
 PORTVERSION=	0.06
@@ -21,4 +16,5 @@ USE_PERL5=	configure
 
 MAN3=	Sort::Key::Top.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

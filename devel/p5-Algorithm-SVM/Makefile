@@ -18,4 +18,5 @@ MAN3=		Algorithm::SVM.3 \
 
 CC=		c++
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

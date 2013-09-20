@@ -24,6 +24,7 @@ PEAR_CHANNEL=	phpunit
 PEAR_AUTOINSTALL=	yes
 IGNORE_WITH_PHP=52
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

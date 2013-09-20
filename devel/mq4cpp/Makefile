@@ -17,4 +17,5 @@ USE_BZIP2=	yes
 USE_DOS2UNIX=	yes
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# Ports collection makefile for:        py-geojson
-# Date created:                 03 July, 2008
-# Whom:                         Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	geojson
 PORTVERSION=	1.0.1
@@ -26,6 +22,7 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=easy_install
 PYDISTUTILS_NOEGGINFO=	yes
 
+NO_STAGE=	yes
 post-install:
 .if	!defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

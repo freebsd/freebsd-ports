@@ -18,6 +18,7 @@ LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1
 
 OPTIONS_DEFINE=	BOOST DOCS DOXYGEN
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}

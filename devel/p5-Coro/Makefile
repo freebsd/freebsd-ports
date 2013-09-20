@@ -49,6 +49,7 @@ MAN3=		Coro.3 \
 		Coro::Timer.3 \
 		Coro::Util.3
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/

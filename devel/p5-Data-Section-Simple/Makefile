@@ -18,4 +18,5 @@ USES=		perl5
 
 MAN3=		Data::Section::Simple.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

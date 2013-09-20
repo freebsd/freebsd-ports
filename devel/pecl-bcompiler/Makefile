@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-bcompiler
-# Date created:			2006/10/25
-# Whom:				chinsan <chinsan@FreeBSD.org>
-#
+# Created by: chinsan <chinsan@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bcompiler
 PORTVERSION=	1.0.2
@@ -23,4 +19,5 @@ IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--enable-bcompiler
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

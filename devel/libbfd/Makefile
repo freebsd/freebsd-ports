@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libbfd
-# Date created:		26 Feb 2004
-# Whom:			Joerg Wunsch <joerg@freebsd.org>
-#
+# Created by: Joerg Wunsch <joerg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libbfd
 PORTVERSION=	2.19.1
@@ -32,6 +28,7 @@ CONFIGURE_ARGS=	--enable-install-libbfd \
 		--disable-werror
 INFO=		bfd
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

@@ -16,6 +16,7 @@ USES=		perl5
 
 MAN3=		Eval::LineNumbers.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|Eval-LineNumbers|Eval::LineNumbers|' ${WRKSRC}/Makefile.PL
 

@@ -14,4 +14,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 			--disable-testbench
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

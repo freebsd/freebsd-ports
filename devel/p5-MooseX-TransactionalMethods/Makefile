@@ -23,4 +23,5 @@ USES=		perl5
 MAN3=		MooseX::Meta::Method::Transactional.3 \
 		MooseX::TransactionalMethods.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

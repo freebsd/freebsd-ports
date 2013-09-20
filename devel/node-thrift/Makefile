@@ -1,6 +1,5 @@
 # Created by: Valery Komarov <komarov@valerka.net>
 # $FreeBSD$
-#
 
 PORTNAME=	thrift
 PORTVERSION=	${THRIFT_PORTVERSION}
@@ -17,6 +16,7 @@ FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

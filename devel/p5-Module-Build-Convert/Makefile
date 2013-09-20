@@ -25,4 +25,5 @@ USE_PERL5=	modbuild
 MAN3=		Module::Build::Convert.3
 MAN1=		make2build.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

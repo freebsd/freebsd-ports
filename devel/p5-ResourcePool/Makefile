@@ -28,6 +28,7 @@ MAN3=	ResourcePool.3 \
 	ResourcePool::Singleton.3 \
 	ResourcePool::UML.3
 
+NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

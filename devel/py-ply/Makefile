@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	ply
-# Date created:			Jul 31, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	ply
 PORTVERSION=	3.4
@@ -20,6 +15,7 @@ USE_PYDISTUTILS=yes
 
 PORTDOCS=	ply.html internal.html README
 
+NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e 's|from setuptools import setup|from distutils.core import setup|' \
 		${WRKSRC}/setup.py

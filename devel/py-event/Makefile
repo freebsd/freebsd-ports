@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-event
-# Date created:				23 Feb 2007
-# Whom:					Alexander Botero-Lowry <alexbl@FreeBSD.org>
-#
+# Created by: Alexander Botero-Lowry <alexbl@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	event
@@ -23,4 +20,5 @@ USE_PYDISTUTILS=	yes
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/event.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

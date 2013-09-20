@@ -24,4 +24,5 @@ LICENSE=	MIT
 
 MAN3=		Sub::Alias.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -20,6 +20,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 PORTDOCS=	PKG-INFO README.txt release_notes.txt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

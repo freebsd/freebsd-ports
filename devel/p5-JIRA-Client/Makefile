@@ -20,4 +20,5 @@ PROJECTHOST=	jira-client
 
 MAN3=		JIRA::Client.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

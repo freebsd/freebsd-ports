@@ -43,4 +43,5 @@ MAN3=		Mouse::Meta::Attribute::Custom::Trait::Array.3 \
 		MouseX::NativeTraits::Num.3 \
 		MouseX::NativeTraits::Str.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

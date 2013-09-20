@@ -35,6 +35,7 @@ MLINKS=		editline.3 el_init.3 \
 		editline.3 history.3
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 post-extract:
 	${MV} ${WRKSRC}/readline ${WRKSRC}/editline
 

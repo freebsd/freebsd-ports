@@ -22,6 +22,7 @@ NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} ==	"amd64"

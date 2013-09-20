@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-File-Lock
-# Date created:				October 17th 1996
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	File-Lock
 PORTVERSION=	0.9
@@ -18,6 +14,7 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS+=	POLLUTE=1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} > 501400
 BROKEN=	does not compile POLLUTE is gone, no release since 1996, net/netdisco depends on me

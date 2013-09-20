@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ossp-al
-# Date created:				2003-01-31
-# Whom:					Alan Eldridge <alane@geeksrus.net>
-#
+# Created by: Alan Eldridge <alane@geeksrus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	al
 PORTVERSION=	0.9.3
@@ -25,6 +21,7 @@ USE_LDCONFIG=	yes
 check:	build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${FILESDIR}/manpages.mk"

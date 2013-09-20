@@ -42,4 +42,5 @@ MAN3=		Mo.3 \
 		Mo::required.3 \
 		Mo::xs.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

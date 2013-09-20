@@ -19,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=	Test::WWW::Declare.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

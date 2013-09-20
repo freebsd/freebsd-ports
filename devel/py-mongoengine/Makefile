@@ -18,6 +18,7 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_NOEGGINFO=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|classifiers=CLASSIFIERS,|classifiers=CLASSIFIERS,zip_safe=False,|' \
 		${WRKSRC}/setup.py

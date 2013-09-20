@@ -19,4 +19,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf:env
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

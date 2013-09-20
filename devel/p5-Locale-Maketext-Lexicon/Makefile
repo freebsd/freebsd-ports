@@ -37,6 +37,7 @@ MAN3=		Locale::Maketext::Extract.3 \
 		Locale::Maketext::Lexicon::Msgcat.3 \
 		Locale::Maketext::Lexicon::Tie.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

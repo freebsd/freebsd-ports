@@ -19,4 +19,5 @@ USE_PERL5=	configure
 MAN3=		Devel::Profiler.3 Devel::Profiler::Apache.3 \
 		Devel::Profiler::Test.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

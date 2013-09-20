@@ -51,6 +51,7 @@ MAN3=		_U_dyn_cancel.3 \
 		unw_step.3 \
 		unw_strerror.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == i386

@@ -25,4 +25,5 @@ USE_PERL5=	configure
 MAN3=		Hash::Util::FieldHash::Compat.3 \
 		Hash::Util::FieldHash::Compat::Heavy.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

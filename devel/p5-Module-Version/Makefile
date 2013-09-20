@@ -16,4 +16,5 @@ USES=		perl5
 MAN1=		mversion.1
 MAN3=		Module::Version.3 Module::Version::App.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

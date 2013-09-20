@@ -34,6 +34,7 @@ JS_DESC=JavaScript plugin support
 SEED_DESC=	JavaScript support based on webkit-gtk3
 GJS_DESC=	JavaScript support based on spidermonkey
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSEED}

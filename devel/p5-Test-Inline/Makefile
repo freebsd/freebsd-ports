@@ -41,4 +41,5 @@ MAN3=	Test::Inline.3 \
 	Test::Inline::Script.3 \
 	Test::Inline::Section.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

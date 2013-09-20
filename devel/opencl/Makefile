@@ -23,6 +23,7 @@ PLIST_DIRS+=	include/CL
 PLIST_FILES+=include/CL/$f
 .endfor
 
+NO_STAGE=	yes
 pre-patch:
 		@${MKDIR} ${WRKSRC}
 .for f in ${DISTFILES}

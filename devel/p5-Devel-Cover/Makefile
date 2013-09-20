@@ -67,6 +67,7 @@ MAN3=		Devel::Cover.3 \
 		Devel::Cover::Web.3
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

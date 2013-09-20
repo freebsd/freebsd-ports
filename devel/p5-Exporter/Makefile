@@ -18,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		Exporter.3 Exporter::Heavy.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

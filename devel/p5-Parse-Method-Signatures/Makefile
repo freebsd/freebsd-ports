@@ -33,4 +33,5 @@ MAN3=		Parse::Method::Signatures.3 \
 		Parse::Method::Signatures::Sig.3 \
 		Parse::Method::Signatures::TypeConstraint.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

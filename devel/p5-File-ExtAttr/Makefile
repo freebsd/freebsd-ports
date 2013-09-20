@@ -15,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=			File::ExtAttr.3 File::ExtAttr::Tie.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

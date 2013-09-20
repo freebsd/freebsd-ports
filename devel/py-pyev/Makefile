@@ -24,4 +24,5 @@ LDFLAGS+=	-L${PREFIX}/lib
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pyev.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

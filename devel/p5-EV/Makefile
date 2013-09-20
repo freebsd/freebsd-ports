@@ -23,4 +23,5 @@ MAN3=		EV.3 \
 		EV::MakeMaker.3 \
 		EV::libev.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -25,4 +25,5 @@ USE_PERL5=	modbuild
 MAN1=	cpan-listchanges.1
 MAN3=	App::cpanlistchanges.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

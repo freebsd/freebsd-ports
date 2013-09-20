@@ -35,4 +35,5 @@ MAN3=		IOC.3 IOC::Config::XML.3 IOC::Config::XML::SAX::Handler.3 \
 		IOC::Visitor::SearchForService.3 IOC::Visitor::ServiceLocator.3 \
 		Test::IOC.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

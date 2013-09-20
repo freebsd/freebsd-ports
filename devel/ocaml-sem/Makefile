@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ocaml-sem
-# Date created:		19 April 2005
-# Whom:			asmith
-#
+# Created by: asmith
 # $FreeBSD$
-#
 
 PORTNAME=	sem
 PORTVERSION=	0.0.2
@@ -37,6 +33,7 @@ USE_GMAKE=	yes
 
 PKGDEINSTALL=	${PKGINSTALL}
 
+NO_STAGE=	yes
 post-install:
 	@${FIND} ${PREFIX}/lib/ocaml/site-lib/sem -type f | \
 		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}

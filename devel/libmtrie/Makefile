@@ -1,4 +1,4 @@
-# Created by: alfred@freebsd.org
+# Created by: alfred@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	libmtrie
@@ -19,4 +19,5 @@ PLIST_SUB+=     HURRRR="@comment "
 PLIST_SUB+=     HURRRR=""
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

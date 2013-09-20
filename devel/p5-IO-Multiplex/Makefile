@@ -16,4 +16,5 @@ USE_PERL5=	configure
 MAN3=		IO::Multiplex.3
 # http://search.cpan.org/dist/IO-Multiplex/Changes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

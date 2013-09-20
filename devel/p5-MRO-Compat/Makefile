@@ -19,6 +19,7 @@ USE_PERL5=	extract configure
 
 MAN3=	MRO::Compat.3
 
+NO_STAGE=	yes
 post-extract:
 	@${PERL} -i.bak -ne 'print unless m,^if, .. m,}$$,' ${WRKSRC}/Makefile.PL
 

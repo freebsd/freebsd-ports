@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/src/pynotify.c
 

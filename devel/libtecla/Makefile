@@ -22,6 +22,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 MAKE_JOBS_UNSAFE=	yes
 SSP_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

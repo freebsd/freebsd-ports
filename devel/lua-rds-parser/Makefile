@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/agentzh-lua-rds-parser-${GITVERSION:S/^0-g//}
 PLIST_FILES=	%%LUA_MODLIBDIR%%/rds/parser.so
 PLIST_DIRS=	%%LUA_MODLIBDIR%%/rds
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${LUA_MODLIBDIR}/rds
 	${INSTALL_PROGRAM} ${WRKSRC}/parser.so ${LUA_MODLIBDIR}/rds

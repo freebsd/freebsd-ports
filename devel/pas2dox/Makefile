@@ -1,9 +1,5 @@
-# Ports collection makefile for:	pas2dox
-# Date created:				2006-03-16
-# Whom:					Andreas Kohn <andreas@syndrom23.de>
-#
+# Created by: Andreas Kohn <andreas@syndrom23.de>
 # $FreeBSD$
-#
 
 PORTNAME=	pas2dox
 DISTVERSION=	0.50rc1
@@ -20,6 +16,7 @@ ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/pas2dox
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's,^CC=.*$$,CC=$${CXX} $${CPPFLAGS} $${CXXFLAGS},' ${WRKSRC}/Makefile
 

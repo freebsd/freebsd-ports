@@ -1,9 +1,5 @@
-# New ports collection makefile for:    picasm
-# Date created:         25 October 2002
-# Whom:                 Bruce M Simpson <bms@FreeBSD.org>
-#
+# Created by: Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	picasm
 PORTVERSION=	1.14
@@ -27,6 +23,7 @@ ALL_TARGET=
 
 EXAMPLE_FILES=	example.asm morse.asm morse.i pic16f84.i picmac.i
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/picasm ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

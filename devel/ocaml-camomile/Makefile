@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	camomile
-# Date created:			Mar 17, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	camomile
 PORTVERSION=	0.8.3
@@ -27,6 +22,7 @@ MAKE_JOBS_UNSAFE=	yes
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 
+NO_STAGE=	yes
 post-install:
 	@${FIND} ${DATADIR} ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}

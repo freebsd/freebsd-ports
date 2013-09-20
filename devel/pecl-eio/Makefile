@@ -19,4 +19,5 @@ USE_PHP=	yes
 USE_PHPEXT=	yes
 IGNORE_WITH_PHP=	52
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

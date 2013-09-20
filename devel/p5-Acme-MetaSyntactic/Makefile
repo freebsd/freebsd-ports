@@ -30,6 +30,7 @@ MAN3=		Acme::MetaSyntactic.3 \
 		Test::MetaSyntactic.3 \
 		eta.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

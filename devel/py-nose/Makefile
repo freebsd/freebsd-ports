@@ -21,6 +21,7 @@ PLIST_SUB+=	PYTHON_VER=${PYTHON_VER}
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=		nosetests.1
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/nosetests.1 ${MANPREFIX}/man/man1
 .endif

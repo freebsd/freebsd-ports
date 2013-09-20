@@ -20,6 +20,7 @@ USE_LDCONFIG=	yes
 INFO=		liblouisxml-guide
 MAN1=		msword2brl.1 xml2brl.1
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e \
 		's#@libdir@#${PREFIX}/libdata#g' ${WRKSRC}/Makefile.in

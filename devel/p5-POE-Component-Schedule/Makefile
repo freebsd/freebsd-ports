@@ -1,9 +1,5 @@
-# New ports collection makefile for:	POE-Component-Schedule
-# Date created:	   December 21 2010
-# Whom:		   mat
-#
+# Created by: mat
 # $FreeBSD$
-#
 
 PORTNAME=	POE-Component-Schedule
 PORTVERSION=	0.95
@@ -25,4 +21,5 @@ USE_PERL5=	modbuild
 
 MAN3=		POE::Component::Schedule.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

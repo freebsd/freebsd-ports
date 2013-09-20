@@ -20,4 +20,5 @@ USE_GNOME=	glib20 gnomehier gnomehack
 USES=		pkgconfig
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

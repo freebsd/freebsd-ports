@@ -20,4 +20,5 @@ CONFIGURE_ARGS+=--with-pcre=${LOCALBASE}
 MAN1=		klel-expr.1
 MAN3=		klelapi.3 klellang.3 klelstdlib.3 kleltut.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

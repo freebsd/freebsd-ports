@@ -1,7 +1,4 @@
-# New ports collection makefile for: pstreams
-# Date created: 	22 Jan 2007
-# Whom: 		Andrew Wingorodov <mail@andr.ru>
-#
+# Created by: Andrew Wingorodov <mail@andr.ru>
 # $FreeBSD$
 
 PORTNAME=	pstreams
@@ -19,4 +16,5 @@ NO_BUILD=	yes
 PLIST_FILES=	include/pstreams/pstream.h
 PLIST_DIRS=	include/pstreams
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

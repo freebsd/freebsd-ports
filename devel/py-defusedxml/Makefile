@@ -20,6 +20,7 @@ DOCS_FILES=	CHANGES.txt README.txt
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

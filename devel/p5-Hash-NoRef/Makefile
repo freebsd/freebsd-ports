@@ -15,4 +15,5 @@ USES=		perl5
 
 MAN3=		Hash::NoRef.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

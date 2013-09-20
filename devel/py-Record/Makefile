@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-Record
-# Date created:				Nov 11, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Record
 PORTVERSION=	2.13.0
@@ -24,4 +19,5 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=		yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

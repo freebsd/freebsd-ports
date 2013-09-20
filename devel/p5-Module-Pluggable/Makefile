@@ -16,4 +16,5 @@ MAN3=		Devel::InnerPackage.3 \
 		Module::Pluggable.3 \
 		Module::Pluggable::Object.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

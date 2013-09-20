@@ -25,4 +25,5 @@ MAN3=	Test::File::ShareDir.3 \
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PERL5} ${PL_BUILD} test
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

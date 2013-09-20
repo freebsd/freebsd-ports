@@ -19,4 +19,5 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/rlcompleter2.py \
 		%%PYTHON_SITELIBDIR%%/rlcompleter2.pyc \
 		%%PYTHON_SITELIBDIR%%/rlcompleter2.pyo
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

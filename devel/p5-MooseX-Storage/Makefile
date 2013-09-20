@@ -50,4 +50,5 @@ MAN3=		MooseX::Storage.3 \
 		MooseX::Storage::Traits::OnlyWhenBuilt.3 \
 		MooseX::Storage::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

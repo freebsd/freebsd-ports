@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pysvn
-# Date created:				22 April 2008
-# Whom:					bra@fsn.hu
-#
+# Created by: bra@fsn.hu
 # $FreeBSD$
-#
 
 PORTNAME=	pysvn
 PORTVERSION=	1.7.6
@@ -33,6 +29,7 @@ PLIST_DIRS=	%%PYTHON_SITELIBDIR%%/${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Source
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && ${MAKE}
 

@@ -18,6 +18,7 @@ USE_PYTHON=	2.7
 USE_PYDISTUTILS=	yes
 
 # Avoid warning
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|install_requires|#install_requires|' \
 		${WRKSRC}/setup.py

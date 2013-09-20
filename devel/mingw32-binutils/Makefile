@@ -43,6 +43,7 @@ PLIST_SUB+=	BINUTILS_TARG=${PKGNAMEPREFIX:S/-$//}
 BINARIES=	addr2line ar as c++filt gprof ld nm objcopy objdump ranlib \
 		readelf size strings strip dlltool dllwrap windmc windres
 
+NO_STAGE=	yes
 pre-configure:
 	${CHMOD} 755 ${WRKSRC}/configure
 

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-zope.dublincore
-# Date created:				18 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	zope.dublincore
 PORTVERSION=	3.8.2
@@ -29,4 +24,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 #USE_ZOPE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

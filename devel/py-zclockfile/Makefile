@@ -16,4 +16,5 @@ USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	zc.lockfile
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

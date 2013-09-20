@@ -1,4 +1,3 @@
-# Created by: Andrej Zverev <az@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Eval-Closure
@@ -27,4 +26,5 @@ USE_PERL5=	configure
 
 MAN3=		Eval::Closure.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

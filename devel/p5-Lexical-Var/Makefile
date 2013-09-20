@@ -18,6 +18,7 @@ USE_PERL5=	configure
 
 MAN3=		Lexical::Sub.3 Lexical::Var.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/Lexical::SealRequireHints/d' ${WRKSRC}/Build.PL ${WRKSRC}/lib/Lexical/Var.pm
 

@@ -18,4 +18,5 @@ MAN3=		Range::Integer.3 Range::String.3 Range::String::Parse.3 \
 		Range::String::Object.3 Range::Integer::Parse.3 \
 		Range::Integer::Object.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

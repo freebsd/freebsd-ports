@@ -9,4 +9,5 @@ PORTREVISION=		0
 PYTHON_SLAVEPORT=	yes
 MASTERDIR=		${.CURDIR}/../distorm
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

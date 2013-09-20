@@ -22,6 +22,7 @@ OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 PIP_DESC=	Use pip to install wheels
 SIGNATURE_DESC=	Enable digital signature of wheels
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>

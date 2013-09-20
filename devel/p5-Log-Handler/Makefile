@@ -33,4 +33,5 @@ MAN3=		Log::Handler.3 \
 		Log::Handler::Plugin::Config::Properties.3 \
 		Log::Handler::Plugin::YAML.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -16,4 +16,5 @@ USE_PERL5=	configure
 MAN3=		Class::Accessor.3 Class::Accessor::Fast.3 \
 		Class::Accessor::Faster.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

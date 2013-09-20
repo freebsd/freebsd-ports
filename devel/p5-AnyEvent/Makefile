@@ -47,4 +47,5 @@ MAN3=		AE.3 \
 		AnyEvent::TLS.3 \
 		AnyEvent::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

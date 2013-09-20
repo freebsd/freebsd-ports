@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lua-cjson
-# Date created:		12 Jan 2012
-# Whom:			osa
-#
+# Created by: osa
 # $FreeBSD$
-#
 
 PORTNAME=	cjson
 PORTVERSION=	2.1.0
@@ -19,6 +15,7 @@ USE_LUA?=	5.1
 
 PLIST_FILES=	%%LUA_MODLIBDIR%%/cjson.so
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} '16,18d; \
 		21s|^\(LUA_INCLUDE.*\)\(PREFIX\)\(.*\)|\1LOCALBASE\3/lua51|' \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ossp-cfg
-# Date created:				2003-01-31
-# Whom:					Alan Eldridge <alane@geeksrus.net>
-#
+# Created by: Alan Eldridge <alane@geeksrus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	cfg
 PORTVERSION=	0.9.11
@@ -26,4 +22,5 @@ MAN3=		cfg.3
 check:	build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

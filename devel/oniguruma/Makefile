@@ -22,6 +22,7 @@ CONFLICTS_INSTALL=	oniguruma-4.*
 GNU_CONFIGURE=	yes
 DOCS=		HISTORY README doc/*
 
+NO_STAGE=	yes
 post-patch:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/ruby187p248-oniguruma.patch \
 		${WRKSRC}/ruby187.patch

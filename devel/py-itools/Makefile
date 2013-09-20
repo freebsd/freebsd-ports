@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-itools
-# Date created:		08 Feb,2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	itools
 PORTVERSION=	0.62.8
@@ -27,4 +23,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

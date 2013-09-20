@@ -25,4 +25,5 @@ MAN3=		Gearman::XS.3 Gearman::XS::Client.3 \
 		Gearman::XS::Job.3 Gearman::XS::Task.3 \
 		Gearman::XS::Worker.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,10 +1,5 @@
-# New ports collection makefile for:	ocaml-annexlib
-# Date created:		2006-08-01
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
-# $MBSDlabs$
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	annexlib
 PORTVERSION=	0.13.2
@@ -34,6 +29,7 @@ DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

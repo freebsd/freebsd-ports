@@ -1,4 +1,4 @@
-# Created By: Autrijus Tang <autrijus@autrijus.org>
+# Created by: Autrijus Tang <autrijus@autrijus.org>
 # $FreeBSD$
 
 PKGNAMEPREFIX=	p5-
@@ -29,6 +29,7 @@ MAN3=		SVN::Base.3 \
 
 SVN_BUILD_BINDINGS=yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile.common"
 
 CATEGORIES+=	perl5

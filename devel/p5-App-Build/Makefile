@@ -21,6 +21,7 @@ USE_PERL5=	modbuild
 
 .if !defined(NOPORTDOCS)
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${WRKSRC}/README ${DOCSDIR}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   libdisasm
-# Date created:        18 January 2006
-# Whom:                Lutz Boehne <lboehne@damogran.de>
-#
+# Created by: Lutz Boehne <lboehne@damogran.de>
 # $FreeBSD$
-#
 
 PORTNAME=	libdisasm
 PORTVERSION=	0.23
@@ -26,6 +22,7 @@ MAN1=	x86dis.1
 MAN3=	x86_disasm.3 x86_format_insn.3 x86_init.3
 MAN7=	libdisasm.7
 
+NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

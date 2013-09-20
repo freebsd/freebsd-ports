@@ -1,9 +1,5 @@
-# New ports collection makefile for:	maven-wrapper
-# Date created:		2011-09-19
-# Whom:			Herve Quiroz <hq@FreeBSD.org>
-#
+# Created by: Herve Quiroz <hq@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	maven-wrapper
 PORTVERSION=	1
@@ -19,6 +15,7 @@ NO_BUILD=	yes
 SUB_FILES=	mvn.sh
 SUB_LIST=	CAT=${CAT} FIND=${FIND} TAIL=${TAIL}
 
+NO_STAGE=	yes
 do-fecth:
 	@${DO_NADA}
 

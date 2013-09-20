@@ -52,4 +52,5 @@ MAN3=		MooseX::Declare.3 MooseX::Declare::Context.3 \
 		MooseX::Declare::Syntax::RoleApplication.3 \
 		MooseX::Declare::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

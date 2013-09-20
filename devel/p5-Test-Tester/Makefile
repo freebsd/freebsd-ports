@@ -22,6 +22,7 @@ MAN3=		Test::Tester.3 Test::Tester::Capture.3 \
 .if !defined(NOPORTDOCS)
 PORTDOCS=	CHANGES
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

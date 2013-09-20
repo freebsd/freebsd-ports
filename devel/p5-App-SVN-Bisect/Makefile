@@ -23,4 +23,5 @@ USE_PERL5=	configure
 MAN1=	svn-bisect.1
 MAN3=	App::SVN::Bisect.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-Products.PlacelessTranslationService
-# Date created:				02 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Products.PlacelessTranslationService
 PORTVERSION=	2.0.3
@@ -34,4 +29,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

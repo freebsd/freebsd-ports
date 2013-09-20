@@ -1,9 +1,5 @@
-# New ports collection makefile for:	devel/p5-Test-Block
-# Date created:				16 April 2008
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Test-Block
 PORTVERSION=	0.13
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=	Test::Block.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

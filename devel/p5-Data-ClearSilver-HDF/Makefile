@@ -24,4 +24,5 @@ MAN1=	cspage.1
 
 MAN3=	Data::ClearSilver::HDF.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

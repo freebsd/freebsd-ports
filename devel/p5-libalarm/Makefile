@@ -18,6 +18,7 @@ MAN3=		Alarm::_TieSIG.3 \
 		Alarm::Concurrent.3 \
 		Alarm::Queued.3
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/lib/Alarm/Concurrent.pm.orig
 

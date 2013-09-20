@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Penguin-Easy
-# Date created:				May 28th 1997
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
+# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Penguin-Easy
 PORTVERSION=	1.1
@@ -21,6 +17,7 @@ USE_PERL5=	configure
 
 MAN3=		Penguin::Easy.3
 
+NO_STAGE=	yes
 post-install:
 		${MKDIR} ${PREFIX}/lib/perl5/site_perl/Penguin/Easy/bin ${PREFIX}/lib/perl5/site_perl/Penguin/Easy/doc
 		${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} ${WRKSRC}/bin/ep ${PREFIX}/lib/perl5/site_perl/Penguin/Easy/bin

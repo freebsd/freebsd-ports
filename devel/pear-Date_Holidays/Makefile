@@ -19,6 +19,7 @@ LATEST_LINK=	pear-Date_Holidays
 OPTIONS_DEFINE=	PEAR_CONSOLE_GETARGS
 PEAR_CONSOLE_GETARGS_DESC=	Console::Getargs support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPEAR_CONSOLE_GETARGS}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Class-STL-Containers
-# Date created:				12 Jun 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-STL-Containers
 PORTVERSION=	0.35
@@ -17,4 +13,5 @@ COMMENT=	Perl extension for STL-like object management
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

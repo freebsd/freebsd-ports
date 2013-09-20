@@ -1,9 +1,5 @@
-# New ports collection makefile for:	jinja
-# Date created:		2007-02-14
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Jinja
 PORTVERSION=	1.2
@@ -29,6 +25,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS}
 .else
 RM_OPTS=	-R
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${MV} ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}/docs/html ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}/docs/txt ${DOCSDIR}/

@@ -37,6 +37,7 @@ TOOLS_DESC=	Recode configuration utility
 
 OPTIONS_DEFAULT=	TOOLS GTK1 GTK2
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBDB}

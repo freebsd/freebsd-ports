@@ -15,6 +15,7 @@ USE_PERL5=	configure
 
 MAN3=		AutoLoader.3 AutoSplit.3
 
+NO_STAGE=	yes
 regression-test:
 	cd ${WRKSRC} && ${MAKE} test
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   luajava
-# Date created:        5 December 2007
-# Whom:                sunghyuk
-#
+# Created by: sunghyuk
 # $FreeBSD$
-#
 
 PORTNAME=	luajava
 PORTVERSION=	1.1
@@ -28,6 +24,7 @@ ALL_TARGET=	run
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.*
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LUA_DIR%%|${PREFIX}|' ${WRKSRC}/config
 	@${REINPLACE_CMD} -e 's|%%LUA_LIBDIR%%|${LUA_LIBDIR}|' ${WRKSRC}/config

@@ -16,6 +16,7 @@ USE_DOS2UNIX=	yes
 
 MAN3=		Devel::Diagram.3 Devel::Diagram::Render::UXF20.3
 
+NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"

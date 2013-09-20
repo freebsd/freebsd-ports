@@ -1,7 +1,4 @@
-# New ports collection makefile for:	libpasori
-# Date created:				18 January 2007
-# Whom:					Yoshihiko Sarumaru <mistral@imasy.or.jp>
-#
+# Created by: Yoshihiko Sarumaru <mistral@imasy.or.jp>
 # $FreeBSD$
 
 PORTNAME=	libpasori
@@ -19,6 +16,7 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

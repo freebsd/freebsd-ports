@@ -34,5 +34,6 @@ MAN3=	Date::Manip.3 Date::Manip::Base.3 Date::Manip::Calc.3 \
 	Date::Manip::TZ.3 Date::Manip::TZ_Base.3 \
 	Date::Manip::TZdata.3 Date::Manip::Zones.3
 
+NO_STAGE=	yes
 .include "extramanpages.mk"
 .include <bsd.port.mk>

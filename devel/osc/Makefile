@@ -30,6 +30,7 @@ OPTIONS_DEFINE=	CA_BUNDLE DOCS
 OPTIONS_DEFAULT=CA_BUNDLE
 CA_BUNDLE_DESC=	Install CA Certificates
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCA_BUNDLE}

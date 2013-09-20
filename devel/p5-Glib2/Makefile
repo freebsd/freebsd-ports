@@ -32,6 +32,7 @@ MAN3=	Glib.3 Glib::BookmarkFile.3 Glib::Boxed.3 Glib::CodeGen.3 \
 	Glib::ParamSpec.3 Glib::ParseXSDoc.3 Glib::Signal.3 Glib::Type.3 \
 	Glib::Utils.3 Glib::devel.3 Glib::index.3 Glib::version.3 Glib::xsapi.3
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "--------------------------------------------------------"
 	@${ECHO_MSG} "Some functions of this module require a threaded perl."

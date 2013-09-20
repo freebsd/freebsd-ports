@@ -1,9 +1,5 @@
-# New ports collection makefile for:		libinotify
-# Date created:					2011-08-29
-# Whom:						stas
-#
+# Created by: stas
 # $FreeBSD$
-#
 
 PORTNAME=	libinotify
 PORTVERSION=	20110829
@@ -22,6 +18,7 @@ USE_LDCONFIG=	yes
 #
 # Get rid of .la and static library files
 #
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -E -e \
 	'/Install the pseudo-library/,/staticlibs=/s,^,#,' ${WRKSRC}/libtool

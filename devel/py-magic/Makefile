@@ -1,7 +1,4 @@
-# New ports collection makefile for:	py-magic
-# Date created:				19 Nov 2006
-# Whom:					Alexander Botero-Lowry <alexbl@FreeBSD.org>
-#
+# Created by: Alexander Botero-Lowry <alexbl@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	magic
@@ -25,4 +22,5 @@ WRKSRC=	${WRKDIR}/file-${PORTVERSION}/python
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/magic.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -41,4 +41,5 @@ MAN3=		Devel::Events.3 \
 		Devel::Events::Handler::Multiplex.3 \
 		Devel::Events::Match.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

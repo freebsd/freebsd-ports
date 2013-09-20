@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Carp::Always
-# Date created:		21 Jan 2009
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Carp-Always
 PORTVERSION=	0.12
@@ -24,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		Carp::Always.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

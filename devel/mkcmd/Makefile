@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mkcmd
-# Date created:		17 November 1999
-# Whom:			ajk@waterspout.com
-#
+# Created by: ajk@waterspout.com
 # $FreeBSD$
-#
 
 PORTNAME=	mkcmd
 PORTVERSION=	8.14
@@ -25,6 +21,7 @@ MAKEFILE=
 MAN1=		mkcmd.1
 MAN5=		mkcmd.5
 
+NO_STAGE=	yes
 post-patch:
 .for f in bin/mkcmd/machine.h bin/mkcmd/mkcmd.man lib/mkcmd/mkcmd.man
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${f}

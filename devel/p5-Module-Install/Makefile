@@ -43,4 +43,5 @@ MAN3=		inc::Module::Install.3 \
 		Module::Install::Share.3 \
 		Module::Install::With.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

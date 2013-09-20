@@ -30,6 +30,7 @@ OPTIONS_DEFINE=	DOM XDEBUG
 DOM_DESC=	Enable DOM support
 XDEBUG_DESC=	Enable Xdebug support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOM}

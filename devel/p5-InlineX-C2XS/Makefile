@@ -20,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=		InlineX::C2XS.3 InlineX::C2XS-Cookbook.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

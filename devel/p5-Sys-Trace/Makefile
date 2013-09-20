@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Sys-Trace
-# Date created:				06 July 2010
-# Whom:					Ju Pengfei <jupengfei@gmail.com>
-#
+# Created by: Ju Pengfei <jupengfei@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Sys-Trace
 PORTVERSION=	0.03
@@ -23,4 +19,5 @@ MAN3=		Sys::Trace.3 \
 		Sys::Trace::Impl::Truss.3 \
 		Sys::Trace::Results.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

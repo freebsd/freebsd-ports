@@ -1,9 +1,5 @@
-# Ports collection makefile for:	py-geotypes
-# Date created:			12 June, 2008
-# Whom:				wenheping@gmail.com
-#
+# Created by: wenheping@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	geotypes
 PORTVERSION=	0.7.0
@@ -22,4 +18,5 @@ PYTHON_PKGNAMEPREFIX=	yes
 PYDISTUTILS_EGGINFO=	GeoTypes-0.7.0-py${PYTHON_VER}.egg-info
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

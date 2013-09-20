@@ -16,6 +16,7 @@ USE_PERL5=	configure
 
 MAN3=	Thread::Suspend.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::

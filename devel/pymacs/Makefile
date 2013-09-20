@@ -1,9 +1,5 @@
-# New ports collection makefile for: pymacs
-# Date created:		23 July 2005
-# Whom:			mwm@mired.org
-#
+# Created by: mwm@mired.org
 # $FreeBSD$
-#
 
 PORTNAME=	Pymacs
 PORTVERSION=	0.22
@@ -25,6 +21,7 @@ USE_EMACS=	yes
 EMACS_PORT_NAME=xemacs21
 .endif
 
+NO_STAGE=	yes
 post-patch:
 .for f in __init__.py pymacs.py
 	${REINPLACE_CMD} -e 's,# Copyright,# coding:latin1 Copyright,g' \

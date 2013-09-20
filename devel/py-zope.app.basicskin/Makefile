@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-zope.app.basicskin
-# Date created:				18 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	zope.app.basicskin
 PORTVERSION=	3.5.1
@@ -24,4 +19,5 @@ DIST_SUBDIR=	zope
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

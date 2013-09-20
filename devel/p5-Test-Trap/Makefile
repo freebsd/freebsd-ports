@@ -24,4 +24,5 @@ MAN3=		Test::Trap.3 \
 		Test::Trap::Builder::SystemSafe.3 \
 		Test::Trap::Builder::TempFile.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

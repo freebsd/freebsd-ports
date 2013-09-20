@@ -21,4 +21,5 @@ USE_PHPEXT=	yes
 PHP_MODNAME=	ev
 IGNORE_WITH_PHP=52 53
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

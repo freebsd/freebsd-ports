@@ -16,4 +16,5 @@ LINUX_DIST_VER=	10
 RPMVERSION=	20.20080927.fc10
 SRC_DISTFILES=	ncurses-${PORTVERSION}-${RPMVERSION}.src.rpm
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

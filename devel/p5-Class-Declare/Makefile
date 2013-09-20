@@ -17,4 +17,5 @@ USES=		perl5
 USE_PERL5=	configure
 MAN3=	Class::Declare::Dump.3 Class::Declare.3 Class::Declare::Hash.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

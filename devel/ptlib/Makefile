@@ -1,4 +1,4 @@
-# Created by: Roger Hardiman <roger@freebsd.org>
+# Created by: Roger Hardiman <roger@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ptlib
@@ -24,6 +24,7 @@ USE_LDCONFIG=	yes
 
 NO_LATEST_LINK=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800059

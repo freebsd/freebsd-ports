@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		gmake pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGCONF}

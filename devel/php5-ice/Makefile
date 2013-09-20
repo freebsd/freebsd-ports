@@ -31,6 +31,7 @@ INSTALL_WRKSRC=	${WRKSRC}/php
 LIB_VRS=	${PORTVERSION:S|.||g:C|0$||}
 PHP_MODNAME?=	IcePHP
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT

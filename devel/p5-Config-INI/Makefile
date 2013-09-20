@@ -1,4 +1,3 @@
-# Created by: bapt <baptiste.daroussin@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	Config-INI
@@ -32,4 +31,5 @@ PLIST_DIRS=	%%SITE_PERL%%/Config/INI \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/INI \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

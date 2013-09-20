@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-gearman
-# Date created:		2010-01-27
-# Whom:			Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
-#
+# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	uuid
 PORTVERSION=	1.0.2
@@ -25,4 +21,5 @@ USE_PHPEXT=	yes
 DEFAULT_PHP_VER=53
 IGNORE_WITH_PHP=5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

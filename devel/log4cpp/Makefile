@@ -17,6 +17,7 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 #.include "Makefile.man"
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # doxygen build is BROKEN atm

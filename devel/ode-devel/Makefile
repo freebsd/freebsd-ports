@@ -24,6 +24,7 @@ OPTIONS_DEFINE=	OPCODE
 OPTIONS_DEFAULT=	OPCODE
 OPCODE_DESC=	Enable code required by TriList (trimesh) class
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"

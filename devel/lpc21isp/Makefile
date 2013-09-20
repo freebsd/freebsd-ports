@@ -18,6 +18,7 @@ USE_GMAKE=	yes
 
 PLIST_FILES=	bin/lpc21isp
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CC .*=|CC ?=|' ${WRKSRC}/Makefile

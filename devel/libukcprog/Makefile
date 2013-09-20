@@ -25,4 +25,5 @@ USE_LDCONFIG=	yes
 USES=		pathfix pkgconfig
 USE_GNOME=	lthack
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

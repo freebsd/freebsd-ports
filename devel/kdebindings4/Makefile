@@ -19,6 +19,7 @@ PERL_DESC=	Perl bindings
 PYTHON_DESC=	Python bindings
 RUBY_DESC=	Ruby bindings
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPERL}

@@ -25,4 +25,5 @@ MAN3=	Log::Contextual.3 \
 	Log::Contextual::TeeLogger.3 \
 	Log::Contextual::WarnLogger.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

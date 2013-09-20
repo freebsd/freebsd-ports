@@ -1,9 +1,5 @@
-# New ports collection makefile for:	menhir
-# Date created:				5 March 2007
-# Whom:					Jaap Boender <jaapb@kerguelen.org>
-#
+# Created by: Jaap Boender <jaapb@kerguelen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	menhir
 PORTVERSION=	20080912
@@ -29,4 +25,5 @@ DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 MAKE_ENV+=	docdir="${DOCSDIR}"
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -22,4 +22,5 @@ MAN3=		IO::Interactive.3
 
 PORTSCOUT=	skipv:0.01
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

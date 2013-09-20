@@ -19,6 +19,7 @@ USE_PHP_BUILD=	yes
 
 PEARDIR=	${PREFIX}/share/pear
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" \
 		-e "s|%%BUNDLEDIR%%|${WRKSRC}/go-pear-bundle|" \

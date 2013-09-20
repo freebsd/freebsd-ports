@@ -17,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,<2.0dev,!=2.0,g' ${WRKSRC}/setup.py
 

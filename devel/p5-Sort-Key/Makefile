@@ -20,4 +20,5 @@ MAN3=		Sort::Key.3 \
 		Sort::Key::Register.3 \
 		Sort::Key::Types.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

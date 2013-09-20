@@ -74,6 +74,7 @@ MAN3=		Class::MakeMethods.3 \
 		Class::MakeMethods::Utility::Ref.3 \
 		Class::MakeMethods::Utility::TextBuilder.3
 
+NO_STAGE=	yes
 post-extract:
 		@${RM} ${WRKSRC}/benchmark.pl
 		@${REINPLACE_CMD} -i '' '/benchmark.pl/d' ${WRKSRC}/MANIFEST

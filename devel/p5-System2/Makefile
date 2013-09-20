@@ -15,6 +15,7 @@ USE_PERL5=	configure
 
 MAN3=		System2.3
 
+NO_STAGE=	yes
 pre-configure:
 	${RM} -f ${WRKSRC}/io_test.pl
 

@@ -20,6 +20,7 @@ MAN1=		codechanges.1 decomment.1 pmccabe.1 vifn.1
 PLIST_FILES=	${BINARIES:S,^,bin/,} \
 		${SCRIPTS:S,^,bin/,}
 
+NO_STAGE=	yes
 do-install:
 .for f in ${BINARIES}
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin

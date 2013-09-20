@@ -24,4 +24,5 @@ MAN3=		MooseX::MultiInitArg.3 \
 		MooseX::MultiInitArg::Trait.3 \
 		MooseX::MultiInitArg::Attribute.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

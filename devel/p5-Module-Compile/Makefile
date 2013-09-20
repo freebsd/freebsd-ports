@@ -22,4 +22,5 @@ MAN3=		Module::Compile.3 \
 		Module::Install::PMC.3\
 		Module::Optimize.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -68,4 +68,5 @@ MAN3=		Pithub.3 \
 		Pithub::Users::Followers.3 \
 		Pithub::Users::Keys.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

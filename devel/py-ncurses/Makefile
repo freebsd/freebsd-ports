@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pyncurses
-# Date created:				Tue May 16 22:15:11 PDT 2000
-# Whom:					adsharma@sharams.dhs.org
-#
+# Created by: adsharma@sharams.dhs.org
 # $FreeBSD$
-#
 
 PORTNAME=	ncurses
 PORTVERSION=	0.3
@@ -20,6 +16,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pyncurses
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

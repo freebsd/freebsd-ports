@@ -44,4 +44,5 @@ MAN3=		Module::MEMOja.3 \
 		Module::Setup::Test::Flavor.3 \
 		Module::Setup::Test::Utils.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

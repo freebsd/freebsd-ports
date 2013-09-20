@@ -44,4 +44,5 @@ MAN3=		Paranoid::Data.3 \
 		Paranoid::Log::Buffer.3 \
 		Paranoid::Debug.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-File-chmod
-# Date created:	   2008-02-18
-# Whom:		   Shinsuke Matsui <smatsui@karashi.org>
-#
+# Created by: Shinsuke Matsui <smatsui@karashi.org>
 # $FreeBSD$
-#
 
 PORTNAME=	File-chmod
 PORTVERSION=	0.32
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		File::chmod.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

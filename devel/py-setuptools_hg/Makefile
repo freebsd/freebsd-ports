@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-setuptools_hg
-# Date created:		21 May, 2012
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	setuptools_hg
 PORTVERSION=	0.4
@@ -19,4 +15,5 @@ USE_PYDISTUTILS=	easy_install
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

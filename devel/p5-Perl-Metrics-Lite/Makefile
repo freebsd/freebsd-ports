@@ -26,4 +26,5 @@ MAN3=	Perl::Metrics::Lite.3 \
 	Perl::Metrics::Lite::Analysis::Util.3 \
 	Perl::Metrics::Lite::FileFinder.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

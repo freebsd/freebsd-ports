@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p4
-# Date created:				3 Apr 2010
-# Whom:					gordon@FreeBSD.org
-#
+# Created by: gordon@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	p4
 PORTVERSION=	2012.1.473528
@@ -30,6 +26,7 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/p4
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "Makefile.inc"

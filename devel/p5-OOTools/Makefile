@@ -25,4 +25,5 @@ MAN3=		Class::constr.3 \
 		Package::groups.3 \
 		Package::props.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

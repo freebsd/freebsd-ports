@@ -43,6 +43,7 @@ PLIST_FILES=	bin/love07
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}07
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

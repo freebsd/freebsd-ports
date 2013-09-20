@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-Products.ZopeVersionControl
-# Date created:				18 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Products.ZopeVersionControl
 PORTVERSION=	1.1.3
@@ -28,4 +23,5 @@ USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 #USE_ZOPE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

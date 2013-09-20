@@ -24,4 +24,5 @@ MAN3=		Date::Pcalc.3 \
 		Date::Pcalendar::Profiles.3 \
 		Date::Pcalendar::Year.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

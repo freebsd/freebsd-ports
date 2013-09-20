@@ -20,4 +20,5 @@ CONFIGURE_ENV+=	DIRPROJECT_PREFIX=${PREFIX}
 MAN1=		project_bin.1 project_dir.1
 MAN3=		Dir::Project.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

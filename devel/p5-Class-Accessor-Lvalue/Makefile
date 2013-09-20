@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Class-Accessor-Lvalue
-# Date created:		2004-08-03
-# Whom:			Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Accessor-Lvalue
 PORTVERSION=	0.11
@@ -24,4 +20,5 @@ USE_PERL5=	modbuild
 MAN3=		Class::Accessor::Lvalue.3 \
 		Class::Accessor::Lvalue::Fast.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

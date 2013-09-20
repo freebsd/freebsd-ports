@@ -26,4 +26,5 @@ MAN3=	Gearman::Server.3 Gearman::Server::Client.3
 USE_RC_SUBR=	gearmand-perl
 SUB_LIST+=	NAME=gearmand
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

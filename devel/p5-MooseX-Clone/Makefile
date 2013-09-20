@@ -30,4 +30,5 @@ MAN3=		MooseX::Clone.3 \
 		MooseX::Clone::Meta::Attribute::Trait::Clone.3 \
 		MooseX::Clone::Meta::Attribute::Trait::StorableClone.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	monodevelop-vala
-# Date created:		2009-06-30
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	monodevelop-vala
 PORTVERSION=	2.8
@@ -31,4 +27,5 @@ PLIST_FILES=	lib/monodevelop/AddIns/BackendBindings/MonoDevelop.ValaBinding.dll 
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -22,4 +22,5 @@ MAN3=	Devel::KYTProf.3 \
 	Devel::KYTProf::Logger::LTSV.3 \
 	Devel::README.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	py-ciphon
-# Date created:			Feb 10, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	ciphon
 PORTVERSION=	0.4.0
@@ -18,6 +13,7 @@ COMMENT=	A module for python that adds cpan-like functionality
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 post-install:
 	@${MV} -f ${PREFIX}/bin/ciphon.py ${PREFIX}/bin/ciphon
 

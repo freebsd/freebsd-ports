@@ -27,6 +27,7 @@ USE_PYDISTUTILS=	easy_install
 # Python3 ready (installation tested)
 USE_PYTHON=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

@@ -31,4 +31,5 @@ PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman \
 		%%SITE_PERL%%/Gearman/ResponseParser \
 		%%SITE_PERL%%/Gearman
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

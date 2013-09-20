@@ -15,4 +15,5 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_EGGINFO=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}.egg-info
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

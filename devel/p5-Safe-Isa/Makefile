@@ -19,6 +19,7 @@ USES=		perl5
 
 MAN3=		Safe::Isa.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/NAME/ s|Safe-Isa|Safe::Isa|' ${WRKSRC}/Makefile.PL
 

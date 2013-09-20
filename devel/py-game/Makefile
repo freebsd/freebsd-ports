@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-game
-# Date created:				14 December 2000
-# Whom:                 		Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	game
 PORTVERSION=	1.9.1
@@ -31,6 +27,7 @@ SDLNOX11=	sdl-nox11-[0-9]*
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^_camera|#_camera|' \
 		-e 's|^pypm|#pypm|' ${WRKSRC}/Setup.in

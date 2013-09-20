@@ -19,4 +19,5 @@ USE_PERL5=	configure
 MAN3=		Parse::ALex.3 Parse::Lex.3 Parse::Token.3 Parse::YYLex.3 \
 		Parse::LexEvent.3 Parse::CLex.3 Parse::Trace.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

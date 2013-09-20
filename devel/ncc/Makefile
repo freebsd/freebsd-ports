@@ -23,6 +23,7 @@ PORTDOCS=	*
 LINKS=		nccar nccld nccc++ nccg++
 MAN1=		ncc.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -21,6 +21,7 @@ PLIST_SUB+=	PROFLIB=""
 SRCCONF=	/dev/null
 MAKE_ENV+=	SRCCONF=${SRCCONF}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

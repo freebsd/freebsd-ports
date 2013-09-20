@@ -27,4 +27,5 @@ MAN3=		Moos.3 \
 		Moos::Role.3 \
 		oos.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

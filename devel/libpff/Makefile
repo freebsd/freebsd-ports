@@ -29,6 +29,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 PORTDOCS=	AUTHORS ChangeLog
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

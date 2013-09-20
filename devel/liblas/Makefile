@@ -1,6 +1,4 @@
-# New ports collection makefile for:	liblas
-# Date created:				21 June 2008
-# Whom:					Wen Heping <wenheping@gmail.com>
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	liblas
@@ -19,4 +17,5 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/liblas-src-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

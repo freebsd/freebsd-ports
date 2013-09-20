@@ -1,9 +1,5 @@
-# New ports collection makefile for:	log4sh
-# Date created:		2005-02-01
-# Whom:			David Thiel <lx@redundancy.redundancy.org>
-#
+# Created by: David Thiel <lx@redundancy.redundancy.org>
 # $FreeBSD$
-#
 
 PORTNAME=	log4sh
 PORTVERSION=	1.4.2
@@ -19,6 +15,7 @@ PORTDOCS=	log4sh.html
 
 ALL_TARGET=	build
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/shell/log4sh ${PREFIX}/lib
 .if !defined(NOPORTDOCS)

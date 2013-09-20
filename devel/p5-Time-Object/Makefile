@@ -1,9 +1,5 @@
-# Ports collection Makefile for:		p5-Time-Object
-# Date created:					8 Jan 2002
-# Whom:						dom@happygiraffe.net
-#
+# Created by: dom@happygiraffe.net
 # $FreeBSD$
-#
 
 PORTNAME=	Time-Object
 PORTVERSION=	1.00
@@ -20,4 +16,5 @@ MAN3=		Time::Object.3 Time::Seconds.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

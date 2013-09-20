@@ -91,4 +91,5 @@ MAN3=		Config::Model.3 \
 		Config::Model::models::Multistrap::Section.3 \
 		Config::Model::models::PopCon.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

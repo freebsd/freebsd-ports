@@ -1,9 +1,4 @@
-# New ports collection makefile for:	pear-Date_Holidays_Slovenia
-# Date created:		2008-06-05
-# Whom:			Thomas Abthorpe <tabthorpe@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Date_Holidays_Slovenia
 PORTVERSION=	0.1.2
@@ -19,6 +14,7 @@ CATEGORY=	Date
 FILES=		Holidays/Driver/Slovenia.php
 TESTS=		Date_Holidays_Driver_Slovenia_TestSuite.php
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

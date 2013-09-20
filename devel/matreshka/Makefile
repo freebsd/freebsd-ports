@@ -27,6 +27,7 @@ MAKE_JOBS_UNSAFE=	yes
 MAKE_ENV+=	SMP_MFLAGS=-j${MAKE_JOBS_NUMBER} \
 		DESTDIR=${DESTINY}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFIREBIRD}

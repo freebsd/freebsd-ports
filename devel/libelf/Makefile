@@ -18,6 +18,7 @@ OPTIONS_DEFAULT=	EXTENDED SANITY
 EXTENDED_DESC=	ELF format extensions
 SANITY_DESC=	Avoid loading invalid ELF files
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 GNU_CONFIGURE=	yes

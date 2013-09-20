@@ -28,6 +28,7 @@ LIBPCI_FILES=	include/pci/config.h include/pci/header.h include/pci/pci.h \
 		include/pci/types.h lib/libpci.a lib/libpci.so \
 		libdata/pkgconfig/libpci.pc
 
+NO_STAGE=	yes
 post-patch:
 	@${LN} -s . ${WRKSRC}/lib/pci
 	@${REINPLACE_CMD} -e '/^CC=/d; /^CFLAGS=/ s|=|+=|; /^IDSDIR=/ s|$$|/pciids|; /^OPT=/d; /^PREFIX=/d' ${WRKSRC}/Makefile

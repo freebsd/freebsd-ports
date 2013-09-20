@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-Date-ISO
-# Date created:                13 May 2002
-# Whom:                        Kimura Fuyuki <fuyuki@mj.0038.net>
-#
+# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Date-ISO
 PORTVERSION=	1.30
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=		Date::ISO.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

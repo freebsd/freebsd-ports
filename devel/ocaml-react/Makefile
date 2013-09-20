@@ -1,7 +1,4 @@
-# New ports collection makefile for: ocaml-react
-# Date created: April 18, 2011
-# Whom: Jaap Boender <jaapb@kerguelen.org>
-#
+# Created by: Jaap Boender <jaapb@kerguelen.org>
 # $FreeBSD$
 
 PORTNAME=	react
@@ -24,6 +21,7 @@ OCAMLC_DEPEND=		ocaml>=3.11:${OCAMLC_PORT}
 
 USE_OCAML_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:

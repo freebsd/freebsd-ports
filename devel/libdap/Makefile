@@ -24,6 +24,7 @@ USES=		gmake pathfix
 MAN1=		dap-config.1 \
 		getdap.1
 
+NO_STAGE=	yes
 post-patch:
 	# do not alter ${PREFIX}/lib/charset.alias
 	@${REINPLACE_CMD} -e '/^install-exec-am: / s|install-exec-local||' ${WRKSRC}/gl/Makefile.in

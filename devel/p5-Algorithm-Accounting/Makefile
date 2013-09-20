@@ -31,4 +31,5 @@ MAN3=		Algorithm::Accounting.3 \
 		Algorithm::Accounting::Report::GDGraph.3 \
 		Algorithm::Accounting::Report::Text.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

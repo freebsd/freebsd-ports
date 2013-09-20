@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libdnsres
-# Date created:				Fri Feb  3 18:15:51 MST 2006
-# Whom:					Phil Oleson <oz@nixil.net>
-#
+# Created by: Phil Oleson <oz@nixil.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libdnsres
 PORTVERSION=	0.1a
@@ -29,6 +25,7 @@ MLINKS=	dnsres.3 dnsres_init.3 dnsres.3 dnsres_gethostbyname.3 \
 	dnsres.3 dnsres_gethostbyname2.3 dnsres.3 dnsres_gethostbyaddr.3 \
 	dnsres.3 dnsres_getaddrinfo.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,CFLAGS =,CFLAGS +=, ; s|top_buildir|top_builddir|g' \
 		${WRKSRC}/Makefile.in

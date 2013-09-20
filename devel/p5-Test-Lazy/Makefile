@@ -19,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=	Test::Lazy.3 Test::Lazy::Template.3 Test::Lazy::Tester.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

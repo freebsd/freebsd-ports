@@ -1,4 +1,4 @@
-# Created by: Alex Kapranoff <kappa@freebsd.org.ua>
+# Created by: Alex Kapranoff <kappa@FreeBSD.org.ua>
 # $FreeBSD$
 
 PORTNAME=	Class-Roles
@@ -18,4 +18,5 @@ USE_PERL5=	modbuild
 
 MAN3=		Class::Roles.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

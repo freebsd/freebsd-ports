@@ -35,4 +35,5 @@ MAN3=		JQuery.3 \
 		JQuery::Taconite.3 \
 		JQuery::Treeview.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

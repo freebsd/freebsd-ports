@@ -17,4 +17,5 @@ USE_PERL5=	modbuild
 
 MAN3=		Data::Rmap.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

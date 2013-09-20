@@ -18,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=	Parse::Win32Registry.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

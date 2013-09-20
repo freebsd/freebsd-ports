@@ -20,4 +20,5 @@ PLIST_FILES=	lib/libcli.so \
 		lib/libcli.so.19 \
 		include/libcli.h
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

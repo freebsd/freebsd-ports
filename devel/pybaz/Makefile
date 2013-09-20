@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pybaz
-# Date created:		2007-03-01
-# Whom:			Radim Kolar <hsn@sanatana.dharma>
-#
+# Created by: Radim Kolar <hsn@sanatana.dharma>
 # $FreeBSD$
-#
 
 PORTNAME=	pybaz
 PORTVERSION=	1.5.3
@@ -21,4 +17,5 @@ PLIST_SUB+=	PYTHON_SITELIB=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||}
 
 RUN_DEPENDS=	baz:${PORTSDIR}/devel/baz
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

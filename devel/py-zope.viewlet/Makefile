@@ -1,9 +1,4 @@
-# New ports collection makefile for:	py-zope.viewlet
-# Date created:				Nov 16, 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	zope.viewlet
 PORTVERSION=	3.7.2
@@ -32,4 +27,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.browserpage>=3.10.1:${PORTSDIR}/devel/p
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

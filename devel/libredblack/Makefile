@@ -1,4 +1,4 @@
-# Created by: smace@freebsd.org
+# Created by: smace@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	libredblack
@@ -26,6 +26,7 @@ USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON=""
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CFLAGS =.*$$|CFLAGS = @CFLAGS@|g' ${WRKSRC}/Makefile.in

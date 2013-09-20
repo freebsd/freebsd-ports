@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Sys-Cpu
-# Date created:	   25 July 2008
-# Whom:		   Terry Sposato <terry@sucked-in.com>
-#
+# Created by: Terry Sposato <terry@sucked-in.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Sys-CPU
 PORTVERSION=	0.52
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Sys::CPU.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

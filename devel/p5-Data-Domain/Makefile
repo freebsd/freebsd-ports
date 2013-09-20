@@ -27,4 +27,5 @@ USES=		perl5
 
 MAN3=		Data::Domain.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

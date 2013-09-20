@@ -25,4 +25,5 @@ MAN3=	MooseX::Aliases.3 \
 	MooseX::Aliases::Meta::Trait::Attribute.3 \
 	MooseX::Aliases::Meta::Trait::Method.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

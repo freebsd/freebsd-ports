@@ -24,4 +24,5 @@ MAN3=		Event::ExecFlow::Job::Code.3 Event::ExecFlow::Frontend.3 \
 		Event::ExecFlow::Callbacks.3 Event::ExecFlow::Job::Command.3 \
 		Event::ExecFlow.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

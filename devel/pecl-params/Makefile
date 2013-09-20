@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-params
-# Date created:			6 Aug 2007
-# Whom:				Ditesh Shashikant Gathani <ditesh@gathani.org>
-#
+# Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
 # $FreeBSD$
-#
 
 PORTNAME=	params
 PORTVERSION=	1.0
@@ -22,4 +18,5 @@ USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--enable-params
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

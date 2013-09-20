@@ -24,6 +24,7 @@ USE_ANT=	YES
 PLIST_FILES=	%%JAVAJARDIR%%/libvirt-${PORTVERSION}.jar
 PORTDOCS=	*
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/java|${JAVAJARDIR}|' \
 		${WRKSRC}/build.properties

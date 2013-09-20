@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-bbcode
-# Date created:			6 Aug 2007
-# Whom:				Ditesh Shashikant Gathani <ditesh@gathani.org>
-#
+# Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bbcode
 PORTVERSION=	1.0.2
@@ -27,6 +23,7 @@ IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--enable-bbcode
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/#include <malloc.h>/\/\/#include <malloc.h>/g' ${WRKSRC}/lib/bbcode2.c
 

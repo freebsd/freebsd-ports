@@ -24,4 +24,5 @@ MAN3=		Carp::Always::Color.3 \
 		Carp::Always::Color::HTML.3 \
 		Carp::Always::Color::Term.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

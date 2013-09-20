@@ -1,4 +1,4 @@
-# Created by: Alan Somers <asomers@freebsd.org>
+# Created by: Alan Somers <asomers@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kyua-testers
@@ -16,6 +16,7 @@ GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}

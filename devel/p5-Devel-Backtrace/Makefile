@@ -22,4 +22,5 @@ MAN3=		Devel::Backtrace.3 \
 		Devel::Backtrace::Point.3 \
 		Devel::DollarAt.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

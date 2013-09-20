@@ -34,6 +34,7 @@ WORDS_DESC=	Chat and Instant Messaging
 # Bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
+NO_STAGE=	yes
 do-install:
 	@${DO_NADA}
 

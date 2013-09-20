@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mingw32-pthreads
-# Date created:				28 April 2006
-# Whom:					Ed Schouten <ed@fxq.nl>
-#
+# Created by: Ed Schouten <ed@fxq.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	pthreads
 PORTVERSION=	2.8.0
@@ -20,6 +16,7 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
 
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 do-build:
 	@${GMAKE} -C ${WRKSRC} CROSS=${PKGNAMEPREFIX} GC
 

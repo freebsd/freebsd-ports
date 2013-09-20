@@ -72,6 +72,7 @@ MLINKS=	dispatch_after.3 dispatch_after_f.3 \
 #
 # Get rid of .la and static library files
 #
+NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -E -e \
 	'/Install the pseudo-library/,/staticlibs=/s,^,#,' ${WRKSRC}/libtool

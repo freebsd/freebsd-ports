@@ -29,4 +29,5 @@ MAN3=		MooseX::Types::Common.3 \
 		MooseX::Types::Common::Numeric.3 \
 		MooseX::Types::Common::String.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

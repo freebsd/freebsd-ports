@@ -40,6 +40,7 @@ MAN3=		UI::Dialog.3 \
 		UI::Dialog::KDE.3 \
 		UI::Dialog::Screen::Menu.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKDE}

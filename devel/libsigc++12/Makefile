@@ -20,4 +20,5 @@ USE_LDCONFIG=	yes
 USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

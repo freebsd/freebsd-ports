@@ -33,4 +33,5 @@ MAN3=		Pipeline::Segment.3 Pipeline::Store::ISA.3 Pipeline.3 \
 		Pipeline::Error::AsyncResults.3 Pipeline::Segment::Tester.3 \
 		Pipeline::Segment::Async::IThreads.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -18,6 +18,7 @@ USE_LDCONFIG=	yes
 
 MAN3=		libopendaap.3
 
+NO_STAGE=	yes
 post-patch:
 .for file in Makefile.in opendaap.pc.in
 	@${REINPLACE_CMD} -e 's|-lpthread||g' ${WRKSRC}/${file}

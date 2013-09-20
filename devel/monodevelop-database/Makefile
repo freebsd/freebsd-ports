@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig
 USE_GNOME=	gnomehack gtksharp20
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|[(]prefix[)]/lib/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in

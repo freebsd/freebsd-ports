@@ -41,4 +41,5 @@ MAN1=	opam-check.1 \
 	opam.1 \
 	opam-reinstall.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

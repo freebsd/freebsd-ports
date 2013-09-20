@@ -20,6 +20,7 @@ OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
 OPTIONS_DEFINE=	CJSON
 CJSON_DESC=	Use cjson instead of json or simplejson
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCJSON}

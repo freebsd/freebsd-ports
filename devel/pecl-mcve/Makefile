@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-mcve
-# Date created:			14,May 2008
-# Whom:				Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mcve
 PORTVERSION=	7.0.3
@@ -26,6 +22,7 @@ DEFAULT_PHP_VER=53
 IGNORE_WITH_PHP=5
 CONFIGURE_ARGS+=--with-mcve="${LOCALBASE}"
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/SEARCH_PATH/ s,=",="${LOCALBASE} ${PREFIX} ,' \
 		${WRKSRC}/config.m4

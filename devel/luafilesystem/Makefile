@@ -27,6 +27,7 @@ PORTDOCS=	*
 
 MAKE_ARGS+=	INCS="-I${LOCALBASE}/include/${LUA_SUBDIR}"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

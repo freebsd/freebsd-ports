@@ -22,6 +22,7 @@ USE_PERL5=	configure
 MAN3=		Time::Local.3
 PORTDOCS=	Changes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

@@ -1,4 +1,3 @@
-# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
 
 PORTNAME=	File-SearchPath
@@ -17,4 +16,5 @@ USE_PERL5=	modbuild
 
 MAN3=	File::SearchPath.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

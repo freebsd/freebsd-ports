@@ -1,4 +1,3 @@
-# Ports collection Makefile for:		SVN::Notify
 # Created by: dom@happygiraffe.net
 # $FreeBSD$
 
@@ -26,4 +25,5 @@ MAN1=		svnnotify.1
 MAN3=		SVN::Notify.3 SVN::Notify::Alternative.3 SVN::Notify::HTML.3 \
 		SVN::Notify::HTML::ColorDiff.3 SVN::Notify::Filter.3 SVN::Notify::Filter::Trac.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
