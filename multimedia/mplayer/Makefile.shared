@@ -47,5 +47,3 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 
 WANT_GNOME=	yes
 WANT_SDL=	yes
-
-MAKE_JOBS_SAFE=	yes

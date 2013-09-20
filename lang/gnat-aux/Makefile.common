@@ -11,7 +11,6 @@ USE_BZIP2=		yes
 USES=			gmake iconv perl5
 USE_PERL5=		build
 ALL_TARGET=		default
-MAKE_JOBS_SAFE= 	yes
 
 SNAPSHOT=		20130412
 GCC_BRANCH=		4.6
