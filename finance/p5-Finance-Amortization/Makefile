@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Class-Gomor
-# Date created:			3 Jan 2007
-# Whom:				Christopher Boumenot <boumenot@gmail.com>
-#
+# Created by: Christopher Boumenot <boumenot@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Finance-Amortization
 PORTVERSION=	0.5
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=	Finance::Amortization.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -19,6 +19,7 @@ MAN1=		ktoblzcheck.1
 
 OPTIONS_DEFINE=	PYTHON
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}

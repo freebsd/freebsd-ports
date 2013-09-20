@@ -1,9 +1,5 @@
-# New ports collection makefile for:	beanie
-# Date created:		15 October 2008
-# Whom:			Dermot Tynan <dtynan@kalopa.com>
-#
+# Created by: Dermot Tynan <dtynan@kalopa.com>
 # $FreeBSD$
-#
 
 PORTNAME=	beanie
 PORTVERSION=	0.8.2
@@ -18,6 +14,7 @@ BUILD_DEPENDS=	dbow:${PORTSDIR}/databases/dbow
 
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${CP} ${WRKSRC}/beanie.mk.sample $(WRKSRC)/beanie.mk
 	@${CP} ${WRKSRC}/tmac/lhead.sample.r ${WRKSRC}/tmac/lhead.r

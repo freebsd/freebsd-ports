@@ -58,6 +58,7 @@ GCONF_SCHEMAS=	apps_gnucash_dialog_business_common.schemas \
 		apps_gnucash_window_pages_account_tree.schemas \
 		apps_gnucash_window_pages_register.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAQBANKING}

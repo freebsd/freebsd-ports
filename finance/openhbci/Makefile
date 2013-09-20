@@ -1,7 +1,4 @@
-# Ports collection makefile for:	openhbci
-# Date created:				Jan 3, 2003
-# Whom:					Heiner Strauss <heiner@bilch.com>
-#
+# Created by: Heiner Strauss <heiner@bilch.com>
 # $FreeBSD$
 
 PORTNAME=		openhbci
@@ -18,4 +15,5 @@ WRKSRC=			${WRKDIR}/${PORTNAME}-0.9.17
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

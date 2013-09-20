@@ -20,6 +20,7 @@ SUB_FILES=	pkg-message sql-ledger-httpd.conf
 USES=		shebangfix perl5
 SHEBANG_FILES=	*.pl locale/*/*.pl bin/*/*.pl
 
+NO_STAGE=	yes
 do-install:
 	@cd ${WRKDIR} ; \
 		${TAR} -cf - ${PORTNAME} | ( cd ${PREFIX} ; ${TAR} xf - )

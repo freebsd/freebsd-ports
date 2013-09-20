@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-PayflowPro
-# Date created:				Wed Oct 24 10:09:12 EDT 2007
-# Whom:					Vivek Khera <vivek@khera.org>
-#
+# Created by: Vivek Khera <vivek@khera.org>
 # $FreeBSD$
-#
 
 PORTNAME=	PayflowPro
 PORTVERSION=	3101
@@ -21,6 +17,7 @@ BUILD_DEPENDS+=	p5-libwww>0.0:${PORTSDIR}/www/p5-libwww
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/ca-bundle.crt ${LOCALBASE}/etc
 

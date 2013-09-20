@@ -28,6 +28,7 @@ MAKE_ENV+=	WITHOUT_X11=yes
 SUB_LIST+=	X11="@comment "
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/%%PREFIX%%/${PREFIX:C,/,\/,g}/' \
 	${WRKSRC}/src/GUI/ots_gui.c

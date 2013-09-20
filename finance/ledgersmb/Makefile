@@ -20,6 +20,7 @@ USES=		shebangfix perl5
 SHEBANG_FILES=	*.pl locale/*/*.pl bin/*/*.pl utils/*/*.pl
 SUB_FILES=	${PORTNAME}-httpd.conf pkg-message
 
+NO_STAGE=	yes
 do-install:
 	@cd ${WRKDIR} ; \
 		${TAR} -cf - ${PORTNAME} | ( cd ${PREFIX} ; ${TAR} xf - )

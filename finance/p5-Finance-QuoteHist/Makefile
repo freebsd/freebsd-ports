@@ -37,4 +37,5 @@ MAN3=		Finance::QuoteHist.3 \
 		Finance::QuoteHist::Yahoo.3 \
 		Finance::QuoteHist::Yahoo::Australia.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

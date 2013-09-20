@@ -20,6 +20,7 @@ USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	Electrum
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
 		${WRKSRC}/setup.py ${WRKSRC}/lib/util.py

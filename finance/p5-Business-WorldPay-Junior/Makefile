@@ -20,6 +20,7 @@ USE_PERL5=	configure patch
 
 MAN3=		Business::WorldPay::Junior.3
 
+NO_STAGE=	yes
 post-patch:
 	@${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' \
 		-e '$$_="" if /use 5/;' \

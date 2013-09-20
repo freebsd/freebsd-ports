@@ -1,9 +1,5 @@
-# New ports collection makefile for:   php-tclink
-# Date created:                        27 May 2008
-# Whom:                                <mbowie@buzmo.com>
-#
+# Created by: <mbowie@buzmo.com>
 # $FreeBSD$
-#
 
 PORTNAME=	tclink
 PORTVERSION=	3.4.4
@@ -20,4 +16,5 @@ USE_PHPEXT=	yes
 USE_OPENSSL=	yes
 DEFAULT_PHP_VER=53
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

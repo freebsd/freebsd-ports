@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	quantlib
-# Date created:			Aug 12, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	quantlib
 PORTVERSION=	1.1
@@ -30,6 +25,7 @@ BROKEN=		fails to build
 
 MAN1=		quantlib-config.1 quantlib-test-suite.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "alpha"

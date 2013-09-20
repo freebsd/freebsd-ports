@@ -18,4 +18,5 @@ LICENSE=	ART20 GPLv1
 
 MAN3=		Locale::Currency::Format.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

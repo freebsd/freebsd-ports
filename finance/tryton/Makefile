@@ -21,6 +21,7 @@ USE_PYTHON=	-2.7
 USE_PYDISTUTILS=easy_install
 USE_GNOME=	gtk20 desktopfileutils pygtk2
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/tryton.desktop ${PREFIX}/share/applications/tryton.desktop
 	${INSTALL_DATA} ${WRKSRC}/share/pixmaps/tryton/tryton-icon.png ${PREFIX}/share/pixmaps/tryton-icon.png

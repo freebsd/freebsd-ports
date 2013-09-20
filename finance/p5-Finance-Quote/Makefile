@@ -70,6 +70,7 @@ MAN3=		Finance::Quote.3 \
 		Finance::Quote::Yahoo::USA.3 \
 		Finance::Quote::ZA.3
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC}/lib/Finance/ -name '*.orig' -delete
 

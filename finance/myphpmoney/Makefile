@@ -1,7 +1,4 @@
-# New ports collection makefile for:	myphpmoney
-# Date created:				Sun Mar 09, 2003
-# Whom:					courou <courou@users.sourceforge.net>
-#
+# Created by: courou <courou@users.sourceforge.net>
 # $FreeBSD$
 
 PORTNAME=		myphpmoney
@@ -25,6 +22,7 @@ NO_BUILD=		yes
 
 PLIST_SUB+=		INSTALLDIR=${INSTALLDIR:S,^${PREFIX}/,,}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${INSTALLDIR}
 	cd ${WRKSRC}; ${FIND} . \

@@ -19,6 +19,7 @@ INSTALLS_ICONS=	yes
 DATADIR=	${PREFIX}/share/apps/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc
 
+NO_STAGE=	yes
 post-patch:
 #Fix build with kdelibs>=4.5.0
 	${REINPLACE_CMD} -e 's,V4.1.2-Based,V4.2-Based,g' \

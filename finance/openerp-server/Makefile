@@ -1,9 +1,5 @@
-# New ports collection makefile for:	openerp-server
-# Date created:                27 February 2009
-# Whom:                        Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	openerp-server
 PORTVERSION=	6.0.3
@@ -46,6 +42,7 @@ GROUPS=		openerpd
 MAN1=		openerp-server.1
 MAN5=		openerp_serverrc.5
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

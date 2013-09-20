@@ -44,6 +44,7 @@ LOGDIR?=	/var/log
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PIDDIR%%|${PIDDIR}|g' -e 's|%%LOGDIR%%|${LOGDIR}|g' \
 		${WRKSRC}/etc/${PORTNAME}.conf

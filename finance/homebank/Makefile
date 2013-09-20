@@ -29,6 +29,7 @@ OPTIONS_DEFAULT=OFX
 OFX_LIB_DEPENDS=	libofx.so:${PORTSDIR}/finance/libofx
 OFX_CONFIGURE_OFF=	--without-ofx
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

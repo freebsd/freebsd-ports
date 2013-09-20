@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wmstock
-# Date created:		19 Jun 1999
-# Whom:			Will Andrews <andrews@technologist.com>
-#
+# Created by: Will Andrews <andrews@technologist.com>
 # $FreeBSD$
-#
 
 PORTNAME=	wmstock
 PORTVERSION=	0.11
@@ -20,6 +16,7 @@ WRKSRC=		${WRKDIR}/wmstock/src
 USE_GMAKE=	yes
 MAN1=		wmstock.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmstock ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/getquote ${PREFIX}/bin

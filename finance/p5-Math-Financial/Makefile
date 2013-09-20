@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Math-Financial
-# Date created:				Wed Jan  3 11:00:59 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Math-Financial
 PORTVERSION=	0.76
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Math::Financial.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

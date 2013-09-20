@@ -26,4 +26,5 @@ MAN3=		Business::OnlinePayment.3 \
 		Business::FraudDetect::preCharge.3 \
 		Business::OnlinePayment::HTTPS.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

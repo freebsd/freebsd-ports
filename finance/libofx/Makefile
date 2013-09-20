@@ -38,6 +38,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	APIDOC
 APIDOC_DESC=	Install full API documentation
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

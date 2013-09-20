@@ -1,9 +1,5 @@
-# New ports collection makefile for:   p5-Business-PayPal-IPN
-# Date created:		08 September 2008
-# Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
-#
+# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Business-PayPal-IPN
 PORTVERSION=	1.94
@@ -24,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=		Business::PayPal::IPN.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
