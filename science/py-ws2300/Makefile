@@ -16,6 +16,7 @@ USE_PYDISTUTILS=	yes
 
 MAN1=	ws2300.1
 
+NO_STAGE=	yes
 post-install:
 	#@${LN} -sf ${PYTHONPREFIX_SITELIBDIR}/ws2300.py ${PREFIX}/bin/ws2300
 	@${INSTALL_SCRIPT} ${FILESDIR}/ws2300 ${PREFIX}/bin/ws2300

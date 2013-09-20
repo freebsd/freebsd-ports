@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--enable-cxx \
 		--with-pthread=/usr \
 		--with-zlib=/usr
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

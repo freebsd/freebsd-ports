@@ -19,4 +19,5 @@ MAN3=	Chemistry::Pattern.3 Chemistry::Pattern::Atom.3 Chemistry::Pattern::Bond.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

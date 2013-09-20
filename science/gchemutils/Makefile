@@ -45,6 +45,7 @@ PLIST_SUB=	VER=0.14 GOFFICE=0.10
 OPTIONS_DEFINE=	XUL
 XUL_DESC=	Build browser plugin (requires libxul)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXUL}

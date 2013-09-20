@@ -1,9 +1,5 @@
-# New ports collection makefile for:	elmerpost
-# Date created:		5 Jan 2006
-# Whom:			Pedro Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	elmerpost
 PORTVERSION=	5.4.0
@@ -28,6 +24,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_FORTRAN=	g77
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

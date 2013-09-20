@@ -30,4 +30,5 @@ MAKE_JOBS_UNSAFE=	yes
 MAN7=		massxpert-data.7
 MAN1=		massxpert.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

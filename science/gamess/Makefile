@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gamess
-# Date created:		2007-3-13
-# Whom:			NAKATA Maho <maho@FreeBSD.org>
-#
+# Created by: NAKATA Maho <maho@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gamess
 PORTVERSION=    ${SNAPDATE}
@@ -29,6 +25,7 @@ IGNORE=you must manually get the source distribution from master site. http://ww
 
 MANUAL_PACKAGE_BUILD=You must manually get the source distribution from master site. http://www.msg.ameslab.gov/GAMESS/download.html. Please select "Source code distribution", and check on "running on Intel compatible PC running Linux". You must have license, and freely obtainable.
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libgoto2.so)

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lamprop
-# Date created:				15 May 2005
-# Whom:					rsmith@xs4all.nl
-#
+# Created by: rsmith@xs4all.nl
 # $FreeBSD$
-#
 
 PORTNAME=	lamprop
 PORTVERSION=	1.3.3
@@ -28,6 +24,7 @@ MAKE_ENV=	NOPORTDOCS=yes
 PORTDOCS=	LICENSE README NEWS
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-pipe||; s|-fmerge-constants||; s|-fno-unit-at-a-time||; s|--fast-math||' \

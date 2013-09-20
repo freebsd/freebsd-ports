@@ -20,6 +20,7 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=	${WRKDIR}/${DISTNAME}/Source
 
+NO_STAGE=	yes
 post-patch:
 	${RM} "${WRKSRC}/obj"
 

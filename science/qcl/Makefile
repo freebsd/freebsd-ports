@@ -10,6 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A quantum computer simulator
 
+NO_STAGE=	yes
 do-configure:
 	echo 'PREFIX=${PREFIX}' >>${WRKSRC}/Makefile
 	cd ${WRKSRC} && make dep

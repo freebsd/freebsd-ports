@@ -19,6 +19,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-emf=yes --with-localedir=${PREFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 #isolate libEMF stuff

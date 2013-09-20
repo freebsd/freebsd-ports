@@ -15,6 +15,7 @@ USE_GMAKE=	yes
 
 MAN1=		voro++.1
 
+NO_STAGE=	yes
 post-patch-script:
 	${REINPLACE_CMD} \
 		-e 's|CC=|CC?=|g' \

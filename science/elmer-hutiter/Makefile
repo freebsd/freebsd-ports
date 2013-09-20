@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hutiter
-# Date created:		5 Jan 2006
-# Whom:			Pedro Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hutiter
 PORTVERSION=	5.4.0
@@ -20,6 +16,7 @@ LIB_DEPENDS=	arpack.1:${PORTSDIR}/math/arpack
 
 USE_FORTRAN=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)

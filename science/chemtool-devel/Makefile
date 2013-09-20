@@ -29,6 +29,7 @@ MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	-I${LOCALBASE}/include/libEMF
 CXXFLAGS+=	-I${LOCALBASE}/include/libEMF
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+g;' ${WRKSRC}/configure.in
 	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+g;' ${WRKSRC}/configure

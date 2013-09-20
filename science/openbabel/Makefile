@@ -41,6 +41,7 @@ OPTIONS_DEFINE=	CAIRO PYTHON
 OPTIONS_DEFAULT=	PYTHON
 CAIRO_DESC=	PNG support via cairo library
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCAIRO}

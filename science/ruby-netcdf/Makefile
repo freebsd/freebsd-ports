@@ -1,9 +1,5 @@
-# New ports collection makefile for:	RubyNetCDF
-# Date created:		11 June 2002
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	netcdf
 PORTVERSION=	0.6.6
@@ -27,6 +23,7 @@ USE_RUBY_EXTCONF=	yes
 
 DOCS=		ChangeLog ToDo doc/*
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}

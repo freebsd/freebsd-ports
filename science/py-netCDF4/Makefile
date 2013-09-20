@@ -41,6 +41,7 @@ PLIST_FILES=	bin/nc3tonc4 \
 		%%PYTHON_SITELIBDIR%%/netcdftime.pyc \
 		%%PYTHON_SITELIBDIR%%/netcdftime.pyo
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

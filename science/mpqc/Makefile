@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mpqc
-# Date created:				27 April 2001
-# Whom:					batman <batman@udel.edu>
-#
+# Created by: batman <batman@udel.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
@@ -18,6 +14,7 @@ USES=		perl5 gmake
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_ICC)

@@ -27,6 +27,7 @@ BUILD_WRKSRC=	${WRKSRC}/source
 
 MPIF90=		${LOCALBASE}/mpi/openmpi/bin/mpif90
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUI}

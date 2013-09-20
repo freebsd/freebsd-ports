@@ -23,6 +23,7 @@ PLIST_SUB=	DCL_VERSION=${PORTVERSION:S/.//g}
 
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 BINARIES=	cdclcmap cdclclr cdcldate cdcldbs cdclexec cdclfont \

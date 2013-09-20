@@ -23,6 +23,7 @@ PLIST_FILES=	bin/${PORTNAME}${PKGNAMESUFFIX}
 
 RESTRICTED=	may not be redistributed because of licensing reasons
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTFILES})

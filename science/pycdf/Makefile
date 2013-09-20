@@ -1,9 +1,5 @@
-# Ports collection makefile for:	pycdf
-# Date created:			30 April, 2008
-# Whom:				wenheping@gmail.com
-#
+# Created by: wenheping@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	pycdf
 PORTVERSION=	0.6.3
@@ -26,4 +22,5 @@ PYTHON_PKGNAMEPREFIX=	yes
 PYDISTUTILS_EGGINFO=	pycdf-0.6_3b-py${PYTHON_VER}.egg-info
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

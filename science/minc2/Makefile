@@ -33,6 +33,7 @@ CMAKE_ARGS=	-DMINC2_BUILD_SHARED_LIBS:BOOL=YES
 CONFLICTS=	minc-1* zh-tk-[0-9]*
 LATEST_LINK=	minc2
 
+NO_STAGE=	yes
 post-install:
 	${CAT} ${PKGMESSAGE}
 

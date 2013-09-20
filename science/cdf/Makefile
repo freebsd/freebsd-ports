@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cdf
-# Date created:		26 January 2006
-# Whom:			Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	cdf3
 PORTVERSION=	3.3.0
@@ -33,6 +29,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 DEFS=		B C K
 PORTDOCS=	CDF_copyright.txt CHANGES.txt Release.notes Welcome.txt
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

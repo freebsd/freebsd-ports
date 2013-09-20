@@ -17,4 +17,5 @@ MAN3=		Geo::ReadGRIB.3 \
 		Geo::ReadGRIB::Place.3 \
 		Geo::ReadGRIB::PlaceIterator.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

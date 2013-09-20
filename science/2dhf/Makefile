@@ -1,9 +1,5 @@
-# New ports collection makefile for:	2dhf
-# Date created:				24 July 2003
-# Whom:					NAKATA, Maho <maho@FreeBSD.org>
-#
+# Created by: NAKATA, Maho <maho@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	2dhf
 PORTVERSION=	2005.05
@@ -57,6 +53,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 ALL_TARGET=	all
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_CMD} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
 

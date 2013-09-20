@@ -17,6 +17,7 @@ COMMENT?=	GDL, a free IDL compatible incremental compiler
 LICENSE=	GPLv2
 
 #---------------------------------------------------------------------------
+NO_STAGE=	yes
 # You may define these options:
 #
 # - WITHOUT_GRAPHICSMAGICK:	remove GraphicsMagick support

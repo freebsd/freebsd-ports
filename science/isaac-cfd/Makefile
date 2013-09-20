@@ -29,6 +29,7 @@ OPTIMIZED_FFLAGS_DESC=	Use extra compiler (fortran) optimizations
 DOCS_DISTFILES+=	man.4_2.ps.gz
 EXAMPLES_DISTFILES+=	example_cases${EXTRACT_SUFX}
 
+NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; s+%%FFLAGS%%+${FFLAGS}+;' \
 	${WRKSRC}/makefile

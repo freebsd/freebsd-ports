@@ -17,6 +17,7 @@ USE_LDCONFIG=	yes
 
 MAN1=		gen-ctl-io.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

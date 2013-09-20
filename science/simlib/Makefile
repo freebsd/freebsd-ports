@@ -1,9 +1,5 @@
-# Ports collection makefile for:	simlib
-# Whom:					Pav Lucistnik <pav@FreeBSD.org>
-# Date created:				26 Nov 2004
-#
+# Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	simlib
 PORTVERSION=	3.0.20081216
@@ -23,6 +19,7 @@ CXXFLAGS+=	-fPIC
 NOT_FOR_ARCHS=	ia64 powerpc sparc64
 NOT_FOR_ARCHS_REASON=	contains not working ${ARCH}-dependent assembly code
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|make|gmake|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \

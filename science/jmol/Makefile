@@ -41,6 +41,7 @@ ALL_TARGET=	main
 NO_BUILD=	yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-fetch:

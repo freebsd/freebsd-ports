@@ -33,6 +33,7 @@ RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg \
 
 USES=		gettext iconv gmake motif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

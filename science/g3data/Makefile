@@ -23,6 +23,7 @@ PLIST_FILES=	bin/g3data %%EXAMPLESDIR%%/test1.png %%EXAMPLESDIR%%/test1.values \
 		%%EXAMPLESDIR%%/test2.png %%EXAMPLESDIR%%/test2.values
 PLIST_DIRS=	%%EXAMPLESDIR%%
 
+NO_STAGE=	yes
 post-install:
 		@${MKDIR} ${EXAMPLESDIR}
 		${INSTALL_DATA} ${WRKSRC}/test1.png ${EXAMPLESDIR}

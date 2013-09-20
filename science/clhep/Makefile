@@ -1,9 +1,5 @@
-# New ports collection makefile for:	clhep
-# Date created:				6 May 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	clhep
 PORTVERSION=	2.1.0.1
@@ -24,6 +20,7 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000

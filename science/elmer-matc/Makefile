@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Elmer-MatC
-# Date created:		5 Jan 2006
-# Whom:			Pedro Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	matc
 PORTVERSION=	5.4.0
@@ -22,6 +18,7 @@ USE_FORTRAN=	g77
 
 PLIST_SUB=	ARCH=${MACHINE_ARCH}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"

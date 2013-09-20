@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mei
-# Date created:		Wed 18 apr 2012
-# Whom:			thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	mei
 PORTVERSION=	1.0.3
@@ -30,6 +26,7 @@ CONFIGURE_ARGS=	--with-bft=${LOCALBASE}
 MAN1=		mei-config.1
 
 .if defined(MAINTAINER_MODE)
+NO_STAGE=	yes
 regression-test:
 	(cd ${WRKSRC}/tests &&	\
 	${MAKE} check &&	\

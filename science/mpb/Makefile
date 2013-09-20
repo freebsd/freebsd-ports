@@ -20,6 +20,7 @@ LIB_DEPENDS=	fftw:${PORTSDIR}/math/fftw \
 
 USE_FORTRAN=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

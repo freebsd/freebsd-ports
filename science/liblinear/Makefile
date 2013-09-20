@@ -23,6 +23,7 @@ TXT_DOCS=	COPYRIGHT README
 
 PLIST_FILES=	bin/train bin/predict
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

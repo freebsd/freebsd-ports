@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pydicom
-# Date created:		2009-01-13
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pydicom
 PORTVERSION=	0.9.4.1
@@ -20,4 +16,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGVERSION=	0.9.4_1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

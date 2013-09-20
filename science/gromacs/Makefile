@@ -57,6 +57,7 @@ MAN1=		do_dssp.1 editconf.1 eneconv.1 g_anadock.1 \
 		xpm2ps.1
 MAN7=		gromacs.7
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MATLAS}

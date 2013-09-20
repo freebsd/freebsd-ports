@@ -1,9 +1,5 @@
-# New ports collection makefile for:	abinit
-# Date Created:				18 March 2004
-# Whom:					NAKATA Maho <maho@FreeBSD.org>
-#
+# Created by: NAKATA Maho <maho@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	abinit
 PORTVERSION=	5.7.3
@@ -38,6 +34,7 @@ BUILD_DEPENDS+= gm4:${PORTSDIR}/devel/m4		\
 USE_GHOSTSCRIPT_BUILD=	yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

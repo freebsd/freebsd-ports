@@ -13,6 +13,7 @@ USES=		gmake
 
 MAN1=		nifticlib.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/include depend.mk/-&/' \
 		${WRKSRC}/fsliolib/Makefile ${WRKSRC}/nifticdf/Makefile \

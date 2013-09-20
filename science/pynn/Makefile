@@ -18,4 +18,5 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PyNN
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

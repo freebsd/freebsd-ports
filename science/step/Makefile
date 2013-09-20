@@ -23,6 +23,7 @@ USES=		cmake:outsource
 USE_QT4=	opengl moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 
+NO_STAGE=	yes
 pre-configure:
 	# Avoid building translations, should the user pass
 	# CURRENT_LANG to CMake.

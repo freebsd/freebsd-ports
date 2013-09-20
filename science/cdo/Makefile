@@ -23,6 +23,7 @@ USES=		gmake pathfix
 HDF5_VER?=	18
 NETCDF_VER?=	4
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNETCDF} && ${PORT_OPTIONS:MHDF5} && ${NETCDF_VER} == 4 && ${HDF5_VER} == 16

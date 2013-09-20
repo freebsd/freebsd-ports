@@ -22,6 +22,7 @@ CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MEXAMPLES}

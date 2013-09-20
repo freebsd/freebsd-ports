@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--disable-debug \
 ALL_TARGET=	lib progs
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FORTRAN)

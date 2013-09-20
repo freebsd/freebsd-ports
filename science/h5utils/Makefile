@@ -1,6 +1,4 @@
-# New ports collection makefile for:    h5utils
-# Date created:				Mar 11, 2011
-# Whom:					Klaus Aehlig <aehlig@linta.de>
+# Created by: Klaus Aehlig <aehlig@linta.de>
 # $FreeBSD$
 
 PORTNAME=	h5utils
@@ -27,4 +25,5 @@ LIB_DEPENDS +=	hdf5:${PORTSDIR}/science/hdf5 \
 		png15:${PORTSDIR}/graphics/png \
 		matheval.1:${PORTSDIR}/devel/libmatheval
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

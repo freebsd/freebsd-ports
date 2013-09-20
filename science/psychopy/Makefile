@@ -23,4 +23,5 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	PsychoPy
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

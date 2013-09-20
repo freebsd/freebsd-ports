@@ -17,6 +17,7 @@ ALL_TARGET=	# empty
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
