@@ -56,6 +56,7 @@ MAN3=		Pod::Elemental.3 \
 		Pod::Elemental::Transformer::Pod5.3 \
 		Pod::Elemental::Types.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

@@ -17,4 +17,5 @@ USE_PERL5=	configure
 MAN1=		snortconfig.1
 MAN3=		Net::Snort::Parser::File.3 Net::Snort::Parser::Rule.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

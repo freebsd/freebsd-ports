@@ -1,9 +1,5 @@
-# New ports collection makefile for:	XHTML 1.1 DTD
-# Date created:				18 April 2003
-# Whom:					Kimura Fuyuki <fuyuki@hadaly.org>
-#
+# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xhtml
 PORTVERSION=	1.1.${RECDATE}
@@ -44,6 +40,7 @@ SGMLCAT_RM=	${XMLCATMGR} -sc ${SGMLCAT} remove \
 DTDDIR=		share/xml/${PORTNAME}/1.1/dtd
 XSDDIR=		share/xml/${PORTNAME}/1.1/xsd
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -i '' 's|SGMLDECL "xml1.dcl"|-- SGMLDECL "xml1.dcl" --|g' \
 		 ${WRKSRC}/DTD/xhtml11.cat

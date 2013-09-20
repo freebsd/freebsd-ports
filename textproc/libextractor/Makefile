@@ -32,6 +32,7 @@ GSF_DESC=	GSF (OLE2 (MS office) support)
 RPM_DESC=	RPM support
 OPTIONS_DEFAULT=	EXIV2 FLAC MPEG2 VORBIS GSF POPPLER RPM QT FFMPEG
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \

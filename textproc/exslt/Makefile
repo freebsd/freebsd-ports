@@ -1,9 +1,5 @@
-# New ports collection makefile for:	exslt
-# Date created:				2004-07-08
-# Whom:					Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
-#
+# Created by: Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
 # $FreeBSD$
-#
 
 PORTNAME=	exslt
 PORTVERSION=	2003.10.24
@@ -21,6 +17,7 @@ NO_BUILD=	yes
 
 DATAFILES=	base.css date dyn exsl func howto.html index.html math random regexp set str
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} ">> Installing stylesheets and documentation in ${DATADIR}"
 	@${MKDIR} ${DATADIR}

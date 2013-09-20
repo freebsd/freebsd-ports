@@ -23,4 +23,5 @@ USE_LDCONFIG=	yes
 
 MAN3=		libsoldout.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

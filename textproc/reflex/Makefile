@@ -1,9 +1,5 @@
-# New ports collection makefile for:    reflex
-# Date created:         10 January 2012
-# Whom:                 bf@FreeBSD.org
-#
+# Created by: bf@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	reflex
 PORTVERSION=	20100906
@@ -32,4 +28,5 @@ ${t}: build
 
 .endfor
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

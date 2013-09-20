@@ -1,9 +1,5 @@
-# New ports collection makefile for:    teckit
-# Date created:		24 August 2009
-# Whom:			Nikola Lecic <nikola.lecic@anthesphoria.net>
-#
+# Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
 # $FreeBSD$
-#
 
 PORTNAME=	teckit
 PORTVERSION=	2.5.1
@@ -24,6 +20,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 DOCS=		AUTHORS README NEWS docs/*.pdf license/LICENSING.txt
 
+NO_STAGE=	yes
 post-patch:
 	${CHMOD} ${BINMODE} ${WRKSRC}/configure ${WRKSRC}/install-sh
 

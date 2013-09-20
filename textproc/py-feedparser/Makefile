@@ -22,6 +22,7 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	NEWS PKG-INFO README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

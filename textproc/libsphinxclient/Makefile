@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CC=${CC}
 SUB_LIST+=	PORTNAME=${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_LIB} ${WRKSRC}/.libs/libsphinxclient-0.0.1.so ${PREFIX}/lib/libsphinxclient-0.0.1.so
 	${INSTALL_DATA} ${WRKSRC}/libsphinxclient.la ${PREFIX}/lib/libsphinxclient.la

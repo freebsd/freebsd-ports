@@ -21,6 +21,7 @@ SHEBANG_FILES=	xmldiff.pl
 
 PLIST_FILES=	bin/xmldiff
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} -f ${_DISTDIR}/${_DISTFILES} ${WRKSRC}

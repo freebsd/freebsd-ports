@@ -38,6 +38,7 @@ CONF_FILES=	asciidoc.conf docbook45.conf \
 		latex.conf slidy.conf text.conf wordpress.conf \
 		xhtml11.conf xhtml11-quirks.conf
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVIM}

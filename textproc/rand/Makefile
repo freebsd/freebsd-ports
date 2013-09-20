@@ -16,6 +16,7 @@ GNU_CONFIGURE=	yes
 MAN1=		rand.1
 PLIST_FILES=	bin/rand
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/rand ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/docs/rand.1 ${MANPREFIX}/man/man1

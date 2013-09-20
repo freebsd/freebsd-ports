@@ -18,4 +18,5 @@ USES=		perl5
 
 MAN3=		CSS::Minifier.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -30,6 +30,7 @@ MAN1=		${PORTNAME}.1
 
 SUB_FILES=	${PORTNAME} pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

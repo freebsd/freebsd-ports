@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-asv
-# Date created:		4 April 2001
-# Whom:	      		Johann Visagie <johann@egenetics.com>
-#
+# Created by: Johann Visagie <johann@egenetics.com>
 # $FreeBSD$
-#
 
 PORTNAME=	asv
 PORTVERSION=	0.5
@@ -23,6 +19,7 @@ PLIST_FILES=	bin/asv \
 		%%PYTHON_SITELIBDIR%%/ASV.pyc \
 		%%PYTHON_SITELIBDIR%%/ASV.pyo
 
+NO_STAGE=	yes
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}

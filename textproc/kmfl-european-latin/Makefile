@@ -1,7 +1,4 @@
-# New ports collection makefile for:	scim-kmfl-european-latin
-# Date created:		27 June 2009
-# Whom:			Nikola Lecic <nikola.lecic@anthesphoria.net>
-#
+# Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
 # $FreeBSD$
 
 PORTNAME=	kmfl-european-latin
@@ -36,6 +33,7 @@ PLIST_FILES=	${KMFL_DIR}/european.kmn \
 PLIST_DIRSTRY=	${KMFL_ICONS_DIR} \
 		${KMFL_DIR}
 
+NO_STAGE=	yes
 do-build:
 	base64 -d ${FILESDIR}/latin.png.base64.txt > ${WRKSRC}/latin.png
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    tth
-# Date created:         19 Feb 1998
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tth
 PORTVERSION=	3.89
@@ -27,6 +23,7 @@ MAN1=		tth.1
 PLIST_FILES=	bin/latex2gif bin/ps2gif bin/ps2png bin/tth bin/Xfonts.fix
 PORTDOCS=	license.txt tth_manual.html
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; ${CC} ${CFLAGS} tth.c -o tth -ll
 

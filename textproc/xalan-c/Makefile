@@ -22,6 +22,7 @@ ICULOC_DESC=		Use ICU locale system
 NLSLOC_DESC=		Use nls locale system
 TRANSCODER_ICU_DESC=	Use ICU transcoder (if used in xerces-c2)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # move this further down though portlint might not like it but without

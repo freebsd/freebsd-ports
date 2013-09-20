@@ -12,5 +12,6 @@ LICENSE=	BSD
 USE_CABAL=	aeson>=0.5 attoparsec conduit>=0.5 resourcet>=0.3 text \
 		transformers>=0.1 unordered-containers vector
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

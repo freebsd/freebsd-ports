@@ -1,9 +1,5 @@
-# New ports collection makefile for:	yould
-# Date created:		23 June 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	yould
 PORTVERSION=	0.3.7
@@ -19,6 +15,7 @@ PYDISTUTILS_INSTALLARGS=-Z -O 1 -N -S ${PYTHON_SITELIBDIR} ${WRKSRC}/dist/${PYEA
 PORTDOCS=	NEWS.txt README.txt
 
 .ifndef NOPORTDOCS
+NO_STAGE=	yes
 post-install:
 	@${INSTALL} -d ${DOCSDIR}/
 	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/

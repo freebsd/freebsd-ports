@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 MAKE_ENV=	ADA_INCLUDE_PATH=${LOCALBASE}/lib/asis
 MAKE_JOBS_UNSAFE=yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/adabrowse ${PREFIX}/bin/adabrowse
 

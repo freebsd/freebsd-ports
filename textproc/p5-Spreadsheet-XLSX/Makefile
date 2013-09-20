@@ -23,4 +23,5 @@ USE_PERL5=	configure
 
 MAN3=		Spreadsheet::XLSX.3 Spreadsheet::XLSX::Fmt2007.3 Spreadsheet::XLSX::Utility2007.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

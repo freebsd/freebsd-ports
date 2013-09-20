@@ -53,4 +53,5 @@ MAN3=		Excel::Template.3 \
 		Excel::Template::Iterator.3 \
 		Excel::Template::TextObject.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

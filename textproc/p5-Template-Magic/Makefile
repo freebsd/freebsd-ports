@@ -24,4 +24,5 @@ MAN3=		Template::Magic.3 \
 		Template::Magic::QuickStart.3 \
 		Template::Magic::Zone.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

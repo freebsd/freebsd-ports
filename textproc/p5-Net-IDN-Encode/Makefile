@@ -21,4 +21,5 @@ MAN3=		Net::IDN::Encode.3 Net::IDN::Overview.3 Net::IDN::Punycode.3 \
 		Net::IDN::Punycode::PP.3 Net::IDN::Standards.3 \
 		Net::IDN::UTS46.3 Net::IDN::UTS46::_Mapping.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

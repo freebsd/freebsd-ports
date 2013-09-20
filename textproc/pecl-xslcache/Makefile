@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pecl-xslcache
-# Date created:			2007/10/28
-# Whom:				chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	xslcache
 PORTVERSION=	0.7.1
@@ -22,4 +18,5 @@ USE_PHPEXT=	yes
 DEFAULT_PHP_VER=53
 IGNORE_WITH_PHP=5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

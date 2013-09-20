@@ -24,4 +24,5 @@ USE_PERL5=	configure
 
 MAN3=		XML::Simple.3 XML::Simple::FAQ.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

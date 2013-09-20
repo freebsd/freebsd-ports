@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection Makefile for:	py-jaxml
-# Date created:			Mar 24, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	jaxml
 PORTVERSION=	3.02
@@ -21,4 +16,5 @@ PLIST_FILES=	lib/${PYTHON_VERSION}/site-packages/${PYEASYINSTALL_EGG}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

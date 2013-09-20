@@ -1,9 +1,5 @@
-# New ports collection makefile for:   manued.el
-# Date created:                26 February 2002
-# Whom:                        Kimura Fuyuki <fuyuki@mj.0038.net>
-#
+# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
 # $FreeBSD$
-#
 
 PORTNAME=	manued.el
 PORTVERSION=	0.9.5
@@ -19,6 +15,7 @@ NO_BUILD=	yes
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${EMACSLISPDIR}
 	${INSTALL_DATA} ${WRKSRC}/manued.el ${EMACSLISPDIR}

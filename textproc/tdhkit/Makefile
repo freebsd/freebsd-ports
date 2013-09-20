@@ -13,6 +13,7 @@ COMMENT=	Set of programs for working with tabular ASCII data
 OPTIONS_DEFINE=	LIBCHRON DOCS
 LIBCHRON_DESC=	Install libchron
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLIBCHRON}

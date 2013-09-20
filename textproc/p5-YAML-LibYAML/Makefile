@@ -22,4 +22,5 @@ USE_PERL5=	configure
 MAN3=		YAML::XS::LibYAML.3 \
 		YAML::XS.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,4 +23,5 @@ MAN3=		SVG::Parser.3 \
 		SVG::Parser::SAX.3 \
 		SVG::Parser::SAX::Handler.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

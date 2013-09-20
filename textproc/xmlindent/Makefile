@@ -19,6 +19,7 @@ SOURCES=	error.c indent.c buffer.c main.c
 MAN1=		xmlindent.1
 PLIST_FILES=	bin/xmlindent
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC}; flex xmlindent.yy
 	${CC} ${CFLAGS} ${SOURCES:C/(.*)/${WRKSRC}\/\1/} \

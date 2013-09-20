@@ -20,6 +20,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--without-docs
 PLIST_SUB=	MAJVER=${PORTVERSION:R}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| docs||' ${WRKSRC}/Makefile.in
 

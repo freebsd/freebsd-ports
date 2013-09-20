@@ -15,6 +15,7 @@ USE_PERL5=	configure
 
 MAN3=		XML::TreePP.3
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/example/envxml.cgi ${EXAMPLESDIR}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tnef2txt
-# Date created:			14 Jan 2002
-# Whom:				Jim Mock <jim@FreeBSD.org>
-#
+# Created by: Jim Mock <jim@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tnef2txt
 PORTVERSION=	1.4
@@ -19,6 +15,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 PLIST_FILES=	bin/tnef2txt
 PORTDOCS=	README
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/tnef2txt ${PREFIX}/bin
 

@@ -20,4 +20,5 @@ CONFLICTS_INSTALL=	ja-ack-[0-9]*
 
 MAN1=		ack.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

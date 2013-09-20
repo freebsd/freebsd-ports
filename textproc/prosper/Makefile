@@ -1,9 +1,5 @@
-# Ports collection makefile for:	prosper
-# Date created:			Sun Feb 24, 2002
-# Whom:				Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	prosper
 PORTVERSION=	1.00.4
@@ -39,6 +35,7 @@ DOCS=		AUTHORS ChangeLog FAQ INSTALL NEWS README TODO \
 		doc/rotation.ps doc/rotation.tex
 EXAMPLES_DIR=	doc/doc-examples
 
+NO_STAGE=	yes
 post-extract:
 	@(cd ${WRKDIR}/contrib-prosper-1.0.0 && ${FIND} . | \
 		${CPIO} --quiet -dump ${WRKSRC}/contrib)

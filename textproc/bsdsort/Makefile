@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bsd-sort
-# Date created:				12 June 2007
-# Whom:					Gabor Kovesdan <gabor@FreeBSD.org>
-#
+# Created by: Gabor Kovesdan <gabor@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sort
 PORTVERSION=	20120716
@@ -33,6 +29,7 @@ OPTIONS_DEFINE=		THREADS NLS OVERWRITE_BASE
 OVERWRITE_BASE_DESC=	"Replaces base GNU sort"
 OPTIONS_DEFAULT=	THREADS NLS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MNLS}

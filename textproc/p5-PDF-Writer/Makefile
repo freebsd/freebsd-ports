@@ -15,4 +15,5 @@ USE_PERL5=	modbuild
 
 MAN3=		PDF::Writer.3 PDF::Writer::pdfapi2.3 PDF::Writer::pdflib.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

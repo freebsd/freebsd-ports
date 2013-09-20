@@ -1,7 +1,4 @@
-# New ports collection makefile for:	dikt
-# Date created:			28-12-2008
-# Whom:				Goran Tal <goran.tal@gmail.com>
-#
+# Created by: Goran Tal <goran.tal@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	dikt
@@ -29,4 +26,5 @@ PLIST_FILES=	bin/dikt \
 		share/kde4/services/dict.protocol
 PLIST_DIRS=	share/apps/dikt
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

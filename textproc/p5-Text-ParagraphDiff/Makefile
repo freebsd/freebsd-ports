@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Text-ParagraphDiff
-# Date created:				Nov 3 2003
-# Whom:					Cheng-Lung Sung <clsung@dragon2.net>
-#
+# Created by: Cheng-Lung Sung <clsung@dragon2.net>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-ParagraphDiff
 PORTVERSION=	2.70
@@ -28,6 +24,7 @@ EXAMPLES=	diff.html new.txt old.txt
 EXAMPLESDIR=	${PREFIX}/share/examples/p5-Text-ParagraphDiff
 MAN3=		Text::ParagraphDiff.3
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}

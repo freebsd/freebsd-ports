@@ -16,6 +16,7 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	DSV
 DSV_BASEDIR=	${PYTHONPREFIX_SITELIBDIR}/DSV
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

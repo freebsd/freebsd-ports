@@ -1,9 +1,5 @@
-# New ports collection makefile for:	htmlrepair.rb
-# Date created:		20 September 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	htmlrepair
 PORTVERSION=	1.0.1
@@ -25,6 +21,7 @@ USE_RUBY=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/htmlrepair.rb ${RUBY_SITELIBDIR}/
 

@@ -20,6 +20,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 MAN1=		uni2ascii.1 ascii2uni.1
 PLIST_FILES=	bin/uni2ascii bin/ascii2uni
 
+NO_STAGE=	yes
 do-install:
 .for f in ${PORTNAME} ascii2uni
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin

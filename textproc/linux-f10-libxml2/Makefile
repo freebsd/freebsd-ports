@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/linux-f10-libxml2
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	libxml2
 PORTVERSION=	2.7.3
@@ -34,4 +30,5 @@ MAN3=		libxml.3
 MANCOMPRESSED=	yes
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

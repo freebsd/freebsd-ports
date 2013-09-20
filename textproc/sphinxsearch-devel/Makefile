@@ -35,6 +35,7 @@ OPTIONS_DEFINE=	MYSQL PGSQL ICONV OPTIMIZED_CFLAGS ID64 UNIXODBC \
 ID64_DESC=	64-bit document and word IDs
 OPTIONS_DEFAULT=	MYSQL ICONV
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # The port will successfully compile with both PGSQL and MYSQL support

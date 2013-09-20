@@ -35,6 +35,7 @@ OVIMUnicode_DESC=	Unicode Input Module
 
 MAKE_ARGS+=	INSTALL_PREFIX=${PREFIX} OV_INCLUDE=${LOCALBASE}/include
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Modules-SharedSource-OVCINInfo.cpp

@@ -16,4 +16,5 @@ USE_PERL5=	configure
 MAN3=	HTML::Entities::Numbered.3 \
 	HTML::Entities::Numbered::Table.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

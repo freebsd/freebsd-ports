@@ -28,4 +28,5 @@ MAN3=	Perl::Critic::Bangs.3 \
 	Perl::Critic::Policy::Bangs::ProhibitCommentedOutCode.3 \
 	Perl::Critic::Policy::Bangs::ProhibitBitwiseOperators.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -22,4 +22,5 @@ USE_PERL5=	configure
 MAN1=		Markdown.pl.1
 MAN3=		Text::Markdown.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

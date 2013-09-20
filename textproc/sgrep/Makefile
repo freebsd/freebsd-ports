@@ -1,9 +1,5 @@
-# New ports collection makefile for: 	sgrep
-# Date created:    			Apr 29 1998
-# Whom: 				<koshy@india.hp.com>
-#
+# Created by: <koshy@india.hp.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sgrep
 PORTVERSION=	0.99
@@ -21,6 +17,7 @@ CONFLICTS=	sgrep2-1.*
 MAN1=		sgrep.1
 
 # Override the install target in the supplied makefile
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sgrep ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/sgrep.1 ${MANPREFIX}/man/man1

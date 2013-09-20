@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection Makefile for:	roap
-# Date created:			Apr 15, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	roap
 PORTVERSION=	0.1.2
@@ -23,6 +18,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Region_Oriented_Ascii_Processor
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/roap ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

@@ -14,6 +14,7 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/tdg/en
 
+NO_STAGE=	yes
 do-install:
 .for D in html/figures/callouts html/figures/admon html/figures html
 	${MKDIR} ${DOCSDIR}/${D}

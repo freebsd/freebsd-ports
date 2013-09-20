@@ -1,9 +1,5 @@
-# New ports collection makefile for:	msort
-# Date created:		2006-08-11
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	msort
 PORTVERSION=	8.53
@@ -35,6 +31,7 @@ MAN1=		msort.1
 .ifdef(MAINTAINER_MODE)
 BUILD_DEPENDS+= ${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s|bash|${LOCALBASE}/bin/bash|g" ${WRKSRC}/RegressionTests/Makefile
 	${REINPLACE_CMD} -e "s|msort|../&|g" ${WRKSRC}/RegressionTests/RunTests.sh \

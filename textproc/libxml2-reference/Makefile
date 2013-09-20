@@ -15,6 +15,7 @@ PLIST_FILES=	${EXAMPLES:S|^|%%EXAMPLESDIR%%/|}
 PLIST_DIRS=	%%EXAMPLESDIR%%
 .endif
 
+NO_STAGE=	yes
 do-install:
 .if !defined(NOPORTDOCS)
 .for d in . doc doc/devhelp doc/examples

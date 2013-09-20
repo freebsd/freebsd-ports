@@ -1,10 +1,5 @@
-# New ports collection makefile for:	glimpse
-# http://webglimpse.org/
-# Date created:		25 August 1996
-# Whom:			chuckr@freebsd.org
-#
+# Created by: chuckr@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	glimpse
 PORTVERSION=	4.13.1
@@ -23,6 +18,7 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-DISO_CHAR_SET=1 -D__STRICT_ANSI__
 MAN1=		glimpse.1 glimpseindex.1 glimpseserver.1 agrep.1
 
+NO_STAGE=	yes
 pre-configure:
 	@${CHMOD} a+x ${WRKSRC}/configure
 

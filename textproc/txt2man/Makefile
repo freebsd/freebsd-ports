@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	txt2man
-# Date created:			Jun 14, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	txt2man
 PORTVERSION=	1.5.6
@@ -23,6 +18,7 @@ INSTALL_TARGET=	install prefix=${PREFIX}
 MAN1=		bookman.1 src2man.1 txt2man.1
 PLIST_FILES=	bin/bookman bin/src2man bin/txt2man
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,awk,gawk," ${WRKSRC}/bookman ${WRKSRC}/src2man
 

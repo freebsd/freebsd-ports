@@ -24,6 +24,7 @@ MAN3=	LaTeX::Driver.3 \
 	LaTeX::Driver::Paths.3 \
 	LaTeX::Driver::FilterProgram.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 post-extract:
 	@${REINPLACE_CMD} -e 's#<STDIN>#"\r"#g' ${WRKSRC}/Makefile.PL

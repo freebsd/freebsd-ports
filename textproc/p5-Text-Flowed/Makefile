@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Text-Flowed
-# Date created:		2 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Text-Flowed
 DISTVERSION=	0.14
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		${PORTNAME:S/-/::/g}.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

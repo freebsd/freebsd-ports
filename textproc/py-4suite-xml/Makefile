@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-4Suite-XML
-# Date created:				26 October 2005
-# Whom:					Mike Brown <mike@skew.org>
-#
+# Created by: Mike Brown <mike@skew.org>
 # $FreeBSD$
-#
 
 PORTNAME=	4Suite-XML
 PORTVERSION=	1.0.2
@@ -22,6 +18,7 @@ USE_PYDISTUTILS=	yes
 
 CONFLICTS=	py*-4suite-[01]*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 BINDIR=		bin

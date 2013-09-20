@@ -22,6 +22,7 @@ MANCOMPRESSED=	yes
 PLIST_FILES=	bin/confget
 PORTEXAMPLES=	t1.ini t2.ini
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}

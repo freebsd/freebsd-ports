@@ -23,4 +23,5 @@ PYDISTUTILS_PKGNAME=	Markdown
 regression-test: build
 	@cd ${WRKSRC} && nosetests
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

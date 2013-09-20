@@ -1,9 +1,4 @@
-# New ports collection makefile for:	bg-mythes
-# Date created:		2011-07-21
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mythes
 PORTVERSION=	4.3
@@ -27,6 +22,7 @@ PLIST_FILES=	%%DATADIR%%/th_bg_BG.dat \
 		%%DATADIR%%/th_bg_BG.idx
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/th_bg_BG.dat ${WRKSRC}/th_bg_BG.idx ${DATADIR}/

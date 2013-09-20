@@ -21,4 +21,5 @@ CONFIGURE_ARGS=	--enable-shared --enable-static
 MAN3=		xdiff.3
 PLIST_FILES=	include/xdiff.h lib/libxdiff.a lib/libxdiff.so \
 		lib/libxdiff.so.0 lib/libxdiff.la
+NO_STAGE=	yes
 .include <bsd.port.mk>

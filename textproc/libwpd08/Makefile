@@ -22,6 +22,7 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=--without-docs
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E '/^SUBDIRS = /s/conv//g' ${WRKSRC}/src/Makefile.in
 

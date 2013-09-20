@@ -50,6 +50,7 @@ EXTRA_DESC=	Enable all extra features
 TAB8_DESC=	Use a tabstop of 8 (default is 4)
 SAMPLES_DESC=	Install sample programs
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXTRA}

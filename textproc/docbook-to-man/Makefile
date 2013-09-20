@@ -25,6 +25,7 @@ XFREE86_HTML_MAN=	no
 
 MAN1=	oinstant.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Local variables

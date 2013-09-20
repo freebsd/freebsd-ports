@@ -23,4 +23,5 @@ USE_PERL5=	configure
 MAN3=		XML::FOAF.3	\
 		XML::FOAF::Person.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

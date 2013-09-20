@@ -1,4 +1,4 @@
-# Created by: lofi@freebsd.org
+# Created by: lofi@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	wv2
@@ -15,6 +15,7 @@ USE_BZIP2=	yes
 USES=		cmake iconv pkgconfig
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|LIBGSF_INCLUDE_DIR|PC_LIBGSF_INCLUDE_DIRS|g' \
 		-e 's|LIBGSF_LIBRARIES|PC_LIBGSF_LIBRARIES|g' \

@@ -172,4 +172,5 @@ MAN3=	PDF::API3::Compat::API2::Basic::TTF::GDEF.3 \
 	PDF::API3::Compat::API2::Basic::TTF::Kern::CompactClassArray.3 \
 	PDF::API3::Compat::API2::Basic::TTF::Fmtx.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

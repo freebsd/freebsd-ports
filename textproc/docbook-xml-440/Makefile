@@ -42,6 +42,7 @@ ENT_FILES=	isoamsa.ent isoamsb.ent isoamsc.ent isoamsn.ent \
 		isonum.ent isopub.ent isotech.ent
 #DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}/${PORTVERSION}
 
+NO_STAGE=	yes
 pre-install:
 	@${RM} -f ${PLIST}
 .for F in ${ENT_FILES}

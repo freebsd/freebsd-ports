@@ -27,6 +27,7 @@ PORTDOCS=	ChangeLog INSTALL README README_DE \
 
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

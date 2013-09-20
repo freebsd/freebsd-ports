@@ -1,6 +1,4 @@
-#
 # $FreeBSD$
-#
 
 PORTNAME=	codespell
 PORTVERSION=	1.6
@@ -23,6 +21,7 @@ PORTEXAMPLES=	*
 
 SUB_FILES+=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:

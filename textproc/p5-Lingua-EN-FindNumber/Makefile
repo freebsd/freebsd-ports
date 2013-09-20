@@ -23,4 +23,5 @@ USES=		perl5
 
 MAN3=		Lingua::EN::FindNumber.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

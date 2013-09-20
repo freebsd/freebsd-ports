@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	XML-OPML
-# Date created:			Nov 21, 2005
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	XML-OPML
 PORTVERSION=	0.26
@@ -24,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=	XML::OPML.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

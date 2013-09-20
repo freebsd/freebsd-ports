@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	py-empy
-# Date created:			Jul 12, 2005
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	empy
 PORTVERSION=	3.3
@@ -19,4 +14,5 @@ USE_PYTHON=	1.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	3.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -34,6 +34,7 @@ TEXMFDIR=	share/texmf
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 PORTDOCS=	FAQ INSTALL LICENSE README
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

@@ -21,6 +21,7 @@ MANPAGE=	shuffle.1
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
 
+NO_STAGE=	yes
 do-install:
 		@${CP} ${WRKSRC}/shuffle ${PREFIX}/bin/${PORTNAME}
 		@${CP} ${WRKSRC}/${MANPAGE} ${PREFIX}/man/man1/${PORTNAME}.1

@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	Class::CSV
 # Created by: ijliao
 # $FreeBSD$
 
@@ -21,4 +19,5 @@ USE_PERL5=	configure
 
 MAN3=		Class::CSV.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

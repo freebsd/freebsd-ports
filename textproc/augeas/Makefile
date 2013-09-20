@@ -24,6 +24,7 @@ MANCOMPRESSED=	no
 
 LENSESDIR=	${PREFIX}/share/augeas/lenses
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's:$$(libdir)/pkgconfig:${PREFIX}/libdata/pkgconfig:' ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's:/bin/bash:/usr/bin/env bash:' ${WRKSRC}/tests/*.sh

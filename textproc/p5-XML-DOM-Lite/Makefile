@@ -17,4 +17,5 @@ MAN3=		XML::DOM::Lite.3 XML::DOM::Lite::Document.3 \
 		XML::DOM::Lite::NodeList.3 XML::DOM::Lite::Parser.3 \
 		XML::DOM::Lite::XPath.3 XML::DOM::Lite::XSLT.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

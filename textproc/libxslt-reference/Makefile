@@ -9,6 +9,7 @@ PARENT_WRKSRC!=	cd ${.CURDIR}/../libxslt && ${MAKE} -V WRKSRC
 EXTRACT_ONLY=
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 do-install:
 .if !defined(NOPORTDOCS)
 	@cd ${PARENT_WRKSRC}/doc && ${GMAKE} install-data-local

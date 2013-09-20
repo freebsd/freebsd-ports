@@ -41,6 +41,7 @@ PLIST_DIRS=	%%DATADIR%%
 PORTDOCS=	LICENSE.txt api index.html jaxup_files xupdate-wd.html xupdate-wd_files
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 UTIL_CLASSPATH_JARS=	jaxen-full saxpath xercesImpl

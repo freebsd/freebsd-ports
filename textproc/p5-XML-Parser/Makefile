@@ -34,6 +34,7 @@ EUCJP=		"@comment "
 SJIS=		"@comment "
 .endif
 
+NO_STAGE=	yes
 post-patch:
 .if defined(XMLPARSER_EUCJP)
 	@cd ${WRKSRC}/Parser/Encodings; \

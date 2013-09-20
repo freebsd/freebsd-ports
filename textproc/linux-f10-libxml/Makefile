@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/linux-f10-libxml
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	libxml
 PORTVERSION=	1.8.17
@@ -27,4 +23,5 @@ DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING.LIB ChangeLog README TODO
 DESCR=		${.CURDIR}/../${PORTNAME}2/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lemmatizer2
-# Date created:				9 Mar 2007
-# Whom:					Andrei V. Shetuhin
-#
+# Created by: Andrei V. Shetuhin
 # $FreeBSD$
-#
 
 PORTNAME=	lemmatizer2
 PORTVERSION=	2.0.1
@@ -29,6 +25,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 USE_LDCONFIG=	${PREFIX}/lib/lemmatizer2
 
+NO_STAGE=	yes
 pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"

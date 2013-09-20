@@ -45,6 +45,7 @@ USE_PERL5=	build patch
 
 MAN1=	sabcmd.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 DOCSLIST=	README README_JS RELEASE doc/misc/DEBUGGER doc/misc/NOTES

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	srilm
-# Date created:				Wed Dec 31 16:17:30 CST 2003
-# Whom:					Cheng-Lung Sung <clsung@dragon2.net>
-#
+# Created by: Cheng-Lung Sung <clsung@dragon2.net>
 # $FreeBSD$
-#
 
 PORTNAME=	srilm
 PORTVERSION=	1.5.6
@@ -61,6 +57,7 @@ MAN3=		Prob.3 Vocab.3 LM.3 File.3
 MAN5=		ngram-format.5 nbest-format.5 classes-format.5 \
 		pfsg-format.5 wlat-format.5
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

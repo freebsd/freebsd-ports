@@ -1,9 +1,5 @@
-# New ports collection makefile for:    gv-aspell
-# Date created:                         16 April 2004
-# Whom:                                 Thierry Thomas <thierry@FreeBSD.org>
-#
+# Created by: Thierry Thomas <thierry@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	${DICT}-aspell
 DISTVERSION=	-gv-0.50-0
@@ -16,5 +12,6 @@ COMMENT=	Aspell Manx Gaelic dictionary
 
 DICT=	 	gv
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

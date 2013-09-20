@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	--disable-shared
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 MAKE_JOBS_UNSAFE=yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||' ${WRKSRC}/Makefile.in
 

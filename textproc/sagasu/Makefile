@@ -21,6 +21,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		sagasu.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in

@@ -1,6 +1,4 @@
-# New ports collection makefile for:	print-n-times
-# Date created:                		August 03 2004
-# Whom:                        		Aaron Straup Cope
+# Created by: Aaron Straup Cope
 # $FreeBSD$
 
 PORTNAME=	print-n-times
@@ -14,6 +12,7 @@ COMMENT=	Print a string (n) times
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO} "Installing in ${PREFIX}/share/xsl/string/"
 	@${MKDIR} ${PREFIX}/share/xsl/string

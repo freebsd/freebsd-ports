@@ -1,9 +1,5 @@
-# New ports collection makefile for:    libkmfl
-# Date created:		10 October 2007
-# Whom:			Nikola Lecic <nikola.lecic@anthesphoria.net>
-#
+# Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libkmfl
 PORTVERSION=	0.9.9
@@ -33,6 +29,7 @@ PLIST_FILES=	include/kmfl/libkmfl.h \
 		lib/libkmfl.so.0
 PLIST_DIRSTRY=	include/kmfl
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		's|^install-data-am: install-libkmfldocDATA|install-data-am:|' \

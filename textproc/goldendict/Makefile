@@ -26,6 +26,7 @@ USE_XORG=	xtst
 USE_QT4=	corelib gui webkit phonon \
 		qmake_build linguist_build moc_build rcc_build script_build uic_build
 
+NO_STAGE=	yes
 post-patch:
 	@${SED} -I.bak -e "s:/usr:${PREFIX}:" ${WRKSRC}/redist/goldendict.desktop
 

@@ -21,6 +21,7 @@ PLIST_FILES=	bin/qprint
 MAN1=		qprint.1
 ALL_TARGET=	prog check wringer
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qprint ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/qprint.1 ${PREFIX}/man/man1

@@ -17,4 +17,5 @@ USES=		iconv perl5
 USE_PERL5=	configure
 CFLAGS+=	-DICONV_CONST=const
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -21,6 +21,7 @@ PORTDOCS=	*
 
 SUB_FILES=	jing.sh
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/jing.sh ${PREFIX}/bin/jing
 	${INSTALL_DATA} ${WRKSRC}/bin/jing.jar ${JAVAJARDIR}

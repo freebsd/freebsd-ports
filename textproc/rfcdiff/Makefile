@@ -1,7 +1,4 @@
-# New ports collection makefile for: rfcdiff
-# Date Created:		11 November 2004
-# Whom:			lars.eggert@gmx.net
-#
+# Created by: lars.eggert@gmx.net
 # $FreeBSD$
 
 PORTNAME=	rfcdiff
@@ -27,6 +24,7 @@ NO_BUILD=	YES
 
 PLIST_FILES=	bin/rfcdiff
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
 		${WRKSRC}/${DISTNAME}

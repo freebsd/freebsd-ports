@@ -23,6 +23,7 @@ MAN8=		intltool-extract.8 intltool-merge.8 intltool-prepare.8 \
 
 CONFLICTS=	xml-i18n-tools-[0-9]*
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
 		-E -e '/^mkinstalldirs[[:space:]]*=/s^/\.\.^^g'

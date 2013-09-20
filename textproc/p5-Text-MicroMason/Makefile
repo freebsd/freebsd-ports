@@ -51,4 +51,5 @@ MAN3=	Text::MicroMason.3 \
 	Text::MicroMason::TemplatePath.3 \
 	Text::MicroMason::TextTemplate.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

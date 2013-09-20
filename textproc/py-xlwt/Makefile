@@ -15,4 +15,5 @@ PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	libupskirt
-# Date created:		2010-02-10
-# Whom:			Bapt <baptiste.daroussin@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libsoldout
 DISTVERSION=	1.3
@@ -20,6 +15,7 @@ MAKEFILE=	BSDmakefile
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000

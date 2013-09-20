@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/bin/diff
 
 MAN1=		2diff.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
 				${WRKSRC}/../../man/man1/diff.1

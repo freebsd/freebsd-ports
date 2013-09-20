@@ -16,4 +16,5 @@ MAN3=	Text::DHCPLeases.3 \
 	Text::DHCPLeases::Object.3 \
 	Text::DHCPLeases::Object::Iterator.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

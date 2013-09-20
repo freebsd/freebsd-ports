@@ -12,5 +12,6 @@ LICENSE=	MIT
 
 USE_CABAL=	attoparsec>=0.10 enumerator>=0.4 text
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

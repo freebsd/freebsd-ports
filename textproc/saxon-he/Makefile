@@ -36,6 +36,7 @@ PORTEXAMPLES=	*
 SUB_FILES=	saxon.sh
 SUB_LIST=	SAXON_JARS="${JARFILES:S,^,${DATADIR}/,}"
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing JARs in ${DATADIR}/..."
 	@${MKDIR} ${DATADIR}

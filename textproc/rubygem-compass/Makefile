@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-compass
-# Date created:		2011-10-07
-# Whom:			Jason Helfman <jhelfman@experts-exchange.com>
-#
+# Created by: Jason Helfman <jhelfman@experts-exchange.com>
 # $FreeBSD$
-#
 
 PORTNAME=	compass
 PORTVERSION=	0.12.2
@@ -23,4 +19,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/compass
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

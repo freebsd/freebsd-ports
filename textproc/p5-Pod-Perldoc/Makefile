@@ -28,4 +28,5 @@ MAN3=		Pod::Perldoc::ToNroff.3 \
 		Pod::Perldoc::ToTerm.3 \
 		Pod::Perldoc::ToANSI.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

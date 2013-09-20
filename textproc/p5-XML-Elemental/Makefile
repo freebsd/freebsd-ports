@@ -27,4 +27,5 @@ MAN3=	XML::Elemental.3 \
 	XML::Elemental::Util.3 \
 	XML::Parser::Style::Elemental.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

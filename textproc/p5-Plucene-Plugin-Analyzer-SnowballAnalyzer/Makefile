@@ -23,4 +23,5 @@ USE_PERL5=	configure
 MAN3=	Plucene::Plugin::Analyzer::SnowballAnalyzer.3 \
 	Plucene::Plugin::Analyzer::SnowballFilter.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

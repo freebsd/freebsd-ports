@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-sphinx
-# Date created:		2008-09-08
-# Whom:			Li-Wen Hsu <lwhsu@FreeBSD.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sphinx
 PORTVERSION=	1.1.3
@@ -29,6 +25,7 @@ PYDISTUTILS_PKGNAME=	Sphinx
 
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 
+NO_STAGE=	yes
 post-install:
 	@${SETENV} PYTHONPATH=${PYTHONPREFIX_SITELIBDIR} \
 	${PYTHON_CMD} -m sphinx.pycode.pgen2.driver -c 'import load_grammar'

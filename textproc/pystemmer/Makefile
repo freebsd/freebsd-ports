@@ -15,4 +15,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PyStemmer
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

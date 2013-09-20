@@ -1,9 +1,5 @@
-# New ports collection makefile for:	word2x
-# Date created:		10 June 1998
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	word2x
 PORTVERSION=	0.005
@@ -20,4 +16,5 @@ GNU_CONFIGURE=	yes
 MAN1=		word2x.1
 PLIST_FILES=	bin/rtest2 bin/word2x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

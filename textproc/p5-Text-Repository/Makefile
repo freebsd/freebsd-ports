@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Text::Repository
-# Date created:				24 Jan 2002
-# Whom:					Seamus Venasse <svenasse@polaris.ca>
-#
+# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
-#
 
 PORTNAME=		Text-Repository
 PORTVERSION=		1.04
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=			Text::Repository.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

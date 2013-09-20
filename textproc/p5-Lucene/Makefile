@@ -22,4 +22,5 @@ CONFIGURE_ARGS+="INC=-I${LOCALBASE}/include -I${LOCALBASE}/lib"
 
 MAN3=	Lucene.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

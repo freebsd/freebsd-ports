@@ -31,6 +31,7 @@ MAN3=		Text::RecordParser.3 \
 		Text::RecordParser::Tab.3 \
 		Text::RecordParser::Object.3
 
+NO_STAGE=	yes
 post-extract:
 		# workaround for https://rt.cpan.org/Public/Bug/Display.html?id=87855
 		${CHMOD} +w ${WRKSRC}/README.md

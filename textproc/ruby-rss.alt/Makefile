@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/RSS (alternative impl.)
-# Date created:		23 March 2003
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rss
 PORTVERSION=	0.2.6
@@ -28,6 +24,7 @@ SADIR=	lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}
 DOCS_EN=	README.en Tutorial.en
 DOCS_JA=	README.ja Tutorial.ja
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja

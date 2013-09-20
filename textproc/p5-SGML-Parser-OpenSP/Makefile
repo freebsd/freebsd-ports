@@ -24,6 +24,7 @@ CONFIGURE_ARGS+="INC=-I${LOCALBASE}/include"
 
 MAN3=		SGML::Parser::OpenSP.3 SGML::Parser::OpenSP::Tools.3
 
+NO_STAGE=	yes
 post-patch:
 	(cd ${WRKSRC} ; \
 	 ${REINPLACE_CMD} "s|%%LOCALBASE%%|${LOCALBASE}|g" Makefile.PL )

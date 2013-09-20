@@ -1,9 +1,5 @@
-# New ports collection makefile for:	raptor
-# Date created:			Nov 22, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	raptor
 PORTVERSION=	1.4.21
@@ -30,6 +26,7 @@ USE_LDCONFIG=	yes
 MAN1=		raptor-config.1
 MAN3=		libraptor.3
 
+NO_STAGE=	yes
 post-extract:
 	${REINPLACE_CMD} -e 's|utils ||' \
 		${WRKSRC}/Makefile.in

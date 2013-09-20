@@ -18,6 +18,7 @@ PLIST_FILES=	bin/diffsplit
 USES=		shebangfix perl5
 SHEBANG_FILES=	diffsplit
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/diffsplit ${WRKDIR}

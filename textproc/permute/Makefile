@@ -1,9 +1,5 @@
-# New ports collection makefile for:	permute
-# Date created:				Wed Aug 07 2005
-# Whom:					erik@smluc.org
-#
+# Created by: erik@smluc.org
 # $FreeBSD$
-#
 
 PORTNAME=	permute
 PORTVERSION=	1.0
@@ -16,6 +12,7 @@ COMMENT=	Generate all permutations of lines from stdin
 PLIST_FILES=	bin/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 

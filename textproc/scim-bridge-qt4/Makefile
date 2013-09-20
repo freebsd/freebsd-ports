@@ -32,6 +32,7 @@ CONFIGURE_ARGS+=--with-libintl-prefix=${LOCALBASE} \
 		--disable-qt3-immodule \
 		--enable-qt4-immodule
 
+NO_STAGE=	yes
 post-patch:
 	@${GREP} -lR "<malloc\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc\.h>|<stdlib.h>|g'

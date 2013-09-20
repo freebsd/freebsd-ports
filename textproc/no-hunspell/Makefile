@@ -1,9 +1,4 @@
-# New ports collection makefile for:	no-hunspell
-# Date created:		2011-07-21
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hunspell
 PORTVERSION=	2.0.10
@@ -26,6 +21,7 @@ PLIST_FILES=	%%DATADIR%%/nb_NO.aff \
 		%%DATADIR%%/nn_NO.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-extract:
 	@${EXTRACT_CMD} ${WRKDIR}/nb_NO.zip -d ${WRKSRC}/
 	@${EXTRACT_CMD} ${WRKDIR}/nn_NO.zip -d ${WRKSRC}/

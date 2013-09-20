@@ -21,6 +21,7 @@ USE_LDCONFIG=	yes
 # Installs dir with proper permissions
 INSTALL_DATA_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755
 
+NO_STAGE=	yes
 do-configure:
 	@${REINPLACE_CMD} -E \
 		-e 's|^(prefix)[[:space:]]*=.*$$|\1=${PREFIX}|; \

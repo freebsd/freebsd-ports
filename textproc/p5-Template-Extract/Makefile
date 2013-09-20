@@ -1,4 +1,3 @@
-# Ports collection makefile for:	p5-Template-Extract
 # Created by: Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 # $FreeBSD$
 
@@ -22,4 +21,5 @@ MAN3=	Template::Extract.3 \
 	Template::Extract::Parser.3 \
 	Template::Extract::Run.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

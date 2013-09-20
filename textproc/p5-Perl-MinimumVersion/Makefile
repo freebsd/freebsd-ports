@@ -25,6 +25,7 @@ USE_PERL5=	configure
 MAN1=	perlver.1
 MAN3=	Perl::MinimumVersion.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e '/Test::/d' ${WRKSRC}/Makefile.PL
 

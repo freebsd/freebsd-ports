@@ -1,9 +1,5 @@
-# New ports collection makefile for:	utf8proc
-# Date created:		2007-10-15
-# Whom:			Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	utf8proc
 PORTVERSION=	1.1.3
@@ -19,6 +15,7 @@ ALL_TARGET=	c-library
 
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/libutf8proc.so ${PREFIX}/lib/libutf8proc.so.1
 		${INSTALL_DATA} ${WRKSRC}/libutf8proc.a ${PREFIX}/lib

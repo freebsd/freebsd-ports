@@ -1,9 +1,5 @@
-# New ports collection makefile for:   uim-el-emacs22
-# Date created:        27 January 2009
-# Whom:                MANTANI Nobutaka <nobutaka@FreeBSD.org>
-#
+# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
-#
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
@@ -20,4 +16,5 @@ DESCR=	${MASTERDIR}/pkg-descr
 
 MASTERDIR=	${.CURDIR}/../uim-el
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

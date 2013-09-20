@@ -27,6 +27,7 @@ CATALOG_XSL=	${WRKSRC}/catalog
 
 DXVERSIONS=	current 2.2 2.3 2.4.0 2.4.1 2.5.0
 
+NO_STAGE=	yes
 post-extract:
 	${FIND} ${WRKSRC} -name '.#*' -delete
 

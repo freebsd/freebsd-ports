@@ -27,4 +27,5 @@ MAN3=		Unicode::Collate.3 \
 		Unicode::Collate::CJK::Zhuyin.3 \
 		Unicode::Collate::Locale.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

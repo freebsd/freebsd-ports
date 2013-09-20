@@ -34,4 +34,5 @@ MAN3=	XML::Atom::Syndication.3 \
 	XML::Atom::Syndication::Text.3 \
 	XML::Atom::Syndication::Writer.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

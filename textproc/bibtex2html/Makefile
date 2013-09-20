@@ -17,4 +17,5 @@ CONFIGURE_ARGS=	--disable-doc
 MAN1=		bibtex2html.1 bib2bib.1 aux2bib.1
 PLIST_FILES=	bin/aux2bib bin/bib2bib bin/bibtex2html
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

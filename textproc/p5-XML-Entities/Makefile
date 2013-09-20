@@ -21,4 +21,5 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN3=		XML::Entities.3pm XML::Entities::Data.3pm download-entities.pl.3pm
 MAN1=		download-entities.pl.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

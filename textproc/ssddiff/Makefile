@@ -19,6 +19,7 @@ MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		-I${LOCALBASE}/include/libxml2"
 PLIST_FILES=	bin/xmldiff
 
+NO_STAGE=	yes
 post-extract:
 .for f in config.guess config.sub install-sh missing mkinstalldirs
 	@${LN} -sf ${AUTOMAKE_DIR}/${f} ${WRKSRC}/${f}

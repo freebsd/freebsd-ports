@@ -20,6 +20,7 @@ SHLIB_MAJOR=	6
 
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's/@LIBCURRENT.*@/${SHLIB_MAJOR}/' \

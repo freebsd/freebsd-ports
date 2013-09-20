@@ -27,4 +27,5 @@ MAN3=	Devel::CallSeq.3 Devel::OOCallSeq.3 \
 	UML::genericseq.3 UML::seq2rast.3 \
 	UML::seq2svg.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

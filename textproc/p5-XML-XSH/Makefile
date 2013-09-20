@@ -25,6 +25,7 @@ USE_PERL5=	configure
 MAN1=		xsh.1
 MAN3=		XSH.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 test: build

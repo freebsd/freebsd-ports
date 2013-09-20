@@ -42,4 +42,5 @@ MAN3=		Pod::Simple.3 \
 		Pod::Simple::XHTML.3 \
 		Pod::Simple::XMLOutStream.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

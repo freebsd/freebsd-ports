@@ -48,4 +48,5 @@ MAN3=		PDF::FromHTML.3 PDF::FromHTML::Twig.3 \
 		PDF::FromHTML::Template::Element::Var.3 \
 		PDF::FromHTML::Template::Element::Weblink.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

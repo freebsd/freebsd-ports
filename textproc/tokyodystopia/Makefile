@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tokyodystopia
-# Date created:		2009-02-04
-# Whom:			Li-Wen Hsu <lwhsu@FreeBSD.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tokyodystopia
 PORTVERSION=	0.9.15
@@ -40,6 +36,7 @@ SHLIB_VER_MAJ=	1
 
 PLIST_SUB=	SHLIB_VER=${SHLIB_VER} SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/doc/index.html~
 

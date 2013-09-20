@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-xmlscan
-# Date created:		7 August 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xmlscan
 PORTVERSION=	0.2.3
@@ -27,6 +23,7 @@ DOCS_EN=	ChangeLog \
 		doc/en/*
 DOCS_JA=	doc/ja/*
 
+NO_STAGE=	yes
 do-install:
 	${CP} -R ${WRKSRC}/lib/xmlscan ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)

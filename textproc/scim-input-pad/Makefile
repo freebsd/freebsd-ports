@@ -28,6 +28,7 @@ DESKTOP_ENTRIES="SCIM Input Pad" \
 
 DOCS=		ChangeLog README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

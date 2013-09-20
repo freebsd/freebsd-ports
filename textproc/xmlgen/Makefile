@@ -12,6 +12,7 @@ COMMENT=	Write XML documents using Tcl
 USE_TCL=	84+
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

@@ -19,4 +19,5 @@ MAN1=	podspell.1
 MAN3=	Pod::Spell.3 \
 	Pod::Wordlist.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

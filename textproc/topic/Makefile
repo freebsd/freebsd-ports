@@ -11,6 +11,7 @@ COMMENT=	Topic markup parser
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
 
+NO_STAGE=	yes
 pre-build:
 	@${RM} ${WRKSRC}/topic.txt
 

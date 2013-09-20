@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wordnet
-# Date created:		26 Feb 2000
-# Whom:			Mikhail Teterin <mi@aldan.algebra.com>
-#
+# Created by: Mikhail Teterin <mi@aldan.algebra.com>
 # $FreeBSD$
-#
 
 PORTNAME=	WordNet
 PORTVERSION=	3.0
@@ -24,6 +20,7 @@ USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
 SUB_LIST+=	TCL_VER=${TCL_VER}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local/WordNet-2.1,${DATADIR},g' \
 	    ${WRKSRC}/src/wnb ${WRKSRC}/doc/man/*.?

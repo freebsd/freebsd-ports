@@ -22,6 +22,7 @@ PORTDOCS=	copying.txt trang-manual.html
 SUB_FILES=	trang.sh
 PLIST_FILES=	%%JAVAJARDIR%%/trang.jar bin/trang
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

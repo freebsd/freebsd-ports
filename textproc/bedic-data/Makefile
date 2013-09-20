@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bedic-data
-# Date created:			15 April 2002
-# Whom:				Peter Pentchev <roam@FreeBSD.org>
-#
+# Created by: Peter Pentchev <roam@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	bedic-data
 PORTVERSION=	0.1.b1
@@ -21,6 +17,7 @@ DICT_ALL=	buleng.dat engbul.dat
 DICT_DIR?=	${PREFIX}/share
 DICTIONARIES?=	${DICT_ALL}
 
+NO_STAGE=	yes
 pre-fetch:
 		@${ECHO_MSG} "You may set the DICTIONARIES variable to specify which dictionaries"
 		@${ECHO_MSG} "should be installed; currently, it is set to ${DICTIONARIES}"

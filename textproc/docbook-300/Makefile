@@ -1,11 +1,5 @@
-# New ports collection makefile for:	docbook-300
-# Date created:		7 April 1999
-# Whom:			nik
-#
-# Based heavily on work by jfieber
-#
+# Created by: nik
 # $FreeBSD$
-#
 
 PORTNAME=	docbook
 PORTVERSION=	3.0
@@ -41,6 +35,7 @@ SGMLCAT_RM=	${XMLCATMGR} -sc ${SGMLCAT} remove \
 
 LATEST_LINK=	docbook-300
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/${DTDDIR}
 	files=$$(${FIND} ${WRKSRC} -type f \! -name '.*'); \

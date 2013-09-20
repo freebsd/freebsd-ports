@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libuninameslist
-# Date created:				3 November 2003
-# Whom:					KANOU Hiroki <kanou@khdd.net>
-#
+# Created by: KANOU Hiroki <kanou@khdd.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libuninameslist
 PORTVERSION=	20091231
@@ -21,4 +17,5 @@ USE_AUTOTOOLS=	libtool
 ALL_TARGET=	both
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

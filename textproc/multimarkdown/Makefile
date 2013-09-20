@@ -1,7 +1,5 @@
-# Created by:	Adam Weinberger <adamw@FreeBSD.org>
-#
+# Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	multimarkdown
 PORTVERSION=	3.7.1
@@ -26,6 +24,7 @@ MAKE_JOBS_UNSAFE=	yes
 PLIST_FILES=	bin/multimarkdown bin/mmd bin/mmd2all bin/mmd2odf bin/mmd2opml bin/mmd2pdf bin/mmd2tex
 PORTDOCS=	LICENSE README.markdown
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

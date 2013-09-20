@@ -20,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=		HTML::HTMLDoc.3 HTML::HTMLDoc::PDF.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

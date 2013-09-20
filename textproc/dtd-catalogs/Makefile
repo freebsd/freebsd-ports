@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dtd-catalogs
-# Date created:		23 January 1999
-# Whom:			shige
-#
+# Created by: shige
 # $FreeBSD$
-#
 
 PORTNAME=	dtd-catalogs
 PORTVERSION=	1.2
@@ -27,6 +23,7 @@ ISO12083_CAT=	${LOCALBASE}/share/sgml/iso12083/catalog
 HTML_CAT=	${LOCALBASE}/share/sgml/html/catalog
 LINUXDOC_CAT=	${LOCALBASE}/share/sgml/linuxdoc/catalog
 
+NO_STAGE=	yes
 do-install:
 	@${DO_NADA}
 

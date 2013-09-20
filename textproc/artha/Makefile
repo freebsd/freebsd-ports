@@ -29,6 +29,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/WordNet
 OPTIONS_DEFINE=	NOTIFY
 NOTIFY_DESC=	Popup word definition as notification
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNOTIFY}

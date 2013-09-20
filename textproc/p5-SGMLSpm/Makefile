@@ -25,6 +25,7 @@ SHEBANG_FILES=	sgmlspl.pl \
 INSTALL_TARGET=	install BINDIR=${PREFIX}/bin \
 		PERL5DIR=${SITE_PERL} SPECDIR=${EXAMPLESDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

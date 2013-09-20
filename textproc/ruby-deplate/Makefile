@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-deplate
-# Date created:		14 July 2007
-# Whom:			Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=		deplate
 PORTVERSION=		0.8.5
@@ -26,4 +22,5 @@ USE_RUBY_SETUP=		yes
 
 MAN1=			deplate.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

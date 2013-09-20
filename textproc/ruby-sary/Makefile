@@ -32,6 +32,7 @@ DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 post-install: doc-install
 	${INSTALL_SCRIPT} ${WRKSRC}/rsary.rb ${PREFIX}/bin/
 
+NO_STAGE=	yes
 doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja

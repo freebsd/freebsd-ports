@@ -29,4 +29,5 @@ PLIST_FILES=	lib/scim-1.0/1.4.0/IMEngine/OVLoader-SCIM.a	\
 		lib/scim-1.0/1.4.0/IMEngine/OVLoader-SCIM.la	\
 		lib/scim-1.0/1.4.0/IMEngine/OVLoader-SCIM.so
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

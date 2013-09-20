@@ -29,4 +29,5 @@ MAN3=	CSS::Croco.3\
 	CSS::Croco::Term::String.3\
 	CSS::Croco::Term::URI.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

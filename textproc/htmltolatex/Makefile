@@ -21,6 +21,7 @@ MAKE_ARGS=	CXX="${CXX}" \
 		CXXFLAGS="${CXXFLAGS} -DUNIX \
 		    `GraphicsMagick++-config --cppflags`"
 
+NO_STAGE=	yes
 post-configure:
 	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g'	\
 	    -e 's,-lMagick,-lGraphicsMagick,g'	\

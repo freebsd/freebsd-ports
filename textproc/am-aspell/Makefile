@@ -1,9 +1,5 @@
-# New ports collection makefile for:    am-aspell
-# Date created:                         28 December 2004
-# Whom:                                 Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	${DICT}-aspell
 DISTVERSION=	6-am-0.03-1
@@ -16,5 +12,6 @@ COMMENT=	Aspell Amharic dictionary
 
 DICT=	 	am
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

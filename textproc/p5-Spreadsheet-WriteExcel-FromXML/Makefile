@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Spreadsheet::WriteExcel::FromXML
-# Date created:				7 May 2004
-# Whom:					Bill Swingle <unfurl@freebsd.org>
-#
+# Created by: Bill Swingle <unfurl@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Spreadsheet-WriteExcel-FromXML
 PORTVERSION=	1.1
@@ -27,4 +23,5 @@ MAN3=		Spreadsheet::WriteExcel::FromXML::Workbook.3 \
 		Spreadsheet::WriteExcel::FromXML::Worksheet.3 \
 		Spreadsheet::WriteExcel::FromXML.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

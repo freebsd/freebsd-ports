@@ -26,6 +26,7 @@ PLIST_FILES=	bin/re_graph
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/re_graph.pl ${PREFIX}/bin/re_graph
 .if !defined(NOPORTDOCS)

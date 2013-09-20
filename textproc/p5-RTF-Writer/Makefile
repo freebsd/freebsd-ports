@@ -20,4 +20,5 @@ MAN3=	RTF::Writer.3 \
 	RTF::Writer::TableRowDecl.3 \
 	RTF::Cookbook.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

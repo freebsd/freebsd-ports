@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wbxml
-# Date created:			Nov 04, 2005
-# Whom:				Clemens Zauner <czauner+ports@onlineloop.com>
-#
+# Created by: Clemens Zauner <czauner+ports@onlineloop.com>
 # $FreeBSD$
-#
 
 PORTNAME=	wbxml2
 PORTVERSION=	0.10.9
@@ -28,6 +24,7 @@ USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/libwbxml
 
+NO_STAGE=	yes
 post-extract:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 

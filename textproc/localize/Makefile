@@ -19,4 +19,5 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/Localize
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

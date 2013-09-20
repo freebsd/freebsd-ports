@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	pdftohtml
-# Date created:			1 Jun 2001
-# Whom:				Soeren Boll Overgaard <boll@tolkien.dk>
-#
+# Created by: Soeren Boll Overgaard <boll@tolkien.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	pdftohtml
 PORTVERSION=	0.39
@@ -24,6 +19,7 @@ PLIST_FILES=	bin/pdftohtml
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+NO_STAGE=	yes
 pre-patch:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 		${REINPLACE_CMD} -e "s|-O[0-9]||" -e "s|-g||"

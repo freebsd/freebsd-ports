@@ -25,4 +25,5 @@ MAN3=		XML::XPath.3 XML::XPath::Boolean.3 XML::XPath::Builder.3 \
 		XML::XPath::PerlSAX.3 XML::XPath::XMLParser.3
 
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -21,6 +21,7 @@ MAN1=		agrep.1
 PLIST_FILES=	bin/agrep
 PORTDOCS=	COPYRIGHT agrep.algorithms agrep.ps.1.Z agrep.ps.2.Z
 
+NO_STAGE=	yes
 post-extract:
 	${CP} ${DISTDIR}/agrep.ps.1.Z ${DISTDIR}/agrep.ps.2.Z ${WRKSRC}/
 

@@ -54,6 +54,7 @@ PLIST_SUB+=	X11="@comment "
 PLIST_SUB+=	X11=""
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"

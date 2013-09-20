@@ -26,4 +26,5 @@ USE_PERL5=	configure
 MAN1=		pod2indexed_html.pl.1
 MAN3=		Pod::HtmlEasy.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

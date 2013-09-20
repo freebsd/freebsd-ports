@@ -1,9 +1,5 @@
-# New ports collection makefile for:	muse
-# Date created:				February 22 2006
-# Whom:					Dryice Liu <dryice@dryice.name>
-#
+# Created by: Dryice Liu <dryice@dryice.name>
 # $FreeBSD$
-#
 
 PORTNAME=	muse
 PORTVERSION=	3.20
@@ -30,6 +26,7 @@ PORTDOCS=	AUTHORS ChangeLog ChangeLog.1 ChangeLog.2 ChangeLog.3 NEWS \
 		README scripts COPYING
 .endif
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${LISPDIR}/contrib
 .for i in *

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ast-aspell
-# Date created:                         28 December 2010
-# Whom:                                 Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	${DICT}-aspell
 DISTVERSION=	6-ast-0.01
@@ -14,5 +10,6 @@ COMMENT=	Aspell Asturian dictionary
 
 DICT=	 	ast
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

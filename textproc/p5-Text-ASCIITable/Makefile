@@ -16,6 +16,7 @@ USE_PERL5=	configure
 MAN3=	Text::ASCIITable.3 \
 	Text::ASCIITable::Wrap.3
 
+NO_STAGE=	yes
 post-extract:
 	@${MKDIR} ${WRKSRC}/example
 	@${MV} ${WRKSRC}/ansi-example.pl ${WRKSRC}/example

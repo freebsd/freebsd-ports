@@ -21,4 +21,5 @@ USE_DOS2UNIX=	yes
 MAN1=		pod2readme.1
 MAN3=		Pod::Readme.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

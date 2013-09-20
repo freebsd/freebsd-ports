@@ -1,9 +1,5 @@
-# New ports collection makefile for:	webcpp
-# Date created:		12 May 2003
-# Whom:			Nosov Artem <chip-set@mail.ru>
-#
+# Created by: Nosov Artem <chip-set@mail.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	webcpp
 PORTVERSION=	0.8.4
@@ -14,6 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	Convert your source code to syntax highlighted HTML
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 GNU_CONFIGURE=	yes

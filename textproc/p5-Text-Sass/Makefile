@@ -23,4 +23,5 @@ MAN3=	Text::Sass.3 \
 	Text::Sass::Expr.3 \
 	Text::Sass::Functions.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

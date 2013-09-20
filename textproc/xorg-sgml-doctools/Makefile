@@ -13,4 +13,5 @@ XORG_CAT=       doc
 USE_GMAKE=	yes
 USES=		pathfix
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

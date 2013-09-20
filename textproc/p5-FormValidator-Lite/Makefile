@@ -1,6 +1,5 @@
 # Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
 # $FreeBSD$
-#
 
 PORTNAME=	FormValidator-Lite
 PORTVERSION=	0.37
@@ -40,6 +39,7 @@ MAN3=		FormValidator::Lite.3 \
 		FormValidator::Lite::Messages::en.3 \
 		FormValidator::Lite::Messages::ja.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

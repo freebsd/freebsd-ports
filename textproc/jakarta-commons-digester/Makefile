@@ -39,6 +39,7 @@ COMMONS_BEANUTILS_API=	${LOCALBASE}/share/doc/commons-beanutils
 COMMONS_COLLECTIONS_API=${LOCALBASE}/share/doc/commons-collections/apidocs
 COMMONS_LOGGING_API=	${LOCALBASE}/share/doc/commons-logging/api
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 JAR_DEPENDS=	${JAVALIBDIR}/commons-beanutils.jar:${PORTSDIR}/java/jakarta-commons-beanutils \

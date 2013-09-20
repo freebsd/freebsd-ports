@@ -1,6 +1,4 @@
-# New ports collection makefile for:	add-css-links
-# Date created:                		August 03 2004
-# Whom:                        		Aaron Straup Cope
+# Created by: Aaron Straup Cope
 # $FreeBSD$
 
 PORTNAME=	add-css-links
@@ -14,6 +12,7 @@ COMMENT=	Add one or more CSS <link> elements to an XHTML document
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO} "Installing in ${PREFIX}/share/xsl/xhtml/"
 	@${MKDIR} ${PREFIX}/share/xsl/xhtml

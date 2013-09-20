@@ -21,6 +21,7 @@ CONFLICTS_INSTALL=heirloom-doctools-[0-9]*
 MAN1=		grap.1
 PORTDOCS=	README CHANGES COPYRIGHT grap.man
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

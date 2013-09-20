@@ -15,6 +15,7 @@ USES=		perl5
 NO_WRKSUBDIR=		yes
 NO_BUILD=		yes
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}/${DISTNAME}.dist

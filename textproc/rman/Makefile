@@ -15,6 +15,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 MAN1=		rman.1
 PLIST_FILES=	bin/rman
 
+NO_STAGE=	yes
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/rman
 

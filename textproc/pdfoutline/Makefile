@@ -12,4 +12,5 @@ DESCR=		${.CURDIR}/pkg-descr
 
 PDFOUTLINE=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

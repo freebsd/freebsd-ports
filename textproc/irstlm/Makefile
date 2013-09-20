@@ -1,9 +1,5 @@
-# New ports collection makefile for:	irstlm
-# Date created:				31 May 2010
-# Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
-#
+# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	irstlm
 PORTVERSION=	5.40.02
@@ -16,6 +12,7 @@ COMMENT=	The IRST Language Modeling Toolkit
 USE_ZIP=	yes
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 do-install:
 .for f in dict ngt compile_lm interpolate_lm prune_lm quantize_lm tlm
 	${INSTALL_PROGRAM} ${WRKSRC}/src/$f ${PREFIX}/bin/

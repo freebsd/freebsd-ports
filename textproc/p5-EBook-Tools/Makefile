@@ -43,4 +43,5 @@ MAN3=		EBook::Tools.3 \
 		EBook::Tools::PalmDoc.3 \
 		EBook::Tools::Unpack.3 \
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

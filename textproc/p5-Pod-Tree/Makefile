@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	p5-Pod-Tree
 # Created by: ijliao
 # $FreeBSD$
 
@@ -34,6 +32,7 @@ MAN3=		Pod::Tree.3 \
 		Pod::Tree::Pod.3
 
 # conflict with pod2html in perl 5.6 or above
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's/pod2html //g' ${WRKSRC}/Makefile.PL
 	${REINPLACE_CMD} -e '/pod2html/d' ${WRKSRC}/MANIFEST

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	replaceit
-# Date created:				Fri Aug 17 20:15:02 EDT 2001
-# Whom:					Patrick Li <pat@databits.net>
-#
+# Created by: Patrick Li <pat@databits.net>
 # $FreeBSD$
-#
 
 PORTNAME=	replaceit
 PORTVERSION=	1.0.1
@@ -21,6 +17,7 @@ MAKE_ARGS=	CC="${CC}" PRF="${CFLAGS}"
 PORTDOCS=	CHANGELOG README
 PLIST_FILES=	bin/replaceit
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/replaceit ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

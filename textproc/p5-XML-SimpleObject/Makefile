@@ -21,6 +21,7 @@ CONFIGURE_ARGS+=	DIR='Enhanced'
 
 MAN3=		XML::SimpleObject.3
 
+NO_STAGE=	yes
 post-patch:
 	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' \
 		${WRKSRC}/SimpleObject.pm ${WRKSRC}/LibXML/LibXML.pm

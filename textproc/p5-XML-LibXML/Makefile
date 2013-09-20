@@ -64,4 +64,5 @@ MAN3=		XML::LibXML.3 \
 		XML::LibXML::XPathContext.3 \
 		XML::LibXML::XPathExpression.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

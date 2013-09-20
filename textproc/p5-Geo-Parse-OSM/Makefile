@@ -25,4 +25,5 @@ MAN3=	Geo::Parse::OSM.3 \
 	Geo::Parse::OSM::Multipass.3 \
 	Geo::Parse::OSM::Singlepass.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

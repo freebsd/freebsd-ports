@@ -17,6 +17,7 @@ USE_RUBY_FEATURES=	iconv
 
 PORTDOCS=	readme.html readme.en.html readme.ja.html
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

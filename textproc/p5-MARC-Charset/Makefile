@@ -26,4 +26,5 @@ MAN3=		MARC::Charset.3 \
 		MARC::Charset::Constants.3 \
 		MARC::Charset::Table.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -26,6 +26,7 @@ USE_ANT=	yes
 # Prevent out of memory error during build
 MAKE_ENV+=	"ANT_OPTS=-Xmx512m"
 
+NO_STAGE=	yes
 post-extract:
 	@cd ${WRKDIR} && ${UNZIP_CMD} ${DISTDIR}/offo-hyphenation_v2.0.zip
 	@${CP} ${WRKDIR}/offo-hyphenation/hyph/*.xml ${WRKSRC}/hyph

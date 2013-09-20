@@ -50,4 +50,5 @@ MAN3=		ElasticSearch.3 \
 		ElasticSearch::Transport::HTTPTiny.3 \
 		ElasticSearch::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

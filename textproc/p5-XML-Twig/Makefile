@@ -32,4 +32,5 @@ CONFIGURE_ARGS=	-y
 MAN1=		xml_grep.1 xml_merge.1 xml_pp.1 xml_spellcheck.1 xml_split.1
 MAN3=		XML::Twig.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

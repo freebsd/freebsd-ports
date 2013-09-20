@@ -37,6 +37,7 @@ REPLACE_EXPR=	-e 's,@INSTDIR@,${INSTDIR},g ; \
 	    s,@CATALOG_PORTS_XML@,${CATALOG_PORTS},g ; \
 	    s,@PORTNAME@,slides,g'
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

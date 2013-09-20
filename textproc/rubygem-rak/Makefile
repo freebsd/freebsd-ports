@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-rak
-# Date created:				12 November 2007
-# Whom:					Robert Gogolok <gogo@cs.uni-sb.de>
-#
+# Created by: Robert Gogolok <gogo@cs.uni-sb.de>
 # $FreeBSD$
 
 PORTNAME=	rak
@@ -20,4 +17,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/rak
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

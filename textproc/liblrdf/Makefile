@@ -34,6 +34,7 @@ WRKSRC=		${WRKDIR}/swh-LRDF-7ebc032
 
 # XXX: work around an issue with automake-1.13 erroring out on a
 #      partially configured m4 directory before libtoolize creates it
+NO_STAGE=	yes
 pre-configure::
 	@${RM} -rf ${WRKSRC}/m4
 	@${MKDIR} ${WRKSRC}/m4

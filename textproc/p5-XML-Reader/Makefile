@@ -26,6 +26,7 @@ MAN3=		XML::Reader.3 \
 		XML::Reader_fr.3 \
 		XML::Reader::Testcases.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPP}

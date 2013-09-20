@@ -1,9 +1,5 @@
-# New ports collection Makefile for: rxp
-# Date created:		12 Jan 2001
-# Whom:			jkoshy
-#
+# Created by: jkoshy
 # $FreeBSD$
-#
 
 PORTNAME=	rxp
 PORTVERSION=	1.4.4
@@ -19,6 +15,7 @@ RXP_HEADERS=	charset.h ctype16.h dtd.h hash.h input.h namespaces.h \
 		rxputil.h stdio16.h string16.h system.h url.h version.h \
 		xmlparser.h
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rxp ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/librxp.a ${PREFIX}/lib

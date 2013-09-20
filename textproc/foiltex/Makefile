@@ -1,9 +1,5 @@
-# New ports collection makefile for:	foiltex
-# Date created:		07 November 2003
-# Whom:			Stefan Walter <sw@gegenunendlich.de>
-#
+# Created by: Stefan Walter <sw@gegenunendlich.de>
 # $FreeBSD$
-#
 
 PORTNAME=	foiltex
 PORTVERSION=	2.1.4b
@@ -32,6 +28,7 @@ PORTEXAMPLES=	sampfoil.tex
 PLIST_FILES=	${FOIL_FILES:S,^,${FOIL_DIR}/,}
 PLIST_DIRS=	${FOIL_DIR}
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${CP} ${DISTDIR}/foiltex.ins ${WRKDIR}/foiltex.ins

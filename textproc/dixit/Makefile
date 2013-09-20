@@ -39,6 +39,7 @@ _DB_D=	${PORTNAME}.qdb.tar.bz2
 _DB_F=	${PORTNAME}.qdb
 _DB=	${DB_DIR}/${_DB_F}
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Your dictionary database directory is:"

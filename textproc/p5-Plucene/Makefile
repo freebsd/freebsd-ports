@@ -93,4 +93,5 @@ MAN3=	Plucene.3 \
 	Plucene::TestCase.3 \
 	Plucene::Utils.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

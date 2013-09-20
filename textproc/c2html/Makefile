@@ -1,9 +1,5 @@
-# New ports collection makefile for:	c2html
-# Date created:				28 October 1997
-# Whom:					Andrey Zakhvatov
-#
+# Created by: Andrey Zakhvatov
 # $FreeBSD$
-#
 
 PORTNAME=		c2html
 PORTVERSION=		0.9.6
@@ -18,6 +14,7 @@ USE_AUTOTOOLS=	autoconf213
 
 MAN1=			c2html.1
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

@@ -38,6 +38,7 @@ MEM_DEBUG_DESC= Memory debugging (DEVELOPERS ONLY!)
 XMLLINT_HIST_DESC= History for xmllint
 THREAD_ALLOC_DESC= Per-thread memory (DEVELOPERS ONLY!)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MSCHEMA}

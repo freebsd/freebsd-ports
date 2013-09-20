@@ -22,6 +22,7 @@ DESKTOP_ENTRIES="BeeDiff" "diff frontend" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 		"beediff" "" false
 
+NO_STAGE=	yes
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS}
 

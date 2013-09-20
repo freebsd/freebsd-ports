@@ -21,6 +21,7 @@ USE_PERL5=	configure
 
 MAN3=	PPI::HTML.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' '/Test::More/d' ${WRKSRC}/Makefile.PL
 

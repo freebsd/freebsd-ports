@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-pod2pdf
-# Date created:				02 October 2008
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pod2pdf
 PORTVERSION=	0.42
@@ -25,4 +21,5 @@ USE_PERL5=	configure
 
 MAN1=		pod2pdf.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

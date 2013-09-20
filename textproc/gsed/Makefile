@@ -26,6 +26,7 @@ MAN1=		gsed.1
 
 OPTIONS_DEFINE=	NLS DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	te-hunspell
-# Date created:		2011-07-20
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hunspell
 DISTVERSION=	0.01-2
@@ -26,6 +21,7 @@ PLIST_FILES=	%%DATADIR%%/te_IN.aff \
 		%%DATADIR%%/te_IN.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC}; \
 		${LOCALBASE}/bin/prezip-bin -d < te.cwl > te.txt; \

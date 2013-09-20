@@ -21,4 +21,5 @@ MAN3=		BibTeX::Parser.3 \
 		BibTeX::Parser::Entry.3 \
 		BibTeX::Parser::Author.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,10 +1,6 @@
-# New ports collection makefile for:	rarian
-# Date created:				02 August 2007
-# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/textproc/rarian/Makefile,v 1.12 2008/03/09 21:41:22 mezz Exp $
-#
 
 PORTNAME=	rarian
 PORTVERSION=	0.8.1
@@ -40,6 +36,7 @@ CONFIGURE_ARGS=	--with-convert-dir=${LOCALBASE}/share/omf \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/lib/rarian|/db/rarian|' \
 		${WRKSRC}/util/Makefile.in

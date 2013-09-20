@@ -1,9 +1,5 @@
-# New ports collection makefile for:   vbindiff
-# Date created:                2006/12/16
-# Whom:                        chinsan
-#
+# Created by: chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	vbindiff
 PORTVERSION=	3.0.b4
@@ -19,4 +15,5 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/vbindiff
 MAN1=		vbindiff.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

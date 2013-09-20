@@ -57,4 +57,5 @@ MAN1=		msguntypot.1 \
 
 PORT_VERBS=	${PORTNAME} Po4a msguntypot
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

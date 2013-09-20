@@ -1,9 +1,4 @@
-# New ports collection makefile for:	wa-hunspell
-# Date created:		2011-07-20
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hunspell
 PORTVERSION=	0.4.15
@@ -26,6 +21,7 @@ PLIST_FILES=	%%DATADIR%%/wa.aff \
 		%%DATADIR%%/wa.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/wa.aff ${WRKSRC}/wa.dic ${DATADIR}/

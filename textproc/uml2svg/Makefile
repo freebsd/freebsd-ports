@@ -1,9 +1,5 @@
-# New ports collection makefile for:   uml2svg
-# Date created:        22 January 2009
-# Whom:                Gabor Kovesdan <gabor@FreeBSD.org>
-#
+# Created by: Gabor Kovesdan <gabor@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	uml2svg
 PORTVERSION=	0.18
@@ -17,6 +13,7 @@ NO_BUILD=	yes
 
 INSTDIR=	share/xsl/uml2svg
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

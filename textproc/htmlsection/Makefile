@@ -15,6 +15,7 @@ USE_PERL5=	build
 MAN1=		htmlsection.1
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 pre-build:
 		@(echo perl is set ${PERL} in pre-build:)
 		@(cd ${WRKSRC}; ./findperl.sh ${PERL} > whereperl)

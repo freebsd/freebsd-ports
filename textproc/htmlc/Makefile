@@ -1,10 +1,5 @@
-# New ports collection makefile for:    htmlc
-# Date created:         14 Mar 2010
-# Whom:                 Timothy Beyer <beyert@cs.ucr.edu>
-#
-#
+# Created by: Timothy Beyer <beyert@cs.ucr.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	htmlc
 PORTVERSION=	2.21.0
@@ -29,6 +24,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${LOCALBASE}
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

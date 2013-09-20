@@ -20,6 +20,7 @@ ICONVFBSD_DESC=		Use IconvFBSD transcoder
 ICU_DESC=		Use ICU transcoder
 NATIVE_DESC=		Use native transcoder
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MICU}

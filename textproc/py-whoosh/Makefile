@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-whoosh
-# Date created:		2012-04-21
-# Whom:			gugabsd <gugabsd@mundounix.com.br>
-#
+# Created by: gugabsd <gugabsd@mundounix.com.br>
 # $FreeBSD$
-#
 
 PORTNAME=	whoosh
 PORTVERSION=	2.4.1
@@ -21,4 +17,5 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Whoosh
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

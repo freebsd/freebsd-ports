@@ -1,9 +1,5 @@
-# New ports collection makefile for:	translate-toolkit
-# Date created:		30 August 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	translate-toolkit
 PORTVERSION=	1.9.0
@@ -43,6 +39,7 @@ MAN1=		csv2po.1 csv2tbx.1 html2po.1 ical2po.1 ini2po.1 \
 		prop2po.1 rc2po.1 symb2po.1 tiki2po.1 ts2po.1 \
 		txt2po.1 web2py2po.1 xliff2odf.1 xliff2oo.1 xliff2po.1
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC}/tools -type f -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e \

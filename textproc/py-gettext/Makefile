@@ -18,6 +18,7 @@ USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	python-${PORTNAME}
 USE_ZIP=		yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} <= 300

@@ -20,6 +20,7 @@ USE_PERL5=	configure
 
 MAN3=		WDDX.3
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

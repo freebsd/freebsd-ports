@@ -18,4 +18,5 @@ USE_PERL5=	modbuild
 MAN3=	XML::SemanticDiff.3 \
 	XML::SemanticDiff::BasicHandler.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

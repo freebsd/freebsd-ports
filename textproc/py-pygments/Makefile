@@ -1,6 +1,5 @@
 # Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pygments
 PORTVERSION=	1.6
@@ -25,6 +24,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 MAN1=	pygmentize.1
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

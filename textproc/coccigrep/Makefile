@@ -1,4 +1,4 @@
-# Created by: Pawel Pekala <pawel@freebsd.org>
+# Created by: Pawel Pekala <pawel@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	coccigrep
@@ -26,6 +26,7 @@ PORTDOCS=	ChangeLog README.rst
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

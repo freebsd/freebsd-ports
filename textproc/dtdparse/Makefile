@@ -1,9 +1,5 @@
-# New ports collection makefile for:   dtdparse
-# Date created:                29 January 2002
-# Whom:                        Kimura Fuyuki <fuyuki@mj.0038.net>
-#
+# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
 # $FreeBSD$
-#
 
 PORTNAME=	dtdparse
 PORTVERSION=	2.00
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 MAN1=		dtddiff2html.1 dtdformat.1 dtddiff.1 dtdparse.1 dtdflatten.1
 MAN3=		SGML::DTDParse::DTD.3 SGML::DTDParse.3 SGML::DTDParse::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

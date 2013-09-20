@@ -18,6 +18,7 @@ USE_CSTD=	gnu99
 
 PLIST_FILES=	bin/jq
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jq ${PREFIX}/bin
 

@@ -40,6 +40,7 @@ NVDL_DESC=		NVDL description
 TOOLS_DESC=		Tools for working with DocBook
 XMLCHARENT_DESC=	Install ISO 8879 XML entites
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDTD}

@@ -33,6 +33,7 @@ OPTIONS_DEFAULT=	BDB
 #		SQLITE "Use SQLite instead of BDB" off \
 #		VIRTUOSO "Use Virtoso instead of BDB" off
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBDB}

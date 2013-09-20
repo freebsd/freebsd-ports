@@ -19,4 +19,5 @@ USE_PERL5=	configure
 MAN3=	Text::MicroTemplate::Extended.3 \
 	Text::MicroTemplate::Extended.ja.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

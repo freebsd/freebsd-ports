@@ -1,9 +1,5 @@
-# Ports collection makefile for:	py-rxp
-# Date created:		10 May 2002
-# Whom:			Hye-Shik Chang <perky@fallin.lv>
-#
+# Created by: Hye-Shik Chang <perky@fallin.lv>
 # $FreeBSD$
-#
 
 PORTNAME=	rxp
 PORTVERSION=	0.9
@@ -26,6 +22,7 @@ PYDISTUTILS_PKGVERSION=	0.5
 EXAMPLESDIR=	${PREFIX}/share/examples/py-rxp
 DOCSDIR=	${PREFIX}/share/doc/py-rxp
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)

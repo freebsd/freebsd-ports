@@ -1,9 +1,5 @@
-# New ports collection makefile for:	scr2txt
-# Date created:				18 May 2001
-# Whom:					nik
-#
+# Created by: nik
 # $FreeBSD$
-#
 
 PORTNAME=	scr2txt
 PORTVERSION=	1.2
@@ -20,6 +16,7 @@ MAN1=		scr2txt.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/scr2txt
 
+NO_STAGE=	yes
 do-install:
 	@cd ${WRKSRC}; ${MAKE} BINDIR=${LOCALBASE}/bin SHAREDIR=${LOCALBASE} install
 

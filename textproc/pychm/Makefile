@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pychm
-# Date created:				25 November 2004
-# Whom:					Radek Kozlowski <radek@raadradd.com>
-#
+# Created by: Radek Kozlowski <radek@raadradd.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pychm
 PORTVERSION=	0.8.4
@@ -21,4 +17,5 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_INSTALLARGS=	build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib \
 				install -c -O1 --prefix=${PREFIX}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

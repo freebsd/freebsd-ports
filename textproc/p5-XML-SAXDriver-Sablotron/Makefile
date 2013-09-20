@@ -19,6 +19,7 @@ USE_PERL5=	configure
 
 MAN3=		XML::SAXDriver::Sablotron.3
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -i '' '/use warnings/d' ${WRKSRC}/Sablotron.pm
 

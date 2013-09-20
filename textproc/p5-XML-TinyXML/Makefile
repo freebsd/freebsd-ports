@@ -21,4 +21,5 @@ MAN3=		XML::TinyXML.3 \
 		XML::TinyXML::Selector.3 \
 		XML::TinyXML::Selector::XPath.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

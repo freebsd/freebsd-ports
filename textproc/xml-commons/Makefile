@@ -19,6 +19,7 @@ NO_BUILD=	yes
 PLIST_FILES=	%%JAVAJARDIR%%/xml-apis-ext.jar \
 		%%JAVAJARDIR%%/xml-apis.jar
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/xml-apis-ext.jar ${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/xml-apis.jar ${JAVAJARDIR}

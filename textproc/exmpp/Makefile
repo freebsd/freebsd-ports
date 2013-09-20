@@ -1,9 +1,5 @@
-# New ports collection makefile for:   exmpp
-# Date created:        26 May 2010
-# Whom:                Maxim Ignatenko
-#
+# Created by: Maxim Ignatenko
 # $FreeBSD$
-#
 
 PORTNAME=	exmpp
 PORTVERSION=	0.9.7
@@ -40,6 +36,7 @@ CONFIGURE_ARGS+=	--disable-documentation
 CONFIGURE_ARGS+=	--enable-documentation
 .endif
 
+NO_STAGE=	yes
 pre-configure:
 	@cd ${WRKSRC} && ${AUTORECONF} -ivf
 

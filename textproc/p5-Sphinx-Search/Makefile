@@ -25,4 +25,5 @@ MAN3=		Sphinx::Search.3
 
 PORTSCOUT=	skipv:0.240.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

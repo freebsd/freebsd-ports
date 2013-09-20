@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for: 	py-sgrep
-# Date created:			Jun 14, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	sgrep
 PORTVERSION=	1.1a
@@ -27,6 +22,7 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pysgrep
 PYDISTUTILS_PKGVERSION=	1.0a
 
+NO_STAGE=	yes
 post-extract:
 	@${TAR} -zxf ${DISTDIR}/pysgrep-${PORTVERSION}.tar.gz -C ${WRKSRC}
 

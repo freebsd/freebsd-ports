@@ -15,6 +15,7 @@ USE_PERL5=	configure
 
 MAN3=	RTF::Tokenizer.3
 
+NO_STAGE=	yes
 #post-patch:
 #	@${FIND} ${WRKSRC} -name ._Tokenizer.pm -delete
 

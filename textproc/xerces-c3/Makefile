@@ -25,6 +25,7 @@ MAKE_ENV+=	XERCESCROOT=${WRKSRC}
 
 MAKE_JOBS_UNSAFE=yes
 
+NO_STAGE=	yes
 post-install:
 	${LN} -sf libxerces-c-${PORTVERSION:R}.so ${PREFIX}/lib/libxerces-c.so.${PORTVERSION:R:R}
 

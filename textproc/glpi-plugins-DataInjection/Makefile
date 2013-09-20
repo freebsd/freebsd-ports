@@ -1,9 +1,5 @@
-# New ports collection makefile for:   glpi-plugins-DataInjection
-# Date created:        01 November 2009
-# Whom:                ddurieux <d.durieux@siprossii.com>
-#
+# Created by: ddurieux <d.durieux@siprossii.com>
 # $FreeBSD$
-#
 
 PORTNAME=	DataInjection
 DISTVERSION=	1.7.2
@@ -25,6 +21,7 @@ CPIOARGS=	--quiet -pdum -R
 
 GLPIPLUGINDIR?=	www/glpi/plugins/datainjection
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

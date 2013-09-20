@@ -19,6 +19,7 @@ USE_PERL5=	configure
 
 MAN3=		HTML::Tidy.3 HTML::Tidy::Message.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/Makefile.PL

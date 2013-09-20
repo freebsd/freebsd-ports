@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rtfx
-# Date created:		2004-07-29
-# Whom:			Cheng-Lung Sung <clsung@dragon2.net>
-#
+# Created by: Cheng-Lung Sung <clsung@dragon2.net>
 # $FreeBSD$
-#
 
 PORTNAME=	rtfx
 PORTVERSION=	1.1
@@ -23,6 +19,7 @@ USE_GMAKE=	yes
 PLIST_FILES=	bin/rtfx
 MAN1=		rtfx.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64 || ${ARCH} == sparc64

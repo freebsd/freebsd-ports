@@ -48,4 +48,5 @@ MAN3=		\
 		Regexp::Common::whitespace.3 \
 		Regexp::Common::zip.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	SXML
-# Date created:				18 February 2006
-# Whom:					Kouichi ABE (WALL) <kouichi@mysticwall.com>
-#
+# Created by: Kouichi ABE (WALL) <kouichi@mysticwall.com>
 # $FreeBSD$
-#
 
 PORTNAME=	sxml
 PORTVERSION=	1.0.5
@@ -17,4 +13,5 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

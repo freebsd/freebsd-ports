@@ -1,7 +1,4 @@
-# Ports collection makefile for:  pear-Horde_Text_Flowed
-# Date created:			  6 July 2011
-# Whom:				  Martin Matuska <mm@FreeBSD.org>
-#
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Horde_Text_Flowed
@@ -13,6 +10,7 @@ COMMENT=	Horde API for flowed text as per RFC 3676
 
 USE_HORDE_RUN=	Horde_Util
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
 .include <bsd.port.post.mk>

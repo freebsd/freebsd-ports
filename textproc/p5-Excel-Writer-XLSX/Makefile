@@ -54,4 +54,5 @@ MAN3=		Excel::Writer::XLSX.3 \
 		Excel::Writer::XLSX::Workbook.3 \
 		Excel::Writer::XLSX::Worksheet.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

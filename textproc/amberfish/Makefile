@@ -1,9 +1,5 @@
-# New ports collection makefile for:   amberfish
-# Date created:			21 Aug 2008
-# Whom:				Pedro Giffuni
-#
+# Created by: Pedro Giffuni
 # $FreeBSD$
-#
 
 PORTNAME=	amberfish
 PORTVERSION=	1.6.4
@@ -22,6 +18,7 @@ USE_GMAKE=	yes
 
 MAN1=	af.1
 
+NO_STAGE=	yes
 post-extract:
 	${INSTALL_DATA} ${FILESDIR}/porter.cc ${WRKSRC}/src
 

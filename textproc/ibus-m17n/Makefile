@@ -20,6 +20,7 @@ PROJECTHOST=	ibus
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

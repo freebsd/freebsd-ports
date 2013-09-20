@@ -21,6 +21,7 @@ MANCOMPRESSED=	yes
 # There are two ports that satisfy the nsgmls requirement.
 # Jade is preferred.
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${MACHINE_ARCH} != "i386"

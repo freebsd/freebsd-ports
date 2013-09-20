@@ -32,6 +32,7 @@ TALKFILTERS_DESC=	talkfilters module
 
 MAN1=			translate.1
 
+NO_STAGE=	yes
 post-patch::
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|'	\
 		-e 's|libsoup-2.2|libsoup-2.4|g' ${WRKSRC}/configure

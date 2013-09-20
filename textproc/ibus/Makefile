@@ -37,6 +37,7 @@ GTK3_DESC=	Install GTK3 client
 VALA_DESC=	Install vala binding
 GINTRO_DESC=	Install GObject Introspection data
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MISOCODES}

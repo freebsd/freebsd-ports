@@ -38,6 +38,7 @@ MAN3=		Text::BibTeX.3 \
 		Text::BibTeX::Structure.3 \
 		Text::BibTeX::Value.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"

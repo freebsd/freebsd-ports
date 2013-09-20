@@ -33,4 +33,5 @@ MAN3=		Tk::More.3 \
 		Tk::Pod::Util.3 \
 		Tk::Pod_usage.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

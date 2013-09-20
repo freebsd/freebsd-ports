@@ -15,5 +15,6 @@ USE_GNOME=	libxml2
 
 CONFIGURE_ARGS+=	--extra-include-dirs="${LOCALBASE}/include/libxml2"
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

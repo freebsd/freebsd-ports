@@ -29,6 +29,7 @@ MAN3=		XML::Smart.3 \
 		XML::Smart::Tutorial.3
 PORTDOCS=	Changes README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

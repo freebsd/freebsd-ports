@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/RSS
-# Date created:		10 March 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rss
 PORTVERSION=	0.9.1
@@ -29,6 +25,7 @@ INSTALL_TARGET=	site-install
 RUBY_SHEBANG_FILES=	${WRKSRC}/rssdrb.rb ${WRKSRC}/samples/rsstest.rb
 DOCS=		ChangeLog README
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/rss*.rb ${RUBY_SITELIBDIR}/
 	${CHMOD} +x ${RUBY_SITELIBDIR}/rssdrb.rb

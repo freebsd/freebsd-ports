@@ -23,4 +23,5 @@ PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Simple \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS \
 		%%SITE_PERL%%/CSS
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

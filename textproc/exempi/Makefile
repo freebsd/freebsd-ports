@@ -1,10 +1,6 @@
-# New ports collection makefile for:	exempi
-# Date created:		2008-02-26
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/textproc/exempi/Makefile,v 1.1 2008/02/26 18:50:26 ahze Exp $
-#
 
 PORTNAME=	exempi
 PORTVERSION=	2.1.1
@@ -25,6 +21,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		pathfix iconv
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${libdir}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/configure

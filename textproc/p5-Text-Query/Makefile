@@ -21,6 +21,7 @@ MAN3=		Text::Query.3 Text::Query::Build.3 \
 		Text::Query::SolveAdvancedString.3 \
 		Text::Query::SolveSimpleString.3
 
+NO_STAGE=	yes
 pre-patch:
 	@${PERL} -pi -e 's/factor\(\$$self\)/\&factor(\$$self)/' \
 		${WRKSRC}/lib/Text/Query/ParseAdvanced.pm

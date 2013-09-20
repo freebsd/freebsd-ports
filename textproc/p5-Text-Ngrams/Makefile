@@ -16,4 +16,5 @@ USE_PERL5=	configure
 MAN1=		ngrams.pl.1
 MAN3=		Text::Ngrams.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

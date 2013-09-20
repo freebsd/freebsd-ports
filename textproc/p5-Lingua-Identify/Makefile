@@ -49,4 +49,5 @@ MAN3=	Lingua::Identify.3 \
 	Lingua::Identify::TR.3 \
 	Lingua::Identify::UK.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

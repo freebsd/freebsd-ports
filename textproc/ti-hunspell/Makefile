@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ti-hunspell
-# Date created:		2011-07-20
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hunspell
 PORTVERSION=	20090911
@@ -27,6 +22,7 @@ PLIST_FILES=	%%DATADIR%%/ti_ER.dic \
 		%%DATADIR%%/ti_ET.aff
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/ti_ER.aff ${WRKSRC}/ti_ER.dic ${DATADIR}/

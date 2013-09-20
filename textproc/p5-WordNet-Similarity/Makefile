@@ -48,6 +48,7 @@ MAN3=		WordNet::Similarity.3 WordNet::Similarity::jcn.3 \
 		WordNet::get_wn_info.3 WordNet::stem.3 \
 		WordNet::vectorFile.3
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC}/build -type f| ${XARGS} ${REINPLACE_CMD} -e \
 		 "/wndictpath/s|'dict'|''|"

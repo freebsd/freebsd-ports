@@ -1,7 +1,4 @@
-# New ports collection makefile for:	tkxmlive
-# Date created:				4 December 2003
-# Whom:					nivit@users.sourceforge.net
-#
+# Created by: nivit@users.sourceforge.net
 # $FreeBSD$
 
 PORTNAME=		tkxmlive
@@ -22,6 +19,7 @@ USE_TK_RUN=		84+
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 REPLACE_FILES=		${WRKSRC}/interface.tcl \

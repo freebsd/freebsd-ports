@@ -23,6 +23,7 @@ USE_PERL5=	modbuild
 
 MAN3=		XML::Feed::Deduper.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

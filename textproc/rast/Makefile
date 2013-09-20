@@ -63,6 +63,7 @@ CONFIGURE_ARGS+=	--without-xmlrpc-c-config
 PLIST_SUB+=		WITH_XMLRPC_C="@comment "
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 DEFAULT_ENCODING?=	euc_jp

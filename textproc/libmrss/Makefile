@@ -20,4 +20,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 USES=	pathfix pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

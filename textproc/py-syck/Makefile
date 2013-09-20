@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-syck
-# Date created:			2 December 2004
-# Whom:				dd
-#
+# Created by: dd
 # $FreeBSD$
-#
 
 PORTNAME=	syck
 PORTVERSION=	0.61.2
@@ -22,6 +18,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PySyck
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|#include|include|g ; s|#library_dirs|library_dirs|g ; \
 		s|/usr/local|${LOCALBASE}|g ' ${WRKSRC}/setup.cfg

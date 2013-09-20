@@ -22,4 +22,5 @@ USE_DOS2UNIX=	Catalog.pm
 
 MAN3=		XML::Catalog.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

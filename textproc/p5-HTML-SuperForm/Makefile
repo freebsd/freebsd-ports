@@ -1,4 +1,3 @@
-# Created by: Philip M. Goillucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
 
 PORTNAME=	HTML-SuperForm
@@ -30,6 +29,7 @@ MAN3=	HTML::SuperForm.3 \
 	HTML::SuperForm::Field::Text.3\
 	HTML::SuperForm::Field::Textarea.3
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/lib/HTML/SuperForm.pm.orig
 

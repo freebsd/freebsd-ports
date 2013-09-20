@@ -20,4 +20,5 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.h3//}
 
 MAN3=		PDF::Table.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

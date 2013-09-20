@@ -59,4 +59,5 @@ MAN3=	PDF::API2.3 \
 	PDF::API2::Resource::XObject::Image::TIFF.3 \
 	PDF::API2::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

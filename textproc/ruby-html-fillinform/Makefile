@@ -1,9 +1,5 @@
-# New ports collection makefile for:	HTML/FillInForm for Ruby
-# Date created:		27 February 2003
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	html-fillinform
 PORTVERSION=	0.24
@@ -24,6 +20,7 @@ DOCS_EN=	ChangeLog \
 		fillinform.rd
 DOCS_JA=	fillinform.ja.rd
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}

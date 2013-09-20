@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-tidy
-# Date created:				29 Jan 2007
-# Whom:					IWATSUKI Hiroyuki <don@na.rim.or.jp>
-#
+# Created by: IWATSUKI Hiroyuki <don@na.rim.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	tidy
 PORTVERSION=	1.1.2
@@ -17,4 +13,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=  yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

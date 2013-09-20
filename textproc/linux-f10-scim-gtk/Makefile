@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/linux-f10-scim-gtk
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	scim-gtk
 PORTVERSION=	1.4.7
@@ -26,6 +22,7 @@ RPMVERSION=	35.fc10
 USE_LDCONFIG=	yes
 SRC_DISTFILES=	scim-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
 
+NO_STAGE=	yes
 post-install:
 	@chroot ${PREFIX} /usr/bin/gtk-query-immodules-2.0-32 > ${PREFIX}/etc/gtk-2.0/${LINUX_RPM_ARCH}-redhat-linux-gnu/gtk.immodules
 

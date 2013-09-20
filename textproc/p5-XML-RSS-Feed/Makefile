@@ -29,4 +29,5 @@ MAN3=		XML::RSS::Feed.3 \
 		XML::RSS::Headline::PerlJobs.3 \
 		XML::RSS::Headline::UsePerlJournals.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

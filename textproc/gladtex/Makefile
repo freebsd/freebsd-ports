@@ -29,6 +29,7 @@ MAN1=	${PORTNAME}.1
 
 USES=		perl5
 
+NO_STAGE=	yes
 do-install:
 	@cd ${WRKSRC}; \
 	${INSTALL_SCRIPT} ${PORTNAME} ${BINPATH}; \

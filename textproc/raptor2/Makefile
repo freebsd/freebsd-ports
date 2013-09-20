@@ -31,4 +31,5 @@ USE_LDCONFIG=	yes
 MAN1=		rapper.1
 MAN3=		libraptor2.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -35,4 +35,5 @@ MAN3=	PPIx::EditorTools.3 \
 	PPIx::EditorTools::RenameVariable.3 \
 	PPIx::EditorTools::ReturnObject.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

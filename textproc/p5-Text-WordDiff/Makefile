@@ -26,4 +26,5 @@ MAN3=		Text::WordDiff.3 \
 		Text::WordDiff::HTML.3 \
 		Text::WordDiff::HTMLTwoLines.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

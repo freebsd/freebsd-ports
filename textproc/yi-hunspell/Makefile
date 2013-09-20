@@ -1,9 +1,4 @@
-# New ports collection makefile for:	yi-hunspell
-# Date created:		2011-07-20
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hunspell
 PORTVERSION=	0.0.2
@@ -27,6 +22,7 @@ PLIST_FILES=	%%DATADIR%%/yi.aff \
 		%%DATADIR%%/yi.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/yi.aff ${WRKSRC}/yi.dic ${DATADIR}/

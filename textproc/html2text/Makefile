@@ -25,6 +25,7 @@ CONFLICTS=	py27-html2text-[0-9]*
 
 PORTSCOUT=	skipb:0 skipv:1.3.2
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

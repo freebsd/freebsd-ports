@@ -24,6 +24,7 @@ MANLANG=	"" fr
 MAN1=		rubber.1 rubber-info.1 rubber-pipe.1
 INFO=		rubber
 
+NO_STAGE=	yes
 post-install:
 	@${FIND} ${PYTHON_SITELIBDIR}/rubber ! -type d | ${SED} \
 		's,${PREFIX}/,,' >> ${TMPPLIST}

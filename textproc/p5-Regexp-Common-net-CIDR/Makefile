@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/p5-Regexp-Common-net-CIDR
-# Date created:				01 September 2011
-# Whom:					Lars Thegler <lth@FreeBSD.org>
-#
+# Created by: Lars Thegler <lth@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Regexp-Common-net-CIDR
 PORTVERSION=	0.02
@@ -22,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		Regexp::Common::net::CIDR.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

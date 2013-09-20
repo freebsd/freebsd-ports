@@ -49,6 +49,7 @@ MAN1=	apertium-deshtml.1 apertium-desodt.1 apertium-despptx.1 \
 		apertium-validate-transfer.1 apertium-unformat.1 \
 	apertium.1 apertium-desmediawiki.1 apertium-remediawiki.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/pcre_info/pcre_fullinfo/g' ${WRKSRC}/configure
 

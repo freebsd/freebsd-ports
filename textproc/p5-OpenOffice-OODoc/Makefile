@@ -26,4 +26,5 @@ MAN3=		OpenOffice::OODoc.3 OpenOffice::OODoc::Document.3 \
 		OpenOffice::OODoc::Meta.3 OpenOffice::OODoc::Styles.3 \
 		OpenOffice::OODoc::Text.3 OpenOffice::OODoc::XPath.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

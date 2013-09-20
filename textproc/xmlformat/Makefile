@@ -26,6 +26,7 @@ EXDIR=		${DOCSDIR}/docs/examples
 EX_FILES=	doc1.xml doc2.conf1 doc2.conf2 doc2.conf3 \
 		doc2.conf4 doc2.xml
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/xmlformat.pl ${PREFIX}/bin/xmlformat
 .if !defined(NOPORTDOCS)

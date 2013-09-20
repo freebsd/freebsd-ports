@@ -1,4 +1,3 @@
-# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	openfts
@@ -18,6 +17,7 @@ USE_PGSQL=	yes
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 MAN3=	Search::OpenFTS.3 Search::OpenFTS::Base.3 \

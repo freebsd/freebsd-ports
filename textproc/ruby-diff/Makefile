@@ -16,4 +16,5 @@ USE_RUBY=		YES
 USE_RUBY_SETUP=		YES
 RUBY_SETUP=		install.rb
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -14,6 +14,7 @@ PKGDIR=		${.CURDIR}
 USE_GNOME=	gtk20
 CONFIGURE_ARGS=--with-gtk
 
+NO_STAGE=	yes
 pre-install:
 	@${REINPLACE_CMD} -e 's|base [$$][(]GTKSRCDIR[)] data|$$(GTKSRCDIR)|g' \
 		${WRKSRC}/Makefile

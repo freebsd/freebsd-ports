@@ -22,4 +22,5 @@ USE_PERL5=	configure
 MAN1=		htmlcopy.1
 MAN3=		HTML::Copy.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

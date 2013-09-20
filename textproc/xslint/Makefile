@@ -24,6 +24,7 @@ SHEBANG_FILES=	xslint.pl
 PLIST_FILES=	bin/xslint
 PORTDOCS=	README xslint.html xslint.xml
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

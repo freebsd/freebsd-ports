@@ -12,6 +12,7 @@ COMMENT=	Small program that finds definitions of arbitrary (English) words
 
 USE_GNOME=	gtk12
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdict ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/dict ${PREFIX}/bin/cdict

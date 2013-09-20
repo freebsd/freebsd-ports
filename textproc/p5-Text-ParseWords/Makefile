@@ -1,4 +1,3 @@
-# Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 # $FreeBSD$
 
 PORTNAME=	Text-ParseWords
@@ -22,4 +21,5 @@ PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ParseWords
 PLIST_DIRSTRY=	%%SITE_PERL%%/Text \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

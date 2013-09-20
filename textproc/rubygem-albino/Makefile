@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rubygem-albino
-# Date created:		2011-10-29
-# Whom:			Steve Wills <swills@rubick>
-#
+# Created by: Steve Wills <swills@rubick>
 # $FreeBSD$
-#
 
 PORTNAME=	albino
 PORTVERSION=	1.3.3
@@ -21,4 +17,5 @@ USE_PYTHON=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

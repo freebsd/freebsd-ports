@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ss-hunspell
-# Date created:		2011-07-20
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hunspell
 PORTVERSION=	20110323
@@ -27,6 +22,7 @@ PLIST_FILES=	%%DATADIR%%/ss_ZA.aff \
 		%%DATADIR%%/ss_ZA.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/ss-ZA.aff ${DATADIR}/ss_ZA.aff

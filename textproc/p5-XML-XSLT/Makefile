@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-XML-XSLT
-# Date created:				May 26 2001
-# Whom:					vanilla
-#
+# Created by: vanilla
 # $FreeBSD$
-#
 
 PORTNAME=	XML-XSLT
 PORTVERSION=	0.48
@@ -23,4 +19,5 @@ USE_PERL5=	configure
 MAN1=		xslt-parser.1
 MAN3=		XML::XSLT.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

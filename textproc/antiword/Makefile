@@ -1,6 +1,5 @@
 # Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	antiword
 PORTVERSION=	0.37
@@ -21,6 +20,7 @@ PORTDOCS=	COPYING ChangeLog Emacs Exmh FAQ History Mozilla Mutt Netscape \
 
 CFLAGS+=	-DNDEBUG
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

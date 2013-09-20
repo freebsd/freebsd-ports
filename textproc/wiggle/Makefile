@@ -21,6 +21,7 @@ MAKE_ARGS+=	CFLAGS="${CFLAGS} -I. -Wall -Wstrict-prototypes -Wextra -Wno-unused-
 MAN1=		wiggle.1
 PLIST_FILES=	bin/wiggle
 
+NO_STAGE=	yes
 pre-patch:
 		${REINPLACE_CMD} -Ee 's,\./dotest,bash ./dotest,' ${WRKSRC}/Makefile
 		${REINPLACE_CMD} -Ee "s,/usr/bin/time -o .time -f '%U',," ${WRKSRC}/dotest

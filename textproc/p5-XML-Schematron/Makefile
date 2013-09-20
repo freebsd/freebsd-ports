@@ -27,4 +27,5 @@ MAN3=	XML::Schematron::XPath.3 \
 		XML::Schematron::LibXSLT.3 \
 		XML::Schematron.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

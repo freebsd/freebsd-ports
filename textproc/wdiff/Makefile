@@ -17,6 +17,7 @@ USES=		charsetfix
 MAN1=		wdiff.1
 INFO=		wdiff
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

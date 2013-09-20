@@ -1,9 +1,5 @@
-# New ports collection makefile for:	textproc/linux-f10-expat
-# Date created:				2009-05-03
-# Whom:					bsam
-#
+# Created by: bsam
 # $FreeBSD$
-#
 
 PORTNAME=	expat
 PORTVERSION=	2.0.1
@@ -30,4 +26,5 @@ DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	COPYING README
 DESCR=		${.CURDIR}/../${PORTNAME}2/pkg-descr
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

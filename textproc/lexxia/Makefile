@@ -1,7 +1,4 @@
-# New ports collection makefile for:	lexxia
-# Date created:		Mar 26 2009
-# Whom:			martin.dieringer@gmx.de
-#
+# Created by: martin.dieringer@gmx.de
 # $FreeBSD$
 
 PORTNAME=	lexxia
@@ -19,6 +16,7 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/lexxia
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"

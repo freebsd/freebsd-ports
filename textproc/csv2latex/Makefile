@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	csv2latex
-# Date created:			May 19, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	csv2latex
 PORTVERSION=	0.18
@@ -19,6 +14,7 @@ COMMENT=	Converts a well formed csv file to a LaTeX document
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	bin/csv2latex
 
+NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
 

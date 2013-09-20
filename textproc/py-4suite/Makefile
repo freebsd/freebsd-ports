@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-4suite
-# Date created:		16 March 2000
-# Whom:	      		Johann Visagie <johann@egenetics.com>
-#
+# Created by: Johann Visagie <johann@egenetics.com>
 # $FreeBSD$
-#
 
 PORTNAME=	4suite
 PORTVERSION=	1.0.b1
@@ -30,6 +26,7 @@ CONFLICTS=	py*-4Suite-1* py*-xml-0.7*
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	fails self-tests on 64-bit platforms
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 BINDIR=		bin

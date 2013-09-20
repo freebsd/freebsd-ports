@@ -39,6 +39,7 @@ MAN3=		XML::Compile.3 \
 		XML::Compile::Translate::Writer.3 \
 		XML::Compile::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-sphinxcontrib-bitbucket
-# Date created:		2012-08-20
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sphinxcontrib-bitbucket
 PORTVERSION=	1.0
@@ -20,4 +16,5 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}sphinx>=1.1.3:${PORTSDIR}/textproc/py-sphinx
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mguesser
-# Date created:			Jun 15, 2001
-# Whom:				Mark Pulford <mark@kyne.com.au>
-#
+# Created by: Mark Pulford <mark@kyne.com.au>
 # $FreeBSD$
-#
 
 PORTNAME=	mguesser
 PORTVERSION=	0.4
@@ -13,6 +9,7 @@ MASTER_SITES=	http://www.mnogosearch.org/guesser/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for guessing a text's charset and language
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -E \
 		"s/^CC=.+//g; s|^CFLAGS=|CFLAGS+=|g; s|-Wall -g||g; \

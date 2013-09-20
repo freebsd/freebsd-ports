@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	LIBXML2
 LIBXML2_DESC=	Install xml2 library
 OPTIONS_DEFAULT=	LIBXML2
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

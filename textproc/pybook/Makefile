@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	pybook
-# Date created:			Jan 27, 2002
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	pybook
 PORTVERSION=	0.8c
@@ -17,6 +12,7 @@ COMMENT=	A Project Gutenberg e-texts reader
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,python2,python,g" ${WRKSRC}/pybook.py
 

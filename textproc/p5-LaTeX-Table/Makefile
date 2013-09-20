@@ -52,4 +52,5 @@ MAN3=	LaTeX::Table::Types::Ctable.3 \
 	LaTeX::Table::Types::Xtab.3 \
 	LaTeX::Table::Types::Std.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

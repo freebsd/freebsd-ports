@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libcue
-# Date created:				23 Aug 2010
-# Whom:			buganini@gmail.com
-#
+# Created by: buganini@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	libcue
 PORTVERSION=	1.4.0
@@ -19,6 +15,7 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USES=		gettext
 
+NO_STAGE=	yes
 post-extract:
 	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/src/libcue/Makefile.in

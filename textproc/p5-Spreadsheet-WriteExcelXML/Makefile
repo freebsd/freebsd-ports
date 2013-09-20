@@ -24,4 +24,5 @@ MAN3=		Spreadsheet::WriteExcelXML.3 \
 		Spreadsheet::WriteExcelXML::Worksheet.3 \
 		Spreadsheet::WriteExcelXML::XMLwriter.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

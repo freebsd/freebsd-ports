@@ -1,7 +1,4 @@
-# New ports collection makefile for:	html-pretty
-# Date created:				16 March 2004
-# Whom:					Greg Lewis <glewis@FreeBSD.org>
-#
+# Created by: Greg Lewis <glewis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	html-pretty
@@ -22,6 +19,7 @@ PORTDOCS=	*
 
 DOCFILES=	AUTHORS BUGS COPYING ChangeLog NEWS README THANKS
 
+NO_STAGE=	yes
 post-install:
 	-${MKDIR} ${DOCSDIR}/html
 	${INSTALL_DATA} -o ${SHAREOWN} -g ${SHAREGRP} ${WRKSRC}/*.html \

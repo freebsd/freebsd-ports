@@ -20,6 +20,7 @@ PLIST_FILES=	share/stardict/dic/Arianpur-OpenDictionary.dict.dz \
 PLIST_DIRSTRY=	share/stardict/dic \
 		share/stardict
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/stardict/dic/
 	${INSTALL_DATA} ${WRKSRC}/Arianpur-OpenDictionary.dict.dz ${PREFIX}/share/stardict/dic/

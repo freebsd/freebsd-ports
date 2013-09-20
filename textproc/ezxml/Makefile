@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ezxml
-# Date created:				27th July 2005
-# Whom:					Marcin Jessa <yazzy@yazzy.org>
-#
+# Created by: Marcin Jessa <yazzy@yazzy.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ezxml
 PORTVERSION=	0.8.6
@@ -28,6 +24,7 @@ PLIST_FILES+=	%%EXAMPLESDIR%%/ezxml.txt
 PLIST_DIRS=	%%EXAMPLESDIR%%
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

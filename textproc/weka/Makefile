@@ -27,6 +27,7 @@ PLIST_FILES=	%%DATADIR%%/${PORTNAME}.jar \
 		bin/${PORTNAME}
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar \

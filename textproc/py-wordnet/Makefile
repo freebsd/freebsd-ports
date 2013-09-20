@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-wordnet
-# Date created:		26 March 2002
-# Whom:			Hye-Shik Chang <perky@fallin.lv>
-#
+# Created by: Hye-Shik Chang <perky@fallin.lv>
 # $FreeBSD$
-#
 
 PORTNAME=	wordnet
 PORTVERSION=	2.0.1
@@ -34,6 +30,7 @@ WN_DICTFILES=	adj.exc adv.exc cntlist cntlist.rev data.adj data.adv \
 		index.sense index.verb lexnames noun.exc sentidx.vrb sents.vrb\
 		verb.exc
 
+NO_STAGE=	yes
 post-patch:
 	@${SED} -e 's|/usr/local/wordnet2.0|${PREFIX}/${WORDNETDATA}|g' \
 		-e 's|os.path.join(WNHOME.*))|WNHOME)|g' ${WRKSRC}/wordnet.py \

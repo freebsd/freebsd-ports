@@ -12,5 +12,6 @@ LICENSE=	BSD
 
 USE_CABAL=	regex-base>=0.93 regex-posix>=0.95.1
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

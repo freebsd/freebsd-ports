@@ -1,9 +1,5 @@
-# New ports collection makefile for: ats-contrib-parcomb
-# Date created: 2011-10-11
-# Whom: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
-#
+# Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	parcomb
 PORTVERSION=	${ATS_VER}
@@ -16,5 +12,6 @@ COMMENT=	Parser combinators for ATS language
 
 ATS_CTRB=	parcomb
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ats/bsd.ats.mk"
 .include <bsd.port.mk>

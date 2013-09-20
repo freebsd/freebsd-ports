@@ -20,4 +20,5 @@ CONFIGURE_ARGS=	--with-expat="${LOCALBASE}"
 MAN1=		rnv.1
 PLIST_FILES=	bin/arx bin/rnv bin/rvp bin/xsdck
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

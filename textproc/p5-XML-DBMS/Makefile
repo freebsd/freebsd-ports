@@ -23,6 +23,7 @@ USES=		perl5
 USE_PERL5=	configure
 USE_DOS2UNIX=	yes
 
+NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"

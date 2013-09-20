@@ -22,6 +22,7 @@ PORTDOCS=	License.text Markdown-Readme.text
 
 PLIST_FILES=	bin/markdown
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Markdown.pl ${PREFIX}/bin/markdown
 .if !defined(NOPORTDOCS)

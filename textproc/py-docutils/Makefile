@@ -1,6 +1,5 @@
 # Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	docutils
 PORTVERSION=	0.11
@@ -23,6 +22,7 @@ BIN_SCRIPTS=	rst2html.py rst2s5.py rst2latex.py rst2xetex.py \
 	rst2man.py rst2xml.py rst2pseudoxml.py rstpep2html.py \
 	rst2odt.py rst2odt_prepstyles.py
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>

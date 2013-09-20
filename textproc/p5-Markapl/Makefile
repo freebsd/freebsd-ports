@@ -27,4 +27,5 @@ MAN3=	Markapl.3 \
 	Markapl::Helpers.3 \
 	Markapl::Tags.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

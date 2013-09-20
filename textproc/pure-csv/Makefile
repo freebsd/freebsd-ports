@@ -14,5 +14,6 @@ NO_PURE_EXAMPLES=	yes
 PLIST_FILES=	lib/pure/csv.pure \
 		lib/pure/csv.so
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/pure/bsd.pure.mk"
 .include <bsd.port.mk>

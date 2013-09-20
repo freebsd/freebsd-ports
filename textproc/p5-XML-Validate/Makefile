@@ -24,4 +24,5 @@ MAN3=		XML::Validate.3 XML::Validate::Base.3 \
 		XML::Validate::LibXML.3 XML::Validate::MSXML.3 \
 		XML::Validate::Xerces.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

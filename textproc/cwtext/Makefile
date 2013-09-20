@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	cwtext
-# Date created:			Nov 16, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	cwtext
 PORTVERSION=	0.96
@@ -19,6 +14,7 @@ USE_GMAKE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	ALL
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,^PREFIX,#PREFIX,g" \
 		-e "s,gcc,${CC} ${CFLAGS},g" \

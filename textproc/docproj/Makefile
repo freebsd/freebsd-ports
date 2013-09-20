@@ -47,6 +47,7 @@ OPTIONS_DEFAULT=	X11 OPENJADE CJK SVN IGOR
 OPTIONS_DEFAULT+=	JADETEX
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSVN}

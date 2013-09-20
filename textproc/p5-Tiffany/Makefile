@@ -38,4 +38,5 @@ MAN3=	Tiffany.3 \
 	Tiffany::Text::MicroTemplate::File.3 \
 	Tiffany::Text::Xslate.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

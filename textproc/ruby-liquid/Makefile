@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-liquid
-# Date created:		6 October 2008
-# Whom:			stas
-#
+# Created by: stas
 # $FreeBSD$
-#
 
 PORTNAME=	liquid
 PORTVERSION=	2.0.0
@@ -22,6 +18,7 @@ NO_BUILD=	yes
 SADIR=		${RUBY_SITELIBDIR}
 DOCS=		CHANGELOG README.txt History.txt
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${SADIR}/liquid/tags ${SADIR}/liquid/extras
 	${INSTALL_DATA} ${WRKSRC}/lib/liquid.rb ${SADIR}/

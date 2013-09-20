@@ -1,9 +1,4 @@
-# New ports collection makefile for:	el-hyphen
-# Date created:		2011-07-21
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hyphen
 PORTVERSION=	2005.10.17
@@ -27,6 +22,7 @@ PLIST_FILES=	%%DATADIR%%/hyph_el_CY.dic \
 		%%DATADIR%%/hyph_el_GR.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/hyph_el_GR.dic ${DATADIR}/

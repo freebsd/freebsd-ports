@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ocaml-tyxml
-# Date created:				December 14, 2011
-# Whom:					Jaap Boender <jaapb@kerguelen.org>
-#
+# Created by: Jaap Boender <jaapb@kerguelen.org>
 # $FreeBSD$
 
 PORTNAME=	tyxml
@@ -25,6 +22,7 @@ SA_DIR=			${LOCALBASE}/${OCAML_SITELIBDIR}
 BUILD_DEPENDS+=		${SA_DIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net
 RUN_DEPENDS+=		${SA_DIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

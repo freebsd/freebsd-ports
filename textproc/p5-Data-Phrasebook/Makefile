@@ -25,4 +25,5 @@ MAN3=	Data::Phrasebook.3 \
 	Data::Phrasebook::SQL.3 \
 	Data::Phrasebook::SQL::Query.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

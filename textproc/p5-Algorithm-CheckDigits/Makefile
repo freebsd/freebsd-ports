@@ -44,4 +44,5 @@ MAN3=	Algorithm::CheckDigits.3 \
 	Algorithm::CheckDigits::MXX_004.3 Algorithm::CheckDigits::MXX_005.3 \
 	Algorithm::CheckDigits::MXX_006.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

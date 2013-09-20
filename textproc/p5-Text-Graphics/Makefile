@@ -19,6 +19,7 @@ USE_PERL5=	configure
 
 MAN3=		Text::Graphics.3
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/lib/Text/Graphics.pm.orig
 

@@ -1,12 +1,5 @@
-# New ports collection makefile for:	docbook-420
-# Date created:		29 Oct 2003
-# Whom:			kutulu
-#
-# Based on murray's docbook-410 port
-#     which is based on niks' docbook-310 port
-#
+# Created by: kutulu
 # $FreeBSD$
-#
 
 PORTNAME=	docbook
 PORTVERSION=	4.2
@@ -37,6 +30,7 @@ CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 
 LATEST_LINK=	docbook-420
 
+NO_STAGE=	yes
 pre-su-install:
 	@[ -d ${INSTDIR}/${PORTVERSION} ] || ${MKDIR} ${INSTDIR}/${PORTVERSION}
 

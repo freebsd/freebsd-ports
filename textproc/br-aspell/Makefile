@@ -1,9 +1,5 @@
-# New ports collection makefile for:    br-aspell
-# Date created:                         1 September 2002
-# Whom:                                 Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	${DICT}-aspell
 DISTVERSION=	-br-0.50-2
@@ -15,5 +11,6 @@ COMMENT=	Aspell Breton dictionary
 
 DICT=	 	br
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

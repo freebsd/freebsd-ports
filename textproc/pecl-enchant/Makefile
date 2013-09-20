@@ -1,9 +1,5 @@
-# Ports collection makefile for:  pear-enchant
-# Date created:			  17 April 2008
-# Whom:				  Wen heping <wenheping@gmail.com>
-#
+# Created by: Wen heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	enchant
 DISTVERSION=	1.1.0
@@ -26,4 +22,5 @@ PHP_MODNAME=	${PORTNAME}
 DEFAULT_PHP_VER=53
 IGNORE_WITH_PHP=5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

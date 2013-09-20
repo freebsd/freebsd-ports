@@ -26,4 +26,5 @@ USES=		perl5
 MAN3=		String::ToIdentifier::EN.3 \
 		String::ToIdentifier::EN::Unicode.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
