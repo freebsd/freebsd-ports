@@ -1,9 +1,5 @@
-# New ports collection makefile for:	KDE iconset Exquisite
-# Date created:		Ter 11 Dez 2007 22:44:28 UTC
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	exquisite
 PORTVERSION=	0.2004081000
@@ -18,4 +14,5 @@ USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILE_PATTERN_EXTRA=	-v "^\./(buildset|[a-z]+.list)"
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

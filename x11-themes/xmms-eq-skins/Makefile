@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xmms-eq-skins
-# Date created:			13 Jun 2005
-# Whom:				Alejandro Pulver <alejandro@varnet.biz>
-#
+# Created by: Alejandro Pulver <alejandro@varnet.biz>
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-eq-skins
 PORTVERSION=	0.2
@@ -24,6 +20,7 @@ NO_BUILD=	yes
 SKINSDIR=	${PREFIX}/lib/xmms/EQskins
 PLIST_SUB=	SKINSDIR="${SKINSDIR:S,^${PREFIX}/,,}"
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${SKINSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.tgz ${SKINSDIR}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	AquaExtreme Sunken (gtk20 theme/master)
-# Date created:				25 Feb 2005
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	aquaextremesunken
 PORTVERSION=	1.0
@@ -33,6 +29,7 @@ PLIST_SUB+=	GTK20="@comment " METACITY=""
 USE_GNOME=	gnomehier
 .endif
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${THEME_DIR}
 .if ${TYPE} == "gtk"

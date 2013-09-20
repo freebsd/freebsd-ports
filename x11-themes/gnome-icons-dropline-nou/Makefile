@@ -12,6 +12,7 @@ COMMENT=	Dropline Nou Icons for Gnome
 USE_BZIP2=	yes
 WRKSRC=		"${WRKDIR}/Nou"
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/.icon-theme.cache
 

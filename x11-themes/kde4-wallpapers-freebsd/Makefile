@@ -17,6 +17,7 @@ USE_KDE4=	kdehier kdeprefix
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/apps/plasma-desktop/init
 	${INSTALL_DATA} ${FILESDIR}/05-freebsdWallpaper.js \

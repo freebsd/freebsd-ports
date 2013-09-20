@@ -51,6 +51,7 @@ PLIST?=		${.CURDIR}/pkg-plist
 FILESDIR=	${.CURDIR}/files
 SCRIPTDIR=	${.CURDIR}/scripts
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	cd ${WRKDIR} && ${TAR} -O -xf ${_DISTDIR}/${_DISTFILES} redhat-artwork-${PORTVERSION}.tar.gz | ${TAR} -xf -

@@ -17,6 +17,7 @@ USE_BZIP2=	yes
 
 WRKSRC=		${WRKDIR}
 
+NO_STAGE=	yes
 do-install:
 		@${MKDIR} ${PREFIX}/lib/X11/icons/polar/cursors
 		cd ${WRKSRC}/PolarCursorTheme/cursors \

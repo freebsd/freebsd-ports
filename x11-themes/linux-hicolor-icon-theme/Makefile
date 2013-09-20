@@ -1,9 +1,5 @@
-# New ports collection makefile for:	linux-hicolor-icon-theme
-# Date created:		7 February 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	hicolor-icon-theme
 PORTVERSION=	0.5
@@ -25,6 +21,7 @@ USE_LINUX=	yes
 USE_LINUX_PREFIX=	yes
 PLIST_FILES=	usr/share/icons/hicolor
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL} -d ${PREFIX}/usr/share/icons
 	${LN} -fs ${LOCALBASE}/share/icons/hicolor ${PREFIX}/usr/share/icons

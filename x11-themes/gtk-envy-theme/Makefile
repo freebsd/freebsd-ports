@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtk-envy-theme
-# Date Created:				2006 FEB 11
-# Whom:					Babak Farrokhi <babak@farrokhi.net>
-#
+# Created by: Babak Farrokhi <babak@farrokhi.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gtk-envy-theme
 PORTVERSION=	1.0.${SNAPSHOT}
@@ -24,6 +20,7 @@ USE_GNOME=	gtk20
 
 SNAPSHOT=	20060211
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/share/themes/Envy
 	${INSTALL_DATA} ${FILESDIR}/index.theme.in \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	metacity-bluecurve-theme
-# Date created:			29 May 2005
-# Whom:				Jean-Yves Lefort <jylefort@FreeBSD.org>
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	metacity-bluecurve-theme
 
@@ -19,4 +15,5 @@ BC_HIERS+=	${WRKSRC}/art/metacity/${t}:${PREFIX}/share/themes/${t}/metacity-1
 PLIST_DIRS+=	share/themes/${t}/metacity-1 share/themes/${t} share/themes
 .endfor
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

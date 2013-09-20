@@ -17,6 +17,7 @@ USES=		pkgconfig
 
 PLIST_FILES=	bin/twf
 
+NO_STAGE=	yes
 post-patch:
 # Fix console warnings of "GtkSpinButton: setting an adjustment with non-zero
 # page size is deprecated"

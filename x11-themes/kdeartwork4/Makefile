@@ -29,6 +29,7 @@ USE_XORG=	x11 xt
 OPTIONS_DEFINE=	GNOME
 GNOME_DESC=	Use Gnome screensavers
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOME}

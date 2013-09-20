@@ -1,9 +1,5 @@
-# New ports collection makefile for:	KDE iconset Sky
-# Date created:		Tue Feb 24 09:09:57 UTC 2004
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sky
 PORTVERSION=	0.7.3
@@ -15,4 +11,5 @@ COMMENT=	KDE SKY iconset
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

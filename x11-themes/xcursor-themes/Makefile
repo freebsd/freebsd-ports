@@ -16,4 +16,5 @@ USE_XORG=	xextproto
 
 XORG_CAT=	data
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

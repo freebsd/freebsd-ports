@@ -21,4 +21,5 @@ USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

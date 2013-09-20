@@ -1,6 +1,5 @@
 # Created by: Ted Stodgell <tstodgell@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	murrine-configurator
 PORTVERSION=	0.5
@@ -20,6 +19,7 @@ NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/files/${PORTNAME} ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/pixmaps || ${TRUE}

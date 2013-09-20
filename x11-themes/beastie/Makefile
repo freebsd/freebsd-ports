@@ -1,10 +1,6 @@
-# New ports collection makefile for:	beastie
-# Date created:		2005-09-06
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/x11-themes/beastie/Makefile,v 1.10 2006/07/18 11:56:12 ahze Exp $
-#
 
 PORTNAME=	beastie
 PORTVERSION=	06.05.03
@@ -29,6 +25,7 @@ THEME_DIR=	share/themes/Beastie/
 PLIST_FILES=	${THEME_FILES:S|^|${THEME_DIR}|}
 PLIST_DIRS=	${THEME_DIR}/gtk-2.0 ${THEME_DIR}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

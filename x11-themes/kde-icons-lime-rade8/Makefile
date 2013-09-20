@@ -1,9 +1,5 @@
-# New ports collection makefile for:	KDE iconset Lime-Rade8
-# Date created:		Tue Feb 24 09:39:31 UTC 2004
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lime-rade8
 PORTVERSION=	1.01
@@ -15,4 +11,5 @@ COMMENT=	KDE Mac OS X like iconset, most from rad-e8 design
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:C|-${PORTVERSION}$||}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

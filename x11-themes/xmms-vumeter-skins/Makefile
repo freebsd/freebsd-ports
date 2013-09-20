@@ -24,6 +24,7 @@ NO_WRKSUBDIR=	yes
 SKINSDIR=	${PREFIX}/share/xmms/VU_Meter_skins
 PLIST_SUB=	SKINSDIR="${SKINSDIR:S,^${PREFIX}/,,}"
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} -f ${WRKSRC}/X-skin/*.psd
 

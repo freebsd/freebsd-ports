@@ -1,9 +1,5 @@
-# New ports collection makefile for:	KDE iconset Gartoon Blue
-# Date created:		Mon Nov 15 20:30:10 UTC 2004
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gartoon
 PORTVERSION=	1.3
@@ -20,4 +16,5 @@ USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/Gartoon.Blue
 PORT_SHAREDIR?=	"${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}"
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

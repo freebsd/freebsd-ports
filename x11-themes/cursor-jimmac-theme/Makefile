@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cursor-jimmac-theme
-# Date created:			17 July 2005
-# Whom:				Piotr Smyrak <smyru@heron.pl>
-#
+# Created by: Piotr Smyrak <smyru@heron.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	cursor-jimmac-theme
 PORTVERSION=	0.1
@@ -19,6 +15,7 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/Jimmac
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/icons/Jimmac/cursors
 	cd ${WRKSRC}/jimmac/cursors \

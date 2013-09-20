@@ -1,9 +1,4 @@
-# New ports collection makefile for:	linux-f10-qtcurve-gtk2
-# Date created:		2010-07-16
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	qtcurve-gtk2
 PORTVERSION=	0.69.2
@@ -21,4 +16,5 @@ USE_LINUX_APPS=	gtk2
 LINUX_DIST_VER=	10
 RPMVERSION=	1.fc10
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

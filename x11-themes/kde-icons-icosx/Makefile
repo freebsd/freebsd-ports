@@ -1,9 +1,5 @@
-# New ports collection makefile for:	KDE iconset IcOsX
-# Date created:		Sat Feb 21 09:12:08 UTC 2004
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	IcOsX
 PORTVERSION=	0.7
@@ -15,4 +11,5 @@ COMMENT=	KDE IcOsX iconset
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PORT_SHAREDIR?=	"${PORTNAME}-${PORTVERSION}"
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

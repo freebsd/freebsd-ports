@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Digital Harmony (gtk20 theme/master)
-# Date created:				08 Sep 2006
-# Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
-#
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	digital-harmony
 PORTVERSION=	1.1
@@ -33,6 +29,7 @@ PLIST_SUB+=	GTK20="@comment " METACITY=""
 USE_GNOME=	gnomehier
 .endif
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} -rf ${WRKSRC}/gtk-2.0/Scrollbars/Backup \
 		${WRKSRC}/gtk-2.0/ReadME.txt

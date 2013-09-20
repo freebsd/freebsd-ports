@@ -12,4 +12,5 @@ COMMENT=	KDE Marbles Translucent iconset
 
 BROKEN=		Does not fetch
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

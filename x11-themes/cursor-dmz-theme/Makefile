@@ -1,9 +1,4 @@
-# New ports collection makefile for:	cursor-dmz-theme
-# Date created:				Feb 7 2007
-# Whom:					Florent Thoumie <flz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cursor-dmz-theme
 PORTVERSION=	0.3
@@ -20,6 +15,7 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/icons/Vanilla-DMZ/cursors
 	cd ${WRKSRC}/Vanilla-DMZ/cursors \
