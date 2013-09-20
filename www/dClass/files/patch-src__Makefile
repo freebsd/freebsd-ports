@@ -1,0 +1,13 @@
+--- ./src/Makefile.orig	2013-06-21 11:07:44.000000000 +0900
++++ ./src/Makefile	2013-09-14 20:11:39.000000000 +0900
+@@ -1,7 +1,7 @@
+ #compile flags 
+-CC=gcc
+-CFLAGS=-O3 -Wall -fPIC
+-LDFLAGS=
++CC?=gcc
++CFLAGS?=-O3 -Wall -fPIC
++LDFLAGS?=
+ LIBFLAGS=$(NEED_LIBRT)
+ RM=rm -rf
+ 
