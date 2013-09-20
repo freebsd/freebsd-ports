@@ -1,9 +1,5 @@
-# New ports collection makefile for:	STIX fonts
-# Date created:		28 February 2009
-# Whom:			Thierry Thomas <thierry@pompo.net>
-#
+# Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
-#
 
 PORTNAME=	stixfonts
 PORTVERSION=	1.1.0
@@ -46,6 +42,7 @@ FCCACHE=	${LOCALBASE}/bin/fc-cache -f -v
 PORTDOCS=	STIXv${PORTVERSION}.pdf
 .endif
 
+NO_STAGE=	yes
 do-build:
 	${MKDIR} ${WRKDIR}/build
 .for group in STIX-General STIX-Word

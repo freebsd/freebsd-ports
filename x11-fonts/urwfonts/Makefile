@@ -15,6 +15,7 @@ RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-extract:
 	@${CHMOD} ${SHAREMODE} ${WRKDIR}/URW/*
 

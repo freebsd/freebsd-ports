@@ -19,6 +19,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 SUB_FILES=	pkg-message
 USE_XORG=	x11
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-iso-8859-1.bdf.gz ${WRKSRC}

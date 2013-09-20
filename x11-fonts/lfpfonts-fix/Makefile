@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}/lfpfonts-fix
 NO_BUILD=	yes
 USE_BZIP2=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fonts/lfpfonts-fix
 	@${INSTALL_DATA} ${WRKSRC}/lfp-fix/*.pcf.gz ${PREFIX}/lib/X11/fonts/lfpfonts-fix

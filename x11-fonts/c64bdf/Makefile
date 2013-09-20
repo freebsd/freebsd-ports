@@ -1,9 +1,5 @@
-# New ports collection makefile for:	c64-bdf
-# Date created:				20/02/2008
-# Whom:			Marcin Cieslak <saper@SYSTEM.PL>
-#
+# Created by: Marcin Cieslak <saper@SYSTEM.PL>
 # $FreeBSD$
-#
 
 PORTNAME=	c64bdf
 PORTVERSION=	1.0
@@ -24,6 +20,7 @@ FILES=	${FONTS:S,$,.bdf,} fonts.dir
 PLIST_FILES=	${FILES:S,^,${FONTDIR}/,}
 PLIST_DIRS=	${FONTDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

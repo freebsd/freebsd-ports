@@ -25,4 +25,5 @@ FONTDIR=	${LOCALBASE}/lib/X11/fonts
 
 do-install:	# empty
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

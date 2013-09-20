@@ -17,6 +17,7 @@ NO_WRKSUBDIR=	yes
 MAN1=		pcf2bdf.1
 PLIST_FILES=	bin/pcf2bdf
 
+NO_STAGE=	yes
 do-build:
 	${CXX} ${CXXFLAGS} -o ${WRKSRC}/pcf2bdf ${WRKSRC}/pcf2bdf.cc
 

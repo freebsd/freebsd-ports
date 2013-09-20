@@ -32,6 +32,7 @@ USE_TGZ=	yes	#prevent bsd.xorg.mk from setting USE_BZIP
 PLIST_FILES+=	${FONTROOTDIR:S/${PREFIX}\///}/${FONTDIR}/${PORTNAME}-${type}.ttf
 .endfor
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

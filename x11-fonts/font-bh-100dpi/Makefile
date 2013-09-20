@@ -11,4 +11,5 @@ COMMENT=	X.Org Bigelow Holmes 100dpi font
 XORG_CAT=	font
 USE_XORG=	fontutil
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

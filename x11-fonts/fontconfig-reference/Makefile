@@ -1,15 +1,12 @@
-# New ports collection makefile for:	fontconfig-reference
-# Date created:				09 May 2006
-# Whom:					Jean-Yves Lefort <jylefort@FreeBSD.org>
-#
+# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTREVISION=	6
 PORTEPOCH=	0
 
 DOCSDIR=	${PREFIX}/share/doc/fontconfig-devel
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.man"
 
 do-install:

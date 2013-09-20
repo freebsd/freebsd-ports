@@ -1,9 +1,5 @@
-# New ports collection makefile for:	DoulosSIL
-# Date created:		October 14 2011
-# Whom:			bf <bf@FreeBSD.org>
-#
+# Created by: bf <bf@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	DoulosSILCompact
 PORTVERSION=	4.110
@@ -42,6 +38,7 @@ PORTDOCS=	FONTLOG.txt OFL-FAQ.txt OFL.txt README.txt feat_set_tuned.xml
 SUB_LIST=	DIR="${FONTROOTDIR}/${FONTDIR}"
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 do-configure:
 	@${DO_NADA}
 

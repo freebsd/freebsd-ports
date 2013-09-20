@@ -14,4 +14,5 @@ USE_XORG=	xfont
 PLIST_FILES=	bin/bdftopcf
 MAN1=		bdftopcf.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	manu-gothica
-# Date created:		2006-04-02
-# Whom:			heiner Eichmann <h.eichmann@gmx.de>
-#
+# Created by: heiner Eichmann <h.eichmann@gmx.de>
 # $FreeBSD$
-#
 
 PORTNAME=	manu-gothica
 DISTVERSION=	0
@@ -30,6 +26,7 @@ NO_WRKSUBDIR=	yes
 FONTSDIR=	lib/X11/fonts/TTF/
 PLIST_SUB+=	FONTSDIR=${FONTSDIR}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/manugot19.ttf ${PREFIX}/${FONTSDIR}/manugot19.ttf

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	inconsolata-ttf
-# Date created:		2008-12-12
-# Whom:			Ashish Shukla <wahjava@gmail.com>
-#
+# Created by: Ashish Shukla <wahjava@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	inconsolata-ttf
 PORTVERSION=	20090215
@@ -22,6 +18,7 @@ XORG_CAT=	font
 FONTDIR=	OTF
 PLIST_FILES=	lib/X11/fonts/${FONTDIR}/${DISTNAME}${EXTRACT_SUFX}
 
+NO_STAGE=	yes
 do-configure:
 
 do-build:

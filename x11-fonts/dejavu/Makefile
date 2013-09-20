@@ -28,6 +28,7 @@ PORTDOCS=	README langcover.txt status.txt unicover.txt
 SUB_FILES=	pkg-message
 SUB_LIST=	FONTSDIR=${FONTSDIR}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLINKS}

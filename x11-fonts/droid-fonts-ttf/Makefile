@@ -23,6 +23,7 @@ PLIST_SUB=	FONTDIR=${FONTDIR}
 SUB_FILES=	pkg-message
 SUB_LIST=	FONTDIR=${FONTDIR}
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC}/ && \
 		${LOCALBASE}/bin/mkfontscale && \

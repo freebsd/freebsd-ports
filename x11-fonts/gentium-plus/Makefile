@@ -35,6 +35,7 @@ DOCSLIST=	FONTLOG.txt GENTIUM-FAQ.txt OFL-FAQ.txt OFL.txt README.txt \
 PORTDOCS=	${DOCSLIST:C,^.*/,,}
 
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .SILENT:

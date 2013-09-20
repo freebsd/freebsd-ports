@@ -1,9 +1,5 @@
-# New ports collection makefile for:	montecarlo_fonts
-# Date Created:				20 Okt 2008
-# Whom:					Dennis Herrmann <adox@mcx2.org>
-#
+# Created by: Dennis Herrmann <adox@mcx2.org>
 # $FreeBSD$
-#
 
 PORTNAME=	montecarlo_fonts
 PORTVERSION=	1.0
@@ -27,6 +23,7 @@ PLIST_FILES=	lib/X11/fonts/montecarlo/fonts.dir \
 		lib/X11/fonts/montecarlo//MonteCarloMedium.pcf
 PLIST_DIRS=	lib/X11/fonts/montecarlo
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${FONTDIR}
 	@${INSTALL_DATA} ${WRKSRC}/*.pcf ${FONTDIR}

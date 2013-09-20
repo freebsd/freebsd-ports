@@ -10,4 +10,5 @@ COMMENT=	X.Org Bigelow & Holmes TTF font
 
 XORG_CAT=	font
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

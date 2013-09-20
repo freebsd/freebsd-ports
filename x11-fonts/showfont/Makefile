@@ -14,4 +14,5 @@ PLIST_FILES=	bin/showfont
 
 MAN1=		showfont.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

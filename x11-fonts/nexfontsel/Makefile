@@ -20,6 +20,7 @@ USE_XORG=	xaw
 
 MAN1=		nexfontsel.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CDEBUG|XCOMM CDEBUG|g ; \
 		s|= XawClientLibs|= -lneXtaw|g' ${WRKSRC}/Imakefile

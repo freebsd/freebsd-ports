@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fonts-indic
-# Date created:				19 Septenber 2007
-# Whom:					Naresh Venkateshappa <nareshov@gmail.com>
-#
+# Created by: Naresh Venkateshappa <nareshov@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fonts-indic
 PORTVERSION=	2.1.5
@@ -22,6 +18,7 @@ NO_WRKSUBDIR=	yes
 FONTSDIR=	lib/X11/fonts/${PORTNAME}/
 PLIST_SUB+=	FONTSDIR=${FONTSDIR}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*/*/*.ttf ${PREFIX}/${FONTSDIR}

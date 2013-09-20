@@ -22,6 +22,7 @@ USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 INSTALLDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/mkfontscale
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/mkfontdir

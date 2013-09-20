@@ -40,6 +40,7 @@ USES+=		gettext
 PLIST_FILES=	bin/${PORTNAME} share/locale/uk/LC_MESSAGES/${PORTNAME}.mo
 .endif
 
+NO_STAGE=	yes
 post-extract:
 .if !defined(PDFOUTLINE)
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/Blocks.txt ${WRKSRC}

@@ -40,6 +40,7 @@ SUB_FILES=	pkg-message
 DOCSLIST=	FONTLOG.txt GENTIUM-FAQ.txt OFL-FAQ.txt
 PORTDOCS=	${DOCSLIST:C,^.*/,,}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .SILENT:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	intlfonts
-# Date created:		99/10/26
-# Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
-#
+# Created by: Satoshi TAOKA <taoka@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	intlfonts
 PORTVERSION=	1.2.1
@@ -41,6 +37,7 @@ TT_FONTSDIR=	lib/X11/fonts/TrueType
 PKGINSTALL=	${WRKDIR}/INSTALL
 PKGDEINSTALL=	${WRKDIR}/DEINSTALL
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; \
 	for dir in ${NORMAL_FONTS} ${BIG_FONTS}; do \

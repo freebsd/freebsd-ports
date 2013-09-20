@@ -19,6 +19,7 @@ BUILD_DEPENDS=	type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 RESTRICTED=	see accompanying .license files
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC}/freefont && ${LOCALBASE}/bin/type1inst -silent -quiet -nolog >/dev/null 2>&1
 	@${RM} ${WRKSRC}/freefont/Fontmap.bak

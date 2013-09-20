@@ -15,6 +15,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 
 USES=		imake
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fonts/jmk
 	@${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${PREFIX}/lib/X11/fonts/jmk

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	TrueType core fonts for the Web
-# Date created:		12 Jan 2001
-# Whom:			Konstantinos Konstantinidis <kkonstan@daemon.gr>
-#
+# Created by: Konstantinos Konstantinidis <kkonstan@daemon.gr>
 # $FreeBSD$
-#
 
 PORTNAME=	webfonts
 PORTVERSION=	0.30
@@ -48,6 +44,7 @@ SUB_FILES=	pkg-message
 
 FONTS_FILE=	${WRKDIR}/fonts.dir
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MSWINDOWS_LICENSE)

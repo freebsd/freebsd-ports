@@ -1,9 +1,5 @@
-# New ports collection makefile for:	padauk
-# Date created:		July 30 2010
-# Whom:			Kuan-Chung Chiu <buganini@gmail.com>
-#
+# Created by: Kuan-Chung Chiu <buganini@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	padauk
 PORTVERSION=	2.8
@@ -23,6 +19,7 @@ USE_ZIP=	yes
 FONTSDIR=	lib/X11/fonts/Myanmar
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${PREFIX}/${FONTSDIR}

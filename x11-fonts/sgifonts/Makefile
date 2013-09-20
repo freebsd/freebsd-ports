@@ -25,6 +25,7 @@ EXTRACT_BEFORE_ARGS=	-O -xf
 EXTRACT_AFTER_ARGS=	sgi-fonts.tar.gz | ${TAR} -xf -
 WRKSRC=		${WRKDIR}/sgi-fonts
 
+NO_STAGE=	yes
 pre-install:
 	@${RM} -f ${PLIST}
 	@cd ${WRKSRC}; for ii in `${LS} *gz fonts.alias fonts.dir|${SORT}`; do \

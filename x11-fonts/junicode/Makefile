@@ -1,9 +1,5 @@
-# New ports collection makefile for:	junicode
-# Date created:		28 August 2006
-# Whom:			Guerkan Senguen <gurkan@phys.ethz.ch>
-#
+# Created by: Guerkan Senguen <gurkan@phys.ethz.ch>
 # $FreeBSD$
-#
 
 PORTNAME=	junicode
 PORTVERSION=	0.7.6
@@ -26,6 +22,7 @@ PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/fonts/*.ttf ${FONTSDIR}

@@ -33,6 +33,7 @@ FCCACHE_CMD=	${LOCALBASE}/bin/fc-cache -f -v
 
 post-extract: move-fonts rename-license
 
+NO_STAGE=	yes
 move-fonts:
 	${MKDIR} ${WRKSRC}
 	${MV} ${WRKDIR}/CODE2000.TTF ${WRKSRC}/${FONTNAME}.ttf

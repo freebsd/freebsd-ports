@@ -19,6 +19,7 @@ CONFIGURE_ARGS=	--with-configdir=${PREFIX}/etc/fonts/conf.avail
 FONTSDIR=	share/fonts/cantarell
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
+NO_STAGE=	yes
 post-install:
 	@${LOCALBASE}/bin/fc-cache -f -v ${PREFIX}/${FONTSDIR}
 

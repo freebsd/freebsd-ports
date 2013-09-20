@@ -1,9 +1,5 @@
-# New ports collection makefile for: ttf-indic-fonts
-# Date created:        March 31 2008
-# Whom:                Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-#
+# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	indic-ttf
 PORTVERSION=	0.5.14
@@ -40,6 +36,7 @@ PUNJABI_DESC=		PUNJABI font set
 TAMIL_DESC=		TAMIL font set
 TELUGU_DESC=		TELUGU font set
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 FONTSNAME=	${PORTNAME}

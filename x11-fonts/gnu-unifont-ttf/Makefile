@@ -1,7 +1,4 @@
-# New ports collection makefile for:	gnu-unifont-ttf
-# Date created:				Jul 6 2008
-# Whom:					nrg milk <bsdports@gmail.com>
-#
+# Created by: nrg milk <bsdports@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	gnu-unifont-ttf
@@ -18,6 +15,7 @@ COMMENT=	Unicode TrueType Font
 NO_BUILD=	yes
 PLIST_FILES=	lib/X11/fonts/local/unifont.ttf
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${CP} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${WRKDIR}

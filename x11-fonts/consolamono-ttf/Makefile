@@ -26,6 +26,7 @@ SUB_FILES=	pkg-message
 SUB_LIST=	FONTDIR=${FONTDIR}
 WRKSRC=		${WRKDIR}/Consola\ Mono
 
+NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC}/ && \
 		${LOCALBASE}/bin/mkfontscale && \

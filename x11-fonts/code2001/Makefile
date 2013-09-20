@@ -24,6 +24,7 @@ MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
 MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 FCCACHE_CMD=	${LOCALBASE}/bin/fc-cache -f -v
 
+NO_STAGE=	yes
 post-extract:
 	@${MKDIR} ${WRKSRC}/
 	@${MV} ${WRKDIR}/CODE2001.TTF ${WRKSRC}/${FONTNAME}.ttf

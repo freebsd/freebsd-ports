@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kaputa
-# Date created:		20 May 2008
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kaputa
 PORTVERSION=	1.000
@@ -28,6 +24,7 @@ MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
 MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 FCCACHE_CMD=	${LOCALBASE}/bin/fc-cache -f -v
 
+NO_STAGE=	yes
 post-extract:
 	@${MKDIR} ${WRKSRC}/
 	@${MV} ${WRKDIR}/kaputaunicode.ttf ${WRKSRC}/kaputa.ttf

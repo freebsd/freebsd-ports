@@ -16,6 +16,7 @@ CONFIGURE_ARGS=	--without-xmlto --without-fop
 
 MAN1=		xfs.1
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} '/^config_DATA/d' ${WRKSRC}/config/Makefile.in
 .if defined(WITHOUT_XFS_CACHE)

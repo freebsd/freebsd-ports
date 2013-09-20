@@ -19,6 +19,7 @@ NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_XORG=	x11
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fonts/lfpfonts-var
 	@${INSTALL_DATA} ${WRKSRC}/lfp-var/*.pcf.gz ${PREFIX}/lib/X11/fonts/lfpfonts-var

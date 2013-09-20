@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mkbold-mkitalic
-# Date created:        			Dec 28 2004
-# Whom:					KOMATSU Shinichiro
-#
+# Created by: KOMATSU Shinichiro
 # $FreeBSD$
-#
 
 PORTNAME=	mkbold-mkitalic
 PORTVERSION=	0.11
@@ -20,6 +16,7 @@ PLIST_FILES=	bin/mkbold bin/mkitalic bin/mkbolditalic
 PORTDOCS=	ALGORITHM ALGORITHM.eucJP LICENSE README README.eucJP
 USE_BZIP2=	yes
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

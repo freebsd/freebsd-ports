@@ -18,6 +18,7 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 
 USE_XORG=	x11
 
+NO_STAGE=	yes
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/*.gz
 

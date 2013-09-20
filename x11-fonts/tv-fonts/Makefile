@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tv-fonts
-# Date created:				19 June 2004
-# Whom:					Oliver Lehmann <lehmann@ans-netz.de>
-#
+# Created by: Oliver Lehmann <lehmann@ans-netz.de>
 # $FreeBSD$
-#
 
 PORTNAME=	tv-fonts
 PORTVERSION=	1.1
@@ -34,6 +30,7 @@ FONTS=		caption.pcf.gz captioni.pcf.gz led-iso10646-1.pcf.gz \
 		teletext2.pcf.gz teletext2i.pcf.gz teletext4.pcf.gz \
 		teletext4i.pcf.gz
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${FONTSDIR}
 .for font in ${FONTS}

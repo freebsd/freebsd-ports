@@ -1,9 +1,5 @@
-# New ports collection makefile for:    anonymousPro
-# Date Created:                         14 Nov 2011
-# Whom:                                 Norberto Lopes <nlopes.ml@gmail.com>
-#
+# Created by: Norberto Lopes <nlopes.ml@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	anonymous-pro
 PORTVERSION=	1.002
@@ -31,6 +27,7 @@ SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}/${DISTNAME}.001
 
+NO_STAGE=	yes
 do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
