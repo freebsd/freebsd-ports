@@ -1,4 +1,4 @@
-# Created by: Alfred Perlstein <alfred@freebsd.org>
+# Created by: Alfred Perlstein <alfred@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	insub
@@ -21,6 +21,7 @@ USE_PERL5=	run
 
 SCRIPT=	${PORTNAME}.pl
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${SCRIPT} ${PREFIX}/bin/${SCRIPT:R}
 	${MKDIR} ${PREFIX}/share/irssi/scripts/

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Nefarious
-# Date created:				12 August 2007
-# Whom:					Frank J. Laszlo <laszlof@FreeBSD.org>
-#
+# Created by: Frank J. Laszlo <laszlof@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Nefarious
 PORTVERSION=	1.2.0
@@ -26,6 +22,7 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--enable-ssl
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(INSTALL_PREFIX)

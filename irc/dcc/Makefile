@@ -26,6 +26,7 @@ LDFLAGS+=	-pthread
 
 PLIST_FILES=	bin/dcc
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dcc ${PREFIX}/bin
 

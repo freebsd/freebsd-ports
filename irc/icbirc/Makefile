@@ -1,7 +1,4 @@
-# New ports collection makefile for:	icbirc
-# Date created:		8 Feb 2004
-# Whom:			hrs
-#
+# Created by: hrs
 # $FreeBSD$
 
 PORTNAME=	icbirc
@@ -20,4 +17,5 @@ MANCOMPRESSED=	maybe
 
 PLIST_FILES=	bin/icbirc
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

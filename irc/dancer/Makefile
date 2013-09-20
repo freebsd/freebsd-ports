@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dancer
-# Date created:		02/01/2003
-# Whom:			Dominic Marks <dom@cus.org.uk>
-#
+# Created by: Dominic Marks <dom@cus.org.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	dancer
 PORTVERSION=	4.16
@@ -22,6 +18,7 @@ LDFLAGS+=	-lm
 CPP=		#
 USE_CSTD=	gnu89
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/../${PORTNAME} ${PREFIX}/bin/

@@ -50,6 +50,7 @@ WEBKIT_DESC=	Build with QtWebkit support
 
 PLIST_SUB+=	VER="${PORTVERSION:R}"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(PKGNAMESUFFIX)

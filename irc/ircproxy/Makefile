@@ -30,6 +30,7 @@ OPTIONS_DEFAULT=	SSL MEMDEBUG FDDEBUG
 MEMDEBUG_DESC=	Enable memory debugging
 FDDEBUG_DESC=	Enable file descriptor debugging
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}

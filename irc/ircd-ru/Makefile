@@ -33,6 +33,7 @@ AUTHMODULE_DESC=	authmodule support
 DNSBL_DESC=		DNSBL support
 SELECT_DESC=		enable select I/O
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # irc.wenet.ru specific options

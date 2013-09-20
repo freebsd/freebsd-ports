@@ -20,6 +20,7 @@ PORTEXAMPLES=	query.sh
 MAKE_ARGS=	-E CC
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-supybot
-# Date created:		01 March 2004
-# Whom:			Tim Middleton <x@vex.net>
-#
+# Created by: Tim Middleton <x@vex.net>
 # $FreeBSD$
-#
 
 PORTNAME=	supybot
 PORTVERSION=	0.83.4.1
@@ -27,6 +23,7 @@ MANCOMPRESSED=	no
 MAN1=	supybot.1 supybot-adduser.1 supybot-wizard.1 supybot-botchk.1 \
 	supybot-plugin-create.1 supybot-plugin-doc.1
 
+NO_STAGE=	yes
 post-install:
 .for f in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/docs/man/${f} ${MAN1PREFIX}/man/man1

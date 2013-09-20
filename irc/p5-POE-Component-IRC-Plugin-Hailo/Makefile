@@ -29,4 +29,5 @@ MAN1=	irchailo-seed.1
 
 MAN3=	POE::Component::IRC::Plugin::Hailo.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

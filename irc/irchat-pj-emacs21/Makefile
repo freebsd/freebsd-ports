@@ -44,6 +44,7 @@ PLIST_SUB=	LISPDIR=${LISPDIR} \
 		ETCDIR=${ETCDIR} \
 		XEMACS_ONLY=${XEMACS_ONLY}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

@@ -20,4 +20,5 @@ USE_PERL5=	configure
 MAN1=		nethirc.pl.1
 MAN3=		NetHirc.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

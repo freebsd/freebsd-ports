@@ -58,6 +58,7 @@ SQLITE_DESC=	Build m_sqlite3 module
 PCRE_DESC=	Build m_regex_pcre module
 POSIX_DESC=	Build m_regex_posix module
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAPAUTH}

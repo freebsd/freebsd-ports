@@ -28,6 +28,7 @@ PLIST_FILES=	lib/xchat/plugins/xfish.so
 PORTDOCS=	FiSH-xchat.txt \
 		FiSH-xchat_History.txt
 
+NO_STAGE=	yes
 post-patch:
 	@${CP} -pf ${FILESDIR}/Makefile ${WRKSRC}/
 	@${RM} -f ${WRKSRC}/mir*

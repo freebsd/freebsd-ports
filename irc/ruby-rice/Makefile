@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rice
-# Date created:		30 August 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rice
 PORTVERSION=	0.0.0.2
@@ -19,6 +15,7 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${CP} -R ${WRKSRC}/rice ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)

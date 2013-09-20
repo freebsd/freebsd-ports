@@ -22,4 +22,5 @@ MAN3=	AnyEvent::IRC::Client.3 \
 	AnyEvent::IRC.3 \
 	AnyEvent::IRC::Util.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

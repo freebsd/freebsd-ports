@@ -12,6 +12,7 @@ COMMENT=	A script that converts IRC logfiles into an HTML statistics page
 USES=		perl5
 NO_BUILD=	YES
 
+NO_STAGE=	yes
 do-install:
 	@if [ ! -d ${DATADIR} ]; then \
 		${MKDIR} ${DATADIR}; \

@@ -33,6 +33,7 @@ CONFIGURE_ARGS+=	--disable-ssl
 USE_OPENSSL=	yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Process options.

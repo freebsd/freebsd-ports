@@ -1,9 +1,5 @@
-# New ports collection makefile for:	RICA
-# Date created:		10 March 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rica
 PORTVERSION=	0.10
@@ -30,6 +26,7 @@ MODULES=	rica.rb \
 DOCS=		CHANGES	README	classes_and_methods.txt	event.lst *.png
 EXAMPLES=	erica.* ricaco.rb rica-example.rb
 
+NO_STAGE=	yes
 do-install:
 .for f in ${MODULES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_SITELIBDIR}/

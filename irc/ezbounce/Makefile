@@ -27,6 +27,7 @@ PLIST_SUB+=	SSL=""
 PLIST_SUB+=	SSL="@comment "
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::

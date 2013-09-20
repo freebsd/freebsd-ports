@@ -25,6 +25,7 @@ OPTIONS_DEFINE=	DOCS
 
 INFO=	riece-en riece-ja
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

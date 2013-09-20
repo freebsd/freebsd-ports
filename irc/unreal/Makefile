@@ -52,6 +52,7 @@ ZIPLINKS_DESC=	Enable ziplinks support
 PREFIXAQ_DESC=	Enable prefixes for chanadmin and chanowner
 REMOTE_DESC=	Enable remote includes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

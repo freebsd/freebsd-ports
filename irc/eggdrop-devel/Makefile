@@ -28,6 +28,7 @@ SUB_FILES=	pkg-message
 
 CONFLICTS=	eggdrop-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

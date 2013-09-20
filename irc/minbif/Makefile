@@ -42,6 +42,7 @@ PLIST_FILES=	bin/minbif %%ETCDIR%%/minbif.conf-dist \
 		%%ETCDIR%%/minbif.motd-dist
 PLIST_DIRS=	%%ETCDIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCACA}

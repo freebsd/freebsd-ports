@@ -1,9 +1,5 @@
-# New ports collection makefile for:	IrcII Client
-# Date created:		18 Oct 1994
-# Whom:			torstenb
-#
+# Created by: torstenb
 # $FreeBSD$
-#
 
 PORTNAME=	ircii
 PORTVERSION=	20111115
@@ -22,4 +18,5 @@ MAN1=		irc.1 ircII.1 ircbug.1
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

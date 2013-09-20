@@ -1,9 +1,5 @@
-# New ports collection makefile for:   muh
-# Date created:        25 Sept 1998
-# Whom:                Bill Fumerola <billf@chc-chimes.com>
-#
+# Created by: Bill Fumerola <billf@chc-chimes.com>
 # $FreeBSD$
-#
 
 PORTNAME=	muh
 PORTVERSION=	2.2a
@@ -19,6 +15,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--enable-ipv6"
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|=muh|=${PREFIX}/bin/muh|g" ${WRKSRC}/misc/muh-check
 

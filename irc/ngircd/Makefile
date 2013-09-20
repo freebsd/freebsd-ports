@@ -33,6 +33,7 @@ IDENT_DESC=Enable IDENT (AUTH) protocol support
 SNIFFER_DESC=Enable IRC traffic sniffer
 DEBUG_DESC=Show additional debug output
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if exists(/usr/include/tcpd.h) && !defined(WITHOUT_TCP_WRAPPERS)

@@ -67,6 +67,7 @@ MAN3=		POE::Component::IRC.3 \
 		POE::Filter::IRC.3 \
 		POE::Filter::IRC::Compat.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

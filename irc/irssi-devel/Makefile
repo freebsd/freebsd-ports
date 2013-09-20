@@ -28,6 +28,7 @@ OPTIONS_DEFAULT=	PERL IPV6 SSL
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.16-rc1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Process options.

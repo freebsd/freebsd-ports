@@ -43,6 +43,7 @@ IROFFER_HTDOCS=	iroffer-state.css robots.txt \
 OPTIONS_DEFINE=	CURL RUBY UPNP GEOIP
 OPTIONS_DEFAULT=CURL RUBY UPNP GEOIP
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCURL}

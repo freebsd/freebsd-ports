@@ -1,9 +1,5 @@
-# New ports collection makefile for:   irc2dc
-# Date created:        24 May 2009
-# Whom:            Maxim Ignatenko
-#
+# Created by: Maxim Ignatenko
 # $FreeBSD$
-#
 
 PORTNAME=	irc2dc
 PORTVERSION=	0.1
@@ -21,4 +17,5 @@ USE_RC_SUBR=	irc2dc
 PLIST_FILES=	bin/irc2dc \
 		etc/irc2dc.conf.dist
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

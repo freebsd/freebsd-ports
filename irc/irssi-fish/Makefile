@@ -1,9 +1,5 @@
-# New ports collection makefile for:	irssi fish
-# Date created:		Tue May 24 03:27:32 UTC 2005
-# Whom:                 Jens Holmqvist <zparta@hispan.se>
-#
+# Created by: Jens Holmqvist <zparta@hispan.se>
 # $FreeBSD$
-#
 
 PORTNAME=	irssi-fish
 DISTVERSION=	1.00-RC5
@@ -25,6 +21,7 @@ USE_LDCONFIG=	yes
 PLIST_FILES=	lib/irssi/modules/libfish.so
 PORTDOCS=	FiSH-irssi.txt FiSH-irssi_History.txt
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

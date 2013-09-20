@@ -33,6 +33,7 @@ KQUEUE_DESC=	Disable the kqueue-based engine
 EPOLL_DESC=	Disable the epoll-based engine
 LEAKDETECT_DESC=	Turn on the leak detector (reqs patched boehm)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

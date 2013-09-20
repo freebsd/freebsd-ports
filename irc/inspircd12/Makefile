@@ -60,6 +60,7 @@ POSIX_RE_DESC=		Build m_regex_posix module
 PCRE_DESC=		Build m_regex_pcre module
 TRE_DESC=		Build m_regex_tre module
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

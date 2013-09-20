@@ -27,6 +27,7 @@ USE_RC_SUBR=	anope
 OPTIONS_DEFINE=	MYSQL
 OPTIONS_DEFAULT=	MYSQL
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # XXX Add here other arch which needs -fPIC :-)

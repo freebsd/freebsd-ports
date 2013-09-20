@@ -15,6 +15,7 @@ NO_BUILD=	YES
 OPTIONS_DEFINE=	LOGCHARSET DOCS
 LOGCHARSET_DESC=	Character set for logfiles
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLOGCHARSET}

@@ -48,6 +48,7 @@ CONFIGURE_ARGS=	--config=/var/db/bitlbee --strip=0
 USERS=		bitlbee
 GROUPS=		bitlbee
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

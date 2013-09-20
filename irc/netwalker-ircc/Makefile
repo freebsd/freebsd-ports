@@ -17,6 +17,7 @@ MAN1=		netwalker.1
 LDFLAGS+=	-lncurses ${PTHREAD_LIBS}
 CFLAGS?=	-O2 -Wall
 
+NO_STAGE=	yes
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
 	${WRKSRC}/config.h > ${WRKSRC}/config.h.freebsd

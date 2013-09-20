@@ -27,6 +27,7 @@ NO_BUILD=	yes
 MAN1=		tircd.1
 USE_RC_SUBR=	tircd
 
+NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 

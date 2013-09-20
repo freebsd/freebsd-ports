@@ -24,6 +24,7 @@ PORTEXAMPLES=	irccat.py irccat2.py servermap.py testbot.py \
 		dccreceive.py dccsend.py
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 270

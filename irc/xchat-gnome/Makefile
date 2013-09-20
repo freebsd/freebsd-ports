@@ -32,6 +32,7 @@ MAN1=		xchat-gnome.1
 OPTIONS_DEFINE=	DBUS IPV6 PYTHON PERL TCL
 OPTIONS_DEFAULT=DBUS IPV6 PERL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBUS}

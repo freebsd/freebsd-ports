@@ -15,4 +15,5 @@ INSTALL_TARGET=		install-package
 PUREBIN=		${EMACS_LIBDIR}/site-packages/etc/pure
 MAKE_ENV=		LANG=ja_JP.eucJP
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

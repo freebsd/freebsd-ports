@@ -16,6 +16,7 @@ MAN1=	irssistats.1
 ALL_TARGET=	irssistats
 INSTALL_TARGET=	install
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/irssistats.conf|${PREFIX}/etc/irssistats.conf|g' ${WRKSRC}/irssistats.c
 

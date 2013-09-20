@@ -40,6 +40,7 @@ CONFIGURE_ARGS=	--with-confdir=${ETCDIR} \
 		--with-moduledir=${DATADIR}/modules \
 		--enable-kqueue
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

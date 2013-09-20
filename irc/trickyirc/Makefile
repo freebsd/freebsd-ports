@@ -26,6 +26,7 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Use better make(1) syntax in attempt to fix parallel (-jX) builds; do not

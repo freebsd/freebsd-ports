@@ -20,6 +20,7 @@ PLIST_SUB=	PSYBASE=${PSYBASE:S,^${PREFIX}/,,}
 OPTIONS_DEFINE=	MENUCONFIG
 MENUCONFIG_DESC=Configure using menu
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMENUCONFIG}

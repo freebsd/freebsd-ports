@@ -26,6 +26,7 @@ MAN1=		gozerbot.1
 
 RUN_DEPENDS+=	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

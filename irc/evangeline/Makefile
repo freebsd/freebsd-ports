@@ -24,6 +24,7 @@ OPTIONS_DEFINE=	IPV6 CRYPT
 OPTIONS_DEFAULT=	CRYPT
 CRYPT_DESC=	Enable Encryption
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

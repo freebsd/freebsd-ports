@@ -28,6 +28,7 @@ PYTHON_DESC=	Python scripting module
 TCL_DESC=	Tcl scripting module
 CYRUS_DESC=	Cyrus SASL module
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
