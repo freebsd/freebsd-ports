@@ -35,6 +35,7 @@ OPTIONS_DEFINE=		SOFTHSM MYSQL
 SOFTHSM_DESC=		SoftHSM cryptographic store for PKCS \#11 interface
 OPTIONS_DEFAULT=	MYSQL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

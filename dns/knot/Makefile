@@ -35,6 +35,7 @@ INFO=		knot
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README THANKS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

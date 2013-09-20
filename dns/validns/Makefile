@@ -21,6 +21,7 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	Changes README installation.mdwn notes.mdwn \
 		technical-notes.mdwn todo.mdwn usage.mdwn
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

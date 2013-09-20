@@ -22,6 +22,7 @@ CONFFILE?=	/etc/namedb/named.conf
 MAN8=		nslint.8
 PLIST_FILES=	bin/nslint
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^\ \{4\}V_CCOPT/d' ${WRKSRC}/configure
 	@@${REINPLACE_CMD} -e 's|/etc/named.boot|${BOOTFILE}|; \

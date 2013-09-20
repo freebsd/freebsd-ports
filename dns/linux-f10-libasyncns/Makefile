@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dns/libasyncns
-# Date created:				2009-12-20
-# Whom:					itetcu@
-#
+# Created by: itetcu@
 # $FreeBSD$
-#
 
 PORTNAME=	libasyncns
 PORTVERSION=	0.7
@@ -20,4 +16,5 @@ RPMVERSION=	1.fc10
 USE_LDCONFIG=	yes
 AUTOMATIC_PLIST=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

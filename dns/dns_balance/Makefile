@@ -1,9 +1,5 @@
-# Ports collection makefile for:	DNS Balance
-# Date created:			5 March 2001
-# Whom:				Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dns_balance
 PORTVERSION=	2.0
@@ -36,6 +32,7 @@ LIBS=		as_search.rb \
 PLIST_SUB+=	ETCDIR=${ETCDIR}
 SUB_LIST+=	RUBY=${RUBY}
 
+NO_STAGE=	yes
 post-patch:
 	${SED} -E -e "s,%%PREFIX%%,${PREFIX},g" \
 		-e "s,%%PORTNAME%%,${PORTNAME},g" \

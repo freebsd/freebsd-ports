@@ -31,6 +31,7 @@ DOCS=		README ChangeLog
 PORTDOCS=	${DOCS}
 .endif
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may set following options:"

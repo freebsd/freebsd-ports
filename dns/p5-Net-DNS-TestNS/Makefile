@@ -21,4 +21,5 @@ USES=		perl5
 
 MAN3=		Net::DNS::TestNS.3 Net::DNS::TestNS::DTD.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

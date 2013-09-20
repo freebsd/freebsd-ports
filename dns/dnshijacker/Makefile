@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dnshijacker
-# Date created:		2004-10-19
-# Whom:			lx@redundancy.redundancy.org
-#
+# Created by: lx@redundancy.redundancy.org
 # $FreeBSD$
-#
 
 PORTNAME=	dnshijacker
 PORTVERSION=	1.3
@@ -26,6 +22,7 @@ LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 PORTDOCS=	README
 .endif
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && \
 	${CC} ${PORTNAME}.c ${CFLAGS} -I${LOCALBASE}/include \

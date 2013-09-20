@@ -25,6 +25,7 @@ MAN1=		askmara.1 getzone.1 fetchzone.1
 MAN5=		mararc.5 csv1.5 csv2.5 csv2_txt.5
 MAN8=		maradns.8 zoneserver.8 duende.8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

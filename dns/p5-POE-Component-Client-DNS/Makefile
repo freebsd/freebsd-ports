@@ -21,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=		POE::Component::Client::DNS.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

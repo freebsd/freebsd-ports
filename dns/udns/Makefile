@@ -26,6 +26,7 @@ SHLIB_MAJOR=	0
 MAN1=		dnsget.1 rblcheck.1
 MAN3=		udns.3
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

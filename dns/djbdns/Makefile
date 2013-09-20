@@ -28,6 +28,7 @@ SRV_DESC=	SRV record patch by Michael Handler
 DNSCURVE_DESC=	DNSCurve support by Matthew Dempsky
 ADD_USERS_DESC= Add dnscache, tinydns and dnslog users/groups
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MADD_USERS}

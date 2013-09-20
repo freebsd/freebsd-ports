@@ -18,6 +18,7 @@ USES=		perl5
 
 MAN1=		dnswalk.1
 
+NO_STAGE=	yes
 pre-configure:
 	${MV} -f ${WRKDIR}/dnswalk ${WRKDIR}/dnswalk.orig
 	${SED} -e "s#/usr/contrib/bin/perl#${PERL5}#"\

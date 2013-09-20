@@ -1,9 +1,5 @@
-# New ports collection makefile for:   No-IP Dynamic Update Client
-# Date created:        28 March 2002
-# Whom:                Eyal Soha <esoha@attbi.com>
-#
+# Created by: Eyal Soha <esoha@attbi.com>
 # $FreeBSD$
-#
 
 PORTNAME=	noip
 PORTVERSION=	2.1.9
@@ -27,6 +23,7 @@ GROUPS=		noip
 
 PLIST_SUB+=	USER="${USERS}"
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/noip2 ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

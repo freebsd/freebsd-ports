@@ -28,6 +28,7 @@ PROGRAMS=	ldapdns ldapaxfr
 SCRIPTS=	ldapdns-conf ldapaxfr-conf domainname.sh
 DOCS=		AUTHORS CHANGELOG FAQ INSTALL README README.[a-s]*
 
+NO_STAGE=	yes
 do-install:
 .for i in ${PROGRAMS}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin

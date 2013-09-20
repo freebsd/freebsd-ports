@@ -31,6 +31,7 @@ DNRD_DIR?=	${ETCDIR}
 SUB_FILES=	pkg-install
 SUB_LIST+=	DNRD_DIR=${DNRD_DIR}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCP}

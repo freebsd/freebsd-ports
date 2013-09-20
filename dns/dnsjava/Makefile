@@ -17,6 +17,7 @@ ALL_TARGET=	jar
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}

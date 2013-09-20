@@ -18,6 +18,7 @@ USES=		perl5
 PLIST_FILES=	bin/rbllookup
 PORTDOCS=	CHANGELOG INSTALL NOTES README TODO gpg.asc
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/rbl.pl ${PREFIX}/bin/rbllookup
 .if !defined(NOPORTDOCS)

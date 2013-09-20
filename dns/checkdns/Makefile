@@ -1,9 +1,5 @@
-# New ports collection makefile for:	checkdns
-# Date created:				9 May 2005
-# Whom:					Ozkan KIRIK <ozkan@enderunix.org>
-#
+# Created by: Ozkan KIRIK <ozkan@enderunix.org>
 # $FreeBSD$
-#
 
 PORTNAME=	checkdns
 PORTVERSION=	0.5
@@ -20,6 +16,7 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README THANKS TODO
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/main.c \
 		${WRKSRC}/INSTALL ${WRKSRC}/README ${WRKSRC}/checkdns.conf-dist

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pdnsd
-# Date Created:				27 Oct 2000
-# Whom:					Roman Shterenzon <roman@xpert.com>
-#
+# Created by: Roman Shterenzon <roman@xpert.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pdnsd
 PORTVERSION=	1.2.9a
@@ -38,6 +34,7 @@ DOC_FILES+=	txt/faq.txt txt/intro.txt txt/manual.txt
 
 CFLAGS+=	-pthread
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

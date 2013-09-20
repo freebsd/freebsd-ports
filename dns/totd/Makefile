@@ -1,7 +1,4 @@
-# New ports collection makefile for:   totd
-# Date created:        17 Nov 2000
-# Whom:                Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	totd
@@ -22,6 +19,7 @@ PLIST_FILES=	etc/totd.conf.sample sbin/totd
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-ne_mesg.c \
 		${FILESDIR}/extra-patch-tcp_response.c
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC/d' ${WRKSRC}/${MAKEFILE}.in
 

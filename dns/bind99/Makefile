@@ -59,6 +59,7 @@ DLZ_STUB_DESC=		DLZ stub driver
 CONFLICTS+=		bind-tools-9.*
 .endif	# BIND_TOOLS_SLAVE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if (${ARCH} == "amd64")

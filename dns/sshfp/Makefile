@@ -28,6 +28,7 @@ PY_FILES=	sshfp dane
 
 WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-${GH_COMMIT}
 
+NO_STAGE=	yes
 post-patch:
 .for f in ${PY_FILES} daneldnsx.py
 	@${REINPLACE_CMD} -e '1s|.*|#!${PYTHON_CMD}|' ${WRKSRC}/${f}

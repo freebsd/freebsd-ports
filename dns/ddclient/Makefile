@@ -21,6 +21,7 @@ USE_RC_SUBR=	${PORTNAME}
 OPTIONS_DEFINE=	SSL
 OPTIONS_DEFAULT=SSL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}

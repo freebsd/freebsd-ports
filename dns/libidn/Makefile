@@ -20,6 +20,7 @@ USES=		iconv pathfix perl5 pkgconfig
 
 INFO=		libidn
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

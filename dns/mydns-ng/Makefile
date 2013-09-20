@@ -30,6 +30,7 @@ OPTIONS_DEFINE=		PGSQL ALIAS SSL NLS
 OPTIONS_DEFAULT=	ALIAS
 ALIAS_DESC=	Server side aliasas
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALIAS}

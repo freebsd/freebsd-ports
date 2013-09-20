@@ -1,9 +1,5 @@
-# New ports collection makefile for:   radns
-# Date created:        11 July 2011
-# Whom:                Michael Cardell Widerkrantz <mc@hack.org>
-#
+# Created by: Michael Cardell Widerkrantz <mc@hack.org>
 # $FreeBSD$
-#
 
 PORTNAME=	radns
 PORTVERSION=	20110809.2
@@ -29,6 +25,7 @@ MAN8=		radns.8
 
 PORTDOCS=	LICENSE README README.FreeBSD NEWS
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "Installing additional documentation to ${DOCSDIR}"

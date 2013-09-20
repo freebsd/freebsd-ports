@@ -33,6 +33,7 @@ MAN3=	idn_checkname.3 idn_comparenames.3 idn_comparenames2.3 \
 MAN5=	idn2.conf.5 idn2rc.5 idnalias.conf.5 idnlang.conf.5
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB}|' \
 		${WRKSRC}/configure

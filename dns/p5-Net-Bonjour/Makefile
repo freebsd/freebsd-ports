@@ -1,4 +1,3 @@
-# Created by: Baptiste Daroussin <bapt@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Net-Bonjour
@@ -26,6 +25,7 @@ MAN3=	Net::Rendezvous.3        \
 	Net::Rendezvous::Entry.3 \
 	Net::Bonjour.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/my $$ans = .*/my $$ans = "n";/g' ${WRKSRC}/Makefile.PL
 

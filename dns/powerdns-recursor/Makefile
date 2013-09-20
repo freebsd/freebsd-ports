@@ -28,6 +28,7 @@ LDFLAGS+=	-L${PREFIX}/lib
 MAN8=		rec_control.8 pdns_recursor.8
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>

@@ -19,6 +19,7 @@ MAN1=		walker.1
 PLIST_FILES=	bin/walker
 PORTDOCS=	index.html
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/walker ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1

@@ -30,4 +30,5 @@ MAN3=		Net::DNS::Keyset.3 Net::DNS::RR::DS.3 Net::DNS::RR::KEY.3 \
 		Net::DNS::RR::NSEC.3 Net::DNS::RR::DNSKEY.3 \
 		Net::DNS::RR::NSEC3.3 Net::DNS::RR::NSEC3PARAM.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

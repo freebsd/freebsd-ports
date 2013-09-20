@@ -21,4 +21,5 @@ USE_PERL5=	configure
 NO_MANCOMPRESS=	no
 MAN1=	pgeodns.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

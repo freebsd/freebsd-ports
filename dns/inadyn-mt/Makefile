@@ -29,6 +29,7 @@ PLIST_FILES=	bin/inadyn-mt etc/inadyn-mt/lang/en.lng
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

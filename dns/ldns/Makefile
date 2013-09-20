@@ -29,6 +29,7 @@ OPTIONS_DEFINE+=	GOST
 
 GOST_DESC=	GOST signatures enabled, requires openssl >= 1.0.0
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(BUILD_PYLDNS)

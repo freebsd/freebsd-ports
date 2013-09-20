@@ -1,8 +1,4 @@
-#
-# Ports collection makefile for:	dns/dnscap
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
-# Date created:				2008-09-17
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
 
 PORTNAME=	dnscap
@@ -18,6 +14,7 @@ HAS_CONFIGURE=	yes
 MAN1=		dnscap.1
 PLIST_FILES=	bin/dnscap
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnscap ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/dnscap.1 ${PREFIX}/man/man1

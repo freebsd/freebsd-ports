@@ -21,6 +21,7 @@ MAN5=		dotldnsm.5
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 #nothing to configure
+NO_STAGE=	yes
 do-configure:
 	@${ECHO} -n
 

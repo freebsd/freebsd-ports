@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libdjbdns
-# Date created:		01 Apr 2002
-# Whom:			Sergei Kolobov <sergei@kolobov.com>
-#
+# Created by: Sergei Kolobov <sergei@kolobov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libdjbdns
 PORTVERSION=	1.05
@@ -26,6 +22,7 @@ INCLUDES=	alloc.h byte.h case.h dns.h env.h error.h fmt.h \
 		socket.h str.h stralloc.h tai.h taia.h uint16.h \
 		uint32.h uint64.h
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/include/libdjbdns
 	cd ${WRKSRC} && \

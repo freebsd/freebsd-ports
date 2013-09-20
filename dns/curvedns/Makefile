@@ -1,9 +1,5 @@
-# New ports collection makefile for: curvedns
-# Date created:		11 Januari 2011
-# Whom:			Leo Vandewoestijne <freebsd@dns-lab.com>
-#
+# Created by: Leo Vandewoestijne <freebsd@dns-lab.com>
 # $FreeBSD$
-#
 
 PORTNAME=		curvedns
 PORTVERSION=		0.88.b
@@ -30,6 +26,7 @@ CURVE_GID=		53
 
 SUB_FILES=		pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

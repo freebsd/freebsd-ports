@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ipcheck
-# Date created:		24 Mar 2001
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ipcheck
 PORTVERSION=	0.240
@@ -25,6 +21,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/ipcheck.py
 
+NO_STAGE=	yes
 do-patch:
 	@${SED} \
 		-e "s!/usr/bin/python!${LOCALBASE}/bin/python!" \

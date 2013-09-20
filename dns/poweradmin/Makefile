@@ -1,9 +1,5 @@
-# New ports collection makefile for:   poweradmin
-# Date created:        19 January 2005
-# Whom:                geo
-#
+# Created by: geo
 # $FreeBSD$
-#
 
 PORTNAME=	poweradmin
 PORTVERSION=	2.1.6
@@ -30,6 +26,7 @@ CFGFILE=	config.inc.php
 
 PLIST=		${WRKDIR}/plist
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

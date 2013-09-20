@@ -18,6 +18,7 @@ SHEBANG_FILES=	updserial
 PORTEXAMPLES=	example.tld
 PLIST_FILES=	bin/vizone bin/updserial
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/updserial ${PREFIX}/bin

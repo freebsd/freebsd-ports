@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nss_mdns
-# Date Created:		Jan 19 2007
-# Whom:			Bruce M. Simpson <bms@FreeBSD.org>
-#
+# Created by: Bruce M. Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nss_mdns
 PORTVERSION=	0.10
@@ -36,6 +32,7 @@ CONFIGURE_ARGS+=		\
 
 INSTALLED_MODULES=nss_mdns nss_mdns_minimal
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSEARCH_DOMAINS}

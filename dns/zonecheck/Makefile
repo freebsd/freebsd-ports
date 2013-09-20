@@ -31,6 +31,7 @@ OPTIONS_DEFAULT=
 
 CGI_DESC=	Install with CGI support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 ZONECHECK_TARGET=	common cli

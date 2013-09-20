@@ -13,6 +13,7 @@ USES=		perl5
 
 PLIST_FILES=	bin/dnscheck
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|^#!/usr/bin/perl |#!${PERL} |' ${WRKSRC}/dnscheck.pl
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:   odsclient
-# Date created:         Jul 22, 2001
-# Whom:                 geniusj@ods.org
-#
+# Created by: geniusj@ods.org
 # $FreeBSD$
-#
 
 PORTNAME=	odsclient
 PORTVERSION=	1.03
@@ -15,6 +11,7 @@ COMMENT=	ODS Dynamic DNS Client
 
 ALL_TARGET=	odsclient
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s/^(CC|CFLAGS).+//g" ${WRKSRC}/Makefile
 

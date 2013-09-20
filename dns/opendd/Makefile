@@ -23,6 +23,7 @@ PLIST_FILES=	sbin/${PORTNAME} \
 		"%%ETCDIR%%/${PORTNAME}.pem" \
 		"@dirrmtry %%ETCDIR%%"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRCNG}

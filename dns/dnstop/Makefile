@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dnstop
-# Date created:		31 October 2002
-# Whom:			fenner
-#
+# Created by: fenner
 # $FreeBSD$
-#
 
 PORTNAME=	dnstop
 PORTVERSION=	20121017
@@ -21,6 +17,7 @@ GNU_CONFIGURE=	yes
 MAN8=		dnstop.8
 PLIST_FILES=	bin/dnstop
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnstop ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/dnstop.8 ${PREFIX}/man/man8/

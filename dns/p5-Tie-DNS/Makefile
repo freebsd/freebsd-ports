@@ -25,6 +25,7 @@ MAN3=		Tie::DNS.3
 
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/eg/* ${EXAMPLESDIR}

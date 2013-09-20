@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dnsflood
-# Date created:				17.10.2003
-# Whom:					krion
-#
+# Created by: krion
 # $FreeBSD$
-#
 
 PORTNAME=	dnsflood
 PORTVERSION=	1.20
@@ -24,6 +20,7 @@ PLIST_FILES=	sbin/dns_flood_detector
 USE_RC_SUBR=	dnsflood
 PORTDOCS=	README
 
+NO_STAGE=	yes
 pre-patch:
 	@${LN} -sf ${WRKSRC}/makefiles/Makefile-FreeBSD ${WRKSRC}/Makefile
 

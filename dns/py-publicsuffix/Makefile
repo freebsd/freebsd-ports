@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-publicsuffix
-# Date created:		22 June 2012
-# Whom:			Dmitry Pryadko <d.pryadko@rambler-co.ru>
-#
+# Created by: Dmitry Pryadko <d.pryadko@rambler-co.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	publicsuffix
 PORTVERSION=	1.0.2
@@ -24,4 +20,5 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/publicsuffix.py \
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

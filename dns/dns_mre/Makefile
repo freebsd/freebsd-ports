@@ -15,6 +15,7 @@ NO_WRKSUBDIR=	Yes
 
 PLIST_FILES=	bin/dns_mre
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -Wall main.c dns_mre.c -o dns_mre
 

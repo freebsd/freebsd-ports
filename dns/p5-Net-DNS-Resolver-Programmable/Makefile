@@ -20,6 +20,7 @@ USE_PERL5=	modbuild
 
 MAN3=		Net::DNS::Resolver::Programmable.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PORTDOCS=	CHANGES README TODO

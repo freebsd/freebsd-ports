@@ -24,6 +24,7 @@ MAN8=			dnssec-zkt.8 \
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--enable-configpath=${DIR_NAMED_CONF}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/named/|${DIR_NAMED_CONF}/|g' ${WRKSRC}/man/*.8
 

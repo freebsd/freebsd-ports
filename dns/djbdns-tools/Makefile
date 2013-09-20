@@ -1,9 +1,5 @@
-# New ports collection makefile for:	djbdns-tools
-# Date created:		2004-09-16
-# Whom:			Sergei Kolobov <sergei@FreeBSD.org>
-#
+# Created by: Sergei Kolobov <sergei@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	djbdns
 PORTVERSION=	1.05
@@ -28,6 +24,7 @@ MAN1=		dnsfilter.1 dnsip.1 dnsipq.1 dnsmx.1 dnsname.1 \
 
 ALL_TARGET=	it
 
+NO_STAGE=	yes
 do-patch:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} "${CC} ${STRIP}" > ${WRKSRC}/conf-ld

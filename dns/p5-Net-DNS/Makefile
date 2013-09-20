@@ -48,6 +48,7 @@ MAN3=		Net::DNS.3 Net::DNS::Domain.3 Net::DNS::DomainName.3 \
 		Net::DNS::Text.3 Net::DNS::Update.3 Net::DNS::ZoneFile.3
 PORTDOCS=	Changes README TODO
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIDN}
