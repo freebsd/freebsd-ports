@@ -36,6 +36,7 @@ SAMBA_DESC=	Samba support
 
 GLIB_SCHEMAS=	org.gnome.system.gvfs.enums.xml
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFUSE}

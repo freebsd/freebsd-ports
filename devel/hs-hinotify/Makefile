@@ -12,5 +12,6 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	inotify.0:${PORTSDIR}/devel/libinotify
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

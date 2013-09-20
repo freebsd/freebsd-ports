@@ -1,4 +1,4 @@
-# Created by:  Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
+# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	hslogger
@@ -13,5 +13,6 @@ LICENSE=	BSD
 
 USE_CABAL=	mtl network
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

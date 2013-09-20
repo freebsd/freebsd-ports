@@ -13,5 +13,6 @@ LICENSE=	BSD
 
 USE_CABAL=	QuickCheck>=2.3 random
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

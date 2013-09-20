@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Gauche Readline
-# Date created:		15 Jan 2004
-# Whom:			Erik Greenwald <erik@smluc.org>
-#
+# Created by: Erik Greenwald <erik@smluc.org>
 # $FreeBSD$
-#
 
 PORTNAME=	readline
 PORTVERSION=	0.1
@@ -25,6 +21,7 @@ GAUCHE_FILES=	readline/history.scm readline/keymap.scm readline/term-util.scm
 
 PLIST_SUB+=	GAUCHE_LIBDIR=${GAUCHE_LIBDIR}
 
+NO_STAGE=	yes
 do-install:
 .if !exists(${PREFIX}/${GAUCHE_LIBDIR}/readline)
 	${MKDIR} ${PREFIX}/${GAUCHE_LIBDIR}/readline

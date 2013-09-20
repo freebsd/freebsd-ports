@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	gaul
-# Date created:			Oct 28, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gaul
 PORTVERSION=	0.1849.0
@@ -27,4 +22,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lcurses
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

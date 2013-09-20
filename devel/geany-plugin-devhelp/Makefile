@@ -12,5 +12,6 @@ LIB_DEPENDS=	wnck-1:${PORTSDIR}/x11-toolkits/libwnck \
 
 USE_GNOME=	gconf2
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../geany-plugins/files/Makefile.common"
 .include <bsd.port.mk>

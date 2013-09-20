@@ -21,6 +21,7 @@ PORTDATA=	*
 IGNORE=		gnulib requires port data, unset NOPORTDATA to install
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

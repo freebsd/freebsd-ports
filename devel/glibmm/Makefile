@@ -27,6 +27,7 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static --disable-documentation
 
+NO_STAGE=	yes
 post-patch:
 .for d in docs examples tests
 	@${REINPLACE_CMD} -e '/^SUBDIRS = /s/${d}//' ${WRKSRC}/Makefile.in

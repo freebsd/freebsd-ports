@@ -12,5 +12,6 @@ LICENSE=	GPLv2
 
 USE_CABAL=	syb
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 DESTINY=	${WRKDIR}/destino
 MAKE_ENV+=	DESTDIR=${DESTINY}
 
+NO_STAGE=	yes
 post-extract:
 	${CP} ${FILESDIR}/pconfig.* ${WRKSRC}/configs
 

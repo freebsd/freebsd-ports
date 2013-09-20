@@ -1,9 +1,5 @@
-# New ports collection makefile for:	generatorrunner
-# Date created:		2011-03-21
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	generatorrunner
 PORTVERSION=	0.6.16
@@ -33,4 +29,5 @@ USE_BZIP2=	yes
 USES=		cmake
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

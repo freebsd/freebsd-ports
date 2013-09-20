@@ -25,6 +25,7 @@ MAN3=		fam.3x
 
 CONFLICTS=	gamin-[0-9]*
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s/-lstdc++//g" ${WRKSRC}/Makefile.am
 

@@ -14,5 +14,6 @@ USE_CABAL=	network
 
 LIB_DEPENDS=	ev:${PORTSDIR}/devel/libev
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

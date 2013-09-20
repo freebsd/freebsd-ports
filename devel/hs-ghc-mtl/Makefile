@@ -13,5 +13,6 @@ LICENSE=	BSD
 
 USE_CABAL=	MonadCatchIO-mtl>=0.2.0.0 mtl
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

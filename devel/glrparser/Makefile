@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	glrParser
-# Date created:			Nov 10, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	glrparser
 PORTVERSION=	1.4
@@ -17,4 +12,5 @@ COMMENT=	A parser which works with the GLR(0) algorithm
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

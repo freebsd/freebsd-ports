@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	inilib
-# Date created:			Oct 10, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	inilib
 PORTVERSION=	1.0.7b3
@@ -16,4 +11,5 @@ COMMENT=	A C++ lib which provides a method of saving the "state" of a program
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,6 +23,7 @@ MAKE_ARGS=	PREFIX="${PREFIX}"
 
 ALL_TARGET=	# empty
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|IOExts|Debug.Trace|' ${WRKSRC}/IDoc.hs
 

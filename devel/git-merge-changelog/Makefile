@@ -1,9 +1,5 @@
-# New ports collection makefile for:	git-merge-changelog
-# Date created:		19 April 2010
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	git-merge-changelog
 PORTVERSION=	${GNULIB_PORTVERSION}
@@ -25,6 +21,7 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 GNULIB_DIR=	${LOCALBASE}/share/gnulib

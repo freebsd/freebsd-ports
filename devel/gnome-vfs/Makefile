@@ -44,6 +44,7 @@ OPTIONS_DEFAULT=SAMBA MDNS HAL
 SAMBA_DESC=	Enable SMB volume support
 MDNS_DESC=	Enable Bonjour/Rendezvous support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if exists(${LOCALBASE}/lib/libfam.so) || !defined(WITHOUT_FAM)

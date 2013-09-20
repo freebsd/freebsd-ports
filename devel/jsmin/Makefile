@@ -17,6 +17,7 @@ GH_COMMIT=	1bf6ce5
 PLIST_FILES=	bin/jsmin
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

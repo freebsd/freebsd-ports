@@ -10,5 +10,6 @@ COMMENT=	Compatibility with old-time for the time package
 
 LICENSE=	BSD
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

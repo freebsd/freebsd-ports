@@ -14,6 +14,7 @@ OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

@@ -24,6 +24,7 @@ USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 WRKSRC=		${WRKDIR}/Encore
 DOCSDIR=	${GNUSTEP_PREFIX}/Local/Library/Documentation/Encore
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

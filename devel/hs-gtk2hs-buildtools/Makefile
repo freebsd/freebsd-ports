@@ -18,5 +18,6 @@ EXECUTABLE=	gtk2hsTypeGen gtk2hsHookGenerator gtk2hsC2hs
 
 STANDALONE=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

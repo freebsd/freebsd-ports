@@ -12,5 +12,6 @@ LICENSE=	BSD
 
 USE_CABAL=	hashable>=1.1 primitive vector>=0.7
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

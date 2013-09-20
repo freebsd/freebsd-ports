@@ -26,6 +26,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 PORTDOCS=	apidocs index.html
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

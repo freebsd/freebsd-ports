@@ -14,5 +14,6 @@ USE_CABAL=	blaze-builder ieee754 mtl syb text transformers utf8-string
 
 INSTALL_PORTDATA=	cd ${WRKSRC} && ${INSTALL_DATA} README.md ${DATADIR}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

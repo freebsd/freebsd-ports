@@ -11,5 +11,6 @@ COMMENT=	Memory-mapped files for POSIX and Windows
 
 LICENSE=	BSD
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

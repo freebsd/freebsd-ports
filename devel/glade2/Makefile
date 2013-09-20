@@ -27,6 +27,7 @@ OPTIONS_DEFINE=	GNOME
 OPTIONS_DEFAULT=GNOME
 GNOME_DESC=	Gnome support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOME}

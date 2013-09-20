@@ -1,9 +1,5 @@
-# New ports collection makefile for:	googletest
-# Date created:			        Oct 14, 2008
-# Whom:				        Cheng-Lung Sung <clsung@FreeBSD.org>
-#
+# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	googletest
 PORTVERSION=	1.5.0
@@ -18,6 +14,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
 
+NO_STAGE=	yes
 regression-test:
 	cd ${WRKSRC}; ${MAKE} check
 

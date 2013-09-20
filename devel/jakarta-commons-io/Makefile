@@ -1,9 +1,5 @@
-# Ports collection makefile for:	Jakarta Commons IO
-# Date created:			14 Feb 2006
-# Whom:				Michael Winking <mwfp@foldl.net>
-#
+# Created by: Michael Winking <mwfp@foldl.net>
 # $FreeBSD$
-#
 
 PORTNAME=	commons-io
 PORTVERSION=	2.4
@@ -33,6 +29,7 @@ PORTDOCS=	LICENSE.txt NOTICE.txt RELEASE-NOTES.txt apidocs
 
 JAR_VERSION=	${PORTNAME}-2.2-SNAPSHOT
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

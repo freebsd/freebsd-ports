@@ -15,6 +15,7 @@ OPTIONS_DEFINE=	USECAS
 
 USECAS_DESC=	Use hardware compare-and-swap
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MUSECAS}

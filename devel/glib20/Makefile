@@ -41,6 +41,7 @@ SHEBANG_FILES=	*/*.pl glib/gen-iswide-table.py
 OPTIONS_DEFINE=	COLLATION_FIX DEBUG
 COLLATION_FIX_DESC=	fix string collation
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # doesn't build yet

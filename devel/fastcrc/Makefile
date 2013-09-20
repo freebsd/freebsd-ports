@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fastcrc
-# Date created:				27 April 1999
-# Whom:					G. Adam Stanislav <adam@whizkidtech.net>
-#
+# Created by: G. Adam Stanislav <adam@whizkidtech.net>
 # $FreeBSD$
-#
 
 PORTNAME=	fastcrc
 PORTVERSION=	1.0
@@ -19,6 +15,7 @@ ONLY_FOR_ARCHS=	i386
 
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|gcc|$${CC}| ; \

@@ -55,6 +55,7 @@ MAN8+=	gensprep.8
 ICUMAJOR=	${PORTVERSION:C/\..*//}
 PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUVER=${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"

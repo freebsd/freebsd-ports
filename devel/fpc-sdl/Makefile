@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	SDL
 SDL_DESC=	Install SDL library
 OPTIONS_DEFAULT=	SDL
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

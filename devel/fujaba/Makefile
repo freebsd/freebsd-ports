@@ -32,6 +32,7 @@ PLIST_FILES+=	%%DATADIR%%/doc
 SUB_FILES=	fujaba.sh
 SUB_LIST=	LOCALBASE="${LOCALBASE}" DATADIR="${DATADIR}"
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/fujaba.sh ${DATADIR}/bin/

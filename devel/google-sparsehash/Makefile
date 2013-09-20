@@ -1,9 +1,5 @@
-# New ports collection makefile for:	google-sparsehash
-# Date created:				23 June 2005
-# Whom:					Vasil Dimov <vd@datamax.bg>
-#
+# Created by: Vasil Dimov <vd@datamax.bg>
 # $FreeBSD$
-#
 
 PORTNAME=	google-sparsehash
 PORTVERSION=	2.0.2
@@ -19,6 +15,7 @@ COMMENT=	An extremely memory-efficient hash_map implementation
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

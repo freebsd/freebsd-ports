@@ -14,4 +14,5 @@ CONFLICTS=	gdb-[6-9]*
 
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

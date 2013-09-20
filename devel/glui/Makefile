@@ -1,9 +1,5 @@
-# New ports collection makefile for:	glui
-# Date created:		25 September 2001
-# Whom:			mwest@uct.ac.za
-#
+# Created by: mwest@uct.ac.za
 # $FreeBSD$
-#
 
 PORTNAME=	glui
 PORTVERSION=	2.36
@@ -26,6 +22,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PLIST_FILES=	include/glui.h lib/libglui.a lib/libglui.so lib/libglui.so.0
 PORTDOCS=	*
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/GL/glui.h ${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/lib/libglui.a ${PREFIX}/lib/

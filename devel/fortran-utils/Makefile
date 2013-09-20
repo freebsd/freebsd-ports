@@ -14,6 +14,7 @@ WRKSRC=		${WRKDIR}/fortran-utils
 
 MAN1=		fpr.1 fsplit.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fpr/fpr ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/fsplit/fsplit ${PREFIX}/bin

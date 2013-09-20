@@ -20,4 +20,5 @@ MANLANG=	"" fr
 MAN1=		gpasm.1 gpdasm.1 gplib.1 gplink.1 gpstrip.1 gputils.1 \
 		gpvc.1 gpvo.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

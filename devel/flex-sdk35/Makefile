@@ -1,4 +1,3 @@
-# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	flex-sdk
@@ -26,6 +25,7 @@ SUB_LIST=	PORTNAME=${PORTNAME}
 SCRIPTS=	aasdoc acompc amxmlc asdoc compc copylocale digest \
 		fcsh fdb mxmlc optimizer
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

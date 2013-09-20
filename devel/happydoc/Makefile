@@ -23,6 +23,7 @@ USE_PYTHON=	yes
 
 PLIST=		${WRKDIR}/PLIST
 
+NO_STAGE=	yes
 pre-build:
 	@${FIND} ${WRKSRC} \( -name  ".*" -or -name "*.orig" \) -delete
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    gdbmods
-# Date created:         24 August 2002
-# Whom:                 Bruce M Simpson <bms@FreeBSD.org>
-#
+# Created by: Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gdbmods
 PORTVERSION=	20020824
@@ -19,6 +15,7 @@ COMMENT=	Wrapper for gdb -k to provide kld symbol information
 NO_BUILD=	yes
 PLIST_FILES=	bin/gdbmods
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${PREFIX}/bin
 

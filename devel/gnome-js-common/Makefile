@@ -20,6 +20,7 @@ USES=		pkgconfig gettext
 
 PORTDOCS=	AUTHORS COPYING INSTALL NEWS README ChangeLog
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|== x|= x|g' \
 		${WRKSRC}/configure

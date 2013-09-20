@@ -24,6 +24,7 @@ OPTIONS_DEFINE=	GITUSER
 
 GITUSER_DESC=	Create git user as gitolite provider
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGITUSER}

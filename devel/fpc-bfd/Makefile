@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	LIBBFD
 LIBBFD_DESC=	Install Universal BFD library from GNU binutils
 OPTIONS_DEFAULT=	LIBBFD
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

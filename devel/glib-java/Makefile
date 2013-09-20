@@ -31,6 +31,7 @@ PKGMESSAGE=		${WRKDIR}/pkg-message
 CONFIGURE_ENV+=	BOOTCLASSPATH=${JAVA_CLASSES}
 MAKE_ENV+=	BOOTCLASSPATH=${JAVA_CLASSES}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

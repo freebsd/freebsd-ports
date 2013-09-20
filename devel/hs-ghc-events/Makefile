@@ -14,5 +14,6 @@ USE_CABAL=	mtl>=1.1
 
 EXECUTABLE=	ghc-events
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

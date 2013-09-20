@@ -23,6 +23,7 @@ JSON_DESC=	JSON API support
 JSON_CONFIGURE_ON=	--json
 STATIC_CONFIGURE_ON=	--static
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/fossil ${PREFIX}/bin/fossil
 

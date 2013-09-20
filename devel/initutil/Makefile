@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	initutil
-# Date created:			Mar 12, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	initutil
 PORTVERSION=	2.1.b
@@ -23,6 +18,7 @@ USE_DOS2UNIX=	InitUtil.h
 
 PLIST_FILES=	include/InitUtil.h
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/InitUtil.h ${PREFIX}/include
 

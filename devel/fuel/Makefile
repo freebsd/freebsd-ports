@@ -20,6 +20,7 @@ HAS_CONFIGURE=	yes
 
 PLIST_FILES+=	bin/Fuel
 
+NO_STAGE=	yes
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS}
 

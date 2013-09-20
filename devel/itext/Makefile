@@ -35,6 +35,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		%%JAVAJARDIR%%/${PORTNAME}-rups.jar \
 		bin/${PORTNAME}-rups
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_DATA} ${WRKDIR}/lib/iText.jar \
 		${JAVAJARDIR}/${PORTNAME}.jar

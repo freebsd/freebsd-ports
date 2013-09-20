@@ -30,6 +30,7 @@ ONLY_FOR_ARCHS=	i386
 OPENWINCE_INCLUDE=${LOCALBASE}/include/openwince
 OPENWINCE_INCLUDE_DEP=${OPENWINCE_INCLUDE}/common.h
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

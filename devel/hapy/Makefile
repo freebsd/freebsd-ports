@@ -1,9 +1,5 @@
-# New ports collection makefile for:	hapy
-# Date created:			Dec 24, 2003
-# Whom:				rousskov
-#
+# Created by: rousskov
 # $FreeBSD$
-#
 
 PORTNAME=	hapy
 PORTVERSION=	0.0.8
@@ -16,6 +12,7 @@ COMMENT=	A runtime parser generator
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-build:
 	@${ECHO_MSG} "Consider running 'make check' before 'make install'"
 	@${ECHO_MSG} "to execute a library self-test"

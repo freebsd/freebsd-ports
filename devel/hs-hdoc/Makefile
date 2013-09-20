@@ -31,6 +31,7 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 ALL_TARGET=	# empty
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR} && \

@@ -23,6 +23,7 @@ PORTDOCS=	*
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
+NO_STAGE=	yes
 post-patch:
 .if !defined(NOPORTDOCS)
 	@${REINPLACE_CMD} "s|doc, jar, _zip|doc, jar|" ${WRKSRC}/build.xml

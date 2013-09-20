@@ -19,6 +19,7 @@ OPTIONS_DEFAULT=		GHC
 NHC98_DESC=	Build with NHC98
 GHC_DESC=	Build with GHC
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGHC}

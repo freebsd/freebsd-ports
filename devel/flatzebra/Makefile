@@ -22,6 +22,7 @@ USE_LDCONFIG=	yes
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING INSTALL NEWS README TODO THANKS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

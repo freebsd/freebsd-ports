@@ -49,6 +49,7 @@ CLSSPTH=	ant-1.7.1 antlr-2.7.6 asm-attrs asm barbecue-1.5-beta1 \
 		saaj-api-1.3 slf4j-api slf4j-log4j12 spring \
 		sqleonardo-2009.03.rc1 swingx-2007_10_07 xml-apis-ext xml-apis
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Remark: HSQLDB and Oracle's dependencies already registered by databases/jasperreports

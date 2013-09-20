@@ -43,6 +43,7 @@ GDB_LINK_DESC=	Create the gdb link
 TUI_DESC=	Text User Interface enabled
 OPTIONS_DEFAULT=	THREADS TUI GDB_LINK PORT_READLINE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGDB_LINK}

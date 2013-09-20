@@ -1,10 +1,6 @@
-# New ports collection makefile for:	gconf
-# Date created:				28th June 2000
-# Whom:					Ade Lovett <ade@FreeBSD.org>
-#
+# Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/devel/gconf/Makefile,v 1.5 2007/05/19 21:36:05 marcus Exp $
-#
 
 PORTNAME=	gconf
 PORTVERSION=	1.0.9
@@ -31,4 +27,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

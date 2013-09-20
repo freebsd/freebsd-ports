@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	DBUS
 DBUS_DESC=	Install dbus library
 OPTIONS_DEFAULT=	DBUS
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

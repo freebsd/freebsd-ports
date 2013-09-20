@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gzstream
-# Date created:		28 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gzstream
 DISTVERSION=	1.5
@@ -22,6 +18,7 @@ PLIST_FILES=	lib/lib${PORTNAME}.so lib/lib${PORTNAME}.so.0 \
 ALL_TARGET=	default
 CFLAGS+=	-fPIC -I.
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/=/?=/;s/\.a/.so/g;s/CPPFL/CXXFL/g;\
 		s/{AR}/{CC} $${CFLAGS} -lz -shared -o/' ${WRKSRC}/${MAKEFILE}

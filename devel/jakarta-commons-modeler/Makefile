@@ -16,6 +16,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)

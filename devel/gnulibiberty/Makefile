@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libiberty
-# Date created:		27 Feb 2004
-# Whom:			Joerg Wunsch <joerg@freebsd.org>
-#
+# Created by: Joerg Wunsch <joerg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gnulibiberty
 PORTVERSION=	2.19.1
@@ -25,4 +21,5 @@ GNU_CONFIGURE=	yes
 
 CONFLICTS=	freelibiberty-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

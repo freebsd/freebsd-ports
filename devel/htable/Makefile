@@ -18,6 +18,7 @@ PLIST_FILES=	include/htable.h
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/htable.h ${PREFIX}/include
 	${INSTALL_MAN} ${WRKSRC}/src/htable.3 ${MAN3PREFIX}/man/man3

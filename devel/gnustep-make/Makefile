@@ -25,6 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE_PREFIX=	${GNUSTEP_PREFIX}
 LIB_DEPENDS+=		objc.4:${PORTSDIR}/lang/libobjc2
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|' \
 		${WRKSRC}/configure

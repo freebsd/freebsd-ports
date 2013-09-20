@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ifd-test
-# Date created:		23 August 2002
-# Whom:			Bruce M Simpson
-#
+# Created by: Bruce M Simpson
 # $FreeBSD$
-#
 
 PORTNAME=	ifd-test
 PORTVERSION=	1.0
@@ -22,6 +18,7 @@ NOMAN=
 PLIST_FILES=	sbin/ifdtest
 MAKE_ENV=	LIBS="-L${PREFIX}/lib -lpcsclite"
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,LPSTR,LPTSTR,g; s,LPCSTR,LPCTSTR,g; \
 		s,[P]*SCARD_READERSTATE_A,SCARD_READERSTATE\*,g" \

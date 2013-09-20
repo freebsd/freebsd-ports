@@ -11,5 +11,6 @@ LICENSE=	MIT
 
 USE_CABAL=	HUnit>=1.2.5 QuickCheck>=2.5.1
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

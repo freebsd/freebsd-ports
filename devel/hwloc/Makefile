@@ -29,6 +29,7 @@ ONLY_FOR_ARCHS_REASON=	has not been ported to this architecture
 
 OPTIONS_DEFINE=	DOCS CAIRO
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.man"
 .include <bsd.port.options.mk>
 

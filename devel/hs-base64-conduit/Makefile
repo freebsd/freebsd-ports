@@ -12,5 +12,6 @@ LICENSE=	BSD
 
 USE_CABAL=	base64-bytestring>=0.1.1.1 conduit>=1.0
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

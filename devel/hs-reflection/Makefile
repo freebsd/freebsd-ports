@@ -11,5 +11,6 @@ LICENSE=	BSD
 
 USE_CABAL=	tagged>=0.4.4
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

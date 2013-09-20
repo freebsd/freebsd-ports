@@ -1,9 +1,5 @@
-# New ports collection makefile for:	google-gdata
-# Date created:		2010-03-11
-# Whom:			Romain Tartiere <romain@FreeBSD.org>
-#
+# Created by: Romain Tartiere <romain@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	google-gdata
 PORTVERSION=	1.4.0.2
@@ -23,6 +19,7 @@ ZLIB_VERSION=	1.2.3
 
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 pre-configure:
 	@${ECHO_CMD} "--->  Configuring for zlib-${ZLIB_VERSION}"
 	@(cd ${WRKDIR}/zlib-${ZLIB_VERSION} && \

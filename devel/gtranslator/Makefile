@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--disable-debug \
 
 MAN1=		gtranslator.1 pozilla.sh.1
 
+NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} -e "s|-Werror||" ${WRKSRC}/src/Makefile.in
 

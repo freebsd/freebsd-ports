@@ -12,5 +12,6 @@ LICENSE=	LGPL21
 
 USE_CABAL=	MissingH>=1.0.0 mtl parsec
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

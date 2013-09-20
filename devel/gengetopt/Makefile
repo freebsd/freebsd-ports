@@ -42,6 +42,7 @@ DOC_EXAMPLES=	README.example cmdline1.c cmdline1.h cmdline2.c cmdline2.h \
 TESTS_EXAMPLES=	test_manual_help.c test_manual_help_cmd.c \
 		test_manual_help_cmd.ggo test_manual_help_cmd.h
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

@@ -210,6 +210,7 @@ MAN3=	gearman_actions_t.3 \
 	libgearman.3
 MAN8=	gearmand.8
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Workaround for missing sigignore that wasn't introduced until

@@ -17,6 +17,7 @@ USE_LDCONFIG=	yes
 
 MAN1=	jclassinfo.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s, docs,," ${WRKSRC}/Makefile.in
 

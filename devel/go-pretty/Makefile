@@ -15,6 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/go/pkg/${OPSYS:L}_${GOARCH}/github.com/kr/text.a:${POR
 SUBLIBDIR=	github.com/kr
 GO_PKGNAME=	${SUBLIBDIR}/pretty
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${GO_LOCAL_LIBDIR}/${SUBLIBDIR}
 	${INSTALL_DATA} ${GO_WRKDIR_PKG}/${SUBLIBDIR}/pretty.a ${GO_LOCAL_LIBDIR}/${SUBLIBDIR}

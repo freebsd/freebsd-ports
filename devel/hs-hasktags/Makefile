@@ -14,5 +14,6 @@ EXECUTABLE=	hasktags
 
 STANDALONE=	yes
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

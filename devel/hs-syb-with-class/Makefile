@@ -10,5 +10,6 @@ COMMENT=	Scrap Your Boilerplate With Class
 
 LICENSE=	BSD
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

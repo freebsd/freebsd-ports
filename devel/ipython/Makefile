@@ -26,6 +26,7 @@ OPTIONS_DEFAULT=X11 ZMQ
 HTML_NOTEBOOK_DESC=	HTML notebook support
 ZMQ_DESC=		ZMQ support (parallel computing, qt console, notebook)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

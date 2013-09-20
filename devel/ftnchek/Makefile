@@ -22,4 +22,5 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_path_CC="${CC}" ac_cv_path_EMACS="${TRUE}"
 MAKE_ARGS=	OPT="${CFLAGS}"
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

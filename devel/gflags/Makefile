@@ -21,6 +21,7 @@ USES=		pathfix
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README README_windows.txt \
 		designstyle.css gflags.html
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	NEWT
 NEWT_DESC=	Install newt library
 OPTIONS_DEFAULT=	NEWT
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

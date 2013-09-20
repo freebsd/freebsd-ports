@@ -29,6 +29,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 REINPLACE_ARGS=	-I ""
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fistgen
-# Date created:		2006-07-20
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
-#
+# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	fistgen
 PORTVERSION=	0.2.1
@@ -24,6 +20,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	sbin/fistgen
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDATA)
 	@${MKDIR} ${DATADIR}

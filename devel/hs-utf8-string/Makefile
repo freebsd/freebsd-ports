@@ -10,5 +10,6 @@ COMMENT=	Support for reading/writing UTF-8 strings for Haskell programs
 
 LICENSE=	BSD
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -29,6 +29,7 @@ CONFIGURE_ARGS=	--enable-static --disable-documentation
 
 PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples//' \
 		${WRKSRC}/Makefile.in

@@ -32,6 +32,7 @@ LIBINOTIFY_DESC=Use libinotify as the FAM backend
 RUN_AS_EUID_DESC=Drop privileges to effective user
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !defined(GAMIN_SLAVE)
