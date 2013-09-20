@@ -408,6 +408,7 @@ MAN3=	TCL_MEM_DEBUG.${MAN_SUFFIX}.3 \
         Tcl_NRCreateCommand.${MAN_SUFFIX}.3 \
         Tcl_NREvalObj.${MAN_SUFFIX}.3 \
         Tcl_NREvalObjv.${MAN_SUFFIX}.3 \
+        Tcl_NRExprObj.${MAN_SUFFIX}.3 \
         Tcl_NewBignumObj.${MAN_SUFFIX}.3 \
         Tcl_NewBooleanObj.${MAN_SUFFIX}.3 \
         Tcl_NewByteArrayObj.${MAN_SUFFIX}.3 \
