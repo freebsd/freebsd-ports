@@ -61,6 +61,7 @@ PORTDOCS=	ABOUT-NLS Changelog EC_Protocol.txt INSTALL README TODO \
 
 FLEX?=		${LOCALBASE}/bin/flex
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MDEBUG)

@@ -25,6 +25,7 @@ OPTIONS_DEFINE=	PYXML
 OPTIONS_DEFAULT=	PYXML
 PYXML_DESC=	Add dependency on PyXML (needed for crawler only)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYXML}

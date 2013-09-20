@@ -27,6 +27,7 @@ MAKEFILE=	${WRKSRC}/GNUmakefile
 OPTIONS_DEFINE=	DEBUG OPENSSL
 OPENSSL_DESC=	Enable OpenSSL Support (experimental)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}

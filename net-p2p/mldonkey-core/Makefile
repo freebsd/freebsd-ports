@@ -8,4 +8,5 @@ COMMENT=	Client 'core' for the MLDonkey peer-to-peer network
 
 MASTERDIR=	${.CURDIR}/../mldonkey
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

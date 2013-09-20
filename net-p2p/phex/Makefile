@@ -22,6 +22,7 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 PORTDOCS=	Phex_other.htm \
 		Undocumented.htm
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${DATADIR}

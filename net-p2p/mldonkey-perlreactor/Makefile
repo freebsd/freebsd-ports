@@ -20,6 +20,7 @@ SHEBANG_FILES$=${BINARY_NAME}
 
 BINARY_NAME=	perlreactor
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e '1d'	${WRKSRC}/${BINARY_NAME}
 

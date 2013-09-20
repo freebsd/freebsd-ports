@@ -21,6 +21,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 OPTIONS_DEFINE=	FLAC OGG ZLIB
 OPTIONS_DEFAULT=	FLAC OGG ZLIB
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # --with-flac is on by default

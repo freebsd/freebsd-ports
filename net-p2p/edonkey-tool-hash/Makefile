@@ -1,9 +1,5 @@
-# New ports collection makefile for:	edonkey hash tool
-# Date created:				Wed Feb 20 18:03:49 BRT 2002
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	edonkey
 PORTVERSION=	0.4.0
@@ -23,6 +19,7 @@ GNU_CONFIGURE=	yes
 
 WRKSRC=	${WRKDIR}/ed2k_hash-${PORTVERSION}
 
+NO_STAGE=	yes
 post-patch:
 # respect CFLAGS
 	@${REINPLACE_CMD} -E -e \

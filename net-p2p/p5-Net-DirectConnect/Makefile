@@ -30,4 +30,5 @@ USE_PERL5=	configure
 MAN1=		dcget.1 dcshare.1
 MAN3=		Net::DirectConnect.3 Net::DirectConnect::filelist.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

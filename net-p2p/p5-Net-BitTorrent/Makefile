@@ -35,5 +35,6 @@ MAN3=		Net::BitTorrent.3 \
 		Net::BitTorrent::Util.3 \
 		Net::BitTorrent::Version.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
 

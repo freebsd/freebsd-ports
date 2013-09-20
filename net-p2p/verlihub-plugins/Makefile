@@ -1,9 +1,5 @@
-# New ports collection makefile for:   verlihub-plugins
-# Date created:        3 April 2004
-# Whom:                Skylord
-#
+# Created by: Skylord
 # $FreeBSD$
-#
 
 PORTNAME=	verlihub
 PORTVERSION=	1.0
@@ -29,6 +25,7 @@ RUN_DEPENDS=	\
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${DO_NADA}
 

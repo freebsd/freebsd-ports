@@ -29,6 +29,7 @@ PORTDOCS=	ChangeLog.txt README.txt README_IPv6.txt
 OPTIONS_DEFINE=	IPV6 EXAMPLES DOCS
 OPTIONS_DEFAULT=	IPV6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

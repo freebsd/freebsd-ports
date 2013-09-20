@@ -52,6 +52,7 @@ CLASSPATH=.
 CLASSPATH:=${CLASSPATH}:${JAVALIBDIR}/${jar}
 .endfor
 
+NO_STAGE=	yes
 post-patch:
 	${RM} -rf ${WRKSRC}/org/eclipse
 	@${SED} -E -e 's|%%CLASSPATH%%|${CLASSPATH}|' \

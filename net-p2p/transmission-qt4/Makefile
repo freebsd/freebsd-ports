@@ -31,6 +31,7 @@ post-patch: general-patch
 	@${REINPLACE_CMD} -e 's|/share/man|/man|g ; /PKGCONFIG/s| openssl||g' \
 		${WRKSRC}/qt/qtr.pro
 
+NO_STAGE=	yes
 post-build:
 	@(cd ${WRKSRC}/qt ; ${QMAKE} ${QMAKEFLAGS} qtr.pro ; ${GMAKE})
 

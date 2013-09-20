@@ -18,6 +18,7 @@ CONFLICTS_INSTALL=      ${PORTNAME}${PKGNAMESUFFIX}-2.[56]*
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${DO_NADA}
 

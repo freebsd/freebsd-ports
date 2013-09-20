@@ -26,6 +26,7 @@ PLIST_FILES=	\
 		bin/${PORTNAME:L} \
 		%%JAVAJARDIR%%/${PORTNAME:L}.jar
 
+NO_STAGE=	yes
 post-patch:
 	@${SED} -e "s|%%JAVAJARDIR%%|${JAVAJARDIR:S,^${PREFIX}/,,}|; \
 		s|%%JAVAVM%%|${JAVAVM}|; \

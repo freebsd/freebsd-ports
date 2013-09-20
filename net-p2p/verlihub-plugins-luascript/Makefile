@@ -27,6 +27,7 @@ PLIST_FILES=	share/verlihub/scripts/ptokax.lua.inc \
 		share/verlihub/scripts/script.lua
 PLIST_DIRS=	share/verlihub/scripts
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSOCKET}

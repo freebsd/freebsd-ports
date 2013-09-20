@@ -16,6 +16,7 @@ USE_OPENSSL=	yes
 
 PLIST_FILES=	bin/createtorrent
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 

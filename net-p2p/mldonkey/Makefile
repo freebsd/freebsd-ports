@@ -96,6 +96,7 @@ PORTDOCS=	${DOCFILES}
 ALL_TARGET+=	\
 		mld_hash
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::

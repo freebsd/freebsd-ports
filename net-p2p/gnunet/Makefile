@@ -60,6 +60,7 @@ MAN1=	gnunet-arm.1 gnunet-core.1 gnunet-directory.1 gnunet-download.1 \
 GNUNET_DAEMON_DIR?=		/var/lib/gnunet
 PLIST_SUB=	GNUNET_DAEMON_DIR=${GNUNET_DAEMON_DIR}
 SUB_FILES=	pkg-message
+NO_STAGE=	yes
 
 .include <bsd.port.options.mk>
 

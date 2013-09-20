@@ -25,4 +25,5 @@ EXTRA_CONF_ARGS=--disable-cli \
 
 MAN1=		transmission-daemon.1 transmission-remote.1
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

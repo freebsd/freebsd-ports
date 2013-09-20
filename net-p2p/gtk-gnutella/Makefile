@@ -52,6 +52,7 @@ PORTABILITY_DESC=	Use the PATH variable at run-time
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	glib20 libxml2
 USES=		bison perl5 pkgconfig

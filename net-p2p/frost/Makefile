@@ -60,6 +60,7 @@ DESKTOP_ENTRIES=	"Frost" "Freenet Client" \
 			"frost" "P2P;Network;Java;" \
 			false
 
+NO_STAGE=	yes
 pre-everything::
 
 post-patch:

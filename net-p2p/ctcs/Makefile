@@ -16,6 +16,7 @@ PLIST_FILES=	bin/ctcs share/doc/ctcs/readme.txt
 PLIST_DIRS=	share/doc/ctcs
 WRKSRC=		${WRKDIR}/ctcs-${PORTVERSION}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m 0755 \
 	${WRKSRC}/ctcs ${PREFIX}/bin/ctcs

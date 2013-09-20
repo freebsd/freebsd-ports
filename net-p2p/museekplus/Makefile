@@ -30,6 +30,7 @@ PYMUCIPHER_DESC=	Install python bindings for Mucipher
 MURMUR_DESC=		Install PyGTK client
 MUCOUS_DESC=		Install Curses Python client
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYMUCIPHER} || ${PORT_OPTIONS:MBINDINGS} || ${PORT_OPTIONS:MMURMUR} || ${PORT_OPTIONS:MCLIENTS} || ${PORT_OPTIONS:MMUCOUS}

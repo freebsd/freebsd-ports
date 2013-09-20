@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--with-pixmapsdir=${PREFIX}/share/pixmaps \
 MAN1=		gtorrentviewer.1
 DOCS=		AUTHORS COPYING ChangeLog README
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/src/main.c
 

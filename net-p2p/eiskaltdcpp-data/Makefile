@@ -26,6 +26,7 @@ EXAMPLES_DESC=		Install script examples
 LUASCRIPTS_DESC=	Install lua script examples
 SOUNDS_DESC=		Install sound files
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 DATA_DIR=	${PREFIX}/share/eiskaltdcpp

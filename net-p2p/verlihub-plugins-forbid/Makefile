@@ -1,9 +1,5 @@
-# New ports collection makefile for:	verlihub-plugins-forbid
-# Date created:				3 May 2007
-# Whom:					Skylord
-#
+# Created by: Skylord
 # $FreeBSD$
-#
 
 PORTNAME=	forbid
 PORTVERSION=	1.3
@@ -15,6 +11,7 @@ MAINTAINER=	me@skylord.ru
 
 PLUGIN_DESC=	ForbiddenWords
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/net-p2p/verlihub-plugins/Makefile.plugins"
 .include <bsd.port.post.mk>

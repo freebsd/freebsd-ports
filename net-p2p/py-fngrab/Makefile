@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	py-fngrab
-# Date created:			Mar 23, 2002
-# Whom:	      			ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	fngrab
 PORTVERSION=	0.0.4
@@ -22,6 +17,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	FreenetGrab
 
+NO_STAGE=	yes
 post-install:
 	@${MV} ${PREFIX}/bin/fngrab.py ${PREFIX}/bin/fngrab
 

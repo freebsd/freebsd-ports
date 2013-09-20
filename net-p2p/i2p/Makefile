@@ -61,6 +61,7 @@ JETTY_DISTFILE=	jetty-5.1.15.tgz
 
 SUB_FILES=	wrapper.sh
 
+NO_STAGE=	yes
 post-extract:
 	@${MKDIR} ${WRKSRC}/apps/jetty/
 	@${CP} -f ${DISTDIR}/${JETTY_DISTFILE} ${WRKSRC}/apps/jetty/

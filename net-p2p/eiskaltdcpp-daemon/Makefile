@@ -46,6 +46,7 @@ CMAKE_ARGS+=	-DCMAKE_SKIP_RPATH:BOOL=ON
 BUILD_WRKSRC=	${WRKSRC}/nasdc
 INSTALL_WRKSRC=	${WRKSRC}/nasdc
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXMLRPC}

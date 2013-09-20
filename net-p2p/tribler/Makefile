@@ -46,6 +46,7 @@ TRIBLER_DIR=	${PYTHONPREFIX_SITELIBDIR}/tribler
 APSW_DISTNAME=	apsw-3.7.14.1-r1
 APSW_DISTFILE=	${APSW_DISTNAME}.zip
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

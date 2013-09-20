@@ -20,6 +20,7 @@ PLIST_FILES=	bin/${PORTNAME}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 pre-install:
 	@${CHMOD} a+rx ${WRKSRC}/install-sh
 

@@ -29,6 +29,7 @@ LDFLAGS+=	-L${QT_LIBDIR}
 QTCFGLIBS+=	${PTHREAD_LIBS}
 CONFIGURE_ENV+=	DCLIB_CFLAGS=-I${LOCALBASE}/include
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g;\
 	    s|-D_XOPEN_SOURCE=500||g' \
