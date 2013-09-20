@@ -14,7 +14,7 @@
 # $FreeBSD$
 #
 
-VER=2.8.4
+VER=2.8.6
 
 LIBDIR=${PREFIX}/lib
 INCDIR=${PREFIX}/include/dlmalloc
