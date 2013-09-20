@@ -11,4 +11,5 @@ XORG_CAT=	driver
 USE_XORG=	kbproto
 MAN4=		kbd.4x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

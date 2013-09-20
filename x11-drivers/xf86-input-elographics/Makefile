@@ -19,4 +19,5 @@ ELO_VERSION=	1.2.4
 ELO_REVISION=	0
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

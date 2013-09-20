@@ -25,6 +25,7 @@ USE_XORG=	glproto \
 
 MAN4=		intel.4x
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(WITH_NEW_XORG)

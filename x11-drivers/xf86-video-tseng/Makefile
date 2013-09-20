@@ -11,4 +11,5 @@ COMMENT=	X.Org tseng display driver
 XORG_CAT=	driver
 MAN4=		tseng.4x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

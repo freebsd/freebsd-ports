@@ -13,4 +13,5 @@ IGNORE=		requires pciVideoPtr typedef
 XORG_CAT=	driver
 MAN4=		imstt.4x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

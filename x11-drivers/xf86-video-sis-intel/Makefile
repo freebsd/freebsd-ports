@@ -1,10 +1,5 @@
-# New ports collection makefile for:	xf86-video-sis-intel
-# Date Created:				30 May 2008
-# Whom:					Alexey Illarionov <littlesavage@orionet.ru>
-# Based on:             		x11-drivers/xf86-video-sis by flz@FreeBSD.org
-#
+# Created by: Alexey Illarionov <littlesavage@orionet.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	xf86-video-sis-intel
 PORTVERSION=	300407
@@ -27,4 +22,5 @@ XORG_CAT=	driver
 USE_XORG=	xf86dgaproto xf86driproto xineramaproto videoproto xf86miscproto xextproto glproto
 MAN4=		sis.4x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

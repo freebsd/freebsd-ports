@@ -14,4 +14,5 @@ XORG_CAT=	driver
 USE_XORG=	xextproto xf86dgaproto
 MAN4=		cyrix.4x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

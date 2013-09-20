@@ -19,4 +19,5 @@ HYPERREVISION=	6
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_xf86HyperPen.c
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

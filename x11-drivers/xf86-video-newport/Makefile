@@ -10,6 +10,7 @@ COMMENT=	X.Org newport display driver
 XORG_CAT=	driver
 MAN4=		newport.4x
 
+NO_STAGE=	yes
 post-patch:
 		${REINPLACE_CMD} -e 's|values.h|sys/limits.h|' \
 				 -e 's|MAXSHORT|SHRT_MAX|g' \

@@ -14,4 +14,5 @@ XORG_CAT=	driver
 MAN4=		magictouch.4x
 USE_AUTOTOOLS=	libtool
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

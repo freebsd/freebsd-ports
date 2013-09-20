@@ -10,4 +10,5 @@ COMMENT=	X.Org apm display driver
 XORG_CAT=	driver
 MAN4=		apm.4x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

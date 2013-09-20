@@ -10,4 +10,5 @@ COMMENT=	X.Org siliconmotion display driver
 XORG_CAT=	driver
 MAN4=		siliconmotion.4x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

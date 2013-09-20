@@ -10,4 +10,5 @@ COMMENT=	X.Org cirrus display driver
 XORG_CAT=	driver
 MAN4=		cirrus.4x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

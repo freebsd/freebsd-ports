@@ -12,4 +12,5 @@ USE_GL=		gl
 XORG_CAT=	driver
 USE_XORG=	glproto xf86driproto xf86miscproto
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

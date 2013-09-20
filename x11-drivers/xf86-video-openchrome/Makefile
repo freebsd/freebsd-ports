@@ -17,4 +17,5 @@ MAKE_ARGS+=	drivermandir=${LOCALBASE}/man/man4
 
 ONLY_FOR_ARCHS=	amd64 i386 ia64
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

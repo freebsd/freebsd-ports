@@ -16,4 +16,5 @@ MAN4=		fpit.4x
 IGNORE=		does not build with X server 1.7.7
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

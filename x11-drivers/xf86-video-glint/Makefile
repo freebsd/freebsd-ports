@@ -13,4 +13,5 @@ XORG_CAT=	driver
 USE_XORG=	xf86driproto xf86dgaproto glproto
 MAN4=		glint.4x
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
