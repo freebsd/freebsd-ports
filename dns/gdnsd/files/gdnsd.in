@@ -12,37 +12,33 @@
 #
 # gdnsd_enable (bool):	Set to NO by default.
 #				Set it to YES to enable gdnsd.
-# gdnsd_config (path):	Set to %%PREFIX%%/etc/gdnsd/config
-#				by default.
+# gdnsd_flags (str):		Set to "" by default
+#				Extra command line argument flags
 
 . /etc/rc.subr
 
 name="gdnsd"
-rcvar=`set_rcvar`
-command="%%PREFIX%%/sbin/gdnsd"
+rcvar=gdnsd_enable
 
 # set defaults
 load_rc_config $name
 : ${gdnsd_enable:="NO"}
-: ${gdnsd_config="%%PREFIX%%/etc/gdnsd/config"}
-: ${gdnsd_pidfile="%%PREFIX%%/var/run/gdnsd.pid"}
+: ${gdnsd_flags:=""}
 
-required_files=${gdnsd_config}
-command_args="-c ${gdnsd_config} start"
+command="%%PREFIX%%/sbin/gdnsd"
+command_args="${gdnsd_flags} start"
 procname=${command}
-extra_commands="checkconf"
-checkconf_cmd="gdnsd_checkconf"
-
-stop_postcmd=stop_postcmd
-
-stop_postcmd()
+reload_cmd="gdnsd_reload"
+configtest_cmd="gdnsd_checkconf"
+extra_commands="reload configtest"
+gdnsd_reload()
 {
-  rm -f ${gdnsd_pidfile}
+  ${command} ${gdnsd_flags} reload
 }
 
 gdnsd_checkconf()
 {
-  ${command} -c ${gdnsd_config} checkconf
+  ${command} ${gdnsd_flags} checkconf
 }
 
 run_rc_command "$1"
