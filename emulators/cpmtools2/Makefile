@@ -1,12 +1,8 @@
-# New ports collection makefile for:	cpmtools
-# Date created:		31 January 2008
-# Whom:			joerg
-#
+# Created by: joerg
 # $FreeBSD$
-#
 
 PORTNAME=	cpmtools
-PORTVERSION=	2.15
+PORTVERSION=	2.16
 CATEGORIES=	emulators sysutils
 MASTER_SITES=	http://www.moria.de/~michael/cpmtools/
 
@@ -17,6 +13,7 @@ LICENSE=	GPLv3
 
 LATEST_LINK=	cpmtools2
 
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--bindir=${PREFIX}/sbin \
 		--datarootdir=${DATADIR}
@@ -30,7 +27,7 @@ LIBDSK_DESC=	Access to disks and disk images support
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MLIBDISK}
+.if ${PORT_OPTIONS:MLIBDSK}
 LIB_DEPENDS+=	dsk:${PORTSDIR}/emulators/libdsk
 CONFIGURE_ARGS+=--with-libdsk=${LOCALBASE}
 .else
