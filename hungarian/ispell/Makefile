@@ -19,6 +19,7 @@ USE_GMAKE=	yes
 DOCSDIR=	${PREFIX}/share/doc/hu-ispell
 DOCS=		OLVASSEL README GYIK ChangeLog
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/tmp/magyar4ispell.hash ${DATADIR}/magyar.hash
