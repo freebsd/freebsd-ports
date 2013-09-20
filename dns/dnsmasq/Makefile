@@ -32,6 +32,7 @@ NLS_DESC=	National Language Support (NLS, enables IDN)
 IDN_DESC=	International Domain Names (IDN) WITHOUT NLS
 LUA_DESC=	Support lease-change scripts in LUA
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MIPV6)

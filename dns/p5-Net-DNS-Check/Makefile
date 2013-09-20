@@ -29,4 +29,5 @@ MAN3=	Net::DNS::Check::Test::ns_count.3 Net::DNS::Check::Test::soa_expire_compar
 	Net::DNS::Check::Test.3 Net::DNS::Check::Test::soa_refresh_compare.3 \
 	Net::DNS::Check::Test::soa_serial_syntax.3 Net::DNS::Check.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

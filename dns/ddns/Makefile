@@ -20,6 +20,7 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	sbin/ddns-server sbin/ddns-client \
 		etc/ddns_client.conf.sample etc/ddns_server.conf.sample
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ddns-client ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/ddns-server ${PREFIX}/sbin

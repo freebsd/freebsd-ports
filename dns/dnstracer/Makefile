@@ -18,6 +18,7 @@ PLIST_FILES=	bin/dnstracer
 
 OPTIONS_DEFINE=		IPV6
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

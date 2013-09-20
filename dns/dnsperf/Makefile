@@ -28,6 +28,7 @@ CFLAGS+=	-I.
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # This is a workaround for broken isc/stat.h.

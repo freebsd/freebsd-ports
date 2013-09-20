@@ -39,6 +39,7 @@ SUB_FILES=	pkg-install pkg-deinstall pkg-message
 
 OPTIONS_DEFINE=		MYSQL DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

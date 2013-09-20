@@ -35,6 +35,7 @@ CONFIGURE_ARGS+=	\
 			--without-idn \
 			--with-randomdev=/dev/random
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>

@@ -29,4 +29,5 @@ MAN3=		Net::Amazon::Route53.3 \
 		Net::Amazon::Route53::ResourceRecordSet::Change.3 \
 		Net::Amazon::Route53::Change.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

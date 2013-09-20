@@ -27,6 +27,7 @@ EXAMPLE_FILES=	ddns.py e164.py mx.py name.py reverse.py reverse_name.py \
 		xfr.py zonediff.py
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_MAJOR_VER} < 3

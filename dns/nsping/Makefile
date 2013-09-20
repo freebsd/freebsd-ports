@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nsping
-# Date created:		04 March 2000
-# Whom:			Kris Kennaway <kris@FreeBSD.org>
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nsping
 PORTVERSION=	0.8
@@ -19,6 +15,7 @@ COMMENT=	DNS "ping"
 MAN8=		nsping.8
 PLIST_FILES=	sbin/nsping
 
+NO_STAGE=	yes
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/nsping ${PREFIX}/sbin
 		${INSTALL_DATA} ${WRKSRC}/nsping.8 ${PREFIX}/man/man8

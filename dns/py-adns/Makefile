@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-adns
-# Date created:		24 February 2002
-# Whom:			Hye-Shik Chang <perky@fallin.lv>
-#
+# Created by: Hye-Shik Chang <perky@fallin.lv>
 # $FreeBSD$
-#
 
 PORTNAME=	adns
 PORTVERSION=	1.2.1
@@ -23,6 +19,7 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	adns-python
 PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(include_dirs = \).*$$|\1\["${LOCALBASE}/include"\]|g' \
 		-e 's|^\(library_dirs = \).*$$|\1\["${LOCALBASE}/lib"\]|g' \

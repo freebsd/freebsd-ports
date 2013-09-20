@@ -31,6 +31,7 @@ MAN1=	dns-terror.1 btree-dump.1 convert-dom-db.1 convert-ip-db.1 \
 	expire-ip-db.1 getdominfo.1 rebuild-dom-db.1 rebuild-ip-db.1 \
 	reresolve.1 make-report.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

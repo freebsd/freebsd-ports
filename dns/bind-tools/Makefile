@@ -17,6 +17,7 @@ BIND_TOOLS_SLAVE=	YES
 
 MAN1=	dig.1 host.1 nslookup.1
 
+NO_STAGE=	yes
 post-patch:
 	@${MV} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.presed
 	@${SED} -e 's#^SUBDIRS.*#SUBDIRS = lib bin#' \

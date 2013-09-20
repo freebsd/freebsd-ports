@@ -15,6 +15,7 @@ USE_DOS2UNIX=	yes
 USE_RC_SUBR=	dualserver
 PLIST_FILES=	sbin/dualserver etc/dualserver.conf.sample
 
+NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 

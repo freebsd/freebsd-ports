@@ -21,4 +21,5 @@ USE_PERL5=	configure
 
 MAN3=		Net::DNS::RR::SRV::Helper.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

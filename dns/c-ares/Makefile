@@ -26,6 +26,7 @@ CONFLICTS=		ares-1.*
 
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MCONFIG_INFO}

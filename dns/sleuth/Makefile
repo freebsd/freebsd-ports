@@ -16,6 +16,7 @@ SHEBANG_FILES=	sleuth
 
 PLIST_FILES=	bin/sleuth etc/sleuth.conf.sample
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/etc/sleuth.conf|${PREFIX}/etc/sleuth.conf|' \
 		${WRKSRC}/sleuth

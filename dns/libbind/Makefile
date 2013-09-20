@@ -20,6 +20,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --with-randomdev=/dev/random
 OPTIONS_DEFINE=	IPV6 THREADS
 OPTIONS_DEFAULT=	IPV6 THREADS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

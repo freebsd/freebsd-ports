@@ -20,6 +20,7 @@ PLIST_SUB+=	LIBVERSION="${LIBVERSION}"
 
 DOCS=		COPYING GPL-vs-LGPL INSTALL LICENCE.WAIVERS README README.html TODO changelog
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

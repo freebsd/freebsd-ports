@@ -32,6 +32,7 @@ MAN3=		hesiod.3 hesiod_end.3 hesiod_free_list.3 	\
 		hesiod_free_string.3 hesiod_parse_result.3
 MAN5=		hesiod.conf.5
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIDN}

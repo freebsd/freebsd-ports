@@ -18,6 +18,7 @@ USE_PYDISTUTILS=	yes
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/idnkit.so
 
+NO_STAGE=	yes
 post-patch:
 		${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		    ${WRKSRC}/setup.py

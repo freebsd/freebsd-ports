@@ -24,6 +24,7 @@ MAN5=		updatedd-wrapper.conf.5
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-disable-portdocs
 .endif
 
+NO_STAGE=	yes
 post-install:
 	@if [ ! -f ${PREFIX}/etc/updatedd-wrapper.conf ]; then \
 		${CP} -p ${PREFIX}/etc/updatedd-wrapper.conf.sample ${PREFIX}/etc/updatedd-wrapper.conf ; \

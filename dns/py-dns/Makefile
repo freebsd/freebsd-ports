@@ -24,6 +24,7 @@ PYDISTUTILS_PKGNAME=	pydns
 DOCS=		README.txt README-guido.txt
 DOCSDIR=	${PREFIX}/share/doc/py-dns
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

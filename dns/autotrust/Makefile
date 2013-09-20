@@ -1,9 +1,5 @@
-# New ports collection makefile for:	autotrust
-# Date created:		2010-01-09
-# Whom:			Jaap Akkerhuis <jaap@nlnetlabs.nl>
-#
+# Created by: Jaap Akkerhuis <jaap@nlnetlabs.nl>
 # $FreeBSD$
-#
 
 PORTNAME=	autotrust
 PORTVERSION=	0.3.1
@@ -27,6 +23,7 @@ PLIST_FILES=	sbin/autotrust \
 		etc/autotrust/autotrust.conf.sample
 PLIST_DIRS=	etc/autotrust
 
+NO_STAGE=	yes
 do-patch:
 	${REINPLACE_CMD} \
 		'45s!=!\?=!; \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	firedns
-# Date created:		Sun 12 May 22:30:00 WST 2002
-# Whom:			Dean Hollister <dean@odyssey.apana.org.au>
-#
+# Created by: Dean Hollister <dean@odyssey.apana.org.au>
 # $FreeBSD$
-#
 
 PORTNAME=	firedns
 PORTVERSION=	0.9.12
@@ -41,6 +37,7 @@ MAN3=		firedns_aton4.3 firedns_aton6.3 firedns_dnsbl_lookup.3 \
 		firedns_resolvetxt.3 firedns_resolvetxtlist.3 \
 		libfiredns.3
 
+NO_STAGE=	yes
 pre-configure:
 	@-${RM} ${WRKSRC}/firemake/*.orig
 

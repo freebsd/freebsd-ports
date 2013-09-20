@@ -21,6 +21,7 @@ USES=		perl5
 
 MAN3=		Mozilla::PublicSuffix.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

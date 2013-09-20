@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tinystats
-# Date created:				07 July 2005
-# Whom:				Filippo Natali <filippo.natali@gmail.com>
-#
+# Created by: Filippo Natali <filippo.natali@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	tinystats
 PORTVERSION=	1.1
@@ -27,6 +23,7 @@ PLIST_FILES=	bin/tinystats \
 PLIST_DIRS=	%%EXAMPLESDIR%%
 PORTDOCS=	README LICENSE THANKS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

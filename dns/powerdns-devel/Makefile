@@ -64,6 +64,7 @@ POLARSSL_DESC=		Use embedded PolarSSL
 
 OPTIONS_DEFAULT=	PGSQL DNSSEC BOTAN110 POLARSSL
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>

@@ -21,6 +21,7 @@ PORTDOCS=	CHANGELOG INSTALL NOTES README TODO gpg.asc
 
 CONFLICTS=	rbllookup-0.*
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/rbllookup.pl
 

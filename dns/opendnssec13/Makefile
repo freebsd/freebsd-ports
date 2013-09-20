@@ -36,6 +36,7 @@ SOFTHSM_DESC=		SoftHSM cryptographic store for PKCS \#11 interface
 AUDITOR_DESC=		Build with Auditor
 OPTIONS_DEFAULT=	AUDITOR
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

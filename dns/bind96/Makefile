@@ -47,6 +47,7 @@ DLZ_LDAP_DESC=		DLZ LDAP driver
 DLZ_FILESYSTEM_DESC=	DLZ filesystem driver
 DLZ_STUB_DESC=		DLZ stub driver
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if (${ARCH} == "amd64")

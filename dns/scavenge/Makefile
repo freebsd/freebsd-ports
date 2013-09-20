@@ -18,6 +18,7 @@ PLIST_FILES=	bin/scavenge
 NO_BUILD=	yes
 USES=		perl5
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/scavenge ${PREFIX}/bin
 

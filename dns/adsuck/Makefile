@@ -1,7 +1,4 @@
-# New ports collection makefile for: adsuck
-# Date created: 25 April 2011
-# Whom: Philippe Pepiot <phil@philpep.org>
-#
+# Created by: Philippe Pepiot <phil@philpep.org>
 # $FreeBSD$
 
 PORTNAME=	adsuck
@@ -30,6 +27,7 @@ SUB_FILES+=	pkg-message
 MAN8=	adsuck.8
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/adsuck ${PREFIX}/sbin/
 	@${INSTALL_MAN} ${WRKSRC}/${MAN8}.gz ${MANPREFIX}/man/man8/

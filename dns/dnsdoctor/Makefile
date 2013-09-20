@@ -32,6 +32,7 @@ PLIST_SUB+=	DNSDOCTOR_CGI=""
 .else
 PLIST_SUB+=	DNSDOCTOR_CGI="@comment "
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "Use WITH_DNSDOCTOR_CGI=yes to install with CGI support"
 .endif

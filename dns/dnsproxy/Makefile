@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dnsproxy
-# Date created:				14 January 2004
-# Whom:					Clement Laforet <clement@FreeBSD.org>
-#
+# Created by: Clement Laforet <clement@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dnsproxy
 PORTVERSION=	1.16
@@ -25,6 +21,7 @@ PLIST_FILES=	sbin/dnsproxy etc/${PORTNAME}/dnsproxy.conf.sample
 SUB_FILES=	pkg-message
 PLIST_DIRS=	%%ETCDIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

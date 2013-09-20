@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dhisd
-# Date created:				Sun Feb 25 21:13:59 CET 2001
-# Whom:					Bas Kruit <baskruit@bsltwr.dhis.org>
-#
+# Created by: Bas Kruit <baskruit@bsltwr.dhis.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dhisd
 PORTVERSION=	5.1
@@ -21,6 +17,7 @@ LDFLAGS+=	-L${PREFIX}/lib
 
 DOCFILES=	CONTRIBUTORS COPYRIGHT INSTALL MODULES README
 
+NO_STAGE=	yes
 post-patch:
 	${CP} ${FILESDIR}/dhisd.sh ${WRKSRC}/dhisd.sh
 	cd ${WRKSRC} && ${REINPLACE_CMD} -e "s^__PREFIX__^${PREFIX}^g" \

@@ -21,6 +21,7 @@ USES=		perl5
 PLIST_FILES=	bin/dnsmax-perl
 PORTDOCS=	LICENSE INSTALL README
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/dnsmax.pl ${PREFIX}/bin/dnsmax-perl
 .if !defined(NOPORTDOCS)

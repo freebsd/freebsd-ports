@@ -1,9 +1,5 @@
-# New ports collection makefile for:	posadis
-# Date Created:				27 Feb 2003
-# Whom:					Sergei Kolobov <sergei@kolobov.com>
-#
+# Created by: Sergei Kolobov <sergei@kolobov.com>
 # $FreeBSD$
-#
 
 PORTNAME=	posadis
 PORTVERSION=	0.60.5
@@ -38,6 +34,7 @@ MAN5=		posadisrc.5
 DOCS=		AUTHORS ChangeLog README TODO
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}

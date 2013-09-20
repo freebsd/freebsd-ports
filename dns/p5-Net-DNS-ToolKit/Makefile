@@ -49,4 +49,5 @@ MAN3=		Net::DNS::ToolKit.3 \
 		Net::DNS::ToolKit::RR::X25.3 \
 		Net::DNS::ToolKit::Utilities.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

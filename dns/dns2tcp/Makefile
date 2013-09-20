@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dns2tcp
-# Date created:		2008-11-23
-# Whom:			Martin Wilke <miwi@FreeBSD.org>
-#
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dns2tcp
 PORTVERSION=	0.5.2
@@ -18,4 +14,5 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/dns2tcpc bin/dns2tcpd
 MAN1=		dns2tcpc.1 dns2tcpd.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

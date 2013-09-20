@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nss_resinit
-# Date Created:		Apr 11 2006
-# Whom:			Hajimu UMEMOTO <ume@FreeBSD.org>
-#
+# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	nss_resinit
 PORTVERSION=	20060412
@@ -19,6 +15,7 @@ PLIST_FILES=	lib/nss_resinit.so lib/nss_resinit.so.1
 MAN8=		nss_resinit.8
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_COMPAT5X)
