@@ -26,6 +26,7 @@ PLIST_FILES=	bin/jpilot-db \
 		%%DATADIR%%/${PKGNAME}.jar
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/jpilot-db.sh ${PREFIX}/bin/jpilot-db
 	@${MKDIR} ${DATADIR}

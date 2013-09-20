@@ -1,7 +1,4 @@
-# New ports collection makefile for:   synce-libsynce
-# Date created:                14 June 2003
-# Whom:                        Sam Lawrance <boris@brooknet.com.au>
-#
+# Created by: Sam Lawrance <boris@brooknet.com.au>
 # $FreeBSD$
 
 PORTNAME=	libsynce
@@ -41,4 +38,5 @@ MAN7=		synce.7
 
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

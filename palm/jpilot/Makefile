@@ -30,6 +30,7 @@ USE_GNOME+=	gtk20
 
 MAN1=		jpilot-dial.1 jpilot-dump.1 jpilot-sync.1 jpilot.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

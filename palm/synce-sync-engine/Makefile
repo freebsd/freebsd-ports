@@ -1,7 +1,4 @@
-# New ports collection makefile for:	synce-sync-engine
-# Date created:				27 September 2008
-# Whom:					Alexander Logvinov <ports@logvinov.com>
-#
+# Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
 
 PORTNAME?=	sync-engine
@@ -32,6 +29,7 @@ USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	synce_sync_engine
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(ENGINE_VER) && defined(PLUGINDIR)

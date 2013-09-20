@@ -25,4 +25,5 @@ MAN3=		Palm::Address.3 \
 		Palm::StdAppInfo.3 \
 		Palm::ToDo.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

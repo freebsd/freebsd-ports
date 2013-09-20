@@ -1,9 +1,5 @@
-# New ports collection makefile for:    imgvtopgm
-# Date created:         Wed Jun 16 04:42:22 JST 1999
-# Whom:                 sumikawa@ebina.hitachi.co.jp
-#
+# Created by: sumikawa@ebina.hitachi.co.jp
 # $FreeBSD$
-#
 
 PORTNAME=	imgvtopgm
 PORTVERSION=	2.0
@@ -22,4 +18,5 @@ CONFIGUR_ARGS=	--libdir=${PREFIX}
 MAN1=		imgvinfo.1 imgvtopnm.1 imgvview.1 pbmtoimgv.1 \
 		pgmtoimgv.1 ppmimgvquant.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

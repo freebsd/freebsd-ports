@@ -1,7 +1,4 @@
-# New ports collection makefile for:   synce-librapi2
-# Date created:                14 June 2003
-# Whom:                        Sam Lawrance <boris@brooknet.com.au>
-#
+# Created by: Sam Lawrance <boris@brooknet.com.au>
 # $FreeBSD$
 
 PORTNAME=	librapi2
@@ -23,6 +20,7 @@ USES=		pathfix iconv pkgconfig
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE} --with-libsynce="${LOCALBASE}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(RAPI_SLAVE) && ${RAPI_SLAVE} == "pythonb"
