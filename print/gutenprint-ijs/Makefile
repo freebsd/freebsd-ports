@@ -1,7 +1,4 @@
-# New ports collection makefile for:	gutenprint-ijs
-# Date created:		2007-03-27
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 #    $MCom: ports/print/gutenprint-ijs/Makefile,v 1.1 2007/03/30 16:42:47 ahze Exp $
 
@@ -18,4 +15,5 @@ MASTERDIR=	${.CURDIR}/../../print/gutenprint-base
 GUT_SLAVE=	ijs
 PLIST=		${.CURDIR}/pkg-plist
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

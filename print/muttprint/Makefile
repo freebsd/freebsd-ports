@@ -46,6 +46,7 @@ PRINT_COMMAND=lpr -P$$PRINTER
 INSTALL_TARGET=install-with-doc
 .endif
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO}
 	@${ECHO} Set PAPERSIZE=a4 if you need that paper size.

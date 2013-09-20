@@ -1,9 +1,5 @@
-# New ports collection makefile for:	it-acroread8
-# Date created:		27 December 2007
-# Whom:			hrs
-#
+# Created by: hrs
 # $FreeBSD$
-#
 
 PKGNAMEPREFIX=	it-
 
@@ -12,4 +8,5 @@ DISTINFO_FILE=	${.CURDIR}/distinfo
 
 ADOBE_LANG=	ITA
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

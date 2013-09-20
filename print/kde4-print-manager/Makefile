@@ -17,4 +17,5 @@ USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT4=	network qmake_build moc_build uic_build rcc_build
 USE_XZ=		yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

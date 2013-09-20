@@ -47,6 +47,7 @@ ATALK_DESC=	remote printing on AppleTalk remote printer
 SAMBA_DESC=	remote printing on Windows remote printer
 COMPRESS_DESC=	print compressed documents
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

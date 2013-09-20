@@ -20,4 +20,5 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/libs
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

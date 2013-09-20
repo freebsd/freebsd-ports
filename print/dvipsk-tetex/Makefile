@@ -89,6 +89,7 @@ PKGINSTALL_SUB=	PAPERSIZE=${PAPERSIZE} \
 # dvipsk is not compatible with -funroll-loops on 5.x
 CFLAGS:=	${CFLAGS:N-funroll-loops}
 
+NO_STAGE=	yes
 pre-build:
 	${SED} ${PKGINSTALL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}

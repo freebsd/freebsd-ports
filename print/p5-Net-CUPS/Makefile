@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Net-CUPS
-# Date created:		2011-09-11
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-CUPS
 PORTVERSION=	0.61
@@ -26,4 +22,5 @@ MAN3=		Net::CUPS.3 \
 		Net::CUPS::IPP.3 \
 		Net::CUPS::PPD.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

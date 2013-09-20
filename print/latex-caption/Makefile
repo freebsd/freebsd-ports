@@ -1,7 +1,4 @@
-# New ports collection makefile for:	latex-caption
-# Date created:		24 Jan 2004
-# Whom:			hrs@FreeBSD.org
-#
+# Created by: hrs@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	latex-caption
@@ -41,6 +38,7 @@ PORTDOCS=	README caption.pdf caption2.pdf \
 		caption-eng.tex caption-deu.tex caption-rus.tex \
 		cat.eps elephant.eps
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	cd ${DISTDIR}/${DIST_SUBDIR} && ${CP} ${DISTFILES} ${WRKSRC}

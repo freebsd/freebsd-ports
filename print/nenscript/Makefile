@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nenscript
-# Date created:		10 November 1999
-# Whom:			cjm2
-#
+# Created by: cjm2
 # $FreeBSD$
-#
 
 PORTNAME=	nenscript
 PORTVERSION=	1.13.3
@@ -19,6 +15,7 @@ MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 MAN1=		nenscript.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

@@ -23,6 +23,7 @@ MAN1=		wprint.1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 .for file in man/wprint.1.pod src/wprint.c
 	@${REINPLACE_CMD} -e "s|/etc/wprint\.conf|${PREFIX}/etc/wprint.conf|g" \

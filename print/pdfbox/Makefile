@@ -28,6 +28,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/fontbox-${PORTVERSION}.jar	\
 		%%JAVAJARDIR%%/jempbox-${PORTVERSION}.jar	\
 		%%JAVAJARDIR%%/${PORTNAME}-app-${PORTVERSION}.jar
 
+NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR files in ${JAVAJARDIR}..."
 	@${MKDIR} ${JAVAJARDIR}

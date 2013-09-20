@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pdfcolorsplit
-# Date created:				2011-08-26
-# Whom:					Aldis Berjoza <aldis@bsdroot.lv>
-#
+# Created by: Aldis Berjoza <aldis@bsdroot.lv>
 # $FreeBSD$
-#
 
 PORTNAME=	pdfcolorsplit
 PORTVERSION=	2011.08.26
@@ -29,6 +25,7 @@ PLIST_FILES=	bin/${PORTNAME}
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/os\.system/s|pdftoppm|${LOCALBASE}/libexec/xpdf/pdftoppm|g' ${WRKSRC}/${PORTNAME}
 

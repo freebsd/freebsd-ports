@@ -28,6 +28,7 @@ CJKFONTS?=	std.ja_JP/Ryumin-Light \
 		std.zh_CN/STSong-Light \
 		std.zh_CN/MSung-Light
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${FONTSDIR}
 	cd ${WRKSRC}/fonts && \

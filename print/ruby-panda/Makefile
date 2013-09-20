@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/Panda
-# Date created:		28 March 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	panda
 PORTVERSION=	0.0.7
@@ -34,6 +30,7 @@ DOCS_JA=	ChangeLog.ja	README.ja	TODO.ja	\
 		doc/ref_ja.html	doc/ref_ja.rd
 EXAMPLES_EN=	circles.rb	main.rb		morecircles.rb	template.rb
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}

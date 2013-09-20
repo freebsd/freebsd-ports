@@ -20,4 +20,5 @@ INFO=		trueprint
 
 PLIST_FILES=	bin/trueprint
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

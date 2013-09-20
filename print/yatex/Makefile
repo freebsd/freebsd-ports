@@ -32,6 +32,7 @@ ELFILES=	comment.el yatex.el yatexadd.el yatexgen.el \
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

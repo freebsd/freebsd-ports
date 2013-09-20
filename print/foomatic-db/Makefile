@@ -1,9 +1,5 @@
-# New ports collection makefile for:	foomatic-db
-# Date created:			01 March 2003
-# Whom:				Dima Dorfman <dima@unixfreak.org>
-#
+# Created by: Dima Dorfman <dima@unixfreak.org>
 # $FreeBSD$
-#
 
 PORTNAME=	db
 PORTVERSION=	20090530
@@ -31,6 +27,7 @@ GNU_CONFIGURE=	yes
 FOOMATICVER=	4.0
 WRKSRC=	${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
+NO_STAGE=	yes
 pre-configure:
 	@cd ${WRKSRC} && ${ACLOCAL} && ${AUTOCONF}
 

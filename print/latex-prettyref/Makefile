@@ -1,9 +1,5 @@
-# New ports collection makefile for:	print/latex-prettyref
-# Date created:		19 November 2007
-# Whom:			Koji Yokota (yokota@res.otaru-uc.ac.jp)
-#
+# Created by: Koji Yokota (yokota@res.otaru-uc.ac.jp)
 # $FreeBSD$
-#
 
 PORTNAME=	latex-prettyref
 PORTVERSION=	3.0
@@ -29,6 +25,7 @@ STYFILE=	${PORTNAME:S/^latex-//}.sty
 PDFFILE=	${PORTNAME:S/^latex-//}.pdf
 MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
 
+NO_STAGE=	yes
 do-build:
 	@( cd ${WRKSRC} && tex ${INSFILE} )
 

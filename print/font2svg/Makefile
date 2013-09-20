@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	font2svg
-# Date created:			Jan 10, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	font2svg
 PORTVERSION=	1.0
@@ -23,6 +18,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/font2svg %%DATADIR%%/encodings %%DATADIR%%/font2svg.ps
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|^#!/bin/bash|#!/usr/bin/env bash| ; \
 		 s|^font2svg_home=.*$$|font2svg_home=${DATADIR}|" \

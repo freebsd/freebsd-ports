@@ -65,6 +65,7 @@ LDFLAGS+= 	-lpaper -L${LOCALBASE}/lib
 NO_MANCOMPRESS=	yes
 MAN1=	dvipdfm.1 dvipdft.1 ebb.1 extractbb.1
 
+NO_STAGE=	yes
 pre-su-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-${DISTVERSION_TEXMF}-texmf${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS_TEXMF}

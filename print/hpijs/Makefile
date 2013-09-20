@@ -24,6 +24,7 @@ OPTIONS_DEFINE=	CUPS DOCS FOOMATIC
 OPTIONS_DEFAULT=	CUPS FOOMATIC
 FOOMATIC_DESC=	Install foomatic-rip and PPD files
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCUPS} || ${PORT_OPTIONS:MFOOMATIC}

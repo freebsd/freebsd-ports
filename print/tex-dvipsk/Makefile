@@ -61,6 +61,7 @@ NO_MANCOMPRESS=	yes
 MAN1=	afm2tfm.1 dvips.1
 INFO=	dvips
 
+NO_STAGE=	yes
 pre-su-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-${DISTVERSION_TEXMF}-texmf${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS_TEXMF}

@@ -13,4 +13,5 @@ MAN7=	utopia_font.7
 
 MANCOMPRESSED=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

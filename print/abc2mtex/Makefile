@@ -1,9 +1,5 @@
-# New ports collection makefile for:	abc2mtex
-# Date created:				28 May 2001
-# Whom:					joerg
-#
+# Created by: joerg
 # $FreeBSD$
-#
 
 PORTNAME=		abc2mtex
 PORTVERSION=		1.6.1
@@ -26,6 +22,7 @@ BIN_FILES=	abc2mtex abc2mtex \
 		search abc_search \
 		sort_in abc_sort_in
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}; \
 	${MKDIR} ${TEXMF}/doc/${PORTNAME}; \

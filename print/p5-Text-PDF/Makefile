@@ -23,6 +23,7 @@ MAN3=		Text::PDF::Pages.3 Text::PDF::Page.3 Text::PDF::Name.3 \
 		Text::PDF::Utils.3 Text::PDF::TTFont.3 Text::PDF::Number.3 \
 		Text::PDF::Null.3 Text::PDF.3
 
+NO_STAGE=	yes
 post-patch:
 	@${RM} -f ${WRKSRC}/pm_to_blib
 

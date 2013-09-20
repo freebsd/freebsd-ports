@@ -32,6 +32,7 @@ OPTIONS_SINGLE_PRINTMETHOD=	LPR CUPS
 LETTER_DESC=	Use letter paper format instead of A4
 LPR_DESC=	Use lpr as printing system
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MCUPS}

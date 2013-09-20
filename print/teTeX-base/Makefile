@@ -104,6 +104,7 @@ MLINKS=	dvilj.1 dvilj2p.1 \
 
 INFO=	kpathsea latex web2c
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PLIST_SUB?=

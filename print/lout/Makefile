@@ -19,6 +19,7 @@ ALL_TARGET=	lout prg2lout
 
 MAN1=		lout.1 prg2lout.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

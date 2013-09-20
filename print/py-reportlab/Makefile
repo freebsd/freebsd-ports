@@ -1,9 +1,5 @@
-# New ports collection makefile for:	reportlab
-# Date created:		17 August 2000
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	reportlab
 PORTVERSION=	1.21.2
@@ -34,6 +30,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 DOCS=	RML_UserGuide.pdf RML_UserGuide_1_0.pdf diagradoc.pdf graphguide.pdf \
 	graphics_reference.pdf reference.pdf userguide.pdf
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/rl_config.py
 	@${REINPLACE_CMD} -e 's#with#with26#g' ${WRKSRC}/lib/PyFontify.py

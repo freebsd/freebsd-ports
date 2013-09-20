@@ -1,4 +1,3 @@
-# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Font-FreeType
@@ -19,4 +18,5 @@ MAN3=	Font::FreeType.3 \
 	Font::FreeType::Face.3 \
 	Font::FreeType::Glyph.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

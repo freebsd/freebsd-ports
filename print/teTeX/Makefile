@@ -18,6 +18,7 @@ USE_TEX=	base texmf dvipsk dvipdfmx
 OPTIONS_DEFINE=	LETTERSIZE X11
 LETTERSIZE_DESC=	Use letter size by default
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

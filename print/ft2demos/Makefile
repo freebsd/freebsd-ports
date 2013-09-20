@@ -25,6 +25,7 @@ PLIST_FILES=	${FT_PROGRAMS:S,^,bin/,}
 FT_PROGRAMS=	ftbench ftchkwd ftdiff ftdump ftgamma ftgrid ftlint ftmemchk \
 		ftmulti ftpatchk ftstring fttimer ftvalid ftview
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 FREETYPE_WRKSRC!=	cd ${PORTSDIR}/print/freetype2; ${MAKE} -V WRKSRC

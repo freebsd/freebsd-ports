@@ -30,6 +30,7 @@ SUB_LIST=	JARNAME=${PORTNAME}.jar
 
 USE_GNOME=	desktopfileutils
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${DATADIR}/${PORTNAME}.jar

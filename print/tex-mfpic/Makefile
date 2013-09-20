@@ -1,7 +1,4 @@
-# New ports collection makefile for:	tex-mfpic
-# Date created:		16 July 2011
-# Whom:			hrs
-#
+# Created by: hrs
 # $FreeBSD$
 
 PORTNAME=	mfpic
@@ -44,6 +41,7 @@ DOC_FILES=	README changes.txt install.txt doc/coil.mps \
 		doc/mfpdoc.sty doc/mfpguide.pdf doc/mfpguide.tex \
 		doc/mfpic-doc.pdf doc/mfpic-doc.tex
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKDIR} && ${YES_CMD} | ${TEX_BIN} mfpic.ins
 

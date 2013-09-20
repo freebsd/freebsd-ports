@@ -1,9 +1,5 @@
-# New ports collection makefile for:   foomatic-db-engine
-# Date created:			07 July 2003
-# Whom:				Martin Ranne <gasp@ridcully.dnsalias.org>
-#
+# Created by: Martin Ranne <gasp@ridcully.dnsalias.org>
 # $FreeBSD$
-#
 
 PORTNAME=	engine
 PORTVERSION=	4.0.7
@@ -36,6 +32,7 @@ MAN8=		foomatic-preferred-driver.8 \
 		foomatic-kitload.8 foomatic-getpjloptions.8 \
 		foomatic-addpjloptions.8
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		"s,sysconfdir=/etc,sysconfdir=\'${PREFIX}/etc\',g ; \

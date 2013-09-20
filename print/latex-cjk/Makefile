@@ -40,6 +40,7 @@ CCMAP_DESC=	CCT CCMap package (for PDFTeX's CID support)
 DVIPDFMX_DESC=	Install and configure DVIPDFMx for CJK
 UTF8ARPHIC_DESC=	Arphic free fonts in UTF-8 (no Type 1)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCCMAP}

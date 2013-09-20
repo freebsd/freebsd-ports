@@ -1,7 +1,4 @@
-# New ports collection makefile for:	latex-svninfo
-# Date created:		05 Dec 2006
-# Whom:			Henrik Brix Andersen <henrik@brixandersen.dk>
-#
+# Created by: Henrik Brix Andersen <henrik@brixandersen.dk>
 # $FreeBSD$
 
 PORTNAME=	svninfo
@@ -28,6 +25,7 @@ CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME}
 CLASS_FILES=	svninfo.sty svninfo.cfg
 PORTDOCS=	README svninfo.dvi
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:

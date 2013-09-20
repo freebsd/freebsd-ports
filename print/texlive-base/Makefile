@@ -109,6 +109,7 @@ MAN1=	afm2pl.1 allcm.1 allec.1 allneeded.1 bbox.1 bg5conv.1		\
 MAN5=	fmtutil.cnf.5 updmap.cfg.5
 INFO=	dvipng
 
+NO_STAGE=	yes
 post-patch:
 	cd ${WRKSRC} && \
 		${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	enscript (a4)
-# Date created:			24 Jul, 1997
-# Whom:				kline
-#
+# Created by: kline
 # $FreeBSD$
-#
 
 CONFLICTS=	enscript-letter-* enscript-letterdj-*
 
@@ -12,4 +8,5 @@ PS=		A4
 
 MASTERDIR=	${.CURDIR}/../enscript-letter
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

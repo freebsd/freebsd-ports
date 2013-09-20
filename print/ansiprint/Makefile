@@ -14,6 +14,7 @@ PLIST_FILES=		bin/${PORTNAME}
 
 CXXFLAGS+=		-Wno-deprecated
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/Makefile
 

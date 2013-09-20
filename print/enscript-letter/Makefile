@@ -1,9 +1,5 @@
-# New ports collection makefile for:	enscript (letter)
-# Date created:			24 Jul, 1997
-# Whom:				kline
-#
+# Created by: kline
 # $FreeBSD$
-#
 
 PORTNAME=	enscript
 PORTVERSION=	1.6.4
@@ -28,6 +24,7 @@ PAPERSIZE?=	letter
 PS?=		Letter
 
 .if (${PAPERSIZE} != a4 && ${PAPERSIZE} != letter && ${PAPERSIZE} != letterdj)
+NO_STAGE=	yes
 .BEGIN:
 	@${ECHO} "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\""
 	@${ECHO} "Possible values are:  a4, letter, or letterdj"

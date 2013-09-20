@@ -1,9 +1,5 @@
-# New ports collection makefile for:    dvips
-# Date created:         30 September 1994
-# Whom:                 jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	dvips
 PORTVERSION=	5.76
@@ -21,6 +17,7 @@ WRKSRC=		${WRKDIR}/dvips576/dvips
 IS_INTERACTIVE=	yes
 MAN1=		dvips.1 afm2tfm.1
 
+NO_STAGE=	yes
 pre-install:
 	@${MKDIR} ${PREFIX}/share/texmf
 

@@ -17,6 +17,7 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 # rlpr supports gettext/libintl, but does not currently come with ANY
 # translation .po files. When this changes, it would make sense to
+NO_STAGE=	yes
 # enable the use of gettext in this port:
 #USES=	gettext
 #CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib -lintl"

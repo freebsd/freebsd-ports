@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dot2tex
-# Date created:		2010-09-14
-# Whom:			Romain Tartiere <romain@FreeBSD.org>
-#
+# Created by: Romain Tartiere <romain@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dot2tex
 PORTVERSION=	2.8.7
@@ -22,4 +18,5 @@ USE_PYTHON=	yes
 # The .tar.gz sucks!
 USE_ZIP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

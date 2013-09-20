@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pdf
-# Date created:				2007-10-04 16:46:22
-# Whom:					Stefan Esser <se@FreeBSD.org>
-#
+# Created by: Stefan Esser <se@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pdf
 PORTVERSION=	1.13
@@ -19,4 +15,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pyPdf
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

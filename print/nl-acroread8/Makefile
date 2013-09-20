@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nl-acroread8
-# Date created:			27 December 2007
-# Whom:				hrs
-#
+# Created by: hrs
 # $FreeBSD$
-#
 
 PKGNAMEPREFIX=	nl-
 
@@ -12,4 +8,5 @@ DISTINFO_FILE=	${.CURDIR}/distinfo
 
 ADOBE_LANG=	NLD
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

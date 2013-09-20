@@ -69,6 +69,7 @@ MLINKS=		gslp.1 gsbj.1 \
 		ps2pdf.1 ps2pdf13.1 \
 		ps2ps.1 eps2eps.1
 
+NO_STAGE=	yes
 post-extract-all:
 	${LN} -sf ${WRKDIR}/${DISTNAME} ${WRKDIR}/${PORTNAME}
 

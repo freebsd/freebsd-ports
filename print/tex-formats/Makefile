@@ -18,6 +18,7 @@ TEXHASHDIRS=	${TEXMFVARDIR}
 TEX_FORMATS=	amstex context cslatex eplain latex-bin \
 		metafont mex mltex mptopdf pdftex tex texsis
 
+NO_STAGE=	yes
 do-install:
 	@${DO_NADA}
 

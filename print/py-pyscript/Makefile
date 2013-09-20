@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-script
-# Date created:		2006-04-28
-# Whom:			Nicola Vitale	<nivit@email.it>
-#
+# Created by: Nicola Vitale	<nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	pyscript
 PORTVERSION=	0.6.1
@@ -30,6 +26,7 @@ PLIST_SUB=	PORTEXAMPLES="@comment "
 PLIST_SUB=	PORTEXAMPLES=""
 .endif
 
+NO_STAGE=	yes
 post-install:
 
 .if !defined(WITHOUT_EXAMPLES)

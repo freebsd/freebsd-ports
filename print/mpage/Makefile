@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mpage
-# Date created:		19 February 1998
-# Whom:			Kapil Chowksey
-#
+# Created by: Kapil Chowksey
 # $FreeBSD$
-#
 
 # To override mpage's default paper size of A4, set PAGESIZE to another
 # page type.  Some common values include "Letter" (8.5" x 11") and
@@ -28,6 +24,7 @@ PLIST_FILES=	bin/mpage %%DATADIR%%/CP850.PC %%DATADIR%%/ISO+STD+OTH \
 		%%DATADIR%%/ISO-Latin.1 %%DATADIR%%/ISO-Latin.2
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    html2latex
-# Date created:         29-March-1996
-# Whom:                 joerg
-#
+# Created by: joerg
 # $FreeBSD$
-#
 
 PORTNAME=	html2latex
 PORTVERSION=	0.9c
@@ -19,4 +15,5 @@ MAN1=		html2latex.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/html2latex
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -28,6 +28,7 @@ DJVU_DESC=	DjVu support
 PS_DESC=	PostScript support
 OPTIONS_DEFAULT=	PDF
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDJVU}

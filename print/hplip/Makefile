@@ -81,6 +81,7 @@ SNMP_DESC=	Network/JetDirect support
 SCAN_DESC=	Scanning support
 XSANE_DESC=	Install XSane for scanning (requires SCAN)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USB_INCLUDE=	/usr/include

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	latex-circ
-# Date created:		2005-07-20
-# Whom:			Nicola Vitale <nivit@email.it>
-#
+# Created by: Nicola Vitale <nivit@email.it>
 # $FreeBSD$
-#
 
 PORTNAME=	circ
 PORTVERSION=	1.0f
@@ -43,6 +39,7 @@ FONTS_PK_DIR=	${TEXMFLOCAL}/fonts/pk/${PORTNAME}
 FONTS_MF_DIR=	${TEXMFLOCAL}/fonts/source/${PORTNAME}
 FONTS_TFM_DIR=	${TEXMFLOCAL}/fonts/tfm/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:

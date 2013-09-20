@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cdlabelgen
-# Date created:		Tue Jun 23 00:19:55 MET DST 1999
-# Whom:			Juergen Lock <nox@jelal.kn-bremen.de>
-#
+# Created by: Juergen Lock <nox@jelal.kn-bremen.de>
 # $FreeBSD$
-#
 
 PORTNAME=	cdlabelgen
 PORTVERSION=	4.2.0
@@ -26,6 +22,7 @@ MAKE_ARGS=	BASE_DIR="${PREFIX}" \
 		INSTALL_MAN="${INSTALL_MAN}" \
 		MAN_DIR="${PREFIX}/man"
 
+NO_STAGE=	yes
 do-build:
 	${PERL5} -i.bak -p -e "if (1 .. 1) {s-^#!/usr/bin/perl-#!${PERL}-;}" ${WRKSRC}/cdlabelgen
 

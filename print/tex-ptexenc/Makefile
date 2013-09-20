@@ -25,4 +25,5 @@ CONFIGURE_ARGS=	--with-system-kpathsea \
 		--with-kpathsea-includes=${LOCALBASE}/include \
 		--with-kpathsea-libdir=${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

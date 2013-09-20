@@ -23,4 +23,5 @@ USE_GNOME=	gtk20 desktopfileutils
 PLIST_FILES=	bin/pdfviewer \
 		share/applications/pdfviewer.desktop
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

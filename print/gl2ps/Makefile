@@ -15,6 +15,7 @@ USE_XORG=	x11 xmu xi
 USE_LDCONFIG=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
+NO_STAGE=	yes
 pre-build:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 

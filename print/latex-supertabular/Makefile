@@ -1,9 +1,5 @@
-# New ports collection makefile for:	latex-supertabular
-# Date created:				Aug 20 2008
-# Whom:					Jorge Niedbalski <niedbalski@gmail.com>
-#
+# Created by: Jorge Niedbalski <niedbalski@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	latex-supertabular
 PORTVERSION=	1
@@ -29,6 +25,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 CLASS_FILES=	supertabular.dtx supertabular.sty supertabular.ins
 DOC_FILES=	README MANIFEST CATALOG supertabular.pdf
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	cd ${DISTDIR}/${DIST_SUBDIR} && ${CP} ${DISTFILES} ${WRKSRC}

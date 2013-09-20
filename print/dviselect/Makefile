@@ -1,9 +1,5 @@
-# New ports collection makefile for:    dviselect
-# Date created:         12 October 1994
-# Whom:                 jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	dviselect
 PORTVERSION=	1.3
@@ -22,4 +18,5 @@ SCRIPTS_ENV=	CFLAGS="${CFLAGS}"
 MAN1=		dviselect.1
 PLIST_FILES=	bin/dviselect
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

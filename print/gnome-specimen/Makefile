@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnome-specimen
-# Date created:		2010-08-08
-# Whom:			Steve Wills <steve@mouf.net>
-#
+# Created by: Steve Wills <steve@mouf.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gnome-specimen
 PORTVERSION=	0.4
@@ -24,6 +20,7 @@ USE_AUTOTOOLS=	automake:env autoconf:env
 
 INSTALLS_ICONS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-configure:

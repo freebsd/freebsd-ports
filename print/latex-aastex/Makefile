@@ -1,9 +1,5 @@
-# New ports collection makefile for:	print/latex-aastex
-# Date created:		14 November 2007
-# Whom:			Koji Yokota (yokota@res.otaru-uc.ac.jp)
-#
+# Created by: Koji Yokota (yokota@res.otaru-uc.ac.jp)
 # $FreeBSD$
-#
 
 PORTNAME=	latex-aastex
 PORTVERSION=	5.2
@@ -30,6 +26,7 @@ PSDOCS=		aasguide.ps aassymbols.ps
 TXTDOCS=	README
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
+NO_STAGE=	yes
 pre-install:
 .for _DVIDOC in ${DVIDOCS}
 	( cd ${WRKSRC}/${DISTNAME} && \

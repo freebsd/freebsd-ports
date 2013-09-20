@@ -25,6 +25,7 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${PREFIX}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${PREFIX}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${SLAVE_PORT}=="yes"

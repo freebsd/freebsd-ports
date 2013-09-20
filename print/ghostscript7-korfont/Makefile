@@ -20,6 +20,7 @@ USE_GHOSTSCRIPT_RUN=	7
 NO_BUILD=		yes
 DEPENDS_ARGS+=		-DA4
 
+NO_STAGE=	yes
 do-install:
 	@${DO_NADA}
 

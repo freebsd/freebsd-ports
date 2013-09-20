@@ -1,9 +1,5 @@
-# New ports collection makefile for:	biblio-py
-# Date created:				10 May, 2009
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	biblio-py
 PORTVERSION=	0.6.1
@@ -17,4 +13,5 @@ COMMENT=	A package to manage bibliography written in python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

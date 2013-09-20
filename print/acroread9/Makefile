@@ -1,9 +1,5 @@
-# New ports collection makefile for:	acroread9
-# Date created:		28 March 2009
-# Whom:			hrs
-#
+# Created by: hrs
 # $FreeBSD$
-#
 
 PORTNAME=	acroread9
 PORTVERSION?=	9.5.5
@@ -77,6 +73,7 @@ INSTALLEXEC=	${SETENV} UNAME_s=Linux \
 MAN1=		acroread.1
 MANCOMPRESSED=	yes
 MANINSTALLDIR=	man/${MANLANG}
+NO_STAGE=	yes
 post-man-install:
 	${MKDIR} ${MANPREFIX}/${MANINSTALLDIR}/man1
 	${LN} -s -f \

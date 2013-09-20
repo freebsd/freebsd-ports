@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	dvisvg
-# Date created:			Apr 15, 2005
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	dvisvg
 DISTVERSION=	0.7.1d
@@ -34,6 +29,7 @@ MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 PLIST_FILES=	bin/dvisvg
 MAN1=	dvisvg.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/share/texmf,${LOCALBASE}/${TEXMFLOCAL}," ${WRKSRC}/version.h
 

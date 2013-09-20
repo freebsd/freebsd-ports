@@ -1,7 +1,4 @@
-# Ports collection makefile for:	rubygem-prawn-graph
-# Date created:				December 16, 2010
-# Whom:					Philip M. Gollucci <pgpollucci@p6m7g8.com>
-#
+# Created by: Philip M. Gollucci <pgpollucci@p6m7g8.com>
 # $FreeBSD$
 
 PORTNAME=	prawn-graph
@@ -18,4 +15,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

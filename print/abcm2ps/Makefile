@@ -20,6 +20,7 @@ PLIST_FILES=	bin/abcm2ps %%DATADIR%%/fbook.fmt %%DATADIR%%/fonts.fmt \
 		%%DATADIR%%/tight.fmt %%DATADIR%%/musicfont.fmt
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/abcm2ps ${PREFIX}/bin/
 	@${MKDIR} ${DATADIR}

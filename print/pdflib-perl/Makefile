@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pdflib-perl
-# Date created:		05 April 2003
-# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-perl
 
@@ -13,4 +9,5 @@ MASTERDIR=	${.CURDIR}/../pdflib
 
 OPTIONS_DEFAULT=PERL
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

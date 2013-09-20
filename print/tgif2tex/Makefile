@@ -28,6 +28,7 @@ OPTIONS_DEFINE=	DOCS
 USES=		perl5
 USE_PERL5=	run
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:

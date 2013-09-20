@@ -1,7 +1,4 @@
-# New ports collection makefile for:	latex-keystroke
-# Date created:		24 Jan 2004
-# Whom:			hrs@FreeBSD.org
-#
+# Created by: hrs@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	latex-keystroke
@@ -33,6 +30,7 @@ CLASS_FILES=	key-test.pdf key-test.tex keystroke.sty \
 		keystroke_left.eps keystroke_left.pdf keystroke_middle.eps \
 		keystroke_middle.pdf keystroke_right.eps keystroke_right.pdf
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}
 	${INSTALL_DATA} ${CLASS_FILES:S@^@${DISTDIR}/${DIST_SUBDIR}/@} ${PREFIX}/${CLASSDIR}

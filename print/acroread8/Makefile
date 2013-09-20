@@ -1,9 +1,5 @@
-# New ports collection makefile for:	acroread8
-# Date created:		20 October 2007
-# Whom:			hrs
-#
+# Created by: hrs
 # $FreeBSD$
-#
 
 PORTNAME=	acroread8
 PORTVERSION=	8.1.7
@@ -73,6 +69,7 @@ INSTALLEXEC=	${SETENV} UNAME_s=Linux \
 			UNAME_r="Linux Compatibility on FreeBSD" \
 			${SH} ./INSTALL --install_path=${INSTALLDIR} > /dev/null
 
+NO_STAGE=	yes
 pre-install:
 	@${MKDIR} ${WRKDIR}/bin
 	@${INSTALL_SCRIPT} \

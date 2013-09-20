@@ -21,6 +21,7 @@ USES=		perl5
 
 MAN3=		PostScript::PPD.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/lj4515.ppd/d' ${WRKSRC}/t/30_difficult.t
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cm-super
-# Date created:		27 June 2006
-# Whom:			hrs
-#
+# Created by: hrs
 # $FreeBSD$
-#
 
 PORTNAME=	cm-super
 PORTVERSION=	0.3.4
@@ -55,6 +51,7 @@ MAPFILES=	cm-super-t1.map \
 		cm-super-ts1.map \
 		cm-super-x2.map
 
+NO_STAGE=	yes
 do-build:
 .if !defined(WITHOUT_X11)
 	${TOUCH} ${WRKSRC}/pfb/fonts.dir

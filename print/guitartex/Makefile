@@ -19,6 +19,7 @@ RUN_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk \
 USES=		perl5
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-configure:
 	@${REINPLACE_CMD} -e 's!/usr/local/lib/guitartex!${DATADIR}!g' ${WRKSRC}/gtx2tex.pl
 	@${REINPLACE_CMD} -e 's!/usr/local/lib/guitartex!${DATADIR}!g' ${WRKSRC}/guitartex.pl

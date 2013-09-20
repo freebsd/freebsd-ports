@@ -31,6 +31,7 @@ INSTALLS_ICONS=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/gstrfuncs.h|glib.h|g' \
 		${WRKSRC}/gp_cppsupport/gprinter.cpp

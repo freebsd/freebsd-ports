@@ -112,6 +112,7 @@ XML_FILES=	driver/foo2hiperc.xml \
 EXTRACT_AFTER_ARGS+=	--exclude '${FILES}'
 .endfor
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS|CFLAGS?|g' -e 's|^PREFIX|PREFIX?|g' ${WRKSRC}/icc2ps/Makefile
 

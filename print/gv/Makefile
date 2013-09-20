@@ -1,4 +1,4 @@
-# Created by: tg@freebsd.org
+# Created by: tg@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	gv
@@ -34,6 +34,7 @@ PLIST_FILES=	bin/gv \
 PLIST_DIRS=	%%DATADIR%%/safe-gs-workdir \
 		%%DATADIR%%
 
+NO_STAGE=	yes
 post-install:
 	@${TOUCH} ${DATADIR}/safe-gs-workdir/.keep_me
 

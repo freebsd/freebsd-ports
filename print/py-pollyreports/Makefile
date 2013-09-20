@@ -23,6 +23,7 @@ OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
 OPTIONS_DEFINE=	REPORTLAB
 REPORTLAB_DESC=	Install Reportlab2
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREPORTLAB}

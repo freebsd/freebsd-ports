@@ -24,6 +24,7 @@ CLASS_SUBDIRS=	base emulation emacs examples extensions lyx themes
 DOC_SUBDIRS=	AUTHORS ChangeLog FILES INSTALL README TODO \
 		doc solutions
 
+NO_STAGE=	yes
 pre-install:
 	${RM} -f ${PLIST}
 	${TOUCH} ${PLIST}

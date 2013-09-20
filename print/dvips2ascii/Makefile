@@ -1,9 +1,5 @@
-# New ports collection makefile for:    dvips2ascii
-# Date created:         7 Aug 1997
-# Whom:                 eserte@cs.tu-berlin.de
-#
+# Created by: eserte@cs.tu-berlin.de
 # $FreeBSD$
-#
 
 PORTNAME=	dvips2ascii
 PORTVERSION=	1.3
@@ -15,6 +11,7 @@ COMMENT=	PostScript (created by dvips) to ASCII converter
 
 PLIST_FILES=	bin/dvips2ascii
 
+NO_STAGE=	yes
 do-build:
 	${MV} ${WRKSRC}/dvips2ascii ${WRKSRC}/dvips2ascii.orig
 	${SED} -e 's;#!.*perl;#!${PERL};' \

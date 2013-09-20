@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pdflib
-# Date created:		Wed Jan 9 12:27:54 CET 2002
-# Whom:			Alex Dupre <sysadmin@alexdupre.com>
-#
+# Created by: Alex Dupre <sysadmin@alexdupre.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pdflib
 PORTVERSION=	7.0.5
@@ -28,6 +24,7 @@ CONFIGURE_ARGS=	--with-py=no --with-ruby=no --with-tcl=no
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"

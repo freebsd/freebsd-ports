@@ -17,4 +17,5 @@ USES=		gmake pkgconfig
 USE_GNOME=      gnomeprefix gnomehack libglade2 libgnomeui
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

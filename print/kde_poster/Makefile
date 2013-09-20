@@ -1,9 +1,5 @@
-# New ports collection makefile for:	poster
-# Date created:		7 March 2008
-# Whom:			Bruce M. Simpson <bms@FreeBSD.org>
-#
+# Created by: Bruce M. Simpson <bms@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	kde_poster
 PORTVERSION=	1.0
@@ -26,6 +22,7 @@ CONFLICTS?=	poster-[0-9]*
 MAN1=		poster.1
 PLIST_FILES=	bin/poster
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.1 ${PREFIX}/man/man1/
