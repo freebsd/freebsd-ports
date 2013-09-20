@@ -23,4 +23,5 @@ MAKE_ENV+=	NOPORTDOCS=yes
 MAKE_ENV+=	NOPORTEXAMPLES=yes
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -22,6 +22,7 @@ MAKEFILE=	makefile
 
 PLIST_FILES=	bin/triangle bin/showme
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${PLIST_FILES:S|^bin|${WRKSRC}|} ${PREFIX}/bin
 

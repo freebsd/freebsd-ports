@@ -18,6 +18,7 @@ USE_LDCONFIG=	yes
 BUILDENV=	${SETENV} TMPDIR="${TMPDIR}"
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386" || ${ARCH} == "powerpc"

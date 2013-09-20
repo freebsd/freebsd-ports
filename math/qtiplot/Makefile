@@ -40,6 +40,7 @@ PYTHON_DESC=	Python scripting support
 
 STRIP_FILES=	bin/qtiplot share/qtiplot/fitPlugins/*.so.1.0.0
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}

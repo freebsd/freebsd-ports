@@ -28,6 +28,7 @@ MAXIMA_DESC=	Maxima backend
 OCTAVE_DESC=	Octave backend
 R_DESC=		R backend
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMAXIMA}

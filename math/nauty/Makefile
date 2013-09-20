@@ -17,6 +17,7 @@ USE_CSTD=	gnu89
 GNU_CONFIGURE=	YES
 PORTDOCS=	nug.pdf
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|-O4 -march=i686|${CFLAGS}|' \
 		${WRKSRC}/${MAKEFILE}

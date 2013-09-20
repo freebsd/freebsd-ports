@@ -1,9 +1,5 @@
-# New ports collection makefile for:	simd-viterbi
-# Date created:		29 Jun 2005
-# Whom:			Thomas Sandford <freebsduser@paradisegreen.co.uk>
-#
+# Created by: Thomas Sandford <freebsduser@paradisegreen.co.uk>
 # $FreeBSD$
-#
 
 PORTNAME=	simd-viterbi
 PORTVERSION=	2.0.3
@@ -25,6 +21,7 @@ PLIST_FILES=	include/parity.h include/viterbi27.h include/viterbi29.h \
 		lib/libviterbi.a lib/libviterbi.so lib/libviterbi.so.2
 PLIST=		${WRKDIR}/pkg-plist
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != i386 || defined(PACKAGE_BUILDING)

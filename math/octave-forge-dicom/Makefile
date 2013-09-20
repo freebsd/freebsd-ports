@@ -18,6 +18,7 @@ OCTSRC=		${OCTAVE_PKGNAME}
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 GDCM_MAJ=	2.2
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} s/gdcm-2.0/gdcm-${GDCM_MAJ}/ \
 		${WRKSRC}/dicominfo.cpp ${WRKSRC}/dicomdict.cpp \

@@ -16,6 +16,7 @@ USE_DOS2UNIX=	yes
 
 MAN3=		Math::Bezier::Convert.3
 
+NO_STAGE=	yes
 post-configure:
 	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
 

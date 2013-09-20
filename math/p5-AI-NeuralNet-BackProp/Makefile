@@ -1,9 +1,5 @@
-# New ports collection makefile for:	AI-NeuralNet-BackProp
-# Date created:				15 Nov 2000
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	AI-NeuralNet-BackProp
 PORTVERSION=	0.89
@@ -21,4 +17,5 @@ USE_PERL5=	configure
 
 MAN3=		AI::NeuralNet::BackProp.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

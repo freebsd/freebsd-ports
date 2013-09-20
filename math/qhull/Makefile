@@ -19,6 +19,7 @@ MAN1=	qhull.1 rbox.1
 
 CONFLICTS=	qhull-1.0* afni-[0-9]*
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's#share/man/man#man/man#g' \
 		${WRKSRC}/CMakeLists.txt

@@ -24,6 +24,7 @@ OCTAVE_DESC=Enable compilation of MEX files for Octave
 MATLAB_DESC=	Enable compilation of MEX files for MATLAB
 OPTIONS_DEFAULT=	OCTAVE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MMATLAB)

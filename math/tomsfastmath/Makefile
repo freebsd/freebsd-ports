@@ -18,6 +18,7 @@ ALL_TARGET=	default
 
 PLIST_FILES=	include/tfm.h lib/libtfm.a
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "sparc64"

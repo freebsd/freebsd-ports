@@ -17,6 +17,7 @@ PLIST_SUB=	DOCSDIR="share/doc/${PORTNAME}" DATADIR="share/${PORTNAME}"
 
 DOCSLIST=	NOTES readme
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|operm5\.cov|${DATADIR}/operm5.cov|g;' \
 		${WRKSRC}/cdoperm5.c

@@ -32,6 +32,7 @@ WXAGGBACKEND_DESC=	WXAgg backend support
 
 UNIQUENAME=	${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(PACKAGE_BUILDING) && \

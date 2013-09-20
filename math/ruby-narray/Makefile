@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby-NArray
-# Date created:		1 Feb 2001
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	narray
 PORTVERSION=	0.6.0.1
@@ -25,6 +21,7 @@ INSTALL_TARGET=	site-install
 DOC_EN=		ChangeLog	README.en	SPEC.en
 DOC_JA=		README.ja	SPEC.ja
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja

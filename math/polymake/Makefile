@@ -41,6 +41,7 @@ CONFIGURE_ARGS+=	--prefix='${PREFIX}' --datadir='${DATADIR}' \
 
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 501400

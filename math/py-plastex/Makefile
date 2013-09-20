@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-plastex
-# Date created:		2008-10-04
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	plastex
 PORTVERSION=	0.9.2
@@ -20,4 +16,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	plasTeX
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

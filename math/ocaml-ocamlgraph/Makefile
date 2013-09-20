@@ -1,4 +1,4 @@
-# Created by: Joseph Koshy <jkoshy@freebsd.org>
+# Created by: Joseph Koshy <jkoshy@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ocamlgraph
@@ -31,6 +31,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 PORTSCOUT=	skipv:1.81
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUI}

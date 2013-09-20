@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--program-prefix=
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,}
 
+NO_STAGE=	yes
 post-install:
 	@${LN} -s ${DATADIR}/wxmaxima.png ${PREFIX}/share/pixmaps/wxmaxima.png
 	@${LOCALBASE}/bin/desktop-file-install \

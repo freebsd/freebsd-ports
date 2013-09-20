@@ -28,6 +28,7 @@ PLIST_FILES=	include/parmetis/parmetis.h \
 		lib/parmetis/libmetis.a lib/parmetis/libparmetis.a
 PLIST_DIRS=	include/parmetis lib/parmetis
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENMPI}

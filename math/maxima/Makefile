@@ -46,6 +46,7 @@ CMUCL_DESC=	Build with CMU Common Lisp
 GCL_DESC=	Build with GNU Common Lisp
 SBCL_DESC=	Build with Steel Bank Common Lisp
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Lisp to build with. Define only ONE of these!

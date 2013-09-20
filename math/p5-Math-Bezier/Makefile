@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Math-Bezier
-# Date created:				Wed Jan  3 10:40:02 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Math-Bezier
 PORTVERSION=	0.01
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Math::Bezier.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

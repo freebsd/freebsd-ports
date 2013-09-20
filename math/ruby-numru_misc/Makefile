@@ -1,9 +1,5 @@
-# New ports collection makefile for:	RubyNumruMisc
-# Date created:		14 March 2004
-# Whom:			Shin'ya Murakami <murakami@ahs.scitec.kobe-u.ac.jp>
-#
+# Created by: Shin'ya Murakami <murakami@ahs.scitec.kobe-u.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	numru_misc
 PORTVERSION=	0.1.1
@@ -29,6 +25,7 @@ NO_BUILD=	yes
 
 DOCS=		ChangeLog LICENSE.txt doc/*
 
+NO_STAGE=	yes
 do-install:
 	@cd ${WRKSRC}/ && ${RUBY} ./install.rb
 

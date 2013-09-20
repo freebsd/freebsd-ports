@@ -18,6 +18,7 @@ MAKE_ARGS=	INCLUDES="`fltk-config --cflags` -I." \
 
 PLIST_FILES=	bin/mbasecalc
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mbasecalc ${PREFIX}/bin
 

@@ -39,6 +39,7 @@ PKGNAMEPREFIX=	${WITH_LANG}-
 PLIST_SUB=	LANG=${WITH_LANG}
 GLOCATE=	${DATADIR}-${WITH_LANG}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::

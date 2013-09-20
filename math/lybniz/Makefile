@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lybniz
-# Date created:		3 November 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	lybniz
 PORTVERSION=	1.3.2
@@ -18,6 +14,7 @@ USE_PYTHON=	yes
 USE_GNOME=	pygtk2 gnomehier
 USE_PYDISTUTILS=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g'\
 		${WRKSRC}/${PORTNAME}.py

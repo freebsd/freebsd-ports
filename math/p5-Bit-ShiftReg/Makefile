@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Bit-ShiftReg
-# Date created:				Mon Jan  1 10:24:49 2001
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	Bit-ShiftReg
 PORTVERSION=	2.0
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Bit::ShiftReg.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

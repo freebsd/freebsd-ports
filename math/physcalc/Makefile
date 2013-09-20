@@ -22,6 +22,7 @@ SRCS=		physconv.c physmain.c physmlib.c physnode.c physoper.c \
 		physsolv.c
 CFLAGS+=	-Wno-return-type
 
+NO_STAGE=	yes
 pre-build:
 	${REINPLACE_CMD} -e "s@void main@int main@g" ${WRKSRC}/physmain.c
 

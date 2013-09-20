@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	newmat
-# Date created:			Dec 6, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	newmat
 PORTVERSION=	1.1
@@ -22,6 +17,7 @@ MAKEFILE=	nm_gnu.mak
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 ALL_TARGET=	everything
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/${PORTNAME}

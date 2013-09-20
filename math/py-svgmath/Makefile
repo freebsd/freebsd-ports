@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-svgmath
-# Date created:		23 May,2009
-# Whom:			Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	svgmath
 PORTVERSION=	0.3.3
@@ -19,4 +15,5 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	SVGMath
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

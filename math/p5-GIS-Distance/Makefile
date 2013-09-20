@@ -32,4 +32,5 @@ MAN3=		GIS::Distance.3 \
 		GIS::Distance::Formula::Polar.3 \
 		GIS::Distance::Formula::Vincenty.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

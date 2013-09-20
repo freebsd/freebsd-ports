@@ -1,9 +1,5 @@
-# New ports collection makefile for:	primegen
-# Date created:				Fri Mar 27 2009 12:04:22 UTC
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	primegen
 PORTVERSION=	0.97
@@ -31,6 +27,7 @@ PLIST_FILES+=	${HEADER_FILES:S,^,include/,}
 # libraries
 PLIST_FILES+=	${LIB_FILES:S,^,lib/,}
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -type f -exec \
 		${REINPLACE_CMD} -E -e 's!(primegen.a)!lib\1!' {} \;

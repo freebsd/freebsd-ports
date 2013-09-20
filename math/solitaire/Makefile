@@ -1,9 +1,5 @@
-# New ports collection makefile for:	solitaire
-# Date created:			11 June 2001
-# Whom:				dd
-#
+# Created by: dd
 # $FreeBSD$
-#
 
 PORTNAME=	solitaire
 PORTVERSION=	19980817
@@ -19,6 +15,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 STRIP=
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} -r ${DISTDIR}/sol.pl ${DISTDIR}/sol-test.txt ${WRKDIR}

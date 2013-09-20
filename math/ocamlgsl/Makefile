@@ -1,9 +1,5 @@
-# Ports collection makefile for:	ocamlgsl
-# Date created:				2011/04/10
-# Whom:					Klaus T. Aehlig <aehlig@linta.de>
-#
+# Created by: Klaus T. Aehlig <aehlig@linta.de>
 # $FreeBSD$
-#
 
 PORTNAME=	ocamlgsl
 PORTVERSION=	0.6.0
@@ -32,4 +28,5 @@ MAKE_JOBS_UNSAFE=	yes
 NO_OCAML_BUILDDEPENDS=	yes
 USE_OCAML_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

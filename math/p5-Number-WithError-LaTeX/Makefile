@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Number-WithError-LaTeX
-# Date created:				15 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Number-WithError-LaTeX
 PORTVERSION=	0.06
@@ -27,4 +23,5 @@ MAN3=	Number::WithError::LaTeX.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -26,6 +26,7 @@ LIBFILES=	BST.pm Board.pm Collection.pm Configurable.pm DCEdge.pm \
 USES=		shebangfix perl5
 SHEBANG_FILES=	algotutor
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,!!SITE_PERL!!,${SITE_PERL},' \
 		-e 's|!!PREFIX!!|${PREFIX}|g' \

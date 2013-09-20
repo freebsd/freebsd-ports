@@ -16,6 +16,7 @@ USE_QT4=	designer gui network script svg xml \
 USES=		cmake
 CMAKE_ARGS+=	-DWITH_UseRPMTools:Bool=Off
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/COMMAND "lrelease"/s,lrelease,$${QT_LRELEASE_EXECUTABLE},' \
 		${WRKSRC}/qtoctave/src/CMakeLists.txt

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	arpack
-# Date created:         31 Jan 2003
-# Whom:			Pedro F. Giffuni
-#
+# Created by: Pedro F. Giffuni
 # $FreeBSD$
-#
 
 PORTNAME=	arpack
 PORTVERSION=	96
@@ -29,6 +25,7 @@ USE_LDCONFIG=	yes
 WRKSRC =	${WRKDIR}/ARPACK
 
 # The following lapack symbols in arpack are renamed to avoid conflicts with other
+NO_STAGE=	yes
 # lapack libraries:
 RENAMED_SYMBOLS=	cgbtf2 cgbtrf cgbtrs cgeqr2 cgttrf cgttrs clacgv \
 			clacon clacpy cladiv clahqr clange clanhs clarf \

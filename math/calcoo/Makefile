@@ -17,4 +17,5 @@ MAN1=		calcoo.1
 
 PLIST_FILES=	bin/calcoo
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

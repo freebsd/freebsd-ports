@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sc
-# Date created:			30 July 1998
-# Whom:				Heinz Tschabitscher
-#
+# Created by: Heinz Tschabitscher
 # $FreeBSD$
-#
 
 PORTNAME=	sc
 PORTVERSION=	7.16
@@ -17,6 +13,7 @@ COMMENT=	A curses-based spreadsheet program
 
 MAN1=		sc.1 psc.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

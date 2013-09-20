@@ -55,6 +55,7 @@ SCALAPACK=	-L/usr/local/lib -lscalapack -lblacs -lblacsc
 FORTRAN_LIBS=	-lgfortran
 GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%MPICC%%|${LOCALBASE}/bin/mpicc|g ; \
 				s|%%MPICXX%%|${LOCALBASE}/bin/mpicxx|g ; \

@@ -25,6 +25,7 @@ OPTIONS_DEFINE=	TEST
 OPTIONS_DEFAULT=	TEST
 TEST_DESC=	Include all test capabilities (requires MPFR)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .if make(makesum) || ${PORT_OPTIONS:MDOCS}
 DISTFILES+=	crlibm-1.0beta3.pdf:2,4 tripledoubleprocedures-1.0beta3.pdf:3,4

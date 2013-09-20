@@ -1,9 +1,5 @@
-# Ports collection makefile for:	pecl-big_int
-# Date created:				16 May 2005
-# Whom:					Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-#
+# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
 # $FreeBSD$
-#
 
 PORTNAME=	big_int
 PORTVERSION=	1.0.7
@@ -26,6 +22,7 @@ EXAMPLES=	bitset.php example.php rand.php RSA.php std_header.php
 CONFIGURE_ARGS=	--enable-big-int=shared
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${EXAMPLESDIR}

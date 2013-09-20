@@ -42,6 +42,7 @@ OPTIONS_DEFINE=	PERL
 OPTIONS_DEFAULT=PERL
 PERL_DESC=	Support Perl as extension language
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPERL}

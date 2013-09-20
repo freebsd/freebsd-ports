@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ann
-# Date created:		2010-04-23
-# Whom:			Tz-Huan Huang <tzhuan@csie.org>
-#
+# Created by: Tz-Huan Huang <tzhuan@csie.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ann
 PORTVERSION=	1.1.2
@@ -18,6 +14,7 @@ WRKSRC=		${WRKDIR}/ann_1.1.2
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libann.so.0 ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libann.a ${PREFIX}/lib

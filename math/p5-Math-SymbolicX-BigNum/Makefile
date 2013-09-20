@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Math-SymbolicX-BigNum
-# Date created:				15 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-SymbolicX-BigNum
 PORTVERSION=	0.02
@@ -23,4 +19,5 @@ MAN3=	Math::SymbolicX::BigNum.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

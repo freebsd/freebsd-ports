@@ -18,6 +18,7 @@ CONFIGURE_ARGS=	--program-prefix=g
 INFO=		units
 MAN1=		gunits.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 	 's|$$(INSTALL_PROGRAM) units_cur|${INSTALL_SCRIPT} units_cur|' \

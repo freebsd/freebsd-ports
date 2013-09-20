@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xldlas
-# Date created:         20 Dec 97
-# Whom:                 Pedro Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xldlas
 PORTVERSION=	0.85
@@ -22,6 +18,7 @@ WRKSRC=		${WRKDIR}/xldlas
 
 MAN1=	xldlas.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xldlas ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xldlas.1 ${PREFIX}/man/man1

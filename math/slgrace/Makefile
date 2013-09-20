@@ -24,6 +24,7 @@ MAKE_JOBS_UNSAFE=	yes
 PORTDOCS=	*
 PLIST_SUB=	VERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	FFTW3
 FFTW3_DESC=	Install FFTW3 library
 OPTIONS_DEFAULT=	FFTW3
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

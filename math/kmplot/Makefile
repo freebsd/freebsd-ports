@@ -19,4 +19,5 @@ USE_XZ=		yes
 
 MAN1=		kmplot.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

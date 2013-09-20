@@ -1,4 +1,3 @@
-# vim:ts=8
 # Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
 
@@ -19,4 +18,5 @@ USE_PERL5=	configure
 
 MAN3=		Math::VecStat.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

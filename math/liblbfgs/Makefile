@@ -18,6 +18,7 @@ USE_AUTOTOOLS=	autoconf:env
 OPTIONS_DEFINE=	OPTIMIZED DOCS
 OPTIMIZED_DESC=	SSE2 optimization routines
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Enable/disable compilation optimizations.

@@ -24,6 +24,7 @@ OPTIONS_DEFINE=	DEBUG DOCS
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGLPK}

@@ -28,6 +28,7 @@ USE_TK=		84
 
 LICENSE=	BSD
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WRAP) || !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX}=="-headers"

@@ -22,6 +22,7 @@ USES=		perl5
 USE_PERL5=	build
 WRKSRC =	${WRKDIR}/${DISTNAME:R}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/gnu\*)/,/;;/{/CXX=/d; /CXX_OPTIMIZE_FLAGS=/d; \
 	s/CXXFLAGS="/&$$ac_cv_env_CXXFLAGS_value /; }' \

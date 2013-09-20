@@ -14,4 +14,5 @@ COMMENT=	XY plotting tool for students, scientists, and engineers
 
 USES=		gmake motif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

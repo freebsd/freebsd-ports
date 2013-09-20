@@ -17,4 +17,5 @@ USE_LDCONFIG=	yes
 USE_ZIP=	yes
 USES=		cmake
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

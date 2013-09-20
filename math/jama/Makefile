@@ -1,9 +1,5 @@
-# Ports collection makefile for:	jama
-# Date created:				May 15, 2003
-# Whom:					Pedro F. Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro F. Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	jama
 PORTVERSION=	1.2.5
@@ -26,6 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:${PORTSDIR}/devel/tnt
 USE_ZIP=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${PREFIX}/include/tnt
 	${EXTRACT_CMD} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} \

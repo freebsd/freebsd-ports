@@ -1,9 +1,4 @@
-# New ports collection makefile for:	qtiplot-doc
-# Date created:		2006-09-08
-# Whom:			Max Brazhnikov <makc@issp.ac.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	qtiplot
 DISTVERSION=	0.9.8.9
@@ -24,6 +19,7 @@ USE_BZIP2=	yes
 DATADIR=	${PREFIX}/share/qtiplot/manual
 WRKSRC=		${WRKDIR}/${DISTNAME}/manual
 
+NO_STAGE=	yes
 post-patch:
 	cd ${WRKSRC} && ${REINPLACE_CMD} -e "s:/usr/local:${LOCALBASE}:g" \
 		docbook-en/index.docbook qtiplot.dsl qtiplot_html.xsl Makefile

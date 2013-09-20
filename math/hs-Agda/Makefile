@@ -26,6 +26,7 @@ OPTIONS_DEFINE=		EPIC
 
 EPIC_DESC=		Install the Epic compiler
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MEPIC}

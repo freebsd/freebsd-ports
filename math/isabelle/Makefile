@@ -31,6 +31,7 @@ EMACS_PKG_DESC=		Build with Emacs Packages
 
 USES=		perl5
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

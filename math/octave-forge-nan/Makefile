@@ -15,6 +15,7 @@ OCTSRC=		NaN
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 ALL_TARGET=	octave

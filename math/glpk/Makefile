@@ -27,6 +27,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-gmp
 CONFLICTS=	goblin-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIODBC} || ${PORT_OPTIONS:MMYSQL}

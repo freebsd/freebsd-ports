@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Math-RandomOrg
-# Date created:				29 May 2006
-# Whom:					Aaron Dalton <aaron@FreeBSD.org>
-#
+# Created by: Aaron Dalton <aaron@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-RandomOrg
 PORTVERSION=	0.04
@@ -23,4 +19,5 @@ MAN3=	Math::RandomOrg.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -31,4 +31,5 @@ MAN3=	Statistics::Basic.3 \
 	Statistics::Basic::_OneVectorBase.3 \
 	Statistics::Basic::_TwoVectorBase.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

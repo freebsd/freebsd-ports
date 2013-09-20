@@ -1,9 +1,5 @@
-# New ports collection makefile for:    vtk-headers
-# Date created:         10 Oct 2003
-# Whom:                 Mykola Khotyaintsev <ko@irfu.se>
-#
+# Created by: Mykola Khotyaintsev <ko@irfu.se>
 # $FreeBSD$
-#
 
 PKGNAMESUFFIX=	-headers
 
@@ -11,6 +7,7 @@ COMMENT=	The Visualization Toolkit C++ headers, CMake includes, Doxygen
 
 MASTERDIR=	${.CURDIR}/../vtk
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
 
 post-patch:

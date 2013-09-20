@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Math-FFT
-# Date created:				12 Mar 2001
-# Whom:			Mario S F Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario S F Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Math-FFT
 PORTVERSION=	1.28
@@ -19,4 +15,5 @@ USE_PERL5=	configure
 
 MAN3=		Math::FFT.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

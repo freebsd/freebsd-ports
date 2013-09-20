@@ -1,9 +1,5 @@
-# New ports collection makefile for:	topaz
-# Date created:				29 July 1997
-# Whom:					Issei Suzuki <issei@jp.FreeBSD.ORG>
-#
+# Created by: Issei Suzuki <issei@jp.FreeBSD.ORG>
 # $FreeBSD$
-#
 
 PORTNAME=	topaz
 PORTVERSION=	3.41
@@ -19,6 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XORG=	x11
 MAKEFILE=	Makefile.freebsd
 
+NO_STAGE=	yes
 post-install:
 	${LN} -sf ${PREFIX}/lib/topaz/topaz.sh ${PREFIX}/bin/topaz
 .if !defined(NOPORTEXAMPLES)

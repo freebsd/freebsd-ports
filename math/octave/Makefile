@@ -1,4 +1,4 @@
-# Created by: chuckr@freebsd.org
+# Created by: chuckr@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	octave
@@ -42,6 +42,7 @@ GNU_CONFIGURE=	yes
 INFO=		octave liboctave OctaveFAQ
 MAN1=		octave.1 mkoctfile.1 octave-config.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libopenblas.so)

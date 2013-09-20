@@ -50,6 +50,7 @@ AVX_DESC=		Support Advanced Vector Extensions (AVX)
 OPTIONS_DEFAULT=	DYNAMIC_ARCH
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(TARGET_CPU_ARCH)

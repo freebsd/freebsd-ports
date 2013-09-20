@@ -1,6 +1,4 @@
-# New ports collection makefile for:	lll_spect
-# Date created:		6 Feb. 2010
-# Whom:			bf <bf@FreeBSD.org>
+# Created by: bf <bf@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	lll_spect
@@ -25,6 +23,7 @@ NO_WRKSUBDIR=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 post-extract:
 .for _file in lll_spect lll_search
 	@${CP} ${_DISTDIR}/${_file}.C ${WRKDIR}

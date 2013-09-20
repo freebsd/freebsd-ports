@@ -14,6 +14,7 @@ COMMENT=	Very efficient SDP (semidefinite programming) solver
 
 USES=		gmake
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SRCDATE=	20090729

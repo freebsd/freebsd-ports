@@ -30,6 +30,7 @@ INFO=		eukleides
 PORTEXAMPLES=	greenwich.euk sundial.euk vonkoch.euk
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	${GREP} -lR "#!/bin/bash" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|#!/bin/bash|#!/bin/sh|g'

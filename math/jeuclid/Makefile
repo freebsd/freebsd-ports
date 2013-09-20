@@ -17,6 +17,7 @@ NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|BASEDIR=`dirname $$0`/..|BASEDIR=${DATADIR}|g' ${WRKSRC}/bin/foprep
 	${REINPLACE_CMD} -e 's|BASEDIR=`dirname $$0`/..|BASEDIR=${DATADIR}|g' ${WRKSRC}/bin/listfonts

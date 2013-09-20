@@ -17,6 +17,7 @@ USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		xgraph.1
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${PREFIX}/share/examples/xgraph
 	${INSTALL_DATA} ${WRKSRC}/examples/*.xg ${PREFIX}/share/examples/xgraph

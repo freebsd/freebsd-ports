@@ -33,6 +33,7 @@ MANDIR=		${WRKSRC}/manpages
 # 3 files extract to current directory so use post-extract to move
 # them to proper locations.
 
+NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@for file in ${EXTRACT_ONLY}; do \

@@ -43,6 +43,7 @@ SHARED_DESC=		Build a shared library and PIC archive
 STATIC_DESC=		Build a non-PIC archive
 SUPERMATRIX_DESC=	Task scheduling and parallel execution
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBLAS3_CNTL}

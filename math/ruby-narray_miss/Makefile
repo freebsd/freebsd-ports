@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby/NArrayMiss
-# Date created:		15 Febrary 2004
-# Whom:			Shin'ya Murakami <murakami@ahs.scitec.kobe-u.ac.jp>
-#
+# Created by: Shin'ya Murakami <murakami@ahs.scitec.kobe-u.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	narray_miss
 PORTVERSION=	1.2.8
@@ -30,6 +26,7 @@ NO_BUILD=	yes
 
 DOCS=		LICENSE.txt README.rdoc
 
+NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}/${PORTNAME} && ${RAKE_BIN} nongeminstall
 .if !defined(NOPORTDOCS)

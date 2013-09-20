@@ -17,4 +17,5 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-wx-config=${WX_CONFIG}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

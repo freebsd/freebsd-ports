@@ -17,6 +17,7 @@ CFLAGS+=	-fPIC
 OPTIONS_DEFINE=	FORTRAN
 FORTRAN_DESC=	Build Fortran bindings
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PLIST_FILES= 	include/matio.h \

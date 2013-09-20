@@ -1,7 +1,4 @@
-# New ports collection makefile for: ros-geometry
-# Date created:	2010-11-22
-# Whom: Rene Ladan <rene@FreeBSD.org>
-#
+# Created by: Rene Ladan <rene@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ros-geometry
@@ -53,6 +50,7 @@ MAKE_ENV+=	CPATH=${LOCALBASE}/include \
 
 MAKE_ARGS=	-i --no-rosdep --status-rate=0 --disable-logging
 
+NO_STAGE=	yes
 post-extract:
 # move 3rd-party distfiles into place
 	${MKDIR} ${WRKSRC}/bullet/build

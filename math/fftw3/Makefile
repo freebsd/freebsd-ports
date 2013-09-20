@@ -44,6 +44,7 @@ OPENMP_DESC=		Build OpenMP multithreaded libraries
 
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MOPENMP}

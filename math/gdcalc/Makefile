@@ -17,4 +17,5 @@ USES=		pkgconfig
 USE_GNOME=	gnomehier libgnomeui
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

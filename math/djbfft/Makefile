@@ -1,9 +1,5 @@
-# New ports collection makefile for:	djbfft
-# Date created:				Wed May 15 16:29:51 BRT 2002
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	djbfft
 PORTVERSION=	0.76
@@ -22,6 +18,7 @@ HEADER_FILES=	complex4.h complex8.h fftc4.h fftc8.h fftfreq.h \
 		fftr4.h fftr8.h real4.h real8.h
 LIB_FILES=	libdjbfft.a
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -type f -exec \
 		${REINPLACE_CMD} -E -e 's!(djbfft.a)!lib\1!' {} \;

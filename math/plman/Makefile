@@ -28,6 +28,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}
 FIND_DATA=	lib
 FIND_DOCS=	docs
 
+NO_STAGE=	yes
 post-patch:
 	for FILE in ${REPLACE_FILES}; do \
 	    ${REINPLACE_CMD} -e "/%%DATADIR%%/s//${DATADIR:S/\//\\\//g}/g" $${FILE} ;\

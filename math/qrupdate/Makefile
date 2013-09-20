@@ -16,6 +16,7 @@ FETCH_ARGS=	-p
 
 USES=		gmake
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	emc2
-# Date created:        16 December 2003
-# Whom:                thierry@pompo.net
-#
+# Created by: thierry@pompo.net
 # $FreeBSD$
-#
 
 PORTNAME=	emc2
 DISTVERSIONPREFIX=v
@@ -43,6 +39,7 @@ PORTEXAMPLES=	*
 
 PLIST_FILES=	bin/emc2 bin/prf_f3d
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/emc2 ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/prf_f3d ${PREFIX}/bin

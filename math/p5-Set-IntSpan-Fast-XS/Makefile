@@ -20,4 +20,5 @@ USE_PERL5=	configure
 
 MAN3=	Set::IntSpan::Fast::XS.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

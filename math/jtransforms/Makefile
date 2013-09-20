@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}/JTransforms
 
 PLIST_FILES=	%%JAVAJARDIR%%/jtransforms.jar
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/jtransforms-2.4.jar ${JAVAJARDIR}/jtransforms.jar
 

@@ -16,6 +16,7 @@ CONFIGURE_ARGS+=	--with-gmp-prefix=${PREFIX}
 CONFIGURE_ENV=	pkgconfig_libdir=${PREFIX}/libdata/pkgconfig/
 
 
+NO_STAGE=	yes
 post-install:
 	${LN} -s ${PREFIX}/lib/libcloog-isl.so.4 \
 		${PREFIX}/lib/libcloog-isl.so.0

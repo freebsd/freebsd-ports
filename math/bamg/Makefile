@@ -28,6 +28,7 @@ INSTALL_TARGET=	install-world
 BINS=		bamg bamg-g cvmsh2 drawbdmesh
 EXDIRS=		NACA012 quadloop square test
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .pre-configure:

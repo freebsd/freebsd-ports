@@ -29,6 +29,7 @@ PLIST_FILES=	${HEADERS:S|^|${HDIR}/|} lib/libspblas.a lib/libspblas.so \
 SHLIB_MAJOR=	1
 SRCS=		nist_spblas.cc
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPROFILE}

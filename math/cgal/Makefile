@@ -36,6 +36,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 
 MAN1=			cgal_create_cmake_script.1
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

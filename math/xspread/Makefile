@@ -27,6 +27,7 @@ MAN1=		xspread.1 pxspread.1
 PORTDOCS=	*
 PLIST_FILES=	bin/pxspread bin/xspread
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

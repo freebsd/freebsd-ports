@@ -15,6 +15,7 @@ USES=	cmake:outsource
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL} ${INSTALL_WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 

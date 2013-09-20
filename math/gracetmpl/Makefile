@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	GraceTMPL
-# Date created:			Oct 28, 2003
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	gracetmpl
 PORTVERSION=	0.3.2
@@ -36,6 +31,7 @@ INSTALLS_EGGINFO=	yes
 PYDISTUTILS_PKGNAME=	graceTMPL
 PYDISTUTILS_EGGINFODIR=	${PYTHON_SITELIBDIR}/graceTMPL
 
+NO_STAGE=	yes
 post-extract:
 	@${ECHO_CMD} -n > ${WRKSRC}/Makefile.defs
 

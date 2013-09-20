@@ -19,4 +19,5 @@ CONFIGURE_ENV=	UCFLAGS="${CFLAGS}"
 ALL_TARGET=	${PORTNAME}
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

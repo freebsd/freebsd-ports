@@ -35,6 +35,7 @@ WALL_TIMER_DESC=	Use less robust timing with higher resolution
 PORTSCOUT=	limitw:1,even
 WRKSRC=		${WRKDIR}/ATLAS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 #Increase ATLAS_MAXMALLOC if the atlas threaded libraries perform poorly on large problems:

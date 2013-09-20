@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ltl2ba
-# Date created:         25 May 2011
-# Whom:                 b.f. <bf@FreeBSD.org>
-#
+# Created by: b.f. <bf@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ltl2ba
 PORTVERSION=	1.1
@@ -19,6 +15,7 @@ ALL_TARGET=	ltl2ba
 CFLAGS+=	-DNXT
 PLIST_FILES=	bin/ltl2ba
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/^CC=/d' -e '/^CFLAGS=/d' ${WRKSRC}/Makefile
 

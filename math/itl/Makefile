@@ -1,9 +1,5 @@
-# Ports collection makefile for:	itl
-# Date created:			Mar 15, 2003
-# Whom:				Pedro F. Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro F. Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	itl
 PORTVERSION=	4.0.0.1
@@ -24,6 +20,7 @@ CONFIGURE_ARGS=	--with-mtl=${LOCALBASE}/include \
 		--with-blitz=${LOCALBASE}/include
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MPI) || exists(${LOCALBASE}/bin/hcp)

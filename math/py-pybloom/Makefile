@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pybloom
-# Date created:		2011-02-20
-# Whom:			Li-Wen Hsu <lwhsu@FreeBSD.org>
-#
+# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pybloom
 PORTVERSION=	1.1
@@ -19,4 +15,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bitarray>0:${PORTSDIR}/devel/py-bitarray
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

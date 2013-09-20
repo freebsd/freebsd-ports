@@ -1,9 +1,5 @@
-# New ports collection makefile for:		tablix
-# Date created:					17 October 2005
-# Whom:						amir.husaini@gmail.com
-#
+# Created by: amir.husaini@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	tablix2
 PORTVERSION=	0.3.5
@@ -33,6 +29,7 @@ LDFLAGS+=	-L${PREFIX}/lib
 MAN1=	tablix2.1 tablix2_benchmark.1 tablix2_kernel.1 tablix2_output.1 \
 	tablix2_plot.1 tablix2_test.1
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/tablix2 ${PVM_ROOT}/bin/FREEBSD/tablix2
 	${INSTALL_SCRIPT} ${WRKSRC}/src/tablix2_kernel ${PVM_ROOT}/bin/FREEBSD/tablix2_kernel

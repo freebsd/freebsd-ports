@@ -30,6 +30,7 @@ PLIST_FILES=	bin/dnsimp \
 		lib/libarpack.so.2 \
 		libdata/pkgconfig/arpack.pc
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

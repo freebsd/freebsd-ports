@@ -46,6 +46,7 @@ OPENMP_DESC=	Enable Multiprocessing
 HARU_DESC=	Enable Haru Free PDF Library
 VIGRA_DESC=	Enable 'Vision with Generic Algorithms' Library
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 LDFLAGS+=	-L${LOCALBASE}/lib -lopencv_core

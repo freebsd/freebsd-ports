@@ -1,9 +1,5 @@
-# New ports collection makefile for:    fftpack
-# Date created:         31 October 1996
-# Whom:			Pedro Giffuni S.
-#
+# Created by: Pedro Giffuni S.
 # $FreeBSD$
-#
 
 PORTNAME=	bihar
 PORTVERSION=	1.0
@@ -49,6 +45,7 @@ USE_FORTRAN=	yes
 .if !defined(NOPORTDOCS)
 PORTDOCS=	fft.doc
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/fft.doc ${DOCSDIR}

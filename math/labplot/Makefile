@@ -26,6 +26,7 @@ USE_QT4=	moc_build qmake_build rcc_build uic_build
 USES=		cmake
 CMAKE_ARGS=	-DOPJ_LIBRARY:STRING=""
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCDF}

@@ -31,6 +31,7 @@ CONFIGURE_TARGET=
 INFO=		gmp
 INFO_PATH=	${GMP_TARG}/info
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/gmp.info*
 

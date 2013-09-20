@@ -1,9 +1,5 @@
-# New ports collection makefile for:    blas
-# Date created:         27 October 1994
-# Whom:                 ljo
-#
+# Created by: ljo
 # $FreeBSD$
-#
 
 PORTNAME=	blas
 PORTREVISION=	0
@@ -16,4 +12,5 @@ BLAS_SLAVEPORT	=	yes
 
 MASTERDIR=	${.CURDIR}/../lapack
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

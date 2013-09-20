@@ -21,6 +21,7 @@ USE_PERL5=	build
 #USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"

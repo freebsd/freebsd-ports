@@ -1,9 +1,4 @@
-# New ports collection makefile for:	gmm++
-# Date created:		2008-07-23
-# Whom:			Max Brazhnikov <makc@issp.ac.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gmm++
 PORTVERSION=	4.2
@@ -24,4 +19,5 @@ LICENSE=	LGPL3
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

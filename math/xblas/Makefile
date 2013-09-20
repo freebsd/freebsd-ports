@@ -29,6 +29,7 @@ PLIST_FILES=	${HEADERS:S|^|${HDIR}/|}
 SHLIB_MAJOR=	0
 WRKSRC =	${WRKDIR}/xblas-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 M4?=	m4

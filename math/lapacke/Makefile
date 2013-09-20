@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	PROFILE XLAPACKE
 PROFILE_DESC=	Build a profiling library
 XLAPACKE_DESC=	Install interfaces to XLAPACK
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 LAPACKE_SVERSION=	1

@@ -1,9 +1,5 @@
-# New ports collection makefile for:    wingz
-# Date created:         Wed Nov 27 09:15:10 CST 1996
-# Whom:                 erich@rrnet.com
-#
+# Created by: erich@rrnet.com
 # $FreeBSD$
-#
 
 PORTNAME=	Wingz
 PORTVERSION=	142
@@ -24,6 +20,7 @@ NO_WRKSUBDIR=	yes
 
 # XXX: this is missing "${BRANDELF} -t Linux <executables>"
 
+NO_STAGE=	yes
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 

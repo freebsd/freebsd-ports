@@ -1,4 +1,4 @@
-# Created by: Stephen Montgomery-Smith <stephen@FreeBSd.org>
+# Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	octave-forge-database
@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 USE_PGSQL=	yes
 ALL_TARGET=
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 post-build:

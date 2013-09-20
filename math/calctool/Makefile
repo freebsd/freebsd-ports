@@ -1,9 +1,5 @@
-# New ports collection makefile for:	calctool-2.4pl13
-# Date created:				2 Dec 1996
-# Whom:					nsayer@quack.kfu.com
-#
+# Created by: nsayer@quack.kfu.com
 # $FreeBSD$
-#
 
 PORTNAME=	calctool
 PORTVERSION=	2.4.13
@@ -26,6 +22,7 @@ XVIEW_DESC=	Build tty version of calctool
 
 MAN1=		calctool.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

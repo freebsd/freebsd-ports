@@ -20,6 +20,7 @@ LIBSDIR?=	${DATADIR}/lib
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 post-extract:
 	# Permissions in the tar file are whacked
 	${FIND} ${WRKSRC} -type d -print | ${XARGS} ${CHMOD} 755

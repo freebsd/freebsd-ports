@@ -1,9 +1,5 @@
-# New ports collection makefile for:    xlapack
-# Date created:         6 January 2012
-# Whom:                 bf@FreeBSD.org
-#
+# Created by: bf@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	xlapack
 PORTREVISION=	0
@@ -15,4 +11,5 @@ XLAPACK_SLAVEPORT=	yes
 
 MASTERDIR=	${.CURDIR}/../lapack
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

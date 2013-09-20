@@ -1,9 +1,5 @@
-# New ports collection makefile for:   matrix
-# Date created:        27 March 2001
-# Whom:                Anton Voronin <anton@urc.ac.ru>
-#
+# Created by: Anton Voronin <anton@urc.ac.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	matrix
 PORTVERSION=	1.0
@@ -20,6 +16,7 @@ USE_ZIP=	yes
 USE_LDCONFIG=	yes
 PLIST_SUB=	LIBVERSION=1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

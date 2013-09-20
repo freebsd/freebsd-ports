@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	surf
-# Date created:			Apr 23, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	surf
 PORTVERSION=	1.0.6
@@ -33,6 +28,7 @@ PORTDOCS=	manual.sgml
 PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/${PORTNAME}.xpm
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e \

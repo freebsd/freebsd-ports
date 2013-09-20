@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	spar
-# Date created:			Jun 1, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	spar
 PORTVERSION=	0.5.10
@@ -22,6 +17,7 @@ USE_LDCONFIG=	yes
 
 MAN1=	spar.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure

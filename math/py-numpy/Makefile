@@ -34,6 +34,7 @@ MAN1=		f2py.1
 LATEST_LINK=	py-${PORTNAME}
 WRKSRC=	${WRKDIR}/${DISTNAME:S/r/rc/}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${OSVERSION} <= 703100 || \

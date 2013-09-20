@@ -24,4 +24,5 @@ MAN3=		Statistics::R::Legacy.3 \
 		Statistics::R::Win32.3 \
 		Statistics::R.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

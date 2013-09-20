@@ -25,6 +25,7 @@ FORTRANLIBS=	gfortranbegin gfortran
 MAN1=		${PORTNAME}.1
 INFO=		${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,<malloc\.h>,<stdlib.h>,' \
 		${WRKSRC}/src/mem.h \

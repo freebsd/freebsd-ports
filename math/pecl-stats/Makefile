@@ -15,4 +15,5 @@ COMMENT=	A PECL extension which with routines for statistical computation
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fxt
-# Date created:			Nov 28, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	fxt
 PORTVERSION=	2012.06.18
@@ -19,6 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

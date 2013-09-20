@@ -14,6 +14,7 @@ COMMENT=	A statistics package designed for use with the Unix shell
 
 RESTRICTED=	License does not allow mass redistribution.
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 EXTRACT_CMD=	uncompress

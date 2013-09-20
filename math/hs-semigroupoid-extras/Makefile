@@ -12,5 +12,6 @@ LICENSE=	BSD
 
 USE_CABAL=	comonad>=3 distributive>=0.2.2 groupoids>=3 semigroupoids>=3
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

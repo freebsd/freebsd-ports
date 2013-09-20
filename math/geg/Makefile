@@ -21,6 +21,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 MAN1=		geg.1
 PLIST_FILES=	bin/geg
 
+NO_STAGE=	yes
 pre-configure:
 	@cd ${WRKSRC}; ${ACLOCAL} -I ${LOCALBASE}/share/aclocal
 

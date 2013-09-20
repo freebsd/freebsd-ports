@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ccmath
-# Date created:        07 March 2001
-# Whom:                George Reid <greid@ukug.uk.freebsd.org>
-#
+# Created by: George Reid <greid@ukug.uk.freebsd.org>
 # $FreeBSD$
-#
 
 PORTNAME=	ccmath
 PORTVERSION=	2.2.1
@@ -22,6 +18,7 @@ PLIST_FILES=	include/ccmath.h lib/libccm.a lib/libccm.so lib/libccm.so.1
 SRC_DIRS=	cfit complex fft geom intg matrix roots sfunc simu sort statf \
 		tseries util xarm
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"

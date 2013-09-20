@@ -17,6 +17,7 @@ OPTIONS_DEFAULT=	IMAGE_FONTS
 IMAGE_FONTS_DESC=	Image fonts
 SPRITE_FONTS_DESC=	Sprite fonts
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MIMAGE_FONTS}
