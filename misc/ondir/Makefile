@@ -1,12 +1,8 @@
-# New ports collection makefile for:	ondir
-# Date created:		2010-01-24
-# Whom:			ports@c0decafe.net <ports@c0decafe.net>
-#
+# Created by: ports@c0decafe.net <ports@c0decafe.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ondir
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	misc
 MASTER_SITES=	http://swapoff.org/files/${PORTNAME}/
 
@@ -19,5 +15,9 @@ MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	no
 
 PLIST_FILES=	bin/${PORTNAME}
+
+do-install:
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.mk>
