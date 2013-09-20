@@ -1,0 +1,5 @@
+dClass is an indexed pattern classification engine. Unlike a search index which
+indexes your data and runs queries over it, dClass indexes your queries
+(patterns) and runs data over it, classifying the data against the patterns.
+
+WWW: https://github.com/TheWeatherChannel/dClass

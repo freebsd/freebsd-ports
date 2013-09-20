@@ -1,0 +1,29 @@
+--- ./servers/src/Makefile.orig	2013-06-21 11:07:44.000000000 +0900
++++ ./servers/src/Makefile	2013-09-14 20:13:14.000000000 +0900
+@@ -1,13 +1,13 @@
+ #compile flags 
+-CC=gcc
+-CFLAGS=-O3 -Wall -fPIC
++CC?=gcc
++CFLAGS?=-O3 -Wall -fPIC
+ RM=rm -rf
+ 
+ #varnish
+ VARNISH_SRC=/some/path/varnish/varnish-3.0.3
+-VCFLAGS=$(CFLAGS) -I$(VARNISH_SRC)/include -I$(VARNISH_SRC) -I../../src
+-PYTHON=python
+-VMODPY=$(VARNISH_SRC)/lib/libvmod_std/vmod.py
++VCFLAGS=$(CFLAGS) -I../../src
++PYTHON?=python
++VMODPY?=$(VARNISH_SRC)/lib/libvmod_std/vmod.py
+ 
+ 
+ #targets
+@@ -25,6 +25,7 @@
+ 
+ vcc_if.%:		vmod_dclass.vcc
+ 			$(PYTHON) $(VMODPY) vmod_dclass.vcc
++			[ -f extra-patch-servers__src__vcc_if.c ] && patch < extra-patch-servers__src__vcc_if.c && rm extra-patch-servers__src__vcc_if.c vcc_if.c.orig
+ 
+ libdclass.a:
+ 			$(MAKE) -C ../../src/ -f ../src/Makefile "CFLAGS=$(CFLAGS)" lib

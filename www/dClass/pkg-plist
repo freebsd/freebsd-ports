@@ -1,0 +1,19 @@
+@comment $FreeBSD$
+lib/libdclass.so
+lib/libdclass.a
+bin/dclass_client
+%%DATADIR%%/openddr/gen_dtree.sh
+%%DATADIR%%/openddr/README
+%%DATADIR%%/openddr/DeviceDataSourcePatch.xml
+%%DATADIR%%/openddr/BuilderDataSourcePatch.xml
+%%DATADIR%%/dtrees/test.dtree
+%%DATADIR%%/dtrees/openddr.dtree
+%%DATADIR%%/dtrees/browser.dtree
+%%DATADIR%%/dtrees/README
+%%DATADIR%%/README
+%%VARNISH%%lib/varnish/vmods/libvmod_dclass.so
+%%VARNISH%%%%DATADIR%%/varnish/dclass.vcl
+%%VARNISH%%@dirrmtry %%DATADIR%%/varnish
+@dirrmtry %%DATADIR%%/dtrees
+@dirrmtry %%DATADIR%%/openddr
+@dirrmtry %%DATADIR%%
