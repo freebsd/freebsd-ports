@@ -1,9 +1,5 @@
-# New ports collection makefile for: btoa
-# Date created:                      4 Apr 1996
-# Whom:                              Brent J. Nordquist <bjn@visi.com>
-#
+# Created by: Brent J. Nordquist <bjn@visi.com>
 # $FreeBSD$
-#
 
 PORTNAME=	btoa
 PORTVERSION=	5.2
@@ -20,4 +16,5 @@ MAKE_FLAGS=	DESTDIR=${PREFIX} -f
 MAKEFILE=	Makefile.sun
 MAN1=		btoa.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

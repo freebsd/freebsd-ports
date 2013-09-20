@@ -1,9 +1,5 @@
-# New ports collection makefile for:	uudeview
-# Date Created:		04 Aug 1996
-# Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
-#
+# Created by: Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	uudeview
 PORTVERSION=	0.5.20
@@ -26,6 +22,7 @@ MAN1=		uudeview.1 uuenview.1
 PORTDOCS=	HISTORY porting.notes
 PLIST_FILES=	bin/uudeview bin/uuenview
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Try and catch some of the different places that inn and cnews put inews

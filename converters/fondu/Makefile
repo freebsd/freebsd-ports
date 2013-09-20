@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fondu
-# Date created:		2009-11-14
-# Whom:			Gvozdikov Veniamin <g.veniamin@googlemail.com>
-#
+# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	fondu
 PORTVERSION=	051010
@@ -35,6 +31,7 @@ PLIST_FILES=	bin/dfont2res \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/dfont2res.1 ${MANPREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/fondu.1 ${MANPREFIX}/man/man1/

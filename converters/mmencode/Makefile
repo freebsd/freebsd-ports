@@ -21,6 +21,7 @@ MLINKS=		mmencode.1 mimencode.1
 ALL_TARGET=	mmencode
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
+NO_STAGE=	yes
 do-install:
 	@cd ${WRKSRC}		&& ${INSTALL_PROGRAM} mmencode ${PREFIX}/bin
 	@cd ${WRKSRC}/../man	&& ${INSTALL_MAN} mmencode.1 ${PREFIX}/man/man1

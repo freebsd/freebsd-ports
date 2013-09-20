@@ -17,4 +17,5 @@ USE_PERL5=	configure
 MAN1=	fix_latin.1
 MAN3=	Encoding::FixLatin.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

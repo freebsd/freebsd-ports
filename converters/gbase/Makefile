@@ -17,6 +17,7 @@ OPTIONS_DEFINE=	GTK2
 PLIST_FILES=	bin/${PORTNAME}
 USES=		pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}

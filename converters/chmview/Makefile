@@ -22,6 +22,7 @@ USE_DOS2UNIX=	chmview.c utf8.c utf8.h
 WRKSRC=		${WRKDIR}/src
 PLIST_FILES=	bin/chmview
 
+NO_STAGE=	yes
 pre-patch:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 

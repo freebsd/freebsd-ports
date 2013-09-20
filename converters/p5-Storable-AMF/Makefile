@@ -18,4 +18,5 @@ MAN3=	Storable::AMF.3 \
 	Storable::AMF3.3 \
 	Storable::AMF::Mapper.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

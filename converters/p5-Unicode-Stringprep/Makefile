@@ -27,4 +27,5 @@ MAN3=		Unicode::Stringprep.3 \
 		Unicode::Stringprep::Unassigned.3 \
 		Unicode::Stringprep::_Common.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

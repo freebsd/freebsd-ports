@@ -1,4 +1,4 @@
-# Created by: ache@freebsd.org
+# Created by: ache@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	MIME-Base64
@@ -16,4 +16,5 @@ USE_PERL5=	configure
 MAN3=		MIME::Base64.3 \
 		MIME::QuotedPrint.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

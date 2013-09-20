@@ -26,4 +26,5 @@ MAN3=		Text::Bidi.3 \
 		Text::Bidi::Array::Long.3 \
 		Text::Bidi::Paragraph.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -33,6 +33,7 @@ PLIST_FILES=	bin/gbsdconv \
 		%%DATADIR%%/gbsdconv2.png
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/gbsdconv
 

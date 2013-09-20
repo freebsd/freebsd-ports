@@ -17,4 +17,5 @@ MAN1=		mpack.1 munpack.1
 
 PLIST_FILES=	bin/mpack bin/munpack
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

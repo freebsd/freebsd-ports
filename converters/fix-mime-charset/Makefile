@@ -24,6 +24,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 MAN1=		fix-mime-charset.1
 PLIST_FILES=	bin/fix-mime-charset
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

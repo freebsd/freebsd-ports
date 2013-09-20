@@ -1,9 +1,5 @@
-# New ports collection makefile for:	rcctools
-# Date created:			20-08-2009
-# Whom:				Alex Keda <admin@lissyara.su>
-#
+# Created by: Alex Keda <admin@lissyara.su>
 # $FreeBSD$
-#
 
 PORTNAME=	rcctools
 PORTVERSION=	0.1.1
@@ -24,4 +20,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_FILES=	bin/rcc-recode
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

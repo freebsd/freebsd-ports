@@ -15,4 +15,5 @@ MAN3=		JSON::DWIW.3 JSON::DWIW::Boolean.3 JSON::DWIW::Changes.3
 USES=		perl5
 USE_PERL5=	configure
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

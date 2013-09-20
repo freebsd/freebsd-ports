@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Ruby-iconv
-# Date created:		7 Aug 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	iconv
 PORTVERSION=	${RUBY_PORTVERSION}
@@ -31,6 +27,7 @@ INSTALL_TARGET=	site-install
 
 PLIST_FILES=	${RUBY_ARCHLIBDIR:S,${PREFIX},,:S,^/,,}/iconv.so
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 RUBY_WRKDIR!=	cd ${PORTSDIR}/${RUBY_PORT}; ${MAKE} -V WRKDIR

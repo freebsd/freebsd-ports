@@ -1,9 +1,5 @@
-# New ports collection makefile for:	uudx
-# Date created:		2 June 1996
-# Whom:			ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
-#
+# Created by: ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	uudx
 PORTVERSION=	2.99
@@ -22,6 +18,7 @@ MANLANG=	ja
 MAN1=		uudx.1
 PLIST_FILES=	bin/uudx
 
+NO_STAGE=	yes
 pre-patch:
 	@${ECHO_MSG} "===>  Installing custom Makefile for ${DISTNAME}"
 	@(${CP} ${FILESDIR}/Makefile ${WRKSRC})

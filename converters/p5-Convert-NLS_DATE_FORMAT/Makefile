@@ -16,4 +16,5 @@ USES=		perl5
 
 MAN3=		Convert::NLS_DATE_FORMAT.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

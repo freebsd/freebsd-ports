@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fconv
-# Date created:		21 April 1999
-# Whom:			Chris Costello <chris@FreeBSD.org>
-#
+# Created by: Chris Costello <chris@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fconv
 PORTVERSION=	1.1
@@ -17,6 +13,7 @@ COMMENT=	Converts DOS or Mac-style files to Unix format, and vice-versa
 
 MAKE_ENV+=	INSTALLDIR=${PREFIX}/bin
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} "s|^INSTALLDIR.*=|INSTALLDIR?=|" \
 		${WRKSRC}/Makefile

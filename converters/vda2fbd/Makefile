@@ -1,9 +1,5 @@
-# New ports collection makefile for:	vda2fbd
-# Date created:		19 April 2003
-# Whom:			Pedro Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vda2fbd
 PORTVERSION=	1.0
@@ -20,6 +16,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" YACC="${YACC}"
 PORTDOCS=	model.ps.gz
 PLIST_FILES=	bin/vda2fbd
 
+NO_STAGE=	yes
 post-build:
 	cd ${WRKSRC}/../doc && ${GZIP_CMD} -c model.ps > model.ps.gz
 

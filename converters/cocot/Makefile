@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cocot
-# Date created:		24 July 2007
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	cocot
 PORTVERSION=	20120313
@@ -27,6 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 DOCS_EN=	COPYING ChangeLog
 DOCS_JA=	ChangeLog.ja README.ja
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

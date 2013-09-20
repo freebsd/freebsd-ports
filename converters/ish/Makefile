@@ -1,7 +1,4 @@
-# New ports collection makefile for:	ish
-# Date created:		13 August 1997
-# Whom:			hosokawa
-#
+# Created by: hosokawa
 # $FreeBSD$
 
 PORTNAME=	ish
@@ -19,6 +16,7 @@ MAKE_ARGS=	CFLAGS="${CFLAGS}" DEST=${PREFIX}/bin
 PLIST_FILES=	bin/ish
 ALL_TARGET=	ish
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 

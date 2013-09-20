@@ -34,4 +34,5 @@ MAN3=		Boulder.3 \
 		Stone::Cursor.3 \
 		Stone::GB_Sequence.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

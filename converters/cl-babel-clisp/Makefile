@@ -24,5 +24,6 @@ FASL_TARGET=	clisp
 FASL_BUILD=	yes
 ASDF_MODULES=	babel babel-streams
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

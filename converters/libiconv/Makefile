@@ -29,6 +29,7 @@ OPTIONS_DEFAULT=ENCODINGS
 ENCODINGS_DESC=	Include extra character sets
 PATCHES_DESC=	Apply patches to fix CP932, add EUCJP-MS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MENCODINGS}

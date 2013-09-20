@@ -17,4 +17,5 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USES=		pathfix pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

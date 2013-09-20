@@ -13,6 +13,7 @@ MAN1=		unix2dos.1 dos2unix.1
 PLIST_FILES=	bin/dos2unix bin/unix2dos
 NO_WRKSUBDIR=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/unix2dos ${PREFIX}/bin/unix2dos
 	${LN} -f ${PREFIX}/bin/unix2dos ${PREFIX}/bin/dos2unix

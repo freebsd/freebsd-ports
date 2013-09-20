@@ -23,4 +23,5 @@ MAN1=		binhex.pl.1 \
 		debinhex.pl.1
 MAN3=		Convert::BinHex.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

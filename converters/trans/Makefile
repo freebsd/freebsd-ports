@@ -14,6 +14,7 @@ LIBDIR=		${PREFIX}/lib/trans
 MAN1=		transhtm.1 transiso.1 transce8.1 transtab.1 checkiso.1 \
 		checkuni.1
 
+NO_STAGE=	yes
 post-patch:
 # Fix the build against arbitrary make(1) implementation
 	@${REINPLACE_CMD} -e 's/cd src ; make/$$(MAKE) -C src/' \

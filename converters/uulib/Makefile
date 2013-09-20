@@ -1,9 +1,5 @@
-# New ports collection makefile for:	uulib
-# Date Created:		04 Aug 1996
-# Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
-#
+# Created by: Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	uulib
 PORTVERSION=	0.5.20
@@ -33,6 +29,7 @@ DOCFILES=	HISTORY doc/Makefile doc/README doc/binhex.fig \
 		doc/library.ltx doc/structure.fig doc/td-v1.c doc/td-v2.c \
 		doc/td-v3.c doc/test.txt
 
+NO_STAGE=	yes
 post-patch:
 	@${SED} -e 's,FUNKYTOKENHERE,${PREFIX}/,' \
 		< ${FILESDIR}/uulib.3 > ${WRKDIR}/uulib.3

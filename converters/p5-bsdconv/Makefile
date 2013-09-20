@@ -24,6 +24,7 @@ USE_PERL5=	configure
 
 MAN3=		bsdconv.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/Makefile.PL
 

@@ -14,4 +14,5 @@ LIB_DEPENDS=	biconv.2:${PORTSDIR}/converters/iconv
 
 USES=		perl5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

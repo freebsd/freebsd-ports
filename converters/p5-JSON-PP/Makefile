@@ -23,6 +23,7 @@ MAN3=		JSON::PP.3 \
 
 SUB_FILES=	pkg-install
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

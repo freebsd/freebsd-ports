@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-pisa
-# Date created:		15 Aug, 2009
-# Whom:			Wen Heping <wenheping@wenheping.com>
-#
+# Created by: Wen Heping <wenheping@wenheping.com>
 # $FreeBSD$
-#
 
 PORTNAME=	pisa
 PORTVERSION=	3.0.33
@@ -22,4 +18,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>=0.11.1:${PORTSDIR}/www/py-html5lib
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
