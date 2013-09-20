@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lshell
-# Date created:		2009-08-01
-# Whom:			Sylvio Cesar <scjamorim@bsd.com.br>
-#
+# Created by: Sylvio Cesar <scjamorim@bsd.com.br>
 # $FreeBSD$
-#
 
 PORTNAME=	lshell
 PORTVERSION=	0.9.15.1
@@ -22,6 +18,7 @@ MAN1=	lshell.1
 
 PORTDOCS=	CHANGES COPYING README
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g; \
 		s|share/man|${LOCALBASE}/man|g; 45d' ${WRKSRC}/setup.py

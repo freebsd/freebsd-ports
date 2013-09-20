@@ -20,6 +20,7 @@ USE_PERL5=	configure
 MAN3=		Term::ShellUI.3 \
 		Text::Shellwords::Cursor.3
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}/

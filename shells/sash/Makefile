@@ -1,4 +1,4 @@
-# Created by: Patrick Gardella <patrick@freebsd.org>
+# Created by: Patrick Gardella <patrick@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	sash
@@ -11,6 +11,7 @@ COMMENT=	A Stand-Alone shell combining many common utilities
 
 MAN1=		sash.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sash ${PREFIX}/bin/sash
 	${INSTALL_MAN} ${WRKSRC}/sash.1 ${MAN1PREFIX}/man/man1/sash.1

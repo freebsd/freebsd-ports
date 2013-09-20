@@ -18,6 +18,7 @@ MAN1=		history.1 rc.1
 
 OPTIONS_DEFINE=	READLINE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREADLINE}

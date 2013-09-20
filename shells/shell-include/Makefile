@@ -21,6 +21,7 @@ MAN7=		shell-include.7
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 #nothing to configure
+NO_STAGE=	yes
 do-configure:
 	@${ECHO} -n
 

@@ -32,6 +32,7 @@ SVNSERVE_DESC=	Suversion support for svn+ssh://
 UNISON_DESC=	Unisson support
 WINSCP_DESC=	WinSCP support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if(!exists(/usr/bin/sftp))

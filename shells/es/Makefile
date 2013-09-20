@@ -20,4 +20,5 @@ ALL_TARGET=	es
 MAN1=		es.1
 PLIST_FILES=	bin/es
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

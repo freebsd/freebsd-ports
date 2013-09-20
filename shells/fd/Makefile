@@ -1,9 +1,5 @@
-# New ports collection makefile for:    FDclone
-# Date created:         20 Feb 1996
-# Whom:                 Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
-#
+# Created by: Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	fd
 PORTVERSION=	3.01a
@@ -32,6 +28,7 @@ DOCS_JA=	FAQ \
 		TECHKNOW \
 		ToAdmin
 
+NO_STAGE=	yes
 post-configure:
 	${REINPLACE_CMD} -E -e 's|^(#[[:space:]]*define[[:space:]]+EXTENDCCOPT[[:space:]]+"([^"]+ )?)-O(["[:space:]])|\1${CFLAGS}\3|' ${WRKSRC}/machine.h
 

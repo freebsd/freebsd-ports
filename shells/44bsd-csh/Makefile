@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  csh
-# Date created:			  23 January 2000
-# Whom:				  David O'Brien <obrien@NUXI.com>
-#
+# Created by: David O'Brien <obrien@NUXI.com>
 # $FreeBSD$
-#
 PORTNAME=	44bsd-csh
 PORTVERSION=	20001106
 PORTREVISION=	3
@@ -20,6 +15,7 @@ USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		44bsd-csh.1
 PORTDOCS=	paper.ascii.gz
+NO_STAGE=	yes
 post-extract:
 	cd ${WRKSRC} ; co RCS/*,v; chmod u+w *
 	cd ${WRKSRC}/USD.doc ; co RCS/*,v

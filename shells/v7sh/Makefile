@@ -1,9 +1,5 @@
-# New ports collection makefile for:   v7sh
-# Date created:        4 June 2004
-# Whom:                Cyrille.Lefevre@laposte.net
-#
+# Created by: Cyrille.Lefevre@laposte.net
 # $FreeBSD$
-#
 
 PORTNAME=	v7sh
 PORTVERSION=	1.0
@@ -37,6 +33,7 @@ SYSIII_DESC=	System III enhancements
 RENO_DESC=	4.3BSD-Reno enhancements
 ULTRIX_DESC=	Ultrix 3.1 enhancements
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSYSIII}

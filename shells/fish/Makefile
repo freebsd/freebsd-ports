@@ -24,6 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 MAN1=		fish.1 fish_indent.1 fish_pager.1 fishd.1 mimedb.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

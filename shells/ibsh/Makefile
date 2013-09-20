@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ibsh
-# Date created:				1 Oct 2005
-# Whom:					Vaida Bogdan
-#
+# Created by: Vaida Bogdan
 # $FreeBSD$
-#
 
 PORTNAME=	ibsh
 PORTVERSION=	0.3e
@@ -21,6 +17,7 @@ SUB_FILES=	pkg-message
 PORTDOCS=	AUTHORS BUGS CONTRIBUTORS COPYING COPYRIGHT ChangeLog \
 		INSTALL README TODO VERSION
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

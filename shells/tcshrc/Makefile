@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tcshrc
-# Date created:				2003-09-09
-# Whom:					Sean Chittenden <seanc@FreeBSD.org>
-#
+# Created by: Sean Chittenden <seanc@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tcshrc
 PORTVERSION=	1.6.2
@@ -20,6 +16,7 @@ NO_BUILD=	yes
 INSTALL_TARGET=	systeminstall
 MAKE_ARGS=	BIN=${LOCALBASE}/bin SHARETCSHRC=${DATADIR}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/share#${PREFIX}/share#g' \
 		${WRKSRC}/tcshrc_config

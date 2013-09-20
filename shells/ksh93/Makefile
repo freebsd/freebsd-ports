@@ -36,6 +36,7 @@ MAN1=		ksh93.1
 INITVERSION=	2013-05-24
 KSHVERSION=	2012-08-01
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSTATIC}

@@ -31,6 +31,7 @@ MAN3=		App::BashComplete.3 \
 		Bash::Completion::Request.3 \
 		Bash::Completion::Utils.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

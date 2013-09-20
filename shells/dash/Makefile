@@ -16,6 +16,7 @@ USES=	gmake
 PLIST_FILES=	bin/dash
 MAN1=		dash.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/COMMON_CFLAGS =/ s|$$| ${CFLAGS}|' \
 		${WRKSRC}/src/Makefile.in

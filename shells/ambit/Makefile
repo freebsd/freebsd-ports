@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ambit
-# Date created:				2011-08-09
-# Whom:					Sascha Klauder <sklauder@trimind.de>
-#
+# Created by: Sascha Klauder <sklauder@trimind.de>
 # $FreeBSD$
-#
 
 PORTNAME=	ambit
 PORTVERSION=	2.0.39
@@ -27,6 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_SUB=	AMBITDIR=${AMBITDIR}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e "s!/bin/bash!${LOCALBASE}/bin/bash!" \
