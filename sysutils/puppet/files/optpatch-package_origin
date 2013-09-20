@@ -1,6 +1,6 @@
---- lib/puppet/provider/package/freebsd.rb.orig	2012-10-20 00:57:51.000000000 -0400
-+++ lib/puppet/provider/package/freebsd.rb	2012-10-21 14:53:41.054105583 -0400
-@@ -1,37 +1,163 @@
+--- lib/puppet/provider/package/freebsd.rb.ori	2013-09-19 14:43:54.000000000 -0600
++++ lib/puppet/provider/package/freebsd.rb	2013-09-19 14:40:09.000000000 -0600
+@@ -1,35 +1,163 @@
 -Puppet::Type.type(:package).provide :freebsd, :parent => :openbsd do
 -  desc "The specific form of package management on FreeBSD.  This is an
 -    extremely quirky packaging system, in that it freely mixes between
@@ -46,7 +46,10 @@
    end
  
 -  def install
--    should = @resource.should(:ensure)
+-    if @resource[:source] =~ /\/$/
+-      if @resource[:source] =~ /^(ftp|https?):/
+-        Puppet::Util.withenv :PACKAGESITE => @resource[:source] do
+-          pkgadd "-r", @resource[:name]
 +  def self.parse_pkg_string(pkg_string)
 +    {
 +      :pkg_name => pkg_string.split("-").slice(0..-2).join("-"),
@@ -85,11 +88,7 @@
 +    end
 +    packages
 +  end
- 
--    if @resource[:source] =~ /\/$/
--      if @resource[:source] =~ /^(ftp|https?):/
--        Puppet::Util.withenv :PACKAGESITE => @resource[:source] do
--          pkgadd "-r", @resource[:name]
++
 +  def ports_index
 +    @@lock.synchronize do
 +      if @@ports_index.nil?
@@ -187,7 +186,7 @@
    end
  
    def query
-@@ -44,6 +170,7 @@
+@@ -42,6 +170,7 @@
    end
  
    def uninstall
