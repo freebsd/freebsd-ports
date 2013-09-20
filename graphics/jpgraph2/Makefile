@@ -1,4 +1,3 @@
-NO_STAGE=	yes
 # Created by: Alex Dupre <ale@FreeBSD.org:
 # $FreeBSD$
 
@@ -14,6 +13,7 @@ USE_BZIP2=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_PHP=	gd
+NO_STAGE=	yes
 
 NO_CDROM=	The free version cannot be used in a commercial context
 
