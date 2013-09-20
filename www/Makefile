@@ -1028,6 +1028,7 @@
     SUBDIR += p5-HTTP-Server-Simple-Static
     SUBDIR += p5-HTTP-Session
     SUBDIR += p5-HTTP-Session-State-MobileAgentID
+    SUBDIR += p5-HTTP-Session-Store-DBI
     SUBDIR += p5-HTTP-SimpleLinkChecker
     SUBDIR += p5-HTTP-Size
     SUBDIR += p5-HTTP-Tiny

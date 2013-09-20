@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Session/Store/DBI/.packlist
+%%SITE_PERL%%/HTTP/Session/Store/DBI.pm
+@dirrmtry %%SITE_PERL%%/HTTP/Session/Store
+@dirrmtry %%SITE_PERL%%/HTTP/Session
+@dirrmtry %%SITE_PERL%%/HTTP
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Session/Store/DBI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Session/Store
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Session
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
