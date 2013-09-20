@@ -31,190 +31,96 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USES=		gmake
 
+CFITSIO_CONFIGURE_OFF=	--with-cfitsio=no
+CFITSIO_CONFIGURE_ON=	--with-cfitsio=${LOCALBASE}
+CFITSIO_LIB_DEPENDS=	libcfitsio.so:${PORTSDIR}/astro/cfitsio
+CURL_CONFIGURE_OFF=	--with-curl=no
+CURL_CONFIGURE_ON=	--with-curl=${LOCALBASE}/bin/curl-config
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+ECW_CONFIGURE_OFF=	--with-ecw=no
+ECW_CONFIGURE_ON=	--with-ecw=${LOCALBASE}
+ECW_LIB_DEPENDS=	libNCSEcw.so:${PORTSDIR}/graphics/libecwj2
+EXPAT_CONFIGURE_OFF=	--with-expat=no
+EXPAT_CONFIGURE_ON=	--with-expat=${LOCALBASE}
+EXPAT_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+GEOS_CONFIGURE_OFF=	--with-geos=no
+GEOS_CONFIGURE_ON=	--with-geos=${LOCALBASE}/bin/geos-config
+GEOS_LIB_DEPENDS=	libgeos.so:${PORTSDIR}/graphics/geos
+GEOTIFF_CONFIGURE_OFF=	--with-geotiff=internal
+GEOTIFF_CONFIGURE_ON=	--with-geotiff=${LOCALBASE}
+GEOTIFF_LIB_DEPENDS=	libgeotiff.so:${PORTSDIR}/graphics/libgeotiff
+GIF_CONFIGURE_OFF=	--with-gif=internal
+GIF_CONFIGURE_ON=	--with-gif=${LOCALBASE}
+GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
+GTA_CONFIGURE_OFF=	--with-gta=no
+GTA_CONFIGURE_ON=	--with-gta=${LOCALBASE}
+GTA_LIB_DEPENDS=	libgta.so:${PORTSDIR}/devel/libgta
+HDF5_CONFIGURE_OFF=	--with-hdf5=no
+HDF5_CONFIGURE_ON=	--with-hdf5=${LOCALBASE}
+HDF5_LIB_DEPENDS=	libhdf5.so.7:${PORTSDIR}/science/hdf5-18
+ICONV_CONFIGURE_OFF=	--with-libiconv-prefix=no
+ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
+ICONV_USES=		iconv
+JASPER_CONFIGURE_OFF=	--with-jasper=no
+JASPER_CONFIGURE_ON=	--with-jasper=${LOCALBASE}
+JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
+JPEG_CONFIGURE_OFF=	--with-jpeg=internal
+JPEG_CONFIGURE_ON=	--with-jpeg=${LOCALBASE}
+JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+KML_CONFIGURE_OFF=	--with-libkml=no
+KML_CONFIGURE_ON=	--with-libkml=${LOCALBASE}
+KML_LIB_DEPENDS=	libkmlbase.so:${PORTSDIR}/science/libkml
+LIBXML2_CONFIGURE_OFF=	--with-xml2=no
+LIBXML2_CONFIGURE_ON=	--with-xml2=${LOCALBASE}/bin/xml2-config
+LIBXML2_LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+MYSQL_CONFIGURE_OFF=	--with-mysql=no
+MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
+NETCDF_CONFIGURE_OFF=	--with-netcdf=no
+NETCDF_CONFIGURE_ON=	--with-netcdf=${LOCALBASE}
+NETCDF_LIB_DEPENDS=	libnetcdf.so.7:${PORTSDIR}/science/netcdf4
+ODBC_CONFIGURE_OFF=	--with-odbc=no
+ODBC_CONFIGURE_ON=	--with-odbc=${LOCALBASE}
+ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+PCRE_CONFIGURE_OFF=	--with-pcre=no
+PCRE_CONFIGURE_ON=	--with-pcre=${LOCALBASE}
+PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PGSQL_CONFIGURE_OFF=	--with-pg=no
+PGSQL_CONFIGURE_ON=	--with-pg=${LOCALBASE}/bin/pg_config
+PNG_CONFIGURE_OFF=	--with-png=internal
+PNG_CONFIGURE_ON=	--with-png=${LOCALBASE}
+PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+POPPLER_CONFIGURE_OFF=	--with-poppler=no
+POPPLER_CONFIGURE_ON=	--with-poppler=${LOCALBASE}
+POPPLER_LIB_DEPENDS=	libpoppler.so:${PORTSDIR}/graphics/poppler
+PROJ_CONFIGURE_OFF=	--with-static-proj4=no
+PROJ_CONFIGURE_ON=	--with-static-proj4=${LOCALBASE}
+PROJ_LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj
+SQLITE_CONFIGURE_OFF=	--with-sqlite3=no
+SQLITE_CONFIGURE_ON=	--with-sqlite3=${LOCALBASE}
+TIFF_CONFIGURE_OFF=	--with-libtiff=internal
+TIFF_CONFIGURE_ON=	--with-libtiff=${LOCALBASE}
+TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+WEBP_CONFIGURE_OFF=	--with-webp=no
+WEBP_CONFIGURE_ON=	--with-webp=${LOCALBASE}
+WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
+XERCES_CONFIGURE_OFF=	--with-xerces=no
+XERCES_CONFIGURE_ON=	--with-xerces=${LOCALBASE}
+XERCES_LIB_DEPENDS=	libxerces-c.so:${PORTSDIR}/textproc/xerces-c3
+
 SLAVEDIRS=	graphics/p5-Geo-GDAL graphics/php-gdal graphics/py-gdal graphics/ruby-gdal
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MCFITSIO}
-LIB_DEPENDS+=	cfitsio:${PORTSDIR}/astro/cfitsio
-CONFIGURE_ARGS+=--with-cfitsio=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-cfitsio=no
-.endif
-
-.if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=--with-curl=${LOCALBASE}/bin/curl-config
-.else
-CONFIGURE_ARGS+=--with-curl=no
-.endif
-
-.if ${PORT_OPTIONS:MECW}
-LIB_DEPENDS+=	NCSEcw:${PORTSDIR}/graphics/libecwj2
-CONFIGURE_ARGS+=--with-ecw=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-ecw=no
-.endif
-
-.if ${PORT_OPTIONS:MEXPAT}
-LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2
-CONFIGURE_ARGS+=--with-expat=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-expat=no
-.endif
-
-.if ${PORT_OPTIONS:MGEOS}
-LIB_DEPENDS+=	geos:${PORTSDIR}/graphics/geos
-CONFIGURE_ARGS+=--with-geos=${LOCALBASE}/bin/geos-config
-.else
-CONFIGURE_ARGS+=--with-geos=no
-.endif
-
-.if ${PORT_OPTIONS:MGEOTIFF}
-LIB_DEPENDS+=	geotiff:${PORTSDIR}/graphics/libgeotiff
-CONFIGURE_ARGS+=--with-geotiff=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-geotiff=internal
-.endif
-
-.if ${PORT_OPTIONS:MGIF}
-LIB_DEPENDS+=	gif:${PORTSDIR}/graphics/giflib
-CONFIGURE_ARGS+=--with-gif=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-gif=internal
-.endif
-
-.if ${PORT_OPTIONS:MGTA}
-LIB_DEPENDS+=	gta:${PORTSDIR}/devel/libgta
-CONFIGURE_ARGS+=--with-gta=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-gta=no
-.endif
-
-.if ${PORT_OPTIONS:MHDF5}
-LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18
-CONFIGURE_ARGS+=--with-hdf5=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-hdf5=no
-.endif
-
-.if ${PORT_OPTIONS:MICONV}
-CONFIGURE_ARGS+=${ICONV_CONFIGURE_ARG}
-USES+=		iconv
-.else
-CONFIGURE_ARGS+=--with-libiconv-prefix=no
-.endif
-
-.if ${PORT_OPTIONS:MJASPER}
-LIB_DEPENDS+=	jasper:${PORTSDIR}/graphics/jasper
-CONFIGURE_ARGS+=--with-jasper=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-jasper=no
-.endif
-
-.if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
-CONFIGURE_ARGS+=--with-jpeg=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-jpeg=internal
-.endif
-
-.if ${PORT_OPTIONS:MKML}
-LIB_DEPENDS+=	kmlbase:${PORTSDIR}/science/libkml
-CONFIGURE_ARGS+=--with-libkml=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-libkml=no
-.endif
-
-.if ${PORT_OPTIONS:MLIBXML2}
-LIB_DEPENDS+=	xml2:${PORTSDIR}/textproc/libxml2
-CONFIGURE_ARGS+=--with-xml2=${LOCALBASE}/bin/xml2-config
-.else
-CONFIGURE_ARGS+=--with-xml2=no
-.endif
-
 .if ${PORT_OPTIONS:MMYSQL}
-CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}/bin/mysql_config
 USE_MYSQL=	yes
-.else
-CONFIGURE_ARGS+=--with-mysql=no
-.endif
-
-.if ${PORT_OPTIONS:MNETCDF}
-LIB_DEPENDS+=	netcdf.7:${PORTSDIR}/science/netcdf4
-CONFIGURE_ARGS+=--with-netcdf=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-netcdf=no
-.endif
-
-.if ${PORT_OPTIONS:MODBC}
-LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
-CONFIGURE_ARGS+=--with-odbc=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-odbc=no
-.endif
-
-.if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
-CONFIGURE_ARGS+=--with-pcre=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-pcre=no
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-CONFIGURE_ARGS+=--with-pg=${LOCALBASE}/bin/pg_config
 USE_PGSQL=	yes
-.else
-CONFIGURE_ARGS+=--with-pg=no
-.endif
-
-.if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
-CONFIGURE_ARGS+=--with-png=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-png=internal
-.endif
-
-.if ${PORT_OPTIONS:MPOPPLER}
-LIB_DEPENDS+=	poppler:${PORTSDIR}/graphics/poppler
-CONFIGURE_ARGS+=--with-poppler=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-poppler=no
-.endif
-
-.if ${PORT_OPTIONS:MPROJ}
-LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
-CONFIGURE_ARGS+=--with-static-proj4=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-static-proj4=no
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-CONFIGURE_ARGS+=--with-sqlite3=${LOCALBASE}
 USE_SQLITE=	yes
-.else
-CONFIGURE_ARGS+=--with-sqlite3=no
-.endif
-
-.if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
-CONFIGURE_ARGS+=--with-libtiff=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-libtiff=internal
-.endif
-
-.if ${PORT_OPTIONS:MWEBP}
-LIB_DEPENDS+=	webp:${PORTSDIR}/graphics/webp
-CONFIGURE_ARGS+=--with-webp=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-webp=no
-.endif
-
-.if ${PORT_OPTIONS:MXERCES}
-LIB_DEPENDS+=	xerces-c:${PORTSDIR}/textproc/xerces-c3
-CONFIGURE_ARGS+=--with-xerces=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-xerces=no
 .endif
 
 post-patch:
