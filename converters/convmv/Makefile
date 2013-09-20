@@ -18,4 +18,5 @@ PLIST_FILES=	bin/convmv
 
 MAN1=		convmv.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

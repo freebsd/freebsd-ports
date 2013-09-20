@@ -30,6 +30,7 @@ USE_GMAKE=	yes
 MAN1=		konwert.1 trs.1 filterm.1
 MANLANG=	"" pl
 
+NO_STAGE=	yes
 post-patch:
 	@${GREP} -Rl '#\!/bin/bash' ${WRKSRC}/* 2>/dev/null | ${XARGS} \
 		${REINPLACE_CMD} -e 's|^#\!/bin/bash|#\!${LOCALBASE}/bin/bash|'

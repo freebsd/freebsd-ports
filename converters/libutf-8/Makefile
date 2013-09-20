@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libutf-8
-# Date created:				1 April 1999
-# Whom:					G. Adam Stanislav <adam@whizkidtech.net>
-#
+# Created by: G. Adam Stanislav <adam@whizkidtech.net>
 # $FreeBSD$
-#
 
 PORTNAME=	libutf-8
 PORTVERSION=	1.0
@@ -19,6 +15,7 @@ USE_LDCONFIG=	yes
 
 MAN3=		libutf-8.3 fgetu8.3 fputu8.3 sgetu8.3 sputu8.3
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libutf-8.so.1 ${PREFIX}/lib
 	${LN} -fs ${PREFIX}/lib/libutf-8.so.1 ${PREFIX}/lib/libutf-8.so

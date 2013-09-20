@@ -1,9 +1,5 @@
-# New ports collection makefile for:	igbinary
-# Date created:		2009-06-05
-# Whom:			Gea-Suan Lin <gslin@gslin.org>
-#
+# Created by: Gea-Suan Lin <gslin@gslin.org>
 # $FreeBSD$
-#
 
 PORTNAME=	igbinary
 PORTVERSION=	1.1.1
@@ -19,4 +15,5 @@ USE_PHP_BUILD=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -21,4 +21,5 @@ MAN3=		JSON::XS.3 JSON::XS::Boolean.3
 
 PORTSCOUT=	skipv:2.232
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

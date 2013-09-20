@@ -1,9 +1,5 @@
-# New ports collection makefile for:   shftool
-# Date created:		2003-10-28
-# Whom:			Joachim Strombergson <watchman@ludd.ltu.se>
-#
+# Created by: Joachim Strombergson <watchman@ludd.ltu.se>
 # $FreeBSD$
-#
 
 PORTNAME=	shftool
 PORTVERSION=	1.2.0
@@ -18,6 +14,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,^LIBLOC_LIST=.*,LIBLOC_LIST=${LOCALBASE},' \
 		${WRKSRC}/configure

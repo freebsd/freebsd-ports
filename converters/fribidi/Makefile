@@ -32,6 +32,7 @@ MAN3=		fribidi_charset_to_unicode.3 fribidi_debug_status.3 \
 		fribidi_unicode_to_charset.3 fribidi_unicode_version.3 \
 		fribidi_version_info.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITH_DEBUG)

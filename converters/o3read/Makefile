@@ -1,8 +1,4 @@
-# ex:ts=8
-# New ports collection makefile for:	o3read
-# Date created:                 Aug 07, 2008
-# Whom:				samm
-#
+# Created by: samm
 # $FreeBSD$
 
 PORTNAME=	o3read
@@ -20,6 +16,7 @@ MLINKS=		o3read.1 o3totxt.1 o3read.1 o3tohtml.1
 PORTDOCS=	README COPYING ChangeLog
 PLIST_FILES=	bin/o3read bin/o3totxt bin/o3tohtml bin/utf8tolatin1
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/o3read ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/o3totxt ${PREFIX}/bin

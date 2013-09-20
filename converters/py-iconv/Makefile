@@ -26,6 +26,7 @@ SETUPINFO=	,libraries=["iconv"],library_dirs=["${LOCALBASE}/lib"],\
 		include_dirs=["${LOCALBASE}/include"]
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	cd ${WRKSRC} && ${SED} 's!^\(.*ext_mod.*\)\()]\)$$!\1${SETUPINFO}\2!g'\
 		setup.py > setup.py.tmp && ${CAT} setup.py.tmp > setup.py

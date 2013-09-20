@@ -36,6 +36,7 @@ MAN3=		Encode.3 \
 		Encode::Unicode::UTF7.3 \
 		encoding.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|bin/enc2xs||; s|bin/piconv||' ${WRKSRC}/Makefile.PL
 

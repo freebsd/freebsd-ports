@@ -17,6 +17,7 @@ MAN1=		tnef.1
 PORTDOCS=	AUTHORS NEWS README THANKS TODO
 PLIST_FILES=	bin/tnef
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

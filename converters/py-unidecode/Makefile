@@ -17,6 +17,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Unidecode
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 320

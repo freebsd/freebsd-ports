@@ -27,6 +27,7 @@ OPTIONS_SUB=	yes
 
 CCSUTIL_DESC=	Install Coded character set (CCS) util
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCCSUTIL}

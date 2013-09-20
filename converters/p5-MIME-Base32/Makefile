@@ -19,6 +19,7 @@ USE_PERL5=	configure
 
 MAN3=		MIME::Base32.3
 
+NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/test1.pl
 

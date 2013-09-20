@@ -1,9 +1,5 @@
-# New ports collection makefile for:	base64
-# Date created:				29 Oct 2000
-# Whom:					will
-#
+# Created by: will
 # $FreeBSD$
-#
 
 PORTNAME=	base64
 PORTVERSION=	1.5
@@ -20,4 +16,5 @@ ALL_TARGET=	prog
 MAN1=		base64.1
 PLIST_FILES=	bin/base64
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

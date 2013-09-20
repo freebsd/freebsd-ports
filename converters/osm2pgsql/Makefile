@@ -28,6 +28,7 @@ PORTDOCS=	ChangeLog README AUTHORS TODO
 
 MAN1=		osm2pgsql.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -19,4 +19,5 @@ MAN3=		JSON.3 \
 		JSON::backportPP::Compat5005.3 \
 		JSON::backportPP::Compat5006.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

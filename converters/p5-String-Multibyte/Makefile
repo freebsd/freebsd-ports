@@ -37,4 +37,5 @@ MAN3=		String::Multibyte.3 \
 		String::Multibyte::UTF8.3 \
 		String::Multibyte::Unicode.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

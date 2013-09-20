@@ -22,6 +22,7 @@ NO_BUILD=	yes
 
 USE_ASDF=	yes
 
+NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${ASDF_PATHNAME}
 	@${MKDIR} ${ASDF_PATHNAME}/src

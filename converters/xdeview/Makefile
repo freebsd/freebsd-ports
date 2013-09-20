@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xdeview
-# Date Created:		9 Feb 1997
-# Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
-#
+# Created by: Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	xdeview
 PORTVERSION=	0.5.20
@@ -38,6 +34,7 @@ MAN1=		xdeview.1
 PORTDOCS=	porting.notes
 PLIST_FILES=	bin/uuwish bin/xdeview
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

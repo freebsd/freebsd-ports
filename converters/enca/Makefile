@@ -1,9 +1,5 @@
-# Ports collection makefile for:  enca
-# Date created:			  Fri Sep 20, 2002
-# Whom:				  Alexandr Kovalenko <never@nevermind.kiev.ua>
-#
+# Created by: Alexandr Kovalenko <never@nevermind.kiev.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	enca
 PORTVERSION=	1.13
@@ -33,6 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=	enca.1
 MLINKS=	enca.1 enconv.1
 
+NO_STAGE=	yes
 post-patch::
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's#\ devel-docs##g' ${WRKSRC}/Makefile.in

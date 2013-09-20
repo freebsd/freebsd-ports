@@ -23,6 +23,7 @@ PORTEXAMPLES=	ExampleReferences.bib ODT-Template.odt odt-example.export \
 		web-example.export text-example.export
 MAN1=		bibtexconv.1 bibtexconv-odt.1
 
+NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e 's|install-data-am: install-dist_examplesDATA|install-data-am:|' \
 	${WRKSRC}/src/Makefile.in

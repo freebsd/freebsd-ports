@@ -23,6 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/ytnef bin/ytnefprocess.pl bin/ytnefprint
 PORTDOCS=	AUTHORS NEWS README
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^#!/usr/bin/perl|#!${PERL}|' \
 		${WRKSRC}/src/ytnef/ytnefprocess.pl

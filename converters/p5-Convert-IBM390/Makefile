@@ -40,4 +40,5 @@ MAN3=	Convert::IBM390.3 \
 	Convert::IBM390::CP01149.3
 	
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

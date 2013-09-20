@@ -1,9 +1,5 @@
-# New ports collection makefile for:	lua-iconv
-# Date created:			        04 Dec 2009
-# Whom:					vanilla@
-#
+# Created by: vanilla@
 # $FreeBSD$
-#
 
 PORTNAME=	iconv
 PORTVERSION=	6
@@ -20,6 +16,7 @@ USES=		pkgconfig iconv
 
 PLIST_FILES=	%%LUA_MODLIBDIR%%/iconv.so
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%INCDIR%%|-I${PREFIX}/include| ; \
 		s|%%LIBDIR%%|-L${PREFIX}/lib|; \

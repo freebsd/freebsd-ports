@@ -1,9 +1,5 @@
-# New ports collection makefile for: libb64
-# Date created:		5 April 2012
-# Whom:			Ismail Yenigul <ismail.yenigul@surgate.com>
-#
+# Created by: Ismail Yenigul <ismail.yenigul@surgate.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libb64
 PORTVERSION=	1.2
@@ -20,6 +16,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_ZIP=	yes
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/libb64.a ${PREFIX}/lib
 	${MKDIR} ${PREFIX}/include/b64

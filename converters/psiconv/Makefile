@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libiconv
-# Date created:				21 August 2001
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	psiconv
 PORTVERSION=	0.9.8
@@ -22,4 +18,5 @@ CONFIGURE_ARGS=	--with-imagemagick=no
 
 MAN1=		psiconv.1 psiconv-config.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

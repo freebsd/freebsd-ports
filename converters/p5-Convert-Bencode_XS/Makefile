@@ -17,6 +17,7 @@ USE_PERL5=	configure
 
 MAN3=		Convert::Bencode_XS.3
 
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/extras/* ${EXAMPLESDIR}

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mimelib
-# Date created:				20 November 2000
-# Whom:					never@nevermind.kiev.ua
-#
+# Created by: never@nevermind.kiev.ua
 # $FreeBSD$
-#
 
 PORTNAME=	mimelib
 PORTVERSION=	1.1.2
@@ -20,6 +16,7 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

@@ -49,6 +49,7 @@ CONFIGURE_ARGS=	-prefix ${WRKDIR}/wkqt \
 
 MAKE_ARGS+=	INSTALL_ROOT="${PREFIX}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

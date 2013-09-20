@@ -26,6 +26,7 @@ MAKE_ARGS=	PREFIX=${PREFIX}
 ALL_TARGET=	libbsdconv bsdconv-mktable meta bsdconv-man bsdconv-completion bsdconv codecs_basic
 INSTALL_TARGET=	installdir install_main install_basic
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCHINESE}

@@ -1,9 +1,5 @@
-# New ports collection makefile for: ical2html
-# Date created:		Thu Apr 14 18:08:52 BST 2005
-# Whom:			keiichi@iijlab.net
-#
+# Created by: keiichi@iijlab.net
 # $FreeBSD$
-#
 
 PORTNAME=	ical2html
 PORTVERSION=	2.0
@@ -21,4 +17,5 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include/libical -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

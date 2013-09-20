@@ -26,4 +26,5 @@ USE_PHP_BUILD=	yes
 PHP_MODNAME=	${PORTNAME}
 CONFIGURE_ARGS=	--with-bsdconv=${LOCALBASE}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

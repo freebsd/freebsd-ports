@@ -20,4 +20,5 @@ USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--with-fribidi=${LOCALBASE}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

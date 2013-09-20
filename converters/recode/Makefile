@@ -25,6 +25,7 @@ INFO=		recode
 
 post-extract: copy-po-files remove-info-files
 
+NO_STAGE=	yes
 copy-po-files:
 	@${CP} ${FILESDIR}/ru.po ${WRKSRC}/i18n
 

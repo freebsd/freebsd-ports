@@ -26,4 +26,5 @@ MAN3=		Unicode::IMAPUtf7.3
 post-extract:	# breaks non-root build otherwise
 	@${FIND} ${WRKSRC} -type d | ${XARGS} ${CHMOD} a+rx
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

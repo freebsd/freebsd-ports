@@ -35,4 +35,5 @@ MAN3=	Data::AMF.3 \
 	Data::AMF::Type::ByteArray.3 \
 	Data::AMF::Type::Null.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

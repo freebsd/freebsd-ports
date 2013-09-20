@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	dosunix
-# Date created:			Nov 17, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	dosunix
 PORTVERSION=	1.0.14
@@ -16,4 +11,5 @@ COMMENT=	Manipulation of text files in a mixed DOS/Windows and Unix environment
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>
