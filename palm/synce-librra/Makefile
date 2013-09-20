@@ -27,6 +27,7 @@ USES=		pathfix pkgconfig iconv
 CONFIGURE_ARGS+=	--with-libsynce="${LOCALBASE}" \
 			--with-libmimedir="${LOCALBASE}"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(RRA_SLAVE) && ${RRA_SLAVE} == "pythonb"

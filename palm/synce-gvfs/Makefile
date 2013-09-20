@@ -25,6 +25,7 @@ GVFS_PORTDIR=	${PORTSDIR}/devel/gvfs
 GVFS_WRKSRC_CMD=cd ${GVFS_PORTDIR} && ${MAKE} -V WRKSRC
 
 
+NO_STAGE=	yes
 post-extract:
 .for dir in common daemon
 	${CP} `${GVFS_WRKSRC_CMD}`/${dir}/*.[ch] ${WRKSRC}/gvfs/${dir}

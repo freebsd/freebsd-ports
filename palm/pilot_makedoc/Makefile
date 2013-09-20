@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pilot_makedoc
-# Date created:				May 10th 1997
-# Whom:					jfitz@FreeBSD.org
-#
+# Created by: jfitz@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	pilot_makedoc
 PORTVERSION=	0.7a
@@ -21,6 +17,7 @@ NO_WRKSUBDIR=	YES
 PLIST_FILES=	bin/pilot_makedoc
 ALL_TARGET=	pilot_makedoc
 
+NO_STAGE=	yes
 do-extract:
 		@${MKDIR} ${WRKDIR}
 		@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}

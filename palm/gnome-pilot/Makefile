@@ -28,4 +28,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 MAN1=		gpilot-install-file.1
 GCONF_SCHEMAS=	pilot.schemas
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	PNG THREADS USB
 USB_DESC=	Compile with USB via libusb support (READ MANUAL!)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTHREADS}

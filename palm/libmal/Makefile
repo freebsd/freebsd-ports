@@ -1,10 +1,5 @@
-# Ports collection makefile for:	libmal
-# Date created:				4 september 2002
-# Whom:					Adriaan de Groot <groot@kde.org>
-#
-#
+# Created by: Adriaan de Groot <groot@kde.org>
 # $FreeBSD$
-#
 
 PORTNAME=	libmal
 PORTVERSION=	0.44.1
@@ -23,4 +18,5 @@ CONFIGURE_ARGS=	--with-pilot-prefix=${LOCALBASE}
 USE_LDCONFIG=	YES
 CONFLICTS=	malsync-[0-9]*
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

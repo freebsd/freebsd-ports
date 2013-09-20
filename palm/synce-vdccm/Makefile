@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE} \
 MAN1=		triggerconnection.1 ${PORTNAME}.1
 PLIST_FILES=	bin/triggerconnection bin/${PORTNAME}
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"

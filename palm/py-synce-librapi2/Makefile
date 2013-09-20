@@ -1,7 +1,4 @@
-# New ports collection makefile for:   py-synce-librapi2
-# Date created:                19 June 2008
-# Whom:                        Ilya Bakulin <webmaster@kibab.com>
-#
+# Created by: Ilya Bakulin <webmaster@kibab.com>
 # $FreeBSD$
 
 CATEGORIES=	palm python
@@ -21,6 +18,7 @@ PLIST=		${.CURDIR}/pkg-plist
 
 RAPI_SLAVE=	pythonb
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|$$(top_builddir)/src/librapi.la|${LOCALBASE}/lib/librapi.la|g' \
 		${WRKSRC}/python/Makefile.in

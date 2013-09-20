@@ -32,6 +32,7 @@ SUB_FILES=	pkg-message
 
 MAN1=		${PORTNAME}.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-configure:

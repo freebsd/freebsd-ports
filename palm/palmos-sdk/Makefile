@@ -1,9 +1,4 @@
-# New ports collection makefile for:	Palm OS SDK
-# Date created:		Mar 22 2000
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	palmos-sdk
 PORTVERSION=	${SDKVER}r3
@@ -23,6 +18,7 @@ SDKVER=		5.1.0
 INCDIR=		${PREFIX}/palmdev/sdk-${SDKVER}/include
 LIBDIR=		${PREFIX}/palmdev/sdk-${SDKVER}/lib
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)

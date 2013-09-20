@@ -22,6 +22,7 @@ MAN5=		ixl.5
 MANCOMPRESSED=	no
 PLIST_FILES=	bin/iSiloXC
 
+NO_STAGE=	yes
 post-extract:
 	@${CP} ${FILESDIR}/iSiloXC.1 ${FILESDIR}/ixl.5 ${WRKDIR}
 

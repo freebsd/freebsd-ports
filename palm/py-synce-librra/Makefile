@@ -1,7 +1,4 @@
-# New ports collection makefile for:   py-synce-librra
-# Date created:                19 Jun 2008
-# Whom:                        Ilya Bakulin <webmaster@kibab.com>
-#
+# Created by: Ilya Bakulin <webmaster@kibab.com>
 # $FreeBSD$
 
 CATEGORIES=	palm python
@@ -21,6 +18,7 @@ PLIST=		${.CURDIR}/pkg-plist
 
 RRA_SLAVE=	pythonb
 
+NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|$$(top_builddir)/lib/librra.la|${LOCALBASE}/lib/librra.la|g' \
 		${WRKSRC}/python/Makefile.in

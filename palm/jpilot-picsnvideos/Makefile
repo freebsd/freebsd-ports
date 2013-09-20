@@ -1,9 +1,5 @@
-# New ports collection makefile for:   jpilot-picsnvideos
-# Date created:        18 Feb 2010
-# Whom:                Sascha Klauder <sklauder@trimind.de>
-#
+# Created by: Sascha Klauder <sklauder@trimind.de>
 # $FreeBSD$
-#
 
 PORTNAME=	picsnvideos
 PORTVERSION=	0.2
@@ -26,6 +22,7 @@ PORTDOCS=	README AUTHORS
 PLIST_FILES=	lib/jpilot/plugins/libpicsnvideos.la	\
 		lib/jpilot/plugins/libpicsnvideos.so
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/configure

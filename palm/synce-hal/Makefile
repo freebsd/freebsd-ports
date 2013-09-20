@@ -1,7 +1,4 @@
-# New ports collection makefile for:   synce-hal
-# Date created:                14 May 2008
-# Whom:                        Ilya Bakulin <webmaster@kibab.com>
-#
+# Created by: Ilya Bakulin <webmaster@kibab.com>
 # $FreeBSD$
 
 PORTNAME=	hal
@@ -27,6 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-hal-addon-dir=${PREFIX}/libexec \
 			--disable-bluetooth-support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800074
