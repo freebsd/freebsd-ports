@@ -24,6 +24,7 @@ HAS_CONFIGURE=	yes
 
 MAN1=		rox.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ENV=		APP_DIR=${WRKSRC}/ROX-Filer

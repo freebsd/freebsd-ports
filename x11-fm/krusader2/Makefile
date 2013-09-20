@@ -16,4 +16,5 @@ USE_QT4=	moc_build qmake_build rcc_build uic_build
 
 LATEST_LINK=	${PORTNAME}2
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

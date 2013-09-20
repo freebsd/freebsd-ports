@@ -31,6 +31,7 @@ GDM_DESC=	Install GDM login manager
 
 SUB_FILES=	${PORTNAME} rox.desktop
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGDM}

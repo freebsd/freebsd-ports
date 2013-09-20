@@ -41,6 +41,7 @@ CONFIGURE_ARGS+=--enable-gio-unix \
 
 MAN1=		Thunar.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBUS}

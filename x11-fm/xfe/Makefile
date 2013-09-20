@@ -20,6 +20,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 MAN1=		xfe.1 xfi.1 xfp.1 xfv.1 xfw.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/local/share/xfe|${DATADIR}|g' \
 		${WRKSRC}/src/XFileExplorer.cpp \

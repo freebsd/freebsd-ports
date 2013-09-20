@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--with-conffile="${PREFIX}/etc/mtoolsfm.conf"
 
 MAN1=		mtoolsfm.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|MToolsFM|mtoolsfm|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} -e \

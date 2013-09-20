@@ -22,6 +22,7 @@ LDFLAGS+=	`fltk-config --ldflags`
 PLIST_FILES=	bin/xdiskusage
 MAN1=		xdiskusage.1
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '22,24d' ${WRKSRC}/Makefile
 

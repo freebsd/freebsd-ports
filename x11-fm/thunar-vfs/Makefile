@@ -33,6 +33,7 @@ OPTIONS_DEFAULT=	NLS HAL DBUS STARTUP APIDOCS
 APIDOCS_DESC=	Install api documentation
 STARTUP_DESC=	Enable startup notification support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -26,6 +26,7 @@ CONFIGURE_ENV=	PYTHON_VERSION="${PYTHON_VER}"
 
 DOCSDIR=	${PREFIX}/share/doc/nautilus-python
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|[(]datadir[)]/doc/|(prefix)/share/doc/|g' \
 		${WRKSRC}/examples/Makefile.in

@@ -14,6 +14,7 @@ USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 MAN1=		xcruiser.1
 
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/xcruise
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xcruise
