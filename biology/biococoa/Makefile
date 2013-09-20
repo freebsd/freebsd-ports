@@ -21,4 +21,5 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/biococoa-${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

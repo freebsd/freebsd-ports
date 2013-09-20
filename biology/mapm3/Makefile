@@ -1,9 +1,5 @@
-# New ports collection makefile for: mapm3
-# Date created:                26 March 2008
-# Whom:                        Tassilo Philipp <tphilipp@potion-studios.com>
-#
+# Created by: Tassilo Philipp <tphilipp@potion-studios.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mapm3
 PORTVERSION=	3.0
@@ -21,6 +17,7 @@ COMMENT=	Constructs linkage maps of markers segregating in experimental crosses
 NO_WRKSUBDIR=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${CP} ${WRKSRC}/sun/* ${WRKSRC}
 

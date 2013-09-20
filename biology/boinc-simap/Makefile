@@ -1,6 +1,5 @@
 # Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	boinc-simap
 PORTVERSION=	${SIMAP_VERSION}.${HMMER_VERSION}
@@ -37,6 +36,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 OPTIONS_DEFINE=	SSE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSE}

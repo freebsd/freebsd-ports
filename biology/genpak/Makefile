@@ -1,10 +1,5 @@
-# ex:ts=8
-# New ports collection makefile for:	genpak
-# Date created:			Feb 28, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
-#
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	genpak
 PORTVERSION=	0.26
@@ -31,4 +26,5 @@ MAN1=	Genpak.1 gp_acc.1 gp_adjust.1 gp_cdndev.1 gp_cusage.1 gp_digest.1 \
 INSTALL_TARGET=	install docs
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

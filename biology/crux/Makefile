@@ -20,6 +20,7 @@ USE_PYTHON=	2.5+
 OPTIONS_DEFINE=	SYS_LINALG
 SYS_LINALG_DESC=	Enable system ATLAS/LAPACK
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CPPFLAGS+=	-I${LOCALBASE}/include

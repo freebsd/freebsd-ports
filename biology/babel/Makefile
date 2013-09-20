@@ -22,6 +22,7 @@ PORTDOCS=	README.1ST
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 post-build:
 	${SED} -e 's%@PREFIX@%${PREFIX}%g' \
 		${FILESDIR}/babel.sh >${WRKSRC}/babel.sh

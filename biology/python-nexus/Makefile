@@ -1,9 +1,5 @@
-# Ports collection makefile for:	python-nexus
-# Date created:				29 Dec, 2009
-# Whom:					Wen Heping <wen@FreeBSD.org>
-#
+# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	python-nexus
 PORTVERSION=	0.87
@@ -16,4 +12,5 @@ COMMENT=	A generic nexus file format reader for python
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

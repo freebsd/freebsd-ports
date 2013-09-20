@@ -27,6 +27,7 @@ GFF2PS_MAN=	MANUAL_GFF2PS_v0.96.ps
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

@@ -25,6 +25,7 @@ MLINKS=		fasta.1 tfasta.1 fasta.1 lfasta.1 fasta.1 plfasta.1 \
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 do-extract:
 	@ ${RM} -rf ${WRKDIR}
 	@ ${MKDIR} ${WRKSRC}

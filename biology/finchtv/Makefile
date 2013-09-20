@@ -18,6 +18,7 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 STRIP=
 
+NO_STAGE=	yes
 do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

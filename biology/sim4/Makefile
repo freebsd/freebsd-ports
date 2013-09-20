@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}/sim4.${PORTVERSION:S/./-/g}
 ALL_TARGET=	sim4
 PLIST_FILES=	bin/sim4
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|^CC=|CC?=|g ; \
 		s|^CFLAGS=|CFLAGS+=|g' ${WRKSRC}/Makefile

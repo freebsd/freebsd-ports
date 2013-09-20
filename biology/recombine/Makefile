@@ -19,6 +19,7 @@ PORTDOCS=	recombine.txt
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/filetran ${PREFIX}/bin/

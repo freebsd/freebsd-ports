@@ -37,6 +37,7 @@ MLINKS=		fasta36.1 tfasta35.1 fasta36.1 fastx35.1 fasta36.1 tfastx35.1 \
 		fasta36.1 lalign35.1 fasta36.1 prss35.1 fasta36.1 prfx35.1
 PLIST_SUB=	VER=${PORTVERSION:R:R}
 
+NO_STAGE=	yes
 post-patch:
 	@ ${CP} ${WRKSRC}/make/${MAKEFILE} ${BUILD_WRKSRC}/
 post-install:

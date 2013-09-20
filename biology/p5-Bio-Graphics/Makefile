@@ -128,4 +128,5 @@ MAN3=		Bio::Graphics.3 \
 		Bio::Graphics::Wiggle.3 \
 		Bio::Graphics::Wiggle::Loader.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

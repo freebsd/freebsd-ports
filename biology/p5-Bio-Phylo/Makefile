@@ -148,6 +148,7 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::Util::StackTrace.3 \
 		Bio::PhyloRole.3
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/NAME/ s|Bio-Phylo|Bio::Phylo|' ${WRKSRC}/Makefile.PL
 

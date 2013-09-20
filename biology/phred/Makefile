@@ -1,9 +1,5 @@
-# New ports collection makefile for:	phred
-# Date created:		6 December 2007
-# Whom:			Motomichi Matsuzaki <mzaki@biol.s.u-tokyo.ac.jp>
-#
+# Created by: Motomichi Matsuzaki <mzaki@biol.s.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	phred
 PORTVERSION=	0.020425.c
@@ -38,6 +34,7 @@ PORTDATA+=	${f}.dist
 
 PORTDOCS=	NEWS PHRED.DOC DAEV.DOC
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .for f in ${DISTFILES}

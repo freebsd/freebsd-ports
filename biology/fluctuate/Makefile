@@ -18,6 +18,7 @@ PORTDOCS=	errors.doc fluctuate.doc
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 

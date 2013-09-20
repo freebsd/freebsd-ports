@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 SUB_FILES=	jalview.sh
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/jalview.sh ${PREFIX}/bin/jalview
 	@${MKDIR} ${DATADIR}

@@ -21,6 +21,7 @@ OPTIONSFILE=	${PORT_DBDIR}/ruby-${PORTNAME}/options
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 

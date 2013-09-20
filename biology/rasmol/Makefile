@@ -25,6 +25,7 @@ PLIST_FILES=	bin/rasmol bin/rasmol-16 bin/rasmol-32 bin/rasmol-8 \
 		lib/X11/rasmol/rasmol.hlp
 PLIST_DIRS=	lib/X11/rasmol
 
+NO_STAGE=	yes
 do-build:
 	${SETENV} ${MAKE_ENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/build_viewer
 

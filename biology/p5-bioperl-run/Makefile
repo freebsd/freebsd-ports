@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-bioperl-run
-# Date created:		21 February 2006
-# Whom:	      		Mauricio Herrera Cuadra <mauricio@arareko.net>
-#
+# Created by: Mauricio Herrera Cuadra <mauricio@arareko.net>
 # $FreeBSD$
-#
 
 PORTNAME=	bioperl-run
 PORTVERSION=	1.6.1
@@ -132,6 +128,7 @@ MAN3=	Bio::Tools::Run::Phylo::Phylip::DrawGram.3 \
 	Bio::Tools::Run::Phylo::Hyphy::FEL.3
 
 # now install all extra stuff (docs, examples, scripts)
+NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DATADIR}
 	@${CP} -Rv ${WRKSRC}/scripts ${DATADIR}

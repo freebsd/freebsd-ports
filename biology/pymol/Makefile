@@ -1,7 +1,4 @@
-# New ports collection makefile for:	pymol
-# Date created:			July 18, 2002
-# Whom:				Nakata Maho <chat95@mbox.kyoto-inet.or.jp>
-#
+# Created by: Nakata Maho <chat95@mbox.kyoto-inet.or.jp>
 # $FreeBSD$
 
 PORTNAME=	pymol
@@ -29,6 +26,7 @@ USE_GMAKE=	yes
 USE_PYTHON=	yes
 PLIST_SUB=	PYMOL_VER=${VERSION} PYTHON_VER=${PYTHON_VER}
 
+NO_STAGE=	yes
 pre-build:
 	@${REINPLACE_CMD} -e "s+%%LOCALBASE%%+${LOCALBASE}+"  ${WRKSRC}/setup.py
 

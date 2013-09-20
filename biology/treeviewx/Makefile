@@ -18,4 +18,5 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/tv
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

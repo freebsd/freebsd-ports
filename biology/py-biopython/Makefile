@@ -21,4 +21,5 @@ PYEASYINSTALL_ARCHDEP=	yes
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}reportlab>0:${PORTSDIR}/print/py-reportlab
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

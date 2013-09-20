@@ -47,6 +47,7 @@ CONFIGURE_ARGS+= --without-x
 DOC_DIRS=	doc/manuals doc/tutorials doc/programs/text doc/programs/html
 CONFIG_FILE=	${WRKSRC}/emboss/emboss.default.template
 
+NO_STAGE=	yes
 pre-install:
 	@ ${REINPLACE_CMD} -e 's#%%DATADIR%%#${DATADIR}#' ${CONFIG_FILE}
 

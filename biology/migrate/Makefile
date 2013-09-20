@@ -22,6 +22,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/${PORTNAME} bin/${PORTNAME}-n
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 NOT_FOR_ARCHS=	alpha

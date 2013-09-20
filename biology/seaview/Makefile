@@ -35,6 +35,7 @@ PLIST_DIRS=	%%DATADIR%%
 DESKTOP_ENTRIES="SeaView" "${COMMENT}" "" \
 		"${PORTNAME}" "Biology;Science;" "true"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPDFLIB}

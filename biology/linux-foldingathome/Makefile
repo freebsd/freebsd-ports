@@ -1,9 +1,5 @@
-# Ports collection makefile for:  foldingathome
-# Date created:			  2/8/2006
-# Whom:				  Yonatan <onatan@gmail.com>
-#
+# Created by: Yonatan <onatan@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	foldingathome
 PORTVERSION=	5.04
@@ -23,6 +19,7 @@ PLIST_FILES=	share/${PORTNAME}/${DISTNAME}${EXTRACT_SUFX} \
 		bin/FoldingAtHome
 PLIST_DIRS=	share/${PORTNAME}
 
+NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${WRKSRC}

@@ -52,4 +52,5 @@ MAN3=		Bio::NEXUS.3 \
 		Bio::NEXUS::Util::Logger.3 \
 		Bio::NEXUS::WeightSet.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

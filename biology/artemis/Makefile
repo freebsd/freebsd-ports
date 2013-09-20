@@ -20,6 +20,7 @@ JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -type d -name CVS -exec ${RM} -rf {} +
 

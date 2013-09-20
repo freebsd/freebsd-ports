@@ -27,6 +27,7 @@ CPPFLAGS+=	-DDATADIR=\"${DATADIR}\" \
 PLIST_FILES=	bin/povchem etc/povchem.cfg %%DATADIR%%/periodic.tab
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 post-extract:
 	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${TAR} -cf - ${DISTFILES}) | \
 		(cd ${WRKSRC} && ${TAR} -xf -)

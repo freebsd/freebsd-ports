@@ -28,6 +28,7 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=	DOCS EXAMPLES PGPLOT
 PGPLOT_DESC=	Fortran subroutine package for drawing graphs
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPGPLOT}

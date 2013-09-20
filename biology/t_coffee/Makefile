@@ -27,6 +27,7 @@ MAKEFILE=	makefile
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/TMalign bin/t_coffee
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

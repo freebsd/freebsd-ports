@@ -19,6 +19,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-protobuf=${LOCALBASE}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|PF_INET|AF_INET|g' ${WRKSRC}/browser/mongoose.c
 	${REINPLACE_CMD} -e 's|-ldl||g' \

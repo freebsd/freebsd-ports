@@ -29,6 +29,7 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/pkgconfig/s|$$(libdir)|$$(prefix)/libdata|g' \
 		${WRKSRC}/Makefile.am

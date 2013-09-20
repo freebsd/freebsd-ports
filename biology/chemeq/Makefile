@@ -24,6 +24,7 @@ PORTEXAMPLES=	chemreport chemreport.pl chemtest chemtest.pl test.stuff
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
