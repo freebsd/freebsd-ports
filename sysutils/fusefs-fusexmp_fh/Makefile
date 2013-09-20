@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fusexmp_fh
-PORTVERSION=	2.7.4
-PORTREVISION=	1
+PORTVERSION=	2.9.3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/fuse/fuse-2.X/${PORTVERSION}
 PKGNAMEPREFIX=	fusefs-
@@ -11,7 +10,6 @@ DISTNAME=	fuse-${PORTVERSION}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Dummy driver from fusefs-libs example
-
 
 USE_AUTOTOOLS=	libtool
 USES=		fuse pathfix iconv
