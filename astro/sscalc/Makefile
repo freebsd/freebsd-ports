@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sunrise and sunset time calculator
 
 MAN1=		sscalc.1
+NO_STAGE=	yes
 
 .include <bsd.port.options.mk>
 

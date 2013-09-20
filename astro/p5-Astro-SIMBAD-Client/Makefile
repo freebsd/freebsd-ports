@@ -21,6 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	-y
+NO_STAGE=	yes
 
 MAN1=		simbadc.1
 MAN3=		Astro::SIMBAD::Client.3

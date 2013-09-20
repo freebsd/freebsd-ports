@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.senax.net/xmoontool/
 MAINTAINER=	frank@dynamical-systems.org
 COMMENT=	A version of John Walker's classical moontool for X11/Motif
 
+NO_STAGE=	yes
 USES=		motif
 
 MAN1=		xmoontool.1

@@ -11,6 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_unix
 MAINTAINER=	slaven@rezic.de
 COMMENT=	An interactive terminal-based astronomical ephemeris program
 
+NO_STAGE=	yes
 NO_WRKSUBDIR=	yes
 ALL_TARGET=
 

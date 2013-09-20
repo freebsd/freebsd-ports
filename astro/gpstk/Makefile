@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gpstk
-# Date created:				12 May 2004
-# Whom:					bms@FreeBSD.org
-#
+# Created by: bms@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	gpstk
 PORTVERSION=	2.0
@@ -18,6 +14,7 @@ BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_STAGE=	yes
 USE_PYTHON_RUN=	yes
 USE_LDCONFIG=	yes
 USE_DOS2UNIX=	yes

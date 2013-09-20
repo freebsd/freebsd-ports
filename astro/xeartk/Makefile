@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xeartk
-# Date created:		26 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
+# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	xeartk
 PORTVERSION=	2.2
@@ -16,6 +12,7 @@ COMMENT=	Small demo for tkgeomap
 
 LIB_DEPENDS=	tkgeomap.0:${PORTSDIR}/astro/tkgeomap
 
+NO_STAGE=	yes
 USE_TK_RUN=	yes
 NO_BUILD=	yes
 DATA_FILES=	README cities land.xdr rivers.xdr water.xdr

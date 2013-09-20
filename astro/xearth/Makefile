@@ -12,6 +12,7 @@ COMMENT=	Set the root window to the image of earth
 
 USE_XORG=	x11 xext sm ice xt
 USE_XZ=		yes
+NO_STAGE=	yes
 MAN1=		xearth.1
 PLIST_FILES=	bin/xearth \
 		lib/X11/xearth/freebsd.committers.markers \

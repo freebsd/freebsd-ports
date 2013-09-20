@@ -10,6 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Draw pictures of the earth textured by an image
 
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USE_XORG=	xt xscrnsaver
 USE_GNOME=	#

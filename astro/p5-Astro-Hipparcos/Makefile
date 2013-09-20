@@ -16,6 +16,7 @@ BUILD_DEPENDS=	p5-ExtUtils-XSpp>=0.06:${PORTSDIR}/devel/p5-ExtUtils-XSpp \
 MAKE_ARGS+=	CC="${CXX}"
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN3=		Astro::Hipparcos::Record.3 \
 		Astro::Hipparcos.3

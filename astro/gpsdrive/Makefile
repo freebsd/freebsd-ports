@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
+NO_STAGE=	yes
 USES=		gmake perl5 pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk20

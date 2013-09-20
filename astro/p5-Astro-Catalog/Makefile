@@ -30,6 +30,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		perl5
 USE_PERL5=	modbuild
+NO_STAGE=	yes
 
 MAN3=		Astro::Catalog.3 \
 		Astro::Catalog::IO::ASCII.3 \

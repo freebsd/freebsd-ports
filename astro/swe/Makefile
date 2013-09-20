@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}_unix_src_${PORTVERSION}
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	High Precision Ephemeris Developed By Astrodienst
 
+NO_STAGE=	yes
 WRKSRC=		${WRKDIR}/src
 USES=		gmake
 ALL_TARGET=	#

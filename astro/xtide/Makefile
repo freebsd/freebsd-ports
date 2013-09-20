@@ -17,6 +17,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		gmake
 USE_GCC=	yes

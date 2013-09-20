@@ -15,6 +15,7 @@ LICENSE=	ISCL
 
 CONFLICTS_INSTALL=	expect-[0-9]* expect-nox11-[0-9]*
 
+NO_STAGE=	yes
 USE_PYTHON=	yes
 USE_XZ=		yes
 USES=		shebangfix

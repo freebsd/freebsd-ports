@@ -11,6 +11,7 @@ COMMENT=	Daemon that connects to the GPSD daemon and logs GPS traces
 
 LIB_DEPENDS=	gps:${PORTSDIR}/astro/gpsd
 
+NO_STAGE=	yes
 USE_RC_SUBR=	${PORTNAME}
 PLIST_FILES=	sbin/${PORTNAME}
 MAN8=		${PORTNAME}.8

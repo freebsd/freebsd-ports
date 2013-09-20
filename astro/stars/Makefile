@@ -1,9 +1,5 @@
-# New ports collection makefile for:   stars-1.0
-# Date created:		10 Jul 1996
-# Whom:			searle
-#
+# Created by: searle
 # $FreeBSD$
-#
 
 PORTNAME=	stars
 PORTVERSION=	1.0
@@ -18,6 +14,7 @@ COMMENT=	Star field demo
 PLIST_FILES=	bin/stars
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XORG=	x11
+NO_STAGE=	yes
 
 do-build:
 	@${CC} -I${PREFIX}/include ${CFLAGS} -c ${WRKSRC}/xwin.c -o ${WRKSRC}/xwin.o

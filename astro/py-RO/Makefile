@@ -20,6 +20,7 @@ MATPLOTLIB_DESC=	Add support for Matplotlib
 PYFITS_DESC=		Add Support for PyFITS
 PYGAME_DESC=		Add Support for PyGame
 
+NO_STAGE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 

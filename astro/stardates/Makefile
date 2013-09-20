@@ -1,9 +1,5 @@
-# New ports collection makefile for:	stardates
-# Date created:		15 September 2005
-# Whom:			freebsd-ports@henrik.synth.no
-#
+# Created by: freebsd-ports@henrik.synth.no
 # $FreeBSD$
-#
 
 PORTNAME=	stardates
 PORTVERSION=	1.6.1
@@ -15,6 +11,7 @@ MASTER_SITES=	ftp://ftp.cc.umanitoba.ca/startrek/stardates-pgms/ \
 MAINTAINER=	freebsd-ports@henrik.synth.no
 COMMENT=	Displays date in 5 formats (including stardate of course)
 
+NO_STAGE=	yes
 MAN1=		stardate.1
 PLIST_FILES=	bin/stardate
 

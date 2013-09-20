@@ -14,6 +14,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_GL=		glut
 
+NO_STAGE=	yes
 USES=		gmake
 USE_XORG=	sm ice xmu xi xext x11
 GNU_CONFIGURE=	yes

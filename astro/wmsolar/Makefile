@@ -14,6 +14,7 @@ PLIST_FILES=	bin/wmSolar
 WRKSRC=		${WRKDIR}/wmSolar
 USE_XORG=	x11 xext xpm
 USES=		gmake
+NO_STAGE=	yes
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|values.h|float.h|; s|MAXDOUBLE|DBL_MAX|g' \

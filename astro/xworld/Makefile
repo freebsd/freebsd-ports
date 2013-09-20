@@ -1,9 +1,5 @@
-# Ports collection makefile for:  xworld
-# Date created:			  24 Aug 2001
-# Whom:				  Kris Kennaway <kris@FreeBSD.org
-#
+# Created by: Kris Kennaway <kris@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	xworld
 PORTVERSION=	2.0
@@ -15,6 +11,7 @@ MASTER_SITES=	ftp://gutemine.geo.uni-koeln.de/pub/xworld/ \
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Earth as seen from the direction of the sun
 
+NO_STAGE=	yes
 USE_XORG=	x11
 
 HAS_CONFIGURE=	yes

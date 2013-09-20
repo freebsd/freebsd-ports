@@ -12,6 +12,7 @@ COMMENT=	Physical constants for use in astronomy
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN3=	Astro::Constants.3
 

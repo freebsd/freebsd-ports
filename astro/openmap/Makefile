@@ -15,6 +15,7 @@ JAVA_VERSION=	1.6+
 
 PKGMESSAGE=	${WRKSRC}/LICENSE
 
+NO_STAGE=	yes
 USE_ANT=	yes
 MAKE_ARGS+=	-Dopenmap.home=${WRKSRC} \
 		-Didl2java.compiler=${JAVA_HOME}/bin/idlj

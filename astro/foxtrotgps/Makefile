@@ -16,6 +16,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		gps:${PORTSDIR}/astro/gpsd
 
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 USES=		gettext gmake pkgconfig shebangfix
 SHEBANG_FILES=	contrib/convert2gpx \
 		contrib/convert2osm \

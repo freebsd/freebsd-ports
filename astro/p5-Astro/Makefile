@@ -12,6 +12,7 @@ COMMENT=	Collection of useful astronomical routines in Perl
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN3=	Astro::Time.3 \
 	Astro::Misc.3 \

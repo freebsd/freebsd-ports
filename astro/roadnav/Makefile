@@ -15,6 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libroadnav.a:${PORTSDIR}/astro/libroadnav
 USE_WX=		2.6+
 WX_COMPS=	wx contrib
 USES=		gmake
+NO_STAGE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-prefix=${LOCALBASE} --with-wx-config=${WX_CONFIG}

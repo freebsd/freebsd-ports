@@ -1,9 +1,5 @@
-# New ports collection makefile for:	phoon
-# Date created:				14 May 2003
-# Whom:					Kirill Ponomarew <ponomarew@oberon.net>
-#
+# Created by: Kirill Ponomarew <ponomarew@oberon.net>
 # $FreeBSD$
-#
 
 PORTNAME=	phoon
 PORTVERSION=	2005
@@ -21,6 +17,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		BINDIR=${LOCALBASE}/bin \
 		MANDIR=${MANPREFIX}/man/man1
 
+NO_STAGE=	yes
 MAN1=		phoon.1
 PLIST_FILES=	bin/phoon
 

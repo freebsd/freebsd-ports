@@ -16,6 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 
+NO_STAGE=	yes
 USES=		gettext gmake pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_GL=		gl

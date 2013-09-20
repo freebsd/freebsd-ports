@@ -11,6 +11,7 @@ PKGNAMEPREFIX=	mkgmap-
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tile splitter for mkgmap
 
+NO_STAGE=	yes
 NO_BUILD=	yes
 
 USE_JAVA=	yes

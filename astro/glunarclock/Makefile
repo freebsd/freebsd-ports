@@ -13,6 +13,7 @@ COMMENT=	GNOME applet that displays the current phase of the Moon
 
 LIB_DEPENDS=	xklavier.12:${PORTSDIR}/x11/libxklavier
 
+NO_STAGE=	yes
 USES=        pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomepanel gnomeprefix intlhack libgnomeui
 GNU_CONFIGURE=	yes

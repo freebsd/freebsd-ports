@@ -29,6 +29,7 @@ USGS_DESC=		Add support for Geo::WebService::Elevation::USGS
 CONFIGURE_ARGS=	-y
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN1=		satpass.1
 MAN3=		Astro::Coord::ECI.3 \

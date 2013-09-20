@@ -12,6 +12,7 @@ COMMENT=	Catalogue of objects builder from astronomical images
 
 GNU_CONFIGURE=	yes
 USES=		gmake
+NO_STAGE=	yes
 
 MAN1=	sex.1
 MANX=	sex.x

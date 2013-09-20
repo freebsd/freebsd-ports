@@ -15,6 +15,7 @@ LIB_DEPENDS=	cfitsio:${PORTSDIR}/astro/cfitsio
 CONFIGURE_ENV=	CFITSIO=${LOCALBASE}
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN3=		Astro::FITS::CFITSIO.3
 

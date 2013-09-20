@@ -26,6 +26,7 @@ USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender
 USE_GNOME=	gnomedocutils gtk20
 USE_PERL5=	run
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes

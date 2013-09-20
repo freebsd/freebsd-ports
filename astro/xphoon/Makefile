@@ -11,6 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set the root window to the moon in its current phase
 
+NO_STAGE=	yes
 USES=		imake
 USE_XORG=	x11 xext
 

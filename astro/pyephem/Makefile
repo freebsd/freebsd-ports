@@ -10,6 +10,7 @@ MASTER_SITES=	CHEESESHOP
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Scientific-grade astronomical computations for Python
 
+NO_STAGE=	yes
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 

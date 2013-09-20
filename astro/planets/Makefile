@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 
+NO_STAGE=	yes
 USES=		gmake
 ALL_TARGET=	${PORTNAME}
 
