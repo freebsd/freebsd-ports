@@ -3,6 +3,11 @@ bin/puppet
 %%RUBY_SITELIBDIR%%/hiera/backend/puppet_backend.rb
 %%RUBY_SITELIBDIR%%/hiera/scope.rb
 %%RUBY_SITELIBDIR%%/hiera_puppet.rb
+%%RUBY_SITELIBDIR%%/puppetx/puppetlabs/syntax_checkers/json.rb
+%%RUBY_SITELIBDIR%%/puppetx/puppet/syntax_checker.rb
+%%RUBY_SITELIBDIR%%/puppetx/puppet/bindings_scheme_handler.rb
+%%RUBY_SITELIBDIR%%/puppetx/puppet/hiera2_backend.rb
+%%RUBY_SITELIBDIR%%/puppetx.rb
 %%ETCDIR%%/puppet.conf-dist
 %%ETCDIR%%/auth.conf-dist
 @dirrmtry etc/puppet/modules
@@ -13,3 +18,7 @@ bin/puppet
 @exec /usr/sbin/chown -Rh puppet:puppet /var/puppet
 @dirrm %%RUBY_SITELIBDIR%%/hiera/backend
 @dirrm %%RUBY_SITELIBDIR%%/hiera
+@dirrm %%RUBY_SITELIBDIR%%/puppetx/puppetlabs/syntax_checkers
+@dirrm %%RUBY_SITELIBDIR%%/puppetx/puppetlabs
+@dirrm %%RUBY_SITELIBDIR%%/puppetx/puppet
+@dirrm %%RUBY_SITELIBDIR%%/puppetx
