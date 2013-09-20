@@ -65,6 +65,7 @@ COMMANDS=	c-index-test \
 		clang-tblgen
 FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASSERTS}

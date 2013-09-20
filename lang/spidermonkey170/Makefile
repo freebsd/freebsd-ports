@@ -43,6 +43,7 @@ THREADSAFE_DESC=	Enable multiple thread support
 TRACEJIT_DESC=		Enable tracing JIT support
 UTF8_DESC=		Treat strings as UTF8 instead of ISO-8859-1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

@@ -40,6 +40,7 @@ SQUEAK_SRC=		SqueakV41.sources
 SQUEAK_LIB_DIR=		${PORTVERSION}-${SVNVERSION}
 USES=			pkgconfig
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 ##################################################

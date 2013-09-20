@@ -29,6 +29,7 @@ MAN1=		j-jconsole.1
 SUB_FILES=	j-jconsole.sh jw.sh
 SUB_LIST=	PORTVERSION=${PORTVERSION:S/b//g}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/j-jconsole.sh ${PREFIX}/bin/j-jconsole
 	${INSTALL_SCRIPT} ${WRKSRC}/jw.sh ${PREFIX}/bin/jw

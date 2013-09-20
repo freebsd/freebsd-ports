@@ -53,6 +53,7 @@ OPTIONS_DEFAULT=	THREADS PYMALLOC IPV6
 
 NLS_DESC=	Enable Gettext support for the locale module
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

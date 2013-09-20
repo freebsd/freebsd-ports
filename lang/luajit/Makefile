@@ -24,6 +24,7 @@ PLIST_SUB+=	VERSION=${DISTVERSION}
 MAN1=		luajit.1
 .endif
 
+NO_STAGE=	yes
 post-install:
 	${LN} -sf ${PREFIX}/bin/${PORTNAME}-${DISTVERSION} \
 		${PREFIX}/bin/${PORTNAME}

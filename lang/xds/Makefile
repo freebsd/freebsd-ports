@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xds
-# Date created:		29 January 2007
-# Whom:			coumarin@gmail.com
-#
+# Created by: coumarin@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	xds
 PORTVERSION=	2.51
@@ -29,6 +25,7 @@ ALL_TARGET=	#
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 pre-patch:
 	@${BRANDELF} -t Linux ${WRKSRC}/bin/xc ${WRKSRC}/bin/h2d
 

@@ -21,6 +21,7 @@ GH_COMMIT=	568c234
 
 SUB_FILES=	ipy ipy64
 
+NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/xbuild /t:Stage \
 		/p:Configuration=Release /p:ReferencedPlatform=V4 \

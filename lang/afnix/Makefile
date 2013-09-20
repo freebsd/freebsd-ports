@@ -30,6 +30,7 @@ MAN3=	afnix::csm.3 afnix::gfx.3 afnix::itu.3 afnix::mth.3 afnix::net.3 \
 	afnix::txt.3 afnix::wax.3 afnix::xml.3 afnix::xpe.3
 MAN7=	afnix::guide.7 afnix::license.7 afnix::notes.7 afnix::reference.7
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"

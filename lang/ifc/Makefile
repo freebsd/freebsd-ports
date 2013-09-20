@@ -35,6 +35,7 @@ MANPREFIX=	${PREFIX}/${COMPILERDIR}/
 
 IFC_SITE=	http://www.intel.com/software/products/compilers/
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 EXTRACT_AFTER_ARGS=	--exclude intel-iidb\*.rpm \

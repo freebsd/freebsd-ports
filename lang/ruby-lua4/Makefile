@@ -29,6 +29,7 @@ INSTALL_TARGET=	site-install
 
 EXAMPLES=	html_ssi_lua.rb test_*
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -Ee 's/[[:<:]](lua(lib)?)[[:>:]]/\1-${LUA_VER}/' \
 		${WRKSRC}/${RUBY_EXTCONF}

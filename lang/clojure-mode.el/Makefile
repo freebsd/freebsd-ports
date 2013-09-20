@@ -1,9 +1,5 @@
-# New ports collection makefile for:   clojure-mode.el
-# Date created:		22 Dec 2008
-# Whom:			Peter Schuller <peter.schuller@infidyne.com>
-#
+# Created by: Peter Schuller <peter.schuller@infidyne.com>
 # $FreeBSD$
-#
 
 PORTNAME=	clojure-mode.el
 PORTVERSION=	20090718
@@ -20,6 +16,7 @@ USE_EMACS=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/clojure-mode
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/clojure-mode.el ${PREFIX}/${EMACS_SITE_LISPDIR}/clojure-mode.el
 	${INSTALL_DATA} ${WRKSRC}/clojure-test-mode.el ${PREFIX}/${EMACS_SITE_LISPDIR}/clojure-test-mode.el

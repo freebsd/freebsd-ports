@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gofer
-# Date created:         Wed Feb  1 01:51:59 PST 1995
-# Whom:                 hsu
-#
+# Created by: hsu
 # $FreeBSD$
-#
 
 PORTNAME=	gofer
 PORTVERSION=	2.30b
@@ -24,6 +20,7 @@ DOCSDIR=	${PREFIX}/share/doc/Gofer
 LIBDIR=		${PREFIX}/lib/Gofer
 MAN1=		gofer.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKDIR}/scripts/gofer \

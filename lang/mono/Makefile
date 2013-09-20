@@ -49,6 +49,7 @@ MAN1=		al.1 cccheck.1 ccrewrite.1 cert2spc.1 certmgr.1 chktrust.1 \
 		signcode.1 sn.1 soapsuds.1 sqlsharp.1 wsdl.1 xbuild.1 xsd.1
 MAN5=		mdoc.5 mono-config.5
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::

@@ -21,6 +21,7 @@ MAN1=		a68g.1
 PLIST_DIRS=	include/algol68g
 PLIST_FILES=	bin/a68g include/algol68g/a68g.h include/algol68g/a68g-config.h
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUPLOT}

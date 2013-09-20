@@ -1,9 +1,5 @@
-# New ports collection makefile for:	STk
-# Date created:		17 Sep 96
-# Whom:			jmacd@cs.berkeley.edu
-#
+# Created by: jmacd@cs.berkeley.edu
 # $FreeBSD$
-#
 
 PORTNAME=	STk
 PORTVERSION=	4.0.1
@@ -25,6 +21,7 @@ PLIST_SUB=	STK_VERSION=${PORTVERSION} STK_ARCH=${STK_ARCH}
 
 STK_ARCH!=	${ECHO} "$$(uname)-$$(uname -r)-$$(uname -m)"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

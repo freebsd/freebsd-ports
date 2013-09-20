@@ -1,7 +1,4 @@
-# New ports collection makefile for:	OO2C
-# Date created:				December 17, 1999
-# Whom:					Oliver Breuninger <ob@seicom.NET>
-#
+# Created by: Oliver Breuninger <ob@seicom.NET>
 # $FreeBSD$
 
 PORTNAME=	oo2c
@@ -29,6 +26,7 @@ MAN1=		oo2c.1 oob.1 ooef.1 oowhereis.1
 
 ONLY_FOR_ARCHS=	i386 amd64 ia64
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386

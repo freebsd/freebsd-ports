@@ -20,6 +20,7 @@ DESTINY=	${WRKDIR}/destino
 BUILD_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	build
 
+NO_STAGE=	yes
 do-install:
 	# To support DESTDIR in the future, install twice
 	${MKDIR} ${DESTINY}${PREFIX}/bin

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nqc
-# Date created:        11 Aug 1999
-# Whom:                kbyanc
-#
+# Created by: kbyanc
 # $FreeBSD$
-#
 
 PORTNAME=	nqc
 PORTVERSION=	3.1.r6
@@ -21,6 +17,7 @@ NO_WRKSUBDIR=	yes
 MAN1=		nqc.1
 PLIST_FILES=	bin/nqc
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/nqc ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/nqc-man-2.1r1-0.man ${PREFIX}/man/man1/nqc.1

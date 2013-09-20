@@ -28,6 +28,7 @@ MAKE_ARGS=	CONFIG_NOLDL=1
 
 MAN1=		tcc.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MDOCS)

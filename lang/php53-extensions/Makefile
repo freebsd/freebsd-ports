@@ -1,9 +1,4 @@
-# New ports collection makefile for:	php53-extensions
-# Date created:			12 Apr 2012
-# Whom:				Florian Smeets <flo@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	php53
 PORTVERSION=	1.6
@@ -116,6 +111,7 @@ XSL_DESC=		XSL support (Implies DOM)
 ZIP_DESC=		ZIP support
 ZLIB_DESC=		ZLIB support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for opt in ${OPTIONS_DEFINE}

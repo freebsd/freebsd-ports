@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ikarus
-# Date created:		30 January 2009
-# Whom:			Vitaly Magerya <vmagerya@gmail.com>
-#
+# Created by: Vitaly Magerya <vmagerya@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ikarus
 PORTVERSION=	0.0.3
@@ -34,6 +30,7 @@ ONLY_FOR_ARCHS=	i386
 NO_PACKAGE=	Pointyhat cluster CPUs do not support required SSE instruction set
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !${PORT_OPTIONS:MDOCS}

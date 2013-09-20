@@ -15,6 +15,7 @@ BUILD_DEPENDS=	ctangle:${PORTSDIR}/devel/cweb
 NO_WRKSUBDIR=	yes
 FILES=		mmix.1 mmix.mp silly.out silly.run
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mmix ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/mmixal ${PREFIX}/bin

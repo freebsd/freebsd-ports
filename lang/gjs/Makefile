@@ -28,4 +28,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 SHEBANG_FILES=	scripts/make-tests
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  Sather
-# Date created:			  Mon Oct 31 22:04:12 PST 1994
-# Whom:				  hsu
-#
+# Created by: hsu
 # $FreeBSD$
-#
 
 PORTNAME=	sather
 PORTVERSION=	1.2.2
@@ -44,6 +39,7 @@ EMACS_DESC=	Install Emacs syntax files
 PORTDOCS=	*
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900000

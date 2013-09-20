@@ -17,6 +17,7 @@ JAVA_VERSION=	1.6+
 
 PLIST_FILES=	%%JAVAJARDIR%%/clojure-contrib-1.2.0.jar
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/target/clojure-contrib-1.2.0.jar ${JAVAJARDIR}
 

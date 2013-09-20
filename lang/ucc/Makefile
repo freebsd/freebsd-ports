@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ucc
-# Date created:				15 August 2008
-# Whom:					Wen Heping <wenheping@gmail.com>
-#
+# Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ucc
 PORTVERSION=	1.6.0
@@ -30,4 +26,5 @@ post-patch:	.SILENT
 		${WRKSRC}/driver/Makefile \
 		${WRKSRC}/ucl/Makefile
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

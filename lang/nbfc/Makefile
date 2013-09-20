@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	nbfc
-# Date created:				29 May 2008
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	nbfc
 PORTVERSION=	0.1
@@ -17,6 +13,7 @@ MAN1=	nbfc.1
 
 PLIST_FILES=	bin/nbfc
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g; s|bison -y|${YACC} -|g; s|gcc|${CC} ${CFLAGS}|g' \
 		${WRKSRC}/Makefile

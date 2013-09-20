@@ -54,6 +54,7 @@ OPTIONS_DEFAULT=	RAWSOCK WILDCARD ZLIB
 MAN1=		clisp.1 clisp-link.1
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Semgentation fault in amd64 when using 'mmap(2)', errno = EINVAL.

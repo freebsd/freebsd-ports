@@ -26,6 +26,7 @@ ALL_TARGET=	#
 
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKDIR}/xds ${WRKSRC}
 

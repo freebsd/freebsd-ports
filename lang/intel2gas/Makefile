@@ -1,9 +1,5 @@
-# New ports collection makefile for:	intel2gas
-# Date created:		12 May 1999
-# Whom:			G. Adam Stanislav
-#
+# Created by: G. Adam Stanislav
 # $FreeBSD$
-#
 
 PORTNAME=	intel2gas
 PORTVERSION=	1.3.3
@@ -20,6 +16,7 @@ DATAPREFIX=	${PREFIX}/share/intel2gas
 DATADIRS=	i2g g2i m2g
 DOCS=		BUGS DATAFILES README
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/intel2gas ${PREFIX}/bin
 	${MKDIR} ${DATAPREFIX}

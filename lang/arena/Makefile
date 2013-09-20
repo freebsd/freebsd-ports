@@ -1,9 +1,5 @@
-# New ports collection makefile for:	arena
-# Date created:				2006-06-15
-# Whom:					Roman Bogorodskiy <novel@FreeBSD.org>
-#
+# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	arena
 PORTVERSION=	0.9.13
@@ -22,4 +18,5 @@ LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--enable-pcre
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

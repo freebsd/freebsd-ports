@@ -1,9 +1,5 @@
-# New ports collection makefile for: otcl
-# Date created:		23 April 1999
-# Whom:			obonilla
-#
+# Created by: obonilla
 # $FreeBSD$
-#
 
 PORTNAME=	otcl
 PORTVERSION=	1.14
@@ -31,6 +27,7 @@ DOCS=		CHANGES.html README.html \
 PORTDOCS=	${DOCS:S/doc\///}
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CFLAGS+=	-DHAVE_UNISTD_H

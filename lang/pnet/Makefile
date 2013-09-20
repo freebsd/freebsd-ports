@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gnome2
-# Date created:		21 May 2002
-# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
-#
+# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	pnet
 PORTVERSION=	${PNET_VERSION}
@@ -25,5 +21,6 @@ NO_BUILD=	yes
 
 do-install:	# empty
 
+NO_STAGE=	yes
 .include "../pnet/Makefile.pnet"
 .include <bsd.port.mk>

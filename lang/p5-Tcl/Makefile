@@ -18,6 +18,7 @@ USE_TCL=	84+
 
 MAN3=		Tcl.3
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -type d -exec ${CHMOD} 0755 \{} \;
 	@${FIND} ${WRKSRC} -type f -exec ${CHMOD} 0644 \{} \;

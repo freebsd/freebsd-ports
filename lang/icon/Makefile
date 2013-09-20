@@ -1,9 +1,5 @@
-# New ports collection makefile for:    icon
-# Date created:         05 April 1995
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
-#
+# Created by: Thomas Gellekum <tg@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	icon
 PORTVERSION=	9.5.0
@@ -40,6 +36,7 @@ CONFIG_CMD=	X-Configure
 PLIST_SUB=	WITHOUT_X11=
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CC.*|CC=${CC}|g ; \
 		 s|^CFLAGS.*|CFLAGS=${CFLAGS}|g ; \

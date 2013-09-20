@@ -29,6 +29,7 @@ OPTIONS_SINGLE_MYSQL=	MYSQL4 MYSQL5
 MYSQL4_DESC=		Build against MySQL 4.1
 MYSQL5_DESC=		Build against MySQL 5.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CFLAGS+=	-I${LOCALBASE}/include

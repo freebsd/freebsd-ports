@@ -30,6 +30,7 @@ OPTIONS_DEFINE=	X11 DOCS EXAMPLES
 OPTIONS_DEFAULT=	X11
 OPTIONS_SUB=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} != "i386"

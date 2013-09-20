@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mono-basic
-# Date created:		2008-12-20
-# Whom:			Romain Tartiere <romain@blogreen.org>
-#
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mono-basic
 PORTVERSION=	2.10
@@ -28,4 +24,5 @@ tests: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} Makefile ${MAKE_ARGS} test)
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

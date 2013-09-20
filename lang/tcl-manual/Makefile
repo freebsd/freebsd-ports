@@ -21,6 +21,7 @@ VERSIONS=	8.4.19 \
 DISTFILES+=	$v/tcl$v-html.tar.gz
 .endfor
 
+NO_STAGE=	yes
 post-patch:
 .for v in ${VERSIONS}
 	@${REINPLACE_CMD} -e 's|<b>tclsh</b>|<b>tclsh${v:R}</b>|g; \

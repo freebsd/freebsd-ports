@@ -1,9 +1,5 @@
-# New ports collection makefile for:	t3x
-# Date created:				15 October 2000
-# Whom:					Nils M Holm <nmh@t3x.org>
-#
+# Created by: Nils M Holm <nmh@t3x.org>
 # $FreeBSD$
-#
 
 PORTNAME=	t3x
 PORTVERSION=	8.1.5
@@ -22,6 +18,7 @@ MANCOMPRESSED=	no
 
 MAKE_ENV+=	INSTALL_PREFIX=${PREFIX}
 
+NO_STAGE=	yes
 do-configure:
 	@(cd ${WRKSRC}/ports/freebsd-386-elf; ./Config boot)
 

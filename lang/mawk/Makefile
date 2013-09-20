@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  mawk
-# Date created:			  24 Dec 1998
-# Whom:				  Pedro F. Giffuni <giffunip@asme.org>
-#
+# Created by: Pedro F. Giffuni <giffunip@asme.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mawk
 PORTVERSION=	1.3.3
@@ -25,6 +20,7 @@ PLIST_FILES=	bin/mawk
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} mawk_test fpe_test
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mawk ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/mawk.1 ${MANPREFIX}/man/man1

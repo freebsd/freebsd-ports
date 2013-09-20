@@ -1,9 +1,5 @@
-# New ports collection makefile for:	sml-mode.el
-# Date created:		23 December 1999
-# Whom:			J Koshy <jkoshy@freebsd.org>
-#
+# Created by: J Koshy <jkoshy@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	sml-mode
 PORTVERSION=	3.9.5
@@ -30,6 +26,7 @@ SMLMODE_ELISPDIR= ${ELISP_SUBDIR}/sml-mode
 SMLMODE_DOCDIR=	share/doc/sml-mode
 SMLMODE_DIR_ENTRY=* SML-mode: (sml-mode).         A mode for editing Standard ML programs.
 
+NO_STAGE=	yes
 do-install:
 	-${MKDIR} ${PREFIX}/${SMLMODE_ELISPDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.el ${WRKSRC}/*.elc ${PREFIX}/${SMLMODE_ELISPDIR}/

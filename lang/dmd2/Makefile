@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dmd2
-# Date created:				November 29 2010
-# Whom:					Ruben <chromium@hybridsource.org>
-#
+# Created by: Ruben <chromium@hybridsource.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dmd
 PKGNAMESUFFIX=	2
@@ -30,6 +26,7 @@ LICENSE_NAME_DMD=	Digital Mars license
 LICENSE_FILE_DMD=	${WRKSRC}/backendlicense.txt
 LICENSE_PERMS_DMD=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

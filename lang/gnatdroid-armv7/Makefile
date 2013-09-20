@@ -21,6 +21,7 @@ BUILD_DEPENDS=	gnatdroid-sysroot>=9:${PORTSDIR}/lang/gnatdroid-sysroot \
 RUN_DEPENDS:=	gnatdroid-sysroot>=9:${PORTSDIR}/lang/gnatdroid-sysroot \
 		gnatdroid-binutils>=2.21:${PORTSDIR}/lang/gnatdroid-binutils
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../gnat-aux/Makefile.common"
 
 LANGS=		c ada

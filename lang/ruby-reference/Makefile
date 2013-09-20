@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-reference
-# Date created:			8 February 2001
-# Whom:				Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	reference
 PORTVERSION=	1.0
@@ -27,6 +23,7 @@ RUBY_NO_RUN_DEPENDS=	yes
 WRKSRC=		${WRKDIR}/ref
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${RUBY_MODDOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/* ${RUBY_MODDOCDIR}

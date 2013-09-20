@@ -21,6 +21,7 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 NO_BUILD=	yes
 SUB_FILES=	starlogo.sh
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/starlogo.sh ${PREFIX}/bin/starlogo
 	cd ${WRKSRC} \

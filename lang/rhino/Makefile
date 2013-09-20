@@ -33,6 +33,7 @@ LINEDIT_DESC=	Enable line editing in the Rhino shell
 
 OPTIONS_DEFAULT=	LINEDIT
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 RHINOJAR=	${DATADIR}/${PORTNAME}.jar

@@ -1,10 +1,5 @@
-# Ports collection makefile for:    CMUCL
-# Date created:         Jul, 15, 1997
-# Whom:                 cracauer@cons.org "Martin Cracauer"
-#
+# Created by: cracauer@cons.org "Martin Cracauer"
 # $FreeBSD$
-#
-#
 
 PORTNAME=	cmucl
 PORTVERSION=	19f
@@ -32,6 +27,7 @@ MAN1=		lisp.1 cmucl.1
 
 PLIST_SUB=	VER=${PORTVERSION}
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/lisp ${PREFIX}/bin
 	cd ${WRKDIR} && ${FIND} lib | \

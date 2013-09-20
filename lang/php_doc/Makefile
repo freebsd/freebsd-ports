@@ -1,9 +1,5 @@
-# New ports collection makefile for:	php_doc
-# Date created:		Sun Apr 22 14:51:32 CEST 2001
-# Whom:			Dirk Froemberg <dirk@FreeBSD.org>
-#
+# Created by: Dirk Froemberg <dirk@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	php_doc
 PORTVERSION?=	20100701
@@ -46,6 +42,7 @@ PKGNAMESUFFIX=	-${PHP_LANG}
 PLIST_SUB=	PHPDOCDIR=${PHPDOCDIR:S/^${PREFIX}\///}
 
 .if ${PHP_LANG} == en
+NO_STAGE=	yes
 pre-fetch:
 	@${ECHO}
 	@${ECHO} "You may set PHP_LANG to"

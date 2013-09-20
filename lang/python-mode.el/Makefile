@@ -19,6 +19,7 @@ XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 LISPFILES=	doctest-mode.el pycomplete.el pycomplete.py python-mode.el
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${EMACSLISPDIR}
 	${MKDIR} ${XEMACSLISPDIR}

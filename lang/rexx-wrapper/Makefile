@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	rexx-wrapper
-# Date created:			Nov 11, 2003
-# Whom:	      			ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	wrapper
 PORTVERSION=	2.4
@@ -31,4 +26,5 @@ post-patch:	.SILENT
 		${WRKSRC}/rexxwrap.cmd
 	@${REINPLACE_CMD} 's/-compiler=$$(CC/&:T/' ${WRKSRC}/Makefile.in
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

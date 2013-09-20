@@ -34,6 +34,7 @@ MANCOMPRESSED=	yes
 MAN1=		rep.1 rep-remote.1 rep-xgettext.1 repdoc.1
 INFO=		librep
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == ia64

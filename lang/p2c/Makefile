@@ -1,9 +1,5 @@
-# New ports collection makefile for:    p2c
-# Date created:         4 October 1994
-# Whom:                 jmz
-#
+# Created by: jmz
 # $FreeBSD$
-#
 
 PORTNAME=	p2c
 PORTVERSION=	1.21a
@@ -26,4 +22,5 @@ pre-install: build
 	@${MKDIR} ${PREFIX}/include/p2c
 	@${INSTALL_MAN} ${WRKSRC}/src/p2cc.man ${PREFIX}/man/man1/p2cc.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

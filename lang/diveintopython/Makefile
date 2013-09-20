@@ -33,6 +33,7 @@ PLIST_SUB=	VERSION="${VERSIONSTR}"
 DIPDLDIR=	${DOCSDIR}/download
 VERSIONSTR=	${PORTVERSION:C|(\.[^.]*)\.([^.]*)$|\1-\2|}
 
+NO_STAGE=	yes
 post-patch:
 	@ ${FIND} ${WRKSRC} -name \*.html | ${XARGS} ${REINPLACE_CMD} \
 	  "s#http[^>]*\(download/${PORTNAME}-examples-${VERSIONSTR}.zip\)#\.\./\1#"

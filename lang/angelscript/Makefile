@@ -28,6 +28,7 @@ STATIC_DESC=		Build static library
 SHARED_DESC=		Build shared library
 OPTIONS_DEFAULT=	STATIC
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSHARED}

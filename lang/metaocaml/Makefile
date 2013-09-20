@@ -66,6 +66,7 @@ PLISTDIR=	${PREFIX}/lib/metaocaml \
 		${PREFIX}/bin/metaocamlc \
 		${PREFIX}/bin/metaocamlopt
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Have to set this here and can't use ${DATADIR} or MLINKS get screwed up

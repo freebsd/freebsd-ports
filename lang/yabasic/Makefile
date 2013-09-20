@@ -18,6 +18,7 @@ MAN1=		yabasic.1
 PORTDOCS=	yabasic.htm
 PLIST_FILES=	bin/yabasic
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|= -DUNIX|= @X_CFLAGS@ -DUNIX|g" ${WRKSRC}/Makefile.in
 

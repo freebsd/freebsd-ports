@@ -30,6 +30,7 @@ CONFIGURE_ARGS=		--with-pthreads \
 			--with-system-nspr
 
 # This comes from bsd.gecko.mk, fixes linking issues on 9.0 and higher.
+NO_STAGE=	yes
 post-configure:
 	${ECHO_CMD} "fenv.h" >> ${WRKSRC}/config/system-headers
 	${ECHO_CMD} "pthread_np.h" >> ${WRKSRC}/config/system-headers

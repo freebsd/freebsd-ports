@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fbbi
-# Date created:        22 December 2001
-# Whom:                Leland Wang <llwang@infor.org>
-#
+# Created by: Leland Wang <llwang@infor.org>
 # $FreeBSD$
-#
 
 PORTNAME=	fbbi
 PORTVERSION=	2003.0326
@@ -25,6 +21,7 @@ post-patch:	.SILENT
 		-e '/^CFLAGS/{s/=/+=/;s/-g//;s/-O//;}' \
 		${WRKSRC}/Makefile
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/../bin/fbbi ${PREFIX}/bin
 

@@ -22,6 +22,7 @@ OPTIONS_DEFINE=	DOCS ROBOCTL
 
 ROBOCTL_DESC=	Include roboctl to communicate with the NXT
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MROBOCTL}

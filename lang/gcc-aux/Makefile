@@ -13,6 +13,7 @@ DISTFILES=	gcc-${GCC_VERSION}.tar.bz2
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Version of GCC ${GCC_BRANCH} with full Ada support
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.common"
 
 LANGS=			c

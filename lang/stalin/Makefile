@@ -1,9 +1,5 @@
-# New ports collection makefile for:	stalin
-# Date created:				10/23/2009
-# Whom:					stas
-#
+# Created by: stas
 # $FreeBSD$
-#
 
 PORTNAME=	stalin
 PORTVERSION=	0.11
@@ -21,6 +17,7 @@ USE_BZIP2=	yes
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 ONLY_FOR_ARCHS_REASON=	has not been bootstrapped on other platforms yet
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"

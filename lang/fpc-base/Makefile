@@ -1,4 +1,4 @@
-# Created by:	John Merryweather Cooper <coop9211@uidaho.edu>
+# Created by: John Merryweather Cooper <coop9211@uidaho.edu>
 # $FreeBSD$
 
 PORTNAME=	base
@@ -22,4 +22,5 @@ NO_BUILD=	yes
 
 do-install:	# empty
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

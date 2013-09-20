@@ -15,6 +15,7 @@ USE_DOS2UNIX=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/SQUIRREL2
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64 || ${ARCH} == sparc64 || ${ARCH} == ia64

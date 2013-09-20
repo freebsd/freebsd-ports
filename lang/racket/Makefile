@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--enable-shared --enable-pthread \
 		--enable-lt=${LIBTOOL}
 CONFIGURE_SCRIPT=../configure
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(WITHOUT_X11)

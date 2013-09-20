@@ -40,6 +40,7 @@ SCM_MODULES=	byte.so bytenumb.so crs.so differ.so edline.so gsubr.so \
 		ioext.so posix.so ramap.so record.so rgx.so sc2.so \
 		socket.so unix.so
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

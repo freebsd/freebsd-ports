@@ -31,6 +31,7 @@ DOCFILES=	rexx.info rexx.ref rexx.summary rexx.tech
 RMEFILES=	README README.Y2K README.bugreport README.docs \
 		README.files README.make README.news README.platforms
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -13,6 +13,7 @@ PORTSCOUT=	limit:^6\.2\.
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

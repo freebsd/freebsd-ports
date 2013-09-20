@@ -12,6 +12,7 @@ DISTFILES=	gcc-core-${GCC_VERSION}.tar.bz2
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	GNAT Ada compiler based on GCC ${GCC_BRANCH}
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.common"
 
 LANGS=			c

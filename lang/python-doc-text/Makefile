@@ -4,4 +4,5 @@
 DOCFORMAT=	text
 MASTERDIR=	${.CURDIR}/../python-doc-html
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

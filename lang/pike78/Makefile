@@ -81,6 +81,7 @@ CONFIGURE_ARGS+=	--with-perl
 
 PLIST_FILES=	bin/pike bin/pike78 bin/hilfe
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 ONLY_FOR_ARCHS=	i386 amd64

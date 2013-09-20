@@ -26,6 +26,7 @@ NEW_ARCH=	${ARCH:S/i386/x86/:S/amd64/x86-64/}
 MAN1=		chicken.1 chicken-bug.1 chicken-install.1 chicken-profile.1 \
 		chicken-status.1 chicken-uninstall.1 csc.1 csi.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} != "amd64" && ${ARCH} != "i386" && ${ARCH} != "sparc64"

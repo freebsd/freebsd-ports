@@ -21,6 +21,7 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=	PYGAME
 PYGAME_DESC=	PyGame support (requires SDL)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYGAME}

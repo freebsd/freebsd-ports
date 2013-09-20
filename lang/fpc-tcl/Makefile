@@ -18,4 +18,5 @@ OPTIONS_DEFINE=	TCL
 TCL_DESC=	Install tool commnad language
 OPTIONS_DEFAULT=	TCL
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

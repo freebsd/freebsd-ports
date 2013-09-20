@@ -1,9 +1,5 @@
-# Ports collection makefile for:	twelf
-# Date created:		7/8/5
-# Whom:			andrewb@cs.cmu.edu
-#
+# Created by: andrewb@cs.cmu.edu
 # $FreeBSD$
-#
 
 PORTNAME=	twelf
 PORTVERSION=	1.5R1
@@ -39,6 +35,7 @@ INFO=		twelf
 
 RESTRICTED=	License is currently indeterminate (expected to be GPL)
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/Makefile
 

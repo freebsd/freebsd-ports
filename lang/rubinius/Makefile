@@ -1,9 +1,5 @@
-# New ports collection makefile for:		rubinius
-# Date created:					10/10/2010
-# Whom:						stas
-#
+# Created by: stas
 # $FreeBSD$
-#
 
 PORTNAME=	rubinius
 PORTVERSION=	1.2.4
@@ -42,6 +38,7 @@ OPTIONS_DEFINE=	GDBM
 OPTIONS_DEFAULT=	GDBM
 GDBM_DESC=	Enable GDBM support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

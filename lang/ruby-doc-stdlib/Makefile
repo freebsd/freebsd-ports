@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ruby-doc-stdlib
-# Date created:		2006-08-04
-# Whom:			Alexander Novitsky <alecn2002@yandex.ru>
-#
+# Created by: Alexander Novitsky <alecn2002@yandex.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	stdlib
 PORTVERSION=	0.10.1
@@ -20,6 +16,7 @@ COMMENT=	Documentation for the Ruby language standard library
 USE_RUBY=	yes
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:

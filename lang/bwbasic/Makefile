@@ -21,6 +21,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	@${CHMOD} a+x ${WRKSRC}/${CONFIGURE_SCRIPT}
 

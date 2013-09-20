@@ -1,8 +1,4 @@
 # $FreeBSD$
-#
-# Note: If you update this port make sure you create the distfinfo for all
-# versions: sbcl-1.v.v-x86-64-freebsd and sbcl-1.v.v-x86-freebsd
-#
 
 PORTNAME=	sbcl
 PORTVERSION=	1.1.8
@@ -48,6 +44,7 @@ ONLY_FOR_ARCHS_REASON=	is a native code compiler, and has not been ported to\
 this architecture yet
 SBCL_HOME=	${PREFIX}/lib/sbcl
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CFLAGS+=	-fno-omit-frame-pointer

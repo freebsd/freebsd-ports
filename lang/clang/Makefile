@@ -51,6 +51,7 @@ MAN1=		clang.1
 
 PLIST_SUB+=		PORTVERSION=${PORTVERSION}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASSERTS}

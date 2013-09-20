@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ArrowLISP
-# Date created:				12 Aug 2003
-# Whom:					Nils M Holm <nmh@t3x.org>
-#
+# Created by: Nils M Holm <nmh@t3x.org>
 # $FreeBSD$
-#
 
 PORTNAME=	alisp
 PORTVERSION=	20060917
@@ -28,4 +24,5 @@ post-patch:	.SILENT
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/alisp.h
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -64,6 +64,7 @@ MAKE_ENV+=	DISTVERSION=${DISTVERSION} PYTHON_CMD=${PYTHON_CMD} \
 LOCALBASE_REFIX=	\
 		lib_pypy/_sqlite3.py
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include "${MASTERDIR}/files/bsd.pypy.inst.mk"
 

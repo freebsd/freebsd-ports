@@ -29,6 +29,7 @@ PLIST_FILES=	bin/mixasm \
 		%%DATADIR%%/mixvm.el
 PLIST_DIRS=	%%DATADIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGLADE}

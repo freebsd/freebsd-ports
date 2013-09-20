@@ -44,6 +44,7 @@ MAKE_ENV=	SHORT_TCL_VER=${SHORT_TCL_VER} \
 PLIST_SUB=	TCL_VER=${TCL_VER} \
 		SHORT_TCL_VER=${SHORT_TCL_VER}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCLMAN}

@@ -11,6 +11,7 @@ COMMENT=	Replacement Objective-C runtime supporting modern Objective-C features
 
 SSP_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USES=		cmake

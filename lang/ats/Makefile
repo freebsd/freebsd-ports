@@ -26,6 +26,7 @@ PORTEXAMPLES=	AUP INTRO KernighanRitchie MISC MULTICORE TEST
 OPTIONS_DEFINE=		GMP PCRE
 OPTIONS_DEFAULT=	GMP PCRE
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64

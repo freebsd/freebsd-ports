@@ -54,6 +54,7 @@ MAN1=		clang.1
 
 PLIST_SUB+=	CLANG_RELEASE=${CLANG_RELEASE}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASSERTS}

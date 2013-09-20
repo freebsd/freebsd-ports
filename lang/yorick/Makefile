@@ -23,6 +23,7 @@ PORTDOCS=	FILE_FORMATS README drat.doc graph.doc hex.doc \
 
 OPTIONS_DEFINE=	DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Change "cd foo; $(MAKE)" into "$(MAKE) -C foo" to unbreak parallel builds

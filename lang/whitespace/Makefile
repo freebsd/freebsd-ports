@@ -30,6 +30,7 @@ OPTIONS_DEFAULT=	DOCS EXAMPLES
 PORTEXAMPLES=		*
 PORTDOCS=		*
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

@@ -22,6 +22,7 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=release
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.addons"
 
 post-patch:

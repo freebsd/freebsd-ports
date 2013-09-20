@@ -33,6 +33,7 @@ EMACS_DESC=	Compile pure-mode.el with Emacs
 MAN1=		pure.1
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEMACS}

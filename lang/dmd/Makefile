@@ -26,6 +26,7 @@ LICENSE_PERMS_DMD=	no-pkg-mirror auto-accept
 OPTIONS_DEFINE=	SOURCE DOCS
 SOURCE_DESC=	Compile dmd and phobos from source
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 MODULEDIR=	${PREFIX}/include/d/phobos

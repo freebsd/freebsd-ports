@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ocaml.m4
-# Date created:		24 Marth 2010
-# Whom:			stas
-#
+# Created by: stas
 # $FreeBSD$
-#
 
 PORTNAME=	autoconf
 PORTVERSION=	1.1
@@ -26,6 +22,7 @@ PLIST_FILES=	share/aclocal/ocaml.m4
 PORTDOCS=	ocaml.m4.txt
 .endif
 
+NO_STAGE=	yes
 do-install:
 	${MKDIR} ${AC_SUBDIR}/
 	${INSTALL_DATA} ${WRKSRC}/ocaml.m4 ${AC_SUBDIR}/

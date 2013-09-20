@@ -1,9 +1,5 @@
-# New ports collection makefile for:	STklos
-# Date created:				6 November 2002
-# Whom:					Kimura Fuyuki <fuyuki@hadaly.org>
-#
+# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
 # $FreeBSD$
-#
 
 PORTNAME=	stklos
 PORTVERSION=	1.10
@@ -33,6 +29,7 @@ CONFIGURE_ARGS=	--enable-threads=posix
 MAN1=		stklos-compile.1 stklos-config.1 stklos-genlex.1 \
 		stklos-pkg.1 stklos.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900000

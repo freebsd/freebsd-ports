@@ -1,9 +1,5 @@
-# New ports collection makefile for: 	lua
-# Date created:				27 June 1999
-# Whom:					Richard Kiss <him@richardkiss.com>
-#
+# Created by: Richard Kiss <him@richardkiss.com>
 # $FreeBSD$
-#
 
 PORTNAME=	lua
 PORTVERSION=	5.0.3
@@ -33,6 +29,7 @@ LUA_MAN=	${LUA_BIN:S/$/.1/}
 
 MAKE_JOBS_UNSAFE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

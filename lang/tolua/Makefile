@@ -1,10 +1,5 @@
-#
-# New ports collection makefile for:	tolua
-# Date created:				21 November 2004
-# Whom:					Edwin Groothuis <edwin@mavetju.org>
-#
+# Created by: Edwin Groothuis <edwin@mavetju.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tolua
 PORTVERSION=	5.1.3
@@ -19,6 +14,7 @@ USE_GMAKE=	yes
 USE_LUA=	5.1
 WRKSRC=		${WRKDIR}/${PORTNAME}-5.1.3
 
+NO_STAGE=	yes
 post-extract:
 	${RM} ${WRKSRC}/src/bin/tolua_lua.o
 

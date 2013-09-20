@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:  mixal
-# Date created:			  21-Dec-1996
-# Whom:                 	  David O'Brien <obrien@cs.ucdavis.edu>
-#
+# Created by: David O'Brien <obrien@cs.ucdavis.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	mixal
 PORTVERSION=	1.11
@@ -20,6 +15,7 @@ ALL_TARGET=	${PORTNAME}
 
 MAN1=		mixal.1
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mixal ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/mixal.1 ${MANPREFIX}/man/man1

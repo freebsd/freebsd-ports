@@ -1,5 +1,3 @@
-# ex:ts=8
-# Ports collection makefile for:	Pugs::Compiler::Rule
 # Created by: ijliao
 # $FreeBSD$
 
@@ -37,4 +35,5 @@ MAN3=	Pugs::Compiler::Regex.3 \
 	Pugs::Runtime::StrPos.3 \
     	Pugs::Runtime::Tracer.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

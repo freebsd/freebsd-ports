@@ -1,7 +1,4 @@
-# New ports collection makefile for:	SLIB for Guile
-# Date created:				3 November 2003
-# Whom:					Kimura Fuyuki <fuyuki@nigredo.org>
-#
+# Created by: Kimura Fuyuki <fuyuki@nigredo.org>
 # $FreeBSD$
 #    $MCom: ports/lang/slib-guile/Makefile,v 1.3 2006/10/13 02:32:48 marcus Exp $
 
@@ -22,6 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes
 
+NO_STAGE=	yes
 do-install:
 	${LN} -shf ${PREFIX}/share/slib ${LOCALBASE}/share/guile/1.8/slib
 	${LOCALBASE}/bin/guile -q -c \

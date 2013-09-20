@@ -1,9 +1,5 @@
-# New ports collection makefile for: CAML
-# Date created:		21 July 1998
-# Whom:			jkoshy
-#
+# Created by: jkoshy
 # $FreeBSD$
-#
 
 PORTNAME=	caml
 PORTVERSION=	0.75
@@ -23,6 +19,7 @@ ALL_TARGET=	configure world bootstrap
 MAN1=		camlc.1 camllex.1 camllibr.1 camllight.1 camlmktop.1 \
 		camlrun.1 camlyacc.1 mletags.1 camllorder.1 camlsearch.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:

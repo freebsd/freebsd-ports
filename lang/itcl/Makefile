@@ -34,6 +34,7 @@ MANN=		body.itcl class.itcl code.itcl configbody.itcl delete.itcl ensemble.itcl 
 		is.itcl itcl.itcl itclvars.itcl local.itcl scope.itcl
 MAN3=		Itcl_RegisterC.3 Itcl_Stack.3 Itcl_Class.3 Itcl_List.3 Itcl_Object.3 Itcl_Preserve.3
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

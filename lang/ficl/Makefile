@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ficl
-# Date created:		23 August 2002
-# Whom:			Bruce M Simpson
-#
+# Created by: Bruce M Simpson
 # $FreeBSD$
-#
 
 PORTNAME=	ficl
 PORTVERSION=	4.1.0
@@ -31,6 +27,7 @@ PLIST_FILES=	bin/${PORTNAME} lib/lib${PORTNAME}.so lib/lib${PORTNAME}.so.${PORTV
 
 PORTDOCS=	*
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_LIB} ${WRKSRC}/lib${PORTNAME}.a ${PREFIX}/lib

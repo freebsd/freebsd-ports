@@ -31,4 +31,5 @@ PLIST_FILES=	bin/poly		\
 MAN1=		poly.1 polyimport.1
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

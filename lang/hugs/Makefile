@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 #CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-ffi
 #CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}"
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--with-pthreads

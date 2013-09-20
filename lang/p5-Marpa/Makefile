@@ -34,4 +34,5 @@ MAN3=		Marpa::Advanced::Algorithm.3 \
 		Marpa::Support.3 \
 		Marpa::Tracing.3
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

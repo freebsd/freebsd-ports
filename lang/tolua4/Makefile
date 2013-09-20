@@ -17,6 +17,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 LATEST_LINK=	${PORTNAME}${LUA_VER_STR}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -Ee \
 		's|^(CC=).*|\1 ${CC}|; \

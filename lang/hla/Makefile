@@ -27,6 +27,7 @@ ALL_TARGET=	hlaparse hla
 
 ONLY_FOR_ARCHS=	i386
 
+NO_STAGE=	yes
 post-extract:
 	${MKDIR} ${WRKDIR}/stdlib && \
 	    ${TAR} -zxf ${_DISTDIR}/bsd.${PORTNAME}.tar.gz -C ${WRKDIR}/stdlib

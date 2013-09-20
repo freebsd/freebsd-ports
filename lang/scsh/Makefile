@@ -1,9 +1,5 @@
-# New ports collection makefile for:    scsh
-# Date created:         Jul, 15, 1997
-# Whom:                 cracauer@cons.org "Martin Cracauer"
-#
+# Created by: cracauer@cons.org "Martin Cracauer"
 # $FreeBSD$
-#
 
 PORTNAME=	scsh
 PORTVERSION=	0.6.7
@@ -18,6 +14,7 @@ CONFLICTS=	scheme48-[0-9]*
 
 LDFLAGS+=	-Wl,-E
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"

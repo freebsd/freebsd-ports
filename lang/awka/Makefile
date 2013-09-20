@@ -1,8 +1,4 @@
-# ex:ts=8
-# New ports collection makefile for:	awka
-# Date created:			May 31, 2001
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
 
 PORTNAME=	awka
@@ -21,6 +17,7 @@ MANCOMPRESSED=	no
 MAN1=	awka.1
 MAN5=	awka-elm.5 awka-elmref.5
 
+NO_STAGE=	yes
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/awka
 
