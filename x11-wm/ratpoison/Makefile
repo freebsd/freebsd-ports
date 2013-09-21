@@ -20,6 +20,7 @@ GDM_SUPPORT_DESC=	Install session data files for GDM
 
 SUB_FILES=	ratpoison.desktop
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

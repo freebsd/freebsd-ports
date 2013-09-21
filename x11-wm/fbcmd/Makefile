@@ -1,9 +1,5 @@
-# New ports collection makefile for:	fbcmd
-# Date created:		2004-09-24
-# Whom:			Roman Bogorodskiy <bogorodskiy@inbox.ru>
-#
+# Created by: Roman Bogorodskiy <bogorodskiy@inbox.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	fbcmd
 PORTVERSION=	0.5.1
@@ -24,6 +20,7 @@ CFLAGS+=	"-I${LOCALBASE}/include"
 USE_XORG=	x11 xmu
 PLIST_FILES=	bin/fbcmd
 
+NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e "s|/usr/X11R6|${LOCALBASE}|g" ${WRKSRC}/Makefile
 

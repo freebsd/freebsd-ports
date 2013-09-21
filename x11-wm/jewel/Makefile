@@ -16,6 +16,7 @@ MAN1=		jewel.1x
 USE_XORG=	x11 xext xpm
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC|#CC|g; \
 		s|^CFLAGS|#CFLAGS|g; \

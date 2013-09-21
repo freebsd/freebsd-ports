@@ -1,9 +1,5 @@
-# New ports collection makefile for:   golem
-# Date created:        11 August 2001
-# Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
-#
+# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	golem
 PORTVERSION=	0.0.6
@@ -31,6 +27,7 @@ MAKE_ARGS=	DEVEL=1
 MANCOMPRESSED=	yes
 MAN1=		golem.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"

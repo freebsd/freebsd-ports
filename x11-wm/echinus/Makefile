@@ -31,6 +31,7 @@ PLIST_FILES=	bin/echinus \
 PLIST_DIRS=	etc/echinus
 SUB_FILES=	pkg-message
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|-Os|${CFLAGS}|' ${WRKSRC}/config.mk
 

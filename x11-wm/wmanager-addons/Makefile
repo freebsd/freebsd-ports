@@ -16,6 +16,7 @@ MAN1=		wmanager.1 wmanager-loop.1 wmanagerrc-update.1
 MANCOMPRESSED=	yes
 
 .if !defined(NOPORTDOCS)
+NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 .for file in Changes README THANKS TODO

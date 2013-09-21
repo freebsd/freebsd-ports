@@ -23,6 +23,7 @@ SUB_STUBS=	e16menuedit-0.1 e16keyedit-0.7
 PLIST_FILES=	bin/e16menuedit \
 		bin/e16keyedit
 
+NO_STAGE=	yes
 do-patch:
 .for i in ${SUB_STUBS}
 	if [ -f "${PATCHDIR}/patch-${i}" ]; then \

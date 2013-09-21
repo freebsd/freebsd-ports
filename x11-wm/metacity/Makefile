@@ -32,6 +32,7 @@ GCONF_SCHEMAS=	metacity.schemas
 MAN1=		metacity-message.1 metacity-theme-viewer.1 \
 		metacity-window-demo.1 metacity.1
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' \
 		${WRKSRC}/configure

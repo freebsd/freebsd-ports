@@ -35,6 +35,7 @@ CONFIGURE_ARGS=	--with-profile=MEDIUM_PC \
 OPTIONS_DEFINE=	ILLUME
 ILLUME_DESC=	Enable illume module
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MILLUME}

@@ -28,6 +28,7 @@ OPTIONS_DEFINE=	INOTIFY
 OPTIONS_DEFAULT=	INOTIFY
 INOTIFY_DESC?=	Enable inotify support
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MINOTIFY}

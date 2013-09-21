@@ -28,6 +28,7 @@ OPTIONS_DEFINE=	SBCL EXAMPLES
 OPTIONS_DEFAULT=	SBCL
 SBCL_DESC=	Build with lang/sbcl (otherwise with lang/clisp)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSBCL} || make(makesum) || defined(FETCH_ALL)

@@ -16,4 +16,5 @@ USE_XORG=	x11 xproto
 MAN1=		transset.1
 PLIST_FILES=	bin/transset
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -21,4 +21,5 @@ USE_EFL=	edje libtool_hack modarch_hack
 
 CONFIGURE_ARGS=	--disable-nls    # without this exebuf don't build
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -37,6 +37,7 @@ BIDI_DESC=		Asian bi-directional text support
 IMLIB_DESC=		imlib library (requires gtk12)
 GNOME1_DESC=		GNOME 1 desktop support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MICONS}

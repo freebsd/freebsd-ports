@@ -18,6 +18,7 @@ USES=		imake
 USE_XORG=	xpm xmu
 MAN1=		ctwm.1
 
+NO_STAGE=	yes
 pre-configure:
 	${CP} ${WRKSRC}/Imakefile.local-template ${WRKSRC}/Imakefile.local
 	${CAT} ${FILESDIR}/Imakefile.local-additional >> ${WRKSRC}/Imakefile.local

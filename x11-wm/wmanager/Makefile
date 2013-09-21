@@ -27,6 +27,7 @@ OPTIONS_DEFINE=	ADDONS
 OPTIONS_DEFAULT=ADDONS
 ADDONS_DESC=	Install the helper scripts and manpages
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MADDONS}

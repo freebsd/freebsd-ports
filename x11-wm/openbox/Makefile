@@ -25,6 +25,7 @@ MAN1=		openbox.1 openbox-session.1 obxprop.1 \
 
 PLIST_SUB=	VERSION=${PORTVERSION:C/.[0-9]+\$//}
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

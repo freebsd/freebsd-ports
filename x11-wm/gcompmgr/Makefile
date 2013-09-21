@@ -25,6 +25,7 @@ DESKTOP_ENTRIES="gcompmgr" \
 		true
 
 
+NO_STAGE=	yes
 post-patch:
 .for file in depcomp install-sh missing
 	@${LN} -sf ${AUTOMAKE_DIR}/${file} ${WRKSRC}

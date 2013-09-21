@@ -32,6 +32,7 @@ GCONF_SCHEMAS=	mutter.schemas
 MAN1=		mutter-message.1 mutter-theme-viewer.1 \
 		mutter-window-demo.1 mutter.1
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

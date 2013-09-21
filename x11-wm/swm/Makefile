@@ -34,6 +34,7 @@ SCRIPTS=	startswm
 DATA=		background.xpm closebox.xpm maxbox.xpm stickybox.xpm \
 		swm.colors unstickybox.xpm
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|monotype|fixed|g ; \
 		 s|/usr/share/swm|${DATADIR}|g' ${WRKSRC}/swm.conf

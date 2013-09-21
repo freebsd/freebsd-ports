@@ -1,9 +1,5 @@
-# New ports collection makefile for:	oroborus
-# Date created:				19 April 2001
-# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
-#
+# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	oroborus
 PORTVERSION=	2.0.18
@@ -25,4 +21,5 @@ GNU_CONFIGURE=	yes
 MAN1=		oroborus.1
 MAN5=		oroborusrc.5
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

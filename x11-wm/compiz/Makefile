@@ -77,6 +77,7 @@ DESKTOP_ENTRIES=	"Compiz Manager" \
 			"System;Core;" \
 			false
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|libpng|libpng15|' -e 's|gnome-desktop-2.0|gnome-desktop-2.0 gconf-2.0|g' \
 		${WRKSRC}/configure

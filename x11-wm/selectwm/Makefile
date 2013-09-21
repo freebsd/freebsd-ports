@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/selectwm share/locale/fr/LC_MESSAGES/selectwm.mo
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,-O2,${CFLAGS},g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,^CFLAGS =,CFLAGS +=,' -e 's,-O2,,' \

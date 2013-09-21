@@ -16,6 +16,7 @@ PYDISTUTILS_PKGNAME=	obMenu
 
 PORTDOCS=	README
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

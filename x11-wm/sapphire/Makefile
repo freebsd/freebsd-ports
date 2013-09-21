@@ -15,6 +15,7 @@ USE_GMAKE=	yes
 REINPLACE_ARGS=	-i '' -e
 CC=		${CXX}
 
+NO_STAGE=	yes
 post-extract:
 
 post-patch:

@@ -27,4 +27,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 MAN1=		pekwm.1
 MANCOMPRESSED=	no
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

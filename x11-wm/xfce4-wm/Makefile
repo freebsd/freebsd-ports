@@ -1,6 +1,5 @@
 # Created by: James Earl <jdearl@telus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-wm
 PORTVERSION=	4.10.1
@@ -35,6 +34,7 @@ OPTIONS_DEFINE=		COMPOSITE NLS NOTIFY REVMOUSE
 OPTIONS_DEFAULT=	COMPOSITE NOTIFY
 REVMOUSE_DESC=		Reverse mouse workspace changing direction
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOMPOSITE}

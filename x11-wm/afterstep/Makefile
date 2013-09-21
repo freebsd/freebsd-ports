@@ -30,6 +30,7 @@ SRCDIRS=	afterstep \
 		modules/Banner modules/Pager modules/Wharf \
 		modules/Wharf/ASSound
 
+NO_STAGE=	yes
 post-patch:
 		${REINPLACE_CMD} \
 			-e 's|%%PREFIX%%|${PREFIX}|g' \

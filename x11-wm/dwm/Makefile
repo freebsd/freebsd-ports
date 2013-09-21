@@ -26,6 +26,7 @@ MAN1=		dwm.1
 PLIST_FILES=	bin/dwm
 PORTDOCS=	README
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXINERAMA}

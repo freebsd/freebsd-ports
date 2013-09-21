@@ -19,6 +19,7 @@ NO_BUILD=	yes
 NO_INSTALL=	yes
 PORTDOCS=	README TODO CHANGES LICENSE
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--disable-rpath --enable-mans SHELL=/bin/sh
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSOUND}

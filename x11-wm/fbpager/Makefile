@@ -1,9 +1,5 @@
-# New ports collection makefile for:    fbpager
-# Date created:                         25 Mar 2004
-# Whom:                                 Roman Bogorodskiy <bogorodskiy@inbox.ru>
-#
+# Created by: Roman Bogorodskiy <bogorodskiy@inbox.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	fbpager
 PORTVERSION=	0.1.4
@@ -22,6 +18,7 @@ BROKEN=		checksum mismatch
 PLIST_FILES=	bin/fbpager
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

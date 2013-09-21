@@ -52,6 +52,7 @@ PORTDOCS=	AUTHORS BUGS LICENSE README
 OPTIONS_DEFINE=	DBUS DOCS
 OPTIONS_DEFAULT=DBUS DOCS
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if	(exists(${LOCALBASE}/libdata/pkgconfig/cairo.pc) && \

@@ -46,6 +46,7 @@ MAN1=		xfce4-session.1 xfce4-session-logout.1
 
 PLIST_SUB=	VERSION="4.6"
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

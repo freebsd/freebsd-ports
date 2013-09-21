@@ -32,6 +32,7 @@ PCRE_DESC=	Blacklist support (via libpcre)
 DRM_DESC=	DRM support
 DOCS_DESC=	Build manpages (requires AsciiDoc/DocBook)
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPCRE}

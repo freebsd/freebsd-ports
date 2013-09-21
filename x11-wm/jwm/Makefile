@@ -32,6 +32,7 @@ FRIBIDI_BUILD_DEPENDS=	fribidi:${PORTSDIR}/converters/fribidi
 JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 DEBUG_CONFIGURE_ON=	--enable-debug
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXFT}

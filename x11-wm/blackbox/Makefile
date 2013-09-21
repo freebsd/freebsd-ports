@@ -1,9 +1,5 @@
-# New ports collection makefile for:	Blackbox
-# Date created:				June 15, 1998
-# Whom:					Brian Handy <handy@physics.montana.edu>
-#
+# Created by: Brian Handy <handy@physics.montana.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	blackbox
 PORTVERSION=	0.70.1
@@ -26,6 +22,7 @@ PORTDOCS=	README.bbtools README.bsetbg
 OPTIONS_DEFINE=		TOOLS_ONLY
 TOOLS_ONLY_DESC=	Do not install window manager, only tools
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTOOLS_ONLY}

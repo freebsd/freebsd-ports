@@ -17,4 +17,5 @@ MAN1=		piewm.1
 
 CFLAGS+=	-Wno-return-type
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

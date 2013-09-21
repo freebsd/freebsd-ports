@@ -35,6 +35,7 @@ THUNAR_DESC=	Enable thunar support
 
 MAN1=		xfdesktop.1
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTHUNAR}

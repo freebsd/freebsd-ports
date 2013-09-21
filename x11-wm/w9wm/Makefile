@@ -18,6 +18,7 @@ USE_XORG=	x11 xext
 MAN1=		w9wm.1
 PLIST_FILES=	bin/w9wm
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/malloc\.h/d' ${WRKSRC}/client.c
 

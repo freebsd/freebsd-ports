@@ -57,6 +57,7 @@ CONFIGURE_ARGS+=	--enable-different-looknfeels
 CONFIGURE_ARGS+=	--disable-savewindows
 .endif
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${PREFIX}/share/gnome/wm-properties)

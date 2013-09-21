@@ -21,6 +21,7 @@ CFLAGS+=	-DENABLE_STARTUP -DSN_API_NOT_YET_FROZEN \
 		`pkg-config --cflags --libs libstartup-notification-1.0`
 .endif
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/"\/etc"/s|^|#| ; \

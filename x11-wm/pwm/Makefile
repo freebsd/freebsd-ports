@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pwm
-# Date created:		02 Oct 2000
-# Whom:			Neil Blakey-Milner
-#
+# Created by: Neil Blakey-Milner
 # $FreeBSD$
-#
 
 PORTNAME=	pwm
 PORTVERSION=	2007.07.20
@@ -22,6 +18,7 @@ MAKE_ENV=	X11_PREFIX="${LOCALBASE}" HAS_SYSTEM_ASPRINTF=1
 
 MAN1=		pwm.1x
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^PREFIX=|PREFIX?=|g ; \

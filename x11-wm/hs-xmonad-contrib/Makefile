@@ -21,6 +21,7 @@ OPTIONS_DEFAULT=	XFT
 
 XFT_DESC=		Use Xft to render text
 
+NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MXFT}

@@ -21,6 +21,7 @@ MAN1=		vtwm.1
 OPTIONS_DEFINE=	SOUND NLS
 OPTIONS_DEFAULT=	SOUND NLS
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSOUND}

@@ -30,6 +30,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 # XXX - might want to change that
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|icons/gnome|icons/hicolor|' ${WRKSRC}/misc/Makefile.in
 	@${REINPLACE_CMD} -e 's|#define GDK_DISABLE_DEPRECATED||g' \
