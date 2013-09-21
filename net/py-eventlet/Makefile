@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eventlet
-PORTVERSION=	0.13.0
+PORTVERSION=	0.14.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP \
 		http://www.c-s.li/ports/
