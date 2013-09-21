@@ -14,11 +14,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An Infocom game interpreter for X11
 
-PLIST_FILES=	bin/xinfocom
-WRKSRC=		${WRKDIR}/xinfocom
+NO_STAGE=	yes
 
 USES=		imake
 USE_XORG=	xt sm ice xext x11
+WRKSRC=		${WRKDIR}/xinfocom
+PLIST_FILES=	bin/xinfocom
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

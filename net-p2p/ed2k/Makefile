@@ -13,6 +13,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Calculates 'eMule' hashes or producing ed2k:// file links
 
 CONFLICTS=	amule-*
+NO_STAGE=	yes
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	/dev/null
@@ -31,7 +32,6 @@ LDLIBS+=	-lmd
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
 MAKE_ENV+=	LDLIBS="${LDLIBS}"
 
-NO_STAGE=	yes
 post-extract:
 	${CP} -p ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} ${WRKSRC}/
 

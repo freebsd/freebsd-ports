@@ -12,6 +12,8 @@ PKGNAMESUFFIX?=	${GNOME_SUFFIX}${PKGNAMESUFFIX2}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Emulator for Commodore C64, C128, VIC20, PET, and CBM-II
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
@@ -23,7 +25,7 @@ LIB_DEPENDS+=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
 
 RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
-LICENSE=	GPLv2
+NO_STAGE=	yes
 
 USES=		pkgconfig
 USE_XORG=	xpm ice sm xext xv xt x11 xmu
@@ -60,10 +62,6 @@ CONFIGURE_ARGS+=	--enable-fullscreen --enable-ipv6 --disable-dependency-tracking
 #CONFIGURE_ARGS+=	--enable-wiz
 #CONFIGURE_ARGS+=	--enable-parsid
 #CONFIGURE_ARGS+=	--enable-memmap
-
-NO_STAGE=	yes
-Optional Features:
-
 
 MAN1=		vice.1 c1541.1 petcat.1
 MLINKS=		vice.1 x64.1 \

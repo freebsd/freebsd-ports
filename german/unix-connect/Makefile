@@ -15,6 +15,8 @@ BUILD_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
 LICENSE_COMB=	multi
 LICENSE=	GPLv2 BSD
 
+NO_STAGE=	yes
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 #USE_GMAKE=     yes
 GNU_CONFIGURE=	yes
@@ -31,7 +33,6 @@ CFLAGS:=	${CFLAGS:S/-O[0-9]*//g}	# gcc generates broken code in uwsmtp
 
 MANUAL_PACKAGE_BUILD=	needs hostname
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

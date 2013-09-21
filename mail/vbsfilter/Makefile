@@ -13,6 +13,8 @@ COMMENT=	A vbs-attachment filter for Sendmail Milter
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
+
 USE_RC_SUBR=	vbsfilter
 PLIST_FILES=	libexec/vbsfilter
 
@@ -21,7 +23,6 @@ LIBS+=		${PTHREAD_LIBS}
 LIBS+=		-lmilter
 CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"

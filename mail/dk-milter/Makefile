@@ -9,6 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/DomainKeys%20Milter/${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Domainkeys milter for Sendmail
 
+NO_STAGE=	yes
+
 USE_RC_SUBR=	milter-dk
 USE_OPENSSL=	yes
 
@@ -39,7 +41,6 @@ SITE+=		${FILESDIR}/site.config.m4
 SITE_SUB+=	-e "s|%%PREFIX%%|${PREFIX}|g" \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 WITHOUT_MILTER_CFLAGS=	yes

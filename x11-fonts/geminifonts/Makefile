@@ -18,6 +18,8 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
+NO_STAGE=	yes
+
 USES=		perl5
 USE_PERL5=	build
 USE_XORG=	x11
@@ -25,7 +27,6 @@ NO_WRKSUBDIR=	yes
 
 MAKE_ARGS+=	-j 2
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's/\.Z/.gz/g' \
 	    -e 's|DESTDIR =.*|DESTDIR=${LOCALBASE}/lib/X11/fonts/koi8-u-gemini|' \

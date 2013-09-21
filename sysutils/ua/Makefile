@@ -10,13 +10,14 @@ COMMENT=	Finds sets of identical files
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
+
 GNU_CONFIGURE=	yes
 
 MAN1=	kua.1 ua.1
 PLIST_FILES=	bin/kua bin/ua
 PORTDOCS=	README
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

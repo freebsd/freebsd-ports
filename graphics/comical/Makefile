@@ -14,14 +14,15 @@ LIB_DEPENDS=	unrar:${PORTSDIR}/archivers/libunrar
 
 LICENSE=	GPLv2
 
+MAKE_JOBS_UNSAFE=	yes
+NO_STAGE=	yes
+
 USE_GMAKE=	yes
 USE_WX=		2.6+
 WX_PREMK=	yes
 WX_UNICODE=	yes
 PLIST_FILES=	bin/comical
-MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

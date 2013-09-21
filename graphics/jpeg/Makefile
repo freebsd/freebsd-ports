@@ -17,8 +17,9 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	IJG's jpeg compression utilities
 
 CONFLICTS=	libjpeg-turbo-[0-9]*
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION2}
+NO_STAGE=	yes
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION2}
 DISTVERSION2=	8d
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
@@ -33,7 +34,6 @@ CONFIGURE_ARGS+=	--enable-maxmem=${J_MAXMEM}
 
 MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:

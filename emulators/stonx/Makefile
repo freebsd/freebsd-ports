@@ -17,6 +17,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
 RESTRICTED=	tos.img is copyrighted
+NO_STAGE=	yes
 
 TOSIMG?=	tos.img
 USE_XORG=	x11 sm ice xext xextproto
@@ -25,7 +26,6 @@ CONFIGURE_ARGS=	--x-includes=${LOCALBASE}/include \
 		--x-libraries=${LOCALBASE}/lib
 ALL_TARGET=	all fnttobdf tosfonts fonts
 
-NO_STAGE=	yes
 pre-build:
 	${CP} ${DISTDIR}/${TOSIMG} ${WRKSRC}/tos.img
 

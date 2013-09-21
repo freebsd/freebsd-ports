@@ -16,6 +16,8 @@ COMMENT=	A free encryption add-on for the popular XChat irc client
 
 RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 
+NO_STAGE=	yes
+
 USE_ZIP=	yes
 ALL_TARGET=	freebsd
 CFLAGS+=	-fPIC
@@ -31,7 +33,6 @@ PLIST_FILES=	lib/xchat/plugins/mircryption.so
 PORTDOCS=	README.txt
 PORTEXAMPLES=	mcps_masterkey_on_start.pl
 
-NO_STAGE=	yes
 post-patch:
 # \r\n -> \n
 	@${FIND} ${WRKSRC} -type f -exec \

@@ -13,6 +13,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Reliable, highly configurable mail transfer agent with utilities
 
 CONFLICTS?=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.* opensmtpd-*
+NO_STAGE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WCONF=		${WRKSRC}/devtools/Site
@@ -45,7 +46,6 @@ MILTER_DESC=		Build libmilter
 MILTER_SHARED_DESC=	Build shared libmilter
 MILTER_POOL_DESC=	Enable milter thread pools
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSHMEM} && !defined(BUILDING_INDEX)

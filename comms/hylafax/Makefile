@@ -15,6 +15,7 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		jbig:${PORTSDIR}/graphics/jbigkit
 
 MAKE_JOBS_UNSAFE=	yes
+NO_STAGE=	yes
 
 USE_GHOSTSCRIPT=yes
 HAS_CONFIGURE=	yes
@@ -58,7 +59,6 @@ OPTIONS_DEFAULT=PAM NLS
 NO_OPTIONS_SORT=yes
 GAWK_DESC=	Use gawk for scripts
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Defaults to "North American Letter".  Use "ISO A4" for A4.

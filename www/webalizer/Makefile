@@ -23,6 +23,7 @@ EXAMPLESDIR?=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 GD_PORT?=	graphics/gd
 
 CONFLICTS=	geolizer-2*
+NO_STAGE=	yes
 
 .if defined(BATCH)
 # no cosmetique spaces allowed
@@ -39,7 +40,6 @@ FULL_CGI_REFS_DESC=Show full cgi parameters in referers
 CLICKABLE_REFERER_DESC=Make referers clickable
 LARGE_URL_DESC=Enable URLs longer 512 bytes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGEODB} || ${PORT_OPTIONS:MGEOIP} || make(makesum) || defined(FETCH_ALL)

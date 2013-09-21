@@ -20,6 +20,8 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		xml2:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+NO_STAGE=	yes
+
 USES=		gmake perl5
 CFLAGS+=	-DPNG_DEPSTRUCT= -Iutil
 MAKE_ENV=	LN="${LN}" RANLIB="${RANLIB}"
@@ -32,7 +34,6 @@ MAN1=		netpbm.1
 
 OPTIONS_DEFINE=	X11 MANPAGES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}

@@ -14,6 +14,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/ifmail/ifcico:${PORTSDIR}/news/ifmail
 .endif
 
 MAKE_JOBS_UNSAFE=	yes
+NO_STAGE=	yes
 
 USES=		gmake perl5
 
@@ -22,7 +23,6 @@ DOCLIST=	fidogate.texi fidogate.txt gatebau94.txt kludge-rfc.doc \
 		template.html fido howto misc rfc gatebau/msgid.sgml \
 		gatebau/msgid.tex gatebau/msgid.txt
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-configure:

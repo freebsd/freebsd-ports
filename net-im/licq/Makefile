@@ -14,6 +14,8 @@ LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
+
 USES=		cmake iconv
 WRKSRC=		${WRKDIR}/${DISTNAME}
 LICQ_PORT?=	net-im/licq
@@ -30,7 +32,6 @@ CONFIGURE_ARGS+=--with-openssl-inc=${OPENSSLINC}
 CONFIGURE_ARGS+=--with-openssl-lib=${OPENSSLLIB}
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

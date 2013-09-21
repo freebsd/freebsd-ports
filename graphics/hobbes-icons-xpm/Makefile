@@ -11,12 +11,12 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Collection of over 3000 icons in XPM3 format
 
+NO_STAGE=	yes
 NO_BUILD=	yes
 
 # Where it will be installed (change pkg/PLIST if you change this)
 LIBDIR=		${PREFIX}/include/X11/pixmaps
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:

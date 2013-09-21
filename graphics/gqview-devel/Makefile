@@ -12,6 +12,8 @@ COMMENT=	Another gtk2-based graphic file viewer
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
+NO_STAGE=	yes
+
 USES=		pkgconfig
 USE_GNOME=	gnomehier gtk20
 GNU_CONFIGURE=	yes
@@ -23,7 +25,6 @@ MAN1=		gqview.1
 CONFLICTS=	gqview-1.4* gqview-2.0*
 LATEST_LINK=	gqview-devel
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$prefix/share/doc/gqview-$$VERSION|${DOCSDIR}|g' \
 		${WRKSRC}/configure

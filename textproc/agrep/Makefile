@@ -14,6 +14,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Approximate grep (fast approximate pattern-matching tool)
 
 NO_CDROM=	no redistribution for profit
+NO_STAGE=	yes
 
 ALL_TARGET=
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
@@ -21,7 +22,6 @@ MAN1=		agrep.1
 PLIST_FILES=	bin/agrep
 PORTDOCS=	COPYRIGHT agrep.algorithms agrep.ps.1.Z agrep.ps.2.Z
 
-NO_STAGE=	yes
 post-extract:
 	${CP} ${DISTDIR}/agrep.ps.1.Z ${DISTDIR}/agrep.ps.2.Z ${WRKSRC}/
 

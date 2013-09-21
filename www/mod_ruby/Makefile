@@ -12,6 +12,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An Apache module that embeds Ruby interpreter within
 
+NO_STAGE=	yes
+
 USES=		perl5
 USE_APACHE=	22
 USE_RUBY=	yes
@@ -28,7 +30,6 @@ DOCS_EN=	COPYING ChangeLog LEGAL LICENSE.apreq NOTICE \
 		README.en doc/default.css doc/*.en.*
 DOCS_JA=	README.ja doc/default.css doc/*.ja.*
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${APACHE_VERSION} > 20

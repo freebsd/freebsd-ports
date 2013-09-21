@@ -10,6 +10,8 @@ MASTER_SITE_SUBDIR=dinoex
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Remultiplex an MPEG2 TS into a PS for DVD
 
+NO_STAGE=	yes
+
 USE_GMAKE=	yes
 MAKE_ARGS=	CFLAGS="${CFLAGS}" DEFINES="${CPPFLAGS} -DO_LARGEFILE=0 -DVERSION=\\\"$(PORTVERSION)\\\"" \
 		LIBS="${LDFLAGS}"
@@ -20,7 +22,6 @@ PLIST_FILES=	bin/replex
 PORTDOCS=	CHANGES README TODO
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${GREP} -lR "<stdint\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<stdint\.h>|<inttypes.h>|g'

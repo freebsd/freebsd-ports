@@ -14,6 +14,8 @@ COMMENT=	A Sendmail LibMilter filter to block spam
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NO_STAGE=	yes
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--have-resn
 USE_RC_SUBR=	spamilter
@@ -27,7 +29,6 @@ DOCSFILES=	Changelog INSTALL LICENSE docs/docs.html docs/docs.txt \
 		conf/db.rcpt conf/db.rdnsbl conf/db.sndr \
 		conf/policy.html conf/spamilter.rc
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"

@@ -18,6 +18,7 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 		nspr4:${PORTSDIR}/devel/nspr
 
 CONFLICTS=	gnash-devel-[0-9]*
+NO_STAGE=	yes
 
 USE_BZIP2=	yes
 USES=		gmake pkgconfig
@@ -71,7 +72,6 @@ FFMPEG_DESC=	ffmpeg media handler
 GSTREAMER_DESC=	GStreamer media handler
 VAAPI_DESC=	VAAPI support (requires FFMPEG)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Cygnal option processing

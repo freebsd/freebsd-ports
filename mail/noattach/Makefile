@@ -12,6 +12,8 @@ COMMENT=	An attachment filter for Sendmail Milter
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=    noattach
 
+NO_STAGE=	yes
+
 CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 MAN8=		noattach.8
 DOCSFILES=	AUTHORS THANKS INSTALL NEWS README TODO ChangeLog
@@ -20,7 +22,6 @@ SAMPLEFILES=	README noattach.patterns noattach.patterns.johncon
 CONFIGURE_ARGS+=	--enable-ldap
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"

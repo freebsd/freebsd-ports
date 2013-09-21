@@ -16,9 +16,10 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		dbus:${PORTSDIR}/devel/dbus \
 		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs
 
+NO_STAGE=	yes
+
 USE_XORG=	x11 xcb xdamage xfixes xrandr xinerama xext xtst xau xrender \
 		xdmcp recordproto
-
 # Sets LDFLAGS and adds to CONFIGURE_ENV, therefore we set LDFLAGS
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_OPENSSL=	yes
@@ -33,7 +34,6 @@ OPTIONS_DEFINE=NLS AVAHI
 OPTIONS_DEFAULT=NLS AVAHI
 NO_OPTIONS_SORT=yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

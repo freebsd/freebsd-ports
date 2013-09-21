@@ -20,6 +20,8 @@ COMMENT=	Linux plugin support for the native Opera browser
 
 RUN_DEPENDS=	${LOCALBASE}/lib/opera/pluginwrapper/operapluginwrapper:${PORTSDIR}/${PKGCATEGORY}/opera
 
+NO_STAGE=	yes
+
 OPERA_VER?=	12.16
 OPERA_BUILD?=	1860
 MASTER_SITES_VER_PATH=	linux/${OPERA_VER:S/.//}/
@@ -35,7 +37,6 @@ EXPLICIT_PACKAGE_DEPENDS=	yes
 
 PLIST_FILES=	lib/opera/pluginwrapper/operapluginwrapper-ia32-linux
 
-NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/opera/pluginwrapper/operapluginwrapper-native \
 		${PREFIX}/lib/opera/pluginwrapper/operapluginwrapper-ia32-linux

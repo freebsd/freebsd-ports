@@ -12,6 +12,8 @@ COMMENT=	Milter plugin to sendmail for regular expression filtering
 LICENSE=	BSD
 LICENSE_FILE=	${FILESDIR}/COPYRIGHT
 
+NO_STAGE=	yes
+
 MAILUSER?=	mailnull
 MAN8=		milter-regex.8
 PLIST_FILES=	libexec/milter-regex
@@ -19,7 +21,6 @@ USE_RC_SUBR=	milterregex
 SPOOLDIR?=	/var/run/milter-regex
 SUB_LIST=	SPOOLDIR=${SPOOLDIR}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"

@@ -9,6 +9,8 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	VM Back Command Line Tools for VMware
 
 ONLY_FOR_ARCHS=	i386
+NO_STAGE=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 USES=		iconv
 
@@ -24,7 +26,6 @@ PORTDOCS+=	${i}-eucj.txt ${i}-sjis.txt ${i}.txt
 PLIST_FILES+=	sbin/${i}
 .endfor
 
-NO_STAGE=	yes
 do-install:
 .for i in ${SBINS}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/sbin/

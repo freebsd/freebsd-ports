@@ -16,6 +16,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/licq/licq_qt4-gui.so:${PORTSDIR}/${LICQ_PORT}-qt-g
 # plugin (gtk+) and wish run osd with it. i've not tested with
 # plugins other than qt-gui
 
+NO_STAGE=	yes
+
 USES=		cmake
 
 LOCALES=	be de cs es fr pt pt_BR ro ru sv sk
@@ -24,7 +26,6 @@ PLIST_FILES=	lib/licq/licq_osd.so \
 
 LICQ_PORT?=	net-im/licq
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/${LICQ_PORT}/Makefile.inc"

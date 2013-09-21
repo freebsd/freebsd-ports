@@ -15,6 +15,8 @@ LIB_DEPENDS=	lzo2:${PORTSDIR}/archivers/lzo2
 
 LICENSE=	GPLv3
 
+NO_STAGE=	yes
+
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -27,5 +29,4 @@ MAN5=	tinc.conf.5
 MAN8=	tincd.8
 INFO=	tinc
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -12,7 +12,9 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An IRC "bot" that makes sharing files via DCC extremely easy
 
 LICENSE=	GPLv2
+
 CONFLICTS=	iroffer-1* iroffer-lamm-1.*
+NO_STAGE=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
@@ -43,7 +45,6 @@ IROFFER_HTDOCS=	iroffer-state.css robots.txt \
 OPTIONS_DEFINE=	CURL RUBY UPNP GEOIP
 OPTIONS_DEFAULT=CURL RUBY UPNP GEOIP
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCURL}

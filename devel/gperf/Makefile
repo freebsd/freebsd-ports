@@ -10,7 +10,9 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Generates perfect hash functions for sets of keywords
 
 LICENSE=	GPLv2
+
 CONFLICTS=	ace+tao-[0-9]*
+NO_STAGE=	yes
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -27,5 +29,4 @@ regression-test: test
 test:	build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

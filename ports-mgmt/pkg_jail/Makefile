@@ -9,13 +9,13 @@ DISTFILES=	# empty
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Manage your own package jail
 
+NO_STAGE=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/pkg_jail bin/pkg_update
 PORTDOCS=	README
 MAN1=		pkg_jail.1 pkg_update.1
 
-NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/pkg_jail ${FILESDIR}/pkg_update ${PREFIX}/bin/
 	${INSTALL_MAN} ${FILESDIR}/pkg_jail.1 ${FILESDIR}/pkg_update.1 ${PREFIX}/man/man1/

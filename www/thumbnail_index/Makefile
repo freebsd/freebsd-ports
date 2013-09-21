@@ -14,10 +14,10 @@ COMMENT=	Make an HTML index file for a bunch of images
 RUN_DEPENDS=	djpeg:${PORTSDIR}/graphics/jpeg \
 		pnmscale:${PORTSDIR}/graphics/netpbm
 
+NO_STAGE=	yes
+NO_BUILD=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		thumbnail_index.1
 
-NO_BUILD=	yes
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
