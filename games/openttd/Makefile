@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		lzo2:${PORTSDIR}/archivers/lzo2
 
-USES=		gmake
+USES=		gmake pkgconfig
 USE_XZ=		yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	STRIP="${STRIP_CMD} ${STRIP}"
@@ -47,7 +47,6 @@ CONFIGURE_ARGS+=	--with-midi-arg="${WITH_MIDI_PLAYER_ARGS}"
 .endif
 
 .if defined(WITH_DEDICATED_SERVER_ONLY)
-USES+=		pkgconfig			# Needed for liblzma support
 CONFIGURE_ARGS+=	--enable-dedicated
 # Aid it to find lzo2 headers; client build gets it via sdl-config
 CFLAGS+=	-I${LOCALBASE}/include
