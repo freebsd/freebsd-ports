@@ -18,6 +18,9 @@ bin/obfsproxy
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obfsproxy/common/aes.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obfsproxy/common/aes.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obfsproxy/common/aes.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obfsproxy/common/argparser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obfsproxy/common/argparser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obfsproxy/common/argparser.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obfsproxy/common/heartbeat.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obfsproxy/common/heartbeat.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obfsproxy/common/heartbeat.pyo
