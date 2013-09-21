@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tt-rss
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	www
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -13,9 +13,10 @@ LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	gothfox
 GH_PROJECT=	Tiny-Tiny-RSS
-GH_COMMIT=	7543f05
+GH_COMMIT=	02b0d14
 
 NO_BUILD=	yes
+NO_STAGE=	yes
 
 USE_PHP=	ctype dom hash json mbstring pcntl posix session xmlrpc
 WANT_PHP_WEB=	yes
@@ -45,7 +46,6 @@ PHP2FIX=	config.php-dist update.php update_daemon2.php
 
 SCRIPTS=	update.php update_daemon2.php
 
-NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "	By default, Tiny Tiny RSS will use MySQL as a back-end;"
