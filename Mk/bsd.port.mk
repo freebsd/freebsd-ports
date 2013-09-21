@@ -6503,19 +6503,21 @@ install-license:
 .endif
 
 .if defined(WARNING)
+WARNING_WAIT?=	10
 show-warnings:
 	@${ECHO_MSG} "/!\\ WARNING /!\\"
 .for m in ${WARNING}
 	@${ECHO_MSG} "${m}"
 .endfor
 	@${ECHO_MSG}
-	@sleep 10
+	@sleep ${WARNING_WAIT}
 
 check-makefile:: show-warnings
 .endif
 
 .if defined(DEVELOPER)
 .if defined(DEV_WARNING)
+DEV_WARNING_WAIT?=	10
 show-dev-warnings:
 	@${ECHO_MSG} "/!\\ ${PKGNAME}: Makefile warnings, please consider fixing /!\\"
 	@${ECHO_MSG}
@@ -6523,7 +6525,7 @@ show-dev-warnings:
 	@${ECHO_MSG} "${m}"
 .endfor
 	@${ECHO_MSG}
-	@sleep 10
+	@sleep ${DEV_WARNING_WAIT}
 check-makefile:: show-dev-warnings
 .endif
 
