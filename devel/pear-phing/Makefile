@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	phing
-PORTVERSION=	2.5.0
+PORTVERSION=	2.6.1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.phing.info/get/
 PKGNAMEPREFIX=	pear-
