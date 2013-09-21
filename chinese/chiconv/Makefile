@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chiconv
-PORTVERSION=	10.0
+PORTVERSION=	11.1
 CATEGORIES=	chinese converters
 DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
@@ -11,15 +11,15 @@ COMMENT=	Auto chinese encoding converter
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	bsdconv:${PORTSDIR}/converters/bsdconv
+LIB_DEPENDS=	libbsdconv.so:${PORTSDIR}/converters/bsdconv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	buganini
-GH_COMMIT=	6f4a7bf
+GH_COMMIT=	9501c80
 
 MAKE_ARGS=	PREFIX=${PREFIX}
+NO_STAGE=	yes
 
 PLIST_FILES=	bin/chiconv
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
