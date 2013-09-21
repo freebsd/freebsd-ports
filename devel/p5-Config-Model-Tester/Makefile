@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Model-Tester
-PORTVERSION=	2.045
+PORTVERSION=	2.046
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \
 		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
 		p5-Log-Log4perl>=1.11:${PORTSDIR}/devel/p5-Log-Log4perl \
-		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
+		p5-Path-Class>=0.29:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-File-Contents>=0:${PORTSDIR}/devel/p5-Test-File-Contents \
