@@ -22,6 +22,7 @@
 %%XPI_XPIDIR%%/content/newscript.xul
 %%XPI_XPIDIR%%/content/options.js
 %%XPI_XPIDIR%%/content/options.xul
+%%XPI_XPIDIR%%/content/scratchpad-overlay.js
 %%XPI_XPIDIR%%/content/scratchpad-overlay.xul
 %%XPI_XPIDIR%%/content/scriptprefs.js
 %%XPI_XPIDIR%%/content/scriptprefs.xul
@@ -259,6 +260,7 @@
 %%XPI_XPIDIR%%/modules/util/alert.js
 %%XPI_XPIDIR%%/modules/util/anonWrap.js
 %%XPI_XPIDIR%%/modules/util/apiLeakCheck.js
+%%XPI_XPIDIR%%/modules/util/checkCoralCache.js
 %%XPI_XPIDIR%%/modules/util/compareFirefoxVersion.js
 %%XPI_XPIDIR%%/modules/util/emptyEl.js
 %%XPI_XPIDIR%%/modules/util/getBinaryContents.js
