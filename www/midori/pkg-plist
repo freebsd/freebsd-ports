@@ -3,7 +3,6 @@ etc/xdg/midori/extensions/adblock/config
 etc/xdg/midori/search
 include/midori-%%VERSION%%/extensions/apps.h
 include/midori-%%VERSION%%/extensions/delayed-load.h
-include/midori-%%VERSION%%/extensions/devpet.h
 include/midori-%%VERSION%%/extensions/external-download-manager.h
 include/midori-%%VERSION%%/extensions/history-list.h
 include/midori-%%VERSION%%/extensions/nsplugin-manager.h
@@ -16,7 +15,6 @@ lib/midori/libcookie-manager.so
 lib/midori/libcookie-permissions.so
 lib/midori/libcopy-tabs.so
 lib/midori/libdelayed-load.so
-lib/midori/libdevpet.so
 lib/midori/libexternal-download-manager.so
 lib/midori/libfeed-panel.so
 lib/midori/libformhistory.so
@@ -183,8 +181,6 @@ share/vala/vapi/apps.deps
 share/vala/vapi/apps.vapi
 share/vala/vapi/delayed-load.deps
 share/vala/vapi/delayed-load.vapi
-share/vala/vapi/devpet.deps
-share/vala/vapi/devpet.vapi
 share/vala/vapi/external-download-manager.deps
 share/vala/vapi/external-download-manager.vapi
 share/vala/vapi/history-list.deps

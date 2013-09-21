@@ -3,6 +3,7 @@
 
 PORTNAME=	midori
 PORTVERSION=	0.5.5
+PORTREVISION=	1
 CATEGORIES=	www xfce
 MASTER_SITES=	http://www.midori-browser.org/downloads/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_all_
@@ -12,15 +13,13 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Lightweight web browser using WebKit browser engine
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	rsvg-convert:${PORTSDIR}/graphics/librsvg2 \
 		valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	webkitgtk-1:${PORTSDIR}/www/webkit-gtk2 \
-		sqlite3:${PORTSDIR}/databases/sqlite3 \
-		notify:${PORTSDIR}/devel/libnotify \
-		soup-gnome-2:${PORTSDIR}/devel/libsoup-gnome \
-		execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2 \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
+		libnotify.so:${PORTSDIR}/devel/libnotify \
+		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
 CPPFLAGS+=	-I${LOCALBASE}/include
