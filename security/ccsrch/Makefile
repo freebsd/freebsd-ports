@@ -8,27 +8,28 @@ MASTER_SITES=	http://downloads.sourceforge.net/project/${MASTER_SITE_SUBDIR}/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/Version%20${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	pavelivolkov@googlemail.com
+MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	Is a tool that searches for credit card numbers (PAN) and track data
 
-FETCH_ARGS=	-pRr
-
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+
+OPTIONS_DEFINE=	DOCS
+
+FETCH_ARGS=	-pRr
+NO_STAGE=	yes
 
 PORTDOCS=	README readme.html
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}; \
 	for f in ${PORTDOCS}; do \
 		${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
 	done
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
