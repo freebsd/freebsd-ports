@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	hf
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ee.lbl.gov/ \
-		ftp://ftp.tux.org/sites/ftp.ee.lbl.gov/ \
-		ftp://ftp.xemacs.org/sites/ftp.ee.lbl.gov/ \
-		http://ftp.riken.go.jp/pub/net/lbl/
+		ftp://ftp4.uk.freebsd.org/pub/FreeBSD/
 PKGNAMEPREFIX=	lbl-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
