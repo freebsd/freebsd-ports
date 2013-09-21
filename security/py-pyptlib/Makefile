@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyptlib
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.4
 CATEGORIES=	security net python
 MASTER_SITES=	http://www.c-s.li/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

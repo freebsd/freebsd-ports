@@ -1,4 +1,4 @@
-pyptlib is a little Python library which understands the `pluggable transport
+pyptlib is a little Python library which understands the pluggable transport
 managed-proxy protocol
 
 WWW: https://gitweb.torproject.org/pluggable-transports/pyptlib.git
