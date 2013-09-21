@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-Display
-PORTVERSION=	0.39
+PORTVERSION=	0.40
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -35,4 +35,8 @@ MAN3=	HTML::Display.3 \
 	HTML::Display::Win32::OLE.3
 
 NO_STAGE=	yes
+
+regression-test:
+	@${WRKSRC} && ${MAKE} test
+
 .include <bsd.port.mk>
