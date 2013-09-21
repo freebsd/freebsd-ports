@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsdconv
-PORTVERSION=	10.0
+PORTVERSION=	11.1
 CATEGORIES=	converters
 DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
@@ -13,12 +13,13 @@ LICENSE=	BSD
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	buganini
-GH_COMMIT=	d4bd6ac
+GH_COMMIT=	8ccd7e3
 
 OPTIONS_DEFINE=	CHINESE EBCDIC
 CHINESE_DESC=	Extra Chinese codecs
 EBCDIC_DESC=	EBCDIC codecs
 
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 
 MAKE_ARGS=	PREFIX=${PREFIX}
@@ -26,7 +27,6 @@ MAKE_ARGS=	PREFIX=${PREFIX}
 ALL_TARGET=	libbsdconv bsdconv-mktable meta bsdconv-man bsdconv-completion bsdconv codecs_basic
 INSTALL_TARGET=	installdir install_main install_basic
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCHINESE}
