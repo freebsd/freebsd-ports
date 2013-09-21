@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Model
-PORTVERSION=	2.042
+PORTVERSION=	2.043
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DDUMONT
@@ -32,7 +32,7 @@ BUILD_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-YAML>=0.30.3:${PORTSDIR}/textproc/p5-YAML \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Config-Model-Tester>=2.042:${PORTSDIR}/devel/p5-Config-Model-Tester \
+TEST_DEPENDS=	p5-Config-Model-Tester>=2.046:${PORTSDIR}/devel/p5-Config-Model-Tester \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Probe-Perl>=0:${PORTSDIR}/sysutils/p5-Probe-Perl \
 		p5-Test-Command>=0:${PORTSDIR}/devel/p5-Test-Command \
