@@ -3,7 +3,7 @@
 
 PORTNAME=	sdl_mixer
 PORTVERSION=	1.2.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL_mixer-${PORTVERSION}
@@ -22,44 +22,34 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=		MIKMOD SMPEG FLAC VORBIS TIMIDITYPLUS
-OPTIONS_DEFAULT=	MIKMOD SMPEG FLAC VORBIS
+OPTIONS_DEFINE=		SMPEG FLAC VORBIS TIMIDITYPLUS
+OPTIONS_DEFAULT=	SMPEG FLAC VORBIS
+OPTIONS_RADIO=		MOD
+OPTIONS_RADIO_MOD=	MIKMOD MODPLUG
 
 MIKMOD_DESC=	Enable MOD music via libMikMod
+MODPLUG_DESC=	Enable MOD music via libModPlug
 SMPEG_DESC=	Enable MP3 music via SMPEG
 FLAC_DESC=	Enable FLAC encoding support via flac
 VORBIS_DESC=	Enable Ogg Vorbis music
 TIMIDITYPLUS_DESC=	Use Timidity++ instead of Timidity (soundfont)
 
+MIKMOD_LIB_DEPENDS=		libmikmod.so:${PORTSDIR}/audio/libmikmod
+MIKMOD_CONFIGURE_ENABLE=	music-mod
+
+MODPLUG_LIB_DEPENDS=		libmodplug.so:${PORTSDIR}/audio/libmodplug
+MODPLUG_CONFIGURE_ENABLE=	music-mod-modplug
+
+FLAC_LIB_DEPENDS=		FLAC:${PORTSDIR}/audio/flac
+FLAC_CONFIGURE_ENABLE=		music-flac
+
+SMPEG_LIB_DEPENDS=		smpeg:${PORTSDIR}/multimedia/smpeg
+SMPEG_CONFIGURE_ENABLE=		music-mp3
+
+VORBIS_LIB_DEPENDS=		vorbis:${PORTSDIR}/audio/libvorbis
+VORBIS_CONFIGURE_ENABLE=	music-ogg
+
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MMIKMOD}
-LIB_DEPENDS+=	mikmod:${PORTSDIR}/audio/libmikmod
-CONFIGURE_ARGS+=	--enable-music-mod
-.else
-CONFIGURE_ARGS+=	--disable-music-mod
-.endif
-
-.if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
-CONFIGURE_ARGS+=	--enable-music-flac
-.else
-CONFIGURE_ARGS+=	--disable-music-flac
-.endif
-
-.if ${PORT_OPTIONS:MSMPEG}
-LIB_DEPENDS+=	smpeg:${PORTSDIR}/multimedia/smpeg
-CONFIGURE_ARGS+=	--enable-music-mp3
-.else
-CONFIGURE_ARGS+=	--disable-music-mp3
-.endif
-
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=		vorbis:${PORTSDIR}/audio/libvorbis
-CONFIGURE_ARGS+=	--enable-music-ogg
-.else
-CONFIGURE_ARGS+=	--disable-music-ogg
-.endif
 
 .if ${PORT_OPTIONS:MTIMIDITYPLUS}
 RUN_DEPENDS+=	${LOCALBASE}/share/timidity/timidity.cfg-eawpats:${PORTSDIR}/audio/eawpats
