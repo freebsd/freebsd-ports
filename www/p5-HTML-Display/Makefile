@@ -37,6 +37,6 @@ MAN3=	HTML::Display.3 \
 NO_STAGE=	yes
 
 regression-test:
-	@${WRKSRC} && ${MAKE} test
+	@${MAKE} test -C ${WRKSRC}
 
 .include <bsd.port.mk>
