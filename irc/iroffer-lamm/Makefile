@@ -13,11 +13,12 @@ COMMENT=	An IRC "bot" that makes sharing files via DCC extremely easy
 
 LICENSE=	GPLv2
 
+CONFLICTS=	iroffer-1.* iroffer-dinoex-3.*
+NO_STAGE=	yes
+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
-CONFLICTS=	iroffer-1.* iroffer-dinoex-3.*
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|cctype="gcc"|cctype="${CC}"|' \
 		${WRKSRC}/Configure

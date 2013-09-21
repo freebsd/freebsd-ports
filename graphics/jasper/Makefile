@@ -16,6 +16,8 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 LICENSE=	MIT
 
+NO_STAGE=	yes
+
 USE_AUTOTOOLS=	libtool
 USE_ZIP=	yes
 USE_GNOME=	lthack
@@ -32,7 +34,6 @@ MASTER_SITE_IMAGEMAGICK=	\
 OPTIONS_DEFINE= OPENGL UUID
 UUID_DESC=	UUID support (required by GDAL)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENGL}

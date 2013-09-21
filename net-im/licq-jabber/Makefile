@@ -12,6 +12,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	gloox:${PORTSDIR}/net-im/gloox \
 		boost_regex:${PORTSDIR}/devel/boost-libs
 
+NO_STAGE=	yes
+
 USES=		cmake
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
@@ -22,7 +24,6 @@ PLIST_DIRS=	%%PORTDOCS%%%%DOCSDIR%%
 
 LICQ_PORT?=	net-im/licq
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/${LICQ_PORT}/Makefile.inc"

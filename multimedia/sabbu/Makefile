@@ -12,6 +12,8 @@ COMMENT=	Program used to time subtitles
 LIB_DEPENDS=	avcodec:${PORTSDIR}/multimedia/ffmpeg \
 		sndfile:${PORTSDIR}/audio/libsndfile
 
+NO_STAGE=	yes
+
 USES=		pkgconfig iconv
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -24,7 +26,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lswscale
 OPTIONS_DEFINE=	GTKSPELL
 OPTIONS_DEFAULT=GTKSPELL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

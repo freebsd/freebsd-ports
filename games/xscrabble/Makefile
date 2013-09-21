@@ -11,6 +11,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}_en${EXTRACT_SUFX}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	X version of the popular board game
 
+NO_STAGE=	yes
+
 USES=		imake
 USE_BZIP2=	yes
 USE_XORG=	xaw
@@ -18,7 +20,6 @@ NO_INSTALL_MANPAGES=	yes
 
 XSCRABBLEDIR=	${PREFIX}/lib/X11/xscrabble
 
-NO_STAGE=	yes
 post-patch:
 	@${ECHO_CMD} '#define VERSION ${PORTVERSION:S/.//g}' \
 		> ${WRKSRC}/src/config.h

@@ -15,10 +15,11 @@ COMMENT=	A proxy authentication module against an SMB server
 RUN_DEPENDS=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/${SAMBA_PORT}
 .endif
 
+NO_STAGE=	yes
+
 ALL_TARGET=	smb_auth
 SAMBA_PORT?=	net/samba36
 
-NO_STAGE=	yes
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/smb_auth ${PREFIX}/bin
 		${INSTALL_SCRIPT} ${WRKSRC}/smb_auth.sh ${PREFIX}/bin

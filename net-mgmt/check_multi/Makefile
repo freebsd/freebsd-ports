@@ -14,6 +14,8 @@ COMMENT=	A multi purpose wrapper plugin for Nagios
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
+
 USES=		shebangfix perl5
 USE_PERL5=	run
 NO_BUILD=	yes
@@ -23,7 +25,6 @@ PLUGIN_DIR=	libexec/nagios
 
 SHEBANG_FILES=	check_multi
 
-NO_STAGE=	yes
 do-install:
 	-${MKDIR} ${PREFIX}/${PLUGIN_DIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/check_multi ${PREFIX}/${PLUGIN_DIR}/

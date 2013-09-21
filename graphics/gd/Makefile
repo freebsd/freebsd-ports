@@ -17,6 +17,7 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		freetype:${PORTSDIR}/print/freetype2
 
 CONFLICTS=	bazaar-1.*
+NO_STAGE=	yes
 
 USE_XZ=		yes
 USES=		pkgconfig
@@ -29,7 +30,6 @@ OPTIONS_DEFINE=	FONTCONFIG ICONV VPX XPM
 OPTIONS_DEFAULT=FONTCONFIG
 NO_OPTIONS_SORT=yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PKGCONFIGDIR?=	${LOCALBASE}/libdata/pkgconfig

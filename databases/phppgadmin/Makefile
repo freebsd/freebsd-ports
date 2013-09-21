@@ -12,6 +12,8 @@ COMMENT=	Web Based Postgres Administration
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
+
 USE_BZIP2=	YES
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	pgsql pcre session
@@ -22,7 +24,6 @@ PLIST_SUB+=	PGADMDIR=${PGADMDIR}
 PGADMOLDDIR?=	www/data-dist/phpPgAdmin
 PLIST_SUB+=	PGADMOLDDIR=${PGADMOLDDIR}
 
-NO_STAGE=	yes
 pre-everything::
 	@${ECHO_CMD} "# you can customize the installation directory"
 	@${ECHO_CMD} "# by setting PGADMDIR in /etc/make.conf"

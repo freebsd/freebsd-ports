@@ -12,6 +12,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Interprets Ruby code embedded in a text file like PHP/ePerl/ASP/JSP
 
+NO_STAGE=	yes
+
 USE_RUBY=	yes
 
 CONFIGURE_ARGS=	--enable-shared --with-charset="${DEFAULT_CHARSET}"
@@ -29,7 +31,6 @@ DOCS_EN=	COPYING ChangeLog README.en \
 		${RUBY_RD_HTML_FILES}
 DOCS_JA=	README.ja
 
-NO_STAGE=	yes
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} configure.rb ${CONFIGURE_ARGS}
 

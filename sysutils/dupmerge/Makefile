@@ -9,6 +9,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Searches for files with equal content
 
+NO_STAGE=	yes
+
 USE_ZIP=	yes
 MAKE_FLAGS=
 MAKEFILE=
@@ -17,7 +19,6 @@ ALL_TARGET=	dupmerge
 PLIST_FILES=	bin/dupmerge
 PORTDOCS=	readme.txt
 
-NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dupmerge ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)

@@ -14,6 +14,8 @@ COMMENT=	AnimeNfo client with GTK support
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
+
 USES=		pkgconfig gettext
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
@@ -23,5 +25,4 @@ CFLAGS+=	${CPPFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/animenfo-client-gtk
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

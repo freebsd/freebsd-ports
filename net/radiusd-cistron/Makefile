@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A RADIUS-compliant remote authentication and accounting server
 
 CONFLICTS?=	freeradius-0.* gnu-radius-1.* openradius-0.*
+NO_STAGE=	yes
 
 MAKEFILE=	Makefile.BSD
 RADIUS_DIR=	${PREFIX}/etc/raddb
@@ -26,7 +27,6 @@ DOCFILES=	COPYRIGHT INSTALL doc/ChangeLog doc/README doc/README.Y2K \
 		doc/README.cisco doc/README.pam doc/README.proxy \
 		doc/README.simul doc/README.usersfile
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE}
 

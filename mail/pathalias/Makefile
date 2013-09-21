@@ -9,13 +9,14 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Mail routing tools
 
+NO_STAGE=	yes
+
 ALL_TARGET=	pathalias
 
 MAN8=		pathalias.8
 BIN8=		pathalias
 PLIST_FILES=	bin/pathalias
 
-NO_STAGE=	yes
 do-install:
 .for i in ${BIN8}
 	@${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin

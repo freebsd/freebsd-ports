@@ -14,6 +14,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Afterstep clock with some language extensions
 
 CONFLICTS=	asclock-gtk-[0-9]* asclock-xlib-[0-9]*
+NO_STAGE=	yes
 
 # clang's cpp destroys whitespace, particularly hard tabs in makefiles,
 # which is fatal for imake.
@@ -22,7 +23,6 @@ USE_XORG=	xpm xext x11
 MAN1=		asclock.1
 PLIST_FILES=	bin/asclock
 
-NO_STAGE=	yes
 pre-configure:
 	(cd ${WRKSRC}; \
 	${ECHO_CMD} ${ASCLOCK_LANG} | ${WRKSRC}/configure > /dev/null)

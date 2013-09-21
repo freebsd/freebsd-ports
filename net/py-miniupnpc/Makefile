@@ -16,7 +16,6 @@ WRKDIR=		${WRKDIRPREFIX}${MASTERDIR}/work
 PLIST=		${.CURDIR}/pkg-plist
 
 .if exists(${.CURDIR}/Makefile.local)
-NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.local"
 .endif
 

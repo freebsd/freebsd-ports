@@ -23,6 +23,8 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		jasper:${PORTSDIR}/graphics/jasper
 
+NO_STAGE=	yes
+
 USES=		imake
 USE_XORG=	xext x11 xt
 .if !defined(NOMAN)
@@ -32,7 +34,6 @@ MAN1=		bggen.1 vdcomp.1 xcmap.1 xv.1 xvp2p.1
 XVDIST=		${DISTDIR}/${DIST_SUBDIR}
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
 
-NO_STAGE=	yes
 pre-patch:
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/xv-3.10a-jumbo-fix-enh-patch-20070520.txt
 

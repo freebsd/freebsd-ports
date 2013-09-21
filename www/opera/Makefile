@@ -21,6 +21,8 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 BUILD_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
+NO_STAGE=	yes
+
 OPERA_VER?=	12.16
 OPERA_BUILD?=	1860
 MASTER_SITES_VER_PATH=	unix/${OPERA_VER:S/.//}
@@ -42,7 +44,6 @@ OPTIONS_DEFAULT=	CUPS VIDEO
 CUPS_DESC=	support for printing (requires CUPS)
 VIDEO_DESC=	support for HTML5 video (requires GStreamer)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(FETCH_ALL)

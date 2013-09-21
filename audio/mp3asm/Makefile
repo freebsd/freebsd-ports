@@ -13,12 +13,12 @@ COMMENT=	MP3 frame level editor
 
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.1
-
 NO_STAGE=	yes
+
 USES=		gmake
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.1
 
 post-extract:
 	@${RM} ${WRKSRC}/config.cache

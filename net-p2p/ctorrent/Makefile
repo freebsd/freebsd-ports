@@ -11,14 +11,13 @@ DISTNAME=	${PORTNAME}-dnh${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	BitTorrent Client written in C for FreeBSD and Linux
 
+NO_STAGE=	yes
+
 GNU_CONFIGURE=	yes
-#WRKSRC=		${WRKDIR}/${PORTNAME}-dnh${PATCHLEVEL}
 
 PLIST_FILES=	bin/ctorrent
-
 PORTDOCS=	README-DNH.TXT UserGuide
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

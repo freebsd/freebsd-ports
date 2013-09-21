@@ -16,6 +16,8 @@ COMMENT=	Ruby extension library to use Thomas Boutell's gd library
 
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
+NO_STAGE=	yes
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
@@ -31,7 +33,6 @@ CONFIGURE_ARGS+=	--enable-gd2_0 \
 		--with-gd-include="${LOCALBASE}/include"
 LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Hmm, GREP and TRUE seem to be defined in the bsd.port.post.mk stage.

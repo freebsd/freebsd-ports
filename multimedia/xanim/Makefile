@@ -16,6 +16,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Play most popular animation formats and show pictures
 
 NO_CDROM=	redistributed without fee
+NO_STAGE=	yes
 
 # clang's cpp destroys whitespace, particularly hard tabs in makefiles,
 # which is fatal for imake.
@@ -28,7 +29,6 @@ DLLDIR=		${PREFIX}/lib/X11/xanim
 PLIST_FILES+=	bin/xanim
 NO_CDROM=	without fee
 
-NO_STAGE=	yes
 post-extract:
 	${CP} ${WRKSRC}/docs/xanim.man ${WRKSRC}
 

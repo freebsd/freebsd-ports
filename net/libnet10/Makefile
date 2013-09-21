@@ -14,6 +14,8 @@ PKGNAMESUFFIX=	10
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A C library for creating IP packets
 
+NO_STAGE=	yes
+
 CFLAGS+=	-fPIC
 
 USE_AUTOTOOLS=	autoconf
@@ -21,7 +23,6 @@ WRKSRC=		${WRKDIR}/Libnet-${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 MAN3=		libnet${PKGNAMESUFFIX}.3
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

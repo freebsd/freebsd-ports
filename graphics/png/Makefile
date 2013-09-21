@@ -12,6 +12,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
 
 PORTSCOUT=	limit:^1\.5\.
+NO_STAGE=	yes
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
@@ -28,7 +29,6 @@ OPTIONS_DEFINE=APNG
 OPTIONS_DEFAULT=APNG
 APNG_DESC=Enable Animated PNG support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPNG} || make(makesum) || defined(FETCH_ALL)

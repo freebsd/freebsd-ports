@@ -10,5 +10,4 @@ MASTERDIR=	${.CURDIR}/../../graphics/gd
 
 CPPFLAGS+=	-DJISX0208
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

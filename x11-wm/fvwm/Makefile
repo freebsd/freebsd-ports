@@ -11,15 +11,16 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The fvwm window manager
 
 NO_LATEST_LINK=	yes
+NO_STAGE=	yes
 
 USES=		imake
 USE_XORG=	xbitmaps xpm xext x11 xmu
+
 MAN1=		FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmClean.1 \
 		FvwmDebug.1 FvwmIconBox.1 FvwmIdent.1 FvwmPager.1 FvwmSave.1 \
 		FvwmSaveDesk.1 FvwmScroll.1 FvwmWinList.1 GoodStuff.1 fvwm.1 \
 		xpmroot.1
 
-NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e '/DependSubdirs/y,/*#,   ,' ${WRKSRC}/Imakefile
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \

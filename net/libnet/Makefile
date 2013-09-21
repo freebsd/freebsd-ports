@@ -13,6 +13,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A C library for creating IP packets
 
 LATEST_LINK=	${PORTNAME}${SHORT_VER}
+NO_STAGE=	yes
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
@@ -38,7 +39,6 @@ OPTIONS_DEFINE=	EXAMPLES DOCS BPF
 OPTIONS_DEFAULT=	BPF
 BPF_DESC=	link layer bpf
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 LIBNET_LINK=	none

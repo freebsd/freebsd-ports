@@ -14,6 +14,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby module for accessing MySQL databases with a C API like interface
 
+NO_STAGE=	yes
+
 USE_MYSQL=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
@@ -23,7 +25,6 @@ INSTALL_TARGET=	site-install
 
 PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/mysql.so
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)

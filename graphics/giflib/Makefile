@@ -13,6 +13,8 @@ COMMENT=	Tools and library routines for working with GIF images
 CONFLICTS=	libungif-[0-9]*
 PORTSCOUT=	limit:^4\.
 
+NO_STAGE=	yes
+
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
@@ -21,7 +23,6 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	DOCBOOK X11
 DOCBOOK_DESC=	Generate API documentation (requires DOCS)
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCBOOK} && ${PORT_OPTIONS:MDOCS}

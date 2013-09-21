@@ -12,11 +12,11 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Extracts attached files out of a MIME encoded email package
 
 MAKE_JOBS_UNSAFE=	yes
+NO_STAGE=	yes
 
 PLIST_FILES=	bin/ripmime
 MAN1=		ripmime.1
 
-NO_STAGE=	yes
 pre-build:
 	@${REINPLACE_CMD} -e 's!CC=!CC?=!; s!/usr/local!${PREFIX}!; \
 		s!^CFLAGS=!CFLAGS ?=!' \

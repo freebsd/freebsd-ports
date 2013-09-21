@@ -10,6 +10,8 @@ COMMENT=	A free, open source Project Manager
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
+NO_STAGE=	yes
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
@@ -19,7 +21,6 @@ DATAFILES=	lib license openproj.jar readme.html
 
 SUB_FILES=	openproj.sh
 
-NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC} \
 	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} \; \

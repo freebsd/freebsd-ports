@@ -16,6 +16,8 @@ LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
 		expat:${PORTSDIR}/textproc/expat2 \
 		gd:${PORTSDIR}/${GD_PORT}
 
+NO_STAGE=	yes
+
 USES=		bison gmake pkgconfig
 USE_AUTOTOOLS=	libltdl libtool
 WANT_GNOME=	yes
@@ -86,7 +88,6 @@ GUILE_DESC=	Guile bindings (swig)
 TK_DESC=	TK toolkit support
 NVTHREADS_DESC=	Link with threads (needed for nvidia)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGVEDIT}

@@ -14,6 +14,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/lib/licq/protocol_icq.so:${PORTSDIR}/${LICQ_PORT}-icq
 
+NO_STAGE=	yes
+
 USE_XORG=	x11 xext ice xscrnsaver
 USES=		cmake
 USE_QT4=	qmake_build moc_build rcc_build uic_build linguist_build
@@ -34,7 +36,6 @@ PLIST_SUB+=	WITH_QT=""
 
 LICQ_PORT?=	net-im/licq
 
-NO_STAGE=	yes
 pre-fetch:
 .if defined(WITH_KDE)
 	@${ECHO_MSG} ""

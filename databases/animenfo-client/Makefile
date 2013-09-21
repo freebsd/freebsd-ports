@@ -13,10 +13,11 @@ COMMENT=	AnimeNfo client
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
+
 USE_GMAKE=	yes
 PLIST_FILES=	bin/animenfo-client
 
-NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/animenfo-client ${PREFIX}/bin/
 

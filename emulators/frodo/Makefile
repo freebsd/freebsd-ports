@@ -12,6 +12,8 @@ COMMENT=	Emulates a Commodore 64
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
+NO_STAGE=	yes
+
 USE_XORG=	x11 xt xext sm ice
 ALL_TARGET=	Frodo
 WRKNAME=	Frodo-4.1b
@@ -23,7 +25,6 @@ USE_SDL=	sdl
 
 ROM=		1541 Basic Char Kernal
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		${WRKDIR}/${WRKNAME}/TkGui.tcl

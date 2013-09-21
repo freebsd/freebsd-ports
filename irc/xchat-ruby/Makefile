@@ -15,6 +15,8 @@ RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
+
 USE_RUBY=	yes
 USE_LIBRUBY=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
@@ -25,7 +27,6 @@ PLIST_FILES=	lib/xchat/plugins/xchat-ruby.so
 PORTDOCS=	README ChangeLog
 PORTEXAMPLES=	embedify.rb TimerSample.rb JFilter.rb JBanner.rb
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's|^RUBY=.*|RUBY=${RUBY}|' \

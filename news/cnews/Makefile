@@ -34,7 +34,9 @@ COMMENT=	An news server
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
 MAKE_JOBS_UNSAFE=	yes
+NO_STAGE=	yes
 
 USE_GCC=	any
 
@@ -71,7 +73,6 @@ NEWSARTS?=	${VARBASE}/news
 NEWSOV?=	${VARBASE}/news
 PGPVERIFY?=	pgpverify-1.12
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if make(makesum) || defined(FETCH_ALL)

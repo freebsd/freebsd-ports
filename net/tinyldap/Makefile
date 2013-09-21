@@ -14,6 +14,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/${LIBOWFAT_PORT}
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
+
 SNAPSHOT=	20091122
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -28,7 +30,6 @@ BINFILES=	ldapclient ldapclient_str md5password mysql2ldif \
 DOCFILES=	ACL FORMAT GETTING.STARTED README README.security RFCs \
 		THANKS TODO
 
-NO_STAGE=	yes
 post-patch:
 	${TOUCH} ${WRKSRC}/alloca.h
 	${REINPLACE_CMD} -e "s|\"data\"|\"${TINYLDAP_DATA}\"|" \

@@ -12,17 +12,18 @@ COMMENT=	Sendmail milter wich uses McAfee Virus Scan or clamav
 
 LICENSE=	BSD
 
-USE_RC_SUBR=	antivirus-milter
+NO_STAGE=	yes
 
 CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
 LIBS+=		-lmilter ${PTHREAD_LIBS}
-ANTIVIRUS_DIR?=	/var/spool/antivirus
 PLIST_SUB+=	ANTIVIRUS=${ANTIVIRUS_DIR}
 SUB_LIST+=	ANTIVIRUS=${ANTIVIRUS_DIR}
 SED_SCRIPT=	-e 's|%%ANTIVIRUS%%|${ANTIVIRUS_DIR}|g' \
 		-e 's|%%PREFIX%%|${PREFIX}|g'
+USE_RC_SUBR=	antivirus-milter
 
-NO_STAGE=	yes
+ANTIVIRUS_DIR?=	/var/spool/antivirus
+
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"

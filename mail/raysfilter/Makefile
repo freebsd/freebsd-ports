@@ -10,6 +10,8 @@ DISTNAME=	rays-filter-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A configurable filter for Sendmail Milter
 
+NO_STAGE=	yes
+
 CTARGETS+=	rays-filter
 CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
 LIBS+=		${PTHREAD_LIBS}
@@ -18,7 +20,6 @@ BINFILES=	mf-reset mf-start mf-stop mf-archive mf-analyze mf-memory
 DOCSFILES=	rays-filter.html install.html configure.html operate.html \
 		utilities.html GNU-public-licence.txt copyright.txt README
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"

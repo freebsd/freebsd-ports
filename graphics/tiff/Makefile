@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		jbig:${PORTSDIR}/graphics/jbigkit
 
+NO_STAGE=	yes
+
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS+=	--with-jpeg-include-dir=${LOCALBASE}/include \
@@ -109,7 +111,6 @@ MLINKS=	TIFFError.3tiff          TIFFSetErrorHandler.3tiff \
 	TIFFtile.3tiff           TIFFTileRowSize.3tiff \
 	TIFFtile.3tiff           TIFFVTileSize.3tiff
 
-NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} \
 		-e 's|^LIBTIFF_VERSION_INFO =.*$$|LIBTIFF_VERSION_INFO = 4:0:0|' \

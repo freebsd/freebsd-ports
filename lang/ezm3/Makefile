@@ -14,10 +14,11 @@ DIST_SUBDIR=	ezm3
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easier, more portable Modula-3 distribution for building CVSup
 
+NO_STAGE=	yes
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
