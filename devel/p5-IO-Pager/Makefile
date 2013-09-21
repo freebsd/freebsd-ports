@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	IO-Pager
-PORTVERSION=	0.24
+PORTVERSION=	0.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,4 +20,8 @@ MAN3=		IO::Pager::Buffered.3 \
 		IO::Pager.3
 
 NO_STAGE=	yes
+
+regression-test:
+	@cd ${WRKSRC} && ${MAKE} test
+
 .include <bsd.port.mk>
