@@ -25,6 +25,7 @@ MAN7=		herbstluftwm-tutorial.7
 
 OPTIONS_DEFINE=	BASH ZSH DOCS EXAMPLES
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBASH}

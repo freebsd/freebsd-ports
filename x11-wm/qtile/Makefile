@@ -25,6 +25,7 @@ USE_PYDISTUTILS=	easy_install
 
 PORTDOCS=	CHANGELOG INSTALL.rst LICENSE README.rst
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

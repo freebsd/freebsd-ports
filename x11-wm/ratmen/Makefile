@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ratmen
-# Date created:				2008-02-20
-# Whom:					alepulver
-#
+# Created by: alepulver
 # $FreeBSD$
-#
 
 PORTNAME=	ratmen
 PORTVERSION=	2.2.3
@@ -20,6 +16,7 @@ USE_PERL5=	build
 MAN1=		ratmen.1
 PLIST_FILES=	bin/ratmen
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ratmen ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ratmen.1 ${MAN1PREFIX}/man/man1

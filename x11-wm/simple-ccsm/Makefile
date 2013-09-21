@@ -21,4 +21,5 @@ INSTALLS_EGGINFO=	yes
 
 INSTALLS_ICONS=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

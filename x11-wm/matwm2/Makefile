@@ -18,4 +18,5 @@ USE_XORG=	x11 xext xinerama xft
 PLIST_FILES=	bin/matwm2
 MAN1=		matwm2.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

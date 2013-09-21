@@ -1,9 +1,5 @@
-# New ports collection makefile for:	antiwm
-# Date created:		2009-01-30
-# Whom:			Dennis Herrmann <adox@mcx2.org>
-#
+# Created by: Dennis Herrmann <adox@mcx2.org>
 # $FreeBSD$
-#
 
 PORTNAME=	antiwm
 PORTVERSION=	0.0.5
@@ -18,6 +14,7 @@ USE_XORG=	x11
 PLIST_FILES=	bin/antiwm
 PORTDOCS=	README LICENSE
 
+NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "You can build antiwm with your own conf.h using the ANTIWM_CONF knob:"
 	@${ECHO_MSG} "make ANTIWM_CONF=/path/to/antiwm/conf.h install clean"

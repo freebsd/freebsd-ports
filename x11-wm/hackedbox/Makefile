@@ -25,6 +25,7 @@ USE_XORG=	x11 xext xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-bg-utils
 
+NO_STAGE=	yes
 pre-patch:
 	${REINPLACE_CMD} -e \
 		"s:/usr/local/share/hackedbox:${PREFIX}/share/hackedbox:g" \

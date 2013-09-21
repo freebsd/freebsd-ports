@@ -40,6 +40,7 @@ PORTDOCS=	AUTHORS BUGFORM BUGS ChangeLog FAQ FAQ.I18N INSTALL \
 
 OPTIONS_DEFINE=	DOCS NLS XRANDR
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == amd64 && ${OSVERSION} < 800000

@@ -24,6 +24,7 @@ MAN1=		mcwm.1 hidden.1
 PLIST_FILES=	bin/mcwm bin/hidden
 PORTDOCS=	README NEWS
 
+NO_STAGE=	yes
 pre-everything::
 		@${ECHO_MSG} "You can build mcwm with your own config.h using the MCWM_CONF knob:"
 		@${ECHO_MSG} "make MCWM_CONF=/path/to/mcwm/config.h install clean"

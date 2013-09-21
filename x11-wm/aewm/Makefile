@@ -23,6 +23,7 @@ PORTDOCS=	DESIGN LICENSE NEWS README TODO
 GTKCLIENTS=	aemenu-gtk aepanel-gtk
 XAWCLIENTS=	aemenu-xaw aepanel-xaw aesession set-gnome-pda
 
+NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgtk20} != ""

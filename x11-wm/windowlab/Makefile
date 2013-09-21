@@ -25,6 +25,7 @@ PORTDOCS=	CHANGELOG README
 PLIST_FILES=	bin/windowlab %%ETCDIR%%/menurc
 PLIST_DIRS=	%%ETCDIR%%
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXFT}

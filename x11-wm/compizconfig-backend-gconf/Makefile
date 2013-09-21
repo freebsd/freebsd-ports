@@ -22,6 +22,7 @@ USE_AUTOTOOLS=	libtool
 USES=		pathfix pkgconfig
 USE_GNOME=	glib20 gconf2
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|'	\
 		${WRKSRC}/settings-backend/gconf.c	\

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	enlightenment-docs
-# Date created:				08 Aug 2004
-# Whom:					vanilla
-#
+# Created by: vanilla
 # $FreeBSD$
-#
 
 PORTNAME=	enlightenment-docs
 PORTVERSION=	0.16.8.0.2
@@ -23,4 +19,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-fsstd
 DATADIR=	${PREFIX}/share/e16
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -32,6 +32,7 @@ USE_XORG=	xpm
 MAN1=		olvwm.1 olvwmrc.1
 XFREE86_HTML_MAN=	no
 
+NO_STAGE=	yes
 pre-configure:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
 	's|^#endif.*$$|#endif|;s|^#else.*$$|#else|;\

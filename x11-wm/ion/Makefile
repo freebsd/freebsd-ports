@@ -1,9 +1,5 @@
-# New ports collection makefile for:   ion
-# Date created:        20 January 2001
-# Whom:                ricci@cs.utah.edu
-#
+# Created by: ricci@cs.utah.edu
 # $FreeBSD$
-#
 
 PORTNAME=	ion
 PORTVERSION=	20020207
@@ -21,4 +17,5 @@ MAN1=		ion.1x
 USE_XORG=	x11
 USE_GMAKE=	yes
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

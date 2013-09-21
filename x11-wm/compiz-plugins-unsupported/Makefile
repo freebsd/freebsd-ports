@@ -38,4 +38,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-schemas
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -31,6 +31,7 @@ MAN5=		awesome2rc.5
 PORTDOCS=	AUTHORS LICENSE README STYLE UPGRADE
 PORTEXAMPLES=	awesomerc
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's, "$$(DESTDIR)$$(docdir)";,;,g' \
 			  -e 's,\([[:space:]]\)install-docDATA ,\1,g' \

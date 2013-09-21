@@ -1,9 +1,5 @@
-# New ports collection makefile for:   wmname
-# Date created:		31 July 2009
-# Whom:		 	V. Jahns <vj562001@yahoo.de>
-#
+# Created by: V. Jahns <vj562001@yahoo.de>
 # $FreeBSD$
-#
 
 PORTNAME=	wmname
 PORTVERSION=	0.1
@@ -17,4 +13,5 @@ USE_XORG=	x11 xproto
 
 PLIST_FILES=	bin/wmname
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	python-xlib
-# Date created:		5 December 2001
-# Whom:	      		Mike Meyer <mwm@mired.org>
-#
+# Created by: Mike Meyer <mwm@mired.org>
 # $FreeBSD$
-#
 
 PORTNAME=	plwm
 PORTVERSION=	2.5
@@ -22,6 +18,7 @@ INFO=		plwm
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,whrandom,random,g' ${WRKSRC}/plwm/inspect.py
 	${REINPLACE_CMD} -e 's,$$Id,coding: utf-8 ,g' ${WRKSRC}/plwm/mw_apm.py

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	wm2
-# Date created:		16 February 1997
-# Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-#
+# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	wm2
 PORTVERSION=	4.0
@@ -20,6 +16,7 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 USE_XORG=	x11 xext xmu
 ALL_TARGET=	depend wm2
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wm2 ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

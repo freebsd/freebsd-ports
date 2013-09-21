@@ -56,6 +56,7 @@ MANUALS=	i3-config-wizard.1 i3-dmenu-desktop.1 \
 
 MAN1=	${MANUALS}
 
+NO_STAGE=	yes
 post-extract:
 	@cd ${WRKSRC} && ${CP} i3.config config.sample
 	@cd ${WRKSRC} && ${CP} i3.config.keycodes config.keycodes

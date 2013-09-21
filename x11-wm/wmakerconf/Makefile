@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--with-wmakerdataprefix="${LOCALBASE}/share" \
 
 MAN1=		mkpreview.1 wmakerconf.1
 
+NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -name "*.gmo" -delete
 

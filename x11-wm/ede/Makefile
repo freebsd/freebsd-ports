@@ -55,6 +55,7 @@ HAL_CONFIGURE_OFF=	--disable-hal
 # use multiple make jobs
 _make_jobs=	-j${MAKE_JOBS_NUMBER}
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/share|${LOCALBASE}/share| ; \

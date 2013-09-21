@@ -15,6 +15,7 @@ GNU_CONFIGURE=	yes
 USE_XORG=	x11 ice sm xext xmu
 MAN1=		amiwm.1
 
+NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>  Copying documents to ${DOCSDIR}"

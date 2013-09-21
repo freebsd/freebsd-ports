@@ -21,6 +21,7 @@ PLIST_FILES=	bin/tvtwm
 
 CFLAGS+=	-Wno-return-type
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tvtwm ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/tvtwm.man ${MANPREFIX}/man/man1/tvtwm.1

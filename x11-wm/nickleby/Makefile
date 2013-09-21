@@ -1,9 +1,5 @@
-# New ports collection makefile for:  nickleby
-# Date created:                       Fri, 07 Sep 2007 22:47:06 EDT
-# Whom:                               James Bailie <jimmy@mammothcheese.ca>
-#
+# Created by: James Bailie <jimmy@mammothcheese.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	nickleby
 PORTVERSION=	2.1
@@ -20,4 +16,5 @@ USE_XORG=	x11
 
 PLIST_FILES=	bin/nickleby
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

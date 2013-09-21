@@ -24,6 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-auto-respawn
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|<machine/soundcard\.h>|<sys/soundcard.h>|g' \
 		${WRKSRC}/epplets/Emix.c

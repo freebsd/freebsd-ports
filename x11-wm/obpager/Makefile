@@ -1,9 +1,5 @@
-# New ports collection Makefile for:	obpager
-# Date created:				7 March 2009
-# Whom:					gahr
-#
+# Created by: gahr
 # $FreeBSD$
-#
 
 PORTNAME=	obpager
 PORTVERSION=	1.8
@@ -20,6 +16,7 @@ USE_GMAKE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g; \
 	    s|%%LOCALBASE%%|${LOCALBASE}|g; \

@@ -39,6 +39,7 @@ SRCDIRS=	afterstep \
 		modules/Banner modules/Pager modules/Wharf \
 		modules/Wharf/ASSound
 
+NO_STAGE=	yes
 pre-patch:
 	@ ${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/as10+I18N.98Feb27.diff
 

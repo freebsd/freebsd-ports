@@ -33,6 +33,7 @@ SUDO_DESC=		Run text-based applications as superuser
 HSETROOT_DESC=		Allow to set desktop wallpaper
 CMUS_DESC=		Play music via audio/cmus player
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MROX}

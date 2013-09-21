@@ -38,6 +38,7 @@ SYSTRAY_DESC=	Enable systray feature
 TOOLBAR_DESC=	Enable toolbar feature
 XRENDER_DESC=	Enable xrender support
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

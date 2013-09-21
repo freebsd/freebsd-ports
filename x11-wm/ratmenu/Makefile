@@ -1,9 +1,5 @@
-# New ports collection makefile for:    ratmenu
-# Date created:         Fri Oct  5 12:53:10 CDT 2001
-# Whom:                 mwm@mired.org
-#
+# Created by: mwm@mired.org
 # $FreeBSD$
-#
 
 PORTNAME=	ratmenu
 PORTVERSION=	1.4
@@ -19,6 +15,7 @@ ALL_TARGET=	ratmenu
 MAN1=		ratmenu.1
 PLIST_FILES=	bin/ratmenu
 
+NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ratmenu ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ratmenu.1 ${PREFIX}/man/man1

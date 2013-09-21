@@ -1,6 +1,5 @@
 # Created by: James Earl <jdearl@telus.net>
 # $FreeBSD$
-#
 
 PORTNAME=	xfce
 PORTVERSION=	4.10
@@ -32,6 +31,7 @@ RUN_DEPENDS=	xfwm4:${PORTSDIR}/x11-wm/xfce4-wm \
 NO_BUILD=	yes
 LATEST_LINK=	xfce4
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if exists(${LOCALBASE}/sbin/gdm)

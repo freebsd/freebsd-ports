@@ -12,4 +12,5 @@ PLIST=		${MASTERDIR}/pkg-plist
 
 WITH_MULTIBYTE= YES
 
+NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

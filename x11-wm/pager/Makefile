@@ -24,6 +24,7 @@ PLIST_FILES=	lib/sawfish/sawfishpager \
 		share/sawfish/lisp/sawfish/wm/ext/pager.jl \
 		share/sawfish/lisp/sawfish/wm/ext/pager.jlc
 
+NO_STAGE=	yes
 post-install:
 	@${STRIP_CMD} ${PREFIX}/lib/sawfish/sawfishpager
 	@${CAT} ${PKGMESSAGE}

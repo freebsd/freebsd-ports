@@ -28,6 +28,7 @@ PORTEXAMPLES=	spectrwm_cz.conf \
 		spectrwm_se.conf \
 		spectrwm_us.conf
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/spectrwm.*
 

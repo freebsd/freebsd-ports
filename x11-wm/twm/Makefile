@@ -12,4 +12,5 @@ USE_XORG=	x11 xext xt xmu
 
 MAN1=		twm.1
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

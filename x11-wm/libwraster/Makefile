@@ -37,6 +37,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		get-wraster-flags.1
 
+NO_STAGE=	yes
 pre-build:
 	cd ${WRKSRC} && ${MAKE} config-paths.h
 

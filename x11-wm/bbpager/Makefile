@@ -22,6 +22,7 @@ DOCS=		AUTHORS BUGS COPYING ChangeLog INSTALL NEWS \
 		README TODO
 EXAMPLES=	bbpager.rc README.bbpager
 
+NO_STAGE=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/bbpager ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

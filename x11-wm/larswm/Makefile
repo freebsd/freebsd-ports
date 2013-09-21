@@ -18,6 +18,7 @@ PORTDOCS=	ChangeLog README README.9menu README.9wm \
 		sample.larswmrc sample.xsession
 PLIST_FILES=	bin/larsclock bin/larsmenu bin/larsremote bin/larswm
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:

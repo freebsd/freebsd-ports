@@ -22,6 +22,7 @@ PORTDOCS=	AUTHORS NEWS README TODO
 PLIST_FILES=	bin/devilspie \
 		share/locale/de/LC_MESSAGES/devilspie.mo
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||' \
 		${WRKSRC}/src/Makefile.in

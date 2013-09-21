@@ -28,6 +28,7 @@ OPTIONS_DEFINE=	SLIM_LAYOUT_BOX UTF8
 
 SLIM_LAYOUT_BOX_DESC=	Build with slim layout boxes
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUTF8}

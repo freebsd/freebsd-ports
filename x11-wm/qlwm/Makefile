@@ -31,6 +31,7 @@ PLIST_DIRS=	lib/qlwm/files \
 
 SUB_FILES=	qlwm
 
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/qlwm|${PREFIX}/lib/qlwm|g ; \
 		 s|/usr/local/man|${MANPREFIX}/man|g' ${WRKSRC}/Makefile
