@@ -1,4 +1,4 @@
-# Created by: leres@ee.lbl.gov
+# Created by: Craig Leres <leres@ee.lbl.gov>
 # $FreeBSD$
 
 PORTNAME=	hf
