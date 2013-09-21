@@ -1,5 +1,7 @@
 SHA256 (openssl-1.0.1e2/openssl-1.0.1e.tar.gz) = f74f15e8c8ff11aa3d5bb5f276d202ec18d7246e95f961db76054199c69c1ae3
 SIZE (openssl-1.0.1e2/openssl-1.0.1e.tar.gz) = 4459777
+SHA256 (openssl-1.0.1e2/openssl-1.0.1e-fix_pod_syntax-1.patch) = 748fd906d6d50b0183d4795aec4857c5b1e53de1155aaa8512fc775f2c04dbe9
+SIZE (openssl-1.0.1e2/openssl-1.0.1e-fix_pod_syntax-1.patch) = 11743
 SHA256 (openssl-1.0.1e2/0001-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch) = 18dd81fefb39b3328a444774ed10871ed50348ca171d2da9f826f916127b2dae
 SIZE (openssl-1.0.1e2/0001-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch) = 3512
 SHA256 (openssl-1.0.1e2/0002-engines-e_padlock-backport-cvs-head-changes.patch) = 39c31c2e33cded09543a2d1fd2e3238e9d11c672ba71a14d13095baad3ec9696
