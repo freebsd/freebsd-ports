@@ -1520,6 +1520,12 @@
 %%WWWDIR%%/lib/jshrink/Minifier.php
 %%WWWDIR%%/lib/jshrink/README.md
 %%WWWDIR%%/lib/jimIcon.php
+%%WWWDIR%%/lib/languagedetect/LanguageDetect.php
+%%WWWDIR%%/lib/languagedetect/Text/LanguageDetect/Exception.php
+%%WWWDIR%%/lib/languagedetect/Text/LanguageDetect/ISO639.php
+%%WWWDIR%%/lib/languagedetect/Text/LanguageDetect/Parser.php
+%%WWWDIR%%/lib/languagedetect/data/lang.dat
+%%WWWDIR%%/lib/languagedetect/data/unicode_blocks.dat
 %%WWWDIR%%/lib/otphp/LICENCE
 %%WWWDIR%%/lib/otphp/lib/hotp.php
 %%WWWDIR%%/lib/otphp/lib/otp.php
@@ -2035,13 +2041,16 @@
 %%WWWDIR%%/plugins/af_dilbert/init.php
 %%WWWDIR%%/plugins/af_explosm/init.php
 %%WWWDIR%%/plugins/af_gocomics/init.php
+%%WWWDIR%%/plugins/af_natgeo/init.php
 %%WWWDIR%%/plugins/af_pennyarcade/init.php
 %%WWWDIR%%/plugins/af_redditimgur/init.php
+%%WWWDIR%%/plugins/af_sciam/init.php
 %%WWWDIR%%/plugins/af_unburn/init.php
 %%WWWDIR%%/plugins/af_whomp/init.php
 %%WWWDIR%%/plugins/auth_internal/init.php
 %%WWWDIR%%/plugins/auth_remote/init.php
 %%WWWDIR%%/plugins/bookmarklets/init.php
+%%WWWDIR%%/plugins/cache_starred_images/init.php
 %%WWWDIR%%/plugins/close_button/button.png
 %%WWWDIR%%/plugins/close_button/init.php
 %%WWWDIR%%/plugins/embed_original/button.png
@@ -2063,6 +2072,9 @@
 %%WWWDIR%%/plugins/mailto/init.php
 %%WWWDIR%%/plugins/mailto/mail.png
 %%WWWDIR%%/plugins/mark_button/init.php
+%%WWWDIR%%/plugins/no_iframes/init.php
+%%WWWDIR%%/plugins/no_title_counters/init.js
+%%WWWDIR%%/plugins/no_title_counters/init.php
 %%WWWDIR%%/plugins/note/init.php
 %%WWWDIR%%/plugins/note/note.js
 %%WWWDIR%%/plugins/note/note.png
@@ -2073,6 +2085,9 @@
 %%WWWDIR%%/plugins/share/share.js
 %%WWWDIR%%/plugins/share/share.png
 %%WWWDIR%%/plugins/share/share_prefs.js
+%%WWWDIR%%/plugins/shorten_expanded/init.css
+%%WWWDIR%%/plugins/shorten_expanded/init.js
+%%WWWDIR%%/plugins/shorten_expanded/init.php
 %%WWWDIR%%/plugins/swap_jk/init.php
 %%WWWDIR%%/plugins/updater/init.php
 %%WWWDIR%%/plugins/updater/updater.js
@@ -2109,6 +2124,8 @@
 %%WWWDIR%%/schema/versions/mysql/12.sql
 %%WWWDIR%%/schema/versions/mysql/120.sql
 %%WWWDIR%%/schema/versions/mysql/121.sql
+%%WWWDIR%%/schema/versions/mysql/122.sql
+%%WWWDIR%%/schema/versions/mysql/123.sql
 %%WWWDIR%%/schema/versions/mysql/13.sql
 %%WWWDIR%%/schema/versions/mysql/14.sql
 %%WWWDIR%%/schema/versions/mysql/15.sql
@@ -2228,6 +2245,8 @@
 %%WWWDIR%%/schema/versions/pgsql/12.sql
 %%WWWDIR%%/schema/versions/pgsql/120.sql
 %%WWWDIR%%/schema/versions/pgsql/121.sql
+%%WWWDIR%%/schema/versions/pgsql/122.sql
+%%WWWDIR%%/schema/versions/pgsql/123.sql
 %%WWWDIR%%/schema/versions/pgsql/13.sql
 %%WWWDIR%%/schema/versions/pgsql/14.sql
 %%WWWDIR%%/schema/versions/pgsql/15.sql
@@ -2350,9 +2369,12 @@
 @dirrm %%WWWDIR%%/plugins/vf_shared
 @dirrm %%WWWDIR%%/plugins/updater
 @dirrm %%WWWDIR%%/plugins/swap_jk
+@dirrm %%WWWDIR%%/plugins/shorten_expanded
 @dirrm %%WWWDIR%%/plugins/share
 @dirrm %%WWWDIR%%/plugins/nsfw
 @dirrm %%WWWDIR%%/plugins/note
+@dirrm %%WWWDIR%%/plugins/no_title_counters
+@dirrm %%WWWDIR%%/plugins/no_iframes
 @dirrm %%WWWDIR%%/plugins/mark_button
 @dirrm %%WWWDIR%%/plugins/mailto
 @dirrm %%WWWDIR%%/plugins/mail
@@ -2362,13 +2384,16 @@
 @dirrm %%WWWDIR%%/plugins/googlereaderimport
 @dirrm %%WWWDIR%%/plugins/embed_original
 @dirrm %%WWWDIR%%/plugins/close_button
+@dirrm %%WWWDIR%%/plugins/cache_starred_images
 @dirrm %%WWWDIR%%/plugins/bookmarklets
 @dirrm %%WWWDIR%%/plugins/auth_remote
 @dirrm %%WWWDIR%%/plugins/auth_internal
 @dirrm %%WWWDIR%%/plugins/af_whomp
 @dirrm %%WWWDIR%%/plugins/af_unburn
+@dirrm %%WWWDIR%%/plugins/af_sciam
 @dirrm %%WWWDIR%%/plugins/af_redditimgur
 @dirrm %%WWWDIR%%/plugins/af_pennyarcade
+@dirrm %%WWWDIR%%/plugins/af_natgeo
 @dirrm %%WWWDIR%%/plugins/af_gocomics
 @dirrm %%WWWDIR%%/plugins/af_explosm
 @dirrm %%WWWDIR%%/plugins/af_dilbert
@@ -2433,6 +2458,10 @@
 @dirrm %%WWWDIR%%/lib/otphp/vendor
 @dirrm %%WWWDIR%%/lib/otphp/lib
 @dirrm %%WWWDIR%%/lib/otphp
+@dirrm %%WWWDIR%%/lib/languagedetect/data
+@dirrm %%WWWDIR%%/lib/languagedetect/Text/LanguageDetect
+@dirrm %%WWWDIR%%/lib/languagedetect/Text
+@dirrm %%WWWDIR%%/lib/languagedetect
 @dirrm %%WWWDIR%%/lib/jshrink
 @dirrm %%WWWDIR%%/lib/gettext
 @dirrm %%WWWDIR%%/lib/dojo/store/util
