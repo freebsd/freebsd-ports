@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leveldb
-PORTVERSION=	1.13.0
+PORTVERSION=	1.14.0
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
@@ -13,6 +13,7 @@ OPTIONS_DEFINE=	GPERFTOOLS SNAPPY
 OPTIONS_DEFAULT=SNAPPY
 
 LDFLAGS+=	-L${LOCALBASE}/lib
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 USES=		gmake
 
@@ -25,15 +26,14 @@ NOT_FOR_ARCHS_REASON=	not yet ported to this platform
 SHLIB_MAJOR=	${PORTVERSION:R:R}
 SHLIB_MINOR=	${PORTVERSION:R:E}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGPERFTOOLS}
-LIB_DEPENDS+=	tcmalloc:${PORTSDIR}/devel/google-perftools
+LIB_DEPENDS+=	libtcmalloc.so:${PORTSDIR}/devel/google-perftools
 .endif
 
 .if ${PORT_OPTIONS:MSNAPPY}
-LIB_DEPENDS+=	snappy:${PORTSDIR}/archivers/snappy
+LIB_DEPENDS+=	libsnappy.so:${PORTSDIR}/archivers/snappy
 SNAPPY=		1
 .else
 SNAPPY=		0
