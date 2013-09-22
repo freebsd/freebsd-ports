@@ -12,6 +12,8 @@ DISTNAME=	usbrh-${PORTVERSION}
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Yet another reads temperatures and humidity from a Strawberry Linux USB-RH
 
+USE_GCC=	any
+
 PLIST_FILES=	bin/usbrh
 
 NO_STAGE=	yes
