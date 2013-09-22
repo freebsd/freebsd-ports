@@ -15,8 +15,7 @@ LIB_DEPENDS=	itk:${PORTSDIR}/x11-toolkits/itk
 
 NO_BUILD=	yes
 HAS_CONFIGURE=	yes
-USE_TCL=	84+
-USE_TK=		84+
+USES=		tk
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-tcl=${TCL_LIBDIR} \
 		--with-tk=${TK_LIBDIR} \
@@ -24,6 +23,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 SUB_LIST=	IWIDGETS=${DISTNAME}
 SUB_FILES=	pkg-message
 PLIST_SUB=	IWIDGETS=${DISTNAME}
+NO_STAGE=	yes
 
 PORTDOCS=	CHANGES ChangeLog README iwidgets.ps
 
@@ -41,7 +41,6 @@ MANN=	iwidgets_buttonbox.n iwidgets_calendar.n iwidgets_canvasprintbox.n iwidget
 	iwidgets_spintime.n iwidgets_tabnotebook.n iwidgets_tabset.n iwidgets_timeentry.n iwidgets_timefield.n \
 	iwidgets_toolbar.n iwidgets_watch.n
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,^MKINSTALLDIRS =.*,MKINSTALLDIRS=${MKDIR},' \
 		-e 's,^INSTALL =.*,INSTALL=${INSTALL} -c,' \
