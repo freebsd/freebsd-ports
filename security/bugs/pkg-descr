@@ -1,13 +1,11 @@
-This package include a C library and some samples program that 
-demonstrate that this library is powerful.
+This package include a C library and some sample programs that demonstrate
+the library's power.
 
-It is a cryptography library, you can crypt any type of data.
-Your key length to crypt is unlimited.
-You can generate password, manage users, hide text in file, etc.
+It is a cryptographic library: you can crypt any type of data.  Key length
+is unlimited.  You can generate password, manage users, hide text in file,
+etc.
 
-
-ATTENTION !!! IN SOME COUNTRIES THIS SOFTWARE MAY BE ILLEGAL SO DON'T USE
-IT IF YOU ARE NOT ALLOWED...
-
+ATTENTION!!!  IN SOME COUNTRIES THIS SOFTWARE MAY BE ILLEGAL, SO DON'T USE
+IT IF YOU ARE NOT ALLOWED.
 
 WWW: http://www.encryptsolutions.com/
