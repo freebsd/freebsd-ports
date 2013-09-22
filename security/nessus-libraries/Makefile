@@ -23,6 +23,7 @@ WRKSRC=		${WRKDIR}/nessus-libraries
 
 USES=		bison
 USE_AUTOTOOLS=	libtool
+NO_STAGE=	yes
 CONFIGURE_ARGS=	--enable-cipher
 .if defined(WITH_NESSUS_BPF_SHARE)
 CONFIGURE_ARGS+=	--enable-bpf-sharing
@@ -34,7 +35,6 @@ MAN1=		nessus-config.1
 
 .if ! defined(NESSUS_CLIENT_ONLY) && ! defined(PACKAGE_BUILDING)
 MANUAL_PACKAGE_BUILD=	needs /dev/bpf which is not available in pointyhat jail
-NO_STAGE=	yes
 pre-configure:
 	@if [ ! -c /dev/bpf ]; then \
 	    ${ECHO} "********************************************************";\
