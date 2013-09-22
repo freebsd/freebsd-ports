@@ -818,6 +818,7 @@
     SUBDIR += p5-Text-Hatena
     SUBDIR += p5-Text-Highlight
     SUBDIR += p5-Text-HikiDoc
+    SUBDIR += p5-Text-Hyphen
     SUBDIR += p5-Text-Language-Guess
     SUBDIR += p5-Text-Lorem
     SUBDIR += p5-Text-Markdown
