@@ -1,0 +1,5 @@
+This package contains resources for integrating ACE (http://ace.ajax.org/) into
+Plone, with a file manager that can edit ``plone.resource`` resource directories
+in the ZODB.
+
+WWW: https://github.com/plone/plone.resourceeditor/

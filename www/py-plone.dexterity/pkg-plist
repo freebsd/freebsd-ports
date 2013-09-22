@@ -1,0 +1,199 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/CONVENTIONS.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/behavior.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/behavior.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/behavior.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/add.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/add.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/add.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/containercontentcore.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/edit.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/edit.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/edit.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/fti.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/fti.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/fti.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/fti.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/icons/container_icon.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/icons/item_icon.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/icons/typeinfo.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/item.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/itemcontentcore.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/traversal.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/traversal.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/traversal.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/view.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/view.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/view.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/content.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/content.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/content.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/events.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/events.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/events.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/factory.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/factory.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/factory.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/filerepresentation.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/filerepresentation.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/filerepresentation.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/fti.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/fti.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/fti.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/i18n.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/i18n.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/i18n.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/interfaces.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/interfaces.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/interfaces.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/af/LC_MESSAGES/plone.dexterity.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/af/LC_MESSAGES/plone.dexterity.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/bg/LC_MESSAGES/plone.dexterity.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/bg/LC_MESSAGES/plone.dexterity.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/cs/LC_MESSAGES/plone.dexterity.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/cs/LC_MESSAGES/plone.dexterity.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/da/LC_MESSAGES/plone.dexterity.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/da/LC_MESSAGES/plone.dexterity.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/de/LC_MESSAGES/plone.dexterity.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/de/LC_MESSAGES/plone.dexterity.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/es/LC_MESSAGES/plone.dexterity.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/es/LC_MESSAGES/plone.dexterity.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/eu/LC_MESSAGES/plone.dexterity.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/eu/LC_MESSAGES/plone.dexterity.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/fi/LC_MESSAGES/plone.dexterity.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/fi/LC_MESSAGES/plone.dexterity.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/fr/LC_MESSAGES/plone.dexterity.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/fr/LC_MESSAGES/plone.dexterity.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/it/LC_MESSAGES/plone.dexterity.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/it/LC_MESSAGES/plone.dexterity.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/ja/LC_MESSAGES/plone.dexterity.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/ja/LC_MESSAGES/plone.dexterity.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/nl/LC_MESSAGES/plone.dexterity.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/nl/LC_MESSAGES/plone.dexterity.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/no/LC_MESSAGES/plone.dexterity.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/no/LC_MESSAGES/plone.dexterity.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/plone.dexterity.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/pt_BR/LC_MESSAGES/plone.dexterity.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/pt_BR/LC_MESSAGES/plone.dexterity.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/sv/LC_MESSAGES/plone.dexterity.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/sv/LC_MESSAGES/plone.dexterity.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/zh_CN/LC_MESSAGES/plone.dexterity.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/zh_CN/LC_MESSAGES/plone.dexterity.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/zh_TW/LC_MESSAGES/plone.dexterity.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/zh_TW/LC_MESSAGES/plone.dexterity.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/meta.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/primary.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/primary.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/primary.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/schema.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/schema.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/schema.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/schemata.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/schemata.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/schemata.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_behavior.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_behavior.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_behavior.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_content.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_content.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_content.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_content_integration.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_content_integration.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_content_integration.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_factory.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_factory.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_factory.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_fti.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_fti.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_fti.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_primary.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_primary.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_primary.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_schema.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_schema.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_schema.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_schema_cache.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_schema_cache.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_schema_cache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_security.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_security.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_security.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_views.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_views.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_views.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_webdav.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_webdav.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests/test_webdav.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/utils.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/zh_TW/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/zh_TW
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/zh_CN/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/zh_CN
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/sv/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/sv
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/no/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/no
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/nl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/nl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/ja/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/ja
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/it
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/fr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/fi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/fi
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/eu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/eu
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/es
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/de
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/da/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/da
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/cs/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/cs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/bg/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/bg
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/af/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales/af
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/locales
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser/icons
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity/browser
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/dexterity
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

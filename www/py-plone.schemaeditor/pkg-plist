@@ -1,0 +1,136 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/field/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/field/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/field/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/field/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/field/edit.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/field/edit.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/field/edit.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/field/fieldset.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/field/fieldset.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/field/fieldset.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/field/order.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/field/order.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/field/order.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/field/traversal.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/field/traversal.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/field/traversal.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/schema/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/schema/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/schema/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/schema/add_field.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/schema/add_field.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/schema/add_field.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/schema/add_fieldset.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/schema/add_fieldset.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/schema/add_fieldset.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/schema/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/schema/listing.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/schema/listing.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/schema/listing.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/schema/schema_listing.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/schema/schemaeditor.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/schema/traversal.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/schema/traversal.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/schema/traversal.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/fields.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/fields.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/fields.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/fields.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/interfaces.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/interfaces.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/interfaces.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/cs/LC_MESSAGES/plone.schemaeditor.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/cs/LC_MESSAGES/plone.schemaeditor.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/de/LC_MESSAGES/plone.schemaeditor.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/de/LC_MESSAGES/plone.schemaeditor.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/es/LC_MESSAGES/plone.schemaeditor.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/es/LC_MESSAGES/plone.schemaeditor.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/eu/LC_MESSAGES/plone.app.dexterity.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/eu/LC_MESSAGES/plone.app.dexterity.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/eu/LC_MESSAGES/plone.schemaeditor.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/eu/LC_MESSAGES/plone.schemaeditor.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/fr/LC_MESSAGES/plone.schemaeditor.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/fr/LC_MESSAGES/plone.schemaeditor.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/it/LC_MESSAGES/plone.schemaeditor.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/it/LC_MESSAGES/plone.schemaeditor.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/ja/LC_MESSAGES/plone.schemaeditor.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/ja/LC_MESSAGES/plone.schemaeditor.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/nl/LC_MESSAGES/plone.schemaeditor.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/nl/LC_MESSAGES/plone.schemaeditor.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/plone.app.dexterity.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/plone.schemaeditor.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/pt/LC_MESSAGES/plone.schemaeditor.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/pt/LC_MESSAGES/plone.schemaeditor.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/pt_BR/LC_MESSAGES/plone.schemaeditor.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/pt_BR/LC_MESSAGES/plone.schemaeditor.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/update.sh
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/schema.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/schema.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/schema.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/schema.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/tests/choice.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/tests/editing.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/tests/extending.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/tests/field_schemata.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/tests/fixtures.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/tests/fixtures.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/tests/fixtures.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/tests/layout.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/tests/minmax.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/tests/tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/tests/tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/tests/tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/tests/tests.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/utils.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/pt/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/pt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/nl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/nl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/ja/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/ja
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/it
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/fr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/eu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/eu
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/es
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/de
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/cs/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales/cs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/locales
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/schema
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser/field
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor/browser
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/schemaeditor
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
