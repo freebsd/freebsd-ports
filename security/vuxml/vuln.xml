@@ -280,14 +280,21 @@ Note:  Please add new entries to the beginning of this file.
     <topic>django -- multiple vulnerabilities</topic>
     <affects>
       <package>
-	<name>py26-django</name>
 	<name>py27-django</name>
 	<range><ge>1.5</ge><lt>1.5.3</lt></range>
 	<range><ge>1.4</ge><lt>1.4.7</lt></range>
       </package>
       <package>
-	<name>py26-django-devel</name>
+	<name>py26-django</name>
+	<range><ge>1.5</ge><lt>1.5.3</lt></range>
+	<range><ge>1.4</ge><lt>1.4.7</lt></range>
+      </package>
+      <package>
 	<name>py27-django-devel</name>
+	<range><lt>20130912,1</lt></range>
+      </package>
+      <package>
+	<name>py26-django-devel</name>
 	<range><lt>20130912,1</lt></range>
       </package>
     </affects>
@@ -309,7 +316,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2013-09-10</discovery>
       <entry>2013-09-12</entry>
-      <modified>2013-09-18</modified>
+      <modified>2013-09-22</modified>
     </dates>
   </vuln>
 
