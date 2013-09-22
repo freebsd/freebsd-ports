@@ -2732,6 +2732,7 @@
     SUBDIR += p5-Term-Query
     SUBDIR += p5-Term-RawInput
     SUBDIR += p5-Term-ReadKey
+    SUBDIR += p5-Term-ReadLine-Perl
     SUBDIR += p5-Term-ReadLine-Zoid
     SUBDIR += p5-Term-ReadPassword
     SUBDIR += p5-Term-Screen
