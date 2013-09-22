@@ -3,6 +3,7 @@
 
 PORTNAME=	sguil-client
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/sguil/sguil/sguil-${PORTVERSION}
 
@@ -28,8 +29,8 @@ SANCP_DESC=	Use sancp
 WIRESHARK_DESC=	Install wireshark
 
 NO_BUILD=	yes
-USE_TK_WRAPPER=	yes
-USE_TCL=	yes
+NO_STAGE=	yes
+USES=		tk:wrapper
 WRKSRC=		${WRKDIR}/sguil-${PORTVERSION}
 SUB_LIST=	SGUILDIR=${SGUILDIR}
 SUB_FILES=	pkg-message
@@ -40,9 +41,8 @@ PORTDOCS1=	README
 PORTDOCS2=	CHANGES FAQ INSTALL INSTALL.openbsd OPENSSL.README TODO UPGRADE USAGE sguildb.dia
 
 LIBFILES=	SguilUtil.tcl dkffont.tcl email17.tcl extdata.tcl sellib.tcl sancp.tcl \
-		 sound.tcl guilib.tcl qrybuild.tcl qrylib.tcl report.tcl stdquery.tcl whois.tcl
+		sound.tcl guilib.tcl qrybuild.tcl qrylib.tcl report.tcl stdquery.tcl whois.tcl
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if $(PORT_OPTIONS:MAUDIO)
