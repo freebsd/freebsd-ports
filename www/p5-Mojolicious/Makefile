@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mojolicious
-PORTVERSION=	4.40
+PORTVERSION=	4.41
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 OPTIONS_DEFINE=	IPV6 TLS
 OPTIONS_DEFAULT=TLS
 
+NO_STAGE=	yes
 USE_PERL5=	configure
 USES=		perl5
 
@@ -132,7 +133,6 @@ MAN3=		Mojo.3 \
 		Test::Mojo.3 \
 		ojo.3
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}
