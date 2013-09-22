@@ -3,7 +3,7 @@
 
 PORTNAME=	pkg_replace
 PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=portutil/22116
@@ -23,6 +23,8 @@ OPTIONS_DEFINE=		ZSH
 .if empty(WITH_PKGNG)
 OPTIONS_DEFINE+=	PKGDB_FIX
 PKGDB_FIX_DESC=		Fixing tool of installed package dependencies
+.else
+PLIST_SUB+=	PKGDB_FIX="@comment "
 .endif
 
 OPTIONS_SUB=	yes

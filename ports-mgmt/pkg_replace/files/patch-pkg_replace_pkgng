@@ -1,5 +1,5 @@
 --- sbin/pkg_replace/pkg_replace.sh.orig	2007-01-25 21:55:46.000000000 +0900
-+++ sbin/pkg_replace/pkg_replace.sh	2013-05-31 04:13:29.000000000 +0900
++++ sbin/pkg_replace/pkg_replace.sh	2013-09-03 06:58:43.000000000 +0900
 @@ -125,14 +125,27 @@
  	: ${PACKAGEROOT="ftp://ftp.NetBSD.org"}
  	: ${PKG_SUFX=".tgz"}
@@ -184,6 +184,15 @@
  			pkg_depends '_deps' "${_arg}"
  
  			for p in ${_deps}; do
+@@ -715,7 +783,7 @@
+ 	if empty ${_log}; then
+ 		try "$@" || return $?
+ 	else
+-		_cookie="${tmpdir}/.$1_failed"
++		_cookie="${tmpdir}/.${1##*/}_failed"
+ 
+ 		{ try "$@" || echo $? > "${_cookie}"; } | tee -a "${_log}" ||
+ 			warn "tee(1) failed."
 @@ -757,9 +825,11 @@
  	info "Installing '$1'"
  
@@ -292,7 +301,7 @@
  update_dependencies() {
 +	if is_yes ${use_pkgng}; then
 +		info "Updating the dependencies"
-+		${PKG_SET} -y -o $1:$2 || return 1
++		[ "x$1" = "x$2" ] && return 0 || ${PKG_SET} -y -o $1:$2
 +		info "	$1 -> $2"
 +	else
  	local p req_by
