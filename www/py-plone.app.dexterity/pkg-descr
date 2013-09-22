@@ -1,0 +1,5 @@
+Dexterity is a system for building content types, both through-the-web and
+as filesystem code. It is aimed at Plone, although this package should work
+with plain Zope + CMF systems.
+
+WWW: http://plone.org/products/dexterity/

@@ -1,0 +1,4 @@
+plone.schemaeditor provides a through-the-web interface for modifying Zope 3
+schemata (interfaces).
+
+WWW: http://svn.plone.org/svn/plone/plone.schemaeditor/

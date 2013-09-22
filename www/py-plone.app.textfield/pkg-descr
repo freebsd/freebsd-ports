@@ -1,0 +1,6 @@
+This package provides a zope.schema style field type called RichText which
+can be used to store a value with a related MIME type. The value can be
+transformed to an output MIME type, for example to transform from structured
+text to HTML.
+
+WWW: https://pypi.python.org/pypi/plone.app.textfield/
