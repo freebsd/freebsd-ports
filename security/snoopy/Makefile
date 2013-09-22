@@ -6,7 +6,7 @@ PORTVERSION=	1.8.0
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}logger/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An execve() wrapper and logger
 
 LICENSE=	GPLv2
