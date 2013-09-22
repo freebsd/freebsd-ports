@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parallel
-PORTVERSION=	20130822
+PORTVERSION=	20130922
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -16,25 +16,26 @@ OPTIONS_DEFINE=	DOCS
 CONFLICTS=	moreutils-parallel-[0-9]*
 
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}"
-
-USES=		perl5
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-
-MAN1=		parallel.1 parallel_tutorial.1 sem.1 sql.1 niceload.1
-PLIST_FILES=	bin/parallel bin/sem bin/sql bin/niceload
-PORTDOCS=	parallel.html parallel_tutorial.html sem.html sql.html niceload.html \
-		parallel.texi parallel_tutorial.texi sem.texi sql.texi niceload.texi
-
 NO_STAGE=	yes
+USE_BZIP2=	yes
+USES=		perl5
+
+MAN1=		niceload.1 parallel.1 parallel_tutorial.1 sem.1 sql.1
+PLIST_FILES=	bin/niceload bin/parallel bin/sem bin/sql
+PORTDOCS=	niceload.html niceload.pdf niceload.texi \
+		parallel.html parallel.pdf parallel.texi \
+		parallel_tutorial.html parallel_tutorial.pdf parallel_tutorial.texi \
+		sem.html sem.pdf sem.texi \
+		sql.html sql.pdf sql.texi
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	pod2texi:${PORTSDIR}/print/texinfo
+BUILD_DEPENDS+=	${LOCALBASE}/bin/pod2texi:${PORTSDIR}/print/texinfo
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '1 s|/usr/bin/perl|${PERL}|' ${WRKSRC}/src/parallel
 .if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-docDATA||' ${WRKSRC}/src/Makefile.in
 .endif
