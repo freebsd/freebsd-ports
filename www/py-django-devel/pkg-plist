@@ -1,5 +1,4 @@
 bin/django-admin.py
-%%PYTHON_SITELIBDIR%%/Django-1.7-py2.7.egg-info
 %%PYTHON_SITELIBDIR%%/django/__init__.py
 %%PYTHON_SITELIBDIR%%/django/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/__init__.pyo
@@ -629,6 +628,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/bin/compress.py
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/bin/compress.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/bin/compress.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/decorators.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/decorators.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/decorators.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/exceptions.py
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/exceptions.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/exceptions.pyo
@@ -1082,6 +1084,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/util.py
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/util.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/util.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/utils.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/utils.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/utils.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/validation.py
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/validation.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/validation.pyo
@@ -2522,6 +2527,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/util.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/util.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/util.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/utils.py
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/utils.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/utils.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/models/__init__.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/models/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/models/__init__.pyo
@@ -4537,6 +4545,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/db/backends/util.py
 %%PYTHON_SITELIBDIR%%/django/db/backends/util.pyc
 %%PYTHON_SITELIBDIR%%/django/db/backends/util.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/utils.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/utils.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/utils.pyo
 %%PYTHON_SITELIBDIR%%/django/db/migrations/__init__.py
 %%PYTHON_SITELIBDIR%%/django/db/migrations/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/db/migrations/__init__.pyo
@@ -4699,6 +4710,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/forms/util.py
 %%PYTHON_SITELIBDIR%%/django/forms/util.pyc
 %%PYTHON_SITELIBDIR%%/django/forms/util.pyo
+%%PYTHON_SITELIBDIR%%/django/forms/utils.py
+%%PYTHON_SITELIBDIR%%/django/forms/utils.pyc
+%%PYTHON_SITELIBDIR%%/django/forms/utils.pyo
 %%PYTHON_SITELIBDIR%%/django/forms/widgets.py
 %%PYTHON_SITELIBDIR%%/django/forms/widgets.pyc
 %%PYTHON_SITELIBDIR%%/django/forms/widgets.pyo

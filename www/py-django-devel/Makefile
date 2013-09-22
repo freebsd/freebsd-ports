@@ -16,7 +16,7 @@ COMMENT=	High-level Python Web framework
 
 LICENSE=	BSD
 
-SNAPSHOTDATE=	20130912
+SNAPSHOTDATE=	20130922
 
 USE_XZ=	yes
 USES=		gettext
