@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Alias
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,10 +13,10 @@ COMMENT=	Comprehensive set of aliasing operations
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+NO_STAGE=	yes
 USES=		perl5
 USE_PERL5=	configure
 
 MAN3=		Data::Alias.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
