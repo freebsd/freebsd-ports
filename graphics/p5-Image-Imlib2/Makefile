@@ -16,6 +16,7 @@ BUILD_DEPENDS+=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 USES=		perl5
 USE_PERL5=	modbuild
 USE_EFL=	imlib2
+NO_STAGE=	yes
 
 MAN3=		Image::Imlib2.3
 
@@ -23,7 +24,6 @@ MAN3=		Image::Imlib2.3
 PORTDOCS=	CHANGES
 EXAMPLES=	examples/benchmark.pl examples/benchmark.txt examples/maeda.pl
 
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

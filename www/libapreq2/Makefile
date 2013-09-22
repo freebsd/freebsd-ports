@@ -15,6 +15,7 @@ USE_APACHE=	22+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf libtool
+NO_STAGE=	yes
 CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS} --with-expat=${LOCALBASE}
 
 MAKE_ENV+=     MAKE=${GMAKE} ## MakeMaker blows it without this
@@ -49,7 +50,6 @@ MAN3=		APR::Request.3 \
 
 PLIST_SUB+=	WITH_MODPERL2=""
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e "s!%%APACHEINCLUDEDIR%%!${APACHEINCLUDEDIR}!" \
 		${WRKSRC}/glue/perl/Makefile.PL

@@ -12,6 +12,7 @@ COMMENT=	Perl5 modules for Ngram Statistics Package
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN1=	combig.pl.1 count.pl.1 \
 	count2huge.pl.1 \
@@ -60,7 +61,6 @@ DOCS=	CHANGES README doc/FAQ.pod doc/NSP-Class-diagram.pdf \
 	doc/USAGE.pod doc/cicling2003.pdf doc/cicling2003.ps \
 
 .ifndef (NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}

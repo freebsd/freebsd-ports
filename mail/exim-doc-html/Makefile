@@ -17,6 +17,7 @@ MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Documentation for the Exim MTA in multiple formats
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 
 DOCFORMAT?=	html
 DISTDOCFORMAT?=	${DOCFORMAT}
@@ -36,7 +37,6 @@ PORTDOCS=	*.ps
 .elif ${DOCFORMAT} == "info"
 PLIST=		${PKGDIR}/pkg-plist_${DOCFORMAT}
 .else
-NO_STAGE=	yes
 pre-everything::
 	@ ${ECHO} 'ERROR: invalid value for DOCFORMAT: "${DOCFORMAT}"'
 	@ ${ECHO} 'Possible values are "html", "pdf", "postscript" and "info".'

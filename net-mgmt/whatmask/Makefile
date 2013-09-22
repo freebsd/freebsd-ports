@@ -13,11 +13,11 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 MAN1=		whatmask.1
 DOCS=		AUTHORS ChangeLog README
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}

@@ -22,13 +22,13 @@ USE_OCAML_LDCONFIG=	yes
 GNU_CONFIGURE=		yes
 
 ALL_TARGET=		all opt
+NO_STAGE=	yes
 
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=		htdoc
 PORTDOCS=		*
 DOCSDIR=		${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
-NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/mysql/html/* ${DOCSDIR}

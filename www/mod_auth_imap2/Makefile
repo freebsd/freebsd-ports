@@ -17,6 +17,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2-${PORTVERSION}
 USE_APACHE=	22+
+NO_STAGE=	yes
 LATEST_LINK=	mod_auth_imap2
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
@@ -24,7 +25,6 @@ AP_GENPLIST=	yes
 PORTDOCS=	htaccess-example httpd.conf-append-example
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}

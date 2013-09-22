@@ -17,6 +17,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure patch
+NO_STAGE=	yes
 
 MAN1=		pp2html.1 pp2latex.1
 MAN3=		Bundle::PerlPoint.3 \
@@ -27,7 +28,6 @@ MAN3=		Bundle::PerlPoint.3 \
 .if !defined(NOPORTDOCS)
 PORTDOCS=	# suck all DOCSDIR
 
-NO_STAGE=	yes
 post-patch:
 	@cd ${WRKSRC}; ${CP} -R pp2html_styles images doc
 	@${PERL} -pi -e 's!../(images|pp2html_styles)!$$1!g' ${WRKSRC}/doc/*.cfg

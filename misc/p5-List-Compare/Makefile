@@ -12,6 +12,7 @@ COMMENT=		Perl extension for comparing lists
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 PLIST_FILES=	\
 	${SITE_PERL_REL}/List/Compare.pm \
@@ -34,7 +35,6 @@ MAN3=			List::Compare.3 \
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
 
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

@@ -24,6 +24,7 @@ TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN3=	MIME::Body.3 \
 	MIME::Decoder.3	\
@@ -51,7 +52,6 @@ MAN3=	MIME::Body.3 \
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ChangeLog README
 
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

@@ -39,6 +39,7 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		X11BASE="${LOCALBASE}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+NO_STAGE=	yes
 NO_LATEST_LINK=	yes
 PLIST=		${.CURDIR}/pkg-plist
 
@@ -71,7 +72,6 @@ RUN_DEPENDS=	${LOCALBASE}/include/wx-2.6/wx/stc/stc.h:${PORTSDIR}/x11-toolkits/w
 WX_UNICODE=	yes
 .endif
 
-NO_STAGE=	yes
 pre-configure:
 	@${FIND} ${BUILD_WRKSRC} -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
 		-e "s|@CXXFLAGS@|${CFLAGS} `${WX_CONFIG} --cxxflags`|" \

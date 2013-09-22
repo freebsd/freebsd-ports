@@ -14,13 +14,13 @@ COMMENT=	SIP Back-to-back user agent (B2BUA) server with Radius support
 USE_PYTHON=		yes
 USE_TWISTED=	yes
 USE_PYDISTUTILS=	yes
+NO_STAGE=	yes
 PYDISTUTILS_PKGNAME=	sippy
 DOCSDIR=	${PREFIX}/share/doc/${PYDISTUTILS_PKGNAME}
 
 DOCS=		COPYING README
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}

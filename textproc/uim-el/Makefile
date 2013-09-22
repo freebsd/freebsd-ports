@@ -24,6 +24,7 @@ USE_GNOME=	intltool
 USES=		iconv gmake perl5
 USE_EMACS=	yes
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/emacs
 INSTALL_WRKSRC=	${WRKSRC}/emacs
@@ -37,7 +38,6 @@ DOCSDIR_JA=	${PREFIX}/share/doc/ja/uim-el
 PLIST_SUB+=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}"
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR_JA}

@@ -23,6 +23,7 @@ NOMAN=		defined
 USE_BZIP2=	yes
 USE_GCC=	4.2+
 USE_SCONS=	yes
+NO_STAGE=	yes
 #USE_OPENSSL=	yes
 
 OPTIONS_DEFINE=	OPTIMIZE ORIGIN SHARED STRIP TCP_RPC
@@ -40,7 +41,6 @@ FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 SVN_REV=	11685		# svn tip at epoch 2009120801
 SVNROOT_URI=	http://xorp.svn.sourceforge.net/svnroot/xorp
 
-NO_STAGE=	yes
 do-fetch:
 	${MKDIR} ${WRKDIR}
 	svn export -r ${SVN_REV} ${SVNROOT_URI}/trunk/xorp ${WRKSRC}

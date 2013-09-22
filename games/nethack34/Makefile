@@ -20,6 +20,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GMAKE=	yes
+NO_STAGE=	yes
 MAKE_ENV=	GRAPHICS="${GRAPHICS}"
 PLIST_SUB=	HACKNAME="${HACKNAME}" \
 		HACKDIR="${HACKDIR}" \
@@ -44,7 +45,6 @@ GRAPHICS=	GNOME_GRAPHICS
 .elif ${PKGNAMESUFFIX} == "-nox11"
 GRAPHICS=	# none
 #
-NO_STAGE=	yes
 # Patch notes:
 # 1) hpmon and statuscolors conflict with one another
 # 2) menucolors patch must be applied before statuscolors

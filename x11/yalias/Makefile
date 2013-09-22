@@ -14,12 +14,12 @@ COMMENT=	An enhanced execution box with regex pattern matching
 
 USES=		pkgconfig
 USE_GNOME=	gtk20
+NO_STAGE=	yes
 
 ALL_TARGET=	yalias
 MAKE_ARGS=	prefix=${PREFIX} YALIASDIR=${DATADIR}
 
 .ifndef(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}

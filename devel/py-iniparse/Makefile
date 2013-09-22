@@ -13,12 +13,12 @@ COMMENT=	A better INI parser for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+NO_STAGE=	yes
 
 PORTDOCS=	Changelog README
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}

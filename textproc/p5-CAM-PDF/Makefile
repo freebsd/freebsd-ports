@@ -22,6 +22,7 @@ TEST_DEPENDS=	p5-Test-Memory-Cycle>=1.02:${PORTSDIR}/devel/p5-Test-Memory-Cycle 
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN1=		appendpdf.pl.1 changepagestring.pl.1 changepdfstring.pl.1 \
 		changerefkeys.pl.1 crunchjpgs.pl.1 deillustrate.pl.1 \
@@ -42,7 +43,6 @@ MAN3=		CAM::PDF.3 CAM::PDF::Content.3 CAM::PDF::Decrypt.3 \
 .if !defined(NOPORTDOCS)
 PORTDOCS=	CHANGES README
 
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

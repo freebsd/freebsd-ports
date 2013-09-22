@@ -18,6 +18,7 @@ USE_GNOME=	gnomehack gnomeprefix intlhack pygnome2 pygnomedesktop
 WANT_GNOME=	yes
 USE_PYTHON=	yes
 USES=		gettext
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -26,7 +27,6 @@ DOCS=		AUTHORS COPYING ChangeLog HACKING \
 		MAINTAINERS NEWS README TODO
 
 .ifndef (NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}

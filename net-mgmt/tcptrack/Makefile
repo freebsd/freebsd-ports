@@ -12,12 +12,12 @@ COMMENT=	Packet sniffer which displays TCP information like top(1)
 
 GNU_CONFIGURE=	yes
 
+NO_STAGE=	yes
 PLIST_FILES=	bin/tcptrack
 MAN1=		tcptrack.1
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}

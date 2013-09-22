@@ -14,6 +14,7 @@ COMMENT=	Functions for calculations with arbitrary length integers and bitsets
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+NO_STAGE=	yes
 
 DOCS=		CREDITS INSTALL LICENSE README docs/index.html libbig_int/CREDITS \
 		libbig_int/LICENSE
@@ -22,7 +23,6 @@ EXAMPLES=	bitset.php example.php rand.php RSA.php std_header.php
 CONFIGURE_ARGS=	--enable-big-int=shared
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${EXAMPLESDIR}

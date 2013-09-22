@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/qmake
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 PLIST_SUB+=	_PREFIX="${PREFIX}"
 MAKE_ENV+=	FILESDIR="${FILESDIR}"
+NO_STAGE=	yes
 
 USE_BZIP2=	yes
 
@@ -30,7 +31,6 @@ EXTRACT_AFTER_ARGS= \
 EXTRACT_AFTER_ARGS+='${DISTNAME}/doc/html/qmake*'
 DOCSDIR=${PREFIX}/share/doc/qt
 PLIST_SUB+=	DOCSDIR='${DOCSDIR}'
-NO_STAGE=	yes
 post-install:
 	${MKDIR} '${DOCSDIR}'
 	${CP} -Rp '${WRKSRC:H}/doc/html' '${DOCSDIR}'

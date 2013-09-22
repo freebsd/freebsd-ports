@@ -18,10 +18,10 @@ RUN_DEPENDS+=	htmldoc:${PORTSDIR}/textproc/htmldoc \
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
+NO_STAGE=	yes
 PYDISTUTILS_PKGNAME=	TracFullBlogPlugin
 
 .if defined(BOOTSTRAP)
-NO_STAGE=	yes
 do-fetch:
 	${MKDIR} ${WRKDIR}
 	svn export http://trac-hacks.org/svn/fullblogplugin/0.11/ ${WRKSRC}

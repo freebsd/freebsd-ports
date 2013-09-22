@@ -16,13 +16,13 @@ COMMENT=	A Python library for the generation of HTML documents
 
 USE_PYTHON=	-2.7
 NO_BUILD=	yes
+NO_STAGE=	yes
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${TAR} -C ${WRKSRC} -cf - README html image | \

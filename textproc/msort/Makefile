@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 USE_TK_RUN=	yes
 USE_TCL_WRAPPER=	yes
 USES=		gettext
+NO_STAGE=	yes
 
 PLIST_FILES=	bin/msg bin/msort
 
@@ -31,7 +32,6 @@ MAN1=		msort.1
 .ifdef(MAINTAINER_MODE)
 BUILD_DEPENDS+= ${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s|bash|${LOCALBASE}/bin/bash|g" ${WRKSRC}/RegressionTests/Makefile
 	${REINPLACE_CMD} -e "s|msort|../&|g" ${WRKSRC}/RegressionTests/RunTests.sh \

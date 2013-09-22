@@ -13,13 +13,13 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libvc.a:${PORTSDIR}/devel/libvc
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 CFLAGS+=	-I${PREFIX}/include \
 		-L${PREFIX}/lib
 
 MAN1=		rolo.1
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 .for DOC in AUTHORS ChangeLog NEWS README THANKS

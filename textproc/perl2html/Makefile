@@ -12,11 +12,11 @@ MAINTAINER=		mkamm@gmx.net
 COMMENT=	Perl sources to HTML converter
 
 USE_AUTOTOOLS=	autoconf213
+NO_STAGE=	yes
 
 MAN1=			perl2html.1
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for file in AUTHORS NEWS README

@@ -24,6 +24,7 @@ LIB_DEPENDS=	esd:${PORTSDIR}/audio/esound
 .endif
 
 USE_AUTOTOOLS=	autoconf
+NO_STAGE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--sharedstatedir=/var/games\
 		--with-setgid=games
@@ -38,7 +39,6 @@ PLIST_FILES+=	share/moon-buggy/jump.wav \
 		share/moon-buggy/crash.wav
 PLIST_DIRS+=	share/moon-buggy
 
-NO_STAGE=	yes
 pre-patch:
 	cd ${WRKSRC} && ${PATCH} -p1 < sound.patch
 .endif

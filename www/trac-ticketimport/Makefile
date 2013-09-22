@@ -16,6 +16,7 @@ RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 
 USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	easy_install
+NO_STAGE=	yes
 PYDISTUTILS_PKGNAME=	TicketImport
 PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
@@ -24,7 +25,6 @@ PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 # Retrieve the latest version from SVN and package in a tarball.
 .if defined(BOOTSTRAP)
 FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-NO_STAGE=	yes
 do-fetch:
 	${MKDIR} ${WRKDIR}
 	cd ${WRKDIR} && \

@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GNOME=	libxslt
 USES=		iconv
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 CONFIGURE_ARGS=	--with-libxml-prefix=${LOCALBASE} \
 		--with-libxslt-prefix=${LOCALBASE} \
 		${ICONV_CONFIGURE_ARG} \
@@ -29,7 +30,6 @@ PORTDOCS=	xmlstarlet.txt \
 		html.css
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}

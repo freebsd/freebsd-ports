@@ -22,9 +22,9 @@ MAKE_ARGS+=	CXX=${CXX}
 WRKSRC=		${WRKDIR}/szap-s2-e34f73b254db
 PORTDOCS=	README
 PLIST_FILES=	bin/szap-s2
+NO_STAGE=	yes
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
