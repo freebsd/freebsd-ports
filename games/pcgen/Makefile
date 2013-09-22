@@ -1,14 +1,13 @@
-# Created by: Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
 # $FreeBSD$
 
 PORTNAME=	pcgen
-PORTVERSION=	5.16.4
+PORTVERSION=	6.00.1
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/PCGen%20Stable/${PORTVERSION}
 DISTNAME=	pcgen${PORTVERSION:S/.//g}_full
 
-MAINTAINER=	jsa@FreeBSD.org
-COMMENT=	A Java-based RPG character generator and maintenance program
+MAINTAINER=	eadler@FreeBSD.org
+COMMENT=	Java-based RPG character generator and maintenance program
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
@@ -25,7 +24,11 @@ PLIST_FILES+=	bin/pcgen
 
 SUB_FILES=	pcgen.sh
 
-.if !defined(NOPORTDOCS)
+CONFLICTS=	pcgen-5*
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
 
@@ -38,7 +41,7 @@ do-install:
 	@${ECHO_MSG} -n ">> Installing launcher script as ${PREFIX}/bin/pcgen..."
 	@${INSTALL_SCRIPT} ${WRKDIR}/pcgen.sh ${PREFIX}/bin/pcgen
 	@${ECHO_MSG} " [ DONE ]"
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@cd "${WRKSRC}/docs" && ${COPYTREE_SHARE} . "${DOCSDIR}"
 	@${INSTALL_DATA} "${WRKSRC}"/*.html "${DOCSDIR}"
