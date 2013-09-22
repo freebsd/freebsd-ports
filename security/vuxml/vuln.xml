@@ -51,6 +51,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="05dc6efa-2370-11e3-95b7-00e0814cab4e">
+    <topic>django -- denial-of-service via large passwords</topic>
+    <affects>
+      <package>
+	<name>py27-django</name>
+	<range><ge>1.5</ge><lt>1.5.4</lt></range>
+	<range><ge>1.4</ge><lt>1.4.8</lt></range>
+      </package>
+      <package>
+	<name>py26-django</name>
+	<range><ge>1.5</ge><lt>1.5.4</lt></range>
+	<range><ge>1.4</ge><lt>1.4.8</lt></range>
+      </package>
+      <package>
+	<name>py27-django-devel</name>
+	<range><lt>20130922,1</lt></range>
+      </package>
+      <package>
+	<name>py26-django-devel</name>
+	<range><lt>20130922,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Django project reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2013/sep/15/security/">
+	  <p>These releases address a denial-of-service attack against Django's
+	    authentication framework. All users of Django are encouraged to
+	    upgrade immediately.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1443</cvename>
+      <url>https://www.djangoproject.com/weblog/2013/sep/15/security/</url>
+    </references>
+    <dates>
+      <discovery>2013-09-15</discovery>
+      <entry>2013-09-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b72bad1c-20ed-11e3-be06-000c29ee3065">
     <topic>FreeBSD -- Cross-mount links between nullfs(5) mounts</topic>
     <affects>
