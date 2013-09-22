@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyramid_rpc
-PORTVERSION=	0.3
+PORTVERSION=	0.5.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,4 +17,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>
