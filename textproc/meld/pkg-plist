@@ -164,6 +164,7 @@ lib/meld/meld/vc/svn_17.pyo
 lib/meld/meld/vcview.py
 lib/meld/meld/vcview.pyc
 lib/meld/meld/vcview.pyo
+share/appdata/meld.appdata.xml
 share/applications/meld.desktop
 share/gnome/help/meld/C/meld.xml
 share/gnome/help/meld/es/meld.xml
@@ -270,6 +271,7 @@ share/omf/meld/meld-fr.omf
 @dirrm share/gnome/help/meld/C
 @dirrm share/gnome/help/meld
 @dirrmtry share/applications
+@dirrmtry share/appdata
 @dirrm lib/meld/meld/vc
 @dirrm lib/meld/meld/util
 @dirrm lib/meld/meld/ui
