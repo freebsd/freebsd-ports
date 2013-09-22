@@ -1,0 +1,18 @@
+%%SITE_PERL%%/Test/Able.pm
+%%SITE_PERL%%/Test/Able/Cookbook.pm
+%%SITE_PERL%%/Test/Able/FatalException.pm
+%%SITE_PERL%%/Test/Able/Helpers.pm
+%%SITE_PERL%%/Test/Able/Method/Array.pm
+%%SITE_PERL%%/Test/Able/Object.pm
+%%SITE_PERL%%/Test/Able/Planner.pm
+%%SITE_PERL%%/Test/Able/Role.pm
+%%SITE_PERL%%/Test/Able/Role/Meta/Class.pm
+%%SITE_PERL%%/Test/Able/Role/Meta/Method.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Able/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Able
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test/Able/Role/Meta
+@dirrmtry %%SITE_PERL%%/Test/Able/Role
+@dirrmtry %%SITE_PERL%%/Test/Able/Method
+@dirrmtry %%SITE_PERL%%/Test/Able
+@dirrmtry %%SITE_PERL%%/Test
