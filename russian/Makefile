@@ -30,6 +30,7 @@
     SUBDIR += p5-Convert-Cyrillic
     SUBDIR += p5-Lingua-DetectCyrillic
     SUBDIR += p5-Lingua-RU-Charset
+    SUBDIR += p5-Text-Hyphen-RU
     SUBDIR += p5-XML-Parser-encodings
     SUBDIR += p5-cyrillic
     SUBDIR += prawda
