@@ -6,7 +6,7 @@ PORTVERSION=	3.08
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.hercules-390.eu/
 
-MAINTAINER=	bzeeb+freebsdports@zabbadoz.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System/370, ESA/390, and z/Architecture Emulator
 
 OPTIONS_DEFINE=	DEBUG NLS PTHREADS
