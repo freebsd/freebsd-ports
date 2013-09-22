@@ -1,4 +1,6 @@
 bin/coverage
+bin/coverage-2.7
+bin/coverage2
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -83,6 +85,9 @@ bin/coverage
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/tracer.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/tracer.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/tracer.so
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/version.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/version.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/version.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/xmlreport.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/xmlreport.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/xmlreport.pyo
