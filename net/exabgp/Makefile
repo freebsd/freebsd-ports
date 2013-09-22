@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	exabgp
-PORTVERSION=	3.2.9
+PORTVERSION=	3.2.13
 CATEGORIES=	net
 MASTER_SITES=	GH GHC \
 		http://mirrors.rit.edu/zi/
@@ -14,9 +14,9 @@ COMMENT=	A BGP engine and route injector
 LICENSE=	BSD
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	Thomas-Mangin
+GH_ACCOUNT=	thomas-mangin
 GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	f0b71c5
+GH_COMMIT=	3ccdb34
 USE_PYTHON=	yes
 SUB_FILES=	pkg-message exabgp.sh
 SUB_LIST=	PYTHON_LIBDIR=${PYTHON_LIBDIR} PYTHON_CMD=${PYTHON_CMD} \
