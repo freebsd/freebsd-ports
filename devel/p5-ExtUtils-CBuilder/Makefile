@@ -15,13 +15,13 @@ COMMENT=	Compile and link C code for Perl modules
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN3=		ExtUtils::CBuilder.3 ExtUtils::CBuilder::Platform::Windows.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes
 
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

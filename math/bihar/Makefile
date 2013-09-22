@@ -38,6 +38,7 @@ COMMENT=	Biharmonic equation in rectangular geometry and polar coordinates
 
 LIB_DEPENDS=	linpack.3:${PORTSDIR}/math/linpack
 
+NO_STAGE=	yes
 NO_WRKSUBDIR=	yes
 USE_LDCONFIG=	yes
 USE_FORTRAN=	yes
@@ -45,7 +46,6 @@ USE_FORTRAN=	yes
 .if !defined(NOPORTDOCS)
 PORTDOCS=	fft.doc
 
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/fft.doc ${DOCSDIR}

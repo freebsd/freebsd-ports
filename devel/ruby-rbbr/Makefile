@@ -21,12 +21,12 @@ USES=		gettext
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
+NO_STAGE=	yes
 
 DOCS_EN=	AUTHORS COPYING ChangeLog README
 DOCS_JA=	COPYING.ja README.ja
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}

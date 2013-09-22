@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML and SGML prettyprinter and text-to-HTML/SGML converter
 
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 
 MAN1=		html-pretty.1
 
@@ -19,7 +20,6 @@ PORTDOCS=	*
 
 DOCFILES=	AUTHORS BUGS COPYING ChangeLog NEWS README THANKS
 
-NO_STAGE=	yes
 post-install:
 	-${MKDIR} ${DOCSDIR}/html
 	${INSTALL_DATA} -o ${SHAREOWN} -g ${SHAREGRP} ${WRKSRC}/*.html \

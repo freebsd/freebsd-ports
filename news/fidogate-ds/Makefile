@@ -23,6 +23,7 @@ USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
 USES=		perl5
 MAKE_JOBS_UNSAFE=	yes
+NO_STAGE=	yes
 
 SPOOLDIR?=/var/spool/fido/gate
 BTBASEDIR?=/var/spool/fido/bt
@@ -85,7 +86,6 @@ DOCS=		doc/README.ru doc/README doc/FAQ.ru doc/FIDOGATE+tracker.ru \
 		doc/old/fidogate.txt doc/old/fidogate.texi doc/old/msgid.doc
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for a in ${DOCS}

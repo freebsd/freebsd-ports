@@ -29,9 +29,9 @@ PLIST_FILES+=	bin/${file}
 PORTDOCS=	njplot.help njplot.html njplot.gif
 
 MAN1=		njplot.1 unrooted.1
+NO_STAGE=	yes
 
 .ifdef (WITHOUT_X11)
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|njplot.*unrooted||' ${WRKSRC}/makefile
 .endif

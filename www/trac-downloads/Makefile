@@ -16,6 +16,7 @@ COMMENT=	Trac plugin providing a downloads section
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 TRAC_VERSION=	0.12
+NO_STAGE=	yes
 PLUGIN_VERSION=	0.3
 SVN_REV=	10047
 
@@ -26,7 +27,6 @@ PYDISTUTILS_PKGVERSION=	${PLUGIN_VERSION}
 PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 .if defined(BOOTSTRAP)
-NO_STAGE=	yes
 do-fetch:
 	${MKDIR} ${WRKDIR}
 	svn export -r ${SVN_REV} http://trac-hacks.org/svn/downloadsplugin/${TRAC_VERSION}/ ${WRKSRC}

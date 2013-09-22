@@ -14,6 +14,7 @@ COMMENT=	ASCII to PostScript filter
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --with-media=${PS}
+NO_STAGE=	yes
 
 CONFLICTS?=	enscript-a4-* enscript-letterdj-*
 
@@ -24,7 +25,6 @@ PAPERSIZE?=	letter
 PS?=		Letter
 
 .if (${PAPERSIZE} != a4 && ${PAPERSIZE} != letter && ${PAPERSIZE} != letterdj)
-NO_STAGE=	yes
 .BEGIN:
 	@${ECHO} "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\""
 	@${ECHO} "Possible values are:  a4, letter, or letterdj"

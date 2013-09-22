@@ -11,9 +11,9 @@ COMMENT=	Backend for interoperability with Tlen.pl, Polish IM network
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 .for f in libtlen.html libtlen.css AUTHORS TODO

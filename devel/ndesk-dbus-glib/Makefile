@@ -17,11 +17,11 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:${PORTSDIR}/devel/
 USE_GMAKE=	yes
 USES=	pathfix pkgconfig
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 
 DOCS=		AUTHORS COPYING README
 
 .ifndef (NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}

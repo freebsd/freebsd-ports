@@ -16,12 +16,12 @@ COMMENT=	Command-line AES encryption/decryption suite
 
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	BINGRP=wheel
+NO_STAGE=	yes
 
 MAN1=		aescrypt.1 aesget.1
 MANCOMPRESSED=	yes
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}

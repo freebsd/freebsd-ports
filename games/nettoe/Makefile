@@ -18,11 +18,11 @@ MAN6=		nettoe.6
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 
 PORTDOCS=	AUTHORS BUGS ChangeLog NEWS README TO-DO
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for I in ${PORTDOCS}

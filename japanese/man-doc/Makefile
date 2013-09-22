@@ -18,6 +18,7 @@ COMMENT=	Japanese translation of FreeBSD manual pages
 RUN_DEPENDS=	jman:${PORTSDIR}/japanese/man
 
 NO_MTREE=	yes
+NO_STAGE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 PLIST=		${WRKDIR}/pkg-plist
 MAKE_ENV=	MANDIR=${MANDIR}
@@ -30,7 +31,6 @@ JAMANDIR?=	doc/ja_JP.eucJP/man
 MANDIR?=	${PREFIX}/man/ja/man
 
 .if defined(WITH_CVS)
-NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	cd ${WRKDIR} && \

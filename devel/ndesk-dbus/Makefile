@@ -16,11 +16,11 @@ RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 USE_GMAKE=	yes
 USES=	pathfix pkgconfig
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 
 DOCS=		AUTHORS COPYING README
 
 .ifndef (NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}

@@ -32,10 +32,10 @@ MANN=		Archetype.n Toplevel.n Widget.n itk.n itkvars.n usual.n
 
 ITK_LIB_FILE=	${ITK_LIB}.${SHLIB_MAJOR}
 
+NO_STAGE=	yes
 .if defined(DISPLAY)
 post-build:	test
 .else
-NO_STAGE=	yes
 post-build:
 	#
 	# DISPLAY is not set, so post-build testing is impossible

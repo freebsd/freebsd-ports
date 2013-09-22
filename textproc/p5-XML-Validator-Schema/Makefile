@@ -18,6 +18,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN3=		XML::Validator::Schema.3 \
 		XML::Validator::Schema::Attribute.3 \
@@ -40,7 +41,6 @@ MAN3=		XML::Validator::Schema.3 \
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ANNOUNCE Changes README TODO
 
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

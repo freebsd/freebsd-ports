@@ -15,13 +15,13 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN3=		PHP::Session.3 PHP::Session::Serializer::PHP.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
 
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

@@ -11,11 +11,11 @@ COMMENT=	Pronounceable word generator
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
+NO_STAGE=	yes
 PYDISTUTILS_INSTALLARGS=-Z -O 1 -N -S ${PYTHON_SITELIBDIR} ${WRKSRC}/dist/${PYEASYINSTALL_EGG}
 PORTDOCS=	NEWS.txt README.txt
 
 .ifndef NOPORTDOCS
-NO_STAGE=	yes
 post-install:
 	@${INSTALL} -d ${DOCSDIR}/
 	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/

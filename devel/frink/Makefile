@@ -14,9 +14,9 @@ MANCOMPRESSED=	maybe
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.2.2
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
+NO_STAGE=	yes
 
 .ifndef NOPORTDOCS
-NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README ${DOCSDIR}

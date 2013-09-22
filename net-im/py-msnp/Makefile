@@ -18,9 +18,9 @@ EXPIRATION_DATE=2013-10-31
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	msnp.py
+NO_STAGE=	yes
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/tutorial.html ${DOCSDIR}

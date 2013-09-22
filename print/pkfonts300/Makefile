@@ -15,6 +15,7 @@ COMMENT=	English PK fonts, for ghostscripts, xdvi, and so on
 DIST_SUBDIR=	pkfonts
 EXTRACT_ONLY=	# extracted directly in install target
 NO_BUILD=	yes
+NO_STAGE=	yes
 PLIST=		${PKGDIR}/pkg-plist.${RESOLUTION}
 
 .if !defined(RESOLUTION)
@@ -23,7 +24,6 @@ RESOLUTION=	300
 .if ${RESOLUTION} != 118 && ${RESOLUTION} != 240 && \
 	${RESOLUTION} != 300 && ${RESOLUTION} != 360 && \
 	${RESOLUTION} != 400 && ${RESOLUTION} != 600
-NO_STAGE=	yes
 .BEGIN:
 	@${ECHO_MSG} "Error: invalid value for RESOLUTION: \"${RESOLUTION}\""
 	@${ECHO_MSG} "Possible values are: 118, 240, 300, 360, 400 and 600."

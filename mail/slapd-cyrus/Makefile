@@ -22,6 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild
+NO_STAGE=	yes
 
 PLIST_SUB=	SITE_PERL_REL=${SITE_PERL_REL} \
 		DOCS_DIR_REL=${DOCSDIR_REL}
@@ -29,7 +30,6 @@ PLIST_SUB=	SITE_PERL_REL=${SITE_PERL_REL} \
 .if !defined(NOPORTDOCS)
 PORTDOCS=	slapd-cyrus.conf
 
-NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} -m 0444 ${WRKSRC}/t/etc/slapd.conf.dist \

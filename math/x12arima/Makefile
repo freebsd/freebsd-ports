@@ -14,6 +14,7 @@ COMMENT=	X-12-ARIMA seasonal adjustment program
 USE_FORTRAN=	yes
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile.lnx
+NO_STAGE=	yes
 
 PLIST_FILES=	bin/x12a
 
@@ -24,7 +25,6 @@ DISTFILES+=	docsv03.tar.gz
 .ifndef(NOPORTDOCS)
 PORTDOCS=	ReleaseNotesVersion03.pdf qref03unix.pdf x12adocV03.pdf
 
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}/docs && ${INSTALL_MAN} ${PORTDOCS} ${DOCSDIR})

@@ -16,9 +16,9 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_NOEGGINFO=	yes
+NO_STAGE=	yes
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/docs/_build && ${COPYTREE_SHARE} . ${DOCSDIR}

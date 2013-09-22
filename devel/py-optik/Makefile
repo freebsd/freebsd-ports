@@ -12,11 +12,11 @@ COMMENT=	A command-line parsing library for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+NO_STAGE=	yes
 
 .if !defined(NOPORTDOCS)
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 PLIST_SUB+=	DOCSDIR=${DOCSDIR:S@^${PREFIX}/@@}
-NO_STAGE=	yes
 post-install::
 	@${MKDIR} ${DOCSDIR}/test
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}

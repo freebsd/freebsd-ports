@@ -17,6 +17,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN1=		pp2sdf.1 perlpoint.1
 MAN3=		PerlPoint::Anchors.3 \
@@ -35,7 +36,6 @@ MAN3=		PerlPoint::Anchors.3 \
 .if !defined(NOPORTDOCS)
 PORTDOCS=	# suck all DOCSDIR
 
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/doc; ${FIND} . | ${CPIO} -padm ${DOCSDIR}

@@ -17,10 +17,10 @@ RUN_DEPENDS+=	trac-fullblog>=0.1.1:${PORTSDIR}/www/trac-fullblog
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
+NO_STAGE=	yes
 PYDISTUTILS_PKGNAME=	TracFullBlogNotificationPlugin
 
 .if defined(BOOTSTRAP)
-NO_STAGE=	yes
 do-fetch:
 	${MKDIR} ${WRKDIR}
 	svn export http://trac-hacks.org/svn/fullblognotificationplugin/0.12/ \

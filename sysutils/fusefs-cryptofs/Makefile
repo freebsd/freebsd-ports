@@ -17,12 +17,12 @@ LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USES=		fuse pkgconfig
+NO_STAGE=	yes
 
 PLIST_FILES=	bin/cryptofs
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README cryptofs.conf
-NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}

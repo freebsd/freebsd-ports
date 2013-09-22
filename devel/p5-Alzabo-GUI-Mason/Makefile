@@ -20,13 +20,13 @@ USES=		perl5
 USE_PERL5=	modbuild
 CONFIGURE_ENV=	DATADIR=${DATADIR}
 MAKE_ENV=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+NO_STAGE=	yes
 
 MAN3=		Alzabo::GUI::Mason.3 Alzabo::GUI::Mason::Config.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
 
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

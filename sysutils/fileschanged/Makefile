@@ -14,6 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone \
 		help2man:${PORTSDIR}/misc/help2man
 
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 USE_GMAKE=	yes
 USE_FAM=	yes
 CONFIGURE_ENV+=	LIBS="-largp"
@@ -27,7 +28,6 @@ PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
 PLIST_FILES=	bin/fileschanged
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for DOCFILE in ${PORTDOCS}

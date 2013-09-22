@@ -15,13 +15,13 @@ LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN3=		Devel::PPPort.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README HACKERS TODO
 
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

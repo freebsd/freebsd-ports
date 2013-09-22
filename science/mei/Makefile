@@ -20,13 +20,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_ZIP=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bft=${LOCALBASE}
 
 MAN1=		mei-config.1
 
 .if defined(MAINTAINER_MODE)
-NO_STAGE=	yes
 regression-test:
 	(cd ${WRKSRC}/tests &&	\
 	${MAKE} check &&	\

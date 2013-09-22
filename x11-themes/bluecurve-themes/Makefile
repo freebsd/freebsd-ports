@@ -11,6 +11,7 @@ CATEGORIES=	x11-themes
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Meta-port for Bluecurve themes
 
+NO_STAGE=	yes
 .if ${PORTNAME} == "bluecurve-themes"	# meta-port
 
 PORTVERSION=	1.0
@@ -51,7 +52,6 @@ PLIST?=		${.CURDIR}/pkg-plist
 FILESDIR=	${.CURDIR}/files
 SCRIPTDIR=	${.CURDIR}/scripts
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	cd ${WRKDIR} && ${TAR} -O -xf ${_DISTDIR}/${_DISTFILES} redhat-artwork-${PORTVERSION}.tar.gz | ${TAR} -xf -

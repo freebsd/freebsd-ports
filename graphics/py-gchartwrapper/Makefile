@@ -21,6 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>=1.1.6_2:${PORTSDIR}/graphics/py-ima
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_ZIP=	yes
+NO_STAGE=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
@@ -28,7 +29,6 @@ DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 PROJECTHOST=	google-chartwrapper
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-extract:
 	@cd ${WRKDIR} && ${RM} -R doc/.svn && ${RM} -R demo/.svn
 .endif

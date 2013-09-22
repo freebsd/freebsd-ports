@@ -11,11 +11,11 @@ COMMENT=	Python source code checking tool to help hunting common bugs
 
 USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	yes
+NO_STAGE=	yes
 
 DOCS=		ChangeLog COPYRIGHT KNOWN_BUGS MAINTAINERS README TODO VERSION
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}

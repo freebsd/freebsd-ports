@@ -9,9 +9,9 @@ MAINTAINER=	office@FreeBSD.org
 
 ISPELL_DEALT=	yes
 MASTERDIR=	${.CURDIR}/../../textproc/ispell
+NO_STAGE=	yes
 
 .if exists(${.CURDIR}/Makefile.local)
-NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.local"
 .endif
 

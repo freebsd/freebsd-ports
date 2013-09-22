@@ -12,13 +12,13 @@ COMMENT=	A python refactoring tool
 
 USE_PYTHON=	2.2+
 USE_PYDISTUTILS=yes
+NO_STAGE=	yes
 
 .if defined(EMACS_PORT_NAME)
 RUN_DEPENDS+=	${LOCALBASE}/bin/pymacs-services:${PORTSDIR}/devel/pymacs
 .endif
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ide-integration/bike.vim ${DOCSDIR}

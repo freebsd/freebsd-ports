@@ -14,6 +14,7 @@ USE_LDCONFIG=	yes
 USES=		pkgconfig pathfix
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+NO_STAGE=	yes
 
 DOCS=		AUTHORS NEWS README THANKS doc/TODO \
 		doc/libtasn1.html doc/libtasn1.pdf doc/libtasn1.ps
@@ -57,7 +58,6 @@ MAN3=		asn1_array2tree.3 \
 		libtasn1_strerror.3
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}

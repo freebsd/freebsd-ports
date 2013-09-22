@@ -15,11 +15,11 @@ COMMENT=	Convert Excel and PowerPoint files to HTML and text
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake14 autoconf
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+NO_STAGE=	yes
 
 MAN1=		ppthtml.1 xlhtml.1
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 .for dir in xlhtml ppthtml
 	@${MKDIR} ${DOCSDIR}/${dir}

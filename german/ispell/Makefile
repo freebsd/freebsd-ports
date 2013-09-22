@@ -12,9 +12,9 @@ USES=		perl5
 ISPELL_DEALT=	yes
 ISPELL_DENEU=	yes
 MASTERDIR=	${.CURDIR}/../../textproc/ispell
+NO_STAGE=	yes
 
 .if exists(${.CURDIR}/Makefile.local)
-NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.local"
 .endif
 

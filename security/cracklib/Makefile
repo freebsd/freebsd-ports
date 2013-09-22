@@ -20,6 +20,7 @@ DICTFILE=	${DICTPATH}/pw_dict
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=--with-default-dict=${DICTPATH}
 USE_LDCONFIG=	yes
+NO_STAGE=	yes
 
 .if defined(PYTHON_SLAVEPORT)
 USE_PYTHON=	yes
@@ -57,7 +58,6 @@ PLIST_FILES=	include/crack.h \
 .endif
 
 .if defined(PYTHON_SLAVEPORT)
-NO_STAGE=	yes
 pre-build:
 	cd ${WRKSRC}/lib && ${MAKE} libcrack.la
 

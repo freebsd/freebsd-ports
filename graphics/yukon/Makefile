@@ -22,6 +22,7 @@ USE_GMAKE=	yes
 USE_XORG=	x11 xv
 USE_GL=		yes
 USE_LDCONFIG=	${PREFIX}/lib/yukon
+NO_STAGE=	yes
 
 
 # NOTE: These should be bumped if the underlying GL or Xorg ports change.
@@ -39,7 +40,6 @@ FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 SVN_REV=	158		# svn tip at epoch 2009120801
 SVNROOT_URI=	https://devel.neopsis.com/svn/yukon
 
-NO_STAGE=	yes
 do-fetch:
 	${MKDIR} ${WRKDIR}
 	svn export -r ${SVN_REV} ${SVNROOT_URI}/trunk ${WRKSRC}

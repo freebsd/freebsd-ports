@@ -19,6 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
+NO_STAGE=	yes
 
 MAN3=		Nagios::Plugin.3 \
 		Nagios::Plugin::Config.3 \
@@ -32,7 +33,6 @@ MAN3=		Nagios::Plugin.3 \
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
 
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}

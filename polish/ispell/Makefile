@@ -9,11 +9,11 @@ MAINTAINER=	wtp@bsdguru.org
 
 ISPELL_PL=	yes
 USES=		perl5
+NO_STAGE=	yes
 
 MASTERDIR=	${.CURDIR}/../../textproc/ispell
 
 .if exists(${.CURDIR}/Makefile.local)
-NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.local"
 .endif
 

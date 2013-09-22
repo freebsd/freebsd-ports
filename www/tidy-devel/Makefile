@@ -18,6 +18,7 @@ COMMENT?=	Utility to clean up and pretty print HTML/XHTML/XML
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 USE_BZIP2=	yes
+NO_STAGE=	yes
 
 SLAVEDIRS=	www/tidy-lib
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -57,7 +58,6 @@ DOCFILES+=	Overview.html checked_by_tidy.gif faq.html grid.gif pending.html	\
 CVSROOT=	":pserver:anonymous@tidy.cvs.sourceforge.net:/cvsroot/tidy"
 CVS_PASSFILE=	${WRKDIR}/temp-cvs-passfile
 
-NO_STAGE=	yes
 getcvs:
 	${MKDIR} ${WRKDIR}/cvs
 	${ECHO_CMD} ${CVSROOT} A > ${CVS_PASSFILE}

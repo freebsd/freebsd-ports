@@ -16,6 +16,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		perl5
 USE_PERL5=	build
+NO_STAGE=	yes
 DOC_FILES=	feature.png feature2.png feature3.png \
 		feature4.png feature5.png index.html \
 		yamcha.html yamcha.css
@@ -23,7 +24,6 @@ DOC_FILES=	feature.png feature2.png feature3.png \
 MAN1=		yamcha.1
 
 .if !defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${DOC_FILES}
