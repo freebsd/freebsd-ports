@@ -2366,6 +2366,7 @@
     SUBDIR += p5-MooseX-Params-Validate
     SUBDIR += p5-MooseX-RelatedClassRoles
     SUBDIR += p5-MooseX-Role-Loggable
+    SUBDIR += p5-MooseX-Role-Matcher
     SUBDIR += p5-MooseX-Role-Parameterized
     SUBDIR += p5-MooseX-Role-Strict
     SUBDIR += p5-MooseX-Role-WithOverloading
