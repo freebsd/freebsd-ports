@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jenkins
-PORTVERSION=	1.530
+PORTVERSION=	1.531
 CATEGORIES=	devel java
 MASTER_SITES=	http://mirrors.jenkins-ci.org/war/${PORTVERSION}/
 DISTNAME=	jenkins
@@ -40,6 +40,7 @@ PLIST_DIRSTRY=	jenkins
 SUB_LIST+=	JENKINS_HOME=${JENKINS_HOME} JENKINS_USER=${JENKINS_USER} JENKINS_GROUP=${JENKINS_GROUP} JAVA_HOME=${JAVA_HOME} JENKINS_LOG_FILE=${JENKINS_LOG_FILE}
 
 NO_STAGE=	yes
+
 .include <bsd.port.pre.mk>
 
 do-install:
