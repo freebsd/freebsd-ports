@@ -86,6 +86,10 @@ OPTIONS_DEFAULT+=	ARIADB ARCHIVE BLACKHOLE SPHINX FEDX XTRADB HANDLERSOCKET
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} >= 1000000
+BROKEN=		Does not build under FreeBSD 10
+.endif
+
 .if ${OSVERSION} > 900000 && ${PORT_OPTIONS:MSTATIC}
 BROKEN=	WITH_STATIC is not functional on 9-current
 .endif
