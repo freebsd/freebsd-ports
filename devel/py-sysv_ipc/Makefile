@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	sysv_ipc
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.5
 CATEGORIES=	devel python
 MASTER_SITES=	http://semanchuk.com/philip/sysv_ipc/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
-COMMENT=	System V IPC for Python - Semaphores, Shared Memory, and Message Queues
+COMMENT=	System V IPC for Python
 
 LICENSE=	BSD
 
@@ -18,4 +18,5 @@ USE_PYDISTUTILS=	yes
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/sysv_ipc.so
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>
