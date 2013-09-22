@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgxnclient
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 
@@ -13,4 +13,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>
