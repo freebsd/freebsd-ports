@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	atunes
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	audio java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/aTunes%20${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
@@ -41,7 +41,7 @@ RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
 .if ${PORT_OPTIONS:MXINE}
-LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.so:${PORTSDIR}/multimedia/libxine
 .endif
 
 .if ${PORT_OPTIONS:MCDDA2WAV}
