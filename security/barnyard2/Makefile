@@ -37,6 +37,7 @@ ACLOCAL_ARGS=	-I m4 -I ${LOCALBASE}/share/aclocal
 
 USE_RC_SUBR=	barnyard2
 GNU_CONFIGURE=	yes
+NO_STAGE=	yes
 
 SUB_FILES=	pkg-message
 
@@ -45,7 +46,6 @@ PORTDOCS2=	INSTALL README.aruba README.database README.sguil README.snortsam
 PORTDOCS=	${PORTDOCS1} ${PORTDOCS2}
 PORTEXAMPLES=	SCHEMA_ACCESS create_db2 create_mssql create_mysql create_oracle.sql create_postgresql
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:M64BIT}
@@ -125,7 +125,7 @@ CONFIGURE_ARGS+=	--without-postgresql
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
-USE_TCL=		yes
+USES+=			tcl
 CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl${TCL_VER}
 .else
 CONFIGURE_ARGS+=	--without-tcl
