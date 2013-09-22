@@ -25,20 +25,18 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: Users of ports
   AUTHOR: bdrewery@FreeBSD.org
 
-  Optional Stack Protector [1] support has been added with the WITH_SSP
+  Optional Stack Protector [1] support has been added with the WITH_SSP_PORTS
   knob.
 
-  .if !empty(.CURDIR:M/usr/ports*)
-  WITH_SSP=	yes
-  .endif
+  WITH_SSP_PORTS=	yes
 
   This currently is only supported on FreeBSD 10 amd64/i386 and earlier
-  releases on amd64 only.
+  releases on amd64.
 
   The default SSP_CLFAGS is -fstack-protector, but -fstack-protector-all
   may optionally be set instead.
 
-  To enable support, add WITH_SSP=yes to your make.conf and rebuild all
+  To enable support, add WITH_SSP_PORTS=yes to your make.conf and rebuild all
   ports.
 
   # portmaster -af

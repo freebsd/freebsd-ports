@@ -301,7 +301,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #                         passed to the compiler by setting DEBUG_FLAGS. It is
 #                         set to "-g" at default.
 #
-# WITH_SSP		- If set, SSP_FLAGS (defaults to -fstack-protector)
+# WITH_SSP_PORTS
+# 				- If set, SSP_FLAGS (defaults to -fstack-protector)
 #				  is added to CFLAGS and the necessary flags
 #				  are added to LDFLAGS. Note that SSP_UNSAFE
 #				  can be used in Makefiles by port maintainers
@@ -1570,7 +1571,7 @@ DEBUG_FLAGS?=	-g
 CFLAGS:=		${CFLAGS:N-O*:N-fno-strict*} ${DEBUG_FLAGS}
 .endif
 
-.if defined(WITH_SSP)
+.if defined(WITH_SSP) || defined(WITH_SSP_PORTS)
 .include "${PORTSDIR}/Mk/bsd.ssp.mk"
 .endif
 
