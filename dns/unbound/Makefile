@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unbound
-PORTVERSION=	1.4.20
-PORTREVISION=	1
+PORTVERSION=	1.4.21
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -34,7 +33,8 @@ MAN3=		libunbound.3 ub_cancel.3 ub_ctx.3 ub_ctx_add_ta.3 \
 		ub_fd.3 ub_poll.3 ub_process.3 ub_resolve.3 ub_resolve_async.3 \
 		ub_resolve_free.3 ub_result.3 ub_strerror.3 ub_wait.3
 MAN5=		unbound.conf.5
-MAN8=		unbound.8 unbound-anchor.8 unbound-control.8 unbound-checkconf.8
+MAN8=		unbound.8 unbound-anchor.8 unbound-control.8 \
+		unbound-checkconf.8 unbound-control-setup.8
 
 PORTDOCS=	CREDITS Changelog FEATURES LICENSE README README.svn \
 		README.tests TODO control_proto_spec.txt ietf67-design-02.odp \
