@@ -15,8 +15,8 @@ LICENSE=	GPLv2
 MAKE_JOBS_UNSAFE=	yes
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USES=		gmake shebangfix

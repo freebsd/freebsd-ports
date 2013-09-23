@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pkgconfig
 
-LIB_DEPENDS=	spectrum:${PORTSDIR}/emulators/libspectrum
+LIB_DEPENDS=	libspectrum.so:${PORTSDIR}/emulators/libspectrum
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libspectrum-prefix=${LOCALBASE} \
 		--with-local-prefix=${LOCALBASE}
@@ -33,7 +33,7 @@ NO_STAGE=	yes
 
 .if ${PORT_OPTIONS:MAUDIOTOOLS}
 CONFIGURE_ARGS+=--with-audiofile
-LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS+=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 PLIST_SUB=	AUDIOTOOLS=""
 MAN1+=		audio2tape.1 tape2wav.1
 .else
@@ -43,7 +43,7 @@ PLIST_SUB=	AUDIOTOOLS="@comment "
 
 # FIXME no way to specify ffmpeg1 paths to configure script
 #.if ${PORT_OPTIONS:MFFMPEG}
-#LIB_DEPENDS+=	avformat1:${PORTSDIR}/multimedia/ffmpeg1
+#LIB_DEPENDS+=	libavformat1.so:${PORTSDIR}/multimedia/ffmpeg1
 #CONFIGURE_ARGS+=--with-ffmpeg
 #.else
 CONFIGURE_ARGS+=--without-ffmpeg
