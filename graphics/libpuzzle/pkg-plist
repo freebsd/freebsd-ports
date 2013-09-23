@@ -4,3 +4,6 @@ lib/libpuzzle.a
 lib/libpuzzle.la
 lib/libpuzzle.so
 lib/libpuzzle.so.1
+man/man3/libpuzzle.3.gz
+man/man3/puzzle_set.3.gz
+man/man8/puzzle-diff.8.gz
