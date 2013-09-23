@@ -1,13 +1,15 @@
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TRANSLATORS
+bin/dfc
 etc/xdg/dfc/dfcrc
 etc/xdg/dfc/fr/dfcrc
-bin/dfc
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/HACKING
-%%DOCSDIR%%/LICENSE
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TRANSLATORS
+man/fr/man1/dfc.1.gz
+man/man1/dfc.1.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/dfc.mo
-@dirrmtry %%DOCSDIR%%/
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry man/fr/man1
 @dirrmtry man/fr
 @dirrmtry etc/xdg/dfc/fr
