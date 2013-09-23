@@ -19,7 +19,7 @@ NO_BUILD=	YES
 CONFLICTS_INSTALL=	beadm-devel-*
 
 PLIST_FILES=	sbin/${PORTNAME} \
-		man/man1/${PORTNAME}.1
+		man/man1/${PORTNAME}.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} \
