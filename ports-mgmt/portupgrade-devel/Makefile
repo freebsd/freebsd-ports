@@ -17,7 +17,6 @@ LICENSE=	BSD
 
 CONFLICTS_INSTALL=	portupgrade-[0-9]*
 
-NO_STAGE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	portupgrade
@@ -27,25 +26,8 @@ GH_TAGNAME=	${GH_COMMIT}
 DIST_SUBDIR=	${PORTNAME}
 USE_RUBY=	yes
 USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
-MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}" RUBY_SITELIBDIR="${RUBY_SITELIBDIR}" MKDIR="${MKDIR}"
-MAN1=		pkg_deinstall.1 \
-		pkg_fetch.1 \
-		pkg_glob.1 \
-		pkg_sort.1 \
-		pkgdb.1 \
-		pkgdu.1 \
-		portcvsweb.1 \
-		portsvnweb.1 \
-		portsclean.1 \
-		portsdb.1 \
-		portupgrade.1 \
-		portversion.1
-MAN5=		pkgtools.conf.5
-MLINKS=		pkgdb.1 pkg_which.1 \
-		portupgrade.1 portinstall.1 \
-		portcvsweb.1 portsvnweb.1 \
-		portsdb.1 ports_glob.1
-MANCOMPRESSED=	maybe
+MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}" \
+		RUBY_SITELIBDIR="${RUBY_SITELIBDIR}" MKDIR="${MKDIR}"
 
 EXAMPLESDIR=	${PREFIX}/share/examples/pkgtools
 DOCSDIR=	${PREFIX}/share/doc/pkgtools
@@ -78,9 +60,6 @@ post-patch:	.SILENT
 	    ${WRKSRC}/lib/pkgtools/revision.rb.in > ${WRKSRC}/lib/pkgtools/revision.rb
 
 post-install:
-	if [ ! -f ${PREFIX}/etc/pkgtools.conf ]; then \
-		${CP} -p ${PREFIX}/etc/pkgtools.conf.sample ${PREFIX}/etc/pkgtools.conf; \
-	fi
-	${MKDIR} ${PREFIX}/lib/compat/pkg
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/compat/pkg
 
 .include <bsd.port.post.mk>
