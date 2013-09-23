@@ -13,15 +13,13 @@ COMMENT=	Port build and test system
 
 LICENSE=	BSD
 
-MANCOMPRESSED=	yes
-MAN8=	poudriere.8
-
 OPTIONS_DEFINE=	ZSH
 
 CONFLICTS_INSTALL=	poudriere-devel
 
 PLIST_FILES=	etc/poudriere.conf.sample \
 		bin/poudriere \
+		man/man8/poudriere.8.gz \
 		libexec/poudriere/dirwatch \
 		libexec/poudriere/dirempty \
 		libexec/poudriere/make_index \
@@ -52,7 +50,6 @@ PLIST_DIRS=	libexec/poudriere \
 		share/poudriere/html \
 		share/poudriere
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MZSH}
@@ -63,8 +60,9 @@ PLIST_DIRSTRY+=	share/zsh/
 
 post-install:
 .if ${PORT_OPTIONS:MZSH}
-	@${MKDIR} ${PREFIX}/share/zsh/site-functions/
-	@${INSTALL_DATA} ${WRKSRC}/zsh-completions ${PREFIX}/share/zsh/site-functions/_poudriere
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
+	@${INSTALL_DATA} ${WRKSRC}/zsh-completions \
+	    ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_poudriere
 .endif
 
 .include <bsd.port.mk>
