@@ -1,10 +1,10 @@
 bin/json_reformat
 bin/json_verify
-include/yajl/yajl_version.h
 include/yajl/yajl_common.h
 include/yajl/yajl_gen.h
 include/yajl/yajl_parse.h
 include/yajl/yajl_tree.h
+include/yajl/yajl_version.h
 lib/libyajl.so
 lib/libyajl.so.2
 lib/libyajl.so.%%VERSION%%
