@@ -164,6 +164,7 @@ PLIST_SUB+=	PERL5_MAN${sect}=lib/perl5/${PERL_VER}/man/man${sect}/
 _MANPAGES+=	${P5MAN${sect}:S%^%${PREFIX}/lib/perl5/${PERL_VER}/man/man${sect}/%}
 .endif
 .endfor
+MANDIRS+=	${PREFIX}/lib/perl5/${PERL_VER}
 
 .if ${_USE_PERL5:Mmodbuild} || ${_USE_PERL5:Mmodbuildtiny}
 _USE_PERL5+=		configure
