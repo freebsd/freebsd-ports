@@ -8,3 +8,4 @@ lib/libfaad.la
 lib/libfaad.so
 lib/libfaad.so.2
 lib/libmp4ff.a
+man/man1/faad.1.gz
