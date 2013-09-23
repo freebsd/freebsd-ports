@@ -2,7 +2,7 @@
 
 PORTNAME=	btpd
 PORTVERSION=	0.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://cloud.github.com/downloads/btpd/btpd/
 
