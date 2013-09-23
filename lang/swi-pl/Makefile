@@ -3,6 +3,7 @@
 
 PORTNAME=	swi-pl
 PORTVERSION=	6.4.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
 DISTNAME=	pl-${PORTVERSION}
@@ -10,9 +11,8 @@ DISTNAME=	pl-${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Edinburgh-style Prolog compiler
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
-		readline:${PORTSDIR}/devel/readline \
-		jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 OPTIONS_SINGLE=	ODBC
 OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
@@ -27,9 +27,8 @@ MAN1=		swipl.1 swipl-rc.1 swipl-ld.1 xpce-client.1
 MANCOMPRESSED=	no
 
 NOPRECIOUSMAKEVARS=	yes
-USE_GMAKE=	yes
 USE_XORG=	xft xpm xt
-USES=		pkgconfig pathfix
+USES=		pkgconfig pathfix gmake
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ARCH=${ARCH}-${OPSYS:L}
@@ -44,9 +43,9 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUNIXODBC}
-LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
 .else
-LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=	libiodbc.so:${PORTSDIR}/databases/libiodbc
 .endif
 
 .include <bsd.port.pre.mk>
@@ -66,6 +65,8 @@ post-configure:
 	@${REINPLACE_CMD} -e '/^CMFLAGS=/s/$$/ -fPIC/' \
 		${WRKSRC}/packages/Dialect.defs
 .endif
+	@{ ${ECHO} "#define HAVE_DLOPEN 1";  ${ECHO} "#define HAVE_DLADDR 1"; }\
+		>> ${WRKSRC}/src/config.h
 
 post-patch:
 	@${REINPLACE_CMD} -e 's!^mandir=@mandir@!mandir=${MANPREFIX}/man!' \
