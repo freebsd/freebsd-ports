@@ -3453,7 +3453,6 @@
     SUBDIR += py-anyjson
     SUBDIR += py-apipkg
     SUBDIR += py-application
-    SUBDIR += py-archetypes.kss
     SUBDIR += py-archetypes.querywidget
     SUBDIR += py-archetypes.referencebrowserwidget
     SUBDIR += py-archetypes.schemaextender
@@ -3598,7 +3597,6 @@
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
     SUBDIR += py-krosspython
-    SUBDIR += py-kss-core
     SUBDIR += py-levenshtein
     SUBDIR += py-liblarch
     SUBDIR += py-libplist
