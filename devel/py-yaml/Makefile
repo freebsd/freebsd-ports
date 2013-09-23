@@ -32,6 +32,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${PYTHON_REL} >= 320
+.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
+.endif
+
 .if ${PORT_OPTIONS:MYAML}
 PYSETUP=	setup.py --with-libyaml
 PYDISTUTILS_BUILD_TARGET=	build_ext
