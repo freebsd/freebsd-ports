@@ -21,9 +21,16 @@ CXXFLAGS+=	-fPIC
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.orig" -delete
+
 # If you manage to make boost_build build luabind with correct
-# includes/libraries/compiler/flags, please send a patch
-NO_STAGE=	yes
+# includes/libraries/compiler/flags, please send a patch;
+# until then, custom build is used
 do-build:
 	@cd ${WRKSRC}/src && ${ECHO_CMD} *.cpp | \
 		${XARGS} -n1 -t ${_MAKE_JOBS:C/j/P/} \
@@ -32,12 +39,10 @@ do-build:
 	cd ${WRKSRC}/src && ${AR} -rcs libluabind.a *.o
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/src/libluabind.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/src/libluabind.so ${PREFIX}/lib
-	cd ${WRKSRC} && ${COPYTREE_SHARE} luabind ${PREFIX}/include
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/src/libluabind.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/src/libluabind.so ${STAGEDIR}${PREFIX}/lib
+	cd ${WRKSRC} && ${COPYTREE_SHARE} luabind ${STAGEDIR}${PREFIX}/include
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
