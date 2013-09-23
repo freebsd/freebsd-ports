@@ -17,15 +17,13 @@ LICENSE=	GPLv2
 PROJECTHOST=	git-core
 GIT_VERSION=	1.8.2.3
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		iconv shebangfix
+USES=		gmake iconv shebangfix
 SHEBANG_FILES=	filters/html-converters/resources/markdown.pl
-USE_GMAKE=	yes
 USE_OPENSSL=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ARGS+=	CGIT_SCRIPT_PATH=${WWWDIR} \
 		CGIT_CONFIG=${PREFIX}/etc/cgitrc NO_GETTEXT=1
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTNAME=${PORTNAME}
