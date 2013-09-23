@@ -3,7 +3,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -168,7 +168,7 @@ post-patch:
 		-e 's|%%PERL_VERSION%%|${PERL_VERSION}|g;' \
 		-e 's|%%PERL_VER%%|${PERL_VER}|g;' \
 		-e 's|%%PERL_ARCH%%|${PERL_ARCH}|g;' \
-		-e 's|%%MAKE_CONF%%|${__MAKE_CONF}|g;' \
+		-e 's|%%PERL5_SIGNATURE%%|${LOCALBASE}/etc/perl5_version|g;' \
 		-e 's|%%LINK_USRBIN%%|${LINK_USRBIN}|g;' \
 		${FILESDIR}/use.perl \
 		> ${WRKDIR}/use.perl
