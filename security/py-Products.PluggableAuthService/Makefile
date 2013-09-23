@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.PluginRegistry>=0:${PORTSDIR}/devel
 DIST_SUBDIR=	zope
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=easy_install
-USE_ZOPE=	yes
+USES=		zope
 
 NO_STAGE=	yes
 

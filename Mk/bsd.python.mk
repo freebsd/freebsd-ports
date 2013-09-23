@@ -210,76 +210,9 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #
 # USE_TWISTED_RUN	- Same as USE_TWISTED but add only run dependency.
 #
-# USE_ZOPE			- Use Zope - an object-based web application platform, this
-#					  also sets up:
-# SZOPEBASEDIR		- relative base directory of zope server
-# ZOPEBASEDIR		- absolute base directory of zope that is
-#					  ${LOCALBASE}/${SZOPEBASEDIR} by default,
-# ZOPEPRODUCTDIR	- directory, where products for zope can be found
-#
-# ZOPE_VERSION		- Version of zope that will be used in the port. Set this
-#					  in your /etc/make.conf in case you want to use a
-#					  specific version of zope.
-#
 
 _PYTHON_PORTBRANCH=		2.7
 _PYTHON_ALLBRANCHES=	2.7 2.6 3.3 3.2 3.1	# preferred first
-_ZOPE_PORTBRANCH=		2.13
-_ZOPE_ALLBRANCHES=		2.13
-
-
-# Determine version number of Zope to use
-.if defined(USE_ZOPE)
-.if defined(ZOPE_VERSION)
-_ZOPE_VERSION:=			${ZOPE_VERSION}
-.else
-_ZOPE_VERSION:=			${_ZOPE_PORTBRANCH}
-.endif
-
-# Validate Zope version whether it meets USE_ZOPE version restriction.
-_ZOPE_VERSION_CHECK:=		${USE_ZOPE:C/^([1-9]\.[0-9]*)$/\1-\1/}
-_ZOPE_VERSION_MINIMUM_TMP:=	${_ZOPE_VERSION_CHECK:C/([1-9]\.[0-9]*)[-+].*/\1/}
-_ZOPE_VERSION_MINIMUM:=		${_ZOPE_VERSION_MINIMUM_TMP:M[1-9].[0-9]}
-_ZOPE_VERSION_MAXIMUM_TMP:=	${_ZOPE_VERSION_CHECK:C/.*-([1-9]\.[0-9]*)/\1/}
-_ZOPE_VERSION_MAXIMUM:=		${_ZOPE_VERSION_MAXIMUM_TMP:M[1-9].[0-9]}
-
-.if !empty(_ZOPE_VERSION_MINIMUM) && ( \
-		${_ZOPE_VERSION} < ${_ZOPE_VERSION_MINIMUM})
-_ZOPE_VERSION_NONSUPPORTED=	${_ZOPE_VERSION_MINIMUM} at least
-.elif !empty(_ZOPE_VERSION_MAXIMUM) && ( \
-		${_ZOPE_VERSION} > ${_ZOPE_VERSION_MAXIMUM})
-_ZOPE_VERSION_NONSUPPORTED=	${_ZOPE_VERSION_MAXIMUM} at most
-.endif
-
-# If we have an unsupported version of Zope, try another.
-.if defined(_ZOPE_VERSION_NONSUPPORTED)
-.if defined(ZOPE_VERSION)
-IGNORE=				needs Zope ${_ZOPE_VERSION_NONSUPPORTED}.\
-					But you specified ${_ZOPE_VERSION}
-.else
-.undef _ZOPE_VERSION
-.for ver in ${_ZOPE_ALLBRANCHES}
-__VER=		${ver}
-.if !defined(_ZOPE_VERSION) && \
-	!(!empty(_ZOPE_VERSION_MINIMUM) && ( \
-		${__VER} < ${_ZOPE_VERSION_MINIMUM})) && \
-	!(!empty(_ZOPE_VERSION_MAXIMUM) && ( \
-		${__VER} > ${_ZOPE_VERSION_MAXIMUM}))
-_ZOPE_VERSION=	${ver}
-.endif
-.endfor
-.if !defined(_ZOPE_VERSION)
-IGNORE=				needs an unsupported version of Zope
-_ZOPE_VERSION=	${_ZOPE_PORTBRANCH} # just to avoid version sanity checking.
-.endif
-.endif	# defined(ZOPE_VERSION)
-.endif	# defined(_ZOPE_VERSION_NONSUPPORTED)
-
-ZOPE_VERSION?=	${_ZOPE_VERSION}
-
-PYTHON_VERSION=	python2.7
-.endif	# defined(USE_ZOPE)
-
 
 # Determine version number of Python to use
 .if !defined(PYTHON_DEFAULT_VERSION)
@@ -555,20 +488,6 @@ PLIST_FILES+=	${PYDISTUTILS_EGGINFODIR:S;${PREFIX}/;;}/${egg}
 # Fix for programs that build python from a GNU auto* environment
 CONFIGURE_ENV+=	PYTHON="${PYTHON_CMD}"
 
-# Zope-related variables
-.if defined(USE_ZOPE)
-.if ${ZOPE_VERSION} == "2.13"
-ZOPE_DEPENDS=	zope213>0:${PORTSDIR}/www/zope213
-.else
-check-makevars::
-	@${ECHO} "Makefile error: bad value for ZOPE_VERSION: ${ZOPE_VERSION}."
-	@${ECHO} "Legal values are: 2.13 (default)"
-	@${FALSE}
-.endif
-ZOPEBASEDIR?=			${PREFIX}/${SZOPEBASEDIR}
-ZOPEPRODUCTDIR?=		Products
-.endif
-
 # Python 3rd-party modules
 PYGAME=			${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game
 PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
@@ -589,10 +508,6 @@ RUN_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR} \
 .endif
 .endif		# ${PYTHON_NO_DEPENDS} == "NO"
 
-.if defined(USE_ZOPE)
-RUN_DEPENDS+=	${ZOPE_DEPENDS}
-.endif
-
 # set $PREFIX as Python's one
 .if defined(USE_PYTHON_PREFIX)
 PREFIX=			${PYTHONBASE}
@@ -606,12 +521,6 @@ PLIST_SUB+=		PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;} \
 				PYTHON_PLATFORM=${PYTHON_PLATFORM} \
 				PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} \
 				PYTHON_VERSION=${PYTHON_VERSION}
-
-# Zope specific substitutions
-.if defined(USE_ZOPE)
-PLIST_SUB+=		ZOPEBASEDIR=${SZOPEBASEDIR} \
-				ZOPEPRODUCTDIR=${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}
-.endif
 
 # Twisted specific routines
 .if defined(USE_TWISTED) || defined(USE_TWISTED_BUILD) || defined(USE_TWISTED_RUN)

@@ -255,4 +255,5 @@ XVID			XVID multimedia MPEG4 codec support
 YAHOO			Adds Yahoo! Messenger Protocol support
 ZIP			Adds ZIP support
 ZLIB			Adds Zlib support
+ZOPE			Zope support
 ZVBI			Adds support to access raw VBI capture devices
