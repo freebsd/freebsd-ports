@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.20
-PORTREVISION=	1
+DISTVERSION=	2.21
 CATEGORIES?=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source
 DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
@@ -16,16 +15,17 @@ BUILD_DEPENDS=	nspr>=4.10:${PORTSDIR}/devel/nspr \
 		nss>=3.15:${PORTSDIR}/security/nss \
 		sqlite3>=3.7.16.1:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
+		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
 		unzip:${PORTSDIR}/archivers/unzip
+LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
 EM_VERSION=	1.5.2
-L_VERSION=	2.5b1
+L_VERSION=	2.6b3
 
 USE_AUTOTOOLS=	autoconf213:env
 USE_PYTHON_BUILD=-2.7
 OBJDIR_BUILD=	# in-tree build broken after bug 789837
 USE_BZIP2=	yes
-USES=		gmake pkgconfig
 USE_GECKO=	gecko
 WANT_GNOME=	yes
 USE_QT4=	# empty
@@ -45,8 +45,8 @@ MOZ_PKGCONFIG_FILES=
 
 NOT_FOR_ARCHS=	ia64
 
-OPTIONS_DEFINE=	CHATZILLA COMPOSER ENIGMAIL LDAP LIGHTNING MAILNEWS WEBRTC
-OPTIONS_DEFAULT=CHATZILLA COMPOSER ENIGMAIL LDAP LIGHTNING MAILNEWS WEBRTC
+OPTIONS_DEFINE=	CHATZILLA COMPOSER ENIGMAIL LDAP LIGHTNING MAILNEWS
+OPTIONS_DEFAULT=CHATZILLA COMPOSER ENIGMAIL GSTREAMER LDAP LIGHTNING MAILNEWS
 
 CHATZILLA_DESC?=Chatzilla IRC module
 COMPOSER_DESC?=	HTML Composer module
@@ -84,13 +84,14 @@ MOZ_OPTIONS+=	--disable-ldap --disable-mailnews
 .if ! ${PORT_OPTIONS:MLDAP}
 MOZ_OPTIONS+=	--disable-ldap --enable-mailnews
 .else
+# libprldap60.so: Undefined symbol "PR_GetCurrentThread"
 . if ${ARCH} == i386
 USE_GCC?=	yes
 . endif
 MOZ_OPTIONS+=	--enable-ldap --enable-mailnews
 .endif
 .if ${PORT_OPTIONS:MENIGMAIL}
-MASTER_SITES+=	http://www.enigmail.net/download/source/:enigmail
+MASTER_SITES+=	https://www.enigmail.net/download/source/:enigmail
 DISTFILES+=	${EM_DISTFILE}:enigmail
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 EM_DISTNAME=	enigmail-${EM_VERSION}
