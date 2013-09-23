@@ -19,8 +19,7 @@ RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 BUILD_VERSION=	2.69
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 USE_XZ=		yes
-USE_GMAKE=	yes
-USES=		perl5
+USES=		gmake perl5
 INFO=		autoconf
 
 GNU_CONFIGURE=	yes
@@ -32,10 +31,6 @@ GENERIC_TOOLS=	config.guess config.sub	elisp-comp install-sh mdate-sh missing
 GENERIC_LINKS=	autoconf autoheader autom4te autoreconf autoscan autoupdate \
 		ifnames
 
-MAN1_PAGES=	${GENERIC_LINKS} config.guess config.sub
-MAN1=		${MAN1_PAGES:S/$/-${BUILD_VERSION}.1/g}
-
-NO_STAGE=	yes
 post-patch:
 	@(cd ${WRKSRC}/man && \
 		for file in *.[1x]; do \
@@ -48,7 +43,7 @@ post-patch:
 
 post-install:
 .for FILE in ${GENERIC_TOOLS}
-	@${INSTALL_SCRIPT} ${WRKSRC}/build-aux/${FILE} ${PREFIX}/share/autoconf-${BUILD_VERSION}
+	@${INSTALL_SCRIPT} ${WRKSRC}/build-aux/${FILE} ${STAGEDIR}${PREFIX}/share/autoconf-${BUILD_VERSION}
 .endfor
 
 .include <bsd.port.mk>
