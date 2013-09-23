@@ -6557,7 +6557,7 @@ install-desktop-entries:
 	fi; \
 	while [ $$# -gt 6 ]; do \
 		filename="`${ECHO_CMD} "$$4" | ${SED} -e 's,^/,,g;s,[/ ],_,g;s,[^_[:alnum:]],,g'`.desktop"; \
-		pathname="${DESKTOPDIR}/$$filename"; \
+		pathname="${STAGEDIR}${DESKTOPDIR}/$$filename"; \
 		categories="$$5"; \
 		if [ -z "$$categories" ]; then \
 			categories="`cd ${.CURDIR} && ${MAKE} desktop-categories`"; \
