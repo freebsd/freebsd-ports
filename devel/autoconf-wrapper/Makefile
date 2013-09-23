@@ -15,7 +15,6 @@ NO_BUILD=	YES
 TOOL?=		AUTOCONF
 WRAPPED_TOOLS?=	autoconf autoheader autom4te autoreconf autoscan \
 		autoupdate ifnames
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 TOOLS_CASE!=	${ECHO_CMD} ${WRAPPED_TOOLS} | ${TR} ' ' '|'
@@ -32,9 +31,9 @@ do-configure:
 	    <${FILESDIR}/autotools-wrapper.sh >${WRKDIR}/${PORTNAME}.sh
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .for tool in ${WRAPPED_TOOLS}
-	@${LN} -sf ${PORTNAME} ${PREFIX}/bin/${tool}
+	@${LN} -sf ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${tool}
 .endfor
 
 .include <bsd.port.post.mk>
