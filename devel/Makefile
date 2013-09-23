@@ -4357,6 +4357,7 @@
     SUBDIR += strace
     SUBDIR += streamhtmlparser
     SUBDIR += stringencoders
+    SUBDIR += stxxl
     SUBDIR += styx
     SUBDIR += subclipse
     SUBDIR += subcommander2
