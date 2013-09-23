@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/gcpio
+man/man1/gcpio.1.gz
 %%NLS%%share/locale/da/LC_MESSAGES/cpio.mo
 %%NLS%%share/locale/de/LC_MESSAGES/cpio.mo
 %%NLS%%share/locale/es/LC_MESSAGES/cpio.mo
