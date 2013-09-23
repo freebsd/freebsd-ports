@@ -7,32 +7,29 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://download.meroware.org/ftwin/
 
 MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	A useful tool to find duplicate files
+COMMENT=	Useful tool to find duplicate files
 
-LIB_DEPENDS=	puzzle:${PORTSDIR}/graphics/libpuzzle \
-		apr-1:${PORTSDIR}/devel/apr1 \
-		pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpuzzle.so:${PORTSDIR}/graphics/libpuzzle \
+		libapr-1.so:${PORTSDIR}/devel/apr1 \
+		libpcre.so:${PORTSDIR}/devel/pcre
+
+OPTIONS_DEFINE=	DOCS
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf aclocal automake autoheader
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ARGS+=	--with-puzzle=${LOCALBASE}
-PLIST_FILES=	bin/ftwin
-
+PLIST_FILES=	bin/ftwin \
+		man/man8/ftwin.8.gz
 
 PORTDOCS=	AUTHORS EXAMPLES TODO CHANGES KNOWN_BUGS VERSION LICENSE README
 
-MAN8=		ftwin.8
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
