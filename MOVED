@@ -4948,7 +4948,6 @@ net/opal3|net/opal|2013-09-20|Removed old version, update to new version and mov
 net/ekiga|net-im/ekiga|2013-09-20|Removed old version, update to new version and moved port
 net/ekiga3|net-im/ekiga|2013-09-20|Removed old version, update to new version and moved port
 devel/py-elementtree||2013-09-23|ElementTree is a part of standard library since Python 2.5
-devel/ppl||2013-09-23|Has expired: obsolete version; fails to build
 textproc/fileshuffle||2013-09-23|Has expired: Does not work, use gshuf from sysutils/coreutils instead
 www/py-Products.kupu||2013-09-23|This port is not required since Plone 4.3
 www/py-plone.app.kss||2013-09-23|This port is not required since Plone 4.3
