@@ -36,14 +36,7 @@ ACTUAL-PACKAGE-DEPENDS?= \
 		${PKG_QUERY} "%dn: {origin: %do, version: \"%dv\"}" " " ${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,:C,${PORTSDIR}/,,} 2>/dev/null || : ; \
 	fi
 
-.if !target(fake-pkg)
-fake-pkg:
-.if !defined(NO_PKG_REGISTER)
-.if defined(INSTALLS_DEPENDS)
-	@${ECHO_MSG} "===>   Registering installation for ${PKGNAME} as automatic"
-.else
-	@${ECHO_MSG} "===>   Registering installation for ${PKGNAME}"
-.endif
+create-manifest:
 	@${MKDIR} ${METADIR}
 	@${ECHO_CMD} "name: ${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}" > ${MANIFESTF} 
 	@${ECHO_CMD} "version: ${PKGVERSION}" >> ${MANIFESTF} 
@@ -102,10 +95,26 @@ fake-pkg:
 .if !defined(NO_MTREE)
 	@[ -f ${MTREE_FILE} ] && ${CP} ${MTREE_FILE} ${METADIR}/+MTREE_DIRS || return 0
 .endif
-.if defined(INSTALLS_DEPENDS)
-	@${SETENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CMD} -d -l -m ${METADIR} -f ${TMPPLIST}
+
+
+.if !target(fake-pkg)
+.if defined(NO_STAGE)
+STAGE_ARGS=		-l
 .else
-	@${SETENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CMD} -l -m ${METADIR} -f ${TMPPLIST}
+STAGE_ARGS=		-i ${STAGEDIR}
+.endif
+
+fake-pkg: create-manifest
+.if !defined(NO_PKG_REGISTER)
+.if defined(INSTALLS_DEPENDS)
+	@${ECHO_MSG} "===>   Registering installation for ${PKGNAME} as automatic"
+.else
+	@${ECHO_MSG} "===>   Registering installation for ${PKGNAME}"
+.endif
+.if defined(INSTALLS_DEPENDS)
+	@${SETENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CMD} -d ${STAGE_ARGS} -m ${METADIR} -f ${TMPPLIST}
+.else
+	@${SETENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CMD} ${STAGE_ARGS} -m ${METADIR} -f ${TMPPLIST}
 .endif
 	@${RM} -rf ${METADIR}
 .else
@@ -113,6 +122,7 @@ fake-pkg:
 .endif
 .endif
 
+.if defined(WITH_PKGNG)
 .if !target(check-build-conflicts)
 check-build-conflicts:
 .if ( defined(CONFLICTS) || defined(CONFLICTS_BUILD) ) && !defined(DISABLE_CONFLICTS) && !defined(DEFER_CONFLICTS_CHECK)
@@ -204,8 +214,13 @@ check-install-conflicts:
 .endif # defined(DEFER_CONFLICTS_CHECK)
 .endif
 .endif
+.endif
 
 .if !target(do-package)
+.if !defined(NO_STAGE)
+PKG_CREATE_ARGS=	-r ${STAGEDIR} -m ${METADIR} -p ${TMPPLIST}
+do-package: create-manifest
+.endif
 do-package: ${TMPPLIST}
 	@if [ -d ${PACKAGES} ]; then \
 		if [ ! -d ${PKGREPOSITORY} ]; then \
@@ -214,26 +229,33 @@ do-package: ${TMPPLIST}
 				exit 1; \
 			fi; \
 		fi; \
-	fi;
+	fi
 	@for cat in ${CATEGORIES}; do \
 		${RM} -f ${PACKAGES}/$$cat/${PKGNAMEPREFIX}${PORTNAME}*${PKG_SUFX} ; \
 	done
-	@if ${PKG_CREATE} -o ${PKGREPOSITORY} ${PKGNAME}; then \
-		if [ "${PKGORIGIN}" = "ports-mgmt/pkg" -o "${PKGORIGIN}" = "ports-mgmt/pkg-devel" ]; then \
-			if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
-				if ! ${MKDIR} ${PKGLATESTREPOSITORY}; then \
-					${ECHO_MSG} "=> Can't create directory ${PKGLATESTREPOSITORY}."; \
-					exit 1; \
-				fi; \
-			fi ; \
-			${LN} -sf ../${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PKGLATESTFILE} ; \
-		fi; \
+	@if ${PKG_CREATE} ${PKG_CREATE_ARGS} -o ${PKGREPOSITORY} ${PKGNAME}; then \
+		if [ -n "${WITH_PKGNG}" ]; then \
+			if [ "${PKGORIGIN}" = "ports-mgmt/pkg" -o "${PKGORIGIN}" = "ports-mgmt/pkg-devel" ]; then \
+				if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
+					if ! ${MKDIR} ${PKGLATESTREPOSITORY}; then \
+						${ECHO_MSG} "=> Can't create directory ${PKGLATESTREPOSITORY}."; \
+						exit 1; \
+					fi; \
+				fi ; \
+				${LN} -sf ../${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PKGLATESTFILE} ; \
+			fi; \
+		else \
+			if [ -d ${PACKAGES} ]; then \
+				cd ${.CURDIR} && eval ${MAKE} package-links; \
+			fi; \
+		fi ; \
 	else \
 		cd ${.CURDIR} && eval ${MAKE} delete-package; \
 		exit 1; \
 	fi
 .endif
 
+.if defined(WITH_PKGNG)
 .if !target(check-already-installed)
 check-already-installed:
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
@@ -276,6 +298,7 @@ deinstall:
 		${ECHO_MSG} "===>   ${PKGBASE} not installed, skipping"; \
 	fi
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
+.endif
 .endif
 .endif
 

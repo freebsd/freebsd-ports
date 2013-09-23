@@ -96,6 +96,14 @@ DEV_WARNING+=	"Please use the new format for LIB_DEPENDS, see handbook for detai
 DEV_WARNING+=	"USE_TCL and USE_TK are deprecated, please use USES=tcl or USES=tk"
 .endif
 
+.if !defined(NO_STAGE) && defined(_MANPAGES)
+DEV_WARNING+=	"MAN* macros are deprecated when using stage directory"
+.endif
+
+.if !defined(NO_STAGE) && defined(_MLINKS)
+DEV_WARNING+=	"MLINKS* macros are deprecated when using stage directory"
+.endif
+
 .if defined(_PREMKINCLUDED)
 DEV_ERROR+=	"you cannot include bsd.port[.pre].mk twice"
 .endif

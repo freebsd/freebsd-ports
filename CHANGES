@@ -10,6 +10,35 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130923:
+AUTHOT: bapt@FreeBSD.org
+
+  The ports tree is now staged by default. With pkgng the sequence hasn't
+  changed, the main difference is that creating package is now independent
+  from installing it. With pkg_install, the package is now created first
+  and make install, do install the package.
+
+  New macros:
+  - STAGEDIR: PATH to the directory where the port will be staged.
+  - NO_STAGE: Keep the old behaviour of the ports tree (aka no staging area)
+
+  Unsupported macro if NO_STAGE is not set:
+  - MAN* with staging man page compression and handling of hardlinks and
+  symlinks is automatically done in the stage. the manpages becomes then a
+  "normal" plist files and should be tracked in pkg-plist.
+  - MANCOMPRESSED the compress-man target is able to only compress when it
+  needed.
+
+  New target:
+  - stage: this installs everything into the stage directory
+  - makeplist: this will create a pkg-plist and print it to stdout. This is
+  a sample plist and it should always be _reviewed_ not directly used.
+
+  NOTE: with staging only what is in the plist will be installed, nothing more,
+  meaning a port staged cannot have leftovers exect directories left. It is
+  really important to double check the pkg-plist to make sure all the files
+  the maintainer want to package are in! make makeplist can help in that area.
+
 20130920:
 AUTHOR: bdrewery@FreeBSD.org
 
