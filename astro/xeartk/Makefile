@@ -10,10 +10,10 @@ MASTER_SITES=	SF/tkgeomap/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small demo for tkgeomap
 
-LIB_DEPENDS=	tkgeomap.0:${PORTSDIR}/astro/tkgeomap
+LIB_DEPENDS=	libtkgeomap.so:${PORTSDIR}/astro/tkgeomap
 
 NO_STAGE=	yes
-USE_TK_RUN=	yes
+USES+=		tk:run
 NO_BUILD=	yes
 DATA_FILES=	README cities land.xdr rivers.xdr water.xdr
 PLIST_FILES=	bin/${PORTNAME} ${DATA_FILES:S,^,%%DATADIR%%/,}
@@ -21,6 +21,7 @@ PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,data/,${DATADIR}/,g;s,wish,${WISH},' ${WRKSRC}/src/XEartk.tcl
+	@${REINPLACE_CMD} -e 's| 0\([0-9]\)| \1|g' ${WRKSRC}/data/cities
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/src/XEartk.tcl ${PREFIX}/bin/${PORTNAME}
