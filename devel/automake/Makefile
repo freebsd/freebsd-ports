@@ -23,18 +23,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-suffix=-${BUILD_VERSION}
 CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
 INFO=		automake
-MAN1=		aclocal-${BUILD_VERSION}-${BUILD_VERSION}.1 \
-		aclocal-${BUILD_VERSION}.1 \
-		automake-${BUILD_VERSION}-${BUILD_VERSION}.1 \
-		automake-${BUILD_VERSION}.1
-
-NO_STAGE=	yes
-post-patch:
-	@${RM} ${WRKSRC}/doc/*.info
-
-pre-su-install:
-	@${RM} -fr ${PREFIX}/share/automake-${BUILD_VERSION}
-	@${MKDIR} ${PREFIX}/share/automake-${BUILD_VERSION}
-	@${MKDIR} ${PREFIX}/share/aclocal-${BUILD_VERSION}
 
 .include <bsd.port.mk>
