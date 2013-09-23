@@ -8,13 +8,13 @@ include/rfb/rfbint.h
 include/rfb/rfbproto.h
 include/rfb/rfbregion.h
 lib/libvncclient.a
-lib/libvncserver.a
-lib/libvncserver.so.0
-lib/libvncserver.so
-lib/libvncserver.la
-lib/libvncclient.so.0
-lib/libvncclient.so
 lib/libvncclient.la
-libdata/pkgconfig/libvncserver.pc
+lib/libvncclient.so
+lib/libvncclient.so.0
+lib/libvncserver.a
+lib/libvncserver.la
+lib/libvncserver.so
+lib/libvncserver.so.0
 libdata/pkgconfig/libvncclient.pc
+libdata/pkgconfig/libvncserver.pc
 @dirrm include/rfb
