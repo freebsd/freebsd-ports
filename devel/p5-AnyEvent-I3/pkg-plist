@@ -1,3 +1,4 @@
+%%PERL_MANDIR%%/man3/AnyEvent::I3.3.gz
 %%SITE_PERL%%/AnyEvent/I3.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/I3/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/I3
