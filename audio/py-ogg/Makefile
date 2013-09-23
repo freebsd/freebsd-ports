@@ -15,7 +15,6 @@ COMMENT=	Object-oriented Python bindings for the ogg library
 LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg
 
 USE_PYTHON=		yes
-NO_STAGE=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pyogg
 
