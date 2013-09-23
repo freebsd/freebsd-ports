@@ -10,7 +10,6 @@ COMMENT=	Solaris-like utility to manage Boot Environments on ZFS
 
 LICENSE=	BSD
 
-NO_STAGE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	vermaden
 GH_COMMIT=	d7d7cd3
@@ -20,18 +19,13 @@ NO_BUILD=	YES
 
 CONFLICTS_INSTALL=	beadm-[0-9]*
 
-PLIST_FILES=	sbin/${PORTNAME}
-
-MAN1=		${PORTNAME}.1
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-IGNORE=		not supported on 7.x
-.endif
+PLIST_FILES=	sbin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1/
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} \
+	    ${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
+	    ${STAGEDIR}${MANPREFIX}/man/man1/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
