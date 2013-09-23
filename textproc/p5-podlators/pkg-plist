@@ -1,10 +1,17 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/.packlist
+%%PERL5_12%%%%PERL5_MAN1%%/perlpodstyle.1.gz
+%%PERL5_MAN3%%/Pod::Man.3.gz
+%%PERL5_MAN3%%/Pod::ParseLink.3.gz
+%%PERL5_MAN3%%/Pod::Text.3.gz
+%%PERL5_MAN3%%/Pod::Text::Color.3.gz
+%%PERL5_MAN3%%/Pod::Text::Overstrike.3.gz
+%%PERL5_MAN3%%/Pod::Text::Termcap.3.gz
 %%SITE_PERL%%/Pod/Man.pm
 %%SITE_PERL%%/Pod/ParseLink.pm
 %%SITE_PERL%%/Pod/Text.pm
 %%SITE_PERL%%/Pod/Text/Color.pm
 %%SITE_PERL%%/Pod/Text/Overstrike.pm
 %%SITE_PERL%%/Pod/Text/Termcap.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
 @dirrmtry %%SITE_PERL%%/Pod/Text
 @dirrmtry %%SITE_PERL%%/Pod
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
