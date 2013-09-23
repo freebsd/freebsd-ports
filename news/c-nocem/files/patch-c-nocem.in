@@ -1,8 +1,20 @@
---- c-nocem.in.orig	Wed Nov  3 00:47:28 1999
-+++ c-nocem.in	Sat Mar 11 12:07:58 2000
+--- c-nocem.in.orig	2000-05-23 11:39:01.000000000 +0200
++++ c-nocem.in	2013-09-23 20:20:58.000000000 +0200
 @@ -1,4 +1,4 @@
 -#!@PERL@ -w
 +#!@PERL@
  # and once again for Emacs: -*-perl-*-
  
  # NoCeM in the spool for C News and INN - grand unified program
+@@ -30,9 +30,9 @@
+ $logfile="@newslogfile@";
+ $ENV{'PATH'}="@newspath@";
+ 
+-require "getopts.pl";
++use Getopt::Std qw(getopts);
+ $opt_t=86400; $opt_l=$opt_a="";
+-&Getopts("bc:t:nsd:klraz:C");
++&getopts("bc:t:nsd:klraz:C");
+ $storageapi=0;
+ $opt_c=99999999 if ($opt_C);
+ if ($opt_c) {
