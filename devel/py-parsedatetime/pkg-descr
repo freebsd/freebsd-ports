@@ -21,4 +21,4 @@ parsedatetime is able to parse, for example, the following:
     * 2 hours before noon
     * 2 days from tomorrow 
 
-WWW:	http://code-bear.com/code/parsedatetime/
+WWW: https://github.com/bear/parsedatetime/
