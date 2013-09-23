@@ -19,16 +19,15 @@ USES=		gmake
 USE_BZIP2=	yes
 
 PLIST_FILES=	bin/i3status \
-		etc/i3status.conf.sample
-MAN1=	i3status.1
+		etc/i3status.conf.sample \
+		man/man1/i3status.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/i3status.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/i3status ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/man/i3status.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/i3status.conf ${PREFIX}/etc/i3status.conf.sample
+	${INSTALL_PROGRAM} ${WRKSRC}/i3status ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/man/i3status.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/i3status.conf ${STAGEDIR}${PREFIX}/etc/i3status.conf.sample
 
 .include <bsd.port.mk>
