@@ -1,0 +1,71 @@
+bin/radicale
+%%ETCDIR%%/config.sample
+%%ETCDIR%%/logging.sample
+%%PYTHON_LIBDIR%%/site-packages/radicale/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/radicale/__main__.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/__main__.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/__main__.pyo
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/IMAP.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/IMAP.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/IMAP.pyo
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/LDAP.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/LDAP.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/LDAP.pyo
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/PAM.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/PAM.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/PAM.pyo
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/courier.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/courier.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/courier.pyo
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/htpasswd.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/htpasswd.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/htpasswd.pyo
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/http.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/http.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/auth/http.pyo
+%%PYTHON_LIBDIR%%/site-packages/radicale/config.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/config.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/config.pyo
+%%PYTHON_LIBDIR%%/site-packages/radicale/ical.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/ical.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/ical.pyo
+%%PYTHON_LIBDIR%%/site-packages/radicale/log.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/log.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/log.pyo
+%%PYTHON_LIBDIR%%/site-packages/radicale/rights/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/rights/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/rights/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/radicale/rights/from_file.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/rights/from_file.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/rights/from_file.pyo
+%%PYTHON_LIBDIR%%/site-packages/radicale/rights/owner_only.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/rights/owner_only.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/rights/owner_only.pyo
+%%PYTHON_LIBDIR%%/site-packages/radicale/rights/owner_write.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/rights/owner_write.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/rights/owner_write.pyo
+%%PYTHON_LIBDIR%%/site-packages/radicale/storage/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/storage/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/storage/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/radicale/storage/database.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/storage/database.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/storage/database.pyo
+%%PYTHON_LIBDIR%%/site-packages/radicale/storage/filesystem.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/storage/filesystem.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/storage/filesystem.pyo
+%%PYTHON_LIBDIR%%/site-packages/radicale/xmlutils.py
+%%PYTHON_LIBDIR%%/site-packages/radicale/xmlutils.pyc
+%%PYTHON_LIBDIR%%/site-packages/radicale/xmlutils.pyo
+@dirrmtry %%DATADIR%%
+@dirrmtry %%ETCDIR%%
+@dirrm %%PYTHON_LIBDIR%%/site-packages/radicale
+@dirrm %%PYTHON_LIBDIR%%/site-packages/radicale/auth
+@dirrm %%PYTHON_LIBDIR%%/site-packages/radicale/rights
+@dirrm %%PYTHON_LIBDIR%%/site-packages/radicale/storage
+@dirrmtry %%PYTHON_LIBDIR%%/site-packages
+@dirrmtry %%PYTHON_LIBDIR%%
