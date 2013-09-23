@@ -27,7 +27,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAUDIOFILE}
-LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS+=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 .else
 CONFIGURE_ARGS+=--without-libaudiofile
 .endif
