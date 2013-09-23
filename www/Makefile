@@ -1700,6 +1700,7 @@
     SUBDIR += quickie
     SUBDIR += quixote
     SUBDIR += qupzilla
+    SUBDIR += radicale
     SUBDIR += red5
     SUBDIR += redaxo
     SUBDIR += redmine
