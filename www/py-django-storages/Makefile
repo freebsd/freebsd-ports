@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-storages
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.8
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,4 +14,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

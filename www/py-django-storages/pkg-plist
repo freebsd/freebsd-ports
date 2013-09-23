@@ -3,15 +3,18 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/S3.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/S3.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/S3.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/apache_libcloud.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/apache_libcloud.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/apache_libcloud.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/azure_storage.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/azure_storage.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/azure_storage.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/couchdb.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/couchdb.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/couchdb.pyo
@@ -21,6 +24,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/ftp.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/ftp.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/ftp.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/gs.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/gs.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/gs.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/hashpath.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/hashpath.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends/hashpath.pyo
@@ -60,6 +66,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/tests/hashpath.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/tests/hashpath.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/tests/hashpath.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/tests/s3boto.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/tests/s3boto.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/tests/s3boto.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/utils.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages/backends
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/storages
