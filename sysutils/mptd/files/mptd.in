@@ -13,7 +13,7 @@ name=mptd
 rcvar=mptd_enable
 load_rc_config $name
 
-raid_alert_mailto=${mptd_raid_alert_mailto:-"root@localhost"}
+raid_alert_mailto=${mptd_alert_mailto:-"root@localhost"}
 start_cmd=mptd_start
 stop_cmd="killall -9 mptd > /dev/null 2>&1"
 
