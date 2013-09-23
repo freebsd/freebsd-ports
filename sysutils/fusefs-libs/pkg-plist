@@ -1,25 +1,24 @@
+include/fuse.h
 include/fuse/cuse_lowlevel.h
 include/fuse/fuse.h
-include/fuse/fuse_compat.h
 include/fuse/fuse_common.h
 include/fuse/fuse_common_compat.h
+include/fuse/fuse_compat.h
+include/fuse/fuse_kernel.h
 include/fuse/fuse_lowlevel.h
 include/fuse/fuse_lowlevel_compat.h
 include/fuse/fuse_opt.h
-include/fuse/fuse_kernel.h
-include/fuse.h
 include/ulockmgr.h
 lib/libfuse.a
 lib/libfuse.la
 lib/libfuse.so
 lib/libfuse.so.2
-lib/libulockmgr.la
 lib/libulockmgr.a
+lib/libulockmgr.la
 lib/libulockmgr.so
 lib/libulockmgr.so.1
 libdata/pkgconfig/fuse.pc
+man/man1/fusermount.1.gz
+man/man1/ulockmgr_server.1.gz
+man/man8/mount.fuse.8.gz
 @dirrm include/fuse
-%%PORTDOCS%%%%DOCSDIR%%/libs/how-fuse-works
-%%PORTDOCS%%%%DOCSDIR%%/libs/kernel.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
