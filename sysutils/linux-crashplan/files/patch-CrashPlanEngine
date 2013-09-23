@@ -1,0 +1,30 @@
+--- scripts/CrashPlanEngine.orig	2013-04-08 20:36:04.000000000 -0300
++++ scripts/CrashPlanEngine	2013-09-23 10:54:57.806062403 -0300
+@@ -11,7 +11,7 @@
+ 	
+ 	cd $TARGETDIR
+ 		
+-	nice -n 19 $JAVACOMMON $SRV_JAVA_OPTS -classpath $FULL_CP com.backup42.service.CPService > $TARGETDIR/log/engine_output.log 2> $TARGETDIR/log/engine_error.log & 
++	nice -n 19 $JAVACOMMON $SRV_JAVA_OPTS -classpath $FULL_CP com.backup42.service.CPService > $LOGDIR/engine_output.log 2> $LOGDIR/engine_error.log & 
+ 	
+ 	if [[ $! -gt 0 ]]; then
+ 		echo $! > $PIDFILE
+@@ -80,7 +80,7 @@
+ }
+ 
+ _findpid() {
+-	/bin/ps -eo 'pid,cmd'| grep 'app=CrashPlanService' | grep -v grep | awk '{ print $1 }'
++	/bin/ps -ewwo 'pid,command'| grep 'app=CrashPlanService' | grep -v grep | awk '{ print $1 }'
+ }
+ 
+ SCRIPT=$(ls -l $0 | awk '{ print $NF }')
+@@ -91,7 +91,8 @@
+ DESC="CrashPlan Engine"
+ NAME=CrashPlanEngine
+ DAEMON=$TARGETDIR/lib/com.backup42.desktop.jar
+-PIDFILE="$TARGETDIR/${NAME}.pid"
++PIDFILE="/var/run/${NAME}.pid"
++: ${LOGDIR=/var/log/crashplan}
+ 
+ if [[ -f $TARGETDIR/install.vars ]]; then
+ 	. $TARGETDIR/install.vars

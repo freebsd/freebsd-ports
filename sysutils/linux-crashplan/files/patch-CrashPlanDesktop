@@ -1,0 +1,17 @@
+--- scripts/CrashPlanDesktop.orig	2013-09-23 11:40:09.770062319 -0300
++++ scripts/CrashPlanDesktop	2013-09-23 12:08:29.635060972 -0300
+@@ -4,9 +4,11 @@
+ SCRIPTDIR=$(dirname $SCRIPT)
+ TARGETDIR="$SCRIPTDIR/.."
+ 
+-. ${TARGETDIR}/install.vars
+-. ${TARGETDIR}/bin/run.conf
++. /usr/local/share/crashplan/install.vars
+ 
+ cd ${TARGETDIR}
+ 
+-${JAVACOMMON} ${GUI_JAVA_OPTS} -classpath "./lib/com.backup42.desktop.jar:./lang:./skin" com.backup42.desktop.CPDesktop > ${TARGETDIR}/log/ui_output.log 2> ${TARGETDIR}/log/ui_error.log &
++. bin/run.conf
++: ${LOGDIR=/var/log/crashplan}
++
++${JAVACOMMON} ${GUI_JAVA_OPTS} -classpath "./lib/com.backup42.desktop.jar:./lang:./skin" com.backup42.desktop.CPDesktop > ${LOGDIR}/ui_output.log 2> ${LOGDIR}/ui_error.log &

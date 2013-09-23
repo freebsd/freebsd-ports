@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+# PROVIDE: crashplan
+# REQUIRE: DAEMON
+
+. /etc/rc.subr
+
+name="crashplan"
+rcvar=${name}_enable
+
+command="%%PREFIX%%/share/crashplan/bin/CrashPlanEngine"
+
+pidfile="/var/run/CrashPlanEngine.pid"
+
+start_precmd="install -d /var/log/crashplan"
+start_cmd="${command} start"
+stop_cmd="${command} stop"
+
+load_rc_config ${name}
+run_rc_command "$1"
