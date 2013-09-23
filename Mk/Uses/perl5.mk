@@ -155,7 +155,7 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		SITE_PERL=${SITE_PERL_REL}
 
 .for sect in 1 2 3 4 5 6 7 8 9
-PLIST_SUB+=	PERL5_MAN${sect}=lib/perl5/${PERL_VER}/man/man${sect}/
+PLIST_SUB+=	PERL5_MAN${sect}=lib/perl5/${PERL_VER}/man/man${sect}
 .endfor
 
 # handle perl5 specific manpages
