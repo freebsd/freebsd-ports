@@ -14,6 +14,8 @@ MAINTAINER=	kiwi@oav.net
 COMMENT=	A free database library with transaction support
 
 BROKEN=		Unfetchable due to checksum mismatch
+DEPRECATED=	No longer maintained upstream
+EXPIRATION_DATE=	2013-11-01
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
