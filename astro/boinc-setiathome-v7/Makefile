@@ -14,6 +14,8 @@ COMMENT=	Setiathome Enhanced for BOINC
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+CONFLICTS=	boinc-setiathome-enhanced-[0-9]*
+
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
