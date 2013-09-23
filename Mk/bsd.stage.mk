@@ -26,7 +26,7 @@ stage-dir:
 compress-man:
 	@${ECHO_CMD} "====> Compressing man pages" ; \
 	mdirs="${STAGEDIR}${MANPREFIX}/man"; \
-	for dir in `cat /usr/local/etc/man.d/*.conf ${STAGEDIR}/usr/local/etc/man.d/*.conf 2>/dev/null| awk -vstagedir=${STAGEDIR} '{ print stagedir$$2 }'` ; do \
+	for dir in `cat ${LOCALBASE}/etc/man.d/*.conf ${STAGEDIR}${PREFIX}/etc/man.d/*.conf 2>/dev/null| awk -vstagedir=${STAGEDIR} '{ print stagedir$$2 }'` ; do \
 		[ -d $$dir ] && mdirs="$$mdirs $$dir" ;\
 	done ; \
 	for dir in $$mdirs; do \
