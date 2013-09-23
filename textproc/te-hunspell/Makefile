@@ -21,14 +21,13 @@ PLIST_FILES=	%%DATADIR%%/te_IN.aff \
 		%%DATADIR%%/te_IN.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC}; \
 		${LOCALBASE}/bin/prezip-bin -d < te.cwl > te.txt; \
 		${SETENV} LANG=te_IN.utf8 ${LOCALBASE}/bin/wordlist2hunspell te.txt te_IN
 
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/te_IN.aff ${WRKSRC}/te_IN.dic ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/te_IN.aff ${WRKSRC}/te_IN.dic ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

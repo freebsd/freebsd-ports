@@ -23,11 +23,10 @@ PLIST_FILES=	%%DATADIR%%/sv_FI.aff \
 		%%DATADIR%%/sv_SE.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/sv_SE.aff ${WRKSRC}/sv_SE.dic ${DATADIR}/
-	${LN} -s sv_SE.aff ${DATADIR}/sv_FI.aff
-	${LN} -s sv_SE.dic ${DATADIR}/sv_FI.dic
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/sv_SE.aff ${WRKSRC}/sv_SE.dic ${STAGEDIR}${DATADIR}/
+	${LN} -s sv_SE.aff ${STAGEDIR}${DATADIR}/sv_FI.aff
+	${LN} -s sv_SE.dic ${STAGEDIR}${DATADIR}/sv_FI.dic
 
 .include <bsd.port.mk>

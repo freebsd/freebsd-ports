@@ -21,14 +21,13 @@ PLIST_FILES=	%%DATADIR%%/nb_NO.aff \
 		%%DATADIR%%/nn_NO.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 post-extract:
 	@${EXTRACT_CMD} ${WRKDIR}/nb_NO.zip -d ${WRKSRC}/
 	@${EXTRACT_CMD} ${WRKDIR}/nn_NO.zip -d ${WRKSRC}/
 
 do-install:
-	${MKDIR} ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/nb_NO.aff ${WRKSRC}/nb_NO.dic \
-		${WRKSRC}/nn_NO.aff ${WRKSRC}/nn_NO.dic ${DATADIR}/
+		${WRKSRC}/nn_NO.aff ${WRKSRC}/nn_NO.dic ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
