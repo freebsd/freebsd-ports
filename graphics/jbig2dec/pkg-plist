@@ -4,3 +4,4 @@ lib/libjbig2dec.a
 lib/libjbig2dec.la
 lib/libjbig2dec.so
 lib/libjbig2dec.so.0
+man/man1/jbig2dec.1.gz
