@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	Project is switching, use astro/boinc-setiathome-v7 instead
 
+CONFLICTS=	boinc-setiathome-v7-[0-9]*
+
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
