@@ -11,7 +11,6 @@ PKGNAMEPREFIX=	g
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	GNU cpio copies files to and from archives
 
-NO_STAGE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g \
@@ -19,18 +18,12 @@ CONFIGURE_ARGS=	--program-prefix=g \
 		--with-rmt=/etc/rmt
 
 INFO=		cpio
-MAN1=		gcpio.1
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-CONFIGURE_ARGS+=--with-libintl-prefix="${LOCALBASE}"
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
