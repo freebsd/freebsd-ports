@@ -45,22 +45,17 @@ MAILDIR_DESC=	Enable support for Maildirs in MAIL(PATH)
 
 PLIST_SUB+=	ZSH_VER="${ZSH_VER}"
 
-MAN1=		zsh.1 zshbuiltins.1 zshcompctl.1 zshcompwid.1 zshcompsys.1 \
-		zshcontrib.1 zshexpn.1 zshmisc.1 zshmodules.1 zshoptions.1 \
-		zshparam.1 zshroadmap.1 zshtcpsys.1 zshzftpsys.1 zshzle.1 \
-		zshall.1 zshcalsys.1
 DOCS=		LICENCE META-FAQ README Etc/BUGS Etc/CONTRIBUTORS Etc/FAQ \
 		Etc/completion-style-guide Doc/zsh*.html Doc/zsh.dvi
 PORTDOCS=	*
 PORTEXAMPLES=	zlogin zshenv zshrc
-SHELLS=		/etc/shells
 
 OPTIONS_SUB=	yes
 
 DOCS_DISTFILES=		${DISTNAME}-doc${EXTRACT_SUFX}:doc
-GDBM_LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
+GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 GDBM_CONFIGURE_ENABLE=	gdbm
-PCRE_LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 PCRE_CONFIGURE_ENABLE=	pcre
 MEM_CONFIGURE_ENABLE=	zsh-mem
 SECURE_FREE_CONFIGURE_ENABLE=	zsh-secure-free
@@ -71,13 +66,16 @@ STATIC_CONFIGURE_OFF=	--enable-dynamic
 DEBUG_CONFIGURE_ENABLE=	zsh-debug
 MULTIBYTE_CONFIGURE_ENABLE=	multibyte
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSTATIC}
 PLIST_SUB+=		SHARED="@comment "
 .else
 PLIST_SUB+=		SHARED=""
+.endif
+
+.if ${PORT_OPTIONS:MDOCS}
+INFO=	zsh
 .endif
 
 post-patch:
@@ -111,30 +109,22 @@ post-build:
 	@${MKDIR} ${PREFIX}/info
 	makeinfo --no-split --output=${WRKSRC}/Doc/zsh.info \
 		${WRKSRC}/Doc/zsh.texi
-INFO=	zsh
 .endif
 
 post-install:
-	${LN} -f ${PREFIX}/bin/zsh ${PREFIX}/bin/rzsh
-	${TEST} -d ${ZSH_ETCDIR} || ${MKDIR} ${ZSH_ETCDIR}
-	${TEST} -d ${ZSH_SITEFNDIR} || ${MKDIR} ${ZSH_SITEFNDIR}
+	${LN} -f ${STAGEDIR}${PREFIX}/bin/zsh ${STAGEDIR}${PREFIX}/bin/rzsh
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/StartupFiles && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/StartupFiles && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Doc/zsh.info ${PREFIX}/info/zsh.info
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Doc/zsh.info ${STAGEDIR}${PREFIX}/info/zsh.info
 .endif
-	@${ECHO_MSG} "Updating ${SHELLS}"
-	@${GREP} -v ${PREFIX}/bin/r?zsh ${SHELLS}	 > ${SHELLS}.new
-	@${ECHO_CMD} ${PREFIX}/bin/zsh			>> ${SHELLS}.new
-	@${ECHO_CMD} ${PREFIX}/bin/rzsh			>> ${SHELLS}.new
-	@${MV} ${SHELLS}.new ${SHELLS}
-	@${PREFIX}/bin/zsh -fc ' \
+	${STAGEDIR}${PREFIX}/bin/zsh -fc ' \
 		setopt extendedglob nomark_dirs; \
-		for i in ${DATADIR}/${ZSH_VER}/functions/**/*(/) ; do \
+		for i in ${STAGEDIR}${DATADIR}/${ZSH_VER}/functions/**/*(/) ; do \
 			zcompile -U -M $$i.zwc $$i/*~*.zwc(^/) ; \
 			${CHMOD} 644 $$i.zwc ; \
 		done'
