@@ -19,14 +19,6 @@ GNU_CONFIGURE=	yes
 USES=		pathfix iconv ncurses readline
 USE_LDCONFIG=	yes
 
-MANLANG=	"" hu
-MAN1_EN=	hunspell.1 hunzip.1 hzip.1
-MAN1_HU=	hunspell.1
-MAN3_EN=	hunspell.3
-MAN4_EN=	hunspell.4
-MAN4_HU=	hunspell.4
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/tools/hunspell.cxx
 
