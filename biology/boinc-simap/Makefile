@@ -12,6 +12,7 @@ EXTRACT_SUFX=	#
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Similarity Matrix of Proteins project for BOINC
 
+LIB_DEPENDS=	libc.so.6:${PORTSDIR}/misc/compat6x
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 
 NO_BUILD=	yes
@@ -53,8 +54,6 @@ AMD64=		"@comment "
 
 SUB_FILES=	app_info.xml pkg-message
 SUB_LIST=	SIMAP_BINARY=${SIMAP_BINARY} HMMER_BINARY=${HMMER_BINARY} SIMAP_APPVERSION=${SIMAP_VERSION:S/.//} HMMER_APPVERSION=${HMMER_VERSION:S/.//} AMD64=${AMD64}
-
-LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
