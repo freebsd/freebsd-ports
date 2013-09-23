@@ -24,7 +24,6 @@ USE_PERL5=	build
 USE_XZ=		yes
 USES=		gmake pathfix perl5 pkgconfig
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 802516 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900502)
