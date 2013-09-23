@@ -10,7 +10,7 @@ COMMENT=	Traditional (K&R-style) C preprocessor
 
 LICENSE=	BSD
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 
 MAKE_ARGS=	BINDIR=${PREFIX}/bin MANDIR=${MANPREFIX}/man/man
