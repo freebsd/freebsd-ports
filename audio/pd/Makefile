@@ -21,15 +21,15 @@ OPTIONS_DEFAULT=FFTW
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S,${DISTVERSIONSUFFIX},,}
 
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tk:wrapper
 NO_STAGE=	yes
-USE_TK_WRAPPER=	yes
 USE_AUTOTOOLS=	aclocal libtoolize autoconf automake
 ACLOCAL_ARGS=	-I m4/generated -I m4
 LIBTOOLIZE_ARGS=--install --force
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing
 
 MAN1=		pd.1 pdreceive.1 pdsend.1
+PORTDOCS=	*
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -37,7 +37,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 CONFIGURE_ARGS+=	--enable-alsa
 .else
 CONFIGURE_ARGS+=	--disable-alsa
@@ -45,14 +45,14 @@ CONFIGURE_ARGS+=	--disable-alsa
 
 .if ${PORT_OPTIONS:MFFTW}
 BUILD_DEPENDS+=	fftw3>0:${PORTSDIR}/math/fftw3
-LIB_DEPENDS+=	fftw3f:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS+=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
 CONFIGURE_ARGS+=	--enable-fftw
 .else
 CONFIGURE_ARGS+=	--disable-fftw
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
 CONFIGURE_ARGS+=	--enable-jack
 .else
 CONFIGURE_ARGS+=	--disable-jack
