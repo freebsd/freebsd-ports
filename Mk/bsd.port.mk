@@ -4563,7 +4563,7 @@ deinstall-all:
 
 .if !target(do-clean)
 do-clean:
-.if !defined(NO_STAGE) && ${UID} != 0 && !defined(INSTALL_AS_USER)
+.if !defined(NO_STAGE) && ${UID} != 0 && !defined(INSTALL_AS_USER) && exists(${STAGE_COOKIE})
 	@${ECHO_MSG} "===>  Switching to root credentials for '${.TARGET}' target"
 	@cd ${.CURDIR} && \
 		${SU_CMD} "${MAKE} ${.TARGET}"
