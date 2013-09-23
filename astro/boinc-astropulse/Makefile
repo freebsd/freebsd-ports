@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3 \
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
 
-NO_STAGE=	yes
 USES=		gmake pkgconfig
 USE_XZ=		yes
 USE_AUTOTOOLS=	autoconf:env automake:env libtool
@@ -84,18 +83,20 @@ pre-configure:
 	(cd ${WRKSRC} ; ./_autosetup)
 
 do-install:
-	${INSTALL} -d -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} ${BOINC_CLIENT_HOME}/projects
 	${INSTALL} -d -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} \
-	    ${BOINC_CLIENT_HOME}/projects/${SETI_SITE}
+	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects
+	${INSTALL} -d -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} \
+	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}
 	${INSTALL_PROGRAM} -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} \
-	    ${WRKSRC}/${AP_BINARY} ${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
+	    ${WRKSRC}/${AP_BINARY} \
+	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
 .if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} \
-	    ${WRKSRC}/ap_graphics ${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
+	    ${WRKSRC}/ap_graphics \
+	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
 .endif
 
 post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
