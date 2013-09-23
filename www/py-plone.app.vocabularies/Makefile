@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.app.vocabularies
-PORTVERSION=	2.1.10
+PORTVERSION=	2.1.11
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,8 +24,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.browser>=0:${PORTSDIR}/devel/py-zope.br
 
 DIST_SUBDIR=	zope
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
 USE_ZOPE=	yes
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

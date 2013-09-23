@@ -34,13 +34,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/interfaces.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/interfaces.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/interfaces.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/kss.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/kss.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/kss.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/manage-portlets.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/manage.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/manage.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/manage.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/portlets.kss
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/templates/column.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/templates/dashboard-column.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/templates/edit-manager-contextual.pt
@@ -56,6 +53,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/traversal.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/traversal.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/traversal.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/utils.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/z3cformhelper.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/z3cformhelper.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/portlets/browser/z3cformhelper.pyo

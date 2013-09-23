@@ -151,6 +151,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/browser/lifecycle.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/browser/lifecycle.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/browser/lifecycle.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/browser/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/browser/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/browser/utils.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/browser/validation.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/browser/validation.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/browser/validation.pyo
@@ -294,6 +297,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/interfaces/templatemixin.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/interfaces/templatemixin.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/interfaces/templatemixin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/interfaces/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/interfaces/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/interfaces/utils.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/interfaces/validator.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/interfaces/validator.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/interfaces/validator.pyo
@@ -425,8 +431,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/skins/archetypes/widgets/visual.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/skins/archetypes/widgets/zid.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/skins/archetypes/wysiwyg_support.pt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/skins/archetypes_kss/at.kss
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/skins/archetypes_kss/at_experimental.kss
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/subscribers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/subscribers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/subscribers.pyo
@@ -479,6 +483,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/test_baseunit.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/test_baseunit.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/test_baseunit.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/test_browser_utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/test_browser_utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/test_browser_utils.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/test_classgen.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/test_classgen.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/test_classgen.pyo
@@ -641,7 +648,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/output
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/input
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/skins/archetypes_kss
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/skins/archetypes/widgets/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/skins/archetypes/widgets/js
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/skins/archetypes/widgets

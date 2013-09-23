@@ -20,6 +20,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/adding.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/adding.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/adding.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/apidoc.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/browser/README.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/browser/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/browser/__init__.pyc
@@ -100,6 +101,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/browser/radio_display.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/browser/radio_hidden.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/browser/radio_input.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/browser/select-missing-terms.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/browser/select-source.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/browser/select.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/browser/select.pyc
@@ -145,10 +147,14 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/browser/widget.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/browser/widget.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/browser/widget.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/browser/widget.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/browser/widget_layout.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/browser/widget_layout_hidden.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/button.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/button.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/button.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/button.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/button.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/compatibility.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/compatibility.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/compatibility.pyo
@@ -161,15 +167,18 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/converter.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/converter.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/converter.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/converter.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/datamanager.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/datamanager.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/datamanager.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/datamanager.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/datamanager.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/error.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/error.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/error.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/error.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/error.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/error.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/field.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/field.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/field.pyo
@@ -201,12 +210,20 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/interfaces.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/cs/LC_MESSAGES/z3c.form.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/cs/LC_MESSAGES/z3c.form.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/da/LC_MESSAGES/z3c.form.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/da/LC_MESSAGES/z3c.form.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/de/LC_MESSAGES/z3c.form.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/de/LC_MESSAGES/z3c.form.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/en/LC_MESSAGES/z3c.form.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/en/LC_MESSAGES/z3c.form.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/es/LC_MESSAGES/z3c.form.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/es/LC_MESSAGES/z3c.form.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/fr/LC_MESSAGES/z3c.form.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/fr/LC_MESSAGES/z3c.form.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/hu/LC_MESSAGES/z3c.form.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/hu/LC_MESSAGES/z3c.form.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/it/LC_MESSAGES/z3c.form.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/it/LC_MESSAGES/z3c.form.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/ja/LC_MESSAGES/z3c.form.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/ja/LC_MESSAGES/z3c.form.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/no/LC_MESSAGES/z3c.form.mo
@@ -235,6 +252,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/term.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/term.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/term.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/term.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/testing.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/testing.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/testing.pyo
@@ -265,6 +283,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/validator.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/validator.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/validator.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/validator.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/value.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/value.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/value.pyo
@@ -291,12 +310,20 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/no
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/ja/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/ja
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/it
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/hu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/hu
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/fr/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/fr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/es
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/en/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/en
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/de/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/de
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/da/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/da
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/cs/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales/cs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/z3c/form/locales

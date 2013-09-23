@@ -32,28 +32,13 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/exception.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/exception.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/formlib.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/inline_validation.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/inline_validation.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/inline_validation.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/inline_validation.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/interfaces.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/interfaces.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/interfaces.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/configure.zcml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/edit.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/edit.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/edit.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/form.kss
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/formlib_kss.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/inline_edit_wrapper.pt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/tests/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/tests/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/tests/test_kss.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/tests/test_kss.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/tests/test_kss.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/validation.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/validation.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/validation.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/overrides.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/pageform.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/subpageform.pt
@@ -115,8 +100,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/widgets/wysiwygwidget.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/widgets
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/tests
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss/tests
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/kss
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	AccessControl
-PORTVERSION=	2.13.13
+PORTVERSION=	3.0.8
 CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,7 +33,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisit
 NO_STAGE=	yes
 PYEASYINSTALL_ARCHDEP=	yes
 USE_PYTHON=	-2.7
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
 .include <bsd.port.mk>

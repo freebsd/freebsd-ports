@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Products.GenericSetup
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +17,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}five.localsitemanager>=0:${PORTSDIR}/devel/p
 
 DIST_SUBDIR=	zope
 USE_PYTHON=	-2.7
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
 USE_ZOPE=	yes
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

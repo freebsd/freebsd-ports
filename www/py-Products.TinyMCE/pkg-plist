@@ -29,6 +29,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/adapters/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/adapters/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/adapters/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/adapters/caching.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/adapters/caching.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/adapters/caching.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/adapters/configure.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/adapters/interfaces/JSONDetails.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/adapters/interfaces/JSONDetails.pyc
@@ -60,10 +63,16 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/browser.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/browser.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/browser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/compressor.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/compressor.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/compressor.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/configure.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/controlpanel.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/controlpanel.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/controlpanel.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/dxanchors.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/dxanchors.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/dxanchors.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/images/tinymce_icon.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/interfaces/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/interfaces/__init__.pyc
@@ -83,11 +92,11 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/interfaces/url.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/interfaces/url.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/interfaces/url.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/kss/tinymce.kss
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/style.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/style.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/style.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/stylesheets/tinymce.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/tiny_mce_gzip.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/url.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/url.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/url.pyo
@@ -98,105 +107,310 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/interfaces/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/interfaces/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/interfaces/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/interfaces/shortcut.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/interfaces/shortcut.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/interfaces/shortcut.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/interfaces/utility.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/interfaces/utility.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/interfaces/utility.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ar/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ar/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ar/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ar/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/az/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/az/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/az/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/az/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/be/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/be/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/be/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/be/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/bg/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/bg/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/bg/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/bg/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/bn/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/bn/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/bn/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/bn/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/br/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/br/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/br/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/br/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/bs/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/bs/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/bs/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/bs/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ca/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ca/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ca/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ca/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ch/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ch/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ch/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ch/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/cs/LC_MESSAGES/plone.tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/cs/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/cs/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/cs/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/cy/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/cy/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/cy/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/cy/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/da/LC_MESSAGES/plone.tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/da/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/da/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/da/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/de/LC_MESSAGES/plone.tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/de/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/de/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/de/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/dv/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/dv/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/dv/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/dv/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/el/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/el/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/el/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/el/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/en/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/en/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/en/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/en/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/es/LC_MESSAGES/plone.tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/es/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/es/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/es/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/et/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/et/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/et/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/et/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/eu/LC_MESSAGES/plone.tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/eu/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/eu/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/eu/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/fa/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/fa/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/fa/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/fa/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/fi/LC_MESSAGES/plone.tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/fi/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/fi/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/fi/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/fr/LC_MESSAGES/plone.tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/fr/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/fr/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/fr/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/gl/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/gl/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/gl/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/gl/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/gu/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/gu/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/gu/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/gu/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/he/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/he/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/he/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/he/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/hi/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/hi/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/hi/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/hi/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/hr/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/hr/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/hr/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/hr/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/hu/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/hu/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/hu/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/hu/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/hy/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/hy/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/hy/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/hy/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ia/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ia/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ia/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ia/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/id/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/id/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/id/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/id/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ii/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ii/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ii/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ii/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/is/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/is/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/is/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/is/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/it/LC_MESSAGES/plone.tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/it/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/it/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/it/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ja/LC_MESSAGES/plone.tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ja/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ja/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ja/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ka/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ka/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ka/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ka/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ko/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ko/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ko/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ko/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/lb/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/lb/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/lb/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/lb/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/lt/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/lt/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/lt/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/lt/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/lv/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/lv/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/lv/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/lv/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/mk/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/mk/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/mk/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/mk/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ml/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ml/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ml/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ml/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/mn/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/mn/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/mn/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/mn/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ms/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ms/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ms/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ms/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/nb/LC_MESSAGES/plone.tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/nb/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/nb/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/nb/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/nl/LC_MESSAGES/plone.tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/nl/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/nl/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/nl/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/nn/LC_MESSAGES/plone.tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/nn/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/nn/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/nn/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/no/LC_MESSAGES/plone.tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/no/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/no/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/no/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/pl/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/pl/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/pl/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/pl/LC_MESSAGES/tinymce.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/plone.tinymce-manual.pot
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/plone.tinymce.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ps/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ps/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ps/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ps/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/pt/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/pt/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/pt/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/pt/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/pt_BR/LC_MESSAGES/plone.tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/pt_BR/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ro/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ro/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ro/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ro/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ru/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ru/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ru/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ru/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sc/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sc/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sc/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sc/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/se/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/se/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/se/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/se/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/si/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/si/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/si/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/si/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sk/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sk/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sk/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sk/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sl/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sl/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sl/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sl/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sq/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sq/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sq/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sq/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sr/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sr/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sr/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sr/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sv/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sv/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sv/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/sv/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ta/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ta/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ta/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ta/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/te/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/te/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/te/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/te/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/th/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/th/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/th/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/th/LC_MESSAGES/tinymce.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/tinymce.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/tr/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/tr/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/tr/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/tr/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/tt/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/tt/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/tt/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/tt/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/tw/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/tw/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/tw/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/tw/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/uk/LC_MESSAGES/plone.tinymce-manual.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/uk/LC_MESSAGES/plone.tinymce-manual.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/uk/LC_MESSAGES/plone.tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/uk/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/uk/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/uk/LC_MESSAGES/tinymce.po
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/update.sh
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ur/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ur/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ur/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ur/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/vi/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/vi/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/vi/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/vi/LC_MESSAGES/tinymce.po
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/zh/LC_MESSAGES/plone.tinymce.po
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/zh/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/zh_CN/LC_MESSAGES/plone.tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/zh_CN/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/zh_CN/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/zh_CN/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/zh_TW/LC_MESSAGES/plone.tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/zh_TW/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/zh_TW/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/zh_TW/LC_MESSAGES/tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/zu/LC_MESSAGES/plone.tinymce.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/zu/LC_MESSAGES/plone.tinymce.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/zu/LC_MESSAGES/tinymce.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/zu/LC_MESSAGES/tinymce.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/mimetypes/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/mimetypes/__init__.pyc
@@ -210,12 +424,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/default/controlpanel.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/default/cssregistry.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/default/jsregistry.xml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/default/kssregistry.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/default/metadata.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/default/portal-tinymce.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/default/skins.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/default/tinymce.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/default/toolset.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/testing/skins.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/testing/tinymce.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/testing/types.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/testing/types/tinymce_test.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/uninstall/componentregistry.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/uninstall/controlpanel.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/uninstall/cssregistry.xml
@@ -229,9 +446,18 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/upgrade_10_to_11/jsregistry.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/upgrade_10_to_11/metadata.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/upgrade_10_to_11/tinymce.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/upgrade_12_to_13/jsregistry.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/upgrade_12_to_13/kssregistry.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/upgrade_12_to_13/metadata.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/upgrade_to_profile_5/jsregistry.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/upgrade_to_profile_6/jsregistry.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/setuphandlers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/setuphandlers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/setuphandlers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/shortcut.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/shortcut.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/shortcut.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/jquery.tinymce.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/ar.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/az.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/be.js
@@ -241,6 +467,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/bs.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/ca.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/ch.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/cn.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/cs.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/cy.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/da.js
@@ -248,6 +475,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/dv.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/el.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/en.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/eo.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/es.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/et.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/eu.js
@@ -263,11 +491,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/hy.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/ia.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/id.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/ii.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/is.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/it.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/ja.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/ka.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/kl.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/km.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/ko.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/lb.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/lt.js
@@ -276,6 +505,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/ml.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/mn.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/ms.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/my.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/nb.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/nl.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/nn.js
@@ -296,13 +526,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/ta.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/te.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/th.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/tn.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/tr.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/tt.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/tw.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/uk.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/ur.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/vi.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/zh.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/zh-cn.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/zh-tw.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs/zu.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/AtD/atdbuttontr.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/AtD/changelog.html
@@ -324,6 +556,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/bs_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/ca_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/ch_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/cn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/cs_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/cy_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/da_dlg.js
@@ -331,6 +564,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/dv_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/el_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/eo_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/es_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/et_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/eu_dlg.js
@@ -346,11 +580,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/hy_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/ia_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/id_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/ii_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/is_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/it_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/ja_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/ka_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/kl_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/km_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/ko_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/lb_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/lt_dlg.js
@@ -359,6 +594,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/ml_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/mn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/ms_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/my_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/nb_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/nl_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/nn_dlg.js
@@ -379,17 +615,22 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/ta_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/te_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/th_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/tn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/tr_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/tt_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/tw_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/uk_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/ur_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/vi_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/zh_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/zh-cn_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/zh-tw_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs/zu_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/rule.htm.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advlist/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/autolink/editor_plugin.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/autoresize/editor_plugin.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/autosave/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/autosave/langs/en.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/bbcode/editor_plugin.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/contextmenu/editor_plugin.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/definitionlist/editor_plugin.js
@@ -423,6 +664,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/bs_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/ca_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/ch_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/cn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/cs_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/cy_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/da_dlg.js
@@ -430,6 +672,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/dv_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/el_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/eo_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/es_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/et_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/eu_dlg.js
@@ -445,11 +688,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/hy_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/ia_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/id_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/ii_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/is_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/it_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/ja_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/ka_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/kl_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/km_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/ko_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/lb_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/lt_dlg.js
@@ -458,6 +702,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/ml_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/mn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/ms_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/my_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/nb_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/nl_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/nn_dlg.js
@@ -478,15 +723,18 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/ta_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/te_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/th_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/tn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/tr_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/tt_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/tw_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/uk_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/ur_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/vi_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/zh_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/zh-cn_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/zh-tw_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs/zu_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/fullscreen/css/fullscreen.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/example_dependency/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/fullscreen/css/fullscreen.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/fullscreen/editor_plugin.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/fullscreen/fullscreen.htm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/iespell/editor_plugin.js
@@ -497,16 +745,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/inlinepopups/template.htm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/insertdatetime/editor_plugin.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/layer/editor_plugin.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/css/content.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/legacyoutput/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/lists/editor_plugin.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/css/media.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/editor_plugin.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/img/flash.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/img/flv_player.swf
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/img/quicktime.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/img/realmedia.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/img/shockwave.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/img/trans.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/img/windowsmedia.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/js/embed.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/js/media.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/ar_dlg.js
@@ -518,6 +760,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/bs_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/ca_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/ch_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/cn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/cs_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/cy_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/da_dlg.js
@@ -525,6 +768,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/dv_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/el_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/eo_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/es_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/et_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/eu_dlg.js
@@ -540,11 +784,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/hy_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/ia_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/id_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/ii_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/is_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/it_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/ja_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/ka_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/kl_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/km_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/ko_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/lb_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/lt_dlg.js
@@ -553,6 +798,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/ml_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/mn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/ms_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/my_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/nb_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/nl_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/nn_dlg.js
@@ -573,22 +819,22 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/ta_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/te_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/th_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/tn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/tr_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/tt_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/tw_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/uk_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/ur_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/vi_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/zh_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/zh-cn_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/zh-tw_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs/zu_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/media.htm.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/moxieplayer.swf
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/nonbreaking/editor_plugin.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/noneditable/editor_plugin.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/pagebreak/css/content.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/pagebreak/editor_plugin.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/pagebreak/img/pagebreak.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/pagebreak/img/trans.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/css/pastetext.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/css/pastetext.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/editor_plugin.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/js/pastetext.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/js/pasteword.js
@@ -601,6 +847,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/bs_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/ca_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/ch_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/cn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/cs_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/cy_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/da_dlg.js
@@ -608,6 +855,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/dv_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/el_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/eo_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/es_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/et_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/eu_dlg.js
@@ -623,11 +871,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/hy_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/ia_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/id_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/ii_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/is_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/it_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/ja_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/ka_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/kl_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/km_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/ko_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/lb_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/lt_dlg.js
@@ -636,6 +885,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/ml_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/mn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/ms_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/my_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/nb_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/nl_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/nn_dlg.js
@@ -656,179 +906,48 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/ta_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/te_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/th_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/tn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/tr_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/tt_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/tw_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/uk_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/ur_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/vi_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/zh_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/zh-cn_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/zh-tw_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs/zu_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/pastetext.htm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/pasteword.htm.pt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/css/imagestyles.css.dtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/css/ploneimage.css.dtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/editor_plugin.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/img/sample.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/js/ploneimage.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/ar_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/az_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/be_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/bg_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/bn_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/br_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/bs_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/ca_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/ch_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/cs_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/cy_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/da_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/de_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/dv_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/el_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/en_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/es_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/et_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/eu_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/fa_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/fi_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/fr_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/gl_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/gu_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/he_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/hi_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/hr_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/hu_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/hy_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/ia_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/id_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/ii_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/is_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/it_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/ja_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/ka_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/ko_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/lb_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/lt_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/lv_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/mk_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/ml_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/mn_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/ms_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/nb_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/nl_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/nn_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/no_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/pl_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/ps_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/pt_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/ro_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/ru_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/sc_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/se_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/si_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/sk_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/sl_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/sq_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/sr_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/sv_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/ta_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/te_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/th_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/tr_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/tt_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/tw_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/uk_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/ur_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/vi_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/zh_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs/zu_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/ploneimage.htm.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/css/plonebrowser.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img/anchor_link.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img/application_get.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img/arrow_down.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img/arrow_right.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img/cancel.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img/display_list.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img/display_thumbs.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img/edit_details.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img/email_link.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img/external_link.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img/folder.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img/folder_big.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img/folder_current.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img/home.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img/internal_link.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img/linkable.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img/magnifier.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img/picture.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img/star.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/js/plonebrowser.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/plonebrowser.htm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneinlinestyles/editor_plugin.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/css/plonelink.css.dtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/editor_plugin.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/js/plonelink.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/ar_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/az_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/be_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/bg_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/bn_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/br_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/bs_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/ca_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/ch_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/cs_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/cy_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/da_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/de_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/dv_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/el_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/en_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/es_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/et_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/eu_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/fa_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/fi_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/fr_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/gl_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/gu_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/he_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/hi_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/hr_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/hu_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/hy_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/ia_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/id_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/ii_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/is_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/it_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/ja_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/ka_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/ko_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/lb_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/lt_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/lv_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/mk_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/ml_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/mn_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/ms_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/nb_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/nl_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/nn_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/no_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/pl_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/ps_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/pt_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/ro_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/ru_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/sc_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/se_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/si_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/sk_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/sl_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/sq_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/sr_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/sv_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/ta_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/te_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/th_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/tr_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/tt_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/tw_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/uk_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/ur_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/vi_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/zh_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs/zu_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/plonelink.htm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonestyle/editor_plugin.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/preview/editor_plugin.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/preview/example.html.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/preview/jscripts/embed.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/preview/preview.html.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/print/editor_plugin.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/safari/blank.htm.pt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/safari/editor_plugin.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/save/editor_plugin.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/css/searchreplace.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/editor_plugin.js
@@ -842,6 +961,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/bs_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/ca_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/ch_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/cn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/cs_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/cy_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/da_dlg.js
@@ -849,6 +969,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/dv_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/el_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/eo_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/es_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/et_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/eu_dlg.js
@@ -864,11 +985,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/hy_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/ia_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/id_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/ii_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/is_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/it_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/ja_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/ka_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/kl_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/km_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/ko_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/lb_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/lt_dlg.js
@@ -877,6 +999,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/ml_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/mn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/ms_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/my_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/nb_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/nl_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/nn_dlg.js
@@ -897,13 +1020,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/ta_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/te_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/th_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/tn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/tr_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/tt_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/tw_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/uk_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/ur_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/vi_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/zh_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/zh-cn_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/zh-tw_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/langs/zu_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/searchreplace.htm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/spellchecker/css/content.css
@@ -912,6 +1037,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/tabfocus/editor_plugin.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/cell.htm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/css/cell.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/css/merge_cells.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/css/row.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/css/table.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/editor_plugin.js
@@ -928,6 +1054,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/bs_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/ca_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/ch_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/cn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/cs_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/cy_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/da_dlg.js
@@ -935,6 +1062,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/dv_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/el_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/eo_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/es_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/et_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/eu_dlg.js
@@ -950,11 +1078,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/hy_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/ia_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/id_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/ii_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/is_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/it_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/ja_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/ka_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/kl_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/km_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/ko_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/lb_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/lt_dlg.js
@@ -963,6 +1092,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/ml_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/mn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/ms_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/my_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/nb_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/nl_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/nn_dlg.js
@@ -983,13 +1113,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/ta_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/te_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/th_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/tn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/tr_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/tt_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/tw_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/uk_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/ur_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/vi_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/zh_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/zh-cn_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/zh-tw_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/langs/zu_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/merge_cells.htm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/table/row.htm.pt
@@ -1007,6 +1139,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/bs_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/ca_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/ch_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/cn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/cs_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/cy_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/da_dlg.js
@@ -1014,6 +1147,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/dv_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/el_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/eo_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/es_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/et_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/eu_dlg.js
@@ -1029,11 +1163,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/hy_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/ia_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/id_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/ii_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/is_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/it_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/ja_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/ka_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/kl_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/km_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/ko_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/lb_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/lt_dlg.js
@@ -1042,6 +1177,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/ml_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/mn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/ms_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/my_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/nb_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/nl_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/nn_dlg.js
@@ -1062,13 +1198,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/ta_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/te_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/th_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/tn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/tr_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/tt_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/tw_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/uk_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/ur_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/vi_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/zh_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/zh-cn_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/zh-tw_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/langs/zu_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/template/template.htm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/visualchars/editor_plugin.js
@@ -1077,12 +1215,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/acronym.htm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/attributes.htm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/cite.htm.pt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/css/abbr.css.dtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/css/acronym.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/css/abbr.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/css/acronym.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/css/attributes.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/css/cite.css.dtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/css/del.css.dtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/css/ins.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/css/cite.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/css/del.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/css/ins.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/css/popup.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/del.htm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/editor_plugin.js
@@ -1103,6 +1241,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/bs_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/ca_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/ch_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/cn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/cs_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/cy_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/da_dlg.js
@@ -1110,6 +1249,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/dv_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/el_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/eo_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/es_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/et_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/eu_dlg.js
@@ -1125,11 +1265,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/hy_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/ia_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/id_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/ii_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/is_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/it_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/ja_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/ka_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/kl_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/km_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/ko_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/lb_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/lt_dlg.js
@@ -1138,6 +1279,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/ml_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/mn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/ms_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/my_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/nb_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/nl_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/nn_dlg.js
@@ -1158,27 +1300,38 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/ta_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/te_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/th_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/tn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/tr_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/tt_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/tw_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/uk_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/ur_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/vi_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/zh_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/zh-cn_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/zh-tw_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/xhtmlxtras/langs/zu_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/about.htm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/anchor.htm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/charmap.htm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/color_picker.htm.pt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/css/about.css.dtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/css/color_picker.css.dtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/css/image.css.dtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/css/link.css.dtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/css/source_editor.css.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/css/about.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/css/color_picker.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/css/image.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/css/link.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/css/source_editor.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/editor_template.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/image.htm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/img/colorpicker.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/img/flash.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/img/icons.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/img/iframe.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/img/pagebreak.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/img/quicktime.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/img/realmedia.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/img/shockwave.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/img/trans.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/img/video.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/img/windowsmedia.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/js/about.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/js/anchor.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/js/charmap.js
@@ -1204,6 +1357,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/ca_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/ch.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/ch_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/cn.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/cn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/cs.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/cs_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/cy.js
@@ -1218,6 +1373,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/el_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/en.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/eo.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/eo_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/es.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/es_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/et.js
@@ -1248,8 +1405,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/ia_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/id.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/id_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/ii.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/ii_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/is.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/is_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/it.js
@@ -1258,6 +1413,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/ja_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/ka.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/ka_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/kl.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/kl_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/km.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/km_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/ko.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/ko_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/lb.js
@@ -1274,6 +1433,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/mn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/ms.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/ms_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/my.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/my_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/nb.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/nb_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/nl.js
@@ -1314,6 +1475,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/te_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/th.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/th_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/tn.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/tn_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/tr.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/tr_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/tt.js
@@ -1326,11 +1489,14 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/ur_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/vi.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/vi_dlg.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/zh.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/zh_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/zh-cn.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/zh-cn_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/zh-tw.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/zh-tw_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/zu.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/langs/zu_dlg.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/link.htm.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/shortcuts.htm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/skins/plone/content.css.dtml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/skins/plone/dialog.css.dtml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/skins/plone/img/buttons.png
@@ -1344,50 +1510,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/skins/plone/ui.css.dtml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/source_editor.htm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/tiny_mce.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/tiny_mce_init.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/tiny_mce_jquery.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/tiny_mce_plone3.css.dtml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/tiny_mce_popup.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/tiny_mce_src.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/tinymce_wysiwyg_support.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/utils/editable_selects.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/utils/form_utils.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/utils/mctabs.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/utils/validate.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/wysiwyg_support.pt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/base.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/base.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/base.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/sample.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_adapters.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_adapters.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_adapters.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_browser.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_browser.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_browser.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_controlpanel_form.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_controlpanel_form.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_controlpanel_form.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_exportimport.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_exportimport.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_exportimport.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_setuphandlers.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_setuphandlers.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_setuphandlers.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_transforms.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_transforms.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_transforms.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_upgrades.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_upgrades.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_upgrades.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_utility.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_utility.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_utility.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_wysiwyg_support.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_wysiwyg_support.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests/test_wysiwyg_support.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/transforms/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/transforms/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/transforms/__init__.pyo
@@ -1403,7 +1534,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/utility.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/utility.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/utility.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/utils/README.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/utils/compile-mo.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/utils/compile-mo.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/utils/compile-mo.pyo
@@ -1413,12 +1543,14 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/utils/wget-xml.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/utils/wget-xml.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/utils/wget-xml.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/vocabularies.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/vocabularies.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/vocabularies.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/__init__.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/utils
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/transforms
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/utils
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/skins/plone/img
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/themes/advanced/skins/plone
@@ -1452,35 +1584,28 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace/css
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/searchreplace
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/save
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/safari
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/print
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/preview/jscripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/preview
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonestyle
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/langs
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/js
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink/css
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonelink
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneinlinestyles
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/langs
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/js
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/img
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage/css
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/ploneimage
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/js
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/img
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser/css
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/plonebrowser
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/langs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/js
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste/css
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/paste
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/pagebreak/img
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/pagebreak/css
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/pagebreak
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/noneditable
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/nonbreaking
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/langs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/js
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/img
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media/css
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/media
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/lists
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/legacyoutput
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/layer
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/insertdatetime
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/inlinepopups/skins/plonepopup/img
@@ -1490,6 +1615,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/iespell
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/fullscreen/css
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/fullscreen
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/example_dependency
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/langs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/js
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/emotions/img
@@ -1499,8 +1625,11 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/definitionlist
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/contextmenu
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/bbcode
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/autosave/langs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/autosave
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/autoresize
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/autolink
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advlist
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/langs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/js
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/plugins/advhr/css
@@ -1512,8 +1641,13 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce/langs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins/tinymce
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/skins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/upgrade_to_profile_6
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/upgrade_to_profile_5
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/upgrade_12_to_13
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/upgrade_10_to_11
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/uninstall
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/testing/types
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/testing
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles/default
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/profiles
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/mimetypes
@@ -1523,8 +1657,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/zh_TW
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/zh_CN/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/zh_CN
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/zh/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/zh
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/vi/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/vi
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales/ur/LC_MESSAGES
@@ -1670,7 +1802,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/locales
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/interfaces
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/stylesheets
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/kss
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/interfaces
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser/images
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/TinyMCE/browser

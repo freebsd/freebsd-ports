@@ -34,9 +34,13 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlacelessTranslationService/load.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlacelessTranslationService/load.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlacelessTranslationService/locales/PlacelessTranslationService.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlacelessTranslationService/locales/cs/LC_MESSAGES/PlacelessTranslationService.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlacelessTranslationService/locales/cs/LC_MESSAGES/PlacelessTranslationService.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlacelessTranslationService/locales/de/LC_MESSAGES/PlacelessTranslationService.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlacelessTranslationService/locales/de/LC_MESSAGES/PlacelessTranslationService.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlacelessTranslationService/locales/el/LC_MESSAGES/PlacelessTranslationService.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlacelessTranslationService/locales/el/LC_MESSAGES/PlacelessTranslationService.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlacelessTranslationService/locales/pt_BR/LC_MESSAGES/PlacelessTranslationService.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlacelessTranslationService/locales/pt_BR/LC_MESSAGES/PlacelessTranslationService.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlacelessTranslationService/memoize.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlacelessTranslationService/memoize.pyc

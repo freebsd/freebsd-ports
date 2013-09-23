@@ -9,7 +9,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/sunburst/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/sunburst/README.rst
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/sunburst/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/sunburst/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/sunburst/__init__.pyo
@@ -25,6 +25,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/sunburst/browser/sunburstview.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/sunburst/configure.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/sunburst/profiles/default/actions.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/sunburst/profiles/default/cssregistry.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/sunburst/profiles/default/metadata.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/sunburst/profiles/default/skins.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/sunburst/profiles/default/sunburst.txt
@@ -51,6 +52,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/sunburst/skins/sunburst_styles/portlets.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/sunburst/skins/sunburst_styles/print.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/sunburst/skins/sunburst_styles/public.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/sunburst/skins/sunburst_styles/reset.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/sunburst/skins/sunburst_templates/main_template.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/sunburst/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/sunburst/tests/__init__.pyc

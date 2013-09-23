@@ -41,7 +41,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/linkintegrity/docs/testCircularReferences.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/linkintegrity/docs/testCircularReferencesWithHelper.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/linkintegrity/docs/testConfirmationPageIntegration.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/linkintegrity/docs/testCrossReferences.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/linkintegrity/docs/testFileRemoval.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/linkintegrity/docs/testFileRemovalException.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/linkintegrity/docs/testFileWithSpacesRemoval.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/linkintegrity/docs/testInterReferences.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/linkintegrity/docs/testMultipleFilesRemoval.txt

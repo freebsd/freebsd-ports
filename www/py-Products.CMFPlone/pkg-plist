@@ -121,11 +121,37 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/sitemap.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/sitemap.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/sitemap.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/adapters.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/adapters.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/adapters.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/configure.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/settings.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/settings.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/settings.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/templates/RSS.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/templates/atom.xml.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/templates/itunes.xml.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/templates/rss.xml.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/templates/search-rss.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/tool.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/tool.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/tool.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/views.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/views.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/views.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/templates/plone-addsite.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/templates/plone-frontpage.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/templates/plone-logged-out.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/templates/plone-overview.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/templates/plone-upgrade.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/templates/sitemap-item.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/templates/sitemap.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/catalog.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/configure.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/deprecated.zcml
@@ -221,6 +247,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/interfaces/structure.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/interfaces/structure.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/interfaces/structure.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/interfaces/syndication.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/interfaces/syndication.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/interfaces/syndication.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/interfaces/translationservice.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/interfaces/translationservice.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/interfaces/translationservice.pyo
@@ -284,7 +313,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/profiles/default/diff_tool.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/profiles/default/factorytool.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/profiles/default/jsregistry.xml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/profiles/default/kssregistry.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/profiles/default/mailhost.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/profiles/default/memberdata_properties.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/profiles/default/metadata.xml
@@ -330,7 +358,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/profiles/default/workflows/plone_workflow/definition.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/profiles/default/workflows/simple_publication_workflow/definition.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/profiles/dependencies/controlpanel.xml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/profiles/dependencies/jsregistry.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/profiles/dependencies/metadata.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/profiles/dependencies/plone-app-kss.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/profiles/dependencies/registry.xml
@@ -341,8 +368,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/setuphandlers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/setuphandlers.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/cmf_legacy/TitleOrId.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_3rdParty/ecmaunit-license.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_3rdParty/ecmaunit.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_3rdParty/event-registration.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_3rdParty/jscalendar/ChangeLog
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_3rdParty/jscalendar/README
@@ -501,7 +526,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_3rdParty/s5_print.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_3rdParty/s5_slides.css.dtml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_3rdParty/s5_slides.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_3rdParty/sarissa.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_content/author.cpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_content/author.cpt.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_content/discussionitem_view.pt
@@ -563,6 +587,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/bulletBig.gif.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/bullet_icon.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/bullet_icon.gif.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/canConstrainTypes.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/colophon_csstableless.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/colophon_csstableless.gif.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/colophon_sec508.gif
@@ -616,7 +641,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/fullscreenexpand_icon.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/fullscreenexpand_icon.gif.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/getSectionFromURL.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/global_defines.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/group.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/group.gif.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/htmlfilter_icon.gif
@@ -724,6 +748,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/shopping_cart.gif.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/site_icon.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/site_icon.gif.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/sitemap.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/sitemap_icon.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/sitemap_icon.gif.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/skins_icon.gif
@@ -770,9 +795,11 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/form_tabbing.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/formsubmithelpers.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/fullscreenmode.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/inline_validation.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/jquery-integration.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/jquery.highlightsearchterms.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/js-standards.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/kss-bbb.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/livesearch.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/login.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/mark_special_links.js
@@ -783,11 +810,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/select_all.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/styleswitcher.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/table_sorter.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/testBeforeUnload.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/testNodeutilities.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/test_ecmascripts.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/toc.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/unittestUtilities.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/unlockOnFormUnload.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/change_ownership.cpy
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/change_ownership.cpy.metadata
@@ -795,15 +818,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/content_status_modify.cpy.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/delete_confirmation.cpy
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/delete_confirmation.cpy.metadata
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/disableSyndication.cpy
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/disableSyndication.cpy.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/discussion_reply.cpy
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/document_edit.cpy
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/document_edit.cpy.metadata
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/editSynProperties.cpy
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/editSynProperties.cpy.metadata
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/enableSyndication.cpy
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/enableSyndication.cpy.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/event_edit.cpy
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/event_edit.cpy.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/file_edit.cpy
@@ -846,7 +863,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/validate_sendto.vpy
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/validate_site_feedback.vpy
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/validate_start_end_date.vpy
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/validate_synPropertiesForm.vpy
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/validate_talkback.vpy
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts/validate_title.vpy
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_forms/calendar_popup.pt
@@ -876,8 +892,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_forms/select_default_view.cpt.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_forms/sendto_form.cpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_forms/sendto_form.cpt.metadata
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_forms/synPropertiesForm.cpt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_forms/synPropertiesForm.cpt.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_forms/undo_form.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_forms/undo_form.pt.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_images/action_icon.png
@@ -944,6 +958,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_images/defaultUser.png.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_images/delete_icon.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_images/delete_icon.png.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_images/discussionitem_icon.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_images/discussionitem_icon.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_images/discussionitem_icon.png.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_images/document_icon.png
@@ -1081,10 +1096,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_images/xml.png.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_images/zope_icon.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_images/zope_icon.png.metadata
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_kss/kss_generic_macros.pt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_kss/plone.kss
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_kss/ploneKss.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_kss/plone_experimental.kss
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_login/external_login_return.cpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_login/external_login_return.cpt.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_login/failsafe_login_form.cpt
@@ -1142,7 +1153,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_scripts/add_ext_editor.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_scripts/author_find_content.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_scripts/browserDefault.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_scripts/canConstrainTypes.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_scripts/canSelectDefaultPage.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_scripts/check_id.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_scripts/check_id.py.metadata
@@ -1219,9 +1229,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_scripts/redirectToReferrer.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_scripts/returnNone.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_scripts/reverseList.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_scripts/rssAllowed.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_scripts/rssAllowed.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_scripts/rssAllowed.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_scripts/setAuthCookie.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_scripts/setAuthCookie.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_scripts/setAuthCookie.pyo
@@ -1246,15 +1253,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_styles/mobile.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_styles/navtree.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_styles/ploneCustom.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_styles/ploneKss.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_styles/portlets.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_styles/print.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_styles/public.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/RSS.pt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/RSS.pt.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/accessibility-info.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/accessibility-info.pt.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/author_feedback_template.pt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/batch_macros.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/calendar_macros.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/contact-info.cpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/contact-info.cpt.metadata
@@ -1263,28 +1267,27 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/events_listing.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/events_listing.pt.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/global_cache_settings.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/global_defines.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/global_statusmessage.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/index_html.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/index_html.pt.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/kss_generic_macros.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/main_template.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/recently_modified.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/recently_modified.pt.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/recently_published.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/recently_published.pt.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/robots.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/rss.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/rss_template.pt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/rss_template.pt.metadata
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/search_rss.pt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/search_rss.pt.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/send_feedback_confirm.cpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/sendto_template.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/site_feedback_template.pt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/sitemap.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/sitemap.pt.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/standard_error_message.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates/test_rendering.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_wysiwyg/wysiwyg_support.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/testing.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/testing.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/testing.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/AddMoveAndDeleteDocument.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/LoginAndLogout.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/PloneTestCase.py
@@ -1305,8 +1308,22 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/member_search.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/messages.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/redirection.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/robot/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/robot/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/robot/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/robot/common.robot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/robot/robot_setup.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/robot/robot_setup.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/robot/robot_setup.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/robot/test_actionmenu.robot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/robot/test_edit.robot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/robot/test_folder_contents.robot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/robot/test_livesearch.robot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/robot/test_overlays.robot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/robot/test_portlets.robot
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/scripts.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/search_form.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/sitemap.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testActionIconsTool.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testActionIconsTool.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testActionIconsTool.pyo
@@ -1457,15 +1474,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testSiteAdminRole.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testSiteAdminRole.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testSiteAdminRole.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testSkeleton.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testSkeleton.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testSkeleton.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testSortObjects.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testSortObjects.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testSortObjects.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testSyndicationTool.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testSyndicationTool.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testSyndicationTool.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testSyndication.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testSyndication.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testSyndication.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testTranslationServiceTool.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testTranslationServiceTool.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/testTranslationServiceTool.pyo
@@ -1496,18 +1510,16 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/test_mails.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/test_mails.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/test_mails.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/test_robot.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/test_robot.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/test_robot.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/test_upgrades1.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/test_upgrades2.zcml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/timeBreadCrumbs.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/timeBreadCrumbs.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/timeBreadCrumbs.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/translate.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/utils.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/webdav_index_html_put.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/zcheck.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/zcheck.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/zcheck.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tool.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/unicodeconflictresolver.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/unicodeconflictresolver.pyc
@@ -1515,7 +1527,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/utils.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/version.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/workflow.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/workflow.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/workflow.pyo
@@ -1531,6 +1542,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/__init__.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/www
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/robot
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_wysiwyg
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_templates
@@ -1538,7 +1550,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_prefs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_login
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_kss
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_images
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_forms
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_form_scripts
@@ -1567,6 +1578,8 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/exportimport/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/exportimport
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser/syndication
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/browser
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/UnicodeSplitter
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone

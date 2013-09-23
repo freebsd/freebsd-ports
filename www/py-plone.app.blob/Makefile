@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.app.blob
-PORTVERSION=	1.5.7
+PORTVERSION=	1.5.8
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,4 +23,5 @@ USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

@@ -95,6 +95,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlonePAS/plugins/local_role.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlonePAS/plugins/local_role.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlonePAS/plugins/local_role.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlonePAS/plugins/passwordpolicy.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlonePAS/plugins/passwordpolicy.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlonePAS/plugins/passwordpolicy.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlonePAS/plugins/property.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlonePAS/plugins/property.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlonePAS/plugins/property.pyo
@@ -191,6 +194,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlonePAS/zmi/GroupManagerForm.dtml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlonePAS/zmi/LocalRolesManagerForm.dtml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlonePAS/zmi/MutablePropertyProviderForm.dtml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlonePAS/zmi/PasswordPolicyForm.zpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlonePAS/zmi/PloneUserFactoryForm.dtml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlonePAS/zmi/UserManagerForm.dtml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PlonePAS/zmi/membershipRolemapping.dtml
