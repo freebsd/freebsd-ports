@@ -19,24 +19,16 @@ USE_LDCONFIG=	yes
 USES=		iconv
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
-TXT_DOCS=	how-fuse-works \
+PORTDOCS=	how-fuse-works \
 		kernel.txt
 
-MAN1=	fusermount.1 \
-	ulockmgr_server.1
-MAN8=	mount.fuse.8
-
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/include/fuse_kernel.h ${PREFIX}/include/fuse
+	${INSTALL_DATA} ${WRKSRC}/include/fuse_kernel.h ${STAGEDIR}${PREFIX}/include/fuse
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/libs
-.for i in ${TXT_DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/$i ${DOCSDIR}/libs
-.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/libs
+	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/libs
 .endif
 
 
