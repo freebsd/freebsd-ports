@@ -1,3 +1,6 @@
+===>  Switching to root credentials to create /var/db/ports/multimedia_libdv
+===>  Returning to user credentials
+===> Options unchanged
 bin/dubdv
 bin/dvconnect
 bin/encodedv
@@ -8,4 +11,7 @@ lib/libdv.la
 lib/libdv.so
 lib/libdv.so.4
 libdata/pkgconfig/libdv.pc
+man/man1/dubdv.1.gz
+man/man1/dvconnect.1.gz
+man/man1/encodedv.1.gz
 @dirrm include/libdv
