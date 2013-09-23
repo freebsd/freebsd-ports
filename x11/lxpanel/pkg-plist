@@ -7,6 +7,8 @@ lib/lxpanel/plugins/kbled.so
 lib/lxpanel/plugins/volume.so
 lib/lxpanel/plugins/xkb.so
 libdata/pkgconfig/lxpanel.pc
+man/man1/lxpanel.1
+man/man1/lxpanelctl.1
 %%NLS%%share/locale/af/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/be/LC_MESSAGES/lxpanel.mo

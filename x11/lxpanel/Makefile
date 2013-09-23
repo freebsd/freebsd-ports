@@ -30,11 +30,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 CFLAGS+=	-I${WRKSRC} -Wno-return-type
 USE_CSTD=	gnu89
 
-MAN1=		lxpanel.1 lxpanelctl.1
-
 PORTDOCS=	AUTHORS README
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALSA}
@@ -63,8 +60,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
