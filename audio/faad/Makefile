@@ -21,8 +21,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 USE_LDCONFIG=	yes
 
-MAN1=		faad.1
-
 post-extract:
 	@${LN} -sf faad.man ${WRKSRC}/frontend/faad.1
 
