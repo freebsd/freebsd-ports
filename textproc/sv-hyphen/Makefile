@@ -22,10 +22,9 @@ PLIST_FILES=	%%DATADIR%%/hyph_sv_FI.dic \
 		%%DATADIR%%/hyph_sv_SE.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/hyph_sv_SE.dic ${DATADIR}/
-	${LN} -s hyph_sv_SE.dic ${DATADIR}/hyph_sv_FI.dic
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/hyph_sv_SE.dic ${STAGEDIR}${DATADIR}/
+	${LN} -s hyph_sv_SE.dic ${STAGEDIR}${DATADIR}/hyph_sv_FI.dic
 
 .include <bsd.port.mk>

@@ -21,9 +21,8 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	%%DATADIR%%/hyph_nl_NL.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/hyph_nl_NL.dic ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/hyph_nl_NL.dic ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

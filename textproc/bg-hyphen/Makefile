@@ -21,9 +21,8 @@ NO_BUILD=	yes
 PLIST_FILES=	%%DATADIR%%/hyph_bg_BG.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/hyph_bg_BG.dic ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/hyph_bg_BG.dic ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

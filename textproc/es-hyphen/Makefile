@@ -25,12 +25,11 @@ ESALIASES=	es_AR es_BO es_CL es_CO es_CR es_CU es_DO es_EC es_GT es_HN \
 PLIST_FILES+=	%%DATADIR%%/hyph_${ALIAS}.dic
 .endfor
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/hyph_es_ES.dic ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/hyph_es_ES.dic ${STAGEDIR}${DATADIR}/
 .for ALIAS in ${ESALIASES}
-	${LN} -s hyph_es_ES.dic ${DATADIR}/hyph_${ALIAS}.dic
+	${LN} -s hyph_es_ES.dic ${STAGEDIR}${DATADIR}/hyph_${ALIAS}.dic
 .endfor
 
 .include <bsd.port.mk>
