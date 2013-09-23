@@ -22,12 +22,11 @@ FRALIASES=	fr_FR fr_BE fr_CA fr_CH fr_LU
 PLIST_FILES+=	%%DATADIR%%/hyph_${ALIAS}.dic
 .endfor
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/hyph_fr.dic ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/hyph_fr.dic ${STAGEDIR}${DATADIR}/
 .for ALIAS in ${FRALIASES}
-	${LN} -s hyph_fr.dic ${DATADIR}/hyph_${ALIAS}.dic
+	${LN} -s hyph_fr.dic ${STAGEDIR}${DATADIR}/hyph_${ALIAS}.dic
 .endfor
 
 .include <bsd.port.mk>
