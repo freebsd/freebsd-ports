@@ -1,4 +1,5 @@
 bin/ddd
+man/man1/ddd.1.gz
 share/applications/ddd.desktop
 share/ddd-%%VERSION%%/COPYING
 share/ddd-%%VERSION%%/NEWS
