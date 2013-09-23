@@ -40,7 +40,7 @@ sbin/zabbix_%%ZABBIX_BUILD%%
 %%JAVAGW%%%%ZABBIX_JAVA%%/lib/slf4j-api-1.6.1.jar
 %%JAVAGW%%%%ZABBIX_JAVA%%/settings.sh
 %%JAVAGW%%%%ZABBIX_JAVA%%/startup.sh
-%%JAVAGW%%%%ZABBIX_JAVA%%/bin/zabbix-java-gateway-2.0.4.jar
+%%JAVAGW%%%%ZABBIX_JAVA%%/bin/zabbix-java-gateway-%%PORTVERSION%%.jar
 %%JAVAGW%%@dirrmtry %%ZABBIX_JAVA%%/lib
 %%JAVAGW%%@dirrmtry %%ZABBIX_JAVA%%/bin
 %%JAVAGW%%@dirrmtry %%ZABBIX_JAVA%%
