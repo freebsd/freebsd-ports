@@ -1463,7 +1463,6 @@
     SUBDIR += py-Products.CMFPlone
     SUBDIR += py-Products.PloneLDAP
     SUBDIR += py-Products.TinyMCE
-    SUBDIR += py-Products.kupu
     SUBDIR += py-WebError
     SUBDIR += py-WebFlash
     SUBDIR += py-WebTest
@@ -1579,7 +1578,6 @@
     SUBDIR += py-plone.app.iterate
     SUBDIR += py-plone.app.jquery
     SUBDIR += py-plone.app.jquerytools
-    SUBDIR += py-plone.app.kss
     SUBDIR += py-plone.app.layout
     SUBDIR += py-plone.app.ldap
     SUBDIR += py-plone.app.linkintegrity
