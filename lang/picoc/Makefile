@@ -25,6 +25,6 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/picoc ${PREFIX}/bin/picoc
+	${INSTALL_PROGRAM} ${WRKSRC}/picoc ${STAGEDIR}${PREFIX}/bin/picoc
 
 .include <bsd.port.mk>
