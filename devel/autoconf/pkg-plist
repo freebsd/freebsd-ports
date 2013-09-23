@@ -5,6 +5,15 @@ bin/autoreconf-%%BUILD_VERSION%%
 bin/autoscan-%%BUILD_VERSION%%
 bin/autoupdate-%%BUILD_VERSION%%
 bin/ifnames-%%BUILD_VERSION%%
+man/man1/autoconf-2.69.1.gz
+man/man1/autoheader-2.69.1.gz
+man/man1/autom4te-2.69.1.gz
+man/man1/autoreconf-2.69.1.gz
+man/man1/autoscan-2.69.1.gz
+man/man1/autoupdate-2.69.1.gz
+man/man1/config.guess-2.69.1.gz
+man/man1/config.sub-2.69.1.gz
+man/man1/ifnames-2.69.1.gz
 share/autoconf-%%BUILD_VERSION%%/Autom4te/C4che.pm
 share/autoconf-%%BUILD_VERSION%%/Autom4te/ChannelDefs.pm
 share/autoconf-%%BUILD_VERSION%%/Autom4te/Channels.pm
