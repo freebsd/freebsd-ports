@@ -18,8 +18,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.event>=0:${PORTSDIR}/devel/py-zope.even
 		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz
 
 USES=		gettext
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=	yes
+USE_PYDISTUTILS=easy_install
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

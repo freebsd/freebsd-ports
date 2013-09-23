@@ -28,9 +28,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.locking>=0:${PORTSDIR}/www/py-plone.lo
 
 DIST_SUBDIR=	zope
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 USE_ZOPE=	yes
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

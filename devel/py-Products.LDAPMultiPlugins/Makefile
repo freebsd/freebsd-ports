@@ -18,7 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap2>=2.0.6:${PORTSDIR}/net/py-ldap2 \
 
 DIST_SUBDIR=	zope
 USE_PYTHON=	-2.7
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

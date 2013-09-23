@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.schema>0:${PORTSDIR}/devel/py-zope.sche
 
 DIST_SUBDIR=	zope
 USE_PYTHON=	-2.7
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
 NO_STAGE=	yes

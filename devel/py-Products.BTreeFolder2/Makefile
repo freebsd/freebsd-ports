@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
-COMMENT=	A BTree based implementation for Zope 2's OFS
+COMMENT=	BTree based implementation for Zope 2's OFS
 
 LICENSE=	ZPL21
 
@@ -25,4 +25,5 @@ USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

@@ -23,7 +23,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0.5:${PORTSDIR}/textproc/py-docuti
 
 DIST_SUBDIR=	zope
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

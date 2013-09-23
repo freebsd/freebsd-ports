@@ -11,10 +11,11 @@ DISTNAME=	zc.lockfile-${PORTVERSION}
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Basic inter-process locks
 
-USE_ZIP=		yes
-USE_PYTHON=		2.5+
-USE_PYDISTUTILS=	easy_install
+USE_ZIP=	yes
+USE_PYTHON=	yes
+USE_PYDISTUTILS=easy_install
 PYDISTUTILS_PKGNAME=	zc.lockfile
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

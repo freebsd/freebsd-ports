@@ -15,8 +15,9 @@ LICENSE=	ZPL21
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.interface
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

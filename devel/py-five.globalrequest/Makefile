@@ -15,8 +15,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.globalrequest>=0:${PORTSDIR}/devel/py-z
 
 DIST_SUBDIR=	zope
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
 #USE_ZOPE=	yes
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

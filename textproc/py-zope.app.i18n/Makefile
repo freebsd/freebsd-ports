@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.publisher>=3.9:${PORTSDIR}/devel/py-zop
 
 DIST_SUBDIR=	zope
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
 NO_STAGE=	yes
 
 .include <bsd.port.mk>

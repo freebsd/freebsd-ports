@@ -17,8 +17,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}webob>=0:${PORTSDIR}/www/py-webob
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>
