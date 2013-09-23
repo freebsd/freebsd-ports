@@ -1,5 +1,9 @@
 bin/aclocal-%%BUILD_VERSION%%
 bin/automake-%%BUILD_VERSION%%
+man/man1/aclocal-1.14-1.14.1.gz
+man/man1/aclocal-1.14.1.gz
+man/man1/automake-1.14-1.14.1.gz
+man/man1/automake-1.14.1.gz
 share/aclocal-%%BUILD_VERSION%%/amversion.m4
 share/aclocal-%%BUILD_VERSION%%/ar-lib.m4
 share/aclocal-%%BUILD_VERSION%%/as.m4
