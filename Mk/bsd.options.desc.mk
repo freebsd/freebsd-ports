@@ -471,4 +471,5 @@ XVIDEO_DESC?=		X11 Video extension library support
 XVMC_DESC?=		X11 XvMC video extension support
 YAML_DESC?=		YAML format or parser support
 ZLIB_DESC?=		zlib compression support
+ZOPE_DESC?=		Zope support
 ZSH_DESC?=		Install programmable completions for zsh
