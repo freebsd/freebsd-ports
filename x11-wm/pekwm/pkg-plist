@@ -1,16 +1,6 @@
-bin/pekwm
-%%ETCDIR%%/autoproperties
-%%ETCDIR%%/autoproperties_typerules
-%%ETCDIR%%/config
-%%ETCDIR%%/keys
-%%ETCDIR%%/menu
-%%ETCDIR%%/mouse
-%%ETCDIR%%/start
-%%ETCDIR%%/vars
-%%ETCDIR%%/config_system
-%%ETCDIR%%/mouse_click
-%%ETCDIR%%/mouse_sloppy
-%%ETCDIR%%/mouse_system
+%%DATADIR%%/scripts/pekwm_screenshot.sh
+%%DATADIR%%/scripts/pekwm_themeset.sh
+%%DATADIR%%/scripts/pekwm_ws_menu.sh
 %%DATADIR%%/themes/default-plain/theme
 %%DATADIR%%/themes/default/arrow.png
 %%DATADIR%%/themes/default/arrow_focus.png
@@ -44,12 +34,23 @@ bin/pekwm
 %%DATADIR%%/themes/default/top-left_unfocus.png
 %%DATADIR%%/themes/default/top-right.png
 %%DATADIR%%/themes/default/top-right_unfocus.png
-%%DATADIR%%/scripts/pekwm_screenshot.sh
-%%DATADIR%%/scripts/pekwm_ws_menu.sh
-%%DATADIR%%/scripts/pekwm_themeset.sh
-@dirrm %%DATADIR%%/scripts
+bin/pekwm
+%%ETCDIR%%/autoproperties
+%%ETCDIR%%/autoproperties_typerules
+%%ETCDIR%%/config
+%%ETCDIR%%/config_system
+%%ETCDIR%%/keys
+%%ETCDIR%%/menu
+%%ETCDIR%%/mouse
+%%ETCDIR%%/mouse_click
+%%ETCDIR%%/mouse_sloppy
+%%ETCDIR%%/mouse_system
+%%ETCDIR%%/start
+%%ETCDIR%%/vars
+man/man1/pekwm.1.gz
 @dirrm %%DATADIR%%/themes/default-plain
 @dirrm %%DATADIR%%/themes/default
 @dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%
 @dirrm %%ETCDIR%%
