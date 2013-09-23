@@ -12,15 +12,15 @@ COMMENT=	Tools for importing and exporting WordPerfect(tm) documents
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
+USES=		pathfix
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack libgsf
+USE_GNOME=	libgsf
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--without-docs
 PLIST_SUB=	MAJVER=${PORTVERSION:R}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| docs||' ${WRKSRC}/Makefile.in
 
