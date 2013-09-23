@@ -2,7 +2,7 @@
 
 PORTNAME=	c-nocem
 PORTVERSION=	3.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	news security
 MASTER_SITES=	http://sites.inka.de/~bigred/sw/ \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
