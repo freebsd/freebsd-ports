@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.supermodel
-PORTVERSION=	1.1.4
+PORTVERSION=	1.2.3
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,11 +21,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.component>=0:${PORTSDIR}/devel/py-zope.
 
 DIST_SUBDIR=	zope
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
 NO_STAGE=	yes
-post-patch:
-	@${FIND} ${WRKSRC} -type f -name "*.orig" -delete
 
 .include <bsd.port.mk>

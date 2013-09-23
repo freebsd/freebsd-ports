@@ -66,6 +66,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFDiffTool/libs/htmldiff.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFDiffTool/libs/htmldiff.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFDiffTool/locales/cmfdifftool.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFDiffTool/locales/pt_BR/LC_MESSAGES/collective.dexteritydiff.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFDiffTool/locales/pt_BR/LC_MESSAGES/collective.dexteritydiff.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFDiffTool/namedfile.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFDiffTool/namedfile.pyc

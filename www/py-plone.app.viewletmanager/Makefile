@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.app.viewletmanager
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,4 +28,5 @@ USE_ZIP=	yes
 #USE_ZOPE=	yes
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

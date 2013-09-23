@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Products.PlacelessTranslationService
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,8 +26,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gettext>=0.6:${PORTSDIR}/textproc/py-gettext
 
 DIST_SUBDIR=	zope
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

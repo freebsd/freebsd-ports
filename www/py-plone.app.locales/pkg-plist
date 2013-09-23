@@ -41,6 +41,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/pt_BR/LC_MESSAGES/plone.app.caching.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/pt_BR/LC_MESSAGES/plone.app.ldap.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/pt_BR/LC_MESSAGES/plone.app.ldap.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/ru/LC_MESSAGES/plone.app.caching.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/ru/LC_MESSAGES/plone.app.caching.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/ru/LC_MESSAGES/plone.app.ldap.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/ru/LC_MESSAGES/plone.app.ldap.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/uk/LC_MESSAGES/plone.app.caching.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/uk/LC_MESSAGES/plone.app.caching.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/uk/LC_MESSAGES/plone.app.ldap.mo
@@ -49,6 +53,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/zh_CN/LC_MESSAGES/plone.app.caching.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/zh_CN/LC_MESSAGES/plone.app.ldap.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/zh_CN/LC_MESSAGES/plone.app.ldap.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-future/ru/LC_MESSAGES/plone.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-future/ru/LC_MESSAGES/plone.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES/atcontenttypes.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES/atcontenttypes.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES/atreferencebrowserwidget.mo
@@ -1190,10 +1196,15 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/ar
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales/af
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-future/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-future/ru
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-future
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/zh_CN/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/zh_CN
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/uk/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/uk
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/ru
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/pt_BR/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/pt_BR
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/locales/locales-addons/ja/LC_MESSAGES

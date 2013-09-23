@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Products.CMFPlone
-PORTVERSION=	4.2.5
+PORTVERSION=	4.3.2
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,9 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisition \
 		${PYTHON_PKGNAMEPREFIX}DateTime>=0:${PORTSDIR}/devel/py-DateTime \
 		${PYTHON_PKGNAMEPREFIX}ExtensionClass>=0:${PORTSDIR}/devel/py-ExtensionClass \
-		${PYTHON_PKGNAMEPREFIX}Products.Archetypes>=0:${PORTSDIR}/devel/py-Products.Archetypes \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}Products.ATContentTypes>=2.1.3:${PORTSDIR}/devel/py-Products.ATContentTypes \
+		${PYTHON_PKGNAMEPREFIX}Products.Archetypes>=0:${PORTSDIR}/devel/py-Products.Archetypes \
 		${PYTHON_PKGNAMEPREFIX}Products.CMFActionIcons>=0:${PORTSDIR}/devel/py-Products.CMFActionIcons \
 		${PYTHON_PKGNAMEPREFIX}Products.CMFCalendar>=0:${PORTSDIR}/devel/py-Products.CMFCalendar \
 		${PYTHON_PKGNAMEPREFIX}Products.CMFCore>=0:${PORTSDIR}/devel/py-Products.CMFCore \
@@ -39,21 +40,19 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisit
 		${PYTHON_PKGNAMEPREFIX}Products.PluginRegistry>=0:${PORTSDIR}/devel/py-Products.PluginRegistry \
 		${PYTHON_PKGNAMEPREFIX}Products.PortalTransforms>=0:${PORTSDIR}/devel/py-Products.PortalTransforms \
 		${PYTHON_PKGNAMEPREFIX}Products.ResourceRegistries>=0:${PORTSDIR}/devel/py-Products.ResourceRegistries \
-		${PYTHON_PKGNAMEPREFIX}Products.statusmessages>=0:${PORTSDIR}/devel/py-Products.statusmessages \
 		${PYTHON_PKGNAMEPREFIX}Products.TinyMCE>=0:${PORTSDIR}/www/py-Products.TinyMCE \
+		${PYTHON_PKGNAMEPREFIX}Products.statusmessages>=0:${PORTSDIR}/devel/py-Products.statusmessages \
 		zodb${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/databases/zodb3 \
-		${PYTHON_PKGNAMEPREFIX}archetypes.kss>=0:${PORTSDIR}/devel/py-archetypes.kss \
 		${PYTHON_PKGNAMEPREFIX}archetypes.querywidget>0:${PORTSDIR}/devel/py-archetypes.querywidget \
 		${PYTHON_PKGNAMEPREFIX}archetypes.referencebrowserwidget>=0:${PORTSDIR}/devel/py-archetypes.referencebrowserwidget \
 		${PYTHON_PKGNAMEPREFIX}borg.localrole>=0:${PORTSDIR}/security/py-borg.localrole \
-		${PYTHON_PKGNAMEPREFIX}five.localsitemanager>=0:${PORTSDIR}/devel/py-five.localsitemanager \
 		${PYTHON_PKGNAMEPREFIX}five.customerize>=0:${PORTSDIR}/devel/py-five.customerize \
-		${PYTHON_PKGNAMEPREFIX}kss-core>=0:${PORTSDIR}/devel/py-kss-core \
+		${PYTHON_PKGNAMEPREFIX}five.localsitemanager>=0:${PORTSDIR}/devel/py-five.localsitemanager \
 		${PYTHON_PKGNAMEPREFIX}plone.app.blob>=0:${PORTSDIR}/www/py-plone.app.blob \
 		${PYTHON_PKGNAMEPREFIX}plone.app.collection>0:${PORTSDIR}/www/py-plone.app.collection \
-		${PYTHON_PKGNAMEPREFIX}plone.app.contentmenu>=1.1.6:${PORTSDIR}/www/py-plone.app.contentmenu \
 		${PYTHON_PKGNAMEPREFIX}plone.app.content>=0:${PORTSDIR}/www/py-plone.app.content \
 		${PYTHON_PKGNAMEPREFIX}plone.app.contentlisting>0:${PORTSDIR}/www/py-plone.app.contentlisting \
+		${PYTHON_PKGNAMEPREFIX}plone.app.contentmenu>=1.1.6:${PORTSDIR}/www/py-plone.app.contentmenu \
 		${PYTHON_PKGNAMEPREFIX}plone.app.contentrules>=0:${PORTSDIR}/www/py-plone.app.contentrules \
 		${PYTHON_PKGNAMEPREFIX}plone.app.controlpanel>=0:${PORTSDIR}/www/py-plone.app.controlpanel \
 		${PYTHON_PKGNAMEPREFIX}plone.app.customerize>=0:${PORTSDIR}/www/py-plone.app.customerize \
@@ -63,7 +62,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisit
 		${PYTHON_PKGNAMEPREFIX}plone.app.i18n>=0:${PORTSDIR}/www/py-plone.app.i18n \
 		${PYTHON_PKGNAMEPREFIX}plone.app.jquery>0:${PORTSDIR}/www/py-plone.app.jquery \
 		${PYTHON_PKGNAMEPREFIX}plone.app.jquerytools>=0:${PORTSDIR}/www/py-plone.app.jquerytools \
-		${PYTHON_PKGNAMEPREFIX}plone.app.kss>=0:${PORTSDIR}/www/py-plone.app.kss \
 		${PYTHON_PKGNAMEPREFIX}plone.app.layout>=1.1.7:${PORTSDIR}/www/py-plone.app.layout \
 		${PYTHON_PKGNAMEPREFIX}plone.app.linkintegrity>=1.0.3:${PORTSDIR}/www/py-plone.app.linkintegrity \
 		${PYTHON_PKGNAMEPREFIX}plone.app.locales>=0:${PORTSDIR}/www/py-plone.app.locales \
@@ -71,12 +69,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisit
 		${PYTHON_PKGNAMEPREFIX}plone.app.redirector>=0:${PORTSDIR}/www/py-plone.app.redirector \
 		${PYTHON_PKGNAMEPREFIX}plone.app.registry>=0:${PORTSDIR}/www/py-plone.app.registry \
 		${PYTHON_PKGNAMEPREFIX}plone.app.search>0:${PORTSDIR}/www/py-plone.app.search \
-		${PYTHON_PKGNAMEPREFIX}plone.app.users>=0:${PORTSDIR}/www/py-plone.app.users \
 		${PYTHON_PKGNAMEPREFIX}plone.app.upgrade>=0:${PORTSDIR}/www/py-plone.app.upgrade \
+		${PYTHON_PKGNAMEPREFIX}plone.app.users>=0:${PORTSDIR}/www/py-plone.app.users \
 		${PYTHON_PKGNAMEPREFIX}plone.app.uuid>=0:${PORTSDIR}/www/py-plone.app.uuid \
 		${PYTHON_PKGNAMEPREFIX}plone.app.viewletmanager>=0:${PORTSDIR}/www/py-plone.app.viewletmanager \
 		${PYTHON_PKGNAMEPREFIX}plone.app.vocabularies>=0:${PORTSDIR}/www/py-plone.app.vocabularies \
 		${PYTHON_PKGNAMEPREFIX}plone.app.workflow>=0:${PORTSDIR}/www/py-plone.app.workflow \
+		${PYTHON_PKGNAMEPREFIX}plone.batching>0:${PORTSDIR}/www/py-plone.batching \
 		${PYTHON_PKGNAMEPREFIX}plone.browserlayer>=1.0rc4:${PORTSDIR}/www/py-plone.browserlayer \
 		${PYTHON_PKGNAMEPREFIX}plone.contentrules>=0:${PORTSDIR}/www/py-plone.contentrules \
 		${PYTHON_PKGNAMEPREFIX}plone.fieldsets>=0:${PORTSDIR}/www/py-plone.fieldsets \
@@ -85,13 +84,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisit
 		${PYTHON_PKGNAMEPREFIX}plone.intelligenttext>=0:${PORTSDIR}/www/py-plone.intelligenttext \
 		${PYTHON_PKGNAMEPREFIX}plone.locking>=0:${PORTSDIR}/www/py-plone.locking \
 		${PYTHON_PKGNAMEPREFIX}plone.memoize>=0:${PORTSDIR}/www/py-plone.memoize \
+		${PYTHON_PKGNAMEPREFIX}plone.portlet.collection>=0:${PORTSDIR}/www/py-plone.portlet.collection \
+		${PYTHON_PKGNAMEPREFIX}plone.portlet.static>=0:${PORTSDIR}/www/py-plone.portlet.static \
 		${PYTHON_PKGNAMEPREFIX}plone.portlets>=0:${PORTSDIR}/www/py-plone.portlets \
 		${PYTHON_PKGNAMEPREFIX}plone.protect>1.0:${PORTSDIR}/security/py-plone.protect \
 		${PYTHON_PKGNAMEPREFIX}plone.registry>=0:${PORTSDIR}/www/py-plone.registry \
 		${PYTHON_PKGNAMEPREFIX}plone.session>=0:${PORTSDIR}/security/py-plone.session \
 		${PYTHON_PKGNAMEPREFIX}plone.theme>=0:${PORTSDIR}/www/py-plone.theme \
-		${PYTHON_PKGNAMEPREFIX}plone.portlet.collection>=0:${PORTSDIR}/www/py-plone.portlet.collection \
-		${PYTHON_PKGNAMEPREFIX}plone.portlet.static>=0:${PORTSDIR}/www/py-plone.portlet.static \
 		${PYTHON_PKGNAMEPREFIX}plonetheme.classic>=0:${PORTSDIR}/www/py-plonetheme.classic \
 		${PYTHON_PKGNAMEPREFIX}plonetheme.sunburst>=0:${PORTSDIR}/www/py-plonetheme.sunburst \
 		${PYTHON_PKGNAMEPREFIX}transaction>=0:${PORTSDIR}/devel/py-transaction \
@@ -113,16 +112,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisit
 		${PYTHON_PKGNAMEPREFIX}zope.structuredtext>=0:${PORTSDIR}/textproc/py-zope.structuredtext \
 		${PYTHON_PKGNAMEPREFIX}zope.tal>=0:${PORTSDIR}/textproc/py-zope.tal \
 		${PYTHON_PKGNAMEPREFIX}zope.tales>=0:${PORTSDIR}/devel/py-zope.tales \
-		${PYTHON_PKGNAMEPREFIX}zope.traversing>=0:${PORTSDIR}/devel/py-zope.traversing \
-		${PYTHON_PKGNAMEPREFIX}zope.copypastemove>0:${PORTSDIR}/devel/py-zope.copypastemove \
-		${PYTHON_PKGNAMEPREFIX}zope.app.component>0:${PORTSDIR}/devel/py-zope.app.component \
-		${PYTHON_PKGNAMEPREFIX}zope.app.container>0:${PORTSDIR}/devel/py-zope.app.container \
-		${PYTHON_PKGNAMEPREFIX}zope.app.publisher>0:${PORTSDIR}/devel/py-zope.app.publisher
+		${PYTHON_PKGNAMEPREFIX}zope.traversing>=0:${PORTSDIR}/devel/py-zope.traversing
 
 DIST_SUBDIR=	zope
 USE_PYTHON=	-2.7
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

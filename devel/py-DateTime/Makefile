@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime
-PORTVERSION=	3.0
+PORTVERSION=	3.0.3
 PORTEPOCH=	1
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
@@ -21,4 +21,5 @@ USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

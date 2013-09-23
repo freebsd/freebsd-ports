@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.app.search
-PORTVERSION=	1.0.8
+PORTVERSION=	1.1.5
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,4 +19,5 @@ USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

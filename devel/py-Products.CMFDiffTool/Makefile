@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Products.CMFDiffTool
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,9 +18,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.
 
 DIST_SUBDIR=	zope
 USE_PYTHON=	-2.7
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 #USE_ZOPE=	yes
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

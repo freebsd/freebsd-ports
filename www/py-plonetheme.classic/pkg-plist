@@ -65,6 +65,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/print.css.dtml.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/public.css.dtml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles/public.css.dtml.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_templates/main_template.pt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_styles
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins/classic_ecmascript
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/skins
