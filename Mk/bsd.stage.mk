@@ -82,12 +82,12 @@ makeplist: stage
 			[ -z "$${a}" ] && break ; \
 			${ECHO_CMD} $${a} >> ${WRKDIR}/.mtree ; \
 		done
-	@${FIND} ${STAGEDIR} -type f -o -type l | sort | ${SED} -e "s,${STAGEDIR},,g" \
+	@${FIND} ${STAGEDIR} -type f -o -type l | ${SORT} | ${SED} -e "s,${STAGEDIR},,g" \
 		-e "s,${DOCSDIR},%%PORTDOCS%%%%DOCSDIR%%,g" \
 		-e "s,${EXAMPLESDIR},%%PORTEXAMPLES%%%%EXAMPLESDIR%%,g" \
 		-e "s,${DATADIR},%%DATADIR%%,g" \
-		-e "s,${PREFIX}/,,g" | grep -v "^share/licenses" || ${TRUE}
-	@${FIND} ${STAGEDIR} -type d | sed -e "s,${STAGEDIR},,g" \
+		-e "s,${PREFIX}/,,g" | ${GREP} -v "^share/licenses" || ${TRUE}
+	@${FIND} ${STAGEDIR} -type d | ${SED} -e "s,${STAGEDIR},,g" \
 		| while read line; do \
 		${GREP} -qw "^$${line}$$" ${WRKDIR}/.mtree || { \
 			[ -n "$${line}" ] && ${ECHO_CMD} "@dirrmtry $${line}"; \
@@ -96,5 +96,5 @@ makeplist: stage
 		-e "s,\(.*\)${DOCSDIR},%%PORTDOCS%%\1%%DOCSDIR%%,g" \
 		-e "s,\(.*\)${EXAMPLESDIR},%%PORTEXAMPLES%%\1%%EXAMPLESDIR%%,g" \
 		-e "s,${DATADIR},%%DATADIR%%,g" \
-		-e "s,${PREFIX}/,,g" | grep -v "^@dirrmtry share/licenses" || ${TRUE}
+		-e "s,${PREFIX}/,,g" | ${GREP} -v "^@dirrmtry share/licenses" || ${TRUE}
 .endif
