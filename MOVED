@@ -4947,3 +4947,4 @@ devel/ptlib26|devel/ptlib|2013-09-20|Removed old version, update to new version 
 net/opal3|net/opal|2013-09-20|Removed old version, update to new version and moved port
 net/ekiga|net-im/ekiga|2013-09-20|Removed old version, update to new version and moved port
 net/ekiga3|net-im/ekiga|2013-09-20|Removed old version, update to new version and moved port
+devel/py-elementtree||2013-09-23|ElementTree is a part of standard library since Python 2.5
