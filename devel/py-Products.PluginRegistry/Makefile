@@ -16,8 +16,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.GenericSetup>=0:${PORTSDIR}/devel/p
 
 DIST_SUBDIR=	zope
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
 #USE_ZOPE=	yes
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

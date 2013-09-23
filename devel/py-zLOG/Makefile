@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
-COMMENT=	A general logging facility
+COMMENT=	General logging facility
 
 LICENSE=	ZPL21
 
@@ -18,4 +18,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

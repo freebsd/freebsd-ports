@@ -17,9 +17,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.keyring>1.0:${PORTSDIR}/security/py-pl
 
 DIST_SUBDIR=	zope
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 #USE_ZOPE=	yes
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

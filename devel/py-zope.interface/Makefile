@@ -13,10 +13,11 @@ COMMENT=	Interfaces for Python
 LICENSE=	ZPL21
 
 # Python 3 ready
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_NOEGGINFO=	yes
 PYEASYINSTALL_ARCHDEP=	yes
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

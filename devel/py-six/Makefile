@@ -13,13 +13,14 @@ COMMENT=	Python 2 and 3 compatibility utilities
 LICENSE=	MIT
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/six.py \
 		%%PYTHON_SITELIBDIR%%/six.pyc \
 		%%PYTHON_SITELIBDIR%%/six.pyo
 
 NO_STAGE=	yes
+
 .include <bsd.port.pre.mk>
 
 post-install:

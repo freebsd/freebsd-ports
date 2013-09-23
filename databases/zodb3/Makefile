@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-py${PYTHON_SUFFIX}
 DISTNAME=	ZODB3-${PORTVERSION}
 
 MAINTAINER=	zope@FreeBSD.org
-COMMENT=	The Z - Object Database for python
+COMMENT=	Z - Object Database for python
 
 LICENSE=	ZPL21
 
@@ -20,10 +20,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zconfig>=0:${PORTSDIR}/devel/py-zconfig \
 		${PYTHON_PKGNAMEPREFIX}zclockfile>=1.0.0:${PORTSDIR}/devel/py-zclockfile \
 		${PYTHON_PKGNAMEPREFIX}zope.event>=1.0.0:${PORTSDIR}/devel/py-zope.event
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 PYDISTUTILS_PKGNAME=	ZODB3
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>

@@ -4,4 +4,4 @@ and localization:
   * Gettext-based message catalogs for message strings.
   * Locale discovery for Web-based requests.
 
-WWW: http://www.python.org/pypi/zope.i18n
+WWW: https://www.python.org/pypi/zope.i18n/

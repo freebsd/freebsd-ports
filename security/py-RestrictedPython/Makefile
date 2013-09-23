@@ -13,11 +13,12 @@ COMMENT=	Restricted execution environment for Python
 
 LICENSE=	ZPL21
 
-USE_PYTHON=	2.6-2.7
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
 NO_STAGE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 270
