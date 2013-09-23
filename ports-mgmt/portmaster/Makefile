@@ -13,7 +13,6 @@ COMMENT=	Manage your ports without external databases or languages
 
 LICENSE=	BSD
 
-NO_STAGE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_COMMIT=	7359019
@@ -21,9 +20,9 @@ GH_TAGNAME=	${GH_COMMIT}
 
 OPTIONS_DEFINE=	BASH ZSH
 
-PLIST_FILES=	sbin/portmaster etc/portmaster.rc.sample
-
-MAN8=		portmaster.8
+PLIST_FILES=	sbin/portmaster \
+		etc/portmaster.rc.sample \
+		man/man8/portmaster.8.gz
 
 .include <bsd.port.options.mk>
 
@@ -45,21 +44,23 @@ do-build:
 	  > ${WRKDIR}/${file:T}
 .endfor
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/portmaster ${PREFIX}/sbin/portmaster
-	${INSTALL_DATA} ${WRKDIR}/portmaster.rc.sample ${PREFIX}/etc
-	${INSTALL_MAN} ${WRKSRC}/files/portmaster.8 ${MAN8PREFIX}/man/man8
+	${INSTALL_SCRIPT} ${WRKDIR}/portmaster \
+	    ${STAGEDIR}${PREFIX}/sbin/portmaster
+	${INSTALL_DATA} ${WRKDIR}/portmaster.rc.sample \
+	    ${STAGEDIR}${PREFIX}/etc
+	${INSTALL_MAN} ${WRKSRC}/files/portmaster.8 \
+	    ${STAGEDIR}${MAN8PREFIX}/man/man8
 
 post-install:
 .if ${PORT_OPTIONS:MBASH}
-	${MKDIR} ${PREFIX}/etc/bash_completion.d
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/files/bash-completions \
-		${PREFIX}/etc/bash_completion.d/portmaster.sh
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d/portmaster.sh
 .endif
 .if ${PORT_OPTIONS:MZSH}
-	${MKDIR} ${PREFIX}/share/zsh/site-functions
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/files/zsh-completions \
-		${PREFIX}/share/zsh/site-functions/_portmaster
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_portmaster
 .endif
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
