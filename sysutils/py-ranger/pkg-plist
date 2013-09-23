@@ -1,5 +1,29 @@
 bin/ranger
 bin/rifle
+doc/ranger/CHANGELOG
+doc/ranger/HACKING
+doc/ranger/README
+doc/ranger/colorschemes.txt
+doc/ranger/config/colorschemes/default.py
+doc/ranger/config/colorschemes/jungle.py
+doc/ranger/config/colorschemes/snow.py
+doc/ranger/config/commands.py
+doc/ranger/config/rc.conf
+doc/ranger/config/rifle.conf
+doc/ranger/config/scope.sh
+doc/ranger/examples/README
+doc/ranger/examples/bash_automatic_cd.sh
+doc/ranger/examples/bash_subshell_notice.sh
+doc/ranger/examples/plugin_chmod_keybindings.py
+doc/ranger/examples/plugin_file_filter.py
+doc/ranger/examples/plugin_hello_world.py
+doc/ranger/examples/plugin_new_macro.py
+doc/ranger/examples/plugin_new_sorting_method.py
+doc/ranger/examples/rifle_different_file_opener.conf
+doc/ranger/examples/rifle_sxiv.sh
+doc/ranger/examples/vim_file_chooser.vim
+doc/ranger/tools/print_colors.py
+doc/ranger/tools/print_keys.py
 %%PYTHON_SITELIBDIR%%/ranger/__init__.py
 %%PYTHON_SITELIBDIR%%/ranger/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ranger/__init__.pyo
@@ -38,12 +62,21 @@ bin/rifle
 %%PYTHON_SITELIBDIR%%/ranger/container/bookmarks.py
 %%PYTHON_SITELIBDIR%%/ranger/container/bookmarks.pyc
 %%PYTHON_SITELIBDIR%%/ranger/container/bookmarks.pyo
+%%PYTHON_SITELIBDIR%%/ranger/container/directory.py
+%%PYTHON_SITELIBDIR%%/ranger/container/directory.pyc
+%%PYTHON_SITELIBDIR%%/ranger/container/directory.pyo
+%%PYTHON_SITELIBDIR%%/ranger/container/file.py
+%%PYTHON_SITELIBDIR%%/ranger/container/file.pyc
+%%PYTHON_SITELIBDIR%%/ranger/container/file.pyo
+%%PYTHON_SITELIBDIR%%/ranger/container/fsobject.py
+%%PYTHON_SITELIBDIR%%/ranger/container/fsobject.pyc
+%%PYTHON_SITELIBDIR%%/ranger/container/fsobject.pyo
 %%PYTHON_SITELIBDIR%%/ranger/container/history.py
 %%PYTHON_SITELIBDIR%%/ranger/container/history.pyc
 %%PYTHON_SITELIBDIR%%/ranger/container/history.pyo
-%%PYTHON_SITELIBDIR%%/ranger/container/settingobject.py
-%%PYTHON_SITELIBDIR%%/ranger/container/settingobject.pyc
-%%PYTHON_SITELIBDIR%%/ranger/container/settingobject.pyo
+%%PYTHON_SITELIBDIR%%/ranger/container/settings.py
+%%PYTHON_SITELIBDIR%%/ranger/container/settings.pyc
+%%PYTHON_SITELIBDIR%%/ranger/container/settings.pyo
 %%PYTHON_SITELIBDIR%%/ranger/container/tags.py
 %%PYTHON_SITELIBDIR%%/ranger/container/tags.pyc
 %%PYTHON_SITELIBDIR%%/ranger/container/tags.pyo
@@ -127,9 +160,6 @@ bin/rifle
 %%PYTHON_SITELIBDIR%%/ranger/ext/rifle.py
 %%PYTHON_SITELIBDIR%%/ranger/ext/rifle.pyc
 %%PYTHON_SITELIBDIR%%/ranger/ext/rifle.pyo
-%%PYTHON_SITELIBDIR%%/ranger/ext/run_forked.py
-%%PYTHON_SITELIBDIR%%/ranger/ext/run_forked.pyc
-%%PYTHON_SITELIBDIR%%/ranger/ext/run_forked.pyo
 %%PYTHON_SITELIBDIR%%/ranger/ext/shell_escape.py
 %%PYTHON_SITELIBDIR%%/ranger/ext/shell_escape.pyc
 %%PYTHON_SITELIBDIR%%/ranger/ext/shell_escape.pyo
@@ -142,21 +172,27 @@ bin/rifle
 %%PYTHON_SITELIBDIR%%/ranger/ext/spawn.py
 %%PYTHON_SITELIBDIR%%/ranger/ext/spawn.pyc
 %%PYTHON_SITELIBDIR%%/ranger/ext/spawn.pyo
+%%PYTHON_SITELIBDIR%%/ranger/ext/vcs/__init__.py
+%%PYTHON_SITELIBDIR%%/ranger/ext/vcs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ranger/ext/vcs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ranger/ext/vcs/bzr.py
+%%PYTHON_SITELIBDIR%%/ranger/ext/vcs/bzr.pyc
+%%PYTHON_SITELIBDIR%%/ranger/ext/vcs/bzr.pyo
+%%PYTHON_SITELIBDIR%%/ranger/ext/vcs/git.py
+%%PYTHON_SITELIBDIR%%/ranger/ext/vcs/git.pyc
+%%PYTHON_SITELIBDIR%%/ranger/ext/vcs/git.pyo
+%%PYTHON_SITELIBDIR%%/ranger/ext/vcs/hg.py
+%%PYTHON_SITELIBDIR%%/ranger/ext/vcs/hg.pyc
+%%PYTHON_SITELIBDIR%%/ranger/ext/vcs/hg.pyo
+%%PYTHON_SITELIBDIR%%/ranger/ext/vcs/vcs.py
+%%PYTHON_SITELIBDIR%%/ranger/ext/vcs/vcs.pyc
+%%PYTHON_SITELIBDIR%%/ranger/ext/vcs/vcs.pyo
 %%PYTHON_SITELIBDIR%%/ranger/ext/widestring.py
 %%PYTHON_SITELIBDIR%%/ranger/ext/widestring.pyc
 %%PYTHON_SITELIBDIR%%/ranger/ext/widestring.pyo
-%%PYTHON_SITELIBDIR%%/ranger/fsobject/__init__.py
-%%PYTHON_SITELIBDIR%%/ranger/fsobject/__init__.pyc
-%%PYTHON_SITELIBDIR%%/ranger/fsobject/__init__.pyo
-%%PYTHON_SITELIBDIR%%/ranger/fsobject/directory.py
-%%PYTHON_SITELIBDIR%%/ranger/fsobject/directory.pyc
-%%PYTHON_SITELIBDIR%%/ranger/fsobject/directory.pyo
-%%PYTHON_SITELIBDIR%%/ranger/fsobject/file.py
-%%PYTHON_SITELIBDIR%%/ranger/fsobject/file.pyc
-%%PYTHON_SITELIBDIR%%/ranger/fsobject/file.pyo
-%%PYTHON_SITELIBDIR%%/ranger/fsobject/fsobject.py
-%%PYTHON_SITELIBDIR%%/ranger/fsobject/fsobject.pyc
-%%PYTHON_SITELIBDIR%%/ranger/fsobject/fsobject.pyo
+%%PYTHON_SITELIBDIR%%/ranger/fsobject.py
+%%PYTHON_SITELIBDIR%%/ranger/fsobject.pyc
+%%PYTHON_SITELIBDIR%%/ranger/fsobject.pyo
 %%PYTHON_SITELIBDIR%%/ranger/gui/__init__.py
 %%PYTHON_SITELIBDIR%%/ranger/gui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ranger/gui/__init__.pyo
@@ -213,7 +249,7 @@ bin/rifle
 %%PYTHON_SITELIBDIR%%/ranger/gui/widgets/titlebar.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/ranger/gui/widgets
 @dirrm %%PYTHON_SITELIBDIR%%/ranger/gui
-@dirrm %%PYTHON_SITELIBDIR%%/ranger/fsobject
+@dirrm %%PYTHON_SITELIBDIR%%/ranger/ext/vcs
 @dirrm %%PYTHON_SITELIBDIR%%/ranger/ext
 @dirrm %%PYTHON_SITELIBDIR%%/ranger/data
 @dirrm %%PYTHON_SITELIBDIR%%/ranger/core
@@ -222,3 +258,8 @@ bin/rifle
 @dirrm %%PYTHON_SITELIBDIR%%/ranger/colorschemes
 @dirrm %%PYTHON_SITELIBDIR%%/ranger/api
 @dirrm %%PYTHON_SITELIBDIR%%/ranger
+@dirrm doc/ranger/tools
+@dirrm doc/ranger/examples
+@dirrm doc/ranger/config/colorschemes
+@dirrm doc/ranger/config
+@dirrm doc/ranger

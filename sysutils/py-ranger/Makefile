@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ranger
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://ranger.nongnu.org/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +17,6 @@ MAN1=		ranger.1 rifle.1
 
 NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's|setuptools|distutils.core|; s|share/man/man|man/man|' ${WRKSRC}/${PYSETUP}
+	@${REINPLACE_CMD} -e 's|setuptools|distutils.core|; s|share/man/man|man/man|;s|share/doc|doc|' ${WRKSRC}/${PYSETUP}
 
 .include <bsd.port.mk>
