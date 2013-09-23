@@ -29,13 +29,12 @@ ADDITIONAL_DOCS=	mx/DateTime/Doc/mxDateTime.pdf \
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
 OPTIONS_DEFINE=	DOCS ZOPE EXAMPLES
-ZOPE_DESC=	Use ZOPE
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MZOPE}
-USE_ZOPE=	yes
+USES=		zope
 .endif
 
 post-patch:

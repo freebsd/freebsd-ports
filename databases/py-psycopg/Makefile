@@ -10,13 +10,13 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	psycopg-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The high performance Python adapter for PostgreSQL
+COMMENT=	High performance Python adapter for PostgreSQL
 
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 BUILD_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 
 USE_PGSQL=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 
@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--with-python=${PYTHON_CMD} \
 		--with-mxdatetime-includes=${DATETIME_INC}
 
 .if defined(WITH_ZOPE)
-USE_ZOPE=	yes
+USES+=		zope
 PLIST_SUB+=	ZOPE=""
 .else
 PLIST_SUB+=	ZOPE="@comment "

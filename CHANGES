@@ -39,6 +39,14 @@ AUTHOT: bapt@FreeBSD.org
   really important to double check the pkg-plist to make sure all the files
   the maintainer want to package are in! make makeplist can help in that area.
 
+20130923:
+AUTHOR: mva@FreeBSD.org
+
+  * New USES: zope
+
+  This replaces the previous USE_ZOPE knob. All other zope related knobs
+  for port Makefiles still exist. See Mk/Uses/zope.mk for details.
+
 20130920:
 AUTHOR: bdrewery@FreeBSD.org
 

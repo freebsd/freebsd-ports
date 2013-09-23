@@ -79,6 +79,10 @@ DEV_ERROR+=	"USE_GETTEXT is unsupported, replaced by USES=gettext"
 DEV_ERROR+=	"USE_GNOME=pkgconfig is unsupported, please use USES=pkgconfig"
 .endif
 
+.if defined(USE_ZOPE) && ${USE_ZOPE} == yes
+DEV_ERROR+=	"USE_ZOPE=yes is unsupported, please use USES=zope instead"
+.endif
+
 .if defined(USE_GNOME) && ${USE_GNOME:Mgnomehack}
 DEV_WARNING+=	"USE_GNOME=gnomehack is deprecated, please use USES=pathfix"
 .endif
