@@ -98,3 +98,56 @@ makeplist: stage
 		-e "s,${DATADIR},%%DATADIR%%,g" \
 		-e "s,${PREFIX}/,,g" | ${GREP} -v "^@dirrmtry share/licenses" || ${TRUE}
 .endif
+
+.if !target(check-orphans)
+check-orphans: stage
+	@while read line; do \
+		cwd=${PREFIX} ; \
+		case $$line in \
+		@dirrm*) \
+			set -- $$line ; \
+			case $$2 in \
+			/*) ${ECHO_CMD} "dir $$2" ;; \
+			*) ${ECHO_CMD} "dir $$cwd/$$2" ;; \
+			esac ; \
+		;; \
+		@cwd) cwd=${PREFIX} ;; \
+		@cwd*) set -- $$line ; \
+			cwd=$$2 ;; \
+		@*) ;; \
+		/*) ${ECHO_CMD} $$line ;; \
+		*) ${ECHO_CMD} $$cwd/$$line ;; \
+		esac ; \
+	done < ${TMPPLIST} > ${WRKDIR}/.expanded-plist
+	@{ ${ECHO_CMD} "#mtree"; ${CAT} ${MTREE_FILE}; } | ${TAR} tf - | \
+		awk '{ sub(/^\.$$/, "", $$1); \
+		if ($$1 == "") print "${PREFIX}"; else print "${PREFIX}/"$$1; }' \
+		> ${WRKDIR}/.mtree
+	@a=${PREFIX}; \
+		while :; do \
+			a=$${a%/*} ; \
+			[ -z "$${a}" ] && break ; \
+			${ECHO_CMD} $${a} >> ${WRKDIR}/.mtree ; \
+		done
+	@${FIND} ${STAGEDIR} -type f -o -type l | ${SORT} | ${SED} -e "s,${STAGEDIR},,g" \
+		| while read line; do \
+			${GREP} -qw "^$${line}$$" ${WRKDIR}/.expanded-plist || { \
+			[ -n "$${line}" ] && ${ECHO_CMD} "$${line}" ; \
+		} ; \
+		done | ${SED} \
+		-e "s,${DOCSDIR},%%PORTDOCS%%%%DOCSDIR%%,g" \
+		-e "s,${EXAMPLESDIR},%%PORTEXAMPLES%%%%EXAMPLESDIR%%,g" \
+		-e "s,${DATADIR},%%DATADIR%%,g" \
+		-e "s,${PREFIX}/,,g" | ${GREP} -v "^share/licenses" || ${TRUE}
+	@${FIND} ${STAGEDIR} -type d | ${SED} -e "s,${STAGEDIR},,g" \
+		| while read line; do \
+		${GREP} -qw "^$${line}$$" ${WRKDIR}/.mtree || \
+		${GREP} -qw "dir\ $${line}$$" ${WRKDIR}/.expanded-plist || { \
+			[ -n "$${line}" ] && ${ECHO_CMD} "@dirrmtry $${line}"; \
+		} ; \
+		done | ${SORT} -r | ${SED} \
+		-e "s,\(.*\)${DOCSDIR},%%PORTDOCS%%\1%%DOCSDIR%%,g" \
+		-e "s,\(.*\)${EXAMPLESDIR},%%PORTEXAMPLES%%\1%%EXAMPLESDIR%%,g" \
+		-e "s,${DATADIR},%%DATADIR%%,g" \
+		-e "s,${PREFIX}/,,g" | ${GREP} -v "^@dirrmtry share/licenses" || ${TRUE}
+.endif
