@@ -980,6 +980,23 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Zle/which-command
 %%DATADIR%%/%%ZSH_VER%%/functions/Zle/zed-set-file-name
 %%DATADIR%%/%%ZSH_VER%%/scripts/newuser
+man/man1/zsh.1.gz
+man/man1/zshall.1.gz
+man/man1/zshbuiltins.1.gz
+man/man1/zshcalsys.1.gz
+man/man1/zshcompctl.1.gz
+man/man1/zshcompsys.1.gz
+man/man1/zshcompwid.1.gz
+man/man1/zshcontrib.1.gz
+man/man1/zshexpn.1.gz
+man/man1/zshmisc.1.gz
+man/man1/zshmodules.1.gz
+man/man1/zshoptions.1.gz
+man/man1/zshparam.1.gz
+man/man1/zshroadmap.1.gz
+man/man1/zshtcpsys.1.gz
+man/man1/zshzftpsys.1.gz
+man/man1/zshzle.1.gz
 @dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Zle
 @dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Zftp
 @dirrm %%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info/Backends
