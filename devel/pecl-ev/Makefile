@@ -14,7 +14,6 @@ COMMENT=	Libev extension for PHP
 
 LICENSE=	PHP301
 
-#NO_STAGE=	yes
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_PHPIZE=	yes
