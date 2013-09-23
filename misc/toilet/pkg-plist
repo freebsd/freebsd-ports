@@ -1,5 +1,6 @@
 bin/caca2tlf
 bin/toilet
+man/man1/toilet.1.gz
 share/figlet/ascii12.tlf
 share/figlet/ascii9.tlf
 share/figlet/bigascii12.tlf
