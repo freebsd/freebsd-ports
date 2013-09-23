@@ -82,11 +82,11 @@ makeplist: stage
 			[ -z "$${a}" ] && break ; \
 			${ECHO_CMD} $${a} >> ${WRKDIR}/.mtree ; \
 		done
-	@${FIND} ${STAGEDIR} -type f -o -type l | ${SED} -e "s,${STAGEDIR},,g" \
+	@${FIND} ${STAGEDIR} -type f -o -type l | sort | ${SED} -e "s,${STAGEDIR},,g" \
 		-e "s,${DOCSDIR},%%PORTDOCS%%%%DOCSDIR%%,g" \
 		-e "s,${EXAMPLESDIR},%%PORTEXAMPLES%%%%EXAMPLESDIR%%,g" \
 		-e "s,${DATADIR},%%DATADIR%%,g" \
-		-e "s,${PREFIX}/,,g" | sort | grep -v "^share/licenses" || ${TRUE}
+		-e "s,${PREFIX}/,,g" | grep -v "^share/licenses" || ${TRUE}
 	@${FIND} ${STAGEDIR} -type d | sed -e "s,${STAGEDIR},,g" \
 		| while read line; do \
 		${GREP} -qw "^$${line}$$" ${WRKDIR}/.mtree || { \
