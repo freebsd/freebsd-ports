@@ -152,9 +152,11 @@ _INCLUDE_USES_PERL5_POST_MK=	yes
 PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		PERL_VER=${PERL_VER} \
 		PERL_ARCH=${PERL_ARCH} \
-		SITE_PERL=${SITE_PERL_REL} \
-		PERL_MANDIR=lib/perl5/${PERL_VER}/man
+		SITE_PERL=${SITE_PERL_REL}
 
+.for sect in 1 2 3 4 5 6 7 8 9
+PLIST_SUB+=	PERL5_MAN${sect}=lib/perl5/${PERL_VER}/man/man${sect}/
+.endfor
 
 # handle perl5 specific manpages
 .for sect in 1 2 3 4 5 6 7 8 9
