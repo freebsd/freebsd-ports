@@ -19,7 +19,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_XORG=	x11 xt xproto xext
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-I/usr/include||;s|-L/usr/lib||;s|= -Os|+=|'\
 		-e 's|-DHAVE_SHADOW_H||' ${WRKSRC}/config.mk
