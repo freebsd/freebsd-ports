@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3 \
 		${NONEXISTENT}:${PORTSDIR}/astro/boinc-setiathome-v7:patch
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
-LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
 
 NO_STAGE=	yes
 USES=		gmake pkgconfig

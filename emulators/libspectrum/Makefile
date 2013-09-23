@@ -11,7 +11,7 @@ COMMENT=	Handling of ZX-Spectrum emulator files formats
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20

@@ -18,7 +18,7 @@ DEPRECATED=	Project is switching, use astro/boinc-setiathome-v7 instead
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
-LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
 
 NO_STAGE=	yes
 USES=		gmake pkgconfig

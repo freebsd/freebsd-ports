@@ -11,9 +11,9 @@ COMMENT=	Free Unix (Sinclair ZX-)Spectrum Emulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	spectrum:${PORTSDIR}/emulators/libspectrum \
-		png15:${PORTSDIR}/graphics/png \
-		gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libspectrum.so:${PORTSDIR}/emulators/libspectrum \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
@@ -35,13 +35,13 @@ NO_STAGE=	yes
 
 .if ${PORT_OPTIONS:MAO}
 CONFIGURE_ARGS+=--with-libao
-LIB_DEPENDS+=	ao:${PORTSDIR}/audio/libao
+LIB_DEPENDS+=	libao.so:${PORTSDIR}/audio/libao
 .else
 CONFIGURE_ARGS+=--without-libao
 .endif
 
 .if ${PORT_OPTIONS:MSAMPLERATE}
-LIB_DEPENDS+=	samplerate:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS+=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 .else
 CONFIGURE_ARGS+=--without-libsamplerate
 .endif
