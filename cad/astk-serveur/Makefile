@@ -33,9 +33,9 @@ LICENSE=	GPLv2
 
 .if !defined(CLIENT_SEUL)
 USE_PYTHON=	yes
-USE_TK_BUILD=	yes
+USES+=		tk:build
 .else
-USE_TK=		yes
+USES+=		tk
 .endif
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
