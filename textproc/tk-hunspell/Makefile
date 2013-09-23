@@ -22,9 +22,8 @@ PLIST_FILES=	%%DATADIR%%/tk.aff \
 		%%DATADIR%%/tk.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/tk.aff ${WRKSRC}/tk.dic ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/tk.aff ${WRKSRC}/tk.dic ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

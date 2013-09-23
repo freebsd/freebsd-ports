@@ -36,17 +36,16 @@ PLIST_FILES+=	%%DATADIR%%/${ALIAS}.aff \
 		%%DATADIR%%/${ALIAS}.dic
 .endfor
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/*.aff ${WRKSRC}/*.dic ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/*.aff ${WRKSRC}/*.dic ${STAGEDIR}${DATADIR}/
 .for ALIAS in ${GBALIASES}
-	${LN} -s en_GB.aff ${DATADIR}/${ALIAS}.aff
-	${LN} -s en_GB.dic ${DATADIR}/${ALIAS}.dic
+	${LN} -s en_GB.aff ${STAGEDIR}${DATADIR}/${ALIAS}.aff
+	${LN} -s en_GB.dic ${STAGEDIR}${DATADIR}/${ALIAS}.dic
 .endfor
 .for ALIAS in ${USALIASES}
-	${LN} -s en_US.aff ${DATADIR}/${ALIAS}.aff
-	${LN} -s en_US.dic ${DATADIR}/${ALIAS}.dic
+	${LN} -s en_US.aff ${STAGEDIR}${DATADIR}/${ALIAS}.aff
+	${LN} -s en_US.dic ${STAGEDIR}${DATADIR}/${ALIAS}.dic
 .endfor
 
 .include <bsd.port.mk>

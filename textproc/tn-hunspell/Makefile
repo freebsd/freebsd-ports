@@ -24,12 +24,11 @@ PLIST_FILES=	%%DATADIR%%/tn_BW.aff \
 		%%DATADIR%%/tn_ZA.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/tn-ZA.aff ${DATADIR}/tn_ZA.aff
-	${INSTALL_DATA} ${WRKSRC}/tn-ZA.dic ${DATADIR}/tn_ZA.dic
-	${LN} -s tn_ZA.aff ${DATADIR}/tn_BW.aff
-	${LN} -s tn_ZA.dic ${DATADIR}/tn_BW.dic
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/tn-ZA.aff ${STAGEDIR}${DATADIR}/tn_ZA.aff
+	${INSTALL_DATA} ${WRKSRC}/tn-ZA.dic ${STAGEDIR}${DATADIR}/tn_ZA.dic
+	${LN} -s tn_ZA.aff ${STAGEDIR}${DATADIR}/tn_BW.aff
+	${LN} -s tn_ZA.dic ${STAGEDIR}${DATADIR}/tn_BW.dic
 
 .include <bsd.port.mk>

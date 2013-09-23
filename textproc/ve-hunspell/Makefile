@@ -22,10 +22,9 @@ PLIST_FILES=	%%DATADIR%%/ve.aff \
 		%%DATADIR%%/ve.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/ve-ZA.aff ${DATADIR}/ve.aff
-	${INSTALL_DATA} ${WRKSRC}/ve-ZA.dic ${DATADIR}/ve.dic
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/ve-ZA.aff ${STAGEDIR}${DATADIR}/ve.aff
+	${INSTALL_DATA} ${WRKSRC}/ve-ZA.dic ${STAGEDIR}${DATADIR}/ve.dic
 
 .include <bsd.port.mk>

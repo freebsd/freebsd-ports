@@ -21,9 +21,8 @@ PLIST_FILES=	%%DATADIR%%/wa.aff \
 		%%DATADIR%%/wa.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/wa.aff ${WRKSRC}/wa.dic ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/wa.aff ${WRKSRC}/wa.dic ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

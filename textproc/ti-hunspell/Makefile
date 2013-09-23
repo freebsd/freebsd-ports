@@ -22,11 +22,10 @@ PLIST_FILES=	%%DATADIR%%/ti_ER.dic \
 		%%DATADIR%%/ti_ET.aff
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/ti_ER.aff ${WRKSRC}/ti_ER.dic ${DATADIR}/
-	${LN} -s ti_ER.aff ${DATADIR}/ti_ET.aff
-	${LN} -s ti_ER.dic ${DATADIR}/ti_ET.dic
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/ti_ER.aff ${WRKSRC}/ti_ER.dic ${STAGEDIR}${DATADIR}/
+	${LN} -s ti_ER.aff ${STAGEDIR}${DATADIR}/ti_ET.aff
+	${LN} -s ti_ER.dic ${STAGEDIR}${DATADIR}/ti_ET.dic
 
 .include <bsd.port.mk>

@@ -24,12 +24,11 @@ PLIST_FILES=	%%DATADIR%%/sh_YU.aff \
 		%%DATADIR%%/sr_YU.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/sr-RS-Latn.aff ${DATADIR}/sh_YU.aff
-	${INSTALL_DATA} ${WRKSRC}/sr-RS-Latn.dic ${DATADIR}/sh_YU.dic
-	${INSTALL_DATA} ${WRKSRC}/sr-RS-Cyrl.aff ${DATADIR}/sr_YU.aff
-	${INSTALL_DATA} ${WRKSRC}/sr-RS-Cyrl.dic ${DATADIR}/sr_YU.dic
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/sr-RS-Latn.aff ${STAGEDIR}${DATADIR}/sh_YU.aff
+	${INSTALL_DATA} ${WRKSRC}/sr-RS-Latn.dic ${STAGEDIR}${DATADIR}/sh_YU.dic
+	${INSTALL_DATA} ${WRKSRC}/sr-RS-Cyrl.aff ${STAGEDIR}${DATADIR}/sr_YU.aff
+	${INSTALL_DATA} ${WRKSRC}/sr-RS-Cyrl.dic ${STAGEDIR}${DATADIR}/sr_YU.dic
 
 .include <bsd.port.mk>
