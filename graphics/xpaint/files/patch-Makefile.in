@@ -1,6 +1,20 @@
---- Makefile.in.orig	2013-07-31 11:35:58.000000000 +0800
-+++ Makefile.in	2013-07-31 11:40:10.000000000 +0800
-@@ -1009,10 +1009,10 @@
+--- Makefile.in.orig	2013-01-26 15:21:12.000000000 +0100
++++ Makefile.in	2013-09-16 13:34:14.000000000 +0200
+@@ -283,7 +283,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ BINDIR = $(prefix)/bin
+ SHAREDIR = $(prefix)/share/xpaint
+-XAPPLOADDIR = /etc/X11/app-defaults
++XAPPLOADDIR = /usr/local/lib/X11/app-defaults
+ PRINT_COMMAND = lpr
+ LPCCMD = /usr/sbin/lpc status
+ #define LPCCMD 
+@@ -1005,14 +1005,14 @@ docs: INSTALL README TODO ChangeLog
+ .PHONY:
+ 
+ version.h:
+-	rm -f xaw_incdir ; ln -s /usr/include/X11/Xaw3dxft xaw_incdir
++	rm -f xaw_incdir ; ln -s /usr/local/include/X11/Xaw3dxft xaw_incdir
  	echo "#define XPAINT_VERSION \"$(PACKAGE_VERSION)\"" > version.h
  
  substads: substads.c
@@ -13,20 +27,23 @@
  
  DefaultRC.txt.h: substads DefaultRC
  	./substads -ad2c DefaultRC $@
-@@ -1020,10 +1020,8 @@
+@@ -1020,8 +1020,7 @@ DefaultRC.txt.h: substads DefaultRC
  messages.h: preproc
  	./preproc > messages.h
  
 -XPaint.ad: app-defaults
 -	$(CC) substads.c -o substads
--	cd app-defaults ; \
--	../substads -appdefs \
 +XPaint.ad: substads app-defaults
-+	./substads -appdefs \
+ 	cd app-defaults ; \
+ 	../substads -appdefs \
  	            XPAINT_VERSION $(PACKAGE_VERSION) \
- 		    XPAINT_SHAREDIR $(SHAREDIR) \
+@@ -1029,12 +1028,12 @@ XPaint.ad: app-defaults
  		    XPAINT_PRINT_COMMAND "$(PRINT_COMMAND)" \
-@@ -1034,7 +1032,7 @@
+ 		    XPAINT_POSTSCRIPT_VIEWER "$(POSTSCRIPT_VIEWER)" \
+ 		    XPAINT_EXTERN_VIEWER "$(EXTERN_VIEWER)"
+-	cp -p app-defaults/out/XPaint XPaint.ad
++	cp -p out/XPaint ../XPaint.ad
+ 
  XPaint.ad.h: substads XPaint.ad
  	./substads -ad2c XPaint.ad $@
  

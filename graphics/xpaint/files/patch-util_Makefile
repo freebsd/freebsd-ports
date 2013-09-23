@@ -1,5 +1,5 @@
---- util/Makefile.bak	2012-02-05 15:14:24.000000000 +0100
-+++ util/Makefile	2012-02-18 23:14:26.000000000 +0100
+--- util/Makefile.orig	2012-02-05 15:14:24.000000000 +0100
++++ util/Makefile	2013-09-16 13:27:46.000000000 +0200
 @@ -1,13 +1,11 @@
 -GCC = gcc
 -CPP = g++ -fpermissive
@@ -16,7 +16,7 @@
  
  pgf2pnm: main.cpp pnm.cpp
  	@if [ -x /usr/include/libpgf ] ; then \
-@@ -15,25 +13,25 @@
+@@ -15,25 +13,25 @@ pgf2pnm: main.cpp pnm.cpp
  	$(CPP) -c pnm.cpp -o pnm.o -I/usr/include/libpgf ; \
  	$(CPP) -o pgf2pnm main.o pnm.o -lpgf ; \
  	else \
