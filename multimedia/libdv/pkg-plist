@@ -1,6 +1,3 @@
-===>  Switching to root credentials to create /var/db/ports/multimedia_libdv
-===>  Returning to user credentials
-===> Options unchanged
 bin/dubdv
 bin/dvconnect
 bin/encodedv
