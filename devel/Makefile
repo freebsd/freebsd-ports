@@ -3346,7 +3346,6 @@
     SUBDIR += poco-ssl
     SUBDIR += popt
     SUBDIR += poslib
-    SUBDIR += ppl
     SUBDIR += premake
     SUBDIR += premake4
     SUBDIR += preps-gui
