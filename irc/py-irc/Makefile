@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	irc
-PORTVERSION=	8.5.1
+PORTVERSION=	8.5.3
 CATEGORIES=	irc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,6 +25,7 @@ PORTEXAMPLES=	irccat.py irccat2.py servermap.py testbot.py \
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 NO_STAGE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 270
