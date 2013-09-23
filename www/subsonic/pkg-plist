@@ -1,3 +1,4 @@
+%%WEBAPPS%%/subsonic/style/default.css
 %%WEBAPPS%%/subsonic/META-INF/MANIFEST.MF
 %%WEBAPPS%%/subsonic/META-INF/maven/net.sourceforge.subsonic/subsonic-main/pom.properties
 %%WEBAPPS%%/subsonic/META-INF/maven/net.sourceforge.subsonic/subsonic-main/pom.xml
@@ -36,7 +37,6 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/ajax/UploadInfo.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/cache/CacheFactory.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/command/AdvancedSettingsCommand.class
-%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/command/DonateCommand.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/command/EnumHolder.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/command/GeneralSettingsCommand.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/command/MusicFolderSettingsCommand$MusicFolderInfo.class
@@ -47,6 +47,7 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/command/PlayerSettingsCommand$TranscodingHolder.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/command/PlayerSettingsCommand.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/command/PodcastSettingsCommand.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/command/PremiumCommand.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/command/SearchCommand$Match.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/command/SearchCommand.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/command/UserSettingsCommand.class
@@ -58,7 +59,6 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/ChangeCoverArtController.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/CoverArtController.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/DBController.class
-%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/DonateController.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/DownloadController.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/EditTagsController$Song.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/EditTagsController.class
@@ -90,6 +90,7 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/PodcastReceiverAdminController.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/PodcastReceiverController.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/PodcastSettingsController.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/PremiumController.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/ProxyController.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/RESTController$1.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/controller/RESTController$2.class
@@ -130,6 +131,9 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/AvatarDao$1.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/AvatarDao$AvatarRowMapper.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/AvatarDao.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/BookmarkDao$1.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/BookmarkDao$BookmarkRowMapper.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/BookmarkDao.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/DaoHelper$1.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/DaoHelper.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/InternetRadioDao$1.class
@@ -230,17 +234,15 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/schema/Uptight.png
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/schema/Vinyl.png
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/schema/Windows-Zealot.png
-%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/scratch$1.class
-%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/scratch$MyRowMapper.class
-%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/scratch$Redirection.class
-%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/dao/scratch.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/Album.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/Artist.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/Avatar.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/AvatarScheme.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/Bookmark.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/CacheElement.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/CoverArtScheme.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/InternetRadio.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/LicenseInfo.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/MediaFile$MediaType.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/MediaFile.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/domain/MediaFileComparator.class
@@ -305,6 +307,7 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/i18n/ResourceBundle_ko.properties
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/i18n/ResourceBundle_mk.properties
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/i18n/ResourceBundle_nl.properties
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/i18n/ResourceBundle_nn.properties
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/i18n/ResourceBundle_no.properties
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/i18n/ResourceBundle_pl.properties
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/i18n/ResourceBundle_pt.properties
@@ -330,6 +333,7 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/AudioScrobblerService$RegistrationThread.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/AudioScrobblerService.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/JukeboxService.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/MSMediaReceiverRegistrarService.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/MediaFileService.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/MediaScannerService$1.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/MediaScannerService$2.class
@@ -374,6 +378,7 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/StatusService.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/TranscodingService$Parameters.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/TranscodingService.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/UPnPService.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/VersionService.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/jukebox/AudioPlayer$1.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/jukebox/AudioPlayer$AudioDataWriter.class
@@ -391,6 +396,8 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/metadata/MetaData.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/metadata/MetaDataParser.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/metadata/MetaDataParserFactory.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/scratch.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/service/subsonic-512.png
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/taglib/EscapeJavaScriptTag.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/taglib/FormatBytesTag.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/taglib/ParamTag.class
@@ -449,8 +456,8 @@
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/util/XMLBuilder$Attribute.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/util/XMLBuilder$AttributeSet.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/util/XMLBuilder.class
-%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/validator/DonateValidator.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/validator/PasswordSettingsValidator.class
+%%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/validator/PremiumValidator.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/net/sourceforge/subsonic/validator/UserSettingsValidator.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/org/json/CDL.class
 %%WEBAPPS%%/subsonic/WEB-INF/classes/org/json/Cookie.class
@@ -479,7 +486,6 @@
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/coverArt.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/createShare.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/db.jsp
-%%WEBAPPS%%/subsonic/WEB-INF/jsp/donate.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/editTags.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/externalPlayer.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/generalSettings.jsp
@@ -494,6 +500,7 @@
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/internetRadioSettings.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/jquery.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/left.jsp
+%%WEBAPPS%%/subsonic/WEB-INF/jsp/licenseNotice.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/login.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/lyrics.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/main.jsp
@@ -510,6 +517,7 @@
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/podcast.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/podcastReceiver.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/podcastSettings.jsp
+%%WEBAPPS%%/subsonic/WEB-INF/jsp/premium.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/rating.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/recover.jsp
 %%WEBAPPS%%/subsonic/WEB-INF/jsp/reload.jsp
@@ -1281,7 +1289,6 @@
 %%WEBAPPS%%/subsonic/style/black.css
 %%WEBAPPS%%/subsonic/style/buuftheme.css
 %%WEBAPPS%%/subsonic/style/coolandclean.css
-%%WEBAPPS%%/subsonic/style/default.css
 %%WEBAPPS%%/subsonic/style/denim.css
 %%WEBAPPS%%/subsonic/style/groove.css
 %%WEBAPPS%%/subsonic/style/groove_simple.css
@@ -1328,11 +1335,14 @@
 %%WEBAPPS%%/subsonic/xsd/album_example_1.xml
 %%WEBAPPS%%/subsonic/xsd/artist_example_1.xml
 %%WEBAPPS%%/subsonic/xsd/artists_example_1.xml
+%%WEBAPPS%%/subsonic/xsd/bookmarks_example_1.xml
 %%WEBAPPS%%/subsonic/xsd/chatMessages_example_1.xml
 %%WEBAPPS%%/subsonic/xsd/directory_example_1.xml
 %%WEBAPPS%%/subsonic/xsd/directory_example_2.xml
 %%WEBAPPS%%/subsonic/xsd/error_example_1.xml
+%%WEBAPPS%%/subsonic/xsd/genres_example_1.xml
 %%WEBAPPS%%/subsonic/xsd/indexes_example_1.xml
+%%WEBAPPS%%/subsonic/xsd/internetRadioStations_example_1.xml
 %%WEBAPPS%%/subsonic/xsd/jukeboxPlaylist_example_1.xml
 %%WEBAPPS%%/subsonic/xsd/jukeboxStatus_example_1.xml
 %%WEBAPPS%%/subsonic/xsd/license_example_1.xml
@@ -1349,6 +1359,7 @@
 %%WEBAPPS%%/subsonic/xsd/searchResult_example_1.xml
 %%WEBAPPS%%/subsonic/xsd/shares_example_1.xml
 %%WEBAPPS%%/subsonic/xsd/song_example_1.xml
+%%WEBAPPS%%/subsonic/xsd/songsByGenre_example_1.xml
 %%WEBAPPS%%/subsonic/xsd/starred2_example_1.xml
 %%WEBAPPS%%/subsonic/xsd/starred_example_1.xml
 %%WEBAPPS%%/subsonic/xsd/subsonic-rest-api.xsd
