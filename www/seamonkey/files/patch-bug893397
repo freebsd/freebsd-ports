@@ -11,27 +11,27 @@ index 549ad06..2878d9f 100644
      NECKO_WIFI=1
      ;;
    Linux)
-diff --git netwerk/wifi/Makefile.in netwerk/wifi/Makefile.in
+diff --git netwerk/wifi/moz.build netwerk/wifi/moz.build
 index 07b01de..11706af 100644
---- mozilla/netwerk/wifi/Makefile.in
-+++ mozilla/netwerk/wifi/Makefile.in
-@@ -32,6 +32,10 @@ CPPSRCS += nsWifiScannerMac.cpp
- CMMSRCS = osx_corewlan.mm
- endif
- 
-+ifeq ($(OS_ARCH),FreeBSD)
-+CPPSRCS += nsWifiScannerFreeBSD.cpp
-+endif
-+
- ifneq (,$(filter WINNT,$(OS_ARCH)))
- CPPSRCS += nsWifiScannerWin.cpp
- endif
+--- mozilla/netwerk/wifi/moz.build
++++ mozilla/netwerk/wifi/moz.build
+@@ -34,6 +34,10 @@ if CONFIG['OS_ARCH'] == 'Darwin':
+     CMMSRCS += [
+         'osx_corewlan.mm',
+     ]
++elif CONFIG['OS_ARCH'] == 'FreeBSD':
++    CPP_SOURCES += [
++        'nsWifiScannerFreeBSD.cpp',
++    ]
+ elif CONFIG['OS_ARCH'] == 'WINNT':
+     CPP_SOURCES += [
+         'nsWifiScannerWin.cpp',
 diff --git netwerk/wifi/nsWifiScannerFreeBSD.cpp netwerk/wifi/nsWifiScannerFreeBSD.cpp
 new file mode 100644
 index 0000000..80d4cb6
 --- /dev/null
 +++ mozilla/netwerk/wifi/nsWifiScannerFreeBSD.cpp
-@@ -0,0 +1,171 @@
+@@ -0,0 +1,172 @@
 +/* This Source Code Form is subject to the terms of the Mozilla Public
 + * License, v. 2.0. If a copy of the MPL was not distributed with this
 + * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
@@ -158,10 +158,11 @@ index 0000000..80d4cb6
 +
 +      // log the data
 +      LOG(( "FreeBSD access point: "
-+            << "SSID: " << ssid << ", "
-+            << "MAC: " << isr->isr_bssid << ", "
-+            << "Strength: " << isr->isr_rssi ", "
-+            << "Channel: " << isr->isr_freq << "MHz" ));
++            "SSID: %s, MAC: %02x-%02x-%02x-%02x-%02x-%02x, "
++            "Strength: %d, Channel: %dMHz\n",
++            ssid, isr->isr_bssid[0], isr->isr_bssid[1], isr->isr_bssid[2],
++            isr->isr_bssid[3], isr->isr_bssid[4], isr->isr_bssid[5],
++            isr->isr_rssi, isr->isr_freq));
 +
 +      // increment pointers
 +      len -= isr->isr_len;

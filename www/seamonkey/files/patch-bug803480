@@ -75,15 +75,28 @@ index a0575dc..be327fd 100644
  dnl
  dnl option to disable cookies
 diff --git netwerk/wifi/Makefile.in netwerk/wifi/Makefile.in
-index 39d7364..e8d276b 100644
+index 26dbd79..4cbf912 100644
 --- mozilla/netwerk/wifi/Makefile.in
 +++ mozilla/netwerk/wifi/Makefile.in
-@@ -41,7 +41,7 @@ CPPSRCS += nsWifiScannerSolaris.cpp
+@@ -20,7 +20,7 @@ ifeq ($(OS_ARCH),SunOS)
  OS_INCLUDES += $(GLIB_CFLAGS)
  endif
  
 -ifdef MOZ_ENABLE_DBUS
 +ifdef NECKO_WIFI_DBUS
- CPPSRCS += nsWifiScannerDBus.cpp
  OS_INCLUDES += $(MOZ_DBUS_GLIB_CFLAGS)
  endif
+ 
+diff --git netwerk/wifi/moz.build netwerk/wifi/moz.build
+index 5e70211..07b01de 100644
+--- mozilla/netwerk/wifi/moz.build
++++ mozilla/netwerk/wifi/moz.build
+@@ -43,7 +43,7 @@ elif CONFIG['OS_ARCH'] == 'SunOS':
+         'nsWifiScannerSolaris.cpp',
+     ]
+ 
+-if CONFIG['MOZ_ENABLE_DBUS']:
++if CONFIG['NECKO_WIFI_DBUS']:
+     CPP_SOURCES += [
+         'nsWifiScannerDBus.cpp',
+     ]
