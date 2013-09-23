@@ -10,12 +10,9 @@ COMMENT=	Traditional (K&R-style) C preprocessor
 
 LICENSE=	BSD
 
-MANCOMPRESSED=	yes
+PLIST_FILES=	bin/${PORTNAME}
+		man/man1/${PORTNAME}.1.gz
+
 MAKE_ARGS=	BINDIR=${PREFIX}/bin MANDIR=${MANPREFIX}/man/man
 
-PLIST_FILES=	bin/tradcpp
-
-MAN1=		tradcpp.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
