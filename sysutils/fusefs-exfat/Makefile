@@ -11,7 +11,11 @@ DISTNAME=	fuse-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Full-featured exFAT FS implementation as a FUSE module
 
-LICENSE=	GPLv2
+LICENSE=	Microsoft-exFAT
+LICENSE_NAME=	Microsoft exFAT License
+LICENSE_TEXT=	Requires license from Microsoft, please see \
+		http://www.microsoft.com/en-us/legal/intellectualproperty/IPLicensing/Programs/exFATFileSystem.aspx
+LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
 LIB_DEPENDS=	ublio:${PORTSDIR}/devel/libublio
 

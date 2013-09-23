@@ -9,7 +9,11 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Utilities to create, check, label and dump exFAT filesystem
 
-LICENSE=	GPLv2
+LICENSE=	Microsoft-exFAT
+LICENSE_NAME=	Microsoft exFAT License
+LICENSE_TEXT=	Requires license from Microsoft, please see \
+		http://www.microsoft.com/en-us/legal/intellectualproperty/IPLicensing/Programs/exFATFileSystem.aspx
+LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
 LIB_DEPENDS=	ublio:${PORTSDIR}/devel/libublio
 
