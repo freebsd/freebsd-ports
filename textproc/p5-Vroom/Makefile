@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Vroom
-PORTVERSION=	0.27
+PORTVERSION=	0.29
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:INGY
@@ -21,7 +21,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Vroom.3 Vroom::Vroom.3
+MAN3=	Vroom.3
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>
