@@ -30,14 +30,7 @@ INFO=		automake-${BUILD_VERSION}
 
 STRIP=		# none
 
-NO_STAGE=	yes
 post-patch:
-	@${RM} ${WRKSRC}/*.info*
 	@${MV} ${WRKSRC}/automake.texi ${WRKSRC}/automake-${BUILD_VERSION}.texi
-
-pre-su-install:
-	@${RM} -fr ${PREFIX}/share/automake-${BUILD_VERSION}
-	@${MKDIR} ${PREFIX}/share/automake-${BUILD_VERSION}
-	@${MKDIR} ${PREFIX}/share/aclocal-${BUILD_VERSION}
 
 .include <bsd.port.mk>
