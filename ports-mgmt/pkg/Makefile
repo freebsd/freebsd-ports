@@ -80,6 +80,5 @@ PERIODIC_ALL=		${PERIODIC_DAILY} ${PERIODIC_SECURITY}
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/pkg/pkg.conf.sample ${STAGEDIR}${PREFIX}/etc
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
