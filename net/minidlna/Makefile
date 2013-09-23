@@ -11,14 +11,14 @@ MASTER_SITES=	SF
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Media-server compatible with "Digital Life Network Alliance"
 
-LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3	\
-		jpeg:${PORTSDIR}/graphics/jpeg		\
-		exif:${PORTSDIR}/graphics/libexif	\
-		id3tag:${PORTSDIR}/audio/libid3tag	\
-		ogg:${PORTSDIR}/audio/libogg		\
-		vorbis:${PORTSDIR}/audio/libvorbis	\
-		FLAC:${PORTSDIR}/audio/flac		\
-		avformat:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3	\
+		libjpeg.so:${PORTSDIR}/graphics/jpeg		\
+		libexif.so:${PORTSDIR}/graphics/libexif	\
+		libid3tag.so:${PORTSDIR}/audio/libid3tag	\
+		libogg.so:${PORTSDIR}/audio/libogg		\
+		libvorbis.so:${PORTSDIR}/audio/libvorbis	\
+		libFLAC.so:${PORTSDIR}/audio/flac		\
+		libavformat.so:${PORTSDIR}/multimedia/ffmpeg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-db-path=/var/db/minidlna \
@@ -32,10 +32,6 @@ SUB_LIST+=	USER=${USERS}
 USERS=	dlna
 GROUPS=	dlna
 
-MAN5=	minidlna.conf.5
-MAN8=	minidlnad.8
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -47,9 +43,9 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-install:
-	${INSTALL_MAN} ${MAN5:S,^,${WRKSRC}/,} ${MANPREFIX}/man/man5/
-	${INSTALL_MAN} ${MAN8:S,^,${WRKSRC}/,} ${MANPREFIX}/man/man8/
-	${INSTALL_DATA} ${WRKSRC}/minidlna.conf ${PREFIX}/etc/minidlna.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/*.5 ${STAGEDIR}${MANPREFIX}/man/man5/
+	${INSTALL_MAN} ${WRKSRC}/*.8 ${STAGEDIR}${MANPREFIX}/man/man8/
+	${INSTALL_DATA} ${WRKSRC}/minidlna.conf ${STAGEDIR}${PREFIX}/etc/minidlna.conf.sample
 	@${FMT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
