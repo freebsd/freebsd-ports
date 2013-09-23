@@ -18,7 +18,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/splay-tk-${PORTVERSION}
 
 NO_STAGE=	yes
-USE_TK_WRAPPER=	yes
+USES+=		tk:wrapper
 
 DATADIR=	${PREFIX}/share/splay-tk
 
