@@ -16,9 +16,6 @@ LICENSE=	BSD
 
 FSL_CHKIN=	6a4cc74775
 
-MANCOMPRESSED=	yes
-MAN8=	poudriere.8
-
 OPTIONS_DEFINE=	ZSH
 
 CONFLICTS_INSTALL=	poudriere-[0-9]*
@@ -28,6 +25,7 @@ PLIST_FILES=	etc/poudriere.conf.sample \
 		etc/poudriere.d/hooks/pkgbuild.sh.sample \
 		etc/rc.d/poudriere \
 		bin/poudriere \
+		man/man8/poudriere.8.gz \
 		libexec/poudriere/cpdup \
 		libexec/poudriere/dirwatch \
 		libexec/poudriere/dirempty \
@@ -89,7 +87,6 @@ PLIST_DIRS=	libexec/poudriere \
 		share/poudriere/html \
 		share/poudriere
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MZSH}
