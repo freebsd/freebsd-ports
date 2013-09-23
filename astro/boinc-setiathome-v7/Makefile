@@ -42,7 +42,7 @@ X11_DESC=	Build screensaver (requires net/boinc-client with X11)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 USE_GL=		gl glu glut
 USE_XORG=	ice sm x11 xau xcb xext xi xdamage xdmcp xfixes xmu xt xxf86vm
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libboinc_graphics2.a:${PORTSDIR}/net/boinc-client
