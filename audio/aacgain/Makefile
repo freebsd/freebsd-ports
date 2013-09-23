@@ -9,7 +9,6 @@ MASTER_SITES=	http://altosdesign.com/aacgain/alvarez/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Normalizes the volume of mp3 and AAC (mp4/m4a/QuickTime) media files
 
-NO_STAGE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USES=		gmake
