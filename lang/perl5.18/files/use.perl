@@ -5,7 +5,7 @@
 this=`echo -n $0 | /usr/bin/sed -e 's!^.*/!!'`
 PERL_VERSION="%%PERL_VERSION%%"
 PERL_VER="%%PERL_VER%%"
-MAKE_CONF=%%MAKE_CONF%%
+PERL5_SIGNATURE=%%PERL5_SIGNATURE%%
 banner=`date +"%F %T"`
 banner="# added by use.perl $banner"
 if [ -z "${OSVERSION}" ]; then
@@ -21,8 +21,8 @@ fi
 if [ "$2" = "POST-INSTALL" ] ; then
 	need_remove_links=%%LINK_USRBIN%%
 	need_create_links=%%LINK_USRBIN%%
-	need_cleanup_make_conf=yes
-	need_spam_make_conf=yes
+	need_remove_perl5_signature=yes
+	need_create_perl5_signature=yes
 	need_post_install=yes
 	if [ "${osreldate}" -lt 900022 ]; then
 		need_cleanup_manpath=yes
@@ -30,7 +30,7 @@ if [ "$2" = "POST-INSTALL" ] ; then
 	fi
 elif [ "$2" = "POST-DEINSTALL" ] ; then
 	need_remove_links=%%LINK_USRBIN%%
-	need_cleanup_make_conf=yes
+	need_remove_perl5_signature=yes
 	if [ "${osreldate}" -lt 900022 ]; then
 		need_cleanup_manpath=yes
 	fi
@@ -96,19 +96,11 @@ do_post_install()
 	cd ${INCLUDEDIR} && ${PKG_PREFIX}/bin/h2ph *.h machine/*.h sys/*.h >/dev/null
 }
 
-do_cleanup_make_conf()
+do_remove_perl5_signature()
 {
-	echo -n "Cleaning up ${MAKE_CONF}..."
-	if [ -f ${MAKE_CONF} ] ; then
-		/bin/cp -p ${MAKE_CONF} ${MAKE_CONF}.new
-		/usr/bin/awk 's=0;
-			/^#.*use.perl/ { s=1; mode=1 }
-			/^#/ { s=1; if (mode != 1) { mode=0 } }
-			/.*PERL.*=/ { s=1; if (mode == 1) { mode=2 } }
-			/^$/ { s=1; if (mode != 2) { mode = 0 } }
-			{ if (s != 1) { mode = 0 } if (mode == 0) print }' ${MAKE_CONF} >${MAKE_CONF}.new
-		/bin/mv ${MAKE_CONF} ${MAKE_CONF}.bak
-		/bin/mv ${MAKE_CONF}.new ${MAKE_CONF}
+	echo -n "Removing ${PERL5_SIGNATURE}..."
+	if [ -f ${PERL5_SIGNATURE} ] ; then
+		/bin/rm ${PERL5_SIGNATURE}
 	fi
 	echo " Done."
 }
@@ -130,11 +122,12 @@ do_cleanup_manpath()
 	fi
 }
 
-do_spam_make_conf()
+do_create_perl5_signature()
 {
-	echo -n "Spamming ${MAKE_CONF}..."
-	echo "$banner" >>${MAKE_CONF}
-	echo "PERL_VERSION=%%PERL_VERSION%%" >>${MAKE_CONF}
+	echo -n "Creating ${PERL5_SIGNATURE}..."
+	echo "$banner" >>${PERL5_SIGNATURE}
+	echo "# Do not modify PERL_VERSION here, instead use DEFAULT_VERSIONS= perl5=${PERL_VER}" >>${PERL5_SIGNATURE}
+	echo "PERL_VERSION=%%PERL_VERSION%%" >>${PERL5_SIGNATURE}
 	echo " Done."
 }
 
@@ -152,8 +145,8 @@ do_spam_manpath()
 [ "$need_remove_links" = "yes" ] && do_remove_links
 [ "$need_create_links" = "yes" ] && do_create_links
 [ "$need_post_install" = "yes" ] && do_post_install
-[ "$need_cleanup_make_conf" = "yes" ] && do_cleanup_make_conf
-[ "$need_spam_make_conf" = "yes" ] && do_spam_make_conf
+[ "$need_remove_perl5_signature" = "yes" ] && do_remove_perl5_signature
+[ "$need_create_perl5_signature" = "yes" ] && do_create_perl5_signature
 [ "$need_cleanup_manpath" = "yes" ] && do_cleanup_manpath
 [ "$need_spam_manpath" = "yes" ] && do_spam_manpath 
 
