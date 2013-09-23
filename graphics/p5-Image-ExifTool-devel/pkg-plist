@@ -9,6 +9,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/APE.pm
 %%SITE_PERL%%/Image/ExifTool/APP12.pm
 %%SITE_PERL%%/Image/ExifTool/ASF.pm
+%%SITE_PERL%%/Image/ExifTool/Apple.pm
 %%SITE_PERL%%/Image/ExifTool/BMP.pm
 %%SITE_PERL%%/Image/ExifTool/BZZ.pm
 %%SITE_PERL%%/Image/ExifTool/BigTIFF.pm
@@ -58,6 +59,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/EXE.pm
 %%SITE_PERL%%/Image/ExifTool/Exif.pm
 %%SITE_PERL%%/Image/ExifTool/FLAC.pm
+%%SITE_PERL%%/Image/ExifTool/FLIR.pm
 %%SITE_PERL%%/Image/ExifTool/Fixup.pm
 %%SITE_PERL%%/Image/ExifTool/Flash.pm
 %%SITE_PERL%%/Image/ExifTool/FlashPix.pm
@@ -156,6 +158,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Ricoh.pm
 %%SITE_PERL%%/Image/ExifTool/Samsung.pm
 %%SITE_PERL%%/Image/ExifTool/Sanyo.pm
+%%SITE_PERL%%/Image/ExifTool/Scalado.pm
 %%SITE_PERL%%/Image/ExifTool/Shift.pl
 %%SITE_PERL%%/Image/ExifTool/Shortcuts.pm
 %%SITE_PERL%%/Image/ExifTool/Sigma.pm
@@ -167,6 +170,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/TagLookup.pm
 %%SITE_PERL%%/Image/ExifTool/TagNames.pod
 %%SITE_PERL%%/Image/ExifTool/Theora.pm
+%%SITE_PERL%%/Image/ExifTool/Torrent.pm
 %%SITE_PERL%%/Image/ExifTool/Unknown.pm
 %%SITE_PERL%%/Image/ExifTool/Vorbis.pm
 %%SITE_PERL%%/Image/ExifTool/WriteCanonRaw.pl
@@ -192,6 +196,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/APE.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/APP12.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/ASF.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Apple.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/BMP.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Canon.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/CanonCustom.html
@@ -208,6 +213,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/EXIF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Extra.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/FLAC.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/FLIR.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Flash.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/FlashPix.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Font.html
@@ -280,6 +286,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Ricoh.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Samsung.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Sanyo.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Scalado.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Shortcuts.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Sigma.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/SigmaRaw.html
@@ -287,6 +294,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/SonyIDC.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Stim.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Theora.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Torrent.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Unknown.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Vorbis.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/XMP.html
@@ -316,9 +324,10 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/writing.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/TagNames
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/ExifTool
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrm %%SITE_PERL%%/mach/auto/Image/ExifTool
+@dirrm %%SITE_PERL%%/mach/auto/Image
+@dirrm %%SITE_PERL%%/mach/auto
+@dirrm %%SITE_PERL%%/mach
 @dirrm %%SITE_PERL%%/Image/ExifTool/Lang
 @dirrm %%SITE_PERL%%/Image/ExifTool/Charset
 @dirrm %%SITE_PERL%%/Image/ExifTool

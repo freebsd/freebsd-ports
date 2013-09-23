@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	9.20
+PORTVERSION=	9.37
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/
 PKGNAMEPREFIX=	p5-
@@ -25,9 +25,9 @@ MAN3=		File::RandomAccess.3 Image::ExifTool.3 \
 		${LANGTAGS:S/^/Image::ExifTool::Lang::/:S/$/.3/}
 
 LANGTAGS=	cs de en_ca en_gb es fi fr it ja ko nl pl ru sv tr zh_cn zh_tw
-MANTAGS=	AES AFCP AIFF APE APP12 ASF BMP BZZ BigTIFF BuildTagLookup \
+MANTAGS=	AES AFCP AIFF APE APP12 ASF Apple BMP BZZ BigTIFF BuildTagLookup \
 		Canon CanonCustom CanonRaw CanonVRD CaptureOne Casio Charset \
-		DICOM DNG DV DarwinCore DjVu EXE Exif FLAC Fixup Flash FlashPix Font \
+		DICOM DNG DV DarwinCore DjVu EXE Exif FLAC FLIR Fixup Flash FlashPix Font \
 		FotoStation FujiFilm GE GIF GIMP GPS GeoTiff Geotag H264 HP \
 		HTML HtmlDump ICC_Profile ID3 IPTC ITC Import InDesign JPEG \
 		JPEGDigest JVC Jpeg2000 Kodak KyoceraRaw LNK Leaf M2TS MIE \
@@ -36,8 +36,8 @@ MANTAGS=	AES AFCP AIFF APE APP12 ASF BMP BZZ BigTIFF BuildTagLookup \
 		OOXML Ogg Olympus OpenEXR PDF PGF PICT PLIST PNG PPM PSP Panasonic \
 		PanasonicRaw Pentax PhaseOne PhotoCD PhotoMechanic Photoshop PostScript PrintIM \
 		Qualcomm QuickTime RIFF RSRC RTF Radiance Rawzor Real Reconyx Ricoh Samsung \
-		Sanyo Shift Shortcuts Sigma SigmaRaw Sony SonyIDC Stim \
-		TagInfoXML TagLookup TagNames Theora Unknown Vorbis \
+		Sanyo Scalado Shift Shortcuts Sigma SigmaRaw Sony SonyIDC Stim \
+		TagInfoXML TagLookup TagNames Theora Torrent Unknown Vorbis \
 		WriteCanonRaw WriteExif WriteIPTC WritePDF WritePNG \
 		WritePhotoshop WritePostScript WriteXMP Writer XMP XMP2 \
 		XMPStruct ZIP iWork
