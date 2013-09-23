@@ -19,52 +19,13 @@ USE_XZ=		yes
 # With no dependency at all
 NO_CCACHE=	yes
 USE_LDCONFIG=	yes
-MANCOMPRESSED=	yes
 
 MAKE_ENV+=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null \
 		PORTREVISION=${PORTREVISION}
-USE_STAGE=	yes
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
 
-MAN8=	pkg.8 \
-	pkg-add.8 \
-	pkg-annotate.8 \
-	pkg-autoremove.8 \
-	pkg-audit.8 \
-	pkg-backup.8 \
-	pkg-check.8 \
-	pkg-clean.8 \
-	pkg-convert.8 \
-	pkg-create.8 \
-	pkg-delete.8 \
-	pkg-fetch.8 \
-	pkg-info.8 \
-	pkg-install.8 \
-	pkg-lock.8 \
-	pkg-query.8 \
-	pkg-register.8 \
-	pkg-repo.8 \
-	pkg-rquery.8 \
-	pkg-search.8 \
-	pkg-set.8 \
-	pkg-shell.8 \
-	pkg-shlib.8 \
-	pkg-stats.8 \
-	pkg-update.8 \
-	pkg-updating.8 \
-	pkg-upgrade.8 \
-	pkg-version.8 \
-	pkg-which.8
-MAN5=	pkg.conf.5 \
-	pkg-repository.5
-MAN3=	pkg_printf.3
-MLINKS=	pkg-delete.8 pkg-remove.8 \
-	pkg-lock.8 pkg-unlock.8 \
-	pkg.8 pkg-static.8
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PKGNG)
@@ -118,7 +79,7 @@ PERIODIC_SECURITY=	410.pkg-audit 460.pkg-checksum
 PERIODIC_ALL=		${PERIODIC_DAILY} ${PERIODIC_SECURITY}
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/pkg/pkg.conf.sample ${PREFIX}/etc
+	@${INSTALL_DATA} ${WRKSRC}/pkg/pkg.conf.sample ${STAGEDIR}${PREFIX}/etc
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
