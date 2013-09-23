@@ -10,11 +10,11 @@ COMMENT=	Portable ASS/SSA subtitle renderer
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
-		enca:${PORTSDIR}/converters/enca \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fribidi:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libenca.so:${PORTSDIR}/converters/enca \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libfribidi.so:${PORTSDIR}/converters/fribidi
 
 USES=	pathfix pkgconfig
 USE_XZ=	yes
@@ -22,5 +22,4 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
