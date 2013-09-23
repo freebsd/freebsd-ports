@@ -3,6 +3,7 @@
 
 PORTNAME=	alac
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://craz.net/programs/itunes/files/
 DISTNAME=	${PORTNAME}_decoder-${PORTVERSION}
