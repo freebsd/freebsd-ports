@@ -14,8 +14,6 @@ COMMENT=	Setiathome Enhanced for BOINC
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	boinc-setiathome-enhanced-[0-9]*
-
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
@@ -48,6 +46,7 @@ USE_GL=		gl glu glut
 USE_XORG=	ice sm x11 xau xcb xext xi xdamage xdmcp xfixes xmu xt xxf86vm
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libboinc_graphics2.a:${PORTSDIR}/net/boinc-client
 PLIST_SUB+=	X11=""
+CONFLICTS=	boinc-setiathome-enhanced-[0-9]*
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/include/boinc/std_fixes.h:${PORTSDIR}/net/boinc-client
 CONFIGURE_ARGS+=	--disable-graphics
