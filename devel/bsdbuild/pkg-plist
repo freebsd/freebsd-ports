@@ -1,9 +1,3 @@
-bin/h2mandoc
-bin/man2wiki
-bin/mkconfigure
-bin/mkify
-bin/mkprojfiles
-bin/uman
 %%DATADIR%%/BSDBuild/Builtins.pm
 %%DATADIR%%/BSDBuild/Core.pm
 %%DATADIR%%/BSDBuild/Mail-SpamAssassin.pm
@@ -117,7 +111,6 @@ bin/uman
 %%DATADIR%%/BSDBuild/winsock.pm
 %%DATADIR%%/BSDBuild/x11.pm
 %%DATADIR%%/BSDBuild/xinerama.pm
-%%DATADIR%%/ManReader/Mdoc.pm
 %%DATADIR%%/build.common.mk
 %%DATADIR%%/build.dep.mk
 %%DATADIR%%/build.doc.mk
@@ -150,7 +143,23 @@ bin/uman
 %%DATADIR%%/mkconcurrent.pl
 %%DATADIR%%/mkdep
 %%DATADIR%%/ml.xsl
+bin/h2mandoc
+bin/man2wiki
+bin/mkconfigure
+bin/mkify
+bin/mkprojfiles
+bin/uman
+man/man1/man2mediawiki.1.gz
+man/man1/man2wiki.1.gz
+man/man1/mkconfigure.1.gz
+man/man1/mkify.1.gz
+man/man1/uman.1.gz
+man/man5/build.common.mk.5.gz
+man/man5/build.dep.mk.5.gz
+man/man5/build.lib.mk.5.gz
+man/man5/build.prog.mk.5.gz
+man/man5/build.proj.mk.5.gz
+man/man5/build.www.mk.5.gz
 @dirrmtry %%DATADIR%%/libtool
-@dirrmtry %%DATADIR%%/ManReader
 @dirrmtry %%DATADIR%%/BSDBuild
 @dirrmtry %%DATADIR%%
