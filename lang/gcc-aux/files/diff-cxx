@@ -581,7 +581,7 @@
 +}
 --- /dev/null
 +++ libstdc++-v3/config/os/bsd/dragonfly/ctype_base.h
-@@ -0,0 +1,60 @@
+@@ -0,0 +1,75 @@
 +// Locale support -*- C++ -*-
 +
 +// Copyright (C) 2000, 2003, 2009, 2010 Free Software Foundation, Inc.
@@ -611,8 +611,6 @@
 +//
 +
 +// Information as gleaned from /usr/include/ctype.h on DragonFly.
-+// Full details can be found from git repo at:
-+// http://gitweb.dragonflybsd.org/dragonfly.git/blob_plain/HEAD:/include/ctype.h
 +
 +namespace std _GLIBCXX_VISIBILITY(default)
 +{
@@ -626,6 +624,22 @@
 +
 +    // NB: Offsets into ctype<char>::_M_table force a particular size
 +    // on the mask type. Because of this, we don't use an enum.
++#ifdef _CTYPE_S
++    // DragonFly 3.6 and later
++    typedef unsigned long 	mask;
++    static const mask upper	= _CTYPE_U;
++    static const mask lower 	= _CTYPE_L;
++    static const mask alpha 	= _CTYPE_A;
++    static const mask digit 	= _CTYPE_D;
++    static const mask xdigit 	= _CTYPE_X;
++    static const mask space 	= _CTYPE_S;
++    static const mask print 	= _CTYPE_R;
++    static const mask graph 	= _CTYPE_A | _CTYPE_D | _CTYPE_P;
++    static const mask cntrl 	= _CTYPE_C;
++    static const mask punct 	= _CTYPE_P;
++    static const mask alnum 	= _CTYPE_A | _CTYPE_D;
++#else
++    // DragonFly 3.4 and older
 +    typedef uint16_t		mask;
 +    static const mask upper	= _CTYPEMASK_U;
 +    static const mask lower	= _CTYPEMASK_L;
@@ -638,6 +652,7 @@
 +    static const mask cntrl	= _CTYPEMASK_C;
 +    static const mask punct	= _CTYPEMASK_P;
 +    static const mask alnum	= _CTYPEMASK_A | _CTYPEMASK_D;
++#endif
 +  };
 +
 +_GLIBCXX_END_NAMESPACE_VERSION
@@ -746,7 +761,7 @@
 +} // namespace
 --- /dev/null
 +++ libstdc++-v3/config/os/bsd/dragonfly/ctype_inline.h
-@@ -0,0 +1,161 @@
+@@ -0,0 +1,187 @@
 +// Locale support -*- C++ -*-
 +
 +// Copyright (C) 2000, 2003, 2004, 2005, 2009, 2010
@@ -795,7 +810,11 @@
 +    if (_M_table)
 +      return _M_table[static_cast<unsigned char>(__c)] & __m;
 +    else
++#ifdef _CTYPE_S
++      return __istype(__c, __m);
++#else
 +      return __libc_ctype_ [__c + 1] & __m;
++#endif
 +  }
 +
 +  const char*
@@ -808,6 +827,10 @@
 +    else
 +      for (;__low < __high; ++__vec, ++__low)
 +	{
++#ifdef _CTYPE_S
++	  *__vec = __maskrune (*__low, upper | lower | alpha | digit | xdigit
++			       | space | print | graph | cntrl | punct | alnum);
++#else
 +	  mask __m = 0;
 +	  if (this->is(upper, *__low))  __m |= upper;
 +	  if (this->is(lower, *__low))  __m |= lower;
@@ -822,6 +845,7 @@
 +	  // Do not include explicit line for alnum mask since it is a
 +	  // pure composite of masks on DragonFly.
 +	  *__vec = __m;
++#endif
 +	}
 +    return __high;
 +  }
@@ -859,7 +883,11 @@
 +  ctype<wchar_t>::
 +  do_is(mask __m, wchar_t __c) const
 +  {
++#ifdef _CTYPE_S
++    return __istype (__c, __m);
++#else
 +    return __libc_ctype_ [__c + 1] & __m;
++#endif
 +  }
 +
 +  inline const wchar_t*
@@ -867,6 +895,10 @@
 +  do_is(const wchar_t* __lo, const wchar_t* __hi, mask* __vec) const
 +  {
 +    for (; __lo < __hi; ++__vec, ++__lo)
++#ifdef _CTYPE_S
++      *__vec = __maskrune (*__lo, upper | lower | alpha | digit | xdigit
++			   | space | print | graph | cntrl | punct | alnum);
++#else
 +    {
 +      mask __m = 0;
 +      if (isupper (*__lo)) __m |= _CTYPEMASK_U;
@@ -884,6 +916,7 @@
 +
 +      *__vec = __m;
 +    }
++#endif
 +    return __hi;
 +  }
 +
@@ -891,7 +924,11 @@
 +  ctype<wchar_t>::
 +  do_scan_is(mask __m, const wchar_t* __lo, const wchar_t* __hi) const
 +  {
++#ifdef _CTYPE_S
++    while (__lo < __hi && ! __istype (*__lo, __m))
++#else
 +    while (__lo < __hi && !(__libc_ctype_ [*__lo + 1] & __m))
++#endif
 +      ++__lo;
 +    return __lo;
 +  }
@@ -900,7 +937,11 @@
 +  ctype<wchar_t>::
 +  do_scan_not(mask __m, const char_type* __lo, const char_type* __hi) const
 +  {
++#ifdef _CTYPE_S
++    while (__lo < __hi && __istype (*__lo, __m))
++#else
 +    while (__lo < __hi && (__libc_ctype_ [*__lo + 1] & __m))
++#endif
 +      ++__lo;
 +    return __lo;
 +  }
