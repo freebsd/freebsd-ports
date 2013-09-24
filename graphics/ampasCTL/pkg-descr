@@ -19,6 +19,4 @@ IlmCtlMathTest  Confidence tests for IlmCtlMath
 
 IlmCtlTest      Confidence tests for IlmImfCtl
 
-WWW:	http://www.openexr.com/
-WWW:	http://www.oscars.org/science-technology/council/projects/ctl.html
-WWW:	http://ampasctl.sourceforge.net/
+WWW: https://github.com/ampas/CTL/
