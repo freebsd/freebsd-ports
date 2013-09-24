@@ -31,6 +31,8 @@ CFLAGS+=	-O2 -I${LOCALBASE}/include/boinc -I${LOCALBASE}/include \
 CFLAGS+=	-march=${CPUTYPE}
 .endif
 
+NEED_ROOT=	yes
+
 # these must match settings in ${PORTSDIR}/net/boinc-client/Makefile
 BOINC_CLIENT_USER?=	boinc
 BOINC_CLIENT_GROUP?=	nobody
