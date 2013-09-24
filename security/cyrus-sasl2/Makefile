@@ -15,8 +15,26 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LATEST_LINK=	${PORTNAME}2
 
+USES=		perl5
+USE_PERL5=	patch
 USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_OPENSSL=	yes
+NO_STAGE=	yes
+
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
+		--with-configdir=${PREFIX}/lib/sasl2:${PREFIX}/etc/sasl2 \
+		--with-plugindir=${PREFIX}/lib/sasl2 \
+		--with-dbpath=${PREFIX}/etc/sasldb2 \
+		--with-lib-subdir=lib \
+		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
+		--includedir=${PREFIX}/include \
+		--enable-static \
+		--enable-auth-sasldb \
+		--with-rc4=openssl \
+		--with-saslauthd=${SASLAUTHD_RUNPATH} \
+		--disable-krb4
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}2
 
@@ -36,24 +54,6 @@ MAN3=		sasl.3 sasl_authorize_t.3 sasl_auxprop.3 \
 		sasl_server_userdb_setpass_t.3 sasl_setpass.3 sasl_setprop.3 \
 		sasl_user_exists.3 sasl_verifyfile_t.3
 MAN8=		pluginviewer.8 sasldblistusers2.8 saslpasswd2.8
-
-USE_OPENSSL=	yes
-GNU_CONFIGURE=	yes
-
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
-		--with-configdir=${PREFIX}/lib/sasl2:${PREFIX}/etc/sasl2 \
-		--with-plugindir=${PREFIX}/lib/sasl2 \
-		--with-dbpath=${PREFIX}/etc/sasldb2 \
-		--with-lib-subdir=lib \
-		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
-		--includedir=${PREFIX}/include \
-		--enable-static \
-		--enable-auth-sasldb \
-		--with-rc4=openssl \
-		--with-saslauthd=${SASLAUTHD_RUNPATH} \
-		--disable-krb4
-
-MAKE_JOBS_UNSAFE=	yes
 
 NO_OPTIONS_SORT=	yes
 OPTIONS_DEFINE=		ALWAYSTRUE AUTHDAEMOND KEEP_DB_OPEN \
@@ -77,7 +77,6 @@ OTP_DESC=		OTP authentication
 PLAIN_DESC=		PLAIN authentication
 SCRAM_DESC=		SCRAM authentication
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBDB}
@@ -243,8 +242,8 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-# Fix sasldb name in pkg-install/deinstall scripts
 post-patch:
+# Fix sasldb name in pkg-install/deinstall scripts
 	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
 		-e "s;%%CYRUS_USER%%;${CYRUS_USER};g" \
 		-e "s;%%CYRUS_GROUP%%;${CYRUS_GROUP};g" \
@@ -255,6 +254,13 @@ post-patch:
 		${.CURDIR}/pkg-deinstall > ${PKGDEINSTALL}
 	@${SED} -e "s;%%PREFIX%%;${PREFIX};g" \
 		${.CURDIR}/pkg-message > ${PKGMESSAGE}
+# Try to unbreak parallel (-jX) builds, part 1: make build commands atomic
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${PERL} -w0pi.bak \
+		-e 's/(^\@am__fastdepCC_TRUE\@.*?) \
+		\n\@am__fastdepCC_TRUE\@\s+(.*?)$$/$$1 && $$2/mgx'
+# Part 2: prevent intermediate *.Tpo output files clash (use unique names)
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${PERL} -wpi.bak \
+		-e 's/\$$\*\.Tpo/$$&.$$./g'
 
 # Create Cyrus user and group
 pre-su-install:
@@ -262,7 +268,6 @@ pre-su-install:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
 .for f in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
@@ -276,6 +281,8 @@ post-install:
 	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README ${DOCSDIR}
 .endif
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
