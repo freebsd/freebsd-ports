@@ -1,0 +1,25 @@
+bin/i3
+bin/i3-config-wizard
+bin/i3-dmenu-desktop
+bin/i3-dump-log
+bin/i3-input
+bin/i3-migrate-config-to-v4
+bin/i3-msg
+bin/i3-nagbar
+bin/i3-sensible-editor
+bin/i3-sensible-pager
+bin/i3-sensible-terminal
+bin/i3bar
+%%ETCDIR%%/config.sample
+%%ETCDIR%%/config.keycodes
+man/man1/i3-dump-log.1.gz
+man/man1/i3-input.1.gz
+man/man1/i3-migrate-config-to-v4.1.gz
+man/man1/i3-msg.1.gz
+man/man1/i3-nagbar.1.gz
+man/man1/i3-sensible-editor.1.gz
+man/man1/i3-sensible-pager.1.gz
+man/man1/i3-sensible-terminal.1.gz
+man/man1/i3.1.gz
+man/man1/i3bar.1.gz
+@dirrmtry %%ETCDIR%%
