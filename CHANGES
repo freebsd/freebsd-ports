@@ -10,8 +10,21 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20130924:
+AUTHOR: bapt@FreeBSD.org
+
+  Stage aware ports can now create package without the requirement from
+  being root.
+  If a port really needs root anyway it should add NEED_ROOT in its
+  Makefile.
+
+  For a port that needs special credential on files DO NOT RELY on
+  chown in post-install section but rely on @own, @group in pkg-plist
+  Be careful about rights on directories as pkg_install cannot store them
+  they needs to be done via @exec chown.
+
 20130923:
-AUTHOT: bapt@FreeBSD.org
+AUTHOR: bapt@FreeBSD.org
 
   The ports tree is now staged by default. With pkgng the sequence hasn't
   changed, the main difference is that creating package is now independent
@@ -35,9 +48,9 @@ AUTHOT: bapt@FreeBSD.org
   a sample plist and it should always be _reviewed_ not directly used.
 
   NOTE: with staging only what is in the plist will be installed, nothing more,
-  meaning a port staged cannot have leftovers exect directories left. It is
+  meaning a port staged cannot have leftovers except directories left. It is
   really important to double check the pkg-plist to make sure all the files
-  the maintainer want to package are in! make makeplist can help in that area.
+  the maintainer wants to package are in! make makeplist can help in that area.
 
 20130923:
 AUTHOR: mva@FreeBSD.org
