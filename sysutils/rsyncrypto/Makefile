@@ -13,20 +13,19 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libargtable2.so:${PORTSDIR}/devel/argtable
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
-	gzip:${PORTSDIR}/archivers/gzip
+		gzip:${PORTSDIR}/archivers/gzip
 
 LDFLAGS+=	-L${LOCALBASE}/lib/
 CPPFLAGS+=	-I${LOCALBASE}/include/
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/rsyncrypto \
-	bin/rsyncrypto_recover
+		bin/rsyncrypto_recover \
+		man/man1/rsyncrypto.1.gz \
+		man/man1/rsyncrypto_recover.1.gz
 
-MAN1=	rsyncrypto.1 rsyncrypto_recover.1
-
-NO_STAGE=	yes
 post-install:
 	@${ECHO_MSG}
 	@${ECHO_MSG} ${PORTNAME} requires archivers/gzip be built
