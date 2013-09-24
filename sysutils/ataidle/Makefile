@@ -10,21 +10,20 @@ MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Utility to spin down ATA drives
 
 USE_RC_SUBR=	${PORTNAME}
-MAN8=		ataidle.8
 PORTDOCS=	COPYING Changelog README
-PLIST_FILES=	sbin/ataidle
+PLIST_FILES=	sbin/ataidle \
+		man/man8/ataidle.8.gz
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ataidle ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/ataidle.8 ${MAN8PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/ataidle ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/ataidle.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
