@@ -3,6 +3,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.98
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -44,6 +45,7 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GCC=	any
+USES=		gmake
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
 DBDIR=		/var/db/clamav
@@ -173,7 +175,7 @@ pre-configure:
 .if ${PORT_OPTIONS:MTESTS} && ${OSVERSION} >= 700000
 post-build:
 	@if [ ! -f "${PY_NO_THREAD}" ]; then \
-		${MAKE} -C ${WRKSRC} check; \
+		${GMAKE} -C ${WRKSRC} check; \
 	fi
 .endif
 
