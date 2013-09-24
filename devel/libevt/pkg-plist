@@ -15,4 +15,7 @@ lib/libevt.so.1
 %%PYTHON_SITELIBDIR%%/pyevt.la
 %%PYTHON_SITELIBDIR%%/pyevt.so
 libdata/pkgconfig/libevt.pc
+man/man1/evtexport.1.gz
+man/man1/evtinfo.1.gz
+man/man3/libevt.3.gz
 @dirrm include/libevt
