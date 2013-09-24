@@ -25,6 +25,8 @@ lib/libFLAC.so
 lib/libFLAC.so.11
 libdata/pkgconfig/flac++.pc
 libdata/pkgconfig/flac.pc
+man/man1/flac.1.gz
+man/man1/metaflac.1.gz
 share/aclocal/libFLAC++.m4
 share/aclocal/libFLAC.m4
 %%PORTDOCS%%%%DOCSDIR%%/FLAC.tag
