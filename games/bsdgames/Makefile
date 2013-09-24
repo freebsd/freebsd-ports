@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	uqs
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Traditional BSD games taken from DragonFly BSD
 
+CONFLICTS=	hangman-*
+
 WRKSRC=		${WRKDIR}/dragonfly
 USE_BZIP2=	yes
 MAKE_ENV+=	NO_WERROR=1
