@@ -3,6 +3,10 @@
 %%SITE_PERL%%/Net/OpenSSH/OSTracer.pm
 %%SITE_PERL%%/Net/OpenSSH.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenSSH/.packlist
+%%PERL5_MAN3%%/Net::OpenSSH.3.gz
+%%PERL5_MAN3%%/Net::OpenSSH::ConnectionCache.3.gz
+%%PERL5_MAN3%%/Net::OpenSSH::Constants.3.gz
+%%PERL5_MAN3%%/Net::OpenSSH::OSTracer.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenSSH
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net/OpenSSH

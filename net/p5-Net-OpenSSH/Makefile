@@ -19,10 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Net::OpenSSH::Constants.3 \
-	Net::OpenSSH::ConnectionCache.3 \
-	Net::OpenSSH::OSTracer.3 \
-	Net::OpenSSH.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
