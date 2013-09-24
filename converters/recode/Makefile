@@ -17,7 +17,7 @@ USE_PERL5=	patch run build
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--without-included-gettext
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CFLAGS+=	-fPIC
 
 MAN1=		recode.1
