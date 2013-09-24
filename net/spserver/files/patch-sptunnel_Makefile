@@ -1,10 +1,13 @@
---- sptunnel/Makefile.orig	2013-09-08 11:17:23.000000000 +0800
-+++ sptunnel/Makefile	2013-09-08 11:17:35.000000000 +0800
-@@ -1,7 +1,6 @@
+--- sptunnel/Makefile.orig	2009-12-13 10:02:35.000000000 +0800
++++ sptunnel/Makefile	2013-09-08 21:02:59.000000000 +0800
+@@ -1,9 +1,8 @@
  
  #--------------------------------------------------------------------
  
 -CC = gcc
  AR = ar cru
- CFLAGS = -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC
+-CFLAGS = -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC
++CFLAGS += -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC
  SOFLAGS = -shared
+ LDFLAGS = -lstdc++ -lpthread -lresolv
+ 

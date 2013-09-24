@@ -1,5 +1,5 @@
 --- matrixssl/Makefile.orig	2009-12-13 10:02:35.000000000 +0800
-+++ matrixssl/Makefile	2013-09-08 11:15:57.000000000 +0800
++++ matrixssl/Makefile	2013-09-08 21:03:12.000000000 +0800
 @@ -1,20 +1,19 @@
  
  #--------------------------------------------------------------------
@@ -7,7 +7,7 @@
 -CC = gcc
  AR = ar cru
 -CFLAGS = -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC
-+CFLAGS = -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC -Dlinux
++CFLAGS += -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC -Dlinux
  SOFLAGS = -shared
 -LDFLAGS = -lstdc++ -lpthread -lresolv
 +LDFLAGS = -lstdc++ -lpthread

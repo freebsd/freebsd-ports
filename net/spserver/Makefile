@@ -23,7 +23,6 @@ OPTIONS_DEFINE=	GNUTLS
 #		MATRIXSSL	"Enable matrixssl support" off \
 #		XYSSL		"Enable xyssl support" off
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMATRIXSSL}
@@ -58,30 +57,30 @@ post-patch:
 	${SED} -i -E 's,%PREFIX%,${PREFIX},g' ${WRKSRC}/xyssl/Makefile
 
 do-install:
-	@${MKDIR} ${PREFIX}/include/spserver
-	@${INSTALL} ${WRKSRC}/spserver/*.hpp ${PREFIX}/include/spserver
-	@${INSTALL} ${WRKSRC}/spserver/libspserver.so ${PREFIX}/lib/libspserver.so.1
-	@${LN} -s ${PREFIX}/lib/libspserver.so.1 ${PREFIX}/lib/libspserver.so
-	@${INSTALL} ${WRKSRC}/openssl/spopenssl.hpp ${PREFIX}/include/spserver
-	@${INSTALL} ${WRKSRC}/openssl/libspopenssl.so ${PREFIX}/lib/libspopenssl.so.1
-	@${LN} -s ${PREFIX}/lib/libspopenssl.so.1 ${PREFIX}/lib/libspopenssl.so
+	@${MKDIR} ${STAGEDIR}/${PREFIX}/include/spserver
+	@${INSTALL} ${WRKSRC}/spserver/*.hpp ${STAGEDIR}/${PREFIX}/include/spserver
+	@${INSTALL} ${WRKSRC}/spserver/libspserver.so ${STAGEDIR}/${PREFIX}/lib/libspserver.so.1
+	@${LN} -s ${PREFIX}/lib/libspserver.so.1 ${STAGEDIR}/${PREFIX}/lib/libspserver.so
+	@${INSTALL} ${WRKSRC}/openssl/spopenssl.hpp ${STAGEDIR}/${PREFIX}/include/spserver
+	@${INSTALL} ${WRKSRC}/openssl/libspopenssl.so ${STAGEDIR}/${PREFIX}/lib/libspopenssl.so.1
+	@${LN} -s ${PREFIX}/lib/libspopenssl.so.1 ${STAGEDIR}/${PREFIX}/lib/libspopenssl.so
 
 .if ${PORT_OPTIONS:MGNUTLS}
-	@${INSTALL} ${WRKSRC}/gnutls/spgnutls.hpp ${PREFIX}/include/spserver
-	@${INSTALL} ${WRKSRC}/gnutls/libspgnutls.so ${PREFIX}/lib/libspgnutls.so.1
-	@${LN} -s ${PREFIX}/lib/libspgnutls.so.1 ${PREFIX}/lib/libspgnutls.so
+	@${INSTALL} ${WRKSRC}/gnutls/spgnutls.hpp ${STAGEDIR}/${PREFIX}/include/spserver
+	@${INSTALL} ${WRKSRC}/gnutls/libspgnutls.so ${STAGEDIR}/${PREFIX}/lib/libspgnutls.so.1
+	@${LN} -s ${PREFIX}/lib/libspgnutls.so.1 ${STAGEDIR}/${PREFIX}/lib/libspgnutls.so
 .endif
 
 .if ${PORT_OPTIONS:MMATRIXSSL}
-	@${INSTALL} ${WRKSRC}/matrixssl/spmatrixssl.hpp ${PREFIX}/include/spserver
-	@${INSTALL} ${WRKSRC}/matrixssl/libspmatrixssl.so ${PREFIX}/lib/libspmatrixssl.so.1
-	@${LN} -s ${PREFIX}/lib/libspmatrixssl.so.1 ${PREFIX}/lib/libspmatrixssl.so
+	@${INSTALL} ${WRKSRC}/matrixssl/spmatrixssl.hpp ${STAGEDIR}/${PREFIX}/include/spserver
+	@${INSTALL} ${WRKSRC}/matrixssl/libspmatrixssl.so ${STAGEDIR}/${PREFIX}/lib/libspmatrixssl.so.1
+	@${LN} -s ${PREFIX}/lib/libspmatrixssl.so.1 ${STAGEDIR}/${PREFIX}/lib/libspmatrixssl.so
 .endif
 
 .if ${PORT_OPTIONS:MXYSSL}
-	@${INSTALL} ${WRKSRC}/xyssl/spxyssl.hpp ${PREFIX}/include/spserver
-	@${INSTALL} ${WRKSRC}/xyssl/libspxyssl.so ${PREFIX}/lib/libspxyssl.so.1
-	@${LN} -s ${PREFIX}/lib/libspxyssl.so.1 ${PREFIX}/lib/libspxyssl.so
+	@${INSTALL} ${WRKSRC}/xyssl/spxyssl.hpp ${STAGEDIR}/${PREFIX}/include/spserver
+	@${INSTALL} ${WRKSRC}/xyssl/libspxyssl.so ${STAGEDIR}/${PREFIX}/lib/libspxyssl.so.1
+	@${LN} -s ${PREFIX}/lib/libspxyssl.so.1 ${STAGEDIR}/${PREFIX}/lib/libspxyssl.so
 .endif
 
 .include <bsd.port.mk>
