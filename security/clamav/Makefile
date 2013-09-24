@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clamav
-PORTVERSION=	0.97.8
+PORTVERSION=	0.98
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -12,7 +12,7 @@ COMMENT=	Command line virus scanner written entirely in C
 LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	ARC ARJ LHA UNZOO UNRAR LLVM TESTS MILTER LDAP ICONV STDERR \
-		EXPERIMENTAL DOCS
+		EXPERIMENTAL DOCS IPV6
 
 ARC_DESC=		Enable arch archives support
 ARJ_DESC=		Enable arj archives support
@@ -25,7 +25,7 @@ MILTER_DESC=		Compile the milter interface
 STDERR_DESC=		Print logs to stderr instead of stdout
 EXPERIMENTAL_DESC=	Build experimental code
 
-OPTIONS_DEFAULT=	ARC ARJ LHA UNZOO UNRAR LLVM DOCS
+OPTIONS_DEFAULT=	ARC ARJ LHA UNZOO UNRAR LLVM DOCS IPV6
 
 ARC_RUN_DEPENDS=	arc:${PORTSDIR}/archivers/arc
 ARJ_RUN_DEPENDS=	arj:${PORTSDIR}/archivers/arj
@@ -39,14 +39,12 @@ ICONV_CONFIGURE_ON=	--with-iconv
 ICONV_CONFIGURE_OFF=	--without-iconv
 ICONV_USES=		iconv
 EXPERIMENTAL_CONFIGURE_ENABLE=	experimental
+IPV6_CONFIGURE_ENABLE=	ipv6
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GCC=	any
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
-CLAM_CONF_FILES=	clamd freshclam
-
-PORTDOCS=	*
 
 DBDIR=		/var/db/clamav
 LOGDIR=		/var/log/clamav
@@ -74,19 +72,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib \
 # This port has a problem with -pthread,
 # force to use -lthr until it's not fixed.
 PTHREAD_LIBS=	-lthr
-
-MAN1=		clambc.1 \
-		clamconf.1 \
-		clamscan.1 \
-		freshclam.1 \
-		sigtool.1 \
-		clamdscan.1 \
-		clamdtop.1
-MAN5=		clamav-milter.conf.5 \
-		clamd.conf.5 \
-		freshclam.conf.5
-MAN8=		clamd.8 \
-		clamav-milter.8
 
 CONFLICTS?=	clamav-devel-[0-9]* clamav-milter-[0-9]*
 
@@ -124,7 +109,6 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 		CLAMAVGROUP=${CLAMAVGROUP}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLLVM} && ( ${ARCH} == "i386" || ${ARCH} == "amd64" )
@@ -138,7 +122,6 @@ CONFIGURE_ARGS+=--disable-llvm
 
 .if ${PORT_OPTIONS:MMILTER}
 USE_RC_SUBR+=	clamav-milter
-CLAM_CONF_FILES+=	clamav-milter
 . if ${PORT_OPTIONS:MLDAP} && exists(${LOCALBASE}/lib/libldap.so)
 USE_OPENLDAP=	yes
 LDFLAGS+=	-lldap
@@ -168,9 +151,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,^\(pkgconfigdir = \).*$$,\1$$\(prefix\)/libdata/pkgconfig,g' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} ${SED_CONF} \
-		${WRKSRC}/etc/clamd.conf \
-		${WRKSRC}/etc/freshclam.conf \
-		${WRKSRC}/etc/clamav-milter.conf
+		${WRKSRC}/etc/clamd.conf.sample \
+		${WRKSRC}/etc/freshclam.conf.sample \
+		${WRKSRC}/etc/clamav-milter.conf.sample
 	@${REINPLACE_CMD} -e 's|0x100000000|0x100000000ULL|g' \
 		${WRKSRC}/libclamunrar/unrar.c
 
@@ -194,20 +177,12 @@ post-build:
 	fi
 .endif
 
-pre-su-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/clamav-config.h ${PREFIX}/include
-.for c in ${CLAM_CONF_FILES}
-	@[ -f ${PREFIX}/etc/${c}.conf ] || \
-		${CP} -v ${PREFIX}/etc/${c}.conf.default ${PREFIX}/etc/${c}.conf
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/clamav-config.h ${STAGEDIR}${PREFIX}/include
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${WRKSRC}/ChangeLog ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/html/* ${DOCSDIR}/html
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${WRKSRC}/ChangeLog ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/html/* ${STAGEDIR}${DOCSDIR}/html
 .endif
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
