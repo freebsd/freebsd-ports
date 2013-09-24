@@ -9,4 +9,4 @@ Java method invocation. The Java call looks just like it does in
 native code. Most calls require no special handling or configuration;
 no boilerplate or generated code is required.
 
-WWW:	https://jna.dev.java.net/
+WWW: https://github.com/twall/jna

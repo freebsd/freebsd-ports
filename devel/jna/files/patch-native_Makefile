@@ -1,23 +1,20 @@
-
-$FreeBSD$
-
---- native/Makefile.orig
-+++ native/Makefile
-@@ -20,6 +20,8 @@
- # protection simply by defining HAVE_PROTECTION.  This has been enabled
- # only for those platforms on which it has been tested successfully.
+--- ./native/Makefile.orig	2013-09-16 23:52:29.000000000 -0700
++++ ./native/Makefile	2013-09-16 23:53:09.000000000 -0700
+@@ -36,6 +36,8 @@
+ # protection simply by defining HAVE_PROTECTION.  This option has been only
+ # been enabled for those platforms on which it has been tested successfully.
  
 +unexport LDFLAGS
 +
- OS=$(shell uname | sed -e 's/\(CYGWIN\|MINGW32\).*/win32/g' \
+ OS=$(shell uname | sed -e 's/CYGWIN.*/win32/g' \
+ 	                -e 's/MINGW32.*/win32/g' \
                          -e 's/SunOS.*/solaris/g' \
-                         -e 's/FreeBSD.*/freebsd/g' \
-@@ -135,7 +135,7 @@
- ifeq ($(OS),freebsd)
+@@ -249,7 +251,7 @@
+ ifneq (,$(findstring bsd,$(OS)))
  ARCH=$(shell uname -m | sed 's/i.86/i386/g')
  PCFLAGS+=-fPIC
 -CINCLUDES+=-I/usr/X11R6/include
 +CINCLUDES+=-I/usr/local/include
- LDFLAGS=-o $@ -shared 
- CDEFINES+=-DHAVE_PROTECTION -DFFI_MMAP_EXEC_WRIT
+ LDFLAGS=-o $@ -shared
+ CDEFINES+=-DHAVE_PROTECTION -DFFI_MMAP_EXEC_WRIT -DUSE_DEAFULT_LIBNAME_ENCODING
  endif
