@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 USES=		iconv
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
-PORTDOCS=	libs/how-fuse-works \
+DOCS=		libs/how-fuse-works \
 		libs/kernel.txt
 
 .include <bsd.port.options.mk>
@@ -29,7 +29,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/include/fuse_kernel.h ${STAGEDIR}${PREFIX}/include/fuse
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/libs
-	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${PORTDOCS:S/libs\///} ${STAGEDIR}${DOCSDIR}/libs
+	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${DOCS:S/libs\///} ${STAGEDIR}${DOCSDIR}/libs
 .endif
 
 
