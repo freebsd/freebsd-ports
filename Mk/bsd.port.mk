@@ -1489,6 +1489,10 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 USES+=	gmake
 .endif
 
+.if !defined(UID)
+UID!=	${ID} -u
+.endif
+
 # Loading features
 .for f in ${USES}
 _f=${f:C/\:.*//g}
@@ -1618,10 +1622,6 @@ MANCOMPRESSED?=	no
 .if ${PATCHFILES:M*.zip}x != x
 PATCH_DEPENDS+=		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 .endif
-.endif
-
-.if !defined(UID)
-UID!=	${ID} -u
 .endif
 
 # Check the compatibility layer for amd64/ia64
