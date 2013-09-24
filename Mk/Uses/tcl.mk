@@ -99,8 +99,7 @@ IGNORE=	USES=${_TCLTK_PORT}: incorrect ${_TCLTK_PORT} version specified: ${_TCLT
 
 .if defined(_TCLTK_MIN_VERSION)
 .  for _v in ${_TCLTK_VALID_VERSIONS}
-.    if ${_TCLTK_MIN_VERSION} < ${_v} || !exists(${LOCALBASE}/lib/lib${_TCLTK_PORT}${_v}.so)
-.    else
+.    if ${_TCLTK_MIN_VERSION} <= ${_v} && exists(${LOCALBASE}/lib/lib${_TCLTK_PORT}${_v}.so)
 _TCLTK_WANTED_VERSION=	${_v}
 .    endif
 .  endfor
