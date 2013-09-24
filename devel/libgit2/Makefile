@@ -18,10 +18,8 @@ USES=		cmake
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
 
-
 PLIST_SUB=	SHLIB_VER=${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
