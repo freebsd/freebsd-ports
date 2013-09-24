@@ -12,5 +12,4 @@ XORG_CAT=	proto
 
 CONFIGURE_ARGS=	--without-asciidoc
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

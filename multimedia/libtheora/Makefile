@@ -11,7 +11,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/theora/ \
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Theora video codec for the Ogg multimedia streaming system
 
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
@@ -24,7 +24,6 @@ CONFIGURE_ARGS+=--disable-sdltest \
 		--enable-shared \
 		--disable-examples
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

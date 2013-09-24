@@ -23,7 +23,6 @@ USE_LDCONFIG=	yes
 VER=		-0.4
 PLIST_SUB=	VER=${VER}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wno-unused-variable||g;s|-O3|${CFLAGS}|g' \
 		${WRKSRC}/libvisual/Makefile.in

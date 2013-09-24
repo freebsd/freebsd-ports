@@ -15,9 +15,6 @@ LICENSE=	LGPL21
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-NO_STAGE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,$$(libdir)/pkgconfig,@prefix@/libdata/pkgconfig,g' ${WRKSRC}/Makefile.in
+USES=		pathfix
 
 .include <bsd.port.mk>

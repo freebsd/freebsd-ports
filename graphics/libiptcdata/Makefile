@@ -10,13 +10,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for manipulating IPTC metadata stored in image files
 
 USE_AUTOTOOLS=	libtool
-USES=		pkgconfig iconv
+USES=		pkgconfig iconv pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
-
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/libiptcdata/Makefile.in
 
 .include <bsd.port.mk>

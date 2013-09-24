@@ -47,7 +47,6 @@ OPTIONS_DEFINE_amd64=	MMX
 APIDOC_DESC=	Install full documentation (requires doxygen)
 MMX_DESC=	MMX CPU instructions
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 . if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MAPIDOC}

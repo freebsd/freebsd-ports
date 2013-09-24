@@ -11,7 +11,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commodore SID-chip emulator library to play SID music files
 
 USE_AUTOTOOLS=	libtool
-NO_STAGE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	sid_cv_have_ios_binary=yes
 

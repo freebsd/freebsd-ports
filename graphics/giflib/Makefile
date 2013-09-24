@@ -13,8 +13,6 @@ COMMENT=	Tools and library routines for working with GIF images
 CONFLICTS=	libungif-[0-9]*
 PORTSCOUT=	limit:^4\.
 
-NO_STAGE=	yes
-
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

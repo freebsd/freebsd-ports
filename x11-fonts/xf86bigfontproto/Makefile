@@ -10,5 +10,4 @@ COMMENT=	XFree86-Bigfont extension headers
 
 XORG_CAT=	proto
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
