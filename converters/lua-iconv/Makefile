@@ -16,13 +16,13 @@ USES=		pkgconfig iconv
 
 PLIST_FILES=	%%LUA_MODLIBDIR%%/iconv.so
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%INCDIR%%|-I${PREFIX}/include| ; \
 		s|%%LIBDIR%%|-L${PREFIX}/lib|; \
 		s|%%ICONV_LIB%%|${ICONV_LIB}|' ${WRKSRC}/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/iconv.so ${LUA_MODLIBDIR}
+	@if [ ! -d ${STAGEDIR}${LUA_MODLIBDIR} ]; then ${MKDIR} ${STAGEDIR}/${LUA_MODLIBDIR}; fi
+	@${INSTALL_PROGRAM} ${WRKSRC}/iconv.so ${STAGEDIR}/${LUA_MODLIBDIR}
 
 .include <bsd.port.mk>
