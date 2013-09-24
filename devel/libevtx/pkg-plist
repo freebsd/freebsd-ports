@@ -15,4 +15,6 @@ lib/libevtx.so.1
 %%PYTHON_SITELIBDIR%%/pyevtx.la
 %%PYTHON_SITELIBDIR%%/pyevtx.so
 libdata/pkgconfig/libevtx.pc
+man/man1/evtxinfo.1.gz
+man/man3/libevtx.3.gz
 @dirrm include/libevtx
