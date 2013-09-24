@@ -16,5 +16,4 @@ GNU_CONFIGURE=	yes
 SYSCOLORDIR=	share/color
 PLIST_SUB=	SYSCOLORDIR=${SYSCOLORDIR}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
