@@ -32,7 +32,4 @@ lib/libIlmCtlSimd.la
 lib/libIlmCtlSimd.so
 lib/libIlmCtlSimd.so.2
 libdata/pkgconfig/CTL.pc
-%%PORTDOCS%%%%DOCSDIR%%/CtlManual.doc
-%%PORTDOCS%%%%DOCSDIR%%/CtlManual.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry include/CTL
+@dirrm include/CTL
