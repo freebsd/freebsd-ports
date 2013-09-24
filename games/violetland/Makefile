@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Top-down survival shoot 'em up
 
-LIB_DEPENDS=	boost_filesystem:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
 
 USE_ZIP=	yes
 USE_SDL=	sdl mixer image ttf
@@ -23,24 +23,19 @@ CMAKE_ARGS=	-DDATA_INSTALL_DIR="${DATADIR}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
 
-PORTDOCS=	CHANGELOG README_EN.TXT README_RU.TXT
+PORTDOCS=	*
 
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/set.libList/ s|)| ${LOCALBASE}/lib/libintl.so&|' \
 		${WRKSRC}/CMakeLists.txt
 
 post-install:
-	${MKDIR} ${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${DESKTOPDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
-.endif
+	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} CHANGELOG README_EN.TXT README_RU.TXT \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
