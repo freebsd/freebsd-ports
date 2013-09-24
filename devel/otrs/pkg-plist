@@ -1678,6 +1678,8 @@ otrs/var/httpd/htdocs/skins/Agent/default/img/navigation_shadow_bottom.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/navigation_shadow_top.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/navigation_sprite.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/navigation_underline_bg.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/otrs-verify.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/otrs-verify-small.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/overviewcontrol_checkbox.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/overviewcontrol_line.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/search_bg.png

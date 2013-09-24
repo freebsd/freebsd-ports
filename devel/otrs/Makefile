@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	otrs
-PORTVERSION=	3.2.9
+PORTVERSION=	3.2.10
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -39,6 +39,10 @@ BUILD_DEPENDS=	p5-Date-Pcalc>=0:${PORTSDIR}/devel/p5-Date-Pcalc \
 		p5-YAML-LibYAML>=0:${PORTSDIR}/textproc/p5-YAML-LibYAML \
 		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+USES=		shebangfix
+SHEBANG_FILES=	bin/cgi-bin/*.pl bin/fcgi-bin/*.pl bin/*.pl \
+		scripts/auto_build/*.pl scripts/tools/*.pl scripts/*.pl
 
 OPTIONS_DEFINE=		MYSQL PGSQL REPORTS_MODULES SMTP POP3 IMAP LDAP PDF \
 			GNUPG DOCS
@@ -146,6 +150,9 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 	@${RM} -rf ${WRKSRC}/Kernel/cpan-lib/ \
 		${CLEAN_FILES:S!^!${WRKSRC}/!}
+	#shebang file only gets the first instance of /usr/bin/perl
+	@${REINPLACE_CMD} -i '' -e "s|/usr/bin/perl|${LOCALBASE}/bin/perl|g" \
+		${WRKSRC}/bin/otrs.CreateApacheStartupFile.pl
 
 do-build:
 	@${FIND} ${WRKSRC}/Kernel -type d | ${XARGS} ${CHMOD} 0755
