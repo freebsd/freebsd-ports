@@ -138,6 +138,17 @@ bin/wammu-configure
 %%PYTHON_SITELIBDIR%%/Wammu/__init__.py
 %%PYTHON_SITELIBDIR%%/Wammu/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Wammu/__init__.pyo
+man/cs/man1/wammu.1.gz
+man/de/man1/wammu.1.gz
+man/es/man1/wammu.1.gz
+man/fr/man1/wammu.1.gz
+man/it/man1/wammu.1.gz
+man/man1/wammu-configure.1.gz
+man/man1/wammu.1.gz
+man/nl/man1/wammu.1.gz
+man/pt_BR/man1/wammu.1.gz
+man/ru/man1/wammu.1.gz
+man/sk/man1/wammu.1.gz
 share/Wammu/images/icons/calendar.png
 share/Wammu/images/icons/call-missed.png
 share/Wammu/images/icons/call-outgoing.png

@@ -22,7 +22,4 @@ USE_WX=			2.6+
 WX_COMPS=		python:lib
 WX_UNICODE=		yes
 
-MANLANG=		"" cs de it nl pt_BR es fr ru sk
-MAN1=			wammu.1 wammu-configure.1
-
 .include <bsd.port.mk>
