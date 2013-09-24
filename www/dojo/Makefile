@@ -32,19 +32,8 @@ do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
 .if ${PORT_OPTIONS:MAPACHE}
-. if empty(STAGEDIR)
 	@${MKDIR} ${STAGEDIR}${CONFDIR}
-. endif
-	@if [ -d "${STAGEDIR}${CONFDIR}" ]; then \
-	  ${CP} ${WRKDIR}/${CONF} ${STAGEDIR}${CONFDIR}/dojo.conf; \
-	else \
-	  ${ECHO_MSG} "" ; \
-	  ${ECHO_MSG} "Please check your Apache 2.x installation -" ; \
-	  ${ECHO_MSG} "${CONFDIR} doesn't exist," ; \
-	  ${ECHO_MSG} "so I cannot install ${CONF} there!" ; \
-	  ${ECHO_MSG} "" ; \
-	  ${FALSE} ; \
-	fi
+	${CP} ${WRKDIR}/${CONF} ${STAGEDIR}${CONFDIR}/dojo.conf
 .endif
 
 .include <bsd.port.mk>
