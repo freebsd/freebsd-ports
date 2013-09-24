@@ -1,14 +1,23 @@
-bin/readpe
+bin/ofs2rva
 bin/pedis
+bin/pehash
 bin/pepack
 bin/pescan
-bin/rva2ofs
 bin/pesec
-bin/ofs2rva
 bin/pestr
-bin/pehash
+bin/readpe
+bin/rva2ofs
 lib/libpe.so
 lib/libpe.so.1
 lib/libpe.so.1.0
+man/man1/ofs2rva.1.gz
+man/man1/pedis.1.gz
+man/man1/pehash.1.gz
+man/man1/pepack.1.gz
+man/man1/pescan.1.gz
+man/man1/pesec.1.gz
+man/man1/pestr.1.gz
+man/man1/readpe.1.gz
+man/man1/rva2ofs.1.gz
 %%DATADIR%%/userdb.txt
-@dirrm share/pev
+@dirrmtry %%DATADIR%%
