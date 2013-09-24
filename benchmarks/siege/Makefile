@@ -15,12 +15,11 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
-USES=		perl5 shebangfix
-SHEBANG_FILES=	utils/siege2csv.pl
+USES=		perl5
 
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} --disable-shared
 
-do-install:
+post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/siegerc ${STAGEDIR}${DATADIR}/
 
