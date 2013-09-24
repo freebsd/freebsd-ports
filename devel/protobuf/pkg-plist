@@ -30,8 +30,6 @@ include/google/protobuf/message_lite.h
 include/google/protobuf/reflection_ops.h
 include/google/protobuf/repeated_field.h
 include/google/protobuf/service.h
-include/google/protobuf/stubs/common.h
-include/google/protobuf/stubs/once.h
 include/google/protobuf/stubs/atomicops.h
 include/google/protobuf/stubs/atomicops_internals_arm_gcc.h
 include/google/protobuf/stubs/atomicops_internals_arm_qnx.h
@@ -41,6 +39,8 @@ include/google/protobuf/stubs/atomicops_internals_mips_gcc.h
 include/google/protobuf/stubs/atomicops_internals_pnacl.h
 include/google/protobuf/stubs/atomicops_internals_x86_gcc.h
 include/google/protobuf/stubs/atomicops_internals_x86_msvc.h
+include/google/protobuf/stubs/common.h
+include/google/protobuf/stubs/once.h
 include/google/protobuf/stubs/platform_macros.h
 include/google/protobuf/stubs/template_util.h
 include/google/protobuf/stubs/type_traits.h
