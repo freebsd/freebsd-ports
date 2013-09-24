@@ -21,15 +21,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		CPAN::Meta.3 \
-		CPAN::Meta::Converter.3 \
-		CPAN::Meta::Feature.3 \
-		CPAN::Meta::History.3 \
-		CPAN::Meta::Prereqs.3 \
-		CPAN::Meta::Spec.3 \
-		CPAN::Meta::Validator.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400
