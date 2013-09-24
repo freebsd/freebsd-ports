@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediathek
-PORTVERSION=	3.1.0
-PORTREVISION=	2
+PORTVERSION=	3.3.0
 CATEGORIES=	german java
 MASTER_SITES=	SF/zdfmediathk/Mediathek/Mediathek%20${PORTVERSION}
 DISTNAME=	MediathekView_${PORTVERSION}
@@ -16,12 +15,11 @@ RUN_DEPENDS=	flvstreamer:${PORTSDIR}/multimedia/flvstreamer
 NO_BUILD=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.7+
 SUB_FILES=	mediathek
 
 INSTALLFILES=	MediathekView.jar MediathekView.ico
-INSTALLDOCS=	Anleitung.pdf
-INSTALLLIBS=	commons-compress-1.4.jar commons-lang3-3.1.jar
+INSTALLDOCS=	Kurzanleitung.pdf Instructions.pdf
 
 OPTIONS_MULTI=		BACKEND
 OPTIONS_MULTI_BACKEND=	MPLAYER VLC
@@ -30,7 +28,6 @@ VLC_DESC=		VLC support
 
 OPTIONS_DEFAULT=	VLC
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMPLAYER}
@@ -54,20 +51,16 @@ do-extract:
 	@${UNZIP_CMD} -q -d ${WRKSRC} ${DISTDIR}/${EXTRACT_ONLY}
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${MKDIR} ${DATADIR}/lib
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/lib
 .for i in ${INSTALLFILES}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DATADIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DATADIR}/
 .endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${INSTALLDOCS}
-		@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+		@${INSTALL_DATA} ${WRKSRC}/Anleitung/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
-.for i in ${INSTALLLIBS}
-	@${INSTALL_DATA} ${WRKSRC}/lib/${i} ${DATADIR}/lib/
-.endfor
-	@${INSTALL_SCRIPT} ${WRKDIR}/mediathek ${PREFIX}/bin
+	@(cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/lib/)
+	@${INSTALL_SCRIPT} ${WRKDIR}/mediathek ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

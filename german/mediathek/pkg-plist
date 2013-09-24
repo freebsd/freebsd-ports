@@ -1,9 +1,20 @@
 bin/mediathek
-%%PORTDOCS%%%%DOCSDIR%%/Anleitung.pdf
-%%DATADIR%%/MediathekView.jar
+%%PORTDOCS%%%%DOCSDIR%%/Instructions.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Kurzanleitung.pdf
 %%DATADIR%%/MediathekView.ico
-%%DATADIR%%/lib/commons-compress-1.4.jar
+%%DATADIR%%/MediathekView.jar
+%%DATADIR%%/lib/commons-compress-1.4.1.jar
 %%DATADIR%%/lib/commons-lang3-3.1.jar
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
+%%DATADIR%%/lib/jgoodies-common-1.6.0-javadoc.jar
+%%DATADIR%%/lib/jgoodies-common-1.6.0-sources.jar
+%%DATADIR%%/lib/jgoodies-common-1.6.0.jar
+%%DATADIR%%/lib/jgoodies-forms-1.7.1-javadoc.jar
+%%DATADIR%%/lib/jgoodies-forms-1.7.1-sources.jar
+%%DATADIR%%/lib/jgoodies-forms-1.7.1.jar
+%%DATADIR%%/lib/jide-oss-3.5.1-sources.jar
+%%DATADIR%%/lib/jide-oss-3.5.1.jar
+%%DATADIR%%/lib/swingx-all-1.6.4-sources.jar
+%%DATADIR%%/lib/swingx-all-1.6.4.jar
+@dirrmtry %%DATADIR%%/lib
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
