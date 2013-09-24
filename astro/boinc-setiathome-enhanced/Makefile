@@ -26,6 +26,8 @@ USE_AUTOTOOLS=	autoconf:env automake:env
 GNU_CONFIGURE=	yes
 USE_GCC=	any
 
+NEED_ROOT=	yes
+
 CFLAGS+=	-O2 -I${LOCALBASE}/include/boinc -I${LOCALBASE}/include \
 		-L${LOCALBASE}/lib
 .if defined(CPUTYPE)
