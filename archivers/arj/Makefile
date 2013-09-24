@@ -12,7 +12,6 @@ COMMENT=	Open-source ARJ
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 USES=		gmake
 USE_AUTOTOOLS=	autoconf
 MAKE_JOBS_UNSAFE=	yes
@@ -22,20 +21,14 @@ MAKEFILE=	GNUmakefile
 STRIP=
 LANGUAGE?=	en
 MAKE_ENV+=	"LOCALE=${LANGUAGE}"
-PORTDOCS=	*
-
-PLIST_FILES=	bin/arj \
-		bin/arj-register \
-		bin/arjdisp \
-		bin/rearj \
-		lib/arj/arjcrypt.so
-PLIST_DIRS=	lib/arj
-
-MAN1=		arj-register.1 arj.1 arjdisp.1 rearj.1
 
 PORTSCOUT=	skipv:3.10g
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not install on powerpc
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's!/etc!${LOCALBASE}/etc!' \
@@ -49,14 +42,10 @@ pre-build:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} COPYING debug.txt ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} COPYING debug.txt ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/resource/en && \
-		${INSTALL_DATA} arjl.txt arjs.txt history.txt readme.txt unix.txt ${DOCSDIR}
-.endif
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not install on powerpc
+		${INSTALL_DATA} arjl.txt arjs.txt history.txt readme.txt unix.txt ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
