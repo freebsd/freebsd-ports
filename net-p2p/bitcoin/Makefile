@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.5
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~swills/ \
@@ -23,7 +23,7 @@ QRCODES_DESC=	Build with QR code display
 USE_GITHUB=	yes
 GH_ACCOUNT=	bitcoin
 GH_PROJECT=	bitcoin
-GH_COMMIT=	6a0ba5c
+GH_COMMIT=	8090e11
 GH_TAGNAME=	v${PORTVERSION}
 
 USE_GMAKE=	yes
