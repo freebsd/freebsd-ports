@@ -24,13 +24,12 @@ PYDISTUTILS_PKGVERSION=${PORTVERSION:C/^([0-9]+\.[0-9]+)\.[0-9]+/\1/}
 MAN1=		osc.1
 MANCOMPRESSED=	yes
 
-PORTDOCS=	AUTHORS README NEWS TODO
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	CA_BUNDLE DOCS
 OPTIONS_DEFAULT=CA_BUNDLE
 CA_BUNDLE_DESC=	Install CA Certificates
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCA_BUNDLE}
@@ -46,12 +45,11 @@ post-patch:
 		${WRKSRC}/osc/conf.py
 
 post-install:
-	${LN} -s osc-wrapper.py ${PREFIX}/bin/osc
+	${LN} -s osc-wrapper.py ${STAGEDIR}${PREFIX}/bin/osc
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
-.endfor
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS README NEWS TODO \
+		${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
