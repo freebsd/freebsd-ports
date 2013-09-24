@@ -21,8 +21,7 @@ USES=		shebangfix perl5
 SHEBANG_FILES=	*.pl
 USE_PERL5=	run
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/*.pl ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/*.pl ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
