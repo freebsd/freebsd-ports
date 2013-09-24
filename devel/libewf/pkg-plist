@@ -21,4 +21,12 @@ lib/libewf.so.2
 %%PYTHON_SITELIBDIR%%/pyewf.la
 %%PYTHON_SITELIBDIR%%/pyewf.so
 libdata/pkgconfig/libewf.pc
+man/man1/ewfacquire.1.gz
+man/man1/ewfacquirestream.1.gz
+man/man1/ewfexport.1.gz
+man/man1/ewfinfo.1.gz
+man/man1/ewfmount.1.gz
+man/man1/ewfrecover.1.gz
+man/man1/ewfverify.1.gz
+man/man3/libewf.3.gz
 @dirrm include/libewf
