@@ -26,6 +26,10 @@ USE_GMAKE=	yes
 USE_XORG=	xmu xext x11 xi
 USE_GL=		glut
 
+DEPRECATED=	Unplayable, development ceased
+
+EXPIRATION_DATE=2013-11-24
+
 PORTDOCS=	README
 
 INSTALLS_ICONS=	yes
