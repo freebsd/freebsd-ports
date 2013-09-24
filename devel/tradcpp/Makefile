@@ -10,6 +10,8 @@ COMMENT=	Traditional (K&R-style) C preprocessor
 
 LICENSE=	BSD
 
+USES=		uidfix
+
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 
