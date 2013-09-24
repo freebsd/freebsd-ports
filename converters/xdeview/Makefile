@@ -13,9 +13,9 @@ COMMENT=	An X11 program for uu/xx/Base64/BinHex/yEnc de-/encoding
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib
+LIB_DEPENDS=	libuu.so:${PORTSDIR}/converters/uulib
 
-USE_TK=		84+
+USES+=		tk
 GNU_CONFIGURE=	yes
 # Explicitly disable Tcl otherwise the configure script picks-up
 # crud from the $PATH like /usr/opt/Simili/tcl/.
