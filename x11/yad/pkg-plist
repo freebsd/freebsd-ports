@@ -1,5 +1,8 @@
 bin/yad
+%%ICONBROWSER%%bin/yad-icon-browser
+man/man1/yad.1.gz
 share/aclocal/yad.m4
+%%ICONBROWSER%%share/applications/yad-icon-browser.desktop
 share/icons/hicolor/128x128/apps/yad.png
 share/icons/hicolor/16x16/apps/yad.png
 share/icons/hicolor/24x24/apps/yad.png
@@ -13,5 +16,18 @@ share/icons/hicolor/96x96/apps/yad.png
 %%NLS%%share/locale/sk/LC_MESSAGES/yad.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/yad.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/yad.mo
-%%ICONBROWSER%%bin/yad-icon-browser
-%%ICONBROWSER%%share/applications/yad-icon-browser.desktop
+@dirrmtry share/icons/hicolor/96x96/apps
+@dirrmtry share/icons/hicolor/96x96
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+%%ICONBROWSER%%@dirrmtry share/applications

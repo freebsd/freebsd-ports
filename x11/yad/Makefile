@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	yad
-PORTVERSION=	0.23.0
+PORTVERSION=	0.23.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Display GNOME dialogs from the command line
 
 USES=		gmake pkgconfig
@@ -15,8 +15,6 @@ GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ENV+=	DATADIRNAME=share
-
-MAN1=	yad.1
 
 OPTIONS_DEFINE=	NLS ICONBROWSER
 ICONBROWSER_DESC=	Build YAD icon browser
@@ -33,7 +31,6 @@ GTK2_CONFIGURE_ON=	--with-gtk=gtk2
 GTK3_CONFIGURE_ON=	--with-gtk=gtk3
 ICONBROWSER_CONFIGURE_ENABLE=	icon-browser
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
