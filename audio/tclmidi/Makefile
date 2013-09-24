@@ -10,7 +10,7 @@ MASTER_SITES=	http://ringtail.its.monash.edu.au/pub/midi/PROGRAMS/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language designed for creating and editing standard MIDI files
 
-USE_TCL=	84+
+USES+=		tcl
 NO_STAGE=	yes
 MAKE_ENV=	TCL_INCLUDEDIR="${TCL_INCLUDEDIR}" TCL_LIBDIR="${TCL_LIBDIR}"
 MAKE_ENV+=	TCLSH=${TCLSH} FILESDIR="${FILESDIR}" MAN="${MAN1} ${MANN}"
@@ -25,6 +25,10 @@ MANN=		midiconf.n midievnt.n midifree.n midiget.n midigrep.n \
 		midiwrit.n midivers.n midimove.n midicopy.n mididel.n \
 		miditrck.n mididev.n miditime.n midifeat.n
 MANCOMPRESSED=	maybe
+
+post-patch:
+	${FIND} ${WRKSRC} -type f | ${XARGS} \
+	    ${REINPLACE_CMD} -e 's|iostream.h|iostream|g; s|iomanip.h|iomanip|g'
 
 post-build:
 	cd ${WRKSRC} && echo pkg_mkIndex . tclmidi31.so | ${TCLSH}
