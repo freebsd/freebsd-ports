@@ -12,6 +12,7 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A "meta-port" to install SquirrelMail plugins
 
 NO_BUILD=	yes
+NO_MTREE=	yes
 
 .ifdef SQUIRRELDIR
 PLIST_SUB+=	SQUIRRELDIR=${SQUIRRELDIR}
@@ -55,7 +56,6 @@ VLOGIN_DESC=	Multi-site-hosting capabilities plugin
 WEBSRCH_DESC=	Web search engines plugin
 WETTER_DESC=	Weather in Germany plugin
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSIEVE}
