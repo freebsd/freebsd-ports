@@ -14,7 +14,7 @@ COMMENT=	Tcl/Tk frontend for fax scan/receive/send program (command is tkfax)
 WRKSRC=		${WRKDIR}/${PORTNAME}1
 
 NO_BUILD=	yes
-USE_TK_WRAPPER=	yes
+USES+=		tk:wrapper
 
 PLIST_SUB=	TKSCANFAXDIR="${TKSCANFAXDIR:S,^${PREFIX}/,,}"
 
