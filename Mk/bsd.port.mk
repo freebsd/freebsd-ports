@@ -5728,7 +5728,7 @@ generate-plist:
 	@${ECHO_MSG} "===>   Generating temporary packing list"
 	@${MKDIR} `${DIRNAME} ${TMPPLIST}`
 	@if [ ! -f ${DESCR} ]; then ${ECHO_MSG} "** Missing pkg-descr for ${PKGNAME}."; exit 1; fi
-.if defined(NO_STAGE)
+.if defined(NO_STAGE) || defined(NEED_ROOT)
 	@>${TMPPLIST}
 .else
 	@${ECHO_CMD} -e "@owner root\n@group wheel" >${TMPPLIST}
