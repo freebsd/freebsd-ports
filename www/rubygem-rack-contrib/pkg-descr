@@ -1,3 +1,4 @@
-Contributed Rack Middleware and Utilities.
+This package includes a variety of add-on components for Rack, a
+Ruby web server interface.
 
 WWW: https://github.com/rack/rack-contrib/
