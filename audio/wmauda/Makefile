@@ -13,7 +13,7 @@ COMMENT=	A port of wmxmms to GTK 2.x and Audacious
 
 BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 RUN_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
-LIB_DEPENDS=	mowgli:${PORTSDIR}/devel/libmowgli
+LIB_DEPENDS=	libmowgli.so:${PORTSDIR}/devel/libmowgli
 
 USES=		gmake pkgconfig
 NO_STAGE=	yes

@@ -40,7 +40,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 PLIST_SUB+=	PCRE=""
 .else
 CONFIGURE_ARGS+=	--without-pcre
@@ -48,7 +48,7 @@ PLIST_SUB+=	PCRE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
 PLIST_SUB+=	PNG=""
 .else
 CONFIGURE_ARGS+=	--without-png
@@ -64,7 +64,7 @@ PLIST_SUB+=	ICONV="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MONIG}
-LIB_DEPENDS+=	onig:${PORTSDIR}/devel/oniguruma4
+LIB_DEPENDS+=	libonig.so:${PORTSDIR}/devel/oniguruma4
 PLIST_SUB+=	ONIG=""
 .else
 CONFIGURE_ARGS+=	--without-onig

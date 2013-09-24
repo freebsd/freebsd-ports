@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=--disable-nls
 
 .if ${PORT_OPTIONS:MGD}
 CONFIGURE_ARGS+=--with-gd
-LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
 .else
 CONFIGURE_ARGS+=--without-gd
 .endif
@@ -58,7 +58,7 @@ PLIST_SUB+=	PHP="@comment "
 
 .if ${PORT_OPTIONS:MPCRE}
 CONFIGURE_ARGS+=--with-pcre
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 .else
 CONFIGURE_ARGS+=--without-pcre
 .endif
