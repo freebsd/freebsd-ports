@@ -4111,12 +4111,14 @@ create-users-groups:
 	fi
 	@IFS=":"; ${GREP} -h ^${_group}: ${GID_FILES} | head -n 1 | while read group foo gid members; do \
 		gid=$$(($$gid+${GID_OFFSET})); \
+		if [ "${NO_STAGE}" = "yes" ]; then \
 		if ! ${PW} groupshow $$group >/dev/null 2>&1; then \
 			${ECHO_MSG} "Creating group \`$$group' with gid \`$$gid'."; \
 			${PW} groupadd $$group -g $$gid; \
 		else \
 			${ECHO_MSG} "Using existing group \`$$group'."; \
 		fi; \
+		fi ; \
 		${ECHO_CMD} "@exec if ! ${PW} groupshow $$group >/dev/null 2>&1; then \
 			echo \"Creating group '$$group' with gid '$$gid'.\"; \
 			${PW} groupadd $$group -g $$gid; else echo \"Using existing group '$$group'.\"; fi" >> ${TMPPLIST}; \
@@ -4140,12 +4142,14 @@ create-users-groups:
 		gid=$$(($$gid+${GID_OFFSET})); \
 		class="$${class:+-L }$$class"; \
 		homedir=$$(echo $$homedir | sed "s|^/usr/local|${PREFIX}|"); \
+		if [ "${NO_STAGE}" = "yes" ]; then \
 		if ! ${PW} usershow $$login >/dev/null 2>&1; then \
 			${ECHO_MSG}  "Creating user \`$$login' with uid \`$$uid'."; \
 			eval ${PW} useradd $$login -u $$uid -g $$gid $$class -c \"$$gecos\" -d $$homedir -s $$shell; \
 			case $$homedir in /nonexistent|/var/empty) ;; *) ${INSTALL} -d -g $$gid -o $$uid $$homedir;; esac; \
 		else \
 			${ECHO_MSG} "Using existing user \`$$login'."; \
+		fi; \
 		fi; \
 		${ECHO_CMD} "@exec if ! ${PW} usershow $$login >/dev/null 2>&1; then \
 			echo \"Creating user '$$login' with uid '$$uid'.\"; \
@@ -4291,10 +4295,17 @@ _BUILD_SEQ=		build-message pre-build pre-build-script do-build \
 _STAGE_DEP=		build
 _STAGE_SEQ=		stage-message stage-dir run-depends lib-depends apply-slist pre-install generate-plist \
 				pre-su-install
+.if defined(NEED_ROOT)
 _STAGE_SUSEQ=	create-users-groups do-install post-install post-stage compress-man \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs add-plist-examples \
 				add-plist-data add-plist-post fix-plist-sequence
+.else
+_STAGE_SEQ+=	create-users-groups do-install post-install post-stage compress-man \
+				install-rc-script install-ldconfig-file install-license \
+				install-desktop-entries add-plist-info add-plist-docs add-plist-examples \
+				add-plist-data add-plist-post fix-plist-sequence
+.endif
 .if defined(WITH_PKGNG)
 _INSTALL_DEP=	stage
 _INSTALL_SEQ=	install-message run-depends lib-depends
@@ -4564,7 +4575,7 @@ deinstall-all:
 
 .if !target(do-clean)
 do-clean:
-.if !defined(NO_STAGE) && ${UID} != 0 && !defined(INSTALL_AS_USER) && exists(${STAGE_COOKIE})
+.if !defined(NO_STAGE) && defined(NEED_ROOT) && ${UID} != 0 && !defined(INSTALL_AS_USER) && exists(${STAGE_COOKIE})
 	@${ECHO_MSG} "===>  Switching to root credentials for '${.TARGET}' target"
 	@cd ${.CURDIR} && \
 		${SU_CMD} "${MAKE} ${.TARGET}"
