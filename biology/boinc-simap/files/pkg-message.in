@@ -11,7 +11,7 @@ MANUAL INSTALLATION
  *) Or get your account key at http://boincsimap.org/boincsimap/get_passwd.php
 
  *) Attach to the project:
-    cd /var/db/boinc
+    cd %%BOINC_CLIENT_HOME%%
     boinccmd --project_attach boincsimap.org/boincsimap <account key>
 *****************************************************************************
 %%AMD64%%  IMPORTANT NOTICE FOR AMD64 USERS:
