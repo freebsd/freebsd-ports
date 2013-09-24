@@ -5721,7 +5721,7 @@ generate-plist:
 	@>${TMPPLIST}
 .else
 	@${ECHO_CMD} -e "@owner root\n@group wheel" >${TMPPLIST}
-.fi
+.endif
 	@for file in ${PLIST_FILES}; do \
 		${ECHO_CMD} $${file} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} >> ${TMPPLIST}; \
 	done
