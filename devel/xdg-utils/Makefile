@@ -4,6 +4,7 @@
 
 PORTNAME=	xdg-utils
 PORTVERSION=	1.0.2.${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES=	devel
 #MASTER_SITES=	http://portland.freedesktop.org/download/
 MASTER_SITES=	LOCAL/kwm
