@@ -12,24 +12,24 @@ COMMENT=	Simple dynamic dns client
 
 LICENSE=	GPLv3
 
+USE_AUTOTOOLS=	autoconf
 USE_RC_SUBR=	inadyn-mt
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--disable-sound
-
-MAN8=		inadyn-mt.8
-MAN5=		inadyn-mt.conf.5
+CONFIGURE_ENV+=	INSTALL_PREFIX="${STAGEDIR}${PREFIX}/etc"
 
 PORTDOCS=	readme.html AUTHORS README
 PORTEXAMPLES=	*
 
 PLIST_DIRS=	etc/inadyn-mt/lang
 PLIST_DIRSTRY=	etc/inadyn-mt
-PLIST_FILES=	bin/inadyn-mt etc/inadyn-mt/lang/en.lng
+PLIST_FILES=	bin/inadyn-mt etc/inadyn-mt/lang/en.lng \
+		man/man5/inadyn-mt.conf.5.gz \
+		man/man8/inadyn-mt.8.gz
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -37,14 +37,17 @@ post-patch:
 		${WRKSRC}/man/inadyn-mt.8 ${WRKSRC}/readme.html \
 		${WRKSRC}/src/dyndns.h
 
+pre-configure:
+	@${REINPLACE_CMD} -e "s,INSTALL_PREFIX=.*,,g" ${WRKSRC}/configure.ac
+
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/inadyn-mt.conf ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/inadyn-mt.conf ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
