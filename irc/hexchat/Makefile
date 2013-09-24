@@ -3,6 +3,7 @@
 
 PORTNAME=	hexchat
 PORTVERSION=	2.9.6.1
+PORTREVISION=	1 
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://dl.hexchat.org/${PORTNAME}/
 
@@ -26,6 +27,8 @@ INSTALLS_ICONS=	yes
 LDFLAGS+=	-pthread
 
 MAN1=		hexchat.1
+
+SUB_FILES=	pkg-message
 
 PORTDOCS=	*
 
@@ -67,10 +70,6 @@ NO_STAGE=	yes
 
 .if ! ${PORT_OPTIONS:MLIBSEXY} && ! ${PORT_OPTIONS:MGTKSPELL} && ! ${PORT_OPTIONS:MSTATIC}
 CONFIGURE_ARGS+=--enable-spell=none
-.endif
-
-.if ${PORT_OPTIONS:MLIBSEXY} || ${PORT_OPTIONS:MGTKSPELL} || ${PORT_OPTIONS:MSTATIC}
-RUN_DEPENDS+=	aspell:${PORTSDIR}/textproc/en-aspell
 .endif
 
 .if ${PORT_OPTIONS:MSTATIC}
@@ -117,5 +116,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/share/doc/*.md ${DOCSDIR}
 .endif
 #	@(cd ${PREFIX}/lib/hexchat/plugins/ && ${RM} -f *.a)
+
+	@${ECHO_CMD}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
 .include <bsd.port.mk>
