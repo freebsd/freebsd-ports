@@ -1,6 +1,6 @@
---- scripts/xdg-open.orig
-+++ scripts/xdg-open
-@@ -31,6 +31,12 @@
+--- scripts/xdg-open.orig	2012-09-19 21:04:46.000000000 +0000
++++ scripts/xdg-open	2012-09-19 21:25:05.000000000 +0000
+@@ -33,6 +33,12 @@
  #
  #---------------------------------------------
  
@@ -13,14 +13,3 @@
  manualpage()
  {
  cat << _MANUALPAGE
-@@ -364,7 +370,9 @@ open_generic()
-     for browser in $BROWSER; do
-         if [ x"$browser" != x"" ]; then
- 
--            browser_with_arg=`echo "$browser" | sed s#%s#"$1"#`
-+            browser_with_arg=`printf "$browser" "$1" 2>/dev/null`
-+            if [ $? -ne 0 ]; then browser_with_arg=$browser;
-+            fi
- 
-             if [ x"$browser_with_arg" = x"$browser" ]; then "$browser" "$1";
-             else $browser_with_arg;

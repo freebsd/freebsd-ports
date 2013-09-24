@@ -1,0 +1,16 @@
+bin/xdg-desktop-icon
+bin/xdg-desktop-menu
+bin/xdg-email
+bin/xdg-icon-resource
+bin/xdg-mime
+bin/xdg-open
+bin/xdg-screensaver
+bin/xdg-settings
+xdg-desktop-icon.1
+xdg-desktop-menu.1
+xdg-email.1
+xdg-icon-resource.1
+xdg-mime.1
+xdg-open.1
+xdg-screensaver.1
+xdg-settings.1

@@ -1,7 +1,7 @@
---- scripts/xdg-desktop-menu.orig	Fri Oct 27 16:15:47 2006
-+++ scripts/xdg-desktop-menu	Fri Oct 27 16:37:13 2006
-@@ -696,7 +696,7 @@
-     
+--- scripts/xdg-desktop-menu.orig	2012-09-19 21:04:46.000000000 +0000
++++ scripts/xdg-desktop-menu	2012-09-19 21:22:54.000000000 +0000
+@@ -666,7 +666,7 @@
+ 
      for MIME in $mimetypes ; do
          xdg_default_dirs="$XDG_DATA_DIRS"
 -        [ -n "$xdg_default_dirs" ] || xdg_default_dirs=/usr/local/share/:/usr/share/
@@ -9,7 +9,7 @@
          if [ x"$mode" = x"user" ] ; then
              xdg_user_dir="$XDG_DATA_HOME"
              [ -n "$xdg_user_dir" ] || xdg_user_dir="$HOME/.local/share"
-@@ -739,7 +739,7 @@
+@@ -709,7 +709,7 @@
      xdg_user_dir="$xdg_user_dir/$xdg_dir_name"
  
      xdg_system_dirs="$XDG_CONFIG_DIRS"
@@ -18,7 +18,7 @@
      xdg_global_dir=
      for x in `echo $xdg_system_dirs | sed 's/:/ /g'` ; do
          if [ -w $x/$xdg_dir_name ] ; then
-@@ -1099,7 +1099,7 @@
+@@ -1072,7 +1072,7 @@
  xdg_user_dir="$xdg_user_dir/$xdg_dir_name"
  
  xdg_system_dirs="$XDG_DATA_DIRS"
@@ -27,7 +27,7 @@
  xdg_global_dir=
  for x in `echo $xdg_system_dirs | sed 's/:/ /g'` ; do
      if [ -w $x/$xdg_dir_name ] ; then
-@@ -1166,7 +1166,7 @@
+@@ -1139,7 +1139,7 @@
  xdg_user_dir="$xdg_user_dir/$xdg_dir_name"
  
  xdg_system_dirs="$XDG_DATA_DIRS"
@@ -36,12 +36,7 @@
  xdg_global_dir=
  for x in `echo $xdg_system_dirs | sed 's/:/ /g'` ; do
      if [ -w $x/$xdg_dir_name ] ; then
-@@ -1176,11 +1176,11 @@
- done
- 
- kde_user_dir="$HOME/.kde/share/applnk"
--kde_global_dir="/usr/share/applnk"
-+kde_global_dir="%%LOCALBASE%%/share/applnk"
+@@ -1153,7 +1153,7 @@
  [ -w $kde_global_dir ] || kde_global_dir=
  
  gnome_user_dir="$HOME/.gnome/apps"
@@ -49,4 +44,4 @@
 +gnome_global_dir="%%LOCALBASE%%/share/gnome/apps"
  [ -w $gnome_global_dir ] || gnome_global_dir=
  
- [ -f /etc/mandriva-release ] && need_mandriva_fix=true
+ DEBUG 3 "Install locations for *.desktop files:"
