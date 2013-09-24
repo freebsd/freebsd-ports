@@ -1,4 +1,3 @@
-# Created by: Alex Kozlov <spam@rm-rf.kiev.ua>
 # $FreeBSD$
 
 PORTNAME=	printscreen
@@ -9,6 +8,8 @@ DISTFILES=
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Simple screenshot program for X11
 
+LICENSE=	BSD
+
 RUN_DEPENDS=	xwd:${PORTSDIR}/x11/xwd \
 		xwdtopnm:${PORTSDIR}/graphics/netpbm
 
@@ -17,8 +18,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/printscreen
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_SCRIPT} ${FILESDIR}/printscreen.in ${PREFIX}/bin/printscreen
+	@${INSTALL_SCRIPT} ${FILESDIR}/printscreen.in ${STAGEDIR}${PREFIX}/bin/printscreen
 
 .include <bsd.port.mk>
