@@ -1616,6 +1616,10 @@ Note:  Please add new entries to the beginning of this file.
 	<name>ruby19</name>
 	<range><lt>1.9.3.448,1</lt></range>
       </package>
+      <package>
+	<name>ruby18</name>
+	<range><lt>1.8.7.374,1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -1635,6 +1639,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2013-06-27</discovery>
       <entry>2013-07-11</entry>
+      <modified>2013-09-24</modified>
     </dates>
   </vuln>
 
