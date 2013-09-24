@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jansson
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.digip.org/jansson/releases/
 
@@ -14,5 +14,4 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
