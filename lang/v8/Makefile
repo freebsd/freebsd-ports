@@ -18,7 +18,6 @@ USE_LDCONFIG=	yes
 ALL_TARGET=	native
 MAKE_ARGS=	library=shared
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${CC:T:Mclang} == "clang" || ${CXX:T:Mclang++} == "clang++" || ${OSVERSION} >= 1000024
@@ -40,14 +39,14 @@ post-patch:
 		${WRKSRC}/build/common.gypi ${WRKSRC}/tools/gyp/v8.gyp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/out/native/d8 ${PREFIX}/bin/d8
-	${INSTALL_LIB} -m 755 ${WRKSRC}/out/native/lib.target/libv8.so ${PREFIX}/lib/libv8.so.1
-	${LN} -sf ${PREFIX}/lib/libv8.so.1 ${PREFIX}/lib/libv8.so
-	${INSTALL_DATA} ${WRKSRC}/include/v8.h ${PREFIX}/include/
-	${INSTALL_DATA} ${WRKSRC}/include/v8-debug.h ${PREFIX}/include/
-	${INSTALL_DATA} ${WRKSRC}/include/v8-preparser.h ${PREFIX}/include/
-	${INSTALL_DATA} ${WRKSRC}/include/v8-profiler.h ${PREFIX}/include/
-	${INSTALL_DATA} ${WRKSRC}/include/v8-testing.h ${PREFIX}/include/
-	${INSTALL_DATA} ${WRKSRC}/include/v8stdint.h ${PREFIX}/include/
+	${INSTALL_PROGRAM} ${WRKSRC}/out/native/d8 ${STAGEDIR}/${PREFIX}/bin/d8
+	${INSTALL_LIB} -m 755 ${WRKSRC}/out/native/lib.target/libv8.so ${STAGEDIR}/${PREFIX}/lib/libv8.so.1
+	${LN} -sf ${PREFIX}/lib/libv8.so.1 ${STAGEDIR}/${PREFIX}/lib/libv8.so
+	${INSTALL_DATA} ${WRKSRC}/include/v8.h ${STAGEDIR}/${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/include/v8-debug.h ${STAGEDIR}/${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/include/v8-preparser.h ${STAGEDIR}/${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/include/v8-profiler.h ${STAGEDIR}/${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/include/v8-testing.h ${STAGEDIR}/${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/include/v8stdint.h ${STAGEDIR}/${PREFIX}/include
 
 .include <bsd.port.post.mk>

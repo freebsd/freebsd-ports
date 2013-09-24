@@ -1,9 +1,9 @@
 bin/d8
-include/v8.h
 include/v8-debug.h
 include/v8-preparser.h
 include/v8-profiler.h
 include/v8-testing.h
+include/v8.h
 include/v8stdint.h
 lib/libv8.so
 lib/libv8.so.1
