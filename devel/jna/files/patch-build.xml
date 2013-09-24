@@ -1,24 +1,32 @@
 
 $FreeBSD$
 
---- build.xml.orig
-+++ build.xml
-@@ -58,7 +58,7 @@
-   <!-- Miscellaneous -->
-   <property name="build.compiler.emacs" value="true"/>
- 
--  <target name="default" depends="test" description="Build and Test."/>
-+  <target name="default" depends="jar,contrib-jars" description="Build and Test."/>
- 
-   <!-- uncomment for netbeans profiling -->
-   <!--<import file="nbproject/profiler-build-impl.xml"/>-->
-@@ -437,9 +437,6 @@
+--- ./build.xml.orig
++++ ./build.xml
+@@ -99,7 +99,7 @@
+   <condition property="test.compatibility" value="1.5" else="${compatibility}">
+     <equals arg1="${compatibility}" arg2="1.4"/>
+   </condition>
+-  <condition property="tests.exclude-patterns" value="**/VarArgsTest.java,**/AnnotatedLibraryTest.java,**/WebStartTest.java,**/PointerBufferTest.java,**/HeadlessLoadLibraryTest.java,**/StructureBufferFieldTest.java,**/PerformanceTest.java,**/*BufferArgumentsMarshalTest.java" else="**/wince/*.java">
++  <condition property="tests.exclude-patterns" value="**/VarArgsTest.java,**/AnnotatedLibraryTest.java,**/WebStartTest.java,**/PointerBufferTest.java,**/HeadlessLoadLibraryTest.java,**/StructureBufferFieldTest.java,**/PerformanceTest.java,**/*BufferArgumentsMarshalTest.java" else="**/wince/*.java **/LibraryLoadTest.java">
+     <equals arg1="${os.prefix}" arg2="w32ce-arm"/>
+   </condition>
+   <property name="dist-jar" value="${dist}/${jar}"/>
+@@ -805,9 +805,6 @@
      <jar jarfile="${build}/jws/jnidispatch.jar">
        <fileset dir="${build.native}" includes="*jnidispatch.*"/>
      </jar>
--    <signjar alias="jna" keystore="jna.keystore" storepass="jnadev" lazy="true"> 
--      <fileset dir="${build}/jws" includes="jna.jar,jna-test.jar,junit.jar,jnidispatch.jar,clover.jar"/>
+-    <signjar alias="jna" keystore="jna.keystore" storepass="jnadev" lazy="true">
+-      <fileset dir="${build}/jws" includes="${jar},${testjar},junit.jar,jnidispatch.jar,clover.jar"/>
 -    </signjar>
    </target>
- 	
-   <!-- When running tests from an IDE, be sure to set jna.library.path -->
+ 
+   <target name="android-test-setup" depends="compile-tests"
+@@ -965,7 +962,6 @@
+       <doctitle>JNA API Documentation</doctitle>
+       <header>${header}</header>
+       <bottom>${footer}</bottom>
+-      <link href="http://download.oracle.com/javase/1.4.2/docs/api/"/>
+ 
+       <packageset dir="${src}" defaultexcludes="yes">
+         <patternset>
