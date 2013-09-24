@@ -10,14 +10,12 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	linpct@gmail.com
 COMMENT=	V8 JavaScript for client and server
 
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
-
-MAN1=		node.1
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	2.7
-USE_GMAKE=	yes
+USES=		gmake
 
 CONFLICTS=	node-0.[02-9][0-9]* node-devel-0.[0-9]*
 
@@ -26,16 +24,15 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} --without-npm
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 REINPLACE_ARGS=	-i ''
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/deps/v8/build/common.gypi \
 		${WRKSRC}/deps/v8/tools/gyp/v8.gyp
 
 post-install:
-	${MKDIR} ${PREFIX}/lib/node_modules/
-	${TOUCH} ${PREFIX}/lib/node_modules/.keepme
-	${CHMOD} ${MANMODE} ${PREFIX}/man/man1/node.1
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/node_modules/
+	${TOUCH} ${STAGEDIR}${PREFIX}/lib/node_modules/.keepme
+	${CHMOD} ${MANMODE} ${STAGEDIR}${PREFIX}/man/man1/node.1
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Note: If you need npm (Node Package Manager), please install www/npm."
 	@${ECHO_MSG}
