@@ -1,0 +1,6 @@
+bin/opusdec
+bin/opusenc
+bin/opusinfo
+man/man1/opusdec.1.gz
+man/man1/opusenc.1.gz
+man/man1/opusinfo.1.gz

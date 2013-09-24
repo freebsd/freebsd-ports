@@ -10,14 +10,10 @@ MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Encode, inspect, and decode Opus files
 
-LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
-		opus:${PORTSDIR}/audio/opus
+LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
+		libopus.so:${PORTSDIR}/audio/opus
 
-GNU_CONFIGURE=	yes
 USES=		pkgconfig
-NO_STAGE=	yes
-
-PLIST_FILES=	bin/opusdec bin/opusenc bin/opusinfo
-MAN1=		opusdec.1 opusenc.1 opusinfo.1
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
