@@ -1,0 +1,31 @@
+--- ./ManReader/Makefile.orig	2012-07-27 06:21:45.000000000 +0200
++++ ./ManReader/Makefile	2013-09-25 01:25:39.843961894 +0200
+@@ -5,23 +5,23 @@
+ all:
+ 
+ install:
+-	@if [ ! -d "${DATADIR}/ManReader" ]; then \
++	@if [ ! -d "${DESTDIR}${DATADIR}/ManReader" ]; then \
+ 	    echo "${INSTALL_DATA_DIR} ${DATADIR}/ManReader"; \
+-	    ${SUDO} ${INSTALL_DATA_DIR} ${DATADIR}/ManReader; \
++	    ${SUDO} ${INSTALL_DATA_DIR} ${DESTDIR}${DATADIR}/ManReader; \
+ 	fi; \
+ 	for F in ${DATAFILES}; do \
+ 	    echo "${INSTALL_DATA} $$F ${DATADIR}/ManReader"; \
+-	    ${SUDO} ${INSTALL_DATA} $$F ${DATADIR}/ManReader; \
++	    ${SUDO} ${INSTALL_DATA} $$F ${DESTDIR}${DATADIR}/ManReader; \
+ 	done
+ 
+ install-links:
+ 	@if [ ! -d "${DATADIR}/ManReader" ]; then \
+ 	    echo "${INSTALL_DATA_DIR} ${DATADIR}/ManReader"; \
+-	    ${SUDO} ${INSTALL_DATA_DIR} ${DATADIR}/ManReader; \
++	    ${SUDO} ${INSTALL_DATA_DIR} ${DESTDIR}${DATADIR}/ManReader; \
+ 	fi; \
+ 	for F in ${DATAFILES}; do \
+ 	    echo "ln -sf `pwd`/$$F ${DATADIR}/ManReader/$$F"; \
+-	    ${SUDO} ln -sf `pwd`/$$F ${DATADIR}/ManReader/$$F; \
++	    ${SUDO} ln -sf `pwd`/$$F ${DESTDIR}${DATADIR}/ManReader/$$F; \
+ 	done
+ 
+ clean:
