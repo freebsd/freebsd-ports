@@ -1,4 +1,4 @@
-%%APACHE%%%%APACHEETCDIR%%/dojo.conf
+%%APACHE%%%%CONFDIR%%/dojo.conf
 %%WWWDIR%%/build-report.txt
 %%WWWDIR%%/dijit/BackgroundIframe.js
 %%WWWDIR%%/dijit/BackgroundIframe.js.uncompressed.js
