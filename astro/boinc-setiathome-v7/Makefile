@@ -110,7 +110,4 @@ do-install:
 	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
 .endif
 
-post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
 .include <bsd.port.mk>
