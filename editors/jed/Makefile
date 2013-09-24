@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A SLang-based text editor
 
-LIB_DEPENDS=	slang:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
 
 CONFLICTS=	jed-devel-[0-9]*
 

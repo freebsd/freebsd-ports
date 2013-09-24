@@ -8,18 +8,14 @@ MASTER_SITES=	http://xcb.freedesktop.org/dist/
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Framework for window manager implementation
 
-LIB_DEPENDS=	xcb-util:${PORTSDIR}/x11/xcb-util
-#BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
+LIB_DEPENDS=	libxcb-util.so:${PORTSDIR}/x11/xcb-util
 
 USE_BZIP2=	yes
 USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 USE_XORG=	xcb xorg-macros
-#USE_XORG=	xau xdmcp
-#USE_AUTOTOOLS=	libtool
 
 GNU_CONFIGURE=	yes
-#CONFIGURE_ENV=	GPERF="${LOCALBASE}/bin/gperf"
 
 NO_STAGE=	yes
 post-patch:

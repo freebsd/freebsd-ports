@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	garga/slgrace/
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A SLang module to plot graphs with grace
 
-LIB_DEPENDS=	slang:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
 RUN_DEPENDS=	grace:${PORTSDIR}/math/grace
 
 OPTIONS_DEFINE=	DOCS
