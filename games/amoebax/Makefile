@@ -26,19 +26,14 @@ MAN6=		amoebax.6
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|doc||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|datarootdir|datadir|' ${WRKSRC}/data/Makefile.in
 	@${FIND} ${WRKSRC}/ -name Makefile.in|${XARGS}\
 		${REINPLACE_CMD} -e '/^pkgdatadir =/s|=.*|= ${DATADIR}|'
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/manual.pdf ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/manual.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
