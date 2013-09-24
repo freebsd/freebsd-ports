@@ -17,8 +17,9 @@ USE_BZIP2=	yes
 MAKE_ENV+=	DOCSDIR="${DOCSDIR}"
 LICENSE=	GPLv2
 
-.if defined(NOPORTDOCS)
 NO_STAGE=	yes
+
+.if defined(NOPORTDOCS)
 post-patch:
 	@${REINPLACE_CMD} -e '/^install.*:/s,install-doc,,' ${WRKSRC}/Makefile
 
