@@ -12,7 +12,6 @@ XORG_CAT=	proto
 
 CONFIGURE_ARGS+=--disable-specs
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} '/^SUBDIR/s/specs//' ${WRKSRC}/Makefile.in
 

@@ -25,5 +25,4 @@ CONFIGURE_ARGS+=	--with-check=${LOCALBASE}
 CFLAGS+=	-I${LOCALBASE}/include
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

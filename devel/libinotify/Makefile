@@ -18,12 +18,8 @@ USE_LDCONFIG=	yes
 #
 # Get rid of .la and static library files
 #
-NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -E -e \
 	'/Install the pseudo-library/,/staticlibs=/s,^,#,' ${WRKSRC}/libtool
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

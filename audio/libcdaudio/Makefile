@@ -11,7 +11,6 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A library for playing audio CDs
 
 USE_AUTOTOOLS=	libtool
-NO_STAGE=	yes
 USES=		pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -19,7 +19,6 @@ PLIST_FILES=	include/sigsegv.h \
 		lib/libsigsegv.so.2 \
 		lib/libsigsegv.so
 
-NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

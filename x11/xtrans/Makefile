@@ -16,5 +16,4 @@ XORG_CAT=	lib
 
 CONFIGURE_ARGS+=--disable-docs --without-xmlto
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

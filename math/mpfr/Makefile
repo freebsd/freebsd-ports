@@ -35,7 +35,6 @@ INFO=		mpfr
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 803000

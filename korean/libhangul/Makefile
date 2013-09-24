@@ -15,7 +15,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		iconv pkgconfig
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

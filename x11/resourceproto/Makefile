@@ -10,7 +10,6 @@ COMMENT=	Resource extension headers
 
 XORG_CAT=	proto
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} '/^install-data-am:/,/^$$/ \
 		s/install-dist_docDATA//' ${WRKSRC}/Makefile.in

@@ -31,7 +31,6 @@ PLIST_FILES=	include/libgadu.h \
 OPTIONS_DEFINE=	OPENSSL
 OPTIONS_DEFAULT=OPENSSL
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}

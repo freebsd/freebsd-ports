@@ -18,7 +18,6 @@ USES=		pkgconfig
 USE_LDCONFIG=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/lib/|/libdata/|g' \
 		${WRKSRC}/data/pkgconfig.sh

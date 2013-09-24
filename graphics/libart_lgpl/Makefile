@@ -21,5 +21,4 @@ MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS=	libart-[0-9]*
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

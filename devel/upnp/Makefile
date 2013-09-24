@@ -30,5 +30,4 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} '/^pkgconfigexecdir/s|$$(libdir)|$$(prefix)/libdata|' \
 		${WRKSRC}/Makefile.in
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

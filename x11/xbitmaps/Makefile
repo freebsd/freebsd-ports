@@ -14,5 +14,4 @@ USES=	pathfix
 
 XORG_CAT=	data
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -29,7 +29,6 @@ USE_LDCONFIG=	yes
 
 INFO=		gmp
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MCPU_OPTS}

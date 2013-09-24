@@ -12,7 +12,6 @@ COMMENT=	Fast compressor/decompressor library
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 CONFIGURE_ARGS=	--disable-gtest
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
