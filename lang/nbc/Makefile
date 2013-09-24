@@ -22,7 +22,6 @@ OPTIONS_DEFINE=	DOCS ROBOCTL
 
 ROBOCTL_DESC=	Include roboctl to communicate with the NXT
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MROBOCTL}
@@ -51,13 +50,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' ${WRKSRC}/${MAKEFILE}
 
 do-install:
-	${MKDIR} ${PREFIX}/include/nbc
-	${INSTALL_PROGRAM} ${WRKSRC}/nbc ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/nbc
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/nbc
+	${INSTALL_PROGRAM} ${WRKSRC}/nbc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/nbc
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/doc/Changelog ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/doc/Readme ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/doc/Changelog ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/doc/Readme ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
