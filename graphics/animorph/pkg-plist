@@ -40,12 +40,4 @@ lib/libanimorph.la
 lib/libanimorph.so
 lib/libanimorph.so.0
 libdata/pkgconfig/animorph.pc
-@comment %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-@comment %%PORTDOCS%%%%DOCSDIR%%/COPYING
-@comment %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-@comment %%PORTDOCS%%%%DOCSDIR%%/INSTALL
-@comment %%PORTDOCS%%%%DOCSDIR%%/NEWS
-@comment %%PORTDOCS%%%%DOCSDIR%%/README
-@comment %%PORTDOCS%%%%DOCSDIR%%/TODO
-@comment %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/animorph
