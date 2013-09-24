@@ -2,8 +2,8 @@ sbin/minidlnad
 @unexec if cmp -s %D/etc/minidlna.conf %D/etc/minidlna.conf.sample; then rm -f %D/etc/minidlna.conf; fi
 etc/minidlna.conf.sample
 @exec [ -f %D/etc/minidlna.conf ] || cp -p %D/etc/minidlna.conf.sample %D/etc/minidlna.conf
-man/man5/minidlna.conf.5
-man/man8/minidlnad.8
+man/man5/minidlna.conf.5.gz
+man/man8/minidlnad.8.gz
 %%NLS%%share/locale/da/LC_MESSAGES/minidlna.mo
 %%NLS%%share/locale/de/LC_MESSAGES/minidlna.mo
 %%NLS%%share/locale/es/LC_MESSAGES/minidlna.mo
