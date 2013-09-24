@@ -15,6 +15,7 @@ lib/ao/plugins-4/liboss.so
 %%PULSEAUDIO%%lib/ao/plugins-4/libpulse.la
 %%PULSEAUDIO%%lib/ao/plugins-4/libpulse.so
 libdata/pkgconfig/ao.pc
+man/man5/libao.conf.5.gz
 share/aclocal/ao.m4
 %%PORTDOCS%%%%DOCSDIR%%/ao_append_option.html
 %%PORTDOCS%%%%DOCSDIR%%/ao_close.html
