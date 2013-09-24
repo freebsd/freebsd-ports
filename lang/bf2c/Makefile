@@ -15,15 +15,16 @@ GH_ACCOUNT=	rene0
 GH_COMMIT=	4761081
 USE_XZ=		yes
 
+MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}"
+
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
