@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	memcache
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	m.tsatsenko@gmail.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for libmemcached
 
 LIB_DEPENDS=	memcached:${PORTSDIR}/databases/libmemcached
