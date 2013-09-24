@@ -1,0 +1,16 @@
+$FreeBSD$
+
+Hack to disable shared library detection, so configure won't try
+to link with "/usr/local/lib/libiconv.so -static".
+
+--- configure.orig
++++ configure
+@@ -53560,7 +53560,7 @@
+ $as_echo "$acl_cv_rpath" >&6; }
+   wl="$acl_cv_wl"
+   acl_libext="$acl_cv_libext"
+-  acl_shlibext="$acl_cv_shlibext"
++  acl_shlibext="${SHLIBEXT-$acl_cv_shlibext}"
+   acl_libname_spec="$acl_cv_libname_spec"
+   acl_library_names_spec="$acl_cv_library_names_spec"
+   acl_hardcode_libdir_flag_spec="$acl_cv_hardcode_libdir_flag_spec"
