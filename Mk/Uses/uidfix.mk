@@ -12,7 +12,7 @@
 .if ${UID} != 0
 MAKE_ENV+=	BINOWN=${UID} SHAREOWN=${UID} CONFOWN=${UID}
 BINOWN=	${UID}
-SHAREOWN=	${UIID}
+SHAREOWN=	${UID}
 WWWOWN=	${UID}
 .endif
 .endif
