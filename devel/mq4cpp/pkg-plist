@@ -29,13 +29,13 @@ lib/libmq4cpp.la
 lib/libmq4cpp.so
 lib/libmq4cpp.so.1
 libdata/pkgconfig/mq4cpp.pc
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/LICENSE
-%%DOCSDIR%%/TODO
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/mq4cpp
