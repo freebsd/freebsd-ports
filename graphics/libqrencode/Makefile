@@ -19,16 +19,14 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		qrencode.1
-
 PLIST_FILES=	bin/qrencode \
 		include/qrencode.h \
 		lib/libqrencode.la \
 		lib/libqrencode.so \
 		lib/libqrencode.so.3 \
-		libdata/pkgconfig/libqrencode.pc
+		libdata/pkgconfig/libqrencode.pc \
+		man/man1/qrencode.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,libpng12,libpng,' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '9s|$$| ${PTHREAD_LIBS}|' ${WRKSRC}/libqrencode.pc.in
