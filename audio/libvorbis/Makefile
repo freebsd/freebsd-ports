@@ -24,14 +24,6 @@ CONFIGURE_ARGS=	--with-ogg=${LOCALBASE} \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-MAKE_ENV=	DOC=doc
-.else
-MAKE_ENV=	DOC=""
-.endif
-
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
