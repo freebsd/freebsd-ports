@@ -12,30 +12,25 @@ COMMENT=	GUI widget library for MakeHuman
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	animorph:${PORTSDIR}/graphics/animorph \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libanimorph.so:${PORTSDIR}/graphics/animorph \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		pkgconfig
+USES=		pkgconfig gmake
 USE_LDCONFIG=	yes
 USE_XORG=	xi xmu ice sm
 USE_GL=		glut
-USE_GCC=	yes # otherwise graphics/makehuman won't link
+USE_GCC=	any # otherwise graphics/makehuman won't link
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^libmhguidocdir =/ s|doc/|share/doc/|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/^pkgconfigdir =/ s|\$$(libdir)|\$$(exec_prefix)/libdata|' ${WRKSRC}/Makefile.in
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-libmhguidocDATA||' ${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.mk>
