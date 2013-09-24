@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	litecoin
-PORTVERSION=	0.8.3.7
+PORTVERSION=	0.8.5.1
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	LOCAL/swills \
 		GH
@@ -14,7 +14,7 @@ LIB_DEPENDS=	boost_date_time:${PORTSDIR}/devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	litecoin-project
-GH_COMMIT=	2884342
+GH_COMMIT=	6cef39c
 GH_TAGNAME=	v${PORTVERSION}
 
 USE_OPENSSL=	yes
