@@ -18,7 +18,7 @@ LIB_DEPENDS=	swscale${FFMPEG_SUFFIX}:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFI
 
 CONFLICTS_INSTALL=	kdemultimedia-4.[1-8].*
 
-USES=		cmake:outsource
+USES=		cmake:outsource pkgconfig
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
