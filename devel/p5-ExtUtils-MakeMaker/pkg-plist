@@ -27,6 +27,33 @@
 %%SITE_PERL%%/ExtUtils/Mksymlists.pm
 %%SITE_PERL%%/ExtUtils/testlib.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/MakeMaker/.packlist
+%%PERL5_MAN3%%/ExtUtils::Command::MM.3.gz
+%%PERL5_MAN3%%/ExtUtils::Liblist.3.gz
+%%PERL5_MAN3%%/ExtUtils::MM.3.gz
+%%PERL5_MAN3%%/ExtUtils::MM_AIX.3.gz
+%%PERL5_MAN3%%/ExtUtils::MM_Any.3.gz
+%%PERL5_MAN3%%/ExtUtils::MM_BeOS.3.gz
+%%PERL5_MAN3%%/ExtUtils::MM_Cygwin.3.gz
+%%PERL5_MAN3%%/ExtUtils::MM_DOS.3.gz
+%%PERL5_MAN3%%/ExtUtils::MM_Darwin.3.gz
+%%PERL5_MAN3%%/ExtUtils::MM_MacOS.3.gz
+%%PERL5_MAN3%%/ExtUtils::MM_NW5.3.gz
+%%PERL5_MAN3%%/ExtUtils::MM_OS2.3.gz
+%%PERL5_MAN3%%/ExtUtils::MM_QNX.3.gz
+%%PERL5_MAN3%%/ExtUtils::MM_UWIN.3.gz
+%%PERL5_MAN3%%/ExtUtils::MM_Unix.3.gz
+%%PERL5_MAN3%%/ExtUtils::MM_VMS.3.gz
+%%PERL5_MAN3%%/ExtUtils::MM_VOS.3.gz
+%%PERL5_MAN3%%/ExtUtils::MM_Win32.3.gz
+%%PERL5_MAN3%%/ExtUtils::MM_Win95.3.gz
+%%PERL5_MAN3%%/ExtUtils::MY.3.gz
+%%PERL5_MAN3%%/ExtUtils::MakeMaker.3.gz
+%%PERL5_MAN3%%/ExtUtils::MakeMaker::Config.3.gz
+%%PERL5_MAN3%%/ExtUtils::MakeMaker::FAQ.3.gz
+%%PERL5_MAN3%%/ExtUtils::MakeMaker::Tutorial.3.gz
+%%PERL5_MAN3%%/ExtUtils::Mkbootstrap.3.gz
+%%PERL5_MAN3%%/ExtUtils::Mksymlists.3.gz
+%%PERL5_MAN3%%/ExtUtils::testlib.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/MakeMaker
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils
 @dirrmtry %%SITE_PERL%%/ExtUtils/MakeMaker
