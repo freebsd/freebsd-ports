@@ -1,4 +1,5 @@
-Index: Makefile
+--- Makefile.orig	2013-09-18 22:38:41.000000000 +0200
++++ Makefile	2013-09-18 23:05:32.000000000 +0200
 @@ -1,8 +1,7 @@
 -PREFIX  = /home/opt
  DATADIR = $(PREFIX)/share/$(TARGET)

@@ -1,0 +1,466 @@
+bin/megamario
+share/applications/megamario.desktop
+%%DATADIR%%/gfx/background/Grassland.jpg
+%%DATADIR%%/gfx/background/Iceland.jpg
+%%DATADIR%%/gfx/background/Woodland.jpg
+%%DATADIR%%/gfx/background/bowsercastle.jpg
+%%DATADIR%%/gfx/background/bush1.png
+%%DATADIR%%/gfx/background/bush2.png
+%%DATADIR%%/gfx/background/bush3.png
+%%DATADIR%%/gfx/background/bush4.png
+%%DATADIR%%/gfx/background/bush5.png
+%%DATADIR%%/gfx/background/bush6.png
+%%DATADIR%%/gfx/background/canyon.jpg
+%%DATADIR%%/gfx/background/castle.jpg
+%%DATADIR%%/gfx/background/cloud1.png
+%%DATADIR%%/gfx/background/cloud2.png
+%%DATADIR%%/gfx/background/egypt.jpg
+%%DATADIR%%/gfx/background/hall.png
+%%DATADIR%%/gfx/background/hedge_1b.png
+%%DATADIR%%/gfx/background/hole.jpg
+%%DATADIR%%/gfx/background/sky.jpg
+%%DATADIR%%/gfx/background/sky_dark.jpg
+%%DATADIR%%/gfx/background/sky_night.jpg
+%%DATADIR%%/gfx/background/wood.jpg
+%%DATADIR%%/gfx/bonus/axe.png
+%%DATADIR%%/gfx/bonus/blume.png
+%%DATADIR%%/gfx/bonus/box.png
+%%DATADIR%%/gfx/bonus/boxempty.png
+%%DATADIR%%/gfx/bonus/cheater.png
+%%DATADIR%%/gfx/bonus/coin1.png
+%%DATADIR%%/gfx/bonus/coin2.png
+%%DATADIR%%/gfx/bonus/coin3.png
+%%DATADIR%%/gfx/bonus/coin4.png
+%%DATADIR%%/gfx/bonus/cracked.png
+%%DATADIR%%/gfx/bonus/cracked2.png
+%%DATADIR%%/gfx/bonus/crackedlong.png
+%%DATADIR%%/gfx/bonus/crackstone.png
+%%DATADIR%%/gfx/bonus/crackstone2.png
+%%DATADIR%%/gfx/bonus/fire1.png
+%%DATADIR%%/gfx/bonus/fire2.png
+%%DATADIR%%/gfx/bonus/flag.png
+%%DATADIR%%/gfx/bonus/invis.png
+%%DATADIR%%/gfx/bonus/life.png
+%%DATADIR%%/gfx/bonus/pilz.png
+%%DATADIR%%/gfx/bonus/stern.png
+%%DATADIR%%/gfx/characters/big/downl.png
+%%DATADIR%%/gfx/characters/big/downr.png
+%%DATADIR%%/gfx/characters/big/player1l.png
+%%DATADIR%%/gfx/characters/big/player1r.png
+%%DATADIR%%/gfx/characters/big/player2l.png
+%%DATADIR%%/gfx/characters/big/player2r.png
+%%DATADIR%%/gfx/characters/big/player3l.png
+%%DATADIR%%/gfx/characters/big/player3r.png
+%%DATADIR%%/gfx/characters/bowser1.png
+%%DATADIR%%/gfx/characters/bowser2.png
+%%DATADIR%%/gfx/characters/brett.png
+%%DATADIR%%/gfx/characters/cannon.png
+%%DATADIR%%/gfx/characters/cannon_bulletl.png
+%%DATADIR%%/gfx/characters/cannon_bulletr.png
+%%DATADIR%%/gfx/characters/fire/downl.png
+%%DATADIR%%/gfx/characters/fire/downr.png
+%%DATADIR%%/gfx/characters/fire/player1l.png
+%%DATADIR%%/gfx/characters/fire/player1r.png
+%%DATADIR%%/gfx/characters/fire/player2l.png
+%%DATADIR%%/gfx/characters/fire/player2r.png
+%%DATADIR%%/gfx/characters/fire/player3l.png
+%%DATADIR%%/gfx/characters/fire/player3r.png
+%%DATADIR%%/gfx/characters/goomba1.png
+%%DATADIR%%/gfx/characters/goomba2.png
+%%DATADIR%%/gfx/characters/goomba3.png
+%%DATADIR%%/gfx/characters/goombabig1.png
+%%DATADIR%%/gfx/characters/goombabig2.png
+%%DATADIR%%/gfx/characters/goombabig3.png
+%%DATADIR%%/gfx/characters/hammer1.png
+%%DATADIR%%/gfx/characters/hammer2.png
+%%DATADIR%%/gfx/characters/hammer3.png
+%%DATADIR%%/gfx/characters/hammer4.png
+%%DATADIR%%/gfx/characters/luigi.png
+%%DATADIR%%/gfx/characters/mariodead.png
+%%DATADIR%%/gfx/characters/pirnaha1.png
+%%DATADIR%%/gfx/characters/pirnaha2.png
+%%DATADIR%%/gfx/characters/small/downl.png
+%%DATADIR%%/gfx/characters/small/downr.png
+%%DATADIR%%/gfx/characters/small/player1l.png
+%%DATADIR%%/gfx/characters/small/player1r.png
+%%DATADIR%%/gfx/characters/small/player2l.png
+%%DATADIR%%/gfx/characters/small/player2r.png
+%%DATADIR%%/gfx/characters/small/player3l.png
+%%DATADIR%%/gfx/characters/small/player3r.png
+%%DATADIR%%/gfx/characters/spiny1.png
+%%DATADIR%%/gfx/characters/spiny2.png
+%%DATADIR%%/gfx/characters/spiny3.png
+%%DATADIR%%/gfx/characters/spiny4.png
+%%DATADIR%%/gfx/characters/turtle/flyl1.png
+%%DATADIR%%/gfx/characters/turtle/flyl2.png
+%%DATADIR%%/gfx/characters/turtle/flyr1.png
+%%DATADIR%%/gfx/characters/turtle/flyr2.png
+%%DATADIR%%/gfx/characters/turtle/shell1.png
+%%DATADIR%%/gfx/characters/turtle/shell2.png
+%%DATADIR%%/gfx/characters/turtle/shell3.png
+%%DATADIR%%/gfx/characters/turtle/shell4.png
+%%DATADIR%%/gfx/characters/turtle/turtlel1.png
+%%DATADIR%%/gfx/characters/turtle/turtlel2.png
+%%DATADIR%%/gfx/characters/turtle/turtler1.png
+%%DATADIR%%/gfx/characters/turtle/turtler2.png
+%%DATADIR%%/gfx/editor/bowser
+%%DATADIR%%/gfx/editor/box
+%%DATADIR%%/gfx/editor/brett
+%%DATADIR%%/gfx/editor/error
+%%DATADIR%%/gfx/editor/exit
+%%DATADIR%%/gfx/editor/fire
+%%DATADIR%%/gfx/editor/firecircle1
+%%DATADIR%%/gfx/editor/firecircle2
+%%DATADIR%%/gfx/editor/firecircle3
+%%DATADIR%%/gfx/editor/mover
+%%DATADIR%%/gfx/effects/fire.png
+%%DATADIR%%/gfx/effects/glid_0.png
+%%DATADIR%%/gfx/effects/glid_1.png
+%%DATADIR%%/gfx/effects/glid_2.png
+%%DATADIR%%/gfx/effects/glid_3.png
+%%DATADIR%%/gfx/fire1.png
+%%DATADIR%%/gfx/fire2.png
+%%DATADIR%%/gfx/fire3.png
+%%DATADIR%%/gfx/fire4.png
+%%DATADIR%%/gfx/menu/allsoundy.png
+%%DATADIR%%/gfx/menu/arrow.png
+%%DATADIR%%/gfx/menu/bloodn.png
+%%DATADIR%%/gfx/menu/bloody.png
+%%DATADIR%%/gfx/menu/exit.png
+%%DATADIR%%/gfx/menu/insctructions.jpg
+%%DATADIR%%/gfx/menu/levellist.png
+%%DATADIR%%/gfx/menu/levellistback.png
+%%DATADIR%%/gfx/menu/load.png
+%%DATADIR%%/gfx/menu/mario.png
+%%DATADIR%%/gfx/menu/newgame.png
+%%DATADIR%%/gfx/menu/saved.jpg
+%%DATADIR%%/gfx/menu/soundn.png
+%%DATADIR%%/gfx/menu/soundy.png
+%%DATADIR%%/gfx/story/castle1.png
+%%DATADIR%%/gfx/story/help.png
+%%DATADIR%%/gfx/story/outro1
+%%DATADIR%%/gfx/story/outro2
+%%DATADIR%%/gfx/story/outro3
+%%DATADIR%%/gfx/story/outro4
+%%DATADIR%%/gfx/story/outro5
+%%DATADIR%%/gfx/story/outro6
+%%DATADIR%%/gfx/story/story.jpg
+%%DATADIR%%/gfx/story/theend.png
+%%DATADIR%%/gfx/tiles/bigcastle.png
+%%DATADIR%%/gfx/tiles/cannonset1.png
+%%DATADIR%%/gfx/tiles/cannonset2.png
+%%DATADIR%%/gfx/tiles/conveyorL.png
+%%DATADIR%%/gfx/tiles/conveyorR.png
+%%DATADIR%%/gfx/tiles/ground/bricks.png
+%%DATADIR%%/gfx/tiles/ground/bricks2.png
+%%DATADIR%%/gfx/tiles/ground/bridge/bridgeML.png
+%%DATADIR%%/gfx/tiles/ground/bridge/bridgeMR.png
+%%DATADIR%%/gfx/tiles/ground/bridge/bridgeTL.png
+%%DATADIR%%/gfx/tiles/ground/bridge/bridgeTM.png
+%%DATADIR%%/gfx/tiles/ground/bridge/bridgeTR.png
+%%DATADIR%%/gfx/tiles/ground/grass.png
+%%DATADIR%%/gfx/tiles/ground/grass/grassBL.png
+%%DATADIR%%/gfx/tiles/ground/grass/grassBM.png
+%%DATADIR%%/gfx/tiles/ground/grass/grassBR.png
+%%DATADIR%%/gfx/tiles/ground/grass/grassML.png
+%%DATADIR%%/gfx/tiles/ground/grass/grassMM.png
+%%DATADIR%%/gfx/tiles/ground/grass/grassMR.png
+%%DATADIR%%/gfx/tiles/ground/grass/grassTL.png
+%%DATADIR%%/gfx/tiles/ground/grass/grassTL2.png
+%%DATADIR%%/gfx/tiles/ground/grass/grassTM.png
+%%DATADIR%%/gfx/tiles/ground/grass/grassTR.png
+%%DATADIR%%/gfx/tiles/ground/grass/grassTR2.png
+%%DATADIR%%/gfx/tiles/ground/ice/iceBL.png
+%%DATADIR%%/gfx/tiles/ground/ice/iceBM.png
+%%DATADIR%%/gfx/tiles/ground/ice/iceBR.png
+%%DATADIR%%/gfx/tiles/ground/ice/iceGoomba.png
+%%DATADIR%%/gfx/tiles/ground/ice/iceKoopa.png
+%%DATADIR%%/gfx/tiles/ground/ice/iceML.png
+%%DATADIR%%/gfx/tiles/ground/ice/iceMM.png
+%%DATADIR%%/gfx/tiles/ground/ice/iceMR.png
+%%DATADIR%%/gfx/tiles/ground/ice/iceTL.png
+%%DATADIR%%/gfx/tiles/ground/ice/iceTM.png
+%%DATADIR%%/gfx/tiles/ground/ice/iceTR.png
+%%DATADIR%%/gfx/tiles/ground/metal.png
+%%DATADIR%%/gfx/tiles/ground/mush/mushgreenML.png
+%%DATADIR%%/gfx/tiles/ground/mush/mushgreenMLR.png
+%%DATADIR%%/gfx/tiles/ground/mush/mushgreenMM.png
+%%DATADIR%%/gfx/tiles/ground/mush/mushgreenMR.png
+%%DATADIR%%/gfx/tiles/ground/mush/mushgreenTL.png
+%%DATADIR%%/gfx/tiles/ground/mush/mushgreenTM.png
+%%DATADIR%%/gfx/tiles/ground/mush/mushgreenTM2.png
+%%DATADIR%%/gfx/tiles/ground/mush/mushgreenTR.png
+%%DATADIR%%/gfx/tiles/ground/mush/mushgreenTR2.png
+%%DATADIR%%/gfx/tiles/ground/mush/mushredML.png
+%%DATADIR%%/gfx/tiles/ground/mush/mushredMLR.png
+%%DATADIR%%/gfx/tiles/ground/mush/mushredMM.png
+%%DATADIR%%/gfx/tiles/ground/mush/mushredMR.png
+%%DATADIR%%/gfx/tiles/ground/mush/mushredTL.png
+%%DATADIR%%/gfx/tiles/ground/mush/mushredTM.png
+%%DATADIR%%/gfx/tiles/ground/mush/mushredTR.png
+%%DATADIR%%/gfx/tiles/ground/sand.png
+%%DATADIR%%/gfx/tiles/ground/slidebar.png
+%%DATADIR%%/gfx/tiles/ground/snow/snowBL.png
+%%DATADIR%%/gfx/tiles/ground/snow/snowBM.png
+%%DATADIR%%/gfx/tiles/ground/snow/snowBR.png
+%%DATADIR%%/gfx/tiles/ground/snow/snowML.png
+%%DATADIR%%/gfx/tiles/ground/snow/snowMM.png
+%%DATADIR%%/gfx/tiles/ground/snow/snowMR.png
+%%DATADIR%%/gfx/tiles/ground/snow/snowTL.png
+%%DATADIR%%/gfx/tiles/ground/snow/snowTM.png
+%%DATADIR%%/gfx/tiles/ground/snow/snowTR.png
+%%DATADIR%%/gfx/tiles/ground/snowy.png
+%%DATADIR%%/gfx/tiles/ground/stone0.png
+%%DATADIR%%/gfx/tiles/ground/stone1.png
+%%DATADIR%%/gfx/tiles/ground/stone2.png
+%%DATADIR%%/gfx/tiles/ground/stone3.png
+%%DATADIR%%/gfx/tiles/ground/stone4.png
+%%DATADIR%%/gfx/tiles/ground/stone5.png
+%%DATADIR%%/gfx/tiles/ground/stone6.png
+%%DATADIR%%/gfx/tiles/pipes/down/1.png
+%%DATADIR%%/gfx/tiles/pipes/down/2.png
+%%DATADIR%%/gfx/tiles/pipes/down/3.png
+%%DATADIR%%/gfx/tiles/pipes/down/4.png
+%%DATADIR%%/gfx/tiles/pipes/full_pipe_left.png
+%%DATADIR%%/gfx/tiles/pipes/left/1.png
+%%DATADIR%%/gfx/tiles/pipes/left/2.png
+%%DATADIR%%/gfx/tiles/pipes/left/3.png
+%%DATADIR%%/gfx/tiles/pipes/left/4.png
+%%DATADIR%%/gfx/tiles/pipes/monsterpipe.png
+%%DATADIR%%/gfx/tiles/pipes/right/1.png
+%%DATADIR%%/gfx/tiles/pipes/right/2.png
+%%DATADIR%%/gfx/tiles/pipes/right/3.png
+%%DATADIR%%/gfx/tiles/pipes/right/4.png
+%%DATADIR%%/gfx/tiles/pipes/up/1.png
+%%DATADIR%%/gfx/tiles/pipes/up/2.png
+%%DATADIR%%/gfx/tiles/pipes/up/3.png
+%%DATADIR%%/gfx/tiles/pipes/up/4.png
+%%DATADIR%%/gfx/tiles/smallcastle.png
+%%DATADIR%%/help/editor.doc
+%%DATADIR%%/help/editor_FAQ.png
+%%DATADIR%%/help/editor_Roehren.png
+%%DATADIR%%/levels/1/1
+%%DATADIR%%/levels/1/main
+%%DATADIR%%/levels/1/text
+%%DATADIR%%/levels/10/1
+%%DATADIR%%/levels/10/main
+%%DATADIR%%/levels/11/1
+%%DATADIR%%/levels/11/mai
+%%DATADIR%%/levels/11/main
+%%DATADIR%%/levels/12/1
+%%DATADIR%%/levels/12/main
+%%DATADIR%%/levels/13/main
+%%DATADIR%%/levels/14/main
+%%DATADIR%%/levels/15/main
+%%DATADIR%%/levels/16/main
+%%DATADIR%%/levels/17/main
+%%DATADIR%%/levels/18/main
+%%DATADIR%%/levels/19/main
+%%DATADIR%%/levels/2/main
+%%DATADIR%%/levels/2/text
+%%DATADIR%%/levels/20/main
+%%DATADIR%%/levels/21/main
+%%DATADIR%%/levels/22/main
+%%DATADIR%%/levels/23/main
+%%DATADIR%%/levels/24/main
+%%DATADIR%%/levels/25/main
+%%DATADIR%%/levels/3/main
+%%DATADIR%%/levels/3_2/main
+%%DATADIR%%/levels/3_2/main.bak
+%%DATADIR%%/levels/4/main
+%%DATADIR%%/levels/5/main
+%%DATADIR%%/levels/6/1
+%%DATADIR%%/levels/6/main
+%%DATADIR%%/levels/7/1
+%%DATADIR%%/levels/7/main
+%%DATADIR%%/levels/8/1
+%%DATADIR%%/levels/8/main
+%%DATADIR%%/levels/9/1
+%%DATADIR%%/levels/9/main
+%%DATADIR%%/levels/Edit1/main
+%%DATADIR%%/levels/Edit2/main
+%%DATADIR%%/levels/Edit2/main.bak
+%%DATADIR%%/levels/Edit3/main
+%%DATADIR%%/levels/Edit4/main
+%%DATADIR%%/levels/Edit5/main
+%%DATADIR%%/levels/default
+%%DATADIR%%/levels/full levellist.txt
+%%DATADIR%%/levels/grasslevels/grassland
+%%DATADIR%%/levels/grasslevels/green1
+%%DATADIR%%/levels/grasslevels/green2
+%%DATADIR%%/levels/grasslevels/ice3
+%%DATADIR%%/levels/grasslevels/iceland
+%%DATADIR%%/levels/grasslevels/iceland2
+%%DATADIR%%/levels/grasslevels/shroomland
+%%DATADIR%%/levels/levellist.txt
+%%DATADIR%%/levels/menulevel
+%%DATADIR%%/levels/menulevel2
+%%DATADIR%%/levels/old/1/1
+%%DATADIR%%/levels/old/1/2
+%%DATADIR%%/levels/old/1/main
+%%DATADIR%%/levels/old/2/1
+%%DATADIR%%/levels/old/2/3
+%%DATADIR%%/levels/old/2/castle
+%%DATADIR%%/levels/old/2/main
+%%DATADIR%%/levels/old/lab/main
+%%DATADIR%%/levels/orig _ levellist.txt
+%%DATADIR%%/mp3music/bowser1.mp3
+%%DATADIR%%/mp3music/castle.mp3
+%%DATADIR%%/mp3music/coolgroove.mp3
+%%DATADIR%%/mp3music/ending.mp3
+%%DATADIR%%/mp3music/ghostcastle.mp3
+%%DATADIR%%/mp3music/groove2.mp3
+%%DATADIR%%/mp3music/groove3.mp3
+%%DATADIR%%/mp3music/groove6.mp3
+%%DATADIR%%/mp3music/hole.mp3
+%%DATADIR%%/mp3music/iceland.mp3
+%%DATADIR%%/mp3music/maingroove.mp3
+%%DATADIR%%/mp3music/megagroove.mp3
+%%DATADIR%%/mp3music/megamusic.mp3
+%%DATADIR%%/mp3music/music_available.dat
+%%DATADIR%%/mp3music/orig.mp3
+%%DATADIR%%/mp3music/star2.mp3
+%%DATADIR%%/save.sav
+%%DATADIR%%/screens/1.png
+%%DATADIR%%/screens/2.png
+%%DATADIR%%/screens/3.png
+%%DATADIR%%/screens/4.png
+%%DATADIR%%/screens/5.png
+%%DATADIR%%/screens/6.gif
+%%DATADIR%%/sfx/1-up.wav
+%%DATADIR%%/sfx/bowserfall.wav
+%%DATADIR%%/sfx/cannon.wav
+%%DATADIR%%/sfx/coin.wav
+%%DATADIR%%/sfx/crack.wav
+%%DATADIR%%/sfx/die.wav
+%%DATADIR%%/sfx/fireball.wav
+%%DATADIR%%/sfx/flag.wav
+%%DATADIR%%/sfx/gameover.wav
+%%DATADIR%%/sfx/grow.wav
+%%DATADIR%%/sfx/jump.wav
+%%DATADIR%%/sfx/kick.wav
+%%DATADIR%%/sfx/music/Castle1.mid
+%%DATADIR%%/sfx/music/Castle2.mid
+%%DATADIR%%/sfx/music/Castle3.mid
+%%DATADIR%%/sfx/music/Castle4.mid
+%%DATADIR%%/sfx/music/MegaMarioTheme.mid
+%%DATADIR%%/sfx/music/Overworld1.mid
+%%DATADIR%%/sfx/music/Overworld2.mid
+%%DATADIR%%/sfx/music/Overworld3.mid
+%%DATADIR%%/sfx/music/Overworld4.mid
+%%DATADIR%%/sfx/music/Overworld5.mid
+%%DATADIR%%/sfx/music/Overworld6.mid
+%%DATADIR%%/sfx/music/Overworld7.mid
+%%DATADIR%%/sfx/music/Overworld8.mid
+%%DATADIR%%/sfx/music/Underground1.mid
+%%DATADIR%%/sfx/music/Underground2.mid
+%%DATADIR%%/sfx/music/Underground3.mid
+%%DATADIR%%/sfx/music/boosterstower.mid
+%%DATADIR%%/sfx/music/bowser1.mid
+%%DATADIR%%/sfx/music/bowser2.mid
+%%DATADIR%%/sfx/music/bowser3.mid
+%%DATADIR%%/sfx/music/bowsergroove.mid
+%%DATADIR%%/sfx/music/castle.mid
+%%DATADIR%%/sfx/music/coolgroove.mid
+%%DATADIR%%/sfx/music/ending.mid
+%%DATADIR%%/sfx/music/flag.mid
+%%DATADIR%%/sfx/music/fortress.mid
+%%DATADIR%%/sfx/music/ghostcastle.mid
+%%DATADIR%%/sfx/music/groove1.mid
+%%DATADIR%%/sfx/music/groove2.mid
+%%DATADIR%%/sfx/music/groove3.mid
+%%DATADIR%%/sfx/music/groove4.mid
+%%DATADIR%%/sfx/music/groove5.mid
+%%DATADIR%%/sfx/music/groove6.mid
+%%DATADIR%%/sfx/music/hammerbros.mid
+%%DATADIR%%/sfx/music/heaven.mid
+%%DATADIR%%/sfx/music/hole.mid
+%%DATADIR%%/sfx/music/maingroove.mid
+%%DATADIR%%/sfx/music/megagroove.mid
+%%DATADIR%%/sfx/music/megamusic.mid
+%%DATADIR%%/sfx/music/musicbox.mid
+%%DATADIR%%/sfx/music/orig.mid
+%%DATADIR%%/sfx/music/reggae.mid
+%%DATADIR%%/sfx/music/star.mid
+%%DATADIR%%/sfx/music/talltower.mid
+%%DATADIR%%/sfx/music/toadshouse.mid
+%%DATADIR%%/sfx/output.wav
+%%DATADIR%%/sfx/pause.wav
+%%DATADIR%%/sfx/pipe.wav
+%%DATADIR%%/sfx/shrink.wav
+%%DATADIR%%/sfx/stage_clear.wav
+%%DATADIR%%/sfx/stomp.wav
+%%DATADIR%%/sfx/stomp_1.wav
+%%DATADIR%%/sfx/tock.wav
+%%DATADIR%%/style.TTF
+%%DATADIR%%/textures.txt
+%%DATADIR%%/variables.png
+share/pixmaps/megamario.png
+@dirrm %%DATADIR%%/sfx/music
+@dirrm %%DATADIR%%/sfx
+@dirrm %%DATADIR%%/screens
+@dirrm %%DATADIR%%/mp3music
+@dirrm %%DATADIR%%/levels/old/lab
+@dirrm %%DATADIR%%/levels/old/2
+@dirrm %%DATADIR%%/levels/old/1
+@dirrm %%DATADIR%%/levels/old
+@dirrm %%DATADIR%%/levels/grasslevels
+@dirrm %%DATADIR%%/levels/Edit5
+@dirrm %%DATADIR%%/levels/Edit4
+@dirrm %%DATADIR%%/levels/Edit3
+@dirrm %%DATADIR%%/levels/Edit2
+@dirrm %%DATADIR%%/levels/Edit1
+@dirrm %%DATADIR%%/levels/9
+@dirrm %%DATADIR%%/levels/8
+@dirrm %%DATADIR%%/levels/7
+@dirrm %%DATADIR%%/levels/6
+@dirrm %%DATADIR%%/levels/5
+@dirrm %%DATADIR%%/levels/4
+@dirrm %%DATADIR%%/levels/3_2
+@dirrm %%DATADIR%%/levels/3
+@dirrm %%DATADIR%%/levels/25
+@dirrm %%DATADIR%%/levels/24
+@dirrm %%DATADIR%%/levels/23
+@dirrm %%DATADIR%%/levels/22
+@dirrm %%DATADIR%%/levels/21
+@dirrm %%DATADIR%%/levels/20
+@dirrm %%DATADIR%%/levels/2
+@dirrm %%DATADIR%%/levels/19
+@dirrm %%DATADIR%%/levels/18
+@dirrm %%DATADIR%%/levels/17
+@dirrm %%DATADIR%%/levels/16
+@dirrm %%DATADIR%%/levels/15
+@dirrm %%DATADIR%%/levels/14
+@dirrm %%DATADIR%%/levels/13
+@dirrm %%DATADIR%%/levels/12
+@dirrm %%DATADIR%%/levels/11
+@dirrm %%DATADIR%%/levels/10
+@dirrm %%DATADIR%%/levels/1
+@dirrm %%DATADIR%%/levels
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%/gfx/tiles/pipes/up
+@dirrm %%DATADIR%%/gfx/tiles/pipes/right
+@dirrm %%DATADIR%%/gfx/tiles/pipes/left
+@dirrm %%DATADIR%%/gfx/tiles/pipes/down
+@dirrm %%DATADIR%%/gfx/tiles/pipes
+@dirrm %%DATADIR%%/gfx/tiles/ground/snow
+@dirrm %%DATADIR%%/gfx/tiles/ground/mush
+@dirrm %%DATADIR%%/gfx/tiles/ground/ice
+@dirrm %%DATADIR%%/gfx/tiles/ground/grass
+@dirrm %%DATADIR%%/gfx/tiles/ground/bridge
+@dirrm %%DATADIR%%/gfx/tiles/ground
+@dirrm %%DATADIR%%/gfx/tiles
+@dirrm %%DATADIR%%/gfx/story
+@dirrm %%DATADIR%%/gfx/menu
+@dirrm %%DATADIR%%/gfx/effects
+@dirrm %%DATADIR%%/gfx/editor
+@dirrm %%DATADIR%%/gfx/characters/turtle
+@dirrm %%DATADIR%%/gfx/characters/small
+@dirrm %%DATADIR%%/gfx/characters/fire
+@dirrm %%DATADIR%%/gfx/characters/big
+@dirrm %%DATADIR%%/gfx/characters
+@dirrm %%DATADIR%%/gfx/bonus
+@dirrm %%DATADIR%%/gfx/background
+@dirrm %%DATADIR%%/gfx
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
