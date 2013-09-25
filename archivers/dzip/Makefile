@@ -12,7 +12,6 @@ COMMENT=	File compression utility specializing in Quake demo compression
 
 LICENSE=	ZLIB
 
-NO_STAGE=	yes
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 
@@ -33,6 +32,6 @@ post-extract: .SILENT
 	${REINPLACE_CMD} -e '21d;23d' ${WRKSRC}/dzipcon.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}/${PREFIX}/bin
 
 .include <bsd.port.mk>
