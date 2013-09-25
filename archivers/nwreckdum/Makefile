@@ -11,8 +11,6 @@ COMMENT=	Utility for manipulating of Quake packed data files
 
 LICENSE=	GPLv2
 
-NO_STAGE=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	danfe
 GH_TAGNAME=	${GH_COMMIT}
@@ -21,6 +19,6 @@ GH_COMMIT=	22cbc47
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}/${PREFIX}/bin
 
 .include <bsd.port.mk>
