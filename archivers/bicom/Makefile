@@ -13,7 +13,6 @@ COMMENT=	Data compressor in the PPM family
 
 RESTRICTED=	Contact author personally regarding commercial use
 
-NO_STAGE=	yes
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 MAKEFILE=	${FILESDIR}/Makefile
@@ -21,6 +20,6 @@ MAKEFILE=	${FILESDIR}/Makefile
 PLIST_FILES=	bin/bicom
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bicom/bicom ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bicom/bicom ${STAGEDIR}/${PREFIX}/bin
 
 .include <bsd.port.mk>
