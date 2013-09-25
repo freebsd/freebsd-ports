@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	links
-DISTVERSION=	2.7
-PORTREVISION=	1
+DISTVERSION=	2.8
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://links.twibright.com/download/ LOCAL/bf
@@ -24,15 +23,16 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_OPENSSL=	yes
 USE_BZIP2=	yes
 
-OPTIONS_DEFINE=	DIRECTFB SVGALIB TRANS UTF8 X11
+OPTIONS_DEFINE=	CIPHERSTRING DIRECTFB IPV6 SVGALIB THREADS TRANS UTF8 X11
 
+CIPHERSTRING_DESC=	Select the OpenSSL ciphers used via CIPHERSTRING
 DIRECTFB_DESC=	DirectFB graphics support
 SVGALIB_DESC=	SVGALib graphics support
 TRANS_DESC=	Hack for background transparency
 UTF8_DESC=	UTF-8 support
 X11_DESC=	X11 graphics support
 
-OPTIONS_DEFAULT=	UTF8 X11
+OPTIONS_DEFAULT=	IPV6 UTF8 X11
 
 MAN1=		links.1
 PLIST_FILES=	bin/links
@@ -40,31 +40,45 @@ PLIST_FILES=	bin/links
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
+#CIPHERSTRING must be a valid OpenSSL cipher string(see ciphers(1)):
+CIPHERSTRING?=	HIGH:!SSLv2:!aNULL:!eNULL:@STRENGTH
+
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
+LIB_DEPENDS+=	liblzma.so:${PORTSDIR}/archivers/xz
 .endif
 
 .if ${PORT_OPTIONS:MDIRECTFB} || ${PORT_OPTIONS:MSVGALIB} || ${PORT_OPTIONS:MX11}
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	--enable-graphics
 .else
 CONFIGURE_ARGS+=	--disable-graphics --without-libjpeg --without-libtiff
 .endif
 
 .if ${PORT_OPTIONS:MDIRECTFB}
-LIB_DEPENDS+=	directfb-1.4.5:${PORTSDIR}/devel/directfb
+LIB_DEPENDS+=	libdirectfb.so:${PORTSDIR}/devel/directfb
 CONFIGURE_ARGS+=	--with-directfb
 .else
 CONFIGURE_ARGS+=	--without-directfb
 .endif
 
+.if ${PORT_OPTIONS:MIPV6}
+CONFIGURE_ARGS+=	--with-ipv6
+.else
+CONFIGURE_ARGS+=	--without-ipv6
+.endif
+
 .if ${PORT_OPTIONS:MSVGALIB}
-LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS+=	libvga.so:${PORTSDIR}/graphics/svgalib
 CONFIGURE_ARGS+=	--with-svgalib
 .else
 CONFIGURE_ARGS+=	--without-svgalib
+.endif
+
+.if ${PORT_OPTIONS:MTHREADS}
+CFLAGS+=	-DHAVE_PTHREADS
+LDFLAGS+=	-pthread
 .endif
 
 .if ${PORT_OPTIONS:MTRANS}
@@ -93,6 +107,13 @@ CONFIGURE_ARGS+=	--without-x
 
 post-patch:
 	@${REINPLACE_CMD} -e "s!/etc/!${PREFIX}/etc/!" ${WRKSRC}/os_dep.h
+	@${REINPLACE_CMD} -e "/LIBS=/{s/-lpthread/-pthread/;s/-ldl//;}" \
+		${WRKSRC}/configure
+.if ${PORT_OPTIONS:MCIPHERSTRING}
+	@${REINPLACE_CMD} -e '/SSL_CTX_set_options/ \
+	s/;/; SSL_CTX_set_cipher_list(context, "${CIPHERSTRING}");/' \
+		${WRKSRC}/https.c
+.endif
 
 .if ${PORT_OPTIONS:MX11}
 post-install:
