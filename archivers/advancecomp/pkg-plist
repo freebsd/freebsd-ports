@@ -1,0 +1,8 @@
+bin/advdef
+bin/advmng
+bin/advpng
+bin/advzip
+man/man1/advdef.1.gz
+man/man1/advmng.1.gz
+man/man1/advpng.1.gz
+man/man1/advzip.1.gz
