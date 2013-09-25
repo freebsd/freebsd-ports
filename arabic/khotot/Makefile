@@ -12,7 +12,6 @@ EXTRACT_ONLY=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta-port for popular Arabic font packages
 
-NO_STAGE=	yes
 NO_BUILD=	yes
 NO_INSTALL=	yes
 SUB_FILES=	pkg-message
@@ -37,10 +36,5 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/ae_fonts1/AAHS/fonts.dir:${PORTSDIR}/ar
 .if ${PORT_OPTIONS:MKACST}
 RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/kacst_fonts/fonts.dir:${PORTSDIR}/arabic/kacst_fonts
 .endif
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .include <bsd.port.mk>
