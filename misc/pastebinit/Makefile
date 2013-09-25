@@ -22,7 +22,6 @@ OPTIONS_DEFINE=	PASTEBINS
 PASTEBINS_DESC=	Install default pastebins
 OPTIONS_DEFAULT=	PASTEBINS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPASTEBINS}
@@ -33,9 +32,9 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/usr/share/pastebin.d|${DATADIR}/pastebin.d|' \
 		${WRKSRC}/pastebinit
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .if ${PORT_OPTIONS:MPASTEBINS}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} pastebin.d ${DATADIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} pastebin.d ${STAGEDIR}${DATADIR})
 .endif
 
 .include <bsd.port.mk>
