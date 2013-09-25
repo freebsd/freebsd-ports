@@ -8,6 +8,8 @@
 %%DATADIR%%/azerty_fr_ibook.kbd
 %%DATADIR%%/basic_lessons.txt
 %%DATADIR%%/beep.png
+%%DATADIR%%/bg.paragraphs
+%%DATADIR%%/bg.words
 %%DATADIR%%/bn.paragraphs
 %%DATADIR%%/bn.words
 %%DATADIR%%/colemak_us.kbd
@@ -17,6 +19,7 @@
 %%DATADIR%%/da.words
 %%DATADIR%%/de.paragraphs
 %%DATADIR%%/de.words
+%%DATADIR%%/dvorak_bg.kbd
 %%DATADIR%%/dvorak_br_nativo.kbd
 %%DATADIR%%/dvorak_br_us.kbd
 %%DATADIR%%/dvorak_ca_fr.kbd
@@ -32,6 +35,8 @@
 %%DATADIR%%/dvorak_tr_F.kbd
 %%DATADIR%%/dvorak_uk.kbd
 %%DATADIR%%/dvorak_us.kbd
+%%DATADIR%%/el.paragraphs
+%%DATADIR%%/el.words
 %%DATADIR%%/en_GB.paragraphs
 %%DATADIR%%/en_GB.words
 %%DATADIR%%/eo.paragraphs
@@ -81,6 +86,8 @@
 %%DATADIR%%/pt_BR.paragraphs
 %%DATADIR%%/pt_BR.words
 %%DATADIR%%/qwerty_ar.kbd
+%%DATADIR%%/qwerty_bg.kbd
+%%DATADIR%%/qwerty_bg_2.kbd
 %%DATADIR%%/qwerty_br.kbd
 %%DATADIR%%/qwerty_br_abnt2.kbd
 %%DATADIR%%/qwerty_ca_multling.kbd
@@ -90,6 +97,7 @@
 %%DATADIR%%/qwerty_dk.kbd
 %%DATADIR%%/qwerty_es.kbd
 %%DATADIR%%/qwerty_gr.kbd
+%%DATADIR%%/qwerty_gr_old.kbd
 %%DATADIR%%/qwerty_il.kbd
 %%DATADIR%%/qwerty_il_old.kbd
 %%DATADIR%%/qwerty_it.kbd
@@ -123,6 +131,7 @@
 %%DATADIR%%/vi.words
 %%DATADIR%%/workman_us.kbd
 bin/klavaro
+man/man1/klavaro.1.gz
 share/applications/klavaro.desktop
 share/icons/hicolor/16x16/apps/klavaro.png
 share/icons/hicolor/22x22/apps/klavaro.png
@@ -130,10 +139,12 @@ share/icons/hicolor/24x24/apps/klavaro.png
 share/icons/hicolor/32x32/apps/klavaro.png
 share/icons/hicolor/48x48/apps/klavaro.png
 share/locale/ar/LC_MESSAGES/klavaro.mo
+share/locale/bg/LC_MESSAGES/klavaro.mo
 share/locale/bn/LC_MESSAGES/klavaro.mo
 share/locale/cs/LC_MESSAGES/klavaro.mo
 share/locale/da/LC_MESSAGES/klavaro.mo
 share/locale/de/LC_MESSAGES/klavaro.mo
+share/locale/el/LC_MESSAGES/klavaro.mo
 share/locale/en_GB/LC_MESSAGES/klavaro.mo
 share/locale/eo/LC_MESSAGES/klavaro.mo
 share/locale/es/LC_MESSAGES/klavaro.mo
@@ -158,10 +169,14 @@ share/locale/wo/LC_MESSAGES/klavaro.mo
 share/locale/zh_CN/LC_MESSAGES/klavaro.mo
 @dirrmtry share/locale/wo/LC_MESSAGES
 @dirrmtry share/locale/wo
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor/32x32/apps
