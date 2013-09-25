@@ -11,23 +11,21 @@ DISTNAME=	ctemplate-${PORTVERSION}
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A simple but powerful template language for C++
 
+OPTIONS_DEFINE=	DOCS
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		pkgconfig
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e 's|^pkgconfigdir.*|pkgconfigdir = $${PREFIX}/libdata/pkgconfig|' \
+	@${REINPLACE_CMD} -e 's|^pkgconfigdir.*|pkgconfigdir = $${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
-
-.if !defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e \
 		's|$$(prefix)/share/doc/$$(PACKAGE)-$$(VERSION)|${DOCSDIR}|' \
 		${WRKSRC}/Makefile.in
-.else
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e \
 		'/install-data-am/ s|install-dist_docDATA||' \
 		${WRKSRC}/Makefile.in
