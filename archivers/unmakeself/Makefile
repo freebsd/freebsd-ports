@@ -13,7 +13,6 @@ LDFLAGS+=	-larchive -lbz2 -lz -lcrypto -lmd
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/unmakeself
-NO_STAGE=	yes
 
 do-configure:
 	@${RM} -f ${WRKSRC}/config.h
@@ -28,6 +27,6 @@ do-build:
 		${FILESDIR}/unmakeself.c ${LDFLAGS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unmakeself ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/unmakeself ${STAGEDIR}/${PREFIX}/bin
 
 .include <bsd.port.mk>
