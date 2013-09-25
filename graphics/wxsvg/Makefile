@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	wxsvg
-PORTVERSION=	1.1.16
+PORTVERSION=	1.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	C++ library to create, manipulate, and render SVG files
 
 LICENSE=	LGPL21 # (or later)
@@ -28,7 +28,6 @@ LIBAV_PC=	libavcodec1 libavformat1 libavutil1 libswscale1
 LIBAV_CFLAGS=	$$(pkg-config --cflags ${LIBAV_PC})
 LIBAV_LIBS=	$$(pkg-config --libs ${LIBAV_PC})
 
-NO_STAGE=	yes
 post-extract:
 .for i in configure install-sh
 	@${CHMOD} ${BINMODE} ${WRKSRC}/${i}
