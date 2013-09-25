@@ -1,5 +1,7 @@
 bin/gshar
 bin/gunshar
+man/man1/gshar.1.gz
+man/man1/gunshar.1.gz
 %%NLS%%share/locale/bg/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/sharutils.mo
