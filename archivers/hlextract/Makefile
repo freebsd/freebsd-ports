@@ -7,14 +7,13 @@ CATEGORIES=	archivers games
 MASTER_SITES=	http://nemesis.thewavelength.net/files/files/
 DISTNAME=	hllib${PORTVERSION:S/.//g}
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Utility to extract data from various Half-Life file formats
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	hl:${PORTSDIR}/games/hllib
+LIB_DEPENDS=	libhl.so:${PORTSDIR}/games/hllib
 
-NO_STAGE=	yes
 USE_DOS2UNIX=	yes
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/HLExtract
@@ -28,6 +27,6 @@ do-build:
 		${WRKSRC}/Main.c -o ${WRKSRC}/${PORTNAME} -lhl
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}/${PREFIX}/bin
 
 .include <bsd.port.mk>
