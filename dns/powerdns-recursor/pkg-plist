@@ -3,4 +3,6 @@ etc/pdns/recursor.conf-dist
 @exec [ -f %B/recursor.conf ] || cp %B/%f %B/recursor.conf
 bin/rec_control
 sbin/pdns_recursor
+man/man8/pdns_recursor.8.gz
+man/man8/rec_control.8.gz
 @dirrmtry etc/pdns
