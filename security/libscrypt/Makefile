@@ -22,7 +22,6 @@ PLIST_FILES+=	include/libscrypt.h \
 		lib/libscrypt.so \
 		lib/libscrypt.so.0
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/^CC=gcc/d' -e '/CFLAGS=/s,$$, ${CFLAGS},' \
 	    -e 's,/usr/local,${PREFIX},' ${WRKSRC}/Makefile

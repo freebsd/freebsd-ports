@@ -15,7 +15,6 @@ COMMENT=	An extremely memory-efficient hash_map implementation
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

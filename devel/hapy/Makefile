@@ -12,7 +12,6 @@ COMMENT=	A runtime parser generator
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 post-build:
 	@${ECHO_MSG} "Consider running 'make check' before 'make install'"
 	@${ECHO_MSG} "to execute a library self-test"

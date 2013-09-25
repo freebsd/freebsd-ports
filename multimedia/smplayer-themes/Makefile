@@ -14,7 +14,6 @@ NO_BUILD=	yes
 
 DATADIR=	${PREFIX}/share/smplayer
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|g' \
 		${WRKSRC}/Makefile

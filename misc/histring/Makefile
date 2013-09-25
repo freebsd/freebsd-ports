@@ -14,5 +14,4 @@ COMMENT=	Highlight strings using the ANSI terminal escape sequences
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/histring
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

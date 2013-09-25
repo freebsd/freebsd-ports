@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CFLAGS+=	-Wno-return-type
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s/cfree/free/g" ${WRKSRC}/src/list.c
 	@${REINPLACE_CMD} -e "s/argv\[\]/*argv/" ${WRKSRC}/src/zzbind.h

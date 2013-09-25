@@ -12,5 +12,4 @@ COMMENT=	A parser which works with the GLR(0) algorithm
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

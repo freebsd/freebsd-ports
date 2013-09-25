@@ -19,7 +19,6 @@ CONFIGURE_ARGS=	--with-gmp="${LOCALBASE}"
 
 OPTIONS_DEFINE=		DOXYGEN OPTIMIZED_CFLAGS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${LOCALBASE} == "/usr/local"

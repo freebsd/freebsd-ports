@@ -20,7 +20,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:

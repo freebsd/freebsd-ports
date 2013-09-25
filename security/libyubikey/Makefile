@@ -29,5 +29,4 @@ MAKE_JOBS_UNSAFE=yes
 regression-test: build
 	@(cd ${WRKSRC}; ${MAKE} check)
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -15,5 +15,4 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 PLIST_FILES=	bin/hdrecover
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

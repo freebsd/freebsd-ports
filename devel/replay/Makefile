@@ -13,7 +13,6 @@ COMMENT=	Program that helps you fix a build interactively
 
 PLIST_FILES=	bin/replay
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s/NOMAN/NO_MAN/" ${WRKSRC}/Makefile
 

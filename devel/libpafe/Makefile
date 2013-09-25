@@ -27,5 +27,4 @@ PLIST_DIRS=	include/libpafe
 CONFIGURE_ENV+=	LIBUSB_CFLAGS="-I/usr/include" \
 		LIBUSB_LIBS="-L/usr/lib -lusb"
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

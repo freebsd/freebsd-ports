@@ -19,7 +19,6 @@ USES=		pkgconfig
 PORTDOCS=	*
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|^pkgconfigdir.*|pkgconfigdir = $${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in

@@ -11,5 +11,4 @@ COMMENT=	Manipulation of text files in a mixed DOS/Windows and Unix environment
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

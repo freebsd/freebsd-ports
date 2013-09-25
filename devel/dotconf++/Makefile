@@ -15,7 +15,6 @@ USE_AUTOTOOLS=	libtool
 
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' \
 		${WRKSRC}/src/dotconfpp.h ${WRKSRC}/src/mempool.h

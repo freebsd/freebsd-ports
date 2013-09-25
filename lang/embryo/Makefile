@@ -20,7 +20,6 @@ USES=		pathfix pkgconfig
 USE_EFL=	eina libtool_hack librt_hack
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 803000

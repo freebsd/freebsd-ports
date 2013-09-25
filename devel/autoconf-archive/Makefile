@@ -17,5 +17,4 @@ INFO=		${PORTNAME}
 
 PLIST_SUB=	MACRODIR=share/aclocal
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

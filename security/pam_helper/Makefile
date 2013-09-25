@@ -13,5 +13,4 @@ USE_BZIP2=	yes
 
 PLIST_FILES=	bin/pam_helper
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

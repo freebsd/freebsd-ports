@@ -17,7 +17,6 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${PREFIX}/include -I${LOCALBASE}/include
 LDFLAGS+=	-L${PREFIX}/lib -L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's@endian\.h@sys/&@' ${WRKSRC}/include/libecc/bitset.h
 

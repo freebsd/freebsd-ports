@@ -19,5 +19,4 @@ USE_LDCONFIG=	yes
 
 LATEST_LINK=	dbh10
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

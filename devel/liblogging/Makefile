@@ -13,7 +13,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^pkgconfigdir =/s|=.*| \
 		= ${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/Makefile.in

@@ -15,7 +15,6 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/ncrypt bin/nrm
 
-NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -E 's,^(CC|CFLAGS) =,\1 \?=,g' \
 		${WRKSRC}/Makefile

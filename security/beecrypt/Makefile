@@ -14,7 +14,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--without-java
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 .if defined(WITH_OPENMP)

@@ -20,5 +20,4 @@ USES=		pathfix pkgconfig
 
 ONLY_FOR_ARCHS=	amd64
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

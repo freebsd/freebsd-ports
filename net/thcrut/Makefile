@@ -15,5 +15,4 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libnet=${LOCALBASE} \
 		 	--sysconfdir=${DATADIR}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -20,5 +20,4 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--disable-static
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

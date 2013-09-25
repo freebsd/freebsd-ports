@@ -13,7 +13,6 @@ COMMENT=	Turn cvs diff output into patch input
 
 PLIST_FILES=	bin/cvsdiff2patch
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s/NOMAN/NO_MAN/" ${WRKSRC}/Makefile
 

@@ -14,7 +14,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-0.7.0
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|tests doc VisualC|tests VisualC|' ${WRKSRC}/configure
 

@@ -11,5 +11,4 @@ COMMENT=	Go-moku game which learns playing the game from studying its opponent
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

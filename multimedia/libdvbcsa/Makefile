@@ -18,5 +18,4 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=        --prefix="${PREFIX}" \
 		--enable-mmx --enable-sse2
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

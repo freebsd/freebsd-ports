@@ -23,7 +23,6 @@ PLIST_FILES=	bin/vitetris \
 PLIST_DIRS=	share/allegro \
 		share/applications
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,docdir,datadir,g' \
 	    ${WRKSRC}/Makefile

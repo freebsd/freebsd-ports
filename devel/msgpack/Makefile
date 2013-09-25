@@ -11,7 +11,6 @@ COMMENT=	Binary-based efficient data interchange format focused on performance
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

@@ -27,7 +27,6 @@ PLIST_SUB+=	XMMS=""
 PLIST_SUB+=	XMMS="@comment "
 .endif
 
-NO_STAGE=	yes
 pre-everything::
 .if !defined(WITH_XMMS)
 	@${ECHO} ""

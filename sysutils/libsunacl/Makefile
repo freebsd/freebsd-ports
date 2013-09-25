@@ -12,7 +12,6 @@ COMMENT=	Wrapper providing SunOS NFSv4 ACL API
 USE_LDCONFIG=	yes
 PLIST_FILES=	include/sunacl.h lib/libsunacl.a lib/libsunacl.so.1 lib/libsunacl.so
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

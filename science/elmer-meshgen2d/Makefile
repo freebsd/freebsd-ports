@@ -17,5 +17,4 @@ ALL_TARGET=
 PLIST_FILES=	bin/ElmerMesh2D \
 		bin/Mesh2D
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

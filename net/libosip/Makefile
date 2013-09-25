@@ -17,7 +17,6 @@ USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-debug --disable-trace
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "/^SUBDIRS/s| help | |g" ${WRKSRC}/Makefile.in

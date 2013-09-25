@@ -18,7 +18,6 @@ PLIST_FILES=	include/libg19.h \
 		lib/libg19.so \
 		lib/libg19.so.1
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800069

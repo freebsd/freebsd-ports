@@ -12,7 +12,6 @@ COMMENT=	Firmware for the D-Link BCM2033 bluetooth adaptor for use by bcmfw(1)
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}
 
-NO_STAGE=	yes
 post-install:
 	@${CAT} pkg-message
 

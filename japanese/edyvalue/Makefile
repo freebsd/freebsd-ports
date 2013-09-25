@@ -18,7 +18,6 @@ LIB_DEPENDS=	pasori.1:${PORTSDIR}/devel/libpasori
 
 PLIST_FILES=	bin/EdyValue
 
-NO_STAGE=	yes
 post-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} -f ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${WRKSRC}

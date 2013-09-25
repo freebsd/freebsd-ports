@@ -13,5 +13,4 @@ LICENSE=	MIT
 
 PLIST_FILES=	bin/ssid
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

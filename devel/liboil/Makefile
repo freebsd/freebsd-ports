@@ -26,7 +26,6 @@ _COMPILER_VERSION!=	${CC} --version
 CFLAGS+=	-fheinous-gnu-extensions
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
