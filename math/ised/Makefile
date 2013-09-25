@@ -15,13 +15,10 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	yes
 
-MAN1=		${PORTNAME}.1
+PLIST_FILES=		bin/${PORTNAME} ${PORTNAME}.1.gz
 
-PLIST_FILES=		bin/${PORTNAME}
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
