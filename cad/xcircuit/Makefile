@@ -2,44 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.7.51
+PORTVERSION=	3.7.52
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
 		http://fossies.org/unix/misc/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	X11 circuit schematics drawing program
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 OPTIONS_DEFINE=	EXAMPLES
 
 USE_XORG=	xpm xscrnsaver xt
-USE_TCL=	85
-USE_TCL_BUILD=	85
-USE_TK=		85
-USE_TK_BUILD=	85
+USES=	tk gmake
 USE_GHOSTSCRIPT_RUN=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 		--with-tk=${TK_LIBDIR}
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 		AUTOMAKE="${TRUE}"
 
-MAN1=		xcircuit.1
-
-DESKTOP_ENTRIES="Xcircuit" "${COMMENT}" "${DATADIR}/pixmaps/xcircuit.gif" \
+DESKTOP_ENTRIES="Xcircuit" "${COMMENT}" "${DATADIR}/pixmaps/${PORTNAME}.gif" \
 		"${PORTNAME}" "" "false"
 
 # Restrict to stable (odd) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,odd
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s| == | = |g ; \
@@ -49,13 +39,11 @@ post-patch:
 		 s|-fpic|-fPIC|g' ${WRKSRC}/configure
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/.xcircuitrc ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.lgf ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.lps ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.ps ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.sim ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/.xcircuitrc ${STAGEDIR}/${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.lgf ${STAGEDIR}/${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.lps ${STAGEDIR}/${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.ps ${STAGEDIR}/${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.sim ${STAGEDIR}/${EXAMPLESDIR}
 
 .include <bsd.port.mk>
