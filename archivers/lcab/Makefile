@@ -11,11 +11,10 @@ COMMENT=	Microsoft .CABinet file creator
 
 LICENSE=	GPLv2
 
-NO_STAGE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 PLIST_FILES=	bin/lcab
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lcab ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/lcab ${STAGEDIR}/${PREFIX}/bin
 
 .include <bsd.port.mk>
