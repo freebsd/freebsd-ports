@@ -1,15 +1,20 @@
---- ./msn/util.cpp.orig	2008-11-16 16:27:05.000000000 +0300
-+++ ./msn/util.cpp	2009-01-16 20:32:29.000000000 +0300
-@@ -29,7 +29,7 @@
+--- msn/util.cpp.orig	2009-07-22 19:57:10.000000000 +0000
++++ msn/util.cpp
+@@ -25,11 +25,12 @@
+ #include <msn/util.h>
+ #include <sstream>
+ #include <errno.h>
++#include <unistd.h>
+ #include <cctype>
  #include <fstream>
  #include <openssl/rand.h>
  #include <cstring>
 -#include <sys/timeb.h>
 +#include <sys/time.h>
  #include "md5.h"
+ #include "libsiren/siren7.h"
  
- #ifdef _WIN32
-@@ -352,10 +352,11 @@
+@@ -367,10 +368,11 @@ namespace MSN
  
      std::string new_branch()
      {
