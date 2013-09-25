@@ -2,6 +2,7 @@
 
 PORTNAME=	codespell
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.profusion.mobi/${PORTNAME}/ \
 		https://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
@@ -13,6 +14,7 @@ COMMENT=	Source code spelling checker
 LICENSE=	GPLv2
 
 USE_PYTHON=	3.1+
+USE_PYTHON_RUN=	yes
 USE_XZ=		yes
 
 PLIST_FILES=	bin/codespell
