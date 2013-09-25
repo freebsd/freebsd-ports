@@ -12,6 +12,7 @@ MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	X.Org minimal distribution metaport
 
 NO_BUILD=	yes
+NO_MTREE=	yes
 
 VIDEO_DRIVER?=	vesa
 
