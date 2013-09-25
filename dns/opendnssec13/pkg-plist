@@ -23,6 +23,17 @@ bin/ods-kasp2html
 %%AUDITOR%%lib/opendnssec/kasp_auditor/partial_auditor.rb
 %%AUDITOR%%lib/opendnssec/kasp_checker.rb
 %%AUDITOR%%lib/opendnssec/time_shift.rb
+man/man1/ods-auditor.1.gz
+man/man1/ods-hsmspeed.1.gz
+man/man1/ods-hsmutil.1.gz
+man/man1/ods-kaspcheck.1.gz
+man/man1/ods-ksmutil.1.gz
+man/man5/ods-timing.5.gz
+man/man7/opendnssec.7.gz
+man/man8/ods-control.8.gz
+man/man8/ods-enforcerd.8.gz
+man/man8/ods-signer.8.gz
+man/man8/ods-signerd.8.gz
 sbin/ods-control
 sbin/ods-enforcerd
 sbin/ods-signer
@@ -54,6 +65,7 @@ sbin/ods-signerd
 @exec mkdir -p %D/var/opendnssec/tmp
 @exec mkdir -p %D/var/opendnssec/signed
 @exec mkdir -p %D/var/opendnssec/signconf
+@exec chown -R %%USER%%:%%GROUP%% %D/var/opendnssec
 @dirrmtry var/run/opendnssec
 @dirrmtry var/run
 @dirrmtry var

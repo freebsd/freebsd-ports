@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opendnssec
-PORTVERSION=	1.3.14
+PORTVERSION=	1.3.15
 CATEGORIES=	dns
 MASTER_SITES=	http://dist.opendnssec.org/source/
 
@@ -10,7 +10,7 @@ MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Tool suite for maintaining DNSSEC
 
 BUILD_DEPENDS=	ldns>=1.6.16:${PORTSDIR}/dns/ldns
-LIB_DEPENDS=	ldns:${PORTSDIR}/dns/ldns
+LIB_DEPENDS=	libldns.so:${PORTSDIR}/dns/ldns
 
 LATEST_LINK=	${PORTNAME}13
 
@@ -24,19 +24,15 @@ USE_LDCONFIG=	yes
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
-CONFLICTS=	opendnssec-1.4*
+PLIST_SUB+=	USER=${USERS} GROUP=${GROUPS}
 
-MAN1=		ods-hsmspeed.1 ods-hsmutil.1 ods-ksmutil.1
-MAN5=		ods-timing.5
-MAN7=		opendnssec.7
-MAN8=		ods-control.8 ods-enforcerd.8 ods-signer.8 ods-signerd.8
+CONFLICTS=	opendnssec-1.4*
 
 OPTIONS_DEFINE=		SOFTHSM AUDITOR MYSQL
 SOFTHSM_DESC=		SoftHSM cryptographic store for PKCS \#11 interface
 AUDITOR_DESC=		Build with Auditor
 OPTIONS_DEFAULT=	AUDITOR
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -46,8 +42,11 @@ USE_MYSQL=	compat
 PLIST_SUB+=	SQLITE="@comment "
 PLIST_SUB+=	MYSQL=""
 .else
+CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-database-backend=sqlite3
+USE_SQLITE=	yes
 BUILD_DEPENDS+=	sqlite3>=3.3.9:${PORTSDIR}/databases/sqlite3
-LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 PLIST_SUB+=	SQLITE=""
 PLIST_SUB+=	MYSQL="@comment "
 .endif
@@ -75,11 +74,5 @@ pre-install:
 .if ${PORT_OPTIONS:MMYSQL}
 	@${REINPLACE_CMD} -e '/REQUIRE:/ s|$$| mysql|' ${WRKDIR}/opendnssec
 .endif
-
-post-install:
-.if !defined(BATCH)
-	@${CAT} ${PKGMESSAGE}
-.endif
-	${CHOWN} -R ${USERS}:${GROUPS} ${PREFIX}/var/opendnssec
 
 .include <bsd.port.mk>
