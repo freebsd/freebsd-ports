@@ -4,3 +4,4 @@ lib/liblzxcomp.a
 lib/liblzxcomp.so
 lib/liblzxcomp.so.%%SHLIB_MAJOR%%
 %%PROFILE%%lib/liblzxcomp_p.a
+man/man3/lzxcomp.3.gz
