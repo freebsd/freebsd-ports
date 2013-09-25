@@ -67,8 +67,7 @@ PLIST_SUB+=	FLTK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTK}
-USE_TK_BUILD=	yes
-USE_TK=		yes
+USES+=		TK
 MAKE_ENV+=	tk=1
 PLIST_SUB+=	TK=""
 .else
