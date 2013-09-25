@@ -3,7 +3,7 @@
 
 PORTNAME=	tkcron
 PORTVERSION=	2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.tcl.tk/pub/tcl/mirror/ftp.procplace.com/sorted/packages-7.6/misc/tkcron-2.12/ \
 		http://ftp.sunet.se/pub/lang/tcl/sorted/packages-7.6/misc/tkcron-2.12/ \
@@ -15,8 +15,7 @@ EXTRACT_SUFX=	.tcl.gz
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A frontend to crontab
 
-RUN_DEPENDS=	wish8.5:${PORTSDIR}/x11-toolkits/tk85 \
-		wish:${PORTSDIR}/x11-toolkits/tk-wrapper 
+USE_TK_RUN=	85
 
 EXTRACT_CMD=	${GZIP_CMD}
 EXTRACT_BEFORE_ARGS= -cd
