@@ -30,10 +30,7 @@ USES=		shebangfix
 SHEBANG_FILES=	${WRKSRC}/library/*/*
 
 SUB_FILES=	pkg-message
-PORTEXAMPLES=	*
-MAN1=	ansible-doc.1 ansible-playbook.1 ansible-pull.1 ansible.1
 
-NO_STAGE=	yes
 post-patch-script:
 	@${REINPLACE_CMD} -e "s|/etc/ansible|${ETCDIR}|" \
 		${WRKSRC}/docs/man/man1/ansible-playbook.1 \
@@ -57,14 +54,15 @@ pre-install-script:
 .include <bsd.port.options.mk>
 
 post-install:
-	@${MKDIR} ${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/docs/man/man1/,} \
-		${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/man/man1/*.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${RM} ${WRKSRC}/examples/*.bak
 	(cd ${WRKSRC}/examples/ && \
-		${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+		${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
 	@${CAT} ${PKGMESSAGE}
 .endif
 
