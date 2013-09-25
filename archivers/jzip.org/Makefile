@@ -14,7 +14,6 @@ COMMENT=	WinZip like program written in Java
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 PLIST_FILES=	%%JAVAJARDIR%%/jzip.org.jar bin/${PORTNAME}
-NO_STAGE=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -28,7 +27,7 @@ do-build:
 			i18n/*.properties jzipdotorg/*.class images/*.png
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/bin/${PORTNAME}.jar ${JAVAJARDIR}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}/${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/bin/${PORTNAME}.jar ${STAGEDIR}/${JAVAJARDIR}
 
 .include <bsd.port.mk>
