@@ -8,8 +8,8 @@ include/ctemplate/template_annotator.h
 include/ctemplate/template_cache.h
 include/ctemplate/template_dictionary.h
 include/ctemplate/template_dictionary_interface.h
-include/ctemplate/template_enums.h
 include/ctemplate/template_emitter.h
+include/ctemplate/template_enums.h
 include/ctemplate/template_modifiers.h
 include/ctemplate/template_namelist.h
 include/ctemplate/template_pathops.h
@@ -24,4 +24,21 @@ lib/libctemplate_nothreads.so
 lib/libctemplate_nothreads.so.2
 libdata/pkgconfig/libctemplate.pc
 libdata/pkgconfig/libctemplate_nothreads.pc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README_windows.txt
+%%PORTDOCS%%%%DOCSDIR%%/auto_escape.html
+%%PORTDOCS%%%%DOCSDIR%%/designstyle.css
+%%PORTDOCS%%%%DOCSDIR%%/example.html
+%%PORTDOCS%%%%DOCSDIR%%/guide.html
+%%PORTDOCS%%%%DOCSDIR%%/howto.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/reference.html
+%%PORTDOCS%%%%DOCSDIR%%/tips.html
+%%PORTDOCS%%%%DOCSDIR%%/xss_resources.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/ctemplate
