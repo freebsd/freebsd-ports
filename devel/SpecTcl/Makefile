@@ -13,26 +13,25 @@ COMMENT=	Free drag-and-drop GUI builder for Tk and Java from Sun
 
 NO_BUILD=	yes
 
-USE_TK_WRAPPER=	yes
+USES+=		tk:85
 
-NO_STAGE=	yes
 post-patch:
 .for file in specJava specTcl
 	@${REINPLACE_CMD} -e \
-		's|^DIR=.*|DIR=${DATADIR}/lib|g' ${WRKSRC}/bin/${file}
+		's|^DIR=.*|DIR=${DATADIR}/lib|g; s|wish|${WISH}|g' ${WRKSRC}/bin/${file}
 .endfor
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/specJava ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/specTcl ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/changes ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/license.terms ${DATADIR}
-	@${MKDIR} ${DATADIR}/demo
-	@(cd ${WRKSRC}/demo && ${COPYTREE_SHARE} . ${DATADIR}/demo)
-	@${MKDIR} ${DATADIR}/examples
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${DATADIR}/examples)
-	@${MKDIR} ${DATADIR}/lib
-	@(cd ${WRKSRC}/SpecTcl && ${COPYTREE_SHARE} . ${DATADIR}/lib)
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/specJava ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/specTcl ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/changes ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/license.terms ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/demo
+	@(cd ${WRKSRC}/demo && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/demo)
+	@${MKDIR} ${STAGEDIR}${DATADIR}/examples
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/examples)
+	@${MKDIR} ${STAGEDIR}${DATADIR}/lib
+	@(cd ${WRKSRC}/SpecTcl && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/lib)
 
 .include <bsd.port.mk>
