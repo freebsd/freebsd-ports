@@ -1,5 +1,6 @@
 include/lightning.h
 include/lightning/jit_%%JIT_ARCH%%.h
+info/lightning.info
 lib/liblightning.a
 lib/liblightning.la
 lib/liblightning.so
