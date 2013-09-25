@@ -39,6 +39,9 @@ lib/irsim/prm/tsmc35p.20.n98tp.3.3.prm
 %%TCL%%lib/irsim/tcl/vcd.tcl
 %%TCL%%@dirrm lib/irsim/tcl/bitmaps
 %%TCL%%@dirrm lib/irsim/tcl
+man/man1/irsim.1.gz
+man/man3/irsim-analyzer.3.gz
+man/man5/netchange.5.gz
 @dirrm lib/irsim/prm
 @dirrm lib/irsim/doc
 @dirrm lib/irsim
