@@ -35,7 +35,6 @@ OPTPHP_DESC=	Install optional PHP dependencies
 
 PORTDOCS=	CHANGELOG.md INSTALL.md README-GIT.md CONTRIBUTING.md README.md
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Add all of the required and/or optional PHP extension dependencies,
@@ -80,13 +79,11 @@ USE_PHP+=	pdo_sqlite
 .endif
 
 do-install:
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "library bin resources" ${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "library bin resources" ${STAGEDIR}${DATADIR}
 
-post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
