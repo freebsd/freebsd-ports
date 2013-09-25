@@ -16,15 +16,14 @@ RUN_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 LIB_DEPENDS=	libmowgli.so:${PORTSDIR}/devel/libmowgli
 
 USES=		gmake pkgconfig
-NO_STAGE=	yes
 USE_GNOME=	gnomeprefix gtk20
 CFLAGS+=	`pkg-config --cflags gtk+-2.0`
 MAKE_ENV=	MANPAGE_DIR=${MAN1PREFIX}/man/man1 \
 		LIBS="`pkg-config --libs gtk+-2.0`"
 
 PLIST_FILES=	bin/wmauda \
+		man/man1/wmauda.1.gz \
 		share/pixmaps/wmauda.xpm
-MAN1=	wmauda.1
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,^(MANPAGE_DIR.*):=,\1\?=,; \
