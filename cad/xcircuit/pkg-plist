@@ -1,6 +1,6 @@
-@comment $FreeBSD$
 bin/xcircuit
 lib/X11/app-defaults/XCircuit
+man/man1/xcircuit.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/.xcircuitrc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/FlareLED.ps
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/USAflag.ps
@@ -136,7 +136,7 @@ lib/X11/app-defaults/XCircuit
 %%DATADIR%%/xcircuit.so
 %%DATADIR%%/xcircuit.tcl
 %%DATADIR%%/xcstartup.tcl
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrmtry %%DATADIR%%/pixmaps
+@dirrmtry %%DATADIR%%/fonts
+@dirrmtry %%DATADIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
