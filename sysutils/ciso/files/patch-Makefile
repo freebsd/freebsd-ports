@@ -1,12 +1,29 @@
---- Makefile.orig  2007-11-04 17:49:10.000000000 +0300
-+++ Makefile  2007-11-04 17:50:04.000000000 +0300
-@@ -1,6 +1,6 @@
--DESTDIR     =
+--- Makefile.bak	2013-09-12 16:31:40.000000000 +0000
++++ Makefile	2013-09-12 16:33:23.000000000 +0000
+@@ -1,17 +1,19 @@
+-DESTDIR     = 
 -prefix      = /usr
 -USRBINDIR   = $(DESTDIR)$(prefix)/bin
 +destdir     = ${DESTDIR}
 +prefix      = ${PREFIX}
 +USRBINDIR   = $(destdir)$(prefix)/bin
-
- CC = $(CROSS_COMPILE)gcc
- LD = $(CROSS_COMPILE)gcc
+ 
+-CC = $(CROSS_COMPILE)gcc
+-LD = $(CROSS_COMPILE)gcc
+ INSTALL = install
+ 
++.if ${CC} == "clang"
++CFLAGS += -Wno-format -Wno-tautological-compare
++.endif
++
+ all : ciso
+ ciso : ciso.o
+-	gcc -o ciso ciso.o -lz
++	${CC} ${CFLAGS} -o ciso ciso.o -lz
+ 
+ ciso.o : ciso.c
+-	gcc -o ciso.o -c ciso.c
++	${CC} ${CFLAGS} -o ciso.o -c ciso.c
+ 
+ install :
+ 	$(INSTALL) -m 755 ciso $(USRBINDIR)/ciso
