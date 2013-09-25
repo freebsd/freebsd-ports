@@ -15,5 +15,4 @@ CONFLICTS=	daemontools-[0-9]*
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

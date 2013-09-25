@@ -10,7 +10,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to create encrypted tar archives
 
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 
 PLIST_FILES=	bin/sectar
 

@@ -17,5 +17,4 @@ CONFIGURE_ARGS=	--enable-sftp
 PLIST_FILES=	bin/cftp
 INFO=		cftp
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -13,7 +13,6 @@ COMMENT=	Maximum likelihood phylogeny reconstruction using quartets
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/puzzle
 
-NO_STAGE=	yes
 pre-configure:
 	@${ECHO_MSG} "---------------------------------------------"
 	@${ECHO_MSG} ""

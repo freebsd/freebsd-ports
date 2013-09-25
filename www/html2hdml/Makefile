@@ -13,5 +13,4 @@ COMMENT=	An i-mode HTML to EZweb HDML converter
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/html2hdml
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

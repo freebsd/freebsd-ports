@@ -11,5 +11,4 @@ COMMENT=	A C++ lib which provides a method of saving the "state" of a program
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

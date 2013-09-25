@@ -10,5 +10,4 @@ COMMENT=	XFree86-Rush extension headers
 
 XORG_CAT=	proto
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

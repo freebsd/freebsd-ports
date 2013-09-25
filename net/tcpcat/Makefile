@@ -14,5 +14,4 @@ COMMENT=	A simple utility for sending/receiving data over a TCP or a Unix-domain
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/tcpcat
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

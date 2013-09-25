@@ -14,7 +14,6 @@ PLIST_FILES=	bin/tcpblast
 
 WRKSRC=		${WRKDIR}/src
 
-NO_STAGE=	yes
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}

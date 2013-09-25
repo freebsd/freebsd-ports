@@ -12,7 +12,6 @@ COMMENT=	C-library contains low level beam position monitor signal processing
 GNU_CONFIGURE=	yes
 
 USE_LDCONFIG=	yes
-NO_STAGE=	yes
 USES=		pathfix pkgconfig
 
 post-patch:

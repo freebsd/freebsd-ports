@@ -14,7 +14,6 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/tetradraw bin/tetraview
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CFLAGS =.*$$|CFLAGS = @CFLAGS@|g' ${WRKSRC}/src/Makefile.in

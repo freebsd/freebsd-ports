@@ -20,7 +20,6 @@ PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/HAVE_OPENSSL/d' ${WRKSRC}/config.h.in
 

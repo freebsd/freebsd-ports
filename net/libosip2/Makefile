@@ -15,7 +15,6 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USES=		pathfix pkgconfig
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "/^SUBDIRS/s| help | |g" ${WRKSRC}/Makefile.in

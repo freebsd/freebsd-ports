@@ -16,5 +16,4 @@ GNU_CONFIGURE=	yes
 INFO=		bnf
 PLIST_FILES=	bin/bnf
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

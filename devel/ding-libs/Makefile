@@ -25,7 +25,6 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 CONFIGURE_ARGS=	--docdir=/dev/null
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' ${WRKSRC}/collection/collection_tools.c \

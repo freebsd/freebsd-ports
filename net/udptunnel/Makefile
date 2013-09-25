@@ -12,5 +12,4 @@ COMMENT=	Tunnel UDP packets over a TCP connection
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/udptunnel
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

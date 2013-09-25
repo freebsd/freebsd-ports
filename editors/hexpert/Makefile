@@ -12,5 +12,4 @@ COMMENT=	Hexpert - a simple but flexible binary file editor
 
 PLIST_FILES=	bin/hex
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

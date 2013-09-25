@@ -11,7 +11,6 @@ MASTER_SITES=	http://vesuri.jormas.com/xpk/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The eXternal PacKer (XPK) library system
 
-NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

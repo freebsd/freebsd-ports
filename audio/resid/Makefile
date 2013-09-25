@@ -13,7 +13,6 @@ COMMENT=	Cycle-based SID emulator engine
 LICENSE=	GPLv2
 
 USE_AUTOTOOLS=	libtool
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

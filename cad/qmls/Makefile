@@ -12,5 +12,4 @@ COMMENT=	Quine-McCluskey Logic Simplifier
 PLIST_FILES=	bin/qmls
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

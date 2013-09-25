@@ -19,7 +19,6 @@ USES=	pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-lynx
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOXYGEN}

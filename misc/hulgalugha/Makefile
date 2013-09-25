@@ -12,7 +12,6 @@ COMMENT=	Very jerky text filter
 
 PLIST_FILES=	bin/hulgalugha
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s/NOMAN/NO_MAN/" ${WRKSRC}/Makefile
 .include <bsd.port.mk>

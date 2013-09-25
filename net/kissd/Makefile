@@ -13,7 +13,6 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/kissd
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/configure

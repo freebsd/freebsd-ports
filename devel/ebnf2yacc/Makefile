@@ -13,5 +13,4 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/ebnf2yacc
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -12,7 +12,6 @@ LICENSE=	MIT
 
 XORG_CAT=	util
 
-NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} 's|\(define ExtraXaw[^ ]*\) [$$].*|\1 /**/|' \
 			${WRKSRC}/X11.tmpl

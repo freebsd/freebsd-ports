@@ -11,7 +11,6 @@ COMMENT=	An open source deep packet inspection engine
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

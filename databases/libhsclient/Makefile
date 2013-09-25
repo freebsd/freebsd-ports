@@ -18,5 +18,4 @@ REVISION=	20110614
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-handlersocket-server=no
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

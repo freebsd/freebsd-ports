@@ -15,5 +15,4 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/dmucs bin/gethost bin/loadavg bin/monitor bin/remhost
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

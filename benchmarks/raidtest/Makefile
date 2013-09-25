@@ -13,7 +13,6 @@ COMMENT=	Test performance of storage devices
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/raidtest
 
-NO_STAGE=	yes
 do-fetch:
 
 do-extract:

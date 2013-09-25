@@ -16,7 +16,6 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,mkdir rmdir,mkdir mkstemp rmdir," \
 		${WRKSRC}/configure

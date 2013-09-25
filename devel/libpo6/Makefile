@@ -14,5 +14,4 @@ LICENSE=	BSD
 GNU_CONFIGURE=	yes
 USES=	pathfix
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -13,7 +13,6 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/flvmeta bin/flvdump
 
-NO_STAGE=	yes
 pre-install:
 	${CHMOD} a+x ${WRKSRC}/install-sh
 

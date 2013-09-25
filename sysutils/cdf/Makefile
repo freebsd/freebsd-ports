@@ -14,5 +14,4 @@ PLIST_FILES=	bin/cdf
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

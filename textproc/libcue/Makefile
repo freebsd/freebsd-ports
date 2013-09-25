@@ -15,7 +15,6 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USES=		gettext
 
-NO_STAGE=	yes
 post-extract:
 	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/src/libcue/Makefile.in

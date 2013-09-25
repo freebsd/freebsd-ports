@@ -14,5 +14,4 @@ NO_INSTALL=	yes
 
 USE_RC_SUBR=	jail2
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

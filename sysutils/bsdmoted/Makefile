@@ -11,5 +11,4 @@ COMMENT=	Use Wii remote as mouse
 
 PLIST_FILES=	sbin/bsdmoted
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

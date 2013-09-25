@@ -15,5 +15,4 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/ElmerGrid
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,7 +23,6 @@ PLIST_SUB+=	JIT_ARCH=${ARCH:S/i386/x86/:S/amd64/x86/:S/sparc64/sparc/:S/powerpc/
 
 INFO=		lightning
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASSERTIONS}

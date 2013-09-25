@@ -19,5 +19,4 @@ LICENSE=	LGPL3
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

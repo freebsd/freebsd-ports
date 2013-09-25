@@ -18,7 +18,6 @@ LICENSE_FILE=	${WRKSRC}/NOTICE
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 CONFIGURE_ENV+=	LIBS="-lm"
 
 post-patch:

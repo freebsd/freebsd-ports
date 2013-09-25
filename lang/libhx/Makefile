@@ -23,7 +23,6 @@ PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:L}
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's| -lrt||g' ${WRKSRC}/src/Makefile.in
 .if defined(NOPORTDOCS)

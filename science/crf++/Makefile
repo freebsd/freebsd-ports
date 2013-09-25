@@ -15,5 +15,4 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

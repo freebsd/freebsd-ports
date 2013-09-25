@@ -17,7 +17,6 @@ GNU_CONFIGURE=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/geda
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

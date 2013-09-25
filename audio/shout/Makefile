@@ -13,6 +13,5 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program that sends mp3 streams to an icecast/shoutcast server
 
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 
 .include <bsd.port.mk>

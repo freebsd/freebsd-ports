@@ -17,5 +17,4 @@ USE_RC_SUBR=	irc2dc
 PLIST_FILES=	bin/irc2dc \
 		etc/irc2dc.conf.dist
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -10,7 +10,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	LZRTF compression library
 
 
-NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -16,7 +16,6 @@ LIB_DEPENDS=	libee.so:${PORTSDIR}/devel/libee \
 USES=		pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 
 # Try to fix parallel (-jX) builds
 post-patch:
