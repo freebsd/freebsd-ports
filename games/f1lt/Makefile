@@ -29,13 +29,12 @@ PLIST_FILES=	bin/F1LT \
 PLIST_DIRSTRY=	share/f1lt
 PORTDOCS=	CHANGELOG
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch-script:
-	@${REINPLACE_CMD} -e 's|PREFIX = /opt/$$$$TARGET|PREFIX = ${PREFIX}|g' \
+	@${REINPLACE_CMD} -e 's|PREFIX = /opt/$$$$TARGET|PREFIX = ${STAGEDIR}${PREFIX}|g' \
 		${WRKSRC}/F1LT.pro
-	@${REINPLACE_CMD} -e 's|SHARE=$$$$PREFIX/share|SHARE=$$$$PREFIX/share/${PORTNAME}|g' \
+	@${REINPLACE_CMD} -e 's|SHARE=$$$$PREFIX/share|SHARE=${STAGEDIR}${PREFIX}/share/${PORTNAME}|g' \
 		${WRKSRC}/F1LT.pro
 .if ${ARCH} == "i386"
 	@${REINPLACE_CMD} -e 's|999999999998|1000000|g' \
@@ -54,9 +53,9 @@ post-build-script:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${STAGEDIR}${DOCSDIR}
 .endif
-	@${LN} -s ${PREFIX}/bin/F1LT ${PREFIX}/bin/${PORTNAME}
+	${LN} -sf F1LT ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
