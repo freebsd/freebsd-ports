@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	vlc
-DISTVERSION=	2.0.8
+DISTVERSION=	2.0.8a
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
-MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/p/-pre/}/ \
-		http://ftp.snt.utwente.nl/pub/software/videolan/${PORTNAME}/${DISTVERSION}/ \
-		ftp://ftp.crans.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
+MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
+		http://ftp.snt.utwente.nl/pub/software/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
+		ftp://ftp.crans.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Qt4 based multimedia player and streaming server
@@ -69,6 +69,7 @@ USE_PERL5=	build
 USE_GL=		yes
 USE_CSTD=	gnu99
 WANT_GNOME=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME:S/a$//}
 
 FAKEDIR=	${WRKDIR}/fake${PREFIX}
 PLIST=		${WRKDIR}/plist
@@ -109,6 +110,7 @@ MAN1=		vlc.1 \
 		vlc-wrapper.1
 
 NO_STAGE=	yes
+
 .include <bsd.port.options.mk>
 
 # Macro section
@@ -710,7 +712,7 @@ CXX=	clang++
 CPP=	clang-cpp
 .else
 .if ${ARCH} == "i386"
-USE_GCC?=	yes # sse/3dnow detection on i386 needs newer GCC 
+USE_GCC?=	yes # sse/3dnow detection on i386 needs newer GCC
 .endif
 .endif
 
