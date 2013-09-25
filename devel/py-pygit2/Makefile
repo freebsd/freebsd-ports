@@ -10,10 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Python bindings for libgit2
 
-LIB_DEPENDS=	git2:${PORTSDIR}/devel/libgit2
+LIB_DEPENDS=	libgit2.so:${PORTSDIR}/devel/libgit2
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
