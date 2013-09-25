@@ -21,11 +21,10 @@ EXTRACT_AFTER_ARGS=	${WRKDIR}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|g' ${WRKSRC}/${DISTNAME}.txt
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME}.txt ${PREFIX}/bin/txtbdf2ps
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME}.txt ${STAGEDIR}${PREFIX}/bin/txtbdf2ps
 
 .include <bsd.port.mk>
