@@ -15,7 +15,6 @@ RUN_DEPENDS=	unace:${PORTSDIR}/archivers/unace \
 		unzip:${PORTSDIR}/archivers/unzip \
 		7z:${PORTSDIR}/archivers/p7zip
 
-NO_STAGE=	yes
 NO_BUILD=	yes
 USE_BZIP2=	yes
 PLIST_FILES=	bin/${PORTNAME}
@@ -24,6 +23,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '1s|/.*|/bin/sh|;s|==|=|' ${WRKSRC}/${PORTNAME}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}/${PREFIX}/bin
 
 .include <bsd.port.mk>
