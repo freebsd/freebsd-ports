@@ -2,20 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns-recursor
-PORTVERSION=	3.5.1
+PORTVERSION=	3.5.3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
 DISTNAME=	pdns-recursor-${PORTVERSION}
 
 MAINTAINER=	sten@blinkenlights.nl
-COMMENT=	An advanced DNS recursor
+COMMENT=	Advanced DNS recursor
 
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
 		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 OPTIONS_DEFINE=	SETUID LUA STATIC
 OPTIONS_DEFAULT=	SETUID
@@ -25,11 +25,7 @@ STATIC_DESC=		Build static binaries
 CXXFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
 
-MAN8=		rec_control.8 pdns_recursor.8
 SUB_FILES=	pkg-message
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
 
@@ -74,11 +70,6 @@ post-patch:
 		${WRKSRC}/config.h
 
 post-install:
-.if !exists(${PREFIX}/etc/pdns/recursor.conf)
-	${INSTALL_DATA} ${PREFIX}/etc/pdns/recursor.conf-dist \
-		${PREFIX}/etc/pdns/recursor.conf
-.endif
-	@${INSTALL_MAN} ${WRKSRC}/*.8 ${PREFIX}/man/man8/
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_MAN} ${WRKSRC}/*.8 ${STAGEDIR}${PREFIX}/man/man8/
 
 .include <bsd.port.post.mk>
