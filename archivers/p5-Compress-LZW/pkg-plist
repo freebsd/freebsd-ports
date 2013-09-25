@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/LZW/.packlist
+%%PERL5_MAN3%%/Compress::LZW.3.gz
 %%SITE_PERL%%/Compress/LZW.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/LZW/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/LZW
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress
 @dirrmtry %%SITE_PERL%%/Compress

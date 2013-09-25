@@ -13,9 +13,6 @@ COMMENT=	Pure perl implementation of LZW
 
 USES=		perl5
 USE_PERL5=	configure
-NO_STAGE=	yes
-
-MAN3=		Compress::LZW.3
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|\@hattmoward|\\@hattmoward|' \
