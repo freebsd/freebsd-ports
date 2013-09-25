@@ -1,13 +1,11 @@
 
-To use ansible, you need at least a host database.
-You can find a sample host database file in
+To use Ansible, you need at least a host database.
+If you installed examples, you will have a sample
+host database and a sample configuration file: 
 
   %%EXAMPLESDIR%%/hosts
-
-You can also find a sample configuration file in
-
   %%EXAMPLESDIR%%/ansible.cfg
 
-Ansible 1.3.0, includes "accelerate" mode, which is
+Ansible 1.3.0+, includes "accelerate" mode, which is
 faster and has fewer dependencies than "fireball" mode.
 To use it, install security/py-keyczar.

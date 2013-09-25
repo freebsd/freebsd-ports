@@ -2,6 +2,10 @@ bin/ansible
 bin/ansible-doc
 bin/ansible-playbook
 bin/ansible-pull
+man/man1/ansible-doc.1.gz
+man/man1/ansible-playbook.1.gz
+man/man1/ansible-pull.1.gz
+man/man1/ansible.1.gz
 %%PYTHON_SITELIBDIR%%/ansible/__init__.py
 %%PYTHON_SITELIBDIR%%/ansible/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ansible/__init__.pyo
@@ -348,31 +352,36 @@ bin/ansible-pull
 %%DATADIR%%/web_infrastructure/django_manage
 %%DATADIR%%/web_infrastructure/htpasswd
 %%DATADIR%%/web_infrastructure/supervisorctl
-@dirrm %%DATADIR%%/cloud
-@dirrm %%DATADIR%%/commands
-@dirrm %%DATADIR%%/database
-@dirrm %%DATADIR%%/files
-@dirrm %%DATADIR%%/internal
-@dirrm %%DATADIR%%/inventory
-@dirrm %%DATADIR%%/messaging
-@dirrm %%DATADIR%%/monitoring
-@dirrm %%DATADIR%%/net_infrastructure
-@dirrm %%DATADIR%%/network
-@dirrm %%DATADIR%%/notification
-@dirrm %%DATADIR%%/packaging
-@dirrm %%DATADIR%%/source_control
-@dirrm %%DATADIR%%/system
-@dirrm %%DATADIR%%/utilities
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ansible.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hosts
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/playbooks/README.md
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/playbooks
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/web_infrastructure
+@dirrm %%DATADIR%%/utilities
+@dirrm %%DATADIR%%/system
+@dirrm %%DATADIR%%/source_control
+@dirrm %%DATADIR%%/packaging
+@dirrm %%DATADIR%%/notification
+@dirrm %%DATADIR%%/network
+@dirrm %%DATADIR%%/net_infrastructure
+@dirrm %%DATADIR%%/monitoring
+@dirrm %%DATADIR%%/messaging
+@dirrm %%DATADIR%%/inventory
+@dirrm %%DATADIR%%/internal
+@dirrm %%DATADIR%%/files
+@dirrm %%DATADIR%%/database
+@dirrm %%DATADIR%%/commands
+@dirrm %%DATADIR%%/cloud
 @dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/ansible/callback_plugins
+@dirrm %%PYTHON_SITELIBDIR%%/ansible/utils
+@dirrm %%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins
+@dirrm %%PYTHON_SITELIBDIR%%/ansible/runner/filter_plugins
+@dirrm %%PYTHON_SITELIBDIR%%/ansible/runner/connection_plugins
+@dirrm %%PYTHON_SITELIBDIR%%/ansible/runner/action_plugins
+@dirrm %%PYTHON_SITELIBDIR%%/ansible/runner
+@dirrm %%PYTHON_SITELIBDIR%%/ansible/playbook
 @dirrm %%PYTHON_SITELIBDIR%%/ansible/inventory/vars_plugins
 @dirrm %%PYTHON_SITELIBDIR%%/ansible/inventory
-@dirrm %%PYTHON_SITELIBDIR%%/ansible/playbook
-@dirrm %%PYTHON_SITELIBDIR%%/ansible/runner/action_plugins
-@dirrm %%PYTHON_SITELIBDIR%%/ansible/runner/connection_plugins
-@dirrm %%PYTHON_SITELIBDIR%%/ansible/runner/filter_plugins
-@dirrm %%PYTHON_SITELIBDIR%%/ansible/runner/lookup_plugins
-@dirrm %%PYTHON_SITELIBDIR%%/ansible/runner
-@dirrm %%PYTHON_SITELIBDIR%%/ansible/utils
+@dirrm %%PYTHON_SITELIBDIR%%/ansible/callback_plugins
 @dirrm %%PYTHON_SITELIBDIR%%/ansible
