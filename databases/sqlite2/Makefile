@@ -10,8 +10,7 @@ MASTER_SITES=	http://www.sqlite.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SQL database engine in a C library
 
-USES=		pkgconfig
-USE_GMAKE=	YES
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	YES
 
@@ -30,11 +29,11 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCL}
-USE_TCL=		84+
+USES+=		tcl
 .else
 .if ${PORT_OPTIONS:MDOCS}
-USE_TCL_BUILD=		84+
-. endif
+USES+=		tcl:build
+.endif
 .endif
 
 .include <bsd.port.pre.mk>
