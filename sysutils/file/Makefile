@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	file
-PORTVERSION=	5.14
+PORTVERSION=	5.15
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.fu-berlin.de/unix/tools/file/
@@ -31,7 +31,7 @@ CONFIGURE_ENV+=	gl_cv_cc_visibility=no
 .endif
 
 check regression-test test: build
-	@( cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} check ; )
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} check
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$(datadir)/misc|$(datadir)/${PORTNAME}|g' \
