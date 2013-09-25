@@ -28,7 +28,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if (${CXX:T} == "clang++" && ${OSVERSION} > 902000) || ${OSVERSION} > 1000054
-CXXFLAGS+= -stdlib=libc++ -std=c++11
+CXXFLAGS+=	-stdlib=libc++ -std=c++11
 .endif
 
 .include <bsd.port.post.mk>
