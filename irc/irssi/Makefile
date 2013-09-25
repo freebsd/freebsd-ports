@@ -17,12 +17,10 @@ USES=		pkgconfig ncurses gmake
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		irssi.1
-
-OPTIONS_DEFINE=	PERL PROXY SOCKS IPV6 BOT
+OPTIONS_DEFINE=	PERL PROXY SOCKS IPV6 BOT DOCS
 SOCKS_DESC=	Socks proxy support
 BOT_DESC=	Bot support
-OPTIONS_DEFAULT=	PERL IPV6
+OPTIONS_DEFAULT=	PERL IPV6 DOCS
 
 # USE_OPENSSL must be defined before bsd.port.pre.mk so use old schema
 # for WITH_SSL option
@@ -33,7 +31,6 @@ CONFIGURE_ARGS+=	--disable-ssl
 USE_OPENSSL=	yes
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Process options.
@@ -74,15 +71,16 @@ PLIST_SUB+=	WITH_BOT="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' -e 's|/etc|${PREFIX}&|' \
 		${WRKSRC}/docs/irssi.1
+.if empty(PORT_OPTIONS:MDOCS)
+	${REINPLACE_CMD} -e \
+		'/^install-data-am:/ s|install-docDATA||' \
+		${WRKSRC}/docs/Makefile.in
+.endif
 
 post-configure:
 	@${MV} ${WRKSRC}/irssi.conf ${WRKSRC}/irssi.conf.sample
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/irssi.conf ]; then \
-		${ECHO} "Installing default configuration file."; \
-		${INSTALL_DATA} ${WRKSRC}/irssi.conf.sample ${PREFIX}/etc/irssi.conf ; \
-	fi
 	@${ECHO_MSG} "You may install x11-themes/irssi-themes for"
 	@${ECHO_MSG} " additional themes."
 
