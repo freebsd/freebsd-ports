@@ -33,14 +33,11 @@ LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal \
 		freetype:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USE_GMAKE=	yes
-USES=		gettext iconv readline perl5
+USES=		gettext gmake iconv readline perl5 tk
 USE_XORG=	sm ice xi x11 xt xmu xext
 USE_GL=		glut
 USE_TCL=	yes
 USE_TCL_BUILD=	yes
-USE_TK=		yes
-USE_TK_BUILD=	yes
 USE_PYTHON=	yes
 USE_WX=		2.8
 WX_COMPS=	wx:build python:run
