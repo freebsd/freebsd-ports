@@ -14,7 +14,7 @@ USE_ANT=	yes
 USE_JAVA=	1.4+
 USE_XORG=	x11 xt
 MAKE_ARGS=	-DCC=${CC} -DLD=${LD}
-MAKE_ENV+=      ANT_OPTS=-Drelease
+MAKE_ENV+=      ANT_OPTS=-Drelease -DARCH=${ANT_ARCH}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	twall
@@ -31,9 +31,9 @@ PORTDOCS=	javadoc platform-${PORTVERSION:L}.0-javadoc.jar
 .endif
 
 .if ${ARCH} == "i386"
-ARCH=	x86
+ANT_ARCH=	x86
 .elif ${ARCH} == "amd64"
-ARCH=	x86-64
+ANT_ARCH=	x86-64
 .endif
 
 NO_STAGE=	yes
@@ -48,8 +48,8 @@ post-build-script:
 .endif
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/build/freebsd-${ARCH}.jar ${JAVAJARDIR}/jna-platform.jar
-	@${INSTALL_DATA} ${WRKSRC}/build/jna.jar ${JAVAJARDIR}/jna.jar
+	${INSTALL_DATA} ${WRKSRC}/build/freebsd-${ANT_ARCH}.jar ${JAVAJARDIR}/jna-platform.jar
+	${INSTALL_DATA} ${WRKSRC}/build/jna.jar ${JAVAJARDIR}/jna.jar
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} javadoc ${DOCSDIR}
