@@ -24,18 +24,17 @@ EXTRACT_AFTER_ARGS=	> ${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-MAN1=		kenny.1
-PLIST_FILES=	bin/kenny
+PLIST_FILES=	bin/kenny \
+		man/man1/kenny.1.gz
 
 POD2MAN?=	${LOCALBASE}/bin/pod2man
 
-NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/${PORTNAME}
 	@${POD2MAN} ${WRKDIR}/${PORTNAME} > ${WRKDIR}/${PORTNAME}.1
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/
-	@${INSTALL_MAN} ${WRKDIR}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
+	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKDIR}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
