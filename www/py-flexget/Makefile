@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	flexget
-PORTVERSION=	1.1.121
+PORTVERSION=	1.1.122
 PORTEPOCH=	1
 CATEGORIES=	www python
-MASTER_SITES=	http://download.flexget.com/archive/ \
-		http://download.flexget.com/
+MASTER_SITES=	http://download.flexget.com/ \
+		http://download.flexget.com/archive/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	FlexGet-${PORTVERSION}
 
@@ -48,5 +48,4 @@ PLIST_SUB=	PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO}
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
