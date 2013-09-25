@@ -2,6 +2,10 @@ bin/uufilter
 bin/xloadimage
 bin/xsetbg
 bin/xview
+man/man1/uufilter.1.gz
+man/man1/xloadimage.1.gz
+man/man1/xsetbg.1.gz
+man/man1/xview.1.gz
 @unexec if cmp -s %D/etc/xloadimagerc.sample %D/etc/xloadimagerc; then rm -f %D/etc/xloadimagerc; fi
 etc/xloadimagerc.sample
 @exec if [ ! -f %D/etc/xloadimagerc ] ; then cp -p %D/%F %B/xloadimagerc; fi
