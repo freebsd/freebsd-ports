@@ -1,0 +1,5 @@
+bin/wtf
+man/man6/wtf.6.gz
+%%DATADIR%%/acronyms
+%%DATADIR%%/acronyms.comp
+@dirrm %%DATADIR%%

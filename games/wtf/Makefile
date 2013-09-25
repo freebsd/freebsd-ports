@@ -11,20 +11,14 @@ COMMENT=	Translates common Internet acronyms
 
 NO_BUILD=	yes
 
-MAN6=		wtf.6
-
-PLIST_FILES=	bin/wtf %%DATADIR%%/acronyms %%DATADIR%%/acronyms.comp
-PLIST_DIRS=	%%DATADIR%%
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/misc|${DATADIR}|g' ${WRKSRC}/wtf*
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/wtf ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/wtf.6 ${PREFIX}/man/man6
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/acronyms ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/acronyms.comp ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/wtf ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/wtf.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/acronyms ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/acronyms.comp ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
