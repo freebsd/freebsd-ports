@@ -12,13 +12,13 @@ COMMENT=	2D platform jump and run game
 
 LICENSE=	GPLv2 CCbySA3
 LICENSE_COMB=	dual
-LICENSE_NAME_CCbySA3=Attribution-ShareAlike 3.0 Unported
-LICENSE_FILE_CCbySA3=${WRKSRC}/CCPL
-LICENSE_PERMS_CCbySA3=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_NAME_CCbySA3=	Attribution-ShareAlike 3.0 Unported
+LICENSE_FILE_CCbySA3=	${WRKSRC}/CCPL
+LICENSE_PERMS_CCbySA3=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	docbook-to-man:${PORTSDIR}/textproc/docbook-to-man
-LIB_DEPENDS=	boost_filesystem:${PORTSDIR}/devel/boost-libs \
-		claw_application:${PORTSDIR}/devel/libclaw
+LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
+		libclaw_application.so:${PORTSDIR}/devel/libclaw
 
 USE_SDL=	sdl mixer
 USE_GL=		gl glu
@@ -26,26 +26,22 @@ WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
-USES=		cmake
+# gettext dep is unconditional; NLS option just disables translations install
+USES=		cmake gettext
 CMAKE_ARGS=	-Dlibclaw_DIR="${LOCALBASE}/share/libclaw/cmake" \
 		-DBEAR_NO_EDITOR=YES
 
-MAN6=		plee-the-bear.6 running-bear.6
+OPTIONS_DEFINE=	NLS
+OPTIONS_DEFAULT=NLS
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/CMakeLists.txt
 .if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e 's|locale||' \
+		${WRKSRC}/bear-factory/desktop/CMakeLists.txt \
 		${WRKSRC}/bear-engine/desktop/CMakeLists.txt \
 		${WRKSRC}/plee-the-bear/desktop/CMakeLists.txt
 .endif

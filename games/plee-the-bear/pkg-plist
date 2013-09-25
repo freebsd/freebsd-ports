@@ -13,6 +13,8 @@ lib/libbear_time.so
 lib/libbear_universe.so
 lib/libbear_visual.so
 lib/libplee_the_bear.so
+man/man6/plee-the-bear.6.gz
+man/man6/running-bear.6.gz
 share/applications/plee-the-bear.desktop
 share/bear-factory/plee-the-bear/item-description/action_file_recorder.xml
 share/bear-factory/plee-the-bear/item-description/add_ingame_layers.xml
