@@ -14,7 +14,6 @@ LICENSE=	LGPL21
 
 OPTIONS_DEFINE=	NLS
 
-NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 USES=		pathfix pkgconfig
 USE_LDCONFIG=	yes
@@ -31,5 +30,4 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include "Makefile.man"
 .include <bsd.port.mk>
