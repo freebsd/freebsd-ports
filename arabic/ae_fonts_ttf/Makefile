@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 
-NO_STAGE=	yes
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/ae_fonts1-${PORTVERSION}
 SUB_FILES=	pkg-message
@@ -52,14 +51,9 @@ do-build:
 
 do-install:
 .for font in ${FONTS}
-	@${MKDIR} ${PREFIX}/lib/X11/fonts/ae_fonts1/${font}
+	@${MKDIR} ${STAGEDIR}/${PREFIX}/lib/X11/fonts/ae_fonts1/${font}
 	${INSTALL_DATA} ${WRKSRC}/${font}/* \
-		${PREFIX}/lib/X11/fonts/ae_fonts1/${font}
+		${STAGEDIR}/${PREFIX}/lib/X11/fonts/ae_fonts1/${font}
 .endfor
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .include <bsd.port.mk>
