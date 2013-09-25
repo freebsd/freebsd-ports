@@ -56,17 +56,15 @@ post-configure:
 		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/chains ${PREFIX}/bin/${PORTNAME}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${DATADIR})
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/chains ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR})
 
 	${INSTALL_DATA} ${WRKSRC}/images/logo.png \
-		${PREFIX}/share/pixmaps/${PORTNAME}.png
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 	${INSTALL_DATA} ${WRKSRC}/icon.ico \
-		${PREFIX}/share/pixmaps/${PORTNAME}.ico
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.ico
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
