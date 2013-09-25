@@ -18,6 +18,22 @@ bin/stag-query.pl
 bin/stag-splitter.pl
 bin/stag-view.pl
 bin/stag-xml2itext.pl
+man/man1/stag-autoschema.pl.1.gz
+man/man1/stag-db.pl.1.gz
+man/man1/stag-diff.pl.1.gz
+man/man1/stag-drawtree.pl.1.gz
+man/man1/stag-filter.pl.1.gz
+man/man1/stag-findsubtree.pl.1.gz
+man/man1/stag-flatten.pl.1.gz
+man/man1/stag-grep.pl.1.gz
+man/man1/stag-handle.pl.1.gz
+man/man1/stag-join.pl.1.gz
+man/man1/stag-merge.pl.1.gz
+man/man1/stag-mogrify.pl.1.gz
+man/man1/stag-parse.pl.1.gz
+man/man1/stag-query.pl.1.gz
+man/man1/stag-splitter.pl.1.gz
+man/man1/stag-view.pl.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/.packlist
 %%SITE_PERL%%/Data/Stag.pm
 %%SITE_PERL%%/Data/Stag/Arr2HTML.pm
@@ -49,6 +65,33 @@ bin/stag-xml2itext.pl
 %%SITE_PERL%%/Data/Stag/XSLHandler.pm
 %%SITE_PERL%%/Data/Stag/XSLTHandler.pm
 %%SITE_PERL%%/Data/Stag/null.pm
+%%PERL5_MAN3%%/Data::Stag::Arr2HTML.3.gz
+%%PERL5_MAN3%%/Data::Stag::BaseHandler.3.gz
+%%PERL5_MAN3%%/Data::Stag::BaseGenerator.3.gz
+%%PERL5_MAN3%%/Data::Stag::ChainHandler.3.gz
+%%PERL5_MAN3%%/Data::Stag::DTDWriter.3.gz
+%%PERL5_MAN3%%/Data::Stag::GraphHandler.3.gz
+%%PERL5_MAN3%%/Data::Stag::HashDB.3.gz
+%%PERL5_MAN3%%/Data::Stag::IndentParser.3.gz
+%%PERL5_MAN3%%/Data::Stag::IndentWriter.3.gz
+%%PERL5_MAN3%%/Data::Stag::ITextParser.3.gz
+%%PERL5_MAN3%%/Data::Stag::ITextWriter.3.gz
+%%PERL5_MAN3%%/Data::Stag::JSONWriter.3.gz
+%%PERL5_MAN3%%/Data::Stag::PerlWriter.3.gz
+%%PERL5_MAN3%%/Data::Stag::PodParser.3.gz
+%%PERL5_MAN3%%/Data::Stag::SAX2Stag.3.gz
+%%PERL5_MAN3%%/Data::Stag::Simple.3.gz
+%%PERL5_MAN3%%/Data::Stag::StagDB.3.gz
+%%PERL5_MAN3%%/Data::Stag::StagImpl.3.gz
+%%PERL5_MAN3%%/Data::Stag::SxprParser.3.gz
+%%PERL5_MAN3%%/Data::Stag::SxprWriter.3.gz
+%%PERL5_MAN3%%/Data::Stag::Writer.3.gz
+%%PERL5_MAN3%%/Data::Stag::XMLParser.3.gz
+%%PERL5_MAN3%%/Data::Stag::XMLWriter.3.gz
+%%PERL5_MAN3%%/Data::Stag::XSLHandler.3.gz
+%%PERL5_MAN3%%/Data::Stag::XSLTHandler.3.gz
+%%PERL5_MAN3%%/Data::Stag::null.3.gz
+%%PERL5_MAN3%%/Data::Stag.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrm %%SITE_PERL%%/Data/Stag
 @dirrmtry %%SITE_PERL%%/Data
