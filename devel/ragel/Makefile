@@ -31,15 +31,11 @@ post-patch:
 		${WRKSRC}/ragel/javacodegen.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ragel/${PORTNAME} ${STAGEDIR}/${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}/${MANPREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${STAGEDIR}/${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
-	@(cd ${WRKSRC}/test; ${COPYTREE_SHARE} . ${STAGEDIR}/${EXAMPLESDIR})
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/ragel/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/test; ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
