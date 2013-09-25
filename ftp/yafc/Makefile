@@ -25,12 +25,11 @@ CONFIGURE_ARGS=	--with-socks=no --with-socks5=no --with-krb4=no \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		yafc.1
-INFO=		yafc
 PORTEXAMPLES=	inputrc yafcrc
-PLIST_FILES=	bin/yafc
+PLIST_FILES=	bin/yafc \
+		info/yafc.info \
+		man/man1/yafc.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -50,7 +49,7 @@ CONFIGURE_ARGS+=	--without-readline
 .endif
 
 .if ${PORT_OPTIONS:MSSH}
-LIB_DEPENDS+=	ssh:${PORTSDIR}/security/libssh
+LIB_DEPENDS+=	libssh.so:${PORTSDIR}/security/libssh
 .else
 CONFIGURE_ARGS+=	--without-ssh
 .endif
@@ -65,8 +64,8 @@ CONFIGURE_ARGS+=	--with-bash-completion=no
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
