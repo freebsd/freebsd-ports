@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	josm
-PORTVERSION=	6115
+PORTVERSION=	6238
 CATEGORIES=	astro java
 MASTER_SITES=	http://josm.openstreetmap.de/download/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -15,7 +15,6 @@ COMMENT=	A comprehensive editor for OpenStreetMap.org database
 
 NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
@@ -33,8 +32,8 @@ pre-everything::
 	@${ECHO_CMD} "JOSM_MEMORY_LIMIT variable in /etc/make.conf. Default is 1024 (MB)."
 
 do-install:
-	${MKDIR} ${JAVAJARDIR}/
-	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${JAVAJARDIR}/
-	${INSTALL_SCRIPT} ${WRKDIR}/josm.sh ${PREFIX}/bin/josm
+	${MKDIR} ${STAGEDIR}${JAVAJARDIR}/
+	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${STAGEDIR}${JAVAJARDIR}/
+	${INSTALL_SCRIPT} ${WRKDIR}/josm.sh ${STAGEDIR}${PREFIX}/bin/josm
 
 .include <bsd.port.mk>
