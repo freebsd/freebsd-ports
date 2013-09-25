@@ -12,8 +12,5 @@ COMMENT=	Perl extension to provide a PerlIO layer to gzip/gunzip
 
 USES=		perl5
 USE_PERL5=	configure
-NO_STAGE=	yes
-
-MAN3=		PerlIO::gzip.3
 
 .include <bsd.port.mk>
