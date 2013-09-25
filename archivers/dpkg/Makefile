@@ -17,7 +17,6 @@ RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
 		gpatch:${PORTSDIR}/devel/patch \
 		gmd5sum:${PORTSDIR}/sysutils/coreutils
 
-NO_STAGE=	yes
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USES=		gmake iconv perl5 pkgconfig
@@ -42,12 +41,6 @@ NLS_USES=		gettext
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-MANLANG=	"" de fr hu ja pl sv
-.endif
-
-.include "Makefile.man"
-
 post-patch:
 	@${REINPLACE_CMD} 's|-t$$host|-t${ARCH}-freebsd|g' \
 		${WRKSRC}/configure
@@ -58,7 +51,7 @@ post-patch:
 
 post-install:
 .for f in available diversions statoverride status
-	${TOUCH} ${DPKGDIR}/${f}
+	${TOUCH} ${STAGEDIR}${DPKGDIR}/${f}
 .endfor
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
