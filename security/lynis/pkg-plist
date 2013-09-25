@@ -1,5 +1,6 @@
 bin/lynis
 etc/lynis/default.prf
+man/man8/lynis.8.gz
 %%DATADIR%%/db/fileperms.db
 %%DATADIR%%/db/hints.db
 %%DATADIR%%/db/integrity.db
@@ -12,11 +13,8 @@ etc/lynis/default.prf
 %%DATADIR%%/dev/check-lynis.sh
 %%DATADIR%%/dev/files.dat
 %%DATADIR%%/dev/openbsd/+CONTENTS
+%%DATADIR%%/plugins/custom_plugin.template
 %%DATADIR%%/plugins/README
-%%DATADIR%%/plugins/plugin_access_files
-%%DATADIR%%/plugins/plugin_compliance_pci
-%%DATADIR%%/plugins/plugin_homedirs
-%%DATADIR%%/plugins/plugin_webserver_data
 %%DATADIR%%/include/binaries
 %%DATADIR%%/include/consts
 %%DATADIR%%/include/functions
@@ -59,7 +57,9 @@ etc/lynis/default.prf
 %%DATADIR%%/include/tests_ssh
 %%DATADIR%%/include/tests_storage
 %%DATADIR%%/include/tests_storage_nfs
+%%DATADIR%%/include/tests_tcpwrappers
 %%DATADIR%%/include/tests_time
+%%DATADIR%%/include/tests_tooling
 %%DATADIR%%/include/tests_virtualization
 %%DATADIR%%/include/tests_webservers
 @dirrm %%DATADIR%%/include
