@@ -11,28 +11,23 @@ COMMENT=	SSH 2 server, designed to be usable in small memory environments
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=	gmake
 
 USE_RC_SUBR=	${PORTNAME}
 
 PLIST_FILES=	bin/dbclient \
 		bin/dropbearkey \
 		bin/dropbearconvert \
-		sbin/dropbear
+		sbin/dropbear \
+		man/man1/dbclient.1.gz \
+		man/man8/dropbear.8.gz \
+		man/man8/dropbearkey.8.gz
 
 PLIST_DIRSTRY=	etc/dropbear
 
-MAN1=	dbclient.1
-MAN8=	dropbear.8 dropbearkey.8
-
 OPTIONS_DEFINE=	STATIC
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSTATIC}
-LDFLAGS+=	-static
-.endif
+STATIC_LDFLAGS=	-static
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,_PRIV_FILENAME \"/etc/,_PRIV_FILENAME \"${PREFIX}/etc/,g; \
@@ -42,8 +37,9 @@ post-patch:
 				${WRKSRC}/libtomcrypt/Makefile.in
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc/dropbear
-	${INSTALL_MAN} ${MAN1:S|^|${WRKSRC}/|} ${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${MAN8:S|^|${WRKSRC}/|} ${MAN8PREFIX}/man/man8
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/dropbear
+	${INSTALL_MAN} ${WRKSRC}/dbclient.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/dropbear.8 ${STAGEDIR}${MAN1PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/dropbearkey.8 ${STAGEDIR}${MAN1PREFIX}/man/man8
 
 .include <bsd.port.mk>
