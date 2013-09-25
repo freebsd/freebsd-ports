@@ -13,24 +13,29 @@ DISTNAME=	${PORTNAME}-1.1p8
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple to-do list manager
 
-USE_TK_RUN=	yes
+USES+=		tk:run
 NO_BUILD=	yes
 PLIST_FILES=	bin/zorro
-PORTDOCS=	DOTzorrorc
+PORTDOCS=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/bin/wish|${WISH}|' \
 		${WRKSRC}/zorro
 	@${REINPLACE_CMD} -e 's|oof|of|' ${WRKSRC}/DOTzorrorc
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/zorro ${PREFIX}/bin/zorro
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/DOTzorrorc ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/zorro ${STAGEDIR}${PREFIX}/bin/zorro
+
+.if ${PORT_OPTIONS:MDOCS}
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/DOTzorrorc ${STAGEDIR}${DOCSDIR}/
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Take a look at ${DOCSDIR}/DOTzorrorc"
+	@${ECHO_MSG} "Take a look at ${STAGEDIR}${DOCSDIR}/DOTzorrorc"
 	@${ECHO_MSG} ""
 .endif
 
