@@ -12,7 +12,7 @@ COMMENT=	Extractor from .chm files
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	chm:${PORTSDIR}/misc/chmlib
+LIB_DEPENDS=	libchm.so:${PORTSDIR}/misc/chmlib
 
 PROJECTHOST=	ak-various-projects
 
@@ -22,8 +22,7 @@ USE_DOS2UNIX=	chmview.c utf8.c utf8.h
 WRKSRC=		${WRKDIR}/src
 PLIST_FILES=	bin/chmview
 
-NO_STAGE=	yes
-pre-patch:
+post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 .include <bsd.port.mk>
