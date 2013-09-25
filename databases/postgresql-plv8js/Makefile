@@ -20,13 +20,4 @@ USE_PGSQL=	yes
 WANT_PGSQL_VER=	91+
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKSRC}/pkg-message
-
-NO_STAGE=	yes
-post-install:
-	@${ECHO_MSG} ''
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG} ''
-
 .include <bsd.port.mk>
