@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lynis
-PORTVERSION=	1.2.9
+PORTVERSION=	1.3.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.rootkit.nl/files/ \
 		http://downloads.rootkit.nl/
@@ -12,29 +12,21 @@ COMMENT=	Security and system auditing tool
 
 NO_BUILD=	yes
 
-PORTDOCS=	*
-MAN8=		lynis.8
+PORTDOCS=	CHANGELOG INSTALL FAQ LICENSE README
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/tINCLUDE_TARGETS/ s|".*"|"${DATADIR}/include"|; \
 		/tPLUGIN_TARGETS/ s|".*"|"${DATADIR}/plugins"|; \
 		/tDB_TARGETS/ s|".*"|"${DATADIR}/db"|' ${WRKSRC}/${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${MANPREFIX}/man/man8
-	${MKDIR} ${PREFIX}/etc/lynis
-	${INSTALL_DATA} ${WRKSRC}/default.prf ${PREFIX}/etc/lynis
-	${MKDIR} ${DATADIR}
-.for dir in include db dev plugins
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${DATADIR}/
-.endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for f in CHANGELOG INSTALL FAQ LICENSE README
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/lynis
+	${INSTALL_DATA} ${WRKSRC}/default.prf ${STAGEDIR}${PREFIX}/etc/lynis
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "include db dev plugins" ${STAGEDIR}${DATADIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
