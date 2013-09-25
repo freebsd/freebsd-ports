@@ -9,7 +9,6 @@ MASTER_SITES=	SF/arabeyes/ITL%20Library%20%28${PORTNAME}%29/${PORTNAME}-${PORTVE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API abstraction to common Islamic calculations
 
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/itl
 MAKE_JOBS_UNSAFE=	yes

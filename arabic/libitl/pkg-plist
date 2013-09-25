@@ -1,8 +1,8 @@
-lib/itl/libitl.so.0.0.7
-lib/itl/libitl.so.0
-lib/itl/libitl.so
-lib/itl/libitl.a
-include/itl/prayer.h
 include/itl/hijri.h
+include/itl/prayer.h
+lib/itl/libitl.a
+lib/itl/libitl.so
+lib/itl/libitl.so.0
+lib/itl/libitl.so.0.0.7
 @dirrm lib/itl
 @dirrm include/itl

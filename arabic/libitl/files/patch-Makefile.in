@@ -1,0 +1,24 @@
+--- Makefile.in.orig	2013-09-25 23:27:38.000000000 +0800
++++ Makefile.in	2013-09-25 23:28:25.000000000 +0800
+@@ -83,15 +83,15 @@ debinstall: components
+ 
+ install: build/libitl.so build/libitl.a
+ 	@echo "==> Installing libitl library..."
+-	test -d $(PREFIX)/lib/itl \
+-	|| install -d $(PREFIX)/lib/itl \
++	test -d $(DESTDIR)$(PREFIX)/lib/itl \
++	|| install -d $(DESTDIR)$(PREFIX)/lib/itl \
+ 	|| exit 1;
+-	install build/$(FULLNAME) $(PREFIX)/lib/itl
+-	install build/libitl.a $(PREFIX)/lib/itl
++	install build/$(FULLNAME) $(DESTDIR)$(PREFIX)/lib/itl
++	install build/libitl.a $(DESTDIR)$(PREFIX)/lib/itl
+         # Using cp -P as cp --no-dereference is not POSIX
+         # or use --preserve=link instead.
+-	cp -P build/$(SONAME) $(PREFIX)/lib/itl
+-	cp -P build/libitl.so $(PREFIX)/lib/itl
++	cp -P build/$(SONAME) $(DESTDIR)$(PREFIX)/lib/itl
++	cp -P build/libitl.so $(DESTDIR)$(PREFIX)/lib/itl
+ 	@echo "==> Installing ITL components..."
+ 	for i in $(COMPONENTS); do \
+ 	  $(MAKE) -C $$i install || exit 1; \
