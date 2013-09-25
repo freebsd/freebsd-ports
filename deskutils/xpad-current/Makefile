@@ -26,7 +26,6 @@ CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 #code currently doesn't properly handle --disable-nls (in next upstream milestone)
@@ -37,8 +36,6 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-MAN1+=		xpad.1
 
 post-patch-script:
 .if ! ${PORT_OPTIONS:MNLS}

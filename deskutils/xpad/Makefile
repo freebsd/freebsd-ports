@@ -24,9 +24,6 @@ USES=	pkgconfig gmake
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		xpad.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -38,8 +35,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-MAN1+=		xpad.1
 
 post-patch-script:
 .if ! ${PORT_OPTIONS:MNLS}

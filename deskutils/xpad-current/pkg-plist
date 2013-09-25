@@ -1,4 +1,5 @@
 bin/xpad
+man/man1/xpad.1.gz
 share/applications/xpad.desktop
 share/icons/hicolor/scalable/apps/xpad.svg
 %%NLS%%%%NLS%%share/locale/af/LC_MESSAGES/xpad.mo
