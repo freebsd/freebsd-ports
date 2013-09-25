@@ -235,6 +235,9 @@ post-install:
 
 show-options:
 	@${MAKE} -DWITH_OPTIONS showconfig
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "Put \"WITH_OPTIONS=yes\" -or- \"WITH_VIM_OPTIONS=yes\""
+	@${ECHO_CMD} "in your /etc/make.conf or /etc/ports.conf file to enable OPTIONS processing.
 
 .if defined(ONT_CHECKSUM)
 checksum:
