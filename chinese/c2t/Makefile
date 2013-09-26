@@ -13,13 +13,11 @@ COMMENT=	Translates GB/Big5 encoding to tone pinyin
 
 NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=	c2t.tar.gz
-MAN1=		c2t.1
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/share/chinese/gb
-	${INSTALL_PROGRAM} ${WRKSRC}/c2t ${PREFIX}/bin
-	${INSTALL_DATA} ${DISTDIR}/TONEPY.tit ${PREFIX}/share/chinese/gb
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}/${PREFIX}/share/chinese/gb
+	${INSTALL_PROGRAM} ${WRKSRC}/c2t ${STAGEDIR}/${PREFIX}/bin
+	${INSTALL_DATA} ${DISTDIR}/TONEPY.tit ${STAGEDIR}/${PREFIX}/share/chinese/gb
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}/${PREFIX}/man/man1
 
 .include <bsd.port.mk>

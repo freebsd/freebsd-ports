@@ -13,9 +13,6 @@ COMMENT=	Traditional and Simplified Chinese mappings
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		b2g.pl.1 g2b.pl.1
-
-NO_STAGE=	yes
 regression-test:
 	cd ${WRKSRC} && ${MAKE} test
 

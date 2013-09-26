@@ -1,2 +1,3 @@
 bin/jis2gb
+man/man1/jis2gb.1.gz
 share/emacs/site-lisp/jis2gb.el

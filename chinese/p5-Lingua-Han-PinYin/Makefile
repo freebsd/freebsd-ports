@@ -19,7 +19,4 @@ RUN_DEPENDS=	p5-Lingua-Han-Utils>=0.10:${PORTSDIR}/chinese/p5-Lingua-Han-Utils
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Lingua::Han::PinYin.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

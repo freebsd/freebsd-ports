@@ -10,10 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A translator between GuoBiao / Big5 and HZ
 
 ALL_TARGET=	bsd
-MAN1=		hztty.1
-PLIST_FILES=	bin/hztty
+PLIST_FILES=	bin/hztty man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900007
@@ -21,7 +19,7 @@ BROKEN=		fails to build with new utmpx
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hztty ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/hztty.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}/${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}/${PREFIX}/man/man1
 
 .include <bsd.port.post.mk>

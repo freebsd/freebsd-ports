@@ -1,5 +1,7 @@
 bin/b2g.pl
 bin/g2b.pl
+man/man1/b2g.pl.1.gz
+man/man1/g2b.pl.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/HanConvert.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/HanConvert/Perl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/HanConvert/Perl.pm-orig

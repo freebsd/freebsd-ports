@@ -12,9 +12,8 @@ MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	8bit compatible telnet client for Chinese input
 
 MAN1=		zh-telnet.1
-PLIST_FILES=	bin/zh-telnet
+PLIST_FILES=	bin/zh-telnet man/man1/zh-telnet.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists (${SRC_BASE}/contrib/telnet/telnet)
@@ -48,7 +47,7 @@ pre-build:
 	@cd ${WRKSRC}/libtelnet && ${MAKE}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/telnet ${PREFIX}/bin/zh-telnet
-	@${INSTALL_MAN} ${WRKSRC}/telnet.1 ${MAN1PREFIX}/man/man1/${MAN1}
+	@${INSTALL_PROGRAM} ${WRKSRC}/telnet ${STAGEDIR}/${PREFIX}/bin/zh-telnet
+	@${INSTALL_MAN} ${WRKSRC}/telnet.1 ${STAGEDIR}/${MAN1PREFIX}/man/man1/zh-telnet.1
 
 .include <bsd.port.post.mk>

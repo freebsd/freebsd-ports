@@ -1,9 +1,10 @@
+%%PERL5_MAN3%%/Lingua::Han::PinYin.3.gz
 %%SITE_PERL%%/Lingua/Han/PinYin.pm
 %%SITE_PERL%%/Lingua/Han/PinYin/Mandarin.dat
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Han/PinYin/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Han/PinYin
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Han/PinYin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Han
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
-@dirrmtry %%SITE_PERL%%/Lingua/Han/PinYin
+@dirrm %%SITE_PERL%%/Lingua/Han/PinYin
 @dirrmtry %%SITE_PERL%%/Lingua/Han
 @dirrmtry %%SITE_PERL%%/Lingua

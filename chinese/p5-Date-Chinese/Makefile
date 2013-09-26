@@ -14,7 +14,4 @@ COMMENT=	Perl module to calculate dates in the Chinese calendar
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Date::Chinese.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

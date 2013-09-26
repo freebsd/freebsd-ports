@@ -1,9 +1,11 @@
+%%PERL5_MAN3%%/Lingua::ZH::Numbers.3.gz
+%%PERL5_MAN3%%/Lingua::ZH::Numbers::Currency.3.gz
 %%SITE_PERL%%/Lingua/ZH/Numbers.pm
 %%SITE_PERL%%/Lingua/ZH/Numbers/Currency.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/Numbers/.packlist
-@dirrm %%SITE_PERL%%/Lingua/ZH/Numbers
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/Numbers
-@dirrmtry %%SITE_PERL%%/Lingua/ZH
-@dirrmtry %%SITE_PERL%%/Lingua
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
+@dirrm %%SITE_PERL%%/Lingua/ZH/Numbers
+@dirrmtry %%SITE_PERL%%/Lingua/ZH
+@dirrmtry %%SITE_PERL%%/Lingua

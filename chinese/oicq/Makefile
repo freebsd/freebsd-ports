@@ -16,11 +16,8 @@ BUILD_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::OICQ.3
-
-NO_STAGE=	yes
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/qq ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/demo1 ${PREFIX}/bin/qq-demo1
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/qq ${STAGEDIR}/${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/demo1 ${STAGEDIR}/${PREFIX}/bin/qq-demo1
 
 .include <bsd.port.mk>

@@ -13,7 +13,5 @@ COMMENT=	Extra sets of Chinese encodings
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Encode::HanExtra.3 Encode::TW::Unisys::SOSI1.3 Encode::TW::Unisys::SOSI2.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

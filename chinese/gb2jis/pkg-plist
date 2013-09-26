@@ -1,2 +1,3 @@
 bin/gb2jis
+man/man1/gb2jis.1.gz
 share/emacs/site-lisp/gb2jis.el

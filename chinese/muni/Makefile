@@ -9,15 +9,14 @@ MASTER_SITES=	http://www.whizkidtech.redprince.net/i18n/muni/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find Unicode values for Chinese characters
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/muni ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/m7773 ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/muni ${STAGEDIR}/${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/m7773 ${STAGEDIR}/${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/muni
-	${INSTALL_DATA} ${WRKSRC}/index.html ${PREFIX}/share/doc/muni
-	${INSTALL_DATA} ${WRKSRC}/yung.gif ${PREFIX}/share/doc/muni
-	${INSTALL_DATA} ${WRKSRC}/kang.gif ${PREFIX}/share/doc/muni
+	${MKDIR} ${STAGEDIR}/${PREFIX}/share/doc/muni
+	${INSTALL_DATA} ${WRKSRC}/index.html ${STAGEDIR}/${PREFIX}/share/doc/muni
+	${INSTALL_DATA} ${WRKSRC}/yung.gif ${STAGEDIR}/${PREFIX}/share/doc/muni
+	${INSTALL_DATA} ${WRKSRC}/kang.gif ${STAGEDIR}/${PREFIX}/share/doc/muni
 .endif
 
 .include <bsd.port.mk>

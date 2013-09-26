@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/Segment/.packlist
+%%PERL5_MAN3%%/Lingua::ZH::Segment.3.gz
 %%SITE_PERL%%/Lingua/ZH/Segment.pm
-@dirrmtry %%SITE_PERL%%/Lingua/ZH
-@dirrmtry %%SITE_PERL%%/Lingua
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/Segment
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/Segment/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/Segment
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
+@dirrmtry %%SITE_PERL%%/Lingua/ZH
+@dirrmtry %%SITE_PERL%%/Lingua

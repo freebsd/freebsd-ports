@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Han/Utils/.packlist
+%%PERL5_MAN3%%/Lingua::Han::Utils.3.gz
 %%SITE_PERL%%/Lingua/Han/Utils.pm
-@dirrmtry %%SITE_PERL%%/Lingua/Han
-@dirrmtry %%SITE_PERL%%/Lingua
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Han/Utils
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Han/Utils/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Han/Utils
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Han
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
+@dirrmtry %%SITE_PERL%%/Lingua/Han
+@dirrmtry %%SITE_PERL%%/Lingua

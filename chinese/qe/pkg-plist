@@ -1,5 +1,5 @@
-bin/qe
 bin/pe2
-share/qe/qe.hlp
-share/qe/qe.pro
-@dirrm share/qe/
+bin/qe
+%%DATADIR%%/qe.hlp
+%%DATADIR%%/qe.pro
+@dirrmtry %%DATADIR%%

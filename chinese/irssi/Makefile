@@ -13,5 +13,4 @@ MASTERDIR=	${.CURDIR}/../../irc/irssi
 EXTRA_PATCHES=	${.CURDIR}/files/patch-irssi.conf \
 		${.CURDIR}/files/patch-utf8_break
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

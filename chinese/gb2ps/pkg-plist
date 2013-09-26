@@ -1,12 +1,12 @@
 @comment $FreeBSD$
 bin/gb2ps
 share/chinese/cover.ps
-share/chinese/gb/csong24.ccf
-share/chinese/gb/ckai24.ccf
+share/chinese/gb/cfan24.ccf
 share/chinese/gb/cfang24.ccf
 share/chinese/gb/chei24.ccf
-share/chinese/gb/cfan24.ccf
-%%PORTDOCS%%share/doc/gb2ps/gb2ps.help
-%%PORTDOCS%%@dirrm share/doc/gb2ps
+share/chinese/gb/ckai24.ccf
+share/chinese/gb/csong24.ccf
+%%PORTDOCS%%%%DOCSDIR%%/gb2ps.help
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/chinese/gb
 @dirrmtry share/chinese

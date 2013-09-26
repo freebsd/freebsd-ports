@@ -17,7 +17,6 @@ CFLAGS+=	-fPIC
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/bin/python,python,g'  ${WRKSRC}/bg5pdf
 
@@ -26,12 +25,13 @@ do-build:
 		-I${PYTHON_INCLUDEDIR} -L${PREFIX}/lib -lpdf -o ${WRKSRC}/bg5pdflib.so
 
 do-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/bg5pdf ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/gbpdf ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bg5pdflib.so ${PYTHON_SITELIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/test.big5 ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/test.big5.pdf ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/genTest.py ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/bg5pdf ${STAGEDIR}/${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/gbpdf ${STAGEDIR}/${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}/${PYTHON_SITELIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bg5pdflib.so ${STAGEDIR}/${PYTHON_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/test.big5 ${STAGEDIR}/${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/test.big5.pdf ${STAGEDIR}/${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/genTest.py ${STAGEDIR}/${EXAMPLESDIR}
 
 .include <bsd.port.mk>
