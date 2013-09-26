@@ -14,8 +14,11 @@ COMMENT=	Intelligent schema migrations for Django apps
 LICENSE=	AL2
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	South
-USE_PYDISTUTILS=	easy_install
+PYTHON_PY3K_PLIST_HACK= yes
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e 's|setuptools|distutils.core|' ${WRKSRC}/${PYSETUP}
+
 .include <bsd.port.mk>
