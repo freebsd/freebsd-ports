@@ -40,7 +40,7 @@ RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
 .if ${PORT_OPTIONS:MXINE}
-LIB_DEPENDS+=	xine.so:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	libxine.so:${PORTSDIR}/multimedia/libxine
 .endif
 
 .if ${PORT_OPTIONS:MCDDA2WAV}
