@@ -194,6 +194,7 @@ bin/puddletag
 %%PYTHON_SITELIBDIR%%/puddlestuff/webdb.py
 %%PYTHON_SITELIBDIR%%/puddlestuff/webdb.pyc
 %%PYTHON_SITELIBDIR%%/puddlestuff/webdb.pyo
+man/man1/puddletag.1.gz
 share/applications/puddletag.desktop
 share/pixmaps/puddletag.png
 @dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/tagsources/mp3tag
