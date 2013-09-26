@@ -1,6 +1,6 @@
 bin/m7773
 bin/muni
-%%PORTDOCS%%share/doc/muni/index.html
-%%PORTDOCS%%share/doc/muni/kang.gif
-%%PORTDOCS%%share/doc/muni/yung.gif
-%%PORTDOCS%%@dirrm share/doc/muni
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/kang.gif
+%%PORTDOCS%%%%DOCSDIR%%/yung.gif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

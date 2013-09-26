@@ -1,5 +1,5 @@
---- ./Makefile.orig	1995-02-09 06:29:35.000000000 +0200
-+++ ./Makefile	2009-06-01 18:28:52.173974060 +0300
+--- Makefile.orig	1995-02-09 12:29:35.000000000 +0800
++++ Makefile	2013-09-26 20:13:01.000000000 +0800
 @@ -1,6 +1,10 @@
  SHELL = /bin/sh
  
@@ -12,7 +12,7 @@
  
  TABLEC = GB2312JX0208.c GB2312JX0212.c GB2312UZPJ.c
  TABLEO = GB2312JX0208.o GB2312JX0212.o GB2312UZPJ.o
-@@ -11,19 +15,20 @@
+@@ -11,19 +15,20 @@ TABLEO = GB2312JX0208.o GB2312JX0212.o G
  	./t2c $< $@
  
  .c.o:
@@ -32,13 +32,13 @@
  install: gb2jis gb2jis.1
 -	cp gb2jis /usr/local/bin/gb2jis
 -	cp gb2jis.1 /usr/local/man/man1/gb2jis.1
-+	${BSD_INSTALL_PROGRAM} gb2jis ${PREFIX}/bin/gb2jis
-+	${BSD_INSTALL_MAN} gb2jis.1 ${MAN1PREFIX}/man/man1/gb2jis.1
-+	${BSD_INSTALL_DATA} gb2jis.el ${PREFIX}/share/emacs/site-lisp/gb2jis.el
++	${BSD_INSTALL_PROGRAM} gb2jis ${DESTDIR}${PREFIX}/bin/gb2jis
++	${BSD_INSTALL_MAN} gb2jis.1 ${DESTDIR}${MAN1PREFIX}/man/man1/gb2jis.1
++	${BSD_INSTALL_DATA} gb2jis.el ${DESTDIR}${PREFIX}/share/emacs/site-lisp/gb2jis.el
  #	nroff -man gb2jis.1 > /usr/local/catman/C/u_man/cat1/gb2jis.1
  
  clean:
-@@ -34,7 +39,7 @@
+@@ -34,7 +39,7 @@ check: $(TABLEC)
  	-egrep '0x([2-9].[8-f]|[8-f].[2-9])' GB2312UZPJ.c
  
  t2c: t2c.c

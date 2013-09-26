@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The automatic localization for Simplified Chinese zh_CN.eucCN locale
 
 NO_BUILD=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=  	pkg-message
 REINPLACE_ARGS=	-i ""
 
 OPTIONS_DEFINE=	WQY FIREFLYTTF FCITX SCIM MINICHINPUT RELAXCONF
@@ -25,7 +25,6 @@ SCIM_DESC=		Smart Common Input Method platform
 MINICHINPUT_DESC=	A tiny version of Chinput
 RELAXCONF_DESC=		A set of utilities for FreeBSD LiveCD
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MWQY}
@@ -58,12 +57,7 @@ post-patch:
 		s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/dot.xselector ${WRKSRC}/dot.xinitrc
 
 do-install:
-	${MKDIR} ${PREFIX}/share/skel/zh_CN.eucCN
-	${CP} ${WRKSRC}/* ${PREFIX}/share/skel/zh_CN.eucCN
-
-post-install:
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g" \
-		${.CURDIR}/pkg-message > ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}/${PREFIX}/share/skel/zh_CN.eucCN
+	${CP} ${WRKSRC}/* ${STAGEDIR}/${PREFIX}/share/skel/zh_CN.eucCN
 
 .include <bsd.port.post.mk>

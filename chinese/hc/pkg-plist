@@ -1,7 +1,7 @@
 @comment $FreeBSD$
-bin/hc
 bin/b2g
 bin/g2b
-share/chinese/hc.tab
+bin/hc
 share/chinese/hc-supp.tab
+share/chinese/hc.tab
 @dirrmtry share/chinese

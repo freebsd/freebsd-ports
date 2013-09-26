@@ -13,19 +13,17 @@ COMMENT=	Hanzi Converter -- converts between GB and BIG-5 codes
 WRKSRC=		${WRKDIR}/hc3
 EXTRACT_ONLY=	hc-30.tar.gz
 ALL_TARGET=	hc b2g g2b
-MAN1=		hc.1
 
-NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/hclib.c
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/chinese
-	${INSTALL_PROGRAM} ${WRKSRC}/hc ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/b2g ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/g2b ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/hc.tab ${PREFIX}/share/chinese
-	${INSTALL_DATA} ${DISTDIR}/hc-supp.tab ${PREFIX}/share/chinese
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}/${PREFIX}/share/chinese
+	${INSTALL_PROGRAM} ${WRKSRC}/hc ${STAGEDIR}/${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/b2g ${STAGEDIR}/${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/g2b ${STAGEDIR}/${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/hc.tab ${STAGEDIR}/${PREFIX}/share/chinese
+	${INSTALL_DATA} ${DISTDIR}/hc-supp.tab ${STAGEDIR}/${PREFIX}/share/chinese
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

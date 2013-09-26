@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/WordSegmenter/.packlist
+%%PERL5_MAN3%%/Lingua::ZH::WordSegmenter.3.gz
 %%SITE_PERL%%/Lingua/ZH/WordSegmenter.pm
-@dirrmtry %%SITE_PERL%%/Lingua/ZH
-@dirrmtry %%SITE_PERL%%/Lingua
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/WordSegmenter/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/WordSegmenter
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
+@dirrmtry %%SITE_PERL%%/Lingua/ZH
+@dirrmtry %%SITE_PERL%%/Lingua

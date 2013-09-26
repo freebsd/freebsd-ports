@@ -1,0 +1,48 @@
+--- etc/Makefile.in.orig	2001-04-24 16:37:58.000000000 +0800
++++ etc/Makefile.in	2013-09-26 00:25:17.000000000 +0800
+@@ -32,8 +32,6 @@ mandir = @mandir@
+ includedir = @includedir@
+ oldincludedir = /usr/include
+ 
+-DESTDIR =
+-
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+@@ -167,25 +165,25 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ install-data-local: qe.pro qe.hlp
+-	$(mkinstalldirs) $(pkgdatadir)
+-	@if test -r $(pkgdatadir)/$(PACKAGE).pro; then \
+-	    if cmp $(pkgdatadir)/$(PACKAGE).pro $(top_builddir)/etc/$(PACKAGE).pro 2> /dev/null ; then \
+-		echo "$(pkgdatadir)/$(PACKAGE).pro has not changed"; \
++	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)
++	@if test -r $(DESTDIR)$(pkgdatadir)/$(PACKAGE).pro; then \
++	    if cmp $(DESTDIR)$(pkgdatadir)/$(PACKAGE).pro $(top_builddir)/etc/$(PACKAGE).pro 2> /dev/null ; then \
++		echo "$(DESTDIR)$(pkgdatadir)/$(PACKAGE).pro has not changed"; \
+ 	    else \
+ 		echo;      \
+ 		echo "*******************";        \
+-		echo "* Warning: $(pkgdatadir)/$(PACKAGE).pro exist."; \
+-		echo "* It has been moved as $(pkgdatadir)/$(PACKAGE).pro.old"; \
++		echo "* Warning: $(DESTDIR)$(pkgdatadir)/$(PACKAGE).pro exist."; \
++		echo "* It has been moved as $(DESTDIR)$(pkgdatadir)/$(PACKAGE).pro.old"; \
+ 		echo "*******************";        \
+ 		echo; \
+-		mv $(pkgdatadir)/$(PACKAGE).pro $(pkgdatadir)/$(PACKAGE).pro.old; \
+-		$(INSTALL_DATA) $(top_builddir)/etc/$(PACKAGE).pro $(pkgdatadir)/$(PACKAGE).pro ; \
++		mv $(DESTDIR)$(pkgdatadir)/$(PACKAGE).pro $(DESTDIR)$(pkgdatadir)/$(PACKAGE).pro.old; \
++		$(INSTALL_DATA) $(top_builddir)/etc/$(PACKAGE).pro $(DESTDIR)$(pkgdatadir)/$(PACKAGE).pro ; \
+ 	    fi \
+ 	else \
+-	    $(INSTALL_DATA) $(top_builddir)/etc/$(PACKAGE).pro $(pkgdatadir)/$(PACKAGE).pro; \
++	    $(INSTALL_DATA) $(top_builddir)/etc/$(PACKAGE).pro $(DESTDIR)$(pkgdatadir)/$(PACKAGE).pro; \
+ 	fi
+-	@test -r $(pkgdatadir)/qe.hlp || \
+-          $(INSTALL_DATA) $(top_srcdir)/etc/qe.hlp $(pkgdatadir)/qe.hlp ;
++	@test -r $(DESTDIR)$(pkgdatadir)/qe.hlp || \
++          $(INSTALL_DATA) $(top_srcdir)/etc/qe.hlp $(DESTDIR)$(pkgdatadir)/qe.hlp ;
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

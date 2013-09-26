@@ -1,9 +1,10 @@
+%%PERL5_MAN3%%/Lingua::ZH::TaBE.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Lingua/ZH/TaBE.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/TaBE/TaBE.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/TaBE/TaBE.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/TaBE/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/TaBE
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Lingua/ZH
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Lingua
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua

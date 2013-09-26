@@ -13,7 +13,6 @@ COMMENT=	Convert JIS Kanji to GuoBiao Hanzi
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=
 
-MAN1=		${PORTNAME}.1
+#MAN1=		${PORTNAME}.1
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

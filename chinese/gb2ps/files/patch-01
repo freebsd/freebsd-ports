@@ -1,6 +1,6 @@
---- Makefile.orig	Mon Aug 17 13:34:14 1992
-+++ Makefile	Sun Apr  2 11:40:36 2000
-@@ -5,11 +5,11 @@
+--- Makefile.orig	1992-08-17 13:34:14.000000000 +0800
++++ Makefile	2013-09-26 21:07:54.000000000 +0800
+@@ -5,31 +5,31 @@
  # COVERPAGE -- the absolute path and name of coverpage PS file
  # 	    -- default is current directory 
  
@@ -15,3 +15,30 @@
       
  all: gb2ps
  
+ gb2ps:gbmain.o gbchar.o gbinit.o gbpage.o cover.o
+-	cc ${CFLAGS} -o gb2ps gbmain.o gbchar.o gbinit.o \
++	${CC} ${CFLAGS} -o gb2ps gbmain.o gbchar.o gbinit.o \
+ 			gbpage.o cover.o
+     
+ cover.o:cover.c  Makefile
+-	cc ${CFLAGS} -c cover.c
++	${CC} ${CFLAGS} -c cover.c
+ 
+ gbmain.o: gbmain.c Makefile
+-	cc ${CFLAGS} -c gbmain.c
++	${CC} ${CFLAGS} -c gbmain.c
+ gbchar.o: gbchar.c Makefile
+-	cc ${CFLAGS} -c gbchar.c
++	${CC} ${CFLAGS} -c gbchar.c
+ gbinit.o: gbinit.c Makefile
+-	cc ${CFLAGS} -c gbinit.c
++	${CC} ${CFLAGS} -c gbinit.c
+ gbpage.o: gbpage.c Makefile
+-	cc ${CFLAGS} -c gbpage.c
++	${CC} ${CFLAGS} -c gbpage.c
+ gbpost.o: gbpost.c Makefile
+-	cc ${CFLAGS} -c gbpost.c
++	${CC} ${CFLAGS} -c gbpost.c
+ 
+ clean:
+ 	rm -f *.o core gb2ps plib2ccf

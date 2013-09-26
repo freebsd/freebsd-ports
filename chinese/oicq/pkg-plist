@@ -1,10 +1,11 @@
 bin/qq
 bin/qq-demo1
+%%PERL5_MAN3%%/Net::OICQ.3.gz
 %%SITE_PERL%%/Net/OICQ.pm
-%%SITE_PERL%%/Net/OICQ/TextConsole.pm
-%%SITE_PERL%%/Net/OICQ/Event.pm
 %%SITE_PERL%%/Net/OICQ/ClientEvent.pm
+%%SITE_PERL%%/Net/OICQ/Event.pm
 %%SITE_PERL%%/Net/OICQ/ServerEvent.pm
+%%SITE_PERL%%/Net/OICQ/TextConsole.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OICQ/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OICQ
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

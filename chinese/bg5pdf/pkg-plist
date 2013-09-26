@@ -1,8 +1,8 @@
 @comment $FreeBSD$
+bin/bg5pdf
+bin/gbpdf
+%%PYTHON_SITELIBDIR%%/bg5pdflib.so
 %%EXAMPLESDIR%%/genTest.py
 %%EXAMPLESDIR%%/test.big5
 %%EXAMPLESDIR%%/test.big5.pdf
-%%PYTHON_SITELIBDIR%%/bg5pdflib.so
-bin/bg5pdf
-bin/gbpdf
 @dirrm %%EXAMPLESDIR%%

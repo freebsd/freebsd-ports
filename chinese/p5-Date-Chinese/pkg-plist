@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Date::Chinese.3.gz
 %%SITE_PERL%%/Date/Chinese.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Chinese/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Chinese
-@dirrmtry %%SITE_PERL%%/Date
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
+@dirrmtry %%SITE_PERL%%/Date
