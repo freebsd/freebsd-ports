@@ -3,7 +3,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.5.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_TCLTK} \
 		SF/tcl/Tcl/${PORTVERSION}
@@ -22,6 +22,7 @@ TCLMAN_DESC=	Install Tcl function manpages
 TZDATA_DESC=	Install Tcl timezone data
 MODULES_DESC=	Install Tcl common modules
 
+NO_STAGE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}/unix
 ALL_TARGET=	all
 INSTALL_TARGET=	install install-libraries

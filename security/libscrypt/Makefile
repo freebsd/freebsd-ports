@@ -3,6 +3,7 @@
 
 PORTNAME=	libscrypt
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	horia@racoviceanu.com
@@ -11,6 +12,7 @@ COMMENT=	C library for the scrypt key derivation function
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NO_STAGE=	yes
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	technion
