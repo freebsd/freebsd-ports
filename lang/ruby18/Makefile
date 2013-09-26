@@ -14,7 +14,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT?=	An object-oriented interpreted scripting language
 
-FORBIDDEN=	Vulernerable, please use lang/ruby19
+FORBIDDEN=	Vulernerable, http://vuxml.org/freebsd/ebd877b9-7ef4-4375-b1fd-c67780581898.html
+DEPRECATED=	Please use lang/ruby19
 EXPIRATION_DATE=	2013-10-10
 
 GNU_CONFIGURE=	yes
