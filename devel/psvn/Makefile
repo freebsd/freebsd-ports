@@ -28,17 +28,13 @@ PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}/psvn.el \
 		${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}/psvn.elc
 PLIST_DIRS=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
-ELISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
+ELISPDIR=	${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; ${EMACS_CMD} -batch -q -f batch-byte-compile psvn.el
 
 do-install:
-	${MKDIR} ${ELISPDIR}
+	@${MKDIR} ${ELISPDIR}
 	${INSTALL_DATA} ${WRKSRC}/psvn.* ${ELISPDIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
