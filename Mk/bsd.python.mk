@@ -94,16 +94,16 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					- Version of the default python2 binary in your ${PATH}, in
 #					  the format "python2.7". Set this in your /etc/make.conf
 #					  in case you want to use a specific version as a default.
-#					  Note that PYTHON_DEFAULT_VERSION always will have precedence
-#					  before this value, if it matches "python2*"
+#					  Note that PYTHON_DEFAULT_VERSION always will have
+#					  precedence before this value, if it matches "python2*"
 #					  default: python2.7
 #
 # PYTHON3_DEFAULT_VERSION
 #					- Version of the default python3 binary in your ${PATH}, in
 #					  the format "python3.2". Set this in your /etc/make.conf
 #					  in case you want to use a specific version as a default.
-#					  Note that PYTHON_DEFAULT_VERSION always will have precedence
-#					  before this value, if it matches "python3*"
+#					  Note that PYTHON_DEFAULT_VERSION always will have
+#					  precedence before this value, if it matches "python3*"
 #					  default: python3.3
 #
 # PYTHON_MAJOR_VER	- Python version major number. 2 for python-2.x,
@@ -138,6 +138,17 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #
 # PYSETUP			- Name of the setup script used by the distutils package.
 #					  default: setup.py
+#
+# PYDISTUTILS_AUTOPLIST
+#					- Generate the packaging list for distutils based ports
+#					  (including easy_install) automatically.
+#
+# PYTHON_PY3K_PLIST_HACK
+#					- Automatically replaces .pyc and .pyo package list entries
+#					  with the relevant __pycache__ entries for Python 3.x.
+#					  This should only be used for ports, which do not use one
+#					  of Python's default package installation mechanisms and
+#					  which are guaranteed to work with any python version.
 #
 # PYDISTUTILS_PKGNAME
 #					- Internal name in the distutils for egg-info.
@@ -476,6 +487,7 @@ PYDISTUTILS_EGGINFO?=	${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_
 PYDISTUTILS_EGGINFODIR?=${PYTHONPREFIX_SITELIBDIR}
 
 .if !defined(PYDISTUTILS_NOEGGINFO) && \
+	!defined(PYDISTUTILS_AUTOPLIST) && \
 	(defined(INSTALLS_EGGINFO) ||	\
 		(defined(USE_PYDISTUTILS) && \
 		 ${USE_PYDISTUTILS} != "easy_install")) && \
@@ -484,6 +496,46 @@ PYDISTUTILS_EGGINFODIR?=${PYTHONPREFIX_SITELIBDIR}
 PLIST_FILES+=	${PYDISTUTILS_EGGINFODIR:S;${PREFIX}/;;}/${egg}
 . endfor
 .endif
+
+.if defined(PYDISTUTILS_AUTOPLIST) && defined(USE_PYDISTUTILS)
+_PYTHONPKGLIST=				${WRKDIR}/.PLIST.pymodtmp
+PYDISTUTILS_INSTALLARGS:=	--record ${_PYTHONPKGLIST} \
+							${PYDISTUTILS_INSTALLARGS}
+
+_RELSITELIBDIR=	${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
+
+add-plist-post:	add-plist-pymod
+add-plist-pymod:
+	{ ${ECHO_CMD} "#mtree"; ${CAT} ${MTREE_FILE}; } | ${TAR} tf - | \
+		${SED} '/^\.$$/d' > ${WRKDIR}/.localmtree
+	${ECHO_CMD} "${_RELSITELIBDIR}" >> ${WRKDIR}/.localmtree
+	${SED} 's|^${PREFIX}/||' ${_PYTHONPKGLIST} | ${SORT} >> ${TMPPLIST}
+	${SED} -e 's|^${PREFIX}/\(.*\)/\(.*\)|\1|' ${_PYTHONPKGLIST} | \
+		while read line; do \
+			${GREP} -qw "^$${line}$$" ${WRKDIR}/.localmtree || { \
+				[ -n "$${line}" ] && \
+					${ECHO_CMD} "@unexec rmdir $${line} 2>/dev/null || true"; \
+			}; \
+		done | ${SORT} | uniq | ${SORT} -r >> ${TMPPLIST}
+
+.else
+.if ${PYTHON_REL} >= 320 && defined(PYTHON_PY3K_PLIST_HACK)
+# When Python version is 3.2+ we rewrite all the filenames
+# of TMPPLIST that end with .py[co], so that they conform
+# to PEP 3147 (see http://www.python.org/dev/peps/pep-3147/)
+PYMAGICTAG=		${PYTHON_CMD} -c 'import imp; print(imp.get_tag())'
+add-plist-post:
+	@${AWK} '\
+		/\.py[co]$$/ && !($$0 ~ "/" pc "/") {id = match($$0, /\/[^\/]+\.py[co]$$/); if (id != 0) {d = substr($$0, 1, RSTART - 1); dirs[d] = 1}; sub(/\.py[co]$$/,  "." mt "&"); sub(/[^\/]+\.py[co]$$/, pc "/&"); print; next} \
+		/^@dirrm / {d = substr($$0, 8); if (d in dirs) {print $$0 "/" pc}; print $$0; next} \
+		{print} \
+		END {if (sp in dirs) {print "@dirrm " sp "/" pc}} \
+		' \
+		pc="__pycache__" mt="$$(${PYMAGICTAG})" sp="${PYTHON_SITELIBDIR:S,${PYTHONBASE}/,,g}" \
+		${TMPPLIST} > ${TMPPLIST}.pyc_tmp
+	@${MV} ${TMPPLIST}.pyc_tmp ${TMPPLIST}
+.endif # ${PYTHON_REL} >= 320 && defined(PYTHON_PY3K_PLIST_HACK)
+.endif # defined(PYDISTUTILS_AUTOPLIST) && defined(USE_PYDISTUTILS)
 
 # Fix for programs that build python from a GNU auto* environment
 CONFIGURE_ENV+=	PYTHON="${PYTHON_CMD}"
