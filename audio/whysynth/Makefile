@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://smbolton.com/whysynth/
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Versatile softsynth implemented as a DSSI plugin
 
 LICENSE=	GPLv2 LGPL21
@@ -15,14 +15,13 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi \
 		${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	dssialsacompat:${PORTSDIR}/audio/libdssialsacompat \
-		lo:${PORTSDIR}/audio/liblo \
-		jack:${PORTSDIR}/audio/jack \
-		fftw3:${PORTSDIR}/math/fftw3 \
-		fftw3f:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \
+		liblo.so:${PORTSDIR}/audio/liblo \
+		libjack.so:${PORTSDIR}/audio/jack \
+		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float
 
 USES=		gmake pkgconfig
-NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	libtool

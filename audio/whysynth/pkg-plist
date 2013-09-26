@@ -8,7 +8,6 @@ lib/dssi/whysynth/WhySynth_gtk
 %%DATADIR%%/version_20051231_patches.WhySynth
 %%DATADIR%%/version_20090608_patches.WhySynth
 %%DATADIR%%/version_20100922_patches.WhySynth
-%%DATADIR%%/more_K4_interpretations.WhySynth
-@dirrm %%DATADIR%%
-@dirrm lib/dssi/whysynth
-@dirrm lib/dssi
+@dirrmtry %%DATADIR%%
+@dirrmtry lib/dssi/whysynth
+@dirrmtry lib/dssi
