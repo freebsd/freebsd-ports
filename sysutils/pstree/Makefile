@@ -16,11 +16,10 @@ CONFLICTS=	psmisc-[0-9]*
 
 PLIST_FILES=	bin/pstree
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKDIR} && ${CC} ${CFLAGS} -o pstree pstree.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/pstree ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/pstree ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
