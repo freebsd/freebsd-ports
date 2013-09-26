@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Perl-OSType
-PORTVERSION=	1.005
+PORTVERSION=	1.006
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,4 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Perl::OSType.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
