@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20130925
+  AFFECTS: Users of print/qpdf
+  AUTHOR:  d.y.kazarov@mail.ru
+
+  Due to the changes in libqpdf.so, please deinstall qpdf first if you
+  are updating from 4.0.0 to 4.0.1+
+
 20130920:
   AFFECTS: Users of ports
   AUTHOR: bapt@FreeBSD.org
