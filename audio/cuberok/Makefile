@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	vg@freebsd.org
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	A music player and a collection manager based on Qt4
 
 BUILD_DEPENDS=	audiere-config:${PORTSDIR}/audio/audiere \

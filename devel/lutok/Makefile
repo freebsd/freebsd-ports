@@ -6,7 +6,7 @@ PORTVERSION=	0.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	asomers@freebsd.org
+MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	Lightweight C++ API for Lua
 
 LICENSE=	BSD

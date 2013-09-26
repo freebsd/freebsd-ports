@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-player
 
-MAINTAINER=	vg@freebsd.org
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Cross-platform music player based on Amarok 1.4
 
 LICENSE=	GPLv3

@@ -7,7 +7,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
 PKGNAMEPREFIX=	arm-eabi-
 
-MAINTAINER=	kientzle@freebsd.org
+MAINTAINER=	kientzle@FreeBSD.org
 COMMENT=	GNU binutils for vanilla ARM cross-development
 
 OPTIONS_DEFINE=	NLS
