@@ -10,12 +10,11 @@ MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Displays audio volume with an OSD
 
-LIB_DEPENDS=	xosd.4:${PORTSDIR}/misc/xosd
+LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
 
-NO_STAGE=	yes
 PLIST_FILES=	bin/osdmixer
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/osdmixer ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/osdmixer ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
