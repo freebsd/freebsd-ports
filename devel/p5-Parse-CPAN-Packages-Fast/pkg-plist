@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Parse/CPAN/Packages/Fast.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/CPAN/Packages/Fast/.packlist
+%%PERL5_MAN3%%/Parse::CPAN::Packages::Fast.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/CPAN/Packages/Fast
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/CPAN/Packages
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/CPAN
