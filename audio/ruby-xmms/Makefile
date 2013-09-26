@@ -16,7 +16,7 @@ COMMENT=	XMMS bindings for Ruby
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2013-05-02
+EXPIRATION_DATE=	2013-10-10
 
 USE_RUBY=	yes
 NO_STAGE=	yes

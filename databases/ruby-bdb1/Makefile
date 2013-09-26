@@ -12,7 +12,7 @@ MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Ruby interface to Berkeley DB revision 1.8x with full feature support
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2013-05-02
+EXPIRATION_DATE=	2013-10-10
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

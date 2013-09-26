@@ -14,7 +14,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby interface to PGPLOT graphics library
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2013-05-02
+EXPIRATION_DATE=	2013-10-10
 
 LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray

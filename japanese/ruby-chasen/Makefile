@@ -12,7 +12,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	ChaSen module for Ruby
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2013-05-02
+EXPIRATION_DATE=	2013-10-10
 
 LIB_DEPENDS=	chasen.2:${PORTSDIR}/japanese/chasen-base
 

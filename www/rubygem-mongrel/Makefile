@@ -11,7 +11,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast HTTP 1.1 library and server for Ruby web applications
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2013-05-02
+EXPIRATION_DATE=	2013-10-10
 
 RUN_DEPENDS=	rubygem-gem_plugin>=0.2.3:${PORTSDIR}/devel/rubygem-gem_plugin \
 		rubygem-daemons>=1.0.3:${PORTSDIR}/devel/rubygem-daemons \

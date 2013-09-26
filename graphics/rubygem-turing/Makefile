@@ -11,7 +11,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Easy to use and customize/extend implementation of captcha
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2013-05-02
+EXPIRATION_DATE=	2013-10-10
 
 RUN_DEPENDS=	rubygem-gd2>=1.0:${PORTSDIR}/graphics/rubygem-gd2
 

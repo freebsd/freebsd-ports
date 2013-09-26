@@ -10,7 +10,7 @@ MAINTAINER=	lukhnos@gmail.com
 COMMENT=	A collection of libraries for Taiwanese languages processing
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2013-05-02
+EXPIRATION_DATE=	2013-10-10
 
 RUN_DEPENDS=	rubygem-activesupport>=1.4.2:${PORTSDIR}/devel/rubygem-activesupport
 
