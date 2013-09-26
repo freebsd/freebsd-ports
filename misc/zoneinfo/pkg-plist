@@ -178,7 +178,6 @@
 %%DATADIR%%/America/Santo_Domingo
 %%DATADIR%%/America/Sao_Paulo
 %%DATADIR%%/America/Scoresbysund
-%%DATADIR%%/America/Shiprock
 %%DATADIR%%/America/Sitka
 %%DATADIR%%/America/St_Barthelemy
 %%DATADIR%%/America/St_Johns
@@ -206,7 +205,6 @@
 %%DATADIR%%/Antarctica/McMurdo
 %%DATADIR%%/Antarctica/Palmer
 %%DATADIR%%/Antarctica/Rothera
-%%DATADIR%%/Antarctica/South_Pole
 %%DATADIR%%/Antarctica/Syowa
 %%DATADIR%%/Antarctica/Vostok
 %%DATADIR%%/Arctic/Longyearbyen
