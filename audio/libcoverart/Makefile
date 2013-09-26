@@ -2,6 +2,7 @@
 
 PORTNAME=	libcoverart
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://cloud.github.com/downloads/metabrainz/${PORTNAME}/
 
@@ -16,7 +17,6 @@ LIB_DEPENDS=	jansson:${PORTSDIR}/devel/jansson \
 USES=		cmake
 NO_STAGE=	yes
 USE_LDCONFIG=	yes
-
 
 # {PROJECT_VERSION} is not a variable nor a typo, just part of the directory name
 WRKSRC=		${WRKDIR}/${PORTNAME}-{PROJECT_VERSION}
