@@ -17,6 +17,8 @@ OPTIONS_DEFINE=	ZSH
 
 CONFLICTS_INSTALL=	poudriere-devel
 
+NEED_ROOT=	yes
+
 PLIST_FILES=	etc/poudriere.conf.sample \
 		bin/poudriere \
 		man/man8/poudriere.8.gz \
