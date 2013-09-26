@@ -1,0 +1,29 @@
+--- include/osg/Math.orig	2011-05-26 20:52:08.000000000 +0400
++++ include/osg/Math	2013-09-24 22:00:59.252519925 +0400
+@@ -20,7 +20,7 @@
+ 
+ //certain math functions were not defined until 10.2
+ //so this code checks the version so it can add in workarounds for older versions.
+-#ifdef __APPLE__
++#if defined(__APPLE__)
+ // Using std::isnan will work for OS X, but use of <cmath> 
+ // and std:: are not necessarily portible with other systems so 
+ // the include of <cmath> is isolated here.
+@@ -38,6 +38,8 @@
+         #define APPLE_PRE_10_2
+     #endif
+ #endif
++#elif defined(__FreeBSD__)
++#include <cmath>
+ #endif
+ 
+ #if defined(_MSC_VER)
+@@ -207,7 +209,7 @@
+     inline bool isNaN(float v) { return _isnan(v)!=0; }
+     inline bool isNaN(double v) { return _isnan(v)!=0; }
+ #else
+-    #if defined(__APPLE__)
++    #if defined(__APPLE__) || defined(__FreeBSD__)
+         inline bool isNaN(float v) { return std::isnan(v); }
+         inline bool isNaN(double v) { return std::isnan(v); }
+     #else
