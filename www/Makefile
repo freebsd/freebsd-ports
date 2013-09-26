@@ -1761,6 +1761,7 @@
     SUBDIR += rubygem-faraday_middleware
     SUBDIR += rubygem-feed-normalizer
     SUBDIR += rubygem-feedzirra
+    SUBDIR += rubygem-geminabox
     SUBDIR += rubygem-haml
     SUBDIR += rubygem-haml-coderay
     SUBDIR += rubygem-hpricot
