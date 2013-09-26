@@ -10,7 +10,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Full-featured audio player and manager developed in Java
 
-NO_STAGE=	yes
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -72,18 +71,18 @@ INSTALL_FILES=	aTunes.ico aTunes.jar splash.gif changelog.txt
 PIXMAPS=	atunes.png
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${MKDIR} ${DATADIR}/lib
-	@${INSTALL_SCRIPT} ${WRKDIR}/atunes ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/lib
+	@${INSTALL_SCRIPT} ${WRKDIR}/atunes ${STAGEDIR}${PREFIX}/bin
 .for file in ${INSTALL_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}/${file}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DATADIR}/${file}
 .endfor
 	@(cd ${WRKSRC} && ${FIND} lib -type f -name "*.jar" -exec ${INSTALL_DATA} {} \
-		${DATADIR}/{} \;)
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} settings ${DATADIR}/)
-	@${MKDIR} ${PREFIX}/share/pixmaps
+		${STAGEDIR}${DATADIR}/{} \;)
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} settings ${STAGEDIR}${DATADIR}/)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
 .for file in ${PIXMAPS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/pixmaps
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/share/pixmaps
 .endfor
 
 .include <bsd.port.mk>
