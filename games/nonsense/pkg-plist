@@ -1,30 +1,30 @@
 bin/nonsense
-%%PORTDOCS%%share/doc/nonsense/README
-%%PORTDOCS%%@dirrm share/doc/nonsense
-share/nonsense/data/college.data
-share/nonsense/data/cookie.data
-share/nonsense/data/default.data
-share/nonsense/data/humorix.data
-share/nonsense/data/insults.data
-share/nonsense/data/linux.data
-share/nonsense/data/mission.data
-share/nonsense/data/newspaper.data
-share/nonsense/data/poetry.data
-share/nonsense/data/ratherism.data
-share/nonsense/data/resume.data
-share/nonsense/data/shows.data
-share/nonsense/data/slashdot.data
-share/nonsense/data/stupidlaws.data
-share/nonsense/data/techdirt.data
-share/nonsense/template/bingo.html.template
-share/nonsense/template/bizplan.html.template
-share/nonsense/template/freshmeat.rdf.template
-share/nonsense/template/humorix.html.template
-share/nonsense/template/newspaper.html.template
-share/nonsense/template/resume.html.template
-share/nonsense/template/slashdot.html.template
-share/nonsense/template/slashdot.rdf.template
-share/nonsense/template/techdirt.html.template
-@dirrm share/nonsense/data
-@dirrm share/nonsense/template
+%%DATADIR%%/data/college.data
+%%DATADIR%%/data/cookie.data
+%%DATADIR%%/data/default.data
+%%DATADIR%%/data/humorix.data
+%%DATADIR%%/data/insults.data
+%%DATADIR%%/data/linux.data
+%%DATADIR%%/data/mission.data
+%%DATADIR%%/data/newspaper.data
+%%DATADIR%%/data/poetry.data
+%%DATADIR%%/data/ratherism.data
+%%DATADIR%%/data/resume.data
+%%DATADIR%%/data/shows.data
+%%DATADIR%%/data/slashdot.data
+%%DATADIR%%/data/stupidlaws.data
+%%DATADIR%%/data/techdirt.data
+%%DATADIR%%/template/bingo.html.template
+%%DATADIR%%/template/bizplan.html.template
+%%DATADIR%%/template/freshmeat.rdf.template
+%%DATADIR%%/template/humorix.html.template
+%%DATADIR%%/template/newspaper.html.template
+%%DATADIR%%/template/resume.html.template
+%%DATADIR%%/template/slashdot.html.template
+%%DATADIR%%/template/slashdot.rdf.template
+%%DATADIR%%/template/techdirt.html.template
+man/man6/nonsense.6.gz
+@dirrm %%DATADIR%%
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/template
 @dirrm share/nonsense
