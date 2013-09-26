@@ -4954,3 +4954,4 @@ www/py-plone.app.kss||2013-09-23|This port is not required since Plone 4.3
 devel/py-archetypes.kss||2013-09-23|This port is not required since Plone 4.3
 devel/py-kss-core||2013-09-23|This port is not required since Plone 4.3
 cad/tkgate||2013-09-24|Removed
+x11/libXtrans||2013-09-26|Has expired: Project is obsoleted, use x11/xtrans instead
