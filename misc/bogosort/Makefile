@@ -18,6 +18,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 
 INFO=		bogosort
-PLIST_FILES=	bin/bogosort man/man1/bogosort.1.gz man/man1/bogosort.1.gz
+PLIST_FILES=	bin/bogosort man/man1/bogosort.1.gz
 
 .include <bsd.port.mk>
