@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Archive/Any/Lite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Any/Lite/.packlist
+%%PERL5_MAN3%%/Archive::Any::Lite.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Any/Lite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Any
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive

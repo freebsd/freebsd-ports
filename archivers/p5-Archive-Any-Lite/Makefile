@@ -15,14 +15,12 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Pod>=1.18:${PORTSDIR}/devel/p5-Test-Pod \
+TEST_DEPENDS=	p5-Parallel-ForkManager>=0:${PORTSDIR}/devel/p5-Parallel-ForkManager \
+		p5-Test-Pod>=1.18:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.04:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
 		p5-Test-UseAllModules>=0.10:${PORTSDIR}/devel/p5-Test-UseAllModules
 
 USE_PERL5=	configure
 USES=		perl5
-NO_STAGE=	yes
-
-MAN3=		Archive::Any::Lite.3
 
 .include <bsd.port.mk>
