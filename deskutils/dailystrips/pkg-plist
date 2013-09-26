@@ -1,0 +1,11 @@
+bin/dailystrips
+bin/dailystrips-clean
+bin/dailystrips-update
+%%DATADIR%%/strips.def
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.DEFS
+%%PORTDOCS%%%%DOCSDIR%%/README.LOCAL
+%%PORTDOCS%%%%DOCSDIR%%/README.dailystrips-clean
+%%PORTDOCS%%%%DOCSDIR%%/README.dailystrips-update
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%DATADIR%%
