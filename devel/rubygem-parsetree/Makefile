@@ -11,7 +11,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby parse tree tools
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2013-05-02
+EXPIRATION_DATE=	2013-10-10
 
 RUN_DEPENDS=	rubygem-inline>=3.7.0:${PORTSDIR}/devel/rubygem-inline \
 		rubygem-sexp_processor>=3.0.1:${PORTSDIR}/devel/rubygem-sexp_processor

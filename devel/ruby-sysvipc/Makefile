@@ -12,7 +12,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Ruby interface to use System V IPC system calls
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2013-05-02
+EXPIRATION_DATE=	2013-10-10
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

@@ -14,7 +14,7 @@ MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	A high level library to use SDL from Ruby
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2013-05-02
+EXPIRATION_DATE=	2013-10-10
 
 USE_SDL=	gfx image mixer ttf sdl
 USE_RUBY=	yes

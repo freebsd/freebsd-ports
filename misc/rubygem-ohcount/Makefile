@@ -10,7 +10,7 @@ MAINTAINER=	eg@fbsd.lt
 COMMENT=	Ohcount is the source code line counter that powers Ohloh
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2013-05-02
+EXPIRATION_DATE=	2013-10-10
 
 RUN_DEPENDS=	rubygem-diff-lcs>=1.1.2:${PORTSDIR}/textproc/rubygem-diff-lcs \
 		ragel:${PORTSDIR}/devel/ragel

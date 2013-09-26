@@ -12,7 +12,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A tool for simple code coverage analysis in Ruby
 
 DEPRECATED=	Does not work with Ruby 1.9
-EXPIRATION_DATE=	2013-05-02
+EXPIRATION_DATE=	2013-10-10
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
