@@ -12,6 +12,19 @@
 %%SITE_PERL%%/Net/GitHub/V3/Search.pm
 %%SITE_PERL%%/Net/GitHub/V3/Users.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/GitHub/.packlist
+%%PERL5_MAN3%%/Net::GitHub.3.gz
+%%PERL5_MAN3%%/Net::GitHub::V3.3.gz
+%%PERL5_MAN3%%/Net::GitHub::V3::Events.3.gz
+%%PERL5_MAN3%%/Net::GitHub::V3::Gists.3.gz
+%%PERL5_MAN3%%/Net::GitHub::V3::GitData.3.gz
+%%PERL5_MAN3%%/Net::GitHub::V3::Issues.3.gz
+%%PERL5_MAN3%%/Net::GitHub::V3::OAuth.3.gz
+%%PERL5_MAN3%%/Net::GitHub::V3::Orgs.3.gz
+%%PERL5_MAN3%%/Net::GitHub::V3::PullRequests.3.gz
+%%PERL5_MAN3%%/Net::GitHub::V3::Query.3.gz
+%%PERL5_MAN3%%/Net::GitHub::V3::Repos.3.gz
+%%PERL5_MAN3%%/Net::GitHub::V3::Search.3.gz
+%%PERL5_MAN3%%/Net::GitHub::V3::Users.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/GitHub
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/GitHub/V3
