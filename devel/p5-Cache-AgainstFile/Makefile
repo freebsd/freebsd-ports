@@ -8,7 +8,7 @@ MASTER_SITES=		CPAN
 MASTER_SITE_SUBDIR=	Cache
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		ports@FreeBSd.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Cache data structures parsed from files, watching for updates
 
 RUN_DEPENDS=	p5-Log-Trace>0:${PORTSDIR}/devel/p5-Log-Trace \

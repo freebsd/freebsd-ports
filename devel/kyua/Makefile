@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	kyua
 DISTNAME=	kyua-cli-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	asomers@freebsd.org
+MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	Kyua (automated testing framework) - Command line interface
 
 LICENSE=	BSD
