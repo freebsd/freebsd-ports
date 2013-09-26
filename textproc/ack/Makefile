@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ack
-PORTVERSION=	2.08
+PORTVERSION=	2.10
 CATEGORIES=	textproc perl5 sysutils
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	App
@@ -12,13 +12,12 @@ COMMENT=	Grep-like text finder for large trees of text
 
 BUILD_DEPENDS=	p5-File-Next>=0.40:${PORTSDIR}/sysutils/p5-File-Next
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
+		p5-IO-Tty>=0:${PORTSDIR}/devel/p5-IO-Tty
 
 USES=		perl5
 USE_PERL5=	configure
 
 CONFLICTS_INSTALL=	ja-ack-[0-9]*
 
-MAN1=		ack.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
