@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dbmail
-PORTVERSION=	3.1.6
+PORTVERSION=	3.1.7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/3.1/
 
@@ -22,7 +22,7 @@ BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 
 CONFLICTS=	dbmail-2.*
 
-OPTIONS_DEFINE=	LDAP SIEVE THREADS
+OPTIONS_DEFINE=	DOCS LDAP SIEVE THREADS
 OPTIONS_DEFAULT=	THREADS
 SIEVE_DESC=	Build with support for Sieve mail sorting language
 
@@ -41,16 +41,7 @@ MAKE_ARGS+=	mandir=${MANPREFIX}/man
 
 PORTDOCS=	AUTHORS BUGS INSTALL THANKS UPGRADING
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-MAN1=		dbmail-deliver.1 dbmail.1
-MAN5=		dbmail.conf.5
-MAN8=		dbmail-export.8 dbmail-httpd.8 dbmail-imapd.8 \
-		dbmail-lmtpd.8 dbmail-pop3d.8 dbmail-sievecmd.8 \
-		dbmail-timsieved.8 dbmail-users.8 dbmail-util.8
-.endif
 
 DBMAIL_USER?=	mailnull
 DBMAIL_GROUP?=	mail
@@ -59,12 +50,6 @@ PIDDIR?=	/var/run/dbmail
 PLIST_SUB+=	DBMAIL_USER="${DBMAIL_USER}" \
 		DBMAIL_GROUP="${DBMAIL_GROUP}" \
 		PIDDIR="${PIDDIR}"
-
-.if empty(PORT_OPTIONS:MDOCS)
-PLIST_SUB+=	PORTDOCS="@comment "
-.else
-PLIST_SUB+=	PORTDOCS=""
-.endif
 
 .if ${PORT_OPTIONS:MSIEVE}
 CONFIGURE_ARGS+=--with-sieve=${LOCALBASE}
@@ -93,23 +78,16 @@ CONFIGURE_ARGS+=	--enable-manpages
 .endif
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${PREFIX}/etc/dbmail.conf-dist
-	@if [ ! -f ${PREFIX}/etc/dbmail.conf ] ; then \
-		${CP} -p ${PREFIX}/etc/dbmail.conf-dist ${PREFIX}/etc/dbmail.conf; \
-	fi
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/dbmail.schema ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${STAGEDIR}${PREFIX}/etc/dbmail.conf-dist
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/dbmail.schema ${STAGEDIR}${DATADIR}
 	@for f in mysql oracle postgresql sqlite; do \
-		${MKDIR} ${DATADIR}/$$f ; \
-		${INSTALL_DATA} ${WRKSRC}/sql/$$f/* ${DATADIR}/$$f; \
+		${MKDIR} ${STAGEDIR}${DATADIR}/$$f ; \
+		${INSTALL_DATA} ${WRKSRC}/sql/$$f/* ${STAGEDIR}${DATADIR}/$$f; \
 	done
-	@${MKDIR} ${PIDDIR}
-	@${CHOWN} ${DBMAIL_USER}:${DBMAIL_GROUP} ${PIDDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} * ${DOCSDIR})
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PIDDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} * ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
