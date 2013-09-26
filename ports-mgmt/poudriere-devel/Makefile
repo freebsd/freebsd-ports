@@ -20,7 +20,7 @@ OPTIONS_DEFINE=	ZSH
 
 CONFLICTS_INSTALL=	poudriere-[0-9]*
 
-NEED_ROOT=	yes
+USES=		uidfix
 
 PLIST_FILES=	etc/poudriere.conf.sample \
 		etc/poudriere.d/hooks/bulk.sh.sample \
