@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wgetpaste
-PORTVERSION=	2.22
+PORTVERSION=	2.23
 CATEGORIES=	www
 MASTER_SITES=	http://wgetpaste.zlin.dk/ \
 		LOCAL/sunpoet
@@ -18,7 +18,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 NO_BUILD=	yes
 USE_BZIP2=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|/etc/|${PREFIX}/etc/|g' \
@@ -27,10 +26,10 @@ post-patch:
 			${WRKSRC}/${PORTNAME}
 
 do-install:
-	${MKDIR} ${PREFIX}/etc/${PORTNAME}.d/ ${PREFIX}/share/zsh/site-functions/
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.example ${PREFIX}/etc/${PORTNAME}.conf.sample
-	${INSTALL_DATA} ${DISTDIR}/zlin.conf ${PREFIX}/etc/${PORTNAME}.d/
-	${INSTALL_DATA} ${WRKSRC}/_${PORTNAME} ${PREFIX}/share/zsh/site-functions/
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.d/ ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.example ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
+	${INSTALL_DATA} ${DISTDIR}/zlin.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.d/
+	${INSTALL_DATA} ${WRKSRC}/_${PORTNAME} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
 
 .include <bsd.port.mk>
