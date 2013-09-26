@@ -1,8 +1,15 @@
 --- a/Makefile
 +++ b/Makefile
-@@ -155,12 +155,16 @@ $(SUBDIRS):
+@@ -150,17 +150,21 @@ generate-i18n: i18n-template.h $(I18Npot
+ subdirs: $(SUBDIRS)
+ 
+ $(SUBDIRS):
+-	@$(MAKE) -C $@ $(MAKECMDGOALS) PLUGINFEATURES="$(PLUGINFEATURES)"
++	@$(MAKE) -C $@ $(MAKECMDGOALS) PLUGINFEATURES="$(PLUGINFEATURES)" CXX=${CXX}
+ 
  PAGES:
- 	@$(MAKE) -C pages PLUGINFEATURES="$(PLUGINFEATURES)" .dependencies
+-	@$(MAKE) -C pages PLUGINFEATURES="$(PLUGINFEATURES)" .dependencies
++	@$(MAKE) -C pages PLUGINFEATURES="$(PLUGINFEATURES)" .dependencies CXX=${CXX}
  
 -$(VERSIONSUFFIX): FORCE
 -	./buildutil/version-util $(VERSIONSUFFIX) || ./buildutil/version-util -F $(VERSIONSUFFIX)
