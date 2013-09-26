@@ -20,6 +20,8 @@ OPTIONS_DEFINE=	ZSH
 
 CONFLICTS_INSTALL=	poudriere-[0-9]*
 
+NEED_ROOT=	yes
+
 PLIST_FILES=	etc/poudriere.conf.sample \
 		etc/poudriere.d/hooks/bulk.sh.sample \
 		etc/poudriere.d/hooks/pkgbuild.sh.sample \
