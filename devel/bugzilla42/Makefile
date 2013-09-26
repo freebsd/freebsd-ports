@@ -39,7 +39,6 @@ DATA_DIRS_LIST=	images js skins
 # checksetup will fail if these directories are not present!
 EMPTY_DIRS_LIST=data graphs contrib lib t xt
 
-NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.common"
 .include "${.CURDIR}/Makefile.options"
 .include <bsd.port.options.mk>
@@ -164,30 +163,25 @@ post-patch:
 		| ${XARGS} ${RM} -rf
 
 do-install:	.SILENT
-	${MKDIR} ${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
 	${FIND} ${WRKSRC} \! -type d -maxdepth 1 \! -name "UPGRADING*" -exec \
-		${INSTALL_SCRIPT} {} ${WWWDIR} \;
-	@${MKDIR} ${DATA_DIRS_LIST:S!^!${WWWDIR}/!}
+		${INSTALL_SCRIPT} {} ${STAGEDIR}${WWWDIR} \;
+	@${MKDIR} ${DATA_DIRS_LIST:S!^!${STAGEDIR}${WWWDIR}/!}
 .for D in ${DATA_DIRS_LIST}
-	(cd ${WRKSRC}/${D} && ${COPYTREE_SHARE} . ${WWWDIR}/${D})
+	(cd ${WRKSRC}/${D} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/${D})
 .endfor
-	${TAR} -C ${WRKSRC} -cf - Bugzilla template | ${TAR} --unlink -C ${WWWDIR} -xf -
-	@${MKDIR} ${EMPTY_DIRS_LIST:S!^!${WWWDIR}/!}
+	${TAR} -C ${WRKSRC} -cf - Bugzilla template | ${TAR} --unlink -C ${STAGEDIR}${WWWDIR} -xf -
+	@${MKDIR} ${EMPTY_DIRS_LIST:S!^!${STAGEDIR}${WWWDIR}/!}
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${DOCSDIR}/)
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/)
 .endif
 
 .if ${PORT_OPTIONS:MCONTRIB}
 	@cd ${WRKSRC}/contrib && \
-		${FIND} . -type d -exec ${MKDIR} "${WWWDIR}/contrib/{}" \; && \
-		${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${WWWDIR}/contrib/{}" \;
-.endif
-.if !defined(BATCH)
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+		${FIND} . -type d -exec ${MKDIR} "${STAGEDIR}${WWWDIR}/contrib/{}" \; && \
+		${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${WWWDIR}/contrib/{}" \;
 .endif
 
 .include <bsd.port.post.mk>

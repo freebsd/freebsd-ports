@@ -15,7 +15,6 @@ RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla
 
 NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../devel/bugzilla/Makefile.common"
 
 USE_BZIP2=	yes
@@ -23,13 +22,8 @@ USE_BZIP2=	yes
 LANGDIR=	${WWWDIR}/template/ja
 
 do-install:
-	@-${MKDIR} ${LANGDIR}/default
-	@cd ${WRKDIR}/default; ${COPYTREE_SHARE} . ${LANGDIR}/default
-.if !defined(BATCH)
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
-.endif
+	@-${MKDIR} ${STAGEDIR}${LANGDIR}/default
+	@cd ${WRKDIR}/default; ${COPYTREE_SHARE} . ${STAGEDIR}${LANGDIR}/default
 
 # Maintainer
 plist: patch

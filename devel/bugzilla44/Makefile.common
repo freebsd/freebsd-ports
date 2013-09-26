@@ -3,7 +3,6 @@
 DIST_SUBDIR=	${PORTNAME}
 
 CONFLICTS_INSTALL=	\
-		bugzilla-3.* \
 		bugzilla-4.[^4].*
 
 PORTSCOUT=	limitw:1,even
