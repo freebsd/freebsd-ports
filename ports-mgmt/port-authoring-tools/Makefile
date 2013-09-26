@@ -18,8 +18,8 @@ RUN_DEPENDS=	\
 		${LOCALBASE}/bin/port:${PORTSDIR}/ports-mgmt/porttools
 
 NO_BUILD=	yes
+NO_MTREE=	yes
 
 do-install:	# empty
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
