@@ -25,5 +25,5 @@
 -			bsd-uthread.o solib-svr4.o"
 +			fbsd-threads.o solib-svr4.o"
  	;;
- x86_64-*-mingw*)
+ x86_64-*-mingw* | x86_64-*-cygwin*)
          # Target: MingW/amd64

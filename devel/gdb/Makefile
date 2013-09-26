@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdb
-PORTVERSION=	7.6
+PORTVERSION=	7.6.1
 #PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
@@ -14,8 +14,8 @@ LICENSE=	GPLv3
 
 USE_BZIP2=	yes
 USE_CSTD=	gnu89
-USE_GMAKE=	yes
-USES=		iconv
+#USE_GMAKE=	yes
+USES=		iconv gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
 CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
@@ -129,6 +129,7 @@ post-install:
 .if ${PORT_OPTIONS:MPYTHON}
 	${CHMOD} u+w ${PREFIX}/share/gdb${VER}/python/gdb/*.py*
 	${CHMOD} u+w ${PREFIX}/share/gdb${VER}/python/gdb/command/*.py*
+	${CHMOD} u+w ${PREFIX}/share/gdb${VER}/python/gdb/function/*.py*
 .endif
 
 .include <bsd.port.post.mk>
