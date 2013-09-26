@@ -18,10 +18,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mccabe>=0.2:${PORTSDIR}/devel/py-mccabe \
 		${PYTHON_PKGNAMEPREFIX}pyflakes>=0.6.1:${PORTSDIR}/devel/py-pyflakes
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=yes
 
-PLIST_FILES=	bin/flake8 \
-		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+post-patch:
+	@${REINPLACE_CMD} -e 's|setuptools|distutils.core|' ${WRKSRC}/${PYSETUP}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
