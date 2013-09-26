@@ -55,19 +55,21 @@ lib/clig/tcllib/parse.tcl
 lib/clig/tcllib/setSpec.tcl
 lib/clig/tcllib/usage.tcl
 lib/clig/tcllib/version.tcl
-share/doc/clig/ANNOUNCE
-share/doc/clig/CHANGES
-share/doc/clig/COPYING-2.0
-share/doc/clig/LICENSE
-share/doc/clig/README
-share/doc/clig/WISHLIST
-share/doc/clig/example/cmdline.cli
-share/doc/clig/example/main.c
-share/doc/clig/example/makefile
-share/doc/clig/index.html
+man/man1/clig.1.gz
+man/mann/clig_Commandline.n.gz
+man/mann/clig_Description.n.gz
+man/mann/clig_Double.n.gz
+man/mann/clig_Flag.n.gz
+man/mann/clig_Float.n.gz
+man/mann/clig_Int.n.gz
+man/mann/clig_Long.n.gz
+man/mann/clig_Name.n.gz
+man/mann/clig_Rest.n.gz
+man/mann/clig_String.n.gz
+man/mann/clig_Usage.n.gz
+man/mann/clig_Version.n.gz
+man/mann/clig_parseCmdline.n.gz
 @dirrm lib/clig/c
 @dirrm lib/clig/tcl
 @dirrm lib/clig/tcllib
 @dirrm lib/clig
-@dirrm share/doc/clig/example
-@dirrm share/doc/clig
