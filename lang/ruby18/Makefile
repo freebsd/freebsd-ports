@@ -14,6 +14,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT?=	An object-oriented interpreted scripting language
 
+FORBIDDEN=	Vulernerable, please use lang/ruby19
+EXPIRATION_DATE=	2013-10-10
+
 GNU_CONFIGURE=	yes
 WRKSRC=		${RUBY_WRKSRC}
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} --enable-shared --enable-frame-address
