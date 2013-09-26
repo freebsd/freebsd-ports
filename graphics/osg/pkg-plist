@@ -672,7 +672,6 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_trans.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_txf.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_txp.so
 %%VNC%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_vnc.so
-%%OPENVRML%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_vrml.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_vtf.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_x.so
 %%XINE%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_xine.so
