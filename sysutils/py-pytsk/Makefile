@@ -3,6 +3,7 @@
 
 PORTNAME=	pytsk
 DISTVERSION=	2013-09-10
+PORTREVISION=	1
 CATEGORIES=	sysutils security devel python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +23,6 @@ USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=pytsk3
 PYDISTUTILS_PKGVERSION=0.1
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/socket\.h/ { h; s|socket|types|; G; }' ${WRKSRC}/misc.h
 	${REINPLACE_CMD} -e 's|/usr/local/include/tsk/|${LOCALBASE}/include/tsk/|' \
@@ -44,12 +44,12 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/*.py ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/*.py ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
