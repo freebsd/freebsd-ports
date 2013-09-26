@@ -1,3 +1,4 @@
+# Created by: Motoyuki Kasahara <m-kasahr@sra.co.jp>
 # $FreeBSD$
 
 PORTNAME=	ebnetd
@@ -11,7 +12,7 @@ COMMENT=	Servers for accessing CD-ROM books via TCP/IP
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	eb:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=	libeb.so:${PORTSDIR}/japanese/eb
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${RUNDIR} --with-logdir=${LOGDIR}
@@ -25,11 +26,5 @@ SUB_FILES=	pkg-message
 PLIST_SUB=	EBNETD_RUNDIR=${RUNDIR}/${PORTNAME}
 
 INFO=		ebnetd ebnetd-ja
-
-NO_STAGE=	yes
-post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${ECHO}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
