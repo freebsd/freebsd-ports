@@ -13,13 +13,13 @@ COMMENT=	Real-time strategy (RTS) game of ancient warfare
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		zip:${PORTSDIR}/archivers/zip \
 		cmake:${PORTSDIR}/devel/cmake
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
-		execinfo:${PORTSDIR}/devel/libexecinfo \
-		png15:${PORTSDIR}/graphics/png \
-		ogg:${PORTSDIR}/audio/libogg \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		curl:${PORTSDIR}/ftp/curl \
-		gamin-1:${PORTSDIR}/devel/gamin
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libogg.so:${PORTSDIR}/audio/libogg \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libcurl.so:${PORTSDIR}/ftp/curl \
+		libgamin-1.so:${PORTSDIR}/devel/gamin
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
 BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc
@@ -67,7 +67,8 @@ CXX=		/usr/bin/clang++
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' \
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+			-e 's|%%CC%%|${CC}|' \
 		${WRKSRC}/build/premake/premake4.lua
 	@${REINPLACE_CMD} 's,^\(Exec=\)/usr/local,\1${PREFIX},' \
 		${WRKSRC}/build/resources/0ad.desktop
