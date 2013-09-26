@@ -15,7 +15,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	yes
 
-PLIST_FILES=		bin/${PORTNAME} ${PORTNAME}.1.gz
+PLIST_FILES=		bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
