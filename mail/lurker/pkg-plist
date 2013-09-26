@@ -4,14 +4,18 @@ bin/lurker-params
 bin/lurker-prune
 bin/lurker-regenerate
 bin/lurker-search
-etc/lurker/apache.conf
-etc/lurker/lurker.conf
 @unexec if cmp -s %D/etc/lurker/lurker.conf.sample $D/etc/lurker/lurker.conf; then rm -f $D/etc/lurker/lurker.conf; fi
 etc/lurker/lurker.conf.sample
 @exec if [ ! -f %D/etc/lurker/lurker.conf ] ; then cp -p $D/%F %B/lurker.conf; fi
 @unexec if cmp -s %D/etc/lurker/apache.conf.sample $D/etc/lurker/apache.conf; then rm -f $D/etc/lurker/apache.conf; fi
 etc/lurker/apache.conf.sample
 @exec if [ ! -f %D/etc/lurker/apache.conf ] ; then cp -p $D/%F %B/apache.conf; fi
+man/man1/lurker-index.1.gz
+man/man1/lurker-list.1.gz
+man/man1/lurker-params.1.gz
+man/man1/lurker-prune.1.gz
+man/man1/lurker-regenerate.1.gz
+man/man1/lurker-search.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
