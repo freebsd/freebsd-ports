@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	ZSH
 
 CONFLICTS_INSTALL=	poudriere-devel
 
-NEED_ROOT=	yes
+USES=		uidfix
 
 PLIST_FILES=	etc/poudriere.conf.sample \
 		bin/poudriere \
