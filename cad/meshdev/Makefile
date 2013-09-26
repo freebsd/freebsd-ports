@@ -10,6 +10,8 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}/gahr/ \
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A mesh comparison software
 
+USE_DOS2UNIX=	src/MeshDev.h
+
 BUILD_WRKSRC=	${WRKSRC}/build
 INSTALL_WRKSRC=	${WRKSRC}/bin
 
@@ -17,8 +19,7 @@ MAKEFILE=	Makefile.release.gcc
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
