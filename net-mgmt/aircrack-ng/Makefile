@@ -11,34 +11,20 @@ MASTER_SITES=	http://download.aircrack-ng.org/ \
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	An 802.11 WEP and WPA-PSK keys cracking program
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS+=	UNSTABLE=true			# build some extra tools
 USE_OPENSSL=	yes
 SUB_FILES=	pkg-message
 
-MAN1=		airbase-ng.1 aircrack-ng.1 airdecap-ng.1 airdecloak-ng.1 \
-		aireplay-ng.1 airodump-ng.1 airserv-ng.1 airtun-ng.1 \
-		buddy-ng.1 easside-ng.1 ivstools.1 kstats.1 makeivs-ng.1 \
-		packetforge-ng.1 tkiptun-ng.1 wesside-ng.1
-
-PLIST_FILES=	bin/aircrack-ng bin/airdecap-ng bin/airdecloak-ng \
-		bin/buddy-ng bin/ivstools bin/kstats bin/makeivs-ng \
-		bin/packetforge-ng \
-		sbin/airbase-ng sbin/aireplay-ng sbin/airodump-ng \
-		sbin/airserv-ng sbin/airtun-ng sbin/easside-ng \
-		sbin/tkiptun-ng sbin/wesside-ng
-
 OPTIONS_DEFINE=	SQLITE
+OPTIONS_SUB=	yes
 SQLITE_DESC=	Use SQLite for storing pre-computed key tables
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	yes
 MAKE_ARGS+=	SQLITE=true
-MAN1+=		airolib-ng.1
-PLIST_FILES+=	bin/airolib-ng
 .endif
 
 .if ${ARCH} == "powerpc"
@@ -66,10 +52,5 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|-lpthread|${PTHREAD_LIBS}|' \
 			${WRKSRC}/src/Makefile
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .include <bsd.port.mk>
