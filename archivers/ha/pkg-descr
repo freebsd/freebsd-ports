@@ -9,16 +9,16 @@ for this version are not very consistent or clean, but everything should
 work.
 
 There are several improvements which should be made before this could be
-called version 1.0. Some of the most obvious of these are: 
+called version 1.0. Some of the most obvious of these are:
 - Compression methods should be coded in assembler for PC and using more
   efficient data structures for 32 bit platforms. Current version does
-  some things only to overcome 64kB segments of 8086. 
-- UNIX port has still some problems and is missing some things (for example 
-  a grouping operator in wildcard matches). 
-- File handling is far from optimum.  
-- Archive handling is not too clever either. 
-- Testing should be done more thoroughly as there are many special cases 
-  in compression routines which get used very rarely. 
+  some things only to overcome 64kB segments of 8086.
+- UNIX port has still some problems and is missing some things (for example
+  a grouping operator in wildcard matches).
+- File handling is far from optimum.
+- Archive handling is not too clever either.
+- Testing should be done more thoroughly as there are many special cases
+  in compression routines which get used very rarely.
 - Documentation of code and algorithms is totally missing.
 
 Author:	Harri Hirvola <harri.hirvola@vaisala.infonet.com>
