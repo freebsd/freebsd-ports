@@ -19,7 +19,7 @@
  	nbsd-tdep.o obsd-tdep.o \
  	sol2-tdep.o \
  	solib-frv.o solib-irix.o solib-svr4.o \
-@@ -1164,7 +1164,7 @@
+@@ -1173,7 +1174,7 @@
  # Removing the old gdb first works better if it is running, at least on SunOS.
  gdb$(EXEEXT): gdb.o $(LIBGDB_OBS) $(ADD_DEPS) $(CDEPS) $(TDEPLIBS)
  	rm -f gdb$(EXEEXT)
@@ -28,7 +28,7 @@
  		-o gdb$(EXEEXT) gdb.o $(LIBGDB_OBS) \
  		$(TDEPLIBS) $(TUI_LIBRARY) $(CLIBS) $(LOADLIBES)
  
-@@ -1429,7 +1429,7 @@
+@@ -1442,7 +1443,7 @@
  	armnbsd-nat.c armbsd-tdep.c armnbsd-tdep.c armobsd-tdep.c \
  	avr-tdep.c \
  	bfin-linux-tdep.c bfin-tdep.c \
