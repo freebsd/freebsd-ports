@@ -14,19 +14,13 @@ RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla42
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.ru
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../devel/bugzilla42/Makefile.common"
 
 LATEST_LINK=	${PKGNAMEPREFIX}bugzilla42
 
 do-install:
-	${MKDIR} ${WWWDIR}
-	(cd ${WRKSRC}/ && ${PAX} -r -w * ${WWWDIR})
-.if !defined(BATCH)
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
-.endif
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	(cd ${WRKSRC}/ && ${PAX} -r -w * ${STAGEDIR}${WWWDIR})
 
 # Maintainer
 plist:	patch

@@ -17,7 +17,6 @@ LATEST_LINK=	${PKGNAMEPREFIX}bugzilla44
 
 NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../devel/bugzilla44/Makefile.common"
 
 LANGDIR=	${WWWDIR}/template/de
@@ -28,13 +27,8 @@ LANGDIR=	${WWWDIR}/template/de
 #	@${FIND} ${WRKDIR}/de/default/ -type f \( -name \*.orig -o -name \*.bak \) -delete
 
 do-install:
-	@-${MKDIR} ${LANGDIR}
-	@(cd ${WRKSRC}/de && ${COPYTREE_SHARE} . ${LANGDIR})
-.if !defined(BATCH)
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
-.endif
+	@-${MKDIR} ${STAGEDIR}${LANGDIR}
+	@(cd ${WRKSRC}/de && ${COPYTREE_SHARE} . ${STAGEDIR}${LANGDIR})
 
 # Maintainer
 plist: patch
