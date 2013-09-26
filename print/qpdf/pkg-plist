@@ -17,6 +17,7 @@ include/qpdf/Pl_StdioFile.hh
 include/qpdf/PointerHolder.hh
 include/qpdf/QPDF.hh
 include/qpdf/QPDFExc.hh
+include/qpdf/QPDFObjGen.hh
 include/qpdf/QPDFObject.hh
 include/qpdf/QPDFObjectHandle.hh
 include/qpdf/QPDFTokenizer.hh
@@ -27,8 +28,9 @@ include/qpdf/QUtil.hh
 include/qpdf/Types.h
 include/qpdf/qpdf-c.h
 lib/libqpdf.a
+lib/libqpdf.la
 lib/libqpdf.so
-lib/libqpdf.so.10
+lib/libqpdf.so.13
 libdata/pkgconfig/libqpdf.pc
 share/doc/qpdf/qpdf-manual.html
 share/doc/qpdf/qpdf-manual.pdf
