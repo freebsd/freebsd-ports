@@ -3,7 +3,7 @@
 
 PORTNAME=	treeline
 PORTVERSION=	1.4.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/:treeline \
 		http://treeline.bellz.org/plugins/:plugins \
@@ -22,49 +22,38 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-g
 
 WRKSRC=		${WRKDIR}/TreeLine
 USE_QT4=	# empty
-USE_PYTHON=	2.5+
+USE_PYTHON=	-2.7
 NO_BUILD=	yes
 
 DESKTOP_ENTRIES=	"TreeLine" "Structured information storage program" \
 			"${DATADIR}/icons/tree/treeline.png" "treeline" \
 			"Utility;" false
 
-OPTIONS_DEFINE=		HTTPLOAD PYXML
+OPTIONS_DEFINE=		HTTPLOAD
 OPTIONS_SINGLE=		SPELLER
 OPTIONS_SINGLE_SPELLER=	ASPELL ISPELL
 
-ASPELL_DESC=	Install with aspell support
-HTTPLOAD_DESC=	Install httpLoad plugin
-ISPELL_DESC=	Install with ispell support
-PYXML_DESC=	Use pythons py-xml instead of textproc/expat2
+HTTPLOAD_DESC=		httpLoad plugin
+SPELLER_DESC=		Spell checking backend
 
-OPTIONS_DEFAULT=	ASPELL PYXML
+OPTIONS_DEFAULT=	ASPELL
 OPTIONS_SUB=		yes
 
 ASPELL_BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
+ASPELL_RUN_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 HTTPLOAD_DISTFILES=	httpload2.py:plugins
 ISPELL_BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+ISPELL_RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if !${PORT_OPTIONS:MPYXML}
-LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2
-.endif
-
 do-install:
-	@cd ${WRKSRC} && ${PYTHON_CMD} install.py \
-	-p ${PREFIX} -d ${DOCSDIR} -i ${DATADIR}/icons -x
+	cd ${WRKSRC} && ${PYTHON_CMD} install.py -p ${STAGEDIR}${PREFIX} \
+		-d ${STAGEDIR}${DOCSDIR} -i ${STAGEDIR}${DATADIR}/icons -x
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/plugins
 .if ${PORT_OPTIONS:MHTTPLOAD}
-	@${INSTALL_DATA} -d ${PREFIX}/lib/${PORTNAME}/plugins/
-	@${INSTALL_DATA} ${DISTDIR}/httpload2.py ${PREFIX}/lib/${PORTNAME}/plugins/
-.endif
-
-post-install:
-	${RM} ${DOCSDIR}/INSTALL ${DOCSDIR}/LICENSE
-.if !${PORT_OPTIONS:MDOCS}
-	${RM} ${DOCSDIR}/*
-	${RMDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/httpload2.py \
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}/plugins/
 .endif
 
 .include <bsd.port.mk>
