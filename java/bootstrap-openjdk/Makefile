@@ -46,11 +46,7 @@ PLIST_SUB+=	CLIENTVM="@comment "
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${INSTALLDIR}
-	@${CHOWN} ${BINOWN}:${BINGRP} ${INSTALLDIR}/bin/* ${INSTALLDIR}/jre/bin/*
-	@${CHMOD} ${BINMODE} ${INSTALLDIR}/bin/* ${INSTALLDIR}/jre/bin/*
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@cd ${WRKSRC} && ${COPYTREE_BIN} "bin jre/bin" ${INSTALLDIR}
 
 update:
 	@${MAKE} -f ${.CURDIR}/Makefile.update \
