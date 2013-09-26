@@ -1,0 +1,14 @@
+--- install.orig	2000-01-16 18:15:32.000000000 +0100
++++ install	2013-09-26 15:30:00.000000000 +0200
+@@ -64,9 +64,11 @@
+ }
+ 
+ # doc and examples
++if {$env(NOPORTDOCS) eq {}} {
+ file copy -force CHANGES ANNOUNCE index.html README WISHLIST \
+     COPYING-2.0 LICENSE example \
+     $env(DOCDIR)
++}
+ ########################################################################
+ ## Local Variables: ##
+ ## mode:tcl ##

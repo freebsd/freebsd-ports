@@ -1,0 +1,9 @@
+--- makefile.orig	2013-09-26 15:22:07.000000000 +0200
++++ makefile	2013-09-26 15:22:46.000000000 +0200
+@@ -104,4 +104,5 @@
+            M1SUFFIX=$(M1SUFFIX) \
+ 	   MANnDIR=$(build_root)$(MANnDIR) MnFILES="$(MnFILES.f)" \
+ 	   MnSUFFIX=$(MnSUFFIX) \
+-	   DOCDIR=$(build_root)$(DOCDIR) VERSION=$(VERSION)
++	   DOCDIR=$(build_root)$(DOCDIR) VERSION=$(VERSION) \
++	   NOPORTDOCS=${NOPORTDOCS}
