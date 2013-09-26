@@ -1,0 +1,11 @@
+--- Makefile.orig	2013-09-26 16:58:49.000000000 +0200
++++ Makefile	2013-09-26 16:58:55.000000000 +0200
+@@ -51,7 +51,7 @@
+ 	$(CC) $(OBJS) $(LDPATH) $(LIBS) -o $@
+ 
+ $(SUBDIRS):
+-	cd $@ && $(MAKE) $(MAKEFLAGS) $(MAKECMDGOALS)
++	cd $@ && $(MAKE) $(MAKECMDGOALS)
+ 
+ $(OBJS): %.o: %.cc $(HEADERS)
+ 	$(CC) $(CFLAGS) $(DEFINES) $(INCLUDES) -c $< -o $@
