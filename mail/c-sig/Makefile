@@ -23,20 +23,15 @@ OPTIONS_DEFINE=	DOCS
 
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 do-build:
 	cd ${WRKSRC}; ${EMACS_CMD} -batch -q -f batch-byte-compile c-sig.el
 
 do-install:
-	${MKDIR} ${LISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/c-sig.el* ${LISPDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/c-sig.el* ${STAGEDIR}${LISPDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in c-sig-eng.faq c-sig-eng.man c-sig-jp.faq c-sig-jp.man
-	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
