@@ -2,6 +2,7 @@
 
 PORTNAME=	jshon
 PORTVERSION=	20121210
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -9,7 +10,7 @@ COMMENT=	json parser for the shell.
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	jansson:${PORTSDIR}/devel/jansson
+LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson
 
 USES=		gmake
 USE_GITHUB=	yes
