@@ -10,11 +10,10 @@ DISTNAME=	ha0999
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ak@FreeBSD.org
-COMMENT=	The HA archiver using the HSC compression method
+COMMENT=	File archiver based on HSC compression method
 
 PROJECTHOST=	ak-various-projects
 
-NO_STAGE=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/ha
 MAKEFILE=	makefile.nix
@@ -23,14 +22,13 @@ USES=		gmake
 
 post-patch:
 	@${REINPLACE_CMD} 's,<malloc.h>,<stdlib.h>,' \
-		${WRKSRC}/c/hsc.c ${WRKSRC}/c/cpy.c \
-		${WRKSRC}/c/asc.c
+		${WRKSRC}/c/hsc.c ${WRKSRC}/c/cpy.c ${WRKSRC}/c/asc.c
 	@${REINPLACE_CMD} -e 's|CC =|CC ?=|' \
 		-e 's|LDFLAGS = -O2||' \
 		-e 's|CFLAGS = -Wall -O2|CFLAGS += -Wall|' \
 		${WRKSRC}/makefile.nix
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ha ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ha ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
