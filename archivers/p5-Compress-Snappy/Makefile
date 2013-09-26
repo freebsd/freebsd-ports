@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Compress-Snappy
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,8 +17,5 @@ LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
 
 USE_PERL5=	configure
 USES=		perl5
-NO_STAGE=	yes
-
-MAN3=		Compress::Snappy.3
 
 .include <bsd.port.mk>
