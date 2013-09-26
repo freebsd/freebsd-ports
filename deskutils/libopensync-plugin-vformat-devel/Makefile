@@ -7,17 +7,16 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Vformat plugin for the OpenSync framework
 
-LIB_DEPENDS=	opensync:${PORTSDIR}/devel/libopensync
+LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync
 
 USE_BZIP2=	yes
 USES=		cmake iconv pkgconfig
 CMAKE_ARGS+=	-Wno-dev
 CFLAGS+=	"-I${LOCALBASE}/include"
 
-NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e "/FIND_PACKAGE( Check )/d" ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e "s|MESSAGE|# MESSAGE|" \
