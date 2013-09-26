@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.0.8a
-PORTEPOCH=	3
+PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
 		http://ftp.snt.utwente.nl/pub/software/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
