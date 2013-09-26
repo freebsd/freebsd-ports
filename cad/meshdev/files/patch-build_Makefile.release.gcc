@@ -1,13 +1,18 @@
---- build/Makefile.release.gcc.orig	2012-02-06 16:12:55.000000000 +0100
-+++ build/Makefile.release.gcc	2012-02-06 16:13:07.000000000 +0100
-@@ -2,7 +2,7 @@
+--- build/Makefile.release.gcc.orig	2012-02-06 14:04:02.000000000 +0100
++++ build/Makefile.release.gcc	2013-09-26 17:53:17.000000000 +0200
+@@ -1,10 +1,10 @@
+ # Project: MeshDev
  # Makefile created by Michaël Roy
  
- CXX  = g++
+-CXX  = g++
 -OBJ  = tmp/Deviation.o tmp/FileVrml1.o tmp/FileVrml2.o tmp/Mesh.o tmp/MeshDev.o tmp/Neighborhood.o tmp/Sample.o tmp/UniformGrid.o
++CXX  ?= g++
 +OBJ  = tmp/Deviation.o tmp/FileVrml1.o tmp/FileVrml2.o tmp/FileSTL.o tmp/Mesh.o tmp/MeshDev.o tmp/Neighborhood.o tmp/Sample.o tmp/UniformGrid.o
  BIN  = ../bin/meshdev
- CFLAGS += -DNDEBUG -Wall -W -ansi -pedantic -s -O2
+-CFLAGS += -DNDEBUG -Wall -W -ansi -pedantic -s -O2
++CFLAGS += -DNDEBUG -Wall -W -pedantic
+ 
+ .PHONY: all clean
  
 @@ -25,6 +25,9 @@
  tmp/FileVrml2.o: ../src/FileVrml2.cpp
