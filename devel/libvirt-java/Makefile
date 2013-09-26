@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt-java
-PORTVERSION=	0.4.9
-PORTREVISION=	2
+PORTVERSION=	0.5.1
 CATEGORIES=	devel java
 MASTER_SITES=	http://libvirt.org/sources/java/ \
 		ftp://libvirt.org/libvirt/java/
@@ -13,13 +12,14 @@ COMMENT=	Java bindings for Libvirt virtualization API
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	virt.1001:${PORTSDIR}/devel/libvirt
-BUILD_DEPENDS=	jna>=3.2.7:${PORTSDIR}/devel/jna \
+LIB_DEPENDS=	libvirt.so:${PORTSDIR}/devel/libvirt
+BUILD_DEPENDS=	jna>=4.0:${PORTSDIR}/devel/jna \
 		junit>=4.8.2:${PORTSDIR}/java/junit
 
 USE_JAVA=	YES
 JAVA_VERSION=	1.6+
 USE_ANT=	YES
+ALL_TARGET=	jar
 
 PLIST_FILES=	%%JAVAJARDIR%%/libvirt-${PORTVERSION}.jar
 PORTDOCS=	*
