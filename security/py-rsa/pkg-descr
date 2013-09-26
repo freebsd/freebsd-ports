@@ -2,4 +2,4 @@ Python-RSA is a pure-Python RSA implementation. It supports encryption and
 decryption, signing and verifying signatures, and key generation according to
 PKCS#1 version 1.5.
 
-WWW:	http://stuvel.eu/rsa
+WWW: http://stuvel.eu/rsa
