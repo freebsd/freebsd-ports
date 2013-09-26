@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imagick
-DISTVERSION=	3.1.0RC2
-PORTREVISION=	1
+DISTVERSION=	3.1.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -13,13 +12,14 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Provides a wrapper to the ImageMagick/GraphicsMagick library
 
+LICENSE=	PHP301
+
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick
 .else
 LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick-nox11
 .endif
 
-LICENSE=	PHP301
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
