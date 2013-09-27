@@ -33,8 +33,9 @@ USE_XZ=		yes
 USE_GNOME=	pango intltool libxml2 introspection
 USE_XORG=	x11 xext xkbfile
 USE_LDCONFIG=	yes
-USES=		cmake gettext pathfix pkgconfig
+USES=		cmake gettext iconv pathfix pkgconfig
 INSTALLS_ICONS=	yes
+DFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 OPTIONS_DEFINE=	GTK2 GTK3 QT4 OPENCC TPUNC
 OPTIONS_DEFAULT=GTK2

@@ -15,6 +15,7 @@ LICENSE=	MIT
 GNU_CONFIGURE=	yes
 USES=		pathfix pkgconfig iconv
 USE_XORG=	x11 xft
+LDFLAGS+=	${ICONV_LIB}
 
 MAN1=		bsetbg.1 bsetroot.1
 PORTDOCS=	README.bbtools README.bsetbg

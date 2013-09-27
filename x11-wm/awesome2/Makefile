@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 USE_EFL=	imlib2
 USE_GNOME=	pango
 USE_XORG=	x11 xft xext xinerama xt xrandr xproto
+LDFLAGS+=	-lX11 -lXext ${ICONV_LIB}
 
 MAN1=		awesome2.1 \
 		awesome2-client.1 \

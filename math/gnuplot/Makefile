@@ -9,7 +9,9 @@ MASTER_SITES=	SF
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Command-line driven graphing utility
 
+USES=		iconv
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ARGS+=--with-lasergnu \
 		--with-readline=gnu \
 		--without-linux-vga \

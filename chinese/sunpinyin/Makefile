@@ -23,7 +23,8 @@ USE_XZ=		yes
 USE_SCONS=	yes
 SCONS_ARGS+=	--prefix=${PREFIX} --libdatadir=${PREFIX}/share
 USE_LDCONFIG=	yes
-USES=		gmake pkgconfig
+USES=		gmake iconv pkgconfig
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 NO_STAGE=	yes
 post-patch:

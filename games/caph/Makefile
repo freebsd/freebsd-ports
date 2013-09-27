@@ -15,6 +15,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/doc/caph/COPYING
 
+USES=		iconv
 USE_BZIP2=	yes
 USE_SDL=	sdl
 USE_GL=		gl
@@ -42,7 +43,7 @@ CFLAGS+=	-O3 -ffast-math
 
 do-build:
 	cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} -o caph -I../include *.c \
-		`${SDL_CONFIG} --libs --cflags` -D_OPENGL -lGL -lpng
+		`${SDL_CONFIG} --libs --cflags` -D_OPENGL -lGL -lpng ${ICONV_LIB}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|../share/caph|${DATADIR}|' ${BUILD_WRKSRC}/caph.c
