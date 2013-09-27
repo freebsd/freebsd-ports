@@ -2,14 +2,17 @@ bin/mapchan
 etc/mapchan/altkoi.map
 @unexec if cmp -s %D/etc/mapchan/default %D/etc/mapchan/default.sample; then rm -f %D/etc/mapchan/default; fi
 etc/mapchan/default.sample
-etc/mapchan/dos2koi.map
 etc/mapchan/dos2koi-kbd.map
+etc/mapchan/dos2koi.map
 etc/mapchan/k180.map
 etc/mapchan/koi2win.map
 etc/mapchan/koiualt.map
 etc/mapchan/koiumain.map
 etc/mapchan/msm.map
-etc/mapchan/trivial.map
 etc/mapchan/sm7238.map
+etc/mapchan/trivial.map
 etc/mapchan/win2koi.map
+man/man8/mapchan.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry etc/mapchan
