@@ -48,6 +48,8 @@ USE_GCC=	any
 USES=		gmake
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
+PORTDOCS=	*
+
 DBDIR=		/var/db/clamav
 LOGDIR=		/var/log/clamav
 RUNDIR=		/var/run/clamav
