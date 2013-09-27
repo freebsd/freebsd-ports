@@ -13,13 +13,16 @@ OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
 
+PORTDOCS=	AUTHORS NEWS README THANKS TODO
+PLIST_FILES=	bin/tnef \
+		man/man1/tnef.1.gz
+
 .include <bsd.port.pre.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS NEWS README THANKS TODO \
-		${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 # This target is intended to be run by the port maintainer.
