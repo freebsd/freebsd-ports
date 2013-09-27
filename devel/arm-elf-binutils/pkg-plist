@@ -2,7 +2,10 @@ arm-elf/bin/addr2line
 arm-elf/bin/ar
 arm-elf/bin/as
 arm-elf/bin/c++filt
+arm-elf/bin/elfedit
+arm-elf/bin/gprof
 arm-elf/bin/ld
+arm-elf/bin/ld.bfd
 arm-elf/bin/nm
 arm-elf/bin/objcopy
 arm-elf/bin/objdump
@@ -11,9 +14,6 @@ arm-elf/bin/readelf
 arm-elf/bin/size
 arm-elf/bin/strings
 arm-elf/bin/strip
-arm-elf/bin/ld.bfd
-arm-elf/bin/elfedit
-arm-elf/bin/gprof
 arm-elf/lib/ldscripts/armelf.x
 arm-elf/lib/ldscripts/armelf.xbn
 arm-elf/lib/ldscripts/armelf.xc
@@ -29,7 +29,10 @@ bin/arm-elf-addr2line
 bin/arm-elf-ar
 bin/arm-elf-as
 bin/arm-elf-c++filt
+bin/arm-elf-elfedit
+bin/arm-elf-gprof
 bin/arm-elf-ld
+bin/arm-elf-ld.bfd
 bin/arm-elf-nm
 bin/arm-elf-objcopy
 bin/arm-elf-objdump
@@ -38,151 +41,26 @@ bin/arm-elf-readelf
 bin/arm-elf-size
 bin/arm-elf-strings
 bin/arm-elf-strip
-bin/arm-elf-elfedit
-bin/arm-elf-gprof
-bin/arm-elf-ld.bfd
-share/locale/bg/LC_MESSAGES/binutils.mo
-share/locale/bg/LC_MESSAGES/gprof.mo
-share/locale/bg/LC_MESSAGES/ld.mo
-share/locale/da/LC_MESSAGES/bfd.mo
-share/locale/da/LC_MESSAGES/opcodes.mo
-share/locale/da/LC_MESSAGES/binutils.mo
-share/locale/da/LC_MESSAGES/gprof.mo
-share/locale/da/LC_MESSAGES/ld.mo
-share/locale/de/LC_MESSAGES/opcodes.mo
-share/locale/de/LC_MESSAGES/gprof.mo
-share/locale/eo/LC_MESSAGES/gprof.mo
-share/locale/es/LC_MESSAGES/bfd.mo
-share/locale/es/LC_MESSAGES/opcodes.mo
-share/locale/es/LC_MESSAGES/binutils.mo
-share/locale/es/LC_MESSAGES/gas.mo
-share/locale/es/LC_MESSAGES/gprof.mo
-share/locale/es/LC_MESSAGES/ld.mo
-share/locale/fi/LC_MESSAGES/bfd.mo
-share/locale/fi/LC_MESSAGES/opcodes.mo
-share/locale/fi/LC_MESSAGES/binutils.mo
-share/locale/fi/LC_MESSAGES/gas.mo
-share/locale/fi/LC_MESSAGES/gprof.mo
-share/locale/fi/LC_MESSAGES/ld.mo
-share/locale/fr/LC_MESSAGES/bfd.mo
-share/locale/fr/LC_MESSAGES/opcodes.mo
-share/locale/fr/LC_MESSAGES/binutils.mo
-share/locale/fr/LC_MESSAGES/gas.mo
-share/locale/fr/LC_MESSAGES/gprof.mo
-share/locale/fr/LC_MESSAGES/ld.mo
-share/locale/ga/LC_MESSAGES/opcodes.mo
-share/locale/ga/LC_MESSAGES/gprof.mo
-share/locale/ga/LC_MESSAGES/ld.mo
-share/locale/id/LC_MESSAGES/bfd.mo
-share/locale/id/LC_MESSAGES/opcodes.mo
-share/locale/id/LC_MESSAGES/binutils.mo
-share/locale/id/LC_MESSAGES/gas.mo
-share/locale/id/LC_MESSAGES/gprof.mo
-share/locale/id/LC_MESSAGES/ld.mo
-share/locale/it/LC_MESSAGES/opcodes.mo
-share/locale/it/LC_MESSAGES/binutils.mo
-share/locale/it/LC_MESSAGES/gprof.mo
-share/locale/it/LC_MESSAGES/ld.mo
-share/locale/ja/LC_MESSAGES/bfd.mo
-share/locale/ja/LC_MESSAGES/binutils.mo
-share/locale/ja/LC_MESSAGES/gas.mo
-share/locale/ja/LC_MESSAGES/gprof.mo
-share/locale/ja/LC_MESSAGES/ld.mo
-share/locale/ms/LC_MESSAGES/gprof.mo
-share/locale/nl/LC_MESSAGES/opcodes.mo
-share/locale/nl/LC_MESSAGES/gprof.mo
-share/locale/pt_BR/LC_MESSAGES/opcodes.mo
-share/locale/pt_BR/LC_MESSAGES/gprof.mo
-share/locale/ro/LC_MESSAGES/bfd.mo
-share/locale/ro/LC_MESSAGES/opcodes.mo
-share/locale/ro/LC_MESSAGES/binutils.mo
-share/locale/ro/LC_MESSAGES/gprof.mo
-share/locale/ru/LC_MESSAGES/bfd.mo
-share/locale/ru/LC_MESSAGES/binutils.mo
-share/locale/ru/LC_MESSAGES/gas.mo
-share/locale/ru/LC_MESSAGES/gprof.mo
-share/locale/sk/LC_MESSAGES/binutils.mo
-share/locale/sr/LC_MESSAGES/gprof.mo
-share/locale/sv/LC_MESSAGES/bfd.mo
-share/locale/sv/LC_MESSAGES/opcodes.mo
-share/locale/sv/LC_MESSAGES/binutils.mo
-share/locale/sv/LC_MESSAGES/gprof.mo
-share/locale/sv/LC_MESSAGES/ld.mo
-share/locale/tr/LC_MESSAGES/bfd.mo
-share/locale/tr/LC_MESSAGES/opcodes.mo
-share/locale/tr/LC_MESSAGES/binutils.mo
-share/locale/tr/LC_MESSAGES/gas.mo
-share/locale/tr/LC_MESSAGES/gprof.mo
-share/locale/tr/LC_MESSAGES/ld.mo
-share/locale/uk/LC_MESSAGES/bfd.mo
-share/locale/uk/LC_MESSAGES/opcodes.mo
-share/locale/uk/LC_MESSAGES/binutils.mo
-share/locale/uk/LC_MESSAGES/gprof.mo
-share/locale/uk/LC_MESSAGES/ld.mo
-share/locale/vi/LC_MESSAGES/bfd.mo
-share/locale/vi/LC_MESSAGES/opcodes.mo
-share/locale/vi/LC_MESSAGES/binutils.mo
-share/locale/vi/LC_MESSAGES/gprof.mo
-share/locale/vi/LC_MESSAGES/ld.mo
-share/locale/zh_CN/LC_MESSAGES/bfd.mo
-share/locale/zh_CN/LC_MESSAGES/opcodes.mo
-share/locale/zh_CN/LC_MESSAGES/binutils.mo
-share/locale/zh_CN/LC_MESSAGES/ld.mo
-share/locale/zh_TW/LC_MESSAGES/binutils.mo
-share/locale/zh_TW/LC_MESSAGES/ld.mo
-share/locale/rw/LC_MESSAGES/bfd.mo
-share/locale/rw/LC_MESSAGES/binutils.mo
-share/locale/rw/LC_MESSAGES/gas.mo
-share/locale/rw/LC_MESSAGES/gprof.mo
-@dirrmtry share/locale/bg/LC_MESSAGES
-@dirrmtry share/locale/bg
-@dirrmtry share/locale/da/LC_MESSAGES
-@dirrmtry share/locale/da
-@dirrmtry share/locale/de/LC_MESSAGES
-@dirrmtry share/locale/de
-@dirrmtry share/locale/eo/LC_MESSAGES
-@dirrmtry share/locale/eo
-@dirrmtry share/locale/es/LC_MESSAGES
-@dirrmtry share/locale/es
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/fr
-@dirrmtry share/locale/ga/LC_MESSAGES
-@dirrmtry share/locale/ga
-@dirrmtry share/locale/id/LC_MESSAGES
-@dirrmtry share/locale/id
-@dirrmtry share/locale/it/LC_MESSAGES
-@dirrmtry share/locale/it
-@dirrmtry share/locale/ja/LC_MESSAGES
-@dirrmtry share/locale/ja
-@dirrmtry share/locale/nl/LC_MESSAGES
-@dirrmtry share/locale/nl
-@dirrmtry share/locale/pt_BR/LC_MESSAGES
-@dirrmtry share/locale/pt_BR
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
-@dirrmtry share/locale/ru/LC_MESSAGES
-@dirrmtry share/locale/ru
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk
-@dirrmtry share/locale/sr/LC_MESSAGES
-@dirrmtry share/locale/sr
-@dirrmtry share/locale/sv/LC_MESSAGES
-@dirrmtry share/locale/sv
-@dirrmtry share/locale/tr/LC_MESSAGES
-@dirrmtry share/locale/tr
-@dirrmtry share/locale/uk/LC_MESSAGES
-@dirrmtry share/locale/uk
-@dirrmtry share/locale/vi/LC_MESSAGES
-@dirrmtry share/locale/vi
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrm arm-elf/bin
-@dirrm arm-elf/lib/ldscripts
-@dirrm arm-elf/lib
-@dirrm arm-elf
+man/man1/arm-elf-addr2line.1.gz
+man/man1/arm-elf-ar.1.gz
+man/man1/arm-elf-as.1.gz
+man/man1/arm-elf-c++filt.1.gz
+man/man1/arm-elf-dlltool.1.gz
+man/man1/arm-elf-elfedit.1.gz
+man/man1/arm-elf-gprof.1.gz
+man/man1/arm-elf-ld.1.gz
+man/man1/arm-elf-nlmconv.1.gz
+man/man1/arm-elf-nm.1.gz
+man/man1/arm-elf-objcopy.1.gz
+man/man1/arm-elf-objdump.1.gz
+man/man1/arm-elf-ranlib.1.gz
+man/man1/arm-elf-readelf.1.gz
+man/man1/arm-elf-size.1.gz
+man/man1/arm-elf-strings.1.gz
+man/man1/arm-elf-strip.1.gz
+man/man1/arm-elf-windmc.1.gz
+man/man1/arm-elf-windres.1.gz
+@dirrmtry arm-elf/lib/ldscripts
+@dirrmtry arm-elf/lib
+@dirrmtry arm-elf/bin
+@dirrmtry arm-elf
