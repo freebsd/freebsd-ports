@@ -467,6 +467,11 @@ libexec/gimp/2.2/plug-ins/web-browser
 %%HELPBROWSER%%libexec/gimp/2.2/plug-ins/web-page
 libexec/gimp/2.2/plug-ins/whirl-pinch
 libexec/gimp/2.2/plug-ins/wind
+man/man1/gimp-2.8.1.gz
+man/man1/gimp.1.gz
+man/man1/gimptool-2.0.1.gz
+man/man5/gimprc-2.8.5.gz
+man/man5/gimprc.5.gz
 share/aclocal/gimp-2.0.m4
 share/applications/gimp.desktop
 share/doc/gimp/libgimp/GimpAspectPreview.html
@@ -2208,6 +2213,8 @@ share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/tt/LC_MESSAGES
 @dirrmtry share/locale/tt
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES

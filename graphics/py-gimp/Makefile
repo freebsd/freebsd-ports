@@ -2,7 +2,7 @@
 # $FreeBSD$
 #    $MCom: ports/graphics/py-gimp/Makefile,v 1.6 2009/08/25 00:06:39 marcus Exp $
 
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	0
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,5 +22,4 @@ INSTALL_WRKSRC=	${WRKSRC}/plug-ins/pygimp
 
 MASTERDIR=	${.CURDIR}/../../graphics/gimp-app
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
