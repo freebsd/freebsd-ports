@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Unreal
-PORTVERSION=	3.2.9
-PORTREVISION=	2
+PORTVERSION=	3.2.10.1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.unrealircd.com/downloads/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	cares:${PORTSDIR}/dns/c-ares
 
-WRKSRC=		${WRKDIR}/${DISTNAME:R}
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
 MODULESDIR=	${PREFIX}/lib/${PORTNAME}
 CONFIGDIR=	${PREFIX}/etc/${PORTNAME}
@@ -30,6 +29,8 @@ USERS=		ircd
 GROUPS=		ircd
 
 SUB_LIST+=	RUNDIR=${RUNDIR}
+SUB_LIST+=	USERS=${USERS}
+SUB_LIST+=	GROUPS=${GROUPS}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -101,9 +102,9 @@ SQLMOD=		${PORTNAME}/SQLMod.tar.gz
 USE_MYSQL=	yes
 WITH_SQLMOD=	yes
 MAKE_ARGS=	all custommodule MODULEFILE=m_sqlmod
-PLIST_FILES+=	etc/Unreal/m_sqlmod.conf lib/Unreal/m_sqlmod.so \
-		Unreal/doc/Changes.sqlmod Unreal/doc/README.sqlmod \
-		Unreal/doc/LICENSE.sqlmod
+PLIST_SUB+=	SQLMOD=""
+.else
+PLIST_SUB+=	SQLMOD="@comment "
 .endif
 
 post-extract:
@@ -121,7 +122,6 @@ post-patch:
 		-e "s,%%LOGDIR%%,${LOGDIR}," ${WRKSRC}/include/config.h
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," \
 		-e "s,%%LOGDIR%%,${LOGDIR}," ${WRKSRC}/doc/example.conf
-	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/networks/makenet
 	@${REINPLACE_CMD} -e "s,%%RUNDIR%%,${RUNDIR}," ${WRKSRC}/src/ircd.c
 	@${REINPLACE_CMD} -e "s,%%RUNDIR%%,${RUNDIR}," ${WRKSRC}/src/modules.c
 	@${REINPLACE_CMD} -e "s,%%RUNDIR%%,${RUNDIR}," ${WRKSRC}/src/s_conf.c
@@ -136,20 +136,15 @@ do-install:
 	${MKDIR} ${CONFIGDIR} || true
 	${MKDIR} ${CONFIGDIR}/aliases || true
 	${MKDIR} ${EXAMPLESDIR}/aliases
-	${MKDIR} ${DATADIR}/networks
 	${MKDIR} ${RUNDIR}/tmp
 	${MKDIR} ${LOGDIR}
 	${TOUCH} ${CONFIGDIR}/ircd.motd
 	${TOUCH} ${CONFIGDIR}/ircd.rules
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/badwords.*.conf ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/help.conf ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/spamfilter.conf ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/example.conf ${EXAMPLESDIR}/unrealircd.conf
 	${INSTALL_DATA} ${WRKSRC}/aliases/*.conf ${EXAMPLESDIR}/aliases
-	${INSTALL_DATA} ${WRKSRC}/networks/*.network ${DATADIR}/networks
-	${INSTALL_DATA} ${WRKSRC}/networks/networks.ndx ${DATADIR}/networks
-	${INSTALL_SCRIPT} ${WRKSRC}/networks/makenet ${DATADIR}/networks
 	${INSTALL} ${WRKSRC}/src/modules/*.so ${MODULESDIR}
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
