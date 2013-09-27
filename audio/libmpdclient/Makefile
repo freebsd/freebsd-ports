@@ -10,7 +10,6 @@ MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	API library for interfacing MPD
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USES=		gmake pathfix
 USE_LDCONFIG=	yes
