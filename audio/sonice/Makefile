@@ -15,9 +15,10 @@ RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools \
 		vorbisgain:${PORTSDIR}/audio/vorbisgain \
 		${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml
 
-USE_PYTHON=	yes
 NO_STAGE=	yes
+USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 WRKSRC=		${WRKDIR}/sonice
 
 post-install:
