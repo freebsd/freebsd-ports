@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2013.08.23
+PORTVERSION=	2013.09.24.2
 CATEGORIES=	www
 MASTER_SITES=	http://youtube-dl.org/downloads/${PORTVERSION}/ \
 		http://ftp.de.netbsd.org/pub/unix/Linux/MIRROR.gentoo/distfiles/
@@ -31,7 +31,6 @@ MAN1=		youtube-dl.1
 
 WRKSRC=		${WRKDIR}/youtube-dl
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRTMPDUMP}
