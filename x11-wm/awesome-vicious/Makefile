@@ -19,20 +19,13 @@ NO_BUILD=	yes
 NO_INSTALL=	yes
 PORTDOCS=	README TODO CHANGES LICENSE
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/awesome/lib/vicious
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
-	@${CP} -fr ${WRKSRC}/ ${PREFIX}/share/awesome/lib/vicious
-.for i in ${PORTDOCS}
-	@${RM} ${PREFIX}/share/awesome/lib/vicious/${i}
-.endfor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/awesome/lib/vicious
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	@${CP} -fr ${WRKSRC}/ ${STAGEDIR}${PREFIX}/share/awesome/lib/vicious
+	@${RM} ${PORTDOCS:S,^,${STAGEDIR}${PREFIX}/share/awesome/lib/vicious/,}
 
 .include <bsd.port.mk>
