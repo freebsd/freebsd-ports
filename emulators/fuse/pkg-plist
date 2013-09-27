@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/fuse
+man/man1/fuse.1.gz
 %%DATADIR%%/128-0.rom
 %%DATADIR%%/128-1.rom
 %%DATADIR%%/48.rom
