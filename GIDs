@@ -188,6 +188,7 @@ _pkcs11:*:602:_pkcs11
 freeswitch:*:610:
 monkeysphere:*:641:
 aox:*:666:
+riak:*:667:
 bnetd:*:700:
 bopm:*:717:
 openxpki:*:777:

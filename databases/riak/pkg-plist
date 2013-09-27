@@ -1,0 +1,23 @@
+sbin/riak
+sbin/riak-admin
+sbin/riak-debug
+sbin/search-cmd
+@exec mkdir -p %%RIAK_CONFDIR%%
+@exec mkdir -p %%RIAK_LOGDIR%%
+@exec mkdir -p %%RIAK_DBDIR%%
+@exec mkdir -p %%RIAK_HOMEDIR%%
+@exec mkdir -p %%RIAK_LIBDIR%%
+@unexec if cmp -s %D/%%ETCDIR%%/vm.args.sample %D/%%ETCDIR%%/vm.args; then rm -f %D/%%ETCDIR%%/vm.args; fi
+%%ETCDIR%%/vm.args.sample
+@exec if [ ! -f %D/%%ETCDIR%%/vm.args ] ; then cp -p %D/%F %B/vm.args; fi
+@unexec if cmp -s %D/%%ETCDIR%%/app.config.sample %D/%%ETCDIR%%/app.config; then rm -f %D/%%ETCDIR%%/app.config; fi
+%%ETCDIR%%/app.config.sample
+@exec if [ ! -f %D/%%ETCDIR%%/app.config ] ; then cp -p %D/%F %B/app.config; fi
+@unexec if cmp -s %D/%%ETCDIR%%/cert.pem.sample %D/%%ETCDIR%%/cert.pem; then rm -f %D/%%ETCDIR%%/cert.pem; fi
+%%ETCDIR%%/cert.pem.sample
+@exec if [ ! -f %D/%%ETCDIR%%/cert.pem ] ; then cp -p %D/%F %B/cert.pem; fi
+@unexec if cmp -s %D/%%ETCDIR%%/key.pem.sample %D/%%ETCDIR%%/key.pem; then rm -f %D/%%ETCDIR%%/key.pem; fi
+%%ETCDIR%%/key.pem.sample
+@exec if [ ! -f %D/%%ETCDIR%%/key.pem ] ; then cp -p %D/%F %B/key.pem; fi
+@dirrmtry %%ETCDIR%%
+@unexec if [ -f %%RIAK_HOMEDIR%%/.erlang.cookie ] ; then rm -f %%RIAK_HOMEDIR%%/.erlang.cookie ; fi

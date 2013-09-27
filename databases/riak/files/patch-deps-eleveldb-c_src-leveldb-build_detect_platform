@@ -1,0 +1,31 @@
+Don't remove /dev/null on 8.x (see kern/139014)
+-bdrewery 09/27/2013
+--- deps/eleveldb/c_src/leveldb/build_detect_platform.orig	2013-09-27 06:53:42.527133646 -0500
++++ deps/eleveldb/c_src/leveldb/build_detect_platform	2013-09-27 06:54:01.360134865 -0500
+@@ -134,7 +134,7 @@
+     true
+ else
+     # If -std=c++0x works, use <cstdatomic>.  Otherwise use port_posix.h.
+-    $CXX $CFLAGS -std=c++0x -x c++ - -o /dev/null 2>/dev/null  <<EOF
++    $CXX $CFLAGS -std=c++0x -x c++ - 2>/dev/null  <<EOF
+       #include <cstdatomic>
+       int main() {}
+ EOF
+@@ -147,7 +147,7 @@
+ 
+     # Test whether Snappy library is installed
+     # http://code.google.com/p/snappy/
+-    $CXX $CFLAGS -x c++ - -o /dev/null 2>/dev/null  <<EOF
++    $CXX $CFLAGS -x c++ - 2>/dev/null  <<EOF
+       #include <snappy.h>
+       int main() {}
+ EOF
+@@ -157,7 +157,7 @@
+     fi
+ 
+     # Test whether tcmalloc is available
+-    $CXX $CFLAGS -x c++ - -o /dev/null -ltcmalloc 2>/dev/null  <<EOF
++    $CXX $CFLAGS -x c++ - -ltcmalloc 2>/dev/null  <<EOF
+       int main() {}
+ EOF
+     if [ "$?" = 0 ]; then
