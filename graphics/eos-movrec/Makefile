@@ -3,6 +3,7 @@
 
 PORTNAME=	eos-movrec
 DISTVERSION=	0.3.2_beta
+PORTREVISION=	1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/
 
@@ -16,9 +17,7 @@ LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
 USE_BZIP2=	yes
 USES=		cmake pkgconfig
 USE_DOS2UNIX=	*.pro *.cpp *.h
-USE_QT4=	corelib dbus declarative designer gui help iconengines imageformats \
-		moc_build multimedia network opengl phonon qmake_build qt3support \
-		rcc_build script scripttools sql qt3support uic_build webkit xml xmlpatterns
+USE_QT4=	qmake_build moc_build rcc_build uic_build gui
 
 INSTALLS_ICONS=	yes
 ICON_SIZES=	16x16 32x32 128x128 256x256 512x512
@@ -26,7 +25,6 @@ ICON_SIZES=	16x16 32x32 128x128 256x256 512x512
 DESKTOP_ENTRIES="EOS Camera Movie Recorder" "${COMMENT}" "${PORTNAME}" \
 		"eos_movrec" "Graphics;Photography;Qt;" false
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|GLIBC|${OPSYS}|' ${WRKSRC}/os_api.h
 .for s in 16 32 128 256 512
@@ -36,10 +34,11 @@ post-patch:
 
 post-install:
 .for s in ${ICON_SIZES}
-	@${MKDIR} ${PREFIX}/share/icons/hicolor/${s}/apps
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/
 	${INSTALL_DATA} ${WRKSRC}/mac.icons/${PORTNAME}_${s}.png \
-		${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
 .endfor
-	${LN} -sf ${PREFIX}/share/icons/hicolor/32x32/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps/
+	${LN} -sf ${PREFIX}/share/icons/hicolor/32x32/apps/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>
