@@ -1,0 +1,29 @@
+bin/scummvm
+share/applications/scummvm.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.BSD
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.FREEFONT
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.LGPL
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/man/man6/scummvm.6
+share/pixmaps/scummvm.xpm
+%%DATADIR%%/drascula.dat
+%%DATADIR%%/hugo.dat
+%%DATADIR%%/kyra.dat
+%%DATADIR%%/lure.dat
+%%DATADIR%%/pred.dic
+%%DATADIR%%/queen.tbl
+%%DATADIR%%/scummclassic.zip
+%%DATADIR%%/scummmodern.zip
+%%DATADIR%%/sky.cpt
+%%DATADIR%%/teenagent.dat
+%%DATADIR%%/toon.dat
+%%DATADIR%%/translations.dat
+@dirrmtry %%DATADIR%%
+@dirrmtry share/man/man6
+@dirrmtry share/man
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry share/applications
