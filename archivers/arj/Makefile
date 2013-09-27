@@ -22,6 +22,19 @@ STRIP=
 LANGUAGE?=	en
 MAKE_ENV+=	"LOCALE=${LANGUAGE}"
 
+PORTDOCS=	*
+
+PLIST_FILES=	bin/arj \
+		bin/arj-register \
+		bin/arjdisp \
+		bin/rearj \
+		lib/arj/arjcrypt.so \
+		man/man1/arj-register.1.gz \
+		man/man1/arj.1.gz \
+		man/man1/arjdisp.1.gz \
+		man/man1/rearj.1.gz
+PLIST_DIRS=	lib/arj
+
 PORTSCOUT=	skipv:3.10g
 
 .include <bsd.port.pre.mk>
