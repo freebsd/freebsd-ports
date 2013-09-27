@@ -100,12 +100,16 @@ DEV_WARNING+=	"Please use the new format for LIB_DEPENDS, see handbook for detai
 DEV_WARNING+=	"USE_TCL and USE_TK are deprecated, please use USES=tcl or USES=tk"
 .endif
 
-.if !defined(NO_STAGE) && defined(_MANPAGES)
-DEV_WARNING+=	"MAN* macros are deprecated when using stage directory"
+.if !defined(NO_STAGE)
+.for a in 1 2 3 4 5 6 7 8 9 L N
+.if defined(MAN${a})
+DEV_WARNING+=	"MAN${a} macros are deprecated when using stage directory"
+.endif
+.endfor
 .endif
 
-.if !defined(NO_STAGE) && defined(_MLINKS)
-DEV_WARNING+=	"MLINKS* macros are deprecated when using stage directory"
+.if !defined(NO_STAGE) && defined(MLINKS)
+DEV_WARNING+=	"MLINKS macros are deprecated when using stage directory"
 .endif
 
 .if defined(_PREMKINCLUDED)
