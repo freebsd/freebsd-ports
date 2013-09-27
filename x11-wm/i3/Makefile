@@ -29,6 +29,7 @@ USE_XORG=	x11 xcb xcursor
 USES=		pkgconfig iconv gmake perl5
 USE_BZIP2=	yes
 USE_PERL5=	run
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 MAKE_JOBS_UNSAFE=	yes
 
 post-patch:

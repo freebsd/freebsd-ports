@@ -41,6 +41,7 @@ USE_GNOME=	glib20 pango
 USE_LUA=	5.1+
 USE_XORG=	pixman x11 xau xcb xdmcp xext xft xinerama xrandr xrender \
 		xproto
+LDFLAGS+=	${ICONV_LIB}
 
 MAN1=	awesome.1 \
 	awesome-client.1

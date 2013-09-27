@@ -17,6 +17,7 @@ LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
 
 USES=		pathfix iconv
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ENV=	JPEG_CFLAGS="-I${LOCALBASE}/include" \
 		JPEG_LIBS="-L${LOCALBASE}/lib -ljpeg" \
 		TIFF_CFLAGS="-I${LOCALBASE}/include" \
