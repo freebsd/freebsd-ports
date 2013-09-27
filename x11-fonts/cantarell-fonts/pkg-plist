@@ -2,5 +2,6 @@ etc/fonts/conf.avail/31-cantarell.conf
 share/fonts/cantarell/Cantarell-Bold.otf
 share/fonts/cantarell/Cantarell-Regular.otf
 @exec %D/bin/fc-cache -f -v %D/%%FONTSDIR%%
+@unexec %D/bin/fc-cache -f -v %D/%%FONTSDIR%%
 @dirrm share/fonts/cantarell
 @dirrmtry share/fonts
