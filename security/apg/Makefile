@@ -14,18 +14,15 @@ COMMENT=	Automated password generator
 OPTIONS_DEFINE=	CRACKLIB
 CRACKLIB_DESCR=	CrackLib support for password quality
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCRACKLIB}
-LIB_DEPENDS=	crack:${PORTSDIR}/security/cracklib
+LIB_DEPENDS=	libcrack.so:${PORTSDIR}/security/cracklib
 MAKE_ARGS=	-DWITH_CRACKLIB
 .endif
 
 LICENSE=	BSD
 
-MAN1=		apg.1 apgbfm.1
-MAN8=		apgd.8
 DOCS=		APG_TIPS pronun.txt rfc0972.txt rfc1750.txt
 
 post-extract:
@@ -33,15 +30,15 @@ post-extract:
 	${FIND} ${WRKSRC} -type f | ${XARGS} ${CHMOD} u+w
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/apg ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/apgbfm ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/apgd ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/doc/man/apg.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/man/apgbfm.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/man/apgd.8 ${MANPREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/apg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/apgbfm ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/apgd ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/doc/man/apg.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/man/apgbfm.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/man/apgd.8 ${STAGEDIR}${MANPREFIX}/man/man8
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -1,6 +1,9 @@
 bin/apg
 bin/apgbfm
 sbin/apgd
+man/man1/apg.1.gz
+man/man1/apgbfm.1.gz
+man/man8/apgd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/APG_TIPS
 %%PORTDOCS%%%%DOCSDIR%%/pronun.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc0972.txt
