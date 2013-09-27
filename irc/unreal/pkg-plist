@@ -1,92 +1,5 @@
-@exec mkdir -p %D/etc/Unreal 2> /dev/null
-@exec mkdir -p %D/etc/Unreal/aliases 2> /dev/null
-@unexec if cmp -s %D/etc/Unreal/aliases/aliases.conf %D/%%EXAMPLESDIR%%/aliases/aliases.conf; then rm -f %D/etc/Unreal/aliases/aliases.conf; fi
-%%EXAMPLESDIR%%/aliases/aliases.conf
-@exec [ -f %D/etc/Unreal/aliases/aliases.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/aliases.conf %D/etc/Unreal/aliases/aliases.conf
-@unexec if cmp -s %D/etc/Unreal/aliases/atheme.conf %D/%%EXAMPLESDIR%%/aliases/atheme.conf; then rm -f %D/etc/Unreal/aliases/atheme.conf; fi
-%%EXAMPLESDIR%%/aliases/atheme.conf
-@exec [ -f %D/etc/Unreal/aliases/atheme.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/atheme.conf %D/etc/Unreal/aliases/atheme.conf
-@unexec if cmp -s %D/etc/Unreal/aliases/anope.conf %D/%%EXAMPLESDIR%%/aliases/anope.conf; then rm -f %D/etc/Unreal/aliases/anope.conf; fi
-%%EXAMPLESDIR%%/aliases/anope.conf
-@exec [ -f %D/etc/Unreal/aliases/anope.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/anope.conf %D/etc/Unreal/aliases/anope.conf
-@unexec if cmp -s %D/etc/Unreal/aliases/auspice.conf %D/%%EXAMPLESDIR%%/aliases/auspice.conf; then rm -f %D/etc/Unreal/aliases/auspice.conf; fi
-%%EXAMPLESDIR%%/aliases/auspice.conf
-@exec [ -f %D/etc/Unreal/aliases/aliases.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/aliases.conf %D/etc/Unreal/aliases/aliases.conf
-@unexec if cmp -s %D/etc/Unreal/aliases/cygnus.conf %D/%%EXAMPLESDIR%%/aliases/cygnus.conf; then rm -f %D/etc/Unreal/aliases/cygnus.conf; fi
-%%EXAMPLESDIR%%/aliases/cygnus.conf
-@exec [ -f %D/etc/Unreal/aliases/cygnus.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/cygnus.conf %D/etc/Unreal/aliases/cygnus.conf
-@unexec if cmp -s %D/etc/Unreal/aliases/epona.conf %D/%%EXAMPLESDIR%%/aliases/epona.conf; then rm -f %D/etc/Unreal/aliases/epona.conf; fi
-%%EXAMPLESDIR%%/aliases/epona.conf
-@exec [ -f %D/etc/Unreal/aliases/epona.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/epona.conf %D/etc/Unreal/aliases/epona.conf
-@unexec if cmp -s %D/etc/Unreal/aliases/generic.conf %D/%%EXAMPLESDIR%%/aliases/generic.conf; then rm -f %D/etc/Unreal/aliases/generic.conf; fi
-%%EXAMPLESDIR%%/aliases/generic.conf
-@exec [ -f %D/etc/Unreal/aliases/generic.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/generic.conf %D/etc/Unreal/aliases/generic.conf
-@unexec if cmp -s %D/etc/Unreal/aliases/genericstats.conf %D/%%EXAMPLESDIR%%/aliases/genericstats.conf; then rm -f %D/etc/Unreal/aliases/genericstats.conf; fi
-%%EXAMPLESDIR%%/aliases/genericstats.conf
-@exec [ -f %D/etc/Unreal/aliases/genericstats.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/genericstats.conf %D/etc/Unreal/aliases/genericstats.conf
-@unexec if cmp -s %D/etc/Unreal/aliases/ircservices.conf %D/%%EXAMPLESDIR%%/aliases/ircservices.conf; then rm -f %D/etc/Unreal/aliases/ircservices.conf; fi
-%%EXAMPLESDIR%%/aliases/ircservices.conf
-@exec [ -f %D/etc/Unreal/aliases/ircservices.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/ircservices.conf %D/etc/Unreal/aliases/ircservices.conf
-@unexec if cmp -s %D/etc/Unreal/aliases/operstats.conf %D/%%EXAMPLESDIR%%/aliases/operstats.conf; then rm -f %D/etc/Unreal/aliases/operstats.conf; fi
-%%EXAMPLESDIR%%/aliases/operstats.conf
-@exec [ -f %D/etc/Unreal/aliases/operstats.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/operstats.conf %D/etc/Unreal/aliases/operstats.conf
-@unexec if cmp -s %D/etc/Unreal/badwords.channel.conf %D/%%EXAMPLESDIR%%/badwords.channel.conf; then rm -f %D/etc/Unreal/badwords.channel.conf; fi
-%%EXAMPLESDIR%%/badwords.channel.conf
-@exec [ -f %D/etc/Unreal/badwords.channel.conf ] || cp %D/%%EXAMPLESDIR%%/badwords.channel.conf %D/etc/Unreal/badwords.channel.conf
-@unexec if cmp -s %D/etc/Unreal/badwords.message.conf %D/%%EXAMPLESDIR%%/badwords.message.conf; then rm -f %D/etc/Unreal/badwords.message.conf; fi
-%%EXAMPLESDIR%%/badwords.message.conf
-@exec [ -f %D/etc/Unreal/badwords.message.conf ] || cp %D/%%EXAMPLESDIR%%/badwords.message.conf %D/etc/Unreal/badwords.message.conf
-@unexec if cmp -s %D/etc/Unreal/badwords.quit.conf %D/%%EXAMPLESDIR%%/badwords.quit.conf; then rm -f %D/etc/Unreal/badwords.quit.conf; fi
-%%EXAMPLESDIR%%/badwords.quit.conf
-@exec [ -f %D/etc/Unreal/badwords.quit.conf ] || cp %D/%%EXAMPLESDIR%%/badwords.quit.conf %D/etc/Unreal/badwords.quit.conf
-@unexec if cmp -s %D/etc/Unreal/help.conf %D/%%EXAMPLESDIR%%/help.conf; then rm -f %D/etc/Unreal/help.conf; fi
-%%EXAMPLESDIR%%/help.conf
-@exec [ -f %D/etc/Unreal/help.conf ] || cp %D/%%EXAMPLESDIR%%/help.conf %D/etc/Unreal/help.conf
-@unexec if cmp -s %D/etc/Unreal/spamfilter.conf %D/%%EXAMPLESDIR%%/spamfilter.conf; then rm -f %D/etc/Unreal/spamfilter.conf; fi
-%%EXAMPLESDIR%%/spamfilter.conf
-@exec [ -f %D/etc/Unreal/spamfilter.conf ] || cp %D/%%EXAMPLESDIR%%/spamfilter.conf %D/etc/Unreal/spamfilter.conf
-@unexec if cmp -s %D/etc/Unreal/unrealircd.conf %D/%%EXAMPLESDIR%%/unrealircd.conf; then rm -f %D/etc/Unreal/unrealircd.conf; fi
-%%EXAMPLESDIR%%/unrealircd.conf
-@exec [ -f %D/etc/Unreal/unrealircd.conf ] || cp %D/%%EXAMPLESDIR%%/unrealircd.conf %D/etc/Unreal/unrealircd.conf
-etc/Unreal/ircd.motd
-etc/Unreal/ircd.rules
-libexec/ircd
-%%DATADIR%%/LICENSE
-%%DATADIR%%/networks/awesomechristians.network
-%%DATADIR%%/networks/axenet.network
-%%DATADIR%%/networks/bunker7.network
-%%DATADIR%%/networks/burnnet.network
-%%DATADIR%%/networks/cabonet.network
-%%DATADIR%%/networks/chatcrap.network
-%%DATADIR%%/networks/chatuniverse.network
-%%DATADIR%%/networks/ctcp.network
-%%DATADIR%%/networks/darkkaos.network
-%%DATADIR%%/networks/digitalirc.network
-%%DATADIR%%/networks/discussioni.network
-%%DATADIR%%/networks/dragonwings.network
-%%DATADIR%%/networks/gamescafe.network
-%%DATADIR%%/networks/german-elite.network
-%%DATADIR%%/networks/german-global-irc.network
-%%DATADIR%%/networks/global-irc.network
-%%DATADIR%%/networks/globalchat.network
-%%DATADIR%%/networks/icechat.network
-%%DATADIR%%/networks/infinity.network
-%%DATADIR%%/networks/ircsystems.network
-%%DATADIR%%/networks/isno.network
-%%DATADIR%%/networks/l33t-irc.network
-%%DATADIR%%/networks/lcirc.network
-%%DATADIR%%/networks/outsiderz.network
-%%DATADIR%%/networks/phazenet.network
-%%DATADIR%%/networks/stormdancing.network
-%%DATADIR%%/networks/template.network
-%%DATADIR%%/networks/thainet.network
-%%DATADIR%%/networks/unitedirc-org.network
-%%DATADIR%%/networks/unreal-test.network
-%%DATADIR%%/networks/wazzza.network
-%%DATADIR%%/networks/x-irc.network
-%%DATADIR%%/networks/zirc.network
-%%DATADIR%%/networks/makenet
-%%DATADIR%%/networks/networks.ndx
+%%ETCDIR%%/ircd.motd
+%%ETCDIR%%/ircd.rules
 lib/Unreal/cloak.so
 lib/Unreal/commands.so
 lib/Unreal/m_addline.so
@@ -97,6 +10,7 @@ lib/Unreal/m_adminchat.so
 lib/Unreal/m_akill.so
 lib/Unreal/m_away.so
 lib/Unreal/m_botmotd.so
+lib/Unreal/m_cap.so
 lib/Unreal/m_chatops.so
 lib/Unreal/m_chghost.so
 lib/Unreal/m_chgident.so
@@ -112,8 +26,8 @@ lib/Unreal/m_guest.so
 lib/Unreal/m_help.so
 lib/Unreal/m_htm.so
 lib/Unreal/m_invite.so
-lib/Unreal/m_issecure.so
 lib/Unreal/m_ison.so
+lib/Unreal/m_issecure.so
 lib/Unreal/m_join.so
 lib/Unreal/m_kick.so
 lib/Unreal/m_kill.so
@@ -146,6 +60,7 @@ lib/Unreal/m_rules.so
 lib/Unreal/m_sajoin.so
 lib/Unreal/m_samode.so
 lib/Unreal/m_sapart.so
+lib/Unreal/m_sasl.so
 lib/Unreal/m_sdesc.so
 lib/Unreal/m_sendsno.so
 lib/Unreal/m_sendumode.so
@@ -153,8 +68,8 @@ lib/Unreal/m_server.so
 lib/Unreal/m_sethost.so
 lib/Unreal/m_setident.so
 lib/Unreal/m_setname.so
-lib/Unreal/m_sjoin.so
 lib/Unreal/m_silence.so
+lib/Unreal/m_sjoin.so
 lib/Unreal/m_sqline.so
 lib/Unreal/m_squit.so
 lib/Unreal/m_starttls.so
@@ -167,11 +82,11 @@ lib/Unreal/m_svsmode.so
 lib/Unreal/m_svsmotd.so
 lib/Unreal/m_svsnick.so
 lib/Unreal/m_svsnline.so
+lib/Unreal/m_svsnolag.so
 lib/Unreal/m_svsnoop.so
 lib/Unreal/m_svso.so
 lib/Unreal/m_svspart.so
 lib/Unreal/m_svssilence.so
-lib/Unreal/m_svsnolag.so
 lib/Unreal/m_svssno.so
 lib/Unreal/m_svswatch.so
 lib/Unreal/m_swhois.so
@@ -194,23 +109,75 @@ lib/Unreal/m_watch.so
 lib/Unreal/m_who.so
 lib/Unreal/m_whois.so
 lib/Unreal/m_whowas.so
-%%PORTDOCS%%%%DOCSDIR%%/Donation
-%%PORTDOCS%%%%DOCSDIR%%/Authors
-%%PORTDOCS%%%%DOCSDIR%%/coding-guidelines
-%%PORTDOCS%%%%DOCSDIR%%/example.conf
-%%PORTDOCS%%%%DOCSDIR%%/tao.of.irc
-%%PORTDOCS%%%%DOCSDIR%%/translations.txt
-%%PORTDOCS%%%%DOCSDIR%%/unreal32docs.html
-%%PORTDOCS%%%%DOCSDIR%%/005.txt
-%%PORTDOCS%%%%DOCSDIR%%/base64.txt
-%%PORTDOCS%%%%DOCSDIR%%/protoctl.txt
-%%PORTDOCS%%%%DOCSDIR%%/token.txt
-%%PORTDOCS%%%%DOCSDIR%%/vl.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/networks
-@dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%/aliases
+libexec/ircd
+%%DOCSDIR%%/005.txt
+%%DOCSDIR%%/Authors
+%%DOCSDIR%%/Donation
+%%DOCSDIR%%/base64.txt
+%%DOCSDIR%%/coding-guidelines
+%%DOCSDIR%%/example.conf
+%%DOCSDIR%%/protoctl.txt
+%%DOCSDIR%%/tao.of.irc
+%%DOCSDIR%%/token.txt
+%%DOCSDIR%%/translations.txt
+%%DOCSDIR%%/unreal32docs.html
+%%DOCSDIR%%/vl.txt
+%%EXAMPLESDIR%%/aliases/aliases.conf
+%%EXAMPLESDIR%%/aliases/anope.conf
+%%EXAMPLESDIR%%/aliases/atheme.conf
+%%EXAMPLESDIR%%/aliases/auspice.conf
+%%EXAMPLESDIR%%/aliases/cygnus.conf
+%%EXAMPLESDIR%%/aliases/epona.conf
+%%EXAMPLESDIR%%/aliases/generic.conf
+%%EXAMPLESDIR%%/aliases/genericstats.conf
+%%EXAMPLESDIR%%/aliases/ircservices.conf
+%%EXAMPLESDIR%%/aliases/operstats.conf
+%%EXAMPLESDIR%%/badwords.channel.conf
+%%EXAMPLESDIR%%/badwords.message.conf
+%%EXAMPLESDIR%%/badwords.quit.conf
+%%EXAMPLESDIR%%/help.conf
+%%EXAMPLESDIR%%/spamfilter.conf
+%%EXAMPLESDIR%%/unrealircd.conf
+%%SQLMOD%%%%DOCSDIR%%/Changes.sqlmod
+%%SQLMOD%%%%DOCSDIR%%/LICENSE.sqlmod
+%%SQLMOD%%%%DOCSDIR%%/README.sqlmod
+%%SQLMOD%%%%ETCDIR%%/m_sqlmod.conf
+%%SQLMOD%%lib/Unreal/m_sqlmod.so
+@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
+@dirrm %%EXAMPLESDIR%%/aliases
 @dirrm lib/Unreal
-@dirrmtry etc/Unreal/aliases
-@dirrmtry etc/Unreal
+@dirrmtry %%ETCDIR%%
+@dirrmtry %%ETCDIR%%/aliases
+@unexec if cmp -s %D/etc/Unreal/aliases/aliases.conf %D/%%EXAMPLESDIR%%/aliases/aliases.conf; then rm -f %D/etc/Unreal/aliases/aliases.conf; fi
+@exec [ -f %D/etc/Unreal/aliases/aliases.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/aliases.conf %D/etc/Unreal/aliases/aliases.conf
+@unexec if cmp -s %D/etc/Unreal/aliases/atheme.conf %D/%%EXAMPLESDIR%%/aliases/atheme.conf; then rm -f %D/etc/Unreal/aliases/atheme.conf; fi
+@exec [ -f %D/etc/Unreal/aliases/atheme.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/atheme.conf %D/etc/Unreal/aliases/atheme.conf
+@unexec if cmp -s %D/etc/Unreal/aliases/anope.conf %D/%%EXAMPLESDIR%%/aliases/anope.conf; then rm -f %D/etc/Unreal/aliases/anope.conf; fi
+@exec [ -f %D/etc/Unreal/aliases/anope.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/anope.conf %D/etc/Unreal/aliases/anope.conf
+@unexec if cmp -s %D/etc/Unreal/aliases/auspice.conf %D/%%EXAMPLESDIR%%/aliases/auspice.conf; then rm -f %D/etc/Unreal/aliases/auspice.conf; fi
+@exec [ -f %D/etc/Unreal/aliases/aliases.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/aliases.conf %D/etc/Unreal/aliases/aliases.conf
+@unexec if cmp -s %D/etc/Unreal/aliases/cygnus.conf %D/%%EXAMPLESDIR%%/aliases/cygnus.conf; then rm -f %D/etc/Unreal/aliases/cygnus.conf; fi
+@exec [ -f %D/etc/Unreal/aliases/cygnus.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/cygnus.conf %D/etc/Unreal/aliases/cygnus.conf
+@unexec if cmp -s %D/etc/Unreal/aliases/epona.conf %D/%%EXAMPLESDIR%%/aliases/epona.conf; then rm -f %D/etc/Unreal/aliases/epona.conf; fi
+@exec [ -f %D/etc/Unreal/aliases/epona.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/epona.conf %D/etc/Unreal/aliases/epona.conf
+@unexec if cmp -s %D/etc/Unreal/aliases/generic.conf %D/%%EXAMPLESDIR%%/aliases/generic.conf; then rm -f %D/etc/Unreal/aliases/generic.conf; fi
+@exec [ -f %D/etc/Unreal/aliases/generic.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/generic.conf %D/etc/Unreal/aliases/generic.conf
+@unexec if cmp -s %D/etc/Unreal/aliases/genericstats.conf %D/%%EXAMPLESDIR%%/aliases/genericstats.conf; then rm -f %D/etc/Unreal/aliases/genericstats.conf; fi
+@exec [ -f %D/etc/Unreal/aliases/genericstats.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/genericstats.conf %D/etc/Unreal/aliases/genericstats.conf
+@unexec if cmp -s %D/etc/Unreal/aliases/ircservices.conf %D/%%EXAMPLESDIR%%/aliases/ircservices.conf; then rm -f %D/etc/Unreal/aliases/ircservices.conf; fi
+@exec [ -f %D/etc/Unreal/aliases/ircservices.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/ircservices.conf %D/etc/Unreal/aliases/ircservices.conf
+@unexec if cmp -s %D/etc/Unreal/aliases/operstats.conf %D/%%EXAMPLESDIR%%/aliases/operstats.conf; then rm -f %D/etc/Unreal/aliases/operstats.conf; fi
+@exec [ -f %D/etc/Unreal/aliases/operstats.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/operstats.conf %D/etc/Unreal/aliases/operstats.conf
+@unexec if cmp -s %D/etc/Unreal/badwords.channel.conf %D/%%EXAMPLESDIR%%/badwords.channel.conf; then rm -f %D/etc/Unreal/badwords.channel.conf; fi
+@exec [ -f %D/etc/Unreal/badwords.channel.conf ] || cp %D/%%EXAMPLESDIR%%/badwords.channel.conf %D/etc/Unreal/badwords.channel.conf
+@unexec if cmp -s %D/etc/Unreal/badwords.message.conf %D/%%EXAMPLESDIR%%/badwords.message.conf; then rm -f %D/etc/Unreal/badwords.message.conf; fi
+@exec [ -f %D/etc/Unreal/badwords.message.conf ] || cp %D/%%EXAMPLESDIR%%/badwords.message.conf %D/etc/Unreal/badwords.message.conf
+@unexec if cmp -s %D/etc/Unreal/badwords.quit.conf %D/%%EXAMPLESDIR%%/badwords.quit.conf; then rm -f %D/etc/Unreal/badwords.quit.conf; fi
+@exec [ -f %D/etc/Unreal/badwords.quit.conf ] || cp %D/%%EXAMPLESDIR%%/badwords.quit.conf %D/etc/Unreal/badwords.quit.conf
+@unexec if cmp -s %D/etc/Unreal/help.conf %D/%%EXAMPLESDIR%%/help.conf; then rm -f %D/etc/Unreal/help.conf; fi
+@exec [ -f %D/etc/Unreal/help.conf ] || cp %D/%%EXAMPLESDIR%%/help.conf %D/etc/Unreal/help.conf
+@unexec if cmp -s %D/etc/Unreal/spamfilter.conf %D/%%EXAMPLESDIR%%/spamfilter.conf; then rm -f %D/etc/Unreal/spamfilter.conf; fi
+@exec [ -f %D/etc/Unreal/spamfilter.conf ] || cp %D/%%EXAMPLESDIR%%/spamfilter.conf %D/etc/Unreal/spamfilter.conf
+@unexec if cmp -s %D/etc/Unreal/unrealircd.conf %D/%%EXAMPLESDIR%%/unrealircd.conf; then rm -f %D/etc/Unreal/unrealircd.conf; fi
+@exec [ -f %D/etc/Unreal/unrealircd.conf ] || cp %D/%%EXAMPLESDIR%%/unrealircd.conf %D/etc/Unreal/unrealircd.conf
