@@ -13,10 +13,7 @@ COMMENT=	High-end interface client for CVS
 LICENSE=	GPLv2
 
 USE_GNOME=	gtk12
-USE_TCL_BUILD=	yes
-USE_TCL_WRAPPER=yes
-USE_TK_WRAPPER=	yes
-USE_GMAKE=	yes
+USES+=		gmake tk:wrapper
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing --force --copy --gnu
@@ -26,7 +23,6 @@ CONFIGURE_ARGS=	--with-tclinclude=${TCL_INCLUDEDIR} \
 		--with-tcllib=${TCL_LIBDIR}
 EXTRACT_AFTER_ARGS=--exclude cvsunix --exclude 'getline.[ch]' --exclude 'getopt*.[ch]'
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -E '/get(line|opt1?)\.[ch]/d'	\
 		${WRKSRC}/common/Makefile.am
