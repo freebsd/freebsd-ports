@@ -20,70 +20,41 @@ OPTIONS_SINGLE=		WEBSRV APMOD
 OPTIONS_SINGLE_WEBSRV=	APACHE LIGHTTPD
 OPTIONS_SINGLE_APMOD=	MODPYTHON3 MODWSGI3
 
-WEBSRV_DESC=	Enable web server support
-APMOD_DESC=	Enable Apache module OPTIONS
-APMOD_DESC=	depend on optional Apache module
+WEBSRV_DESC=		Enable web server support
+APMOD_DESC=		depend on optional Apache module
 
-MODWSGI3_DESC=	Enable mod_wsgi3 support
-MODPYTHON3_DESC=Enable mod_python3 support
+MODWSGI3_DESC=		Enable mod_wsgi3 support
+MODPYTHON3_DESC=	Enable mod_python3 support
+MYSQL_DESC=		Bonsai-like repository query facilities
 
-NO_BUILD=	yes
-USE_PYTHON=	2.5-2.7
-SUB_FILES=	pkg-message
-SUB_LIST=	INSTDIR="${PREFIX}/${INSTDIR}" \
-		PYTHON_CMD=${PYTHON_CMD} \
-		ECHO=${ECHO} EGREP=${EGREP} TOUCH=${TOUCH} \
-		CHOWN=${CHOWN} RM=${RM}
+LIGHTTPD_RUN_DEPENDS=	lighttpd:${PORTSDIR}/www/lighttpd
+MODPYTHON3_RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_python>=3.3:${PORTSDIR}/www/mod_python3
+MODWSGI3_RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_wsgi>=3.3:${PORTSDIR}/www/mod_wsgi3
+SVN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>=0:${PORTSDIR}/devel/py-subversion
+MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
 
-INSTDIR?=	${PORTNAME}
-PLIST_SUB=	INSTDIR=${INSTDIR}
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-# standalone script is usefull even if a webserver was choosen.
+NO_BUILD=	yes
 USE_RC_SUBR=	viewvc
-
-RUN_DEPENDS+=	${LOCALBASE}/bin/pygmentize:${PORTSDIR}/textproc/py-pygments
-
-# viewvc supports CVS and SVN, controlled with the parameter
-# cvs_roots (for CVS), svn_roots (for Subversion) in viewvc.conf
-.if ${PORT_OPTIONS:MSVN}
-RUN_DEPENDS+=	${PYTHON_LIBDIR}/site-packages/svn/__init__.py:${PORTSDIR}/devel/py-subversion
-.endif
+USE_PYTHON=	-2.7
+SUB_FILES=	pkg-message
+SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
+		ECHO=${ECHO} EGREP=${EGREP} TOUCH=${TOUCH} \
+		CHOWN=${CHOWN} RM=${RM}
 
 .if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	22+
 .endif
 
-.if ${PORT_OPTIONS:MLIGHTTPD}
-RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
-.endif
-
-.if ${PORT_OPTIONS:MMODPYTHON3}
-RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_python>=3.3:${PORTSDIR}/www/mod_python3
-.endif
-
-.if ${PORT_OPTIONS:MMODWSGI3}
-RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_wsgi>=3.3:${PORTSDIR}/www/mod_wsgi3
-.endif
-
-# This feature is a clone of the Mozilla Project's Bonsai database.
-# It catalogs every commit in the CVS or Subversion repository into a MYSQL database.
-# In fact, the databases are 100% compatible.
-.if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
-.endif
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pygments>=1.6:${PORTSDIR}/textproc/py-pygments
 
 pre-everything::
-.if ${PORT_OPTIONS:MAPMOD} && empty(PORT_OPTIONS:MAPACHE)
+.if ${PORT_OPTIONS:MAPMOD} && !${PORT_OPTIONS:MAPACHE}
 IGNORE=	apache module needs Apache server, please re-run 'make config' then choose WEBSRV and APACHE
-. endif
+.endif
 
 do-install:
-	@(cd ${WRKSRC} && ${PYTHON_CMD} viewvc-install --prefix=${PREFIX}/${INSTDIR} --destdir="" --clean-mode=false)
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@(cd ${WRKSRC} && ${PYTHON_CMD} viewvc-install --prefix=${PREFIX}/${PORTNAME} --destdir="${STAGEDIR}" --clean-mode=false)
 
 .include <bsd.port.mk>
