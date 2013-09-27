@@ -11,6 +11,7 @@ COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
 CONFLICTS=	rt-3.8* brlcad-[0-9]*
 LATEST_LINK=	rt40
+NEED_ROOT=	yes
 
 # See doc/web_deployment.pod for info on the choices of webserver /
 # webapp combinations.  Note: if using apache, apache-2.2+ is
@@ -51,7 +52,6 @@ GROUPS?=	rt
 
 BUILD_DEPENDS+=	${LOCALBASE}/bin/jsmin:${PORTSDIR}/devel/jsmin
 
-NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.cpan"
 
 BUILD_DEPENDS+=	${CORE_DEPS}       \
@@ -195,8 +195,9 @@ CONFIGURE_ARGS+=	--enable-layout=${RT_LAYOUT} \
 CONFIGURE_ENV+=	PERL=${LOCALBASE}/bin/perl
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_FILES=	pkg-message
-SUB_LIST=	RT_ETC_PATH=${RT_ETC_PATH}
+SUB_FILES=	pkg-message pkg-install
+SUB_LIST=	RT_ETC_PATH=${RT_ETC_PATH} \
+		CFG_FILE=${RT_ETC_PATH}/RT_SiteConfig.pm
 
 run-autotools:	run-autotools-autoconf
 
@@ -229,12 +230,9 @@ pre-install:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/upgrade
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/upgrade
 	(cd ${WRKSRC}/etc && \
-	    ${COPYTREE_SHARE} upgrade ${DOCSDIR} "! -name *\.in")
+	    ${COPYTREE_SHARE} upgrade ${STAGEDIR}${DOCSDIR} "! -name *\.in")
 .endif
-	@[ -f ${RT_ETC_PATH}/RT_SiteConfig.pm ] || \
-		${CP} -p ${RT_ETC_PATH}/RT_SiteConfig.pm-dist ${RT_ETC_PATH}/RT_SiteConfig.pm
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

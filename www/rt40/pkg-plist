@@ -2,9 +2,7 @@ bin/rt
 bin/rt-crontool
 bin/rt-mailgate
 etc/rt40/RT_Config.pm
-@unexec if cmp -s %D/etc/rt40/RT_SiteConfig.pm %D/etc/rt40/RT_SiteConfig.pm-dist; then rm -f %D/etc/rt40/RT_SiteConfig.pm; fi
 etc/rt40/RT_SiteConfig.pm-dist
-@exec [ -f %B/RT_SiteConfig.pm ] || cp -p %B/%f %B/RT_SiteConfig.pm
 etc/rt40/acl.Oracle
 etc/rt40/acl.Pg
 etc/rt40/acl.mysql
