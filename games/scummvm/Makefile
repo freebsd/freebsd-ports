@@ -11,13 +11,11 @@ MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Interpreter for several adventure games
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 HAS_CONFIGURE=	yes
 USE_SDL=	sdl
 
-
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--with-sdl-prefix=${LOCALBASE} \
+CONFIGURE_ARGS=	--with-sdl-prefix=${LOCALBASE} \
 		--disable-alsa \
 		--with-zlib-prefix=/usr \
 		--disable-debug \
@@ -25,38 +23,11 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-tremor
 LDFLAGS+=	${PTHREAD_LIBS}
 
-OPTIONS_DEFINE=	VORBIS MP3 FLAC FLUIDSYNTH MT32EMU
+OPTIONS_DEFINE=	VORBIS MP3 PNG FLAC FLUIDSYNTH MT32EMU
 FLUIDSYNTH_DESC=	FluidSynth MIDI synthesizer
 MT32EMU_DESC=	MT-32 emulator
-OPTIONS_DEFAULT=	VORBIS MP3 MT32EMU
+OPTIONS_DEFAULT=	VORBIS MP3 PNG MT32EMU
 
-MAN6=		scummvm.6
-
-PORTDOCS=	AUTHORS NEWS README TODO COPYRIGHT
-ENGINEDATA=	drascula.dat \
-		hugo.dat \
-		kyra.dat \
-		lure.dat \
-		queen.tbl \
-		sky.cpt \
-		teenagent.dat \
-		toon.dat
-
-DESKTOP_ENTRIES="ScummVM" \
-		"ScummVM - Run classic adventure games" \
-		"${DATADIR}/scummvm.svg" \
-		"scummvm" \
-		"Game;AdventureGame;" \
-		false
-
-PLIST_FILES=	bin/scummvm \
-		%%DATADIR%%/scummvm.svg \
-		%%DATADIR%%/scummmodern.zip \
-		%%DATADIR%%/translations.dat \
-		$(ENGINEDATA:S/^/%%DATADIR%%\//)
-PLIST_DIRS=	%%DATADIR%%
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
@@ -64,8 +35,8 @@ BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg \
-		vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libogg.so:${PORTSDIR}/audio/libogg \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--with-ogg-prefix=${LOCALBASE} \
 		--with-vorbis-prefix=${LOCALBASE}
 .else
@@ -73,21 +44,28 @@ CONFIGURE_ARGS+=--disable-vorbis
 .endif
 
 .if ${PORT_OPTIONS:MMP3}
-LIB_DEPENDS+=	mad:${PORTSDIR}/audio/libmad
+LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad
 CONFIGURE_ARGS+=--with-mad-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--disable-mad
 .endif
 
+.if ${PORT_OPTIONS:MPNG}
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+CONFIGURE_ARGS+=--with-png-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--disable-png
+.endif
+
 .if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=--with-flac-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--disable-flac
 .endif
 
 .if ${PORT_OPTIONS:MFLUIDSYNTH}
-LIB_DEPENDS+=	fluidsynth:${PORTSDIR}/audio/fluidsynth
+LIB_DEPENDS+=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
 CONFIGURE_ARGS+=--with-fluidsynth-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--disable-fluidsynth
@@ -97,21 +75,8 @@ CONFIGURE_ARGS+=--disable-fluidsynth
 CONFIGURE_ARGS+=--disable-mt32emu
 .endif
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/scummvm ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/dists/scummvm.6 ${MAN6PREFIX}/man/man6
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/icons/scummvm.svg ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/gui/themes/scummmodern.zip ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/gui/themes/translations.dat ${DATADIR}
-.for i in ${ENGINEDATA}
-	@${INSTALL_DATA} ${WRKSRC}/dists/engine-data/${i} ${DATADIR}
-.endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
+post-install:
+	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/dists/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}/
 
 .include <bsd.port.mk>
