@@ -7,8 +7,6 @@
 %%XPI_XPIDIR%%/chrome/gdata-provider/content/gdata-migration.js
 %%XPI_XPIDIR%%/chrome/gdata-provider/skin/gdata-event-dialog-reminder.css
 %%XPI_XPIDIR%%/chrome/gdata-provider/skin/reminder-action-sms.png
-%%XPI_XPIDIR%%/chrome/gdata-provider-bg/locale/bg/gdata.dtd
-%%XPI_XPIDIR%%/chrome/gdata-provider-bg/locale/bg/gdata.properties
 %%XPI_XPIDIR%%/chrome/gdata-provider-ca/locale/ca/gdata.dtd
 %%XPI_XPIDIR%%/chrome/gdata-provider-ca/locale/ca/gdata.properties
 %%XPI_XPIDIR%%/chrome/gdata-provider-cs/locale/cs/gdata.dtd
@@ -39,8 +37,6 @@
 %%XPI_XPIDIR%%/chrome/gdata-provider-ga-IE/locale/ga-IE/gdata.properties
 %%XPI_XPIDIR%%/chrome/gdata-provider-gd/locale/gd/gdata.dtd
 %%XPI_XPIDIR%%/chrome/gdata-provider-gd/locale/gd/gdata.properties
-%%XPI_XPIDIR%%/chrome/gdata-provider-gl/locale/gl/gdata.dtd
-%%XPI_XPIDIR%%/chrome/gdata-provider-gl/locale/gl/gdata.properties
 %%XPI_XPIDIR%%/chrome/gdata-provider-hr/locale/hr/gdata.dtd
 %%XPI_XPIDIR%%/chrome/gdata-provider-hr/locale/hr/gdata.properties
 %%XPI_XPIDIR%%/chrome/gdata-provider-hu/locale/hu/gdata.dtd
@@ -71,14 +67,6 @@
 %%XPI_XPIDIR%%/chrome/gdata-provider-ru/locale/ru/gdata.properties
 %%XPI_XPIDIR%%/chrome/gdata-provider-sk/locale/sk/gdata.dtd
 %%XPI_XPIDIR%%/chrome/gdata-provider-sk/locale/sk/gdata.properties
-%%XPI_XPIDIR%%/chrome/gdata-provider-sq/locale/sq/gdata.dtd
-%%XPI_XPIDIR%%/chrome/gdata-provider-sq/locale/sq/gdata.properties
-%%XPI_XPIDIR%%/chrome/gdata-provider-sv-SE/locale/sv-SE/gdata.dtd
-%%XPI_XPIDIR%%/chrome/gdata-provider-sv-SE/locale/sv-SE/gdata.properties
-%%XPI_XPIDIR%%/chrome/gdata-provider-tr/locale/tr/gdata.dtd
-%%XPI_XPIDIR%%/chrome/gdata-provider-tr/locale/tr/gdata.properties
-%%XPI_XPIDIR%%/chrome/gdata-provider-uk/locale/uk/gdata.dtd
-%%XPI_XPIDIR%%/chrome/gdata-provider-uk/locale/uk/gdata.properties
 %%XPI_XPIDIR%%/chrome/gdata-provider-zh-CN/locale/zh-CN/gdata.dtd
 %%XPI_XPIDIR%%/chrome/gdata-provider-zh-CN/locale/zh-CN/gdata.properties
 %%XPI_XPIDIR%%/chrome/gdata-provider-zh-TW/locale/zh-TW/gdata.dtd
@@ -97,9 +85,6 @@
 @dirrm %%XPI_XPIDIR%%/chrome/gdata-provider/content
 @dirrm %%XPI_XPIDIR%%/chrome/gdata-provider/skin
 @dirrm %%XPI_XPIDIR%%/chrome/gdata-provider
-@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-bg/locale/bg
-@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-bg/locale
-@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-bg
 @dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-ca/locale/ca
 @dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-ca/locale
 @dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-ca
@@ -145,9 +130,6 @@
 @dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-gd/locale/gd
 @dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-gd/locale
 @dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-gd
-@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-gl/locale/gl
-@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-gl/locale
-@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-gl
 @dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-hr/locale/hr
 @dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-hr/locale
 @dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-hr
@@ -193,18 +175,6 @@
 @dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sk/locale/sk
 @dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sk/locale
 @dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sk
-@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sq/locale/sq
-@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sq/locale
-@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sq
-@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sv-SE/locale/sv-SE
-@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sv-SE/locale
-@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-sv-SE
-@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-tr/locale/tr
-@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-tr/locale
-@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-tr
-@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-uk/locale/uk
-@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-uk/locale
-@dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-uk
 @dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-zh-CN/locale/zh-CN
 @dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-zh-CN/locale
 @dirrm %%XPI_XPIDIR%%/chrome/gdata-provider-zh-CN
