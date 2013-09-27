@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rakudo
-PORTVERSION=	2013.08
+PORTVERSION=	2013.09
 PORTEPOCH=	4
 CATEGORIES=	lang
 MASTER_SITES=	http://rakudo.org/downloads/star/
