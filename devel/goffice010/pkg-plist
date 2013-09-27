@@ -278,6 +278,7 @@ share/doc/goffice-%%SHORT_VER%%/GogAxisLine.html
 share/doc/goffice-%%SHORT_VER%%/GogAxisMap.html
 share/doc/goffice-%%SHORT_VER%%/GogChart.html
 share/doc/goffice-%%SHORT_VER%%/GogChartMap.html
+share/doc/goffice-%%SHORT_VER%%/GogColorScale.html
 share/doc/goffice-%%SHORT_VER%%/GogDataEditor.html
 share/doc/goffice-%%SHORT_VER%%/GogDataset.html
 share/doc/goffice-%%SHORT_VER%%/GogErrorBar.html
