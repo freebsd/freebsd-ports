@@ -43,7 +43,9 @@
 #   			  is installed, bring in the default version. See
 #   			  ${_TCLTK_DEFAULT_VERSION} below.
 #
-# - 84, 85, 86		- Depend on a specific version series of PORT.
+# - 84, 85, 86		- Depend on a specific version series of PORT. Multiple
+#   			  values are OK. The highest version available is
+#   			  picked.
 #
 # - 84+, 85+, 86+	- Depend on any installed version greater or equal to
 #   			  the specified version.
@@ -58,51 +60,90 @@
 .if !defined(_INCLUDE_USES_TCL_MK)
 _INCLUDE_USES_TCL_MK=	yes
 
+#
+# List the currently available versions.
+#
 _TCLTK_VALID_VERSIONS=	84 85 86
 
+#
+# Bring in the default and check that the specified version is in the list of
+# valid versions.
+#
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 _TCLTK_DEFAULT_VERSION=	${TCLTK_DEFAULT:S/.//}
-
 .if ! ${_TCLTK_VALID_VERSIONS:M${_TCLTK_DEFAULT_VERSION}}
 IGNORE=	Invalid tcltk version ${TCLTK_DEFAULT}
 .endif
 
-# _TCLTK_PORT might be set to tk if USES+= tk was used
+#
+# _TCLTK_PORT tells us whether we're depending on Tcl or Tk. When using
+# USES+=tk, the included file tk.mk sets this before including this file.
+#
 _TCLTK_PORT?=	tcl
 
-# Parse arguments
+#
+# Build a make(1)-friendly list of arguments (i.e., space separated).
+#
 _TCL_ARGS=	${tcl_ARGS:S/,/ /g}
 
+#
+# Parse a ver+ argument.
+#
 .if ${_TCL_ARGS:M*+}
-#    using the ver+ variant
 _TCLTK_MIN_VERSION:=	${_TCL_ARGS:M*+:S/+//}
-_TCLTK_WANTED_VERSION:=	${_TCLTK_DEFAULT_VERSION}
+_TCLTK_WANTED_VERSIONS:=${_TCLTK_DEFAULT_VERSION}
 .endif
 
+#
+# Parse one or more ver arguments.
+#
 .if ${_TCL_ARGS:M8[4-6]}
-#    assume we specified a version
-_TCLTK_WANTED_VERSION:=	${_TCL_ARGS:M8[4-6]}
+_TCLTK_WANTED_VERSIONS:=${_TCL_ARGS:M8[4-6]}
 .endif
 
-.if ${_TCL_ARGS:Mwrapper} && defined(_TCLTK_WANTED_VERSION)
+#
+# It makes little sense to specify both the wrapper and a specific version.
+#
+.if ${_TCL_ARGS:Mwrapper} && defined(_TCLTK_WANTED_VERSIONS)
 IGNORE=	USES=${_TCLTK_PORT}: it is not possible to specify both a version and the wrapper: ${tcl_ARGS}
 .endif
 
-.if !defined(_TCLTK_WANTED_VERSION)
-_TCLTK_WANTED_VERSION=	${_TCLTK_DEFAULT_VERSION}
+#
+# If no version was specified with any of the ver or ver+ arguments, set the
+# default version.
+#
+.if !defined(_TCLTK_WANTED_VERSIONS)
+_TCLTK_WANTED_VERSIONS=	${_TCLTK_DEFAULT_VERSION}
 .endif
 
-# check that the specified ver+ is valid
-.if ! ${_TCLTK_VALID_VERSIONS:M${_TCLTK_WANTED_VERSION}}
-IGNORE=	USES=${_TCLTK_PORT}: incorrect ${_TCLTK_PORT} version specified: ${_TCLTK_WANTED_VERSION}
-.endif
-
+# 
+# Resolve minimum versions (ver+). Append anything greater or equal than the
+# specified minimum version to the list of wanted versions.
+#
 .if defined(_TCLTK_MIN_VERSION)
 .  for _v in ${_TCLTK_VALID_VERSIONS}
-.    if ${_TCLTK_MIN_VERSION} <= ${_v} && exists(${LOCALBASE}/lib/lib${_TCLTK_PORT}${_v}.so)
-_TCLTK_WANTED_VERSION=	${_v}
+.    if ${_TCLTK_MIN_VERSION} <= ${_v}
+_TCLTK_WANTED_VERSIONS+=${_v}
 .    endif
 .  endfor
+.endif
+
+#
+# Right now we have built a list of potential versions that we may depend on.
+# Let's sort them and remove any duplicates. We then locate the highest one
+# already installed, if any.
+#
+.for _v in ${_TCLTK_WANTED_VERSIONS:O:u}
+_TCLTK_HIGHEST_VERSION:=${_v}
+.  if exists(${LOCALBASE}/lib/lib${_TCLTK_PORT}${_v}.so)
+_TCLTK_WANTED_VERSION:=	${_v}
+.  endif
+.endfor
+
+#
+# If we couldn't find any wanted version installed, depend on the highest one.
+.if !defined(_TCLTK_WANTED_VERSION)
+_TCLTK_WANTED_VERSION:= ${_TCLTK_HIGHEST_VERSION}
 .endif
 
 #
