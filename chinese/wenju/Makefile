@@ -17,7 +17,6 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	NLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -27,8 +26,5 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-post-install:
-	${LOCALBASE}/bin/gtk-query-immodules-2.0 > ${PREFIX}/etc/gtk-2.0/gtk.immodules
 
 .include <bsd.port.mk>
