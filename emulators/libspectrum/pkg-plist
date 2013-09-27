@@ -4,6 +4,7 @@ lib/libspectrum.a
 lib/libspectrum.la
 lib/libspectrum.so
 lib/libspectrum.so.9
+man/man3/libspectrum.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README

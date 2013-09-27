@@ -18,12 +18,9 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USES=		gmake pkgconfig
 
-MAN3=		libspectrum.3
-
 OPTIONS_DEFINE=	AUDIOFILE
 AUDIOFILE_DESC=	Support loading from .wav files
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAUDIOFILE}
@@ -32,11 +29,11 @@ LIB_DEPENDS+=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 CONFIGURE_ARGS+=--without-libaudiofile
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} \
-		AUTHORS ChangeLog README THANKS doc/libspectrum.txt ${DOCSDIR}
+		AUTHORS ChangeLog README THANKS doc/libspectrum.txt ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
