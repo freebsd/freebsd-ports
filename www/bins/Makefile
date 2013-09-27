@@ -38,7 +38,6 @@ DOC_EXTS=	html sgml xml
 
 MAN1=	bins-edit-gui.1 bins.1 bins_edit.1
 
-NO_STAGE=	yes
 post-patch::
 # perl PREFIX safeness
 	@${FIND} ${WRKSRC} -type f | \
