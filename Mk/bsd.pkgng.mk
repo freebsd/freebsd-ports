@@ -263,8 +263,8 @@ check-already-installed:
 		pkgname=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
 		if [ -n "$${pkgname}" ]; then \
 			v=`${PKG_VERSION} -t $${pkgname} ${PKGNAME}`; \
-			if [ "w$${v}" = "x<" ]; then \
-				${ECHO_CMD} "===>   An older version of ${PKGORIGIN} is already installed ($${found_package})"; \
+			if [ "$${v}" = "<" ]; then \
+				${ECHO_CMD} "===>   An older version of ${PKGORIGIN} is already installed ($${pkgname})"; \
 			else \
 				${ECHO_CMD} "===>   ${PKGNAME} is already installed"; \
 			fi; \
