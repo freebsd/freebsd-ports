@@ -3940,7 +3940,11 @@ delete-package-list: delete-package-links-list
 
 .if !target(install-package)
 install-package:
+.if defined(FORCE_PKG_REGISTER)
+	@${PKG_ADD} -f ${PKGFILE}
+.else
 	@${PKG_ADD} ${PKGFILE}
+.endif
 .endif
 
 
