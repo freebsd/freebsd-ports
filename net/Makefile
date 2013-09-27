@@ -788,7 +788,6 @@
     SUBDIR += passlogd
     SUBDIR += pathneck
     SUBDIR += pbnc
-    SUBDIR += pcbsd-netmanager
     SUBDIR += pchar
     SUBDIR += pcnfsd
     SUBDIR += pdb

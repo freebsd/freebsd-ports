@@ -4959,3 +4959,4 @@ sysutils/libpcbsd||2013-09-26|Obsolete: Use sysutils/pcbsd-utils-qt4 instead
 sysutils/pbreg||2013-09-26|Obsolete: Use sysutils/pcbsd-utils instead
 sysutils/warden||2013-09-26|Obsolete: Use sysutils/pcbsd-utils instead
 ports-mgmt/pbi-manager||2013-09-26|Obsolete: Use sysutils/pcbsd-utils instead
+net/pcbsd-netmanager||2013-09-26|Obsolete: Use sysutils/pcbsd-utils-qt4 instead
