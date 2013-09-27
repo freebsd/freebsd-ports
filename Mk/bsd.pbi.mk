@@ -19,7 +19,7 @@ check-pbimanager:
 
 	@set -- chk=""; \
 	if [ -z "`which pbi_info`" ] ; then \
-		cd ${PORTSDIR}/ports-mgmt/pbi-manager && make install clean; \
+		cd ${PORTSDIR}/sysutils/pcbsd-utils && make install clean; \
 	fi
 
 pbi: pbi-generate
