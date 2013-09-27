@@ -15,8 +15,8 @@
 -BINDIR ?= $(DESTDIR)/bin
 -MAPDIR ?= $(DESTDIR)/etc/mapchan
 -LDFLAGS ?= -s
-+BINDIR?=$(PREFIX)/bin
-+MAPDIR?=$(PREFIX)/mapchan
++BINDIR?=${STAGEDIR}$(PREFIX)/bin
++MAPDIR?=${STAGEDIR}$(PREFIX)/mapchan
 +LDFLAGS+=-s -lutil
  LOADLIBES = -lutil
  #--------------------------------------------------------------
