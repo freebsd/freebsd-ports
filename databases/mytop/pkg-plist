@@ -1,3 +1,4 @@
 bin/mytop
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/mytop/.packlist
+man/man1/mytop.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/mytop
