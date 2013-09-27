@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PATH=/usr/sbin:/usr/bin:/bin ; export PATH
+
+CACHE_DIR=%%CACHE_DIR%%
+CACHE_OWNER=%%CACHE_OWNER%%
+CACHE_GROUP=%%CACHE_GROUP%%
+CACHE_MODE=%%CACHE_MODE%%
+CFG_FILE=%%CFG_FILE%%
+
+case $2 in
+    
+    # Create the cache directory and make it writable by group
+    # 'operator' by default.  Only if the cache directory doesn't
+    # already exist.  Have to do this by hand if installing via pkg.
+    #
+    # Add default copy of config file if no previous config file
+    # exists.
+
+    POST-INSTALL)
+	if [ ! -d ${CACHE_DIR} ] ; then
+	    mkdir -p ${CACHE_DIR}  
+	    chown ${CACHE_OWNER}:${CACHE_GROUP} ${CACHE_GROUP}
+	    chmod ${CACHE_MODE} ${CACHE_DIR}
+	fi
+	if [ ! -f ${CFG_FILE} ] ; then
+	    cp -p ${CFG_FILE}.sample ${CFG_FILE}
+	fi
+	;;
+esac
+
+#
+# That's All Folks!
+#
