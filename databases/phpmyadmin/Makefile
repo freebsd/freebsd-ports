@@ -42,7 +42,6 @@ XML_DESC=	PHP XML support (Export to OpenDoc)
 ZIP_DESC=	PHP Zip compression support
 ZLIB_DESC=	PHP ZLIB support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSUPHP}
@@ -59,7 +58,7 @@ WANT_PHP_WEB=	yes
 
 # USERS is only used with the SUPHP option
 GROUPS?=	${WWWGRP}
-CFGFILE=	config.inc.php
+CFG_FILE=	config.inc.php
 
 PLIST=		${WRKDIR}/plist
 PLIST_SUB+=	PMA_GRP=${GROUPS}
@@ -67,15 +66,16 @@ PLIST_SUB+=	PMA_GRP=${GROUPS}
 .if ${PORT_OPTIONS:MSUPHP}
 
 USERS?=		_pma
-
-SUB_LIST+=	PMA_USR=${USERS}     \
-		PMA_GRP=${GROUPS}
-SUB_FILES+=	pkg-install pkg-deinstall
+SUPHP_ENABLED=	yes
 
 .endif
 
-SUB_LIST+=	PKGNAME=${PKGNAME}
-SUB_FILES+=	pkg-message
+SUB_LIST+=	PKGNAME=${PKGNAME}	       \
+		PMA_USR=${USERS}	       \
+		PMA_GRP=${GROUPS}	       \
+		CFG_FILE=${WWWDIR}/${CFG_FILE} \
+		SUPHP_ENABLED=${SUPHP_ENABLED}
+SUB_FILES+=	pkg-install pkg-deinstall pkg-message
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
@@ -99,8 +99,8 @@ post-patch:
 	for emptydir in $$( ${FIND} . -type d -empty -print ) ; do \
 	    ${TOUCH} $${emptydir}/.keep-me ; \
 	done ; \
-	${CP} ${FILESDIR}/${CFGFILE}.sample ${WRKSRC}/${CFGFILE}.sample ; \
-	${FIND} . ! -type d ! -name ${CFGFILE}.sample ! -name '*.bak' | \
+	${CP} ${FILESDIR}/${CFG_FILE}.sample ${WRKSRC}/${CFG_FILE}.sample ; \
+	${FIND} . ! -type d ! -name ${CFG_FILE}.sample ! -name '*.bak' | \
 	    ${SORT} | ${SED} -e "s,^\.,%%WWWDIR%%,"   >${PLIST} ; \
 	${CAT} ${PKGDIR}/pkg-plist-chunk	     >>${PLIST} ; \
 	${FIND} . -type d | ${SORT} -r | ${SED} \
@@ -112,7 +112,7 @@ do-install: install-app install-conf
 install-app:
 	cd ${WRKSRC} ; \
 	for src in $$( ${FIND} . ! -name .cvsignore ! -name '*.bak' ) ; do \
-	    dst=${WWWDIR}$${src#.} ; \
+	    dst=${STAGEDIR}${WWWDIR}$${src#.} ; \
 	    if ${TEST} -d "$$src" ; then \
 		${MKDIR} "$$dst" ; \
 	    else \
@@ -121,17 +121,7 @@ install-app:
 	done
 
 install-conf: install-app
-	cd ${WWWDIR} ; \
-	${CHMOD} 0640 ${CFGFILE}.sample ; \
-	${CHGRP} ${WWWGRP} ${CFGFILE}.sample ; \
-	if ${TEST} ! -f ${CFGFILE} ; then \
-	    ${CP} -p ${CFGFILE}.sample ${CFGFILE} ; \
-	fi
-
-post-install:
-.if ${PORT_OPTIONS:MSUPHP}
-	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
-	${CAT} ${PKGMESSAGE}
+	${CHMOD} 0640 ${STAGEDIR}${WWWDIR}/${CFG_FILE}.sample ; \
+	${CHGRP} ${WWWGRP} ${STAGEDIR}${WWWDIR}/${CFG_FILE}.sample ;
 
 .include <bsd.port.mk>
