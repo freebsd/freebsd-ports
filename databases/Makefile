@@ -806,6 +806,7 @@
     SUBDIR += redigo
     SUBDIR += redis
     SUBDIR += redis-devel
+    SUBDIR += riak
     SUBDIR += rrdman
     SUBDIR += rrdmerge
     SUBDIR += rrdtool

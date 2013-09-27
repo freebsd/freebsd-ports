@@ -196,6 +196,7 @@ freeswitch:*:610:610::0:0:Freeswitch user:/nonexistent:/usr/sbin/nologin
 _pla:*:636:80::0:0:phpLDAPAdmin Owner:/nonexistent:/usr/sbin/nologin
 monkeysphere:*:641:641::0:0:Monkeysphere User:/var/monkeysphere:/usr/local/bin/bash
 aox:*:666:666::0:0:Archiveopteryx user:/nonexistent:/usr/sbin/nologin
+riak:*:667:667::0:0:Riak user:/usr/local/lib/riak:/bin/sh
 bnetd:*:700:700::0:0:Bnetd user:/nonexistent:/usr/sbin/nologin
 bopm:*:717:717::0:0:Blitzed Open Proxy Monitor:/nonexistent:/bin/sh
 openxpki:*:777:777::0:0:OpenXPKI Owner:/nonexistent:/usr/sbin/nologin
