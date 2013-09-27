@@ -14,7 +14,7 @@ RUN_DEPENDS=	\
 	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 	convert:${PORTSDIR}/graphics/ImageMagick \
 	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv \
-	p5-Text-Iconv>=0:${PORTSDIR}/textproc/p5-Text-Unaccent \
+	p5-Text-Unaccent>=0:${PORTSDIR}/textproc/p5-Text-Unaccent \
 	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 	p5-HTML-Clean>0:${PORTSDIR}/www/p5-HTML-Clean \
 	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
@@ -86,7 +86,7 @@ pre-everything::
 .if !defined(WITH_I18N)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_I18N to enable localization support.'
-	@${ECHO_MSG} '===>   Support for languages other than english.'
+	@${ECHO_MSG} '===> Support for languages other than english.'
 .endif
 	@${ECHO_MSG} '===>'
 
