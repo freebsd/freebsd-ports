@@ -503,18 +503,27 @@ PYDISTUTILS_INSTALLARGS:=	--record ${_PYTHONPKGLIST} \
 							${PYDISTUTILS_INSTALLARGS}
 
 _RELSITELIBDIR=	${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
+_RELLIBDIR=		${PYTHONPREFIX_LIBDIR:S;${PREFIX}/;;}
 
 add-plist-post:	add-plist-pymod
 add-plist-pymod:
-	{ ${ECHO_CMD} "#mtree"; ${CAT} ${MTREE_FILE}; } | ${TAR} tf - | \
+	@{ ${ECHO_CMD} "#mtree"; ${CAT} ${MTREE_FILE}; } | ${TAR} tf - | \
 		${SED} '/^\.$$/d' > ${WRKDIR}/.localmtree
-	${ECHO_CMD} "${_RELSITELIBDIR}" >> ${WRKDIR}/.localmtree
-	${SED} 's|^${PREFIX}/||' ${_PYTHONPKGLIST} | ${SORT} >> ${TMPPLIST}
-	${SED} -e 's|^${PREFIX}/\(.*\)/\(.*\)|\1|' ${_PYTHONPKGLIST} | \
+	@${ECHO_CMD} "${_RELSITELIBDIR}" >> ${WRKDIR}/.localmtree
+	@${ECHO_CMD} "${_RELLIBDIR}" >> ${WRKDIR}/.localmtree
+	@${SED} 's|^${PREFIX}/||' ${_PYTHONPKGLIST} | ${SORT} >> ${TMPPLIST}
+	@${SED} -e 's|^${PREFIX}/\(.*\)/\(.*\)|\1|' ${_PYTHONPKGLIST} | \
+		${AWK} '{ num = split($$0, a, "/"); res=""; \
+					for(i = 1; i <= num; ++i) { \
+						if (i == 1) res = a[i]; \
+						else res = res "/" a[i]; \
+						print res; \
+					} \
+				}' | \
 		while read line; do \
 			${GREP} -qw "^$${line}$$" ${WRKDIR}/.localmtree || { \
 				[ -n "$${line}" ] && \
-					${ECHO_CMD} "@unexec rmdir $${line} 2>/dev/null || true"; \
+				${ECHO_CMD} "@unexec rmdir \"%D/$${line}\" 2>/dev/null || true"; \
 			}; \
 		done | ${SORT} | uniq | ${SORT} -r >> ${TMPPLIST}
 
