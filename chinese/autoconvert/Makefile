@@ -24,7 +24,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PROJECTHOST=	libhz
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -32,8 +31,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ChangeLog Readme TODO Thanks Version ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ChangeLog Readme TODO Thanks Version ${STAGEDIR}/${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
