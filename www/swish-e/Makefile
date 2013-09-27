@@ -23,8 +23,8 @@ PORTDOCS=	*
 
 MAN1=		SWISH-CONFIG.1 SWISH-FAQ.1 SWISH-LIBRARY.1 SWISH-RUN.1 swish-e.1
 
-.if defined(NOPORTDOCS)
 NO_STAGE=	yes
+.if defined(NOPORTDOCS)
 post-patch:
 	@${REINPLACE_CMD} -E 's/^(install-data-am:) install-docDATA(.*)/\1\2/' \
 		${WRKSRC}/Makefile.in
