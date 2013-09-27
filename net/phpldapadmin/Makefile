@@ -20,7 +20,6 @@ DEFAULT_PHP_VER=	5
 OPTIONS_DEFINE=	SUPHP
 SUPHP_DESCR=	suPHP support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSUPHP}
@@ -75,7 +74,7 @@ install-app:
 	cd ${WRKSRC} ;				    \
 	for src in $$( ${FIND} . ! -name .cvsignore \
 			 ! -name .gitignore  ) ; do \
-	    dst=${WWWDIR}$${src#.} ;		    \
+	    dst=${STAGEDIR}${WWWDIR}$${src#.} ;	    \
 	    if ${TEST} -d $$src ; then		    \
 		${MKDIR} $$dst ;		    \
 	    else				    \
@@ -84,17 +83,11 @@ install-app:
 	done
 
 install-conf:
-	cd ${WWWDIR}/${CFGDIR} ;		     \
+	cd ${STAGEDIR}${WWWDIR}/${CFGDIR} ;	     \
 	${CHMOD} 0640 ${CFGFILE}.example ;	     \
 	${CHGRP} ${GROUPS} ${CFGFILE}.example ;	     \
 	if ${TEST} ! -f ${CFGFILE} ; then	     \
 	    ${CP} -p ${CFGFILE}.example ${CFGFILE} ; \
 	fi
-
-post-install:
-.if ${PORT_OPTIONS:MSUPHP}
-	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
