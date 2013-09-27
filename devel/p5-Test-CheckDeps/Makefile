@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-CheckDeps
-PORTVERSION=	0.006
+PORTVERSION=	0.008
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,14 +14,10 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-CPAN-Meta>=2.120920:${PORTSDIR}/devel/p5-CPAN-Meta \
-		p5-CPAN-Meta-Check>=0.004:${PORTSDIR}/devel/p5-CPAN-Meta-Check \
-		p5-Module-Build-Tiny>=0.021:${PORTSDIR}/devel/p5-Module-Build-Tiny
+		p5-CPAN-Meta-Check>=0.007:${PORTSDIR}/devel/p5-CPAN-Meta-Check
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	configure
 
-MAN3=		Test::CheckDeps.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
