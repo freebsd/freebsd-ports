@@ -17,18 +17,14 @@ LIB_DEPENDS=	libmowgli.so:${PORTSDIR}/devel/libmowgli
 
 USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gtk20
-CFLAGS+=	`pkg-config --cflags gtk+-2.0`
-MAKE_ENV=	MANPAGE_DIR=${MAN1PREFIX}/man/man1 \
-		LIBS="`pkg-config --libs gtk+-2.0`"
 
 PLIST_FILES=	bin/wmauda \
 		man/man1/wmauda.1.gz \
 		share/pixmaps/wmauda.xpm
 
 post-patch:
-	@${REINPLACE_CMD} -E 's,^(MANPAGE_DIR.*):=,\1\?=,; \
-			      s,^(LIBS.*):=,\1\+=,; \
-			      s,audacious,& audclient,' \
+	@${REINPLACE_CMD} -e "/^MANPAGE_DIR.*:=/s,:=.*,:= ${MAN1PREFIX}/man/man1," \
+			  -e 's,audacious,& audclient dbus-glib-1,' \
 		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
