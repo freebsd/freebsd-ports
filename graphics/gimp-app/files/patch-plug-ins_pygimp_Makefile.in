@@ -88,7 +88,7 @@
 -	$(libgimp)		\
 -	$(libgimpcolor)		\
 -	$(libgimpbase)		\
-+	%%GIMP_LIBS%%		\
++	%%GIMP_UI_LIBS%%	\
  	$(GTK_LIBS)		\
  	$(PYLINK_LIBS)		\
  	$(RT_LIBS)		\
@@ -97,7 +97,7 @@
  
  gimpthumb_la_LIBADD = \
 -	$(libgimpthumb)		\
-+	%%GIMP_LIBS%%		\
++	%%GIMP_THUMB_LIBS%%	\
  	$(GDK_PIXBUF_LIBS)	\
  	$(PYLINK_LIBS)
  
