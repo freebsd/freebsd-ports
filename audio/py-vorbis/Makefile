@@ -14,12 +14,11 @@ COMMENT=	Object-oriented Python bindings for the vorbis library
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:${PORTSDIR}/audio/py-ogg
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:${PORTSDIR}/audio/py-ogg
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/ogg/vorbis.so
-USE_PYTHON=		yes
-NO_STAGE=	yes
+USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=	pyvorbis
 
 post-patch:

@@ -1,7 +1,0 @@
-%%PYTHON_INCLUDEDIR%%/pyogg/pyogg.h
-%%PYTHON_SITELIBDIR%%/ogg/__init__.py
-%%PYTHON_SITELIBDIR%%/ogg/__init__.pyc
-%%PYTHON_SITELIBDIR%%/ogg/__init__.pyo
-%%PYTHON_SITELIBDIR%%/ogg/_ogg.so
-@dirrm %%PYTHON_SITELIBDIR%%/ogg
-@dirrm %%PYTHON_INCLUDEDIR%%/pyogg
