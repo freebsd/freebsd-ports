@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Warnings
-PORTVERSION=	0.009
+PORTVERSION=	0.010
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,14 +14,14 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny \
-		p5-Test-CheckDeps>=0.006:${PORTSDIR}/devel/p5-Test-CheckDeps \
+		p5-Test-CheckDeps>=0.007:${PORTSDIR}/devel/p5-Test-CheckDeps \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Tester>=0.108:${PORTSDIR}/devel/p5-Test-Tester
 
+NO_STAGE=	yes
 USE_PERL5=	modbuildtiny
 USES=		perl5
 
 MAN3=		Test::Warnings.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
