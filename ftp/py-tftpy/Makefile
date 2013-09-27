@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tftpy
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	ftp python
 MASTER_SITES=	SF \
 		CHEESESHOP
@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure Python TFTP Implementation
 
+NO_STAGE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
