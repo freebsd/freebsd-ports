@@ -4,6 +4,12 @@ bin/find-updated
 bin/make-readmes
 bin/portindex
 bin/portdepends
+man/man1/cache-init.1.gz
+man/man1/cache-update.1.gz
+man/man1/find-updated.1.gz
+man/man1/make-readmes.1.gz
+man/man1/portdepends.1.gz
+man/man1/portindex.1.gz
 @unexec if cmp -s %D/etc/portindex.cfg.sample %D/etc/portindex.cfg ; then rm -f %D/etc/portindex.cfg ; fi
 etc/portindex.cfg.sample
 @exec [ ! -f %B/portindex.cfg ] && cp -p %B/%f %B/portindex.cfg || true
