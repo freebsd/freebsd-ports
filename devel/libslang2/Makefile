@@ -25,7 +25,6 @@ CONFIGURE_ARGS+=--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 ALL_TARGET=	all static
 INSTALL_TARGET=	install install-static
 
-MAN1=		slsh.1
 DOCSDIR=	${PREFIX}/share/doc/slang
 DATADIR=	${PREFIX}/share/slsh
 
@@ -36,7 +35,6 @@ ONIG_DESC=	Oniguruma support
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPCRE}
