@@ -15,14 +15,12 @@ COMMENT=	Python wrapper for audio device abstraction library (libao)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao
+LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
 
-USE_PYTHON=		yes
-NO_STAGE=	yes
+USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=	pyao
-
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/aomodule.so
 
 do-configure:
 	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} config_unix.py \

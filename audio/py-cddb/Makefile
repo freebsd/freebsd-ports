@@ -11,10 +11,10 @@ DISTNAME=	CDDB-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module to fetch information on audio CDs from CDDB
 
-USE_PYTHON=	yes
-NO_STAGE=	yes
+USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=	CDDB
 
 .include <bsd.port.mk>

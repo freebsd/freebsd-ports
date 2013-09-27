@@ -11,16 +11,16 @@ MASTER_SITES=	http://www.pysol.org/download/pysol/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python extension module to play sounds and background music
 
-LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pysolsoundserver.so
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_SDL=	mixer sdl
-NO_STAGE=	yes
 USE_BZIP2=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 HAS_CONFIGURE=	yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 INSTALLS_EGGINFO=	yes
 PYDISTUTILS_PKGNAME=	pysolsoundserver
 
