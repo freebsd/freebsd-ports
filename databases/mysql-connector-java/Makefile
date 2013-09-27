@@ -18,7 +18,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 BUILDDIR=	${WRKDIR}/${DISTNAME}
-APIDOCSDIR=	${DOCSDIR}/javadoc
+APIDOCSDIR=	${STAGEDIR}${DOCSDIR}/javadoc
 SRCDIR=		${WRKDIR}/${DISTNAME}/src
 JAVADOCDIR=	${WRKDIR}/${DISTNAME}/javadoc
 DESTJARFILE=	${PORTNAME}.jar
@@ -28,7 +28,6 @@ JDCLASSPATH=	${SRCDIR}:${CLASSPATH}
 
 PLIST_FILES=	%%JAVAJARDIR%%/${DESTJARFILE}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -47,7 +46,7 @@ do-install: do-install-jar do-install-apidocs
 
 do-install-jar:
 	@${ECHO_MSG} -n ">> Installing .jar files..."
-	@${INSTALL_DATA} ${BUILDDIR}/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}
+	@${INSTALL_DATA} ${BUILDDIR}/${JARFILE} ${STAGEDIR}${JAVAJARDIR}/${DESTJARFILE}
 	@${ECHO_MSG} " [ DONE ]"
 
 do-install-apidocs:
@@ -63,7 +62,7 @@ do-install-apidocs:
 	    fi \
 	done
 	@for extradoc in ${EXTRADOCS} ; do                          \
-	  ${INSTALL_DATA} ${INSTALL_WRKSRC}/$$extradoc ${DOCSDIR} ; \
+	  ${INSTALL_DATA} ${INSTALL_WRKSRC}/$$extradoc ${STAGEDIR}${DOCSDIR} ; \
 	done
 	@${ECHO_MSG} " [ DONE ]"
 .endif
