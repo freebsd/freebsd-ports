@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httpclient
-DISTVERSION=	4.2.5
+DISTVERSION=	4.3
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	httpcomponents/${PORTNAME}/binary
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/httpcore.jar:${PORTSDIR}/www/httpcore \
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/httpcomponents-client-${DISTVERSION}
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		%%JAVAJARDIR%%/${PORTNAME}-cache.jar \
