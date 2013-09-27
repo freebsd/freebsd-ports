@@ -13,7 +13,6 @@ USE_XORG=	x11 ice xproto xt xaw xext
 GNU_CONFIGURE=	yes
 USES=		gmake
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|/fluxbox|/${PORTNAME}|g" \
 		${WRKSRC}/Makefile.in ${WRKSRC}/data/README.fluxter \
