@@ -1,7 +1,7 @@
 *****************************************************************
 
  To use ViewVC, modify the configuration file located at
- %%INSTDIR%%/viewvc.conf.
+ %%PREFIX%%/viewvc/viewvc.conf.
 
  If no webserver was selected during installation, then
  a rc script for running ViewVC standalone is installed.
@@ -45,7 +45,7 @@
  $HTTP["url"] =~ "^/viewvc/" {
    index-file.names  = ( "viewvc.cgi" )
      cgi.assign = (
-       ".cgi" => "%%PREFIX%%/bin/python",
+       ".cgi" => "%%PYTHON_CMD%%",
      )
  }
 

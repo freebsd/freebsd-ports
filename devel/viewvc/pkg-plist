@@ -1,282 +1,282 @@
-@unexec if cmp -s %D/%%INSTDIR%%/cvsgraph.conf %D/%%INSTDIR%%/cvsgraph.conf.dist; then rm -f %D/%%INSTDIR%%/cvsgraph.conf; fi
-@unexec if cmp -s %D/%%INSTDIR%%/mimetypes.conf %D/%%INSTDIR%%/mimetypes.conf.dist; then rm -f %D/%%INSTDIR%%/mimetypes.conf; fi
-@unexec if cmp -s %D/%%INSTDIR%%/viewvc.conf %D/%%INSTDIR%%/viewvc.conf.dist; then rm -f %D/%%INSTDIR%%/viewvc.conf; fi
-%%INSTDIR%%/bin/wsgi/query.fcgi
-%%INSTDIR%%/bin/wsgi/query.wsgi
-%%INSTDIR%%/bin/wsgi/viewvc.fcgi
-%%INSTDIR%%/bin/wsgi/viewvc.wsgi
-%%INSTDIR%%/bin/cgi/viewvc.cgi
-%%INSTDIR%%/bin/cgi/query.cgi
-%%INSTDIR%%/bin/mod_python/viewvc.py
-%%INSTDIR%%/bin/mod_python/query.py
-%%INSTDIR%%/bin/mod_python/handler.py
-%%INSTDIR%%/bin/mod_python/.htaccess
-%%INSTDIR%%/bin/standalone.py
-%%INSTDIR%%/bin/loginfo-handler
-%%INSTDIR%%/bin/cvsdbadmin
-%%INSTDIR%%/bin/svndbadmin
-%%INSTDIR%%/bin/make-database
-%%INSTDIR%%/cvsgraph.conf.dist
+@unexec if cmp -s %D/viewvc/cvsgraph.conf %D/viewvc/cvsgraph.conf.dist; then rm -f %D/viewvc/cvsgraph.conf; fi
+@unexec if cmp -s %D/viewvc/mimetypes.conf %D/viewvc/mimetypes.conf.dist; then rm -f %D/viewvc/mimetypes.conf; fi
+@unexec if cmp -s %D/viewvc/viewvc.conf %D/viewvc/viewvc.conf.dist; then rm -f %D/viewvc/viewvc.conf; fi
+viewvc/bin/cgi/query.cgi
+viewvc/bin/cgi/viewvc.cgi
+viewvc/bin/cvsdbadmin
+viewvc/bin/loginfo-handler
+viewvc/bin/make-database
+viewvc/bin/mod_python/.htaccess
+viewvc/bin/mod_python/handler.py
+viewvc/bin/mod_python/query.py
+viewvc/bin/mod_python/viewvc.py
+viewvc/bin/standalone.py
+viewvc/bin/svndbadmin
+viewvc/bin/wsgi/query.fcgi
+viewvc/bin/wsgi/query.wsgi
+viewvc/bin/wsgi/viewvc.fcgi
+viewvc/bin/wsgi/viewvc.wsgi
+viewvc/cvsgraph.conf.dist
 @exec [ -f %B/cvsgraph.conf ] || cp %B/%f %B/cvsgraph.conf
-%%INSTDIR%%/lib/PyFontify.py
-%%INSTDIR%%/lib/PyFontify.pyc
-%%INSTDIR%%/lib/accept.py
-%%INSTDIR%%/lib/accept.pyc
-%%INSTDIR%%/lib/blame.py
-%%INSTDIR%%/lib/blame.pyc
-%%INSTDIR%%/lib/compat.py
-%%INSTDIR%%/lib/compat.pyc
-%%INSTDIR%%/lib/compat_difflib.py
-%%INSTDIR%%/lib/compat_difflib.pyc
-%%INSTDIR%%/lib/compat_ndiff.py
-%%INSTDIR%%/lib/compat_ndiff.pyc
-%%INSTDIR%%/lib/config.py
-%%INSTDIR%%/lib/config.pyc
-%%INSTDIR%%/lib/cvsdb.py
-%%INSTDIR%%/lib/cvsdb.pyc
-%%INSTDIR%%/lib/dbi.py
-%%INSTDIR%%/lib/dbi.pyc
-%%INSTDIR%%/lib/debug.py
-%%INSTDIR%%/lib/debug.pyc
-%%INSTDIR%%/lib/ezt.py
-%%INSTDIR%%/lib/ezt.pyc
-%%INSTDIR%%/lib/idiff.py
-%%INSTDIR%%/lib/idiff.pyc
-%%INSTDIR%%/lib/popen.py
-%%INSTDIR%%/lib/popen.pyc
-%%INSTDIR%%/lib/py2html.py
-%%INSTDIR%%/lib/py2html.pyc
-%%INSTDIR%%/lib/query.py
-%%INSTDIR%%/lib/query.pyc
-%%INSTDIR%%/lib/sapi.py
-%%INSTDIR%%/lib/sapi.pyc
-%%INSTDIR%%/lib/vcauth/__init__.py
-%%INSTDIR%%/lib/vcauth/__init__.pyc
-%%INSTDIR%%/lib/vcauth/forbidden/__init__.py
-%%INSTDIR%%/lib/vcauth/forbidden/__init__.pyc
-%%INSTDIR%%/lib/vcauth/forbiddenre/__init__.py
-%%INSTDIR%%/lib/vcauth/forbiddenre/__init__.pyc
-%%INSTDIR%%/lib/vcauth/svnauthz/__init__.py
-%%INSTDIR%%/lib/vcauth/svnauthz/__init__.pyc
-%%INSTDIR%%/lib/vclib/__init__.py
-%%INSTDIR%%/lib/vclib/__init__.pyc
-%%INSTDIR%%/lib/vclib/ccvs/__init__.py
-%%INSTDIR%%/lib/vclib/ccvs/__init__.pyc
-%%INSTDIR%%/lib/vclib/ccvs/bincvs.py
-%%INSTDIR%%/lib/vclib/ccvs/bincvs.pyc
-%%INSTDIR%%/lib/vclib/ccvs/blame.py
-%%INSTDIR%%/lib/vclib/ccvs/blame.pyc
-%%INSTDIR%%/lib/vclib/ccvs/ccvs.py
-%%INSTDIR%%/lib/vclib/ccvs/ccvs.pyc
-%%INSTDIR%%/lib/vclib/ccvs/rcsparse/__init__.py
-%%INSTDIR%%/lib/vclib/ccvs/rcsparse/__init__.pyc
-%%INSTDIR%%/lib/vclib/ccvs/rcsparse/common.py
-%%INSTDIR%%/lib/vclib/ccvs/rcsparse/common.pyc
-%%INSTDIR%%/lib/vclib/ccvs/rcsparse/debug.py
-%%INSTDIR%%/lib/vclib/ccvs/rcsparse/debug.pyc
-%%INSTDIR%%/lib/vclib/ccvs/rcsparse/default.py
-%%INSTDIR%%/lib/vclib/ccvs/rcsparse/default.pyc
-%%INSTDIR%%/lib/vclib/ccvs/rcsparse/parse_rcs_file.py
-%%INSTDIR%%/lib/vclib/ccvs/rcsparse/parse_rcs_file.pyc
-%%INSTDIR%%/lib/vclib/ccvs/rcsparse/run-tests.py
-%%INSTDIR%%/lib/vclib/ccvs/rcsparse/run-tests.pyc
-%%INSTDIR%%/lib/vclib/ccvs/rcsparse/test-data/default,v
-%%INSTDIR%%/lib/vclib/ccvs/rcsparse/test-data/default.out
-%%INSTDIR%%/lib/vclib/ccvs/rcsparse/test-data/empty-file,v
-%%INSTDIR%%/lib/vclib/ccvs/rcsparse/test-data/empty-file.out
-%%INSTDIR%%/lib/vclib/ccvs/rcsparse/texttools.py
-%%INSTDIR%%/lib/vclib/ccvs/rcsparse/texttools.pyc
-%%INSTDIR%%/lib/vclib/svn/__init__.py
-%%INSTDIR%%/lib/vclib/svn/__init__.pyc
-%%INSTDIR%%/lib/vclib/svn/svn_ra.py
-%%INSTDIR%%/lib/vclib/svn/svn_ra.pyc
-%%INSTDIR%%/lib/vclib/svn/svn_repos.py
-%%INSTDIR%%/lib/vclib/svn/svn_repos.pyc
-%%INSTDIR%%/lib/viewvc.py
-%%INSTDIR%%/lib/viewvc.pyc
-%%INSTDIR%%/lib/win32popen.py
-%%INSTDIR%%/lib/win32popen.pyc
-%%INSTDIR%%/mimetypes.conf.dist
+viewvc/lib/PyFontify.py
+viewvc/lib/PyFontify.pyc
+viewvc/lib/accept.py
+viewvc/lib/accept.pyc
+viewvc/lib/blame.py
+viewvc/lib/blame.pyc
+viewvc/lib/compat.py
+viewvc/lib/compat.pyc
+viewvc/lib/compat_difflib.py
+viewvc/lib/compat_difflib.pyc
+viewvc/lib/compat_ndiff.py
+viewvc/lib/compat_ndiff.pyc
+viewvc/lib/config.py
+viewvc/lib/config.pyc
+viewvc/lib/cvsdb.py
+viewvc/lib/cvsdb.pyc
+viewvc/lib/dbi.py
+viewvc/lib/dbi.pyc
+viewvc/lib/debug.py
+viewvc/lib/debug.pyc
+viewvc/lib/ezt.py
+viewvc/lib/ezt.pyc
+viewvc/lib/idiff.py
+viewvc/lib/idiff.pyc
+viewvc/lib/popen.py
+viewvc/lib/popen.pyc
+viewvc/lib/py2html.py
+viewvc/lib/py2html.pyc
+viewvc/lib/query.py
+viewvc/lib/query.pyc
+viewvc/lib/sapi.py
+viewvc/lib/sapi.pyc
+viewvc/lib/vcauth/__init__.py
+viewvc/lib/vcauth/__init__.pyc
+viewvc/lib/vcauth/forbidden/__init__.py
+viewvc/lib/vcauth/forbidden/__init__.pyc
+viewvc/lib/vcauth/forbiddenre/__init__.py
+viewvc/lib/vcauth/forbiddenre/__init__.pyc
+viewvc/lib/vcauth/svnauthz/__init__.py
+viewvc/lib/vcauth/svnauthz/__init__.pyc
+viewvc/lib/vclib/__init__.py
+viewvc/lib/vclib/__init__.pyc
+viewvc/lib/vclib/ccvs/__init__.py
+viewvc/lib/vclib/ccvs/__init__.pyc
+viewvc/lib/vclib/ccvs/bincvs.py
+viewvc/lib/vclib/ccvs/bincvs.pyc
+viewvc/lib/vclib/ccvs/blame.py
+viewvc/lib/vclib/ccvs/blame.pyc
+viewvc/lib/vclib/ccvs/ccvs.py
+viewvc/lib/vclib/ccvs/ccvs.pyc
+viewvc/lib/vclib/ccvs/rcsparse/__init__.py
+viewvc/lib/vclib/ccvs/rcsparse/__init__.pyc
+viewvc/lib/vclib/ccvs/rcsparse/common.py
+viewvc/lib/vclib/ccvs/rcsparse/common.pyc
+viewvc/lib/vclib/ccvs/rcsparse/debug.py
+viewvc/lib/vclib/ccvs/rcsparse/debug.pyc
+viewvc/lib/vclib/ccvs/rcsparse/default.py
+viewvc/lib/vclib/ccvs/rcsparse/default.pyc
+viewvc/lib/vclib/ccvs/rcsparse/parse_rcs_file.py
+viewvc/lib/vclib/ccvs/rcsparse/parse_rcs_file.pyc
+viewvc/lib/vclib/ccvs/rcsparse/run-tests.py
+viewvc/lib/vclib/ccvs/rcsparse/run-tests.pyc
+viewvc/lib/vclib/ccvs/rcsparse/test-data/default,v
+viewvc/lib/vclib/ccvs/rcsparse/test-data/default.out
+viewvc/lib/vclib/ccvs/rcsparse/test-data/empty-file,v
+viewvc/lib/vclib/ccvs/rcsparse/test-data/empty-file.out
+viewvc/lib/vclib/ccvs/rcsparse/texttools.py
+viewvc/lib/vclib/ccvs/rcsparse/texttools.pyc
+viewvc/lib/vclib/svn/__init__.py
+viewvc/lib/vclib/svn/__init__.pyc
+viewvc/lib/vclib/svn/svn_ra.py
+viewvc/lib/vclib/svn/svn_ra.pyc
+viewvc/lib/vclib/svn/svn_repos.py
+viewvc/lib/vclib/svn/svn_repos.pyc
+viewvc/lib/viewvc.py
+viewvc/lib/viewvc.pyc
+viewvc/lib/win32popen.py
+viewvc/lib/win32popen.pyc
+viewvc/mimetypes.conf.dist
 @exec [ -f %B/mimetypes.conf ] || cp %B/%f %B/mimetypes.conf
-%%INSTDIR%%/templates/diff.ezt
-%%INSTDIR%%/templates/dir_new.ezt
-%%INSTDIR%%/templates/directory.ezt
-%%INSTDIR%%/templates/docroot/help.css
-%%INSTDIR%%/templates/docroot/help_dirview.html
-%%INSTDIR%%/templates/docroot/help_log.html
-%%INSTDIR%%/templates/docroot/help_query.html
-%%INSTDIR%%/templates/docroot/help_rootview.html
-%%INSTDIR%%/templates/docroot/images/annotate.png
-%%INSTDIR%%/templates/docroot/images/back.png
-%%INSTDIR%%/templates/docroot/images/back_small.png
-%%INSTDIR%%/templates/docroot/images/broken.png
-%%INSTDIR%%/templates/docroot/images/chalk.jpg
-%%INSTDIR%%/templates/docroot/images/cvsgraph_16x16.png
-%%INSTDIR%%/templates/docroot/images/cvsgraph_32x32.png
-%%INSTDIR%%/templates/docroot/images/diff.png
-%%INSTDIR%%/templates/docroot/images/dir.png
-%%INSTDIR%%/templates/docroot/images/down.png
-%%INSTDIR%%/templates/docroot/images/download.png
-%%INSTDIR%%/templates/docroot/images/favicon.ico
-%%INSTDIR%%/templates/docroot/images/feed-icon-16x16.jpg
-%%INSTDIR%%/templates/docroot/images/forward.png
-%%INSTDIR%%/templates/docroot/images/list.png
-%%INSTDIR%%/templates/docroot/images/lock.png
-%%INSTDIR%%/templates/docroot/images/log.png
-%%INSTDIR%%/templates/docroot/images/text.png
-%%INSTDIR%%/templates/docroot/images/up.png
-%%INSTDIR%%/templates/docroot/images/view.png
-%%INSTDIR%%/templates/docroot/images/viewvc-logo.png
-%%INSTDIR%%/templates/docroot/styles.css
-%%INSTDIR%%/templates/error.ezt
-%%INSTDIR%%/templates/file.ezt
-%%INSTDIR%%/templates/graph.ezt
-%%INSTDIR%%/templates/include/diff_form.ezt
-%%INSTDIR%%/templates/include/dir_footer.ezt
-%%INSTDIR%%/templates/include/dir_header.ezt
-%%INSTDIR%%/templates/include/file_header.ezt
-%%INSTDIR%%/templates/include/footer.ezt
-%%INSTDIR%%/templates/include/header.ezt
-%%INSTDIR%%/templates/include/log_footer.ezt
-%%INSTDIR%%/templates/include/log_header.ezt
-%%INSTDIR%%/templates/include/paging.ezt
-%%INSTDIR%%/templates/include/pathrev_form.ezt
-%%INSTDIR%%/templates/include/props.ezt
-%%INSTDIR%%/templates/include/sort.ezt
-%%INSTDIR%%/templates/log.ezt
-%%INSTDIR%%/templates/log_table.ezt
-%%INSTDIR%%/templates/query.ezt
-%%INSTDIR%%/templates/query_form.ezt
-%%INSTDIR%%/templates/query_results.ezt
-%%INSTDIR%%/templates/revision.ezt
-%%INSTDIR%%/templates/roots.ezt
-%%INSTDIR%%/templates/rss.ezt
-%%INSTDIR%%/templates-contrib/README
-%%INSTDIR%%/templates-contrib/newvc/README
-%%INSTDIR%%/templates-contrib/newvc/templates/diff.ezt
-%%INSTDIR%%/templates-contrib/newvc/templates/directory.ezt
-%%INSTDIR%%/templates-contrib/newvc/templates/docroot/help.css
-%%INSTDIR%%/templates-contrib/newvc/templates/docroot/help_dirview.html
-%%INSTDIR%%/templates-contrib/newvc/templates/docroot/help_log.html
-%%INSTDIR%%/templates-contrib/newvc/templates/docroot/help_query.html
-%%INSTDIR%%/templates-contrib/newvc/templates/docroot/help_rootview.html
-%%INSTDIR%%/templates-contrib/newvc/templates/docroot/images/back.png
-%%INSTDIR%%/templates-contrib/newvc/templates/docroot/images/back_small.png
-%%INSTDIR%%/templates-contrib/newvc/templates/docroot/images/broken.png
-%%INSTDIR%%/templates-contrib/newvc/templates/docroot/images/cvs-logo.png
-%%INSTDIR%%/templates-contrib/newvc/templates/docroot/images/dir.png
-%%INSTDIR%%/templates-contrib/newvc/templates/docroot/images/down.png
-%%INSTDIR%%/templates-contrib/newvc/templates/docroot/images/feed-icon-16x16.jpg
-%%INSTDIR%%/templates-contrib/newvc/templates/docroot/images/forward.png
-%%INSTDIR%%/templates-contrib/newvc/templates/docroot/images/svn-logo.png
-%%INSTDIR%%/templates-contrib/newvc/templates/docroot/images/text.png
-%%INSTDIR%%/templates-contrib/newvc/templates/docroot/images/up.png
-%%INSTDIR%%/templates-contrib/newvc/templates/docroot/images/viewvc-logo.png
-%%INSTDIR%%/templates-contrib/newvc/templates/docroot/scripts.js
-%%INSTDIR%%/templates-contrib/newvc/templates/docroot/styles.css
-%%INSTDIR%%/templates-contrib/newvc/templates/error.ezt
-%%INSTDIR%%/templates-contrib/newvc/templates/file.ezt
-%%INSTDIR%%/templates-contrib/newvc/templates/graph.ezt
-%%INSTDIR%%/templates-contrib/newvc/templates/include/diff_form.ezt
-%%INSTDIR%%/templates-contrib/newvc/templates/include/fileview.ezt
-%%INSTDIR%%/templates-contrib/newvc/templates/include/footer.ezt
-%%INSTDIR%%/templates-contrib/newvc/templates/include/header.ezt
-%%INSTDIR%%/templates-contrib/newvc/templates/include/pathrev_form.ezt
-%%INSTDIR%%/templates-contrib/newvc/templates/include/props.ezt
-%%INSTDIR%%/templates-contrib/newvc/templates/log.ezt
-%%INSTDIR%%/templates-contrib/newvc/templates/markup.ezt
-%%INSTDIR%%/templates-contrib/newvc/templates/query.ezt
-%%INSTDIR%%/templates-contrib/newvc/templates/query_form.ezt
-%%INSTDIR%%/templates-contrib/newvc/templates/query_results.ezt
-%%INSTDIR%%/templates-contrib/newvc/templates/revision.ezt
-%%INSTDIR%%/templates-contrib/newvc/templates/roots.ezt
-%%INSTDIR%%/templates-contrib/newvc/templates/rss.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/INSTALL
-%%INSTDIR%%/templates-contrib/viewsvn/README
-%%INSTDIR%%/templates-contrib/viewsvn/extras/svnindex.css
-%%INSTDIR%%/templates-contrib/viewsvn/extras/svnindex.xsl
-%%INSTDIR%%/templates-contrib/viewsvn/screenshots/diff.png
-%%INSTDIR%%/templates-contrib/viewsvn/screenshots/dir.png
-%%INSTDIR%%/templates-contrib/viewsvn/screenshots/log.png
-%%INSTDIR%%/templates-contrib/viewsvn/screenshots/markup.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/diff.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/directory.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/broken.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/dir.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/down.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/download.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/favicon-svn.ico
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/feed-icon-16x16.jpg
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/logo-svn.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/logo-viewvc.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/svn.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/text.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/back.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/back_small.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/blame.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/checkout.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/diff.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/forward.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/license.txt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/log.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/patch.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/repos.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/tsvn.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/up.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/viewvc.png
-%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/styles.css
-%%INSTDIR%%/templates-contrib/viewsvn/templates/error.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/file.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/include/diff_form.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/include/dir_footer.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/include/dir_header.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/include/file_header.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/include/footer.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/include/header.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/include/log_footer.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/include/log_header.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/include/paging.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/include/pathrev_form.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/include/props.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/log.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/query.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/query_form.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/query_results.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/revision.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/roots.ezt
-%%INSTDIR%%/templates-contrib/viewsvn/templates/rss.ezt
-%%INSTDIR%%/viewvc.conf.dist
+viewvc/templates-contrib/README
+viewvc/templates-contrib/newvc/README
+viewvc/templates-contrib/newvc/templates/diff.ezt
+viewvc/templates-contrib/newvc/templates/directory.ezt
+viewvc/templates-contrib/newvc/templates/docroot/help.css
+viewvc/templates-contrib/newvc/templates/docroot/help_dirview.html
+viewvc/templates-contrib/newvc/templates/docroot/help_log.html
+viewvc/templates-contrib/newvc/templates/docroot/help_query.html
+viewvc/templates-contrib/newvc/templates/docroot/help_rootview.html
+viewvc/templates-contrib/newvc/templates/docroot/images/back.png
+viewvc/templates-contrib/newvc/templates/docroot/images/back_small.png
+viewvc/templates-contrib/newvc/templates/docroot/images/broken.png
+viewvc/templates-contrib/newvc/templates/docroot/images/cvs-logo.png
+viewvc/templates-contrib/newvc/templates/docroot/images/dir.png
+viewvc/templates-contrib/newvc/templates/docroot/images/down.png
+viewvc/templates-contrib/newvc/templates/docroot/images/feed-icon-16x16.jpg
+viewvc/templates-contrib/newvc/templates/docroot/images/forward.png
+viewvc/templates-contrib/newvc/templates/docroot/images/svn-logo.png
+viewvc/templates-contrib/newvc/templates/docroot/images/text.png
+viewvc/templates-contrib/newvc/templates/docroot/images/up.png
+viewvc/templates-contrib/newvc/templates/docroot/images/viewvc-logo.png
+viewvc/templates-contrib/newvc/templates/docroot/scripts.js
+viewvc/templates-contrib/newvc/templates/docroot/styles.css
+viewvc/templates-contrib/newvc/templates/error.ezt
+viewvc/templates-contrib/newvc/templates/file.ezt
+viewvc/templates-contrib/newvc/templates/graph.ezt
+viewvc/templates-contrib/newvc/templates/include/diff_form.ezt
+viewvc/templates-contrib/newvc/templates/include/fileview.ezt
+viewvc/templates-contrib/newvc/templates/include/footer.ezt
+viewvc/templates-contrib/newvc/templates/include/header.ezt
+viewvc/templates-contrib/newvc/templates/include/pathrev_form.ezt
+viewvc/templates-contrib/newvc/templates/include/props.ezt
+viewvc/templates-contrib/newvc/templates/log.ezt
+viewvc/templates-contrib/newvc/templates/markup.ezt
+viewvc/templates-contrib/newvc/templates/query.ezt
+viewvc/templates-contrib/newvc/templates/query_form.ezt
+viewvc/templates-contrib/newvc/templates/query_results.ezt
+viewvc/templates-contrib/newvc/templates/revision.ezt
+viewvc/templates-contrib/newvc/templates/roots.ezt
+viewvc/templates-contrib/newvc/templates/rss.ezt
+viewvc/templates-contrib/viewsvn/INSTALL
+viewvc/templates-contrib/viewsvn/README
+viewvc/templates-contrib/viewsvn/extras/svnindex.css
+viewvc/templates-contrib/viewsvn/extras/svnindex.xsl
+viewvc/templates-contrib/viewsvn/screenshots/diff.png
+viewvc/templates-contrib/viewsvn/screenshots/dir.png
+viewvc/templates-contrib/viewsvn/screenshots/log.png
+viewvc/templates-contrib/viewsvn/screenshots/markup.png
+viewvc/templates-contrib/viewsvn/templates/diff.ezt
+viewvc/templates-contrib/viewsvn/templates/directory.ezt
+viewvc/templates-contrib/viewsvn/templates/docroot/images/broken.png
+viewvc/templates-contrib/viewsvn/templates/docroot/images/dir.png
+viewvc/templates-contrib/viewsvn/templates/docroot/images/down.png
+viewvc/templates-contrib/viewsvn/templates/docroot/images/download.png
+viewvc/templates-contrib/viewsvn/templates/docroot/images/favicon-svn.ico
+viewvc/templates-contrib/viewsvn/templates/docroot/images/feed-icon-16x16.jpg
+viewvc/templates-contrib/viewsvn/templates/docroot/images/logo-svn.png
+viewvc/templates-contrib/viewsvn/templates/docroot/images/logo-viewvc.png
+viewvc/templates-contrib/viewsvn/templates/docroot/images/svn.png
+viewvc/templates-contrib/viewsvn/templates/docroot/images/text.png
+viewvc/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/back.png
+viewvc/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/back_small.png
+viewvc/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/blame.png
+viewvc/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/checkout.png
+viewvc/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/diff.png
+viewvc/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/forward.png
+viewvc/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/license.txt
+viewvc/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/log.png
+viewvc/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/patch.png
+viewvc/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/repos.png
+viewvc/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/tsvn.png
+viewvc/templates-contrib/viewsvn/templates/docroot/images/up.png
+viewvc/templates-contrib/viewsvn/templates/docroot/images/viewvc.png
+viewvc/templates-contrib/viewsvn/templates/docroot/styles.css
+viewvc/templates-contrib/viewsvn/templates/error.ezt
+viewvc/templates-contrib/viewsvn/templates/file.ezt
+viewvc/templates-contrib/viewsvn/templates/include/diff_form.ezt
+viewvc/templates-contrib/viewsvn/templates/include/dir_footer.ezt
+viewvc/templates-contrib/viewsvn/templates/include/dir_header.ezt
+viewvc/templates-contrib/viewsvn/templates/include/file_header.ezt
+viewvc/templates-contrib/viewsvn/templates/include/footer.ezt
+viewvc/templates-contrib/viewsvn/templates/include/header.ezt
+viewvc/templates-contrib/viewsvn/templates/include/log_footer.ezt
+viewvc/templates-contrib/viewsvn/templates/include/log_header.ezt
+viewvc/templates-contrib/viewsvn/templates/include/paging.ezt
+viewvc/templates-contrib/viewsvn/templates/include/pathrev_form.ezt
+viewvc/templates-contrib/viewsvn/templates/include/props.ezt
+viewvc/templates-contrib/viewsvn/templates/log.ezt
+viewvc/templates-contrib/viewsvn/templates/query.ezt
+viewvc/templates-contrib/viewsvn/templates/query_form.ezt
+viewvc/templates-contrib/viewsvn/templates/query_results.ezt
+viewvc/templates-contrib/viewsvn/templates/revision.ezt
+viewvc/templates-contrib/viewsvn/templates/roots.ezt
+viewvc/templates-contrib/viewsvn/templates/rss.ezt
+viewvc/templates/diff.ezt
+viewvc/templates/dir_new.ezt
+viewvc/templates/directory.ezt
+viewvc/templates/docroot/help.css
+viewvc/templates/docroot/help_dirview.html
+viewvc/templates/docroot/help_log.html
+viewvc/templates/docroot/help_query.html
+viewvc/templates/docroot/help_rootview.html
+viewvc/templates/docroot/images/annotate.png
+viewvc/templates/docroot/images/back.png
+viewvc/templates/docroot/images/back_small.png
+viewvc/templates/docroot/images/broken.png
+viewvc/templates/docroot/images/chalk.jpg
+viewvc/templates/docroot/images/cvsgraph_16x16.png
+viewvc/templates/docroot/images/cvsgraph_32x32.png
+viewvc/templates/docroot/images/diff.png
+viewvc/templates/docroot/images/dir.png
+viewvc/templates/docroot/images/down.png
+viewvc/templates/docroot/images/download.png
+viewvc/templates/docroot/images/favicon.ico
+viewvc/templates/docroot/images/feed-icon-16x16.jpg
+viewvc/templates/docroot/images/forward.png
+viewvc/templates/docroot/images/list.png
+viewvc/templates/docroot/images/lock.png
+viewvc/templates/docroot/images/log.png
+viewvc/templates/docroot/images/text.png
+viewvc/templates/docroot/images/up.png
+viewvc/templates/docroot/images/view.png
+viewvc/templates/docroot/images/viewvc-logo.png
+viewvc/templates/docroot/styles.css
+viewvc/templates/error.ezt
+viewvc/templates/file.ezt
+viewvc/templates/graph.ezt
+viewvc/templates/include/diff_form.ezt
+viewvc/templates/include/dir_footer.ezt
+viewvc/templates/include/dir_header.ezt
+viewvc/templates/include/file_header.ezt
+viewvc/templates/include/footer.ezt
+viewvc/templates/include/header.ezt
+viewvc/templates/include/log_footer.ezt
+viewvc/templates/include/log_header.ezt
+viewvc/templates/include/paging.ezt
+viewvc/templates/include/pathrev_form.ezt
+viewvc/templates/include/props.ezt
+viewvc/templates/include/sort.ezt
+viewvc/templates/log.ezt
+viewvc/templates/log_table.ezt
+viewvc/templates/query.ezt
+viewvc/templates/query_form.ezt
+viewvc/templates/query_results.ezt
+viewvc/templates/revision.ezt
+viewvc/templates/roots.ezt
+viewvc/templates/rss.ezt
+viewvc/viewvc.conf.dist
 @exec [ -f %B/viewvc.conf ] || cp %B/%f %B/viewvc.conf
-@dirrm %%INSTDIR%%/templates/include
-@dirrm %%INSTDIR%%/templates/docroot/images
-@dirrm %%INSTDIR%%/templates/docroot
-@dirrm %%INSTDIR%%/templates-contrib/viewsvn/templates/include
-@dirrm %%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn
-@dirrm %%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images
-@dirrm %%INSTDIR%%/templates-contrib/viewsvn/templates/docroot
-@dirrm %%INSTDIR%%/templates-contrib/viewsvn/templates
-@dirrm %%INSTDIR%%/templates-contrib/viewsvn/screenshots
-@dirrm %%INSTDIR%%/templates-contrib/viewsvn/extras
-@dirrm %%INSTDIR%%/templates-contrib/viewsvn
-@dirrm %%INSTDIR%%/templates-contrib/newvc/templates/include
-@dirrm %%INSTDIR%%/templates-contrib/newvc/templates/docroot/images
-@dirrm %%INSTDIR%%/templates-contrib/newvc/templates/docroot
-@dirrm %%INSTDIR%%/templates-contrib/newvc/templates
-@dirrm %%INSTDIR%%/templates-contrib/newvc
-@dirrm %%INSTDIR%%/templates-contrib
-@dirrm %%INSTDIR%%/templates
-@dirrm %%INSTDIR%%/lib/vclib/svn
-@dirrm %%INSTDIR%%/lib/vclib/ccvs/rcsparse/test-data
-@dirrm %%INSTDIR%%/lib/vclib/ccvs/rcsparse
-@dirrm %%INSTDIR%%/lib/vclib/ccvs
-@dirrm %%INSTDIR%%/lib/vclib
-@dirrm %%INSTDIR%%/lib/vcauth/svnauthz
-@dirrm %%INSTDIR%%/lib/vcauth/forbiddenre
-@dirrm %%INSTDIR%%/lib/vcauth/forbidden
-@dirrm %%INSTDIR%%/lib/vcauth
-@dirrm %%INSTDIR%%/lib
-@dirrm %%INSTDIR%%/bin/wsgi
-@dirrm %%INSTDIR%%/bin/mod_python
-@dirrm %%INSTDIR%%/bin/cgi
-@dirrm %%INSTDIR%%/bin
-@dirrmtry %%INSTDIR%%
+@dirrm viewvc/templates/include
+@dirrm viewvc/templates/docroot/images
+@dirrm viewvc/templates/docroot
+@dirrm viewvc/templates-contrib/viewsvn/templates/include
+@dirrm viewvc/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn
+@dirrm viewvc/templates-contrib/viewsvn/templates/docroot/images
+@dirrm viewvc/templates-contrib/viewsvn/templates/docroot
+@dirrm viewvc/templates-contrib/viewsvn/templates
+@dirrm viewvc/templates-contrib/viewsvn/screenshots
+@dirrm viewvc/templates-contrib/viewsvn/extras
+@dirrm viewvc/templates-contrib/viewsvn
+@dirrm viewvc/templates-contrib/newvc/templates/include
+@dirrm viewvc/templates-contrib/newvc/templates/docroot/images
+@dirrm viewvc/templates-contrib/newvc/templates/docroot
+@dirrm viewvc/templates-contrib/newvc/templates
+@dirrm viewvc/templates-contrib/newvc
+@dirrm viewvc/templates-contrib
+@dirrm viewvc/templates
+@dirrm viewvc/lib/vclib/svn
+@dirrm viewvc/lib/vclib/ccvs/rcsparse/test-data
+@dirrm viewvc/lib/vclib/ccvs/rcsparse
+@dirrm viewvc/lib/vclib/ccvs
+@dirrm viewvc/lib/vclib
+@dirrm viewvc/lib/vcauth/svnauthz
+@dirrm viewvc/lib/vcauth/forbiddenre
+@dirrm viewvc/lib/vcauth/forbidden
+@dirrm viewvc/lib/vcauth
+@dirrm viewvc/lib
+@dirrm viewvc/bin/wsgi
+@dirrm viewvc/bin/mod_python
+@dirrm viewvc/bin/cgi
+@dirrm viewvc/bin
+@dirrmtry viewvc
