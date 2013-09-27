@@ -21,7 +21,4 @@ TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.007:${PORTSDIR}/devel/p5-CPAN-Meta-Check \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Class::Method::Modifiers.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
