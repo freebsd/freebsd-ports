@@ -33,6 +33,40 @@
 %%SITE_PERL%%/Types/Standard.pm
 %%SITE_PERL%%/Types/TypeTiny.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Type/Tiny/.packlist
+%%PERL5_MAN3%%/Devel::TypeTiny::Perl56Compat.3.gz
+%%PERL5_MAN3%%/Devel::TypeTiny::Perl58Compat.3.gz
+%%PERL5_MAN3%%/Eval::TypeTiny.3.gz
+%%PERL5_MAN3%%/Exporter::TypeTiny.3.gz
+%%PERL5_MAN3%%/Reply::Plugin::TypeTiny.3.gz
+%%PERL5_MAN3%%/Test::TypeTiny.3.gz
+%%PERL5_MAN3%%/Type::Coercion.3.gz
+%%PERL5_MAN3%%/Type::Coercion::Union.3.gz
+%%PERL5_MAN3%%/Type::Exception.3.gz
+%%PERL5_MAN3%%/Type::Exception::Assertion.3.gz
+%%PERL5_MAN3%%/Type::Exception::Compilation.3.gz
+%%PERL5_MAN3%%/Type::Exception::WrongNumberOfParameters.3.gz
+%%PERL5_MAN3%%/Type::Library.3.gz
+%%PERL5_MAN3%%/Type::Params.3.gz
+%%PERL5_MAN3%%/Type::Parser.3.gz
+%%PERL5_MAN3%%/Type::Registry.3.gz
+%%PERL5_MAN3%%/Type::Tiny.3.gz
+%%PERL5_MAN3%%/Type::Tiny::Class.3.gz
+%%PERL5_MAN3%%/Type::Tiny::Duck.3.gz
+%%PERL5_MAN3%%/Type::Tiny::Enum.3.gz
+%%PERL5_MAN3%%/Type::Tiny::Intersection.3.gz
+%%PERL5_MAN3%%/Type::Tiny::Manual.3.gz
+%%PERL5_MAN3%%/Type::Tiny::Manual::Coercions.3.gz
+%%PERL5_MAN3%%/Type::Tiny::Manual::Libraries.3.gz
+%%PERL5_MAN3%%/Type::Tiny::Manual::Params.3.gz
+%%PERL5_MAN3%%/Type::Tiny::Manual::UsingWithMoo.3.gz
+%%PERL5_MAN3%%/Type::Tiny::Manual::UsingWithMoose.3.gz
+%%PERL5_MAN3%%/Type::Tiny::Manual::UsingWithMouse.3.gz
+%%PERL5_MAN3%%/Type::Tiny::Manual::UsingWithOther.3.gz
+%%PERL5_MAN3%%/Type::Tiny::Role.3.gz
+%%PERL5_MAN3%%/Type::Tiny::Union.3.gz
+%%PERL5_MAN3%%/Type::Utils.3.gz
+%%PERL5_MAN3%%/Types::Standard.3.gz
+%%PERL5_MAN3%%/Types::TypeTiny.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Type/Tiny
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Type
 @dirrmtry %%SITE_PERL%%/Types/Standard

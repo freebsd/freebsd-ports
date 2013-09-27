@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Type-Tiny
-PORTVERSION=	0.026
+PORTVERSION=	0.028
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOBYINK
@@ -31,40 +31,4 @@ TEST_DEPENDS=	p5-Class-InsideOut>=0:${PORTSDIR}/devel/p5-Class-InsideOut \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Devel::TypeTiny::Perl56Compat.3 \
-		Devel::TypeTiny::Perl58Compat.3 \
-		Eval::TypeTiny.3 \
-		Exporter::TypeTiny.3 \
-		Reply::Plugin::TypeTiny.3 \
-		Test::TypeTiny.3 \
-		Type::Coercion.3 \
-		Type::Coercion::Union.3 \
-		Type::Exception.3 \
-		Type::Exception::Assertion.3 \
-		Type::Exception::Compilation.3 \
-		Type::Exception::WrongNumberOfParameters.3 \
-		Type::Library.3 \
-		Type::Params.3 \
-		Type::Parser.3 \
-		Type::Registry.3 \
-		Type::Tiny.3 \
-		Type::Tiny::Class.3 \
-		Type::Tiny::Duck.3 \
-		Type::Tiny::Enum.3 \
-		Type::Tiny::Intersection.3 \
-		Type::Tiny::Manual.3 \
-		Type::Tiny::Manual::Coercions.3 \
-		Type::Tiny::Manual::Libraries.3 \
-		Type::Tiny::Manual::Params.3 \
-		Type::Tiny::Manual::UsingWithMoo.3 \
-		Type::Tiny::Manual::UsingWithMoose.3 \
-		Type::Tiny::Manual::UsingWithMouse.3 \
-		Type::Tiny::Manual::UsingWithOther.3 \
-		Type::Tiny::Role.3 \
-		Type::Tiny::Union.3 \
-		Type::Utils.3 \
-		Types::Standard.3 \
-		Types::TypeTiny.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
