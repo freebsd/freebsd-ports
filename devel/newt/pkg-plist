@@ -4,12 +4,13 @@ lib/libnewt.a
 lib/libnewt.so
 lib/libnewt.so.%%SOVERSION%%
 lib/libnewt.so.%%VERSION%%
+man/man1/whiptail.1.gz
 %%PYTHONOPT%%%%PYTHON_SITELIBDIR%%/_snack.so
 %%PYTHONOPT%%%%PYTHON_SITELIBDIR%%/_snackmodule.so
 %%PYTHONOPT%%%%PYTHON_SITELIBDIR%%/snack.py
 %%PYTHONOPT%%%%PYTHON_SITELIBDIR%%/snack.pyc
-%%TCLOPT%%%%TCL_LIBDIR%%/whip/pkgIndex.tcl
-%%TCLOPT%%%%TCL_LIBDIR%%/whip/whiptcl.so
+%%TCLOPT%%lib/whip%%VERSION%%/pkgIndex.tcl
+%%TCLOPT%%lib/whip%%VERSION%%/whiptcl.so
 libdata/pkgconfig/libnewt.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/peanuts.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/popcorn.py
@@ -121,4 +122,4 @@ libdata/pkgconfig/libnewt.pc
 %%NLS%%@dirrmtry share/locale/as/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/as
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%TCLOPT%%@dirrm %%TCL_LIBDIR%%/whip
+%%TCLOPT%%@dirrm lib/whip%%VERSION%%
