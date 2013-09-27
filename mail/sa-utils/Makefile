@@ -24,7 +24,6 @@ PERIODIC_DAILY=	etc/periodic/daily
 PLIST_FILES=	${PERIODIC_DAILY}/sa-utils
 PLIST_DIRS=	${PERIODIC_DAILY} ${PERIODIC_DAILY:H}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSACOMPILE}
@@ -35,8 +34,8 @@ SUB_LIST+=	SACOMPILE=NO
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/${PERIODIC_DAILY}/
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PERIODIC_DAILY}/
 	${INSTALL_SCRIPT} ${WRKDIR}/sa-utils \
-	    ${PREFIX}/${PERIODIC_DAILY}/sa-utils
+	    ${STAGEDIR}${PREFIX}/${PERIODIC_DAILY}/sa-utils
 
 .include <bsd.port.mk>
