@@ -16,14 +16,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}django>=1.5:${PORTSDIR}/www/py-django
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
+USE_PYDISTUTILS=yes
+PYTHON_PY3K_PLIST_HACK=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|[[:<:]]setuptools|distutils.core|' ${WRKSRC}/${PYSETUP}
 
-post-install:
-.if ${PYTHON_REL} >= 320
-.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
