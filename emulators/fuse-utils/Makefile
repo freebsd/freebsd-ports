@@ -19,23 +19,17 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libspectrum-prefix=${LOCALBASE} \
 		--with-local-prefix=${LOCALBASE}
 
-MAN1=	createhdf.1 fmfconv.1 fuse-utils.1 listbasic.1 raw2hdf.1 rzxcheck.1 \
-	rzxdump.1 rzxtool.1 scl2trd.1 snap2tzx.1 snapconv.1 tapeconv.1 \
-	tzxlist.1 profile2map.1
-
 OPTIONS_DEFINE=	AUDIOTOOLS DOCS
 OPTIONS_DEFAULT=	AUDIOTOOLS
 
 AUDIOTOOLS_DESC=	Build audio <-> tape utilities
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAUDIOTOOLS}
 CONFIGURE_ARGS+=--with-audiofile
 LIB_DEPENDS+=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 PLIST_SUB=	AUDIOTOOLS=""
-MAN1+=		audio2tape.1 tape2wav.1
 .else
 CONFIGURE_ARGS+=--without-audiofile
 PLIST_SUB=	AUDIOTOOLS="@comment "
@@ -49,10 +43,10 @@ PLIST_SUB=	AUDIOTOOLS="@comment "
 CONFIGURE_ARGS+=--without-ffmpeg
 #.endif
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS ChangeLog README ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS ChangeLog README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
