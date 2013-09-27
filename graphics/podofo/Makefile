@@ -25,12 +25,6 @@ CMAKE_ARGS=	-DPODOFO_BUILD_SHARED:BOOL=TRUE \
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
-MAN1=		podofobox.1 podofocountpages.1 podofocrop.1 \
-		podofoencrypt.1 podofoimg2pdf.1 podofoimgextract.1 \
-		podofoimpose.1 podofoincrementalupdates.1 podofomerge.1 \
-		podofopages.1 podofopdfinfo.1 podofotxt2pdf.1 \
-		podofotxtextract.1 podofouncompress.1 podofoxmp.1
-
 OPTIONS_DEFINE=		IMPOSE JPEG PNG TIFF
 OPTIONS_DEFAULT=	JPEG PNG TIFF
 IMPOSE_DESC=		Build impose tool (needs Lua)
@@ -48,7 +42,6 @@ PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 TIFF_CMAKE_ON=		-DWANT_TIFF:BOOL=TRUE
 TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMPOSE}

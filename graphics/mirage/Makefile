@@ -19,11 +19,11 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Mirage
 
+PORTDOCS=	CHANGELOG README TODO TRANSLATORS
 PORT_VERBS=	${PORTNAME} imgfuncs
 
 OPTIONS_DEFINE=	DOCS GNOME
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOME}
@@ -35,11 +35,7 @@ post-patch:
 		's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for file in CHANGELOG README TODO TRANSLATORS
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -24,7 +24,6 @@ USE_QT4=	gui moc_build qmake_build
 
 DESKTOP_ENTRIES="Quackle" "${COMMENT}" "" "quackle" "Game;BoardGame;" "true"
 
-NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} \( -name "*.[ao]" -or -name "moc_*" \) -delete
 
@@ -48,7 +47,8 @@ pre-build:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/quacker ${PREFIX}/bin/quackle
-	@(cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${DATADIR})
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/quacker \
+		${STAGEDIR}${PREFIX}/bin/quackle
+	@(cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>

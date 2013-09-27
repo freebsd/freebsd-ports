@@ -120,6 +120,21 @@ include/podofo/podofo-base.h
 include/podofo/podofo.h
 lib/libpodofo.so
 lib/libpodofo.so.0
+man/man1/podofobox.1.gz
+man/man1/podofocountpages.1.gz
+man/man1/podofocrop.1.gz
+man/man1/podofoencrypt.1.gz
+man/man1/podofoimg2pdf.1.gz
+man/man1/podofoimgextract.1.gz
+man/man1/podofoimpose.1.gz
+man/man1/podofoincrementalupdates.1.gz
+man/man1/podofomerge.1.gz
+man/man1/podofopages.1.gz
+man/man1/podofopdfinfo.1.gz
+man/man1/podofotxt2pdf.1.gz
+man/man1/podofotxtextract.1.gz
+man/man1/podofouncompress.1.gz
+man/man1/podofoxmp.1.gz
 @dirrm include/podofo/doc
 @dirrm include/podofo/base/util
 @dirrm include/podofo/base

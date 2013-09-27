@@ -17,9 +17,6 @@ PORTDOCS=	readme.html
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|CC=g++|CC=${CXX}|' \
 		-e '/^CCFLAGS/ s|-O2|${CXXFLAGS}|' \
@@ -36,19 +33,19 @@ post-patch:
 		${WRKSRC}/gamestate.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for dir in gfx islands sound
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR}
 .endfor
-	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
+		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}_fullscreen.desktop \
-		${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}64.png ${PREFIX}/share/pixmaps
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.html ${DOCSDIR}
-.endif
+		${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}64.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

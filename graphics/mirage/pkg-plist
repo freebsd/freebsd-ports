@@ -5,10 +5,6 @@ bin/mirage
 %%PYTHON_SITELIBDIR%%/mirage.pyo
 %%PYTHON_SITELIBDIR%%/xmouse.so
 share/applications/mirage.desktop
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/TRANSLATORS
 share/locale/cs/LC_MESSAGES/mirage.mo
 share/locale/de/LC_MESSAGES/mirage.mo
 share/locale/es/LC_MESSAGES/mirage.mo
@@ -27,7 +23,6 @@ share/locale/zh_CN/LC_MESSAGES/mirage.mo
 %%DATADIR%%/stock_shuffle.png
 share/pixmaps/mirage.png
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/locale/ua/LC_MESSAGES
 @dirrmtry share/locale/ua
 @dirrmtry share/applications
