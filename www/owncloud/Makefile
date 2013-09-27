@@ -15,8 +15,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 USE_PHP=	ctype curl dom fileinfo filter gd hash iconv json mbstring \
-		mysql pdo pdo_mysql pdo_sqlite session simplexml sqlite3 xml \
-		wddx zip zlib
+		mysql openssl pdo pdo_mysql pdo_sqlite session simplexml \
+		sqlite3 xml wddx zip zlib
 WANT_PHP_WEB=	yes
 DEFAULT_PHP_VER=5
 
