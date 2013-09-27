@@ -453,7 +453,6 @@
     SUBDIR += libfvde
     SUBDIR += libgksu
     SUBDIR += libieee1284
-    SUBDIR += libpcbsd
     SUBDIR += libretto-config
     SUBDIR += libsunacl
     SUBDIR += liburcu
@@ -647,8 +646,9 @@
     SUBDIR += patchelf
     SUBDIR += pax-utils
     SUBDIR += pbimaker
-    SUBDIR += pbreg
     SUBDIR += pc-sysinstall
+    SUBDIR += pcbsd-utils
+    SUBDIR += pcbsd-utils-qt4
     SUBDIR += pcfclock
     SUBDIR += pciutils
     SUBDIR += pcpustat
@@ -984,7 +984,6 @@
     SUBDIR += vstrip
     SUBDIR += vttest
     SUBDIR += wait_on
-    SUBDIR += warden
     SUBDIR += watchdog
     SUBDIR += watchfolder
     SUBDIR += watchmen

@@ -1,0 +1,30 @@
+#!/bin/sh
+# Script to install PBI repo on pkg add
+
+PREFIX=${PKG_PREFIX-/usr/local}
+
+if [ "$2" != "POST-INSTALL" ] ; then
+   exit 0
+fi
+
+# If this is during staging, we can skip for now
+echo $PREFIX | grep -q '/stage/'
+if [ $? -eq 0 ] ; then
+   exit 0
+fi
+
+# If this is a new install, add the PC-BSD master repo
+ls /var/db/pbi/keys/* 2>/dev/null >/dev/null
+if [ $? -ne 0 ] ; then
+        ${PREFIX}/sbin/pbi_addrepo ${PREFIX}/share/pbi-manager/pcbsd.rpo
+fi
+
+# Copy over the wrapper files
+if [ `uname -m` = "amd64" ] ; then
+  cp ${PREFIX}/share/pbi-manager/.pbiwrapper-i386 /usr/pbi/.pbiwrapper-i386
+  cp ${PREFIX}/share/pbi-manager/.pbiwrapper-amd64 /usr/pbi/.pbiwrapper-amd64
+else
+  cp ${PREFIX}/share/pbi-manager/.pbiwrapper-i386 /usr/pbi/.pbiwrapper-i386
+fi
+
+exit 0

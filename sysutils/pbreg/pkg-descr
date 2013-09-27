@@ -1,8 +1,0 @@
-PC-BSD Registry Editor
-
-pbreg is a command-line front-end to QT's QSettings framework, allowing scripts
-and other command-line apps to get & set keys. This program can be used to 
-easily interact between QT-based GUI's and command-line implementations of 
-these applications.
-
-WWW: http://www.pcbsd.org/

@@ -1,8 +1,0 @@
-The Warden
-
-Warden is a jail management program designed on PC-BSD, which provides three
-interfaces to use, command-line, dialog-based, and a QT4 GUI. Warden has 
-support for backing up an entire jail, installing pre-built packages 
-(inmates) and more. 
-
-WWW: http://wiki.pcbsd.org/index.php/Warden
