@@ -53,12 +53,12 @@ do-install:
 
 post-install:
 .for file in ${BINS_SCRIPTS}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for ext in ${DOC_EXTS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.${ext} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.${ext} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
