@@ -3,7 +3,7 @@ bin/onelab.py
 %%STATIC_LIB%%lib/libGmsh.a
 %%SHARED_LIB%%lib/libGmsh.so
 %%SHARED_LIB%%lib/libGmsh.so.2.8
-%%SHARED_LIB%%lib/libGmsh.so.2.8.2
+%%SHARED_LIB%%lib/libGmsh.so.2.8.3
 include/gmsh/CGNSOptions.h
 include/gmsh/Cell.h
 include/gmsh/CellComplex.h
@@ -57,7 +57,9 @@ include/gmsh/OctreeInternals.h
 include/gmsh/OctreePost.h
 include/gmsh/OpenFile.h
 include/gmsh/OptHOM.h
+include/gmsh/OptHomFastCurving.h
 include/gmsh/OptHomMesh.h
+include/gmsh/OptHomRun.h
 include/gmsh/PView.h
 include/gmsh/PViewData.h
 include/gmsh/PViewDataGModel.h
@@ -73,6 +75,7 @@ include/gmsh/SPoint3.h
 include/gmsh/STensor3.h
 include/gmsh/SVector3.h
 include/gmsh/StringUtils.h
+include/gmsh/SuperEl.h
 include/gmsh/VertexArray.h
 include/gmsh/Voronoi3D.h
 include/gmsh/bezierBasis.h
@@ -180,7 +183,6 @@ include/gmsh/yamakawa.h
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t6.geo
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t7.geo
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t8.geo
-%%PORTDOCS%%%%DOCSDIR%%/tutorial/t8.par
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t9.geo
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/view1.pos
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/view2.pos
