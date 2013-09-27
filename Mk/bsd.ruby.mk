@@ -140,7 +140,7 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 
 .if defined(RUBY_DEFAULT_VER)
-WARNING+=	"Using RUBY_DEFAULT_VER in make.conf, consider using DEFAULT_VERSION=ruby=${RUBY_DEFAULT_VER}"
+WARNING+=	"RUBY_DEFAULT_VER is defined, consider using DEFAULT_VERSIONS=ruby=${RUBY_DEFAULT_VER} instead"
 .endif
 
 RUBY_DEFAULT_VER?=	${RUBY_DEFAULT}
