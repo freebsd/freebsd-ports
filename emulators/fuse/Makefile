@@ -23,14 +23,11 @@ CONFIGURE_ARGS+=--without-alsa --without-joystick
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
-MAN1=		fuse.1
-
 OPTIONS_DEFINE=	AO SAMPLERATE
 OPTIONS_DEFAULT=	SAMPLERATE
 AO_DESC=	Use libao for audio output
 SAMPLERATE_DESC=	Better beeper sound quality
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAO}
@@ -46,11 +43,11 @@ LIB_DEPENDS+=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=--without-libsamplerate
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS ChangeLog README THANKS \
-		${DOCSDIR}
+		${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
