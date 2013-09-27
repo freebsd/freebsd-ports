@@ -12,23 +12,23 @@ COMMENT=	Graphical front end for cscope and cscope clones
 
 RUN_DEPENDS=	cscope:${PORTSDIR}/devel/cscope
 
-USE_TK=		84+
-USE_TK_RUN=	yes
+USES+=		tk:run
 NO_BUILD=	yes
+LIBDIR=		${PREFIX}/lib/${PORTNAME}
+PLIST_FILES=	bin/cbrowser \
+		lib/cbrowser/cbrowser lib/cbrowser/tclIndex \
+		lib/cbrowser/builder.tcl lib/cbrowser/calltree.tcl \
+		lib/cbrowser/ftcllib.tcl lib/cbrowser/hierarchy.tcl \
+		lib/cbrowser/widget.tcl
+PLIST_DIRS=	lib/cbrowser
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -i "" -e '3s|wish|${WISH}|' ${WRKSRC}/cbrowser
 
 do-install:
-	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} \*.tcl ${DATADIR})
-	${INSTALL_DATA} ${WRKSRC}/tclIndex ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/cbrowser ${DATADIR}
-	${LN} -s ${DATADIR}/cbrowser ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${LIBDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${LIBDIR} -a ! -name README
+	${CHMOD} ${BINMODE} ${STAGEDIR}${LIBDIR}/cbrowser
+	${LN} -s ${LIBDIR}/cbrowser ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
