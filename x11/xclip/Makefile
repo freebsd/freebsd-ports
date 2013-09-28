@@ -17,10 +17,8 @@ USE_XORG=	x11 xmu
 USES=	gmake
 GNU_CONFIGURE=	yes
 
-MAN1=		xclip.1 xclip-copyfile.1
-PLIST_FILES=	bin/xclip bin/xclip-copyfile bin/xclip-cutfile bin/xclip-pastefile
+PLIST_FILES=	bin/xclip bin/xclip-copyfile bin/xclip-cutfile bin/xclip-pastefile man/man1/xclip.1.gz man/man1/xclip-copyfile.1.gz
 
-NO_STAGE=	yes
 pre-configure:
 	@cd ${WRKSRC}; ./bootstrap
 
