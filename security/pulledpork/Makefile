@@ -33,12 +33,9 @@ PLIST_FILES=	bin/pulledpork.pl \
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	LICENSE README README.CATEGORIES README.CHANGES README.RULESET README.SHAREDOBJECTS
-.endif
+PORTDOCS=	README README.CATEGORIES README.CHANGES README.RULESET README.SHAREDOBJECTS
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/bin/perl|${PERL}|" ${WRKSRC}/pulledpork.pl
@@ -51,28 +48,25 @@ post-patch:
 	@${REINPLACE_CMD} -e "s| /usr/bin/perl|${PERL}|" ${WRKSRC}/contrib/oink-conv.pl
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/pulledpork.pl ${PREFIX}/bin
-	@${MKDIR} -m 750 ${ETCDIR}
-	# pulledpork.conf contains the snort user registration key, do not install world readable
-	@${INSTALL_DATA} -m 440 ${WRKSRC}/etc/pulledpork.conf ${ETCDIR}/pulledpork.conf.sample
-	@${INSTALL_DATA} ${WRKSRC}/etc/disablesid.conf ${ETCDIR}/disablesid.conf.sample
-	@${INSTALL_DATA} ${WRKSRC}/etc/dropsid.conf    ${ETCDIR}/dropsid.conf.sample
-	@${INSTALL_DATA} ${WRKSRC}/etc/enablesid.conf  ${ETCDIR}/enablesid.conf.sample
-	@${INSTALL_DATA} ${WRKSRC}/etc/modifysid.conf  ${ETCDIR}/modifysid.conf.sample
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/contrib/README.CONTRIB ${DATADIR}/
-	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/oink-conv.pl ${DATADIR}/
+	@${INSTALL_SCRIPT} ${WRKSRC}/pulledpork.pl ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} -m 750 ${STAGEDIR}${ETCDIR}
+# pulledpork.conf contains the snort user registration key, do not install world readable
+	@${INSTALL_DATA} -m 640 ${WRKSRC}/etc/pulledpork.conf ${STAGEDIR}${ETCDIR}/pulledpork.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/etc/disablesid.conf ${STAGEDIR}${ETCDIR}/disablesid.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/etc/dropsid.conf    ${STAGEDIR}${ETCDIR}/dropsid.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/etc/enablesid.conf  ${STAGEDIR}${ETCDIR}/enablesid.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/etc/modifysid.conf  ${STAGEDIR}${ETCDIR}/modifysid.conf.sample
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/contrib/README.CONTRIB ${STAGEDIR}${DATADIR}/
+	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/oink-conv.pl ${STAGEDIR}${DATADIR}/
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/README.CATEGORIES ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/README.CHANGES ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/README.RULESET ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/README.SHAREDOBJECTS ${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/doc/README.CATEGORIES ${STAGEDIR}${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/doc/README.CHANGES ${STAGEDIR}${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/doc/README.RULESET ${STAGEDIR}${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/doc/README.SHAREDOBJECTS ${STAGEDIR}${DOCSDIR}/
 .endif
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
 .include <bsd.port.mk>
