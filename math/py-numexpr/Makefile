@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	numexpr
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	math python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(import\) \(setuptools\)|\1 do_not_use_\2|' ${WRKSRC}/${PYSETUP}
 
