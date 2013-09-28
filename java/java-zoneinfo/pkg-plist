@@ -24,7 +24,6 @@ share/java/zi/Africa/Freetown
 share/java/zi/Africa/Gaborone
 share/java/zi/Africa/Harare
 share/java/zi/Africa/Johannesburg
-share/java/zi/Africa/Juba
 share/java/zi/Africa/Kampala
 share/java/zi/Africa/Khartoum
 share/java/zi/Africa/Kigali
@@ -53,7 +52,6 @@ share/java/zi/Africa/Tunis
 share/java/zi/Africa/Windhoek
 share/java/zi/America/Adak
 share/java/zi/America/Anchorage
-share/java/zi/America/Anguilla
 share/java/zi/America/Antigua
 share/java/zi/America/Araguaina
 share/java/zi/America/Argentina/Buenos_Aires
@@ -68,7 +66,6 @@ share/java/zi/America/Argentina/San_Juan
 share/java/zi/America/Argentina/San_Luis
 share/java/zi/America/Argentina/Tucuman
 share/java/zi/America/Argentina/Ushuaia
-share/java/zi/America/Aruba
 share/java/zi/America/Asuncion
 share/java/zi/America/Atikokan
 share/java/zi/America/Bahia
@@ -97,7 +94,6 @@ share/java/zi/America/Dawson
 share/java/zi/America/Dawson_Creek
 share/java/zi/America/Denver
 share/java/zi/America/Detroit
-share/java/zi/America/Dominica
 share/java/zi/America/Edmonton
 share/java/zi/America/Eirunepe
 share/java/zi/America/El_Salvador
@@ -106,8 +102,6 @@ share/java/zi/America/Glace_Bay
 share/java/zi/America/Godthab
 share/java/zi/America/Goose_Bay
 share/java/zi/America/Grand_Turk
-share/java/zi/America/Grenada
-share/java/zi/America/Guadeloupe
 share/java/zi/America/Guatemala
 share/java/zi/America/Guayaquil
 share/java/zi/America/Guyana
@@ -146,7 +140,6 @@ share/java/zi/America/Moncton
 share/java/zi/America/Monterrey
 share/java/zi/America/Montevideo
 share/java/zi/America/Montreal
-share/java/zi/America/Montserrat
 share/java/zi/America/Nassau
 share/java/zi/America/New_York
 share/java/zi/America/Nipigon
@@ -178,17 +171,12 @@ share/java/zi/America/Sao_Paulo
 share/java/zi/America/Scoresbysund
 share/java/zi/America/Sitka
 share/java/zi/America/St_Johns
-share/java/zi/America/St_Kitts
-share/java/zi/America/St_Lucia
-share/java/zi/America/St_Thomas
-share/java/zi/America/St_Vincent
 share/java/zi/America/Swift_Current
 share/java/zi/America/Tegucigalpa
 share/java/zi/America/Thule
 share/java/zi/America/Thunder_Bay
 share/java/zi/America/Tijuana
 share/java/zi/America/Toronto
-share/java/zi/America/Tortola
 share/java/zi/America/Vancouver
 share/java/zi/America/Whitehorse
 share/java/zi/America/Winnipeg
@@ -199,7 +187,6 @@ share/java/zi/Antarctica/Davis
 share/java/zi/Antarctica/DumontDUrville
 share/java/zi/Antarctica/Macquarie
 share/java/zi/Antarctica/Mawson
-share/java/zi/Antarctica/McMurdo
 share/java/zi/Antarctica/Palmer
 share/java/zi/Antarctica/Rothera
 share/java/zi/Antarctica/Syowa
@@ -378,7 +365,6 @@ share/java/zi/Europe/Stockholm
 share/java/zi/Europe/Tallinn
 share/java/zi/Europe/Tirane
 share/java/zi/Europe/Uzhgorod
-share/java/zi/Europe/Vaduz
 share/java/zi/Europe/Vienna
 share/java/zi/Europe/Vilnius
 share/java/zi/Europe/Volgograd
@@ -417,7 +403,6 @@ share/java/zi/Pacific/Gambier
 share/java/zi/Pacific/Guadalcanal
 share/java/zi/Pacific/Guam
 share/java/zi/Pacific/Honolulu
-share/java/zi/Pacific/Johnston
 share/java/zi/Pacific/Kiritimati
 share/java/zi/Pacific/Kosrae
 share/java/zi/Pacific/Kwajalein
