@@ -4,15 +4,16 @@
 PORTNAME=	fragrouter
 PORTVERSION=	1.6
 CATEGORIES=	security
-MASTER_SITES=	http://monkey.org/~dugsong/
+MASTER_SITES=	http://monkey.org/~dugsong/ \
+		LOCAL/ohauer
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Tool for testing network IDS implementations
 
 GNU_CONFIGURE=	yes
+MAKE_ARGS+=	STAGEDIR=${STAGEDIR}
 
-MAN8=		fragrouter.8
-PLIST_FILES=	sbin/fragrouter
+PLIST_FILES=	sbin/fragrouter \
+		man/man8/fragrouter.8.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
