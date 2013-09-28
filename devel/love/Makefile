@@ -12,15 +12,15 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open-source 2D game engine
 
-LIB_DEPENDS=	IL:${PORTSDIR}/graphics/devil \
-		modplug:${PORTSDIR}/audio/libmodplug \
-		mpg123:${PORTSDIR}/audio/mpg123 \
-		vorbisfile:${PORTSDIR}/audio/libvorbis \
-		physfs:${PORTSDIR}/devel/physfs \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
+		libmodplug.so:${PORTSDIR}/audio/libmodplug \
+		libmpg123.so:${PORTSDIR}/audio/mpg123 \
+		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
+		libphysfs.so:${PORTSDIR}/devel/physfs \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_OPENAL=	yes
 USE_SDL=	sdl mixer
 USE_GL=		gl glu
@@ -37,7 +37,6 @@ PLIST_FILES=	bin/love
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -46,9 +45,9 @@ post-patch:
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in changes.txt readme.md
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
