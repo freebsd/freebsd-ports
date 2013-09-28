@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	lighttpd
-PORTVERSION=	1.4.32
-PORTREVISION=	1
+PORTVERSION=	1.4.33
 CATEGORIES?=	www
 MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -41,7 +40,7 @@ USE_RC_SUBR=	lighttpd
 MAN8=		lighttpd.8
 
 OPTIONS_DEFINE=	BZIP2 FAM GDBM IPV6 LIBEV LUA MEMCACHE MYSQL MYSQLAUTH \
-		NODELAY LDAP OPENSSL SPAWNFCGI VALGRIND WEBDAV REMOTEUSER
+		NODELAY LDAP OPENSSL SPAWNFCGI VALGRIND WEBDAV
 
 OPTIONS_DEFAULT=	IPV6 OPENSSL 
 
@@ -56,7 +55,6 @@ NODELAY_DESC=	Set TCP_NODELAY on listening sockets
 SPAWNFCGI_DESC=	Depend on spawn-fcgi utility
 VALGRIND_DESC=	valgrind support
 WEBDAV_DESC=	WebDAV support
-REMOTEUSER_DESC=	Add remote-user to conditionals
 
 LIGHTTPD_CONF_FILES=	lighttpd.conf modules.conf
 
@@ -176,11 +174,6 @@ USE_GNOME+=		libxml2
 LIB_DEPENDS+=		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid \
 			sqlite3.8:${PORTSDIR}/databases/sqlite3
 CONFIGURE_ARGS+=	--with-webdav-props --with-webdav-locks
-.endif
-
-# 3rd party remoteuser patch (lighttpd feature request #2415)
-.if ${PORT_OPTIONS:MREMOTEUSER}
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-remoteuser
 .endif
 
 SUB_LIST+=		REQUIRE="${_REQUIRE}"
