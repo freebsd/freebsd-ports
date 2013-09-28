@@ -21,13 +21,12 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/gSTLFilt.pl bin/gfilt
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,[$$]HOME,${PREFIX}/bin," ${WRKSRC}/gfilt
 
 do-install:
 .for file in gSTLFilt.pl gfilt
-	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 
 .include <bsd.port.mk>
