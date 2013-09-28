@@ -16,11 +16,5 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 USES=		perl5
 USE_PERL5=	configure
-NO_STAGE=	yes
-
-MAN3=	Astro::SIMBAD.3 \
-	Astro::SIMBAD::Query.3 \
-	Astro::SIMBAD::Result.3 \
-	Astro::SIMBAD::Result::Object.3
 
 .include <bsd.port.mk>
