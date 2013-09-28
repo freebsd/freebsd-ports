@@ -2,6 +2,8 @@ bin/simbadc
 %%SITE_PERL%%/Astro/SIMBAD/Client.pm
 %%SITE_PERL%%/Astro/SIMBAD/Client/WSQueryInterfaceService.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/SIMBAD/Client/.packlist
+%%PERL5_MAN3%%/Astro::SIMBAD::Client.3.gz
+man/man1/simbadc.1.gz
 @dirrm %%SITE_PERL%%/Astro/SIMBAD/Client
 @dirrm %%SITE_PERL%%/Astro/SIMBAD
 @dirrmtry %%SITE_PERL%%/Astro
