@@ -1,9 +1,0 @@
-bin/cave9
-%%DATADIR%%/README.txt
-%%DATADIR%%/crash.wav
-%%DATADIR%%/hit.wav
-%%DATADIR%%/hud.ttf
-%%DATADIR%%/icon.png
-%%DATADIR%%/thrust.wav
-%%DATADIR%%/wall.jpg
-@dirrm %%DATADIR%%

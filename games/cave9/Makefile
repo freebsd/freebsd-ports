@@ -24,21 +24,24 @@ BUILD_WRKSRC=	${WRKSRC}/src
 MAKEFILE=	GNUmakefile
 CFLAGS+=	-DDATADIR=\\\"${DATADIR}\\\"
 
+PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*
+PORTDATA=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-extract:
 	@${MV} ${WRKDIR}/data ${WRKSRC}/
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cave9 ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/data/* ${DATADIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/cave9 ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/data/* ${STAGEDIR}${DATADIR}/
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
