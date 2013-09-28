@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Archive/Rar.pm
 %%SITE_PERL%%/Archive/Rar/Passthrough.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Rar/.packlist
+%%PERL5_MAN3%%/Archive::Rar.3.gz
+%%PERL5_MAN3%%/Archive::Rar::Passthrough.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Rar
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive
 @dirrmtry %%SITE_PERL%%/Archive/Rar
