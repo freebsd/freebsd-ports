@@ -37,6 +37,8 @@ MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang15/bin:${PATH}
 NO_STAGE=	yes
 
+.include <bsd.port.pre.mk>
+
 pre-install:
 	${RM} -f ${PLIST}
 	${CAT} ${PKGDIR}/pkg-plist >> ${PLIST}
@@ -96,4 +98,4 @@ post-install:
 		${CP} -p ${RIAK_CONFDIR}/key.pem.sample ${RIAK_CONFDIR}/key.pem; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
