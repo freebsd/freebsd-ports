@@ -14,18 +14,19 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	rene0
 GH_COMMIT=	75f6f04
 
+MAKE_ARGS=	FULLPREFIX="${STAGEDIR}${PREFIX}"
+
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 .endif
 	if [ ! -f ${ETCDIR}/hardware.txt ] ; then \
-		${CP} -p ${ETCDIR}/hardware.txt.sample ${ETCDIR}/hardware.txt ; \
+		${CP} -p ${STAGEDIR}${ETCDIR}/hardware.txt.sample ${STAGEDIR}${ETCDIR}/hardware.txt ; \
 	fi
 
 .include <bsd.port.mk>
