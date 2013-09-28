@@ -10,13 +10,12 @@ COMMENT=	Useful tools for dealing with hex files
 
 NO_WRKSUBDIR=yes
 
-PLIST_FILES=	bin/hex2bin bin/bin2hex man/man1/bin2hex.1 man/man1/hex2bin.1
+PLIST_FILES=	bin/hex2bin bin/bin2hex man/man1/bin2hex.1.gz man/man1/hex2bin.1.gz
 ALL_TARGET=	build
 
 #not strictly true - it uses a self-styled license
 #LICENSE=	BSD
 
-NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hex2bin ${STAGEDIR}${PREFIX}/bin/hex2bin
 	${INSTALL_PROGRAM} ${WRKSRC}/hexdump ${STAGEDIR}${PREFIX}/bin/bin2hex
