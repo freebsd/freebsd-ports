@@ -33,7 +33,6 @@ EUCJP_DESC=	Use EUC-JP as dictionary charset.
 SHIFTJIS_DESC=	Use SHIFT-JIS as dictionary charset.
 UTF8_DESC=	Use UTF-8 as dictionary charset.
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEUCJP}
