@@ -1,5 +1,5 @@
-SHA256 (nginx-1.5.4.tar.gz) = ad21d7ee5146d5c571917574b8a8bbab658faff6ffbff7cab2e69a3afadd65dc
-SIZE (nginx-1.5.4.tar.gz) = 772570
+SHA256 (nginx-1.5.5.tar.gz) = 94795cab5c9c0806813f0dd18cc8fa8e2a140f01f4e28dfc38d0b2184540d1fd
+SIZE (nginx-1.5.5.tar.gz) = 774533
 SHA256 (giom-nginx_accept_language_module-02262ce.tar.gz) = 3191f4caa70d9a8942c4f10b6abaaa96af451991d4b5e1e3d7b991376b00bf0c
 SIZE (giom-nginx_accept_language_module-02262ce.tar.gz) = 3398
 SHA256 (nginx-accesskey-2.0.3.tar.gz) = d9e94321e78a02de16c57f3e048fd31059fd8116ed03d6de7180f435c52502b1
@@ -10,8 +10,6 @@ SHA256 (http_auth_ldap-c4dc7c9153.tar.gz) = ac082a36afdbcfd883303bc2b1aaea5f2b4d
 SIZE (http_auth_ldap-c4dc7c9153.tar.gz) = 5323
 SHA256 (ngx_http_auth_pam_module-1.2.tar.gz) = 5a85970ba61a99f55a26d2536a11d512b39bbd622f5737d25a9a8c10db81efa9
 SIZE (ngx_http_auth_pam_module-1.2.tar.gz) = 5424
-SHA256 (ngx_http_auth_request_module-0.2.tar.gz) = eea5d0ec02bba93d0b204a034230cc61462b60497cbac6f581d7e008a9262ba4
-SIZE (ngx_http_auth_request_module-0.2.tar.gz) = 6736
 SHA256 (ngx_cache_purge-2.1.tar.gz) = 424005af0c04e59ffa65a65e446081d4f95ee76a801a7555e001c67810bcb3b9
 SIZE (ngx_cache_purge-2.1.tar.gz) = 10535
 SHA256 (ngx_ctpp2-0.5.tar.gz) = f8adfecc23e2c23af95df8549ef92fd52598b21506a9d9df2278b2605668d5a6
