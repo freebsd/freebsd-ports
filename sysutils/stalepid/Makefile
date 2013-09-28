@@ -17,9 +17,6 @@ USE_PERL5=	run
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-MAN1=		stalepid.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/stalepid
+PLIST_FILES=	bin/stalepid man/man1/stalepid.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
