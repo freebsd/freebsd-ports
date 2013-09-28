@@ -23,6 +23,8 @@ PHP_MODNAME=	opcache
 
 PORTDOCS=	*
 
+IGNORE_WITH_PHP=	55
+
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 

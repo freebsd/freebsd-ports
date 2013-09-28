@@ -220,6 +220,10 @@ LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USE_OPENSSL=	yes
 .endif
 
+.if ${PHP_MODNAME} == "opcache"
+CONFIGURE_ARGS+=--enable-opcache
+.endif
+
 .if ${PHP_MODNAME} == "pcntl"
 CONFIGURE_ARGS+=--enable-pcntl
 .endif

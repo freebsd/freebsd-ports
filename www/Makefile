@@ -1419,6 +1419,7 @@
     SUBDIR += php52-tidy
     SUBDIR += php53-session
     SUBDIR += php53-tidy
+    SUBDIR += php55-opcache
     SUBDIR += php55-session
     SUBDIR += php55-tidy
     SUBDIR += phpbb
