@@ -18,6 +18,7 @@ lib/libgitg-1.0.la
 lib/libgitg-1.0.so
 lib/libgitg-1.0.so.0
 libdata/pkgconfig/libgitg-1.0.pc
+man/man1/gitg.1.gz
 share/applications/gitg.desktop
 %%DATADIR%%/icons/gitg.svg
 %%DATADIR%%/icons/gitg128x128.png
@@ -46,22 +47,24 @@ share/icons/hicolor/24x24/apps/gitg.png
 share/icons/hicolor/32x32/apps/gitg.png
 share/icons/hicolor/48x48/apps/gitg.png
 share/icons/hicolor/scalable/apps/gitg.svg
-share/locale/da/LC_MESSAGES/gitg.mo
-share/locale/de/LC_MESSAGES/gitg.mo
-share/locale/en_GB/LC_MESSAGES/gitg.mo
-share/locale/es/LC_MESSAGES/gitg.mo
-share/locale/fr/LC_MESSAGES/gitg.mo
-share/locale/gl/LC_MESSAGES/gitg.mo
-share/locale/it/LC_MESSAGES/gitg.mo
-share/locale/lt/LC_MESSAGES/gitg.mo
-share/locale/nb/LC_MESSAGES/gitg.mo
-share/locale/nl/LC_MESSAGES/gitg.mo
-share/locale/pa/LC_MESSAGES/gitg.mo
-share/locale/pt_BR/LC_MESSAGES/gitg.mo
-share/locale/ro/LC_MESSAGES/gitg.mo
-share/locale/sl/LC_MESSAGES/gitg.mo
-share/locale/sv/LC_MESSAGES/gitg.mo
-share/locale/zh_CN/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/da/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/de/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/es/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/it/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/gitg.mo
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/48x48/apps
