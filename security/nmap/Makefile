@@ -32,7 +32,6 @@ SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 SSL_CONFIGURE_OFF=	--without-openssl
 SSL_CFLAGS=		-I${OPENSSLINC}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
@@ -58,9 +57,6 @@ NDCC=	true
 .endif
 
 PORTDOCS=	CHANGELOG HACKING
-MANLANG=	"" de es fr hr hu it ja pl pt_BR pt_PT ro ru sk zh
-MAN1=		nmap.1
-MAN1_EN=	ncat.1 nping.1
 
 # PR: ports/159376  Workaround if OS is build with WITHOUT_INET6
 .if ! ${PORT_OPTIONS:MIPV6}
@@ -83,8 +79,8 @@ post-configure:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 # gcc from ports is in use
