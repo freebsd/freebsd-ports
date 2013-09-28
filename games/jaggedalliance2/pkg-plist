@@ -1,7 +1,8 @@
 bin/ja2
+man/man6/ja2.6.gz
 share/applications/ja2-stracciatella.desktop
 share/pixmaps/jagged2.ico
-@dirrm %%DATADIR%%/Data/TILECACHE
-@dirrm %%DATADIR%%/Data
-@dirrmtry %D/%%DATADIR%% 2>/dev/null || echo "Warning: data files in %D/%%DATADIR%% have been left intact."
+@dirrmtry %%DATADIR%%/Data/TILECACHE
+@dirrmtry %%DATADIR%%/Data
+@dirrmtry %%DATADIR%%
 @dirrmtry share/applications
