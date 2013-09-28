@@ -14,12 +14,7 @@ COMMENT=	HTML/XML Parser for Python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	beautifulsoup4
+PYDISTUTILS_AUTOPLIST=	yes
+PYTHON_PY3K_PLIST_HACK=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 320
-.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
