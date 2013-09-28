@@ -8,19 +8,17 @@ MASTER_SITES=	http://www.devin.com/xmms-xf86audio/download/
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	XF86Audio multimedia-key support for XMMS
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 MAKE_ARGS=	CC="${CC}" OPT="${CFLAGS}" DEBUG=""
-NO_STAGE=	yes
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/General
 	${INSTALL_DATA} ${WRKSRC}/libxf86audio.so \
-		`xmms-config --general-plugin-dir`
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	    ${STAGEDIR}${PREFIX}/lib/xmms/General
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

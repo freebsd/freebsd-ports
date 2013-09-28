@@ -9,13 +9,12 @@ DISTNAME=	flac-${PORTVERSION}
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	XMMS input plugin for playing FLAC files
 
-LIB_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
-		FLAC:${PORTSDIR}/audio/flac \
-		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		ogg:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
+		libFLAC.so:${PORTSDIR}/audio/flac \
+		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
+		libogg.so:${PORTSDIR}/audio/libogg
 
 USES=		gettext iconv
-NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk12
 USE_XORG=	x11 xau xcb xdmcp xext xi
@@ -28,8 +27,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ARGS=	LIBTOOL="${LIBTOOL} --tag=disable-static"
 MAKEFILE=	${FILESDIR}/Makefile
 
-# XXX
-post-install:
-	${RM} ${PREFIX}/lib/xmms/Input/libxmms-flac.la
+PLIST_FILES=	lib/xmms/Input/libxmms-flac.so
 
 .include <bsd.port.mk>
