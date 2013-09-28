@@ -10,14 +10,15 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open-source 2D game engine
 
-LIB_DEPENDS=	IL:${PORTSDIR}/graphics/devil \
-		physfs:${PORTSDIR}/devel/physfs \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
+		libphysfs.so:${PORTSDIR}/devel/physfs \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 LATEST_LINK=	love5
+
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_SDL=	sdl mixer
 USE_GL=		gl glu
 USE_LUA=	5.1+
@@ -34,7 +35,6 @@ PLIST_FILES=	bin/love5
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}5
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -45,9 +45,9 @@ post-patch:
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in changes.txt readme.txt
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
