@@ -2,5 +2,8 @@
 %%SITE_PERL%%/Astro/Misc.pm
 %%SITE_PERL%%/Astro/Time.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/.packlist
+%%PERL5_MAN3%%/Astro::Coord.3.gz
+%%PERL5_MAN3%%/Astro::Misc.3.gz
+%%PERL5_MAN3%%/Astro::Time.3.gz
 @dirrmtry %%SITE_PERL%%/Astro
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro
