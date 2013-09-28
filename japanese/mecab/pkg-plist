@@ -10,6 +10,7 @@ libexec/mecab/mecab-dict-gen
 libexec/mecab/mecab-dict-index
 libexec/mecab/mecab-system-eval
 libexec/mecab/mecab-test-gen
+man/man1/mecab.1.gz
 @dirrm libexec/mecab
 @unexec if cmp -s %D/etc/mecabrc.dist %D/etc/mecabrc; then rm -f %D/etc/mecabrc; else true; fi
 etc/mecabrc.dist
