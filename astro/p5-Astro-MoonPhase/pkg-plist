@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Astro/MoonPhase.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/MoonPhase/.packlist
+%%PERL5_MAN3%%/Astro::MoonPhase.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/MoonPhase
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro
 @dirrmtry %%SITE_PERL%%/Astro
