@@ -3,6 +3,7 @@
 
 PORTNAME=	Path-Tiny
 PORTVERSION=	0.032
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
@@ -13,8 +14,7 @@ COMMENT=	File path utility
 
 LICENSE=	AL2
 
-BUILD_DEPENDS=	p5-PathTools>=3.4000:${PORTSDIR}/devel/p5-PathTools \
-		p5-autodie>=2.14:${PORTSDIR}/devel/p5-autodie
+BUILD_DEPENDS=	p5-autodie>=2.14:${PORTSDIR}/devel/p5-autodie
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-FailWarnings>=0:${PORTSDIR}/devel/p5-Test-FailWarnings \
@@ -25,7 +25,11 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Path::Tiny.3
+.include <bsd.port.pre.mk>
 
-NO_STAGE=	yes
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} < 501800
+BUILD_DEPENDS+=	p5-PathTools>=3.4000:${PORTSDIR}/devel/p5-PathTools
+RUN_DEPENDS+=	p5-PathTools>=3.4000:${PORTSDIR}/devel/p5-PathTools
+.endif
+
+.include <bsd.port.post.mk>
