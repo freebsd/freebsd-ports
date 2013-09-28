@@ -11,7 +11,6 @@ MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Tool for testing network IDS implementations
 
 GNU_CONFIGURE=	yes
-MAKE_ARGS+=	STAGEDIR=${STAGEDIR}
 
 PLIST_FILES=	sbin/fragrouter \
 		man/man8/fragrouter.8.gz
