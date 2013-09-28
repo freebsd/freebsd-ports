@@ -14,16 +14,10 @@ LICENSE=	BSD
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
-MAN1=		symports.1
-MANCOMPRESSED=	no
+PLIST_FILES=	bin/${PORTNAME} man/man1/symports.1.gz
 
-PLIST_FILES=	bin/${PORTNAME}
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/auto-symlink-virtual.sh ${PREFIX}/bin/${PORTNAME}
-
-post-install:
-	${INSTALL_MAN} ${WRKDIR}/${MAN1} ${MAN1PREFIX}/man/man1/${MAN1}
+	${INSTALL_SCRIPT} ${WRKDIR}/auto-symlink-virtual.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKDIR}/symports.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/symports.1
 
 .include <bsd.port.mk>
