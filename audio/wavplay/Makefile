@@ -12,11 +12,10 @@ COMMENT=	A wav player and recorder
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=Doesn't work on !i386 and amd64
-NO_STAGE=	yes
 
-MAN1=		wavplay.1
+MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}"
 
-PLIST_FILES=	bin/wavplay bin/wavrec
+PLIST_FILES=	bin/wavplay bin/wavrec man/man1/${PORTNAME}.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|u_long|u_int|g' ${WRKSRC}/*.c ${WRKSRC}/*.h
