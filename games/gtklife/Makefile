@@ -65,18 +65,18 @@ pre-install:
 	@${ECHO_CMD} "@dirrmtry share/icons" >> ${PLIST}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gtklife ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/gtklife ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC} && \
-	${FIND} ${DATA_SUBDIRS} -type d ! -empty -exec ${MKDIR} "${DATADIR}/{}" \; && \
-	${FIND} ${DATA_SUBDIRS} ! -type d -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+	${FIND} ${DATA_SUBDIRS} -type d ! -empty -exec ${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
+	${FIND} ${DATA_SUBDIRS} ! -type d -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
 .for s in ${ICON_SIZES}
-	${MKDIR} ${PREFIX}/share/icons/hicolor/${s}/apps
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps
 	${INSTALL_DATA} ${WRKSRC}/icon_${s}.png \
-		${PREFIX}/share/icons/hicolor/${s}/apps/gtklife.png
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/gtklife.png
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
