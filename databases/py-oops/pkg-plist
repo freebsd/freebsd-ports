@@ -1,7 +1,0 @@
-%%PYTHON_SITELIBDIR%%/oops/__init__.py
-%%PYTHON_SITELIBDIR%%/oops/__init__.pyc
-%%PYTHON_SITELIBDIR%%/oops/__init__.pyo
-%%PYTHON_SITELIBDIR%%/oops/core.py
-%%PYTHON_SITELIBDIR%%/oops/core.pyc
-%%PYTHON_SITELIBDIR%%/oops/core.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/oops

@@ -12,13 +12,13 @@ DISTNAME=	py-rrdtool-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to RRDTool, the graphing and logging utility
 
-LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
+LIB_DEPENDS=	librrd.so:${PORTSDIR}/databases/rrdtool
 
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=	py-rrdtool
 
 LIBDIR?=	${LOCALBASE}/lib # directory where librrd.so lives
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
