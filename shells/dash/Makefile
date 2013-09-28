@@ -11,12 +11,10 @@ COMMENT=	POSIX-compliant implementation of /bin/sh
 GNU_CONFIGURE=	yes
 CFLAGS+=	-DUNUSABLE_RT_SIGNALS
 
-USES=	gmake
+USES=		gmake
 
-PLIST_FILES=	bin/dash
-MAN1=		dash.1
+PLIST_FILES=	bin/dash man/man1/dash.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/COMMON_CFLAGS =/ s|$$| ${CFLAGS}|' \
 		${WRKSRC}/src/Makefile.in
