@@ -5,6 +5,12 @@ bin/oggenc
 bin/ogginfo
 bin/vcut
 bin/vorbiscomment
+man/man1/ogg123.1.gz
+man/man1/oggdec.1.gz
+man/man1/oggenc.1.gz
+man/man1/ogginfo.1.gz
+man/man1/vcut.1.gz
+man/man1/vorbiscomment.1.gz
 share/examples/vorbis-tools/ogg123rc
 %%NLS%%share/locale/be/LC_MESSAGES/vorbis-tools.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/vorbis-tools.mo
