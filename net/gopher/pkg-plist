@@ -4,3 +4,6 @@ etc/gopher/gopher.rc
 etc/gopher/gopherremote.rc
 etc/gopher/gopher.hlp
 @dirrm etc/gopher
+man/man1/gopher.1.gz
+man/man1/gophfilt.1.gz
+man/man5/gopherrc.5.gz
