@@ -5,7 +5,7 @@
  VPATH		= @srcdir@
  
 -install_prefix	=
-+install_prefix	= ${STAGEDIR}
++install_prefix	= ${DESTDIR}
  prefix		= @prefix@
  exec_prefix	= @exec_prefix@
  sbindir		= @sbindir@
