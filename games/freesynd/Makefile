@@ -10,9 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	FreeSynd GPLed reimplementation of the classic Bullfrog game Syndicate
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_ZIP=	yes
 USE_SDL=	sdl mixer
 
@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
 SUB_FILES=	freesynd.sh
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|-lpng|-lpng -L${LOCALBASE}/lib|g; \
 		s|g++|${CXX}|g; \
@@ -28,12 +27,12 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	${MKDIR} ${DATADIR}/data
-	${INSTALL_PROGRAM} ${WRKSRC}/freesynd ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/freesynd.sh ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/*.mp3 ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}/data
+	${INSTALL_PROGRAM} ${WRKSRC}/freesynd ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/freesynd.sh ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/*.mp3 ${STAGEDIR}${DATADIR}
 .for datafile in ${WRKDIR}/${PORTNAME}/data/*
-	${INSTALL_DATA} ${WRKDIR}/${datafile} ${DATADIR}/data
+	${INSTALL_DATA} ${WRKDIR}/${datafile} ${STAGEDIR}${DATADIR}/data
 .endfor
 
 .include <bsd.port.mk>
