@@ -1,6 +1,12 @@
 @comment $FreeBSD: head/editors/nano/pkg-plist 315129 2013-03-24 15:50:36Z eadler $
 bin/nano
 bin/rnano
+man/man1/nano.1.gz
+man/man1/rnano.1.gz
+man/man5/nanorc.5.gz
+%%NLS%%man/fr/man1/nano.1.gz
+%%NLS%%man/fr/man1/rnano.1.gz
+%%NLS%%man/fr/man5/nanorc.5.gz
 %%NLS%%share/locale/bg/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/nano.mo
