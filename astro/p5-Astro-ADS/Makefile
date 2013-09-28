@@ -14,11 +14,7 @@ COMMENT=	OO Perl interface to the ADS abstract service
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-NO_STAGE=	yes
 USES=		perl5
 USE_PERL5=	configure
-
-MAN1=	adsquery.1
-MAN3=	Astro::ADS.3 Astro::ADS::Query.3 Astro::ADS::Result.3 Astro::ADS::Result::Paper.3
 
 .include <bsd.port.mk>
