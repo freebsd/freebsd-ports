@@ -18,23 +18,22 @@ NO_BUILD=	yes
 
 SUB_FILES=	gunfudeadlands
 
-PLIST_FILES=	bin/gunfudeadlands \
-		%%DATADIR%%/GunFuDeadlands.zip
-PLIST_DIRS=	%%DATADIR%%
-
+PLIST_FILES=	bin/gunfudeadlands
 PORTDOCS=	*
+PORTDATA=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
-		${DATADIR}/GunFuDeadlands.zip
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+		${STAGEDIR}${DATADIR}/GunFuDeadlands.zip
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/readme.txt ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/readme.txt ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
