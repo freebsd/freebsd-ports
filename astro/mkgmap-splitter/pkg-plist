@@ -1,9 +1,0 @@
-bin/mkgmap-splitter
-%%DATADIR%%/lib/fastutil.jar
-%%DATADIR%%/lib/osmpbf.jar
-%%DATADIR%%/lib/protobuf.jar
-%%DATADIR%%/lib/testng-5.9-jdk15.jar
-%%DATADIR%%/lib/xpp3-1.1.4c.jar
-%%DATADIR%%/splitter.jar
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%
