@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}_${PORTVERSION:C/\.0//}
 DISTNAME=	${PORTNAME:L}_${PORTVERSION}
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Unit testing, mock objects, and web testing framework for PHP
 
 LICENSE=	LGPL21
@@ -21,43 +21,21 @@ WRKSRC=		${WRKDIR}/${PORTNAME:L}
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 DOCFILES=	HELP_MY_TESTS_DONT_WORK_ANYMORE README
 HTMLDOCFILES=	docs/en/*
-.endif
-
 DATAFILES=	*.php extensions test LICENSE VERSION
 
 do-install:
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/ \
-	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} \; \
-	  && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/html
+	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} \; \
+	  && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{} \;
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 .for file in ${DOCFILES}
-	${CP} ${WRKSRC}/${file} ${DOCSDIR}
+	${CP} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for file in ${HTMLDOCFILES}
-	${CP} ${WRKSRC}/${file} ${DOCSDIR}/html
+	${CP} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}/html
 .endfor
-.endif
-
-post-install:
-	@${FIND} -s ${DATAFILES:S,^,${WRKSRC}/,} -not -type d \
-	  | ${SED} -ne 's,^${WRKSRC},${DATADIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
-	@${FIND} -s -d ${DATAFILES:S,^,${WRKSRC}/,} -type d \
-	  | ${SED} -ne 's,^${WRKSRC},@dirrm ${DATADIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm ${DATADIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
-.if ${PORT_OPTIONS:MDOCS}
-	@${FIND} -s ${DOCSDIR} -not -type d \
-	  | ${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
-	@${FIND} -s -d ${DOCSDIR} -type d \
-	  | ${SED} -ne 's,^${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
-.endif
 
 .include <bsd.port.mk>
