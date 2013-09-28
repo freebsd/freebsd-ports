@@ -27,3 +27,4 @@ share/locale/uk/LC_MESSAGES/getopt.mo
 share/locale/vi/LC_MESSAGES/getopt.mo
 share/locale/zh_CN/LC_MESSAGES/getopt.mo
 share/locale/zh_TW/LC_MESSAGES/getopt.mo
+man/man1/getopt.1.gz
