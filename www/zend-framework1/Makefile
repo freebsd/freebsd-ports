@@ -34,7 +34,6 @@ SQLITE_DESC=	Enable SQLite v3 PDO support
 REQPHP_DESC=	Install required PHP dependencies
 OPTPHP_DESC=	Install optional PHP dependencies
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -93,49 +92,21 @@ USE_PHP+=	pdo_sqlite
 .endif
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${INSTALL_DIRS}" ${DATADIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DATADIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${DATADIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
-	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	@${ECHO_CMD} '@exec ${FIND} ${DATADIR} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
-	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@${ECHO_CMD} '@exec ${FIND} ${DATADIR} -type d -print0 | \
-		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
-	@cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} zf.sh ${PREFIX}/bin/zf
-	@cd ${WRKSRC}/bin && ${INSTALL_DATA} zf.php ${PREFIX}/bin/zf.php
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "demos tests" ${EXAMPLESDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${EXAMPLESDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${EXAMPLESDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
-	@${FIND} ${EXAMPLESDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	@${ECHO_CMD} '@exec ${FIND} ${EXAMPLESDIR} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
-	@${FIND} ${EXAMPLESDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@${ECHO_CMD} '@exec ${FIND} ${EXAMPLESDIR} -type d -print0 | \
-		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
-.endif
-
-# Maintainer-mode target to speed up fixup of output from genplist
-fix-new-plist:
-	@if [ -f pkg-plist.new ]; then \
-		${PERL} -ni.bak -e \
-				's#^(.*%%DATADIR%%/externals)#%%DOJO%%$$1#g; \
-				print;' pkg-plist.new; \
-	else \
-		${ECHO_CMD} Please run genplist to create pkg-plist.new; \
-	fi
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${INSTALL_DIRS}" ${STAGEDIR}${DATADIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${DATADIR}
+	@${FIND} ${STAGEDIR}${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${FIND} ${STAGEDIR}${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} zf.sh ${STAGEDIR}${PREFIX}/bin/zf
+	@cd ${WRKSRC}/bin && ${INSTALL_DATA} zf.php ${STAGEDIR}${PREFIX}/bin/zf.php
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "demos tests" ${STAGEDIR}${EXAMPLESDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${EXAMPLESDIR}
+	@${FIND} ${STAGEDIR}${EXAMPLESDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${FIND} ${STAGEDIR}${EXAMPLESDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "INSTALL.txt README.txt" ${DOCSDIR}
-	@${INSTALL} -d ${DOCSDIR}/manual
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/manual
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "INSTALL.txt README.txt" ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/documentation/manual/core/en && \
-		${COPYTREE_SHARE} . ${DOCSDIR}/manual
-.endif
-	@${CAT} ${PKGMESSAGE}
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/manual
 
 .include <bsd.port.post.mk>
