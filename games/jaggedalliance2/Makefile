@@ -17,7 +17,7 @@ DISTVERSIONSUFFIX=	-source
 ONLY_FOR_ARCHS=	amd64 arm i386 pc98
 ONLY_FOR_ARCHS_REASON=	Needs a little endian environment
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_SDL=	sdl
 NO_CDROM=	License only permits non-commerical use
 NO_PACKAGE=	Language of the datafiles must be hardcoded in the game binary
@@ -38,7 +38,6 @@ POLISH_DESC=		Compile for Polish version
 RUSSIAN_DESC=		Compile for Russian version
 RUSSIAN_GOLD_DESC=	Compile for Russian Gold version
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for i in ${OPTIONS_SINGLE_LANGUAGE}
@@ -49,21 +48,21 @@ MAKE_ARGS+=	LNG=${i}
 
 MAKE_ARGS+=	NO_DEPS=yes # For a single full build dependency calculation is unnecessary
 
-MAKE_ARGS+=	SGPDATADIR=${DATADIR}
+MAKE_ARGS+=	SGPDATADIR=${STAGEDIR}${DATADIR}
 
 MAKE_ARGS+=	${INSTALL_MACROS:S/BSD_//}
 
-MAN6=	ja2.6
+MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX} MANPREFIX=${STAGEDIR}${PREFIX}
 
 post-install:
-	@${MKDIR} ${DATADIR}/Data/TILECACHE
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Data/TILECACHE
 	@${CAT} ${PKGMESSAGE}
 
 lowercase:
 	@for i in \
-		${DATADIR}/Data/*.[Ss][Ll][Ff] \
-		${DATADIR}/Data/TILECACHE/*.[Jj][Ss][Dd] \
-		${DATADIR}/Data/TILECACHE/*.[Ss][Tt][Ii]; \
+		${STAGEDIR}${DATADIR}/Data/*.[Ss][Ll][Ff] \
+		${STAGEDIR}${DATADIR}/Data/TILECACHE/*.[Jj][Ss][Dd] \
+		${STAGEDIR}${DATADIR}/Data/TILECACHE/*.[Ss][Tt][Ii]; \
 	do \
 		${MV} -n $$i `${DIRNAME} $$i`/`${BASENAME} $$i | ${TR} '[A-Z]' '[a-z]'`; \
 	done
