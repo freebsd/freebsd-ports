@@ -3,6 +3,10 @@
 %%SITE_PERL%%/Astro/SIMBAD/Result.pm
 %%SITE_PERL%%/Astro/SIMBAD/Result/Object.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/SIMBAD/.packlist
+%%PERL5_MAN3%%/Astro::SIMBAD.3.gz
+%%PERL5_MAN3%%/Astro::SIMBAD::Query.3.gz
+%%PERL5_MAN3%%/Astro::SIMBAD::Result.3.gz
+%%PERL5_MAN3%%/Astro::SIMBAD::Result::Object.3.gz
 @dirrm %%SITE_PERL%%/Astro/SIMBAD/Result
 @dirrm %%SITE_PERL%%/Astro/SIMBAD
 @dirrm %%SITE_PERL%%/Astro
