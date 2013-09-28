@@ -18,7 +18,6 @@ OPTIONS_DEFAULT=	REUSEADDR
 REUSEADDR_DESC=	Reuse the listening socket address
 NOFORK_DESC=	Do not fork and background
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MREUSEADDR}
@@ -34,6 +33,6 @@ do-build:
 	${CC} ${CFLAGS} -o ${WRKDIR}/${DISTNAME}/datapipe ${WRKDIR}/${DISTNAME}/datapipe.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/datapipe ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/datapipe ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.post.mk>
