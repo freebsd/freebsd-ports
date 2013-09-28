@@ -5,10 +5,13 @@ bin/ack
 %%SITE_PERL%%/App/Ack/ConfigLoader.pm
 %%SITE_PERL%%/App/Ack/Filter.pm
 %%SITE_PERL%%/App/Ack/Filter/Default.pm
+%%SITE_PERL%%/App/Ack/Filter/Collection.pm
 %%SITE_PERL%%/App/Ack/Filter/Extension.pm
+%%SITE_PERL%%/App/Ack/Filter/ExtensionGroup.pm
 %%SITE_PERL%%/App/Ack/Filter/FirstLineMatch.pm
 %%SITE_PERL%%/App/Ack/Filter/Inverse.pm
 %%SITE_PERL%%/App/Ack/Filter/Is.pm
+%%SITE_PERL%%/App/Ack/Filter/IsGroup.pm
 %%SITE_PERL%%/App/Ack/Filter/Match.pm
 %%SITE_PERL%%/App/Ack/Resource.pm
 %%SITE_PERL%%/App/Ack/Resource/Basic.pm
