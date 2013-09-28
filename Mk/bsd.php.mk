@@ -261,7 +261,7 @@ php-ini:
 _USE_PHP_ALL=	apc bcmath bitset bz2 calendar ctype curl dba dom \
 		exif fileinfo filter ftp gd gettext gmp \
 		hash iconv igbinary imap interbase intl json ldap mbstring mcrypt \
-		memcache mssql mysql mysqli odbc \
+		memcache mssql mysql mysqli odbc opcache \
 		openssl pcntl pcre pdf pdo pdo_dblib pdo_firebird pdo_mysql \
 		pdo_odbc pdo_pgsql pdo_sqlite pgsql posix \
 		pspell radius readline recode session shmop simplexml snmp soap\
@@ -312,6 +312,11 @@ mysqli_DEPENDS=	databases/php${PHP_VER}-mysqli
 ncurses_DEPENDS=devel/php${PHP_VER}-ncurses
 odbc_DEPENDS=	databases/php${PHP_VER}-odbc
 oci8_DEPENDS=	databases/php${PHP_VER}-oci8
+.if ${PHP_VER} == 55
+opcache_DEPENDS=	www/php${PHP_VER}-opcache
+.else
+opcache_DEPENDS=	www/pecl-zendopcache
+.endif	
 openssl_DEPENDS=security/php${PHP_VER}-openssl
 pcntl_DEPENDS=	devel/php${PHP_VER}-pcntl
 pcre_DEPENDS=	devel/php${PHP_VER}-pcre
