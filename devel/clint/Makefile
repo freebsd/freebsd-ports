@@ -13,12 +13,12 @@ COMMENT=	Static source code checker for C++
 LICENSE=	GPLv2
 
 USE_AUTOTOOLS=	libtool
-USE_PYTHON=	-2.7
+USE_PYTHON=	2.7
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--enable-python=${LOCALBASE}/bin/python2
 USE_LDCONFIG=	yes
-MAKE_JOBS_UNSAFE=	yes
+USE_GCC=	any
 
 USES=	gmake
 
@@ -28,5 +28,7 @@ NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-ldl||g'
+	${REINPLACE_CMD} -E 's,(DEFS = @DEFS@ -I. -I$$\(srcdir\)),\1 -I${LOCALBASE}/include -I${LOCALBASE}/include/${PYTHON_VERSION}/,g' ${WRKSRC}/lib/python/Makefile.in 
+	${REINPLACE_CMD} -E '100s,$$, -I${LOCALBASE}/include -I${LOCALBASE}/include/${PYTHON_VERSION}/,g' ${WRKSRC}/plugins/python/Makefile.in
 
 .include <bsd.port.mk>
