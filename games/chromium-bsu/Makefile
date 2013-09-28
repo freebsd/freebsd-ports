@@ -9,9 +9,9 @@ MASTER_SITES=	SF/${PORTNAME}/Chromium%20B.S.U.%20source%20code/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An arcade-style, top-scrolling space shooter
 
-LIB_DEPENDS=	glpng:${PORTSDIR}/graphics/glpng \
-		ftgl:${PORTSDIR}/graphics/ftgl \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libglpng.so:${PORTSDIR}/graphics/glpng \
+		libftgl.so:${PORTSDIR}/graphics/ftgl \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--disable-glc
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	*
+PORTDATA=	*
 
 MAN6=		chromium-bsu.6
 
@@ -29,7 +30,6 @@ OPTIONS_DEFINE=	SDL_MIXER GLUT NLS DOCS
 SDL_MIXER_DESC=	Use SDL_mixer instead of OpenAL for audio
 GLUT_DESC=	Use GLUT instead of SDL for video
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGLUT}
@@ -54,16 +54,6 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e '/^LIBS =/ s|$$| @INTLLIBS@|' \
-		${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|\([A-Z][A-Z_]*[A-Z]\)\+="\(.*\)"$$|\1="$$\1 \2"|; \
-		s|\([A-Z][A-Z_]*[A-Z]\)\+=\(.*\)$$|\1="$$\1 \2"|' \
-		${WRKSRC}/configure
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/doc / d' ${WRKSRC}/data/Makefile.in
 .endif
 
 .include <bsd.port.mk>
