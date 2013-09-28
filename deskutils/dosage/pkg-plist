@@ -182,5 +182,6 @@ bin/dosage
 %%PYTHON_SITELIBDIR%%/dosagelib/util.py
 %%PYTHON_SITELIBDIR%%/dosagelib/util.pyc
 %%PYTHON_SITELIBDIR%%/dosagelib/util.pyo
+man/man1/dosage.1.gz
 @dirrm %%PYTHON_SITELIBDIR%%/dosagelib/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/dosagelib
