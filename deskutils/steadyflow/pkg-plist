@@ -1,4 +1,5 @@
 bin/steadyflow
+man/man1/steadyflow.1.gz
 share/applications/steadyflow.desktop
 share/icons/hicolor/16x16/apps/steadyflow.svg
 share/icons/hicolor/22x22/apps/steadyflow.svg
@@ -78,5 +79,3 @@ share/locale/zh_TW/LC_MESSAGES/steadyflow.mo
 @dirrmtry share/locale/fo
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
-@exec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
