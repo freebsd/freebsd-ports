@@ -385,5 +385,5 @@ bin/freesynd.sh
 %%DATADIR%%/data/syngame.xmi
 %%DATADIR%%/freesynd
 %%DATADIR%%/intro.mp3
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/data
+@dirrmtry %%DATADIR%%
