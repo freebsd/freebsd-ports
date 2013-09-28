@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitg
-PORTVERSION=	0.0.8
-PORTREVISION=	1
+PORTVERSION=	0.2.5
 CATEGORIES=	devel deskutils gnome
 MASTER_SITES=	GNOME
 
@@ -13,17 +12,26 @@ COMMENT=	GTK-based git repository viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	git>=1.7.0.2:${PORTSDIR}/devel/git
+BUILD_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
+RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		git>=1.7.0.2:${PORTSDIR}/devel/git
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gconf2 gtk20 gtksourceview2 gnomehack
-USES=		gettext gmake pkgconfig
+CONFIGURE_ARGS=	--disable-silent-rules \
+		--disable-maintainer-mode
+USE_GNOME=	glib20 gtk30 gtksourceview3
+USES=		gettext gmake pkgconfig pathfix
 
 INSTALLS_ICONS=	yes
-GCONF_SCHEMAS=	gitg.schemas
+GLIB_SCHEMAS=	org.gnome.gitg.gschema.xml
 
-MAN1=		gitg.1
+LDFLAGS=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	NLS
+OPTIONS_DEFAULT=NLS
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=nls
+
 .include <bsd.port.mk>
