@@ -1,7 +1,3 @@
-bin/forgetsql-generate
-%%PYTHON_SITELIBDIR%%/forgetSQL.py
-%%PYTHON_SITELIBDIR%%/forgetSQL.pyc
-%%PYTHON_SITELIBDIR%%/forgetSQL.pyo
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO

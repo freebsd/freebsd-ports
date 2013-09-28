@@ -15,11 +15,11 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyPgSQL/libpq/__init__.py:${PORTSDIR}/database
 USE_PGSQL=	yes
 USE_BZIP2=	yes
 USE_GNOME=	pygtk2
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGVERSION=	1.9
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e \
 		's|@PIXMAP_PATH@|${PREFIX}/share/pixmaps/pgworksheet|' \
