@@ -13,13 +13,10 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAN1=		pkg_rmleaves.1
+PLIST_FILES=	sbin/pkg_rmleaves man/man1/pkg_rmleaves.1.gz
 
-PLIST_FILES=	sbin/pkg_rmleaves
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pkg_rmleaves ${PREFIX}/sbin/pkg_rmleaves
-	${INSTALL_MAN} ${WRKSRC}/pkg_rmleaves.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/pkg_rmleaves ${STAGEDIR}${PREFIX}/sbin/pkg_rmleaves
+	${INSTALL_MAN} ${WRKSRC}/pkg_rmleaves.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
