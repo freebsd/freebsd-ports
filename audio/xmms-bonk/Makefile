@@ -10,12 +10,14 @@ DISTNAME=	bonk-xmms-${PORTVERSION}
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	XMMS input plugin to play bonk files
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
-NO_STAGE=	yes
+LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 ALL_TARGET=
 
+PLIST_FILES=	lib/xmms/Input/libbonk.so
+
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libbonk.so ${PREFIX}/lib/xmms/Input
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
+	${INSTALL_DATA} ${WRKSRC}/libbonk.so ${STAGEDIR}${PREFIX}/lib/xmms/Input
 
 .include <bsd.port.mk>

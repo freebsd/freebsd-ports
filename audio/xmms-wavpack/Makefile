@@ -9,17 +9,15 @@ MASTER_SITES=	http://www.wavpack.com/
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	XMMS input plugin to play WavPack files
 
-LIB_DEPENDS=	wavpack.2:${PORTSDIR}/audio/wavpack \
-		xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack \
+		libxmms.so:${PORTSDIR}/multimedia/xmms
 
 USES=		pkgconfig
-NO_STAGE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-post-install:
-	${RM} ${PREFIX}/lib/xmms/Input/libwavpack.la
+PLIST_FILES=	lib/xmms/Input/libwavpack.so
 
 .include <bsd.port.mk>
