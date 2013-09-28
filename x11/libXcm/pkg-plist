@@ -7,7 +7,14 @@ lib/libXcm.la
 lib/libXcm.so
 lib/libXcm.so.0
 libdata/pkgconfig/xcm.pc
+man/man3/Xcm.3.gz
+man/man3/XcmDDC.3.gz
+man/man3/XcmEdidParse.3.gz
+man/man3/XcmEvents.3.gz
+man/man3/XcolorProfile.3.gz
+man/man3/XcolorRegion.3.gz
+man/man3/libXcm.3.gz
 share/cmake/Modules/FindXcm.cmake
 @dirrmtry share/cmake/Modules
 @dirrmtry share/cmake
-@dirrm include/X11/Xcm
+@dirrmtry include/X11/Xcm
