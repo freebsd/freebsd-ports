@@ -1,33 +1,34 @@
-www/snortreport/DB.php
-www/snortreport/DB_mysql.php
-www/snortreport/DB_pgsql.php
-www/snortreport/alertchart.php
-www/snortreport/alerts.php
-www/snortreport/default.css
-www/snortreport/functions.php
-www/snortreport/go.png
-www/snortreport/index.php
-www/snortreport/info-retrieval.php
-www/snortreport/ipdetail.php
-www/snortreport/menu.html
-www/snortreport/nbtscan.php
-www/snortreport/nmap.php
-www/snortreport/nodata.png
-www/snortreport/page_bottom.php
-www/snortreport/page_top.php
-www/snortreport/portscan.php
-www/snortreport/profiling.phps
-www/snortreport/psdetail.php
-www/snortreport/sig-by-time-chart.php
-www/snortreport/sigdetail.php
-www/snortreport/srconf.php
-www/snortreport/srlogo.png
-www/snortreport/ssm.js
-www/snortreport/ssmItems.js
-www/snortreport/timespan.php
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/Performance.txt
-%%PORTDOCS%%%%DOCSDIR%%/create_indexes.sql
-@dirrm www/snortreport
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%WWWDIR%%/DB.php
+%%WWWDIR%%/DB_mysql.php
+%%WWWDIR%%/DB_pgsql.php
+%%WWWDIR%%/GlowStick_Histogram.php
+%%WWWDIR%%/GlowStick_Piechart.php
+%%WWWDIR%%/alertchart.php
+%%WWWDIR%%/alerts.php
+%%WWWDIR%%/default.css
+%%WWWDIR%%/functions.php
+%%WWWDIR%%/go.png
+%%WWWDIR%%/histogram.php
+%%WWWDIR%%/index.php
+%%WWWDIR%%/info-retrieval.php
+%%WWWDIR%%/ipdetail.php
+%%WWWDIR%%/menu.html
+%%WWWDIR%%/nbtscan.php
+%%WWWDIR%%/nmap.php
+%%WWWDIR%%/nodata.png
+%%WWWDIR%%/page_bottom.php
+%%WWWDIR%%/page_top.php
+%%WWWDIR%%/png.php
+%%WWWDIR%%/portscan.php
+%%WWWDIR%%/profiling.phps
+%%WWWDIR%%/psdetail.php
+%%WWWDIR%%/sig-by-time-chart.php
+%%WWWDIR%%/sigdetail.php
+@unexec if cmp -s %D/%%WWWDIR%/srconf.php.sample %D/%%WWWDIR%%/srconf.php; then rm -f %D/%%WWWDIR%%/srconf.php; fi
+%%WWWDIR%%/srconf.php.sample
+@exec [ -f %D/%%WWWDIR%%/srconf.php ] || cp %D/%%WWWDIR%%/srconf.php.sample %D/%%WWWDIR%%/srconf.php
+%%WWWDIR%%/srlogo.png
+%%WWWDIR%%/ssm.js
+%%WWWDIR%%/ssmItems.js
+%%WWWDIR%%/timespan.php
+@dirrmtry %%WWWDIR%%
