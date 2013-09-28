@@ -15,17 +15,13 @@ LICENSE=	GPLv2
 
 HAS_CONFIGURE=	yes
 
-MANCOMPRESSED=	yes
-MAN1=		html2text.1
-MAN5=		html2textrc.5
 PORTDOCS=	CHANGES CREDITS KNOWN_BUGS README TODO
-PLIST_FILES=	bin/html2text
+PLIST_FILES=	bin/html2text man/man1/html2text.1.gz man/man5/html2textrc.5.gz
 
 CONFLICTS=	py27-html2text-[0-9]*
 
 PORTSCOUT=	skipb:0 skipv:1.3.2
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -39,13 +35,13 @@ post-patch:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/html2text ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/html2text.1.gz ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/html2textrc.5.gz ${MANPREFIX}/man/man5
+	${INSTALL_PROGRAM} ${WRKSRC}/html2text ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/html2text.1.gz ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/html2textrc.5.gz ${STAGEDIR}${MANPREFIX}/man/man5
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for fle in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${fle} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${fle} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
