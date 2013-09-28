@@ -8,7 +8,6 @@ CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/ \
 		ftp://ftp.sra.co.jp/pub/misc/eb/old/eb-${PORTVERSION:C/^([0-9]+)\.([0-9]+).*/\1.\2/}/
 DISTFILES=	${EBFILES} \
-		${LISTFILES} \
 		${APPENDIXFILES}
 EXTRACT_ONLY=	${EBFILES}
 
@@ -75,7 +74,6 @@ OPTIONS_DEFINE=	DOCS NLS
 
 APPENDIXDIR=	${DATADIR}/appendix
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -100,12 +98,10 @@ post-extract:
 .endfor
 
 post-install:
-	(cd ${WRKDIR}/appendix && ${COPYTREE_SHARE} \* ${APPENDIXDIR} )
+	(cd ${WRKDIR}/appendix && ${COPYTREE_SHARE} . ${STAGEDIR}${APPENDIXDIR} )
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
