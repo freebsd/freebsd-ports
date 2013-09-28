@@ -16,7 +16,6 @@ MAKE_ARGS=	CC="${CC}" FLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/asp2php
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgtk12}
@@ -35,9 +34,9 @@ post-patch:
 		 s|`gtk-config|`\$$\{GTK_CONFIG\}|g'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/asp2php ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/asp2php ${STAGEDIR}${PREFIX}/bin
 .if defined(HAVE_GTK)
-	${INSTALL_PROGRAM} ${WRKSRC}/gtkasp2php ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/gtkasp2php ${STAGEDIR}${PREFIX}/bin
 .endif
 
 .include <bsd.port.post.mk>
