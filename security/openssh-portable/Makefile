@@ -227,8 +227,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|' \
 			${WRKSRC}/pathnames.h ${WRKSRC}/sshd_config.5 \
 			${WRKSRC}/ssh_config.5
+.if !${PORT_OPTIONS:MOVERWRITE_BASE}
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${LOCALBASE}|' \
 		-e 's|%%RC_SCRIPT_NAME%%|${RC_SCRIPT_NAME}|' ${WRKSRC}/sshd.8
+.endif
 	@${REINPLACE_CMD} -E -e 's|SSH_VERSION|TMP_SSH_VERSION|' \
 		-e 's|.*SSH_RELEASE.*||' ${WRKSRC}/version.h
 	@${ECHO_CMD} '#define FREEBSD_PORT_VERSION	" FreeBSD-${PKGNAME}"' >> \
