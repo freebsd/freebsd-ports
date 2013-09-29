@@ -8,17 +8,15 @@ CATEGORIES?=	misc devel
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}3-${PORTVERSION}
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Open-source binary diff, VCDIFF/RFC 3284 delta compression
 
 LICENSE=	GPLv2 # (or later)
 
 GNU_CONFIGURE=	yes
 
-MAN1=		xdelta3.1
-PLIST_FILES=	bin/xdelta3
+PLIST_FILES=	bin/xdelta3 man/man1/xdelta3.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/_POSIX_/d ; \
