@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	magic
-PORTVERSION=	5.14
+PORTVERSION=	5.15
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.gw.com/mirrors/pub/unix/file/ \
@@ -19,7 +19,5 @@ PYDISTUTILS_PKGNAME=	Magic_file_extensions
 PYDISTUTILS_PKGVERSION=	0.2
 
 WRKSRC=	${WRKDIR}/file-${PORTVERSION}/python
-
-NO_STAGE=	yes
 
 .include <bsd.port.mk>
