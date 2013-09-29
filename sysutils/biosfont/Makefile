@@ -16,23 +16,24 @@ SSP_UNSAFE=	kernel module does not support ssp
 # only platforms guraranteed to be ok, feedback/patches are welcome
 ONLY_FOR_ARCHS=	i386 amd64
 
-MAN4=		biosfont.4
+USES=		uidfix
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 KMODDIR=	/boot/modules
 
 PLIST_SUB=	KMODDIR=${KMODDIR} PREFIX=${PREFIX}
-MAKE_ENV+=	KMODDIR=${KMODDIR}
+MAKE_ENV+=	KMODDIR=${KMODDIR} NO_XREF=yes
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source files
 .endif
 
+pre-install:
+	${MKDIR} ${STAGEDIR}/boot/modules
+
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/biosfont.h ${PREFIX}/include
-	${INSTALL_MAN} ${MAN4:S|^|${WRKSRC}/|} ${PREFIX}/man/man4
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} ${WRKSRC}/biosfont.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_MAN} ${WRKSRC}/biosfont.4 ${STAGEDIR}${PREFIX}/man/man4
 
 .include <bsd.port.post.mk>
