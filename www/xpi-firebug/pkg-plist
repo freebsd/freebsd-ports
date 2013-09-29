@@ -104,7 +104,6 @@
 %%XPI_XPIDIR%%/content/firebug/firebug.js
 %%XPI_XPIDIR%%/content/firebug/firebugOverlay.xul
 %%XPI_XPIDIR%%/content/firebug/firebugui/blank.gif
-%%XPI_XPIDIR%%/content/firebug/firebugui/filters.svg
 %%XPI_XPIDIR%%/content/firebug/firebugui/panel.html
 %%XPI_XPIDIR%%/content/firebug/firefox/bindings.xml
 %%XPI_XPIDIR%%/content/firebug/firefox/browserCommands.js
@@ -390,7 +389,7 @@
 %%XPI_XPIDIR%%/skin/classic/callstack.css
 %%XPI_XPIDIR%%/skin/classic/collapseSidePanels.png
 %%XPI_XPIDIR%%/skin/classic/collapseSidePanelsVertical.png
-%%XPI_XPIDIR%%/skin/classic/commandLinePopup.svg
+%%XPI_XPIDIR%%/skin/classic/commandLinePopup.png
 %%XPI_XPIDIR%%/skin/classic/console.css
 %%XPI_XPIDIR%%/skin/classic/continue.png
 %%XPI_XPIDIR%%/skin/classic/cookies/activation-menu-cookies.png
@@ -432,20 +431,17 @@
 %%XPI_XPIDIR%%/skin/classic/mac/debugger.css
 %%XPI_XPIDIR%%/skin/classic/mac/detach.png
 %%XPI_XPIDIR%%/skin/classic/mac/firebug.css
-%%XPI_XPIDIR%%/skin/classic/mac/left.svg
 %%XPI_XPIDIR%%/skin/classic/mac/minimize.png
 %%XPI_XPIDIR%%/skin/classic/mac/optionsMenuTarget.png
 %%XPI_XPIDIR%%/skin/classic/mac/optionsMenuTargetHover.png
 %%XPI_XPIDIR%%/skin/classic/mac/panel.css
 %%XPI_XPIDIR%%/skin/classic/mac/pin.png
 %%XPI_XPIDIR%%/skin/classic/mac/pinned.png
-%%XPI_XPIDIR%%/skin/classic/mac/right.svg
 %%XPI_XPIDIR%%/skin/classic/mac/searchPanel.png
 %%XPI_XPIDIR%%/skin/classic/mac/searchPanelDown.png
 %%XPI_XPIDIR%%/skin/classic/mac/twistyClosed.png
 %%XPI_XPIDIR%%/skin/classic/mac/twistyOpen.png
 %%XPI_XPIDIR%%/skin/classic/mac/window.css
-%%XPI_XPIDIR%%/skin/classic/migrationArrow.svg
 %%XPI_XPIDIR%%/skin/classic/navigationBack.png
 %%XPI_XPIDIR%%/skin/classic/navigationForward.png
 %%XPI_XPIDIR%%/skin/classic/net.css
@@ -477,7 +473,6 @@
 %%XPI_XPIDIR%%/skin/classic/tableRep.css
 %%XPI_XPIDIR%%/skin/classic/timeInfoTip.css
 %%XPI_XPIDIR%%/skin/classic/warning.png
-%%XPI_XPIDIR%%/skin/classic/warning.svg
 %%XPI_XPIDIR%%/skin/classic/win/breakpointConditionEditor.png
 %%XPI_XPIDIR%%/skin/classic/win/breakpointConditionEditorDown.png
 %%XPI_XPIDIR%%/skin/classic/win/close.png
@@ -487,7 +482,6 @@
 %%XPI_XPIDIR%%/skin/classic/win/detach.png
 %%XPI_XPIDIR%%/skin/classic/win/down.png
 %%XPI_XPIDIR%%/skin/classic/win/firebug.css
-%%XPI_XPIDIR%%/skin/classic/win/left.svg
 %%XPI_XPIDIR%%/skin/classic/win/linux.css
 %%XPI_XPIDIR%%/skin/classic/win/minimize.png
 %%XPI_XPIDIR%%/skin/classic/win/optionsMenuTarget.png
@@ -495,7 +489,6 @@
 %%XPI_XPIDIR%%/skin/classic/win/panel.css
 %%XPI_XPIDIR%%/skin/classic/win/pin.png
 %%XPI_XPIDIR%%/skin/classic/win/pinned.png
-%%XPI_XPIDIR%%/skin/classic/win/right.svg
 %%XPI_XPIDIR%%/skin/classic/win/tabMenuTarget.png
 %%XPI_XPIDIR%%/skin/classic/win/tabMenuTargetHover.png
 %%XPI_XPIDIR%%/skin/classic/win/twistyClosed.png
