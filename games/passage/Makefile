@@ -15,7 +15,9 @@ USE_SDL=	sdl
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/gamma256/gameSource
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(PLATFORM_LINK_FLAGS =\).*|\1 ${PTHREAD_LIBS}|' \
 		${WRKSRC}/Makefile.GnuLinux
@@ -30,8 +32,8 @@ do-configure:
 	cd ${WRKSRC} && ${CAT} Makefile.GnuLinux Makefile.all > Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Passage ${PREFIX}/bin/
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "graphics music settings" ${DATADIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/Passage ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "graphics music settings" ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
