@@ -19,20 +19,17 @@ MAKE_ARGS=	"PREFIX=${PREFIX}"
 WRKSRC=		${WRKDIR}/sargon-${PORTNAME}-srg-${GITVERSION:S/^0-g//}
 
 PORTDOCS=	README CREDITS CHANGELOG
-MAN1=		trayer.1
 
-PLIST_FILES=	bin/trayer
+PLIST_FILES=	bin/trayer man/man1/trayer.1.gz
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(PREFIX)/|$$(DESTDIR)&|' ${WRKSRC}/Makefile
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
