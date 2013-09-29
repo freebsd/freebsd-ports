@@ -16,10 +16,8 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-USES=	gmake
+USES=		gmake
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
