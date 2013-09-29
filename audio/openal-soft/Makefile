@@ -12,7 +12,6 @@ COMMENT=	A software implementation of the OpenAL specification
 CONFLICTS=	openal-200[0-9]*
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
 USES=		cmake
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DALSA:BOOL=OFF -DPORTAUDIO:BOOL=OFF -DSOLARIS:BOOL=OFF \
@@ -26,7 +25,7 @@ PULSEAUDIO_DESC=	Enable sound streaming using PulseAudio
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	pulse-simple:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
 CFLAGS+=	-Iinclude -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS+=	-DPULSEAUDIO:BOOL=ON
