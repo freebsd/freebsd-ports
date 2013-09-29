@@ -34,7 +34,6 @@ PORTDOCS=	manual-${PORTVERSION}.pdf quickguide-${PORTVERSION}.pdf
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 DESKTOP_ENTRIES=	"ArgoUML" \
@@ -45,19 +44,19 @@ DESKTOP_ENTRIES=	"ArgoUML" \
 			false
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/argouml.sh ${PREFIX}/bin/argouml
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.jar ${DATADIR}
-	@${MKDIR} ${DATADIR}/ext
-	${INSTALL_DATA} ${WRKSRC}/ext/*.jar ${DATADIR}/ext
-	${INSTALL_DATA} ${WRKSRC}/ext/*.xml ${DATADIR}/ext
-	@${MKDIR} ${DATADIR}/icon
-	${INSTALL_DATA} ${WRKSRC}/icon/*.png ${DATADIR}/icon
-	${INSTALL_DATA} ${WRKSRC}/icon/*.svg ${DATADIR}/icon
+	${INSTALL_SCRIPT} ${WRKDIR}/argouml.sh ${STAGEDIR}${PREFIX}/bin/argouml
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.jar ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/ext
+	${INSTALL_DATA} ${WRKSRC}/ext/*.jar ${STAGEDIR}${DATADIR}/ext
+	${INSTALL_DATA} ${WRKSRC}/ext/*.xml ${STAGEDIR}${DATADIR}/ext
+	@${MKDIR} ${STAGEDIR}${DATADIR}/icon
+	${INSTALL_DATA} ${WRKSRC}/icon/*.png ${STAGEDIR}${DATADIR}/icon
+	${INSTALL_DATA} ${WRKSRC}/icon/*.svg ${STAGEDIR}${DATADIR}/icon
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manual-${PORTVERSION}.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/quickguide-${PORTVERSION}.pdf ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manual-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/quickguide-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
