@@ -21,9 +21,7 @@ USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20 libgnomecanvas libgnomeui libxml2
 INSTALLS_OMF=	yes
 
-MAN1=		amide.1
-
-OPTIONS_DEFINE=	CODEC DCMTK GSL VOLPACK XMEDCON
+OPTIONS_DEFINE=	CODEC DCMTK GSL NLS VOLPACK XMEDCON
 OPTIONS_SINGLE=	CODEC
 OPTIONS_SINGLE_CODEC=	FFMPEG FAME
 OPTIONS_DEFAULT=	CODEC DCMTK FFMPEG GSL VOLPACK XMEDCON
@@ -36,57 +34,20 @@ GSL_DESC=	Use gsl
 VOLPACK_DESC=	Use volpack
 XMEDCON_DESC=	Use xmedcon
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDCMTK}
-LIB_DEPENDS+=	dcmdata:${PORTSDIR}/devel/dcmtk
-CONFIGURE_ARGS+=	--enable-libdcmdata
-.else
-CONFIGURE_ARGS+=	--disable-libdcmdata
-.endif
-
-.if ${PORT_OPTIONS:MFAME}
-LIB_DEPENDS+=	fame:${PORTSDIR}/multimedia/libfame
-CONFIGURE_ARGS+=	--enable-libfame
-.else
-CONFIGURE_ARGS+=	--disable-libfame
-.endif
-
-.if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
-CONFIGURE_ARGS+=	--enable-ffmpeg
-.else
-CONFIGURE_ARGS+=	--disable-ffmpeg
-.endif
-
-.if ${PORT_OPTIONS:MGSL}
-LIB_DEPENDS+=	gsl:${PORTSDIR}/math/gsl
-CONFIGURE_ARGS+=	--enable-libgsl
-.else
-CONFIGURE_ARGS+=	--disable-libgsl
-.endif
-
-.if ${PORT_OPTIONS:MVOLPACK}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libvolpack.a:${PORTSDIR}/graphics/volpack
-CONFIGURE_ARGS+=	--enable-libvolpack
-.else
-CONFIGURE_ARGS+=	--disable-libvolpack
-.endif
-
-.if ${PORT_OPTIONS:MXMEDCON}
-LIB_DEPENDS+=	mdc:${PORTSDIR}/graphics/xmedcon
-CONFIGURE_ARGS+=	--enable-libmdc
-.else
-CONFIGURE_ARGS+=	--disable-libmdc
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS=''
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS='@comment '
-.endif
+OPTIONS_SUB=			yes
+DCMTK_CONFIGURE_ENABLE=		libdcmdata
+DCMTK_LIB_DEPENDS=		libdcmdata.so:${PORTSDIR}/devel/dcmtk
+FAME_CONFIGURE_ENABLE=		libfame
+FAME_LIB_DEPENDS=		libfame.so:${PORTSDIR}/multimedia/libfame
+FFMPEG_CONFIGURE_ENABLE=	ffmpeg
+FFMPEG_LIB_DEPENDS=		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+GSL_CONFIGURE_ENABLE=		libgsl
+GSL_LIB_DEPENDS=		libgsl.so:${PORTSDIR}/math/gsl
+VOLPACK_CONFIGURE_ENABLE=	libvolpack
+VOLPACK_BUILD_DEPENDS=		${LOCALBASE}/lib/libvolpack.a:${PORTSDIR}/graphics/volpack
+XMEDCON_CONFIGURE_ENABLE=	libmdc
+XMEDCON_LIB_DEPENDS=		libmdc.so:${PORTSDIR}/graphics/xmedcon
+NLS_CONFIGURE_ENABLE=		nls
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in \

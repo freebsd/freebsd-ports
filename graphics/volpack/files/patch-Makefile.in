@@ -1,5 +1,5 @@
 --- Makefile.in.orig	1994-12-12 21:21:47.000000000 +0100
-+++ Makefile.in	2013-07-31 15:38:51.000000000 +0800
++++ Makefile.in	2013-09-24 09:49:45.698631771 +0200
 @@ -175,25 +175,13 @@
  	cc -o makeopts makeopts.c
  
@@ -29,6 +29,43 @@
  
  examples: libvolpack.a
  	cd examples; make
+@@ -201,7 +189,7 @@
+ install: install-binaries install-include install-man
+ 
+ install-binaries: libvolpack.a
+-	@for i in $(LIB_DIR) ; \
++	@for i in $(DESTDIR)$(LIB_DIR) ; \
+ 	    do \
+ 	    if [ ! -d $$i ] ; then \
+ 		echo "Making directory $$i"; \
+@@ -211,11 +199,11 @@
+ 		fi; \
+ 	    done;
+ 	@echo "Installing libvolpack.a"
+-	@$(INSTALL_DATA) libvolpack.a $(LIB_DIR)
+-	@$(RANLIB) $(LIB_DIR)/libvolpack.a
++	@$(INSTALL_DATA) libvolpack.a $(DESTDIR)$(LIB_DIR)
++	@$(RANLIB) $(DESTDIR)$(LIB_DIR)/libvolpack.a
+ 
+ install-include:
+-	@for i in $(INCLUDE_DIR) ; \
++	@for i in $(DESTDIR)$(INCLUDE_DIR) ; \
+ 	    do \
+ 	    if [ ! -d $$i ] ; then \
+ 		echo "Making directory $$i"; \
+@@ -225,10 +213,10 @@
+ 		fi; \
+ 	    done;
+ 	@echo "Installing volpack.h"
+-	@$(INSTALL_DATA) volpack.h $(INCLUDE_DIR)
++	@$(INSTALL_DATA) volpack.h $(DESTDIR)$(INCLUDE_DIR)
+ 
+ install-man:
+-	@for i in $(MAN_DIR) $(MAN3_DIR) ; \
++	@for i in $(DESTDIR)$(MAN_DIR) $(DESTDIR)$(MAN3_DIR) ; \
+ 	    do \
+ 	    if [ ! -d $$i ] ; then \
+ 		echo "Making directory $$i"; \
 @@ -239,10 +227,9 @@
  	    done;
  	@cd $(SRC_DIR)/man/src; for i in *.3; \
@@ -38,8 +75,8 @@
 -	    cp $$i $(MAN3_DIR); \
 -	    chmod 444 $(MAN3_DIR)/$$i; \
 +	    echo "Installing man/src/volpack-$$i"; \
-+	    cp $$i $(MAN3_DIR)/volpack-$$i; \
-+	    chmod 444 $(MAN3_DIR)/volpack-$$i; \
++	    cp $$i $(DESTDIR)$(MAN3_DIR)/volpack-$$i; \
++	    chmod 444 $(DESTDIR)$(MAN3_DIR)/volpack-$$i; \
  	    done;
  
  Makefile: $(SRC_DIR)/Makefile.in
