@@ -11,9 +11,6 @@ XORG_CAT=	app
 USES=		iconv
 USE_XORG=	x11 xcb xproto xorg-macros
 
-PLIST_FILES=	bin/xwininfo
+PLIST_FILES=	bin/xwininfo man/man1/xwininfo.1.gz
 
-MAN1=		xwininfo.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
