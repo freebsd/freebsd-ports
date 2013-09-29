@@ -11,9 +11,9 @@ MASTER_SITES=	http://kartofel.jfedor.org/downloads/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Connect the dots in order without crossing over yourself
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_SDL=	sdl gfx mixer image ttf
 
 ALL_TARGET=	default
@@ -30,7 +30,6 @@ DESKTOP_ENTRIES="Kartofel" \
 		"Game;LogicGame;ArcadeGame;" \
 		false
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^CXXOPTIONS/ d; s|g++|${CXX} ${CXXFLAGS}|; \
 		s|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/Makefile
@@ -39,10 +38,8 @@ post-patch:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/kartofel ${PREFIX}/bin
-.if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "${DATA_DIRS}" ${DATADIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/kartofel ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "${DATA_DIRS}" ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
