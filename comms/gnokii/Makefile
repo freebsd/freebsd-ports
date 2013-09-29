@@ -36,8 +36,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES+=	pkg-message
 PORTDOCS=	*
-MAN1=		gnokii.1 sendsms.1 xgnokii.1
-MAN8=		gnokiid.8 mgnokiidev.8
 
 CONFLICTS=	smstools-[0-9]* sendsms-[0-9]*
 
@@ -53,24 +51,13 @@ SMSD_DESC=	Enable smsd daemon (includes "file" backend)
 SMSDDB_DESC=	Enable database support in smsd (select one or more)
 X11_DESC=	Build graphical version (xgnokii)
 
-NO_STAGE=	yes
+ICAL_CONFIGURE_ENABLE=	libical
+ICAL_LIB_DEPENDS=	libical.so:${PORTSDIR}/devel/libical
+USB_CONFIGURE_ENABLE=	libusb
+PCSC_CONFIGURE_ENABLE=	libpcsclite
+PCSC_LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MICAL}
-LIB_DEPENDS+=		ical:${PORTSDIR}/devel/libical
-.else
-CONFIGURE_ARGS+=	--disable-libical
-.endif
-
-. if ! ${PORT_OPTIONS:MUSB}
-CONFIGURE_ARGS+=	--disable-libusb
-.endif
-
-.if ${PORT_OPTIONS:MPCSC}
-LIB_DEPENDS+=		pcsclite:${PORTSDIR}/devel/pcsc-lite
-.else
-CONFIGURE_ARGS+=	--disable-libpcsclite
-.endif
 
 .if empty(PORT_OPTIONS:MSMSD)
 PLIST_SUB+=	SMSD='@comment ' MSM='@comment ' PGM='@comment ' SQLT='@comment '
@@ -78,7 +65,6 @@ CONFIGURE_ARGS+=	--disable-smsd
 .else
 PLIST_SUB+=	SMSD=''
 USE_GNOME+=	glib20
-MAN8+=		smsd.8
 . if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 PLIST_SUB+=	MSM=''
@@ -132,29 +118,25 @@ post-patch:
 	@${MV} ${WRKSRC}/Docs/man/xgnokii.1x ${WRKSRC}/Docs/man/xgnokii.1
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/xgnokii/xgnokii.pc ${PREFIX}/libdata/pkgconfig
-	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${INSTALL_DATA} ${WRKSRC}/xgnokii/xgnokii.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 .if ${PORT_OPTIONS:MDOCS}
-	${GMAKE} install -C ${WRKSRC}/Docs
+	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install -C ${WRKSRC}/Docs
 .else
-	${GMAKE} install -C ${WRKSRC}/Docs/man
+	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install -C ${WRKSRC}/Docs/man
 .endif
 	${INSTALL_DATA} ${WRKSRC}/Docs/sample/gnokiirc \
-		${PREFIX}/etc/gnokiirc.sample
+		${STAGEDIR}${PREFIX}/etc/gnokiirc.sample
 .if ${PORT_OPTIONS:MSMSD}
-	@cd ${WRKSRC}/smsd && ${GMAKE} install
-	${MKDIR} ${PREFIX}/share/smsd
-	${INSTALL_SCRIPT} ${WRKSRC}/smsd/action ${PREFIX}/share/smsd
-	${INSTALL_DATA} ${WRKSRC}/smsd/README ${PREFIX}/share/smsd
+	@cd ${WRKSRC}/smsd && ${SETENV} ${MAKE_ENV} ${GMAKE} install
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/smsd
+	${INSTALL_SCRIPT} ${WRKSRC}/smsd/action ${STAGEDIR}${PREFIX}/share/smsd
+	${INSTALL_DATA} ${WRKSRC}/smsd/README ${STAGEDIR}${PREFIX}/share/smsd
 .  if ${PORT_OPTIONS:MMYSQL}
-	${INSTALL_DATA} ${WRKSRC}/smsd/sms.tables.mysql.sql ${PREFIX}/share/smsd
+	${INSTALL_DATA} ${WRKSRC}/smsd/sms.tables.mysql.sql ${STAGEDIR}${PREFIX}/share/smsd
 .  endif
 .  if ${PORT_OPTIONS:MPGSQL}
-	${INSTALL_DATA} ${WRKSRC}/smsd/sms.tables.pq.sql ${PREFIX}/share/smsd
+	${INSTALL_DATA} ${WRKSRC}/smsd/sms.tables.pq.sql ${STAGEDIR}${PREFIX}/share/smsd
 .  endif
 .endif
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .include <bsd.port.mk>
