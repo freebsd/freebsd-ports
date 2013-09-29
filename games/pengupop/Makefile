@@ -12,12 +12,11 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Online multiplayer clone of Bust a Move
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_SDL=	sdl
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 PLIST_FILES=	bin/pengupop
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
