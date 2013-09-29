@@ -10,18 +10,14 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	GTK2 client for the XMMS2 music player
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	xmmsclient:${PORTSDIR}/audio/xmms2 \
-		gee:${PORTSDIR}/devel/libgee06
+LIB_DEPENDS=	libxmmsclient.so:${PORTSDIR}/audio/xmms2 \
+		libgee.so:${PORTSDIR}/devel/libgee06
 
-NO_STAGE=	yes
 USES=		pkgconfig
 USE_SCONS=	yes
 USE_GNOME=	gtk30
 
-SCONS_ARGS=	MANDIR=${MANPREFIX}/man
-
-MAN1=		abraca.1
-MANCOMPRESSED=	yes
+SCONS_ARGS=	MANDIR=${MANPREFIX}/man DESTDIR=${STAGEDIR}
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_DEFAULT=	NLS
