@@ -1,3 +1,4 @@
+# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	javatari
@@ -8,7 +9,7 @@ DISTNAME=	${PORTNAME}330
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Multiplayer Atari 2600 emulator written in pure Java
 
 EXTRACT_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
@@ -25,15 +26,14 @@ JARFILE=	${DISTNAME}${EXTRACT_SUFX}
 DESKTOP_ENTRIES=	"Javatari" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" "Application;Game;" ${FALSE}
 PLIST_FILES+=	share/pixmaps/${PORTNAME}.png
 
-NO_STAGE=	yes
 post-extract:
 	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -d ${WRKDIR} ${JARFILE} \
 		org/javatari/pc/screen/images/LogoIcon32.png)
 
 do-install:
-	${INSTALL_DATA} ${DISTDIR}/${JARFILE} ${JAVAJARDIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/javatari ${PREFIX}/bin
+	${INSTALL_DATA} ${DISTDIR}/${JARFILE} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/javatari ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIR}/org/javatari/pc/screen/images/LogoIcon32.png \
-		${PREFIX}/share/pixmaps/${PORTNAME}.png
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .include <bsd.port.mk>
