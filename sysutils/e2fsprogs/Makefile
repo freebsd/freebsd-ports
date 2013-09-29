@@ -83,7 +83,7 @@ post-patch::
 # disable f_mmp_garbage, fails on FreeBSD, and the resize*big_expand tests,
 # which are too unwieldy to run automatically (need too much free space).
 # f_extent_oobounds fails in Tinderbox and is fine outside, reason unclear.
-.for i in f_mmp_garbage f_extent_oobounds r_64bit_big_expand r_bigalloc_big_expand r_ext4_big_expand
+.for i in f_mmp_garbage f_extent_oobounds r_64bit_big_expand r_bigalloc_big_expand r_ext4_big_expand m_bigjournal
 	@${MV} ${WRKSRC}/tests/${i} ${WRKSRC}/tests/disabled_test-${i}
 .endfor
 
