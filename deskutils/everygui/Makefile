@@ -12,11 +12,11 @@ COMMENT=	Dynamic GUI for an OS command
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 USE_GNOME=	libglade2 pygnome2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.py" | ${XARGS} ${REINPLACE_CMD} -e\
 		's,/usr/share,${PREFIX}/share,g' -e\
