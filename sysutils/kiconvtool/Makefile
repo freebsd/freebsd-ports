@@ -12,9 +12,9 @@ COMMENT=	Tool to preload kernel iconv charset tables
 
 USES=		iconv	# used by libkiconv, actually
 
-PLIST_FILES=	sbin/kiconvtool etc/rc.d/kiconv
+MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}"
 
-MAN8=		kiconvtool.8
+PLIST_FILES=	sbin/${PORTNAME} etc/rc.d/kiconv \
+		man/man8/${PORTNAME}.8.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
