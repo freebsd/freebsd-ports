@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mcmc-jags
-PORTVERSION=	3.3.0
+PORTVERSION=	3.4.0
 CATEGORIES=	math
 MASTER_SITES=	SF:1,2,3,4
 MASTER_SITE_SUBDIR=	mcmc-jags/JAGS/${S}.x/Source/:1 \
@@ -18,7 +18,7 @@ COMMENT=	Just Another Gibbs Sampler
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USES=		bison
+USES=		bison gmake
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 
@@ -51,11 +51,11 @@ WITH_BLAS?=	reference
 .endif
 
 .if ${WITH_BLAS} == "atlas"
-LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 CONFIGURE_ARGS=	--with-lapack="-lalapack -lptcblas" --with-blas="-lptf77blas"
 .elif ${WITH_BLAS} == "reference"
-LIB_DEPENDS+=	blas:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
 CONFIGURE_ARGS=	--with-lapack="-llapack" --with-blas="-lblas"
 .else
 IGNORE =	: invalid value for WITH_BLAS: ${WITH_BLAS}
@@ -94,9 +94,11 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/R/library/coda/R/coda.rdb:${PORTSDIR}/math/R-cr
 
 check test: install
 .for i in 1 2
-	cd ${WRKDIR}/classic-bugs/vol${i}; ${SETENV} ${MAKE_ENV} \
-	${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} check
+	@cd ${WRKDIR}/classic-bugs/vol${i}; ${SETENV} ${MAKE_ENV} \
+	${MAKE_CMD} ${MAKE_ARGS} check
 .endfor
+	@${FIND} ${WRKDIR}/classic-bugs -type f -name check.log | ${SORT} | \
+	${XARGS} -tI @  ${CAT} @
 
 .endif
 .include <bsd.port.mk>
