@@ -20,15 +20,8 @@ OPTIONS_DEFINE=	DOXYGEN
 OPTIONS_DEFAULT+=	DOXYGEN
 .endif
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-PLIST_SUB+=	DOXYGEN=""
-.else
-CMAKE_ARGS+=	-DBUILD_DOCUMENTATION=OFF
-PLIST_SUB+=	DOXYGEN="@comment "
-.endif
+OPTIONS_SUB=yes
+DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_CMAKE_OFF=	-DBUILD_DOCUMENTATION=OFF
 
 .include <bsd.port.mk>
