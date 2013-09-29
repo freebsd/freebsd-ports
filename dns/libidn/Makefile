@@ -3,6 +3,7 @@
 
 PORTNAME=	libidn
 PORTVERSION=	1.28
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	GNU
 
@@ -39,6 +40,9 @@ post-patch:
 .if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/^install-data-am: / s| install-imagesDATA||' \
 		${WRKSRC}/doc/Makefile.in
+.endif
+.if ${PORT_OPTIONS:MNLS}
+	@${REINPLACE_CMD} -e 's/-lidn/& -lintl/' ${WRKSRC}/libidn.pc.in
 .endif
 
 post-install:
