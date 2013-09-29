@@ -2,43 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	sqlcached
-PORTVERSION=	r4
+PORTVERSION=	r6
 CATEGORIES=	databases net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ivoras@FreeBSD.org
-COMMENT=	A cache daemon using SQL for data manipulation
+COMMENT=	Cache daemon using SQL for data manipulation
 
-LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2
+LIB_DEPENDS=	libsqlite.so:${PORTSDIR}/databases/sqlite2
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS=		-O2 -Wall -I${LOCALBASE}/include
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
-MAN1=		${PORTNAME}.1
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	${PORTNAME}.html ${PORTNAME}.txt
 
-PLIST_FILES=	bin/${PORTNAME} etc/rc.d/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} etc/rc.d/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -E -e 's|^(.*FLAGS)=|\1?=|' \
-		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's|/usr/local|${PREFIX}|' \
 		${WRKSRC}/FreeBSD/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MANPREFIX}/man/man1
-	${INSTALL_SCRIPT} ${WRKSRC}/FreeBSD/${PORTNAME} ${PREFIX}/etc/rc.d
-
-.if !defined(NOPORTDOCS)
-	${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCSDIR}
-	for doc in ${PORTDOCS}; do \
-		${INSTALL_DATA} ${WRKSRC}/doc/$${doc} ${DOCSDIR}; \
-	done
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/FreeBSD/${PORTNAME} ${STAGEDIR}${PREFIX}/etc/rc.d
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
