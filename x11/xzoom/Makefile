@@ -14,8 +14,10 @@ COMMENT=	Magnify, rotate, mirror the image on the X screen
 
 USES=		imake
 USE_XORG=	x11 xext
-MAN1=		xzoom.1
-PLIST_FILES=	bin/xzoom
+PLIST_FILES=	bin/xzoom man/man1/xzoom.1.gz
 
-NO_STAGE=	yes
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/xzoom ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xzoom.man ${STAGEDIR}${MAN1PREFIX}/man/man1/xzoom.1
+
 .include <bsd.port.mk>
