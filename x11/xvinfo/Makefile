@@ -10,9 +10,6 @@ COMMENT=	Print out X-Video extension adaptor information
 XORG_CAT=	app
 USE_XORG=	xv x11
 
-PLIST_FILES=	bin/xvinfo
+PLIST_FILES=	bin/xvinfo man/man1/xvinfo.1.gz
 
-MAN1=		xvinfo.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
