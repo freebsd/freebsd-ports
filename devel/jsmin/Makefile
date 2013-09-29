@@ -17,17 +17,14 @@ GH_COMMIT=	1bf6ce5
 PLIST_FILES=	bin/jsmin
 PORTDOCS=	README
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
