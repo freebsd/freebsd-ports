@@ -17,15 +17,14 @@ CONFLICTS=	parallel-[0-9]*
 
 WRKSRC=		${WRKDIR}/moreutils
 
-MAN1=		parallel.1
-MANCOMPRESSED=	no
-PLIST_FILES=	bin/parallel
+PLIST_FILES=	bin/parallel man/man1/parallel.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	${CP} ${FILESDIR}/parallel.1 ${WRKSRC}/
 
-post-install:
-	cd ${WRKSRC} && ${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1/
+do-install:
+	${CP} ${WRKSRC}/parallel ${STAGEDIR}${PREFIX}/bin/parallel
+	cd ${WRKSRC} && ${INSTALL_MAN} parallel.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+
 
 .include <bsd.port.mk>
