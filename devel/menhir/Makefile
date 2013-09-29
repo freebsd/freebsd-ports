@@ -9,7 +9,7 @@ MASTER_SITES=	http://cristal.inria.fr/~fpottier/menhir/
 MAINTAINER=	jaapb@kerguelen.org
 COMMENT=	LR(1) parser generator for OCaml
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAMLFIND_PLIST=	yes
@@ -17,6 +17,7 @@ OCAML_PKGDIRS=		menhirLib
 
 INSTALL_TARGET=	install
 MAKE_ENV+=	mandir="${MANPREFIX}/man/man1"
+MAKE_JOBS_UNSAFE=	yes
 MAN1=		menhir.1
 
 .if !defined(NOPORTDOCS)
