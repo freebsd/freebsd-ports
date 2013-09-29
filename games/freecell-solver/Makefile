@@ -6,11 +6,10 @@ PORTVERSION=	3.20.1
 CATEGORIES=	games
 MASTER_SITES=	http://fc-solve.shlomifish.org/downloads/fc-solve/
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Open source framework for solving Freecell
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 OPTIONS_DEFINE=	TCMALLOC DOCS EXAMPLES
 TCMALLOC_DESC=	Use Google's TCMalloc
@@ -23,17 +22,10 @@ USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-MAN6=		fc-solve-board_gen.6 fc-solve.6 \
-		freecell-solver-range-parallel-solve.6 \
-		make-aisleriot-freecell-board.6 make-gnome-freecell-board.6 \
-		make_pysol_freecell_board.py.6 \
-		pi-make-microsoft-freecell-board.6
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCMALLOC}
-LIB_DEPENDS+=	tcmalloc:${PORTSDIR}/devel/google-perftools
+LIB_DEPENDS+=	libtcmalloc.so:${PORTSDIR}/devel/google-perftools
 .else
 CMAKE_ARGS+=	-DFCS_AVOID_TCMALLOC:BOOL=ON
 .endif
@@ -50,18 +42,14 @@ post-patch:
 .endfor
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in AUTHORS.txt HACKING.txt INSTALL.txt NEWS.txt README.txt \
 	README.win32.txt TODO.txt USAGE.txt
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ctypes-test.py
-	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
