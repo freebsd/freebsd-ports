@@ -1,4 +1,5 @@
 bin/abraca
+man/man1/abraca.1.gz
 share/applications/abraca.desktop
 share/icons/abraca.svg
 %%NLS%%share/locale/de/LC_MESSAGES/abraca.mo

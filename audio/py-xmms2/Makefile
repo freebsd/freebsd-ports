@@ -10,12 +10,11 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Python Bindings for XMMS2
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Pyrex/__init__.py:${PORTSDIR}/devel/pyrex
-LIB_DEPENDS+=	xmmsclient.6:${PORTSDIR}/audio/xmms2
+LIB_DEPENDS+=	libxmmsclient.so:${PORTSDIR}/audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2
 
 USE_PYTHON=	yes
-NO_STAGE=	yes
 
 PLIST=		${.CURDIR}/pkg-plist
 

@@ -8,11 +8,10 @@ PKGNAMEPREFIX=	cpp-
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	C++ Bindings for XMMS2
 
-LIB_DEPENDS+=	boost_signals:${PORTSDIR}/devel/boost-libs \
-		xmmsclient.6:${PORTSDIR}/audio/xmms2
+LIB_DEPENDS+=	libboost_signals.so:${PORTSDIR}/devel/boost-libs \
+		libxmmsclient.so:${PORTSDIR}/audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2
-NO_STAGE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 

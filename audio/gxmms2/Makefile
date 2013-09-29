@@ -19,7 +19,6 @@ LIB_DEPENDS=	libxmmsclient.so:${PORTSDIR}/audio/xmms2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GNOME=	gtk20
-NO_STAGE=	yes
 USES=		gmake pkgconfig
 ALL_TARGET=	${PORTNAME}
 
@@ -28,8 +27,8 @@ PLIST_FILES=	bin/gxmms2 \
 PLIST_DIRS=	%%DATADIR%%
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/gxmms2src/gxmms2_mini.xpm ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/gxmms2src/gxmms2_mini.xpm ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

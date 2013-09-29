@@ -134,6 +134,9 @@ lib/libxmmsclient.so.6.0.0
 libdata/pkgconfig/xmms2-client-glib.pc
 libdata/pkgconfig/xmms2-client.pc
 libdata/pkgconfig/xmms2-plugin.pc
+man/man1/xmms2-launcher.1.gz
+man/man1/xmms2.1.gz
+man/man1/xmms2d.1.gz
 share/pixmaps/xmms2-128.png
 share/pixmaps/xmms2-16.png
 share/pixmaps/xmms2-32.png
