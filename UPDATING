@@ -13,6 +13,27 @@ you update your ports collection, before attempting any port upgrades.
   are updating from 4.0.0 to 4.0.1+
 
 20130920:
+  AFFECTS: Users of ptlib, opal and/or ekiga
+  AUTHOR: kwm@FreeBSD.org
+
+  The ptlib26, opal3 and ekiga3 ports where updated to the lastest version
+  and moved to the location of the old ports. If the ekiga (2.0) port is
+  installed the same line as for ekiga3 can be used except without the 3 at
+  the end.
+
+  # portmaster -o devel/ptlib devel/ptlib26
+  # portmaster -o net/opal net/opal3
+  # portmaster -o net/ekiga3 net-im/ekiga
+    or
+  # portupgrade -fo devel/ptlib devel/ptlib26
+  # portupgrade -fo net/opal net/opal3
+  # portupgrade -fo net/ekiga3 net-im/ekiga
+    or
+  # pkg set -o devel/ptlib26 devel/ptlib
+  # pkg set -o net/opal3 net/opal
+  # pkg set -o net/ekiga3 net-im/ekiga
+
+20130920:
   AFFECTS: Users of ports
   AUTHOR: bapt@FreeBSD.org
 
