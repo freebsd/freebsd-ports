@@ -21,8 +21,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 # 2.4.0 -> svn r5392
 PATCHREV=	5433
 
-USE_PYTHON=		2.6+
+USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 OPTIONS_MULTI=		SCM
 OPTIONS_MULTI_SCM=	SUBVERSION GIT BAZAAR
@@ -32,28 +33,15 @@ SUBVERSION_DESC=	Build with subversion support
 GIT_DESC=		Build with git support
 BAZAAR_DESC=		Build with Bazaar support
 
-NO_STAGE=	yes
+SUBVERSION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>=0:${PORTSDIR}/devel/py-subversion
+GIT_RUN_DEPENDS=	${LOCALBASE}/bin/git:${PORTSDIR}/devel/git
+BAZAAR_RUN_DEPENDS=	${LOCALBASE}/bin/bzr:${PORTSDIR}/devel/bzr
+
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} > 1000000
 RUN_DEPENDS+=	cvs:${PORTSDIR}/devel/cvs
 .endif
-
-.if ${PORT_OPTIONS:MSUBVERSION}
-RUN_DEPENDS+=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/py-subversion
-.endif
-
-.if ${PORT_OPTIONS:MGIT}
-RUN_DEPENDS+=	${LOCALBASE}/bin/git:${PORTSDIR}/devel/git
-.endif
-
-.if ${PORT_OPTIONS:MBAZAAR}
-RUN_DEPENDS+=	${LOCALBASE}/bin/bzr:${PORTSDIR}/devel/bzr
-.endif
-
-MAN1=		cvs2svn.1 \
-		cvs2git.1 \
-		cvs2bzr.1
 
 # documents from ${WRKSRC}/doc
 DOCS1=		design-notes.txt making-releases.txt \
@@ -68,6 +56,12 @@ PORTDOCS:=	${DOCS1} ${DOCS2}
 
 PORTEXAMPLES=	cvs2bzr-example.options cvs2git-example.options \
 		cvs2hg-example.options cvs2svn-example.options
+
+MANPAGES=	cvs2svn.1.gz \
+		cvs2git.1.gz \
+		cvs2bzr.1.gz
+
+PLIST_FILES+=	${MANPAGES:S|^|man/man1/|}
 
 post-patch:
 # be consistent with PORTVERSION
@@ -92,17 +86,11 @@ post-build:
 	${MAKE} man -C ${WRKSRC}
 
 post-install:
-	@${INSTALL_MAN} ${MAN1:S|^|${WRKSRC}/|} ${PREFIX}/man/man1/
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DOCS1:S|^|${WRKSRC}/doc/|} ${DOCSDIR}/
-	@${INSTALL_DATA} ${DOCS2:S|^|${WRKSRC}/www/|} ${DOCSDIR}/
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}/
-.endif
+	@${INSTALL_MAN} ${MANPAGES:R:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/man/man1/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${DOCS1:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}/
+	@${INSTALL_DATA} ${DOCS2:S|^|${WRKSRC}/www/|} ${STAGEDIR}${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
