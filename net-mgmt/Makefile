@@ -262,6 +262,7 @@
     SUBDIR += pixilate
     SUBDIR += pmacct
     SUBDIR += pnp
+    SUBDIR += pnp-icinga
     SUBDIR += portmon
     SUBDIR += py-flowtools
     SUBDIR += py-ipcalc

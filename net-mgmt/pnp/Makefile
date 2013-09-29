@@ -8,13 +8,13 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=pnp4nagios/PNP-0.6
 DISTNAME=	pnp4nagios-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	rea@FreeBSD.org
-COMMENT=	Nagios performance data collector and grapher
+MAINTAINER?=	rea@FreeBSD.org
+COMMENT?=	Nagios performance data collector and grapher
 
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool
-RUN_DEPENDS=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool \
+RUN_DEPENDS?=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool \
 		nagios:${PORTSDIR}/net-mgmt/nagios
 
 MAKE_JOBS_UNSAFE=	yes
