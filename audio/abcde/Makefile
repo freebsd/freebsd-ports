@@ -3,7 +3,7 @@
 
 PORTNAME=	abcde
 PORTVERSION=	2.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
@@ -20,9 +20,6 @@ RUN_DEPENDS=	cd-discid:${PORTSDIR}/audio/cd-discid \
 		bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	yes
-MAN1=		abcde.1 cddb-tool.1
-
-PLIST_FILES=	bin/abcde bin/cddb-tool etc/abcde.conf.sample
 
 OPTIONS_DEFINE=	CDDA2WAV DAGRAB EJECT FLAC MPP NORMALIZE REPLAYGAIN SPEEX
 

@@ -1,0 +1,5 @@
+bin/abcde
+bin/cddb-tool
+etc/abcde.conf.sample
+man/man1/abcde.1.gz
+man/man1/cddb-tool.1.gz
