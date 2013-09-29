@@ -46,8 +46,7 @@ post-patch:
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${FIND} . -not -name .cvsignore \
-	  | ${CPIO} --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR} "! ( -name \.cvsignore -o -name *\.orig )"
 .endif
 
 .include <bsd.port.post.mk>
