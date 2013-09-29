@@ -22,7 +22,6 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DEBUG
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -44,11 +43,5 @@ post-patch:	.SILENT
 	cd ${WRKSRC}/src && ${MV} vdpau_wrapper.cfg vdpau_wrapper.cfg.sample
 	${REINPLACE_CMD} 's/vdpau_wrapper.cfg/&.sample/' \
 		${WRKSRC}/src/Makefile.am
-
-post-install:
-	if [ ! -f ${PREFIX}/etc/vdpau_wrapper.cfg ]; then \
-		${INSTALL_DATA} ${PREFIX}/etc/vdpau_wrapper.cfg.sample \
-			${PREFIX}/etc/vdpau_wrapper.cfg; \
-	fi
 
 .include <bsd.port.post.mk>
