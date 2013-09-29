@@ -1,4 +1,5 @@
 bin/chrome
+man/man1/chrome.1.gz
 share/applications/chromium-browser.desktop
 %%DATADIR%%/chrome
 %%DATADIR%%/chrome-wrapper
@@ -221,3 +222,4 @@ share/applications/chromium-browser.desktop
 @dirrm %%DATADIR%%/resources/extension
 @dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%
+@dirrmtry share/applications

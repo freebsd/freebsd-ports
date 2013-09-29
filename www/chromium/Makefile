@@ -51,7 +51,6 @@ USE_PERL5=	build
 USE_PYTHON_BUILD=	2.6-2.7
 USE_XORG=	scrnsaverproto x11 xproto xscrnsaver xtst
 USE_GNOME=	glib20 gtk20 dconf libxslt
-MAN1=		chrome.1
 
 NINJA_TARGETS=	chrome
 
@@ -98,7 +97,6 @@ GCC_DESC=	Build Chromium with GCC 4.6+
 
 OPTIONS_DEFAULT=	CODECS GCONF
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCODECS}
@@ -238,23 +236,21 @@ test regression-test: build
 .endfor
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/out/${BUILDTYPE}/chrome.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/product_logo_48.png ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/out/${BUILDTYPE}/chrome.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/product_logo_48.png ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/out/${BUILDTYPE}/chrome-wrapper \
-		${WRKSRC}/out/${BUILDTYPE}/xdg-settings ${DATADIR}
+		${WRKSRC}/out/${BUILDTYPE}/xdg-settings ${STAGEDIR}${DATADIR}
 .for p in chrome chrome_100_percent content_resources resources
-	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${p}.pak ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${p}.pak ${STAGEDIR}${DATADIR}
 .endfor
 .for f in chrome libffmpegsumo.so protoc
-	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/${f} ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/${f} ${STAGEDIR}${DATADIR}
 .endfor
 	cd ${WRKSRC}/out/${BUILDTYPE} && \
-		${COPYTREE_SHARE} "locales resources" ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/chromium-browser.desktop ${DESKTOPDIR}
-	${LN} -sf ${DATADIR}/chrome ${PREFIX}/bin
-
-post-install:
-	${CAT} ${PKGMESSAGE}
+		${COPYTREE_SHARE} "locales resources" ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKDIR}/chromium-browser.desktop ${STAGEDIR}${DESKTOPDIR}
+	${LN} -sf ${DATADIR}/chrome ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.post.mk>
