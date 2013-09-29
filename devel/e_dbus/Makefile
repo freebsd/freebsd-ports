@@ -13,7 +13,7 @@ COMMENT=	EFL DBUS connectivity library
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
@@ -30,5 +30,4 @@ CONFIGURE_ARGS=	--enable-ehal \
 		--disable-eofono \
 		--disable-ebluez
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
