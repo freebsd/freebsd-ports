@@ -15,10 +15,9 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/Neutral++_White
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/lib/X11/icons/Neutral++_White/cursors
-	cd ${WRKSRC}/cursors \
-		&& ${INSTALL_DATA} * ${PREFIX}/lib/X11/icons/Neutral++_White/cursors
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/icons/Neutral++_White/cursors
+	cd ${WRKSRC}/cursors && ${INSTALL_DATA} * \
+		${STAGEDIR}${PREFIX}/lib/X11/icons/Neutral++_White/cursors
 
 .include <bsd.port.mk>
