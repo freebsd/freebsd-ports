@@ -11,19 +11,18 @@ DISTNAME=	interLOGIC-src-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Move colored balls through the maze connecting it with each other
 
+USES=		gmake
 USE_SDL=	image sdl
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/interlogic
 
 PLIST_FILES=	bin/interlogic
 
-NO_STAGE=	yes
 post-patch:
 	@${ECHO_CMD} "#!/bin/sh" > ${WRKSRC}/missing # suppress autotools madness
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/interlogic ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/interlogic ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
