@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	adjustableclock
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.3
 CATEGORIES=	x11-clocks deskutils kde
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-
@@ -19,5 +19,4 @@ USE_QT4=	qmake_build moc_build rcc_build uic_build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
