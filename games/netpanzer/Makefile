@@ -24,25 +24,21 @@ SCONS_BUILDENV=	${SCONS_ENV}
 
 PORTDOCS=	*
 PORTDATA=	*
-MAN6=		netpanzer.6
 
-NO_STAGE=	yes
 post-configure:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/SConstruct
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/netpanzer ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "cache maps pics powerups scripts sound units wads"  ${DATADIR})
-	${INSTALL_MAN} ${WRKSRC}/docs/netpanzer.6 ${MANPREFIX}/man/man6
-	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/netpanzer.desktop ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/netpanzer.png ${WRKSRC}/netpanzer.xpm ${PREFIX}/share/pixmaps
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_MAN} COPYING ChangeLog README RELNOTES TODO ${DOCSDIR})
-	(cd ${WRKSRC}/docs && ${INSTALL_MAN} Doxyfile code-notes.txt coding.txt serverhowto.html tipofday.txt ${DOCSDIR})
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/netpanzer ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "cache maps pics powerups scripts sound units wads" ${STAGEDIR}${DATADIR})
+	${INSTALL_MAN} ${WRKSRC}/docs/netpanzer.6 ${STAGEDIR}${MANPREFIX}/man/man6
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/netpanzer.desktop ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/netpanzer.png ${WRKSRC}/netpanzer.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_MAN} COPYING ChangeLog README RELNOTES TODO ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/docs && ${INSTALL_MAN} Doxyfile code-notes.txt coding.txt serverhowto.html tipofday.txt ${STAGEDIR}${DOCSDIR})
 
 do-fetch-svn:
 	svn export svn://svn.berlios.de/${PORTNAME}/tags/${PORTNAME}/${PORTVERSION} ${PORTNAME}-${PORTVERSION}
