@@ -1,14 +1,14 @@
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortune-update.py
 share/games/fortune/ru_RU.KOI8-R/fortune-bashorgru
-share/games/fortune/ru_RU.KOI8-R/fortune-bashorgru.dat
-share/games/fortune/ru_RU.UTF-8/fortune-bashorgru
-share/games/fortune/ru_RU.UTF-8/fortune-bashorgru.dat
 share/games/fortune/ru_RU.KOI8-R/fortune-bashorgru-freebsd
 share/games/fortune/ru_RU.KOI8-R/fortune-bashorgru-freebsd.dat
+share/games/fortune/ru_RU.KOI8-R/fortune-bashorgru.dat
+share/games/fortune/ru_RU.UTF-8/fortune-bashorgru
 share/games/fortune/ru_RU.UTF-8/fortune-bashorgru-freebsd
 share/games/fortune/ru_RU.UTF-8/fortune-bashorgru-freebsd.dat
-share/examples/fortune-bashorgru/fortune-update.py
+share/games/fortune/ru_RU.UTF-8/fortune-bashorgru.dat
 @dirrmtry share/games/fortune/ru_RU.UTF-8
 @dirrmtry share/games/fortune/ru_RU.KOI8-R
-@dirrmtry share/examples/fortune-bashorgru
 @dirrmtry share/games/fortune
 @dirrmtry share/games
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
