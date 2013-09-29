@@ -26,7 +26,6 @@ OPENGL_DESC=	Enable OpenGL evas engine
 SDL_DESC=	Enable SDL evas engine
 X11_DESC=	Enable X11 evas engine
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENGL}
