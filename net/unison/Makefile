@@ -27,7 +27,6 @@ ALL_TARGET=	unison all
 OPTIONS_DEFINE= DOCS X11
 OPTIONS_DEFAULT?=        DOCS X11
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -53,6 +52,7 @@ MAKE_ARGS+=	UISTYLE=text
 PLIST_SUB+=	TEXT="@comment "
 BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml-nox11
 PATCH_DEPENDS+=	${BUILD_DEPENDS}
+PKGMESSAGE=	${PKGDIR}/pkg-message.nox11
 .endif
 
 .if ${PORT_OPTIONS:MX11}
@@ -68,23 +68,18 @@ post-build:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unison ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/unison ${STAGEDIR}${PREFIX}/bin
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${EXTRA_DOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${EXTRA_DOCS} ${STAGEDIR}${DOCSDIR}
 .if ${PORT_OPTIONS:MX11}
-	@${INSTALL_PROGRAM} ${WRKSRC}/unison-text ${PREFIX}/bin
-	@${MKDIR} ${DESKTOPDIR}
-	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${DESKTOPDIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/unison-text ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 	@-update-desktop-database > /dev/null
-	@${INSTALL_DATA} ${WRKSRC}/win32rc/U_4_48x48x32.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
-	@${CAT} ${PKGMESSAGE}
-.else
-	@${CAT} ${PKGMESSAGE}.nox11
+	@${INSTALL_DATA} ${WRKSRC}/win32rc/U_4_48x48x32.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 .endif
 
 .include <bsd.port.mk>
