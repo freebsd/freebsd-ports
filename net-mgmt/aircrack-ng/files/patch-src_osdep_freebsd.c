@@ -1,6 +1,6 @@
---- src/osdep/freebsd.c.orig	2008-02-26 19:12:19.000000000 +0100
-+++ src/osdep/freebsd.c	2011-09-29 20:35:48.000000000 +0200
-@@ -53,7 +53,9 @@
+--- src/osdep/freebsd.c.orig	2011-09-25 00:05:54.000000000 +0200
++++ src/osdep/freebsd.c	2013-09-29 13:49:18.588462319 +0200
+@@ -53,7 +53,9 @@ struct priv_fbsd {
  	unsigned char			pf_buf[4096];
  	unsigned char			*pf_next;
  	int				pf_totlen;
@@ -10,7 +10,7 @@
  
  	/* setchan */
  	int				pf_s;
-@@ -280,13 +282,16 @@
+@@ -280,13 +282,16 @@ static int fbsd_read(struct wif *wi, uns
  static int fbsd_write(struct wif *wi, unsigned char *h80211, int len,
  		      struct tx_info *ti)
  {
@@ -27,7 +27,7 @@
  	iov[0].iov_base = &pf->pf_txparams;
  	iov[0].iov_len = pf->pf_txparams.ibp_len;
  
-@@ -294,12 +299,19 @@
+@@ -294,12 +299,19 @@ static int fbsd_write(struct wif *wi, un
          iov[1].iov_len = len;
  
  	rc = writev(pf->pf_fd, iov, 2);
@@ -47,7 +47,7 @@
  }
  
  static int fbsd_set_channel(struct wif *wi, int chan)
-@@ -389,7 +401,7 @@
+@@ -389,7 +401,7 @@ static int do_fbsd_open(struct wif *wi, 
  
          memset(&ifr, 0, sizeof(ifr));
          strcpy(ifr.ifr_name, iface);
@@ -56,7 +56,7 @@
          if (ioctl(s, SIOCSIFMEDIA, &ifr) == -1)
  		goto close_sock;
  
-@@ -542,13 +554,17 @@
+@@ -542,13 +554,17 @@ static struct wif *fbsd_open(char *iface
  	/* setup private state */
  	pf = wi_priv(wi);
  	pf->pf_fd = fd;

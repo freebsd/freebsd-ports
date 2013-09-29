@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	aircrack-ng
-DISTVERSION=	1.1
-PORTREVISION=	1
+DISTVERSION=	1.2b1
 CATEGORIES=	net-mgmt security
+DISTNAME=	${PORTNAME}-${DISTVERSION:C/b/-beta/}
 MASTER_SITES=	http://download.aircrack-ng.org/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
 
@@ -12,7 +12,8 @@ MAINTAINER=	lme@FreeBSD.org
 COMMENT=	An 802.11 WEP and WPA-PSK keys cracking program
 
 USES=		gmake
-MAKE_ARGS+=	UNSTABLE=true			# build some extra tools
+USE_DOS2UNIX=	src/osdep/byteorder.h
+MAKE_ARGS+=	unstable=true prefix=${PREFIX}
 USE_OPENSSL=	yes
 SUB_FILES=	pkg-message
 
@@ -36,10 +37,8 @@ BROKEN=		Does not compile on sparc64-9
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|= /usr/local|= ${PREFIX}|' \
 		-e 's|-I/usr/local|-I${LOCALBASE}|' \
 		-e 's|^CC[[:blank:]]*|&?|' \
-		-e 's|^RANLIB[[:blank:]]*|&?|' \
 		-e 's|^AR[[:blank:]]*|&?|' \
 			${WRKSRC}/common.mak
 # Do not install scripts (Linux-specific) and their manpages
