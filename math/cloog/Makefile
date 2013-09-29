@@ -1,3 +1,4 @@
+# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cloog
@@ -5,22 +6,20 @@ PORTVERSION=	0.18.0
 CATEGORIES=	math
 MASTER_SITES=	http://www.bastoul.net/cloog/pages/download/
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Code generator in the polyhedral model
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-gmp-prefix=${PREFIX}
 CONFIGURE_ENV=	pkgconfig_libdir=${PREFIX}/libdata/pkgconfig/
 
-
-NO_STAGE=	yes
 post-install:
-	${LN} -s ${PREFIX}/lib/libcloog-isl.so.4 \
-		${PREFIX}/lib/libcloog-isl.so.0
-	${LN} -s ${PREFIX}/lib/libisl.so.11 \
-		${PREFIX}/lib/libisl.so.0
+	${LN} -s ${STAGEDIR}${PREFIX}/lib/libcloog-isl.so.4 \
+		${STAGEDIR}${PREFIX}/lib/libcloog-isl.so.0
+	${LN} -s ${STAGEDIR}${PREFIX}/lib/libisl.so.11 \
+		${STAGEDIR}${PREFIX}/lib/libisl.so.0
 
 .include <bsd.port.mk>
