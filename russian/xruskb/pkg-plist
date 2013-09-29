@@ -1,46 +1,7 @@
 bin/xrus
 bin/xrusmodmap
 lib/X11/app-defaults/Xrus
-share/xruskb/DocumentL.xpm
-share/xruskb/DocumentY.xpm
-share/xruskb/hebrew-iso8.xmm
-share/xruskb/hebrew.xmm
-share/xruskb/jcuken-cp1251.xmm
-share/xruskb/jcuken-cp866.xmm
-share/xruskb/jcuken-cyr.xmm
-share/xruskb/jcuken-deru-cp1251.xmm
-share/xruskb/jcuken-deru-cp866.xmm
-share/xruskb/jcuken-deru-cyr.xmm
-share/xruskb/jcuken-deru-iso5.xmm
-share/xruskb/jcuken-deru-koi8.xmm
-share/xruskb/jcuken-frru-cp1251.xmm
-share/xruskb/jcuken-frru-cp866.xmm
-share/xruskb/jcuken-frru-cyr.xmm
-share/xruskb/jcuken-frru-iso5.xmm
-share/xruskb/jcuken-frru-koi8.xmm
-share/xruskb/jcuken-iso5.xmm
-share/xruskb/jcuken-koi8.xmm
-share/xruskb/kbeng.tiff
-share/xruskb/kbeng.xpm
-share/xruskb/kbeng8.xpm
-share/xruskb/kbrus.tiff
-share/xruskb/kbrus.xpm
-share/xruskb/kbrus8.xpm
-share/xruskb/rus.xpm
-share/xruskb/usa.xpm
-share/xruskb/yawerty-cp1251.xmm
-share/xruskb/yawerty-cp866.xmm
-share/xruskb/yawerty-cyr.xmm
-share/xruskb/yawerty-deru-cp1251.xmm
-share/xruskb/yawerty-deru-cp866.xmm
-share/xruskb/yawerty-deru-cyr.xmm
-share/xruskb/yawerty-deru-iso5.xmm
-share/xruskb/yawerty-deru-koi8.xmm
-share/xruskb/yawerty-iso5.xmm
-share/xruskb/yawerty-koi8.xmm
-share/xruskb/yawerty-ua-koi8.xmm
-share/xruskb/yawerty-ua.xmm
-@dirrm share/xruskb
+man/man1/xrus.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -48,4 +9,4 @@ share/xruskb/yawerty-ua.xmm
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/xrus.doc-english
 %%PORTDOCS%%%%DOCSDIR%%/xrus.doc-koi8
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
