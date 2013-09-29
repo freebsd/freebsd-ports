@@ -12,17 +12,17 @@ COMMENT=	Dynamic Scripting for adaptive AI systems
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}/html
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/html
 	@${TAR} -C ${WRKSRC}/doc/html -cf - . | \
-		${TAR} -C ${DOCSDIR}/html -xf -
+		${TAR} -C ${STAGEDIR}${DOCSDIR}/html -xf -
 .endif
 
 .include <bsd.port.mk>

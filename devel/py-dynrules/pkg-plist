@@ -1,39 +1,3 @@
-%%PYTHON_SITELIBDIR%%/dynrules/__init__.py
-%%PYTHON_SITELIBDIR%%/dynrules/__init__.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/__init__.pyo
-%%PYTHON_SITELIBDIR%%/dynrules/examples/__init__.py
-%%PYTHON_SITELIBDIR%%/dynrules/examples/__init__.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/examples/__init__.pyo
-%%PYTHON_SITELIBDIR%%/dynrules/examples/learnsystem.py
-%%PYTHON_SITELIBDIR%%/dynrules/examples/learnsystem.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/examples/learnsystem.pyo
-%%PYTHON_SITELIBDIR%%/dynrules/test/__init__.py
-%%PYTHON_SITELIBDIR%%/dynrules/test/__init__.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/test/__init__.pyo
-%%PYTHON_SITELIBDIR%%/dynrules/test/learnsystem_test.py
-%%PYTHON_SITELIBDIR%%/dynrules/test/learnsystem_test.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/test/learnsystem_test.pyo
-%%PYTHON_SITELIBDIR%%/dynrules/test/rule_test.py
-%%PYTHON_SITELIBDIR%%/dynrules/test/rule_test.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/test/rule_test.pyo
-%%PYTHON_SITELIBDIR%%/dynrules/test/ruleset_test.py
-%%PYTHON_SITELIBDIR%%/dynrules/test/ruleset_test.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/test/ruleset_test.pyo
-%%PYTHON_SITELIBDIR%%/dynrules/test/util/__init__.py
-%%PYTHON_SITELIBDIR%%/dynrules/test/util/__init__.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/test/util/__init__.pyo
-%%PYTHON_SITELIBDIR%%/dynrules/test/util/runtests.py
-%%PYTHON_SITELIBDIR%%/dynrules/test/util/runtests.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/test/util/runtests.pyo
-%%PYTHON_SITELIBDIR%%/dynrules/test/util/support.py
-%%PYTHON_SITELIBDIR%%/dynrules/test/util/support.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/test/util/support.pyo
-%%PYTHON_SITELIBDIR%%/dynrules/test/util/testrunner.py
-%%PYTHON_SITELIBDIR%%/dynrules/test/util/testrunner.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/test/util/testrunner.pyo
-%%PYTHON_SITELIBDIR%%/dynrules/test/util/testutils.py
-%%PYTHON_SITELIBDIR%%/dynrules/test/util/testutils.pyc
-%%PYTHON_SITELIBDIR%%/dynrules/test/util/testutils.pyo
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/api.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/copying.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/cpp.txt
@@ -75,12 +39,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/html/todos.html
 %%PORTDOCS%%%%DOCSDIR%%/html/usage.html
-@dirrm %%PYTHON_SITELIBDIR%%/dynrules/test/util
-@dirrm %%PYTHON_SITELIBDIR%%/dynrules/test
-@dirrm %%PYTHON_SITELIBDIR%%/dynrules/examples
-@dirrm %%PYTHON_SITELIBDIR%%/dynrules
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_sources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_static
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ref
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
