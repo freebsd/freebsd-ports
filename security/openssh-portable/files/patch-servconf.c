@@ -39,12 +39,3 @@
  	if (options->kbd_interactive_authentication == -1)
  		options->kbd_interactive_authentication = 0;
  	if (options->challenge_response_authentication == -1)
-@@ -335,7 +339,7 @@
- 		options->version_addendum = xstrdup("");
- 	/* Turn privilege separation on by default */
- 	if (use_privsep == -1)
--		use_privsep = PRIVSEP_NOSANDBOX;
-+		use_privsep = PRIVSEP_ON;
- 
- #ifndef HAVE_MMAP
- 	if (use_privsep && options->compression == 1) {

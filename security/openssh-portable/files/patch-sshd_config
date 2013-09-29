@@ -72,7 +72,7 @@
  #TCPKeepAlive yes
  #UseLogin no
 -UsePrivilegeSeparation sandbox		# Default for new installations.
-+#UsePrivilegeSeparation sandbox
++#UsePrivilegeSeparation yes
  #PermitUserEnvironment no
  #Compression delayed
  #ClientAliveInterval 0

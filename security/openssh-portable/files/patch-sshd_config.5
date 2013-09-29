@@ -79,15 +79,6 @@
  .It Cm UsePrivilegeSeparation
  Specifies whether
  .Xr sshd 8
-@@ -1157,7 +1183,7 @@
- The goal of privilege separation is to prevent privilege
- escalation by containing any corruption within the unprivileged processes.
- The default is
--.Dq yes .
-+.Dq sandbox .
- If
- .Cm UsePrivilegeSeparation
- is set to
 @@ -1182,7 +1208,7 @@
  or
  .Dq no .
