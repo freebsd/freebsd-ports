@@ -20,10 +20,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-termidx
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAN1=		joe.1
-MLINKS=		joe.1 jmacs.1 - jpico.1 - jstar.1 - jupp.1 - rjoe.1
-
-NO_STAGE=	yes
 pre-configure:
 	@${CHMOD} +x ${WRKSRC}/configure
 

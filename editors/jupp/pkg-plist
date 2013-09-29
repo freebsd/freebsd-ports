@@ -31,6 +31,12 @@ etc/joe/syntax/mason.jsf
 etc/joe/syntax/diff.jsf
 etc/joe/syntax/asm.jsf
 etc/joe/charmaps/klingon
+man/man1/joe.1.gz
+man/man1/jmacs.1.gz
+man/man1/jpico.1.gz
+man/man1/jstar.1.gz
+man/man1/jupp.1.gz
+man/man1/rjoe.1.gz
 @dirrm etc/joe/syntax
 @dirrm etc/joe/charmaps
 @dirrm etc/joe
