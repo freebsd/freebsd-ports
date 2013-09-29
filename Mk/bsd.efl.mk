@@ -344,7 +344,7 @@ _USE_EFL_ECORE_UQ+=	${COMP}
 . endfor
 
 . for COMP in ${_USE_EFL_ECORE_UQ}
-LIB_DEPENDS+=	${_ecore_${COMP}_NAME}.${_ecore_VERSION}:${PORTSDIR}/${_ecore_${COMP}_CATEGORY}/${_ecore_${COMP}_PORTNAME}
+LIB_DEPENDS+=	lib${_ecore_${COMP}_NAME}.so.${_ecore_VERSION}:${PORTSDIR}/${_ecore_${COMP}_CATEGORY}/${_ecore_${COMP}_PORTNAME}
 . endfor
 
 .endif #USE_EFL_ECORE
@@ -388,7 +388,7 @@ _USE_EFL_UQ+=	${LIB}
 # define dependencies
 #
 .for LIB in ${_USE_EFL_UQ}
-LIB_DEPENDS+=	${_${LIB}_SLIB}.${_${LIB}_VERSION}:${PORTSDIR}/${_${LIB}_CATEGORY}/${_${LIB}_PORTNAME}
+LIB_DEPENDS+=	lib${_${LIB}_SLIB}.so.${_${LIB}_VERSION}:${PORTSDIR}/${_${LIB}_CATEGORY}/${_${LIB}_PORTNAME}
 .endfor
 
 #
