@@ -54,7 +54,6 @@ DESKTOP_ENTRIES=	"TORCS" \
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 EMPTYDIR=	champ dtmrace endrace ncrace practice quickrace
@@ -67,15 +66,15 @@ post-patch:
 .endfor
 
 pre-install:
-	@${MKDIR} ${PREFIX}/share/games
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/faq/|} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/faq/|} ${STAGEDIR}${DOCSDIR}
 .endif
 .for ed in ${EMPTYDIR}
-	${TOUCH} ${INSTDIR}/results/${ed}/.keep_me
+	${TOUCH} ${STAGEDIR}${INSTDIR}/results/${ed}/.keep_me
 .endfor
 
 .include <bsd.port.mk>
