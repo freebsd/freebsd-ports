@@ -13,7 +13,7 @@ COMMENT=	Enlightenment Data Handling Library
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
@@ -26,7 +26,6 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB}" OPENSSL_LIBS="-lssl"
 CONFIGURE_ARGS=	--disable-gnutls
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}
@@ -40,6 +39,7 @@ post-patch:
 		${WRKSRC}/src/examples/Makefile.in
 
 post-install:
-	@${REINPLACE_CMD} -i '' -e 's/ openssl//' ${PREFIX}/libdata/pkgconfig/eet.pc
+	@${REINPLACE_CMD} -i '' -e 's/ openssl//' \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/eet.pc
 
 .include <bsd.port.mk>
