@@ -11,14 +11,16 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Me and My Shadow puzzle/platform game
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 USES=		cmake
 USE_SDL=	sdl ttf image mixer image gfx
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*
+PORTDATA=	*
 
 DESKTOP_ENTRIES="Me and My Shadow" \
 		"Puzzle/platform game" \
@@ -27,7 +29,8 @@ DESKTOP_ENTRIES="Me and My Shadow" \
 		"Game;LogicGame;" \
 		false
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -35,13 +38,13 @@ post-patch:
 		${WRKSRC}/cmake/Modules/FindSDL_gfx.cmake
 
 post-install:
-	${MKDIR} ${PREFIX}/share/pixmaps/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${WRKSRC}/icons/64x64/meandmyshadow.png \
-		${PREFIX}/share/pixmaps/
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in AUTHORS ChangeLog docs/*
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
 .endif
 
