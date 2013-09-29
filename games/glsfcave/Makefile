@@ -16,10 +16,11 @@ USE_GL=		glut
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PORTDOCS=	*
 PLIST_FILES=	bin/glsfcave
+PORTDOCS=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 do-build:
@@ -27,10 +28,10 @@ do-build:
 		-L${LOCALBASE}/lib -lglut -lGL -lGLU
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/glsfcave ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/glsfcave ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
