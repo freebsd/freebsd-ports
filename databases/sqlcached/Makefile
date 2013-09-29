@@ -13,7 +13,6 @@ COMMENT=	Cache daemon using SQL for data manipulation
 LIB_DEPENDS=	libsqlite.so:${PORTSDIR}/databases/sqlite2
 
 LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS=		-O2 -Wall -I${LOCALBASE}/include
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
