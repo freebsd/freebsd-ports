@@ -1,4 +1,5 @@
 bin/amide
+man/man1/amide.1.gz
 share/applications/amide.desktop
 share/gnome/help/amide/C/amide.xml
 share/gnome/help/amide/C/figures/amide_main_window.png
