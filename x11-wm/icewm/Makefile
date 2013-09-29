@@ -32,7 +32,6 @@ OPTIONS_DEFAULT=	XFT XINERAMA ASM BEASTIE NLS MENUFIX
 BEASTIE_DESC=	Use Beastie'fied startup button
 MENUFIX_DESC=	MenuIconSize fix
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGNOME}
@@ -109,15 +108,14 @@ post-configure:
 
 post-install:
 .for dir in taskbar themes/Infadel2/taskbar
-	@${LN} -sf ${STARTUP_PIXMAP} ${DATADIR}/${dir}/start.xpm
+	@${LN} -s ${STARTUP_PIXMAP} ${STAGEDIR}${DATADIR}/${dir}/start.xpm
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for f in CHANGES INSTALL README TODO
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 . endfor
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
 .endif
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.post.mk>
