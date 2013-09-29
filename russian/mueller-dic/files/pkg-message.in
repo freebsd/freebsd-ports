@@ -1,0 +1,4 @@
+==============================================
+You can look up a word at the dictionary with:
+%%PREFIX%%/bin/mueller word
+==============================================
