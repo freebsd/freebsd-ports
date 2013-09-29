@@ -16,7 +16,7 @@ COMMENT=	Application, server, and network management platform
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS+=	swig>=1.3:${PORTSDIR}/devel/swig13 \
+BUILD_DEPENDS+=	swig13>=1.3:${PORTSDIR}/devel/swig13 \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 
 RUN_DEPENDS+=	net-snmp>=5.5:${PORTSDIR}/net-mgmt/net-snmp \
