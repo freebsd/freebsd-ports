@@ -53,6 +53,13 @@ libdata/pkgconfig/libfreecell-solver.pc
 %%DATADIR%%/presets/three-eighty.sh
 %%DATADIR%%/presets/toons-for-twenty-somethings.sh
 %%DATADIR%%/presets/yellow-brick-road.sh
+man/man6/fc-solve-board_gen.6.gz
+man/man6/fc-solve.6.gz
+man/man6/freecell-solver-range-parallel-solve.6.gz
+man/man6/make-aisleriot-freecell-board.6.gz
+man/man6/make-gnome-freecell-board.6.gz
+man/man6/make_pysol_freecell_board.py.6.gz
+man/man6/pi-make-microsoft-freecell-board.6.gz
 @dirrm %%DATADIR%%/presets
 @dirrm %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
