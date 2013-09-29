@@ -15,11 +15,6 @@ COMMENT=	The portable version of OpenBSD's OpenSSH
 
 LICENSE=	BSD
 
-MAN1=	sftp.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh-keyscan.1 scp.1 ssh.1
-MLINKS=	ssh.1 slogin.1
-MAN5=	moduli.5 ssh_config.5 sshd_config.5
-MAN8=	sftp-server.8 sshd.8 ssh-keysign.8 ssh-pkcs11-helper.8
-
 CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.*
 
 # XXX: ports/52706 will allow using DEFAULT,x509 here.
@@ -30,7 +25,6 @@ USES=			perl5
 USE_PERL5=		build
 USE_AUTOTOOLS=		autoconf autoheader
 USE_OPENSSL=		yes
-NO_STAGE=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		ac_cv_func_strnvis=no
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-md5-passwords \
@@ -61,6 +55,8 @@ HEIMDAL_DESC=		Heimdal Kerberos (security/heimdal)
 HEIMDAL_BASE_DESC=	Heimdal Kerberos (base)
 MIT_DESC=		MIT Kerberos (security/krb5)
 AES_THREADED_DESC=	Threaded AES-CTR [HPN/Experimental]
+
+PLIST_SUB+=		MANPREFIX=${MANPREFIX}
 
 .include <bsd.port.pre.mk>
 
@@ -187,7 +183,6 @@ PATCH_SITES+=		http://www.roumenpetrov.info/openssh/x509-${X509_VERSION}/:x509
 PATCHFILES+=		${PORTNAME}-6.2p1+x509-${X509_VERSION}.diff.gz:x509
 PATCH_DIST_STRIP=	-p1
 PLIST_SUB+=		X509=""
-MAN5+=			ssh_engine.5
 .else
 PLIST_SUB+=		X509="@comment "
 .endif
@@ -246,22 +241,15 @@ post-patch:
 		${WRKSRC}/version.h
 .endif
 
-pre-su-install:
-.if !exists(${ETCSSH})
-	@${MKDIR} ${ETCSSH}
+pre-install:
+# Workaround not running mtree BSD.root.dist on / since PREFIX=/usr
+.if ${PORT_OPTIONS:MOVERWRITE_BASE}
+	${MKDIR} ${STAGEDIR}/etc/rc.d
 .endif
-.for i in ${PRECIOUS}
-.if exists(${ETCOLD}/${i}) && !exists(${ETCSSH}/${i})
-	@${ECHO_MSG} "==>   Linking ${ETCSSH}/${i} from old layout."
-	${LN} ${ETCOLD}/${i} ${ETCSSH}/${i}
-.endif
-.endfor
 
 post-install:
-	${INSTALL_DATA} -c ${WRKSRC}/ssh_config.out ${ETCSSH}/ssh_config-dist
-	${INSTALL_DATA} -c ${WRKSRC}/sshd_config.out ${ETCSSH}/sshd_config-dist
-
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} -c ${WRKSRC}/ssh_config.out ${STAGEDIR}${ETCSSH}/ssh_config-dist
+	${INSTALL_DATA} -c ${WRKSRC}/sshd_config.out ${STAGEDIR}${ETCSSH}/sshd_config-dist
 
 test:	build
 	(cd ${WRKSRC}/regress && ${SETENV} OBJ=${WRKDIR} ${MAKE_ENV} TEST_SHELL=/bin/sh \

@@ -24,3 +24,20 @@ sbin/sshd
 libexec/sftp-server
 libexec/ssh-keysign
 libexec/ssh-pkcs11-helper
+@cwd %%MANPREFIX%%
+man/man1/sftp.1.gz
+man/man1/ssh-add.1.gz
+man/man1/ssh-agent.1.gz
+man/man1/ssh-keygen.1.gz
+man/man1/ssh-keyscan.1.gz
+man/man1/scp.1.gz
+man/man1/ssh.1.gz
+man/man1/slogin.1.gz
+man/man5/moduli.5.gz
+man/man5/ssh_config.5.gz
+man/man5/sshd_config.5.gz
+%%X509%%man/man5/ssh_engine.5.gz
+man/man8/sftp-server.8.gz
+man/man8/sshd.8.gz
+man/man8/ssh-keysign.8.gz
+man/man8/ssh-pkcs11-helper.8.gz
