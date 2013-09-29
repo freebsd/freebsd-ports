@@ -1,4 +1,5 @@
 bin/amoebax
+man/man6/amoebax.6.gz
 %%DATADIR%%/fonts/fontMenu480.png
 %%DATADIR%%/fonts/fontMenu600.png
 %%DATADIR%%/fonts/fontMenu768.png
