@@ -162,6 +162,8 @@ include/wine/windows/d3d10misc.h
 include/wine/windows/d3d10shader.h
 include/wine/windows/d3d11.h
 include/wine/windows/d3d11.idl
+include/wine/windows/d3d11sdklayers.h
+include/wine/windows/d3d11sdklayers.idl
 include/wine/windows/d3d11shader.h
 include/wine/windows/d3d8.h
 include/wine/windows/d3d8caps.h
@@ -690,6 +692,7 @@ include/wine/windows/winresrc.h
 include/wine/windows/winsafer.h
 include/wine/windows/winscard.h
 include/wine/windows/winsmcrd.h
+include/wine/windows/winsnmp.h
 include/wine/windows/winsock.h
 include/wine/windows/winsock2.h
 include/wine/windows/winspool.h
@@ -1665,6 +1668,7 @@ lib/wine/libwldap32.def
 lib/wine/libwnaspi32.def
 lib/wine/libwow32.def
 lib/wine/libws2_32.def
+lib/wine/libwsnmp32.def
 lib/wine/libwsock32.def
 lib/wine/libwtsapi32.def
 lib/wine/libxinput.def
