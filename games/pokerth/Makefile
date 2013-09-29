@@ -30,12 +30,9 @@ USE_QT4=	gui corelib network sql sql-sqlite3 qmake_build \
 USE_SDL=	mixer
 HAS_CONFIGURE=	yes
 QMAKE_ARGS+=	PREFIX=${PREFIX}
+MAKE_ARGS+=	INSTALL_ROOT=${STAGEDIR}
 
 PORTDOCS=	server_setup_howto.txt
-MAN1=		pokerth.1
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -E \
@@ -51,12 +48,9 @@ do-configure:
 	@cd ${CONFIGURE_WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS} pokerth.pro
 
 post-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/pokerth ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/pokerth_server ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/docs/${MAN1} ${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/server_setup_howto.txt ${DOCSDIR}
-.endif
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/pokerth_server ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/docs/pokerth.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/server_setup_howto.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
