@@ -12,13 +12,12 @@ LICENSE=	BSD
 
 PLIST_FILES=	bin/delta bin/multidelta bin/topformflat
 
-USES=	gmake
+USES=		gmake
 
-NO_STAGE=	yes
 do-install:
 .for file in delta multidelta
-	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/topformflat ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/topformflat ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
