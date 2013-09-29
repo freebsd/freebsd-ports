@@ -12,9 +12,6 @@ CONFIGURE_ARGS=	--with-rgb-db-dir=${PREFIX}/lib/X11/rgb
 XORG_CAT=	app
 USE_XORG=	x11 xproto
 
-PLIST_FILES=	bin/showrgb lib/X11/rgb.txt
+PLIST_FILES=	bin/showrgb lib/X11/rgb.txt man/man1/showrgb.1.gz
 
-MAN1=		showrgb.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
