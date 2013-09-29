@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 
 PATCH_STRIP=	-p1
 USES=		gmake pkgconfig
-USE_GMAKE=	yes
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 USE_XZ=		yes
@@ -55,6 +54,11 @@ MAKE_ARGS+=	V=1
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext iconv:build
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB=	NLS=""
 . if empty(ICONV_LIB)
 libintl=	"${LOCALBASE}/lib/libintl.a"
@@ -66,8 +70,6 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB=	NLS="@comment "
 libintl=
 .endif
-
-.include <bsd.port.pre.mk>
 
 post-patch::
 	@${REINPLACE_CMD} -E -e \
