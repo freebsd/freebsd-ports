@@ -1,0 +1,8 @@
+duckmaze is a game about a duck that is in a maze.
+The duck can move walls, but only if there are no walls in the way
+(it makes sense when you try it).
+
+It's a simple puzzle game which starts with easy levels but progresses
+to some quite tricky ones.
+
+WWW: http://duckmaze.sourceforge.net/

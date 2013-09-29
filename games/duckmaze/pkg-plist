@@ -1,0 +1,61 @@
+bin/duckmaze
+%%DATADIR%%/duckmaze.py
+%%DATADIR%%/duckmaze.pyc
+%%DATADIR%%/duckmaze.pyo
+%%DATADIR%%/duckmazerc.txt
+%%DATADIR%%/images/instructions.png
+%%DATADIR%%/images/logo.png
+%%DATADIR%%/images/music.png
+%%DATADIR%%/images/screenshot1.png
+%%DATADIR%%/images/screenshot2.png
+%%DATADIR%%/images/screenshot3.png
+%%DATADIR%%/images/title.png
+%%DATADIR%%/level.py
+%%DATADIR%%/level.pyc
+%%DATADIR%%/level.pyo
+%%DATADIR%%/level_editor.py
+%%DATADIR%%/level_editor.pyc
+%%DATADIR%%/level_editor.pyo
+%%DATADIR%%/levels/level_001
+%%DATADIR%%/levels/level_002
+%%DATADIR%%/levels/level_003
+%%DATADIR%%/levels/level_004
+%%DATADIR%%/levels/level_005
+%%DATADIR%%/levels/level_006
+%%DATADIR%%/levels/level_007
+%%DATADIR%%/levels/level_008
+%%DATADIR%%/levels/level_009
+%%DATADIR%%/levels/level_010
+%%DATADIR%%/levels/level_011
+%%DATADIR%%/levels/level_012
+%%DATADIR%%/levels/level_013
+%%DATADIR%%/levels/level_014
+%%DATADIR%%/levels/level_015
+%%DATADIR%%/levels/level_016
+%%DATADIR%%/levels/level_017
+%%DATADIR%%/levels/level_018
+%%DATADIR%%/levels/level_019
+%%DATADIR%%/levels/level_020
+%%DATADIR%%/levels/level_021
+%%DATADIR%%/levels/level_022
+%%DATADIR%%/levels/level_023
+%%DATADIR%%/levels/level_024
+%%DATADIR%%/levels/level_025
+%%DATADIR%%/levels/level_026
+%%DATADIR%%/levels/level_027
+%%DATADIR%%/levels/level_028
+%%DATADIR%%/levels/level_029
+%%DATADIR%%/mopelib/__init__.py
+%%DATADIR%%/mopelib/__init__.pyc
+%%DATADIR%%/mopelib/__init__.pyo
+%%DATADIR%%/mopelib/mopelib.py
+%%DATADIR%%/mopelib/mopelib.pyc
+%%DATADIR%%/mopelib/mopelib.pyo
+%%DATADIR%%/version
+share/pixmaps/duckmaze.png
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/mopelib
+@dirrm %%DATADIR%%/levels
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%
