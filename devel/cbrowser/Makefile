@@ -27,7 +27,7 @@ post-patch:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${LIBDIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${LIBDIR} -a ! -name README
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${LIBDIR} "-a ! -name README"
 	${CHMOD} ${BINMODE} ${STAGEDIR}${LIBDIR}/cbrowser
 	${LN} -s ${LIBDIR}/cbrowser ${STAGEDIR}${PREFIX}/bin
 
