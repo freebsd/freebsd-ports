@@ -42,7 +42,6 @@ MANUAL_PACKAGE_BUILD=	yes # huge
 
 PORTDATA=	*
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Taken from Mk/bsd.gnustep.mk
@@ -77,15 +76,15 @@ pre-build:
 	(cd ${WRKSRC}/build/workspaces && ${SETENV} ${MAKE_ENV} ./update-workspaces.sh --bindir=${PREFIX}/bin --datadir=${DATADIR} --libdir=${PREFIX}/lib/${PORTNAME})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/binaries/system/pyrogenesis ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/build/resources/0ad.sh ${PREFIX}/bin/0ad
-	${INSTALL_PROGRAM} ${WRKSRC}/binaries/system/ActorEditor ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/lib/${PORTNAME}
-	(cd ${WRKSRC}/binaries/system && ${INSTALL_LIB} libAtlasUI.so libCollada.so libenet.so.1 libmozjs185-ps-release.so.1.0 libnvcore.so libnvimage.so libnvmath.so libnvtt.so ${PREFIX}/lib/${PORTNAME})
-	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/build/resources/0ad.desktop ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/build/resources/0ad.png ${PREFIX}/share/pixmaps
-	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/binaries/data && ${COPYTREE_SHARE} "config mods tests tools" ${DATADIR})
+	${INSTALL_PROGRAM} ${WRKSRC}/binaries/system/pyrogenesis ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/build/resources/0ad.sh ${STAGEDIR}${PREFIX}/bin/0ad
+	${INSTALL_PROGRAM} ${WRKSRC}/binaries/system/ActorEditor ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+	(cd ${WRKSRC}/binaries/system && ${INSTALL_LIB} libAtlasUI.so libCollada.so libenet.so.1 libmozjs185-ps-release.so.1.0 libnvcore.so libnvimage.so libnvmath.so libnvtt.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/build/resources/0ad.desktop ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/build/resources/0ad.png ${STAGEDIR}${PREFIX}/share/pixmaps
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/binaries/data && ${COPYTREE_SHARE} "config mods tests tools" ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.post.mk>
