@@ -6,16 +6,16 @@ PORTVERSION=	1.1
 CATEGORIES=	misc
 MASTER_SITES=	GNU
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Terminal control sequence analyzer
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=	gmake
 
 INFO=	teseq
-MAN1=	reseq.1 teseq.1
 
-PLIST_FILES=	bin/reseq bin/teseq
+PLIST_FILES=	bin/reseq bin/teseq \
+				man/man1/reseq.1.gz \
+				man/man1/teseq.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
