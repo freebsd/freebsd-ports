@@ -32,7 +32,6 @@ you update your ports collection, before attempting any port upgrades.
   followed by
   # portmaster -a
 
-=======
 20130925
   AFFECTS: Users of print/qpdf
   AUTHOR:  d.y.kazarov@mail.ru
