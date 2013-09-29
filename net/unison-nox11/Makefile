@@ -13,5 +13,4 @@ OPTIONS_EXCLUDE=	X11
 OPTIONS_DEFAULT=	DOCS
 MASTERDIR=	${.CURDIR}/../unison
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
