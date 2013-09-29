@@ -199,6 +199,7 @@ EMPTYDIR=		/var/empty
 WITH_OPENSSL_BASE=	yes
 CONFIGURE_ARGS+=	--localstatedir=/var
 PREFIX=			/usr
+NO_MTREE=		yes
 ETCSSH=			/etc/ssh
 USE_RCORDER=		openssh
 PLIST_SUB+=		NOTBASE="@comment "
