@@ -11,9 +11,6 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/album.py
 %%PYTHON_SITELIBDIR%%/picard/album.pyc
 %%PYTHON_SITELIBDIR%%/picard/album.pyo
-%%PYTHON_SITELIBDIR%%/picard/artist.py
-%%PYTHON_SITELIBDIR%%/picard/artist.pyc
-%%PYTHON_SITELIBDIR%%/picard/artist.pyo
 %%PYTHON_SITELIBDIR%%/picard/browser/__init__.py
 %%PYTHON_SITELIBDIR%%/picard/browser/__init__.pyc
 %%PYTHON_SITELIBDIR%%/picard/browser/__init__.pyo
@@ -26,12 +23,21 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/cluster.py
 %%PYTHON_SITELIBDIR%%/picard/cluster.pyc
 %%PYTHON_SITELIBDIR%%/picard/cluster.pyo
+%%PYTHON_SITELIBDIR%%/picard/collection.py
+%%PYTHON_SITELIBDIR%%/picard/collection.pyc
+%%PYTHON_SITELIBDIR%%/picard/collection.pyo
 %%PYTHON_SITELIBDIR%%/picard/config.py
 %%PYTHON_SITELIBDIR%%/picard/config.pyc
 %%PYTHON_SITELIBDIR%%/picard/config.pyo
 %%PYTHON_SITELIBDIR%%/picard/const.py
 %%PYTHON_SITELIBDIR%%/picard/const.pyc
 %%PYTHON_SITELIBDIR%%/picard/const.pyo
+%%PYTHON_SITELIBDIR%%/picard/coverart.py
+%%PYTHON_SITELIBDIR%%/picard/coverart.pyc
+%%PYTHON_SITELIBDIR%%/picard/coverart.pyo
+%%PYTHON_SITELIBDIR%%/picard/coverartarchive.py
+%%PYTHON_SITELIBDIR%%/picard/coverartarchive.pyc
+%%PYTHON_SITELIBDIR%%/picard/coverartarchive.pyo
 %%PYTHON_SITELIBDIR%%/picard/dataobj.py
 %%PYTHON_SITELIBDIR%%/picard/dataobj.pyc
 %%PYTHON_SITELIBDIR%%/picard/dataobj.pyo
@@ -80,11 +86,6 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/metadata.py
 %%PYTHON_SITELIBDIR%%/picard/metadata.pyc
 %%PYTHON_SITELIBDIR%%/picard/metadata.pyo
-%%PYTHON_SITELIBDIR%%/picard/musicdns/__init__.py
-%%PYTHON_SITELIBDIR%%/picard/musicdns/__init__.pyc
-%%PYTHON_SITELIBDIR%%/picard/musicdns/__init__.pyo
-%%PYTHON_SITELIBDIR%%/picard/musicdns/avcodec.so
-%%PYTHON_SITELIBDIR%%/picard/musicdns/ofa.so
 %%PYTHON_SITELIBDIR%%/picard/parsefilename.py
 %%PYTHON_SITELIBDIR%%/picard/parsefilename.pyc
 %%PYTHON_SITELIBDIR%%/picard/parsefilename.pyo
@@ -100,9 +101,6 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/plugins/classicdiscnumber.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/classicdiscnumber.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/classicdiscnumber.pyo
-%%PYTHON_SITELIBDIR%%/picard/plugins/coverart.py
-%%PYTHON_SITELIBDIR%%/picard/plugins/coverart.pyc
-%%PYTHON_SITELIBDIR%%/picard/plugins/coverart.pyo
 %%PYTHON_SITELIBDIR%%/picard/plugins/cuesheet.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/cuesheet.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/cuesheet.pyo
@@ -151,9 +149,9 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/plugins/tracks2clipboard.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/tracks2clipboard.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/tracks2clipboard.pyo
-%%PYTHON_SITELIBDIR%%/picard/puidmanager.py
-%%PYTHON_SITELIBDIR%%/picard/puidmanager.pyc
-%%PYTHON_SITELIBDIR%%/picard/puidmanager.pyo
+%%PYTHON_SITELIBDIR%%/picard/releasegroup.py
+%%PYTHON_SITELIBDIR%%/picard/releasegroup.pyc
+%%PYTHON_SITELIBDIR%%/picard/releasegroup.pyo
 %%PYTHON_SITELIBDIR%%/picard/resources.py
 %%PYTHON_SITELIBDIR%%/picard/resources.pyc
 %%PYTHON_SITELIBDIR%%/picard/resources.pyo
@@ -175,6 +173,9 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/cdlookup.py
 %%PYTHON_SITELIBDIR%%/picard/ui/cdlookup.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/cdlookup.pyo
+%%PYTHON_SITELIBDIR%%/picard/ui/collectionmenu.py
+%%PYTHON_SITELIBDIR%%/picard/ui/collectionmenu.pyc
+%%PYTHON_SITELIBDIR%%/picard/ui/collectionmenu.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/coverartbox.py
 %%PYTHON_SITELIBDIR%%/picard/ui/coverartbox.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/coverartbox.pyo
@@ -262,9 +263,6 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/passworddialog.py
 %%PYTHON_SITELIBDIR%%/picard/ui/passworddialog.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/passworddialog.pyo
-%%PYTHON_SITELIBDIR%%/picard/ui/puidsubmit.py
-%%PYTHON_SITELIBDIR%%/picard/ui/puidsubmit.pyc
-%%PYTHON_SITELIBDIR%%/picard/ui/puidsubmit.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/ratingwidget.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ratingwidget.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ratingwidget.pyo
@@ -337,9 +335,6 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_passworddialog.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_passworddialog.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_passworddialog.pyo
-%%PYTHON_SITELIBDIR%%/picard/ui/ui_puidsubmit.py
-%%PYTHON_SITELIBDIR%%/picard/ui/ui_puidsubmit.pyc
-%%PYTHON_SITELIBDIR%%/picard/ui/ui_puidsubmit.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_tagsfromfilenames.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_tagsfromfilenames.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_tagsfromfilenames.pyo
@@ -417,7 +412,6 @@ share/locale/sv/LC_MESSAGES/picard.mo
 @dirrm %%PYTHON_SITELIBDIR%%/picard/plugins/lastfmplus
 @dirrm %%PYTHON_SITELIBDIR%%/picard/plugins/lastfm
 @dirrm %%PYTHON_SITELIBDIR%%/picard/plugins
-@dirrm %%PYTHON_SITELIBDIR%%/picard/musicdns
 @dirrm %%PYTHON_SITELIBDIR%%/picard/formats/mutagenext
 @dirrm %%PYTHON_SITELIBDIR%%/picard/formats
 @dirrm %%PYTHON_SITELIBDIR%%/picard/browser
