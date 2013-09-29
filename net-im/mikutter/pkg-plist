@@ -242,6 +242,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/serialthread.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/service.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/skin.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/skin/data/activity.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/arrow_followed.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/arrow_following.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/arrow_notfollowed.png
