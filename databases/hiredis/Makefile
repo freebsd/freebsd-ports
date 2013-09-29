@@ -15,11 +15,11 @@ GH_ACCOUNT=	redis
 GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	0fff0f1
 
-USE_GMAKE=	yes
+USES=		gmake
+MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX}
 CFLAGS+=	-fPIC
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^REAL_/s/ \$$(ARCH)//' ${WRKSRC}/Makefile
 
