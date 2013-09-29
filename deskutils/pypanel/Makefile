@@ -11,7 +11,7 @@ DISTNAME=	PyPanel-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop panel written in Python
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so.9:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Xlib/X.py:${PORTSDIR}/x11-toolkits/py-xlib
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -19,11 +19,11 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_EFL=	imlib2
 USE_XORG=	xft
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=	PyPanel
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/bin/freetype-config|${LOCALBASE}/bin/freetype-config|; \
@@ -41,8 +41,8 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
