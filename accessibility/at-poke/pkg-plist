@@ -1,3 +1,3 @@
 bin/at-poke
-share/at-poke/at-poke.glade2
-@dirrm share/at-poke
+%%DATADIR%%/at-poke.glade2
+@dirrm %%DATADIR%%

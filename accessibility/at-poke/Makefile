@@ -11,7 +11,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Accessibility testing and poking tool
 
-NO_STAGE=	yes
 USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix libglade2 libgailgnome
 GNU_CONFIGURE=	yes
