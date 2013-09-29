@@ -11,7 +11,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A minimalistic platform game
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 USES=		cmake
 USE_SDL=	sdl mixer
@@ -22,22 +22,23 @@ SUB_FILES=	${PORTNAME}
 
 NO_CDROM=	contains data under CC-by-NC-SA
 
-PORTDOCS=	AUTHORS
+PLIST_FILES=	bin/${PORTNAME} libexec/${PORTNAME}
+PORTDOCS=	*
+PORTDATA=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|main.lua|${DATADIR}/&|' ${WRKSRC}/src/main.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/jvgs ${PREFIX}/libexec/
-	${INSTALL_SCRIPT} ${WRKDIR}/jvgs ${PREFIX}/bin/
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "resources main.lua" ${DATADIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/jvgs ${STAGEDIR}${PREFIX}/libexec/
+	${INSTALL_SCRIPT} ${WRKDIR}/jvgs ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "resources main.lua" ${STAGEDIR}${DATADIR}/
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
