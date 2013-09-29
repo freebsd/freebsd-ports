@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm
+LIB_DEPENDS=	libdrm.so:${PORTSDIR}/graphics/libdrm
 
 USES=		pkgconfig
 USE_BZIP2=	yes
@@ -31,7 +31,6 @@ CFLAGS+=	-DHAVE_LINUX_INTEGER_TYPES
 
 OPTIONS_DEFINE=	DEBUG
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
