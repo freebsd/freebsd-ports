@@ -6,7 +6,7 @@ PORTVERSION=	36.0.3
 CATEGORIES=	editors
 MASTER_SITES=	http://semiletov.org/tea/dloads/
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Simple and powerful Qt4-based text editor
 
 LICENSE=	GPLv3
@@ -25,7 +25,6 @@ PORTDOCS=	*
 DESKTOP_ENTRIES="TEA" "" "${PREFIX}/share/pixmaps/tea_icon_v2.png" \
 		"${PORTNAME}" "" ""
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASPELL}
@@ -53,12 +52,10 @@ do-configure:
 
 do-install:
 	(cd ${WRKSRC}/bin \
-		&& ${INSTALL_PROGRAM} tea ${PREFIX}/bin)
+		&& ${INSTALL_PROGRAM} tea ${STAGEDIR}${PREFIX}/bin)
 	(cd ${WRKSRC}/icons \
-		&& ${INSTALL_DATA} tea_icon_v2.png ${PREFIX}/share/pixmaps)
-.if ${PORT_OPTIONS:MDOCS}
+		&& ${INSTALL_DATA} tea_icon_v2.png ${STAGEDIR}${PREFIX}/share/pixmaps)
 	(cd ${WRKSRC}/manuals \
-		&& ${COPYTREE_SHARE} . ${DOCSDIR})
-.endif
+		&& ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
