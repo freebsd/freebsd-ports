@@ -13,7 +13,6 @@ USE_GNOME=	glib20 gtk20
 USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if exists(/usr/bin/clang) && ${OSVERSION} > 900014
@@ -21,7 +20,7 @@ CC=		/usr/bin/clang
 CPP=		/usr/bin/clang-cpp
 CXX=		/usr/bin/clang++
 .else
-USE_GCC=	4.6+
+USE_GCC=	yes
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
