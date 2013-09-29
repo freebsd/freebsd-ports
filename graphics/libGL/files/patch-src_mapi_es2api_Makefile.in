@@ -1,0 +1,20 @@
+--- src/mapi/es2api/Makefile.in.orig	2013-08-01 23:22:21.000000000 +0200
++++ src/mapi/es2api/Makefile.in	2013-09-01 11:38:01.000000000 +0200
+@@ -958,9 +958,14 @@
+ # a while by putting a link to the driver into /lib of the build tree.
+ all-local: libGLESv2.la
+ 	$(MKDIR_P) $(top_builddir)/$(LIB_DIR);
+-	ln -f .libs/libGLESv2.so $(top_builddir)/$(LIB_DIR)/libGLESv2.so
+-	ln -f .libs/libGLESv2.so.2 $(top_builddir)/$(LIB_DIR)/libGLESv2.so.2
+-	ln -f .libs/libGLESv2.so.2.0.0 $(top_builddir)/$(LIB_DIR)/libGLESv2.so.2.0.0
++	base=$(basename $<);                                    \
++	dlname=$$(grep dlname= .libs/$< | cut -d "'" -f 2);     \
++	ver=$$(grep current= .libs/$< | cut -d "=" -f 2);       \
++	ln -f .libs/$$dlname $(top_builddir)/$(LIB_DIR)/$$dlname; \
++	if [ ! -f $(top_builddir)/$(LIB_DIR)/$$base.so.$$ver ]; then \
++	  ln -sf $$dlname $(top_builddir)/$(LIB_DIR)/$$base.so.$$ver; \
++	fi;                                                     \
++	ln -sf $$base.so.$$ver $(top_builddir)/$(LIB_DIR)/$$base.so
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

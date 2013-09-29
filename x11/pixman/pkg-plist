@@ -3,6 +3,6 @@ include/pixman-1/pixman.h
 lib/libpixman-1.a
 lib/libpixman-1.la
 lib/libpixman-1.so
-lib/libpixman-1.so.9
+lib/libpixman-1.so.30
 libdata/pkgconfig/pixman-1.pc
 @dirrm include/pixman-1

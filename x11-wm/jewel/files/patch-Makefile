@@ -1,5 +1,14 @@
---- Makefile.orig	2013-09-26 16:58:49.000000000 +0200
-+++ Makefile	2013-09-26 16:58:55.000000000 +0200
+--- Makefile.orig	2005-01-03 22:54:59.000000000 +0100
++++ Makefile	2013-09-28 12:52:00.901277718 +0200
+@@ -12,7 +12,7 @@
+ CC       = g++
+ CFLAGS   = -g -O2 -Wall
+ 
+-export prefix   = /usr/X11R6
++export prefix   = ${PREFIX}
+ export XROOT    = $(prefix)
+ DESTDIR  =
+ INCLUDES = -I$(XROOT)/include
 @@ -51,7 +51,7 @@
  	$(CC) $(OBJS) $(LDPATH) $(LIBS) -o $@
  

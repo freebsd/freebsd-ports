@@ -28,6 +28,10 @@ PORTDOCS=	README
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
+.if defined(WITH_NEW_XORG)
+EXTRA_PATCHES+=	${FILESDIR}/extra-snoutlib_gldefs.h
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sea ${PREFIX}/libexec/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}

@@ -358,7 +358,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  MAKE_ENV are extended with a DISPLAY variable.
 #
 # USE_GL		- A list of Mesa or GL related dependencies needed by the port.
-#				  Supported components are: glut, glu, glw, and gl.
+#				  Supported components are: egl, glesv2, glut, glu, glw, and gl.
 #				  If set to "yes", this is equivalent to "glu". Note that
 #				  glew and glut depend on glu, glw and glu depend on gl.
 ##
@@ -1892,13 +1892,15 @@ MAKE_ENV+=		DISPLAY="localhost:1001"
 
 PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
 
-_GL_gl_LIB_DEPENDS=		GL.1:${PORTSDIR}/graphics/libGL
+_GL_glesv2_LIB_DEPENDS=		libGLESv2.so:${PORTSDIR}/grahpics/libglesv2
+_GL_egl_LIB_DEPENDS=		libEGL.so:${PORTSDIR}/graphics/libEGL
+_GL_gl_LIB_DEPENDS=		libGL.so:${PORTSDIR}/graphics/libGL
 _GL_gl_USE_XORG=		glproto dri2proto
-_GL_glew_LIB_DEPENDS=		GLEW.1:${PORTSDIR}/graphics/glew
-_GL_glu_LIB_DEPENDS=		GLU.1:${PORTSDIR}/graphics/libGLU
+_GL_glew_LIB_DEPENDS=		libGLEW.so:${PORTSDIR}/graphics/glew
+_GL_glu_LIB_DEPENDS=		libGLU.so:${PORTSDIR}/graphics/libGLU
 _GL_glu_USE_XORG=		glproto dri2proto
-_GL_glw_LIB_DEPENDS=		GLw.1:${PORTSDIR}/graphics/libGLw
-_GL_glut_LIB_DEPENDS=		glut.12:${PORTSDIR}/graphics/freeglut
+_GL_glw_LIB_DEPENDS=		libGLw.so:${PORTSDIR}/graphics/libGLw
+_GL_glut_LIB_DEPENDS=		libglut.so:${PORTSDIR}/graphics/freeglut
 
 .if defined(USE_GL)
 . if ${USE_GL:L} == "yes"

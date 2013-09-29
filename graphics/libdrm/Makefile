@@ -10,8 +10,8 @@ MASTER_SITES=	http://dri.freedesktop.org/libdrm/
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Userspace interface to kernel Direct Rendering Module services
 
-LIB_DEPENDS=	pciaccess:${PORTSDIR}/devel/libpciaccess \
-		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs
+LIB_DEPENDS=	libpciaccess.so:${PORTSDIR}/devel/libpciaccess \
+		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs
 
 USES=		pkgconfig
 USE_BZIP2=	yes
@@ -19,14 +19,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 NO_STAGE=	yes
 
-
-.if defined(WITH_NEW_XORG)
-
-USES+=		gmake
-
-OPTIONS_DEFINE=	KMS MANPAGES
-OPTIONS_DEFAULT=KMS
-KMS_DESC=	Enable KMS support
+OPTIONS_DEFINE=	MANPAGES
 
 .if defined(PACKAGE_BUILDING)
 OPTIONS_DEFAULT+=	MANPAGES
@@ -34,12 +27,18 @@ OPTIONS_DEFAULT+=	MANPAGES
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MKMS}
+.if defined(WITH_NEW_XORG)
+
+USES+=		gmake
+
+# KMS support in the kernel is only build on these archs, disable others
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-libkms
 EXTRA_PATCHES+=	${FILESDIR}/extra-xf86drmMode.c
-PLIST_SUB+=	KMS=""
+PLIST_SUB+=	KMS="" NOUVEAU=""
 .else
-PLIST_SUB+=	KMS="@comment "
+CONFIGURE_ARGS+=--disable-libkms
+PLIST_SUB+=	KMS="@comment " NOUVEAU="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMANPAGES}
@@ -70,10 +69,8 @@ CONFIGURE_ARGS+=--disable-vmwgfx
 CONFIGURE_ARGS=	--enable-nouveau-experimental-api
 LIBDRM_VERSION=	2.4.17
 LIBDRM_REVISION=1
-PLIST_SUB+=	OLD="" NEW="@comment "
+PLIST_SUB+=	OLD="" NEW="@comment " NOUVEAU=""
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "ia64" || ${ARCH} == "powerpc"
 PLIST_SUB+=	INTEL_DRIVER=""
@@ -88,4 +85,4 @@ pre-patch:
 			   s,i?86|x86_64),i?86|amd64|x86_64),g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

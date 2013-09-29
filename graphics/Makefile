@@ -484,6 +484,7 @@
     SUBDIR += leptonica
     SUBDIR += lfview
     SUBDIR += lib3ds
+    SUBDIR += libEGL
     SUBDIR += libGL
     SUBDIR += libGLU
     SUBDIR += libGLw
@@ -505,6 +506,7 @@
     SUBDIR += libgeotiff
     SUBDIR += libgfx
     SUBDIR += libggi
+    SUBDIR += libglesv2
     SUBDIR += libgltext
     SUBDIR += libgnomecanvas
     SUBDIR += libgnomecanvas-reference

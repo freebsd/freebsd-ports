@@ -8,8 +8,6 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Abstract network code for X
 
-CONFLICTS=	libXtrans
-
 LICENSE=	MIT
 
 XORG_CAT=	lib

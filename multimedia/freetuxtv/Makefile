@@ -3,7 +3,7 @@
 
 PORTNAME=	freetuxtv
 PORTVERSION=	0.6.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
@@ -26,13 +26,12 @@ LIB_DEPENDS=	vlc:${PORTSDIR}/multimedia/vlc \
 		expat:${PORTSDIR}/textproc/expat2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=		iconv pathfix pkgconfig
+USES=		gmake iconv pathfix pkgconfig
 USE_GNOME=	glib20 gtk20
 USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext xfixes \
 		xi xinerama xrandr xrender
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-gtk=2.0
-USE_GMAKE=	yes
 CFLAGS=		-Wno-return-type
 INSTALLS_ICONS=	yes
 

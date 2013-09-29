@@ -3,6 +3,7 @@
 
 PORTNAME=	murrine
 PORTVERSION=	0.98.2
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	GNOME
 PKGNAMEPREFIX=	gtk-
@@ -11,14 +12,12 @@ PKGNAMESUFFIX=	-engine
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	Murrine GTK+ 2.x cairo based engine
 
-LIB_DEPENDS=	pixman-1:${PORTSDIR}/x11/pixman
-
 USE_XZ=	yes
-USE_GMAKE=	yes
+USE_XORG=	pixman
 USE_GNOME=	gtk20 intltool intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=	pkgconfig
+USES=		gmake pkgconfig
 
 OPTIONS_DEFINE=	ANIMATION
 ANIMATION_DESC=	Animation support

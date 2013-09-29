@@ -17,7 +17,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USES=		pathfix
-USE_XORG=	x11
+USE_XORG=	x11 xtst
 XORG_CAT=	driver
 
 .if ${PORT_OPTIONS:MHAL}

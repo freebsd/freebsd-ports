@@ -3,7 +3,7 @@
 
 PORTNAME=	tme
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://people.csail.mit.edu/fredette/tme/
 
@@ -21,9 +21,8 @@ LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		expat:${PORTSDIR}/textproc/expat2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=		pkgconfig gettext iconv perl5
+USES=		pkgconfig gettext gmake iconv perl5
 USE_GNOME=	gdkpixbuf2 gtk20
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool libltdl
 CONFIGURE_ENV=	ac_cv_have_isinff=no
 CONFIGURE_ARGS=	--datadir=${WRKDIR}/tmproot --disable-warnings

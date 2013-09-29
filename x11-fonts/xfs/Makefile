@@ -9,7 +9,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org font server
 
 XORG_CAT=	app
-USE_GMAKE=	yes
+USES=		gmake
 USE_XORG=	libfs xfont xtrans
 USE_RC_SUBR=	xfs
 CONFIGURE_ARGS=	--without-xmlto --without-fop

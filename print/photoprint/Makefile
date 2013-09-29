@@ -2,6 +2,7 @@
 
 PORTNAME=	photoprint
 DISTVERSION=	0.4.2-pre2
+PORTREVISION=	1
 CATEGORIES=	print graphics
 MASTER_SITES=	http://www.blackfiveimaging.co.uk/photoprint/
 
@@ -17,7 +18,6 @@ LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client \
 		liblcms.so:${PORTSDIR}/graphics/lcms \
 		libnetpbm.so:${PORTSDIR}/graphics/netpbm \
 		libpcre.so:${PORTSDIR}/devel/pcre \
-		libpixman-1.so:${PORTSDIR}/x11/pixman \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
 		libtiff.so:${PORTSDIR}/graphics/tiff
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client \
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gettext pkgconfig
 USE_GNOME=	pango
-USE_XORG=	x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
+USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender
 INSTALLS_ICONS=	yes
 
