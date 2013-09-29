@@ -35,20 +35,18 @@ OPTIONS_EXCLUDE_sparc64=	HAL
 
 .if defined(WITH_NEW_XORG)
 XORG_VERSION=	1.12.4
-XORG_REVISION=	2
+XORG_REVISION=	3
 PLIST_SUB+=	OLD="@comment " NEW=""
 EXTRA_PATCHES+=	${FILESDIR}/extra-clang \
 		${FILESDIR}/extra-configure
 .else
 XORG_VERSION=	1.7.7
-XORG_REVISION=	9
+XORG_REVISION=	10
 PLIST_SUB+=	OLD="" NEW="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/extra-Xext-xace.c \
-		${FILESDIR}/extra-Xserver-hw-xfree86-os-support-bsd-sparc64_video.c \
 		${FILESDIR}/extra-Xserver-os-xprintf.c \
 		${FILESDIR}/extra-include_eventstr.h \
 		${FILESDIR}/extra-os-utils.c \
-		${FILESDIR}/extra-servermd.h \
 		${FILESDIR}/extra-dix_events.c \
 		${FILESDIR}/extra-Xserver-hw-xfree86-common-xf86Config.c
 .endif
@@ -153,6 +151,11 @@ PLIST_SUB+=	PPC_NA=""
 .if ${ARCH} == sparc64
 PLIST_SUB+=	SPARC64=""
 PLIST_SUB+=	SPARC64_NA="@comment "
+.if defined(WITH_NEW_XORG)
+EXTRA_PATCHES+=	${FILESDIR}/extra-new-arch-sparc64
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-old-arch-sparc64
+.endif
 .else
 PLIST_SUB+=	SPARC64="@comment "
 PLIST_SUB+=	SPARC64_NA=""
