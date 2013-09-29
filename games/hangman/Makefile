@@ -22,9 +22,9 @@ CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 CPPFLAGS+=	`${SDL_CONFIG} --cflags`
 LDFLAGS+=	`${SDL_CONFIG} --libs`
 
-MAN6=		hangman.6
+PLIST_FILES=	bin/${PORTNAME} man/man6/${PORTNAME}.6.gz
+PORTDATA=	*
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DICTIONARY)
