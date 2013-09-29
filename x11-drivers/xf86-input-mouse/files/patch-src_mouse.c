@@ -1,5 +1,5 @@
---- src/mouse.c.orig	2012-07-27 08:10:56.000000000 +0200
-+++ src/mouse.c	2012-07-30 00:31:48.000000000 +0200
+--- src/mouse.c.orig	2012-10-08 03:40:07.000000000 +0200
++++ src/mouse.c	2013-07-03 01:04:45.398343993 +0200
 @@ -280,13 +280,39 @@
  
      pMse = pInfo->private;
@@ -135,7 +135,7 @@
  
      protocol = MousePickProtocol(pInfo, device, protocol, &protocolID);
  
-@@ -2137,7 +2148,7 @@
+@@ -2136,7 +2147,7 @@
  
      if (pMse->emulateWheel) {
          /* Emulate wheel button handling */
@@ -144,7 +144,7 @@
              wheelButtonMask = 0;
          else
              wheelButtonMask = 1 << (pMse->wheelButton - 1);
-@@ -2221,6 +2232,9 @@
+@@ -2220,6 +2231,9 @@
                          }
                      }
                  }
@@ -154,7 +154,7 @@
              }
  
              /* Absorb the mouse movement while the wheel button is pressed. */
-@@ -2238,7 +2252,7 @@
+@@ -2237,7 +2251,7 @@
      if (pMse->emulate3ButtonsSoft && pMse->emulate3Pending && (dx || dy))
          buttonTimer(pInfo);
  
@@ -163,7 +163,20 @@
          xf86PostMotionEvent(pInfo->dev, 0, 0, 2, dx, dy);
  
      if (change) {
-@@ -2448,11 +2462,11 @@
+@@ -2349,12 +2363,10 @@
+                int dx, int dy, int dz, int dw)
+ {
+     MouseDevPtr pMse;
+-    mousePrivPtr mousepriv;
+     int zbutton = 0, wbutton = 0, zbuttoncount = 0, wbuttoncount = 0;
+     int i, b, buttons = 0;
+ 
+     pMse = pInfo->private;
+-    mousepriv = (mousePrivPtr)pMse->mousePriv;
+ 
+     if (pMse->protocolID == PROT_MMHIT)
+         b = reverseBits(hitachMap, truebuttons);
+@@ -2447,11 +2459,11 @@
  
      /* Accumulate the scaled dx, dy in the private variables
         fracdx,fracdy and return the integer number part */

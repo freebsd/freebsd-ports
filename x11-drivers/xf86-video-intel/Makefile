@@ -29,20 +29,20 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(WITH_NEW_XORG)
-INTEL_VERSION=	2.21.9
+INTEL_VERSION=	2.21.15
 INTEL_REVISION=	0
+CONFIGURE_ENV+=	xorg_cv_cc_flag__Wno_maybe_uninitialized=no
 CONFIGURE_ARGS+=	--enable-sna
 MAKE_JOBS_UNSAFE=yes
 PLIST_SUB+=	OLD="@comment "
-EXTRA_PATCHES+=	${PATCHDIR}/extra-clang \
-		${PATCHDIR}/extra-src_sna_compiler.h \
+EXTRA_PATCHES+=	${PATCHDIR}/extra-src__sna__sna_threads.c \
 		${PATCHDIR}/extra-src_sna_kgem.c \
-		${PATCHDIR}/extra-src__sna__sna_threads.c \
+		${PATCHDIR}/extra-clang \
 		${PATCHDIR}/extra-i915kms
 LIB_DEPENDS+=	xcb-util:${PORTSDIR}/x11/xcb-util
 .else
 INTEL_VERSION=	2.7.1
-INTEL_REVISION=	4
+INTEL_REVISION=	5
 PLIST_SUB+=	OLD=""
 
 EXTRA_PATCHES+=	${PATCHDIR}/extra-src_ch7017_ch7017.c \

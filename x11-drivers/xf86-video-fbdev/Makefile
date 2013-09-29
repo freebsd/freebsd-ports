@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xf86-video-fbdev
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 PORTREVISION=	1
 CATEGORIES=	x11-drivers
 

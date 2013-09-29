@@ -5,6 +5,34 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+201309xx:
+  AFFECTS: users of x11/pixman
+  AUTHOR: zeising@FreeBSD.org
+
+  The library version of x11/pixman has changed, and portrevision has
+  been bumped in all dependent ports.  If you have external software that
+  depends on pixman, this software needs to be recompiled.
+  To recompile all software dependent on pixman, run:
+  
+  # portmaster -r pixman
+  or
+  # portupgrade -rf pixman
+
+201309xx:
+  AFFECTS: users of graphics/libGL, graphics/dri and other MESA ports
+  AUTHOR: zeising@FreeBSD.org
+
+  The graphics/libGL, graphics/dri and related MESA ports have been
+  updated to 9.1 when compiled with WITH_NEW_XORG= set.  It is necessary
+  to remove the old versions of both ports before updating.
+
+  # pkg_delete -f libGl-\* dri-\*
+  or
+  # pkg delete -f libGL dri
+  followed by
+  # portmaster -a
+
+=======
 20130925
   AFFECTS: Users of print/qpdf
   AUTHOR:  d.y.kazarov@mail.ru
@@ -623,7 +651,7 @@ you update your ports collection, before attempting any port upgrades.
   settings in rc.conf prior to restarting postgrey.
 
 20130525:
-  AFFECTS: users of x11/xorg and all X.Org ports
+  AFFECTS: users of x11/xorg and all xorg ports
   AUTHOR: zeising@FreeBSD.org
 
   X.Org, including libraries and some drivers, was updated.  If you are

@@ -1,6 +1,6 @@
---- src/mesa/Makefile.orig	2012-04-22 18:34:50.000000000 +0200
-+++ src/mesa/Makefile	2012-04-22 18:35:00.000000000 +0200
-@@ -183,10 +183,10 @@
+--- src/mesa/Makefile.orig	2009-12-22 03:31:19.000000000 +0100
++++ src/mesa/Makefile	2013-08-19 23:19:42.000000000 +0200
+@@ -127,10 +127,10 @@
  		$(DESTDIR)$(INSTALL_INC_DIR)/GL
  
  install-libgl: default gl.pc install-headers

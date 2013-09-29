@@ -11,9 +11,10 @@ include/GL/glxext.h
 %%OLD%%include/GL/mglmesa.h
 include/GL/osmesa.h
 %%OLD%%include/GL/svgamesa.h
-include/GL/vms_x_fix.h
+%%OLD%%include/GL/vms_x_fix.h
 include/GL/wglext.h
 include/GL/wmesa.h
+%%NEW%%lib/.libGL/libGL.la
 lib/.libGL/libGL.so
 lib/.libGL/libGL.so.1
 libdata/pkgconfig/gl.pc

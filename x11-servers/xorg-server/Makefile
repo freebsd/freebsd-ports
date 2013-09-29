@@ -20,14 +20,28 @@ RUN_DEPENDS=	xkeyboard-config>=2.5:${PORTSDIR}/x11/xkeyboard-config \
 XORG_CAT=	xserver
 SLAVE_PORT?=	no
 
+OPTIONS_DEFINE=	AIGLX SUID
+OPTIONS_RADIO=	CONF
+OPTIONS_RADIO_CONF= HAL DEVD
+AIGLX_DESC=	Compile with Accelerated Indirect GLX support
+SUID_DESC=	Install the Xorg server with setuid bit set
+HAL_DESC=	Compile with HAL config support
+DEVD_DESC=	Use devd for autoconfiguration of input devices (experimental)
+OPTIONS_DEFAULT=AIGLX SUID HAL
+
+OPTIONS_EXCLUDE_sparc64=	HAL
+
+.include <bsd.port.options.mk>
+
 .if defined(WITH_NEW_XORG)
 XORG_VERSION=	1.12.4
-XORG_REVISION=	1
+XORG_REVISION=	2
 PLIST_SUB+=	OLD="@comment " NEW=""
-EXTRA_PATCHES+=	${FILESDIR}/extra-clang
+EXTRA_PATCHES+=	${FILESDIR}/extra-clang \
+		${FILESDIR}/extra-configure
 .else
 XORG_VERSION=	1.7.7
-XORG_REVISION=	8
+XORG_REVISION=	9
 PLIST_SUB+=	OLD="" NEW="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/extra-Xext-xace.c \
 		${FILESDIR}/extra-Xserver-hw-xfree86-os-support-bsd-sparc64_video.c \
@@ -39,10 +53,8 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-Xext-xace.c \
 		${FILESDIR}/extra-Xserver-hw-xfree86-common-xf86Config.c
 .endif
 
-USES=		perl5
-USE_PERL5=	build
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_GL=		gl
 USE_XORG?=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
 		xmu xt xpm xext randrproto renderproto fixesproto damageproto \
@@ -54,6 +66,7 @@ USE_XORG?=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
 
 MAKE_JOBS_UNSAFE=	yes
 USE_OPENSSL=	yes
+USE_PERL5_BUILD=yes
 CONFIGURE_ARGS?=--disable-dmx --disable-xvfb --disable-xnest \
 		--without-xmlto --disable-docs --disable-devel-docs \
 		--localstatedir=/var --without-dtrace --disable-xephyr \
@@ -78,14 +91,6 @@ MAN5+=		xorg.conf.d.5
 PLIST=		${.CURDIR}/pkg-plist
 .endif
 
-OPTIONS_DEFINE=	AIGLX SUID HAL
-AIGLX_DESC=	Compile with Accelerated Indirect GLX support
-SUID_DESC=	Install the Xorg server with setuid bit set
-HAL_DESC=	Compile with HAL config support
-OPTIONS_DEFAULT=	AIGLX SUID HAL
-
-OPTIONS_EXCLUDE_sparc64=	HAL
-
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
@@ -101,6 +106,10 @@ LIB_DEPENDS+=	hal:${PORTSDIR}/sysutils/hal
 CONFIGURE_ARGS+=	--enable-config-hal=yes
 .else
 CONFIGURE_ARGS+=	--enable-config-hal=no
+.endif
+
+.if ${PORT_OPTIONS:MDEVD}
+EXTRA_PATCHES+=		${FILESDIR}/extra-config_devd.c
 .endif
 
 .if ${PORT_OPTIONS:MAIGLX}
@@ -172,6 +181,17 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@GLX_TRUE@GLXMODS =|@GLX_BOGUS@GLXMODS =|g' \
 		-e 's|^LTLIBRARIES = |LTLIBRARIES = libglx.la |g' \
 		${WRKSRC}/hw/xfree86/dixmods/Makefile.in
+.if ${PORT_OPTIONS:MDEVD}
+	@${ECHO_CMD} -e "\nint config_devd_init(void);\nvoid config_devd_fini(void);" \
+		>> ${WRKSRC}/config/config-backends.h
+.endif
+ 
+post-configure:
+.if ${PORT_OPTIONS:MDEVD}
+	@${REINPLACE_CMD} -e 's|config\.c|config.c devd.c|g' \
+		-e 's|config\.lo|config.lo devd.lo|g' \
+		${WRKSRC}/config/Makefile
+.endif
 
 .if ${SLAVE_PORT} == "no"
 pre-su-install:

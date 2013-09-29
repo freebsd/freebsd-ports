@@ -1,0 +1,12 @@
+include/GLES2/gl2.h
+include/GLES2/gl2ext.h
+include/GLES2/gl2platform.h
+include/GLES3/gl3.h
+include/GLES3/gl3ext.h
+include/GLES3/gl3platform.h
+lib/libGLESv2.la
+lib/libGLESv2.so
+lib/libGLESv2.so.2
+libdata/pkgconfig/glesv2.pc
+@dirrmtry include/GLES3
+@dirrmtry include/GLES2

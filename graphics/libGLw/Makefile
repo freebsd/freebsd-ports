@@ -12,7 +12,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenGL widgets library
 
 USE_BZIP2=	yes
-USES=		pathfix pkgconfig motif
+USES=		motif pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GL=		gl
 USE_XORG=	x11 xt xext

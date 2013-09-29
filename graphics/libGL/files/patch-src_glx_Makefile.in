@@ -1,0 +1,59 @@
+--- src/glx/Makefile.in.orig	2013-07-03 15:13:37.000000000 +0200
++++ src/glx/Makefile.in	2013-07-03 15:19:44.000000000 +0200
+@@ -162,12 +162,12 @@
+ depcomp = $(SHELL) $(top_srcdir)/bin/depcomp
+ am__depfiles_maybe = depfiles
+ am__mv = mv -f
+-COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+-	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
++COMPILE = $(CC) $(DEFS) $(AM_CFLAGS) $(DEFAULT_INCLUDES) $(INCLUDES) \
++	$(AM_CPPFLAGS) $(CPPFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) \
+-	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+-	$(AM_CFLAGS) $(CFLAGS)
++	$(AM_CFLAGS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
++	$(CPPFLAGS) $(CFLAGS)
+ AM_V_CC = $(am__v_CC_@AM_V@)
+ am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
+ am__v_CC_0 = @echo "  CC      " $@;
+@@ -632,17 +632,17 @@
+ $(am__aclocal_m4_deps):
+ install-libLTLIBRARIES: $(lib_LTLIBRARIES)
+ 	@$(NORMAL_INSTALL)
+-	@list='$(lib_LTLIBRARIES)'; test -n "$(libdir)" || list=; \
++	@list='$(lib_LTLIBRARIES)'; test -n "$(libdir)/.libGL" || list=; \
+ 	list2=; for p in $$list; do \
+ 	  if test -f $$p; then \
+ 	    list2="$$list2 $$p"; \
+ 	  else :; fi; \
+ 	done; \
+ 	test -z "$$list2" || { \
+-	  echo " $(MKDIR_P) '$(DESTDIR)$(libdir)'"; \
+-	  $(MKDIR_P) "$(DESTDIR)$(libdir)" || exit 1; \
+-	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 '$(DESTDIR)$(libdir)'"; \
+-	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 "$(DESTDIR)$(libdir)"; \
++	  echo " $(MKDIR_P) '$(DESTDIR)$(libdir)/.libGL'"; \
++	  $(MKDIR_P) "$(DESTDIR)$(libdir)/.libGL" || exit 1; \
++	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 '$(DESTDIR)$(libdir)/.libGL'"; \
++	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 "$(DESTDIR)$(libdir)/.libGL"; \
+ 	}
+ 
+ uninstall-libLTLIBRARIES:
+@@ -1068,8 +1068,14 @@
+ # a while by putting a link to the driver into /lib of the build tree.
+ all-local: lib@GL_LIB@.la
+ 	$(MKDIR_P) $(top_builddir)/$(LIB_DIR);
+-	ln -f .libs/lib@GL_LIB@.so.1.2.0 $(top_builddir)/$(LIB_DIR)/lib@GL_LIB@.so.1
+-	ln -sf lib@GL_LIB@.so.1 $(top_builddir)/$(LIB_DIR)/lib@GL_LIB@.so
++	base=$(basename $<);					\
++	dlname=$$(grep dlname= .libs/$< | cut -d "'" -f 2);	\
++	ver=$$(grep current= .libs/$< | cut -d "=" -f 2);	\
++	ln -f .libs/$$dlname $(top_builddir)/$(LIB_DIR)/$$dlname; \
++	if [ ! -f $(top_builddir)/$(LIB_DIR)/$$base.so.$$ver ]; then \
++	  ln -sf $$dlname $(top_builddir)/$(LIB_DIR)/$$base.so.$$ver; \
++	fi;							\
++	ln -sf $$base.so.$$ver $(top_builddir)/$(LIB_DIR)/$$base.so
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

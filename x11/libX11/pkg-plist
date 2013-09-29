@@ -103,6 +103,9 @@ lib/X11/locale/ja/XLC_LOCALE
 lib/X11/locale/ja_JP.UTF-8/Compose
 lib/X11/locale/ja_JP.UTF-8/XI18N_OBJS
 lib/X11/locale/ja_JP.UTF-8/XLC_LOCALE
+lib/X11/locale/km_KH.UTF-8/Compose
+lib/X11/locale/km_KH.UTF-8/XI18N_OBJS
+lib/X11/locale/km_KH.UTF-8/XLC_LOCALE
 lib/X11/locale/ko/Compose
 lib/X11/locale/ko/XI18N_OBJS
 lib/X11/locale/ko/XLC_LOCALE
@@ -141,6 +144,9 @@ lib/X11/locale/pt_BR.UTF-8/XLC_LOCALE
 lib/X11/locale/ru_RU.UTF-8/Compose
 lib/X11/locale/ru_RU.UTF-8/XI18N_OBJS
 lib/X11/locale/ru_RU.UTF-8/XLC_LOCALE
+lib/X11/locale/sr_CS.UTF-8/Compose
+lib/X11/locale/sr_CS.UTF-8/XI18N_OBJS
+lib/X11/locale/sr_CS.UTF-8/XLC_LOCALE
 lib/X11/locale/tatar-cyr/Compose
 lib/X11/locale/tatar-cyr/XI18N_OBJS
 lib/X11/locale/tatar-cyr/XLC_LOCALE
@@ -215,6 +221,7 @@ libdata/pkgconfig/x11.pc
 @dirrm lib/X11/locale/th_TH.UTF-8
 @dirrm lib/X11/locale/th_TH
 @dirrm lib/X11/locale/tatar-cyr
+@dirrm lib/X11/locale/sr_CS.UTF-8
 @dirrm lib/X11/locale/ru_RU.UTF-8
 @dirrm lib/X11/locale/pt_BR.UTF-8
 @dirrm lib/X11/locale/nokhchi-1
@@ -227,6 +234,7 @@ libdata/pkgconfig/x11.pc
 @dirrm lib/X11/locale/koi8-c
 @dirrm lib/X11/locale/ko_KR.UTF-8
 @dirrm lib/X11/locale/ko
+@dirrm lib/X11/locale/km_KH.UTF-8
 @dirrm lib/X11/locale/ja_JP.UTF-8
 @dirrm lib/X11/locale/ja.SJIS
 @dirrm lib/X11/locale/ja.JIS

@@ -1,7 +1,7 @@
---- configure.orig	2012-07-10 17:30:46.000000000 +0200
-+++ configure	2012-09-01 13:27:22.000000000 +0200
-@@ -9017,9 +9017,34 @@
-         DEFINES="$DEFINES -DPTHREADS -DUSE_EXTERNAL_DXTN_LIB=1"
+--- configure.orig	2013-08-01 23:22:15.000000000 +0200
++++ configure	2013-08-19 20:05:02.000000000 +0200
+@@ -21046,9 +21046,34 @@
+         DEFINES="$DEFINES -DHAVE_PTHREAD -DUSE_EXTERNAL_DXTN_LIB=1"
          DEFINES="$DEFINES -DIN_DRI_DRIVER -DHAVE_ALIAS"
  
 -        if test "x$DRI_DIRS" = "xyes"; then
@@ -38,3 +38,12 @@
          ;;
      gnu*)
          DEFINES="$DEFINES -DUSE_EXTERNAL_DXTN_LIB=1 -DIN_DRI_DRIVER"
+@@ -23396,7 +23421,7 @@
+ radeon_llvm_check() {
+     LLVM_REQUIRED_VERSION_MAJOR="3"
+     LLVM_REQUIRED_VERSION_MINOR="2"
+-    if test "$LLVM_VERSION_INT" -ne "${LLVM_REQUIRED_VERSION_MAJOR}0${LLVM_REQUIRED_VERSION_MINOR}"; then
++    if test "$LLVM_VERSION_INT" -lt "${LLVM_REQUIRED_VERSION_MAJOR}0${LLVM_REQUIRED_VERSION_MINOR}"; then
+         as_fn_error $? "LLVM $LLVM_REQUIRED_VERSION_MAJOR.$LLVM_REQUIRED_VERSION_MINOR with R600 target enabled is required.
+                      To use the r600/radeonsi LLVM backend, you need to fetch the LLVM source from:
+                      git://people.freedesktop.org/~tstellar/llvm master

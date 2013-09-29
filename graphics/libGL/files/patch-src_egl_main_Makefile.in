@@ -1,0 +1,19 @@
+--- src/egl/main/Makefile.in.orig	2013-08-01 23:22:16.000000000 +0200
++++ src/egl/main/Makefile.in	2013-09-01 11:33:47.000000000 +0200
+@@ -990,8 +990,14 @@
+ # a while by putting a link to the driver into /lib of the build tree.
+ all-local: libEGL.la
+ 	$(MKDIR_P) $(top_builddir)/$(LIB_DIR);
+-	ln -f .libs/libEGL.so.1.0.0 $(top_builddir)/$(LIB_DIR)/libEGL.so.1
+-	ln -sf libEGL.so.1 $(top_builddir)/$(LIB_DIR)/libEGL.so
++	base=$(basename $<);					\
++	dlname=$$(grep dlname= .libs/$< | cut -d "'" -f 2);	\
++	ver=$$(grep current= .libs/$< | cut -d "=" -f 2);	\
++	ln -f .libs/$$dlname $(top_builddir)/$(LIB_DIR)/$$dlname; \
++	if [ ! -f $(top_builddir)/$(LIB_DIR)/$$base.so.$$ver ]; then \
++	  ln -sf $$dlname $(top_builddir)/$(LIB_DIR)/$$base.so.$$ver; \
++	fi;							\
++	ln -sf $$base.so.$$ver $(top_builddir)/$(LIB_DIR)/$$base.so
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

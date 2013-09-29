@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xf86-video-vesa
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org

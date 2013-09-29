@@ -1,0 +1,11 @@
+--- src/mesa/drivers/dri/common/xmlpool/Makefile.in.orig	2013-07-02 22:42:09.000000000 +0200
++++ src/mesa/drivers/dri/common/xmlpool/Makefile.in	2013-07-02 22:53:30.000000000 +0200
+@@ -639,7 +639,7 @@
+ # Update .mo files from the corresponding .po files.
+ %/LC_MESSAGES/options.mo: %.po
+ 	@mo="$@"; \
+-	lang=$${mo%%/*}; \
++	lang=$*; \
+ 	echo "Updating ($$lang) $@ from $?."; \
+ 	mkdir -p $$lang/LC_MESSAGES; \
+ 	msgfmt -o $@ $?

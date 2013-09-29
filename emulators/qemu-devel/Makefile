@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -14,13 +14,12 @@ DIST_SUBDIR=	qemu/${PORTVERSION}
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	QEMU CPU Emulator - development version
 
-LIB_DEPENDS=	pixman-1:${PORTSDIR}/x11/pixman
-
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USES=		gmake pkgconfig bison perl5
 USE_PERL5=	build
 USE_PYTHON_BUILD=	-2.7
+USE_XORG=	pixman
 USE_GNOME+=	glib20
 PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}"

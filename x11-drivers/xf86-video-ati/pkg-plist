@@ -2,13 +2,13 @@ lib/xorg/modules/drivers/ati_drv.la
 lib/xorg/modules/drivers/ati_drv.so
 lib/xorg/modules/drivers/radeon_drv.la
 lib/xorg/modules/drivers/radeon_drv.so
-lib/xorg/modules/multimedia/theatre200_drv.la
-lib/xorg/modules/multimedia/theatre200_drv.so
-lib/xorg/modules/multimedia/theatre_detect_drv.la
-lib/xorg/modules/multimedia/theatre_detect_drv.so
-lib/xorg/modules/multimedia/theatre_drv.la
-lib/xorg/modules/multimedia/theatre_drv.so
+%%OLD%%lib/xorg/modules/multimedia/theatre200_drv.la
+%%OLD%%lib/xorg/modules/multimedia/theatre200_drv.so
+%%OLD%%lib/xorg/modules/multimedia/theatre_detect_drv.la
+%%OLD%%lib/xorg/modules/multimedia/theatre_detect_drv.so
+%%OLD%%lib/xorg/modules/multimedia/theatre_drv.la
+%%OLD%%lib/xorg/modules/multimedia/theatre_drv.so
 @dirrmtry lib/xorg/modules/drivers
-@dirrmtry lib/xorg/modules/multimedia
+%%OLD%%@dirrmtry lib/xorg/modules/multimedia
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg

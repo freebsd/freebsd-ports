@@ -14,9 +14,8 @@ BUILD_DEPENDS=	xkbcomp:${PORTSDIR}/x11/xkbcomp
 XORG_CAT=	data
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	intlhack libxslt:build
-USES=		pathfix perl5
+USES=		gmake pathfix perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes

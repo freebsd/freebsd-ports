@@ -1,13 +1,13 @@
---- src/intel_module.c.orig	2012-09-27 23:31:20.000000000 +0300
-+++ src/intel_module.c	2012-11-02 17:32:00.819723398 +0200
-@@ -393,8 +393,8 @@
- 		 dev->domain, dev->bus, dev->dev, dev->func);
+--- src/intel_device.c.orig	2013-06-30 16:03:51.000000000 +0200
++++ src/intel_device.c	2013-07-02 14:08:34.903060688 +0200
+@@ -94,8 +94,8 @@
+ 			 pci->domain, pci->bus, pci->dev, pci->func);
  
- 	ret = drmCheckModesettingSupported(id);
--	if (ret) {
--		if (xf86LoadKernelModule("i915"))
-+	if (ret || 1) {
-+		if (xf86LoadKernelModule("i915kms"))
- 			ret = drmCheckModesettingSupported(id);
- 		if (ret)
- 			return FALSE;
+ 		ret = drmCheckModesettingSupported(id);
+-		if (ret) {
+-			if (xf86LoadKernelModule("i915"))
++		if (ret || 1) {
++			if (xf86LoadKernelModule("i915kms"))
+ 				ret = drmCheckModesettingSupported(id);
+ 			if (ret)
+ 				return -1;
