@@ -24,6 +24,12 @@ lib/libgnokii.so
 lib/libgnokii.so.7
 libdata/pkgconfig/gnokii.pc
 libdata/pkgconfig/xgnokii.pc
+man/man1/gnokii.1.gz
+man/man1/sendsms.1.gz
+man/man1/xgnokii.1.gz
+man/man8/gnokiid.8.gz
+man/man8/mgnokiidev.8.gz
+%%SMSD%%man/man8/smsd.8.gz
 sbin/gnokiid
 sbin/mgnokiidev
 %%SMSD%%sbin/smsd
