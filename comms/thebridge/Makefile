@@ -13,12 +13,10 @@ COMMENT=	Amateur Radio Echolink conference bridge
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 PORTDOCS=	README
 USE_RC_SUBR=	tbd
-USE_AUTOTOOLS=	autoconf
-CONFIGURE_ENV=	AUTOMAKE=/usr/bin/true
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
