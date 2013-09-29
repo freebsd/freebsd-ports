@@ -27,14 +27,14 @@ OPTIONS_DEFINE=	MOVIES
 OPTIONS_DEFAULT=	MOVIES
 MOVIES_DESC=	Play in-game movies
 
-NO_STAGE=	yes
+MOVIES_CMAKE_ON=	-DWITH_MOVIES=ON
+MOVIES_CMAKE_OFF=	-DWITH_MOVIES=OFF
+MOVIES_LIB_DEPENDS=	libswresample1.so:${PORTSDIR}/multimedia/ffmpeg1
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMOVIES}
-CMAKE_ARGS+=	-DWITH_MOVIES=ON
-LIB_DEPENDS+=	swresample1:${PORTSDIR}/multimedia/ffmpeg1
 # partly copied from editors/libreoffice
-.if ${ARCH} == "i386"
 .if exists(/usr/bin/clang) && ${OSVERSION} > 900014
 CC=		/usr/bin/clang
 CPP=		/usr/bin/clang-cpp
@@ -42,9 +42,6 @@ CXX=		/usr/bin/clang++
 .else
 USE_GCC=	yes
 .endif
-.endif
-.else
-CMAKE_ARGS+=	-DWITH_MOVIES=OFF
 .endif
 
 post-patch:
@@ -54,10 +51,10 @@ post-patch:
 			${WRKSRC}/CorsixTH/Src/main.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/CorsixTH/CorsixTH ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/CorsixTH/CorsixTH.lua ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/CorsixTH/CorsixTH ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/CorsixTH/CorsixTH.lua ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/CorsixTH && ${COPYTREE_SHARE} "Bitmap Levels Lua" \
-		${DATADIR}
+		${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
