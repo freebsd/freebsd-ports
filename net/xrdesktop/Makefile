@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://luggage.linux0wnsyou.com/xrdesktop/
 
 MAINTAINER=	eadler@FreeBSD.org
-COMMENT=	p5-Gtk frontend to rdesktop
+COMMENT=	GTK frontend to rdesktop
 
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop \
 		p5-Gtk>=0:${PORTSDIR}/x11-toolkits/p5-Gtk
@@ -18,8 +18,7 @@ USES=		perl5
 
 PLIST_FILES=	bin/xrdesktop
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/xrdesktop ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/xrdesktop ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
