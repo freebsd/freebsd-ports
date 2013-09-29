@@ -12,7 +12,7 @@ COMMENT=	VDPAU-based backend for VAAPI
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	vdpau:${PORTSDIR}/multimedia/libvdpau
+LIB_DEPENDS=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libva.pc:${PORTSDIR}/multimedia/libva \
 		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 
@@ -26,13 +26,7 @@ CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DEBUG
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MDEBUG)
-CONFIGURE_ARGS+=	--disable-debug
-.endif
+DEBUG_CONFIGURE_ENABLE=	debug
 
 .include <bsd.port.pre.mk>
 
