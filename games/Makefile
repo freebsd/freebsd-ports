@@ -203,6 +203,7 @@
     SUBDIR += drcreep
     SUBDIR += drm
     SUBDIR += dsnake
+    SUBDIR += duckmaze
     SUBDIR += duel
     SUBDIR += duke3d-data
     SUBDIR += dungeon
