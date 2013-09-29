@@ -30,13 +30,10 @@ DOCSDIR=	${PREFIX}/share/doc/py-django
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	FASTCGI HTMLDOCS
 OPTIONS_DEFAULT=SQLITE
-OPTIONS_MULTI=	DATABASE
-OPTIONS_MULTI_DATABASE=	PGSQL MYSQL SQLITE
+OPTIONS_GROUP=	DATABASE
+OPTIONS_GROUP_DATABASE=	PGSQL MYSQL SQLITE
 HTMLDOCS_DESC=	Install the HTML documentation (requires Sphinx)
 
-MAN1=		daily_cleanup.1 django-admin.1 gather_profile_stats.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPGSQL}
@@ -69,13 +66,13 @@ post-build:
 .endif
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/docs/man/* ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/man/* ${STAGEDIR}/${MAN1PREFIX}/man/man1
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	"			* See http://docs.djangoproject.com/ for complete documentation"
 	@${ECHO_MSG}	""
 .if ${PORT_OPTIONS:MHTMLDOCS}
-	${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/docs/_build/html ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	${CP} -R ${WRKSRC}/docs/_build/html ${STAGEDIR}/${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

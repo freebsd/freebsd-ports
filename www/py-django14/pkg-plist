@@ -1,4 +1,7 @@
 bin/django-admin.py
+man/man1/daily_cleanup.1.gz
+man/man1/django-admin.1.gz
+man/man1/gather_profile_stats.1.gz
 %%PYTHON_SITELIBDIR%%/django/__init__.py
 %%PYTHON_SITELIBDIR%%/django/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/__init__.pyo
