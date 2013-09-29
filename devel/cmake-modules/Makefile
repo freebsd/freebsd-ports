@@ -1,7 +1,7 @@
 # Created by: gahr
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-modules
 LATEST_LINK=	cmake-modules
 
