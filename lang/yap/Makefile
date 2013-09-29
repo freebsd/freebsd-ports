@@ -6,14 +6,13 @@ PORTVERSION=	6.2.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.dcc.fc.up.pt/~vsc/Yap/
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	High-performance Prolog compiler
 
 PORTSCOUT=	limit:^6\.2\.
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -28,8 +27,7 @@ PLIST_SUB+=	PORTDOCS="@comment "
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-max-performance
-USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
+USES=	gmake
 
 DOCSDIR=	${PREFIX}/share/doc/Yap
 DATADIR=	${PREFIX}/share/Yap
@@ -42,7 +40,7 @@ post-build:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	(cd ${WRKSRC} ; ${MAKE} install_docs)
+	(cd ${WRKSRC} ; ${MAKE} DESTDIR=${STAGEDIR} install_docs)
 .endif
 
 .include <bsd.port.mk>
