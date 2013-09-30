@@ -3,6 +3,7 @@
 
 PORTNAME=	XML-Toolkit
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PERIGRIN
@@ -22,12 +23,11 @@ BUILD_DEPENDS=	p5-Bread-Board>=0:${PORTSDIR}/devel/p5-Bread-Board \
 		p5-MooseX-Types-Path-Class>=0:${PORTSDIR}/devel/p5-MooseX-Types-Path-Class \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-XML-SAX>=0.96:${PORTSDIR}/textproc/p5-XML-SAX \
+		p5-XML-SAX-Base>=0:${PORTSDIR}/textproc/p5-XML-SAX-Base \
 		p5-XML-SAX-Writer>=0:${PORTSDIR}/textproc/p5-XML-SAX-Writer \
 		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-#		p5-XML-SAX-Base>=0:${PORTSDIR}/textproc/p5-XML-SAX-Base
-
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-XML>=0:${PORTSDIR}/devel/p5-Test-XML
@@ -35,25 +35,4 @@ TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		XML::Filter::Moose.3 \
-		XML::Generator::Moose.3 \
-		XML::Toolkit.3 \
-		XML::Toolkit::App.3 \
-		XML::Toolkit::Builder.3 \
-		XML::Toolkit::Builder::ClassRegistry.3 \
-		XML::Toolkit::Builder::ClassTemplate.3 \
-		XML::Toolkit::Builder::Filter.3 \
-		XML::Toolkit::Cmd::Command::generate.3 \
-		XML::Toolkit::Cmd::Command::validate.3 \
-		XML::Toolkit::Generator.3 \
-		XML::Toolkit::Generator::Default.3 \
-		XML::Toolkit::Generator::Interface.3 \
-		XML::Toolkit::Loader.3 \
-		XML::Toolkit::Loader::Filter.3 \
-		XML::Toolkit::MetaDescription.3 \
-		XML::Toolkit::MetaDescription::Attribute.3 \
-		XML::Toolkit::MetaDescription::Trait.3 \
-		XML::Toolkit::Trait::NoXML.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

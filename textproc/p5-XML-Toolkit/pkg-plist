@@ -25,6 +25,25 @@ bin/xmltk
 %%SITE_PERL%%/XML/Toolkit/MetaDescription/Trait.pm
 %%SITE_PERL%%/XML/Toolkit/Trait/NoXML.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Toolkit/.packlist
+%%PERL5_MAN3%%/XML::Filter::Moose.3.gz
+%%PERL5_MAN3%%/XML::Generator::Moose.3.gz
+%%PERL5_MAN3%%/XML::Toolkit.3.gz
+%%PERL5_MAN3%%/XML::Toolkit::App.3.gz
+%%PERL5_MAN3%%/XML::Toolkit::Builder.3.gz
+%%PERL5_MAN3%%/XML::Toolkit::Builder::ClassRegistry.3.gz
+%%PERL5_MAN3%%/XML::Toolkit::Builder::ClassTemplate.3.gz
+%%PERL5_MAN3%%/XML::Toolkit::Builder::Filter.3.gz
+%%PERL5_MAN3%%/XML::Toolkit::Cmd::Command::generate.3.gz
+%%PERL5_MAN3%%/XML::Toolkit::Cmd::Command::validate.3.gz
+%%PERL5_MAN3%%/XML::Toolkit::Generator.3.gz
+%%PERL5_MAN3%%/XML::Toolkit::Generator::Default.3.gz
+%%PERL5_MAN3%%/XML::Toolkit::Generator::Interface.3.gz
+%%PERL5_MAN3%%/XML::Toolkit::Loader.3.gz
+%%PERL5_MAN3%%/XML::Toolkit::Loader::Filter.3.gz
+%%PERL5_MAN3%%/XML::Toolkit::MetaDescription.3.gz
+%%PERL5_MAN3%%/XML::Toolkit::MetaDescription::Attribute.3.gz
+%%PERL5_MAN3%%/XML::Toolkit::MetaDescription::Trait.3.gz
+%%PERL5_MAN3%%/XML::Toolkit::Trait::NoXML.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Toolkit
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrm %%SITE_PERL%%/XML/Toolkit/Trait
