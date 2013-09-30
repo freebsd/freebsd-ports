@@ -8,7 +8,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
 
 CONFLICTS=	libav-[0-9]*
