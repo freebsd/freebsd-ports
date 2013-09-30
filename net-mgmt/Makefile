@@ -84,6 +84,7 @@
     SUBDIR += hawk
     SUBDIR += horde3-nic
     SUBDIR += icinga
+    SUBDIR += icli
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery
     SUBDIR += ifgraph
