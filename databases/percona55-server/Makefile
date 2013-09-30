@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME?=	percona
-PORTVERSION=	5.5.32.31.0
-DISTNAME=	Percona-Server-5.5.32-rel31.0
+PORTVERSION=	5.5.33.31.1
+DISTNAME=	Percona-Server-5.5.33-rel31.1
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.5/${DISTNAME:S/rel//}/source/
