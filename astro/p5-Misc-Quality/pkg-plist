@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Misc/Quality.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Misc/Quality/.packlist
+%%PERL5_MAN3%%/Misc::Quality.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Misc/Quality
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Misc
 @dirrmtry %%SITE_PERL%%/Misc
