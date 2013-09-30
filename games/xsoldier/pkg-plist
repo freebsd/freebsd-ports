@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/xsoldier
+man/man6/xsoldier.6.gz
 share/examples/xsoldier/xsoldier.scores
 @exec cp %D/share/examples/xsoldier/xsoldier.scores %%SCOREFILE%% && chgrp games %%SCOREFILE%% && chmod 664 %%SCOREFILE%%
 @unexec rm -f %%SCOREFILE%%
