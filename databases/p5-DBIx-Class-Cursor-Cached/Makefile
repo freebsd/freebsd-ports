@@ -21,7 +21,4 @@ TEST_DEPENDS=	p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		DBIx::Class::Cursor::Cached.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
