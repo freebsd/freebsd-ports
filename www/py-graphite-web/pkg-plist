@@ -54,6 +54,7 @@ graphite/webapp/content/img/Tplus.gif
 graphite/webapp/content/img/arrow1.gif
 graphite/webapp/content/img/blank.gif
 graphite/webapp/content/img/calBt.gif
+graphite/webapp/content/img/carbon-fiber.png
 graphite/webapp/content/img/clock_16.png
 graphite/webapp/content/img/delete.gif
 graphite/webapp/content/img/error.png
@@ -62,11 +63,26 @@ graphite/webapp/content/img/graphite.png
 graphite/webapp/content/img/graphite_short.png
 graphite/webapp/content/img/indicator.png
 graphite/webapp/content/img/leaf.gif
+graphite/webapp/content/img/line_chart.png
 graphite/webapp/content/img/mini-bottom2.gif
 graphite/webapp/content/img/mini-top2.gif
 graphite/webapp/content/img/save.gif
 graphite/webapp/content/img/searching.gif
 graphite/webapp/content/img/updateGraph.gif
+graphite/webapp/content/js/ace/ace.js
+graphite/webapp/content/js/ace/keybinding-vim.js
+graphite/webapp/content/js/ace/mode-c_cpp.js
+graphite/webapp/content/js/ace/mode-clojure.js
+graphite/webapp/content/js/ace/mode-coffee.js
+graphite/webapp/content/js/ace/mode-csharp.js
+graphite/webapp/content/js/ace/mode-css.js
+graphite/webapp/content/js/ace/mode-groovy.js
+graphite/webapp/content/js/ace/mode-html.js
+graphite/webapp/content/js/ace/mode-java.js
+graphite/webapp/content/js/ace/mode-javascript.js
+graphite/webapp/content/js/ace/mode-json.js
+graphite/webapp/content/js/ace/theme-textmate.js
+graphite/webapp/content/js/ace/worker-javascript.js
 graphite/webapp/content/js/browser.js
 graphite/webapp/content/js/cli.js
 graphite/webapp/content/js/completer.js
@@ -797,6 +813,7 @@ graphite/webapp/content/js/window/window_effects.js
 @dirrm graphite/webapp/content/js/ext/adapter/ext
 @dirrm graphite/webapp/content/js/ext/adapter
 @dirrm graphite/webapp/content/js/ext
+@dirrm graphite/webapp/content/js/ace
 @dirrm graphite/webapp/content/js
 @dirrm graphite/webapp/content/img
 @dirrm graphite/webapp/content/html
