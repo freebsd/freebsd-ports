@@ -1,4 +1,6 @@
 bin/mm-common-prepare
+libdata/pkgconfig/mm-common-util.pc
+man/man1/mm-common-prepare.1.gz
 share/aclocal/mm-common.m4
 share/aclocal/mm-dietlib.m4
 share/aclocal/mm-doc.m4
@@ -22,4 +24,3 @@ libdata/pkgconfig/mm-common-libstdc++.pc
 @dirrm share/mm-common/build
 @dirrm share/mm-common
 @dirrm share/doc/mm-common
-@dirrmtry share/aclocal
