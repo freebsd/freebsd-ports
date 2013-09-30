@@ -14,15 +14,14 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
-BUILD_DEPENDS:=	${RUN_DEPENDS} \
-		p5-Module-Build-Tiny>=0.023:${PORTSDIR}/devel/p5-Module-Build-Tiny
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
+NO_STAGE=	yes
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	modbuildtiny
 
 MAN3=		MooseX::MultiInitArg.3 \
 		MooseX::MultiInitArg::Trait.3 \
 		MooseX::MultiInitArg::Attribute.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
