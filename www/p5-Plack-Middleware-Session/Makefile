@@ -13,16 +13,16 @@ RUN_DEPENDS=	\
 	p5-Digest-HMAC>=1.03:${PORTSDIR}/security/p5-Digest-HMAC \
 	p5-Digest-SHA1>0:${PORTSDIR}/security/p5-Digest-SHA1 \
 	p5-Plack>=0.9910:${PORTSDIR}/www/p5-Plack
-BUILD_DEPENDS:=	${RUN_DEPENDS} \
-	p5-Module-Build-Tiny>=0.023:${PORTSDIR}/devel/p5-Module-Build-Tiny
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Test-Fatal>=0.006:${PORTSDIR}/devel/p5-Test-Fatal \
 	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
 	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP \
 	p5-YAML>0:${PORTSDIR}/textproc/p5-YAML
 
+NO_STAGE=	yes
 USES=	perl5
-USE_PERL5=	modbuild
+USE_PERL5=	modbuildtiny
 
 MAN3=	Plack::Middleware::Session.3 \
 	Plack::Middleware::Session::Cookie.3 \
@@ -35,5 +35,4 @@ MAN3=	Plack::Middleware::Session.3 \
 	Plack::Session::Store::File.3 \
 	Plack::Session::Store::Null.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
