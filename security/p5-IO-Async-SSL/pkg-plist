@@ -1,6 +1,8 @@
 %%SITE_PERL%%/IO/Async/SSL.pm
 %%SITE_PERL%%/IO/Async/SSLStream.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Async/SSL/.packlist
+%%PERL5_MAN3%%/IO::Async::SSL.3.gz
+%%PERL5_MAN3%%/IO::Async::SSLStream.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Async/SSL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Async
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO

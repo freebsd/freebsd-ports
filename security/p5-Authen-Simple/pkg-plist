@@ -4,6 +4,11 @@
 %%SITE_PERL%%/Authen/Simple/Log.pm
 %%SITE_PERL%%/Authen/Simple/Password.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Simple/.packlist
+%%PERL5_MAN3%%/Authen::Simple.3.gz
+%%PERL5_MAN3%%/Authen::Simple::Adapter.3.gz
+%%PERL5_MAN3%%/Authen::Simple::Apache.3.gz
+%%PERL5_MAN3%%/Authen::Simple::Log.3.gz
+%%PERL5_MAN3%%/Authen::Simple::Password.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
 @dirrmtry %%SITE_PERL%%/Authen/Simple

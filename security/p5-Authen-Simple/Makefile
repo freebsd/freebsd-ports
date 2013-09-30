@@ -22,11 +22,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Authen::Simple.3 \
-		Authen::Simple::Adapter.3 \
-		Authen::Simple::Apache.3 \
-		Authen::Simple::Log.3 \
-		Authen::Simple::Password.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

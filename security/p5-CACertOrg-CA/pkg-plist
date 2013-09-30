@@ -1,6 +1,7 @@
 %%SITE_PERL%%/CACertOrg/CA.pm
 %%SITE_PERL%%/CACertOrg/CA/root.crt
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CACertOrg/CA/.packlist
+%%PERL5_MAN3%%/CACertOrg::CA.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CACertOrg/CA
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CACertOrg
 @dirrm %%SITE_PERL%%/CACertOrg/CA
