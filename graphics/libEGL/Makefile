@@ -20,6 +20,7 @@ USE_XORG+=	glproto dri2proto xext xdamage xfixes
 LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libdrm.so:${PORTSDIR}/graphics/libdrm
 
+NO_STAGE=	yes
 BUILD_WKRSRC=	${WRKSRC}/src/egl
 INSTALL_WRKSRC=	${WRKSRC}/src/egl
 
