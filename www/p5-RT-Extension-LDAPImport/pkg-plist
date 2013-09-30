@@ -1,6 +1,7 @@
 %%RTHOME%%/plugins/RT-Extension-LDAPImport/lib/RT/Extension/LDAPImport.pm
 %%RTHOME%%/plugins/RT-Extension-LDAPImport/bin/rtldapimport
-man/auto/RT/Extension/LDAPImport/.packlist
+man/auto/RT/Extension/LDAPImport/.packlist.gz
+man/man3/RT::Extension::LDAPImport.3.gz
 @dirrm %%RTHOME%%/plugins/RT-Extension-LDAPImport/lib/RT/Extension
 @dirrm %%RTHOME%%/plugins/RT-Extension-LDAPImport/lib/RT
 @dirrm %%RTHOME%%/plugins/RT-Extension-LDAPImport/lib

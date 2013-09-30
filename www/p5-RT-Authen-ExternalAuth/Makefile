@@ -23,7 +23,6 @@ USE_PERL5=	configure
 OPTIONS_DEFINE=	RT38
 RT38_DESC=	Install for rt-3.8.x (default rt-4.0.x)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRT38}
@@ -36,20 +35,19 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/rt:${PORTSDIR}/www/rt${RT_VER}
 RUN_DEPENDS+=	${LOCALBASE}/bin/rt:${PORTSDIR}/www/rt${RT_VER}
 
 MAN3PREFIX=	${PREFIX}
-MAN3=		RT::Authen::ExternalAuth.3 \
-		RT::Authen::ExternalAuth::DBI.3 \
-		RT::Authen::ExternalAuth::DBI::Cookie.3 \
-		RT::Authen::ExternalAuth::LDAP.3
 
 PLIST_SUB+=	RTHOME=share/rt${RT_VER}
 
 # Note: You can install using an arbitrary $PREFIX but only if it
 # matches the $PREFIX used to install www/rt{38,40}.  Hence ignore
 # $PREFIX in the environment and inherit settings from RT.pm
+
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
 	    unset PREFIX && \
 	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${SITE_PERL} ./${CONFIGURE_SCRIPT} && \
-	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
+	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//;' \
+		-e 's,^DESTDIR = ,DESTDIR = ${STAGEDIR},;' Makefile
+
 
 .include <bsd.port.mk>
