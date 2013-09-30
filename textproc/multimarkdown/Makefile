@@ -19,13 +19,8 @@ FETCH_ARGS=	-Fpr
 
 USE_GMAKE=	yes
 ALL_TARGET=	ALL
-MAKE_JOBS_UNSAFE=	yes
+#MAKE_JOBS_UNSAFE=	yes
 
-PLIST_FILES=	bin/multimarkdown bin/mmd bin/mmd2all bin/mmd2odf bin/mmd2opml bin/mmd2pdf bin/mmd2tex
-PORTDOCS=	LICENSE README.markdown
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -E "/CFLAGS/s/-arch [[:alnum:]]+//; /CFLAGS/s/\?=/\+=/; \
@@ -33,13 +28,11 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/multimarkdown ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/multimarkdown ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${STAGEDIR}${PREFIX}/bin
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.markdown ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.markdown ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
