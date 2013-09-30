@@ -1,6 +1,5 @@
 bin/rpyc_classic.py
 bin/rpyc_registry.py
-bin/rpyc_vdbconf.py
 %%PYTHON_SITELIBDIR%%/rpyc/__init__.py
 %%PYTHON_SITELIBDIR%%/rpyc/__init__.pyc
 %%PYTHON_SITELIBDIR%%/rpyc/__init__.pyo
@@ -43,6 +42,15 @@ bin/rpyc_vdbconf.py
 %%PYTHON_SITELIBDIR%%/rpyc/lib/compat.py
 %%PYTHON_SITELIBDIR%%/rpyc/lib/compat.pyc
 %%PYTHON_SITELIBDIR%%/rpyc/lib/compat.pyo
+%%PYTHON_SITELIBDIR%%/rpyc/scripts/__init__.py
+%%PYTHON_SITELIBDIR%%/rpyc/scripts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/rpyc/scripts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/rpyc/scripts/rpyc_classic.py
+%%PYTHON_SITELIBDIR%%/rpyc/scripts/rpyc_classic.pyc
+%%PYTHON_SITELIBDIR%%/rpyc/scripts/rpyc_classic.pyo
+%%PYTHON_SITELIBDIR%%/rpyc/scripts/rpyc_registry.py
+%%PYTHON_SITELIBDIR%%/rpyc/scripts/rpyc_registry.pyc
+%%PYTHON_SITELIBDIR%%/rpyc/scripts/rpyc_registry.pyo
 %%PYTHON_SITELIBDIR%%/rpyc/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/rpyc/utils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/rpyc/utils/__init__.pyo
@@ -64,10 +72,14 @@ bin/rpyc_vdbconf.py
 %%PYTHON_SITELIBDIR%%/rpyc/utils/server.py
 %%PYTHON_SITELIBDIR%%/rpyc/utils/server.pyc
 %%PYTHON_SITELIBDIR%%/rpyc/utils/server.pyo
+%%PYTHON_SITELIBDIR%%/rpyc/utils/ssh.py
+%%PYTHON_SITELIBDIR%%/rpyc/utils/ssh.pyc
+%%PYTHON_SITELIBDIR%%/rpyc/utils/ssh.pyo
 %%PYTHON_SITELIBDIR%%/rpyc/version.py
 %%PYTHON_SITELIBDIR%%/rpyc/version.pyc
 %%PYTHON_SITELIBDIR%%/rpyc/version.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/rpyc/utils
+@dirrm %%PYTHON_SITELIBDIR%%/rpyc/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/rpyc/lib
 @dirrm %%PYTHON_SITELIBDIR%%/rpyc/core
 @dirrm %%PYTHON_SITELIBDIR%%/rpyc
