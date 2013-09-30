@@ -18,10 +18,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure
 USES=		perl5
-NO_STAGE=	yes
-
-MAN3=		Astro::Flux.3 \
-		Astro::FluxColor.3 \
-		Astro::Fluxes.3
 
 .include <bsd.port.mk>
