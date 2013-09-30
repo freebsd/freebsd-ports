@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doclifter
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.catb.org/~esr/doclifter/
 
@@ -14,17 +14,18 @@ RUN_DEPENDS+=	python2:${PORTSDIR}/lang/python2
 USE_PYTHON=	-2.7
 NO_BUILD=	yes
 
-MAN1=		doclifter.1 manlifter.1
-PLIST_FILES=	bin/doclifter bin/manlifter
+PLIST_FILES=	bin/doclifter \
+		bin/manlifter \
+		doclifter.1.gz \
+		manlifter.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} '1s/python/python2/' ${WRKSRC}/doclifter
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/doclifter ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/manlifter ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doclifter.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/manlifter.1 ${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/doclifter ${STAGE}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/manlifter ${STAGE}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doclifter.1 ${STAGE}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/manlifter.1 ${STAGE}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
