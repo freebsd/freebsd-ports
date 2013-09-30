@@ -3,15 +3,13 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.7.15
-PORTEPOCH=	1
 PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
 
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
-
-CONFLICTS=	libav-[0-9]*
 
 LICENSE=		GPLv2 LGPL21
 LICENSE_COMB=		multi
@@ -21,6 +19,9 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPLv2.1
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils \
 		${LOCALBASE}/bin/texi2html:${PORTSDIR}/textproc/texi2html
+
+CONFLICTS=	libav-[0-9]*
+PORTSCOUT=	limit:^0\..*
 
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
@@ -67,15 +68,7 @@ COMPAT_HEADERS=libavcodec/avcodec.h \
 	libpostproc/postprocess.h \
 	libswscale/swscale.h
 
-MAN1+=		ffmpeg.1 ffprobe.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-# PORTDOCS
-.if ${PORT_OPTIONS:MFFSERVER}
-MAN1+=		ffserver.1
-.endif
 
 # rtmp
 .if ${PORT_OPTIONS:MRTMP}
@@ -287,8 +280,7 @@ CONFIGURE_ARGS+=	--disable-libschroedinger
 # sdl
 .if ${PORT_OPTIONS:MSDL}
 USE_SDL+=	sdl
-PLIST_FILES+=	bin/ffplay
-MAN1+=	ffplay.1
+PLIST_FILES+=	bin/ffplay man/man1/ffplay.1.gz
 .else
 CONFIGURE_ARGS+=	--disable-ffplay
 .endif
@@ -384,7 +376,7 @@ CONFIGURE_ARGS+=	--enable-nonfree
 .endif
 
 .if defined(FFMPEG_LICENSE_GPL3)
-LICENSE=		GPLv3 LGPL3
+LICENSE+=		GPLv3 LGPL3
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.GPLv3
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPLv3
 CONFIGURE_ARGS+=	--enable-version3
@@ -392,7 +384,7 @@ CONFIGURE_ARGS+=	--enable-version3
 
 post-patch:
 # {C,LD}FLAGS safeness
-	@${REINPLACE_CMD} -e 's|$$(LIBDIR)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
+	@${REINPLACE_CMD} -e 's|$$(LIBDIR)/pkgconfig|$$(DESTDIR)$$(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/subdir.mak
 	@${REINPLACE_CMD} -e 's|/etc/ffserver.conf|${PREFIX}/etc/ffserver.conf|' \
 		${WRKSRC}/ffserver.c
@@ -425,26 +417,21 @@ post-configure:
 
 post-install:
 .if ${PORT_OPTIONS:MFFSERVER}
-	${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf ${PREFIX}/etc/ffserver.conf-dist
-	if [ ! -f ${PREFIX}/etc/ffserver.conf ]; then \
-		${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf ${PREFIX}/etc; \
-	fi
+	${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf ${STAGEDIR}${PREFIX}/etc/ffserver.conf-dist
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STGAEDIR}${DOCSDIR}
 .endfor
 .for FILE in ${DOC_DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-	${MKDIR} ${PREFIX}/include/ffmpeg
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/ffmpeg
 .for FILE in ${COMPAT_HEADERS}
-	${LN} -sf ../${FILE} ${PREFIX}/include/ffmpeg/${FILE:C,^[^/]+/([^/]+).*,\1,}
+	${LN} -sf ../${FILE} ${STAGEDIR}${PREFIX}/include/ffmpeg/${FILE:C,^[^/]+/([^/]+).*,\1,}
 .endfor
-	${MKDIR} ${PREFIX}/include/postproc
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/postproc
 	${LN} -sf ../libpostproc/postprocess.h \
-		 ${PREFIX}/include/postproc/postprocess.h
+		 ${STAGEDIR}${PREFIX}/include/postproc/postprocess.h
 
 .include <bsd.port.post.mk>
