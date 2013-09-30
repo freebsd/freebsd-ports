@@ -15,6 +15,21 @@ bin/oai-listsets
 %%SITE_PERL%%/Net/OAI/Record/OAI_DC.pm
 %%SITE_PERL%%/Net/OAI/ResumptionToken.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OAI/Harvester/.packlist
+%%PERL5_MAN3%%/Net::OAI::Base.3.gz
+%%PERL5_MAN3%%/Net::OAI::Error.3.gz
+%%PERL5_MAN3%%/Net::OAI::GetRecord.3.gz
+%%PERL5_MAN3%%/Net::OAI::Harvester.3.gz
+%%PERL5_MAN3%%/Net::OAI::Identify.3.gz
+%%PERL5_MAN3%%/Net::OAI::ListIdentifiers.3.gz
+%%PERL5_MAN3%%/Net::OAI::ListMetadataFormats.3.gz
+%%PERL5_MAN3%%/Net::OAI::ListRecords.3.gz
+%%PERL5_MAN3%%/Net::OAI::ListSets.3.gz
+%%PERL5_MAN3%%/Net::OAI::Record.3.gz
+%%PERL5_MAN3%%/Net::OAI::Record::Header.3.gz
+%%PERL5_MAN3%%/Net::OAI::Record::OAI_DC.3.gz
+%%PERL5_MAN3%%/Net::OAI::ResumptionToken.3.gz
+man/man1/oai-listrecords.1.gz
+man/man1/oai-listsets.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OAI/Harvester
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OAI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

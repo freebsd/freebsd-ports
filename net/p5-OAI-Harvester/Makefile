@@ -25,13 +25,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	configure
 USES=		perl5
 
-MAN1=		oai-listrecords.1 oai-listsets.1
-MAN3=		Net::OAI::Base.3 Net::OAI::Error.3 Net::OAI::GetRecord.3 \
-		Net::OAI::Harvester.3 Net::OAI::Identify.3 \
-		Net::OAI::ListIdentifiers.3 Net::OAI::ListMetadataFormats.3 \
-		Net::OAI::ListRecords.3 Net::OAI::ListSets.3 \
-		Net::OAI::Record.3 Net::OAI::Record::Header.3 \
-		Net::OAI::Record::OAI_DC.3 Net::OAI::ResumptionToken.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

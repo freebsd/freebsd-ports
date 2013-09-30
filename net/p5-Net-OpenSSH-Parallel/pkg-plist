@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Net/OpenSSH/Parallel.pm
 %%SITE_PERL%%/Net/OpenSSH/Parallel/Constants.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenSSH/Parallel/.packlist
+%%PERL5_MAN3%%/Net::OpenSSH::Parallel.3.gz
+%%PERL5_MAN3%%/Net::OpenSSH::Parallel::Constants.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenSSH/Parallel
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenSSH
 @dirrmtry %%SITE_PERL%%/Net/OpenSSH/Parallel

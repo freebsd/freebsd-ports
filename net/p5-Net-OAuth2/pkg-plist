@@ -11,6 +11,12 @@
 %%SITE_PERL%%/Net/OAuth2/Profile/WebServer.pm
 %%SITE_PERL%%/Net/OAuth2/Profile/WebServer.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OAuth2/.packlist
+%%PERL5_MAN3%%/Net::OAuth2.3.gz
+%%PERL5_MAN3%%/Net::OAuth2::AccessToken.3.gz
+%%PERL5_MAN3%%/Net::OAuth2::Client.3.gz
+%%PERL5_MAN3%%/Net::OAuth2::Profile.3.gz
+%%PERL5_MAN3%%/Net::OAuth2::Profile::Password.3.gz
+%%PERL5_MAN3%%/Net::OAuth2::Profile::WebServer.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OAuth2
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/OAuth2/Profile

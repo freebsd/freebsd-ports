@@ -29,22 +29,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Net::CLI::Interact.3 \
-		Net::CLI::Interact::Action.3 \
-		Net::CLI::Interact::ActionSet.3 \
-		Net::CLI::Interact::Logger.3 \
-		Net::CLI::Interact::Manual::Cookbook.3 \
-		Net::CLI::Interact::Manual::Phrasebook.3 \
-		Net::CLI::Interact::Manual::Tutorial.3 \
-		Net::CLI::Interact::Phrasebook.3 \
-		Net::CLI::Interact::Role::Engine.3 \
-		Net::CLI::Interact::Role::Iterator.3 \
-		Net::CLI::Interact::Role::Prompt.3 \
-		Net::CLI::Interact::Transport::Base.3 \
-		Net::CLI::Interact::Transport::Loopback.3 \
-		Net::CLI::Interact::Transport::SSH.3 \
-		Net::CLI::Interact::Transport::Serial.3 \
-		Net::CLI::Interact::Transport::Telnet.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

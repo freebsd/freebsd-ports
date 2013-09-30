@@ -26,12 +26,4 @@ TEST_DEPENDS=	p5-Test-Mock-LWP-Dispatch>=0:${PORTSDIR}/devel/p5-Test-Mock-LWP-Di
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Net::OAuth2.3 \
-		Net::OAuth2::AccessToken.3 \
-		Net::OAuth2::Client.3 \
-		Net::OAuth2::Profile.3 \
-		Net::OAuth2::Profile::Password.3 \
-		Net::OAuth2::Profile::WebServer.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
