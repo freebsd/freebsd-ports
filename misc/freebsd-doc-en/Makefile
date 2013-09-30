@@ -3,7 +3,6 @@
 
 # Several knobs can be used to select the documentation formats.
 #
-NO_STAGE=	yes
 # WITH_HTML_SPLIT allows the build of the "html-split" format:
 # This is the default format, it is the same format used on
 # www.FreeBSD.org.  It is a collection of small, linked HTML files
@@ -26,7 +25,7 @@ NO_STAGE=	yes
 #
 
 PORTNAME=	freebsd-doc
-PORTVERSION=	42489
+PORTVERSION=	42697
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 MASTER_SITES=	LOCAL/blackend
@@ -59,6 +58,8 @@ HTML_SPLIT_DESC=	The default HTML format used on www.FreeBSD.org
 PDF_DESC=		PDF format
 PS_DESC=		PostScript format
 TXT_DESC=		Plain text
+
+NO_STAGE=	yes
 
 .include <bsd.port.pre.mk>
 

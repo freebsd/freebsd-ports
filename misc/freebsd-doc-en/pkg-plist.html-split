@@ -31,6 +31,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/developer.relations.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/gnats.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/google-analytics.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/if-in-doubt.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/misc.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/non-committers.html
@@ -691,7 +692,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bibliography-security.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bibliography-userguides.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bibliography.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/binary-formats.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/book-preface.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-blocks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-init.html
@@ -774,6 +774,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-ggate.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-gjournal.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-glabel.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-graid.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-intro.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-mirror.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-raid3.html
