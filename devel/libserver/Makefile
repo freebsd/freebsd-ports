@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libserver
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mammothcheese.ca/
 
