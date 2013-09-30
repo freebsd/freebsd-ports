@@ -13,15 +13,14 @@ RUN_DEPENDS=	\
 	p5-Guard>0:${PORTSDIR}/devel/p5-Guard \
 	p5-Plack>0:${PORTSDIR}/www/p5-Plack \
 	p5-libwww>=5:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-	p5-Module-Build-Tiny>0:${PORTSDIR}/devel/p5-Module-Build-Tiny
+BUILD_DEPENDS=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-LWP-Protocol-https>0:${PORTSDIR}/www/p5-LWP-Protocol-https
 
+NO_STAGE=	yes
 USES=	perl5
-USE_PERL5=	modbuild
+USE_PERL5=	modbuildtiny
 
 MAN3=	LWP::Protocol::PSGI.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
