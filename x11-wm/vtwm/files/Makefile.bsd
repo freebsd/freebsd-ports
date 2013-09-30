@@ -18,7 +18,7 @@ SYS_VTWMRC_LOOK = 3D
 CONFDEFINES=	'-DSYSTEM_VTWMRC="'$(ETCDIR)'/system.vtwmrc"' \
 		'-DSYSTEM_TWMRC="'$(ETCDIR)'/system.twmrc"'
 CFLAGS+=		-I/usr/local/include $(CONFDEFINES)
-LDADD+=			-L/usr/local/lib -ll -lXpm -lXmu
+LDADD+=			-L/usr/local/lib -ll -lX11 -lXext -lXpm -lXmu
 
 .if ${SOUND} == "yes"
 LDADD+=			-lrplay
@@ -32,7 +32,7 @@ SRCS=	gram.y gram.h lex.l deftwmrc.c add_window.c gc.c list.c twm.c sound.c \
 		parse.c menus.c events.c resize.c util.c version.c iconmgr.c \
 		cursor.c regions.c applets.c icons.c desktop.c doors.c lastmake.c
 
-FILES=	system.vtwmrc	
+FILES=	system.vtwmrc
 FILESDIR= $(ETCDIR)
 FILESMODE= 644
 
