@@ -9,5 +9,15 @@
 %%SITE_PERL%%/BSON/Time.pm
 %%SITE_PERL%%/BSON/Timestamp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSON/.packlist
+%%PERL5_MAN3%%/BSON.3.gz
+%%PERL5_MAN3%%/BSON::Binary.3.gz
+%%PERL5_MAN3%%/BSON::Bool.3.gz
+%%PERL5_MAN3%%/BSON::Code.3.gz
+%%PERL5_MAN3%%/BSON::MaxKey.3.gz
+%%PERL5_MAN3%%/BSON::MinKey.3.gz
+%%PERL5_MAN3%%/BSON::ObjectId.3.gz
+%%PERL5_MAN3%%/BSON::String.3.gz
+%%PERL5_MAN3%%/BSON::Time.3.gz
+%%PERL5_MAN3%%/BSON::Timestamp.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSON
 @dirrm %%SITE_PERL%%/BSON
