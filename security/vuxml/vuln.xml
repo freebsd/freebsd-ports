@@ -56,23 +56,23 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>py26-graphite-web</name>
-	<range><lt>0.9.11</lt></range>
+	<range><ge>0.9.5</ge><lt>0.9.11</lt></range>
       </package>
       <package>
 	<name>py27-graphite-web</name>
-	<range><lt>0.9.11</lt></range>
+	<range><ge>0.9.5</ge><lt>0.9.11</lt></range>
       </package>
       <package>
 	<name>py31-graphite-web</name>
-	<range><lt>0.9.11</lt></range>
+	<range><ge>0.9.5</ge><lt>0.9.11</lt></range>
       </package>
       <package>
 	<name>py32-graphite-web</name>
-	<range><lt>0.9.11</lt></range>
+	<range><ge>0.9.5</ge><lt>0.9.11</lt></range>
       </package>
       <package>
 	<name>py33-graphite-web</name>
-	<range><lt>0.9.11</lt></range>
+	<range><ge>0.9.5</ge><lt>0.9.11</lt></range>
       </package>
     </affects>
     <description>
