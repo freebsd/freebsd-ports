@@ -17,9 +17,6 @@ LICENSE_COMB=	dual
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Socket.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400
