@@ -121,6 +121,9 @@ libdata/pkgconfig/libavformat.pc
 libdata/pkgconfig/libavutil.pc
 libdata/pkgconfig/libpostproc.pc
 libdata/pkgconfig/libswscale.pc
+man/man1/ffmpeg.1.gz
+man/man1/ffprobe.1.gz
+%%FFSERVER%%man/man1/ffserver.1.gz
 %%DATADIR%%/libvpx-360p.ffpreset
 %%DATADIR%%/libvpx-720p.ffpreset
 %%DATADIR%%/libvpx-720p50_60.ffpreset
@@ -135,7 +138,7 @@ libdata/pkgconfig/libswscale.pc
 %%DATADIR%%/libx264-lossless_slow.ffpreset
 %%DATADIR%%/libx264-lossless_slower.ffpreset
 %%DATADIR%%/libx264-lossless_ultrafast.ffpreset
-@dirrm %%DATADIR%%/
+@dirrm %%DATADIR%%
 @dirrm include/postproc
 @dirrm include/libswscale
 @dirrm include/libpostproc
