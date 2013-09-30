@@ -24,16 +24,4 @@ TEST_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		BSON.3 \
-		BSON::Binary.3 \
-		BSON::Bool.3 \
-		BSON::Code.3 \
-		BSON::MaxKey.3 \
-		BSON::MinKey.3 \
-		BSON::ObjectId.3 \
-		BSON::String.3 \
-		BSON::Time.3 \
-		BSON::Timestamp.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
