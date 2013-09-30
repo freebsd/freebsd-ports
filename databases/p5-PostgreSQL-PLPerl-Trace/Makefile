@@ -14,7 +14,4 @@ COMMENT=	Simple way to trace execution of Perl statements in PL/Perl
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		PostgreSQL::PLPerl::Trace.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
