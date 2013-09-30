@@ -127,7 +127,7 @@ libdata/pkgconfig/libswresample%%SUFF%%.pc
 libdata/pkgconfig/libswscale%%SUFF%%.pc
 man/man1/ffmpeg%%SUFF%%.1.gz
 man/man1/ffprobe%%SUFF%%.1.gz
-man/man1/ffserver%%SUFF%%.1.gz
+%%FFSERVER%%man/man1/ffserver%%SUFF%%.1.gz
 %%DATADIR%%/examples/Makefile
 %%DATADIR%%/examples/README
 %%DATADIR%%/examples/decoding_encoding.c
