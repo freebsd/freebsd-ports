@@ -1,4 +1,0 @@
-bin/vtwm
-etc/system.vtwmrc
-@unexec rm -f %D/lib/X11/twm/system.vtwmrc
-@dirrmtry lib/X11/twm

@@ -12,16 +12,18 @@ COMMENT=	Twm with a virtual desktop and optional Motif-like features
 
 LICENSE=	MIT
 
-USE_XORG=	xpm xmu
+USE_XORG=	x11 xext xpm xmu
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 ETCDIR?=	${PREFIX}/etc
-MAN1=		vtwm.1
+
+PLIST_FILES=	bin/vtwm \
+		etc/system.vtwmrc \
+		man/man1/vtwm.1.gz
 
 OPTIONS_DEFINE=	SOUND NLS
 OPTIONS_DEFAULT=	SOUND NLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSOUND}
