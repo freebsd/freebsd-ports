@@ -25,11 +25,4 @@ BUILD_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	configure
 USES=		perl5
 
-MAN1=		couchdb-push.1
-MAN3=		AnyEvent::CouchDB.3 \
-		AnyEvent::CouchDB::Database.3 \
-		AnyEvent::CouchDB::Exceptions.3 \
-		AnyEvent::CouchDB::Stream.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
