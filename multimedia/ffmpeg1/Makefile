@@ -183,7 +183,6 @@ FDK_AAC_CONFIGURE_ENABLE=	libfdk-aac
 # ffserver
 .if ${PORT_OPTIONS:MFFSERVER}
 PLIST_SUB+=	FFSERVER=""
-MAN1+=		ffserver${FFMPEG_SUFFIX}.1
 FFPROGS+=	ffserver
 . if ${PORT_OPTIONS:MDOCS}
 DOC_DOCFILES+=	ffserver.html
@@ -264,9 +263,8 @@ SCHROEDINGER_CONFIGURE_ENABLE=	libschroedinger
 # sdl
 .if ${PORT_OPTIONS:MSDL}
 USE_SDL+=	sdl
-PLIST_FILES+=	bin/ffplay${FFMPEG_SUFFIX}
+PLIST_FILES+=	bin/ffplay${FFMPEG_SUFFIX} man/man1/ffplay${FFMPEG_SUFFIX}.1.gz
 FFPROGS+=	ffplay
-MAN1+=	ffplay${FFMPEG_SUFFIX}.1
 .if ${PORT_OPTIONS:MDOCS}
 DOC_DOCFILES+=	ffplay.html
 .endif
