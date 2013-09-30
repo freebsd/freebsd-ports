@@ -22,7 +22,4 @@ CONFIGURE_ARGS=	INC=-I${LOCALBASE}/include LIBS="-L${LOCALBASE}/lib -lgmp"
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Math::GMPf.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
