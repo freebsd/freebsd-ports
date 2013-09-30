@@ -27,6 +27,9 @@ man/man1/stag-findsubtree.pl.1.gz
 man/man1/stag-flatten.pl.1.gz
 man/man1/stag-grep.pl.1.gz
 man/man1/stag-handle.pl.1.gz
+man/man1/stag-itext2simple.pl.1.gz
+man/man1/stag-itext2sxpr.pl.1.gz
+man/man1/stag-itext2xml.pl.1.gz
 man/man1/stag-join.pl.1.gz
 man/man1/stag-merge.pl.1.gz
 man/man1/stag-mogrify.pl.1.gz
@@ -34,6 +37,7 @@ man/man1/stag-parse.pl.1.gz
 man/man1/stag-query.pl.1.gz
 man/man1/stag-splitter.pl.1.gz
 man/man1/stag-view.pl.1.gz
+man/man1/stag-xml2itext.pl.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/.packlist
 %%SITE_PERL%%/Data/Stag.pm
 %%SITE_PERL%%/Data/Stag/Arr2HTML.pm
