@@ -15,18 +15,12 @@ CONFIGURE_ENV=	EMACS=no
 CPPFLAGS=	-I${WRKDIR}/include
 
 INFO=		gtypist gtypist.cs gtypist.es
-MAN1=		gtypist.1 typefortune.1
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 # wide curses header expected at <ncursesw/ncurses.h>
 pre-configure:
