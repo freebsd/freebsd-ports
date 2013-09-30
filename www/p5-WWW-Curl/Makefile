@@ -14,12 +14,11 @@ COMMENT=	Perl extension interface for libcurl
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+TEST_DEPENDS=	p5-Test-Pod-Coverage>=104:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
+		p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod
 
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		WWW::Curl.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
