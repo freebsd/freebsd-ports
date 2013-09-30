@@ -24,17 +24,4 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Bread::Board::Declare.3 \
-		Bread::Board::Declare::BlockInjection.3 \
-		Bread::Board::Declare::ConstructorInjection.3 \
-		Bread::Board::Declare::Literal.3 \
-		Bread::Board::Declare::Meta::Role::Attribute.3 \
-		Bread::Board::Declare::Meta::Role::Attribute::Container.3 \
-		Bread::Board::Declare::Meta::Role::Attribute::Service.3 \
-		Bread::Board::Declare::Meta::Role::Class.3 \
-		Bread::Board::Declare::Meta::Role::Instance.3 \
-		Bread::Board::Declare::Role::Object.3 \
-		Bread::Board::Declare::Role::Service.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

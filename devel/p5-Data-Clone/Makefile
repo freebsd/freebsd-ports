@@ -15,7 +15,4 @@ TEST_DEPENDS=	p5-Test-Requires>=0.03:${PORTSDIR}/devel/p5-Test-Requires
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Data::Clone.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

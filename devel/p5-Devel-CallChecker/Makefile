@@ -15,10 +15,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
-NO_STAGE=	yes
 USE_PERL5=	configure
 USES=		perl5
-
-MAN3=		Devel::CallChecker.3
 
 .include <bsd.port.mk>

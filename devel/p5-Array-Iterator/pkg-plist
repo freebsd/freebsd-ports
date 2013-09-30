@@ -3,6 +3,10 @@
 %%SITE_PERL%%/Array/Iterator/Circular.pm
 %%SITE_PERL%%/Array/Iterator/Reusable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/Iterator/.packlist
+%%PERL5_MAN3%%/Array::Iterator.3.gz
+%%PERL5_MAN3%%/Array::Iterator::BiDirectional.3.gz
+%%PERL5_MAN3%%/Array::Iterator::Circular.3.gz
+%%PERL5_MAN3%%/Array::Iterator::Reusable.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/Iterator
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array
 @dirrm %%SITE_PERL%%/Array/Iterator

@@ -19,7 +19,4 @@ TEST_DEPENDS=	p5-Moose>=0.90:${PORTSDIR}/devel/p5-Moose \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Any::Moose::Convert.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

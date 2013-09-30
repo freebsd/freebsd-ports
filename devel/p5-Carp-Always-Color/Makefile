@@ -20,9 +20,4 @@ TEST_DEPENDS=	p5-IO-Pty-Easy>=0:${PORTSDIR}/devel/p5-IO-Pty-Easy
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Carp::Always::Color.3 \
-		Carp::Always::Color::HTML.3 \
-		Carp::Always::Color::Term.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
