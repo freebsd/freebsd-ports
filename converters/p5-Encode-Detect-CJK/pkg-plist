@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Encode/Detect/CJK.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Detect/CJK/.packlist
+%%PERL5_MAN3%%/Encode::Detect::CJK.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Detect/CJK
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Detect
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode
