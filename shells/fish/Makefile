@@ -20,7 +20,7 @@ USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS=	--docdir=${WRKDIR}/tmproot
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread ${ICONV_LIB}
 
 MAN1=		fish.1 fish_indent.1 fish_pager.1 fishd.1 mimedb.1
 

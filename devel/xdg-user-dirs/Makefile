@@ -15,7 +15,7 @@ GNU_CONFIGURE=	yes
 USES=		gettext iconv
 USE_GMAKE=	yes
 USE_GNOME=	libxslt:build
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		xdg-user-dir.1 xdg-user-dirs-update.1
