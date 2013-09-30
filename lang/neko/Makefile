@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	neko
-PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	lang
 MASTER_SITES=	http://nekovm.org/_media/
 
