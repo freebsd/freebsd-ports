@@ -56,6 +56,7 @@
     SUBDIR += ffmpeg
     SUBDIR += ffmpeg-devel
     SUBDIR += ffmpeg1
+    SUBDIR += ffmpeg2
     SUBDIR += ffmpeg2theora
     SUBDIR += ffmpegthumbnailer
     SUBDIR += flvmeta
