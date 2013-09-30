@@ -23,9 +23,4 @@ TEST_DEPENDS=	p5-File-Touch>=0:${PORTSDIR}/devel/p5-File-Touch \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		XML::LibXML::Cache.3 \
-		XML::LibXML::Cache::Base.3 \
-		XML::LibXSLT::Cache.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

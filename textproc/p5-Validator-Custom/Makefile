@@ -23,10 +23,4 @@ TEST_DEPENDS=	p5-JSON>=2:${PORTSDIR}/converters/p5-JSON \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Validator::Custom.3 \
-		Validator::Custom::Guide.3 \
-		Validator::Custom::Guide::Ja.3 \
-		Validator::Custom::Result.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

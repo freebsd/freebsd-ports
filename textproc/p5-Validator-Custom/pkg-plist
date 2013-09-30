@@ -4,6 +4,10 @@
 %%SITE_PERL%%/Validator/Custom/Guide/Ja.pod
 %%SITE_PERL%%/Validator/Custom/Result.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Validator/Custom/.packlist
+%%PERL5_MAN3%%/Validator::Custom.3.gz
+%%PERL5_MAN3%%/Validator::Custom::Guide.3.gz
+%%PERL5_MAN3%%/Validator::Custom::Guide::Ja.3.gz
+%%PERL5_MAN3%%/Validator::Custom::Result.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Validator/Custom
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Validator
 @dirrm %%SITE_PERL%%/Validator/Custom/Guide

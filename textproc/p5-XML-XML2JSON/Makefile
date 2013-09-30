@@ -27,9 +27,6 @@ JSON_DWIW_DESC=	Use JSON::DWIW
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		XML::XML2JSON.3
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MJSON_SYCK} && !${PORT_OPTIONS:MJSON_XS} && !${PORT_OPTIONS:MJSON} && !${PORT_OPTIONS:MJSON_DWIW}

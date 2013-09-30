@@ -20,7 +20,4 @@ TEST_DEPENDS=	p5-JavaScript-Minifier>=0:${PORTSDIR}/textproc/p5-JavaScript-Minif
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		JavaScript::Minifier::XS.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -14,8 +14,4 @@ COMMENT=	Statistical language identification
 USE_PERL5=	configure
 USES=		perl5
 
-MAN1=		trainlid.1
-MAN3=		Lingua::Ident.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

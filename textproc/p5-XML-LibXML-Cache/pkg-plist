@@ -2,6 +2,9 @@
 %%SITE_PERL%%/XML/LibXML/Cache/Base.pm
 %%SITE_PERL%%/XML/LibXSLT/Cache.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/Cache/.packlist
+%%PERL5_MAN3%%/XML::LibXML::Cache.3.gz
+%%PERL5_MAN3%%/XML::LibXML::Cache::Base.3.gz
+%%PERL5_MAN3%%/XML::LibXSLT::Cache.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/Cache
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML

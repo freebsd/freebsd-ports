@@ -17,15 +17,4 @@ LICENSE_COMB=	dual
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Unicode::Collate.3 \
-		Unicode::Collate::CJK::Big5.3 \
-		Unicode::Collate::CJK::GB2312.3 \
-		Unicode::Collate::CJK::JISX0208.3 \
-		Unicode::Collate::CJK::Korean.3 \
-		Unicode::Collate::CJK::Pinyin.3 \
-		Unicode::Collate::CJK::Stroke.3 \
-		Unicode::Collate::CJK::Zhuyin.3 \
-		Unicode::Collate::Locale.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

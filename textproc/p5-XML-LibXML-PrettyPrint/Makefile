@@ -22,7 +22,4 @@ TEST_DEPENDS=	p5-Test-Warn>=0.20:${PORTSDIR}/devel/p5-Test-Warn
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		XML::LibXML::PrettyPrint.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

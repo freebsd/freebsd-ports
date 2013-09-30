@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Lingua/Ident.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Ident/.packlist
 bin/trainlid
+%%PERL5_MAN3%%/Lingua::Ident.3.gz
+man/man1/trainlid.1.gz
 @dirrmtry %%SITE_PERL%%/Lingua
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Ident
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua

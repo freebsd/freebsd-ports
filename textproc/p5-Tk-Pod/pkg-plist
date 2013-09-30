@@ -14,6 +14,19 @@ bin/tkpod
 %%SITE_PERL%%/Tk/Pod/WWWBrowser.pm
 %%SITE_PERL%%/Tk/Pod_usage.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Pod/.packlist
+%%PERL5_MAN3%%/Tk::More.3.gz
+%%PERL5_MAN3%%/Tk::Pod.3.gz
+%%PERL5_MAN3%%/Tk::Pod::Cache.3.gz
+%%PERL5_MAN3%%/Tk::Pod::FindPods.3.gz
+%%PERL5_MAN3%%/Tk::Pod::Search.3.gz
+%%PERL5_MAN3%%/Tk::Pod::Search_db.3.gz
+%%PERL5_MAN3%%/Tk::Pod::SimpleBridge.3.gz
+%%PERL5_MAN3%%/Tk::Pod::Text.3.gz
+%%PERL5_MAN3%%/Tk::Pod::Tree.3.gz
+%%PERL5_MAN3%%/Tk::Pod::Util.3.gz
+%%PERL5_MAN3%%/Tk::Pod_usage.3.gz
+man/man1/tkmore.1.gz
+man/man1/tkpod.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Pod
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
 @dirrm %%SITE_PERL%%/Tk/Pod

@@ -9,6 +9,10 @@ bin/html_score
 %%SITE_PERL%%/Marpa/HTML/Test/Util.pm
 %%SITE_PERL%%/Marpa/HTML/Version.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa/HTML/.packlist
+%%PERL5_MAN3%%/Marpa::HTML.3.gz
+%%PERL5_MAN3%%/Marpa::HTML::Support.3.gz
+man/man1/html_fmt.1.gz
+man/man1/html_score.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa/HTML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa
 @dirrm %%SITE_PERL%%/Marpa/HTML/Test
