@@ -7,18 +7,15 @@ CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	trueprint
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Print program listings on postscript printer
 
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
-MAN1=		trueprint.1
 INFO=		trueprint
 
-PLIST_FILES=	bin/trueprint
+PLIST_FILES=	bin/trueprint man/man1/trueprint.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
