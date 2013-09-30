@@ -24,7 +24,7 @@ rcvar=firebird_enable
 load_rc_config $name
 
 firebird_enable=${firebird_enable:-"NO"}
-firebird_flags=${firebird_flags:-"-daemon"}
+firebird_flags=${firebird_flags:-"-daemon -pidname ${name}.pid"}
 firebird_pidfile=${firebird_pidfile:-"/var/run/${name}.pid"}
 firebird_user=firebird
 

@@ -17,11 +17,11 @@ libexec/firebird/udf/fbudf.so
 libexec/firebird/udf/ib_udf2.sql
 libexec/firebird/udf/fbudf.sql
 libexec/firebird/plugins/libfbtrace.so
-libexec/firebird/intl/fbintl
+libexec/firebird/intl/fbintl.so
+libexec/firebird/intl/fbintl.conf
 @unexec (cmp -s %D/%%CONFDIR%%/aliases.conf %D/%%CONFDIR%%/aliases.conf.sample && rm -f %D/%%CONFDIR%%/aliases.conf) || true
 %%CONFDIR%%/aliases.conf.sample
 @exec [ -f %B/aliases.conf ] || cp %B/%f %B/aliases.conf
-%%CONFDIR%%/fbintl.conf
 %%CONFDIR%%/fbtrace.conf
 @dirrmtry %%CONFDIR%%
 @dirrm libexec/firebird/intl

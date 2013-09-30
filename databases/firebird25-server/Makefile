@@ -3,7 +3,7 @@
 
 PORTNAME=	firebird
 PORTVERSION=	2.5.2
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S/.0//}-Release/
 PKGNAMESUFFIX?=	-server
@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--with-system-editline \
 		--with-fbconf=${CONFDIR} \
 		--with-fbglock=${LOCALSTATEDIR} \
 		--with-fbhelp=${LOCALSTATEDIR}/help \
-		--with-fbintl=${CONFDIR}/intl \
+		--with-fbintl=${LIBEXECDIR}/intl \
 		--with-fblog=${LOCALSTATEDIR} \
 		--with-fbmsg=${DATADIR} \
 		--with-fbplugins=${LIBEXECDIR}/plugins \
@@ -157,7 +157,6 @@ do-install:
 .if !exists(${CONFDIR}/aliases.conf)
 	${INSTALL_DATA} ${WRKSRC}/gen/install/misc/aliases.conf ${CONFDIR}/aliases.conf
 .endif
-	${INSTALL_DATA} ${WRKSRC}/gen/install/misc/fbintl.conf ${CONFDIR}/fbintl.conf
 	${INSTALL_DATA} ${WRKSRC}/gen/install/misc/fbtrace.conf ${CONFDIR}/fbtrace.conf
 
 	${MKDIR} ${LIBEXECDIR}/udf ${LOCALSTATEDIR}/help ${LIBEXECDIR}/intl \
@@ -165,6 +164,7 @@ do-install:
 
 	${CHOWN} -R firebird:firebird ${LOCALSTATEDIR}
 
+	${INSTALL_DATA} ${WRKSRC}/gen/install/misc/fbintl.conf ${LIBEXECDIR}/intl/fbintl.conf
 	${INSTALL_FB} -m 0555 ${UDF_SO:S!^!${WRKSRC}/gen/firebird/UDF/!} ${LIBEXECDIR}/udf
 	${INSTALL_FB} -m 0444 ${UDF_SQL:S!^!${WRKSRC}/!} ${LIBEXECDIR}/udf
 	${INSTALL_FB} -m 0555 ${WRKSRC}/gen/firebird/plugins/libfbtrace.so ${LIBEXECDIR}/plugins
@@ -176,7 +176,7 @@ do-install:
 
 	${INSTALL_FB} -m 0440 ${WRKSRC}/gen/firebird/help/help.fdb ${LOCALSTATEDIR}/help
 
-	${INSTALL_FB} -m 0555 ${WRKSRC}/gen/firebird/intl/libfbintl.so ${LIBEXECDIR}/intl/fbintl
+	${INSTALL_FB} -m 0555 ${WRKSRC}/gen/firebird/intl/libfbintl.so ${LIBEXECDIR}/intl/fbintl.so
 .else
 # defined CLIENT_ONLY
 	${INSTALL_PROGRAM} ${CLIENT_BIN:S!^!${WRKSRC}/gen/firebird/bin/!} ${PREFIX}/bin
