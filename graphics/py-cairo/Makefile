@@ -11,21 +11,22 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py2${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Python bindings for Cairo
-
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
+COMMENT=	Python 2 bindings for Cairo
 
 WRKSRC=		${WRKDIR}/py${PORTNAME}-${PORTVERSION}
-USE_PYTHON=	2.6-2.7
-USES=	pathfix gmake pkgconfig
+USE_PYTHON=	2
+USES=		gmake pathfix pkgconfig shebangfix
+USE_GNOME=	cairo
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+python_OLD_CMD?=	/usr/bin/env python
+python_CMD?=		${LOCALBASE}/bin/python2
+SHEBANG_FILES=		examples/*.py examples/*/*.py setup.py test/*.py
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|; \
-		s|SUBDIRS = cairo examples test|SUBDIRS = cairo examples|' \
+	@${REINPLACE_CMD} -e 's|SUBDIRS = cairo examples test|SUBDIRS = cairo examples|g' \
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
