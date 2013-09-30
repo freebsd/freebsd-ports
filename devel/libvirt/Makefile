@@ -42,8 +42,10 @@ CONFIGURE_ARGS=	--without-sasl \
 		--with-ssh2
 
 # workaround to override pkg-config calls
+# random_data fix can be removed when 8.x is eol
 CONFIGURE_ENV=	SSH2_LIBS="-L${LOCALBASE}/lib -lssh2 -lssl" \
-		SSH2_CFLAGS="-I${LOCLABASE}/include"
+		SSH2_CFLAGS="-I${LOCLABASE}/include" \
+		ac_cv_type_struct_random_data=""
 
 # limit production release x.x.x
 PORTSCOUT=	limit:\d+\.\d+\.\d+$$
@@ -66,6 +68,10 @@ MAN1=		virsh.1 virt-pki-validate.1 virt-xml-validate.1 virt-host-validate.1
 MAN8=		libvirtd.8 virtlockd.8
 
 post-patch:
+.if ${OSVERSION} < 900000
+	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||' \
+		${WRKSRC}/configure
+.endif
 	@${MV} ${WRKSRC}/daemon/libvirtd.conf ${WRKSRC}/daemon/libvirtd.conf.sample
 	@${REINPLACE_CMD} -e 's|libvirtd\.conf|libvirtd.conf.sample|' \
 		${WRKSRC}/daemon/Makefile.in
