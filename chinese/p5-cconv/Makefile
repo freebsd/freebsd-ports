@@ -11,13 +11,10 @@ DISTNAME=	${PORTNAME}-perl-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl wrapper for chinese/cconv
 
-LIB_DEPENDS=	cconv:${PORTSDIR}/chinese/cconv
+LIB_DEPENDS=	libcconv.so:${PORTSDIR}/chinese/cconv
 
 CFLAGS+=	-I${LOCALBASE}/include
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		${PORTNAME}.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
