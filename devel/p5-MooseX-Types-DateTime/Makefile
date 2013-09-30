@@ -24,7 +24,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0.27:${PORTSDIR}/devel/p5-Test-Exception \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		MooseX::Types::DateTime.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

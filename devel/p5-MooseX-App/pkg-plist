@@ -36,6 +36,26 @@
 %%SITE_PERL%%/MooseX/App/Utils.pm
 %%SITE_PERL%%/MooseX/App/WritingPlugins.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/App/.packlist
+%%PERL5_MAN3%%/MooseX::App.3.gz
+%%PERL5_MAN3%%/MooseX::App::Command.3.gz
+%%PERL5_MAN3%%/MooseX::App::Message::Block.3.gz
+%%PERL5_MAN3%%/MooseX::App::Message::Envelope.3.gz
+%%PERL5_MAN3%%/MooseX::App::Meta::Role::Attribute::Option.3.gz
+%%PERL5_MAN3%%/MooseX::App::Meta::Role::Class::Base.3.gz
+%%PERL5_MAN3%%/MooseX::App::Meta::Role::Class::Command.3.gz
+%%PERL5_MAN3%%/MooseX::App::ParsedArgv.3.gz
+%%PERL5_MAN3%%/MooseX::App::ParsedArgv::Element.3.gz
+%%PERL5_MAN3%%/MooseX::App::Plugin::BashCompletion.3.gz
+%%PERL5_MAN3%%/MooseX::App::Plugin::Color.3.gz
+%%PERL5_MAN3%%/MooseX::App::Plugin::Config.3.gz
+%%PERL5_MAN3%%/MooseX::App::Plugin::ConfigHome.3.gz
+%%PERL5_MAN3%%/MooseX::App::Plugin::Env.3.gz
+%%PERL5_MAN3%%/MooseX::App::Plugin::Typo.3.gz
+%%PERL5_MAN3%%/MooseX::App::Plugin::Version.3.gz
+%%PERL5_MAN3%%/MooseX::App::Role.3.gz
+%%PERL5_MAN3%%/MooseX::App::Simple.3.gz
+%%PERL5_MAN3%%/MooseX::App::Tutorial.3.gz
+%%PERL5_MAN3%%/MooseX::App::WritingPlugins.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/App
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
 @dirrmtry %%SITE_PERL%%/MooseX/App/Role

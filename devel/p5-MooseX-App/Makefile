@@ -27,26 +27,4 @@ TEST_DEPENDS=	p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		MooseX::App.3 \
-		MooseX::App::Command.3 \
-		MooseX::App::Message::Block.3 \
-		MooseX::App::Message::Envelope.3 \
-		MooseX::App::Meta::Role::Attribute::Option.3 \
-		MooseX::App::Meta::Role::Class::Base.3 \
-		MooseX::App::Meta::Role::Class::Command.3 \
-		MooseX::App::ParsedArgv.3 \
-		MooseX::App::ParsedArgv::Element.3 \
-		MooseX::App::Plugin::BashCompletion.3 \
-		MooseX::App::Plugin::Color.3 \
-		MooseX::App::Plugin::Config.3 \
-		MooseX::App::Plugin::ConfigHome.3 \
-		MooseX::App::Plugin::Env.3 \
-		MooseX::App::Plugin::Typo.3 \
-		MooseX::App::Plugin::Version.3 \
-		MooseX::App::Role.3 \
-		MooseX::App::Simple.3 \
-		MooseX::App::Tutorial.3 \
-		MooseX::App::WritingPlugins.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

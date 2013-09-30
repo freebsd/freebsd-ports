@@ -1,5 +1,6 @@
 %%SITE_PERL%%/MooseX/Types/Set/Object.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Set/Object/.packlist
+%%PERL5_MAN3%%/MooseX::Types::Set::Object.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Set/Object
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Set
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types

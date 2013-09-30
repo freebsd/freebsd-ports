@@ -22,10 +22,4 @@ TEST_DEPENDS=	p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 USE_PERL5=	configure
 USES=		perl5
 
-MAN1=		remoos.1
-MAN3=		Moos.3 \
-		Moos::Role.3 \
-		oos.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
