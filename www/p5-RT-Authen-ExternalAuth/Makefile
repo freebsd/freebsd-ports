@@ -46,8 +46,6 @@ do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
 	    unset PREFIX && \
 	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} -I${SITE_PERL} ./${CONFIGURE_SCRIPT} && \
-	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//;' \
-		-e 's,^DESTDIR = ,DESTDIR = ${STAGEDIR},;' Makefile
-
+	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//;' Makefile
 
 .include <bsd.port.mk>
