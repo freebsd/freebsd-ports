@@ -14,8 +14,9 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 # language. It's automatically included when USE_PYTHON is defined in
 # the ports' makefile. If your port requires only some set of Python
 # versions, you can define USE_PYTHON as [min]-[max] or min+ or -max
-# or as an explicit version (eg. 3.1-3.2 for [min]-[max],
-# 2.7+ or -3.2 for min+ and -max or 2.6 for an explicit version).
+# or as an explicit version or as a meta port version (eg. 3.1-3.2
+# for [min]-[max], 2.7+ or -3.2 for min+ and -max, 2.6 for an
+# explicit version or 3 for a meta port version).
 #
 # The variables:
 #
@@ -269,6 +270,14 @@ USE_PYTHON=		yes
 USE_PYTHON_BUILD=	yes
 USE_PYTHON_RUN=		yes
 .endif	# !defined(USE_PYTHON)
+
+.if ${USE_PYTHON} == "2"
+USE_PYTHON=			${PYTHON2_DEFAULT_VERSION:S/^python//}
+_WANTS_META_PORT=	2
+.elif ${USE_PYTHON} == "3"
+USE_PYTHON=			${PYTHON3_DEFAULT_VERSION:S/^python//}
+_WANTS_META_PORT=	3
+.endif  # ${USE_PYTHON} == "2"
 
 # Validate Python version whether it meets USE_PYTHON version restriction.
 _PYTHON_VERSION_CHECK:=			${USE_PYTHON:C/^([1-9]\.[0-9])$/\1-\1/}
@@ -561,11 +570,17 @@ PYTHON_NO_DEPENDS?=		NO
 .if ${PYTHON_NO_DEPENDS} == "NO"
 .if defined(USE_PYTHON_BUILD)
 BUILD_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR} \
-		python:${PORTSDIR}/lang/python
+				python:${PORTSDIR}/lang/python
+.if defined(_WANTS_META_PORT)
+BUILD_DEPENDS+=	python${_WANTS_META_PORT}:${PORTSDIR}/lang/python${_WANTS_META_PORT}
+.endif
 .endif
 .if defined(USE_PYTHON_RUN)
 RUN_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR} \
-		python:${PORTSDIR}/lang/python
+				python:${PORTSDIR}/lang/python
+.if defined(_WANTS_META_PORT)
+RUN_DEPENDS+=	python${_WANTS_META_PORT}:${PORTSDIR}/lang/python${_WANTS_META_PORT}
+.endif
 .endif
 .endif		# ${PYTHON_NO_DEPENDS} == "NO"
 
