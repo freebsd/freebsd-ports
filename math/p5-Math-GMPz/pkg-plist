@@ -8,6 +8,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPz/Random/Random.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPz/V/V.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPz/V/V.so
+%%PERL5_MAN3%%/Math::GMPz.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPz/V
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPz/Random
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPz
