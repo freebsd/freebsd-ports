@@ -125,6 +125,9 @@ libdata/pkgconfig/libavutil%%SUFF%%.pc
 libdata/pkgconfig/libpostproc%%SUFF%%.pc
 libdata/pkgconfig/libswresample%%SUFF%%.pc
 libdata/pkgconfig/libswscale%%SUFF%%.pc
+man/man1/ffmpeg%%SUFF%%.1.gz
+man/man1/ffprobe%%SUFF%%.1.gz
+man/man1/ffserver%%SUFF%%.1.gz
 %%DATADIR%%/examples/Makefile
 %%DATADIR%%/examples/README
 %%DATADIR%%/examples/decoding_encoding.c
@@ -144,7 +147,7 @@ libdata/pkgconfig/libswscale%%SUFF%%.pc
 %%DATADIR%%/libx264-ipod320.ffpreset
 %%DATADIR%%/libx264-ipod640.ffpreset
 @dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/
+@dirrm %%DATADIR%%
 @dirrm lib/ffmpeg%%SUFF%%
 @dirrm include/ffmpeg%%SUFF%%/libswscale
 @dirrm include/ffmpeg%%SUFF%%/libswresample
