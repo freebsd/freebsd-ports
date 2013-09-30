@@ -13,7 +13,4 @@ COMMENT=	Handy UTF-8 tests
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Test::utf8.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

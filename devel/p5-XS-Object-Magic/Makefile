@@ -12,14 +12,10 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Opaque, extensible XS pointer backed objects using sv_magic
 
 BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.302:${PORTSDIR}/devel/p5-ExtUtils-Depends
-
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		XS::Object::Magic.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -13,9 +13,5 @@ COMMENT=	Perl implementation of Red/Black tree, a type of balanced tree
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Tree::Node.3 \
-		Tree::RedBlack.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>

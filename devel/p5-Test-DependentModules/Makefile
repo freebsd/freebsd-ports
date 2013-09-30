@@ -28,7 +28,4 @@ TEST_DEPENDS=	p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Test::DependentModules.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
