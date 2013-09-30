@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-Build-Tiny
-PORTVERSION=	0.027
+PORTVERSION=	0.028
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,12 +18,12 @@ BUILD_DEPENDS=	p5-ExtUtils-Config>=0.003:${PORTSDIR}/devel/p5-ExtUtils-Config \
 		p5-ExtUtils-InstallPaths>=0.002:${PORTSDIR}/devel/p5-ExtUtils-InstallPaths
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_STAGE=	yes
 USE_PERL5=	modbuildtiny
 USES=		perl5
 
 MAN3=		Module::Build::Tiny.3
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400
