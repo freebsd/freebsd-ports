@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Geo/Coder/Bing.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Bing/.packlist
+%%PERL5_MAN3%%/Geo::Coder::Bing.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Bing
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo

@@ -9,6 +9,16 @@ bin/showfigfonts.pl
 %%SITE_PERL%%/Text/FIGlet/LICENSE.pod
 %%SITE_PERL%%/Text/FIGlet/Ransom.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/FIGlet/.packlist
+%%PERL5_MAN3%%/Text::FIGlet.3.gz
+%%PERL5_MAN3%%/Text::FIGlet::Control.3.gz
+%%PERL5_MAN3%%/Text::FIGlet::Font.3.gz
+%%PERL5_MAN3%%/Text::FIGlet::Illuminated.3.gz
+%%PERL5_MAN3%%/Text::FIGlet::LICENSE.3.gz
+%%PERL5_MAN3%%/Text::FIGlet::Ransom.3.gz
+man/man1/charmap.pl.1.gz
+man/man1/figlet.pl.1.gz
+man/man1/minifig.pl.1.gz
+man/man1/showfigfonts.pl.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/FIGlet
 @dirrm %%SITE_PERL%%/Text/FIGlet
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text

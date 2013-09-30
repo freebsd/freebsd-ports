@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Geo/Coder/Mapquest.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Mapquest/.packlist
+%%PERL5_MAN3%%/Geo::Coder::Mapquest.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Mapquest
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo

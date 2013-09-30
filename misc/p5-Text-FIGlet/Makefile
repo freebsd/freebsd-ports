@@ -21,16 +21,4 @@ TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN1=		charmap.pl.1 \
-		figlet.pl.1 \
-		minifig.pl.1 \
-		showfigfonts.pl.1
-MAN3=		Text::FIGlet.3 \
-		Text::FIGlet::Control.3 \
-		Text::FIGlet::Font.3 \
-		Text::FIGlet::Illuminated.3 \
-		Text::FIGlet::LICENSE.3 \
-		Text::FIGlet::Ransom.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

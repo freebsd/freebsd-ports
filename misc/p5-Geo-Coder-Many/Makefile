@@ -35,25 +35,6 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Geo::Coder::Many.3 \
-		Geo::Coder::Many::Bing.3 \
-		Geo::Coder::Many::Generic.3 \
-		Geo::Coder::Many::Google.3 \
-		Geo::Coder::Many::Googlev3.3 \
-		Geo::Coder::Many::Mapquest.3 \
-		Geo::Coder::Many::OSM.3 \
-		Geo::Coder::Many::Ovi.3 \
-		Geo::Coder::Many::PlaceFinder.3 \
-		Geo::Coder::Many::Response.3 \
-		Geo::Coder::Many::Scheduler.3 \
-		Geo::Coder::Many::Scheduler::OrderedList.3 \
-		Geo::Coder::Many::Scheduler::Selective.3 \
-		Geo::Coder::Many::Scheduler::UniquenessScheduler.3 \
-		Geo::Coder::Many::Scheduler::UniquenessScheduler::WRR.3 \
-		Geo::Coder::Many::Scheduler::UniquenessScheduler::WeightedRandom.3 \
-		Geo::Coder::Many::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

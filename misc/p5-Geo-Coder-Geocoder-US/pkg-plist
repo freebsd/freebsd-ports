@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Geo/Coder/Geocoder/US.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Geocoder/US/.packlist
+%%PERL5_MAN3%%/Geo::Coder::Geocoder::US.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Geocoder/US
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Geocoder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder
