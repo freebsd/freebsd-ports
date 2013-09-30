@@ -346,12 +346,31 @@ port_uptodate() {
 				yes|YES)
 					;;
 				*)
-					echo "=====================================" >&2
-					echo "=== package ${pkgname} was not installed" >&2
-					echo "=====================================" >&2
-					echo "=== package ${pkgname} was not installed" \
-						>> ${logdir}/err,${log}
-					return 2
+					nostage=`cd "${base}" && make -V NO_STAGE`
+					case "${nostage}" in
+					yes|YES)
+						echo "=====================================" >&2
+						echo "=== package ${pkgname} was not installed" >&2
+						echo "=====================================" >&2
+						echo "=== package ${pkgname} was not installed" \
+							>> ${logdir}/err,${log}
+						return 2
+						;;
+					*)
+						# install staged package
+						pkgfile=`cd "${base}" && make -V PKGFILE`
+						${local_env} pkg_add ${pkgfile}
+						if test ! -e ${pkg_dbdir}/${pkgname}/+CONTENTS
+						then
+							echo "=====================================" >&2
+							echo "pkg_add ${pkgfile} failed, no ${pkgname}!" >&2
+							echo "=====================================" >&2
+							echo "=== package ${pkgname} can not be installed" \
+								>> ${logdir}/err,${log}
+						fi
+						;;
+					esac
+					;;
 				esac
 			fi
 			pkgfile=`cd "${base}" && make -V PKGFILE`

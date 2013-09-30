@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg_jail
-PORTVERSION=	1.72
+PORTVERSION=	1.73
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# empty
 DISTFILES=	# empty
