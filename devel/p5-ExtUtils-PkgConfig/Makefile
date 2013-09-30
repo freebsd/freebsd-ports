@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ExtUtils-PkgConfig
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,9 +15,6 @@ LICENSE=	LGPL3
 USES=		pkgconfig:both perl5
 USE_PERL5=	configure
 
-MAN3=		ExtUtils::PkgConfig.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e '1d' ${WRKSRC}/Makefile.PL
 
