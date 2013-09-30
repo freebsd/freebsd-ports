@@ -14,7 +14,4 @@ COMMENT=	Write tests, not scripts that run them
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Test::TableDriven.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

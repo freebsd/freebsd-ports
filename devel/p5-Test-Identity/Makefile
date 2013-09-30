@@ -13,7 +13,4 @@ COMMENT=	Assert the referential identity of a reference
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Test::Identity.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

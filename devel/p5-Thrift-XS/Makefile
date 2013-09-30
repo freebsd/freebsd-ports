@@ -24,10 +24,4 @@ TEST_DEPENDS=	p5-Proc-ProcessTable>=0:${PORTSDIR}/devel/p5-Proc-ProcessTable \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Thrift::XS.3 \
-		Thrift::XS::BinaryProtocol.3 \
-		Thrift::XS::CompactProtocol.3 \
-		Thrift::XS::MemoryBuffer.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

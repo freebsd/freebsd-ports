@@ -13,7 +13,4 @@ COMMENT=	Access the lines of a disk file via a Perl array
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Tie::File.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

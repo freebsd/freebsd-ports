@@ -13,7 +13,4 @@ COMMENT=	Implementation of the Levenshtein edit distance
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Text::Levenshtein.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

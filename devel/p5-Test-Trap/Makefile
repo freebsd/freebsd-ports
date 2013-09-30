@@ -18,11 +18,4 @@ TEST_DEPENDS=	p5-Test-Tester>=0.10.7:${PORTSDIR}/devel/p5-Test-Tester
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Test::Trap.3 \
-		Test::Trap::Builder.3 \
-		Test::Trap::Builder::PerlIO.3 \
-		Test::Trap::Builder::SystemSafe.3 \
-		Test::Trap::Builder::TempFile.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

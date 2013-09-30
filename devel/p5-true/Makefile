@@ -22,8 +22,4 @@ RUN_DEPENDS=	p5-B-Hooks-OP-Annotation>=0.43:${PORTSDIR}/devel/p5-B-Hooks-OP-Anno
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		true.3 \
-		true::VERSION.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
