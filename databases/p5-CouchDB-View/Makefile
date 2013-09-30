@@ -20,9 +20,4 @@ TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		CouchDB::View.3 \
-		CouchDB::View::Document.3 \
-		CouchDB::View::Server.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
