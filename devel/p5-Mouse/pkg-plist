@@ -31,6 +31,35 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mouse/Mouse.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mouse/Mouse.so
 %%SITE_PERL%%/%%PERL_ARCH%%/ouse.pm
+%%PERL5_MAN3%%/Mouse.3.gz
+%%PERL5_MAN3%%/Mouse::Exporter.3.gz
+%%PERL5_MAN3%%/Mouse::Meta::Attribute.3.gz
+%%PERL5_MAN3%%/Mouse::Meta::Class.3.gz
+%%PERL5_MAN3%%/Mouse::Meta::Method.3.gz
+%%PERL5_MAN3%%/Mouse::Meta::Method::Accessor.3.gz
+%%PERL5_MAN3%%/Mouse::Meta::Method::Constructor.3.gz
+%%PERL5_MAN3%%/Mouse::Meta::Method::Delegation.3.gz
+%%PERL5_MAN3%%/Mouse::Meta::Method::Destructor.3.gz
+%%PERL5_MAN3%%/Mouse::Meta::Module.3.gz
+%%PERL5_MAN3%%/Mouse::Meta::Role.3.gz
+%%PERL5_MAN3%%/Mouse::Meta::Role::Application.3.gz
+%%PERL5_MAN3%%/Mouse::Meta::Role::Composite.3.gz
+%%PERL5_MAN3%%/Mouse::Meta::Role::Method.3.gz
+%%PERL5_MAN3%%/Mouse::Meta::TypeConstraint.3.gz
+%%PERL5_MAN3%%/Mouse::Object.3.gz
+%%PERL5_MAN3%%/Mouse::PurePerl.3.gz
+%%PERL5_MAN3%%/Mouse::Role.3.gz
+%%PERL5_MAN3%%/Mouse::Spec.3.gz
+%%PERL5_MAN3%%/Mouse::Tiny.3.gz
+%%PERL5_MAN3%%/Mouse::TypeRegistry.3.gz
+%%PERL5_MAN3%%/Mouse::Util.3.gz
+%%PERL5_MAN3%%/Mouse::Util::MetaRole.3.gz
+%%PERL5_MAN3%%/Mouse::Util::TypeConstraints.3.gz
+%%PERL5_MAN3%%/Mouse::XS.3.gz
+%%PERL5_MAN3%%/Squirrel.3.gz
+%%PERL5_MAN3%%/Squirrel::Role.3.gz
+%%PERL5_MAN3%%/Test::Mouse.3.gz
+%%PERL5_MAN3%%/ouse.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mouse
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Test
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Squirrel
