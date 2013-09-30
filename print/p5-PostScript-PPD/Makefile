@@ -19,9 +19,6 @@ TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		PostScript::PPD.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/lj4515.ppd/d' ${WRKSRC}/t/30_difficult.t
 

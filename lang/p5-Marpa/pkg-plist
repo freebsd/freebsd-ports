@@ -33,6 +33,20 @@
 %%SITE_PERL%%/Marpa/Test/Util.pm
 %%SITE_PERL%%/Marpa/Tracing.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa/.packlist
+%%PERL5_MAN3%%/Marpa::Advanced::Algorithm.3.gz
+%%PERL5_MAN3%%/Marpa::Advanced::Bibliography.3.gz
+%%PERL5_MAN3%%/Marpa::Advanced::Implementation.3.gz
+%%PERL5_MAN3%%/Marpa::Advanced::Models.3.gz
+%%PERL5_MAN3%%/Marpa::Deprecated::Bocage.3.gz
+%%PERL5_MAN3%%/Marpa::Deprecated::Evaluator.3.gz
+%%PERL5_MAN3%%/Marpa::Deprecated::Implementation.3.gz
+%%PERL5_MAN3%%/Marpa::Grammar.3.gz
+%%PERL5_MAN3%%/Marpa::Marpa.3.gz
+%%PERL5_MAN3%%/Marpa::Parse_Terms.3.gz
+%%PERL5_MAN3%%/Marpa::Recognizer.3.gz
+%%PERL5_MAN3%%/Marpa::Semantics.3.gz
+%%PERL5_MAN3%%/Marpa::Support.3.gz
+%%PERL5_MAN3%%/Marpa::Tracing.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa
 @dirrm %%SITE_PERL%%/Marpa/Test
 @dirrm %%SITE_PERL%%/Marpa/MDLex/Internal

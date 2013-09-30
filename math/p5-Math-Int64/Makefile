@@ -16,9 +16,4 @@ LICENSE_COMB=	dual
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Math::Int64.3 \
-		Math::Int64::die_on_overflow.3 \
-		Math::UInt64.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

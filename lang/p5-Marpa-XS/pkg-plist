@@ -22,6 +22,20 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa/XS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa/XS/XS.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa/XS/XS.so
+%%PERL5_MAN3%%/Marpa::XS.3.gz
+%%PERL5_MAN3%%/Marpa::XS::Advanced::Bibliography.3.gz
+%%PERL5_MAN3%%/Marpa::XS::Advanced::Models.3.gz
+%%PERL5_MAN3%%/Marpa::XS::Debug.3.gz
+%%PERL5_MAN3%%/Marpa::XS::Grammar.3.gz
+%%PERL5_MAN3%%/Marpa::XS::Recognizer.3.gz
+%%PERL5_MAN3%%/Marpa::XS::Rewrite.3.gz
+%%PERL5_MAN3%%/Marpa::XS::Semantics.3.gz
+%%PERL5_MAN3%%/Marpa::XS::Semantics::Infinite.3.gz
+%%PERL5_MAN3%%/Marpa::XS::Semantics::Null.3.gz
+%%PERL5_MAN3%%/Marpa::XS::Semantics::Order.3.gz
+%%PERL5_MAN3%%/Marpa::XS::Support.3.gz
+%%PERL5_MAN3%%/Marpa::XS::Tracing.3.gz
+%%PERL5_MAN3%%/Marpa::XS::Vocabulary.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa/XS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Marpa
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Marpa/XS/Semantics
