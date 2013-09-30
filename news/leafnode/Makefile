@@ -10,24 +10,24 @@ MASTER_SITES=	SF \
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	NNTP package for offline news caching and reading
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
-
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 
 CONFLICTS=	newsx-1* s-news-0*
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
+# TODO: remove this auto-selection, and tell users through UPDATING to
+# move their spool to /var/spool/leafnode, and run texpire -r
 .if exists(/var/spool/news/leaf.node) && !defined(PACKAGE_BUILDING)
 LEAFNODE_SPOOLDIR?=/var/spool/news
 .elif exists(${LOCALBASE}/var/spool/leafnode/leaf.node) && !defined(PACKAGE_BUILDING)
 LEAFNODE_SPOOLDIR?=${LOCALBASE}/var/spool/leafnode
 .endif
 LEAFNODE_SPOOLDIR?=/var/spool/leafnode
-PLIST_SUB=	SPOOLDIR=${LEAFNODE_SPOOLDIR}
+PLIST_SUB=	SPOOLDIR=${LEAFNODE_SPOOLDIR} REALPREFIX=${PREFIX}
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/leafnode \
 		--with-spooldir=${LEAFNODE_SPOOLDIR} --with-ipv6 \
@@ -64,18 +64,16 @@ pre-configure:
 	@${ECHO_MSG}
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/setup-daemontools.sh ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/setup-daemontools.sh ${STAGEDIR}${PREFIX}/sbin
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/german
-	cd ${WRKSRC}/doc_german && ${INSTALL_DATA} ${DOCS_DE} ${DOCSDIR}/german
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/german
+	cd ${WRKSRC}/doc_german && ${INSTALL_DATA} ${DOCS_DE} ${STAGEDIR}${DOCSDIR}/german
 .endif
-	${MKDIR} ${MAN1DIR_DE} ${MAN8DIR_DE}
+	${MKDIR} ${STAGEDIR}${MAN1DIR_DE} ${STAGEDIR}${MAN8DIR_DE}
 	cd ${WRKSRC}/doc_german && \
-	${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/de.ISO8859-1/man1 && \
-	${INSTALL_MAN} ${MAN8} ${MAN8PREFIX}/man/de.ISO8859-1/man8
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_MAN} ${MAN1} ${STAGEDIR}${MAN1PREFIX}/man/de.ISO8859-1/man1 && \
+	${INSTALL_MAN} ${MAN8} ${STAGEDIR}${MAN8PREFIX}/man/de.ISO8859-1/man8
 
 .include <bsd.port.post.mk>
