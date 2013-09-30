@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Template/Plugin/Filter/Minify/JavaScript/XS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Filter/Minify/JavaScript/XS/.packlist
+%%PERL5_MAN3%%/Template::Plugin::Filter::Minify::JavaScript::XS.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Filter/Minify/JavaScript/XS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Filter/Minify/JavaScript
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Filter/Minify

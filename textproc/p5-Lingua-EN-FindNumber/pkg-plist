@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Lingua/EN/FindNumber.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/FindNumber/.packlist
+%%PERL5_MAN3%%/Lingua::EN::FindNumber.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/FindNumber
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua

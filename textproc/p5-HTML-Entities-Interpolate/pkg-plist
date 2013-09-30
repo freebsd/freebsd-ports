@@ -1,5 +1,6 @@
 %%SITE_PERL%%/HTML/Entities/Interpolate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Entities/Interpolate/.packlist
+%%PERL5_MAN3%%/HTML::Entities::Interpolate.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Entities/Interpolate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Entities
 @dirrmtry %%SITE_PERL%%/HTML/Entities

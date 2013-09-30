@@ -17,7 +17,4 @@ TEST_DEPENDS=	p5-Test-Deep>=0.108:${PORTSDIR}/devel/p5-Test-Deep
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Text::Prefix::XS.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

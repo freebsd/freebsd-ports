@@ -19,19 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	configure
 USES=		perl5
 
-MAN1=		tkmore.1 \
-		tkpod.1
-MAN3=		Tk::More.3 \
-		Tk::Pod.3 \
-		Tk::Pod::Cache.3 \
-		Tk::Pod::FindPods.3 \
-		Tk::Pod::Search.3 \
-		Tk::Pod::Search_db.3 \
-		Tk::Pod::SimpleBridge.3 \
-		Tk::Pod::Text.3 \
-		Tk::Pod::Tree.3 \
-		Tk::Pod::Util.3 \
-		Tk::Pod_usage.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

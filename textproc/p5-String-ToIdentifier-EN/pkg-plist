@@ -1,6 +1,8 @@
 %%SITE_PERL%%/String/ToIdentifier/EN.pm
 %%SITE_PERL%%/String/ToIdentifier/EN/Unicode.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/ToIdentifier/EN/.packlist
+%%PERL5_MAN3%%/String::ToIdentifier::EN.3.gz
+%%PERL5_MAN3%%/String::ToIdentifier::EN::Unicode.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/ToIdentifier/EN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/ToIdentifier
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String

@@ -1,5 +1,6 @@
 %%SITE_PERL%%/XML/Parsepp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parsepp/.packlist
+%%PERL5_MAN3%%/XML::Parsepp.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parsepp
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML

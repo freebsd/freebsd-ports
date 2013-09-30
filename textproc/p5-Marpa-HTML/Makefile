@@ -23,12 +23,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	configure
 USES=		perl5
 
-MAN1=		html_fmt.1 \
-		html_score.1
-MAN3=		Marpa::HTML.3 \
-		Marpa::HTML::Support.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|lib/Marpa/Support.pod|lib/Marpa/HTML/Support.pod|' ${WRKSRC}/Build.PL
 

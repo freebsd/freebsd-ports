@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Lingua/EN/Words2Nums.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Words2Nums/.packlist
+%%PERL5_MAN3%%/Lingua::EN::Words2Nums.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Words2Nums
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua

@@ -30,6 +30,37 @@ bin/extract_vba
 %%SITE_PERL%%/Excel/Writer/XLSX/Workbook.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Worksheet.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Excel/Writer/XLSX/.packlist
+%%PERL5_MAN3%%/Excel::Writer::XLSX.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Chart.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Chart::Area.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Chart::Bar.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Chart::Column.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Chart::Line.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Chart::Pie.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Chart::Radar.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Chart::Scatter.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Chart::Stock.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Chartsheet.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Drawing.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Examples.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Format.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Package::App.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Package::Comments.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Package::ContentTypes.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Package::Core.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Package::Packager.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Package::Relationships.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Package::SharedStrings.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Package::Styles.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Package::Table.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Package::Theme.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Package::VML.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Package::XMLwriter.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Shape.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Utility.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Workbook.3.gz
+%%PERL5_MAN3%%/Excel::Writer::XLSX::Worksheet.3.gz
+man/man1/extract_vba.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Excel/Writer/XLSX
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Excel/Writer
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Excel

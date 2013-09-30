@@ -18,9 +18,4 @@ CONFLICTS=	p5-XML-SAX-0.[0-8]* p5-XML-SAX-0.9[0-8]*
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		XML::SAX::Base.3 \
-		XML::SAX::BuildSAXBase.3 \
-		XML::SAX::Exception.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
