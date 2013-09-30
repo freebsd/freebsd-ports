@@ -57,8 +57,36 @@ lib/mysql/plugin/qa_auth_server.so
 lib/mysql/plugin/query_cache_info.so
 lib/mysql/plugin/semisync_master.so
 lib/mysql/plugin/semisync_slave.so
+lib/mysql/plugin/sphinx.so
 lib/mysql/plugin/sql_errlog.so
 libexec/mysqld
+man/man1/innochecksum.1.gz
+man/man1/my_print_defaults.1.gz
+man/man1/myisam_ftdump.1.gz
+man/man1/myisamchk.1.gz
+man/man1/myisamlog.1.gz
+man/man1/myisampack.1.gz
+man/man1/mysql.server.1.gz
+man/man1/mysql_convert_table_format.1.gz
+man/man1/mysql_fix_extensions.1.gz
+man/man1/mysql_install_db.1.gz
+man/man1/mysql_secure_installation.1.gz
+man/man1/mysql_setpermission.1.gz
+man/man1/mysql_tzinfo_to_sql.1.gz
+man/man1/mysql_upgrade.1.gz
+man/man1/mysql_zap.1.gz
+man/man1/mysqlbug.1.gz
+man/man1/mysqld_multi.1.gz
+man/man1/mysqld_safe.1.gz
+man/man1/mysqldumpslow.1.gz
+man/man1/mysqlhotcopy.1.gz
+man/man1/mysqlman.1.gz
+man/man1/mysqltest.1.gz
+man/man1/perror.1.gz
+man/man1/replace.1.gz
+man/man1/resolve_stack_dump.1.gz
+man/man1/resolveip.1.gz
+man/man8/mysqld.8.gz
 %%DATADIR%%/binary-configure
 %%DATADIR%%/charsets/Index.xml
 %%DATADIR%%/charsets/README
@@ -128,32 +156,30 @@ libexec/mysqld
 %%DATADIR%%/spanish/errmsg.sys
 %%DATADIR%%/swedish/errmsg.sys
 %%DATADIR%%/ukrainian/errmsg.sys
-@dirrm lib/mysql/plugin
-@dirrmtry lib/mysql
-@dirrm %%DATADIR%%/charsets
-@dirrm %%DATADIR%%/czech
-@dirrm %%DATADIR%%/danish
-@dirrm %%DATADIR%%/dutch
-@dirrm %%DATADIR%%/english
-@dirrm %%DATADIR%%/estonian
-@dirrm %%DATADIR%%/french
-@dirrm %%DATADIR%%/german
-@dirrm %%DATADIR%%/greek
-@dirrm %%DATADIR%%/hungarian
-@dirrm %%DATADIR%%/italian
-@dirrm %%DATADIR%%/japanese
-@dirrm %%DATADIR%%/korean
-@dirrm %%DATADIR%%/norwegian
-@dirrm %%DATADIR%%/norwegian-ny
-@dirrm %%DATADIR%%/polish
-@dirrm %%DATADIR%%/portuguese
-@dirrm %%DATADIR%%/romanian
-@dirrm %%DATADIR%%/russian
-@dirrm %%DATADIR%%/serbian
-@dirrm %%DATADIR%%/slovak
-@dirrm %%DATADIR%%/spanish
-@dirrm %%DATADIR%%/swedish
 @dirrm %%DATADIR%%/ukrainian
+@dirrm %%DATADIR%%/swedish
+@dirrm %%DATADIR%%/spanish
+@dirrm %%DATADIR%%/slovak
+@dirrm %%DATADIR%%/serbian
+@dirrm %%DATADIR%%/russian
+@dirrm %%DATADIR%%/romanian
+@dirrm %%DATADIR%%/portuguese
+@dirrm %%DATADIR%%/polish
+@dirrm %%DATADIR%%/norwegian-ny
+@dirrm %%DATADIR%%/norwegian
+@dirrm %%DATADIR%%/korean
+@dirrm %%DATADIR%%/japanese
+@dirrm %%DATADIR%%/italian
+@dirrm %%DATADIR%%/hungarian
+@dirrm %%DATADIR%%/greek
+@dirrm %%DATADIR%%/german
+@dirrm %%DATADIR%%/french
+@dirrm %%DATADIR%%/estonian
+@dirrm %%DATADIR%%/english
+@dirrm %%DATADIR%%/dutch
+@dirrm %%DATADIR%%/danish
+@dirrm %%DATADIR%%/czech
+@dirrm %%DATADIR%%/charsets
 @dirrm %%DATADIR%%
-@cwd /var
-@dirrmtry db/mysql
+@dirrm lib/mysql/plugin
+@dirrm lib/mysql

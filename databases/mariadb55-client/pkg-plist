@@ -52,6 +52,7 @@ include/mysql/psi/mysql_thread.h
 include/mysql/psi/psi.h
 include/mysql/service_debug_sync.h
 include/mysql/service_kill_statement.h
+include/mysql/service_logger.h
 include/mysql/service_my_snprintf.h
 include/mysql/service_progress_report.h
 include/mysql/service_thd_alloc.h
@@ -70,7 +71,21 @@ lib/mysql/libmysqlclient.so.18
 lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.18
+man/man1/msql2mysql.1.gz
+man/man1/mysql.1.gz
+man/man1/mysql_config.1.gz
+man/man1/mysql_find_rows.1.gz
+man/man1/mysql_plugin.1.gz
+man/man1/mysql_waitpid.1.gz
+man/man1/mysqlaccess.1.gz
+man/man1/mysqladmin.1.gz
+man/man1/mysqlbinlog.1.gz
+man/man1/mysqlcheck.1.gz
+man/man1/mysqldump.1.gz
+man/man1/mysqlimport.1.gz
+man/man1/mysqlshow.1.gz
+man/man1/mysqlslap.1.gz
 share/aclocal/mysql.m4
+@dirrmtry lib/mysql
 @dirrm include/mysql/psi
 @dirrm include/mysql
-@dirrmtry lib/mysql
