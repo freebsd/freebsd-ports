@@ -30,7 +30,8 @@ PLIST_SUB+=	PKGDB_FIX="@comment "
 OPTIONS_SUB=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/pkg_replace/pkg_replace pkgdb_fix/;' ${WRKSRC}/sbin/Makefile
+	@${REINPLACE_CMD} -e 's/pkg_replace/pkg_replace pkgdb_fix/' ${WRKSRC}/sbin/Makefile
+	@${REINPLACE_CMD} -e 's/mkdir -p $${FILESDIR}/@true/' ${WRKSRC}/share/zsh/Makefile
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
