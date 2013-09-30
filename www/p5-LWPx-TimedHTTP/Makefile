@@ -17,7 +17,4 @@ RUN_DEPENDS=	p5-libwww>=6:${PORTSDIR}/www/p5-libwww
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		LWPx::TimedHTTP.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

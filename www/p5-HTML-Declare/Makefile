@@ -16,10 +16,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		HTML::Declare.3
-PLIST_FILES=	%%SITE_PERL%%/HTML/Declare.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Declare/.packlist
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Declare
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

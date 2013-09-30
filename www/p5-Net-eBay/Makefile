@@ -28,9 +28,6 @@ OPTIONS_DEFINE=	EXAMPLES
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Net::eBay.3
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -40,8 +37,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${EXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 %%SITE_PERL%%/LWPx/TimedHTTP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWPx/TimedHTTP/.packlist
+%%PERL5_MAN3%%/LWPx::TimedHTTP.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWPx/TimedHTTP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWPx
 @dirrmtry %%SITE_PERL%%/LWPx

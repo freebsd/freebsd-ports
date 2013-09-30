@@ -1,6 +1,8 @@
 bin/googlecode_upload.pl
 %%SITE_PERL%%/Google/Code/Upload.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/Code/Upload/.packlist
+%%PERL5_MAN3%%/Google::Code::Upload.3.gz
+man/man1/googlecode_upload.pl.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/Code/Upload
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/Code
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google

@@ -15,6 +15,21 @@
 %%SITE_PERL%%/Protocol/XMLRPC/Value/Struct.pm
 %%SITE_PERL%%/Protocol/XMLRPC/ValueFactory.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol/XMLRPC/.packlist
+%%PERL5_MAN3%%/Protocol::XMLRPC.3.gz
+%%PERL5_MAN3%%/Protocol::XMLRPC::Client.3.gz
+%%PERL5_MAN3%%/Protocol::XMLRPC::Method.3.gz
+%%PERL5_MAN3%%/Protocol::XMLRPC::MethodCall.3.gz
+%%PERL5_MAN3%%/Protocol::XMLRPC::MethodResponse.3.gz
+%%PERL5_MAN3%%/Protocol::XMLRPC::Value.3.gz
+%%PERL5_MAN3%%/Protocol::XMLRPC::Value::Array.3.gz
+%%PERL5_MAN3%%/Protocol::XMLRPC::Value::Base64.3.gz
+%%PERL5_MAN3%%/Protocol::XMLRPC::Value::Boolean.3.gz
+%%PERL5_MAN3%%/Protocol::XMLRPC::Value::DateTime.3.gz
+%%PERL5_MAN3%%/Protocol::XMLRPC::Value::Double.3.gz
+%%PERL5_MAN3%%/Protocol::XMLRPC::Value::Integer.3.gz
+%%PERL5_MAN3%%/Protocol::XMLRPC::Value::String.3.gz
+%%PERL5_MAN3%%/Protocol::XMLRPC::Value::Struct.3.gz
+%%PERL5_MAN3%%/Protocol::XMLRPC::ValueFactory.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol/XMLRPC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol
 @dirrm %%SITE_PERL%%/Protocol/XMLRPC/Value

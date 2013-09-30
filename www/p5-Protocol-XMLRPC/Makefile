@@ -17,21 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Protocol::XMLRPC.3 \
-		Protocol::XMLRPC::Client.3 \
-		Protocol::XMLRPC::Method.3 \
-		Protocol::XMLRPC::MethodCall.3 \
-		Protocol::XMLRPC::MethodResponse.3 \
-		Protocol::XMLRPC::Value.3 \
-		Protocol::XMLRPC::Value::Array.3 \
-		Protocol::XMLRPC::Value::Base64.3 \
-		Protocol::XMLRPC::Value::Boolean.3 \
-		Protocol::XMLRPC::Value::DateTime.3 \
-		Protocol::XMLRPC::Value::Double.3 \
-		Protocol::XMLRPC::Value::Integer.3 \
-		Protocol::XMLRPC::Value::String.3 \
-		Protocol::XMLRPC::Value::Struct.3 \
-		Protocol::XMLRPC::ValueFactory.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

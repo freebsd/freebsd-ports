@@ -1,5 +1,6 @@
 %%SITE_PERL%%/LWP/Protocol/http10.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Protocol/http10/.packlist
+%%PERL5_MAN3%%/LWP::Protocol::http10.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Protocol/http10
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Protocol
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP

@@ -1,6 +1,7 @@
 %%SITE_PERL%%/HTTP/Server/Simple/Authen.pm
 %%SITE_PERL%%/HTTP/Server/Simple/server.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Server/Simple/Authen/.packlist
+%%PERL5_MAN3%%/HTTP::Server::Simple::Authen.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Server/Simple/Authen
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Server/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Server

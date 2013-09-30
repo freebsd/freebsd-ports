@@ -20,6 +20,24 @@
 %%SITE_PERL%%/PocketIO/Transport/XHRPolling.pm
 %%SITE_PERL%%/PocketIO/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PocketIO/.packlist
+%%PERL5_MAN3%%/PocketIO.3.gz
+%%PERL5_MAN3%%/PocketIO::Broadcast.3.gz
+%%PERL5_MAN3%%/PocketIO::Connection.3.gz
+%%PERL5_MAN3%%/PocketIO::Handle.3.gz
+%%PERL5_MAN3%%/PocketIO::Message.3.gz
+%%PERL5_MAN3%%/PocketIO::Pool.3.gz
+%%PERL5_MAN3%%/PocketIO::Pool::Redis.3.gz
+%%PERL5_MAN3%%/PocketIO::Resource.3.gz
+%%PERL5_MAN3%%/PocketIO::Socket.3.gz
+%%PERL5_MAN3%%/PocketIO::Sockets.3.gz
+%%PERL5_MAN3%%/PocketIO::Test.3.gz
+%%PERL5_MAN3%%/PocketIO::Transport::Base.3.gz
+%%PERL5_MAN3%%/PocketIO::Transport::BasePolling.3.gz
+%%PERL5_MAN3%%/PocketIO::Transport::Htmlfile.3.gz
+%%PERL5_MAN3%%/PocketIO::Transport::JSONPPolling.3.gz
+%%PERL5_MAN3%%/PocketIO::Transport::WebSocket.3.gz
+%%PERL5_MAN3%%/PocketIO::Transport::XHRMultipart.3.gz
+%%PERL5_MAN3%%/PocketIO::Transport::XHRPolling.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PocketIO
 @dirrm %%SITE_PERL%%/PocketIO/Transport
 @dirrm %%SITE_PERL%%/PocketIO/Pool

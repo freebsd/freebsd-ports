@@ -16,8 +16,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Plack::Middleware::ForceEnv.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>

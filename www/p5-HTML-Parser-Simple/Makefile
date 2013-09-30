@@ -21,9 +21,4 @@ TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		HTML::Parser::Simple.3 \
-		HTML::Parser::Simple::Attributes.3 \
-		HTML::Parser::Simple::Reporter.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

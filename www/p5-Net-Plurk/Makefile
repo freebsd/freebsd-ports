@@ -27,11 +27,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Net::Plurk.3 \
-		Net::Plurk::OAuth.3 \
-		Net::Plurk::Plurk.3 \
-		Net::Plurk::User.3 \
-		Net::Plurk::UserProfile.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
