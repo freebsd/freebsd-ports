@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	npm
-PORTVERSION=	1.3.8
-PORTREVISION=	1
+PORTVERSION=	1.3.11
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -17,6 +16,7 @@ NODE_DEVEL_DESC=Use www/node-devel instead of www/node
 
 NO_BUILD=	yes
 NO_MANCOMPRESS=	yes
+NO_STAGE=	yes
 USE_XZ=		yes
 
 MAN1=		npm.1 npm-README.1 npm-adduser.1 npm-bin.1 npm-bugs.1 \
@@ -45,7 +45,6 @@ MAN7=		npm-coding-style.7 npm-config.7 npm-developers.7 \
 		npm-scripts.7 removing-npm.7 semver.7
 MANPREFIX=	${PREFIX}/lib/node_modules/npm
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNODE_DEVEL}
