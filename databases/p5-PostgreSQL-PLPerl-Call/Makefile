@@ -16,7 +16,4 @@ BUILD_DEPENDS=	p5-DBI>=1.60.5:${PORTSDIR}/databases/p5-DBI
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		PostgreSQL::PLPerl::Call.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
