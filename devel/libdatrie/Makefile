@@ -17,7 +17,7 @@ USES=		iconv pathfix
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 MAN1=		trietool-0.2.1
 PORTDOCS=	README.migration
