@@ -6,7 +6,6 @@ PORTVERSION=	0.20110616
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.lysator.liu.se/%SUBDIR%/
 MASTER_SITE_SUBDIR=	pub/${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	BSD licensed implementation of libdwarf
