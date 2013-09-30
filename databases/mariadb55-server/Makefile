@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	5.5.31
+PORTVERSION=	5.5.33a
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
@@ -19,7 +19,7 @@ MAINTAINER=	never@nevermind.kiev.ua
 COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/mariadb55-client
-USES=		cmake
+USES=		cmake gmake
 NO_OPTIONS_SORT=yes
 
 OPTIONS_DEFINE+=	SSL OPENSSL PORTSSL FASTMTX
@@ -44,8 +44,11 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_SHAREDIR="share" \
 		-DINSTALL_SQLBENCHDIR="share/mysql" \
 		-DINSTALL_SUPPORTFILESDIR="share/mysql" \
+		-DWITH_UNIT_TESTS=0 \
 		-DWITH_LIBEDIT=0 \
-		-DWITH_LIBWRAP=1
+		-DWITH_LIBWRAP=1 \
+		-DEXECINFO_ROOT=${LOCALBASE} \
+		-DCOMPILATION_COMMENT="FreeBSD Ports"
 
 .ifdef USE_MYSQL
 .error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
@@ -56,17 +59,25 @@ USE_LDCONFIG=	${PREFIX}/lib/mysql
 
 # MySQL-Server options
 .if !defined(CLIENT_ONLY)
-OPTIONS_DEFINE+=	OQGRAPH PBXT MAXKEY
+OPTIONS_DEFINE+=	OQGRAPH MAXKEY
 
 OQGRAPH_DESC=	Open Query Graph Computation engine
-PBXT_DESC=	MVCC-based transactional engine
 MAXKEY_DESC=	Change max key length from 1000 to 4000
 
-OPTIONS_DEFAULT+=	PBXT MAXKEY
+OPTIONS_DEFAULT+=	MAXKEY
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1000052
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+.endif
+
+.if ${OSVERSION} < 1000012
+CMAKE_ARGS+=	-DWITH_JEMALLOC="bundled"
+.else
+CMAKE_ARGS+=	-DWITH_JEMALLOC="system"
+.endif
 
 .if ${PORT_OPTIONS:MSSL}
 .if ${PORT_OPTIONS:MOPENSSL}
@@ -101,16 +112,6 @@ USE_RC_SUBR=	mysql-server
 USERS=		mysql
 GROUPS=		mysql
 
-MAN1=		my_print_defaults.1 myisam_ftdump.1 myisamchk.1 myisamlog.1 myisampack.1 \
-		mysql.server.1 mysql_convert_table_format.1 mysql_fix_extensions.1 \
-		mysql_install_db.1 mysql_secure_installation.1 mysql_setpermission.1 \
-		mysql_tzinfo_to_sql.1 mysql_upgrade.1 mysql_zap.1 mysqlbug.1 \
-		mysqld_multi.1 mysqld_safe.1 mysqldumpslow.1 mysqlhotcopy.1 mysqlman.1 \
-		mysqltest.1 perror.1 replace.1 resolve_stack_dump.1 resolveip.1 \
-		innochecksum.1
-
-MAN8=		mysqld.8
-
 CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON" \
 		-DWITHOUT_EXAMPLE_STORAGE_ENGINE=1
 
@@ -127,11 +128,6 @@ USE_GCC?=	yes
 CMAKE_ARGS+=	-DWITH_OQGRAPH_STORAGE_ENGINE=1
 PLIST_SUB+=	OQGRAPH=""
 LIB_DEPENDS+=	boost_system:${PORTSDIR}/devel/boost-libs
-.endif
-.if empty(PORT_OPTIONS:MPBXT)
-CMAKE_ARGS+=	-DWITHOUT_PBXT_STORAGE_ENGINE=1
-.else
-CMAKE_ARGS+=	-DWITH_PBXT_STORAGE_ENGINE=1
 .endif
 .if ${PORT_OPTIONS:MMAXKEY}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include_my_compare.h
