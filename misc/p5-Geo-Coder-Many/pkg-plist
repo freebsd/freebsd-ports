@@ -16,6 +16,23 @@
 %%SITE_PERL%%/Geo/Coder/Many/Scheduler/UniquenessScheduler/WeightedRandom.pm
 %%SITE_PERL%%/Geo/Coder/Many/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Many/.packlist
+%%PERL5_MAN3%%/Geo::Coder::Many.3.gz
+%%PERL5_MAN3%%/Geo::Coder::Many::Bing.3.gz
+%%PERL5_MAN3%%/Geo::Coder::Many::Generic.3.gz
+%%PERL5_MAN3%%/Geo::Coder::Many::Google.3.gz
+%%PERL5_MAN3%%/Geo::Coder::Many::Googlev3.3.gz
+%%PERL5_MAN3%%/Geo::Coder::Many::Mapquest.3.gz
+%%PERL5_MAN3%%/Geo::Coder::Many::OSM.3.gz
+%%PERL5_MAN3%%/Geo::Coder::Many::Ovi.3.gz
+%%PERL5_MAN3%%/Geo::Coder::Many::PlaceFinder.3.gz
+%%PERL5_MAN3%%/Geo::Coder::Many::Response.3.gz
+%%PERL5_MAN3%%/Geo::Coder::Many::Scheduler.3.gz
+%%PERL5_MAN3%%/Geo::Coder::Many::Scheduler::OrderedList.3.gz
+%%PERL5_MAN3%%/Geo::Coder::Many::Scheduler::Selective.3.gz
+%%PERL5_MAN3%%/Geo::Coder::Many::Scheduler::UniquenessScheduler.3.gz
+%%PERL5_MAN3%%/Geo::Coder::Many::Scheduler::UniquenessScheduler::WRR.3.gz
+%%PERL5_MAN3%%/Geo::Coder::Many::Scheduler::UniquenessScheduler::WeightedRandom.3.gz
+%%PERL5_MAN3%%/Geo::Coder::Many::Util.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Many
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder
 @dirrm %%SITE_PERL%%/Geo/Coder/Many/Scheduler/UniquenessScheduler

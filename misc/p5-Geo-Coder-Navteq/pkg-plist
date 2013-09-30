@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Geo/Coder/Navteq.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Navteq/.packlist
+%%PERL5_MAN3%%/Geo::Coder::Navteq.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Navteq
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo

@@ -25,9 +25,4 @@ TEST_DEPENDS=	p5-Test-Number-Delta>=0:${PORTSDIR}/devel/p5-Test-Number-Delta
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Geo::Coder::Google.3 \
-		Geo::Coder::Google::V2.3 \
-		Geo::Coder::Google::V3.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
