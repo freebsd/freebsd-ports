@@ -13,7 +13,4 @@ COMMENT=	HASH that store values without increase the reference count
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Hash::NoRef.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

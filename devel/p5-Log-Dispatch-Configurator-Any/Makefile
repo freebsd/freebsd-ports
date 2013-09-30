@@ -26,7 +26,4 @@ TEST_DEPENDS=	p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Log::Dispatch::Configurator::Any.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

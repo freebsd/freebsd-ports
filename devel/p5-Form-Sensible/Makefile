@@ -23,30 +23,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Form::Sensible.3 \
-		Form::Sensible::DelegateConnection.3 \
-		Form::Sensible::Delegation.3 \
-		Form::Sensible::FAQ.3 \
-		Form::Sensible::Field.3 \
-		Form::Sensible::Field::DateTime.3 \
-		Form::Sensible::Field::FileSelector.3 \
-		Form::Sensible::Field::LongText.3 \
-		Form::Sensible::Field::Number.3 \
-		Form::Sensible::Field::Select.3 \
-		Form::Sensible::Field::SubForm.3 \
-		Form::Sensible::Field::Text.3 \
-		Form::Sensible::Field::Toggle.3 \
-		Form::Sensible::Field::Trigger.3 \
-		Form::Sensible::Form.3 \
-		Form::Sensible::Overview.3 \
-		Form::Sensible::Reflector.3 \
-		Form::Sensible::Renderer.3 \
-		Form::Sensible::Renderer::HTML.3 \
-		Form::Sensible::Renderer::HTML::RenderedForm.3 \
-		Form::Sensible::Validator.3 \
-		Form::Sensible::Validator::Result.3
-
-NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/lib/Form/Sensible/Renderer/HTML/RenderedForm.pm.orig
 
