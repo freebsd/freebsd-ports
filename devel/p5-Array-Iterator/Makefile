@@ -16,10 +16,4 @@ TEST_DEPENDS=	p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Array::Iterator.3 \
-		Array::Iterator::BiDirectional.3 \
-		Array::Iterator::Circular.3 \
-		Array::Iterator::Reusable.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

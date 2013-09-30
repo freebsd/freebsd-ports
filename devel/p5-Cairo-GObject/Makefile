@@ -24,7 +24,4 @@ RUN_DEPENDS=	cairo>=1.10.0:${PORTSDIR}/graphics/cairo \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Cairo::GObject.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

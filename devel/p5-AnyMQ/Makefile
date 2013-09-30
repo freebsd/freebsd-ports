@@ -23,10 +23,4 @@ TEST_DEPENDS=	p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		AnyMQ.3 \
-		AnyMQ::Queue.3 \
-		AnyMQ::Topic.3 \
-		AnyMQ::Topic::Trait::WithBacklog.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

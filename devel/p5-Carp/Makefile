@@ -13,7 +13,4 @@ COMMENT=	Alternative warn and die for modules
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Carp.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

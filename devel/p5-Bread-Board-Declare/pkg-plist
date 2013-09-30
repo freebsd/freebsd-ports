@@ -10,6 +10,17 @@
 %%SITE_PERL%%/Bread/Board/Declare/Role/Object.pm
 %%SITE_PERL%%/Bread/Board/Declare/Role/Service.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bread/Board/Declare/.packlist
+%%PERL5_MAN3%%/Bread::Board::Declare.3.gz
+%%PERL5_MAN3%%/Bread::Board::Declare::BlockInjection.3.gz
+%%PERL5_MAN3%%/Bread::Board::Declare::ConstructorInjection.3.gz
+%%PERL5_MAN3%%/Bread::Board::Declare::Literal.3.gz
+%%PERL5_MAN3%%/Bread::Board::Declare::Meta::Role::Attribute.3.gz
+%%PERL5_MAN3%%/Bread::Board::Declare::Meta::Role::Attribute::Container.3.gz
+%%PERL5_MAN3%%/Bread::Board::Declare::Meta::Role::Attribute::Service.3.gz
+%%PERL5_MAN3%%/Bread::Board::Declare::Meta::Role::Class.3.gz
+%%PERL5_MAN3%%/Bread::Board::Declare::Meta::Role::Instance.3.gz
+%%PERL5_MAN3%%/Bread::Board::Declare::Role::Object.3.gz
+%%PERL5_MAN3%%/Bread::Board::Declare::Role::Service.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bread/Board/Declare
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bread/Board
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bread

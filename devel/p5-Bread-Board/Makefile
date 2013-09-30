@@ -30,40 +30,6 @@ GRAPHVIZ_DESC=	Visualize a Bread::Board system via Graphviz
 USE_PERL5=	configure
 USES=		perl5
 
-MAN1=		visualize-breadboard.1
-MAN3=		Bread::Board.3 \
-		Bread::Board::BlockInjection.3 \
-		Bread::Board::ConstructorInjection.3 \
-		Bread::Board::Container.3 \
-		Bread::Board::Container::Parameterized.3 \
-		Bread::Board::Dependency.3 \
-		Bread::Board::Dumper.3 \
-		Bread::Board::GraphViz.3 \
-		Bread::Board::GraphViz::App.3 \
-		Bread::Board::LifeCycle.3 \
-		Bread::Board::LifeCycle::Singleton.3 \
-		Bread::Board::LifeCycle::Singleton::WithParameters.3 \
-		Bread::Board::Literal.3 \
-		Bread::Board::Manual.3 \
-		Bread::Board::Manual::Concepts.3 \
-		Bread::Board::Manual::Concepts::Advanced.3 \
-		Bread::Board::Manual::Concepts::Typemap.3 \
-		Bread::Board::Manual::Example.3 \
-		Bread::Board::Manual::Example::FormSensible.3 \
-		Bread::Board::Manual::Example::LogDispatch.3 \
-		Bread::Board::Service.3 \
-		Bread::Board::Service::Alias.3 \
-		Bread::Board::Service::Deferred.3 \
-		Bread::Board::Service::Deferred::Thunk.3 \
-		Bread::Board::Service::Inferred.3 \
-		Bread::Board::Service::WithClass.3 \
-		Bread::Board::Service::WithDependencies.3 \
-		Bread::Board::Service::WithParameters.3 \
-		Bread::Board::SetterInjection.3 \
-		Bread::Board::Traversable.3 \
-		Bread::Board::Types.3
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGRAPHVIZ}

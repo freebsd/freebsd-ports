@@ -15,7 +15,4 @@ BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.302:${PORTSDIR}/devel/p5-ExtUtils-Depends
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		B::Hooks::OP::Check.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

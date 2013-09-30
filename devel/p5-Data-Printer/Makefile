@@ -25,12 +25,6 @@ TEST_DEPENDS=	p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Data::Printer.3 \
-		Data::Printer::Filter.3 \
-		Data::Printer::Filter::DB.3 \
-		Data::Printer::Filter::DateTime.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400
