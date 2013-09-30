@@ -567,6 +567,11 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/ypmatch
 %%DATADIR%%/completions/yum-arch
 %%DATADIR%%/helpers/perl
-@dirrm %%DATADIR%%/helpers
-@dirrm %%DATADIR%%/completions
-@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/bash_completion.txt
+%%PORTDOCS%%%%DOCSDIR%%/bashrc
+%%PORTDOCS%%%%DOCSDIR%%/inputrc
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/helpers
+@dirrmtry %%DATADIR%%/completions
+@dirrmtry %%DATADIR%%
