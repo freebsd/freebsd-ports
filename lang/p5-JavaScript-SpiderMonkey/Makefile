@@ -11,16 +11,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl interface to Mozilla JavaScript implementation
 
-LIB_DEPENDS=	js.1:${PORTSDIR}/lang/spidermonkey17
-
+LIB_DEPENDS=	libjs.so:${PORTSDIR}/lang/spidermonkey17
 TEST_DEPENDS=	p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl
 
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		JavaScript::SpiderMonkey.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|libjs.a|libjs.so|' ${WRKSRC}/Makefile.PL
 
