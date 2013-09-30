@@ -26,7 +26,7 @@ you update your ports collection, before attempting any port upgrades.
   updated to 9.1 when compiled with WITH_NEW_XORG= set.  It is necessary
   to remove the old versions of both ports before updating.
 
-  # pkg_delete -f libGl-\* dri-\*
+  # pkg_delete -f libGL-\* dri-\*
   or
   # pkg delete -f libGL dri
   followed by
