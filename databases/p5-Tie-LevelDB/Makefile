@@ -11,15 +11,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl Interface to the Google LevelDB NoSQL database
 
-LIB_DEPENDS=	leveldb:${PORTSDIR}/databases/leveldb
+LIB_DEPENDS=	libleveldb.so:${PORTSDIR}/databases/leveldb
 
 MAKE_ARGS=	CC=${CXX}
 USE_PERL5=	configure
 USES=		gmake perl5
 
-MAN3=		Tie::LevelDB.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/build_detect_platform/d' \
 		-e 's|build_config.mk|${LOCALBASE}/share/leveldb/&|' \
