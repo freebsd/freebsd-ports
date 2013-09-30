@@ -5,7 +5,7 @@ bin/banbun2xhtml
 bin/glsd-doc2html
 bin/glsd-doc2text
 lib/libxdtp.so
-lib/libxdtp.so.3
+lib/libxdtp.so.5
 lib/libxdtp.a
 libdata/pkgconfig/libxdtp.pc
 %%DOCSDIR%%/banbun-0001.html
