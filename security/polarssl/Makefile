@@ -3,6 +3,7 @@
 PORTNAME=	polarssl
 PORTVERSION=	1.2.8
 DISTVERSIONSUFFIX=	-gpl
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://polarssl.org/download/
 EXTRACT_SUFX=	.tgz
@@ -18,35 +19,34 @@ URL_SUFFIX=	?do=yes
 FETCH_ARGS=	-pRro ${DISTFILES}
 ALL_TARGET=	no_test
 
-USE_GMAKE=	yes
+USES=	gmake
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PORTDOCS=	ChangeLog README
 
+DOCFILES=	ChangeLog README
 BINFILES=	aescrypt2 benchmark dh_client dh_genprime dh_server hello \
 		md5sum mpi_demo rsa_genkey rsa_sign rsa_verify selftest \
 		sha1sum sha2sum ssl_cert_test ssl_client1 ssl_client2 \
 		ssl_server ssl_test
 
 # cmake install is broken, so we do it by hand
-NO_STAGE=	yes
 do-install:
-	@${TAR} -C ${WRKSRC}/include -cf - polarssl | ${TAR} -C ${PREFIX}/include -xf -
-	${INSTALL_DATA} ${WRKSRC}/library/libpolarssl.a ${PREFIX}/lib/
-	${INSTALL_DATA} ${WRKSRC}/library/libpolarssl.so  ${PREFIX}/lib/libpolarssl.so.0
-	cd ${PREFIX}/lib/ && ${LN} -sf libpolarssl.so.0 libpolarssl.so
+	@${TAR} -C ${WRKSRC}/include -cf - polarssl | ${TAR} -C ${STAGEDIR}${PREFIX}/include -xf -
+	${INSTALL_DATA} ${WRKSRC}/library/libpolarssl.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/library/libpolarssl.so  ${STAGEDIR}${PREFIX}/lib/libpolarssl.so.0
+	cd ${STAGEDIR}${PREFIX}/lib/ && ${LN} -sf libpolarssl.so.0 libpolarssl.so
 .for i in ${BINFILES}
-	${INSTALL_PROGRAM} ${WRKSRC}/programs/*/${i} ${PREFIX}/bin/polarssl_${i}
+	${INSTALL_PROGRAM} ${WRKSRC}/programs/*/${i} ${STAGEDIR}${PREFIX}/bin/polarssl_${i}
 .endfor
 
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ${DOCFILES}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
