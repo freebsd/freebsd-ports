@@ -5,7 +5,6 @@ PORTNAME=	autotalent
 PORTVERSION=	0.2
 CATEGORIES=	audio
 MASTER_SITES=	http://web.mit.edu/tbaran/www/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time pitch correction plugin for LADSPA

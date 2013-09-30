@@ -6,7 +6,6 @@ DISTVERSION=	1.3.6
 CATEGORIES=	www java
 MASTER_SITES=	http://dist.codehaus.org/grails/ \
 		http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mjs@bur.st
 COMMENT=	Web framework built on Groovy
