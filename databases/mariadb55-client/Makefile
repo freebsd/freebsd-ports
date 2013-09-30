@@ -11,8 +11,6 @@ PKGMESSAGE=	mustnotexist
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
 
-MAKE_JOBS_UNSAFE=	yes
-
 LATEST_LINK=	mariadb55-client
 
 CONFLICTS_INSTALL=	mysql-client-[345].* mariadb-client-5.3.* percona-client-5.*
