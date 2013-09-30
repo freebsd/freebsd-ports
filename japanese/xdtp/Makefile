@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xdtp
-PORTVERSION=	1.3.1
-PORTREVISION=	4
+PORTVERSION=	1.5.0
 CATEGORIES=	japanese
-MASTER_SITES=	http://www.ongs.co.jp/projects/xdtp/
+MASTER_SITES=	http://www.ongs.co.jp/software/xdtp/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ozawa@ongs.co.jp
