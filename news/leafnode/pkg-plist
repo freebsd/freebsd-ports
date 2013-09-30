@@ -1,21 +1,37 @@
 @comment $FreeBSD$
 bin/leafnode-version
 bin/newsq
-etc/leafnode/config.example
-etc/leafnode/filters.example
-etc/leafnode/nntp.rules.dist
-etc/leafnode/run.tcpd.dist
-etc/leafnode/run.tcpserver.dist
-etc/leafnode/Makefile.dist
-etc/leafnode/UNINSTALL-daemontools
+%%ETCDIR%%/config.example
+%%ETCDIR%%/filters.example
+%%ETCDIR%%/nntp.rules.dist
+%%ETCDIR%%/run.tcpd.dist
+%%ETCDIR%%/run.tcpserver.dist
+%%ETCDIR%%/Makefile.dist
+%%ETCDIR%%/UNINSTALL-daemontools
+man/man1/leafnode-version.1.gz
+man/man1/newsq.1.gz
+man/man8/applyfilter.8.gz
+man/man8/checkgroups.8.gz
+man/man8/fetchnews.8.gz
+man/man8/leafnode.8.gz
+man/man8/texpire.8.gz
+man/de.ISO8859-1/man1/leafnode-version.1.gz
+man/de.ISO8859-1/man1/newsq.1.gz
+man/de.ISO8859-1/man8/applyfilter.8.gz
+man/de.ISO8859-1/man8/checkgroups.8.gz
+man/de.ISO8859-1/man8/fetchnews.8.gz
+man/de.ISO8859-1/man8/leafnode.8.gz
+man/de.ISO8859-1/man8/texpire.8.gz
 sbin/leafnode
 sbin/fetchnews
 sbin/texpire
 sbin/checkgroups
 sbin/applyfilter
 sbin/setup-daemontools.sh
+@dirrmtry %%ETCDIR%%
 @comment only remove these when empty:
 @comment we don't want to kill the news spool across updates
+@cwd /
 @unexec rm -f %%SPOOLDIR%%/leaf.node/lock.file
 @dirrmtry %%SPOOLDIR%%/failed.postings
 @dirrmtry %%SPOOLDIR%%/leaf.node
@@ -25,6 +41,6 @@ sbin/setup-daemontools.sh
 @dirrmtry %%SPOOLDIR%%/out.going
 @dirrmtry %%SPOOLDIR%%/temp.files
 @dirrmtry %%SPOOLDIR%%
+@cwd %%REALPREFIX%%
 @unexec rmdir %D/var/spool %D/var %D/lib/leafnode 2>/dev/null || :
-@dirrm etc/leafnode
 @unexec if test -d "%%SPOOLDIR%%" || test -d "%D/etc/leafnode" ; then echo ; echo "==============================================================================" ; echo "If you want to remove leafnode for good, delete spool and configuration:" ; echo "type: rm -rf %D/etc/leafnode %%SPOOLDIR%%" ; echo "==============================================================================" ; fi
