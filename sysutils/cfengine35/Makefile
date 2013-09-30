@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cfengine
-PORTVERSION=	3.5.1
+PORTVERSION=	3.5.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cfengine.com/source-code/download?file=
 
@@ -19,7 +19,7 @@ FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
 CONFLICTS=	cfengine-[234]*
 
-USE_RC_SUBR=	cf-execd cf-serverd
+USE_RC_SUBR=	cf-execd cf-serverd cf-monitord
 
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes

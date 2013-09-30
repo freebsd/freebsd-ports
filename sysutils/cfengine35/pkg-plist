@@ -11,14 +11,39 @@ sbin/cf-runagent
 sbin/cf-serverd
 sbin/rpmvercmp
 share/cfengine/CoreBase/cf-sketch-runfile.cf
-share/cfengine/CoreBase/def.cf
-share/cfengine/CoreBase/promises.cf
-share/cfengine/CoreBase/controls/cf_execd.cf
 share/cfengine/CoreBase/controls/cf_agent.cf
-share/cfengine/CoreBase/controls/cf_runagent.cf
+share/cfengine/CoreBase/controls/cf_execd.cf
 share/cfengine/CoreBase/controls/cf_monitord.cf
+share/cfengine/CoreBase/controls/cf_runagent.cf
 share/cfengine/CoreBase/controls/cf_serverd.cf
+share/cfengine/CoreBase/def.cf
+share/cfengine/CoreBase/lib/3.5/bundles.cf
+share/cfengine/CoreBase/lib/3.5/commands.cf
+share/cfengine/CoreBase/lib/3.5/common.cf
+share/cfengine/CoreBase/lib/3.5/databases.cf
+share/cfengine/CoreBase/lib/3.5/files.cf
+share/cfengine/CoreBase/lib/3.5/guest_environments.cf
+share/cfengine/CoreBase/lib/3.5/monitor.cf
+share/cfengine/CoreBase/lib/3.5/packages.cf
+share/cfengine/CoreBase/lib/3.5/paths.cf
+share/cfengine/CoreBase/lib/3.5/processes.cf
+share/cfengine/CoreBase/lib/3.5/services.cf
+share/cfengine/CoreBase/lib/3.5/storage.cf
+share/cfengine/CoreBase/lib/3.6/bundles.cf
+share/cfengine/CoreBase/lib/3.6/commands.cf
+share/cfengine/CoreBase/lib/3.6/common.cf
+share/cfengine/CoreBase/lib/3.6/databases.cf
+share/cfengine/CoreBase/lib/3.6/files.cf
+share/cfengine/CoreBase/lib/3.6/guest_environments.cf
+share/cfengine/CoreBase/lib/3.6/monitor.cf
+share/cfengine/CoreBase/lib/3.6/packages.cf
+share/cfengine/CoreBase/lib/3.6/paths.cf
+share/cfengine/CoreBase/lib/3.6/processes.cf
+share/cfengine/CoreBase/lib/3.6/services.cf
+share/cfengine/CoreBase/lib/3.6/storage.cf
+share/cfengine/CoreBase/lib/README.md
 share/cfengine/CoreBase/libraries/cfengine_stdlib.cf
+share/cfengine/CoreBase/promises.cf
 share/cfengine/CoreBase/services/init_msg.cf
 share/cfengine/CoreBase/update.cf
 %%DOCSDIR%%/ChangeLog
@@ -294,6 +319,9 @@ share/cfengine/CoreBase/update.cf
 @dirrm share/cfengine/CoreBase/controls
 @dirrm share/cfengine/CoreBase/libraries
 @dirrm share/cfengine/CoreBase/services
+@dirrm share/cfengine/CoreBase/lib/3.5
+@dirrm share/cfengine/CoreBase/lib/3.6
+@dirrm share/cfengine/CoreBase/lib
 @dirrm share/cfengine/CoreBase
 @dirrm share/cfengine
 @dirrm libexec/cfengine
