@@ -16,15 +16,15 @@ RUN_DEPENDS=	\
 	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 	p5-Net-Server>=2.007:${PORTSDIR}/net/p5-Net-Server \
 	p5-Plack>=0.9971:${PORTSDIR}/www/p5-Plack
-BUILD_DEPENDS:=	${RUN_DEPENDS} \
-	p5-Module-Build-Tiny>0:${PORTSDIR}/devel/p5-Module-Build-Tiny
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
 	p5-Test-TCP>=2.00:${PORTSDIR}/devel/p5-Test-TCP
 # TODO: maybe need p5-libwww
 
+NO_STAGE=	yes
 USES=	perl5
-USE_PERL5=	modbuild
+USE_PERL5=	modbuildtiny
 USE_RC_SUBR=	starman
 
 MAN1=	starman.1
@@ -33,5 +33,4 @@ MAN3=	HTTP::Server::PSGI::Net::Server::PreFork.3 \
 	Starman.3 \
 	Starman::Server.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
