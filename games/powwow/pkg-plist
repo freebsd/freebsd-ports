@@ -1,4 +1,8 @@
+bin/catrw
+bin/follow
 bin/powwow
+bin/powwow-movieplay
+bin/powwow-muc
 %%DATADIR%%/powwow.doc
 %%DATADIR%%/powwow.help
 @dirrm %%DATADIR%%

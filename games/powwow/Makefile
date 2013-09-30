@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	powwow
-PORTVERSION=	1.2.14
+PORTVERSION=	1.2.17
 CATEGORIES=	games
 MASTER_SITES=	http://hoopajoo.net/static/projects/ \
 		ftp://ftp.wilbury.sk/pub/FreeBSD/local/distfiles/
@@ -22,6 +22,10 @@ pre-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/powwow ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/powwow-movieplay ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/powwow-muc ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/catrw ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/follow ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/powwow.6 ${PREFIX}/man/man6
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/powwow.doc ${DATADIR}
