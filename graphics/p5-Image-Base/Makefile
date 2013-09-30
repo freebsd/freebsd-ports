@@ -15,7 +15,4 @@ LICENSE=	LGPL3
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Image::Base.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

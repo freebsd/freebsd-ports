@@ -19,20 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Marpa::Advanced::Algorithm.3 \
-		Marpa::Advanced::Bibliography.3 \
-		Marpa::Advanced::Implementation.3 \
-		Marpa::Advanced::Models.3 \
-		Marpa::Deprecated::Bocage.3 \
-		Marpa::Deprecated::Evaluator.3 \
-		Marpa::Deprecated::Implementation.3 \
-		Marpa::Grammar.3 \
-		Marpa::Marpa.3 \
-		Marpa::Parse_Terms.3 \
-		Marpa::Recognizer.3 \
-		Marpa::Semantics.3 \
-		Marpa::Support.3 \
-		Marpa::Tracing.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
