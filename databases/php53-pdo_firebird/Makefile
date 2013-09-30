@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 
 MASTERDIR=	${.CURDIR}/../../lang/php53
