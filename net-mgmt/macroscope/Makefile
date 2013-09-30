@@ -3,7 +3,7 @@
 
 PORTNAME=		macroscope
 PORTVERSION=		1.0.3787
-PORTREVISION=		7
+PORTREVISION=		8
 CATEGORIES=		net-mgmt
 MASTER_SITES=		ftp://ftp.berlios.de/pub/macroscope/ \
 			http://white-raven.pisem.net/
