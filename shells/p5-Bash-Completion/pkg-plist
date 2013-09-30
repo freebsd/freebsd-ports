@@ -8,6 +8,15 @@ bin/setup-bash-complete
 %%SITE_PERL%%/Bash/Completion/Request.pm
 %%SITE_PERL%%/Bash/Completion/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bash/Completion/.packlist
+%%PERL5_MAN3%%/App::BashComplete.3.gz
+%%PERL5_MAN3%%/Bash::Completion.3.gz
+%%PERL5_MAN3%%/Bash::Completion::Plugin.3.gz
+%%PERL5_MAN3%%/Bash::Completion::Plugins::BashComplete.3.gz
+%%PERL5_MAN3%%/Bash::Completion::Plugins::Perldoc.3.gz
+%%PERL5_MAN3%%/Bash::Completion::Request.3.gz
+%%PERL5_MAN3%%/Bash::Completion::Utils.3.gz
+man/man1/bash-complete.1.gz
+man/man1/setup-bash-complete.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bash/Completion
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bash
 @dirrm %%SITE_PERL%%/Bash/Completion/Plugins

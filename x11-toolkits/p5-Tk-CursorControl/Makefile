@@ -18,9 +18,6 @@ ALL_TARGETS=	pure_install
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Tk::CursorControl.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/Tk\/demos\/widtrib\/cursor.pl/ s|cursor.pl|cursorcontrol.pl|' \

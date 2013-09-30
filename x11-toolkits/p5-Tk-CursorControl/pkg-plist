@@ -3,6 +3,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/trans_cur.mask
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/trans_cur.xbm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/CursorControl/.packlist
+%%PERL5_MAN3%%/Tk::CursorControl.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/CursorControl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib

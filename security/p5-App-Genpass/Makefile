@@ -28,10 +28,6 @@ USE_PERL5=	configure
 USES=		perl5
 REINPLACE_ARGS=	-i ''
 
-MAN1=		genpass.1
-MAN3=		App::Genpass.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '1 s|.*|#!${PERL}|' ${WRKSRC}/bin/genpass
 

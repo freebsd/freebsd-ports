@@ -25,14 +25,4 @@ TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN1=		smonitor.1
-MAN3=		Monitor::Simple.3 \
-		Monitor::Simple::Config.3 \
-		Monitor::Simple::Log.3 \
-		Monitor::Simple::Notifier.3 \
-		Monitor::Simple::Output.3 \
-		Monitor::Simple::UserAgent.3 \
-		Monitor::Simple::Utils.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

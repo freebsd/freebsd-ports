@@ -4,6 +4,8 @@
 %%SITE_PERL%%/auto/share/dist/Geo-Coordinates-Converter-iArea/areacode2name.cdb
 %%SITE_PERL%%/auto/share/dist/Geo-Coordinates-Converter-iArea/meshcode2areacode.cdb
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coordinates/Converter/iArea/.packlist
+%%PERL5_MAN3%%/Geo::Coordinates::Converter::Format::IArea.3.gz
+%%PERL5_MAN3%%/Geo::Coordinates::Converter::iArea.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coordinates/Converter/iArea
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coordinates/Converter
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coordinates

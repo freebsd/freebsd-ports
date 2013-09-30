@@ -21,17 +21,6 @@ TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 USE_PERL5=	configure
 USES=		perl5
 
-MAN1=		bash-complete.1 \
-		setup-bash-complete.1
-MAN3=		App::BashComplete.3 \
-		Bash::Completion.3 \
-		Bash::Completion::Plugin.3 \
-		Bash::Completion::Plugins::BashComplete.3 \
-		Bash::Completion::Plugins::Perldoc.3 \
-		Bash::Completion::Request.3 \
-		Bash::Completion::Utils.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

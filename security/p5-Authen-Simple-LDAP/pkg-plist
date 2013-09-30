@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Authen/Simple/ActiveDirectory.pm
 %%SITE_PERL%%/Authen/Simple/LDAP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Simple/LDAP/.packlist
+%%PERL5_MAN3%%/Authen::Simple::ActiveDirectory.3.gz
+%%PERL5_MAN3%%/Authen::Simple::LDAP.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Simple/LDAP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen

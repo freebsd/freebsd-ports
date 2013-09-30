@@ -2,6 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/ToolBar/tkIcons
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib/toolbar.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/ToolBar/.packlist
+%%PERL5_MAN3%%/Tk::ToolBar.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/ToolBar
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib
