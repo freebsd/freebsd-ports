@@ -23,25 +23,6 @@ CONFLICTS=	p5-Compress-Zlib-2* p5-IO-Compress-Base-2* p5-IO-Compress-Zlib-2* p5-
 
 USE_PERL5=	configure
 USES=		perl5
-NO_STAGE=	yes
-
-MAN3=		Compress::Zlib.3 \
-		File::GlobMapper.3 \
-		IO::Compress::Base.3 \
-		IO::Compress::Bzip2.3 \
-		IO::Compress::Deflate.3 \
-		IO::Compress::FAQ.3 \
-		IO::Compress::Gzip.3 \
-		IO::Compress::RawDeflate.3 \
-		IO::Compress::Zip.3 \
-		IO::Uncompress::AnyInflate.3 \
-		IO::Uncompress::AnyUncompress.3 \
-		IO::Uncompress::Base.3 \
-		IO::Uncompress::Bunzip2.3 \
-		IO::Uncompress::Gunzip.3 \
-		IO::Uncompress::Inflate.3 \
-		IO::Uncompress::RawInflate.3 \
-		IO::Uncompress::Unzip.3
 
 .include <bsd.port.pre.mk>
 
