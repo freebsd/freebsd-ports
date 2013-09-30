@@ -17,6 +17,7 @@ USE_GNOME=	gtk20
 USE_LUA=	5.1
 USE_SDL=	sdl image ttf mixer
 USES=		pkgconfig iconv
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 CONFIGURE_SCRIPT=	configure.sh
 CONFIGURE_ENV=	PREFIX="${PREFIX}"
