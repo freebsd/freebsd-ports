@@ -5,4 +5,4 @@ object-proxying, a technique that employs python's dynamic nature,
 to overcome the physical boundaries between processes and computers,
 so that remote objects can be manipulated as if they were local.
 
-WWW:	http://rpyc.wikidot.com/
+WWW: http://rpyc.readthedocs.org/
