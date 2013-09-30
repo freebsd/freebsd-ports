@@ -31,11 +31,6 @@ CONFLICTS_INSTALL=	p5-IO-Detect-[0-9]*
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		IO::Detect.3 \
-		Scalar::Does.3 \
-		Scalar::Does::MooseTypes.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501601

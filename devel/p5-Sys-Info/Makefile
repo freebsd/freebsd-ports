@@ -20,7 +20,4 @@ TEST_DEPENDS=	p5-Sys-Info-Driver-BSD>=0.20:${PORTSDIR}/devel/p5-Test-Sys-Info \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Sys::Info.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

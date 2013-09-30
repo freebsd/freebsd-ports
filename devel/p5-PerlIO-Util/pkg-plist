@@ -9,6 +9,14 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/Util/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/Util/Util.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/Util/Util.so
+%%PERL5_MAN3%%/PerlIO::Util.3.gz
+%%PERL5_MAN3%%/PerlIO::Util::JA.3.gz
+%%PERL5_MAN3%%/PerlIO::creat.3.gz
+%%PERL5_MAN3%%/PerlIO::dir.3.gz
+%%PERL5_MAN3%%/PerlIO::excl.3.gz
+%%PERL5_MAN3%%/PerlIO::flock.3.gz
+%%PERL5_MAN3%%/PerlIO::reverse.3.gz
+%%PERL5_MAN3%%/PerlIO::tee.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/Util
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/Util

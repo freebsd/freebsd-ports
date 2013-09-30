@@ -38,6 +38,45 @@
 %%SITE_PERL%%/Pithub/Users/Followers.pm
 %%SITE_PERL%%/Pithub/Users/Keys.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pithub/.packlist
+%%PERL5_MAN3%%/Pithub.3.gz
+%%PERL5_MAN3%%/Pithub::Base.3.gz
+%%PERL5_MAN3%%/Pithub::Events.3.gz
+%%PERL5_MAN3%%/Pithub::Gists.3.gz
+%%PERL5_MAN3%%/Pithub::Gists::Comments.3.gz
+%%PERL5_MAN3%%/Pithub::GitData.3.gz
+%%PERL5_MAN3%%/Pithub::GitData::Blobs.3.gz
+%%PERL5_MAN3%%/Pithub::GitData::Commits.3.gz
+%%PERL5_MAN3%%/Pithub::GitData::References.3.gz
+%%PERL5_MAN3%%/Pithub::GitData::Tags.3.gz
+%%PERL5_MAN3%%/Pithub::GitData::Trees.3.gz
+%%PERL5_MAN3%%/Pithub::Issues.3.gz
+%%PERL5_MAN3%%/Pithub::Issues::Assignees.3.gz
+%%PERL5_MAN3%%/Pithub::Issues::Comments.3.gz
+%%PERL5_MAN3%%/Pithub::Issues::Events.3.gz
+%%PERL5_MAN3%%/Pithub::Issues::Labels.3.gz
+%%PERL5_MAN3%%/Pithub::Issues::Milestones.3.gz
+%%PERL5_MAN3%%/Pithub::Orgs.3.gz
+%%PERL5_MAN3%%/Pithub::Orgs::Members.3.gz
+%%PERL5_MAN3%%/Pithub::Orgs::Teams.3.gz
+%%PERL5_MAN3%%/Pithub::PullRequests.3.gz
+%%PERL5_MAN3%%/Pithub::PullRequests::Comments.3.gz
+%%PERL5_MAN3%%/Pithub::Repos.3.gz
+%%PERL5_MAN3%%/Pithub::Repos::Collaborators.3.gz
+%%PERL5_MAN3%%/Pithub::Repos::Commits.3.gz
+%%PERL5_MAN3%%/Pithub::Repos::Contents.3.gz
+%%PERL5_MAN3%%/Pithub::Repos::Downloads.3.gz
+%%PERL5_MAN3%%/Pithub::Repos::Forks.3.gz
+%%PERL5_MAN3%%/Pithub::Repos::Hooks.3.gz
+%%PERL5_MAN3%%/Pithub::Repos::Keys.3.gz
+%%PERL5_MAN3%%/Pithub::Repos::Starring.3.gz
+%%PERL5_MAN3%%/Pithub::Repos::Stats.3.gz
+%%PERL5_MAN3%%/Pithub::Repos::Watching.3.gz
+%%PERL5_MAN3%%/Pithub::Result.3.gz
+%%PERL5_MAN3%%/Pithub::Search.3.gz
+%%PERL5_MAN3%%/Pithub::Users.3.gz
+%%PERL5_MAN3%%/Pithub::Users::Emails.3.gz
+%%PERL5_MAN3%%/Pithub::Users::Followers.3.gz
+%%PERL5_MAN3%%/Pithub::Users::Keys.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pithub
 @dirrmtry %%SITE_PERL%%/Pithub/Users
 @dirrmtry %%SITE_PERL%%/Pithub/Repos

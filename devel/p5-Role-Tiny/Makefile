@@ -24,10 +24,6 @@ TEST_DEPENDS=	p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Role::Tiny.3 \
-		Role::Tiny::With.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

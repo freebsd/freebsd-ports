@@ -34,30 +34,4 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Specio.3 \
-		Specio::Coercion.3 \
-		Specio::Constraint::AnyCan.3 \
-		Specio::Constraint::AnyDoes.3 \
-		Specio::Constraint::AnyIsa.3 \
-		Specio::Constraint::Enum.3 \
-		Specio::Constraint::ObjectCan.3 \
-		Specio::Constraint::ObjectDoes.3 \
-		Specio::Constraint::ObjectIsa.3 \
-		Specio::Constraint::Parameterizable.3 \
-		Specio::Constraint::Parameterized.3 \
-		Specio::Constraint::Role::CanType.3 \
-		Specio::Constraint::Role::DoesType.3 \
-		Specio::Constraint::Role::Interface.3 \
-		Specio::Constraint::Role::IsaType.3 \
-		Specio::Constraint::Simple.3 \
-		Specio::Declare.3 \
-		Specio::DeclaredAt.3 \
-		Specio::Exception.3 \
-		Specio::Exporter.3 \
-		Specio::Helpers.3 \
-		Specio::Library::Builtins.3 \
-		Specio::Registry.3 \
-		Specio::Role::Inlinable.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

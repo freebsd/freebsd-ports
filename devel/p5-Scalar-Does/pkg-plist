@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Scalar/Does.pm
 %%SITE_PERL%%/Scalar/Does/MooseTypes.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scalar/Does/.packlist
+%%PERL5_MAN3%%/IO::Detect.3.gz
+%%PERL5_MAN3%%/Scalar::Does.3.gz
+%%PERL5_MAN3%%/Scalar::Does::MooseTypes.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scalar/Does
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scalar
 @dirrm %%SITE_PERL%%/Scalar/Does
