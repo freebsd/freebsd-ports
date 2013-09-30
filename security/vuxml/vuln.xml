@@ -51,6 +51,50 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e1f99d59-81aa-4662-bf62-c1076f5016c8">
+    <topic>py-graphite-web -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py26-graphite-web</name>
+	<range><lt>0.9.11</lt></range>
+      </package>
+      <package>
+	<name>py27-graphite-web</name>
+	<range><lt>0.9.11</lt></range>
+      </package>
+      <package>
+	<name>py31-graphite-web</name>
+	<range><lt>0.9.11</lt></range>
+      </package>
+      <package>
+	<name>py32-graphite-web</name>
+	<range><lt>0.9.11</lt></range>
+      </package>
+      <package>
+	<name>py33-graphite-web</name>
+	<range><lt>0.9.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Graphite developers report:</p>
+	<blockquote cite="http://graphite.readthedocs.org/en/0.9.11/releases/0_9_11.html">
+	  <p>This release contains several security fixes for cross-site
+	     scripting (XSS) as well as a fix for a remote-execution exploit in
+	     graphite-web (CVE-2013-5903).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-5093</cvename>
+      <url>https://github.com/rapid7/metasploit-framework/pull/2260</url>
+    </references>
+    <dates>
+      <discovery>2013-08-21</discovery>
+      <entry>2013-09-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="05dc6efa-2370-11e3-95b7-00e0814cab4e">
     <topic>django -- denial-of-service via large passwords</topic>
     <affects>
