@@ -1,6 +1,8 @@
 @comment $FreeBSD$
 bin/gtypist
 bin/typefortune
+man/man1/gtypist.1.gz
+man/man1/typefortune.1.gz
 share/gtypist/c.typ
 share/gtypist/cs.typ
 share/gtypist/d.typ
