@@ -12,6 +12,10 @@ COMMENT=	Common interface for 3rd party file access control
 HAS_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 
+BROKEN=		does not compile on freebsd version > 8.x
+DEPRECATED=	Currently, the project has not an active development and maintainer
+EXPIRATION_DATE=	2013-12-30
+
 OPTIONS_DEFINE=	EXAMPLEC
 OPTIONS_DEFAULT=	EXAMPLEC
 EXAMPLEC_DESC=		Install C example programs
