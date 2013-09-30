@@ -21,26 +21,4 @@ TEST_DEPENDS=	p5-Class-XSAccessor>=0:${PORTSDIR}/devel/p5-Class-XSAccessor \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Mo.3 \
-		Mo::Design.3 \
-		Mo::Features.3 \
-		Mo::Golf.3 \
-		Mo::Hacking.3 \
-		Mo::Inline.3 \
-		Mo::Moose.3 \
-		Mo::Mouse.3 \
-		Mo::build.3 \
-		Mo::builder.3 \
-		Mo::chain.3 \
-		Mo::coerce.3 \
-		Mo::default.3 \
-		Mo::exports.3 \
-		Mo::import.3 \
-		Mo::importer.3 \
-		Mo::is.3 \
-		Mo::option.3 \
-		Mo::required.3 \
-		Mo::xs.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

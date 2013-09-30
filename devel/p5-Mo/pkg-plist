@@ -38,5 +38,25 @@ bin/mo-inline
 %%SITE_PERL%%/Mo/xs.pm
 %%SITE_PERL%%/Mo/xs.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mo/.packlist
+%%PERL5_MAN3%%/Mo.3.gz
+%%PERL5_MAN3%%/Mo::Design.3.gz
+%%PERL5_MAN3%%/Mo::Features.3.gz
+%%PERL5_MAN3%%/Mo::Golf.3.gz
+%%PERL5_MAN3%%/Mo::Hacking.3.gz
+%%PERL5_MAN3%%/Mo::Inline.3.gz
+%%PERL5_MAN3%%/Mo::Moose.3.gz
+%%PERL5_MAN3%%/Mo::Mouse.3.gz
+%%PERL5_MAN3%%/Mo::build.3.gz
+%%PERL5_MAN3%%/Mo::builder.3.gz
+%%PERL5_MAN3%%/Mo::chain.3.gz
+%%PERL5_MAN3%%/Mo::coerce.3.gz
+%%PERL5_MAN3%%/Mo::default.3.gz
+%%PERL5_MAN3%%/Mo::exports.3.gz
+%%PERL5_MAN3%%/Mo::import.3.gz
+%%PERL5_MAN3%%/Mo::importer.3.gz
+%%PERL5_MAN3%%/Mo::is.3.gz
+%%PERL5_MAN3%%/Mo::option.3.gz
+%%PERL5_MAN3%%/Mo::required.3.gz
+%%PERL5_MAN3%%/Mo::xs.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mo
 @dirrm %%SITE_PERL%%/Mo

@@ -17,8 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	configure
 USES=		perl5
 
-MAN1=		checkdeps.1
-MAN3=		Module::CheckDeps.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

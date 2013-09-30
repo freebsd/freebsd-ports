@@ -8,6 +8,15 @@ bin/release
 %%SITE_PERL%%/Module/Release/SVN.pm
 %%SITE_PERL%%/Module/Release/SourceForge.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Release/.packlist
+%%PERL5_MAN3%%/Module::Release.3.gz
+%%PERL5_MAN3%%/Module::Release::FTP.3.gz
+%%PERL5_MAN3%%/Module::Release::Kwalitee.3.gz
+%%PERL5_MAN3%%/Module::Release::MANIFEST.3.gz
+%%PERL5_MAN3%%/Module::Release::PAUSE.3.gz
+%%PERL5_MAN3%%/Module::Release::Prereq.3.gz
+%%PERL5_MAN3%%/Module::Release::SVN.3.gz
+%%PERL5_MAN3%%/Module::Release::SourceForge.3.gz
+man/man1/release.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Release
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
 @dirrmtry %%SITE_PERL%%/Module/Release

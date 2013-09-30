@@ -1,6 +1,8 @@
 bin/checkdeps
 %%SITE_PERL%%/Module/CheckDeps.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/CheckDeps/.packlist
+%%PERL5_MAN3%%/Module::CheckDeps.3.gz
+man/man1/checkdeps.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/CheckDeps
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
 @dirrmtry %%SITE_PERL%%/Module

@@ -26,8 +26,4 @@ TEST_DEPENDS=	p5-Dir-Self>=0:${PORTSDIR}/devel/p5-Dir-Self \
 USE_PERL5=	5.14+ configure
 USES=		perl5
 
-MAN3=		Function::Parameters.3 \
-		Function::Parameters::Info.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
