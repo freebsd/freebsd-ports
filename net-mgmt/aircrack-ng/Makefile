@@ -3,10 +3,11 @@
 
 PORTNAME=	aircrack-ng
 DISTVERSION=	1.2b1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt security
-DISTNAME=	${PORTNAME}-${DISTVERSION:C/b/-beta/}
 MASTER_SITES=	http://download.aircrack-ng.org/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
+DISTNAME=	${PORTNAME}-${DISTVERSION:C/b/-beta/}
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	An 802.11 WEP and WPA-PSK keys cracking program
@@ -38,6 +39,7 @@ BROKEN=		Does not compile on sparc64-9
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|-I/usr/local|-I${LOCALBASE}|' \
+		-e 's|share/\(man/man[1-9]\)|\1|' \
 		-e 's|^CC[[:blank:]]*|&?|' \
 		-e 's|^AR[[:blank:]]*|&?|' \
 			${WRKSRC}/common.mak
