@@ -28,10 +28,4 @@ TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Parse::Method::Signatures.3 \
-		Parse::Method::Signatures::Param.3 \
-		Parse::Method::Signatures::Sig.3 \
-		Parse::Method::Signatures::TypeConstraint.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

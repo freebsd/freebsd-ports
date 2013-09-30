@@ -22,9 +22,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Sub::Exporter::Lexical.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

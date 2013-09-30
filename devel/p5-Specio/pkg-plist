@@ -23,6 +23,30 @@
 %%SITE_PERL%%/Specio/Registry.pm
 %%SITE_PERL%%/Specio/Role/Inlinable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Specio/.packlist
+%%PERL5_MAN3%%/Specio.3.gz
+%%PERL5_MAN3%%/Specio::Coercion.3.gz
+%%PERL5_MAN3%%/Specio::Constraint::AnyCan.3.gz
+%%PERL5_MAN3%%/Specio::Constraint::AnyDoes.3.gz
+%%PERL5_MAN3%%/Specio::Constraint::AnyIsa.3.gz
+%%PERL5_MAN3%%/Specio::Constraint::Enum.3.gz
+%%PERL5_MAN3%%/Specio::Constraint::ObjectCan.3.gz
+%%PERL5_MAN3%%/Specio::Constraint::ObjectDoes.3.gz
+%%PERL5_MAN3%%/Specio::Constraint::ObjectIsa.3.gz
+%%PERL5_MAN3%%/Specio::Constraint::Parameterizable.3.gz
+%%PERL5_MAN3%%/Specio::Constraint::Parameterized.3.gz
+%%PERL5_MAN3%%/Specio::Constraint::Role::CanType.3.gz
+%%PERL5_MAN3%%/Specio::Constraint::Role::DoesType.3.gz
+%%PERL5_MAN3%%/Specio::Constraint::Role::Interface.3.gz
+%%PERL5_MAN3%%/Specio::Constraint::Role::IsaType.3.gz
+%%PERL5_MAN3%%/Specio::Constraint::Simple.3.gz
+%%PERL5_MAN3%%/Specio::Declare.3.gz
+%%PERL5_MAN3%%/Specio::DeclaredAt.3.gz
+%%PERL5_MAN3%%/Specio::Exception.3.gz
+%%PERL5_MAN3%%/Specio::Exporter.3.gz
+%%PERL5_MAN3%%/Specio::Helpers.3.gz
+%%PERL5_MAN3%%/Specio::Library::Builtins.3.gz
+%%PERL5_MAN3%%/Specio::Registry.3.gz
+%%PERL5_MAN3%%/Specio::Role::Inlinable.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Specio
 @dirrm %%SITE_PERL%%/Specio/Role
 @dirrm %%SITE_PERL%%/Specio/Library

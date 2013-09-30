@@ -14,7 +14,4 @@ COMMENT=	Term::ANSIColor clone with screen mode support
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Term::ANSIScreen.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

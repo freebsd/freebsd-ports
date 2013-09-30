@@ -14,14 +14,4 @@ COMMENT=	Selection of general PerlIO utilities
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		PerlIO::Util.3 \
-		PerlIO::Util::JA.3 \
-		PerlIO::creat.3 \
-		PerlIO::dir.3 \
-		PerlIO::excl.3 \
-		PerlIO::flock.3 \
-		PerlIO::reverse.3 \
-		PerlIO::tee.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

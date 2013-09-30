@@ -22,10 +22,4 @@ TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Sys::Info::Driver::BSD.3 \
-		Sys::Info::Driver::BSD::Device.3 \
-		Sys::Info::Driver::BSD::Device::CPU.3 \
-		Sys::Info::Driver::BSD::OS.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

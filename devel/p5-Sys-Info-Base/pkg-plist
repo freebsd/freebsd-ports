@@ -5,6 +5,12 @@
 %%SITE_PERL%%/Sys/Info/Driver.pm
 %%SITE_PERL%%/Sys/Info/OS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Info/Base/.packlist
+%%PERL5_MAN3%%/Sys::Info::Base.3.gz
+%%PERL5_MAN3%%/Sys::Info::Constants.3.gz
+%%PERL5_MAN3%%/Sys::Info::Device.3.gz
+%%PERL5_MAN3%%/Sys::Info::Device::CPU.3.gz
+%%PERL5_MAN3%%/Sys::Info::Driver.3.gz
+%%PERL5_MAN3%%/Sys::Info::OS.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Info/Base
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Info
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys

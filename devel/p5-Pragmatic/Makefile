@@ -14,7 +14,4 @@ COMMENT=	Adds pragmata to Exporter
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Pragmatic.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
