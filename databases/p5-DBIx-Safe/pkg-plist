@@ -1,5 +1,6 @@
 %%SITE_PERL%%/DBIx/Safe.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Safe/.packlist
+%%PERL5_MAN3%%/DBIx::Safe.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Safe
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
 @dirrmtry %%SITE_PERL%%/DBIx
