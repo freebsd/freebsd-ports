@@ -3,6 +3,7 @@
 
 PORTNAME=	interbase
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://www.rowlandresearch.com/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
