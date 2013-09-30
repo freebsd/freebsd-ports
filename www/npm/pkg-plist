@@ -448,7 +448,9 @@ lib/node_modules/npm/node_modules/graceful-fs/polyfills.js
 lib/node_modules/npm/node_modules/graceful-fs/test/open.js
 lib/node_modules/npm/node_modules/inherits/LICENSE
 lib/node_modules/npm/node_modules/inherits/README.md
+lib/node_modules/npm/node_modules/inherits/inherits_browser.js
 lib/node_modules/npm/node_modules/inherits/inherits.js
+lib/node_modules/npm/node_modules/inherits/test.js
 lib/node_modules/npm/node_modules/inherits/package.json
 lib/node_modules/npm/node_modules/ini/LICENSE
 lib/node_modules/npm/node_modules/ini/README.md
@@ -492,9 +494,9 @@ lib/node_modules/npm/node_modules/lru-cache/.npmignore
 lib/node_modules/npm/node_modules/lru-cache/AUTHORS
 lib/node_modules/npm/node_modules/lru-cache/LICENSE
 lib/node_modules/npm/node_modules/lru-cache/README.md
+lib/node_modules/npm/node_modules/lru-cache/bench.js
 lib/node_modules/npm/node_modules/lru-cache/lib/lru-cache.js
 lib/node_modules/npm/node_modules/lru-cache/package.json
-lib/node_modules/npm/node_modules/lru-cache/s.js
 lib/node_modules/npm/node_modules/lru-cache/test/basic.js
 lib/node_modules/npm/node_modules/lru-cache/test/foreach.js
 lib/node_modules/npm/node_modules/lru-cache/test/memory-leak.js
@@ -731,13 +733,6 @@ lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-packa
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/lib/fixer.js
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/lib/normalize.js
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/lib/typos.json
-lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/node_modules/github-url-from-git/.npmignore
-lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/node_modules/github-url-from-git/History.md
-lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/node_modules/github-url-from-git/Makefile
-lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/node_modules/github-url-from-git/Readme.md
-lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/node_modules/github-url-from-git/index.js
-lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/node_modules/github-url-from-git/package.json
-lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/node_modules/github-url-from-git/test.js
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/package.json
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/test/basic.js
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/test/consistency.js
@@ -782,6 +777,9 @@ lib/node_modules/npm/node_modules/request/.npmignore
 lib/node_modules/npm/node_modules/request/LICENSE
 lib/node_modules/npm/node_modules/request/README.md
 lib/node_modules/npm/node_modules/request/index.js
+lib/node_modules/npm/node_modules/request/lib/copy.js
+lib/node_modules/npm/node_modules/request/lib/debug.js
+lib/node_modules/npm/node_modules/request/lib/getSafe.js
 lib/node_modules/npm/node_modules/request/node_modules/aws-sign/LICENSE
 lib/node_modules/npm/node_modules/request/node_modules/aws-sign/README.md
 lib/node_modules/npm/node_modules/request/node_modules/aws-sign/index.js
@@ -997,6 +995,7 @@ lib/node_modules/npm/node_modules/request/node_modules/node-uuid/benchmark/bench
 lib/node_modules/npm/node_modules/request/node_modules/node-uuid/benchmark/bench.sh
 lib/node_modules/npm/node_modules/request/node_modules/node-uuid/benchmark/benchmark-native.c
 lib/node_modules/npm/node_modules/request/node_modules/node-uuid/benchmark/benchmark.js
+lib/node_modules/npm/node_modules/request/node_modules/node-uuid/component.json
 lib/node_modules/npm/node_modules/request/node_modules/node-uuid/package.json
 lib/node_modules/npm/node_modules/request/node_modules/node-uuid/test/compare_v1.js
 lib/node_modules/npm/node_modules/request/node_modules/node-uuid/test/test.html
@@ -1017,6 +1016,7 @@ lib/node_modules/npm/node_modules/request/node_modules/tunnel-agent/README.md
 lib/node_modules/npm/node_modules/request/node_modules/tunnel-agent/index.js
 lib/node_modules/npm/node_modules/request/node_modules/tunnel-agent/package.json
 lib/node_modules/npm/node_modules/request/package.json
+lib/node_modules/npm/node_modules/request/request.js
 lib/node_modules/npm/node_modules/request/tests/googledoodle.jpg
 lib/node_modules/npm/node_modules/request/tests/run.js
 lib/node_modules/npm/node_modules/request/tests/server.js
@@ -1051,6 +1051,7 @@ lib/node_modules/npm/node_modules/request/tests/test-http-signature.js
 lib/node_modules/npm/node_modules/request/tests/test-httpModule.js
 lib/node_modules/npm/node_modules/request/tests/test-https-strict.js
 lib/node_modules/npm/node_modules/request/tests/test-https.js
+lib/node_modules/npm/node_modules/request/tests/test-isUrl.js
 lib/node_modules/npm/node_modules/request/tests/test-localAddress.js
 lib/node_modules/npm/node_modules/request/tests/test-oauth.js
 lib/node_modules/npm/node_modules/request/tests/test-onelineproxy.js
@@ -1117,6 +1118,7 @@ lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/duplex.js
 lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/examples/CAPSLOCKTYPER.JS
 lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/examples/typer-fsr.js
 lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/examples/typer.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/float.patch
 lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/fs.js
 lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/lib/_stream_duplex.js
 lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/lib/_stream_passthrough.js
@@ -1289,6 +1291,9 @@ lib/node_modules/npm/test/tap/ignore-shrinkwrap.js
 lib/node_modules/npm/test/tap/ignore-shrinkwrap/npm-shrinkwrap.json
 lib/node_modules/npm/test/tap/ignore-shrinkwrap/package.json
 lib/node_modules/npm/test/tap/noargs-install-config-save.js
+lib/node_modules/npm/test/tap/outdated.js
+lib/node_modules/npm/test/tap/outdated/package.json
+lib/node_modules/npm/test/tap/outdated/index.js
 lib/node_modules/npm/test/tap/package-with-peer-dep/package.json
 lib/node_modules/npm/test/tap/peer-deps-invalid.js
 lib/node_modules/npm/test/tap/peer-deps-invalid/package.json
@@ -1299,6 +1304,7 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/test/tap/peer-deps-without-package-json
 @dirrm lib/node_modules/npm/test/tap/peer-deps-invalid
 @dirrm lib/node_modules/npm/test/tap/package-with-peer-dep
+@dirrm lib/node_modules/npm/test/tap/outdated
 @dirrm lib/node_modules/npm/test/tap/ignore-shrinkwrap
 @dirrm lib/node_modules/npm/test/tap/fixtures
 @dirrm lib/node_modules/npm/test/tap/false_name
@@ -1444,6 +1450,7 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/cookie-jar
 @dirrm lib/node_modules/npm/node_modules/request/node_modules/aws-sign
 @dirrm lib/node_modules/npm/node_modules/request/node_modules
+@dirrm lib/node_modules/npm/node_modules/request/lib
 @dirrm lib/node_modules/npm/node_modules/request
 @dirrm lib/node_modules/npm/node_modules/read/test
 @dirrm lib/node_modules/npm/node_modules/read/node_modules/mute-stream/test
@@ -1455,8 +1462,6 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/node_modules/read-package-json/test
 @dirrm lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/test/fixtures
 @dirrm lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/test
-@dirrm lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/node_modules/github-url-from-git
-@dirrm lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/node_modules
 @dirrm lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/lib
 @dirrm lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data
 @dirrm lib/node_modules/npm/node_modules/read-package-json/node_modules
