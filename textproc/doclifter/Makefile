@@ -3,6 +3,7 @@
 
 PORTNAME=	doclifter
 PORTVERSION=	2.13
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.catb.org/~esr/doclifter/
 
@@ -16,16 +17,16 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/doclifter \
 		bin/manlifter \
-		doclifter.1.gz \
-		manlifter.1.gz
+		man/man1/doclifter.1.gz \
+		man/man1/manlifter.1.gz
 
 post-patch:
 	${REINPLACE_CMD} '1s/python/python2/' ${WRKSRC}/doclifter
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/doclifter ${STAGE}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/manlifter ${STAGE}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doclifter.1 ${STAGE}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/manlifter.1 ${STAGE}${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/doclifter ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/manlifter ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doclifter.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/manlifter.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
