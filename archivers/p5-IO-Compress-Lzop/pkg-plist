@@ -4,5 +4,7 @@
 %%SITE_PERL%%/IO/Uncompress/Adapter/LZO.pm
 %%SITE_PERL%%/IO/Uncompress/UnLzop.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Compress/Lzop/.packlist
+%%PERL5_MAN3%%/IO::Compress::Lzop.3.gz
+%%PERL5_MAN3%%/IO::Uncompress::UnLzop.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Compress/Lzop
 @dirrm %%SITE_PERL%%/IO/Compress/Lzop
