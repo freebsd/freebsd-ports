@@ -5,6 +5,12 @@
 %%SITE_PERL%%/Parse/HTTP/UserAgent/Base/Parsers.pm
 %%SITE_PERL%%/Parse/HTTP/UserAgent/Constants.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/HTTP/UserAgent/.packlist
+%%PERL5_MAN3%%/Parse::HTTP::UserAgent.3.gz
+%%PERL5_MAN3%%/Parse::HTTP::UserAgent::Base::Accessors.3.gz
+%%PERL5_MAN3%%/Parse::HTTP::UserAgent::Base::Dumper.3.gz
+%%PERL5_MAN3%%/Parse::HTTP::UserAgent::Base::IS.3.gz
+%%PERL5_MAN3%%/Parse::HTTP::UserAgent::Base::Parsers.3.gz
+%%PERL5_MAN3%%/Parse::HTTP::UserAgent::Constants.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/HTTP/UserAgent
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/HTTP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse

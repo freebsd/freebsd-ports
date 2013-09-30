@@ -19,6 +19,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ebay-revise-item.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ebay-search.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ebay-validate-test-user.pl
+%%PERL5_MAN3%%/Net::eBay.3.gz
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/eBay
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

@@ -19,10 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		Protocol::SocketIO.3 \
-		Protocol::SocketIO::Handshake.3 \
-		Protocol::SocketIO::Message.3 \
-		Protocol::SocketIO::Path.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

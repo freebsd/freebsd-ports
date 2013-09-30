@@ -2,6 +2,9 @@
 %%SITE_PERL%%/HTML/Parser/Simple/Attributes.pm
 %%SITE_PERL%%/HTML/Parser/Simple/Reporter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Parser/Simple/.packlist
+%%PERL5_MAN3%%/HTML::Parser::Simple.3.gz
+%%PERL5_MAN3%%/HTML::Parser::Simple::Attributes.3.gz
+%%PERL5_MAN3%%/HTML::Parser::Simple::Reporter.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Parser/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Parser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML

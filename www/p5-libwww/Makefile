@@ -32,26 +32,6 @@ CONFIGURE_ARGS=	--aliases
 USE_PERL5=	configure
 USES=		perl5
 
-MAN1=		GET.1 \
-		HEAD.1 \
-		POST.1 \
-		lwp-download.1 \
-		lwp-mirror.1 \
-		lwp-request.1 \
-		lwp-dump.1
-MAN3=		LWP.3 \
-		LWP::Authen::Ntlm.3 \
-		LWP::ConnCache.3 \
-		LWP::Debug.3 \
-		LWP::MemberMixin.3 \
-		LWP::Protocol.3 \
-		LWP::RobotUA.3 \
-		LWP::Simple.3 \
-		LWP::UserAgent.3 \
-		lwpcook.3 \
-		lwptut.3
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHTTPS}

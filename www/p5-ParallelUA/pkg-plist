@@ -10,6 +10,15 @@
 %%SITE_PERL%%/LWP/ParallelUA.pm
 %%SITE_PERL%%/LWP/RobotPUA.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Parallel/.packlist
+%%PERL5_MAN3%%/Bundle::ParallelUA.3.gz
+%%PERL5_MAN3%%/LWP::Parallel.3.gz
+%%PERL5_MAN3%%/LWP::Parallel::Protocol.3.gz
+%%PERL5_MAN3%%/LWP::Parallel::Protocol::ftp.3.gz
+%%PERL5_MAN3%%/LWP::Parallel::Protocol::http.3.gz
+%%PERL5_MAN3%%/LWP::Parallel::RobotUA.3.gz
+%%PERL5_MAN3%%/LWP::Parallel::UserAgent.3.gz
+%%PERL5_MAN3%%/LWP::ParallelUA.3.gz
+%%PERL5_MAN3%%/LWP::RobotPUA.3.gz
 @dirrm %%SITE_PERL%%/LWP/Parallel/Protocol
 @dirrm %%SITE_PERL%%/LWP/Parallel
 @dirrmtry %%SITE_PERL%%/LWP

@@ -26,24 +26,4 @@ TEST_DEPENDS=	p5-Plack>=0:${PORTSDIR}/www/p5-Plack \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		PocketIO.3 \
-		PocketIO::Broadcast.3 \
-		PocketIO::Connection.3 \
-		PocketIO::Handle.3 \
-		PocketIO::Message.3 \
-		PocketIO::Pool.3 \
-		PocketIO::Pool::Redis.3 \
-		PocketIO::Resource.3 \
-		PocketIO::Socket.3 \
-		PocketIO::Sockets.3 \
-		PocketIO::Test.3 \
-		PocketIO::Transport::Base.3 \
-		PocketIO::Transport::BasePolling.3 \
-		PocketIO::Transport::Htmlfile.3 \
-		PocketIO::Transport::JSONPPolling.3 \
-		PocketIO::Transport::WebSocket.3 \
-		PocketIO::Transport::XHRMultipart.3 \
-		PocketIO::Transport::XHRPolling.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
