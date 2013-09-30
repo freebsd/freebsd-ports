@@ -1,0 +1,11 @@
+--- py-compile.orig	2013-09-30 22:50:15.000000000 +0200
++++ py-compile	2013-09-30 22:50:54.000000000 +0200
+@@ -29,7 +29,7 @@
+ # <automake-patches@gnu.org>.
+ 
+ if [ -z "$PYTHON" ]; then
+-  PYTHON=python
++  PYTHON=python2
+ fi
+ 
+ basedir=
