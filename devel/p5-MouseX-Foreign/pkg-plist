@@ -7,6 +7,11 @@
 %%SITE_PERL%%/MouseX/NonMoose/Meta/Role/Method/Constructor.pm
 %%SITE_PERL%%/MouseX/NonMoose/Meta/Role/Method/Destructor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/Foreign/.packlist
+%%PERL5_MAN3%%/MouseX::Foreign.3.gz
+%%PERL5_MAN3%%/MouseX::Foreign::Meta::Role::Class.3.gz
+%%PERL5_MAN3%%/MouseX::Foreign::Meta::Role::Method::Constructor.3.gz
+%%PERL5_MAN3%%/MouseX::Foreign::Meta::Role::Method::Destructor.3.gz
+%%PERL5_MAN3%%/MouseX::NonMoose.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/Foreign
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX
 @dirrm %%SITE_PERL%%/MouseX/NonMoose/Meta/Role/Method

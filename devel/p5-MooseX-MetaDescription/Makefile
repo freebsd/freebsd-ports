@@ -20,11 +20,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		MooseX::MetaDescription.3 \
-		MooseX::MetaDescription::Description.3 \
-		MooseX::MetaDescription::Meta::Attribute.3 \
-		MooseX::MetaDescription::Meta::Class.3 \
-		MooseX::MetaDescription::Meta::Trait.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

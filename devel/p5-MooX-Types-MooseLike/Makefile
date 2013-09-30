@@ -22,10 +22,6 @@ TEST_DEPENDS=	p5-Moo>=0.091010:${PORTSDIR}/devel/p5-Moo \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		MooX::Types::MooseLike.3 \
-		MooX::Types::MooseLike::Base.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

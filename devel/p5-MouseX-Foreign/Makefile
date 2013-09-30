@@ -19,11 +19,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		MouseX::Foreign.3 \
-		MouseX::Foreign::Meta::Role::Class.3 \
-		MouseX::Foreign::Meta::Role::Method::Constructor.3 \
-		MouseX::Foreign::Meta::Role::Method::Destructor.3 \
-		MouseX::NonMoose.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

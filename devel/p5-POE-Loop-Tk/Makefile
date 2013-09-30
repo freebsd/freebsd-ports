@@ -18,11 +18,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		POE::Loop::Tk.3 \
-		POE::Loop::TkActiveState.3 \
-		POE::Loop::TkCommon.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/POE::Test::Loops/d' ${WRKSRC}/Makefile.PL
 

@@ -2,6 +2,9 @@
 %%SITE_PERL%%/POE/Loop/TkActiveState.pm
 %%SITE_PERL%%/POE/Loop/TkCommon.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Loop/Tk/.packlist
+%%PERL5_MAN3%%/POE::Loop::Tk.3.gz
+%%PERL5_MAN3%%/POE::Loop::TkActiveState.3.gz
+%%PERL5_MAN3%%/POE::Loop::TkCommon.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Loop/Tk
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Loop
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
