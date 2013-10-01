@@ -1,3 +1,60 @@
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/.htaccess
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.10.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.11.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.12.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.13.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.14.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.15.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.16.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.7.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.8.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.9.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-1.0.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-1.1.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-ancient.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/compability.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap.de-screen.css
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/default.css
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/hippie.css
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/print.css
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/terminal.css
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/demo.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/docs.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/download.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/download/.htaccess
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/download/redirect-to-download.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/features.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/feedback.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/files.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/img/ldif_template_select_list.jpg
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/install.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/install_debian.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/install_opensuse.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/install_rhel.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/install_windows.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/news.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/related.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/roadmap.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/robots.txt
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/security.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/sidebars/mozilla-add-sidebar.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/sidebars/mozilla-sidebar.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/ssi/changes_navigation.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/ssi/footer.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/ssi/head.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/ssi/navigation.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/support.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/usability.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/usage.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldap.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_fastcgi.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_hosts.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_misc.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_monitor.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_standalone.html
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/CHANGES
 %%DATADIR%%/INSTALL
@@ -317,95 +374,36 @@
 %%DATADIR%%/sbin/compile.pyc
 %%DATADIR%%/sbin/web2ldap.py
 %%DATADIR%%/sbin/web2ldap.pyc
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/.htaccess
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.10.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.11.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.12.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.13.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.14.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.15.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.16.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.7.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.8.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.9.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-1.0.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-1.1.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-ancient.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/compability.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap.de-screen.css
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/default.css
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/hippie.css
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/print.css
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/terminal.css
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/demo.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/docs.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/download.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/download/.htaccess
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/download/redirect-to-download.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/features.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/feedback.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/files.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/img/ldif_template_select_list.jpg
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/install.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/install_debian.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/install_opensuse.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/install_rhel.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/install_windows.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/news.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/related.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/roadmap.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/robots.txt
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/security.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/sidebars/mozilla-add-sidebar.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/sidebars/mozilla-sidebar.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/ssi/changes_navigation.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/ssi/footer.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/ssi/head.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/ssi/navigation.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/support.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/usability.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/usage.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldap.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_fastcgi.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_hosts.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_misc.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_monitor.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_standalone.html
-@comment directories in revers order
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/ssi
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/sidebars
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/img
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/download
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/css/web2ldap
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/css
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry /var/log/web2ldap
-@dirrm %%DATADIR%%/var/run
-@dirrm %%DATADIR%%/var/log
-@dirrm %%DATADIR%%/var
-@dirrm %%DATADIR%%/sbin
-@dirrm %%DATADIR%%/pylib/w2lapp/schema/plugins
-@dirrm %%DATADIR%%/pylib/w2lapp/schema
-@dirrm %%DATADIR%%/pylib/w2lapp
-@dirrm %%DATADIR%%/pylib/pisces
-@dirrm %%DATADIR%%/pylib/mspki
-@dirrm %%DATADIR%%/pylib/ldaputil
-@dirrm %%DATADIR%%/pylib
-@dirrm %%DATADIR%%/fcgi
-@dirrm %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins
-@dirrm %%DATADIR%%/etc/web2ldap/web2ldapcnf
-@dirrm %%DATADIR%%/etc/web2ldap/templates
-@dirrm %%DATADIR%%/etc/web2ldap/ssl/crt
-@dirrm %%DATADIR%%/etc/web2ldap/ssl
-@dirrm %%DATADIR%%/etc/web2ldap/properties
-@dirrm %%DATADIR%%/etc/web2ldap
-@dirrm %%DATADIR%%/etc/systemd
-@dirrm %%DATADIR%%/etc/init.d
-@dirrm %%DATADIR%%/etc/httpd
-@dirrm %%DATADIR%%/etc
-@dirrm %%DATADIR%%/cgi-bin
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/var/run
+@dirrmtry %%DATADIR%%/var/log
+@dirrmtry %%DATADIR%%/var
+@dirrmtry %%DATADIR%%/sbin
+@dirrmtry %%DATADIR%%/pylib/w2lapp/schema/plugins
+@dirrmtry %%DATADIR%%/pylib/w2lapp/schema
+@dirrmtry %%DATADIR%%/pylib/w2lapp
+@dirrmtry %%DATADIR%%/pylib/pisces
+@dirrmtry %%DATADIR%%/pylib/mspki
+@dirrmtry %%DATADIR%%/pylib/ldaputil
+@dirrmtry %%DATADIR%%/pylib
+@dirrmtry %%DATADIR%%/fcgi
+@dirrmtry %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins
+@dirrmtry %%DATADIR%%/etc/web2ldap/web2ldapcnf
+@dirrmtry %%DATADIR%%/etc/web2ldap/templates
+@dirrmtry %%DATADIR%%/etc/web2ldap/ssl/crt
+@dirrmtry %%DATADIR%%/etc/web2ldap/ssl
+@dirrmtry %%DATADIR%%/etc/web2ldap/properties
+@dirrmtry %%DATADIR%%/etc/web2ldap
+@dirrmtry %%DATADIR%%/etc/systemd
+@dirrmtry %%DATADIR%%/etc/init.d
+@dirrmtry %%DATADIR%%/etc/httpd
+@dirrmtry %%DATADIR%%/etc
+@dirrmtry %%DATADIR%%/cgi-bin
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/ssi
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/sidebars
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/img
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/download
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/css/web2ldap
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/css
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
