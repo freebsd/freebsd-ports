@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	phantomjs
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -20,12 +20,11 @@ USE_DOS2UNIX=	YES
 USE_QT4=	moc qmake gui webkit rcc
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 do-build:
-	cd ${WRKSRC} && ${SETENV} OSTYPE=freebsd MAKEFLAGS= bash -x build.sh --jobs 2 --confirm
+	cd ${WRKSRC} && ${SETENV} OSTYPE=freebsd MAKEFLAGS= bash -x build.sh --jobs ${MAKE_JOBS_NUMBER} --confirm
 
 do-install:
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} bin/phantomjs ${PREFIX}/bin/
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} bin/phantomjs ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.pre.mk>
 
