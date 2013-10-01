@@ -27,7 +27,6 @@ USE_PERL5=	run
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUNICODE}
@@ -58,9 +57,6 @@ CONFIGURE_ENV+=	LIBS="${BF_LIBS}" \
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip prefix=${PREFIX} mandir=${MANPREFIX}/man
 
-MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 bogotune.1 \
-		bf_copy.1 bf_compact.1 bf_tar.1
-
 post-patch:
 	${REINPLACE_CMD} -e 's|^#!.*perl|#! ${PERL}|' \
 		${WRKSRC}/src/tests/unsort.pl \
@@ -81,10 +77,10 @@ PLIST_SUB=	CONTRIB=""
 # 	cd ${WRKSRC}/src && make check SHELL=${SH}
 
 post-install::
-	@${MKDIR} ${DOCSDIR}/contrib
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/contrib
 .if ${PORT_OPTIONS:MDOCS}
 .for i in html programmer xml
-	@${MKDIR} ${DOCSDIR}/${i}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
 .for i in AUTHORS COPYING INSTALL NEWS README README.svn \
 	doc/README.validation TODO GETTING.STARTED \
@@ -92,27 +88,26 @@ post-install::
 	doc/integrating-with-postfix doc/integrating-with-qmail \
 	doc/bogofilter-tuning.HOWTO.html doc/bogofilter-SA-* \
 	doc/bogofilter-faq.html doc/bogofilter-faq-fr.html
-	  ${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	  ${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for i in README.randomtrain README.contrib
-	${INSTALL_DATA} ${WRKSRC}/contrib/${i} ${DOCSDIR}/contrib/${i}
+	${INSTALL_DATA} ${WRKSRC}/contrib/${i} ${STAGEDIR}${DOCSDIR}/contrib/${i}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/trio/AUTHORS ${DOCSDIR}/AUTHORS.trio
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKSRC}/doc/*.xml ${DOCSDIR}/xml
-	${INSTALL_DATA} ${WRKSRC}/doc/programmer/README.freebsd ${DOCSDIR}/programmer
+	${INSTALL_DATA} ${WRKSRC}/trio/AUTHORS ${STAGEDIR}${DOCSDIR}/AUTHORS.trio
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/*.xml ${STAGEDIR}${DOCSDIR}/xml
+	${INSTALL_DATA} ${WRKSRC}/doc/programmer/README.freebsd ${STAGEDIR}${DOCSDIR}/programmer
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/bogogrep ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/bogogrep ${STAGEDIR}${PREFIX}/bin/
 .for i in bfproxy.pl bogofilter-milter.pl bogo.R bogofilter-qfe.sh \
 		mime.get.rfc822.pl parmtest.sh printmaildir.pl \
 		bogominitrain.pl \
 		randomtrain.sh scramble.sh spamitarium.pl stripsearch.pl trainbogo.sh
-	  ${INSTALL_SCRIPT} ${WRKSRC}/contrib/${i} ${DOCSDIR}/contrib/${i}
+	  ${INSTALL_SCRIPT} ${WRKSRC}/contrib/${i} ${STAGEDIR}${DOCSDIR}/contrib/${i}
 .endfor
 .for i in dot-qmail-bogofilter-default \
 	mailfilter.example procmailrc.example vm-bogofilter.el
-	${INSTALL_DATA} ${WRKSRC}/contrib/${i} ${DOCSDIR}/contrib/${i}
+	${INSTALL_DATA} ${WRKSRC}/contrib/${i} ${STAGEDIR}${DOCSDIR}/contrib/${i}
 .endfor
-	${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

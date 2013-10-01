@@ -8,6 +8,14 @@ bin/bogotune
 bin/bogoutil
 bin/bogoupgrade
 etc/bogofilter.cf.example
+man/man1/bf_compact.1.gz
+man/man1/bf_copy.1.gz
+man/man1/bf_tar.1.gz
+man/man1/bogofilter.1.gz
+man/man1/bogolexer.1.gz
+man/man1/bogotune.1.gz
+man/man1/bogoupgrade.1.gz
+man/man1/bogoutil.1.gz
 %%CONTRIB%%%%DOCSDIR%%/contrib/bfproxy.pl
 %%CONTRIB%%%%DOCSDIR%%/contrib/bogo.R
 %%CONTRIB%%%%DOCSDIR%%/contrib/bogofilter-milter.pl
