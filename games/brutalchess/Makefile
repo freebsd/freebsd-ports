@@ -18,7 +18,7 @@ USE_XORG=		x11 xext xt xmu xi
 
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool
-
+USE_DOS2UNIX=		yes
 USE_GL=			yes
 USE_SDL=		sdl image
 
