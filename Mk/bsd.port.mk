@@ -4315,7 +4315,7 @@ _STAGE_SEQ+=	create-users-groups do-install post-install post-stage compress-man
 .endif
 .if defined(WITH_PKGNG)
 _INSTALL_DEP=	stage
-_INSTALL_SEQ=	install-message run-depends lib-depends
+_INSTALL_SEQ=	install-message run-depends lib-depends check-already-installed
 _INSTALL_SUSEQ=	fake-pkg security-check
 
 _PACKAGE_DEP=	stage
@@ -4327,7 +4327,7 @@ _PACKAGE_DEP=	stage
 _PACKAGE_SEQ=	package-message pre-package pre-package-script do-package post-package-script
 
 _INSTALL_DEP=	package
-_INSTALL_SEQ=	install-message run-depends lib-depends
+_INSTALL_SEQ=	install-message run-depends lib-depends check-already-installed
 _INSTALL_SUSEQ=	install-package security-check
 .endif
 
