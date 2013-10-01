@@ -36,6 +36,9 @@ bin/obfsproxy
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obfsproxy/common/serialize.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obfsproxy/common/serialize.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obfsproxy/common/serialize.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obfsproxy/common/transport_config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obfsproxy/common/transport_config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obfsproxy/common/transport_config.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obfsproxy/managed/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obfsproxy/managed/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obfsproxy/managed/__init__.pyo
