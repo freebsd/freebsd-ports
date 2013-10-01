@@ -2052,7 +2052,6 @@
     SUBDIR += varnish
     SUBDIR += varnish-libvmod-header
     SUBDIR += varnish-nagios
-    SUBDIR += varnish2
     SUBDIR += vdr-plugin-live
     SUBDIR += vdradmin-am
     SUBDIR += vee

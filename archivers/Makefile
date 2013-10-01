@@ -167,7 +167,6 @@
     SUBDIR += rpm2cpio
     SUBDIR += rpm4
     SUBDIR += rpm5
-    SUBDIR += ruby-bz2
     SUBDIR += ruby-lha
     SUBDIR += ruby-libarchive
     SUBDIR += ruby-zip
