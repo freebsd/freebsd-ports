@@ -1055,6 +1055,7 @@
     SUBDIR += xfrisk
     SUBDIR += xgalaga
     SUBDIR += xgalaga++
+    SUBDIR += xgalaga-sdl
     SUBDIR += xglk
     SUBDIR += xgospel
     SUBDIR += xhexagons
