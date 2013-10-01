@@ -177,13 +177,9 @@ do-install:
 post-install:
 	@${ECHO} "${PKGNAME} is now installed in ${PREFIX}/${COMPILERDIR}, to use it you have to put your license into your \$${INTEL_FLEXLM_LICENSE} (default: ${PREFIX}/${COMPILERDIR}/licenses) directory and add ${PREFIX}/${COMPILERDIR}/bin to your PATH." | fmt
 	@${ECHO}
-	@${ECHO} "On FreeBSD 5 with __FreeBSD_version >= 502108 icpc is set up to use the GNU libstdc++ from the base as STL by default." | fmt
+	@${ECHO} "WARNING: If you use icc while having linux_devtools installed, icc will use the wrong includes and therefore will generate non-working binaries!" | fmt
 	@${ECHO}
-	@${ECHO} "If you use icc on a Pentium 4 you may have to use 'options CPU_ENABLE_SSE' (depending on the OS version, if in doubt try if it works) in your kernel config (have a look at http://www.FreeBSD.org/handbook/ if you do not know how to do this), else icc will hang forever or crashes with an 'Illegal instruction'." | fmt
-	@${ECHO}
-	@${ECHO} "WARNING: If you use icc while having linux_devtools installed, icc will use the wrong includes and therefore will generate bogus (not working) binaries!" | fmt
-	@${ECHO}
-	@${ECHO} "If you encounter further problems with icc please consult the errata at http://support.intel.com/support/performancetools/c/C_Compiler_Errata.htm first." | fmt
+	@${ECHO} "If you encounter problems with icc please consult the errata at http://support.intel.com/support/performancetools/c/C_Compiler_Errata.htm first." | fmt
 	@${ECHO}
 	@${ECHO} "Call for benchmarks:"
 	@${ECHO} "Intel is interested to see some benchmark numbers which compare gcc with icc. If you have a CPU produced by Intel and are able to do benchmarks with either your own source or with one of our major ports (e.g. with a webserver, a mailserver, a database system, an important graphics suite/program or some important math tool, ...) please try to spend some time to do a benchmark and send me (${MAINTAINER}) the result. You should include your system specs (CPU: speed/model, RAM: amount/speed, used disks (if necessary), chipset/mainboard type, ...), the version of the used software (OS, gcc, icc, ...), non default tuning options (kernel, sysctl) and the used compiler switches. If you don't use some 'standard' benchmark (e.g. the official MySQL benchmark, or the performance test suite of your prefered scripting language), please include a description about the benchmark too." | fmt
