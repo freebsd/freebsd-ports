@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	IO-All
-PORTVERSION=	0.46
+PORTVERSION=	0.47
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,22 +16,10 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-File-ReadBackwards>=0:${PORTSDIR}/devel/p5-File-ReadBackwards \
 		p5-IO-String>=1.08:${PORTSDIR}/devel/p5-IO-String
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-File-MimeInfo>=0:${PORTSDIR}/devel/p5-File-MimeInfo \
+		p5-MLDBM>=0:${PORTSDIR}/databases/p5-MLDBM
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		IO::All.3 \
-		IO::All::DBM.3 \
-		IO::All::Dir.3 \
-		IO::All::File.3 \
-		IO::All::Filesys.3 \
-		IO::All::Link.3 \
-		IO::All::MLDBM.3 \
-		IO::All::Pipe.3 \
-		IO::All::STDIO.3 \
-		IO::All::Socket.3 \
-		IO::All::String.3 \
-		IO::All::Temp.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/All/.packlist
 %%SITE_PERL%%/IO/All.pm
 %%SITE_PERL%%/IO/All.pod
 %%SITE_PERL%%/IO/All/Base.pm
@@ -13,6 +12,19 @@
 %%SITE_PERL%%/IO/All/Socket.pm
 %%SITE_PERL%%/IO/All/String.pm
 %%SITE_PERL%%/IO/All/Temp.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/All/.packlist
+%%PERL5_MAN3%%/IO::All.3.gz
+%%PERL5_MAN3%%/IO::All::DBM.3.gz
+%%PERL5_MAN3%%/IO::All::Dir.3.gz
+%%PERL5_MAN3%%/IO::All::File.3.gz
+%%PERL5_MAN3%%/IO::All::Filesys.3.gz
+%%PERL5_MAN3%%/IO::All::Link.3.gz
+%%PERL5_MAN3%%/IO::All::MLDBM.3.gz
+%%PERL5_MAN3%%/IO::All::Pipe.3.gz
+%%PERL5_MAN3%%/IO::All::STDIO.3.gz
+%%PERL5_MAN3%%/IO::All::Socket.3.gz
+%%PERL5_MAN3%%/IO::All::String.3.gz
+%%PERL5_MAN3%%/IO::All::Temp.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/All
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
 @dirrm %%SITE_PERL%%/IO/All
