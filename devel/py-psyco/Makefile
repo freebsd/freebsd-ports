@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python Specializing Compiler
 
+DEPRECATED=	only bulds with lang/python26
+EXPIRATION_DATE=	2013-10-15
+
 ONLY_FOR_ARCHS=	i386
 
 USE_PYTHON=	2.5-2.6
