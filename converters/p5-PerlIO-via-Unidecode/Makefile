@@ -16,7 +16,4 @@ RUN_DEPENDS=	p5-Text-Unidecode>=0:${PORTSDIR}/converters/p5-Text-Unidecode
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		PerlIO::via::Unidecode.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
