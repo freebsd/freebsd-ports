@@ -13,8 +13,7 @@ COMMENT=	Tcl/Tk based manual browser
 RUN_DEPENDS=	glimpse:${PORTSDIR}/textproc/glimpse \
 		rman:${PORTSDIR}/textproc/rman
 
-USE_TK=		yes
-USE_GMAKE=	yes
+USES+=		gmake tk
 USE_DOS2UNIX=	yes
 MAKE_ARGS=	WISH="${WISH}" \
 		texinfodir="${PREFIX}/${INFO_PATH}" \
@@ -24,7 +23,6 @@ MAKE_ARGS=	WISH="${WISH}" \
 		manformat="{groff -Tlatin1 -te -mandoc}" \
 		manprint="{groff -mandoc -Tps -te -l}"
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -32,16 +30,16 @@ post-patch:
 		${WRKSRC}/contrib/tkmanclient
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/tkman ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/retkman ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/tkman ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/retkman ${STAGEDIR}${PREFIX}/bin
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/manual.html ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/manual.html ${STAGEDIR}${DOCSDIR}
 .endif
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/tkmanclient ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/etc/periodic/weekly
-	${INSTALL_SCRIPT} ${FILESDIR}/310.index_manpages ${PREFIX}/etc/periodic/weekly
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/tkmanclient ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/weekly
+	${INSTALL_SCRIPT} ${FILESDIR}/310.index_manpages ${STAGEDIR}${PREFIX}/etc/periodic/weekly
 
 .include <bsd.port.mk>
