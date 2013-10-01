@@ -103,10 +103,11 @@ do-install:
 	@${FIND} ${STAGEDIR}${EXAMPLESDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 	@${FIND} ${STAGEDIR}${EXAMPLESDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 
-post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/manual
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "INSTALL.txt README.txt" ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/documentation/manual/core/en && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/manual
+.endif
 
 .include <bsd.port.post.mk>
