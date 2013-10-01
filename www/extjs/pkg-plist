@@ -1,5 +1,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/app-1c3b39672c292d36e4a5ff05c1bb7035.js
-%%PORTDOCS%%%%DOCSDIR%%/data-c7b46cb25323d76425ecdce8528ce475.js
+%%PORTDOCS%%%%DOCSDIR%%/data-8515f44300484aa544afce1aa831969a.js
 %%PORTDOCS%%%%DOCSDIR%%/eg-iframe.html
 %%PORTDOCS%%%%DOCSDIR%%/extjs/ext-all.js
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/boundlist/trigger-arrow.png
@@ -406,6 +406,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/guides/charting/Scatter.jpg
 %%PORTDOCS%%%%DOCSDIR%%/guides/charting/Ticks.jpg
 %%PORTDOCS%%%%DOCSDIR%%/guides/charting/icon.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/charting/meg_notes_for_later
 %%PORTDOCS%%%%DOCSDIR%%/guides/charting/theme_src
 %%PORTDOCS%%%%DOCSDIR%%/guides/class_system/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/class_system/README.md
@@ -414,7 +415,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/guides/command/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/command/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/command/icon.png
-%%PORTDOCS%%%%DOCSDIR%%/guides/command/sencha-command-128.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/command_advanced/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/command_advanced/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/command_advanced/icon.png
@@ -942,7 +942,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.ViewDropZone.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.column.Action.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.column.Boolean.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.column.CheckColumn.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.column.Check.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.column.Column.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.column.Date.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.column.Number.js
@@ -1101,6 +1101,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Inflector.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.KeyMap.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.KeyNav.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.LocalStorage.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.LruCache.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Memento.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.MixedCollection.js
@@ -1289,6 +1290,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Auto.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Auto2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Axis.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Axis2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Bar.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Bar.scss.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Bar.scss2.html
@@ -1341,10 +1343,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/ButtonGroup.scss.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ButtonGroup.scss2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ButtonGroup.scss3.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Button_large.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Button_medium.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Button_small.scss.html
 %%PORTDOCS%%%%DOCSDIR%%/source/CSS.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Callout.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Card.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Cartesian.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Cartesian2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Category.html
 %%PORTDOCS%%%%DOCSDIR%%/source/CellContext.html
 %%PORTDOCS%%%%DOCSDIR%%/source/CellDragDrop.html
@@ -1357,10 +1363,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/CellModel2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Center.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Chart.html
-%%PORTDOCS%%%%DOCSDIR%%/source/CheckColumn.html
-%%PORTDOCS%%%%DOCSDIR%%/source/CheckColumn.scss.html
-%%PORTDOCS%%%%DOCSDIR%%/source/CheckColumn.scss2.html
-%%PORTDOCS%%%%DOCSDIR%%/source/CheckColumn.scss3.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Chart2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Check.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Check.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Check.scss2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Check.scss3.html
 %%PORTDOCS%%%%DOCSDIR%%/source/CheckItem.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Checkbox.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Checkbox.scss.html
@@ -1415,6 +1422,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Component4.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Component5.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Component6.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Component7.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ComponentDragger.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ComponentLoader.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ComponentManager.html
@@ -1537,7 +1545,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/EventDomain.html
 %%PORTDOCS%%%%DOCSDIR%%/source/EventManager.html
 %%PORTDOCS%%%%DOCSDIR%%/source/EventObject.html
-%%PORTDOCS%%%%DOCSDIR%%/source/EventObject2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/EventObjectImpl.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ExceptionEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Ext-more.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Ext.html
@@ -1578,6 +1586,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/GMapPanel.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Gauge.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Gauge2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Gauge3.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Gauge4.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Global.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Grid.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Grid.scss.html
@@ -1652,7 +1662,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Layer2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Layout.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Legend.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Legend2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/LegendItem.html
+%%PORTDOCS%%%%DOCSDIR%%/source/LegendItem2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Line.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ListFilter.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ListMenu.html
@@ -1665,6 +1677,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/LoadMask.scss3.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Loader.html
 %%PORTDOCS%%%%DOCSDIR%%/source/LocalStorage.html
+%%PORTDOCS%%%%DOCSDIR%%/source/LocalStorage2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/LocalStorageProvider.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Lockable.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Lockable.scss.html
@@ -1823,7 +1836,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/RowNumberer.html
 %%PORTDOCS%%%%DOCSDIR%%/source/RowNumberer.scss.html
 %%PORTDOCS%%%%DOCSDIR%%/source/RowNumberer.scss2.html
-%%PORTDOCS%%%%DOCSDIR%%/source/RowNumberer.scss3.html
 %%PORTDOCS%%%%DOCSDIR%%/source/RowWrap.html
 %%PORTDOCS%%%%DOCSDIR%%/source/RowWrap.scss.html
 %%PORTDOCS%%%%DOCSDIR%%/source/RowWrap.scss2.html
@@ -1871,6 +1883,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Spotlight.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Sprite.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Sprite2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Sprite3.html
 %%PORTDOCS%%%%DOCSDIR%%/source/SpriteDD.html
 %%PORTDOCS%%%%DOCSDIR%%/source/StandardSubmit.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Stateful.html
@@ -1887,6 +1900,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Submit.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Summary.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Summary.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Summary2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Support.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Surface.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Svg.html
@@ -2000,9 +2014,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/all.scss2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/background-gradient.scss.html
 %%PORTDOCS%%%%DOCSDIR%%/source/border-management.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/button-colors.scss.html
 %%PORTDOCS%%%%DOCSDIR%%/source/enums.html
 %%PORTDOCS%%%%DOCSDIR%%/source/frame.scss.html
 %%PORTDOCS%%%%DOCSDIR%%/source/functions.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/functions.scss2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/inner-border.scss.html
 %%PORTDOCS%%%%DOCSDIR%%/source/mixins.scss.html
 %%PORTDOCS%%%%DOCSDIR%%/source/no-select.scss.html
@@ -2197,29 +2213,53 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-small-pressed-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-small-pressed-sides.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-small-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-large-disabled-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-large-disabled-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-large-disabled-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-large-disabled-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-large-focus-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-large-focus-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-large-focus-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-large-focus-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-large-over-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-large-over-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-large-over-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-large-over-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-large-pressed-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-large-pressed-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-large-pressed-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-large-pressed-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-medium-disabled-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-medium-disabled-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-medium-disabled-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-medium-disabled-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-medium-focus-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-medium-focus-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-medium-focus-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-medium-focus-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-medium-over-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-medium-over-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-medium-over-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-medium-over-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-medium-pressed-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-medium-pressed-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-medium-pressed-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-medium-pressed-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-small-disabled-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-small-disabled-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-small-disabled-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-small-disabled-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-small-focus-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-small-focus-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-small-focus-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-small-focus-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-small-over-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-small-over-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-small-over-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-small-over-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-small-pressed-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-small-pressed-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-small-pressed-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/btn/btn-default-toolbar-small-pressed-sides.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/button/arrow.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/button/btn.gif
@@ -2292,7 +2332,10 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/grid/done.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/grid/drop-no.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/grid/drop-yes.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/grid/equals.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/grid/find.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/grid/footer-bg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/grid/greater_than.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/grid/grid-blue-hd.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/grid/grid-blue-split.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/grid/grid-hrow.gif
@@ -2318,6 +2361,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/grid/hmenu-unlock.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/grid/hmenu-unlock.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/grid/invalid_line.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/grid/less_than.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/grid/loading.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/grid/mso-hd.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-access/resources/images/grid/nowait.gif
@@ -2755,7 +2799,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-small-pressed-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-small-pressed-sides.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-small-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-large-disabled-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-large-disabled-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-large-disabled-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-large-disabled-sides.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-large-focus-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-large-focus-corners.gif
@@ -2769,7 +2815,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-large-pressed-corners.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-large-pressed-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-large-pressed-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-medium-disabled-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-medium-disabled-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-medium-disabled-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-medium-disabled-sides.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-medium-focus-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-medium-focus-corners.gif
@@ -2783,7 +2831,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-medium-pressed-corners.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-medium-pressed-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-medium-pressed-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-small-disabled-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-small-disabled-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-small-disabled-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-small-disabled-sides.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-small-focus-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/btn/btn-default-toolbar-small-focus-corners.gif
@@ -2865,7 +2915,10 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/grid/done.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/grid/drop-no.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/grid/drop-yes.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/grid/equals.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/grid/find.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/grid/footer-bg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/grid/greater_than.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/grid/grid-blue-hd.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/grid/grid-blue-split.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/grid/grid-hrow.gif
@@ -2889,6 +2942,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/grid/hmenu-unlock.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/grid/hmenu-unlock.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/grid/invalid_line.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/grid/less_than.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/grid/loading.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/grid/mso-hd.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-classic/resources/images/grid/nowait.gif
@@ -3317,7 +3371,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-small-pressed-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-small-pressed-sides.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-small-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-large-disabled-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-large-disabled-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-large-disabled-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-large-disabled-sides.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-large-focus-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-large-focus-corners.gif
@@ -3331,7 +3387,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-large-pressed-corners.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-large-pressed-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-large-pressed-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-medium-disabled-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-medium-disabled-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-medium-disabled-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-medium-disabled-sides.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-medium-focus-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-medium-focus-corners.gif
@@ -3345,7 +3403,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-medium-pressed-corners.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-medium-pressed-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-medium-pressed-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-small-disabled-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-small-disabled-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-small-disabled-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-small-disabled-sides.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-small-focus-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/btn/btn-default-toolbar-small-focus-corners.gif
@@ -3429,7 +3489,10 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/grid/done.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/grid/drop-no.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/grid/drop-yes.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/grid/equals.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/grid/find.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/grid/footer-bg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/grid/greater_than.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/grid/grid-blue-hd.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/grid/grid-blue-split.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/grid/grid-hrow.gif
@@ -3453,6 +3516,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/grid/hmenu-unlock.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/grid/hmenu-unlock.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/grid/invalid_line.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/grid/less_than.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/grid/loading.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/grid/mso-hd.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-gray/resources/images/grid/nowait.gif
@@ -3937,6 +4001,42 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-default-toolbar-small-pressed-fbg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-default-toolbar-small-pressed-sides.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-default-toolbar-small-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-large-bg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-large-disabled-bg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-large-disabled-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-large-disabled-fbg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-large-disabled-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-large-fbg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-large-focus-bg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-large-focus-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-large-focus-fbg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-large-focus-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-large-over-bg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-large-over-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-large-over-fbg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-large-over-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-large-pressed-bg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-large-pressed-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-large-pressed-fbg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-large-pressed-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-medium-bg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-medium-disabled-bg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-medium-disabled-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-medium-disabled-fbg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-medium-disabled-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-medium-fbg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-medium-focus-bg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-medium-focus-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-medium-focus-fbg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-medium-focus-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-medium-over-bg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-medium-over-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-medium-over-fbg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-medium-over-sides.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-medium-pressed-bg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-medium-pressed-corners.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-medium-pressed-fbg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-medium-pressed-sides.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-small-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-small-disabled-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/btn/btn-plain-toolbar-small-disabled-corners.gif
@@ -4044,6 +4144,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/grid/dirty.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/grid/drop-no.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/grid/drop-yes.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/grid/equals.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/grid/find.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/grid/greater_than.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/grid/group-by.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/grid/group-collapse.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/grid/group-expand-sprite.png
@@ -4053,6 +4156,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/grid/hmenu-desc.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/grid/hmenu-lock.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/grid/hmenu-unlock.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/grid/less_than.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/grid/loading.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/grid/page-first.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/grid/page-last.png
@@ -4278,7 +4382,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/tree/folder.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/tree/leaf-rtl.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/tree/leaf.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/tree/loading.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/tree/loading.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/util/splitter/mini-bottom.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/util/splitter/mini-left.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build/KitchenSink/ext-theme-neptune/resources/images/util/splitter/mini-right.png
@@ -4777,6 +4881,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/dd/GridToGrid.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/form/Checkout.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/form/ContactForm.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/form/Date.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/form/FormGrid.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/form/LoginForm.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/form/Number.js
@@ -4824,6 +4929,10 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/data/tree/get-nodes.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/data/tree/treegrid.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/images/edit_task.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/images/grid/equals.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/images/grid/find.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/images/grid/greater_than.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/images/grid/less_than.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/images/header-bg.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/images/icons/add.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/images/icons/add16.gif
@@ -4918,7 +5027,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/sass/example/custom.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/sass/example/example.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/sass/example/render.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/sass/example/slicer.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/sass/example/theme.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/sass/src/view/CodePreview.scss
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/sass/src/view/ContentPanel.scss
@@ -4928,6 +5036,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/sass/src/view/dataview/MultiSort.scss
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/sass/src/view/dd/FieldToGrid.scss
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/sass/src/view/grid/ArrayGrid.scss
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/sass/src/view/grid/BigData.scss
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/sass/src/view/grid/GroupedGrid.scss
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/sass/src/view/toolbar/BasicToolbar.scss
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/sass/src/view/toolbar/DockedToolbars.scss
@@ -5390,6 +5499,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/form-custom-access.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/form-custom.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/form-dashboard.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/form-date.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/form-dynamic.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/form-field-layout.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/form-field-types.png
@@ -6121,7 +6231,6 @@
 %%WWWDIR%%/packages/ext-theme-access/build/config.rb
 %%WWWDIR%%/packages/ext-theme-access/build/example/custom.js
 %%WWWDIR%%/packages/ext-theme-access/build/example/render.js
-%%WWWDIR%%/packages/ext-theme-access/build/example/slicer.js
 %%WWWDIR%%/packages/ext-theme-access/build/example/theme.html
 %%WWWDIR%%/packages/ext-theme-access/build/ext-theme-access-all-debug.scss
 %%WWWDIR%%/packages/ext-theme-access/build/ext-theme-access-all-rtl-debug.scss
@@ -6206,29 +6315,53 @@
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-small-pressed-fbg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-small-pressed-sides.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-small-sides.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-large-disabled-bg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-large-disabled-corners.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-large-disabled-fbg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-large-disabled-sides.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-large-focus-bg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-large-focus-corners.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-large-focus-fbg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-large-focus-sides.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-large-over-bg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-large-over-corners.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-large-over-fbg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-large-over-sides.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-large-pressed-bg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-large-pressed-corners.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-large-pressed-fbg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-large-pressed-sides.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-medium-disabled-bg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-medium-disabled-corners.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-medium-disabled-fbg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-medium-disabled-sides.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-medium-focus-bg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-medium-focus-corners.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-medium-focus-fbg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-medium-focus-sides.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-medium-over-bg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-medium-over-corners.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-medium-over-fbg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-medium-over-sides.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-medium-pressed-bg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-medium-pressed-corners.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-medium-pressed-fbg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-medium-pressed-sides.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-small-disabled-bg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-small-disabled-corners.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-small-disabled-fbg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-small-disabled-sides.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-small-focus-bg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-small-focus-corners.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-small-focus-fbg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-small-focus-sides.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-small-over-bg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-small-over-corners.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-small-over-fbg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-small-over-sides.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-small-pressed-bg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-small-pressed-corners.gif
+%%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-small-pressed-fbg.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/btn/btn-default-toolbar-small-pressed-sides.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/button/arrow.gif
 %%WWWDIR%%/packages/ext-theme-access/build/resources/images/button/btn.gif
@@ -6842,7 +6975,6 @@
 %%WWWDIR%%/packages/ext-theme-access/sass/etc/all.scss
 %%WWWDIR%%/packages/ext-theme-access/sass/example/custom.js
 %%WWWDIR%%/packages/ext-theme-access/sass/example/render.js
-%%WWWDIR%%/packages/ext-theme-access/sass/example/slicer.js
 %%WWWDIR%%/packages/ext-theme-access/sass/example/theme.html
 %%WWWDIR%%/packages/ext-theme-access/sass/src/Readme.md
 %%WWWDIR%%/packages/ext-theme-access/sass/var/Component.scss
@@ -6907,8 +7039,8 @@
 %%WWWDIR%%/packages/ext-theme-base/sass/example/manifest.js
 %%WWWDIR%%/packages/ext-theme-base/sass/example/render.js
 %%WWWDIR%%/packages/ext-theme-base/sass/example/shortcuts.js
-%%WWWDIR%%/packages/ext-theme-base/sass/example/slicer.js
 %%WWWDIR%%/packages/ext-theme-base/sass/example/theme.html
+%%WWWDIR%%/packages/ext-theme-base/sass/overrides.rb
 %%WWWDIR%%/packages/ext-theme-base/sass/src/Component.scss
 %%WWWDIR%%/packages/ext-theme-base/sass/src/Editor.scss
 %%WWWDIR%%/packages/ext-theme-base/sass/src/LoadMask.scss
@@ -6932,9 +7064,8 @@
 %%WWWDIR%%/packages/ext-theme-base/sass/src/form/field/TextArea.scss
 %%WWWDIR%%/packages/ext-theme-base/sass/src/form/field/Trigger.scss
 %%WWWDIR%%/packages/ext-theme-base/sass/src/grid/column/Action.scss
-%%WWWDIR%%/packages/ext-theme-base/sass/src/grid/column/CheckColumn.scss
+%%WWWDIR%%/packages/ext-theme-base/sass/src/grid/column/Check.scss
 %%WWWDIR%%/packages/ext-theme-base/sass/src/grid/column/Column.scss
-%%WWWDIR%%/packages/ext-theme-base/sass/src/grid/column/RowNumberer.scss
 %%WWWDIR%%/packages/ext-theme-base/sass/src/grid/feature/Grouping.scss
 %%WWWDIR%%/packages/ext-theme-base/sass/src/grid/feature/RowBody.scss
 %%WWWDIR%%/packages/ext-theme-base/sass/src/grid/feature/RowWrap.scss
@@ -6988,7 +7119,6 @@
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/example/manifest.js
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/example/render.js
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/example/shortcuts.js
-%%WWWDIR%%/packages/ext-theme-classic-sandbox/build/example/slicer.js
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/example/theme.html
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/ext-theme-classic-sandbox-all-debug.scss
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/ext-theme-classic-sandbox-all-rtl-debug.scss
@@ -7073,7 +7203,9 @@
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-small-pressed-fbg.gif
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-small-pressed-sides.gif
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-small-sides.gif
+%%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-large-disabled-bg.gif
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-large-disabled-corners.gif
+%%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-large-disabled-fbg.gif
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-large-disabled-sides.gif
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-large-focus-bg.gif
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-large-focus-corners.gif
@@ -7087,7 +7219,9 @@
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-large-pressed-corners.gif
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-large-pressed-fbg.gif
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-large-pressed-sides.gif
+%%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-medium-disabled-bg.gif
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-medium-disabled-corners.gif
+%%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-medium-disabled-fbg.gif
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-medium-disabled-sides.gif
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-medium-focus-bg.gif
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-medium-focus-corners.gif
@@ -7101,7 +7235,9 @@
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-medium-pressed-corners.gif
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-medium-pressed-fbg.gif
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-medium-pressed-sides.gif
+%%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-small-disabled-bg.gif
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-small-disabled-corners.gif
+%%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-small-disabled-fbg.gif
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-small-disabled-sides.gif
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-small-focus-bg.gif
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/build/resources/images/btn/btn-default-toolbar-small-focus-corners.gif
@@ -7473,7 +7609,6 @@
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/sass/example/manifest.js
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/sass/example/render.js
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/sass/example/shortcuts.js
-%%WWWDIR%%/packages/ext-theme-classic-sandbox/sass/example/slicer.js
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/sass/example/theme.html
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/sass/src/Readme.md
 %%WWWDIR%%/packages/ext-theme-classic-sandbox/sass/var/Component.scss
@@ -7490,7 +7625,6 @@
 %%WWWDIR%%/packages/ext-theme-classic/build/config.rb
 %%WWWDIR%%/packages/ext-theme-classic/build/example/custom.js
 %%WWWDIR%%/packages/ext-theme-classic/build/example/render.js
-%%WWWDIR%%/packages/ext-theme-classic/build/example/slicer.js
 %%WWWDIR%%/packages/ext-theme-classic/build/example/theme.html
 %%WWWDIR%%/packages/ext-theme-classic/build/ext-theme-classic-all-debug.scss
 %%WWWDIR%%/packages/ext-theme-classic/build/ext-theme-classic-all-rtl-debug.scss
@@ -7575,7 +7709,9 @@
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-small-pressed-fbg.gif
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-small-pressed-sides.gif
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-small-sides.gif
+%%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-large-disabled-bg.gif
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-large-disabled-corners.gif
+%%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-large-disabled-fbg.gif
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-large-disabled-sides.gif
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-large-focus-bg.gif
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-large-focus-corners.gif
@@ -7589,7 +7725,9 @@
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-large-pressed-corners.gif
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-large-pressed-fbg.gif
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-large-pressed-sides.gif
+%%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-medium-disabled-bg.gif
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-medium-disabled-corners.gif
+%%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-medium-disabled-fbg.gif
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-medium-disabled-sides.gif
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-medium-focus-bg.gif
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-medium-focus-corners.gif
@@ -7603,7 +7741,9 @@
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-medium-pressed-corners.gif
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-medium-pressed-fbg.gif
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-medium-pressed-sides.gif
+%%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-small-disabled-bg.gif
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-small-disabled-corners.gif
+%%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-small-disabled-fbg.gif
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-small-disabled-sides.gif
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-small-focus-bg.gif
 %%WWWDIR%%/packages/ext-theme-classic/build/resources/images/btn/btn-default-toolbar-small-focus-corners.gif
@@ -8200,7 +8340,6 @@
 %%WWWDIR%%/packages/ext-theme-classic/sass/etc/all.scss
 %%WWWDIR%%/packages/ext-theme-classic/sass/example/custom.js
 %%WWWDIR%%/packages/ext-theme-classic/sass/example/render.js
-%%WWWDIR%%/packages/ext-theme-classic/sass/example/slicer.js
 %%WWWDIR%%/packages/ext-theme-classic/sass/example/theme.html
 %%WWWDIR%%/packages/ext-theme-classic/sass/src/Readme.md
 %%WWWDIR%%/packages/ext-theme-classic/sass/src/dom/Element.scss
@@ -8263,7 +8402,6 @@
 %%WWWDIR%%/packages/ext-theme-gray/build/config.rb
 %%WWWDIR%%/packages/ext-theme-gray/build/example/custom.js
 %%WWWDIR%%/packages/ext-theme-gray/build/example/render.js
-%%WWWDIR%%/packages/ext-theme-gray/build/example/slicer.js
 %%WWWDIR%%/packages/ext-theme-gray/build/example/theme.html
 %%WWWDIR%%/packages/ext-theme-gray/build/ext-theme-gray-all-debug.scss
 %%WWWDIR%%/packages/ext-theme-gray/build/ext-theme-gray-all-rtl-debug.scss
@@ -8348,7 +8486,9 @@
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-small-pressed-fbg.gif
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-small-pressed-sides.gif
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-small-sides.gif
+%%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-large-disabled-bg.gif
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-large-disabled-corners.gif
+%%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-large-disabled-fbg.gif
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-large-disabled-sides.gif
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-large-focus-bg.gif
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-large-focus-corners.gif
@@ -8362,7 +8502,9 @@
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-large-pressed-corners.gif
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-large-pressed-fbg.gif
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-large-pressed-sides.gif
+%%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-medium-disabled-bg.gif
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-medium-disabled-corners.gif
+%%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-medium-disabled-fbg.gif
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-medium-disabled-sides.gif
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-medium-focus-bg.gif
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-medium-focus-corners.gif
@@ -8376,7 +8518,9 @@
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-medium-pressed-corners.gif
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-medium-pressed-fbg.gif
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-medium-pressed-sides.gif
+%%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-small-disabled-bg.gif
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-small-disabled-corners.gif
+%%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-small-disabled-fbg.gif
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-small-disabled-sides.gif
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-small-focus-bg.gif
 %%WWWDIR%%/packages/ext-theme-gray/build/resources/images/btn/btn-default-toolbar-small-focus-corners.gif
@@ -8980,14 +9124,12 @@
 %%WWWDIR%%/packages/ext-theme-gray/sass/etc/all.scss
 %%WWWDIR%%/packages/ext-theme-gray/sass/example/custom.js
 %%WWWDIR%%/packages/ext-theme-gray/sass/example/render.js
-%%WWWDIR%%/packages/ext-theme-gray/sass/example/slicer.js
 %%WWWDIR%%/packages/ext-theme-gray/sass/example/theme.html
 %%WWWDIR%%/packages/ext-theme-gray/sass/src/Readme.md
 %%WWWDIR%%/packages/ext-theme-gray/sass/src/all.scss
 %%WWWDIR%%/packages/ext-theme-gray/sass/var/Component.scss
 %%WWWDIR%%/packages/ext-theme-gray/sass/var/ProgressBar.scss
 %%WWWDIR%%/packages/ext-theme-gray/sass/var/Readme.md
-%%WWWDIR%%/packages/ext-theme-gray/sass/var/all.scss
 %%WWWDIR%%/packages/ext-theme-gray/sass/var/button/Button.scss
 %%WWWDIR%%/packages/ext-theme-gray/sass/var/container/ButtonGroup.scss
 %%WWWDIR%%/packages/ext-theme-gray/sass/var/form/FieldSet.scss
@@ -9014,7 +9156,6 @@
 %%WWWDIR%%/packages/ext-theme-neptune/build/example/custom.js
 %%WWWDIR%%/packages/ext-theme-neptune/build/example/manifest.js
 %%WWWDIR%%/packages/ext-theme-neptune/build/example/render.js
-%%WWWDIR%%/packages/ext-theme-neptune/build/example/slicer.js
 %%WWWDIR%%/packages/ext-theme-neptune/build/example/theme.html
 %%WWWDIR%%/packages/ext-theme-neptune/build/ext-theme-neptune-all-debug.scss
 %%WWWDIR%%/packages/ext-theme-neptune/build/ext-theme-neptune-all-rtl-debug.scss
@@ -9024,7 +9165,11 @@
 %%WWWDIR%%/packages/ext-theme-neptune/build/resources/Readme.md
 %%WWWDIR%%/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all-debug.css
 %%WWWDIR%%/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all-rtl-debug.css
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all-rtl-debug_01.css
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all-rtl-debug_02.css
 %%WWWDIR%%/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all-rtl.css
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all-rtl_01.css
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all-rtl_02.css
 %%WWWDIR%%/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all.css
 %%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn-group/btn-group-default-framed-corners.gif
 %%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn-group/btn-group-default-framed-notitle-corners.gif
@@ -9150,6 +9295,42 @@
 %%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-default-toolbar-small-pressed-fbg.gif
 %%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-default-toolbar-small-pressed-sides.gif
 %%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-default-toolbar-small-sides.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-large-bg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-large-disabled-bg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-large-disabled-corners.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-large-disabled-fbg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-large-disabled-sides.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-large-fbg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-large-focus-bg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-large-focus-corners.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-large-focus-fbg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-large-focus-sides.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-large-over-bg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-large-over-corners.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-large-over-fbg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-large-over-sides.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-large-pressed-bg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-large-pressed-corners.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-large-pressed-fbg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-large-pressed-sides.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-medium-bg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-medium-disabled-bg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-medium-disabled-corners.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-medium-disabled-fbg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-medium-disabled-sides.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-medium-fbg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-medium-focus-bg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-medium-focus-corners.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-medium-focus-fbg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-medium-focus-sides.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-medium-over-bg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-medium-over-corners.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-medium-over-fbg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-medium-over-sides.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-medium-pressed-bg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-medium-pressed-corners.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-medium-pressed-fbg.gif
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-medium-pressed-sides.gif
 %%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-small-bg.gif
 %%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-small-disabled-bg.gif
 %%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/btn/btn-plain-toolbar-small-disabled-corners.gif
@@ -9410,7 +9591,7 @@
 %%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/tree/folder.png
 %%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/tree/leaf-rtl.png
 %%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/tree/leaf.png
-%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/tree/loading.png
+%%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/tree/loading.gif
 %%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/util/splitter/mini-bottom.png
 %%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/util/splitter/mini-left.png
 %%WWWDIR%%/packages/ext-theme-neptune/build/resources/images/util/splitter/mini-right.png
@@ -9635,7 +9816,7 @@
 %%WWWDIR%%/packages/ext-theme-neptune/resources/images/tree/folder.png
 %%WWWDIR%%/packages/ext-theme-neptune/resources/images/tree/leaf-rtl.png
 %%WWWDIR%%/packages/ext-theme-neptune/resources/images/tree/leaf.png
-%%WWWDIR%%/packages/ext-theme-neptune/resources/images/tree/loading.png
+%%WWWDIR%%/packages/ext-theme-neptune/resources/images/tree/loading.gif
 %%WWWDIR%%/packages/ext-theme-neptune/resources/images/util/splitter/mini-bottom.png
 %%WWWDIR%%/packages/ext-theme-neptune/resources/images/util/splitter/mini-left.png
 %%WWWDIR%%/packages/ext-theme-neptune/resources/images/util/splitter/mini-right.png
@@ -9646,14 +9827,14 @@
 %%WWWDIR%%/packages/ext-theme-neptune/sass/config.rb
 %%WWWDIR%%/packages/ext-theme-neptune/sass/etc/Readme.md
 %%WWWDIR%%/packages/ext-theme-neptune/sass/etc/all.scss
+%%WWWDIR%%/packages/ext-theme-neptune/sass/etc/functions.scss
+%%WWWDIR%%/packages/ext-theme-neptune/sass/etc/functions/button-colors.scss
 %%WWWDIR%%/packages/ext-theme-neptune/sass/etc/mixins.scss
 %%WWWDIR%%/packages/ext-theme-neptune/sass/etc/mixins/background-gradient.scss
 %%WWWDIR%%/packages/ext-theme-neptune/sass/example/custom.js
 %%WWWDIR%%/packages/ext-theme-neptune/sass/example/manifest.js
 %%WWWDIR%%/packages/ext-theme-neptune/sass/example/render.js
-%%WWWDIR%%/packages/ext-theme-neptune/sass/example/slicer.js
 %%WWWDIR%%/packages/ext-theme-neptune/sass/example/theme.html
-%%WWWDIR%%/packages/ext-theme-neptune/sass/src/Component.scss
 %%WWWDIR%%/packages/ext-theme-neptune/sass/src/Readme.md
 %%WWWDIR%%/packages/ext-theme-neptune/sass/src/button/Button.scss
 %%WWWDIR%%/packages/ext-theme-neptune/sass/src/dd/StatusProxy.scss
@@ -9724,9 +9905,10 @@
 %%WWWDIR%%/packages/ext-theme-neutral/sass/config.rb
 %%WWWDIR%%/packages/ext-theme-neutral/sass/etc/Readme.md
 %%WWWDIR%%/packages/ext-theme-neutral/sass/etc/all.scss
+%%WWWDIR%%/packages/ext-theme-neutral/sass/etc/functions.scss
+%%WWWDIR%%/packages/ext-theme-neutral/sass/etc/functions/button-colors.scss
 %%WWWDIR%%/packages/ext-theme-neutral/sass/example/custom.js
 %%WWWDIR%%/packages/ext-theme-neutral/sass/example/render.js
-%%WWWDIR%%/packages/ext-theme-neutral/sass/example/slicer.js
 %%WWWDIR%%/packages/ext-theme-neutral/sass/example/theme.html
 %%WWWDIR%%/packages/ext-theme-neutral/sass/src/Component.scss
 %%WWWDIR%%/packages/ext-theme-neutral/sass/src/Editor.scss
@@ -9735,6 +9917,9 @@
 %%WWWDIR%%/packages/ext-theme-neutral/sass/src/ProgressBar.scss
 %%WWWDIR%%/packages/ext-theme-neutral/sass/src/Readme.md
 %%WWWDIR%%/packages/ext-theme-neutral/sass/src/button/Button.scss
+%%WWWDIR%%/packages/ext-theme-neutral/sass/src/button/Button_large.scss
+%%WWWDIR%%/packages/ext-theme-neutral/sass/src/button/Button_medium.scss
+%%WWWDIR%%/packages/ext-theme-neutral/sass/src/button/Button_small.scss
 %%WWWDIR%%/packages/ext-theme-neutral/sass/src/container/ButtonGroup.scss
 %%WWWDIR%%/packages/ext-theme-neutral/sass/src/form/CheckboxGroup.scss
 %%WWWDIR%%/packages/ext-theme-neutral/sass/src/form/FieldSet.scss
@@ -9751,7 +9936,7 @@
 %%WWWDIR%%/packages/ext-theme-neutral/sass/src/form/field/TextArea.scss
 %%WWWDIR%%/packages/ext-theme-neutral/sass/src/form/field/Trigger.scss
 %%WWWDIR%%/packages/ext-theme-neutral/sass/src/grid/column/Action.scss
-%%WWWDIR%%/packages/ext-theme-neutral/sass/src/grid/column/CheckColumn.scss
+%%WWWDIR%%/packages/ext-theme-neutral/sass/src/grid/column/Check.scss
 %%WWWDIR%%/packages/ext-theme-neutral/sass/src/grid/column/Column.scss
 %%WWWDIR%%/packages/ext-theme-neutral/sass/src/grid/column/RowNumberer.scss
 %%WWWDIR%%/packages/ext-theme-neutral/sass/src/grid/feature/Grouping.scss
@@ -9809,7 +9994,7 @@
 %%WWWDIR%%/packages/ext-theme-neutral/sass/var/form/field/TextArea.scss
 %%WWWDIR%%/packages/ext-theme-neutral/sass/var/form/field/Trigger.scss
 %%WWWDIR%%/packages/ext-theme-neutral/sass/var/grid/column/Action.scss
-%%WWWDIR%%/packages/ext-theme-neutral/sass/var/grid/column/CheckColumn.scss
+%%WWWDIR%%/packages/ext-theme-neutral/sass/var/grid/column/Check.scss
 %%WWWDIR%%/packages/ext-theme-neutral/sass/var/grid/column/Column.scss
 %%WWWDIR%%/packages/ext-theme-neutral/sass/var/grid/column/RowNumberer.scss
 %%WWWDIR%%/packages/ext-theme-neutral/sass/var/grid/feature/Grouping.scss
@@ -9943,29 +10128,53 @@
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-small-pressed-fbg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-small-pressed-sides.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-small-sides.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-large-disabled-bg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-large-disabled-corners.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-large-disabled-fbg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-large-disabled-sides.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-large-focus-bg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-large-focus-corners.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-large-focus-fbg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-large-focus-sides.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-large-over-bg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-large-over-corners.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-large-over-fbg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-large-over-sides.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-large-pressed-bg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-large-pressed-corners.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-large-pressed-fbg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-large-pressed-sides.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-medium-disabled-bg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-medium-disabled-corners.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-medium-disabled-fbg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-medium-disabled-sides.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-medium-focus-bg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-medium-focus-corners.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-medium-focus-fbg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-medium-focus-sides.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-medium-over-bg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-medium-over-corners.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-medium-over-fbg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-medium-over-sides.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-medium-pressed-bg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-medium-pressed-corners.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-medium-pressed-fbg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-medium-pressed-sides.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-small-disabled-bg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-small-disabled-corners.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-small-disabled-fbg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-small-disabled-sides.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-small-focus-bg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-small-focus-corners.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-small-focus-fbg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-small-focus-sides.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-small-over-bg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-small-over-corners.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-small-over-fbg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-small-over-sides.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-small-pressed-bg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-small-pressed-corners.gif
+%%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-small-pressed-fbg.gif
 %%WWWDIR%%/resources/ext-theme-access/images/btn/btn-default-toolbar-small-pressed-sides.gif
 %%WWWDIR%%/resources/ext-theme-access/images/button/arrow.gif
 %%WWWDIR%%/resources/ext-theme-access/images/button/btn.gif
@@ -10402,7 +10611,9 @@
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-small-pressed-fbg.gif
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-small-pressed-sides.gif
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-small-sides.gif
+%%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-large-disabled-bg.gif
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-large-disabled-corners.gif
+%%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-large-disabled-fbg.gif
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-large-disabled-sides.gif
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-large-focus-bg.gif
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-large-focus-corners.gif
@@ -10416,7 +10627,9 @@
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-large-pressed-corners.gif
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-large-pressed-fbg.gif
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-large-pressed-sides.gif
+%%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-medium-disabled-bg.gif
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-medium-disabled-corners.gif
+%%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-medium-disabled-fbg.gif
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-medium-disabled-sides.gif
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-medium-focus-bg.gif
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-medium-focus-corners.gif
@@ -10430,7 +10643,9 @@
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-medium-pressed-corners.gif
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-medium-pressed-fbg.gif
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-medium-pressed-sides.gif
+%%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-small-disabled-bg.gif
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-small-disabled-corners.gif
+%%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-small-disabled-fbg.gif
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-small-disabled-sides.gif
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-small-focus-bg.gif
 %%WWWDIR%%/resources/ext-theme-classic-sandbox/images/btn/btn-default-toolbar-small-focus-corners.gif
@@ -10865,7 +11080,9 @@
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-small-pressed-fbg.gif
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-small-pressed-sides.gif
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-small-sides.gif
+%%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-large-disabled-bg.gif
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-large-disabled-corners.gif
+%%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-large-disabled-fbg.gif
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-large-disabled-sides.gif
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-large-focus-bg.gif
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-large-focus-corners.gif
@@ -10879,7 +11096,9 @@
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-large-pressed-corners.gif
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-large-pressed-fbg.gif
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-large-pressed-sides.gif
+%%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-medium-disabled-bg.gif
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-medium-disabled-corners.gif
+%%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-medium-disabled-fbg.gif
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-medium-disabled-sides.gif
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-medium-focus-bg.gif
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-medium-focus-corners.gif
@@ -10893,7 +11112,9 @@
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-medium-pressed-corners.gif
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-medium-pressed-fbg.gif
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-medium-pressed-sides.gif
+%%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-small-disabled-bg.gif
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-small-disabled-corners.gif
+%%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-small-disabled-fbg.gif
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-small-disabled-sides.gif
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-small-focus-bg.gif
 %%WWWDIR%%/resources/ext-theme-classic/images/btn/btn-default-toolbar-small-focus-corners.gif
@@ -11328,7 +11549,9 @@
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-small-pressed-fbg.gif
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-small-pressed-sides.gif
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-small-sides.gif
+%%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-large-disabled-bg.gif
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-large-disabled-corners.gif
+%%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-large-disabled-fbg.gif
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-large-disabled-sides.gif
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-large-focus-bg.gif
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-large-focus-corners.gif
@@ -11342,7 +11565,9 @@
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-large-pressed-corners.gif
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-large-pressed-fbg.gif
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-large-pressed-sides.gif
+%%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-medium-disabled-bg.gif
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-medium-disabled-corners.gif
+%%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-medium-disabled-fbg.gif
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-medium-disabled-sides.gif
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-medium-focus-bg.gif
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-medium-focus-corners.gif
@@ -11356,7 +11581,9 @@
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-medium-pressed-corners.gif
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-medium-pressed-fbg.gif
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-medium-pressed-sides.gif
+%%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-small-disabled-bg.gif
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-small-disabled-corners.gif
+%%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-small-disabled-fbg.gif
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-small-disabled-sides.gif
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-small-focus-bg.gif
 %%WWWDIR%%/resources/ext-theme-gray/images/btn/btn-default-toolbar-small-focus-corners.gif
@@ -11723,7 +11950,11 @@
 %%WWWDIR%%/resources/ext-theme-neptune/Readme.md
 %%WWWDIR%%/resources/ext-theme-neptune/ext-theme-neptune-all-debug.css
 %%WWWDIR%%/resources/ext-theme-neptune/ext-theme-neptune-all-rtl-debug.css
+%%WWWDIR%%/resources/ext-theme-neptune/ext-theme-neptune-all-rtl-debug_01.css
+%%WWWDIR%%/resources/ext-theme-neptune/ext-theme-neptune-all-rtl-debug_02.css
 %%WWWDIR%%/resources/ext-theme-neptune/ext-theme-neptune-all-rtl.css
+%%WWWDIR%%/resources/ext-theme-neptune/ext-theme-neptune-all-rtl_01.css
+%%WWWDIR%%/resources/ext-theme-neptune/ext-theme-neptune-all-rtl_02.css
 %%WWWDIR%%/resources/ext-theme-neptune/ext-theme-neptune-all.css
 %%WWWDIR%%/resources/ext-theme-neptune/images/btn-group/btn-group-default-framed-corners.gif
 %%WWWDIR%%/resources/ext-theme-neptune/images/btn-group/btn-group-default-framed-notitle-corners.gif
@@ -11849,6 +12080,42 @@
 %%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-default-toolbar-small-pressed-fbg.gif
 %%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-default-toolbar-small-pressed-sides.gif
 %%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-default-toolbar-small-sides.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-large-bg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-large-disabled-bg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-large-disabled-corners.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-large-disabled-fbg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-large-disabled-sides.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-large-fbg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-large-focus-bg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-large-focus-corners.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-large-focus-fbg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-large-focus-sides.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-large-over-bg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-large-over-corners.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-large-over-fbg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-large-over-sides.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-large-pressed-bg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-large-pressed-corners.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-large-pressed-fbg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-large-pressed-sides.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-medium-bg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-medium-disabled-bg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-medium-disabled-corners.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-medium-disabled-fbg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-medium-disabled-sides.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-medium-fbg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-medium-focus-bg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-medium-focus-corners.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-medium-focus-fbg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-medium-focus-sides.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-medium-over-bg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-medium-over-corners.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-medium-over-fbg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-medium-over-sides.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-medium-pressed-bg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-medium-pressed-corners.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-medium-pressed-fbg.gif
+%%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-medium-pressed-sides.gif
 %%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-small-bg.gif
 %%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-small-disabled-bg.gif
 %%WWWDIR%%/resources/ext-theme-neptune/images/btn/btn-plain-toolbar-small-disabled-corners.gif
@@ -12109,7 +12376,7 @@
 %%WWWDIR%%/resources/ext-theme-neptune/images/tree/folder.png
 %%WWWDIR%%/resources/ext-theme-neptune/images/tree/leaf-rtl.png
 %%WWWDIR%%/resources/ext-theme-neptune/images/tree/leaf.png
-%%WWWDIR%%/resources/ext-theme-neptune/images/tree/loading.png
+%%WWWDIR%%/resources/ext-theme-neptune/images/tree/loading.gif
 %%WWWDIR%%/resources/ext-theme-neptune/images/util/splitter/mini-bottom.png
 %%WWWDIR%%/resources/ext-theme-neptune/images/util/splitter/mini-left.png
 %%WWWDIR%%/resources/ext-theme-neptune/images/util/splitter/mini-right.png
@@ -13055,7 +13322,7 @@
 %%WWWDIR%%/src/grid/ViewDropZone.js
 %%WWWDIR%%/src/grid/column/Action.js
 %%WWWDIR%%/src/grid/column/Boolean.js
-%%WWWDIR%%/src/grid/column/CheckColumn.js
+%%WWWDIR%%/src/grid/column/Check.js
 %%WWWDIR%%/src/grid/column/Column.js
 %%WWWDIR%%/src/grid/column/Date.js
 %%WWWDIR%%/src/grid/column/Number.js
@@ -13170,8 +13437,15 @@
 %%WWWDIR%%/src/resizer/Splitter.js
 %%WWWDIR%%/src/resizer/SplitterTracker.js
 %%WWWDIR%%/src/rtl/AbstractComponent.js
-%%WWWDIR%%/src/rtl/EventObject.js
+%%WWWDIR%%/src/rtl/EventObjectImpl.js
 %%WWWDIR%%/src/rtl/button/Button.js
+%%WWWDIR%%/src/rtl/chart/Chart.js
+%%WWWDIR%%/src/rtl/chart/Legend.js
+%%WWWDIR%%/src/rtl/chart/LegendItem.js
+%%WWWDIR%%/src/rtl/chart/axis/Axis.js
+%%WWWDIR%%/src/rtl/chart/axis/Gauge.js
+%%WWWDIR%%/src/rtl/chart/series/Cartesian.js
+%%WWWDIR%%/src/rtl/chart/series/Gauge.js
 %%WWWDIR%%/src/rtl/dd/DD.js
 %%WWWDIR%%/src/rtl/dom/Element_anim.js
 %%WWWDIR%%/src/rtl/dom/Element_insertion.js
@@ -13179,6 +13453,8 @@
 %%WWWDIR%%/src/rtl/dom/Element_scroll.js
 %%WWWDIR%%/src/rtl/dom/Element_static.js
 %%WWWDIR%%/src/rtl/dom/Layer.js
+%%WWWDIR%%/src/rtl/draw/Component.js
+%%WWWDIR%%/src/rtl/draw/Sprite.js
 %%WWWDIR%%/src/rtl/form/field/Checkbox.js
 %%WWWDIR%%/src/rtl/form/field/File.js
 %%WWWDIR%%/src/rtl/form/field/Spinner.js
@@ -13186,6 +13462,7 @@
 %%WWWDIR%%/src/rtl/grid/CellEditor.js
 %%WWWDIR%%/src/rtl/grid/RowEditor.js
 %%WWWDIR%%/src/rtl/grid/column/Column.js
+%%WWWDIR%%/src/rtl/grid/feature/Summary.js
 %%WWWDIR%%/src/rtl/grid/plugin/HeaderResizer.js
 %%WWWDIR%%/src/rtl/grid/plugin/RowEditing.js
 %%WWWDIR%%/src/rtl/layout/ContextItem.js
@@ -13269,6 +13546,7 @@
 %%WWWDIR%%/src/util/Inflector.js
 %%WWWDIR%%/src/util/KeyMap.js
 %%WWWDIR%%/src/util/KeyNav.js
+%%WWWDIR%%/src/util/LocalStorage.js
 %%WWWDIR%%/src/util/LruCache.js
 %%WWWDIR%%/src/util/Memento.js
 %%WWWDIR%%/src/util/MixedCollection.js
@@ -13378,12 +13656,17 @@
 @dirrm %%WWWDIR%%/src/rtl/layout/component
 @dirrm %%WWWDIR%%/src/rtl/layout
 @dirrm %%WWWDIR%%/src/rtl/grid/plugin
+@dirrm %%WWWDIR%%/src/rtl/grid/feature
 @dirrm %%WWWDIR%%/src/rtl/grid/column
 @dirrm %%WWWDIR%%/src/rtl/grid
 @dirrm %%WWWDIR%%/src/rtl/form/field
 @dirrm %%WWWDIR%%/src/rtl/form
+@dirrm %%WWWDIR%%/src/rtl/draw
 @dirrm %%WWWDIR%%/src/rtl/dom
 @dirrm %%WWWDIR%%/src/rtl/dd
+@dirrm %%WWWDIR%%/src/rtl/chart/series
+@dirrm %%WWWDIR%%/src/rtl/chart/axis
+@dirrm %%WWWDIR%%/src/rtl/chart
 @dirrm %%WWWDIR%%/src/rtl/button
 @dirrm %%WWWDIR%%/src/rtl
 @dirrm %%WWWDIR%%/src/resizer
@@ -13723,6 +14006,7 @@
 @dirrm %%WWWDIR%%/packages/ext-theme-neutral/sass/src/button
 @dirrm %%WWWDIR%%/packages/ext-theme-neutral/sass/src
 @dirrm %%WWWDIR%%/packages/ext-theme-neutral/sass/example
+@dirrm %%WWWDIR%%/packages/ext-theme-neutral/sass/etc/functions
 @dirrm %%WWWDIR%%/packages/ext-theme-neutral/sass/etc
 @dirrm %%WWWDIR%%/packages/ext-theme-neutral/sass
 @dirrm %%WWWDIR%%/packages/ext-theme-neutral/resources
@@ -13773,6 +14057,7 @@
 @dirrm %%WWWDIR%%/packages/ext-theme-neptune/sass/src
 @dirrm %%WWWDIR%%/packages/ext-theme-neptune/sass/example
 @dirrm %%WWWDIR%%/packages/ext-theme-neptune/sass/etc/mixins
+@dirrm %%WWWDIR%%/packages/ext-theme-neptune/sass/etc/functions
 @dirrm %%WWWDIR%%/packages/ext-theme-neptune/sass/etc
 @dirrm %%WWWDIR%%/packages/ext-theme-neptune/sass/all
 @dirrm %%WWWDIR%%/packages/ext-theme-neptune/sass
@@ -14429,6 +14714,7 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/resources/images/touch-icons
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/resources/images/icons/fam
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/resources/images/icons
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/resources/images/grid
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/resources/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/resources/data/tree
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/resources/data/grid
