@@ -7,8 +7,8 @@ PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/downloads/me-vlad/MySQLTuner-perl/
 
-MAINTAINER=	vlad@vlad.uz.ua
-COMMENT=	A Script Assist You with MySQL Configuration
+MAINTAINER=	fbsd-ports@opsec.eu
+COMMENT=	Assist you with MySQL Configuration
 
 LICENSE=	GPLv3
 
@@ -21,16 +21,9 @@ PLIST_FILES=	bin/${PORTNAME}.pl
 
 PORTDOCS=	README
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 do-install:
-	@${CP} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}.pl
-	@${CHMOD} 755 ${PREFIX}/bin/${PORTNAME}.pl
-	@${ECHO_CMD} '@exec ${CHMOD} 755 ${PREFIX}/bin/${PORTNAME}.pl' \
-		>> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}.pl
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
