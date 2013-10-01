@@ -2,6 +2,12 @@ bin/virsh
 bin/virt-host-validate
 bin/virt-pki-validate
 bin/virt-xml-validate
+man/man1/virsh.1.gz
+man/man1/virt-pki-validate.1.gz
+man/man1/virt-xml-validate.1.gz
+man/man1/virt-host-validate.1.gz
+man/man8/libvirtd.8.gz
+man/man8/virtlockd.8.gz
 @unexec if cmp -s %D/%%ETCDIR%%/libvirtd.conf.sample %D/%%ETCDIR%%/libvirtd.conf; then rm -f %D/%%ETCDIR%%/libvirtd.conf; fi
 %%ETCDIR%%/libvirtd.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/libvirtd.conf ] ; then cp -p %D/%%ETCDIR%%/libvirtd.conf.sample %D/%%ETCDIR%%/libvirtd.conf; fi
@@ -13,23 +19,6 @@ bin/virt-xml-validate
 %%QEMU%%%%ETCDIR%%/qemu.conf.sample
 %%QEMU%%@exec if [ ! -f %D/%%ETCDIR%%/qemu.conf ] ; then cp -p %D/%%ETCDIR%%/qemu.conf.sample %D/%%ETCDIR%%/qemu.conf; fi
 %%QEMU%%%%ETCDIR%%/qemu-lockd.conf
-%%ETCDIR%%/nwfilter/allow-arp.xml
-%%ETCDIR%%/nwfilter/allow-dhcp-server.xml
-%%ETCDIR%%/nwfilter/allow-dhcp.xml
-%%ETCDIR%%/nwfilter/allow-incoming-ipv4.xml
-%%ETCDIR%%/nwfilter/allow-ipv4.xml
-%%ETCDIR%%/nwfilter/clean-traffic.xml
-%%ETCDIR%%/nwfilter/no-arp-spoofing.xml
-%%ETCDIR%%/nwfilter/no-arp-ip-spoofing.xml
-%%ETCDIR%%/nwfilter/no-arp-mac-spoofing.xml
-%%ETCDIR%%/nwfilter/no-ip-multicast.xml
-%%ETCDIR%%/nwfilter/no-ip-spoofing.xml
-%%ETCDIR%%/nwfilter/no-mac-broadcast.xml
-%%ETCDIR%%/nwfilter/no-mac-spoofing.xml
-%%ETCDIR%%/nwfilter/no-other-l2-traffic.xml
-%%ETCDIR%%/nwfilter/no-other-rarp-traffic.xml
-%%ETCDIR%%/nwfilter/qemu-announce-self-rarp.xml
-%%ETCDIR%%/nwfilter/qemu-announce-self.xml
 etc/logrotate.d/libvirtd
 etc/logrotate.d/libvirtd.lxc
 etc/logrotate.d/libvirtd.qemu
@@ -344,7 +333,6 @@ lib/libvirt/connection-driver/libvirt_driver_vbox.la
 %%NLS%%@dirrmtry share/locale/bo
 %%NLS%%@dirrmtry share/locale/as/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/as
-@dirrm %%ETCDIR%%/nwfilter
 @dirrm %%ETCDIR%%
 @dirrmtry var/run/libvirt/lockd
 @dirrmtry var/run/libvirt
