@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Exporter/Tiny.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Exporter/Tiny/.packlist
+%%PERL5_MAN3%%/Exporter::Tiny.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exporter/Tiny
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exporter
+@dirrmtry %%SITE_PERL%%/Exporter

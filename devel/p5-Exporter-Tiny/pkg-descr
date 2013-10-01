@@ -1,0 +1,15 @@
+Exporter::Tiny supports many of Sub::Exporter's external-facing features
+including renaming imported functions with the -as, -prefix and -suffix options;
+explicit destinations with the into option; and alternative installers with the
+installler option. But it's written in only about 40% as many lines of code and
+with zero non-core dependencies.
+
+Its internal-facing interface is closer to Exporter.pm, with configuration done
+through the @EXPORT, @EXPORT_OK and %EXPORT_TAGS package variables.
+
+Exporter::Tiny performs most of its internal duties (including resolution of tag
+names to sub names, resolution of sub names to coderefs, and installation of
+coderefs into the target package) as method calls, which means they can be
+overridden to provide interesting behaviour.
+
+WWW: http://search.cpan.org/dist/Exporter-Tiny/
