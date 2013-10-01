@@ -1,5 +1,7 @@
 bin/lout
 bin/prg2lout
+man/man1/lout.1.gz
+man/man1/prg2lout.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/design/README
 %%PORTDOCS%%%%DOCSDIR%%/design/all
