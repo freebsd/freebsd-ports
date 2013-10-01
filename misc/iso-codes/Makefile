@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iso-codes
-PORTVERSION=	3.43
+PORTVERSION=	3.46
 CATEGORIES=	misc
 MASTER_SITES=	http://pkg-isocodes.alioth.debian.org/downloads/
 
@@ -12,9 +12,7 @@ COMMENT=	Lists of the country, language, and currency iso names
 LICENSE=	LGPL21
 
 USE_XZ=		yes
-USES=		pathfix gettext
-USE_GMAKE=	yes
+USES=		pathfix gettext gmake
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
