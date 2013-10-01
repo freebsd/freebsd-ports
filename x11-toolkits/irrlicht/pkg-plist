@@ -30,6 +30,7 @@ include/irrlicht/IBillboardSceneNode.h
 include/irrlicht/IBillboardTextSceneNode.h
 include/irrlicht/IBoneSceneNode.h
 include/irrlicht/ICameraSceneNode.h
+include/irrlicht/IColladaMeshWriter.h
 include/irrlicht/ICursorControl.h
 include/irrlicht/IDummyTransformationSceneNode.h
 include/irrlicht/IDynamicMeshBuffer.h
@@ -99,9 +100,11 @@ include/irrlicht/IParticleSphereEmitter.h
 include/irrlicht/IParticleSystemSceneNode.h
 include/irrlicht/IQ3LevelMesh.h
 include/irrlicht/IQ3Shader.h
+include/irrlicht/IRandomizer.h
 include/irrlicht/IReadFile.h
 include/irrlicht/IReferenceCounted.h
 include/irrlicht/ISceneCollisionManager.h
+include/irrlicht/ISceneLoader.h
 include/irrlicht/ISceneManager.h
 include/irrlicht/ISceneNode.h
 include/irrlicht/ISceneNodeAnimator.h
@@ -164,6 +167,8 @@ include/irrlicht/irrString.h
 include/irrlicht/irrTypes.h
 include/irrlicht/irrXML.h
 include/irrlicht/irrlicht.h
+include/irrlicht/irrpack.h
+include/irrlicht/irrunpack.h
 include/irrlicht/line2d.h
 include/irrlicht/line3d.h
 include/irrlicht/matrix4.h

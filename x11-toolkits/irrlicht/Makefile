@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	irrlicht
-PORTVERSION=	1.7.3
-PORTREVISION=	1
+PORTVERSION=	1.8
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	SF/${PORTNAME}/Irrlicht%20SDK/1.7/${PORTVERSION}
 
@@ -61,7 +60,7 @@ MAKE_ENV+=	NDEBUG=1
 .endif
 
 post-extract:
-	@${RM} ${WRKSRC}/media/Thumbs.db
+#	@${RM} ${WRKSRC}/media/Thumbs.db
 
 post-patch:
 	@${REINPLACE_CMD} -e '/#define.*_IRR_USE_NON_SYSTEM_JPEG_LIB_/ d' \

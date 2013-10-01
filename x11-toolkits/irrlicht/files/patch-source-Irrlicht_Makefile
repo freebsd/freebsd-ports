@@ -1,29 +1,21 @@
---- source/Irrlicht/Makefile	2012-03-31 12:50:11.000000000 -0500
-+++ source/Irrlicht/Makefile	2012-03-31 12:57:27.000000000 -0500
-@@ -3,14 +3,14 @@
- VERSION_RELEASE = 3
- VERSION = $(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_RELEASE)
- # Irrlicht Engine 1.7.3
+--- source/Irrlicht/Makefile	2013-10-01 14:38:36.000000000 -0500
++++ source/Irrlicht/Makefile	2013-10-01 14:45:15.000000000 -0500
+@@ -2,7 +2,7 @@
+ VERSION_MINOR = 8
+ VERSION_RELEASE = 0
+ # Irrlicht Engine 1.8.0
 -# Makefile for Linux
-+# Makefile for Linux/BSD
++# Makefile for Linux/FreeBSD
  #
  # To use, just run:
  #
- # make
- #
- # This will compile Irrlicht, create a static lib (libIrrlicht.a), and copy it
--# into the subdirectory lib/Linux. That's all.
-+# into the subdirectory lib/[Linux|FreeBSD]. That's all.
- #
- # If you want Irrlicht to be compiled as shared lib (libIrrlicht.so.versionnumber), then run:
- #
-@@ -49,23 +49,20 @@
+@@ -56,23 +56,22 @@
  EXTRAOBJ =
  LINKOBJ = $(IRRMESHOBJ) $(IRROBJ) $(IRRPARTICLEOBJ) $(IRRANIMOBJ) \
  	$(IRRVIDEOOBJ) $(IRRSWRENDEROBJ) $(IRRIOOBJ) $(IRROTHEROBJ) \
 -	$(IRRGUIOBJ) $(ZLIBOBJ) $(JPEGLIBOBJ) $(LIBPNGOBJ) $(LIBAESGM) \
--	$(BZIP2OBJ) $(EXTRAOBJ)
-+	$(IRRGUIOBJ) $(LIBAESGM) $(EXTRAOBJ)
++	$(IRRGUIOBJ) $(LIBAESGM) \
+ 	$(BZIP2OBJ) $(EXTRAOBJ)
  
  ###############
  #Compiler flags
@@ -35,6 +27,7 @@
  CXXFLAGS += -g -D_DEBUG
  else
 -CXXFLAGS += -fexpensive-optimizations -O3
++CXXFLAGS += 
  endif
  ifdef PROFILE
  CXXFLAGS += -pg
@@ -43,20 +36,17 @@
  
  sharedlib sharedlib_osx: CXXFLAGS += -fPIC
  sharedlib sharedlib_osx: CFLAGS += -fPIC
-@@ -75,15 +72,15 @@
- LIBSELECT=64
+@@ -83,13 +82,13 @@
  endif
  
--#Linux specific options
+ #Linux specific options
 -staticlib sharedlib install: SYSTEM = Linux
-+#Linux/FreeBSD specific options
 +staticlib sharedlib install: SYSTEM = FreeBSD
  STATIC_LIB = libIrrlicht.a
  LIB_PATH = ../../lib/$(SYSTEM)
 -INSTALL_DIR = /usr/local/lib
 +INSTALL_DIR = ${PREFIX}/lib
  sharedlib install: SHARED_LIB = libIrrlicht.so
- #staticlib sharedlib: LDFLAGS += --no-export-all-symbols --add-stdcall-alias
 -sharedlib: LDFLAGS += -L/usr/X11R6/lib$(LIBSELECT) -lGL -lXxf86vm
 -staticlib sharedlib: CXXINCS += -I/usr/X11R6/include
 +sharedlib: LDFLAGS += -L${LOCALBASE}/lib -lGL -lXxf86vm -lpng -ljpeg -lbz2
@@ -64,7 +54,7 @@
  
  #OSX specific options
  staticlib_osx sharedlib_osx install_osx: SYSTEM = MacOSX
-@@ -104,13 +101,13 @@
+@@ -117,13 +116,13 @@
  
  ####################
  # All target, builds Irrlicht as static lib (libIrrlicht.a) and copies it into lib/Linux
@@ -73,10 +63,10 @@
  
  # Builds Irrlicht as shared lib (libIrrlicht.so.versionNumber) and copies it into lib/Linux
  sharedlib: $(LINKOBJ)
--	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -shared -Wl,-soname,$(SHARED_LIB).$(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_RELEASE) -o $(SHARED_LIB).$(VERSION) $^ $(LDFLAGS)
+-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -shared -Wl,-soname,$(SONAME) -o $(SHARED_FULLNAME) $^ $(LDFLAGS)
 +	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -shared -Wl,-soname,$(SHARED_LIB).$(SHLIB_VER) -o $(SHARED_LIB).$(SHLIB_VER) $^ $(LDFLAGS)
  	mkdir -p $(LIB_PATH)
--	cp $(SHARED_LIB).$(VERSION) $(LIB_PATH)
+-	cp $(SHARED_FULLNAME) $(LIB_PATH)
 +	cp $(SHARED_LIB).$(SHLIB_VER) $(LIB_PATH)
  
  # Builds Irrlicht as static lib (libIrrlicht.a)
