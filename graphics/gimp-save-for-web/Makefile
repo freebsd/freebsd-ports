@@ -10,16 +10,15 @@ MASTER_SITES=	http://registry.gimp.org/files/
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	GIMP Save For Web plugin
 
-LIB_DEPENDS=	gimp-2.0:${PORTSDIR}/graphics/gimp-app
+LIB_DEPENDS=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
 USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig perl5
+USES=		gettext gmake pkgconfig pathfix perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack intltool
+USE_GNOME=	intltool
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|GMSGFMT = @GMSGFMT@|GMSGFMT = @MSGFMT@|g' ${WRKSRC}/po/Makefile.in.in
 
