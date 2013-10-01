@@ -8,6 +8,9 @@ etc/softhsm.conf.sample
 @exec if [ ! -f %D/etc/softhsm.conf ]; then cp %D/etc/softhsm.conf.sample %D/etc/softhsm.conf; fi
 @dirrm lib/softhsm
 @exec install -d -o root -g wheel -m 700 %D/var/lib/softhsm
+man/man1/softhsm-keyconv.1.gz
+man/man1/softhsm.1.gz
+man/man5/softhsm.conf.5.gz
 @dirrm var/lib/softhsm
 @dirrmtry var/lib
 @dirrmtry var
