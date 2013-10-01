@@ -1,8 +1,8 @@
---- bin/idl2tcl.orig	2011-08-01 20:00:08.000000000 +0200
-+++ bin/idl2tcl	2013-09-30 17:49:12.000000000 +0200
+--- bin/iordump.orig	2013-09-30 17:50:30.000000000 +0200
++++ bin/iordump	2013-09-30 17:50:41.000000000 +0200
 @@ -1,14 +1,4 @@
 -#! /bin/sh
--# $Id: idl2tcl,v 1.2 2011-08-01 18:00:08 fp Exp $ \
+-# $Id: iordump,v 1.1 2008-11-14 02:12:35 Owner Exp $ \
 -# \
 -# the next line restarts using tclsh8.5 on unix \
 -if type tclsh8.5 > /dev/null 2>&1 ; then exec tclsh8.5 "$0" ${1+"$@"} ; fi
@@ -16,15 +16,3 @@
  
  #
  # ----------------------------------------------------------------------
-@@ -35,8 +25,9 @@
- }
- 
- if {[catch {package require kill} oops]} {
--    puts stderr "Error: Failed to find the required \"kill\" package."
--    exit 1
-+    proc kill {pid} {
-+        exec kill $pid
-+    }
- }
- 
- if {[catch {set argv [eval corba::init $argv]} res]} {
