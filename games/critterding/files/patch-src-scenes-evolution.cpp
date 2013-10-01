@@ -1,6 +1,14 @@
 --- src/scenes/evolution.cpp.orig	2010-03-06 01:14:29.000000000 +0300
-+++ src/scenes/evolution.cpp	2013-06-18 06:00:15.823111566 +0400
-@@ -287,7 +287,7 @@
++++ src/scenes/evolution.cpp	2013-09-30 06:53:44.815518897 +0400
+@@ -1,6 +1,4 @@
+-#ifdef _WIN32
+-	#include <unistd.h>
+-#endif
++#include <unistd.h>
+ #include "evolution.h"
+ 
+ # include <math.h>
+@@ -287,7 +285,7 @@
  					}
  					else if ( world->mouseRayHitEntity->type == 0 )
  					{
