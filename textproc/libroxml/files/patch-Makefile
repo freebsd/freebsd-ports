@@ -1,9 +1,17 @@
---- Makefile.orig	2012-08-07 05:07:01.000000000 +0800
-+++ Makefile	2012-08-07 05:12:48.000000000 +0800
+--- Makefile.orig	2013-06-07 22:26:58.000000000 +0000
++++ Makefile	2013-09-19 18:58:18.000000000 +0000
+@@ -44,7 +44,7 @@
+ 
+ # options
+ override CPPFLAGS += -Iinc/
+-override CFLAGS += $(OPTIM) -fPIC -Wall -Wextra -Wno-unused -Werror -Iinc/ $(DEFINES)
++override CFLAGS += $(OPTIM) -fPIC -Wall -Wextra -Wno-unused -Iinc/ $(DEFINES)
+ override LDFLAGS += 
+ 
+ ifeq ("$(OS)", "Darwin")
 @@ -149,24 +149,16 @@
  	$E - $(MAKE) -C $(abspath fuse.xml)
- 
- .PHONY: install
+  .PHONY: install
 -install: $(TARGETS) doxy
 -	$P '  INSTALL DIRS'
 -	$E mkdir -p $(DESTDIR)/usr/bin
