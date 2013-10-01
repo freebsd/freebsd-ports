@@ -12,7 +12,7 @@ COMMENT=	Tcl/C++ interface used by ns and nam
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	otcl:${PORTSDIR}/lang/otcl
+LIB_DEPENDS=	libotcl.so:${PORTSDIR}/lang/otcl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -21,15 +21,14 @@ USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 PORTDOCS=	CHANGES.html TODO.html
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # We have to link against the same Tcl/Tk version as OTcl does
 .if exists(${LOCALBASE}/bin/otclsh)
 OTCL_TCLVER!=	${ECHO_CMD} puts \$$tcl_version | ${LOCALBASE}/bin/otclsh
-USE_TK=		${OTCL_TCLVER:S/.//}
+USES+=		tk:${OTCL_TCLVER:S/.//}
 .else
-USE_TK=		84+
+USES+=		tk
 .endif
 
 CONFIGURE_ARGS=	--with-tcl-ver=${TCL_VER} --with-tk-ver=${TK_VER}
@@ -42,18 +41,18 @@ post-patch:
 		-e 's|../include|${TK_INCLUDEDIR}/generic|g' ${WRKSRC}/conf/configure.in.tk
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tcl2c++ ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/otcldoc ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/include/tclcl
-	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/tclcl
-	${INSTALL_DATA} ${WRKSRC}/libtclcl.a ${PREFIX}/lib
-	@${LN} -sf ${PREFIX}/lib/libtclcl.a ${PREFIX}/lib/libTcl.a
+	${INSTALL_PROGRAM} ${WRKSRC}/tcl2c++ ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/otcldoc ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/tclcl
+	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/tclcl
+	${INSTALL_DATA} ${WRKSRC}/libtclcl.a ${STAGEDIR}${PREFIX}/lib
+	@${LN} -sf ${PREFIX}/lib/libtclcl.a ${STAGEDIR}${PREFIX}/lib/libTcl.a
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
