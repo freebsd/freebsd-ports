@@ -20,5 +20,4 @@ DESCR=		${PKGDIR}/pkg-descr
 
 MASTERDIR=	${.CURDIR}/../bogofilter
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
