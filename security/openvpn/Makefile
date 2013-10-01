@@ -16,7 +16,6 @@ CONFLICTS_INSTALL=	openvpn-2.[!3].* openvpn-[!2].* openvpn-beta-[0-9]* openvpn-d
 
 GNU_CONFIGURE=	yes
 USE_XZ=		yes
-NO_STAGE=	yes
 # let OpenVPN's configure script pick up the requisite libraries:
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -32,17 +31,12 @@ POLARSSL_DESC=	SSL/TLS support via PolarSSL
 
 .include <bsd.port.options.mk>
 
-# use a "stage directory" to install - much easier to sort data/share
-# stuff into docs, examples, ...
-_stagedir=	${WRKDIR}/instage
-INSTALL_TARGET=	install DESTDIR=${_stagedir}
-
 .if ${PORT_OPTIONS:MEASYRSA}
 RUN_DEPENDS+=	easy-rsa>=0:${PORTSDIR}/security/easy-rsa
 .endif
 
 .if ${PORT_OPTIONS:MPOLARSSL}
-LIB_DEPENDS+=	polarssl:${PORTSDIR}/security/polarssl
+LIB_DEPENDS+=	libpolarssl.so:${PORTSDIR}/security/polarssl
 CONFIGURE_ARGS+=	--with-crypto-library=polarssl
 .else
 USE_OPENSSL=	yes
@@ -50,8 +44,6 @@ CONFIGURE_ARGS+=	--with-crypto-library=openssl
 .endif
 
 .INSTALL_TARGET+=	mandir=${MANPREFIX}/man
-MAN8=		openvpn.8
-
 USE_RC_SUBR=	openvpn
 USE_LDCONFIG=	${PREFIX}/lib
 
@@ -63,13 +55,13 @@ SUB_FILES=	pkg-message
 CFLAGS+=	-DLOG_OPENVPN=${LOG_OPENVPN}
 .endif
 
-LIB_DEPENDS+=	lzo2:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS+=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
 .if ${PORT_OPTIONS:MPKCS11}
-LIB_DEPENDS+=	pkcs11-helper:${PORTSDIR}/security/pkcs11-helper
+LIB_DEPENDS+=	libpkcs11-helper.so:${PORTSDIR}/security/pkcs11-helper
 .else
 CONFIGURE_ARGS+=	--disable-pkcs11
 .endif
@@ -100,22 +92,21 @@ post-build:
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/lib/openvpn/plugins/ ${PREFIX}/sbin \
-		 ${PREFIX}/include ${PREFIX}/man
-	${INSTALL_PROGRAM} ${_stagedir}${PREFIX}/sbin/openvpn ${PREFIX}/sbin
-	${INSTALL_DATA} ${_stagedir}${PREFIX}/lib/openvpn/plugins/* ${PREFIX}/lib/openvpn/plugins/
-	${INSTALL_DATA} ${_stagedir}${PREFIX}/include/* ${PREFIX}/include/
-	${INSTALL_MAN} ${_stagedir}${PREFIX}/man/man8/* ${MAN8PREFIX}/man/man8/
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/openvpn/plugins/ ${STAGEDIR}${PREFIX}/sbin \
+		 ${STAGEDIR}${PREFIX}/include ${STAGEDIR}${PREFIX}/man
+	#${INSTALL_PROGRAM} ${PREFIX}/sbin/openvpn ${STAGEDIR}${PREFIX}/sbin
+	#${INSTALL_DATA} ${PREFIX}/lib/openvpn/plugins/* ${STAGEDIR}${PREFIX}/lib/openvpn/plugins/
+	#${INSTALL_DATA} ${PREFIX}/include/* ${STAGEDIR}${PREFIX}/include/
+	#${INSTALL_MAN} ${PREFIX}/man/man8/* ${STAGEDIR}${MAN8PREFIX}/man/man8/
 .if ${PORT_OPTIONS:MDOCS}
-	(cd ${_stagedir}${DOCSDIR} && ${COPYTREE_SHARE} \* ${DOCSDIR}/)
+	#(cd ${DOCSDIR_REL} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/)
 .for i in AUTHORS ChangeLog PORTS
-	${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}/
+	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	(cd ${WRKSRC}/sample && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
-	${CHMOD} ${BINMODE} ${EXAMPLESDIR}/sample-scripts/*
+	(cd ${WRKSRC}/sample && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/)
+	${CHMOD} ${BINMODE} ${STAGEDIR}${EXAMPLESDIR}/sample-scripts/*
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
