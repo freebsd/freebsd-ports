@@ -11,7 +11,7 @@ DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Thread-safe Python binding for LevelDB
 
-LIB_DEPENDS=	leveldb:${PORTSDIR}/databases/leveldb
+LIB_DEPENDS=	libleveldb.so:${PORTSDIR}/databases/leveldb
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
@@ -20,7 +20,6 @@ USE_XZ=		yes
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/leveldb.so
 PYDISTUTILS_EGGINFO=	${PORTNAME}-${PORTVERSION:R}-py${PYTHON_VER}.egg-info
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|setuptools|do_not_use_&|' \
