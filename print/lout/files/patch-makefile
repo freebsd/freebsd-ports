@@ -1,5 +1,5 @@
---- makefile.orig	Wed Aug 24 08:45:25 2005
-+++ makefile	Fri Oct 14 02:14:23 2005
+--- ./makefile.orig	2012-02-08 05:28:03.000000000 -0200
++++ ./makefile	2013-09-29 13:31:07.000000000 -0300
 @@ -269,11 +269,10 @@
  # DEBUGGING = 1
  # TRACING = -g
@@ -15,7 +15,7 @@
  
  LIBFONT = font
  LIBMAPS = maps
-@@ -274,23 +274,23 @@
+@@ -285,23 +284,23 @@
  CHARIN	= 1
  CHAROUT	= 0
  
@@ -46,7 +46,7 @@
  	  -DOS_DOS=$(OSDOS)					\
  	  -DOS_MAC=$(OSMAC)					\
  	  -DDB_FIX=$(DBFIX)					\
-@@ -336,42 +336,41 @@
+@@ -349,42 +348,41 @@
  install: lout prg2lout
  	@echo ""
  	@echo "(a) Installing lout and prg2lout binaries into BINDIR $(BINDIR)"
@@ -54,8 +54,8 @@
 -	chmod 755 $(BINDIR)/lout
 -	cp prg2lout $(BINDIR)/prg2lout
 -	chmod 755 $(BINDIR)/prg2lout
-+	install -c -s -o bin -g bin lout $(BINDIR)/lout
-+	install -c -s -o bin -g bin prg2lout $(BINDIR)/prg2lout
++	install -c -s lout $(BINDIR)/lout
++	install -c -s prg2lout $(BINDIR)/prg2lout
  	@echo ""
  	@echo "(b) Installing library files into LOUTLIBDIR $(LOUTLIBDIR)"
 -	mkdir $(LOUTLIBDIR)
@@ -99,23 +99,7 @@
  	@echo ""
  	@echo "(c) Initializing run (should be silent, no errors expected)"
  	$(BINDIR)/lout -x -s $(LOUTLIBDIR)/$(LIBINCL)/init
-@@ -379,6 +378,7 @@
- 	@echo "(d) Changing mode of files just created by initializing run"
- 	chmod 644 $(LOUTLIBDIR)/$(LIBDATA)/*
- 	chmod 644 $(LOUTLIBDIR)/$(LIBHYPH)/*
-+	chown -R bin:bin $(LOUTLIBDIR)
- 
- installman:
- 	@echo ""
-@@ -387,25 +387,29 @@
- 	    -e "s@<LOUTDOCDIR>@$(LOUTDOCDIR)@" -e "s@<MANDIR>@$(MANDIR)@"	\
- 	man/lout.1 > $(MANDIR)/lout.1
- 	chmod 644 $(MANDIR)/lout.1
-+	chown bin:bin $(MANDIR)/lout.1
- 	cp man/prg2lout.1 $(MANDIR)/prg2lout.1
- 	chmod 644 $(MANDIR)/prg2lout.1
-+	chown bin:bin $(MANDIR)/prg2lout.1
- 
+@@ -406,6 +404,7 @@
  installdoc:
  	@echo ""
  	@echo "Creating LOUTDOCDIR $(LOUTDOCDIR) and copying documentation into it"
@@ -123,11 +107,7 @@
  	$(RCOPY) doc/* $(LOUTDOCDIR)
  	chmod 755 $(LOUTDOCDIR)
  	chmod 755 $(LOUTDOCDIR)/*
- 	chmod 644 $(LOUTDOCDIR)/*/*
-+	chown -R bin:bin $(LOUTDOCDIR)
- 
- allinstall:	install installman installdoc
- 
+@@ -416,9 +415,9 @@
  installfr:
  	@echo ""
  	@echo "Putting French error messages into $(LOUTLIBDIR)/$(LIBLOCA)/$(LOC_FR)"
@@ -139,7 +119,7 @@
  	chmod 755 $(LOUTLIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES
  	cp locale/msgs.fr $(LOUTLIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES/msgs.$(LOC_FR)
  	gencat $(LOUTLIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES/errors.$(LOC_FR)	\
-@@ -413,9 +417,9 @@
+@@ -428,9 +427,9 @@
  installde:
  	@echo ""
  	@echo "Putting German error messages into $(LOUTLIBDIR)/$(LIBLOCA)/$(LOC_DE)"
