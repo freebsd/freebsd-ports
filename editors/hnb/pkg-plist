@@ -1,5 +1,0 @@
-bin/hnb
-%%PORTDOCS%%share/doc/hnb/Documentation.hnb
-%%PORTDOCS%%share/doc/hnb/Documentation.html
-%%PORTDOCS%%share/doc/hnb/hnbrc
-%%PORTDOCS%%@dirrm share/doc/hnb/
