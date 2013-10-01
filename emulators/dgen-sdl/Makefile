@@ -11,15 +11,15 @@ COMMENT=	Wonderful Sega Genesis/MegaDrive emulator
 
 USE_SDL=	sdl
 USE_GL=		yes
+USES=		fmake
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/dgen \
-		bin/dgen_tobin
+		bin/dgen_tobin \
+		man/man1/dgen.1.gz \
+		man/man1/dgen_tobin.1.gz \
+		man/man5/dgenrc.5.gz
 
-MAN1=		dgen.1 dgen_tobin.1
-MAN5=		dgenrc.5
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386
