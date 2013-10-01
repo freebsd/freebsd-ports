@@ -1,5 +1,7 @@
 bin/savelogs
 etc/savelogs.conf.sample
+man/man1/rotation.1.gz
+man/man1/savelogs.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/savelogs/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/savelogs
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
