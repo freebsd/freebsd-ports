@@ -6,7 +6,7 @@ PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	vlad@vlad.uz.ua
+MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Drop down x11 terminal with transparency support
 
 LIB_DEPENDS=	confuse.0:${PORTSDIR}/devel/libconfuse
