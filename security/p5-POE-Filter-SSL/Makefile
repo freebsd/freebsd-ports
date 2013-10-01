@@ -22,12 +22,8 @@ RUN_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-POE>=0:${PORTSDIR}/devel/p5-POE
 
-WRKSRC=	${WRKDIR}
-
 USES=		perl5
 USE_PERL5=	configure
+NO_WRKSUBDIR=
 
-MAN3=		POE::Filter::SSL.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
