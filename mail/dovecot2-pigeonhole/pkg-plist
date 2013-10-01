@@ -72,6 +72,12 @@ lib/dovecot/sieve/lib90_sieve_extprograms_plugin.la
 lib/dovecot/sieve/lib90_sieve_extprograms_plugin.so
 libexec/dovecot/managesieve
 libexec/dovecot/managesieve-login
+man/man1/sieve-dump.1.gz
+man/man1/sieve-filter.1.gz
+man/man1/sieve-test.1.gz
+man/man1/sievec.1.gz
+man/man1/sieved.1.gz
+man/man7/pigeonhole.7.gz
 @dirrmtry libexec/dovecot
 @dirrmtry lib/dovecot/sieve
 @dirrmtry lib/dovecot/settings
@@ -82,4 +88,3 @@ libexec/dovecot/managesieve-login
 @dirrm include/dovecot-2.2-pigeonhole
 @dirrm %%DOCSDIR%%/example-config/conf.d
 @dirrm %%DOCSDIR%%/example-config
-@dirrm %%DOCSDIR%%
