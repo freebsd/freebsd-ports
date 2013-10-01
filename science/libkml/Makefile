@@ -16,7 +16,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -Wno-long-long
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 NO_STAGE=	yes
