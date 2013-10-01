@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/Geo::Parse::OSM.3.gz
+%%PERL5_MAN3%%/Geo::Parse::OSM::Multipass.3.gz
+%%PERL5_MAN3%%/Geo::Parse::OSM::Singlepass.3.gz
 %%SITE_PERL%%/Geo/Parse/OSM.pm
 %%SITE_PERL%%/Geo/Parse/OSM/Multipass.pm
 %%SITE_PERL%%/Geo/Parse/OSM/Singlepass.pm
