@@ -51,6 +51,94 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e5414d0c-2ade-11e3-821d-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>30.0.1599.66</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>50 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[223962][270758][271161][284785][284786] Medium CVE-2013-2906:
+	      Races in Web Audio. Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[260667] Medium CVE-2013-2907: Out of bounds read in
+	      Window.prototype object. Credit to Boris Zbarsky.</li>
+	    <li>[265221] Medium CVE-2013-2908: Address bar spoofing related to
+	      the “204 No Content” status code. Credit to Chamal de Silva.</li>
+	    <li>[265838][279277] High CVE-2013-2909: Use after free in
+	      inline-block rendering. Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[269753] Medium CVE-2013-2910: Use-after-free in Web Audio.
+	      Credit to Byoungyoung Lee of Georgia Tech Information Security
+	      Center (GTISC).</li>
+	    <li>[271939] High CVE-2013-2911: Use-after-free in XSLT. Credit to
+	      Atte Kettunen of OUSPG.</li>
+	    <li>[276368] High CVE-2013-2912: Use-after-free in PPAPI. Credit to
+	      Chamal de Silva and 41.w4r10r(at)garage4hackers.com.</li>
+	    <li>[278908] High CVE-2013-2913: Use-after-free in XML document
+	      parsing. Credit to cloudfuzzer.</li>
+	    <li>[279263] High CVE-2013-2914: Use after free in the Windows
+	      color chooser dialog. Credit to Khalil Zhani.</li>
+	    <li>[280512] Low CVE-2013-2915: Address bar spoofing via a
+	      malformed scheme. Credit to Wander Groeneveld. </li>
+	    <li>[281256] High CVE-2013-2916: Address bar spoofing related to
+	      the “204 No Content” status code. Credit to Masato Kinugawa.</li>
+	    <li>[281480] Medium CVE-2013-2917: Out of bounds read in Web Audio.
+	      Credit to Byoungyoung Lee and Tielei Wang of Georgia Tech
+	      Information Security Center (GTISC).</li>
+	    <li>[282088] High CVE-2013-2918: Use-after-free in DOM. Credit to
+	      Byoungyoung Lee of Georgia Tech Information Security Center
+	      (GTISC).</li>
+	    <li>[282736] High CVE-2013-2919: Memory corruption in V8. Credit to
+	      Adam Haile of Concrete Data.</li>
+	    <li>[285742] Medium CVE-2013-2920: Out of bounds read in URL
+	      parsing. Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[286414] High CVE-2013-2921: Use-after-free in resource loader.
+	      Credit to Byoungyoung Lee and Tielei Wang of Georgia Tech
+	      Information Security Center (GTISC).</li>
+	    <li>[286975] High CVE-2013-2922: Use-after-free in template
+	      element. Credit to Jon Butler.</li>
+	    <li>[299016] CVE-2013-2923: Various fixes from internal audits,
+	      fuzzing and other initiatives (Chrome 30).</li>
+	    <li>[275803] Medium CVE-2013-2924: Use-after-free in ICU. Upstream
+	      bug here.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2906</cvename>
+      <cvename>CVE-2013-2907</cvename>
+      <cvename>CVE-2013-2908</cvename>
+      <cvename>CVE-2013-2909</cvename>
+      <cvename>CVE-2013-2910</cvename>
+      <cvename>CVE-2013-2911</cvename>
+      <cvename>CVE-2013-2912</cvename>
+      <cvename>CVE-2013-2913</cvename>
+      <cvename>CVE-2013-2914</cvename>
+      <cvename>CVE-2013-2915</cvename>
+      <cvename>CVE-2013-2916</cvename>
+      <cvename>CVE-2013-2917</cvename>
+      <cvename>CVE-2013-2918</cvename>
+      <cvename>CVE-2013-2919</cvename>
+      <cvename>CVE-2013-2920</cvename>
+      <cvename>CVE-2013-2921</cvename>
+      <cvename>CVE-2013-2922</cvename>
+      <cvename>CVE-2013-2923</cvename>
+      <cvename>CVE-2013-2924</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2013-10-01</discovery>
+      <entry>2013-10-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e1f99d59-81aa-4662-bf62-c1076f5016c8">
     <topic>py-graphite-web -- Multiple vulnerabilities</topic>
     <affects>
