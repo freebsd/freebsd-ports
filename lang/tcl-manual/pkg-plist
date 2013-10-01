@@ -96,7 +96,6 @@ share/doc/tcl84/TclCmd/regexp.htm
 share/doc/tcl84/TclCmd/registry.htm
 share/doc/tcl84/TclCmd/regsub.htm
 share/doc/tcl84/TclCmd/rename.htm
-share/doc/tcl84/TclCmd/resource.htm
 share/doc/tcl84/TclCmd/return.htm
 share/doc/tcl84/TclCmd/safe.htm
 share/doc/tcl84/TclCmd/scan.htm
@@ -176,7 +175,6 @@ share/doc/tcl84/TclLib/IntObj.htm
 share/doc/tcl84/TclLib/Interp.htm
 share/doc/tcl84/TclLib/LinkVar.htm
 share/doc/tcl84/TclLib/ListObj.htm
-share/doc/tcl84/TclLib/Macintosh.htm
 share/doc/tcl84/TclLib/Notifier.htm
 share/doc/tcl84/TclLib/Object.htm
 share/doc/tcl84/TclLib/ObjectType.htm
@@ -776,31 +774,31 @@ share/doc/tcl85/UserCmd/tclsh.htm
 share/doc/tcl85/UserCmd/wish.htm
 share/doc/tcl85/contents.htm
 share/doc/tcl85/docs.css
-share/doc/tcl86/ItclCmd/body.htm
-share/doc/tcl86/ItclCmd/class.htm
-share/doc/tcl86/ItclCmd/code.htm
-share/doc/tcl86/ItclCmd/configbody.htm
-share/doc/tcl86/ItclCmd/contents.htm
-share/doc/tcl86/ItclCmd/delete.htm
-share/doc/tcl86/ItclCmd/ensemble.htm
-share/doc/tcl86/ItclCmd/find.htm
-share/doc/tcl86/ItclCmd/is.htm
-share/doc/tcl86/ItclCmd/itcl.htm
-share/doc/tcl86/ItclCmd/itclcomponent.htm
-share/doc/tcl86/ItclCmd/itcldelegate.htm
-share/doc/tcl86/ItclCmd/itclextendedclass.htm
-share/doc/tcl86/ItclCmd/itcloption.htm
-share/doc/tcl86/ItclCmd/itclvars.htm
-share/doc/tcl86/ItclCmd/itclwidget.htm
-share/doc/tcl86/ItclCmd/local.htm
-share/doc/tcl86/ItclCmd/scope.htm
-share/doc/tcl86/ItclLib/Class.htm
-share/doc/tcl86/ItclLib/List.htm
-share/doc/tcl86/ItclLib/Object.htm
-share/doc/tcl86/ItclLib/Preserve.htm
-share/doc/tcl86/ItclLib/RegisterC.htm
-share/doc/tcl86/ItclLib/Stack.htm
-share/doc/tcl86/ItclLib/contents.htm
+share/doc/tcl86/Itcl4.0.0Cmd/body.htm
+share/doc/tcl86/Itcl4.0.0Cmd/class.htm
+share/doc/tcl86/Itcl4.0.0Cmd/code.htm
+share/doc/tcl86/Itcl4.0.0Cmd/configbody.htm
+share/doc/tcl86/Itcl4.0.0Cmd/contents.htm
+share/doc/tcl86/Itcl4.0.0Cmd/delete.htm
+share/doc/tcl86/Itcl4.0.0Cmd/ensemble.htm
+share/doc/tcl86/Itcl4.0.0Cmd/find.htm
+share/doc/tcl86/Itcl4.0.0Cmd/is.htm
+share/doc/tcl86/Itcl4.0.0Cmd/itcl.htm
+share/doc/tcl86/Itcl4.0.0Cmd/itclcomponent.htm
+share/doc/tcl86/Itcl4.0.0Cmd/itcldelegate.htm
+share/doc/tcl86/Itcl4.0.0Cmd/itclextendedclass.htm
+share/doc/tcl86/Itcl4.0.0Cmd/itcloption.htm
+share/doc/tcl86/Itcl4.0.0Cmd/itclvars.htm
+share/doc/tcl86/Itcl4.0.0Cmd/itclwidget.htm
+share/doc/tcl86/Itcl4.0.0Cmd/local.htm
+share/doc/tcl86/Itcl4.0.0Cmd/scope.htm
+share/doc/tcl86/Itcl4.0.0Lib/Class.htm
+share/doc/tcl86/Itcl4.0.0Lib/List.htm
+share/doc/tcl86/Itcl4.0.0Lib/Object.htm
+share/doc/tcl86/Itcl4.0.0Lib/Preserve.htm
+share/doc/tcl86/Itcl4.0.0Lib/RegisterC.htm
+share/doc/tcl86/Itcl4.0.0Lib/Stack.htm
+share/doc/tcl86/Itcl4.0.0Lib/contents.htm
 share/doc/tcl86/Keywords/A.htm
 share/doc/tcl86/Keywords/B.htm
 share/doc/tcl86/Keywords/C.htm
@@ -1061,28 +1059,26 @@ share/doc/tcl86/TclLib/UpVar.htm
 share/doc/tcl86/TclLib/Utf.htm
 share/doc/tcl86/TclLib/WrongNumArgs.htm
 share/doc/tcl86/TclLib/contents.htm
-share/doc/tcl86/TdbcCmd/contents.htm
-share/doc/tcl86/TdbcCmd/tdbc.htm
-share/doc/tcl86/TdbcCmd/tdbc_connection.htm
-share/doc/tcl86/TdbcCmd/tdbc_mapSqlState.htm
-share/doc/tcl86/TdbcCmd/tdbc_resultset.htm
-share/doc/tcl86/TdbcCmd/tdbc_statement.htm
-share/doc/tcl86/TdbcCmd/tdbc_tokenize.htm
-share/doc/tcl86/TdbcLib/Tdbc_Init.htm
-share/doc/tcl86/TdbcLib/contents.htm
-share/doc/tcl86/TdbcmysqlCmd/contents.htm
-share/doc/tcl86/TdbcmysqlCmd/tdbc_mysql.htm
-share/doc/tcl86/TdbcodbcCmd/contents.htm
-share/doc/tcl86/TdbcodbcCmd/tdbc_odbc.htm
-share/doc/tcl86/TdbcpostgresCmd/contents.htm
-share/doc/tcl86/TdbcpostgresCmd/tdbc_postgres.htm
-share/doc/tcl86/Tdbcsqlite3Cmd/contents.htm
-share/doc/tcl86/Tdbcsqlite3Cmd/tdbc_sqlite3.htm
-share/doc/tcl86/ThreadCmd/contents.htm
-share/doc/tcl86/ThreadCmd/thread.htm
-share/doc/tcl86/ThreadCmd/tpool.htm
-share/doc/tcl86/ThreadCmd/tsv.htm
-share/doc/tcl86/ThreadCmd/ttrace.htm
+share/doc/tcl86/Tdbc1.0.0Cmd/contents.htm
+share/doc/tcl86/Tdbc1.0.0Cmd/tdbc.htm
+share/doc/tcl86/Tdbc1.0.0Cmd/tdbc_connection.htm
+share/doc/tcl86/Tdbc1.0.0Cmd/tdbc_mapSqlState.htm
+share/doc/tcl86/Tdbc1.0.0Cmd/tdbc_resultset.htm
+share/doc/tcl86/Tdbc1.0.0Cmd/tdbc_statement.htm
+share/doc/tcl86/Tdbc1.0.0Cmd/tdbc_tokenize.htm
+share/doc/tcl86/Tdbc1.0.0Lib/Tdbc_Init.htm
+share/doc/tcl86/Tdbc1.0.0Lib/contents.htm
+share/doc/tcl86/Tdbcmysql1.0.0Cmd/contents.htm
+share/doc/tcl86/Tdbcmysql1.0.0Cmd/tdbc_mysql.htm
+share/doc/tcl86/Tdbcodbc1.0.0Cmd/contents.htm
+share/doc/tcl86/Tdbcodbc1.0.0Cmd/tdbc_odbc.htm
+share/doc/tcl86/Tdbcsqlite3-1.0.0Cmd/contents.htm
+share/doc/tcl86/Tdbcsqlite3-1.0.0Cmd/tdbc_sqlite3.htm
+share/doc/tcl86/Thread2.7.0Cmd/contents.htm
+share/doc/tcl86/Thread2.7.0Cmd/thread.htm
+share/doc/tcl86/Thread2.7.0Cmd/tpool.htm
+share/doc/tcl86/Thread2.7.0Cmd/tsv.htm
+share/doc/tcl86/Thread2.7.0Cmd/ttrace.htm
 share/doc/tcl86/TkCmd/bell.htm
 share/doc/tcl86/TkCmd/bind.htm
 share/doc/tcl86/TkCmd/bindtags.htm
@@ -1265,19 +1261,18 @@ share/doc/tcl86/docs.css
 @dirrm share/doc/tcl86/UserCmd
 @dirrm share/doc/tcl86/TkLib
 @dirrm share/doc/tcl86/TkCmd
-@dirrm share/doc/tcl86/ThreadCmd
-@dirrm share/doc/tcl86/Tdbcsqlite3Cmd
-@dirrm share/doc/tcl86/TdbcpostgresCmd
-@dirrm share/doc/tcl86/TdbcodbcCmd
-@dirrm share/doc/tcl86/TdbcmysqlCmd
-@dirrm share/doc/tcl86/TdbcLib
-@dirrm share/doc/tcl86/TdbcCmd
+@dirrm share/doc/tcl86/Thread2.7.0Cmd
+@dirrm share/doc/tcl86/Tdbcsqlite3-1.0.0Cmd
+@dirrm share/doc/tcl86/Tdbcodbc1.0.0Cmd
+@dirrm share/doc/tcl86/Tdbcmysql1.0.0Cmd
+@dirrm share/doc/tcl86/Tdbc1.0.0Lib
+@dirrm share/doc/tcl86/Tdbc1.0.0Cmd
 @dirrm share/doc/tcl86/TclLib
 @dirrm share/doc/tcl86/TclCmd
 @dirrm share/doc/tcl86/Sqlite3Cmd
 @dirrm share/doc/tcl86/Keywords
-@dirrm share/doc/tcl86/ItclLib
-@dirrm share/doc/tcl86/ItclCmd
+@dirrm share/doc/tcl86/Itcl4.0.0Lib
+@dirrm share/doc/tcl86/Itcl4.0.0Cmd
 @dirrm share/doc/tcl86
 @dirrm share/doc/tcl85/UserCmd
 @dirrm share/doc/tcl85/TkLib

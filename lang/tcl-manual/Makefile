@@ -13,15 +13,14 @@ COMMENT=	Documentation for TCL (Tool Command Language)
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-VERSIONS=	8.4.19 \
-		8.5.14 \
-		8.6.0
+VERSIONS=	8.4.20 \
+		8.5.15 \
+		8.6.1
 
 .for v in ${VERSIONS}
 DISTFILES+=	$v/tcl$v-html.tar.gz
 .endfor
 
-NO_STAGE=	yes
 post-patch:
 .for v in ${VERSIONS}
 	@${REINPLACE_CMD} -e 's|<b>tclsh</b>|<b>tclsh${v:R}</b>|g; \
@@ -39,8 +38,8 @@ post-patch:
 
 do-install:
 .for v in ${VERSIONS}
-	${MKDIR} ${PREFIX}/share/doc/tcl${v:R:S/.//}
-	${CP} -R ${WRKDIR}/tcl${v}/html/* ${PREFIX}/share/doc/tcl${v:R:S/.//}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/tcl${v:R:S/.//}
+	${CP} -R ${WRKDIR}/tcl${v}/html/* ${STAGEDIR}${PREFIX}/share/doc/tcl${v:R:S/.//}
 .endfor
 
 .include <bsd.port.mk>
