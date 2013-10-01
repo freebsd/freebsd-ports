@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_TK=		84+
+USES+=		tk
 USE_XORG=	xext
 
 USE_AUTOTOOLS=	autoconf
@@ -31,9 +31,9 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CFLAGS+=	-DHAVE_UNISTD_H
-CONFIGURE_ARGS+=	--with-tcl-ver=${TCL_VER} --with-tk-ver=${TK_VER}
+CONFIGURE_ARGS+=--with-tcl-ver=${TCL_SHLIB_VER} --with-tk-ver=${TK_SHLIB_VER}
 
-.if ${USE_TCL} > 85
+.if ${TCL_SHLIB_VER} > 85
 CFLAGS+=	-DUSE_INTERP_ERRORLINE -DUSE_INTERP_RESULT
 .endif
 
