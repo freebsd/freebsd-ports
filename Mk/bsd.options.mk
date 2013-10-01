@@ -70,7 +70,7 @@
 # WITHOUT					- Unset options from the command line
 #
 #
-# The following knobs are there to simplfy the handling of OPTIONS in simple
+# The following knobs are there to simplify the handling of OPTIONS in simple
 # cases :
 #
 # OPTIONS_SUB				When defined it will add to PLIST_SUB:
@@ -93,9 +93,9 @@
 # ${opt}_CMAKE_OFF			When option is disabled, it will add its content to
 #							the CMAKE_ARGS.
 #
-# For each of CFLAGS CPPFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ENV USES
-# DISTFILES, defining ${opt}_${variable} will add it to the actual variable
-# when the option is enabled.
+# For each of CFLAGS CPPFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ARGS MAKE_ENV
+# USES DISTFILES PLIST_FILES PLIST_DIRS PLIST_DIRSTRY, defining
+# ${opt}_${variable} will add it to the actual variable when the option is enabled.
 #
 # For each of the depends target PKG EXTRACT PATCH FETCH BUILD LIB RUN,
 # defining ${opt}_${deptype}_DEPENDS will add it to the actual dependency when
@@ -392,7 +392,8 @@ CONFIGURE_ARGS+=	${${opt}_CONFIGURE_ON}
 .    if defined(${opt}_CMAKE_ON)
 CMAKE_ARGS+=	${${opt}_CMAKE_ON}
 .    endif
-.    for flags in CFLAGS CPPFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ENV USES DISTFILES
+.    for flags in CFLAGS CPPFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ARGS MAKE_ENV \
+                  USES DISTFILES PLIST_FILES PLIST_DIRS PLIST_DIRSTRY
 .      if defined(${opt}_${flags})
 ${flags}+=	${${opt}_${flags}}
 .      endif
