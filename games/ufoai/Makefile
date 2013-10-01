@@ -3,7 +3,7 @@
 
 PORTNAME=	ufoai
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/UFO_AI%202.x/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/$/-/}${PORTVERSION}-source
@@ -18,7 +18,8 @@ LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
 		curl:${PORTSDIR}/ftp/curl \
 		execinfo:${PORTSDIR}/devel/libexecinfo \
 		theora.0:${PORTSDIR}/multimedia/libtheora \
-		xvidcore.4:${PORTSDIR}/multimedia/xvid
+		xvidcore.4:${PORTSDIR}/multimedia/xvid \
+		mxml:${PORTSDIR}/textproc/mxml
 BUILD_DEPENDS=	${LOCALBASE}/include/mxml.h:${PORTSDIR}/textproc/mxml
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/base/default.cfg:${PORTSDIR}/games/ufoai-data
 
