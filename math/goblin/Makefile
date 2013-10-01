@@ -13,27 +13,25 @@ COMMENT=	A Graph Object Library for Network Programming Problems
 
 CONFLICTS=	glpk-*
 
-USE_GCC=	any
-NO_CCACHE=	yes
-USE_TK=		yes
-USES=		gmake
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+USES=		gmake tk
 USE_LDCONFIG=	yes
 MAKE_ARGS=	CC="${CC}" CCFLAGS="${CFLAGS}" \
 		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		LD="${CXX}" LIBS="-lm ${LDFLAGS}" \
-		libtcl=${USE_TCL} libtk=${USE_TK} \
+		libtcl=${TCL_SHLIB_VER} libtk=${TK_SHLIB_VER} \
 		prefix=${PREFIX}
 ALL_TARGET=	all shared
-PLIST_SUB+=	VERSION=${PORTVERSION:R}
-
 MAKE_JOBS_UNSAFE=	yes
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER} -I${LOCALBASE}/include/ \
 		-I${LOCALBASE}/include/tk${TK_VER} ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib -ltcl${USE_TCL} -ltk${USE_TK} ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib -ltcl${TCL_SHLIB_VER} -ltk${TK_SHLIB_VER} ${PTHREAD_LIBS}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
@@ -52,26 +50,26 @@ post-patch:
 		's|malloc\.h|stdlib.h|g'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/gosh ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/goblet ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/display ${PREFIX}/bin/goblin-display
-	${INSTALL} -d ${PREFIX}/include/${PORTNAME}
-	(cd ${WRKSRC}/include && ${COPYTREE_SHARE} \*.h ${PREFIX}/include/${PORTNAME})
-	${INSTALL} -d ${PREFIX}/lib/${PORTNAME}
-	(cd ${WRKSRC}/tcl && ${COPYTREE_SHARE} \* ${PREFIX}/lib/${PORTNAME})
-	${INSTALL_DATA} ${WRKSRC}/lib/libgoblin.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libgoblin.so ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/lib/libglpk.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libglpk.so ${PREFIX}/lib
-.if !defined(NOPORTDOCS)
-	${INSTALL} -d ${DOCSDIR}
-	${INSTALL} -d ${DOCSDIR}/html
-	(cd ${WRKSRC}/html && ${COPYTREE_SHARE} \* ${DOCSDIR}/html)
-	(cd ${WRKSRC}/doku && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/gosh ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/goblet ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/display ${STAGEDIR}${PREFIX}/bin/goblin-display
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+	(cd ${WRKSRC}/include && ${COPYTREE_SHARE} \*.h ${STAGEDIR}${PREFIX}/include/${PORTNAME})
+	${INSTALL} -d ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+	(cd ${WRKSRC}/tcl && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
+	${INSTALL_DATA} ${WRKSRC}/lib/libgoblin.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libgoblin.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/libglpk.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libglpk.so ${STAGEDIR}${PREFIX}/lib
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+	(cd ${WRKSRC}/html && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/html)
+	(cd ${WRKSRC}/doku && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 .endif
-.if !defined(NOPORTEXAMPLES)
-	${INSTALL} -d ${EXAMPLESDIR}
-	(cd ${WRKSRC}/samples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/samples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
