@@ -1,0 +1,11 @@
+--- ./src/util/Makefile.in.orig	2008-03-11 03:10:28.000000000 +0100
++++ ./src/util/Makefile.in	2013-09-29 19:26:01.000000000 +0200
+@@ -249,7 +249,7 @@
+ 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
+ install-libLIBRARIES: $(lib_LIBRARIES)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(libdir)" || $(mkdir_p) "$(DESTDIR)$(libdir)"
++	test -z "$(DESTDIR)$(libdir)" || $(mkdir_p) "$(DESTDIR)$(libdir)"
+ 	@list='$(lib_LIBRARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+ 	    f=$(am__strip_dir) \
