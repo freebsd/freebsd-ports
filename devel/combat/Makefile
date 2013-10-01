@@ -11,33 +11,40 @@ COMMENT=	A CORBA ORB implementation in Tcl
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	itcl.3:${PORTSDIR}/lang/itcl
+LIB_DEPENDS=	libitcl.so:${PORTSDIR}/lang/itcl
 RUN_DEPENDS=	idl:${PORTSDIR}/devel/mico
 
-USE_TCL=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+USES+=		tcl:run
 NO_BUILD=	yes
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
+
+post-patch:
+	${FIND} ${WRKSRC} -name dotest | ${XARGS} \
+	    ${REINPLACE_CMD} -i '' -e 's|tclsh8.5|${TCLSH}|g'
+	${REINPLACE_CMD} -e 's|%%TCLSH%%|${TCLSH}|' \
+	    ${WRKSRC}/bin/idl2tcl ${WRKSRC}/bin/iordump
 
 do-install:
-	cd ${WRKSRC}/orb && ${COPYTREE_SHARE} \* ${PREFIX}/lib/combat
-	${MKDIR} ${PREFIX}/bin/combat
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/idl2tcl ${PREFIX}/bin/combat
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/iordump ${PREFIX}/bin/combat
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/combat.pdf ${DOCSDIR}
+	cd ${WRKSRC}/orb && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/lib/combat
+	${MKDIR} ${STAGEDIR}${PREFIX}/bin/combat
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/idl2tcl ${STAGEDIR}${PREFIX}/bin/combat
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/iordump ${STAGEDIR}${PREFIX}/bin/combat
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/combat.pdf ${STAGEDIR}${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/demo && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/demo && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
-test:
+regression-test:
 	cd ${WRKSRC}/test && ${MAKE} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
