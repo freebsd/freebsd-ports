@@ -15,7 +15,7 @@ MAN4=		ati.4x radeon.4x
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000051
+.if ${OSVERSION} < 1000051 || !defined(WITH_NEW_XORG)
 ATI_VERSION=	6.14.6
 CONFIGURE_ARGS+=--disable-kms
 PLIST_SUB+=	OLD=""
