@@ -36,7 +36,7 @@ NO_STAGE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/Makefile.in \
-	${WRKSRC}/src/Makefile.in
+	${WRKSRC}/src/Makefile.in ${WRKSRC}/configure
 	${REINPLACE_CMD} -e "s,warmux_files.desktop,," ${WRKSRC}/data/Makefile.in
 	${FIND} -d ${WRKSRC}/data/ -name "*.*~" -delete
 
