@@ -4327,11 +4327,11 @@ _PACKAGE_DEP=	stage
 _PACKAGE_SEQ=	package-message pre-package pre-package-script do-package post-package-script
 
 _INSTALL_DEP=	package
-_INSTALL_SEQ=	install-message run-depends lib-depends install-package
+_INSTALL_SEQ=	install-message run-depends lib-depends
 _INSTALL_SUSEQ=	install-package security-check
 .endif
 
-.else
+.else # NO_STAGE
 
 _INSTALL_DEP=	build
 _INSTALL_SEQ=	install-message check-install-conflicts run-depends lib-depends apply-slist pre-install \
