@@ -18,20 +18,13 @@ USE_PYDISTUTILS=	yes
 PORTDOCS=	pyweblib.forms.html pyweblib.helper.html \
 		pyweblib.html pyweblib.httphelper.html \
 		pyweblib.session.html pyweblib.sslenv.html
-
 EXAMPLES=	*.py
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-install:
-	@${MKDIR} ${EXAMPLESDIR} ${EXAMPLESDIR}/cgi-bin
-	${INSTALL_DATA} ${WRKSRC}/cgi-bin/${EXAMPLES} ${EXAMPLESDIR}/cgi-bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/htdocs/pydoc/,} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/cgi-bin ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/cgi-bin/${EXAMPLES} ${STAGEDIR}${EXAMPLESDIR}/cgi-bin
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/htdocs/pydoc/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
