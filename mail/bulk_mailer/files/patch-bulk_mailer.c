@@ -1,5 +1,5 @@
---- bulk_mailer.c.orig	Wed May 24 23:34:33 2000
-+++ bulk_mailer.c	Thu Sep 12 17:32:58 2002
+--- ./bulk_mailer.c.orig	2000-05-24 21:34:33.000000000 +0200
++++ ./bulk_mailer.c	2013-10-01 12:36:24.324624000 +0200
 @@ -95,11 +95,16 @@
  #include <sysexits.h>
  #include <errno.h>
@@ -29,6 +29,15 @@
  
  /*
   * (default) max different domains per envelope.
+@@ -238,7 +245,7 @@
+ 
+ static char *
+ realloc_or_else (oldbuf, size)
+-char *oldbuf;
++void *oldbuf;
+ int size;
+ {
+     char *result;
 @@ -296,6 +303,7 @@
   * memory, appending a NUL to the copy.
   */
