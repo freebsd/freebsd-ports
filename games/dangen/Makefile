@@ -12,7 +12,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Shoot'em up game where accurate shooting matters
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_SDL=	sdl image
 DESKTOP_ENTRIES="dangen" \
 		"Shoot'em up game where accurate shooting matters" \
@@ -21,14 +21,11 @@ DESKTOP_ENTRIES="dangen" \
 		"Game;ArcadeGame;" \
 		false
 
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man6/${PORTNAME}.6.gz
 PORTDOCS=	*
+PORTDATA=	*
 
-PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/image/font.png
-PLIST_DIRS=	%%DATADIR%%/image %%DATADIR%%
-
-MAN6=		dangen.6
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -39,8 +36,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
