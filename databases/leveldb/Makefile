@@ -13,7 +13,6 @@ OPTIONS_DEFINE=	GPERFTOOLS SNAPPY
 OPTIONS_DEFAULT=SNAPPY
 
 LDFLAGS+=	-L${LOCALBASE}/lib
-NO_STAGE=	yes
 USE_LDCONFIG=	yes
 USES=		gmake
 
@@ -49,21 +48,21 @@ post-patch:
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/include/leveldb/ ${PREFIX}/include/memenv/ ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/include/leveldb/* ${PREFIX}/include/leveldb/
-	${INSTALL_DATA} ${WRKSRC}/helpers/memenv/memenv.h ${PREFIX}/include/memenv/
-	${INSTALL_LIB} ${WRKSRC}/libleveldb.a ${PREFIX}/lib/
-	${INSTALL_LIB} ${WRKSRC}/libleveldb.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${PREFIX}/lib/
-	${INSTALL_LIB} ${WRKSRC}/libmemenv.a ${PREFIX}/lib/
-	${INSTALL_LIB} ${WRKSRC}/libmemenv.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${PREFIX}/lib/
-	${LN} -s libleveldb.so.${SHLIB_MAJOR} ${PREFIX}/lib/libleveldb.so
-	${LN} -s libleveldb.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${PREFIX}/lib/libleveldb.so.${SHLIB_MAJOR}
-	${LN} -s libmemenv.so.${SHLIB_MAJOR} ${PREFIX}/lib/libmemenv.so
-	${LN} -s libmemenv.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${PREFIX}/lib/libmemenv.so.${SHLIB_MAJOR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/leveldb/ ${STAGEDIR}${PREFIX}/include/memenv/ ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/include/leveldb/* ${STAGEDIR}${PREFIX}/include/leveldb/
+	${INSTALL_DATA} ${WRKSRC}/helpers/memenv/memenv.h ${STAGEDIR}${PREFIX}/include/memenv/
+	${INSTALL_LIB} ${WRKSRC}/libleveldb.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_LIB} ${WRKSRC}/libleveldb.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_LIB} ${WRKSRC}/libmemenv.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_LIB} ${WRKSRC}/libmemenv.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${STAGEDIR}${PREFIX}/lib/
+	${LN} -s libleveldb.so.${SHLIB_MAJOR} ${STAGEDIR}${PREFIX}/lib/libleveldb.so
+	${LN} -s libleveldb.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${STAGEDIR}${PREFIX}/lib/libleveldb.so.${SHLIB_MAJOR}
+	${LN} -s libmemenv.so.${SHLIB_MAJOR} ${STAGEDIR}${PREFIX}/lib/libmemenv.so
+	${LN} -s libmemenv.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${STAGEDIR}${PREFIX}/lib/libmemenv.so.${SHLIB_MAJOR}
 # backward compatibility
 	${ECHO} "SNAPPY=${SNAPPY}" >> ${WRKSRC}/build_config.mk
 	${GREP} '^PLATFORM_CXXFLAGS=' ${WRKSRC}/build_config.mk | ${SED} 's|PLATFORM_CXXFLAGS|PORT_CFLAGS|' >> ${WRKSRC}/build_config.mk
 	${GREP} '^PLATFORM_CXXFLAGS=' ${WRKSRC}/build_config.mk | ${SED} 's|PLATFORM_CXXFLAGS|PLATFORM_CFLAGS|' >> ${WRKSRC}/build_config.mk
-	${INSTALL_DATA} ${WRKSRC}/build_config.mk ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/build_config.mk ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
