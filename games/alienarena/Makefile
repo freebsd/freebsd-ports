@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	alienarena
-PORTVERSION=	2011.753
-PORTREVISION=	3
+PORTVERSION=	2013.766
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
 		http://ftp.jeuxlinux.fr/files/ \
@@ -11,8 +10,10 @@ MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
 		http://gd.tuwien.ac.at/opsys/linux/gentoo/distfiles/ \
 		http://offload2.icculus.org:9090/alienarena/Files/ \
 		http://offload1.icculus.org:9090/alienarena/Files/ \
+		http://icculus.org/alienarena/Files/ \
+		http://red.planetarena.org/files/ \
 		${MASTER_SITE_GENTOO:S|$|distfiles/|}
-DISTNAME=	${PORTNAME}-7.53-linux20111227
+DISTNAME=	${PORTNAME}-7.66-linux20130827
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Alien Arena (native version)
@@ -22,7 +23,7 @@ RUN_DEPENDS=	${DATADIR}/data1/default.cfg:${PORTSDIR}/games/alienarena-data
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_WRKSRC=${WRKDIR}/${PORTNAME}-7.53/
+CONFIGURE_WRKSRC=${WRKDIR}/${PORTNAME}-7.66/
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 CONFIGURE_ARGS+=--with-xf86vm \
@@ -32,7 +33,7 @@ EXTRACT_AFTER_ARGS=	--exclude "data1"
 
 MAKE_ENV=	WITH_DATADIR=yes WITH_LIBDIR=yes \
 		DATADIR="${DATADIR}" LIBDIR="${LIBDIR}"
-WRKSRC=		${WRKDIR}/${PORTNAME}-7.53/source
+WRKSRC=		${WRKDIR}/${PORTNAME}-7.66/source
 
 SUB_FILES=	pkg-message
 
@@ -91,11 +92,11 @@ do-install:
 	${LN} -s ${DATADIR}/botinfo ${LIBDIR}
 	${LN} -s ${DATADIR}/data1/* ${LIBDIR}/data1
 .if ${PORT_OPTIONS:MCLIENT}
-	${INSTALL_PROGRAM} ${WRKSRC}/crx \
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
 		${PREFIX}/bin/${PORTNAME}
 .endif
 .if ${PORT_OPTIONS:MDEDICATED}
-	${INSTALL_PROGRAM} ${WRKSRC}/crx-ded \
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-ded \
 		${PREFIX}/bin/${PORTNAME}-ded
 .endif
 

@@ -7,6 +7,7 @@
 %%LIBDIR%%/data1/env
 %%LIBDIR%%/data1/fonts
 %%LIBDIR%%/data1/gfx
+%%LIBDIR%%/data1/graphical_presets
 %%LIBDIR%%/data1/levelshots
 %%LIBDIR%%/data1/maps
 %%LIBDIR%%/data1/maps.lst
