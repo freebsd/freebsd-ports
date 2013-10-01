@@ -11,7 +11,7 @@ DISTNAME=	smltk
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Typed and abstract Standard ML interface to Tcl/Tk
 
-USE_TK_WRAPPER=	yes
+USES+=		tk:wrapper
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	SMLNJDEVEL POLYML
