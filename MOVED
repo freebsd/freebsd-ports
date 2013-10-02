@@ -4970,3 +4970,5 @@ sysutils/rdiff-backup10|sysutils/rdiff-backup|2013-10-02|Outdated, consider usin
 java/jboss2|java/jboss72|2013-10-02|EOL upstream, consider using a newer version.
 ftp/ncftp2|ftp/ncftp3|2013-10-02|Outdated, consider using a newer version
 irc/keitairc|irc/keitairc2|2013-10-02|Outdated, consider using a newer version
+java/netbeans55|java/netbeans|2013-10-02|Outdated, consider using a newer version
+java/netbeans61|java/netbeans|2013-10-02|Outdated, consider using a newer version
