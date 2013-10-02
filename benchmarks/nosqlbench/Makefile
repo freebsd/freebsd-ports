@@ -4,7 +4,7 @@
 PORTNAME=	nosqlbench
 PORTVERSION=	0.0.${DATE}
 CATEGORIES=	benchmarks databases
-MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/
+MASTER_SITES=	LOCAL/vg
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Micro-benchmarking NoSQL storage

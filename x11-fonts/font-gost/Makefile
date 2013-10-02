@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gost
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://sd.ascon.ru/ftp/Public/Utils/DWG-DXF/ \
-		http://fbsd.zlonet.ru/distfiles/
+		LOCAL/vg
 PKGNAMEPREFIX=	font-
 DISTNAME=	TTF_FON
 

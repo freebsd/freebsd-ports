@@ -4,7 +4,7 @@
 PORTNAME=	confetti
 PORTVERSION=	0.0.${DATE}
 CATEGORIES=	textproc
-MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/
+MASTER_SITES=	LOCAL/vg
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Configuration file parser generator

@@ -4,7 +4,7 @@
 PORTNAME=	lockfree-malloc
 PORTVERSION=	0.0.${DATE}
 CATEGORIES=	devel
-MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/
+MASTER_SITES=	LOCAL/vg
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Scalable drop-in replacement for malloc/free
@@ -15,6 +15,7 @@ DATE=		20120802
 ONLY_FOR_ARCHS=	amd64
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
+USE_GCC=	yes
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=DOCS

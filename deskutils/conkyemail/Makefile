@@ -4,7 +4,8 @@
 PORTNAME=	conkyemail
 PORTVERSION=	2.07
 CATEGORIES=	deskutils
-MASTER_SITES=	http://launchpadlibrarian.net/28462213/
+MASTER_SITES=	http://launchpadlibrarian.net/28462213/ \
+		LOCAL/vg
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	vg@FreeBSD.org
