@@ -4,17 +4,17 @@
 PORTNAME=	irrlicht
 PORTVERSION=	1.8
 CATEGORIES=	x11-toolkits graphics
-MASTER_SITES=	SF/${PORTNAME}/Irrlicht%20SDK/1.7/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/Irrlicht%20SDK/${PORTVERSION}/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	High performance realtime 3D engine
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	Makefile *.cpp *.h *.txt
-USE_GMAKE=	yes
+USES=		gmake
 USE_GL=		yes
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
