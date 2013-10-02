@@ -1,7 +1,7 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-lcl-gtk
 
 COMMENT=	Lazarus components library - GTK backend
