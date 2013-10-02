@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	File-Fetch
-PORTVERSION=	0.42
+PORTVERSION=	0.44
 CATEGORIES=	ftp www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,4 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		File::Fetch.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
