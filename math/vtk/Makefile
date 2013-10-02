@@ -7,6 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	math graphics
 MASTER_SITES=	http://ovt.irfu.se/vtk/files/
 DISTFILES?=	VTK-${PORTVERSION}-LatestRelease.tar.gz
+PKGNAMESUFFIX=	4
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	The Visualization Toolkit shared libs
