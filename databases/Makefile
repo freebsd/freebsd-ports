@@ -200,7 +200,6 @@
     SUBDIR += mdbtools
     SUBDIR += mdcached
     SUBDIR += memcached
-    SUBDIR += memcached12
     SUBDIR += memcachedb
     SUBDIR += memcacheq
     SUBDIR += mergeant
