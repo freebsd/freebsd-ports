@@ -1,0 +1,10 @@
+CppDB is a SQL connectivity library that is designed to provide platform and
+database independent connectivity API similarly to what JDBC, ODBC and other
+connectivity libraries do. It supports Sqlite3, PostgreSQL, MySQL and as many
+RDBMSs as possible via cppdb-odbc bridge.
+
+It was written with performance, simplicity in use and locale safety as the
+primary goals in mind. It also provides both explicit verbose API and brief
+and nice syntactic sugar.
+
+WWW: http://cppcms.com/sql/cppdb/
