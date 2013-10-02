@@ -20,6 +20,7 @@ lib/stardict/plugins/stardict_wordnet_parsedata.so
 lib/stardict/plugins/stardict_xdxf_parsedata.la
 lib/stardict/plugins/stardict_xdxf_parsedata.so
 %%GNOME%%libdata/bonobo/servers/GNOME_Stardict.server
+man/man1/stardict.1.gz
 share/applications/stardict.desktop
 %%GNOME%%share/gnome/help/stardict/C/figures/acrobat_toolbar.png
 %%GNOME%%share/gnome/help/stardict/C/figures/portable_apps_menu.png
