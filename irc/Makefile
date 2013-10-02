@@ -58,7 +58,6 @@
     SUBDIR += irssi-scripts
     SUBDIR += irssi-xmpp
     SUBDIR += irssistats
-    SUBDIR += keitairc
     SUBDIR += keitairc2
     SUBDIR += konversation-kde4
     SUBDIR += kvirc
