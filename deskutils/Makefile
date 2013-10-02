@@ -139,6 +139,7 @@
     SUBDIR += ljclive
     SUBDIR += ljit
     SUBDIR += logjam
+    SUBDIR += lxshortcut
     SUBDIR += mcal
     SUBDIR += mdh
     SUBDIR += mencal
