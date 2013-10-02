@@ -3348,7 +3348,6 @@
     SUBDIR += poco-ssl
     SUBDIR += popt
     SUBDIR += poslib
-    SUBDIR += ppl
     SUBDIR += premake
     SUBDIR += premake4
     SUBDIR += preps-gui
@@ -3577,7 +3576,6 @@
     SUBDIR += py-icalendar
     SUBDIR += py-ice
     SUBDIR += py-icu
-    SUBDIR += py-importlib
     SUBDIR += py-iniparse
     SUBDIR += py-initgroups
     SUBDIR += py-instant
