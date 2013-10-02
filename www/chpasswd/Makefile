@@ -17,11 +17,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/etc/chpasswd \
 		--enable-language=English \
 		--enable-cgidir=${PREFIX}/www/cgi-bin
 
-NO_STAGE=	yes
 pre-install:
-	@${MKDIR} ${PREFIX}/www/cgi-bin
-
-post-install:
-	@${ECHO} 'Remember, passwd and log file must be owned by httpd user, or chmod 777'
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/cgi-bin
 
 .include <bsd.port.mk>
