@@ -11,7 +11,7 @@ MASTER_SITES=	http://dl.kibab.com/distfiles/qutim/ \
 DISTNAME=	qutim_${PORTVERSION}_svn529
 
 MAINTAINER=	webmaster@kibab.com
-COMMENT=	A Qt4-based multiprotocol IM client with advanced features
+COMMENT=	Qt4-based multiprotocol IM client with advanced features
 
 USE_QT4=	designer_build	\
 		gui		\
@@ -29,6 +29,7 @@ USE_XORG=	xscrnsaver
 
 USES=		cmake
 CMAKE_ARGS+=	-DUNIX:BOOL=1 -DBSD:BOOL=1
+LDFLAGS+=	-L${LOCALBASE}/lib -lX11
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
