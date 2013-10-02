@@ -4,7 +4,10 @@
 USE_GMAKE=	yes
 
 EXTRACT_AFTER_ARGS=	${LCLDIR} ${PORTNAME}/packager/registration \
-				${PORTNAME}/components/lazutils
+				${PORTNAME}/components/lazutils ${PORTNAME}/ideintf \
+				${PORTNAME}/images ${PORTNAME}/components/synedit \
+				${PORTNAME}/components/lazcontrols
+
 PATCHDIR=	${.CURDIR}/files
 FILESDIR=	${.CURDIR}/files
 PLIST_SUB+=	BUILDNAME=${BUILDNAME}
@@ -30,6 +33,12 @@ do-build:
 		${SETENV} ${MAKE_ENV} ${GMAKE} LCL_PLATFORM=${LCL_INTERFACE}
 	@cd ${WRKDIR}/${PORTNAME}/components/lazutils && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} LCL_PLATFORM=${LCL_INTERFACE}
+	@cd ${WRKDIR}/${PORTNAME}/ideintf && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} LCL_PLATFORM=${LCL_INTERFACE}
+	@cd ${WRKDIR}/${PORTNAME}/components/synedit && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} LCL_PLATFORM=${LCL_INTERFACE}
+	@cd ${WRKDIR}/${PORTNAME}/components/lazcontrols && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} LCL_PLATFORM=${LCL_INTERFACE}
 	@cd ${BUILDSRC} && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} LCL_PLATFORM=${LCL_INTERFACE}
 
@@ -38,10 +47,26 @@ pre-install:
 
 	@cd ${WRKSRC}/units/${BUILDNAME}/${LCL_INTERFACE} && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/lcl/units/%%BUILDNAME%%/${LCL_INTERFACE}/|' >> ${PLIST}
+	@cd ${WRKDIR}/${PORTNAME}/ideintf/units/${BUILDNAME}/${LCL_INTERFACE} && \
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/ideintf/units/%%BUILDNAME%%/${LCL_INTERFACE}/|' >> ${PLIST}
+	@cd ${WRKDIR}/${PORTNAME}/components/synedit/units/${BUILDNAME}/${LCL_INTERFACE} && \
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/components/synedit/units/%%BUILDNAME%%/${LCL_INTERFACE}/|' >> ${PLIST}
+	@cd ${WRKDIR}/${PORTNAME}/components/lazcontrols/lib/${BUILDNAME}/${LCL_INTERFACE} && \
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/components/lazcontrols/lib/%%BUILDNAME%%/${LCL_INTERFACE}/|' >> ${PLIST}
 
 .if ${PKGNAMESUFFIX} != "-lcl-units"
 	@${ECHO_CMD} "@dirrm %%DATADIR%%/lcl/units/%%BUILDNAME%%/${LCL_INTERFACE}" >> ${PLIST}
 .endif
+	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/ideintf/units/%%BUILDNAME%%" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/ideintf/units" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/ideintf" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/synedit/units/%%BUILDNAME%%" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/synedit/units" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/synedit" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/lazcontrols/lib/%%BUILDNAME%%" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/lazcontrols/lib" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/lazcontrols" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/lcl/units/%%BUILDNAME%%" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/lcl/units" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/lcl" >> ${PLIST}
@@ -49,5 +74,15 @@ pre-install:
 
 do-install:
 	@${MKDIR} ${DATADIR}/lcl/units/${BUILDNAME}/${LCL_INTERFACE}
+	@${MKDIR} ${DATADIR}/ideintf/units/${BUILDNAME}/${LCL_INTERFACE}
+	@${MKDIR} ${DATADIR}/components/synedit/units/${BUILDNAME}/${LCL_INTERFACE}
+	@${MKDIR} ${DATADIR}/components/lazcontrols/lib/${BUILDNAME}/${LCL_INTERFACE}
+
 	@cd ${WRKSRC}/units/${BUILDNAME}/${LCL_INTERFACE} && \
 		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/lcl/units/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
+	@cd ${WRKDIR}/${PORTNAME}/ideintf/units/${BUILDNAME}/${LCL_INTERFACE} && \
+		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/ideintf/units/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
+	@cd ${WRKDIR}/${PORTNAME}/components/synedit/units/${BUILDNAME}/${LCL_INTERFACE} && \
+		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/components/synedit/units/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
+	@cd ${WRKDIR}/${PORTNAME}/components/lazcontrols/lib/${BUILDNAME}/${LCL_INTERFACE} && \
+		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/components/lazcontrols/lib/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
