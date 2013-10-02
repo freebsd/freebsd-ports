@@ -1,24 +1,6 @@
---- examples/tk/xtk04.c.orig
-+++ examples/tk/xtk04.c
-@@ -35,7 +35,7 @@
-         if ( pm->fdata[i] > max )
-             max = pm->fdata[i];
- 
--    sprintf( interp->result, "%f", max );
-+    sprintf( Tcl_GetStringResult(interp), "%f", max );
-     return TCL_OK;
- }
- 
-@@ -48,7 +48,7 @@
-         if ( pm->fdata[i] < min )
-             min = pm->fdata[i];
- 
--    sprintf( interp->result, "%f", min );
-+    sprintf( Tcl_GetStringResult(interp), "%f", min );
-     return TCL_OK;
- }
- 
-@@ -80,7 +80,7 @@
+--- examples/tk/xtk04.c.orig	2011-11-30 23:04:42.000000000 +0100
++++ examples/tk/xtk04.c	2013-10-01 23:08:24.000000000 +0200
+@@ -87,7 +87,7 @@
  //
  // Results:
  //	Returns a standard Tcl completion code, and leaves an error
@@ -27,12 +9,3 @@
  //
  // Side effects:
  //	Depends on the startup script.
-@@ -158,7 +158,7 @@
- 
-     if ( pm->dim != 2 )
-     {
--        interp->result = "must use 2-d matrix.";
-+        Tcl_SetResult(interp,(char*)"must use 2-d matrix.",TCL_VOLATILE);
-         return TCL_ERROR;
-     }
- 

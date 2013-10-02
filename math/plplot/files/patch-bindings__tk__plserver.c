@@ -1,19 +1,5 @@
---- bindings/tk/plserver.c.orig
-+++ bindings/tk/plserver.c
-@@ -126,11 +126,11 @@
-     if ( Tk_ParseArgv( interp, (Tk_Window) NULL, &argc, argv,
-              argTable, TK_ARGV_NO_DEFAULTS ) != TCL_OK )
-     {
--        fprintf( stderr, "\n(plserver) %s\n\n", interp->result );
-+        fprintf( stderr, "\n(plserver) %s\n\n", Tcl_GetStringResult(interp) );
-         fprintf( stderr, "\
- The client_<xxx> and -child options should not be used except via the\n\
- PLplot/Tk driver.\n\n(wish) " );
--        if ( strncmp( interp->result, helpmsg, strlen( helpmsg ) ) )
-+        if ( strncmp( Tcl_GetStringResult(interp), helpmsg, strlen( helpmsg ) ) )
-             exit( 1 );
-     }
- 
+--- bindings/tk/plserver.c.orig	2013-04-26 12:02:06.000000000 +0200
++++ bindings/tk/plserver.c	2013-10-01 22:49:59.000000000 +0200
 @@ -158,7 +158,7 @@
  //
  // Results:
@@ -23,14 +9,3 @@
  //
  // Side effects:
  //	Depends on the startup script.
-@@ -257,8 +257,8 @@
- 
- // Print error message if one given
- 
--    if ( interp->result != NULL && interp->result[0] != '\0' )
--        fprintf( stderr, "%s\n", interp->result );
-+    if ( Tcl_GetStringResult(interp) != NULL && Tcl_GetStringResult(interp)[0] != '\0' )
-+        fprintf( stderr, "%s\n", Tcl_GetStringResult(interp) );
- 
- // Best to check the syntax before proceeding
- 

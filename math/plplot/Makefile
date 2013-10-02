@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plplot
-PORTVERSION=	5.9.9
-PORTREVISION=	2
+PORTVERSION=	5.9.10
 CATEGORIES=	math science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Source
 
@@ -14,9 +13,9 @@ LICENSE=	LGPL21 # (or later)
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${FREEFONT_DIR}/FreeMono.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
-LIB_DEPENDS=	LASi:${PORTSDIR}/devel/lasi \
-		qhull:${PORTSDIR}/math/qhull5 \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libLASi.so:${PORTSDIR}/devel/lasi \
+		libqhull.so:${PORTSDIR}/math/qhull5 \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${FREEFONT_DIR}/FreeMono.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
 
@@ -32,20 +31,18 @@ CMAKE_ARGS=	-DENABLE_java:BOOL=OFF -DENABLE_octave:BOOL=OFF \
 		-DENABLE_d:BOOL=OFF -DENABLE_ocaml:BOOL=OFF \
 		-DENABLE_pyqt4:BOOL=OFF \
 		-DPL_FREETYPE_FONT_PATH:PATH="${FREEFONT_DIR}" \
-		-DPLD_plmeta:BOOL=ON
+		-DPLD_plmeta:BOOL=OFF
 USE_AUTOTOOLS=	libltdl
 USE_LDCONFIG=	yes
 
-MAN1=		plm2gif.1 plpr.1 pltek.1 plrender.1
-
 FREEFONT_DIR=	${LOCALBASE}/lib/X11/fonts/freefont-ttf
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFORTRAN}
 USE_FORTRAN=	yes
 CONFIGURE_ENV+=	CMAKE_Fortran_COMPILER="${FC}"
+CMAKE_ARGS+=	-DENABLE_f95:BOOL=ON -DENABLE_f77:BOOL=ON
 PLIST_SUB+=	FORTRAN=""
 .else
 CMAKE_ARGS+=	-DENABLE_f95:BOOL=OFF -DENABLE_f77:BOOL=OFF
@@ -53,10 +50,10 @@ PLIST_SUB+=	FORTRAN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGD}
-LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
 CMAKE_ARGS+=	-DPLD_png:BOOL=ON
 PLIST_SUB+=	GD=""
-.else 
+.else
 PLIST_SUB+=	GD="@comment "
 .endif
 
@@ -65,7 +62,7 @@ USE_LUA=	yes
 CMAKE_ARGS+=	-DLUA_EXECUTABLE:FILEPATH="${LUA_CMD}"
 PLIST_SUB+=	LUA="" LUA_MODLIBDIR="${LUA_MODLIBDIR:S,${LUA_PREFIX}/,,}"
 .else
-CMAKE_ARGS+=	-DENABLE_lua:BOOL=OFF 
+CMAKE_ARGS+=	-DENABLE_lua:BOOL=OFF
 PLIST_SUB+=	LUA="@comment "
 .endif
 
@@ -85,8 +82,8 @@ PLIST_SUB+=	PYTHON="@comment "
 .if empty(PORT_OPTIONS:MX11)
 IGNORE=		TCLTK needs X11 support
 .endif
-LIB_DEPENDS+=	itk:${PORTSDIR}/x11-toolkits/itk
-USE_TK=		yes
+LIB_DEPENDS+=	libitk.so:${PORTSDIR}/x11-toolkits/itk
+USES+=		tk
 CMAKE_ARGS+=	-DTCL_TCLSH:FILEPATH="${TCLSH}" \
 		-DTCL_INCLUDE_PATH:PATH="${TCL_INCLUDEDIR}" \
 		-DITCL_INCLUDE_PATH:PATH="${LOCALBASE}/include/itcl3.4" \
@@ -94,7 +91,6 @@ CMAKE_ARGS+=	-DTCL_TCLSH:FILEPATH="${TCLSH}" \
 		-DTK_INCLUDE_PATH:PATH="${TK_INCLUDEDIR}" \
 		-DITK_INCLUDE_PATH:PATH="${LOCALBASE}/include/itk3.3" \
 		-DITK_LIBRARY:FILEPATH="${LOCALBASE}/lib/libitk.so"
-MAN1+=		plserver.1 pltcl.1
 PLIST_SUB+=	TCLTK=""
 .else
 CMAKE_ARGS+=	-DENABLE_tcl:BOOL=OFF
@@ -115,7 +111,7 @@ PLIST_SUB+=	QT4="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MWXGTK}
-LIB_DEPENDS+=	agg:${PORTSDIR}/graphics/agg
+LIB_DEPENDS+=	libagg.so:${PORTSDIR}/graphics/agg
 USE_WX=		2.6+
 CMAKE_ARGS+=	-DPLD_wxpng:BOOL=ON \
 		-DwxWidgets_CONFIG_EXECUTABLE:FILEPATH="${WX_CONFIG}"
@@ -133,11 +129,11 @@ CMAKE_ARGS+=	-DPLD_xcairo:BOOL=OFF -DPLD_xwin:BOOL=OFF
 PLIST_SUB+=	X11="@comment "
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e \
+pre-configure:
+	${REINPLACE_CMD} -e \
 		's|dl dlopen|c dlopen|' \
 		${WRKSRC}/cmake/modules/FindLTDL.cmake
-	@${GREP} -lR "/usr/local" ${WRKSRC}/cmake/modules | ${XARGS} \
+	${GREP} -lR "/usr/local" ${WRKSRC}/cmake/modules | ${XARGS} \
 		${REINPLACE_CMD} -e \
 		's|/usr/local|${LOCALBASE}|g'
 
