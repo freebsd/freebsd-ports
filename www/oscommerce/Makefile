@@ -8,8 +8,8 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.oscommerce.com/ext/
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	vlad@vlad.uz.ua
-COMMENT=	An full-featured open source e-commerce system
+MAINTAINER=	wen@FreeBSD.org
+COMMENT=	Full-featured open source e-commerce system
 
 USE_ZIP=	yes
 USE_PHP=	mysql session pcre gd curl openssl
