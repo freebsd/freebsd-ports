@@ -23,7 +23,6 @@ OPTIONS_SINGLE=	BACKEND
 OPTIONS_SINGLE_BACKEND=	MYSQL PGSQL
 OPTIONS_DEFAULT=	MYSQL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -40,14 +39,11 @@ post-extract:
 	@${CHMOD} -R u+w ${WRKSRC}
 
 do-install:
-	@${CP} ${WRKSRC}/custom_inc.php ${WRKSRC}/custom_inc.php.sample
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
-	@if [ ! -f ${WWWDIR}/custom_inc.php ]; then \
-		${CP} ${WWWDIR}/custom_inc.php.sample \
-		${WWWDIR}/custom_inc.php ; fi
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	${MV} ${WRKSRC}/custom_inc.php ${WRKSRC}/custom_inc.php.sample
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 
 post-install:
-	@${SED} -e 's|%%RECIPEDIR%%|${WWWDIR}|' ${PKGMESSAGE}
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

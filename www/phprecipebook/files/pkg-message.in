@@ -1,9 +1,9 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 Please read:
 
-%%RECIPEDIR%%/docs/INSTALL.UNIX
+%%WWWDIR%%/docs/INSTALL.UNIX
 
 If you are upgrading then read this too:
 
-%%RECIPEDIR%%/docs/UPGRADE.TXT
+%%WWWDIR%%/docs/UPGRADE.TXT
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
