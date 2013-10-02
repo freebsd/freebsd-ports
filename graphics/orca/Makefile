@@ -7,6 +7,7 @@ PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.orcaware.com/orca/pub/
+PKGNAMESUFFIX=	-plot
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for plotting arbitrary data from text files onto a Web server
