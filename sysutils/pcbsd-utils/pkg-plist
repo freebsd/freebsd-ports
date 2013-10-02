@@ -148,6 +148,7 @@ share/pcbsd/conf/prune-port-files
 share/pcbsd/conf/desktop-excludes
 share/pcbsd/conf/server-excludes
 share/pcbsd/pefs/other
+share/pcbsd/pefs/sshd
 share/pcbsd/pefs/system
 share/pcbsd/distfiles/desktop-overlay.txz
 share/pcbsd/distfiles/port-overlay.txz

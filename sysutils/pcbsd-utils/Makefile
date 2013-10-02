@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcbsd-utils
-PORTVERSION=	1380268666
+PORTVERSION=	1380708079
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
@@ -28,6 +28,10 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 900030
+IGNORE=		requires FreeBSD 9.0 or later
+.endif
 
 do-install:
 	cd ${WRKSRC} && make install PREFIX=${STAGEDIR}${PREFIX}
