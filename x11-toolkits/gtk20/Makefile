@@ -8,6 +8,7 @@ PORTREVISION?=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+PKGNAMESUFFIX=	2
 DISTNAME=	gtk+-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -17,7 +18,6 @@ COMMENT=	Gimp Toolkit for X11 GUI (previous stable version)
 LICENSE=	LGPL20
 
 USE_XZ=		yes
-LATEST_LINK=	gtk20
 
 PORTSCOUT=	limitw:0,even
 
