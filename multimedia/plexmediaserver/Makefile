@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	plexmediaserver
-PORTVERSION=	0.9.8.6.175
+PORTVERSION=	0.9.8.7.186
 CATEGORIES=	multimedia
 MASTER_SITES=	http://plex.r.worldssl.net/plex-media-server/${PORTVERSION}-${PLEX_BUILD}/
 DISTNAME=	PlexMediaServer-${PORTVERSION}-${PLEX_BUILD}-freebsd-amd64
 
-MAINTAINER=	plexmaintainer@k-moeller.dk
+MAINTAINER=	feld@FreeBSD.org
 COMMENT=	The Plex Media Server component
 
 USE_BZIP2=	yes
-PLEX_BUILD=	88ffbb2
+PLEX_BUILD=	0c77db1
 NO_BUILD=	yes
 WRKSRC=	${WRKDIR}/PlexMediaServer-${PORTVERSION}-${PLEX_BUILD}
 
@@ -22,12 +22,11 @@ SUB_LIST=	SUPPORT_PATH=${SUPPORT_PATH} SCRIPT_PATH="${SCRIPT_PATH}" USERS=${USER
 
 USERS=	plex
 GROUPS=	plex
-SUPPORT_PATH?=	${PREFIX}/plexdata
-SCRIPT_PATH?=	${DATADIR}
+SUPPORT_PATH?=	${STAGEDIR}/${PREFIX}/plexdata
+SCRIPT_PATH?=	${STAGEDIR}/${DATADIR}
 
 ONLY_FOR_ARCHS=	amd64
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900000
