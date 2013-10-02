@@ -62,6 +62,10 @@ SCONS_ARGS?=
 SCONS_BUILDENV?=
 SCONS_TARGET?=
 
+.if !defined(NO_STAGE)
+SCONS_ARGS+=	${DESTDIRNAME}=${STAGEDIR}
+.endif
+
 #
 # SCONS_INSTALL_TARGET is the default target to be used when
 # installing a port using scons.
