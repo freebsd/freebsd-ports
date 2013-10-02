@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Declare
-PORTVERSION=	0.36
+PORTVERSION=	0.37
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,11 +22,12 @@ BUILD_DEPENDS=	p5-Moose>=0.90:${PORTSDIR}/devel/p5-Moose \
 		p5-namespace-clean>=0.11:${PORTSDIR}/devel/p5-namespace-clean \
 		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-CheckDeps>=0:${PORTSDIR}/devel/p5-Test-CheckDeps \
+TEST_DEPENDS=	p5-Test-CheckDeps>=0.007:${PORTSDIR}/devel/p5-Test-CheckDeps \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
+NO_STAGE=	yes
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuildtiny
 
 MAN3=		MooseX::Declare.3 MooseX::Declare::Context.3 \
 		MooseX::Declare::Context::Namespaced.3 \
@@ -52,5 +53,4 @@ MAN3=		MooseX::Declare.3 MooseX::Declare::Context.3 \
 		MooseX::Declare::Syntax::RoleApplication.3 \
 		MooseX::Declare::Util.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
