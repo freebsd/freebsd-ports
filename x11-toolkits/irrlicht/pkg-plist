@@ -242,6 +242,9 @@ lib/libIrrlicht.so.%%SHARED_LIB_VER%%
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/021shot.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/022shot.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/023shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/024shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/025shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/026shot.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/2ddemo.png
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/Faerie5.BMP
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/IrrlichtTheme.ogg
@@ -278,6 +281,10 @@ lib/libIrrlicht.so.%%SHARED_LIB_VER%%
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/gun.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/gun.md2
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/help.png
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/icon_crosshairs16x16bw1.png
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/icon_crosshairs16x16bw2.png
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/icon_crosshairs16x16bw3.png
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/icon_crosshairs16x16col.png
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/iconlist.png
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/impact.wav
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/irr.ico
@@ -311,6 +318,7 @@ lib/libIrrlicht.so.%%SHARED_LIB_VER%%
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/opengl.vsh
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/opengllogo.png
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/particle.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/particlegreen.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/particlered.bmp
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/particlewhite.bmp
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/portal1.bmp
@@ -343,6 +351,8 @@ lib/libIrrlicht.so.%%SHARED_LIB_VER%%
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/wall.bmp
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/wall.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/water.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/yodan mdl - readme.txt
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/yodan.mdl
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/zip.png
 @dirrm include/irrlicht
 %%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/01.HelloWorld
