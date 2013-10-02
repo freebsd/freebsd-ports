@@ -122,8 +122,6 @@
     SUBDIR += mx4j
     SUBDIR += netbeans
     SUBDIR += netbeans-devel
-    SUBDIR += netbeans55
-    SUBDIR += netbeans61
     SUBDIR += netcomponents
     SUBDIR += netrexx
     SUBDIR += netty
