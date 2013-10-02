@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsync
-PORTVERSION=	3.0.9
-PORTREVISION=	3
+PORTVERSION=	3.1.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -31,37 +30,42 @@ PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
 MAN1=		rsync.1
 MAN5=		rsyncd.conf.5
 
-OPTIONS_DEFINE=	POPT_PORT SSH FLAGS ATIMES ACL ICONV TIMELIMIT RENAMED DOCS
+# define options
+OPTIONS_DEFINE=		POPT_PORT ZLIB_BASE SSH
+OPTIONS_RADIO=		PTS
+OPTIONS_RADIO_PTS=	TIMELIMIT RENAMED FLAGS ATIMES ACL
+
+# options provided upstream
 POPT_PORT_DESC=	Use popt from devel/popt instead of bundled one
+ZLIB_BASE_DESC=	Use zlib from base instead of bundled one
 SSH_DESC=	Use SSH instead of RSH
+
+# options provided by patch (mutually exclusive)
+PTS_DESC=	Functionality provided by third party patches
+TIMELIMIT_DESC=	Time limit patch
+RENAMED_DESC=	Add support for renamed file detection
 FLAGS_DESC=	File system flags support patch, adds --fileflags
 ATIMES_DESC=	Preserve access times, adds --atimes
 ACL_DESC=	Add backward-compatibility for the --acls option
-TIMELIMIT_DESC=	Time limit patch
-RENAMED_DESC=	Add support for renamed file detection
 
-OPTIONS_DEFAULT=SSH
+# define default options
+OPTIONS_DEFAULT=SSH ZLIB_BASE
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MZLIB_BASE}
+CONFIGURE_ARGS=	--with-included-zlib=no
+.endif
+
 .if ${PORT_OPTIONS:MTIMELIMIT}
 PATCH_STRIP=	-p1
 EXTRA_PATCHES+=	${WRKSRC}/patches/time-limit.diff
-.if ${PORT_OPTIONS:MFLAGS}
-IGNORE=		flags and timelimit can't be enabled simultaneously. Please rerun 'make config' and disable one of them
-.endif
-.if ${PORT_OPTIONS:MATIMES}
-IGNORE=		atimes and timelimit can't be enabled simultaneously. Please rerun 'make config' and disable one of them
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MATIMES}
 PATCH_STRIP=	-p1
 EXTRA_PATCHES+=	${WRKSRC}/patches/atimes.diff
-.if ${PORT_OPTIONS:MFLAGS}
-IGNORE=		flags and atimes can't be enabled simultaneously. Please rerun 'make config' and disable one of them
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MFLAGS} || ${PORT_OPTIONS:MACL} || make(makesum) || ${PORT_OPTIONS:MTIMELIMIT} || ${PORT_OPTIONS:MATIMES} || ${PORT_OPTIONS:MRENAMED}
@@ -82,15 +86,13 @@ CONFIGURE_ENV+=		ac_cv_header_iconv_h=no
 
 .if ${PORT_OPTIONS:MFLAGS}
 PATCH_STRIP=	-p1
-EXTRA_PATCHES+=	${WRKSRC}/patches/fileflags.diff
-# https://bugzilla.samba.org/show_bug.cgi?id=8941
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-syscall.c
+EXTRA_PATCHES+=	${WRKSRC}/patches/fileflags.diff \
+		${FILESDIR}/extrapatch-main.c
 .endif
 
 .if ${PORT_OPTIONS:MRENAMED}
 PATCH_STRIP=	-p1
-#EXTRA_PATCHES+=	${WRKSRC}/patches/detect-renamed.diff
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-detect-renamed.diff
+EXTRA_PATCHES+=	${WRKSRC}/patches/detect-renamed.diff
 .endif
 
 .if ${PORT_OPTIONS:MACL}
