@@ -21,6 +21,7 @@ USE_GHOSTSCRIPT=yes
 USE_QT4=	gui network xml moc_build qmake_build rcc_build \
 		uic_build qtestlib script
 USE_TEX=	latex dvipsk
+USE_DOS2UNIX=	yes
 HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_UNSAFE=	yes
