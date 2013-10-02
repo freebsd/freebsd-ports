@@ -5,6 +5,7 @@ PORTNAME=	surf
 PORTVERSION=	0.6
 CATEGORIES=	www
 MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/
+PKGNAMESUFFIX=	-browser
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Web browser based on WebKit/Gtk+
