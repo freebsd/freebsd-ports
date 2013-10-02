@@ -416,7 +416,6 @@ share/pcbsd/pc-controlpanel/items/system/lxde-lxtask.desktop
 share/pcbsd/pc-controlpanel/items/system/pcusermanager.desktop
 share/pcbsd/pc-controlpanel/items/system/ksystemlog.desktop
 share/pcbsd/pc-controlpanel/items/system/about.desktop
-share/pcbsd/pc-controlpanel/items/system/pc-updategui.desktop
 share/pcbsd/pc-controlpanel/items/system/pc-adsldap.desktop
 share/pcbsd/pc-controlpanel/items/system/webmin.desktop
 share/pcbsd/pc-controlpanel/items/system/pc-sysmanager.desktop
@@ -432,6 +431,7 @@ share/pcbsd/pc-controlpanel/items/tools/pbi-kbackup.desktop
 share/pcbsd/pc-controlpanel/items/tools/warden.desktop
 share/pcbsd/pc-controlpanel/items/tools/lifepreserver.desktop
 share/pcbsd/pc-controlpanel/items/tools/flash-player-properties.desktop
+share/pcbsd/pc-controlpanel/items/software/pc-updategui.desktop
 share/pcbsd/pc-controlpanel/items/software/pbi-winecfg.desktop
 share/pcbsd/pc-controlpanel/items/software/pbi-q4wine.desktop
 share/pcbsd/pc-controlpanel/items/software/pbi-kports.desktop

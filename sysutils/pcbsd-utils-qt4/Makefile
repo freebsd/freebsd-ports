@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcbsd-utils-qt4
-PORTVERSION=	1380268666
+PORTVERSION=	1380708079
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
@@ -36,6 +36,12 @@ HAS_CONFIGURE=	yes
 QMAKE_PRO=	src-qt4.pro
 QMAKE_ARGS=	-recursive ${QMAKE_PRO}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 900030
+IGNORE=		requires FreeBSD 9.0 or later
+.endif
+
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} PREFIX=${PREFIX} -unix CONFIG+="configure" ${QMAKE_PRO}
@@ -43,4 +49,4 @@ do-configure:
 do-install:
 	cd ${WRKSRC} && make install INSTALL_ROOT=${STAGEDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
