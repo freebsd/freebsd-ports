@@ -72,6 +72,15 @@ lib/libusecure.so.6
 lib/libusecure.so.6.0.7
 libdata/pkgconfig/commoncpp.pc
 libdata/pkgconfig/ucommon.pc
+man/man1/args.1.gz
+man/man1/car.1.gz
+man/man1/commoncpp-config.1.gz
+man/man1/mdsum.1.gz
+man/man1/pdetach.1.gz
+man/man1/scrub-files.1.gz
+man/man1/sockaddr.1.gz
+man/man1/ucommon-config.1.gz
+man/man1/zerofill.1.gz
 @dirrm include/ucommon
 @dirrm include/commoncpp
 @dirrm bin/ucommon
