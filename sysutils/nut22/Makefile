@@ -8,17 +8,15 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+PKGNAMESUFFIX=	22
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network UPS Tools
 
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USES=		pkgconfig
-
-NO_LATEST_LINK=	yes
+USES=		gmake pkgconfig
 
 NUT_USER?=	uucp
 NUT_GROUP?=	uucp
