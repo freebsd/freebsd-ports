@@ -1,5 +1,5 @@
---- CMakeLists.txt.orig	2013-07-28 12:32:06.000000000 +0200
-+++ CMakeLists.txt	2013-09-17 09:22:29.000000000 +0200
+--- CMakeLists.txt	2013-07-28 05:32:06.000000000 -0500
++++ CMakeLists.txt	2013-10-01 18:00:14.000000000 -0500
 @@ -30,7 +30,9 @@
  # when we override default install prefix, assume full path is used...
  
@@ -58,7 +58,30 @@
  check_include_files(libintl.h HAVE_LIBINTL_H)
  check_include_files(netinet/in.h HAVE_NETINET_IN_H)
  check_include_files(net/if.h HAVE_NET_IF_H)
-@@ -566,11 +574,11 @@
+@@ -411,11 +419,20 @@
+     endforeach()
+     foreach(lib ${UCOMMON_LIBS})
+         STRING(REGEX REPLACE "^[-]l" "" slib ${lib})
+-        set(PACKAGE_LIBS "${PACKAGE_LIBS} -l${slib}")
++        if(${lib} STREQUAL "-pthread")
++		set(PACKAGE_LIBS "${PACKAGE_LIBS} ${slib}")
++        else()
++		set(PACKAGE_LIBS "${PACKAGE_LIBS} -l${slib}")
++        endif()
++        STRING(REGEX REPLACE "^[-]l" "" slib ${lib})
+     endforeach()
+     foreach(lib ${SECURE_LIBS})
+         STRING(REGEX REPLACE "^[-]l" "" slib ${lib})
+-        set(ADDITIONAL_LIBS "${ADDITIONAL_LIBS} -l${slib}")
++	if(${lib} STREQUAL "-pthread")
++		set(ADDITIONAL_LIBS "${ADDITIONAL_LIBS} ${slib}")
++	else()
++		set(ADDITIONAL_LIBS "${ADDITIONAL_LIBS} -l${slib}")
++	endif()
+     endforeach()
+     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}.pc.cmake ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc)
+     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}-config.cmake ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config)
+@@ -566,11 +583,11 @@
  endif()
  
  if(NOT WIN32)
