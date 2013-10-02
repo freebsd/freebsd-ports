@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Method-Signatures
-PORTVERSION=	0.45
+PORTVERSION=	0.46
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,10 +30,11 @@ BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0.10:${PORTSDIR}/devel/p5-B-Hooks-EndOfSco
 		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Eval-Closure>=0:${PORTSDIR}/devel/p5-Eval-Closure \
-		p5-Test-CheckDeps>=0.006:${PORTSDIR}/devel/p5-Test-CheckDeps \
+		p5-Test-CheckDeps>=0.007:${PORTSDIR}/devel/p5-Test-CheckDeps \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
+NO_STAGE=	yes
 USES=		perl5
 USE_PERL5=	modbuildtiny
 
@@ -41,5 +42,4 @@ MAN3=		MooseX::Method::Signatures.3 \
 		MooseX::Method::Signatures::Types.3 \
 		MooseX::Method::Signatures::Meta::Method.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
