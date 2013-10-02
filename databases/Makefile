@@ -54,7 +54,6 @@
     SUBDIR += dbf
     SUBDIR += dbf2mysql
     SUBDIR += dbh
-    SUBDIR += dbh10
     SUBDIR += dbow
     SUBDIR += dbtool
     SUBDIR += dbview
