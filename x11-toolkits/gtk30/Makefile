@@ -8,6 +8,7 @@ PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+PKGNAMESUFFIX=	3
 DISTNAME=	gtk+-${PORTVERSION}
 DIST_SUBDIR=	gnome3
 
@@ -17,7 +18,6 @@ COMMENT=	Gimp Toolkit for X11 GUI (current stable version)
 LICENSE=	LGPL20
 
 USE_XZ=		yes
-LATEST_LINK=	gtk30
 
 .if !defined(REFERENCE_PORT)
 

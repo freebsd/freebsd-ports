@@ -7,13 +7,13 @@ PORTVERSION=	2.2.12
 PORTREVISION?=	13
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/${PORTNAME}/2.2
+PKGNAMESUFFIX=	20
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for Gtk+, Pango, Atk, and Glib
 
 USE_BZIP2=	yes
-LATEST_LINK=	gtkmm2
 
 .if !defined(REFERENCE_PORT)
 
