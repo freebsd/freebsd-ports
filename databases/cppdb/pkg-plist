@@ -1,0 +1,41 @@
+include/cppdb/atomic_counter.h
+include/cppdb/backend.h
+include/cppdb/conn_manager.h
+include/cppdb/connection_specific.h
+include/cppdb/defs.h
+include/cppdb/driver_manager.h
+include/cppdb/errors.h
+include/cppdb/frontend.h
+include/cppdb/mutex.h
+include/cppdb/numeric_util.h
+include/cppdb/pool.h
+include/cppdb/ref_ptr.h
+include/cppdb/shared_object.h
+include/cppdb/utils.h
+lib/libcppdb.a
+lib/libcppdb.so
+lib/libcppdb.so.0
+lib/libcppdb.so.0.3.1
+%%MYSQL%%lib/libcppdb_mysql.a
+%%MYSQL%%lib/libcppdb_mysql.so
+%%MYSQL%%lib/libcppdb_mysql.so.0
+%%MYSQL%%lib/libcppdb_mysql.so.0.3.1
+%%ODBC%%lib/libcppdb_odbc.a
+%%ODBC%%lib/libcppdb_odbc.so
+%%ODBC%%lib/libcppdb_odbc.so.0
+%%ODBC%%lib/libcppdb_odbc.so.0.3.1
+%%PGSQL%%lib/libcppdb_postgresql.a
+%%PGSQL%%lib/libcppdb_postgresql.so
+%%PGSQL%%lib/libcppdb_postgresql.so.0
+%%PGSQL%%lib/libcppdb_postgresql.so.0.3.1
+%%SQLITE3%%lib/libcppdb_sqlite3.a
+%%SQLITE3%%lib/libcppdb_sqlite3.so
+%%SQLITE3%%lib/libcppdb_sqlite3.so.0
+%%SQLITE3%%lib/libcppdb_sqlite3.so.0.3.1
+share/licenses/cppdb-0.3.1/BSL
+share/licenses/cppdb-0.3.1/LICENSE
+share/licenses/cppdb-0.3.1/MIT
+share/licenses/cppdb-0.3.1/catalog.mk
+@dirrm share/licenses/cppdb-0.3.1
+@dirrm share/licenses
+@dirrm include/cppdb
