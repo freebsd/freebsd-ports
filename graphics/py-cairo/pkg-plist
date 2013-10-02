@@ -2,8 +2,7 @@ include/pycairo/pycairo.h
 %%PYTHON_SITELIBDIR%%/cairo/__init__.py
 %%PYTHON_SITELIBDIR%%/cairo/__init__.pyc
 %%PYTHON_SITELIBDIR%%/cairo/__init__.pyo
-%%PYTHON_SITELIBDIR%%/cairo/_cairo.la
 %%PYTHON_SITELIBDIR%%/cairo/_cairo.so
 libdata/pkgconfig/pycairo.pc
 @dirrm %%PYTHON_SITELIBDIR%%/cairo
-@dirrm include/pycairo
+@dirrmtry include/pycairo
