@@ -5,7 +5,7 @@ PORTNAME=	retranslator
 PORTVERSION=	5.0.0
 CATEGORIES=	security
 MASTER_SITES=	http://utils.kaspersky.com/updater/retranslator_5.0.0.7/FreeBSD_6.3/ \
-		http://fbsd.zlonet.ru/distfiles/
+		LOCAL/vg
 DISTNAME=	${PORTNAME}-${PORTVERSION}-7
 
 MAINTAINER=	vg@FreeBSD.org
@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-LIB_DEPENDS+=	m.4:${PORTSDIR}/misc/compat6x
+LIB_DEPENDS+=	m:${PORTSDIR}/misc/compat6x
 
 NO_STAGE=	yes
 do-configure:

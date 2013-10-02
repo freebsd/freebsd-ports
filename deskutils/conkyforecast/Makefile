@@ -5,7 +5,7 @@ PORTNAME=	conkyforecast
 PORTVERSION=	2.20
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpadlibrarian.net/70673352/ \
-		http://fbsd.zlonet.ru/distfiles/
+		LOCAL/vg
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	vg@FreeBSD.org

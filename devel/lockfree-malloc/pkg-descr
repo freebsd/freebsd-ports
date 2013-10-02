@@ -12,4 +12,4 @@ lockfree-malloc is a scalable drop-in replacement for malloc/free.
   clean C++. (!)
 * It fully stand-alone; it does not rely on pthreads or libc at runtime.
 
-WWW:	https://github.com/Begun/lockfree-malloc
+WWW: https://github.com/Begun/lockfree-malloc

@@ -5,9 +5,7 @@ PORTNAME=	xwinwrap
 PORTVERSION=	0.3
 PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/ \
-		http://tourservice.kz/zloidemon/distfiles/ \
-		http://z-up.ru/zloidemon/distfiles/
+MASTER_SITES=	LOCAL/vg
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	XWinWrap replace a desktop background with a movie or screensaver
