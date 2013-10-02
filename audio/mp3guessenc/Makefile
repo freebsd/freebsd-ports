@@ -2,16 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	mp3guessenc
-DISTVERSION=	${DIST_REL}${BETA_REL}
+PORTVERSION=	0.25.0
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${DIST_REL}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/\.0$//}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility for guessing which encoder was used to encode an mp3 file
 
 NO_STAGE=	yes
-DIST_REL=	0.25
-BETA_REL=	beta2
 
 PLIST_FILES=	bin/mp3guessenc
 SRC=		decode.c mp3guessenc.c bit_utils.c tags.c
