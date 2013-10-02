@@ -276,7 +276,6 @@
     SUBDIR += gimp-save-for-web
     SUBDIR += gimpfx-foundry
     SUBDIR += giram
-    SUBDIR += gkrellkam
     SUBDIR += gkrellkam2
     SUBDIR += gle
     SUBDIR += gle-graphics
