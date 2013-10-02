@@ -2,63 +2,61 @@
 # $FreeBSD$
 
 PORTNAME=	xsane
-PORTVERSION=	0.998
-PORTREVISION=	3
+PORTVERSION=	0.999
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.xsane.org/download/ \
-		http://gd.tuwien.ac.at/hci/sane/xsane/ \
-		ftp://ftp.mostang.com/pub/sane/xsane/
+MASTER_SITES=	http://www.xsane.org/download/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Gtk-based X11 frontend for SANE (Scanner Access Now Easy)
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		liblcms.so:${PORTSDIR}/graphics/lcms
 BUILD_DEPENDS=	scanimage:${PORTSDIR}/graphics/sane-backends
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
+USE_GNOME=	gtk20 gdkpixbuf2
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		pkgconfig
 
-MAN1=		xsane.1
+PORTDOCS=	*.html *.jpg
 
-OPTIONS_DEFINE=	GIMP NLS
+OPTIONS_DEFINE=	DOCS GIMP NLS
 GIMP_DESC=	GIMP plugin support
+OPTIONS_DEFAULT=	GIMP
 
-NO_STAGE=	yes
+OPTIONS_SUB=	yes
+
+GIMP_RUN_DEPENDS=	${LOCALBASE}/bin/gimp:${PORTSDIR}/graphics/gimp-app
+GIMP_CONFIGURE_ENABLE=	gimp2 gimp
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -lintl"
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGIMP}
 SUB_FILES+=	pkg-message
-LIB_DEPENDS+=	gimp:${PORTSDIR}/graphics/gimp-app
-CONFIGURE_ARGS+=--enable-gimp2
-.else
-CONFIGURE_ARGS+=--disable-gimp
 .endif
 
-pre-patch:
-	@${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} \
-		-i "" -e 's|\$$(DESTDIR)\$$(sbindir)||g'
+post-patch:
+	@${REINPLACE_CMD} -e 's| $$(DESTDIR)$$(sbindir)||' \
+		-e 's|$$(DESTDIR)$$(xsanedocdir)||' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|@POSUB@ doc|@POSUB@|' ${WRKSRC}/Makefile.in
 
 post-install:
-.if ${PORT_OPTIONS:MGIMP}
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
-.endif
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.man ${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
