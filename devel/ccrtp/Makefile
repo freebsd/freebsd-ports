@@ -2,25 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	ccrtp
-PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTVERSION=	2.0.6
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Implementation of the real-time transport protocol
 
-LIB_DEPENDS=	commoncpp:${PORTSDIR}/devel/ucommon
+LIB_DEPENDS=	commoncpp:${PORTSDIR}/devel/ucommon \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		gmake gettext iconv pkgconfig
 USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -pthread"
 CPPFLAGS+=	-I${LOCALBASE}/include
 INFO=	ccrtp
-
-BROKEN=		does not build
 
 NO_STAGE=	yes
 post-patch:
