@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kazoo/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kazoo/client.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kazoo/exceptions.py
