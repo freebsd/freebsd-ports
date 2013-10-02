@@ -58,11 +58,11 @@ AMR_NB_CONFIGURE_ENABLE=	libopencore-amrnb
 
 # Opencore AMR WB
 AMR_WB_LIB_DEPENDS=	libopencore-amrwb.so:${PORTSDIR}/audio/opencore-amr
-AMR_WB_CONFIGURE_EMABLE=	libopencore-amrwb
+AMR_WB_CONFIGURE_ENABLE=	libopencore-amrwb
 
 # ass
 ASS_LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass
-ASS_CONFIGURE_EMABLE=	libass
+ASS_CONFIGURE_ENABLE=	libass
 
 # cdio
 CDIO_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio
