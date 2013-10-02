@@ -48,7 +48,6 @@
     SUBDIR += mirror
     SUBDIR += multiget
     SUBDIR += ncftp1
-    SUBDIR += ncftp2
     SUBDIR += ncftp3
     SUBDIR += ncftpd
     SUBDIR += net2ftp
