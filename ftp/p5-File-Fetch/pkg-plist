@@ -1,5 +1,6 @@
 %%SITE_PERL%%/File/Fetch.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Fetch/.packlist
+%%PERL5_MAN3%%/File::Fetch.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Fetch
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
 @dirrmtry %%SITE_PERL%%/File
