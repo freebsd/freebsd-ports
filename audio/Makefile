@@ -768,7 +768,6 @@
     SUBDIR += tomahawk
     SUBDIR += toolame
     SUBDIR += tosha
-    SUBDIR += tracker
     SUBDIR += trommler
     SUBDIR += tse3
     SUBDIR += tta
