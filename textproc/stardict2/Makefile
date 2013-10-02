@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	stardict-3
 DIST_SUBDIR=	stardict
 
-MAINTAINER=	delphij@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform and international dictionary written in Gtk2
 
 GNU_CONFIGURE=	yes
