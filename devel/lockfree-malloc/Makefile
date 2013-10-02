@@ -1,4 +1,4 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	lockfree-malloc
@@ -6,7 +6,7 @@ PORTVERSION=	0.0.${DATE}
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/vg
 
-MAINTAINER=	g.veniamin@googlemail.com
+MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Scalable drop-in replacement for malloc/free
 
 LICENSE=	LGPL3
