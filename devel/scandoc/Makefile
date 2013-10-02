@@ -7,27 +7,26 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A C/C++ documentation generator
+COMMENT=	C/C++ documentation generator
+
+# The foolowing line may be uncommented when/if PR/182572 is committed,
+# the file COPYING should be removed from DOCSDIR installation and plist
+#LICENSE=	ARTPERL10
 
 USES=		perl5
 NO_BUILD=	yes
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-.for i in COPYING ChangeLog README scandoc.html
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/${PORTNAME}
-.endfor
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}/images
-	${CP} -R ${WRKSRC}/images/ ${PREFIX}/share/doc/${PORTNAME}/images/
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}/templates
-	${CP} -R ${WRKSRC}/templates/ ${PREFIX}/share/doc/${PORTNAME}/templates/
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}/test
-	${CP} -R ${WRKSRC}/test/ ${PREFIX}/share/doc/${PORTNAME}/test/
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DATADIR}/images \
+		${STAGEDIR}${DATADIR}/templates ${STAGEDIR}${DATADIR}/test
+	(cd ${WRKSRC} && \
+		${COPYTREE_SHARE} "COPYING ChangeLog README scandoc.html" \
+			${STAGEDIR}${DOCSDIR}/ && \
+		${COPYTREE_SHARE} "images templates test" \
+			${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
