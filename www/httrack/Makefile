@@ -25,7 +25,6 @@ USES=		gmake iconv
 
 MAN1=		htsserver.1 httrack.1 proxytrack.1 webhttrack.1
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -38,7 +37,7 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${INSTALL_DATA} ${WRKSRC}/html/httrack.css ${DOCSDIR}/httrack.css
+	${INSTALL_DATA} ${WRKSRC}/html/httrack.css ${STAGEDIR}${DOCSDIR}/httrack.css
 .endif
 
 .include <bsd.port.mk>
