@@ -30,5 +30,3 @@ man/auto/RT/Authen/ExternalAuth/.packlist.gz
 @dirrmtry man/auto/RT/Authen
 @dirrmtry man/auto/RT
 @dirrmtry man/auto
-@dirrmtry lib/RT/Authen
-@dirrmtry lib/RT
