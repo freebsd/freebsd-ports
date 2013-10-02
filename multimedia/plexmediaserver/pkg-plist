@@ -1,4 +1,3 @@
-etc/rc.d/plexmediaserver
 %%DATADIR%%/Plex DLNA Server
 %%DATADIR%%/Plex Media Scanner
 %%DATADIR%%/Plex Media Server
