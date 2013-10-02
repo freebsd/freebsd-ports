@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	concurrencykit
-PORTVERSION=	0.2.20
+PORTVERSION=	0.3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://concurrencykit.org/releases/ \
 		http://repnop.org/releases/
@@ -18,9 +18,6 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 PLIST_SUB+=	VERSION=${PORTVERSION}
-
-NO_STAGE=	yes
-.include "${.CURDIR}/Makefile.man"
 
 post-extract:
 	${REINPLACE_CMD} -e 's|PKGCONFIG_DATA=@LIBRARY@|PKGCONFIG_DATA=${PREFIX}/libdata/|g' \
