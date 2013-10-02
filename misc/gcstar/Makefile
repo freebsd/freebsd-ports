@@ -3,6 +3,7 @@
 
 PORTNAME=	gcstar
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://download.gna.org/gcstar/ \
 		http://djdomics.free.fr/distfiles/
