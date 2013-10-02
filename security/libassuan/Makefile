@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libassuan
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1.1
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -12,7 +12,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	IPC library used by GnuPG and gpgme
 
-LIB_DEPENDS=	gpg-error:${PORTSDIR}/security/libgpg-error
+LIB_DEPENDS=	libgpg-error.so:${PORTSDIR}/security/libgpg-error
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -30,5 +30,4 @@ PLIST_FILES=	bin/libassuan-config include/assuan.h \
 verify: checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.sig
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

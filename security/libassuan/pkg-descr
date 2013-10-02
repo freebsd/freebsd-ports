@@ -1,3 +1,5 @@
-This is the IPC library used by GnuPG 2 and gpgme
+Libassuan is a small library implementing the so-called Assuan
+protocol. This protocol is used for IPC between most newer GnuPG
+components.
 
-WWW:	http://gnupg.org/related_software/libassuan/index.en.html
+WWW: http://gnupg.org/related_software/libassuan/index.en.html
