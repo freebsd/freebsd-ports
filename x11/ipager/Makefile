@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://useperl.ru/ipager/src/
 DISTNAME=	ipager-${PORTVERSION}
 
-MAINTAINER=	vlad@vlad.uz.ua
+MAINTAINER=	lars.engels@0x20.net
 COMMENT=	X11 pager program
 
 USE_SCONS=	yes
