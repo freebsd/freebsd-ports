@@ -158,7 +158,6 @@
     SUBDIR += gensig
     SUBDIR += getlive
     SUBDIR += getmail
-    SUBDIR += gkrellmmailwatch
     SUBDIR += gkrellmmailwatch2
     SUBDIR += gld
     SUBDIR += gmail-notify
