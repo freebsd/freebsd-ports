@@ -1,20 +1,25 @@
---- ./Makefile.orig	2013-04-17 22:46:50.000000000 +0200
-+++ ./Makefile	2013-04-17 23:49:01.771634044 +0200
+--- ./Makefile.orig	2013-06-07 15:18:52.000000000 +0200
++++ ./Makefile	2013-10-02 16:10:24.583316212 +0200
 @@ -13,8 +13,6 @@
  # files in the program, then also delete it here.
- # $Revision: 178 $
+ # $Revision: 268 $
  
 --include makefile.inc
 -
  # *** configure script ***
  # support for tcp fast open?
  #TFO=yes
-@@ -31,7 +29,7 @@
+@@ -33,11 +31,11 @@
  
- TARGET=httping
+ LOCALEDIR=/usr/share/locale
  
 -DEBUG=yes
 +DEBUG?=no
  WFLAGS=-Wall -W
  OFLAGS=
- CFLAGS+=$(WFLAGS) $(OFLAGS) -DVERSION=\"$(VERSION)\"
+ CFLAGS+=$(WFLAGS) $(OFLAGS) -DVERSION=\"$(VERSION)\" -DLOCALEDIR=\"$(LOCALEDIR)\"
+-LDFLAGS+=-lm
++LDFLAGS+=-lm -lintl
+ 
+ PACKAGE=$(TARGET)-$(VERSION)
+ PREFIX?=/usr

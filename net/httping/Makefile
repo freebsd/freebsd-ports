@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httping
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.3.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/httping/ \
 		CRITICAL
@@ -12,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Ping-like tool for HTTP requests
 
-USES=		gmake
+USES=		gmake gettext
 
 MAN1=		httping.1
 PLIST_FILES=	bin/httping
@@ -22,6 +21,7 @@ OPTIONS_DEFINE=	NCURSES FFTW SSL
 OPTIONS_DEFAULT=NCURSES SSL
 
 NO_STAGE=	yes
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNCURSES}
