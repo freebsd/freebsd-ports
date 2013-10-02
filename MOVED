@@ -4965,3 +4965,4 @@ sysutils/puppet26|sysutils/puppet27|2013-10-01|Has expired: End of Life from apr
 www/varnish2|www/varnish|2013-10-01|Has expired: No update since january 2011. Upgrade to Varnish 3.
 databases/dbh10|databases/dbh|2013-10-02|Outdated, not depend on, consider using databases/dbh
 audio/tracker||2013-10-02|No public distfiles available anymore
+chinese/joe2|chinese/joe|2013-10-02|Consider using chinese/joe2
