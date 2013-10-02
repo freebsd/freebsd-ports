@@ -137,7 +137,7 @@ OPENJPEG_CONFIGURE_ENABLE=	libopenjpeg
 
 # opus
 OPUS_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
-OPUS_CONFIGURE_ENABLE=	--enable-libopus
+OPUS_CONFIGURE_ENABLE=	libopus
 
 # pulseaudio
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
