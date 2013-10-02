@@ -4974,6 +4974,6 @@ java/netbeans55|java/netbeans|2013-10-02|Outdated, consider using a newer versio
 java/netbeans61|java/netbeans|2013-10-02|Outdated, consider using a newer version
 devel/ppl||2013-10-02|expired: fails to build
 devel/py-importlib||2013-10-02|expired: Python 2.6 port will reach it's EoL upstream soon
-graphics/gkrellkam|graphics/gkrellkam2|Outdated, consider using a newer version
-mail/gkrellmmailwatch|mail/gkrellmmailwatch2|Outdated, consider using a newer version
-databases/memcached|databases/memcached12|Unsupported upstream, consider using a newer version
+graphics/gkrellkam|graphics/gkrellkam2|2013-10-02|Outdated, consider using a newer version
+mail/gkrellmmailwatch|mail/gkrellmmailwatch2|2013-10-02|Outdated, consider using a newer version
+databases/memcached|databases/memcached12|2013-10-02|Unsupported upstream, consider using a newer version
