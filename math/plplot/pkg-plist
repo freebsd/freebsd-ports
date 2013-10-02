@@ -1,6 +1,3 @@
-bin/plm2gif
-bin/plpr
-bin/plrender
 %%TCLTK%%bin/plserver
 %%TCLTK%%bin/pltcl
 bin/pltek
@@ -28,6 +25,7 @@ include/plplot/qsastimedll.h
 %%WXGTK%%include/plplot/wxPLplotwindow.h
 %%TCLTK%%include/plplot/tclMatrix.h
 %%FORTRAN%%lib/fortran/include/plplot/plplot_parameters.h
+%%FORTRAN%%lib/fortran/modules/plplot/plf95demolib.mod
 %%FORTRAN%%lib/fortran/modules/plplot/plplot.mod
 %%FORTRAN%%lib/fortran/modules/plplot/plplot_flt.mod
 %%FORTRAN%%lib/fortran/modules/plplot/plplotp.mod
@@ -37,12 +35,13 @@ lib/libcsirocsa.so.0.0.1
 lib/libcsironn.so
 lib/libcsironn.so.0
 lib/libcsironn.so.0.0.1
+%%FORTRAN%%lib/libplf95demolibd.a
 lib/libplplotcxxd.so
-lib/libplplotcxxd.so.10
-lib/libplplotcxxd.so.10.0.0
+lib/libplplotcxxd.so.11
+lib/libplplotcxxd.so.11.0.0
 lib/libplplotd.so
-lib/libplplotd.so.11
-lib/libplplotd.so.11.0.0
+lib/libplplotd.so.12
+lib/libplplotd.so.12.0.0
 %%FORTRAN%%lib/libplplotf77cd.so
 %%FORTRAN%%lib/libplplotf77cd.so.9
 %%FORTRAN%%lib/libplplotf77cd.so.9.1.1
@@ -50,17 +49,17 @@ lib/libplplotd.so.11.0.0
 %%FORTRAN%%lib/libplplotf77d.so.9
 %%FORTRAN%%lib/libplplotf77d.so.9.1.1
 %%FORTRAN%%lib/libplplotf95cd.so
-%%FORTRAN%%lib/libplplotf95cd.so.9
-%%FORTRAN%%lib/libplplotf95cd.so.9.1.1
+%%FORTRAN%%lib/libplplotf95cd.so.10
+%%FORTRAN%%lib/libplplotf95cd.so.10.0.0
 %%FORTRAN%%lib/libplplotf95d.so
-%%FORTRAN%%lib/libplplotf95d.so.9
-%%FORTRAN%%lib/libplplotf95d.so.9.1.1
+%%FORTRAN%%lib/libplplotf95d.so.10
+%%FORTRAN%%lib/libplplotf95d.so.10.0.0
 %%QT4%%lib/libplplotqtd.so
-%%QT4%%lib/libplplotqtd.so.0
-%%QT4%%lib/libplplotqtd.so.0.0.1
+%%QT4%%lib/libplplotqtd.so.1
+%%QT4%%lib/libplplotqtd.so.1.0.0
 %%TCLTK%%lib/libplplottcltkd.so
-%%TCLTK%%lib/libplplottcltkd.so.9
-%%TCLTK%%lib/libplplottcltkd.so.9.2.0
+%%TCLTK%%lib/libplplottcltkd.so.10
+%%TCLTK%%lib/libplplottcltkd.so.10.0.0
 %%WXGTK%%lib/libplplotwxwidgetsd.so
 %%WXGTK%%lib/libplplotwxwidgetsd.so.0
 %%WXGTK%%lib/libplplotwxwidgetsd.so.0.0.0
@@ -79,8 +78,6 @@ lib/plplot/driversd/mem.driver_info
 lib/plplot/driversd/mem.so
 lib/plplot/driversd/null.driver_info
 lib/plplot/driversd/null.so
-lib/plplot/driversd/plmeta.driver_info
-lib/plplot/driversd/plmeta.so
 lib/plplot/driversd/ps.driver_info
 lib/plplot/driversd/ps.so
 lib/plplot/driversd/psttf.driver_info
@@ -112,6 +109,9 @@ libdata/pkgconfig/plplotd-c++.pc
 %%TCLTK%%libdata/pkgconfig/plplotd-tcl.pc
 %%WXGTK%%libdata/pkgconfig/plplotd-wxwidgets.pc
 libdata/pkgconfig/plplotd.pc
+%%TCLTK%%man/man1/plserver.1.gz
+%%TCLTK%%man/man1/pltcl.1.gz
+man/man1/pltek.1.gz
 %%DOCSDIR%%/ABOUT
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING.LIB
@@ -152,6 +152,7 @@ libdata/pkgconfig/plplotd.pc
 %%QT4%%%%DATADIR%%/examples/c++/qt_PlotWindow.h
 %%QT4%%%%DATADIR%%/examples/c++/qt_example.cpp
 %%WXGTK%%%%DATADIR%%/examples/c++/wxPLplotDemo.cpp
+%%DATADIR%%/examples/c++/x00.cc
 %%DATADIR%%/examples/c++/x01.cc
 %%DATADIR%%/examples/c++/x01cc.cc
 %%DATADIR%%/examples/c++/x02.cc
@@ -193,6 +194,7 @@ libdata/pkgconfig/plplotd.pc
 %%DATADIR%%/examples/c/plcdemos.h
 %%DATADIR%%/examples/c/test_plend.c
 %%DATADIR%%/examples/c/tutor.c
+%%DATADIR%%/examples/c/x00c.c
 %%DATADIR%%/examples/c/x01c.c
 %%DATADIR%%/examples/c/x02c.c
 %%DATADIR%%/examples/c/x03c.c
@@ -227,12 +229,12 @@ libdata/pkgconfig/plplotd.pc
 %%DATADIR%%/examples/c/x32c.c
 %%DATADIR%%/examples/c/x33c.c
 %%DATADIR%%/examples/c/x34c.c
-%%DATADIR%%/examples/cmake/modules/FindPkgConfig.cmake
 %%DATADIR%%/examples/cmake/modules/export_plplot-%%CMAKE_BUILD_TYPE%%.cmake
 %%DATADIR%%/examples/cmake/modules/export_plplot.cmake
+%%DATADIR%%/examples/cmake/modules/language_support.cmake
 %%DATADIR%%/examples/cmake/modules/pkg-config.cmake
 %%DATADIR%%/examples/cmake/modules/plplot_configure.cmake
-%%DATADIR%%/examples/cmake/modules/language_support.cmake
+%%DATADIR%%/examples/cmake/modules/plplot_functions.cmake
 %%FORTRAN%%%%DATADIR%%/examples/f77/CMakeLists.txt
 %%FORTRAN%%%%DATADIR%%/examples/f77/Makefile
 %%FORTRAN%%%%DATADIR%%/examples/f77/plf77demos.inc
@@ -272,6 +274,7 @@ libdata/pkgconfig/plplotd.pc
 %%FORTRAN%%%%DATADIR%%/examples/f95/CMakeLists.txt
 %%FORTRAN%%%%DATADIR%%/examples/f95/Makefile
 %%FORTRAN%%%%DATADIR%%/examples/f95/plf95demos.inc
+%%FORTRAN%%%%DATADIR%%/examples/f95/x00f.f90
 %%FORTRAN%%%%DATADIR%%/examples/f95/x01f.f90
 %%FORTRAN%%%%DATADIR%%/examples/f95/x02f.f90
 %%FORTRAN%%%%DATADIR%%/examples/f95/x03f.f90
@@ -308,6 +311,7 @@ libdata/pkgconfig/plplotd.pc
 %%DATADIR%%/examples/lena.pgm
 %%LUA%%%%DATADIR%%/examples/lua/CMakeLists.txt
 %%LUA%%%%DATADIR%%/examples/lua/plplot_examples.lua
+%%LUA%%%%DATADIR%%/examples/lua/x00.lua
 %%LUA%%%%DATADIR%%/examples/lua/x01.lua
 %%LUA%%%%DATADIR%%/examples/lua/x02.lua
 %%LUA%%%%DATADIR%%/examples/lua/x03.lua
@@ -356,6 +360,7 @@ libdata/pkgconfig/plplotd.pc
 %%PYTHON%%%%DATADIR%%/examples/python/test_fill.py
 %%PYTHON%%%%DATADIR%%/examples/python/test_gradient.py
 %%PYTHON%%%%DATADIR%%/examples/python/test_hebrew_diacritic.py
+%%PYTHON%%%%DATADIR%%/examples/python/test_linebreak.py
 %%PYTHON%%%%DATADIR%%/examples/python/test_plplot_encodings.py
 %%PYTHON%%%%DATADIR%%/examples/python/test_plsmem.py
 %%PYTHON%%%%DATADIR%%/examples/python/test_style.py
@@ -363,6 +368,7 @@ libdata/pkgconfig/plplotd.pc
 %%PYTHON%%%%DATADIR%%/examples/python/test_symbol_clip.py
 %%PYTHON%%%%DATADIR%%/examples/python/test_type1.py
 %%PYTHON%%%%DATADIR%%/examples/python/testh.py
+%%PYTHON%%%%DATADIR%%/examples/python/x00
 %%PYTHON%%%%DATADIR%%/examples/python/x01
 %%TCLTK%%%%PYTHON%%%%DATADIR%%/examples/python/x01.py
 %%PYTHON%%%%DATADIR%%/examples/python/x02
@@ -414,6 +420,7 @@ libdata/pkgconfig/plplotd.pc
 %%PYTHON%%%%DATADIR%%/examples/python/x30
 %%PYTHON%%%%DATADIR%%/examples/python/x31
 %%PYTHON%%%%DATADIR%%/examples/python/x33
+%%PYTHON%%%%DATADIR%%/examples/python/xw00.py
 %%PYTHON%%%%DATADIR%%/examples/python/xw01.py
 %%PYTHON%%%%DATADIR%%/examples/python/xw02.py
 %%PYTHON%%%%DATADIR%%/examples/python/xw03.py
@@ -448,6 +455,7 @@ libdata/pkgconfig/plplotd.pc
 %%PYTHON%%%%DATADIR%%/examples/python/xw33.py
 %%TCLTK%%%%DATADIR%%/examples/tcl/CMakeLists.txt
 %%TCLTK%%%%DATADIR%%/examples/tcl/README.tcldemos
+%%TCLTK%%%%DATADIR%%/examples/tcl/mktclIndex
 %%TCLTK%%%%DATADIR%%/examples/tcl/plgrid.tcl
 %%TCLTK%%%%DATADIR%%/examples/tcl/plot.dat
 %%TCLTK%%%%DATADIR%%/examples/tcl/plot.tcl
@@ -456,6 +464,8 @@ libdata/pkgconfig/plplotd.pc
 %%TCLTK%%%%DATADIR%%/examples/tcl/stats.log
 %%TCLTK%%%%DATADIR%%/examples/tcl/tclIndex
 %%TCLTK%%%%DATADIR%%/examples/tcl/tcldemos.tcl
+%%TCLTK%%%%DATADIR%%/examples/tcl/x00
+%%TCLTK%%%%DATADIR%%/examples/tcl/x00.tcl
 %%TCLTK%%%%DATADIR%%/examples/tcl/x01
 %%TCLTK%%%%DATADIR%%/examples/tcl/x01.tcl
 %%TCLTK%%%%DATADIR%%/examples/tcl/x02
@@ -549,6 +559,7 @@ libdata/pkgconfig/plplotd.pc
 %%TCLTK%%%%DATADIR%%/examples/tk/tk04
 %%TCLTK%%%%DATADIR%%/examples/tk/tk04.in
 %%TCLTK%%%%DATADIR%%/examples/tk/tkdemos.tcl
+%%TCLTK%%%%DATADIR%%/examples/tk/x00.tcl
 %%TCLTK%%%%DATADIR%%/examples/tk/x01.tcl
 %%TCLTK%%%%DATADIR%%/examples/tk/x02.tcl
 %%TCLTK%%%%DATADIR%%/examples/tk/x03.tcl
@@ -580,6 +591,7 @@ libdata/pkgconfig/plplotd.pc
 %%TCLTK%%%%DATADIR%%/examples/tk/x29.tcl
 %%TCLTK%%%%DATADIR%%/examples/tk/x30.tcl
 %%TCLTK%%%%DATADIR%%/examples/tk/x31.tcl
+%%TCLTK%%%%DATADIR%%/examples/tk/x33.tcl
 %%TCLTK%%%%DATADIR%%/examples/tk/xtk01.c
 %%TCLTK%%%%DATADIR%%/examples/tk/xtk02.c
 %%TCLTK%%%%DATADIR%%/examples/tk/xtk04.c
