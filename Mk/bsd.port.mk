@@ -3876,8 +3876,10 @@ do-package: ${TMPPLIST}
 	if [ -f ${PKGMESSAGE} ]; then \
 		_LATE_PKG_ARGS="$${_LATE_PKG_ARGS} -D ${PKGMESSAGE}"; \
 	fi; \
-	if ${PKG_CMD} -S ${STAGEDIR} ${PKG_ARGS} ${PKGFILE}; then \
-		if [ -d ${PACKAGES} ]; then \
+	if ${PKG_CMD} -S ${STAGEDIR} ${PKG_ARGS} ${WRKDIR}/${PKGNAME}${PKG_SUFX}; then \
+		if [ -d ${PACKAGES} -a -w ${PACKAGES} ]; then \
+			${LN} -f ${WRKDIR}/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null || \
+			    ${CP} -af ${WRKDIR}/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
 			cd ${.CURDIR} && eval ${MAKE} package-links; \
 		fi; \
 	else \
@@ -3923,7 +3925,12 @@ delete-package-links:
 
 .if !target(delete-package)
 delete-package: delete-package-links
+.	if defined(NO_STAGE)
 	@${RM} -f ${PKGFILE}
+.	else
+# When staging, the package may only be in the workdir if not root
+	@${RM} -f ${PKGFILE} ${WRKDIR}/${PKGNAME}${PKG_SUFX} 2>/dev/null || :
+.	endif
 .endif
 
 .if !target(delete-package-links-list)
@@ -3941,12 +3948,13 @@ delete-package-list: delete-package-links-list
 	@${ECHO_CMD} "[ -f ${PKGFILE} ] && (${ECHO_CMD} deleting ${PKGFILE}; ${RM} -f ${PKGFILE})"
 .endif
 
+# Only used if !defined(NO_STAGE)
 .if !target(install-package)
 install-package:
 .if defined(FORCE_PKG_REGISTER)
-	@${PKG_ADD} -f ${PKGFILE}
+	@${PKG_ADD} -f ${WRKDIR}/${PKGNAME}${PKG_SUFX}
 .else
-	@${PKG_ADD} ${PKGFILE}
+	@${PKG_ADD} ${WRKDIR}/${PKGNAME}${PKG_SUFX}
 .endif
 .endif
 
