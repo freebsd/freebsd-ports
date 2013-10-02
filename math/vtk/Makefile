@@ -210,6 +210,6 @@ print-pkg-message:
 
 post-install: print-pkg-message
 
-.ifndef(PKGNAMESUFFIX)
+.ifndef(PKGNAMESUFFIX) || ${PKGNAMESUFFIX} == 4
 .include <bsd.port.post.mk>
 .endif
