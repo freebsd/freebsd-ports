@@ -580,6 +580,9 @@ lib/scons-%%SCONS_VER%%/SCons/dblite.pyo
 lib/scons-%%SCONS_VER%%/SCons/exitfuncs.py
 lib/scons-%%SCONS_VER%%/SCons/exitfuncs.pyc
 lib/scons-%%SCONS_VER%%/SCons/exitfuncs.pyo
+man/man1/scons-time.1.gz
+man/man1/scons.1.gz
+man/man1/sconsign.1.gz
 @dirrm lib/scons-%%SCONS_VER%%/SCons/compat
 @dirrm lib/scons-%%SCONS_VER%%/SCons/Variables
 @dirrm lib/scons-%%SCONS_VER%%/SCons/Tool/packaging
