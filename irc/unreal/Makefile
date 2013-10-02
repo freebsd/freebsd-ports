@@ -13,7 +13,7 @@ COMMENT=	Unreal - the next generation ircd
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	cares:${PORTSDIR}/dns/c-ares
+LIB_DEPENDS=	libcares.so:${PORTSDIR}/dns/c-ares
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
@@ -88,7 +88,7 @@ CONFIGURE_ARGS+=	--enable-ssl
 .endif
 
 .if ${PORT_OPTIONS:MREMOTE}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--enable-libcurl=${LOCALBASE}
 .endif
 
