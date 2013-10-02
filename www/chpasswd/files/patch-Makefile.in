@@ -1,5 +1,5 @@
 --- Makefile.in.orig	2009-02-16 18:04:20.000000000 +0100
-+++ Makefile.in	2012-04-04 11:40:46.773080089 +0200
++++ Makefile.in	2013-09-24 14:43:03.683410883 +0200
 @@ -1,13 +1,13 @@
  # Makefile.in for chpasswd.cgi
  
@@ -16,20 +16,42 @@
  PREFIX		= @prefix@
  DEFS 		= -I. @DEFS@ -DPREFIX=\"@prefix@\" 
  
-@@ -37,13 +37,13 @@
-                 echo "cp $(PREFIX)/chpasswd.conf"; \
- 	        cp chpasswd.conf $(PREFIX)/chpasswd.conf; \
- 	        chmod 755 $(PREFIX)/chpasswd.conf; \
+@@ -27,27 +27,22 @@
+ 	$(CC) $(OBJS) $(LIBCRYPT) -o $@
+ 
+ install: all
+-	$(INSTALL_PROGRAM) chpasswd.cgi $(CGIDIR)/chpasswd.cgi
+-	chmod 755 $(CGIDIR)/chpasswd.cgi
+-	-@if test ! -d $(PREFIX); then \
+-                echo "mkdir $(PREFIX)"; \
+-                mkdir $(PREFIX); \
++	$(INSTALL_PROGRAM) chpasswd.cgi $(DESTDIR)$(CGIDIR)/chpasswd.cgi
++	chmod 755 $(DESTDIR)$(CGIDIR)/chpasswd.cgi
++	-@if test ! -d $(DESTDIR)$(PREFIX); then \
++                echo "mkdir $(DESTDIR)$(PREFIX)"; \
++                mkdir $(DESTDIR)$(PREFIX); \
+ 	fi
+-	@if test ! -f $(PREFIX)/chpasswd.conf; then \
+-                echo "cp $(PREFIX)/chpasswd.conf"; \
+-	        cp chpasswd.conf $(PREFIX)/chpasswd.conf; \
+-	        chmod 755 $(PREFIX)/chpasswd.conf; \
 -	 else \
 -	        cp chpasswd.conf $(PREFIX)/chpasswd.conf.orig; \
- 	fi
-+	@echo "cp $(PREFIX)/chpasswd.conf.sample"
-+	@cp chpasswd.conf $(PREFIX)/chpasswd.conf.sample
- 	@if test ! -f $(PREFIX)/chpasswd.log; then \
+-	fi
+-	@if test ! -f $(PREFIX)/chpasswd.log; then \
++	@echo "cp $(DESTDIR)$(PREFIX)/chpasswd.conf.sample"
++	@cp chpasswd.conf $(DESTDIR)$(PREFIX)/chpasswd.conf.sample
++	@if test ! -f $(DESTDIR)$(PREFIX)/chpasswd.log; then \
                  echo "touch $(PREFIX)/chpasswd.log"; \
- 	        touch $(PREFIX)/chpasswd.log; \
+-	        touch $(PREFIX)/chpasswd.log; \
 -	        chmod 777 $(PREFIX)/chpasswd.log; \
-+	        chmod 775 $(PREFIX)/chpasswd.log; \
++	        touch $(DESTDIR)$(PREFIX)/chpasswd.log; \
++	        chmod 775 $(DESTDIR)$(PREFIX)/chpasswd.log; \
          fi
  
  uninstall:
+-	rm -f $(CGIDIR)/chpasswd.cgi
++	rm -f $(DESTDIR)$(CGIDIR)/chpasswd.cgi
+ 
+ TAGS: $(SRCS)
+ 	etags $(SRCS)
