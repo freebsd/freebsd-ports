@@ -69,7 +69,6 @@
 %%PERL5_MAN3%%/Types::TypeTiny.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Type/Tiny
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Type
-@dirrmtry %%SITE_PERL%%/Types/Standard
 @dirrmtry %%SITE_PERL%%/Types
 @dirrmtry %%SITE_PERL%%/Type/Tiny/Manual
 @dirrmtry %%SITE_PERL%%/Type/Tiny
@@ -77,8 +76,8 @@
 @dirrmtry %%SITE_PERL%%/Type/Coercion
 @dirrmtry %%SITE_PERL%%/Type
 @dirrmtry %%SITE_PERL%%/Test
-@dirrm %%SITE_PERL%%/Reply/Plugin
-@dirrm %%SITE_PERL%%/Reply
+@dirrmtry %%SITE_PERL%%/Reply/Plugin
+@dirrmtry %%SITE_PERL%%/Reply
 @dirrmtry %%SITE_PERL%%/Exporter
 @dirrmtry %%SITE_PERL%%/Eval
 @dirrm %%SITE_PERL%%/Devel/TypeTiny
