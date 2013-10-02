@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gecko-mediaplayer
-PORTVERSION=	1.0.8
-PORTREVISION=	2
+DISTVERSION=	1.0.9a
 CATEGORIES=	www multimedia gnome
 MASTER_SITES=	GOOGLE_CODE
 
@@ -12,10 +11,10 @@ COMMENT=	Multimedia browser plugin for Gecko based browsers
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		nspr4:${PORTSDIR}/devel/nspr \
-		curl:${PORTSDIR}/ftp/curl \
-		gmlib:${PORTSDIR}/multimedia/gmtk
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libnspr4.so:${PORTSDIR}/devel/nspr \
+		libcurl.so:${PORTSDIR}/ftp/curl \
+		libgmlib.so:${PORTSDIR}/multimedia/gmtk
 RUN_DEPENDS=	gnome-mplayer:${PORTSDIR}/multimedia/gnome-mplayer
 
 OPTIONS_DEFINE=	CACHE DOCS NLS
@@ -27,6 +26,7 @@ USES=		pkgconfig
 USE_GNOME=	glib20
 USE_GECKO=	libxul
 USE_WEBPLUGINS=	native
+USE_GCC=	4.6+
 
 WEBPLUGINS_FILES=	${PORTNAME}.so
 .for p in dvx rm qt wmp
