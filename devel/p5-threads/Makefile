@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	threads
-PORTVERSION=	1.87
+PORTVERSION=	1.89
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JDHEDDEN
@@ -14,7 +14,4 @@ COMMENT=	Perl interpreter-based threads
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		threads.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
