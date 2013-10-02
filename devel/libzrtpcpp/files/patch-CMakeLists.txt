@@ -1,17 +1,26 @@
---- CMakeLists.txt	2012-10-17 08:16:16.000000000 -0500
-+++ CMakeLists.txt	2012-12-13 02:24:32.000000000 -0500
-@@ -115,8 +115,8 @@
- #  set(CRYPTOBACKEND="")
- #  set(PACKAGE_REQ "libgcrypt")
- #else()
--  pkg_check_modules(OPENSSL libcrypto>=0.9.8)
--  if (OPENSSL_FOUND)
-+  find_library(OPENSSL_LIB crypto $ENV{OPENSSLLIB})
-+  if (OPENSSL_LIB)
-     set(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} ${OPENSSL_INCLUDE_DIRS}) #update include files search directory
-     check_include_files(openssl/bn.h HAVE_OPENSSL_BN_H)
-     check_include_files(openssl/aes.h HAVE_OPENSSL_AES_H)
-@@ -162,17 +162,13 @@
+--- CMakeLists.txt	2013-07-01 04:10:34.000000000 -0500
++++ CMakeLists.txt	2013-10-02 13:32:43.000000000 -0500
+@@ -107,8 +107,8 @@
+ endif()
+ 
+ # now get info about crypto libraries
+-pkg_check_modules(OPENSSL libcrypto>=0.9.8)
+-if (OPENSSL_FOUND)
++find_library(OPENSSL_LIB crypto $ENV{OPENSSLLIB})
++if (OPENSSL_LIB)
+   set(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} ${OPENSSL_INCLUDE_DIRS}) #update include files search directory
+   check_include_files(openssl/bn.h HAVE_OPENSSL_BN_H)
+   check_include_files(openssl/aes.h HAVE_OPENSSL_AES_H)
+@@ -133,7 +133,7 @@
+   endif()
+ endif()
+ 
+-if(NOT OPENSSL_FOUND AND NOT GCRYPT_FOUND)
++if(NOT OPENSSL_LIB AND NOT GCRYPT_FOUND)
+   message(FATAL_ERROR "No crypto library found")
+ endif()
+ 
+@@ -167,17 +167,13 @@
  
  add_subdirectory(src)
  
