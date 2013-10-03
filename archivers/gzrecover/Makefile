@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gzrecover
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.urbanophile.com/arenn/hacking/gzrt/ \
 		CRITICAL
@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 
 CFLAGS+=	-D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -lz
 
-NO_STAGE=	yes
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README
 
@@ -27,10 +26,10 @@ do-build:
 	${CC} -o ${WRKSRC}/${PORTNAME} ${CFLAGS} ${WRKSRC}/${PORTNAME}.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}/${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}/${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
