@@ -57,7 +57,7 @@
  	long		tv_usec;	/* microseconds */
 --- include/local.h.orig	2009-09-09 20:34:54.000000000 +0800
 +++ include/local.h	2009-09-15 00:26:08.000000000 +0800
-@@ -28,7 +28,11 @@
+@@ -28,11 +28,19 @@
  #include <string.h>
  #include <fcntl.h>
  #include <assert.h>
@@ -69,6 +69,14 @@
  #include <stdarg.h>
  #include <sys/poll.h>
  #include <errno.h>
++#ifdef __linux__
+ #include <linux/ioctl.h>
++#else
++#include <sys/ioctl.h>
++#endif
+ 
+ #include "config.h"
+ #ifdef SUPPORT_RESMGR
 --- include/search.h.orig	2009-09-09 20:34:54.000000000 +0800
 +++ include/search.h	2009-09-15 00:49:10.000000000 +0800
 @@ -20,7 +20,9 @@
@@ -102,9 +110,18 @@
  typedef __compar_fn_t comparison_fn_t;
 --- include/sound/asound.h.orig	2009-09-09 20:34:54.000000000 +0800
 +++ include/sound/asound.h	2009-09-15 00:44:37.000000000 +0800
-@@ -62,6 +62,33 @@
- #include <sys/ioctl.h>
- #endif
+@@ -23,9 +23,42 @@
+ #ifndef _UAPI__SOUND_ASOUND_H
+ #define _UAPI__SOUND_ASOUND_H
+ 
++#ifdef __linux__
+ #include <linux/types.h>
++#else
++#define __bitwise
++typedef uint32_t __u32;
++typedef int __kernel_pid_t;
++#endif
++
  
 +#ifdef __FreeBSD__
 +#define ESTRPIPE	0x7a69	/* Linux PCM suspend errno, fehh?! */
@@ -127,7 +144,7 @@
 +#define __cpu_to_le16(x) bswap_16(x)
 +#define __cpu_to_be16(x) (x)
 +#endif
-+
+ 
 +#define __le32_to_cpu __cpu_to_le32
 +#define __be32_to_cpu __cpu_to_be32
 +#define __le16_to_cpu __cpu_to_le16

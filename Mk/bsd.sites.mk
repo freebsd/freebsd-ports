@@ -54,11 +54,6 @@ MASTER_SITE_AFTERSTEP+= \
 
 .if !defined(IGNORE_MASTER_SITE_ALSA)
 MASTER_SITE_ALSA+= \
-	ftp://ftp.silug.org/pub/alsa/%SUBDIR%/ \
-	ftp://ftp.task.gda.pl/pub/linux/misc/alsa/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/opsys/linux/alsa/%SUBDIR%/ \
-	http://dl.ambiweb.de/mirrors/ftp.alsa-project.org/%SUBDIR%/ \
-	http://mirrors.zerg.biz/alsa/%SUBDIR%/ \
 	http://alsa.cybermirror.org/%SUBDIR%/ \
 	ftp://ftp.alsa-project.org/pub/%SUBDIR%/
 .endif

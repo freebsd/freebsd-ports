@@ -1,3 +1,4 @@
+@exec mkdir -p /var/lib/alsa
 bin/aconnect
 bin/alsaloop
 bin/alsamixer
@@ -12,9 +13,28 @@ bin/aseqdump
 bin/aseqnet
 bin/iecset
 bin/speaker-test
+lib/udev/90-alsa-restore.rules
+man/fr/man8/alsaconf.8.gz
+man/man1/aconnect.1.gz
+man/man1/alsactl.1.gz
+man/man1/alsaloop.1.gz
+man/man1/alsamixer.1.gz
+man/man1/amidi.1.gz
+man/man1/amixer.1.gz
+man/man1/aplay.1.gz
+man/man1/aplaymidi.1.gz
+man/man1/arecord.1.gz
+man/man1/arecordmidi.1.gz
+man/man1/aseqdump.1.gz
+man/man1/aseqnet.1.gz
+man/man1/iecset.1.gz
+man/man1/speaker-test.1.gz
+man/man7/alsactl_init.7.gz
+man/man8/alsaconf.8.gz
 sbin/alsaconf
 sbin/alsactl
 share/alsa/init/00main
+share/alsa/init/ca0106
 share/alsa/init/default
 share/alsa/init/hda
 share/alsa/init/help
@@ -42,5 +62,7 @@ share/sounds/alsa/Side_Right.wav
 @dirrmtry share/alsa/speaker-test
 @dirrmtry share/alsa/init
 @dirrmtry share/alsa
+@dirrmtry lib/udev
 @cwd /var
 @dirrmtry lib/alsa
+@dirrmtry lib

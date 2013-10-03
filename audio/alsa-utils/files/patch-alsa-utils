@@ -131,6 +131,6 @@
 +#ifndef __FreeBSD__
  #include <byteswap.h>
 +#endif
+ #include <signal.h>
  
  #define ALSA_PCM_NEW_HW_PARAMS_API
- #define ALSA_PCM_NEW_SW_PARAMS_API

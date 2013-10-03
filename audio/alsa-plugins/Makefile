@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	alsa-plugins
-PORTVERSION=	1.0.26
+PORTVERSION=	1.0.27
 CATEGORIES=	audio
 MASTER_SITES=	ALSA/plugins \
 		GENTOO/distfiles
@@ -10,21 +10,20 @@ MASTER_SITES=	ALSA/plugins \
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	ALSA compatibility library plugins
 
-LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 USES=		pkgconfig
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_LDCONFIG=	${PREFIX}/lib/alsa-lib
 
 OPTIONS_DEFINE=	ARIFF_OSS JACK FFMPEG PULSEAUDIO SAMPLERATE SPEEX
+OPTIONS_SUB=	${OPTIONS_DEFINE}
 ARIFF_OSS_DESC=	FreeBSD-specific OSS plugin
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MARIFF_OSS} || ${OSVERSION} < 800097
+.if ${PORT_OPTIONS:MARIFF_OSS}
 EXTRA_PATCHES+=	${FILESDIR}/alsa-plugins.patch
 .endif
 
@@ -32,46 +31,36 @@ EXTRA_PATCHES+=	${FILESDIR}/alsa-plugins.patch
 .if empty(PORT_OPTIONS:MSAMPLERATE)
 IGNORE=			JACK audio support requires SAMPLERATE
 .endif
-LIB_DEPENDS+=		jack:${PORTSDIR}/audio/jack
-PLIST_SUB+=		JACK=""
+LIB_DEPENDS+=		libjack.so:${PORTSDIR}/audio/jack
 .else
-PLIST_SUB+=		JACK="@comment "
 CONFIGURE_ARGS+=	--disable-jack
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
 CONFIGURE_ARGS+=	--enable-avcodec
 CFLAGS+=		-I${LOCALBASE}/include
-LIB_DEPENDS+=		avcodec:${PORTSDIR}/multimedia/ffmpeg
-PLIST_SUB+=		LAVC=""
+LIB_DEPENDS+=		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 .else
 CONFIGURE_ARGS+=	--disable-avcodec
-PLIST_SUB+=		LAVC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=		pulse:${PORTSDIR}/audio/pulseaudio
-PLIST_SUB+=		PULSE=""
+LIB_DEPENDS+=		libpulse.so:${PORTSDIR}/audio/pulseaudio
 .else
-PLIST_SUB+=		PULSE="@comment "
 CONFIGURE_ARGS+=	--disable-pulseaudio
 .endif
 
 .if ${PORT_OPTIONS:MSAMPLERATE}
-LIB_DEPENDS+=		samplerate:${PORTSDIR}/audio/libsamplerate
-PLIST_SUB+=		SAMPLERATE=""
+LIB_DEPENDS+=		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 .else
-PLIST_SUB+=		SAMPLERATE="@comment "
 CONFIGURE_ARGS+=	--disable-samplerate
 .endif
 
 .if ${PORT_OPTIONS:MSPEEX}
 CONFIGURE_ARGS+=	--with-speex=lib
-LIB_DEPENDS+=		speex:${PORTSDIR}/audio/speex
-PLIST_SUB+=		SPEEX=""
+LIB_DEPENDS+=		libspeex.so:${PORTSDIR}/audio/speex
 .else
 CONFIGURE_ARGS+=	--without-speex
-PLIST_SUB+=		SPEEX="@comment "
 .endif
 
 post-patch:	.SILENT
