@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	sugarcrm
-PORTVERSION=	6.5.13
+PORTVERSION=	6.5.15
 CATEGORIES=	deskutils www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/1%20-%20SugarCRM%206.5.X/SugarCommunityEdition-6.5.X
 DISTNAME=	SugarCE-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A web based customer relationship management suite
+COMMENT=	Web based customer relationship management suite
 
 FETCH_ARGS=	-pRr
 USE_PHP=	gd mysql session pcre xml zlib mbstring curl imap spl posix
@@ -21,15 +21,11 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SUB_FILES+=	pkg-message pkg-install
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${WWWDIR}
+	@${MKDIR} ${STAGEDIR}/${WWWDIR}
 
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}/
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${CHMOD} -R 755 ${WWWDIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}/
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}/${WWWDIR}
+	@${CHMOD} -R 755 ${STAGEDIR}/${WWWDIR}
 
 .include <bsd.port.mk>

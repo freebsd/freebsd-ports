@@ -21,7 +21,7 @@ session.save_path = "/tmp"
     allow the system to work at all.  For more information on why these
     parameters are unnecessary, please see the PHP manual.
 
-2.  In order to get Apache or your preferred web server to recognise Sugar
+3.  In order to get Apache or your preferred web server to recognise Sugar
     Community Edition's location on your disk, you'll need to put the
     following line (or the equivalent) into the web server configuration:
 
@@ -32,11 +32,11 @@ Alias /sugarcrm %%WWWDIR%%
 	Allow from all
 </Directory>
 
-3.  For full information on how to get the best out of Sugar Community
+4.  For full information on how to get the best out of Sugar Community
     Edition, please see the documentation on the web:
 
     http://www.sugarforge.org/content/documentation/
 
-4.  Enjoy!
+5.  Enjoy!
 
 ##
