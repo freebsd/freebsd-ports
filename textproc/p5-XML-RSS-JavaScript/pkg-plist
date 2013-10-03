@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/JavaScript/.packlist
 %%SITE_PERL%%/XML/RSS/JavaScript.pm
+%%PERL5_MAN3%%/XML::RSS::JavaScript.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/JavaScript
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
