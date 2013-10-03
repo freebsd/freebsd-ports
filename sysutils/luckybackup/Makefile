@@ -14,12 +14,8 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
 USE_QT4=	gui qmake_build moc_build rcc_build uic_build
-MAKE_ENV=	INSTALL_ROOT=${PREFIX}
+MAKE_ENV=	INSTALL_ROOT=${STAGEDIR}${PREFIX}
 
-MAN8=		luckybackup.8
-MANCOMPRESSED=	yes
-
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr||g' -e '/INSTALLS/s|debianmenu ||' \
 		-e '/manpage/s|share/||' ${WRKSRC}/luckybackup.pro

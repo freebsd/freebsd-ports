@@ -1,4 +1,5 @@
 bin/luckybackup
+man/man8/luckybackup.8.gz
 share/applications/luckybackup-gnome-su.desktop
 share/applications/luckybackup-kde-su.desktop
 share/applications/luckybackup.desktop
