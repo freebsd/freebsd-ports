@@ -19,11 +19,11 @@ RUN_DEPENDS=	regripper>=0:${PORTSDIR}/security/regripper
 NO_WRKSUBDIR=	yes
 USE_DOS2UNIX=	yes
 NO_BUILD=	yes
-PORTDATA=	*
 
-NO_STAGE=	yes
+PORTDATA=	*.pl all ntuser sam security software system usrclass
+
 do-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/* ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${PORTDATA:S,^,${WRKSRC}/,} ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
