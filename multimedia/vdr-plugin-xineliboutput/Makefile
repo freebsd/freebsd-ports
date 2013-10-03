@@ -37,7 +37,7 @@ NO_STAGE=	yes
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS+=	--cc="${CC}" --cxx="${CXX}" --add-cflags=-I$(VDRDIR)
+CONFIGURE_ARGS+=	--cc="${CC}" --cxx="${CXX}" --add-cflags=-I${VDRDIR}
 
 .if ${PORT_OPTIONS:MLIBEXTRACTOR}
 LIB_DEPENDS+=	extractor:${PORTSDIR}/textproc/libextractor
