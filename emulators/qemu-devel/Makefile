@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	1.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -63,10 +63,6 @@ CONFIGURE_ARGS+=	--enable-nptl --target-list=i386-softmmu,x86_64-softmmu,i386-bs
 CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu
 .endif
 .else
-# clang seems to build a broken mips-softmmu target (qemu segfaults
-# at boot)  Feel free to debug :)  Some info is here:
-#	http://people.freebsd.org/~nox/tmp/qemu-1.6.0-mips-softmmu-crash.txt
-USE_GCC=	any
 .if empty(PORT_OPTIONS:MBSD_USER)
 CONFIGURE_ARGS+=	--disable-bsd-user
 .else
