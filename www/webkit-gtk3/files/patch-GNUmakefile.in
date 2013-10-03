@@ -1,0 +1,12 @@
+--- GNUmakefile.in.orig	2013-10-03 09:22:02.000000000 +0000
++++ GNUmakefile.in	2013-10-03 09:23:50.000000000 +0000
+@@ -19060,8 +19060,7 @@
+ 	libjavascriptcoregtk-@WEBKITGTK_API_MAJOR_VERSION@.@WEBKITGTK_API_MINOR_VERSION@.la \
+ 	$(WINMM_LIBS) \
+ 	-lm \
+-	-lpthread \
+-	-lstdc++
++	-lpthread
+ 
+ Programs_minidom_LDFLAGS = \
+ 	-no-install \
