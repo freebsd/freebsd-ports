@@ -20,10 +20,10 @@ SUB_FILES=	pkg-message
 DICTFILES=	cedict pydict moecomp netterm
 
 do-install:
-	@${MKDIR} ${STAGEDIR}/${PREFIX}/lib/dict
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/dict
 	for f in ${DICTFILES}; do \
-	  ${INSTALL_DATA} ${WRKSRC}/$${f}.dict.dz ${STAGEDIR}/${PREFIX}/lib/dict; \
-	  ${INSTALL_DATA} ${WRKSRC}/$${f}.index ${STAGEDIR}/${PREFIX}/lib/dict; \
+	  ${INSTALL_DATA} ${WRKSRC}/$${f}.dict.dz ${STAGEDIR}${PREFIX}/lib/dict; \
+	  ${INSTALL_DATA} ${WRKSRC}/$${f}.index ${STAGEDIR}${PREFIX}/lib/dict; \
 	done
 
 .include <bsd.port.mk>

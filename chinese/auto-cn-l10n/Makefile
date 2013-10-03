@@ -57,7 +57,7 @@ post-patch:
 		s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/dot.xselector ${WRKSRC}/dot.xinitrc
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/share/skel/zh_CN.eucCN
-	${CP} ${WRKSRC}/* ${STAGEDIR}/${PREFIX}/share/skel/zh_CN.eucCN
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/skel/zh_CN.eucCN
+	${CP} ${WRKSRC}/* ${STAGEDIR}${PREFIX}/share/skel/zh_CN.eucCN
 
 .include <bsd.port.post.mk>

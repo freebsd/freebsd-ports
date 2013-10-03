@@ -47,7 +47,7 @@ pre-build:
 	@cd ${WRKSRC}/libtelnet && ${MAKE}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/telnet ${STAGEDIR}/${PREFIX}/bin/zh-telnet
-	@${INSTALL_MAN} ${WRKSRC}/telnet.1 ${STAGEDIR}/${MAN1PREFIX}/man/man1/zh-telnet.1
+	@${INSTALL_PROGRAM} ${WRKSRC}/telnet ${STAGEDIR}${PREFIX}/bin/zh-telnet
+	@${INSTALL_MAN} ${WRKSRC}/telnet.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/zh-telnet.1
 
 .include <bsd.port.post.mk>

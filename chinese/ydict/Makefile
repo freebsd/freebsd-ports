@@ -17,6 +17,6 @@ PLIST_FILES=	bin/ydict
 USE_PYTHON_RUN=	yes
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ydict ${STAGEDIR}/${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/ydict ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
