@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud-csync
-PORTVERSION=	0.80.0
+PORTVERSION=	0.90.0
 CATEGORIES=	net kde
 MASTER_SITES=	http://download.owncloud.com/download/
 DISTNAME=	ocsync-${PORTVERSION}
@@ -12,10 +12,10 @@ COMMENT=	csync fork for Owncloud
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	iniparser:${PORTSDIR}/devel/iniparser \
-		smbclient:${PORTSDIR}/net/samba-libsmbclient \
-		ssh:${PORTSDIR}/security/libssh \
-		neon:${PORTSDIR}/www/neon29
+LIB_DEPENDS=	libiniparser.so:${PORTSDIR}/devel/iniparser \
+		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient \
+		libssh.so.4.2.2:${PORTSDIR}/security/libssh \
+		libneon.so:${PORTSDIR}/www/neon29
 
 USES=		cmake:outsource iconv pkgconfig
 USE_BZIP2=	yes
@@ -24,12 +24,9 @@ CMAKE_ARGS+=	-DWITH_LOG4C=NO \
 		-DUNIT_TESTING=NO \
 		-DMAN_INSTALL_DIR=${MANPREFIX}/man
 
-MAN1=		ocsync.1
-
 USE_LDCONFIG=	yes
 
-DOCSDIR=	/usr/local/share/doc/ocsync
-ETCDIR=		/usr/local/etc/ocsync
+DOCSDIR=	${LOCALBASE}/share/doc/ocsync
+ETCDIR=		${LOCALBASE}/etc/ocsync
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

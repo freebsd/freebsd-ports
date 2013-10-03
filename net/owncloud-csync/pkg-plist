@@ -38,10 +38,11 @@ include/ocsync/csync_vio_module.h
 lib/libhttpbflib.a
 lib/libocsync.so
 lib/libocsync.so.0
-lib/libocsync.so.0.2.0
+lib/libocsync.so.0.2.1
 lib/ocsync-0/ocsync_owncloud.so
 lib/ocsync-0/ocsync_smb.so
 lib/ocsync-0/ocsync_sftp.so
+man/man1/ocsync.1.gz
 @dirrm lib/ocsync-0
 @dirrm include/ocsync
 @dirrmtry %%ETCDIR%%
