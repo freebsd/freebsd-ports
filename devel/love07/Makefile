@@ -7,6 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	devel games
 MASTER_SITES=	http://cdn.bitbucket.org/rude/love/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
+PKGNAMESUFFIX=	07
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -19,8 +20,6 @@ LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
 		libphysfs.so:${PORTSDIR}/devel/physfs \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-
-LATEST_LINK=	${PORTNAME}07
 
 PORTSCOUT=	limit:^0\.7\.
 
