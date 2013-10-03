@@ -19,7 +19,6 @@ PORTDOCS=	README
 MAN1=		ehnt.1
 MAN8=		ehntserv.8
 
-NO_STAGE=	yes
 post-extract:
 	${TOUCH} ${WRKSRC}/asnc.txt
 
