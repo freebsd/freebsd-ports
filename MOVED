@@ -4978,3 +4978,4 @@ graphics/gkrellkam|graphics/gkrellkam2|2013-10-02|Outdated, consider using a new
 mail/gkrellmmailwatch|mail/gkrellmmailwatch2|2013-10-02|Outdated, consider using a newer version
 databases/memcached|databases/memcached12|2013-10-02|Unsupported upstream, consider using a newer version
 www/py-beautifulsoup30||2013-10-03|Outdated, consider using a newer version
+comms/umcs784||2013-10-03|Outdated, included in base system as umcs(4)
