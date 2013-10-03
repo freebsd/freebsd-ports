@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RgoogleMaps
-PORTVERSION=	1.2.0.4
+PORTVERSION=	1.2.0.5
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,7 +12,8 @@ COMMENT=	Overlays on Google map tiles in R
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	R-cran-png>0:${PORTSDIR}/graphics/R-cran-png
+RUN_DEPENDS=	R-cran-png>0:${PORTSDIR}/graphics/R-cran-png \
+		R-cran-RJSONIO>0:${PORTSDIR}/converters/R-cran-RJSONIO
 
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
