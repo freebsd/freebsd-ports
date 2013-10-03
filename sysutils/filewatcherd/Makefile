@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	filewatcherd
-PORTVERSION=	1.0b1
+PORTVERSION=	1.0b2
 DISTNAME=	${PORTNAME}-${GH_TAGNAME}
 CATEGORIES=	sysutils
 
@@ -13,18 +13,17 @@ LICENSE=	BSD
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	faelys
-GH_COMMIT=	a2b8081
-GH_TAGNAME=	1.0-beta1
+GH_COMMIT=	e1e6c7a
+GH_TAGNAME=	1.0-beta2
 
 USE_RC_SUBR=	filewatcherd
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	sbin/filewatcherd etc/watchtab.sample
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/filewatcherd ${PREFIX}/sbin
-	${INSTALL_DATA} ${FILESDIR}/watchtab.sample ${PREFIX}/etc
+	${INSTALL_PROGRAM} ${WRKSRC}/filewatcherd ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${FILESDIR}/watchtab.sample ${STAGEDIR}${PREFIX}/etc
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
