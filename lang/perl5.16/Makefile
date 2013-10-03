@@ -113,7 +113,6 @@ PLIST_SUB+=	MANCONF="@comment "
 #XXX IGNORE=	Threaded perl does not pass tests on ${ARCH}
 #XXX .endif
 CONFIGURE_ARGS+=	-Dusethreads=y
-PKGNAMESUFFIX=		-threaded
 WITH_PTHREAD=		yes
 # it seems perl malloc has problems with threaded perl on FreeBSD
 PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
