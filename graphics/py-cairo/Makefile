@@ -4,6 +4,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.10.0
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://cairographics.org/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,8 +20,9 @@ USE_GNOME=	cairo
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	PYTHON=${LOCALBASE}/bin/python2 \
-		PREFIX=${STAGEDIR}${PREFIX}
+		PREFIX=${PREFIX}
 
+NO_STAGE=	yes
 python_OLD_CMD?=	/usr/bin/env python
 python_CMD?=		${LOCALBASE}/bin/python2
 SHEBANG_FILES=		examples/*.py examples/*/*.py waf test/*.py
