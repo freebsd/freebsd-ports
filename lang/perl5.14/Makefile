@@ -27,6 +27,7 @@ CONFLICTS=	perl-5.12.* perl-threaded-5.12.* \
 OPTIONS_DEFINE=	DEBUG GDBM PERL_MALLOC PERL_64BITINT THREADS PTHREAD \
 		MULTIPLICITY SITECUSTOMIZE USE_PERL
 OPTIONS_DEFAULT=	PERL_64BITINT PTHREAD USE_PERL
+OPTIONS_SUB=
 GDBM_DESC=	GDBM_File extension
 PERL_MALLOC_DESC=	Use Perl malloc
 PERL_64BITINT_DESC=	Use 64 bit integers (on i386)
@@ -66,8 +67,6 @@ LOCALE_CLEANUP=	LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
 CONFIGURE_ENV+=	${LOCALE_CLEANUP} UNAME_v="$$(uname -v | sed 'y/=/ /')"
 MAKE_ENV+=	${LOCALE_CLEANUP}
 
-NO_STAGE=	yes
-.include "Makefile.man"
 .include <bsd.port.pre.mk>
 
 .if defined(PERL_VENDOR_PREFIX)
@@ -80,9 +79,13 @@ CONFIGURE_ARGS+=	\
 	-Dvendorman1dir=${PERL_VENDOR_PREFIX}/man/man1
 .endif
 
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}/perl
+MANDIRS+=	${MAN3PREFIX}
+
 PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		PERL_VER=${PERL_VER} \
 		PERL_ARCH=${PERL_ARCH} \
+		MAN3=${MAN3PREFIX:S|^${LOCALBASE}/||}/man/man3 \
 		SITE_PERL=${SITE_PERL:S|^${LOCALBASE}/||}
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -96,10 +99,8 @@ CONFIGURE_ARGS+=	-Doptimize="${CFLAGS}"
 .if ${PORT_OPTIONS:MGDBM}
 CONFIGURE_ARGS+=	-Di_gdbm
 LIB_DEPENDS+=		gdbm:${PORTSDIR}/databases/gdbm
-PLIST_SUB+=		GDBM=""
 .else
 CONFIGURE_ARGS+=	-Ui_gdbm
-PLIST_SUB+=		GDBM="@comment "
 .endif
 
 .if ${OSVERSION} >= 900022
@@ -148,11 +149,6 @@ LINK_USRBIN=	no
 
 LATEST_LINK=	perl
 
-.if ${PORT_OPTIONS:MGDBM}
-MAN3+=	GDBM_File.3
-.endif
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}/perl
-
 BSDPAN_DEST=	${PREFIX}/lib/perl5/${PERL_VER}/BSDPAN
 BSDPAN_FILES=	BSDPAN.pm BSDPAN/Override.pm Config.pm \
 		ExtUtils/MM_Unix.pm \
@@ -195,22 +191,19 @@ post-patch:
 .endif
 
 pre-su-install:
-	@${RM} -f ${PREFIX}/bin/perl${PERL_VERSION}
-	@${RM} -f ${PREFIX}/bin/perl
+	@${RM} -f ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION}
+	@${RM} -f ${STAGEDIR}${PREFIX}/bin/perl
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/perl${PERL_VERSION}
-	@${STRIP_CMD} ${PREFIX}/bin/perl
-	@${LN} -sf ${PREFIX}/bin/perl${PERL_VERSION} ${PREFIX}/bin/perl5
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION}
 .if ${OSVERSION} >= 900022
-	@${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${PREFIX}/etc/man.d/perl${PERL_VER}.conf
+	@${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${STAGEDIR}${PREFIX}/etc/man.d/perl${PERL_VER}.conf
 .endif
 .for files in ${BSDPAN_FILES}
-	${MKDIR} ${BSDPAN_DEST}/${files:H}
-	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${NOBINMODE} \
-		${BSDPAN_WRKSRC}/${files} ${BSDPAN_DEST}/${files}
+	${MKDIR} ${STAGEDIR}${BSDPAN_DEST}/${files:H}
+	${INSTALL_DATA} \
+		${BSDPAN_WRKSRC}/${files} ${STAGEDIR}${BSDPAN_DEST}/${files}
 .endfor
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
  AZ:
 test: build
