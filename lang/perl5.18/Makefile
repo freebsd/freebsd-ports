@@ -47,7 +47,7 @@ DEBUG_CONFIGURE_ON=	-Doptimize="-g" -DDEBUGGING
 DEBUG_CONFIGURE_OFF=	-Doptimize="${CFLAGS}"
 GDBM_CONFIGURE_ON=	-Di_gdbm
 GDBM_CONFIGURE_OFF=	-Ui_gdbm
-GDBM_LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
+GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 PERL_64BITINT_CONFIGURE_ON=	-Duse64bitint
 MULTIPLICITY_CONFIGURE_ON=	-Dusemultiplicity=y
 SITECUSTOMIZE_CONFIGURE_ON=	-Dusesitecustomize
@@ -172,6 +172,9 @@ post-patch:
 .endif
 
 post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/man/man3
+	@${MKDIR} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto
+	@${MKDIR} ${STAGEDIR}${SITE_PERL}/auto
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION}
 .if ${OSVERSION} >= 900022
 	@${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${STAGEDIR}${PREFIX}/etc/man.d/perl${PERL_VER}.conf
