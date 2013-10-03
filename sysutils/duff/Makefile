@@ -17,25 +17,12 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		duff.1
-
 PORTDOCS=	README.SHA
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB=	NLS="@comment "
-.endif
-
-post-patch:
-.if !${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} '/^install-data-am:/s/install-dist_docDATA//' \
-		${WRKSRC}/Makefile.in
-.endif
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.mk>
