@@ -87,25 +87,15 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #
 # PYTHON_DEFAULT_VERSION
 #					- Version of the default python binary in your ${PATH}, in
-#					  the format "python2.7". Set this in your /etc/make.conf
-#					  in case you want to use a specific version as a default.
-#					  default: python2.7
+#					  the format "python2.7".
 #
 # PYTHON2_DEFAULT_VERSION
 #					- Version of the default python2 binary in your ${PATH}, in
-#					  the format "python2.7". Set this in your /etc/make.conf
-#					  in case you want to use a specific version as a default.
-#					  Note that PYTHON_DEFAULT_VERSION always will have
-#					  precedence before this value, if it matches "python2*"
-#					  default: python2.7
+#					  the format "python2.7".
 #
 # PYTHON3_DEFAULT_VERSION
 #					- Version of the default python3 binary in your ${PATH}, in
-#					  the format "python3.2". Set this in your /etc/make.conf
-#					  in case you want to use a specific version as a default.
-#					  Note that PYTHON_DEFAULT_VERSION always will have
-#					  precedence before this value, if it matches "python3*"
-#					  default: python3.3
+#					  the format "python3.2".
 #
 # PYTHON_MAJOR_VER	- Python version major number. 2 for python-2.x,
 #					  3 for python-3.x and so on.
@@ -227,27 +217,45 @@ _PYTHON_PORTBRANCH=		2.7
 _PYTHON_ALLBRANCHES=	2.7 2.6 3.3 3.2 3.1	# preferred first
 
 # Determine version number of Python to use
-.if !defined(PYTHON_DEFAULT_VERSION)
-. if exists(${LOCALBASE}/bin/python)
+.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
+
+.if defined(PYTHON_DEFAULT_VERSION)
+WARNING+=	"PYTHON_DEFAULT_VERSION is defined, consider using DEFAULT_VERSIONS=python=${PYTHON_DEFAULT_VERSION:S/^python//} instead"
+.endif
+.if defined(PYTHON2_DEFAULT_VERSION)
+WARNING+=	"PYTHON2_DEFAULT_VERSION is defined, consider using DEFAULT_VERSIONS=python2=${PYTHON2_DEFAULT_VERSION:S/^python//} instead"
+.endif
+.if defined(PYTHON3_DEFAULT_VERSION)
+WARNING+=	"PYTHON3_DEFAULT_VERSION is defined, consider using DEFAULT_VERSIONS=python3=${PYTHON3_DEFAULT_VERSION:S/^python//} instead"
+.endif
+
+.if exists(${LOCALBASE}/bin/python)
 _PYTHON_DEFAULT_VERSION!=	(${LOCALBASE}/bin/python -c \
 							'import sys; print(sys.version[:3])' 2> /dev/null \
 							|| ${ECHO_CMD} ${_PYTHON_PORTBRANCH}) | ${TAIL} -1
-. else
-_PYTHON_DEFAULT_VERSION=	${_PYTHON_PORTBRANCH}
-. endif
-PYTHON_DEFAULT_VERSION=		python${_PYTHON_DEFAULT_VERSION}
+.if defined(PYTHON_DEFAULT) && (${PYTHON_DEFAULT} != ${_PYTHON_DEFAULT_VERSION})
+WARNING+=	"Your requested default python version ${PYTHON_DEFAULT} is different from the installed default python interpreter version ${_PYTHON_DEFAULT_VERSION}"
 .endif
+PYTHON_DEFAULT_VERSION=		python${_PYTHON_DEFAULT_VERSION}
+.else
+PYTHON_DEFAULT_VERSION=		python${PYTHON_DEFAULT}
+.endif # exists(${LOCALBASE}/bin/python)
 
-.if ${PYTHON_DEFAULT_VERSION:R} == "python2"
+# Is only a meta-port version defined?
+.if ${PYTHON_DEFAULT_VERSION} == "python2"
+PYTHON2_DEFAULT_VERSION?=	python${PYTHON2_DEFAULT}
+.elif ${PYTHON_DEFAULT_VERSION:R} == "python2"
 PYTHON2_DEFAULT_VERSION=	${PYTHON_DEFAULT_VERSION}
 .else
-PYTHON2_DEFAULT_VERSION?=	python2.7
+PYTHON2_DEFAULT_VERSION?=	python${PYTHON2_DEFAULT}
 .endif
 
-.if ${PYTHON_DEFAULT_VERSION:R} == "python3"
-PYTHON3_DEFAULT_VERSION=	${PYTHON_DEFAULT_VERSION}
+.if ${PYTHON_DEFAULT_VERSION} == "python3"
+PYTHON3_DEFAULT_VERSION?=	python${PYTHON3_DEFAULT}
+.elif ${PYTHON_DEFAULT_VERSION:R} == "python3"
+ PYTHON3_DEFAULT_VERSION=	${PYTHON_DEFAULT_VERSION}
 .else
-PYTHON3_DEFAULT_VERSION?=	python3.3
+PYTHON3_DEFAULT_VERSION?=	python${PYTHON3_DEFAULT}
 .endif
 
 .if defined(PYTHON_VERSION)
