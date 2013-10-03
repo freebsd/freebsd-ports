@@ -1,3 +1,5 @@
+base defaults
+
 r99048 | des | 2002-06-29 05:51:56 -0500 (Sat, 29 Jun 2002) | 4 lines
 Changed paths:
    M /head/crypto/openssh/myproposal.h
@@ -17,28 +19,17 @@ Submitted upstream, no reaction.
 Submitted by:   delphij@
 
 
---- readconf.c.orig	2010-08-03 00:04:46.000000000 -0600
-+++ readconf.c	2010-09-14 16:14:12.000000000 -0600
-@@ -1169,7 +1169,7 @@
- 	if (options->batch_mode == -1)
- 		options->batch_mode = 0;
- 	if (options->check_host_ip == -1)
--		options->check_host_ip = 1;
-+		options->check_host_ip = 0;
- 	if (options->strict_host_key_checking == -1)
- 		options->strict_host_key_checking = 2;	/* 2 is default */
- 	if (options->compression == -1)
---- readconf.c	(revision 181917)
-+++ readconf.c	(revision 181918)
-@@ -18,6 +18,7 @@
+--- readconf.c.orig	2013-10-03 06:56:21.649139613 -0500
++++ readconf.c	2013-10-03 06:56:50.961467272 -0500
+@@ -17,6 +17,7 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <sys/socket.h>
 +#include <sys/sysctl.h>
  
  #include <netinet/in.h>
- 
-@@ -245,7 +246,19 @@
+ #include <netinet/in_systm.h>
+@@ -265,7 +266,19 @@ add_local_forward(Options *options, cons
  	Forward *fwd;
  #ifndef NO_IPPORT_RESERVED_CONCEPT
  	extern uid_t original_real_uid;
@@ -58,4 +49,13 @@ Submitted by:   delphij@
 +	if (newfwd->listen_port < ipport_reserved && original_real_uid != 0)
  		fatal("Privileged ports can only be forwarded by root.");
  #endif
- 	if (options->num_local_forwards >= SSH_MAX_FORWARDS_PER_DIRECTION)
+ 	options->local_forwards = xrealloc(options->local_forwards,
+@@ -1281,7 +1294,7 @@ fill_default_options(Options * options)
+ 	if (options->batch_mode == -1)
+ 		options->batch_mode = 0;
+ 	if (options->check_host_ip == -1)
+-		options->check_host_ip = 1;
++		options->check_host_ip = 0;
+ 	if (options->strict_host_key_checking == -1)
+ 		options->strict_host_key_checking = 2;	/* 2 is default */
+ 	if (options->compression == -1)
