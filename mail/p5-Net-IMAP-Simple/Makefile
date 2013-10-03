@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-IMAP-Simple
-PORTVERSION=	1.2201
+PORTVERSION=	1.2202
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JETTERO
@@ -35,13 +35,9 @@ PORTSCOUT=	skipv:1.20271
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::IMAP::Simple.3 \
-		Net::IMAP::Simple::PipeSocket.3
-
 OPTIONS_DEFINE=	SX
 SX_DESC=	Simple protocol extensions (use Parse::RecDescent)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSX}
