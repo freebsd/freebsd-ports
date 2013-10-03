@@ -97,7 +97,7 @@ CONFIGURE_ARGS+=	-Doptimize="${CFLAGS}"
 
 .if ${PORT_OPTIONS:MGDBM}
 CONFIGURE_ARGS+=	-Di_gdbm
-LIB_DEPENDS+=		gdbm:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		libgdbm.so:${PORTSDIR}/databases/gdbm
 .else
 CONFIGURE_ARGS+=	-Ui_gdbm
 .endif
@@ -190,6 +190,9 @@ post-patch:
 .endif
 
 post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/man/man3
+	@${MKDIR} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto
+	@${MKDIR} ${STAGEDIR}${SITE_PERL}/auto
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION}
 .if ${OSVERSION} >= 900022
 	@${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${STAGEDIR}${PREFIX}/etc/man.d/perl${PERL_VER}.conf
