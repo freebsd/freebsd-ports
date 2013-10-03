@@ -1,20 +1,26 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns
-PORTVERSION=	3.3.r1
+PORTVERSION=	3.3
 PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
-MASTER_SITES=	http://powerdnssec.org/downloads/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	pdns-${PORTVERSION:S/.r/-rc/}
+DISTNAME=	auth-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	An advanced DNS server with multiple backends including SQL
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	boost_serialization:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	ragel:${PORTSDIR}/devel/ragel
+LIB_DEPENDS=	libboost_serialization.so:${PORTSDIR}/devel/boost-libs
+
+USE_GITHUB=	YES
+GH_ACCOUNT=	PowerDNS
+GH_PROJECT=	pdns
+GH_TAGNAME=	auth-3.3
+GH_COMMIT=	b8fe1df
 
 USE_LUA=	5.1
 LUA_COMPS=	lua
@@ -23,11 +29,11 @@ CONFLICTS=	powerdns-[2-3].[0-9]*
 
 NO_LATEST_LINK=	YES
 
-USES=		pkgconfig
-USE_GMAKE=	YES
+USES=		bison gmake pkgconfig
 USE_SUBMAKE=	YES
-USE_AUTOTOOLS=	libtool
+USE_AUTOTOOLS=	autoconf:env automake:env libtool:env
 USE_LDCONFIG=	YES
+GNU_CONFIGURE=	YES
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-modules="" \
@@ -39,11 +45,11 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		MKDIR="${MKDIR}" \
 		DISTNAME="${DISTNAME}" \
 		POWERDNS_OPTIONS="${POWERDNS_OPTIONS}"
-MAN8=		pdns_control.8 pdns_server.8 zone2sql.8
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	PGSQL PGSQL_LOCAL MYSQL MYSQL_LOCAL SQLITE SQLITE3 OPENDBX OPENLDAP OPENLDAP_LOCAL GEO DNSSEC POLARSSL
+OPTIONS_DEFINE=	PGSQL PGSQL_LOCAL MYSQL MYSQL_LOCAL SQLITE SQLITE3 \
+		OPENDBX OPENLDAP OPENLDAP_LOCAL GEO POLARSSL TOOLS
 OPTIONS_MULTI=	DNSSEC
 OPTIONS_MULTI_DNSSEC=	BOTAN110 CRYPTOPP
 
@@ -61,15 +67,20 @@ DNSSEC_DESC=		Enable extra DNSSEC options
 BOTAN110_DESC=		Faster signing + ECDSA & GOST algorithms
 CRYPTOPP_DESC=		ECDSA algorithms
 POLARSSL_DESC=		Use embedded PolarSSL
+TOOLS_DESC=		Build extra tools
 
 OPTIONS_DEFAULT=	PGSQL DNSSEC BOTAN110 POLARSSL
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
 
 USE_RC_SUBR+=	pdns-devel
+
+.if ${PORT_OPTIONS:MTOOLS}
+CONFIGURE_ARGS+=	--enable-tools
+PLIST_SUB+=		WITHTOOLS=""
+.else
+PLIST_SUB+=		WITHTOOLS="@comment "
+.endif
 
 .if ${PORT_OPTIONS:MGEO}
 CONFIGURE_MODULES+=	"geo"
@@ -152,7 +163,7 @@ PLIST_SUB+=		WITHSQLITE3="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENDBX}
-LIB_DEPENDS+=		opendbx:${PORTSDIR}/databases/opendbx
+LIB_DEPENDS+=		libopendbx.so:${PORTSDIR}/databases/opendbx
 CONFIGURE_MODULES+=	"opendbx"
 PLIST_SUB+=		WITHOPENDBX=""
 CXXFLAGS+=		-L${LOCALBASE}/lib
@@ -163,54 +174,61 @@ PLIST_SUB+=		WITHOPENDBX="@comment "
 .if ${PORT_OPTIONS:MPOLARSSL}
 CONFIGURE_ARGS+=	--without-system-polarssl
 .else
-LIB_DEPENDS+=		polarssl:${PORTSDIR}/security/polarssl
+LIB_DEPENDS+=		libpolarssl.so:${PORTSDIR}/security/polarssl
 .endif
 
 .if ${PORT_OPTIONS:MBOTAN110}
 CONFIGURE_ARGS+=	--enable-botan1.10
-LIB_DEPENDS+=		botan-1.10:${PORTSDIR}/security/botan110
+LIB_DEPENDS+=		libbotan-1.10.so:${PORTSDIR}/security/botan110
 .endif
 
 .if ${PORT_OPTIONS:MCRYPTOPP}
 .	if exists(${LOCALBASE}/lib/libcryptopp.so)
-LIB_DEPENDS+=		cryptopp:${PORTSDIR}/security/cryptopp
+LIB_DEPENDS+=		libcryptopp.so:${PORTSDIR}/security/cryptopp
 .	else
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
 .	endif
 CONFIGURE_ARGS+=	--enable-cryptopp
 .endif
 
-post-patch:
+pre-patch:
+	@${REINPLACE_CMD} -e "s;/bin/bash;/usr/bin/env bash;" \
+		-e "s;ssed -r;sed -E -e;g" \
+		-e "s;-i;-i \.bak;g" \
+		${WRKSRC}/build-scripts/set-version-auth
+	@${REINPLACE_CMD} -e 's;\$$(LIBCURL_LIBS) \$$(MYSQL_lib);;g' \
+		-e 's;\$$(LIBCURL_CFLAGS);;g' \
+		${WRKSRC}/pdns/Makefile.am
+.if ${PORT_OPTIONS:MBOTAN110}
+	@${REINPLACE_CMD} -e 's;\$$(BOOST_CPPFLAGS);;g' \
+		-e 's;-lgmp -lrt;;g' \
+		${WRKSRC}/pdns/Makefile.am
+	@${REINPLACE_CMD} -E -e 's;(\$$\(BOTAN110_CFLAGS\));\1 \$$\(BOOST_CPPFLAGS\);' \
+		${WRKSRC}/pdns/Makefile.am
+.endif
 .if ${PORT_OPTIONS:MOPENLDAP}
-	${REINPLACE_CMD} -e 's;-I. ;-I. -I${LOCALBASE}/include ;' \
-		-e 's;la_LDFLAGS =;la_LDFLAGS = -L${LOCALBASE}/lib;' \
-		${WRKSRC}/modules/ldapbackend/Makefile.in
-	${REINPLACE_CMD} -e 's;@LIBDL@;@LIBDL@ -L${LOCALBASE}/lib;' \
-		-e 's;@modulelibs@;@modulelibs@ -llber;' \
-		${WRKSRC}/pdns/Makefile.in
+	@${REINPLACE_CMD} -e 's;la_LDFLAGS =;la_LDFLAGS = -L${LOCALBASE}/lib ;' \
+		${WRKSRC}/modules/ldapbackend/Makefile.am
 .endif
 .if ${PORT_OPTIONS:MPGSQL}
 	@${REINPLACE_CMD} -E -e 's;(PGSQL_inc_check="\$$withval/include/pgsql)";\1 \$$withval/include";' \
-		${WRKSRC}/configure
+		${WRKSRC}/configure.ac
 .endif
 
+pre-configure:
+	@(cd ${WRKSRC} && ${WRKSRC}/build-scripts/set-version-auth git-${GH_TAGNAME} 0.0.${GH_TAGNAME} 0.0.${GH_TAGNAME} && ${WRKSRC}/bootstrap)
+
 post-install:
-.if !exists(${PREFIX}/etc/pdns/pdns.conf)
-	${INSTALL_DATA} ${PREFIX}/etc/pdns/pdns.conf-dist ${PREFIX}/etc/pdns/pdns.conf
-.endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in pdns.conf
-	${INSTALL_DATA} ${FILESDIR}/$i ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${FILESDIR}/$i ${STAGEDIR}${EXAMPLESDIR}/
 .endfor
-.endif
 .for j in libgpgsqlbackend.so libgmysqlbackend.so libgsqlitebackend.so \
 	libgsqlite3backend.so libldapbackend.so libopendbxbackend.so \
 	libgeobackend.so libpipebackend.so
-	@if ([ -f ${PREFIX}/lib/$j ] && [ ! -f ${PREFIX}/lib/$j.0 ]); then \
-		${LN} -sf ${PREFIX}/lib/$j ${PREFIX}/lib/$j.0; \
+	@if ([ -f ${STAGEDIR}${PREFIX}/lib/$j ] && [ ! -f ${STAGEDIR}${PREFIX}/lib/$j.0 ]); then \
+		${LN} -sf ${PREFIX}/lib/$j ${STAGEDIR}${PREFIX}/lib/$j.0; \
 	fi
 .endfor
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
