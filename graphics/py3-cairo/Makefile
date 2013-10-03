@@ -22,6 +22,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	PYTHON=${LOCALBASE}/bin/python3 \
 		PREFIX=${PREFIX}
 
+NO_STAGE=	yes
 python_OLD_CMD?=	/usr/bin/env python
 python_CMD?=		${LOCALBASE}/bin/python3
 SHEBANG_FILES=		examples/*.py examples/*/*.py waf test/*.py
