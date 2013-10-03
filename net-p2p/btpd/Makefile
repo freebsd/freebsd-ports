@@ -11,18 +11,14 @@ COMMENT=	Bittorrent client consisting of a daemon and client commands
 
 LICENSE=	BSD
 
+OPTIONS_DEFINE=	DOCS
+
 USE_AUTOTOOLS=	autoconf aclocal
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
-PORTDOCS=	README
-
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
-.endif
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
