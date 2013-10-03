@@ -1,0 +1,56 @@
+bin/owncloud
+etc/ownCloud/sync-exclude.lst
+lib/libowncloudsync.so
+lib/libowncloudsync.so.0
+lib/libowncloudsync.so.1.4.0
+share/applications/owncloud.desktop
+share/icons/hicolor/128x128/apps/owncloud.png
+share/icons/hicolor/22x22/apps/owncloud.png
+share/icons/hicolor/32x32/apps/owncloud.png
+share/icons/hicolor/48x48/apps/owncloud.png
+share/icons/hicolor/64x64/apps/owncloud.png
+share/owncloud/i18n/mirall_TW.qm
+share/owncloud/i18n/mirall_ca.qm
+share/owncloud/i18n/mirall_cs.qm
+share/owncloud/i18n/mirall_de.qm
+share/owncloud/i18n/mirall_el.qm
+share/owncloud/i18n/mirall_en.qm
+share/owncloud/i18n/mirall_es.qm
+share/owncloud/i18n/mirall_es_AR.qm
+share/owncloud/i18n/mirall_et.qm
+share/owncloud/i18n/mirall_eu.qm
+share/owncloud/i18n/mirall_fa.qm
+share/owncloud/i18n/mirall_fi.qm
+share/owncloud/i18n/mirall_fr.qm
+share/owncloud/i18n/mirall_gl.qm
+share/owncloud/i18n/mirall_hu.qm
+share/owncloud/i18n/mirall_it.qm
+share/owncloud/i18n/mirall_ja.qm
+share/owncloud/i18n/mirall_nl.qm
+share/owncloud/i18n/mirall_pl.qm
+share/owncloud/i18n/mirall_pt.qm
+share/owncloud/i18n/mirall_pt_BR.qm
+share/owncloud/i18n/mirall_ru.qm
+share/owncloud/i18n/mirall_sk.qm
+share/owncloud/i18n/mirall_sl.qm
+share/owncloud/i18n/mirall_sv.qm
+share/owncloud/i18n/mirall_th.qm
+share/owncloud/i18n/mirall_uk.qm
+share/owncloud/i18n/mirall_zh_CN.qm
+share/owncloud/i18n/mirall_zh_TW.qm
+@dirrm share/owncloud/i18n
+@dirrm share/owncloud
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
+@dirrm etc/ownCloud
