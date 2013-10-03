@@ -24,6 +24,9 @@ bin/beaver
 %%PYTHON_SITELIBDIR%%/beaver/transports/udp_transport.pyo
 %%PYTHON_SITELIBDIR%%/beaver/transports/udp_transport.pyc
 %%PYTHON_SITELIBDIR%%/beaver/transports/udp_transport.py
+%%PYTHON_SITELIBDIR%%/beaver/transports/tcp_transport.pyo
+%%PYTHON_SITELIBDIR%%/beaver/transports/tcp_transport.pyc
+%%PYTHON_SITELIBDIR%%/beaver/transports/tcp_transport.py
 %%PYTHON_SITELIBDIR%%/beaver/transports/stdout_transport.pyo
 %%PYTHON_SITELIBDIR%%/beaver/transports/stdout_transport.pyc
 %%PYTHON_SITELIBDIR%%/beaver/transports/stdout_transport.py
