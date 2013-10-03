@@ -1472,7 +1472,6 @@
     SUBDIR += py-apachelog
     SUBDIR += py-beaker
     SUBDIR += py-beautifulsoup
-    SUBDIR += py-beautifulsoup30
     SUBDIR += py-beautifulsoup32
     SUBDIR += py-bjoern
     SUBDIR += py-bleach

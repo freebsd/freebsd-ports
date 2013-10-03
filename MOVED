@@ -4977,3 +4977,4 @@ devel/py-importlib||2013-10-02|expired: Python 2.6 port will reach it's EoL upst
 graphics/gkrellkam|graphics/gkrellkam2|2013-10-02|Outdated, consider using a newer version
 mail/gkrellmmailwatch|mail/gkrellmmailwatch2|2013-10-02|Outdated, consider using a newer version
 databases/memcached|databases/memcached12|2013-10-02|Unsupported upstream, consider using a newer version
+www/py-beautifulsoup30||2013-10-03|Outdated, consider using a newer version
