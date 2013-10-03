@@ -6,7 +6,7 @@ bind:*:53:53::0:0:Bind Sandbox:/:/usr/sbin/nologin
 majordom:*:54:54::0:0:Majordomo Pseudo User:/usr/local/majordomo:/nonexistent
 rdfdb:*:55:55::0:0:rdfDB Daemon:/var/db/rdfdb:/bin/sh
 spamd:*:58:58::0:0:SpamAssassin user:/var/spool/spamd:/usr/sbin/nologin
-unbound:*:59:1::0:0:unbound dns resolver:/nonexistent:/usr/sbin/nologin
+unbound:*:59:59::0:0:Unbound DNS Resolver:/nonexistent:/usr/sbin/nologin
 cyrus:*:60:60::0:0:the cyrus mail server:/nonexistent:/nonexistent
 gnats:*:61:1::0:0:GNATS database owner:/usr/local/share/gnats/gnats-db:/bin/sh
 proxy:*:62:62::0:0:Packet Filter pseudo-user:/nonexistent:/nonexistent
