@@ -36,10 +36,11 @@ SHEBANG_FILES=	man/fixsp.pl
 CFLAGS+=	-fPIC ${PTHREAD_CFLAGS}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CONFIGURE_ARGS+=	--with-zdb=${LOCALBASE} --sysconfdir=${LOCALBASE}/etc
+CONFIGURE_ARGS+=	--with-zdb=${LOCALBASE} --sysconfdir=${LOCALBASE}/etc --enable-manpages
+
 MAKE_ARGS+=	mandir=${MANPREFIX}/man
 
-PORTDOCS=	AUTHORS BUGS INSTALL THANKS UPGRADING
+DOCS=		AUTHORS BUGS INSTALL THANKS UPGRADING
 
 .include <bsd.port.options.mk>
 
@@ -73,10 +74,6 @@ PLIST_SUB+=	LDAP="@comment "
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-acinclude.m4
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=	--enable-manpages
-.endif
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${STAGEDIR}${PREFIX}/etc/dbmail.conf-dist
 	@${MKDIR} ${STAGEDIR}${DATADIR}
@@ -87,7 +84,7 @@ post-install:
 	done
 	@${MKDIR} ${STAGEDIR}${PIDDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} * ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
