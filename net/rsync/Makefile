@@ -56,7 +56,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MZLIB_BASE}
-CONFIGURE_ARGS=	--with-included-zlib=no
+CONFIGURE_ARGS+=	--with-included-zlib=no
 .endif
 
 .if ${PORT_OPTIONS:MTIMELIMIT}
@@ -120,9 +120,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS|CONFIGUREDCFLAGS|' \
 		-e 's|perl.*|${DO_NADA}|' \
 			${WRKSRC}/Makefile.in
-# workaround for bug in configure which ignores --with-rsyncd-conf 
-	@${REINPLACE_CMD} -e 's|RSYNCD_SYSCONF|"${PREFIX}/etc/rsyncd.conf"|' \
-			${WRKSRC}/clientserver.c
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's:/etc/:${PREFIX}/etc/:g'  \
