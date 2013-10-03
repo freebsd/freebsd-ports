@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysql
-PKGNAMESUFFIX=	-scripts
+PKGNAMESUFFIX=	51-scripts
 
 COMMENT=	Multithreaded SQL database (scripts)
 

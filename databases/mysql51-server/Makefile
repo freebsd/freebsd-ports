@@ -7,7 +7,7 @@ PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQL-5.1
-PKGNAMESUFFIX?=	-server
+PKGNAMESUFFIX?=	51-server
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
@@ -88,9 +88,7 @@ CXXFLAGS+=	-fno-exceptions
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	51
 
-LATEST_LINK=	mysql51-server
-
-CONFLICTS_INSTALL=	mysql-server-[34].* mysql-server-5.[02-9].* mariadb-server-5.* percona-server-5.*
+CONFLICTS_INSTALL=	mysql5.[02-9]-server-* mysql[0-46-9][0-9]-server-* mariadb[0-9][0-9]-server-* percona[0-9][0-9]-server-*
 
 USE_RC_SUBR=	mysql-server
 
@@ -163,9 +161,7 @@ post-install:
 .else
 # MySQL-Client part
 .if defined(CLIENT_ONLY)
-LATEST_LINK=	mysql51-client
-
-CONFLICTS_INSTALL=	mysql-client-[34].* mysql-client-5.[02-9].*
+CONFLICTS_INSTALL=	mysql5.[02-9]-client-* mysql[0-46-9][0-9]-client-*
 
 MAN1=		mysql_config.1 mysql_upgrade.1 mysql.1 mysqladmin.1 \
 		mysqlbinlog.1 mysqlbug.1 mysqlcheck.1 \
@@ -193,9 +189,7 @@ WANT_MYSQL_VER=	51
 
 RUN_DEPENDS=	p5-DBD-mysql51>=0:${PORTSDIR}/databases/p5-DBD-mysql51
 
-LATEST_LINK=	mysql51-scripts
-
-CONFLICTS_INSTALL=	mysql-scripts-[34].* mysql-scripts-5.[02-9].*
+CONFLICTS_INSTALL=	mysql[0-46-9][0-9]-scripts-* mysql5.[02-9]-scripts-*
 
 MAN1=		msql2mysql.1 mysql_convert_table_format.1 mysql_find_rows.1 \
 		mysql_fix_extensions.1 mysql_secure_installation.1 \

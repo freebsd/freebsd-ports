@@ -12,7 +12,7 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-t
 		http://mirror.de.gsnw.de:56431/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://mirror.layerjet.com/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://mirror.switch.ch/mirror/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/
-PKGNAMESUFFIX?=	-server
+PKGNAMESUFFIX?=	53-server
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Database server - drop-in replacement for MySQL
@@ -21,7 +21,7 @@ LICENSE=	GPLv2
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
-CONFLICTS?=	mysql-server-[0-9]* percona-server-[0-9]* mariadb-server-5.[0-24-9].* mariadb-server-[0-46-9].*
+CONFLICTS?=	mysql[0-9][0-9]-server-* percona[0-9][0-9]-server-* mariadb5.[0-24-9]-server-* mariadb[0-46-9][0-9]-server-*
 
 GNU_CONFIGURE=	yes
 
