@@ -1,0 +1,11 @@
+--- ./src/CMakeLists.txt.orig	2013-09-04 11:09:12.000000000 +0200
++++ ./src/CMakeLists.txt	2013-09-18 15:09:30.000000000 +0200
+@@ -140,7 +140,7 @@
+ list(APPEND libsync_LINK_TARGETS
+     ${QT_LIBRARIES}
+     ${CSYNC_LIBRARY}
+-    dl
++    inotify
+ )
+ 
+ if(QTKEYCHAIN_FOUND)

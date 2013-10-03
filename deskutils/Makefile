@@ -144,6 +144,7 @@
     SUBDIR += mdh
     SUBDIR += mencal
     SUBDIR += menumaker
+    SUBDIR += mirall
     SUBDIR += moregroupware
     SUBDIR += mrundlg
     SUBDIR += msynctool
