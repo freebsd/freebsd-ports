@@ -1,0 +1,506 @@
+cumulative patches from HEAD
+
+from: f740fbbcbc9d4e4b8be94e76b1dba5eb7650b457
+to:   829d665db71c35d061148fdb529e1006360f2671
+diff --git README.rst README.rst
+index 30c4940..035c71f 100644
+--- README.rst
++++ README.rst
+@@ -119,6 +119,12 @@ The following configuration keys are for building an SSH Tunnel that can be used
+ * ssh_tunnel_port: Default ``None``. Local port for SSH Tunnel
+ * ssh_remote_host: Default ``None``. Remote host to connect to within SSH Tunnel
+ * ssh_remote_port: Default ``None``. Remote port to connect to within SSH Tunnel
++* ssh_options: Default ``None``. Comma separated list of SSH options to Pass through to the SSH Tunnel. See ``ssh_config(5)`` for more options
++
++The following configuration keys are for multi-line events support and are per file.
++
++* multiline_regex_after: Default ``None``. If a line match this regular expression, it will be merged with next line(s).
++* multiline_regex_before: Default ``None``. If a line match this regular expression, it will be merged with previous line(s).
+ 
+ The following can also be passed via argparse. Argparse will override all options in the configfile, when specified.
+ 
+@@ -272,11 +278,11 @@ Example 10: TCP transport::
+     [beaver]
+     tcp_host: 127.0.0.1
+     tcp_port: 9999
++    format: raw
+ 
+     # logstash indexer config:
+     input {
+       tcp {
+-        type => 'shipper-input'
+         host => '127.0.0.1'
+         port => '9999'
+       }
+@@ -394,6 +400,43 @@ Example 16: Loading stanzas from /etc/beaver/conf.d/* support::
+     # From the commandline
+     beaver -c /etc/beaver/conf -C /etc/beaver/conf.d
+ 
++Example 17: Simple multi-line event: if line is indented it is the continuation of an event::
++
++    # /etc/beaver/conf
++    [/tmp/somefile]
++    multiline_regex_before = ^\s+
++
++
++Example 18: Multi-line event for Python traceback::
++
++    # /etc/beaver/conf
++    [/tmp/python.log]
++    multiline_regex_after = (^\s+File.*, line \d+, in)
++    multiline_regex_before = (^Traceback \(most recent call last\):)|(^\s+File.*, line \d+, in)|(^\w+Error: )
++
++    # /tmp/python.log
++    DEBUG:root:Calling faulty_function
++    WARNING:root:An error occured
++    Traceback (most recent call last):
++      File "doerr.py", line 12, in <module>
++        faulty_function()
++      File "doerr.py", line 7, in faulty_function
++        0 / 0
++    ZeroDivisionError: integer division or modulo by zero
++
++Example 16: Use SSH options for redis transport through SSH Tunnel::
++
++    # /etc/beaver/conf
++    [beaver]
++    transport: redis
++    redis_url: redis://localhost:6379/0
++    redis_namespace: logstash:beaver
++    ssh_options: StrictHostKeyChecking=no, Compression=yes, CompressionLevel=9
++    ssh_key_file: /etc/beaver/remote_key
++    ssh_tunnel: remote-logger@logs.example.net
++    ssh_tunnel_port: 6379
++    ssh_remote_host: 127.0.0.1
++    ssh_remote_port: 6379
+ 
+ As you can see, ``beaver`` is pretty flexible as to how you can use/abuse it in production.
+ 
+diff --git beaver/config.py beaver/config.py
+index 64c97e6..a35847e 100644
+--- beaver/config.py
++++ beaver/config.py
+@@ -1,6 +1,7 @@
+ # -*- coding: utf-8 -*-
+ import logging
+ import os
++import re
+ import socket
+ import warnings
+ 
+@@ -35,6 +36,10 @@ class BeaverConfig():
+             'delimiter': '\n',
+             'size_limit': '',
+ 
++            # multiline events support. Default is disabled
++            'multiline_regex_after': '',
++            'multiline_regex_before': '',
++
+             'message_format': '',
+             'sincedb_write_interval': '15',
+             'stat_interval': '1',
+@@ -97,12 +102,15 @@ class BeaverConfig():
+             # path to sincedb sqlite db
+             'sincedb_path': '',
+ 
++            'logstash_version': '',
++
+             # ssh tunnel support
+             'ssh_key_file': '',
+             'ssh_tunnel': '',
+             'ssh_tunnel_port': '',
+             'ssh_remote_host': '',
+             'ssh_remote_port': '',
++            'ssh_options': '',
+             'subprocess_poll_sleep': '1',
+ 
+             # the following can be passed via argparse
+@@ -260,6 +268,7 @@ class BeaverConfig():
+                 'udp_port',
+                 'wait_timeout',
+                 'zeromq_hwm',
++                'logstash_version',
+             ]
+             for key in require_int:
+                 if config[key] is not None:
+@@ -297,6 +306,15 @@ class BeaverConfig():
+             if config['zeromq_address'] and type(config['zeromq_address']) == str:
+                 config['zeromq_address'] = [x.strip() for x in config.get('zeromq_address').split(',')]
+ 
++            if config.get('ssh_options') is not None:
++                csv = config.get('ssh_options')
++                config['ssh_options'] = []
++                if csv == str:
++                    for opt in csv.split(','):
++                        config['ssh_options'].append('-o %s' % opt.strip())
++            else:
++                config['ssh_options'] = []
++
+             config['globs'] = {}
+ 
+             return config
+@@ -360,6 +378,11 @@ class BeaverConfig():
+ 
+             config['delimiter'] = config['delimiter'].decode('string-escape')
+ 
++            if config['multiline_regex_after']:
++                config['multiline_regex_after'] = re.compile(config['multiline_regex_after'])
++            if config['multiline_regex_before']:
++                config['multiline_regex_before'] = re.compile(config['multiline_regex_before'])
++
+             require_int = ['sincedb_write_interval', 'stat_interval', 'tail_lines']
+             for k in require_int:
+                 config[k] = int(config[k])
+diff --git beaver/dispatcher/tail.py beaver/dispatcher/tail.py
+index 05caaeb..0fb4930 100644
+--- beaver/dispatcher/tail.py
++++ beaver/dispatcher/tail.py
+@@ -15,6 +15,9 @@ def run(args=None):
+     logger = setup_custom_logger('beaver', args)
+ 
+     beaver_config = BeaverConfig(args, logger=logger)
++    if beaver_config.get('logstash_version') not in [0, 1]:
++        raise LookupError("Invalid logstash_version")
++
+     queue = multiprocessing.JoinableQueue(beaver_config.get('max_queue_size'))
+ 
+     manager = None
+diff --git beaver/dispatcher/worker.py beaver/dispatcher/worker.py
+index 2f17262..746b130 100644
+--- beaver/dispatcher/worker.py
++++ beaver/dispatcher/worker.py
+@@ -11,10 +11,13 @@ from beaver.utils import setup_custom_logger, REOPEN_FILES
+ from beaver.worker.worker import Worker
+ 
+ 
+-def run(args):
++def run(args=None):
+     logger = setup_custom_logger('beaver', args)
+ 
+     beaver_config = BeaverConfig(args, logger=logger)
++    if beaver_config.get('logstash_version') not in [0, 1]:
++        raise LookupError("Invalid logstash_version")
++
+     queue = multiprocessing.Queue(beaver_config.get('max_queue_size'))
+ 
+     worker = None
+diff --git beaver/ssh_tunnel.py beaver/ssh_tunnel.py
+index 2b8419c..1213646 100644
+--- beaver/ssh_tunnel.py
++++ beaver/ssh_tunnel.py
+@@ -75,6 +75,7 @@ class BeaverSshTunnel(BeaverSubprocess):
+         ssh_opts.append('-n')
+         ssh_opts.append('-N')
+         ssh_opts.append('-o BatchMode=yes')
++        ssh_opts = ssh_opts + beaver_config.get('ssh_options')
+ 
+         command = 'while true; do ssh {0} -i "{4}" "{5}" -L "{1}:{2}:{3}"; sleep 10; done'
+         self._command = command.format(' '.join(ssh_opts), tunnel_port, remote_host, remote_port, key_file, tunnel)
+diff --git beaver/transports/base_transport.py beaver/transports/base_transport.py
+index 5619543..68bf8c0 100644
+--- beaver/transports/base_transport.py
++++ beaver/transports/base_transport.py
+@@ -32,24 +32,49 @@ class BaseTransport(object):
+         self._is_valid = True
+         self._logger = logger
+ 
++        self._logstash_version = beaver_config.get('logstash_version')
++        if self._logstash_version == 0:
++            self._fields = {
++                'type': '@type',
++                'tags': '@tags',
++                'message': '@message',
++                'file': '@source_path',
++                'host': '@source_host',
++                'raw_json_fields': ['@message', '@source', '@source_host', '@source_path', '@tags', '@timestamp', '@type'],
++            }
++        elif self._logstash_version == 1:
++            self._fields = {
++                'type': 'type',
++                'tags': 'tags',
++                'message': 'message',
++                'file': 'file',
++                'host': 'host',
++                'raw_json_fields': ['message', 'host', 'file', 'tags', '@timestamp', 'type'],
++            }
++
+         def raw_formatter(data):
+-            return data['@message']
++            return data[self._fields.get('message')]
+ 
+         def rawjson_formatter(data):
+-            json_data = json.loads(data['@message'])
+-            del data['@message']
++            try:
++                json_data = json.loads(data[self._fields.get('message')])
++            except ValueError:
++                self._logger.warning("cannot parse as rawjson: {0}".format(self._fields.get('message')))
++                json_data = json.loads("{}")
++
++            del data[self._fields.get('message')]
+ 
+             for field in json_data:
+                 data[field] = json_data[field]
+ 
+-            for field in ['@message', '@source', '@source_host', '@source_path', '@tags', '@timestamp', '@type']:
++            for field in self._fields.get('raw_json_fields'):
+                 if field not in data:
+                     data[field] = ''
+ 
+             return json.dumps(data)
+ 
+         def string_formatter(data):
+-            return '[{0}] [{1}] {2}'.format(data['@source_host'], data['@timestamp'], data['@message'])
++            return '[{0}] [{1}] {2}'.format(data[self._fields.get('host')], data['@timestamp'], data[self._fields.get('message')])
+ 
+         self._formatters['json'] = json.dumps
+         self._formatters['msgpack'] = msgpack.packb
+@@ -71,16 +96,25 @@ class BaseTransport(object):
+         if formatter not in self._formatters:
+             formatter = self._default_formatter
+ 
+-        return self._formatters[formatter]({
+-            '@source': 'file://{0}{1}'.format(self._current_host, filename),
+-            '@type': kwargs.get('type'),
+-            '@tags': kwargs.get('tags'),
+-            '@fields': kwargs.get('fields'),
++        data = {
++            self._fields.get('type'): kwargs.get('type'),
++            self._fields.get('tags'): kwargs.get('tags'),
+             '@timestamp': timestamp,
+-            '@source_host': self._current_host,
+-            '@source_path': filename,
+-            '@message': line,
+-        })
++            self._fields.get('host'): self._current_host,
++            self._fields.get('file'): filename,
++            self._fields.get('message'): line
++        }
++
++        if self._logstash_version == 0:
++            data['@source'] = 'file://{0}'.format(filename)
++            data['@fields'] = kwargs.get('fields')
++        else:
++            data['@version'] = self._logstash_version
++            fields = kwargs.get('fields')
++            for key in fields:
++                data[key] = fields.get(key)
++
++        return self._formatters[formatter](data)
+ 
+     def get_timestamp(self, **kwargs):
+         """Retrieves the timestamp for a given set of data"""
+diff --git beaver/utils.py beaver/utils.py
+index b283a0c..604cc05 100644
+--- beaver/utils.py
++++ beaver/utils.py
+@@ -150,3 +150,36 @@ def _replace_all(path, replacements):
+     for j in replacements:
+         path = path.replace(*j)
+     return path
++
++
++def multiline_merge(lines, current_event, re_after, re_before):
++    """ Merge multi-line events based.
++
++        Some event (like Python trackback or Java stracktrace) spawn
++        on multiple line. This method will merge them using two
++        regular expression: regex_after and regex_before.
++
++        If a line match re_after, it will be merged with next line.
++
++        If a line match re_before, it will be merged with previous line.
++
++        This function return a list of complet event. Note that because
++        we don't know if an event is complet before another new event
++        start, the last event will not be returned but stored in
++        current_event. You should pass the same current_event to
++        successive call to multiline_merge. current_event is a list
++        of lines whose belong to the same event.
++    """
++    events = []
++    for line in lines:
++        if re_before and re_before.match(line):
++            current_event.append(line)
++        elif re_after and current_event and re_after.match(current_event[-1]):
++            current_event.append(line)
++        else:
++            if current_event:
++                events.append('\n'.join(current_event))
++            current_event.clear()
++            current_event.append(line)
++
++    return events
+diff --git beaver/worker/tail.py beaver/worker/tail.py
+index 020ab5a..e7c32f1 100644
+--- beaver/worker/tail.py
++++ beaver/worker/tail.py
+@@ -8,7 +8,7 @@ import os
+ import sqlite3
+ import time
+ 
+-from beaver.utils import IS_GZIPPED_FILE, REOPEN_FILES
++from beaver.utils import IS_GZIPPED_FILE, REOPEN_FILES, multiline_merge
+ from beaver.unicode_dammit import ENCODINGS
+ from beaver.base_log import BaseLog
+ 
+@@ -61,6 +61,12 @@ class Tail(BaseLog):
+         # Size of the input buffer
+         self._input_size = 0
+ 
++        # Attribute for multi-line events
++        self._current_event = collections.deque([])
++        self._last_activity = time.time()
++        self._multiline_regex_after = beaver_config.get_field('multiline_regex_after', filename)
++        self._multiline_regex_before = beaver_config.get_field('multiline_regex_before', filename)
++
+         self._update_file()
+         if self.active:
+             self._log_info("watching logfile")
+@@ -94,6 +100,11 @@ class Tail(BaseLog):
+         if self._file:
+             self._file.close()
+ 
++        if self._current_event:
++            event = '\n'.join(self._current_event)
++            self._current_event.clear()
++            self._callback_wrapper([event])
++
+     def run(self, once=False):
+         while self.active:
+             current_time = time.time()
+@@ -225,9 +236,27 @@ class Tail(BaseLog):
+             lines = self._buffer_extract(data)
+ 
+             if not lines:
++                # Before returning, check if an event (maybe partial) is waiting for too long.
++                if self._current_event and time.time() - self._last_activity > 1:
++                    event = '\n'.join(self._current_event)
++                    self._current_event.clear()
++                    self._callback_wrapper([event])
+                 break
+ 
+-            self._callback_wrapper(lines)
++            self._last_activity = time.time()
++
++            if self._multiline_regex_after or self._multiline_regex_before:
++                # Multiline is enabled for this file.
++                events = multiline_merge(
++                        lines,
++                        self._current_event,
++                        self._multiline_regex_after,
++                        self._multiline_regex_before)
++            else:
++                events = lines
++
++            if events:
++                self._callback_wrapper(events)
+ 
+             if self._sincedb_path:
+                 current_line_count = len(lines)
+@@ -297,7 +326,16 @@ class Tail(BaseLog):
+             self._log_debug('tailing {0} lines'.format(self._tail_lines))
+             lines = self.tail(self._filename, encoding=self._encoding, window=self._tail_lines, position=current_position)
+             if lines:
+-                self._callback_wrapper(lines)
++                if self._multiline_regex_after or self._multiline_regex_before:
++                    # Multiline is enabled for this file.
++                    events = multiline_merge(
++                            lines,
++                            self._current_event,
++                            self._multiline_regex_after,
++                            self._multiline_regex_before)
++                else:
++                    events = lines
++                self._callback_wrapper(events)
+ 
+         return
+ 
+diff --git beaver/worker/worker.py beaver/worker/worker.py
+index e1ec19d..907e032 100644
+--- beaver/worker/worker.py
++++ beaver/worker/worker.py
+@@ -9,7 +9,7 @@ import sqlite3
+ import stat
+ import time
+ 
+-from beaver.utils import IS_GZIPPED_FILE, REOPEN_FILES, eglob
++from beaver.utils import IS_GZIPPED_FILE, REOPEN_FILES, eglob, multiline_merge
+ from beaver.unicode_dammit import ENCODINGS
+ 
+ 
+@@ -127,9 +127,27 @@ class Worker(object):
+             lines = self._buffer_extract(data=data, fid=fid)
+ 
+             if not lines:
++                # Before returning, check if an event (maybe partial) is waiting for too long.
++                if self._file_map[fid]['current_event'] and time.time() - self._file_map[fid]['last_activity'] > 1:
++                    event = '\n'.join(self._file_map[fid]['current_event'])
++                    self._file_map[fid]['current_event'].clear()
++                    self._callback_wrapper(filename=file.name, lines=[event])
+                 break
+ 
+-            self._callback_wrapper(filename=file.name, lines=lines)
++            self._file_map[fid]['last_activity'] = time.time()
++
++            if self._file_map[fid]['multiline_regex_after'] or self._file_map[fid]['multiline_regex_before']:
++                # Multiline is enabled for this file.
++                events = multiline_merge(
++                        lines,
++                        self._file_map[fid]['current_event'],
++                        self._file_map[fid]['multiline_regex_after'],
++                        self._file_map[fid]['multiline_regex_before'])
++            else:
++                events = lines
++
++            if events:
++                self._callback_wrapper(filename=file.name, lines=events)
+ 
+             if self._sincedb_path:
+                 current_line_count = len(lines)
+@@ -287,7 +305,16 @@ class Worker(object):
+ 
+                 lines = self.tail(data['file'].name, encoding=encoding, window=tail_lines, position=current_position)
+                 if lines:
+-                    self._callback_wrapper(filename=data['file'].name, lines=lines)
++                    if self._file_map[fid]['multiline_regex_after'] or self._file_map[fid]['multiline_regex_before']:
++                        # Multiline is enabled for this file.
++                        events = multiline_merge(
++                                lines,
++                                self._file_map[fid]['current_event'],
++                                self._file_map[fid]['multiline_regex_after'],
++                                self._file_map[fid]['multiline_regex_before'])
++                    else:
++                        events = lines
++                    self._callback_wrapper(filename=data['file'].name, lines=events)
+ 
+         self.unwatch_list(unwatch_list)
+ 
+@@ -504,6 +531,10 @@ class Worker(object):
+         try:
+             if file:
+                 self._run_pass(fid, file)
++                if self._file_map[fid]['current_event']:
++                    event = '\n'.join(self._file_map[fid]['current_event'])
++                    self._file_map[fid]['current_event'].clear()
++                    self._callback_wrapper(filename=file.name, lines=[event])
+         except IOError:
+             # Silently ignore any IOErrors -- file is gone
+             pass
+@@ -528,12 +559,16 @@ class Worker(object):
+             if file:
+                 self._logger.info("[{0}] - watching logfile {1}".format(fid, fname))
+                 self._file_map[fid] = {
++                    'current_event': collections.deque([]),
+                     'delimiter': self._beaver_config.get_field('delimiter', fname),
+                     'encoding': self._beaver_config.get_field('encoding', fname),
+                     'file': file,
+                     'input': collections.deque([]),
+                     'input_size': 0,
++                    'last_activity': time.time(),
+                     'line': 0,
++                    'multiline_regex_after': self._beaver_config.get_field('multiline_regex_after', fname),
++                    'multiline_regex_before': self._beaver_config.get_field('multiline_regex_before', fname),
+                     'size_limit': self._beaver_config.get_field('size_limit', fname),
+                     'update_time': None,
+                     'active': True,
