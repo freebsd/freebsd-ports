@@ -25,15 +25,10 @@ BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 PLIST_FILES=	bin/mkclean \
 		bin/mkWDclean
 
-NO_STAGE=	yes
+BROKEN_sparc64=	Does not install on sparc64: gmake: GNUmakefile: No such file or directory
+
 post-extract:
-	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/corec/tools/coremake/gcc_mak.inc
+	@${REINPLACE_CMD} -e 's,/usr/local,$$(DESTDIR)$$(PREFIX),g' ${WRKSRC}/corec/tools/coremake/gcc_mak.inc
 	@${RM} ${WRKSRC}/libmatroska2/test/test.proj
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not install on sparc64: gmake: GNUmakefile: No such file or directory
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
