@@ -40,6 +40,8 @@ lib/alsa-lib/smixer/smixer-ac97.la
 lib/alsa-lib/smixer/smixer-ac97.so
 lib/alsa-lib/smixer/smixer-hda.la
 lib/alsa-lib/smixer/smixer-hda.so
+%%PYTHON%%lib/alsa-lib/smixer/smixer-python.la
+%%PYTHON%%lib/alsa-lib/smixer/smixer-python.so
 lib/alsa-lib/smixer/smixer-sbase.la
 lib/alsa-lib/smixer/smixer-sbase.so
 lib/libasound.la
@@ -125,9 +127,39 @@ share/alsa/pcm/surround51.conf
 share/alsa/pcm/surround71.conf
 share/alsa/smixer.conf
 share/alsa/sndo-mixer.alisp
+share/alsa/ucm/DAISY-I2S/DAISY-I2S.conf
+share/alsa/ucm/DAISY-I2S/HiFi.conf
+share/alsa/ucm/PandaBoard/FMAnalog
+share/alsa/ucm/PandaBoard/PandaBoard.conf
+share/alsa/ucm/PandaBoard/hifi
+share/alsa/ucm/PandaBoard/hifiLP
+share/alsa/ucm/PandaBoard/record
+share/alsa/ucm/PandaBoard/voice
+share/alsa/ucm/PandaBoard/voiceCall
+share/alsa/ucm/PandaBoardES/FMAnalog
+share/alsa/ucm/PandaBoardES/PandaBoardES.conf
+share/alsa/ucm/PandaBoardES/hifi
+share/alsa/ucm/PandaBoardES/hifiLP
+share/alsa/ucm/PandaBoardES/record
+share/alsa/ucm/PandaBoardES/voice
+share/alsa/ucm/PandaBoardES/voiceCall
+share/alsa/ucm/SDP4430/FMAnalog
+share/alsa/ucm/SDP4430/SDP4430.conf
+share/alsa/ucm/SDP4430/hifi
+share/alsa/ucm/SDP4430/hifiLP
+share/alsa/ucm/SDP4430/record
+share/alsa/ucm/SDP4430/voice
+share/alsa/ucm/SDP4430/voiceCall
+share/alsa/ucm/tegraalc5632/tegraalc5632.conf
 @unexec if cmp -s %D/etc/asound.conf.sample %D/etc/asound.conf; then rm -f %D/etc/asound.conf; else echo "If permanently deleting this package, %D/etc/asound.conf must be removed manually."; fi
 etc/asound.conf.sample
 @exec [ -f %B/asound.conf ] || cp -p %B/%f %B/asound.conf
+@dirrm share/alsa/ucm/PandaBoardES
+@dirrm share/alsa/ucm/SDP4430
+@dirrm share/alsa/ucm/DAISY-I2S
+@dirrm share/alsa/ucm/tegraalc5632
+@dirrm share/alsa/ucm/PandaBoard
+@dirrm share/alsa/ucm
 @dirrm share/alsa/pcm
 @dirrm share/alsa/cards/SI7018
 @dirrm share/alsa/cards
