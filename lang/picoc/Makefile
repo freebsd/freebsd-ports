@@ -17,7 +17,6 @@ PLIST_FILES=	bin/picoc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "/-include/d" \
 		-e "s/^CFLAGS=.*/CFLAGS=${CFLAGS} -DUNIX_HOST/" \
