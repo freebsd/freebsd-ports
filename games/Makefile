@@ -1008,6 +1008,7 @@
     SUBDIR += whichwayisup
     SUBDIR += widelands
     SUBDIR += windstille
+    SUBDIR += wizznic
     SUBDIR += wmeyes
     SUBDIR += wmfortune
     SUBDIR += wmminichess
