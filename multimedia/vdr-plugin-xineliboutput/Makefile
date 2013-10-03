@@ -3,7 +3,7 @@
 
 PORTNAME=	vdr-plugin-xineliboutput
 PORTVERSION=	1.0.90s20120511
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	SF:release \
 		LOCAL:snapshot
@@ -30,26 +30,26 @@ WRKSRC=		${WRKDIR}/vdr-${PLUGIN}
 
 OPTIONS_DEFINE=	LIBBLURAY LIBEXTRACTOR
 
+HAS_CONFIGURE=	yes
 NO_STAGE=	yes
+
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 .include <bsd.port.pre.mk>
 
+CONFIGURE_ARGS+=	--cc="${CC}" --cxx="${CXX}" --add-cflags=-I$(VDRDIR)
+
 .if ${PORT_OPTIONS:MLIBEXTRACTOR}
 LIB_DEPENDS+=	extractor:${PORTSDIR}/textproc/libextractor
-CONFIGURE_OPTS+=	--enable-libextractor
 .else
-CONFIGURE_OPTS+=	--disable-libextractor
+CONFIGURE_ARGS+=	--disable-libextractor
 .endif
 
 .if ${PORT_OPTIONS:MLIBBLURAY}
-CONFIGURE_OPTS+=	--enable-libbluray
 LIB_DEPENDS+=	bluray:${PORTSDIR}/multimedia/libbluray
 .else
-CONFIGURE_OPTS+=	--disable-libbluray
+CONFIGURE_ARGS+=	--disable-libbluray
 .endif
-
-MAKE_ARGS+=	CONFIGURE_OPTS="${CONFIGURE_OPTS}"
 
 post-patch: post-patch-plugin
 # clang doesn't know -MG
