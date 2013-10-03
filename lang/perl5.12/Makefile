@@ -193,10 +193,6 @@ post-patch:
 		${WRKSRC}/hints/freebsd.sh
 .endif
 
-pre-su-install:
-	@${RM} -f ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION}
-	@${RM} -f ${STAGEDIR}${PREFIX}/bin/perl
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION}
 .if ${OSVERSION} >= 900022
