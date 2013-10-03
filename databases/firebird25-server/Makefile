@@ -13,6 +13,11 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	Firebird-2 relational database (server)
 
+CONFLICTS?=	${PORTNAME}20-client-* \
+		${PORTNAME}21-client-* \
+		${PORTNAME}20-server-* \
+		${PORTNAME}21-server-*
+
 LIB_DEPENDS=	icuuc:${PORTSDIR}/devel/icu
 
 USES=		bison
