@@ -1,4 +1,0 @@
-@cwd /
-%%KMODDIR%%/umcs7840.ko
-@exec kldxref %%KMODDIR%%
-@unexec kldxref %%KMODDIR%%
