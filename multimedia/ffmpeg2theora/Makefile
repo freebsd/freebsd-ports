@@ -11,21 +11,17 @@ COMMENT=	Reencode many media file formats to Ogg Theora
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	avcodec:${PORTSDIR}/multimedia/ffmpeg \
-		kate:${PORTSDIR}/multimedia/libkate \
-		theora:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
+		libkate.so:${PORTSDIR}/multimedia/libkate \
+		libtheora.so:${PORTSDIR}/multimedia/libtheora
 
 USE_BZIP2=	yes
-USES=		iconv pkgconfig
-USE_SCONS=	yes
-SCONS_BUILDENV=	CC="${CC}" CCFLAGS="${CFLAGS}" \
-		APPEND_CCFLAGS="${CPPFLAGS}" APPEND_LINKFLAGS="${LDFLAGS}"
+USES=		iconv pkgconfig scons
+MAKE_ENV=	APPEND_CCFLAGS="${CPPFLAGS}" APPEND_LINKFLAGS="${LDFLAGS}"
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-MAN1=		ffmpeg2theora.1
-PLIST_FILES=	bin/ffmpeg2theora
+PLIST_FILES=	bin/ffmpeg2theora man/man1/ffmpeg2theora.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
