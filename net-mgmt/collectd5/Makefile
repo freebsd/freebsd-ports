@@ -3,6 +3,8 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.4.0
+PORTREVISION=	1
+PKGNAMESUFFIX=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -14,8 +16,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal autoconf autoheader automake libltdl libtool
 USE_GNOME=	glib20
-
-LATEST_LINK=	collectd5
 
 OPTIONS_DEFINE=		CGI DEBUG GCRYPT VIRT
 OPTIONS_GROUP=		INPUT OUTPUT
@@ -50,10 +50,6 @@ VIRT_DESC=		Enable libvirt plugin (requires XML)
 XML_DESC=		Enable XML plugins
 XMMS_DESC=		Enable xmms plugin
 
-MAN1=		collectd.1 collectd-nagios.1 collectd-tg.1 collectdmon.1 collectdctl.1
-MAN5=		collectd.conf.5 collectd-email.5 collectd-exec.5 \
-		collectd-snmp.5 collectd-unixsock.5 collectd-perl.5 \
-		collectd-java.5 collectd-python.5 types.db.5 collectd-threshold.5
 USE_RC_SUBR=	collectd collectdmon
 
 USE_LDCONFIG=	yes
@@ -63,7 +59,6 @@ CONFLICTS=	collectd-4.[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # NOTE: Plugins without dependencies are defined further down.
@@ -117,6 +112,7 @@ CONFIGURE_ARGS+=	\
 		--enable-powerdns \
 		--enable-pf \
 		--enable-processes \
+		--enable-statsd \
 		--enable-swap \
 		--enable-syslog \
 		--enable-table \
@@ -438,20 +434,12 @@ post-patch:
 		${WRKSRC}/configure.in
 
 post-install:
-	${MKDIR} /var/db/collectd
-	if [ ! -f ${PREFIX}/etc/collectd.conf ]; then \
-		${CP} -p ${PREFIX}/etc/collectd.conf.sample \
-			${PREFIX}/etc/collectd.conf ; \
-	fi
+	@${MKDIR} ${STAGEDIR}/var/db/collectd
 .if ${PORT_OPTIONS:MCGI}
-	${MKDIR} ${WWWDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/collection.cgi ${WWWDIR}/
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/collection.cgi ${STAGEDIR}${WWWDIR}/
 	${INSTALL_DATA} ${WRKSRC}/contrib/collection.conf \
-		${WWWDIR}/collection.conf.sample
-	if [ ! -f ${WWWDIR}/collection.conf ]; then \
-		${CP} -p ${WWWDIR}/collection.conf.sample \
-			${WWWDIR}/collection.conf ; \
-	fi
+		${STAGEDIR}${WWWDIR}/collection.conf.sample
 .endif
 
 .include <bsd.port.mk>
