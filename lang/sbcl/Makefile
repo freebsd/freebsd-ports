@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sbcl
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.12
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
@@ -12,8 +12,10 @@ DISTFILES=	\
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A Common Lisp development system derived from the CMU CL system
 
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 OPTIONS_DEFINE =	SBCL THREADS
 
@@ -28,6 +30,7 @@ CONTRIB_MODULES=	asdf			\
 			sb-concurrency		\
 			sb-cover		\
 			sb-executable		\
+			sb-gmp			\
 			sb-grovel		\
 			sb-introspect		\
 			sb-md5			\

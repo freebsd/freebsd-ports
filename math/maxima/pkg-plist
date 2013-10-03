@@ -630,7 +630,6 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/noninteractive/noninteractive.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/noninteractive/rtest_noninteractive.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/opsubst.lisp
-%%DATADIR%%/%%PORTVERSION%%/share/contrib/powers.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/prim/prim-ex.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/prim/prim-ex1.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/prim/prim.mac
@@ -1299,7 +1298,9 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/stats/numstats.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/stats/rtest_stats.mac
 %%DATADIR%%/%%PORTVERSION%%/share/stats/stats.mac
+%%DATADIR%%/%%PORTVERSION%%/share/stringproc/base64.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/stringproc/eval_string.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/stringproc/md5.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/stringproc/pregexp.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/stringproc/printf.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/stringproc/rtestprintf.mac
@@ -1729,7 +1730,6 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/src/xmaxima_def.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/zero.lisp
 %%DATADIR%%/%%PORTVERSION%%/tests/README.how-to
-%%DATADIR%%/%%PORTVERSION%%/tests/define_ops.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/mcond_display_elseif.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/mcond_display_elseif.out
 %%DATADIR%%/%%PORTVERSION%%/tests/rexamples.mac
@@ -1773,6 +1773,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_lambert_w.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_lapack.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_laplace.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/rtest_limit.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_log.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_map.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_mset.mac
@@ -1811,8 +1812,6 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/tests/test_readbase_maxima.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/test_readbase_maxima_autoload.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/testsuite.lisp
-%%DATADIR%%/%%PORTVERSION%%/tests/tmp_numth.mac
-%%DATADIR%%/%%PORTVERSION%%/tests/tmptest.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_algebra.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_boolean_logic.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/wester_problems/test_calculus.mac

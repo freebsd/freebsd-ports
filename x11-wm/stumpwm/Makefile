@@ -39,6 +39,7 @@ DISTFILES+=	clx-0.7.4.tgz:clx
 .if ${PORT_OPTIONS:MSBCL}
 CONFIGURE_ARGS+=	--with-lisp=sbcl
 BUILD_DEPENDS+=	sbcl:${PORTSDIR}/lang/sbcl
+BROKEN=		require needs a pathname for uninstalled modules with the ASDF 3.x bundled with sbcl
 .else
 CONFIGURE_ARGS+=	--with-lisp=clisp
 BUILD_DEPENDS+=	clisp:${PORTSDIR}/lang/clisp

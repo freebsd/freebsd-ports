@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	maxima
-PORTVERSION=	5.30.0
-PORTREVISION=	2
+PORTVERSION=	5.31.1
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -18,8 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/${LISPPORT} \
 		${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
-USE_TK =		84+
-USES=			gmake perl5
+USES=			gmake perl5 tk:84+
 USE_PERL5=		build
 USE_PYTHON_BUILD=	yes
 GNU_CONFIGURE=		yes
@@ -126,7 +124,7 @@ post-install:
 	@${ECHO_MSG} ""
 
 check regression-test test: build
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} \
-	${MAKE_ARGS} check
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} \
+	check
 
 .include <bsd.port.post.mk>

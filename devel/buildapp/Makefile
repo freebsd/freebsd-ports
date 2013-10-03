@@ -23,6 +23,8 @@ ALL_TARGET=
 PLIST_FILES=	bin/buildapp
 PORTDOCS=	*
 
+BROKEN=		require needs a pathname for uninstalled modules with the ASDF 3.x bundled with sbcl
+
 post-patch:	.SILENT
 	${REINPLACE_CMD} 's|sbcl|${SBCL}|' ${WRKSRC}/Makefile
 
