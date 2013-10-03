@@ -3,6 +3,7 @@
 
 PORTNAME=	rsync
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -119,6 +120,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS|CONFIGUREDCFLAGS|' \
 		-e 's|perl.*|${DO_NADA}|' \
 			${WRKSRC}/Makefile.in
+# workaround for bug in configure which ignores --with-rsyncd-conf 
+	@${REINPLACE_CMD} -e 's|RSYNCD_SYSCONF|"${PREFIX}/etc/rsyncd.conf"|' \
+			${WRKSRC}/clientserver.c
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's:/etc/:${PREFIX}/etc/:g'  \
