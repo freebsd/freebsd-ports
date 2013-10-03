@@ -6,6 +6,7 @@ smmsp:*:25:
 bind:*:53:
 rdfdb:*:55:
 spamd:*:58:
+unbound:*:59:
 cyrus:*:60:
 proxy:*:62:
 authpf:*:63:

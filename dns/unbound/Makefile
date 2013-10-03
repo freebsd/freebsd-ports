@@ -3,6 +3,7 @@
 
 PORTNAME=	unbound
 PORTVERSION=	1.4.21
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -19,6 +20,7 @@ CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE}
 USE_LDCONFIG=	yes
 
 USERS=		${PORTNAME}
+GROUPS=		${PORTNAME}
 
 USE_RC_SUBR=	unbound
 
