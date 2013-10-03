@@ -42,7 +42,7 @@ lib/gtk-2.0/2.10.0/immodules/im-ibus.so
 %%GTK3%%lib/gtk-3.0/3.0.0/immodules/im-ibus.so
 lib/libibus-1.0.la
 lib/libibus-1.0.so
-lib/libibus-1.0.so.401
+lib/libibus-1.0.so.402
 %%PYTHON_SITELIBDIR%%/ibus/__init__.py
 %%PYTHON_SITELIBDIR%%/ibus/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ibus/__init__.pyo
