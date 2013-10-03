@@ -71,6 +71,22 @@ sbin/dbmail-util
 %%DATADIR%%/sqlite/3_0_2-3_1_0.sqlite
 %%DATADIR%%/sqlite/create_tables.sqlite
 %%DATADIR%%/sqlite/trigger.tmpl.sql
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README.aliases
+%%PORTDOCS%%%%DOCSDIR%%/README.exim
+%%PORTDOCS%%%%DOCSDIR%%/README.filters
+%%PORTDOCS%%%%DOCSDIR%%/README.http
+%%PORTDOCS%%%%DOCSDIR%%/README.ldap
+%%PORTDOCS%%%%DOCSDIR%%/README.postfix
+%%PORTDOCS%%%%DOCSDIR%%/README.qmail
+%%PORTDOCS%%%%DOCSDIR%%/README.sieve
+%%PORTDOCS%%%%DOCSDIR%%/README.smtp
+%%PORTDOCS%%%%DOCSDIR%%/README.solaris
+%%PORTDOCS%%%%DOCSDIR%%/README.usermap
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
 @dirrm %%DATADIR%%/sqlite
 @dirrm %%DATADIR%%/postgresql
 @dirrm %%DATADIR%%/oracle
@@ -80,3 +96,4 @@ sbin/dbmail-util
 @exec mkdir -p %%PIDDIR%%
 @exec chown %%DBMAIL_USER%%:%%DBMAIL_GROUP%% %%PIDDIR%%
 @dirrmtry %%PIDDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
