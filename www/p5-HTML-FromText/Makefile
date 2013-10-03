@@ -7,7 +7,7 @@ CATEGORIES=		www perl5
 MASTER_SITES=		CPAN
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		danilogondolfo@gmail.com
+MAINTAINER=		danilo@FreeBSD.org
 COMMENT=	Mark up text as HTML
 
 LICENSE=	ART10 GPLv1
@@ -20,8 +20,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=			text2html.1
-MAN3=			HTML::FromText.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

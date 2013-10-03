@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Session/Store/DBIC/.packlist
 %%SITE_PERL%%/Catalyst/Plugin/Session/Store/DBIC.pm
 %%SITE_PERL%%/Catalyst/Plugin/Session/Store/DBIC/Delegate.pm
+%%PERL5_MAN3%%/Catalyst::Plugin::Session::Store::DBIC.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Session::Store::DBIC::Delegate.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Session/Store/DBIC
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session/Store/DBIC
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session/Store

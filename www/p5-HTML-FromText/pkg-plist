@@ -1,6 +1,8 @@
 bin/text2html
 %%SITE_PERL%%/HTML/FromText.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FromText/.packlist
+man/man1/text2html.1.gz
+%%PERL5_MAN3%%/HTML::FromText.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FromText
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/HTML

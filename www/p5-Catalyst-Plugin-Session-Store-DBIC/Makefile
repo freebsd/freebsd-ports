@@ -7,7 +7,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Store your sessions via DBIx::Class
 
 LICENSE=	ART10 GPLv1
@@ -24,8 +24,4 @@ TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Catalyst::Plugin::Session::Store::DBIC.3 \
-	Catalyst::Plugin::Session::Store::DBIC::Delegate.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

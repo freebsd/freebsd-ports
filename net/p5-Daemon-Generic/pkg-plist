@@ -4,6 +4,10 @@
 %%SITE_PERL%%/Daemon/Generic/Event.pm
 %%SITE_PERL%%/Daemon/Generic/While1.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Daemon/Generic/.packlist
+%%PERL5_MAN3%%/Daemon::Generic.3.gz
+%%PERL5_MAN3%%/Daemon::Generic::Event.3.gz
+%%PERL5_MAN3%%/Daemon::Generic::While1.3.gz
+%%PERL5_MAN3%%/Daemon::Generic::AnyEvent.3.gz
 @dirrm %%SITE_PERL%%/Daemon/Generic
 @dirrmtry %%SITE_PERL%%/Daemon
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Daemon/Generic

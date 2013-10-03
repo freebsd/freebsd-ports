@@ -7,13 +7,10 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Manages sets of integers
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Set::IntSpan.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
