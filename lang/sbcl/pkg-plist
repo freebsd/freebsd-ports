@@ -82,6 +82,12 @@ lib/sbcl/sb-cover/tests.fasl
 lib/sbcl/sb-cover/tests.lisp
 lib/sbcl/sb-executable/sb-executable.fasl
 lib/sbcl/sb-executable/sb-executable.lisp
+lib/sbcl/sb-gmp/gmp.fasl
+lib/sbcl/sb-gmp/gmp.lisp
+lib/sbcl/sb-gmp/sb-gmp.asd
+lib/sbcl/sb-gmp/sb-gmp.fasl
+lib/sbcl/sb-gmp/tests.fasl
+lib/sbcl/sb-gmp/tests.lisp
 lib/sbcl/sb-grovel/def-to-lisp.fasl
 lib/sbcl/sb-grovel/def-to-lisp.lisp
 lib/sbcl/sb-grovel/defpackage.fasl
@@ -220,6 +226,7 @@ lib/sbcl/site-systems/.keep_me
 @dirrm lib/sbcl/sb-md5
 @dirrm lib/sbcl/sb-introspect
 @dirrm lib/sbcl/sb-grovel
+@dirrm lib/sbcl/sb-gmp
 @dirrm lib/sbcl/sb-executable
 @dirrm lib/sbcl/sb-cover
 @dirrm lib/sbcl/sb-concurrency
