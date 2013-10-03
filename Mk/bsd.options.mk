@@ -93,6 +93,9 @@
 # ${opt}_CMAKE_OFF			When option is disabled, it will add its content to
 #							the CMAKE_ARGS.
 #
+# ${opt}_EXTRA_PATCHES		When option is enabled, it will add its content to
+# 							EXTRA_PATCHES
+#
 # For each of CFLAGS CPPFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ARGS MAKE_ENV
 # USES DISTFILES PLIST_FILES PLIST_DIRS PLIST_DIRSTRY, defining
 # ${opt}_${variable} will add it to the actual variable when the option is enabled.
@@ -380,6 +383,9 @@ PLIST_SUB:=	${PLIST_SUB} ${opt}="@comment "
 .  endif
 
 .  if ${PORT_OPTIONS:M${opt}}
+.    if defined(${opt}_EXTRA_PATCHES)
+EXTRA_PATCHES+=		${${opt}_EXTRA_PATCHES}
+.    endif
 .    if defined(${opt}_CONFIGURE_ENABLE)
 CONFIGURE_ARGS+=	--enable-${${opt}_CONFIGURE_ENABLE}
 .    endif
