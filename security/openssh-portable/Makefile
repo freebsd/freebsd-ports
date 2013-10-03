@@ -3,7 +3,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	6.2p2
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
@@ -134,7 +134,7 @@ CONFIGURE_LIBS+=	-lgssapi_krb5
 
 # Adapated from 5.7 patch at http://www.sxw.org.uk/computing/patches/
 .	if ${PORT_OPTIONS:MKERB_GSSAPI}
-PATCHFILES+=		openssh-6.2p2-gsskex-all-20110125.patch.gz
+PATCHFILES+=		openssh-6.2p2-gsskex-all-20110125-2.patch.gz
 PATCH_DIST_STRIP=
 .	endif
 .	if ${OPENSSLBASE} == "/usr"
