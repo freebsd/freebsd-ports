@@ -5,6 +5,7 @@ PORTNAME=	rvm
 PORTVERSION=	1.07
 CATEGORIES=	archivers
 MASTER_SITES=	SF
+PKGNAMESUFFIX=	an
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,9 +15,7 @@ BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-NO_LATEST_LINK=	yes
 
-NO_STAGE=	yes
 USES=		gmake
 USE_GCC=	yes
 GNU_CONFIGURE=	yes
@@ -24,7 +23,6 @@ CONFIGURE_ARGS=	--with-default-config-file=${PREFIX}/etc/rvm.conf \
 		--enable-assume-stl-memory-exception
 MAKE_ARGS=	CXXFLAGS="${CXXFLAGS}"
 
-MAN1=		rvm.1
-PLIST_FILES=	bin/rvm
+PLIST_FILES=	bin/rvm man/man1/rvm.1.gz
 
 .include <bsd.port.mk>
