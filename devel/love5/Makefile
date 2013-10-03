@@ -6,6 +6,7 @@ DISTVERSION=	0.5-0
 PORTREVISION=	9
 CATEGORIES=	devel games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+PKGNAMESUFFIX=	5
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open-source 2D game engine
@@ -14,8 +15,6 @@ LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
 		libphysfs.so:${PORTSDIR}/devel/physfs \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-
-LATEST_LINK=	love5
 
 USE_BZIP2=	yes
 USES=		gmake
