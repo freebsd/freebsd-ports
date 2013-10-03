@@ -4264,6 +4264,7 @@
 %%WWWDIR%%/metadata/contacts_bugsMetaData.php
 %%WWWDIR%%/metadata/contacts_casesMetaData.php
 %%WWWDIR%%/metadata/contacts_usersMetaData.php
+%%WWWDIR%%/metadata/cron_remove_documentsMetaData.php
 %%WWWDIR%%/metadata/custom_fieldsMetaData.php
 %%WWWDIR%%/metadata/documents_accountsMetaData.php
 %%WWWDIR%%/metadata/documents_bugsMetaData.php
@@ -4444,6 +4445,7 @@
 %%WWWDIR%%/modules/Administration/RepairIndex.php
 %%WWWDIR%%/modules/Administration/RepairJSFile.php
 %%WWWDIR%%/modules/Administration/RepairSeedUsers.php
+%%WWWDIR%%/modules/Administration/RepairUploadFolder.php
 %%WWWDIR%%/modules/Administration/RepairXSS.php
 %%WWWDIR%%/modules/Administration/Save.php
 %%WWWDIR%%/modules/Administration/SugarSpriteBuilder.php
@@ -4784,11 +4786,13 @@
 %%WWWDIR%%/modules/Configurator/tpls/addFontView.tpl
 %%WWWDIR%%/modules/Configurator/tpls/adminwizard.tpl
 %%WWWDIR%%/modules/Configurator/tpls/fontmanager.tpl
+%%WWWDIR%%/modules/Configurator/tpls/historyContactsEmails.tpl
 %%WWWDIR%%/modules/Configurator/views/view.addfontresult.php
 %%WWWDIR%%/modules/Configurator/views/view.addfontview.php
 %%WWWDIR%%/modules/Configurator/views/view.adminwizard.php
 %%WWWDIR%%/modules/Configurator/views/view.edit.php
 %%WWWDIR%%/modules/Configurator/views/view.fontmanager.php
+%%WWWDIR%%/modules/Configurator/views/view.historycontactsemails.php
 %%WWWDIR%%/modules/Configurator/views/view.sugarpdfsettings.php
 %%WWWDIR%%/modules/Connectors/Connector.js
 %%WWWDIR%%/modules/Connectors/ConnectorRecord.php
@@ -5938,11 +5942,9 @@
 %%WWWDIR%%/modules/SavedSearch/vardefs.php
 %%WWWDIR%%/modules/Schedulers/EditView.html
 %%WWWDIR%%/modules/Schedulers/EditView.php
-%%WWWDIR%%/modules/Schedulers/JobThread.php
 %%WWWDIR%%/modules/Schedulers/Menu.php
 %%WWWDIR%%/modules/Schedulers/Save.php
 %%WWWDIR%%/modules/Schedulers/Scheduler.php
-%%WWWDIR%%/modules/Schedulers/SchedulerDaemon.php
 %%WWWDIR%%/modules/Schedulers/Schedulers.js
 %%WWWDIR%%/modules/Schedulers/_AddJobsHere.php
 %%WWWDIR%%/modules/Schedulers/field_arrays.php
@@ -6277,6 +6279,7 @@
 %%WWWDIR%%/soap/SoapSugarUsers.php
 %%WWWDIR%%/soap/SoapTypes.php
 %%WWWDIR%%/soap.php
+%%WWWDIR%%/sugar_version.json
 %%WWWDIR%%/sugar_version.php
 %%WWWDIR%%/sugarcrm.log
 %%WWWDIR%%/themes/Sugar5/css/chart.css
