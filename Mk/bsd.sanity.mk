@@ -100,6 +100,10 @@ DEV_WARNING+=	"Please use the new format for LIB_DEPENDS, see handbook for detai
 DEV_WARNING+=	"USE_TCL and USE_TK are deprecated, please use USES=tcl or USES=tk"
 .endif
 
+.if defined(USE_SCONS)
+DEV_WARNING+=	"USE_SCONS=yes is deprecated, please use USES=scons"
+.endif
+
 .if !defined(NO_STAGE)
 .for a in 1 2 3 4 5 6 7 8 9 L N
 .if defined(MAN${a})
