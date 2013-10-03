@@ -14,6 +14,20 @@
 %%SITE_PERL%%/Template/Alloy/VMethod.pm
 %%SITE_PERL%%/Template/Alloy/Velocity.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Alloy/.packlist
+%%PERL5_MAN3%%/Template::Alloy.3.gz
+%%PERL5_MAN3%%/Template::Alloy::Compile.3.gz
+%%PERL5_MAN3%%/Template::Alloy::Context.3.gz
+%%PERL5_MAN3%%/Template::Alloy::Exception.3.gz
+%%PERL5_MAN3%%/Template::Alloy::HTE.3.gz
+%%PERL5_MAN3%%/Template::Alloy::Iterator.3.gz
+%%PERL5_MAN3%%/Template::Alloy::Operator.3.gz
+%%PERL5_MAN3%%/Template::Alloy::Parse.3.gz
+%%PERL5_MAN3%%/Template::Alloy::Play.3.gz
+%%PERL5_MAN3%%/Template::Alloy::Stream.3.gz
+%%PERL5_MAN3%%/Template::Alloy::TT.3.gz
+%%PERL5_MAN3%%/Template::Alloy::Tmpl.3.gz
+%%PERL5_MAN3%%/Template::Alloy::VMethod.3.gz
+%%PERL5_MAN3%%/Template::Alloy::Velocity.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Alloy
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
 @dirrmtry %%SITE_PERL%%/Template/Alloy
