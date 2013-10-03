@@ -15,6 +15,8 @@ lib/libseglwp.la
 lib/libseglwp.so
 lib/libseglwp.so.3
 libdata/pkgconfig/rvmlwp.pc
+man/man1/rdsinit.1.gz
+man/man1/rvmutl.1.gz
 sbin/rdsinit
 sbin/rvmutl
 @dirrm include/rvm
