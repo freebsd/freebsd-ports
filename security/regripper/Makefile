@@ -20,15 +20,15 @@ USE_DOS2UNIX=	yes
 NO_BUILD=	yes
 USES=		perl5
 USE_PERL5=	run
+
 PLIST_FILES=	bin/rip.pl
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|#! c:\\perl\\bin\\perl.exe|#!${PERL}| ; \
 		s|plugindir = $$str|plugindir = "${DATADIR}"| ; \
 		s|require "plugins/|require "${DATADIR}plugins/|' ${WRKSRC}/rip.pl
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/rip.pl ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/rip.pl ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
