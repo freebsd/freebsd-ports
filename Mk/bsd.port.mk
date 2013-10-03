@@ -166,9 +166,12 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  because it cannot be manually fetched, etc).  Error
 #				  logs will not appear on pointyhat, so this should be
 #				  used sparingly.
-# BROKEN		- Port is believed to be broken.  Package builds will
-#				  still be attempted on the pointyhat package cluster to
-#				  test this assumption.
+# BROKEN		- Port is believed to be broken.  Package builds can
+# 				  still be attempted using TRYBROKEN to test this
+#				  assumption.
+# BROKEN_${ARCH}  Port is believed to be broken on ${ARCH}. Package builds
+#				  can still be attempted using TRYBROKEN to test this
+#				  assumption.
 # DEPRECATED	- Port is deprecated to install. Advisory only.
 # EXPIRATION_DATE
 #				- If DEPRECATED is set, determines a date when
@@ -3125,6 +3128,10 @@ IGNORE=		is restricted: ${RESTRICTED}
 .elif defined(BROKEN)
 .if !defined(TRYBROKEN)
 IGNORE=		is marked as broken: ${BROKEN}
+.endif
+.elif defined(BROKEN_${ARCH})
+.if !defined(TRYBROKEN)
+IGNORE=		is marked as broken on ${ARCH}: ${BROKEN_${ARCH}}
 .endif
 .elif defined(FORBIDDEN)
 IGNORE=		is forbidden: ${FORBIDDEN}
