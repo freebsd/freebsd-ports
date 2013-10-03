@@ -79,9 +79,7 @@ CONFIGURE_ARGS+=	--without-docs
 PLIST_SUB+=	PORT="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MEXAMPLES}
 PORTEXAMPLES=	*
-.endif
 
 ## kqueue(2) support
 #
