@@ -133,14 +133,18 @@ CONFIGURE_LIBS+=	-lgssapi_krb5
 .  endif
 
 # Adapated from 5.7 patch at http://www.sxw.org.uk/computing/patches/
-.if ${PORT_OPTIONS:MKERB_GSSAPI}
+.	if ${PORT_OPTIONS:MKERB_GSSAPI}
 PATCHFILES+=		openssh-6.2p2-gsskex-all-20110125.patch.gz
 PATCH_DIST_STRIP=
-.endif
-.if ${OPENSSLBASE} == "/usr"
+.	endif
+.	if ${OPENSSLBASE} == "/usr"
 CONFIGURE_ARGS+=	--without-rpath
 LDFLAGS=		# empty
-.endif
+.	endif
+.else
+.	if ${PORT_OPTIONS:MKERB_GSSAPI}
+IGNORE=	KERB_GSSAPI requires one of MIT HEIMDAL or HEIMDAL_BASE
+.	endif
 .endif
 
 .if ${OPENSSLBASE} != "/usr"
