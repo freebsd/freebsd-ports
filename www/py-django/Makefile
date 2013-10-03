@@ -18,6 +18,7 @@ LICENSE=	BSD
 USES=		gettext
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYTHON_PY3K_PLIST_HACK=	yes
 PYDISTUTILS_PKGNAME=	Django
 
 CONFLICTS=	py[23][0-9]-django-devel-[0-9]* py[23][0-9]-django-1.[0-46-9].*
