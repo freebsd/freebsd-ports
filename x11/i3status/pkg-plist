@@ -1,0 +1,3 @@
+bin/i3status
+etc/i3status.conf.sample
+man/man1/i3status.1.gz
