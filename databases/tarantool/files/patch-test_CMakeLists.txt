@@ -1,16 +1,11 @@
---- test/CMakeLists.txt.orig	2012-07-30 17:05:05.000000000 +0400
-+++ test/CMakeLists.txt	2012-11-02 14:25:15.725342910 +0400
-@@ -18,12 +18,9 @@ else()
-     if (NOT CPACK_GENERATOR OR "${CPACK_GENERATOR}" STREQUAL "TGZ")
-         install (FILES ${CMAKE_SOURCE_DIR}/test/share/tarantool_tgz.cfg
-                  DESTINATION "${CMAKE_SYSCONF_DIR}"
--                 RENAME "tarantool.cfg")
-+                 RENAME "tarantool.cfg.sample")
-     else()
-         install (FILES ${CMAKE_SOURCE_DIR}/test/share/tarantool.cfg
-                  DESTINATION "${CMAKE_SYSCONF_DIR}")
-     endif()
--
+--- test/CMakeLists.txt.orig	2013-09-08 19:12:21.819118224 +0000
++++ test/CMakeLists.txt	2013-09-08 19:13:09.021114858 +0000
+@@ -22,7 +22,5 @@ if (ENABLE_RPM)
+ else()
+     install (FILES ${CMAKE_SOURCE_DIR}/test/share/tarantool_tgz.cfg
+              DESTINATION "${CMAKE_SYSCONF_DIR}"
+-             RENAME "tarantool.cfg")
 -    install (FILES ${CMAKE_SOURCE_DIR}/test/box/00000000000000000001.snap
 -             DESTINATION "${CMAKE_LOCALSTATE_DIR}/lib/tarantool")
++             RENAME "tarantool.cfg.sample")
  endif()

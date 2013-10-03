@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tarantool
-PORTVERSION=	1.4.9
+PORTVERSION=	1.5.1
 CATEGORIES=	databases
 MASTER_SITES=	http://tarantool.org/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${TR_REV}-src
@@ -12,28 +12,47 @@ COMMENT=	High performance key/value storage server
 
 LICENSE=	BSD
 
-TR_REV=		45-g2f7b3f9
-USES=		cmake gettext:build gmake perl5
-USE_GCC=	yes
+TR_REV=		96-gae1ec01
+MAKE_JOBS_UNSAFE=yes
+USES=		cmake gettext:build gmake iconv perl5
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
-MAN1=		tarantool_box.1
-CMAKE_ARGS=	-DCMAKE_MAN_DIR=man/man1
+CMAKE_ARGS=	-DCMAKE_MAN_DIR=man
 
-OPTIONS_DEFINE=	CLIENT DEBUG STATIC
+OPTIONS_DEFINE=	CLIENT MYSQL PGSQL
 CLIENT_DESC=	Enable client
 DEBUG_DESC=	Enable debug
-STATIC_DESC=	Enable static (got core dump)
+MYSQL_DESC=	Install MySQL plugin
+PGSQL_DESC=	Install PostgreSQL plugin
+USE_BINUTILS=	yes
 
-OPTIONS_DEFAULT=CLIENT DEBUG
+OPTIONS_DEFAULT=CLIENT
+
+MAN1=		tarantool_box.1
 
 NO_STAGE=	yes
+
 .include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 900014 && !exists(${LOCALBASE}/bin/clang33)
+# No clang++ installed, use GCC from ports:
+USE_GCC=	4.6+
+.else
+.if ${OSVERSION} < 1000052
+BUILD_DEPENDS+=	clang33:${PORTSDIR}/lang/clang33
+CC=		clang33
+CXX=		clang++33
+CPP=		clang-cpp33
+.else
+CC=		clang
+CXX=		clang++
+CPP=		clang-cpp
+.endif
+.endif
 
 .if ${PORT_OPTIONS:MCLIENT}
 CMAKE_ARGS+=	-DENABLE_CLIENT=true
-CFLAGS+=	"-O0 -g"
 PLIST_SUB+=	CLIENT=""
 MAN1+=		tarantool.1
 .else
@@ -41,12 +60,31 @@ PLIST_SUB+=	CLIENT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
-CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=RelWithDebugInfo
+CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=RelWithDebugInfo \
+		-DENABLE_BACKTRACE=ON
+.else
+CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=Rel \
+		-DENABLE_BACKTRACE=OFF
 .endif
 
-.if ${PORT_OPTIONS:MSTATIC}
-LIB_DEPENDS+=	iconv:${PORTSDIR}/converters/iconv
-CMAKE_ARGS+=	-DENABLE_STATIC=true
+.if ${PORT_OPTIONS:MMYSQL}
+CMAKE_ARGS+=	-DWITH_MYSQL=ON \
+		-DMYSQL_INCLUDE_DIR=${LOCALBASE}/include/mysql \
+		-DMYSQL_LIBRARIES=${LOCALBASE}/lib/mysql
+PLIST_SUB+=	MYSQL=""
+USE_MYSQL=	yes
+.else
+CMAKE_ARGS+=	-DWITH_MYSQL=OFF
+PLIST_SUB+=	MYSQL="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MPGSQL}
+CMAKE_ARGS+=	-DWITH_POSTGRESQL=ON
+PLIST_SUB+=	PGSQL=""
+USE_PGSQL=	yes
+.else
+CMAKE_ARGS+=	-DWITH_POSTGRESQL=OFF
+PLIST_SUB+=	PGSQL="@comment "
 .endif
 
 post-install:

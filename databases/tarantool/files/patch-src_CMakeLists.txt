@@ -1,22 +1,12 @@
---- src/CMakeLists.txt.orig	2013-05-18 07:08:17.087914237 +0000
-+++ src/CMakeLists.txt	2013-05-18 10:23:24.584910099 +0000
-@@ -138,6 +138,10 @@
-     set (common_libraries ${common_libraries} dl)
+--- src/CMakeLists.txt.orig	2013-09-30 17:30:23.623968376 +0000
++++ src/CMakeLists.txt	2013-09-30 17:30:50.254969720 +0000
+@@ -153,7 +153,8 @@
  endif()
  
-+if (TARGET_OS_FREEBSD)
-+    set (common_libraries ${common_libraries} intl)
-+endif()
-+
+ if (TARGET_OS_FREEBSD AND NOT TARGET_OS_DEBIAN_FREEBSD)
+-    set (common_libraries ${common_libraries} intl)
++    find_library (INTL intl)
++    set (common_libraries ${common_libraries} ${INTL})
+ endif()
+ 
  if (ENABLE_BACKTRACE AND HAVE_BFD)
-     set (common_libraries ${common_libraries} bfd)
-     if (NOT TARGET_OS_DARWIN)
-@@ -145,7 +149,7 @@
-     endif()
-     if (ENABLE_STATIC OR TARGET_OS_FREEBSD)
-         include (FindZLIB)
--        set (common_libraries ${common_libraries} ${ZLIB_LIBRARIES})
-+        set (common_libraries ${common_libraries} ${ZLIB_LIBRARIES} iconv intl)
-     endif()
- endif()
- 
