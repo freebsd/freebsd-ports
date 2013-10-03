@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	plasma-applet-
 DISTNAME=	geek-clock-plasmoid-${PORTVERSION}-src
 
 MAINTAINER=	jhale@FreeBSD.org
-COMMENT=	Geeky analog clock plasma applet for KDE4
+COMMENT=	KDE4 geeky analog clock plasma applet
 
 USES=		cmake
 USE_KDE4=	automoc4 kdeprefix kdelibs workspace
@@ -20,5 +20,4 @@ PLIST_FILES=	lib/kde4/plasma_applet_geekclock.so \
 		share/apps/desktoptheme/default/widgets/geekclock.svgz \
 		share/kde4/services/plasma-applet-geekclock.desktop
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
