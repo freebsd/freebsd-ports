@@ -58,8 +58,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyzmq=>2.2.0:${PORTSDIR}/devel/py-pyzmq
 .endif
 
 .if ${PYTHON_REL} < 270
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ordereddict>=0:${PORTSDIR}/devel/py-ordereddict \
-		${PYTHON_PKGNAMEPREFIX}importlib>=0:${PORTSDIR}/devel/py-importlib
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ordereddict>=0:${PORTSDIR}/devel/py-ordereddict
 .endif
 
 .include <bsd.port.post.mk>
