@@ -553,6 +553,7 @@
     SUBDIR += lmpc
     SUBDIR += lolcat
     SUBDIR += lordsawar
+    SUBDIR += lostfeathers
     SUBDIR += lpairs
     SUBDIR += lskat
     SUBDIR += ltris
