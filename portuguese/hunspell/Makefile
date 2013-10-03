@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	20130902
+PORTVERSION=	20131001
 CATEGORIES=	portuguese textproc
 MASTER_SITES=	http://natura.di.uminho.pt/download/sources/Dictionaries/hunspell/ \
 		http://www.broffice.org/files/:BR \
@@ -22,10 +22,9 @@ PLIST_FILES=	%%DATADIR%%/pt_BR.aff \
 		%%DATADIR%%/pt_PT.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKDIR}/pt_BR.aff ${WRKDIR}/pt_BR.dic \
-	  	${WRKSRC}/pt_PT.aff ${WRKSRC}/pt_PT.dic ${DATADIR}/
+	  	${WRKSRC}/pt_PT.aff ${WRKSRC}/pt_PT.dic ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
