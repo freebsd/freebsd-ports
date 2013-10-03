@@ -154,6 +154,9 @@ lib/collectd/processes.la
 %%SNMP%%lib/collectd/snmp.a
 %%SNMP%%lib/collectd/snmp.so
 %%SNMP%%lib/collectd/snmp.la
+lib/collectd/statsd.a
+lib/collectd/statsd.so
+lib/collectd/statsd.la
 lib/collectd/swap.a
 lib/collectd/swap.so
 lib/collectd/swap.la
@@ -233,6 +236,21 @@ lib/libcollectdclient.so.1
 libdata/pkgconfig/libcollectdclient.pc
 %%DATADIR%%/postgresql_default.conf
 %%DATADIR%%/types.db
+man/man1/collectd-nagios.1.gz
+man/man1/collectd-tg.1.gz
+man/man1/collectd.1.gz
+man/man1/collectdctl.1.gz
+man/man1/collectdmon.1.gz
+man/man5/collectd-email.5.gz
+man/man5/collectd-exec.5.gz
+man/man5/collectd-java.5.gz
+man/man5/collectd-perl.5.gz
+man/man5/collectd-python.5.gz
+man/man5/collectd-snmp.5.gz
+man/man5/collectd-threshold.5.gz
+man/man5/collectd-unixsock.5.gz
+man/man5/collectd.conf.5.gz
+man/man5/types.db.5.gz
 @dirrm lib/collectd
 @dirrm include/collectd
 @dirrm %%DATADIR%%
