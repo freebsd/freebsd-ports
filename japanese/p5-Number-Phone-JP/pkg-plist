@@ -14,6 +14,8 @@
 %%SITE_PERL%%/Number/Phone/JP/Table/Upt.pm
 %%SITE_PERL%%/Number/Phone/regexp-table-maker.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Phone/JP/.packlist
+%%PERL5_MAN3%%/Number::Phone::JP.3.gz
+%%PERL5_MAN3%%/Number::Phone::JP::Table.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Phone/JP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Phone
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number
