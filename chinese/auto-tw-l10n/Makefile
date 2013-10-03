@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	auto-tw-l10n
-PORTVERSION=	1.13
-PORTREVISION=	1
+PORTVERSION=	1.14
 CATEGORIES=	chinese
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -15,12 +14,8 @@ USE_XZ=		yes
 
 SUB_FILES=	pkg-message
 
-pre-install:
-	@${FIND} ${WRKSRC} -name "*.orig" -delete
-	@${MV} ${WRKSRC}/make.conf.in ${WRKSRC}/make.conf
-
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/share/skel/zh_TW.UTF-8/
-	${CP} ${WRKSRC}/* ${STAGEDIR}/${PREFIX}/share/skel/zh_TW.UTF-8/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/skel/zh_TW.UTF-8/
+	${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${PREFIX}/share/skel/zh_TW.UTF-8/
 
 .include <bsd.port.mk>
