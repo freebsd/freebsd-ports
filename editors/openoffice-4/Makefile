@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	apache-openoffice
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 CATEGORIES=	editors java
-MASTER_SITES=	ftp://ftp.riken.jp/net/apache/openoffice/${PORTVERSION}/source/ \
+MASTER_SITES=	http://www.apache.org/dist/openoffice/${PORTVERSION}/source/ \
+		ftp://ftp.riken.jp/net/apache/openoffice/${PORTVERSION}/source/ \
 		${MASTER_SITE_LOCAL:S@%SUBDIR%@maho/openoffice@}:extsrc
 DISTFILES+=	${OOOSRC} unowinreg.dll ${EXTSRC}:extsrc
 EXTRACT_ONLY=	${OOOSRC} ${EXTSRC}
@@ -23,7 +24,7 @@ USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
 USE_GL=		gl glu
 USE_GSTREAMER=	yes
-#USE_GCC=	4.6+
+USE_GCC=	any
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 USES+=		bison perl5 gmake pkgconfig
@@ -68,9 +69,9 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 .endif
 
 OOOSRC=			apache-openoffice-${PORTVERSION}-r${SVNREVISION}-src${EXTRACT_SUFX}
-EXTSRC=			ApacheOpenOffice.ext_sources.${PORTVERSION}.r${SVNREVISION}_2${EXTRACT_SUFX}
+EXTSRC=			ApacheOpenOffice.ext_sources.${PORTVERSION}.r${SVNREVISION}${EXTRACT_SUFX}
 OOODIR=			openoffice4
-SVNREVISION=		1503704
+SVNREVISION=		1524958
 INSTALLATION_BASEDIR?=	openoffice-${PORTVERSION}
 EXECBASE?=		openoffice-${PORTVERSION}
 DIST_SUBDIR=		openoffice
@@ -277,7 +278,7 @@ do-install:
 	@${REINPLACE_CMD} -e 's/^UserInstallation.*$$/USERINSTALLATION/' ${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program/bootstraprc
 	@${REINPLACE_CMD} -e 's/USERINSTALLATION/UserInstallation=$$SYSUSERCONFIG\/\.openoffice\.org-devel\/4/' ${PREFIX}/${INSTALLATION_BASEDIR}/openoffice4/program/bootstraprc
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
-	@cd ${WRKSRC}/solver/4?0/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
+	@cd ${WRKSRC}/solver/4??/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 
 post-install:
 	@${FIND} ${PREFIX}/${INSTALLATION_BASEDIR} -type d -exec ${CHMOD} 755 {} \;
