@@ -1,5 +1,6 @@
 %%SITE_PERL%%/PDF/Table.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/Table/.packlist
+%%PERL5_MAN3%%/PDF::Table.3.gz
 @dirrmtry %%SITE_PERL%%/PDF
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/Table
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF

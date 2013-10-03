@@ -7,8 +7,8 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	danilogondolfo@gmail.com
-COMMENT=	A utility class for building table layouts in a PDF::API2 object
+MAINTAINER=	danilo@FreeBSD.org
+COMMENT=	Utility class for building table layouts in a PDF::API2 object
 
 BUILD_DEPENDS=	p5-PDF-API2>=0:${PORTSDIR}/textproc/p5-PDF-API2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -18,7 +18,4 @@ USE_PERL5=	configure
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.h3//}
 
-MAN3=		PDF::Table.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
