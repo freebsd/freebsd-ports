@@ -13,7 +13,7 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-t
 		http://mirror.de.gsnw.de:56431/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://mirror.layerjet.com/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://mirror.switch.ch/mirror/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/
-PKGNAMESUFFIX?=	-server
+PKGNAMESUFFIX?=	55-server
 
 MAINTAINER=	never@nevermind.kiev.ua
 COMMENT?=	Multithreaded SQL database (server)
@@ -55,7 +55,6 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 .endif
 
 DATADIR=	${PREFIX}/share/mysql
-USE_LDCONFIG=	${PREFIX}/lib/mysql
 
 # MySQL-Server options
 .if !defined(CLIENT_ONLY)
@@ -103,9 +102,7 @@ CMAKE_ARGS+=	-DWITH_FAST_MUTEXES=1
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	55m
 
-LATEST_LINK=	mariadb55-server
-
-CONFLICTS_INSTALL=	mysql-server-[345].* mariadb-server-5.3.* percona-server-5.*
+CONFLICTS_INSTALL=	mysql[0-9][0-9]-server-* mariadb[0-46-9][0-9]-server-* mariadb5.[0-46-9]-server-* percona[0-9][0-9]-server-*
 
 USE_RC_SUBR=	mysql-server
 

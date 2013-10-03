@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	percona
-PKGNAMESUFFIX=	-client
+PKGNAMESUFFIX=	56-client
 
 COMMENT=	Multithreaded SQL database (client)
 
@@ -12,9 +12,7 @@ PKGMESSAGE=	mustnotexist
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
 
-LATEST_LINK=	percona56-client
-
-CONFLICTS_INSTALL=	mysql-client-[345].* mariadb-client-5.* percona-client-5.[0-57-9].*
+CONFLICTS_INSTALL=	mysql[0-9][0-9]-client-* mariadb[0-9][0-9]-client-* percona5.[0-57-9]-client-* percona[0-46-9][0-9]-client-*
 
 CMAKE_ARGS+=	-DWITHOUT_SERVER=1
 

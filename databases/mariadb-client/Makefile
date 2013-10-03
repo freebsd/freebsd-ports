@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mariadb
-PKGNAMESUFFIX=	-client
+PKGNAMESUFFIX=	53-client
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
@@ -16,7 +16,7 @@ OPTIONS_DEFINE=		THREADSAFE
 OPTIONS_DEFAULT=	THREADSAFE
 THREADSAFE_DESC=	Build thread-safe client
 
-CONFLICTS=	mysql-client-[0-9]* mariadb-client-5.[0-24-9].* percona-client-5.*
+CONFLICTS=	mysql[0-9][0-9]-client-* mariadb5.[0-24-9]-client-* mariadb[0-46-9][0-9]-client-* percona[0-9][0-9]-client-*
 
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist

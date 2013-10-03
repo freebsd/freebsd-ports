@@ -7,7 +7,7 @@ PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.5/${DISTNAME:S/rel//}/source/
 MASTER_SITE_SUBDIR=	MySQL-5.5
-PKGNAMESUFFIX?=	-server
+PKGNAMESUFFIX?=	55-server
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
@@ -20,7 +20,6 @@ OPTIONS_DEFAULT=	OPENSSL
 FASTMTX_DESC=	Replace mutexes with spinlocks
 
 DATADIR=	${PREFIX}/share/mysql
-USE_LDCONFIG=	${PREFIX}/lib/mysql
 
 CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_DOCREADMEDIR="share/doc/mysql" \
@@ -61,9 +60,7 @@ CMAKE_ARGS+=	-DWITH_FAST_MUTEXES=1
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	55p
 
-LATEST_LINK=	percona55-server
-
-CONFLICTS_INSTALL=	mysql-server-[345].* percona-server-5.[0-46-9].* mariadb-server-[0-9].*
+CONFLICTS_INSTALL=	mysql[0-9][0-9]-server-* mariadb[0-9][0-9]-server-* percona5.[0-46-9]-server-* percona[0-46-9][0-9]-server-*
 
 USE_RC_SUBR=	mysql-server
 

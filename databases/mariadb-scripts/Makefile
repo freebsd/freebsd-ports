@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mariadb
-PKGNAMESUFFIX=	-scripts
+PKGNAMESUFFIX=	53-scripts
 
 COMMENT=	Scripts for mariadb - drop-in replacement for MySQL
 
@@ -13,7 +13,7 @@ USES=		perl5
 MASTERDIR=	${.CURDIR}/../mariadb-server
 MARIADB_SCRIPTS_SLAVE=	yes
 
-CONFLICTS=	mysql-scripts-[0-9]* \
+CONFLICTS=	mysql[0-9][0-9]-scripts-* \
 		mytop-[0-9]*
 
 PATCHDIR=	${.CURDIR}/files
