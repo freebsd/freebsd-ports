@@ -16,6 +16,22 @@
 %%SITE_PERL%%/CQL/Utils.pm
 %%SITE_PERL%%/CQL/Visitor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CQL/Parser/.packlist
+%%PERL5_MAN3%%/CQL::AndNode.3.gz
+%%PERL5_MAN3%%/CQL::BooleanNode.3.gz
+%%PERL5_MAN3%%/CQL::Lexer.3.gz
+%%PERL5_MAN3%%/CQL::ModifierSet.3.gz
+%%PERL5_MAN3%%/CQL::Node.3.gz
+%%PERL5_MAN3%%/CQL::NotNode.3.gz
+%%PERL5_MAN3%%/CQL::OrNode.3.gz
+%%PERL5_MAN3%%/CQL::Parser.3.gz
+%%PERL5_MAN3%%/CQL::Prefix.3.gz
+%%PERL5_MAN3%%/CQL::PrefixNode.3.gz
+%%PERL5_MAN3%%/CQL::ProxModifierSet.3.gz
+%%PERL5_MAN3%%/CQL::ProxNode.3.gz
+%%PERL5_MAN3%%/CQL::Relation.3.gz
+%%PERL5_MAN3%%/CQL::TermNode.3.gz
+%%PERL5_MAN3%%/CQL::Token.3.gz
+%%PERL5_MAN3%%/CQL::Visitor.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CQL/Parser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CQL
 @dirrmtry %%SITE_PERL%%/CQL
