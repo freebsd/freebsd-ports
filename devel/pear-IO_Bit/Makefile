@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	IO_Bit
-PORTVERSION=	2.1.0
-CATEGORIES=     devel pear
+PORTVERSION=	2.1.1
+CATEGORIES=	devel pear
 MASTER_SITES=	http://openpear.org/get/ \
 		LOCAL
 MASTER_SITE_SUBDIR=	tota/${PKGNAMEPREFIX}${PORTNAME}
