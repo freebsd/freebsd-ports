@@ -56,7 +56,6 @@ BUILD_DEPENDS+=	rubygem-soap4r>=0:${PORTSDIR}/devel/rubygem-soap4r
 BUILD_DEPENDS+=	rubygem-dnsruby>=1.53:${PORTSDIR}/dns/rubygem-dnsruby
 USE_RUBY=	yes
 PLIST_SUB+=	AUDITOR=""
-MAN1+=		ods-auditor.1 ods-kaspcheck.1
 .else
 CONFIGURE_ARGS+=	--disable-auditor
 PLIST_SUB+=	AUDITOR="@comment "
