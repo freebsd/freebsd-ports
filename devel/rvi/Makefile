@@ -9,21 +9,19 @@ MASTER_SITES=	LOCAL/petef \
 DISTNAME=	rvi
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple interface to RCS
+COMMENT=	Simple interface to RCS
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	bin/rvi
 PORTDOCS=	rvi.txt
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC}/&&${CXX} -I. ${CFLAGS} -o rvi src/rvi.cc
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/rvi ${PREFIX}/bin/
-.ifndef NOPORTDOCS
-	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}/doc/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/rvi ${STAGEDIR}${PREFIX}/bin/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc/&&${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
