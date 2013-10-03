@@ -557,6 +557,7 @@
     SUBDIR += lskat
     SUBDIR += ltris
     SUBDIR += lucidlife
+    SUBDIR += lugaru
     SUBDIR += luola
     SUBDIR += lwjgl
     SUBDIR += macopix
