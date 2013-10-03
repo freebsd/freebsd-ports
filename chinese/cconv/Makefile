@@ -10,9 +10,11 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simplified-Traditional Chinese conversion tool
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
-USES=		iconv
 USE_LDCONFIG=	yes
+USES=		iconv
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|unicode.h||; s|libcconv_la_LDFLAGS|cconv_LDFLAGS|' ${WRKSRC}/Makefile.in
