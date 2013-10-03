@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20131003:
+AUTHOR: bapt@FreeBSD.org
+
+  New USES: scons, to handle properly the scons building system, this
+  this also gives the scons packages user the ability to respect MAKE_JOBS.
+
 20130924:
 AUTHOR: bapt@FreeBSD.org
 
