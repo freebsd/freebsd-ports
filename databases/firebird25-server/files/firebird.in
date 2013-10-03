@@ -8,10 +8,13 @@
 #
 # Add the following line to /etc/rc.conf to enable Firebird Database:
 #
+#
 # firebird_enable:	Set it to "YES" to enable firebird.
 #			Default is "NO".
-# firebird_flags:	Set options to run fbguard.
-#			Default is "-daemon".
+# firebird_mode:	Set it to "superclassic" or "superserver" to enable firebird.
+#			Default is "superclassic".
+# firebird_flags:	Set options to run fbserver or fb_smp_server.
+# 			Default is "-el /var/db/firebird".
 # firebird_pidfile:	Set full path to pid file.
 #			Default is "/var/run/firebird.pid".
 #
@@ -24,17 +27,18 @@ rcvar=firebird_enable
 load_rc_config $name
 
 firebird_enable=${firebird_enable:-"NO"}
-firebird_flags=${firebird_flags:-"-daemon -pidname ${name}.pid"}
+firebird_mode=${firebird_mode:-"superclassic"}
+firebird_flags=${firebird_flags:-"-el /var/db/firebird"}
 firebird_pidfile=${firebird_pidfile:-"/var/run/${name}.pid"}
 firebird_user=firebird
 
-command_args="${firebird_flags}"
-command=%%PREFIX%%/bin/fbguard
+command=%%PREFIX%%/sbin/fb_smp_server
+command_args="${firebird_flags} &"
 pidfile=${firebird_pidfile}
 start_precmd="start_precmd"
 start_postcmd="start_postcmd"
-stop_postcmd=stop_postcmd
-reload_postcmd=reload_postcmd
+stop_postcmd="stop_postcmd"
+reload_postcmd="reload_postcmd"
 
 start_precmd()
 {
@@ -45,7 +49,8 @@ start_precmd()
 
 start_postcmd()
 {
-	pgrep -u ${firebird_user} fbguard > ${firebird_pidfile}
+	pgrep -u ${firebird_user} ${command_app} > ${firebird_pidfile}
+	echo "Current firebird mode is $firebird_mode"
 }
 
 stop_postcmd()
@@ -58,5 +63,20 @@ reload_postcmd()
         rm -f ${pidfile}
         run_rc_command start
 }
+
+case "${firebird_mode}" in
+        superclassic)
+                command=%%PREFIX%%/sbin/fb_smp_server
+                command_app=fb_smp_server
+                ;;
+        superserver)
+                command=%%PREFIX%%/sbin/fbserver
+                command_app=fbserver
+                ;;
+        *)
+                warn "$firebird_mode is an invalid value for firebird_mode"
+                return 1
+                ;;
+esac
 
 run_rc_command "$1"

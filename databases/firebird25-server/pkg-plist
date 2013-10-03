@@ -12,6 +12,7 @@ bin/nbackup
 sbin/fb_inet_server
 sbin/fb_lock_print
 sbin/fb_smp_server
+sbin/fbserver
 libexec/firebird/udf/ib_udf.so
 libexec/firebird/udf/fbudf.so
 libexec/firebird/udf/ib_udf2.sql

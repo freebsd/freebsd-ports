@@ -2,20 +2,34 @@
 
 Firebird was installed.
 
-1) Before start the server ensure that the following line exists in /etc/services:
+1) Support for Super Server has been added
+
+2) Before start the server ensure that the following line exists in /etc/services:
 
 gds_db		3050/tcp  #InterBase Database Remote Protocol
 
-2) If you use inetd then add the following line to /etc/inetd.conf
+3) If you use inetd (Classic Server) then add the following line to /etc/inetd.conf
 
 gds_db	stream	tcp	nowait	firebird	%%PREFIX%%/sbin/fb_inet_server  fb_inet_server
 
 And finally restart inetd.
 
-3) If you want to use SuperClassic Server then you can add firebird_enable="YES"
-to /etc/rc.conf file.
+4) If you want to use SuperClassic Server then you must add the following lines 
+   to /etc/rc.conf file.
 
-4) It is STRONGLY recommended that you change the SYSDBA
+ firebird_enable="YES"
+ firebird_mode="superclassic"
+
+5) If you want to use Super Server then you must add the following lines to 
+   /etc/rc.conf file.
+
+ firebird_enable="YES"
+ firebird_mode="superserver"
+
+ Note: Keep in mind that you only can add one of them but never both modes on 
+       the same time
+
+6) It is STRONGLY recommended that you change the SYSDBA
 password with:
 
  # gsec -user SYSDBA -pass masterkey
@@ -24,14 +38,14 @@ password with:
 
 before doing anything serious with Firebird.
 
-5) See documentation in %%DOCSDIR%%/ for more information.
+7) See documentation in %%DOCSDIR%%/ for more information.
 
-6) Some firebird tools were renamed for avoid conflicts with some other ports
+8) Some firebird tools were renamed for avoid conflicts with some other ports
 
 	%%PREFIX%%/bin/isql	-> 	%%PREFIX%%/bin/isql-fb
 	%%PREFIX%%/bin/gstat	->	%%PREFIX%%/bin/fbstat
 	%%PREFIX%%/bin/gsplit	->	%%PREFIX%%/bin/fbsplit
 
-7) Enjoy it ;)
+9) Enjoy it ;)
 
 ################################################################################
