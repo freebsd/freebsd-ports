@@ -12,7 +12,7 @@ COMMENT=	X11 pager program
 
 LICENSE=	MIT
 
-USE_SCONS=	yes
+USES=		scons
 USE_EFL=	imlib2
 
 SUB_FILES=	pkg-message
@@ -24,8 +24,6 @@ THEMES=		atlantis.conf \
 		industrial.conf \
 		light_gray.conf \
 		light_orange.conf
-
-SCONS_ARGS+=	${DESTDIRNAME}=${STAGEDIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e '35,36d;89d;92,94d' \
