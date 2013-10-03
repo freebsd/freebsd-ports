@@ -17,7 +17,7 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/qq ${STAGEDIR}/${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/demo1 ${STAGEDIR}/${PREFIX}/bin/qq-demo1
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/qq ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/demo1 ${STAGEDIR}${PREFIX}/bin/qq-demo1
 
 .include <bsd.port.mk>
