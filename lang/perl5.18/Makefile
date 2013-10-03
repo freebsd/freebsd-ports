@@ -118,7 +118,6 @@ PLIST_SUB+=	MANCONF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}
-PKGNAMESUFFIX=		-threaded
 WITH_PTHREAD=		yes
 .endif
 
