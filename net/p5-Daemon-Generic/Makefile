@@ -7,7 +7,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Framework to provide start/stop/reload for a daemon
 
 BUILD_DEPENDS=	p5-File-Flock>=0:${PORTSDIR}/devel/p5-File-Flock \
@@ -20,10 +20,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Daemon::Generic.3 \
-	Daemon::Generic::Event.3 \
-	Daemon::Generic::While1.3 \
-	Daemon::Generic::AnyEvent.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

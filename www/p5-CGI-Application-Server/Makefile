@@ -7,7 +7,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Simple HTTP server for developing with CGI::Application
 
 LICENSE=	ART10 GPLv1
@@ -29,9 +29,6 @@ TEST_DEPENDS=	p5-CGI-Application>0:${PORTSDIR}/www/p5-CGI-Application \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	CGI::Application::Server.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400
