@@ -10,17 +10,13 @@ COMMENT=	Small program for generating a status bar
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	confuse:${PORTSDIR}/devel/libconfuse \
-		yajl:${PORTSDIR}/devel/yajl
+LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse \
+		libyajl.so:${PORTSDIR}/devel/yajl
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		gmake
 USE_BZIP2=	yes
-
-PLIST_FILES=	bin/i3status \
-		etc/i3status.conf.sample \
-		man/man1/i3status.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/i3status.c
