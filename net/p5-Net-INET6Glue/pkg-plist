@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/Net::INET6Glue.3.gz
+%%PERL5_MAN3%%/Net::INET6Glue::FTP.3.gz
+%%PERL5_MAN3%%/Net::INET6Glue::INET_is_INET6.3.gz
 %%SITE_PERL%%/Net/INET6Glue.pm
 %%SITE_PERL%%/Net/INET6Glue/FTP.pm
 %%SITE_PERL%%/Net/INET6Glue/INET_is_INET6.pm

@@ -17,9 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::INET6Glue.3 \
-		Net::INET6Glue::FTP.3 \
-		Net::INET6Glue::INET_is_INET6.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
