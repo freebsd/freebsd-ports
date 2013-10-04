@@ -1,0 +1,12 @@
+bin/astyle
+%%PORTDOCS%%%%DOCSDIR%%/astyle.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/license.html
+%%PORTDOCS%%%%DOCSDIR%%/links.html
+%%PORTDOCS%%%%DOCSDIR%%/news.html
+%%PORTDOCS%%%%DOCSDIR%%/notes.html
+%%PORTDOCS%%%%DOCSDIR%%/scripts.html
+%%PORTDOCS%%%%DOCSDIR%%/subversion.html
+%%PORTDOCS%%%%DOCSDIR%%/vsinstall.html
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

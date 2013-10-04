@@ -14,27 +14,19 @@ ALL_TARGET=	astyle
 CFLAGS+=	-W -Wall -fno-rtti -fno-exceptions
 LDFLAGS+=	-s
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
-USE_GMAKE=	yes
+USES=		gmake
 USE_GCC=	yes
 
 WRKSRC=		${WRKDIR}/astyle/build/gcc
 
-NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's,^CFLAGS,#CFLAGS,; s,g++,${CXX},;' ${WRKSRC}/Makefile
 
 .include <bsd.port.options.mk>
 
-PLIST_FILES=	bin/astyle
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	*
-.endif
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/astyle ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/astyle/doc/*.html ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/astyle ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/astyle/doc/*.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
