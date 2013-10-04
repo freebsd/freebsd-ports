@@ -4,7 +4,7 @@
 
    nrpe2_enable="YES"
 
- A sample configuration is available in %%PREFIX%%/etc/nrpe.cfg-sample.
+ A sample configuration is available in %%PREFIX%%/etc/nrpe.cfg.sample.
  Copy to nrpe.cfg where required and edit to suit your needs.
 
 **********************************************************************

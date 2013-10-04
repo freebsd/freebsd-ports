@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20131004:
+  AFFECTS: users of net-mgmt/nrpe2
+  AUTHOR: ohauer@FreeBSD.org
+
+  The port nrpe2 was updated and moved to nrpe
+  
+  # portmaster -o net-mgmt/nrpe net-mgmt/nrpe2
+    or
+  # portupgrade -fo net-mgmt/nrpe net-mgmt/nrpe2
+    or
+  # pkg set -o net-mgmt/nrpe2:net-mgmt/nrpe
+
 20131003:
   AFFECTS: users of lang/python* and ports
   AUTHOR: mva@FreeBSD.org
@@ -17,7 +29,6 @@ you update your ports collection, before attempting any port upgrades.
   make.conf, you should change them something like
 
   DEFAULT_VERSIONS=python=2.7 python2=2.7 python3=3.3
-
 
 20130929:
   AFFECTS: users of x11/pixman
