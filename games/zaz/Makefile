@@ -10,10 +10,10 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A puzzle game where the player has to arrange balls in triplets
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
-		theora:${PORTSDIR}/multimedia/libtheora \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		ftgl:${PORTSDIR}/graphics/ftgl
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libtheora.so:${PORTSDIR}/multimedia/libtheora \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libftgl.so:${PORTSDIR}/graphics/ftgl
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -26,8 +26,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--with-icondir="${PREFIX}/share/pixmaps"
 
 PORTDOCS=	*
+PORTDATA=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 # Unconditially disable NLS for now: the game segfaults with 8bit locales
@@ -42,9 +44,5 @@ PLIST_SUB+=	NLS="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e '/^zazdocdir =/ s|$${prefix}/doc|$${prefix}/share/doc|' \
 		${WRKSRC}/Makefile.in
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-dist_docDATA||' \
-		${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.mk>
