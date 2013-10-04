@@ -40,7 +40,6 @@ USE_XORG=	x11
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .else
-PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=--disable-x11-textmode
 .endif
 

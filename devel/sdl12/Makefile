@@ -112,7 +112,6 @@ DISPLAY_MSG=		${DO_NADA}
 .if ${PORT_OPTIONS:MX11}
 USE_XORG=		x11 xrender xrandr xextproto
 .else
-PKGNAMESUFFIX=		-nox11
 CONFIGURE_ARGS+=	--disable-video-x11
 .endif
 

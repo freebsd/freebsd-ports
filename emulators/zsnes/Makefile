@@ -59,7 +59,6 @@ CONFIGURE_ARGS+=	--disable-jma
 CONFIGURE_ARGS+=	--with-x
 .else
 CONFIGURE_ARGS+=	--without-x
-PKGNAMESUFFIX=	-nox11
 .endif
 
 .if ${PORT_OPTIONS:MOPENGL}

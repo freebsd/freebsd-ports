@@ -38,7 +38,6 @@ PLIST_FILES+=	share/locale/${lang}/LC_MESSAGES/muse.mo
 .if ${PORT_OPTIONS:MX11}
 USE_GNOME+=	gtk20
 .else
-PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=--without-x --with-rubik
 .endif
 

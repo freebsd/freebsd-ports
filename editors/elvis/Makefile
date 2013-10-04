@@ -25,7 +25,6 @@ NO_STAGE=	yes
 
 # Support building on systems with or without X11 installed.
 .if defined(WITHOUT_X11)
-PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=	--without-x
 .else
 USE_XORG=	xpm

@@ -117,7 +117,6 @@ CONFIGURE_ARGS+=	--with-windows-font-dir="${WINDOWS_FONT_DIR}"
 .endif
 
 .if ${PORT_OPTIONS:MX11} == ""
-PKGNAMESUFFIX+=	-nox11
 CONFIGURE_ARGS+=--without-x
 LIB_DEPENDS+=	wmflite:${PORTSDIR}/graphics/libwmf-nox11
 .else

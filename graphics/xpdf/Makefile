@@ -65,7 +65,6 @@ USES+=			motif
 MAN1+=			xpdf.1
 PLIST_SUB+=		X11=""
 .else
-PKGNAMESUFFIX+=		-nox11
 CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=		X11="@comment "
 .endif

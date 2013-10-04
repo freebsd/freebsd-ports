@@ -37,7 +37,6 @@ PLIST_SUB+=	NLS="@comment "
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgtk20}!=""
-PKGNAMESUFFIX=	-gtk
 USE_GNOME+=	gtk20
 .else
 CONFIGURE_ARGS+=	--disable-gtk

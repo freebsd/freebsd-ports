@@ -23,7 +23,6 @@ LIB_DEPENDS+=	alleg:${PORTSDIR}/devel/allegro
 PLIST_SUB+=	ALLEGRO=""
 MAKE_ARGS=	_PORT_ALLEGRO_CFLAGS="`allegro-config --cflags`"
 MAKE_ARGS+=	LINK_ALLEGRO="-lm -L${LOCALBASE}/lib -lalleg"
-PKGNAMESUFFIX=	-allegro
 CONFLICTS=	dumb-[0-9]*
 .else
 PLIST_SUB+=	ALLEGRO="@comment "
