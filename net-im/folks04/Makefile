@@ -18,7 +18,7 @@ LIB_DEPENDS=	gee:${PORTSDIR}/devel/libgee06 \
 
 CONFLICTS=	folks-0.[6-9].[0-9]*
 
-LATEST_LINK=	${PORTNAME}04
+PKGNAMESUFFIX=	04
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USES=		pathfix gettext gmake pkgconfig
