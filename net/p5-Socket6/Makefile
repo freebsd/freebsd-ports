@@ -20,5 +20,4 @@ PLIST_FILES=	%%SITE_PERL%%/%%PERL_ARCH%%/Socket6.pm \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket6/Socket6.so
 PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket6
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
