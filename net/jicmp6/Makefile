@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jicmp6
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	net java
 MASTER_SITES=	SF/opennms/JICMP6/stable-1.2
 
@@ -20,5 +20,4 @@ PLIST_FILES=	lib/libjicmp6.la \
 		lib/libjicmp6.so \
 		share/java/jicmp6.jar
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
