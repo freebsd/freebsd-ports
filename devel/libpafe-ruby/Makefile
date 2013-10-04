@@ -14,14 +14,17 @@ COMMENT=	Ruby binding for libpafe
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	pafe:${PORTSDIR}/devel/libpafe
+LIB_DEPENDS=	libpafe.so:${PORTSDIR}/devel/libpafe
 
 USE_RUBY=		yes
 USE_RUBY_EXTCONF=	yes
+NEED_ROOT=		yes
 
 PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/pasori.so
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
+pre-install:
+	@${MKDIR} ${STAGEDIR}${RUBY_SITEARCHLIBDIR}
+
 .include <bsd.port.mk>
