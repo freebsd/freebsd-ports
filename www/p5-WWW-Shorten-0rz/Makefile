@@ -18,7 +18,7 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		WWW::Shorten::0rz.3
+post-patch:
+	@${REINPLACE_CMD} -e '/auto_install/d' ${WRKSRC}/Makefile.PL
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

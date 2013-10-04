@@ -1,5 +1,6 @@
 %%SITE_PERL%%/WWW/Shorten/0rz.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten/0rz/.packlist
+%%PERL5_MAN3%%/WWW::Shorten::0rz.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten/0rz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
