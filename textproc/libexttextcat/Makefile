@@ -15,21 +15,15 @@ USE_LDCONFIG=	yes
 USE_XZ=		yes
 USES=		gmake pathfix
 
+MAKE_ARGS=	EXEEXT=x
+
 PORTDOCS=	README README.libtextcat TODO
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-PLIST_SUB+=	EXEEXT='x'
-MAKE_ARGS=	EXEEXT=x
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 check:
 	cd ${WRKSRC}/src && make check
