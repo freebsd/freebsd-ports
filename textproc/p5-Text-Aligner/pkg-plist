@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Text/Aligner.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Aligner/.packlist
+%%PERL5_MAN3%%/Text::Aligner.3.gz
 @dirrmtry %%SITE_PERL%%/Text
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Aligner
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
