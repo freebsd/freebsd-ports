@@ -22,5 +22,4 @@ USES=		gmake iconv:build pathfix pkgconfig
 
 CONFIGURE_ARGS=	--disable-introspection
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
