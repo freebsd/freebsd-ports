@@ -111,11 +111,7 @@ DISTINFO_FILE?=		${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
 PLIST_SUB=		GLIBCVER="2.9"
 
 EXTRACT_ONLY=		${BIN_DISTFILES}
-EXTRACT_CMD?=		${TAR}
-EXTRACT_BEFORE_ARGS?=	-xf
-EXTRACT_AFTER_ARGS?=
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(PACKAGE_BUILDING) || (defined(PACKAGE_BUILDING) && !defined(LINUX_OSRELEASE) )
@@ -199,39 +195,21 @@ do-build:
 
 do-install:
 #
-# Handle the loading of the linux loadable kernel module if required.
-#
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-#
 # Do install without using linux rpm system
 #
-	@cd ${WRKSRC} && ${FIND} * -type d -exec ${MKDIR} "${PREFIX}/{}" \;
-	@cd ${WRKSRC} && ${FIND} * ! -type d \
-		| ${CPIO} -pm -R root:wheel ${PREFIX}
+	@cd ${WRKSRC} && ${FIND} * -type d | ${GREP} -v "^stage" | ${PAX} -rw ${STAGEDIR}${PREFIX}
+	@cd ${WRKSRC} && ${FIND} * -path ./stage -prune ! -type d \
+		| ${CPIO} -pm -R root:wheel ${STAGEDIR}${PREFIX}
 
-	@${LN} -sf /var/tmp ${PREFIX}/usr/tmp
-	@${LN} -sf ../usr/bin/[ ${PREFIX}/bin/[
-	@${LN} -sf ../usr/bin/expr ${PREFIX}/bin/expr
-	@${LN} -sf ../usr/bin/test ${PREFIX}/bin/test
-	@${LN} -sf ../usr/bin/uuidgen ${PREFIX}/bin/uuidgen
-	@${CHOWN} root:wheel ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
-	@${CHMOD} 755 ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
+	@${LN} -sf /var/tmp ${STAGEDIR}${PREFIX}/usr/tmp
+	@${LN} -sf ../usr/bin/[ ${STAGEDIR}${PREFIX}/bin/[
+	@${LN} -sf ../usr/bin/expr ${STAGEDIR}${PREFIX}/bin/expr
+	@${LN} -sf ../usr/bin/test ${STAGEDIR}${PREFIX}/bin/test
+	@${LN} -sf ../usr/bin/uuidgen ${STAGEDIR}${PREFIX}/bin/uuidgen
+	@${CHMOD} 755 ${STAGEDIR}${PREFIX}/var/lock ${STAGEDIR}${PREFIX}/var/spool/mail
 #
 # Let some linux applications (e.g. print/acroread8) print with default settings
 #
-	@${INSTALL_SCRIPT} ${FILESDIR}/lp ${PREFIX}/usr/bin
-
-post-install:
-#
-# Handle mounting linux procfs if exists at /etc/fstab and
-# installing etc/nsswitch.conf, etc/yp.conf if so far they don't exist
-#
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-#
-# And finally show the pkg-message
-#
-	@${ECHO} ''
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO} ''
+	@${INSTALL_SCRIPT} ${FILESDIR}/lp ${STAGEDIR}${PREFIX}/usr/bin
 
 .include <bsd.port.post.mk>
