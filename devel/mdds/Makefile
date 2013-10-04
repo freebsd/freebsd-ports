@@ -16,7 +16,6 @@ PROJECTHOST=	multidimalgorithm
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-configure:
 	@${SED} -e 's|@prefix@|${PREFIX}|' \
 	    -e 's|@includedir@|$${prefix}/include|' \
@@ -24,13 +23,13 @@ do-configure:
 	    ${WRKSRC}/misc/mdds.pc.in > ${WRKSRC}/misc/mdds.pc
 
 do-install:
-	@${MKDIR} ${PREFIX}/include/mdds
-	@${MKDIR} ${PREFIX}/include/mdds/compat
-	@${MKDIR} ${PREFIX}/include/mdds/hash_container
-	@${INSTALL_DATA} ${WRKSRC}/include/mdds/*.hpp ${PREFIX}/include/mdds
-	@${INSTALL_DATA} ${WRKSRC}/include/mdds/*.inl ${PREFIX}/include/mdds
-	@${INSTALL_DATA} ${WRKSRC}/include/mdds/compat/*.hpp ${PREFIX}/include/mdds/compat
-	@${INSTALL_DATA} ${WRKSRC}/include/mdds/hash_container/*.hpp ${PREFIX}/include/mdds/hash_container
-	@${INSTALL_DATA} ${WRKSRC}/misc/mdds.pc ${PREFIX}/libdata/pkgconfig
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/mdds
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/mdds/compat
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/mdds/hash_container
+	@${INSTALL_DATA} ${WRKSRC}/include/mdds/*.hpp ${STAGEDIR}${PREFIX}/include/mdds
+	@${INSTALL_DATA} ${WRKSRC}/include/mdds/*.inl ${STAGEDIR}${PREFIX}/include/mdds
+	@${INSTALL_DATA} ${WRKSRC}/include/mdds/compat/*.hpp ${STAGEDIR}${PREFIX}/include/mdds/compat
+	@${INSTALL_DATA} ${WRKSRC}/include/mdds/hash_container/*.hpp ${STAGEDIR}${PREFIX}/include/mdds/hash_container
+	@${INSTALL_DATA} ${WRKSRC}/misc/mdds.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
 .include <bsd.port.mk>
