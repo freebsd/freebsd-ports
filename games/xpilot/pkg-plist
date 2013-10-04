@@ -2,6 +2,10 @@ bin/xp-mapedit
 bin/xp-replay
 bin/xpilot
 bin/xpilots
+man/man6/xp-mapedit.6.gz
+man/man6/xp-replay.6.gz
+man/man6/xpilot.6.gz
+man/man6/xpilots.6.gz
 %%DATADIR%%/defaults
 %%DATADIR%%/maps/CAMD.xp
 %%DATADIR%%/maps/blood-music2.xp
@@ -81,6 +85,6 @@ bin/xpilots
 %%DATADIR%%/textures/wall_ur.ppm
 %%DATADIR%%/textures/wall_url.ppm
 %%DATADIR%%/textures/wormhole.ppm
-@dirrm %%DATADIR%%/textures
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/textures
+@dirrmtry %%DATADIR%%/maps
+@dirrmtry %%DATADIR%%

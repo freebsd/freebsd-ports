@@ -11,9 +11,6 @@ COMMENT=	Xpilot(client) and xpilots(server)
 
 USE_BZIP2=	yes
 USE_XORG=	x11 xext
-MAN6=		xpilot.6 xpilots.6 xp-mapedit.6 xp-replay.6
-USE_GCC=	any
 USES=		imake
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
