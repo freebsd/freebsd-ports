@@ -40,7 +40,7 @@ find_pidfile()
 	if get_pidfile_from_conf pid_file %%PREFIX%%/etc/nrpe.cfg; then
 		pidfile="$_pidfile_from_conf"
 	else
-		pidfile='/var/run/nrpe2/nrpe2.pid'
+		pidfile='%%PIDDIR%%/nrpe2.pid'
 	fi
 }
 

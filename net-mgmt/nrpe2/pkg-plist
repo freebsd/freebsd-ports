@@ -1,7 +1,0 @@
-@unexec cmp -s %D/etc/nrpe.cfg-sample %D/etc/nrpe.cfg && rm %D/etc/nrpe.cfg || true
-etc/nrpe.cfg-sample
-@exec test -f %B/nrpe.cfg || cp -p %D/%F %B/nrpe.cfg
-libexec/nagios/check_nrpe2
-@dirrmtry libexec/nagios
-sbin/nrpe2
-@unexec rmdir %%NAGIOSDIR%% 2>/dev/null || true
