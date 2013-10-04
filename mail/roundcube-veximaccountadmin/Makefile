@@ -3,7 +3,7 @@
 
 PORTNAME=	veximaccountadmin
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://axel.sjostedt.no/misc/files/
 PKGNAMEPREFIX=	roundcube-
@@ -14,26 +14,22 @@ COMMENT=	Roundcube vexim account admin plugin
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	roundcube>=0.5:${PORTSDIR}/mail/roundcube
+RUN_DEPENDS=	roundcube>=0.9:${PORTSDIR}/mail/roundcube
 
 NO_BUILD=	yes
 
-WWWDIR=		${PREFIX}/www/roundcube/plugins/veximaccountadmin
+PLIST_SUB+=	PLUGINDIR="${PLUGINDIR}"
+WWWDIR=		${PREFIX}/www/roundcube
+PLUGINDIR=	${WWWDIR}/plugins/${PORTNAME}
 WRKSRC=		${WRKDIR}/veximaccountadmin
+REINPLACE_ARGS=-i ''
 
-# This target is only meant to be used by the port maintainer.
-x-generate-plist: build
-	cd ${WRKSRC}; \
-	${FIND} . ! -type d ! -name '*.orig' | ${SORT} | \
-		${SED} -e "s,^\.,%%WWWDIR%%," >${.CURDIR}/pkg-plist.tmp ; \
-	${FIND} . -type d | ${SORT} -r | ${SED} \
-		-e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
-		-e "s,^\.,@dirrm %%WWWDIR%%," >>${.CURDIR}/pkg-plist.tmp
+post-patch:
+	@${REINPLACE_CMD} -e 's/new rcube_mdb2/new rcube_db/g' ${WRKSRC}/veximaccountadmin.php
 
-NO_STAGE=	yes
 do-install:
-	@${ECHO} "Installing in ${WWWDIR}"
-	${MKDIR} ${WWWDIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR}
+	@${ECHO} "Installing in ${PLUGINDIR}"
+	${MKDIR} ${STAGEDIR}/${PLUGINDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${PLUGINDIR}
 
 .include <bsd.port.mk>
