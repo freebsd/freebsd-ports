@@ -15,7 +15,6 @@ CONFLICTS=	linux-mikmod-[0-9]* linux-f8-mikmod-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
-NO_STAGE=	yes
 LINUX_DIST_VER=	10
 RPMVERSION=	3.beta2.fc9
 LINUX_NAME=	lib${PORTNAME}

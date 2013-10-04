@@ -9,12 +9,11 @@ PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	An implementation of the Audio File Library from SGI (Linux Fedora 10)
+COMMENT=	Implementation of the Audio File Library from SGI (Linux Fedora 10)
 
 CONTFLICTS=	linux-libaudiofile-[0-9]* linux-f8-libaudiofile-[0-9]*
 
 USE_LINUX_RPM=	yes
-NO_STAGE=	yes
 LINUX_NAME=	audiofile
 LINUX_DIST_VER=	10
 RPMVERSION=	9.fc10

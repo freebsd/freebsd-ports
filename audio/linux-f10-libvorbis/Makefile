@@ -15,7 +15,6 @@ CONFLICTS=	linux-libvorbis-[0-9]* linux-f8-libvorbis-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
-NO_STAGE=	yes
 USE_LINUX_APPS=	libogg
 LINUX_DIST_VER=	10
 RPMVERSION=	5.fc10

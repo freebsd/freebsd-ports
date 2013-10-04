@@ -12,7 +12,6 @@ MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Runtime libraries for NAS (Linux Fedora 10)
 
 USE_LINUX_RPM=	yes
-NO_STAGE=	yes
 USE_LINUX_APPS=	xorglibs
 LINUX_DIST_VER=	10
 RPMVERSION=	4.fc9
