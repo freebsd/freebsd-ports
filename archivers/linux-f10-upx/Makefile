@@ -13,7 +13,6 @@ COMMENT=		UPX, a high-performance executable packer (Linux Fedora 10)
 
 CONFLICTS=		linux-upx-[0-9]* linux-f8-upx-[0-9]*
 
-NO_STAGE=		yes
 USE_LINUX_RPM=		yes
 USE_LINUX_APPS=		ucl
 LINUX_DIST_VER=		10

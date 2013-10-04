@@ -13,7 +13,6 @@ COMMENT=		UCL, a lossless data compression library (Linux Fedora 10)
 
 CONFLICTS=		linux-ucl-[0-9]* linux-f8-ucl-[0-9]*
 
-NO_STAGE=		yes
 USE_LINUX_RPM=		yes
 LINUX_DIST_VER=		10
 RPMVERSION=		8.fc9
