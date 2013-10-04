@@ -23,10 +23,18 @@ MAN6=	mupen64plus.6
 LIB_DEPENDS+=		png15:${PORTSDIR}/graphics/png
 .endif
 
+.if ${PKGNAMESUFFIX} == "-video-glide64mk"
+#USE_GCC=	yes
+
+LIBDEPENDS+=		boost_thread:${PORTSDIR}/devel/boost-libs
+.endif
+
 .if ${PKGNAMESUFFIX} != "-core"
-post-extract:
-.	if ${PKGNAMESUFFIX} == "-ui-console"
-		@${GUNZIP_CMD} ${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/doc/${MAN6}.gz
+post-patch:
+.	if ${PKGNAMESUFFIX} == "-video-glide64mk2"
+		@cd ${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/src && \
+			${REINPLACE_CMD} -e 's|#include <thread>||g' \
+				GlideHQ/TxQuantize.cpp GlideHQ/TxFilter.cpp
 .	endif
 
 pre-install:
@@ -37,6 +45,10 @@ pre-install:
 
 .	if ${PKGNAMESUFFIX} == "-video-glide64"
 		@${ECHO_CMD} "%%DATADIR%%/Glide64.ini" >> ${PLIST}
+.	endif
+
+.	if ${PKGNAMESUFFIX} == "-video-glide64mk2"
+		@${ECHO_CMD} "%%DATADIR%%/Glide64mk2.ini" >> ${PLIST}
 .	endif
 
 .	if ${PKGNAMESUFFIX} == "-input-sdl"
@@ -85,6 +97,11 @@ do-install:
 .	if ${PKGNAMESUFFIX} == "-video-glide64"
 		@${MKDIR} ${DATADIR}
 		${INSTALL_DATA} ${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX}/data/Glide64.ini ${DATADIR}
+.	endif
+
+.	if ${PKGNAMESUFFIX} == "-video-glide64mk2"
+		@${MKDIR} ${DATADIR}
+		${INSTALL_DATA} ${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/data/Glide64mk2.ini ${DATADIR}
 .	endif
 
 .	if ${PKGNAMESUFFIX} == "-input-sdl"

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mupen64plus
-PORTVERSION=	1.99.4
+PORTVERSION=	2.0
 CATEGORIES=	emulators
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	-plugins
