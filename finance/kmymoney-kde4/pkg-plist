@@ -90,6 +90,7 @@ lib/libkmm_plugin.so.5.0.1
 lib/libkmm_widgets.so
 lib/libkmm_widgets.so.5
 lib/libkmm_widgets.so.5.0.1
+man/man1/kmymoney.1.gz
 share/applications/kde4/kmymoney.desktop
 share/apps/kmm_csvimport/kmm_csvimport.rc
 %%CALENDAR%%share/apps/kmm_icalendarexport/kmm_icalendarexport.rc
