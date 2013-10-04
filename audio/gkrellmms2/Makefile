@@ -34,14 +34,9 @@ OPTIONS_SINGLE_PLAYER=	BMP XMMS
 OPTIONS_DEFAULT=	XMMS
 BMP_DESC=		Use Beep Media Player
 BMP_LIB_DEPENDS=	libbeep.so:${PORTSDIR}/multimedia/beep-media-player
+BMP_MAKE_ENV=		USE_BMP=yes
 XMMS_DESC=		Use XMMS
 XMMS_LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBMP}
-MAKE_ENV+=	USE_BMP=yes
-.endif
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
