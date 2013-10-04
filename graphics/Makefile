@@ -547,7 +547,6 @@
     SUBDIR += libwmf
     SUBDIR += libwmf-nox11
     SUBDIR += libwpg
-    SUBDIR += libwpg01
     SUBDIR += linplasma
     SUBDIR += linux-XnViewMP
     SUBDIR += linux-adobesvg
