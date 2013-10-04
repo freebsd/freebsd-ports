@@ -1,5 +1,5 @@
---- triangle_mesh_viewer_display.cpp~	2012-05-19 23:49:24.000000000 -0300
-+++ triangle_mesh_viewer_display.cpp	2012-05-19 23:49:55.000000000 -0300
+--- triangle_mesh_viewer_display.cpp.orig	2009-10-05 00:26:36.000000000 +0200
++++ triangle_mesh_viewer_display.cpp	2013-10-03 00:25:53.000000000 +0200
 @@ -24,6 +24,8 @@
  #include "matrix33.h"
  #include "triangle_mesh_viewer.h"
