@@ -1,6 +1,6 @@
---- Makefile.in.orig	2012-09-06 02:51:53.000000000 +0200
-+++ Makefile.in	2012-09-26 23:19:25.396983800 +0200
-@@ -272,7 +272,7 @@
+--- Makefile.in.orig	2013-09-28 19:28:36.000000000 +0200
++++ Makefile.in	2013-10-01 17:24:51.798480620 +0200
+@@ -372,7 +372,7 @@
  host_cpu = @host_cpu@
  host_os = @host_os@
  host_vendor = @host_vendor@
@@ -9,7 +9,7 @@
  includedir = @includedir@
  infodir = @infodir@
  install_sh = @install_sh@
-@@ -305,16 +305,16 @@
+@@ -406,16 +406,16 @@
  	maildroptips.txt COPYING.GPL manpage.css pgpkeys.txt
  
  scriptdir = $(pkgdatadir)/scripts
@@ -30,12 +30,12 @@
  	maildir.5 \
  	maildropfilter.7 maildropgdbm.7 makemime.1 reformail.1 reformime.1
  
-@@ -1160,21 +1160,21 @@
+@@ -1255,21 +1255,21 @@
  
  install-deliverquota:
  	$(mkinstalldirs) $(DESTDIR)$(bindir)
--	$(INSTALL_PROGRAM) maildir/deliverquota $(DESTDIR)$(bindir)/deliverquota
-+	$(INSTALL_PROGRAM) maildir/deliverquota $(DESTDIR)$(bindir)/maildrop-deliverquota
+-	$(INSTALL_PROGRAM) libs/maildir/deliverquota $(DESTDIR)$(bindir)/deliverquota
++	$(INSTALL_PROGRAM) libs/maildir/deliverquota $(DESTDIR)$(bindir)/maildrop-deliverquota
  	cd $(DESTDIR)$(bindir); rm -f maildrop.deliverquota
  
  uninstall-deliverquota:
@@ -46,29 +46,29 @@
  
  uninstall-local: uninstall-deliverquota uninstall-maildrop
  
--deliverquota.8: maildir/deliverquota.8
--	cp -f maildir/deliverquota.8 deliverquota.8
-+maildrop-deliverquota.8: maildir/deliverquota.8
-+	cp -f maildir/deliverquota.8 maildrop-deliverquota.8
+-deliverquota.8: libs/maildir/deliverquota.8
+-	cp -f libs/maildir/deliverquota.8 deliverquota.8
++maildrop-deliverquota.8: libs/maildir/deliverquota.8
++	cp -f libs/maildir/deliverquota.8 maildrop-deliverquota.8
  
--deliverquota.html: maildir/deliverquota.html
--	cp -f maildir/deliverquota.html deliverquota.html
-+maildrop-deliverquota.html: maildir/deliverquota.html
-+	cp -f maildir/deliverquota.html maildrop-deliverquota.html
+-deliverquota.html: libs/maildir/deliverquota.html
+-	cp -f libs/maildir/deliverquota.html deliverquota.html
++maildrop-deliverquota.html: libs/maildir/deliverquota.html
++	cp -f libs/maildir/deliverquota.html maildrop-deliverquota.html
  
  #  In maildrop 0.74, maildirmake was installed as bindir/maildrop.maildirmake
  #  and a soft link was created from maildirmake to maildrop.maildirmake
-@@ -1192,7 +1192,7 @@
- 		$(INSTALL_PROGRAM) maildrop/$$f $(DESTDIR)$(bindir)/$$f ; \
+@@ -1287,7 +1287,7 @@
+ 		$(INSTALL_PROGRAM) libs/maildrop/$$f $(DESTDIR)$(bindir)/$$f ; \
  	done
- 	$(INSTALL_PROGRAM) liblock/lockmail $(DESTDIR)$(bindir)/lockmail
--	$(INSTALL_PROGRAM) maildir/maildirmake $(DESTDIR)$(bindir)/maildirmake
-+	$(INSTALL_PROGRAM) maildir/maildirmake $(DESTDIR)$(bindir)/maildrop-maildirmake
- 	$(INSTALL_PROGRAM) rfc2045/reformime $(DESTDIR)$(bindir)/reformime
- 	$(INSTALL_PROGRAM) rfc2045/makemime $(DESTDIR)$(bindir)/makemime
+ 	$(INSTALL_PROGRAM) libs/liblock/lockmail $(DESTDIR)$(bindir)/lockmail
+-	$(INSTALL_PROGRAM) libs/maildir/maildirmake $(DESTDIR)$(bindir)/maildirmake
++	$(INSTALL_PROGRAM) libs/maildir/maildirmake $(DESTDIR)$(bindir)/maildrop-maildirmake
+ 	$(INSTALL_PROGRAM) libs/rfc2045/reformime $(DESTDIR)$(bindir)/reformime
+ 	$(INSTALL_PROGRAM) libs/rfc2045/makemime $(DESTDIR)$(bindir)/makemime
  	test "@USE_DB@@USE_GDBM@" = "00" && exit 0; \
-@@ -1203,7 +1203,7 @@
- 	. maildrop/uidgid ; test -z "$$uid" && exit 0; test -w /etc || exit 0; cd $(DESTDIR)$(bindir) && chown $$uid maildrop lockmail && chmod 755 maildrop lockmail
+@@ -1298,7 +1298,7 @@
+ 	. libs/maildrop/uidgid ; test -z "$$uid" && exit 0; test -w /etc || exit 0; cd $(DESTDIR)$(bindir) && chown $$uid maildrop lockmail && chmod 755 maildrop lockmail
  
  uninstall-maildrop:
 -	for f in maildrop mailbot maildirmake reformail lockmail makemime reformime; do \
@@ -76,19 +76,19 @@
  		rm -f $(DESTDIR)$(bindir)/$$f ; \
  	done
  	test "@USE_DB@@USE_GDBM@" = "00" && exit 0; \
-@@ -1257,11 +1257,11 @@
- maildirkw.html: maildir/maildirkw.html
- 	cp -f $(srcdir)/maildir/maildirkw.html maildirkw.html
+@@ -1352,11 +1352,11 @@
+ maildirkw.html: libs/maildir/maildirkw.html
+ 	cp -f $(srcdir)/libs/maildir/maildirkw.html maildirkw.html
  
--maildirmake.html: maildir/maildirmake.html
--	cp -f maildir/maildirmake.html maildirmake.html
-+maildrop-maildirmake.html: maildir/maildirmake.html
-+	cp -f maildir/maildirmake.html maildrop-maildirmake.html
+-maildirmake.html: libs/maildir/maildirmake.html
+-	cp -f libs/maildir/maildirmake.html maildirmake.html
++maildrop-maildirmake.html: libs/maildir/maildirmake.html
++	cp -f libs/maildir/maildirmake.html maildrop-maildirmake.html
  
--maildirmake.1: maildir/maildirmake.1
--	cp -f maildir/maildirmake.1 .
-+maildrop-maildirmake.1: maildir/maildirmake.1
-+	cp -f maildir/maildirmake.1 maildrop-maildirmake.1
+-maildirmake.1: libs/maildir/maildirmake.1
+-	cp -f libs/maildir/maildirmake.1 .
++maildrop-maildirmake.1: libs/maildir/maildirmake.1
++	cp -f libs/maildir/maildirmake.1 maildrop-maildirmake.1
  
- maildropex.html: maildrop/maildropex.html
- 	cp -f $(srcdir)/maildrop/maildropex.html maildropex.html
+ maildropex.html: libs/maildrop/maildropex.html
+ 	cp -f $(srcdir)/libs/maildrop/maildropex.html maildropex.html
