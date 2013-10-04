@@ -36,7 +36,6 @@ MAN1=		gqmpeg.1
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""
 USE_GNOME+=	gnomeprefix gnomelibs
-PKGNAMESUFFIX=	-gnome
 CONFIGURE_ENV+=	USE_GNOME="yes"
 .else
 CONFIGURE_ENV+=	USE_GNOME=""

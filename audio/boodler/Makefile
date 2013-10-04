@@ -33,17 +33,8 @@ pre-everything::
 	@${ECHO} "interfaces. The default is to use OSS."
 	@${ECHO} ""
 
-.if ${DRIVER:L} == "oss"
-# Probably nothing here...
-.endif
-
 .if ${DRIVER:L} == "esd"
 LIB_DEPENDS+=	esd.2:${PORTSDIR}/audio/esound
-PKGNAMESUFFIX=	-esd
-.endif
-
-.if ${DRIVER:L} == "file"
-PKGNAMESUFFIX=	-file
 .endif
 
 .include <bsd.port.pre.mk>
