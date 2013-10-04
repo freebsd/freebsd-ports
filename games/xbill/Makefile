@@ -12,10 +12,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Save your computers from the evil clutches of Bill
 
 GNU_CONFIGURE=	yes
-WANT_GNOME=	yes
 CONFIGURE_ARGS=	--localstatedir=${SCORES_DIR}
-
-MAN6=		xbill.6
 
 SCORES_DIR?=	${DATADIR}/scores
 
@@ -26,6 +23,11 @@ DESKTOP_ENTRIES="xBill" \
 		"Game;ArcadeGame;" \
 		false
 
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man6/${PORTNAME}.6.gz
+
+PORTDATA=	*
+
 OPTIONS_SINGLE=	WIDGETSET
 OPTIONS_SINGLE_WIDGETSET=	ATHENA GTK MOTIF
 OPTIONS_DEFAULT=	GTK
@@ -34,7 +36,6 @@ ATHENA_DESC=	Athena widget set
 GTK_DESC=	GTK widget set
 MOTIF_DESC=	Motif widget set
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MATHENA}
