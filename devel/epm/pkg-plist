@@ -1,6 +1,12 @@
 bin/epm
 bin/epminstall
 bin/mkepmlist
+man/man1/epm.1.gz
+man/man1/epminstall.1.gz
+man/man1/mkepmlist.1.gz
+man/man1/setup.1.gz
+man/man5/epm.list.5.gz
+man/man5/setup.types.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/epm-book.html
