@@ -2,7 +2,6 @@ bin/abiword
 include/abiword-%%ABIVERSION%%/abiwidget.h
 include/abiword-%%ABIVERSION%%/libabiword.h
 include/abiword-%%ABIVERSION%%/xap_UnixTableWidget.h
-%%AIKSAURUS%%lib/abiword-%%ABIVERSION%%/plugins/aiksaurus.a
 %%AIKSAURUS%%lib/abiword-%%ABIVERSION%%/plugins/aiksaurus.la
 %%AIKSAURUS%%lib/abiword-%%ABIVERSION%%/plugins/aiksaurus.so
 lib/abiword-%%ABIVERSION%%/plugins/applix.la
@@ -100,6 +99,7 @@ lib/abiword-%%ABIVERSION%%/plugins/xslfo.so
 lib/libabiword-%%ABIVERSION%%.la
 lib/libabiword-%%ABIVERSION%%.so
 libdata/pkgconfig/abiword-%%ABIVERSION%%.pc
+man/man1/abiword.1.gz
 share/abiword-%%ABIVERSION%%/Presentation.xml
 %%COLLAB%%share/abiword-%%ABIVERSION%%/certs/cacert.pem
 %%CLIPART%%share/abiword-%%ABIVERSION%%/clipart/book.png
@@ -412,5 +412,3 @@ share/mime-info/abiword.keys
 @dirrm lib/abiword-%%ABIVERSION%%/plugins
 @dirrm lib/abiword-%%ABIVERSION%%
 @dirrm include/abiword-%%ABIVERSION%%
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

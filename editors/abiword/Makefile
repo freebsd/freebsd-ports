@@ -10,24 +10,23 @@ MASTER_SITE_SUBDIR=	abiword
 DIST_SUBDIR=	AbiWord
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	An open-source, cross-platform WYSIWYG word processor
+COMMENT=	Open-source, cross-platform WYSIWYG word processor
 
-LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
-		png15:${PORTSDIR}/graphics/png \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		wv-1.2:${PORTSDIR}/textproc/wv \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		fribidi:${PORTSDIR}/converters/fribidi \
-		psiconv:${PORTSDIR}/converters/psiconv \
-		goffice-0.8:${PORTSDIR}/devel/goffice
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libwv-1.2.so:${PORTSDIR}/textproc/wv \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libfribidi.so:${PORTSDIR}/converters/fribidi \
+		libpsiconv.so:${PORTSDIR}/converters/psiconv \
+		libgoffice-0.8.so:${PORTSDIR}/devel/goffice
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSerif.ttf:${PORTSDIR}/x11-fonts/dejavu
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GMAKE=	yes
-USES=		pathfix gettext iconv pkgconfig
-USE_GNOME=	libxml2 gtk20 desktopfileutils librsvg2 libxslt
+USES=		desktop-file-utils gettext gmake iconv pathfix pkgconfig
+USE_GNOME=	libxml2 gtk20 librsvg2 libxslt
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -40,8 +39,6 @@ INSTALLS_ICONS=	yes
 
 ABIVERSION=	2.8
 PLIST_SUB+=	ABIVERSION=${ABIVERSION}
-
-MAN1=		abiword.1
 
 OPTIONS_DEFINE=	DEBUG SPELLCHECK CLIPART TEMPLATES MATHVIEW \
 		OTS WP AIKSAURUS GRAMMAR PSION
@@ -74,11 +71,10 @@ ABIWORD_PLUGINS=	garble loadbindings opml xslfo bmp iscii sdw babelfish \
 # Plugins we don't support:
 # gda
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMATHVIEW}
-LIB_DEPENDS+=	mathview:${PORTSDIR}/x11-toolkits/gtkmathview
+LIB_DEPENDS+=	libmathview.so:${PORTSDIR}/x11-toolkits/gtkmathview
 ABIWORD_PLUGINS:=	${ABIWORD_PLUGINS} mathview
 PLIST_SUB+=	MATHVIEW=""
 .else
@@ -86,7 +82,7 @@ PLIST_SUB+=	MATHVIEW="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOTS}
-LIB_DEPENDS+=	ots-1:${PORTSDIR}/textproc/ots
+LIB_DEPENDS+=	libots-1.so:${PORTSDIR}/textproc/ots
 ABIWORD_PLUGINS:=	${ABIWORD_PLUGINS} ots
 PLIST_SUB+=	OTS=""
 .else
@@ -95,8 +91,8 @@ PLIST_SUB+=	OTS="@comment "
 
 .if ${PORT_OPTIONS:MWP}
 USE_GNOME+=	libgsf
-LIB_DEPENDS+=	wpg-0.1:${PORTSDIR}/graphics/libwpg01 \
-		wpd-0.8:${PORTSDIR}/textproc/libwpd08
+LIB_DEPENDS+=	libwpg-0.2.so:${PORTSDIR}/graphics/libwpg \
+		libwpd-0.9.so:${PORTSDIR}/textproc/libwpd
 ABIWORD_PLUGINS:=	${ABIWORD_PLUGINS} wpg wordperfect
 PLIST_SUB+=	WP=""
 .else
@@ -104,7 +100,7 @@ PLIST_SUB+=	WP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAIKSAURUS}
-LIB_DEPENDS+=	AiksaurusGTK-1.2:${PORTSDIR}/textproc/aiksaurus-gtk
+LIB_DEPENDS+=	libAiksaurusGTK-1.2.so:${PORTSDIR}/textproc/aiksaurus-gtk
 ABIWORD_PLUGINS:=	${ABIWORD_PLUGINS} aiksaurus
 PLIST_SUB+=	AIKSAURUS=""
 .else
@@ -112,7 +108,7 @@ PLIST_SUB+=	AIKSAURUS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGRAMMAR}
-LIB_DEPENDS+=	link-grammar:${PORTSDIR}/textproc/link-grammar
+LIB_DEPENDS+=	liblink-grammar.so:${PORTSDIR}/textproc/link-grammar
 ABIWORD_PLUGINS:=	${ABIWORD_PLUGINS} grammar
 PLIST_SUB+=	GRAMMAR=""
 .else
@@ -120,7 +116,7 @@ PLIST_SUB+=	GRAMMAR="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPSION}
-LIB_DEPENDS+=	psiconv:${PORTSDIR}/converters/psiconv
+LIB_DEPENDS+=	libpsiconv.so:${PORTSDIR}/converters/psiconv
 ABIWORD_PLUGINS:=	${ABIWORD_PLUGINS} psion
 PLIST_SUB+=	PSION=""
 .else
@@ -133,7 +129,7 @@ PLIST_SUB+=	PSION="@comment "
 
 .if ${PORT_OPTIONS:MCOLXMPP}
 CONFIGURE_ARGS+=--enable-collab-backend-xmpp
-LIB_DEPENDS+=	loudmouth-1:${PORTSDIR}/net-im/loudmouth
+LIB_DEPENDS+=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth
 .else
 CONFIGURE_ARGS+=--disable-collab-backend-xmpp
 .endif
@@ -146,9 +142,9 @@ CONFIGURE_ARGS+=	--enable-debug --enable-symbols
 CONFIGURE_ARGS+=--with-boost --enable-collab-backend-tcp \
 		--enable-collab-backend-service
 BUILD_DEPENDS+=	${LOCALBASE}/include/asio.hpp:${PORTSDIR}/net/asio
-LIB_DEPENDS+=	boost_system:${PORTSDIR}/devel/boost-libs \
-		soup-2.4:${PORTSDIR}/devel/libsoup \
-		gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
+		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
+		libgnutls.so:${PORTSDIR}/security/gnutls
 RUN_DEPENDS+=	${LOCALBASE}/include/asio.hpp:${PORTSDIR}/net/asio
 PLIST_SUB+=		COLLAB=""
 .else
@@ -158,7 +154,7 @@ PLIST_SUB+=		COLLAB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSPELLCHECK}
-LIB_DEPENDS+=		enchant:${PORTSDIR}/textproc/enchant
+LIB_DEPENDS+=		libenchant.so:${PORTSDIR}/textproc/enchant
 CONFIGURE_ARGS+=	--enable-spell
 PLIST_SUB+=		DICT=""
 .else
@@ -187,9 +183,5 @@ post-patch:
 		${WRKSRC}/goffice-bits/goffice/app/goffice-app.h \
 		${WRKSRC}/src/af/util/xp/ut_go_file.h
 	@${REINPLACE_CMD} -e 's|" == "|" = "|g' ${WRKSRC}/configure
-
-post-install:
-	@${MKDIR} ${PREFIX}/lib/${PORTNAME}-${ABIVERSION}/plugins
-	@-update-desktop-database
 
 .include <bsd.port.mk>
