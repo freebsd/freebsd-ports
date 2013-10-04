@@ -12,6 +12,10 @@ include/httrack/htsmodules.h
 include/httrack/htsopt.h
 include/httrack/htswrap.h
 include/httrack/httrack-library.h
+man/man1/htsserver.1.gz
+man/man1/httrack.1.gz
+man/man1/proxytrack.1.gz
+man/man1/webhttrack.1.gz
 %%PORTDATA%%lib/httrack/libbaselinks.a
 %%PORTDATA%%lib/httrack/libbaselinks.la
 %%PORTDATA%%lib/httrack/libbaselinks.so
