@@ -10,12 +10,13 @@ MASTER_SITES=	http://www.mahoroba.org/~ume/FreeBSD/
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Resolver re-initialization NSS module
 
-PLIST_FILES=	lib/nss_resinit.so lib/nss_resinit.so.1
+LICENSE=	BSD
 
-MAN8=		nss_resinit.8
-MANCOMPRESSED=	yes
+NEED_ROOT=	yes
 
-NO_STAGE=	yes
+PLIST_FILES=	lib/nss_resinit.so lib/nss_resinit.so.1 \
+		man/man8/nss_resinit.8.gz
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_COMPAT5X)
