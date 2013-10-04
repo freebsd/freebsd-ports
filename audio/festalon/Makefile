@@ -20,6 +20,7 @@ USES=		pkgconfig
 NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
+USE_GCC=	any
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
