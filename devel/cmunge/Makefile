@@ -18,18 +18,20 @@ MAKE_ARGS=	CC="${CC} ${CFLAGS}"
 PLIST_FILES=	bin/cmunge bin/ctran bin/proc-incl
 PORTDOCS=	*
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|/vcpc_users/jhm/bin/cmunger|${PREFIX}|; \
+	@${REINPLACE_CMD} -e \
+		's|/vcpc_users/jhm/bin/cmunger|${STAGEDIR}${PREFIX}|; \
 		s|/usr/ccs/lib/cpp|/usr/bin/cpp|' ${WRKSRC}/cmunge
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/ctran ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/proc-incl ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/cmunge ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/ctran ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/proc-incl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/cmunge ${STAGEDIR}${PREFIX}/bin
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
