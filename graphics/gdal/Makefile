@@ -60,8 +60,8 @@ HDF5_CONFIGURE_ON=	--with-hdf5=${LOCALBASE}
 HDF5_LIB_DEPENDS=	libhdf5.so.7:${PORTSDIR}/science/hdf5-18
 ICONV_CONFIGURE_OFF=	--with-libiconv-prefix=no
 ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
-ICONV_USES=		iconv
 ICONV_LDFLAGS=         -L${LOCALBASE}/lib ${ICONV_LIB}
+ICONV_USES=		iconv
 JASPER_CONFIGURE_OFF=	--with-jasper=no
 JASPER_CONFIGURE_ON=	--with-jasper=${LOCALBASE}
 JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
@@ -76,6 +76,7 @@ LIBXML2_CONFIGURE_ON=	--with-xml2=${LOCALBASE}/bin/xml2-config
 LIBXML2_LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 MYSQL_CONFIGURE_OFF=	--with-mysql=no
 MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
+MYSQL_USE=		MYSQL=yes
 NETCDF_CONFIGURE_OFF=	--with-netcdf=no
 NETCDF_CONFIGURE_ON=	--with-netcdf=${LOCALBASE}
 NETCDF_LIB_DEPENDS=	libnetcdf.so.7:${PORTSDIR}/science/netcdf4
@@ -87,6 +88,7 @@ PCRE_CONFIGURE_ON=	--with-pcre=${LOCALBASE}
 PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 PGSQL_CONFIGURE_OFF=	--with-pg=no
 PGSQL_CONFIGURE_ON=	--with-pg=${LOCALBASE}/bin/pg_config
+PGSQL_USE=		PGSQL=yes
 PNG_CONFIGURE_OFF=	--with-png=internal
 PNG_CONFIGURE_ON=	--with-png=${LOCALBASE}
 PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
@@ -98,6 +100,7 @@ PROJ_CONFIGURE_ON=	--with-static-proj4=${LOCALBASE}
 PROJ_LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj
 SQLITE_CONFIGURE_OFF=	--with-sqlite3=no
 SQLITE_CONFIGURE_ON=	--with-sqlite3=${LOCALBASE}
+SQLITE_USE=		SQLITE=yes
 TIFF_CONFIGURE_OFF=	--with-libtiff=internal
 TIFF_CONFIGURE_ON=	--with-libtiff=${LOCALBASE}
 TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
@@ -110,26 +113,11 @@ XERCES_LIB_DEPENDS=	libxerces-c.so:${PORTSDIR}/textproc/xerces-c3
 
 SLAVEDIRS=	graphics/p5-Geo-GDAL graphics/php-gdal graphics/py-gdal graphics/ruby-gdal
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	yes
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
 
 post-install:
-	${TOUCH} ${PREFIX}/lib/gdalplugins/.keepme
-	${INSTALL_DATA} ${WRKSRC}/GDALmake.opt ${DATADIR}/
+	${TOUCH} ${STAGEDIR}${PREFIX}/lib/gdalplugins/.keepme
+	${INSTALL_DATA} ${WRKSRC}/GDALmake.opt ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
