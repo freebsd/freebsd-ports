@@ -72,10 +72,14 @@ add-plist-info:
 
 .if !target(makeplist)
 makeplist: stage
+.if !empty(MTREE_FILE)
 	@{ ${ECHO_CMD} "#mtree"; ${CAT} ${MTREE_FILE}; } | ${TAR} tf - | \
 		awk '{ sub(/^\.$$/, "", $$1); \
 		if ($$1 == "") print "${PREFIX}"; else print "${PREFIX}/"$$1; }' \
 		> ${WRKDIR}/.mtree
+.else
+	@: > ${WRKDIR}/.mtree
+.endif
 	@a=${PREFIX}; \
 		while :; do \
 			a=$${a%/*} ; \
