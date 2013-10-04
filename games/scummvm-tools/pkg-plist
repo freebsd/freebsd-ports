@@ -1,32 +1,21 @@
-bin/compress_agos
-bin/compress_kyra
-bin/compress_queen
-bin/compress_saga
-bin/compress_scumm_bun
-bin/compress_scumm_san
-bin/compress_scumm_sou
-bin/compress_sword1
-bin/compress_sword2
-bin/compress_touche
-bin/compress_tucker
+bin/construct_mohawk
+bin/create_sjisfnt
 bin/decine
 bin/degob
 bin/dekyra
+bin/deriven
 bin/descumm
 bin/desword2
-bin/encode_dxa
-bin/extract_agos
-bin/extract_cine
-bin/extract_gob_stk
-bin/extract_kyra
-bin/extract_loom_tg16
-bin/extract_mm_apple
-bin/extract_mm_c64
-bin/extract_mm_nes
-bin/extract_parallaction
-bin/extract_scumm_mac
-bin/extract_t7g_mac
-bin/extract_zak_c64
-%%WX%%bin/tools_gui
+bin/extract_mohawk
+bin/gob_loadcalc
+%%WX%%bin/scummvm-tools
+bin/scummvm-tools-cli
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/detaillogo.jpg
+%%DATADIR%%/logo.jpg
+%%DATADIR%%/scummvmtools.icns
+%%DATADIR%%/scummvmtools.ico
+%%DATADIR%%/scummvmtools_128.png
+%%DATADIR%%/tile.gif
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
