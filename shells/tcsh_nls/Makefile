@@ -57,14 +57,13 @@ NLS_CATALOGS=	de_DE.ISO8859-1:de_AT.UTF-8 \
 		uk_UA.KOI8-U:uk_UA.ISO8859-5 \
 		uk_UA.KOI8-U:uk_UA.UTF-8 \
 
-NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 
 do-install:
 	@for i in ${NLS_CATALOGS}; do \
 		${LN} -sf /usr/share/nls/$${i%%:*}/tcsh.cat \
-			${PREFIX}/share/nls/$${i##*:}/tcsh.cat; \
+			${STAGEDIR}${PREFIX}/share/nls/$${i##*:}/tcsh.cat; \
 	done
 
 .include <bsd.port.mk>
