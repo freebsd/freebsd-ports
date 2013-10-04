@@ -1,5 +1,5 @@
---- rubrica2.schemas.in.orig	2008-04-30 18:41:37.000000000 +0900
-+++ rubrica2.schemas.in	2009-09-06 12:40:19.000000000 +0900
+--- rubrica2.schemas.in.orig	2010-06-20 14:23:50.000000000 +0200
++++ rubrica2.schemas.in	2013-04-03 20:40:05.000000000 +0200
 @@ -6,7 +6,7 @@
  		<applyto>/apps/rubrica2/file_format</applyto>
  		<owner>rubrica</owner>

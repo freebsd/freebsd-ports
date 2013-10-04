@@ -23,6 +23,10 @@ include/libral-1.0/libral/timeout.h
 include/libral-1.0/libral/types.h
 include/libral-1.0/libral/utils.h
 include/libral-1.0/libral/work.h
+lib/libral.a
+lib/libral.la
+lib/libral.so
+lib/libral.so.1
 lib/libral/plugins/libcsv.a
 lib/libral/plugins/libcsv.la
 lib/libral/plugins/libcsv.so
@@ -39,34 +43,19 @@ lib/libral/plugins/libvcard.a
 lib/libral/plugins/libvcard.la
 lib/libral/plugins/libvcard.so
 lib/libral/plugins/libvcard.so.1
-lib/libral.a
-lib/libral.la
-lib/libral.so
-lib/libral.so.1
 libdata/pkgconfig/libral.pc
 share/applications/rubrica2.desktop
-%%PORTDOCS%%share/doc/libRAL/ch01.html
-%%PORTDOCS%%share/doc/libRAL/home.png
-%%PORTDOCS%%share/doc/libRAL/index.html
-%%PORTDOCS%%share/doc/libRAL/left.png
-%%PORTDOCS%%share/doc/libRAL/libRAL.devhelp
-%%PORTDOCS%%share/doc/libRAL/libRAL.devhelp2
-%%PORTDOCS%%share/doc/libRAL/right.png
-%%PORTDOCS%%share/doc/libRAL/style.css
-%%PORTDOCS%%share/doc/libRAL/up.png
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-share/locale/de/LC_MESSAGES/rubrica2.mo
-share/locale/el/LC_MESSAGES/rubrica2.mo
-share/locale/en_US/LC_MESSAGES/rubrica2.mo
-share/locale/fr/LC_MESSAGES/rubrica2.mo
-share/locale/it/LC_MESSAGES/rubrica2.mo
-share/locale/uk/LC_MESSAGES/rubrica2.mo
+%%NLS%%share/locale/de/LC_MESSAGES/rubrica2.mo
+%%NLS%%share/locale/el/LC_MESSAGES/rubrica2.mo
+%%NLS%%share/locale/en_US/LC_MESSAGES/rubrica2.mo
+%%NLS%%share/locale/es_ES/LC_MESSAGES/rubrica2.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/rubrica2.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/rubrica2.mo
+%%NLS%%share/locale/it/LC_MESSAGES/rubrica2.mo
+%%NLS%%share/locale/pt-pt/LC_MESSAGES/rubrica2.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/rubrica2.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/rubrica2.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/rubrica2.mo
 share/mime-info/rubrica2.keys
 share/mime-info/rubrica2.mime
 share/pixmaps/rubrica2/16x16/ccare.png
@@ -105,29 +94,31 @@ share/pixmaps/rubrica2/48x48/strategies.png
 share/pixmaps/rubrica2/48x48/tux.png
 share/pixmaps/rubrica2/scalable/card_photo.svg
 share/pixmaps/rubrica2/scalable/query.svg
-share/rubrica2/interface/CompanyCard.glade
-share/rubrica2/interface/GroupManager.glade
-share/rubrica2/interface/MainWindow.glade
-share/rubrica2/interface/Menu.glade
-share/rubrica2/interface/MenuTrash.glade
-share/rubrica2/interface/PersonalCard.glade
-share/rubrica2/interface/Preferences.glade
-share/rubrica2/interface/Search.glade
-share/rubrica2/interface/logo.png
-@dirrm share/rubrica2/interface
-@dirrm share/rubrica2
+%%DATADIR%%2/interface/CompanyCard.glade
+%%DATADIR%%2/interface/GroupManager.glade
+%%DATADIR%%2/interface/MainWindow.glade
+%%DATADIR%%2/interface/Menu.glade
+%%DATADIR%%2/interface/MenuTrash.glade
+%%DATADIR%%2/interface/PersonalCard.glade
+%%DATADIR%%2/interface/Preferences.glade
+%%DATADIR%%2/interface/Search.glade
+%%DATADIR%%2/interface/logo.png
+@dirrm %%DATADIR%%2/interface
+@dirrm %%DATADIR%%2
 @dirrm share/pixmaps/rubrica2/scalable
 @dirrm share/pixmaps/rubrica2/48x48
 @dirrm share/pixmaps/rubrica2/24x24
 @dirrm share/pixmaps/rubrica2/22x22
 @dirrm share/pixmaps/rubrica2/16x16
 @dirrm share/pixmaps/rubrica2
-@dirrmtry share/locale/en_US/LC_MESSAGES
-@dirrmtry share/locale/en_US
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm share/doc/libRAL
+%%NLS%%@dirrmtry share/locale/pt-pt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt-pt
+%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en_US
 @dirrmtry share/applications
-@dirrmtry lib/libral/plugins
-@dirrmtry lib/libral
-@dirrmtry include/libral-1.0/libral
-@dirrmtry include/libral-1.0
+@dirrm lib/libral/plugins
+@dirrm lib/libral
+@dirrm include/libral-1.0/libral
+@dirrm include/libral-1.0
+@dirrmtry etc/gconf/schemas
+@dirrmtry etc/gconf
