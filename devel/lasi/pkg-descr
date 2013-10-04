@@ -1,5 +1,3 @@
-LASi
-________
 libLASi is a library written by Larry Siden  that provides a C++ stream
 output interface ( with operator << ) for creating Postscript documents 
 that can contain characters from any of the scripts and symbol blocks
@@ -11,4 +9,4 @@ supported to the extent provided by Pango and by the OpenType fonts
 installed on your system. All of this is provided without need for any
 special configuration or layout calculation on the programmer's part.
 
-WWW:	http://www.unifont.org/lasi/
+WWW: http://www.unifont.org/lasi/

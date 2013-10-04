@@ -22,33 +22,37 @@ USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DCMAKE_INSTALL_DATADIR:PATH=${DATADIR}
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmake+modules+lasi.cmake
 .endif
 
-NO_STAGE=	yes
 pre-install:
-.if defined(NOPORTEXAMPLES)
-	@${REINPLACE_CMD} 's/^\(add_subdirectory(examples)\)/#\1/' ${WRKSRC}/CMakeLists.txt
+.if ! ${PORT_OPTIONS:MEXAMPLES}
+	@${REINPLACE_CMD} 's/^\(add_subdirectory(examples)\)/#\1/' \
+		${WRKSRC}/CMakeLists.txt
 .endif
 
 post-install:
-	@${MV} ${PREFIX}/lib/libLASi.so.1.0.0 ${PREFIX}/lib/libLASi.so.1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${MV} ${DATADIR}/doc/* ${DOCSDIR}/
-	@${RMDIR} ${DATADIR}/doc
+	@${MV} ${STAGEDIR}${PREFIX}/lib/libLASi.so.1.0.0 \
+		${STAGEDIR}${PREFIX}/lib/libLASi.so.1
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MV} ${STAGEDIR}${DATADIR}/doc/* ${STAGEDIR}${DOCSDIR}/
+	@${RMDIR} ${STAGEDIR}${DATADIR}/doc
 .endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${MV} ${DATADIR}/examples/* ${EXAMPLESDIR}/
-	@${RMDIR} ${DATADIR}/examples
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MV} ${STAGEDIR}${DATADIR}/examples/* ${STAGEDIR}${EXAMPLESDIR}/
+	@${RMDIR} ${STAGEDIR}${DATADIR}/examples
 .endif
-.if !defined(NOPORTEXAMPLES) && !defined(NOPORTDOCS)
-	@${RM} -rf ${DATADIR}/*
+.if ! ${PORT_OPTIONS:MDOCS} && ! ${PORT_OPTIONS:MEXAMPLES}
+	@${RM} -rf ${STAGEDIR}${DATADIR}/*
 .endif
-	@${TEST} -d ${DATADIR} && ${RMDIR} ${DATADIR} || ${TRUE}
+	@${TEST} -d ${STAGEDIR}${DATADIR} && \
+		${RMDIR} ${STAGEDIR}${DATADIR} || ${TRUE}
 
 .include <bsd.port.mk>
