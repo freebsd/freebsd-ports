@@ -1,3 +1,5 @@
+bin/dist
+bin/distfind
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist/Joseki/.packlist
 %%SITE_PERL%%/Dist/Joseki.pm
 %%SITE_PERL%%/Dist/Joseki/Base.pm
@@ -16,8 +18,24 @@
 %%SITE_PERL%%/Dist/Joseki/DistType/ModuleBuild.pm
 %%SITE_PERL%%/Dist/Joseki/Find.pm
 %%SITE_PERL%%/Dist/Joseki/Version.pm
-bin/dist
-bin/distfind
+man/man1/distfind.1.gz
+%%PERL5_MAN3%%/Dist::Joseki.3.gz
+%%PERL5_MAN3%%/Dist::Joseki::Base.3.gz
+%%PERL5_MAN3%%/Dist::Joseki::Cmd.3.gz
+%%PERL5_MAN3%%/Dist::Joseki::Cmd::Command.3.gz
+%%PERL5_MAN3%%/Dist::Joseki::Cmd::Multiplexable.3.gz
+%%PERL5_MAN3%%/Dist::Joseki::Command::clean.3.gz
+%%PERL5_MAN3%%/Dist::Joseki::Command::install.3.gz
+%%PERL5_MAN3%%/Dist::Joseki::Command::manifest.3.gz
+%%PERL5_MAN3%%/Dist::Joseki::Command::props.3.gz
+%%PERL5_MAN3%%/Dist::Joseki::Command::test.3.gz
+%%PERL5_MAN3%%/Dist::Joseki::Command::version.3.gz
+%%PERL5_MAN3%%/Dist::Joseki::DistType.3.gz
+%%PERL5_MAN3%%/Dist::Joseki::DistType::Base.3.gz
+%%PERL5_MAN3%%/Dist::Joseki::DistType::MakeMaker.3.gz
+%%PERL5_MAN3%%/Dist::Joseki::DistType::ModuleBuild.3.gz
+%%PERL5_MAN3%%/Dist::Joseki::Find.3.gz
+%%PERL5_MAN3%%/Dist::Joseki::Version.3.gz
 @dirrmtry %%SITE_PERL%%/Dist/Joseki/DistType
 @dirrmtry %%SITE_PERL%%/Dist/Joseki/Command
 @dirrmtry %%SITE_PERL%%/Dist/Joseki/Cmd

@@ -17,28 +17,9 @@ RUN_DEPENDS=	p5-App-Cmd>=0:${PORTSDIR}/devel/p5-App-Cmd \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Getopt-Attribute>=0:${PORTSDIR}/devel/p5-Getopt-Attribute \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		distfind.1
-MAN3=		Dist::Joseki.3 \
-		Dist::Joseki::Base.3 \
-		Dist::Joseki::Cmd.3 \
-		Dist::Joseki::Cmd::Command.3 \
-		Dist::Joseki::Cmd::Multiplexable.3 \
-		Dist::Joseki::Command::clean.3 \
-		Dist::Joseki::Command::install.3 \
-		Dist::Joseki::Command::manifest.3 \
-		Dist::Joseki::Command::props.3 \
-		Dist::Joseki::Command::test.3 \
-		Dist::Joseki::Command::version.3 \
-		Dist::Joseki::DistType.3 \
-		Dist::Joseki::DistType::Base.3 \
-		Dist::Joseki::DistType::MakeMaker.3 \
-		Dist::Joseki::DistType::ModuleBuild.3 \
-		Dist::Joseki::Find.3 \
-		Dist::Joseki::Version.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
