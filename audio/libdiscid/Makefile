@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdiscid
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/${PORTNAME}/ \
 		http://ftp.osuosl.org/pub/musicbrainz/${PORTNAME}/
@@ -12,7 +12,6 @@ COMMENT=	Library for creating MusicBrainz DiscIDs
 LICENSE=	LGPL21
 
 USES=		cmake
-NO_STAGE=	yes
 USE_LDCONFIG=	yes
 
 post-patch:
