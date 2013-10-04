@@ -13,7 +13,7 @@ COMMENT=	A set of fonts by Adobe designed for user interfaces
 LICENSE=	OFL
 LICENSE_NAME=	SIL OPEN FONT LICENSE Version 1.1
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-LICENSE_PERMS=	auto-accept
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
@@ -34,19 +34,13 @@ INSTDAT=		fonts.dir fonts.scale
 MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
 MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}/ && ${MKFONTSCL_CMD}
 	cd ${WRKSRC}/ && ${MKFONTDIR_CMD}
 
 do-install:
-	${MKDIR} ${FONTDIR}
+	${MKDIR} ${STAGEDIR}${FONTDIR}
 	cd ${WRKSRC}/ &&	\
-	${INSTALL_DATA} ${INSTDAT} TTF/*.ttf ${FONTDIR}
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	${INSTALL_DATA} ${INSTDAT} TTF/*.ttf ${STAGEDIR}${FONTDIR}
 
 .include <bsd.port.mk>
