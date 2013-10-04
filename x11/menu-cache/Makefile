@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	menu-cache
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 CATEGORIES=	x11
-MASTER_SITES=	SF/lxde/menu-cache/menu-cache%20${PORTVERSION}/
+MASTER_SITES=	SF/lxde/menu-cache/menu-cache%20${PORTVERSION:S/.0/.x/}/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	The menu-cache portion of LXDE
 
 USES=		pkgconfig
@@ -20,5 +19,4 @@ USE_FAM=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
