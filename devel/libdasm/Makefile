@@ -12,14 +12,14 @@ COMMENT=	Simple x86 disassembly library
 
 LICENSE=	BSD
 
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${STAGEDIR}${PREFIX}"
 USE_LDCONFIG=	yes
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PORTDOCS=	HISTORY.txt README.txt
 PORTEXAMPLES=	README.txt das.c simple.c
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
@@ -27,19 +27,19 @@ CFLAGS+=	-fPIC -DPIC
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -E 's,^(CC|CFLAGS|PREFIX).*=,\1 ?=,; \
-			      s,libdasm.so.1.0,libdasm.so.1,g; \
-			      s,cp ,${INSTALL_DATA} ,g' \
-		${WRKSRC}/Makefile ${WRKSRC}/examples/Makefile
+	@${REINPLACE_CMD} 's,libdasm.so.1.0,libdasm.so.1,g; \
+			   s,cp ,${INSTALL_DATA} ,g; \
+			   /cd examples/d' \
+		${WRKSRC}/Makefile
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/examples/,} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/examples/,} ${STAGEDIR}${EXAMPLESDIR}
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
