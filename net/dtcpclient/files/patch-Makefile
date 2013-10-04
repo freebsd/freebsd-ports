@@ -1,0 +1,24 @@
+Index: Makefile
+diff -u Makefile.orig Makefile
+--- Makefile.orig	2005-12-28 16:29:24.000000000 +0900
++++ Makefile	2013-10-05 00:28:46.953959748 +0900
+@@ -58,12 +58,14 @@
+ 
+ realinstall:
+ 	$(INSTALL) -s $(COPY) -o $(BINOWN) -g $(BINGRP) -m 555 \
+-		dtcpclient $(BINDIR)/dtcpclient
+-	$(INSTALL) -d $(EXAMPLESDIR)
++		dtcpclient $(DESTDIR)$(BINDIR)/dtcpclient
++	$(INSTALL) -d $(DESTDIR)$(EXAMPLESDIR)
+ 	$(INSTALL) $(COPY) -o $(BINOWN) -g $(BINGRP) -m 555 \
+-		dtcpclient.script $(EXAMPLESDIR)/dtcpclient.script
+-	if [ ! -f $(SCRIPTSDIR)/dtcpclient.script ]; then \
+-		cp -p $(EXAMPLESDIR)/dtcpclient.script $(SCRIPTSDIR)/; \
++		 dtcpclient.script \
++		$(DESTDIR)$(EXAMPLESDIR)/dtcpclient.script
++	if [ ! -f $(DESTDIR)$(SCRIPTSDIR)/dtcpclient.script ]; then \
++		cp -p $(DESTDIR)$(EXAMPLESDIR)/dtcpclient.script \
++			$(DESTDIR)$(SCRIPTSDIR)/; \
+ 	fi
+ 
+ dist:

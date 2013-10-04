@@ -10,16 +10,9 @@ MASTER_SITES=	http://www.mahoroba.org/~ume/ipv6/ \
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Dynamic Tunnel Configuration Protocol client
 
+LICENSE=	BSD
+
 USE_RC_SUBR=	dtcpclient
-
-MAN8=		dtcpclient.8
-MANCOMPRESSED=	yes
-
-NO_STAGE=	yes
-pre-install:
-	@if [ -f ${PREFIX}/etc/rc.d/${USE_RC_SUBR} ]; then \
-		${ECHO_CMD} "Remove old ${PREFIX}/etc/rc.d/${USE_RC_SUBR} before install."; \
-		exit 1; \
-	fi
+NEED_ROOT=	yes
 
 .include <bsd.port.mk>
