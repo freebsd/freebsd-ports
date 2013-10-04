@@ -3,7 +3,7 @@
 
 PORTNAME=	hexchat
 PORTVERSION=	2.9.6.1
-PORTREVISION=	1 
+PORTREVISION=	2
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://dl.hexchat.org/${PORTNAME}/
 
@@ -12,8 +12,7 @@ COMMENT=	IRC chat program with GTK and Text Frontend
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy \
-		libcanberra.so:${PORTSDIR}/audio/libcanberra
+LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
 
 USE_XZ=		yes
 USES=		gmake desktop-file-utils pkgconfig
@@ -26,62 +25,62 @@ INSTALLS_ICONS=	yes
 
 LDFLAGS+=	-pthread
 
-MAN1=		hexchat.1
-
 SUB_FILES=	pkg-message
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		DOCS NLS SOCKS XFT TEXTFE PYTHON PERL DOAT FISHLIM DBUS NOTIFY
+OPTIONS_DEFINE=		CANBERRA DBUS DOAT DOCS FISHLIM NLS NOTIFY PERL PYTHON SOCKS TEXTFE XFT
 
 OPTIONS_RADIO=		SPELL
-OPTIONS_RADIO_SPELL=	LIBSEXY GTKSPELL STATIC
+OPTIONS_RADIO_SPELL=	GTKSPELL LIBSEXY STATIC
 
-OPTIONS_DEFAULT=	SOCKS XFT PERL DOAT DBUS NOTIFY LIBSEXY
+OPTIONS_DEFAULT=	CANBERRA DBUS NOTIFY LIBSEXY PERL PYTHON SOCKS XFT
 
 OPTIONS_SUB=	yes
 
-TEXTFE_DESC=		Text frontend
+CANBERRA_DESC=		Audio support via Libcanberra
 DOAT_DESC=		Do At plugin
-FISHLIM_DESC=		FiSHLiM plugin
-STATIC_DESC=		Spell checking embedded in the binary
-LIBSEXY_DESC=		Spell checking support via Libsexy
 GTKSPELL_DESC=		Spell checking support via GTKSpell
+FISHLIM_DESC=		FiSHLiM plugin
+LIBSEXY_DESC=		Spell checking support via Libsexy
+STATIC_DESC=		Spell checking embedded in the binary
+TEXTFE_DESC=		Text frontend
 
-NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=		gettext
-LIBSEXY_LIB_DEPENDS=	libsexy.so:${PORTSDIR}/x11-toolkits/libsexy
-GTKSPELL_LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
-SOCKS_LIB_DEPENDS=	libsocks.so:${PORTSDIR}/net/dante
-SOCKS_CONFIGURE_ENABLE=	socks
-XFT_CONFIGURE_ENABLE=	xft
-TEXTFE_CONFIGURE_ENABLE=	textfe
-PYTHON_CONFIGURE_ENABLE=	python
-PERL_CONFIGURE_ENABLE=	perl
-DOAT_CONFIGURE_ENABLE=	doat
-FISHLIM_CONFIGURE_ENABLE=	fishlim
+CANBERRA_LIB_DEPENDS=	libcanberra.so:${PORTSDIR}/audio/libcanberra
+CANBERRA_CONFIGURE_ENABLE=	libcanberra
 DBUS_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 DBUS_CONFIGURE_ENABLE=	dbus
+DOAT_CONFIGURE_ENABLE=	doat
+FISHLIM_CONFIGURE_ENABLE=	fishlim
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
 NOTIFY_RUN_DEPENDS=	notify-send:${PORTSDIR}/devel/libnotify
 NOTIFY_CONFIGURE_ENABLE=	libnotify
+PERL_CONFIGURE_ENABLE=	perl
+PYTHON_CONFIGURE_ENABLE=	python
+SOCKS_LIB_DEPENDS=	libsocks.so:${PORTSDIR}/net/dante
+SOCKS_CONFIGURE_ENABLE=	socks
+TEXTFE_CONFIGURE_ENABLE=	textfe
+XFT_CONFIGURE_ENABLE=	xft
+GTKSPELL_LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
+LIBSEXY_LIB_DEPENDS=	libsexy.so:${PORTSDIR}/x11-toolkits/libsexy
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ! ${PORT_OPTIONS:MLIBSEXY} && ! ${PORT_OPTIONS:MGTKSPELL} && ! ${PORT_OPTIONS:MSTATIC}
+.if ! ${PORT_OPTIONS:MGTKSPELL} && ! ${PORT_OPTIONS:MLIBSEXY} && ! ${PORT_OPTIONS:MSTATIC}
 CONFIGURE_ARGS+=--enable-spell=none
 .endif
 
-.if ${PORT_OPTIONS:MSTATIC}
-CONFIGURE_ARGS+=--enable-spell=static
+.if ${PORT_OPTIONS:MGTKSPELL}
+CONFIGURE_ARGS+=--enable-spell=gtkspell
 .endif
 
 .if ${PORT_OPTIONS:MLIBSEXY}
 CONFIGURE_ARGS+=--enable-spell=libsexy
 .endif
 
-.if ${PORT_OPTIONS:MGTKSPELL}
-CONFIGURE_ARGS+=--enable-spell=gtkspell
+.if ${PORT_OPTIONS:MSTATIC}
+CONFIGURE_ARGS+=--enable-spell=static
 .endif
 
 .if ${PORT_OPTIONS:MXFT}
@@ -109,16 +108,12 @@ pre-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./autogen.sh)
 
 post-install:
-	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps/
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/share/doc/*.md ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/share/doc/*.md ${STAGEDIR}${DOCSDIR}
 .endif
 #	@(cd ${PREFIX}/lib/hexchat/plugins/ && ${RM} -f *.a)
-
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.mk>
