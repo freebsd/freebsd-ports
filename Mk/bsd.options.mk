@@ -97,7 +97,8 @@
 # 							EXTRA_PATCHES
 #
 # For each of CFLAGS CPPFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ARGS MAKE_ENV
-# USES DISTFILES PLIST_FILES PLIST_DIRS PLIST_DIRSTRY, defining
+# USES DISTFILES PLIST_FILES PLIST_DIRS PLIST_DIRSTRY EXTRA_PATCHES
+# PATCHFILES PATCH_SITES, defining
 # ${opt}_${variable} will add it to the actual variable when the option is enabled.
 #
 # For each of the depends target PKG EXTRACT PATCH FETCH BUILD LIB RUN,
@@ -383,9 +384,6 @@ PLIST_SUB:=	${PLIST_SUB} ${opt}="@comment "
 .  endif
 
 .  if ${PORT_OPTIONS:M${opt}}
-.    if defined(${opt}_EXTRA_PATCHES)
-EXTRA_PATCHES+=		${${opt}_EXTRA_PATCHES}
-.    endif
 .    if defined(${opt}_CONFIGURE_ENABLE)
 CONFIGURE_ARGS+=	--enable-${${opt}_CONFIGURE_ENABLE}
 .    endif
@@ -399,7 +397,8 @@ CONFIGURE_ARGS+=	${${opt}_CONFIGURE_ON}
 CMAKE_ARGS+=	${${opt}_CMAKE_ON}
 .    endif
 .    for flags in CFLAGS CPPFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ARGS MAKE_ENV \
-                  USES DISTFILES PLIST_FILES PLIST_DIRS PLIST_DIRSTRY
+                  USES DISTFILES PLIST_FILES PLIST_DIRS PLIST_DIRSTRY \
+                  EXTRA_PATCHES PATCHFILES PATCH_SITES
 .      if defined(${opt}_${flags})
 ${flags}+=	${${opt}_${flags}}
 .      endif
