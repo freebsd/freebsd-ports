@@ -24,7 +24,6 @@ PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmms.so \
 		share/locale/ru/LC_MESSAGES/gkrellmms.mo
 
 USES=		gmake pkgconfig
-NO_STAGE=	yes
 
 MAKE_ENV+=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins \
 		LOCALEDIR=${PREFIX}/share/locale \
@@ -34,15 +33,17 @@ OPTIONS_SINGLE=		PLAYER
 OPTIONS_SINGLE_PLAYER=	BMP XMMS
 OPTIONS_DEFAULT=	XMMS
 BMP_DESC=		Use Beep Media Player
+BMP_LIB_DEPENDS=	libbeep.so:${PORTSDIR}/multimedia/beep-media-player
 XMMS_DESC=		Use XMMS
+XMMS_LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBMP}
-LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
 MAKE_ENV+=	USE_BMP=yes
-.elif ${PORT_OPTIONS:MXMMS}
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 .endif
+
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
 
 .include <bsd.port.mk>
