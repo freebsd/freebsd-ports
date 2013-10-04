@@ -22,5 +22,7 @@ lib/libspeexdsp.so
 lib/libspeexdsp.so.1
 libdata/pkgconfig/speex.pc
 libdata/pkgconfig/speexdsp.pc
+man/man1/speexdec.1.gz
+man/man1/speexenc.1.gz
 share/aclocal/speex.m4
 @dirrm include/speex

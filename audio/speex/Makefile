@@ -9,22 +9,18 @@ CATEGORIES=	audio
 MASTER_SITES=	http://downloads.us.xiph.org/releases/speex/
 
 MAINTAINER=	multimedia@FreeBSD.org
-COMMENT=	An open-source patent-free voice codec
+COMMENT=	Open-source patent-free voice codec
 
-LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
 
-CONFLICTS=	speex-devel-[0-9]*
-
-USE_GNOME=	gnomehack ltverhack
-NO_STAGE=	yes
+USES=		pathfix
+USE_GNOME=	ltverhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg-dir=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-MAN1=		speexdec.1 speexenc.1
 
 .include <bsd.port.pre.mk>
 
