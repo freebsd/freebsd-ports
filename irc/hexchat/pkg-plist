@@ -12,6 +12,7 @@ lib/hexchat/plugins/checksum.so
 %%PYTHON%%lib/hexchat/plugins/python.la
 %%PYTHON%%lib/hexchat/plugins/python.so
 libdata/pkgconfig/hexchat-plugin.pc
+man/man1/hexchat.1.gz
 share/applications/hexchat.desktop
 %%DBUS%%share/dbus-1/services/org.hexchat.service.service
 share/icons/hicolor/48x48/apps/hexchat.png
