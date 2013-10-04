@@ -17,10 +17,6 @@ NO_BUILD=	yes
 RCUBECOMP=	.htaccess SQL config index.php installer logs plugins program robots.txt skins temp
 PORTDOCS=	CHANGELOG INSTALL README.md UPGRADING
 
-SCRIPTS_ENV=	SHAREOWN=${SHAREOWN} SHAREGRP=${SHAREGRP} \
-		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} \
-		WWWDIR=${WWWDIR}
-
 WANT_PHP_WEB=	yes
 USE_PHP=	pcre mbstring session iconv dom xml json intl zip filter
 IGNORE_WITH_PHP=52
@@ -39,7 +35,6 @@ GD_DESC=	Enable GD support (image conversion)
 PSPELL_DESC=	Enable PSpell support (internal spellcheck)
 NSC_DESC=	Install network spellchecker
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -87,25 +82,25 @@ post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -type f -delete
 
 do-install:
-	-${MKDIR} ${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_BIN} bin ${WWWDIR}
+	-${MKDIR} ${STAGEDIR}/${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_BIN} bin ${STAGEDIR}/${WWWDIR}
 .for i in ${RCUBECOMP}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}/${WWWDIR}
 .endfor
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/logs ${WWWDIR}/temp
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}/${DOCSDIR}
 .for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}/${DOCSDIR}/
 .endfor
 .endif
 	@(cd ${WRKSRC}; ${FIND} bin ${RCUBECOMP} -not -type d) | ${SORT} | \
 		${SED} -ne 's,^,${WWWDIR_REL}/,p' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec chown ${WWWOWN}:${WWWGRP} %D/${WWWDIR_REL}/logs' \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} '@exec chown ${WWWOWN}:${WWWGRP} %D/${WWWDIR_REL}/temp' \
+		>> ${TMPPLIST}
 	@(cd ${WRKSRC}; ${FIND} bin ${RCUBECOMP} -type d) | ${SORT} -r | \
 		${SED} -ne 's,^,@dirrm ${WWWDIR_REL}/,p' >> ${TMPPLIST}
 	@${ECHO_CMD} '@dirrm ${WWWDIR_REL}' >> ${TMPPLIST}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
