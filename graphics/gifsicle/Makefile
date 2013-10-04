@@ -26,7 +26,6 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MX11}
-PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=	--without-x --disable-gifview
 .else
 USE_XORG=	x11

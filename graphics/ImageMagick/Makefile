@@ -350,7 +350,6 @@ USE_GHOSTSCRIPT=	yes
 .endif
 
 .if defined(WITHOUT_X11)
-PKGNAMESUFFIX+=		-nox11
 CONFIGURE_ARGS+=	--without-x
 CONFLICTS+=		ImageMagick-6*
 PLIST_SUB+=		X11='@comment '

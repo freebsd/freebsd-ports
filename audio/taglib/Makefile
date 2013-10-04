@@ -27,7 +27,6 @@ USE_LDCONFIG=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRCC}
-PKGNAMESUFFIX=	-rcc
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-rcc
 LIB_DEPENDS+=	rcc:${PORTSDIR}/devel/librcc
 PLIST_SUB+=	RCC=""

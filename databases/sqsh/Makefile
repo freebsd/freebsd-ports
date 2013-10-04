@@ -31,8 +31,6 @@ NO_STAGE=	yes
 .if ${PORT_OPTIONS:MX11}
 USES+=		motif
 CONFIGURE_ARGS+=	--with-motif --with-x
-.else
-PKGNAMESUFFIX=	-nox11
 .endif
 
 post-patch:

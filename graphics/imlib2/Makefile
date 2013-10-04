@@ -42,7 +42,6 @@ CONFIGURE_ARGS+=	--disable-amd64
 
 .if ! ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=	--without-x
-PKGNAMESUFFIX+=	-nox11
 PLIST_SUB=	X11="@comment "
 .else
 USE_XORG=	x11 sm xext

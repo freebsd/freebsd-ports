@@ -26,7 +26,6 @@ INFO=		mikmod
 .if ${HAVE_GNOME:Mesound}!=""
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--enable-esd
-PKGNAMESUFFIX=	-esound
 .else
 CONFIGURE_ARGS+=	--disable-esd
 .endif

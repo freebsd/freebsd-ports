@@ -48,7 +48,6 @@ CONFIGURE_ARGS+=--enable-client=gtk
 CONFLICTS=	freeciv-nox11-[0-9]*
 PLIST_SUB+=	X11="" GTK=""
 .else
-PKGNAMESUFFIX?=	-nox11
 CONFIGURE_ARGS+=--enable-client=no
 CONFLICTS=	freeciv-[0-9]*
 PLIST_SUB+=	X11="@comment " GTK="@comment "

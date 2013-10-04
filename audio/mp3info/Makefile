@@ -32,7 +32,6 @@ ALL_TARGET=	doc mp3info
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
-PKGNAMESUFFIX=	-gtk
 USE_GNOME+=	gtk20
 ALL_TARGET+=	gmp3info
 MAKE_ARGS=	install-gmp3info
