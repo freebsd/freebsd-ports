@@ -57,7 +57,6 @@ NO_STAGE=	yes
 
 .if ${HAVE_GNOME:Mesound}!=""
 USE_GNOME=	esound
-PKGNAMESUFFIX=	-esound
 CONFIGURE_ARGS+=	--enable-audio=oss,esd
 .else
 CONFIGURE_ARGS+=	--enable-audio=oss
