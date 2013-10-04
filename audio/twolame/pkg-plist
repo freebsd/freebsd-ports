@@ -26,5 +26,6 @@ libdata/pkgconfig/twolame.pc
 %%DOCSDIR%%/html/vbr.html
 %%DOCSDIR%%/psycho.txt
 %%DOCSDIR%%/vbr.txt
+man/man1/twolame.1.gz
 @dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
