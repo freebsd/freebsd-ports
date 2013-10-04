@@ -1,0 +1,19 @@
+Index: Makefile
+diff -u Makefile.orig Makefile
+--- Makefile.orig	2013-06-02 23:07:08.000000000 +0900
++++ Makefile	2013-10-05 01:00:09.143956067 +0900
+@@ -94,11 +94,11 @@
+ 
+ realinstall:
+ 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 555 dtcps \
+-		${BINDIR}/dtcps
++		${DESTDIR}${BINDIR}/dtcps
+ 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 555 dtcpc \
+-		${BINDIR}/dtcpc
++		${DESTDIR}${BINDIR}/dtcpc
+ 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 555 dtcpauth \
+-		${BINDIR}/dtcpauth
++		${DESTDIR}${BINDIR}/dtcpauth
+ 
+ dist:
+ 	@data=`date +%Y%m%d`; \
