@@ -21,4 +21,5 @@ lib/libfluidsynth.so
 lib/libfluidsynth.so.1
 lib/libfluidsynth.so.1.5.2
 libdata/pkgconfig/fluidsynth.pc
+man/man1/fluidsynth.1.gz
 @dirrm include/fluidsynth
