@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2
-PORTVERSION=	0.08
+PORTVERSION=	0.10
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -94,7 +94,6 @@ MAN3=	Dancer2.3 \
 	Dancer2::Logger::Note.3 \
 	Dancer2::Logger::Null.3 \
 	Dancer2::Manual.3 \
-	Dancer2::ModuleLoader.3 \
 	Dancer2::Plugin.3 \
 	Dancer2::Plugin::Ajax.3 \
 	Dancer2::Plugins.3 \
@@ -110,5 +109,4 @@ MAN3=	Dancer2.3 \
 	Dancer2::Test.3 \
 	Dancer2::Tutorial.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
