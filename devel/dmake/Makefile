@@ -16,10 +16,7 @@ USE_BZIP2=        yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--datarootdir=${DATADIR}
 
-MAN1=		dmake.1
-
-NO_STAGE=	yes
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/man/dmake.tf ${PREFIX}/man/man1/dmake.1
+	${INSTALL_MAN} ${WRKSRC}/man/dmake.tf ${STAGEDIR}${PREFIX}/man/man1/dmake.1
 
 .include <bsd.port.mk>
