@@ -13,7 +13,7 @@ COMMENT=	Fonts created from by Google for ChromeOS to replace MS TTF
 #LICENSE=	OFL
 #LICENSE_NAME=	SIL OPEN FONT LICENSE Version 1.1
 #LICENSE_FILE=	${WRKSRC}/LICENSE
-#LICENSE_PERMS=	auto-accept
+#LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
@@ -35,20 +35,14 @@ INSTDAT=	fonts.dir fonts.scale
 MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
 MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${MKFONTSCL_CMD}
 	${REINPLACE_CMD} -e 's|-misc-|-google-|' ${WRKSRC}/fonts.scale
 	cd ${WRKSRC} && ${MKFONTDIR_CMD}
 
 do-install:
-	${MKDIR} ${FONTDIR}
+	${MKDIR} ${STAGEDIR}${FONTDIR}
 	cd ${WRKSRC} &&	\
-	${INSTALL_DATA} ${INSTDAT} *.ttf ${FONTDIR}
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	${INSTALL_DATA} ${INSTDAT} *.ttf ${STAGEDIR}${FONTDIR}
 
 .include <bsd.port.mk>
