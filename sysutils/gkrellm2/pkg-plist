@@ -1,22 +1,16 @@
+%%CLIENT%%bin/gkrellm
+%%CLIENT%%include/gkrellm2/gkrellm-public-proto.h
+%%CLIENT%%include/gkrellm2/gkrellm.h
 include/gkrellm2/gkrellmd.h
 include/gkrellm2/log.h
-@dirrmtry include/gkrellm2
+%%CLIENT%%libdata/pkgconfig/gkrellm.pc
 libdata/pkgconfig/gkrellmd.pc
+%%CLIENT%%man/man1/gkrellm.1.gz
+man/man8/gkrellmd.8.gz
 sbin/gkrellmd
-@exec mkdir -p %D/libexec/gkrellm2/plugins-gkrellmd
-@dirrmtry libexec/gkrellm2/plugins-gkrellmd
-@dirrmtry libexec/gkrellm2
 @unexec if cmp -s %D/etc/gkrellmd.conf %D/%%EXAMPLESDIR%%/gkrellmd.conf; then rm -f %D/etc/gkrellmd.conf; fi
 %%EXAMPLESDIR%%/gkrellmd.conf
 @exec [ -f %D/etc/gkrellmd.conf ] || cp %B/%f %D/etc/gkrellmd.conf
-@dirrm %%EXAMPLESDIR%%
-%%CLIENT%%include/gkrellm2/gkrellm.h
-%%CLIENT%%include/gkrellm2/gkrellm-public-proto.h
-%%CLIENT%%@dirrm include/gkrellm2
-%%CLIENT%%man/man1/gkrellm.1.gz
-%%CLIENT%%@unexec rm -f %D/man/cat1/gkrellm.1 %D/man/cat1/gkrellm.1.gz
-%%CLIENT%%bin/gkrellm
-%%CLIENT%%libdata/pkgconfig/gkrellm.pc
 %%NLS%%share/locale/bg/LC_MESSAGES/gkrellm.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gkrellm.mo
 %%NLS%%share/locale/da/LC_MESSAGES/gkrellm.mo
@@ -31,9 +25,10 @@ sbin/gkrellmd
 %%NLS%%share/locale/ru/LC_MESSAGES/gkrellm.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/gkrellm.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gkrellm.mo
-%%CLIENT%%@exec mkdir -p %D/libexec/gkrellm2/plugins
-%%CLIENT%%@exec mkdir -p %D/share/gkrellm2/themes
+%%CLIENT%%@dirrmtry %%DATADIR%%2/themes
+%%CLIENT%%@dirrmtry %%DATADIR%%2
+@dirrm %%EXAMPLESDIR%%
+@dirrmtry libexec/gkrellm2/plugins-gkrellmd
 %%CLIENT%%@dirrmtry libexec/gkrellm2/plugins
-%%CLIENT%%@dirrmtry libexec/gkrellm2
-%%CLIENT%%@dirrmtry share/gkrellm2/themes
-%%CLIENT%%@dirrmtry share/gkrellm2
+@dirrmtry libexec/gkrellm2
+@dirrm include/gkrellm2

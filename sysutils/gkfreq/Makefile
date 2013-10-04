@@ -17,5 +17,11 @@ USES=		pkgconfig
 
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellm-gkfreq.so
 
-NO_STAGE=	yes
+PLUGIN_DIR=	${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
+
+MAKE_ENV+=	PLUGIN_DIR=${PLUGIN_DIR}
+
+pre-install:
+	@${MKDIR} ${PLUGIN_DIR}
+
 .include <bsd.port.mk>
