@@ -1,4 +1,5 @@
 bin/xmoto
+man/man6/xmoto.6.gz
 %%NLS%%share/locale/ca_AD/LC_MESSAGES/xmoto.mo
 %%NLS%%share/locale/ca_ES/LC_MESSAGES/xmoto.mo
 %%NLS%%share/locale/ca_FR/LC_MESSAGES/xmoto.mo
@@ -25,21 +26,6 @@ bin/xmoto
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/xmoto.mo
 %%NLS%%share/locale/tr_TR/LC_MESSAGES/xmoto.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xmoto.mo
-%%DATADIR%%/Textures/Fonts/DejaVuSans.ttf
-%%DATADIR%%/Textures/Fonts/DejaVuSansMono.ttf
-%%DATADIR%%/Textures/Musics/MadeiraStew.ogg
-%%DATADIR%%/Textures/Musics/batcave.ogg
-%%DATADIR%%/Textures/Musics/foxrun.ogg
-%%DATADIR%%/Textures/Musics/legolodio.ogg
-%%DATADIR%%/Textures/Musics/menu.ogg
-%%DATADIR%%/Textures/Musics/ridealong.ogg
-%%DATADIR%%/Textures/Musics/speeditup.ogg
-%%DATADIR%%/xmoto.bin
-%%DATADIR%%/xmoto_icone_x.ico
-@dirrm %%DATADIR%%/Textures/Musics
-@dirrm %%DATADIR%%/Textures/Fonts
-@dirrm %%DATADIR%%/Textures
-@dirrm %%DATADIR%%
 %%NLS%%@dirrmtry share/locale/tr_TR/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/tr_TR
 %%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
