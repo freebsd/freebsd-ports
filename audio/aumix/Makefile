@@ -46,7 +46,6 @@ CONFIGURE_ARGS+=--disable-nls
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}
-PKGNAMESUFFIX=	-gtk
 USE_GNOME=	gtk20
 .else
 CONFIGURE_ARGS+=--without-gtk

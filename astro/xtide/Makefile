@@ -47,7 +47,6 @@ PLIST_SUB+=	WVS="@comment "
 .endif
 
 .if ! ${PORT_OPTIONS:MX11}
-PKGNAMESUFFIX+=	-nox11
 ALL_TARGET+=	tide xttpd
 PLIST_SUB+=	X11="@comment "
 .else
