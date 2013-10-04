@@ -13,9 +13,7 @@ USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
-MAN1=		calcoo.1
+PLIST_FILES=	bin/calcoo \
+		man/man1/calcoo.1.gz
 
-PLIST_FILES=	bin/calcoo
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
