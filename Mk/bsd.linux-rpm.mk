@@ -152,9 +152,9 @@ pre-install: linux-rpm-generate-plist
 
 .    if !target(linux-rpm-generate-plist)
 linux-rpm-generate-plist:
-	@cd ${WRKSRC} && \
+	cd ${WRKSRC} && \
 	${FIND} * -path ./stage -prune ! -type d | ${SORT} > ${PLIST} && \
-	${FIND} * -path ./stage -prune -type d | ${SORT} | ${SED} -e 's|^|@dirrm |' > ${PLIST}.dirs
+	${FIND} * | ${GREP} -v "^stage" | ${SORT} | ${SED} -e 's|^|@dirrm |' > ${PLIST}.dirs
 	@${GREP} '^@dirrm' ${PORTSDIR}/emulators/linux_base-${_LINUX_BASE_SUFFIX}/pkg-plist | ${SED} 's:^@dirrmtry:@dirrm:g' | ${SORT} > ${PLIST}.shared-dirs
 	@${COMM} -1 -3 ${PLIST}.shared-dirs ${PLIST}.dirs | ${SORT} -r >> ${PLIST}
 .    endif
