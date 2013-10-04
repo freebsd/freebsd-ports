@@ -22,7 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GCC=	any
 USES=		cmake
-USE_QT4=  gui qt3support xml  moc_build qmake_build rcc_build uic_build
+USE_QT4=	gui qt3support xml  moc_build qmake_build rcc_build uic_build
 CXXFLAGS+=	-I${PREFIX}/include \
 		-I${PREFIX}/include/libavcodec \
 		-I${PREFIX}/include/libavformat \
@@ -32,8 +32,6 @@ MAN1=		dvbcut.1
 PLIST_FILES=	bin/dvbcut
 
 NO_STAGE=	yes
-#post-extract:
-#		${RM} ${WRKSRC}/src/mplayererrorbase.h
 
 pre-patch:
 		cd ${WRKSRC} && ${BZCAT} ${FILESDIR}/use-qt4.diff.bz2 | ${PATCH} -p2
