@@ -11,14 +11,13 @@ COMMENT=	Standalone file import filter library for spreadsheet documents
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${LOCALBASE}/include/mdds/global.hpp:${PORTSDIR}/devel/mdds
-LIB_DEPENDS=	zip:${PORTSDIR}/archivers/libzip \
-		boost_system:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libzip.so:${PORTSDIR}/archivers/libzip \
+		libboost_system.so:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USES=		pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 
 CONFIGURE_ARGS=	--disable-spreadsheet-model --disable-werror \
 		--with-boost="${LOCALBASE}" \
@@ -27,5 +26,4 @@ CONFIGURE_ENV=	ZLIB_CFLAGS="-I/usr/include" ZLIB_LIBS="-lz"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
