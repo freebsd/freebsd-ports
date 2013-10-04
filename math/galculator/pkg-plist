@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/galculator
+man/man1/galculator.1.gz
 share/applications/galculator.desktop
 %%DATADIR%%/ui/about.ui
 %%DATADIR%%/ui/basic_buttons_gtk2.ui
