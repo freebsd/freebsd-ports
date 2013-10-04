@@ -10,11 +10,11 @@ DISTNAME=	${PORTNAME}-C++-${PORTVERSION:S/.r/rc/}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A C++ reference implementation of the Atlas protocol
 
+PKGNAMESUFFIX=	-devel
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	YES
 USE_BZIP2=	YES
 USES=	pathfix
-NO_LATEST_LINK=	YES
 
 CONFIGURE_ARGS+=--program-transform-name=
 
