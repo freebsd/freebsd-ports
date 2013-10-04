@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
-COMMENT=	perl interface to Hatena::Star
+COMMENT=	Perl interface to Hatena::Star
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck \
@@ -18,10 +18,11 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=		WWW::HatenaStar.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e "s|WWW::HatenaLogin|'WWW::HatenaLogin'|" \
+	    ${WRKSRC}/Makefile.PL
+
 .include <bsd.port.mk>
