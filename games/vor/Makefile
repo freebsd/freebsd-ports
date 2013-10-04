@@ -11,12 +11,14 @@ MASTER_SITES=	http://qualdan.com/vor/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Dodge the rocks until you die
 
+USES=		gmake
 USE_SDL=	mixer image sdl
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
-PORTDOCS=	README
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	*
+PORTDATA=	*
 
 DESKTOP_ENTRIES="Variations on Rockdodger" \
 		"Dodge the rocks until you die" \
@@ -25,15 +27,14 @@ DESKTOP_ENTRIES="Variations on Rockdodger" \
 		"Game;ArcadeGame;" \
 		false
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
