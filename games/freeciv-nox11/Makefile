@@ -4,8 +4,8 @@
 MASTERDIR=	${.CURDIR}/../freeciv
 
 # Explicitly exclude X11 options
-OPTIONS_DEFINE=	MYSQL IPV6
-OPTIONS_DEFAULT=MYSQL IPV6
+OPTIONS_EXCLUDE=	SDL X11
+PKGNAMESUFFIX=	-nox11
 
 NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
