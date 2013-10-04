@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeSynd GPLed reimplementation of the classic Bullfrog game Syndicate
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
