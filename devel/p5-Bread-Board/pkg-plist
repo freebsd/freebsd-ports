@@ -1,4 +1,3 @@
-bin/visualize-breadboard
 %%SITE_PERL%%/Bread/Board.pm
 %%SITE_PERL%%/Bread/Board/BlockInjection.pm
 %%SITE_PERL%%/Bread/Board/ConstructorInjection.pm
@@ -6,8 +5,6 @@ bin/visualize-breadboard
 %%SITE_PERL%%/Bread/Board/Container/Parameterized.pm
 %%SITE_PERL%%/Bread/Board/Dependency.pm
 %%SITE_PERL%%/Bread/Board/Dumper.pm
-%%SITE_PERL%%/Bread/Board/GraphViz.pm
-%%SITE_PERL%%/Bread/Board/GraphViz/App.pm
 %%SITE_PERL%%/Bread/Board/LifeCycle.pm
 %%SITE_PERL%%/Bread/Board/LifeCycle/Singleton.pm
 %%SITE_PERL%%/Bread/Board/LifeCycle/Singleton/WithParameters.pm
@@ -38,8 +35,6 @@ bin/visualize-breadboard
 %%PERL5_MAN3%%/Bread::Board::Container::Parameterized.3.gz
 %%PERL5_MAN3%%/Bread::Board::Dependency.3.gz
 %%PERL5_MAN3%%/Bread::Board::Dumper.3.gz
-%%PERL5_MAN3%%/Bread::Board::GraphViz.3.gz
-%%PERL5_MAN3%%/Bread::Board::GraphViz::App.3.gz
 %%PERL5_MAN3%%/Bread::Board::LifeCycle.3.gz
 %%PERL5_MAN3%%/Bread::Board::LifeCycle::Singleton.3.gz
 %%PERL5_MAN3%%/Bread::Board::LifeCycle::Singleton::WithParameters.3.gz
@@ -62,7 +57,6 @@ bin/visualize-breadboard
 %%PERL5_MAN3%%/Bread::Board::SetterInjection.3.gz
 %%PERL5_MAN3%%/Bread::Board::Traversable.3.gz
 %%PERL5_MAN3%%/Bread::Board::Types.3.gz
-man/man1/visualize-breadboard.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bread/Board
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bread
 @dirrm %%SITE_PERL%%/Bread/Board/Service/Deferred
@@ -72,7 +66,6 @@ man/man1/visualize-breadboard.1.gz
 @dirrm %%SITE_PERL%%/Bread/Board/Manual
 @dirrm %%SITE_PERL%%/Bread/Board/LifeCycle/Singleton
 @dirrm %%SITE_PERL%%/Bread/Board/LifeCycle
-@dirrm %%SITE_PERL%%/Bread/Board/GraphViz
 @dirrm %%SITE_PERL%%/Bread/Board/Container
 @dirrm %%SITE_PERL%%/Bread/Board
 @dirrmtry %%SITE_PERL%%/Bread
