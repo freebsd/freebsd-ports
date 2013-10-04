@@ -12,14 +12,14 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Challenging 2D motocross platform game
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		curl:${PORTSDIR}/ftp/curl \
-		xdg-basedir:${PORTSDIR}/x11/libxdg-basedir
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libcurl.so:${PORTSDIR}/ftp/curl \
+		libxdg-basedir.so:${PORTSDIR}/x11/libxdg-basedir
 BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_GNOME=	libxml2
 USE_LUA=	5.1
 USE_SQLITE=	3
@@ -33,11 +33,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	README ChangeLog
+PORTDATA=	*
 
 OPTIONS_DEFINE=	ASIAN_TTF DOCS NLS
 ASIAN_TTF_DESC=	Use asian TTF font
-
-MAN6=		xmoto.6
 
 DESKTOP_ENTRIES="XMoto" \
 		"Motorcross game" \
@@ -46,7 +45,6 @@ DESKTOP_ENTRIES="XMoto" \
 		"Game;SportsGame;ArcadeGame;" \
 		false
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASIAN_TTF}
@@ -67,9 +65,9 @@ PLIST_SUB+=	NLS="@comment "
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
