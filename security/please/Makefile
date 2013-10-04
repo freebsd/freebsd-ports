@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	please
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	security
 
 MAINTAINER=	gblach@FreeBSD.org
@@ -15,10 +15,9 @@ BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	MagikBSD
 GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	71c64bc
+GH_COMMIT=	778f941
 
-PLIST_FILES=	bin/please
-MAN1=		please.1
+NEED_ROOT=	yes
+PLIST_FILES=	bin/please man/man1/please.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
