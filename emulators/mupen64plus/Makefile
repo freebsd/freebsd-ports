@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mupen64plus
-PORTVERSION=	1.99.4
-PORTREVISION=	3
+PORTVERSION=	2.0
 CATEGORIES=	emulators
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -24,6 +23,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/${PORTNAME}/mupen64plus-input-sdl.so:${PORTSDIR}/
 
 # Graphics plugins
 RUN_DEPENDS+=	${LOCALBASE}/lib/${PORTNAME}/mupen64plus-video-rice.so:${PORTSDIR}/emulators/mupen64plus-video-rice
+RUN_DEPENDS+=	${LOCALBASE}/lib/${PORTNAME}/mupen64plus-video-glide64mk2.so:${PORTSDIR}/emulators/mupen64plus-video-glide64mk2
 
 # RSP plugins
 RUN_DEPENDS+=	${LOCALBASE}/lib/${PORTNAME}/mupen64plus-rsp-hle.so:${PORTSDIR}/emulators/mupen64plus-rsp-hle
