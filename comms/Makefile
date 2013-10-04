@@ -154,7 +154,6 @@
     SUBDIR += uartlirc
     SUBDIR += uhso-kmod
     SUBDIR += uird
-    SUBDIR += umcs7840
     SUBDIR += unixcw
     SUBDIR += usbmuxd
     SUBDIR += usrp
