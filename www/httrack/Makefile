@@ -23,8 +23,6 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USES=		gmake iconv
 
-MAN1=		htsserver.1 httrack.1 proxytrack.1 webhttrack.1
-
 .include <bsd.port.options.mk>
 
 post-patch:
