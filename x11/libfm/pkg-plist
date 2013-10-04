@@ -1,11 +1,11 @@
 bin/libfm-pref-apps
-include/libfm
 @unexec if cmp -s %D/etc/xdg/libfm/libfm.conf %D/etc/xdg/libfm/libfm.conf.sample; then rm -f %D/etc/xdg/libfm/libfm.conf; fi
 etc/xdg/libfm/libfm.conf.sample
 @exec if [ ! -f %D/etc/xdg/libfm/libfm.conf ] ; then cp -p %D/%F %B/libfm.conf; fi
 @unexec if cmp -s %D/etc/xdg/libfm/pref-apps.conf %D/etc/xdg/libfm/pref-apps.conf.sample; then rm -f %D/etc/xdg/libfm/pref-apps.conf; fi
 etc/xdg/libfm/pref-apps.conf.sample
 @exec if [ ! -f %D/etc/xdg/libfm/pref-apps.conf ] ; then cp -p %D/%F %B/pref-apps.conf; fi
+include/libfm
 include/libfm-1.0/fm-actions.h
 include/libfm-1.0/fm-app-chooser-combo-box.h
 include/libfm-1.0/fm-app-chooser-dlg.h
@@ -76,6 +76,7 @@ lib/libfm.so.4
 libdata/pkgconfig/libfm-gtk.pc
 libdata/pkgconfig/libfm-gtk3.pc
 libdata/pkgconfig/libfm.pc
+man/man1/libfm-pref-apps.1.gz
 share/applications/libfm-pref-apps.desktop
 %%DATADIR%%/archivers.list
 %%DATADIR%%/ui/app-chooser.ui
@@ -143,8 +144,6 @@ share/applications/libfm-pref-apps.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libfm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/libfm.mo
 share/mime/packages/libfm.xml
-@dirrmtry etc/xdg/libfm
-@dirrmtry etc/xdg
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
@@ -157,3 +156,5 @@ share/mime/packages/libfm.xml
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm include/libfm-1.0
+@dirrmtry etc/xdg/libfm
+@dirrmtry etc/xdg
