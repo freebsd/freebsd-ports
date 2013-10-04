@@ -98,6 +98,7 @@
     SUBDIR += psybnc
     SUBDIR += pure-emacs21
     SUBDIR += pure-xemacs21-mule
+    SUBDIR += py-fishcrypt
     SUBDIR += py-gozerbot
     SUBDIR += py-irc
     SUBDIR += py-supybot
