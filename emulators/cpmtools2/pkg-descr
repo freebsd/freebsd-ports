@@ -12,10 +12,9 @@ tools:
   * fsck.cpm - check and repair a CP/M file system (only simple errors can
     be repaired so far). Some images of broken file systems are provided.
   * fsed.cpm - view CP/M file system
-  * manual pages for everything including the CP/M file system format 
+  * manual pages for everything including the CP/M file system format
 
 All CP/M file system features are supported. Password protection is ignored,
 but a pseudo file [passwd] contains them decrypted.
 
-Author: Michael Moria <<michael@moria.de>
 WWW: http://www.moria.de/~michael/cpmtools/
