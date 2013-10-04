@@ -11,11 +11,10 @@ MASTER_SITES=	SF
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GTK front-end to external cd rippers and audio encoders
 
-LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libid3-3.8.so:${PORTSDIR}/audio/id3lib \
+		libcurl.so:${PORTSDIR}/ftp/curl
 
 USE_XORG=	x11
-NO_STAGE=	yes
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	gnomeprefix libgnomeui vte
 USE_AUTOTOOLS=	libtool
@@ -31,7 +30,7 @@ OPTIONS_DEFAULT+=	LAME
 
 OPTIONS_SUB=	yes
 
-CDPARANOIA_LIB_DEPENDS=	cdda_paranoia:${PORTSDIR}/audio/cdparanoia
+CDPARANOIA_LIB_DEPENDS=	libcdda_paranoia.so:${PORTSDIR}/audio/cdparanoia
 CDPARANOIA_CONFIGURE_ENABLE=	cdpar
 CDDA2WAV_RUN_DEPENDS=	cdda2wav:${PORTSDIR}/sysutils/cdrtools
 FAAC_RUN_DEPENDS=	faac:${PORTSDIR}/audio/faac
