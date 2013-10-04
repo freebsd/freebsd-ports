@@ -31,21 +31,13 @@ INSTDAT=	fonts.dir fonts.scale
 
 WRKSRC=	${WRKDIR}/${FONTNAME}
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${MKFONTSCL_CMD}
 	cd ${WRKSRC} && ${MKFONTDIR_CMD}
 
 do-install:
-	${MKDIR} ${FONTDIR}
+	${MKDIR} ${STAGEDIR}${FONTDIR}
 	cd ${WRKSRC} &&	\
-		${INSTALL_DATA} ${INSTDAT} ${WRKSRC}/*.ttf ${FONTDIR}
-
-post-install:
-	${ECHO_MSG} "===> Running fc-cache"
-	-${LOCALBASE}/bin/fc-cache -f -v ${FONTDIR}
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+		${INSTALL_DATA} ${INSTDAT} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTDIR}
 
 .include <bsd.port.mk>
