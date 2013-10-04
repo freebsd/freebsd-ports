@@ -57,12 +57,15 @@ pre-install:
 .if ${PKGNAMESUFFIX} != "-lcl-units"
 	@${ECHO_CMD} "@dirrm %%DATADIR%%/lcl/units/%%BUILDNAME%%/${LCL_INTERFACE}" >> ${PLIST}
 .endif
+	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/ideintf/units/%%BUILDNAME%%/${LCL_INTERFACE}" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/ideintf/units/%%BUILDNAME%%" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/ideintf/units" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/ideintf" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/synedit/units/%%BUILDNAME%%/${LCL_INTERFACE}" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/synedit/units/%%BUILDNAME%%" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/synedit/units" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/synedit" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/lazcontrols/lib/%%BUILDNAME%%/${LCL_INTERFACE}" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/lazcontrols/lib/%%BUILDNAME%%" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/lazcontrols/lib" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/components/lazcontrols" >> ${PLIST}
