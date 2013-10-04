@@ -104,21 +104,25 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e 's|%%DATADIR%%|${DATADIR}|g' \
-			-e 's|tools: lcl|tools:|g' -e '2744d' ${WRKSRC}/${MAKEFILE}
+			-e 's|tools: lcl|tools:|g' -e '2744d' -e '2746d' -e '2747d' ${WRKSRC}/${MAKEFILE}
 
 pre-build:
 	@${LN} -s ${LOCALBASE}/share/${PORTNAME}/lcl/units ${WRKSRC}/lcl/units
+	@${LN} -s ${LOCALBASE}/share/${PORTNAME}/ideintf/units ${WRKSRC}/ideintf/units
+	@${LN} -s ${LOCALBASE}/share/${PORTNAME}/components/synedit/units ${WRKSRC}/components/synedit/units
+	@${LN} -s ${LOCALBASE}/share/${PORTNAME}/components/lazcontrols/lib ${WRKSRC}/components/lazcontrols/lib
 
 do-build:
 	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} registration lazutils codetools ideintf basecomponents ide starter lazbuild LCL_PLATFORM=${LCL_PLATFORM}
+		${SETENV} ${MAKE_ENV} ${GMAKE} registration lazutils codetools ide starter lazbuild LCL_PLATFORM=${LCL_PLATFORM}
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} tools LCL_PLATFORM=${LCL_PLATFORM}
 
 post-build:
 	@cd ${WRKSRC} && \
 		${RM} -Rf COPYING* README* debian localize.bat test *.orig *.bak startlazarus.app \
-			ide/Makefile*.orig ide/Makefile*.bak
+			ide/Makefile*.orig ide/Makefile*.bak lcl/units ideintf/units \
+				components/synedit/units components/lazcontrols/lib
 
 pre-install:
 	@${ECHO} "#!/bin/sh" > ${WRKDIR}/lazarus-wrapper
