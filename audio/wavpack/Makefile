@@ -13,13 +13,10 @@ LICENSE=	BSD
 
 USE_BZIP2=	yes
 USES=		pathfix pkgconfig iconv
-NO_STAGE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-MAN1=		wavpack.1 wvgain.1 wvunpack.1
 
 .if ${MACHINE_CPU:Mmmx}
 CONFIGURE_ARGS=	--enable-mmx

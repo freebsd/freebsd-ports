@@ -7,4 +7,7 @@ lib/libwavpack.la
 lib/libwavpack.so
 lib/libwavpack.so.2
 libdata/pkgconfig/wavpack.pc
+man/man1/wavpack.1.gz
+man/man1/wvgain.1.gz
+man/man1/wvunpack.1.gz
 @dirrm include/wavpack
