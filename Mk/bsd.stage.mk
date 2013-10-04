@@ -72,14 +72,11 @@ add-plist-info:
 
 .if !target(makeplist)
 makeplist: stage
-.if !empty(MTREE_FILE)
-	@{ ${ECHO_CMD} "#mtree"; ${CAT} ${MTREE_FILE}; } | ${TAR} tf - | \
+	@if [ -n "${MTREE_FILE}" ]; then \
+	{ ${ECHO_CMD} "#mtree"; ${CAT} ${MTREE_FILE}; } | ${TAR} tf - | \
 		awk '{ sub(/^\.$$/, "", $$1); \
-		if ($$1 == "") print "${PREFIX}"; else print "${PREFIX}/"$$1; }' \
-		> ${WRKDIR}/.mtree
-.else
-	@: > ${WRKDIR}/.mtree
-.endif
+		if ($$1 == "") print "${PREFIX}"; else print "${PREFIX}/"$$1; }' ; \
+	fi > ${WRKDIR}/.mtree
 	@a=${PREFIX}; \
 		while :; do \
 			a=$${a%/*} ; \
@@ -123,14 +120,11 @@ check-orphans: stage
 		*) ${ECHO_CMD} $$cwd/$$line ;; \
 		esac ; \
 	done < ${TMPPLIST} > ${WRKDIR}/.expanded-plist
-.if !empty(MTREE_FILE)
-	@{ ${ECHO_CMD} "#mtree"; ${CAT} ${MTREE_FILE}; } | ${TAR} tf - | \
+	@if [ -n "${MTREE_FILE}" ]; then \
+		{ ${ECHO_CMD} "#mtree"; ${CAT} ${MTREE_FILE}; } | ${TAR} tf - | \
 		awk '{ sub(/^\.$$/, "", $$1); \
-		if ($$1 == "") print "${PREFIX}"; else print "${PREFIX}/"$$1; }' \
-		> ${WRKDIR}/.mtree
-.else
-	@: > ${WRKDIR}/.mtree
-.endif
+		if ($$1 == "") print "${PREFIX}"; else print "${PREFIX}/"$$1; }' ; \
+	fi > ${WRKDIR}/.mtree
 	@a=${PREFIX}; \
 		while :; do \
 			a=$${a%/*} ; \
