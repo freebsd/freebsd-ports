@@ -26,10 +26,7 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 
 ESOUND_CONFIGURE_ENABLE=esd
-.include <bsd.port.options.mk>
-.if ${PORT_OPTIONS:MESOUND}
-USE_GNOME+=	esound
-.endif
+ESOUND_USE=	GNOME=esound
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/libao.conf|${PREFIX}&|' \
