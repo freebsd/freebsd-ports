@@ -13,10 +13,9 @@ COMMENT=	Simple logout button
 USES=		imake
 WRKSRC=		${WRKDIR}/xlogout
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
-MAN1=		xlogout.1
 
 PLIST_FILES=	bin/xlogout \
-		lib/X11/app-defaults/XLogout
+		lib/X11/app-defaults/XLogout \
+		man/man1/xlogout.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
