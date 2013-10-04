@@ -2,21 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	Net-MAC-Vendor
-PORTVERSION=	1.1901
+PORTVERSION=	1.2000
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/00$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Look up the vendor for a MAC
 
-BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-MAN3=	Net::MAC::Vendor.3
+BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
