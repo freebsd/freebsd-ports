@@ -43,9 +43,10 @@ command="%%PREFIX%%/sbin/haproxy"
 # Load Configs/Set Defaults
 load_rc_config $name
 : ${haproxy_enable:="NO"}
-pidfile=${haproxy_pidfile:-"/var/run/haproxy.pid"}
+: ${haproxy_pidfile:="/var/run/haproxy.pid"}
 : ${haproxy_config:="%%PREFIX%%/etc/${name}.conf"}
-: ${haproxy_flags="-q -f ${haproxy_config} -p ${pidfile}"}
+: ${haproxy_flags="-q -f ${haproxy_config} -p ${haproxy_pidfile}"}
+procname=${command}
 
 # Update the globals
 required_files=$haproxy_config
@@ -67,8 +68,8 @@ haproxy_reload()
 	if [ $? -ne 0 ]; then
 	    err 1 "Error found in ${haproxy_config} - not reloading current process!"
 	fi
-	rc_pid=$(check_pidfile ${pidfile} ${command})
-	if [ $rc_pid ]; then
+	rc_pid=$(check_process ${procname})
+	if [ -n "$rc_pid" ]; then
 		if [ $rc_force ]; then
 			${command} ${haproxy_flags} -st ${rc_pid}
 		else
