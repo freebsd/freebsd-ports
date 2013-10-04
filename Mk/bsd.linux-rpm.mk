@@ -170,7 +170,7 @@ do-install:
 .	if ${BRANDELF_FILES}
 		@cd ${WRKSRC} && ${BRANDELF} -t Linux ${BRANDELF_FILES}
 .	endif
-	cd ${WRKSRC} && ${FIND} * -path ./stage -prune -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/{}" \;
+	cd ${WRKSRC} && ${FIND} * -type d | ${GREP} -v "^stage" | ${PAX} -rw ${STAGEDIR}/${PREFIX}
 	cd ${WRKSRC} && ${FIND} * -path ./stage -prune ! -type d | ${CPIO} -pm -R root:wheel ${STAGEDIR}${PREFIX}
 .  endif
 
