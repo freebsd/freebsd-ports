@@ -1,6 +1,6 @@
 --- Makefile.orig	2012-06-06 01:55:53.000000000 +0800
 +++ Makefile	2013-02-24 13:23:52.068205829 +0800
-@@ -1,60 +1,38 @@
+@@ -1,14 +1,17 @@
 -BINS=isutf8 ifdata ifne pee sponge mispipe lckdo parallel errno
 +BINS=isutf8 ifne pee sponge mispipe lckdo errno
  PERLSCRIPTS=vidir vipe ts combine zrun chronic
@@ -23,13 +23,9 @@
  clean:
  	rm -f $(BINS) $(MANS) dump.c errnos.h errno.o
  
- install:
--	mkdir -p $(DESTDIR)$(PREFIX)/bin
--	$(INSTALL_BIN) $(BINS) $(DESTDIR)$(PREFIX)/bin
--	install $(PERLSCRIPTS) $(DESTDIR)$(PREFIX)/bin
-+	mkdir -p $(PREFIX)/bin
-+	$(INSTALL_BIN) $(BINS) $(PREFIX)/bin
-+	install $(PERLSCRIPTS) $(PREFIX)/bin
+@@ -17,44 +20,19 @@
+ 	$(INSTALL_BIN) $(BINS) $(DESTDIR)$(PREFIX)/bin
+ 	install $(PERLSCRIPTS) $(DESTDIR)$(PREFIX)/bin
  	
 -	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man1
 -	install $(MANS) $(DESTDIR)$(PREFIX)/share/man/man1
