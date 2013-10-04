@@ -13,10 +13,9 @@ COMMENT=	The True Audio Encoder, lossless (de)compressor
 
 LICENSE=	GPLv2
 
-NO_STAGE=	yes
 USES=		gmake
 ALL_TARGET=	ttaenc
-MAKE_ARGS=	CFLAGS="${CFLAGS}" INSDIR="${PREFIX}/bin"
+MAKE_ARGS=	CFLAGS="${CFLAGS}" INSDIR="${STAGEDIR}${PREFIX}/bin"
 
 PLIST_FILES=	bin/ttaenc
 PORTDOCS=	README
@@ -29,9 +28,7 @@ post-patch:
 		s|install -m 755|${INSTALL_PROGRAM}|' ${WRKSRC}/Makefile
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
