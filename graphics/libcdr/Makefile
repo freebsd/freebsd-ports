@@ -12,10 +12,10 @@ LICENSE=	LGPL21 MPL GPLv2
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/optional.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	icui18n:${PORTSDIR}/devel/icu \
-		wpd-0.9:${PORTSDIR}/textproc/libwpd \
-		wpg-0.2:${PORTSDIR}/graphics/libwpg \
-		lcms2:${PORTSDIR}/graphics/lcms2
+LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu \
+		libwpd-0.9.so:${PORTSDIR}/textproc/libwpd \
+		libwpg-0.2.so:${PORTSDIR}/graphics/libwpg \
+		liblcms2.so:${PORTSDIR}/graphics/lcms2
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
@@ -26,5 +26,4 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-Wno-long-long
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
