@@ -5,8 +5,10 @@ include/libofx/libofx.h
 lib/libofx.a
 lib/libofx.la
 lib/libofx.so
-lib/libofx.so.5
+lib/libofx.so.6
 libdata/pkgconfig/libofx.pc
+man/man1/ofxconnect.1.gz
+man/man1/ofxdump.1.gz
 %%DATADIR%%/dtd/ofc.dtd
 %%DATADIR%%/dtd/ofx160.dtd
 %%DATADIR%%/dtd/ofx201.dtd

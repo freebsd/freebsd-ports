@@ -1,24 +1,22 @@
-LibOFX is an API designed to allow applications to very easily support
-OFX command responses, usually provided by financial institutions.
+LibOFX is a parser and an API designed to allow applications to
+very easily support OFX command responses, usually provided by
+financial institutions for statement downloads.
 
 LibOFX was implemented directly from the full OFX 1.6 spec, and
 currently supports:
--Banking transactions and statements
--Credit card and statements
-                                                                                
-For the 1.0 release, it should also support:
--Header parsing
--DTD autodetection
--OFX 2.0
--Currency conversion
 
-Somewhere in the future:
--investment transactions.
+- Banking transactions and statements
+- Credit card and statements
+- Investment transactions
+- OFX 2.0
 
-You should read the file doc/implementation_notes.txt
-                                                                                
-This is an ALPHA release.  It really works and is not vaporware, but the
-API is still subject to change, and several OFX structures are not fully
-implemented, notably currency conversions and the <PAYEE> aggregate.
+Future projects for LibOFX include:
+
+- Header parsing
+- DTD autodetection
+- Currency conversion
+- QIF import
+- QIF export (integrated inside the library)
+- OFX export
 
 WWW: http://libofx.sourceforge.net/

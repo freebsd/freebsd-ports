@@ -3,7 +3,7 @@
 
 PORTNAME=	grisbi
 PORTVERSION=	0.8.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION:R}.x/
 
@@ -12,7 +12,7 @@ COMMENT=	Personal accounting application
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	ofx.5:${PORTSDIR}/finance/libofx
+LIB_DEPENDS=	libofx.so:${PORTSDIR}/finance/libofx
 
 USE_BZIP2=	yes
 USES=		gmake iconv pkgconfig
