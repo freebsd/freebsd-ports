@@ -13,8 +13,8 @@ COMMENT=	Beneath a Steel Sky: a post-apocalyptic futuristic graphical adventure
 
 LICENSE=	unknown
 LICENSE_NAME=	no name
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_FILE=	${WRKSRC}/readme.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	scummvm:${PORTSDIR}/games/scummvm
 
@@ -24,21 +24,12 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/sky.dnr ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/sky.dsk ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/sky.cpt ${DATADIR}
-
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for docs in readme.txt
-	@${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
-.endfor
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/sky.dnr ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/sky.dsk ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/sky.cpt ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
