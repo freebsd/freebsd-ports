@@ -87,6 +87,10 @@ DEV_ERROR+=	"USE_ZOPE=yes is unsupported, please use USES=zope instead"
 DEV_WARNING+=	"USE_GNOME=gnomehack is deprecated, please use USES=pathfix"
 .endif
 
+.if defined(USE_GNOME) && ${USE_GNOME:Mdesktopfileutils}
+DEV_WARNING+=	"USE_GNOME=desktopfileutils is deprecated, please use USES=desktop-file-utils"
+.endif
+
 #.if defined(USE_GNOME) && ${USE_GNOME:Mltverhack*}
 #DEV_WARNING+=	"USE_GNOME=ltverhack is now useless LIB_DEPENDS can properly handle all kind of library version"
 #.endif
