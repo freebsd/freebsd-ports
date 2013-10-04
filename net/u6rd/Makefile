@@ -14,11 +14,8 @@ LICENSE=	BSD
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	u6rd
 
-MAN8=		u6rd.8
+PLIST_FILES=	sbin/u6rd man/man8/u6rd.8.gz
 
-PLIST_FILES=	sbin/u6rd
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -27,9 +24,9 @@ PORTDOCS=	NEWS README
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
