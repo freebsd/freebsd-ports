@@ -410,6 +410,7 @@
     SUBDIR += eric4
     SUBDIR += eris
     SUBDIR += esdl
+    SUBDIR += etcd
     SUBDIR += etl
     SUBDIR += eventxx
     SUBDIR += evolution-gconf-tools
