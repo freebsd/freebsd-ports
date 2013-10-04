@@ -16,8 +16,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Devel::Profiler.3 Devel::Profiler::Apache.3 \
-		Devel::Profiler::Test.3
+.include <bsd.port.pre.mk>
 
-NO_STAGE=	yes
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} > 501600
+IGNORE=	Devel::DProf has been removed from the Perl core, use Devel::NYTProf instead
+.endif
+
+.include <bsd.port.post.mk>
