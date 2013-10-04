@@ -370,7 +370,7 @@ WITH_${opt}:=  true
 .endfor
 ###
 
-.for opt in ${COMPLETE_OPTIONS_LIST}
+.for opt in ${COMPLETE_OPTIONS_LIST} ${OPTIONS_SLAVE}
 # PLIST_SUB
 PLIST_SUB?=
 .  if defined(OPTIONS_SUB)
