@@ -48,7 +48,6 @@ bin/dancer2
 %%SITE_PERL%%/Dancer2/Logger/Note.pm
 %%SITE_PERL%%/Dancer2/Logger/Null.pm
 %%SITE_PERL%%/Dancer2/Manual.pod
-%%SITE_PERL%%/Dancer2/ModuleLoader.pm
 %%SITE_PERL%%/Dancer2/Plugin.pm
 %%SITE_PERL%%/Dancer2/Plugin/Ajax.pm
 %%SITE_PERL%%/Dancer2/Plugins.pod
