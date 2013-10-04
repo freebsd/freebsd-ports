@@ -188,6 +188,7 @@ libdata/pkgconfig/mathview-frontend-custom-reader.pc
 libdata/pkgconfig/mathview-frontend-gmetadom.pc
 libdata/pkgconfig/mathview-frontend-libxml2-reader.pc
 libdata/pkgconfig/mathview-frontend-libxml2.pc
+man/man1/mathmlviewer.1.gz
 %%DATADIR%%/dictionary-combining.xml
 %%DATADIR%%/dictionary-local.xml
 %%DATADIR%%/dictionary.dtd

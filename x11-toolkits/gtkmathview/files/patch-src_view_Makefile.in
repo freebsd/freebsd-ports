@@ -1,0 +1,31 @@
+--- src/view/Makefile.in.orig	2013-10-04 15:02:02.000000000 +0200
++++ src/view/Makefile.in	2013-10-04 15:02:20.000000000 +0200
+@@ -305,28 +305,24 @@
+   $(top_builddir)/src/frontend/libxml2_reader/libfrontend_libxml2_reader.la \
+   $(top_builddir)/src/frontend/custom_reader/libfrontend_custom_reader.la \
+   $(top_builddir)/src/libmathview.la \
+-  -lstdc++ \
+   $(NULL)
+ 
+ libmathview_frontend_libxml2_reader_la_LIBADD = \
+   $(XML_LIBS) \
+   $(top_builddir)/src/frontend/libxml2_reader/libfrontend_libxml2_reader.la \
+   $(top_builddir)/src/libmathview.la \
+-  -lstdc++ \
+   $(NULL)
+ 
+ libmathview_frontend_libxml2_la_LIBADD = \
+   $(XML_LIBS) \
+   $(top_builddir)/src/frontend/libxml2/libfrontend_libxml2.la \
+   $(top_builddir)/src/libmathview.la \
+-  -lstdc++ \
+   $(NULL)
+ 
+ libmathview_frontend_gmetadom_la_LIBADD = \
+   $(DOM_LIBS) \
+   $(top_builddir)/src/frontend/gmetadom/libfrontend_gmetadom.la \
+   $(top_builddir)/src/libmathview.la \
+-  -lstdc++ \
+   $(NULL)
+ 
+ libmathview_frontend_custom_reader_la_CPPFLAGS = -DGMV_FrontEnd_DLL

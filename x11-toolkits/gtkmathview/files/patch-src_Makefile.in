@@ -1,0 +1,10 @@
+--- src/Makefile.in.orig	2013-10-04 15:01:01.000000000 +0200
++++ src/Makefile.in	2013-10-04 15:01:12.000000000 +0200
+@@ -285,7 +285,6 @@
+   $(MAYBE_BOXML_LIBADD) \
+   $(top_builddir)/src/engine/common/libengine_common.la \
+   $(top_builddir)/src/common/libcommon.la \
+-  -lstdc++ \
+   $(NULL)
+ 
+ all: all-recursive
