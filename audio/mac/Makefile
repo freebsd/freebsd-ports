@@ -12,7 +12,6 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Monkey's Audio lossless codec
 
 USE_AUTOTOOLS=	libtool
-NO_STAGE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
@@ -29,6 +28,6 @@ post-patch:
 
 post-install:
 	cd ${WRKSRC}/src/MACLib && ${INSTALL_DATA} BitArray.h \
-		Prepare.h UnBitArrayBase.h ${PREFIX}/include/mac
+		Prepare.h UnBitArrayBase.h ${STAGEDIR}${PREFIX}/include/mac
 
 .include <bsd.port.post.mk>
