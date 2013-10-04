@@ -93,17 +93,14 @@
 # ${opt}_CMAKE_OFF			When option is disabled, it will add its content to
 #							the CMAKE_ARGS.
 #
-# ${opt}_EXTRA_PATCHES		When option is enabled, it will add its content to
-# 							EXTRA_PATCHES
-#
 # For each of CFLAGS CPPFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ARGS MAKE_ENV
-# USES DISTFILES PLIST_FILES PLIST_DIRS PLIST_DIRSTRY EXTRA_PATCHES
-# PATCHFILES PATCH_SITES, defining
-# ${opt}_${variable} will add it to the actual variable when the option is enabled.
+# ALL_TARGET INSTALL_TARGET USES DISTFILES PLIST_FILES PLIST_DIRS PLIST_DIRSTRY
+# EXTRA_PATCHES PATCHFILES PATCH_SITES CATEGORIES, defining ${opt}_${variable}
+# will add its content to the actual variable when the option is enabled.
 #
 # For each of the depends target PKG EXTRACT PATCH FETCH BUILD LIB RUN,
-# defining ${opt}_${deptype}_DEPENDS will add it to the actual dependency when
-# the option is enabled.
+# defining ${opt}_${deptype}_DEPENDS will add its content to the actual
+# dependency when the option is enabled.
 
 ##
 # Set all the options available for the ports, beginning with the
@@ -397,8 +394,8 @@ CONFIGURE_ARGS+=	${${opt}_CONFIGURE_ON}
 CMAKE_ARGS+=	${${opt}_CMAKE_ON}
 .    endif
 .    for flags in CFLAGS CPPFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ARGS MAKE_ENV \
-                  USES DISTFILES PLIST_FILES PLIST_DIRS PLIST_DIRSTRY \
-                  EXTRA_PATCHES PATCHFILES PATCH_SITES
+                  ALL_TARGET INSTALL_TARGET USES DISTFILES PLIST_FILES PLIST_DIRS PLIST_DIRSTRY \
+                  EXTRA_PATCHES PATCHFILES PATCH_SITES CATEGORIES
 .      if defined(${opt}_${flags})
 ${flags}+=	${${opt}_${flags}}
 .      endif
