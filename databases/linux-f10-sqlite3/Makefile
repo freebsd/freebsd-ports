@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	sqlite-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	The library that implements an embeddable SQL database engine (Linux Fedora 10)
+COMMENT=	Library that implements an embeddable SQL database engine (Linux Fedora 10)
 
 CONFLICTS=	linux-f8-sqlite3-[0-9]*
 
@@ -21,13 +21,9 @@ BRANDELF_FILES=	usr/bin/sqlite3
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	usr/bin/sqlite3 usr/lib/libsqlite3.so.0 \
-		usr/lib/libsqlite3.so.0.8.6
+		usr/lib/libsqlite3.so.0.8.6 usr/share/man/man1/sqlite3.1.gz
 DOCSDIR=	${PREFIX}/usr/share/doc/sqlite-${PORTVERSION}
 PORTDOCS=	README
-MANPREFIX=	${PREFIX}/usr/share
-MAN1=		sqlite3.1
-MANCOMPRESSED=	yes
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
