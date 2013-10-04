@@ -34,11 +34,13 @@ USE_GNOME+=	gnomedesktop libgnomeui
 CONFIGURE_ARGS+=	--with-desktop=gnome
 CONFLICTS=	${PORTNAME}-xfce4-[0-9]* ${PORTNAME}-[0-9]*
 WITH_GCONF=	yes
+PKGNAMESUFFIX=	-gnome
 .elif ${AWN_DESKTOP} == "xfce4"
 OPTIONS_DEFINE=	GCONF
 USE_XFCE+=	thunar
 CONFIGURE_ARGS+=	--with-desktop=xfce4
 CONFLICTS=	${PORTNAME}-gnome-[0-9]* ${PORTNAME}-[0-9]*
+PKGNAMESUFFIX=	-xfce4
 .else
 # agnostic desktop
 OPTIONS_DEFINE=	GCONF
