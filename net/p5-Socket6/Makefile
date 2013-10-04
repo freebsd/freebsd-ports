@@ -10,9 +10,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	IPv6 related part of the C socket.h defines and structure manipulators
 
+LICENSE=	BSD
+
 USES=		perl5
 USE_PERL5=	configure
-CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}"
+CONFIGURE_ENV+=	CC="${CC}"
 
 PLIST_FILES=	%%SITE_PERL%%/%%PERL_ARCH%%/Socket6.pm \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket6/.packlist \
