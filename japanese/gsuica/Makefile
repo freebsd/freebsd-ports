@@ -29,7 +29,6 @@ NO_BUILD=		yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_DEFAULT_VER} != ${RUBY_VER}
@@ -41,7 +40,8 @@ post-patch:
 			  ${WRKSRC}/${PORTNAME}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin
 
 # Fetch station code database
 station-code-fetch:
