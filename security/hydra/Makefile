@@ -4,7 +4,7 @@
 PORTNAME=	hydra
 PORTVERSION=	7.5
 CATEGORIES=	security
-MASTER_SITES=	http://freeworld.thc.org/releases/ \
+MASTER_SITES=	https://www.thc.org/releases/ \
 		PACKETSTORM/groups/thc/
 
 MAINTAINER=	rm@FreeBSD.org
