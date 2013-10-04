@@ -27,7 +27,7 @@ LIB_DEPENDS+=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
 NO_STAGE=	yes
 
-USES=		pkgconfig
+USES=		iconv:patch pkgconfig
 USE_XORG=	xpm ice sm xext xv xt x11 xmu
 USE_XORG+=	xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes
 USE_GMAKE=	yes
@@ -104,7 +104,7 @@ LIB_DEPENDS+=		avcodec:${PORTSDIR}/multimedia/ffmpeg
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext iconv:patch
+USES+=		gettext
 CONFIGURE_ARGS+=	--enable-nls --localedir=${LOCALBASE}/share/locale
 # causes vice to crash:
 #LDFLAGS+=		-lgettextlib
