@@ -14,7 +14,6 @@ COMMENT=	Libraries for PulseAudio clients
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
-NO_STAGE=	yes
 LINUX_DIST_VER=	10
 RPMVERSION=	4.fc10
 SRC_DISTFILES=	${PORTNAME:S/-libs//}-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
@@ -29,7 +28,7 @@ post-patch:
 
 post-install:
 	@if [ ! -f ${PREFIX}/${CONF_FILE} ]; then \
-		${CP} -p ${PREFIX}/${CONF_FILE}-dist ${PREFIX}/${CONF_FILE} ; \
+		${CP} -p ${STAGEDIR}${PREFIX}/${CONF_FILE}-dist ${STAGEDIR}${PREFIX}/${CONF_FILE} ; \
 	fi
 
 .include <bsd.port.mk>

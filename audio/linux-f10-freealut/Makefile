@@ -9,12 +9,11 @@ PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	A free implementation of OpenAL's ALUT standard (Linux Fedora 10)
+COMMENT=	Free implementation of OpenAL's ALUT standard (Linux Fedora 10)
 
 CONFLICTS=	linux-freealut-[0-9]* linux-f8-freealut-[0-9]*
 
 USE_LINUX_RPM=	yes
-NO_STAGE=	yes
 USE_LINUX_APPS=	openal
 LINUX_DIST_VER=	10
 RPMVERSION=	6.fc9

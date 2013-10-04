@@ -14,7 +14,6 @@ COMMENT=	RPM of esound (Linux Fedora 10)
 CONFLICTS=	linux-esound-[0-9]* linux-f8-esound-[0-9]*
 
 USE_LINUX_RPM=	yes
-NO_STAGE=	yes
 USE_LINUX_APPS=	libaudiofile
 LINUX_NAME=	${PORTNAME}-libs
 LINUX_DIST_VER=	10

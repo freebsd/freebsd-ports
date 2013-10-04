@@ -9,13 +9,12 @@ PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	A 3D positional spatialized sound library (Linux Fedora 10)
+COMMENT=	3D positional spatialized sound library (Linux Fedora 10)
 
 CONFLICTS=	linux-openal-[0-9]* linux-f8-openal-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
-NO_STAGE=	yes
 USE_LINUX_APPS=	alsalib arts esound libaudiofile libvorbis sdl12
 LINUX_DIST_VER=	10
 RPMVERSION=	0.15.20060204cvs.fc9

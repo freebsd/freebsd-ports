@@ -10,13 +10,12 @@ PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	A sample multi-channel audio mixer library (Linux Fedora 10)
+COMMENT=	Sample multi-channel audio mixer library (Linux Fedora 10)
 
 CONFLICTS=	linux-sdl_mixer-[0-9]* linux-f8-sdl_mixer-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
-NO_STAGE=	yes
 USE_LINUX_APPS=	sdl12 mikmod
 LINUX_NAME=	SDL_mixer
 LINUX_DIST_VER=	10
