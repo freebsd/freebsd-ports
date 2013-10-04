@@ -1,34 +1,34 @@
 bin/thudboard
+%%PORTDOCS%%%%DOCSDIR%%/about.html
+%%PORTDOCS%%%%DOCSDIR%%/download.html
+%%PORTDOCS%%%%DOCSDIR%%/howto.html
+%%PORTDOCS%%%%DOCSDIR%%/img/battleline.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/bcktile.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/copyicon.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/dwarf.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/filemenu.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/helpmenu.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/moveinprogress.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/movepiece.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/optionsmenu.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/pasteicon.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/quicksavemenu.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/quit.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/rock.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/selectname.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/singleline.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/thudpreview.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/thudscreen.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/thudscroll.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/troll.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/valid-xhtml11.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/vcss.gif
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/thudboard.css
 %%DATADIR%%/battle.py
 %%DATADIR%%/battle.pyc
 %%DATADIR%%/bugfix_askyesno.py
 %%DATADIR%%/bugfix_askyesno.pyc
-%%DATADIR%%/docs/about.html
-%%DATADIR%%/docs/download.html
-%%DATADIR%%/docs/howto.html
-%%DATADIR%%/docs/img/battleline.gif
-%%DATADIR%%/docs/img/bcktile.gif
-%%DATADIR%%/docs/img/copyicon.gif
-%%DATADIR%%/docs/img/dwarf.gif
-%%DATADIR%%/docs/img/filemenu.gif
-%%DATADIR%%/docs/img/helpmenu.gif
-%%DATADIR%%/docs/img/moveinprogress.gif
-%%DATADIR%%/docs/img/movepiece.gif
-%%DATADIR%%/docs/img/optionsmenu.gif
-%%DATADIR%%/docs/img/pasteicon.gif
-%%DATADIR%%/docs/img/quicksavemenu.gif
-%%DATADIR%%/docs/img/quit.gif
-%%DATADIR%%/docs/img/rock.gif
-%%DATADIR%%/docs/img/selectname.gif
-%%DATADIR%%/docs/img/singleline.gif
-%%DATADIR%%/docs/img/thudpreview.gif
-%%DATADIR%%/docs/img/thudscreen.jpg
-%%DATADIR%%/docs/img/thudscroll.gif
-%%DATADIR%%/docs/img/troll.gif
-%%DATADIR%%/docs/img/valid-xhtml11.gif
-%%DATADIR%%/docs/img/vcss.gif
-%%DATADIR%%/docs/index.html
-%%DATADIR%%/docs/thudboard.css
 %%DATADIR%%/img/banner.gif
 %%DATADIR%%/img/bcktile.gif
 %%DATADIR%%/img/board-grid.gif
@@ -64,8 +64,8 @@ bin/thudboard
 %%DATADIR%%/texts.pyc
 %%DATADIR%%/thud.py
 %%DATADIR%%/thud.pyc
-@dirrm %%DATADIR%%/img
-@dirrm %%DATADIR%%/koomvalley
-@dirrm %%DATADIR%%/docs/img
-@dirrm %%DATADIR%%/docs
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/koomvalley
+@dirrmtry %%DATADIR%%/img
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/img
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

@@ -15,23 +15,25 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinte
 NO_WRKSUBDIR=	yes
 USE_PYTHON=	yes
 
-NO_STAGE=	yes
-do-configure:
-	@${SED} -e "s#%%PREFIX%%#${PREFIX}# ; s#%%PYTHON_CMD%%#${PYTHON_CMD}#" \
-		${FILESDIR}/thudboard > ${WRKDIR}/thudboard.tmp
+SUB_FILES=	thudboard
+
+post-patch:
+	${REINPLACE_CMD} -e 's|file:.*/docs|file://${DOCSDIR}|' \
+		${WRKDIR}/thud.py
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC} 2>/dev/null
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/thudboard.tmp ${PREFIX}/bin/thudboard
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.py ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.pyc ${DATADIR}
-	@${TAR} -C ${WRKSRC} -cf - docs koomvalley img | \
-		${TAR} -C ${DATADIR} --unlink -xf -
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
-	@${FIND} ${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
-	@${FIND} ${DATADIR} -type d | ${XARGS} ${CHMOD} a+rx
+	${INSTALL_SCRIPT} ${WRKDIR}/thudboard ${STAGEDIR}${PREFIX}/bin/thudboard
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/*.py ${STAGEDIR}${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/*.pyc ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKDIR}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+.	for d in koomvalley img
+	@${MKDIR} ${STAGEDIR}${DATADIR}/${d}
+	@(cd ${WRKDIR}/${d} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${d})
+.	endfor
 
 .include <bsd.port.mk>
