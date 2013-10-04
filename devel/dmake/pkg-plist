@@ -1,4 +1,5 @@
 bin/dmake
+man/man1/dmake.1.gz
 %%DATADIR%%/startup/config.mk
 %%DATADIR%%/startup/startup.mk
 %%DATADIR%%/startup/unix/linux/macros.mk
