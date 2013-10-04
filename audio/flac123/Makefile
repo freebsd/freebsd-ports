@@ -10,12 +10,13 @@ MASTER_SITES=	SF/flac-tools/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Command-line player for flac audio files
 
-LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
-		ao.4:${PORTSDIR}/audio/libao \
-		popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
+		libao.so:${PORTSDIR}/audio/libao \
+		libpopt.so:${PORTSDIR}/devel/popt
+
+OPTIONS_DEFINE=	DOCS
 
 USES=		gmake
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README.remote
@@ -26,11 +27,9 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
