@@ -197,7 +197,9 @@ CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG}
 #
 # Elinks will try to use it if exists
 #
-.if exists(${LOCALBASE}/include/execinfo.h)
+.if exists(/usr/include/execinfo.h)
+LDFLAGS+=	-lexecinfo
+.else if exists(${LOCALBASE}/include/execinfo.h)
 LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 .endif
