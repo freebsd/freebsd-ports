@@ -61,6 +61,7 @@ HDF5_LIB_DEPENDS=	libhdf5.so.7:${PORTSDIR}/science/hdf5-18
 ICONV_CONFIGURE_OFF=	--with-libiconv-prefix=no
 ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
 ICONV_USES=		iconv
+ICONV_LDFLAGS=         -L${LOCALBASE}/lib ${ICONV_LIB}
 JASPER_CONFIGURE_OFF=	--with-jasper=no
 JASPER_CONFIGURE_ON=	--with-jasper=${LOCALBASE}
 JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
