@@ -15,69 +15,42 @@ OPTIONS_DEFINE=	JACK ALSA DBUS LADSPA LASH PORTAUDIO PULSEAUDIO SNDFILE
 OPTIONS_DEFAULT=	JACK
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
 USE_GNOME=	glib20
 USES=		cmake pkgconfig
 CMAKE_ARGS=	-Denable-ladcca:BOOL=FALSE \
 		-Denable-midishare:BOOL=FALSE
 USE_LDCONFIG=	yes
 
-CFLAGS+=	${PA_CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	${PA_LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-MAN1=		fluidsynth.1
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_CMAKE_OFF=		-Denable-jack:BOOL=FALSE
 
-.include <bsd.port.pre.mk>
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_CMAKE_OFF=		-Denable-alsa:BOOL=FALSE
 
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
-.else
-CMAKE_ARGS+=	-Denable-jack:BOOL=FALSE
-.endif
+DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_CMAKE_OFF=		-Denable-dbus:BOOL=FALSE
 
-.if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
-.else
-CMAKE_ARGS+=	-Denable-alsa:BOOL=FALSE
-.endif
+LADSPA_BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+LADSPA_RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+LADSPA_CMAKE_ON=	-Denable-ladspa:BOOL=TRUE
 
-.if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
-.else
-CMAKE_ARGS+=	-Denable-dbus:BOOL=FALSE
-.endif
+LASH_LIB_DEPENDS=	liblash.so:${PORTSDIR}/audio/lash
+LASH_CMAKE_OFF=		-Denable-lash:BOOL=FALSE
 
-.if ${PORT_OPTIONS:MLADSPA}
-BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-RUN_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-CMAKE_ARGS+=	-Denable-ladspa:BOOL=TRUE
-.endif
+PORTAUDIO_BUILD_DEPENDS=	${LOCALBASE}/include/portaudio2/portaudio.h:${PORTSDIR}/audio/portaudio2
+PORTAUDIO_RUN_DEPENDS=	${LOCALBASE}/include/portaudio2/portaudio.h:${PORTSDIR}/audio/portaudio2
+PORTAUDIO_CMAKE_ON=	-Denable-portaudio:BOOL=TRUE
+PORTAUDIO_CFLAGS=	-I${LOCALBASE}/include/portaudio2
+PORTAUDIO_LDFLAGS=	-L${LOCALBASE}/lib/portaudio2
 
-.if ${PORT_OPTIONS:MLASH}
-LIB_DEPENDS+=	lash:${PORTSDIR}/audio/lash
-.else
-CMAKE_ARGS+=	-Denable-lash:BOOL=FALSE
-.endif
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CMAKE_OFF=	-Denable-pulseaudio:BOOL=FALSE
 
-.if ${PORT_OPTIONS:MPORTAUDIO}
-BUILD_DEPENDS+=	${LOCALBASE}/include/portaudio2/portaudio.h:${PORTSDIR}/audio/portaudio2
-RUN_DEPENDS+=	${LOCALBASE}/include/portaudio2/portaudio.h:${PORTSDIR}/audio/portaudio2
-CMAKE_ARGS+=	-Denable-portaudio:BOOL=TRUE
-PA_CFLAGS=	-I${LOCALBASE}/include/portaudio2
-PA_LDFLAGS=	-L${LOCALBASE}/lib/portaudio2
-.endif
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
-.else
-CMAKE_ARGS+=	-Denable-pulseaudio:BOOL=FALSE
-.endif
-
-.if ${PORT_OPTIONS:MSNDFILE}
-LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
-.else
-CMAKE_ARGS+=	-Denable-libsndfile:BOOL=FALSE
-.endif
+SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+SNDFILE_CMAKe_OFF=	-Denable-libsndfile:BOOL=FALSE
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -89,4 +62,4 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|share/man|man|' ${WRKSRC}/cmake_admin/DefaultDirs.cmake
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
