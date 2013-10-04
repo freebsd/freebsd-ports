@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/maildrop-deliverquota
 bin/lockmail
 bin/mailbot
@@ -10,6 +9,19 @@ bin/makemime
 bin/reformail
 bin/reformime
 etc/quotawarnmsg.sample
+man/man1/lockmail.1.gz
+man/man1/mailbot.1.gz
+man/man1/maildrop-maildirmake.1.gz
+man/man1/maildrop.1.gz
+man/man1/makemime.1.gz
+man/man1/reformail.1.gz
+man/man1/reformime.1.gz
+man/man5/maildir.5.gz
+man/man7/maildirquota.7.gz
+man/man7/maildropex.7.gz
+man/man7/maildropfilter.7.gz
+man/man7/maildropgdbm.7.gz
+man/man8/maildrop-deliverquota.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.html
@@ -46,3 +58,7 @@ etc/quotawarnmsg.sample
 %%PORTDOCS%%%%DOCSDIR%%/rfc2045.html
 %%PORTDOCS%%%%DOCSDIR%%/rfc822.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec chown %%MUID%% %D/bin/lockmail %D/bin/maildrop
+%%MSUID%%@exec chmod u+s %D/bin/lockmail %D/bin/maildrop
+@exec chgrp %%MGID%% %D/bin/lockmail %D/bin/maildrop
+%%MSGID%%@exec chmod g+s %D/bin/lockmail %D/bin/maildrop
