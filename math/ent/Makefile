@@ -19,12 +19,11 @@ PLIST_FILES=	bin/ent
 regression-test: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check)
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/CC = /d' -e '/CFLAGS = /s,$$, ${CFLAGS},' \
 		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ent ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
