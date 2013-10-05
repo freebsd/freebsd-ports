@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	texinfo
-PORTVERSION=	5.1.20130828
+PORTVERSION=	5.2.20130926
 CATEGORIES=	print
 MASTER_SITES=	GNU \
 		ftp://ftp.stack.nl/pub/users/johans/texinfo/${PORTVERSION:E}/
@@ -23,16 +23,11 @@ PKGDEINSTALL=	${PKGINSTALL}
 USES+=		charsetfix gmake perl5
 
 MAKE_ARGS=	TEXMF=${PREFIX}/${TEXMF}
-
 INFO=		${PORTNAME} info-stnd info
-MAN1=		info.1 infokey.1 install-info.1 makeinfo.1 texi2dvi.1 \
-		texi2pdf.1 pdftexi2dvi.1 pod2texi.1 texi2any.1 texindex.1
-MAN5=		info.5 texinfo.5
 
 TEXMF=		share/texmf
 PLIST_SUB=	TEXMF=${TEXMF}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -53,6 +48,6 @@ post-patch:
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} ${SH} \
 		${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${INSTALL_DATA} ${DISTDIR}/htmlxref.cnf ${DATADIR}/
+	@${INSTALL_DATA} ${DISTDIR}/htmlxref.cnf ${STAGEDIR}/${DATADIR}/
 
 .include <bsd.port.mk>
