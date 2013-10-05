@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Object-InsideOut
-PORTVERSION=	3.97
+PORTVERSION=	3.98
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JDHEDDEN
@@ -22,11 +22,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Bundle::Object::InsideOut.3 \
-		Object::InsideOut.3 \
-		Object::InsideOut::Metadata.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400
