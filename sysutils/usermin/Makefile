@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	usermin
-PORTVERSION=	1.550
+PORTVERSION=	1.560
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
@@ -25,7 +25,6 @@ SUB_FILES=	pkg-message
 
 USERMIN_MODULES=
 
-NO_STAGE=	yes
 post-extract:
 	@if [ "${USERMIN_MODULES}" != "" ]; then \
 		for usermin_module in ${USERMIN_MODULES}; do \
@@ -58,25 +57,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*.bak" -print | ${XARGS} ${RM}
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/usermin
-	@${CP} -r ${WRKSRC}/* ${PREFIX}/lib/usermin
-
-post-install:
-	@cd ${WRKSRC} ; ${FIND} * -type f -o -type l | ${SORT} | ${AWK} \
-		'{ print "lib/usermin/" $$1 }' > ${WRKDIR}/PLIST.lib-usermin
-	@cd ${WRKSRC} ; ${FIND} * -type d -empty | ${SORT} -r | ${AWK} \
-		'{ print "lib/usermin/" $$1 }' | ${SED} -e 's#^#@exec mkdir -p %D/#g' \
-		>> ${WRKDIR}/PLIST.lib-usermin
-	@cd ${WRKSRC} ; ${FIND} * -type d | ${SORT} -r | ${AWK} \
-		'{ print "lib/usermin/" $$1 }' | ${SED} -e 's/^/@dirrm /g' \
-		>> ${WRKDIR}/PLIST.lib-usermin
-	@${ECHO_CMD} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "/Insert PLIST.lib-usermin"	>> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "r ${WRKDIR}/PLIST.lib-usermin"	>> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "x!"				>> ${WRKDIR}/ex.script
-	@${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-lib-usermin
-	@cd ${WRKDIR} ; ex < ex.script
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/usermin
+	${CP} -r ${WRKSRC}/* ${STAGEDIR}${PREFIX}/lib/usermin
 
 .include <bsd.port.mk>
