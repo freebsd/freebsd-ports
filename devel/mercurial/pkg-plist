@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/__init__.py
 %%PYTHON_SITELIBDIR%%/hgext/__init__.pyc

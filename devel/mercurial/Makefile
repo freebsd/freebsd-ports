@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mercurial
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
@@ -11,11 +11,18 @@ COMMENT=	Fast, lightweight source control management system
 
 LICENSE=	GPLv2
 
+NO_STAGE=	yes
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 
-OPTIONS_DEFINE=	CA_BUNDLE NLS
+OPTIONS_DEFINE=	CA_BUNDLE DATA DOCS NLS
+OPTIONS_DEFAULT=DATA
+OPTIONS_SUB=	yes
 CA_BUNDLE_DESC=	Install CA Certificates
+
+MAN1=		hg.1
+MAN5=		hgignore.5 hgrc.5
+SUB_FILES=	pkg-message
 
 CONTRIB_FILES=	bash_completion \
 		casesmash.py \
@@ -51,40 +58,21 @@ CONTRIB_FILES=	bash_completion \
 		vim/hgtest.vim \
 		vim/patchreview.txt \
 		vim/patchreview.vim
+DOCS=		CONTRIBUTORS README
 
-DOCS=	CONTRIBUTORS README
+CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+NLS_USES=		gettext
 
-MAN1=	hg.1
-MAN5=	hgignore.5 hgrc.5
-
-SUB_FILES=	pkg-message
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-post-patch:
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
+.if !${PORT_OPTIONS:MNLS}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-setup.py
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCA_BUNDLE}
-RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 .endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/*.5 ${PREFIX}/man/man5/
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	for f in ${DOCS}; do \
-		${INSTALL_DATA} ${WRKSRC}/$${f} ${DOCSDIR}; \
-	done
-.endif
-.if !defined(NOPORTDATA)
+.if ${PORT_OPTIONS:MDATA}
 	${MKDIR} ${DATADIR}
 	${MKDIR} ${DATADIR}/contrib
 	${MKDIR} ${DATADIR}/contrib/hgfixes
@@ -97,8 +85,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/*.cgi ${DATADIR}/www
 	${INSTALL_DATA} ${WRKSRC}/contrib/hgweb.fcgi ${DATADIR}/www
 	${INSTALL_DATA} ${WRKSRC}/contrib/hgweb.wsgi ${DATADIR}/www
-
-	@${CAT} ${PKGMESSAGE}
+.endif
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
