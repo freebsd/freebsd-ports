@@ -17,10 +17,9 @@ LICENSE=	BSD
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_EFL=	ecore libtool_hack
 USE_EFL_ECORE=	con
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_ipc
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
@@ -28,7 +27,6 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 OPTIONS_DEFINE=	SSL
 OPTIONS_DEFAULT=SSL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
@@ -53,6 +51,6 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/ecore-ipc.pc \
-		${PREFIX}/libdata/pkgconfig/
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 
 .include <bsd.port.mk>
