@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	offlineimap
-DISTVERSION=	6.5.4
-PORTREVISION=	1
+DISTVERSION=	6.5.5
 CATEGORIES=	mail python
-MASTER_SITES=	http://cloud.github.com/downloads/spaetz/offlineimap/ \
-		http://dist.codelabs.ru/fbsd/offlineimap/
+MASTER_SITES=	http://dist.codelabs.ru/fbsd/offlineimap/
+
 PATCH_SITES=	http://codelabs.ru/patches/offlineimap/
-DISTNAME=	${PORTNAME}-v${DISTVERSION}
 
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Powerful IMAP/Maildir synchronization and reader support
@@ -21,14 +19,14 @@ LICENSE_FILE_GPLv2=${WRKSRC}/COPYING
 OPTIONS_DEFINE=	HTMLDOCS EXAMPLES
 HTMLDOCS_DESC=	Generate HTML documentation
 
-WRKSRC=		${WRKDIR}/${GITHUB_USER}-${PORTNAME}-${GITHUB_HASH}
+WRKSRC?=	${WRKDIR}/${DISTNAME}
 SUB_FILES=	pkg-message
 PATCH_STRIP=	-p1
-PATCH_DIST_STRIP=	-p1
-PATCHFILES=	2012-properly-detect-readonly-folders.diff
 
-GITHUB_USER=	spaetz
-GITHUB_HASH=	c9e9690
+USE_GITHUB=	yes
+GH_ACCOUNT=	OfflineIMAP
+GH_TAGNAME=	v${DISTVERSION}
+GH_COMMIT=	8bc2f35
 
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes

@@ -1,4 +1,4 @@
-OfflineImap synchronizes emails between two repositories,
+OfflineIMAP synchronizes emails between two repositories,
 so that you can read the same mailbox from multiple computers.
 It supports IMAP as REMOTE repository and Maildir/IMAP
 as LOCAL repository.
@@ -7,4 +7,4 @@ OfflineIMAP is also useful if you want to use a mail reader
 that does not have IMAP support, has poor IMAP support,
 or does not provide disconnected operation.
 
-WWW:	http://offlineimap.org/
+WWW: http://offlineimap.org/
