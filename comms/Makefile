@@ -84,7 +84,6 @@
     SUBDIR += lrzsz
     SUBDIR += mgetty+sendfax
     SUBDIR += minicom
-    SUBDIR += mlan
     SUBDIR += mlan3
     SUBDIR += morse
     SUBDIR += nasawash

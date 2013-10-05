@@ -1,6 +1,0 @@
-A port of Dallas Semiconductors TMEX api for accessing 1-wire LAN
-devices.  Only DS2480 serial port adapters are supported by this port.
-
-More doc & src at: ftp://ftp.dalsemi.com/pub/auto_id/softdev/softdev.html
-
-WWW: http://www.ibutton.com/
