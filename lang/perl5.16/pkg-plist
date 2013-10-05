@@ -3242,9 +3242,9 @@ man/man1/zipdetails.1.gz
 @dirrm lib/perl5/%%PERL_VER%%/encoding
 @dirrm lib/perl5/%%PERL_VER%%/autodie/exception
 @dirrm lib/perl5/%%PERL_VER%%/autodie
-@dirrm lib/perl5/%%PERL_VER%%
 @dirrmtry lib/perl5/%%PERL_VER%%/man/man3
 @dirrmtry lib/perl5/%%PERL_VER%%/man
+@dirrmtry lib/perl5/%%PERL_VER%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/sys
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/machine
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
