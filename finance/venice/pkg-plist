@@ -1,0 +1,10 @@
+bin/venice
+share/icons/hicolor/128x128/apps/venice.png
+share/icons/hicolor/32x32/apps/venice.png
+share/icons/hicolor/48x48/apps/venice.png
+share/icons/hicolor/64x64/apps/venice.png
+share/icons/hicolor/72x72/apps/venice.png
+share/icons/hicolor/96x96/apps/venice.png
+%%DATADIR%%/venice.jar
+share/pixmaps/venice.png
+@dirrm %%DATADIR%%
