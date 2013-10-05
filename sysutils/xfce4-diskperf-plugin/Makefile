@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Graphical representation of the disk IO
 
 GNU_CONFIGURE=	yes
@@ -25,7 +25,6 @@ OPTIONS_SUB=	yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
