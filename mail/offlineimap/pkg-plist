@@ -66,6 +66,16 @@ bin/offlineimap
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/debuglock.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/debuglock.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/offlineimap/ui
+%%PYTHON_SITELIBDIR%%/offlineimap/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/offlineimap/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/offlineimap/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/offlineimap/utils/const.py
+%%PYTHON_SITELIBDIR%%/offlineimap/utils/const.pyc
+%%PYTHON_SITELIBDIR%%/offlineimap/utils/const.pyo
+%%PYTHON_SITELIBDIR%%/offlineimap/utils/stacktrace.py
+%%PYTHON_SITELIBDIR%%/offlineimap/utils/stacktrace.pyc
+%%PYTHON_SITELIBDIR%%/offlineimap/utils/stacktrace.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/offlineimap/utils
 %%PYTHON_SITELIBDIR%%/offlineimap/CustomConfig.py
 %%PYTHON_SITELIBDIR%%/offlineimap/CustomConfig.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/CustomConfig.pyo
@@ -75,9 +85,15 @@ bin/offlineimap
 %%PYTHON_SITELIBDIR%%/offlineimap/accounts.py
 %%PYTHON_SITELIBDIR%%/offlineimap/accounts.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/accounts.pyo
+%%PYTHON_SITELIBDIR%%/offlineimap/emailutil.py
+%%PYTHON_SITELIBDIR%%/offlineimap/emailutil.pyc
+%%PYTHON_SITELIBDIR%%/offlineimap/emailutil.pyo
 %%PYTHON_SITELIBDIR%%/offlineimap/error.py
 %%PYTHON_SITELIBDIR%%/offlineimap/error.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/error.pyo
+%%PYTHON_SITELIBDIR%%/offlineimap/globals.py
+%%PYTHON_SITELIBDIR%%/offlineimap/globals.pyc
+%%PYTHON_SITELIBDIR%%/offlineimap/globals.pyo
 %%PYTHON_SITELIBDIR%%/offlineimap/imaplib2.py
 %%PYTHON_SITELIBDIR%%/offlineimap/imaplib2.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/imaplib2.pyo

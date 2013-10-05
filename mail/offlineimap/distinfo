@@ -1,4 +1,2 @@
-SHA256 (offlineimap-v6.5.4.tar.gz) = 831a97b5154f398b65e1c06427668b78cf833d99fac36cc8278ad2cf0c393a0c
-SIZE (offlineimap-v6.5.4.tar.gz) = 167023
-SHA256 (2012-properly-detect-readonly-folders.diff) = 461dc50ba198d7460a196a9f85c69b0221678a2bb2244bc43c8ca8b4672b44bf
-SIZE (2012-properly-detect-readonly-folders.diff) = 1131
+SHA256 (offlineimap-6.5.5.tar.gz) = 578cd6d8706a15ee65faa43bb71dfacf1ed083a97d66a375b77dc0fb14266802
+SIZE (offlineimap-6.5.5.tar.gz) = 175348
