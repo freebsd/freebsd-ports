@@ -1,0 +1,13 @@
+==========================================================================
+
+    Freesynd has been installed.
+
+    To actually play the game you need to copy the original game
+    datafiles to %%DATADIR/data/ directory.
+
+    Game will expect english version of the game data files, if you
+    have a different language, you can try setting the test_data
+    configuration option to false and see if the game runs with
+    that data.
+
+==========================================================================
