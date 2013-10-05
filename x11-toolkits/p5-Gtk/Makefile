@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-Perl-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The base module of Gtk-Perl
 
 BUILD_DEPENDS=	p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer \
@@ -20,11 +20,4 @@ USE_PERL5=	configure
 CONFIGURE_ARGS=	--without-guessing --lazy-load
 MAKE_JOBS_UNSAFE=	yes
 
-MAN3=		Gtk.3pm \
-		Gtk::CListModel.3pm \
-		Gtk::cookbook.3pm \
-		Gtk::objects.3pm \
-		Gtk::reference.3pm
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
