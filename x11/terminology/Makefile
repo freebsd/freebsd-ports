@@ -19,5 +19,4 @@ GNU_CONFIGURE=	yes
 USE_EFL=	eina eet evas ecore edje emotion elementary
 USE_EFL_ECORE=	imf imf_evas input ipc
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
