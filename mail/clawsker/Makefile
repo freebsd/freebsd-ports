@@ -18,7 +18,6 @@ RUN_DEPENDS=	claws-mail>=3.9.1:${PORTSDIR}/mail/claws-mail \
 USES=		shebangfix perl5
 SHEBANG_FILES=	${PORTNAME}
 
-MAN1=		clawsker.1
 PORTDOCS=	NEWS README
 
 OPTIONS_DEFINE=	DOCS NLS
@@ -26,7 +25,6 @@ OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -36,10 +34,7 @@ post-patch:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|g} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

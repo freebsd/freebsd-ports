@@ -1,4 +1,6 @@
 bin/ekg
+man/man1/ekg.1.gz
+man/pl/man1/ekg.1.gz
 %%DATADIR%%/themes/arim.theme
 %%DATADIR%%/themes/dj.theme
 %%DATADIR%%/themes/eileen.theme

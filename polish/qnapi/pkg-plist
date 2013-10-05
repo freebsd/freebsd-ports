@@ -1,14 +1,14 @@
 bin/qnapi
-share/icons/qnapi.png
-share/icons/qnapi-48.png
-share/icons/qnapi-128.png
-share/icons/qnapi-512.png
+%%KDE4%%/share/kde4/services/ServiceMenus/qnapi-download.desktop
+man/man1/qnapi.1.gz
 share/applications/qnapi.desktop
 share/apps/konqueror/servicemenus/qnapi-download.desktop
+share/icons/qnapi-128.png
+share/icons/qnapi-48.png
+share/icons/qnapi-512.png
+share/icons/qnapi.png
+@dirrmtry share/icons
 @dirrmtry share/apps/konqueror/servicemenus
 @dirrmtry share/apps/konqueror
 @dirrmtry share/apps
 @dirrmtry share/applications
-@dirrmtry share/icons
-@cwd %%KDE4_PREFIX%%
-share/kde4/services/ServiceMenus/qnapi-download.desktop

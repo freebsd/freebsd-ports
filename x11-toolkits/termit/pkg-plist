@@ -8,6 +8,7 @@ etc/xdg/termit/rc.lua.sample
 @unexec if cmp -s %D/etc/xdg/termit/utils.lua.sample %D/etc/xdg/termit/utils.lua; then rm -f %D/etc/xdg/termit/utils.lua; fi
 etc/xdg/termit/utils.lua.sample
 @exec if [ ! -f %D/etc/xdg/termit/utils.lua ] ; then cp -p %D/%F %B/utils.lua; fi
+man/man1/termit.1.gz
 share/applications/termit.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/lua_api.txt

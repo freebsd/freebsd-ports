@@ -1,4 +1,5 @@
 bin/clawsker
+man/man1/clawsker.1.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/es/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/id/LC_MESSAGES/clawsker.mo

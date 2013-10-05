@@ -25,10 +25,6 @@ CONFIGURE_ARGS= --without-libungif \
 CFLAGS+=	-I/usr/include -I${LOCALBASE}/include
 LDFLAGS+=	-L/usr/lib -lncurses -L${LOCALBASE}/lib -lexecinfo -pthread
 
-MAN1=		ekg.1
-MANLANG=	"" pl
-MANCOMPRESSED=	no
-
 OPTIONS_DEFINE=		ASPELL OPENSSL
 OPTIONS_DEFAULT=	OPENSSL
 
@@ -37,8 +33,7 @@ ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/polish/aspell
 
 OPENSSL_CONFIGURE_OFF=	--without-openssl
 
-NO_STAGE=	yes
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/ekg
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ekg
 
 .include <bsd.port.mk>

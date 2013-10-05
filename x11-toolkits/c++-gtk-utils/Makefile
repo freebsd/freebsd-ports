@@ -28,13 +28,4 @@ OPTIONS_DEFINE=	DEBUG DOCS
 
 DEBUG_CONFIGURE_ON=	--enable-debug
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-post-configure:
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} '/^SUBDIRS/ s|docs|| ; /^pkgdoc_DATA/d' \
-		${WRKSRC}/Makefile
-.endif
-
 .include <bsd.port.mk>

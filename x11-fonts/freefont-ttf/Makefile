@@ -18,24 +18,19 @@ LICENSE=	GPLv3
 USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/freefont-${PORTVERSION}
-INSTALLDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}
+INSTALLDIR=	${STAGEDIR}${PREFIX}/lib/X11/fonts/${PORTNAME}
 PORTDOCS=	AUTHORS ChangeLog CREDITS README
 
 OPTIONS_DEFINE=	DOCS
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 do-build:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/mkfontscale
 	cd ${WRKSRC} && ${LOCALBASE}/bin/mkfontdir
 
 do-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-	${MKDIR} ${INSTALLDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${INSTALLDIR}
 	cd ${WRKSRC} && \
 	${INSTALL_DATA} fonts.dir fonts.scale *.ttf ${INSTALLDIR}
 

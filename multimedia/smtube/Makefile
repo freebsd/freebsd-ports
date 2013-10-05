@@ -22,22 +22,13 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|qmake|${QMAKE} ${QMAKEFLAGS}|' \
 		-e 's|lrelease|${QT_PREFIX}/bin/lrelease-qt4|g' \
 		-e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|g' \
 		-e 's|$$(PREFIX)/share/smtube|${DATADIR}|g' \
+		-e 's|$$(PREFIX)/share/doc/smtube|${DOCSDIR}|' \
 		-e 's| make| ${GMAKE}|' \
 		${WRKSRC}/Makefile
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e 's|$$(PREFIX)/share/doc/smtube|${DOCSDIR}|' \
-		${WRKSRC}/Makefile
-.else
-	@${REINPLACE_CMD} -e '/DOC_PATH/d' ${WRKSRC}/Makefile
-.endif
 
 .include <bsd.port.mk>
