@@ -24,15 +24,14 @@ NO_BUILD=		yes
 SQUIRRELDIR?=	${PREFIX}/www/squirrelmail
 PLIST_SUB=		SQUIRRELDIR="${SQUIRRELDIR:S,^${PREFIX}/,,}"
 
-NO_STAGE=	yes
 post-patch:
 # The en_US help files are included with the main tarball
 	@${RM} -r ${WRKSRC}/help/en_US
 
 do-install:
-	${MKDIR} ${SQUIRRELDIR}
+	${MKDIR} ${STAGEDIR}${SQUIRRELDIR}
 .for DIR in help images locale
-	cd ${WRKSRC} && ${FIND} ${DIR} | ${CPIO} -pdmu --quiet ${SQUIRRELDIR}
+	cd ${WRKSRC} && ${FIND} ${DIR} | ${CPIO} -pdmu --quiet ${STAGEDIR}${SQUIRRELDIR}
 .endfor
 
 .include <bsd.port.mk>
