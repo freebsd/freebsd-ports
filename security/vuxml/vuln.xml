@@ -51,6 +51,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="749b5587-2da1-11e3-b1a9-b499baab0cbe">
+    <topic>gnupg -- possible infinite recursion in the compressed packet parser</topic>
+    <affects>
+      <package>
+	<name>gnupg</name>
+	<range><lt>1.4.15</lt></range>
+	<range><ge>2.0.0</ge><lt>2.0.22</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Werner Koch reports:</p>
+	<blockquote cite="http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000333.html">
+	  <p>Special crafted input data may be used to cause a denial of service
+against GPG (GnuPG's OpenPGP part) and some other OpenPGP
+implementations.  All systems using GPG to process incoming data are
+affected..</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4402</cvename>
+    </references>
+    <dates>
+      <discovery>2013-10-05</discovery>
+      <entry>2013-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5c34664f-2c2b-11e3-87c2-00215af774f0">
     <topic>xinetd -- ignores user and group directives for TCPMUX services</topic>
     <affects>
