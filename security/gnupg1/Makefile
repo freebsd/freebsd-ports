@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnupg
-PORTVERSION=	1.4.14
+PORTVERSION=	1.4.15
 #PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
@@ -20,10 +20,7 @@ GNU_CONFIGURE=	YES
 MACHINE_ARCH=	i586
 .endif
 CFLAGS:=	${CFLAGS:S/-pipe//g}
-MAN1=		gpg.1 gpgv.1 gpg.ru.1 gpg-zip.1
-MAN7=		gnupg.7
-INFO=		gnupg1
-DOCSDIR=	${PREFIX}/share/doc/gnupg1
+DOCSDIR=	${STAGEDIR}${PREFIX}/share/doc/gnupg1
 LATEST_LINK=	gnupg1
 
 PORTDOCS=	*
@@ -36,7 +33,6 @@ LIBUSB_DESC=	use libusb
 SUID_GPG_DESC=	install GPG with suid
 CURL_DESC=	use libcurl for the keyserver interface
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${CC} == "clang" || ${OSVERSION} >= 1000024
@@ -97,7 +93,7 @@ post-install:
 .endfor
 .endif
 .if ${PORT_OPTIONS:MSUID_GPG}
-	${CHMOD} u+s ${PREFIX}/bin/gpg
+	${CHMOD} u+s ${STAGEDIR}${PREFIX}/bin/gpg
 .endif
 
 check:
