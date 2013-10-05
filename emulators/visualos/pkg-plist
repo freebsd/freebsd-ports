@@ -1,8 +1,0 @@
-bin/VisualOS
-share/VisualOS/VisualOS.glade
-share/VisualOS/io_editor_disk.xpm
-share/locale/cs/LC_MESSAGES/VisualOS.mo
-share/locale/es/LC_MESSAGES/VisualOS.mo
-share/locale/fr/LC_MESSAGES/VisualOS.mo
-share/locale/it/LC_MESSAGES/VisualOS.mo
-@dirrm share/VisualOS

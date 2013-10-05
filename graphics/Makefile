@@ -139,7 +139,6 @@
     SUBDIR += ecore-sdl
     SUBDIR += edje
     SUBDIR += edje_viewer
-    SUBDIR += electriceyes
     SUBDIR += electrix
     SUBDIR += enblend
     SUBDIR += ender
@@ -230,7 +229,6 @@
     SUBDIR += frei0r-plugins
     SUBDIR += frei0r-plugins-gavl
     SUBDIR += frei0r-plugins-opencv
-    SUBDIR += frontline
     SUBDIR += ftgl
     SUBDIR += fujiplay
     SUBDIR += fusefs-gphotofs
@@ -292,7 +290,6 @@
     SUBDIR += gnash
     SUBDIR += gnofract4d
     SUBDIR += gnomecanvas
-    SUBDIR += gnomeiconedit
     SUBDIR += gnustep-slideshow
     SUBDIR += gnustep-slideshowkit
     SUBDIR += gocr

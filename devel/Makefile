@@ -3276,7 +3276,6 @@
     SUBDIR += performance
     SUBDIR += perlconsole
     SUBDIR += perltidy
-    SUBDIR += pharmacy
     SUBDIR += php-java-bridge
     SUBDIR += php-libawl
     SUBDIR += php-xdebug

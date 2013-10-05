@@ -44,7 +44,6 @@
     SUBDIR += gammu-devel
     SUBDIR += geoid
     SUBDIR += ge-x2212
-    SUBDIR += ghfaxviewer
     SUBDIR += gkermit
     SUBDIR += gmfsk
     SUBDIR += gnocky

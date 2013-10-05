@@ -136,7 +136,6 @@
     SUBDIR += gstreamer1-plugins-vpx
     SUBDIR += gstreamer1-plugins-x264
     SUBDIR += gstreamermm
-    SUBDIR += gsubedit
     SUBDIR += gtk-recordmydesktop
     SUBDIR += gtk-youtube-viewer
     SUBDIR += gxanim

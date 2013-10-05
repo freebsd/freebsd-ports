@@ -48,7 +48,6 @@
     SUBDIR += gngeo
     SUBDIR += gns3
     SUBDIR += gnuboy
-    SUBDIR += gsnes9x
     SUBDIR += gxemul
     SUBDIR += gxmame
     SUBDIR += hatari
@@ -172,7 +171,6 @@
     SUBDIR += virtualbox-ose-kmod-legacy
     SUBDIR += virtualbox-ose-legacy
     SUBDIR += visualboyadvance-m
-    SUBDIR += visualos
     SUBDIR += vmips
     SUBDIR += vmsbackup
     SUBDIR += vmw

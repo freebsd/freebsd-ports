@@ -291,7 +291,6 @@
     SUBDIR += xemacs21-mule
     SUBDIR += xml2rfc-xxe
     SUBDIR += xmlcopyeditor
-    SUBDIR += xmleditor
     SUBDIR += xvile
     SUBDIR += xxe
     SUBDIR += yasnippet
