@@ -3,6 +3,7 @@
 
 PORTNAME=	xsoldier
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.interq.or.jp/libra/oohara/xsoldier/
 
@@ -16,11 +17,5 @@ MAKE_ARGS=	CC_OPTIMIZE="${CFLAGS}"
 
 SCOREFILE=	/var/games/xsoldier.scores
 PLIST_SUB=	SCOREFILE=${SCOREFILE}
-
-NEED_ROOT=	yes
-
-post-install:
-	${CHGRP} games ${STAGEDIR}${PREFIX}/bin/xsoldier
-	${CHMOD} g+s ${STAGEDIR}${PREFIX}/bin/xsoldier
 
 .include <bsd.port.mk>
