@@ -3,7 +3,7 @@
 
 PORTNAME=	gspiceui
 PORTVERSION=	1.0.00
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/gSpiceUI/${PORTNAME}-v${PORTVERSION}
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -16,16 +16,14 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	# none if no options are set
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-OPTIONS_GROUP=	BACKEND VIEWER
+OPTIONS_GROUP=	BACKEND
 
 OPTIONS_GROUP_BACKEND=	GNUCAP NGSPICE
-OPTIONS_GROUP_VIEWER=	GWAVE
 
 GNUCAP_DESC=	Depend on gnucap as a simulation backend
 NGSPICE_DESC=	Depend on ngspice as a simulation backend
-GWAVE_DESC=	Depend on gwave waveform viewer
 
-OPTIONS_DEFAULT=	NGSPICE GWAVE
+OPTIONS_DEFAULT=	NGSPICE
 
 USE_WX=		2.6+
 WX_UNICODE=	yes
@@ -50,10 +48,6 @@ RUN_DEPENDS+=	gnucap:${PORTSDIR}/cad/gnucap
 
 .if ${PORT_OPTIONS:MNGSPICE}
 RUN_DEPENDS+=	ngspice:${PORTSDIR}/cad/ngspice_rework
-.endif
-
-.if ${PORT_OPTIONS:MGWAVE}
-RUN_DEPENDS+=	gwave:${PORTSDIR}/cad/gwave
 .endif
 
 post-patch:
