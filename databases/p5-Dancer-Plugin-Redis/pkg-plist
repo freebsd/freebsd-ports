@@ -1,6 +1,4 @@
 %%SITE_PERL%%/Dancer/Plugin/Redis.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/Redis/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/Redis
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer
 @dirrmtry %%SITE_PERL%%/Dancer/Plugin
