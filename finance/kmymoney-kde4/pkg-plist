@@ -90,7 +90,6 @@ lib/libkmm_plugin.so.5.0.1
 lib/libkmm_widgets.so
 lib/libkmm_widgets.so.5
 lib/libkmm_widgets.so.5.0.1
-man/man1/kmymoney.1.gz
 share/applications/kde4/kmymoney.desktop
 share/apps/kmm_csvimport/kmm_csvimport.rc
 %%CALENDAR%%share/apps/kmm_icalendarexport/kmm_icalendarexport.rc
@@ -240,7 +239,6 @@ share/apps/kmymoney/icons/oxygen/22x22/actions/institution-edit.png
 share/apps/kmymoney/icons/oxygen/22x22/actions/institution_add.png
 share/apps/kmymoney/icons/oxygen/22x22/actions/investment-add.png
 share/apps/kmymoney/icons/oxygen/22x22/actions/investment-delete.png
-share/apps/kmymoney/icons/oxygen/22x22/actions/investment-edit.png
 share/apps/kmymoney/icons/oxygen/22x22/actions/investment-update-online-all.png
 share/apps/kmymoney/icons/oxygen/22x22/actions/investment-update-online.png
 share/apps/kmymoney/icons/oxygen/22x22/actions/payee-rename.png
@@ -749,15 +747,19 @@ share/apps/kmymoney/templates/zh_TW/business.kmt
 share/apps/kmymoney/tips
 share/config.kcfg/kmymoney.kcfg
 share/config/csvimporterrc
+share/doc/HTML/de/kmymoney/account_edit.png
 share/doc/HTML/de/kmymoney/account_options.png
 share/doc/HTML/de/kmymoney/accwiz1.png
+share/doc/HTML/de/kmymoney/accwiz10.png
 share/doc/HTML/de/kmymoney/accwiz2.png
-share/doc/HTML/de/kmymoney/accwiz3.png
+share/doc/HTML/de/kmymoney/accwiz6.png
+share/doc/HTML/de/kmymoney/accwiz7.png
 share/doc/HTML/de/kmymoney/accwiz8_1.png
 share/doc/HTML/de/kmymoney/accwiz8_2.png
 share/doc/HTML/de/kmymoney/accwiz8_3.png
 share/doc/HTML/de/kmymoney/accwiz8_4.png
 share/doc/HTML/de/kmymoney/accwiz8_5.png
+share/doc/HTML/de/kmymoney/accwiz9.png
 share/doc/HTML/de/kmymoney/categoryedit.png
 share/doc/HTML/de/kmymoney/common
 share/doc/HTML/de/kmymoney/credits.docbook
@@ -790,6 +792,7 @@ share/doc/HTML/de/kmymoney/installation.docbook
 share/doc/HTML/de/kmymoney/institution_options.png
 share/doc/HTML/de/kmymoney/introduction.docbook
 share/doc/HTML/de/kmymoney/investment-transactionform.png
+share/doc/HTML/de/kmymoney/ledgerview-numbered.png
 share/doc/HTML/de/kmymoney/mainwindow_numbered.png
 share/doc/HTML/de/kmymoney/makemostof.docbook
 share/doc/HTML/de/kmymoney/man-kmymoney.1.docbook
@@ -803,7 +806,14 @@ share/doc/HTML/de/kmymoney/newinst.png
 share/doc/HTML/de/kmymoney/newsched_numbered.png
 share/doc/HTML/de/kmymoney/payee_info.png
 share/doc/HTML/de/kmymoney/payee_match.png
+share/doc/HTML/de/kmymoney/reconcile-redo.png
+share/doc/HTML/de/kmymoney/reconcile1.png
+share/doc/HTML/de/kmymoney/reconcile2.png
+share/doc/HTML/de/kmymoney/reconcile3.png
 share/doc/HTML/de/kmymoney/reference.docbook
+share/doc/HTML/de/kmymoney/report_configuration-reporttab.png
+share/doc/HTML/de/kmymoney/report_configuration-rowscolumns.png
+share/doc/HTML/de/kmymoney/reports_view-all.png
 share/doc/HTML/de/kmymoney/select_currency.png
 share/doc/HTML/de/kmymoney/tipofday.png
 share/doc/HTML/de/kmymoney/transactionform.png
@@ -1316,6 +1326,7 @@ share/kde4/servicetypes/kmymoneyplugin.desktop
 %%NLS%%share/locale/ja/LC_MESSAGES/kmymoney.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/kmymoney.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/kmymoney.mo
+%%NLS%%share/locale/mr/LC_MESSAGES/kmymoney.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/kmymoney.mo
 %%NLS%%share/locale/nds/LC_MESSAGES/kmymoney.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/kmymoney.mo
