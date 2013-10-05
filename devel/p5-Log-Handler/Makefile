@@ -2,36 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Handler
-PORTVERSION=	0.79
+PORTVERSION=	0.80
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	An object-oriented handler for logging, tracing, and debugging in Perl
+COMMENT=	Object-oriented handler for logging, tracing, and debugging in Perl
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-Email-Date>=0:${PORTSDIR}/mail/p5-Email-Date
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Log::Handler.3 \
-		Log::Handler::Config.3 \
-		Log::Handler::Examples.3 \
-		Log::Handler::Levels.3 \
-		Log::Handler::Output.3 \
-		Log::Handler::Output::DBI.3 \
-		Log::Handler::Output::Email.3 \
-		Log::Handler::Output::File.3 \
-		Log::Handler::Output::Forward.3 \
-		Log::Handler::Output::Screen.3 \
-		Log::Handler::Output::Sendmail.3 \
-		Log::Handler::Output::Socket.3 \
-		Log::Handler::Pattern.3 \
-		Log::Handler::Plugin::Config::General.3 \
-		Log::Handler::Plugin::Config::Properties.3 \
-		Log::Handler::Plugin::YAML.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

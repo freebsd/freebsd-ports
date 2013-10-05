@@ -15,6 +15,22 @@
 %%SITE_PERL%%/Log/Handler/Plugin/Config/General.pm
 %%SITE_PERL%%/Log/Handler/Plugin/Config/Properties.pm
 %%SITE_PERL%%/Log/Handler/Plugin/YAML.pm
+%%PERL5_MAN3%%/Log::Handler.3.gz
+%%PERL5_MAN3%%/Log::Handler::Config.3.gz
+%%PERL5_MAN3%%/Log::Handler::Examples.3.gz
+%%PERL5_MAN3%%/Log::Handler::Levels.3.gz
+%%PERL5_MAN3%%/Log::Handler::Output.3.gz
+%%PERL5_MAN3%%/Log::Handler::Output::DBI.3.gz
+%%PERL5_MAN3%%/Log::Handler::Output::Email.3.gz
+%%PERL5_MAN3%%/Log::Handler::Output::File.3.gz
+%%PERL5_MAN3%%/Log::Handler::Output::Forward.3.gz
+%%PERL5_MAN3%%/Log::Handler::Output::Screen.3.gz
+%%PERL5_MAN3%%/Log::Handler::Output::Sendmail.3.gz
+%%PERL5_MAN3%%/Log::Handler::Output::Socket.3.gz
+%%PERL5_MAN3%%/Log::Handler::Pattern.3.gz
+%%PERL5_MAN3%%/Log::Handler::Plugin::Config::General.3.gz
+%%PERL5_MAN3%%/Log::Handler::Plugin::Config::Properties.3.gz
+%%PERL5_MAN3%%/Log::Handler::Plugin::YAML.3.gz
 @dirrm %%SITE_PERL%%/Log/Handler/Output
 @dirrm %%SITE_PERL%%/Log/Handler/Plugin/Config
 @dirrm %%SITE_PERL%%/Log/Handler/Plugin
