@@ -2,18 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	gnupg
-PORTVERSION=	0.3.2
+PORTVERSION=	1.2.2
 CATEGORIES=	security python
-MASTER_SITES=	SF/py-${PORTNAME}/GnuPGInterface/${PORTVERSION}
+MASTER_SITES=	http://www.c-s.li/ports/ \
+		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	GnuPGInterface-${PORTVERSION}
 
 MAINTAINER=	cs@FreeBSD.org
-COMMENT=	Python module for GnuPG interface
+COMMENT=	Python wrapper for GnuPG
+
+LICENSE=	GPLv3
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=0.5.1:${PORTSDIR}/sysutils/py-psutil
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	GnuPGInterface
+USE_PYDISTUTILS=easy_install
+PYDISTUTILS_AUTOPLIST=yes
 
 NO_STAGE=	yes
 .include <bsd.port.mk>
