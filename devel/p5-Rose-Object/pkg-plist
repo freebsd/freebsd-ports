@@ -7,6 +7,14 @@
 %%SITE_PERL%%/Rose/Object/MakeMethods/Generic.pm
 %%SITE_PERL%%/Rose/Object/MixIn.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/Object/.packlist
+%%PERL5_MAN3%%/Rose::Class.3.gz
+%%PERL5_MAN3%%/Rose::Class::MakeMethods::Generic.3.gz
+%%PERL5_MAN3%%/Rose::Class::MakeMethods::Set.3.gz
+%%PERL5_MAN3%%/Rose::Object.3.gz
+%%PERL5_MAN3%%/Rose::Object::MakeMethods.3.gz
+%%PERL5_MAN3%%/Rose::Object::MakeMethods::DateTime.3.gz
+%%PERL5_MAN3%%/Rose::Object::MakeMethods::Generic.3.gz
+%%PERL5_MAN3%%/Rose::Object::MixIn.3.gz
 @dirrmtry %%SITE_PERL%%/Rose/Object/MakeMethods
 @dirrmtry %%SITE_PERL%%/Rose/Class/MakeMethods
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/Object
