@@ -14,29 +14,20 @@ FETCH_ARGS=	-Fpr
 GNU_CONFIGURE=	yes
 USES=		gmake
 
-MAN1=		lookat.1
+PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} 's|/etc/lookat.conf|${PREFIX}&|g' \
 		${WRKSRC}/${PORTNAME}.1
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/lookat ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/lookat.1 ${PREFIX}/man/man1
-	@${INSTALL_DATA} ${WRKSRC}/lookat.conf.default \
-		${PREFIX}/etc/lookat.conf.sample
-	@if [ ! -f ${PREFIX}/etc/lookat.conf ]; then \
-		${CP} -p ${PREFIX}/etc/lookat.conf.sample ${PREFIX}/etc/lookat.conf ; \
-	fi
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/lookat ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/lookat.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/lookat.conf.default \
+		${STAGEDIR}${PREFIX}/etc/lookat.conf.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

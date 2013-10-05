@@ -2,5 +2,4 @@ bin/lookat
 @unexec if cmp -s %D/etc/lookat.conf.sample %D/etc/lookat.conf; then rm -f %D/etc/lookat.conf; fi
 etc/lookat.conf.sample
 @exec if [ ! -f %D/etc/lookat.conf ] ; then cp -p %D/%F %B/lookat.conf; fi
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+man/man1/lookat.1.gz

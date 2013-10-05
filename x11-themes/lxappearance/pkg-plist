@@ -1,6 +1,7 @@
 bin/lxappearance
 include/lxappearance/lxappearance.h
 libdata/pkgconfig/lxappearance.pc
+man/man1/lxappearance.1.gz
 share/applications/lxappearance.desktop
 %%NLS%%share/locale/ar/LC_MESSAGES/lxappearance.mo
 %%NLS%%share/locale/be/LC_MESSAGES/lxappearance.mo
