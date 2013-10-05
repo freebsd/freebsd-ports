@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/94574861/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A bzr plugin that provides rewriting existing revisions
 
 LICENSE=	GPLv2

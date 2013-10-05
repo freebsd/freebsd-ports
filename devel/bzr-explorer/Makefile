@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/109861791/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop application for using bzr
 
 LICENSE=	GPLv2

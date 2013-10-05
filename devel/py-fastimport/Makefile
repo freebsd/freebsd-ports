@@ -8,7 +8,7 @@ MASTER_SITES=	https://launchpadlibrarian.net/99879696/ \
 		http://www.c-s.li/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fastimport parser in Python
 
 LICENSE=	GPLv2
