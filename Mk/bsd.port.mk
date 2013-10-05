@@ -107,6 +107,12 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  patches. Make will look for them at PATCH_SITES (see below).
 #				  They will automatically be uncompressed before patching if
 #				  the names end with ".gz", ".bz2" or ".Z".
+#				  For each file you can optionally specify a strip
+#				  flag of patch(1) after a colon if it has a different
+#				  base directory, e.g. "file1 file2:-p1 file3".
+#				  You can also use a :group at the end for matching up to
+#				  dist file groups. See Porters Handbook for more information.
+#				  Syntax: PATCHFILES= patch[:-pX][:group]
 #				  Default: not set.
 # PATCH_SITES	- Primary location(s) for distribution patch files
 #				  if not found locally.
@@ -2650,9 +2656,12 @@ _DISTFILES+=	${_D}
 .endfor
 _G_TEMP=	DEFAULT
 .for _P in ${PATCHFILES}
-_P_TEMP=	${_P:S/^${_P:C/:[^:]+$//}//}
-.	if !empty(_P_TEMP)
-.		for _group in ${_P_TEMP:S/^://:S/,/ /g}
+_P_TEMP=	${_P:C/:[^-:][^:]*$//}
+_P_groups=	${_P:S/^${_P:C/:[^:]+$//}//:S/^://}
+_P_file=	${_P_TEMP:C/:-[^:]+$//}
+_P_strip=	${_P_TEMP:S/^${_P_TEMP:C/:-[^:]*$//}//:S/^://}
+.	if !empty(_P_groups)
+.		for _group in ${_P_groups:S/,/ /g}
 .			if !defined(_PATCH_SITES_${_group})
 _G_TEMP_TEMP=	${_G_TEMP:M/${_group}/}
 .				if empty(_G_TEMP_TEMP)
@@ -2661,11 +2670,15 @@ _PATCH_SITES_ALL+=	${_PATCH_SITES_${_group}}
 .				endif
 .			endif
 .		endfor
-_PATCHFILES+=	${_P:C/:[^:]+$//}
-.	else
-_PATCHFILES+=	${_P}
+.	endif
+_PATCHFILES:=	${_PATCHFILES} ${_P_file}
+.	if !empty(_P_strip)
+_PATCH_DIST_STRIP_CASES:=	${_PATCH_DIST_STRIP_CASES} ("${_P_file}") printf %s "${_P_strip}" ;;
 .	endif
 .endfor
+_P_groups=
+_P_file=
+_P_strip=
 _G_TEMP=
 _G_TEMP_TEMP=
 ALLFILES?=	${_DISTFILES} ${_PATCHFILES}
@@ -2734,7 +2747,7 @@ _MASTER_SITES_ENV+=	_MASTER_SITES_${_group}="${_MASTER_SITES_${_group}}"
 .endfor
 _PATCH_SITES_ENV=	_PATCH_SITES_DEFAULT="${_PATCH_SITES_DEFAULT}"
 .for _F in ${PATCHFILES}
-_F_TEMP=	${_F:S/^${_F:C/:[^:]+$//}//:S/^://}
+_F_TEMP=	${_F:S/^${_F:C/:[^-:][^:]*$//}//:S/^://}
 .	if !empty(_F_TEMP)
 .		for _group in ${_F_TEMP:S/,/ /g}
 .			if defined(_PATCH_SITES_${_group})
@@ -3487,8 +3500,9 @@ do-fetch:
 	@cd ${_DISTDIR};\
 	${_PATCH_SITES_ENV} ; \
 	for _file in ${PATCHFILES}; do \
-		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
+		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^-:][^:]*$$//'` ; \
 		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
+		file=`${ECHO_CMD} $$file | ${SED} -E -e 's/:-[^:]+$$//'` ; \
 		force_fetch=false; \
 		filebasename=$${file##*/}; \
 		for afile in ${FORCE_FETCH}; do \
@@ -3589,9 +3603,13 @@ patch-dos2unix:
 do-patch:
 .if defined(PATCHFILES)
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
-	@set -e ; \
-	(cd ${_DISTDIR} ; \
-	for i  in ${_PATCHFILES}; do \
+	@(cd ${_DISTDIR}; \
+	patch_dist_strip () { \
+		case "$$1" in \
+		${_PATCH_DIST_STRIP_CASES} \
+		esac; \
+	}; \
+	for i in ${_PATCHFILES}; do \
 		if [ ${PATCH_DEBUG_TMP} = yes ]; then \
 			${ECHO_MSG} "===>   Applying distribution patch $$i" ; \
 		fi ; \
@@ -3600,7 +3618,7 @@ do-patch:
 		*.bz2) ${BZCAT} $$i ;; \
 		*.xz) ${XZCAT} $$i ;; \
 		*) ${CAT} $$i ;; \
-		esac | ${PATCH} ${PATCH_DIST_ARGS} ; \
+		esac | ${PATCH} ${PATCH_DIST_ARGS} `patch_dist_strip $$i` ; \
 	done )
 .endif
 .if defined(EXTRA_PATCHES)
@@ -4718,8 +4736,9 @@ fetch-list:
 	@(cd ${_DISTDIR}; \
 	 ${_PATCH_SITES_ENV} ; \
 	 for _file in ${PATCHFILES}; do \
-		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
+		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^-:][^:]*$$//'` ; \
 		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
+		file=`${ECHO_CMD} $$file | ${SED} -E -e 's/:-[^:]+$$//'` ; \
 		if [ ! -f $$file -a ! -f $${file##*/} ]; then \
 			if [ ! -z "$$select" ] ; then \
 				__PATCH_SITES_TMP= ; \
@@ -4784,9 +4803,10 @@ fetch-url-list-int:
 	@(cd ${_DISTDIR}; \
 	${_PATCH_SITES_ENV} ; \
 	for _file in ${PATCHFILES}; do \
-		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
-			fileptn=`${ECHO_CMD} $$file | ${SED} 's|/|\\\\/|g;s/\./\\\\./g;s/\+/\\\\+/g;s/\?/\\\\?/g'` ; \
+		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^-:][^:]*$$//'` ; \
 		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
+		file=`${ECHO_CMD} $$file | ${SED} -E -e 's/:-[^:]+$$//'` ; \
+		fileptn=`${ECHO_CMD} $$file | ${SED} 's|/|\\\\/|g;s/\./\\\\./g;s/\+/\\\\+/g;s/\?/\\\\?/g'` ; \
 		if [ ! -z "${LISTALL}" -o ! -f $$file -a ! -f $${file##*/} ]; then \
 			if [ ! -z "$$select" ] ; then \
 				__PATCH_SITES_TMP= ; \
