@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	fdupes
-DISTVERSION=	1.50-PR2
+PORTVERSION=	1.51
 CATEGORIES=	sysutils
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Fdupes is a program for identifying or deleting duplicate files
@@ -17,6 +17,7 @@ PLIST_FILES=	bin/fdupes
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\"
 
 NO_STAGE=	yes
+
 do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/${PORTNAME}.c ${WRKSRC}/md5/md5.c \
 		-o ${WRKSRC}/${PORTNAME}
