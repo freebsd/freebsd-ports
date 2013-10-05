@@ -180,7 +180,7 @@
     SUBDIR += ng_ipacct
     SUBDIR += nitpicker
     SUBDIR += nocol
-    SUBDIR += nrpe2
+    SUBDIR += nrpe
     SUBDIR += nsca
     SUBDIR += nsca-client
     SUBDIR += nsca27
