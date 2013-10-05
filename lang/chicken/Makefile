@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	chicken
-PORTVERSION=	4.8.0.4
+PORTVERSION=	4.8.0.5
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://code.call-cc.org/releases/4.8.0/
 
 MAINTAINER=	vmagerya@gmail.com
-COMMENT=	A Scheme-to-C compiler
+COMMENT=	Scheme-to-C compiler
 
-
-USE_GMAKE=	yes
+USES=	gmake
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
 MAKE_ARGS+=	PLATFORM=bsd PREFIX=${PREFIX} \
@@ -23,30 +22,20 @@ MAKE_ARGS+=	PLATFORM=bsd PREFIX=${PREFIX} \
 
 NEW_ARCH=	${ARCH:S/i386/x86/:S/amd64/x86-64/}
 
-MAN1=		chicken.1 chicken-bug.1 chicken-install.1 chicken-profile.1 \
-		chicken-status.1 chicken-uninstall.1 csc.1 csi.1
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${ARCH} != "amd64" && ${ARCH} != "i386" && ${ARCH} != "sparc64"
 MAKE_ARGS+=	HACKED_APPLY=
 .endif
 
-post-patch:
-.if empty(PORT_OPTIONS:MDOCS)
-	${REINPLACE_CMD} -e '/$$(DESTDIR)$$(IDOCDIR)/d' ${WRKSRC}/rules.make
-.endif
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
-.endif
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
+	@${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
 
 # This only works *after* chicken is installed.
 regression-test: build
 	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
 		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
