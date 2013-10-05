@@ -8,6 +8,5 @@ COMMENT=	TNEF attachment format parser plugin for Claws Mail
 
 CLAWS_PLUGINS_BUILD=	tnef_parse
 
-NO_STAGE=	yes
 .include "../claws-mail/Makefile.claws"
 .include <bsd.port.mk>

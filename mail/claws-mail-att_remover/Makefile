@@ -8,6 +8,5 @@ COMMENT=	Attachments removing plugin for Claws Mail
 
 CLAWS_PLUGINS_BUILD=	att_remover
 
-NO_STAGE=	yes
 .include "../claws-mail/Makefile.claws"
 .include <bsd.port.mk>

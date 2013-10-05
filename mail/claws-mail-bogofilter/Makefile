@@ -10,6 +10,5 @@ RUN_DEPENDS=	bogofilter:${PORTSDIR}/mail/bogofilter
 
 CLAWS_PLUGINS_BUILD=	bogofilter
 
-NO_STAGE=	yes
 .include "../claws-mail/Makefile.claws"
 .include <bsd.port.mk>

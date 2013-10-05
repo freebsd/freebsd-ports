@@ -8,6 +8,5 @@ COMMENT=	Header insertion plugin for Claws Mail
 
 CLAWS_PLUGINS_BUILD=	fetchinfo
 
-NO_STAGE=	yes
 .include "../claws-mail/Makefile.claws"
 .include <bsd.port.mk>

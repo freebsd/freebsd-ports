@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	claws-mail
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 
 COMMENT=	Lightweight and very featureful GTK+ based e-mail and news client
@@ -13,10 +14,8 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 USE_GNOME=	gtk20
-USES=		iconv pathfix
+USES=		pathfix
 INSTALLS_ICONS=	yes
-
-MAN1=		claws-mail.1
 
 OPTIONS_DEFINE=	COMPFACE DEBUG DOCS ENCHANT IPV6 JPILOT LDAP \
 		MANUAL NLS STARTUP THEMES
@@ -59,7 +58,6 @@ STARTUP_LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notifi
 
 THEMES_RUN_DEPENDS=	${LOCALBASE}/share/claws-mail/themes/ZX-0_1.1/down_arrow.xpm:${PORTSDIR}/x11-themes/claws-mail-themes
 
-NO_STAGE=	yes
 .include "Makefile.claws"
 .include <bsd.port.options.mk>
 
@@ -78,14 +76,12 @@ post-patch:
 		${REINPLACE_CMD} -e "s|/usr/bin/perl|${PERL}|" $$f; done
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in NEWS RELEASE_NOTES README TODO
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/tools/README ${DOCSDIR}/README.tools
-.endif
-	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/tools/README ${STAGEDIR}${DOCSDIR}/README.tools
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/tools && \
 		${INSTALL_SCRIPT} OOo2claws-mail.pl acroread2claws-mail.pl \
 		calypso_convert.pl convert_mbox.pl eud2gc.py filter_conv.pl \
@@ -96,6 +92,6 @@ post-install:
 		nautilus2claws-mail.sh outlook2claws-mail.pl tb2claws-mail \
 		tbird2claws.py textviewer.pl textviewer.sh \
 		thunderbird-filters-convertor.pl uudec uuooffice vcard2xml.py \
-		${DATADIR}
+		${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

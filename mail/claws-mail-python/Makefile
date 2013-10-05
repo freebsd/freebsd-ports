@@ -10,6 +10,5 @@ USE_GNOME=	pygtk2
 
 CLAWS_PLUGINS_BUILD=	python
 
-NO_STAGE=	yes
 .include "../claws-mail/Makefile.claws"
 .include <bsd.port.mk>
