@@ -7,15 +7,14 @@ CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		http://www.transit.hanse.de/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/cyrus-mail/&,}
+PKGNAMESUFFIX=	22
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 
 LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 
-CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^2].*
-
-LATEST_LINK=	${PORTNAME}22
+CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^2].* cyrus-imapd2[^2]-2.[^2].*
 
 PERLMAN=	${SITE_PERL_REL:S/site_perl\///}
 
