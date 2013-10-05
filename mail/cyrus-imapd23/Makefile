@@ -5,6 +5,7 @@ PORTVERSION=	2.3.18
 PORTREVISION=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/
+PKGNAMESUFFIX=	23
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
@@ -16,9 +17,7 @@ LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2 \
 		libpcre.so:${PORTSDIR}/devel/pcre
 BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 
-CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^3].*
-
-LATEST_LINK=	${PORTNAME}23
+CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^3].* cyrus-imapd2[^3]-2.[^3].*
 
 PERLMAN=	${SITE_PERL_REL:S/site_perl\///}
 
