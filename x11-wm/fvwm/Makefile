@@ -6,6 +6,7 @@ PORTVERSION=	1.24r
 PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-1/
+PKGNAMESUFFIX=	1
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The fvwm window manager
