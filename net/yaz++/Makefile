@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaz++
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yazpp/
 DISTNAME=	yazpp-${PORTVERSION}
