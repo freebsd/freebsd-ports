@@ -21,7 +21,7 @@ TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Plack::Server::POE.3
+post-patch:
+	@${REINPLACE_CMD} -e '/use_test_base/d' ${WRKSRC}/Makefile.PL
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
