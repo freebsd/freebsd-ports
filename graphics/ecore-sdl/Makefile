@@ -25,7 +25,6 @@ USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_sdl
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-NO_STAGE=	yes
 .include "../../devel/ecore-main/Makefile.inc"
 
 CONFIGURE_ARGS+=	--enable-ecore-sdl \
@@ -41,6 +40,6 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/ecore-sdl.pc \
-		${PREFIX}/libdata/pkgconfig/
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 
 .include <bsd.port.mk>
