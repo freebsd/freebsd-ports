@@ -25,7 +25,6 @@ BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_x
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 XEXTDIR=	${LOCALBASE}/include/X11/extensions
 
-NO_STAGE=	yes
 .include "../../devel/ecore-main/Makefile.inc"
 
 CONFIGURE_ARGS+=	--enable-ecore-x \
@@ -100,6 +99,6 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/ecore-x.pc \
-		${PREFIX}/libdata/pkgconfig/
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 
 .include <bsd.port.mk>
