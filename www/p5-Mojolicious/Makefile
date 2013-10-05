@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	Mojolicious
-PORTVERSION=	4.43
+PORTVERSION=	4.44
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:SRI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -22,14 +23,9 @@ USE_PERL5=	configure
 USES=		perl5
 
 IPV6_BUILD_DEPENDS=	p5-IO-Socket-IP>=0.16:${PORTSDIR}/net/p5-IO-Socket-IP
+IPV6_CATEGORIES=	ipv6
 IPV6_RUN_DEPENDS=	p5-IO-Socket-IP>=0.16:${PORTSDIR}/net/p5-IO-Socket-IP
 TLS_BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.75:${PORTSDIR}/security/p5-IO-Socket-SSL
 TLS_RUN_DEPENDS=	p5-IO-Socket-SSL>=1.75:${PORTSDIR}/security/p5-IO-Socket-SSL
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MIPV6}
-CATEGORIES+=	ipv6
-.endif
 
 .include <bsd.port.mk>
