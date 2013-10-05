@@ -1,0 +1,43 @@
+--- libpskc/man/Makefile.in.orig	2013-10-05 13:22:16.000000000 +0000
++++ libpskc/man/Makefile.in	2013-10-05 13:36:51.611332967 +0000
+@@ -1243,31 +1243,7 @@
+ 	pskc_done.3 pskc_parse_from_memory.3 pskc_validate.3 \
+ 	pskc_build_xml.3 pskc_sign_x509.3 pskc_verify_x509crt.3 \
+ 	pskc_output.3
+-all: $(BUILT_SOURCES)
+-	$(MAKE) $(AM_MAKEFLAGS) all-am
+ 
+-.SUFFIXES:
+-$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am $(srcdir)/gdoc.mk $(srcdir)/Makefile.gdoc $(am__configure_deps)
+-	@for dep in $?; do \
+-	  case '$(am__configure_deps)' in \
+-	    *$$dep*) \
+-	      ( cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh ) \
+-	        && { if test -f $@; then exit 0; else break; fi; }; \
+-	      exit 1;; \
+-	  esac; \
+-	done; \
+-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign man/Makefile'; \
+-	$(am__cd) $(top_srcdir) && \
+-	  $(AUTOMAKE) --foreign man/Makefile
+-.PRECIOUS: Makefile
+-Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
+-	@case '$?' in \
+-	  *config.status*) \
+-	    cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh;; \
+-	  *) \
+-	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)'; \
+-	    cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe);; \
+-	esac;
+ $(srcdir)/gdoc.mk $(srcdir)/Makefile.gdoc:
+ 
+ $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+@@ -1372,7 +1348,7 @@
+ 	for dir in "$(DESTDIR)$(man3dir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+-install: $(BUILT_SOURCES)
++install:
+ 	$(MAKE) $(AM_MAKEFLAGS) install-am
+ install-exec: install-exec-am
+ install-data: install-data-am
