@@ -35,5 +35,3 @@ etc/vbam.cfg-example
 %%GVBAM%%@dirrm share/icons/hicolor
 %%GVBAM%%@dirrm share/icons
 %%GVBAM%%@dirrm share/applications
-%%GVBAM%%@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-%%GVBAM%%@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
