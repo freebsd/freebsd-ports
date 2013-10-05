@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kombu
-PORTVERSION=	2.5.14
+PORTVERSION=	2.5.15
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +24,13 @@ REDIS_DESC=	Include Redis transport support
 SQLALCHEMY_DESC=Include SQLAlchemy transport support
 ZMQ_DESC=	Include ZMQ transport support
 
+BEANSTALK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beanstalkc>0:${PORTSDIR}/net/py-beanstalkc
+BOTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto=>2.6.0:${PORTSDIR}/devel/py-boto
+MONGODB_RUN_DEPENDS=	pymongo>0:${PORTSDIR}/databases/pymongo
+REDI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>0:${PORTSDIR}/databases/py-redis
+SQLALCHEMY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>0:${PORTSDIR}/databases/py-sqlalchemy
+ZMQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq=>2.2.0:${PORTSDIR}/devel/py-pyzmq
+
 # Ports infrastructure bug
 OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
@@ -32,30 +39,6 @@ USE_PYDISTUTILS=easy_install
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MBEANSTALK}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}beanstalkc>0:${PORTSDIR}/net/py-beanstalkc
-.endif
-
-.if ${PORT_OPTIONS:MBOTO}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}boto=>2.6.0:${PORTSDIR}/devel/py-boto
-.endif
-
-.if ${PORT_OPTIONS:MMONGODB}
-RUN_DEPENDS+=	pymongo>0:${PORTSDIR}/databases/pymongo
-.endif
-
-.if ${PORT_OPTIONS:MREDIS}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}redis>0:${PORTSDIR}/databases/py-redis
-.endif
-
-.if ${PORT_OPTIONS:MSQLALCHEMY}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>0:${PORTSDIR}/databases/py-sqlalchemy
-.endif
-
-.if ${PORT_OPTIONS:MZMQ}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyzmq=>2.2.0:${PORTSDIR}/devel/py-pyzmq
-.endif
 
 .if ${PYTHON_REL} < 270
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ordereddict>=0:${PORTSDIR}/devel/py-ordereddict
