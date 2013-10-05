@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Eval-LineNumbers
-PORTVERSION=	0.32
+PORTVERSION=	0.33
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MUIR/modules
@@ -11,10 +11,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Add line numbers to hereis blocks that contain perl source code
 
+LICENSE=	ART20 LGPL21
+LICENSE_COMB=	dual
+
 USE_PERL5=	configure
 USES=		perl5
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|Eval-LineNumbers|Eval::LineNumbers|' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e '/NAME/ s|Eval-LineNumbers|Eval::LineNumbers|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
