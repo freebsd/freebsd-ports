@@ -1,5 +1,11 @@
-GnuPGInterface is a Python module to interface with GnuPG . It concentrates
-on interacting with GnuPG via filehandles, providing access to control GnuPG
-via versatile and extensible means.
+This module allows easy access to GnuPG's key management, encryption and
+signature functionality from Python programs, by interacting with GnuPG through
+file descriptors. Input arguments are strictly checked and sanitised, and
+therefore this module should be safe to use in networked applications requiring
+direct user input. It is intended for use with Python 2.6 or greater.
 
-WWW: http://py-gnupg.sourceforge.net/
+This is a fork of python-gnupg-0.3.2, patched to fix a potential vulnerability
+which could result in remote code execution, do to unsanitised inputs being
+passed to subprocess.Popen([...], shell=True).
+
+WWW: https://github.com/isislovecruft/python-gnupg
