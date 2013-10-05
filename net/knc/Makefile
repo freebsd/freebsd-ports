@@ -13,9 +13,8 @@ LICENSE=	BSD MIT
 LICENSE_COMB=	multi
 
 USE_AUTOTOOLS=	libtool
-MAN1=		knc.1
 
-PLIST_FILES=	bin/knc
+PLIST_FILES=	bin/knc \
+		man/man1/knc.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
