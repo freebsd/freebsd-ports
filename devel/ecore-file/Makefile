@@ -17,14 +17,12 @@ LICENSE=	BSD
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_EFL=	ecore libtool_hack
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_file
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-NO_STAGE=	yes
 .include "../ecore-main/Makefile.inc"
 
 CONFIGURE_ARGS+=--enable-ecore-file
@@ -38,7 +36,7 @@ OPTIONS_DEFAULT=CURL
 USE_EFL_ECORE=	con
 CONFIGURE_ARGS+=--enable-ecore-con \
 		--enable-curl
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 .else
 CONFIGURE_ARGS+=--disable-curl
 .endif
@@ -57,6 +55,6 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/ecore-file.pc \
-		${PREFIX}/libdata/pkgconfig/
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 
 .include <bsd.port.mk>
