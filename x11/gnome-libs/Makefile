@@ -12,6 +12,9 @@ DIST_SUBDIR=	gnome
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT=	Libraries for GNOME, a GNU desktop environment
 
+DEPRECATED=	EOLed upstream for very long
+EXPIRATION_DATE=	2013-11-05
+
 BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
