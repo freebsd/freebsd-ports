@@ -3,11 +3,9 @@ bin/evolvotron_mutate
 bin/evolvotron_render
 lib/libevolvotron.a
 lib/libfunction.a
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/USAGE
-%%PORTDOCS%%%%DOCSDIR%%/evolvotron.html
+man/man1/evolvotron.1.gz
+man/man1/evolvotron_mutate.1.gz
+man/man1/evolvotron_render.1.gz
 share/icons/hicolor/128x128/apps/evolvotron.png
 share/icons/hicolor/32x32/apps/evolvotron.png
 share/icons/hicolor/48x48/apps/evolvotron.png
@@ -15,18 +13,3 @@ share/icons/hicolor/64x64/apps/evolvotron.png
 share/icons/hicolor/72x72/apps/evolvotron.png
 share/icons/hicolor/96x96/apps/evolvotron.png
 share/pixmaps/evolvotron.png
-@dirrmtry share/icons/hicolor/96x96/apps
-@dirrmtry share/icons/hicolor/96x96
-@dirrmtry share/icons/hicolor/72x72/apps
-@dirrmtry share/icons/hicolor/72x72
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
