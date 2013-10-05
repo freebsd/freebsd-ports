@@ -11,6 +11,9 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	High-performance CORBA ORB with support for the C language
 
+DEPRECATED=	EOLed upstream for very long
+EXPIRATION_DATE=	2013-11-05
+
 USE_BZIP2=	yes
 USES=		gettext
 USE_GNOME=	glib12
