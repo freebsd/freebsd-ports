@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	wxmupen64plus
-PORTVERSION=	0.2
-PORTREVISION=	2
+PORTVERSION=	0.3
 CATEGORIES=	emulators
-MASTER_SITES=	http://cdn.bitbucket.org/auria/wxmupen64plus/downloads/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
+		${MASTER_SITE_LOCAL:S,$,acm/${PORTNAME}/,} \
+		http://cdn.bitbucket.org/auria/wxmupen64plus/downloads/
 DIST_SUBDIR=	${PORTNAME:S/wx//}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A Mupen64Plus 2.0 GUI frontend written using wxWidgets
 
-LIB_DEPENDS=	mupen64plus.2:${PORTSDIR}/emulators/mupen64plus-core
+LIB_DEPENDS=	mupen64plus:${PORTSDIR}/emulators/mupen64plus-core
 RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:${PORTSDIR}/emulators/mupen64plus-core \
 		${LOCALBASE}/lib/mupen64plus/mupen64plus-audio-sdl.so:${PORTSDIR}/emulators/mupen64plus-audio-sdl \
 		${LOCALBASE}/lib/mupen64plus/mupen64plus-input-sdl.so:${PORTSDIR}/emulators/mupen64plus-input-sdl \
@@ -19,18 +20,24 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:${PORTSDIR}/emulators/mupen64p
 		${LOCALBASE}/lib/mupen64plus/mupen64plus-video-rice.so:${PORTSDIR}/emulators/mupen64plus-video-rice \
 		mupen64plus:${PORTSDIR}/emulators/mupen64plus-ui-console
 
-USE_ZIP=	yes
+PROJECTHOST=	bsdistfiles
 USE_SDL=	yes
 USE_WX=		2.9
 WX_UNICODE=	yes
 USE_PYTHON=	yes
-
 WAF_SCRIPT=	waf
 
 NO_STAGE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' -e 's|%%CXX%%|${CXX}|g' ${WRKSRC}/wscript
+
 do-configure:
 	@cd ${WRKSRC} && \
-		${PYTHON_CMD} ${WAF_SCRIPT} configure --mupenapi=${LOCALBASE}/include/${PORTNAME:S/wx//} \
+		${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
+		CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+		LDFLAGS="${LDFLAGS}" ${PYTHON_CMD} ${WAF_SCRIPT} \
+				configure --mupenapi=${LOCALBASE}/include/${PORTNAME:S/wx//} \
 				--wxconfig=${WX_CONFIG} \
 				--sdlconfig=${SDL_CONFIG} \
 				--datadir=${DATADIR} \
