@@ -3,7 +3,7 @@
 
 PORTNAME=	amule
 PORTVERSION=	10802
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://amule.sourceforge.net/tarballs/
 PKGNAMESUFFIX=	-devel
@@ -23,8 +23,8 @@ BUILD_DEPENDS=	${FLEX}:${PORTSDIR}/textproc/flex \
 CONFLICTS=	amule-[0-9]*
 
 USE_BZIP2=	yes
-USES=		bison pkgconfig
-USE_GMAKE=	yes
+USES=		bison gmake pkgconfig perl5 shebangfix
+USE_PERL5=	build
 USE_WX=		2.8
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
@@ -62,6 +62,8 @@ PORTDOCS=	ABOUT-NLS Changelog EC_Protocol.txt INSTALL README TODO \
 		amulesig.txt license.txt
 
 FLEX?=		${LOCALBASE}/bin/flex
+
+SHEBANG_FILES=	src/utils/scripts/*.pl src/utils/xas/*.pl src/libs/ec/*.pl
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
@@ -121,7 +123,7 @@ PLIST_SUB+=		AMULEGUI="@comment "
 
 .if ${PORT_OPTIONS:MCAS}
 CONFIGURE_ARGS+=	--enable-cas
-LIB_DEPENDS+=		gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=		libgd.so:${PORTSDIR}/graphics/gd
 PLIST_SUB+=		CAS=""
 .else
 CONFIGURE_ARGS+=	--disable-cas
@@ -147,7 +149,7 @@ PLIST_SUB+=		FILEVIEW="@comment "
 
 .if ${PORT_OPTIONS:MGEOIP}
 CONFIGURE_ARGS+=	--enable-geoip
-LIB_DEPENDS+=		GeoIP:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=		libGeoIP.so:${PORTSDIR}/net/GeoIP
 .else
 CONFIGURE_ARGS+=	--disable-geoip
 .endif
@@ -184,7 +186,7 @@ PLIST_SUB+=		PLASMAMULE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MUPNP}
-LIB_DEPENDS+=		upnp:${PORTSDIR}/devel/upnp
+LIB_DEPENDS+=		libupnp.so:${PORTSDIR}/devel/upnp
 .else
 CONFIGURE_ARGS+=	--disable-upnp
 .endif
@@ -210,6 +212,7 @@ WX_UNICODE=		yes
 .endif
 
 .if ${PORT_OPTIONS:MXAS}
+USE_PERL5+=		run
 CONFIGURE_ARGS+=	--enable-xas
 PLIST_SUB+=		XAS=""
 .else
@@ -225,8 +228,6 @@ post-patch:	.SILENT
 		-e 's/test.*-print-file-name.*`/true/' \
 		-e '/if.*test/s/==/=/' \
 		${WRKSRC}/configure
-	${FIND} ${WRKSRC} -name \*.pl -exec ${REINPLACE_CMD} \
-		's|/usr/bin/perl|${PERL}|' {} +
 .if empty(PORT_OPTIONS:MDOCS)
 	${REINPLACE_CMD} 's/install-data-am:.*/install-data-am:/' \
 		${WRKSRC}/docs/Makefile.in
