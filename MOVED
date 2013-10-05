@@ -4984,3 +4984,4 @@ textproc/libwpd08|textproc/libwpd|2013-10-04|Outdated, consider using a new vers
 net-mgmt/nrpe2|net-mgmt/nrpe|2013-10-04|Reflect the real portname
 cad/gwave||2013-10-05|Depends on guile-gtk which is EOLed
 x11-toolkits/guile-gtk||2013-10-05|EOLed upstream for very long
+textproc/gxmlviewer||2013-10-05|Depends on EOLed gnome1
